@@ -75,7 +75,7 @@
   - name: Organization (tenant)
     items:
     - name: Microsoft Entra tenant organizations    
-      href: ~/fundamentals/whatis.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/what-is-entra.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Delete a tenant    
       href: directory-delete-howto.md
     - name: Multiple tenants    
@@ -104,7 +104,7 @@
       href: groups-members-owners-search.md
     - name: Dynamic groups    
       items:
-      - name: Understanding dynamic groups    
+      - name: Managing dynamic membership group processing    
         href: manage-dynamic-group.md
       - name: Create a dynamic group    
         href: groups-create-rule.md

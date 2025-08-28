@@ -3,12 +3,12 @@ title: Continuous access evaluation for workload identities in Microsoft Entra I
 description: Respond to changes to applications with continuous access evaluation for workload identities in Microsoft Entra ID.
 
 ms.service: entra-workload-id
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: joroja
 ---
 # Continuous access evaluation for workload identities
@@ -48,7 +48,7 @@ When a client’s access to a resource is blocked due to CAE being triggered, th
 The following steps detail how an admin can verify sign in activity in the sign-in logs: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs** > **Service Principal Sign-ins**. You can use filters to ease the debugging process. 
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs** > **Service Principal Sign-ins**. You can use filters to ease the debugging process. 
 1. To see activity details, select an entry. The **Continuous access evaluation** field indicates whether a CAE token was issued in a particular sign-in attempt. 
 
 ## Related content

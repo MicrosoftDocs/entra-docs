@@ -14,7 +14,7 @@ ms.author: thwimmer
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cofense Recipient Sync so that I can streamline the user management process and ensure that users have the appropriate access to Cofense Recipient Sync.
 ---
 
-# Configure Cofense Recipient Sync for automatic user provisioning
+# Configure Cofense Recipient Sync for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Cofense Recipient Sync and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [Cofense Recipient Sync](https://cofense.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -70,7 +70,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Cofense Recipient Sync in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -103,43 +103,43 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |externalId|String|&check;|
-   |userName|String|
-   |active|Boolean|
-   |displayName|String|
-   |name.formatted|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.honorificSuffix|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |phoneNumbers[type eq "home"].value|String|
-   |phoneNumbers[type eq "other"].value|String|
-   |phoneNumbers[type eq "pager"].value|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |phoneNumbers[type eq "fax"].value|String|
-   |addresses[type eq "other"].formatted|String|
-   |addresses[type eq "work"].formatted|String|
-   |addresses[type eq "work"].streetAddress|String|
-   |addresses[type eq "work"].locality|String|
-   |addresses[type eq "work"].region|String|
-   |addresses[type eq "work"].postalCode|String|
-   |addresses[type eq "work"].country|String|
-   |title|String|
-   |emails[type eq "work"].value|String|
-   |emails[type eq "home"].value|String|
-   |emails[type eq "other"].value|String|
-   |preferredLanguage|String|
-   |nickName|String|
-   |userType|String|
-   |locale|String|
-   |timezone|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|
+   |userName|String||
+   |active|Boolean||
+   |displayName|String||
+   |name.formatted|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.honorificSuffix|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "home"].value|String||
+   |phoneNumbers[type eq "other"].value|String||
+   |phoneNumbers[type eq "pager"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |phoneNumbers[type eq "fax"].value|String||
+   |addresses[type eq "other"].formatted|String||
+   |addresses[type eq "work"].formatted|String||
+   |addresses[type eq "work"].streetAddress|String||
+   |addresses[type eq "work"].locality|String||
+   |addresses[type eq "work"].region|String||
+   |addresses[type eq "work"].postalCode|String||
+   |addresses[type eq "work"].country|String||
+   |title|String||
+   |emails[type eq "work"].value|String||
+   |emails[type eq "home"].value|String||
+   |emails[type eq "other"].value|String||
+   |preferredLanguage|String||
+   |nickName|String||
+   |userType|String||
+   |locale|String||
+   |timezone|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Cofense Recipient Sync, change the **Provisioning Status** to **On** in the **Settings** section.
 

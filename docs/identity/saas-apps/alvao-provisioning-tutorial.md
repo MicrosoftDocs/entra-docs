@@ -2,20 +2,20 @@
 title: Configure ALVAO for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to ALVAO.
 
-author: thomasakelo
+author: adimitui
 manager: beatrizd
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: addimitu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ALVAO so that I can streamline the user management process and ensure that users have the appropriate access to ALVAO.
 
 ---
 
-# Configure ALVAO for automatic user provisioning
+# Configure ALVAO for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both ALVAO and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [ALVAO](https://www.alvao.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -44,7 +44,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure ALVAO to support provisioning with Microsoft Entra ID
 1. Find your **Tenant SCIM Endpoint URL**, which should have the format `{ALVAO REST API address}/scim` (for example, https://app.contoso.com/alvaorestapi/scim).
-1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Active Directory and Microsoft Entra ID](https://doc.alvao.com/en/11.2/ui/administration/settings/activedirectory)** and copy its value.
+1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Microsoft Entra ID](https://doc.alvao.com/en/25/ui/administration/settings/microsoft-entra-id)** and copy its value.
 
 <a name='step-3-add-alvao-from-the-azure-ad-application-gallery'></a>
 
@@ -65,7 +65,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for ALVAO in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -91,48 +91,49 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Save**.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to ALVAO**.
+1. Under the **Mappings** section, select **Provision Azure Active Directory Users**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to ALVAO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in ALVAO for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the ALVAO API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by ALVAO|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |externalId|String|&check;|&check;
-   |active|Boolean||&check;
-   |displayName|String||&check;
-   |title|String||
-   |emails[type eq "work"].value|String||
-   |name.givenName|String||
-   |name.familyName|String||
-   |name.formatted|String||
-   |addresses[type eq "work"].formatted|String||
-   |addresses[type eq "work"].locality|String||
-   |addresses[type eq "work"].region|String||
-   |addresses[type eq "work"].country|String||
-   |addresses[type eq "work"].postalCode|String||
-   |addresses[type eq "work"].streetAddress|String||
-   |phoneNumbers[type eq "work"].value|String||
-   |phoneNumbers[type eq "mobile"].value|String||
-   |phoneNumbers[type eq "fax"].value|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
+   |userName|String|&check;|&check;|
+   |externalId|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |displayName|String||&check;|
+   |title|String|||
+   |emails[type eq "work"].value|String|||
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |name.formatted|String|||
+   |addresses[type eq "work"].formatted|String|||
+   |addresses[type eq "work"].locality|String|||
+   |addresses[type eq "work"].region|String|||
+   |addresses[type eq "work"].country|String|||
+   |addresses[type eq "work"].postalCode|String|||
+   |addresses[type eq "work"].streetAddress|String|||
+   |phoneNumbers[type eq "work"].value|String|||
+   |phoneNumbers[type eq "mobile"].value|String|||
+   |phoneNumbers[type eq "fax"].value|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
+
    > [!NOTE]
    >For advanced settings see:
-   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
-   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/object-attribute-mapping)
+   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/25/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
+   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/25/admin-guide/users/authentication/aad/provisioning/object-attribute-mapping)
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to ALVAO**.
+1. Under the **Mappings** section, select **Provision Azure Active Directory Groups**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to ALVAO in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in ALVAO for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by ALVAO|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |externalId|String||
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |externalId|String|||
+   |members|Reference|||
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

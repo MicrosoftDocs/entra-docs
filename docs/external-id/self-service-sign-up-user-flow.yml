@@ -3,10 +3,9 @@
 metadata:
   title: Add B2B Guest Sign-in
   description: Create sign-up and sign-in user flows for apps you build. Users with external identities can sign up, submit user attributes, and create a B2B collaboration guest account.
-  author: msmimart
-  ms.author: mimart
-  manager: CelesteDG
-  ms.date: 06/28/2024
+  ms.author: cmulligan
+  author: csmulligan
+  ms.date: 07/07/2025
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -14,6 +13,7 @@ metadata:
     - it-pro
     - ge-structured-content-pilot
     - seo-july-2024
+    - sfi-image-nochange
 
 #customer intent: As a developer building an application with B2B collaboration user flows, I want to add a self-service sign-up user flow to my app, so that users can sign up for the app and create a new guest account.
 
@@ -31,7 +31,7 @@ introduction: |
   > You can associate user flows with apps built by your organization. User flows can't be used for Microsoft apps, like SharePoint or Teams.
 prerequisites:
   summary: |
-    Before you begin you may need to add identity providers and define custom attributes.
+    Before you begin, you may need to add identity providers and define custom attributes.
 
     ### Add identity providers (optional)
 
@@ -57,7 +57,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **External Identities** > **External collaboration settings**.
+        Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
       - |  
         Set the **Enable guest self-service sign up via user flows** toggle to **Yes**.
 
@@ -72,7 +72,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **External Identities** > **User flows**, and then select **New user flow**.
+        Browse to **Entra ID** > **External Identities** > **User flows**, and then select **New user flow**.
 
           :::image type="content" source="media/self-service-sign-up-user-flow/new-user-flow.png" alt-text="Screenshot of the new user flow button.":::
       - |  
@@ -98,7 +98,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **External Identities** > **User flows**.
+        Browse to **Entra ID** > **External Identities** > **User flows**.
       - |  
         Select the self-service sign-up user flow from the list.
       - |  
@@ -115,7 +115,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |  
-        Browse to **Identity** > **External Identities** > **User flows**
+        Browse to **Entra ID** > **External Identities** > **User flows**
       - |  
         Select the self-service sign-up user flow from the list.
       - |  

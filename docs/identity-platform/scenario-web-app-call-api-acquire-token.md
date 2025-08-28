@@ -2,7 +2,7 @@
 title: Get a token in a web app that calls web APIs
 description: Learn how to acquire a token for a web app that calls web APIs
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 01/30/2025

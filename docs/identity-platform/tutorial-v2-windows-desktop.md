@@ -21,7 +21,7 @@ In this tutorial, you build a native Windows Desktop .NET (XAML) app that signs 
 
 When you've completed the guide, your application will able to call a protected API that uses personal accounts (including outlook.com, live.com, and others). The application will also use work and school accounts from any company or organization that uses Microsoft Entra ID.
 
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

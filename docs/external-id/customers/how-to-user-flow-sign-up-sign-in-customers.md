@@ -1,18 +1,15 @@
 ---
 title: Create a User Flow
 description: Add sign-up and sign-in user flows for your consumer and business customers. Create a branded, customized user experience for apps in your external tenant.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 03/21/2025
-ms.author: mimart
+ms.date: 04/23/2025
 ms.reviewer: kengaderdus
-ms.custom: it-pro, seo-july-2024
-
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-in experience for my customer users.
 ---
 
@@ -49,7 +46,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select **New user flow**.
 

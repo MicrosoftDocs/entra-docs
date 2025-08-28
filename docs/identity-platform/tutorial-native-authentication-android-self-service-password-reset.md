@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 02/23/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want add self-service password reset (SSPR) to my Android app using native authentication so that users can reset their own password with no administrator or help desk involvement.
 ---
 
@@ -21,7 +21,7 @@ ms.custom: developer
  
 This tutorial demonstrates how to enable users to change or reset their password, with no administrator or help desk involvement.
   
-In this tutorial, you learn how to: 
+In this tutorial, you: 
  
 > [!div class="checklist"]
 >
@@ -57,7 +57,7 @@ To handle the request when the user selects the **Forget Password** button or li
 
             when (resetPasswordResult) { 
                 is ResetPasswordStartResult.CodeRequired -> { 
-                    // The implementation of submiteCode() please see below. 
+                    // The implementation of submitCode() please see below. 
                     submitCode(resetPasswordResult.nextState) 
                 } 
                 is ResetPasswordError -> {

@@ -2,13 +2,14 @@
 title: Network topology considerations for Microsoft Entra application proxy
 description: Covers network topology considerations when using Microsoft Entra application proxy.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.topic: conceptual
-ms.date: 02/21/2025
+ms.topic: how-to
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Optimize traffic flow with Microsoft Entra application proxy
@@ -40,7 +41,7 @@ In order to optimize the traffic flow and reduce latency to a connector group, a
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 1. Select **New Connector Group** and provide a **Name** for the connector group.
 1. Under **Advanced Settings**, select the drop-down under Optimize for a specific region and select the region closest to the connectors and then select **Save**.
 

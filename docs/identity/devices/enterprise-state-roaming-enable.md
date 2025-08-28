@@ -1,17 +1,15 @@
 ---
 title: Enable Enterprise State Roaming in Microsoft Entra ID
 description: Frequently asked questions about Enterprise State Roaming settings in Windows devices.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 08/01/2024
-
+ms.date: 06/27/2025
 ms.author: owinfrey
 author: MicrosoftGuyJFlo
-manager: owinfreyATL
+manager: dougeby
 ms.reviewer: sempofu, micrider
-ms.custom: references_regions
+ms.custom: references_regions, sfi-ga-blocked
 ---
 # Enable Enterprise State Roaming in Microsoft Entra ID
 
@@ -23,7 +21,7 @@ Enterprise State Roaming provides users with a unified experience across their W
 ## To enable Enterprise State Roaming
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming**.
+1. Browse to **Entra ID** > **Devices** > **Overview** > **Enterprise State Roaming**.
 1. Select **Users may sync settings and app data across devices**. For more information, see [how to configure device settings](./manage-device-identities.md).
 
 For a Windows 11 or Windows 10, version 21H2 or newer device to use the Enterprise State Roaming service, the device must authenticate using a Microsoft Entra identity. For devices that are joined to Microsoft Entra ID, the user’s primary sign-in identity is their Microsoft Entra identity, so no other configuration is required. For devices that use on-premises Active Directory, the IT admin must [Configure Microsoft Entra hybrid joined devices](./hybrid-join-plan.md).
@@ -69,5 +67,5 @@ The data retention policy isn't configurable. Once the data is permanently delet
 
 * [Settings and data roaming FAQ](enterprise-state-roaming-faqs.yml)
 * [Group Policy and MDM settings for settings sync](enterprise-state-roaming-group-policy-settings.md)
-* [Windows 10 roaming settings reference](enterprise-state-roaming-windows-settings-reference.md)
+* [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr)
 * [Troubleshooting](enterprise-state-roaming-troubleshooting.md)

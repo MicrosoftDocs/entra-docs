@@ -9,7 +9,7 @@ ms.date: 11/19/2024
 ms.author: henrymbugua
 zone_pivot_groups: entra-tenants
 
-#Customer intent: As a developer, I want to configure a sample Deesktop app so that I can sign in my employees or customers by using Microsoft identity platform.
+#Customer intent: As a developer, I want to configure a sample Desktop app so that I can sign in my employees or customers by using Microsoft identity platform.
 ---
 
 # Quickstart: Sign in users in a sample Desktop app
@@ -418,7 +418,7 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 
 #### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
-- [Tutorial: Authenticate users to your WPF desktop application](../external-id/customers/tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
+- [Tutorial: Authenticate users to your WPF desktop application](./tutorial-desktop-wpf-dotnet-sign-in-build-app.md)
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 

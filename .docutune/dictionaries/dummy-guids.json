@@ -28,7 +28,7 @@
     "ffff5555-aa66-7777-88bb-999999cccccc",
     "aaaa6666-bb77-8888-99cc-000000dddddd"
   ],
-  "directoryId|tenantId|tid|issuer|iss": [
+  "directoryId|tenantId|tid|issuer|iss|api": [
     "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "bbbbcccc-1111-dddd-2222-eeee3333ffff",
     "ccccdddd-2222-eeee-3333-ffff4444aaaa",
@@ -58,7 +58,7 @@
     "cccccccc-8888-9999-0000-dddddddddddd",
     "dddddddd-9999-0000-1111-eeeeeeeeeeee"
   ],
-  "principalId": [
+  "principalId|servicePrincipalId": [
     "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "bbbbbbbb-cccc-dddd-2222-333333333333",
     "cccccccc-dddd-eeee-3333-444444444444",

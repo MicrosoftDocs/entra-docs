@@ -2,7 +2,7 @@
 title: "Tutorial: Build and secure an ASP.NET Core web API with the Microsoft identity platform"
 description: Protect the endpoint of an API, then run it to ensure it's listening for HTTP requests.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 03/18/2025
 ms.service: identity-platform
@@ -18,7 +18,7 @@ ms.topic: tutorial
 
 This tutorial series demonstrates how to protect an ASP.NET Core web API with the Microsoft identity platform to limit it's access to only authorized users and client apps. The web API you build uses both delegated permissions (scopes) and application permissions (app roles).
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

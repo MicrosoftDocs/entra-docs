@@ -5,11 +5,11 @@ description: The approved client app control is going away. Migrate to App prote
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 07/21/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: jogro
 ---
 # Migrate approved client app to application protection policy in Conditional Access
@@ -29,7 +29,7 @@ The following steps make an existing Conditional Access policy require an approv
 Organizations can choose to update their policies using the following steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select a policy that uses the approved client app grant.
 1. Under **Access controls** > **Grant**, select **Grant access**.
    1. Select **Require approved client app** and **Require app protection policy**
@@ -42,7 +42,7 @@ Organizations can choose to update their policies using the following steps.
 Repeat the previous steps on all of your policies that use the approved client app grant. 
 
 > [!WARNING] 
-> Not all applications that are supported as approved applications are supported by application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application is not listed there, contact the application developer. 
+> Not all applications that are supported as approved applications support application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application isn't listed there, contact the application developer. 
 
 ## Create a Conditional Access policy
 
@@ -53,7 +53,7 @@ The following steps help create a Conditional Access policy requiring an approve
 Organizations can choose to deploy this policy using the following steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -73,10 +73,10 @@ Organizations can choose to deploy this policy using the following steps.
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!NOTE] 
-> If an app does not support **Require app protection policy**, end users trying to access resources from that app will be blocked.
+> If an app doesn't support **Require app protection policy**, end users trying to access resources from that app are blocked.
 
 ## Next steps
 
 For more information on application protection policies, see: 
 
-[App protection policies overview](/mem/intune/apps/app-protection-policy)
+[Create and assign app protection policies](/intune/intune-service/apps/app-protection-policies)

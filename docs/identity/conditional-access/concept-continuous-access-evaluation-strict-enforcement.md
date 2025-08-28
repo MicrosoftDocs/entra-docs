@@ -1,16 +1,15 @@
 ---
 title: Continuous access evaluation strict location enforcement in Microsoft Entra ID
 description: Responding to changes in user state faster with continuous access evaluation strict location enforcement in Microsoft Entra ID
-
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/14/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: sreyanthmora
+ms.custom: sfi-image-nochange
 ---
 # Strictly enforce location policies using continuous access evaluation (preview)
 
@@ -51,7 +50,7 @@ If you haven't already, create a new Azure Workbook using the public template "C
 - Investigate and identify any IP addresses identified in the CAE Workbook.
 - Add public IP addresses associated with known organizational egress points to their defined [named locations](concept-assignment-network.md#ipv4-and-ipv6-address-ranges).
 
-     [ ![Screenshot of cae-workbook with an example of IP address seen by resource filter.](./media/concept-continuous-access-evaluation-strict-enforcement/continuous-access-evaluation-workbook.png) ](./media/concept-continuous-access-evaluation-strict-enforcement/continuous-access-evaluation-workbook.png#lightbox)
+     [![Screenshot of cae-workbook with an example of IP address seen by resource filter.](./media/concept-continuous-access-evaluation-strict-enforcement/continuous-access-evaluation-workbook.png)](./media/concept-continuous-access-evaluation-strict-enforcement/continuous-access-evaluation-workbook.png#lightbox)
   
   The following screenshot shows an example of a client’s access to a resource being blocked. This block is due to policies requiring CAE strict location enforcement being triggered revoking the client’s session. 
 
@@ -74,11 +73,11 @@ Repeat steps 2 and 3 with expanding groups of users until Strictly Enforce Locat
 Administrators can investigate the Sign-in logs to find cases with **IP address (seen by resource)**.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Find events to review by adding filters and columns to filter out unnecessary information.
    1. Add the **IP address (seen by resource)** column and filter out any blank items to narrow the scope. The **IP address (seen by resource)** is blank when that IP seen by Microsoft Entra ID matches the IP address seen by the resource.
    
-      [ ![Screenshot showing an example of how to find more information in the sign-in logs.](./media/concept-continuous-access-evaluation-strict-enforcement/sign-in-logs-ip-address-seen-by-resource.png) ](./media/concept-continuous-access-evaluation-strict-enforcement/sign-in-logs-ip-address-seen-by-resource.png#lightbox)
+      [![Screenshot showing an example of how to find more information in the sign-in logs.](./media/concept-continuous-access-evaluation-strict-enforcement/sign-in-logs-ip-address-seen-by-resource.png)](./media/concept-continuous-access-evaluation-strict-enforcement/sign-in-logs-ip-address-seen-by-resource.png#lightbox)
       
       **IP address (seen by resource)** contains filter isn't empty in the following examples: 
 

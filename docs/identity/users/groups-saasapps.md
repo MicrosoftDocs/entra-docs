@@ -1,16 +1,15 @@
 ---
 title: Use a group to manage access to SaaS apps
 description: Learn how to use groups in Microsoft Entra ID to assign access to SaaS applications that are integrated with Microsoft Entra ID.
-
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ---
 # Use a group to manage access to SaaS applications
 
@@ -48,5 +47,5 @@ For more information on Microsoft Entra ID, see:
 * [Managing access to resources with Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md)
 * [Application management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
 * [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md)
-* [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
+* [What is Microsoft Entra ID?](~/fundamentals/what-is-entra.md)
 * [Integrating your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md)

@@ -4,12 +4,12 @@ description: Explains the steps that are required to implement Microsoft Entra h
 
 ms.service: entra-id
 ms.subservice: devices
-ms.topic: conceptual
-ms.date: 03/03/2025
+ms.topic: article
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 
@@ -55,6 +55,7 @@ Microsoft Entra hybrid join supports a broad range of Windows devices.
 - Windows Server 2016
   - **Note:** Azure National cloud customers require version 1803
 - Windows Server 2019
+- Windows Server 2022
 
 As a best practice, Microsoft recommends you upgrade to the latest version of Windows.
 

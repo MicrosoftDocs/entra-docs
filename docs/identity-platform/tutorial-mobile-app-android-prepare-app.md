@@ -1,17 +1,13 @@
 ---
 title: Sign in users in an Android app by using Microsoft identity platform
 description: Set up an Android app project that signs in users into customer facing app by in an external tenant or employees in a workforce tenant
-
 author: henrymbuguakiarie
 manager: mwongerapk
-
 ms.author: henrymbugua
-ms.service: entra-external-id
-
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 01/27/2025
-ms.custom: developer
+ms.custom:
 
 #Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra External ID
 ---

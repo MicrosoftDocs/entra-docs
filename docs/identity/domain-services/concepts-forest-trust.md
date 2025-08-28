@@ -1,17 +1,17 @@
 ---
-title: How trusts work for Microsoft Entra Domain Services (Preview) | Microsoft Learn
+title: How trusts work for Microsoft Entra Domain Services | Microsoft Learn
 description: Learn more about how forest trust work with Microsoft Entra Domain Services
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
-ms.date: 01/27/2025
+ms.topic: article
+ms.date: 06/30/2025
 ms.author: justinha
 ---
 
-# How trust relationships work for forests in Active Directory (Preview)
+# How trust relationships work for forests in Active Directory 
 
 Active Directory Domain Services (AD DS) provides security across multiple domains or forests through domain and forest trust relationships. Before authentication can occur across trusts, Windows must first check if the domain being requested by a user, computer, or service has a trust relationship with the domain of the requesting account.
 
@@ -241,7 +241,7 @@ Because trusts must be deployed across various network boundaries, they might ha
 > [!IMPORTANT]
 > Active Directory Domain Services doesn't support restricting Active Directory RPC traffic to specific ports.
 
-Read the **Windows Server 2008 and later versions** section of the Microsoft Support Article [How to configure a firewall for Active Directory domains and trusts](https://support.microsoft.com/help/179442/how-to-configure-a-firewall-for-domains-and-trusts) to learn about the ports needed for a forest trust.
+For more information about which ports need to be open to use a trust, see [Configure firewall settings for AD DS trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts). All domain controllers in the domain that has a trust with Domain Services need to have these ports open.
 
 ## Supporting services and tools
 

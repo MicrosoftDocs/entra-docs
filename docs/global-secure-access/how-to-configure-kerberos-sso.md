@@ -2,13 +2,14 @@
 title: Use Kerberos for single sign-on (SSO) with Microsoft Entra Private Access.
 description: Covers how to provide single sign-on using Kerberos with Microsoft Entra Private Access.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
 ms.date: 04/10/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Use Kerberos for single sign-on (SSO) to your resources with Microsoft Entra Private Access
@@ -64,9 +65,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |445         |UDP/TCP    |Replication, User and Computer Authentication, Group Policy  |
 |464         |UDP/TCP    |Password Change Request  |
 |636         |TCP        |LDAP SSL  |
-|3268        |TCP        |Global catalog from client to domain controller  |
-|3269        |TCP        |Global catalog from client to domain controller  |
-|1025-5000   |UDP/TCP    |Ephemeral ports  |
+|1025-5000   |UDP/TCP    |Ephemeral ports, includes 3268-3269 TCP used for Global catalog from client to domain controller  |
 |49152-65535  |UDP/TCP    |Ephemeral ports  |
 
 

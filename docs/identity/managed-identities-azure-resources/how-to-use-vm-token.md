@@ -2,7 +2,7 @@
 title: Use managed identities on a virtual machine to acquire access token
 description: Step-by-step instructions and examples for using managed identities for Azure resources on virtual machines to acquire an OAuth access token.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: entra-id
@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.custom: devx-track-dotnet, devx-track-extended-java
 ms.date: 02/27/2025
-ms.author: ryanwi
+ms.author: shermanouko
 
 ---
 
@@ -42,9 +42,8 @@ A client application can request a managed identity [app-only access token](~/id
 | Link | Description |
 | -------------- | -------------------- |
 | [Get a token using HTTP](#get-a-token-using-http) | Protocol details for managed identities for Azure resources token endpoint |
-| [Get a token using Azure.Identity](#get-a-token-using-the-azure-identity-client-library) | Get a token using Azure.Identity library |
-| [Get a token using the Microsoft.Azure.Services.AppAuthentication library for .NET](#get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net) | Example of using the Microsoft.Azure.Services.AppAuthentication library from a .NET client
-| [Get a token using C#](#get-a-token-using-c) | Example of using managed identities for Azure resources REST endpoint from a C# client |
+| [Get a token using Azure.Identity](#get-a-token-using-the-azure-identity-client-library) | Example of using managed identities for Azure resources REST endpoint from a C# client using Azure.Identity |
+| [Get a token using C#](#get-a-token-using-c) | Example of using managed identities for Azure resources REST endpoint from a C# client using HttpClient |
 | [Get a token using Java](#get-a-token-using-java) | Example of using managed identities for Azure resources REST endpoint from a Java client |
 | [Get a token using Go](#get-a-token-using-go) | Example of using managed identities for Azure resources REST endpoint from a Go client |
 | [Get a token using PowerShell](#get-a-token-using-powershell) | Example of using managed identities for Azure resources REST endpoint from a PowerShell client |
@@ -111,69 +110,55 @@ Using the Azure identity client library is the recommended way to use managed id
     using Azure.Core;
     using Azure.Identity;
     
-    string userAssignedClientId = "<your managed identity client Id>";
-    var credential = new DefaultAzureCredential(new DefaultAzureCredentialOptions { ManagedIdentityClientId = userAssignedClientId });
-    var accessToken = credential.GetToken(new TokenRequestContext(new[] { "https://vault.azure.net" }));
+    string managedIdentityClientId = "<your managed identity client Id>";
+    var credential = new ManagedIdentityCredential(managedIdentityClientId);
+    var accessToken = await credential.GetTokenAsync(new TokenRequestContext(["https://vault.azure.net"]));
     // To print the token, you can convert it to string 
-    String accessTokenString = accessToken.Token.ToString();
+    var accessTokenString = accessToken.Token;
     
-    //You can use the credential object directly with Key Vault client.     
+    // You can use the credential object directly with Key Vault client.     
     var client = new SecretClient(new Uri("https://myvault.vault.azure.net/"), credential);
     ```
 
-## Get a token using the Microsoft.Azure.Services.AppAuthentication library for .NET
-
-For .NET applications and functions, the simplest way to work with managed identities for Azure resources is through the Microsoft.Azure.Services.AppAuthentication package. This library will also allow you to test your code locally on your development machine. You can test your code using your user account from Visual Studio, the [Azure CLI](/cli/azure/), or Active Directory Integrated Authentication. For more on local development options with this library, see the [Microsoft.Azure.Services.AppAuthentication reference](/dotnet/api/overview/azure/service-to-service-authentication). This section shows you how to get started with the library in your code.
-
-1. Add references to the [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) and [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) NuGet packages to your application.
-
-2.  Add the following code to your application:
-
-    ```csharp
-    using Microsoft.Azure.Services.AppAuthentication;
-    using Microsoft.Azure.KeyVault;
-    // ...
-    var azureServiceTokenProvider = new AzureServiceTokenProvider();
-    string accessToken = await azureServiceTokenProvider.GetAccessTokenAsync("https://management.azure.com/");
-    // OR
-    var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
-    ```
-    
-To learn more about Microsoft.Azure.Services.AppAuthentication and the operations it exposes, see the [Microsoft.Azure.Services.AppAuthentication reference](/dotnet/api/overview/azure/service-to-service-authentication) and the [App Service and KeyVault with managed identities for Azure resources .NET sample](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
-
-
 ## Get a token using C#
-
 
 ```csharp
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Web.Script.Serialization; 
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
-// Build request to acquire managed identities for Azure resources token
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/");
-request.Headers["Metadata"] = "true";
-request.Method = "GET";
+// Construct HttpClient
+var httpClient = new HttpClient
+{
+    DefaultRequestHeaders =
+    {
+        { "Metadata", Boolean.TrueString }
+    }
+};
 
+// Construct URI to call
+var resource = "https://management.azure.com/";
+var uri = $"http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource={resource}";
+
+// Make call
+var response = await httpClient.GetAsync(uri);
 try
 {
-    // Call /token endpoint
-    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-    // Pipe response Stream to a StreamReader, and extract access token
-    StreamReader streamResponse = new StreamReader(response.GetResponseStream()); 
-    string stringResponse = streamResponse.ReadToEnd();
-    JavaScriptSerializer j = new JavaScriptSerializer();
-    Dictionary<string, string> list = (Dictionary<string, string>) j.Deserialize(stringResponse, typeof(Dictionary<string, string>));
-    string accessToken = list["access_token"];
+    response.EnsureSuccessStatusCode();
 }
-catch (Exception e)
+catch (HttpRequestException)
 {
-    string errorText = String.Format("{0} \n\n{1}", e.Message, e.InnerException != null ? e.InnerException.Message : "Acquire token failed");
+    var error = await response.Content.ReadAsStringAsync();
+    Console.WriteLine(error);
+    throw;
 }
 
+// Parse response using Newtonsoft.Json
+var content = await response.Content.ReadAsStringAsync();
+var obj = JObject.Parse(content);
+var accessToken = obj["access_token"];
+
+Console.WriteLine(accessToken);
 ```
 
 ## Get a token using Java
@@ -306,22 +291,28 @@ The following example demonstrates how to use the managed identities for Azure r
 2. Use the access token to call an Azure Resource Manager REST API and get information about the VM. Be sure to substitute your subscription ID, resource group name, and virtual machine name for `<SUBSCRIPTION-ID>`, `<RESOURCE-GROUP>`, and `<VM-NAME>`, respectively.
 
 ```azurepowershell
-Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -Headers @{Metadata="true"}
+Invoke-RestMeth -Method GET -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -Headers @{Metadata="true"}
 ```
 
 Example of how to parse the access token from the response:
 ```azurepowershell
 # Get an access token for managed identities for Azure resources
-$response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' `
-                              -Headers @{Metadata="true"}
-$content =$response.Content | ConvertFrom-Json
-$access_token = $content.access_token
-echo "The managed identities for Azure resources access token is $access_token"
+$resource = 'https://management.azure.com'
+$response = Invoke-RestMeth -Method GET `
+                            -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=$resource' `
+                            -Headers @{ Metadata="true" }
+$content = $response.Content | ConvertFrom-Json
+$accessToken = $content.access_token
+Write-Host "Access token using a User-Assigned Managed Identity is $accessToken"
 
 # Use the access token to get resource information for the VM
-$vmInfoRest = (Invoke-WebRequest -Uri 'https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>/providers/Microsoft.Compute/virtualMachines/<VM-NAME>?api-version=2017-12-01' -Method GET -ContentType "application/json" -Headers @{ Authorization ="Bearer $access_token"}).content
-echo "JSON returned from call to get VM info:"
-echo $vmInfoRest
+$secureToken = $accessToken | ConvertTo-SecureString -AsPlainText
+$vmInfoRest = Invoke-RestMeth -Method GET `
+                              -Uri 'https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>/providers/Microsoft.Compute/virtualMachines/<VM-NAME>?api-version=2017-12-01' `
+                              -ContentType 'application/json' `
+                              -Authentication Bearer `
+                              -Token $secureToken
+Write-Host "JSON returned from call to get VM info: $($vmInfoRest.content)"
 
 ```
 
@@ -331,13 +322,12 @@ echo $vmInfoRest
 curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true -s
 ```
 
-
 Example of how to parse the access token from the response:
 
 ```bash
 response=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true -s)
 access_token=$(echo $response | python -c 'import sys, json; print (json.load(sys.stdin)["access_token"])')
-echo The managed identities for Azure resources access token is $access_token
+echo Access token using a User-Assigned Managed Identity is $access_token
 ```
 
 ## Token caching
@@ -384,7 +374,7 @@ This section documents the possible error responses. A "200 OK" status is a succ
 |           | access_denied | The resource owner or authorization server denied the request. |  |
 |           | unsupported_response_type | The authorization server doesn't support obtaining an access token using this method. |  |
 |           | invalid_scope | The requested scope is invalid, unknown, or malformed. |  |
-| 500 Internal server error | unknown | Failed to retrieve token from the Active directory. For details see logs in *\<file path\>* | Verify that the VM has managed identities for Azure resources enabled. See [Configure managed identities for Azure resources on a VM using the Azure portal](qs-configure-portal-windows-vm.md) if you need assistance with VM configuration.<br><br>Also verify that your HTTP GET request URI is formatted correctly, particularly the resource URI specified in the query string. See the "Sample request" in the preceding REST section for an example, or [Azure services that support Microsoft Entra authentication](./managed-identities-status.md) for a list of services and their respective resource IDs.
+| 500 Internal server error | unknown | Failed to retrieve token from the Active directory. For details see logs in *\<file path\>* | Verify that the VM has managed identities for Azure resources enabled. See [Configure managed identities for Azure resources on a VM using the Azure portal](qs-configure-portal-windows-vm.md) if you need assistance with VM configuration.<br><br>Also verify that your HTTP GET request URI is formatted correctly, particularly the resource URI specified in the query string. See the "Sample request" in the preceding REST section for an example, or [Azure services that support Microsoft Entra authentication](./managed-identities-status.md) for a list of services and their respective resource IDs. |
 
 > [!IMPORTANT]
 > - IMDS isn't intended to be used behind a proxy and doing so is unsupported. For examples of how to bypass proxies, refer to the [Azure Instance Metadata Samples](https://github.com/microsoft/azureimds).  

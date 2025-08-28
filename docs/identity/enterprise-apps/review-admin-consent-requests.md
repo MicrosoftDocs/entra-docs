@@ -1,19 +1,16 @@
 ---
 title: Review and take action on admin consent requests
 description: Learn how to review and take action on admin consent requests that were created after you were designated as a reviewer.
-
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 04/08/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: enterprise-apps
 ai-usage: ai-assisted
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As a designated reviewer, I want to review and take action on admin consent requests, so that I can approve, deny, or block access to applications based on the requests.
 ---
 # Review and take action on admin consent requests
@@ -40,7 +37,7 @@ To review and take action on admin consent requests, you need:
 To review the admin consent requests and take action:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) who is a designated reviewer.
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Under **Activity**, select **Admin consent requests**.
 1. Select **My Pending** tab to view and act on the pending requests. 
 1. Select the application that is being requested from the list.

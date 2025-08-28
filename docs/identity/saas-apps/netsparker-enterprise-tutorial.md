@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with Invicti
+title: Configure Invicti for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Invicti.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Netsparker Enterprise so that I can control who has access to Netsparker Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Invicti
+# Configure Invicti for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Invicti with Microsoft Entra ID. When you integrate Invicti with Microsoft Entra ID, you can:
 
@@ -49,7 +46,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Invicti into Microsoft Entra ID, you need to add Invicti from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Invicti** in the search box.
 1. Select **Invicti** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -77,7 +74,7 @@ To configure and test Microsoft Entra SSO with Invicti, perform the following st
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Invicti** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Invicti** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 

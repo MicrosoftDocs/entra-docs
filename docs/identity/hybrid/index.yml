@@ -4,10 +4,10 @@ title: Hybrid identity documentation
 summary:  Microsoft’s identity solutions span on-premises and cloud-based capabilities, creating a single user identity for authentication and authorization to all resources, regardless of location. We call this hybrid identity.
 
 metadata:
-  author: billmath
+  author: omondiatieno
   description: Integrate your on-premises directories with Microsoft Entra ID. This allows you to provide a common identity for your users for Microsoft 365, Azure, and SaaS applications integrated with Microsoft Entra ID.
-  manager: femila
-  ms.author: billmath
+  manager: mwongerapk
+  ms.author: jomondi
   ms.collection: na
   ms.date: 05/01/2023
   ms.service: entra-id

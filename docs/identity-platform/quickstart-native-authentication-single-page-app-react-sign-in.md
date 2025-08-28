@@ -1,9 +1,8 @@
 ---
-title: Sign in users in a React SPA by using native authentication
-description: Learn how to configure a sample React single-page application that uses native authentication API to sign up users.
-
+title: "Sign in users in a React single-page app (SPA) by using native authentication"
+description: Learn how to configure a sample React single-page app (SPA) that uses native authentication API to sign up users.
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
@@ -12,11 +11,11 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, I want to configure a sample React single-page application using native authentication so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
 ---
 
-# Quickstart: Sign in users in a sample React single-page application by using native authentication (preview)
+# Quickstart: Sign in users in a React single-page app by using native authentication (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](reference-native-authentication-api.md). The sample app demonstrates user sign-up, sign in, sign out and password reset with an email and a password.
+In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](reference-native-authentication-api.md). The sample app demonstrates user sign-up, sign-in, sign-out, and password reset with an email and a password.
 
 ## Prerequisites
 
@@ -27,7 +26,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Ensure that the user flow includes the following user attributes:
+* A user flow. For more information, see [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Ensure that the user flow includes the following user attributes:
   * **Given Name**
   * **Surname**
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
@@ -36,7 +35,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
- 
+
 ## Enable public client and native authentication flows 
 
 [!INCLUDE [Enable public client and native authentication](../external-id/customers/includes/native-auth/enable-native-authentication.md)]
@@ -71,7 +70,7 @@ Alternatively, [Download the sample](https://github.com/Azure-Samples/ms-identit
 
 1. In your code editor, open *src\config.ts* file.
 
-1. Find the placeholder `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+1. Find the placeholder `Enter_the_Application_Id_Here` then  replace it with the Application (client) ID of the app you registered earlier.
 
 1. Save the changes.
 

@@ -2,14 +2,13 @@
 title: Client application configuration (MSAL)
 description: Learn about configuration options for public client and confidential client applications using the Microsoft Authentication Library (MSAL).
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: has-adal-ref
-ms.date: 06/06/2024
-ms.reviewer: saeeda
+ms.date: 05/14/2025
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn about the types of client applications so I can decide if this platform meets my app development needs.
 ---
 
@@ -22,6 +21,8 @@ To authenticate and acquire tokens, you initialize a new public or confidential 
   - [Client ID](#client-id)
   - [Redirect URI](#redirect-uri)
   - [Client secret](#client-secret) (for confidential client applications)
+  - [Certificate](#certificate) (for confidential client applications)
+  - [Federated identity credentials](#federated-identity-credentials) (for confidential client applications)
 - [Logging options](#logging), including log level, control of personal data, and the name of the component using the library
 
 ## Authority
@@ -58,15 +59,15 @@ The instance and audience can be concatenated and provided as the authority URL.
 
 The *instance* is used to specify if your app is signing users from the Azure public cloud or from national clouds. Using MSAL in your code, you can set the Azure cloud instance by using an enumeration or by passing the URL to the [national cloud instance](authentication-national-cloud.md#azure-ad-authentication-endpoints) as the `Instance` member.
 
-MSAL.NET will throw an explicit exception if both `Instance` and `AzureCloudInstance` are specified.
+MSAL.NET throws an explicit exception if both `Instance` and `AzureCloudInstance` are specified.
 
-If you don't specify an instance, your app will target the Azure public cloud instance (the instance of URL `https://login.onmicrosoftonline.com`).
+If you don't specify an instance, your app targets the Azure public cloud instance (the instance of URL `https://login.onmicrosoftonline.com`).
 
 ## Application audience
 
 The sign-in audience depends on the business needs for your app:
 
-- If you're a line of business (LOB) developer, you'll probably produce a single-tenant application that will be used only in your organization. In that case, specify the organization by its tenant ID (the ID of your Microsoft Entra instance) or by a domain name associated with the Microsoft Entra instance.
+- If you're a line of business (LOB) developer, you'll probably produce a single-tenant application that is used only in your organization. In that case, specify the organization by its tenant ID (the ID of your Microsoft Entra instance) or by a domain name associated with the Microsoft Entra instance.
 - If you're an ISV, you might want to sign in users with their work and school accounts in any organization or in some organizations (multitenant app). But you might also want to have users sign in with their personal Microsoft accounts.
 
 ### How to specify the audience in your code/configuration
@@ -82,9 +83,9 @@ Using MSAL in your code, you specify the audience by using one of the following 
   - `consumers` to sign in users only with their personal accounts
   - `common` to sign in users with their work and school accounts or their personal Microsoft accounts
 
-MSAL will throw a meaningful exception if you specify both the Microsoft Entra authority audience and the tenant ID.
+MSAL throws a meaningful exception if you specify both the Microsoft Entra authority audience and the tenant ID.
 
-It is recommended to specify an audience, as many tenants, and the applications deployed in them will have guest users. If your application will have external users, the endpoints of `common` and `organization` are best avoided. If you don't specify an audience, your app will target Microsoft Entra ID and personal Microsoft accounts as an audience and will behave as though `common` were specified.
+It's recommended to specify an audience, because many tenants, and applications deployed in them will have guest users. If your application is intended for external users, avoid the `common` and `organization` endpoints. If you don't specify an audience, your app targets Microsoft Entra ID and personal Microsoft accounts as an audience and will behave as though `common` were specified.
 
 ### Effective audience
 
@@ -97,17 +98,17 @@ Currently, the only way to get an app to sign in users with only personal Micros
 
 ## Client ID
 
-The client ID is the unique **Application (client) ID** assigned to your app by Microsoft Entra ID when the app was registered. You can find the **Application (Client) ID** on the Overview page for the application in **Identity** > **Applications** > **Enterprise applications**.
+The client ID is the unique **Application (client) ID** assigned to your app by Microsoft Entra ID when the app was registered. You can find the **Application (Client) ID** on the Overview page for the application in **Entra ID** > **Enterprise apps**.
 
 ## Redirect URI
 
-The redirect URI is the URI the identity provider will send the security tokens back to.
+The redirect URI is the URI the identity provider sends the security tokens back to.
 
 ### Redirect URI for public client apps
 
 If you're a public client app developer who's using MSAL:
 
-- You'd want to use `.WithDefaultRedirectUri()` in desktop or Universal Windows Platform (UWP) applications (MSAL.NET 4.1+). The `.WithDefaultRedirectUri()` method will set the public client application's redirect URI property to the default recommended redirect URI for public client applications.
+- You'd want to use `.WithDefaultRedirectUri()` in desktop applications (MSAL.NET 4.1+). The `.WithDefaultRedirectUri()` method sets the public client application's redirect URI property to the default recommended redirect URI for public client applications.
 
   | Platform | Redirect URI |
   | ---------------- | ---------------- |
@@ -117,8 +118,8 @@ If you're a public client app developer who's using MSAL:
 
 You can override the redirect URI by using the `RedirectUri` property (for example, if you use brokers). Here are some examples of redirect URIs for that scenario:
 
-- `RedirectUriOnAndroid` = "msauth-00001111-aaaa-2222-bbbb-3333cccc4444://com.microsoft.identity.client.sample";
-- `RedirectUriOnIos` = $"msauth.{Bundle.ID}://auth";
+- `RedirectUriOnAndroid` = `"msauth-00001111-aaaa-2222-bbbb-3333cccc4444://com.microsoft.identity.client.sample";`
+- `RedirectUriOnIos` = `$"msauth.{Bundle.ID}://auth";`
 
 For more Android details, see [Brokered auth in Android](msal-android-single-sign-on.md).
 
@@ -137,7 +138,19 @@ For web apps, the redirect URI (or reply URL) is the URI that Microsoft Entra ID
 
 For daemon apps, you don't need to specify a redirect URI.
 
-## Client secret
+## Application credentials
+
+For confidential client applications, managing credentials effectively is essential. The credentials can be federated credentials (recommended), a certificate, or a client secret. 
+
+### Federated identity credentials
+
+Federated identity credentials are a type of credential that allows workloads, such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](~/workload-id/workload-identity-federation.md).
+
+### Certificate
+
+This option specifies the certificate for the confidential client app. Sometimes called a *public key*, a certificate is the recommended credential type because they're considered more secure than client secrets. 
+
+### Client secret
 
 This option specifies the client secret for the confidential client app. The client secret (app password) is provided by the application registration portal or provided to Microsoft Entra ID during app registration with PowerShell Microsoft Entra ID, PowerShell AzureRM, or Azure CLI.
 

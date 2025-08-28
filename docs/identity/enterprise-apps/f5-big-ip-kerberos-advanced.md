@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm a IT administrator, and I want to configure F5 BIG-IP Access Policy Manager for Kerberos authentication. My goal is to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications. I want to improve governance and security for my organization.
 ---
 
@@ -92,7 +91,7 @@ This article covers the advanced configuration, a flexible SHA implementing that
 Before BIG-IP can hand off preauthentication to Microsoft Entra ID, register it in your tenant. This process initiates SSO between both entities. The app you create from the F5 BIG-IP gallery template is the relying party that represents the SAML SP for the BIG-IP published application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**, then select **New application**.
 3. The **Browse Microsoft Entra Gallery** pane appears with tiles for cloud platforms, on-premises applications, and featured applications. Applications in the **Featured applications** section have icons that indicate whether they support federated SSO and provisioning. 
 4. In the Azure gallery, search for **F5**, and select **F5 BIG-IP APM Microsoft Entra ID integration**.
 
@@ -151,7 +150,7 @@ The BIG-IP doesn't support group Managed Service Accounts (gMSA), therefore crea
 
 1. Enter the following PowerShell command. Replace the **UserPrincipalName** and **SamAccountName** values with your environment values. For better security, use a dedicated service principal name (SPN) that matches the host header of the application.
 
-    ```New-ADUser -Name "F5 BIG-IP Delegation Account" UserPrincipalName $HOST_SPN SamAccountName "f5-big-ip" -PasswordNeverExpires $true Enabled $true -AccountPassword (Read-Host -AsSecureString "Account Password") ```
+    ```New-ADUser -Name "F5 BIG-IP Delegation Account" UserPrincipalName $HOST_SPN SamAccountName "f5-big-ip" -PasswordNeverExpires $true Enabled $true -AccountPassword (Read-Host -AsSecureString "Account Password")```
 
     HOST_SPN = host/f5-big-ip.contoso.com@contoso.com
 
@@ -160,7 +159,7 @@ The BIG-IP doesn't support group Managed Service Accounts (gMSA), therefore crea
 
 2. Create a **Service Principal Name (SPN)** for the APM service account to use during delegation to the web application service account:
 
-    ```Set-AdUser -Identity f5-big-ip -ServicePrincipalNames @Add="host/f5-big-ip.contoso.com"} ```
+    ```Set-AdUser -Identity f5-big-ip -ServicePrincipalNames @Add="host/f5-big-ip.contoso.com"}```
 
     >[!NOTE]
      >It is mandatory to include the host/ part in the format of UserPrincipleName (host/name.domain@domain) or ServicePrincipleName (host/name.domain).
@@ -170,21 +169,21 @@ The BIG-IP doesn't support group Managed Service Accounts (gMSA), therefore crea
     * Confirm your web application is running in the computer context or a dedicated service account.
     * For the Computer context, use the following command to query the account object in the Active Directory to see its defined SPNs. Replace <name_of_account> with the account for your environment.
 
-        ```Get-ADComputer -identity <name_of_account> -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames ```
+        ```Get-ADComputer -identity <name_of_account> -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames```
 
         For example:
         Get-ADUser -identity f5-big-ip -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames
     
     * For the dedicated service account, use the following command to query the account object in Active Directory to see its defined SPNs. Replace <name_of_account> with the account for your environment.
       
-        ```Get-ADUser -identity <name_of_account> -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames ```
+        ```Get-ADUser -identity <name_of_account> -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames```
 
         For example:
         Get-ADComputer -identity f5-big-ip -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames
 
  4. If the application ran in the machine context, add the SPN to the object of the computer account in Active Directory:
 
-    ```Set-ADComputer -Identity APP-VM-01 -ServicePrincipalNames @{Add="http/myexpenses.contoso.com"} ```
+    ```Set-ADComputer -Identity APP-VM-01 -ServicePrincipalNames @{Add="http/myexpenses.contoso.com"}```
 
 With SPNs defined, establish trust for the APM service account delegate to that service. The configuration varies depending on the topology of your BIG-IP instance and application server.
 
@@ -192,11 +191,11 @@ With SPNs defined, establish trust for the APM service account delegate to that 
 
 1. Set trust for the APM service account to delegate authentication:
 
-    ```Get-ADUser -Identity f5-big-ip | Set-ADAccountControl -TrustedToAuthForDelegation $true ```
+    ```Get-ADUser -Identity f5-big-ip | Set-ADAccountControl -TrustedToAuthForDelegation $true```
 
 2. The APM service account needs to know the target SPN that it's trusted to delegate to. Set the target SPN to the service account running your web application:
 
-    ```Set-ADUser -Identity f5-big-ip -Add @{'msDS-AllowedToDelegateTo'=@('HTTP/myexpenses.contoso.com')} ```
+    ```Set-ADUser -Identity f5-big-ip -Add @{'msDS-AllowedToDelegateTo'=@('HTTP/myexpenses.contoso.com')}```
 
     >[!NOTE]
     >You can complete these tasks with the Active Directory Users and Computers, Microsoft Management Console (MMC) snap-in, on a domain controller.
@@ -209,21 +208,21 @@ You can use the PrincipalsAllowedToDelegateToAccount property of the application
 
 Use an SPN defined against a web application service account. For better security, use a dedicated SPN that matches the host header of the application. For example, because the web application host header in this example is myexpenses.contoso.com, add HTTP/myexpenses.contoso.com to the application service account object in Active Directory (AD):
 
-```Set-AdUser -Identity web_svc_account -ServicePrincipalNames @{Add="http/myexpenses.contoso.com"} ```
+```Set-AdUser -Identity web_svc_account -ServicePrincipalNames @{Add="http/myexpenses.contoso.com"}```
 
 For the following commands, note the context. 
 
 If the web_svc_account service runs in the context of a user account, use these commands:
 
-```$big-ip= Get-ADComputer -Identity f5-big-ip -server dc.contoso.com ```
-```Set-ADUser -Identity web_svc_account -PrincipalsAllowedToDelegateToAccount ```
-```$big-ip Get-ADUser web_svc_account -Properties PrincipalsAllowedToDelegateToAccount ```
+```$big-ip= Get-ADComputer -Identity f5-big-ip -server dc.contoso.com```
+```Set-ADUser -Identity web_svc_account -PrincipalsAllowedToDelegateToAccount```
+```$big-ip Get-ADUser web_svc_account -Properties PrincipalsAllowedToDelegateToAccount```
 
 If the web_svc_account service runs in the context of a computer account, use these commands:
 
-```$big-ip= Get-ADComputer -Identity f5-big-ip -server dc.contoso.com ```
-```Set-ADComputer -Identity web_svc_account -PrincipalsAllowedToDelegateToAccount ```
-```$big-ip Get-ADComputer web_svc_account -Properties PrincipalsAllowedToDelegateToAccount ```
+```$big-ip= Get-ADComputer -Identity f5-big-ip -server dc.contoso.com```
+```Set-ADComputer -Identity web_svc_account -PrincipalsAllowedToDelegateToAccount```
+```$big-ip Get-ADComputer web_svc_account -Properties PrincipalsAllowedToDelegateToAccount```
 
 For more information, see [Kerberos Constrained Delegation across domains](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11)).
 
@@ -459,7 +458,7 @@ While troubleshooting, consider the following points:
 * Ensure there are no duplicate SPNs in your environment. Run the following query at the command line: `setspn -q HTTP/my_target_SPN`.
 
 > [!NOTE]
-> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](/entra/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
+> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](/entra/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-17-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
 
 **Increase log verbosity**
 
@@ -493,7 +492,8 @@ For help with diagnosing KCD-related problems, see archived the F5 BIG-IP deploy
 
 ## Resources
 
-* My F5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+* My F5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
+
 * [Forget passwords, go passwordless](https://www.microsoft.com/security/business/identity/passwordless)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)

@@ -3,9 +3,9 @@ title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 author: kenwith
 ms.author: kenwith
-manager: femila
-ms.topic: conceptual
-ms.date: 04/09/2025
+manager: dougeby
+ms.topic: concept-article
+ms.date: 05/09/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -86,7 +86,7 @@ The total bandwidth you are allocated is determined by the number of licenses pu
 - Minimum number of licenses to use remote network connectivity feature is 50. 
 - The number of licenses is equal to the total number of licenses purchased (Entra ID P1 + Entra Internet Access /Entra Suite). After 10,000 licenses you get an additional 500 Mbps for every 500 licenses purchased (example 11,000 licenses = 36,000 Mbps). 
 - Organizations crossing the 10,000-license mark often operate at an enterprise scale requiring more robust infrastructure. The jump to 35,000 Mbps ensures ample capacity to meet the demands of such deployments, supporting higher traffic volumes and providing the flexibility to expand bandwidth allocations as needed. 
-- If more bandwidth is required, additional bandwidth will be available for purchase in increments of 500 Mbps via the Remote Network Bandwidth SKU.
+- If more bandwidth is required, additional bandwidth is available for purchase in increments of 500 Mbps via the Remote Network Bandwidth SKU.
 
 
 #### Examples of Allocated Bandwidth per tenant: 

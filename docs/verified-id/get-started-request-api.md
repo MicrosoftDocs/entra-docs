@@ -305,7 +305,7 @@ Authorization: Bearer  <token>
 
 Issuance request using the `idTokenHint` attestation flow:
 
-```JSON
+```json
 {
     "authority": "did:web:verifiedid.contoso.com",
     "callback": {
@@ -335,7 +335,7 @@ Issuance request using the `idTokenHint` attestation flow:
 
 Issuance request using the `idTokenHint` attestation flow that [sets the expiry date](issuance-request-api.md#issuance-request-payload):
 
-```JSON
+```json
 {
     "authority": "did:web:verifiedid.contoso.com",
     "callback": {
@@ -386,7 +386,7 @@ Authorization: Bearer  <token>
 
 Presentation request for a credential with a certain type and issuer:
 
-```JSON
+```json
 {
   "authority": "did:web:verifiedid.contoso.com",
   "callback": {
@@ -422,7 +422,7 @@ Presentation request for a credential with a certain type and issuer:
 
 Presentation request with [claims constraints](presentation-request-api.md#constraints-type):
 
-```JSON
+```json
 {
   "authority": "did:web:verifiedid.contoso.com",
   "includeReceipt": false,
@@ -466,7 +466,7 @@ Presentation request with [claims constraints](presentation-request-api.md#const
 
 Presentation request with FaceCheck. When using FaceCheck, the `includeReceipt` must be false as receipt isn't supported then.
 
-```JSON
+```json
 {
   "authority": "did:web:verifiedid.contoso.com",
   "includeReceipt": false,

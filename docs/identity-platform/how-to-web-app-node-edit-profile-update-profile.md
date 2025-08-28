@@ -1,14 +1,13 @@
 ---
 title: Edit profile in a Node.js web app
 description: Learn how to edit profile with multifactor authentication protection in your external-facing Node.js web app
-manager: mwongerapz
+manager: dougeby
 author: kengaderdus
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/14/2025
-ms.custom: developer
+ms.custom: 
 #Customer intent: As a developer, I want to learn how to add edit profile to a Node.js web app so that customer users can update their profile after a successful sign-in to external-facing app.
 ---
 
@@ -23,7 +22,6 @@ In this how-to guide, you learn how to call Microsoft Graph API for profile edit
 ## Prerequisites
 
 - Complete the steps in the second part of this guide series, [Set up a Node.js web application for profile editing](how-to-web-app-node-edit-profile-prepare-app.md).
-
 
 ## Complete the client web app
 

@@ -5,10 +5,10 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.date: 03/20/2024
-ms.reviewer: saeeda, dmwendia
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: overview
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want a quick introduction to the Microsoft identity platform so I can decide if this platform meets my application development requirements.
 ---
 
@@ -54,18 +54,34 @@ Workforce and external tenants have different capabilities and limitations. Choo
 
 Choose your preferred [application scenario](authentication-flows-app-scenarios.md). Each of these scenario paths has an overview and links to a quickstart to help you get started:
 
-- [React Single-page app (SPA)](quickstart-single-page-app-react-sign-in.md)
-- [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md)
-- [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md)
-- [Desktop app](scenario-desktop-app-registration.md)
-- [Daemon app](scenario-daemon-app-registration.md)
-- [Mobile app](scenario-mobile-app-registration.md)
+Browser based authentication (Workforce and External tenants):
+
+- [React Single-page app (SPA)](quickstart-single-page-app-react-sign-in.md) using browser-based authentication.
+- [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md).
+- [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md).
+- [Desktop app](scenario-desktop-app-registration.md).
+- [Daemon app](scenario-daemon-app-registration.md).
+- [Mobile app](scenario-mobile-app-registration.md) in a workforce tenant.
+
+
+Native authentication (External tenants only):
+- [React Single-page app (SPA)](quickstart-native-authentication-single-page-app-react-sign-in.md)
+- [Android app](quickstart-native-authentication-android-sign-in.md)
+- [iOS app](quickstart-native-authentication-ios-sign-in.md)
+- [macOS app](quickstart-native-authentication-macos-sign-in.md)
 
 For a more in-depth look at building applications using the Microsoft identity platform, see our multipart tutorial series for the following applications:
+
+Browser based authentication (Workforce and External tenants):
 
 - [React Single-page app (SPA)](tutorial-single-page-app-react-prepare-app.md)
 - [ASP.NET Core Web app](tutorial-web-app-dotnet-prepare-app.md)
 - [ASP.NET Core API](tutorial-web-api-dotnet-register-app.md)
+
+Native authentication (External tenants only):
+- [React Single-page app (SPA)](tutorial-native-authentication-single-page-app-react-sign-up.md)
+- [Android Kotlin app](tutorial-native-authentication-prepare-android-app.md)
+- [iOS/macOS Switch app](tutorial-native-authentication-prepare-ios-macos-app.md)
 
 As you work with the Microsoft identity platform to integrate authentication and authorization in your apps, you can refer to this image that outlines the most common app scenarios and their identity components. Select the image to view it full-size.
 
@@ -86,6 +102,7 @@ Learn how core authentication and Microsoft Entra concepts apply to the Microsof
 ## More identity and access management options
 
 [Azure AD B2C](/azure/active-directory-b2c/overview) - Build customer-facing applications your users can sign in to using their social accounts like Facebook or Google, or by using an email address and password.
+Effective May 1, 2025, Azure AD B2C will no longer be available to purchase for new customers. To learn more, please see [Is Azure AD B2C still available to purchase?](/azure/active-directory-b2c/faq?tabs=app-reg-ga#azure-ad-b2c-end-of-sale) in our FAQ.
 
 [Microsoft Entra External ID in workforce tenants](../external-id/what-is-b2b.md) - Invite external users into your Microsoft Entra tenant as "guest" users, and assign permissions for authorization while they use their existing credentials for authentication.
 

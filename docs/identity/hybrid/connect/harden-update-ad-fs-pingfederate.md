@@ -1,13 +1,13 @@
 ---
 title: 'Hardening update to Microsoft Entra Connect Sync AD FS and PingFederate configuration'
 description: This article describes security improvements to Microsoft Entra Connect Sync ADFS and PingFederate configuration.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ---
 
 # Hardening update to Microsoft Entra Connect Sync by April 30, 2025 
@@ -59,7 +59,7 @@ To assist customers with the upgrade process, we perform autoupgrades for select
 
 ### Workaround for enabling Staging mode post MSOnline retirement
 
-Past the MSOnline retirement date, older versions of Microsoft Entra Connect can’t switch Staging mode via the wizard.
+Post the MSOnline retirement date, older versions of Microsoft Entra Connect can’t switch Staging mode via the wizard.
 
 You can safely proceed with the in-place upgrade to fully restore Microsoft Entra Connect functionally, but in case you want to enable Staging mode prior to upgrade your server, the following workaround via PowerShell is available.
 

@@ -3,9 +3,9 @@ title: What is Global Secure Access?
 description: Learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access, provides network access control and visibility to users and devices inside and outside a traditional office.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: overview
-ms.date: 04/09/2025
+ms.date: 04/30/2025
 ms.service: global-secure-access
 ms.custom: references_regions
 ai-usage: ai-assisted
@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 # What is Global Secure Access?
 
-The way people work changed. Instead of working in traditional offices, people now work from nearly anywhere. With applications and data moving to the cloud, an identity-aware, cloud-delivered network perimeter for the modern workforce is needed. This new network security category is called Security Service Edge (SSE).
+The way people work changed. Instead of working in traditional offices, people now work from nearly anywhere. As applications and data move to the cloud, the modern workforce needs an identity-aware, cloud-delivered network perimeter. This new network security category is called Security Service Edge (SSE).
 
 Microsoft Entra Internet Access and Microsoft Entra Private Access comprise Microsoft's Security Service Edge (SSE) solution. Global Secure Access is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. Global Secure Access is the unified location in the Microsoft Entra admin center. Global Secure Access is built upon the core principles of Zero Trust to use least privilege, verify explicitly, and assume breach.
 
@@ -29,7 +29,7 @@ The Global Secure Access features streamline the roll-out and management of the 
 
 ## Microsoft Entra Internet Access
 
-Microsoft Entra Internet Access secures access to all internet and SaaS apps and resources while protecting your organization against internet threats, malicious network traffic, and unsafe or noncompliant content with an identity-centric secure web gateway (SWG).
+Microsoft Entra Internet Access protects access to internet and SaaS apps with an identity-based Secure Web Gateway (SWG), blocking threats, unsafe content, and malicious traffic.
 
 ### Key features
 
@@ -95,14 +95,14 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 | Context-aware network security   |                                                  | ✅                                               |                                                  |
 | Web category filtering           |                                                  | ✅                                               |                                                  |
 | Fully qualified domain name (FQDN) filtering |                                      | ✅                                               |                                                  |
-| Universal CAE                    | ✅                                              | ✅                                               | ✅                                              |
+| Universal Continuous Access Evaluation (CAE) | ✅                                   | ✅                                               | ✅                                              |
 | VPN replacement with an identity-centric ZTNA |                                     |                                                   | ✅                                              |
 | Quick Access                     |                                                  |                                                   | ✅                                              |
 | App Discovery                    |                                                  |                                                   | ✅                                              |
-| Private DNS                      |                                                  |                                                   | ✅                                              |
+| Private Domain Name System (DNS) |                                                  |                                                   | ✅                                              |
 | Single sign-on across all private apps |                                            |                                                   | ✅                                              |
 | Marketplace availability         |                                                  |                                                   | ✅                                              |
-| Private network connector multi-cloud support |                                     |                                                   | ✅                                              |
+| Private network connector multicloud support |                                     |                                                   | ✅                                              |
 
 *Included in Microsoft Entra Suite
 
@@ -113,5 +113,6 @@ The remote network (branch connectivity) feature is included in both the Microso
 
 ## Related content
 
+- [Video: 425 Show "Is Global Secure Access Right for You?"](https://youtu.be/2OSbu7d8IOU)
 - [Get started with Global Secure Access](how-to-get-started-with-global-secure-access.md)
 - [Stay in the loop with the latest Microsoft Entra ID updates](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/bg-p/Identity)

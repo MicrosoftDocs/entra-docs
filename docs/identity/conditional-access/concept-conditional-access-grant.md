@@ -1,16 +1,15 @@
 ---
 title: Grant controls in Conditional Access policy
 description: Grant controls in a Microsoft Entra Conditional Access policy.
-
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 03/12/2024
-
+ms.topic: article
+ms.date: 06/24/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth, jogro
+ms.custom: sfi-image-nochange
 ---
 # Conditional Access: Grant
 
@@ -51,25 +50,27 @@ Selecting this checkbox requires users to perform Microsoft Entra multifactor au
 
 ### Require authentication strength
 
-Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Protection** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
+Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Entra ID** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
 
 ### Require device to be marked as compliant
 
 Organizations that deploy Intune can use the information returned from their devices to identify devices that meet specific policy compliance requirements. Intune sends compliance information to Microsoft Entra ID so Conditional Access can decide to grant or block access to resources. For more information about compliance policies, see [Set rules on devices to allow access to resources in your organization by using Intune](/mem/intune/protect/device-compliance-get-started).
 
-A device can be marked as compliant by Intune for any device operating system or by a third-party mobile device management system for Windows devices. You can find a list of supported third-party mobile device management systems in [Support third-party device compliance partners in Intune](/mem/intune/protect/device-compliance-partners).
+A device can be marked as compliant by Intune for any device operating system or by a non-Microsoft mobile device management system for Windows devices. You can find a list of supported non-Microsoft mobile device management systems in [Support non-Microsoft device compliance partners in Intune](/mem/intune/protect/device-compliance-partners).
 
 Devices must be registered in Microsoft Entra ID before they can be marked as compliant. You can find more information about device registration in [What is a device identity?](~/identity/devices/overview.md).
 
 The **Require device to be marked as compliant** control:
 
 - Only supports Windows 10+, iOS, Android, macOS, and Linux Ubuntu devices registered with Microsoft Entra ID and enrolled with Intune.
-- Microsoft Edge in InPrivate mode on Windows is considered a noncompliant device.
+- Microsoft Edge in InPrivate mode on Windows is considered as a noncompliant device.
 
 > [!NOTE]
-> On Windows, iOS, Android, macOS, and some third-party web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
+> On Windows, iOS, Android, macOS, and some non-Microsoft web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
 
 You can use the Microsoft Defender for Endpoint app with the approved client app policy in Intune to set the device compliance policy to Conditional Access policies. There's no exclusion required for the Microsoft Defender for Endpoint app while you're setting up Conditional Access. Although Microsoft Defender for Endpoint on Android and iOS (app ID dd47d17a-3194-4d86-bfd5-c6ae6f5651e3) isn't an approved app, it has permission to report device security posture. This permission enables the flow of compliance information to Conditional Access.
+
+Similarly, the **Require device to be marked as compliant** doesn't block Microsoft Authenticator app access to the `UserAuthenticationMethod.Read` scope. Authenticator needs access to the `UserAuthenticationMethod.Read` scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to `UserAuthenticationMethod.ReadWrite` to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
 
 <a name='require-hybrid-azure-ad-joined-device'></a>
 
@@ -89,7 +90,7 @@ The **Require Microsoft Entra hybrid joined device** control:
 Organizations can require that an approved client app is used to access selected cloud apps. These approved client apps support [Intune app protection policies](/mem/intune/apps/app-protection-policy) independent of any mobile device management solution.
 
 > [!WARNING]
-> The approved client app grant is retiring in early March 2026. Organizations must transition all current Conditional Access policies that use only the Require Approved Client App grant to Require Approved Client App or Application Protection Policy by March 2026. Additionally, for any new Conditional Access policy, only apply the Require application protection policy grant. For more information, see the article [Migrate approved client app to application protection policy in Conditional Access](migrate-approved-client-app.md).
+> The approved client app grant is retiring in early March 2026. Organizations must transition all current Conditional Access policies that use **only** the Require Approved Client App grant to Require Approved Client App **or** Application Protection Policy by March 2026. Additionally, for any new Conditional Access policy, only apply the Require application protection policy grant. For more information, see the article [Migrate approved client app to application protection policy in Conditional Access](migrate-approved-client-app.md).
 
 To apply this grant control, the device must be registered in Microsoft Entra ID, which requires using a broker app. The broker app can be Microsoft Authenticator for iOS, or either Microsoft Authenticator or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the appropriate app store to install the required broker app.
 
@@ -176,9 +177,10 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Notate for Intune
 - Provectus - Secure Contacts
 - Viva Engage (Android, iOS, and iPadOS)
+- Windows App (Android, iOS/iPadOS, and Edge on Windows)
 
 > [!NOTE]
-> Kaizala, Skype for Business, and Visio don't support the **Require app protection policy** grant. If you require these apps to work, use the **Require approved apps** grant exclusively. Using the "or" clause between the two grants will not work for these three applications.
+> Kaizala, Skype for Business, and Visio don't support the **Require app protection policy** grant. If you require these apps to work, use the **Require approved apps** grant exclusively. Using the "or" clause between the two grants won't work for these three applications.
 
 See [Require app protection policy and an approved client app for cloud app access with Conditional Access](./policy-all-users-device-compliance.md) for configuration examples.
 

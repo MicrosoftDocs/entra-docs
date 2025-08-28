@@ -1,7 +1,6 @@
 ---
 title: Assign, update, list, or remove custom security attributes for a user
 description: Assign, update, list, or remove custom security attributes for a user in Microsoft Entra ID.
-
 author: rolyon
 manager: femila
 ms.author: rolyon
@@ -9,7 +8,7 @@ ms.date: 08/25/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro, no-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign, update, list, or remove custom security attributes for a user
@@ -32,7 +31,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 1. Make sure that you have defined custom security attributes. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md).
 
-1. Browse to **Identity**  > **Users** > **All users**.
+1. Browse to **Identity **Users** > **All users**.
 
 1. Find and select the user you want to assign custom security attributes to.
 
@@ -58,7 +57,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity**  > **Users** > **All users**.
+1. Browse to **Identity **Users** > **All users**.
 
 1. Find and select the user that has a custom security attribute assignment value you want to update.
 
@@ -78,7 +77,7 @@ You can filter the list of custom security attributes assigned to users on the A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader).
 
-1. Browse to **Identity**  > **Users** > **All users**.
+1. Browse to **Identity **Users** > **All users**.
 
 1. Select **Add filter** to open the Add filter pane.
 
@@ -98,7 +97,7 @@ You can filter the list of custom security attributes assigned to users on the A
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity**  > **Users** > **All users**.
+1. Browse to **Identity **Users** > **All users**.
 
 1. Find and select the user that has the custom security attribute assignments you want to remove.
 

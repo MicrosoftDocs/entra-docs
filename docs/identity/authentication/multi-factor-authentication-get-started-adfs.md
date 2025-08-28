@@ -5,12 +5,12 @@ description: This is the Microsoft Entra multifactor authentication page that de
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: get-started
 ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: michmcla
 ---
 # Getting started with Microsoft Entra multifactor authentication and Active Directory Federation Services

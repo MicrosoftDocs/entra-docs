@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Colloquial
+title: Configure Colloquial for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Colloquial.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Colloquial so that I can control who has access to Colloquial, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Colloquial
+# Configure Colloquial for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Colloquial with Microsoft Entra ID. Colloquial enables companies to manage the portfolio of their capabilities, processes, information, apps or technology. When you integrate Colloquial with Microsoft Entra ID, you can:
 
@@ -61,7 +61,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Colloquial** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Colloquial** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

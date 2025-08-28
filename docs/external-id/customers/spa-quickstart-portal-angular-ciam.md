@@ -3,7 +3,7 @@ title: "Quickstart: Add sign in to an Angular SPA"
 description: Learn how to run a sample Angular SPA to sign in users
  
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
  

@@ -3,37 +3,38 @@ title: Migrate applications away from secret-based authentication
 description: Migrate applications away from secret-based authentication to improve security and user experience.
 
 author: garrodonnell
-manager: celested
+manager: dougeby
 ms.service: entra-id
 
-ms.topic: how-to
-ms.date: 11/13/2024
+ms.topic: concept-article
+ms.date: 03/19/2025
 ms.author: godonnell
 ms.subservice: enterprise-apps
 
 #customer intent: As an IT admin currently using secret-based authentication, I want to migrate my applications to a more secure and user-friendly authentication method, so that I can improve security and user experience.
 ---
 
+
 # Migrate applications away from secret-based authentication
 
-Applications that use client secrets might store them in configuration files, hardcode them in scripts, or risk their exposure in other ways. Secret management complexities make secrets susceptible to leaks and attractive to attackers. Client secrets, when exposed, provide attackers with legitimate credentials to blend their activities with legitimate operations, making it easier to bypass security controls. If an attacker compromises an application’s client secret, they can escalate their privileges within the system, leading to broader access and control, depending on the permissions of the application. Replacing a compromised certificate can be incredibly time-consuming and disruptive. For these reasons, Microsoft recommend that all of our customers move away password or certificate-based authentication to token-based authentication. 
+Applications that use client secrets might store them in configuration files, hardcode them in scripts, or risk their exposure in other ways. Secret management complexities make secrets susceptible to leaks and attractive to attackers. Client secrets, when exposed, provide attackers with legitimate credentials to blend their activities with legitimate operations, making it easier to bypass security controls. If an attacker compromises an application’s client secret, they can escalate their privileges within the system, leading to broader access and control, depending on the permissions of the application. Replacing a compromised certificate can be incredibly time-consuming and disruptive. For these reasons, Microsoft recommends that all of our customers move away from password or certificate-based authentication to token-based authentication. 
 
-In this article, we will highlight resources and best practices to help you migrate your applications away from secret-based authentication to more secure and user-friendly authentication methods.
+In this article, we highlight resources and best practices to help you migrate your applications away from secret-based authentication to more secure and user-friendly authentication methods.
 
 ## Why migrate applications away from secret-based authentication?
 
 Migrating applications away from secret-based authentication offers several benefits:
 
-- **Improved security**: Secret-based authentication is susceptible to leaks and attacks. Migrating to more secure authentication methods, such as managed identities, can help improve security.  
+- **Improved security**: Secret-based authentication is susceptible to leaks and attacks. Migrating to more secure authentication methods, such as managed identities, improves security.  
 
-- **Reduced complexity**: Managing secrets can be complex and error-prone. Migrating to more secure authentication methods can help reduce complexity and improve security.  
+- **Reduced complexity**: Managing secrets can be complex and error-prone. Migrating to more secure authentication methods reduces complexity and improves security.  
 
-- **Scalability**: Migrating to more secure authentication methods can help you scale your applications securely.  
+- **Scalability**: Migrating to more secure authentication methods helps you scale your applications securely.  
 
-- **Compliance**: Migrating to more secure authentication methods can help you meet compliance requirements and security best practices.  
+- **Compliance**: Migrating to more secure authentication methods helps you meet compliance requirements and security best practices.  
 
 
-## How to migrate applications away from secret-based authentication
+## Best practices for migrating applications away from secret-based authentication
 
 To migrate applications away from secret-based authentication, consider the following best practices:
 
@@ -41,23 +42,23 @@ To migrate applications away from secret-based authentication, consider the foll
 
 Managed identities are a secure way to authenticate applications to cloud services without the need to manage credentials or to have credentials in your code. Azure services use this identity to authenticate to services that support Microsoft Entra authentication. To learn more, see [Assign a managed identity access to an application role](../../identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity.md).  
 
-For applications that cannot be migrated in the short term, rotate the secret and ensure they use secure practices such as using Azure Key Vault. Azure Key Vault helps you safeguard cryptographic keys and secrets used by cloud applications and services. Keys, secrets, and certificates are protected without you're having to write the code yourself, and you can easily use them from your applications. To learn more, see [Azure Key Vault](/azure/key-vault/general/developers-guide).  
+For applications that can't be migrated in the short term, rotate the secret and ensure they use secure practices such as using Azure Key Vault. Azure Key Vault helps you safeguard cryptographic keys and secrets used by cloud applications and services. Keys, secrets, and certificates are protected without you having to write the code yourself, and you can easily use them from your applications. To learn more, see [Azure Key Vault](/azure/key-vault/general/developers-guide).  
     
 ### Deploy Conditional Access policies for workload identities
 
-Conditional Access for workload identities enables you to block service principals from outside of known public IP ranges, based on risk detected by Microsoft Entra ID Protection or in combination with authentication contexts. To learn more, see [Conditional Access for workload identities](../conditional-access/workload-identity.md). 
+Conditional Access for workload identities enables you to block service principals from outside of known public IP ranges, based on risk detected by Microsoft Entra Protection or in combination with authentication contexts. To learn more, see [Conditional Access for workload identities](../conditional-access/workload-identity.md). 
 
 > [!IMPORTANT]
 > Workload Identities Premium licenses are required to create or modify Conditional Access policies scoped to service principals.
-> In directories without appropriate licenses, existing Conditional Access policies for workload identities will continue to function, but can't be modified. For more information, see [Microsoft Entra Workload ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz).   
+> In directories without appropriate licenses, existing Conditional Access policies for workload identities continue to function, but can't be modified. For more information, see [Microsoft Entra Workload ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz).   
 
 ### Implement secret scanning
 
-Secret scanning for your repository checks for any secrets that may already exist in your source code across history and push protection prevents any new secrets from being exposed in source code. To learn more, see [Secret scanning](/azure/devops/repos/security/github-advanced-security-secret-scanning).  
+Secret scanning for your repository checks for any secrets that might already exist in your source code across history and push protection prevents any new secrets from being exposed in source code. To learn more, see [Secret scanning](/azure/devops/repos/security/github-advanced-security-secret-scanning).  
 
 ### Deploy application authentication policies to enforce secure authentication practices
 
-Application management policies allow IT admins to enforce best practices for how apps in their organizations should be configured. For example, an admin might configure a policy to block the use or limit the lifetime of password secrets. To learn more, see [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy).  
+Application management policies allow IT admins to enforce best practices for how apps in their organizations should be configured. For example, an admin might configure a policy to block the use or limit the lifetime of password secrets. To learn more, see [Tutorial: Enforce secret and certificate standards using application management policies](tutorial-enforce-secret-standards.md) and [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy).
 
 > [!IMPORTANT]
 > Premium licenses are required to implement application authentication policy management, for more information, see [Microsoft Entra licensing](../../fundamentals/licensing.md).   

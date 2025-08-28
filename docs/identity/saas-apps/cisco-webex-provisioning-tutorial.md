@@ -2,19 +2,19 @@
 title: Configure Cisco Webex for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Cisco Webex.
 
-author: thomasakelo
-manager: CelesteDG
+author: adimitui
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: addimitu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cisco Webex so that I can streamline the user management process and ensure that users have the appropriate access to Cisco Webex.
 ---
 
-# Configure Cisco Webex for automatic user provisioning
+# Configure Cisco Webex for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in Cisco Webex  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users to Cisco Webex.
 
@@ -41,7 +41,7 @@ Before configuring Cisco Webex for automatic user provisioning with Microsoft En
 **To add Cisco Webex from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Cisco Webex**, select **Cisco Webex** from result panel then select **Add** button to add the application.
 
     ![Screenshot shows the Cisco Webex in the results list.](media/cisco-webex-provisioning-tutorial/search-cisco-app.png)
@@ -69,7 +69,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Cisco Webex in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cisco Webex**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Cisco Webex**.
 
     ![Screenshot shows the Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -115,24 +115,24 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Cisco Webex|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |name.givenName|String||
-   |name.familyName|String||
-   |active|Boolean||
-   |displayName|String||
-   |externalId|String||
+   |userName|String|&check;|&check;|
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |active|Boolean|||
+   |displayName|String|||
+   |externalId|String|||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Cisco Webex**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Cisco Webex in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Cisco Webex for update operations. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by Cisco Webex
+   |Attribute|Type|Supported for filtering|Required by Cisco Webex|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |members|Reference||
-   |externalId|String||
+   |displayName|String|&check;|&check;|
+   |members|Reference|||
+   |externalId|String|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Cisco Webex, change the **Provisioning Status** to **On** in the **Settings** section.
 

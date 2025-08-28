@@ -3,7 +3,7 @@ title: Bulk changes to usernames during verified domain changes
 description: Learn how Microsoft Entra audit logs display UserManagement updates from Core Directory during verified domain changes.
 
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health

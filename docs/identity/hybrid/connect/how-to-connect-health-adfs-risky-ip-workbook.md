@@ -1,17 +1,16 @@
 ---
 title: Microsoft Entra Connect Health with AD FS risky IP report workbook
 description: Describes the Microsoft Entra Connect Health AD FS risky IP report with Azure Monitor Workbooks.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: billmath
-ms.custom:
-ms.collection:
+ms.author: jomondi
+ms.custom: sfi-image-nochange
+ms.collection: 
 ---
 
 
@@ -69,7 +68,7 @@ Filter the report by IP address or user name to see an expanded view of sign-ins
 To access the workbook:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > ***Monitoring and health** > **Workbooks**. 
+2. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**. 
 3. Select the Risky IP report workbook. 
 
 ## Load balancer IP addresses in the list

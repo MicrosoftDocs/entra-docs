@@ -1,18 +1,15 @@
 ---
-title: 'Configure an OpenID Connect OAuth application from Microsoft Entra app gallery'
+title: Configure an OpenID Connect OAuth application from Microsoft Entra app gallery
 description: Steps to Configure an OpenID Connect OAuth application from Microsoft Entra app gallery.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-ms.custom: 
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenID Connect OAuth so that I can control who has access to OpenID Connect OAuth, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure an OpenID Connect OAuth application from Microsoft Entra app gallery
@@ -20,7 +17,7 @@ ms.custom:
 ## Process of adding an OpenID application from the gallery
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
     ![The Enterprise applications blade](common/enterprise-applications.png)
 

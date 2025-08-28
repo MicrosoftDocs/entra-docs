@@ -3,7 +3,7 @@ title: Configure Contentful for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentful.
 
 
-author: thomasakelo
+author: adimitui
 manager: jeedes
 
 ms.service: entra-id
@@ -12,12 +12,12 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: addimitu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Contentful so that I can streamline the user management process and ensure that users have the appropriate access to Contentful.
 ---
 
-# Configure Contentful for automatic user provisioning
+# Configure Contentful for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to complete in Contentful and in Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Contentful](https://www.contentful.com/) by using the Microsoft Entra provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -90,7 +90,7 @@ This section guides you through the steps to set up the Microsoft Entra provisio
 ### Configure automatic user provisioning for Contentful in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
    ![Screenshot that shows the Enterprise applications menu in the Azure portal, with All applications highlighted.](common/enterprise-applications.png)
 
@@ -123,8 +123,8 @@ This section guides you through the steps to set up the Microsoft Entra provisio
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |name.givenName|String|
-   |name.familyName|String|
+   |name.givenName|String||
+   |name.familyName|String||
 
 10. In the **Mappings** section, select **Synchronize Microsoft Entra groups to Contentful**.
 
@@ -133,9 +133,9 @@ This section guides you through the steps to set up the Microsoft Entra provisio
     |Attribute|Type|Supported for filtering|
     |---|---|---|
     |displayName|String|&check;|
-    |members|Reference|
+    |members|Reference||
 
-12. To set up scoping filters, complete the steps that are described in the [scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To set up scoping filters, complete the steps that are described in the [scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Contentful, in the **Settings** section, for **Provisioning Status**, select **On**.
 

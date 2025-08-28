@@ -2,11 +2,11 @@
 title: Logs available for streaming from Microsoft Entra ID
 description: Learn about the Microsoft Entra logs available for streaming to an endpoint for storage, analysis, or monitoring.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: article
 ms.subservice: monitoring-health
-ms.date: 04/10/2025
+ms.date: 04/16/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 

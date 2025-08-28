@@ -1,21 +1,19 @@
 ---
 title: How to configure certificate authorities for Microsoft Entra certificate-based authentication
 description: Topic that shows how to configure certificate authorities for Microsoft Entra certificate-based authentication.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
-
+ms.date: 07/02/2025
 ms.author: justinha
 author: vimrang
-manager: femila
+manager: dougeby
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
 ---
 # How to configure certificate authorities for Microsoft Entra certificate-based authentication
 
-The best way to configure the certificate authorities (CAs) is with the PKI-based trust store (Preview). You can delegate configuration with a PKI-based trust store to least privileged roles. For more information see, [Step 1: Configure the certificate authorities with PKI-based trust store (Preview)](how-to-certificate-based-authentication.md#step-1-configure-the-certificate-authorities-with-pki-based-trust-store-preview).
+The best way to configure the certificate authorities (CAs) is with the PKI-based trust store. You can delegate configuration with a PKI-based trust store to least privileged roles. For more information see, [Step 1: Configure the certificate authorities with PKI-based trust store](how-to-certificate-based-authentication.md#step-1-configure-the-cas-with-a-pki-based-trust-store).
 
 As an alternative, a Global Administrator can follow steps in this topic to configure CAs by using the Microsoft Entra admin center, or Microsoft Graph REST APIs and the supported software development kits (SDKs), such as Microsoft Graph PowerShell. 
 
@@ -34,7 +32,7 @@ To configure certificate authorities to enable CBA in the Microsoft Entra admin 
 [!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
+1. Browse to **Entra ID** > **Identity Secure Score** > **Certificate authorities**.
 1. To upload a CA, select **Upload**: 
    1. Select the CA file.
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
@@ -98,7 +96,7 @@ The following table and graphic show how to map information from the CA certific
  of the CA in the certificate authority Microsoft Management Console (MMC).
 >- On the CA by running `certutil -cainfo cdp`. For more information, see [certutil](/windows-server/administration/windows-commands/certutil#-cainfo).
 
-For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
+For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#certificate-revocation-process).
 
 ### Configure certificate authorities using the Microsoft Graph APIs
 

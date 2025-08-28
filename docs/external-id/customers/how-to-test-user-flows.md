@@ -1,18 +1,14 @@
 ---
 title: Test a user flow
 description: Learn how to use the Run user flow feature to test your sign-up and sign-in user flow for your consumer and business customer apps.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
-
 ms.topic: how-to
 ms.date: 01/22/2025
-ms.author: mimart
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to see the end user's experience when they sign in to an application that uses the user flow I created.
 ---
 
@@ -39,7 +35,7 @@ Follow these steps to use the **Run user flow** feature to test your user flow.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select your user flow from the list. At least one application with a redirect URI must be associated with this user flow (see the [Prerequisites](#prerequisites)).
 

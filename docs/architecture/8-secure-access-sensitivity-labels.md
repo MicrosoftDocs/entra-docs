@@ -5,10 +5,10 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/23/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+ms.custom: sfi-ga-nochange
 ---
 
 # Control external access to resources in Microsoft Entra ID with sensitivity labels

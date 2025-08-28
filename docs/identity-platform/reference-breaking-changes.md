@@ -1,10 +1,9 @@
 ---
 title: Updates and breaking changes
 description: Learn about changes to the Microsoft identity platform that can impact your application.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
-ms.custom: has-adal-ref
+ms.author: owenrichards
 ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
@@ -346,8 +345,8 @@ To remedy this issue, use the Admin Consent experience to create the client appl
 
 #### Example request
 
-`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&...`
-In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `00001111-aaaa-2222-bbbb-3333cccc4444`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
+`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0&...`
+In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
 
 If the Contoso gateway app were a multitenant application, however, then the request would continue regardless of the client app having a service principal within Contoso.com.
 
@@ -412,7 +411,7 @@ Starting on November 15, 2018, Microsoft Entra ID will stop accepting previously
 
 If your app reuses authorization codes to get tokens for multiple resources, we recommend that you use the code to get a refresh token, and then use that refresh token to acquire additional tokens for other resources. Authorization codes can only be used once, but refresh tokens can be used multiple times across multiple resources. Any new app that attempts to reuse an authentication code during the OAuth code flow will get an invalid_grant error.
 
-For more information about refresh tokens, see [Refreshing the access tokens](v2-oauth2-auth-code-flow.md#refresh-the-access-token). If using ADAL or MSAL, this is handled for you by the library - replace the second instance of `AcquireTokenByAuthorizationCodeAsync` with `AcquireTokenSilentAsync`.
+For more information about refresh tokens, see [Refreshing the access tokens](v2-oauth2-auth-code-flow.md#refresh-the-access-token). If using MSAL, this is handled for you by the library - replace the second instance of `AcquireTokenByAuthorizationCodeAsync` with `AcquireTokenSilentAsync`.
 
 ## May 2018
 

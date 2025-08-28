@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT administrator, and I want to configure F5 BIG-IP Easy Button for header-based SSOLearn. I need to secure header-based applications with Microsoft Entra ID and improve Zero Trust governance through preauthentication and Conditional Access. 
 ---
 
@@ -97,7 +96,7 @@ Learn more: [Quickstart: Register an application with the Microsoft identity pla
 Create a tenant app registration to authorize the Easy Button access to Graph. With these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations** > **New registration**.
+2. Browse to **Entra ID** > **App registrations** > **New registration**.
 3. Under **Manage**, select **App registrations > New registration**.
 4. Enter an application **Name**.
 5. Specify who uses the application.
@@ -388,4 +387,4 @@ Use the **View Variables** link to help determine SSO issues, particularly if th
 Learn more:
 
 * [Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072)
-* Go to techdocs.f5.com for [Manual Chapter: LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/5.html)
+* Go to techdocs.f5.com for [Manual Chapter: LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/5.html)

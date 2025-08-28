@@ -1,20 +1,20 @@
 ---
-title: Create a Microsoft Entra Domain Services forest trust using Azure PowerShell (Preview) | Microsoft Learn
+title: Create a Microsoft Entra Domain Services forest trust using Azure PowerShell | Microsoft Learn
 description: In this article, learn how to create and configure a Microsoft Entra Domain Services forest trust to an on-premises Active Directory Domain Services environment using Azure PowerShell.
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
-ms.date: 01/26/2025
+ms.topic: how-to
+ms.date: 06/30/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services forest and one-way outbound trust from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest using Azure PowerShell to provide authentication and resource access between forests.
 ---
 
-# Create a Microsoft Entra Domain Services forest trust to an on-premises domain using Azure PowerShell (Preview)
+# Create a Microsoft Entra Domain Services forest trust to an on-premises domain using Azure PowerShell 
 
 Organizations often create a trust to improve user collaboration when they might manage identities in a hybrid environment, or they plan for a merger or acquisition. Microsoft Entra Domain Services always supported one-way, outbound trusts from a managed domain to another domain. Currently in preview, you can also create one-way inbound trusts or two-way trusts. 
 

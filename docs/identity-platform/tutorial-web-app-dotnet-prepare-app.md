@@ -2,12 +2,12 @@
 title: "Tutorial: Prepare a web application for authentication"
 description: Learn how to create and prepare an ASP.NET Core application for authentication with the Microsoft identity platform, and secure it with a self-signed certificate.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.date: 01/18/2024
+ms.date: 04/15/2025
 ms.service: identity-platform
-
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Microsoft Entra admin center and configure the application for authentication.
 ---
 
@@ -17,7 +17,7 @@ ms.topic: tutorial
 
 In this tutorial, you create an ASP.NET Core web app and configure it for authentication. This is part 1 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. This application can be used for employees in a workforce tenant or for customers using an external tenant
 
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 > * Create an ASP.NET Core web app
@@ -60,9 +60,9 @@ In this tutorial:
 
 ## Create an ASP.NET Core project
 
-In this section, you'll create an ASP.NET Core project in Visual Studio Code.
+In this section, you create an ASP.NET Core project in Visual Studio Code.
 
-1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
+1. Open Visual Studio Code and select **File > Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
 1. Enter the following command to make a Model View Controller (MVC) ASP.NET Core project.
 

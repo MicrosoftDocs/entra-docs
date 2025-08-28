@@ -2,7 +2,7 @@
 title: Create or approve a request for permissions in the Remediation dashboard
 description: How to create or approve a request for permissions in the Remediation dashboard.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
@@ -89,6 +89,7 @@ The **Remediation** dashboard has two privilege-on-demand (POD) workflows you ca
 
 
 ## Following are the time limits per frequency type while creating the request.
+
 | Frequency Type                | Time Limit (in hours)                |
 |----------------------------|-----------------------------------|
 |ASAP                        |    24                  |

@@ -29,7 +29,7 @@ The following table has authenticator types permitted for AAL2:
 
 | Microsoft Entra authentication method| Phishing Resistant | NIST authenticator type |
 | - | - | - |
-| **Recommended methods** |   |
+| **Recommended methods** |   |   |
 | Multi-factor software certificate <br> Windows Hello for Business with software Trusted Platform Module (TPM)| Yes | Multi-factor crypto software |
 | Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator | Yes |  Multi-factor crypto hardware |
 | **Additional methods** |  

@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/25/2025
+ms.date: 04/17/2025
 ms.author: gasinh
 
 #customer intent: My goal is to deploy Microsoft Entra ID Governance in my test and production environments.
@@ -20,7 +20,6 @@ The following products and services appear in this guide:
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 * [Lifecycle workflows](../id-governance/what-are-lifecycle-workflows.md)
 * [Microsoft Entra](../fundamentals/what-is-entra.md)
-* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Microsoft Entra Connect](../identity/hybrid/connect/whatis-azure-ad-connect.md)
 * [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
@@ -43,8 +42,6 @@ To streamline employee identity management, organizations are adopting modern so
 ### Microsoft Entra ID Governance
 
 With the Microsoft Entra ID Governance solution, organizations improve productivity, strengthen security, and meet compliance and regulatory requirements. Use Microsoft Entra ID Governance to ensure the right people have the right access to the right resources at the right time. Learn more about Microsoft Entra ID Governance [use cases](../id-governance/scenarios/identity-governance-use-cases.md) and [documentation](../id-governance/identity-governance-overview.md). 
-
-Learn more about [Microsoft Entra ID](../fundamentals/whatis.md). 
 
 ## HR-driven provisioning
 
@@ -83,7 +80,10 @@ Learn more in the video about [HR-driven user provisioning with SuccessFactors](
 
 ## Cloud HR to Active Directory
 
-Learn how to [configure API-driven inbound provisioning to on-premises Active Directory (AD)](../identity/app-provisioning/inbound-provisioning-api-configure-app.md). 
+Use the following video to learn about API-driven inbound provisioning for on-premises Active Directory.</br></br>
+
+> [!VIDEO fa17234c-ecc7-4c87-82e9-6609270e1744]
+
 
 ## Deploy Workday to Active Directory
 
@@ -191,12 +191,6 @@ A Joiner is an individual who needs access. When you onboard new employees, use 
 
 A Mover is an individual moving between boundaries in an organization, for instance, the employee goes from a role in Sales to one in Marketing. The movement might require more, or different, access, and authorization.  
 
-**Lifecycle workflows custom task extension**
-
-As part of a workflow, use custom task extensions to call-out external systems with Azure Logic Apps. 
-
-You can learn to [trigger Logic Apps based on custom task extensions](../id-governance/trigger-custom-task.md).
-
 ### Leaver
 
 The Leaver no longer needs access, such as terminated or retiring employees. Effective Leaver workflows reduce the risk of unauthorized data access, after termination. Therefore, handle Leaver personal information in compliance with regulations and policies. Use customizable workflow templates for timely, reliable, and graceful resource-access removal. 
@@ -214,10 +208,10 @@ Microsoft Entra ID provisioning service keeps source and target systems in sync.
 
 ### Lifecycle workflows custom extensions
 
-Use custom extensions to create workflows using tools like Azure Logic Apps. For workflows, you can enable custom task extensions to call out to external systems. For example, a Joiner workflow with a custom task extension assigns a Microsoft Teams number. Or, when a user becomes a Leaver, a separate workflow grants access to an email account for their manager. 
+Use custom extensions to create workflows using tools like Azure Logic Apps. For workflows, you can enable custom task extensions to call out to external systems. For example, a Joiner workflow with a custom task extension assigns a Microsoft Teams number. Or, when a user becomes a Leaver, a separate workflow grants access to an email account for their manager. You can learn to [trigger Logic Apps based on custom task extensions](../id-governance/trigger-custom-task.md).
 
    > [!NOTE]
-   > To create a logic app resource for hosting, select **Consumption** or **Standard**. A consumption logic app has one workflow that runs in multitenant Azure Logic Apps. A standard logic app has one or multiple workflows that run in single-tenant Azure Logic Apps, or an App Service Environment v3 (ASE v3). 
+   > To create a logic app resource for hosting, select **Consumption**. A consumption logic app has one workflow that runs in multitenant Azure Logic Apps. 
 
 To learn more, see the [App Service Environment overview](/azure/app-service/environment/overview) and [Azure Logic Apps documentation](/azure/logic-apps/logic-apps-overview).  
 

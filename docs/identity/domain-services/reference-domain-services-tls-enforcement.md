@@ -1,42 +1,45 @@
 ---
-title: Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services | Microsoft Learn
+title: How to migrate to Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services | Microsoft Learn
 description: Learn how to enforce TLS 1.2 for a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 03/20/2025
+ms.date: 08/15/2025
 ms.author: justinha
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
-# Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services
+# How to migrate to Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services
 
-Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1 as communicated on November 10, 2023. While the Microsoft implementation of TLS 1.0 and TLS 1.1 versions is not known to have vulnerabilities, TLS 1.2 or later versions provide improved security features, including perfect forward secrecy and stronger cipher suites. This change helps protect customer data and ensures compliance with industry standards.
+Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1 as communicated on November 10, 2023. While the Microsoft implementation of TLS 1.0 and TLS 1.1 versions isn't known to have vulnerabilities, TLS 1.2 or later versions provide improved security features, including perfect forward secrecy and stronger cipher suites. This change helps protect customer data and ensures compliance with industry standards.
 
-Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they're disabled by default.
-Domain Services will use the following retirement path for TLS versions 1.0 and 1.1:
+Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they're disabled by default. Domain Services has removed the ability to disable **TLS 1.2 Only Mode**. Customers who disable **TLS 1.2 Only Mode** can enable it. 
 
-1. Domain Services will remove the ability to disable the TLS 1.2 only mode. Customers who disable TLS 1.2 only mode can enable it. 
-1. After Domain Services removes the ability to disable the TLS 1.2 only mode, customers can't enable or disable TLS 1.2 only mode. 
-1. The Domain Services team will work with customers who need TLS versions 1.0 and 1.1.
+You can use the Azure portal or PowerShell to enable **TLS 1.2 Only Mode**.
 
-## How to migrate to TLS 1.2 only mode in Domain Services
+## Identify applications that use deprecated TLS versions
 
-Use the Azure portal:
+Before you enable **TLS 1.2 Only Mode**, it's important to identify applications that still use TLS 1.0 or 1.1, and update them or replace them with alternatives that support TLS 1.2. For more information about apps that are expected to be impacted, see [TLS 1.0 and TLS 1.1 deprecation in Windows](/windows/win32/secauthn/tls-10-11-deprecation-in-windows).
 
-1.	In th Azure portal, go to the Domain Services instance. 
-2.	Go to the Security settings.
-3.	If the TLS 1.2 only mode is set to **Disable**, the instance enables TLS versions 1.0 and 1.1.
-4.	Set TLS 1.2 only mode to **Enable**, and then click **Save**.
+## [**Azure portal**](#tab/portal)
 
-This may take about 10 minutes to complete as domain security updates are enforced.
+1. In the Azure portal, search for **Domain Services**, and select your Domain Services instance. 
+1. Select **Security Settings**.
+1. If **TLS 1.2 Only Mode** is set to **Disable**, the instance enables TLS versions 1.0 and 1.1. Set **TLS 1.2 Only Mode** to **Enable**, and then click **Save**.
 
+   This change may take about 10 minutes to complete as domain security updates are enforced.
 
-Use PowerShell:
+   :::image type="content" border="true" source="media/reference-domain-services-tls-enforcement/enable.png" alt-text="Screenshot that shows how to enable TLS 1.2 Only Mode for Domain Services.":::
+
+>[!Note] 
+>Until August 31, 2025, you can select **Disable** to temporarily allow legacy TLS traffic while you update or replace apps that might fail. Select **Enable** again to remain compliant. 
+
+## [**PowerShell**](#tab/powershell)
+
 
 1. Install the Az.ADDomainServices module:
 
@@ -50,36 +53,29 @@ Use PowerShell:
    Connect-AzAccount -Subscription aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e
    ```
 
-1. Check the value of TLS 1.2 only mode:
+1. Update the value of **TLS 1.2 Only Mode** by executing these two commands:
 
    ```powershell
-   Get-AzADDomainService -DomainSecuritySettingTlsV1
+   $domainService = Get-AzADDomainService
    ```
-
-   If the value is **Disabled**, then the instance is compliant. If the value is **Enabled**, proceed to the next step.
-
-1. To change the value from **Enabled** to **Disabled**, get the name of the Domain Services instance:
-
-   ```powershell 
-   Get-AzADDomainService -Name
-   ```
-
-1. Get the resource group name where the domain instance is located:
-
+   
    ```powershell
-   Get-AzADDomainService -ResourceGroupName
-   ```
-
-1. Update the value of TLS 1.2 only mode: 
-
-   ```powershell
-   Update-AzADDomainService -Name "name" -ResourceGroupName "resourceGroupName" -DomainSecuritySettingTlsV1 Disabled
+   Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Disabled
    ```
 
    This command may take about 10 minutes to complete as domain security updates are enforced.
 
-Troubleshooting
-If the steps above fail, open an [Azure support request](/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
+## Troubleshooting
+
+- Some apps provide logs or error messages when TLS handshakes fail. Use application-level diagnostics to  look for errors related to unsupported protocols.
+
+- Until August 31, 2025, you can modify the following PowerShell example to temporarily allow legacy TLS traffic while you update or replace apps:
+
+  ```powershell
+  Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Enabled
+  ```
+
+- For more troubleshooting help, you can [create an Azure support request](/entra/fundamentals/how-to-get-support). 
 
 ## Related content
 

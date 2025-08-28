@@ -2,12 +2,13 @@
 title: Silent install Microsoft Entra private network connector
 description: Covers how to perform an unattended installation of the Microsoft Entra private network connector.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Create an unattended installation script for the Microsoft Entra private network connector

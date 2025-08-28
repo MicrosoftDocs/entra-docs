@@ -3,18 +3,18 @@ title: How to verify that users are set up for mandatory Microsoft Entra multifa
 description: Steps to verify mandatory multifactor authentication for users who sign in to Azure and other management portals.
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/31/2025
 ms.author: justinha
 author: najshahid
-manager: femila
+manager: dougeby
 ms.reviewer: nashahid, gkinasewitz
 
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
 ---
 # How to verify that users are set up for mandatory MFA
 
-This topic covers steps to verify that users in your organization are set up to meet Azure's mandatory MFA requirements. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md).
+This topic covers steps to verify that users in your organization are set up to meet Azure's mandatory MFA requirements. For more information about which applications and accounts are affected and how the rollout works, see [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md). 
 
 ## Verify MFA for a personal account
 
@@ -30,15 +30,15 @@ For more information, see [How to use two-step verification with your Microsoft 
 Use the following resources to find users who sign in with and without MFA: 
 
 - To export a list of users and their authentication methods, use [PowerShell](https://aka.ms/AzMFA).
-- If you run queries to analyze user sign-ins, use the application IDs of the [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications). 
+- If you run queries to analyze user sign-ins, use the application IDs of the [applications that require MFA](concept-mandatory-multifactor-authentication.md#application-ids-and-urls). 
 
 ## Verify MFA enablement
-All users who access [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications) must be set up to use MFA. Mandatory MFA isn't restricted to privileged roles. As a best practice, all users who access *any* administration portal should use MFA. 
+All users who access [applications that require MFA](concept-mandatory-multifactor-authentication.md#application-ids-and-urls) must be set up to use MFA. Mandatory MFA isn't restricted to privileged roles. 
 
-Use the following steps to verify that MFA is set up for your users, or to enable it if needed. 
+Use the following steps to verify that MFA is set up for those users, or to enable it if needed. 
 
 1. Sign in to Azure portal as a Global Reader.
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 1. Check the license type for the tenant subscription. 
 1. Follow the steps for your license type to verify MFA is enabled, or enable it if needed. To complete these steps, you need to sign out as a Global Reader, and sign back in with a more privileged role.
 
@@ -47,14 +47,14 @@ Use the following steps to verify that MFA is set up for your users, or to enabl
 
 ### Verify MFA is enabled for Microsoft Entra ID P1 or Microsoft Entra ID P2 license
 
-If you have a Microsoft Entra ID P1 or Microsoft Entra ID P2 license, you can create a Conditional Access policy to require MFA for users who access [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications):  
+If you have a Microsoft Entra ID P1 or Microsoft Entra ID P2 license, you can create a Conditional Access policy to require MFA for users who access [applications that require MFA](concept-mandatory-multifactor-authentication.md#application-ids-and-urls):  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
-1. Under **Include**, select **All users**, or a group of users who sign in to the [applications that require MFA](concept-mandatory-multifactor-authentication.md#applications).
+1. Under **Include**, select **All users**, or a group of users who sign in to the [applications that require MFA](concept-mandatory-multifactor-authentication.md#application-ids-and-urls).
 1. Under **Target resources** > **Cloud apps** > **Include**, **Select apps**, select **Microsoft Admin Portals** and **Windows Azure Service Management API**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, and select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**. 
@@ -88,7 +88,7 @@ If you have a Microsoft 365 or Microsoft Entra ID Free license, you can enable M
 To enable security defaults:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Overview** > **Properties**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Enabled**.
 1. Select **Save**.
@@ -98,7 +98,7 @@ For more information about security defaults, see [Security defaults in Microsof
 If you don't want to use security defaults, you can enable per-user MFA. When you enable users individually, they perform MFA each time they sign in. An Authentication Administrator can enable some exceptions. To enable per-user MFA:
   
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select a user account, and click **Enable MFA**.
 1. Confirm your selection in the pop-up window that opens.
 
@@ -109,6 +109,7 @@ After you enable users, notify them by email. Tell the users that a prompt is di
 
 Review the following topics to learn more about MFA:
 
+- [How to postpone enforcement for a tenant where users are unable to sign in after rollout of mandatory multifactor authentication (MFA) requirement for the the Azure portal, Microsoft Entra admin center, or Microsoft Intune admin center](how-to-unlock-users-for-mandatory-multifactor-authentication.md)
 - [Planning for mandatory multifactor authentication for Azure and other admin portals](concept-mandatory-multifactor-authentication.md)
 - [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
 - [Secure sign-in events with Microsoft Entra multifactor](~/identity/authentication/tutorial-enable-azure-mfa.md)

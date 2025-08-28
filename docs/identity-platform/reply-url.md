@@ -4,11 +4,11 @@ description: A description of the best practices and limitations of redirect URI
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 03/19/2025
+ms.date: 05/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent:As a developer registering an application with the Microsoft identity platform, I want to understand the restrictions and limitations of redirect URIs, so that I can correctly configure the redirect URI for successful authorization and token retrieval.
 ---
 
@@ -45,7 +45,7 @@ You don’t need to add redirect URIs to your app registration if your applicati
 -	[OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md)
 -	[OAuth 2.0 Resource owner password credential flow](v2-oauth-ropc.md)
 -	[Windows Integrated Auth Flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/integrated-windows-authentication)
--	[SAML 2.0 Identity Provider (IdP) for Single Sign On ](../identity/hybrid/connect/how-to-connect-fed-saml-idp.md)
+-	[SAML 2.0 Identity Provider (IdP) for Single Sign On](../identity/hybrid/connect/how-to-connect-fed-saml-idp.md)
 
 ### What platform should I add my redirect URI(s) to?
 
@@ -67,8 +67,7 @@ If the application you're building contains one or multiple redirect URIs in you
 | An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Android, iOS/macOS | Mobile and desktop applications |
 
 If you're building an iOS app using one of the following methods, use the **Mobile and desktop applications** platform to add a redirect URI:
-
- - iOS apps using legacy SDKs (ADAL) 
+ 
  - iOS apps using open source SDKs (AppAuth) 
  - iOS apps using cross-plat tech we don't support (Flutter) 
  - iOS apps implementing our OAuth protocols directly 

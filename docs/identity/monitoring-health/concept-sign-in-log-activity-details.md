@@ -2,16 +2,15 @@
 title: Learn about the sign-in log activity details
 description: Learn about the information available on each of the tabs on the Microsoft Entra sign-in log activity details.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.subservice: monitoring-health
-ms.date: 02/25/2025
+ms.date: 07/01/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand the parts of a sign-in log so I can troubleshoot sign-in issues.
-
 ---
 
 # Learn about the sign-in log activity details
@@ -115,7 +114,7 @@ If Conditional Access policies are in use in your tenant, you can see if those p
 - **Success:** The Conditional Access policy was applied successfully to the sign-in attempt.
 - **Failure:** The Conditional Access policy was applied to the sign-in attempt, but the sign-in attempt failed.
 - **Not Applied:** The sign-in didn't match the criteria for the policy to be applied.
-   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that would not be possible to complete. These are considered "bootstrap scenarios" and might include sign-ins associated with device registration, device compliance, or Network Policy Server connectors.
+   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that wouldn't be possible to complete. These scenarios are considered "bootstrap scenarios" and might include sign-ins associated with device registration, device compliance, or Network Policy Server connectors.
    - Windows Hello for Business sign-ins show as "Not Applied" because Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process.
 - **Disabled:** The policy was disabled at the time of the sign-in attempt.
 
@@ -137,7 +136,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - `Not applied`: No policy applied to the user and application during sign-in. Windows Hello for Business shows up as "Not Applied" because Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process. Other sign-ins might get interrupted so a policy isn't applied.
   - `Success`: One or more Conditional Access policies applied to or were evaluated for the user and application (but not necessarily the other conditions) during sign-in. Even though a Conditional Access policy might not apply, if it was evaluated, the Conditional Access status shows *Success*.
   - `Failure`: The sign-in satisfied the user and application condition of at least one Conditional Access policy and grant controls are either not satisfied or set to block access.
-  - Conditional Access does not apply to Windows sign-in, such as Windows Hello for Business. Conditional Access protects sign-in attempts to cloud resources, not the device sign-in process.
+  - Conditional Access doesn't apply to Windows sign-in, such as Windows Hello for Business. Conditional Access protects sign-in attempts to cloud resources, not the device sign-in process.
 
 - **Continuous access evaluation:** Shows whether continuous access evaluation (CAE) was applied to the sign-in event.
   - There are multiple sign-in requests for each authentication, which can appear on either the interactive or non-interactive tabs.
@@ -150,7 +149,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - `b2bDirectConnect` - A cross tenant sign-in performed by a B2B.
   - `microsoftSupport`- A cross tenant sign-in performed by a Microsoft support agent in a Microsoft external tenant.
   - `serviceProvider` - A cross-tenant sign-in performed by a Cloud Service Provider (CSP) or similar admin on behalf of that CSP's customer in a tenant.
-  - `unknownFutureValue` - A sentinel value used by MS Graph to help clients handle changes in enum lists. For more information, see [Best practices for working with Microsoft Graph](/graph/best-practices-concept).
+  - `unknownFutureValue` - A value used by MS Graph to help clients handle changes in enum lists. For more information, see [Best practices for working with Microsoft Graph](/graph/best-practices-concept).
 
 - **Tenant:** The sign-in log tracks two tenant identifiers that are relevant in cross-tenant scenarios:
   - **Home tenant** – The tenant that owns the user identity. Microsoft Entra ID tracks the ID and name.
@@ -160,7 +159,10 @@ The following scenarios are important to consider when you're reviewing sign-in 
 
 - **Multifactor authentication:** When a user signs in with MFA, several separate MFA events are actually taking place. For example, if a user enters the wrong validation code or doesn't respond in time, more MFA events are sent to reflect the latest status of the sign-in attempt. These sign-in events appear as one line item in the Microsoft Entra sign-in logs. That same sign-in event in Azure Monitor, however, appears as multiple line items. These events all have the same `correlationId`.
 
-- **Authentication requirement:** Shows the highest level of authentication needed through all the sign-in steps for the sign-in to succeed.
+- **Authentication requirement:** Shows the authentication requirement requested by the resource provider for the sign-in to succeed. This value commonly reflects the authentication stage reached during the sign-in.
+  - A subsequent sign-in attempt after the failure where primary authentication is successful and MFA is required, the value is `multiFactorAuthentication`.
+  - There are some edge cases where this field doesn't reflect the authentication reached during the sign-in. For example, if the requirement is already fulfilled from a previous MFA claim the resource provider doesn't ask to enforce it. 
+  - For sign-in attempts where MFA is required but primary authentication failed, value is `singleFactorAuthentication` because the attempt wasn't evaluated by Conditional Access to require MFA.
   - Graph API supports `$filter` (`eq` and `startsWith` operators only).
 
 - **Sign-in event types:** Indicates the category of the sign-in the event represents.
@@ -185,3 +187,8 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - If you're unsure of a detail in the logs, gather the **Request ID** and **Correlation ID** to use for further analyzing or troubleshooting.
   - If Conditional Access policies for authentication or session lifetime are applied, they're listed above the sign-in attempts. If you don't see either of those options, those policies aren't currently applied. For more information, see [Conditional Access session controls](~/identity/conditional-access/concept-conditional-access-session.md).
   
+- **TimeGenerated and CreatedDateTime:**
+  - If you're sending sign-in logs to a Log Analytics workspace, you might notice two different timestamps for the same sign-in event.
+  - The `TimeGenerated` field in Log Analytics is the time the sign-in event was received and published by Log Analytics.
+  - The `CreatedDateTime` field is the actual date and time of the sign-in event.
+  - The difference between the two timestamps is caused by the time it takes for the sign-in event to be processed and sent to Log Analytics.

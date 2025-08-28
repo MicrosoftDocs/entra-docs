@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Wistia
+title: Configure Wistia for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wistia.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wistia so that I can control who has access to Wistia, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Wistia
+# Configure Wistia for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Wistia with Microsoft Entra ID. Sign into Wistia with Microsoft Entra ID and start to level up your video marketing strategy. Learn more about Wistia video marketing platform at wistia.com. When you integrate Wistia with Microsoft Entra ID, you can:
 
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Wistia** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Wistia** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

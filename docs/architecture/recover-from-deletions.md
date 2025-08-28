@@ -5,10 +5,11 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 11/14/2022
 ms.author: jricketts
 ms.reviewer: jricketts
+ms.custom: sfi-image-nochange
 ---
 
 # Recover from deletions

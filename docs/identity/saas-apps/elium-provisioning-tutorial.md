@@ -1,20 +1,18 @@
 ---
 title: Configure Elium for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Elium.
-
-author: thomasakelo
-manager: CelesteDG
+author: adimitui
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
-
+ms.author: addimitu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Elium so that I can streamline the user management process and ensure that users have the appropriate access to Elium.
 ---
 
-# Configure Elium for automatic user provisioning
+# Configure Elium for automatic user provisioning with Microsoft Entra ID
 
 This article shows how to configure Elium and Microsoft Entra ID to automatically provision and de-provision users or groups to Elium.
 
@@ -67,7 +65,7 @@ Before configuring Elium for automatic user provisioning with Microsoft Entra ID
 To configure Elium for automatic user provisioning with Microsoft Entra ID, you must also add Elium from the Microsoft Entra application gallery to your list of managed software-as-a-service (SaaS) applications. Follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
      ![Microsoft Entra Enterprise applications blade](common/enterprise-applications.png)
 
@@ -89,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 To configure automatic user provisioning for Elium in Microsoft Entra ID, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
     ![Microsoft Entra Enterprise applications blade](common/enterprise-applications.png)
 

@@ -1,17 +1,13 @@
 ---
 title: "Tutorial: Create a Node.js CLI app for authentication"
 description: Learn how to build a Node.js CLI app that signs in users in an external tenant
- 
 author: Dickson-Mwendia
-manager: mwongerapk
-
+manager: dougeby
 ms.author: dmwendia
-ms.service: entra-external-id
- 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 06/24/2024
-ms.custom: developer, devx-track-js
+ms.date: 04/16/2025
+ms.custom:
 
 #Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in an external tenant.
 ---
@@ -22,7 +18,7 @@ ms.custom: developer, devx-track-js
 
 This tutorial is part 1 of a series that demonstrates building a Node.js command line interface (CLI) app and preparing it for authentication using the Microsoft Entra admin center. The client application you build uses the [OAuth 2.0 Authorization Code Flow](~/identity-platform/v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) for secure user authentication.
 
-In this tutorial: 
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
