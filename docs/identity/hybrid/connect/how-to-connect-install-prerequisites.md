@@ -165,7 +165,7 @@ Microsoft Entra Connect depends on Microsoft PowerShell 5.0 and .NET Framework 4
 
 ### Enable TLS 1.2 for Microsoft Entra Connect
 
-1. If you want to enable TLS 1.2 between the sync engine server and a remote SQL Server, make sure you have the required versions installed for [TLS 1.2 support for Microsoft SQL Server](troubleshoot/sql/database-engine/connect/tls-1-2-support-microsoft-sql-server).
+1. If you want to enable TLS 1.2 between the sync engine server and a remote SQL Server, make sure you have the required versions installed for [TLS 1.2 support for Microsoft SQL Server](/troubleshoot/sql/database-engine/connect/tls-1-2-support-microsoft-sql-server).
 
 For more information, see [how to enable TLS 1.2](/mem/configmgr/core/plan-design/security/enable-tls-1-2-server)
 
