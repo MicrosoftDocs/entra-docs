@@ -15,6 +15,12 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## July 2025
+
+### Updated articles
+
+- [What is the Microsoft identity platform?](v2-overview.md) - The update improved content clarity.
+
 ## June 2025
 
 ### New articles
@@ -44,23 +50,4 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Single-page application: Add sign-in and sign-out code](scenario-spa-sign-in.md) - The update improved content clarity.
 - [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Partially update error code.
 
-## April 2025
-
-### New articles
-
-* [Add and manage application credentials in Microsoft Entra ID](how-to-add-credentials.md) - Register app refactor
-* [How to add a redirect URI to your application](how-to-add-redirect-uri.md) - Register app refactor
-
-### Updated articles
-
-* [Quickstart: Call a web API that is protected by the Microsoft identity platform](quickstart-web-api-dotnet-protect-app.md) - Update ASP.NET Core web API tutorial (from minimal weather forecast API to controller-based Todo list API)
-* [Quickstart: Sign in users in a sample Desktop app](quickstart-desktop-app-sign-in.md) - Register app refactor
-* [Quickstart: Sign in users in a sample mobile app](quickstart-mobile-app-sign-in.md) - Register app refactor
-* [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md) - Register app refactor
-* [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API](quickstart-single-page-app-sign-in.md) - Register app refactor
-* [Tutorial: Build and secure an ASP.NET Core web API with the Microsoft identity platform](tutorial-web-api-dotnet-core-build-app.md) - Update ASP.NET Core web API tutorial (from minimal weather forecast API to controller-based Todo list API)
-* [Tutorial: Create an Angular application and prepare it for authentication](tutorial-single-page-apps-angular-prepare-app.md) - Register app refactor
-* [Tutorial: Prepare your iOS (Swift) app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md) - Register app refactor
-* [Tutorial: Set up a Node.js web app to sign in users by using Microsoft identity platform](tutorial-web-app-node-sign-in-prepare-app.md) - Register app refactor
-* [Tutorial: Set up an Android app to sign in users by using Microsoft identity platform](tutorial-mobile-app-android-prepare-app.md) - Register app refactor
 

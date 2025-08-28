@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
-ms.topic: conceptual 
+ms.topic: article
 ms.date: 06/25/2024
 ms.custom: template-concept 
 ---

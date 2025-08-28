@@ -5,7 +5,7 @@ description: A guide for architects
 author: janicericketts
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 11/16/2022
 ms.author: jricketts
 ---
@@ -39,7 +39,7 @@ For second factors, the Microsoft Authenticator app or other authenticator apps 
 ## Additional Detail on External (Non-Entra) Dependencies
 |Authentication Method|External (Non-Entra) Dependency|More Information|
 |---------------------|-------------------------------|---|
-|Certificate Based Authentication (CBA)|In most cases (depending on configuration) CBA will require a revocation check. This adds an external dependency on the CRL distribution point (CDP) |[Understanding the certificate revocation process](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process)|
+|Certificate Based Authentication (CBA)|In most cases (depending on configuration) CBA will require a revocation check. This adds an external dependency on the CRL distribution point (CDP) |[Understanding the certificate revocation process](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-revocation-process)|
 |Pass Through Authentication (PTA)|PTA uses on-premise agents to process the password authentication.|[How does Microsoft Entra pass-through authentication work?](~/identity/hybrid/connect/how-to-connect-pta-how-it-works.md#how-does-microsoft-entra-pass-through-authentication-work)|
 |Federation| Federation server(s) must be online and available to process the authentication attempt|[High availability cross-geographic AD FS deployment in Azure with Azure Traffic Manager](/windows-server/identity/ad-fs/deployment/active-directory-adfs-in-azure-with-azure-traffic-manager)|
 |External Authentication Methods (EAM)| EAM provides a path for customers to use external MFA providers.|[Manage an external authentication method in Microsoft Entra ID (Preview)](~/identity/authentication/how-to-authentication-external-method-manage.md)|

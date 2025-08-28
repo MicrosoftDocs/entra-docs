@@ -9,7 +9,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:07/25/2025
   - ai-gen-description
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/25/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -48,7 +48,7 @@ A complete list of all services included can be found in the article [Apps inclu
 When you target the Windows Azure Service Management API application, policy is enforced for tokens issued to a set of services closely bound to the portal. This grouping includes the application IDs of:
 
 - Azure Resource Manager
-- Azure portal, which also covers the Microsoft Entra admin center
+- Azure portal, which also covers the Microsoft Entra admin center and the Microsoft Engage Center
 - Azure Data Lake
 - Application Insights API
 - Log Analytics API
@@ -166,7 +166,10 @@ If the [recommended baseline MFA policy without app exclusions](policy-all-users
 1. Create or modify an existing policy.
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select > **Select resources** > **Edit filter**.  
 1. Adjust the filter to include your attribute set and definition from earlier.
-1. Save the policy 
+1. Save the policy
+
+> [!NOTE]
+> Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining app exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.
 
 <a name='traffic-forwarding-profiles'></a>
 

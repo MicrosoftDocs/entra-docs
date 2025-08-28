@@ -180,10 +180,9 @@ The following example of an action that can be placed in the HTTP body is a logi
 }
 ```
 
-Although the example uses a user ID, the primaryApprovers and escalationApprovers section can contain any valid [subjectSet](/graph/api/resources/subjectset). The approval section of the code must follow the parameters as shown here: [accessPackageApprovalStage](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0).
 
 > [!NOTE]
-> In Public Preview the resume call must be performed against Microsoft Graph's beta endpoint. However, the [approval stage](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) provided in the resume call body must follow the [v1.0 convention](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) and not the [beta convention](/graph/api/resources/approvalstage?view=graph-rest-beta).
+> Although the example uses a user ID, the primaryApprovers and escalationApprovers section can contain valid [subjectSets](/graph/api/resources/subjectset) supported by Entitlement Management. In Public Preview the resume call must be performed against Microsoft Graph's beta endpoint. However, the [approval stage](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) provided in the resume call body must follow the [v1.0 convention](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) and not the [beta convention](/graph/api/resources/approvalstage?view=graph-rest-beta).
 
 ## Related content
 

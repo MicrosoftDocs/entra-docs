@@ -2,7 +2,7 @@
 title: Microsoft Identity Platform Glossary
 description: Learn key terms used in Microsoft identity platform documentation, Microsoft Entra admin center, and authentication SDKs like the Microsoft Authentication Library (MSAL).
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 05/12/2025
 ms.reviewer: 

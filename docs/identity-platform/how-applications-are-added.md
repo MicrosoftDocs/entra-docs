@@ -2,7 +2,7 @@
 title: How and why apps are added to Microsoft Entra ID
 description: What does it mean for an application to be added to Microsoft Entra ID and how do they get there?
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom:
 ms.date: 10/26/2022
