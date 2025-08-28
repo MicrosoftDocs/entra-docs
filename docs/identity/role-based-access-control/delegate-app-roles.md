@@ -63,7 +63,7 @@ Microsoft Entra ID has a set of built-in admin roles for granting access to mana
 
 For more information and to view the description for these roles, see [Microsoft Entra built-in roles](permissions-reference.md).
 
-Follow the instructions in the [Assign roles to users with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml) how-to guide to assign the Application Administrator or Cloud Application Administrator roles.
+Follow the instructions in the [Assign roles to users with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md) how-to guide to assign the Application Administrator or Cloud Application Administrator roles.
 
 > [!IMPORTANT]
 > Application Administrators and Cloud Application Administrators can add credentials to an application and use those credentials to impersonate the application’s identity. The application may have permissions that are an elevation of privilege over the admin role's permissions. An admin in this role could potentially create or update users or other objects while impersonating the application, depending on the application's permissions.

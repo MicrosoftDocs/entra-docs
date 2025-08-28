@@ -43,7 +43,7 @@ landingContent:
           - text: Add company branding 
             url: how-to-customize-branding.md
           - text: Add your custom domain name 
-            url: add-custom-domain.yml
+            url: add-custom-domain.md
 
    # Card
   - title: Users and groups
