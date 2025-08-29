@@ -185,4 +185,4 @@ ms.custom: sfi-ropc-nochange
 > For a more in-depth discussion of building web apps that sign in users on the Microsoft identity platform, see the multipart scenario series:
 > 
 > > [!div class="nextstepaction"]
-> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md?tabs=java)
+> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-configuration.md?tabs=java)

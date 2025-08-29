@@ -19,6 +19,57 @@ ms.topic: how-to
 
 This article describes how to configure code for a web app that signs in users.
 
+## Prerequisites
+
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
+  * Application Administrator
+  * Application Developer
+* Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Configure a redirect URI for your application. Use the tabs below to find the redirect URI for your platform. For some you may also need to configure a client secret. Refer to [How to add a redirect URI to your application](./how-to-add-redirect-uri.md) for more details.
+
+# [ASP.NET Core](#tab/aspnetcore)
+
+Select the **Web** platform type and use the following URIs for your ASP.NET Core web app
+
+  - **Redirect URI** : `https://localhost:44321/signin-oidc`
+  - **Front-channel logout URL** : `https://localhost:44321/signout-oidc`
+
+# [ASP.NET](#tab/aspnet)
+
+Select the **Web** platform type and use the following URIs for your ASP.NET web app
+
+  - **Redirect URI** : `https://localhost:44326/`
+
+# [Java](#tab/java)
+
+* Select the **Web** platform type and use the following URIs, which are used in the sample app:
+
+  - `http://localhost:8080/msal4jsample/secure/aad`
+  - `http://localhost:8080/msal4jsample/graph/me`
+
+* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials?tabs=client-secret) for more details. Record the client secret value for later use.
+
+# [Node.js](#tab/nodejs)
+
+* Select the **Web** platform type and use the following URI
+
+  - **Redirect URI** : `http://localhost:3000/auth/redirect`
+
+* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials?tabs=client-secret) for more details. Record the client secret value for later use.
+
+# [Python](#tab/python)
+
+* Select the **Web** platform type and use the following URI
+
+  - **Redirect URI** : `http://localhost:5000/getAToken`
+
+* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials?tabs=client-secret) for more details. Record the client secret value for later use.
+
+---
+
 ## Microsoft libraries supporting web apps
 
 The following Microsoft libraries are used to protect a web app (and a web API):

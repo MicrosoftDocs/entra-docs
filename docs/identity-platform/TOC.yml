@@ -305,8 +305,6 @@
         - name: Web app that signs in users
           expanded: false
           items:
-            - name: App registration
-              href: scenario-web-app-sign-user-app-registration.md
             - name: Code configuration
               href: scenario-web-app-sign-user-app-configuration.md
             - name: Sign-in and sign-out
