@@ -237,12 +237,12 @@ The default specific parameters for the **Pre-Offboard inactive users** template
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Attribute changes, Group Membership change, Sign-in inactivity        |  ✔️       |
+|Trigger Type     | Sign-in inactivity, Attribute changes, Group Membership change      |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Days of inactivity     | 90       | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | LastSignInDateTime        |   ❌      |
-|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes, user.<br> **Group membership change**: Group based.         | ✔️        |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
 
 ### Offboard inactive users
@@ -256,12 +256,12 @@ The default specific parameters for the **Offboard inactive users** template are
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Attribute changes, Group Membership change, Sign-in inactivity         |  ✔️       |
+|Trigger Type     | Sign-in inactivity, Attribute changes, Group Membership change         |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Days from event     | 120        | ✔️        |
 |Event timing     | After        |  ❌       |
 |Event User attribute     | LastSignInDateTime        |   ❌      |
-|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes, user<br> **Group membership change**: Group based.         | ✔️        |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
 
 
