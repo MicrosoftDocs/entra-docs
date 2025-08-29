@@ -82,7 +82,7 @@ With authentication brokers, native application developers can use new Microsoft
 
 You can build applications that delegate identity and access management to Microsoft Entra ID using any developer tool, library, or framework that implements OAuth 2.0, OIDC, or SAML with the previously discussed caveats. Many [OIDC implementations](https://openid.net/developers/certified-openid-connect-implementations/) with OpenID Certification for one or more certification profiles, including authentication profiles, require minimal extra configuration to work with Microsoft Entra ID. To ease development for the Microsoft Entra ID platform, several optimized Microsoft libraries work with Microsoft services and capabilities.
 
-- When you build web apps, APIs, or other workloads (such as daemons or services on ASP.NET Core or ASP.NET), use [Microsoft Identity Web](~/identity-platform/scenario-protected-web-api-app-configuration.md).
+- When you build web apps, APIs, or other workloads (such as daemons or services on ASP.NET Core or ASP.NET), use [Microsoft Identity Web](/entra/msal/dotnet/microsoft-identity-web/).
 - If you build on Microsoft Azure, use [Azure SDKs](https://azure.microsoft.com/downloads/) that include the Azure Identity client libraries.
 - When you can't use one of these libraries, use an [MSAL](~/identity-platform/msal-overview.md) for your development environment as shown in the following table.
 

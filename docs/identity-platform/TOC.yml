@@ -549,8 +549,6 @@
       items:
         - name: Mobile app that calls an API
           items:
-            - name: App registration
-              href: scenario-mobile-app-registration.md
             - name: Code configuration
               href: scenario-mobile-app-configuration.md
             - name: "Code configuration: Android and iOS"

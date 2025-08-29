@@ -61,7 +61,7 @@ Browser based authentication (Workforce and External tenants):
 - [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md).
 - [Desktop app](scenario-desktop-app-registration.md).
 - [Daemon app](scenario-daemon-app-registration.md).
-- [Mobile app](scenario-mobile-app-registration.md) in a workforce tenant.
+- [Mobile app](scenario-mobile-app-configuration.md) in a workforce tenant.
 
 
 Native authentication (External tenants only):
