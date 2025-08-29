@@ -50,7 +50,7 @@ Select the **Web** platform type and use the following URIs for your ASP.NET web
   - `http://localhost:8080/msal4jsample/secure/aad`
   - `http://localhost:8080/msal4jsample/graph/me`
 
-* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials?tabs=client-secret) for more details. Record the client secret value for later use.
+* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials.md?tabs=client-secret) for more details. Record the client secret value for later use.
 
 # [Node.js](#tab/nodejs)
 
@@ -58,7 +58,7 @@ Select the **Web** platform type and use the following URIs for your ASP.NET web
 
   - **Redirect URI** : `http://localhost:3000/auth/redirect`
 
-* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials?tabs=client-secret) for more details. Record the client secret value for later use.
+* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials.md?tabs=client-secret) for more details. Record the client secret value for later use.
 
 # [Python](#tab/python)
 
@@ -66,7 +66,7 @@ Select the **Web** platform type and use the following URIs for your ASP.NET web
 
   - **Redirect URI** : `http://localhost:5000/getAToken`
 
-* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials?tabs=client-secret) for more details. Record the client secret value for later use.
+* Add a client secret to your application. Refer to [Add a credential to your application](./how-to-add-credentials.md?tabs=client-secret) for more details. Record the client secret value for later use.
 
 ---
 
