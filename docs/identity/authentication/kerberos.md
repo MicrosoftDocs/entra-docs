@@ -148,7 +148,7 @@ Detailed information at [Passwordless security key sign-in to on-premises resour
 ### Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources in Platform SSO
 
 Along with PSSO PRT, Microsoft Entra also issues both on-premises and cloud-based Kerberos Ticket Granting Tickets (TGTs) which are then shared with the native Kerberos stack in macOS via TGT mapping in PSSO.  
-Detailed information at: [Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos Resources in Platform SSO](howto-authentication-kerberos-sso-platform.md)
+Detailed information at: [Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos Resources in Platform SSO](~/identity/devices/device-join-macos-platform-single-sign-on-kerberos-configuration.md)
 
 ### Profile Containers with FSLogix for Azure Virtual Desktop
 For hosting user profiles for virtual desktops, customers can store profiles in Azure Files accessed via Microsoft Entra Kerberos.
