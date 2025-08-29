@@ -6,7 +6,7 @@ manager: dougeby
 ms.author: dmwendia
 ms.date: 03/25/2025
 ms.reviewer: jmprieur
-ms.service: identity-platform.
+ms.service: identity-platform
 ms.subservice: workforce
 ms.topic: how-to
 ms.custom: sfi-image-nochange
