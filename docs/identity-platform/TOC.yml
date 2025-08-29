@@ -374,8 +374,8 @@
           href: howto-call-a-web-api-with-rest-client.md
         - name: Protected web API
           items:
-            - name: App registration
-              href: scenario-protected-web-api-app-registration.md
+            - name: Expose scopes
+              href: scenario-protected-web-api-expose-scopes.md
             - name: Code configuration
               href: scenario-protected-web-api-app-configuration.md
             - name: Verification of scopes or app roles

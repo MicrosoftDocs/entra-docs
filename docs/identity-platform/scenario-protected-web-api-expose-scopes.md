@@ -17,37 +17,11 @@ ms.topic: how-to
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-This article explains how to register an application for a protected web API.
+This article explains how to add scopes to an application for a protected web API.
 
-For the common steps to register an app, see [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).
+## Prerequisites
 
-## Accepted token version
-
-The Microsoft identity platform can issue v1.0 tokens and v2.0 tokens. For more information about these tokens, refer to [Access tokens](access-tokens.md).
-
-The token version your API may accept depends on your **Supported account types** selection when you create your web API application registration in the Azure portal.
-
-- If the value of **Supported account types** is **Accounts in any organizational directory and personal Microsoft accounts (such as Skype, Xbox, Outlook.com)**, the accepted token version must be v2.0.
-- Otherwise, the accepted token version can be v1.0.
-
-After you create the application, you can determine or change the accepted token version by following these steps:
-
-1. In the Microsoft Entra admin center, select your app and then select **Manifest**.
-1. Find the property **accessTokenAcceptedVersion** in the manifest.
-1. The value specifies to Microsoft Entra which token version the web API accepts.
-   - If the value is 2, the web API accepts v2.0 tokens.
-   - If the value is **null**, the web API accepts v1.0 tokens.
-1. If you changed the token version, select **Save**.
-
-The web API specifies which token version it accepts. When a client requests a token for your web API from the Microsoft identity platform, the client gets a token that indicates which token version the web API accepts.
-
-## No redirect URI
-
-Web APIs don't need to register a redirect URI because no user is interactively signed in.
-
-## Exposed API
-
-Other settings specific to web APIs are the exposed API and the exposed scopes or app roles.
+For the common steps to register an app, see [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).es.
 
 ## Scopes and the Application ID URI
 
@@ -91,7 +65,6 @@ If you're following along with the web API scenario described in this set of art
 ### If your web API is called by a service or daemon app
 
 Expose *application permissions* instead of delegated permissions if your API should be accessed by daemons, services, or other non-interactive (by a human) applications. Because daemon- and service-type applications run unattended and authenticate with their own identity, there is no user to "delegate" their permission.
-
 
 #### Expose application permissions (app roles)
 

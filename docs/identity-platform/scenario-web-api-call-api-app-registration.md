@@ -15,7 +15,7 @@ ms.topic: how-to
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-A web API that calls downstream web APIs has the same registration as a protected web API. Follow the instructions in [Protected web API: App registration](scenario-protected-web-api-app-registration.md).
+A web API that calls downstream web APIs has the same registration as a protected web API. Follow the instructions in [Protected web API](scenario-protected-web-api-expose-scopes.md).
 
 Because the web app now calls web APIs, it becomes a confidential client application. That's why extra registration information is required: the app needs to share secrets (client credentials) with the Microsoft identity platform.
 

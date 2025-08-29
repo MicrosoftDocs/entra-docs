@@ -35,7 +35,7 @@ A daemon application can request only application permissions to APIs (not deleg
 
 :::image type="content" source="media/scenario-daemon-app/app-permissions-and-admin-consent.png" alt-text="Screenshot of app permissions and admin consent." lightbox="media/scenario-daemon-app/app-permissions-and-admin-consent.png":::
 
-The web API you're calling must define *Application permissions (app roles)*, not delegated permissions. To learn how to expose such an API, see [Protected web API: App registration - when your web API is called by a daemon app](scenario-protected-web-api-app-registration.md#if-your-web-api-is-called-by-a-service-or-daemon-app).
+The web API you're calling must define *Application permissions (app roles)*, not delegated permissions. To learn how to expose such an API, see [Protected web API: App registration - when your web API is called by a daemon app](scenario-protected-web-api-expose-scopes.md#if-your-web-api-is-called-by-a-service-or-daemon-app).
 
 Daemon applications require the tenant admin to grant consent to the application calling the web API. Tenant admins provide consent on the **API permission** page by selecting **Grant admin consent to *our organization***.
 
