@@ -3,7 +3,7 @@ title: Overview of Microsoft Entra Kerberos
 description: Overview of Microsoft Entra Kerberos
 author: barclayn
 manager: pmwongera
-ms.service: entra
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 08/29/2025
@@ -63,25 +63,24 @@ In addition to the PRT, Entra ID can issue a partial Ticket Granting Ticket (TGT
 ## Authentication flow
 
 ### **User Authentication**:
-    - The user signs into a Windows device (Windows 10 2004+ or Windows 11).
-    - The Local Security Authority (LSA) uses the Cloud Authentication Provider (CloudAP) to authenticate via OAuth to Microsoft Entra ID.
-    - Microsoft Entra ID issues a Primary Refresh Token (PRT) containing user and device information.
-    - The TGT is for the realm KERBEROS.MICROSOFTONLINE.COM, which acts as a cloud-based Kerberos Distribution Center (KDC).
+- The user signs into a Windows device (Windows 10 2004+ or Windows 11).
+- The Local Security Authority (LSA) uses the Cloud Authentication Provider (CloudAP) to authenticate via OAuth to Microsoft Entra ID.
+- Microsoft Entra ID issues a Primary Refresh Token (PRT) containing user and device information.
+- The TGT is for the realm KERBEROS.MICROSOFTONLINE.COM, which acts as a cloud-based Kerberos Distribution Center (KDC).
 
 ### **Cloud TGT Issuance**:
-    - If the user signs in with a passwordless method (such as FIDO2 or Windows Hello for Business), Microsoft Entra ID issues a Partial Ticket Granting Ticket (Partial TGT) for the user's on-premises Active Directory (AD) domain. This Partial TGT contains the user's Security Identifier (SID) but no authorization data.
+- If the user signs in with a passwordless method (such as FIDO2 or Windows Hello for Business), Microsoft Entra ID issues a Partial Ticket Granting Ticket (Partial TGT) for the user's on-premises Active Directory (AD) domain. This Partial TGT contains the user's Security Identifier (SID) but no authorization data.
 
-    - A Kerberos server object exists in the on-premises AD, created and synchronized via Microsoft Entra Connect. This object allows Entra ID to generate these Partial TGTs without relying on physical domain controllers.
+- A Kerberos server object exists in the on-premises AD, created and synchronized via Microsoft Entra Connect. This object allows Entra ID to generate these Partial TGTs without relying on physical domain controllers.
 
-    - The Partial TGT issued by Entra ID is exchanged with an on-premises Active Directory domain controller to obtain a full TGT that includes group memberships and other access control data. The Partial TGT must be exchanged with a domain controller to gain full authorization information.
+- The Partial TGT issued by Entra ID is exchanged with an on-premises Active Directory domain controller to obtain a full TGT that includes group memberships and other access control data. The Partial TGT must be exchanged with a domain controller to gain full authorization information.
 
-    - Microsoft Entra ID also acts as a Key Distribution Center (KDC) for cloud resources, issuing a Cloud Ticket Granting Ticket (Cloud TGT) to the client when appropriate. The Cloud TGT is stored in the client's Kerberos ticket cache, and the client recognizes the Microsoft Entra ID tenant as a separate Kerberos realm for cloud resources.
+- Microsoft Entra ID also acts as a Key Distribution Center (KDC) for cloud resources, issuing a Cloud Ticket Granting Ticket (Cloud TGT) to the client when appropriate. The Cloud TGT is stored in the client's Kerberos ticket cache, and the client recognizes the Microsoft Entra ID tenant as a separate Kerberos realm for cloud resources.
 
         :::image type="content" source="media/kerberos/kerberos-account.png" alt-text="Microsoft Entra Kerberos architecture diagram" lightbox="media/kerberos/kerberos-account.png":::
     
-    During the exchange process, where a partial Entra Kerberos TGT is converted into a full AD TGT these lists are evaluated to determine access eligibility. If a user is blocked or not explicitly allowed, the request is denied and results in an error.
-    Importantly, the TGT is only recognized by on-premises AD. Therefore, having access to a partial TGT does not provide access to other resources outside of AD.
-    
+During the exchange process, where a partial Entra Kerberos TGT is converted into a full AD TGT these lists are evaluated to determine access eligibility. If a user is blocked or not explicitly allowed, the request is denied and results in an error.
+
     
 >[!IMPORTANT]
 > The TGT is only recognized by on-premises AD. Therefore, having access to a partial TGT doesn't provide access to other resources outside of AD.
