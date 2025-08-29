@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SAML SSO.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Certificates** section, download the Base64 certificate and save it on your computer.
 
-	![Screenshot shows the Certificate download link.](common/certificate-base64.jog "Certificate")
+	![Screenshot shows the Certificate download link.](common/certificate-base64.png "Certificate")
 
 1. On the **Set up GitHub Enterprise Managed User** section, copy the URLs below and save it for configuring GitHub below.
 
