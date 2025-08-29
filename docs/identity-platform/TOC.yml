@@ -312,8 +312,6 @@
         - name: Web app that calls an API
           expanded: false
           items:
-            - name: App registration
-              href: scenario-web-app-call-api-app-registration.md
             - name: Code configuration
               href: scenario-web-app-call-api-app-configuration.md
             - name: Global sign-out
