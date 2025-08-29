@@ -78,35 +78,41 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for GitHub Enterprise Managed User in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**
+2. Browse to **Entra ID** > **Enterprise apps**
 
     ![Enterprise applications blade](common/enterprise-applications.png)
 
-1. In the applications list, select **GitHub Enterprise Managed User**.
+3. In the applications list, select **GitHub Enterprise Managed User**.
 
     ![The GitHub Enterprise Managed User link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+4. Select the **Provisioning** tab.
 
-    ![Provisioning tab](common/provisioning.png)
+    ![Provisioning tab](common/provisioning1.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+5. Select the **Provisioning** tab.
+
+    ![Provisioning tab](common/provisioning2.png)
+
+6. Set the **Provisioning Mode** to **Automatic**.
 
     ![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your GitHub Enterprise Managed User Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GitHub Enterprise Managed User. If the connection fails, ensure your GitHub Enterprise Managed User account has created the secret token as an enterprise owner and try again.
+7. Under the **Admin Credentials** section, input your GitHub Enterprise Managed User Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to GitHub Enterprise Managed User. If the connection fails, ensure your GitHub Enterprise Managed User account has created the secret token as an enterprise owner and try again.
 
      ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
     ![Notification Email](common/provisioning-notification-email.png)
 
-7. Select **Save**.
+9. Select **Save**.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to GitHub Enterprise Managed User**.
+10. Under the **Mappings** section, select **Provision Microsoft Entra ID Users**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GitHub Enterprise Managed User for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GitHub Enterprise Managed User API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+    ![Provision Microsoft Entra ID Users](common/Provision-Microsoft-EntraID-Users.png)
+
+11. Review the user attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GitHub Enterprise Managed User for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GitHub Enterprise Managed User API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported For Filtering|
    |---|---|---|
@@ -122,8 +128,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "home"].value|String||
    |emails[type eq "other"].value|String||
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to GitHub Enterprise Managed User**.
+12. Under the **Mappings** section, select **Provision Microsoft Entra ID Groups**.
 
+    ![Provision Microsoft Entra ID Groups](common/Provision-Microsoft-Entra-ID-Groups.png)
+    
 11. Review the group attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GitHub Enterprise Managed User for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported For Filtering|
