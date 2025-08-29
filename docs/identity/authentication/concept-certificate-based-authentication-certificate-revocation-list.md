@@ -161,7 +161,7 @@ To strengthen security and avoid misconfigurations, an Authentication Policy Adm
    - Perform regular tests to verify that CRLs are downloadable and recognized correctly by Microsoft Entra ID.
    - Use monitoring to detect and quickly remediate any CRL availability or validation issues.
    
-## CRL error eeference 
+## CRL error reference 
 
 | Error code and message | Description | Common causes | Recommendations  |
 |-------------------------|-------------|---------------|----------------------|
