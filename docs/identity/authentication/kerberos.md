@@ -77,7 +77,7 @@ In addition to the PRT, Entra ID can issue a partial Ticket Granting Ticket (TGT
 
 - Microsoft Entra ID also acts as a Key Distribution Center (KDC) for cloud resources, issuing a Cloud Ticket Granting Ticket (Cloud TGT) to the client when appropriate. The Cloud TGT is stored in the client's Kerberos ticket cache, and the client recognizes the Microsoft Entra ID tenant as a separate Kerberos realm for cloud resources.
 
-        :::image type="content" source="media/kerberos/kerberos-account.png" alt-text="Microsoft Entra Kerberos architecture diagram" lightbox="media/kerberos/kerberos-account.png":::
+    :::image type="content" source="media/kerberos/kerberos-account.png" alt-text="Microsoft Entra Kerberos architecture diagram" lightbox="media/kerberos/kerberos-account.png":::
     
 During the exchange process, where a partial Entra Kerberos TGT is converted into a full AD TGT these lists are evaluated to determine access eligibility. If a user is blocked or not explicitly allowed, the request is denied and results in an error.
 
@@ -98,9 +98,9 @@ During the exchange process, where a partial Entra Kerberos TGT is converted int
 
 
 ### **Realm Mapping and Azure Tenant Info**:
-    - Windows LSASS manages the Kerberos Cloud TGT, realm mapping, and Azure tenant information.
-    - For Azure Virtual Desktop, the user receives both a PRT and Cloud TGT. Azure Virtual Desktop uses FSLogix to load the user profile from Azure Files.
-    - The Kerberos stack maintains the Cloud TGT and realm mapping, using a KDC Proxy to route Kerberos traffic to Microsoft Entra ID.
+- Windows LSASS manages the Kerberos Cloud TGT, realm mapping, and Azure tenant information.
+- For Azure Virtual Desktop, the user receives both a PRT and Cloud TGT. Azure Virtual Desktop uses FSLogix to load the user profile from Azure Files.
+- The Kerberos stack maintains the Cloud TGT and realm mapping, using a KDC Proxy to route Kerberos traffic to Microsoft Entra ID.
 
 ### Service Ticket Request and Issuance:
 
@@ -139,7 +139,7 @@ The client uses cloud TGT to request service tickets for cloud resources. No int
 
 ### Windows Authentication access to Azure SQL Managed Instance using Microsoft Entra Kerberos
 Kerberos authentication for Microsoft Entra ID enables Windows Authentication access to Azure SQL Managed Instance. Windows Authentication for managed instances empowers customers to move existing services to the cloud while maintaining a seamless user experience and provides the basis for infrastructure modernization.
-Detailed information at [Windows Authentication access to Azure SQL Managed Instance using Microsoft Entra Kerberos](/azure/azure-sql/managed-instance/winauth-azuread-overview?view=azuresql) 
+Detailed information at [Windows Authentication access to Azure SQL Managed Instance using Microsoft Entra Kerberos](/azure/azure-sql/managed-instance/winauth-azuread-overview) 
 
 ### Use SSO to sign in to on-premises resources by using FIDO2 keys
 Microsoft Entra Kerberos users can sign in to Windows with modern credentials, such as FIDO2 security keys, and then access traditional Active Directory-based resources.  
