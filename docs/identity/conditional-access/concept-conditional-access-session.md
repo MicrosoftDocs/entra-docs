@@ -49,7 +49,7 @@ For more information, see the article [Deploy Conditional Access App Control for
 ### Microsoft Purview Data Loss Prevention
 [Microsoft Purview Data Loss Prevention](/purview/dlp-browser-dlp-learn), is where you can [help prevent users from sharing sensitive info with Cloud Apps in Edge for Business](/purview/dlp-create-policy-prevent-cloud-sharing-from-edge-biz). Conditional Access session controls with the **Custom** setting selected are required for apps included in these policies.
 
-For information on the capabilities available in Purview DLP to protect data sharing to cloud apps in the browser, please see [activities you can monitor and take action on in the browser for managed apps](purview/dlp-browser-dlp-learn#activities-you-can-monitor-and-take-action-on)
+For information on the capabilities available in Purview DLP to protect data sharing to cloud apps in the browser, please see [activities you can monitor and take action on in the browser for managed apps](/purview/dlp-browser-dlp-learn#activities-you-can-monitor-and-take-action-on)
 
 ## Sign-in frequency
 
