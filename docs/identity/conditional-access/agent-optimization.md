@@ -6,7 +6,7 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 08/12/2025
+ms.date: 08/28/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -135,7 +135,7 @@ By default, the Conditional Access optimization agent can create new policies in
 
 When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can control and monitor the effect of the new policy. Phased rollout is on by default.
 
-You can change the number of days between each phase by either dragging the slider or entering a number of days in the text box. After making any changes, select the **Save** button at the bottom of the page. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
+You can change the number of days between each phase by either dragging the slider or entering a number in the text box. After making any changes, select the **Save** button at the bottom of the page. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
 
 :::image type="content" source="media/agent-optimization/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/phased-rollout-settings.png":::
 
@@ -179,7 +179,7 @@ The Conditional Access Optimization Agent integrates with Microsoft Intune to mo
 
 Agent suggestions for Intune scenarios cover specific user groups and platforms (iOS or Android). For example, the agent identifies an active Intune app protection policy that targets the "Finance" group, but determines there isn't a sufficient Conditional Access policy that enforces app protection. The agent creates a report-only policy that requires users to access resources only through compliant applications on iOS devices.
 
-The agent must be running as a Security Administrator or Global Administrator to identify Intune app protection policies. The Conditional Access Administrator role does not have sufficient privileges in Intune.
+The agent must be running as a Security Administrator or Global Administrator to identify Intune app protection policies. The Conditional Access Administrator role doesn't have sufficient privileges in Intune.
 
 ## Remove agent
 

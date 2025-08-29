@@ -32,7 +32,7 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan.
 
-Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply.
+Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply. To determine how the groups are selected, the agent looks at groups that were previously or are currently used in Conditional Access policies to determine which groups are appropriate to use. The agent looks at those groups to see how other Conditional Access policies affected them, to gauge potential impact. The agent looks at the size of the groups and then uses all these factors to determine 
 
 There are three steps in the phased rollout process:
 
