@@ -382,8 +382,6 @@
               href: scenario-protected-web-api-verification-scope-app-roles.md
         - name: Web API that calls an API
           items:
-            - name: App registration
-              href: scenario-web-api-call-api-app-registration.md
             - name: Code configuration
               href: scenario-web-api-call-api-app-configuration.md
             - name: Acquire a token

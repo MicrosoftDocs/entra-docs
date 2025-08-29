@@ -38,7 +38,7 @@ landingContent:
           - text: Web app that signs in users
             url: scenario-web-app-sign-user-app-configuration.md
           - text: Web app that calls a web API
-            url: scenario-web-api-call-api-app-registration.md
+            url: scenario-web-api-call-api-app-configuration.md
   - title: "Scenarios in depth"
     linkLists:
       - linkListType: tutorial
