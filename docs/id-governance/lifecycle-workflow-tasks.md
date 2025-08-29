@@ -777,6 +777,7 @@ For Microsoft Graph, the parameters for the **Remove all access package assignme
 |displayName     |  Remove all access package assignments for user (Customizable by user)        |
 |description     |  Remove all access packages assigned to the user (Customizable by user)        |
 |taskDefinitionId     |   42ae2956-193d-4f39-be06-691b8ac4fa1d      |
+|arguments     |  Argument contains a name parameter that is the "daysUntilExpiration", and a value parameter that is the days until expiration of all access package assignments for the user.   |
 
 Example of usage within the workflow:
 
