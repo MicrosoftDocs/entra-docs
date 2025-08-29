@@ -30,7 +30,10 @@ For a list of supported applications and how to configure policies, see the foll
 
 ## Conditional Access application control
 
-Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you determine the conditions, you can route users to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps) where you can protect data with Conditional Access App Control by applying access and session controls.
+Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you determine the conditions, you can route users to where access and session controls apply.
+
+### Microsoft Defender for Cloud Apps
+[Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps) is where you can protect data with Conditional Access App Control by applying access and session controls.
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are used within the Defender for Cloud Apps portal to refine filters and set actions to take. With the access and session policies, you can:
 
@@ -42,6 +45,11 @@ Conditional Access App Control enables user app access and sessions to be monito
 - Block custom activities: Some apps have unique scenarios that carry risk, for example, sending messages with sensitive content in apps like Microsoft Teams or Slack. In these kinds of scenarios, you can scan messages for sensitive content and block them in real time.
 
 For more information, see the article [Deploy Conditional Access App Control for featured apps](/defender-cloud-apps/proxy-deployment-aad).
+
+### Microsoft Purview Data Loss Prevention
+[Microsoft Purview Data Loss Prevention](/purview/dlp-browser-dlp-learn), is where you can [help prevent users from sharing sensitive info with Cloud Apps in Edge for Business](/purview/dlp-create-policy-prevent-cloud-sharing-from-edge-biz). Conditional Access session controls with the **Custom** setting selected are required for apps included in these policies.
+
+For information on the capabilities available in Purview DLP to protect data sharing to cloud apps in the browser, please see [activities you can monitor and take action on in the browser for managed apps](purview/dlp-browser-dlp-learn#activities-you-can-monitor-and-take-action-on)
 
 ## Sign-in frequency
 
