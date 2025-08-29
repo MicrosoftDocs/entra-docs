@@ -7,6 +7,7 @@ ms.author: henrymbugua
 ms.date: 11/14/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform for developers.
