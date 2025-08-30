@@ -89,4 +89,4 @@ You can manage the **Sponsors** field for all existing users using the [Update-M
 
 - [Add and invite guest users](add-users-administrator.yml)
 - [Create a new access package](~/id-governance/entitlement-management-access-package-create.md)
-- [Manage user profile info](~/fundamentals/how-to-manage-user-profile-info.yml)
+- [Manage user profile info](~/fundamentals/how-to-manage-user-profile-info.md)

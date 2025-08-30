@@ -80,11 +80,11 @@ The limitations described in this article have the following scope.
 
 - As your organization rolls out the multitenant organization functionality including provisioning of B2B users across multitenant organization tenants, you might want to provision some users as B2B guests, while provisioning other users as B2B members.
 
-- To promote B2B guests to B2B members, a host tenant administrator can change the [userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information), assuming the property isn't recurringly synchronized.
+- To promote B2B guests to B2B members, a host tenant administrator can change the [userType](../../fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information), assuming the property isn't recurringly synchronized.
 
 ## B2B guests or B2B members managed using cross-tenant synchronization
 
-- If cross-tenant synchronization is used to recurringly synchronize the [userType](../../fundamentals/how-to-manage-user-profile-info.yml#add-or-change-profile-information) property, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
+- If cross-tenant synchronization is used to recurringly synchronize the [userType](../../fundamentals/how-to-manage-user-profile-info.md#add-or-change-profile-information) property, a source tenant administrator can amend the [attribute mappings](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
 
 - You might want to establish two Microsoft Entra cross-tenant synchronization configurations in the source tenant, one with userType attribute mappings configured to B2B guest, and another with userType attribute mappings configured to B2B member, each with [**Apply this mapping** set to **Always**](cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
 
