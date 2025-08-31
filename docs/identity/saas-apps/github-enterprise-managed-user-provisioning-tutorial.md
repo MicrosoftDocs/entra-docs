@@ -88,11 +88,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 4. Select the **Provisioning** tab.
 
-    ![Provisioning tab](common/provisioning1.png)
+    ![Provisioning tab](common/provisioning-1.png)
 
 5. Select the **Provisioning** tab.
 
-    ![Provisioning tab](common/provisioning2.png)
+    ![Provisioning tab](common/provisioning-2.png)
 
 6. Set the **Provisioning Mode** to **Automatic**.
 
@@ -110,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Provision Microsoft Entra ID Users**.
 
-    ![Provision Microsoft Entra ID Users](common/provision-microsoft-entraid-users.png)
+    ![Provision Microsoft Entra ID Users](common/provision-microsoft-entra-id-users.png)
 
 11. Review the user attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GitHub Enterprise Managed User for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GitHub Enterprise Managed User API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
