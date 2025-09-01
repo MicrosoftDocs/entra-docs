@@ -36,7 +36,7 @@ To specify your app type to your app registration, follow these steps:
     - Node.js Electron apps: `msal{Your_Application/Client_Id}://auth`
 
 > [!NOTE]
-> For [Web Authentication Manager (WAM)](scenario-desktop-acquire-token-wam.md) apps, no redirect URI is needed in MSAL, but it must be configured in the [app registration](./quickstart-register-app.md#add-a-redirect-uri).
+> For [Web Authentication Manager (WAM)](scenario-desktop-acquire-token-wam.md) apps, no redirect URI is needed in MSAL.
 
 ## Enable public client flow
 

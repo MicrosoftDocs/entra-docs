@@ -423,8 +423,6 @@
       items:
         - name: Desktop app that calls an API
           items:
-            - name: App registration
-              href: scenario-desktop-app-registration.md
             - name: Code configuration
               href: scenario-desktop-app-configuration.md
             - name: Acquire token
@@ -600,8 +598,6 @@
       items:
         - name: Non-interactive app that calls a web API
           items:
-            - name: App registration
-              href: scenario-daemon-app-registration.md
             - name: Code configuration
               href: scenario-daemon-app-configuration.md
             - name: Acquire token

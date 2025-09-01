@@ -60,7 +60,7 @@ Browser based authentication (Workforce and External tenants):
 - [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md).
 - [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md).
 - [Desktop app](scenario-desktop-app-configuration.md).
-- [Daemon app](scenario-daemon-app-registration.md).
+- [Daemon app](scenario-daemon-app-configuration.md).
 - [Mobile app](scenario-mobile-app-configuration.md) in a workforce tenant.
 
 

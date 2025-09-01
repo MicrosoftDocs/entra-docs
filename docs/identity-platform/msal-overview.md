@@ -34,7 +34,7 @@ MSAL provides multiple ways to get security tokens, with a consistent API for ma
 | Web applications | [Tutorial: Sign-in users to a ASP.NET Core Web application](tutorial-web-app-dotnet-prepare-app.md) |
 | Web APIs | [Tutorial: Implement a protected endpoint a ASP.NET Core API](tutorial-web-api-dotnet-register-app.md) |
 | Mobile and native applications | [Mobile application calling a web API on behalf of the user who's signed-in interactively](scenario-mobile-app-configuration.md). |
-| Daemons and server-side applications | [Desktop/service daemon application calling web API on behalf of itself](scenario-daemon-app-registration.md) |
+| Daemons and server-side applications | [Desktop/service daemon application calling web API on behalf of itself](scenario-daemon-app-configuration.md) |
 
 ## MSAL Languages and Frameworks
 
