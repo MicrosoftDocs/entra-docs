@@ -95,7 +95,7 @@ Add the required attribute:
 
 | Name  | Source Attribute       |
 |--------|-----------------------|
-| email  | user.userprincipalname |
+| email  | user.email |
 
 > [!TIP]
 > If your organization uses a different primary email attribute, you can map `userprincipalname` to `user.mail`. Ensure the selected attribute contains the user’s sign-in email in AlexisHR.
