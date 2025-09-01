@@ -235,7 +235,7 @@ Known limitations for access controls include:
     - `?feature.msaljs=true&exp.msaljsexp=true`
     - For example, you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
         - If you received the "access denied" error message for the URL `https://entra.microsoft.com/`, then add the feature flag as follows:   `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
-- Only the Global Secure Access client for Windows, starting with version 1.8.239.0, is aware of Universal CAE. On other platforms, the Global Secure Access client uses regular access tokens.
+- Starting with version 1.8.239.0 on Windows and version 1.1.25060400 on macOS, the Global Secure Access client supports Universal CAE. On other platforms, the Global Secure Access client uses regular access tokens.
 - Microsoft Entra ID issues short-lived tokens for Global Secure Access. The lifetime for a Universal CAE access token is between 60 and 90 minutes, with support for near real-time revocation.
 - It takes approximately two to five minutes for the Microsoft Entra ID signal to reach the Global Secure Access client and prompt the user to reauthenticate.
 - The Global Secure Access client prompts the user three times to authenticate with a 2-minute grace period each time. This means that the entire CAE flow includes 4-5 minutes to signal the Global Secure Access client, then up to a 6-minute grace period, resulting in a disconnect after approximately 10 minutes.
