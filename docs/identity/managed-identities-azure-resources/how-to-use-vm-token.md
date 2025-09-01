@@ -301,8 +301,7 @@ $resource = 'https://management.azure.com'
 $response = Invoke-RestMethod -Method GET `
                             -Uri "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=$resource" `
                             -Headers @{ Metadata="true" }
-$content = $response.Content | ConvertFrom-Json
-$accessToken = $content.access_token
+$accessToken = $response.access_token
 Write-Host "Access token using a User-Assigned Managed Identity is $accessToken"
 
 # Use the access token to get resource information for the VM
