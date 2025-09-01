@@ -89,11 +89,13 @@ Follow these steps to enable Microsoft Entra SSO with temporary values.
    > [!NOTE]
    > These values are only placeholders. After you configure AlexisHR SSO, you'll return to this page and replace them with the real **Audience URI** and **Assertion Consumer Service URL** values provided by AlexisHR.
 
-1. In **Attributes & Claims**, set **Name ID format** to **Email address** and ensure the **Name ID** value is the user’s email.  
-   Add the required attribute:
-   | Name  | Source Attribute |
-   |--------|-----------------|
-   | email | user.email |
+In **Attributes & Claims**, set **Name ID format** to **Email address** and ensure the **Name ID** value is the user’s email.  
+
+Add the required attribute:
+
+| Name  | Source Attribute       |
+|--------|-----------------------|
+| email  | user.userprincipalname |
 
 > [!TIP]
 > If your organization uses a different primary email attribute, you can map `userprincipalname` to `user.mail`. Ensure the selected attribute contains the user’s sign-in email in AlexisHR.
