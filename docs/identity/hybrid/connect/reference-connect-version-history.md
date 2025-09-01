@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: mwongerapk
 ms.topic: reference
-ms.date: 08/28/2025
+ms.date: 09/01/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
@@ -68,7 +68,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
-|[2.5.76.0](#25760)|28 August 2026 (12 months after release of 2.5.79.0)|
+|[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
 |[2.5.79.0](#25790)||
 
 **All other versions are not supported**
@@ -96,7 +96,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-8/28/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting September 4, 2025 and will be done in multiple phases.  
+09/01/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting September 4, 2025 and will be done in multiple phases.  
 
 
 ### Added Features 
