@@ -30,11 +30,11 @@ For a list of supported applications and how to configure policies, see the foll
 
 ## Conditional Access application control
 
-Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you determine the conditions, you can route users to Microsoft Defender for Cloud Apps where you can protect data with Conditional Access App Control by applying access and session controls.
+Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you determine the conditions, you can route users to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps) where you can protect data with Conditional Access App Control by applying access and session controls.
 
 Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are used within the Defender for Cloud Apps portal to refine filters and set actions to take. 
 
-This control can be enforced with [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps), where Admins can [Deploy Conditional Access App Control for featured apps](/defender-cloud-apps/proxy-deployment-aad) and [use Microsoft Defender for Cloud Apps session policies](/defender-cloud-apps/session-policy-aad).
+This control can be enforced with Microsoft Defender for Cloud Apps, where Admins can [Deploy Conditional Access App Control for featured apps](/defender-cloud-apps/proxy-deployment-aad) and [use Microsoft Defender for Cloud Apps session policies](/defender-cloud-apps/session-policy-aad).
 
 For Microsoft Edge for Business, this control can be enforced with [Microsoft Purview Data Loss Prevention](/purview/dlp-browser-dlp-learn), where Admins can [help prevent users from sharing sensitive info with Cloud Apps in Edge for Business](/purview/dlp-create-policy-prevent-cloud-sharing-from-edge-biz). The Conditional Access App Control **Custom** setting is required for apps included in these policies.
 
