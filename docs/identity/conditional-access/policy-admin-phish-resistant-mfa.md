@@ -47,7 +47,7 @@ For external user scenarios, the MFA authentication methods that a resource tena
 ## Create a Conditional Access policy
 
 > [!WARNING]
-> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these methods are currently incompatible with authentication strengthd. Use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control instead.
+> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these methods are currently incompatible with authentication strengths. Use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control instead.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
