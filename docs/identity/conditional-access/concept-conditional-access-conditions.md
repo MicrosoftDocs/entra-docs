@@ -4,12 +4,12 @@ description: What are conditions in a Microsoft Entra Conditional Access policy?
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/12/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions

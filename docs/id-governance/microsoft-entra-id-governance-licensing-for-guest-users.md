@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 06/05/2025
+ms.date: 07/25/2025
 ms.author: owinfrey
 ms.reviewer: jercon
 ---
@@ -38,14 +38,14 @@ The following table contains a list of currently billable actions for **guest us
 
 | Service  | Action | Billable event & API  | Audit Log Where TargetUserType is Guest and GovernanceLicenseFeatureUsed is True  |
 |----------|----------|----------|----------|
-| Entitlement Management  | [Request access package on-behalf-of other users](entitlement-management-request-behalf.md)  | Bill on successful request creation. User requests or updates an access package assignment on-behalf-of another user.<br><br> **API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the requestor (manager) is extracted from the token, and the target object is determined by the ID of the direct employee who is receiving access.  | User requests access package assignment, Create access package assignment user update request   |
-| Entitlement Management  | [Guest is assigned to an Microsoft Entra role assignment](entitlement-management-roles.md)  | Bill on successful request creation when a Microsoft Entra role is included in the access package.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the access package contains a Microsoft Entra role.   | User requests access package assignment, Create access package assignment user update request   |
-| Entitlement Management  | [Sponsor policy is applied to assignment](entitlement-management-access-package-create.md)  | Bill on successful request creation when a sponsor is included as an approver in the access package policy.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests where a sponsor is included as an approver in the access package policy.  | User requests access package assignment, Create access package assignment user update request   |
-| Entitlement Management  | [EM – PIM for groups](create-access-review-pim-for-groups.md) | Bill on successful request creation when a PIM group is included in the access package.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the access package contains a PIM group.  | User requests access package assignment, Create access package assignment user update request.  |
-| Entitlement Management  | [Guest uses verified ID for request](entitlement-management-verified-id-settings.md)  | Bill on successful request creation when verified ID is required in the policy.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the access package policy requires a Verified ID.    | User requests access package assignment, Create access package assignment user update request.  |
-| Entitlement Management  | [Guest policy assigned with custom extension](entitlement-management-logic-apps-integration.md) | Bill on successful request creation when a custom extension is included in the assignment policy.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when a custom extension is included in the assignment policy.  | User requests access package assignment, Create access package assignment user update request.  |
+| Entitlement Management  | [Request access package on-behalf-of other users](entitlement-management-request-behalf.md)  | Bill on successful request creation. User requests or updates an access package assignment on-behalf-of another user.<br><br> **API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the requestor (manager) is extracted from the token, and the target object is determined by the ID of the direct employee who is receiving access.  | User requests access package assignment, Create access package assignment user update request, Administrator directly assigns user to access package   |
+| Entitlement Management  | [Guest is assigned to an Microsoft Entra role assignment](entitlement-management-roles.md)  | Bill on successful request creation when a Microsoft Entra role is included in the access package.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the access package contains a Microsoft Entra role.   | User requests access package assignment, Create access package assignment user update request, Administrator directly assigns user to access package   |
+| Entitlement Management  | [Sponsor policy is applied to assignment](entitlement-management-access-package-create.md)  | Bill on successful request creation when a sponsor is included as an approver in the access package policy.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests where a sponsor is included as an approver in the access package policy.  | User requests access package assignment, Create access package assignment user update request, Administrator directly assigns user to access package   |
+| Entitlement Management  | [EM – PIM for groups](create-access-review-pim-for-groups.md) | Bill on successful request creation when a PIM group is included in the access package.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the access package contains a PIM group.  | User requests access package assignment, Create access package assignment user update request, Administrator directly assigns user to access package  |
+| Entitlement Management  | [Guest uses verified ID for request](entitlement-management-verified-id-settings.md)  | Bill on successful request creation when verified ID is required in the policy.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when the access package policy requires a Verified ID.    | User requests access package assignment, Create access package assignment user update request, Administrator directly assigns user to access package  |
+| Entitlement Management  | [Guest policy assigned with custom extension](entitlement-management-logic-apps-integration.md) | Bill on successful request creation when a custom extension is included in the assignment policy.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when a custom extension is included in the assignment policy.  | User requests access package assignment, Create access package assignment user update request, Administrator directly assigns user to access package  |
 | Entitlement Management| [Guest is granted an auto-assignment policy](entitlement-management-access-package-auto-assignment-policy.md)  | Bill on successful request creation with an auto-assignment policy.  | Entitlement Management creates access package assignment request for user.  |
-| Entitlement Management  | [Directly assign any user](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)  | Bill on successful request creation when using directly assigning an access package to a user not yet in the directory.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when using requestType "*AdminAdd*" for a user who doesn’t exist in the directory.  | Administrator directly assigns user to access package.  |
+| Entitlement Management  | [Directly assign any user](entitlement-management-access-package-assignments.md#directly-assign-any-user-preview)  | Bill on successful request creation when using directly assigning an access package to a user not yet in the directory.<br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/entitlementManagement/assignmentRequests when using requestType "*AdminAdd*" for a user who doesn’t exist in the directory.  | Entitlement Management invites external user.  |
 | Entitlement Management |[Mark guest as governed](entitlement-management-access-package-manage-lifecycle.md)  | Bill on conversion to governed user.<br><br>**API**<br> https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/subjects where *"subjectLifecycle"* is set to "governed".  | Update access package user lifecycle. |
 | Lifecycle Workflows   | [Workflow is run for guest](what-are-lifecycle-workflows.md) | Bill on workflow execution.<br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/lifecycleWorkflows/workflows/{workflowId}/activate  | Workflow execution started for user.  |
 | Access Reviews   | [Access Review – machine learning assisted access reviews](review-recommendations-access-reviews.md#user-to-group-affiliation) | Bill when guest user is included in review. <br><br>**API**<br> https://graph.microsoft.com/v1.0/identityGovernance/accessReviews/definitions where recommendation settings is enabled in a group review. | Available after 8/1/2025  |
@@ -104,34 +104,35 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 - Tailspin creates a second access review for a security group with 300 guest users with the user-to-group affiliation feature enabled. 
 - Billing: For May, Tailspin is billed for 500 users – 200 for the inactive guest access review and 300 for the review with user-to-group affiliation. 
 
+
 ### Link your tenant to a subscription
-
+ 
 Your tenants must be linked to an Azure subscription for proper billing and access to features. To link your tenant to a subscription, follow these steps.
-
-1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that has at least the Contributor role within the subscription or a resource group within the subscription.
-
-2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings \| Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
-
-3.  Browse to **Entra ID** > **ID Governance** > **Dashboard**.
-
+ 
+1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that has at least the Contributor role within the subscription or a resource group within the subscription.
+ 
+2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings \| Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
+ 
+3.  Browse to **Entra ID** > **ID Governance** > **Dashboard**.
+ 
 4.  On the governance dashboard, locate the guest governance panel and select **Get Started**.
-
-5.  In the **Link a subscription** pane, select a **Subscription** and a **Resource group**. Then select **Turn on**.
-
+ 
+5.  In the **Link a subscription** pane, select a **Subscription** and a **Resource group**. Then select **Turn on**.
+ 
 After you complete these steps, your Azure subscription is billed based on your Azure Direct or Enterprise Agreement details, if applicable.
-
+ 
 ## What if I can't find a subscription?
-
-If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
-
+ 
+If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
+ 
 - You don't have the appropriate permissions. Be sure to sign in with an Azure account that has at least the Contributor role within the subscription or a resource group within the subscription.
-
-- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](../fundamentals/how-subscriptions-associated-directory.yml) and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
-
-- No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
-
+ 
+- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](../fundamentals/how-subscriptions-associated-directory.md) and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
+ 
+- No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
+ 
 ## Turn off guest billing
-
+ 
 You can turn off governance guest billing by returning to the governance dashboard and selecting **Edit** on the guest governance panel. In the Edit Guest Access panel, select "Turn Off" to disable billing and Microsoft Entra ID Governance features for your guest users.
 
 ## Guest user licensing FAQs

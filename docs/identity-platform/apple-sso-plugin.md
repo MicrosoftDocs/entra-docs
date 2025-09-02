@@ -50,7 +50,7 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
 - Configuration must be *pushed to the device* to enable the Enterprise SSO plug-in. Apple requires this security constraint.
 - Apple devices must be allowed to reach to both identity provider URLs and its own URLs without additional interception. This means that those URLs need to be excluded from network proxies, interception, and other enterprise systems. 
 
-  The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 and not targeted with Platform SSO are as follows: (On the latest operating system versions, Apple relies fully on its CDN):
+The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 and not targeted with Platform SSO are as follows: (On the latest operating system versions, Apple relies fully on its CDN):
   - `app-site-association.cdn-apple.com`
   - `app-site-association.networking.apple`
   - `config.edge.skype.com` - Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
@@ -67,11 +67,21 @@ The minimum set of URLs that need to be allowed for the SSO plug-in to function 
   - `login-us.microsoftonline.com`(**)
   - `config.edge.skype.com`(***)
 
-  (*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
-  (**) You only need to allow sovereign cloud domains if you rely on those in your environment.
-  (***) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
+  ( * ) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
+  ( ** ) You only need to allow sovereign cloud domains if you rely on those in your environment.
+  ( *** ) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
 
-  The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device sends a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
+**URLs that need to be allowed for Device registration flows**  
+
+Ensure that traffic to the URLs listed [here](/entra/identity/devices/plan-device-deployment#network-requirements-for-device-registration-with-microsoft-entra) is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration flows that rely on TLS challenges to complete successfully.
+
+> [!IMPORTANT]
+> **Note: There has been a recent update to the TLS endpoint used in registration flows. Please verify that your environment’s allowlist reflects the latest URL requirements to avoid disruptions.**
+
+
+<br>
+
+The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device sends a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
 
   > [!WARNING]
   > If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. SSO plugin won't work reliably without fully excluding Apple CDN domains from interception, and you'll experience intermittent issues until you do so. If your organization use OS versions released after 2022, there is no need to exclude Microsoft login URLs from TLS interspection. Customers using Tenant Restriction feature can do TLS inspection on Microsoft login URLs and add the necessary headers on the request.
@@ -164,7 +174,7 @@ Your organization likely uses the Authenticator app for scenarios like multifact
 Use the following parameters to configure the Microsoft Enterprise SSO plug-in for apps that don't use MSAL.
 
 >[!IMPORTANT]
-> You don't need to add apps that use a Microsoft Authentication Library to this allow-list. Those apps participate in SSO by default. Most of the Microsoft-built apps use a Microsoft Authentication Library. 
+> You don't need to add apps that use a Microsoft Authentication Library to this allowlist. Those apps participate in SSO by default. Most of the Microsoft-built apps use a Microsoft Authentication Library. 
 
 #### Enable SSO for all managed apps
 
@@ -205,7 +215,7 @@ To *disable* SSO for Safari or Safari View Service, you must explicitly do so by
 - macOS: `com.apple.Safari`
 
 >[!NOTE]
-> SSO cannot be disabled for apps that use a Microsoft Authentication Library using this setting.
+> SSO can't be disabled for apps that use a Microsoft Authentication Library using this setting.
 
 #### Enable SSO through cookies for a specific application
 
@@ -228,7 +238,7 @@ Try this configuration only for applications that have unexpected sign-in failur
 #### Summary of keys
 
 >[!NOTE]
-> Keys described in this section only apply to apps that are not using a Microsoft Authentication Library.
+> Keys described in this section only apply to apps that aren't using a Microsoft Authentication Library.
 
 | Key | Type | Value |
 |--|--|--|
@@ -236,7 +246,7 @@ Try this configuration only for applications that have unexpected sign-in failur
 | `AppAllowList` | String<br/>*(comma-delimited  list)* | Bundle IDs of applications allowed to participate in SSO. |
 | `AppBlockList` | String<br/>*(comma-delimited  list)* | Bundle IDs of applications not allowed to participate in SSO. |
 | `AppPrefixAllowList` | String<br/>*(comma-delimited  list)* | Bundle ID prefixes of applications allowed to participate in SSO. For iOS, the default value would be set to `com.apple.` and that would enable SSO for all Apple apps. For macOS, the default value would be set to `com.apple.` and `com.microsoft.` and that would enable SSO for all Apple and Microsoft apps. Developers, Customers, or Admins could override the default value or add apps to `AppBlockList` to prevent them from participating in SSO. |
-| `AppCookieSSOAllowList` | String<br/>*(comma-delimited  list)* | Bundle ID prefixes of applications allowed to participate in SSO but that use special network settings and have trouble with SSO using the other settings. Apps you add to `AppCookieSSOAllowList` must also be added to `AppPrefixAllowList`. Please note that this key is to be used only for iOS apps and not for macOS apps. |
+| `AppCookieSSOAllowList` | String<br/>*(comma-delimited  list)* | Bundle ID prefixes of applications allowed to participate in SSO but that use special network settings and have trouble with SSO using the other settings. Apps you add to `AppCookieSSOAllowList` must also be added to `AppPrefixAllowList`. Note that this key is to be used only for iOS apps and not for macOS apps. |
 
 #### Settings for common scenarios
 
@@ -303,13 +313,14 @@ These parameters specify whether the SSO extension should prevent native and web
 For a consistent SSO experience across all apps on the device, we recommend you enable one of these settings for apps that don't use MSAL. You should only enable this for apps that use MSAL if your users are experiencing unexpected prompts. 
 
 ##### Apps that don't use a Microsoft Authentication Library:
-  
+
 Disable the app prompt and display the account picker:
 
 - **Key**: `disable_explicit_app_prompt`
 - **Type**: `Integer`
 - **Value**: 1 or 0. This value is set to 1 by default and this default setting reduces the prompts.
   
+
 Disable app prompt and select an account from the list of matching SSO accounts automatically:
 - **Key**: `disable_explicit_app_prompt_and_autologin`
 - **Type**: `Integer`
@@ -325,6 +336,7 @@ Disable the app prompt and display the account picker:
 - **Type**: `Integer`
 - **Value**: 1 or 0. This value is set to 0 by default.
   
+
 Disable app prompt and select an account from the list of matching SSO accounts automatically:
 - **Key**: `disable_explicit_native_app_prompt_and_autologin`
 - **Type**: `Integer`
@@ -420,27 +432,31 @@ Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSA
 
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
 
-## Upcoming changes to device identity key storage
-Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2025, all new device registrations will use Apple’s Secure Enclave. There will be no opt-out of this storage location.
+<a name='upcoming-changes-to-device-identity-key-storage'></a>
 
-Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
+## Device Identity Key Storage
 
-### Enable Secure Enclave based storage of device identity keys
+In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning August 2025 as part of the Secure Enclave rollout, certain new device registrations will require Secure Enclave for key storage. Eventually, all new device registrations will require Secure Enclave.
 
-If you would like to enable Secure Enclave based storage of device identity keys before it becomes mandatory, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+If your applications or MDM solutions depend on accessing Microsoft Entra device registration keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
-> [!NOTE]
-> For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
+### Using Microsoft Authentication Library (MSAL) to read registration device Information
 
-- **Key**: `use_most_secure_storage`
-- **Type**: `Boolean`
-- **Value**: True
+You can call this available MSAL API to read detailed device registration:
 
-The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
+> ```objc
+> - (void)getWPJMetaDataDeviceWithParameters:(nullable MSALParameters *)parameters
+>                                forTenantId:(nullable NSString *)tenantId
+>                            completionBlock:
+>                                (nonnull MSALWPJMetaDataCompletionBlock)
+>                                    completionBlock;
+> ```
 
-:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin center showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
 
-### Recognize app incompatibilities with Secure Enclave based device identity
+Please find more details about this API documentation [here](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALPublicClientApplication.html#/c:objc(cs)MSALPublicClientApplication(im)getWPJMetaDataDeviceWithParameters:forTenantId:completionBlock:).
+
+### Troubleshooting Secure Enclave based device identity
+
 After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
 
 :::image type="content" source="./media/apple-sso-plugin/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/apple-sso-plugin/device-mgmt-reqd.png":::
@@ -451,13 +467,70 @@ This error appears in Microsoft Entra ID sign-in logs with the following details
 
 If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, it's recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
 
+#### Troubleshoot Secure Enclave
+
+In cases where you must troubleshoot issues with Secure Enclave, it can be disabled by updating the following key in your Apple device's MDM configuration:
+
+- **Key**: `use_most_secure_storage`
+- **Type**: `Integer`
+- **Value**: 0
+
+> [!WARNING]
+> Disabling Secure Enclave should only be done during troubleshooting.
+
+#### Troubleshooting: Disable Secure Enclave for Testing
+
+If for any reason Secure Enclave needs to be disabled, follow these recommended steps:
+
+1. **Update the configuration**: Disable `use_most_secure_storage` by setting the flag to `0` for Integer type in your MDM configuration.
+
+2. **Unregister the device**: Remove the device registration using one of these methods:
+  - **Microsoft Authenticator**: Navigate to the device registration menu and follow the unregistration steps:
+    1. Select the menu `...` from Home screen on the top left
+    2. Press Settings, Device Registration.
+    3. Press registration Company name under your device is currently registered with.
+    4. Press Unregister device.
+  - **Intune Company Portal**: Login to Company Portal and select Devices Tab:
+    1. Select you device from the list of devices.
+    2. Under the name, press `...`, a menu would pop up.
+    3. Select Remove device.
+
+3. **Re-register the device**: After unregistering, register the device again using either:
+  - **Intune Company Portal**: Select the device and register it again
+  - **Microsoft Authenticator**: Go to the menu, select Device Registration, and register the device again (Note: This method is not available on macOS)
+
+> [!IMPORTANT]
+> The device must be unregistered and re-registered for the storage location change to take effect. Simply updating the configuration flag without re-registration will not change the storage location for existing device registrations.
+
+#### Opting out of Secure Storage
+
+To opt your tenant out of the secure storage rollout, contact Microsoft customer support to request exclusion from the secure storage deployment. Once processed, your tenant is permanently excluded from this rollout. Any devices in your tenant previously registered with secure storage must follow the previous guidance for removing and re-adding the device after the permanent opt-out is completed. To opt in for Secure storage at a future date, you must contact [Microsoft customer support](/services-hub/unified/support/open-support-requests).
+
 ### Scenarios impacted
-The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
 
-This isn't an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
+The list below contains some common scenarios that will be impacted by these changes. By default, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
 
-#### Registered/Enrolled Device Conditional Access Policy Support in Chrome
-To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you'll need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
+> [!NOTE]
+> This isn't an exhaustive list, and we advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
+
+#### Registered/Enrolled Device Conditional Access Policy Support in Browsers
+
+With Secure Enclave-based storage enabled, browsers require specific configurations to support device Conditional Access policies:
+
+**Safari (iOS and macOS)**
+- Built-in SSO integration - no additional configuration required
+
+**Google Chrome (macOS)**
+- Install the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension, or
+- Update to Chrome 135+ for automatic Enterprise SSO support
+
+**Microsoft Edge (iOS and macOS)**
+- Sign in to your Edge profile for automatic Microsoft SSO integration
+- Learn more: [Microsoft Edge security and identity](/deployedge/microsoft-edge-security-identity#seamless-sso)
+
+**Firefox (macOS)**
+- Configure the MicrosoftEntraSSO policy for browser integration
+- See: [Firefox policy templates](https://mozilla.github.io/policy-templates/#microsoftentrasso) and [Firefox Enterprise 133 release notes](https://support.mozilla.org/en-US/kb/firefox-enterprise-133-release-notes)
 
 ## Important update on macOS 15.3 and iOS 18.1.1 impacting Enterprise SSO
 

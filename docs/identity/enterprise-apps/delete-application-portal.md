@@ -28,7 +28,7 @@ To delete an enterprise application, you need:
    - One of the following roles: 
    - Cloud Application Administrator
    - Application Administrator
-   - owner of the service principal
+   - Owner of the service principal
 - An [enterprise application added to your tenant](add-application-portal.md).
 
 :::zone pivot="portal"
@@ -36,8 +36,8 @@ To delete an enterprise application, you need:
 ## Delete an enterprise application using Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
-1. Enter the name of the existing application in the search box, and then select the application from the search results. In this article, we use the **Microsoft Entra SAML Toolkit 1** as an example.
+1. Browse to **Entra ID** > **Enterprise apps | All applications** 
+1. Enter the name of the existing application in the search box, and then select the application from the search results. In this article, we use the **Microsoft Graph Command Line Tools** as an example.
 1. In the **Manage** section of the left menu, select **Properties**.
 1. At the top of the **Properties** pane, select **Delete**, and then select **Yes** to confirm you want to delete the application from your Microsoft Entra tenant.
 

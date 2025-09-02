@@ -1,27 +1,32 @@
 ---
-title: Grant controls in Conditional Access policy
-description: Grant controls in a Microsoft Entra Conditional Access policy.
+title: How to Configure Grant Controls in Microsoft Entra
+description: Learn how to configure grant controls in Microsoft Entra Conditional Access policies to secure access to your organization's resources effectively.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 06/24/2024
+ms.topic: article
+ms.date: 08/28/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth, jogro
-ms.custom: sfi-image-nochange
+ms.custom:
+  - sfi-image-nochange
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:08/28/2025
+  - ai-gen-description
 ---
 # Conditional Access: Grant
 
-Within a Conditional Access policy, an administrator can use access controls to grant or block access to resources.
+In a Conditional Access policy, an admin can use access controls to grant or block access to resources.
 
-:::image type="content" source="media/concept-conditional-access-grant/conditional-access-grant.png" alt-text="Screenshot of a Conditional Access policy with a grant control that requires multifactor authentication." lightbox="media/concept-conditional-access-grant/conditional-access-grant.png":::
+:::image type="content" source="media/concept-conditional-access-grant/conditional-access-grant.png" alt-text="Screenshot of a Conditional Access policy that shows a grant control requiring phishing-resistant multifactor authentication." lightbox="media/concept-conditional-access-grant/conditional-access-grant.png":::
 
 ## Block access
 
-The control for blocking access considers any assignments and prevents access based on the Conditional Access policy configuration.
+The control for blocking access evaluates assignments and prevents access based on the Conditional Access policy configuration.
 
-**Block access** is a powerful control that you should apply with appropriate knowledge. Policies with block statements can have unintended side effects. Proper testing and validation are vital before you enable the control at scale. Administrators should use tools such as [Conditional Access report-only mode](concept-conditional-access-report-only.md) and [the What If tool in Conditional Access](what-if-tool.md) when making changes.
+**Block access** is a powerful control that requires careful application. Policies with block statements might cause unintended side effects. Proper testing and validation are essential before enabling the control at scale. Admins should use tools like [Conditional Access report-only mode](concept-conditional-access-report-only.md) and [the What If tool in Conditional Access](what-if-tool.md) when making changes.
 
 ## Grant access
 
@@ -90,7 +95,7 @@ The **Require Microsoft Entra hybrid joined device** control:
 Organizations can require that an approved client app is used to access selected cloud apps. These approved client apps support [Intune app protection policies](/mem/intune/apps/app-protection-policy) independent of any mobile device management solution.
 
 > [!WARNING]
-> The approved client app grant is retiring in early March 2026. Organizations must transition all current Conditional Access policies that use only the Require Approved Client App grant to Require Approved Client App or Application Protection Policy by March 2026. Additionally, for any new Conditional Access policy, only apply the Require application protection policy grant. For more information, see the article [Migrate approved client app to application protection policy in Conditional Access](migrate-approved-client-app.md).
+> The approved client app grant is retiring in early March 2026. Organizations must transition all current Conditional Access policies that use **only** the Require Approved Client App grant to Require Approved Client App **or** Application Protection Policy by March 2026. Additionally, for any new Conditional Access policy, only apply the Require application protection policy grant. For more information, see the article [Migrate approved client app to application protection policy in Conditional Access](migrate-approved-client-app.md).
 
 To apply this grant control, the device must be registered in Microsoft Entra ID, which requires using a broker app. The broker app can be Microsoft Authenticator for iOS, or either Microsoft Authenticator or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the appropriate app store to install the required broker app.
 
@@ -177,7 +182,7 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Notate for Intune
 - Provectus - Secure Contacts
 - Viva Engage (Android, iOS, and iPadOS)
-- Windows App (Android, iOS/iPadOS, and Edge on Windows)
+- Windows App (Android, iOS/iPadOS, and Microsoft Edge on Windows)
 
 > [!NOTE]
 > Kaizala, Skype for Business, and Visio don't support the **Require app protection policy** grant. If you require these apps to work, use the **Require approved apps** grant exclusively. Using the "or" clause between the two grants won't work for these three applications.
@@ -205,17 +210,17 @@ If your organization created terms of use, other options might be visible under 
 
 ## Multiple grant controls
 
-When multiple grant controls are applied to a user, it's important to understand that Conditional Access policies follow a specific validation order by design. For example, if a user has two policies requiring multifactor authentication (MFA) and Terms of Use (ToU), Conditional Access first validates the user's MFA claim and then the ToU.
+When multiple grant controls apply to a user, understand that Conditional Access policies follow a specific validation order by design. For example, if a user has two policies requiring multifactor authentication (MFA) and Terms of Use (ToU), Conditional Access validates the user's MFA claim first, then the ToU.
  
-- If a valid MFA claim isn't present in the token, you see an "interrupt" (pending MFA) and a failure for ToU in the logs, even if the ToU was already accepted in a previous sign-in.
-- Once multifactor authentication is completed, a second log entry appears, validating the ToU. If the user already accepted the ToU, you see success for both MFA and ToU. 
+- If a valid MFA claim isn't in the token, you see an "interrupt" (pending MFA) and a failure for ToU in the logs, even if the ToU was accepted in a previous sign-in.
+- After completing multifactor authentication, a second log entry appears, validating the ToU. If the user already accepted the ToU, you see success for both MFA and ToU. 
 - If a valid MFA claim is present in the token, a single log shows success for both MFA and ToU.
  
 If multiple policies are applied to a user requiring MFA, Device State, and ToU, the process is similar. The validation order is MFA, Device State, and then ToU.
 
 ### Custom controls (preview)
 
-Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, your users are redirected to a compatible service to satisfy authentication requirements that are separate from Microsoft Entra ID. For more information, check out the [Custom controls](controls.md) article.
+Custom controls are a preview capability of Microsoft Entra ID. Using custom controls redirects your users to a compatible service to satisfy authentication requirements separate from Microsoft Entra ID. For more information, check out the [Custom controls](controls.md) article.
 
 ## Next steps
 

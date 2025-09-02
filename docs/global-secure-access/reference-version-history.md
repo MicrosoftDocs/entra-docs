@@ -31,12 +31,11 @@ Here's a list of related resources:
  
 ### Release status
  
-June 25, 2025: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center. It will not be available as auto update. 
+June 25, 2025: Released for download. Note that Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. This version may perform auto-upgrade of your connector. As long as the private network connector updater service is running, your connectors may update with this connector release automatically. If you don’t see the connector updater service on your server, you need to reinstall your connector manually to get updates. You can install via the download page in the Microsoft Entra admin center. 
  
 ### New features and improvements
  
 - Updated connector signaling in GSA Private Access, increasing overall stability and responsiveness. 
-- Added additional performance counters, enabling more comprehensive and effective diagnostics for connectors. 
 - Bug fixes and minor improvements to enhance stability and performance. 
 
 ## Version 1.5.4287.0

@@ -2642,9 +2642,7 @@
       - name: Softeon WMS
         href: softeon-tutorial.md
       - name: Software AG Cloud
-        href: software-ag-cloud-tutorial.md
-      - name: SolarWinds Orion
-        href: solarwinds-orion-tutorial.md  
+        href: software-ag-cloud-tutorial.md 
       - name: SolarWinds Service Desk
         href: samanage-tutorial.md  
       - name: Soloinsight-CloudGate SSO

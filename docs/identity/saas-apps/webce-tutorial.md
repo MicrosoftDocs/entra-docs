@@ -4,7 +4,7 @@ description: Learn how to configure single sign-on between Microsoft Entra ID an
 
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://www.webce.com/<RootPortalFolder>/login`
 
     > [!Note]
-    > These values aren't the real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [WebCE Client support team](mailto:CustomerService@WebCE.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't the real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [WebCE Client support team](mailto:corporatesales@webce.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
@@ -90,7 +90,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure WebCE SSO
 
-To configure single sign-on on **WebCE** side, you need to send **Thumbprint Value** and appropriate copied URLs from the application configuration to [WebCE support team](mailto:CustomerService@WebCE.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **WebCE** side, you need to send **Thumbprint Value** and appropriate copied URLs from the application configuration to [WebCE support team](mailto:corporatesales@webce.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create WebCE test user
 

@@ -10,8 +10,12 @@
     href: agent-optimization.md
   - name: Review and approve suggestions
     href: agent-optimization-review-suggestions.md
+  - name: Chat with the optimization agent
+    href: agent-optimization-chat.md
   - name: Optimization agent logs and metrics
     href: agent-optimization-logs-metrics.md
+  - name: Phased rollout
+    href: agent-optimization-phased-rollout.md
   - name: Optimization agent FAQ
     href: agent-optimization-faq.yml
 - name: Tutorials

@@ -2,9 +2,9 @@
 author: garrodonnell
 ms.service: entra-external-id
 ms.topic: include
-ms.date: 05/08/2024
+ms.date: 08/25/2025
 ms.author: godonnell
 ms.manager: dougeby
 ---
 
-**Applies to**: ![Green circle with a white check mark symbol.](../media/common/applies-to-yes.png) Workforce tenants ![White circle with a gray X symbol.](../media/common/applies-to-no.png) External tenants ([learn more](../tenant-configurations.md))
+**Applies to**: ![Green circle with a white check mark symbol that indicates the following content applies to workforce tenants.](../media/common/applies-to-yes.png) Workforce tenants ([learn more](/entra/external-id/tenant-configurations))

@@ -3,11 +3,11 @@ title: Backup Authentication System for Microsoft Entra ID
 description: Explore the resilience features of Microsoft Entra ID's backup authentication system, designed to maintain authentication availability for users and services.
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: joroja
 ms.custom:
   - ai-gen-docs-bap
