@@ -2134,7 +2134,7 @@
       - name: Pipedrive
         href: pipedrive-tutorial.md
       - name: PKSHA ChatAgent
-        href: pksha-chatAgent-tutorial.md
+        href: pksha-chatagent-tutorial.md
       - name: PlanGrid
         href: plangrid-tutorial.md
       - name: PlanMyLeave
