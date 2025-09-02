@@ -36,7 +36,7 @@ Before you try this tutorial, consider the following items:
  - Ensure that you're familiar with the basics of Microsoft Entra Cloud Sync.
  - Ensure that you're running Microsoft Entra Connect Sync version 1.4.32.0 or later and that you configured the sync rules as documented.
  - Ensure that for a pilot that you remove a test organizational unit (OU) or group from Microsoft Entra Connect Sync scope. Moving objects out of scope leads to deletion of those objects in Microsoft Entra ID.
-
+## (This is confusing to customers. This implies that we need to filter the OU in Connect Sync configuration when we do this with the custom rules for cloudNoFlow. Then in Prerequisites below we state to use "an OU or Group that is in scope of Sync". Not sure of exact edit but should be reworded to mention OU in scope and custom rules.)
     - User objects in Microsoft Entra ID are soft-deleted, so you can restore them.
     - Group objects in Microsoft Entra ID are hard-deleted, so you can't restore them.
  
