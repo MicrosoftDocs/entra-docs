@@ -3,11 +3,11 @@ title: The Global Secure Access Client for iOS (Preview)
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/08/2025
+ms.date: 09/02/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
-ms.reviewer: dhruvinrshah
+ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
 # Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for iOS devices.
 ---
@@ -106,7 +106,7 @@ select **Create**. After a few moments, the Defender for Endpoint app is created
         |  |0 |Private Access isn't enabled and the toggle option isn't visible to user. |
         |  |1 |The Private Access toggle is visible and defaults to disabled state. User can enable or disable. |
         |  |2 |The Private Access toggle is visible and defaults to enabled state. User can enable or disable. |
-        |  |3 |The Private Access toggle is visible but greyed out, and defaults to enabled state. The user **can't** disable Private Access. |
+        |  |3 |The Private Access toggle is visible but grayed out, and defaults to enabled state. The user **can't** disable Private Access. |
 
 1. Continue filling out the VPN form:  
     - **Type of Automatic VPN**: On-demand VPN
@@ -137,7 +137,7 @@ If the client is unable to connect, a toggle appears to disable the service. Use
 ## Troubleshooting
 - The Global Secure Access tile doesn't appear in the Defender app after onboarding the tenant:
     - Force stop the Defender app and relaunch it.
-- Access to the Private Access application shows a connection time out error after a successful interactive sign-in.
+- Access to the Private Access application shows a connection time-out error after a successful interactive sign-in.
     - Reload the application (or refresh the web browser).
 
 ## Related content

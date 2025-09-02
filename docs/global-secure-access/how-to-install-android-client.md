@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/27/2025
+ms.date: 09/02/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -53,41 +53,42 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 1. On the **Basics** tab:
     1. Enter a **Name**.
     1. Set the **Platform** to **Android Enterprise**.
-1. Set the **Profile type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
+    1. Set the **Profile type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
     1. Set the **Targeted app** to **Microsoft Defender**. 
 1. Select **Next**.
-:::image type="content" source="media/how-to-install-android-client/create-policy-basics.png" alt-text="Screenshot of the Create app configuration policy on the Basics tab.":::   
+:::image type="content" source="media/how-to-install-android-client/create-policy-basics.png" alt-text="Screenshot of the Create app configuration policy on the Basics tab." lightbox="media/how-to-install-android-client/create-policy-basics-expanded.png":::   
 
 1. On the **Settings** tab:
     1. Set **Configuration settings format** to **Use configuration designer**.
-1. Use the JSON editor to configure the disabled configuration keys, and then select the **+ Add** button.
-    1. In the search field, type `global` and select these configuration keys:
-        - **Global Secure Access** (this key is required to enable Global Secure Access). 
-        - **GlobalSecureAccessPrivateChannel** (this optional key enables Global Secure Access Private channel). 
-    1. Set the appropriate values for each configuration key according to the following table: 
+    1. Use the JSON editor to configure the disabled configuration keys:
+        1. Select the **+ Add** button.
+        1. In the search field, type `global` and select these configuration keys:
+            - **Global Secure Access** (this key is required to enable Global Secure Access). 
+            - **GlobalSecureAccessPrivateChannel** (this optional key enables Global Secure Access Private channel). 
+        1. Set the appropriate values for each configuration key according to the following table: 
  
-| Configuration key                | Value    | Details   |
-|----------------------------------|----------|-----------|
-| Global Secure Access             | No value | Global Secure Access isn't enabled and the tile isn't visible. |
-|                                  | 0        | Global Secure Access isn't enabled and the tile isn't visible. |
-|                                  | 1        | The tile is visible and defaults to false (disabled state). The user can enable or disable Global Secure Access using the toggle in the app. |
-|                                  | 2        | The tile is visible and defaults to true (enabled state). The user can override Global Secure Access. The user can enable or disable Global Secure Access using the toggle in the app. |
-|                                  | 3        | The tile is visible and defaults to true (enabled state). The user **can't** disable Global Secure Access. |
-| GlobalSecureAccessPrivateChannel | No value | Global Secure Access defaults to value 2 behavior. |
-|                                  | 0        | Private Access isn't enabled and the toggle option isn't visible to the user. |
-|                                  | 1        | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
-|                                  | 2        | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
-|                                  | 3        | The Private Access toggle is visible but grayed out, and defaults to the enabled state. The user **can't** disable Private Access. |
+        | Configuration key                | Value    | Details   |
+        |----------------------------------|----------|-----------|
+        | Global Secure Access             | No value | Global Secure Access isn't enabled and the tile isn't visible. |
+        |                                  | 0        | Global Secure Access isn't enabled and the tile isn't visible. |
+        |                                  | 1        | The tile is visible and defaults to false (disabled state). The user can enable or disable Global Secure Access using the toggle in the app. |
+        |                                  | 2        | The tile is visible and defaults to true (enabled state). The user can override Global Secure Access. The user can enable or disable Global Secure Access using the toggle in the app. |
+        |                                  | 3        | The tile is visible and defaults to true (enabled state). The user **can't** disable Global Secure Access. |
+        | GlobalSecureAccessPrivateChannel | No value | Global Secure Access defaults to value 2 behavior. |
+        |                                  | 0        | Private Access isn't enabled and the toggle option isn't visible to the user. |
+        |                                  | 1        | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
+        |                                  | 2        | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
+        |                                  | 3        | The Private Access toggle is visible but grayed out, and defaults to the enabled state. The user **can't** disable Private Access. |
 
-> [!NOTE]
-> The **GlobalSecureAccessPA** configuration key is no longer supported.   
+    > [!NOTE]
+    > The **GlobalSecureAccessPA** configuration key is no longer supported.   
 
 6. Select **Next**. 
-:::image type="content" source="media/how-to-install-android-client/create-policy-settings.png" alt-text="Screenshot of the Create app configuration policy on the Settings tab.":::   
+:::image type="content" source="media/how-to-install-android-client/create-policy-settings.png" alt-text="Screenshot of the Create app configuration policy on the Settings tab." lightbox="media/how-to-install-android-client/create-policy-settings-expanded.png":::   
 
 1. On the **Scope tags** tab, configure scope tags as needed and select **Next**.
 1. On the **Assignments** tab, select **+ Add groups** to assign the configuration policy and enable Global Secure Access.
-:::image type="content" source="media/how-to-install-android-client/create-policy-assignments.png" alt-text="Screenshot of the Create app configuration policy on the Assignments tab.":::   
+:::image type="content" source="media/how-to-install-android-client/create-policy-assignments.png" alt-text="Screenshot of the Create app configuration policy on the Assignments tab." lightbox="media/how-to-install-android-client/create-policy-assignments-expanded.png":::   
 
 > [!TIP]
 > To enable the policy for all but a few specific users, select **Add all devices** in the **Included groups** section. Then, add the users or groups to exclude in the **Excluded groups** section.
