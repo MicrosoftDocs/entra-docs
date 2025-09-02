@@ -24,4 +24,4 @@ This article contains the usage constraints and other service limits for the Mic
 
 * [Configure group claims for applications by using Microsoft Entra ID](../hybrid/connect/how-to-connect-fed-group-claims.md)
 * [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md)
-* [How Azure subscriptions are associated with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
+* [How Azure subscriptions are associated with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md)

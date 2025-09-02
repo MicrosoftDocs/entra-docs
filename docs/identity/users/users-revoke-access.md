@@ -131,5 +131,5 @@ Once admins take the above steps, the user can't gain new tokens for any applica
 ## Next steps
 
 - [Secure access practices for Microsoft Entra administrators](~/identity/role-based-access-control/security-planning.md)
-- [Add or update user profile information](~/fundamentals/how-to-manage-user-profile-info.yml)
+- [Add or update user profile information](~/fundamentals/how-to-manage-user-profile-info.md)
 - [Remove or Delete a former employee](/microsoft-365/admin/add-users/remove-former-employee)

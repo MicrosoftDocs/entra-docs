@@ -16,11 +16,11 @@ items:
   - name: Create a tenant
     href: create-new-tenant.md
   - name: Add a custom domain name
-    href: add-custom-domain.yml
+    href: add-custom-domain.md
   - name: Associate an Azure subscription
-    href: how-subscriptions-associated-directory.yml
+    href: how-subscriptions-associated-directory.md
   - name: Add your privacy info
-    href: properties-area.yml
+    href: properties-area.md
   - name: Add company branding
     href: how-to-customize-branding.md
 - name: Add users and groups
@@ -36,11 +36,11 @@ items:
     - name: Default user permissions
       href: users-default-permissions.md
     - name: Manage user profile info
-      href: how-to-manage-user-profile-info.yml
+      href: how-to-manage-user-profile-info.md
     - name: Reset a user's password
-      href: users-reset-password-azure-portal.yml
+      href: users-reset-password-azure-portal.md
     - name: Restore a deleted user
-      href: users-restore.yml
+      href: users-restore.md
   - name: Groups
     expanded: false
     items:
@@ -80,19 +80,19 @@ items:
     href: how-to-manage-stay-signed-in-prompt.yml
 - name: Microsoft Security Copilot + Microsoft Entra
   items:
-  - name: Overview
+  - name: Security Copilot in Microsoft Entra
     href: copilot-security-entra.md
-  - name: Microsoft Security Copilot scenarios in Microsoft Entra
+  - name: Copilot scenarios in Microsoft Entra
     href: copilot-entra-security-scenarios.md
-  - name: Security Copilot agents in Microsoft Entra
-    href: agents.md
-  - name: Respond to identity threats using risky user summarization
+  - name: Agents
+    href: copilot-entra-agents.md
+  - name: Respond to identity threats
     href: copilot-entra-risky-user-summarization.md  
-  - name: Manage lifecycle workflows using Microsoft Security Copilot
+  - name: Manage lifecycle workflows
     href: copilot-entra-lifecycle-workflow.md
-  - name: Investigate incidents using Microsoft Security Copilot
+  - name: Investigate incidents
     href: copilot-security-entra-investigate-incident.md 
-  - name: Investigate app risk using Microsoft Security Copilot
+  - name: Investigate app risk
     href: copilot-security-entra-investigate-risky-apps.md
   - name: Responsible AI FAQ for Security Copilot
     href: /copilot/security/rai-faqs-security-copilot?toc=/fundamentals/toc.json&bc=/fundamentals/breadcrumb/toc.json
@@ -100,7 +100,7 @@ items:
   expanded: false
   items:
   - name: Find your tenant ID
-    href: how-to-find-tenant.yml
+    href: how-to-find-tenant.md
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
   - name: Quarantine unsanctioned tenants 

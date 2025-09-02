@@ -109,5 +109,5 @@ For more information about configuring and managing Global Secure Access solutio
 
 ## Related content
 
-* [Find your tenant](./how-to-find-tenant.yml)
+* [Find your tenant](./how-to-find-tenant.md)
 * [Create a new tenant](./create-new-tenant.md)
