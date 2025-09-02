@@ -1,13 +1,13 @@
 ---
 title: Configure 15Five for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to 15Five.
-author: adimitui
+author: jeevansd
 manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: addimitu
+ms.author: jeedes
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to 15Five so that I can streamline the user management process and ensure that users have the appropriate access to 15Five.
 ---
