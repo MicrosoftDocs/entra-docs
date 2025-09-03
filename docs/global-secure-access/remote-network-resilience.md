@@ -1,11 +1,11 @@
 ---
-title: Best Practices to Improve Remote Network Resilience with Global Secure Access
+title: Enhance Remote Network Resilience with Global Secure Access
 description: "This article provides techniques to improve remote network resilience with Global Secure Access."
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: best-practice
-ms.date: 08/27/2025
+ms.date: 09/02/2025
 manager: dougeby
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
@@ -18,7 +18,7 @@ ai-usage: ai-assisted
 This article provides actionable recommendations to enhance the resilience of remote networks. To ensure optimal deployment and performance of Global Secure Access remote network connectivity, follow these best practices:
  
 ## Configure redundant tunnels and failovers
-Configure multiple Internet Protocol Security (IPsec) tunnels from Customer Premises Equipment (CPE) to different Global Secure Access edges or POPs. 
+Configure multiple Internet Protocol Security (IPsec) tunnels from the customer premises equipment (CPE) to different Global Secure Access edges or POPs. 
 
 ### Zone redundancy 
 The **Zone redundancy** option creates two IPsec tunnels in different availability zones, but within the same Azure region. 
