@@ -18,7 +18,6 @@ The Access Review Agent helps you ensure that access to resources provided to us
 
 The Access Review agent evaluates access reviews based on policies around previous access review decisions, user activity, governance behavior, and account status. When the agent identifies a suggestion, you can have the agent complete the review based on you accepting, or rejecting, the recommendation.
 
-Test Alex
 
 :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
 
@@ -133,7 +132,7 @@ The agent considers the following about a user when making review recommendation
 
 After the Access Review Agent is started, you must enable it on specific resources. The following sections walk you through enabling the Access Review Agent for use with different resources.
 
-#### Enable the Access Review Agent for Access Reviews
+#### Enable the access review agent for existing group and application access reviews
 
 The Access Review Agent is able to scan both new, and existing, access reviews. To Update an existing access review so that the agent scans it, do the following steps:
 
@@ -143,7 +142,7 @@ The Access Review Agent is able to scan both new, and existing, access reviews. 
 
 1. Select the access review you want the agent to support.
 
-1. On the access review overview page, select **Settings**.
+1. On the access review overview page, select **Settings** under occurence if its a one time review, or **Settings** under Series if it is a recurring review.
 
 1. Under **Advanced Settings**, check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
 
@@ -163,7 +162,7 @@ To enable the agent to make recommendations on an existing access package, you'd
 
 1. On the edit policy page, select **Lifecycle**.
 
-1. On the lifecycle tab, check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
+1. On the lifecycle tab, select Advanced settings and  check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**.    
 
