@@ -3,7 +3,7 @@ title: Use additional context in Authenticator notifications
 description: Learn how to use additional context in multifactor authentication (MFA) notifications.
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: mjsantani

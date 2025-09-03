@@ -131,6 +131,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/whatis.md",
+      "redirect_url": "/entra/fundamentals/what-is-entra",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/quickstart-create-group-add-members.md",
+      "redirect_url": "/entra/fundamentals/how-to-manage-groups",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/scenario-azure-first-sap-identity-integration.md",
+      "redirect_url": "/azure/sap/workloads/scenario-azure-first-sap-identity-integration",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/how-to-manage-support-access-requests.md",
       "redirect_url": "/entra/fundamentals/how-to-get-support",
       "redirect_document_id": false
@@ -152,7 +167,7 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/groups-view-azure-portal.md",
-      "redirect_url": "/entra/fundamentals/quickstart-create-group-add-members",
+      "redirect_url": "/entra/fundamentals/how-to-manage-groups",
       "redirect_document_id": false
     },
     {
@@ -168,6 +183,21 @@
     {
       "source_path_from_root": "/docs/fundamentals/how-to-navigate.md",
       "redirect_url": "/entra/fundamentals/what-is-entra",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/introduction-identity-access-management.md",
+      "redirect_url": "/entra/fundamentals/identity-fundamental-concepts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/agents.md",
+      "redirect_url": "/entra/fundamentals/copilot-entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/copilot-security-entra-responsible-ai-faq.md",
+      "redirect_url": "/copilot/security/rai-faqs-security-copilot",
       "redirect_document_id": false
     },
     {
@@ -328,6 +358,11 @@
     {
       "source_path_from_root": "/docs/fundamentals/how-to-approve-support-access-requests.md",
       "redirect_url": "/entra/fundamentals/how-to-manage-support-access-requests",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-health-alert-emails.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-configure-health-alert-notifications",
       "redirect_document_id": false
     },
     {
@@ -1791,6 +1826,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/msal-net-xamarin-android-considerations.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-android-prepare-app?pivots=workforce&tab=node-workforce",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/quickstart-daemon-app-python-acquire-token.md",
       "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=python-workforce",
       "redirect_document_id": false
@@ -2453,6 +2493,11 @@
     {
       "source_path_from_root": "/docs/verified-id/linkedin-employment-verification.md",
       "redirect_url": "/entra/verified-id/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/solarwinds-orion-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     }
   ]

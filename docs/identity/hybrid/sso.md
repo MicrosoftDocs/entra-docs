@@ -5,7 +5,7 @@ description: This article describes how you can configure the synchronization to
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: get-started
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid

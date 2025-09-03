@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.assetid: 547b118e-7282-4c7f-be87-c035561001df
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
@@ -112,7 +112,7 @@ The UPN of the user has the format username@domain. For example, for an Active D
 
 The Microsoft Entra Connect wizard uses the userPrincipalName attribute or lets you specify the attribute (in a custom installation) to be used from on-premises as the UserPrincipalName in Microsoft Entra ID. This is the value that is used for signing in to Microsoft Entra ID. If the value of the userPrincipalName attribute doesn't correspond to a verified domain in Microsoft Entra ID, then Microsoft Entra ID replaces it with a default .onmicrosoft.com value.
 
-Every directory in Microsoft Entra ID comes with a built-in domain name, with the format contoso.onmicrosoft.com, that lets you get started using Microsoft Entra or other Microsoft online services. You can improve and simplify the sign-in experience by using custom domains. For information on custom domain names in Microsoft Entra ID and how to verify a domain, see [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).
+Every directory in Microsoft Entra ID comes with a built-in domain name, with the format contoso.onmicrosoft.com, that lets you get started using Microsoft Entra or other Microsoft online services. You can improve and simplify the sign-in experience by using custom domains. For information on custom domain names in Microsoft Entra ID and how to verify a domain, see [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
 
 <a name='azure-ad-sign-in-configuration'></a>
 
@@ -128,8 +128,8 @@ The Microsoft Entra sign-in page lists the UPN suffixes that are defined for on-
 | State | Description | Action needed |
 |:--- |:--- |:--- |
 | Verified |Microsoft Entra Connect found a matching verified domain in Microsoft Entra ID. All users for this domain can sign in by using their on-premises credentials. |No action is needed. |
-| Not verified |Microsoft Entra Connect found a matching custom domain in Microsoft Entra ID, but it isn't verified. The UPN suffix of the users of this domain will be changed to the default .onmicrosoft.com suffix after synchronization if the domain isn't verified. | [Verify the custom domain in Microsoft Entra ID.](~/fundamentals/add-custom-domain.yml#verify-your-custom-domain-name) |
-| Not added |Microsoft Entra Connect didn't find a custom domain that corresponded to the UPN suffix. The UPN suffix of the users of this domain will be changed to the default .onmicrosoft.com suffix if the domain isn't added and verified in Entra ID. | [Add and verify a custom domain that corresponds to the UPN suffix.](~/fundamentals/add-custom-domain.yml) |
+| Not verified |Microsoft Entra Connect found a matching custom domain in Microsoft Entra ID, but it isn't verified. The UPN suffix of the users of this domain will be changed to the default .onmicrosoft.com suffix after synchronization if the domain isn't verified. | [Verify the custom domain in Microsoft Entra ID.](~/fundamentals/add-custom-domain.md#verify-your-custom-domain-name) |
+| Not added |Microsoft Entra Connect didn't find a custom domain that corresponded to the UPN suffix. The UPN suffix of the users of this domain will be changed to the default .onmicrosoft.com suffix if the domain isn't added and verified in Entra ID. | [Add and verify a custom domain that corresponds to the UPN suffix.](~/fundamentals/add-custom-domain.md) |
 
 The Microsoft Entra sign-in page lists the UPN suffixes that are defined for on-premises Active Directory and the corresponding custom domain in Microsoft Entra ID with the current verification status. In a custom installation, you can now select the attribute for the UserPrincipalName on the **Microsoft Entra sign-in** page.
 

@@ -6,7 +6,7 @@ manager: femila
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: article
 ms.date: 10/28/2024
 ms.collection: M365-identity-device-management
 ---

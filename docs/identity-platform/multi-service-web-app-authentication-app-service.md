@@ -2,7 +2,7 @@
 title: Tutorial - Add authentication to Azure App Service
 description: In this tutorial, you learn how to enable authentication for a web app running on Azure App Service. Limit access to the web app to users in your organization​.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 02/17/2024
 ms.reviewer: stsoneff

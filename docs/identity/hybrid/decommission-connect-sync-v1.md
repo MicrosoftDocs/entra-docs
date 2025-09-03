@@ -7,7 +7,7 @@ author: omondiatieno
 manager: mwongerapk
 editor: ''
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid

@@ -5,7 +5,7 @@ author: kenwith
 manager: dougeby
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: katabish
@@ -33,7 +33,7 @@ Customers should consider configuring PIM using Global Secure Access to enable:
 
 ## Prerequisites 
 
-- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/whatis.md)
+- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/licensing.md)
 - [Microsoft Entra Private Access](concept-private-access.md)
 
 ## Secure private access 

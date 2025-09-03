@@ -173,6 +173,10 @@ items:
       href: scim-graph-scenarios.md
     - name: Cloud HR provisioning
       items:
+      - name: Workday expression mapping guide
+        href: workday-expression-mapping-functions-guide.md
+      - name: SuccessFactors expression mapping guide
+        href: successfactors-expression-mapping-functions-guide.md
       - name: SuccessFactors attribute reference
         href: sap-successfactors-attribute-reference.md
       - name: Workday attribute reference

@@ -2,7 +2,7 @@
 title: Apps & service principals in Microsoft Entra ID
 description: Learn about the relationship between application and service principal objects in Microsoft Entra ID.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 10/01/2024
 ms.reviewer: sureshja

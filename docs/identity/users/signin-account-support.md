@@ -6,7 +6,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
-ms.topic: conceptual
+ms.topic: article
 ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: kexia
@@ -29,4 +29,4 @@ You can tell if the sign-in page your organization uses supports Microsoft accou
 
 ## Next steps
 
-[Customize your sign-in branding](~/fundamentals/add-custom-domain.yml)
+[Customize your sign-in branding](~/fundamentals/add-custom-domain.md)

@@ -3,7 +3,7 @@ title: Configure Amazon Managed Grafana for Single sign-on with Microsoft Entra 
 description: Learn how to configure single sign-on between Microsoft Entra ID and Amazon Managed Grafana.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

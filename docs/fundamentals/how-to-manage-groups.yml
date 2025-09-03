@@ -250,4 +250,4 @@ relatedContent:
 #    - text: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
 #        url: ../identity/users/licensing-group-advanced.md#limitations-and-known-issues
 #    - text: Associate or add an Azure subscription to Microsoft Entra ID
-#      url: ./how-subscriptions-associated-directory.yml
+#      url: ./how-subscriptions-associated-directory.md

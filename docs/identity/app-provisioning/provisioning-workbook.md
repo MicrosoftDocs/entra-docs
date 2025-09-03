@@ -4,7 +4,7 @@ description: This article describes the Azure Monitor workbook for provisioning.
 author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid
 ms.author: jfields

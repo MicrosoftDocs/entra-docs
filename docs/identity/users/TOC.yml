@@ -39,7 +39,7 @@
     - name: Convert external users to internal
       href: convert-external-users-internal.md        
     - name: Manage user profiles
-      href: ~/fundamentals/how-to-manage-user-profile-info.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-manage-user-profile-info.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Add custom data using extensions - Microsoft Graph
       href: /graph/extensibility-overview?context=/entra/identity/users/context/ugr-context.json
     - name: Assign custom security attributes
@@ -55,7 +55,7 @@
     - name: Delete users in bulk
       href: users-bulk-delete.md
     - name: Restore a deleted user    
-      href: ~/fundamentals/users-restore.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/users-restore.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Restore users in bulk
       href: users-bulk-restore.md
     - name: Revoke a user's access
@@ -75,7 +75,7 @@
   - name: Organization (tenant)
     items:
     - name: Microsoft Entra tenant organizations    
-      href: ~/fundamentals/whatis.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/what-is-entra.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Delete a tenant    
       href: directory-delete-howto.md
     - name: Multiple tenants    
