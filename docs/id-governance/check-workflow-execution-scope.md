@@ -31,11 +31,11 @@ To check the users who fall under the execution scope of a workflow, you'd follo
 
 1. On the Execution conditions page, select the **Execution User Scope** tab.
 
-1. On this page you're presented with a list of users who currently meet the scope for execution for the workflow.
+1. On this page you're presented with a list of users who currently meet the scope for execution for the workflow regardless of whether they have already been processed by the workflow.
     :::image type="content" source="media/check-workflow-execution-scope/execution-user-scope-list.png" alt-text="Screenshot of users under scope of workflow execution." lightbox="media/check-workflow-execution-scope/execution-user-scope-list.png":::
 
 > [!NOTE]
-> The workflow engine routinely evaluates the users that meet the execution conditions. The results will not be up to date if the execution conditions have been changed recently, relevant attributes on the user have been changed recently, or the time based trigger has recently passed.
+> The workflow engine routinely evaluates the users that meet the execution conditions regardless of whether they have already been processed by the workflow. The results will not be up to date if the execution conditions have been changed recently, relevant attributes on the user have been changed recently, or the time based trigger has recently passed.
 
 ## Check execution user scope of a workflow using Microsoft Graph
 
