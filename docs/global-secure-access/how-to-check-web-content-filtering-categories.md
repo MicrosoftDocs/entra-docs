@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Check web categories with the web category checker tool
 
-This short how-to shows how to use the web category checker tool to determine which content category a given Uniform Resource Locator (URL) belongs to. The tool is currently available only via Microsoft Graph API.
+The article shows how to use the web category checker tool to determine which content category a given Uniform Resource Locator (URL) belongs to. The tool is currently available only via Microsoft Graph API.
 
 ## How to use the Web category checker
 
