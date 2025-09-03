@@ -43,11 +43,11 @@ Your applications are likely using the following types of authentication:
 
 To ensure that the users can easily and securely access applications, your goal is to have a single set of access controls and policies across your on-premises and cloud environments.
 
-[Microsoft Entra ID](~/fundamentals/whatis.md) offers a universal identity platform that provides your employees, partners, and customers a single identity to access the applications they want. The platform boosts collaboration from any platform and device.
+[Microsoft Entra ID](~/fundamentals/what-is-entra.md) offers a universal identity platform that provides your employees, partners, and customers a single identity to access the applications they want. The platform boosts collaboration from any platform and device.
 
 :::image type="content" source="media/migrate-adfs-apps-phases-overview/connectivity.png" alt-text="Diagram showing Microsoft Entra connectivity." lightbox="media/migrate-adfs-apps-phases-overview/connectivity.png":::
 
-Microsoft Entra ID has a [full suite of identity management capabilities](~/fundamentals/whatis.md#which-features-work-in-azure-ad). Standardizing your app authentication and authorization to Microsoft Entra ID gets you the benefits that these capabilities provide.
+Microsoft Entra ID has a full suite of identity management capabilities. Standardizing your app authentication and authorization to Microsoft Entra ID gets you the benefits that these capabilities provide.
 
 You can find more migration resources at [https://aka.ms/migrateapps](./migration-resources.md)
 

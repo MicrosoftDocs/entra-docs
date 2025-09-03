@@ -87,7 +87,7 @@ Developers can take this challenge and append it onto a new request to Microsoft
 
 ### Prerequisites
 
-Microsoft Entra Conditional Access is a feature included in [Microsoft Entra ID P1 or P2](~/fundamentals/whatis.md). Customers with [Microsoft 365 Business licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
+Microsoft Entra Conditional Access is a feature included in [Microsoft Entra ID P1 or P2](~/fundamentals/licensing.md). Customers with [Microsoft 365 Business licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
 
 ### Considerations for specific scenarios
 

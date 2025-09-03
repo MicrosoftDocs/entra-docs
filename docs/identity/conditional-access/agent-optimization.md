@@ -5,7 +5,9 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
-ms.date: 08/08/2025
+
+ms.date: 08/12/2025
+
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -13,31 +15,36 @@ ms.topic: how-to
 ms.custom: security-copilot
 ms.collection: msec-ai-copilot
 ---
-# Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot
+# Microsoft Entra Conditional Access optimization agent
 
-The Conditional Access optimization agent helps you ensure all users and applications are protected by Conditional Access policies. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
+The Conditional Access optimization agent helps you ensure all users and applications are protected by Conditional Access policies. The agent can recommend new policies and update existing policies, based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. The agent also creates policy review reports (Preview), which provide insights into spikes or dips that might indicate a policy misconfiguration.
 
 The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
+
+> [!IMPORTANT]
+> The chat capability in the Conditional Access optimization agent is currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
 - You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
-- To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
-- You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
-   - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
-- [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
-- [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) roles can view the agent and take action on the suggestions.
+- You must have the appropriate Microsoft Entra role.
+   - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role is required to *activate the agent the first time*.
+   - [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
+   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can *view the agent and take action on the suggestions*.
+   - You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
+   - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
-- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
+- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
+   
 ### Limitations
 
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - For policy consolidation, each agent run only looks at four similar policy pairs.
-- The agent currently runs as the user who enables it.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
@@ -147,18 +154,25 @@ There are several key points to consider regarding the identity and permissions 
 
 ### Custom instructions
 
-You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to include or exclude specific users, groups, and roles. This field can also be used to add exceptions, such as to only apply the exception to specific types of policies, such as policies that require MFA.
+You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to include or exclude specific users, groups, and roles. Custom instructions can be used to exclude objects from being considered by the agent altogether or added to the Conditional Access policy itself. Exceptions can be applied to specific policies, such as excluding a specific group from a policy, such as requiring MFA or mobile application management policies. 
 
-You can also use the object ID for the users or groups you want to include in the custom instructions. Any specific object IDs included in the custom instructions are validated. Example custom instructions:
+You can enter either the name or the object ID in the custom instructions. Both values are validated. If you add the name of the group, the object ID for that group is automatically added on your behalf. Example custom instructions:
 
 - "Exclude users in the "Break Glass" group from any policy that requires multifactor authentication."
 - "Exclude user with Object ID dddddddd-3333-4444-5555-eeeeeeeeeeee from all policies"
+
+A common scenario to consider is if your organization has lots of guest users that you don't want the agent to suggest adding to your standard Conditional Access policies. If the agent runs and sees new guest users that aren't covered by recommended policies, SCUs are consumed to suggest covering those guest users by policies that aren't necessary. To prevent guest users from being considered by the agent:
+
+1. Create a dynamic group called "Guests" where `(user.userType -eq "guest")`.
+1. Add a custom instruction, based on your needs.
+    - "Exclude the "Guests" group from agent consideration."
+    - "Exclude the "Guests" group from any mobile application management policies."
 
 For more information about how to use custom instructions, check out the following video. 
 
 > [!VIDEO 5879a0f7-3644-4e34-a8ce-b186b8e5f128]
 
-Please note that some of the content in the video is subject to change as the agent is updated frequently.
+Please note that some of the content in the video, such as the user interface elements, is subject to change as the agent is updated frequently.
 
 ## Remove agent
 

@@ -253,6 +253,8 @@
         href: entitlement-management-organization.md
       - name: Govern access for external users
         href: entitlement-management-external-users.md
+      - name: Configure whether requestors can see approver details (Preview)
+        href: my-access-approver-details.md  
       - name: View reports and logs
         href: entitlement-management-reports.md
       - name: Archive logs and reporting
@@ -315,6 +317,8 @@
       items:
       - name: Approve requests
         href: entitlement-management-request-approve.md
+      - name: Delegate approvers (Preview)
+        href: delegate-approvals-my-access.md
     - name: Requestors
       items:
       - name: Request access
