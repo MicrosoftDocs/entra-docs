@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/28/2025
+ms.date: 09/03/2025
 manager: dougeby
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
@@ -16,17 +16,16 @@ ai-usage: ai-assisted
 
 # Enhance threat detection with Global Secure Access in Microsoft Sentinel
 
-Global Secure Access integrates with Microsoft Sentinel, letting organizations stream network traffic logs, audit logs, and alerts directly into Sentinel. This integration uses Microsoft Entra diagnostic settings and a Global Secure Access content hub package with preconfigured workbooks and analytics rules to enhance security monitoring and visualization. Through this connection, organizations can correlate Global Secure Access data with other Microsoft security services to improve threat detection and response across their environments.
+Global Secure Access integrates with Microsoft Sentinel, letting organizations stream network traffic logs, audit logs, and alerts directly into Sentinel. This integration uses Microsoft Entra diagnostic settings and a Global Secure Access content hub package with preconfigured workbooks and analytics rules to enhance security monitoring and visualization. Through this integration, organizations can correlate Global Secure Access data with other Microsoft security services to improve threat detection and response across their environments.
 
 ## Prerequisites
 
 To integrate Global Secure Access with Microsoft Sentinel, you need the following configurations and permissions:
-- Microsoft Sentinel enabled on a Log Analytics workspace. Learn more in [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-- Global Secure Access configured with traffic forwarding profiles like Microsoft 365, Internet Access, and Private Access.
+- Microsoft Sentinel, enabled on a Log Analytics workspace. Learn more in [create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
+- Global Secure Access, configured with traffic forwarding profiles like Microsoft 365, Internet Access, and Private Access.
 - An active Azure subscription.
 - To configure diagnostic settings, you need the **Microsoft Entra Security Administrator** role.
-- To configure automation workflows, you need the **Microsoft Sentinel Playbook Operator** role.
-- To install or manage solutions and configure analytics in the content hub, you need either **Microsoft Sentinel Contributor** or **Microsoft Sentinel Reader** permissions for the resource group that the workspace belongs to.
+- To install or manage solutions and configure analytics in the content hub, you need **Microsoft Sentinel Contributor** permissions for the resource group that the workspace belongs to.
 - To enable Microsoft Sentinel, you need **Contributor** permissions for the subscription where the Microsoft Sentinel workspace resides.
 
 ## Configure Microsoft Entra diagnostic settings
@@ -60,7 +59,7 @@ The Global Secure Access solution includes two workbooks and four analytics rule
 1. To add the solution to your workspace, select **Install**.
 :::image type="content" source="media/how-to-sentinel-integration/install-solution.png" alt-text="Screenshot of the solution description with the Install button highlighted." lightbox="media/how-to-sentinel-integration/install-solution-expanded.png":::
 
-### Enable enriched Microsoft 365 logs (Optional)
+### Enable enriched Microsoft 365 logs (optional)
 
 Enriched Microsoft 365 logs combine Microsoft 365 OfficeActivity data with Global Secure Access NetworkAccessTraffic logs. This enrichment provides more context such as device ID, operating system, and original IP address to audit events. This extra information is critical for diagnosing issues like blocked access or performance anomalies.
 
@@ -86,7 +85,7 @@ To validate the data flow from Global Secure Access to Microsoft Sentinel:
 :::image type="content" source="media/how-to-sentinel-integration/workspace-tables.png" alt-text="Screenshot of the workspace tables showing the Sentinel tables.":::
 
 > [!NOTE]
-> Microsoft Sentinel creates tables when it ingests data into the Log Analytics workspace. If there's no data ingestion, the table won't exist in the workspace.
+> Microsoft Sentinel creates tables when it ingests data into the Log Analytics workspace. If there isn't any data ingestion, the table doesn't exist in the workspace.
 
 ### Enable analytics rules
 
@@ -110,7 +109,7 @@ The Global Secure Access solution includes two workbooks: **Global Secure Access
 1. Select one of the preconfigured workbooks.
 1. Select **View Template**. The workbook dashboard opens.
 
-:::image type="content" source="media/how-to-sentinel-integration/workbook-dashboard.png" alt-text="Screenshot of Network Traffic Insights dashboard showing a graph of usage over time." lightbox="media/how-to-sentinel-integration/workbook-dashboard-expanded.png":::
+:::image type="content" source="media/how-to-sentinel-integration/workbook-dashboard.png" alt-text="Screenshot of the Network Traffic Insights dashboard showing a graph of usage over time." lightbox="media/how-to-sentinel-integration/workbook-dashboard-expanded.png":::
 
 ## Related content
 
