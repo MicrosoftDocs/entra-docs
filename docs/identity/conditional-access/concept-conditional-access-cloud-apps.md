@@ -48,7 +48,7 @@ A complete list of all services included can be found in the article [Apps inclu
 When you target the Windows Azure Service Management API application, policy is enforced for tokens issued to a set of services closely bound to the portal. This grouping includes the application IDs of:
 
 - Azure Resource Manager
-- Azure portal, which also covers the Microsoft Entra admin center
+- Azure portal, which also covers the Microsoft Entra admin center and the Microsoft Engage Center
 - Azure Data Lake
 - Application Insights API
 - Log Analytics API

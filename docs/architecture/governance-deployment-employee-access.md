@@ -19,7 +19,6 @@ The following products and services appear in this guide:
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 * [Microsoft Entra](../fundamentals/what-is-entra.md)
-* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
 * [Access reviews](../id-governance/access-reviews-overview.md)
 * Privileged Identity Manager [(PIM) for Groups](../id-governance/access-reviews-overview.md)
