@@ -6,9 +6,9 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/29/2025
+ms.date: 09/03/2025
 ms.author: barclayn
-ms.reviewer: 
+ms.reviewer: Vimala
 ---
 
 
@@ -41,11 +41,9 @@ A hybrid identity refers to a user identity that exists both in an on-premises A
 
 ## Key Features and Benefits
 
-**Seamless Hybrid Authentication**: Microsoft Entra Kerberos allows users whose accounts reside in on-premises Active Directory Domain Services (AD DS) and are synchronized to Microsoft Entra ID to authenticate across cloud and on-premises resources. It eliminates the need for direct connectivity to domain controllers. For example, when a Microsoft Entra ID-joined Windows client accesses a file share or application over the internet, Entra ID can issue the necessary Kerberos tickets on behalf of the on-premises AD.
+**Seamless Hybrid Authentication**: Microsoft Entra Kerberos allows users whose accounts reside in on-premises Active Directory Domain Services (AD DS) and are synchronized to Microsoft Entra ID to authenticate across cloud and on-premises resources. It reduces and in some cases eliminates the need for direct connectivity to domain controllers. For example, when a Microsoft Entra ID-joined Windows client accesses a file share or application over the internet, Entra ID can issue the necessary Kerberos tickets as a KDC associated with the resource.
 
 **Enhanced Security with Modern Credentials Support**: Users can sign in using passwordless methods such as Windows Hello for Business or FIDO2 security keys yet still access on-premises resources protected by Kerberos. Enables multifactor and password-less authentication, reducing risks associated with password theft and phishing attacks.
-
-**Cloud-Only Identity Support**: Cloud-only users can now authenticate to Azure Files using Microsoft Entra Kerberos, removing the dependency on on-premises domain controllers or Microsoft Entra Domain Services. This simplifies access management in fully cloud-native environments. 
 
 **Simplified Hybrid Join** Microsoft Entra Kerberos supports hybrid join scenarios without requiring ADFS or Microsoft Entra Connect sync. This is ideal for non-persistent virtual desktop infrastructure (VDI), disconnected forests, and Azure Virtual Desktop 
 
@@ -58,7 +56,7 @@ A hybrid identity refers to a user identity that exists both in an on-premises A
 
 **Microsoft Entra Kerberos** allows your Microsoft Entra ID tenant to operate as a dedicated Kerberos realm alongside your existing on-premises Active Directory realm. When a user signs in to a Windows device that is either Microsoft Entra ID‑joined or hybrid joined, the device authenticates with Entra ID and receives a [Primary Refresh Token](../devices/concept-primary-refresh-token.md).
 
-In addition to the PRT, Entra ID can issue a partial Ticket Granting Ticket (TGT) which enables the user to exchange it for a fully formed on‑premises TGT when needed, and it can also issue a Cloud Ticket Granting Ticket (Cloud TGT) which enables the user to request Kerberos service tickets for accessing cloud‑based resources. In this model, Microsoft Entra ID acts as the Key Distribution Center (KDC), facilitating secure and seamless authentication without requiring direct connectivity to on‑premises domain controllers.
+In addition to the PRT, Entra ID can issue a partial Ticket Granting Ticket (TGT) which enables the user to exchange it for a fully formed on‑premises TGT when needed, and it can also issue a Cloud Ticket Granting Ticket (Cloud TGT) which enables the user to request Kerberos service tickets for accessing cloud‑based resources. In this model, Microsoft Entra ID acts as the Key Distribution Center (KDC), facilitating secure and seamless authentication.
 
 ## Authentication flow
 
@@ -71,7 +69,7 @@ In addition to the PRT, Entra ID can issue a partial Ticket Granting Ticket (TGT
 ### **Cloud TGT Issuance**:
 - If the user signs in with a passwordless method (such as FIDO2 or Windows Hello for Business), Microsoft Entra ID issues a Partial Ticket Granting Ticket (Partial TGT) for the user's on-premises Active Directory (AD) domain. This Partial TGT contains the user's Security Identifier (SID) but no authorization data.
 
-- A Kerberos server object exists in the on-premises AD, created and synchronized via Microsoft Entra Connect. This object allows Entra ID to generate these Partial TGTs without relying on physical domain controllers.
+- A Kerberos server object exists in the on-premises AD, created and synchronized via Microsoft Entra Connect. This object allows Entra ID to generate these partial TGTs for use by on-premises domain controllers to facilitate on-premises resource access.
 
 - The Partial TGT issued by Entra ID is exchanged with an on-premises Active Directory domain controller to obtain a full TGT that includes group memberships and other access control data. The Partial TGT must be exchanged with a domain controller to gain full authorization information.
 
@@ -79,7 +77,7 @@ In addition to the PRT, Entra ID can issue a partial Ticket Granting Ticket (TGT
 
     :::image type="content" source="media/kerberos/kerberos-account.png" alt-text="Microsoft Entra Kerberos architecture diagram" lightbox="media/kerberos/kerberos-account.png":::
     
-During the exchange process, where a partial Entra Kerberos TGT is converted into a full AD TGT these lists are evaluated to determine access eligibility. If a user is blocked or not explicitly allowed, the request is denied and results in an error.
+During the exchange process, where a partial Microsoft Entra Kerberos TGT is converted into a full AD TGT these lists are evaluated to determine access eligibility. If a user is blocked or not explicitly allowed, the request is denied and results in an error.
 
     
 >[!IMPORTANT]
@@ -98,9 +96,9 @@ During the exchange process, where a partial Entra Kerberos TGT is converted int
 
 
 ### **Realm Mapping and Azure Tenant Info**:
-- Windows LSASS manages the Kerberos Cloud TGT, realm mapping, and Azure tenant information.
+- Windows LSASS manages the Kerberos Cloud TGT, realm mapping, and Entra ID tenant information. The Kerberos stack maintains the Cloud TGT and realm mapping, using a KDC Proxy to route Kerberos traffic to Microsoft Entra ID.
 - For Azure Virtual Desktop, the user receives both a PRT and Cloud TGT. Azure Virtual Desktop uses FSLogix to load the user profile from Azure Files.
-- The Kerberos stack maintains the Cloud TGT and realm mapping, using a KDC Proxy to route Kerberos traffic to Microsoft Entra ID.
+
 
 ### Service Ticket Request and Issuance:
 
