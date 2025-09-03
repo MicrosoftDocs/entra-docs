@@ -43,7 +43,7 @@ To configure Microsoft Entra diagnostic settings so Global Secure Access can str
    - NetworkAccessConnectionEvents  
 1. In the **Destination details** section, select **Send to Log Analytics workspace**.
 1. From the **Log Analytics workspace** menu, select your Sentinel workspace. 
-1. Select **Save**.
+1. Select **Save**.   
 :::image type="content" source="media/how-to-sentinel-integration/diagnostic-settings.png" alt-text="Screenshot of the Diagnostic setting screen showing the selected log categories and destination details.":::
 
 ## Install the Global Secure Access solution from the Sentinel Content hub
@@ -52,11 +52,11 @@ The Global Secure Access solution includes two workbooks and four analytics rule
 
 1. Sign in to the [Microsoft Defender portal](https://security.microsoft.com/).
 1. Browse to **Microsoft Sentinel** > **Content management** > **Content hub**.
-1. To find the **Global Secure Access** solution in the Content hub, enter "Global Secure Access" in the **Search** field.
+1. To find the **Global Secure Access** solution in the Content hub, enter "Global Secure Access" in the **Search** field.   
 :::image type="content" source="media/how-to-sentinel-integration/solution-search-result.png" alt-text="Screenshot of the Global Secure Access solution as a search result.":::
 
 1. Select the Global Secure Access solution. Its description opens.
-1. To add the solution to your workspace, select **Install**.
+1. To add the solution to your workspace, select **Install**.   
 :::image type="content" source="media/how-to-sentinel-integration/install-solution.png" alt-text="Screenshot of the solution description with the Install button highlighted." lightbox="media/how-to-sentinel-integration/install-solution-expanded.png":::
 
 ### Enable enriched Microsoft 365 logs (optional)
