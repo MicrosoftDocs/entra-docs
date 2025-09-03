@@ -32,7 +32,7 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan.
 
-Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply. To determine how the groups are selected, the agent looks at groups that were previously or are currently used in Conditional Access policies to determine which groups are appropriate to use. The agent looks at those groups to see how other Conditional Access policies affected them, to gauge potential impact. The agent looks at the size of the groups and then uses all these factors to determine 
+Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply. To determine which groups to use, the agent looks at groups that were previously or are currently used in Conditional Access policies. The agent looks at those groups to see how other Conditional Access policies affected them, to gauge potential impact. The agent looks at the size of the groups and then uses all these factors to assign the groups to the phases starting with the low impact groups and ending with the higher-impact groups.
 
 There are three steps in the phased rollout process:
 
@@ -105,7 +105,7 @@ If you chose to manually execute the phased rollout plan, you're provided severa
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-manual-details.png" alt-text="Screenshot of a phased rollout plan in manual execution mode." lightbox="media/agent-optimization-phased-rollout/phased-rollout-manual-details.png":::
 
-You must select the **Move to next phase** to advance each phase of the rollout. At any phase you can revert to the previous phase or opt to have the agent automatically roll out the remaining phases.
+You must select the **Move to next phase** to advance each phase of the rollout. At any phase, you can revert to the previous phase or opt to have the agent automatically roll out the remaining phases.
 
 ## Built-in safeguards
 
@@ -115,7 +115,7 @@ Once the phased rollout begins, you can't update the policy's grant controls. If
 
 ### How does the phased rollout capability work?
 
-After selecting the groups that each phase will apply to, the agent creates a duplicate Conditional Access policy that only includes the group of the first phase. The original Conditional Access policy persists in report-only mode and targets all users, so you can continue to collect data. When the deployment advances to the next phase, the batch of groups is added to the enabled Conditional Access policy. The agent monitors how each stage affects the sign-ins associated with this policy. If the success rate drops below 90%, the phased rollout stops and the enabled policy is placed back into report-only mode. You can then review the logs to determine why sign-ins were failing before attempting the phased rollout again.
+After selecting the groups that each phase applies to, the agent creates a duplicate Conditional Access policy that only includes the group of the first phase. The original Conditional Access policy persists in report-only mode and targets all users, so you can continue to collect data. When the deployment advances to the next phase, the batch of groups is added to the enabled Conditional Access policy. The agent monitors how each stage affects the sign-ins associated with this policy. If the success rate drops below 90%, the phased rollout stops and the enabled policy is placed back into report-only mode. You can then review the logs to determine why sign-ins were failing before attempting the phased rollout again.
 
 ### Do I have to turn on phased rollout?
 
