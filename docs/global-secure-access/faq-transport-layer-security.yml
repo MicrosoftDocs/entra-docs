@@ -31,7 +31,7 @@ sections:
           - Configure Conditional Access: Create a Conditional Access policy and associate it with the Global Secure Access security profile linked to the TLS policy.
           - Distribute the trusted certificate: Ensure the selected certificate authority is installed on all client devices to establish trust and enable seamless TLS inspection.
           
-     - question: What are the cryptographic algorithms required when generating Certificates for TLS inspection? 
+      - question: What are the cryptographic algorithms required when generating Certificates for TLS inspection? 
         answer: Global Secure Access currently supports SHA-256, SHA-384, and SHA-512 for the signing certificates.
         
       - question: How do I Sign CSR Using the Active Directory Certificate Services (AD CS)
