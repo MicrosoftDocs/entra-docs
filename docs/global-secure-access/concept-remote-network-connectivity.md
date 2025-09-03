@@ -54,7 +54,7 @@ Sometimes, clients can't be installed on all devices. Global Secure Access curre
 ### I have guests on my network who don't have the client installed.  
 Guest devices on your network might not have the client installed. To ensure that those devices adhere to your network security policies, you need their traffic routed through the Global Secure Access endpoint. Remote network connectivity solves this problem. No clients need to be installed on guest devices. All outgoing traffic from the remote network is going through security evaluation by default.  
 
-### How much bandwidth is allocated per tenant 
+### How much bandwidth will be allocated per tenant 
 
 The total bandwidth you're allocated is determined by the number of licenses purchased. Each Microsoft Entra ID P1 license, Microsoft Entra Internet Access license, or Microsoft Entra Suite license contributes to your total bandwidth. Bandwidth for remote networks can be assigned to IPsec tunnels in increments of 250 Mbps, 500 Mbps, 750 Mbps, or 1,000 Mbps. This flexibility allows you to allocate bandwidth to different remote network locations according to your specific needs. For optimal performance, Microsoft recommends configuring at least two IPsec tunnels per location for high availability. The table below details the total bandwidth based on the number of licenses purchased. 
 
