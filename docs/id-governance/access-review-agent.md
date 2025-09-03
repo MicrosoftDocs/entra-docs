@@ -18,6 +18,8 @@ The Access Review Agent helps you ensure that access to resources provided to us
 
 The Access Review agent evaluates access reviews based on policies around previous access review decisions, user activity, governance behavior, and account status. When the agent identifies a suggestion, you can have the agent complete the review based on you accepting, or rejecting, the recommendation.
 
+Test Alex
+
 :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
 
 ## Supported Scenarios
@@ -25,7 +27,6 @@ The Access Review agent evaluates access reviews based on policies around previo
 The following tables show current Access Review Agent support based on review scenarios:
 
 ### Resources
-
 
 |Review Scenario  |Supported  |
 |---------|---------|
@@ -37,29 +38,20 @@ The following tables show current Access Review Agent support based on review sc
 |Microsoft Entra roles         |   ❌                         |
 |Bring your own data     |     ❌     |
 
-
 ### Review Size
-
-
 |Review Scenario  |Supported  |
 |---------|---------|
 |Up to 35 decisions (per review, not reviewer)     |  :white_check_mark:       |
 |>35 decisions per review     |   ❌       |
 
-
 ### Review stages
-
-
 |Review Scenario  |Supported  |
 |---------|---------|
 |Single Stage     |  :white_check_mark:       |
 |Two Stages     |   ❌       |
 |Three Stages     |   ❌       |
 
-
 ### Reviewer Settings
-
-
 |Review Scenario  |Supported  |
 |---------|---------|
 |Specific     |   :white_check_mark:       |
@@ -67,9 +59,7 @@ The following tables show current Access Review Agent support based on review sc
 |Managers     |  :white_check_mark:        |
 |Self-review     |  ❌    |
 
-
 For other considerations, and limitations, of the Access Review Agent, see: [Limitations](access-review-agent.md#limitations).
-
 
 ## Prerequisites
 
