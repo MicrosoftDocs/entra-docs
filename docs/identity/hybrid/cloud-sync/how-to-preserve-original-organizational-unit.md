@@ -3,6 +3,8 @@ title: How to preserve and use the original organizational unit (OU) for group p
 description: Learn how to preserve and use the original organizational unit (OU) for group provisioning in Microsoft Entra ID.
 author: Justinha
 manager: dougeby
+ms.service: entra-id
+ms.subservice: hybrid
 ms.topic: concept-article
 ms.date: 08/01/2025
 ms.author: justinha
