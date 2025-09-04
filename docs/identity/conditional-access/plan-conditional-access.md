@@ -235,8 +235,55 @@ Refer to [Conditional Access policy templates](concept-conditional-access-policy
 
 </details>
 
+<details>
+  <summary>Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
+  </summary>
 
+  [!INCLUDE [21783](../../includes/secure-recommendations/21783.md)]
 
+</details>
+
+<details>
+  <summary>Block legacy authentication
+  </summary>
+
+  [!INCLUDE [21796](../../includes/secure-recommendations/21796.md)]
+
+</details>
+
+<details>
+  <summary>Secure the MFA registration (My Security Info) page
+  </summary>
+
+  [!INCLUDE [21806](../../includes/secure-recommendations/21806.md)]
+
+</details>
+
+<details>
+  <summary>User sign-in activity uses token protection
+  </summary>
+
+  [!INCLUDE [21786](../../includes/secure-recommendations/21786.md)]
+
+</details>
+
+<details>
+  <summary>Restrict device code flow
+  </summary>
+
+  [!INCLUDE [21808](../../includes/secure-recommendations/21808.md)]
+
+</details>
+
+<details>
+  <summary>Authentication transfer is blocked
+  </summary>
+
+  [!INCLUDE [21828](../../includes/secure-recommendations/21828.md)]
+
+</details>
+
+<!--- 
 Privileged users have short-lived sign-in sessions
 Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
 Block legacy authentication
@@ -249,7 +296,7 @@ Restrict access to high risk users
 Restrict high risk sign-ins
 Conditional Access policies for Privileged Access Workstations are configured
 Guest access is protected by strong authentication methods
-
+--->
 
 #### Evaluate the policy impact
 
