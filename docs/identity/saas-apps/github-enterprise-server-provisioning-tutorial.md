@@ -27,7 +27,7 @@ This article describes the steps you need to perform in both GitHub Enterprise S
 > * Remove users in GitHub Enterprise Server when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and GitHub Enterprise Server
 > * Provision groups and group memberships in GitHub Enterprise Server
-> * Single sign-on to [GitHub Enterprise Server](./github-server-tutorial.md) (recommended)
+> * Single sign-on to [GitHub Enterprise Server](./github-enterprise-server-tutorial.md) (recommended)
 
 ## Prerequisites
 

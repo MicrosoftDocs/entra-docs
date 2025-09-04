@@ -38,7 +38,7 @@ In this article, you configure and test Microsoft Entra SSO in a test environmen
 
 * GitHub Enterprise Server supports **SP** and **IDP** initiated SSO.
 * GitHub Enterprise Server supports **Just In Time** user provisioning.
-* GitHub Enterprise Server supports [Automated user provisioning](./github-server-provisioning-tutorial.md).
+* GitHub Enterprise Server supports [Automated user provisioning](./github-enterprise-server-provisioning-tutorial.md).
 
 ## Add GitHub Enterprise Server from the gallery
 
@@ -111,7 +111,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Select **Save**.
 
-    ![Screenshot shows to manage claim for attributes.](./media/github-server-tutorial/administrator.png "Claims")
+    ![Screenshot shows to manage claim for attributes.](./media/github-ae-tutorial/administrator.png "Claims")
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -133,7 +133,7 @@ To configure SSO on GitHub Enterprise Server side, you need to follow the instru
 
 In this section, a user called B.Simon is created in GitHub Enterprise Server. GitHub Enterprise Server supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in GitHub Enterprise Server, a new one is created after authentication.
 
-GitHub Enterprise Server also supports automatic user provisioning, you can find more details [here](./github-server-provisioning-tutorial.md) on how to configure automatic user provisioning.
+GitHub Enterprise Server also supports automatic user provisioning, you can find more details [here](./github-enterprise-server-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
 ## Test SSO 
 
