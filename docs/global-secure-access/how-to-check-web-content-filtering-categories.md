@@ -30,9 +30,9 @@ Example:
 GET hhttps://graph.microsoft.com/beta/networkaccess/connectivity/microsoft.graph.networkaccess.getWebCategoryByUrl(url='@url')?@url=msn.com/en-us/sports
 ```
 
-Notes:
-- If the URL contains characters that need encoding (for example, spaces or query strings), URL-encode the `@url` value.
-- The feature is API-only at the moment; there's no UI in the Microsoft Entra admin center for this feature.
+> [!Notes:]
+> - If the URL contains characters that need encoding (for example, spaces or query strings), URL-encode the `@url` value.
+->  The feature is API-only at the moment; there's no UI in the Microsoft Entra admin center for this feature.
 
 ## Responses
 
