@@ -1,6 +1,6 @@
 ---
 title: Logs and metrics for the Access Review Agent (Preview)
-description: Learn about the Security Copilot for Microsoft Entra Access Review agent metrics and events in audit logs.
+description: Learn about the logs and metrics of the Access Review Agent.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -11,7 +11,7 @@ ms.date: 07/19/2025
 #CustomerIntent: As a governance administrator, I want to view the logs and metrics for access reviews completed with help from the access review agent.
 ---
 
-# View logs and metrics for the Access Review agent (Preview)
+# View logs and metrics for the Access Review Agent (Preview)
 
 The Access Review Agent helps organizations improve their security posture by automatically analyzing sign-in patterns and suggesting policy optimizations. This Microsoft Security Copilot agent identifies unprotected users and applications, recommends policy improvements, and helps consolidate redundant policies.
 
@@ -29,9 +29,9 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 ## Agent Summary
 
-To view information about the Access Review Agent, open up the Access Review agent to get to the overview page. The highlight of the overview page is the Agent summary, which provides a quick summary of agent actions over the course of the last 30 days.
+To view information about the Access Review Agent, open up the Access Review Agent to get to the overview page. The highlight of the overview page is the Agent summary, which provides a quick summary of agent actions over the course of the last 30 days.
 
-:::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the access review agent overview.":::
+:::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the Access Review Agent overview.":::
 
 
 The **Agent Summary** shows:
@@ -63,7 +63,7 @@ To see a detailed summary of the agent's activity, and the recommendations (appr
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details help you understand the logic behind the agent and you can view the recommendations and justification summaries on the last card in the activity map.
 
-:::image type="content" source="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png" alt-text="Screenshot of access review agent justification in activity card.":::
+:::image type="content" source="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png" alt-text="Screenshot of Access Review Agent justification in activity card.":::
 
 
 ## Related content
