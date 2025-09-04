@@ -58,13 +58,13 @@ The administrator [registers a Microsoft Entra app and creates a service princip
 1. Get the service principal ID for Microsoft Entra AD Synchronization Service. We'll refer to this as `SynchronizationServiceSPId`
 
    ```http
-   GET /servicePrincipals/(appId=’{SynchronizationServiceAppId}’)?$select=id
+   GET /servicePrincipals(appId=’{SynchronizationServiceAppId}’)?$select=id
    ```
 
 1. Get the app role ID for `ADSynchronization.ReadWrite.All permission`. We'll refer to this as `SynchronizationServiceAppRoleId`
 
    ```http
-   GET /servicePrincipals/(appId=’{SynchronizationServiceAppId}’)?$select=appRoles
+   GET /servicePrincipals(appId=’{SynchronizationServiceAppId}’)?$select=appRoles
    ```
 
    `SynchronizationServiceAppRoleId` is the id property of the app role in the response where value=`ADSynchronization.ReadWrite.All`
@@ -72,7 +72,7 @@ The administrator [registers a Microsoft Entra app and creates a service princip
 1. Get the service principal ID for Microsoft password reset service. We'll refer to this as `PasswordResetServiceSPId`. Note that the service principal might not exist in the tenant.
 
    ```http
-   GET /servicePrincipals/(appId=’{PasswordResetServiceAppId}’)?$select=id
+   GET /servicePrincipals(appId=’{PasswordResetServiceAppId}’)?$select=id
    ```
 
 1. Get the app role IDs for `PasswordWriteback.OffboardClient.All`, `PasswordWriteback.RegisterClientVersion.All` and `PasswordWriteback.RefreshClient.All` permissions. This step is relevant only if password reset service principal exists in the tenant. We'll refer to these as `PasswordResetServiceServiceOffboardClientAppRoleId`, `PasswordResetServiceServiceRegisterClientAppRoleId`, `PasswordResetServiceServiceRefreshClientAppRoleId` respectively.
@@ -91,15 +91,15 @@ The administrator [registers a Microsoft Entra app and creates a service princip
                          "resourceAppId": "{PasswordResetServiceAppId}",
                          "resourceAccess": [
                               {
-                                   "id": “{PasswordResetServiceServiceOffboardClientAppRoleId}",
+                                   "id": "{PasswordResetServiceServiceOffboardClientAppRoleId}",
                                    "type": "Role"
                               },
                               {
-                                   "id": “{PasswordResetServiceServiceRegisterClientAppRoleId}",
+                                   "id": "{PasswordResetServiceServiceRegisterClientAppRoleId}",
                                    "type": "Role"
                               },
                               {
-                                   "id": “{PasswordResetServiceServiceRefreshClientAppRoleId}",
+                                   "id": "{PasswordResetServiceServiceRefreshClientAppRoleId}",
                                    "type": "Role"
                               }
                          ]
@@ -124,8 +124,8 @@ The administrator [registers a Microsoft Entra app and creates a service princip
       ```http
       POST /servicePrincipals(appId='{ConnectSyncAppId}')/appRoleAssignments
       {
-      "principalId": “{ConnectSyncSPId}”,
-      "resourceId": “{SynchronizationServiceSPId}”,
+      "principalId": "{ConnectSyncSPId}",
+      "resourceId": "{SynchronizationServiceSPId}",
       "appRoleId": "{SynchronizationServiceAppRoleId}"
       }
       ```
@@ -137,8 +137,8 @@ The administrator [registers a Microsoft Entra app and creates a service princip
        ```http   
        POST /servicePrincipals(appId='{ConnectSyncAppId}')/appRoleAssignments
        {
-       "principalId": “{ConnectSyncSPId}”,
-       "resourceId": “{PasswordResetServiceSPId}”,
+       "principalId": "{ConnectSyncSPId}",
+       "resourceId": "{PasswordResetServiceSPId}",
        "appRoleId": "{PasswordResetServiceServiceOffboardClientAppRoleId}"
        }
        ```
@@ -148,8 +148,8 @@ The administrator [registers a Microsoft Entra app and creates a service princip
       ```http
       POST /servicePrincipals(appId='{ConnectSyncAppId}')/appRoleAssignments
       {
-      "principalId": “{ConnectSyncSPId}”,
-      "resourceId": “{PasswordResetServiceSPId}”,
+      "principalId": "{ConnectSyncSPId}",
+      "resourceId": "{PasswordResetServiceSPId}",
       "appRoleId": "{PasswordResetServiceServiceRegisterClientAppRoleId}"
       }
       ```
@@ -159,9 +159,9 @@ The administrator [registers a Microsoft Entra app and creates a service princip
       ```http
       POST /servicePrincipals(appId='{ConnectSyncAppId}')/appRoleAssignments
       {
-      "principalId": “{ConnectSyncSPId}”,
-      "resourceId": “{PasswordResetServiceSPId}”,
-      "appRoleId": “{PasswordResetServiceServiceRefreshClientAppRoleId}”
+      "principalId": "{ConnectSyncSPId}",
+      "resourceId": "{PasswordResetServiceSPId}",
+      "appRoleId": "{PasswordResetServiceServiceRefreshClientAppRoleId}"
       }
       ```
 
