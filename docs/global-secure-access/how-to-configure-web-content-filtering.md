@@ -57,6 +57,8 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md) or a valid FQDN, and then select **Add**.
      - Valid FQDNs in this feature can also include wildcards using the asterisk symbol, *.
 1. Select **Next** to review the policy and then select **Create policy**.
+> [!IMPORTANT]
+> Changes to web content filtering can take up to one hour to deploy.
 
 ## Create a security profile
 
@@ -128,7 +130,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
 
-![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
+![Screenshot showing a plaintext browser error for HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
 
 ![Screenshot showing a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
 
