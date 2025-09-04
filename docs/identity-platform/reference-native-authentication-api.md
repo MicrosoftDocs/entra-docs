@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: reference
-ms.date: 09/30/2024
+ms.date: 09/05/2025
 ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
@@ -32,7 +32,11 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 1. A Microsoft Entra external tenant. If you don't already have one, [create an external tenant](../external-id/customers/how-to-create-external-tenant-portal.md).
 
-1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](/entra/identity-platform/quickstart-register-app). Make sure you grant delegated permissions, and enable public client and native authentication flows.
+1.  If you haven't already done so, [Register an application in the Microsoft Entra admin center](quickstart-register-app.md). Make sure to:
+
+    * Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
+    * [Grant admin consent](quickstart-register-app.md#grant-admin-consent-external-tenants-only) to the application.
+    * [Enable public client and native authentication flows](concept-native-authentication.md#how-to-enable-native-authentication).
 
 1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). When you create the user flow, take note of the user attributes you configure as required as these attributes are the ones that Microsoft Entra expects your app to submit.
 
