@@ -1,5 +1,5 @@
 ---
-title: Access Review Agent with Microsoft Security Copilot
+title: Microsoft Security Copilot Access Review Agent in Microsoft Entra
 description: Learn how the Access Review Agent, with Microsoft Security Copilot, can help secure your organization through recommendations based on your data.
 author: owinfreyATL
 ms.author: owinfrey
@@ -8,10 +8,10 @@ ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 07/17/2025
 
-#CustomerIntent: As a Security Administrator, I want to set up the Access Review Agent so that Copilot can be used to help complete access reviews for users in my organization.
+#CustomerIntent: As a Security Administrator, I want to set up the Access Review Agent so that Security Copilot can be used to help complete access reviews for users in my organization.
 ---
 
-# Microsoft Entra Access Review Agent
+# Access Review Agent
 Say goodbye to time-consuming research and the uncertainty of rushed decisions. The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity.
 
 :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
