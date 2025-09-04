@@ -24,7 +24,7 @@ Say goodbye to time-consuming research and the uncertainty of rushed decisions. 
    - [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator)
    - [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator)
    - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access)
-- For reviewers to leverage the Access Review Agent in Microsoft Teams they must have an active access review assigned to them and have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role.
+- For reviewers to leverage the Access Review Agent they must have access to Microsoft Teams and must have an active access review assigned to them and have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Limitations
@@ -147,9 +147,9 @@ To update an existing access review to be processed by the Access Review Agent, 
 
 ### Ensure reviewers can use the Access Review Agent
 
-The Access Review Agent is accessed through a published first-party [Microsoft Teams App](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47). Ensure that the app is [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Using the app also requires that reviewers use the [Microsoft Teams Public Preview](/microsoftteams/public-preview-doc-updates?tabs=new-teams-client).
+Reviewers access the Access Review Agent through a [Microsoft Teams App](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3). If your organizations' [Microsoft Teams org-wide app settings](/microsoftteams/manage-apps#manage-org-wide-app-settings) allow Microsoft applications no action is required. If your organization has disabled Microsoft apps in the Microsoft Teams org-wide app settings your organizations' Microsoft Teams administrator must explicitly approve the app.
 
-With the app published and available, also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews. This is required because the natural language conversation in Microsoft Teams is opening a Microsoft Security Copilot session behind the scenes. Participating reviewers access the agentic experience via Microsoft Teams, but with the role assignment they'll be entitled to access https://securitycopilot.microsoft.com/ or the Security Copilot experience in other Microsoft Security administrative portals. If reviewers access Security Copilot outside of Microsoft Teams, their data access with Security Copilot is still subject to [default user permissions](../fundamentals/users-default-permissions.md).
+You must also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews. This is required because the natural language conversation in Microsoft Teams is opening a Microsoft Security Copilot session behind the scenes. Participating reviewers access the agentic experience via Microsoft Teams, but with the role assignment they'll be entitled to access the [Security Copilot portal](https://securitycopilot.microsoft.com/) or the Security Copilot experience in other Microsoft Security administrative portals. If reviewers access Security Copilot outside of Microsoft Teams, their data access with Security Copilot is still subject to [default user permissions](../fundamentals/users-default-permissions.md).
 
 ## Using the Access Review Agent as a reviewer
 
