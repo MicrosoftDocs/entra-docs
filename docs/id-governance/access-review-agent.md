@@ -74,6 +74,8 @@ The agent considers the following signals:
 > [!NOTE]
 > The justification summary will include information from these signals and will be available to the reviewer during the review process even though some of this information is not available to reviewers outside of the review process.
 
+As admin you are able to review the recommendations (approve / deny) as well as justification summaries. For details see, [Access Review Agent logs and metrics (Preview)](access-review-agent-logs-metrics.md). Please note the agent recommendations may differ from the recommendations shown on the My Access portal and Access Review experience in the Microsoft Entra admin center.
+
 ## Getting started
 ### Setting up the Access Review Agent
 1. With an account that has at least **all** the following roles, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com):
