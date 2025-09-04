@@ -28,12 +28,10 @@ In this quickstart you learn how to run an iOS sample application that demonstra
   * Application Administrator
   * Application Developer
 * An external tenant. If you don't have one, [create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-
 * If you haven't already done so, [Register an application in the Microsoft Entra admin center](quickstart-register-app.md). Make sure to:
 
     * Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
     * [Grant admin consent](quickstart-register-app.md#grant-admin-consent-external-tenants-only) to the application.
-
 * If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md)
 * [Associate your app registration with the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a> 
