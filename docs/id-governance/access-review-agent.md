@@ -57,32 +57,22 @@ The following tables show current Access Review Agent support based on review sc
 |Self-reviews     |  ❌    |
 
 ## How it works
-The Access Review Agent proactively scans access reviews, and assists reviewers in making informed decisions about the access for users in your environment. 
+The Access Review Agent proactively scans for active access reviews in your tenant which have been flagged to be processed by the agent. Then agent then analyzes identified reviews by gathering additional insights and generates a recommendation (approve / deny) as well as a justification summary for each decision. Once the agent has analyzed the recommendations and corresponding jusitifcation summaries it will be able to guide reviewers, in natural language, through the review process in Microsoft Teams. Reviewers are empowered to complete their reviews through the natural language chat experience in Microsoft Teams and as the agent guides them through the review they are able to review the agents reasoning behind the recommendations, ask questions in the context of the review itself and finally make their own informed decision.
 
-The agent, which reviewers communicate with directly via a [Microsoft Teams](/microsoftteams/teams-overview) chat, uses user context to help inform decisions. 
+The agents recommendation (approve / deny) for each decision relies on a deterministic scoring mechanism powered by multiple signals, the signals leveraged for the recommendation are then used to provide an end-user friendly justification summary powered by an large language model (LLM). The subsequent natural language chat experience in Microsoft Teams is facilitated by the large language model with previously generated recommendation and justification summaries as available context.
 
-When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
+The agent considers the following signals:
 
-Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
-
-1. The agent scans all access reviews in your tenant.
-1. The agent analyzes the data, such as their activity, of users being reviewed.
-1. The agent reviews previous access review decisions to help inform its recommendations.
-
-If the agent identifies something that wasn't previously suggested, it takes the following steps. **These action steps consume SCUs.**
-
-1. The agent evaluates access review durations, and recommends that the reviewer reviews the access review expiring earlier first.
-1. The agent identifies that a user is no longer active and recommends revoking access.
-1. The agent identifies that a user is still active and using resources, the access review agent recommends approving access.
-
-The agent considers the following about a user when making review recommendations:
-
-- **Activity**: If the user has signed in([SignInActivity](/graph/api/resources/signinactivity)) the past 30 days.
-- **User-to-Group affiliation**: If the user has a [low affiliation](review-recommendations-access-reviews.md) with other users who has the access being requested.
-- **Account enabled**: If the user's account is enabled(accountEnabled).
-- **Employment status**: If the user's employment ended([employeeLeaveDateTime](/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime))
+- **User inactivity**: If the user has [signed in](review-recommendations-access-reviews.md##inactive-user-recommendations).
+- **User-to-Group affiliation**: If the user has a [low affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) with other users who have this access.
+- **Account enabled**: If the user's account is enabled (accountEnabled property).
+- **Employment status**: If the user's employment ended ([employeeLeaveDateTime property](/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime)).
 - **Lifecycle workflow history**: If the user has had a mover workflow ran for them in the past 30 days
-- **Previous reviews**: If the user being reviewed is part of a recurring review, decisions from previous review iterations or access package assignments are considered.
+- **Decisions from previous reviews**: For recurring reviews, decisions from previous review iterations are considered.
+- **Access request history**: For access package assignment reviews, the request and approval history is  considered.
+
+> [!NOTE]
+> The justification summary will include information from these signals and will be available to the reviewer during the review process even though some of this information is not available to reviewers outside of the review process.
 
 ## Getting started
 ### Setting up the Access Review Agent
@@ -210,6 +200,9 @@ If you no longer wish to use the Access Review Agent, select **Remove agent** fr
 ### Revoke Security Copilot access
 
 You may want to revoke the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) access of reviewers if no other scenario requires them to access Security Copilot.
+
+## Identity and permissions
+The agent will run with identity of the administrator who configured the agent to gather insights and save recommendations. Final decisions as part of the Microsoft Teams conversation will be written with the reviewer’s identity.
 
 ### Providing feedback
 
