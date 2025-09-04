@@ -12,7 +12,7 @@ ms.date: 07/17/2025
 ---
 
 # Microsoft Entra Access Review Agent
-Say goodbye to time-consuming research and the uncertainty of rushed decisions. The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations.It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity.
+Say goodbye to time-consuming research and the uncertainty of rushed decisions. The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity.
 
 :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
 
@@ -35,33 +35,26 @@ Say goodbye to time-consuming research and the uncertainty of rushed decisions. 
 
 ## Supported Scenarios
 The following tables show current Access Review Agent support based on review scenarios:
-### Resources
-|Review Scenario  |Supported  |
+|  |Supported  |
 |---------|---------|
+|**Resources**  |  |
 |Teams + Groups     |   :white_check_mark:       |
 |Access package assignment     |    :white_check_mark:      |
 |Application assignment        |   :white_check_mark:       |
 |Azure resource roles          |    ❌                        |
 |Microsoft Entra roles         |   ❌                         |
 |Groups managed by Privileged Identity Management         |   ❌                         |
-### Review Size
-|Review Scenario  |Supported  |
-|---------|---------|
+|**Size**  |  |
 |Up to 35 decisions (per review, not reviewer)     |  :white_check_mark:       |
 |>35 decisions per review     |   ❌       |
-### Review stages
-|Review Scenario  |Supported  |
-|---------|---------|
+|**Stages**  |  |
 |Single Stage     |  :white_check_mark:       |
-|Two Stages     |   ❌       |
-|Three Stages     |   ❌       |
-### Reviewer Settings
-|Review Scenario  |Supported  |
-|---------|---------|
+|Multi-stage     |   ❌       |
+|**Reviewers**  |  |
 |Specific     |   :white_check_mark:       |
-|Group Owners     |  :white_check_mark:        |
+|Group owners     |  :white_check_mark:        |
 |Managers     |  :white_check_mark:        |
-|Self-review     |  ❌    |
+|Self-reviews     |  ❌    |
 
 ## How it works
 The Access Review Agent proactively scans access reviews, and assists reviewers in making informed decisions about the access for users in your environment. 
