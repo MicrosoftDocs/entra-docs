@@ -232,6 +232,13 @@ Refer to [Conditional Access policy templates](concept-conditional-access-policy
   <p>[!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]</p>
 </details>
 
+<div class="expander">
+  <button class="expander-toggle">Privileged users have short-lived sign-in sessions</button>
+  <div class="expander-content" style="display: none;">
+    [!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]
+  </div>
+</div>
+
 
 Privileged users have short-lived sign-in sessions
 Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
