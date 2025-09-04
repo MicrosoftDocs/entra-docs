@@ -23,7 +23,7 @@ This article explains the prerequisites and steps to configure Group Source of A
 | **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free license. |
 | **Sync client** | You can use either sync client to to synchronize SOA converted groups. If you use Connect Sync, upgrade to the minimum version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). If you use Cloud Sync, upgrade to minimum version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700).  |
-| **Provisioning to AD** |  To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. |
+| **Provisioning to AD (optional)** |  To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. |
 
 ### Download Connect Sync client
 
