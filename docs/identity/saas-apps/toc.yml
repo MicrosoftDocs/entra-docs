@@ -3488,7 +3488,7 @@
         href: getabstract-provisioning-tutorial.md
       - name: GitHub
         href: github-provisioning-tutorial.md
-      - name: GitHub AE
+      - name: GitHub Enterprise Server
         href: github-enterprise-server-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User
         href: github-enterprise-managed-user-provisioning-tutorial.md
