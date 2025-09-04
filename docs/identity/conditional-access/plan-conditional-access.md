@@ -225,10 +225,17 @@ Refer to [Conditional Access policy templates](concept-conditional-access-policy
 
 | Conditional Acces policy | Priority | License |
 | --- | --- | --- |
-|  |  |  |
+| <details> <br> <summary>**Privileged users have short-lived sign-in sessions** <br> </summary> <br> [!INCLUDE [21825](../../includes/secure-recommendations/21825.md)] <br> </details> | High | P1 |
+
+
+
+
+
+
+
 
 <details>
-  <summary>Privileged users have short-lived sign-in sessions
+  <summary>**Privileged users have short-lived sign-in sessions**
   </summary>
 
   [!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]
@@ -236,7 +243,7 @@ Refer to [Conditional Access policy templates](concept-conditional-access-policy
 </details>
 
 <details>
-  <summary>Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
+  <summary>**Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods**
   </summary>
 
   [!INCLUDE [21783](../../includes/secure-recommendations/21783.md)]
