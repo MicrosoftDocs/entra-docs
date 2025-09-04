@@ -37,7 +37,7 @@ The next sections cover how to set up Connect Sync (optional) and Cloud Sync.
 
 ### Cloud Sync client
 
-Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700) or later.
+Download Cloud Sync build version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700) or later.
 
 1. Follow the [instructions to download the Cloud Sync client](/entra/identity/hybrid/cloud-sync/reference-version-history#download-link).
 
