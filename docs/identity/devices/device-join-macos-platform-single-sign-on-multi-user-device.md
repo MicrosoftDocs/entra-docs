@@ -47,7 +47,7 @@ Your Platform SSO MDM profile should apply the following configurations to suppo
 |-|-|-|
 | Screen Locked Behavior | Do Not Handle | Required |
 | Registration Token | {{DEVICEREGISTRATION}} | Recommended for the best registration user experience |
-| Authentication Method | Password | Recommended for this article, secure enclave key is recommended for single user devices |
+| Authentication Method | Password, smartcard, secure enclave|During new user creation at the login screen, user will need to specify a  will need user name and password regardless of the auth method chosen. Secure enclave key is recommended for single user devices |
 | Enable Authorization | Enabled | Required |
 | Enable Create User At Login | Enabled | Required |
 | New User Authorization Mode | Standard | Recommended |
