@@ -31,8 +31,13 @@ There are three main steps for configuring Platform SSO on a shared device:
 1. **Deploy Platform SSO Configuration.** Create and deploy a settings catalog profile with the required Platform SSO Configuration.
 1. **Deploy macOS Login Screen Configuration.** The macOS Login screen configuration can be changed to allow new users to log in.
 
-> [!IMPORTANT]
-> Conditional access policies are not supported on macOS devices that are shared with multiple users.
+### Shared Device Limitations
+
+Please note the following regarding shared macOS devices:
+
+- macOS devices that are intended to be shared between users should ensure they are enrolled as user-less ([enrollment w/o user affinity for ADE](/intune/intune-service/enrollment/device-enrollment-program-enroll-macos"https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-program-enroll-macos#:~:text=enrollment%20without%20user%20device%20affinity"), [direct enrollment for non-ADE](/intune/intune-service/enrollment/device-enrollment-direct-enroll-macos"https://learn.microsoft.com/en-us/intune/intune-service/enrollment/device-enrollment-direct-enroll-macos")).
+
+- Conditional access policies are not supported on macOS devices that are shared with multiple users.
 
 ### Platform SSO profile configuration
 
