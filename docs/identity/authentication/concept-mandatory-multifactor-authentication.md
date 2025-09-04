@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 09/03/2025
+ms.date: 09/04/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -58,10 +58,11 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [REST API (Control Plane)](/azure/azure-resource-manager/management/control-plane-and-data-plane#control-plane) | N/A | October 1, 2025 | 
 | [Azure SDK](/azure/developer/intro/azure-developer-create-resources#azure-sdk-and-rest-apis) | N/A | October 1, 2025 | 
 
-For the best compatability experience, ensure users in your tenant are using Azure CLI version 2.76 and Azure PowerShell version 14.3 or later. Otherwise, you can expect to see error messages as explained in these topics: 
-
-- [Troubleshoot MFA errors in Azure Powershell](/powershell/azure/troubleshooting#troubleshooting-multifactor-authentication-mfa)
-- [Troubleshoot MFA errors in Azure CLI](/cli/azure/use-azure-cli-successfully-troubleshooting#troubleshooting-multifactor-authentication-mfa)
+>[!NOTE]
+>For the best compatability experience, ensure users in your tenant are using Azure CLI version 2.76 and Azure PowerShell version 14.3 or later. Otherwise, you can expect to see error messages as explained in these topics: 
+>
+>- [Troubleshoot MFA errors in Azure Powershell](/powershell/azure/troubleshooting#troubleshooting-multifactor-authentication-mfa)
+>- [Troubleshoot MFA errors in Azure CLI](/cli/azure/use-azure-cli-successfully-troubleshooting#troubleshooting-multifactor-authentication-mfa)
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
