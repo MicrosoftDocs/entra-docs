@@ -17,8 +17,28 @@ ms.custom: sfi-image-nochange
 
 Microsoft Entra ID simplifies how enterprises manage access to groups and applications in Microsoft Entra ID and other Microsoft web services with a feature called access reviews. This article covers how a designated reviewer performs an access review for members of a group or users with access to an application. If you want to review access to an access package, read [Review access of an access package in entitlement management](entitlement-management-access-reviews-review-access.md).
 
-## Perform access review by using My Access
-You can review access to groups and applications via My Access. My Access is a user-friendly portal for granting, approving, and reviewing access needs.
+You can review access to groups and applications via the [My Access portal](https://myaccess.microsoft.com/) or via chat with the [Access Review Agent (Preview)](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) in Microsoft Teams. The Access Review Agent is currently in preview and does not yet support all types of group and application reviews, if the agent cannot yet help you with your assigned reviews it will guide you to the My Access portal.
+
+## Perform an access review using the Access Review Agent (Preview)
+The Access Review Agent assists you in completing your pending access reviews by guiding you in Microsoft Teams with natural language, insights, and recommendations.
+
+### Go directly to the Access Review Agent
+1. Select the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) link to open the agent
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent
+1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
+
+### Use email to go to the Access Review Agent
+
+>[!IMPORTANT]
+> There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
+
+1. Look for an email from Microsoft asking you to review access.
+1. Select the **Start review** link to open the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3). The **Start review** link will either open the Access Review Agent or the My Access portal based on your organizations policies. If the link opens the My Access portal the Access Review Agent has not been enabled for the specific review and must be completed via the My Access portal.
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent
+1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
+
+## Perform access review by using the My Access portal
+The [My Access portal](https://myaccess.microsoft.com/) is a user-friendly portal for granting, approving, and reviewing access needs.
 
 ### Use email to go to My Access
 
@@ -130,14 +150,6 @@ To review access of B2B direct connect users, use the following instructions:
 > Unlike internal users and B2B collaboration users, B2B direct connect users and teams *don't* have recommendations based on last sign-in activity to make decisions when you perform the review.
 
 If a team you review shares channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](../external-id/b2b-direct-connect-overview.md).
-
-## Perform an access review using the Access Review Agent
-
-The Access Review Agent, a bot within Microsoft teams used to help reviewers complete their reviews using informed decisions, can be used to review access to groups and applications. To set up, and use, the Access Review Agent, see: [Enable the Access Review Agent for Access Reviews](access-review-agent.md#enable-the-access-review-agent-for-access-reviews).
-
-> [!NOTE]
-> The Access Review Agent requires that reviewers also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role. For more information about other requirements, and limitations, of the Access Review Agent, see: [Access Review Agent with Microsoft Security Copilot](access-review-agent.md).
-
 
 ## Set up what will happen if no action is taken on access review
 
