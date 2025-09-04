@@ -107,7 +107,7 @@ The agent considers the following about a user when making review recommendation
    - A message that says "*The agent is starting its first run*" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
 
-### Flag access reviews to be processed by the Access Review Agent
+### Enable the access review agent for existing access reviews
 
 After the Access Review Agent is started, you must flag access reviews to be processed by the Access Review Agent. The Access Review Agent is able to process both new, and existing, access reviews. The following sections walk you through flagging access review to be processed by the Access Review Agent.
 
@@ -177,6 +177,8 @@ The agent is configured to run every 24 hours based on when it's initially confi
 
    :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
 
+> [!NOTE]
+> If reviewers immediately action their access review email notifications the agent may have not yet processed the review, only after the agent's run it will be able to assist in Microsoft Teams. In this case the agent will respond with the following message to the reviewer in Microsoft Teams: 'I don't see any pending reviews that I can help you with at this time. Because my capabilities are still expanding, I recommend you check the My Access Portal to see if you have any other pending reviews.'. 
 
 ## Removing the agent 
 
@@ -221,8 +223,6 @@ You may want to revoke the [Security Copilot Contributor](/copilot/security/auth
 Use the **Give Microsoft feedback** button at the top of the agent window to provide feedback to Microsoft about the agent.
 
 ## FAQs
-
-### Why is the agent in Microsoft Teams responding with 'I don't see any pending reviews that I can help you with at this time. Because my capabilities are still expanding, I recommend you check the My Access Portal to see if you have any other pending reviews.'?
 
 ###  Why is the agent in Microsoft Teams responding with 'It looks like the Access Review Agent either has not yet been enabled for your organization or has encountered unexpected issues. Please contact your IT department for assistance. In the meantime, you can complete your pending reviews in the My Access Portal'?
 
