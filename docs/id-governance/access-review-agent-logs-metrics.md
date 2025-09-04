@@ -20,7 +20,10 @@ To ensure transparency and maintain control over automated recommendations, Micr
 ## Prerequisites
 
 - To view the Microsoft Entra audit logs, you need at least the [Reports reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
-- To view the overview, activities, or settings of the Access Review Agent, you need either the [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+- To view the overview, activities, or settings of the Access Review Agent you must have at least **all** the following roles:
+   - [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator)
+   - [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator)
+   - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access)
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
 
@@ -36,14 +39,14 @@ The **Agent Summary** shows:
 - **Total access reviews**: The number of access reviews that are reviewed by the agent.
 - **Total decisions analyzed**: The number of decisions made by the agent.
 - **Total reviewers**: The number of reviewers who used the agent to complete access reviews.
-- **Security compute units used**: The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent. 
+- **Security compute units used**: The number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent to analyze identified reviews by gathering additional insights and generates recommendations (approve / deny) as well as justification summaries for each decision. This number does **not** inlcude the SCUs consumed by the natural language conversation between reviewers and the agent. 
 
 
 The overview page also includes other general information about the agent such as its latest activity, and whether its currently active.
 
 ## Agent Activities
 
-From the overview page, you can select the **Activities** tab to view a full list of the activities of the Access Review Agent.
+From the overview page, you can select the **Activities** tab to view a full list of the activities of the Access Review Agent. A run will be generated for each active access review instance the agent analyzes, additionally a run will be generated if the agent has not identified any new active access review instances to analyze. Each access review instance will only be analyzed once and generates a signal run. 
 
 :::image type="content" source="media/access-review-agent-logs-metrics/access-review-agents-activities.png" alt-text="Screenshot of a list of activities in the Access Review Agent.":::
 
@@ -51,22 +54,16 @@ For each activity, you can see:
 
 - The date and time the run started
 - The number of SCU used
-- The number of reviewers that completed the decision
-- The status of the action
+- The number of reviewers involved in the review to which the run corresponds
+- The status of the run
 
 ### View Agent's Full Activity
 
-To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View activity** next to the specific activity.
+To see a detailed summary of the agent's activity, and the recommendations (approve / deny) as well as the justification summaries it generated, select **View activity** next to the specific activity.
 
-The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details help you understand the logic behind the decisions so you can make an informed choice about whether to apply the decision.
+The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details help you understand the logic behind the agent and you can view the recommendations and justification summaries on the last card in the activity map.
 
 :::image type="content" source="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png" alt-text="Screenshot of access review agent justification in activity card.":::
-
-
-## Audit logs 
-
-
-In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent. To quickly see agent activity, filter to **Service: Access Reviews**. 
 
 
 ## Related content
