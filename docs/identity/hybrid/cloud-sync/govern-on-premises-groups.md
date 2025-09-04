@@ -3,6 +3,7 @@ title: 'Govern on-premises Active Directory Domain Services (Kerberos) applicati
 description: This article provides an overview of how to use cloud sync to govern on-premises application access using groups.
 author: omondiatieno
 manager: mwongerapk
+ms.date: 09/04/2025
 ms.service: entra-id
 ms.topic: article
 ms.subservice: hybrid-cloud-sync
