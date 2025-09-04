@@ -5,10 +5,10 @@ ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 05/13/2023
-ms.author: miepping
-author: mepples21
-manager: 
-ms.reviewer: brianmel
+ms.author: godonnell
+author: garrodonnell
+manager: leventbesik
+ms.reviewer: jploegert
 ms.custom: sfi-image-nochange
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) and configure it to support multiple user login. I want to configure this device for student lab scenarios or similar multi-user Mac scenarios for shared devices.
 ---
