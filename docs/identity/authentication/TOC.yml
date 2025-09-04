@@ -104,6 +104,8 @@
       href: /microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication
     - name: FAQ
       href: multi-factor-authentication-faq.yml
+  - name: Introduction to Microsoft Entra Kerberos
+    href: kerberos.md
   - name: Password protection
     items:
     - name: Combined password policy check
