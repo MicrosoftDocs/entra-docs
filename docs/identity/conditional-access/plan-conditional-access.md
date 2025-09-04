@@ -223,7 +223,15 @@ When you're ready, deploy your Conditional Access policies in phases.
 
 Refer to [Conditional Access policy templates](concept-conditional-access-policy-common.md) and [Common security policies for Microsoft 365 organizations](/microsoft-365/security/office-365-security/identity-access-policies) for a head start. These templates are a convenient way to deploy Microsoft recommendations. Make sure you exclude your emergency access accounts.
 
-<details><summary>Privileged users have short-lived sign-in sessions</summary>[!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]<details>
+| Conditional Acces policy | Priority | License |
+| --- | --- | --- |
+|  |  |  |
+
+<details>
+  <summary>Privileged users have short-lived sign-in sessions</summary>
+  <p>[!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]</p>
+</details>
+
 
 Privileged users have short-lived sign-in sessions
 Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
