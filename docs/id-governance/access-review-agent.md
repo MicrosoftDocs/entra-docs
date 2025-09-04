@@ -123,7 +123,7 @@ To update an existing access review to be processed by the Access Review Agent, 
 
 1. On the access review overview page, select **Settings** under Manage if its a one time review, or **Settings** under Series if it is a recurring review.
 
-1. Under **Advanced Settings**, check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
+1. Under **Advanced Settings**, check the box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**. 
 
@@ -153,19 +153,17 @@ You must also ensure that all reviewers have at least the [Security Copilot Cont
 
 ## Using the Access Review Agent as a reviewer
 
-With the Access Review Agent started, reviewers assigned proper permissions, and with the app available to them, your reviewers are now ready to complete their reviews with the help of the agent. The Access Review Agent can be accessed directly from the Apps screen within Microsoft Teams, from a [direct link](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47), or from an email notification sent by an access review with the agent enabled when it's time for the review to be completed. The following steps walk you through accessing the agent directly from Microsoft Teams:
+With the Access Review Agent started, reviewers assigned proper permissions, and with the app available to them, your reviewers are now ready to complete their reviews with the help of the agent. The Access Review Agent can be accessed directly within Microsoft Teams ([direct link](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3)). The access review email notifications sent to reviewers will also inlcude a direct link to Microsoft Teams.
 
 1. Open your Microsoft Teams application signed in as the user assigned as a reviewer.
 
-1. Select **Apps**.
+1. Select the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) link to open the agent
 
 1. On the Apps page, search **Access Review Agent**, and select **Add**.
     :::image type="content" source="media/access-review-agent/access-review-agent-teams.png" alt-text="Screenshot of the Access Review Agent application in Microsoft Teams.":::
 1. Once the agent is added, select **Open**.
 1. When open, you can select the available prompt to start the chat with the agent
      :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
-
-From this chat, you're able to see decisions about your access reviews, the reasoning the agent made when making those decisions, and can reply so that the agent takes action based on your choices. 
 
 ## Settings
 
@@ -182,12 +180,9 @@ The agent is configured to run every 24 hours based on when it's initially confi
 
 ## Removing the agent 
 
-If you no longer wish to use the Access Review Agent, the following sections walk you through removing the agent from resources.
+If you no longer wish to use the Access Review Agent, select **Remove agent** from the top of the agent window. The existing agent activity and metrics are removed but recommendations and justifications for already processed reviews are retained the agent in Microsoft Teams will continue to be able to assists reviewers with these reviews. To complete the removal you should also unflag the access reviews prevously flagged to be processed by the agent.
 
-
-### Removing the agent from  an Access Review
-
-When you remove the agent from accessing an access review, the existing data such as access review information and justifications for decisions are removed, but decisions made via conversations with the agent remains. You should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
+### Disable the access review agent for existing group and application access reviews
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -195,15 +190,13 @@ When you remove the agent from accessing an access review, the existing data suc
 
 1. Select the access review that has agent support enabled.
 
-1. On the access review overview page, select **Settings**.
+1. On the access review overview page, select **Settings** under Manage if its a one time review, or **Settings** under Series if it is a recurring review.
 
-1. Under **Advanced Settings**, check the **Disable** box on the setting that says **Access Review Agent (Preview)**.
+1. Under **Advanced Settings**, uncheck the box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**. 
 
-### Remove Agent From Access Package Assignments
-
-To remove the agent from making recommendations on an existing access package assignment, you'd do the following steps:
+### Disable the Access Review Agent for existing access package assignment reviews
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -217,11 +210,23 @@ To remove the agent from making recommendations on an existing access package as
 
 1. On the lifecycle tab, check the **Disable** box on the setting that says **Access Review Agent (Preview)**.
 
-1. Select **Save**.    
+1. Select **Save**.
+
+### Revoke Security Copilot access
+
+You may want to revoke the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) access of reviewers if no other scenario requires them to access Security Copilot.
 
 ### Providing feedback
 
 Use the **Give Microsoft feedback** button at the top of the agent window to provide feedback to Microsoft about the agent.
+
+## FAQs
+
+### Why is the agent in Microsoft Teams responding with 'I don't see any pending reviews that I can help you with at this time. Because my capabilities are still expanding, I recommend you check the My Access Portal to see if you have any other pending reviews.'?
+
+###  Why is the agent in Microsoft Teams responding with 'It looks like the Access Review Agent either has not yet been enabled for your organization or has encountered unexpected issues. Please contact your IT department for assistance. In the meantime, you can complete your pending reviews in the My Access Portal'?
+
+### Why is the agent in Microsoft Teams responding with 'Things are a bit busy at the moment, and I couldn't process your request right now. Could you please try again in a little while? If you're in a hurry, the My Access Portal is always available.'?
 
 ## Related content
 
