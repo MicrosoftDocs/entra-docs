@@ -26,14 +26,15 @@ In this quickstart you learn how to run an Android sample application that demon
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-* An external tenant. To create one, choose from the following methods:
-  * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* A user flow set up with the *Email one-time passcode* identity provider option. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
-* In the [Microsoft Entra admin center](https://entra.microsoft.com), register a new application with the following configuration and grant admin consent. For detailed steps, see [Register an application](quickstart-register-app.md). Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
-   * **Name**: *ciam-client-app*
-   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
+* An external tenant. If you don't have one, [create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+
+* If you haven't already done so, [Register an application in the Microsoft Entra admin center](quickstart-register-app.md). Make sure to:
+
+    * Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
+    * [Grant admin consent](quickstart-register-app.md#grant-admin-consent-external-tenants-only) to the application.
+
+* If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md)
+* [Associate your app registration with the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
  
 ## Enable public client and native authentication flows 
