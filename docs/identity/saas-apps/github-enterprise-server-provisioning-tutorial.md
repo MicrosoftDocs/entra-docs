@@ -1,14 +1,10 @@
 ---
-title: Configure GitHub Enterprise Server for automatic user provisioning with Microsoft Entra ID
+title: Configure GitHub Enterprise Server for Automatic User Provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to GitHub Enterprise Server.
-
-
 author: jeevansd
 manager: mwongerapk
-
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jeedes
@@ -68,32 +64,32 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**
 
-    ![Enterprise applications blade](common/enterprise-applications.png)
+    ![Screenshot of the Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **GitHub Enterprise Server**.
 
-    ![The GitHub Enterprise Server link in the Applications list](common/all-applications.png)
+    ![Screenshot of the GitHub Enterprise Server link highlighted in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
-    ![Provisioning tab](common/provisioning.png)
+    ![Screenshot of the Provisioning tab selected in the application menu](common/provisioning.png)
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-    ![Provisioning tab automatic](common/provisioning-automatic.png)
+    ![Screenshot of the Provisioning Mode dropdown set to Automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your GitHub Enterprise Server **Tenant URL** and **Secret Token**. The value of the fields are in the following format:
+1. Under the **Admin Credentials** section, input your GitHub Enterprise Server **Tenant URL** and **Secret Token**. The values of the fields are in the following format:
 
     * **Tenant URL**: `https://<your-github-server-domain>/api/v3/scim`
     * **Secret Token**: [The Personal Access Token (PAT)](https://docs.github.com/enterprise-server/admin/managing-iam/provisioning-user-accounts-with-scim/configuring-scim-provisioning-for-users#2-create-a-personal-access-token) you created for [the provisioning account](https://docs.github.com/enterprise-server/admin/managing-iam/provisioning-user-accounts-with-scim/configuring-scim-provisioning-for-users#1-create-a-built-in-setup-user) in your GitHub Enterprise Server instance.
 
     Select **Test Connection** to ensure Microsoft Entra ID can connect to GitHub Enterprise Server. If the connection fails, ensure your GitHub Enterprise Server account has Admin permissions and try again.
 
-    ![Token](common/provisioning-testconnection-tenanturltoken.png)
+    ![Screenshot of the tenant URL and secret token fields with a Test Connection button.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
-    ![Notification Email](common/provisioning-notification-email.png)
+    ![Screenshot of the Notification Email field and checkbox for email notifications.](common/provisioning-notification-email.png)
 
 1. Select **Save**.
 
@@ -126,15 +122,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To enable the Microsoft Entra provisioning service for GitHub Enterprise Server, change the **Provisioning Status** to **On** in the **Settings** section.
 
-    ![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
+    ![Screenshot of the Provisioning Status toggle switched to the On position](common/provisioning-toggle-on.png)
 
 1. Define the users and/or groups that you would like to provision to GitHub Enterprise Server by choosing the desired values in **Scope** in the **Settings** section.
 
-    ![Provisioning Scope](common/provisioning-scope.png)
+    ![Screenshot of the Provisioning Scope dropdown with available options](common/provisioning-scope.png)
 
 1. When you're ready to provision, select **Save**.
 
-    ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
+    ![Screenshot of the Save button highlighted to save the provisioning configuration](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and/or groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 

@@ -1,5 +1,5 @@
 ---
-title: Configure GitHub Enterprise Server for Single sign-on with Microsoft Entra ID
+title: Configure GitHub Enterprise Server for Single Sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Server.
 
 author: nguhiu
@@ -133,7 +133,7 @@ To configure SSO on GitHub Enterprise Server side, you need to follow the instru
 
 In this section, a user called B.Simon is created in GitHub Enterprise Server. GitHub Enterprise Server supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in GitHub Enterprise Server, a new one is created after authentication.
 
-GitHub Enterprise Server also supports automatic user provisioning, you can find more details [here](./github-enterprise-server-provisioning-tutorial.md) on how to configure automatic user provisioning.
+GitHub Enterprise Server also supports automatic user provisioning. You can find more details [here](./github-enterprise-server-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
 ## Test SSO 
 
