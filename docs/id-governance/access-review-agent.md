@@ -35,7 +35,8 @@ Say goodbye to time-consuming research and the uncertainty of rushed decisions. 
 
 ## Supported Scenarios
 The following tables show current Access Review Agent support based on review scenarios:
-|  |Supported  |
+
+| Scenario |Supported  |
 |---------|---------|
 |**Resources**  |  |
 |Teams + Groups     |   :white_check_mark:       |
@@ -63,7 +64,7 @@ The agents recommendation (approve / deny) for each decision relies on a determi
 
 The agent considers the following signals:
 
-- **User inactivity**: If the user has [signed in](review-recommendations-access-reviews.md##inactive-user-recommendations).
+- **User inactivity**: If the user has [signed in](review-recommendations-access-reviews.md#inactive-user-recommendations).
 - **User-to-Group affiliation**: If the user has a [low affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) with other users who have this access.
 - **Account enabled**: If the user's account is enabled (accountEnabled property).
 - **Employment status**: If the user's employment ended ([employeeLeaveDateTime property](/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime)).
