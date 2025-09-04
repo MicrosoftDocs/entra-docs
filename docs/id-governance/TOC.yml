@@ -313,6 +313,8 @@
         href: entitlement-management-request-approve.md
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
+      - name: Self-review of an access package
+        href: entitlement-management-access-reviews-self-review.md  
     - name: Requestors
       items:
       - name: Request access
