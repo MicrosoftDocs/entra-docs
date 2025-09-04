@@ -37,7 +37,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. In the **Expiration** section, set Access package assignments expires to **On date**, **Number of days**, **Number of hours**, or **Never**.
 
-    For **On date**, select an expiration date in the future.
+    For **On date**, select an expiration date in the future. 
 
     For **Number of days**, specify a number between 0 and 3660 days.
 
@@ -100,6 +100,9 @@ You can enable access reviews when [creating a new access package](entitlement-m
         - **approve** the review if the user has signed-in at least once during the last 30 days. 
         - **deny** the review if the user hasn't signed-in during the last 30 days.
     1. If you want the reviewer to share their reasons for their approval decision, select **Require reviewer justification**. Their justification is visible to other reviewers and the requestor.
+    1. - **Access Review Agent (Preview)**: Select this checkbox to allow reviewers to complete the access review in Microsoft Teams with natural language, insights, and recommendations.
+    > [!NOTE]
+    > This setting is only available for review configurations currently supported by the Access Review Agent and additional setup steps are required. For more information, see: [Access Review Agent with Microsoft Security Copilot](access-review-agent.md).
 
 1. Select **Review + Create** or select **next** if you're creating a new access package. Select **Update** if you're editing an access package, at the bottom of the page.
 
