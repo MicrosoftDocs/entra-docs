@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) and configure it to support multiple user login. I want to configure this device for student lab scenarios or similar multi-user Mac scenarios for shared devices.
 ---
 
-# Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios (Preview)
+# Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios
 
 In this tutorial, you will learn how to configure a Microsoft Entra Joined Mac via Mobile Device Management (MDM) to support multiple users. There are three methods in which you can register a Mac device with Platform SSO (PSSO), secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however shared or multi-user Macs may benefit from using the password method instead. Common scenarios for shared Macs with passwords would be computer labs in schools or universities. In these scenarios, students use multiple devices, multiple students use the same device, and they only have passwords and no MFA or passwordless credentials.
 
@@ -30,6 +30,9 @@ There are three main steps for configuring Platform SSO on a shared device:
 1. **Deploy Company Portal.** For more information, see [Add the Company Portal for macOS app](/mem/intune/apps/apps-company-portal-macos).
 1. **Deploy Platform SSO Configuration.** Create and deploy a settings catalog profile with the required Platform SSO Configuration.
 1. **Deploy macOS Login Screen Configuration.** The macOS Login screen configuration can be changed to allow new users to log in.
+
+> [!IMPORTANT]
+> Conditional access policies are not supported on macOS devices that are shared with multiple users.
 
 ### Platform SSO profile configuration
 
@@ -60,7 +63,7 @@ If you use Intune as your MDM of choice, then the configuration profile settings
 
 To allow new users to log on and be created from the macOS login screen, there are two configurations that can be used:
 
- - **Show Other Users Managed**. With this configuration, the macOS login screen shows a list of profiles that have been created and an "other user" button that can be used to log in with a username and password. Users can select their existing profile to log in or log in with their Microsoft Entra ID user principal name (UPN).
+- **Show Other Users Managed**. With this configuration, the macOS login screen shows a list of profiles that have been created and an "other user" button that can be used to log in with a username and password. Users can select their existing profile to log in or log in with their Microsoft Entra ID user principal name (UPN).
     
  - **Show full name**. With this configuration, the macOS login screen displays and username and password field with no list of users. Users can log in with their Microsoft Entra ID UPN.
 
