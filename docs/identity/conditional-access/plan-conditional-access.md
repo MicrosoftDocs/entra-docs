@@ -228,7 +228,22 @@ Refer to [Conditional Access policy templates](concept-conditional-access-policy
 | <details> <br> <summary>**Privileged users have short-lived sign-in sessions** <br> </summary> <br> [!INCLUDE [21825](../../includes/secure-recommendations/21825.md)] <br> </details> | High | P1 |
 
 
-
+:::row:::
+   :::column span="":::
+      **Conditional Access policy**
+   :::column-end:::
+   :::column span="":::
+      **License requirement**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      <details> <br> <summary>**Privileged users have short-lived sign-in sessions** <br> </summary> <br> [!INCLUDE [21825](../../includes/secure-recommendations/21825.md)] <br> </details>
+   :::column-end:::
+   :::column span="":::
+      P1
+   :::column-end:::
+:::row-end:::
 
 
 
