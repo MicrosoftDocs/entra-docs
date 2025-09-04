@@ -162,7 +162,7 @@ To enable the agent to make recommendations on an existing access package, you'd
 
 1. On the edit policy page, select **Lifecycle**.
 
-1. On the lifecycle tab, select Advanced settings and  check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
+1. On the lifecycle tab, select Advanced Access Review settings and check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**.    
 
