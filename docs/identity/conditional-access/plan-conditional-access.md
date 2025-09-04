@@ -228,16 +228,13 @@ Refer to [Conditional Access policy templates](concept-conditional-access-policy
 |  |  |  |
 
 <details>
-  <summary>Privileged users have short-lived sign-in sessions</summary>
-  <p>[!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]</p>
+  <summary>Privileged users have short-lived sign-in sessions
+  </summary>
+
+  [!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]
+
 </details>
 
-<div class="expander">
-  <button class="expander-toggle">Privileged users have short-lived sign-in sessions</button>
-  <div class="expander-content" style="display: none;">
-    [!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]
-  </div>
-</div>
 
 
 Privileged users have short-lived sign-in sessions
