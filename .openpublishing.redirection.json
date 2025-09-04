@@ -2499,6 +2499,16 @@
       "source_path_from_root": "/docs/identity/saas-apps/solarwinds-orion-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/github-ae-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/github-enterprise-server-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/github-ae-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/github-enterprise-server-provisioning-tutorial",
+      "redirect_document_id": false
     }
   ]
 }

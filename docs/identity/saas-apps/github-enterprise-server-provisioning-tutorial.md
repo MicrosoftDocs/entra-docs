@@ -3,16 +3,15 @@ title: Configure GitHub Enterprise Server for automatic user provisioning with M
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to GitHub Enterprise Server.
 
 
-author: adimitui
-manager: jeedes
+author: jeevansd
+manager: mwongerapk
 
 ms.service: entra-id
 ms.subservice: saas-apps
 
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: addimitu
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub Enterprise Server so that I can streamline the user management process and ensure that users have the appropriate access to GitHub Enterprise Server.
 ---
