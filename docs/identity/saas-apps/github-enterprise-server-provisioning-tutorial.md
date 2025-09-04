@@ -122,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. To enable the Microsoft Entra provisioning service for GitHub Enterprise Server, change the **Provisioning Status** to **On** in the **Settings** section.
 
-    ![Screenshot of the Provisioning Status toggle switched to the On position](common/provisioning-toggle-on.png)
+    ![Screenshot of the Provisioning Status toggle switched to the On position.](common/provisioning-toggle-on.png)
 
 1. Define the users and/or groups that you would like to provision to GitHub Enterprise Server by choosing the desired values in **Scope** in the **Settings** section.
 
