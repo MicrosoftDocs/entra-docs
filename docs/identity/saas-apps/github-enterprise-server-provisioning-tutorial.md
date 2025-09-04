@@ -72,7 +72,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the **Provisioning** tab.
 
-    ![Screenshot of the Provisioning tab selected in the application menu](common/provisioning.png)
+    ![Screenshot of the Provisioning tab selected in the application menu.](common/provisioning.png)
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
@@ -126,11 +126,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Define the users and/or groups that you would like to provision to GitHub Enterprise Server by choosing the desired values in **Scope** in the **Settings** section.
 
-    ![Screenshot of the Provisioning Scope dropdown with available options](common/provisioning-scope.png)
+    ![Screenshot of the Provisioning Scope dropdown with available options.](common/provisioning-scope.png)
 
 1. When you're ready to provision, select **Save**.
 
-    ![Screenshot of the Save button highlighted to save the provisioning configuration](common/provisioning-configuration-save.png)
+    ![Screenshot of the Save button highlighted to save the provisioning configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and/or groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
