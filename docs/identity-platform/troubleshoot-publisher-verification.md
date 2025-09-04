@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot publisher verification
 description: Describes how to troubleshoot publisher verification for the Microsoft identity platform by calling Microsoft Graph APIs.
-manager: CelesteDG
+manager: dougeby
 author: garrodonnell
 ms.author: godonnell
 ms.date: 07/19/2024
@@ -247,7 +247,7 @@ Follow the directions [here](./howto-configure-publisher-domain.md) to set a Pub
 
 The target application's Publisher Domain (`publisherDomain`) either doesn't match the domain used to perform email verification in Partner Center (`pcDomain`) or has not been verified. Ensure these domains match and have been verified then try again. 
     
-Occurs when neither the app's [Publisher Domain](howto-configure-publisher-domain.md) nor one of the [custom domains](~/fundamentals/add-custom-domain.yml) added to the Microsoft Entra tenant match the domain used to perform email verification in Partner Center or has not been verified.
+Occurs when neither the app's [Publisher Domain](howto-configure-publisher-domain.md) nor one of the [custom domains](~/fundamentals/add-custom-domain.md) added to the Microsoft Entra tenant match the domain used to perform email verification in Partner Center or has not been verified.
 
 See [requirements](publisher-verification-overview.md) for a list of allowed domain or sub-domain matches. 
 

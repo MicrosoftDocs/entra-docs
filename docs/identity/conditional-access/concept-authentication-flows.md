@@ -3,11 +3,11 @@ title: Authentication flows as a condition in Conditional Access policy
 description: Learn how authentication flows provide a seamless experience across all application and device types
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/05/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: anjusingh, ludwignick
 ---
 # Conditional Access: Authentication flows
@@ -26,14 +26,14 @@ Authentication transfer is a flow that lets users seamlessly transfer authentica
 
 ## Protocol tracking 
 
-To ensure Conditional Access policies are accurately enforced on specified authentication flows, we use functionality called protocol tracking. This tracking is applied to the session using device code flow or authentication transfer. In these cases, the sessions are considered protocol tracked. Any protocol tracked sessions are subject to policy enforcement if a policy exists. Protocol tracking state is sustained through subsequent refreshes. Nondevice code flow or authentication transfer flows can be subject to enforcement of authentication flows policies if the session is protocol tracked.  
+To ensure Conditional Access policies are accurately enforced on specified authentication flows, we use functionality called protocol tracking. This tracking is applied to the session using device code flow or authentication transfer. In these cases, the sessions are considered protocol tracked. Any protocol tracked sessions are subject to policy enforcement if a policy exists. Protocol tracking state is sustained through subsequent refreshes, meaning it is possible for non device code flow or authentication transfer flows to be subject to enforcement of authentication flows policies.  
 
 For example: 
 
 1. You configure a policy to block device code flow everywhere except for SharePoint. 
-1. You use device code flow to sign-in to SharePoint, as allowed by the configured policy. At this point, the session is considered protocol tracked 
+1. You use device code flow to sign-in to SharePoint, as allowed by the configured policy. At this point, the session is considered protocol tracked.
 1. You try to sign in to Exchange within the context of the same session using any authentication flow not just device code flow. 
-1. You're blocked by the configured policy due to the protocol tracked state of the session  
+1. You're blocked by the configured policy due to the protocol tracked state of the session.   
 
 ## Sign-in logs  
 
@@ -49,12 +49,12 @@ If you're unsure whether your organization uses Device Code Flow against Device 
 
 ## Troubleshooting unexpected blocks 
 
-If you have a sign-in unexpectedly blocked by a Conditional Access policy, you should confirm whether the policy was an authentication flows policy. You can do this confirmation by going to **sign-in logs**, clicking on the blocked sign-in, and then navigating to the **Conditional Access** tab in the **Activity details: sign-ins** pane. If the policy enforced was an authentication flows policy, select the policy to determine which authentication flow was matched.
+If you have a sign-in unexpectedly blocked by a Conditional Access policy, or you're unexpectedly signed out of a device, you should confirm whether root cause was an authentication flows policy. You can do this confirmation by going to **sign-in logs**, clicking on the blocked sign-in, and then navigating to the **Conditional Access** tab in the **Activity details: sign-ins** pane. If the policy enforced was an authentication flows policy, select the policy to determine which authentication flow was matched.
 
-If device code flow was matched but device code flow wasn't the flow performed for that sign-in, the refresh token was protocol tracked. You can verify this case by clicking on the blocked sign-in and searching for the **Original transfer method** property in the **Basic info** portion of the **Activity details: sign-ins** pane.
+If device code flow was matched but device code flow wasn't the flow performed for that sign-in, the refresh token was protocol tracked. You can verify this case by clicking on the blocked sign-in and searching for the **Original transfer method** property in the **Basic info** portion of the **Activity details: sign-ins** pane. If your configured policy is applied to all applications, you can also determine a protocol tracking related error by searching for the following error code and message: `AADSTS530036: The refresh token is invalid due to authentication flow checks by Conditional Access. Additionally, since the authentication flows policy applies to all applications, the token will never be usable and should be deleted.`.
 
 > [!NOTE]
-> Blocks due to protocol tracked sessions are expected behavior for this policy. There's no recommended remediation.  
+> Blocks due to protocol tracked sessions are expected behavior for this policy. Possible impact can include things such as not being able to access certain resources, or complete device sign out. There's no recommended remediation when the policy is in `enabled` state. If the policy has been set to `disabled` or `report-only`, you may need to obtain a fresh token in order to use the device again.    
 
 ## Related content
 

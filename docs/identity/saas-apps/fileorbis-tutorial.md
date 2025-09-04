@@ -3,8 +3,8 @@ title: Configure FileOrbis for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and FileOrbis.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<ApplicationURL>/portal`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<ApplicationURL>/portal/tr/Account/LoginSAMLConsume`
+    `https://<ApplicationURL>/portal/Account/LoginSAMLConsume`
 
     c. In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<ApplicationURL>/portal`

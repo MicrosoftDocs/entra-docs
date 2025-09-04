@@ -96,4 +96,4 @@ relatedContent:
   - text: Learn how to customize branding for sign-in experiences
     url: how-to-customize-branding.md
   - text: Manage user settings in Microsoft Entra ID
-    url: how-to-manage-user-profile-info.yml
+    url: how-to-manage-user-profile-info.md

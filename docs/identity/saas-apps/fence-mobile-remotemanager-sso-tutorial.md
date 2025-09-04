@@ -3,8 +3,8 @@ title: Configure FENCE-Mobile RemoteManager SSO for Single sign-on with Microsof
 description: Learn how to configure single sign-on between Microsoft Entra ID and FENCE-Mobile RemoteManager SSO.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

@@ -2,11 +2,11 @@
 title: How to analyze the Microsoft Entra provisioning logs
 description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/19/2025
+ms.date: 07/10/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 ms.custom: sfi-image-nochange
@@ -23,6 +23,7 @@ This article describes the options for downloading the provisioning logs from th
 
 - A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the provisioning logs.
+- Application owners can also view logs applications that they own.
     - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 ## How to view the provisioning logs

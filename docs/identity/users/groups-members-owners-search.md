@@ -2,7 +2,7 @@
 title: Search and filter groups members and owners (preview)
 description: Search and filter groups members and owners in Microsoft Entra.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
@@ -60,11 +60,9 @@ The group **Overview** page provides member counts for groups. You can see the t
 
 These articles provide additional information on working with groups in Microsoft Entra ID.
 
-- [View your groups and members](~/fundamentals/groups-view-azure-portal.md)
-- [Manage group memberships](/entra/fundamentals/how-to-manage-groups)
+- [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups](groups-create-rule.md)
-- [Edit your group settings](/entra/fundamentals/how-to-manage-groups)
 - [Manage access to resources using groups](~/fundamentals/concept-learn-about-groups.md)
 - [Manage access to SaaS apps using groups](groups-saasapps.md)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)
-- [Add an Azure subscription to Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
+- [Add an Azure subscription to Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md)

@@ -3,11 +3,11 @@ title: How to run a registration campaign to set up Microsoft Authenticator
 description: Learn how to move your organization away from less secure authentication methods to Microsoft Authenticator
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/04/2025
+ms.topic: how-to
+ms.date: 06/19/2025
 ms.author: justinha
 author: mjsantani
-manager: femila
+manager: dougeby
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
@@ -26,7 +26,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 - Your organization must have enabled Microsoft Entra multifactor authentication. Every edition of Microsoft Entra ID includes Microsoft Entra multifactor authentication. No other license is needed for a registration campaign.
 - Users can't have already set up the Authenticator app for push notifications on their account. 
 - Admins need to enable users for the Authenticator app using one of these policies:  
-  - MFA Registration Policy: Users will need to be enabled for **Notification through mobile app**.  
+  - MFA Registration Policy: Users will need to be enabled for **Notification through mobile app**. See [Configure the MFA registration policy](/entra/id-protection/howto-identity-protection-configure-mfa-policy).
   - Authentication Methods Policy: Users will need to be enabled for the Authenticator app and the Authentication mode set to **Any** or **Push**. If the policy is set to **Passwordless**, the user won't be eligible for the nudge. For more information about how to set the Authentication mode, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
 
 ## User experience
@@ -279,13 +279,13 @@ The nudge won't appear on mobile devices that run Android or iOS.
 
 ## Frequently asked questions
 
-**Is registration campaign available for MFA Server?** 
-
-No, the registration campaign is available only for users using Microsoft Entra multifactor authentication. 
-
 **Can users be nudged within an application?**
 
-Yes, we support embedded browser views in certain applications. We don't nudge users in out of the box experiences or in browser views embedded in Windows settings.
+Yes, we support embedded browser views in certain applications. We don't nudge users in out-of-the-box experiences or in browser views embedded in Windows settings.
+
+**Can users be nudged within a single sign-on (SSO) session?**
+ 
+Nudge doesn't trigger if the user is already signed in with SSO. 
 
 **Can users be nudged on a mobile device?** 
 

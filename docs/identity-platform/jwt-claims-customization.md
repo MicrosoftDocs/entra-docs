@@ -2,9 +2,9 @@
 title: Customize app JSON Web Token (JWT) claims
 description: Learn how to customize the claims issued by Microsoft identity platform in the JSON web token (JWT) token for enterprise applications.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.date: 05/30/2024
+ms.date: 05/30/2025
 ms.reviewer: alamaral
 ms.service: identity-platform
 ms.topic: how-to
@@ -335,8 +335,8 @@ else
     $base64cer = [System.Convert]::ToBase64String($cer_cert)
  
     # getting id for the keyCredential object
-    $guid1 = New-Guid
-    $guid2 = New-Guid
+    [string]$guid1 = New-Guid
+    [string]$guid2 = New-Guid
  
     # get the custom key identifier from the certificate thumbprint:
     $hasher = [System.Security.Cryptography.HashAlgorithm]::Create('sha256')

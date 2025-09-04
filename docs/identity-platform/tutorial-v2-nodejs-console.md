@@ -2,10 +2,11 @@
 title: "Tutorial: Call Microsoft Graph in a Node.js console daemon app"
 description: In this tutorial, you build a console daemon app for calling Microsoft Graph.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 04/09/2024
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I want to build a Node.js console daemon app that calls the Microsoft Graph API using its own identity, and learn how to authenticate and make requests to the API in my own applications.

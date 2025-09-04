@@ -1,13 +1,13 @@
 ---
 title: Provision a user or group on demand using the Microsoft Entra provisioning service
 description: Learn how to provision users on demand in Microsoft Entra ID.
-author: kenwith
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: kenwith
+ms.author: jfields
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ai-usage: ai-assisted
@@ -36,7 +36,11 @@ Use on-demand provisioning to provision a user or group in seconds. Among other 
 
 ::: zone pivot="cross-tenant-synchronization"
 
-2. Browse to **Entra ID** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
+2. Browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization** > **Configurations**
+
+  > [!NOTE]
+  > Cross-tenant synchronization is currently not supported in [external tenants](/entra/external-id/customers/overview-customers-ciam).
+
 3. Select your configuration, and then go to the **Provisioning** configuration page.
 
 ::: zone-end

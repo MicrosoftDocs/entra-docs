@@ -2,9 +2,9 @@
 title: Learn about Microsoft Entra Health monitoring
 description: Monitor the health of your tenant through several identity scenarios and authentication availability rates with Microsoft Entra Health
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 04/25/2025
 ms.author: sarahlipsey

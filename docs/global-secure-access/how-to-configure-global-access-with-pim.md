@@ -2,10 +2,10 @@
 title: Secure private application access with Privileged Identity Management (PIM) and Global Secure Access
 description: Learn how to secure highly valued private application access with Privileged Identity Management (PIM) and Global Secure Access
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: katabish
@@ -33,7 +33,7 @@ Customers should consider configuring PIM using Global Secure Access to enable:
 
 ## Prerequisites 
 
-- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/whatis.md)
+- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/licensing.md)
 - [Microsoft Entra Private Access](concept-private-access.md)
 
 ## Secure private access 
@@ -105,7 +105,7 @@ Even if a user and their device meet security requirements, attempting to access
 
 Next, we activate group membership using the Microsoft Entra admin center, and then attempt to connect with the new role activated.
 
-1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/).
 1. Browse to  **ID Governance** > **Privileged Identity Management**. 
 1. Select **My roles** > **Groups** to see all eligible assignments.
 
@@ -129,7 +129,7 @@ Browse any of the published resources, as you should be able to successfully con
 
 If the work is completed ahead of the time you allocated, you can choose to deactivate the role. This action terminates the role membership. 
 
-1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/id-governance/privileged-identity-management/pim-configure.md).
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/).
 1. Browse to  **ID Governance** > **Privileged Identity Management**.
 1. Select **My roles**, then **Groups**. 
 1. Select **Deactivate**. 

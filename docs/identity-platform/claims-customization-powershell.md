@@ -3,6 +3,7 @@ title: Claims customization using PowerShell and Claims Mapping Policy
 description: This article describes how to customize claims in Microsoft Entra ID using PowerShell
 documentationcenter: .net
 author: cilwerner
+manager: pmwongera
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -131,4 +132,5 @@ To assign the policy to the service principal you will need the `ObjectId` of yo
 
 ## Related content
 
+- [How to: Customize claims with the claims mapping policy in Microsoft Graph](/graph/how-to-claims-customization)
 - [Microsoft Graph identity SignIns](/powershell/module/microsoft.graph.identity.signins)

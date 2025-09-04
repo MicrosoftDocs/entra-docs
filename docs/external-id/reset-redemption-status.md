@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 02/05/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As an admin managing guest users in B2B collaboration, I want to reset the redemption status for a guest user, so that I can update their sign-in information and reinvite them without deleting their account.

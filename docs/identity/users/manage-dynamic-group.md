@@ -2,10 +2,10 @@
 title: Understand and Manage Dynamic Group Processing in Microsoft Entra ID
 description: Learn how dynamic group management works. 
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/08/2025
 ms.author: barclayn
 ms.reviewer: mbhargava

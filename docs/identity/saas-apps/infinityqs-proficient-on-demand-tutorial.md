@@ -3,8 +3,8 @@ title: Configure InfinityQS ProFicient on Demand for Single sign-on with Microso
 description: Learn how to configure single sign-on between Microsoft Entra ID and InfinityQS ProFicient on Demand.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

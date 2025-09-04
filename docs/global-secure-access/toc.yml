@@ -34,6 +34,10 @@ items:
     href: ./scripts/powershell-break-glass.md
   - name: Restore traffic forwarding and compliant network requirement after a break glass operation
     href: ./scripts/powershell-break-glass-recovery.md
+  - name: Bypass internet destinations from the internet access profile
+    href: ./scripts/powershell-bypass-script.md
+  - name: Bypass Intune endpoints from the Internet Access profile
+    href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
 - name: Concepts
   expanded: true
   items: 
@@ -49,6 +53,8 @@ items:
     href: concept-remote-network-connectivity.md
   - name: Universal Continuous Access Evaluation
     href: concept-universal-continuous-access-evaluation.md
+  - name: Application Usage Analytics
+    href: overview-application-usage-analytics.md
 - name: How-to guides
   expanded: true
   items:
@@ -72,6 +78,8 @@ items:
         href: concept-remote-network-connectivity.md
       - name: Create a remote network
         href: how-to-create-remote-networks.md
+      - name: Enhance remote network resilience
+        href: remote-network-resilience.md
       - name: Create remote network with custom Internet Key Exchange (IKE) policy
         href: how-to-create-remote-network-custom-ike-policy.md
       - name: Configure customer premises equipment
@@ -150,11 +158,17 @@ items:
         href: how-to-use-with-azure-sql-service-endpoint.md
       - name: Use with Azure Private Link
         href: how-to-use-private-link-with-private-access.md
+      - name: Configure Private Access for Domain Controllers
+        href: how-to-configure-domain-controllers.md
   - name: Internet Access
     expanded: true
     items:
       - name: Understand Internet Access
         href: concept-internet-access.md
+      - name: Configure web content filtering
+        href: how-to-configure-web-content-filtering.md
+      - name: Check URL category
+        href: how-to-check-web-content-filtering-categories.md
       - name: What is Transport Layer Security inspection? 
         href: concept-transport-layer-security.md 
       - name: Configure Transport Layer Security inspection 
@@ -234,7 +248,7 @@ items:
            - name: Coexistence with Zscaler
              href: how-to-zscaler-coexistence.md
            - name: Coexistence with Netskope
-             href: concept-netskope-coexistence.md
+             href: how-to-netskope-coexistence.md
        - name: Find a Microsoft services partner
          href: how-to-find-microsoft-services-partners.md
 - name: Reference
@@ -258,8 +272,6 @@ items:
     href: resource-faq.yml
   - name: Transport Layer Security inspection FAQs
     href: faq-transport-layer-security.yml
-  - name: Ciphers for Microsoft Entra Private Access
-    href: reference-ciphers.md       
   - name: Connector version history
     href: reference-version-history.md
   - name: Windows client version history

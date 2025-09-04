@@ -3,8 +3,8 @@ title: Configure SevOne Network Monitoring System (NMS) for Single sign-on with 
 description: Learn how to configure single sign-on between Microsoft Entra ID and SevOne Network Monitoring System (NMS).
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

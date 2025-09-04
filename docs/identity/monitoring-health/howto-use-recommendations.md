@@ -2,13 +2,13 @@
 title: How to use Microsoft Entra recommendations
 description: Learn how to use the Microsoft Entra recommendations to monitor and improve the health of your tenant.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/04/2024
+ms.date: 08/22/2025
 ms.author: sarahlipsey
-ms.reviewer: deawari
+ms.reviewer: jadedsouza
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra recommendations to monitor and improve the health of my tenant.
 ---
@@ -37,7 +37,7 @@ Most recommendations follow the same pattern. You're provided information about 
 
     ![Screenshot of the list of recommendations.](media/howto-use-recommendations/recommendations-list.png)
 
-Each recommendation provides the same set of details that explain what the recommendation is, why it's important, and how to fix it. The recommendation service runs every 24-48 hours, depending on the recommendation.
+Each recommendation provides the same set of details that explain what the recommendation is, why it's important, and how to fix it. Recommendation data refreshes every 24 hours with a one-day lag. In rare instances, updates may take up to 72 hours to appear.
 
 ![Screenshot of a recommendation's status, priority, and impacted resource type.](media/howto-use-recommendations/recommendation-status-risk.png)
 

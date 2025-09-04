@@ -2,10 +2,10 @@
 title: Govern access for applications in your environment
 description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility. These features can be used for your existing business critical third party on-premises and cloud-based applications.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/21/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft

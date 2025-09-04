@@ -3,9 +3,9 @@ title: Global Secure Access remote network connectivity
 description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 author: kenwith
 ms.author: kenwith
-manager: femila
-ms.topic: conceptual
-ms.date: 05/09/2025
+manager: dougeby
+ms.topic: concept-article
+ms.date: 09/02/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -30,6 +30,9 @@ Remote networks, such as a branch location, are typically connected to the corpo
 
 **Evolving threats** – Malicious actors are finding new avenues to attack the devices at the edge of networks. Edge devices in branch offices or even home offices are often the most vulnerable point of attack.
 
+> [!TIP]
+> For guidance on enhancing the resilience of remote networks, see [Best practices for Global Secure Access remote network resilience](remote-network-resilience.md).
+
 ## How does Global Secure Access remote network connectivity work? 
 
 To connect a remote network to Global Secure Access, you set up an Internet Protocol Security (IPSec) tunnel between your on-premises equipment and the Global Secure Access endpoint. Traffic that you specify is routed through the IPSec tunnel to the nearest Global Secure Access endpoint. You can apply security policies in the Microsoft Entra admin center.
@@ -53,7 +56,7 @@ Guest devices on your network might not have the client installed. To ensure tha
 
 ### How much bandwidth will be allocated per tenant 
 
-The total bandwidth you are allocated is determined by the number of licenses purchased. Each Microsoft Entra ID P1 license, Microsoft Entra Internet Access license, or Microsoft Entra Suite license contributes to your total bandwidth. Bandwidth for remote networks can be assigned to IPsec tunnels in increments of 250 Mbps, 500 Mbps, 750 Mbps, or 1000 Mbps. This flexibility allows you to allocate bandwidth to different remote network locations according to your specific needs. For optimal performance, Microsoft recommends configuring at least two IPsec tunnels per location for high availability. The table below details the total bandwidth based on the number of licenses purchased. 
+The total bandwidth you're allocated is determined by the number of licenses purchased. Each Microsoft Entra ID P1 license, Microsoft Entra Internet Access license, or Microsoft Entra Suite license contributes to your total bandwidth. Bandwidth for remote networks can be assigned to IPsec tunnels in increments of 250 Mbps, 500 Mbps, 750 Mbps, or 1,000 Mbps. This flexibility allows you to allocate bandwidth to different remote network locations according to your specific needs. For optimal performance, Microsoft recommends configuring at least two IPsec tunnels per location for high availability. The table below details the total bandwidth based on the number of licenses purchased. 
 
 #### Initial bandwidth allocation
 
@@ -156,3 +159,4 @@ Remaining Bandwidth: 28,500 Mbps
 ## Next steps
 - [List all remote networks](how-to-list-remote-networks.md)
 - [Manage remote networks](how-to-manage-remote-networks.md)
+- [Best practices for Global Secure Access remote network resilience](remote-network-resilience.md)

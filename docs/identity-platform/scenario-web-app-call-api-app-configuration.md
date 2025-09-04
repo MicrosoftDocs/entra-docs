@@ -2,11 +2,12 @@
 title: Configure a web app that calls web APIs
 description: Learn how to configure the code of a web app that calls web APIs
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 07/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: how-to
 ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.

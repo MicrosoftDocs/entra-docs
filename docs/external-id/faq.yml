@@ -4,10 +4,10 @@ metadata:
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
   ms.service: entra-external-id
   ms.topic: faq
-  ms.date: 04/24/2024
+  ms.date: 06/27/2025
   ms.author: cmulligan
   author: csmulligan
-  manager: celestedg
+  manager: dougeby
   ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
 title: Microsoft Entra B2B collaboration FAQs
@@ -16,18 +16,14 @@ summary: |
   [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
   These frequently asked questions (FAQs) about Microsoft Entra business-to-business (B2B) collaboration are periodically updated to include new topics.
-  
-  > [!IMPORTANT]
-  > - **Starting January 4, 2021**, Google [deprecated WebView sign-in support](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). If you're using Google federation or self-service sign-up with Gmail, you should [test your line-of-business native applications for compatibility](google-federation.md#deprecation-of-web-view-sign-in-support).
-  > - The [email one-time passcode](one-time-passcode.md) feature is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
 
 sections:
   - name: General
     questions:
       - question: |
-          Can we customize our sign-in page so it's more intuitive for our B2B collaboration guest users?
+          What's changing in the guest user sign-in experience in B2B collaboration? 
         answer: |
-          Absolutely, for information about how to customize your organization's sign-in page, see [Add company branding to sign in and Access Panel pages](~/fundamentals/how-to-customize-branding.md).
+          Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025. With this update, guest users will be redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process.
           
       - question: |
           Can B2B collaboration users access SharePoint Online and OneDrive?
@@ -48,7 +44,7 @@ sections:
           How can I customize my invitation emails?
         answer: |
           You can customize almost everything about the inviter process by using the [B2B invitation APIs](customize-invitation-api.md).
-          
+
       - question: |
           Can guest users reset their multifactor authentication method?
         answer: |
@@ -102,7 +98,7 @@ sections:
       - question: |
           Do you support password reset for Microsoft Entra B2B collaboration users?
         answer: |
-          If your Microsoft Entra tenant is the home directory for a user, you can [reset the user's password](~/fundamentals/users-reset-password-azure-portal.yml) from the Microsoft Entra admin center. But you can't directly reset a password for a guest user who signs in with an account that's managed by another Microsoft Entra directory or external identity provider. Only the guest user or an administrator in the user’s home directory can reset the password. Here are some examples of how password reset works for guest users:
+          If your Microsoft Entra tenant is the home directory for a user, you can [reset the user's password](~/fundamentals/users-reset-password-azure-portal.md) from the Microsoft Entra admin center. But you can't directly reset a password for a guest user who signs in with an account that's managed by another Microsoft Entra directory or external identity provider. Only the guest user or an administrator in the user’s home directory can reset the password. Here are some examples of how password reset works for guest users:
            
           * Guest users in a Microsoft Entra tenant that are marked "Guest" (UserType==Guest) can't register for SSPR through [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup). These type of guest user can only perform SSPR through [https://aka.ms/sspr](https://aka.ms/sspr). 
           * Guest users who sign in with a Microsoft account (for example guestuser@live.com) can reset their own passwords using Microsoft account self-service password reset (SSPR). See [How to reset your Microsoft account password](https://support.microsoft.com/help/4026971/microsoft-account-how-to-reset-your-password).
@@ -200,6 +196,12 @@ sections:
           Instant-on: What can cause replication latency?
         answer: |
           In the B2B collaboration flows, we add users to the directory and dynamically update them during the invitation redemption process, app assignment, and so on. The updates and writes ordinarily happen in one directory instance and must be replicated across all instances. Replication is completed once all instances are updated. Sometimes when the object is written or updated in one instance and the call to retrieve this object is to another instance, replication latencies can occur. If that happens, refresh or retry to help. If you are writing an app using our API, then retries with some back-off is a good, defensive practice to alleviate this issue.
+      
+      - question: |
+          Is your app ready for Google's WebView deprecation and Microsoft’s OTP defaults?
+        answer: |
+          Starting January 4, 2021, Google [deprecated WebView sign-in support](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). If you're using Google federation or self-service sign-up with Gmail, you should [test your line-of-business native applications for compatibility](google-federation.md#deprecation-of-web-view-sign-in-support).
+          The [email one-time passcode](one-time-passcode.md) feature is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
 
 additionalContent: |
 

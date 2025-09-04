@@ -3,8 +3,8 @@ title: Configure Proactis Rego Source-to-Contract for Single sign-on with Micros
 description: Learn how to configure single sign-on between Microsoft Entra ID and Proactis Rego Source-to-Contract.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

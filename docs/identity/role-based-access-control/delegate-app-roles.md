@@ -1,13 +1,13 @@
 ---
 title: Delegate application management administrator permissions
 description: Grant permissions for application access management in Microsoft Entra ID
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 11/17/2024
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to reduce overusing highly-privileged administrator roles by delegating app access management to lower-privilege roles.
@@ -63,7 +63,7 @@ Microsoft Entra ID has a set of built-in admin roles for granting access to mana
 
 For more information and to view the description for these roles, see [Microsoft Entra built-in roles](permissions-reference.md).
 
-Follow the instructions in the [Assign roles to users with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml) how-to guide to assign the Application Administrator or Cloud Application Administrator roles.
+Follow the instructions in the [Assign roles to users with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md) how-to guide to assign the Application Administrator or Cloud Application Administrator roles.
 
 > [!IMPORTANT]
 > Application Administrators and Cloud Application Administrators can add credentials to an application and use those credentials to impersonate the application’s identity. The application may have permissions that are an elevation of privilege over the admin role's permissions. An admin in this role could potentially create or update users or other objects while impersonating the application, depending on the application's permissions.

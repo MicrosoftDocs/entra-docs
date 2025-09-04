@@ -2,7 +2,7 @@
 title: Microsoft identity platform app types and authentication flows
 description: Learn about application scenarios for the Microsoft identity platform, including authenticating identities, acquiring tokens, and calling protected APIs.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 04/14/2025
 ms.reviewer: jmprieur

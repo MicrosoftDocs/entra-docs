@@ -3,8 +3,8 @@ title: Configure True Office Learning - LIO for Single sign-on with Microsoft En
 description: Learn how to configure single sign-on between Microsoft Entra ID and True Office Learning - LIO.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

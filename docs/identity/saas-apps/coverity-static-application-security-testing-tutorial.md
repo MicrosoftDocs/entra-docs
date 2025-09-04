@@ -3,8 +3,8 @@ title: Configure Coverity Static Application Security Testing for Single sign-on
 description: Learn how to configure single sign-on between Microsoft Entra ID and Coverity Static Application Security Testing.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

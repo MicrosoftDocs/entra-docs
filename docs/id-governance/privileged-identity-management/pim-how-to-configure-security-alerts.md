@@ -2,7 +2,7 @@
 title: Security alerts for Microsoft Entra roles in PIM
 description: Configure security alerts for Microsoft Entra roles Privileged Identity Management.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
@@ -68,7 +68,7 @@ Severity: **Low**
 | | Description |
 | --- | --- |
 | **Why do I get this alert?** | The current Microsoft Entra organization doesn't have Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
-| **How to fix?** | Review information about [Microsoft Entra editions](~/fundamentals/whatis.md). Upgrade to Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
+| **How to fix?** | Review information about [Microsoft Entra editions](~/fundamentals/licensing.md). Upgrade to Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
 
 ### Potential stale accounts in a privileged role
 

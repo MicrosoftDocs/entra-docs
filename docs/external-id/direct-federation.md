@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 05/07/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
@@ -61,7 +61,7 @@ Refer to the following tables for the required values.
 
 |Attribute                |Value for a workforce tenant                   |Value for an external tenant                |
 |-------------------------|-----------------------------------------------|--------------------------------------------|
-|AssertionConsumerService |`https://login.microsoftonline.com/login.srf`  |`https://<tenantID>.ciamlogin.com/login.srf`|
+|AssertionConsumerService |`https://login.microsoftonline.com/login.srf`  |`https://<tenantID>.ciamlogin.com/login.srf` Add `https://<tenantID>.ciamlogin.com/login.srf` as the callback/ACS URL on the external IdP if required by that provider.|
 |Audience                 |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.      |`https://login.microsoftonline.com/<tenant ID>/`<br>Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.      |
 |Issuer                   |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`    |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
 

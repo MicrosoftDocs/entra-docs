@@ -2,7 +2,7 @@
 title: Start using PIM
 description: Learn how to enable and get started using Privileged Identity Management (PIM) in the Microsoft Entra admin center.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to

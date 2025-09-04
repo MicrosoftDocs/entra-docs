@@ -3,10 +3,10 @@ title: B2B direct connect Microsoft Entra overview
 description: Microsoft Entra B2B direct connect lets users from other Microsoft Entra tenants seamlessly sign in to your shared resources via Teams shared channels. There's no need for a guest user object in your Microsoft Entra directory.
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 09/06/2024
+ms.date: 07/07/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin managing collaboration between organizations, I want to configure B2B direct connect settings, so that I can control inbound and outbound access for users and groups from external organizations and ensure secure collaboration.
@@ -169,7 +169,7 @@ B2B direct connect lets your users and groups access apps and resources that are
 
 By enabling B2B connect with an external organization, you're allowing the external organizations that you have enabled outbound settings with to access limited contact data about your users. Microsoft shares this data with those organizations to help them send a request to connect with your users. Data collected by external organizations, including limited contact data, is subject to the privacy policies and practices of those organizations.
 
-When you configure a policy with a specific target resource tenant, you are consenting for that policy to be stored both in your tenant and in the target resource tenant. This includes a consent for your policy to be stored outside your geographic region if your target resource tenant is situated in a different region than your tenant. When you configure a default cross-tenant access policy, you are consenting for that policy to be accessed by other tenants. This means the policy is stored for general availability to other Microsoft tenants and will be stored outside of your tenant boundary. It follows a cross-geo replicated pattern to ensure access by possible collaboration partner tenants with reasonable performance. Either the tenant to specific tenant policy or the default policy can be implemented independently, each with their respective policy sharing conditions listed above.
+When you configure a policy with a specific target resource tenant, you're consenting for that policy to be stored both in your tenant and in the target resource tenant. This includes a consent for your policy to be stored outside your geographic region if your target resource tenant is situated in a different region than your tenant. When you configure a default cross-tenant access policy, you're consenting for that policy to be accessed by other tenants. This means the policy is stored for general availability to other Microsoft tenants and will be stored outside of your tenant boundary. It follows a cross-geo replicated pattern to ensure access by possible collaboration partner tenants with reasonable performance. Either the tenant to specific tenant policy or the default policy can be implemented independently, each with their respective policy sharing conditions listed above.
 
 ### Outbound access
 
@@ -177,7 +177,7 @@ When B2B direct connect is enabled with an external organization, users in the e
 
 ### Inbound access
 
-We strongly recommend you add both your global privacy contact and your organization's privacy statement so your internal employees and external guests can review your policies. Follow the steps to [add your organization's privacy info](~/fundamentals/properties-area.yml).  
+We strongly recommend you add both your global privacy contact and your organization's privacy statement so your internal employees and external guests can review your policies. Follow the steps to [add your organization's privacy info](~/fundamentals/properties-area.md).  
 
 ### Restricting access to users and groups
 

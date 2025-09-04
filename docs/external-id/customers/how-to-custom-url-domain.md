@@ -3,7 +3,7 @@ title: How to enable custom URL domains for External ID
 description: Learn how to set up custom URL domains to personalize the authentication sign-in endpoints for the external customers and consumers of your app.
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
@@ -31,11 +31,11 @@ When you create an external tenant, it comes with an initial domain name, &lt;do
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
 1. Choose your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
-1. Navigate to **Entra ID** > **Domain names** > **Custom domain names**.
+1. Navigate to **Identity** > **Settings** > **Domain names** > **Custom domain names**.
 
-1. [Add your custom domain name](~/fundamentals/add-custom-domain.yml#add-your-custom-domain-name) to Microsoft Entra ID.
+1. [Add your custom domain name](~/fundamentals/add-custom-domain.md#add-your-custom-domain-name) to Microsoft Entra ID.
 
-1. [Add your DNS information to the domain registrar](~/fundamentals/add-custom-domain.yml#add-your-dns-information-to-the-domain-registrar). After you add your custom domain name to your tenant, create a DNS `TXT` or `MX` record for your domain. Creating this DNS record for your domain verifies ownership of your domain name.
+1. [Add your DNS information to the domain registrar](~/fundamentals/add-custom-domain.md#add-your-dns-information-to-the-domain-registrar). After you add your custom domain name to your tenant, create a DNS `TXT` or `MX` record for your domain. Creating this DNS record for your domain verifies ownership of your domain name.
 
    The following are examples of TXT records for *login.contoso.com* and *account.contoso.com*:
 
@@ -49,7 +49,7 @@ When you create an external tenant, it comes with an initial domain name, &lt;do
    > [!TIP]
    > You can manage your custom domain name with any publicly available DNS service, such as GoDaddy. If you don't have a DNS server, you can use  [Azure DNS zone](/azure/dns/dns-getstarted-portal), or [App Service domains](/azure/app-service/manage-custom-dns-buy-domain).
 
-1. [Verify your custom domain name](~/fundamentals/add-custom-domain.yml#verify-your-custom-domain-name). Verify each subdomain or hostname you plan to use. For example, to be able to sign in with *login.contoso.com* and *account.contoso.com*, you need to verify both subdomains and not just the top-level domain *contoso.com*.
+1. [Verify your custom domain name](~/fundamentals/add-custom-domain.md#verify-your-custom-domain-name). Verify each subdomain or hostname you plan to use. For example, to be able to sign in with *login.contoso.com* and *account.contoso.com*, you need to verify both subdomains and not just the top-level domain *contoso.com*.
 
    > [!IMPORTANT]
    > After the domain is verified, delete the DNS TXT record you created.
@@ -264,7 +264,7 @@ After you configure custom URL domains, users will still be able to access the d
 
 - **Resource was removed, changed names, or is temporarily unavailable.** When you try to sign in with the custom URL domain, you get the error message *the resource you are looking for has been removed, had its name changed, or is temporarily unavailable*. This issue could be related to the Microsoft Entra custom domain verification. Make sure the custom domain is registered and **successfully verified** in your tenant.
 
-- **Error code 399265: RoutingFromInvalidHost.** This error code appears when a tenant is making a request from a domain that isn't verified. Make sure to [add TXT record details in your DNS records](#step-1-add-a-custom-domain-name-to-your-tenant). Then [verify your custom domain name](~/fundamentals/add-custom-domain.yml#verify-your-custom-domain-name) again.
+- **Error code 399265: RoutingFromInvalidHost.** This error code appears when a tenant is making a request from a domain that isn't verified. Make sure to [add TXT record details in your DNS records](#step-1-add-a-custom-domain-name-to-your-tenant). Then [verify your custom domain name](~/fundamentals/add-custom-domain.md#verify-your-custom-domain-name) again.
 
 - **Error code 399280: InvalidCustomUrlDomain.** This error code appears when a tenant is making request from a verified domain that is not a custom URL domain. Make sure to [associate the custom domain name with a custom URL domain](#step-2-associate-the-custom-domain-name-with-a-custom-url-domain).
 

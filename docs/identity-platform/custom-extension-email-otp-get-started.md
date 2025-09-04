@@ -1,11 +1,11 @@
 ---
-title: Configure a custom email provider for one time passcode send events (preview)
+title: Configure a custom email provider for one time passcode send events
 description: Learn how to configure and set up a custom email provider with the One Time Passcode Send event type.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.reviewer: 
-ms.date: 05/05/2025
+ms.date: 06/25/2025
 ms.service: identity-platform
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
@@ -13,16 +13,15 @@ ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra External ID customer, I want to learn how to configure a custom email provider for one time passcode send events, so that I can use my own email provider to send one time passcodes.
 ---
 
-# Configure a custom email provider for one time passcode send events (preview)
+# Configure a custom email provider for one time passcode send events
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This article provides a guide on configuring and setting up a custom email provider for the One Time Passcode (OTP) Send event type. The event is triggered when an OTP email is activated, it allows you to call a REST API to use your own email provider by calling a REST API.
 
-> [!TIP]
-> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmail)
->
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
+Watch this video to learn how to customize verification emails with Microsoft Entra custom authentication extensions, using a web API based on Azure Logic Apps. Logic App enables users to create workflows through a visual designer.
+
+> [!VIDEO https://www.youtube.com/embed/2ZzX6_W93Sk?si=P9URBkKVnXPZ6Kfc]
 
 ## Prerequisites
 

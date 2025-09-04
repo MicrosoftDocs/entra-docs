@@ -3,7 +3,7 @@ title: Protecting Tokens in Microsoft Entra ID
 description: To protect against token theft and replay attacks, explore the types of tokens used in Microsoft Entra and their role in authentication.
 ms.service: entra-id
 ms.subservice: devices
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/24/2025
 
 ms.author: jfields
@@ -154,7 +154,7 @@ Microsoft Defender XDR when using Defender for Cloud Apps connectors and Defende
 
 ### Other detections
 
-[**Entra ID Protection risk detections**](../../id-protection/concept-identity-protection-risks.md#risk-detections-mapped-to-riskeventtype)
+[**Entra ID Protection risk detections**](../../id-protection/concept-identity-protection-risks.md)
 - Anomalous Token
 - Attacker in the Middle
 - Unfamiliar sign-in properties

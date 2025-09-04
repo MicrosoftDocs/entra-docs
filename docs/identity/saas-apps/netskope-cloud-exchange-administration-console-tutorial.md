@@ -3,8 +3,8 @@ title: Configure Netskope Cloud Exchange Administration Console for Single sign-
 description: Learn how to configure single sign-on between Microsoft Entra ID and Netskope Cloud Exchange Administration Console.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

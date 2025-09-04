@@ -5,7 +5,7 @@ metadata:
   description: Learn how to add B2B collaboration users in the Microsoft Entra admin center. Invite guest users to the directory, groups, or applications, and manage their access to resources.
   author: csmulligan
   ms.author: cmulligan
-  manager: celestedg
+  manager: dougeby
   ms.date: 10/21/2024
   ms.service: entra-external-id
   ms.topic: how-to
@@ -26,7 +26,7 @@ introduction: |
   After you add a guest user to the directory, you can either send the guest user a direct link to a shared app, or the guest user can select the redemption URL in the invitation email. For more information about the redemption process, see [B2B collaboration invitation redemption](redemption-experience.md).
 
   > [!IMPORTANT]
-  > You should follow the steps in [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.yml) to add the URL of your organization's privacy statement. As part of the first time invitation redemption process, an invited user must consent to your privacy terms to continue. 
+  > You should follow the steps in [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.md) to add the URL of your organization's privacy statement. As part of the first time invitation redemption process, an invited user must consent to your privacy terms to continue. 
 
   Instructions in this topic provide the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.yml).
 

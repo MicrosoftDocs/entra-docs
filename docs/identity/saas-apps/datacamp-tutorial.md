@@ -3,7 +3,7 @@ title: Configure DataCamp for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DataCamp.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -82,11 +82,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.datacamp.com/groups/<group-slug>/sso/saml`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint/clients/datacamp-saml-login`
+    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint/clients/datacamp-saml-login`. Mark this URL as the default by selecting the checkbox.
 
-1. Select **Set additional URLs** and perform the following step:
-
-    In the **Sign-on URL** text box, type the URL:
+    c. Click on **Add Reply URL** to add a new text box in the **Reply URL** field, then type a URL using the following pattern:
     `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint`
 
 	> [!NOTE]

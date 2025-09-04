@@ -16,8 +16,6 @@
       items:
         - name: Identity fundamentals
           href: ~/fundamentals/identity-fundamental-concepts.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-        - name: Introduction to identity and access management
-          href: ~/fundamentals/introduction-identity-access-management.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Authentication vs. authorization
           href: authentication-vs-authorization.md
         - name: OAuth 2.0 and OpenID Connect
@@ -111,6 +109,8 @@
       items:
         - name: Application security
           href: security-best-practices-for-app-registration.md
+        - name: Identifier URI restrictions
+          href: identifier-uri-restrictions.md
         - name: Least privileged access
           href: secure-least-privileged-access.md
         - name: Secure access control using groups
@@ -149,8 +149,14 @@
               href: quickstart-single-page-app-sign-in.md?pivots=workforce
           - name: Native authentication
             items:
-              - name: Sign in users
-                href: quickstart-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
+              - name: Use API
+                items:
+                  - name: Sign in users in a React SPA
+                    href: quickstart-native-authentication-single-page-app-react-sign-in.md
+              - name: Use SDK
+                items:
+                - name: Sign in users in SPA
+                  href: quickstart-native-authentication-single-page-app-sdk-sign-in.md
     - name: Tutorials
       items:
         - name: JavaScript
@@ -173,22 +179,46 @@
                 href: tutorial-single-page-app-react-sign-in-sign-out.md
             - name: Native authentication
               items:
-                - name: Sign up
-                  href: tutorial-native-authentication-single-page-app-react-sign-up.md
-                - name: Set up local CORS
-                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
-                - name: Sign in
-                  href: tutorial-native-authentication-single-page-app-react-sign-in.md
-                - name: Reset password
-                  href: tutorial-native-authentication-single-page-app-react-reset-password.md
+                - name: Use API
+                  items:
+                  - name: Sign up
+                    href: tutorial-native-authentication-single-page-app-react-sign-up.md
+                  - name: Set up local CORS
+                    href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
+                  - name: Sign in
+                    href: tutorial-native-authentication-single-page-app-react-sign-in.md
+                  - name: Reset password
+                    href: tutorial-native-authentication-single-page-app-react-reset-password.md
+                - name: Use SDK
+                  items:
+                  - name: Sign up
+                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-up.md
+                  - name: Sign in
+                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-in.md
+                  - name: Reset password
+                    href: tutorial-native-authentication-single-page-app-react-sdk-reset-password.md
+                  - name: Support web fallback
+                    href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md
         - name: Angular
           items:
-          - name: Prepare your app
-            href: tutorial-single-page-apps-angular-prepare-app.md
-          - name: Sign in users
-            href: tutorial-single-page-apps-angular-sign-in-users-app.md
-          - name: Extract user data and test app
-            href: tutorial-single-page-apps-angular-extract-user-data.md
+            - name: Browser-delegated authentication
+              items:
+              - name: Prepare your app
+                href: tutorial-single-page-apps-angular-prepare-app.md
+              - name: Sign in users
+                href: tutorial-single-page-apps-angular-sign-in-users-app.md
+              - name: Extract user data and test app
+                href: tutorial-single-page-apps-angular-extract-user-data.md
+            - name: Native authentication
+              items:
+              - name: Sign up
+                href: tutorial-native-authentication-single-page-app-angular-sign-up.md
+              - name: Sign in
+                href: tutorial-native-authentication-single-page-app-angular-sign-in.md
+              - name: Reset password
+                href: tutorial-native-authentication-single-page-app-angular-reset-password.md
+              - name: Support web fallback
+                href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md 
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -208,6 +238,8 @@
                   href: scenario-spa-call-api.md
         - name: Native authentication
           items:
+            - name: Set up local CORS
+              href: how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md
             - name: Set up CORS in test environment
               href: how-to-native-authentication-cors-solution-test-environment.md
             - name: Set up CORS in production

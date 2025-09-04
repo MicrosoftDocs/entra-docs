@@ -3,8 +3,8 @@ title: Configure Syniverse Customer Portal for Single sign-on with Microsoft Ent
 description: Learn how to configure single sign-on between Microsoft Entra ID and Syniverse Customer Portal.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

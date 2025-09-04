@@ -3,8 +3,8 @@ title: Configure LMS and Education Management System Leaf for Single sign-on wit
 description: Learn how to configure single sign-on between Microsoft Entra ID and LMS and Education Management System Leaf.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

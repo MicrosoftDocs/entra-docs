@@ -2,11 +2,11 @@
 title: User self-remediation with Microsoft Entra ID Protection
 description: How can users self-remediate risk when administrators allow it? What is the experience when they don't?
 ms.service: entra-id-protection
-ms.topic: conceptual
-ms.date: 04/11/2025
+ms.topic: article
+ms.date: 06/12/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---
@@ -50,7 +50,7 @@ Administrators might block users upon sign-in depending on their risk level. To 
 
 :::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-blocked.png" alt-text="A screenshot showing your account is blocked screen." lightbox="media/concept-identity-protection-user-experience/conditional-access-blocked.png":::
 
-IT staff can follow the instructions in [Unblocking users](howto-identity-protection-remediate-unblock.md#unblocking-based-on-sign-in-risk) to allow users to sign back in.
+IT staff can follow the instructions in [Unblocking users](howto-identity-protection-remediate-unblock.md#unblock-users) to allow users to sign back in.
 
 ## High risk technician
 

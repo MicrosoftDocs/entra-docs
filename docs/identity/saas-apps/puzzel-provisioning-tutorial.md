@@ -1,13 +1,13 @@
 ---
 title: Configure Puzzel for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Puzzel.
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Puzzel so that I can streamline the user management process and ensure that users have the appropriate access to Puzzel.
 ---
@@ -70,9 +70,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** and then select Authorize, make sure that you enter your Puzzel account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Puzzel. If the connection fails, ensure your Puzzel account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Puzzel Tenant URL, Token Endpoint, Client Identifier and Client Secret. Select **Test Connection** to ensure Microsoft Entra ID can connect to Puzzel. If the connection fails, ensure your Puzzel account has Admin permissions and try again.
 
- 	![Screenshot of Token.](media/puzzel-provisioning-tutorial/test-connection.png)
+ 	![Screenshot of Token.](media/puzzel-provisioning-tutorial/test-connection-new.png)
 1. In the **Notification Email** field, enter the email address of a person who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
 	![Screenshot of Notification Email.](common/provisioning-notification-email.png)

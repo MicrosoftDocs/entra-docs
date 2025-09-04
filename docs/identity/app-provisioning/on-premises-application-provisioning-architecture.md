@@ -2,13 +2,13 @@
 title: 'Microsoft Entra on-premises application provisioning architecture'
 description: Presents an overview of on-premises application provisioning architecture.
 
-author: billmath
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.topic: overview
-ms.date: 04/09/2025
+ms.date: 06/27/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jfields
 ms.collection: M365-identity-device-management
 ---
 
@@ -89,7 +89,6 @@ You can define one or more matching attributes and prioritize them based on the 
 
 
 ## Agent best practices
-- Using the same agent for the on-premises provisioning feature along with Workday / SuccessFactors / Microsoft Entra Connect cloud sync is currently unsupported. We're actively working to support on-premises provisioning on the same agent as the other provisioning scenarios.
 - - Avoid all forms of inline inspection on outbound TLS communications between agents and Azure. This type of inline inspection causes degradation to the communication flow.
 - The agent must communicate with both Azure and your application, so the placement of the agent affects the latency of those two connections. You can minimize the latency of the end-to-end traffic by optimizing each network connection. Ways you can optimize each connection include:
  - Reducing the distance between the two ends of the hop.

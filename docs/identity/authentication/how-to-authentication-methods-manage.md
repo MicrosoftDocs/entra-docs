@@ -3,12 +3,12 @@ title: How to migrate to the Authentication methods policy
 description: Learn about how to centrally manage multifactor authentication and self-service password reset (SSPR) settings in the Authentication methods policy.
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/04/2025
+ms.topic: upgrade-and-migration-article
+ms.date: 08/13/2025
 ms.author: justinha
 author: justinha
-ms.reviewer: jpettere
-manager: femila
+ms.reviewer: jpettere, tilarso
+manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
@@ -21,6 +21,9 @@ You can use the authentication methods migration guide in the Microsoft Entra ad
 You can also migrate policy settings manually on your own schedule. The migration process is fully reversible. You can continue to use tenant-wide MFA and SSPR policies while you configure authentication methods more precisely for users and groups in the Authentication methods policy. 
 
 For more information about how these policies work together during migration, see [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md).
+
+> [!NOTE]
+> The migration guide only migrates tenant policy settings. Individual user settings aren't migrated. 
 
 ## Automated migration guide
 The automated migration guide lets you migrate where you manage authentication methods in just a few clicks. It can be accessed from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Entra ID** > **Authentication methods** > **Policies**.
@@ -84,7 +87,7 @@ To get the authentication methods available in the legacy SSPR policy, go to **E
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/legacy-sspr-policy.png" alt-text="Screenshot that shows the legacy Microsoft Entra SSPR policy." lightbox="media/how-to-authentication-methods-manage/legacy-sspr-policy.png":::
 
-Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. While security questions aren't yet available to manage in the Authentication methods policy, make sure you record them for later when they are. You can find this information by going to **Entra ID** > **Users** > **Password reset** > **Properties**.
+Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. Security questions aren't yet available to manage in the Authentication methods policy, and will remain manageable in the legacy SSPR Authentication Methods settings. You can review current security question information by going to **Entra ID** > **Users** > **Password reset** > **Properties**.
 
 | SSPR authentication methods | Authentication method policy |
 |-----------------------------|------------------------------|
@@ -174,7 +177,7 @@ The Authentication methods policy has granular control with separate controls fo
 
 ### Security questions
 
-A control for **Security questions** is coming soon. If you use security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until the new control is available. You *can* finish migration as described in the next section with security questions enabled.
+Controlling **Security questions** will remain in SSPR. If you use security questions, and don't want to disable them as part of this migration, make sure to keep them enabled in the legacy SSPR policy. You *can* finish migration as described in the next section with security questions enabled.
 
 ## Finish the migration 
 

@@ -2,7 +2,7 @@
 title: Suspended domains in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about the different health states for a Microsoft Entra Domain Services managed domain and how to restore a suspended domain.
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.assetid: 95e1d8da-60c7-4fc1-987d-f48fde56a8cb
 ms.service: entra-id

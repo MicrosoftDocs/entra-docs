@@ -4,11 +4,11 @@ description: Learn about the supported scenarios and the requirements for config
 ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ropc-nochange
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ---
 # Microsoft Entra certificate-based authentication with federation on iOS
 

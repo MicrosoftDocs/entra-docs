@@ -2,7 +2,7 @@
 title: Enforce a group naming policy in Microsoft Entra ID
 description: Learn how to set up a naming policy for Microsoft 365 groups in Microsoft Entra ID.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
@@ -287,9 +287,6 @@ Microsoft 365 admin center | Microsoft 365 admin center is compliant with a nami
 
 For more information on Microsoft Entra groups, see:
 
-- [Existing groups](~/fundamentals/groups-view-azure-portal.md)
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
-- [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
-- [Manage members of a group](/entra/fundamentals/how-to-manage-groups)
-- [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

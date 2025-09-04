@@ -2,9 +2,9 @@
 title: Usage and insights report
 description: Learn about the information you can explore using the Usage and insights report in Microsoft Entra ID.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: article
 ms.subservice: monitoring-health
 ms.date: 05/27/2025
 ms.author: sarahlipsey

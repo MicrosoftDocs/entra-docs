@@ -40,6 +40,8 @@
     href: protecting-tokens-microsoft-entra-id.md 
   - name: macOS Platform Single Sign-on overview 
     href: macos-psso.md
+  - name: Integrate macOS Platform Single Sign-On (PSSO) into your MDM solution
+    href: macos-psso-integration-guide.md
   - name: Microsoft Single Sign-on to Linux
     href: sso-linux.md
 - name: How-to guides
@@ -111,7 +113,7 @@
     - name: Enterprise state roaming Group Policy Object (GPO) settings
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Enterprise state roaming Windows settings
-      href: enterprise-state-roaming-windows-settings-reference.md
+      href: /windows/configuration/windows-backup/catalog-esr
   - name: KDFv1 removal
     href: deprecation-key-derivation-function-version-1.md
 - name: Reference

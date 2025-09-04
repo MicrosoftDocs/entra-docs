@@ -3,8 +3,8 @@ title: Configure Count Me In - Operations Dashboard for Single sign-on with Micr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Count Me In - Operations Dashboard.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

@@ -2,7 +2,7 @@
 title: Configure Sage Intacct for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sage Intacct.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -77,7 +77,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-	a. In the **Identifier (Entity ID)** text box, type a unique identifier for your Sage Intacct company, such as `https://saml.intacct.com`.
+	a. In the **Identifier (Entity ID)** text box, type a unique identifier for your Sage Intacct company, with the following format:
+
+   `https://saml.intacct.com`.
 
 	b. In the **Reply URL** text box, add the following URLs:  
 

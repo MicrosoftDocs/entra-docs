@@ -1,13 +1,13 @@
 ---
 title: Known issues with System for Cross-Domain Identity Management (SCIM) 2.0 protocol compliance
 description: How to solve common protocol compatibility issues faced when adding a non-gallery application that supports SCIM 2.0 to Microsoft Entra ID
-author: kenwith
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 04/15/2025
-ms.author: kenwith
+ms.date: 08/25/2025
+ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange

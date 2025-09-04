@@ -1,14 +1,14 @@
 ---
 title: 'Microsoft Entra Connect: Clear on-premises attributes from migrated Microsoft Entra ID users'
 description: Learn how to clean up on-premises attributes from migrated users in Microsoft Entra ID.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
 ---
 
@@ -33,7 +33,7 @@ To prevent these issues, we recommend that customers clear the following on-prem
 
  
 ## How to update these attributes
-You can update these attributes via Microsoft Graph Beta with [Update User](/graph/api/user-update?view=graph-rest-beta&tabs=http) API call. These attributes can only be updated in Entra ID for native Cloud-Only users or for previously synced users that have been converted to Cloud-Only users after turning off synchronization in Entra ID. 
+You can update these attributes via Microsoft Graph Beta with [Update User](/graph/api/user-update) API call. These attributes can only be updated in Entra ID for native Cloud-Only users or for previously synced users that have been converted to Cloud-Only users after turning off synchronization in Entra ID. 
 
 
 ### Required roles
@@ -54,8 +54,8 @@ You can also view and update these on-premises attributes with the PowerShell sc
 
 ### Prerequisites for managing on-premises attributes with ADSyncTools PowerShell module:
 
-- [Windows PowerShell 7](/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4) 
-- [Microsoft Graph SDK PowerShell module](/powershell/microsoftgraph/installation?view=graph-powershell-1.0) 
+- [Windows PowerShell 7](/powershell/scripting/install/installing-powershell-on-windows) 
+- [Microsoft Graph SDK PowerShell module](/powershell/microsoftgraph/installation) 
 
 In order to use [ADSyncTools](reference-connect-adsynctools.md) you need to install the module from PowerShell Gallery, as follows: 
 

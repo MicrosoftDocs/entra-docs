@@ -3,8 +3,8 @@ title: Configure Active Directory SSO for DoubleYou for Single sign-on with Micr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Active Directory SSO for DoubleYou.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

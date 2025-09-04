@@ -3,8 +3,8 @@ title: Configure Terranova Security Awareness Platform for Single sign-on with M
 description: Learn how to configure single sign-on between Microsoft Entra ID and Terranova Security Awareness Platform.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

@@ -2,9 +2,9 @@
 title: Service principal sign-in logs
 description: Learn about the activity captured in the service principal sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ms.subservice: monitoring-health
 ms.date: 03/17/2025
 ms.author: sarahlipsey

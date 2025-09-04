@@ -6,11 +6,11 @@ ms.service: entra-id
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 
@@ -249,7 +249,7 @@ The `http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid` claim mus
 
 In the preceding claim, `<verified-domain-name>` is a placeholder. Replace it with one of your verified domain names in Microsoft Entra ID. For example, use `Value = "http://contoso.com/adfs/services/trust/"`.
 
-For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).  
+For more information about verified domain names, see [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).  
 
 To get a list of your verified company domains, you can use the [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain) cmdlet.
 

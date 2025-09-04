@@ -3,8 +3,8 @@ title: Configure SailPoint Identity Security Cloud for Single sign-on with Micro
 description: Learn how to configure single sign-on between Microsoft Entra ID and SailPoint Identity Security Cloud.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

@@ -2,10 +2,10 @@
 title: 'Understanding lifecycle workflows'
 description: Describes an overview of Lifecycle workflows and the various parts.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/12/2024
 ms.author: owinfrey
 ms.custom: sfi-image-nochange
@@ -150,6 +150,9 @@ While newly created workflows are enabled by default, scheduling is an option th
 Once scheduling is enabled, the workflow is evaluated based on the interval that is set within your workflow settings(default of three hours) to determine whether or not it should run based on the execution conditions.
 
  [![Workflow template schedule.](media/understanding-lifecycle-workflows/workflow-10.png)](media/understanding-lifecycle-workflows/workflow-10.png#lightbox)
+
+>[!NOTE]
+> The time based attribute trigger processes a user at a specific point in time based on the workflow configuration (e.g., seven days before the user’s hire date) and user account configuration. For reliable workflow execution, the user account must be configured with all relevant details (e.g., trigger and scoping attributes) in advance of the scheduled workflow execution. Once the designated time arrives, the next scheduled workflow run will process the user if it meets the execution conditions. If the workflow or user account is configured after the intended processing time (e.g., due to a delay in the HR system), Lifecycle Workflows will still attempt to process the user—provided the necessary setup is completed within three days of the original processing time.
 
 To view a detailed guide on  customizing the schedule of a workflow, see: [Customize the schedule of workflows](customize-workflow-schedule.md).
 

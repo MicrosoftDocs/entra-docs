@@ -5,12 +5,12 @@ description: Use filter for devices in Conditional Access to enhance security po
 ms.service: entra-id
 ms.subservice: conditional-access
 
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/19/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # Conditional Access: Filter for devices

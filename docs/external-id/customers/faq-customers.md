@@ -4,7 +4,7 @@ description: Find answers to frequently asked questions about Microsoft Entra Ex
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
@@ -30,7 +30,7 @@ Microsoft Entra External ID pricing is based on monthly active users (MAU), whic
 
 ### Does the 50,000 MAU free tier apply to add-ons?
 
-No, External ID add-ons don't have a free tier. However, the ID Governance premium feature for External ID is in preview, so currently there's no charge for this add-on.
+No, External ID add-ons don't have a free tier. To learn more about pricing visit the [External ID pricing page](/entra/external-id/external-identities-pricing).
 
 ### Does External ID have phone authentication via SMS?
 
@@ -85,7 +85,7 @@ Get started with securing your consumer and business customer apps by [creating 
 
 ### What's happening to Azure AD B2C and Azure AD External Identities?
 
-Effective May 1, 2025 Azure AD External Identities P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, remains unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, also remain unchanged. We'll continue supporting Azure AD B2C until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
+Effective May 1, 2025 Azure AD B2C P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, remains unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, also remain unchanged. We'll continue supporting Azure AD B2C until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
 
 ### What's happening to Azure AD B2B collaboration and B2B direct connect?
 

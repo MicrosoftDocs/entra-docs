@@ -2,14 +2,14 @@
 title: Configure Snowflake for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Snowflake.
 
-author: thomasakelo
-manager: CelesteDG
+author: jeevansd
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 05/20/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Snowflake so that I can streamline the user management process and ensure that users have the appropriate access to Snowflake.
 ---
@@ -141,6 +141,10 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
    |name.givenName|String|
    |name.familyName|String|
    |externalId|String|
+   |urn:ietf:params:scim:schemas:extension:2.0:User:type [User management - Snowflake Documentation](https://docs.snowflake.com/en/user-guide/admin-user-management#label-user-management-types)|String|
+ 
+    >[!NOTE]
+    >Group display name editing is now unlocked. Previously, the group display name in Snowflake could not be changed, preventing customers from editing the mapping. It is now editable.
 
     >[!NOTE]
     >Snowflake supported custom extension user attributes during SCIM provisioning:

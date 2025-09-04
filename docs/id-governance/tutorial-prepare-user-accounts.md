@@ -2,11 +2,11 @@
 title: 'Tutorial: Preparing user accounts for Lifecycle workflows'
 description: Tutorial for preparing user accounts for Lifecycle workflows.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 08/13/2024
+ms.date: 08/27/2025
 ms.author: owinfrey
 ms.reviewer: krbain
 ms.custom: template-tutorial, no-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
@@ -41,7 +41,7 @@ We use Graph Explorer to quickly create two users needed to execute the Lifecycl
 You need to edit the POST and replace the &lt;your tenant name here&gt; portion with the name of your tenant.  For example:   $UPN_manager = "bsimon@&lt;your tenant name here&gt;" to $UPN_manager = "bsimon@contoso.onmicrosoft.com".  
 
 >[!NOTE]
->Be aware that a workflow will not trigger when the employee hire date (Days from event) is prior to the workflow creation date. You must set an employeeHiredate in the future by design.  The dates used in this tutorial are a snapshot in time.  Therefore, you should change the dates accordingly to accommodate for this situation.
+>Be aware that a workflow won't trigger when the employee hire date (Days from event) is prior to the workflow creation date. You must set an employeeHiredate in the future by design.  The dates used in this tutorial are a snapshot in time.  Therefore, you should change the dates accordingly to accommodate for this situation.
 
 First we create our employee, Melva Prince.
 
@@ -100,7 +100,7 @@ Next, we create Britta Simon.  This account is used as our manager.
 As an alternative, the following PowerShell script can also be used to quickly create two users needed to execute a lifecycle workflow.  One user represents our new employee and the second represents the new employee's manager.
 
 > [!IMPORTANT]
-> The following PowerShell script is provided to quickly create the two users required for this tutorial. These users can also be created in the Microsoft Entra Admin center.
+> The following PowerShell script is provided to quickly create the two users required for this tutorial. These users can also be created in the Microsoft Entra admin center.
 
 In order to create this step, save the following PowerShell script to a location on a machine that has access to Azure. 
 
@@ -193,7 +193,7 @@ For the tutorial, the **mail** attribute only needs to be set on the manager acc
 The employeeHireDate attribute is new to Microsoft Entra ID. It isn't exposed through the UI and must be updated using Graph. To edit this attribute, we can use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
 >[!NOTE]
->Be aware that a workflow will not trigger when the employee hire date (Days from event) is prior to the workflow creation date. You must set an `employeeHireDate` in the future by design. The dates used in this tutorial are a snapshot in time. Therefore, you should change the dates accordingly to accommodate for this situation.
+>Be aware that a workflow won't trigger when the employee hire date (Days from event) is prior to the workflow creation date. You must set an `employeeHireDate` in the future by design. The dates used in this tutorial are a snapshot in time. Therefore, you should change the dates accordingly to accommodate for this situation.
 
 In order to do this, we must get the object ID for our user Melva Prince.
 
@@ -237,7 +237,7 @@ The manager attribute is used for email notification tasks. It emails the manage
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/graph-get-manager.png" alt-text="Screenshot of getting a manager in Graph explorer." lightbox="media/tutorial-lifecycle-workflows/graph-get-manager.png":::
 
-For more information about updating manager information for a user in Graph API, see [assign manager](/graph/api/user-post-manager?view=graph-rest-1.0&tabs=http&preserve-view=true) documentation. You can also set this attribute in the Azure Admin center. For more information, see [add or change profile information](~/fundamentals/how-to-manage-user-profile-info.yml?context=azure/active-directory/users-groups-roles/context/ugr-context).
+For more information about updating manager information for a user in Graph API, see [assign manager](/graph/api/user-post-manager?view=graph-rest-1.0&tabs=http&preserve-view=true) documentation. You can also set this attribute in the Azure Admin center. For more information, see [add or change profile information](~/fundamentals/how-to-manage-user-profile-info.md?context=azure/active-directory/users-groups-roles/context/ugr-context).
 
 ### Enabling the Temporary Access Pass (TAP)
 

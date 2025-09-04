@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra admin center
 description: Overview of the Microsoft Entra admin center interface for configuring and managing Microsoft Entra products.
-author: jason-nydegger
-manager: CelesteDG
+author: barclayn
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 04/25/2025
-ms.author: janydegger
+ms.date: 06/04/2025
+ms.author: barclayn
 ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
 ---
@@ -40,7 +40,7 @@ For more information about configuring and managing Microsoft Entra ID solutions
 * [App registrations](~/identity-platform/application-model.md)
 * [Roles and admins](~/identity/role-based-access-control/custom-overview.md)
 * [External identities](~/external-id/external-identities-overview.md)
-* [Conditional access](~/identity/conditional-access/overview.md)
+* [Conditional Access](~/identity/conditional-access/overview.md)
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 * [Identity secure score](~/identity/monitoring-health/concept-identity-secure-score.md)
 * [Authentication methods](~/identity/authentication/concept-authentication-methods.md)
@@ -84,14 +84,6 @@ For more information about configuring and managing Microsoft Entra Verified ID 
 
 * [Credentials](~/verified-id/verifiable-credentials-configure-tenant-quick.md)
 
-### Permissions Management
-
-**Permissions Management** gives administrators and developers access to [Microsoft Entra Permissions Management](~/permissions-management/overview.md) solutions, including user identities, actions, and resources across multicloud infrastructure environments.
-
-:::image type="content" source="./media/entra-admin-center/entra-admin-permissions-management.png" alt-text="Screenshot of the Microsoft Entra admin center Permissions Management menu.":::
-
-For more information about configuring and managing Microsoft Entra Permissions Management solutions, see the [Quickstart guide to Microsoft Entra Permissions Management](~/permissions-management/permissions-management-quickstart-guide.md).
-
 ### Global Secure Access
 
 **Global Secure Access** gives administrators and developers access to [Microsoft Entra Private Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-private-access) and [Microsoft Entra Internet Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-internet-access) solutions, including the Global Secure Access dashboard, clients, connectors, and monitoring.
@@ -117,5 +109,5 @@ For more information about configuring and managing Global Secure Access solutio
 
 ## Related content
 
-* [Find your tenant](./how-to-find-tenant.yml)
+* [Find your tenant](./how-to-find-tenant.md)
 * [Create a new tenant](./create-new-tenant.md)

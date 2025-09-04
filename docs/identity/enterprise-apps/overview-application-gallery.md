@@ -2,7 +2,7 @@
 title: Overview of the Microsoft Entra application gallery
 description: Explore the Microsoft Entra application gallery for seamless SaaS integration with preconfigured SSO and user provisioning. Enhance cloud app deployment.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: overview
@@ -44,6 +44,9 @@ When searching for an application, you can also specify specific filters, such a
 - **Single sign-on options** – You can search for applications that support these SSO options: SAML, OpenID Connect (OIDC), Password, or Linked. For more information about these options, see [Plan a single sign-on deployment in Microsoft Entra ID](plan-sso-deployment.md).
 - **User account management** – The only option available is [automated provisioning](~/identity/app-provisioning/user-provisioning.md).
 - **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
+
+ > [!NOTE]
+ > In an [external tenant](/entra/external-id/customers/overview-customers-ciam), enterprise applications are supported, but the application gallery catalog is not available. To find and add enterprise applications in the external tenant, select **New application** > **Create your own application**, then type the name of the app in the search bar and select it from the list once it appears.
 
 ### Cloud platforms
 

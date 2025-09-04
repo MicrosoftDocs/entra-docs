@@ -3,8 +3,8 @@ title: Configure CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME for Single sign
 description: Learn how to configure single sign-on between Microsoft Entra ID and CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

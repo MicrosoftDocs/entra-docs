@@ -2,8 +2,8 @@
 title: Configure Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

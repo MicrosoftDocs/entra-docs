@@ -2,10 +2,10 @@
 title: Network planning and connections for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about some of the virtual network design considerations and resources used for connectivity when you run Microsoft Entra Domain Services.
 author: justinha
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: xyuan
@@ -190,6 +190,28 @@ For example, you can use the following script to create a rule allowing RDP:
 ```powershell
 Get-AzNetworkSecurityGroup -Name "nsg-name" -ResourceGroupName "resource-group-name" | Add-AzNetworkSecurityRuleConfig -Name "new-rule-name" -Access "Allow" -Protocol "TCP" -Direction "Inbound" -Priority "priority-number" -SourceAddressPrefix "CorpNetSaw" -SourcePortRange "*" -DestinationPortRange "3389" -DestinationAddressPrefix "*" | Set-AzNetworkSecurityGroup
 ```
+
+### Other ports - synchronization with secondary controller, backup
+
+|Client port(s)|Server port|Service|
+|---|---|---|
+|1024-65535/TCP|135/TCP|RPC Endpoint Mapper|
+|1024-65535/TCP|1024-65535/TCP|RPC for LSA, SAM, NetLogon |
+|1024-65535/TCP/UDP|389/TCP/UDP|LDAP|
+|1024-65535/TCP|636/TCP|LDAP SSL|
+|1024-65535/TCP|3268/TCP|LDAP GC|
+|1024-65535/TCP|3269/TCP|LDAP GC SSL|
+|53,1024-65535/TCP/UDP|53/TCP/UDP|DNS|
+|1024-65535/TCP/UDP|88/TCP/UDP|Kerberos|
+|1024-65535/TCP|445/TCP|SMB|
+|1024-65535/TCP|1024-65535/TCP|FRS RPC |
+
+* When configuring firewall rules or network security policies, it's crucial to consider other ports for synchronization with secondary controller.
+* If traffic restrictions are implemented for these ports, it's essential not to deny traffic between the IP addresses or the addressing range used by controllers of the service.
+* **Blocking communication via these ports between controllers will prevent the correct functioning of replication and data synchronization.** This causes errors in the backup process.
+* Ensure that security policies explicitly allow this internal communication to guarantee the integrity and availability of the service.
+
+For more information see [How to configure a firewall for Active Directory domains and trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).
 
 ## User-defined routes
 

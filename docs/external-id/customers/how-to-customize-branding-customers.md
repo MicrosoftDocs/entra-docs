@@ -2,7 +2,7 @@
 title: Customize your branding for your customers
 description: Learn how to customize the look and feel of your customers' sign-in experiences.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
@@ -54,7 +54,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-1. Browse to **Company branding** either by using the search bar or by navigating to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Company branding** either by using the search bar or by navigating to **Entra ID** > **Custom Branding**.
 1. On the **Default sign-in** tab, select **Edit**.
 
    :::image type="content" source="media/how-to-customize-branding-customers/company-branding-default-edit-button.png" alt-text="Screenshot of the company branding edit button.":::

@@ -3,10 +3,10 @@ title: Trigger Logic Apps based on custom task extensions
 description: Trigger Logic Apps based on custom task extensions
 author: owinfreyATL
 ms.author: owinfrey
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/10/2024
 ms.custom: template-howto
 ---

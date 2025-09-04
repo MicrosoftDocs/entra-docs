@@ -31,7 +31,7 @@ Lifecycle Workflows currently support the following tasks:
 | [Remove all access package assignments for user](../id-governance/lifecycle-workflow-tasks.md#remove-all-access-package-assignments-for-user)     |    42ae2956-193d-4f39-be06-691b8ac4fa1d     | Leaver        | 
 | [Cancel all pending access package assignment requests for user](../id-governance/lifecycle-workflow-tasks.md#cancel-all-pending-access-package-assignment-requests-for-user)     |    498770d9-bab7-4e4c-b73d-5ded82a1d0b3    | Leaver        |
 | [Remove selected license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-selected-license-assignments-from-user)     | 5fc402a8-daaf-4b7b-9203-da868b05fc5f         | Leaver, Mover |
-| [Revoke all refresh tokens for user (Preview)](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user-preview)     | 509589a4-0466-4471-829e-49c5e502bdee         | Leaver, Mover |
+| [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user)     | 509589a4-0466-4471-829e-49c5e502bdee         | Leaver, Mover |
 | [Remove all license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-all-license-assignments-from-user)     | 8fa97d28-3e52-4985-b3a9-a1126f9b8b4e         | Leaver |
 | [Delete user](../id-governance/lifecycle-workflow-tasks.md#delete-user)   |    8d18588d-9ad3-4c0f-99d0-ec215f0e3dff     | Leaver         |
 | [Send email to manager before user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-before-users-last-day)    |    52853a3e-f4e5-4eb8-bb24-1ac09a1da935     | Leaver         |

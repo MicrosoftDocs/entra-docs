@@ -2,11 +2,11 @@
 title: Assign Microsoft Entra roles in PIM
 description: Learn how to assign Microsoft Entra roles in Privileged Identity Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/19/2024
+ms.date: 08/29/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
@@ -59,6 +59,10 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
     - **Time-bound** assignments expire at the end of a specified period. Use this option with temporary or contract workers, for example, whose project end date and time are known.
 
+    >[!NOTE]
+    > Active time-bound role assignment for the Global Administrator role isn't removed at expiration time if there are no other assigned active role assignments for Global Administrator present. In other words, if it’s last assigned active role assignment for Global Administrator role, it will remain.
+Similarly, eligible time-bound role assignment for Global Administrator role isn't removed at expiration time if there are no other assigned role assignments for Global Administrator role present, that is, if it’s the last Global Administrator role assignment. This is done to minimize the risk of administrators locking themselves out of the tenant by accident.
+
     :::image type="content" source="./media/pim-how-to-add-role-to-user/start-and-end-dates.png" alt-text="Screenshot showing Memberships settings - date and time.":::
 
 1. After the role is assigned, an assignment status notification is displayed.
@@ -87,7 +91,7 @@ For certain roles, the scope of the granted permissions can be restricted to a s
    - Select the role scope (in this case, administrative units)
    - Select an administrative unit for the scope
 
-For more information about creating administrative units, see [Add and remove administrative units](~/identity/role-based-access-control/admin-units-manage.md).
+If you try to assign a custom role that is compatible with administrative units, you aren't able to assign the role with administrative unit scope by starting from the **Roles & admins** page. To assign the custom role with administrative unit scope, you must first open the administrative unit and then assign the role. For more information, see [Assign roles with administrative unit scope](../../identity/role-based-access-control/manage-roles-portal.md). For information about creating administrative units, see [Create or delete administrative units](../../identity/role-based-access-control/admin-units-manage.md).
 
 ## Assign a role using Microsoft Graph API
 
@@ -240,7 +244,10 @@ This example shows the response. The response object shown here might be shorten
 
 ## Update or remove an existing role assignment
 
-Follow these steps to update or remove an existing role assignment. **Microsoft Entra ID P2 or Microsoft Entra ID Governance licensed customers only**: Don't assign a group as Active to a role through both Microsoft Entra ID and Privileged Identity Management (PIM). For a detailed explanation, see [Known issues](~/identity/role-based-access-control/groups-concept.md#known-issues).
+Follow these steps to update or remove an existing role assignment.  
+You can't remove the last active role assignment for Global Administrators. We recommend having an emergency access account with active permanent role assignment for Global Administrator role. See more [details.](~/identity/role-based-access-control/security-emergency-access.md)  
+You can't remove the eligible role assignment for Global Administrators if there would be no assigned role assignments for the Global Administrator role left.
+This is done to minimize risks of administrators locking themselves out of the tenant inadvertently.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 

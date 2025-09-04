@@ -3,7 +3,7 @@ title: Sign in users in React SPA by using native authentication
 description: Learn how to build a React single-page app that signs in users in a React single-page app into an external tenant by using native authentication.
 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
@@ -144,7 +144,7 @@ To do so, create a file called *src/client/SignInService.ts*, then add the follo
     };
 ```
 
-The `challenge_type` property shows the authentication methods that the client app supports. This app signs is using email with password, so the challenge type value is *password oob redirect*. Read more about [challenge types](concept-native-authentication-challenge-types.md).
+The `challenge_type` property shows the authentication methods that the client app supports. This app signs in using email with password, so the challenge type value is *password oob redirect*. Read more about [challenge types](concept-native-authentication-challenge-types.md).
 
 ## Create UI components
 

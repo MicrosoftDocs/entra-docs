@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 12/12/2024
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As a B2B organization administrator, I want to track and manage sponsors for guest users, so that I can ensure accountability and proper governance of external partners in my directory.
@@ -89,4 +89,4 @@ You can manage the **Sponsors** field for all existing users using the [Update-M
 
 - [Add and invite guest users](add-users-administrator.yml)
 - [Create a new access package](~/id-governance/entitlement-management-access-package-create.md)
-- [Manage user profile info](~/fundamentals/how-to-manage-user-profile-info.yml)
+- [Manage user profile info](~/fundamentals/how-to-manage-user-profile-info.md)

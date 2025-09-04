@@ -2,10 +2,10 @@
 title: Header-based single sign-on (SSO) for on-premises apps with Microsoft Entra application proxy
 description: Learn how to provide single sign-on for on-premises applications that are secured with header-based authentication.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj

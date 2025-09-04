@@ -1,15 +1,15 @@
 ---
 title: Connectors in the Microsoft Entra Connect Sync Service Manager UI'
 description: Understand the Connectors tab in the Service Manager for Microsoft Entra Connect Sync.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 60f1d979-8e6d-4460-aaab-747fffedfc1e
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: H1Hack27Feb2017, sfi-image-nochange
 ---
 # Using connectors with the Microsoft Entra Connect Sync Service Manager
@@ -21,17 +21,17 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 ## Connector actions
 | Action | Comment |
 | --- | --- |
-| Create |Don't use. For connecting to additional AD forests, use the installation wizard. |
-| Properties |Used for domain and OU filtering. |
-| Delete |Don't use. |
-| [Configure Run Profiles](#configure-run-profiles) |Except for domain filtering, nothing to configure here. You can use this action to see already configured run profiles. |
-| Run |Used to start a one-off run of a profile. |
-| Stop |Stops a Connector currently running a profile. |
-| Export Connector |Don't use. |
-| Import Connector |Don't use. |
-| Update Connector |Don't use. |
-| Refresh Schema |Refreshes the cached schema. It is preferred to use the option in the installation wizard instead, since that also updates sync rules. |
-| [Search Connector Space](#search-connector-space) |Used to find objects and to Follow an object and its data through the system. |
+| Create |Not supported. For connecting additional AD forests, use the configuration wizard. |
+| Properties |Read-only. Connector properties for connectivity, domain and OU filtering and attribute selection and anchors. |
+| Delete |Not supported. For removing AD forests, reinstall the Microsoft Entra Connect product.|
+| [Configure Run Profiles](#configure-run-profiles) |Read-only. Connector run profiles.|
+| Run |Starts a one-off connector run profile.|
+| Stop |Stops a connector run profile.|
+| Export Connector |Read-only. Exports the connector configuration.|
+| Import Connector |Not supported. |
+| Update Connector |Not supported. |
+| Refresh Schema |Not supported. Use the "Refresh directory schema" task in the configuration wizard which also updates sync rules.|
+| [Search Connector Space](#search-connector-space) |Finds objects and shows object data across the Metaverse and other connected sources.|
 
 
 

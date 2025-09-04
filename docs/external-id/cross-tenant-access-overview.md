@@ -6,7 +6,7 @@ ms.topic: overview
 ms.date: 03/28/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing cross-tenant access settings, I want to configure B2B collaboration and B2B direct connect with external organizations, so that I can control inbound and outbound access and manage trust settings for multifactor authentication and device claims.
@@ -148,6 +148,8 @@ Microsoft cloud settings let you collaborate with organizations from different M
 
 For more information, see the [Configure Microsoft cloud settings for B2B collaboration](cross-cloud-settings.md) article.
 
+[Cross-cloud synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) settings allows you to manage the lifecycle of users acoss tenants in your organization from different Microsoft clouds. After you enable cross-tenant synchronization settings, you can start synchronizing user data from that cloud. 
+
 ## Important considerations
 
 > [!IMPORTANT]
@@ -174,7 +176,7 @@ For more information, see the [Configure Microsoft cloud settings for B2B collab
 
 - If you block access to all apps by default, users are unable to read emails encrypted with Microsoft Rights Management Service, also known as Office 365 Message Encryption (OME). To avoid this issue, we recommend configuring your outbound settings to allow your users to access this app ID: 00000012-0000-0000-c000-000000000000. If you allow only this application, access to all other apps is blocked by default.
 
-- If an external organization requires MFA or Terms of Use (ToU) by Conditional Access policies, users might be blocked from registering MFA methods or consenting to ToU. To avoid this issue, configure outbound settings to let users access app ID 0000000c-0000-0000-c000-000000000000 (Microsoft App Access Panel) for MFA registration and app ID d52792f4-ba38-424d-8140-ada5b883f293 (AAD Terms of Use) for ToU.
+- If an organization requires MFA or Terms of Use (ToU) by Conditional Access policies, users might be blocked from registering MFA methods or consenting to ToU. To avoid this issue, configure outbound settings (home tenant) and inbound settings (resource tenant) to let users access app ID 0000000c-0000-0000-c000-000000000000 (Microsoft App Access Panel) for MFA registration and app ID d52792f4-ba38-424d-8140-ada5b883f293 (AAD Terms of Use) for ToU. The configuration of the outbound settings can be achieved via the Microsoft Entra admin center by selecting 'Add other applications' and providing the app ID. Due to a current user interface (UI) limitation the configuration of the inbound settings must be performed via [Microsoft Graph APIs](/graph/api/resources/crosstenantaccesspolicy-overview).
 
 ## Custom roles for managing cross-tenant access settings
 <!--Added content as a reference. -->
