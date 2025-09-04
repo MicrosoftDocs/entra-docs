@@ -3,6 +3,8 @@ title: Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID 
 description: Discover how to manage and transition Active Directory groups to Microsoft Entra ID using Group Source of Authority (SOA). Learn best practices for group management, provisioning, restoring, and rolling back changes in hybrid and cloud environments.
 author: justinha
 manager: dougeby
+ms.service: entra-id
+ms.subservice: hybrid
 ms.topic: conceptual
 ms.date: 08/07/2025
 ms.author: justinha

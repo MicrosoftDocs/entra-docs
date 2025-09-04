@@ -4,6 +4,8 @@ description: Learn how to audit and monitor Group Source of Authority (SOA) in M
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
+ms.service: entra-id
+ms.subservice: hybrid
 ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: dhanyak
