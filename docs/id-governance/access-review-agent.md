@@ -1,5 +1,5 @@
 ---
-title: Access Review Agent with Microsoft Security Copilot
+title: Microsoft Security Copilot Access Review Agent in Microsoft Entra
 description: Learn how the Access Review Agent, with Microsoft Security Copilot, can help secure your organization through recommendations based on your data.
 author: owinfreyATL
 ms.author: owinfrey
@@ -8,112 +8,80 @@ ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 07/17/2025
 
-#CustomerIntent: As a Security Administrator, I want to set up the Access Review Agent so that Copilot can be used to help complete access reviews for users in my organization.
+#CustomerIntent: As a Security Administrator, I want to set up the Access Review Agent so that Security Copilot can be used to help complete access reviews for users in my organization.
 ---
 
-# Access Review Agent with Microsoft Security Copilot
-
-
-The Access Review Agent helps you ensure that access to resources provided to users is up to date with actionable feedback based on specific data from your organization. The agent recommends access review decisions based not only on [existing best practices](review-recommendations-access-reviews.md) for reviews, but also based on other criteria developed with the agent.
-
-The Access Review agent evaluates access reviews based on policies around previous access review decisions, user activity, governance behavior, and account status. When the agent identifies a suggestion, you can have the agent complete the review based on you accepting, or rejecting, the recommendation.
-
+# Access Review Agent
+Say goodbye to time-consuming research and the uncertainty of rushed decisions. The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity.
 
 :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
 
-## Supported Scenarios
-
-The following tables show current Access Review Agent support based on review scenarios:
-
-### Resources
-
-|Review Scenario  |Supported  |
-|---------|---------|
-|Teams + Groups     |   :white_check_mark:       |
-|Access package assignment     |    :white_check_mark:      |
-|Application assignment        |   :white_check_mark:       |
-|Azure resource roles          |    ❌                        |
-|Groups managed by PIM         |   ❌                         |
-|Microsoft Entra roles         |   ❌                         |
-|Bring your own data     |     ❌     |
-
-### Review Size
-|Review Scenario  |Supported  |
-|---------|---------|
-|Up to 35 decisions (per review, not reviewer)     |  :white_check_mark:       |
-|>35 decisions per review     |   ❌       |
-
-### Review stages
-|Review Scenario  |Supported  |
-|---------|---------|
-|Single Stage     |  :white_check_mark:       |
-|Two Stages     |   ❌       |
-|Three Stages     |   ❌       |
-
-### Reviewer Settings
-|Review Scenario  |Supported  |
-|---------|---------|
-|Specific     |   :white_check_mark:       |
-|Group Owners     |  :white_check_mark:        |
-|Managers     |  :white_check_mark:        |
-|Self-review     |  ❌    |
-
-For other considerations, and limitations, of the Access Review Agent, see: [Limitations](access-review-agent.md#limitations).
-
 ## Prerequisites
-
-- You must have the [Microsoft Entra ID Governance or Microsoft Entra Suite license](licensing-fundamentals.md).
+- You must [Microsoft Entra ID Governance or Microsoft Entra Suite licenses](licensing-fundamentals.md).
 - You must [Onboard to Security Copilot](/copilot/security/get-started-security-copilot#onboarding-to-security-copilot) with at least one [security compute unit (SCU)](/copilot/security/manage-usage) provisioned.
-   - Completing an access review that includes 20 decisions, generating recommendations, and the reviewer's natural language conversation to complete the review, consumes on average 0.6 SCU. The SCU consumption can vary based on the conversation length between the reviewer and agent.
-- To use the Access Review agent as an admin, you must have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with the following roles for specific capabilities:
-   - To activate, configure, run, and remove the Access Review Agent, you need both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
-   - To view the overview, activities, or settings of the Access Review Agent, you need either the [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
-- To use the Access Review Agent to help you complete reviews as a reviewer, you must have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+   - Completing an access review that includes 20 decisions consumes on average 1 SCU. This inlcudes the agent gathering insights and generating recommendations as well as the reviewer's natural language conversation in Microsoft Teams with the agent. The SCU consumption can vary based on the conversation length between the reviewer and agent.
+- Admins must have at least **all** the following roles to setup and manage the agent in the Microsoft Entra admin center:
+   - [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator)
+   - [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator)
+   - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access)
+- For reviewers to leverage the Access Review Agent they must have access to Microsoft Teams and must have an active access review assigned to them and have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Limitations
-
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions can cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - The agent runs using the identity of the administrator who activated it for the first time to gather insights and save recommendations. Final decisions, as part of the Microsoft Teams conversation, is written with the reviewer’s identity.
 - We recommend running the agent from the Microsoft Entra admin center.
 
+## Supported Scenarios
+The following tables show current Access Review Agent support based on review scenarios:
+|  |Supported  |
+|---------|---------|
+|**Resources**  |  |
+|Teams + Groups     |   :white_check_mark:       |
+|Access package assignment     |    :white_check_mark:      |
+|Application assignment        |   :white_check_mark:       |
+|Azure resource roles          |    ❌                        |
+|Microsoft Entra roles         |   ❌                         |
+|Groups managed by Privileged Identity Management         |   ❌                         |
+|**Size**  |  |
+|Up to 35 decisions (per review, not reviewer)     |  :white_check_mark:       |
+|>35 decisions per review     |   ❌       |
+|**Stages**  |  |
+|Single Stage     |  :white_check_mark:       |
+|Multi-stage     |   ❌       |
+|**Reviewers**  |  |
+|Specific     |   :white_check_mark:       |
+|Group owners     |  :white_check_mark:        |
+|Managers     |  :white_check_mark:        |
+|Self-reviews     |  ❌    |
 
 ## How it works
+The Access Review Agent proactively scans for active access reviews in your tenant which have been flagged to be processed by the agent. Then agent then analyzes identified reviews by gathering additional insights and generates a recommendation (approve / deny) as well as a justification summary for each decision. Once the agent has analyzed the recommendations and corresponding jusitifcation summaries it will be able to guide reviewers, in natural language, through the review process in Microsoft Teams. Reviewers are empowered to complete their reviews through the natural language chat experience in Microsoft Teams and as the agent guides them through the review they are able to review the agents reasoning behind the recommendations, ask questions in the context of the review itself and finally make their own informed decision.
 
+The agents recommendation (approve / deny) for each decision relies on a deterministic scoring mechanism powered by multiple signals, the signals leveraged for the recommendation are then used to provide an end-user friendly justification summary powered by an large language model (LLM). The subsequent natural language chat experience in Microsoft Teams is facilitated by the large language model with previously generated recommendation and justification summaries as available context.
 
-The Access Review Agent proactively scans access reviews, and assists reviewers in making informed decisions about the access for users in your environment. The agent, which reviewers communicate with directly via a [Microsoft Teams](/microsoftteams/teams-overview) chat, uses user context to help inform decisions. When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
+The agent considers the following signals:
 
-Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
-
-1. The agent scans all access reviews in your tenant.
-1. The agent analyzes the data, such as their activity, of users being reviewed.
-1. The agent reviews previous access review decisions to help inform its recommendations.
-
-If the agent identifies something that wasn't previously suggested, it takes the following steps. **These action steps consume SCUs.**
-
-1. The agent evaluates access review durations, and recommends that the reviewer reviews the access review expiring earlier first.
-1. The agent identifies that a user is no longer active and recommends revoking access.
-1. The agent identifies that a user is still active and using resources, the access review agent recommends approving access.
-
-The agent considers the following about a user when making review recommendations:
-
-- **Activity**: If the user has signed in([SignInActivity](/graph/api/resources/signinactivity)) the past 30 days.
-- **User-to-Group affiliation**: If the user has a [low affiliation](review-recommendations-access-reviews.md) with other users who has the access being requested.
-- **Account enabled**: If the user's account is enabled(accountEnabled).
-- **Employment status**: If the user's employment ended([employeeLeaveDateTime](/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime))
+- **User inactivity**: If the user has [signed in](review-recommendations-access-reviews.md##inactive-user-recommendations).
+- **User-to-Group affiliation**: If the user has a [low affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) with other users who have this access.
+- **Account enabled**: If the user's account is enabled (accountEnabled property).
+- **Employment status**: If the user's employment ended ([employeeLeaveDateTime property](/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime)).
 - **Lifecycle workflow history**: If the user has had a mover workflow ran for them in the past 30 days
-- **Previous reviews**: If the user being reviewed is part of a recurring review, decisions from previous review iterations or access package assignments are considered.
+- **Decisions from previous reviews**: For recurring reviews, decisions from previous review iterations are considered.
+- **Access request history**: For access package assignment reviews, the request and approval history is  considered.
 
+> [!NOTE]
+> The justification summary will include information from these signals and will be available to the reviewer during the review process even though some of this information is not available to reviewers outside of the review process.
 
+As admin you are able to review the recommendations (approve / deny) as well as justification summaries. For details see, [Access Review Agent logs and metrics (Preview)](access-review-agent-logs-metrics.md). Please note the agent recommendations may differ from the recommendations shown on the My Access portal and Access Review experience in the Microsoft Entra admin center.
 
 ## Getting started
-
-
 ### Setting up the Access Review Agent
-
-
-1. With an account that has at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles, or with the [global administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+1. With an account that has at least **all** the following roles, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com):
+   - [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator)
+   - [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator)
+   - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access)
 1. From the new home page, select **Go to agents** from the agent notification card.
    - You can also select **Agents** from the left navigation menu.
    :::image type="content" source="media/access-review-agent/start-access-review-agent.png" alt-text="Screenshot of starting the Access Review Agent.":::
@@ -124,17 +92,13 @@ The agent considers the following about a user when making review recommendation
    - A message that says "*The agent is starting its first run*" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
 
+### Enable the access review agent for existing access reviews
 
-> [!NOTE]
-> As both the agent admin, and reviewers, require at least the security copilot contributor role, it's recommended to assign this role to a group.
-
-### Enable resources for use with the Access Review Agent
-
-After the Access Review Agent is started, you must enable it on specific resources. The following sections walk you through enabling the Access Review Agent for use with different resources.
+After the Access Review Agent is started, you must flag access reviews to be processed by the Access Review Agent. The Access Review Agent is able to process both new, and existing, access reviews. The following sections walk you through flagging access review to be processed by the Access Review Agent.
 
 #### Enable the access review agent for existing group and application access reviews
 
-The Access Review Agent is able to scan both new, and existing, access reviews. To Update an existing access review so that the agent scans it, do the following steps:
+To update an existing access review to be processed by the Access Review Agent, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -142,15 +106,15 @@ The Access Review Agent is able to scan both new, and existing, access reviews. 
 
 1. Select the access review you want the agent to support.
 
-1. On the access review overview page, select **Settings** under occurence if its a one time review, or **Settings** under Series if it is a recurring review.
+1. On the access review overview page, select **Settings** under Manage if its a one time review, or **Settings** under Series if it is a recurring review.
 
-1. Under **Advanced Settings**, check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
+1. Under **Advanced Settings**, check the box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**. 
 
-#### Enable the Access Review Agent for Access Package Assignments
+#### Enable the Access Review Agent for existing access package assignment reviews
 
-To enable the agent to make recommendations on an existing access package, you'd do the following steps:
+To update an existing access review to be processed by the Access Review Agent, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -166,28 +130,25 @@ To enable the agent to make recommendations on an existing access package, you'd
 
 1. Select **Save**.    
 
-
 ### Ensure reviewers can use the Access Review Agent
 
-The Access Review Agent is accessed through a published first-party [Microsoft Teams App](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47). Ensure that the app is [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Using the app also requires that reviewers use the [Microsoft Teams Public Preview](/microsoftteams/public-preview-doc-updates?tabs=new-teams-client).
+Reviewers access the Access Review Agent through a [Microsoft Teams App](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3). If your organizations' [Microsoft Teams org-wide app settings](/microsoftteams/manage-apps#manage-org-wide-app-settings) allow Microsoft applications no action is required. If your organization has disabled Microsoft apps in the Microsoft Teams org-wide app settings your organizations' Microsoft Teams administrator must explicitly approve the app.
 
-With the app published and available, also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews. This is required because the natural language conversation in Microsoft Teams is opening a Microsoft Security Copilot session behind the scenes. Participating reviewers access the agentic experience via Microsoft Teams, but with the role assignment they'll be entitled to access https://securitycopilot.microsoft.com/ or the Security Copilot experience in other Microsoft Security administrative portals. If reviewers access Security Copilot outside of Microsoft Teams, their data access with Security Copilot is still subject to [default user permissions](../fundamentals/users-default-permissions.md).
+You must also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews. This is required because the natural language conversation in Microsoft Teams is opening a Microsoft Security Copilot session behind the scenes. Participating reviewers access the agentic experience via Microsoft Teams, but with the role assignment they'll be entitled to access the [Security Copilot portal](https://securitycopilot.microsoft.com/) or the Security Copilot experience in other Microsoft Security administrative portals. If reviewers access Security Copilot outside of Microsoft Teams, their data access with Security Copilot is still subject to [default user permissions](../fundamentals/users-default-permissions.md).
 
 ## Using the Access Review Agent as a reviewer
 
-With the Access Review Agent started, reviewers assigned proper permissions, and with the app available to them, your reviewers are now ready to complete their reviews with the help of the agent. The Access Review Agent can be accessed directly from the Apps screen within Microsoft Teams, from a [direct link](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47), or from an email notification sent by an access review with the agent enabled when it's time for the review to be completed. The following steps walk you through accessing the agent directly from Microsoft Teams:
+With the Access Review Agent started, reviewers assigned proper permissions, and with the app available to them, your reviewers are now ready to complete their reviews with the help of the agent. The Access Review Agent can be accessed directly within Microsoft Teams ([direct link](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3)). The access review email notifications sent to reviewers will also inlcude a direct link to Microsoft Teams.
 
 1. Open your Microsoft Teams application signed in as the user assigned as a reviewer.
 
-1. Select **Apps**.
+1. Select the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) link to open the agent
 
 1. On the Apps page, search **Access Review Agent**, and select **Add**.
     :::image type="content" source="media/access-review-agent/access-review-agent-teams.png" alt-text="Screenshot of the Access Review Agent application in Microsoft Teams.":::
 1. Once the agent is added, select **Open**.
 1. When open, you can select the available prompt to start the chat with the agent
      :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
-
-From this chat, you're able to see decisions about your access reviews, the reasoning the agent made when making those decisions, and can reply so that the agent takes action based on your choices. 
 
 ## Settings
 
@@ -201,15 +162,14 @@ The agent is configured to run every 24 hours based on when it's initially confi
 
    :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
 
+> [!NOTE]
+> If reviewers immediately action their access review email notifications the agent may have not yet processed the review, only after the agent's run it will be able to assist in Microsoft Teams. In this case the agent will respond with the following message to the reviewer in Microsoft Teams: 'I don't see any pending reviews that I can help you with at this time. Because my capabilities are still expanding, I recommend you check the My Access Portal to see if you have any other pending reviews.'. 
 
 ## Removing the agent 
 
-If you no longer wish to use the Access Review Agent, the following sections walk you through removing the agent from resources.
+If you no longer wish to use the Access Review Agent, select **Remove agent** from the top of the agent window. The existing agent activity and metrics are removed but recommendations and justifications for already processed reviews are retained the agent in Microsoft Teams will continue to be able to assists reviewers with these reviews. To complete the removal you should also unflag the access reviews prevously flagged to be processed by the agent.
 
-
-### Removing the agent from  an Access Review
-
-When you remove the agent from accessing an access review, the existing data such as access review information and justifications for decisions are removed, but decisions made via conversations with the agent remains. You should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
+### Disable the access review agent for existing group and application access reviews
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -217,15 +177,13 @@ When you remove the agent from accessing an access review, the existing data suc
 
 1. Select the access review that has agent support enabled.
 
-1. On the access review overview page, select **Settings**.
+1. On the access review overview page, select **Settings** under Manage if its a one time review, or **Settings** under Series if it is a recurring review.
 
-1. Under **Advanced Settings**, check the **Disable** box on the setting that says **Access Review Agent (Preview)**.
+1. Under **Advanced Settings**, uncheck the box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**. 
 
-### Remove Agent From Access Package Assignments
-
-To remove the agent from making recommendations on an existing access package assignment, you'd do the following steps:
+### Disable the Access Review Agent for existing access package assignment reviews
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -239,11 +197,28 @@ To remove the agent from making recommendations on an existing access package as
 
 1. On the lifecycle tab, check the **Disable** box on the setting that says **Access Review Agent (Preview)**.
 
-1. Select **Save**.    
+1. Select **Save**.
+
+### Revoke Security Copilot access
+
+You may want to revoke the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) access of reviewers if no other scenario requires them to access Security Copilot.
+
+## Identity and permissions
+The agent will run with identity of the administrator who configured the agent to gather insights and save recommendations. Final decisions as part of the Microsoft Teams conversation will be written with the reviewer’s identity.
 
 ### Providing feedback
 
 Use the **Give Microsoft feedback** button at the top of the agent window to provide feedback to Microsoft about the agent.
+
+## FAQs
+
+###  Why is the agent in Microsoft Teams responding with 'It looks like the Access Review Agent either has not yet been enabled for your organization or has encountered unexpected issues. Please contact your IT department for assistance. In the meantime, you can complete your pending reviews in the My Access Portal'?
+
+If the agent respond with this message its likely the agent setup, such as starting the agent, assigning reviewers Security Copilot access and enabling the agent for existing reviews isn't completed. 
+
+### Why is the agent in Microsoft Teams responding with 'Things are a bit busy at the moment, and I couldn't process your request right now. Could you please try again in a little while? If you're in a hurry, the My Access Portal is always available.'?
+
+The agent will respond with this message if your tenant is out of provisioned and overage Security Copilot capacity.
 
 ## Related content
 
