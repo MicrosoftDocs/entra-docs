@@ -80,6 +80,21 @@ When a manager requests an access package on behalf of their employee, you'd do 
 
 1. Either approve, or deny, the request on behalf of the employee.
 
+## Manage team assignments using the My Access portal
+
+Managers can also manage access package assignments of their direct reports using the My Access portal. Management capabilities include:
+
+- The ability to see active access package assignment of all of their direct reports.
+- The ability to remove assignments for reports if the policy supports on behalf of requests.
+
+To manage your team assignments using the My Access portal, you'd do the following steps:
+
+1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com) as a the direct manager of the team who you want to manage access package assignments for. For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
+
+1. In the left menu, select **Manage team** to see a list of your direct reports.
+    :::image type="content" source="media/entitlement-management-request-behalf/manage-team-reviews.png" alt-text="Screenshot of managing team in the my access portal.":::
+1. On the team page you can select a report to seea list of their current access package assignments, or select **Remove access** to end the access package assignment for the user.
+
 ## Next steps
 
 - [Approve or deny access requests - entitlement management](entitlement-management-request-approve.md)
