@@ -31,7 +31,7 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 To view information about the Access Review Agent, open up the Access Review Agent to get to the overview page. The highlight of the overview page is the Agent summary, which provides a quick summary of agent actions over the course of the last 30 days.
 
-:::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the Access Review Agent overview.":::
+:::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the Access Review Agent overview." lightbox="media/access-review-agent-logs-metrics/access-review-agent-overview.png":::
 
 
 The **Agent Summary** shows:
@@ -48,7 +48,7 @@ The overview page also includes other general information about the agent such a
 
 From the overview page, you can select the **Activities** tab to view a full list of the activities of the Access Review Agent. A run is generated for each active access review instance the agent analyzes. A run is also generated if the agent hasn't identified any new active access review instances to analyze. Each access review instance is analyzed once and generates a signal run. 
 
-:::image type="content" source="media/access-review-agent-logs-metrics/access-review-agents-activities.png" alt-text="Screenshot of a list of activities in the Access Review Agent.":::
+:::image type="content" source="media/access-review-agent-logs-metrics/access-review-agents-activities.png" alt-text="Screenshot of a list of activities in the Access Review Agent." lightbox="media/access-review-agent-logs-metrics/access-review-agents-activities.png":::
 
 For each activity, you can see:
 
@@ -63,7 +63,7 @@ To see a detailed summary of the agent's activity, the recommendations (approve 
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details help you understand the logic behind the agent and you can view the recommendations and justification summaries on the last card in the activity map.
 
-:::image type="content" source="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png" alt-text="Screenshot of Access Review Agent justification in activity card.":::
+:::image type="content" source="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png" alt-text="Screenshot of Access Review Agent justification in activity card." lightbox="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png":::
 
 
 ## Related content
