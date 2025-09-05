@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/04/2025
+ms.date: 09/05/2025
 ms.author: barclayn
 ms.reviewer: Vimala
 ---
@@ -52,13 +52,13 @@ In addition to the PRT, Entra ID can issue a partial Ticket Granting Ticket (TGT
 
 ## Authentication flow
 
-### **User Authentication**:
+### User Authentication:
 - The user signs into a Windows device (Windows 10 2004+ or Windows 11).
 - The Local Security Authority (LSA) uses the Cloud Authentication Provider (CloudAP) to authenticate via OAuth to Microsoft Entra ID.
 - Microsoft Entra ID issues a Primary Refresh Token (PRT) containing user and device information.
 - The TGT is for the realm KERBEROS.MICROSOFTONLINE.COM, which acts as a cloud-based Kerberos Distribution Center (KDC).
 
-### **Cloud TGT Issuance**:
+### Cloud TGT Issuance:
 - If the user signs in with a passwordless method (such as FIDO2 or Windows Hello for Business), Microsoft Entra ID issues a Partial Ticket Granting Ticket (Partial TGT) for the user's on-premises Active Directory (AD) domain. This Partial TGT contains the user's Security Identifier (SID) but no authorization data.
 
 - A Kerberos server object exists in the on-premises AD, created and synchronized via Microsoft Entra Connect. This object allows Microsoft Entra ID to generate these partial TGTs for use by on-premises domain controllers to facilitate on-premises resource access.
@@ -75,7 +75,10 @@ During the exchange process, where a partial Microsoft Entra Kerberos TGT is con
 >[!IMPORTANT]
 > The TGT is only recognized by on-premises Active Directory. Therefore, having access to a partial TGT doesn't provide access to other resources outside of AD.
 
-**Cloud TGT for cloud resources**:
+### Entra Kerberos TGT and Active Directory Access Control
+Possessing an Entra Kerberos Ticket Granting Ticket (TGT) for a user's on-premises Active Directory (AD) domain does not automatically grant access to a full AD TGT. To complete the exchange, the user must be listed in the reveal credentials allow list on the Azure AD Read-Only Domain Controller (RODC) object and not in the deny list. As a best practice, the default configuration should be set to Deny, with explicit Allow permissions granted only to groups authorized to use Entra Kerberos.
+
+### Cloud TGT for cloud resources:
 - Microsoft Entra ID acts as a Key Distribution Center (KDC under the realm KERBEROS.MICROSOFTONLINE.COM issuing a Cloud Kerberos Ticket Granting Ticket (TGT) to the client.
 - The client recognizes the Microsoft Entra ID tenant as a separate Kerberos realm for cloud resources and the TGT is stored in the client's Kerberos ticket cache.
 - The cloud TGT contains authorization data only specific to cloud services and is sufficient for accessing resources integrated with Microsoft Entra Kerberos, such as Azure Files and Azure SQL.
@@ -85,7 +88,7 @@ During the exchange process, where a partial Microsoft Entra Kerberos TGT is con
 
 
 
-### **Realm Mapping and Azure Tenant Info**:
+### Realm Mapping and Azure Tenant Info:
 - Windows LSASS manages the Kerberos Cloud TGT, realm mapping, and Entra ID tenant information. The Kerberos stack maintains the Cloud TGT and realm mapping, using a KDC Proxy to route Kerberos traffic to Microsoft Entra ID.
 - For Azure Virtual Desktop, the user receives both a PRT and Cloud TGT. Azure Virtual Desktop uses FSLogix to load the user profile from Azure Files.
 
