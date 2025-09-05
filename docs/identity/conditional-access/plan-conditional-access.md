@@ -226,17 +226,17 @@ Refer to [Conditional Access policy templates](concept-conditional-access-policy
 | Conditional Access policy | License |
 | --- | --- |
 | [Block legacy authentication](/entra/fundamentals/configure-security#block-legacy-authentication) | P1 |
-| [Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods](/entra/fundamentals/configure-security#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | P1 |
+| [Privileged Microsoft Entra built-in roles enforce phishing-resistant methods](/entra/fundamentals/configure-security#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | P1 |
 | [All user sign-in activity uses strong authentication methods](/entra/fundamentals/configure-security#all-user-sign-in-activity-uses-strong-authentication-methods) | P1 |
 | [Guest access is protected by strong authentication methods](/entra/fundamentals/configure-security#guest-access-is-protected-by-strong-authentication-methods) | P1 |
 | [Secure the MFA registration (My Security Info) page](/entra/fundamentals/configure-security#secure-the-mfa-registration-my-security-info-page) | P1 |
 | [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/configure-security#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | P1 |
-| [User sign-in activity uses token protection](/entra/fundamentals/configure-security#user-sign-in-activity-uses-token-protection) | |
-| [Restrict device code flow](/entra/fundamentals/configure-security#restrict-device-code-flow) | |
-| [Authentication transfer is blocked](/entra/fundamentals/configure-security#authentication-transfer-is-blocked) | |
+| [User sign-in activity uses token protection](/entra/fundamentals/configure-security#user-sign-in-activity-uses-token-protection) | P1 |
+| [Restrict device code flow](/entra/fundamentals/configure-security#restrict-device-code-flow) | P1 |
+| [Authentication transfer is blocked](/entra/fundamentals/configure-security#authentication-transfer-is-blocked) | P1 |
 | [Restrict access to high risk users](/entra/fundamentals/configure-security#restrict-access-to-high-risk-users) | P2 |
 | [Restrict high risk sign-ins](/entra/fundamentals/configure-security#restrict-high-risk-sign-ins) | P2 |
-| [Conditional Access policies for Privileged Access Workstations are configured](/entra/fundamentals/configure-security#conditional-access-policies-for-privileged-access-workstations-are-configured) | |
+| [Conditional Access policies for Privileged Access Workstations are configured](/entra/fundamentals/configure-security#conditional-access-policies-for-privileged-access-workstations-are-configured) | P1 |
 
 
 #### Evaluate the policy impact
