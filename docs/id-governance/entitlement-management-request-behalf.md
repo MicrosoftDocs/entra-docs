@@ -1,5 +1,5 @@
 ---
-title: Request access packages on-behalf-of other users  (Preview)
+title: Request access packages on-behalf-of other users
 description: This article describes how to set up an access package so that managers can approve, or deny, requests for users reporting to them.
 author: owinfreyATL
 ms.author: owinfrey
@@ -12,7 +12,7 @@ ms.date: 06/18/2025
 ---
 
 
-# Request access package on-behalf-of other users (Preview)
+# Request access package on-behalf-of other users
 
 Entitlement Management enables admins to create access packages to manage their organization’s resources. Admins can either directly assign users to an access package, or configure an access package policy that allows users and group members to request access. This option to create self-service processes is useful, especially as organizations scale and hire more employees. However, new employees joining an organization might not always know what they need access to, or how they can request access. In this case, a new employee would likely rely on their manager to guide them through the access request process.
 
@@ -47,7 +47,7 @@ Follow these steps to edit the policies, allowing on behalf of requests, for an 
 
 1. Select the policy you wish to edit or create a new policy. 
 
-1. On the **Requests** tab, set **Enable new requests** to Yes. This should show you the option **Allow managers to request on behalf of employees (preview)**. Set that option to Yes.  
+1. On the **Requests** tab, set **Enable new requests** to Yes. This should show you the option **Allow managers to request on behalf of employees**. Set that option to Yes.  
     :::image type="content" source="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" lightbox="media/entitlement-management-request-behalf/edit-request-policy-behalf.png" alt-text="Screenshot of editing an access package;s request on behalf of policy.":::
 1. Save your policy. 
 
