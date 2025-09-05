@@ -1,6 +1,6 @@
 ---
-title: PowerShell sample - Generate and Sign TLS Certificates Using OpenSSL on Windows
-description: Use this PowerShell script to generate and sign TLS certificates using OpenSSL on Windows in a test environment. 
+title: PowerShell sample - Generate and Sign Transport Layer Security Certificates Using OpenSSL on Windows
+description: Use this PowerShell script to generate and sign Transport Layer Security (TLS) certificates using OpenSSL on Windows in a test environment.
 author: HULKsmashGithub
 ms.author: jayrusso
 manager: dougeby
