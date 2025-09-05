@@ -7,8 +7,8 @@ ms.author: cwerner
 ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: how-to
-ms.custom:
 #customer intent: As a developer, I want to learn how to acquire tokens for web APIs so that I can enable secure API calls in my application.  
 ---
 

@@ -3,8 +3,10 @@ title: Configure Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
 description: Learn how to convert group management from Active Directory Domain Services to Microsoft Entra ID by using Group Source of Authority (SOA).
 author: Justinha
 manager: dougeby
+ms.service: entra-id
+ms.subservice: hybrid
 ms.topic: how-to
-ms.date: 08/11/2025
+ms.date: 09/04/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -20,24 +22,18 @@ This article explains the prerequisites and steps to configure Group Source of A
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of groups.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
 | **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free license. |
-| **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760) |
-| **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
+| **Sync client** | You can use either sync client to to synchronize SOA converted groups. If you use Connect Sync, upgrade to the minimum version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). If you use Cloud Sync, upgrade to minimum version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700).  |
+| **Provisioning to AD (optional)** |  To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. |
 
-## Setup
+### Download Connect Sync client
 
-You need to set up Connect Sync client and the Microsoft Entra Provisioning agent. 
+1. Download Connect Sync build version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760) or later.
 
-### Connect Sync client
+1. Go to **Programs** in Control Panel and confirm the version of Microsoft Entra Connect Sync.
 
-1. Download the latest version of the Connect Sync build.
+### Download Cloud Sync client
 
-1. Verify the Connect Sync build is successfully installed. Go to **Programs** in Control Panel and confirm that the version of Microsoft Entra Connect Sync is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760).
-
-### Cloud Sync client
-
-Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700) or later.
-
-1. Follow the [instructions to download the Cloud Sync client](/entra/identity/hybrid/cloud-sync/reference-version-history#download-link).
+1. Download Cloud Sync build version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700) or later.
 
 1. Learn how to [identify the agent's current version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
 
@@ -290,7 +286,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 ## Limitations
 
-- **No reconciliation support for local AD groups**: An AD DS admin (or an application with sufficient permissions) can directly modify an AD DS group. If Group SOA is converted for the group, or if cloud security group provisioning to AD DS is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD DS changes are overwritten when group provisioning to AD DS runs.
+- **No reconciliation support for AD DS groups**: An AD DS admin (or an application with sufficient permissions) can directly modify an AD DS group. If Group SOA is converted for the group, or if cloud security group provisioning to AD DS is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD DS changes are overwritten when group provisioning to AD DS runs.
 
 - **No dual write allowed**: After you start to manage the memberships for the converted group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD as a nested group under another AD DS group (OnPremGroupB) that's in scope for sync to Microsoft Entra ID, the membership references of group A aren't synced when sync happens for OnPremGroupB. The membership references aren't synced because the sync client doesn't know the cloud group membership references. This behavior is by design.
 

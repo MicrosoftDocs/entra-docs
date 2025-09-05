@@ -65,4 +65,4 @@ These articles provide additional information on working with groups in Microsof
 - [Manage access to resources using groups](~/fundamentals/concept-learn-about-groups.md)
 - [Manage access to SaaS apps using groups](groups-saasapps.md)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)
-- [Add an Azure subscription to Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
+- [Add an Azure subscription to Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.md)

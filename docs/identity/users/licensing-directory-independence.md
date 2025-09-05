@@ -44,7 +44,7 @@ You can configure each Microsoft Entra organization independently to get data sy
 1. Select **Workforce** and provide the requested information. Microsoft Entra ID creates a new organization and appears in the list of organizations.
 
 > [!NOTE]
-> Unlike other Azure resources, your Microsoft Entra organizations are not child resources of an Azure subscription. If your Azure subscription is canceled or expired, you can still access your Microsoft Entra organization's data using Azure PowerShell, the Microsoft Graph API, or the Microsoft 365 admin center. You can also [associate another subscription with the organization](~/fundamentals/how-subscriptions-associated-directory.yml).
+> Unlike other Azure resources, your Microsoft Entra organizations are not child resources of an Azure subscription. If your Azure subscription is canceled or expired, you can still access your Microsoft Entra organization's data using Azure PowerShell, the Microsoft Graph API, or the Microsoft 365 admin center. You can also [associate another subscription with the organization](~/fundamentals/how-subscriptions-associated-directory.md).
 >
 
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]

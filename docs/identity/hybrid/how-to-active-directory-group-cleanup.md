@@ -2,6 +2,8 @@
 title: How to clean up unused Active Directory Domain Services (AD DS) groups in a single domain
 description: Step-by-step guide to identifying, triaging, and removing unused security and distribution groups in Active Directory Domain Services (AD DS) using a structured scream test methodology. Improve security and reduce administrative burden by cleaning up groups no longer needed in your domain.
 author: Justinha
+ms.service: entra-id
+ms.subservice: hybrid
 manager: dougeby
 ms.topic: how-to
 ms.date: 08/04/2025

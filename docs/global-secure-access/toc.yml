@@ -78,6 +78,8 @@ items:
         href: concept-remote-network-connectivity.md
       - name: Create a remote network
         href: how-to-create-remote-networks.md
+      - name: Enhance remote network resilience
+        href: remote-network-resilience.md
       - name: Create remote network with custom Internet Key Exchange (IKE) policy
         href: how-to-create-remote-network-custom-ike-policy.md
       - name: Configure customer premises equipment
@@ -165,6 +167,8 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Check URL category
+        href: how-to-check-web-content-filtering-categories.md
       - name: What is Transport Layer Security inspection? 
         href: concept-transport-layer-security.md 
       - name: Configure Transport Layer Security inspection 
