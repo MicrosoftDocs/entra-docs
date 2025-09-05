@@ -78,7 +78,7 @@ The policy suggestions identified by the agent include:
 - **Risky users**: The agent suggests a policy to require secure password change for high risk users. Requires Microsoft Entra ID P2 license.
 - **Risky sign-ins**: The agent suggests a policy to require multifactor authentication for high risk sign-ins. Requires Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
-- **Deep Analysis**: The agent looks at your policies corresponding to key scenarios to identifie outlier policies that have more than a recommended amount of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout). 
+- **Deep Analysis**: The agent looks at policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout). 
 
 > [!IMPORTANT]
 > The agent doesn't make any changes to existing policies unless an administrator explicitly approves the suggestion.
