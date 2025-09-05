@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO with temporary values.
 
 ## Configure AlexisHR SSO
 
-1. Log in to your AlexisHR company site as an administrator.
+1. Log in to your AlexisHR company site as an Owner.
 2. Go to **Settings** > **SAML Single sign-on** and select **New identity provider**.
 3. In the **New identity provider** section:
    - **Identity provider SSO URL**: paste the **Login URL** from Microsoft Entra ID.
