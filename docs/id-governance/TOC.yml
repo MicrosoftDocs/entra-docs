@@ -126,6 +126,14 @@
         href: scenarios/sap-template.md
       - name: Deploy SAP NetWeaver AS ABAP 7
         href: scenarios/deploy-sap-netweaver.md
+- name: Security Copilot + Microsoft Entra
+  items:
+  - name: Get started with the Access Review Agent (Preview)
+    href: access-review-agent.md
+  - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
+    href: ~/fundamentals/copilot-entra-lifecycle-workflow.md 
+  - name: Access Review Agent logs and metrics (Preview)
+    href: access-review-agent-logs-metrics.md
 - name: Tutorials
   expanded: true
   items:
@@ -168,8 +176,6 @@
         href: /graph/tutorial-lifecycle-workflows-scheduled-leaver?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
       - name: Automate employee mover tasks - Microsoft Entra admin center
         href: tutorial-mover-custom-workflow-portal.md   
-      - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
-        href: ~/fundamentals/copilot-entra-lifecycle-workflow.md  
     - name: Reporting and analytics
       items:
       - name: Customized reports in Azure Data Explorer
@@ -311,6 +317,8 @@
       items:
       - name: Approve requests
         href: entitlement-management-request-approve.md
+      - name: Review access of an access package
+        href: entitlement-management-access-reviews-review-access.md  
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
     - name: Requestors
@@ -394,9 +402,7 @@
         - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md              
         - name: Check Workflow Insights
-          href: manage-workflow-insights.md
-        - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
-          href: ~/fundamentals/copilot-entra-lifecycle-workflow.md              
+          href: manage-workflow-insights.md             
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow

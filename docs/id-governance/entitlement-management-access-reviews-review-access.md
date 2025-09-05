@@ -12,16 +12,33 @@ ms.author: owinfrey
 ---
 # Review access of an access package in entitlement management
 
-Entitlement management simplifies how enterprises manage access to groups, applications, and SharePoint sites. This article describes how to perform access reviews for other users that are assigned to an access package as a designated reviewer.
+Entitlement management simplifies how enterprises manage access to groups, applications, and SharePoint sites. This article describes how designated reviewers can review user assignments to access packages which grant the assigned users access.
 
-## Prerequisites
+You can review access package assignments via the [My Access portal](https://myaccess.microsoft.com/), or via chat with the [Access Review Agent (Preview)](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) in Microsoft Teams. The Access Review Agent is currently in preview and does not yet support all types of access package assignment reviews, if the agent cannot yet help you with your assigned reviews it will guide you to the My Access portal.
 
-[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
+## Perform an access review using the Access Review Agent (Preview)
+The Access Review Agent assists you in completing your pending access reviews by guiding you in Microsoft Teams with natural language, insights, and recommendations. To use the Access Review Agent to perform an access review, do the following:
 
+### Go directly to the Access Review Agent
+1. Select the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) link to open the agent.
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent.
+1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
 
-## Open the access review
+### Use email to go to the Access Review Agent
 
-As at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator), use the following steps to find and open the access review:
+>[!IMPORTANT]
+> There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
+1. Look for an email from Microsoft asking you to review access.
+1. Select the **Review user access** link to open the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3). The **Start review** link will either open the Access Review Agent or the My Access portal based on your organizations policies. If the link opens the My Access portal the Access Review Agent has not been enabled for the specific review and must be completed via the My Access portal.
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent
+1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
+
+## Perform access review by using the My Access portal
+The [My Access portal](https://myaccess.microsoft.com/) is a user-friendly portal for manually granting, approving, and reviewing access needs.
+
+### Open the access review
+
+Use the following steps to find and open the access review:
 
 1. You could receive an email from Microsoft that asks you to review access. Locate the email to open the access review. Here's an example email to review access:
     
@@ -39,13 +56,7 @@ As at least an [Identity Governance Administrator](../identity/role-based-access
     
     ![Select the access review](./media/entitlement-management-access-reviews-review-access/review-access-select-access-review.png)
 
-## Perform the access review
-
-Once you open the access review, you see the names of users for which you need to review. There are two ways that you can approve or deny access:
-- You can manually approve or deny access for one or more users
-- You can accept the system recommendations
-
-### Manually approve or deny access for one or more users
+### Manually approve or deny access for one or more users using the My Access portal
 1. Review the list of users and determine which users need to continue to have access.
 
     ![List of users to review](./media/entitlement-management-access-reviews-review-access/review-access-list-of-users.png)
