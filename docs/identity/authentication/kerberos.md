@@ -70,7 +70,7 @@ In addition to the PRT, Entra ID can issue a partial Ticket Granting Ticket (TGT
 ### Entra Kerberos TGT and Active Directory Access Control
 Possessing an Entra Kerberos Ticket Granting Ticket (TGT) for a user's on-premises Active Directory (AD) domain does not automatically grant access to a full AD TGT. To complete the exchange, the user must be listed in the reveal credentials allow list on the Azure AD Read-Only Domain Controller (RODC) object and not in the deny list. As a best practice, the default configuration should be set to Deny, with explicit Allow permissions granted only to groups authorized to use Entra Kerberos.
 
-    :::image type="content" source="media/kerberos/kerberos-account.png" alt-text="Microsoft Entra Kerberos architecture diagram" lightbox="media/kerberos/kerberos-account.png":::
+:::image type="content" source="media/kerberos/kerberos-account.png" alt-text="Microsoft Entra Kerberos architecture diagram" lightbox="media/kerberos/kerberos-account.png":::
     
 During the exchange process, where a partial Microsoft Entra Kerberos TGT is converted into a full AD TGT these lists are evaluated to determine access eligibility. If a user is blocked or not explicitly allowed, the request is denied and results in an error.
 
