@@ -170,4 +170,4 @@ Remove-Item $CsrPath, $tempP7B, $tempPem -ErrorAction SilentlyContinue
 
 ## Related content
 - [Configure Transport Layer Security inspection](../how-to-transport-layer-security.md)
-- [Use PowerShell to generate and sign TLS certificates using OpenSSL on Windows](powershell-openssl-windows.md)
+- [Use PowerShell to generate and sign TLS certificates using OpenSSL on Windows](powershell-open-secure-sockets-layer-windows.md)

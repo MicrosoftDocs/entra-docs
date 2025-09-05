@@ -41,7 +41,7 @@ items:
   - name: Generate and sign TLS certificates using ADCS
     href: ./scripts/powershell-active-directory-certificate-service.md
   - name: Generate and sign TLS certificates using OpenSSL on Windows
-    href: ./scripts/powershell-openssl-windows.md
+    href: ./scripts/powershell-open-secure-sockets-layer-windows.md
 - name: Concepts
   expanded: true
   items: 
