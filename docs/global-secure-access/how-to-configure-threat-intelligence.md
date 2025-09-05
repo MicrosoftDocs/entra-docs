@@ -124,7 +124,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 1. To test allow-listing, create a rule in the Threat Intelligence policy to allow access to the site. Within 2 minutes, you should be able to access it. (You may need to clear your browser cache.)
 1. Evaluate the rest of the threat feed against your known threat indicators.
 
-![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-threat-intelligence/http-block-ti.png)
+![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-threat-intelligence/http-block-threat-intelligence.png)
 
 > [!CAUTION]
 > Testing with real malicious sites should be performed in a sandbox or test environment to protect your device and enterprise.
