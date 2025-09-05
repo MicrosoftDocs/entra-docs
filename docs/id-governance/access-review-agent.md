@@ -213,11 +213,11 @@ Use the **Give Microsoft feedback** button at the top of the agent window to pro
 
 ## FAQs
 
-####  Why is the agent in Microsoft Teams responding with 'It looks like the Access Review Agent either has not yet been enabled for your organization or has encountered unexpected issues. Please contact your IT department for assistance. In the meantime, you can complete your pending reviews in the My Access Portal'?
+**Why is the agent in Microsoft Teams responding with 'It looks like the Access Review Agent either has not yet been enabled for your organization or has encountered unexpected issues. Please contact your IT department for assistance. In the meantime, you can complete your pending reviews in the My Access Portal'?**
 
 If the agent responds with this message, it's likely the agent setup such as starting the agent, assigning reviewers Security Copilot access, and enabling the agent for existing reviews, isn't completed. 
 
-#### Why is the agent in Microsoft Teams responding with 'Things are a bit busy at the moment, and I couldn't process your request right now. Could you please try again in a little while? If you're in a hurry, the My Access Portal is always available.'?
+**Why is the agent in Microsoft Teams responding with 'Things are a bit busy at the moment, and I couldn't process your request right now. Could you please try again in a little while? If you're in a hurry, the My Access Portal is always available.'?**
 
 The agent responds with this message if your tenant is out of provisioned and overage Security Copilot capacity.
 
