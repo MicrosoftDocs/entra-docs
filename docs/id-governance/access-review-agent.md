@@ -56,6 +56,9 @@ The following tables show current Access Review Agent support based on review sc
 |Group owners     |  :white_check_mark:        |
 |Managers     |  :white_check_mark:        |
 |Self-reviews     |  ❌    |
+|**Languages**  |  |
+|English     |   :white_check_mark:       |
+|Other languages     |  ❌       |
 
 ## How it works
 The Access Review Agent proactively scans for active access reviews in your tenant that are flagged for processing by the agent. The agent then analyzes identified reviews by gathering extra insights, and generates a recommendation (approve / deny) and a justification summary for each decision. Once the agent analyzes the recommendations and corresponding justification summaries, it's able to guide reviewers, in natural language, through the review process in Microsoft Teams. Reviewers are empowered to complete their reviews through the natural language chat experience in Microsoft Teams. As the agent guides them through the review, they're able to review the agent's reasoning behind the recommendations, ask questions in the context of the review itself, and finally make their own informed decision.
