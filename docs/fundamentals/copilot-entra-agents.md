@@ -78,7 +78,8 @@ The [Conditional Access optimization agent](../identity/conditional-access/agent
 
 ### Prerequisites
 
-- You must have at least the [Microsoft Entra ID P1](licensing.md) license.
+- You must have at least the [Microsoft Entra ID P1](licensing.md) license for the Conditional Access optimization agent.
+- You must have at least the [Microsoft Entra ID Governance or Microsoft Entra Suite licenses](../id-governance/licensing-fundamentals.md) for the Access Review Agent.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
     - In order to purchase security compute units, you need to have an Azure subscription. [Create your free Azure account](https://azure.microsoft.com/free).
 - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) automatically have the required permissions to configure the Conditional Access optimization agent.
