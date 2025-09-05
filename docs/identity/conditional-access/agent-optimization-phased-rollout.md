@@ -38,7 +38,7 @@ There are three steps in the phased rollout process:
 
 1. [Agent creates a report-only policy with a phased rollout](#agent-creates-a-report-only-policy-with-a-phased-rollout)
 1. [Administrator reviews, edits, and accepts the rollout plan](#administrator-reviews-edits-and-accepts-the-rollout-plan)
-1. [Agent or Administrator executes the rollout plan](#agent-or-administrator-executes-the-rollout-plan)
+1. [Agent or Administrator executes the approved rollout plan](#agent-or-administrator-executes-the-approved-rollout-plan)
 
 You can review the groups included in each phase and the number of days between each phase and make changes before and during the phased rollout. At any time during the rollout, you can choose to have the plan executed by the agent or you can manually execute each phase of the plan.
 
@@ -72,7 +72,7 @@ Administrators need to review the details of the plan, including the groups incl
     - **Automatically roll out phases**: Agent automatically rolls out each phase, based on timing and impact signals.
     - **Manually roll out phases**: Administrator manually advances each phase of the rollout.
 
-    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-execution-mode-button.png" alt-text="Screenshot of the phases that can be edited with the edit groups button highlighted." lightbox="media/agent-optimization-phased-rollout/phased-rollout-execution-mode-button.png":::
+    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-execution-mode-button.png" alt-text="Screenshot of the option to change execution mode." lightbox="media/agent-optimization-phased-rollout/phased-rollout-execution-mode-button.png":::
 
 > [!TIP]
 > You can intervene at any time with automatic and manual rollout plans. You can also change execution modes at any time during rollout.
