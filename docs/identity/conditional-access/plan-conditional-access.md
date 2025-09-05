@@ -223,75 +223,21 @@ When you're ready, deploy your Conditional Access policies in phases.
 
 Refer to [Conditional Access policy templates](concept-conditional-access-policy-common.md) and [Common security policies for Microsoft 365 organizations](/microsoft-365/security/office-365-security/identity-access-policies) for a head start. These templates are a convenient way to deploy Microsoft recommendations. Make sure you exclude your emergency access accounts.
 
+| Conditional Access policy | License |
+| --- | --- |
+| [Block legacy authentication](/entra/fundamentals/configure-security#block-legacy-authentication) | P1 |
+| [Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods](/entra/fundamentals/configure-security#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | P1 |
+| [All user sign-in activity uses strong authentication methods](/entra/fundamentals/configure-security#all-user-sign-in-activity-uses-strong-authentication-methods) | P1 |
+| [Guest access is protected by strong authentication methods](/entra/fundamentals/configure-security#guest-access-is-protected-by-strong-authentication-methods) | P1 |
+| [Secure the MFA registration (My Security Info) page](/entra/fundamentals/configure-security#secure-the-mfa-registration-my-security-info-page) | P1 |
+| [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/configure-security#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | P1 |
+| [User sign-in activity uses token protection](/entra/fundamentals/configure-security#user-sign-in-activity-uses-token-protection) | |
+| [Restrict device code flow](/entra/fundamentals/configure-security#restrict-device-code-flow) | |
+| [Authentication transfer is blocked](/entra/fundamentals/configure-security#authentication-transfer-is-blocked) | |
+| [Restrict access to high risk users](/entra/fundamentals/configure-security#restrict-access-to-high-risk-users) | P2 |
+| [Restrict high risk sign-ins](/entra/fundamentals/configure-security#restrict-high-risk-sign-ins) | P2 |
+| [Conditional Access policies for Privileged Access Workstations are configured](/entra/fundamentals/configure-security#conditional-access-policies-for-privileged-access-workstations-are-configured) | |
 
-- <details><summary>Privileged users have short-lived sign-in sessions</summary>
-
-[!INCLUDE [21825](../../includes/secure-recommendations/21825.md)]
-
-</details>
-
-- <details>
-  <summary>Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
-  </summary>
-
-  [!INCLUDE [21783](../../includes/secure-recommendations/21783.md)]
-
-</details>
-
-- <details>
-  <summary>Block legacy authentication
-  </summary>
-
-  [!INCLUDE [21796](../../includes/secure-recommendations/21796.md)]
-
-</details>
-
-<details>
-  <summary>Secure the MFA registration (My Security Info) page
-  </summary>
-
-  [!INCLUDE [21806](../../includes/secure-recommendations/21806.md)]
-
-</details>
-
-<details>
-  <summary>User sign-in activity uses token protection
-  </summary>
-
-  [!INCLUDE [21786](../../includes/secure-recommendations/21786.md)]
-
-</details>
-
-<details>
-  <summary>Restrict device code flow
-  </summary>
-
-  [!INCLUDE [21808](../../includes/secure-recommendations/21808.md)]
-
-</details>
-
-<details>
-  <summary>Authentication transfer is blocked
-  </summary>
-
-  [!INCLUDE [21828](../../includes/secure-recommendations/21828.md)]
-
-</details>
-
-<!--- 
-Privileged users have short-lived sign-in sessions
-Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
-Block legacy authentication
-Secure the MFA registration (My Security Info) page
-User sign-in activity uses token protection
-Restrict device code flow
-Authentication transfer is blocked
-Require multifactor authentication for device join and device registration using user action
-Restrict access to high risk users
-Restrict high risk sign-ins
-Conditional Access policies for Privileged Access Workstations are configured
-Guest access is protected by strong authentication methods
---->
 
 #### Evaluate the policy impact
 
