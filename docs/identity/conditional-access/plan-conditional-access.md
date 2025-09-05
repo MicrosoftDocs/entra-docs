@@ -221,20 +221,20 @@ When you're ready, deploy your Conditional Access policies in phases.
 
 Start with a few core Conditional Access policies. Many of these policies are available as [Conditional Access policy templates](concept-conditional-access-policy-common.md). By default, each policy created from a template is in report-only mode. Test and monitor usage, to ensure the intended result, before turning on each policy.
 
-| Conditional Access policy | License |
+| Conditional Access policy | License requirement |
 | --- | --- |
-| [Block legacy authentication](/entra/fundamentals/configure-security#block-legacy-authentication) | P1 |
-| [Privileged Microsoft Entra built-in roles enforce phishing-resistant methods](/entra/fundamentals/configure-security#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | P1 |
-| [All user sign-in activity uses strong authentication methods](/entra/fundamentals/configure-security#all-user-sign-in-activity-uses-strong-authentication-methods) | P1 |
-| [Guest access is protected by strong authentication methods](/entra/fundamentals/configure-security#guest-access-is-protected-by-strong-authentication-methods) | P1 |
-| [Secure the MFA registration (My Security Info) page](/entra/fundamentals/configure-security#secure-the-mfa-registration-my-security-info-page) | P1 |
-| [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/configure-security#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | P1 |
-| [User sign-in activity uses token protection](/entra/fundamentals/configure-security#user-sign-in-activity-uses-token-protection) | P1 |
-| [Restrict device code flow](/entra/fundamentals/configure-security#restrict-device-code-flow) | P1 |
-| [Authentication transfer is blocked](/entra/fundamentals/configure-security#authentication-transfer-is-blocked) | P1 |
-| [Restrict access to high risk users](/entra/fundamentals/configure-security#restrict-access-to-high-risk-users) | P2 |
-| [Restrict high risk sign-ins](/entra/fundamentals/configure-security#restrict-high-risk-sign-ins) | P2 |
-| [Conditional Access policies for Privileged Access Workstations are configured](/entra/fundamentals/configure-security#conditional-access-policies-for-privileged-access-workstations-are-configured) | P1 |
+| [Block legacy authentication](/entra/fundamentals/configure-security#block-legacy-authentication) | Microsoft Entra ID P1 |
+| [Privileged Microsoft Entra built-in roles enforce phishing-resistant methods](/entra/fundamentals/configure-security#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Microsoft Entra ID P1 |
+| [All user sign-in activity uses strong authentication methods](/entra/fundamentals/configure-security#all-user-sign-in-activity-uses-strong-authentication-methods) | Microsoft Entra ID P1 |
+| [Guest access is protected by strong authentication methods](/entra/fundamentals/configure-security#guest-access-is-protected-by-strong-authentication-methods) | Microsoft Entra ID P1 |
+| [Secure the MFA registration (My Security Info) page](/entra/fundamentals/configure-security#secure-the-mfa-registration-my-security-info-page) | Microsoft Entra ID P1 |
+| [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/configure-security#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | Microsoft Entra ID P1 |
+| [User sign-in activity uses token protection](/entra/fundamentals/configure-security#user-sign-in-activity-uses-token-protection) | Microsoft Entra ID P1 |
+| [Restrict device code flow](/entra/fundamentals/configure-security#restrict-device-code-flow) | Microsoft Entra ID P1 |
+| [Authentication transfer is blocked](/entra/fundamentals/configure-security#authentication-transfer-is-blocked) | Microsoft Entra ID P1 |
+| [Restrict access to high risk users](/entra/fundamentals/configure-security#restrict-access-to-high-risk-users) | Microsoft Entra ID P2 |
+| [Restrict high risk sign-ins](/entra/fundamentals/configure-security#restrict-high-risk-sign-ins) | Microsoft Entra ID P2 |
+| [Conditional Access policies for Privileged Access Workstations are configured](/entra/fundamentals/configure-security#conditional-access-policies-for-privileged-access-workstations-are-configured) | Microsoft Entra ID P1 |
 
 #### Evaluate the policy impact
 
