@@ -39,14 +39,14 @@ The **Agent Summary** shows:
 - **Total access reviews**: The number of access reviews that are reviewed by the agent.
 - **Total decisions analyzed**: The number of decisions made by the agent.
 - **Total reviewers**: The number of reviewers who used the agent to complete access reviews.
-- **Security compute units used**: The number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent to analyze identified reviews by gathering additional insights and generates recommendations (approve / deny) as well as justification summaries for each decision. This number does **not** inlcude the SCUs consumed by the natural language conversation between reviewers and the agent. 
+- **Security compute units used**: The number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent to analyze identified reviews by gathering extra insights and generates recommendations (approve / deny) and justification summaries for each decision. This number does **not** include the SCUs consumed by the natural language conversation between reviewers and the agent. 
 
 
 The overview page also includes other general information about the agent such as its latest activity, and whether its currently active.
 
 ## Agent Activities
 
-From the overview page, you can select the **Activities** tab to view a full list of the activities of the Access Review Agent. A run will be generated for each active access review instance the agent analyzes, additionally a run will be generated if the agent has not identified any new active access review instances to analyze. Each access review instance will only be analyzed once and generates a signal run. 
+From the overview page, you can select the **Activities** tab to view a full list of the activities of the Access Review Agent. A run is generated for each active access review instance the agent analyzes. A run is also generated if the agent hasn't identified any new active access review instances to analyze. Each access review instance is analyzed once and generates a signal run. 
 
 :::image type="content" source="media/access-review-agent-logs-metrics/access-review-agents-activities.png" alt-text="Screenshot of a list of activities in the Access Review Agent.":::
 
@@ -59,7 +59,7 @@ For each activity, you can see:
 
 ### View Agent's Full Activity
 
-To see a detailed summary of the agent's activity, and the recommendations (approve / deny) as well as the justification summaries it generated, select **View activity** next to the specific activity.
+To see a detailed summary of the agent's activity, the recommendations (approve / deny), and the justification summaries it generated, select **View activity** next to the specific activity.
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details help you understand the logic behind the agent and you can view the recommendations and justification summaries on the last card in the activity map.
 
