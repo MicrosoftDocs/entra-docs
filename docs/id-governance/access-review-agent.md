@@ -14,7 +14,7 @@ ms.date: 09/04/2025
 # Access Review Agent
 Say goodbye to time-consuming research and the uncertainty of rushed decisions. The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity.
 
-:::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
+:::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat." lightbox="media/access-review-agent/access-review-agent-prompt.png":::
 
 ## Prerequisites
 - You must have [Microsoft Entra ID Governance or Microsoft Entra Suite licenses](licensing-fundamentals.md).
@@ -85,7 +85,7 @@ As an admin you're able to review the recommendations (approve / deny) and justi
    - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access)
 1. From the new home page, select **Go to agents** from the agent notification card.
    - You can also select **Agents** from the left navigation menu.
-   :::image type="content" source="media/access-review-agent/start-access-review-agent.png" alt-text="Screenshot of starting the Access Review Agent.":::
+   :::image type="content" source="media/access-review-agent/start-access-review-agent.png" alt-text="Screenshot of starting the Access Review Agent." lightbox="media/access-review-agent/start-access-review-agent.png":::
 1. Select **View details** on the Access Review Agent tile.
     
 1. Select **Start agent** to begin your first run. 
@@ -149,7 +149,7 @@ With the Access Review Agent started, reviewers assigned proper permissions, and
     :::image type="content" source="media/access-review-agent/access-review-agent-teams.png" alt-text="Screenshot of the Access Review Agent application in Microsoft Teams.":::
 1. Once the agent is added, select **Open**.
 1. When open, you can select the available prompt to start the chat with the agent
-     :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
+     :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat." lightbox="media/access-review-agent/access-review-agent-prompt.png":::
 
 ## Settings
 
