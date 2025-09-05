@@ -16,8 +16,6 @@
     href: agent-optimization-logs-metrics.md
   - name: Phased rollout
     href: agent-optimization-phased-rollout.md
-  - name: Optimization agent FAQ
-    href: agent-optimization-faq.yml
 - name: Tutorials
   items:
   - name: Require multifactor authentication
