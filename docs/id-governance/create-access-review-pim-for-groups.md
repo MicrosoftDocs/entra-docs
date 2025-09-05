@@ -27,7 +27,7 @@ This article describes how to create one or more access reviews for PIM for Grou
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Access Reviews** >.
+1. Browse to **ID Governance** > **Access Reviews**.
 
 1. Select **New access review** to create a new access review.
 
