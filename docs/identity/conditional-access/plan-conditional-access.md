@@ -106,7 +106,7 @@ Do you want to grant access to resources by requiring one or more of the followi
 - Password change
 - Terms of Use accepted
 
-**Block access** is a powerful control. Apply it only when you understand the impact. Policies with block statements can have unintended side effects. Test and validate before you enable the control at scale. Use [policy impact or report-only mode](../identity/conditional-access/concept-conditional-access-report-only.md#reviewing-results) to understand potential impact when you make changes.
+**Block access** is a powerful control. Apply it only when you understand the impact. Policies with block statements can have unintended side effects. Test and validate before you enable the control at scale. Use [policy impact or report-only mode](concept-conditional-access-report-only.md#reviewing-results) to understand potential impact when you make changes.
 
 #### Session controls
 
@@ -240,7 +240,7 @@ Start with a few core Conditional Access policies. Many of these policies are av
 
 Use available tools to check the effect of your policies before and after you make changes. A simulated run gives you a good idea of how a Conditional Access policy affects sign-in, but it doesn't replace an actual test run in a properly configured development environment.
 
-Admins can confirm policy settings using [policy impact or report-only mode](../identity/conditional-access/concept-conditional-access-report-only.md#reviewing-results).
+Admins can confirm policy settings using [policy impact or report-only mode](concept-conditional-access-report-only.md#reviewing-results).
 
 ### Test your policies
 
