@@ -219,7 +219,7 @@ When you're ready, deploy your Conditional Access policies in phases.
 
 ### Build your Conditional Access policies
 
-Start with a few core Conditional Access policies. Many of these policies are available as [Conditional Access policy templates](concept-conditional-access-policy-common.md). By default, each policy created from a template is in report-only mode. Test and monitor usage, to ensure the intended result, before turning on each policy.
+Start with a few core Conditional Access policies the the ones that follow. Many policies are available as [Conditional Access policy templates](concept-conditional-access-policy-common.md). By default, each policy created from a template is in report-only mode. Test and monitor usage, to ensure the intended result, before turning on each policy.
 
 | Conditional Access policy | License requirement |
 | --- | --- |
