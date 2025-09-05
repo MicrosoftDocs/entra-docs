@@ -63,7 +63,7 @@ To see a detailed summary of the agent's activity, the recommendations (approve 
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details help you understand the logic behind the agent and you can view the recommendations and justification summaries on the last card in the activity map.
 
-:::image type="content" source="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png" alt-text="Screenshot of Access Review Agent justification in activity card." lightbox="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png":::
+:::image type="content" source="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png" alt-text="Screenshot of access agent review card justification." lightbox="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png":::
 
 
 ## Related content
