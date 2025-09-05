@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 07/19/2025
+ms.date: 09/04/2025
 
 #CustomerIntent: As a governance administrator, I want to view the logs and metrics for access reviews completed with help from the access review agent.
 ---
