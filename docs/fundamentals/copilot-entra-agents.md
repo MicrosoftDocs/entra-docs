@@ -88,7 +88,7 @@ The [Conditional Access optimization agent](../identity/conditional-access/agent
 ### Setup process
 
 1. Enable Security Copilot using the [Security Copilot setup guide](/copilot/security/get-started-security-copilot).
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or with both the roles of [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 1. Browse to **Agents** and select **View details** for the agent you want to configure.
 
 ## Agents in the Microsoft ecosystem
