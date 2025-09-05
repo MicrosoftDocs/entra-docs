@@ -1,20 +1,17 @@
 ---
 title: Implement password hash synchronization with Microsoft Entra Connect Sync
 description: Provides information about how password hash synchronization works and how to set up.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
 ms.service: entra-id
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-search.appverid:
+ms.author: jomondi
+search.appverid:  
 - MET150
-
-
 ---
 # Implement password hash synchronization with Microsoft Entra Connect Sync
 This article provides information that you need to synchronize your user passwords from an on-premises Active Directory instance to a cloud-based Microsoft Entra instance.
@@ -26,15 +23,15 @@ To synchronize your password, Microsoft Entra Connect Sync extracts your passwor
 
 The actual data flow of the password hash synchronization process is similar to the synchronization of user data. However, passwords are synchronized more frequently than the standard directory synchronization window for other attributes. The password hash synchronization process runs every 2 minutes. You can't modify the frequency of this process. When you synchronize a password, it overwrites the existing cloud password.
 
-The first time you enable the password hash synchronization feature, it performs an initial synchronization of the passwords of all in-scope users. [Staged Rollout](how-to-connect-staged-rollout.md) allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. You can't explicitly define a subset of user passwords that you want to synchronize. However, if there are multiple connectors, it's possible to disable password hash sync for some connectors but not others using the [Set-ADSyncAADPasswordSyncConfiguration](/entra/identity/domain-services/tutorial-configure-password-hash-sync) cmdlet.
+The first time you enable the password hash synchronization feature, it performs an initial synchronization of the passwords of all in-scope users. [Staged Rollout](how-to-connect-staged-rollout.md) lets you test cloud authentication features—such as Microsoft Entra multifactor authentication, Conditional Access, Identity Protection, and Identity Governance—with selected user groups before switching your domains to cloud authentication. You can't explicitly define a subset of user passwords that you want to synchronize. However, if there are multiple connectors, it's possible to disable password hash sync for some connectors but not others using the [Set-ADSyncAADPasswordSyncConfiguration](/entra/identity/domain-services/tutorial-configure-password-hash-sync) cmdlet.
 
 When you change an on-premises password, the updated password is synchronized, most often in a matter of minutes.
 The password hash synchronization feature automatically retries failed synchronization attempts. If an error occurs during an attempt to synchronize a password, an error is logged in your event viewer.
 
 The synchronization of a password has no impact on the user  who is currently signed in.
-Your current cloud service session isn't immediately affected by a synchronized password change that occurs, while you're signed in, to a cloud service. However, when the cloud service requires you to authenticate again, you need to provide your new password.
+If a password change is synchronized while you're signed in to a cloud service, your current session remains unaffected.
 
-A user must enter their corporate credentials a second time to authenticate to Microsoft Entra ID, regardless of whether they're signed in to their corporate network. This pattern can be minimized, however, if the user selects the Keep me signed in (KMSI) check box at sign-in. This selection sets a session cookie that bypasses authentication for 180 days. KMSI behavior can be enabled or disabled by the Microsoft Entra administrator. In addition, you can reduce password prompts by configuring [Microsoft Entra join](~/identity/devices/concept-directory-join.md) or [Microsoft Entra hybrid join](~/identity/devices/concept-hybrid-join.md), which automatically signs users in when they are on their corporate devices connected to your corporate network.
+A user must enter their corporate credentials a second time to authenticate to Microsoft Entra ID, regardless of whether they're signed in to their corporate network. This pattern can be minimized, however, if the user selects the Keep me signed in (KMSI) check box at sign-in. This selection sets a session cookie that bypasses authentication for 180 days. KMSI behavior can be managed by the Microsoft Entra administrator. In addition, you can reduce password prompts by configuring [Microsoft Entra join](~/identity/devices/concept-directory-join.md) or [Microsoft Entra hybrid join](~/identity/devices/concept-hybrid-join.md), which automatically signs users in when they are on their corporate devices connected to your corporate network.
 
 ### More advantages
 
@@ -50,10 +47,10 @@ The following section describes, in-depth, how password hash synchronization wor
 
 [![Detailed password flow](./media/how-to-connect-password-hash-synchronization/arch3d.png)](./media/how-to-connect-password-hash-synchronization/arch3d.png#lightbox)
 
-1. Every two minutes, the password hash synchronization agent on the AD Connect server requests stored password hashes (the unicodePwd attribute) from a DC. This request is via the standard [MS-DRSR](/openspecs/windows_protocols/ms-drsr/f977faaa-673e-4f66-b9bf-48c640241d47) replication protocol used to synchronize data between DCs. The AD DS Connector account must have Replicate Directory Changes and Replicate Directory Changes All AD permissions (granted by default on installation) to obtain the password hashes.
+1. Every two minutes, the password hash synchronization agent on the AD Connect server requests stored password hashes (the unicodePwd attribute) from a DC. This request is via the standard [MS-DRSR](/openspecs/windows_protocols/ms-drsr/f977faaa-673e-4f66-b9bf-48c640241d47) replication protocol used to synchronize data between DCs. The Active Directory Domain Services (ADDS) Connector account must have Replicate Directory Changes and Replicate Directory Changes All AD permissions (granted by default on installation) to obtain the password hashes.
 
-2. Before sending, the DC encrypts the MD4 password hash by using a key that is a [MD5](https://www.rfc-editor.org/rfc/rfc1321.txt) hash of the RPC session key and a salt. It then sends the result to the password hash synchronization agent over RPC. The DC also passes the salt to the synchronization agent by using the DC replication protocol, so the agent is able to decrypt the envelope.
-3. After the password hash synchronization agent has the encrypted envelope, it uses [MD5CryptoServiceProvider](/dotnet/api/system.security.cryptography.md5cryptoserviceprovider) and the salt to generate a key to decrypt the received data back to its original MD4 format. The password hash synchronization agent never has access to the clear text password. The password hash synchronization agent’s use of MD5 is strictly for replication protocol compatibility with the DC, and it's only used on-premises between the DC and the password hash synchronization agent.
+2. Before sending, the DC encrypts the MD4 password hash by using a key that is a [MD5](https://www.rfc-editor.org/rfc/rfc1321.txt) hash of the Remote Procedure Call (RPC) session key and a salt. It then sends the result to the password hash synchronization agent over RPC. The DC also passes the salt to the synchronization agent by using the DC replication protocol, so the agent is able to decrypt the envelope.
+3. After the password hash synchronization agent has the encrypted envelope, it uses [MD5CryptoServiceProvider](/dotnet/api/system.security.cryptography.md5cryptoserviceprovider) and the salt to generate a key to decrypt the received data back to its original MD4 format. The password hash synchronization agent never has access to the clear text password. The password hash synchronization agent uses MD5 solely for compatibility with the domain controller’s replication protocol. This usage is limited to on-premises communication between the domain controller and the agent.
 4. The password hash synchronization agent expands the 16-byte binary password hash to 64 bytes by first converting the hash to a 32-byte hexadecimal string, then converting this string back into binary with UTF-16 encoding.
 5. The password hash synchronization agent adds a per user salt, consisting of a 10-byte length salt, to the 64-byte binary to further protect the original hash.
 6. The password hash synchronization agent then combines the MD4 hash plus the per user salt, and inputs it into the [PBKDF2](https://www.ietf.org/rfc/rfc2898.txt) function. 1,000 iterations of the [HMAC-SHA256](/dotnet/api/system.security.cryptography.hmacsha256) keyed hashing algorithm are used. For more details, refer to the [Microsoft Entra Whitepaper](https://aka.ms/aaddatawhitepaper).
@@ -82,65 +79,83 @@ There are two types of password policies that are affected by enabling password 
 
 #### Password complexity policy
 
-When password hash synchronization is enabled, the password complexity policies in your on-premises Active Directory instance override complexity policies in the cloud for synchronized users. You can use all of the valid passwords from your on-premises Active Directory instance to access Microsoft Entra services.
+When password hash synchronization is enabled, the password complexity policies in your on-premises Active Directory instance override complexity policies in the cloud for synchronized users. You can use any valid password from your on-premises Active Directory instance to access Microsoft Entra services.
 
 > [!NOTE]
 > Passwords for users that are created directly in the cloud are still subject to password policies as defined in the cloud.
 
 #### Password expiration policy
 
-If a user is in the scope of password hash synchronization, by default the cloud account password is set to *Never Expire*.
+If a user is in the scope of password hash synchronization, by default the cloud password is set to *Never Expire*.
 
 You can continue to sign in to your cloud services by using a synchronized password that is expired in your on-premises environment. Your cloud password is updated the next time you change the password in the on-premises environment.
 
 ##### CloudPasswordPolicyForPasswordSyncedUsersEnabled
 
-If there are synchronized users that only interact with Microsoft Entra integrated services and must also comply with a password expiration policy, you can force them to comply with your Microsoft Entra password expiration policy by enabling the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature (in the deprecated MSOnline PowerShell module it was called *EnforceCloudPasswordPolicyForPasswordSyncedUsers*).
+The Cloud Password Policy for Password-Synced Users feature ensures that Microsoft Entra ID enforces its native password policies (such as expiration and lockout), for users whose passwords are synchronized from on-premises Active Directory. This feature enables you to align the same on-premises Active Directory password policy with the Microsoft Entra password policy, for synchronized users.
 
-When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is the default setting), Microsoft Entra Connect updates the PasswordPolicies attribute of synchronized users to "DisablePasswordExpiration". This update is done every time a user's password is synchronized and instructs Microsoft Entra ID to ignore the cloud password expiration policy for that user. You can check the value of the attribute using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module with the following command:
+If there are synchronized users that only interact with Microsoft Entra integrated services and must also comply with a password expiration policy, you can force them to comply with your Microsoft Entra password expiration policy by enabling the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature.
 
-`(Get-MgUser -UserId <User Object ID> -Property PasswordPolicies).PasswordPolicies`
+When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is the default setting), Microsoft Entra Connect updates the PasswordPolicies attribute of synchronized users to "DisablePasswordExpiration". This update is done every time a user's password hash is synchronized to the cloud and instructs Microsoft Entra ID to ignore the cloud password expiration policy for that user. 
 
-To enable the CloudPasswordPolicyForPasswordSyncedUsersEnabled feature, run the following commands using the Graph PowerShell module:
+You can check the value of the PasswordPolicies attribute using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module with the following command:
+
 
 ```powershell
+Connect-MgGraph -Scopes "User.ReadWrite.All"
+
+(Get-MgUser -UserId "<UPN or Object ID>" -Property PasswordPolicies).PasswordPolicies
+
+```
+
+To enable the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature, run the following commands using the Graph PowerShell module:
+
+```powershell
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
 $OnPremSync = Get-MgDirectoryOnPremiseSynchronization
 $OnPremSync.Features.CloudPasswordPolicyForPasswordSyncedUsersEnabled = $true
 
 Update-MgDirectoryOnPremiseSynchronization `
   -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
-  -Features $OnPremSync.Features 
+  -Features $OnPremSync.Features
+
 ```
 
-> [!NOTE]
-> You need to install the MSGraph PowerShell module for the preceding script to work. If you get any errors related to insufficient privileges, make sure that you have consented the API scope correctly by using the following command when connecting `Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"`
-
-
-Once enabled, Microsoft Entra ID doesn't go to each synchronized user to remove the `DisablePasswordExpiration` value from the PasswordPolicies attribute. Instead, the `DisablePasswordExpiration` value is removed from PasswordPolicies during the next password hash sync for each user, upon their next password change in on-premises AD.
-
-After the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature is enabled, new users are provisioned without a PasswordPolicies value.
+Once *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is enabled, Microsoft Entra ID doesn't clear `DisablePasswordExpiration` from PasswordPolicies attribute for each synchronized user. The `DisablePasswordExpiration` value is only removed during the next password hash sync for each user, upon their next password change in on-premises AD. Additionally, new users that are synchronized to the cloud will not have PasswordPolicies set.
 
 >[!TIP]
 >It's recommended to enable *CloudPasswordPolicyForPasswordSyncedUsersEnabled* prior to enabling password hash sync, so that the initial sync of password hashes doesn't add the `DisablePasswordExpiration` value to the PasswordPolicies attribute for the users.
 
-The default Microsoft Entra password policy doesn't require users to change their passwords. If the policy in your on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
+You can manually clear the PasswordPolicy for a user with the following command using the Graph PowerShell module:
 
-Microsoft Entra ID supports a separate password expiration policy per registered domain.
-
-Caveat: If there are synchronized accounts that need to have nonexpiring passwords in Microsoft Entra ID, you must explicitly add the `DisablePasswordExpiration` value to the PasswordPolicies attribute of the user object in Microsoft Entra ID. You can add this value by running the following command:
 
 ```powershell
-Update-MgUser -UserID <User Object ID> -PasswordPolicies "DisablePasswordExpiration"`
+Connect-MgGraph -Scopes "User.ReadWrite.All"
+
+Update-MgUser -UserId "<UPN or Object ID>" -PasswordPolicies None
+
 ```
 
 > [!NOTE]
-> For hybrid users that have a PasswordPolicies value set to `DisablePasswordExpiration`, this value switches to `None` after a password change is executed on-premises.
+> By design, the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) and [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) PowerShell commands don't work on federated domains.
 
-> [!NOTE]
-> The [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) PowerShell command doesn't work on federated domains.
+If the policy in your on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the following PowerShell command. Microsoft Entra supports a separate password expiration policy per registered domain.
 
-> [!NOTE]
-> The [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) PowerShell command doesn't work on federated domains.
+
+```powershell
+Update-MgDomain -DomainId "<domain name>" -PasswordValidityPeriodInDays <Int32> [-PasswordNotificationWindowInDays <Int32>]
+```
+
+**Caveat:** If there are synchronized accounts that need to have non-expiring passwords in Microsoft Entra ID, for example a service account not used for interactive sign-in, you must explicitly add the `DisablePasswordExpiration` value to the PasswordPolicies attribute of the user in Microsoft Entra ID. You can add this value by running the following command:
+
+```powershell
+Update-MgUser -UserID "<UPN or Object ID>" -PasswordPolicies "DisablePasswordExpiration"
+```
+
+> [!CAUTION]
+> When you use Microsoft Entra Domain Services, a full password hash synchronization triggered by Microsoft Entra Connect enforces a password hash update in Microsoft Entra directory. This ensures that all password hashes are replicated end-to-end: from the on-premises Active Directory, through Microsoft Entra ID, and into the domain controllers hosted in Microsoft Entra Domain Services.
+> Consequently, when CloudPasswordPolicyForPasswordSyncedUsersEnabled feature is enabled and a full password hash synchronization triggered, Microsoft Entra clears the PasswordPolicies attribute for all synchronized users since this is the default behavior when the password hash is updated in the cloud. In such cases you have to manually set the `DisablePasswordExpiration` password policy again for any accounts that need to have non-expiring passwords in Microsoft Entra ID.
 
 #### Synchronizing temporary passwords and "Force Password Change on Next Logon"
 
@@ -165,7 +180,7 @@ Update-MgDirectoryOnPremiseSynchronization `
 > If a user was created in Active Directory with "User must change password at next logon" before the feature was enabled, the user will receive an error while signing in. To remediate this issue, un-check and re-check the field "User must change password at next logon" in Active Directory Users and Computers. After synchronizing the user object changes, the user will receive the expected prompt in Microsoft Entra ID to update their password. 
 
 > [!CAUTION]
-> You should only use this feature when SSPR and Password Writeback are enabled on the tenant.  This is so that if a user changes their password via SSPR, it will be synchronized to Active Directory.
+> You should only use this feature when Self-Service Password Reset and Password Writeback are enabled on the tenant. This is so that if a user changes their password via SSPR, it will be synchronized to Active Directory.
 
 #### Account expiration
 
@@ -185,7 +200,7 @@ With password hash synchronization enabled, this AD password hash is synced with
 > Previously, when SCRIL was re-enabled and a new randomized AD password was generated, the user was still able to use their old password to authenticate to Microsoft Entra ID. Now, Connect Sync has been updated so that new randomized AD password is synced to Microsoft Entra ID and the old password cannot be used once smart card login is enabled. 
 >
 > We recommend that admins person any of the below actions if they have users with a SCRIL bit in their AD Domain
-> 1.	Perform a full PHS sync as per [this guide](tshoot-connect-password-hash-synchronization.md) to ensure the passwords of all SCRIL users are scrambled
+> 1.	Perform a full password hash sync as per [this guide](tshoot-connect-password-hash-synchronization.md) to ensure the passwords of all SCRIL users are scrambled
 > 2.	Scramble the password of an individual user by toggling SCRIL settings off then back on or directly changing the user's password
 > 3.	Periodically rotate the passwords for SCRIL users. Eventually all such users will have their passwords scrambled
 
@@ -207,9 +222,9 @@ The synchronization of a password has no impact on the Azure user who is signed 
 If you use Microsoft Entra Domain Services to provide legacy authentication for applications and services that need to use Kerberos, LDAP, or NTLM, some extra processes are part of the password hash synchronization flow. Microsoft Entra Connect uses the following process to synchronize password hashes to Microsoft Entra ID for use in Microsoft Entra Domain Services:
 
 > [!IMPORTANT]
-> Microsoft Entra Connect should only be installed and configured for synchronization with on-premises AD DS environments. It's not supported to install Microsoft Entra Connect in a Microsoft Entra Domain Services managed domain to synchronize objects back to Microsoft Entra ID.
+> Microsoft Entra Connect should only be installed and configured for synchronization with on-premises ADDS environments. It's not supported to install Microsoft Entra Connect in a Microsoft Entra Domain Services managed domain to synchronize objects back to Microsoft Entra ID.
 >
-> Microsoft Entra Connect only synchronizes legacy password hashes when you enable Microsoft Entra Domain Services for your Microsoft Entra tenant. The following steps aren't used if you only use Microsoft Entra Connect to synchronize an on-premises AD DS environment with Microsoft Entra ID.
+> Microsoft Entra Connect only synchronizes legacy password hashes when you enable Microsoft Entra Domain Services for your Microsoft Entra tenant. The following steps aren't used if you only use Microsoft Entra Connect to synchronize an on-premises ADDS environment with Microsoft Entra ID.
 >
 > If your legacy applications don't use NTLM authentication or LDAP simple binds, we recommend that you disable NTLM password hash synchronization for Microsoft Entra Domain Services. For more information, see [Disable weak cipher suites and NTLM credential hash synchronization](/entra/identity/domain-services/secure-your-domain).
 

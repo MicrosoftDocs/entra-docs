@@ -4,12 +4,12 @@ description: Learn how to build a mobile app that calls web APIs (app's registra
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: 
 ms.date: 11/14/2024
-ms.reviewer: brianmel, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform for developers.
 ---
 
@@ -38,7 +38,7 @@ If you have a Universal Windows Platform (UWP) app, you can use integrated Windo
 When you build a mobile app that uses interactive authentication, the most critical registration step is the redirect URI. This experience enables your app to get single sign-on (SSO) through Microsoft Authenticator (and Intune Company Portal on Android). It also supports device management policies.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application.
 1. For **Supported account types**, select **Accounts in this organizational directory only**.

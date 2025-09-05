@@ -1,20 +1,21 @@
 ---
 title: Developer guidance for Microsoft Entra Conditional Access
 description: Developer guidance and scenarios for Microsoft Entra Conditional Access and Microsoft identity platform.
-author: rwike77
-keywords:
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
-ms.custom: 
+ms.author: owenrichards
 ms.date: 05/18/2020
-ms.reviewer: jmprieur, saeeda
+ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: concept-article
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer building apps for Microsoft Entra ID, I want to understand how my app is impacted by Conditional Access challenges, so that I can secure my app and protect the services it accesses.
 ---
 
 # Developer guidance for Microsoft Entra Conditional Access
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 The Conditional Access feature in Microsoft Entra ID offers one of several ways that you can use to secure your app and protect a service. Conditional Access enables developers and enterprise customers to protect services in a multitude of ways including:
 
@@ -86,7 +87,7 @@ Developers can take this challenge and append it onto a new request to Microsoft
 
 ### Prerequisites
 
-Microsoft Entra Conditional Access is a feature included in [Microsoft Entra ID P1 or P2](~/fundamentals/whatis.md). Customers with [Microsoft 365 Business licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
+Microsoft Entra Conditional Access is a feature included in [Microsoft Entra ID P1 or P2](~/fundamentals/licensing.md). Customers with [Microsoft 365 Business licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
 
 ### Considerations for specific scenarios
 
@@ -109,12 +110,12 @@ The initial token request for Web API 1 does not prompt the end user for multifa
 Microsoft Entra ID returns an HTTP response with some interesting data:
 
 > [!NOTE]
-> In this instance it's a multi-factor authentication error description, but there's a wide range of `interaction_required` possible pertaining to Conditional Access.
+> In this instance it's a multifactor authentication error description, but there's a wide range of `interaction_required` possible pertaining to Conditional Access.
 
 ```
 HTTP 400; Bad Request
 error=interaction_required
-error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multi-factor authentication to access '<Web API 2 App/Client ID>'.
+error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to access '<Web API 2 App/Client ID>'.
 claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 ```
 
@@ -135,7 +136,7 @@ Alternatively, if the app initially requests a token for web service A, the end 
 ```
 HTTP 400; Bad Request
 error=interaction_required
-error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multi-factor authentication to access '<Web API App/Client ID>'.
+error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to access '<Web API App/Client ID>'.
 claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 ```
 
@@ -163,7 +164,7 @@ Microsoft Entra ID sends back the following HTTP response:
 ```
 HTTP 400; Bad Request
 error=interaction_required
-error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multi-factor authentication to access '<Web API App/Client ID>'.
+error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to access '<Web API App/Client ID>'.
 ```
 
 Our app needs to catch the `error=interaction_required`. The application can then use either `acquireTokenPopup()` or `acquireTokenRedirect()` on the same resource. The user is forced to do a multifactor authentication. After the user completes the multifactor authentication, the app is issued a fresh access token for the requested resource.

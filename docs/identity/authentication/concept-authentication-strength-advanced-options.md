@@ -1,24 +1,22 @@
 ---
 title: Overview of custom authentication strengths and advanced options for FIDO2 security keys and certificate-based authentication in Microsoft Entra ID
 description: Learn how admins can create custom authentication strengths with advanced options for FIDO2 security keys and certificate-based authentication.
-
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: inbarckms
-manager: femila
+manager: dougeby
 ms.reviewer: inbarc
+ms.custom: sfi-image-nochange
 ---
 # Custom Conditional Access authentication strengths
 
 Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
@@ -45,7 +43,7 @@ Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **S
 
 ## Certificate-based authentication advanced options
 
-In the [Authentication methods policy](how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
+In the [Authentication methods policy](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
 
 By using authentication strength advanced options, you can require a specific certificate issuer or policy OID to further restrict sign-ins to an application. 
 
@@ -56,7 +54,7 @@ The next sections show how to configure advanced options for CBA by using the Mi
 ### Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.

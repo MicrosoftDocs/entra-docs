@@ -2,12 +2,12 @@
 title: Create an access review of PIM for Groups (preview)
 description: Learn how to create an access review of PIM for Groups in Microsoft Entra ID.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 03/10/2025
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: jgangadhar
 ---
@@ -27,7 +27,7 @@ This article describes how to create one or more access reviews for PIM for Grou
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews** > **Review History**.
+1. Browse to **ID Governance** > **Access Reviews** > **Review History**.
 
 1. Select **New access review** to create a new access review.
 

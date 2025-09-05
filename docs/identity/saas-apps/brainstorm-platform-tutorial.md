@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra SSO integration with BrainStorm Platform
+title: Configure BrainStorm Platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and BrainStorm Platform.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BrainStorm Platform so that I can control who has access to BrainStorm Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with BrainStorm Platform
+# Configure BrainStorm Platform for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate BrainStorm Platform with Microsoft Entra ID. The BrainStorm Platform empowers end users to personalize their experience, empowering them to embrace long-term behavioral change. When you integrate BrainStorm Platform with Microsoft Entra ID, you can:
 
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **BrainStorm Platform** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **BrainStorm Platform** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -91,7 +91,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	| Name |  Source Attribute|
 	| ---------------|  --------- |
-    | title | user.jobtitle
+    | title | user.jobtitle |
 	| department | user.department |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.

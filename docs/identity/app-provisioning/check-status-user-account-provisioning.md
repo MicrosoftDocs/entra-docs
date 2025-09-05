@@ -1,15 +1,15 @@
 ---
 title: Report automatic user account provisioning from Microsoft Entra ID to Software as a Service (SaaS) applications
 description: 'Learn how to check the status of automatic user account provisioning jobs, and how to troubleshoot the provisioning of individual users.'
-
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Tutorial: Reporting on automatic user account provisioning
@@ -41,10 +41,10 @@ This article uses the following terms:
 
 To get provisioning report information for a given application:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **Provisioning logs** in the **Activity** section. You can also browse to the Enterprise Application for which provisioning is configured. For example, if you're provisioning users to LinkedIn Elevate, the navigation path to the application details is:
 
-**Identity** > **Applications** > **Enterprise applications** > **All applications** > **LinkedIn Elevate**
+**Entra ID** > **Enterprise apps** > **All applications** > **LinkedIn Elevate**
 
 From the all applications area, you access both the provisioning progress bar and provisioning logs.
 
@@ -72,7 +72,7 @@ All activities performed by the provisioning service are recorded in the Microso
 
 The provisioning summary report and Provisioning logs play a key role helping admins troubleshoot various user account provisioning issues.
 
-For scenario-based guidance on how to troubleshoot automatic user provisioning, see [Problems configuring and provisioning users to an application](~/identity/app-provisioning/application-provisioning-config-problem.md).
+For scenario-based guidance on how to troubleshoot automatic user provisioning, see [Problems configuring and provisioning users to an application](troubleshoot.md).
 
 ## Related content
 

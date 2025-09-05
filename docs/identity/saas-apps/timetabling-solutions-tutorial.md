@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with Timetabling Solutions
+title: Configure Timetabling Solutions for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Timetabling Solutions.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 09/02/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Timetabling Solutions so that I can control who has access to Timetabling Solutions, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Timetabling Solutions
+# Configure Timetabling Solutions for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Timetabling Solutions with Microsoft Entra ID. When you integrate Timetabling Solutions with Microsoft Entra ID, you can:
 
@@ -46,7 +44,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Timetabling Solutions into Microsoft Entra ID, you need to add Timetabling Solutions from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Timetabling Solutions** in the search box.
 1. Select **Timetabling Solutions** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -72,7 +70,7 @@ To configure and test Microsoft Entra SSO with Timetabling Solutions, perform th
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Timetabling Solutions** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Timetabling Solutions** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -107,9 +105,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Timetabling Solutions SSO
 
-In this section, you populate the relevant SSO values in the Timetabling Solutions Administration Console.
+In this section, you populate the relevant SSO values in the Timetabling Solutions Management Portal.
 
-1. In the [Administration Console](https://admin.timetabling.education/), select **5 Settings**, and then select the **SAML SSO** tab.
+1. In the [Management Portal](https://admin.timetabling.education/), select **5 Settings**, and then select the **SAML SSO** tab.
 1. Perform the following steps in the **SAML SSO** section:
  
     ![Screenshot for SSO settings.](./media/timetabling-solutions-tutorial/timetabling-configuration.png)
@@ -126,12 +124,11 @@ In this section, you populate the relevant SSO values in the Timetabling Solutio
     
     f. **Save** the settings. 
 
-
 ## Create Timetabling Solutions test user
 
-In this section, you create a user called Britta Simon in the Timetabling Solutions Administration Console. 
+In this section, you create a user called Britta Simon in the Timetabling Solutions Management Portal. 
 
-1. In the [Administration Console](https://admin.timetabling.education/), select **1 Manage Users**, and select **Add**.
+1. In the [Management Portal](https://admin.timetabling.education/), select **1 Manage Users**, and select **Add**.
 2. Enter the mandatory fields **First Name**, **Family Name** and **Email Address**. Add other appropriate values in the non-mandatory fields.
 3. Ensure **Online** is active in Status.
 4. Select **Save and Next**.

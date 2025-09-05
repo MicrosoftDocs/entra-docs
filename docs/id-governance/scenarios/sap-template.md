@@ -1,15 +1,16 @@
 ---
 title: 'Author SAP ECC 7 Template for ECMA2Host'
-description: This article describes how to create a template for the Web Service ECMA connector to manage SAP ECC users. 
+description: This article describes how to create a template for the Web Service ECMA connector to manage SAP ECC users.
 ms.service: entra-id-governance
-ms.subservice:
+ms.subservice: 
 documentationcenter: ''
 author: billmath
 manager: femila
 editor: ''
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
+ms.custom: sfi-image-nochange
 ---
 
 # Authoring the SAP ECC 7.51 Web Service connector template for the ECMA2Host 

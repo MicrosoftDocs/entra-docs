@@ -3,7 +3,7 @@ title: Grant tenant-wide admin consent to an application
 description: Learn how to grant tenant-wide consent to an application so that end-users aren't prompted for consent when signing in to an application.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
@@ -51,7 +51,7 @@ You can grant tenant-wide admin consent through the **Enterprise applications** 
 To grant tenant-wide admin consent to an app listed in **Enterprise applications** pane:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Select **Permissions** under **Security**.
    :::image type="content" source="media/grant-tenant-wide-admin-consent/grant-tenant-wide-admin-consent.png" alt-text="Screenshot shows how to grant tenant-wide admin consent.":::
@@ -63,7 +63,7 @@ You can grant tenant-wide admin consent from **App registrations** in the Micros
 
 To grant tenant-wide admin consent from **App registrations**:
 
-1. On the Microsoft Entra admin center, browse to **Identity** > **Applications** > **App registrations** > **All applications**.
+1. On the Microsoft Entra admin center, browse to **Entra ID** > **App registrations** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Select **API permissions** under **Manage**.
 1. Carefully review the permissions that the application requires. If you agree, select **Grant admin consent**.

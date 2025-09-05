@@ -1,22 +1,18 @@
 ---
-title: Microsoft Entra integration with SharePoint on-premises
+title: Configure SharePoint on-premises for Single sign-on with Microsoft Entra ID
 description: Learn how to implement federated authentication between Microsoft Entra ID and SharePoint on-premises.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.custom:
- - has-azure-ad-ps-ref
- - azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
-
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SharePoint on-premises so that I can control who has access to SharePoint on-premises, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Implement federated authentication between Microsoft Entra ID and SharePoint on-premises
+# Configure SharePoint on-premises for Single sign-on with Microsoft Entra ID
 
 ## Scenario description
 
@@ -46,7 +42,7 @@ To configure the federation in Microsoft Entra ID, you need to create a dedicate
 ### Create the enterprise application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, enter **SharePoint on-premises**. Select **SharePoint on-premises** from the result pane.
 1. Specify a name for your application (in this article,  it's `SharePoint corporate farm`), and select **Create** to add the application.
 1. In the new enterprise application, select **Properties**, and check the value for **User assignment required?**. For this scenario, set its value to **No** and select **Save**.
@@ -207,7 +203,7 @@ Microsoft Entra ID has [two type of users](~/external-id/user-properties.md): Gu
 ### Create a member user in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -261,7 +257,7 @@ Microsoft Entra user `AzureUser1@demo1984.onmicrosoft.com` can now use his/her i
 
 Let's create a security group.
 
-1. Browse to **Identity** > **Groups**.
+1. Browse to **Entra ID** > **Groups**.
 
 1. Select **New group**.
 
@@ -342,7 +338,7 @@ $t.Update()
 ### Add the URLs in the enterprise application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > Select the previously created enterprise application, and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > Select the previously created enterprise application, and select **Single sign-on**.
 
 1. On the **Set up Single Sign-On with SAML** page, edit **Basic SAML Configuration**.
 

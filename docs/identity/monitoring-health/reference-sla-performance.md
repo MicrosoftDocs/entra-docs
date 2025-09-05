@@ -2,11 +2,11 @@
 title: Service Level Agreement performance for Microsoft Entra ID
 description: Learn about the service level agreement performance and attainment for authentication services in Microsoft Entra ID
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 12/10/2024
+ms.date: 05/02/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ---
@@ -44,17 +44,19 @@ The numbers in the table are a global total of Microsoft Entra authentications a
 | January   |         | 99.998% | 99.998% | 99.999% | 99.998% |
 | February  | 99.999% | 99.999% | 99.999% | 99.999% | 99.998% |
 | March     | 99.568% | 99.998% | 99.999% | 99.999% | 99.996% |
-| April     | 99.999% | 99.999% | 99.999% | 99.999% |         |
-| May       | 99.999% | 99.999% | 99.999% | 99.999% |         |
-| June      | 99.999% | 99.999% | 99.999% | 99.999% |         |
-| July      | 99.999% | 99.999% | 99.999% | 99.999% |         |
-| August    | 99.999% | 99.999% | 99.999% | 99.999% |         |
+| April     | 99.999% | 99.999% | 99.999% | 99.999% | 99.999%*|
+| May       | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
+| June      | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
+| July      | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
+| August    | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
 | September | 99.999% | 99.998% | 99.999% | 99.999% |         |
 | October   | 99.999% | 99.999% | 99.999% | 99.998% |         |
 | November  | 99.998% | 99.999% | 99.999% | 99.998% |         |
 | December  | 99.978% | 99.999% | 99.999% | 99.998% |         |
 
 <a name='how-is-azure-ad-sla-measured-'></a>
+
+*Starting in April 2025, we updated our SLA performance calculations to provide a more complete view of the user experience with authentication availability. The new calculation includes authentication successes from Microsoft Entra's resilient infrastructure, such as when the [backup authentication system](../../architecture/backup-authentication-system.md) succeeds on retry. Prior to April 2025, these successful sign-ins were not included in the SLA calculation. With the addition of this new calculation, the SLA performance percentages will increase. For example, the April 2025 number using the previous calculation logic would have been 99.998%. With new logic, it's 99.999%.
 
 ## Incident history
 
@@ -67,7 +69,7 @@ In addition to publicly reporting global SLA performance, Microsoft Entra ID pro
 To see the tenant-level SLA:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Monitoring & health** > **Health**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Health**.
 
 Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
 

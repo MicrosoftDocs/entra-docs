@@ -2,12 +2,12 @@
 title: Configure protected web API apps
 description: Learn how to build a protected web API and configure your application's code.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
@@ -270,4 +270,3 @@ You can also validate incoming access tokens in Azure Functions. You can find ex
 
 Move on to the next article in this scenario,
 [Verify scopes and app roles in your code](scenario-protected-web-api-verification-scope-app-roles.md).
-

@@ -5,10 +5,10 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/01/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 # LDAP synchronization with Microsoft Entra ID
 

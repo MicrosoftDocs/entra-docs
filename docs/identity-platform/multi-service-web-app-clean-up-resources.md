@@ -1,16 +1,15 @@
 ---
 title: Tutorial - Clean up resources
 description: In this tutorial, you learn how to clean up the Azure resources allocated while creating the web app.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
-ms.custom: azureday1
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
 ms.date: 02/17/2024
 ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
-services: storage, app-service-web
+ms.custom: azureday1, sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to access Azure Storage for an app using managed identities.
 ---
 
@@ -37,6 +36,6 @@ This command might take several minutes to run.
 ## Delete the app registration
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **App registrations**. 
+1. Browse to **Entra ID** > **App registrations**. 
 1. Select the application you created.
 1. In the app registration overview, select **Delete**.

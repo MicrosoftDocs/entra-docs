@@ -1,16 +1,15 @@
 ---
 title: Join a Mac device with Microsoft Entra ID using Company Portal (preview)
 description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/19/2024
-
 ms.author: cwerner
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.reviewer: brianmel
+ms.custom: sfi-image-nochange
 # Customer intent: As a user, I want to register my Mac device with macOS Platform single sign-on using Company Portal. I need to know the differences between the three methods of registration, secure enclave, smart card, and password, and how to register my device with each method.
 ---
 
@@ -26,6 +25,8 @@ In this tutorial, you learn how to register a Mac device with macOS Platform Sin
 - A configured SSO extension MDM payload with PSSO settings in Intune by an administrator
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 - For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
+- Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#insufficient-permissions).
+- If you have network proxy filtering or TLS inspection enabled in your environment, be sure to review the suggested settings documented in the [Platform Single Sign-On troubleshooting guide](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#tls-inspection-urls-to-be-excluded-for-platform-sso)
 
 ## Intune MDM and Microsoft Entra Join using Company Portal
 

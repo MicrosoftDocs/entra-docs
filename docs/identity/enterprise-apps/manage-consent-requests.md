@@ -1,14 +1,14 @@
 ---
-title: Manage consent to applications and evaluate consent requests
-description: Learn how to manage consent requests when user consent is restricted, and evaluate a request for tenant-wide admin consent to an app in Microsoft Entra ID.
+title: Application consent management and evaluation of consent requests
+description: Understand consent request evaluation and tenant-wide admin consent in Microsoft Entra ID. Essential guidance for administrators managing application permissions and security.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 06/27/2024
+ms.date: 07/20/2025
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.custom: enterprise-apps
@@ -16,13 +16,13 @@ ms.custom: enterprise-apps
 #customer intent: As an administrator, I want to manage consent to applications and evaluate consent requests, so that I can ensure that only apps from verified publishers and selected permissions are allowed. This helps to minimize security risks and prevent the use of unmanaged accounts in third-party applications.
 ---
 
-# Manage consent to applications and evaluate consent requests
+# Application consent management and evaluation of consent requests
 
 Microsoft recommends that you [restrict user consent](~/identity/enterprise-apps/configure-user-consent.md) to allow users to consent only for apps from verified publishers, and only for permissions that you select. For apps that don't meet these criteria, the decision-making process is centralized with your organization's security and identity administrator team.
 
 After disabling or restricting user consent, you have several important steps to take to help keep your organization secure as you continue to allow business-critical applications to be used. These steps are crucial to minimize impact on your organization's support team and IT administrators, and to help prevent the use of unmanaged accounts in non-Microsoft applications.
 
-This article provides guidance on managing consent to applications and evaluating consent requests in Microsoft's recommendations, including restricting user consent to verified publishers and selected permissions. It covers concepts such as process changes, education for administrators, auditing and monitoring, and managing tenant-wide admin consent.
+This article explains the main concepts on managing consent to applications and evaluating consent requests in Microsoft's recommendations, including restricting user consent to verified publishers and selected permissions. It covers concepts such as process changes, education for administrators, auditing and monitoring, and managing tenant-wide admin consent.
 
 ## Process changes and education
 
@@ -57,7 +57,7 @@ To minimize impact on trusted, business-critical applications that are already i
 - Evaluate the top applications to grant admin consent.
 
    > [!IMPORTANT]
-   > Carefully evaluate an application before granting tenant-wide admin consent, even if many users in the organization have already consented for themselves.
+   > Carefully evaluate an application before granting tenant-wide admin consent, even if many users in the organization already consented for themselves.
 - For each approved application, grant tenant-wide admin consent and consider restricting user access by [requiring user assignment](assign-user-or-group-access-portal.md).
 
 ## Evaluate a request for tenant-wide admin consent
@@ -110,7 +110,7 @@ User access to applications can still be limited even when tenant-wide admin con
 
 For a broader overview, including how to handle more complex scenarios, see [Use Microsoft Entra ID for application access management](what-is-access-management.md).
 
-## Next steps
+## Related content
 
 - [Configure the admin consent workflow](configure-admin-consent-workflow.md)
 - [Configure how users consent to applications](configure-user-consent.md)

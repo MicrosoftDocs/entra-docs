@@ -2,14 +2,14 @@
 title: Access on-premises Application Programming Interface (API) with Microsoft Entra application proxy
 description: Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-image-nochange
 ai-usage: ai-assisted
 ---
 # Use Microsoft Entra application proxy to provide secure access to an Application Programming Interface (API) hosted in a private cloud or on premises
@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 Business logic often lives in a private Application Programming Interface (API). The API runs on premises or in a private cloud. Your native Android, iOS, Mac, or Windows apps need to interact with the API endpoints to use data or provide user interaction. Microsoft Entra application proxy and the [Microsoft Authentication Library (MSAL)](~/identity-platform/reference-v2-libraries.md) let your native apps securely access your private cloud APIs. Microsoft Entra application proxy is a faster and more secure solution than opening firewall ports and controlling authentication and authorization at the app layer.
 
 > [!TIP]
-> On premises is a legacy term dating back to the time when physical servers were located on the premises of the corporate office. Now days, many self hosted workloads run on a virtual machine in a datacenter. The term on premises and private cloud are used interchangeably.
+> The term "on premises" is a legacy term dating back to the time when physical servers were located on the premises of the corporate office. Now days, many self-hosted workloads run on a virtual machine in a datacenter. The terms on premises and private cloud are used interchangeably.
 
 This article walks you through setting up a Microsoft Entra application proxy solution for hosting a web API service that native apps can access.
 
@@ -52,7 +52,7 @@ To publish the SecretAPI web API through application proxy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. At the top of the **Enterprise applications - All applications** page, select **New application**.
 
@@ -92,10 +92,10 @@ The web API is now published through Microsoft Entra application proxy. Next, ad
 
    ![Select and assign user](./media/application-proxy-secure-api-access/7-select-admin-user.png)
 
-1. Back on the **Add Assignment** page, select **Assign**.
+1. On the **Add Assignment** page, select **Assign**.
 
 > [!NOTE]
-> APIs that use integrated Windows authentication might require [additional steps](./how-to-configure-sso-with-kcd.md).
+> APIs that use integrated Windows authentication might require [extra steps](./how-to-configure-sso-with-kcd.md).
 
 ## Register the native app and grant access to the API
 
@@ -104,7 +104,7 @@ Native apps are programs developed to use on a particular platform or device. Be
 To register the AppProxyNativeAppSample native app:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **App registrations**.
+1. Browse to **Entra ID** > **Enterprise apps** > **App registrations**.
 
 1. Select **New registration**.
 
@@ -157,7 +157,7 @@ Configure the native app to connect to Microsoft Entra ID and call the API using
 1. Paste the SecretAPI **Home Page URL** in the `<add key="todo:TodoListBaseAddress" value="" />` field. You can find and copy this value (a URL) from the SecretAPI **Branding & properties** page, in the left navigation under **Manage**.
 
 > [!NOTE]
-> If the solution doesn't build and reports the error *invalid Resx file*, in Solution Explorer, expand **Properties**, right-click *Resources.resx*, and then select **View Code**. Comment lines 121 to 123.
+> If the solution doesn't build and reports the error `invalid Resx file`, in Solution Explorer, expand **Properties**, right-click *Resources.resx*, and then select **View Code**. Comment lines 121 to 123.
 
 After you configure the parameters, build and run the native app. When you select the **Sign In** button, the app lets you sign in, and then displays a success screen to confirm that it successfully connected to the SecretAPI.
 

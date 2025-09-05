@@ -4,21 +4,23 @@
 title: Manage lifecycle workflows with Microsoft Security Copilot 
 description: Use Microsoft Security Copilot in the Microsoft Entra admin center to create lifecycle workflows for Joiner, Mover, and Leaver scenarios. Execute workflows on-demand and use workflow insights to monitor execution and troubleshoot as needed.
 keywords:
-author: rwike77
-ms.author: ryanwi
-manager: celestedg
+author: cilwerner
+ms.author: cwerner
+manager: pmwongera
 ms.date: 02/19/2025
-ms.topic: conceptual
+ms.update-cycle: 180-days
+ms.topic: how-to
 ms.service: entra
-ms.custom: microsoft-copilot
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 ---
-# Manage employee lifecycle using Microsoft Security Copilot (Preview)
+# Manage employee lifecycle using Microsoft Security Copilot
 
 Microsoft Entra ID Governance applies the capabilities of [Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) to save identity administrators time and effort when configuring custom workflows to manage the lifecycle of users across JML scenarios. It also helps you to customize workflows more efficiently using natural language to configure workflow information including custom tasks, execute workflows, and get workflow insights.
 
 This article describes how to work with lifecycle workflows using Security Copilot in the Microsoft Entra admin center.  Using this feature requires [Microsoft Entra ID Governance licenses](/entra/id-governance/identity-governance-overview#license-requirements).
 
-Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator). Navigate to **Identity Governance** -> **Lifecycle workflows overview**.
+Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator). Navigate to **ID Governance** > **Lifecycle workflows overview**.
 
 Launch Security Copilot from the **Copilot** button in the Microsoft Entra admin center.  Use natural language questions or prompts to:
 

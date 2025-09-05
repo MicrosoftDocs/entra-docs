@@ -4,6 +4,20 @@
   items:
   - name: What is Conditional Access?
     href: overview.md
+- name: Security Copilot + Microsoft Entra
+  items:
+  - name: Get started with the Conditional Access optimization agent
+    href: agent-optimization.md
+  - name: Review and approve suggestions
+    href: agent-optimization-review-suggestions.md
+  - name: Chat with the optimization agent
+    href: agent-optimization-chat.md
+  - name: Optimization agent logs and metrics
+    href: agent-optimization-logs-metrics.md
+  - name: Phased rollout
+    href: agent-optimization-phased-rollout.md
+  - name: Optimization agent FAQ
+    href: agent-optimization-faq.yml
 - name: Tutorials
   items:
   - name: Require multifactor authentication
@@ -144,6 +158,8 @@
       href: troubleshoot-policy-changes-audit-log.md
     - name: Troubleshoot sign-in problems
       href: troubleshoot-conditional-access.md
+    - name: Troubleshoot Security Copilot
+      href: troubleshoot-security-copilot-policies.md
     - name: Troubleshoot using the What If tool 
       href: troubleshoot-conditional-access-what-if.md
     - name: Troubleshoot continuous access evaluation

@@ -4,16 +4,19 @@ description: Learn about when and how to use app-only access in the Microsoft id
 author: omondiatieno
 manager: celesteDG
 ms.author: jomondi
-ms.date: 03/15/2023
+ms.date: 05/21/2025
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
+ms.subservice: workforce
 
 ms.topic: concept-article
 
 #Customer intent: As a developer, I want to understand how application-only access works and when to use it, so that I can configure the appropriate app roles and permissions for my application and ensure secure access to resources without user interaction.
 ---
 
-# Understanding application-only access
+# Microsoft identity platform app-only access scenario
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 When an application directly accesses a resource, like Microsoft Graph, its access isn't limited to the files or operations available to any single user. The app calls APIs directly using its own identity, and a user or app with admin rights must authorize it to access the resources. This scenario is application-only access.
 
@@ -37,9 +40,9 @@ To make app-only calls, you need to assign your client app the appropriate app r
 
 For example, to read a list of all teams created in an organization, you need to assign your application the Microsoft Graph `Team.ReadBasic.All` app role. This app role grants the ability to read this data when Microsoft Graph is the resource app. This assignment doesn't assign your client application to a Teams role that might allow it to view this data through other services.
 
-As a developer, you need to configure all required app-only permissions, also referred to as app roles on your application registration. You can configure your app's requested app-only permissions through the Azure portal or Microsoft Graph. App-only access doesn't support dynamic consent, so you can't request individual permissions or sets of permissions at runtime.
+As a developer, you need to configure all required app-only permissions, also referred to as app roles on your application registration. You can configure app-only permissions requested by your app through the Azure portal or Microsoft Graph. App-only access doesn't support dynamic consent, so you can't request individual permissions or sets of permissions at runtime.
 
-Once you've configured all the permissions your app needs, it must get [admin consent](~/identity/enterprise-apps/grant-admin-consent.md) for it to access the resources. For example, only users with at least the Privileged Role Administrator role can grant app-only permissions (app roles) for the Microsoft Graph API. Users with other admin roles, like Application Administrator and Cloud Application Administrator, can grant app-only permissions for other resources.
+Once you configure all the permissions your app needs, it must get [admin consent](~/identity/enterprise-apps/grant-admin-consent.md) for it to access the resources. For example, only users with at least the Privileged Role Administrator role can grant app-only permissions (app roles) for the Microsoft Graph API. Users with other admin roles, like Application Administrator and Cloud Application Administrator, can grant app-only permissions for other resources.
 
 Admin users can grant app-only permissions by using the Azure portal or by creating grants programmatically through the Microsoft Graph API. You can also prompt for interactive consent from within your app, but this option isn't preferable since app-only access doesn't require a user.
 
@@ -48,7 +51,7 @@ Always follow the principle of least privilege: you should never request app rol
 
 ## Designing and publishing app roles for a resource service
 
-If you're building a service on Microsoft Entra ID that exposes APIs for other clients to call, you may wish to support automated access with app roles (app-only permissions). You can define the app roles for your application in the **App roles** section of your app registration in Microsoft Entra admin center. For more information on how to create app roles, see [Declare roles for an application](./howto-add-app-roles-in-apps.md#declare-roles-for-an-application).
+If you're building a service on Microsoft Entra ID that exposes APIs for other clients to call, you might wish to support automated access with app roles (app-only permissions). You can define the app roles for your application in the **App roles** section of your app registration in Microsoft Entra admin center. For more information on how to create app roles, see [Declare roles for an application](./howto-add-app-roles-in-apps.md#declare-roles-for-an-application).
 
 When exposing app roles for others to use, provide clear descriptions of the scenario to the admin who is going to assign them. App roles should generally be as narrow as possible and support specific functional scenarios, since app-only access isn't constrained by user rights. Avoid exposing a single role that grants full `read` or full `read/write` access to all APIs and resources your service contains.
 
@@ -57,11 +60,11 @@ When exposing app roles for others to use, provide clear descriptions of the sce
 
 ## How does application-only access work?
 
-The most important thing to remember about app-only access is that the calling app acts on its own behalf and as its own identity. There's no user interaction. If the app has been assigned to a given app role for a resource, then the app has fully unconstrained access to all resources and operations governed by that app role.
+The most important thing to remember about app-only access is that the calling app acts on its own behalf and as its own identity. There's no user interaction. If the app is assigned to a given app role for a resource, then the app has fully unconstrained access to all resources and operations governed by that app role.
 
-Once an app has been assigned to one or more app roles (app-only permissions), it can request an app-only token from Microsoft Entra ID using the [client credentials flow](v2-oauth2-client-creds-grant-flow.md) or any other supported authentication flow. The assigned roles are added to the `roles` claim of the app's access token.
+Once an app is assigned to one or more app roles (app-only permissions), it can request an app-only token from Microsoft Entra ID using the [client credentials flow](v2-oauth2-client-creds-grant-flow.md) or any other supported authentication flow. The assigned roles are added to the `roles` claim of the app's access token.
 
-In some scenarios, the application identity may determine whether access is granted, similarly to user rights in a delegated call. For example, the `Application.ReadWrite.OwnedBy` app role grants an app the ability to manage service principals that the app itself owns.
+In some scenarios, the application identity might determine whether access is granted, similarly to user rights in a delegated call. For example, the `Application.ReadWrite.OwnedBy` app role grants an app the ability to manage service principals that the app itself owns.
 
 ## Application-only access example - Automated email notification via Microsoft Graph
 
@@ -69,16 +72,16 @@ The following example illustrates a realistic automation scenario.
 
 Alice wants to notify a team by email every time the division reporting folder that resides in a Windows file share registers a new document. Alice creates a scheduled task that runs a PowerShell script to examine the folder and find new files. The script then sends an email using a mailbox protected by a resource API, Microsoft Graph.
 
-The script runs without any user interaction, therefore the authorization system only checks the application authorization. Exchange Online checks whether the client making the call has been granted the application permission (app role), `Mail.Send` by the administrator. If `Mail.Send` isn’t granted to the app, then Exchange Online fails the request.
+The script runs without any user interaction, therefore the authorization system only checks the application authorization. Exchange Online checks whether the client making the call is granted the application permission (app role), `Mail.Send` by the administrator. If `Mail.Send` isn’t granted to the app, then Exchange Online fails the request.
 
 | POST /users/{id}/{userPrincipalName}/sendMail | Client app granted Mail.Send | Client app not granted Mail.Send |
 | ----- | ----- | ----- |
-| The script uses Alice’s mailbox to send emails. | 200 – Access granted. Admin allowed the app to send mail as any user. |403 - Unauthorized. Admin hasn’t allowed this client to send emails. |
-| The script creates a dedicated mailbox to send emails. | 200 – Access granted. Admin allowed the app to send mail as any user. | 403 - Unauthorized. Admin hasn’t allowed this client to send emails. |
+| The script uses Alice’s mailbox to send emails. | 200 – Access granted. Admin allowed the app to send mail as any user. |403 - Unauthorized. Admin doesn't allow this client to send emails. |
+| The script creates a dedicated mailbox to send emails. | 200 – Access granted. Admin allowed the app to send mail as any user. | 403 - Unauthorized. Admin doesn't allow this client to send emails. |
 
 The example given is a simple illustration of application authorization. The production Exchange Online service supports many other access scenarios, such as limiting application permissions to specific Exchange Online mailboxes.
 
-## Next steps
+## Related content
 
 - [Learn how to create and assign app roles in Microsoft Entra ID](./howto-add-app-roles-in-apps.md)
 - [Overview of permissions in Microsoft Graph](/graph/permissions-overview)

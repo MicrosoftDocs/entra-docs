@@ -5,9 +5,10 @@ customer-intent: As an independent software developer, I want to learn how to bu
 author: jricketts
 manager: martinco
 ms.service: entra
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/14/2024
 ms.author: jricketts
+ms.custom: sfi-ropc-nochange
 ---
 # Customize tokens
 

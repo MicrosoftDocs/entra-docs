@@ -5,11 +5,11 @@ description: Conditional Access is the Zero Trust policy engine at the heart of 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 03/04/2025
+ms.date: 07/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: kvenkit
 ---
 # What is Conditional Access?
@@ -86,7 +86,7 @@ Admins can create policies from scratch or start from a template policy in the p
 
 Administrators with the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role can manage policies.
 
-Conditional Access is found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access**.
+Conditional Access is found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access**.
 
 :::image type="content" source="media/overview/conditional-access-overview.png" alt-text="Screenshot of the Conditional Access overview page." lightbox="media/overview/conditional-access-overview.png":::
 
@@ -95,6 +95,10 @@ Conditional Access is found in the [Microsoft Entra admin center](https://entra.
 - The **Monitoring** page allows administrators to see a graph of sign-ins that can be filtered to see potential gaps in policy coverage.
 
 Conditional Access policies on the **Policies** page can be filtered by administrators based on items like the actor, target resource, condition, control applied, state, or date. This filtering ability lets administrators find specific policies based on their configuration quickly.
+
+### Conditional Access optimization agent
+
+The [Conditional Access optimization agent](agent-optimization.md) (preview) with Microsoft Security Copilot recommends new policies and changes to existing policies based on Zero Trust principles and Microsoft best practices. With one click, you can apply the suggestion to automatically update or create a Conditional Access policy. The agent requires at least the Microsoft Entra ID P1 license and [security compute units (SCU)](/copilot/security/manage-usage).
 
 ## License requirements
 

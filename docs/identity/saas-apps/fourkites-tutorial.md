@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra SSO integration with FourKites SAML2.0 SSO for Tracking
+title: Configure FourKites SAML2.0 SSO for Tracking for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and FourKites SAML2.0 SSO for Tracking.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FourKites SAML2.0 SSO for Tracking so that I can control who has access to FourKites SAML2.0 SSO for Tracking, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with FourKites SAML2.0 SSO for Tracking
+# Configure FourKites SAML2.0 SSO for Tracking for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate FourKites SAML2.0 SSO for Tracking with Microsoft Entra ID. When you integrate FourKites SAML2.0 SSO for Tracking with Microsoft Entra ID, you can:
 
@@ -45,11 +45,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of FourKites SAML2.0 SSO for Tracking into Microsoft Entra ID, you need to add FourKites SAML2.0 SSO for Tracking from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **FourKites SAML2.0 SSO for Tracking** in the search box.
 1. Select **FourKites SAML2.0 SSO for Tracking** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-fourkites-saml20-sso-for-tracking'></a>
 
@@ -73,7 +73,7 @@ To configure and test Microsoft Entra SSO with FourKites SAML2.0 SSO for Trackin
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **FourKites SAML2.0 SSO for Tracking** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **FourKites SAML2.0 SSO for Tracking** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

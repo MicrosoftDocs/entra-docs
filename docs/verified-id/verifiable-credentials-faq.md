@@ -5,8 +5,9 @@ author: barclayn
 manager: femila
 ms.service: entra-verified-id
 ms.topic: faq
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
+ms.custom: sfi-image-nochange
 # Customer intent: As a developer I am looking for information on how to enable my users to control their own information 
 ---
 
@@ -68,43 +69,43 @@ Resetting requires that you opt out and opt back into the Microsoft Entra Verifi
 
 ### How can I check my Microsoft Entra tenant's region?
 
-1. In the [Azure portal](https://portal.azure.com), go to Microsoft Entra ID for the subscription you use for your Microsoft Entra Verified ID deployment.
-1. Under Manage, select Properties.
+1. In the [Azure portal](https://portal.azure.com), go to **Microsoft Entra ID** for the subscription you use for your Microsoft Entra Verified ID deployment.
+1. Under **Manage**, select **Properties**.
 
-    :::image type="content" source="media/verifiable-credentials-faq/region.png" lightbox="media/verifiable-credentials-faq/region.png" alt-text="Screenshot of settings delete and opt out.":::
+    :::image type="content" source="media/verifiable-credentials-faq/region.png" alt-text="Screenshot of settings delete and opt out.":::
 
-1. See the value for Country or Region. If the value is a country or a region in Europe, your Microsoft Entra Verified ID service is set up in Europe.
+1. See the value for **Country or Region**. If the value is a country or a region in Europe, your Microsoft Entra Verified ID service is set up in Europe.
 
 ### Does Microsoft Entra Verified ID support ION as its DID method?
 
-Verified ID supported the DID:ION method in preview until December 2023, after which it was discontinued.
+Verified ID supported the DID:ION method in preview until December 2023.
 
-### How do I move to did:web from did:ion?
+### How do I move to did:web from did: ion?
 
 If you want to move to `did:web` from `did:ion`, you can follow these steps via the [Admin API](admin-api.md). Changing authority requires reissuance of all credentials:
 
-#### Export existing did:ion credential definitions
+#### Export existing did: ion credential definitions
 
 1. For the `did:ion` authority, use the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) to copy out all display and rules definition of the existing credentials. 
 1. If you have more than one authority, you have to use the Admin APIs if the `did:ion` authority isn't the default authority. On the Verified ID tenant, connect using Admin API,  [list the authorities](admin-api.md#list-authorities) to get the authority ID for the `did:ion` authority. Then use the [list contracts](admin-api.md#list-contracts) API to export them and save the result to a file so you can recreate them.
 
 #### Creating new did:web authority
 
-1. Using the [onboard](admin-api.md#onboarding) API, create the new `did:web` authority. Alternatively, if your tenant has only one did:ion authority, you could also perform a service opt out followed by an opt-in operation to restart with Verified ID configurations. In this case, you could choose between [Quick](verifiable-credentials-configure-tenant-quick.md) and [Manual](verifiable-credentials-configure-tenant.md) setup.
+1. Using the [onboard](admin-api.md#onboarding) API, create the new `did:web` authority. Alternatively, if your tenant has only one did: ion authority, you could also perform a service opt-out followed by an opt-in operation to restart with Verified ID configurations. In this case, you could choose between [Quick](verifiable-credentials-configure-tenant-quick.md) and [Manual](verifiable-credentials-configure-tenant.md) setup.
 1. If you're setting up a did:web authority using Admin API, you need to call [generate DID document](admin-api.md#generate-did-document) to generate your did document and call [generate well-known document](admin-api.md#well-known-did-configuration) and then upload JSON files to the respective well-known path.
 
 #### Recreate credential definitions
 
-When you have created your new `did:web` authority, you need to recreate your credential definitions. You can either do that via the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) if you opted-out and reonboarded, or you need to use the [create contract](admin-api.md#create-contract) API to recreate them.
+When you create your new `did:web` authority, you need to recreate your credential definitions. You can either do that via the [portal](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/CardsListBlade) if you opted-out and reonboarded, or you need to use the [create contract](admin-api.md#create-contract) API to recreate them.
 
 #### Update existing applications
 
 1. Update any of your existing application (issuer/verifier apps) to use the new `did:web authority`. For issuance apps, update the credential manifest URL too.
-1. Test issuance and verification flows from the new did:web authority. Once the tests are successful, proceed to the next step for did:ion authority deletion.
+1. Test issuance and verification flows from the new did:web authority. Once the tests are successful, proceed to the next step for did: ion authority deletion.
 
-#### Delete did:ion authority
+#### Delete did: ion authority
 
-If you didn't opt out and reonboarded, you need to remove your old `did:ion` authority. Use the [delete authority](admin-api.md#delete-authority) API to delete the did:ion authority. 
+If you didn't opt out and reonboarded, you need to remove your old `did:ion` authority. Use the [delete authority](admin-api.md#delete-authority) API to delete the did: ion authority. 
 
 ### If I reconfigure the Microsoft Entra Verified ID service, do I need to relink my DID to my domain?
 
@@ -130,16 +131,16 @@ Regardless of which language of the sample you're using, the Azure AppService ho
 The Request Service API makes use of callbacks to a [URL](presentation-request-api.md#callback-type) provided by the relying party application. This URL needs to be reachable from the Verified ID system for the callbacks to be received. Callbacks are coming from Azure infrastructure in the same region as your Microsoft Entra tenant. If you need to harden your network, you have two options.
 
 - Use [Azure firewall service tags](/azure/firewall/service-tags) [AzureCloud](/azure/virtual-network/service-tags-overview#available-service-tags).
-- Use the published [CIDR range](https://www.microsoft.com/download/details.aspx?id=56519) to configure your firewall.  You need to use AzureCloud.***regions*** that matches where your Microsoft Entra tenant is deployed to config your firewall to let callback traffic from Request Service API through. For instance, if your tenant is in EU, you should pick all CIDR ranges from AzureCloud.***northeurope***, ***.westeurope***, etc., to your firewalls config.
+- Use the published [CIDR range](https://www.microsoft.com/download/details.aspx?id=56519) to configure your firewall.  You need to use AzureCloud.***regions*** that matches where your Microsoft Entra tenant is deployed to config your firewall to let callback traffic from Request Service API through. For instance, if your tenant is in EU, you should pick all CIDR ranges from AzureCloud.***northeurope***, ***westeurope***, etc., to your firewalls config.
 
 ### Scanning the QR code
 
 In the documentation, the instruction `scan the QR code` refers to scanning it with the Microsoft Authenticator mobile app, unless otherwise stated.
-It is possible to scan the QR code with the mobile's camera app, which then launches the Microsoft Authenticator. For this to work, the protocol handler for `openid-vc://` must be registered for Microsoft Authenticator. If another mobile app have been registered for it, the Authenticator will not open. 
+It is possible to scan the QR code with the mobile's camera app, which then launches the Microsoft Authenticator. For this to work, the protocol handler for `openid-vc://` must be registered for Microsoft Authenticator. If another mobile app have been registered for it, the Authenticator won't open. 
 
 On Android mobile phones, known problems of scanning the QR code are:
-- On Android 9 and older versions, scanning the QR code with the camera app doesn't work, and there is no other workaround than using the Microsoft Authenticator app to scan it.
-- On Android phones with both work and personal profiles, each profile has its own instance of the Microsoft Authenticator app. If you have a credential in the work profile's Authenticator app and try to scan a QR code using the camera app from the personal profile, the personal Authenticator app will open. This causes an error because the credential is in the work profile, not the personal one. The error message will say, "You'll have to add this Verified ID and try again."
+- On Android 9 and older versions, scanning the QR code with the camera app doesn't work, and there's no other workaround than using the Microsoft Authenticator app to scan it.
+- On Android phones with both work and personal profiles, each profile has its own instance of the Microsoft Authenticator app. If you have a credential in the work profile's Authenticator app and try to scan a QR code using the camera app from the personal profile, the personal Authenticator app opens. This causes an error because the credential is in the work profile, not the personal one. The error message says, "You'll have to add this Verified ID and try again."
 
 ## Next steps
 

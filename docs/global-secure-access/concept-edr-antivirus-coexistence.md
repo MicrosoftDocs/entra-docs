@@ -22,11 +22,11 @@ In your antivirus solution, configure exclusions and bypasses for all Global Sec
 - `C:\Program Files\Global Secure Access Client\GlobalSecureAccessEngineService.exe`
 - `C:\Program Files\Global Secure Access Client\GlobalSecureAccessETLController.exe`
 - `C:\Program Files\Global Secure Access Client\GlobalSecureAccessTunnelingService.exe`
-- `C:\Program Files\Global Secure Access Client\TrayApp\\GlobalSecureAccessClient.exe`
-- `C:\Program Files\Global Secure Access Client\PolicyService\\GlobalSecureAccessPolicyRetrieverService.exe`
-- `C:\Program Files\Global Secure Access Client\LogsCollector\\LogsCollector.exe`
-- `C:\Program Files\Global Secure Access Client\AuthenticationRunner\\GlobalSecureAccessAuthenticationRunner.exe`
-- `C:\Program Files\Global Secure Access Client\AdvancedDiagnostics\\GlobalSecureAccessClientAdvancedDiagnostics.exe`
+- `C:\Program Files\Global Secure Access Client\TrayApp\GlobalSecureAccessClient.exe`
+- `C:\Program Files\Global Secure Access Client\PolicyService\GlobalSecureAccessPolicyRetrieverService.exe`
+- `C:\Program Files\Global Secure Access Client\LogsCollector\LogsCollector.exe`
+- `C:\Program Files\Global Secure Access Client\AuthenticationRunner\GlobalSecureAccessAuthenticationRunner.exe`
+- `C:\Program Files\Global Secure Access Client\AdvancedDiagnostics\GlobalSecureAccessClientAdvancedDiagnostics.exe`
 
 To exclude these processes from Microsoft Defender for Endpoint, see [Configure custom exclusions for Microsoft Defender Antivirus](/defender-endpoint/configure-exclusions-microsoft-defender-antivirus).
 

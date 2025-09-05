@@ -2,10 +2,10 @@
 title: ID tokens in the Microsoft identity platform
 description: Learn about ID tokens used in the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/10/2024
+ms.date: 05/14/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -15,11 +15,11 @@ ms.topic: concept-article
 
 # ID tokens in the Microsoft identity platform
 
-ID tokens are a type of security token that serves as proof of authentication, confirming that a user is successfully authenticated. Information in ID tokens enables the client to verify that a user is who they claim to be, similar to name tags at a conference. The authorization server issues ID tokens that contain claims that carry information about the user. They can be sent alongside or instead of an access token, and are always JWT (JSON Web Token) format.  
+ID tokens are a security token that serves as proof of authentication, confirming that a user is successfully authenticated. Information in ID tokens enables the client to verify that a user is who they claim to be, similar to name tags at a conference. The authorization server issues ID tokens that contain claims that carry information about the user. They can be sent alongside or instead of an access token, and are always JWT (JSON Web Token) format.  
 
 ID tokens differ from [access tokens](./access-tokens.md), which serve as proof of authorization. Confidential clients should validate ID tokens. You shouldn't use an ID token to call an API.
 
-Third-party applications are intended to understand ID tokens. ID tokens shouldn't be used for authorization purposes. Access tokens are used for authorization. The claims provided by ID tokens can be used for UX inside your application, as keys in a database, and providing access to the client application. For more information about the claims used in an ID token, see the [ID token claims reference](id-token-claims-reference.md). For more information about claims-based authorization, see [Secure applications and APIs by validating claims](./claims-validation.md).
+Third-party applications are intended to understand ID tokens. Do not use ID tokens for authorization purposes. Access tokens are used for authorization. The claims provided by ID tokens can be used for UX inside your application, as keys in a database, and providing access to the client application. For more information about the claims used in an ID token, see the [ID token claims reference](id-token-claims-reference.md). For more information about claims-based authorization, see [Secure applications and APIs by validating claims](./claims-validation.md).
 
 ## Token formats
 

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Datadog
+title: Configure Datadog for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Datadog.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Datadog so that I can control who has access to Datadog, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Datadog
+# Configure Datadog for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Datadog with Microsoft Entra ID. When you integrate Datadog with Microsoft Entra ID, you can:
 
@@ -24,7 +24,9 @@ In this article,  you learn how to integrate Datadog with Microsoft Entra ID. Wh
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Datadog single sign-on (SSO) enabled subscription.
 
@@ -40,11 +42,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Datadog into Microsoft Entra ID, you need to add Datadog from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Datadog** in the search box.
 1. Select **Datadog** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-datadog'></a>
 
@@ -68,7 +70,7 @@ To configure and test Microsoft Entra SSO with Datadog, perform the following st
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Datadog** application integration page, find the **Manage** section and select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Datadog** application integration page, find the **Manage** section and select **single sign-on**.
 
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -124,7 +126,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 In this section, you enable everyone within your tenant to access Datadog if one user has an account on the Datadog side.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Datadog**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Datadog**.
 1. On the app's overview page, under **Manage**, select **Properties**.
 
     ![The "Properties" link](common/properties.png)

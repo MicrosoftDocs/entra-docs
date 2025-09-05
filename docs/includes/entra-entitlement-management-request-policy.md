@@ -1,14 +1,13 @@
 ---
 title: include file
 description: include file
-
 author: owinfreyATL
 manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 02/27/2023
 ms.author: owinfrey
-ms.custom: include file
+ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 ---
 
 ## Allow users in your directory to request the access package
@@ -143,11 +142,11 @@ Use the following steps to add approvers after you select the number of stages.
 
 1. If you selected **Manager** as the first approver, select **Add fallback** to select one or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the manager for the user who's requesting access.
 
-    Entitlement management finds the manager by using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.yml).
+    Entitlement management finds the manager by using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.md).
 
 1. If you selected **Sponsors** as the first approver, select **Add fallback** to select one or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the sponsor for the user who's requesting access.
 
-    Entitlement management finds sponsors by using the **Sponsors** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.yml).
+    Entitlement management finds sponsors by using the **Sponsors** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.md).
 
 1. If you selected **Choose specific approvers**, select **Add approvers** to select one or more users or groups in your directory to be approvers.
 
@@ -223,7 +222,7 @@ In this example, the duration of the request is 14 days. The request duration re
 
 Also, requests can't be forwarded on the last day of the request duration. So in the example, the latest the request can be forwarded is day 13.
 
-## Email Notifications (Preview)
+## Email Notifications
 
 1. You're able to disable assignment emails notifying you of assignment requests that are delivered, expired, or near expiration.
     :::image type="content" source="media/entitlement-management-request-policy/email-notifications.png" alt-text="Screenshot of the email notifications selection in creating an access package.":::

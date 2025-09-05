@@ -1,18 +1,15 @@
 ---
-title: Enable passkeys in Authenticator for Microsoft Entra ID 
+title: Enable passkeys in Authenticator for Microsoft Entra ID
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/02/2025
-
-
+ms.date: 06/24/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: mjsantani
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.
 ---
 # Enable passkeys in Authenticator
@@ -34,14 +31,17 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
+> [!NOTE]
+> If you grant the **Require device to be marked as compliant** control as part of a Conditional Access policy, it doesn't block Microsoft Authenticator app access to the UserAuthenticationMethod.Read scope. Authenticator needs access to the UserAuthenticationMethod.Read scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to UserAuthenticationMethod.ReadWrite to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
+
 ## Enable passkeys in Authenticator in the admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab:
    - Set **Allow self-service set up** to **Yes**. If it's set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.
-   - Set **Enforce attestation** to **Yes** or **No**.
+   - Set **Enforce attestation** to **Yes** or **No**. Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows don't support registration of attested passkeys.
 
      When attestation is enabled in the passkey (FIDO2) policy, Microsoft Entra ID tries to verify the legitimacy of the passkey being created. When the user is registering a passkey in the Authenticator, attestation verifies that the legitimate Authenticator app created the passkey by using Apple and Google services. Here are more details:
 
@@ -54,10 +54,10 @@ To learn more about FIDO2 support, see [Support for FIDO2 authentication with Mi
      > [!NOTE]
      > For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
     
-    > [!NOTE]
-    > Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows don't support registration of attested passkeys.
+
 
    - **Key restrictions** set the usability of specific passkeys for both registration and authentication. You can set **Enforce key restrictions** to **No** to allow users to register any supported passkey, including passkey registration directly in the Authenticator app. If you set **Enforce key restrictions** to **Yes** and already have active passkey usage, you should collect and add the AAGUIDs of the passkeys being used today. 
+
 
      If you set **Restrict specific keys** to **Allow**, select **Microsoft Authenticator** to automatically add the Authenticator app AAGUIDs to the key restrictions list. You can also manually add the following AAGUIDs to allow users to register passkeys in Authenticator by signing in to the Authenticator app or by going through a guided flow on **Security info**:
 
@@ -117,51 +117,6 @@ To configure the policy by using Graph Explorer:
    GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
-## Find AAGUIDs
-
-Use the `GetRegisteredPasskeyAAGUIDsForAllUsers.ps1` Microsoft Graph PowerShell script to enumerate the AAGUIDs of all registered passkeys in the tenant.
-
-Save the body of this script to a file called `GetRegisteredPasskeyAAGUIDsForAllUsers.ps1`.
-
-```powershell
-# Disconnect from Microsoft Graph
-Disconnect-MgGraph
-
-# Connect to Microsoft Graph with required scopes
-Connect-MgGraph -Scope 'User.Read,UserAuthenticationMethod.Read,UserAuthenticationMethod.Read.All'
-
-# Define the output file [If the script is run more than once, delete the file to avoid appending to it.]
-$file = ".\AAGUIDs.txt"
-
-# Initialize the file with a header
-Set-Content -Path $file -Value '---'
-
-# Retrieve all users
-$UserArray = Get-MgBetaUser -All
-
-# Iterate through each user
-foreach ($user in $UserArray) {
-    # Retrieve Passkey authentication methods for the user
-    $fidos = Get-MgBetaUserAuthenticationFido2Method -UserId $user.Id
-
-    if ($fidos -eq $null) {
-        # Log and write to file if no Passkey methods are found
-        Write-Host "User object ID $($user.Id) has no Passkey"
-        Add-Content -Path $file -Value "User object ID $($user.Id) has no Passkey"
-    } else {
-        # Iterate through each Passkey method
-        foreach ($fido in $fidos) {
-            # Log and write to file the Passkey details
-            Write-Host "- User object ID $($user.Id) has a Passkey with AAGUID $($fido.Aaguid) of Model type '$($fido.Model)'"
-            Add-Content -Path $file -Value "- User object ID $($user.Id) has a Passkey with AAGUID $($fido.Aaguid) of Model type '$($fido.Model)'"
-        }
-    }
-
-    # Log and write a separator to file
-    Write-Host "==="
-    Add-Content -Path $file -Value "==="
-}
-```
 
 ## Restrict Bluetooth usage to passkeys in Authenticator
 
@@ -181,7 +136,7 @@ If a user deletes a passkey in Authenticator, the passkey is also removed from t
 To make users sign in with a passkey when they access a sensitive resource, use the built-in phishing-resistant authentication strength, or create a custom authentication strength by following these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive name for your new authentication strength.
 1. Optionally, provide a description.

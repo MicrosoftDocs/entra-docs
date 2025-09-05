@@ -2,13 +2,13 @@
 title: Archive & report with Azure Monitor - entitlement management
 description: Learn how to archive logs and create reports with Azure Monitor in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
-ms.custom: devx-track-azurepowershell
+ms.custom: devx-track-azurepowershell, sfi-ga-nochange
 #Customer intent: As an administrator, I want to extend data retention in entitlement management past the default period by using Azure Monitor.
 ---
 # Archive logs and reporting on entitlement management in Azure Monitor
@@ -28,7 +28,7 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator). Make sure you have access to the resource group containing the Azure Monitor workspace.
  
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Check if there's already a setting to send the audit logs to that workspace.
 
@@ -44,7 +44,7 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 1. Later, to see the range of dates held in your workspace, you can use the *Archived Log Date Range* workbook:  
     
-    1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+    1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
     
     1. Expand the section **Microsoft Entra Troubleshooting**, and select on **Archived Log Date Range**. 
 
@@ -63,7 +63,7 @@ Use the following procedure to view events:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader). Make sure you have access to the resource group containing the Azure Monitor workspace.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. If you have multiple subscriptions, select the subscription that contains the workspace.  
 

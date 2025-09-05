@@ -2,22 +2,43 @@
 title: Review access to groups & applications in access reviews
 description: Learn how to review access of group members or application access in Microsoft Entra access reviews.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-image-nochange
 ---
 
 # Review access to groups and applications in access reviews
 
 Microsoft Entra ID simplifies how enterprises manage access to groups and applications in Microsoft Entra ID and other Microsoft web services with a feature called access reviews. This article covers how a designated reviewer performs an access review for members of a group or users with access to an application. If you want to review access to an access package, read [Review access of an access package in entitlement management](entitlement-management-access-reviews-review-access.md).
 
-## Perform access review by using My Access
-You can review access to groups and applications via My Access. My Access is a user-friendly portal for granting, approving, and reviewing access needs.
+You can review access to groups and applications via the [My Access portal](https://myaccess.microsoft.com/) or via chat with the [Access Review Agent (Preview)](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) in Microsoft Teams. The Access Review Agent is currently in preview and does not yet support all types of group and application reviews, if the agent cannot yet help you with your assigned reviews it will guide you to the My Access portal.
+
+## Perform an access review using the Access Review Agent (Preview)
+The Access Review Agent assists you in completing your pending access reviews by guiding you in Microsoft Teams with natural language, insights, and recommendations.
+
+### Go directly to the Access Review Agent
+1. Select the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3) link to open the agent
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent
+1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
+
+### Use email to go to the Access Review Agent
+
+>[!IMPORTANT]
+> There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
+
+1. Look for an email from Microsoft asking you to review access.
+1. Select the **Start review** link to open the [Access Review Agent](https://teams.microsoft.com/l/app/b99caf01-1dd7-43cf-981a-0de444e783f3). The **Start review** link will either open the Access Review Agent or the My Access portal based on your organizations policies. If the link opens the My Access portal the Access Review Agent has not been enabled for the specific review and must be completed via the My Access portal.
+1. Select **Add** or **Open** to access the conversation with the Access Review Agent
+1. Prompt the agent with **Help me with my access reviews** and the agent will assist you in completing your pending access reviews.
+
+## Perform access review by using the My Access portal
+The [My Access portal](https://myaccess.microsoft.com/) is a user-friendly portal for granting, approving, and reviewing access needs.
 
 ### Use email to go to My Access
 
@@ -54,7 +75,7 @@ Select the name of an access review to get started.
 After it opens, you'll see the list of users in scope for the access review.
 
 > [!NOTE]
-> If the request is to review your own access, the page will look different. For more information, see [Review access for yourself to groups or applications](review-your-access.md).
+> If the request is to review your own access, the page looks different. For more information, see [Review access for yourself to groups or applications](review-your-access.md).
 
 There are two ways that you can approve or deny access:
 
@@ -77,10 +98,10 @@ There are two ways that you can approve or deny access:
 
 1. Select **Submit**.
 
-   You can change your response at any time until the access review has ended. If you want to change your response, select the row and update the response. For example, you can approve a previously denied user or deny a previously approved user.
+   You can change your response at any time until the access review ends. If you want to change your response, select the row and update the response. For example, you can approve a previously denied user or deny a previously approved user.
 
  > [!IMPORTANT]
- > - If a user is denied access, they aren't removed immediately. The user is removed when the review period has ended or when an administrator stops the review.
+ > - If a user is denied access, they aren't removed immediately. The user is removed when the review period ends or when an administrator stops the review.
  > - If there are multiple reviewers, the last submitted response is recorded. Consider an example where an administrator designates two reviewers: Alice and Bob. Alice opens the access review first and approves a user's access request. Before the review period ends, Bob opens the access review and denies access on the same request previously approved by Alice. The last decision denying the access is the response that gets recorded.
 
 ### Review access based on recommendations
@@ -115,7 +136,7 @@ If you're the second-stage or third-stage reviewer, you'll also see the decision
 Approve or deny access as outlined in [Review access for one or more users](#review-access-for-one-or-more-users).
 
 > [!NOTE]
-> The next stage of the review won't become active until the duration specified during the access review setup has passed. If the administrator believes a stage is done but the review duration for this stage has not expired yet, they can use the **Stop current stage** button in the overview of the access review in the Microsoft Entra admin center. This action will close the active stage and start the next stage.
+> The next stage of the review won't become active until the duration specified during the access review setup has passed. If the administrator believes a stage is done but the review duration for this stage hasn't expired yet, they can use the **Stop current stage** button in the overview of the access review in the Microsoft Entra admin center. This action will close the active stage and start the next stage.
 
 ### Review access for B2B direct connect users in Teams shared channels and Microsoft 365 groups (preview)
 

@@ -3,14 +3,13 @@ title: How to Create Remote Networks
 description: Learn how to create remote networks, for remote locations such as branch offices, for Global Secure Access.
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 09/02/2025
 ms.service: global-secure-access
-ms.reviewer: absinh
-
+ms.reviewer: abhijeetsinha
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
-
 ---
 # How to create a remote network with Global Secure Access
 
@@ -96,7 +95,10 @@ This process is covered in detail in the [How to configure your customer premise
 
 ### Set up your CPE
 
-This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you complete this step, your IPsec *isn't* set up. IPsec is a bidirectional communication. IKE negotiations happen between two parties before the tunnel is successfully set up. So, don't miss this step.
+You perform this step in the management console of your CPE, not in Microsoft Entra admin center. Until you complete this step, your IPsec *isn't* set up. IPsec is a bidirectional communication. IKE negotiations occur between two parties before the tunnel is successfully set up. Don't skip this step.
+
+> [!TIP]
+> For guidance on enhancing the resilience of remote networks, see [Best practices for Global Secure Access remote network resilience](remote-network-resilience.md).
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 

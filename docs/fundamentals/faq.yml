@@ -1,14 +1,16 @@
 ### YamlMime:FAQ
-metadata:
+metadata:  
   title: Frequently asked questions (FAQ) about Microsoft Entra, Microsoft Entra ID, and Azure
   description: Common questions and answers about Microsoft Entra, Microsoft Entra ID and Azure, such as password management and application access.
   author: barclayn
-  manager: femila
+  manager: pmwongera
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: faq
   ms.date: 03/05/2025
   ms.author: barclayn
+  ms.custom:
+    - sfi-ga-nochange
 title: Frequently asked questions about Microsoft Entra ID
 summary: |
   Microsoft Entra ID is a cloud-based identity and access management solution. It's a directory and identity management service that operates in the cloud and offers authentication and authorization services to various Microsoft services, such as Microsoft 365, Dynamics 365, and Microsoft Azure.
@@ -23,7 +25,7 @@ sections:
         answer: |
           To access the Microsoft Entra admin center or the Azure portal, each user needs permissions with a valid subscription. If you don't have a paid Microsoft 365 or Microsoft Entra subscription, you need to activate a free [Microsoft Entra Account](https://azure.microsoft.com/free/) or establish a paid subscription. All Azure subscriptions, whether paid or free, have a trust relationship with a Microsoft Entra tenant. All subscriptions rely on the Microsoft Entra tenant (directory) to authenticate and authorize security principals and devices. 
           
-          For more information, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.yml).
+          For more information, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
           
           
           
@@ -49,7 +51,7 @@ sections:
           
           [!INCLUDE [tenant-installation-account](../includes/definitions/tenant-installation-account.md)] This user has access to all Microsoft Entra directory features. Microsoft Entra ID has a different set of administrator roles to manage the directory and identity-related features. These administrators have access to various features in the Azure portal. The administrator's role determines what they can do, like create or edit users, assign administrative roles to others, reset user passwords, manage user licenses, or manage domains.  
           
-          For more information, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.yml) and [Assigning administrator roles in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
+          For more information, see [Assign a user to administrator roles in Microsoft Entra ID](./how-subscriptions-associated-directory.md) and [Assigning administrator roles in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).
 
       - question: |
           Is there a report that shows when my Microsoft Entra user licenses expire?
@@ -139,8 +141,8 @@ sections:
 
           For Microsoft Entra accounts, admins can reset passwords by using one of the following:
           
-          - [Reset a user's password using Microsoft Entra ID](./users-reset-password-azure-portal.yml)
-          - [Reset a password using PowerShell](/powershell/module/microsoft.graph.users.actions/reset-mguserauthenticationmethodpassword)
+          - [Reset a user's password using Microsoft Entra ID](./users-reset-password-azure-portal.md)
+          - [Reset a password using PowerShell](/powershell/module/microsoft.graph.identity.signins/reset-mguserauthenticationmethodpassword)
 
   - name: Help with security
     questions:

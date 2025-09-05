@@ -2,12 +2,13 @@
 title: Create an access review of an access package in entitlement management
 description: Learn how to set up an access review in a policy for entitlement management access packages in Microsoft Entra ID part of Microsoft Entra.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 03/10/2025
+ms.date: 06/18/2025
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
 ---
 # Create an access review of an access package in entitlement management
@@ -26,7 +27,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 
-1. Browse to **Identity governance** > **Access reviews** > **Access package**.
+1. Browse to **ID Governance** > **Access reviews** > **Access package**.
 
 1. To create a new access policy, select **New access** package.
 
@@ -36,7 +37,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. In the **Expiration** section, set Access package assignments expires to **On date**, **Number of days**, **Number of hours**, or **Never**.
 
-    For **On date**, select an expiration date in the future.
+    For **On date**, select an expiration date in the future. 
 
     For **Number of days**, specify a number between 0 and 3660 days.
 
@@ -99,7 +100,10 @@ You can enable access reviews when [creating a new access package](entitlement-m
         - **approve** the review if the user has signed-in at least once during the last 30 days. 
         - **deny** the review if the user hasn't signed-in during the last 30 days.
     1. If you want the reviewer to share their reasons for their approval decision, select **Require reviewer justification**. Their justification is visible to other reviewers and the requestor.
-
+    1. **Access Review Agent (Preview)**: Select this checkbox to allow reviewers to complete the access review in Microsoft Teams with natural language, insights, and recommendations.
+        > [!NOTE]
+        > This setting is only available for review configurations currently supported by the Access Review Agent and additional setup steps are required. For more information, see: [Access Review Agent with Microsoft Security Copilot](access-review-agent.md).
+    
 1. Select **Review + Create** or select **next** if you're creating a new access package. Select **Update** if you're editing an access package, at the bottom of the page.
 
 ## View the status of the access review

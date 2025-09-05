@@ -1,19 +1,16 @@
 ---
-
 title: Secure access practices for administrators in Microsoft Entra ID
 description: Ensure that your organization's administrative access and administrator accounts are secure. For system architects and IT pros who configure Microsoft Entra ID, Azure, and Microsoft Online Services.
-
-keywords:
-author: rolyon
-manager: femila
-ms.author: rolyon
+keywords: 
+author: barclayn
+manager: pmwongera
+ms.author: barclayn
 ms.date: 11/21/2024
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ms.reviewer: "martincoetzer; MarkMorow"
-
 ---
 
 # Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID
@@ -81,7 +78,7 @@ After you start using Microsoft Entra Privileged Identity Management:
 
 1. To switch directories where you want to use Privileged Identity Management, select your user name in the upper right corner of the Microsoft Entra admin center.
 
-1. Browse to **Identity governance** > **Privileged Identity Management**.
+1. Browse to **ID Governance** > **Privileged Identity Management**.
 
 Make sure the first person to use PIM in your organization is assigned to the [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) and [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) roles. Only Privileged Role Administrators can manage the Microsoft Entra directory role assignments of users. The PIM security wizard walks you through the initial discovery and assignment experience. You can exit the wizard without making any additional changes at this time.
 

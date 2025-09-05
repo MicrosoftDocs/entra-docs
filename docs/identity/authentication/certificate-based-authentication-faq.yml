@@ -1,20 +1,21 @@
 ### YamlMime:FAQ
 metadata:
-  title: Microsoft Entra certificate-based authentication (CBA) FAQ
-  description: Frequently asked questions and answers related to Microsoft Entra certificate-based authentication (CBA). 
+  title: Microsoft Entra CBA FAQ
+  description: Frequently asked questions and answers for Microsoft Entra certificate-based authentication (CBA). 
   ms.service: entra-id
   ms.subservice: authentication
   ms.custom: no-azure-ad-ps-ref
+    - sfi-image-nochange
   ms.topic: faq
   ms.date: 03/04/2025
   ms.author: justinha
   author: justinha
-  manager: femila
+  manager: dougeby
   ms.reviewer: vimrang
-title: Frequently asked questions about Microsoft Entra certificate-based authentication (CBA)
+title: Frequently asked questions about Microsoft Entra certificate-based authentication
 summary: |
   This article addresses frequently asked questions about how Microsoft Entra certificate-based authentication (CBA) works. 
-  Keep checking back for updated content.
+  Check back for updated content.
 
 
 sections:
@@ -23,164 +24,122 @@ sections:
       - question: |
           Why don't I see an option to sign in to Microsoft Entra ID by using certificates after I enter my username?
         answer: |
-          An administrator needs to enable CBA for the tenant to make the sign-in with certificate option available for users. For more information, see [Step 3: Configure authentication binding policy](how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy).
+          An administrator must turn on CBA for the tenant to make the option to sign in by using a certificate available to users. For more information, see [Step 3: Configure the authentication binding policy](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy).
 
       - question: |
-          Where can I get more diagnostic information after a user sign-in failed? 
+          Where can I get more diagnostic information after a user sign-in fails? 
         answer: |
-          On the error page, select **More Details** for more information to help your tenant admin. The tenant admin can check the **sign-in logs** to investigate further. For example, if a user certificate is revoked and is part of a Certificate Revocation List, then authentication fails correctly.
-          To get more diagnostic information, check the **sign-in logs**.
+          On the error page, select **More Details** for more information to help your tenant admin. The tenant admin can check the sign-in logs to investigate the error. For example, if a user certificate is revoked and is on the certification revocation list (CRL), authentication fails as intended.
 
       - question: |
-          How can an administrator enable Microsoft Entra CBA?
+          How do we turn on Microsoft Entra CBA?
         answer: |        
-          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-          2. Browse to **Protection** > **Authentication methods** > **Policies**.
-          3. Select the **Certificate-based Authentication** policy.
-          4. On the **Enable and Target** tab, select **Enable**.
+          1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role assigned.
+          1. Go to **Entra ID** > **Authentication methods** > **Policies**.
+          1. Select the **Certificate-based authentication** policy.
+          1. On the **Enable and Target** tab, select **Enable**.
 
       - question: |
           Is Microsoft Entra CBA a free feature?
         answer: |
-          Certificate-based authentication is a free feature. 
+          Microsoft Entra CBA is a free feature.
+
           Every edition of Microsoft Entra ID includes Microsoft Entra CBA.
+
           For more information about features in each Microsoft Entra edition, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
       - question: |
-          Does Microsoft Entra CBA support Alternate ID as the username instead of userPrincipalName?
+          Does Microsoft Entra CBA support an alternate ID as the username instead of userPrincipalName?
         answer: |
-          No, sign-in using a non-UPN value, such as an alternate email, isn't supported now.
+          No. Currently, sign-in by using a non-UPN value, such as an alternate email, isn't supported.
           
       - question: |
-          Can I have more than one CRL Distribution Point (CDP) for a Certificate Authority (CA)?
+          Can I have more than one CRL distribution point for a certificate authority?
         answer: |
-          No, only one CDP is supported per CA.
+          No, only one CRL distribution point (CDP) is supported per certificate authority (CA).
 
       - question: |
-          Can I have non-http URLs for CDP?
+          Can I use a non-HTTP URL for a CDP?
         answer: |
-          No, CDP supports only HTTP URLs.
+          No. CDP supports only HTTP URLs.
 
       - question: |
-          How do I find the CRL for a Certificate Authority or how do I troubleshoot the error AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation?
+          How do I find the CRL for a CA, or how do I troubleshoot the error "AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation"?
         answer: |
-          Download the CRL and compare the CA certificate and the CRL information to validate the crlDistributionPoint value is valid for the CA you want to add. You can configure the CRL to the corresponding CA by matching CA's Issuer SKI to the AKI of the CRL (CA Issuer SKI == CRL AKI).
-          The following table and graphic show how to map information from the CA certificate to the attributes of the downloaded CRL.
+          Download the CRL and compare the CA certificate and the CRL information to validate that the `crlDistributionPoint` value is valid for the CA you want to add. You can configure the CRL to the corresponding CA by matching the CA's issuer subject key identifier (SKI) to the authority key identifier (AKI) of the CRL (CA Issuer SKI == CRL AKI).
 
-          | CA Certificate Info |= |Downloaded CRL Info|
+          The following table and figure show how to map information from the CA certificate to the attributes of the downloaded CRL.
+
+          | CA certificate info |= |Downloaded CRL info|
           |----|:-:|----|
           |Subject |=|Issuer |
-          |Subject Key Identifier |=|Authority Key Identifier (KeyID) |
+          |Subject Key Identifier (SKI) |=|Authority Key Identifier (KeyID) |
 
-          :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Screenshot comparing CA Certificate with CRL Information.":::
+          :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Screenshot that compares CA certificate fields with CRL information.":::
       
       - question: |
-          How do I validate the Certificate Authority configuration?
+          How do I validate the CA configuration?
         answer: |
           It's important to ensure that the Certificate Authority configuration in the trust store results in Microsoft Entra's ability to both validate the certificate authority trust chain. Additionally, it should successfully acquire the certificate 
           revocation list (CRL) from the configured certificate authority CRL distribution point (CDP). To assist with this task, it's recommended to install the 
           [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). 
           This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
-          
-      - question: |
-          How can I turn certificate revocation checking on or off for a particular CA?
-        answer: |
-          We highly recommend against disabling certificate revocation list (CRL) checking as you won't be able to revoke certificates. 
-          However, if you need to investigate issues with CRL checking, you can exempt a CA from CRL checking in the Microsoft Entra admin center. 
-          In the CBA Authentication methods policy, click **Configure** and then click **Add exemption**. Choose the CA that you want to exempt, and click **Add**. 
-          
-      - question: |
-          Is there a limit for CRL size?
-        answer: |
-          The following CRL size limits apply: 
-
-           - Interactive sign in download limit: 20 MB (Azure Global includes GCC), 45 MB for (Azure US government, includes GCC High, Dept. of Defense)
-           - Service download limit: 65 MB (Azure Global includes GCC), 150 MB for (Azure US government, includes GCC High, Dept. of Defense)
-
-            When a CRL download fails, the following message appears: 
-            
-            "The Certificate Revocation List (CRL) downloaded from {uri} has exceeded the maximum allowed size ({size} bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators."
-            
-            Download remains in the background with higher limits.
-
-            We're reviewing the impact of these limits and have plans to remove them.
 
       - question: |
-          I see a valid Certificate Revocation List (CRL) endpoint set, but why don't I see any CRL revocation?
-        answer: |
-          - Make sure the CRL distribution point is set to a valid HTTP URL.
-          - Make sure the CRL distribution point is accessible via an internet-facing URL.
-          - Make sure the CRL sizes are within limits. 
-
-      - question: |
-          How do I instantly revoke a certificate?
-        answer: |
-          Follow the steps to [manually revoke a certificate](./certificate-based-authentication-federation-get-started.md#step-3-configure-revocation). 
-
-      - question: |
-          Will the changes to the Authentication methods policy take effect immediately?
+          Do changes to the authentication methods policy take effect immediately?
         answer: |
           The policy is cached. After a policy update, it might take up to an hour for the changes to take effect.
       
       - question: |
-          Why do I see the certificate-based authentication option after it fails?
+          Why do I see the CBA option after it fails?
         answer: |
-          The Authentication method policy always shows all available authentication methods to the user so they can retry sign-in using any method they prefer. 
-          Microsoft Entra ID doesn't hide available methods based on success or failure of a sign-in.
+          The authentication method policy always shows all available authentication methods to the user so that they can retry sign-in by using any method they prefer.
+
+          Microsoft Entra ID doesn't hide available methods based on the success or failure of a sign-in.
 
       - question: |
-          Why does certificate-based auth (CBA) loops once it fails?
+          Why does CBA loop after it fails?
         answer: |
-          The browser caches the certificate after the certificate picker appears. If the user retries, the cached certificate is used automatically. The user should close the browser, and reopen a new session to try CBA again.          
+          The browser caches the certificate after the certificate picker appears. If the user retries authentication, the cached certificate is automatically used. The user should close the browser, and then reopen a new session to try CBA again.          
 
       - question: |
-          Why doesn't proof up for registering other auth methods come up when I use single factor certificates?
+          Why doesn't identity proof to register other authentication methods appear as an option when I use single-factor certificates?
         answer: |
-          A user is considered capable for MFA when the user is in scope for **Certificate-based authentication** in the Authentication methods policy. This policy requirement means a user can't use proof up as part of their authentication to register other available methods.
+          A user is considered capable of multifactor authentication (MFA) when the user is in scope for CBA in the authentication methods policy. This policy requirement means that a user can't use identity proof as part of their authentication to register other available methods.
           
       - question: |
           How can I use single-factor certificates to complete MFA?
         answer: |
-          We have support for single factor CBA to get MFA. CBA SF + passwordless phone sign-in (PSI) and CBA SF + FIDO2 are the two supported combinations to get MFA using single factor certificates.
-          [MFA with single factor certificates](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-authentication-flow-using-single-factor-certificates-and-passwordless-sign-in) 
+          We support single-factor CBA to get MFA. CBA single-factor with passwordless phone sign-in and CBA single-factor with FIDO2 are the two supported combinations to get MFA by using single-factor certificates.
+
+          For more information, see [MFA with single-factor certificates](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-authentication-flow-by-using-single-factor-certificates-and-passwordless-sign-in).
           
       - question: |
-          CertificateUserIds update fails with value already there. How can an admin query all the user objects with the same value?
+          The certificateUserIds update fails because it's an existing value. How can an admin query all the user objects that have the same value?
         answer: |
-          Tenant admins can run Microsoft Graph queries to find all the users with a given certificateUserId value. For more information, see [CertificateUserIds graph queries](concept-certificate-based-authentication-certificateuserids.md#update-certificateuserids-using-microsoft-graph-queries).
+          Tenant admins can run Microsoft Graph queries to find all the users that have a specific `certificateUserIds` value. For more information, see [`certificateUserIds` Graph queries](concept-certificate-based-authentication-certificateuserids.md#update-certificateuserids-using-microsoft-graph-queries).
           
-          This command returns all user objects that have the value 'bob@contoso.com' value in certificateUserIds:
+          For example, this command returns all user objects that have the value `bob@contoso.com` in `certificateUserIds`:
 
            ```http
            GET  https://graph.microsoft.com/v1.0/users?$filter=certificateUserIds/any(x:x eq 'bob@contoso.com')
-           ```
+           ```   
 
       - question: |
-           After a CRL endpoint is configured, end users aren't able to sign in and they see the following diagnostic message:
-           
-           ```http
-           AADSTS500173: Unable to download CRL. Invalid status code Forbidden from CRL distribution point
-           errorCode: 500173
-           ```
-           
+           Can Microsoft Entra CBA be used on Microsoft Surface Hub?
         answer: |
-          This is commonly seen when a firewall rule setting blocks access to the CRL endpoint. 
-
-      - question: |
-           Can Microsoft Entra CBA be used on Surface Hub?
-        answer: |
-           Yes. CBA works out-of-the-box for most smart card and smart card reader combinations. 
-           If the smart card and smart card reader combination requires other drivers, they must be installed before you can using the smart card and smart card reader combination on the Surface Hub.
+           Yes. CBA works out-of-the-box for most combinations of smart card and smart card reader. 
+           If the combination smart card and smart card reader requires other drivers, you must install the drivers before you can use the combination smart card and smart card reader on Surface Hub.
       
 additionalContent: |
-  ## Next steps
-    If your question isn't answered here, see the following related topics:
+  ## Related content
+    If your question isn't answered here, see the following related articles:
           
     * [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)
-    * [Technical deep dive for Microsoft Entra CBA](concept-certificate-based-authentication-technical-deep-dive.md)
+    * [Microsoft Entra CBA technical concepts](concept-certificate-based-authentication-technical-deep-dive.md)
     * [Microsoft Entra CBA on iOS devices](concept-certificate-based-authentication-mobile-ios.md)
     * [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
-    * [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
-    * [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
+    * [Set up Microsoft Entra CBA](how-to-certificate-based-authentication.md)
+    * [Windows smart card sign-in by using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
     * [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)
-    * [How to migrate federated users](concept-certificate-based-authentication-migration.md)
+    * [Migrate federated users](concept-certificate-based-authentication-migration.md)

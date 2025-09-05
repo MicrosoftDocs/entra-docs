@@ -1,17 +1,16 @@
 ---
 title: 'Customize an installation of Microsoft Entra Connect'
 description: This article explains the custom installation options for Microsoft Entra Connect. Use these instructions to install Active Directory through Microsoft Entra Connect.
-
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Custom installation of Microsoft Entra Connect
@@ -123,7 +122,7 @@ On the **Microsoft Entra sign-in configuration** page, review the user principal
 
 :::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-7.png" alt-text="Screenshot of the sign-in configuration." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-7.png":::
 
-Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
+Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
 
 Users use the *userPrincipalName* attribute when they sign in to Microsoft Entra ID and Microsoft 365. Microsoft Entra ID should verify the domains, also known as the UPN-suffix, before users are synchronized. Microsoft recommends that you keep the default attribute userPrincipalName. 
 
@@ -355,7 +354,7 @@ You're prompted to enter credentials so that the web application server can esta
 <a name='verify-the-azure-ad-domain-selected-for-federation'></a>
 
 ### Verify the Microsoft Entra domain selected for federation
-When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
+When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
 
 > [!NOTE]
 > Microsoft Entra Connect tries to verify the domain during the configuration stage. If you don't add the necessary Domain Name System (DNS) records, the configuration can't be completed.

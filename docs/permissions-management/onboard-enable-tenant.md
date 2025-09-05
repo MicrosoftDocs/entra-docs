@@ -1,13 +1,13 @@
 ---
-title:  Enable Microsoft Entra Permissions Management in your organization
+title: Enable Microsoft Entra Permissions Management in your organization
 description: How to enable Microsoft Entra Permissions Management in your organization.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
-
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 05/02/2025
 ms.author: jfields
+ms.custom: sfi-ga-nochange
 ---
 
 # Enable Microsoft Entra Permissions Management in your organization
@@ -34,9 +34,10 @@ To enable Permissions Management in your organization:
 ## How to enable Permissions Management on your Microsoft Entra tenant
 
 1. In your browser:
-    1. Browse to the [Microsoft Entra admin center](https://entra.microsoft.com) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) as at least a [Billing Administrator](https://go.microsoft.com/fwlink/?linkid=2248574).
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as at least a [Billing Administrator](https://go.microsoft.com/fwlink/?linkid=2254515).
     1. If needed, activate the *Permissions Management Administrator* role in your Microsoft Entra tenant.
-    1. In the Azure portal, select **Microsoft Entra Permissions Management**, then select the link to purchase a license or begin a trial.
+    1. Browse to **Entra ID**, then select **Go to Microsoft Entra ID**.
+    1. In the Entra ID portal, select **Microsoft Entra Permissions Management**, then select the link to purchase a license or begin a trial.
 
 
 ## Activate a free trial or paid license 

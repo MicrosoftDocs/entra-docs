@@ -1,16 +1,15 @@
 ---
 title: Renew expiring service principal credentials recommendation
 description: Learn how the Microsoft Entra recommendation to renew expiring service principal credentials work and why it's important.
-
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand why it's important to renew expiring service principals so I can make sure my applications continue to function.
 ---
 # Microsoft Entra recommendation: Renew expiring service principal credentials (preview)
@@ -48,14 +47,14 @@ This recommendation is available in the Microsoft Entra admin center and using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
 
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 
 1. Select the **Recommendations** tab and select the **Renew expiring service principal credentials** recommendation.
 
 1. Select **More Details** from the **Actions** column.
 
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Single sign-on** area of the app registration.
-    1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and locate the application for which the credential needs to be rotated.
+    1. Alternatively, browse to **Entra ID** > **App registrations** and locate the application for which the credential needs to be rotated.
 
       :::image type="content" source="media/recommendation-renew-expiring-service-principal-credential/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-renew-expiring-service-principal-credential/app-registrations-list-expanded.png":::
 

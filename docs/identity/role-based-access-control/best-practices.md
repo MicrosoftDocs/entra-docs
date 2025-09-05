@@ -1,17 +1,15 @@
 ---
 title: Best practices for Microsoft Entra roles
 description: Best practices for using Microsoft Entra roles.
-
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.topic: conceptual
+ms.topic: best-practice
 ms.date: 03/30/2025
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Best practices for Microsoft Entra roles
@@ -28,7 +26,7 @@ Follow these steps to help you find the right role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Navigate to **Entra ID** > **Roles & admins** > **All roles**.
 
 1. Use the **Service** filter to narrow down the list of roles.
 

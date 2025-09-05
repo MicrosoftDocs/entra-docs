@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra SSO integration with DriveLock
+title: Configure DriveLock for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DriveLock.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with DriveLock
+# Configure DriveLock for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate DriveLock with Microsoft Entra ID. When you integrate DriveLock with Microsoft Entra ID, you can:
 
@@ -45,7 +45,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of DriveLock into Microsoft Entra ID, you need to add DriveLock from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **DriveLock** in the search box.
 1. Select **DriveLock** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -72,7 +72,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 In this section, you create a test user in the Microsoft Entra admin center called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -86,7 +86,7 @@ In this section, you create a test user in the Microsoft Entra admin center call
 In this section, you enable B.Simon to use Microsoft Entra single sign-on by granting access to DriveLock.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **DriveLock**.
+1. Browse to **Entra ID** > **Enterprise apps** > **DriveLock**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.

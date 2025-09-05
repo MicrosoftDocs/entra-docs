@@ -8,7 +8,7 @@ ms.service: entra
 ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want replace existing VPN with a cloud-based solution so that we can move towards Secure Access Service Edge (SASE).
 ---
 # Microsoft Entra Suite deployment scenario - Modernize remote access to on-premises apps with MFA per app
@@ -160,7 +160,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
    :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Screenshot of Create Global Secure Access application, Create application segment.":::
 
 1. Select **Apply** > **Save**. Verify that the application is in **Enterprise applications**.
-1. Go to **Identity** > **Applications** > **Enterprise applications**. Select the new application.
+1. Go to **Entra ID** > **Enterprise apps**. Select the new application.
 1. Select **Users and groups**. Add the security group that you created earlier with test users that access this file share from the internet.
 
 ### Secure published application for remote access with quick access
@@ -168,7 +168,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
 In this section, we create a Conditional Access policy that blocks access to the new application when a user's risk is elevated.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Enter a name and select users. Select users and groups. Select the security group that you created earlier.
 1. Select **Target resources** > **Apps** and the **application** that you created earlier (such as *FileServer1*).
@@ -321,7 +321,7 @@ Microsoft Entra Private Access supports transmission control protocol (TCP) appl
    :::image type="content" source="media/deployment-scenario-remote-access/application-segment.png" alt-text="Screenshot of Create Global Secure Access application, Create application segment.":::
 
 1. Select **Apply** > **Save**. Verify that the application is in **Enterprise applications**.
-1. Go to **Identity** > **Applications** > **Enterprise applications**. Select the new application.
+1. Go to **Entra ID** > **Enterprise apps**. Select the new application.
 1. Select **Users and groups**. Add the security group that you created earlier with test users that access this file share from the internet.
 
 ### Configure access governance for remote access per app
@@ -333,7 +333,7 @@ In this section, we describe the configuration steps for this solution.
 Follow these steps to create an Entitlement management catalog:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 1. Select **+New catalog**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-remote-access/identity-governance-catalogs-expanded.png":::
@@ -357,7 +357,7 @@ We recommend group provisioning to Active Directory with [Microsoft Entra Cloud 
 Follow these steps to configure Microsoft Entra Cloud sync:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
+1. Browse to **Entra ID** > **Entra Connect** > **Cloud sync**.
 1. Select **New configuration**.
 1. Select **Microsoft Entra ID to AD sync**.
 
@@ -383,7 +383,7 @@ Follow these steps to configure Microsoft Entra Cloud sync:
 Follow these steps to create an access package in Entitlement management:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 1. Select **New access package**.
 1. For **Basics**, give the access package a name (such as *Finance Apps Access Package*). Specify the catalog that you previously created.
 1. For **Resource roles**, select the resources that you previously added (such as *FileServer1 app* and *Finance Team File Share* security group).
@@ -410,7 +410,7 @@ In this section, we describe how to create joiner and leaver workflows and run w
 To create a joiner workflow, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator).
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Create a workflow**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create a workflow**.
 1. For **Choose a workflow**, select **Onboard new hire employee**.
 
    [![Screenshot of Identity governance, Lifecycle workflows, Create a workflow, Choose a workflow.](media/deployment-scenario-remote-access/workflow-joiner.png)](media/deployment-scenario-remote-access/workflow-joiner.png#lightbox)
@@ -439,7 +439,7 @@ To create a joiner workflow, follow these steps.
 To create a leaver workflow, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator).
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Create a workflow**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create a workflow**.
 1. On **Choose a workflow**, select **Offboard an employee**.
 
    :::image type="content" source="media/deployment-scenario-remote-access/workflow-leaver.png" alt-text="Screenshot of Choose a workflow with a red box highlighting the Leaver card.":::
@@ -469,7 +469,7 @@ To test this scenario without waiting for the automated schedule, run on-demand 
 
 1. Initiate the previously created joiner workflow.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator).
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 1. On **Workflow**, select *Onboard New hire employee -- Finance* that you previously created.
 1. Select **Run on-demand**.
 1. On **Select users**, select **Add users**.
@@ -536,7 +536,7 @@ To verify user access to the file server, follow these steps:
 ### Run leaver workflow on demand
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator).
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 1. On Workflows, select the *Offboard an employee - Finance* workflow that you created in the leaver steps.
 1. Select **Run on-demand**.
 1. On **Select users**, select **Add users**.

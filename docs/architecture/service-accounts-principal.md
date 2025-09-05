@@ -5,10 +5,10 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/08/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+ms.custom: sfi-image-nochange
 ---
 
 # Securing service principals in Microsoft Entra ID 

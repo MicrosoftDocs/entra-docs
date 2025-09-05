@@ -2,10 +2,10 @@
 title: Refresh tokens in the Microsoft identity platform
 description: Learn about refresh tokens that are used in the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/10/2024
+ms.date: 05/14/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -39,7 +39,9 @@ The server can revoke refresh tokens because of a change in credentials, user ac
 | Password expires | Stays alive | Stays alive | Stays alive | Stays alive | Stays alive |
 | Password changed by user | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
 | User does SSPR | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
-| Admin resets password | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
+| Admin resets password (Azure portal) | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
+| Admin resets password (Microsoft Entra admin center) | Revoked | Revoked | Stays alive | Revoked | Revoked |
+| Admin resets password (M365 admin center) | Revoked | Revoked | Stays alive | Revoked | Revoked |
 | User revokes their refresh tokens | Revoked | Revoked | Revoked | Revoked | Revoked |
 | Admin revokes all refresh tokens for a user | Revoked | Revoked | Revoked | Revoked | Revoked |
 | Single sign-out | Revoked | Stays alive | Revoked | Stays alive | Stays alive |

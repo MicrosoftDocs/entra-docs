@@ -2,7 +2,7 @@
 title: ID token claims reference
 description: Learn the details of the claims included in ID tokens issued by the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 05/30/2023
@@ -41,7 +41,7 @@ The following table shows the claims that are in most ID tokens by default (exce
 |`aud` |  String, an App ID GUID | Identifies the intended recipient of the token. In `id_tokens`, the audience is your app's Application ID, assigned to your app in the Azure portal. This value should be validated. The token should be rejected if it fails to match your app's Application ID. |
 |`iss` |  String, an issuer URI | Identifies the issuer, or "authorization server" that constructs and returns the token. It also identifies the tenant for which the user was authenticated. If the token was issued by the v2.0 endpoint, the URI ends in `/v2.0`.  The GUID that indicates that the user is a consumer user from a Microsoft account is `9188040d-6c67-4c5b-b112-36a304b66dad`. Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable. |
 |`iat` | int, a Unix timestamp | Indicates when the authentication for the token occurred. |
-|`idp`| String, usually an STS URI | Records the identity provider that authenticated the subject of the token. This value is identical to the value of the issuer claim unless the user account isn't in the same tenant as the issuer - guests, for instance. If the claim isn't present, it means that the value of `iss` can be used instead. For personal accounts being used in an organizational context (for instance, a personal account invited to a tenant), the `idp` claim may be 'live.com' or an STS URI containing the Microsoft account tenant `9188040d-6c67-4c5b-b112-36a304b66dad`. |
+|`idp`| String, usually an STS URI | Records the identity provider that authenticated the subject of the token. This value is identical to the value of the issuer claim unless the user account isn't in the same tenant as the issuer - guests, for instance. If the claim isn't present, it means that the value of `iss` can be used instead. For personal accounts being used in an organizational context (for instance, a personal account invited to a tenant), the `idp` claim may be 'live.com' or an STS URI containing the Microsoft account tenant `9188040d-6c67-4c5b-b112-36a304b66dad`. This claim is emitted in federated domain scenarios involving guests users and should always be sent in managed domain scenarios.  |
 |`nbf` |  int, a Unix timestamp | Identifies the time before which the JWT can't be accepted for processing. |
 |`exp` |  int, a Unix timestamp | Identifies the expiration time on or after which the JWT can't be accepted for processing. In certain circumstances, a resource may reject the token before this time. For example, if a change in authentication is required or a token revocation has been detected. |
 | `c_hash`| String | The code hash is included in ID tokens only when the ID token is issued with an OAuth 2.0 authorization code. It can be used to validate the authenticity of an authorization code. To understand how to do this validation, see the [OpenID Connect specification](https://openid.net/specs/openid-connect-core-1_0.html#HybridIDToken). This claim isn't returned on ID tokens from the /token endpoint. |

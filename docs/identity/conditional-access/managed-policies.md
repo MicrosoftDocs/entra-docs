@@ -1,16 +1,15 @@
 ---
 title: Microsoft-Managed Conditional Access Policies for Enhanced Security
 description: Secure your resources with Microsoft-managed Conditional Access policies. Require multifactor authentication to reduce compromise risks.
-
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 04/16/2025
-
+ms.topic: article
+ms.date: 04/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: swethar
+ms.custom: sfi-image-nochange
 ---
 # Microsoft-managed Conditional Access policies
 
@@ -27,7 +26,7 @@ As part of this work, we're making Microsoft-managed policies available in Micro
 
 ## How Microsoft-managed policies work
 
-Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
+Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Entra ID** > **Conditional Access** > **Policies**.
 
 You can edit the state of a policy and what identities the policy should exclude. Exclude your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
 
@@ -43,7 +42,7 @@ Microsoft enables these policies no less than 45 days after they're introduced i
 
 These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies. As administrators get more comfortable with Conditional Access policy, they might choose to duplicate the policy to create custom versions.
 
-As threats evolve over time, Microsoft might change these policies in the future to take advantage of new features, functionality, or to improve their function.
+As threats evolve, Microsoft might update these policies to use new features, functionality, or improve their effectiveness
 
 - [Block legacy authentication](#block-legacy-authentication)
 - [Block device code flow](#block-device-code-flow)
@@ -68,7 +67,7 @@ Device code flow is rarely used by customers, but is frequently used by attacker
 
 This policy covers [14 admin roles](#what-administrator-roles-are-covered-by-these-policies) that are highly privileged, who access the [Microsoft Admin Portals](policy-old-require-mfa-admin-portals.md), and requires them to perform multifactor authentication.
 
-This policy targets Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
+This policy applies to Microsoft Entra ID P1 and P2 tenants where security defaults aren't enabled.
 
 > [!TIP]
 > Microsoft-managed policies requiring multifactor authentication differ from the [announcement of mandatory multifactor authentication for Azure sign-ins made in 2024](https://azure.microsoft.com/blog/announcing-mandatory-multi-factor-authentication-for-azure-sign-in/), which started gradual rollout in October of 2024. For more information, see [Planning for mandatory multifactor authentication for Azure and other admin portals](../authentication/concept-mandatory-multifactor-authentication.md).
@@ -124,18 +123,18 @@ This policy blocks legacy authentication protocols from accessing applications. 
 - Any client that uses older mail protocols such as IMAP, SMTP, or POP3
 - Any sign-in attempts to use legacy authentication. 
  
-Most observed compromising sign-in attempts come from legacy authentication. Since legacy authentication doesn't support multifactor authentication, an attacker can bypass your multifactor authentication requirements by using an older protocol.
+Most observed compromising sign-in attempts come from legacy authentication. Because legacy authentication doesn't support multifactor authentication, attackers can bypass multifactor authentication requirements by using older protocols.
 
 ### Require multifactor authentication for Azure management
 
-This policy covers all users when they're trying to access various Azure services managed through the Azure Resource Manager API including:
+This policy covers all users when they're trying to access various Azure services managed through the Windows Azure Service Management API including:
 
 - Azure portal
 - Microsoft Entra admin center
 - Azure PowerShell
 - Azure CLI
 
-When trying to access any of these resources, the user is required to complete multifactor authentication before they can gain access. 
+Users must complete multifactor authentication to access these resources. 
 
 ### Require multifactor authentication for admins
 
@@ -153,14 +152,14 @@ This policy applies to all users in your organization and requires multifactor a
 
 The managed policy and the sign-in logs are the two places where you can see the effect of these policies on your organization.
 
-Review the **Policy impact on sign-ins** section of the managed policy to see a summary of the effect of the policy in your environment.
+Review the **Policy impact** tab of the managed policy to see a summary of how the policy affects your environment.
 
 :::image type="content" source="media/managed-policies/microsoft-managed-policy-impact-on-sign-in.png" alt-text="Screenshot showing the effect of a policy on the organization.":::
 
-Analyze the **Microsoft Entra sign-in logs** to see specific details about how the policies affect real sign-in activity.
+Analyze the **Microsoft Entra sign-in logs** to see details about how the policies affect sign-in activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Use some or all of the following filters:
    - **Correlation ID** when you have a specific event to investigate.
    - **Conditional Access** to see policy failure and success.
@@ -205,6 +204,10 @@ Depending on your Certificate-Based Authentication (CBA) configuration, it can f
 ### What if I use custom controls?
 
 [Custom controls don't satisfy multifactor authentication claim requirements](controls.md#creating-custom-controls). If your organization uses custom controls you should [migrate to external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), the replacement of custom controls. Your external authentication provider must support external authentication methods and provide the necessary configuration guidance for integration.
+
+### How do I monitor when Microsoft makes a change to these policies or adds a new one?
+
+Administrators with **AuditLog.Read.All** and **Directory.Read** permissions can query the audit log for entries initiated by **Microsoft Managed Policy Manager** in the **Policy** category. For example, use [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to find entries with this query string: `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?$filter=initiatedBy/app/displayName eq 'Microsoft Managed Policy Manager' and category eq 'Policy'`.
 
 ## Related content
 

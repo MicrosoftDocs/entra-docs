@@ -5,9 +5,9 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: 
-ms.date: 11/25/2022
+ms.date: 05/12/2025
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
@@ -49,5 +49,4 @@ The MSAL Angular wrapper takes advantage of the HTTP interceptor to automaticall
 ## Next steps
 
 - Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
-
 - Explore Microsoft identity platform [single-page application code samples](sample-v2-code.md#single-page-applications) 

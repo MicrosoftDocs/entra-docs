@@ -1,16 +1,15 @@
 ---
 title: Restore a deleted Microsoft 365 group
 description: Learn how to restore a deleted group, view restorable groups, and permanently delete a group in Microsoft Entra ID.
-
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: quickstart
-ms.date: 01/15/2025
+ms.date: 03/27/2025
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 # Restore a deleted Microsoft 365 group in Microsoft Entra ID
 
@@ -23,6 +22,9 @@ Role | Permissions
 Global Administrator, Group Administrator, Partner Tier 2 Support, and Intune Administrator | Can restore any deleted Microsoft 365 group
 User Administrator and Partner Tier 1 Support | Can restore any deleted Microsoft 365 group except those groups assigned to the Global Administrator role
 User | Can restore any deleted Microsoft 365 group that they own
+
+>[!NOTE]
+> Soft delete is available for both M365 groups with assigned membership and M365 groups with dynamic membership. At this time, soft delete is not available for security groups.
 
 ## View and manage the deleted Microsoft 365 groups that are available to restore
 
@@ -84,8 +86,5 @@ To verify that you successfully restored a Microsoft 365 group, run the `Get-MgB
 
 For more information on Microsoft Entra groups:
 
-* [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-* [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
-* [Manage members of a group](/entra/fundamentals/how-to-manage-groups)
-* [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
+* [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 * [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

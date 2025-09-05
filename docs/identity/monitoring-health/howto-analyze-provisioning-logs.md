@@ -2,16 +2,15 @@
 title: How to analyze the Microsoft Entra provisioning logs
 description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/19/2025
+ms.date: 07/10/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
-
 ---
 
 # How to download and analyze the Microsoft Entra provisioning logs
@@ -24,6 +23,7 @@ This article describes the options for downloading the provisioning logs from th
 
 - A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the provisioning logs.
+- Application owners can also view logs applications that they own.
     - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 ## How to view the provisioning logs
@@ -39,7 +39,7 @@ There are several ways to view or analyze the Provisioning logs:
 To access the logs in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Provisioning logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Provisioning logs**.
 
 ## How to download the provisioning logs
 
@@ -67,7 +67,7 @@ The JSON file is downloaded in a format to reduce the size of the download. This
 
 - Use PowerShell to format the JSON. This script produces a JSON output in a format that includes tabs and spaces:
 
-  ` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
+  `$JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
 
   `$JSONContent | ConvertTo-Json > <PATH TO OUTPUT THE JSON FILE>`
 
@@ -77,7 +77,7 @@ You can use any programming language that you're comfortable with. The following
 
 - [Read the JSON file](/powershell/module/microsoft.powershell.utility/convertfrom-json):
 
-    ` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
+    `$JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
 
 Now you can parse the data according to your scenario. Here are a couple of examples:
 
@@ -87,12 +87,13 @@ Now you can parse the data according to your scenario. Here are a couple of exam
 
 - Output all change IDs for events where the action was "create":
 
-  `foreach ($provitem in $JSONContent) { `
-  `   if ($provItem.action -eq 'Create') {`
-  `       $provitem.changeId `
-  `   }`
-  `}`
-
+  ```powershell
+  foreach ($provitem in $JSONContent) {
+     if ($provItem.action -eq 'Create') {
+         $provitem.changeId
+     }
+  }
+  ```
 ## What you should know
 
 Here are some tips and considerations for analyzing the provisioning logs:
@@ -159,5 +160,5 @@ Use the following table to better understand how to resolve errors that you find
 ## Related content
 
 - [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)
-- [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem.md)
+- [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/troubleshoot.md)
 - [Graph API for provisioning logs](/graph/api/resources/provisioningobjectsummary)

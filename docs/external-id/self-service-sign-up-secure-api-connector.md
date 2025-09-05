@@ -1,17 +1,14 @@
 ---
 title: Secure APIs used as API connectors in Microsoft Entra External ID self-service sign-up user flows
 description: Secure your custom RESTful APIs used as API connectors in self-service sign-up user flows.
- 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/15/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: "it-pro"
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As a developer integrating a REST API within a Microsoft Entra External ID self-service sign-up user flow, I want to secure my API endpoint with authentication, so that only authorized services, such as Microsoft Entra ID, can make calls to my endpoint.
 ---
 
@@ -34,7 +31,7 @@ HTTP basic authentication is defined in [RFC 2617](https://tools.ietf.org/html/r
 To configure an API Connector with HTTP basic authentication, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External Identities** > **Overview**.
 1. Select **All API connectors**, and then select the **API Connector** you want to configure.
 1. For the **Authentication type**, select **Basic**.
 1. Provide the **Username**, and **Password** of your REST API endpoint.
@@ -71,7 +68,7 @@ You can then [export the certificate](/azure/key-vault/certificates/how-to-expor
 To configure an API Connector with client certificate authentication, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External Identities** > **Overview**.
 1. Select **All API connectors**, and then select the **API Connector** you want to configure.
 1. For the **Authentication type**, select **Certificate**.
 1. In the **Upload certificate** box, select your certificate's .pfx file with a private key.

@@ -66,8 +66,6 @@
         href: adem-tutorial.md
       - name: Adobe Captivate Prime
         href: adobecaptivateprime-tutorial.md
-      - name: Adobe Creative Cloud
-        href: adobe-creative-cloud-tutorial.md
       - name: Adobe Experience Manager
         href: adobeexperiencemanager-tutorial.md
       - name: Adobe Identity Management (SAML)
@@ -578,8 +576,6 @@
         href: cloudbees-ci-tutorial.md
       - name: CloudCords
         href: cloudcords-tutorial.md
-      - name: CloudKnox Permissions Management Platform
-        href: cloudknox-permissions-management-platform-tutorial.md
       - name: Cloudmore
         href: cloudmore-tutorial.md
       - name: CloudPassage
@@ -1170,7 +1166,7 @@
       - name: GitHub
         href: github-tutorial.md
       - name: GitHub Enterprise Server
-        href: github-ae-tutorial.md
+        href: github-enterprise-server-tutorial.md
       - name: GitHub Enterprise Cloud - Enterprise Account
         href: github-enterprise-cloud-enterprise-account-tutorial.md  
       - name: GitHub Enterprise Managed User
@@ -1381,8 +1377,6 @@
         href: ihasco-training-tutorial.md
       - name: Illusive Networks
         href: illusive-networks-tutorial.md
-      - name: Illumio SSO
-        href: illumio-sso-tutorial.md
       - name: iLMS
         href: ilms-tutorial.md
       - name: iLOGON_MHA
@@ -1563,8 +1557,6 @@
         href: kantegassoforfisheyecrucible-tutorial.md
       - name: Kantega SSO for JIRA
         href: kantegassoforjira-tutorial.md
-      - name: Kao Navi
-        href: kao-navi-tutorial.md
       - name: Karlsgate Identity Exchange (KIE) SSO Add-on
         href: karlsgate-identity-exchange-kie-sso-add-on-tutorial.md
       - name: Keepabl
@@ -1605,8 +1597,6 @@
         href: knowledge-work-tutorial.md
       - name: Kofax TotalAgility
         href: kofax-totalagility-tutorial.md
-      - name: Kontiki
-        href: kontiki-tutorial.md
       - name: Korn Ferry 360
         href: korn-ferry-360-tutorial.md
       - name: Korn Ferry ALP
@@ -1944,9 +1934,7 @@
       - name: Nimblex
         href: nimblex-tutorial.md
       - name: Nimbus
-        href: nimbus-tutorial.md 
-      - name: Nintex Promapp
-        href: promapp-tutorial.md
+        href: nimbus-tutorial.md
       - name: Nitro Productivity Suite
         href: nitro-productivity-suite-tutorial.md
       - name: Nodetrax Project
@@ -2654,9 +2642,7 @@
       - name: Softeon WMS
         href: softeon-tutorial.md
       - name: Software AG Cloud
-        href: software-ag-cloud-tutorial.md
-      - name: SolarWinds Orion
-        href: solarwinds-orion-tutorial.md  
+        href: software-ag-cloud-tutorial.md 
       - name: SolarWinds Service Desk
         href: samanage-tutorial.md  
       - name: Soloinsight-CloudGate SSO
@@ -3101,8 +3087,6 @@
         href: web-cargo-air-tutorial.md    
       - name: WebCE
         href: webce-tutorial.md
-      - name: webMethods Integration Suite
-        href: webmethods-integration-cloud-tutorial.md
       - name: WebSphere Liberty
         href: websphere-liberty-tutorial.md
       - name: WebTMA
@@ -3436,6 +3420,8 @@
         href: cybsafe-provisioning-tutorial.md
       - name: Dagster Cloud
         href: dagster-cloud-provisioning-tutorial.md
+      - name: Darwinbox to Microsoft Entra ID
+        href: darwinbox-entra-integration-tutorial.md
       - name: Datadog
         href: datadog-provisioning-tutorial.md
       - name: Documo
@@ -3502,8 +3488,8 @@
         href: getabstract-provisioning-tutorial.md
       - name: GitHub
         href: github-provisioning-tutorial.md
-      - name: GitHub AE
-        href: github-ae-provisioning-tutorial.md
+      - name: GitHub Enterprise Server
+        href: github-enterprise-server-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User
         href: github-enterprise-managed-user-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User (OIDC)
@@ -3752,6 +3738,8 @@
         href: rhombus-systems-provisioning-tutorial.md
       - name: RingCentral
         href: ringcentral-provisioning-tutorial.md
+      - name: Rippling HCM to Active Directory
+        href: rippling-hcm-microsoft-entra-id-integration-tutorial.md
       - name: Robin
         href: robin-provisioning-tutorial.md
       - name: Rollbar
@@ -3782,6 +3770,8 @@
         href: ~/identity/app-provisioning/on-premises-sap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SAP HANA
         href: sap-hana-provisioning-tutorial.md
+      - name: SAP HCM to Microsoft Entra ID
+        href: sap-hcm-microsoft-entra-identity-provisioning.md
       - name: SAP S/4HANA
         href: sap-s4hana-provisioning-tutorial.md
       - name: SAP SuccessFactors Learning
@@ -3918,8 +3908,6 @@
         href: v-client-provisioning-tutorial.md
       - name: Velpic
         href: velpic-provisioning-tutorial.md
-      - name: Veritas Enterprise Vault.cloud SSO-SCIM
-        href: veritas-provisioning-tutorial.md
       - name: Visibly
         href: visibly-provisioning-tutorial.md
       - name: Visitly

@@ -4,6 +4,7 @@ ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
+ms.custom: sfi-ga-nochange
 # Used by articles entra governance
 ---
 
@@ -14,7 +15,7 @@ ms.author: billmath
 ### In the Microsoft Entra admin center
 
 - [!INCLUDE [emergency-access-accounts](../definitions/emergency-access-accounts.md)]
-- Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+- Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
 
@@ -66,7 +67,7 @@ You'll now verify that the users that you had in your on-premises directory that
 
 
  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
- 2. Browse to **Identity** > **Users**.
+ 2. Browse to **Entra ID** > **Users**.
  3. Verify that you see the new users in our tenant
 
 ## Test signing in with one of your users

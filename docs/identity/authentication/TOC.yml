@@ -137,6 +137,8 @@
         href: how-to-deploy-phishing-resistant-passwordless-authentication.md
       - name: Persona guidance
         href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
+      - name: RDP guidance
+        href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
     - name: Passkey (FIDO2) authentication
       items:
       - name: Enable passkeys for an organization
@@ -195,6 +197,8 @@
           href: how-to-certificate-based-authentication.md
         - name: Configure certificate authorities
           href: how-to-configure-certificate-authorities.md
+        - name: Certificate revocation list 
+          href: concept-certificate-based-authentication-certificate-revocation-list.md
         - name: Windows smart card sign-in
           href: concept-certificate-based-authentication-smartcard.md
         - name: Apple devices
@@ -253,6 +257,8 @@
       href: howto-mfa-userdevicesettings.yml
     - name: Verify mandatory MFA
       href: how-to-mandatory-multifactor-authentication.md
+    - name: Unlock users for mandatory MFA
+      href: how-to-unlock-users-for-mandatory-multifactor-authentication.md
     - name: Federate MFA setup
       href: how-to-mfa-expected-inbound-assertions.md
     - name: Find coverage gaps

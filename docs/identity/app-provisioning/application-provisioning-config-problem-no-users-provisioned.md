@@ -2,13 +2,13 @@
 title: Users aren't being provisioned in my application
 description: Troubleshoot common issues faced when a user isn't appearing in a Microsoft Entra Gallery Application configured for user provisioning with Microsoft Entra ID.
 #customer intent: As an IT admin, I want to troubleshoot why users aren't being provisioned in a Microsoft Entra Gallery Application so that I can resolve the issue and ensure proper user access.  
-author: kenwith
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 04/15/2025
-ms.author: kenwith
+ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -22,7 +22,7 @@ After automatic provisioning is configured for an application (including verifyi
 
 If you observe that users aren't being provisioned, consult the [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) in Microsoft Entra ID. Search for log entries for a specific user.
 
-You can access the provisioning logs in the Microsoft Entra admin center by browsing to **Identity** > **Applications** > **Enterprise applications** > **Provisioning logs**. You can also select a specific application and then select **Provisioning logs** in the **Activity** section. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
+You can access the provisioning logs in the Microsoft Entra admin center by browsing to **Entra ID** > **Enterprise apps** > **Provisioning logs**. You can also select a specific application and then select **Provisioning logs** in the **Activity** section. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
 
 The provisioning logs record all the operations performed by the provisioning service, including querying Microsoft Entra ID for assigned users that are in scope for provisioning, querying the target app for the existence of those users, comparing the user objects between the system. Then add, update, or disable the user account in the target system based on the comparison.
 

@@ -2,14 +2,14 @@
 title: 'Install your synchronization tool'
 description: This article describes the steps required to install either cloud sync or Microsoft Entra Connect.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: install-set-up-deploy
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ---
 # Install your synchronization tool
@@ -21,6 +21,7 @@ The following document provides the steps to install either cloud sync or Micros
 Cloud sync uses the Microsoft Entra provisioning agent.  Use the steps below to install it.
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
+ 3. Select **cloud sync**
  4. On the left, select **Agent**.
  5. Select **Download on-premises agent**, and select **Accept terms & download**.
  6. Once the **Microsoft Entra provisioning agent package** has completed downloading, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
@@ -54,7 +55,7 @@ Express settings are the default option to install Microsoft Entra Connect, and 
  4. On **Express settings**, select **Use express settings**.
  5. On **Connect to Microsoft Entra ID**, enter the username and password of the Hybrid Identity Administrator account, and then select **Next**.
  6. On **Connect to AD DS**, enter the username and password for an Enterprise Admin account. You can enter the domain part in either NetBIOS or FQDN format, like `FABRIKAM\administrator` or `fabrikam.com\administrator`. Select **Next**
- 7. The [Microsoft Entra sign-in configuration](./connect/plan-connect-user-signin.md#azure-ad-sign-in-configuration) page appears only if you didn't complete the step to [verify your domains](~/fundamentals/add-custom-domain.yml) in the [prerequisites](./connect/how-to-connect-install-prerequisites.md)
+ 7. The [Microsoft Entra sign-in configuration](./connect/plan-connect-user-signin.md#azure-ad-sign-in-configuration) page appears only if you didn't complete the step to [verify your domains](~/fundamentals/add-custom-domain.md) in the [prerequisites](./connect/how-to-connect-install-prerequisites.md)
  8. On **Ready to configure**, select **Install**
  9. When the installation is finished, select **Exit**.
  10. Before you use Synchronization Service Manager or Synchronization Rule Editor, sign out, and then sign in again.

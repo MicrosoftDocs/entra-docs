@@ -2,11 +2,12 @@
 title: Register a web app that signs in users
 description: Learn how to register a web app that signs in users using the Microsoft identity platform with step-by-step guidance for various frameworks.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
@@ -37,7 +38,7 @@ You can use the following link to bootstrap the creation of your web application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
+1. Browse to **Entra ID** > **App registrations**, select **New registration**.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
