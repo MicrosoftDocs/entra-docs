@@ -164,7 +164,7 @@ The agent is configured to run every 24 hours based on when it's initially confi
    :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
 
 > [!NOTE]
-> If reviewers immediately respond to their access review email notifications, the agent might not have yet processed the review. Only after the agent runs is it able to assist with access reviews in Microsoft Teams. If you respond before the agent has processed the review,  the agent responds with the following message to the reviewer in Microsoft Teams: '*I don't see any pending reviews that I can help you with at this time. Because my capabilities are still expanding, I recommend you check the My Access Portal to see if you have any other pending reviews.*'. 
+> If reviewers immediately respond to their access review email notifications, the agent might not have yet processed the review. Only after the agent runs is it able to assist with access reviews in Microsoft Teams. If you respond before the agent processes the review, the agent responds with the following message to the reviewer in Microsoft Teams: '*I don't see any pending reviews that I can help you with at this time. Because my capabilities are still expanding, I recommend you check the My Access Portal to see if you have any other pending reviews.*'
 
 ## Removing the agent 
 
