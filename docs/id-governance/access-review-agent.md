@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 07/17/2025
+ms.date: 09/04/2025
 
 #CustomerIntent: As a Security Administrator, I want to set up the Access Review Agent so that Security Copilot can be used to help complete access reviews for users in my organization.
 ---
