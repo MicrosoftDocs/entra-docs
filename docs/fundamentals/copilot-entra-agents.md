@@ -81,7 +81,8 @@ The [Conditional Access optimization agent](../identity/conditional-access/agent
 - You must have at least the [Microsoft Entra ID P1](licensing.md) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
     - In order to purchase security compute units, you need to have an Azure subscription. [Create your free Azure account](https://azure.microsoft.com/free).
-- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) automatically have the required permissions to configure agents.
+- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) automatically have the required permissions to configure the Conditional Access optimization agent.
+- Both [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator), or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) have the required permissions to configure and run the Access Review Agent
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Setup process
