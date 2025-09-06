@@ -402,7 +402,9 @@
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
         - name: Manage synced AD DS users
-          href: manage-workflow-on-premises.md              
+          href: manage-workflow-on-premises.md
+        - name: Reprocess workflows (Preview)
+          href: reprocess-workflow.md                  
         - name: Check Workflow Insights
           href: manage-workflow-insights.md             
       - name: Delete
