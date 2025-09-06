@@ -16,13 +16,13 @@ ms.date: 09/06/2025
 
 
 
-Lifecycle workflows allow you to automate tasks to run for users no matter where they fall in the Joiner-Mover-Leaver (JML) model within your organization. Workflow run history is recorded through the lens of runs, users processed, and tasks. With the reprocess workflow feature, you can run a previous workflow run again either entirely, or in the context of a specific user. This allows you to quickly manage previous workflow runs that could have failed to complete for certain reasons.
+Lifecycle Workflows allow you to automate tasks to run for users no matter where they fall in the Joiner-Mover-Leaver (JML) model within your organization. Workflow run history is recorded through the lens of runs, users processed, and tasks. With the reprocess workflow feature, you can run a previous workflow again either entirely, or in the context of a specific user. This allows you to quickly manage previous workflow runs that could have failed to complete for certain reasons.
 
 
 ## Reprocess a workflow using the Microsoft Entra admin center
 
 
-To reprocess a workflow run for specific users using the Microsoft Entra admin center, you do the following steps:
+To reprocess a workflow run using the Microsoft Entra admin center, you do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
@@ -38,7 +38,7 @@ To reprocess a workflow run for specific users using the Microsoft Entra admin c
     :::image type="content" source="media/reprocess-workflow/reprocess-workflow.png" alt-text="Screenshot of reprocessing a workflow.":::
     > [!NOTE]
     > You're able to reprocess up to 10 users at a time.
-1. If you want to reprocess a workflow based on a run instead of on a specific user, select the **Runs** tab.
+1. If you want to reprocess a workflow based on a run, select the **Runs** tab.
 
 1. In the runs tab, you're able to see a full list of workflow runs. Select the run you want to reprocess and select **Reprocess**. 
 > [!NOTE]
