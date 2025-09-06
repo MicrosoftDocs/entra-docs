@@ -68,46 +68,14 @@ To reprocess a workflow run for specific users using the Microsoft Entra admin c
 > [!NOTE]
 > Only a single run can be reprocessed at a time.
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
 
-<!-- 5. Next step/Related content------------------------------------------------------------------------
+## Next steps
 
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
+- [Lifecycle Workflows history](lifecycle-workflow-history.md)
+- [Auditing Lifecycle Workflows](lifecycle-workflow-audits.md)
 
--->
 
-## Next step
 
-TODO: Add your next step link(s)
 
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
 
