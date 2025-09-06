@@ -95,6 +95,7 @@ To manage your team assignments using the My Access portal, you'd do the followi
     :::image type="content" source="media/entitlement-management-request-behalf/manage-team-list.png" alt-text="Screenshot of the list of team members on the manage team page.":::
 1. On the team page you can select a report to see a list of their current access package assignments, or select **Remove access** to end the access package assignment for the user.
     :::image type="content" source="media/entitlement-management-request-behalf/manage-team-reviews.png" alt-text="Screenshot of managing team in the my access portal.":::
+
 ## Next steps
 
 - [Approve or deny access requests - entitlement management](entitlement-management-request-approve.md)
