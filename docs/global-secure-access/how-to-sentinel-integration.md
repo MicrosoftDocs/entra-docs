@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 09/03/2025
+ms.date: 09/05/2025
 manager: dougeby
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
@@ -102,7 +102,7 @@ Analytics rules can:
 
 ### View the preconfigured workbooks
 
-The Global Secure Access solution includes two workbooks: **Global Secure Access Overview** and **Global Secure Access Traffic Analysis**. To view the workbooks:
+The Global Secure Access solution includes two workbooks: **Enhanced Microsoft 365 logs** and **Network Traffic Insights**. To view a workbook dashboard:
 1. Sign in to the [Microsoft Defender portal](https://security.microsoft.com/).
 1. Browse to **Microsoft Sentinel** > **Content management** > **Content hub**.
 1. In the **Content hub**, expand the **Global Secure Access** solution.
