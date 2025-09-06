@@ -40,7 +40,7 @@ For example: "Migrate data from regular tables to ledger tables" or "Create a ne
 
 
 
-Lifecycle workflows allows you to automate tasks for users no matter where they fall in the Joiner-Mover-Leaver (JML) model within your organization. By reprocessing workflows, you are able to run a previous workflow again. This allows you to quickly run workflow tasks again for users.
+Lifecycle workflows allow you to automate tasks for users no matter where they fall in the Joiner-Mover-Leaver (JML) model within your organization. By reprocessing workflows, you're able to run a previous workflow again. This allows you to quickly run workflow tasks again for users.
 
 
 ## Reprocess a workflow using the Microsoft Entra admin center
@@ -61,10 +61,10 @@ To reprocess a workflow run for specific users using the Microsoft Entra admin c
 1. To reprocess a workflow for a user, select the user you want to reprocess a workflow for, and select **Reprocess**. 
     :::image type="content" source="media/reprocess-workflow/reprocess-workflow.png" alt-text="Screenshot of reprocessing a workflow.":::
     > [!NOTE]
-    > You are able to reprocess up to 10 users at a time.
+    > You're able to reprocess up to 10 users at a time.
 1. If you want to reprocess a workflow based on a run instead of on a specific user, select the **Runs** tab.
 
-1. Within the runs tab you are able to see a full list of workflow runs. Select the run you want to reprocess and select **Reprocess**. 
+1. In the runs tab, you're able to see a full list of workflow runs. Select the run you want to reprocess and select **Reprocess**. 
 > [!NOTE]
 > Only a single run can be reprocessed at a time.
 
