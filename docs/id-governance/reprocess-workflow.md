@@ -60,8 +60,13 @@ To reprocess a workflow run for specific users using the Microsoft Entra admin c
 
 1. To reprocess a workflow for a user, select the user you want to reprocess a workflow for, and select **Reprocess**. 
     :::image type="content" source="media/reprocess-workflow/reprocess-workflow.png" alt-text="Screenshot of reprocessing a workflow.":::
+    > [!NOTE]
+    > You are able to reprocess up to 10 users at a time.
 1. If you want to reprocess a workflow based on a run instead of on a specific user, select the **Runs** tab.
 
+1. Within the runs tab you are able to see a full list of workflow runs. Select the run you want to reprocess and select **Reprocess**. 
+> [!NOTE]
+> Only a single run can be reprocessed at a time.
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
