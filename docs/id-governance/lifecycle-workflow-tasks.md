@@ -1130,7 +1130,7 @@ For Microsoft Graph, the parameters for the **Send inactivity notification email
 |---------|---------|
 |category    |  leaver      |
 |displayName     | Send inactivity notification email (Preview)     |
-|description     |  Send inactivity email after a user's been inactive for a set number of days (Customizable by user)        |
+|description     |  Notify manager that user has been inactive (Customizable by user)        |
 |taskDefinitionId     |   92f74cb4-f1b6-4ec0-b766-96210f56edc2      |
 |arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
 
@@ -1140,7 +1140,7 @@ Example of usage within the workflow:
 {
     "category": "leaver",
     "continueOnError": false,
-    "description": " Send inactivity email after a user's been inactive for a set number of days",
+    "description": " Notify manager that user has been inactive",
     "displayName": "Send inactivity notification email (Preview)",
     "isEnabled": true,
     "taskDefinitionId": "92f74cb4-f1b6-4ec0-b766-96210f56edc2",
