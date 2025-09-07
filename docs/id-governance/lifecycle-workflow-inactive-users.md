@@ -40,7 +40,7 @@ As part of supporting users no matter where they fall in the Joiner-Mover-Leaver
 
 1. On the **Review Tasks** page, select the task you want to run for the users who you consider to be inactive and select **Review + Create**.
     > [!NOTE]
-    > Lifecycle Workflows comes with a built-in task, [Send inactivity notification email (Preview)](lifecycle-workflow-tasks.md#send-inactivity-notification-email-preview), that is directly related to helping manage inactive users.
+    > Lifecycle Workflows comes with a built-in task, [Send email about user inactivity (Preview)](lifecycle-workflow-tasks.md#send-email-about-user-inactivity-preview), that is directly related to helping manage inactive users.
 
 
 ## Next step
