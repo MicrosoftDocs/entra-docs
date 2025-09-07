@@ -91,8 +91,10 @@ To manage your team assignments using the My Access portal, do the following ste
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com) as the direct manager of the team who you want to manage access package assignments for. For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
 
-1. In the left menu, select **Manage team** to see a list of your direct reports. Select an employee to see a list of their assignments.
+1. In the left menu, select **Manage team** to see a list of your direct reports. 
     :::image type="content" source="media/entitlement-management-request-behalf/manage-team-list.png" alt-text="Screenshot of the list of team members on the manage team page.":::
+1. Select an employee to see a list of their assignments.
+
 1. On the assignments page, you can see a list of their current access package assignments. You can also select **Remove access** to end that specific access package assignment for the user.
     :::image type="content" source="media/entitlement-management-request-behalf/manage-team-reviews.png" alt-text="Screenshot of managing team in the my access portal.":::
 
