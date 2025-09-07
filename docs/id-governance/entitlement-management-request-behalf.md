@@ -69,7 +69,7 @@ As a manager, you can request an access package for a direct report by doing the
 
 ## Approve access on behalf of employee requested by manager
 
-When a manager requests an access package on behalf of their employee, you'd do the following steps to approve access:
+To approve an access package on behalf of an employee as a manager, do the following steps to approve access:
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com). For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
 
@@ -87,7 +87,7 @@ Managers can also manage access package assignments of their direct reports usin
 - The ability to see active access package assignment of all of their direct reports.
 - The ability to remove assignments for reports if the policy supports on behalf of requests.
 
-To manage your team assignments using the My Access portal, you'd do the following steps:
+To manage your team assignments using the My Access portal, do the following steps:
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com) as the direct manager of the team who you want to manage access package assignments for. For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
 
