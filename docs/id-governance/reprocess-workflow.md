@@ -41,8 +41,8 @@ To reprocess a workflow run using the Microsoft Entra admin center, you do the f
 1. If you want to reprocess a workflow based on a run, select the **Runs** tab.
 
 1. In the runs tab, you're able to see a full list of workflow runs. Select the run you want to reprocess and select **Reprocess**. 
-> [!NOTE]
-> Only a single run can be reprocessed at a time.
+    > [!NOTE]
+    > Only a single run can be reprocessed at a time.
 
 
 
