@@ -37,5 +37,5 @@ Lifecycle Workflows currently support the following tasks:
 | [Send email to manager before user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-before-users-last-day)    |    52853a3e-f4e5-4eb8-bb24-1ac09a1da935     | Leaver         |
 | [Send email on user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-on-users-last-day)    |    9c0a1eaf-5bda-4392-9d9e-6e155bb57411     | Leaver         | 
 | [Send email to user's manager after their last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-users-manager-after-their-last-day)    |    6f22ddd4-b3a5-47a4-a846-0d7c201a49ce     | Leaver         |
-| [Send inactivity notification email (Preview)](../id-governance/lifecycle-workflow-tasks.md#send-inactivity-notification-email-preview)    |    92f74cb4-f1b6-4ec0-b766-96210f56edc2     | Leaver         |
+| [Send email about user inactivity (Preview)](../id-governance/lifecycle-workflow-tasks.md#send-email-about-user-inactivity-preview)    |    92f74cb4-f1b6-4ec0-b766-96210f56edc2     | Leaver         |
 
