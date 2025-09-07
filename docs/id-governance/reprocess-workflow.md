@@ -16,13 +16,13 @@ ms.date: 09/06/2025
 
 
 
-Lifecycle workflows allow you to automate tasks to run for users no matter where they fall in the Joiner-Mover-Leaver (JML) model within your organization. Workflow run history is recorded through the lens of runs, users processed, and tasks. With the reprocess workflow feature, you can run a previous workflow again either entirely, or in the context of a specific user. This allows you to quickly manage previous workflow runs that failed to complete for certain reasons.
+Lifecycle workflows allow you to automate tasks to run for users no matter where they fall in the Joiner-Mover-Leaver (JML) model within your organization. Workflow run history is recorded through the lens of runs, users processed, and tasks. With the reprocess workflow feature, you can run a previous workflow again either in the context of the complete workflow run, or in the context of specific users. This allows you to quickly manage previous workflow runs that failed to complete for certain reasons.
 
 
 ## Reprocess a workflow using the Microsoft Entra admin center
 
 
-To reprocess a workflow run using the Microsoft Entra admin center, you do the following steps:
+To reprocess a workflow using the Microsoft Entra admin center, you do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
@@ -32,7 +32,7 @@ To reprocess a workflow run using the Microsoft Entra admin center, you do the f
 
 1. On the workflow overview page, select **Workflow history**.
 
-1. On the workflow history screen, the **Users** tab is automatically open and you see a list of users processed by the workflow.
+1. On the workflow history screen, the **Users** tab is automatically open, allowing you to see a list of users processed by the workflow.
 
 1. To reprocess a workflow for a user, select the user you want to reprocess a workflow for, and select **Reprocess**. 
     :::image type="content" source="media/reprocess-workflow/reprocess-workflow.png" alt-text="Screenshot of reprocessing a workflow.":::
