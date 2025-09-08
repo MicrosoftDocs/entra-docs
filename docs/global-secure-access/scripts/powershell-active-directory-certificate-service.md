@@ -1,12 +1,12 @@
 ---
-title: PowerShell sample - Generate and Sign TLS Certificates Using Active Directory Certificate Services
-description: Use this PowerShell script to generate and sign TLS certificates using Active Directory Certificate Services in a test environment.
+title: PowerShell sample - Create a TLS Certificate Using Active Directory Certificate Services
+description: Use this PowerShell script to create a TLS certificate using Active Directory Certificate Services (ADCS) in a test environment.
 author: HULKsmashGithub
 ms.author: jayrusso
 manager: dougeby
 ms.service: global-secure-access
 ms.topic: sample
-ms.date: 09/05/2025
+ms.date: 09/08/2025
 ms.reviewer: teresayao
 
 #customer intent: As an admin, I want to automate the creation of TLS certificates using PowerShell so that I can streamline my testing process.
@@ -15,7 +15,7 @@ ms.reviewer: teresayao
 
 # Use PowerShell to generate and sign TLS certificates using Active Directory Certificate Services
 
-This script automates generating and signing Transport Layer Security (TLS) certificates using Active Directory Certificate Services (ADCS). It creates a certificate signing request (CSR), submits it to ADCS for signing, and retrieves the signed certificate.
+This script automates generating and signing Transport Layer Security (TLS) certificates using Active Directory Certificate Services (ADCS). It creates a certificate signing request (CSR) using the TLS inspection graph API. The script then submits the certificate to ADCS for signing, retrieves the signed certificate, and uploads the certificate and chain to TLS inspection settings.
 
 ## Generate and sign TLS certificates
 
@@ -23,31 +23,32 @@ This script automates generating and signing Transport Layer Security (TLS) cert
 # This script requires the following:
 #    - PowerShell 5.1 (x64) or later
 #    - Module: Microsoft.Graph.Beta
-##
+#
 # Before you begin:
 #    
 # - Make sure you are running PowerShell as an administrator
 # - Make sure you run: Install-Module Microsoft.Graph.Beta -AllowClobber -Force
 # - Make sure you have ADCS configured with a SubCA template and you have "<CAHostName>\<CACommonName>"
 # Ensure Microsoft.Graph.Beta module is available
-# Import Module
+
+# Import module
 
 Import-Module Microsoft.Graph.Beta.NetworkAccess
 
 # Connect to Microsoft Graph (handles token for you)
 Connect-MgGraph -Scopes "NetworkAccess.ReadWrite.All" -NoWelcome
 
-# Modify the following with your settings before running the script:
-# Name of the certificate
+# Modify the following with your own settings before running the script:
+# Name of the certificate (letters and numbers only and within 12 characters)
 $name = "TLSiCAName"
 # Common Name (CN) for the certificate
-$commonName = "TLS Demo"
+$commonName = "Contoso TLS Demo"
 # Organization Name (O) for the certificate
 $organizationName = "Contoso"
 #ADCS settings
 # Make sure you have ADCS configured with a SubCA template and you have "<CAHostName>\<CACommonName>"
 $Template = "SubCA"
-$CAConfig="ADCSTLSDemo.tlsvalidation.local\tlsvalidation-ADCSTLSDemo-CA"
+$CAConfig="enter <CACommonName> of your ADCS server"
 
 # Check if the External Certificate Authority Certificates already exists
 try {
@@ -62,7 +63,7 @@ catch {
     Write-Error "Graph SDK call to check on the list of certificates failed: $($_.Exception.Message)"
 }
 
-# Create the Certificate Signing Request (CSR)
+# Create the certificate signing request (CSR)
 
 $paramscsr = @{
 	"@odata.type" = "#microsoft.graph.networkaccess.externalCertificateAuthorityCertificate"
@@ -84,16 +85,14 @@ $CsrPath = "$name.csr"
 Set-Content -Path $CsrPath -Value $csr -Encoding ascii
 Write-Host "CSR saved to $CsrPath"
 
-# Save the Certificate Id for upload later:
-$certId = $createResponse.Id  # The unique identifier of the created certificate, used for uploading the signed certificate and chain
+# The unique identifier of the created certificate, used for uploading the signed certificate and chain
+$certId = $createResponse.Id
 
-
-# Define file names
+# Certificate and chain file names
 $signedCert = "TlsDemoCert.pem"
 $chainContent = "TlsDemoCertChain.pem"
 
-#ADCS sign CSR using SubCA template
-#Submit CSR for signing and get Request ID
+# Submit CSR to ADCS to sign, using subordinate CA template, retrieve Request ID
 $submitOutput = certreq -submit -attrib "CertificateTemplate:$Template" -config $CAConfig $CsrPath $signedCert
 if (-not (Test-Path $signedCert)) {
     Write-Error "Certificate was not issued. Check CA or template permissions."
@@ -111,7 +110,7 @@ if (-not $requestId) {
 }
 Write-Host "Request ID: $requestId"
 
-#Retrieve certificate in pem and chain in p7b format
+# Retrieve certificate in pem and chain in p7b format
 $tempP7B ="tempchain.p7b"
 $tempPem ="tempcert.pem"
 Write-Host "Retrieving full certificate chain..."
@@ -150,10 +149,6 @@ chain       = Get-Content -Path $chainContent -Raw
 # Upload the signed certificate and its chain to Microsoft Graph using the SDK cmdlet.
 # -ExternalCertificateAuthorityCertificateId: The unique ID of the certificate request previously created.
 # -BodyParameter: A hashtable containing the PEM-encoded certificate and chain as required by the API.
-#   Example:
-#   $paramsupload = @{
-#       certificate = "<PEM encoded certificate string>"
-#       chain       = "<PEM encoded certificate chain string>"
 #   }
 
 try {
@@ -170,4 +165,4 @@ Remove-Item $CsrPath, $tempP7B, $tempPem -ErrorAction SilentlyContinue
 
 ## Related content
 - [Configure Transport Layer Security inspection](../how-to-transport-layer-security.md)
-- [Use PowerShell to generate and sign TLS certificates using OpenSSL on Windows](powershell-open-secure-sockets-layer-windows.md)
+- [Use PowerShell to generate and sign TLS certificates using OpenSSL](powershell-open-secure-sockets-layer.md)

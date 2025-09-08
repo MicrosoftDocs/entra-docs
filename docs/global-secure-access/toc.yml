@@ -38,10 +38,10 @@ items:
     href: ./scripts/powershell-bypass-script.md
   - name: Bypass Intune endpoints from the Internet Access profile
     href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
-  - name: Generate and sign TLS certificates using ADCS
+  - name: Create a TLS certificate using ADCS
     href: ./scripts/powershell-active-directory-certificate-service.md
-  - name: Generate and sign TLS certificates using OpenSSL on Windows
-    href: ./scripts/powershell-open-secure-sockets-layer-windows.md
+  - name: Create a TLS certificate using OpenSSL
+    href: ./scripts/powershell-open-secure-sockets-layer.md
 - name: Concepts
   expanded: true
   items: 

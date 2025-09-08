@@ -1,27 +1,41 @@
 ---
-title: PowerShell sample - Generate and Sign TLS Certificates Using OpenSSL on Windows
-description: Use this PowerShell script to generate and sign Transport Layer Security (TLS) certificates using OpenSSL on Windows in a test environment.
+title: PowerShell sample - Create a TLS Certificate Using OpenSSL
+description: Use this PowerShell script to generate and sign Transport Layer Security (TLS) certificates using OpenSSL in a test environment.
 author: HULKsmashGithub
 ms.author: jayrusso
 manager: dougeby
 ms.service: global-secure-access
 ms.topic: sample
-ms.date: 09/05/2025
+ms.date: 09/08/2025
 ms.reviewer: teresayao
 
 #customer intent: As an admin, I want to automate the creation of TLS certificates using PowerShell so that I can streamline my testing process.
 
 ---
 
-# Use PowerShell to generate and sign TLS certificates using OpenSSL on Windows
+# Use PowerShell to create and sign TLS certificates using OpenSSL
 
-This script automates generating and signing Transport Layer Security (TLS) certificates using OpenSSL on Windows. It creates a certificate signing request (CSR), submits it to OpenSSL for signing, and retrieves the signed certificate.
+This script automates generating and signing Transport Layer Security (TLS) certificates using OpenSSL. It creates a certificate signing request (CSR) using the TLS inspection graph API. The script creates a self-signed root certificate authority using OpenSSL, signs the CSR, and uploads the certificate and chain to TLS inspection settings.
+
+## Prerequisites
+- Install OpenSSL for Windows or Linux.
+
+> [!NOTE]
+> While other tools might be available for certificate management, this sample code uses OpenSSL. OpenSSL is bundled with many Linux distributions, such as Ubuntu.
 
 ## Generate and sign TLS certificates
 
 ```powershell
-# Make sure you run: Install-Module Microsoft.Graph.Beta -AllowClobber -Force
+# This script requires the following:
+#    - PowerShell 5.1 (x64) or later
+#    - Module: Microsoft.Graph.Beta
+#
+# Before you begin:
+#    
+# - Make sure you are running PowerShell as an administrator
+# - Make sure you run: Install-Module Microsoft.Graph.Beta -AllowClobber -Force
 # Ensure Microsoft.Graph.Beta module is available
+
 # Import Module
 
 Import-Module Microsoft.Graph.Beta.NetworkAccess
@@ -29,10 +43,12 @@ Import-Module Microsoft.Graph.Beta.NetworkAccess
 # Connect to Microsoft Graph (handles token for you)
 Connect-MgGraph -Scopes "NetworkAccess.ReadWrite.All" -NoWelcome
 
-# Modify the following with your setting before running the script:
+# Modify the following with your own settings before running the script:
+# Name of the certificate (letters and numbers only and within 12 characters)
     $name = "TLSiCAName"
     $commonName = "TLS Demo Common Name"
     $organizationName = "TLS Demo Org Name"
+# Replace with your openSSLpath
     $openSSLPath = "C:\Program Files\OpenSSL-Win64\bin\openssl.exe"
 
 #: Check if External Certificate Authority Certificates already exists
@@ -124,6 +140,16 @@ chain       = Get-Content -Path $RootCert -Raw
 }
 # Upload using SDK cmdlet
 Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload
+
+# Upload the signed certificate and its chain to Microsoft Graph using the SDK cmdlet.
+# -ExternalCertificateAuthorityCertificateId: The unique ID of the certificate request previously created.
+# -BodyParameter: A hashtable containing the PEM-encoded certificate and chain as required by the API.
+
+try {Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload
+} catch {
+Write-Error "Failed to upload certificate and chain: $($_.Exception.Message)"
+exit 1
+}
 
 Write-Host "Upload complete via Microsoft Graph SDK."
 ```
