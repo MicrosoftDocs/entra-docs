@@ -45,7 +45,7 @@ To learn more about how the app management policy API works, visit the [API docu
 To configure app management policies, you need:
 
 - A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- The [Security Administrator](../role-based-access-control/permissions-reference#security-administrator) role, AND the [Cloud App Administrator](../role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference#application-administrator) role. OR, just the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+- The [Security Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#security-administrator) role, AND the [Cloud App Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference?#cloud-application-administrator) or [Application Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#application-administrator) role. OR, just the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 
 ## Configure a restriction
 
