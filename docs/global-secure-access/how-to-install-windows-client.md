@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/24/2025
+ms.date: 09/08/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -45,24 +45,113 @@ The most current version of the Global Secure Access client is available to down
 ### Automated installation
 Organizations can install the Global Secure Access client silently with the `/quiet` switch, or use Mobile Device Management (MDM) solutions, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) to deploy the client to their devices.
 
-### Deploy Global Secure Access client with Intune
+### Use Microsoft Intune to deploy the Global Secure Access client
 
-In this section, you learn how to manually install the Global Secure Access client on a Windows 11 client device with Intune.
+In this section, you learn how to install the Global Secure Access client on a Windows 11 client device with Intune.
 
 #### Prerequisites
 
-- A security group with devices or users to identify where to install the Global Secure Access client
+- A security group with devices or users to identify where to install the Global Secure Access client.
 
 #### Package the client
 
-Convert the `.exe` file to a `.intunewin` file.
+Package the installation script into a `.intunewin` file.
 
-1. Download the Global Secure Access client from the [Microsoft Entra admin center](https://entra.microsoft.com/) > **Global Secure Access** > **Connect** > **Client download**. Select **Download client** under Windows 11.
-1. Go to [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
+1. Save the following PowerShell script on your device. Put the PowerShell script and the Global Secure Access (exe) installer into a folder.  
+
+> [!NOTE]
+> The PowerShell installation script installs the Global Secure Access client, sets a registry key to set `IPv4Preferred`, and prompts for a reboot for the registry key change to take effect.
+
+```powershell
+# Define log file
+
+$logFile = "$env:ProgramData\GSAInstall\install.log" New-Item -ItemType Directory -Path (Split-Path $logFile) -Force | Out-Null 
+
+function Write-Log { param ([string]$message) $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss" Add-Content -Path $logFile -Value "$timestamp - $message" } 
+
+try { $ErrorActionPreference = 'Stop' Write-Log "Starting Global Secure Access client installation." 
+
+# IPv4 preferred via DisabledComponents registry value 
+$ipv4RegPath   = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters" 
+$ipv4RegName   = "DisabledComponents" 
+$ipv4RegValue  = 0x20   # Prefer IPv4 over IPv6 
+$rebootRequired = $false 
+ 
+# Ensure the key exists 
+if (-not (Test-Path $ipv4RegPath)) { 
+    New-Item -Path $ipv4RegPath -Force | Out-Null 
+    Write-Log "Created registry key: $ipv4RegPath" 
+} 
+ 
+# Get current value if present 
+$existingValue = $null 
+$valueExists = $false 
+try { 
+    $existingValue = Get-ItemPropertyValue -Path $ipv4RegPath -Name $ipv4RegName -ErrorAction Stop 
+    $valueExists = $true 
+} catch { 
+    $valueExists = $false 
+} 
+ 
+# Determine if we must change it 
+$expected = [int]$ipv4RegValue 
+$needsChange = -not $valueExists -or ([int]$existingValue -ne $expected) 
+ 
+if ($needsChange) { 
+    if (-not $valueExists) { 
+        # Create as DWORD when missing 
+        New-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -PropertyType DWord -Value $expected -Force | Out-Null 
+        Write-Log "IPv4Preferred value missing. Created '$ipv4RegName' with value 0x{0} (dec {1})." -f ([Convert]::ToString($expected,16)), $expected 
+    } else { 
+        # Update if different 
+        Set-ItemProperty -Path $ipv4RegPath -Name $ipv4RegName -Value $expected 
+        Write-Log ("IPv4Preferred value differed. Updated '{0}' from 0x{1} (dec {2}) to 0x{3} (dec {4})." -f ` 
+            $ipv4RegName, ([Convert]::ToString([int]$existingValue,16)), [int]$existingValue, ([Convert]::ToString($expected,16)), $expected) 
+    } 
+    $rebootRequired = $true 
+} else { 
+    Write-Log ("IPv4Preferred already set correctly: {0}=0x{1} (dec {2}). No change." -f ` 
+        $ipv4RegName, ([Convert]::ToString($expected,16)), $expected) 
+} 
+ 
+# Run installer from local path 
+$installerPath = Join-Path -Path $PSScriptRoot -ChildPath "GlobalSecureAccessClient.exe" 
+Write-Log "Running installer from $installerPath" 
+ 
+if (Test-Path $installerPath) { 
+    $installProcess = Start-Process -FilePath $installerPath -ArgumentList "/quiet" -Wait -PassThru 
+ 
+    if ($installProcess.ExitCode -eq 1618) { 
+        Write-Log "Another installation is in progress. Exiting with code 1618." 
+        exit 1618 
+    } elseif ($installProcess.ExitCode -ne 0) { 
+        Write-Log "Installer exited with code $($installProcess.ExitCode)." 
+        exit $installProcess.ExitCode 
+    } 
+ 
+    Write-Log "Installer completed successfully." 
+} else { 
+    Write-Log "Installer not found at $installerPath" 
+    exit 1 
+} 
+ 
+if ($rebootRequired) { 
+    Write-Log "Reboot required due to registry value creation or update." 
+    exit 3010  # Soft reboot required 
+} else { 
+    Write-Log "Installation complete. No reboot required." 
+    exit 0 
+} 
+  
+
+} catch { Write-Log "Fatal error: $_" exit 1603 } 
+```
+
+2. Go to the [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
 
    :::image type="content" source="media/how-to-install-windows-client/install-content-prep-tool.png" alt-text="Screenshot of prep tool install file selection.":::
 
-1. In the top right corner, select the **More file actions** and then select **Download**.
+1. In the top right corner, select **More file actions** and then select **Download**.
 
    :::image type="content" source="media/how-to-install-windows-client/raw-file-download.png" alt-text="Screenshot of More file actions menu to select Download.":::
 
@@ -74,7 +163,7 @@ Convert the `.exe` file to a `.intunewin` file.
 
    :::image type="content" source="media/how-to-install-windows-client/install-from-command-line.png" alt-text="Screenshot of command line to install client.":::
 
-The `.intunewin` file is ready for you to deploy Microsoft Intune.
+The `.intunewin` file is ready for you to deploy Microsoft Intune. 
 
 #### Deploy Global Secure Access client with Intune
 
@@ -90,18 +179,19 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
    :::image type="content" source="media/how-to-install-windows-client/app-package-file.png" alt-text="Screenshot of App package file selection.":::
 
 1. Select **OK**.
-1. Configure these fields:
+1. On the **App Information** tab, configure these fields:
 
    - **Name**: Enter a name for the client app.
    - **Description**: Enter a description.
    - **Publisher**: Enter **Microsoft**.
    - **App Version** *(optional)*: Enter the client version.
 
-1. You can use the default values in the remaining fields. Select **Next**.
+1. Use the default values in the remaining fields.
 
-   :::image type="content" source="media/how-to-install-windows-client/add-app.png" alt-text="Screenshot of Add App to install client.":::
+   :::image type="content" source="media/how-to-install-windows-client/add-app.png" alt-text="Screenshot of Add App to install client." lightbox="media/how-to-install-windows-client/add-app.png":::
 
-1. Configure these fields:
+10. Select **Next**.
+1. On the **Program** tab, configure these fields:
 
    - **Install command**: Use the original name of the `.exe` file for `"OriginalNameOfFile.exe" /install /quiet /norestart`.
    - **Uninstall command**: Use the original name of the `.exe` file for `"OriginalNameOfFile.exe" /uninstall /quiet /norestart`.
@@ -112,26 +202,27 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 |Return code|Code type|
 |-----------|---------|
 |0|Success|
-|1707|Success|
 |3010|Success|
-|1641|Success|
 |1618|Retry|
 
-> [!NOTE]
-> The Return codes populate with default Windows exit codes. In this case, we changed two of the code types to **Success** to avoid unnecessary device reboots.
-
-   :::image type="content" source="media/how-to-install-windows-client/program-install-parameters.png" alt-text="Screenshot of Program to configure installation parameters.":::
+   :::image type="content" source="media/how-to-install-windows-client/program-install-parameters.png" alt-text="Screenshot of Program to configure installation parameters." lightbox="media/how-to-install-windows-client/program-install-parameters.png":::
 
 1. Select **Next**.
-1. Configure these fields:
+1. On the **Requirements** tab, configure these fields:
 
-   - **Operating system architecture**: Select your minimum requirements.
+   - **Check operating system architecture**: Select **Yes. Specify the systems the app can be installed on.**.
+       - Select the **Install on** options according to the system type you're deploying to.
    - **Minimum operating system**: Select your minimum requirements.
 
-   :::image type="content" source="media/how-to-install-windows-client/requirements-install-parameters.png" alt-text="Screenshot of Requirements to configure installation parameters.":::
+1. Leave the remaining fields blank.
 
-1. Leave the remaining fields blank. Select **Next**.
-1. Under **Rules format**, select **Manually configure detection rules**.
+   :::image type="content" source="media/how-to-install-windows-client/requirements-install-parameters.png" alt-text="Screenshot of Requirements to configure installation parameters." lightbox="media/how-to-install-windows-client/requirements-install-parameters.png":::
+
+> [!NOTE]
+> Windows on Arm devices have their own client, which is available at **aka.ms/GlobalSecureAccess-WindowsOnArm**.
+
+12. Select **Next**.
+1. On the **Detection rules** tab, under **Rules format**, select **Manually configure detection rules**.
 1. Select **Add**.
 1. Under **Rule type**, select **File**.
 1. Configure these fields:
@@ -143,28 +234,36 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
    - **Value**: Enter the client version number.
    - **Associated with a 32-bit app on 64-bit client**: Select **No**.
 
-   :::image type="content" source="media/how-to-install-windows-client/detection-rule.png" alt-text="Screenshot of Detection rule for client.":::
+   :::image type="content" source="media/how-to-install-windows-client/detection-rule.png" alt-text="Screenshot of Detection rule for client." lightbox="media/how-to-install-windows-client/detection-rule.png":::
 
 1. Select **OK**. Select **Next**.
 1. Select **Next** two more times to get to **Assignments**.
 1. Under **Required**, select **+Add group**. Select a group of users or devices. Select **Select**.
+1. The restart grace period is enabled, since the script prompts for a reboot.
+
+    :::image type="content" source="media/how-to-install-windows-client/restart-grace-period.png" alt-text="Screenshot of the Assignments tab showing the required groups and that restart grace period is enabled." lightbox="media/how-to-install-windows-client/restart-grace-period.png":::
+
 1. Select **Next**. Select **Create**.
+
+> [!NOTE]
+> When you deploy the Global Secure Access client to a virtual machine, the virtual machine might suppress the prompt to restart the device. The user won't see the reboot prompt.
 
 #### Update the client to a newer version
 
 To update to the newest client version, follow the [Update a line-of-business app](/mem/intune/apps/lob-apps-windows#update-a-line-of-business-app) steps. Be sure to update the following settings in addition to uploading the new `.intunewin` file:
 
 - Client version
-- Install and uninstall commands
 - Detection rule value set to the new client version number
 
-In a production environment, it's best practice to deploy new client versions in a phased deployment approach:
+In a production environment, it's a good practice to deploy new client versions in a phased deployment approach:
 
-1. Leave the existing app in place for now.
+1. Leave the existing app in place.
 1. Add a new app for the new client version, repeating the previous steps.
 1. Assign the new app to a small group of users to pilot the new client version. It's okay to assign these users to the app with the old client version for an in-place upgrade.
 1. Slowly increase the membership of the pilot group until you deploy the new client to all desired devices.
 1. Delete the app with the old client version.
+
+<!-- New Intune content goes above this line. -->
 
 ### Manual installation
 To manually install the Global Secure Access client:
