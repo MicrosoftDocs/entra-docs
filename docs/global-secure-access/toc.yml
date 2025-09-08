@@ -173,6 +173,10 @@ items:
         href: concept-transport-layer-security.md 
       - name: Configure Transport Layer Security inspection 
         href: how-to-transport-layer-security.md 
+      - name: Configure web content filtering
+        href: how-to-configure-web-content-filtering.md
+      - name: Configure threat intelligence
+        href: how-to-configure-threat-intelligence.md
   - name: Logs and monitoring
     expanded: false
     items:
@@ -260,6 +264,8 @@ items:
     href: reference-data-storage-and-privacy.md
   - name: Web content filtering categories
     href: reference-web-content-filtering-categories.md
+  - name: Threat intelligence threat types
+    href: reference-threat-intelligence-threat-types.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: Ciphers for Microsoft Entra Private Access

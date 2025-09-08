@@ -6,9 +6,9 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 01/15/2025
+ms.date: 09/04/2025
 ms.author: barclayn
-ms.reviewer: jodah
+ms.reviewer: Mohit
 ms.custom: it-pro, sfi-image-nochange
 ---
 
@@ -22,7 +22,10 @@ This article tells you how to search for members and owners of a group and how t
 
 ## Group search and sort
 
-On the **All groups** page, when you enter a search string, you can now toggle between "contains" and "starts with" searches on the **All groups** page only. 
+On the **All groups** page, when you enter a search string, you can toggle between **contains** and **starts with** searches on the **All groups** page only.
+
+>[!IMPORTANT]
+>The contains search uses tokenized matching, not literal substring matching. This means the system breaks both your query and the stored values into smaller chunks (tokens), usually words or alphanumeric segments, and checks if any query token appears in the stored tokens.
 
 The substring search is done using whole words only, and any special characters are searched for also as an ANDed search. For example, searching for -Name starts a search for the substring "Name" and a search for "-". Substring search is case-sensitive. Object ID or mailNickname properties are also searched.
 
@@ -34,7 +37,7 @@ For example, a search for “policy” returns both "MDM policy – West" and "P
 
 ### Search group member and owner lists
 
-You can search the members or owners of a specific group by name, and when you enter a search string, a `contains` search is automatically done. For example, a search for “Scott” returns both Scott Wilkinson and Maya Scott.
+When you search the members or owners of a group, a tokenized contains search is automatically used. For example, a search for “Scott” returns both Scott Wilkinson and Maya Scott.
 
 :::image type="content" source="./media/groups-members-owners-search/groups-search-preview.png" alt-text="Screenshot of new substring searches on the group members and owners lists.":::
 
