@@ -144,8 +144,9 @@ After the execution conditions are set for an enabled workflow, you're able to s
 
 If the execution conditions recently changed for the workflow, then the execution user scope list might not be current. When the execution conditions are recently changed, the list refreshes with users meeting the latest execution conditions after the workflow engine evaluates the users again. Before the workflow runs for the users, it also checks to make sure the list of users still meet the current execution conditions.
 
-> [!NOTE]
-> There's currently a catch up window for users based on a 3 day period. This means that when a workflow is created, the workflow engine considers users, who previously met its execution conditions, within 3 days of the scope of the users. For example, if you created a pre-hire workflow to run for users in a certain department 1 week before their hire date, a user who was created within 10 days before their hire date would also fall under the scope of the workflow.
+## Lifecycle workflow catch-up window
+
+Lifecycle workflows current has a catch up window for users based on a 3 day period. This means that when a workflow is created, the workflow engine considers users, who previously met its execution conditions, within 3 days of the scope of the users. For example, if you created a pre-hire workflow to run for users in a certain department 1 week before their hire date, a user who was created within 10 days before their hire date would also fall under the scope of the workflow.
 
 For a detailed guide on viewing the execution user scope of a specific workflow, see: [Check execution user scope of a workflow](check-workflow-execution-scope.md).
 
