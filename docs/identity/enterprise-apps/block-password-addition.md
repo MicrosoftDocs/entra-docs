@@ -26,7 +26,7 @@ New password addition can be blocked in the Microsoft 365 admin center.
 
 Password addition can also be blocked using the [Microsoft Entra admin center](https://aka.ms/app-mgmt-policy-ux). See the [app management policy usage documentation](https://aka.ms/app-mgmt-policy-ux-docs) for more details.
 
-Enabling this setting blocks the addition of passwords to existing apps, or setting passwords during new app creation. You can gauge the impact of enabling this setting by identifying recent password addition activity. From the Microsoft 365 admin center:
+Enabling this setting blocks the addition of passwords to both new and existing apps. You can gauge the impact of enabling this setting by identifying recent password addition activity. From the Microsoft 365 admin center:
 
 1. Go to the admin center and select Org settings.
 1. Select Restricted Mode, find the **Block addition of new password credentials to apps** setting.
