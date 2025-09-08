@@ -22,6 +22,8 @@ The objective of this article is to demonstrate the steps to be performed in Bri
 
 ## Prerequisites
 
+This document is outdated. Correct instructions are here: https://support.brivo.com/s/article/Azure-Configure-Identity-Connector-for-Azure-Active-Directory?language=en_US
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
