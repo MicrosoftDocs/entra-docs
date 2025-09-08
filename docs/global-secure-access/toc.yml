@@ -198,6 +198,8 @@ items:
         href: how-to-use-workbooks.md 
       - name: Export private network connector logs
         href: how-to-export-connector-logs.md
+      - name: Microsoft Sentinel integration
+        href: how-to-sentinel-integration.md  
   - name: Microsoft Global Secure Access deployment guides
     expanded: false
     items:

@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 09/04/2025
+ms.date: 09/08/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -16,7 +16,7 @@ ms.custom: sfi-ga-nochange
 
 At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://www.microsoft.com/security/blog/2019/08/20/one-simple-action-you-can-take-to-prevent-99-9-percent-of-account-attacks) shows that MFA can block more than 99.2% of account compromise attacks. 
 
-That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
+That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our blog posts [Azure mandatory multifactor authentication: Phase 2 starting in October 2025](https://azure.microsoft.com/blog/azure-mandatory-multifactor-authentication-phase-2-starting-in-october-2025/) and [Announcing mandatory multifactor authentication for Azure sign-in](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
 
 There's no change for users if your organization already enforces MFA for them, or if they sign in with stronger methods like passwordless or passkey (FIDO2). To verify that MFA is enabled, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md). 
 
@@ -58,12 +58,6 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [REST API (Control Plane)](/azure/azure-resource-manager/management/control-plane-and-data-plane#control-plane) | N/A | October 1, 2025 | 
 | [Azure SDK](/azure/developer/intro/azure-developer-create-resources#azure-sdk-and-rest-apis) | N/A | October 1, 2025 | 
 
->[!NOTE]
->For the best compatibility experience, ensure users in your tenant are using Azure CLI version 2.76 and Azure PowerShell version 14.3 or later. Otherwise, you can expect to see error messages as explained in these topics: 
->
->- [Troubleshoot MFA errors in Azure PowerShell](/powershell/azure/troubleshooting#troubleshooting-multifactor-authentication-mfa)
->- [Troubleshoot MFA errors in Azure CLI](/cli/azure/use-azure-cli-successfully-troubleshooting#troubleshooting-multifactor-authentication-mfa)
-
 The following table lists affected apps and URLs for Microsoft 365. 
 
 | Application Name | URL | Enforcement starts |
@@ -76,7 +70,7 @@ The following table lists affected apps and URLs for Microsoft 365.
 
 All accounts that sign in to perform operations cited in the [applications section](#application-ids-and-urls) must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
 
-Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
+[Break glass or emergency access accounts](/entra/identity/role-based-access-control/security-emergency-access) are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
 Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
 
@@ -178,8 +172,8 @@ Review [How to verify that users are set up for mandatory MFA](how-to-mandatory-
 
 For more information about how to migrate from user-based service accounts to workload identities for authentication with these applications, see: 
 
-- [Sign into Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
-- [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
+- [Sign in to Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
+- [Sign in to Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
 - [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) includes guidance for both managed identity and service principal use cases
 
 Some customers apply Conditional Access policies to user-based service accounts. You can reclaim the user-based license, and add a [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
@@ -190,7 +184,6 @@ Support for external MFA solutions is in preview with [external authentication m
 
 If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. For more information, see [Expected inbound assertions for Microsoft Entra MFA](how-to-mfa-expected-inbound-assertions.md).
 
-
 ## Prepare for mandatory MFA enforcement
 
 To prepare for MFA enforcement, configure a [Conditional Access policy](how-to-mandatory-multifactor-authentication.md#verify-mfa-is-enabled-for-microsoft-entra-id-p1-or-microsoft-entra-id-p2-license) that requires users to sign in with MFA. If you configured exceptions or exclusions in the policy, they no longer apply. If you have more restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, they remain enforced. 
@@ -198,6 +191,11 @@ To prepare for MFA enforcement, configure a [Conditional Access policy](how-to-m
 Conditional Access requires a Microsoft Entra ID P1 or P2 license. If you can't use Conditional Access, enable [security defaults](~/fundamentals/security-defaults.md).
 
 You can self-enforce MFA by using built-in definitions in Azure Policy. To learn more and follow a step-by-step overview to apply these policy assignments in your environment, see [Tutorial: Apply MFA self-enforcement through Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement).
+
+For the best compatibility experience, ensure users in your tenant are using Azure CLI version 2.76 and Azure PowerShell version 14.3 or later. Otherwise, you can expect to see error messages as explained in these topics: 
+
+- [Troubleshoot MFA errors in Azure PowerShell](/powershell/azure/troubleshooting#troubleshooting-multifactor-authentication-mfa)
+- [Troubleshoot MFA errors in Azure CLI](/cli/azure/use-azure-cli-successfully-troubleshooting#troubleshooting-multifactor-authentication-mfa)
 
 >[!NOTE] 
 >Users who sign in without MFA can use a [Phase 2 application](#phase-2-applications). But if they try to create, update, or delete a resource, the app returns an error that says they need to sign in with MFA and a claims challenge. Some clients use the claims challenge to prompt the user to step up and perform MFA. Other clients return only the error without an MFA prompt. A Conditional Access policy or security defaults are recommended to help users satisfy MFA before they see an error. 
