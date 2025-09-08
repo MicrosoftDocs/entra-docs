@@ -3,11 +3,11 @@ title: The Global Secure Access Client for iOS (Preview)
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 02/28/2025
+ms.date: 09/02/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
-ms.reviewer: dhruvinrshah
+ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
 # Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for iOS devices.
 ---
@@ -22,7 +22,7 @@ This article explains how to set up and deploy the Global Secure Access client a
 > Running other third-party endpoint protection products alongside Defender for Endpoint on iOS is likely to cause performance problems and unpredictable system errors.
 > [!NOTE]
 > - The Global Secure Access client is deployed via Microsoft Defender for Endpoint on iOS.
-> - The Global Secure Access client on iOS uses a VPN. This VPN is not a regular VPN. Instead, it's a local/self-looping VPN.
+> - The Global Secure Access client on iOS uses a VPN. This VPN isn't a regular VPN. Instead, it's a local/self-looping VPN.
 
 ## Prerequisites
 - To use the Global Secure Access iOS client, configure the iOS endpoint device as a Microsoft Entra registered device.
@@ -92,8 +92,8 @@ select **Create**. After a few moments, the Defender for Endpoint app is created
 
         |Key |Value |Details |
         |---------|---------|---------|
-        |EnableGSA |No value |Global Secure Access isn't enabled and tile isn't visible. |
-        |  |0 | Global Secure Access in not enabled and tile isn't visible.|
+        |EnableGSA |No value | Global Secure Access isn't enabled and the tile isn't visible. |
+        |  |0 | Global Secure Access isn't enabled and the tile isn't visible.|
         |  |1 | Global Secure Access tile is visible and defaults to disabled state. User can enable or disable using the toggle.|
         |  |2 | Global Secure Access tile is visible and defaults to enabled state. User can enable or disable using the toggle from the app. |
         |  |3 | Global Secure Access tile is visible and defaults to enabled state. User cannot disable Global Secure Access. |   
@@ -103,10 +103,10 @@ select **Create**. After a few moments, the Defender for Endpoint app is created
         |Key |Value |Details |
         |---------|---------|---------|
         |EnableGSAPrivateChannel |No value |Use the EnableGSA configured option. |
-        |  |0 |Private Access is not enabled and toggle option not visible to user. |
-        |  |1 |Private Access toggle is visible and defaults to disabled state. User can enable or disable. |
-        |  |2 |Private Access toggle is visible and defaults to enabled state. User can enable or disable. |
-        |  |3 |Private Access toggle is visible and greyed out and defaults to enable state. User **cannot** disable Private Access. |
+        |  |0 |Private Access isn't enabled and the toggle option isn't visible to user. |
+        |  |1 |The Private Access toggle is visible and defaults to disabled state. User can enable or disable. |
+        |  |2 |The Private Access toggle is visible and defaults to enabled state. User can enable or disable. |
+        |  |3 |The Private Access toggle is visible but grayed out, and defaults to enabled state. The user **can't** disable Private Access. |
 
 1. Continue filling out the VPN form:  
     - **Type of Automatic VPN**: On-demand VPN
