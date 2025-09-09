@@ -138,7 +138,7 @@ You can select what happens when an external user, who was invited to your direc
 
 1. Browse to **ID Governance** > **Entitlement management** > **Control Configurations**.
 
-1. Select **Edit**.
+1. Select the Lifecycle of external users setting in Control Configurations to remove users from your directory when their access packages expire. The following settings apply to users onboarded with entitlement management. .
 
     ![Settings to manage the lifecycle of external users](./media/entitlement-management-external-users/settings-external-users.png)
 
