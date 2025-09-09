@@ -6,7 +6,7 @@ ms.author: jayrusso
 manager: dougeby
 ms.service: global-secure-access
 ms.topic: sample
-ms.date: 09/08/2025
+ms.date: 09/09/2025
 ms.reviewer: teresayao
 
 #customer intent: As an admin, I want to automate the creation of TLS certificates using PowerShell so that I can streamline my testing process.
@@ -26,7 +26,7 @@ This script automates generating and signing Transport Layer Security (TLS) cert
 #
 # Before you begin:
 #    
-# - Make sure you are running PowerShell as an administrator
+# - Make sure you're running PowerShell as an administrator
 # - Make sure you run: Install-Module Microsoft.Graph.Beta -AllowClobber -Force
 # - Make sure you have ADCS configured with a SubCA template and you have "<CAHostName>\<CACommonName>"
 # Ensure Microsoft.Graph.Beta module is available
@@ -48,7 +48,7 @@ $organizationName = "Contoso"
 #ADCS settings
 # Make sure you have ADCS configured with a SubCA template and you have "<CAHostName>\<CACommonName>"
 $Template = "SubCA"
-$CAConfig="enter <CACommonName> of your ADCS server"
+$CAConfig="<CACommonName> of your ADCS server"
 
 # Check if the External Certificate Authority Certificates already exists
 try {
@@ -73,7 +73,7 @@ $paramscsr = @{
 }
 $createResponse = $null
 try {
-    $createResponse = New-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -BodyParameter $paramscsr
+    $createResponse = New-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -BodyParameter $paramscsr -ErrorAction Stop
 } catch {
     Write-Error "Failed to create certificate signing request: $($_.Exception.Message)"
     exit 1

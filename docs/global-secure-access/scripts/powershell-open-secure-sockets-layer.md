@@ -6,7 +6,7 @@ ms.author: jayrusso
 manager: dougeby
 ms.service: global-secure-access
 ms.topic: sample
-ms.date: 09/08/2025
+ms.date: 09/09/2025
 ms.reviewer: teresayao
 
 #customer intent: As an admin, I want to automate the creation of TLS certificates using PowerShell so that I can streamline my testing process.
@@ -21,7 +21,7 @@ This script automates generating and signing Transport Layer Security (TLS) cert
 - Install OpenSSL for Windows or Linux.
 
 > [!NOTE]
-> While other tools might be available for certificate management, this sample code uses OpenSSL. OpenSSL is bundled with many Linux distributions, such as Ubuntu.
+> While other tools might be available for certificate management, this sample code in this article uses OpenSSL. OpenSSL is bundled with many Linux distributions, such as Ubuntu.
 
 ## Generate and sign TLS certificates
 
@@ -32,7 +32,7 @@ This script automates generating and signing Transport Layer Security (TLS) cert
 #
 # Before you begin:
 #    
-# - Make sure you are running PowerShell as an administrator
+# - Make sure you're running PowerShell as an administrator
 # - Make sure you run: Install-Module Microsoft.Graph.Beta -AllowClobber -Force
 # Ensure Microsoft.Graph.Beta module is available
 
@@ -44,12 +44,19 @@ Import-Module Microsoft.Graph.Beta.NetworkAccess
 Connect-MgGraph -Scopes "NetworkAccess.ReadWrite.All" -NoWelcome
 
 # Modify the following with your own settings before running the script:
-# Name of the certificate (letters and numbers only and within 12 characters)
-    $name = "TLSiCAName"
-    $commonName = "TLS Demo Common Name"
-    $organizationName = "TLS Demo Org Name"
+# Parameters of the certificate sign request (letters and numbers only and within 12 characters).
+    $name = "TLSiDemoCA"
+    $commonName = "Contoso TLS Demo"
+    $organizationName = "Contoso"
+
 # Replace with your openSSLpath
     $openSSLPath = "C:\Program Files\OpenSSL-Win64\bin\openssl.exe"
+
+# Self-signed CA file names
+$rootKey = "TlsDemorootCA.key"
+$rootCert = "TlsDemorootCAcert.pem"
+$subject = "/C=US/ST=Washington/L=Redmond/O=Contoso/CN=Contoso"
+$signedCert = "signedcertificate.pem"
 
 #: Check if External Certificate Authority Certificates already exists
 try {
@@ -63,7 +70,7 @@ catch {
     Write-Error "The Graph SDK call failed: $($_.Exception.Message)"
 }
 
-# Create the Certificate Sign Request (CSR)
+# Create the certificate signing request (CSR)
 
 $paramscsr = @{
 	"@odata.type" = "#microsoft.graph.networkaccess.externalCertificateAuthorityCertificate"
@@ -71,8 +78,14 @@ $paramscsr = @{
 	commonName =  $commonName
 	organizationName = $organizationName
 }
-
-$createResponse =New-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -BodyParameter $paramscsr
+$createResponse = $null
+try {
+  $createResponse = New-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -BodyParameter $paramscsr -ErrorAction Stop
+} 
+catch {
+    Write-Error "Failed to create certificate signing request: $($_.Exception.Message)"
+    Exit 1	
+}
 # Save CSR to file
 $csr = $createResponse.CertificateSigningRequest
 $csrPath = "$name.csr"
@@ -114,13 +127,9 @@ $opensslCnfPath = "openssl.cnf"
 # Write content to openssl.cnf file
 Set-Content -Path $opensslCnfPath -Value $opensslCnfContent -Encoding ASCII
 
-# Define file names
-$rootKey = "TlsDemorootCA.key"
-$rootCert = "TlsDemorootCAcert.pem"
-$subject = "/C=US/ST=Washington/L=Redmond/O=NaasLitware/CN=NaasLitware"
-$signedCert = "signedcertificate.pem"
 
-#Generate Root CA private key and certificate, note you need to install rootCA certificate on the trusted certificate store of testing users' devices
+
+# Generate Root CA private key and certificate. Note: You need to install the Root CA certificate in the trusted certificate store of testing users' devices.
 Write-Host "Generating Root CA key and certificate..."
 & $openSSLPath req -x509 -new -nodes -newkey rsa:4096 -keyout $rootKey -sha256 -days 370 -out $rootCert -subj $subject -config $opensslCnfPath -extensions rootCA_ext
 
@@ -146,7 +155,7 @@ Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCer
 # -BodyParameter: A hashtable containing the PEM-encoded certificate and chain as required by the API.
 
 try {Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload
-} catch {
+-ErrorAction Stop} catch {
 Write-Error "Failed to upload certificate and chain: $($_.Exception.Message)"
 exit 1
 }
