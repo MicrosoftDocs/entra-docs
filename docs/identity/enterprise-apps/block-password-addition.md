@@ -9,6 +9,7 @@ ms.service: microsoft-365-admin
 ms.localizationpriority: medium
 ms.collection: RestrictedMode
 audience: admin
+ROBOTS: NOINDEX, NOFOLLOW
 ---
 
 # Restrict password usage on Microsoft Entra apps
