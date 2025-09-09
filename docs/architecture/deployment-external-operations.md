@@ -110,7 +110,7 @@ To strengthen defenses, Microsoft Entra External ID has a premium fraud preventi
 
 ### International Revenue Share Fraud
 
-An International Revenue Share Fraud (IRSF) is a financially driven attack possible when you expose short message service (SMS) verification on a publicly accessible endpoint. When you enable [Microsoft Entra multifactor authentication (MFA)](../external-id/customers/concept-multifactor-authentication-customers.md) on Microsoft Entra External ID, IRSF attacks are possible. With SMS verification enabled, Microsoft Entra has two built-in protections: 
+An International Revenue Share Fraud (IRSF) is a financially driven attack possible when you expose short message service (SMS) verification on a publicly accessible endpoint. When you enable [Microsoft Entra multifactor authentication (MFA) on Microsoft Entra External ID](../external-id/customers/concept-multifactor-authentication-customers.md), IRSF attacks are possible. With SMS verification enabled, Microsoft Entra has two built-in protections: 
 
 * **Telephony throttling** helps mitigate the risk of service outages and performance degradation
 * **CAPTCHA for SMS-based MFA** helps defend against automated attacks by distinguishing human users from bots. If a user is deemed high-risk, access is blocked, or a CAPTCHA challenge appears before an SMS verification code is sent. 
