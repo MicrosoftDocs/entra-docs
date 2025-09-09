@@ -1076,7 +1076,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## Remove-ADSyncToolsAadObject
 ### SYNOPSIS
-Remove orphaned synced object from Microsoft Entra ID
+Remove orphaned synced object from Microsoft Entra ID.
+
+**NOTE:**
+
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
+If DirSync is disabled on the tenant, you need to temporary re-enable DirSync in order to use this function.
+
 ### SYNTAX
 #### CsvInput
 ```
@@ -1091,6 +1097,8 @@ Remove-ADSyncToolsAadObject [-Credential] <PSCredential> [-SourceAnchor] <Object
 ### DESCRIPTION
 Deletes from Microsoft Entra ID one or more synced objects based on SourceAnchor and ObjectType.
 The CSV file can be generated using `Export-ADSyncToolsAadDisconnectors`.
+**IMPORTANT:** This operation might be irreversible. Other than User objects that have a Recycle Bin, any other object types deleted with this function **can't be recovered**.
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1179,16 +1187,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### INPUTS
 InputCsvFilename must point to a CSV file with at least 2 columns: SourceAnchor, SyncObjectType
 ### OUTPUTS
-Shows results from ExportDeletions operation DISCLAIMER: Other than User objects that have a Recycle Bin, any other object types DELETED with this function can't be RECOVERED!
+Shows results from ExportDeletions operation 
 
 ## Remove-ADSyncToolsAadPublicFolders
 ### SYNOPSIS
 Removes synchronized Mail-Enabled Public Folders (MEPF) present in Microsoft Entra ID.
 
 You can specify the SourceAnchor/ImmutableID for the target MEPF object to delete or provide a CSV list with a batch of objects to delete that can be obtained with `Export-ADSyncToolsAadPublicFolders`.
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
-NOTE: If DirSync is disabled on the tenant, you need to temporary re-enable DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
+**NOTE:**
 
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
+If DirSync is disabled on the tenant, you need to temporary re-enable DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### SYNTAX
 #### CsvInput
 ```
@@ -1204,8 +1213,6 @@ Deletes from Microsoft Entra ID a synced Mail-Enabled Public Folder object based
 The CSV list can be obtained with `Export-ADSyncToolsAadPublicFolders` to identify and remove all orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
 **IMPORTANT**: This operation is irreversible. Deleted Mail-Enabled Public Folder objects cannot be restored from Microsoft Entra ID.
 
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
-NOTE: If DirSync has been disabled on the tenant, you'll need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
