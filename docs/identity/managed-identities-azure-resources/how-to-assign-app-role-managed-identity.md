@@ -32,14 +32,6 @@ In this article, you'll learn how to assign a managed identity to an application
 - Review the [difference between a system-assigned and user-assigned managed identity](/azure/logic-apps/authenticate-with-managed-identity).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
-::: zone pivot="identity-mi-app-role-powershell"
-[!INCLUDE [how-to-assign-app-role-managed-identity-powershell](includes/how-to-assign-app-role-managed-identity-powershell.md)]
-::: zone-end
-
-::: zone pivot="identity-mi-app-role-cli"
-[!INCLUDE [how-to-assign-app-role-managed-identity-cli](includes/how-to-assign-app-role-managed-identity-cli.md)]
-::: zone-end
-
 ## Next steps
 
 - [Managed identity for Azure resources overview](~/identity/managed-identities-azure-resources/overview.md)
