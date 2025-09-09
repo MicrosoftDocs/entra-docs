@@ -148,7 +148,7 @@ For a detailed guide on viewing the execution user scope of a specific workflow,
 
 ## Lifecycle workflow catch-up window
 
-By design, Lifecycle workflows provide a 3 day catch up window to help customers process users that may have been missed due to delays in HR user data updates. This means when the workflow engine evaluates users that meet the current execution conditions for the scheduled workflow, it includes users for whom the expected trigger date has already passed but was not more than 3 days ago. Once the user is processed, it would only be considered again if there was a change for the user or workflows that allowed it to meet the execution conditions again.
+By design, Lifecycle workflows provide a three day catch up window to help customers process users that could have been missed due to delays in HR user data updates. This means when the workflow engine evaluates users that meet the current execution conditions for the scheduled workflow, it includes users for whom the expected trigger date has already passed but wasn't more than three days ago. Once the user is processed, it would only be considered again if there was a change for the user or workflows that allowed it to meet the execution conditions again.
 
 The following table shows examples of Lifecycle workflow's catch up window:
 
@@ -156,7 +156,7 @@ The following table shows examples of Lifecycle workflow's catch up window:
 |Workflow Scenario  |User Data  |Lifecycle workflow behavior  |
 |---------|---------|---------|
 |A [pre-hire template](lifecycle-workflow-templates.md#onboard-pre-hire-employee) workflow is scheduled to run for users 4 days before their **EmployeeHireDate**.    |  A user exists in Microsoft Entra ID that has an **EmployeeHireDate** that is 1 day away      |  The workflow runs for the user during its first scheduled run.      |
-|A [Post-Onboarding of an employee template](lifecycle-workflow-templates.md#post-onboarding-of-an-employee) workflow is scheduled to run for users 7 days after their **EmployeeHireDate**.     | A user exists in the system with an **EmployeeHireDate** that is 10 days before. The user subsequently has their **EmployeeHireDate** changed a day later to be 8 days after.        |   The user is in scope of the workflow and it runs for them when it is scheduled to run. After the **EmployeeHireDate** attribute is updated, the user enters the scope of the workflow again and it runs for them again.      |
+|A [Post-Onboarding of an employee template](lifecycle-workflow-templates.md#post-onboarding-of-an-employee) workflow is scheduled to run for users 7 days after their **EmployeeHireDate**.     | A user exists in the system with an **EmployeeHireDate** that is 10 days before. The user later has their **EmployeeHireDate** changed a day later to be 8 days after.        |   The user is in scope of the workflow and it runs for them when it's scheduled to run. After the **EmployeeHireDate** attribute is updated, the user enters the scope of the workflow again and it runs for them again.      |
 
 
 
