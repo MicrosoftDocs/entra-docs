@@ -142,6 +142,7 @@ You can select what happens when an external user, who was invited to your direc
     :::image type="content" source="media/entitlement-management-external-users/settings-external-users.png" alt-text="Screenshot of external settings for id governance.":::
 
 1. On the settings page you will see a list of actions to take for external users onboarded via an access package once their last access package assignment expires. This includes options to **Remove external user**, **Block external user from signing in to directory**, and **Number of days before removing external user from directory**.
+    :::image type="content" source="media/entitlement-management-external-users/external-settings-list.png" alt-text="Screenshot of the external settings options.":::
 
 1. Once an external user loses their last assignment to any access packages, if you want to remove their guest user account in this directory, check the **Remove external user** box.
 
