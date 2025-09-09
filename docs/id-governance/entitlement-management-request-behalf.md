@@ -82,7 +82,7 @@ To approve an access package on behalf of an employee as a manager, do the follo
 
 ## Manage team assignments using the My Access portal
 
-Managers can also manage access package assignments of their direct reports using the My Access portal. Management capabilities include:
+For access package assignments with policies that support on behalf of requests, managers can also manage access package assignments of their direct reports using the My Access portal when admins elect to turn on the feature. Management capabilities include:
 
 - The ability to see active access package assignment of all of their direct reports.
 - The ability to remove assignments for reports if the policy supports on behalf of requests.
