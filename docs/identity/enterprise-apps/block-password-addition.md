@@ -14,7 +14,7 @@ ROBOTS: NOINDEX, NOFOLLOW
 
 # Restrict password usage on Microsoft Entra apps
 
-Passwords are one of the weakest methods of service authentication and are vulnerable to compromise by bad actors. Microsoft recommends that organizations switch applications in their tenant to a [more secure credential method](/entra/identity-platform/security-best-practices-for-app-registration.md#credentials-including-certificates-and-secrets). This improves security and reduces management overhead.
+Passwords are one of the weakest methods of service authentication and are vulnerable to compromise by bad actors. Microsoft recommends that organizations switch applications in their tenant to a [more secure credential method](/entra/identity-platform/security-best-practices-for-app-registration#credentials-including-certificates-and-secrets). This improves security and reduces management overhead.
 
 Tenant administrators can block the addition of new passwords to applications in their tenant. This should eventually deprecate password usage in their organization as apps modernize their credential methods and existing passwords expire. Administrators can also speed up this process by identifying apps with existing passwords and removing them.
 
