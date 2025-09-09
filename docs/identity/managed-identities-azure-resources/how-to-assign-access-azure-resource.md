@@ -28,18 +28,6 @@ This article shows you how to give an Azure virtual machine (VM) managed identit
 - Review the [difference between a system-assigned and user-assigned managed identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
-::: zone pivot="identity-mi-access-portal"
-[!INCLUDE [howto-assign-access-portal](includes/howto-assign-access-portal.md)]
-::: zone-end
-
-::: zone pivot="identity-mi-access-cli"
-[!INCLUDE [howto-assign-access-cli](includes/howto-assign-access-cli.md)]
-::: zone-end
-
-::: zone pivot="identity-mi-access-powershell"
-[!INCLUDE [howto-assign-access-powershell](includes/howto-assign-access-powershell.md)]
-::: zone-end
-
 ## Next steps
 
 - To enable managed identities on an Azure virtual machine, see [Configure managed identities for Azure resources](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).
