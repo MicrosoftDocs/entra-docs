@@ -148,7 +148,7 @@ For a detailed guide on viewing the execution user scope of a specific workflow,
 
 ## Lifecycle workflow catch-up window
 
-By design, Lifecycle workflows provide a three day catch up window to help customers process users that could have been missed due to delays in HR user data updates. This means when the workflow engine evaluates users that meet the current execution conditions for the scheduled workflow, it includes users for whom the expected trigger date has already passed but wasn't more than three days ago. Once the user is processed, it would only be considered again if there was a change for the user or workflows that allowed it to meet the execution conditions again.
+By design, Lifecycle workflows provide a three day catch up window to help customers process users that could have been missed due to delays in HR user data updates. This means when the workflow engine evaluates users that meet the current execution conditions for the scheduled workflow, it includes users for whom the expected trigger date has already passed but wasn't more than three days past the original trigger date. Once the user is processed, it would only be considered again if there was a change for the user or workflows that allowed it to meet the execution conditions again.
 
 The following table shows examples of Lifecycle workflow's catch up window:
 
