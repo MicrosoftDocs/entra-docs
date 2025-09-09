@@ -3,7 +3,7 @@ title: The Global Secure Access Client for iOS (Preview)
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 09/02/2025
+ms.date: 09/08/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -44,9 +44,6 @@ The iOS device (phone or tablet) must meet the following requirements:
 
 ## Supported modes
 The Global Secure Access client for iOS supports installation on both modes of enrolled devices: supervised and unsupervised devices.
-
-## Supported traffic forwarding profiles
-The Global Secure Access client for iOS supports the Microsoft traffic forwarding profile and the Private Access traffic forwarding profile. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 
 ## Known limitations
 
@@ -96,7 +93,7 @@ select **Create**. After a few moments, the Defender for Endpoint app is created
         |  |0 | Global Secure Access isn't enabled and the tile isn't visible.|
         |  |1 | Global Secure Access tile is visible and defaults to disabled state. User can enable or disable using the toggle.|
         |  |2 | Global Secure Access tile is visible and defaults to enabled state. User can enable or disable using the toggle from the app. |
-        |  |3 | Global Secure Access tile is visible and defaults to enabled state. User cannot disable Global Secure Access. |   
+        |  |3 | Global Secure Access tile is visible and defaults to enabled state. User **can't** disable Global Secure Access. |   
 
     - Add more key-value pairs as required (optional):  
 
