@@ -25,7 +25,7 @@ New password addition can be blocked in the Microsoft 365 admin center.
 1. Go to the admin center and select Org settings.
 1. Select Restricted Mode, find the **Block addition of new password credentials to apps** setting, and switch the toggle to **On**.
 
-Password addition can also be blocked using the [Microsoft Entra admin center](https://aka.ms/app-mgmt-policy-ux). See the [app management policy usage documentation](https://aka.ms/app-mgmt-policy-ux-docs) for more details.
+Password addition can also be blocked using the [Microsoft Entra admin center](https://aka.ms/app-mgmt-policy-ux). For more information, see the [app management policy usage documentation](https://aka.ms/app-mgmt-policy-ux-docs).
 
 Enabling this setting blocks the addition of passwords to both new and existing apps. You can gauge the impact of enabling this setting by identifying recent password addition activity. From the Microsoft 365 admin center:
 
@@ -35,10 +35,10 @@ Enabling this setting blocks the addition of passwords to both new and existing 
 
 ## Remove existing passwords
 
-Blocking addition of new passwords won't affect existing passwords. Existing apps using passwords can be identified using the Microsoft 365 admin center.
+Blocking addition of new passwords doesn't affect existing passwords. Existing apps using passwords can be identified using the Microsoft 365 admin center.
 
 1. Go to the admin center and select Org settings.
 1. Select Restricted Mode, find the **Block addition of new password credentials to apps** setting.
 1. Select **download report** to view existing apps with passwords.
 
-Apps using passwords should be modernized before their existing passwords are removed.  Passwords on existing applications can be removed using the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType~/null/sourceType/Microsoft_AAD_IAM), [Microsoft Graph Powershell](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgapplicationpassword?view=graph-powershell-1.0), or the [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/api/application-removepassword?view=graph-rest-1.0&tabs=http).
+Apps using passwords should be modernized before their existing passwords are removed. Passwords on existing applications can be removed using the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType~/null/sourceType/Microsoft_AAD_IAM), [Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgapplicationpassword?view=graph-powershell-1.0), or the [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/api/application-removepassword?view=graph-rest-1.0&tabs=http).
