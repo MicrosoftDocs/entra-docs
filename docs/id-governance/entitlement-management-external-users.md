@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 11/07/2024
+ms.date: 09/09/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
