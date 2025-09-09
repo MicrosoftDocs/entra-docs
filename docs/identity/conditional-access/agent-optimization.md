@@ -180,7 +180,7 @@ The Conditional Access Optimization Agent integrates with Microsoft Intune to mo
 
 Agent suggestions for Intune scenarios cover specific user groups and platforms (iOS or Android). For example, the agent identifies an active Intune app protection policy that targets the "Finance" group, but determines there isn't a sufficient Conditional Access policy that enforces app protection. The agent creates a report-only policy that requires users to access resources only through compliant applications on iOS devices.
 
-The agent must be running as a Security Administrator or Global Administrator to identify Intune app protection policies. The Conditional Access Administrator role doesn't have sufficient privileges in Intune.
+To identify Intune app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator AND Global Reader. Conditional Access Administrator is not sufficient on its own for the agent to product Intune suggestions.
 
 ## Remove agent
 
