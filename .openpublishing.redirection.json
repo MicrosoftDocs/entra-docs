@@ -1471,6 +1471,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/manage-user-assigned-managed-identities-azure-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/assign-app-role-managed-identity-azure-cli",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-assign-access-azure-resource.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/manage-user-assigned-managed-identities-azure-portal",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-powershell.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
       "redirect_document_id": false
