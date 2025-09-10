@@ -5,7 +5,7 @@ keywords:
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
-ms.date: 12/12/2024
+ms.date: 09/05/2025
 ms.update-cycle: 180-days
 ms.topic: how-to
 ms.service: entra
@@ -47,10 +47,11 @@ He uses any of the following prompts to get the information he needs:
 - *Are any apps at risk of being malicious or compromised?* 
 - *List  5 apps with High Risk Level. Format the table as follows: Display Name | ID | Risk State* 
 - *List the apps with Risk State “Confirmed compromise”.* 
-- *Show me the details of risky app with ID {ServicePrincipalObjectId} (or App ID {ApplicationId})* 
+- *Show me the details of risky app with ID {ServicePrincipalObjectId}*
+- *Show me the details of risky app with AppID {ApplicationId})* 
 
->[!IMPORTANT]
->You must use an account that is authorized to administer ID Protection for this skill to return risk information. Your tenant must also be licensed for [Workload Identities Premium](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-workload-id#office-StandaloneSKU-k3hubfz).  
+> [!IMPORTANT]
+> You must use an account that is authorized to administer ID Protection for this skill to return risk information. Your tenant must also be licensed for [Workload Identities Premium](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-workload-id#office-StandaloneSKU-k3hubfz).  
 
 ### Explore Microsoft Entra service principals 
 
@@ -59,8 +60,9 @@ To get more information about these service principals identified as risky, Jaso
 He uses the following prompts to get the information he needs: 
 
 - *Tell me more about these service principals (from previous response)* 
-- *Give me details about service principal with {DisplayName} (or {ServicePrincipalId})* 
-- *Give me a list of owners for these apps?* 
+- *Give me details about service principal with {DisplayName}*
+- *Give me details about service principal with ID {ServicePrincipalObjectId})*
+- *Give me a list of owners for these apps* 
 
 ### Explore Microsoft Entra applications 
 
@@ -68,7 +70,8 @@ Jason also wants to understand more about the applications globally, such as det
 
 Jason uses the following prompts to retrieve selected application properties:
 
-- *Tell me more about the application {DisplayName} or {AppId}*
+- *Tell me more about the application {DisplayName}*
+- *Tell me more about the application with AppId {AppId}*
 - *Tell me more about these apps (from previous response)*
 
 ### View the permissions granted on a Microsoft Entra service principal 
@@ -77,12 +80,13 @@ Jason continues his assessment and wants to know what permissions were granted t
 
 Jason can also identify high privilege permissions granted on a service principal, based on Microsoft’s risk assessment. These are currently scoped to application permissions that generally enable tenant-wide access without user context and highly privileged Microsoft Entra administrator roles. 
 
->[!IMPORTANT]
->This skill currently only looks at [API permissions](../identity-platform/permissions-consent-overview.md) and [Microsoft Entra administrator roles](../identity/role-based-access-control/permissions-reference.md). It doesn’t currently look at non-directory permissions granted in places like Azure RBAC or other authorization systems. High privileged permissions are limited to a static list of maintained by Microsoft that might evolve over time and it isn't currently viewable or customizable by customers. 
+> [!IMPORTANT]
+> This skill currently only looks at [API permissions](../identity-platform/permissions-consent-overview.md) and [Microsoft Entra administrator roles](../identity/role-based-access-control/permissions-reference.md). It doesn’t currently look at non-directory permissions granted in places like Azure RBAC or other authorization systems. High privileged permissions are limited to a static list of maintained by Microsoft that might evolve over time and it isn't currently viewable or customizable by customers.
 
 He uses the following prompts to get the permissions information he needs: 
 
-- *Which permissions are granted to the app with ID {ServicePrincipalId} or app ID {AppId}?*
+- *Which permissions are granted to the app with ID {ServicePrincipalObjectId}?*
+- *Which permissions are granted to the app with AppID {AppId}?*
 - *What permissions do the above risky apps have (from previous response)?*
 - *Which permissions granted to this app are highly privileged?*
 
@@ -96,8 +100,8 @@ Jason realizes he has another “low hanging fruit” opportunity: to reduce ris
 
 Using the Copilot skill integrated with the existing [Microsoft Entra recommendation for unused apps](../identity/monitoring-health/recommendation-remove-unused-apps.md), Jason pulls the relevant data to investigate further or work with his team to improve their tenant security posture. The response includes links to specific apps for easier remediation.  The analyst can also ask about a specific app’s details directly in Security Copilot.  
 
->[!NOTE]
->The Copilot response returns a list of app registration or applications that are unused in past 90 days, which haven't been issued any tokens in that timeframe. 
+> [!NOTE]
+> The Copilot response returns a list of app registration or applications that are unused in past 90 days, which haven't been issued any tokens in that timeframe. 
 
 He uses the following prompts to get the information he needs: 
 
@@ -111,7 +115,16 @@ Jason would also like to look into the risk factor of external apps or multitena
 He uses the following prompts to get the information he needs: 
 
 - *Show me apps outside my tenant* 
-- *How many apps are from outside my tenant?* 
+- *How many apps are from outside my tenant?*
+
+### Explore Microsoft Entra Application consent behavior
+
+Jason would like to know about the consent behavior of the apps in his tenant, especially those he had identified as risky or from outside his tenant. Understanding this behavior is especially important with the risk of [consent phishing attacks](../identity/enterprise-apps/protect-against-consent-phishing.md), which trick users into granting permissions to malicious cloud applications. Determining who granted consent to a potentially malicious app or looking at trends in consent failures can be an important clue to identify and remediate these attacks.
+
+He uses the following prompts to get the information he needs: 
+
+- *Who granted consent to app with ID {ServicePrincipalObjectId}?* 
+- *Show me any failed application consent requests in the last week*
 
 ## Remediate
 
@@ -119,12 +132,10 @@ By using Security Copilot, Jason is able to gather comprehensive risk and basic 
 
 He reads about [managing access and security for applications](../identity/enterprise-apps/tutorial-manage-access-security.md), [security workload identities](../id-protection/concept-workload-identity-risk.md), [protecting against consent phishing](../identity/enterprise-apps/protect-against-consent-phishing.md), and [response playbooks](/security/operations/incident-response-playbook-compromised-malicious-app) to determine possible actions to take next. 
 
-## Next steps
+## Related content
 
-Learn more about: 
 - [Manage application access and security](../identity/enterprise-apps/tutorial-manage-access-security.md)
-- What is risk in ID Protection? 
 - [Securing workload identities with Microsoft Entra ID Protection](../id-protection/concept-workload-identity-risk.md)
-- [Protect against consent phishing - Microsoft Entra ID | Microsoft Learn](../identity/enterprise-apps/protect-against-consent-phishing.md) 
+- [Protect against consent phishing](../identity/enterprise-apps/protect-against-consent-phishing.md) 
 - [Compromised and malicious applications investigation](/security/operations/incident-response-playbook-compromised-malicious-app) 
 - [Respond to identity threats using risky user summarization](copilot-entra-risky-user-summarization.md)

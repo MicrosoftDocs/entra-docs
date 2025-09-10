@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 08/11/2025
+ms.date: 08/29/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
@@ -91,7 +91,7 @@ For certain roles, the scope of the granted permissions can be restricted to a s
    - Select the role scope (in this case, administrative units)
    - Select an administrative unit for the scope
 
-For more information about creating administrative units, see [Add and remove administrative units](~/identity/role-based-access-control/admin-units-manage.md).
+If you try to assign a custom role that is compatible with administrative units, you aren't able to assign the role with administrative unit scope by starting from the **Roles & admins** page. To assign the custom role with administrative unit scope, you must first open the administrative unit and then assign the role. For more information, see [Assign roles with administrative unit scope](../../identity/role-based-access-control/manage-roles-portal.md). For information about creating administrative units, see [Create or delete administrative units](../../identity/role-based-access-control/admin-units-manage.md).
 
 ## Assign a role using Microsoft Graph API
 

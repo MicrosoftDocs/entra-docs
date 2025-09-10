@@ -38,6 +38,10 @@ items:
     href: ./scripts/powershell-bypass-script.md
   - name: Bypass Intune endpoints from the Internet Access profile
     href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
+  - name: Create a TLS certificate using ADCS
+    href: ./scripts/powershell-active-directory-certificate-service.md
+  - name: Create a TLS certificate using OpenSSL
+    href: ./scripts/powershell-open-secure-sockets-layer.md
 - name: Concepts
   expanded: true
   items: 
@@ -78,6 +82,8 @@ items:
         href: concept-remote-network-connectivity.md
       - name: Create a remote network
         href: how-to-create-remote-networks.md
+      - name: Enhance remote network resilience
+        href: remote-network-resilience.md
       - name: Create remote network with custom Internet Key Exchange (IKE) policy
         href: how-to-create-remote-network-custom-ike-policy.md
       - name: Configure customer premises equipment
@@ -165,10 +171,16 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Check URL category
+        href: how-to-check-web-content-filtering-categories.md
       - name: What is Transport Layer Security inspection? 
         href: concept-transport-layer-security.md 
       - name: Configure Transport Layer Security inspection 
         href: how-to-transport-layer-security.md 
+      - name: Configure web content filtering
+        href: how-to-configure-web-content-filtering.md
+      - name: Configure threat intelligence
+        href: how-to-configure-threat-intelligence.md
   - name: Logs and monitoring
     expanded: false
     items:
@@ -190,6 +202,8 @@ items:
         href: how-to-use-workbooks.md 
       - name: Export private network connector logs
         href: how-to-export-connector-logs.md
+      - name: Microsoft Sentinel integration
+        href: how-to-sentinel-integration.md  
   - name: Microsoft Global Secure Access deployment guides
     expanded: false
     items:
@@ -256,6 +270,8 @@ items:
     href: reference-data-storage-and-privacy.md
   - name: Web content filtering categories
     href: reference-web-content-filtering-categories.md
+  - name: Threat intelligence threat types
+    href: reference-threat-intelligence-threat-types.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: Ciphers for Microsoft Entra Private Access

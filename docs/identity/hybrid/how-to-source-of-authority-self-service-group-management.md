@@ -2,6 +2,8 @@
 title: Set up self-service group management after Group SOA conversion (Preview)
 description: Configure self-service group management in Microsoft Entra for security groups, mail-enabled security groups, and distribution groups after SOA conversion.
 author: Justinha
+ms.service: entra-id
+ms.subservice: hybrid
 ms.topic: how-to
 ms.date: 08/01/2025
 ms.author: justinha
