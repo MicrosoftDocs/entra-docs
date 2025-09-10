@@ -69,17 +69,11 @@ The default view of the suggestion provides the policy details, including a high
 
 From the details panel that opens, select **Policy impact** to see a visualization of the potential impact of the policy.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/policy-impact-button.png" alt-text="Screenshot of the policy suggestion details with the policy impact button highlighted." lightbox="media/agent-optimization-review-suggestions/policy-impact-button.png":::
-
 Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that the policy affects. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
-
-:::image type="content" source="media/agent-optimization-review-suggestions/policy-impact-graph.png" alt-text="Screenshot of the policy impact graph." lightbox="media/agent-optimization-review-suggestions/policy-impact-graph.png":::
 
 ### View agent's full activity
 
 To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The agent's activity assesses policy drift, or gaps in policy coverage, for users and apps. The agent also looks for policies that can be merged or consolidated.
-
-:::image type="content" source="media/agent-optimization-review-suggestions/view-agent-activity-link.png" alt-text="Screenshot of the policy suggestion details with the view agent's full activity link highlighted." lightbox="media/agent-optimization-review-suggestions/view-agent-activity-link.png":::
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion.
 
@@ -92,7 +86,9 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 - Policy details are provided as both a list of all the details that are changing and a JSON view of the entire policy, with the changes highlighted.
 - For policy changes that affect users or applications, you can download a JSON file of the users and applications affected by the policy change.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/review-policy-changes.png" alt-text="Screenshot of the policy details page with the review policy changes button highlighted." lightbox="media/agent-optimization-review-suggestions/review-policy-changes.png":::
+### Deep analysis (Preview)
+
+The Conditional Access optimization agent provides deep analysis of your tenant's policies where the controls include MFA. The deep analysis capability reviews the targeted users, groups, and roles of the policy with focus on exclusions.
 
 ## Apply suggestions
 
