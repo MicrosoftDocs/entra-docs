@@ -1,6 +1,6 @@
 ---
-title: Protected web API app registration
-description: Learn how to build a protected web API and acquire all the information you need to register the app.
+title: Expose scopes in a protected web API 
+description: Learn how to expose scopes in a protected web API.
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
@@ -10,10 +10,10 @@ ms.reviewer: jmprieur
 ms.service: identity-platform
 ms.subservice: workforce
 ms.topic: how-to
-#Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
+#Customer intent: As an application developer, I want to know how to expose scopes for a protected web API using the Microsoft identity platform for developers.
 ---
 
-# Protected web API: App registration
+Expose scopes in a protected web API 
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
@@ -21,7 +21,9 @@ This article explains how to add scopes to an application for a protected web AP
 
 ## Prerequisites
 
-For the common steps to register an app, see [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).es.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 
 ## Scopes and the Application ID URI
 
