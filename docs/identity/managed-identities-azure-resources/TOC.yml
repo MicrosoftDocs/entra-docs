@@ -17,17 +17,37 @@
 - name: How-to guides
   items:
     - name: Manage user-assigned managed identities
-      href: how-manage-user-assigned-managed-identities.md
+      items:
+        - name: Azure portal
+          href: manage-user-assigned-managed-identities-azure-portal.md
+        - name: CLI
+          href: manage-user-assigned-managed-identities-azure-cli.md
+        - name: PowerShell
+          href: manage-user-assigned-managed-identities-powershell.md
+        - name: ARM template
+          href: manage-user-assigned-managed-identities-azure-resource-manager.md
+        - name: REST
+          href: manage-user-assigned-managed-identities-rest.md
     - name: Acquire an access token
       href: how-to-use-vm-token.md
     - name: Grant a managed identity access to Azure resources
-      href: how-to-assign-access-azure-resource.md
+      items:
+        - name: Azure portal
+          href: grant-managed-identity-resource-access-azure-portal.md
+        - name: PowerShell
+          href: grant-managed-identity-resource-access-powershell.md
+        - name: Azure CLI
+          href: grant-managed-identity-resource-access-azure-cli.md
     - name: Configure an Entra app to trust a managed identity
       href: /entra/workload-id/workload-identity-federation-config-app-trust-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
     - name: Use Azure Resources Extension for VS Code
       href: azure-resources-extension-managed-identities.md
     - name: Assign an app role to a managed identity
-      href: how-to-assign-app-role-managed-identity.md
+      items:
+        - name: PowerShell
+          href: assign-app-role-managed-identity-powershell.md
+        - name: Azure CLI
+          href: assign-app-role-managed-identity-azure-cli.md
     - name: View associated resources for a managed identity
       href: how-to-view-associated-resources-for-an-identity.md
     - name: View managed identity activity
