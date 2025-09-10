@@ -2509,11 +2509,6 @@
       "source_path_from_root": "/docs/identity/saas-apps/github-ae-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/github-enterprise-server-provisioning-tutorial",
       "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/saas-apps/pksha-chatbot-tutorial.md",
-      "redirect_url": "/entra/identity/saas-apps/pksha-chatagent-tutorial",
-      "redirect_document_id": false
     }
   ]
 }

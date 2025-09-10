@@ -16,7 +16,7 @@ The following documentation provides reference information for the `ADSyncTools.
 
 ## Install the ADSyncTools PowerShell module
 
-To install the ADSyncTools PowerShell module do the following:
+To install the ADSyncTools PowerShell module, do the following steps:
 
 1.  Open Windows PowerShell with administrative privileges
 2.  Type or copy and paste the following: 
@@ -376,9 +376,9 @@ Export-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-Path] <Object>
 ```
 ### DESCRIPTION
 This function exports to a CSV file all the synchronized Mail-Enabled Public Folders (MEPF) present in Microsoft Entra ID.
-It can be used in conjunction with Remove-ADSyncToolsAadPublicFolders to identify and remove orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
+It can be used with Remove-ADSyncToolsAadPublicFolders to identify and remove orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
 This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
-NOTE: If DirSync has been disabled on the tenant, you'll need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
+NOTE: If DirSync is disabled on the tenant, you need to temporarily re-enable DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -561,7 +561,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 #### -ExportSerialized
-ExportSerialized exports additional XML files
+ExportSerialized exports extra XML files with serialized object data
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -720,7 +720,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### OUTPUTS
 
-This cmdlet returns the "Shadow" properties that are synchronized by the sync client, which might be different than the actual value stored in the respective property of Microsoft Entra ID. For instance, a user's UPN that is synchronized with a non-verified domain suffix 'user@nonverified.domain', will have the UPN suffix in Microsoft Entra ID converted to the tenant's default domain, 'user@tenantname.onmicrosoft.com'. In this case, Get-ADSyncToolsAadObject will return the "Shadow" value of 'user@nonverified.domain', and not the actual value in Microsoft Entra ID 'user@tenantname.onmicrosoft.com'.
+This cmdlet returns the "Shadow" properties that are synchronized by the sync client, which might be different than the actual value stored in the respective property of Microsoft Entra ID. For instance, a user's UPN that is synchronized with a non-verified domain suffix 'user@nonverified.domain', will have the UPN suffix in Microsoft Entra ID converted to the tenant's default domain, 'user@tenantname.onmicrosoft.com'. In this case, Get-ADSyncToolsAadObject returns the "Shadow" value of 'user@nonverified.domain', and not the actual value in Microsoft Entra ID 'user@tenantname.onmicrosoft.com'.
 
 ## Get-ADSyncToolsMsDsConsistencyGuid
 ### SYNOPSIS
@@ -1076,7 +1076,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## Remove-ADSyncToolsAadObject
 ### SYNOPSIS
-Remove orphaned synced object from Microsoft Entra ID
+Remove orphaned synced object from Microsoft Entra ID.
+
+**NOTE:**
+
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
+If DirSync is disabled on the tenant, you need to temporary re-enable DirSync in order to use this function.
+
 ### SYNTAX
 #### CsvInput
 ```
@@ -1089,7 +1095,10 @@ Remove-ADSyncToolsAadObject [-Credential] <PSCredential> [-SourceAnchor] <Object
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjectType in batches of 10 objects The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
+Deletes from Microsoft Entra ID one or more synced objects based on SourceAnchor and ObjectType.
+The CSV file can be generated using `Export-ADSyncToolsAadDisconnectors`.
+**IMPORTANT:** This operation might be irreversible. Other than User objects that have a Recycle Bin, any other object types deleted with this function **can't be recovered**.
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1178,31 +1187,40 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### INPUTS
 InputCsvFilename must point to a CSV file with at least 2 columns: SourceAnchor, SyncObjectType
 ### OUTPUTS
-Shows results from ExportDeletions operation DISCLAIMER: Other than User objects that have a Recycle Bin, any other object types DELETED with this function can't be RECOVERED!
+Shows results from ExportDeletions operation 
 
 ## Remove-ADSyncToolsAadPublicFolders
 ### SYNOPSIS
-Removes synchronized Mail-Enabled Public Folders (MEPF) present from Microsoft Entra ID.
-You can specify one SourceAnchor/ImmutableID for the target MEPF object to delete, or provide a CSV list with a batch of objects to delete when used in conjunction with Export-ADSyncToolsAadPublicFolders.
+Removes synchronized Mail-Enabled Public Folders (MEPF) present in Microsoft Entra ID.
+
+You can specify the SourceAnchor/ImmutableID for the target MEPF object to delete or provide a CSV list with a batch of objects to delete that can be obtained with `Export-ADSyncToolsAadPublicFolders`.
+**NOTE:**
+
 This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
-NOTE: If DirSync has been disabled on the tenant, you'll need to temporary re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
+If DirSync is disabled on the tenant, you need to temporary re-enable DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### SYNTAX
-```
-Export-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-Path] <Object> [<CommonParameters>]
-```
-### DESCRIPTION
-This function exports to a CSV file all the synchronized Mail-Enabled Public Folders (MEPF) present in Microsoft Entra ID.
-It can be used in conjunction with Remove-ADSyncToolsAadPublicFolders to identify and remove orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
-NOTE: If DirSync has been disabled on the tenant, you'll need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
-### EXAMPLES
-#### EXAMPLE 1
+#### CsvInput
 ```
 Remove-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-InputCsvFilename] <Object> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-#### EXAMPLE 2
+#### ObjectInput
 ```
 Remove-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-SourceAnchor] <Object> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### DESCRIPTION
+Deletes from Microsoft Entra ID a synced Mail-Enabled Public Folder object based on a SourceAnchor or CSV list.
+The CSV list can be obtained with `Export-ADSyncToolsAadPublicFolders` to identify and remove all orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
+**IMPORTANT**: This operation is irreversible. Deleted Mail-Enabled Public Folder objects cannot be restored from Microsoft Entra ID.
+
+### EXAMPLES
+#### EXAMPLE 1
+```
+Remove-ADSyncToolsAadPublicFolders -InputCsvFilename .\DeleteObjects.csv -Credential (Get-Credential)
+```
+#### EXAMPLE 2
+```
+Remove-ADSyncToolsAadPublicFolders -SourceAnchor '2epFRNMCPUqhysJL3SWL1A==' -Credential (Get-Credential)
 ```
 ### PARAMETERS
 #### -Credential
@@ -1258,7 +1276,7 @@ Remove-ADSyncToolsExpiredCertificates [-TargetOU] <String> [[-BackupOnly] <Boole
  [<CommonParameters>]
 ```
 ### DESCRIPTION
-This script takes all the objects from a target Organizational Unit in your Active Directory domain - filtered by Object Class (User/Computer) and deletes all expired certificates present in the UserCertificate attribute. By default (BackupOnly mode) it will only backup expired certificates to a file and not do any changes in AD. If you use `-BackupOnly $false` then any Expired Certificate present in UserCertificate attribute for these objects will be removed from Active Directory after being copied to file. Each certificate will be backed up to a separated filename: `ObjectClass_ObjectGUID_CertThumprint.cer`. The script will also create a log file in CSV format showing all the users with certificates that either are valid or expired including the actual action taken (Skipped/Exported/Deleted).
+This script takes all the objects from a target Organizational Unit in your Active Directory domain - filtered by Object Class (User/Computer) and deletes all expired certificates present in the UserCertificate attribute. By default (BackupOnly mode) it will only backup expired certificates to a file and not do any changes in AD. If you use `-BackupOnly $false`, then any Expired Certificate present in UserCertificate attribute for these objects will be removed from Active Directory after being copied to file. Each certificate will be backed up to a separated filename: `ObjectClass_ObjectGUID_CertThumprint.cer`. The script will also create a log file in CSV format showing all the users with certificates that either are valid or expired including the actual action taken (Skipped/Exported/Deleted).
 
 ### EXAMPLES
 #### EXAMPLE 1

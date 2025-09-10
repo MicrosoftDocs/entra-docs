@@ -1166,7 +1166,7 @@
       - name: GitHub
         href: github-tutorial.md
       - name: GitHub Enterprise Server
-        href: github-ae-tutorial.md
+        href: github-enterprise-server-tutorial.md
       - name: GitHub Enterprise Cloud - Enterprise Account
         href: github-enterprise-cloud-enterprise-account-tutorial.md  
       - name: GitHub Enterprise Managed User
@@ -3488,8 +3488,8 @@
         href: getabstract-provisioning-tutorial.md
       - name: GitHub
         href: github-provisioning-tutorial.md
-      - name: GitHub AE
-        href: github-ae-provisioning-tutorial.md
+      - name: GitHub Enterprise Server
+        href: github-enterprise-server-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User
         href: github-enterprise-managed-user-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User (OIDC)

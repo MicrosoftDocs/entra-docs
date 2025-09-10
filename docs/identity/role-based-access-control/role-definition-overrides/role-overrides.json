@@ -8,7 +8,7 @@
         "typos": "(NOT HANDLED) Common typos to fix in the documentation."
     },
     "roleDisplayNames": {
-        "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator TESTING 1 2 3"
+        "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator"
     },
     "roleDescriptions": {
         "Can manage Azure DevOps organization policy and settings.": "Can manage Azure DevOps policies and settings.",

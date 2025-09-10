@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 11/07/2024
+ms.date: 09/09/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-image-nochange
@@ -22,7 +22,7 @@ This article describes the settings you can specify to govern access for externa
 
 ## How entitlement management can help
 
-When using the [Microsoft Entra B2B](~/external-id/what-is-b2b.md) invite experience, you must already know the email addresses of the external guest users you want to bring into your resource directory and work with. Directly inviting each user works great when you're working on a smaller or short-term project and you already know all the participants, but this process is harder to manage if you have lots of users you want to work with, or if the participants change over time. For example, you might be working with another organization and have one point of contact with that organization, but over time more users from that organization will also need access.
+When using the [Microsoft Entra B2B](~/external-id/what-is-b2b.md) invite experience, you must already know the email addresses of the external guest users you want to bring into your resource directory and work with. Directly inviting each user works great when you're working on a smaller or short-term project and you already know all the participants. This process is harder to manage if you have lots of users you want to work with, or if the participants change over time. For example, you might be working with another organization and have one point of contact with that organization, but over time more users from that organization will also need access.
 
 With entitlement management, you can define a policy that allows users from organizations you specify to be able to self-request an access package. That policy includes whether approval is required, whether access reviews are required, and an expiration date for the access. In most cases, you want to require approval, in order to have appropriate oversight over which users are brought into your directory. If approval is required, then for major external organization partners, you might consider inviting one or more users from the external organization to your directory, designating them as sponsors, and configuring that sponsors are approvers - since they're likely to know which external users from their organization need access. Once you've configured the access package, obtain the access package's request link so you can send that link to your contact person (sponsor) at the external organization. That contact can share with other users in their external organization, and they can use this link to request the access package. Users from that organization who are already invited into your directory can also use that link.
 
@@ -99,7 +99,7 @@ To ensure people outside of your organization can request access packages and ge
 
 - Make sure to exclude the Entitlement Management app from any Conditional Access policies that impact guest users. Otherwise, a Conditional Access policy could block them from accessing MyAccess or being able to sign in to your directory. For example, guests likely don't have a registered device, aren't in a known location, and don't want to re-register for multifactor authentication (MFA), so adding these requirements in a Conditional Access policy will block guests from using entitlement management. For more information, see [What are conditions in Microsoft Entra Conditional Access?](~/identity/conditional-access/concept-conditional-access-conditions.md).
 
-- If the Conditional Access is blocking all cloud applications, in addition to excluding the Entitlement Management App, ensure that the *Request Approvals Read Platform* is also excluded in your Conditional Access policy. Start by confirming that you have the necessary roles: Conditional Access Administrator, Application Administrator, Attribute Assignment Administrator, and Attribute Definition Administrator. Then, create a custom security attribute with a suitable name and values. Locate the service principal for *Request Approvals Read Platform* in Enterprise Applications, and assign the custom attribute with the chosen value to this application. In your Conditional Access policy, apply a filter to exclude selected applications based on the custom attribute name and value assigned to *Request Approvals Read Platform*. For more details on filtering applications in Conditional Access policies, refer to : [Conditional Access: Filter for applications](../identity/conditional-access/concept-filter-for-applications.md)
+- If the Conditional Access is blocking all cloud applications, in addition to excluding the Entitlement Management App, ensure that the *Request Approvals Read Platform* is also excluded in your Conditional Access policy. Start by confirming that you have the necessary roles: Conditional Access Administrator, Application Administrator, Attribute Assignment Administrator, and Attribute Definition Administrator. Then, create a custom security attribute with a suitable name and values. Locate the service principal for *Request Approvals Read Platform* in Enterprise Applications, and assign the custom attribute with the chosen value to this application. In your Conditional Access policy, apply a filter to exclude selected applications based on the custom attribute name and value assigned to *Request Approvals Read Platform*. For more details on filtering applications in Conditional Access policies, refer to: [Conditional Access: Filter for applications](../identity/conditional-access/concept-filter-for-applications.md)
 
     :::image type="content" source="media/entitlement-management-external-users/exclude-app-guests.png" alt-text="Screenshot of exclude app options.":::
 
@@ -132,29 +132,28 @@ To ensure people outside of your organization can request access packages and ge
 
 ## Manage the lifecycle of external users
 
-
-
 You can select what happens when an external user, who was invited to your directory through making an access package request, no longer has any access package assignments. This can happen if the user relinquishes all their access package assignments, or their last access package assignment expires. By default, when an external user no longer has any access package assignments, they're blocked from signing in to your directory. After 30 days, their guest user account is removed from your directory. You can also configure that an external user isn't blocked from sign in or deleted, or that an external user isn't blocked from sign in but is deleted.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Entitlement management** > **Settings**.
+1. Browse to **ID Governance** > **Entitlement management** > **Control Configurations**.
 
-1. Select **Edit**.
+1. Select **View settings** on the Lifecycle of external users setting card.
+    :::image type="content" source="media/entitlement-management-external-users/settings-external-users.png" alt-text="Screenshot of external settings for ID governance.":::
 
-    ![Settings to manage the lifecycle of external users](./media/entitlement-management-external-users/settings-external-users.png)
+1. On the settings page, you'll see a list of actions to take for external users onboarded via an access package once their last access package assignment expires. This includes options to **Remove external user**, **Block external user from signing in to directory**, and **Number of days before removing external user from directory**.
+    :::image type="content" source="media/entitlement-management-external-users/external-settings-list.png" alt-text="Screenshot of the external settings options.":::
 
-1. In the **Manage the lifecycle of external users** section, select the different settings for external users.
-
-1. Once an external user loses their last assignment to any access packages, if you want to block them from signing in to this directory, set the **Block external user from signing in to this directory** to **Yes**.
-
-    > [!NOTE]
-    > Entitlement management only blocks external guest user accounts from signing in that were invited through entitlement management or that were added to entitlement management for lifecycle management by having their guest user account [converted to governed](entitlement-management-access-package-manage-lifecycle.md). Also, note that a user will be blocked from signing in even if that user was added to resources in this directory that were not access package assignments. If a user is blocked from signing in to this directory, then the user will be unable to re-request the access package or request additional access in this directory. Do not configure blocking them from signing in if they will subsequently need to request access to this or other access packages.
-
-1. Once an external user loses their last assignment to any access packages, if you want to remove their guest user account in this directory, set **Remove external user** to **Yes**.
+1. Once an external user loses their last assignment to any access packages, if you want to remove their guest user account in this directory, check the **Remove external user** box.
 
     > [!NOTE]
-    > Entitlement management only removes external guest user accounts that were invited through entitlement management or  that were added to entitlement management for lifecycle management by having their guest user account [converted to governed](entitlement-management-access-package-manage-lifecycle.md). Also, note that a user will be removed from this directory even if that user was added to resources in this directory that were not access package assignments. If the guest was present in this directory prior to receiving access package assignments, they will remain. However, if the guest was invited through an access package assignment, and after being invited was also assigned to a OneDrive for Business or SharePoint Online site, they will still be removed.  Changing the **Remove external user** setting to **No** only affects users who subsequently lose their last access package assignment; users that were scheduled for deletion and are blocked from sign in will still be deleted on their original schedule.
+    > Entitlement management only removes external guest user accounts that were invited through entitlement management or  that were added to entitlement management for lifecycle management by having their guest user account [converted to governed](entitlement-management-access-package-manage-lifecycle.md). A user will be removed from this directory even if that user was added to resources in this directory that weren't access package assignments. If the guest was present in this directory prior to receiving access package assignments, they'll remain. However, if the guest was invited through an access package assignment, and after being invited was also assigned to a OneDrive for Business or SharePoint Online site, they'll still be removed.  Changing the **Remove external user** setting to **No** only affects users who later lose their last access package assignment; users that were scheduled for deletion and are blocked from sign in will still be deleted on their original schedule.
+
+1. Once an external user loses their last assignment to any access packages, if you want to block them from signing in to this directory, check the **Block external user from signing in to this directory** box.
+
+    > [!NOTE]
+    > Entitlement management only blocks external guest user accounts from signing in that were invited through entitlement management or that were added to entitlement management for lifecycle management by having their guest user account [converted to governed](entitlement-management-access-package-manage-lifecycle.md). A user will be blocked from signing in even if that user was added to resources in this directory that weren't access package assignments. If a user is blocked from signing in to this directory, then the user is unable to re-request the access package or request additional access in this directory. Don't configure blocking them from signing in if they'll later need to request access to this or other access packages.
+
 
 1. If you want to remove the guest user account in this directory, you can set the number of days before it's removed. While an external user is notified when their access package expires, there's no notification when their account is removed. If you want to remove the guest user account as soon as they lose their last assignment to any access packages, set **Number of days before removing external user from this directory** to **0**. Changes to this value only affect users who subsequently use their last access package assignment; users that were scheduled for deletion will still be deleted on their original schedule.
 
