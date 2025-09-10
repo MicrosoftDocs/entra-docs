@@ -74,6 +74,6 @@ To delete a user-assigned managed identity,
 
     Deleting a user-assigned managed identity won't remove the reference from any resource it was assigned to. Remove those from the resource itself. For example, for a VM or virtual machine scale set, use the `az vm/vmss identity remove` command.
 
-## Related conmtent
+## Related content
 
 For a full list of Azure CLI identity commands, see [az identity](/cli/azure/identity).
