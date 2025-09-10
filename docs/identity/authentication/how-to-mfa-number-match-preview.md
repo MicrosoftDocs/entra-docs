@@ -29,6 +29,7 @@ To install the preview on Android:
 
 1. Open the Play Store and install or update Authenticator.
 1. To remove the preview, uninstall the app and download the latest version of the app from the Play Store.
+
 ---
 
 ## [**iOS**](#tab/iOS)
@@ -46,3 +47,7 @@ To install the preview on iOS:
 1. To remove the preview, uninstall the app and download the latest version of the app from the App Store.
 
 ---
+
+## Related content
+
+[Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app)
