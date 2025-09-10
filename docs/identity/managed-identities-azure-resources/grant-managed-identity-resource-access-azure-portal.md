@@ -22,7 +22,7 @@ This article shows you how to use the Azure portal to give a managed identity ac
 
 ## Use Azure RBAC to assign a managed identity access to another resource using the Azure portal
 
-The steps outlined below show is how you grant access to a service using Azure RBAC. Check specific service documentation on how to grant access; for example, check [Azure Data Explorer](/azure/data-explorer/data-explorer-overview) for instructions. Some Azure services are in the process of adopting Azure RBAC on the data plane.
+The steps outlined below show how you grant access to a service using Azure RBAC. Check specific service documentation on how to grant access; for example, check [Azure Data Explorer](/azure/data-explorer/data-explorer-overview) for instructions. Some Azure services are in the process of adopting Azure RBAC on the data plane.
 
 1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription for which you've configured the managed identity.
 
