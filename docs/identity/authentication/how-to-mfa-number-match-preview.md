@@ -43,7 +43,7 @@ To install the preview on iOS:
 Scenario | Experience change?
 ---------|--------------------------
 User signs in to Authenticator to upgrade the account they use for multifactor authentication (MFA). | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like Authenticator, they can tap the notification and reply Yes/No to complete the sign-in.
-User signs in to a Microsoft app like Outlook or Teams. | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like like Outlook or Teams, they can tap the notification and reply Yes/No to complete the sign-in.
+User signs in to a Microsoft app like Outlook or Teams. | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like Outlook or Teams, they can tap the notification and reply Yes/No to complete the sign-in.
 User signs in to a browser like Edge or Chrome. | No. The user sees a notification with the number match request on the sign-in in screen. In a browser, they need to tap the notification to enter the number and approve the sign-in. 
 
 ### Install preview 
