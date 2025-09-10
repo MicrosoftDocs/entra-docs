@@ -163,12 +163,16 @@ Two certificates should be listed now, one of which has a **NotAfter** date of a
 Update Microsoft 365 with the new token signing certificates to be used for the trust, as follows.
 
 1. Open Azure PowerShell.
-1. Run `Connect-Entra -Scopes 'Domain.Read.All'`. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
+2. Run `Connect-Entra -Scopes 'Domain.Read.All'`. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
   
-   **Note:** -InternalDomainFederationId can be found by running the command `Get-EntraFederationProperty -Domainname your_domain.com`
+> [!NOTE]
+> 
+> -InternalDomainFederationId can be found by running the command `Get-EntraFederationProperty -Domainname your_domain.com`
    <img width="1774" height="165" alt="Get-EntraFedProperty" src="https://github.com/user-attachments/assets/05daad2b-81b2-48f8-9fca-c34eb729b594" />
+
 3. Run `Update-MgDomainFederationConfiguration -DomainId <your_domain.com> -InternalDomainFederationId <hex_domain ID>`. This cmdlet updates the settings from AD FS into the cloud service, and configures the trust relationship between the two.
-   
+
+
 >
 > [!NOTE]
 > If you need to support multiple top-level domains, such as contoso.com and fabrikam.com, you must apply the above settings and go domain by domain without the **-SupportMultipleDomain** switch since it is no longer available for **Microsoft.Entra** and **Microsoft.Graph** modules.
