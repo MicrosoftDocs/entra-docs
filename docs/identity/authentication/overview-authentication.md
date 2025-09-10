@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra authentication overview
-description: Learn about the different authentication methods and security features for user sign-ins with Microsoft Entra ID.
+title: Microsoft Entra Authentication Overview
+description: Learn about the authentication methods and security features for user sign-ins with Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -12,87 +12,90 @@ author: justinha
 manager: dougeby
 ms.reviewer: sahenry, michmcla
 
-# Customer intent: As a Microsoft Entra administrator, I want to understand which Microsoft Entra features I can use to secure sign-in and make the user authentication process safe and easy.
+# Customer intent: As a Microsoft Entra administrator, I want to understand which Microsoft Entra features I can use to help secure sign-in and make the user authentication process safe and easy.
 ---
 # What is Microsoft Entra authentication?
 
-One of the main features of an identity platform is to verify, or *authenticate*, credentials when a user signs in to a device, application, or service. In Microsoft Entra ID, authentication involves more than just the verification of a username and password. To improve security and reduce the need for help desk assistance, Microsoft Entra authentication includes the following components:
+One of the main features of an identity platform is to verify, or *authenticate*, credentials when a user signs in to a device, application, or service. In Microsoft Entra ID, authentication involves more than just the verification of a username and password. To improve security and reduce the need for help-desk assistance, Microsoft Entra authentication includes the following components:
 
-* Self-service password reset
-* Microsoft Entra multifactor authentication
-* Hybrid integration to write password changes back to on-premises environment
+* Self-service password reset (SSPR)
+* Multifactor authentication (MFA)
+* Hybrid integration to write password changes back to an on-premises environment
 * Hybrid integration to enforce password protection policies for an on-premises environment
 * Passwordless authentication
 
-Take a look at our short video to learn more about these authentication components.
+To learn more about these authentication components, take a look at our short video.
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=5ee3cad5-3360-48da-b520-1a0d96710a38]
 
-## Improve the end-user experience
+## Improvements to the user experience
 
-Microsoft Entra ID helps to protect a user's identity and simplify their sign-in experience. Features like self-service password reset let users update or change their passwords using a web browser from any device. This feature is especially useful when the user has forgotten their password or their account is locked. Without waiting for a helpdesk or administrator to provide support, a user can unblock themselves and continue to work.
+Microsoft Entra ID helps protect users' identities and simplify their sign-in experience. Features like SSPR let users update or change their passwords by using a web browser from any device. This feature is especially useful when users forget their passwords or their accounts are locked. Without waiting for a helpdesk or administrator to provide support, users can unblock themselves and continue to work.
 
-Microsoft Entra multifactor authentication lets users choose an additional form of authentication during sign-in, such as a phone call or mobile app notification. This ability reduces the requirement for a single, fixed form of secondary authentication like a hardware token. If the user doesn't currently have one form of additional authentication, they can choose a different method and continue to work.
+MFA lets users choose an additional form of authentication during sign-in, such as a phone call or a mobile app notification. This ability reduces the requirement for a single, fixed form of secondary authentication, like a hardware token. If users don't currently have one form of additional authentication, they can choose a different method and continue to work.
 
-![Authentication methods in use at the sign-in screen](media/concept-authentication-methods/overview-login.png)
+![Screenshot that shows authentication methods in use at the sign-in screen.](media/concept-authentication-methods/overview-login.png)
 
-Passwordless authentication removes the need for the user to create and remember a secure password at all. Capabilities like Windows Hello for Business or FIDO2 security keys let users sign in to a device or application without a password. This ability can reduce the complexity of managing passwords across different environments.
+Passwordless authentication removes the need for users to create and remember secure passwords. Capabilities like Windows Hello for Business or FIDO2 security keys let users sign in to devices or applications without a password. This ability can reduce the complexity of managing passwords across environments.
 
 ## Self-service password reset
 
-Self-service password reset gives users the ability to change or reset their password, with no administrator or help desk involvement. If a user's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work. This ability reduces help desk calls and loss of productivity when a user can't sign in to their device or an application.
+SSPR gives users the ability to change or reset their passwords with no administrator or help-desk involvement. If users' accounts are locked or they forget their passwords, they can follow prompts to unblock themselves and get back to work. This ability reduces help-desk calls and loss of productivity when users can't sign in to their devices or applications.
 
-Self-service password reset works in the following scenarios:
+SSPR works in the following scenarios:
 
-* **Password change -** when a user knows their password but wants to change it to something new.
-* **Password reset -** when a user can't sign in, such as when they forgot password, and want to reset their password.
-* **Account unlock -** when a user can't sign in because their account is locked out and want to unlock their account.
+* **Password change**: When a user knows the password but wants to change it to something new.
+* **Password reset**: When a user can't sign in (for example, after forgetting the password) and wants to reset the password.
+* **Account unlock**: When a user can't sign in because the account is locked, and the user wants to unlock the account.
 
-When a user updates or resets their password using self-service password reset, that password can also be written back to an on-premises Active Directory environment. Password writeback makes sure that a user can immediately use their updated credentials with on-premises devices and applications.
+When a user updates or resets a password by using SSPR, that password can also be written back to an on-premises Active Directory environment. Password writeback makes sure that a user can immediately use the updated credentials with on-premises devices and applications.
 
 <a name='azure-ad-multi-factor-authentication'></a>
 
-## Microsoft Entra multifactor authentication
+## Multifactor authentication
 
-Multifactor authentication is a process where a user is prompted during the sign-in process for an additional form of identification, such as to enter a code on their cellphone or to provide a fingerprint scan.
+Multifactor authentication is a process in which a user is prompted for an additional form of identification during sign-in. For example, the user is prompted to enter a code on a phone or to provide a fingerprint scan.
 
-If you only use a password to authenticate a user, it leaves an insecure vector for attack. If the password is weak or has been exposed elsewhere, is it really the user signing in with the username and password, or is it an attacker? When you require a second form of authentication, security is increased as this additional factor isn't something that's easy for an attacker to obtain or duplicate.
+If you use only a password to authenticate a user, it leaves an nonsecure vector for attack. If the password is weak or is exposed elsewhere, is it really the user who's signing in with the username and password, or is it an attacker? Requiring a second form of authentication increases security because this additional factor isn't easy for an attacker to obtain or duplicate.
 
-![Conceptual image of the different forms of multifactor authentication](./media/concept-mfa-howitworks/methods.png)
+![Conceptual diagram of the various forms of multifactor authentication.](./media/concept-mfa-howitworks/methods.png)
 
-Microsoft Entra multifactor authentication works by requiring two or more of the following authentication methods:
+Microsoft Entra MFA works by requiring two or more of the following authentication methods:
 
-* Something you know, typically a password.
-* Something you have, such as a trusted device that isn't easily duplicated, like a phone or hardware key.
-* Something you are - biometrics like a fingerprint or face scan.
+* Something the user knows, typically a password
+* Something the user has, such as a trusted device or a hardware key that isn't easily duplicated
+* Something the user is; that is, biometrics like a fingerprint or face scan
 
-Users can register themselves for both self-service password reset and Microsoft Entra multifactor authentication in one step to simplify the on-boarding experience. Administrators can define what forms of secondary authentication can be used. Microsoft Entra multifactor authentication can also be required when users perform a self-service password reset to further secure that process.
+Users can register themselves for both SSPR and MFA in one step to simplify the onboarding experience. Administrators can define what forms of secondary authentication to use. Administrators can also require MFA when users perform a self-service password reset, to further secure that process.
 
 ## Password protection
 
-By default, Microsoft Entra ID blocks weak passwords such as *Password1*. A global banned password list is automatically updated and enforced that includes known weak passwords. If a Microsoft Entra user tries to set their password to one of these weak passwords, they receive a notification to choose a more secure password.
+By default, Microsoft Entra ID blocks weak passwords such as *Password1*. Microsoft Entra ID automatically updates and enforces a list of banned passwords are known to be weak. A Microsoft Entra user who tries to set a password to one of these weak passwords receives a notification to choose a password that's more secure.
 
-To increase security, you can define custom password protection policies. These policies can use filters to block any variation of a password containing a name such as *Contoso* or a location like *London*, for example.
+To increase security, you can define custom policies for password protection. These policies can use filters to block any variation of a password that contains a name such as *Contoso* or a location like *London*, for example.
 
-For hybrid security, you can integrate Microsoft Entra password protection with an on-premises Active Directory environment. A component installed in the on-premises environment receives the global banned password list and custom password protection policies from Microsoft Entra ID, and domain controllers use them to process password change events. This hybrid approach makes sure that no matter how or where a user changes their credentials, you enforce the use of strong passwords.
+For hybrid security, you can integrate Microsoft Entra password protection with an on-premises Active Directory environment. A component installed in the on-premises environment receives the list of banned passwords and the custom policies for password protection from Microsoft Entra ID. Domain controllers then use that information to process password changes. This hybrid approach makes sure that no matter how or where users change their credentials, you enforce the use of strong passwords.
 
 ## Passwordless authentication
 
-The end-goal for many environments is to remove the use of passwords as part of sign-in events. Features like Azure password protection or Microsoft Entra multifactor authentication help improve security, but a username and password remains a weak form of authentication that can be exposed or brute-force attacked.
+The goal for many environments is to remove the use of passwords as part of sign-in events. Features like Azure password protection or Microsoft Entra MFA help improve security, but a username/password combination remains a weak form of authentication that can be exposed or brute-force attacked.
 
-![Security versus convenience with the authentication process that leads to passwordless](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
+![Diagram that illustrates security versus convenience with the authentication process that leads to passwordless sign-in.](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
 
-When you sign in with a passwordless method, credentials are provided by using methods like biometrics with Windows Hello for Business, or a FIDO2 security key. These authentication methods can't be easily duplicated by an attacker.
+When users sign in passwordlessly, they provide credentials by using methods like:
 
-Microsoft Entra ID provides ways to natively authenticate using passwordless methods to simplify the sign-in experience for users and reduce the risk of attacks.  
+* Biometrics with Windows Hello for Business.
+* A FIDO2 security key.
 
-## Next steps
+An attacker can't easily duplicate these authentication methods.
 
-To get started, see the [tutorial for self-service password reset (SSPR)][tutorial-sspr] and [Microsoft Entra multifactor authentication][tutorial-azure-mfa].
+Microsoft Entra ID provides ways to natively authenticate by using passwordless methods to simplify the sign-in experience for users and reduce the risk of attacks.  
 
-To learn more about self-service password reset concepts, see [How Microsoft Entra self-service password reset works][concept-sspr].
+## Related content
 
-To learn more about multifactor authentication concepts, see [How Microsoft Entra multifactor authentication works][concept-mfa].
+* To get started, see the [tutorial for Microsoft Entra SSPR][tutorial-sspr] and the [tutorial for Microsoft Entra MFA][tutorial-azure-mfa].
+* To learn more about SSPR concepts, see [How it works: Microsoft Entra self-service password reset][concept-sspr].
+* To learn more about MFA concepts, see [How it works: Microsoft Entra multifactor authentication][concept-mfa].
 
 <!-- INTERNAL LINKS -->
 [tutorial-sspr]: tutorial-enable-sspr.md
