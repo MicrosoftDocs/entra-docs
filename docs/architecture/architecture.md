@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra
 ms.subservice: architecture
 ms.topic: concept-article
-ms.date: 01/16/2025
+ms.date: 09/10/2025
 ms.author: barclayn
 ms.reviewer: jeffsta
 ---
@@ -99,6 +99,8 @@ Application writes using the Microsoft Graph API of Microsoft Entra ID are abstr
 
 > [!NOTE]
  > Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
+
+For application-only requests, Microsoft Entra ID does not provide session consistency. Session consistency is only supported for delegated requests (application+user token flow). 
 
 #### Service-level backup
 
