@@ -18,7 +18,7 @@ ms.author: shermanouko
 
 ## Prerequisites
 
-- If you're unfamiliar with managed identities for Azure resources, see [Managed identity for Azure resources overview](../overview.md). 
+- If you're unfamiliar with managed identities for Azure resources, see [Managed identity for Azure resources overview](./overview.md). 
 - Review the [difference between a system-assigned and user-assigned managed identity](/azure/logic-apps/authenticate-with-managed-identity).
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 

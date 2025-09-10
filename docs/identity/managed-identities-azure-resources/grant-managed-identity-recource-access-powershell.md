@@ -1,6 +1,6 @@
 ---
-title: Assign a managed identity access to an Azure resource or another resource
-description: Step-by-step instructions for assigning a managed identity access to an Azure resource or another resource.
+title: Use PowerShell to grant a managed identity access to a resource
+description: Step-by-step instructions on using PowerShell to assign a managed identity access to an Azure resource or another resource.
 
 author: SHERMANOUKO
 manager: CelesteDG
@@ -12,7 +12,7 @@ ms.date: 06/03/2024
 ms.author: shermanouko
 ---
 
-# Use Azure portal to grant a managed identity access to a resource
+# Use PowerShell to grant a managed identity access to a resource
 
 This article shows you how to use PowerShell to give a managed identity access to an Azure resource. In this article, we use the example of an Azure virtual machine (Azure VM) managed identity accessing an Azure storage account. Once you've configured an Azure resource with a managed identity, you can then give the managed identity access to another resource, similar to any security principal.
 
