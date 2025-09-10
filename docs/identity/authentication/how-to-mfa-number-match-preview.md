@@ -4,7 +4,7 @@ description: Learn how to use number matching in preview for Microsoft Authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 09/08/2025
+ms.date: 09/10/2025
 ms.author: justinha
 author: justinha
 # Customer intent: As an identity administrator, I want to explain how number matching in MFA push notifications from Authenticator in Microsoft Entra ID works in different use cases.
@@ -50,4 +50,4 @@ To install the preview on iOS:
 
 ## Related content
 
-[Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app)
+[Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app.md)
