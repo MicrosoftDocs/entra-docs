@@ -263,6 +263,146 @@ In a production environment, it's a good practice to deploy new client versions 
 1. Slowly increase the membership of the pilot group until you deploy the new client to all desired devices.
 1. Delete the app with the old client version.
 
+### Configure Global Secure Access client settings with Intune
+
+Admins can use remediation scripts in Intune to enforce the desired client-side controls, such as preventing non-admin users from being able to disable the client or hiding specific buttons. 
+
+> [!IMPORTANT]
+> Set the `$gsaSettings` to the values your organization requires in both the detection and remediation scripts.
+
+> [!NOTE]
+> Make sure to configure these scripts to run in 64-bit PowerShell.
+
+#### Detection script 
+
+```powershell
+#Check GSA registry keys 
+
+$gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
+
+$gsaSettings = @{ 
+
+"HideSignOutButton" = 1 
+ 
+"HideDisablePrivateAccessButton" = 1 
+ 
+"HideDisableButton" = 0 
+ 
+"RestrictNonPrivilegedUsers" = 0 
+
+} 
+
+$nonCompliant = $false 
+
+foreach ($setting in $gsaSettings.GetEnumerator()) { 
+
+$currentValue = (Get-ItemProperty -Path $gsaPath -Name $setting.Key -ErrorAction SilentlyContinue).$($setting.Key) 
+ 
+if ($currentValue -ne $setting.Value) { 
+ 
+    Write-Output "Non-compliant: $($setting.Key) is $currentValue, expected $($setting.Value)" 
+ 
+    $nonCompliant = $true 
+ 
+} 
+  
+
+} 
+
+if (-not $nonCompliant) { 
+
+Write-Output "Compliant" 
+ 
+exit 0 
+  
+
+} else { 
+
+Write-Output "Non-compliant" 
+ 
+exit 1 
+ 
+
+} 
+```
+
+#### Remediation script
+
+```powershell
+#Ensure GSA registry keys are present 
+
+$gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
+
+$gsaSettings = @{ 
+
+"HideSignOutButton" = 1 
+ 
+"HideDisablePrivateAccessButton" = 1 
+ 
+"HideDisableButton" = 0 
+ 
+"RestrictNonPrivilegedUsers" = 0 
+  
+
+} 
+
+if (-Not (Test-Path $gsaPath)) { 
+
+New-Item -Path $gsaPath -Force | Out-Null 
+  
+
+} 
+
+foreach ($setting in $gsaSettings.GetEnumerator()) { 
+
+Set-ItemProperty -Path $gsaPath -Name $setting.Key -Value $setting.Value -Type DWord -Force | Out-Null 
+ 
+Write-Output "Set $($setting.Key) to $($setting.Value)" 
+  
+
+}
+```
+
+### Configure settings for Microsoft Entra Internet Access with Intune
+
+Microsoft Entra Internet Access does not yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this, it is recommended to disable these protocols in users’ browsers. The following instructions provide guidance on how to enforce these controls using Intune.
+
+#### Disable QUIC in Edge and Chrome with Intune 
+
+To disable QUIC in Edge and Chrome with Intune:
+1. Intune portal > Devices > Configuration.
+1. Click Create. Select New Policy.
+1. Select:
+   - Platform select Windows 10 and later
+   - Profile type select Settings Catalog
+1. Give name + Description. Click Next.
+1. Select **Add settings**.
+1. Search for “Quic”
+1. Select Microsoft Edge
+1. Check the box Allow QUIC protocol
+1. Set toggle to Disabled.
+1. Next, select Google Chrome
+1. Check the box Allow QUIC protocol
+1. Set toggle to Disabled.
+1. Next, search for “DNS-over-HTTPS”
+1. Select Microsoft Edge
+1. Check the box Control the mode of DNS-over-HTTPS
+1. Set toggle to Disabled.
+1. Next, select Google Chrome
+1. Check the box Control the mode of DNS-over-HTTPS
+1. Set toggle to Disabled.
+    
+    :::image type="content" source="media/how-to-install-windows-client/[].png" alt-text="Screenshot of []." lightbox="media/how-to-install-windows-client/[].png":::
+
+1. Select **Next** twice.
+1. Select **Add groups** and select a group of users or devices to assign the policy.
+1. Select **Next**.
+1. Select **Create**.
+
+#### Configure Firefox browser settings
+
+
+
 <!-- New Intune content goes above this line. -->
 
 ### Manual installation
