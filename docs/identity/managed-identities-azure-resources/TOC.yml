@@ -38,7 +38,6 @@
           href: grant-managed-identity-resource-access-powershell.md
         - name: Azure CLI
           href: grant-managed-identity-resource-access-azure-cli.md
-      href: how-to-assign-access-azure-resource.md
     - name: Configure an Entra app to trust a managed identity
       href: /entra/workload-id/workload-identity-federation-config-app-trust-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
     - name: Use Azure Resources Extension for VS Code
