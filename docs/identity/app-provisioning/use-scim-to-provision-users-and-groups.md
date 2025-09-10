@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 03/04/2025
+ms.date: 09/10/2025
 ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
@@ -1367,7 +1367,7 @@ Use the checklist to onboard your application quickly and customers have a smoot
 > * Support at least 25 requests per second per tenant to ensure that users and groups are provisioned and deprovisioned without delay (Required)
 > * Establish engineering and support contacts to guide customers post gallery onboarding (Required)
 > * 3 Non-expiring test credentials for your application (Required)
-> * Support the OAuth authorization code grant or a long lived token as described in the example (Required)
+> * Support Client Credentials or a long lived token as described in the example (Required)
 > * OIDC apps must have at least 1 role (custom or default) defined
 > * Establish an engineering and support point of contact to support customers post gallery onboarding (Required)
 > * [Support schema discovery (required)](https://tools.ietf.org/html/rfc7643#section-6)
@@ -1381,54 +1381,28 @@ The SCIM spec doesn't define a SCIM-specific scheme for authentication and autho
 |--|--|--|--|
 |Username and password (not recommended or supported by Microsoft Entra ID)|Easy to implement|Insecure - [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/your-pa-word-doesn-t-matter/ba-p/731984)|Not supported for new gallery or non-gallery apps.|
 |Long-lived bearer token|Long-lived tokens don't require a user to be present. They're easy for admins to use when setting up provisioning.|Long-lived tokens can be hard to share with an admin without using insecure methods such as email. |Supported for gallery and non-gallery apps. |
-|OAuth authorization code grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have.  A real user must be present during initial authorization, adding a level of accountability. |Requires a user to be present. If the user leaves the organization, the token is invalid, and authorization needs to be completed again.|Supported for gallery apps and non-gallery apps.|
-|OAuth client credentials grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have. Both the authorization code grant and the client credentials grant create the same type of access token, so moving between these methods is transparent to the API.  Provisioning can be automated, and new tokens can be silently requested without user interaction. ||Supported for gallery apps, but not non-gallery apps. However, you can provide an access token in the UI as the secret token for short term testing purposes. Support for OAuth client credentials grant on non-gallery is in our backlog.|
+| SHOULD REFERENCE TO OAUTH AUTHORIZATION CODE GRANT BE REMOVED COMPLETELY? OAuth authorization code grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have.  A real user must be present during initial authorization, adding a level of accountability. |Requires a user to be present. If the user leaves the organization, the token is invalid, and authorization needs to be completed again.|Supported for gallery apps and non-gallery apps.|
+|OAuth 2.0 client credentials grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have. Both the authorization code grant and the client credentials grant create the same type of access token, so moving between these methods is transparent to the API.  Provisioning can be automated, and new tokens can be silently requested without user interaction. | Supported for gallery and non-gallery apps. Publishers can configure SCIM jobs using client credentials regardless of app type. Each customer must provide their own Client ID and Client Secret to authenticate against the SCIM API. |
 
 > [!NOTE]
 > It's not recommended to leave the token field blank in the Microsoft Entra provisioning configuration custom app UI. The token generated is primarily available for testing purposes.
 
-### OAuth code grant flow
+### OAuth Client Credentials Grant flow
 
-The provisioning service supports the [authorization code grant](https://tools.ietf.org/html/rfc6749#page-24) and after submitting your request for publishing your app in the gallery, our team will work with you to collect the following information:
+The provisioning service supports the [OAuth client credentials grant](https://new link) and after submitting your request for publishing your app in the gallery, our team will work with you to collect the following information:
 
-- **Authorization URL**, a URL by the client to obtain authorization from the resource owner via user-agent redirection. The user is redirected to this URL to authorize access. 
-
-- **Token exchange URL**, a URL by the client to exchange an authorization grant for an access token, typically with client authentication.
-
-- **Client ID**, the authorization server issues the registered client a client identifier, which is a unique string representing the registration information provided by the client.  The client identifier isn't a secret; it's exposed to the resource owner and **must not** be used alone for client authentication.  
-
-- **Client secret**, a secret generated by the authorization server that should be a unique value known only to the authorization server. 
-
-> [!NOTE]
-> The **Authorization URL** and **Token exchange URL** are currently not configurable per tenant.
-
-> [!NOTE]
-> OAuth v1 is not supported due to exposure of the client secret. OAuth v2 is supported.  
-
-When using the OAuth Code Grant flow, it's required that you support a model where each customer will submit their own client ID and Client Secret when setting up a provisioning instance. A single app wide client ID/Client Secret pair is not supported.
+- **Tenant URL:** This is the SCIM API endpoint URL provided by your service provider. For example, it could be something like https://example.test/scim.
+- **Token Endpoint:** This is the OAuth2 Token URL. It's the endpoint that the provisioning service will use to exchange client credentials for an access token. For example, it could be something like https://example.test/oauth2/token.
+- **Client Identifier:** This is a unique identifier assigned to your application by the service provider.
+- **Client Secret:** This is a long-lived token that has the necessary permissions on the API. It's used to authenticate your application when requesting an access token.
 
 
-#### How to set up OAuth code grant flow
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **Application** > **Provisioning** and select **Authorize**.
+When using the OAuth Client Credentials Grant flow, it's required that you support a model where each customer will submit their own client ID and Client Secret when setting up a provisioning instance. A single app wide client ID/Client Secret pair is not supported.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**.
-1. Select your application and go to **Provisioning**.
-1. Select **Authorize**.
 
-   1. Users are redirected to the Authorization URL (sign in page for the third party app).
+#### How to set up Client Credentials
+1. NEED STEPS FOR SETTING UP CLIENT CREDENTIALS. REPLACES SETUP STEPS FOR AUTHORIZATION CODE GRANT. 
 
-   1. Admin provides credentials to the third party application. 
-
-   1. The third party app redirects user back and provides the grant code 
-
-   1. The Provisioning Service calls the token URL and provides the grant code. The third party application responds with the access token, refresh token, and expiry date
-
-1. When the provisioning cycle begins, the service checks if the current access token is valid and exchanges it for a new token if needed. The access token is provided in each request made to the app and the validity of the request is checked before each request.
-
-> [!NOTE]
-> While it's not possible to setup OAuth on the non-gallery applications, you can manually generate an access token from your authorization server and input it as the secret token to a non-gallery application. This allows you to verify compatibility of your SCIM server with the Microsoft Entra provisioning service before onboarding to the app gallery, which does support the OAuth code grant.  
 
 **Long-lived OAuth bearer tokens:** If your application doesn't support the OAuth authorization code grant flow, instead generate a long lived OAuth bearer token that an administrator can use to set up the provisioning integration. The token should be perpetual, or else the provisioning job is [quarantined](application-provisioning-quarantine-status.md) when the token expires.
 
