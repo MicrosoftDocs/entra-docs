@@ -17,20 +17,6 @@ When a user signs in with number match to Microsoft mobile apps like Teams and O
 >[!Note] 
 >In the following scenarios, the user signs in on the same device as Authenticator. There is no experience change when users complete number matching on a different device.
 
-## [**Android**](#tab/Android)
-
-Scenario | Experience change?
----------|--------------------------
-User signs in to Authenticator to upgrade the account they use for multifactor authentication (MFA). | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like Authenticator, they can tap the notification and reply Yes/No to complete the sign-in.
-User signs in to a Microsoft app like Outlook or Teams. | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like like Outlook or Teams, they can tap the notification and reply Yes/No to complete the sign-in.
-User signs in to a browser like Edge or Chrome. | No. The user sees a notification with the number match request on the sign-in in screen. In a browser, they need to tap the notification to enter the number and approve the sign-in. 
-
-To install the preview on Android:
-
-1. Open the Play Store and install or update Authenticator.
-1. To remove the preview, uninstall the app and download the latest version of the app from the Play Store.
-
----
 
 ## [**iOS**](#tab/iOS)
 
@@ -45,6 +31,19 @@ To install the preview on iOS:
 
 1. Open this link in your iOS device and follow the instructions to join the Test Flight: https://testflight.apple.com/join/3PFeH9dV
 1. To remove the preview, uninstall the app and download the latest version of the app from the App Store.
+
+## [**Android**](#tab/Android)
+
+Scenario | Experience change?
+---------|--------------------------
+User signs in to Authenticator to upgrade the account they use for multifactor authentication (MFA). | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like Authenticator, they can tap the notification and reply Yes/No to complete the sign-in.
+User signs in to a Microsoft app like Outlook or Teams. | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like like Outlook or Teams, they can tap the notification and reply Yes/No to complete the sign-in.
+User signs in to a browser like Edge or Chrome. | No. The user sees a notification with the number match request on the sign-in in screen. In a browser, they need to tap the notification to enter the number and approve the sign-in. 
+
+To install the preview on Android:
+
+1. Open the Play Store and install or update Authenticator.
+1. To remove the preview, uninstall the app and download the latest version of the app from the Play Store.
 
 ---
 
