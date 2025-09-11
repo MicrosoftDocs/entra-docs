@@ -8,6 +8,7 @@ ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
 ms.reviewer: lirazbarak
+ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
 
 # Customer intent: Windows users, I want to download and install the Global Secure Access client.
@@ -60,7 +61,7 @@ Package the installation script into a `.intunewin` file.
 1. Save the following PowerShell script to your device. Put the PowerShell script and the Global Secure Access `.exe` installer into a folder.  
 
 > [!NOTE]
-> The PowerShell installation script installs the Global Secure Access client, sets a registry key to `IPv4Preferred`, and prompts for a reboot for the registry key change to take effect.
+> The PowerShell installation script installs the Global Secure Access client, sets the `IPv4Preferred` registry key to prefer IPv4 over IPv6 traffic, and prompts for a reboot for the registry key change to take effect.
 
 > [!TIP]
 > Select to expand the PowerShell script.
