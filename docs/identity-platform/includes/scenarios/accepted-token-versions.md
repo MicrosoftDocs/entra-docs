@@ -10,7 +10,7 @@ ms.custom:
 
 ## Accepted token version
 
-The Microsoft identity platform can issue v1.0 tokens and v2.0 tokens. For more information about these tokens, refer to [Access tokens](access-tokens.md).
+The Microsoft identity platform can issue v1.0 tokens and v2.0 tokens. For more information about these tokens, refer to [Access tokens](/entra/identity-platform/access-tokens).
 
 The token version your API may accept depends on your **Supported account types** selection when you create your web API application registration in the Azure portal.
 
