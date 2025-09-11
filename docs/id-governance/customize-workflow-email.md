@@ -67,10 +67,10 @@ When you're customizing an email sent via lifecycle workflows, you can choose to
 
 Emails sent by workflows can have their text customized to personalize, or stress specific points within, them. Workflow text can currently be customized in the following ways:
 
-- Bold: Text within emails can be bolded by placing the desired text within `<b></b>` brackets.
-- Italics:Text within emails can be italicized by placing the desired text within `<i></i>` brackets.
-- Underlined:Text within emails can be italicized by placing the desired text within `<u></u>` brackets.
-- Links: Hyperlinks can be added to text by placing the desired link within `<a href=> </a>` brackets.
+- **Bold**: Text within emails can be bolded by placing the desired text within `<b></b>` brackets.
+- **Italics**:Text within emails can be italicized by placing the desired text within `<i></i>` brackets.
+- **Underlined**:Text within emails can be italicized by placing the desired text within `<u></u>` brackets.
+- **Links**: Hyperlinks can be added to text by placing the desired link within `<a href=> </a>` brackets.
 
     > [!NOTE]
     > Hyperlinks must start with either *http* or *https*.
