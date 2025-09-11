@@ -92,7 +92,7 @@ Deep analysis performs an in-depth review of Conditional Access policies for sce
 
 Because the policy suggestions that come through deep analysis might have a significant impact on your environment, you can "snooze" the suggestion for 14 days. This feature gives you time to investigate the suggestion and make any needed changes to your policies before applying the suggestion. You can also add notes about the suggestion that can be saved for other admins to review. If you choose to snooze the suggestion, it reappears in the list after 14 days with the notes intact.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png" alt-text="Screenshot of the a suggestion created with deep analysis with the snooze and notes buttons highlighted." lightbox="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png":::
+:::image type="content" source="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png" alt-text="Screenshot of the suggestion created with deep analysis with the snooze and notes buttons highlighted." lightbox="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png":::
 
 ## Apply suggestions
 
