@@ -21,15 +21,10 @@ You can enable users who sign in with a local account (email and password) to au
 
 ## Prerequisites
 
-- A **Microsoft Entra external tenant**: You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new external tenant in Microsoft Entra ID.
-- Register your app
-- Create a user flow
-- Add your app to the user flow
-- 
-- ITT tartok
-- 
-- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
-- Your application, which is [registered with Microsoft Entra](/entra/identity-platform/quickstart-register-app)
+- If you haven't already created your own Microsoft Entra external tenant, [create one now](how-to-create-external-tenant-portal.md).
+- [Register an app](/entra/identity-platform/quickstart-register-app)
+- [Create user a flow](how-to-user-flow-sign-up-sign-in-customers.md)
+- [Add your application](how-to-user-flow-add-application.md) to the user flow.
 
 ## Step 1: Enable username in sign-in identifier policy
 
