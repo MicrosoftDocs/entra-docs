@@ -22,6 +22,8 @@ To configure the code for your protected web API, understand:
 - How to configure a bearer token.
 - How to validate the token.
 
+[!INCLUDE [Accepted token versions](./includes/scenarios/accepted-token-versions.md)]
+
 ## What defines ASP.NET and ASP.NET Core APIs as protected?
 
 Like web apps, ASP.NET and ASP.NET Core web APIs are protected because their controller actions are prefixed with the **[Authorize]** attribute. The controller actions can be called only if the API is called with an authorized identity.
