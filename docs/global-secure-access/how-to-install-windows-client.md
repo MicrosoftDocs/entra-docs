@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 09/08/2025
+ms.date: 09/10/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -61,6 +61,12 @@ Package the installation script into a `.intunewin` file.
 
 > [!NOTE]
 > The PowerShell installation script installs the Global Secure Access client, sets a registry key to set `IPv4Preferred`, and prompts for a reboot for the registry key change to take effect.
+
+> [!TIP]
+> Select to expand the PowerShell script.
+
+<details>
+  <summary>PowerShell installation script</summary>
 
 ```powershell
 # Define log file
@@ -146,6 +152,8 @@ if ($rebootRequired) {
 
 } catch { Write-Log "Fatal error: $_" exit 1603 } 
 ```
+
+</details>
 
 2. Go to the [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
 
@@ -265,7 +273,7 @@ In a production environment, it's a good practice to deploy new client versions 
 
 ### Configure Global Secure Access client settings with Intune
 
-Admins can use remediation scripts in Intune to enforce the desired client-side controls, such as preventing non-admin users from being able to disable the client or hiding specific buttons. 
+Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce the desired client-side controls, such as preventing non-admin users from being able to disable the client or hiding specific buttons. 
 
 > [!IMPORTANT]
 > Set the `$gsaSettings` to the values your organization requires in both the detection and remediation scripts.
@@ -273,10 +281,18 @@ Admins can use remediation scripts in Intune to enforce the desired client-side 
 > [!NOTE]
 > Make sure to configure these scripts to run in 64-bit PowerShell.
 
+:::image type="content" source="media/how-to-install-windows-client/run-script-64-bit.png" alt-text="Screenshot of the Create custom script settings tab with the Run script in 64-bit PowerShell option set to yes.":::
+
+> [!TIP]
+> Select to expand the PowerShell scripts.
+
+<details>
+  <summary>PowerShell detection script</summary>
+
 #### Detection script 
 
 ```powershell
-#Check GSA registry keys 
+# Check GSA registry keys 
 
 $gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
 
@@ -326,10 +342,15 @@ exit 1
 } 
 ```
 
+</details>
+
+<details>
+  <summary>PowerShell remediation script</summary>
+
 #### Remediation script
 
 ```powershell
-#Ensure GSA registry keys are present 
+# Ensure GSA registry keys are present 
 
 $gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
 
@@ -363,47 +384,193 @@ Write-Output "Set $($setting.Key) to $($setting.Value)"
 }
 ```
 
+</details>
+
 ### Configure settings for Microsoft Entra Internet Access with Intune
 
-Microsoft Entra Internet Access does not yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this, it is recommended to disable these protocols in users’ browsers. The following instructions provide guidance on how to enforce these controls using Intune.
+Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this, it's recommended to disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
 
-#### Disable QUIC in Edge and Chrome with Intune 
+#### Disable QUIC in Microsoft Edge and Chrome with Intune 
 
-To disable QUIC in Edge and Chrome with Intune:
-1. Intune portal > Devices > Configuration.
-1. Click Create. Select New Policy.
-1. Select:
-   - Platform select Windows 10 and later
-   - Profile type select Settings Catalog
-1. Give name + Description. Click Next.
-1. Select **Add settings**.
-1. Search for “Quic”
-1. Select Microsoft Edge
-1. Check the box Allow QUIC protocol
-1. Set toggle to Disabled.
-1. Next, select Google Chrome
-1. Check the box Allow QUIC protocol
-1. Set toggle to Disabled.
-1. Next, search for “DNS-over-HTTPS”
-1. Select Microsoft Edge
-1. Check the box Control the mode of DNS-over-HTTPS
-1. Set toggle to Disabled.
-1. Next, select Google Chrome
-1. Check the box Control the mode of DNS-over-HTTPS
-1. Set toggle to Disabled.
-    
-    :::image type="content" source="media/how-to-install-windows-client/[].png" alt-text="Screenshot of []." lightbox="media/how-to-install-windows-client/[].png":::
+To disable QUIC in Microsoft Edge and Chrome with Intune:
+1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration**.
+1. On the **Policies** tab, select **+ Create** > **+ New Policy**.
+1. In the **Create a profile** dialog:
+   - Set the **Platform** to **Windows 10 and later**.
+   - Set the **Profile type** to **Settings catalog**.
+   - Select **Create**. The **Create profile** form opens.
+1. On the **Basics** tab, give the profile a name and description.
+1. Select **Next**.
+1. On the **Configuration settings** tab:
+    1. Select **+ Add settings**.
+    1. In the **Settings picker**, search for "QUIC".
+    1. From the search results:
+        1. Select **Microsoft Edge** and select the **Allow QUIC protocol** setting.
+        1. Next, select **Google Google Chrome** and select the **Allow QUIC protocol** setting.
+    1. In the **Settings picker**, search for "DNS-over-HTTPS".
+    1. From the search results:
+        1. Select **Microsoft Edge** and select the **Control the mode of DNS-over-HTTPS** setting.
+        1. Next, select **Google Google Chrome** and select the **Control the mode of DNS-over-HTTPS** setting.
+    1. Close the **Settings picker**.
+1. For **Google Chrome**, set both toggles to **Disabled**.
+1. For **Microsoft Edge**, set both toggles to **Disabled**.
+
+    :::image type="content" source="media/how-to-install-windows-client/edge-chrome-profile.png" alt-text="Screenshot of the Configuration settings tab showing the Edge and Chrome settings." lightbox="media/how-to-install-windows-client/edge-chrome-profile.png":::
 
 1. Select **Next** twice.
-1. Select **Add groups** and select a group of users or devices to assign the policy.
+1. On the **Assignments** tab:
+    1. Select **Add groups**.
+    1. Select a group of users or devices to assign the policy.
+    1. Select **Select**.
 1. Select **Next**.
-1. Select **Create**.
+1. On the **Review + create** tab, select **Create**.
 
-#### Configure Firefox browser settings
+### Configure Firefox browser settings
 
+Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to disable DNS over HTTPS and QUIC protocols in Firefox browser.
 
+> [!NOTE]
+> Make sure to configure these scripts to run in 64-bit PowerShell.
 
-<!-- New Intune content goes above this line. -->
+:::image type="content" source="media/how-to-install-windows-client/run-script-64-bit.png" alt-text="Screenshot of the Create custom script settings tab with the Run script in 64-bit PowerShell option set to yes.":::
+
+> [!TIP]
+> Select to expand the PowerShell scripts.
+
+<details>
+  <summary>PowerShell detection script</summary>
+
+#### Detection script 
+
+```powershell
+# Define the path to the Firefox policies.json file 
+
+$destination = "C:\Program Files\Mozilla Firefox\distribution\policies.json" $compliant = $false 
+
+# Check if the file exists 
+
+if (Test-Path $destination) { try { # Read the file content $fileContent = Get-Content $destination -Raw if ($fileContent -and $fileContent.Trim().Length -gt 0) { # Parse JSON content $json = $fileContent | ConvertFrom-Json 
+
+       # Check if Preferences exist under policies 
+        if ($json.policies -and $json.policies.Preferences) { 
+            $prefs = $json.policies.Preferences 
+ 
+            # Convert Preferences to hashtable if needed 
+            if ($prefs -isnot [hashtable]) { 
+                $temp = @{} 
+                $prefs.psobject.Properties | ForEach-Object { 
+                    $temp[$_.Name] = $_.Value 
+                } 
+                $prefs = $temp 
+            } 
+ 
+            # Initialize compliance flags 
+            $quicCompliant = $false 
+            $dohCompliant = $false 
+ 
+            # Check if QUIC is disabled and locked 
+            if ($prefs.ContainsKey("network.http.http3.enable")) { 
+                $val = $prefs["network.http.http3.enable"] 
+                if ($val.Value -eq $false -and $val.Status -eq "locked") { 
+                    $quicCompliant = $true 
+                } 
+            } 
+ 
+            # Check if DNS over HTTPS is disabled and locked 
+            if ($prefs.ContainsKey("network.trr.mode")) { 
+                $val = $prefs["network.trr.mode"] 
+                if ($val.Value -eq 0 -and $val.Status -eq "locked") { 
+                    $dohCompliant = $true 
+                } 
+            } 
+ 
+            # Set overall compliance if both settings are correct 
+            if ($quicCompliant -and $dohCompliant) { 
+                $compliant = $true 
+            } 
+        } 
+    } 
+} catch { 
+    Write-Warning "Failed to parse policies.json: $_" 
+} 
+  
+
+} 
+
+# Output compliance result 
+
+if ($compliant) { Write-Output "Compliant" Exit 0 } else { Write-Output "Non-compliant" Exit 1 } 
+```
+
+</details>   
+
+<details>
+  <summary>PowerShell remediation script</summary>
+
+#### Remediation script
+
+```powershell
+# Define paths 
+
+$distributionDir = "C:\Program Files\Mozilla Firefox\distribution" $destination = Join-Path $distributionDir "policies.json" $backup = "$destination.bak" 
+
+# Initialize variable for existing JSON 
+
+$existingJson = $null 
+
+# Try to read and parse existing policies.json 
+
+if (Test-Path $destination) { $fileContent = Get-Content $destination -Raw if ($fileContent -and $fileContent.Trim().Length -gt 0) { try { $existingJson = $fileContent | ConvertFrom-Json } catch { Write-Warning "Existing policies.json is malformed. Starting fresh." } } } 
+
+#Create a new JSON structure if none exists 
+
+if (-not $existingJson) { $existingJson = [PSCustomObject]@{ policies = [PSCustomObject]@{ Preferences = @{} } } } 
+
+# Ensure policies and Preferences nodes exist 
+
+if (-not $existingJson.policies) { $existingJson | Add-Member -MemberType NoteProperty -Name policies -Value ([PSCustomObject]@{}) } if (-not $existingJson.policies.Preferences) { $existingJson.policies | Add-Member -MemberType NoteProperty -Name Preferences -Value @{} } 
+
+# Convert Preferences to hashtable if needed 
+
+if ($existingJson.policies.Preferences -isnot [hashtable]) { $prefs = @{} $existingJson.policies.Preferences.psobject.Properties | ForEach-Object { $prefs[$.Name] = $.Value } $existingJson.policies.Preferences = $prefs } 
+
+$prefObj = $existingJson.policies.Preferences $updated = $false 
+
+# Ensure QUIC is disabled and locked
+
+if (-not $prefObj.ContainsKey("network.http.http3.enable") -or $prefObj["network.http.http3.enable"].Value -ne $false -or $prefObj["network.http.http3.enable"].Status -ne "locked") { 
+
+$prefObj["network.http.http3.enable"] = @{ 
+    Value = $false 
+    Status = "locked" 
+} 
+$updated = $true 
+  
+
+} 
+
+# Ensure DNS over HTTPS is disabled and locked 
+
+if (-not $prefObj.ContainsKey("network.trr.mode") -or $prefObj["network.trr.mode"].Value -ne 0 -or $prefObj["network.trr.mode"].Status -ne "locked") { 
+
+$prefObj["network.trr.mode"] = @{ 
+    Value = 0 
+    Status = "locked" 
+} 
+$updated = $true 
+} 
+
+# If any updates were made, back up and write the new JSON 
+
+if ($updated) { if (Test-Path $destination) { Copy-Item $destination $backup -Force } 
+
+$jsonOut = $existingJson | ConvertTo-Json -Depth 10 -Compress 
+$utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($false) 
+[System.IO.File]::WriteAllText($destination, $jsonOut, $utf8NoBomEncoding) 
+} 
+```
+
+</details>   
 
 ### Manual installation
 To manually install the Global Secure Access client:
