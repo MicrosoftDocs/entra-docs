@@ -5,7 +5,7 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 09/11/2025
 
 ms.author: sarahlipsey
 author: shlipsey
@@ -14,7 +14,7 @@ ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for Zero Trust: Protect engineering systems
 
-The [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars) pillar for protecting engineering systems was first developed to safeguard Microsoft’s own software assets and infrastructure. The practices and insights gained from this internal work are now shared with customers, enabling you to strengthen your own software security and code protection.
+The [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars) pillar for protecting engineering systems was first developed to safeguard Microsoft’s own software assets and infrastructure. The practices and insights gained from this internal work are now shared with customers, enabling you to strengthen your own environments.
 
 These recommendations focus on ensuring least privilege access to your organization's engineering systems and resources. 
 

@@ -5,7 +5,7 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 09/11/2025
 
 ms.author: sarahlipsey
 author: shlipsey
@@ -14,9 +14,9 @@ ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for Zero Trust: Protect tenants and isolate production systems
 
-Protecting your tenant and isolating production systems is about setting tenant boundaries and keeping your production systems isolated from test and pre-production environments. Lateral movement was a critical concert from the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars). 
+Protecting your tenant and isolating production systems is about setting tenant boundaries and keeping your production systems isolated from test and pre-production environments. Lateral movement was a critical concern from the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars). 
 
-Even smaller organizations can protect their environments by implementing stricter guest access policies and limiting who can create tenants. Larger organizations that manage several environments should take action to prevent unauthorized tenant sprawl and lateral movement.
+Even smaller organizations can protect their environments by implementing stricter guest access policies and limiting who can create tenants. Larger organizations that manage several environments should take action to prevent unauthorized tenant sprawl and lateral movement. All organizations can benefit from these checks to reduce attack surface area through unmanaged tenants.
 
 ## Zero Trust security recommendations
 
