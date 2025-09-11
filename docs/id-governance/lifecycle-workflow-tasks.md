@@ -56,10 +56,10 @@ Recipients of the emails can be:
 > [!NOTE]
 > Additional CC recipients are only available if the recipient is the user themselves or their manager. If there are multiple CC recipients, they're copied on the single individual email. 
 
-Under **Email Customization** you're able to customize the specific email message send out by the task. If you choose to customize the email, you're able to set the following arguments:
+Under **Email Customization** you're able to customize the specific email message sent out by the task. If you choose to customize the email, you're able to set the following arguments:
 
 - **Subject**: Customizes the subject of emails.
-- **Message body**: Customizes the body of the emails being sent out.
+- **Message body**: Customizes the body of the emails being sent out Can be further cutomized using [HTML elements](customize-workflow-email.md#customize-email-text).
 - **Email language translation**: Overrides the email recipient's language settings. Custom text isn't customized, and it's recommended to set this language to the same language as the custom text. 
 
 :::image type="content" source="media/lifecycle-workflow-task/customize-email-concept.png" alt-text="Screenshot of the customization email options.":::
