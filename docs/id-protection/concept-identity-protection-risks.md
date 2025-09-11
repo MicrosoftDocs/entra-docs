@@ -5,7 +5,7 @@ description: Explore the full list of risk detections and their corresponding ri
 ms.service: entra-id-protection
 
 ms.topic: article
-ms.date: 08/06/2025
+ms.date: 09/11/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -78,7 +78,9 @@ Select a risk detection from the list to view the description of the risk detect
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address identified as an anonymous proxy IP address. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Additional risk detected (sign-in) 
 
@@ -127,7 +129,9 @@ The algorithm ignores obvious "false positives" contributing to the impossible t
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (in a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: 
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Malicious IP address 
 
@@ -142,7 +146,9 @@ This detection indicates sign-in from a malicious IP address. An IP address is c
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-anomaly-alerts#unusual-file-access-by-user). This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint Online or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Microsoft Entra threat intelligence (sign-in) 
 
@@ -157,14 +163,18 @@ Microsoft Entra threat intelligence indicates user activity that is unusual for 
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-infrequent-country). This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Password spray 
 
 A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password was correctly identified through a password spray attack, not that the attacker was able to access any resources.
 
 - Calculated in real-time or offline
-- License requirement: Microsoft Entra ID P2
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 - [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
 
 ### Suspicious browser	 
@@ -180,14 +190,18 @@ Suspicious browser detection indicates anomalous behavior based on suspicious si
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-forwarding). This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Suspicious inbox manipulation rules 
 
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-manipulation-rules). This detection looks at your environment and triggers alerts when suspicious rules that delete or move messages or folders are set on a user's inbox. This detection might indicate: a user's account is compromised, messages are being intentionally hidden, and the mailbox is being used to distribute spam or malware in your organization. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: 
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Token issuer anomaly 
 
@@ -271,7 +285,9 @@ This risk detection type indicates user activity that is unusual for the user or
 This risk detection type is discovered using information provided by Microsoft Defender for Endpoint (MDE). A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication on Windows 10, Windows Server 2016, and later versions, iOS, and Android devices. A PRT is a JSON Web Token (JWT) issued to Microsoft first-party token brokers to enable single sign-on (SSO) across the applications used on those devices. Attackers can attempt to access this resource to move laterally into an organization or perform credential theft. This detection moves users to high risk and only fires in organizations that deploy MDE. This detection is high risk and we recommend prompt remediation of these users. It appears infrequently in most organizations due to its low volume.  
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Suspicious API traffic 
 
@@ -285,7 +301,9 @@ This risk detection is reported when abnormal GraphAPI traffic or directory enum
 This risk detection type is discovered using information provided by [Microsoft Defender for Office 365 (MDO)](/defender-office-365/air-about). This alert is generated when someone in your organization sent suspicious email and is either at risk of being or is restricted from sending email. This detection moves users to medium risk and only fires in organizations that deploy MDO. This detection is low-volume and is seen infrequently in most organizations. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### User reported suspicious activity 
 
