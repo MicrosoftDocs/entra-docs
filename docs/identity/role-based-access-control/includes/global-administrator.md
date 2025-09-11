@@ -187,6 +187,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.hardware.support/shippingAddress/allProperties/allTasks | Create, read, update, and delete shipping addresses for Microsoft hardware warranty claims, including shipping addresses created by others |
 > | microsoft.hardware.support/shippingStatus/allProperties/read | Read shipping status for open Microsoft hardware warranty claims |
 > | microsoft.hardware.support/warrantyClaims/allProperties/allTasks | Create and manage all aspects of Microsoft hardware warranty claims |
+> | microsoft.healthPlatform/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Dragon admin center |
 > | microsoft.insights/allEntities/allProperties/allTasks | Manage all aspects of Insights app |
 > | microsoft.intune/allEntities/allTasks | Manage all aspects of Microsoft Intune |
 > | microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks | Manage all aspects of organizational data in Microsoft 365 |

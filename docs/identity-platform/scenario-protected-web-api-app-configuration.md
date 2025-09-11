@@ -22,6 +22,8 @@ To configure the code for your protected web API, understand:
 - How to configure a bearer token.
 - How to validate the token.
 
+[!INCLUDE [Accepted token versions](./includes/scenarios/accepted-token-versions.md)]
+
 ## What defines ASP.NET and ASP.NET Core APIs as protected?
 
 Like web apps, ASP.NET and ASP.NET Core web APIs are protected because their controller actions are prefixed with the **[Authorize]** attribute. The controller actions can be called only if the API is called with an authorized identity.
@@ -84,7 +86,7 @@ You need to specify the `TenantId` only if you want to accept access tokens from
 
 #### Using a custom App ID URI for a web API
 
-If you've accepted the default App ID URI proposed by the Azure portal, you don't need to specify the audience (see [Application ID URI and scopes](scenario-protected-web-api-app-registration.md#scopes-and-the-application-id-uri)). Otherwise, add an `Audience` property whose value is the App ID URI for your web API. This typically starts with `api://`.
+If you've accepted the default App ID URI proposed by the Azure portal, you don't need to specify the audience. Otherwise, add an `Audience` property whose value is the App ID URI for your web API. This typically starts with `api://`.
 
 ```Json
 {
