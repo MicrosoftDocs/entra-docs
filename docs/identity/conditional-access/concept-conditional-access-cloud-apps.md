@@ -238,7 +238,7 @@ To learn more about using authentication contexts, see the following articles.
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Microsoft Defender for Cloud Apps](/defender-cloud-apps/session-policy-aad?branch=pr-en-us-2082#require-step-up-authentication-authentication-context)
 - [Custom applications](~/identity-platform/developer-guide-conditional-access-authentication-context.md)
-- [Priviledged Identity Management - On activation, require Microsoft Entra Conditional Access authentication context](id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings#on-activation-require-microsoft-entra-conditional-access-authentication-context)
+- [Priviledged Identity Management - On activation, require Microsoft Entra Conditional Access authentication context](/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings#on-activation-require-microsoft-entra-conditional-access-authentication-context)
 
 ## Next steps
 
