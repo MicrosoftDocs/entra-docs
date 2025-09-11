@@ -63,7 +63,16 @@ When you're customizing an email sent via lifecycle workflows, you can choose to
 
 1. Select **Save** to capture your changes in the customized email.
 
-## Format attributes within customized emails
+## Customize email text
+
+Emails sent by workflows can have their text customized to personalize, or stress specific points within, them. Workflow text can currently be customized in the following way:
+
+- Bold: Text within emails can be bolded by placing the desired text within `<b></b>` brackets.
+- Italics:Text within emails can be italicized by placing the desired text within `<i></i>` brackets.
+- Underlined:Text within emails can be italicized by placing the desired text within `<u></u>` brackets.
+
+
+### Format attributes within customized emails
 
 To further personalize customized emails, you can take advantage of dynamic attributes. By placing dynamic attributes in specific attributes, you can specifically call out values such as a user's name, their generated Temporary Access Pass, or even their manager's email.
 
