@@ -28,7 +28,7 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 | Microsoft Entra ID | [Tenants](#tenants)<br>[Users](#users)<br>[Groups](#groups)<br>[Devices](#devices)<br>[Roles and administrators](#roles-and-administrators)<br>[Domain services](#domain-services)<br>[Conditional Access](#conditional-access)<br>[Authentication](#authentication)<br>[Sign in logs](#sign-in-logs)<br>[Audit logs](#audit-logs)<br>[Recommendations](#recommendations)<br>[Health monitoring alerts](#health-monitoring-alerts)<br>[Service Level Agreement](#service-level-agreement) |
 | Microsoft Entra ID Protection | [Risky users](#risky-users)<br>[Application risk](#application-risk) |
 | Microsoft Entra ID Governance | [Access reviews](#access-reviews)<br>[Entitlement management](#entitlement-management)<br>[Privileged Identity Management (PIM)](#privileged-identity-management-pim)<br>[Lifecycle workflows](#lifecycle-workflows) |
-| Microsoft Entra Internet Access<br>Microsoft Entra Private Access | [License Usage](#license-usage) |
+| Microsoft Entra Internet Access<br>Microsoft Entra Private Access | [License Usage](#license-usage)<br>[Global Secure Access](#global-secure-access) |
 
 ## Microsoft Entra ID
 
@@ -438,7 +438,7 @@ Refer to the prompts and examples in [Manage employee lifecycle using Microsoft 
 
 ## Microsoft Entra Internet Access and Private Access
 
-The following sections describe how to use Microsoft Security Copilot for scenarios and use cases within Global Secure Access.
+The following sections describe how to use Microsoft Security Copilot for scenarios and use cases within Microsoft Entra Internet Access and Private Access.
 
 ### License Usage 
 
@@ -455,6 +455,25 @@ The following example prompts can be used to investigate roles in Microsoft Entr
 For more information, see:
 
 - [Microsoft Entra licensing](/entra/fundamentals/licensing)
+
+### Global Secure Access
+
+Microsoft Security Copilot supports network traffic logs in Global Secure Access, making it easier to investigate and monitor network traffic usage and behavior. 
+
+This enhancement provides an interactive method for analyzing network traffic logs, allowing users to obtain valuable insights without the need to write complex queries. Users can analyze user, device, and branch network usage, identify network issues, and detect threats or policy violations in real time. As a result, the investigation process is significantly streamlined and more effective. 
+
+This feature requires at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator), or [Global Secure Access Log Reader](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-log-reader). 
+
+You will also need a [Microsoft Entra ID P1 or P2 license](/entra/id-protection/overview-identity-protection#license-requirements), an Entra Private Access License (for private access traffic), Entra Internet Access License (for general internet traffic outside Microsoft services). Your tenant must also have Global Secure Access configured and Microsoft Security Copilot enabled.
+
+The following example prompts can be used to investigate network traffic logs in Microsoft Entra:
+
+- *Show the top 5 users with the highest data consumption in the last day.*
+- *Show all blocked traffic for user {user principal name} in the last 24 hours.*
+- *List all applications with high-risk scores accessed in the last 24 hours.*
+- *List all applications that user {user principal name} has accessed in the last 24 hours based on network traffic.*
+- *List of the top 10 accessed applications in the last week.*
+- *Show all cross-tenant traffic to tenant [tenant-id] in the last day.* 
 
 ## See also
 
