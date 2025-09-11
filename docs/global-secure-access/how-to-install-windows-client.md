@@ -216,7 +216,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 
    :::image type="content" source="media/how-to-install-windows-client/program-install-parameters.png" alt-text="Screenshot of Program to configure installation parameters." lightbox="media/how-to-install-windows-client/program-install-parameters.png":::
 
-1. Select **Next**.
+12. Select **Next**.
 1. On the **Requirements** tab, configure these fields:
 
    - **Check operating system architecture**: Select **Yes. Specify the systems the app can be installed on.**.
@@ -230,7 +230,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 > [!NOTE]
 > Windows on Arm devices have their own client, which is available at **aka.ms/GlobalSecureAccess-WindowsOnArm**.
 
-12. Select **Next**.
+15. Select **Next**.
 1. On the **Detection rules** tab, under **Rules format**, select **Manually configure detection rules**.
 1. Select **Add**.
 1. Under **Rule type**, select **File**.
