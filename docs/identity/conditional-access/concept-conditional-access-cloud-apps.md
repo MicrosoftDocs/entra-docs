@@ -200,9 +200,9 @@ User actions are tasks that a user performs. Conditional Access supports two use
 
 ## Authentication context
 
-Authentication context secures data and actions in applications. These applications include custom applications, line-of-business (LOB) applications, SharePoint, or applications protected by Microsoft Defender for Cloud Apps.
+Authentication context secures data and actions in applications. These applications include custom applications, line-of-business (LOB) applications, SharePoint, or applications protected by Microsoft Defender for Cloud Apps. It can also be used with Microsoft Entra Privileged Identity Management (PIM) to enforce Conditional Access policies during role activation.
 
-For example, an organization might store files in SharePoint sites like a lunch menu or a secret BBQ sauce recipe. Everyone might access the lunch menu site, but users accessing the secret BBQ sauce recipe site might need to use a managed device and agree to specific terms of use.
+For example, an organization might store files in SharePoint sites like a lunch menu or a secret BBQ sauce recipe. Everyone might access the lunch menu site, but users accessing the secret BBQ sauce recipe site might need to use a managed device and agree to specific terms of use. Similarly, an administrator activating a privileged role through PIM might be required to perform multifactor authentication or use a compliant device.
 
 Authentication context works with users or [workload identities](workload-identity.md), but not in the same Conditional Access policy.
 
@@ -233,11 +233,12 @@ To delete an authentication context, ensure it has no assigned Conditional Acces
 
 ### Tag resources with authentication contexts
 
-To learn more about using authentication contexts in applications, see the following articles.
+To learn more about using authentication contexts, see the following articles.
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Microsoft Defender for Cloud Apps](/defender-cloud-apps/session-policy-aad?branch=pr-en-us-2082#require-step-up-authentication-authentication-context)
 - [Custom applications](~/identity-platform/developer-guide-conditional-access-authentication-context.md)
+- [Priviledged Identity Management - On activation, require Microsoft Entra Conditional Access authentication context](id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings#on-activation-require-microsoft-entra-conditional-access-authentication-context.md)
 
 ## Next steps
 
