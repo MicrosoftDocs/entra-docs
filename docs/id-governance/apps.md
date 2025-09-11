@@ -593,7 +593,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Peripass](../identity/saas-apps/peripass-provisioning-tutorial.md) | ● |  |
 | [Personify Inc](../identity/saas-apps/personify-inc-provisioning-tutorial.md) | ● | ● |
 | [Pingboard](../identity/saas-apps/pingboard-provisioning-tutorial.md) | ● | ● |
-| [PKSHA Chatbot](../identity/saas-apps/pksha-chatbot-tutorial.md) |  | ● |
+| [PKSHA ChatAgent](../identity/saas-apps/pksha-chatagent-tutorial.md) |  | ● |
 | [Plandisc](../identity/saas-apps/plandisc-provisioning-tutorial.md) | ● |  |
 | [PlanMyLeave](../identity/saas-apps/planmyleave-tutorial.md) |  | ● |
 | [Playvox](../identity/saas-apps/playvox-provisioning-tutorial.md) | ● |  |
