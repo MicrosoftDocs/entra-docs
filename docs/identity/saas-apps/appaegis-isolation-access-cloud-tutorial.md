@@ -3,7 +3,7 @@ title: Configure Appaegis Isolation Access Cloud for Single sign-on with Microso
 description: Learn how to configure single sign-on between Microsoft Entra ID and Appaegis Isolation Access Cloud.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

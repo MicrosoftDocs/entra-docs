@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 06/30/2025
+ms.date: 08/30/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication's JavaScript SDK so that I can sign up users with email with password or email one-timepasscode authentication menthods
 ---
 
@@ -72,7 +72,7 @@ spasample/
 To use the native authentication JavaScript SDK in your app, use your terminal to install it by using the following command:
 
 ```console
-npm intall @azure/msal-browser
+npm install @azure/msal-browser
 ```
 
 The native authentication capabilities are part of the `azure-msal-browser` library. To use native authentication features, you import from `@azure/msal-browser/custom-auth`. For example:
@@ -148,8 +148,6 @@ This app collects user details such as given name, username (email), password, a
 1. Create *sign-up/components/InitialForm.tsx* file, then paste the code from [sign-up/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/InitialForm.tsx). This component displays a form that collects user sign-up attributes. 
 
 1. Create a *sign-up/components/CodeForm.tsx* file, then paste the code from [sign-up/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/CodeForm.tsx). This component displays a form that collects a one-time passcode sent to the user. You require this form for either email with password or email with one-time passcode authentication method. 
-
-1. Create a *sign-up/components/SignUpResult.tsx* file, then paste the code from [sign-up/components/SignUpResult.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/SignUpResult.tsx). This component displays sing-up result. 
 
 1. If your choice of authentication method is *email with password*, create a *sign-up/components/PasswordForm.tsx* file, then paste the code from [sign-up/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/PasswordForm.tsx). This component displays a password input form. 
 

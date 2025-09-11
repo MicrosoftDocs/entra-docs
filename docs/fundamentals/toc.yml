@@ -6,27 +6,21 @@ items:
   items:
   - name: What is Microsoft Entra?
     href: what-is-entra.md
-  - name: What is Microsoft Entra ID?
-    href: whatis.md
   - name: What is the Microsoft Entra admin center?
     href: entra-admin-center.md
-  - name: Trial user guide for Microsoft Entra Suite
-    href: try-microsoft-entra-suite.md
-  - name: Identity fundamentals
-    href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
-    href: introduction-identity-access-management.md
+    href: identity-fundamental-concepts.md
 - name: Set up your tenant and directory
   expanded: true
   items:
   - name: Create a tenant
     href: create-new-tenant.md
   - name: Add a custom domain name
-    href: add-custom-domain.yml
+    href: add-custom-domain.md
   - name: Associate an Azure subscription
-    href: how-subscriptions-associated-directory.yml
+    href: how-subscriptions-associated-directory.md
   - name: Add your privacy info
-    href: properties-area.yml
+    href: properties-area.md
   - name: Add company branding
     href: how-to-customize-branding.md
 - name: Add users and groups
@@ -42,11 +36,11 @@ items:
     - name: Default user permissions
       href: users-default-permissions.md
     - name: Manage user profile info
-      href: how-to-manage-user-profile-info.yml
+      href: how-to-manage-user-profile-info.md
     - name: Reset a user's password
-      href: users-reset-password-azure-portal.yml
+      href: users-reset-password-azure-portal.md
     - name: Restore a deleted user
-      href: users-restore.yml
+      href: users-restore.md
   - name: Groups
     expanded: false
     items:
@@ -54,8 +48,6 @@ items:
       href: concept-learn-about-groups.md
     - name: Manage groups
       href: how-to-manage-groups.yml
-    - name: Quickstart - Create a group and add members
-      href: groups-view-azure-portal.md
   - name: Licenses
     expanded: false
     items: 
@@ -69,6 +61,8 @@ items:
       href: licensing.md
     - name: Sign up for Microsoft Entra ID P1 or P2
       href: get-started-premium.md
+    - name: Trial user guide for Microsoft Entra Suite
+      href: try-microsoft-entra-suite.md
 - name: Fundamental security settings
   expanded: false
   items:
@@ -88,32 +82,30 @@ items:
     - name: Accelerate response and remediation
       href: zero-trust-response-remediation.md
   - name: Identity secure score
-    href: ~/identity/monitoring-health/concept-identity-secure-score.md
+    href: ~/identity/monitoring-health/concept-identity-secure-score.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Improve your security posture
     href: concept-secure-remote-workers.md
   - name: Integrate your apps with Microsoft Entra ID
     href: five-steps-to-full-application-integration.md
-  - name: Integrate your SAP apps with Microsoft Entra ID
-    href: scenario-azure-first-sap-identity-integration.md
   - name: Security defaults
     href: security-defaults.md
   - name: Manage 'Stay signed in?' prompt
     href: how-to-manage-stay-signed-in-prompt.yml
 - name: Microsoft Security Copilot + Microsoft Entra
   items:
-  - name: Overview
+  - name: Security Copilot in Microsoft Entra
     href: copilot-security-entra.md
-  - name: Microsoft Security Copilot scenarios in Microsoft Entra
+  - name: Copilot scenarios in Microsoft Entra
     href: copilot-entra-security-scenarios.md
-  - name: Security Copilot agents in Microsoft Entra
-    href: agents.md
-  - name: Respond to identity threats using risky user summarization
+  - name: Agents
+    href: copilot-entra-agents.md
+  - name: Respond to identity threats
     href: copilot-entra-risky-user-summarization.md  
-  - name: Manage lifecycle workflows using Microsoft Security Copilot
+  - name: Manage lifecycle workflows
     href: copilot-entra-lifecycle-workflow.md
-  - name: Investigate incidents using Microsoft Security Copilot
+  - name: Investigate incidents
     href: copilot-security-entra-investigate-incident.md 
-  - name: Investigate app risk using Microsoft Security Copilot
+  - name: Investigate app risk
     href: copilot-security-entra-investigate-risky-apps.md
   - name: Responsible AI FAQ for Security Copilot
     href: /copilot/security/rai-faqs-security-copilot?toc=/fundamentals/toc.json&bc=/fundamentals/breadcrumb/toc.json
@@ -121,7 +113,7 @@ items:
   expanded: false
   items:
   - name: Find your tenant ID
-    href: how-to-find-tenant.yml
+    href: how-to-find-tenant.md
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
   - name: Quarantine unsanctioned tenants 
@@ -146,6 +138,8 @@ items:
     href: reference-company-branding-css-template.md
   - name: Bulk operations
     href: bulk-operations-service-limitations.md
+  - name: Bulk operations in Microsoft Entra ID  (Preview)
+    href: bulk-operations.md
   - name: New name for Azure AD
     href: new-name.md
   - name: Rename Azure AD
@@ -160,7 +154,7 @@ items:
     - name: Data protection considerations
       href: data-protection-considerations.md
     - name: Customer data storage and processing for Europe
-      href: ./data-storage-eu.md
+      href: data-storage-eu.md
     - name: Identity data storage for Australia and New Zealand
       href: data-storage-australia.md
     - name: Customer data storage for Australia and New Zealand

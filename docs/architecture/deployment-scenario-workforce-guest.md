@@ -50,7 +50,7 @@ To successfully deploy and test the solution, configure the prerequisites that w
 
 For this scenario, complete these prerequisite steps to configure Microsoft Entra Verified ID with Quick setup (Preview):
 
-1. Register a custom domain (required for Quick setup) by following the steps in the [Add your custom domain](../fundamentals/add-custom-domain.yml) article.
+1. Register a custom domain (required for Quick setup) by following the steps in the [Add your custom domain](../fundamentals/add-custom-domain.md) article.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
    - Select **Verified ID**.
    - Select **Setup**.

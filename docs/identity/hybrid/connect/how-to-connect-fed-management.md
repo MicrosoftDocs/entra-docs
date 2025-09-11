@@ -186,7 +186,7 @@ It's easy to add a domain to be federated with Microsoft Entra ID by using Micro
 
    ![Screenshot of the "Additional tasks" pane, showing how to add an additional Microsoft Entra domain.](./media/how-to-connect-fed-management/AdditionalDomain4.PNG)
 
-    After you choose the domain, the wizard informs you about further actions that it will take and the impact of the configuration. In some cases, if you select a domain that isn't yet verified in Microsoft Entra ID, the wizard helps you verify the domain. For more information, see [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).
+    After you choose the domain, the wizard informs you about further actions that it will take and the impact of the configuration. In some cases, if you select a domain that isn't yet verified in Microsoft Entra ID, the wizard helps you verify the domain. For more information, see [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
 
 1. Select **Next**. 
 

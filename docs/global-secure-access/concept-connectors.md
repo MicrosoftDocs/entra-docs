@@ -57,6 +57,15 @@ You can monitor your connectors from the machine they're running on, using eithe
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as `_inactive_` and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart the computer to fully remove the service.
 
+## Handling Connector Server Issues
+If one or more connector servers become unavailable (e.g., due to a server outage, network outage, or similar issue), follow these steps to maintain service continuity:
+ 
+1.	Identify and remove the affected (“bad”) servers from the connector group.
+2.	Add available healthy servers (“good”) or backup servers into the connector group to restore capacity.
+3.	Reboot affected servers to drain any pre-existing connections. Existing ongoing connections don’t drain immediately with connector group changes.
+ 
+This sequence is the recommended approach to ensure service stability and minimize disruption when connector servers encounter issues.
+
 ## Connector updates
 
 Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors may update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
