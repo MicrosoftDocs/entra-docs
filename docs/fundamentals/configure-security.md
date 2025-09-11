@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 08/21/2025
+ms.date: 09/11/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
