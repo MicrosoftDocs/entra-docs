@@ -172,9 +172,7 @@ This detection is discovered using information provided by [Microsoft Defender
 A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password was correctly identified through a password spray attack, not that the attacker was able to access any resources.
 
 - Calculated in real-time or offline
-- License requirement:
-    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
-    - Microsoft 365 E5 with Enterprise Mobility + Security E5
+- License requirement: Microsoft Entra ID P2
 - [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
 
 ### Suspicious browser	 
@@ -262,7 +260,9 @@ This risk detection baselines normal administrative user behavior in Microsoft E
 Also referred to as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft 365 Defender for Office to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Leaked credentials 
 
