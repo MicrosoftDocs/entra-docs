@@ -1,6 +1,4 @@
 ---
-title: Accepted token versions in the Microsoft identity platform
-description: Describes the accepted token versions for web APIs in the Microsoft identity platform.
 author: cilwerner
 manager: pmwongera
 ms.service: identity-platform
