@@ -976,6 +976,41 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/scenario-daemon-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-daemon-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-desktop-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-desktop-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-mobile-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-mobile-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-protected-web-api-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-protected-web-api-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-api-call-api-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-api-call-api-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-call-api-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-sign-user-app-configuration",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/custom-extension-onattributecollectionsubmit-reference.md",
       "redirect_url": "/entra/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data",
       "redirect_document_id": false

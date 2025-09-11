@@ -127,7 +127,7 @@ If you can safely constrain your test app in your production tenant, then you ca
 
 ### Create and configure an app registration
 
-You need to create an app registration to use in your test environment. This should be a separate registration from your eventual production app registration, to maintain security isolation between your test environment and your production environment. How you configure your application depends on the type of app you're building. For more information, check out the [app registration steps for your app scenario](scenario-web-app-sign-user-app-registration.md) in the left navigation pane.
+You need to create an app registration to use in your test environment. This should be a separate registration from your eventual production app registration, to maintain security isolation between your test environment and your production environment. How you configure your application depends on the type of app you're building. For more information, refer to [Register an application in Microsoft Entra ID](./quickstart-register-app.md).
 
 ### Create some test users
 
