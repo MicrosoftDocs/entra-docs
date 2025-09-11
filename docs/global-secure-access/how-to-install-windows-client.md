@@ -16,7 +16,7 @@ ms.custom: sfi-image-nochange
 The Global Secure Access client is an essential part of Global Secure Access. It helps organizations manage and secure network traffic on end-user devices. The client routes traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md) you set up in the portal decide which traffic the Global Secure Access client routes to the cloud service.
 
 > [!NOTE]
-> The Global Secure Access Client is also available for macOS, Android, and iOS. To learn how to install the Global Secure Access client on these platforms, see [Global Secure Access client for macOS](how-to-install-macos-client.md), [Global Secure Access client for Android](how-to-install-android-client.md), and [Global Secure Access client for iOS](how-to-install-ios-client.md).   
+> The Global Secure Access client is also available for macOS, Android, and iOS. To learn how to install the Global Secure Access client on these platforms, see [Global Secure Access client for macOS](how-to-install-macos-client.md), [Global Secure Access client for Android](how-to-install-android-client.md), and [Global Secure Access client for iOS](how-to-install-ios-client.md).   
 
 This article describes how to download and install the Global Secure Access client for Windows.
 
@@ -25,12 +25,12 @@ This article describes how to download and install the Global Secure Access clie
 - A Microsoft Entra tenant onboarded to Global Secure Access.
 - A managed device joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
    - Microsoft Entra registered devices aren't supported.
-- The Global Secure Access client needs a 64-bit version of Windows 10 or Windows 11, or an Arm64 version of Windows 11.
+- The Global Secure Access client requires a 64-bit version of Windows 10 or Windows 11, or an Arm64 version of Windows 11.
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
    - Windows 365 is supported.
 - You need local admin credentials to install or upgrade the Global Secure Access client.
-- The Global Secure Access client needs a license. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [buy licenses or get trial licenses](https://aka.ms/azureadlicense).
+- The Global Secure Access client requires a license. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [buy licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Download the client
 
@@ -43,11 +43,11 @@ The most current version of the Global Secure Access client is available to down
     
 ## Install the Global Secure Access client
 ### Automated installation
-Organizations can install the Global Secure Access client silently with the `/quiet` switch, or use Mobile Device Management (MDM) solutions, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) to deploy the client to their devices.
+Organizations can install the Global Secure Access client silently with the `/quiet` switch, or use Mobile Device Management (MDM) solutions, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management), to deploy the client to their devices.
 
 ### Use Microsoft Intune to deploy the Global Secure Access client
 
-In this section, you learn how to install the Global Secure Access client on a Windows 11 client device with Intune.
+This section explains how to use Intune to install the Global Secure Access client on a Windows 11 client device.
 
 #### Prerequisites
 
@@ -57,10 +57,10 @@ In this section, you learn how to install the Global Secure Access client on a W
 
 Package the installation script into a `.intunewin` file.
 
-1. Save the following PowerShell script on your device. Put the PowerShell script and the Global Secure Access (exe) installer into a folder.  
+1. Save the following PowerShell script to your device. Put the PowerShell script and the Global Secure Access `.exe` installer into a folder.  
 
 > [!NOTE]
-> The PowerShell installation script installs the Global Secure Access client, sets a registry key to set `IPv4Preferred`, and prompts for a reboot for the registry key change to take effect.
+> The PowerShell installation script installs the Global Secure Access client, sets a registry key to `IPv4Preferred`, and prompts for a reboot for the registry key change to take effect.
 
 > [!TIP]
 > Select to expand the PowerShell script.
@@ -245,7 +245,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
    :::image type="content" source="media/how-to-install-windows-client/detection-rule.png" alt-text="Screenshot of Detection rule for client." lightbox="media/how-to-install-windows-client/detection-rule.png":::
 
 1. Select **OK**. Select **Next**.
-1. Select **Next** two more times to get to **Assignments**.
+1. Select **Next** twice to go to **Assignments**.
 1. Under **Required**, select **+Add group**. Select a group of users or devices. Select **Select**.
 1. The restart grace period is enabled, since the script prompts for a reboot.
 
@@ -254,7 +254,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 1. Select **Next**. Select **Create**.
 
 > [!NOTE]
-> When you deploy the Global Secure Access client to a virtual machine, the virtual machine might suppress the prompt to restart the device. The user won't see the reboot prompt.
+> Deploying the Global Secure Access client to a virtual machine might suppress the prompt to restart the device. The user won't see the reboot prompt.
 
 #### Update the client to a newer version
 
@@ -273,7 +273,7 @@ In a production environment, it's a good practice to deploy new client versions 
 
 ### Configure Global Secure Access client settings with Intune
 
-Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce the desired client-side controls, such as preventing non-admin users from being able to disable the client or hiding specific buttons. 
+Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce client-side controls, such as preventing non-admin users from disabling the client or hiding specific buttons. 
 
 > [!IMPORTANT]
 > Set the `$gsaSettings` to the values your organization requires in both the detection and remediation scripts.
@@ -388,7 +388,7 @@ Write-Output "Set $($setting.Key) to $($setting.Value)"
 
 ### Configure settings for Microsoft Entra Internet Access with Intune
 
-Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this, it's recommended to disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
+Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this, disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
 
 #### Disable QUIC in Microsoft Edge and Chrome with Intune 
 
@@ -415,7 +415,7 @@ To disable QUIC in Microsoft Edge and Chrome with Intune:
 1. For **Google Chrome**, set both toggles to **Disabled**.
 1. For **Microsoft Edge**, set both toggles to **Disabled**.
 
-    :::image type="content" source="media/how-to-install-windows-client/edge-chrome-profile.png" alt-text="Screenshot of the Configuration settings tab showing the Edge and Chrome settings." lightbox="media/how-to-install-windows-client/edge-chrome-profile.png":::
+    :::image type="content" source="media/how-to-install-windows-client/edge-chrome-profile.png" alt-text="Screenshot of the Configuration settings tab showing the Microsoft Edge and Chrome settings." lightbox="media/how-to-install-windows-client/edge-chrome-profile.png":::
 
 1. Select **Next** twice.
 1. On the **Assignments** tab:
@@ -584,11 +584,11 @@ To manually install the Global Secure Access client:
 To open the Global Secure Access client interface, select the Global Secure Access icon in the system tray. The client interface provides a view of the current connection status, the channels configured for the client, and access to diagnostics tools.    
 
 ### Connections view
-From the **Connections** view, you can see the client **Status** and the **Channels** configured for the client. If you wish to disable the client, select the **Disable** button. You can use the information in the **Additional details** section to help troubleshoot the client connection. Select **Show more details** to expand the section and view additional information.   
+In the **Connections** view, you can see the client **Status** and the **Channels** configured for the client. To disable the client, select the **Disable** button. You can use the information in the **Additional details** section to troubleshoot the client connection. Select **Show more details** to expand the section and view more information.   
 :::image type="content" source="media/how-to-install-windows-client/client-interface-connections.png" alt-text="Screenshot of the Connections view of the Global Secure Access client interface.":::   
 
 ### Troubleshooting view
-From the **Troubleshooting** view, you can perform various diagnostics tasks. You can export and share logs with your IT admin. You can also access the **Advanced diagnostics** tool, which provides an assortment of troubleshooting tools. Note: you can also launch the **Advanced diagnostics** tool from the client system tray icon menu.   
+In the **Troubleshooting** view, you can perform various diagnostic tasks. You can export and share logs with your IT admin. You can also access the **Advanced diagnostics** tool, which provides an assortment of troubleshooting tools. Note: You can also launch the **Advanced diagnostics** tool from the client system tray icon menu.   
 :::image type="content" source="media/how-to-install-windows-client/client-interface-troubleshooting.png" alt-text="Screenshot of the Troubleshooting view of the Global Secure Access client interface.":::   
 
 ### Settings view
@@ -596,11 +596,11 @@ Switch to the **Settings** view to check the installed **Version** or access the
 :::image type="content" source="media/how-to-install-windows-client/client-interface-settings.png" alt-text="Screenshot of the Settings view of the Global Secure Access client interface.":::   
 
 ## Client actions
-To view the available client menu actions, right-click the Global Secure Access system tray icon.   
+To view the available client menu actions, select the Global Secure Access system tray icon.   
 :::image type="content" source="media/how-to-install-windows-client/client-install-all-actions.png" alt-text="Screenshot showing the complete list of Global Secure Access client actions.":::
 
 > [!TIP]
-> The Global Secure Access client menu actions vary according to your [Client registry keys](#client-registry-keys) configuration.
+> The Global Secure Access client menu actions depend on your [Client registry keys](#client-registry-keys) configuration.
 
 |Action   |Description  |
 |---------|---------|
@@ -609,11 +609,11 @@ To view the available client menu actions, right-click the Global Secure Access 
 |**Enable**   |Enables the Global Secure Access client.         |
 |**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you wish to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
 |**Collect logs**   |Select this action to collect client logs (information about the client machine, the related event logs for the services, and registry values) and archive them in a zip file to share with Microsoft Support for investigation. The default location for the logs is `C:\Program Files\Global Secure Access Client\Logs`.   You can also collect client logs on Windows by entering the following command in the Command Prompt: `C:\Program Files\Global Secure Access Client\LogsCollector\LogsCollector.exe" <username> <user>`.      |
-|**Advanced diagnostics**   |Select this action to launch the Advanced diagnostics utility and access an assortment of [troubleshooting](#troubleshooting) tools.         |
+|**Advanced diagnostics**   |Select this action to open the Advanced diagnostics utility and access an assortment of [troubleshooting](#troubleshooting) tools.         |
 
 ## Client status indicators
 ### Status notification
-Double-click the Global Secure Access icon to open the client status notification and view the status of each channel configured for the client.   
+Select the Global Secure Access icon to open the client status notification and view the status of each channel configured for the client.   
 :::image type="content" source="media/how-to-install-windows-client/install-windows-client-client-status.png" alt-text="Screenshot showing the client status is connected.":::
 
 ### Client statuses in system tray icon
@@ -634,22 +634,22 @@ Double-click the Global Secure Access icon to open the client status notificatio
 [!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Troubleshooting
-To troubleshoot the Global Secure Access client, right-click the client icon in the taskbar and select one of the troubleshooting options: **Collect logs** or **Advanced diagnostics**.
+To troubleshoot the Global Secure Access client, select the client icon in the taskbar and select one of the troubleshooting options: **Export logs** or **Advanced diagnostics tool**.
 
 > [!TIP]
 > Administrators can modify the Global Secure Access client menu options by revising the [Client registry keys](#client-registry-keys).
 
-For more detailed information on troubleshooting the Global Secure Access client, see the following articles:
+For more information on troubleshooting the Global Secure Access client, see the following articles:
 - [Troubleshoot the Global Secure Access client: advanced diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access client: Health check tab](troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 
 ## Client registry keys
-The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solutions, such as Microsoft Intune or Group Policy to control the registry values.
+The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solution, such as Microsoft Intune or Group Policy to control the registry values.
 > [!CAUTION] 
 > Don't change other registry values unless instructed by Microsoft Support.
 
 ### Restrict nonprivileged users
-The administrator can prevent nonprivileged users on the Windows device from disabling or enabling the client by setting the following registry key:   
+Administrators can prevent nonprivileged users on the Windows device from disabling or enabling the client by setting the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\Software\Microsoft\Global Secure Access Client`   
 `RestrictNonPrivilegedUsers REG_DWORD`
 
@@ -661,7 +661,7 @@ The administrator can prevent nonprivileged users on the Windows device from dis
 ### Disable or enable Private Access on the client
 This registry value controls whether Private Access is enabled or disabled for the client. If a user is connected to the corporate network, they can choose to bypass Global Secure Access and directly access private applications.
 
-Users can disable and enable Private Access through the system tray menu.
+Users can disable or enable Private Access through the system tray menu.
 
 > [!TIP]
 > This option is available on the menu only if it isn't hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
@@ -674,12 +674,12 @@ Administrators can disable or enable Private Access for the user by setting the 
 |IsPrivateAccessDisabledByUser  |REG_DWORD  |0x0  |Private Access is enabled on this device. Network traffic to private applications goes through Global Secure Access.  |
 |IsPrivateAccessDisabledByUser  |REG_DWORD  |0x1  |Private Access is disabled on this device. Network traffic to private applications goes directly to the network.  |
 
-:::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-access-enabled.png" alt-text="Screenshot showing the Registry Editor with the IsPrivateAccessDisabledByUser registry key highlighted.":::
+:::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-access-enabled.png" alt-text="Screenshot of the Registry Editor with the IsPrivateAccessDisabledByUser registry key highlighted.":::
 	
 If the registry value doesn't exist, the default value is 0x0, Private Access is enabled.
 
 ### Hide or unhide system tray menu buttons
-The administrator can show or hide specific buttons in the client system tray icon menu. Create the values under the following registry key:   
+Administrators can show or hide specific buttons in the client system tray icon menu. Create the values under the following registry key:   
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Global Secure Access Client`
 
 |Value   |Type   |Data   |Default behavior   |Description   |
@@ -688,7 +688,7 @@ The administrator can show or hide specific buttons in the client system tray ic
 |HideDisablePrivateAccessButton   |REG_DWORD   |0x0 - shown   0x1 - hidden   |hidden   |Configure this setting to show or hide the **Disable Private Access** action. This option is for a scenario when the device is directly connected to the corporate network and the user prefers accessing private applications directly through the network instead of through the Global Secure Access.   |   
 |HideDisableButton   |REG_DWORD   |0x0 - shown   0x1 - hidden   |shown   |Configure this setting to show or hide the **Disable** action. When visible, the user can disable the Global Secure Access client. The client remains disabled until the user enables it again. If the **Disable** action is hidden, a nonprivileged user can't disable the client.   |
 
-:::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-hide-signout.png" alt-text="Screenshot showing the Registry Editor with the HideSignOutButton and HideDisablePrivateAccessButton registry keys highlighted.":::
+:::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-hide-signout.png" alt-text="Screenshot of the Registry Editor with the HideSignOutButton and HideDisablePrivateAccessButton registry keys highlighted.":::
 
 For more information, see [Guidance for configuring IPv6 in Windows for advanced users](/troubleshoot/windows-server/networking/configure-ipv6-in-windows).
 
