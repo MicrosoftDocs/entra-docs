@@ -160,18 +160,23 @@ Per [RFC 8252 sections 8.3](https://tools.ietf.org/html/rfc8252#section-8.3) and
 1. `http` URI schemes are acceptable because the redirect never leaves the device. As such, both of these URIs are acceptable:
     - `http://localhost/myApp`
     - `https://localhost/myApp`
-1. Due to ephemeral port ranges often required by native applications, the port component (for example, `:5001` or `:443`) is ignored for the purposes of matching a redirect URI. As a result, all of these URIs are considered equivalent:
+
+1. Due to ephemeral port ranges often required by native applications, the port component (for example, `:5001` or `:443`) is ignored for the purposes of matching a localhost redirect URI. As a result, all of these URIs are considered equivalent:
     - `http://localhost/MyApp`
     - `http://localhost:1234/MyApp`
     - `http://localhost:5000/MyApp`
     - `http://localhost:8080/MyApp`
 
+    This is *only* true for localhost redirect URIs. In all other cases, the port component is *not* ignored when matching redirect URIs. 
+
 From a development standpoint, this means a few things:
 
-* Do not register multiple redirect URIs where only the port differs. The login server picks one arbitrarily and uses the behavior associated with that redirect URI (for example, whether it's a `web`-, `native`-, or `spa`-type redirect).
+* Do not register multiple localhost redirect URIs where only the port differs. The login server picks one arbitrarily and uses the behavior associated with that registered redirect URI (for example, whether it's a `web`-, `native`-, or `spa`-type redirect).
 
     This is especially important when you want to use different authentication flows in the same application registration, for example both the authorization code grant and implicit flow. To associate the correct response behavior with each redirect URI, the login server must be able to distinguish between the redirect URIs and can't do so when only the port differs.
+
 * To register multiple redirect URIs on localhost to test different flows during development, differentiate them using the *path* component of the URI. For example, `http://localhost/MyWebApp` doesn't match `http://localhost/MyNativeApp`.
+
 * The IPv6 loopback address (`[::1]`) isn't currently supported.
 
 #### Prefer 127.0.0.1 over localhost

@@ -29,6 +29,7 @@ There are multiple methods to integrate your devices into Microsoft Entra ID. Th
 * [Join devices](concept-directory-join.md) to Microsoft Entra ID (cloud-only).
 * [Microsoft Entra hybrid join](concept-hybrid-join.md) devices to your on-premises Active Directory domain and Microsoft Entra ID. 
 
+
 ## Learn
 
 Before you begin, make sure that you're familiar with the [device identity management overview](overview.md).
@@ -77,6 +78,22 @@ You might want to do a [targeted deployment of Microsoft Entra hybrid join](hybr
 > [!WARNING]
 > Organizations should include a sample of users from varying roles and profiles in their pilot group. A targeted rollout will help identify any issues your plan may not have addressed before you enable for the entire organization.
 
+### Network Requirements for Device Registration with Microsoft Entra
+
+The following sites must be exempted if using TLS interception or network proxy filtering to ensure registration works as intended:
+
+- `enterpriseregistration.windows.net`
+- `certauth.enterpriseregistration.windows.net`
+- `enterpriseregistration.partner.microsoftonline.cn` (**)
+- `certauth.enterpriseregistration.partner.microsoftonline.cn`(**)
+- `enterpriseregistration.microsoftonline.us`(**)
+- `certauth.enterpriseregistration.microsoftonline.us`(**)
+
+( ** ) You only need to allow sovereign cloud domains if you rely on those in your environment.
+
+> [!NOTE]
+> Failure to exempt these endpoints may result in failure of device registration flows.
+
 ## Choose your integration methods
 
 Your organization can use multiple device integration methods in a single Microsoft Entra tenant. The goal is to choose one or more methods suitable to get your devices securely managed in Microsoft Entra ID. There are many parameters that drive this decision including ownership, device types, primary audience, and your organization’s infrastructure.
@@ -117,6 +134,7 @@ iOS and Android devices are only Microsoft Entra registered. The following table
 | Self-service password reset from the Windows login screen | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | Windows Hello PIN reset | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 
+
 <a name='azure-ad-registration-'></a>
 
 ## Microsoft Entra Registration 
@@ -143,6 +161,7 @@ If registering your devices is the best option for your organization, see the fo
 * This end-user documentation on [Register your personal device on your organization’s network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
 
 <a name='azure-ad-join'></a>
+
 
 ## Microsoft Entra join
 

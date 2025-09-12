@@ -3,7 +3,7 @@ title: Configure a GitHub enterprise with Enterprise Managed Users for SAML Sing
 description: Learn how to configure SAML single sign-on between Microsoft Entra ID and a GitHub enterprise with Enterprise Managed Users.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 

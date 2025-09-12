@@ -2,7 +2,7 @@
 title: Understand the app manifest (Microsoft Graph format)
 description: Describes the Microsoft Entra app manifest (Microsoft Graph format), which represents an application's identity configuration in a Microsoft Entra tenant.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.service: identity-platform
 ms.topic: reference
 ms.workload: identity
@@ -469,7 +469,7 @@ Example:
     ],
     "preAuthorizedApplications": [
         {
-            "appId": "abcdefg2-000a-1111-a0e5-812ed8dd72e8",
+            "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
             "permissionIds": [
                 "8748f7db-21fe-4c83-8ab5-53033933c8f1"
             ]

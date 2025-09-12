@@ -6,7 +6,7 @@ author: billmath
 manager: femila
 ms.service: entra-id
 ms.subservice: users
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/30/2024
 ms.author: billmath
 ms.reviewer: krbain

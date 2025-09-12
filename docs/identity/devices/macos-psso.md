@@ -1,10 +1,10 @@
 ---
-title: macOS Platform Single Sign-on (PSSO) overview (preview)
+title: macOS Platform Single Sign-on (PSSO) overview
 description: Overview of macOS Platform Single Sign On (PSSO) for Microsoft Entra ID registered devices.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: overview
-ms.date: 05/01/2025
+ms.date: 06/12/2025
 ms.author: godonnell
 author: garrodonnell
 manager: dougeby
@@ -12,11 +12,11 @@ manager: dougeby
 #Customer intent: As a customer, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices.
 ---
 
-# macOS Platform Single Sign-on overview (preview)
+# macOS Platform Single Sign-on overview 
 
 macOS Platform Single Sign-on (PSSO) is a new feature powered by Microsoft’s Enterprise SSO plug-in, Platform Credentials for macOS that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. It also allows users to authenticate with Microsoft Entra ID with a smart card or hardware-bound key. This feature improves the end-user experience by not having to remember two separate passwords and diminishes the need for admins to manage the local account password. 
 
-There are three different authentication methods that determine the end-user experience;
+There are three different authentication methods that determine the end-user experience; 
 
 * **Platform Credential for macOS**: Provisions a secure enclave backed hardware-bound cryptographic key that is used for SSO across apps that use Microsoft Entra ID for authentication. The user’s local account password isn't affected and is required to sign in to the Mac.
 * **Smart card**: The user signs in to the machine using an external smart card, or smart card-compatible hard token (for example, Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication.
@@ -46,6 +46,11 @@ You can find more information and instructions on how to configure in these arti
 
 - [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
 
+> [!NOTE]
+> If you are configuring Platform SSO for macOS devices using a 3rd party MDM, refer to the documentation provided by your MDM vendor for specific instructions on how to configure Platform SSO.
+>
+> If you are a developer of a 3rd party MDM solution, refer to the [Integrate macOS Platform Single Sign On (PSSO) into your MDM solution](./macos-psso-integration-guide.md) guide for more information on how to integrate PSSO into your MDM solution.
+
 ## Deployment
 
 You can find more information and instructions on how to deploy Platform SSO for macOS in these articles.
@@ -62,7 +67,7 @@ Learn how you can use Platform SSO for macOS to enable passwordless authenticati
 * [Passwordless authentication options for Microsoft Entra ID](../../identity/authentication/concept-authentication-passwordless.md)
 * [Plan a passwordless authentication deployment in Microsoft Entra ID](../../identity/authentication/howto-authentication-passwordless-deployment.md)
 
-Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-authentication scenarios). Admins need to enable the FIDO2 security key authentication method for this capability. If you use key restrictions in your FIDO policy then you'll need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
+Platform Credential for macOS can also be used as a phishing resistant credential for use in WebAuthn challenges (including browser re-authentication scenarios). If you use key restrictions in your FIDO policy then you'll need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`
 
 ### Microsoft Platform SSO: UserSecureEnclaveKeyBiometricPolicy
 
@@ -100,6 +105,20 @@ High-security customers can opt in to enable this feature by setting a flag in t
 - More Prompts: Users will encounter extra prompts during PSSO registration as the key is accessed multiple times during the process.
 - Biometric-Only Access: The PSSO passkey can only be accessed with biometric authentication. There's no password fallback. If the device is unlocked with a password, users will still be prompted for biometric authentication to obtain the PSSO token.
 
+## Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources
+macOS allows users to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. Kerberos SSO is an optional capability within Platform SSO, but it's recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
+
+To learn more, see [Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources](./device-join-macos-platform-single-sign-on-kerberos-configuration.md).
+
+## Graph API support
+You can use the Microsoft Graph API to manage the PlatformCredential authentication method.
+
+The following APIs are available:
+
+* [platformCredentialAuthenticationMethod resource type](/graph/api/resources/platformcredentialauthenticationmethod?preserveview=graph-rest-1.0).
+* [List platformCredentialAuthenticationMethods](/graph/api/platformcredentialauthenticationmethod-list?preserveview=graph-rest-1.0).
+* [Delete platformCredentialAuthenticationMethod](/graph/api/platformcredentialauthenticationmethod-delete?preserveview=graph-rest-1.0).
+   
 ## National Institute of Standards and Technology (NIST)
 
 The National Institute of Standards and Technology (NIST) is a non-regulatory federal agency within the U.S. Department of Commerce. NIST develops and issues standards, guidelines, and other publications to assist federal agencies in managing cost-effective programs to protect their information and information systems.

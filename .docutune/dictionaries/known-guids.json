@@ -3873,5 +3873,6 @@
   "Internet Information Services" : "4dc3e181-e14b-4a21-b022-59fc669b0914",
   "EXCatalog - Centralized Deployment" : "61bcc63f-b860-4280-8280-3e4fb5ea7726",
   "Azure Arc-enabled Kubernetes cluster server app ID" : "6256c85f-0aad-4d50-b960-e6e9b21efe35",
-  "Azure Arc-enabled Kubernetes cluster client app ID" : "3f4439ff-e698-4d6d-84fe-09c9d574f06b"
+  "Azure Arc-enabled Kubernetes cluster client app ID" : "3f4439ff-e698-4d6d-84fe-09c9d574f06b",
+  "Azure Cloud Services for Government" : "6a02c803-dafd-4136-b4c3-5a6f318b4714"
 }

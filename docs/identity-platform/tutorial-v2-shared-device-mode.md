@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 
 # Tutorial: Add shared-device mode support to your Android application
 
-[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-workforce-only.md)]
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 In this tutorial, Android developers learn how to add shared device mode support in an Android application using the Microsoft Authentication Library (MSAL) for Android.
  

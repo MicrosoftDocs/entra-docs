@@ -1,9 +1,9 @@
 ---
 title: Tutorial - Test your SCIM endpoint for compatibility with the Microsoft Entra provisioning service.
 description: This tutorial describes how to use the Microsoft Entra SCIM Validator to validate that your provisioning server is compatible with the Azure SCIM client.
-author: kenwith
-ms.author: kenwith
-manager: dougeby
+author: jenniferf-skc
+ms.author: jfields
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial

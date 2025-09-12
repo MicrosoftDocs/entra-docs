@@ -3,11 +3,11 @@ title: Plan cloud HR application to Microsoft Entra user provisioning
 description: This article describes the deployment process of integrating cloud HR systems, such as Workday and SuccessFactors, with Microsoft Entra ID. Integrating Microsoft Entra ID with your cloud HR system results in a complete identity lifecycle management system.
 
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.topic: conceptual
-ms.date: 03/04/2025
+ms.topic: how-to
+ms.date: 07/24/2025
 ms.author: jfields
 ms.reviewer: arvinh
 ---
@@ -148,7 +148,7 @@ Run the initial configuration in a [pilot environment](~/architecture/deployment
 
 To ensure the right HR records are mapped to users in Microsoft Entra ID (Entra ID)/ on-premises Active Directory (AD), work with your HR and IT teams to ensure data consistency and plan for any data cleansing tasks. Here is a list of best practices to get started.  
 
-1. **Matching identifier presence and uniqueness:** The provisioning service uses a matching attribute to uniquely identify and link user records in your HR system with corresponding user accounts in AD / Entra ID. The default matching attribute is based on Employee ID. Ensure that the value of employee ID is populated in Entra ID (for cloud-only users) and on-premises AD (for hybrid users) before initiating full sync and it uniquely identifies a user.  
+1. **Matching identifier presence and uniqueness:** The provisioning service uses a matching attribute to uniquely identify and link user records in your HR system with corresponding user accounts in AD / Entra ID. The default matching attribute is based on Employee ID. Ensure that the value of employee ID is populated in Entra ID (for cloud-only users) and on-premises AD (for hybrid users) before initiating full sync and it uniquely identifies a user. See [Index the employeeId attribute](./index-employeeid-attribute-entra-id-to-active-directory.md) in Active Directory before initiating full sync. 
 
 2. **Use scoping filters to skip HR records that are no longer relevant:** HR systems have several years of employment data probably going all the way back to 1970s. On the other hand, your IT team may only be interested in the list of currently active employees and termination records that come through after go-live. To filter out HR records that are no longer relevant from your IT team perspective, work with your HR team to add flags on the HR record that can be used in the Microsoft Entra provisioning scoping filters.  
 

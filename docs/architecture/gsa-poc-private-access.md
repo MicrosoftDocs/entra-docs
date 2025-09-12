@@ -70,7 +70,7 @@ To help protect on-premises resources like domain controllers by enabling multif
 
 ### Coexist with a partner
 
-When customers deploy the 3P solution, they might want to use the Environmental Protection Agency (EPA) while using other solutions for internet access. For guidance, see [Partner ecosystem overview](../global-secure-access/partner-ecosystems-overview.md).
+When customers deploy the 3P solution, they might want to use Microsoft Entra Private Access while using other solutions for internet access. For guidance, see [Partner ecosystem overview](../global-secure-access/partner-ecosystems-overview.md).
 
 ## Troubleshoot
 

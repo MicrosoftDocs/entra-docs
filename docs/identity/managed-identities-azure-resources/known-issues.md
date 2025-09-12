@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.assetid: 2097381a-a7ec-4e3b-b4ff-5d2fb17403b6
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.topic: conceptual
+ms.topic: troubleshooting-known-issue
 ms.date: 01/11/2022
 ms.author: shermanouko
 

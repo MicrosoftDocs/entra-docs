@@ -3,7 +3,7 @@ title: Microsoft Entra Private DNS - Configure Secure Internal Name Resolution
 description: Learn how to configure Microsoft Entra Private DNS for secure and efficient internal DNS query resolution, replacing legacy VPNs with granular access.  
 author: Justinha  
 contributors:  
-ms.topic: conceptual  
+ms.topic: how-to
 ms.date: 04/18/2025  
 ms.author: justinha  
 ms.reviewer: justinha  

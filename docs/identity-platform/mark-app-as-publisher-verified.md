@@ -45,7 +45,7 @@ Make sure you meet the [prerequisites](publisher-verification-overview.md#requir
 
 1. Ensure the app’s [publisher domain](howto-configure-publisher-domain.md) is set. 
 
-1. Ensure that either the publisher domain or a DNS-verified [custom domain](~/fundamentals/add-custom-domain.yml) on the tenant matches the domain of the email address used during the verification process for your CPP account.
+1. Ensure that either the publisher domain or a DNS-verified [custom domain](~/fundamentals/add-custom-domain.md) on the tenant matches the domain of the email address used during the verification process for your CPP account.
 
 1. Select **Add Partner ID to verify publisher** near the bottom of the page. 
 

@@ -8,7 +8,7 @@ ms.date: 03/24/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: swethar
 ---
 # Conditional Access for workload identities

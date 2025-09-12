@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 10/04/2024
+ms.date: 09/04/2025
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
@@ -184,7 +184,6 @@ The Audit logs for Authentication Methods can be used to make sure that your use
 |ApplicationManagement|PATCH UserAuthMethod.PatchSignInPreferencesAsync|
 |ApplicationManagement|PATCH UserAuthMethod.ResetQRPinAsync|
 |ApplicationManagement|PATCH UserAuthMethod.UpdateQRPinAsync|
-|ApplicationManagement|POST UserAuthMethod.SecurityInfoRegistrationCallback|
 |ApplicationManagement|POST UserAuthMethod.SoftwareOathProofupRegistration|
 |ApplicationManagement|Update Hardware Oath Token|
 |DirectoryManagement|DELETE Subscription.DeleteProviders|
@@ -204,6 +203,7 @@ The Audit logs for Authentication Methods can be used to make sure that your use
 |DirectoryManagement|POST Tenant.GenerateNewActivationCredentials|
 |DirectoryManagement|POST Tenant.RemoveBlockedUser|
 |DirectoryManagement|POST Tenant.RemoveBypassedUser|
+|PolicyManagement|POST UserAuthMethod.SecurityInfoRegistrationCallback|
 |UserManagement|Admin deleted security info|
 |UserManagement|Admin registered security info|
 |UserManagement|Admin started password reset|

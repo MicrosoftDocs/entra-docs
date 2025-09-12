@@ -4,7 +4,7 @@ description: Learn about how to enable QR code authentication method in Microsof
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/24/2025
 
 ms.author: justinha
@@ -570,7 +570,7 @@ Restrict the QR code authentication method to only frontline workers, compliant,
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ~/fundamentals/sign-up-organization.md
-[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.yml
+[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.md
 
 <!-- EXTERNAL LINKS -->
 [m365-firstline-workers-licensing]: https://www.microsoft.com/licensing/news/m365-firstline-workers

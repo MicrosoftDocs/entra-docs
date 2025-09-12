@@ -8,7 +8,7 @@ ms.assetid: 57cbf436-fc1d-4bab-b991-7d25b6e987ef
 ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/19/2025
 ms.author: justinha
 ---

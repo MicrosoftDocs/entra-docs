@@ -5,11 +5,11 @@ description: The approved client app control is going away. Migrate to App prote
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 07/21/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: jogro
 ---
 # Migrate approved client app to application protection policy in Conditional Access
@@ -42,7 +42,7 @@ Organizations can choose to update their policies using the following steps.
 Repeat the previous steps on all of your policies that use the approved client app grant. 
 
 > [!WARNING] 
-> Not all applications that are supported as approved applications are supported by application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application is not listed there, contact the application developer. 
+> Not all applications that are supported as approved applications support application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application isn't listed there, contact the application developer. 
 
 ## Create a Conditional Access policy
 
@@ -73,7 +73,7 @@ Organizations can choose to deploy this policy using the following steps.
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!NOTE] 
-> If an app does not support **Require app protection policy**, end users trying to access resources from that app will be blocked.
+> If an app doesn't support **Require app protection policy**, end users trying to access resources from that app are blocked.
 
 ## Next steps
 

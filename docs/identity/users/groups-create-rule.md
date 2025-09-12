@@ -126,6 +126,6 @@ If an error occurs during processing of the membership rule for a specific group
 
 ## Related content
 
-- [Create a group with members and view all groups and members](~/fundamentals/groups-view-azure-portal.md)
+
 - [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-membership.md)

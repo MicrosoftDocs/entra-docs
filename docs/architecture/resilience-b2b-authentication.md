@@ -4,7 +4,7 @@ description: A guide for IT admins and architects to building resilient authenti
 author: janicericketts
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 11/16/2022
 ms.author: jricketts
 ---

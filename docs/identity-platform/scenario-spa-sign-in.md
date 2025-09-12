@@ -7,7 +7,7 @@ ms.author: owenrichards
 ms.custom: 
 ms.date: 05/12/2025
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---

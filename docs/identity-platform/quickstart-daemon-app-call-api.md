@@ -305,11 +305,11 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 #### [Python](#tab/python-workforce)
 
-* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-registration.md)
+* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-configuration.md)
 
 #### [Java](#tab/java-workforce)
 
-* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-registration.md)
+* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-configuration.md)
 ---
 
 

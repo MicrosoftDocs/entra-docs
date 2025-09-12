@@ -4,7 +4,7 @@ description: Microsoft and Palo Alto Network’s Security Service Edge (SSE) coe
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/23/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 

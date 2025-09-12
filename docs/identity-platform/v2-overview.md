@@ -59,9 +59,9 @@ Browser based authentication (Workforce and External tenants):
 - [React Single-page app (SPA)](quickstart-single-page-app-react-sign-in.md) using browser-based authentication.
 - [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md).
 - [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md).
-- [Desktop app](scenario-desktop-app-registration.md).
-- [Daemon app](scenario-daemon-app-registration.md).
-- [Mobile app](scenario-mobile-app-registration.md) in a workforce tenant.
+- [Desktop app](scenario-desktop-app-configuration.md).
+- [Daemon app](scenario-daemon-app-configuration.md).
+- [Mobile app](scenario-mobile-app-configuration.md) in a workforce tenant.
 
 
 Native authentication (External tenants only):

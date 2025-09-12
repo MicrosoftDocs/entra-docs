@@ -4,7 +4,7 @@ description: Learn about the sign-up logs that are available in Microsoft Entra 
 author: msmimart
 manager: celestedg
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ms.subservice: monitoring-health
 ms.date: 06/30/2025
 ms.author: mimart

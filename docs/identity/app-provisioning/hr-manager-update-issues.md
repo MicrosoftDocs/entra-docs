@@ -2,7 +2,7 @@
 title: Troubleshoot manager update issues with HR provisioning
 description: This article provides potential issues and resolutions that show you how to troubleshoot manager update issues with HR provisioning
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.date: 03/04/2025
 ms.subservice: app-provisioning

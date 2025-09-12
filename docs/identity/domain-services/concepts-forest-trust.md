@@ -6,7 +6,7 @@ manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
+ms.topic: article
 ms.date: 06/30/2025
 ms.author: justinha
 ---

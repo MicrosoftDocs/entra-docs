@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 08/25/2024
 ms.author: gasinh
 ms.custom: sfi-ga-nochange
@@ -103,7 +103,7 @@ Some legacy scenarios required a human identity to be used in *nonhuman* scenari
 
 ## Microsoft Entra functional areas
 
-These functional areas are provided by Microsoft Entra ID that are relevant to isolated environments. To learn more about the capabilities of Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md).
+These functional areas are provided by Microsoft Entra ID that are relevant to isolated environments. To learn more about the capabilities of Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/what-is-entra.md).
 
 ### Authentication
 

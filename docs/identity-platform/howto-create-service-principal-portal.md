@@ -2,7 +2,7 @@
 title: Register a Microsoft Entra app and create a service principal
 description: Create a new Microsoft Entra app and service principal to manage access to resources with role-based access control in Azure Resource Manager.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 05/26/2025
 ms.service: identity-platform

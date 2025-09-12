@@ -7,7 +7,7 @@ tags: azuread
 ms.custom: has-azure-ad-ps-ref
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: martinco
 ---

@@ -207,5 +207,5 @@ Build and deploy the app to a test device or emulator. You should be able to sig
 
 ## Related content
 
-- [Scenario: Mobile application that calls web APIs](scenario-mobile-app-registration.md)
+- [Scenario: Mobile application that calls web APIs](scenario-mobile-app-configuration.md)
 - [Code sample for complex scenarios](https://github.com/Azure-Samples/ms-identity-android-java/)

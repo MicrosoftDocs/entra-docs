@@ -5,7 +5,7 @@ description: Enable and configure risk policies in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 06/12/2025
+ms.date: 08/06/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -20,6 +20,12 @@ There are two types of [risk policies](concept-identity-protection-policies.md) 
 - [User risk policy](#user-risk-policy-in-conditional-access)
 
 ![Screenshot of a Conditional Access policy showing risk as conditions.](./media/howto-identity-protection-configure-risk-policies/sign-in-risk-conditions.png)
+
+## Prerequisites
+
+- The Microsoft Entra ID P2 or Microsoft Entra Suite license is required for full access to Microsoft Entra ID Protection features.
+    - For a detailed list of capabilities for each license tier, see [What is Microsoft Entra ID Protection](overview-identity-protection.md).
+- The [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role is the least privileged role required to **create or edit Conditional Access policies**.
 
 ## Choosing acceptable risk levels
 

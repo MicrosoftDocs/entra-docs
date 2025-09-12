@@ -6,7 +6,7 @@ author: barclayn
 manager: pmwongera
 ms.author: barclayn
 ms.date: 11/21/2024
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange

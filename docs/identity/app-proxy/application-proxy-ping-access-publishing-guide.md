@@ -27,7 +27,7 @@ Users don't notice anything different when they sign in to use corporate applica
 
 You need a license for PingAccess and Microsoft Entra ID. However, Microsoft Entra ID P1 or P2 subscriptions include a basic PingAccess license that covers up to 20 applications. If you need to publish more than 20 header-based applications, you can purchase more licenses from PingAccess.
 
-For more information, see [Microsoft Entra editions](~/fundamentals/whatis.md).
+For more information, see [Microsoft Entra editions](~/fundamentals/licensing.md).
 
 ## Publish your application in Microsoft Entra
 

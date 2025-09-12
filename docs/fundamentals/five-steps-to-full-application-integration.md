@@ -5,7 +5,7 @@ author: jricketts
 ms.author: jricketts
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/01/2023
 # Customer intent: As an IT admin responsible for application integration, I want to learn how to integrate my company's applications with Microsoft Entra ID, so that I can improve security, reduce costs, increase productivity, and enable compliance through centralized Identity and Access Management.
 ---

@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Use federation for hybrid identity in a single Active Directory forest'
 description: Learn how to set up a hybrid identity environment by using federation to integrate a Windows Server Active Directory forest with Microsoft Entra ID.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 
@@ -40,7 +40,7 @@ To complete the tutorial, you need these items:
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 - An [external network adapter](/virtualization/hyper-v-on-windows/quick-start/connect-to-network), so the virtual machine can connect to the internet.
 - A copy of Windows Server 2016.
-- A [custom domain](~/fundamentals/add-custom-domain.yml) that can be verified.
+- A [custom domain](~/fundamentals/add-custom-domain.md) that can be verified.
 
 > [!NOTE]
 > This tutorial uses PowerShell scripts to quickly create the tutorial environment. Each script uses variables that are declared at the beginning of the script. Be sure to change the variables to reflect your environment.
@@ -252,7 +252,7 @@ To add a custom domain name to a directory:
    :::image type="content" source="media/tutorial-federation/custom2.png" alt-text="Screenshot that shows where you get TXT or MX information.":::
    Adding this information to your domain registrar allows Azure to verify your domain. Domain verification might take up to 24 hours.
 
-   For more information, see the [add a custom domain](~/fundamentals/add-custom-domain.yml) documentation.
+   For more information, see the [add a custom domain](~/fundamentals/add-custom-domain.md) documentation.
 1. To ensure that the domain is verified, select **Verify**.
 
    :::image type="content" source="media/tutorial-federation/custom3.png" alt-text="Screenshot that shows a success message after you select Verify.":::

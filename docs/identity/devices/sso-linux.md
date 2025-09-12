@@ -33,10 +33,7 @@ The Microsoft single sign-on for Linux is supported with the following operating
  - RedHat Enterprise Linux 8  
  - RedHat Enterprise Linux 9
 
-## Configuration
 
-You can find more information and instructions on how to configure in these articles:
-- [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
 
 ## SSO experience
 
@@ -61,7 +58,9 @@ Run the following commands in a command line to manually install the Microsoft s
 2. Install the Microsoft package signing key.  
 
     ```bash
-    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg     sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/     rm microsoft.gpg
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings
+    rm microsoft.gpg
     ```
 
 3. Add and update Microsoft Linux Repository to the system repository list.
@@ -74,7 +73,7 @@ Run the following commands in a command line to manually install the Microsoft s
 4. Install the Microsoft Single Sign-on (microsoft-identity-broker) app.
 
     ```bash
-    sudo apt install Microsoft-identity-broker
+    sudo apt install microsoft-identity-broker
     ```
 
 5. Reboot your device.  
@@ -171,9 +170,7 @@ Run the following commands to uninstall the Microsoft Intune app and remove loca
 
 ---
 
-## Troubleshooting 
 
-If you experience issues when implementing macOS Platform SSO, refer to our documentation on [macOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
 
 ## Related Content
 

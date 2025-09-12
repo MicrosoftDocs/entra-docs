@@ -2,7 +2,7 @@
 title: Manage mappings and users in applications that did not match to users in Microsoft Entra ID | Microsoft Docs
 description: The Microsoft Entra provisioning service matches users in Microsoft Entra ID with users already in an application. In some cases, an application may have users that do not match with any in Microsoft Entra ID.
 author: markwahl-msft
-manager: dougeby
+manager: pmwongera
 editor: markwahl-msft
 ms.service: entra-id
 ms.topic: how-to

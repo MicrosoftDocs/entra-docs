@@ -2,13 +2,13 @@
 title: 'Microsoft Entra Connect: What is the ADConnectivityTool PowerShell Module'
 description: This document introduces the new ADConnectivity PowerShell module and how it can be used to help troubleshoot.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---

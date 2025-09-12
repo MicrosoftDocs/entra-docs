@@ -22,6 +22,11 @@ By assigning Microsoft Entra roles to employees, and guests, using Entitlement M
 
 Assigning Microsoft Entra roles through access packages helps to efficiently manage role assignments at scale and improves the role assignment lifecycle.
 
+> [!NOTE]
+> As part of our ongoing commitment to strengthening security, we are evolving the preview capability of Microsoft Entra Roles in Entitlement Management access packages. 
+Moving forward, Entitlement Management will only allow access packages to contain Microsoft Entra roles which do not have privileged permissions. Roles with privileged permissions should be managed through **Privileged Identity Management**.  
+You can find more information on privileged built-in roles in the [roles reference](../identity/role-based-access-control/permissions-reference.md#all-roles). Privileged roles are labeled as **Privileged** within the reference.
+
 ## Scenarios for Microsoft Entra role assignment using access packages
 
 Let’s imagine that your organization recently hired 50 new employees for the Support team, and that you're tasked with giving these new employees access to the resources they need. These employees need access to the Support Group and certain support-related applications. They also need three Microsoft Entra roles, including the *Helpdesk Administrator* role, to do their jobs. Instead of individually assigning each of the 50 employees to all the resources and roles, you can set up an access package containing the SharePoint site, Group, and the specific Microsoft Entra roles. Then, you can configure the access package to have managers as approvers, and share the link with the Support team.

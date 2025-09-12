@@ -2,15 +2,15 @@
 title: 'Attributes synchronized by Microsoft Entra Connect'
 description: Lists the attributes that are synchronized to Microsoft Entra ID.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: c2bb36e0-5205-454c-b9b6-f4990bcedf51
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---
@@ -414,7 +414,7 @@ These attributes for **user** are in addition to the other apps you have selecte
 | --- |:---:| --- |
 | :::no-loc text="domainFQDN"::: | X | Also called dnsDomainName. For example, contoso.com. |
 | :::no-loc text="domainNetBios"::: | X | Also called netBiosName. For example, CONTOSO. |
-| :::no-loc text="msDS-KeyCredentialLink"::: | X | Once the user is enrolled in Windows Hello for Business. |  |
+| :::no-loc text="msDS-KeyCredentialLink"::: | X | Once the user is enrolled in Windows Hello for Business. |
 
 ## Exchange hybrid writeback
 These attributes are written back from Microsoft Entra ID to on-premises Active Directory when you select to enable **Exchange hybrid**. Depending on your Exchange version, fewer attributes might be synchronized.

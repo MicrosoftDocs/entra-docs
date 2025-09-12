@@ -2,7 +2,7 @@
 title: Authentication vs. authorization
 description: Understand the fundamentals of authentication, authorization, and how the Microsoft identity platform simplifies these processes for developers.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom:  scenarios:getting-started
 ms.date: 03/21/2025

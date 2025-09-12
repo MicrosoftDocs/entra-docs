@@ -2,13 +2,13 @@
 title: 'Introduction to Microsoft Entra Connect V2'
 description: Learn about the next version of Microsoft Entra Connect.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.collection: has-adal-ref
 ---
 

@@ -2,7 +2,7 @@
 title: Understanding the app manifest (Azure AD Graph format)
 description: Describes the Microsoft Entra app manifest, which represents an application's identity configuration in a Microsoft Entra tenant.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom:
 ms.date: 04/15/2025

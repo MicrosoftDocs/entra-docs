@@ -6,7 +6,7 @@ ms.author: owinfrey
 manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: conceptual
+ms.topic: article
 ms.date: 06/25/2025
 ms.custom: sfi-image-nochange
 ---
@@ -766,7 +766,7 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 
 Allows you to remove all access package assignments for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
-You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+You're able to customize the task name, description, and whether or not access package assignments are removed immediately, or after a certain amount of days  for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/remove-all-access-package-assignment-user-task.png" alt-text="Screenshot of the remove all user access package assignment task.":::
 
 For Microsoft Graph, the parameters for the **Remove all access package assignments for user** task are as follows:
@@ -777,6 +777,7 @@ For Microsoft Graph, the parameters for the **Remove all access package assignme
 |displayName     |  Remove all access package assignments for user (Customizable by user)        |
 |description     |  Remove all access packages assigned to the user (Customizable by user)        |
 |taskDefinitionId     |   42ae2956-193d-4f39-be06-691b8ac4fa1d      |
+|arguments     |  Argument contains a name parameter that is the "daysUntilExpiration", and a value parameter that is the days until expiration of all access package assignments for the user.   |
 
 Example of usage within the workflow:
 
@@ -788,8 +789,21 @@ Example of usage within the workflow:
     "displayName": "Remove all access package assignments for user",
     "isEnabled": true,
     "taskDefinitionId": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
-    "arguments": []
-}
+    "arguments": [
+        {
+             "description": "Remove all access packages assigned to the user",
+            "displayName": "Remove all access package assignments for user",
+            "id": "42ae2956-193d-4f39-be06-691b8ac4fa1d",
+            "version": 1,
+            "parameters": [
+                {
+                    "name": "daysUntilExpiration",
+                    "values": [],
+                    "valueType": "string"
+                }
+            ]
+        }
+    ]
 ```
 
 

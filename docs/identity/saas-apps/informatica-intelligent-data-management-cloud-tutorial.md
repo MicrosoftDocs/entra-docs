@@ -3,7 +3,7 @@ title: Configure Informatica Intelligent Data Management Cloud for Single sign-o
 description: Learn how to configure single sign-on between Microsoft Entra ID and Informatica Intelligent Data Management Cloud.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

@@ -1,14 +1,14 @@
 ---
 title: How to customize a synchronization rule in Microsoft Entra Connect'
 description: Learn how to use the synchronization rule editor to edit or create a new synchronization rule.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 

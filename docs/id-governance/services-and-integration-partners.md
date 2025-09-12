@@ -5,7 +5,7 @@ author: markwahl-msft
 manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.topic: conceptual
+ms.topic: article
 ms.date: 6/12/2023
 ms.author: mwahl
 ms.reviewer: mwahl

@@ -3,7 +3,7 @@ title: System-preferred multifactor authentication (MFA)
 description: Learn how to use system-preferred multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/19/2025
 ms.author: justinha
 author: justinha

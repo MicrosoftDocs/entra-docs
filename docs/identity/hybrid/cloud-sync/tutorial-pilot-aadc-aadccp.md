@@ -1,13 +1,13 @@
 ---
 title: Tutorial - Migrate to Microsoft Entra Cloud Sync for a Synced Active Directory Forest
 description: Learn how to migrate to Microsoft Entra Cloud Sync for a synced Active Directory forest.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: tutorial
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 

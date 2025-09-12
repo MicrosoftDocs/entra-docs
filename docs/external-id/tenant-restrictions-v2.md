@@ -265,10 +265,9 @@ Suppose you use tenant restrictions to block access by default, but you want to 
    > User granularity isn't supported with Microsoft accounts, so the **Select &lt;organization&gt; users and groups** capability isn't available. For other organizations, you could choose **Select &lt;organization&gt; users and groups**, and then perform these steps:
    >
    > 1. Select **Add external users and groups**.
-   > 1. On the **Select** pane, enter the username or group name in the search box.
-   > 1. Select the user or group in the search results.
-   > 1. If you want to add more, select **Add** and repeat these steps.
-   > 1. When you finish selecting the users and groups that you want to add, select **Submit**.
+   > 1. In the **Add external user or group id** pane, type the object ID of the user or group you want to add.
+   > 1. In the right dropdown, select whether it is a user or group.
+   > 1. If you want to add more, select **Add** and repeat these steps. When you're done entering the users and groups you want to add, select **Submit**.
 
 1. Select the **External applications** tab. Under **Access status**, choose whether to allow or block access to external applications:
 
@@ -371,8 +370,8 @@ After you create a tenant restrictions v2 policy, you can enforce the policy on 
 
 When you enable tenant restrictions on a Windows device, corporate proxies aren't required for policy enforcement. Devices don't need to be Microsoft Entra ID managed to enforce tenant restrictions v2. Domain-joined devices that are managed with Group Policy are also supported.
 
-> [!NOTE]
-> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices. It doesn't protect the .NET stack, Chrome, or Firefox.
+> [!IMPORTANT]
+> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices and doesn't protect the .NET stack, Chrome, or Firefox. The Windows GPO solution provides a temporary solution in public preview until general availability of data plane support with Universal tenant restrictions in [Microsoft Entra Global Secure Access (preview)](/azure/global-secure-access/overview-what-is-global-secure-access).
 
 #### Use Group Policy to deploy tenant restrictions
 

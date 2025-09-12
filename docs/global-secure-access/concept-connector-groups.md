@@ -4,7 +4,7 @@ description: Learn how Microsoft Entra private network connector groups work and
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/01/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted

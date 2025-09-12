@@ -3,7 +3,7 @@ title: Configure Descartes for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Descartes.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
@@ -68,7 +68,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
-1. If you want to configure **SP** initiated SSO, then perform the following step:
+1. If you want to configure **IdP** initiated SSO, then perform the following step:
 
     In the **Relay State** textbox, type the URL:
     `https://auth.gln.com/Welcome`

@@ -4,7 +4,7 @@ description: Use restricted management administrative units for more sensitive r
 author: barclayn
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: article
 ms.subservice: role-based-access-control
 ms.date: 06/04/2025
 ms.author: barclayn

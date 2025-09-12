@@ -3,7 +3,7 @@ title: Phone authentication methods
 description: Learn about using phone authentication methods in Microsoft Entra ID to help improve and secure sign-in events
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha

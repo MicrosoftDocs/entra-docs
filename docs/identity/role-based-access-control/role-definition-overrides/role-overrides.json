@@ -8,7 +8,7 @@
         "typos": "(NOT HANDLED) Common typos to fix in the documentation."
     },
     "roleDisplayNames": {
-        "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator TESTING 1 2 3"
+        "Azure AD Joined Device Local Administrator": "Microsoft Entra Joined Device Local Administrator"
     },
     "roleDescriptions": {
         "Can manage Azure DevOps organization policy and settings.": "Can manage Azure DevOps policies and settings.",
@@ -31,6 +31,12 @@
         "Create and delete all resources, and read and update standard properties in Microsoft Cloud App Security": "Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps",
         "Read and manage objects to enable on-premises directory synchronization": "Read standard on-premises directory synchronization information"
     },
+    "excludedResourceActions": [
+        {
+            "actionName": "microsoft.directory/bulkJobs/standard/read",
+            "reason": "Not ready for use."
+        }
+    ],
     "excludedRoles": [
         {
             "templateId": "9c094953-4995-41c8-84c8-3ebb9b32c93f",

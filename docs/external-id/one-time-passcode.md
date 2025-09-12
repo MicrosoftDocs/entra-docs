@@ -129,10 +129,6 @@ No. It’s easy to get [self-service sign-up in the context of External ID](self
 
 When we support the ability to disable Microsoft Account in the Identity providers settings (not available today), we strongly recommend you disable Microsoft Account and enable email one-time passcode. Then you should [reset the redemption status](reset-redemption-status.md) of existing guests with Microsoft accounts so that they can re-redeem using email one-time passcode authentication and use email one-time passcode to sign in going forward.
 
-**Regarding the change to enable email one-time-passcode by default, does this include SharePoint and OneDrive integration with Microsoft Entra B2B?**
-
-No, the global rollout of the change to enable email one-time passcode by default doesn't include enabling SharePoint and OneDrive integration with Microsoft Entra B2B by default.To learn how to enable or disable the integration of SharePoint and OneDrive with Microsoft Entra B2B for secure collaboration, see [SharePoint and OneDrive Integration with Microsoft Entra B2B](/sharepoint/sharepoint-azureb2b-integration).
-
 ## Next steps
 
 Learn about [Identity Providers for External ID](identity-providers.md), and how to reset [redemption status for a guest user](reset-redemption-status.md).

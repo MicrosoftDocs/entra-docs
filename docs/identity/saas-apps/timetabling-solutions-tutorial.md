@@ -7,7 +7,7 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 05/20/2025
+ms.date: 09/02/2025
 ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Timetabling Solutions so that I can control who has access to Timetabling Solutions, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -105,9 +105,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure Timetabling Solutions SSO
 
-In this section, you populate the relevant SSO values in the Timetabling Solutions Administration Console.
+In this section, you populate the relevant SSO values in the Timetabling Solutions Management Portal.
 
-1. In the [Administration Console](https://admin.timetabling.education/), select **5 Settings**, and then select the **SAML SSO** tab.
+1. In the [Management Portal](https://admin.timetabling.education/), select **5 Settings**, and then select the **SAML SSO** tab.
 1. Perform the following steps in the **SAML SSO** section:
  
     ![Screenshot for SSO settings.](./media/timetabling-solutions-tutorial/timetabling-configuration.png)
@@ -124,12 +124,11 @@ In this section, you populate the relevant SSO values in the Timetabling Solutio
     
     f. **Save** the settings. 
 
-
 ## Create Timetabling Solutions test user
 
-In this section, you create a user called Britta Simon in the Timetabling Solutions Administration Console. 
+In this section, you create a user called Britta Simon in the Timetabling Solutions Management Portal. 
 
-1. In the [Administration Console](https://admin.timetabling.education/), select **1 Manage Users**, and select **Add**.
+1. In the [Management Portal](https://admin.timetabling.education/), select **1 Manage Users**, and select **Add**.
 2. Enter the mandatory fields **First Name**, **Family Name** and **Email Address**. Add other appropriate values in the non-mandatory fields.
 3. Ensure **Online** is active in Status.
 4. Select **Save and Next**.

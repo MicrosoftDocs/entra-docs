@@ -45,6 +45,9 @@ When searching for an application, you can also specify specific filters, such a
 - **User account management** – The only option available is [automated provisioning](~/identity/app-provisioning/user-provisioning.md).
 - **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
 
+ > [!NOTE]
+ > In an [external tenant](/entra/external-id/customers/overview-customers-ciam), enterprise applications are supported, but the application gallery catalog is not available. To find and add enterprise applications in the external tenant, select **New application** > **Create your own application**, then type the name of the app in the search bar and select it from the list once it appears.
+
 ### Cloud platforms
 
 Applications that are specific to major cloud platforms, such as AWS, Google, or Oracle can be found by selecting the appropriate platform.

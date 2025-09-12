@@ -3,7 +3,7 @@ title: Self-service password reset policies
 description: Learn about the different Microsoft Entra self-service password reset policy options
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/15/2025
 ms.author: justinha
 author: justinha

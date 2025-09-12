@@ -2,7 +2,7 @@
 title: Create a REST API for a token issuance event in Azure Functions
 description: Learn how to use the Authentication events trigger for Azure Functions library to create a trigger function that uses the token issuance start event.  
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 05/04/2025

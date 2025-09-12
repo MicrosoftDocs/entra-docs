@@ -7,7 +7,7 @@ ms.topic: troubleshooting
 ms.date: 08/13/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: calebb
 ms.custom: sfi-image-nochange
 ---
@@ -15,19 +15,19 @@ ms.custom: sfi-image-nochange
 
 The [What If tool](what-if-tool.md) in Conditional Access is powerful when trying to understand why a policy was or wasn't applied to a user in a specific circumstance or if a policy would apply in a known state.
 
-The What If tool is located in the **Microsoft Entra admin center** > **Entra ID** > **Conditional Access** > **Policies** > **What If**.
+Find the What If tool in the **Microsoft Entra admin center** > **Entra ID** > **Conditional Access** > **Policies** > **What If**.
 
-![Conditional Access What If tool at default state](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-tool.png)
+![Screenshot of the Conditional Access What If tool at its default state.](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-tool.png)
 
 ## Gathering information
 
-The What If tool requires only a **User** or **Workload identity** to get started.
+The What If tool needs only a **User** or **Workload identity** to get started.
 
-The following additional information is optional but helps narrow the scope for specific cases.
+The following additional information is optional but helps narrow the scope for specific cases:
 
 * Cloud apps, actions, or authentication context
 * IP address
-* Country/Region
+* Country/region
 * Device platform
 * Client apps
 * Device state
@@ -40,9 +40,9 @@ This information can be gathered from the user, their device, or the Microsoft E
 
 ## Generating results
 
-Input the criteria gathered in the previous section and select **What If** to generate a list of results.
+Enter the criteria gathered in the previous section, and select **What If** to generate a list of results.
 
-At any point, you can select **Reset** to clear any criteria input and return to the default state.
+At any point, select **Reset** to clear any criteria input and return to the default state.
 
 ## Evaluating results
 
@@ -56,15 +56,15 @@ This list shows Conditional Access policies that wouldn't apply if the condition
 
 ## Use case
 
-Many organizations create policies based on network locations, permitting trusted locations and blocking locations where access shouldn't occur.
+Many organizations create policies based on network locations, allowing trusted locations and blocking locations where access isn't allowed.
 
-To validate that a configuration is appropriate, an administrator could use the What If tool to mimic access, from a location that should be allowed and from a location that should be denied.
+To validate that a configuration is appropriate, an admin can use the What If tool to mimic access from a location that should be allowed and from a location that should be denied.
 
-[![What If tool showing results with Block access](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png)](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png#lightbox)
+[![Screenshot of the What If tool showing results with Block access.](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png)](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png#lightbox)
 
-In this instance, the user would be blocked from accessing any cloud app on their trip to North Korea as Contoso blocked access from that location.
+In this instance, the user is blocked from accessing any cloud app on their trip to North Korea because Contoso blocks access from that location.
 
-This test could be expanded to incorporate other data points to narrow the scope.
+This test can be expanded to include other data points to narrow the scope.
 
 ## Related content
 

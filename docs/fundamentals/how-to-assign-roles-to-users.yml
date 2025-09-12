@@ -105,7 +105,7 @@ relatedContent:
   - text: Add or delete users
     url: ./add-users.md
   - text: Add or change profile information
-    url: ./how-to-manage-user-profile-info.yml
+    url: ./how-to-manage-user-profile-info.md
   - text: Add guest users from another directory
     url: ~/external-id/what-is-b2b.md
 

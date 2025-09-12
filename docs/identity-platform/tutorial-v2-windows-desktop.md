@@ -357,4 +357,4 @@ In addition to the access token that's used to call the Microsoft Graph API, aft
 Learn more about building desktop apps that call protected web APIs in our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Desktop app that calls web APIs](scenario-desktop-app-registration.md)
+> [Scenario: Desktop app that calls web APIs](scenario-desktop-app-configuration.md)

@@ -93,4 +93,4 @@ The activation process typically takes only a few minutes and then you can use y
 
 ## Next steps
 
-Now that you have Microsoft Entra ID P1 or P2, you can [customize your domain](add-custom-domain.yml), add your [corporate branding](./how-to-customize-branding.md), [create a tenant](create-new-tenant.md), and [add groups](./how-to-manage-groups.yml) and [users](./add-users.md).
+Now that you have Microsoft Entra ID P1 or P2, you can [customize your domain](add-custom-domain.md), add your [corporate branding](./how-to-customize-branding.md), [create a tenant](create-new-tenant.md), and [add groups](./how-to-manage-groups.yml) and [users](./add-users.md).

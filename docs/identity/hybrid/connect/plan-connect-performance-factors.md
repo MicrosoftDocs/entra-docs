@@ -2,15 +2,15 @@
 title: Factors influencing the performance of Microsoft Entra Connect
 description: This document explains how various factors influence the Microsoft Entra Connect provisioning engine. These factors help organizations to plan their Microsoft Entra Connect deployment to make sure it meets their sync requirements.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 tags: azuread
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.reviewer: martincoetzer
-ms.author: billmath
+ms.author: jomondi
 
 ---
 # Factors influencing the performance of Microsoft Entra Connect

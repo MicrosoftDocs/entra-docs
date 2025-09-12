@@ -4,7 +4,7 @@ description: Learn about the types of activities and events that are captured in
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ms.subservice: monitoring-health
 ms.date: 06/30/2025
 ms.author: sarahlipsey

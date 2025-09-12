@@ -4,7 +4,7 @@ description: View activity and audit activity history for group assignments in P
 author: barclayn
 manager: pmwongera
 ms.service: entra-id-governance
-ms.topic: article
+ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 12/16/2024
 ms.author: barclayn

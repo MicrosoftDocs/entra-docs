@@ -2,7 +2,7 @@
 title: "Tutorial: Prepare a web application for authentication"
 description: Learn how to create and prepare an ASP.NET Core application for authentication with the Microsoft identity platform, and secure it with a self-signed certificate.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 04/15/2025
 ms.service: identity-platform

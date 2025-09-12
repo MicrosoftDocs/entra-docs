@@ -2,16 +2,16 @@
 title: 'Microsoft Entra Connect Sync: Understanding the architecture - Azure'
 description: This topic describes the architecture of Microsoft Entra Connect Sync and explains the terms used.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 
 ms.assetid: 465bcbe9-3bdd-4769-a8ca-f8905abf426d
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---

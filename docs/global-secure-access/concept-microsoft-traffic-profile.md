@@ -4,7 +4,7 @@ description: Learn about the capabilities and traffic handling in the Microsoft 
 author: alexpav
 ms.author: alexpav
 manager: sineado
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/11/2024
 ms.service: global-secure-access
 ms.reviewer: katabish

@@ -3,7 +3,7 @@ title: Configure Forcepoint Cloud Security Gateway - User Authentication for Sin
 description: Learn how to configure single sign-on between Microsoft Entra ID and Forcepoint Cloud Security Gateway - User Authentication.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

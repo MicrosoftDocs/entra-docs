@@ -5,7 +5,7 @@ author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-permissions-management
 
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/01/2025
 ms.author: jfields
 ---

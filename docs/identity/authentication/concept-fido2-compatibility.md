@@ -4,7 +4,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: article
 ms.date: 06/09/2025
 
 author: justinha

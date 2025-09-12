@@ -5,7 +5,7 @@ author: gargisinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: best-practice
 ms.date: 02/14/2023
 ms.author: gasinh
 ms.reviewer: martinco

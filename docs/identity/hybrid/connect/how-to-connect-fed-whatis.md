@@ -2,15 +2,15 @@
 title: Microsoft Entra Connect and federation
 description: This page is the central location for all documentation regarding AD FS operations that use Microsoft Entra Connect.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: f9107cf5-0131-499a-9edf-616bf3afef4d
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---

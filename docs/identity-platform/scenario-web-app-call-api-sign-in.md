@@ -2,11 +2,12 @@
 title: Remove accounts from the token cache on sign-out
 description: Learn how to remove accounts from the token cache during global sign-out in web apps that call web APIs using the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: how-to
 ms.custom:
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.

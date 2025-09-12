@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: best-practice
 ms.date: 05/21/2025
 ms.author: gasinh
 ms.custom: sfi-ga-nochange

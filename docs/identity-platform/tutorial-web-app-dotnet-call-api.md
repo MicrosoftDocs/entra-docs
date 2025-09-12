@@ -2,7 +2,7 @@
 title: "Tutorial: Test an ASP.NET Core web app that signs in users"
 description: Learn how to call the Microsoft Graph web API, sign-in, and display the profile information of the logged-in user
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 01/18/2024
 ms.service: identity-platform

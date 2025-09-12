@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: access-reviews
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/18/2025
 ms.author: owinfrey
 ---
