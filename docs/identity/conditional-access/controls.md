@@ -4,7 +4,7 @@ description: Learn how custom controls in Microsoft Entra Conditional Access wor
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 12/05/2024
+ms.date: 09/12/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
@@ -13,18 +13,14 @@ ms.custom: sfi-image-nochange
 ---
 # Custom controls (preview)
 
-Custom controls are a preview capability of the Microsoft Entra ID. When using custom controls, your users are redirected to a compatible service to satisfy authentication requirements outside of Microsoft Entra ID. To satisfy this control, a user's browser is redirected to the external service, performs any required authentication, and is then redirected back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user was successfully authenticated or validated, the user continues in the Conditional Access flow.
+Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, users are redirected to a compatible service to meet authentication requirements outside of Microsoft Entra ID. To meet this control, a user's browser redirects to the external service, performs any required authentication, and then redirects back to Microsoft Entra ID. Microsoft Entra ID verifies the response and, if the user is successfully authenticated or validated, the user continues in the Conditional Access flow.
 
 > [!NOTE]
-> As Nitika Gupta mentioned in her blog post [Public preview: External authentication methods in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-external-authentication-methods-in-microsoft/ba-p/4078808):
+> As mentioned in the blog post [Public preview: External authentication methods in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-external-authentication-methods-in-microsoft/ba-p/4078808):
 >
-> ...External authentication methods are the replacement of custom controls, and they provide several benefits over the custom controls approach. These include: 
-> 
-> 1. External authentication method integration, which uses industry standards and supports an open model 
-> 1. External authentication methods are managed the same way as Entra methods 
-> 1. External authentication methods are supported for a wide range of Entra ID use cases (including PIM activation)
+> External authentication methods are the replacement of custom controls, and they provide several benefits over the custom controls approach.
 
-For more information, see the article [Manage an external authentication method in Microsoft Entra ID (Preview)](../authentication/how-to-authentication-external-method-manage.md).
+For more information, see [Manage an external authentication method in Microsoft Entra ID (Preview)](../authentication/how-to-authentication-external-method-manage.md).
 
 ## Creating custom controls
 
@@ -40,29 +36,29 @@ For more information, see the article [Manage an external authentication method 
 > - Cross-tenant trusts
 > - Joining devices to Microsoft Entra ID.
 
-Custom Controls works with a limited set of approved authentication providers. To create a custom control, you should first contact the provider that you wish to utilize. Each non-Microsoft provider has its own process and requirements to sign up, subscribe, or otherwise become a part of the service, and to indicate that you wish to integrate with Conditional Access. At that point, the provider gives you a block of data in JSON format. This data allows the provider and Conditional Access to work together for your tenant, creates the new control and defines how Conditional Access can tell if your users have successfully performed verification with the provider.
+Custom controls work with a limited set of approved authentication providers. To create a custom control, first contact the provider you want to use. Each non-Microsoft provider has its own process and requirements to sign up, subscribe, or join the service, and to indicate that you want to integrate with Conditional Access. At that point, the provider gives you a block of data in JSON format. This data allows the provider and Conditional Access to work together for your tenant, creates the new control and defines how Conditional Access can tell if your users have successfully performed verification with the provider.
 
-Copy the JSON data and then paste it into the related textbox. Don't make any changes to the JSON unless you explicitly understand the change you're making. Making any change could break the connection between the provider and Microsoft and potentially lock you and your users out of your accounts.
+Copy the JSON data and paste it into the related textbox. Don't change the JSON unless you fully understand the change you're making. Changing the JSON might break the connection between the provider and Microsoft, potentially locking you and your users out of your accounts.
 
-The option to create a custom control is in the **Manage** section of the **Conditional Access** page.
+The option to create a custom control is located in the **Manage** section of the **Conditional Access** page.
 
 ![Custom controls interface in Conditional Access](./media/controls/custom-controls-conditional-access.png)
 
-Clicking **New custom control** opens a blade with a textbox for the JSON data of your control.  
+Selecting **New custom control** opens a blade with a textbox for the JSON data of your control.  
 
 ![New custom control](./media/controls/new-custom-controls-conditional-access.png)
 
 ## Deleting custom controls
 
-To delete a custom control, you must first ensure that it isn't being used in any Conditional Access policy. Once complete:
+To delete a custom control, ensure that it isn't being used in any Conditional Access policy. After that:
 
-1. Go to the Custom controls list
-1. Select …  
+1. Go to the Custom controls list.
+1. Select … .
 1. Select **Delete**.
 
 ## Editing custom controls
 
-To edit a custom control, you must delete the current control and create a new control with the updated information.
+To edit a custom control, delete the current control and create a new one with the updated information.
 
 ## Known limitations
 
