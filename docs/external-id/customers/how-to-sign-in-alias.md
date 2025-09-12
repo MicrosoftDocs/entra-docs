@@ -18,7 +18,7 @@ ms.custom: it-pro
 
 You can enable users who sign in with a local account (email and password) to sign in with an alias or username in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier—such as a customer ID, membership ID, insurance number, or frequent flyer number or any other unique identifier.
 
-:::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username login option in the Microsoft Entra admin center.":::
+:::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option in the Microsoft Entra admin center.":::
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ To enable username as a sign-in identifier, you must first enable the sign-in id
 
    :::image type="content" source="media/how-to-sign-in-alias/enable-username.png" alt-text="Screenshot of enabling username in the Sign-in identifiers option in the Microsoft Entra admin center.":::
 
-You can also validate values of username against a custom regular expression. To do this, select **Customize** to open a modal window where you can specify up to two regular expressions. There is no validation mechanism for custom regular expressions beyond ensuring they are not in the format of an email address. Authentication may fail at runtime if the provided value does not match the regex or if the regex itself is invalid.
+You can also validate values of username against a custom regular expression. To do this, select **Customize** to open a modal window where you can specify up to two regular expressions. There's no validation mechanism for custom regular expressions beyond ensuring they aren't in the format of an email address. Authentication may fail at runtime if the provided value doesn't match the regex or if the regex itself is invalid.
 
    :::image type="content" source="media/how-to-sign-in-alias/enable-custom-username.png" alt-text="Screenshot of enabling custom username in the Sign-in identifiers option in the Microsoft Entra admin center.":::
 
@@ -164,9 +164,9 @@ Content-type: application/json
 
 You can test signing in with the email address and username you assigned to the user you created using the [Run user flow](how-to-test-user-flows) feature.
 
-The population of the `identities[]` property on a user object is not enforced by the Microsoft Entra sign-in identifiers policy. While administrators can assign values to a user’s `identities[]` property, authentication is determined by the configured sign-in identifier policy. In other words, if a sign-in type is specified for a user but is not enabled in the policy, the authentication attempt will fail at runtime.
+The population of the `identities[]` property on a user object isn't enforced by the Microsoft Entra sign-in identifiers policy. While administrators can assign values to a user’s `identities[]` property, authentication is determined by the configured sign-in identifier policy. In other words, if a sign-in type is specified for a user but isn't enabled in the policy, the authentication attempt fails at runtime.
 
-For example, a user might be assigned the username *User1234*, but if the **User Name** sign-in method is not enabled in the policy, the user will not be able to sign in using that username.   <!--- IT'S USER NAME ON THE UI --->
+For example, a user might be assigned the username *User1234*, but if the **User Name** sign-in method isn't enabled in the policy, the user won't be able to sign in using that username.   <!--- IT'S USER NAME ON THE UI --->
 
 ## Customize the sign-in page (optional)
 
@@ -184,9 +184,9 @@ You can customize the hint text of identifier field on the sign-in page via Comp
 
 1. Select **Review + save** to save your changes.
 
-### Customize and localize additional strings related to username
+### Customize and localize other strings related to username
 
-You can customize and localize additional strings related to an end user's experience of signing in with a username by uploading a language file.  For more information, see [Customize browser language for authentication experience](/entra/external-id/customers/how-to-customize-languages-customers).
+You can customize and localize additional strings related to an end user's experience of signing in with a username by uploading a language file. For more information, see [Customize browser language for authentication experience](/entra/external-id/customers/how-to-customize-languages-customers).
 
 
 ## Related content
