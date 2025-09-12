@@ -74,7 +74,7 @@ Finally, you need to test and validate your endpoint.
     :::image type="content" source="./media/scim-validator-tutorial/scim-validator-results.png" alt-text="Screenshot of SCIM Validator results page." lightbox="./media/scim-validator-tutorial/scim-validator-results.png":::
 
 1. Check validations performed by the SCIM Validator
-    1. [Validations performed by SCIM Validator - create user](./use-scim-to-build-users-and-groups-endpoints.md#validations-performed-by-scim-validator---create-user)
+    1. [Validations performed by SCIM Validator - create user](./use-scim-to-build-users-and-groups-endpoints.md#validations-performed-by-scim-validator-create-user)
 
 ## Using Expressions on SCIM Validator
 The SCIM Validator supports using expressions to generate desired values for attributes.
