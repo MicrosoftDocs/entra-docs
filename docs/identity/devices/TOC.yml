@@ -101,7 +101,7 @@
     href: troubleshoot-mac-sso-extension-plugin.md
   - name: Troubleshoot macOS PSSO on Mac
     href: troubleshoot-macos-platform-single-sign-on-extension.md
-  - name: Configure macOS PSSO to mee NIST/EO requirements
+  - name: Configure macOS PSSO to meet NIST and EO requirements
     href: macos-psso-deployment-eocustomers.md
   - name: Enterprise state roaming
     expanded: false
