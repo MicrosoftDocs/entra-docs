@@ -214,9 +214,9 @@ The **jwt.ms** test application uses the implicit flow. Enable implicit flow in 
 A claims mapping policy is used to select which attributes returned from the custom authentication extension are mapped into the token. To allow tokens to be augmented, you must explicitly enable the application registration to accept mapped claims:
 
 1. In your *My Test application* registration, under **Manage**, select **Manifest**.
-1. In the manifest, locate the `acceptMappedClaims` attribute, and set the value to `true`.
-1. Set the `requestedAccessTokenVersion` to `2`.
-1. Select **Save** to save the changes.
+2. In the manifest, locate the `acceptMappedClaims` attribute under `api` object, and set the value to `true`.
+3. Set the `requestedAccessTokenVersion` to `2`.
+4. Select **Save** to save the changes.
 
 The following JSON snippet demonstrates how to configure these properties.
 
@@ -228,6 +228,9 @@ The following JSON snippet demonstrates how to configure these properties.
     ...
 }
 ```
+
+> [!IMPORTANT]
+> Until **AAD Graph App Manifest (Deprecating Soon)** is supported, you should also set `acceptMappedClaims` and `requestedAccessTokenVersion` in root object for this manifest kind. To know more go to [App manifest](https://learn.microsoft.com/en-us/entra/identity-platform/reference-microsoft-graph-app-manifest)
 
 > [!WARNING]
 > Do not set `acceptMappedClaims` property to `true` for multitenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
