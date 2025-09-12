@@ -30,35 +30,43 @@ You can enable users who sign in with a local account (email and password) to si
 ## Enable username in sign-in identifier policy
 
 To enable username as a sign-in identifier, you must first enable the sign-in identifier policy in the Microsoft Entra admin center. Then you can create users with both email address and username as sign-in identifiers. 
+<!--- NEED TO CLARIFY THE ROLE --->
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator). <!--- NEED TO CLARIFY --->
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Entra ID** > **External Identities** then select **Sign-in identifiers**.
 
    :::image type="content" source="media/how-to-sign-in-alias/sign-in-identifiers-option.png" alt-text="Screenshot of the Sign-in identifiers option in the Microsoft Entra admin center.":::
 
 1. On the **Sign-in identifiers** page, enable **Username** as a sign-in identifier.
-1. Select **Save** at the top of the page.
 
    :::image type="content" source="media/how-to-sign-in-alias/enable-username.png" alt-text="Screenshot of enabling username in the Sign-in identifiers option in the Microsoft Entra admin center.":::
 
-You can also validate values of username against a custom regular expression. To do this, select **Customize** to open a modal window where you can specify up to two regular expressions. There's no validation mechanism for custom regular expressions beyond ensuring they aren't in the format of an email address. Authentication may fail at runtime if the provided value doesn't match the regex or if the regex itself is invalid.
+1. Select **Save** at the top of the page.
 
-   :::image type="content" source="media/how-to-sign-in-alias/enable-custom-username.png" alt-text="Screenshot of enabling custom username in the Sign-in identifiers option in the Microsoft Entra admin center.":::
+### Enable custom username validation (optional)
 
-1. Select **Save** at the bottom of the modal window and then at the top of the page.
+You can also validate usernames against a custom regular expression. In the modal window you can specify up to two regular expressions. There’s no built-in validation for custom regular expressions, apart from ensuring they don’t match the format of an email address. Authentication may fail at runtime if the provided value doesn’t match the regex or if the regex itself is invalid.
 
-## Create users with both email address and username as sign-in identifiers
+1. To enable custom username validation select **Customize** and **Enable** and specify the regex patterns.
 
-You can create users with both email address and username as sign-in identifiers using either the Microsoft Graph API or the Microsoft Entra admin center.
+    :::image type="content" source="media/how-to-sign-in-alias/enable-custom-username.png" alt-text="Screenshot of enabling custom username in the Sign-in identifiers option in the Microsoft Entra admin center.":::
 
-### Create users with email address & username as sign-in identifiers in the Microsoft Entra admin center
+1. Select **Save** at the bottom of the modal window.
+
+## Create users with username as sign-in identifiers
+
+You can create users with both email address and username as sign-in identifiers using either the Microsoft Entra admin center or the Microsoft Graph API.
+
+### Microsoft Entra admin center
+
+<!--- IS THERE A LIMIT? --->
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Entra ID** > **Users**.
 1. Select **+ New user** > **Create external user**.
-1. Next to **Identities**, you can select **Email** or **User Name** from the dropdown. You can select either or both options.  <!--- IS THERE A LIMIT? --->
+1. Next to **Identities**, you can select **Email** or **User Name** from the dropdown. You can select either or both options.  
 
    :::image type="content" source="media/how-to-sign-in-alias/sign-in-method-dropdown.png" alt-text="Screenshot of the Sign-in method dropdown in the Create external user pane in the Microsoft Entra admin center.":::
 
@@ -66,15 +74,15 @@ You can create users with both email address and username as sign-in identifiers
 
    :::image type="content" source="media/how-to-sign-in-alias/email-attribute.png" alt-text="Screenshot of the Email attribute field in the Create external user pane in the Microsoft Entra admin center.":::
 
-1. Select **Review + Create** to create the user.
+1. Select **Review + create** to create the user.
 
-### Create users with email address & username as sign-in identifiers with Graph API
+### Microsoft Graph API
 
-You can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to add a username to an existing user.
+After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to add a username to an existing user.
 
 #### Request
 
-The following example shows a request.
+The following example shows how to create a user with both email address and username as sign-in identifiers.
 
 ```http
 POST https://graph.microsoft.com/v1.0/users
@@ -106,11 +114,11 @@ Content-type: application/json
 
 You can also add a username to an existing user.
 
-1. For this scenario, you must first get a user account using a [sign-in identifier](/graph/api/user-list#example-2-get-a-user-account-using-a-sign-in-name).  You must use `$filter` to get the user object and you must `$select` to retrieve the `id` and `identities[]` properties.
+For this scenario, you must first get a user account using a [sign-in identifier](/graph/api/user-list#example-2-get-a-user-account-using-a-sign-in-name).  You must use `$filter` to get the user object and you must `$select` to retrieve the `id` and `identities[]` properties.
 
 #### Request
 
-The following example shows a request.
+The following example shows how to get a user account using a sign-in identifier.
 
 ```http
 GET https://graph.microsoft.com/v1.0/users?$select=displayName,id&$filter=identities/any(c:c/issuerAssignedId eq 'dylan@woodgrove.com' and c/issuer eq 'contoso.onmicrosoft.com')
@@ -118,7 +126,7 @@ GET https://graph.microsoft.com/v1.0/users?$select=displayName,id&$filter=identi
 
 #### Response
 
-The following example shows the response.
+The following example shows the response with the user details.
 
 ```http
 HTTP/1.1 200 OK
@@ -134,14 +142,14 @@ Content-type: application/json
 }
 ```
 
-1. Update the `identities[]` property of the user. Note: you must replace the entire `identities[]` property.
+Once you have the user details from the query above, you can update the `identities[]` property of the user. You must replace the entire `identities[]` property of the user.
 
 #### Request
 
-The following example shows a request.
+The following example shows how to update the `identities[]` property of the user to add a username.
 
 ```http
-POST https://graph.microsoft.com/v1.0/users/87d349ed-44d7-43e1-9a83-5f2406dee5bd
+POST https://graph.microsoft.com/v1.0/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Content-type: application/json
  
 {
@@ -149,12 +157,12 @@ Content-type: application/json
         {
             "signInType": "emailAddress",
             "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "adelev@adatum.com"
+            "issuerAssignedId": "dylan@woodgrove.com""
         },
         {
             "signInType": "username",
             "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "adelev123"
+            "issuerAssignedId": "dylan123"
         }
     ]
 }
@@ -162,15 +170,14 @@ Content-type: application/json
 
 ## Test signing in with the alias or username
 
-You can test signing in with the email address and username you assigned to the user you created using the [Run user flow](how-to-test-user-flows) feature.
+You can test signing in with the email address and username you assigned to the user you created using the [Run user flow](how-to-test-user-flows.md) feature.
 
-The population of the `identities[]` property on a user object isn't enforced by the Microsoft Entra sign-in identifiers policy. While administrators can assign values to a user’s `identities[]` property, authentication is determined by the configured sign-in identifier policy. In other words, if a sign-in type is specified for a user but isn't enabled in the policy, the authentication attempt fails at runtime.
-
-For example, a user might be assigned the username *User1234*, but if the **User Name** sign-in method isn't enabled in the policy, the user won't be able to sign in using that username.   <!--- IT'S USER NAME ON THE UI --->
+> [!NOTE]
+> The `identities[]` property on a user object isn’t enforced by the Microsoft Entra sign-in identifiers policy. While administrators can assign values to a user’s `identities[]` property, authentication is determined by the configured sign-in identifier policy. In other words, if a sign-in type is specified for a user but isn't enabled in the policy, the authentication attempt fails at runtime. For example, a user might be assigned the username *User1234*, but if the username sign-in method isn't enabled in the policy, the user won't be able to sign in using that username.  
 
 ## Customize the sign-in page (optional)
 
-### Customize the hint text of identifier field on the sign-in page
+### Customize the hint text of the identifier field on the sign-in page
 
 You can customize the hint text of identifier field on the sign-in page via Company Branding. 
 
