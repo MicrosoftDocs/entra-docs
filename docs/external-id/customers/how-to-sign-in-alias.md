@@ -16,7 +16,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-You can enable users who sign in with a local account (email and password) to sign in with an alias or username in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier—such as a customer ID, membership ID, insurance number, or frequent flyer number or any other unique identifier.
+You can enable users who sign in with a local account (email and password) to sign in with an alias or username in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
 
 :::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option in the Microsoft Entra admin center.":::
 
@@ -112,9 +112,7 @@ Content-type: application/json
 
 ### Add a username to an existing user
 
-You can also add a username to an existing user.
-
-For this scenario, you must first get a user account using a [sign-in identifier](/graph/api/user-list#example-2-get-a-user-account-using-a-sign-in-name).  You must use `$filter` to get the user object and you must `$select` to retrieve the `id` and `identities[]` properties.
+You can also add a username to an existing user. In this scenario, you first need to retrieve a user account using a sign-in identifier. Use `$filter` to get the user object, and `$select` to return the id and `identities[]` properties.
 
 #### Request
 
