@@ -21,26 +21,18 @@ Even smaller organizations can protect their environments by implementing strict
 ## Zero Trust security recommendations
 
 ### Permissions to create new tenants are limited to the Tenant Creator role
-[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
-
 [!INCLUDE [21787](../includes/secure-recommendations/21787.md)]
 
 ### Allow/Deny lists of domains to restrict external collaboration are configured
 [!INCLUDE [21874](../includes/secure-recommendations/21874.md)]
 
 ### Guests are not assigned high privileged directory roles
-[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
-
 [!INCLUDE [22128](../includes/secure-recommendations/22128.md)]
 
 ### Guests can't invite other guests
-[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
-
 [!INCLUDE [21791](../includes/secure-recommendations/21791.md)]
 
 ### Guests have restricted access to directory objects
-[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
-
 [!INCLUDE [21792](../includes/secure-recommendations/21792.md)]
 
 ### App instance property lock is configured for all multitenant applications
@@ -56,8 +48,6 @@ Even smaller organizations can protect their environments by implementing strict
 [!INCLUDE [21823](../includes/secure-recommendations/21823.md)]
 
 ### Outbound cross-tenant access settings are configured
-[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
-
 [!INCLUDE [21790](../includes/secure-recommendations/21790.md)]
 
 ### Guests don't own apps in the tenant
