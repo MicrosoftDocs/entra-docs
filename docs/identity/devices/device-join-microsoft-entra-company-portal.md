@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As a user, I want to register my Mac device with macOS Platform single sign-on using Company Portal. I need to know the differences between the three methods of registration, secure enclave, smart card, and password, and how to register my device with each method.
 ---
 
-# Join a Mac device with Microsoft Entra ID using Company Portal (preview)
+# Join a Mac device with Microsoft Entra ID using Company Portal
 
 In this tutorial, you learn how to register a Mac device with macOS Platform Single Sign-on (PSSO) using Company Portal and the Intune MDM enrollment with Microsoft Entra Join. There are three methods in which you can register a Mac device with PSSO, secure enclave, smart card, or password. We recommend using secure enclave or smart card for the best passwordless experience, however it's important to note that this method will be preset by your company administrator using Microsoft Intune.
 
