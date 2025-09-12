@@ -201,6 +201,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/troubleshoot-conditional-access-what-if.md",
+      "redirect_url": "/entra/identity/conditional-access/what-if-tool",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-faq.yml",
       "redirect_url": "/entra/identity/conditional-access/agent-optimization",
       "redirect_document_id": false
