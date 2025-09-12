@@ -36,7 +36,7 @@ Customizable policies and MFA enhance security by reducing unauthorized access t
 
 |Feature Name	|Description |
 |---------------|------------| 
-|Conditional Access policies	    |Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. [Learn more](~/identity/conditional-access/overview.md)   |
+|Conditional Access policies	    |Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. See [What is Conditional Access?](~/identity/conditional-access/overview.md) and [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md) for more information about Conditional Access.   |
 |Multifactor authentication (MFA)	|MFA methods configured to ensure only legitimate users can access applications, significantly reducing the risk of unauthorized access. [Learn more](concept-multifactor-authentication-customers.md)     |
 
 ## Related content
