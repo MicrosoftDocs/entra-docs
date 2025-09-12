@@ -647,6 +647,7 @@ An external identity B2B guest user can use CBA on the home tenant. If the cross
 
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)
 - [Set up Microsoft Entra CBA](how-to-certificate-based-authentication.md)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
 - [Microsoft Entra CBA on iOS devices](concept-certificate-based-authentication-mobile-ios.md)
 - [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
 - [Windows smart card sign-in by using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
