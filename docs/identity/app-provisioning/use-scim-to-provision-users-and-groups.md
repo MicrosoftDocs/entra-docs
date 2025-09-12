@@ -1482,7 +1482,7 @@ When using the OAuth Code Grant flow, it's required that you support a model whe
 1. When the provisioning cycle begins, the service checks if the current access token is valid and exchanges it for a new token if needed. The access token is provided in each request made to the app and the validity of the request is checked before each request.
 
 > [!NOTE]
-> While it's not possible to setup OAuth on the non-gallery applications, you can manually generate an access token from your authorization server and input it as the secret token to a non-gallery application. This allows you to verify compatibility of your SCIM server with the Microsoft Entra provisioning service before onboarding to the app gallery, which does support the OAuth code grant.  
+> While it's not possible to set up OAuth on the non-gallery applications, you can manually generate an access token from your authorization server and input it as the secret token to a non-gallery application. This allows you to verify compatibility of your SCIM server with the Microsoft Entra provisioning service before onboarding to the app gallery, which does support the OAuth code grant.  
 
 **Long-lived OAuth bearer tokens:** If your application doesn't support the OAuth authorization code grant flow, instead generate a long lived OAuth bearer token that an administrator can use to set up the provisioning integration. The token should be perpetual, or else the provisioning job is [quarantined](application-provisioning-quarantine-status.md) when the token expires.
 
