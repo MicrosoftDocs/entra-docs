@@ -75,6 +75,7 @@ Please ensure below URLs are exempted from TLS interception/inspection so that P
 - app-site-association.networking.apple
 - login.microsoftonline.com
 - login.microsoft.com
+- login.windows.net
 - sts.windows.net
 - login.partner.microsoftonline.cn(*)
 - login.chinacloudapi.cn(*)
