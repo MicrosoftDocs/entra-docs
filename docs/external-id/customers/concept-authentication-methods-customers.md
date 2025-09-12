@@ -39,6 +39,14 @@ Email sign-up is enabled by default in your local account identity provider sett
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email with password** is the default option.
 
+## Username or alias sign-in (preview)
+
+You can enable users who sign in with a local account (email and password) to sign in with an [alias or username](how-to-sign-in-alias.md) in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
+
+When you enable username sign-in, users can choose to sign in with either their email address or their username. If they choose to sign in with their username, they enter the username and password on the sign-in page.
+
+   :::image type="content" source="media/concept-authentication-methods-customers/username-sign-in.png" alt-text="Screenshots of the username sign-in screens." border="false":::
+
 ## Email with one-time passcode sign-in
 
 Email with one-time passcode is an option in your local account identity provider settings. With this option, the user signs in with a temporary passcode instead of a stored password each time they sign in.
