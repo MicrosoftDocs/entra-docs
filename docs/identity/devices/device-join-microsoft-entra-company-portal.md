@@ -1,5 +1,5 @@
 ---
-title: Join a Mac device with Microsoft Entra ID using Company Portal (preview)
+title: Join a Mac device with Microsoft Entra ID using Company Portal
 description: How users can set up a new macOS with macOS Platform single sign-on extension, using Company Portal.
 ms.service: entra-id
 ms.subservice: devices
@@ -8,7 +8,7 @@ ms.date: 12/19/2024
 ms.author: cwerner
 author: cilwerner
 manager: pmwongera
-ms.reviewer: brianmel
+ms.reviewer: jploegert
 ms.custom: sfi-image-nochange
 # Customer intent: As a user, I want to register my Mac device with macOS Platform single sign-on using Company Portal. I need to know the differences between the three methods of registration, secure enclave, smart card, and password, and how to register my device with each method.
 ---
