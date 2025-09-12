@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 03/04/2025
+ms.date: 09/12/2025
 ms.custom: template-tutorial, sfi-image-nochange
 ms.reviewer: arvinh
 ai-usage: ai-assisted
@@ -72,6 +72,9 @@ Finally, you need to test and validate your endpoint.
 1. Continue to test your schema until all tests pass.
 
     :::image type="content" source="./media/scim-validator-tutorial/scim-validator-results.png" alt-text="Screenshot of SCIM Validator results page." lightbox="./media/scim-validator-tutorial/scim-validator-results.png":::
+
+1. Check validations performed by the SCIM Validator
+    1. [Validations performed by SCIM Validator - create user](./use-scim-to-build-users-and-groups-endpoints.md)
 
 ## Using Expressions on SCIM Validator
 The SCIM Validator supports using expressions to generate desired values for attributes.
