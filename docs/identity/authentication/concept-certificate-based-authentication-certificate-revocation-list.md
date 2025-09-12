@@ -29,7 +29,8 @@ A CRL works by providing a mechanism to check the validity of certificates used 
 
 - **Certificate Issuance:** When a certificate is issued by a CA, it is valid until its expiration date unless it is revoked earlier. Each certificate contains a public key and is signed by the CA.
 - **Revocation:** If a certificate needs to be revoked (for example, if  the private key is compromised or the certificate is no longer needed), the CA adds it to the CRL.
-- **CRL Distribution:** The CA publishes the CRL to a location accessible by clients, such as a web server or a directory service. The CRL is typically signed by the CA to ensure its integrity.
+- **CRL Distribution:** The CA publishes the CRL to a location accessible by clients, such as a web server or a directory service. The CRL is typically signed by the CA to ensure its integrity. If the CRL is not signed by the CA, a cryptography error [AADSTS2205015](./concept-certificate-based-authentication-certificate-revocation-list.md#crl-error-reference) is thrown and follow the steps in [FAQ](./concept-certificate-based-authentication-certificate-revocation-list.md#frequently-asked-questions) to troubleshoot the issue.
+
 - **Client Check:** When a client presents a certificate for authentication, the system retrieves the CRL for each CA in the certificate chain from its published locations and checks for any revoked CAs. If any CRL location is unavailable, authentication fails because the system cannot verify the certificate’s revocation status.
 - **Authentication:** If the certificate is found in the CRL, the authentication attempt is rejected, and the client is denied access. If the certificate is not in the CRL, the authentication proceeds as normal.
 - **CRL Updates:** The CRL is updated periodically by the CA, and clients should ensure they have the latest version to make accurate decisions about certificate validity. The system does cache the CRL for a certain period to reduce network traffic and improve performance, but it does also check for updates regularly.
@@ -221,6 +222,22 @@ In the CBA Authentication methods policy, select **Configure** and then select *
 ### After a CRL endpoint is configured, end users can't sign in and they see "AADSTS500173: Unable to download CRL. Invalid status code Forbidden from CRL distribution point."
 
 When a problem prevents Microsoft Entra from downloading the CRL, the cause is often firewall restrictions. In most cases, you can resolve the issue by updating firewall rules to allow the required IP addresses so Microsoft Entra can successfully download the CRL. For more information, see [List of Microsoft IPAddress](/microsoft-365/enterprise/urls-and-ip-address-ranges#microsoft-365-unified-domains).
+
+### How do I find the CRL for a CA, or how do I troubleshoot the error "AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation"?
+
+Download the CRL and compare the CA certificate and the CRL information to validate that the `crlDistributionPoint` value is valid for the CA you want to add. You can configure the CRL to the corresponding CA by matching the CA's issuer subject key identifier (SKI) to the authority key identifier (AKI) of the CRL (CA Issuer SKI == CRL AKI).
+
+The following table and figure show how to map information from the CA certificate to the attributes of the downloaded CRL.
+
+| CA certificate info |= |Downloaded CRL info|
+|----|:-:|----|
+|Subject |=|Issuer |
+|Subject Key Identifier (SKI) |=|Authority Key Identifier (KeyID) |
+
+:::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Screenshot that compares CA certificate fields with CRL information.":::
+
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
+
 
 ## Next steps
 
