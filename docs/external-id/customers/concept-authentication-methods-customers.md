@@ -45,7 +45,7 @@ You can enable users who sign in with a local account (email and password) to si
 
 When you enable username sign-in, users can choose to sign in with either their email address or their username. If they choose to sign in with their username, they enter the username and password on the sign-in page.
 
-   :::image type="content" source="media/concept-authentication-methods-customers/username-sign-in.png" alt-text="Screenshots of the username sign-in screens." border="false":::
+   :::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option.":::
 
 ## Email with one-time passcode sign-in
 
