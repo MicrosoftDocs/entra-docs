@@ -100,6 +100,8 @@ Use the following settings to configure the on-premises Active Directory profile
             <string>CONTOSO.COM</string>
             <key>PayloadDisplayName</key>
             <string>Single Sign-On Extensions Payload for On-Premises</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.extensiblesso.1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5</string>
             <key>PayloadType</key>
             <string>com.apple.extensiblesso</string>
             <key>PayloadUUID</key>
@@ -179,6 +181,8 @@ Use the following settings to configure the Microsoft Entra ID Cloud Kerberos pr
             <string>KERBEROS.MICROSOFTONLINE.COM</string>
             <key>PayloadDisplayName</key>
             <string>Single Sign-On Extensions Payload for Microsoft Entra ID Cloud Kerberos</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.extensiblesso.00aa00aa-bb11-cc22-dd33-44ee44ee44ee</string>
             <key>PayloadType</key>
             <string>com.apple.extensiblesso</string>
             <key>PayloadUUID</key>
