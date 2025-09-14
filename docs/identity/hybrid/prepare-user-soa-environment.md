@@ -31,41 +31,40 @@ Example: In this article, you will migrate your user databases from IBM Db2 to S
 
 Once you've decided that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For more information on these factors, see: [Consideration for User SOA](user-source-of-authority-overview.md#consideration-for-user-soa).
 
-
 The flow for preparing for user SOA is as follows:
 
 
-## [HR](#tab/HR)
+## [1.HR](#tab/HR)
+
+Prep your HR system to Microsoft Entra ID flow for users in scope of SOA change, and then remove them from the flow. For more information, see: [Shift Your HR Integration To The Cloud](prepare-user-soa-environment.md#shift-your-hr-integration-to-the-cloud)
+
+
+
+
+## [2.MIM](#tab/MIM)
+
+If applicable, stop Microsoft Identity Manager to Active directory flow for users in scope of the SOA change. For more information, see: [Prepare your MIM setup](prepare-user-soa-environment.md#prepare-your-mim-setup).
+
+
+## [3.Sync](#tab/Sync)
 
 NNNN
 
----
-
-## [MIM](#tab/MIM)
-
-NNNN
 
 
----
-## [Sync](#tab/Sync)
-
-NNNN
-
----
-
-## [Active Directory](#tab/active-directory)
+## [4.Active Directory](#tab/active-directory)
 
 NNNNN
 
----
 
-## [SOA](#tab/SOA)
+
+## [5.SOA](#tab/SOA)
 
 NNNNN
 
----
 
-## [Validate](#tab/validate)
+
+## [6.Validate](#tab/validate)
 
 NNNNN
 
