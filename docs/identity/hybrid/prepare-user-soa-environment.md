@@ -31,7 +31,48 @@ Example: In this article, you will migrate your user databases from IBM Db2 to S
 
 Once you've decided that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For more information on these factors, see: [Consideration for User SOA](user-source-of-authority-overview.md#consideration-for-user-soa).
 
-This article walks you through how to prepare your environment for user SOA, and walks you through steps you take for synced users synced with Active Directory.
+
+The flow for preparing for user SOA is as follows:
+
+
+## [HR](#tab/HR)
+
+NNNN
+
+---
+
+## [MIM](#tab/MIM)
+
+NNNN
+
+
+---
+## [Sync](#tab/Sync)
+
+NNNN
+
+---
+
+## [Active Directory](#tab/active-directory)
+
+NNNNN
+
+---
+
+## [SOA](#tab/SOA)
+
+NNNNN
+
+---
+
+## [Validate](#tab/validate)
+
+NNNNN
+
+---
+
+
+This article walks you through what needs to be completed to prepare Microsoft Exchange, HR, and Microsoft Identity Manager environments before switching user SOA.
 
 ## Confirm your AD objects are ready to have their SOA changed 
 
