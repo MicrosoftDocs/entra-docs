@@ -48,25 +48,24 @@ If applicable, stop Microsoft Identity Manager to Active directory flow for user
 
 ## [3.Sync](#tab/Sync)
 
-NNNN
-
+Perform either an on-demand sync from Active Directory to Microsoft Entra ID for users in scope of SOA change, a bulk sync for multiple users, or wait for regular sync to complete.
 
 
 ## [4.Active Directory](#tab/active-directory)
 
-NNNNN
+Stop making changes in Active Directory.
 
 
 
 ## [5.SOA](#tab/SOA)
 
-NNNNN
+[Perform SOA switch](how-to-user-source-of-authority-configure.md) for selected objects.
 
 
 
 ## [6.Validate](#tab/validate)
 
-NNNNN
+Validate changes.
 
 ---
 
