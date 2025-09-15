@@ -462,7 +462,12 @@ Microsoft Security Copilot supports network traffic logs in Global Secure Access
 
 This enhancement provides an interactive method for analyzing network traffic logs, allowing users to obtain valuable insights without the need to write complex queries. Users can analyze user, device, and branch network usage, identify network issues, and detect threats or policy violations in real time. As a result, the investigation process is significantly streamlined and more effective. 
 
-This feature requires at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator), or [Global Secure Access Log Reader](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-log-reader). 
+Users assigned the following roles can use this feature:
+
+- [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
+- [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader)
+- [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
+- [Global Secure Access Log Reader](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-log-reader). 
 
 You will also need a [Microsoft Entra ID P1 or P2 license](/entra/id-protection/overview-identity-protection#license-requirements), an Entra Private Access License (for private access traffic), Entra Internet Access License (for general internet traffic outside Microsoft services). Your tenant must also have Global Secure Access configured and Microsoft Security Copilot enabled.
 
@@ -473,7 +478,7 @@ The following example prompts can be used to investigate network traffic logs in
 - *List all applications with high-risk scores accessed in the last 24 hours.*
 - *List all applications that user {user principal name} has accessed in the last 24 hours based on network traffic.*
 - *List of the top 10 accessed applications in the last week.*
-- *Show all cross-tenant traffic to tenant [tenant-id] in the last day.* 
+- *Show all cross-tenant traffic to tenant {Enter_Tenant_ID_Here} in the last day.* 
 
 ## See also
 
