@@ -55,7 +55,7 @@ Your application must be modernized, and you should use [cloud authentication](/
 
 ### Devices
 
-We recommend that customers migrate their devices to the cloud, and use a Microsoft Entra Joined Device setup in order to fully use user SOA capabilities. For groups, there’s no prerequisites around devices.  
+We recommend that customers migrate their devices to the cloud, and use a Microsoft Entra Joined Device setup in order to fully use user SOA capabilities. For groups, there’s no prerequisites around devices.
 
 ### Credentials
 
