@@ -130,7 +130,7 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
 
 ## Configuration scenarios
 
-### 1. Internet Access and Microsoft Access with Umbrella DNS security.
+### 1. Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Cisco Umbrella DNS security.
 
 
 #### Steps
