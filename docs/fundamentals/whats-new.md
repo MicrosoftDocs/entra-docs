@@ -24,6 +24,24 @@ This article provides information about the latest releases and change announcem
 
 ## August 2025
 
+### General Availability - Microsoft Entra ID Protection: Improved detection quality
+
+**Type:** New feature      
+**Service category:** Identity Protection     
+**Product capability:** Identity Security & Protection  
+
+Improvements have been made to Microsoft Entra ID Protection detections to increase detection quality by improving precision and reducing detection noise. This quarter’s improvements apply to the following detections:
+
+- [Anomalous token](../id-protection/concept-identity-protection-risks.md#anomalous-token-sign-in)
+- [Anonymous IP address](../id-protection/concept-identity-protection-risks.md#anonymous-ip-address)
+- [Impossible travel](../id-protection/concept-identity-protection-risks.md#impossible-travel)
+- [Password spray](../id-protection/concept-identity-protection-risks.md#password-spray)
+- [Unfamiliar sign-in properties](../id-protection/concept-identity-protection-risks.md#unfamiliar-sign-in-properties)
+
+Furthermore, changes have been made to better adjust the risk detections to passwordless scenarios.
+
+---
+
 ### Public preview - Lifecycle Workflows task now supports setting Access Package assignments expiration
 
 **Type:** New feature      

@@ -1,17 +1,31 @@
 ---
+title: Assign a managed identity to an application role using PowerShell
+description: Step-by-step instructions for assigning a managed identity access to another application's role using PowerShell.
+
 author: SHERMANOUKO
-ms.author: shermanouko
-ms.date: 03/14/2025
-ms.topic: include
+manager: CelesteDG
+
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.custom:
-  - devx-track-azurepowershell
+ms.topic: how-to
+ms.date: 09/09/2025
+ms.author: shermanouko
 ---
+
+# Assign an application role to a managed identity using PowerShell
+
+[!INCLUDE [introduction-section](./includes/assign-app-role-to-managed-identity-intro.md)]
+
+## Prerequisites
+
+- If you're unfamiliar with managed identities for Azure resources, see [Managed identity for Azure resources overview](./overview.md). 
+- Review the [difference between a system-assigned and user-assigned managed identity](/azure/logic-apps/authenticate-with-managed-identity).
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
 
 ## Assign a managed identity access to another application's app role using PowerShell
 
 To run the example scripts, you have two options:
+
 - Use the [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open using the **Try It** button on the top-right corner of code blocks.
 - Run scripts locally by installing the latest version of the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started).
 
@@ -21,34 +35,35 @@ To run the example scripts, you have two options:
 
     **For a system-assigned managed identity**, you can find the object ID on the Azure portal on the resource's **Identity** page. You can also use the following PowerShell script to find the object ID. You'll need the resource ID of the resource you created in step 1, which is available in the Azure portal on the resource's **Properties** page.
 
-     ```powershell
-     $resourceIdWithManagedIdentity = '/subscriptions/{my subscription ID}/resourceGroups/{my resource group name}/providers/Microsoft.Compute/virtualMachines/{my virtual machine name}'
-     (Get-AzResource -ResourceId $resourceIdWithManagedIdentity).Identity.PrincipalId
-     ```
+    ```powershell
+    $resourceIdWithManagedIdentity = '/subscriptions/{my subscription ID}/resourceGroups/{my resource group name}/providers/Microsoft.Compute/virtualMachines/{my virtual machine name}'
+    (Get-AzResource -ResourceId $resourceIdWithManagedIdentity).Identity.PrincipalId
+    ```
 
-     **For a user-assigned managed identity**, you can find the managed identity's object ID on the Azure portal on the resource's **Overview** page. You can also use the following PowerShell script to find the object ID. You'll need the resource ID of the user-assigned managed identity.
+    **For a user-assigned managed identity**, you can find the managed identity's object ID on the Azure portal on the resource's **Overview** page. You can also use the following PowerShell script to find the object ID. You'll need the resource ID of the user-assigned managed identity.
 
-     ```powershell
-     $userManagedIdentityResourceId = '/subscriptions/{my subscription ID}/resourceGroups/{my resource group name}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{my managed identity name}'
-     (Get-AzResource -ResourceId $userManagedIdentityResourceId).Properties.PrincipalId
-     ```
+    ```powershell
+    $userManagedIdentityResourceId = '/subscriptions/{my subscription ID}/resourceGroups/{my resource group name}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{my managed identity name}'
+    (Get-AzResource -ResourceId $userManagedIdentityResourceId).Properties.PrincipalId
+    ```
 
 1. [Create a new application registration](/entra/identity-platform/quickstart-register-app) to represent the service that you want your managed identity to send a request to. 
    - If the API or service that exposes the app role grant to the managed identity already has a service principal in your Microsoft Entra tenant, skip this step. For example, in the case that you want to grant the managed identity access to the Microsoft Graph API.
 
 1. Find the object ID of the service application's service principal. You can find this using the [Microsoft Entra admin center](https://entra.microsoft.com/). 
-   - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). In the left nav blade, select **Entra ID** > **Enterprise apps**. Then find the application and look for the **Object ID**. 
-   - You can also find the service principal's object ID by its display name using the following PowerShell script:
+   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). 
+   1. In the left nav blade, select **Entra ID** > **Enterprise apps**. Then find the application and look for the **Object ID**. 
+   1. You can also find the service principal's object ID by its display name using the following PowerShell script:
 
     ```powershell
     $serverServicePrincipalObjectId = (Get-MgServicePrincipal -Filter "DisplayName eq '$applicationName'").Id
     ```
 
     > [!NOTE]
-    > Display names for applications are not unique, so you should verify that you obtain the correct application's service principal.
+    > Display names for applications aren't unique, so you should verify that you obtain the correct application's service principal.
 
 1. Add an [app role](~/identity-platform/howto-add-app-roles-in-apps.md) to the application you created in the previous step. You can then create the role using the Azure portal or by using Microsoft Graph. 
-   - For example, you could add an app role by running the following query in [Graph explorer](https://developer.microsoft.com/graph/graph-explorer):
+   For example, you could add an app role by running the following query in [Graph explorer](https://developer.microsoft.com/graph/graph-explorer):
 
     ```http
     PATCH /applications/{id}/
@@ -71,19 +86,19 @@ To run the example scripts, you have two options:
     ```
 
 1. Assign the app role to the managed identity. You'll need the following information to assign the app role:
-    * `managedIdentityObjectId`: the object ID of the managed identity's service principal, which you found in the previous step.
-    * `serverServicePrincipalObjectId`: the object ID of the server application's service principal, which you found in step 4.
-    * `appRoleId`: the ID of the app role exposed by the server app, which you generated in step 5 - in the example, the app role ID is `00000000-0000-0000-0000-000000000000`.
+    - `managedIdentityObjectId`: the object ID of the managed identity's service principal, which you found in the previous step.
+    - `serverServicePrincipalObjectId`: the object ID of the server application's service principal, which you found in step 4.
+    - `appRoleId`: the ID of the app role exposed by the server app, which you generated in step 5 - in the example, the app role ID is `00000000-0000-0000-0000-000000000000`.
    
-   - Execute the following PowerShell command to add the role assignment:
+    - Execute the following PowerShell command to add the role assignment:
 
-    ```powershell
-    New-MgServicePrincipalAppRoleAssignment `
-        -ServicePrincipalId $serverServicePrincipalObjectId `
-        -PrincipalId $managedIdentityObjectId `
-        -ResourceId $serverServicePrincipalObjectId `
-        -AppRoleId $appRoleId
-    ```
+        ```powershell
+        New-MgServicePrincipalAppRoleAssignment `
+            -ServicePrincipalId $serverServicePrincipalObjectId `
+            -PrincipalId $managedIdentityObjectId `
+            -ResourceId $serverServicePrincipalObjectId `
+            -AppRoleId $appRoleId
+        ```
 
 ## Complete example script
 
@@ -123,3 +138,7 @@ New-MgServicePrincipalAppRoleAssignment `
     -ResourceId $serverServicePrincipalObjectId `
     -AppRoleId $appRoleId
 ```
+
+## Next steps
+
+[Managed identity for Azure resources overview](./overview.md)

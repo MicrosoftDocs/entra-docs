@@ -17,7 +17,33 @@ ms.custom: sfi-image-nochange
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-Now that you've created your application, you'll learn how to configure the code with the application's coordinates.
+This article contains instructions to help you configure the code with the application's coordinates.
+
+## Prerequisites
+
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+
+## Add a platform redirect URI
+
+To specify your app type to your app registration, follow these steps:
+
+1. Under **Manage**, select **Authentication** > **Add a platform** > **Mobile and desktop applications**
+1. Depending on the authentication method you're using, choose one of the following options:
+    - For apps using embedded browsers, use the exact value: `https://login.microsoftonline.com/common/oauth2/nativeclient` 
+    - For apps using system browsers, use the exact value: `http://localhost`
+    - Objective-C or Swift apps for macOS: `msauth.<your.app.bundle.id>://auth`.
+    - Node.js Electron apps: `msal{Your_Application/Client_Id}://auth`
+
+> [!NOTE]
+> For [Web Authentication Manager (WAM)](scenario-desktop-acquire-token-wam.md) apps, no redirect URI is needed in MSAL.
+
+## Enable public client flow
+
+To distinguish device code flow, integrated Windows authentication, and a username and a password from a confidential client application using a client credential flow used in daemon applications, none of which requires a redirect URI, configure it as a public client application. To achieve this configuration
+
+[!INCLUDE [Enable public client](../external-id/customers/includes/register-app/enable-public-client-flow.md)]
 
 ## Microsoft libraries supporting desktop apps
 
