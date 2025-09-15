@@ -99,7 +99,8 @@ After you configured your identity provider, in this step you'll configure a new
 1. You can select **Next: Claims mapping** to configure [claims mapping](reference-oidc-claims-mapping-customers.md) or **Review + create** to add your identity provider.
 
 > [!NOTE]
-> Microsoft recommends you don't* use the [implicit grant flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow#security-concerns-with-implicit-grant-flow) or the [ROPC flow](/entra/identity-platform/v2-oauth-ropc). Therefore, OpenID connect external identity provider configuration doesn't support these flows. The recommended way of supporting SPAs is [OAuth 2.0 Authorization code flow (with PKCE)](/entra/identity-platform/v2-oauth2-auth-code-flow#applications-that-support-the-auth-code-flow) which is supported by OIDC federation configuration.
+> Microsoft recommends you do *not* use the [implicit grant flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow#security-concerns-with-implicit-grant-flow) or the [ROPC flow](/entra/identity-platform/v2-oauth-ropc). 
+Therefore, OpenID connect external identity provider configuration doesn't support these flows. The recommended way of supporting SPAs is [OAuth 2.0 Authorization code flow (with PKCE)](/entra/identity-platform/v2-oauth2-auth-code-flow#applications-that-support-the-auth-code-flow) which is supported by OIDC federation configuration.
 
 ## Add OIDC identity provider to a user flow
 
