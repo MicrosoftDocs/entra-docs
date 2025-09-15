@@ -45,9 +45,9 @@ If your organization is using Microsoft Entra HR inbound provisioning from any H
 
 If your organization is using AD management tools such as Active Directory Users and Computers, or the Active Directory module for PowerShell, then changes made using those tools to AD objects whose SOA has changed will cause an inconsistency with the Microsoft Entra representation. Prior to performing a SOA change, your organization should move those objects to a designated AD OU that signals those objects should no longer be managed via AD tools. If the user who’s SOA you want to convert is referenced in an on-premises managed group, then the user should remain in the sync scope. If you delete the on-premises user, then it is also removed from both the on-premises and Microsoft Entra group.
 
-### Microsoft Identity Manager with the AD MA
+### Microsoft Identity Manager with the Active Directory Management Agent
 
-If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then before an SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are first sent to Microsoft Entra, and then to Active Directory where needed. For more information, see: [Prepare your MIM setup](prepare-user-soa-environment.md#prepare-your-mim-setup).
+If your organization is using Microsoft Identity Manager with the Active Directory Management Agent (AD MA) to manage AD users and groups, then before an SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are first sent to Microsoft Entra, and then to Active Directory where needed. For more information, see: [Prepare your MIM setup](prepare-user-soa-environment.md#prepare-your-mim-setup).
 
 ### Applications
 
