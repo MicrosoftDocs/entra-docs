@@ -679,9 +679,12 @@ Use Microsoft Graph to get policy information.
 
 ## Known limitations
 
-Tenant restrictions v2 is supported on all clouds. However, tenant restrictions v2 is not enforced with cross-cloud requests.
+- Tenant restrictions v2 is supported on all clouds. However, tenant restrictions v2 is not enforced with cross-cloud requests.
 
-Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers. An example of such a solution is a proxy that uses a certificate trust chain outside Apple system root certificates.
+- Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers. An example of such a solution is a proxy that uses a certificate trust chain outside Apple system root certificates.
+
+- When TRv2 is enabled, accessing the Microsoft Entra admin center may result in an "Access denied" error. To resolve this issue, append the following feature flags to the Microsoft Entra admin center URL: `?feature.msaljs=true&exp.msaljsexp=true`. If you're accessing the admin center for a partner tenant (e.g., Fabrikam) and encounter the error at `https://entra.microsoft.com/`, update the URL as follows: `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`. This will enable the necessary flags and restore access.
+
 
 ## Related content
 
