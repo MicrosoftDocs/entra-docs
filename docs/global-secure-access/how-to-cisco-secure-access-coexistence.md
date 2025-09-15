@@ -70,7 +70,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ## Bypass configuration for coexistence
 
-### Bypass Cisco Secure Access/Umbrella required IPs in Global Secure Access
+### Bypass Cisco Secure Access/Umbrella required IPs and FQDN in Global Secure Access
 
 1. In the Microsoft Entra admin center, go to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
 2. Under **Internet access policies**, select **View**.
