@@ -1,10 +1,10 @@
 ---
-title: Overview of custom authentication strengths and advanced options for FIDO2 security keys and certificate-based authentication in Microsoft Entra ID
-description: Learn how admins can create custom authentication strengths with advanced options for FIDO2 security keys and certificate-based authentication.
+title: Overview of custom authentication strengths and advanced options for passkey (FIDO2) and certificate-based authentication in Microsoft Entra ID
+description: Learn how admins can create custom authentication strengths with advanced options for passkey (FIDO2) security keys and certificate-based authentication.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 03/04/2025
+ms.date: 09/15/2025
 ms.author: justinha
 author: inbarckms
 manager: dougeby
@@ -31,12 +31,12 @@ You can edit a custom authentication strength. If it's referenced by a Condition
 To check if an authentication strength is referenced by a Conditional Access policy, click the **Conditional Access policies** column.
 
 
-## FIDO2 security key advanced options
-You can restrict the usage of FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). This capability allows administrators to require a FIDO2 security key from a specific manufacturer in order to access the resource. To require a specific FIDO2 security key, first create a custom authentication strength. Then select **FIDO2 Security Key**, and click **Advanced options**. 
+## Passkey (FIDO2) advanced options
+You can restrict the usage of passkeys (FIDO2) based on their Authenticator Attestation GUIDs (AAGUIDs). This capability allows administrators to require a FIDO2 security key from a specific manufacturer in order to access the resource. To require a specific FIDO2 security key, first create a custom authentication strength. Then select **Passkeys (FIDO2)**, and click **Advanced options**. 
 
-:::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options for FIDO2 security key.":::
+:::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options for passkey (FIDO2).":::
 
-Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **Save**.
+Next to **Add AAGUID**, click **+**, copy the AAGUID value, and click **Save**.
 
 :::image type="content" border="true" source="./media/concept-authentication-strengths/guid.png" alt-text="Screenshot showing how to add an Authenticator Attestation GUID.":::
 
@@ -122,8 +122,8 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 
 ## Limitations
 
-### FIDO2 security key advanced options
-- FIDO2 security key Advanced options - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
+### Passkeys (FIDO2) Advanced options
+- Passkeys (FIDO2) Advanced options - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
 
 ### Certificate-based authentication advanced options
 
@@ -147,10 +147,10 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 
 ## Troubleshooting  authentication strength advanced options
 
-### Users can't use their FIDO2 security key to sign in
-A Conditional Access Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different FIDO2 security key.
+### Users can't use their passkey (FIDO2)  to sign in
+A Conditional Access Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different passkey (FIDO2).
 
-:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted FIDO2 security key.":::
+:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted passkey (FIDO2).":::
 
 
 ### How to check certificate policy OIDs and issuer
