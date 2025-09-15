@@ -43,7 +43,7 @@ If your organization is using Microsoft Entra HR inbound provisioning from any H
 
 ### Active Directory Users and Computers or the Active Directory module for PowerShell
 
-If your organization is using AD management tools such as Active Directory Users and Computers, or the Active Directory module for PowerShell, then changes made using those tools to AD objects whose SOA has changed will cause an inconsistency with the Microsoft Entra representation. Prior to performing a SOA change, your organization should move those objects to a designated AD OU that signals those objects should no longer be managed via AD tools.   
+If your organization is using AD management tools such as Active Directory Users and Computers, or the Active Directory module for PowerShell, then changes made using those tools to AD objects whose SOA has changed will cause an inconsistency with the Microsoft Entra representation. Prior to performing a SOA change, your organization should move those objects to a designated AD OU that signals those objects should no longer be managed via AD tools. If the user who’s SOA you want to convert is referenced in an on-premises managed group, then the user should remain in the sync scope. If you delete the on-premises user, then it is also removed from both the on-premises and Microsoft Entra group.
 
 ### Microsoft Identity Manager with the AD MA
 
