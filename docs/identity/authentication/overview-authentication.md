@@ -24,7 +24,7 @@ One of the main features of an identity platform is to verify, or *authenticate*
 * Hybrid integration to enforce password protection policies for an on-premises environment
 * Passwordless authentication
 
-To learn more about these authentication components, take a look at our short video.
+To learn more about these authentication components, watch our short video.
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=5ee3cad5-3360-48da-b520-1a0d96710a38]
 
