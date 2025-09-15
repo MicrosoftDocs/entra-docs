@@ -160,7 +160,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ## Configuration scenarios
 
-### 1. Private Access with Cisco Secure Internet Access
+### 1. Microsoft Entra Private Access with Cisco Secure Internet Access
 
 #### Steps
 
