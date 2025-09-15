@@ -56,7 +56,7 @@ When a user updates or resets a password by using SSPR, that password can also b
 
 Multifactor authentication is a process in which a user is prompted for an additional form of identification during sign-in. For example, the user is prompted to enter a code on a phone or to provide a fingerprint scan.
 
-If you use only a password to authenticate a user, it leaves an nonsecure vector for attack. If the password is weak or is exposed elsewhere, is it really the user who's signing in with the username and password, or is it an attacker? Requiring a second form of authentication increases security because this additional factor isn't easy for an attacker to obtain or duplicate.
+If you use only a password to authenticate a user, it leaves a nonsecure vector for attack. If the password is weak or is exposed elsewhere, is it really the user who's signing in with the username and password, or is it an attacker? Requiring a second form of authentication increases security because this additional factor isn't easy for an attacker to obtain or duplicate.
 
 ![Conceptual diagram of the various forms of multifactor authentication.](./media/concept-mfa-howitworks/methods.png)
 
@@ -82,7 +82,7 @@ The goal for many environments is to remove the use of passwords as part of sign
 
 ![Diagram that illustrates security versus convenience with the authentication process that leads to passwordless sign-in.](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
 
-When users sign in passwordlessly, they provide credentials by using methods like:
+When users sign in without a password, they provide credentials by using methods like:
 
 * Biometrics with Windows Hello for Business.
 * A FIDO2 security key.
