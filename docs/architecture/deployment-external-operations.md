@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 09/09/2025
+ms.date: 09/10/2025
 ms.author: gasinh
 
 #customer intent: I need to understand subscriptions and billing, consumer app security, and how to prevent fraud tactics in Microsoft Entra External ID. 
@@ -143,7 +143,7 @@ An audit is actions taken to understand a system, its user activities, and relat
 
 Microsoft Entra External ID stores sign-in and audit logs for 30 days. For retention and analysis, export this information to an external storage or tool. 
 
-Configure [Azure Monitor](/azure/azure-monitor/fundamentals/overview) as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor. 
+Configure Azure Monitor as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor. For more information, see [Set up Azure Monitor in external tenants](../external-id/customers/how-to-azure-monitor.md).
 
    [ ![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-expanded.png#lightbox)
 
@@ -190,7 +190,7 @@ Synthetic transactions can reference applications and APIs used for token acquis
 
 ### Dashboards: Operational telemetry and security insights
 
-Microsoft Entra External ID has built-in dashboards with useful telemetry from key areas such as authentication trends, MFA usage, and protections related to SMS verification. Use insights to maintain visibility into your identity system health and threat posture. For your deployment and operational strategy, we recommended you incorporate regular metrics monitoring. Detect anomalies, assess risk exposure, and ensure the effectiveness of security controls. Use the following table to see metrics and details.
+Microsoft Entra External ID has built-in dashboards with useful telemetry from key areas such as authentication trends, MFA usage, and protections related to SMS verification. Use insights to maintain visibility into your identity system health and threat posture. For your deployment and operational strategy, we recommended you incorporate regular metrics monitoring. Detect anomalies, assess risk exposure, and ensure the effectiveness of security controls. Use the following table to see metrics and details. For more information, see [Gain insights into your app users' activity](../external-id/customers/how-to-user-insights.md).
 
 |Metric|Details|
 |---|---|

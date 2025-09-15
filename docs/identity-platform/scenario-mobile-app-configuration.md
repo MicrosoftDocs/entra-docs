@@ -16,7 +16,36 @@ ms.topic: how-to
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-After you create your application, you'll learn how to configure the code by using the app registration parameters. Mobile applications present some complexities related to fitting into their creation framework.
+After you create your application, you'll learn how to configure the code by using the app registration parameters. Mobile applications present some extra complexities related to fitting into their creation framework.
+
+## Prerequisites
+
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
+  * Application Administrator
+  * Application Developer
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+
+## Add a platform redirect URI
+
+To specify your app type to your app registration, follow these steps:
+
+1. Under **Manage**, select **Authentication** > **Add a platform** > **iOS/macOS**.
+1. Enter your bundle ID, and then select **Configure**. The redirect URI is computed for you.
+
+If you prefer to manually configure the redirect URI, you can do so through the application manifest. Here's the recommended format for the manifest:
+
+- **iOS**: `msauth.<BUNDLE_ID>://auth`
+  - For example, enter `msauth.com.yourcompany.appName://auth`
+- **Android**: `msauth://<PACKAGE_NAME>/<SIGNATURE_HASH>`
+  - You can generate the Android signature hash by using the release key or debug key through the KeyTool command.
+
+## Enable public client flow
+
+If your app uses only username-password authentication, you don't need to register a redirect URI for your application. This flow does a round trip to the Microsoft identity platform. Your application won't be called back on any specific URI. But you should enable the public client flow.
+
+[!INCLUDE [Enable public client](../external-id/customers/includes/register-app/enable-public-client-flow.md)]
 
 ## Microsoft libraries supporting mobile apps
 

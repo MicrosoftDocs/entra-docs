@@ -148,4 +148,4 @@ ms.topic: concept-article
 > To learn more about daemon applications, see the scenario overview:
 > 
 > > [!div class="nextstepaction"]
-> > [Daemon application that calls web APIs](scenario-daemon-app-registration.md)
+> > [Daemon application that calls web APIs](scenario-daemon-app-configuration.md)
