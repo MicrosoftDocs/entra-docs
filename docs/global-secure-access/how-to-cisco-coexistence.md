@@ -99,7 +99,7 @@ To configure Cisco Umbrella:
   > [!NOTE]
   > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
 
-  4. Add DNS suffixes defined in your Private DNS or Enterprise App segments. For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
+  4. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 
 5. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
