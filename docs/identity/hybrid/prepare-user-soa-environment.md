@@ -113,7 +113,7 @@ The following sections walk you through preparing for user SOA if your Active Di
 
 For customers using Microsoft Identity Manager(MIM), you can update the sync rules in MIM to determine which objects continue to be provisioned into Active Directory, and which ones are provisioned into Microsoft Entra ID.  
 
-:::image type="content" source="media/prepare-user-soa-environment/prepare-mim-setup.png" alt-text="Screenshot of MIM Set up for SOA.":::
+:::image type="content" source="media/prepare-user-soa-environment/prepare-identity-setup.png" alt-text="Screenshot of MIM Set up for SOA.":::
 
 To prepare your MIM setup to use user SOA, do the following steps:
 
@@ -141,7 +141,7 @@ To prepare your MIM setup to use user SOA, do the following steps:
 
 
 Once these steps are completed, your MIM-synced hybrid environment should follow this diagram:
-:::image type="content" source="media/prepare-user-soa-environment/mim-ready-for-soa.png" alt-text="Screenshot of a diagram of an environment that is ready to use user SOA.":::
+:::image type="content" source="media/prepare-user-soa-environment/identity-ready-for-source-of-authority.png" alt-text="Screenshot of a diagram of an environment that is ready to use user SOA.":::
 
 
 ## Prepare your Microsoft Exchange Setup 
