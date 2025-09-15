@@ -160,7 +160,7 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
 
 ---
 
-### 2. Internet Access, Microsoft Access, and Private Access with Cisco Umbrella DNS security.
+### 2. Microsoft Entra Internet Access, Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS security.
 
 
 #### Steps
