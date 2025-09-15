@@ -142,7 +142,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
   > [!NOTE]
   > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
 
-4. Add DNS suffixes defined in your Private DNS or Enterprise App segments. For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
+4. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 
 5. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
 ```
