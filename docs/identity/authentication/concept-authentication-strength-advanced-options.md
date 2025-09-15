@@ -62,12 +62,12 @@ The next sections show how to configure advanced options for CBA by using the Mi
 
    :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certificate-advanced-options.png" alt-text="Screenshot showing Advanced options for certificate-based authentication.":::
     
-1. You can select certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor. Certificate issuers can be configured either by using the drop down **Certificate issuers from the certificate authorities in your tenant** or by using **Other certificate issuer by SubjectkeyIdentifier** for scenarios where the certificate you would like to use is not uploaded to the Certificate authorities in your tenant. One such example is external user scenarios, where the user could be authenticating in their home tenant and auth strength is being enforced on the resource tenant.
+1. You can select certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor. Certificate issuers can be configured either by using the drop-down **Certificate issuers from the certificate authorities in your tenant** or by using **Other certificate issuer by SubjectkeyIdentifier** for scenarios where the certificate you would like to use is not uploaded to the Certificate authorities in your tenant. One such example is external user scenarios, where the user could be authenticating in their home tenant and auth strength is being enforced on the resource tenant.
 
-   :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or-other-issuer.png" alt-text="Screenshot showing the configuration options - certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs .":::
+   :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or-other-issuer.png" alt-text="Screenshot showing the configuration options - certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs.":::
 
    - If both attributes Certificate issuers AND  Policy OIDs are configured, there's a AND relationship and the user has to use a certificate that has atleast one of the issuers AND one of the policy OID from the list to satisfy the authentication strength.
-   - If only Certificate issuers attribute is configured then the user has to use a certificate that has atleast one of the issuers to satisfy the authentication strength .
+   - If only Certificate issuers attribute is configured then the user has to use a certificate that has atleast one of the issuers to satisfy the authentication strength.
    - If only Policy OIDs attribute is configured then the user has to use a certificate that has atleast one of the policy OIDs to satisfy the authentication strength.
 
   >[!NOTE]
@@ -136,7 +136,7 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
   >[!NOTE]
   >If the certificate doesn't conform, user authentication might succeed, but not satisfy the issuerSki restrictions for the authentication strength policy.
 
-- During sign-in, the first 5 policy OIDs from the end user certificate are considered, and compared with the policy OIDs configured in the authentication strength policy. If the end user certificate has more than 5 policy OIDs, the first 5 policy OIDs in lexical order that match the authentication strength requirements are taken into account. 
+- During sign-in, the first 5 policy OIDs from the end user certificate are considered, and compared with the policy OIDs configured in the authentication strength policy. If the end user certificate has more than five policy OIDs, the first five policy OIDs in lexical order that match the authentication strength requirements are taken into account. 
 
 - For B2B users, let's take an example where Contoso has invited users from Fabrikam to their tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant.
   - When cross-tenant access setting is **Off** (Contoso doesn't accept MFA that was performed by the home tenant) - Using certificate-based authentication on the resource tenant isn't supported.
