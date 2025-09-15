@@ -27,11 +27,11 @@ The next sections explain more details about the scenario that User SOA supports
 
 **Scenario**: You modernized some or all your applications and removed the need to use AD DS users for access. For example, these applications now use user [claims with Security Assertion Markup Language (SAML)](/identity-platform/saml-claims-customization) or [OpenID Connect](/identity-platform/v2-protocols-oidc) from Microsoft Entra ID instead of federation systems such as AD FS. However, these apps still rely on the existing synched user to manage access. By implementing User SOA, you can edit the user in the cloud, remove the AD DS user completely, and govern the user through Microsoft Entra ID Governance capabilities.
 
-:::image type="content" source="media/user-source-of-authority-overview/user-soa-minimization.png" alt-text="Screenshot of user soa minimization.":::
+:::image type="content" source="media/user-source-of-authority-overview/user-source-of-authority-minimization.png" alt-text="Screenshot of user soa minimization.":::
 
 **Scenario**:  You’ve converted the SOA for Users and now want to allow them to access both on-premises, and cloud, resources. Instead of completely removing users from on-premises, introduce Cloud Kerberos Trust password-less authentication to allow them to maintain a hybrid presence allowing them to continue to access their on-premises resources, while also allowing them to access cloud resources. Password-less authentication methods, such as [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/configure) or [FIDO2 security keys](/identity/authentication/how-to-enable-passkey-fido2), can be used to allow these users to access both their on-premises resources, and cloud resources such as [Azure Files](/azure/storage/files/storage-files-introduction) through [Microsoft Entra Private Access](/global-secure-access/concept-private-access). Using Password-less authentication also enables Multifactor Authentication on the SOA converted users increasing security. Password-less authentication also allows you to enable Conditional Access policies on the on-premises resources, allowing greater control and security over these resources.
 
-:::image type="content" source="media/user-source-of-authority-overview/password-less-authentication-SOA.png" alt-text="Screenshot of the password-less authentication scenario for User SOA.":::
+:::image type="content" source="media/user-source-of-authority-overview/password-less-authentication-source-of-authority.png" alt-text="Screenshot of the password-less authentication scenario for User SOA.":::
 
 ## Consideration for User SOA
 
