@@ -18,7 +18,7 @@ Device authentication is a critical component for organizations managing hybrid 
 
 ## Hybrid Joined Devices
 
-The following sections contain information that shows the currently supported authentication methods for SOA converted users authenticating through [Hybrid Joined Devices](/identity/devices/concept-hybrid-join).
+The following sections contain information that shows the currently supported authentication methods for SOA converted users authenticating through [Hybrid Joined Devices](../../identity/devices/concept-hybrid-join.md).
 
 ### Hybrid Joined Password based sign-in [password-based](#tab/Hybrid Joined Password based sign-in)
 
@@ -54,7 +54,7 @@ Not Supported.
 
 ## Microsoft Entra Joined Devices
 
-The following sections contain information that shows the currently supported authentication methods for SOA converted users authenticating through [Microsoft Entra Joined Devices](/identity/devices/concept-directory-join).
+The following sections contain information that shows the currently supported authentication methods for SOA converted users authenticating through [Microsoft Entra Joined Devices](../../identity/devices/concept-directory-join.md).
 
 ### Microsoft Entra Joined Devices Password based sign-in [password-based](#tab/Microsoft Entra Joined Devices Password based sign-in)
 
