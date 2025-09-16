@@ -128,7 +128,7 @@ To prepare your MIM setup to use user SOA, do the following steps:
 
 
 Once these steps are completed, your MIM-synced hybrid environment should follow this diagram:
-:::image type="content" source="media/prepare-user-source-of-authority-environment/identity-ready-for-source-of-authority.png" alt-text="Screenshot of a diagram of an environment that is ready to use user SOA.":::
+:::image type="content" source="media/prepare-user-source-of-authority-environment/identity-ready-for-source-of-authority.png" alt-text="Screenshot of a diagram of an environment that's ready to use user SOA.":::
 
 
 ## Prepare your Microsoft Exchange Setup 
@@ -157,21 +157,21 @@ Once your environment has been prepped for converting user SOA, you must make su
 1.	Identify the users and/or groups for whom you’re going to Switch the source of authority (SOA) to Microsoft Entra ID. Ensure these users and groups are currently being synced using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync. 
     > [!NOTE]
     > Note: If you’re moving groups first, we recommend you first Switch the source of authority of the groups’ first before doing it for users 
-1.	Remove these users from the App-> AD provisioning configuration (e.g., Workday to AD or MIM to AD etc.) so they no longer sync into AD.  
+1.	Remove these users from the App-> AD provisioning configuration (for example, Workday to AD or MIM to AD etc.) so they no longer sync into AD.  
     > [!NOTE]
     > Note: How you remove the users and/or groups from scope depends on the management tool         
-1.	Wait for the sync cycle to complete and make sure the object data is the same between AD and Microsoft Entra ID. You can use tools like Provision on-demand to do this manually or do a bulk sync to handle multiple users.
+1.	Wait for the sync cycle to complete and make sure the object data is the same between AD and Microsoft Entra ID. You can use tools like provision on-demand to do this manually, or do a bulk sync to handle multiple users.
 1.	Stop making any changes to these users and/or groups in AD directly.  
 1.	Switch the SOA of the users and/or groups.
 1.	Confirm that the users and/or groups can now be managed from the cloud by following these steps. 
     1.	Go to the Microsoft Entra admin center and find the user/group you switched SOA of and see if they’re a cloud object and can be edited (or) 
     1.	Run this script to check if the “DirSync” and “isCloudManaged” attribute it set to cloud 
-    1.	Check the events listed in the Audit logs to see whether the SOA status has changed 
+    1.	Check the events listed in the Audit log to see whether the SOA status has changed 
 1.	Continue to keep the users and/or groups in scope for Connect/Cloud Sync. This is needed if these objects have references to groups, devices, and contacts managed in AD. 
 1.	Change the direction of provisioning for users you stopped syncing in order to ensure these user changes are provisioned directly into Microsoft Entra ID from the corresponding HR systems. 
     1.	Create a new provisioning configuration to provision the users no longer synced from equivalent cloud app system to Microsoft Entra ID using Provisioning API.
-    1.	Start provisioning the same users  from the cloud system (HR or other apps) into Microsoft Entra directly. 
-    1.	At this point, SOA transfer is complete, and the identities have started flowing from Cloud system -> Entra ID or Entra ID has become the source of authority. 
+    1.	Start provisioning the same users from the cloud system (HR or other apps) into Microsoft Entra directly. 
+    1.	At this point, SOA transfer is complete, and the identities have started flowing from Cloud system to Microsoft Entra ID, or Microsoft Entra ID has become the source of authority. 
     
 
 
