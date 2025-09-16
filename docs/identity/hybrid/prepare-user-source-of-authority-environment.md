@@ -38,14 +38,14 @@ The flow for preparing for user SOA is as follows:
 
 ## [1.HR](#tab/HR)
 
-Prep your HR system to Microsoft Entra ID flow for users in scope of SOA change, and then remove them from the flow. For more information, see: [Shift Your HR Integration To The Cloud](prepare-user-soa-environment.md#shift-your-hr-integration-to-the-cloud)
+Prep your HR system to Microsoft Entra ID flow for users in scope of SOA change, and then remove them from the flow. For more information, see: [Shift Your HR Integration To The Cloud](prepare-user-source-of-authority-environment.md#shift-your-hr-integration-to-the-cloud)
 
 
 
 
 ## [2.MIM](#tab/MIM)
 
-If applicable, stop Microsoft Identity Manager to Active directory flow for users in scope of the SOA change. For more information, see: [Prepare your MIM setup](prepare-user-soa-environment.md#prepare-your-mim-setup).
+If applicable, stop Microsoft Identity Manager to Active directory flow for users in scope of the SOA change. For more information, see: [Prepare your MIM setup](prepare-user-source-of-authority-environment.md#prepare-your-mim-setup).
 
 
 ## [3.Sync](#tab/Sync)
@@ -115,7 +115,7 @@ The following sections walk you through preparing for user SOA if your Active Di
 
 For customers using Microsoft Identity Manager(MIM), you can update the sync rules in MIM to determine which objects continue to be provisioned into Active Directory, and which ones are provisioned into Microsoft Entra ID.  
 
-:::image type="content" source="media/prepare-user-soa-environment/prepare-identity-setup.png" alt-text="Screenshot of MIM Set up for SOA.":::
+:::image type="content" source="media/prepare-user-source-of-authority-environment/prepare-identity-setup.png" alt-text="Screenshot of MIM Set up for SOA.":::
 
 To prepare your MIM setup to use user SOA, do the following steps:
 
@@ -143,7 +143,7 @@ To prepare your MIM setup to use user SOA, do the following steps:
 
 
 Once these steps are completed, your MIM-synced hybrid environment should follow this diagram:
-:::image type="content" source="media/prepare-user-soa-environment/identity-ready-for-source-of-authority.png" alt-text="Screenshot of a diagram of an environment that is ready to use user SOA.":::
+:::image type="content" source="media/prepare-user-source-of-authority-environment/identity-ready-for-source-of-authority.png" alt-text="Screenshot of a diagram of an environment that is ready to use user SOA.":::
 
 
 ## Prepare your Microsoft Exchange Setup 
