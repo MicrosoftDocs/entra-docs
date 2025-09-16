@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 04/14/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, sfi-image-nochange
 ---
 # Overview of the Woodgrove Groceries demo
@@ -15,12 +15,6 @@ ms.custom: it-pro, sfi-image-nochange
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Microsoft Entra External ID offers solutions that let you quickly add intuitive, user-friendly sign-up and sign-up experiences for your consumer and business customer apps. The Woodgrove Groceries demo environment illustrates several of the most common authentication experiences that can be configured for your apps.
-
-## Get started
-
-To try out the demo environment, go to [Woodgrove Groceries](https://woodgrovedemo.com/) and select from a list of use cases that illustrate different sign-in options and business cases.
-
-:::image type="content" source="media/overview-solutions-customers/demo-woodgrove.png" alt-text="Screenshot of the Woodgrove Groceries demo home page.":::
 
 ## Use cases
 
