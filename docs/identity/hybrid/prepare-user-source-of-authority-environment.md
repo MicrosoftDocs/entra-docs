@@ -73,6 +73,26 @@ Before changing the SOA on users, retrieve the objects from your Active Director
 
 If you’re planning to only change the SOA for some Active Directory users, we recommend that you create a new AD DS OU for these objects to avoid inadvertently changing them in Active Directory. Users, whose SOA isn’t changing, can continue to be managed using Active Directory Users and Computers, Active Directory Module for PowerShell, or other Active Directory management tools. After creating an OU, move the objects to that OU. For more information, see: [Move-ADObject](/powershell/module/activedirectory/move-adobject?view=windowsserver2025-ps).
 
+## Prepare your Microsoft Exchange setup
+
+> [!NOTE]
+> We recommend that you get rid of exchange server set up before converting User Source of Authority
+
+In case you have Exchange Hybrid setup with Microsoft 365 Exchange Online, prepare your Exchange Server and Exchange Online as per the following guidance before switching the SOA of your user accounts.
+If you're running an Exchange hybrid configuration, ensure all your mailboxes are migrated to Exchange Online before you switch the SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365, and you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
+
+1.	Point the MX and Autodiscover DNS records to Exchange Online instead of Exchange Server. 
+
+1.	Remove the Service Connection Point (SCP) values on Exchange servers. This step ensures that no SCPs are returned, and the Outlook clients use the DNS method for Autodiscover.
+
+1.	(Optional) To secure your environment, remove the inbound and outbound connectors created by the Hybrid Configuration Wizard used for mail flow between Exchange Server and Exchange online.
+
+1.	(Optional) To secure your environment, remove the organization relationship, Fed Trust and oauth trust set up between Exchange Server and Exchange Online by HCW.
+
+1.	Stop writing to on-premises Exchange for the object and sync the object to cloud to ensure EXO has the latest changes from on-premises.
+
+For more information on disabling Exchange Hybrid, see: see: [Manage recipients in Exchange Hybrid environments using Management tools](/Exchange/manage-hybrid-exchange-recipients-with-management-tools).
+
 ## Shift Your HR Integration To The Cloud 
 
 The first step in setting up SOA is to determine your provisioning strategy for your HR system. Ideally, you’re already provisioning new employees from your cloud HR system into Microsoft Entra ID directly, and have identified all the users that are no longer needed in Active Directory. If not, our recommendation is to determine your HR strategy first before planning your source of authority change project.  
@@ -129,25 +149,6 @@ To prepare your MIM setup to use user SOA, do the following steps:
 
 Once these steps are completed, your MIM-synced hybrid environment should follow this diagram:
 :::image type="content" source="media/prepare-user-source-of-authority-environment/identity-ready-for-source-of-authority.png" alt-text="Screenshot of a diagram of an environment that's ready to use user SOA.":::
-
-
-## Prepare your Microsoft Exchange Setup 
-
-In case you have Exchange Hybrid setup with Microsoft 365 Exchange Online, prepare your Exchange Server and Exchange Online as per the following guidance before switching the SOA of your user accounts.  
-
-If you're running an Exchange hybrid configuration, ensure all your mailboxes are migrated to Exchange Online before you switch the SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365, and you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
-
-1.	Point the MX and Autodiscover DNS records to Exchange Online instead of Exchange Server.  
-
-1.	Remove the Service Connection Point (SCP) values on Exchange servers. This step ensures that no SCPs are returned, and the Outlook clients use the DNS method for Autodiscover. 
-
-1.	(Optional) To secure your environment, remove the inbound and outbound connectors created by the Hybrid Configuration Wizard used for mail flow between Exchange Server and Exchange online. 
-
-1.	(Optional) To secure your environment, remove the organization relationship, Fed Trust and oauth trust set up between Exchange Server and Exchange Online by HCW. 
-
-1.	Stop writing to on-premises Exchange for the object and sync the object to cloud to ensure EXO has the latest changes from on-premises.
-
-For more information on disabling Exchange Hybrid, see: [Manage recipients in Exchange Hybrid environments using Management tools](/Exchange/manage-hybrid-exchange-recipients-with-management-tools).
 
 
 ## Prep Sync Client Sequence
