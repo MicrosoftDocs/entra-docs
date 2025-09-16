@@ -33,6 +33,8 @@ Once you've decided that you want to minimize your on-premises footprint by usin
 
 The flow for preparing for user SOA is as follows:
 
+:::image type="content" source="media/prepare-user-soa-environment/prepare-environment-steps.png" alt-text="Screenshot of steps to preparing source of authority.":::
+
 
 ## [1.HR](#tab/HR)
 
