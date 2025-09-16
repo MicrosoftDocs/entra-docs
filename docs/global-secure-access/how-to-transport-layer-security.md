@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 05/28/2025
+ms.date: 09/10/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -50,7 +50,7 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Select **Create CSR**. This step creates a .csr file and saves it to your default download folder.
 :::image type="content" source="media/how-to-transport-layer-security/create-certificate.png" alt-text="Screenshot of the Create certificate pane with fields filled and the Create CSR button highlighted.":::   
 
-1. Sign the CSR using your PKI service. Make sure Server Auth is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certifcate in .pem format. If you are testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
+1. Sign the CSR using your PKI service. Make sure Server Auth is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certificate in .pem format. If you're testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
    
 1. Select **+Upload certificate**.
 1. In the Upload certificate form, upload the certificate.pem and chain.pem files.
@@ -90,7 +90,11 @@ Alternatively, add a TLS policy to a security profile and link it to a [Conditio
 :::image type="content" source="media/how-to-transport-layer-security/conditional-access-group-assignment.png" alt-text="Screenshot of the new Conditional Access policy form with all fields completed with sample information.":::   
 
 ### Step 4: Test the configuration
+
+Ensure your devices trust the root certificate used to break and inspect TLS traffic. You can use Intune to [deploy the trusted certificate](/intune/intune-service/protect/certificates-trusted-root#to-create-a-trusted-certificate-profile) to your managed Windows devices.
+
 To test the configuration:
+
 1. Make sure the end user device has the root certificate installed in the Trusted Root Certification Authorities folder.
 :::image type="content" source="media/how-to-transport-layer-security/trusted-store.png" alt-text="Screenshot of the Trusted Root Certification Authorities folder.":::   
 

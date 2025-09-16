@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 04/14/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, sfi-image-nochange
 ---
 # Overview of the Woodgrove Groceries demo
@@ -15,12 +15,6 @@ ms.custom: it-pro, sfi-image-nochange
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Microsoft Entra External ID offers solutions that let you quickly add intuitive, user-friendly sign-up and sign-up experiences for your consumer and business customer apps. The Woodgrove Groceries demo environment illustrates several of the most common authentication experiences that can be configured for your apps.
-
-## Get started
-
-To try out the demo environment, go to [Woodgrove Groceries](https://woodgrovedemo.com/) and select from a list of use cases that illustrate different sign-in options and business cases.
-
-:::image type="content" source="media/overview-solutions-customers/demo-woodgrove.png" alt-text="Screenshot of the Woodgrove Groceries demo home page.":::
 
 ## Use cases
 
@@ -32,8 +26,6 @@ One of the most common ways for users to sign up for an app is by creating an ac
 
 When you enter an email address to create an account, your email is verified through a one-time passcode. Then you can create a new password and provide more details, such as your name, country or region, and other information. Once your account is created, your email becomes your sign-in ID.
 
-To try out this feature, go to the Woodgrove Groceries demo and start the “[Online retail](https://woodgrovedemo.com/#usecase=OnlineRetail)” use case.
-
 ### Self-service password reset
 
 Self-service password reset (SSPR) gives users the ability to change or reset their password, with no administrator or help desk involvement. If a user's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work.
@@ -42,8 +34,6 @@ Before you start, make sure you've run one of the sign-up use cases to create an
 
 To set up self-service password reset for your customers see the [Enable self-service password reset](how-to-enable-password-reset-customers.md) article.
 
-To try out this feature, go to the Woodgrove Groceries demo and start the “[Self-service password reset](https://woodgrovedemo.com/#usecase=SSPR)” use case.
-
 ### Sign-in with a social account
 
 You can offer your customers the ability to sign in with their existing social or enterprise accounts, without having to create a new account. On the sign-in page, select one of the identity providers, such as Google, Facebook or Apple. Then you're redirected to the selected provider's to complete the sign-in process.
@@ -51,8 +41,6 @@ You can offer your customers the ability to sign in with their existing social o
 :::image type="content" source="media/overview-solutions-customers/use-case-social.png" alt-text="Screenshot of the social sign-in use case.":::
 
 To allow your customers to sign up and sign in using their social accounts, you can navigate to **External Identities** > **All identity providers** in the admin center. You can find the exact steps for adding Facebook, Google and Apple as identity providers in the following links for [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md) and for [Apple](how-to-apple-federation-customers.md). 
-
-To try out this feature, go to the Woodgrove Groceries demo and start the “[Sign-in with social accounts](https://woodgrovedemo.com/#usecase=Social)” use case.
 
 <!--Ask PM about custom OIDC.-->
 
@@ -72,24 +60,17 @@ In this use case, you can sign in or sign up with your credentials. Then after y
 
 If you want to understand how custom extensions work, you can refer to the [Custom extension overview](~/identity-platform/custom-extension-overview.md) article. For information on custom claims providers, you can check out the [Custom claims provider](~/identity-platform/custom-claims-provider-overview.md) article.
 
-To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case, or the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case.
-
 ### Edit your account
 
 Profile editing policy lets you manage your profile attributes, like display name, surname, given name, city, and others. After you update your profile, sign out and sign in again.
 
 To edit your profile on the **Woodgrove Groceries** page, select the icon with your name, located in the top-right corner of the page. After making your changes, select **Save**.
 
-
-To try out this feature, go to the Woodgrove Groceries demo and start the “[Edit your account](https://woodgrovedemo.com/#usecase=ProfileEdit)” use case.
-
 ### Delete your account
 
 If you would like to delete your account and personal information, visit the **Delete my account** page. Once you delete your account, you can't reactivate it. After a couple of minutes, you'll be able to sign up again with the same credentials.
 
 To delete your account on the **Woodgrove Groceries** page, select the icon with your name located in the top-right corner of the page. On the **Edit your profile** page select **Delete your account**.
-
-To try out this feature, go to the Woodgrove Groceries demo and start the “[Delete your account](https://woodgrovedemo.com/#usecase=DeleteAccount)” use case.
 
 ## Next steps
 
