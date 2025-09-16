@@ -58,7 +58,7 @@ The following sections contain information that shows the currently supported au
 
 ### [Microsoft Entra Joined Devices Password based sign-in](#tab/MicrosoftEntraJoinedDevicesPasswordbasedsignin)
 
-Not Supported
+Using Entra Joined Devices, no password-based sign-ins are supported for SOA converted users.
 
 
 ### Microsoft Entra Joined Devices Windows Hello for Business and FIDO2 Sign-in
