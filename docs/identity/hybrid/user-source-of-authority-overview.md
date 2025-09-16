@@ -39,7 +39,7 @@ Before you begin converting the SOA for users in your organization, there are ce
 
 ### HR-driven Inbound Provisioning
 
-If your organization is using Microsoft Entra HR inbound provisioning from any HR system, you must direct changes to those users directly to Microsoft Entra ID. For more information, see:  [Shift Your HR Integration To The Cloud](prepare-user-soa-environment.md#shift-your-hr-integration-to-the-cloud).
+If your organization is using Microsoft Entra HR inbound provisioning from any HR system, you must direct changes to those users directly to Microsoft Entra ID. For more information, see:  [Shift Your HR Integration To The Cloud](prepare-user-source-of-authority-environment.md#shift-your-hr-integration-to-the-cloud).
 
 ### Active Directory Users and Computers or the Active Directory module for PowerShell
 
