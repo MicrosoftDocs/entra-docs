@@ -170,8 +170,8 @@ Once your environment has been prepped for converting user SOA, you must make su
 1.	Continue to keep the users and/or groups in scope for Connect/Cloud Sync. This is needed if these objects have references to groups, devices, and contacts managed in AD. 
 1.	Change the direction of provisioning for users you stopped syncing in order to ensure these user changes are provisioned directly into Microsoft Entra ID from the corresponding HR systems. 
     1.	Create a new provisioning configuration to provision the users no longer synced from equivalent cloud app system to Microsoft Entra ID using Provisioning API.
-    •	Start provisioning the same users  from the cloud system (HR or other apps) into Microsoft Entra directly. 
-    •	At this point, SOA transfer is complete, and the identities have started flowing from Cloud system -> Entra ID or Entra ID has become the source of authority. 
+    1.	Start provisioning the same users  from the cloud system (HR or other apps) into Microsoft Entra directly. 
+    1.	At this point, SOA transfer is complete, and the identities have started flowing from Cloud system -> Entra ID or Entra ID has become the source of authority. 
     
 
 
