@@ -4,7 +4,7 @@ description: Reference documentation for a custom authentication extension that 
 author: msmimart
 manager: CelesteDG
 ms.author: mimart 
-ms.date: 06/26/2025
+ms.date: 09/16/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -24,11 +24,6 @@ To modify the sign-up experience for your customer self-service sign-up user flo
 - **showBlockPage** - Show an error message and block the user from signing up.
 
 This article describes the REST API schema for the OnAttributeCollectionSubmit event. (See also the related article [Custom Extension for OnAttributeCollectionStart event](custom-extension-OnAttributeCollectionStart-reference.md).)
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
     
 ## REST API schema
 
