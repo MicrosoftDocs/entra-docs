@@ -43,26 +43,26 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Britive to support provisioning with Microsoft Entra ID
 
-The application has to be manually configured using the steps provided in the this section:
-1. Login to Britive application with administrator privileges
-1. Select **Admin->User Administration->Identity Providers**
-1. Select **Add Identity Provider**. Enter the name and description. Select Add Identity Provider button.
+The application has to be manually configured using the steps provided in this section:
+1. Login to the Britive application with administrator privileges
+1. Select **Admin->Identity Management->Identity Providers**
+1. Select **Add Identity Provider**. Enter the name and description. Select the **Add** button.
 
 	![Identity Provider](media/britive-provisioning-tutorial/identity.png)
 
-1. A configuration page similar to one displayed below is shown.
+1. A configuration page similar to the one displayed below is shown.
 
 	![Configuration Page](media/britive-provisioning-tutorial/configuration.png)
 
-1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the SCIM URL and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application.
+1. Select **SCIM** tab. Change the SCIM provider from Generic to Azure and save the changes. Copy the **SCIM URL** and note it down. These values are entered in the **Tenant URL** boxes on the Provisioning tab of your Britive application.
 
 	![SCIM Page](media/britive-provisioning-tutorial/scim.png)
 
-1. Select **Create Token**. Select the validity of the token as required and select Create Token button.
+1. Select **Create Token**. Select the validity of the token as required and select the **Create Token** button.
 
 	![Create Token](media/britive-provisioning-tutorial/create-token.png)
 
-1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select Re-Create button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
+1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select **Recreate token** button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
 
 	![Copy Token](media/britive-provisioning-tutorial/copy-token.png) 
 
@@ -71,7 +71,7 @@ The application has to be manually configured using the steps provided in the th
 
 ## Step 3: Add Britive from the Microsoft Entra application gallery
 
-Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously setup Britive for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Britive from the Microsoft Entra application gallery to start managing provisioning to Britive. If you have previously set up Britive for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who is in scope for provisioning 
 
