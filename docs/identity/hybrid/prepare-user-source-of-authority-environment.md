@@ -107,11 +107,7 @@ When shifting your HR integration to the cloud from Active Directory, you should
 1.	Go to your HR Provisioning to Active Directory configuration, and remove the users no longer needed in Active Directory from the App-> Active Directory provisioning configuration (for example, Workday to Active Directory). This stops these users from syncing into Active Directory. Apply a phased approach to provision identities from the HR system into Active directory by starting with a few users and then widening your selection criteria to scope users.
 
 
-## Prep Your Sync Client
-
-The following sections walk you through preparing for user SOA if your Active Directory environment is currently using a non-HR sync client for users.
-
-### Prepare your MIM setup 
+## Prepare your MIM setup 
 
 For customers using Microsoft Identity Manager(MIM), you can update the sync rules in MIM to determine which objects continue to be provisioned into Active Directory, and which ones are provisioned into Microsoft Entra ID.  
 
