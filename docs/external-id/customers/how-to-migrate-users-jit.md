@@ -480,6 +480,10 @@ Content-type: application/json 
 }  
 ```
 
+### Set up encryption for password handling
+
+
+
 ## Next steps
 
 
