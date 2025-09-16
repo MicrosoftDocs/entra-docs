@@ -72,7 +72,7 @@ By selecting a specific log entry, you get even more details, such as:
 - Where applicable, old and new values for the changed properties
 
 > [!NOTE]
-> In the audit log details, the IP address reflects the OAuth client's IP address, not the IP address of the end-user making the change. The IP address is the TCP peer of the service's endpoint.
+> In the audit log details, the IP address reflects the OAuth client's IP address. The IP address is the TCP peer of the service's endpoint.
 
 A second tab for **Custom Security** displays audit logs for custom security attributes. To view data on this tab, you must have the [Attribute Log Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) or [Attribute Log Reader](../../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role. This audit log shows all activities related to custom security attributes. For more information, see [What are custom security attributes](../../fundamentals/custom-security-attributes-overview.md).
 
