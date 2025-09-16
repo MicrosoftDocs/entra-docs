@@ -4,11 +4,10 @@ description: Learn how to acquire a token for a web app that calls web APIs
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: 
 ms.date: 01/30/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---

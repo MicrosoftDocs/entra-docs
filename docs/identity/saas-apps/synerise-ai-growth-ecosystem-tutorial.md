@@ -3,7 +3,7 @@ title: Configure Synerise AI Growth Operating System for Single sign-on with Mic
 description: Learn how to configure single sign-on between Microsoft Entra ID and Synerise AI Growth Operating System.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

@@ -337,6 +337,23 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 }
 ```
 
+##### Validations performed by SCIM Validator
+
+**Create New User**
+- POST /Users – Creates a new user with a complete JSON payload.
+    - Endpoint returns HTTP 201
+    - POST response contains created user ID
+- GET /Users?filter={joiningProperty} eq "value" – Verifies creation by filtering on the joining property.
+    - GET returns created user
+    - Returned values from GET match the passed values from the POST request (varies based on endpoint)
+- DELETE /Users - Cleans Up Test User.	
+    -Only called if hard delete is supported
+    
+**Create Duplicate User**	
+- POST /Users – Attempts to create a user using an identical payload (with the same unique/joining attribute) to an existing user.
+    - Return HTTP 201 on first create request
+    - Return HTTP 409 on second create request
+
 #### Get User
 
 ###### <a name="request-1"></a>Request
@@ -542,6 +559,32 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 }
 ```
 
+##### Validations performed by SCIM Validator
+
+**Add Attributes**
+- POST /Users - Creates the user resource
+    - HTTP 2xx success
+- PATCH /Users/{id} – Uses a JSON Patch document (with the add operation) to insert additional non-required attributes.
+- GET /Users?filter={joiningProperty} eq "value" – Retrieves the user to verify the added attributes.
+    - User is returned
+    - Inserted attributes are now present on the user
+    
+**Replace User Attributes**
+- POST /Users - Creates the user resource
+    - HTTP 2xx success
+- PATCH /Users/{id} – Sends a JSON Patch document (using the replace operation) to update one or more attributes.
+- GET /Users?filter={joiningProperty} eq "value" – Verifies that the updated attributes are correctly applied.
+    - User is returned
+    - Updated attributes are present on the user
+    
+**Update Joining Property**
+- POST /Users - Creates the user resource
+    - HTTP 2xx success
+- PATCH /Users/{id} – Updates the joining property (e.g., userName) via a JSON Patch document.
+- GET /Users?filter={joiningProperty} eq "newValue" – Confirms the joining property has been updated.	
+    - Joining property is updated on user
+
+
 ### Disable User
 
 ##### <a name="request-14"></a>Request
@@ -597,6 +640,17 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     }
 }
 ```
+
+##### Validations performed by SCIM Validator
+
+- POST /Users/ - Creates a resource based on the schema
+    - HTTP 2xx success
+    - Disabled user should be returned on GET request
+- PATCH /Users/{id} – Issues a JSON Patch document that sets the "active" attribute to false.
+    - HTTP 2xx success
+- GET /Users?filter={joiningProperty} eq "value" – Retrieves the user to confirm the active attribute is now false.	
+    - Returned user record should have ACTIVE=FALSE"
+
 
 #### Delete User
 
@@ -1428,7 +1482,7 @@ When using the OAuth Code Grant flow, it's required that you support a model whe
 1. When the provisioning cycle begins, the service checks if the current access token is valid and exchanges it for a new token if needed. The access token is provided in each request made to the app and the validity of the request is checked before each request.
 
 > [!NOTE]
-> While it's not possible to setup OAuth on the non-gallery applications, you can manually generate an access token from your authorization server and input it as the secret token to a non-gallery application. This allows you to verify compatibility of your SCIM server with the Microsoft Entra provisioning service before onboarding to the app gallery, which does support the OAuth code grant.  
+> While it's not possible to set up OAuth on the non-gallery applications, you can manually generate an access token from your authorization server and input it as the secret token to a non-gallery application. This allows you to verify compatibility of your SCIM server with the Microsoft Entra provisioning service before onboarding to the app gallery, which does support the OAuth code grant.  
 
 **Long-lived OAuth bearer tokens:** If your application doesn't support the OAuth authorization code grant flow, instead generate a long lived OAuth bearer token that an administrator can use to set up the provisioning integration. The token should be perpetual, or else the provisioning job is [quarantined](application-provisioning-quarantine-status.md) when the token expires.
 

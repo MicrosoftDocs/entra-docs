@@ -1,10 +1,10 @@
 ---
-title: Overview of custom authentication strengths and advanced options for FIDO2 security keys and certificate-based authentication in Microsoft Entra ID
-description: Learn how admins can create custom authentication strengths with advanced options for FIDO2 security keys and certificate-based authentication.
+title: Overview of custom authentication strengths and advanced options for passkey (FIDO2) and certificate-based authentication in Microsoft Entra ID
+description: Learn how admins can create custom authentication strengths with advanced options for passkey (FIDO2) security keys and certificate-based authentication.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 03/04/2025
+ms.date: 09/15/2025
 ms.author: justinha
 author: inbarckms
 manager: dougeby
@@ -31,12 +31,12 @@ You can edit a custom authentication strength. If it's referenced by a Condition
 To check if an authentication strength is referenced by a Conditional Access policy, click the **Conditional Access policies** column.
 
 
-## FIDO2 security key advanced options
-You can restrict the usage of FIDO2 security keys based on their Authenticator Attestation GUIDs (AAGUIDs). This capability allows administrators to require a FIDO2 security key from a specific manufacturer in order to access the resource. To require a specific FIDO2 security key, first create a custom authentication strength. Then select **FIDO2 Security Key**, and click **Advanced options**. 
+## Passkey (FIDO2) advanced options
+You can restrict the usage of passkeys (FIDO2) based on their Authenticator Attestation GUIDs (AAGUIDs). This capability allows administrators to require a FIDO2 security key from a specific manufacturer in order to access the resource. To require a specific FIDO2 security key, first create a custom authentication strength. Then select **Passkeys (FIDO2)**, and click **Advanced options**. 
 
-:::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options for FIDO2 security key.":::
+:::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot showing Advanced options for passkey (FIDO2).":::
 
-Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **Save**.
+Next to **Add AAGUID**, click **+**, copy the AAGUID value, and click **Save**.
 
 :::image type="content" border="true" source="./media/concept-authentication-strengths/guid.png" alt-text="Screenshot showing how to add an Authenticator Attestation GUID.":::
 
@@ -62,12 +62,12 @@ The next sections show how to configure advanced options for CBA by using the Mi
 
    :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certificate-advanced-options.png" alt-text="Screenshot showing Advanced options for certificate-based authentication.":::
     
-1. You can select certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor. Certificate issuers can be configured either by using the drop down **Certificate issuers from the certificate authorities in your tenant** or by using **Other certificate issuer by SubjectkeyIdentifier** for scenarios where the certificate you would like to use is not uploaded to the Certificate authorities in your tenant. One such example is external user scenarios, where the user could be authenticating in their home tenant and auth strength is being enforced on the resource tenant.
+1. You can select certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor. Certificate issuers can be configured either by using the drop-down **Certificate issuers from the certificate authorities in your tenant** or by using **Other certificate issuer by SubjectkeyIdentifier** for scenarios where the certificate you would like to use is not uploaded to the Certificate authorities in your tenant. One such example is external user scenarios, where the user could be authenticating in their home tenant and auth strength is being enforced on the resource tenant.
 
-   :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or-other-issuer.png" alt-text="Screenshot showing the configuration options - certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs .":::
+   :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or-other-issuer.png" alt-text="Screenshot showing the configuration options - certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs.":::
 
    - If both attributes Certificate issuers AND  Policy OIDs are configured, there's a AND relationship and the user has to use a certificate that has atleast one of the issuers AND one of the policy OID from the list to satisfy the authentication strength.
-   - If only Certificate issuers attribute is configured then the user has to use a certificate that has atleast one of the issuers to satisfy the authentication strength .
+   - If only Certificate issuers attribute is configured then the user has to use a certificate that has atleast one of the issuers to satisfy the authentication strength.
    - If only Policy OIDs attribute is configured then the user has to use a certificate that has atleast one of the policy OIDs to satisfy the authentication strength.
 
   >[!NOTE]
@@ -122,8 +122,8 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 
 ## Limitations
 
-### FIDO2 security key advanced options
-- FIDO2 security key Advanced options - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
+### Passkeys (FIDO2) Advanced options
+- Passkeys (FIDO2) Advanced options - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
 
 ### Certificate-based authentication advanced options
 
@@ -136,7 +136,7 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
   >[!NOTE]
   >If the certificate doesn't conform, user authentication might succeed, but not satisfy the issuerSki restrictions for the authentication strength policy.
 
-- During sign-in, the first 5 policy OIDs from the end user certificate are considered, and compared with the policy OIDs configured in the authentication strength policy. If the end user certificate has more than 5 policy OIDs, the first 5 policy OIDs in lexical order that match the authentication strength requirements are taken into account. 
+- During sign-in, the first 5 policy OIDs from the end user certificate are considered, and compared with the policy OIDs configured in the authentication strength policy. If the end user certificate has more than five policy OIDs, the first five policy OIDs in lexical order that match the authentication strength requirements are taken into account. 
 
 - For B2B users, let's take an example where Contoso has invited users from Fabrikam to their tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant.
   - When cross-tenant access setting is **Off** (Contoso doesn't accept MFA that was performed by the home tenant) - Using certificate-based authentication on the resource tenant isn't supported.
@@ -147,10 +147,10 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 
 ## Troubleshooting  authentication strength advanced options
 
-### Users can't use their FIDO2 security key to sign in
-A Conditional Access Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different FIDO2 security key.
+### Users can't use their passkey (FIDO2)  to sign in
+A Conditional Access Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different passkey (FIDO2).
 
-:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted FIDO2 security key.":::
+:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted passkey (FIDO2).":::
 
 
 ### How to check certificate policy OIDs and issuer

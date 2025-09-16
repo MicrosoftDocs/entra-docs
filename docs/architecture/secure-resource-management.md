@@ -99,7 +99,7 @@ An enterprise agreement can be configured to support multiple tenants by setting
 
 It's important to note that the default configuration described above grants the Azure EA Account Owner privileges to manage the resources in any subscriptions they created. For subscriptions holding production workloads, consider decoupling billing and resource management by changing the service administrator of the subscription right after creation.
 
- To further decouple and prevent the account owner from regaining service administrator access to the subscription, the subscription's tenant can be [changed](~/fundamentals/how-subscriptions-associated-directory.yml) after creation. If the account owner doesn't have a user object in the Microsoft Entra tenant the subscription is moved to, they can't regain the service owner role.
+ To further decouple and prevent the account owner from regaining service administrator access to the subscription, the subscription's tenant can be [changed](~/fundamentals/how-subscriptions-associated-directory.md) after creation. If the account owner doesn't have a user object in the Microsoft Entra tenant the subscription is moved to, they can't regain the service owner role.
 
 To learn more, visit [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).  
 

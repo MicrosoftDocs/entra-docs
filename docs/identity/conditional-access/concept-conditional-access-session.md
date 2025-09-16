@@ -32,16 +32,11 @@ For a list of supported applications and how to configure policies, see the foll
 
 Conditional Access App Control uses a reverse proxy architecture and is uniquely integrated with Microsoft Entra Conditional Access. Microsoft Entra Conditional Access allows you to enforce access controls on your organization’s apps based on certain conditions. The conditions define what user or group of users, cloud apps, and locations and networks a Conditional Access policy applies to. After you determine the conditions, you can route users to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps) where you can protect data with Conditional Access App Control by applying access and session controls.
 
-Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are used within the Defender for Cloud Apps portal to refine filters and set actions to take. With the access and session policies, you can:
+Conditional Access App Control enables user app access and sessions to be monitored and controlled in real time based on access and session policies. Access and session policies are used within the Defender for Cloud Apps portal to refine filters and set actions to take. 
 
-- Prevent data exfiltration: You can block the download, cut, copy, and print of sensitive documents on, for example, unmanaged devices.
-- Protect on download: Instead of blocking the download of sensitive documents, you can require documents to be labeled and protected with Azure Information Protection. This action ensures the document is protected and user access is restricted in a potentially risky session.
-- Prevent upload of unlabeled files: Before a sensitive file is uploaded, distributed, and used, it’s important to make sure that the file has the right label and protection. You can ensure that unlabeled files with sensitive content are blocked from being uploaded until the user classifies the content.
-- Monitor user sessions for compliance (Preview): Risky users are monitored when they sign into apps and their actions are logged from within the session. You can investigate and analyze user behavior to understand where, and under what conditions, session policies should be applied in the future.
-- Block access (Preview): You can granularly block access for specific apps and users depending on several risk factors. For example, you can block them if they're using client certificates as a form of device management.
-- Block custom activities: Some apps have unique scenarios that carry risk, for example, sending messages with sensitive content in apps like Microsoft Teams or Slack. In these kinds of scenarios, you can scan messages for sensitive content and block them in real time.
+This control can be enforced with Microsoft Defender for Cloud Apps, where Admins can [Deploy Conditional Access App Control for featured apps](/defender-cloud-apps/proxy-deployment-aad) and [use Microsoft Defender for Cloud Apps session policies](/defender-cloud-apps/session-policy-aad).
 
-For more information, see the article [Deploy Conditional Access App Control for featured apps](/defender-cloud-apps/proxy-deployment-aad).
+For Microsoft Edge for Business, this control can be enforced with [Microsoft Purview Data Loss Prevention](/purview/dlp-browser-dlp-learn), where Admins can [help prevent users from sharing sensitive info with Cloud Apps in Edge for Business](/purview/dlp-create-policy-prevent-cloud-sharing-from-edge-biz). The Conditional Access App Control **Custom** setting is required for apps included in these policies.
 
 ## Sign-in frequency
 

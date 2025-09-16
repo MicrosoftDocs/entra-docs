@@ -16,8 +16,6 @@
     href: agent-optimization-logs-metrics.md
   - name: Phased rollout
     href: agent-optimization-phased-rollout.md
-  - name: Optimization agent FAQ
-    href: agent-optimization-faq.yml
 - name: Tutorials
   items:
   - name: Require multifactor authentication
@@ -160,8 +158,6 @@
       href: troubleshoot-conditional-access.md
     - name: Troubleshoot Security Copilot
       href: troubleshoot-security-copilot-policies.md
-    - name: Troubleshoot using the What If tool 
-      href: troubleshoot-conditional-access-what-if.md
     - name: Troubleshoot continuous access evaluation
       href: howto-continuous-access-evaluation-troubleshoot.md
   - name: Approved client app migration
@@ -200,5 +196,3 @@
     href: ~/fundamentals/whats-new.md
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
-  - name: Videos
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory

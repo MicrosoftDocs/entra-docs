@@ -3,7 +3,7 @@ title: Configure The People Experience Hub for Single sign-on with Microsoft Ent
 description: Learn how to configure single sign-on between Microsoft Entra ID and The People Experience Hub.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

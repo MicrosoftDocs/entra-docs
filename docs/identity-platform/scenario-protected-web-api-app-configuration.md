@@ -7,7 +7,7 @@ ms.author: cwerner
 ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
@@ -21,6 +21,8 @@ To configure the code for your protected web API, understand:
 - What defines APIs as protected.
 - How to configure a bearer token.
 - How to validate the token.
+
+[!INCLUDE [Accepted token versions](./includes/scenarios/accepted-token-versions.md)]
 
 ## What defines ASP.NET and ASP.NET Core APIs as protected?
 
@@ -84,7 +86,7 @@ You need to specify the `TenantId` only if you want to accept access tokens from
 
 #### Using a custom App ID URI for a web API
 
-If you've accepted the default App ID URI proposed by the Azure portal, you don't need to specify the audience (see [Application ID URI and scopes](scenario-protected-web-api-app-registration.md#scopes-and-the-application-id-uri)). Otherwise, add an `Audience` property whose value is the App ID URI for your web API. This typically starts with `api://`.
+If you've accepted the default App ID URI proposed by the Azure portal, you don't need to specify the audience. Otherwise, add an `Audience` property whose value is the App ID URI for your web API. This typically starts with `api://`.
 
 ```Json
 {

@@ -15,7 +15,7 @@ ms.custom: sfi-ga-nochange
 ### In the Microsoft Entra admin center
 
 - [!INCLUDE [emergency-access-accounts](../definitions/emergency-access-accounts.md)]
-- Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+- Add one or more [custom domain names](~/fundamentals/add-custom-domain.md) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
 

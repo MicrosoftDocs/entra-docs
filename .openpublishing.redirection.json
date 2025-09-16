@@ -201,6 +201,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/troubleshoot-conditional-access-what-if.md",
+      "redirect_url": "/entra/identity/conditional-access/what-if-tool",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-faq.yml",
       "redirect_url": "/entra/identity/conditional-access/agent-optimization",
       "redirect_document_id": false
@@ -976,6 +981,41 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/scenario-daemon-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-daemon-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-desktop-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-desktop-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-mobile-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-mobile-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-protected-web-api-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-protected-web-api-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-api-call-api-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-api-call-api-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-call-api-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-call-api-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-app-registration.md",
+      "redirect_url": "/entra/identity-platform/scenario-web-app-sign-user-app-configuration",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/custom-extension-onattributecollectionsubmit-reference.md",
       "redirect_url": "/entra/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data",
       "redirect_document_id": false
@@ -1468,6 +1508,21 @@
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/howto-assign-access-cli.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/how-to-assign-azure-resource",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/manage-user-assigned-managed-identities-azure-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-assign-app-role-managed-identity.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/assign-app-role-managed-identity-azure-cli",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/how-to-assign-access-azure-resource.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/manage-user-assigned-managed-identities-azure-portal",
       "redirect_document_id": false
     },
     {
@@ -2498,6 +2553,21 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/solarwinds-orion-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/github-ae-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/github-enterprise-server-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/github-ae-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/github-enterprise-server-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/pksha-chatbot-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/pksha-chatagent-tutorial",
       "redirect_document_id": false
     }
   ]

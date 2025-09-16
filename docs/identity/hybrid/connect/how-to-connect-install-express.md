@@ -51,7 +51,7 @@ For more information see [TLS 1.2 enforcement for Microsoft Entra Connect Sync](
 
   :::image type="content" source="media/how-to-connect-install-express/install-6.png" alt-text="Screenshot that shows the Connect to AD DS page in the installation wizard." lightbox="media/how-to-connect-install-express/install-6.png":::
 
- 7. The [Microsoft Entra ID sign-in configuration](plan-connect-user-signin.md#azure-ad-sign-in-configuration) page appears only if you didn't complete the step to [verify your domains](~/fundamentals/add-custom-domain.yml) in the [prerequisites](how-to-connect-install-prerequisites.md).
+ 7. The [Microsoft Entra ID sign-in configuration](plan-connect-user-signin.md#azure-ad-sign-in-configuration) page appears only if you didn't complete the step to [verify your domains](~/fundamentals/add-custom-domain.md) in the [prerequisites](how-to-connect-install-prerequisites.md).
 
   :::image type="content" source="media/how-to-connect-install-express/install-7.png" alt-text="Screenshot that shows examples of unverified domains in the installation wizard." lightbox="media/how-to-connect-install-express/install-7.png":::
 
