@@ -72,12 +72,12 @@ Not Supported.
 
 #### Microsoft Entra Joined Devices Cloud Trust or no Trust Type
 
-##### [Microsoft Entra Joined Devices Legacy Kerberos Legacy-Kerberos](#tab/HybridJoinedLegacyKerberos)
+##### [Microsoft Entra Joined Devices Legacy Kerberos Legacy-Kerberos](#tab/MicrosoftEntraJoinedDevicesLegacyKerberosLegacy-Kerberos)
 
 - **Apps with App Proxy**: Supported as long as authentication user attributes are synced between Microsoft Entra ID and Active Directory
 - **Apps with Entra Private Access**: Supported as long as authentication user attributes are synced between Microsoft Entra ID and Active Directory
 
-##### [Microsoft Entra Joined Devices Microsoft Entra Kerberos Entra-Kerberos](#tab/HybridJoinedMicrosoftEntraKerberos)
+##### [Microsoft Entra Joined Devices Microsoft Entra Kerberos Entra-Kerberos](#tab/MicrosoftEntraJoinedDevicesMicrosoftEntraKerberosEntraKerberos)
 
 - **Azure Files**: Supported
 - **On-premises SSO**: Supported as long as authentication user attributes are synced between Microsoft Entra ID and Active Directory
