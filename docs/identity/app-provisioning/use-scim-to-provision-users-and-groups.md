@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 09/10/2025
+ms.date: 09/16/2025
 ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
@@ -1381,8 +1381,8 @@ The SCIM spec doesn't define a SCIM-specific scheme for authentication and autho
 |--|--|--|--|
 |Username and password (not recommended or supported by Microsoft Entra ID)|Easy to implement|Insecure - [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/your-pa-word-doesn-t-matter/ba-p/731984)|Not supported for new gallery or non-gallery apps.|
 |Long-lived bearer token|Long-lived tokens don't require a user to be present. They're easy for admins to use when setting up provisioning.|Long-lived tokens can be hard to share with an admin without using insecure methods such as email. |Supported for gallery and non-gallery apps. |
-| SHOULD REFERENCE TO OAUTH AUTHORIZATION CODE GRANT BE REMOVED COMPLETELY? OAuth authorization code grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have.  A real user must be present during initial authorization, adding a level of accountability. |Requires a user to be present. If the user leaves the organization, the token is invalid, and authorization needs to be completed again.|Supported for gallery apps and non-gallery apps.|
-|OAuth 2.0 client credentials grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have. Both the authorization code grant and the client credentials grant create the same type of access token, so moving between these methods is transparent to the API.  Provisioning can be automated, and new tokens can be silently requested without user interaction. | Supported for gallery and non-gallery apps. Publishers can configure SCIM jobs using client credentials regardless of app type. Each customer must provide their own Client ID and Client Secret to authenticate against the SCIM API. |
+| OAuth authorization code grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have.  A real user must be present during initial authorization, adding a level of accountability. |Requires a user to be present. If the user leaves the organization, the token is invalid, and authorization needs to be completed again.|Supported for gallery apps and non-gallery apps.|
+|OAuth 2.0 client credentials grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have. Both the authorization code grant and the client credentials grant create the same type of access token, so moving between these methods is transparent to the API. Provisioning can be automated, and new tokens can be silently requested without user interaction. | Note: OAuth authorization code grant is in deprecation. New connectors won't support OAuth authorization code grant, and existing connectors should now use the OAuth client credentials grant. Supported for gallery and non-gallery apps. Publishers can configure SCIM jobs using client credentials regardless of app type. Each customer must provide their own Client ID and Client Secret to authenticate against the SCIM API. |
 
 > [!NOTE]
 > It's not recommended to leave the token field blank in the Microsoft Entra provisioning configuration custom app UI. The token generated is primarily available for testing purposes.
@@ -1397,7 +1397,7 @@ The provisioning service supports the [OAuth client credentials grant](https://n
 - **Client Secret:** This is a long-lived token that has the necessary permissions on the API. It's used to authenticate your application when requesting an access token.
 
 
-When using the OAuth Client Credentials Grant flow, it's required that you support a model where each customer will submit their own client ID and Client Secret when setting up a provisioning instance. A single app wide client ID/Client Secret pair is not supported.
+When using the OAuth client credentials grant flow, it's required that you support a model where each customer will submit their own client ID and Client Secret when setting up a provisioning instance. A single app wide client ID/Client Secret pair is not supported.
 
 
 #### How to set up Client Credentials
