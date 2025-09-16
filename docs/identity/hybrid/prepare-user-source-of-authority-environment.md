@@ -95,21 +95,16 @@ For more information on disabling Exchange Hybrid, see: see: [Manage recipients 
 
 ## Shift Your HR Integration To The Cloud 
 
-The first step in setting up SOA is to determine your provisioning strategy for your HR system. Ideally, you’re already provisioning new employees from your cloud HR system into Microsoft Entra ID directly, and have identified all the users that are no longer needed in Active Directory. If not, our recommendation is to determine your HR strategy first before planning your source of authority change project.  
+The next step in setting up SOA is to determine your provisioning strategy for your HR system. Ideally, you’re already provisioning new employees from your cloud HR system into Microsoft Entra ID directly, and have identified all the users that are no longer needed in Active Directory
 
-### Steps to Shift HR Integration to the Cloud
+
+### Prep your HR system
 
 When shifting your HR integration to the cloud from Active Directory, you should do the following to your environment:
 
-1.	Make sure you have your cloud HR system ready and in place to initiate provisioning to Microsoft Entra ID. 
+1.	Make sure you have your cloud HR system ready and in place to initiate provisioning to Microsoft Entra ID.
 
-1.	Go to your HR Provisioning to Active Directory configuration, and remove the users no longer needed in Active Directory from the App-> Active Directory provisioning configuration (for example, Workday to Active Directory). This stops these users from syncing into Active Directory. Apply a phased approach to provision identities from the HR system into Active directory by starting with a few users and then widening your selection criteria to scope users. 
-
-1.	With these users stopped from syncing into Active Directory, switch the Source of Authority of the selected users from Active Directory to Microsoft Entra ID. 
-
-1.	In your HR Provisioning configuration, manually Migrate/transfer attribute mappings to ensure the mappings/transformation happens from HR to Microsoft Entra ID. This requires you setting up a new provisioning configuration with the target as Microsoft Entra ID, and setting up the mappings in that configuration.  
-
-1.	If you switched Active Directory group management to the cloud, ensure these users are provisioned into that group moving forward.
+1.	Go to your HR Provisioning to Active Directory configuration, and remove the users no longer needed in Active Directory from the App-> Active Directory provisioning configuration (for example, Workday to Active Directory). This stops these users from syncing into Active Directory. Apply a phased approach to provision identities from the HR system into Active directory by starting with a few users and then widening your selection criteria to scope users.
 
 
 ## Prep Your Sync Client
