@@ -1,9 +1,9 @@
 ---
 title: Create a custom authentication extension for attribute collection start and submit events (preview)
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.
-author: msmimart
-manager: CelesteDG
-ms.author: mimart
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
 ms.date: 09/16/2025
 ms.service: identity-platform
 ms.topic: how-to
