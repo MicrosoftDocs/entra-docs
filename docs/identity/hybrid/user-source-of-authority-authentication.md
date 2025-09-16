@@ -20,7 +20,7 @@ Device authentication is a critical component for organizations managing hybrid 
 
 The following sections contain information that shows the currently supported authentication methods for SOA converted users authenticating through [Hybrid Joined Devices](../../identity/devices/concept-hybrid-join.md).
 
-### [Hybrid Joined Password based sign-in password-based](#tab/Hybrid Joined Password based sign in)
+### [Hybrid Joined Devices Password based sign-in](#tab/Hybrid)
 
 Using Hybrid Joined Devices, no password-based sign-ins are supported for SOA converted users.
 
