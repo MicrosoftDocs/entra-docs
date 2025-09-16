@@ -56,9 +56,10 @@ Not Supported.
 
 The following sections contain information that shows the currently supported authentication methods for SOA converted users authenticating through [Microsoft Entra Joined Devices](../../identity/devices/concept-directory-join.md).
 
-### [Microsoft Entra Joined Devices Password based sign-in password-based](#tab/MicrosoftEntraJoinedDevicesPasswordbasedsignin)
+### [Microsoft Entra Joined Devices Password based sign-in](#tab/MicrosoftEntraJoinedDevicesPasswordbasedsignin)
 
-Using Microsoft Entra Joined Devices, no password-based sign-ins are supported for SOA converted users.
+Not Supported
+
 
 ### Microsoft Entra Joined Devices Windows Hello for Business and FIDO2 Sign-in
 
