@@ -6,13 +6,17 @@ author: garrodonnell
 manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
-ms.topic: how-to
+ms.topic: tutorial
 ms.date: 10/01/2025
 ms.author: godonnell
+
+## Customer intent: As a developer or administrator responsible for managing user identities, I want to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID, so that users can continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes.
 ---
 # Migrating users to Microsoft Entra External ID using Just-In-Time (JIT) Migration (Preview)
 
-Just-In-Time (JIT) password migration is a common method to migrate user credentials from a legacy identity provider to Microsoft Entra External ID at the time of user authentication. This approach allows users to continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes. Users are prompted to enter their passwords when they sign in, and the system validates the password against the legacy identity provider. If the password is valid, it is then securely stored in External ID for future use.
+This tutorial describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you are a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
+
+Just-In-Time (JIT) password migration is a common method to migrate user credentials. This approach allows users to continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes. Users are prompted to enter their passwords when they sign in, and the system validates the password against the legacy identity provider. If the password is valid, it is then securely stored in External ID for future use.
 
 > [!Note]
 > If you have access to user passwords, either at REST or runtime, in your legacy system, you can also proactively populate these. For more information, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
@@ -36,7 +40,7 @@ To implement JIT migration, you first need to define an extension attribute in y
 
 You can also create a custom extension using Graph API. To learn more, see [Add custom data to resources by using extensions](/graph/extensibility-overview).
 
-### Get the extension attribute ID
+## Get the extension attribute ID
 
 After creating the extension attribute, you need to retrieve its unique identifier to use it in your custom authentication extension. The extension attribute ID is required to read and update the migration status of users during the authentication process. It's a combination of an application id and the attribute name.
 
@@ -45,7 +49,7 @@ After creating the extension attribute, you need to retrieve its unique identifi
 1. Select the application named `b2c-extensions-app` and copy the **Application (client) ID** value without hyphens. This is your application id.
 1. Your extension attribute id is in the format `extension_[application-id]_[attribute-name]`. For example, if your application id is `00001111-aaaa-2222-bbbb-3333cccc4444` and your attribute name is `isMigrated`, your extension attribute id would be `extension_00001111aaaa2222bbbb3333cccc4444_isMigrated`.
 
-### Create a custom authentication extension
+## Create a custom authentication extension
 
 Next, create a custom authentication extension that will be invoked during the sign-in process to validate user credentials against the legacy identity provider. 
 
@@ -352,7 +356,7 @@ Response schema:
 
 ## Register the custom authentication application
 
-Next, you need to create a custom authentication application in your External ID tenant. This application will represent the custom authentication extension and will be used to configure the extension policy.
+Next, create an application in your External ID tenant. This application will represent the custom authentication extension and will be used to configure the extension policy.
 
 1. Navigate to **Entra ID** and then **App registrations** in the [Microsoft Entra admin center](https://entra.microsoft.com/).
 1. Click on **New registration**.
@@ -419,7 +423,7 @@ POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions
 }  
 ```
 
-### Testing the migration process with a client application
+## Register a client application for testing
 
 Next, to test the migration process you need to register a client web application. This application will simulate user sign-in and trigger the custom authentication extension.
 
@@ -429,8 +433,54 @@ Next, to test the migration process you need to register a client web applicatio
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. In the **Redirect URI** section, select **Web** and then enter `https://jwt.ms` in the URL text box.
 1. Click **Register** to create the application.
+1. Under the **Manage** section, select **Authentication**.
+1. Under the **Implicit grant and hybrid flows** section, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
+1. Under **API Permissions**, grant admin consent for **User.Read** delegated MS Graph permissions.
+1. Select **Save** to save your changes.
 
-### 
+## Create a listener policy
+
+Finally, create a listener policy that links the custom extension policy to the client application. This policy will ensure that the custom authentication extension is invoked during user sign-in.
+
+Use the following example to create a listener policy using Microsoft Graph API. This policy will associate your client application with the custom authentication extension.
+
+Replace these placeholders with the following information from your configuration:
+
+- *App_ID*: The application ID from the client application you just registered. You can find the application ID on the application's **Overview** page.
+
+- *migrationAttributeID*: The extension attribute ID you created earlier in this tutorial to track the migration status of users.
+
+- *customExtensionObjectId*: The policy ID from the custom authentication extension you created earlier in this tutorial. 
+
+```http
+POST https://graph.microsoft.com/beta/identity/authenticationEventListeners 
+
+Content-type: application/json  
+
+{  
+    "@odata.type": "#microsoft.graph.onPasswordSubmitListener",  
+    "conditions": {  
+        "applications": {  
+            "includeAllApplications": false,  
+            "includeApplications": [  
+                {  
+                    "appId": "{client-appid-you-created-above }"  
+                }  
+            ]  
+        }  
+    },  
+    "priority": 500,  
+    "handler": {  
+        "@odata.type": "#microsoft.graph.onPasswordMigrationCustomExtensionHandler",  
+        "migrationAttributeId": "{migrationAttributeID}",  
+        "customExtension": {  
+            "id": "{customExtensionObjectId}"  
+        }  
+    }  
+}  
+```
+
+## Next steps
 
 
 
