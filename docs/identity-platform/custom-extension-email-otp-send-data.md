@@ -47,7 +47,7 @@ The following JSON document provides an example of a request payload:
             "identifier": "someone@example.com",
             "oneTimeCode": "12345678"
         },
-        "tenantId": "ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0",
+        "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
         "authenticationEventListenerId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "customAuthenticationExtensionId": "11112222-bbbb-3333-cccc-4444dddd5555",
         "authenticationContext": {

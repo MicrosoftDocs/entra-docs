@@ -218,4 +218,4 @@ In this tutorial, you instantiated an MSAL Node [ConfidentialClientApplication](
 If you'd like to dive deeper into Node.js & Express web application development on the Microsoft identity platform, see our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md)
+> [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-configuration.md)
