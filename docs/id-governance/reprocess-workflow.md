@@ -1,5 +1,5 @@
 ---
-title: Reprocess workflow runs using Lifecycle Workflows
+title: Reprocess workflow runs using Lifecycle Workflows (Preview)
 description: This article guides a user on reprocessing workflow runs using Lifecycle Workflows
 author: owinfreyATL
 ms.author: owinfrey
@@ -12,11 +12,9 @@ ms.date: 09/06/2025
 #CustomerIntent: As a Lifecycle Workflow Administrator, I want to reprocess workflow runs so that I can quickly re-run workflows that may have failed.
 ---
 
-# Reprocess workflow runs using Lifecycle Workflows
+# Reprocess workflow runs using Lifecycle Workflows (Preview)
 
-
-
-Lifecycle workflows allow you to automate tasks to run for users no matter where they fall in the Joiner-Mover-Leaver (JML) model within your organization. Workflow run history is recorded through the lens of runs, users processed, and tasks. With the reprocess workflow feature, you can run a previous workflow again either in the context of the complete workflow run, or in the context of specific users. This allows you to quickly manage previous workflow runs that failed to complete for certain reasons.
+Reprocessing workflows is a feature that allows workflows created using lifecycle workflows to be run again to ensure workflows operate as intended. This is useful when dealing with runs that failed for some reason. This article provides step-by-step instructions for reprocessing workflows using the Microsoft Entra admin center, enabling you to quickly and efficiently manage workflow runs for users or specific runs.
 
 
 ## Reprocess a workflow using the Microsoft Entra admin center
