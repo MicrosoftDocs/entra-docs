@@ -18,9 +18,9 @@ Microsoft Entra Kerberos is a cloud-native authentication protocol that bridges 
 
 Microsoft Entra Kerberos was introduced in 2021 to help bridge the gap between legacy on-premises authentication protocols and modern cloud identity. In practice, Microsoft Entra Kerberos turns Microsoft Entra ID into a cloud-based Key Distribution Center (KDC) for Kerberos authentication. This capability allows Microsoft Entra ID to issue Kerberos tickets for users, extending traditional Kerberos authentication beyond on-premises Active Directory.
 
-In a hybrid scenario, where accounts exist in on-premises Active Directory Domain Services (AD DS) and those users are synchronized to Microsoft Entra ID, Microsoft Entra Kerberos plays a crucial role. It enables these hybrid users to authenticate to cloud and on-premises resources by using Kerberos without needing a direct line of sight to domain controllers. For example, if a Microsoft Entra ID–joined Windows client accesses a file share or application over the internet, Microsoft Entra ID can issue the necessary Kerberos tickets on behalf of the on-premises Active Directory environment.
+In a hybrid scenario, where accounts exist in on-premises Active Directory Domain Services (AD DS) and those users are synchronized to Microsoft Entra ID, Microsoft Entra Kerberos plays a crucial role. It enables these hybrid users to authenticate to cloud and on-premises resources by using Kerberos without needing a direct line of sight to domain controllers. For example, if a Microsoft Entra ID-joined Windows client accesses a file share or application over the internet, Microsoft Entra ID can issue the necessary Kerberos tickets on behalf of the on-premises Active Directory environment.
 
-For more information about Kerberos in Windows, see [Kerberos authentication overview](/windows-server/security/kerberos/kerberos-authentication-overview).
+For more information about Kerberos in Windows, see [Kerberos authentication overview in Windows Server](/windows-server/security/kerberos/kerberos-authentication-overview).
 
 ## Hybrid identity
 
@@ -38,11 +38,11 @@ For example, when a Microsoft Entra ID-joined Windows client accesses a file sha
 
 **Enhanced security with modern credentials support**: Users can sign in by using passwordless methods such as Windows Hello for Business or FIDO2 security keys, yet still access on-premises resources that have Kerberos protections. This ability enables multifactor authentication (MFA) and passwordless authentication to reduce the risks associated with password theft and phishing attacks.
 
-**Simplified hybrid join**: Microsoft Entra Kerberos supports hybrid join scenarios without requiring Active Directory Federation Services (AD FS) or Microsoft Entra Connect Sync. This support is ideal for non-persistent virtual desktop infrastructure, disconnected forests, and Azure Virtual Desktop.
+**Simplified hybrid join**: Microsoft Entra Kerberos supports hybrid join scenarios without requiring Active Directory Federation Services (AD FS) or Microsoft Entra Connect Sync. This support is ideal for nonpersistent virtual desktop infrastructure, disconnected forests, and Azure Virtual Desktop.
 
 **Secure ticket exchange**: Microsoft Entra Kerberos uses a Ticket Granting Ticket (TGT) exchange model for enhanced security.
 
-**Scalable group memberships**: Microsoft Entra Kerberos addresses traditional Kerberos limitations with large or dynamic group memberships, to improve reliability and user experience. In scenarios that involve large groups of users, performance is optimized through automatic load distribution across all domain controllers (DCs) within a site. For deployments in Azure Virtual Desktop environments, we recommend ensuring that sufficient DCs are available and geographically close to the environment, to maintain responsiveness.
+**Scalable group memberships**: Microsoft Entra Kerberos addresses traditional Kerberos limitations with large or dynamic group memberships to improve reliability and user experience. In scenarios that involve large groups of users, performance is optimized through automatic load distribution across all domain controllers (DCs) within a site. For deployments in Azure Virtual Desktop environments, we recommend ensuring that sufficient DCs are available and geographically close to the environment, to maintain responsiveness.
 
 ## How Microsoft Entra Kerberos works
 
@@ -89,14 +89,14 @@ These prerequisites apply:
 - Devices should be Microsoft Entra joined or hybrid joined.
 - We recommend Windows Hello for Business or FIDO2 authentication methods for optimal integration.
 - On-premises domain controllers must be patched to support Kerberos Cloud Trust.
-- Ensure line-of-sight between client devices and domain controllers for ticket exchange.
+- Ensure line of sight between client devices and domain controllers for ticket exchange.
 
 If the user signs in by using a passwordless method (such as FIDO2 or Windows Hello for Business) on devices with Windows 10 (2004 or later) or Windows 11, Microsoft Entra ID issues a partial TGT for the user's on-premises Active Directory domain. This partial TGT contains the user's SID but no authorization data.
 
 The partial TGT that Microsoft Entra ID issues:
 
 - Enables access to on-premises resources by acting as a bridge between Microsoft Entra ID and Active Directory.
-- Contains limited data (for example, the user SID) and no group claims. It's not sufficient on its own to access on-premises resources.
+- Contains limited data (for example, the user's SID) and no group claims. It's not sufficient on its own to access on-premises resources.
 - Is issued only if the environment is configured to support it. For example, you have a hybrid identity setup and a Microsoft Entra Kerberos server object in Active Directory.
 - Must be exchanged with an on-premises Active Directory domain controller for a full TGT that includes group memberships and other access control data. The partial TGT must be exchanged with a domain controller to gain full authorization information. This information is then used to access resources like Server Message Block (SMB) shares or SQL servers.
 
@@ -104,7 +104,7 @@ The partial TGT that Microsoft Entra ID issues:
 
 Possessing a Microsoft Entra Kerberos TGT for a user's on-premises Active Directory domain does not automatically grant access to a full Active Directory TGT.
 
-In Microsoft Entra Kerberos, the Read-Only Domain Controller (RODC) object's allow list and block list are used to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access. This mechanism is critical for limiting exposure and enforcing security boundaries. This mechanism is especially critical in hybrid environments where Microsoft Entra ID issues partial TGTs that must be redeemed with on-premises Active Directory domain controllers for a full TGT.
+Microsoft Entra Kerberos uses the Read-Only Domain Controller (RODC) object's allow list and block list to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access. This mechanism is critical for limiting exposure and enforcing security boundaries. This mechanism is especially critical in hybrid environments where Microsoft Entra ID issues partial TGTs that must be redeemed with on-premises Active Directory domain controllers for a full TGT.
 
 To complete the exchange, the user must be listed in the allow list on the RODC object and not in the block list.
 
