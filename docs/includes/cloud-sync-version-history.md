@@ -17,7 +17,21 @@ From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micros
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
 
+## 1.1.2101.0
 
+Sept 17, 2025: released for download only
+
+### Fixed issues
+
+- Fixed bug when enumerating large groups
+- Made user password length configurable behind a registry key
+- Simplified the user experience for scenario selection
+- Added scrollbar when required to the display in the domain controller priority list 
+- Fixed a timeout issue during agent setup upgrade
+- Added UserAccountControl as a System for Cross-domain Identity Management (SCIM) property
+- Added discovery API usage to get the correct cloud endpoints
+- Added support for indirect GA/HA role membership checks
+- Enabled Validate Windows Credential Manager during agent installation
 
 
 ## 1.1.1586.0
