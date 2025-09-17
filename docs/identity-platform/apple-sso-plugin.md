@@ -430,7 +430,7 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 
 ## Device Identity Key Storage
 
-In March 2024, Microsoft announced that Microsoft Entra ID will transition from Apple's Keychain to Apple's Secure Enclave for storing device identity keys. Starting August 2025, the Secure Storage rollout will make Secure Enclave the default key storage for all new device registrations. Over time, newly registered devices will use secure storage model by default. Devices that do not support Secure Enclave will have registration keys stored in the user's iCloud Keychain instead of the Login Keychain, which provides stronger protection than legacy Login Keychain storage. Existing functionality for older devices remains the same.
+In March 2024, Microsoft announced that Microsoft Entra ID will transition from Apple's Keychain to Apple's Secure Enclave for storing device identity keys. Starting August 2025, the Secure Storage rollout will make Secure Enclave the default key storage for all new device registrations. New device registrations will use secure storage model by default. Existing devices that do not support Secure Enclave will have registration keys stored in the user's iCloud Keychain instead of the Login Keychain, which provides stronger protection than legacy Login Keychain storage. Existing functionality for older devices remains the same.
 
 If your applications or MDM solutions depend on accessing Microsoft Entra device registration keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
