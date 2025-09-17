@@ -228,7 +228,7 @@ January 20, 2021: released for download only
 ### Fixed issues
 -	Prevent quarantine when scoping group is out of scope
 -	PHS job now only operates for in-scope users, when scoping filters are configured
--	Agent would sometime stop responding during upgrade
+-	Agent would sometimes stop responding during upgrade
 -	Initial Sync for objects in nested OUs when using OU scoping
 -	Make the Repair-AADCloudSyncToolsAccount more robust
 -	Reduce large memory usage of OU scoping filters
