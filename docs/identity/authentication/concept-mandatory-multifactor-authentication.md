@@ -4,11 +4,11 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 09/08/2025
+ms.date: 09/17/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: nashahid, gkinasewitz
+ms.reviewer: shahjoy
 ms.custom: sfi-ga-nochange
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
 ---
@@ -210,13 +210,7 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 >
 >By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
 
-If you never previously signed in to the Azure portal with MFA, you're prompted to complete MFA to sign in, or postpone MFA enforcement. This screen is displayed only once. For more information about how to set up MFA, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md).
-
-:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/mandatory.png" alt-text="Screenshot of prompt to confirm mandatory MFA."
-
-If you select **Postpone MFA**, the date of MFA enforcement will be one month in the future, or Sept 30, 2025, whichever is earlier. After you sign in, you can change the date at [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure). To confirm that you want to proceed with the postponement request, click **Confirm postponement**. A Global Administrator must [elevate access](https://aka.ms/enableelevatedaccess) to postpone the start date of MFA enforcement.  
-
-:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone.png" alt-text="Screenshot of how to postpone mandatory MFA."
+Customers need to contact customer support to request postponement of Phase 1 MFA enforcement past September 30, 2025.
 
 ## Request more time to prepare for Phase 2 MFA enforcement 
 
