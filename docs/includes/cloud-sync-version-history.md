@@ -25,12 +25,12 @@ Sept 22, 2025: released for download only
 
 - Fixed bug when enumerating large groups
 - Made user password length configurable behind a registry key
-- Simplified the user experience for scenario selection
-- Added scrollbar when required to the display in the domain controller priority list 
+- Simplified how user's choose their deployment scenario
+- Increased the display of the domain controller priority list 
 - Fixed a timeout issue during agent setup upgrade
 - Added UserAccountControl as a System for Cross-domain Identity Management (SCIM) property
 - Added discovery API usage to get the correct cloud endpoints
-- Check for the Hybrid Administrator role prerequisite, and activate the role for authenticated users who are eligible for the role assignment. 
+- Added a check for the Hybrid Administrator role prerequisite, and activate the role for authenticated users who are eligible for the role assignment. 
 - Enabled Validate Windows Credential Manager during agent installation
 
 
