@@ -21,9 +21,6 @@ ms.custom: include file, sfi-image-nochange
 
  1. After you download the Microsoft Entra Connect Provisioning Agent Package, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
 
-    > [!NOTE]
-    > When you perform an installation for the US Government Cloud, use *AADConnectProvisioningAgentSetup.exe ENVIRONMENTNAME=AzureUSGovernment*. For more information, see [Install an agent in the US Government Cloud](~/identity/hybrid/cloud-sync/how-to-install.md#install-an-agent-in-the-us-government-cloud).
-
  1. On the screen that opens, select the **I agree to the license terms and conditions** checkbox, and then select **Install**.
 
     :::image type="content" source="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-splash-screen.png" alt-text="Screenshot that shows the Microsoft Entra Provisioning Agent Package screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-2.png":::
