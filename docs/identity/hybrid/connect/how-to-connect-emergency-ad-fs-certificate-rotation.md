@@ -138,7 +138,7 @@ Now that you've added the first certificate, made it primary, and removed the ol
 
 1. Optionally, verify whether an update is required by checking the current certificate information in Microsoft Entra ID. To do so, run the following command:
   
-   `Get-EntraFederationProperty -DomainName <your_domain.com> | FL Source, SigningCertificate` and convert the Base64 Encoded cert to a readble format to check the certificate expiration and thumbprint. 
+   `Get-EntraFederationProperty -DomainName <your_domain.com> | FL Source, SigningCertificate` and convert the Base64 Encoded cert to a readable format to check the certificate expiration and thumbprint. 
 
 1. To update the certificate information in Microsoft Entra ID, run the following command: `Update-MgDomainFederationConfiguration -DomainId <your_domain.com> -InternalDomainFederationId <hex_domainID>`.
 
