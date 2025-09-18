@@ -23,15 +23,15 @@ Sept 22, 2025: released for download only
 
 ### Fixed issues
 
-- Fixed bug when enumerating large groups
-- Made user password length configurable behind a registry key
-- Simplified how user's choose their deployment scenario
-- Increased the display of the domain controller priority list 
-- Fixed a timeout issue during agent setup upgrade
+- Improved reliability of agent install and upgrade by preventing service timeouts
+- Streamlined how to enable Windows Credential Manager during agent installation
+- Added a check for the Hybrid Administrator role prerequisite, and activate the role for eligible authenticated users
+- Simplified how to choose your provisioning scenario
+- Configured installation for the current cloud environment by default
+- Faster enumeration for large groups by preventing service timeouts
+- Improved sync reliability with a registry entry named **RegistryValueNameUserPasswordLength** to configure user password length
+- Improved how admins can view their domain controller priority list
 - Added UserAccountControl as a System for Cross-domain Identity Management (SCIM) property
-- Added discovery API usage to get the correct cloud endpoints
-- Added a check for the Hybrid Administrator role prerequisite, and activate the role for authenticated users who are eligible for the role assignment. 
-- Enabled Validate Windows Credential Manager during agent installation
 
 
 ## 1.1.1586.0
