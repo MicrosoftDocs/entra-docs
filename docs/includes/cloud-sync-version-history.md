@@ -12,14 +12,14 @@ This article lists the versions and features of Microsoft Entra provisioning age
 
 ## Download link
 
-From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), select "Cloud Sync" and go to "Agents" to download the "Provisioning Agent."
+From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), select **Cloud Sync**, and go to **Agents** to download the **Provisioning Agent**.
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
 
-## 1.1.2101.0
+## 1.1.2102.0
 
-Sept 17, 2025: released for download only
+Sept 22, 2025: released for download only
 
 ### Fixed issues
 
@@ -30,7 +30,7 @@ Sept 17, 2025: released for download only
 - Fixed a timeout issue during agent setup upgrade
 - Added UserAccountControl as a System for Cross-domain Identity Management (SCIM) property
 - Added discovery API usage to get the correct cloud endpoints
-- Added support for indirect GA/HA role membership checks
+- Check for the Hybrid Administrator role prerequisite, and activate the role for authenticated users who are eligible for the role assignment. 
 - Enabled Validate Windows Credential Manager during agent installation
 
 
