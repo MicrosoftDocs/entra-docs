@@ -155,7 +155,7 @@ Follow these steps to convert the SOA for a test user:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/retry-update.png" alt-text="Screenshot of a retry to change user properties.":::
 
-1. Open Microsoft Entra admin center and confirm that the user **Source** property is **Cloud**.
+1. Open Microsoft Entra admin center and confirm that the user **On-premises sync enabled** property is **Yes**.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/source-cloud.png" alt-text="Screenshot of how to confirm user source property.":::
 
