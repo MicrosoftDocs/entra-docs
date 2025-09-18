@@ -19,7 +19,7 @@ For successful federation between Microsoft Entra ID and Active Directory Federa
 > [!NOTE]
 > This article provides information on managing your federation certificates. For information on emergency rotation see [Emergency Rotation of the AD FS certificates](how-to-connect-emergency-ad-fs-certificate-rotation.md)
 
-This article provides you additional information to manage your token signing certificates and keep them in sync with Microsoft Entra ID, in the following cases:
+This article provides you with additional information to manage your token signing certificates and keep them in sync with Microsoft Entra ID, in the following cases:
 
 * You aren't deploying the Web Application Proxy, and therefore the federation metadata is not available in the extranet.
 * You aren't using the default configuration of AD FS for token signing certificates.
