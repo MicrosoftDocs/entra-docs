@@ -27,7 +27,7 @@ You can access Audit Logs in the Azure portal. They retain a record of SOA chang
 
 1. Select activity as **Change Source of Authority from AD DS to cloud**.
 
-   :::image type="content" source="media/how-to-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD DS to cloud activity selection.":::
+   :::image type="content" source="media/user-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD DS to cloud activity selection.":::
 
 
 ## How to use Microsoft Graph API to create reports for SOA 
