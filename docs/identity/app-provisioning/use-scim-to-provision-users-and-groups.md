@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 09/16/2025
+ms.date: 09/18/2025
 ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
@@ -1421,8 +1421,7 @@ Use the checklist to onboard your application quickly and customers have a smoot
 > * Support at least 25 requests per second per tenant to ensure that users and groups are provisioned and deprovisioned without delay (Required)
 > * Establish engineering and support contacts to guide customers post gallery onboarding (Required)
 > * 3 Non-expiring test credentials for your application (Required)
-> * Support the OAuth authorization code grant or a long-lived token as described in the example (Required)
-> * Support Client Credentials or a long-lived token as described in the example (Required)
+> * Support the OAuth Client Credentials grant
 > * OIDC apps must have at least 1 role (custom or default) defined
 > * Establish an engineering and support point of contact to support customers post gallery onboarding (Required)
 > * [Support schema discovery (required)](https://tools.ietf.org/html/rfc7643#section-6)
@@ -1436,22 +1435,21 @@ The SCIM spec doesn't define a SCIM-specific scheme for authentication and autho
 |--|--|--|--|
 |Username and password (not recommended or supported by Microsoft Entra ID)|Easy to implement|Insecure - [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/your-pa-word-doesn-t-matter/ba-p/731984)|Not supported for new gallery or non-gallery apps.|
 |Long-lived bearer token|Long-lived tokens don't require a user to be present. They're easy for admins to use when setting up provisioning.|Long-lived tokens can be hard to share with an admin without using insecure methods such as email. |Supported for gallery and non-gallery apps. |
-| OAuth authorization code grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have. A real user must be present during initial authorization, adding a level of accountability. |Requires a user to be present. If the user leaves the organization, the token is invalid, and authorization needs to be completed again.| Supported for a few existing apps. No support for new apps or non-gallery apps.|
+| OAuth Authorization code grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have. A real user must be present during initial authorization, adding a level of accountability. |Requires a user to be present. If the user leaves the organization, the token is invalid, and authorization needs to be completed again.| Supported for a few existing apps. No support for new apps or non-gallery apps.|
 |OAuth 2.0 client credentials grant|Access tokens have a shorter life than passwords, and have an automated refresh mechanism that long-lived bearer tokens don't have. Both the authorization code grant and the client credentials grant create the same type of access token, so moving between these methods is transparent to the API. Provisioning can be automated, and new tokens can be silently requested without user interaction. | Supported for gallery apps and non-gallery apps. Publishers can configure SCIM jobs using client credentials regardless of app type. Each customer must provide their own Client ID and Client Secret to authenticate against the SCIM API. |
 
-
+> [!NOTE]
+> OAuth Authorization code grant will soon be in deprecation. New connectors won't support OAuth Authorization code grant, and existing connectors should now use the OAuth Client Credentials grant. 
 > [!NOTE]
 > It's not recommended to leave the token field blank in the Microsoft Entra provisioning configuration custom app UI. The token generated is primarily available for testing purposes.
 
-### OAuth code grant flow
+**Long-lived OAuth bearer tokens:** If your application doesn't support the OAuth authorization code grant flow, instead generate a long lived OAuth bearer token that an administrator can use to set up the provisioning integration. The token should be perpetual, or else the provisioning job is [quarantined](application-provisioning-quarantine-status.md) when the token expires.
 
-The provisioning service supports the authorization code grant and after submitting your request for publishing your app in the gallery, our team will work with you to collect the following information:
+For more authentication and authorization methods, let us know on [UserVoice](https://aka.ms/appprovisioningfeaturerequest).
 
-- **Authorization URL**, a URL
+### OAuth Client Credentials grant flow
 
-### OAuth Client Credentials Grant flow
-
-The provisioning service supports the [OAuth client credentials grant](https://new link) and after submitting your request for publishing your app in the gallery, our team will work with you to collect the following information:
+The provisioning service supports the OAuth client credentials grant. After submitting your request for publishing your app in the gallery, our team will work with you to collect the following information:
 
 - **Tenant URL:** This is the SCIM API endpoint URL provided by your service provider. For example, it could be something like https://example.test/scim.
 - **Token Endpoint:** This is the OAuth2 Token URL. It's the endpoint that the provisioning service will use to exchange client credentials for an access token. For example, it could be something like https://example.test/oauth2/token.
@@ -1463,8 +1461,16 @@ When using the OAuth client credentials grant flow, it's required that you suppo
 
 
 #### How to set up Client Credentials
-1. NEED STEPS FOR SETTING UP CLIENT CREDENTIALS. REPLACES SETUP STEPS FOR AUTHORIZATION CODE GRANT. 
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Browse to **Entra ID** > **Enterprise apps**.
+1. Select your application and go to **Provisioning**.
+1. For **Admin Credentials > Authentication Method**, Select **OAuth2 Client Credentials Grant**.
+1. Enter your information for the remaining fields:
+    - **Tenant URL**
+    - **Token Endpoint**
+    - **Client Identifier**
+    - **Client Secret**.
+1. Click **Test Connection**.
 
 **Long-lived OAuth bearer tokens:** If your application doesn't support the OAuth authorization code grant flow, instead generate a long lived OAuth bearer token that an administrator can use to set up the provisioning integration. The token should be perpetual, or else the provisioning job is [quarantined](application-provisioning-quarantine-status.md) when the token expires.
 
