@@ -1,6 +1,6 @@
 ---
 title: Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)
-description: Learn how to convert user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
+description: Learn how to transfer user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id
@@ -14,7 +14,7 @@ ms.reviewer: dhanyak
 
 # Configure User Source of Authority (SOA) (Preview)
 
-This article explains the prerequisites, and steps, to configure User Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Convert User Source of Authority to the cloud (Preview)](test.md).
+This article explains the prerequisites, and steps, to configure User Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Transfer User Source of Authority to the cloud (Preview)](user-source-of-authority-overview.md).
 
 ## Prerequisites
 
@@ -81,9 +81,9 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 1. Search for User-OnPremisesSyncBehavior, and select **Consent** for the permission.
     :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to user-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-user-source-of-authority-configure/consent.png":::
 
-## Convert SOA for a test user
+## Transfer SOA for a test user
 
-Follow these steps to convert the SOA for a test user:
+Follow these steps to transfer the SOA for a test user:
 
 1. Create a user within AD. You can also use an existing user that is synced to Microsoft Entra ID by using Connect Sync.
 1. Run the following command to start Connect Sync: 
@@ -93,7 +93,7 @@ Follow these steps to convert the SOA for a test user:
    ```
 
 1. Verify that the user appears in the Microsoft Entra admin center as a synced user.
-1. Use Microsoft Graph API to convert the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as user admin.
+1. Use Microsoft Graph API to transfer the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as user admin.
 1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your user. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 /graph/api/onpremisessyncbehavior-update
 
@@ -121,7 +121,7 @@ Follow these steps to convert the SOA for a test user:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced user properties.":::
 
-1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the user object you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
+1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the user object you want to transfer to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
    PATCH https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior
@@ -168,7 +168,7 @@ Follow these steps to convert the SOA for a test user:
    Start-ADSyncSyncCycle
    ```
 
-1. To look at the user object with converted SOA, in the **Synchronization Service Manager**, go to **Connectors**:
+1. To look at the user object with transferred SOA, in the **Synchronization Service Manager**, go to **Connectors**:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/connectors.png" alt-text="Screenshot of Connectors.":::
 
@@ -251,22 +251,22 @@ else
 ```
 
 
-### Status of attributes after you convert SOA
+### Status of attributes after you transfer SOA
 
-The following table explains the status for *isCloudManaged* and *onPremisesSyncEnabled* attributes after you convert the SOA of an object.
+The following table explains the status for *isCloudManaged* and *onPremisesSyncEnabled* attributes after you transfer the SOA of an object.
 
 Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
 Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the *onPremisesSyncEnabled* attribute is set to `true` and *isCloudManaged* is set to `false`.  
-Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the *isCloudManaged* attribute becomes set to `true` and the *onPremisesSyncEnabled* attribute value is set to `null`. 
-Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null` until the sync client takes over the object.    
+Admin transfers the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin transfers the SOA of an object to the cloud, the *isCloudManaged* attribute becomes set to `true` and the *onPremisesSyncEnabled* attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin transfers the SOA back to AD, the *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null` until the sync client takes over the object.    
 Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null`.
 
 
 ## Roll back SOA update
 
 > [!IMPORTANT] 
-> Make sure that the users that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the users to AD DS. The sync client takes over the object in the next sync cycle.
+> Make sure that the users that you roll back have no cloud references. Remove cloud users from SOA transferred groups, and remove these groups from access packages before you roll back the users to AD DS. The sync client takes over the object in the next sync cycle.
 
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
@@ -300,17 +300,11 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
 
-## Limitations
+## Clear on-premises resources for SOA transferred users
 
-- **No reconciliation support for local AD groups**: An AD DS admin (or an application with sufficient permissions) can directly modify an AD DS group. If Group SOA is converted for the group, or if cloud security group provisioning to AD DS is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD DS changes are overwritten when group provisioning to AD DS runs.
 
-<!-- 5. Next step/Related content------------------------------------------------------------------------
 
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
 
--->
 
 
 ## Related content

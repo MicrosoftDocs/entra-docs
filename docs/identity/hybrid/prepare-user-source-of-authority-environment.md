@@ -21,42 +21,6 @@ The flow for preparing for user SOA is as follows:
 :::image type="content" source="media/prepare-user-source-of-authority-environment/prepare-environment-steps.png" alt-text="Screenshot of steps to preparing source of authority.":::
 
 
-## [1.HR](#tab/HR)
-
-Prep your HR system to Microsoft Entra ID flow for users in scope of SOA change, and then remove them from the flow. For more information, see: [Shift Your HR Integration To The Cloud](prepare-user-source-of-authority-environment.md#shift-your-hr-integration-to-the-cloud)
-
-
-
-
-## [2.MIM](#tab/MIM)
-
-If applicable, stop Microsoft Identity Manager to Active directory flow for users in scope of the SOA change. For more information, see: [Prepare your MIM setup](prepare-user-source-of-authority-environment.md#prepare-your-mim-setup).
-
-
-## [3.Sync](#tab/Sync)
-
-Perform either an on-demand sync from Active Directory to Microsoft Entra ID for users in scope of SOA change, a bulk sync for multiple users, or wait for regular sync to complete.
-
-
-## [4.Active Directory](#tab/active-directory)
-
-Stop making changes in Active Directory.
-
-
-
-## [5.SOA](#tab/SOA)
-
-[Perform SOA switch](how-to-user-source-of-authority-configure.md) for selected objects.
-
-
-
-## [6.Validate](#tab/validate)
-
-Validate changes.
-
----
-
-
 This article walks you through what needs to be completed to prepare Microsoft Exchange, HR, and Microsoft Identity Manager environments before switching user SOA.
 
 ## Confirm your AD objects are ready to have their SOA changed 
