@@ -25,7 +25,7 @@ This article walks you through what needs to be completed to prepare Microsoft E
 
 ## Confirm your AD objects are ready to have their SOA changed 
 
-Before changing the SOA on users, retrieve the objects from your Active Directory domain and check that they’re ready to be converted by confirming the following information:
+Before changing the SOA on users, retrieve the objects from your Active Directory domain and check that they’re ready to be transferred by confirming the following information:
 
 - Confirm that the objects are already synchronized to Microsoft Entra. Administrative objects, or those excluded from synchronization, can’t have their SOA changed. 
 - Confirm that all attributes you have, or plan to modify, on those users are being synched to Microsoft Entra and are visible as *directory schema extensions*: `/graph/api/resources/extensionproperty` in Microsoft Graph. 
@@ -40,7 +40,7 @@ If you’re planning to only change the SOA for some Active Directory users, we 
 ## Prepare your Microsoft Exchange setup
 
 > [!NOTE]
-> We recommend that you get rid of exchange server set up before converting User Source of Authority
+> We recommend that you get rid of exchange server set up before transferring User Source of Authority.
 
 In case you have Exchange Hybrid setup with Microsoft 365 Exchange Online, prepare your Exchange Server and Exchange Online as per the following guidance before switching the SOA of your user accounts.
 If you're running an Exchange hybrid configuration, ensure all your mailboxes are migrated to Exchange Online before you switch the SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365, and you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
@@ -108,7 +108,7 @@ Once these steps are completed, your MIM-synced hybrid environment should follow
 
 ## Prep Sync Client Sequence
 
-Once your environment has been prepped for converting user SOA, you must make sure your client is also prepped for the change. To prep your sync client, do the following:
+Once your environment has been prepped for transferring user SOA, you must make sure your client is also prepped for the change. To prep your sync client, do the following:
 
 1.	Identify the users and/or groups for whom you’re going to Switch the source of authority (SOA) to Microsoft Entra ID. Ensure these users and groups are currently being synced using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync. 
     > [!NOTE]
