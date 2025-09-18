@@ -1,5 +1,5 @@
 ---
-title: Customize the sign-in experience for your application with company branding themes using the Microsoft Entra admin center
+title: Customize the sign-in experience for your application with branding themes using the Microsoft Entra admin center (Preview)
 description: Learn about how to create branding themes and apply them to the sign-in experience for your application using the Microsoft Entra admin center.
 author: rolyon
 manager: pmwongera
@@ -13,10 +13,10 @@ ms.topic: how-to
 ---
 
 
-# Customize the sign-in experience for your application with company branding themes using the Microsoft Entra admin center
+# Customize the sign-in experience for your application with branding themes using the Microsoft Entra admin center (Preview)
 
 > [!IMPORTANT]
-> Company branding themes for applications are currently in PREVIEW.
+> Branding themes for applications are currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 Previously, you could only use a single branding theme for your entire tenant when users sign in to your applications. Now you can create unique authentication experiences for applications in your tenant. Each application can have its own theme, which you can customize with a background image or color, favicon, layout, header, and footer. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
