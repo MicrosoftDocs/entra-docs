@@ -1464,7 +1464,7 @@ When using the OAuth 2.0 client credentials grant flow, it's required that you s
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select your application and go to **Provisioning**.
-1. For **Admin Credentials > Authentication Method**, select **OAuth2 client credentials Grant**.
+1. For **Admin Credentials > Authentication Method**, select **OAuth2 Client Credentials Grant**.
 1. Enter your information for the remaining fields:
     - **Tenant URL**
     - **Token Endpoint**
