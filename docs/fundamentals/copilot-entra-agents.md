@@ -40,38 +40,28 @@ The following agents are currently available for Microsoft Entra. Due to the fas
 
 ### Access Review Agent
 
-Empower your reviewers to make fast, accurate access decisions. The [Access Review Agent](../id-governance/access-review-agent.md) delivers insights and recommendations so reviewers can complete their work through a simple conversation, right inside Microsoft Teams.
+Empower your reviewers to make fast and accurate access decisions. The [Access Review Agent](../id-governance/access-review-agent.md) delivers insights and recommendations so reviewers can complete their work through a simple conversation, right inside Microsoft Teams.
 
-|Attribute  |Description  |
-|---------|---------|
-|Trigger     |   Runs every 24 hours or manually to gather insights and save recommendations.      |
-|Permissions     | The agent reviews users currently in the scope of your access reviews, and makes suggestions on whether access should be approved or declined. The agent acts based on your selections.        |
-|Identity     |   The agent will run with identity of the administrator who configured the agent to gather insights and save recommendations. Final decisions as part of the Microsoft Teams conversation will be written with the reviewer’s identity.       |
-|Products     |  [Access Reviews](../id-governance/access-reviews-overview.md), [Security Copilot](/copilot/security/microsoft-security-copilot)       |
-|Plugins     |   [Microsoft Entra](/entra/fundamentals/copilot-security-entra)       |
-|Role-based access     | Requires both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.        |
-
-Get started with the [Access Review Agent](../id-governance/access-review-agent.md)
-
+| Attribute           | Description |
+|---------------------|------------ |
+| Trigger             | Runs every 24 hours or triggered manually |
+| Permissions         | The agent reviews users currently in the scope of your access reviews, and makes suggestions on whether access should be approved or declined. The agent acts based on your selections. |
+| Identity            | Runs with identity of the administrator who configured the agent. Final decisions as part of the Microsoft Teams conversation use the reviewer's identity. |
+| Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Access Reviews](../id-governance/access-reviews-overview.md) |
+| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
+| Role-based access   | Requires both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role. |
 
 ### Conditional Access optimization agent
 
 The [Conditional Access optimization agent](../identity/conditional-access/agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
 
-**Key capabilities:**
-- Identifies users and applications not covered by Conditional Access policies
-- Recommends policies for multifactor authentication enforcement or device-based controls (compliance, app protection, domain-joined devices)
-- Detects and helps block legacy authentication and device code flows
-- Creates new policies in report-only mode for safe testing
-- Builds a phased rollout plan for policy implementation
-
 | Attribute           | Description |
 |---------------------|------------ |
-| Trigger             | Runs every 24 hours or can be triggered manually                                                                                                |
-| Permissions         | Reviews policy configuration, creates new policies in report-only mode, suggests policy changes requiring approval                              |
-| Identity            | Runs with the permissions of the administrator who configured the agent                                                                         |
-| Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/), [Security Copilot](/copilot/security/microsoft-security-copilot)      |
-| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra)                                                                                    |
+| Trigger             | Runs every 24 hours or triggered manually |
+| Permissions         | Reviews policy configuration, creates new policies in report-only mode, suggests policy changes requiring approval |
+| Identity            | Runs with the identity of the administrator who configured the agent |
+| Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/), [Security Copilot](/copilot/security/microsoft-security-copilot) |
+| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Role requirements   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) to configure the agent |
 
 ## Getting started with Microsoft Entra agents
