@@ -42,9 +42,13 @@ ms.custom: include file, sfi-image-nochange
    - **Create gMSA**: Let the agent create the **provAgentgMSA$** managed service account for you. The group managed service account (for example, `CONTOSO\provAgentgMSA$`) is created in the same Active Directory domain where the host server joined. To use this option, enter the Active Directory domain administrator credentials (recommended).
    - **Use custom gMSA**: Provide the name of the managed service account that you manually created for this task.
 
+   :::image type="content" source="media/entra-cloud-sync-how-to-install/cloud-sync-configure-service-account.png" alt-text="Screenshot that shows how to configure the group Managed Service Account." lightbox="media/entra-cloud-sync-how-to-install/cloud-sync-configure-service-account.png":::
+
 1. To continue, select **Next**.
 
 1. On the **Connect Active Directory** screen, if your domain name appears under **Configured domains**, skip to the next step. Otherwise, enter your Active Directory domain name, and select **Add directory**.
+
+   :::image type="content" source="media/entra-cloud-sync-how-to-install/cloud-sync-configured-domains.png" alt-text="Screenshot that shows configured domains." lightbox="media/entra-cloud-sync-how-to-install/cloud-sync-configured-domains.png":::
 
 1. Sign in with your Active Directory domain administrator account. The domain administrator account shouldn't have an expired password. If the password is expired or changes during the agent installation, reconfigure the agent with the new credentials. This operation adds your on-premises directory. Select **OK**, and then select **Next** to continue.
 
@@ -52,8 +56,10 @@ ms.custom: include file, sfi-image-nochange
 
 1. On the **Configuration complete** screen, select **Confirm**. This operation registers and restarts the agent.
 
+   :::image type="content" source="media/entra-cloud-sync-how-to-install/finish.png" alt-text="Screenshot that shows the finish screen." lightbox="media/entra-cloud-sync-how-to-install/finish.png":::
+
 1. After the operation finishes, you see a notification that your agent configuration was successfully verified. Select **Exit**.
 
-   :::image type="content" source="media/entra-cloud-sync-how-to-install/finish.png" alt-text="Screenshot that shows the finish screen." lightbox="media/entra-cloud-sync-how-to-install/finish.png":::
+   :::image type="content" source="media/entra-cloud-sync-how-to-install/exit.png" alt-text="Screenshot that shows how to exit the installation." lightbox="media/entra-cloud-sync-how-to-install/exit.png":::
 
 1. If you still get the initial screen, select **Close**.
