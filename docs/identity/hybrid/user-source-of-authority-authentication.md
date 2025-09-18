@@ -1,6 +1,6 @@
 ---
-title: Supported Device Authentication for Users Converted Using Source of Authority (SOA) 
-description: This article lists authentication methods  for users using Microsoft Entra joined-devices, and information on if it supports users converted using Source of Authority.
+title: Supported Device Authentication for Users Transferred Using Source of Authority (SOA) 
+description: This article lists authentication methods  for users using Microsoft Entra joined-devices, and information on if it supports users transferred using Source of Authority.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id
@@ -9,20 +9,20 @@ ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 08/19/2025
 ms.reviewer: dhanyak
 
-#CustomerIntent: As an IT administrator, I want to learn about what authentication methods are supported for SOA converted users so that I am informed about options when converting user's source of authority.
+#CustomerIntent: As an IT administrator, I want to learn about what authentication methods are supported for SOA transferred users so that I am informed about options when transferring user's source of authority.
 ---
 
-# Device Authentication for Users Converted Using Source of Authority (SOA) 
+# Device Authentication for Users Transferred Using Source of Authority (SOA) 
 
-Device authentication is a critical component for organizations managing hybrid and cloud environments. This article provides an overview of supported authentication methods for users in Microsoft Entra joined and hybrid joined devices who have converted their Source of Authority (SOA). It outlines the compatibility of password-based and passwordless sign-in methods, such as Windows Hello for Business and FIDO2 keys, across various trust configurations. If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, or password hashes) or go passwordless. 
+Device authentication is a critical component for organizations managing hybrid and cloud environments. This article provides an overview of supported authentication methods for users in Microsoft Entra joined and hybrid joined devices who have transferred their Source of Authority (SOA). It outlines the compatibility of password-based and passwordless sign-in methods, such as Windows Hello for Business and FIDO2 keys, across various trust configurations. If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, or password hashes) or go passwordless. 
 
 ## Hybrid Joined Devices
 
-The following sections contain information that shows the currently supported authentication methods for SOA converted users authenticating through [Hybrid Joined Devices](../../identity/devices/concept-hybrid-join.md).
+The following sections contain information that shows the currently supported authentication methods for SOA transferred users authenticating through [Hybrid Joined Devices](../../identity/devices/concept-hybrid-join.md).
 
 ### [Hybrid Joined Devices Password based sign-in](#tab/Hybrid)
 
-Using Hybrid Joined Devices, no password-based sign-ins are supported for SOA converted users.
+Using Hybrid Joined Devices, no password-based sign-ins are supported for SOA transferred users.
 
 ---
 
@@ -54,11 +54,11 @@ Not Supported.
 
 ## Microsoft Entra Joined Devices
 
-The following sections contain information that shows the currently supported authentication methods for SOA converted users authenticating through [Microsoft Entra Joined Devices](../../identity/devices/concept-directory-join.md).
+The following sections contain information that shows the currently supported authentication methods for SOA transferred users authenticating through [Microsoft Entra Joined Devices](../../identity/devices/concept-directory-join.md).
 
 ### [Microsoft Entra Joined Devices Password based sign-in](#tab/MicrosoftEntraJoinedDevicesPasswordbasedsignin)
 
-Using Entra Joined Devices, no password-based sign-ins are supported for SOA converted users.
+Using Entra Joined Devices, no password-based sign-ins are supported for SOA transferred users.
 
 
 ### Microsoft Entra Joined Devices Windows Hello for Business and FIDO2 Sign-in
