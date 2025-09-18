@@ -19,7 +19,7 @@ ms.custom: include file, sfi-image-nochange
 
    :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-2.png" alt-text="Screenshot that shows downloading the agent." lightbox="media/entra-cloud-sync-how-to-install/new-ux-2.png":::
 
-1. After you download the Microsoft Entra Connect Provisioning Agent Package, run the *AADConnectProvisioningAgentSetup.exe*installation file from your downloads folder.
+1. After you download the Microsoft Entra Connect Provisioning Agent Package, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
 
 1. On the screen that opens, select the **I agree to the license terms and conditions** checkbox, and then select **Install**.
 
@@ -29,7 +29,7 @@ ms.custom: include file, sfi-image-nochange
 
    :::image type="content" source="media/entra-cloud-sync-how-to-install/welcome.png" alt-text="Screenshot that shows the welcome screen." lightbox="media/entra-cloud-sync-how-to-install/welcome.png":::
    
-1. Sign in with an account with at least the [Hybrid Identity administrator](/entra/identity/role-based-access-controlpermissions-reference#hybrid-identity-administrator) role. If you have Internet Explorer enhanced security enabled, it blocks thesign-in. If so, close the installation, [disable Internet Explorer enhanced security](/troubleshoot/developer/browsers/security-privacyenhanced-security-configuration-faq), and restart the Microsoft Entra Provisioning Agent Package installation.
+1. Sign in with an account with at least the [Hybrid Identity administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role. If you have Internet Explorer enhanced security enabled, it blocks the sign-in. If so, close the installation, [disable Internet Explorer enhanced security](/troubleshoot/developer/browsers/security-privacy/enhanced-security-configuration-faq), and restart the Microsoft Entra Provisioning Agent Package installation.
 
    :::image type="content" source="media/entra-cloud-sync-how-to-install/username.png" alt-text="Screenshot that shows the Connect Microsoft Entra ID screen." lightbox="media/entra-cloud-sync-how-to-install/username.png":::
 
