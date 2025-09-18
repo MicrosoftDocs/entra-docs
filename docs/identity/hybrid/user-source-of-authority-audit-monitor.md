@@ -26,33 +26,7 @@ You can access Audit Logs in the Azure portal. They retain a record of SOA chang
 1. Select **Manage Microsoft Entra ID** > **Monitoring** > **Audit logs** or search for **audit logs** in the search bar.
 
 1. Select activity as **Change Source of Authority from AD DS to cloud**.
-
-   :::image type="content" source="media/user-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD DS to cloud activity selection.":::
-
-
-## How to use Microsoft Graph API to create reports for SOA 
-
-You can use Microsoft Graph to report data such as:
-
-- Report how many objects are SOA converted
-- Filter data for converted users
-- Identify objects that were SOA converted and rolled back
-
-### Filter and count converted objects
-
-The [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior) helps you view the *isCloudManaged* property for an user. You can set the *isCloudManaged* property to `true` to convert the user SOA. 
-
-You can also call the onPremisesSyncBehavior API to query how many users converted their SOA to cloud-managed:
-
-```https
-GET users/{ID}/onPremisesSyncBehavior?$select=id,isCloudManaged
-```
-
-You can use $search and $count to view all user objects with converted SOA. Before you can use $filter or $count, you need to set consistencyLevel = eventual in **Request headers** in Microsoft Graph Explorer:
-
-```https
-GET users?$filter=onPremisesSyncBehavior/isCloudManaged eq true&$select=id,displayName,isCloudManaged&$count=true
-```
+    :::image type="content" source="media/user-source-of-authority-audit-monitor/audit-logs.png" alt-text="Screenshot of the user source of authority audit logs.":::
 
 
 
@@ -68,8 +42,6 @@ For more information about how to create custom queries, see [Understand how pro
 
 
 ## Related content
-
-TODO: Add your next step link(s)
 
 - [Configure User Source of Authority (SOA) (Preview)](how-to-user-source-of-authority-configure.md)
 
