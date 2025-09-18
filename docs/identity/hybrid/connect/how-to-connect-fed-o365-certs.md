@@ -169,7 +169,7 @@ Update Microsoft 365 with the new token signing certificates to be used for the 
     > [!NOTE]
     > `-InternalDomainFederationId` can be found by running the command `Get-EntraFederationProperty -Domainname your_domain.com`
 
-    :::image type="content" source="./media/how-to-connect-install-multiple-domains/entra-fed-property.png" alt-text="Screenshot shows output of the Get-EntraFederationProperty cmdlet":::
+    :::image type="content" source="./media/how-to-connect-install-multiple-domains/entra-fed-property.png" alt-text="Screenshot shows output of the Get-EntraFederationProperty cmdlet.":::
 
 3. Run `Update-MgDomainFederationConfiguration -DomainId <your_domain.com> -InternalDomainFederationId <hex_domain ID>`. This cmdlet updates the settings from AD FS into the cloud service, and configures the trust relationship between the two.
 

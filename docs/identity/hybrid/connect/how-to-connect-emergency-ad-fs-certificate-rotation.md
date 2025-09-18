@@ -26,15 +26,15 @@ If you need to rotate the Active Directory Federation Services (AD FS) certifica
 
 To revoke the old Token Signing Certificate that AD FS is currently using, you need to determine the thumbprint of the token-signing certificate. From your ADFS Server do the following:
 
-1.  Connect to the Microsoft Entra PowerShell module:
+1. Connect to the Microsoft Entra PowerShell module:
 
    `Connect-Entra -Scopes 'Domain.Read.All'`.
 
 1. Document both your on-premises and cloud Token Signing Certificate thumbprint and expiration dates by running:
   
-   *`Get-AdfsCertificate -CertificateType token-signing>`
+   - `Get-AdfsCertificate -CertificateType token-signing`
 
-   *`Get-EntraFederationProperty -DomainName <your_domain.com> | FL Source, SigningCertificate`.
+   - `Get-EntraFederationProperty -DomainName <your_domain.com> | FL Source, SigningCertificate`.
   
 1. Copy the thumbprint. You'll use it later to remove the existing certificates.
 
@@ -146,9 +146,9 @@ Now that you've added the first certificate, made it primary, and removed the ol
 
    You can get the **-InternalDomainFederationId** value by running the following command:
 
-* `Get-EntraFederationProperty -DomainName your_domain.com`
+   `Get-EntraFederationProperty -DomainName your_domain.com`
 
-    :::image type="content" source="./media/how-to-connect-install-multiple-domains/entra-fed-property.png" alt-text="Screenshot shows output of the Get-EntraFederationProperty cmdlet":::
+    :::image type="content" source="./media/how-to-connect-install-multiple-domains/entra-fed-property.png" alt-text="Screenshot shows output of the Get-EntraFederationProperty cmdlet.":::
 
 
   
