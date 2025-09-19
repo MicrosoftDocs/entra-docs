@@ -383,7 +383,7 @@ on-prem apps in a cloud-first model:
 > [!TIP]
 > Always start with an app-centric analysis to avoid breaking
 > access for users tied to legacy AD apps. Use phased migration—avoid a
-> “big bang” cutover.
+> “*big bang*” cutover.
 
 
 
