@@ -409,7 +409,7 @@ Common general network-related issues.
 
 #### Regular logs
 
-1. Download the [Auth script archive](https://aka.ms/authscripts), and extract the scripts into a local directory. If it's necessary, review the usage instructions in [KB&nbsp;4487175](https://aka.ms/howto-authscripts).
+1. Download the [Auth script archive](https://aka.ms/authscripts), and extract the scripts into a local directory.
 1. Open an administrative PowerShell session, and change the current directory to the directory in which you saved the Auth scripts.
 1. To begin the error tracing session, enter the following command:
 
