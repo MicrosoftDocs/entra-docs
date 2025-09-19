@@ -188,7 +188,7 @@ John is a user in contoso.com. You want John to use the on-premises UPN john\@co
 ### Nonroutable on-premises domains and UPN for Microsoft Entra ID
 Some organizations have nonroutable domains, like contoso.local, or simple single label domains like contoso. You aren't able to verify a nonroutable domain in Microsoft Entra ID. Microsoft Entra Connect can sync to only a verified domain in Microsoft Entra ID. When you create a Microsoft Entra directory, it creates a routable domain that becomes default domain for your Microsoft Entra ID for example, contoso.onmicrosoft.com. Therefore, it becomes necessary to verify any other routable domain in such a scenario in case you don't want to sync to the default onmicrosoft.com domain.
 
-Read [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml) for more info on adding and verifying domains.
+Read [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md) for more info on adding and verifying domains.
 
 Microsoft Entra Connect detects if you're running in a nonroutable domain environment and would appropriately warn you from going ahead with express settings. If you're operating in a nonroutable domain, then it's likely that the UPN, of the users, have nonroutable suffixes too. For example, if you're running under contoso.local, Microsoft Entra Connect suggests custom settings rather than using express settings. Using custom settings, you're able to specify the attribute that should be used as UPN to sign in to Microsoft Entra ID after the users are synced to Microsoft Entra ID.
 

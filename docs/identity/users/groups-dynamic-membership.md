@@ -448,7 +448,7 @@ You can use the following device attributes.
  | `deviceManufacturer` | Any string value | `device.deviceManufacturer -eq "Samsung"` |
  | `deviceModel` | Any string value | `device.deviceModel -eq "iPad Air"` |
  | `displayName` | Any string value | `device.displayName -eq "Rob iPhone"` |
- | `deviceOSType` | Any string value | `(device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iOS")`<br><br>`device.deviceOSType -startsWith "AndroidEnterprise"`<br><br>`device.deviceOSType -eq "AndroidForWork"`<br><br>`device.deviceOSType -eq "Windows"` |
+ | `deviceOSType` | Any string value | `(device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")`<br><br>`device.deviceOSType -startsWith "AndroidEnterprise"`<br><br>`device.deviceOSType -eq "AndroidForWork"`<br><br>`device.deviceOSType -eq "Windows"` |
  | `deviceOSVersion` | Any string value | `device.deviceOSVersion -eq "9.1"`<br><br>`device.deviceOSVersion -startsWith "10.0.1"` |
  | `deviceOwnership`<sup>1</sup> | `Personal`, `Company`, `Unknown` | `device.deviceOwnership -eq "Company"` |
  | `devicePhysicalIds` | Any string value that Windows Autopilot uses, such as all Windows Autopilot devices, `OrderID`, or `PurchaseOrderID`  | `device.devicePhysicalIDs -any _ -startsWith "[ZTDId]"`<br><br>`device.devicePhysicalIds -any _ -eq "[OrderID]:179887111881"`<br><br>`device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342"` |

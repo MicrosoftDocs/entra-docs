@@ -100,10 +100,10 @@ My application is built into Microsoft Teams and relies on message data. In addi
 ## Scenario 5: Track changes in Microsoft services such as Teams, Outlook, and Microsoft Entra ID
 I need to be able to track changes to Teams and Outlook messages and react to them in real time. How can I get these changes pushed to my application?
 
-**Recommendation:** The Microsoft Graph provides [change notifications](/graph/webhooks) and [change tracking](/graph/delta-query-overview) for various resources. Note the following limitations of change notifications:
+**Recommendation:** The Microsoft Graph provides [change notifications](/graph/change-notifications-overview) and [change tracking](/graph/delta-query-overview) for various resources. Note the following limitations of change notifications:
 - If an event receiver acknowledges an event, but fails to act on it for any reason, the event may be lost.
 - The order in which changes are received are not guaranteed to be chronological.
-- Change notifications don't always contain the [resource data](/graph/webhooks-with-resource-data) For the reasons above, developers often use change notifications along with change tracking for synchronization scenarios. 
+- Change notifications don't always contain the [resource data](/graph/change-notifications-with-resource-data) For the reasons above, developers often use change notifications along with change tracking for synchronization scenarios. 
 
 <a name='scenario-6-provision-users-and-groups-in-azure-ad'></a>
 

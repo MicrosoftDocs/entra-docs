@@ -62,7 +62,7 @@ The next section of the email shows where the invitee is redirected after accept
 
 ### Footer section
 
-The footer provides additional details about the invitation. If the organization [configured a privacy statement](~/fundamentals/properties-area.yml), the link to the statement is displayed here. Otherwise, a note indicates the organization's privacy statement isn't available.
+The footer provides additional details about the invitation. If the organization [configured a privacy statement](~/fundamentals/properties-area.md), the link to the statement is displayed here. Otherwise, a note indicates the organization's privacy statement isn't available.
 
 :::image type="content" source="media/invitation-email-elements/footer-section.png" alt-text="Screenshot showing the footer section in the email.":::
 

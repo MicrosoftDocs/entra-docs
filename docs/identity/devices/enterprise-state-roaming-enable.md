@@ -4,9 +4,9 @@ description: Frequently asked questions about Enterprise State Roaming settings 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/27/2025
+ms.date: 08/28/2025
 ms.author: owinfrey
-author: MicrosoftGuyJFlo
+author: owinfreyATL
 manager: dougeby
 ms.reviewer: sempofu, micrider
 ms.custom: references_regions, sfi-ga-blocked
@@ -16,7 +16,7 @@ ms.custom: references_regions, sfi-ga-blocked
 Enterprise State Roaming provides users with a unified experience across their Windows devices and reduces the time needed for configuring a new device. Enterprise State Roaming operates similar to the standard [consumer settings sync](https://go.microsoft.com/fwlink/?linkid=2015135) that was first introduced in Windows 8. Enterprise State Roaming is available to any organization with a Microsoft Entra ID P1 or P2 or Enterprise Mobility + Security (EMS) license. For more information on how to get a Microsoft Entra subscription, see the [Microsoft Entra product page](https://azure.microsoft.com/services/active-directory).
 
 > [!NOTE]
-> This article applies to the Microsoft Edge Legacy HTML-based browser launched with Windows 10 in July 2015. The article does not apply to the new Microsoft Edge Chromium-based browser released on January 15, 2020. For more information on the Sync behavior for the new Microsoft Edge, see the article [Microsoft Edge Sync](/deployedge/microsoft-edge-enterprise-sync).
+> This article applies to the Microsoft Edge Legacy HTML-based browser launched with Windows 10 in July 2015. The article doesn't apply to the new Microsoft Edge Chromium-based browser released on January 15, 2020. For more information on the Sync behavior for the new Microsoft Edge, see the article [Microsoft Edge Sync](/deployedge/microsoft-edge-enterprise-sync).
 
 ## To enable Enterprise State Roaming
 
