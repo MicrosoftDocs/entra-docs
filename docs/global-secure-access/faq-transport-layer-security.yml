@@ -16,7 +16,11 @@ sections:
   - name: Single section - ignored
     questions:
       - question: What is Transport Layer Security (TLS) inspection? 
-        answer: TLS inspection decrypts and analyzes encrypted network traffic to detect threats, enforce security policies, and prevent data exfiltration. Since most internet traffic is encrypted, inspecting network traffic is crucial for comprehensive security.
+        answer: |
+          TLS inspection decrypts and analyzes encrypted network traffic to help organizations detect threats, enforce security policies, and prevent data exfiltration. With the majority of internet traffic now encrypted, 
+          TLS inspection provides visibility into data flows that would otherwise be opaque to security tools. TLS inspection enables enterprises to apply advanced protections such as content filtering without compromising 
+          the confidentiality of legitimate communications.  
+
       - question: How does TLS inspection work? 
         answer: |
           TLS inspection enables organizations to analyze encrypted network traffic by decrypting it for security inspection and re-encrypting it before forwarding it to its destination.
@@ -27,9 +31,6 @@ sections:
           - Configure Conditional Access: Create a Conditional Access policy and associate it with the Global Secure Access security profile linked to the TLS policy.
           - Distribute the trusted certificate: Ensure the selected certificate authority is installed on all client devices to establish trust and enable seamless TLS inspection.
         
-      - question: What are the cryptographic algorithms used in TLS inspection? 
-        answer: Global Secure Access currently supports SHA-256,SHA-384 and SHA-512 for signing certificates
-
       - question: How do I Sign CSR Using the Active Directory Certificate Services (AD CS)
         answer: |
           TLS inspection requires an intermediate certificate authority, ensure you are using the Subordinate CA template. To sign CSR generated from TLS settings,
