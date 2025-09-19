@@ -294,8 +294,8 @@ on-prem apps in a cloud-first model:
 
 | App Type | Cloud Integration Method & Tools | Requirements & Considerations |
 |:--------:|:-------------------------------:|:-----------------------------|
-| **Kerberos-based Apps**<br>(Windows Integrated Authentication, intranet web apps, file shares) | **Microsoft Entra ID Application Proxy with Kerberos (KCD):** Publish on-prem web apps through Microsoft Entra ID and use a connector for Kerberos on-prem.<br>**Microsoft Entra ID Cloud Kerberos Trust:** For Microsoft Entra ID joined devices (non-web, e.g. file shares). | **Requirements:**<br>- Microsoft Entra Private Access installed on-prem<br>- Configured SPN and delegation rights<br>- Microsoft Entra ID P1/P2 or Suite licenses<br>- AD account for user (synced or provisioned)<br>**Considerations:**<br>- Seamless SSO using Entra ID credentials<br>- Passwordless and phish-resistant methods for Kerberos apps<br>- Secure access to on-prem resources |
-| **LDAP-based Apps**<br>(Apps that bind to AD DS over LDAP for auth/queries) | **Entra ID Domain Services (Managed AD):** Cloud-hosted AD domain synced with Entra ID; repoint app’s LDAP connection to this domain (LDAPS). | **Requirements:**<br>- Set up Microsoft Entra ID DS instance in Azure<br>- Configure virtual network, secure LDAP cert, firewall rules<br>- Users/groups must be in Entra ID (synced to Microsoft Entra ID DS)<br>- May require password reset to generate hashes<br>**Considerations:**<br>- Minimal app changes (just new LDAP endpoint)<br>- Cloud users’ passwords present in Microsoft Entra ID DS<br>- If Microsoft Entra ID DS not feasible, fallback is provisioning users into on-prem AD and maintaining password parity manually |
+| **Kerberos-based Apps**<br>(Windows Integrated Authentication, intranet web apps, file shares) | **Microsoft Entra ID Application Proxy with Kerberos (KCD):** Publish on-prem web apps through Microsoft Entra ID and use a connector for Kerberos on-prem.<br>**Microsoft Entra ID Cloud Kerberos Trust:** For Microsoft Entra ID joined devices (non-web, e.g. file shares). | **Requirements:**<br>- Microsoft Entra Private Access installed on-prem<br>- Configured SPN and delegation rights<br>- Microsoft Entra ID P1/P2 or Suite licenses<br>- AD account for user (synced or provisioned)<br>**Considerations:**<br>- Seamless SSO using Entra ID credentials<br>- Password-less and phish-resistant methods for Kerberos apps<br>- Secure access to on-prem resources |
+| **LDAP-based Apps**<br>(Apps that bind to AD DS over LDAP for auth/queries) | **Entra ID Domain Services (Managed AD):** Cloud-hosted AD domain synced with Entra ID; repoint app’s LDAP connection to this domain (LDAPS). | **Requirements:**<br>- Set up Microsoft Entra ID DS instance in Azure<br>- Configure virtual network, secure LDAP cert, firewall rules<br>- Users/groups must be in Microsoft Entra ID (synced to Microsoft Entra ID DS)<br>- May require password reset to generate hashes<br>**Considerations:**<br>- Minimal app changes (just new LDAP endpoint)<br>- Cloud users’ passwords present in Microsoft Entra ID DS<br>- If Microsoft Entra ID DS not feasible, fallback is provisioning users into on-prem AD and maintaining password parity manually. |
 
 # SOA Conversion Executive Checklist for IT Architects
 
@@ -303,7 +303,7 @@ on-prem apps in a cloud-first model:
 
 - Reduce security risks by minimizing on-prem AD dependency.
 
-- Enable modern identity features (Conditional Access, passwordless,
+- Enable modern identity features (Conditional Access, password-less,
   Zero Trust).
 
 - Streamline identity management and governance in Microsoft Entra ID.
@@ -343,7 +343,7 @@ on-prem apps in a cloud-first model:
 - For modern/federated apps:  
   Reconfigure to authenticate directly against Entra ID (SAML/OIDC).
 
-**□ Enable Passwordless Authentication**
+**□ Enable Password-less Authentication**
 
 - Deploy
   [https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-feature-fido2
@@ -380,12 +380,13 @@ on-prem apps in a cloud-first model:
 
 - Continuously review security posture and compliance.
 
-**Tip:** Always start with an app-centric analysis to avoid breaking
-access for users tied to legacy AD apps. Use phased migration—avoid a
-“big bang” cutover.
+> [!TIP]
+> Always start with an app-centric analysis to avoid breaking
+> access for users tied to legacy AD apps. Use phased migration—avoid a
+> “big bang” cutover.
 
-## 
+
 
 ## Infographic
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image5.png" alt-text="A blue and white text on a white background AI-generated content may be incorrect.":::
+:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/conversion-checklist.png" alt-text="Screenshot of the checklist to view before transferring Source of Authority.":::
