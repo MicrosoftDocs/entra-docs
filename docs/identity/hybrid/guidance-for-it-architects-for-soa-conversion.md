@@ -52,7 +52,7 @@ A cloud-first approach can help enhance IT efficiency and user experience in you
 
 - Microsoft Entra ID governance features such as Entitlement Management, Access Reviews, and Lifecycle Workflows streamline governance for apps relying on groups formerly managed in AD. This introduces automation to ensure compliance throughout the identity lifecycle.
 
-- Users benefit from **single sign-on** across both cloud, and on-premises, applications using modern access controls such as risk-based conditional access policies. After migration, employees can use their Microsoft Entra ID credentials, such as phishing-resistant passwordless methods,to seamlessly access legacy intranet applications. This reduces the need to manage multiple AD passwords and mitigates credential sprawl.
+- Users benefit from **single sign-on** across both cloud, and on-premises, applications using modern access controls such as risk-based conditional access policies. After migration, employees can use their Microsoft Entra ID credentials, such as phishing-resistant password-less methods,to seamlessly access legacy intranet applications. This reduces the need to manage multiple AD passwords and mitigates credential sprawl.
 
 ## Roadmap to Cloud Identity: Hybrid to Cloud-First/AD Minimized state.
 
@@ -78,11 +78,17 @@ You can now use Microsoft Entra ID Governance to enable lifecycle and access gov
 
 # Is SOA the right solution for you?
 
-**Users:** For users who are still tied to some legacy applications and dependence on AD DS, SOA is not recommended due to gaps in capabilities present today in the cloud to manage password based applications. Identifying which applications require passwords vs. not and planning their migration is critical.
+The following diagram outlines if you are ready to transfer the source of authority (SOA) of users and groups:
+
+:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/source-of-authority-readiness-diagram.png" alt-text="Screenshot of a diagram of steps to show if you are ready to transfer source of authority.":::
+
+### Considerations
+
+**Users:** For users who are still tied to legacy applications and dependence on AD DS, SOA is not recommended due to gaps in capabilities present today in the cloud to manage password based applications. Identifying which applications require passwords vs. not and planning their migration is critical.
 
 :::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image1.png" alt-text="A green and red signs AI-generated content may be incorrect.":::
 
-**Groups:** For groups, we recommend you start with shifting security groups to the cloud and provisioning them back to AD from Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workload is in the cloud and you no longer need On-premises Exchange server.
+**Groups:** For groups, we recommend you start with shifting security groups to the cloud and provisioning them back to AD from Microsoft Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workload is in the cloud and you no longer need On-premises Exchange server.
 
 :::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image2.png" alt-text="A red and green sign with white text AI-generated content may be incorrect.":::
 
