@@ -76,7 +76,7 @@ You can now use Microsoft Entra ID Governance to enable lifecycle and access gov
 
 :::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image1.png" alt-text="Screenshot of a green and red sign indicating AI-generated content may be incorrect.":::
 
-# Is SOA the right solution for you?
+## Is SOA the right solution for you? (ARTICLE 2)
 
 The following diagram outlines if you are ready to transfer the source of authority (SOA) of users and groups:
 
@@ -90,11 +90,12 @@ The following diagram outlines if you are ready to transfer the source of author
 
 **Groups:** For groups, we recommend you start with shifting security groups to the cloud and provisioning them back to AD from Microsoft Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workload is in the cloud and you no longer need On-premises Exchange server.
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image2.png" alt-text="A red and green sign with white text AI-generated content may be incorrect.":::
 
-This guide outlines principal cloud migration strategy for AD-heavy environments: the application-centric approach, which enables on-premises applications to utilize Entra ID for identity. Detailed steps, prerequisites, and guidance for addressing challenges such as password synchronization for legacy applications will be discussed.
+## Application-Centric Approach: Modernize On-Prem Authentication (ARTICLE 3)
 
-# Application-Centric Approach: Modernize On-Prem Authentication
+This guide outlines principal cloud migration strategy for AD-heavy environments: the application-centric approach, which enables on-premises applications to utilize Microsoft Entra ID for identity. Detailed steps, prerequisites, and guidance for addressing challenges such as password synchronization for legacy applications are also included.
+
+## Application-Centric Approach: Modernize On-Prem Authentication
 
 **The application-centric approach tackles the problem from the perspective of your applications.** In this approach, you try to modernize your app authentication by leveraging the following framework:
 
