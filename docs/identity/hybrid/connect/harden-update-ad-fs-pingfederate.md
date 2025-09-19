@@ -1,88 +1,47 @@
 ---
-title: 'Hardening update to Microsoft Entra Connect Sync AD FS and PingFederate configuration'
-description: This article describes security improvements to Microsoft Entra Connect Sync ADFS and PingFederate configuration.
+title: Hardening updates for Microsoft Entra Connect Sync
+description: Learn how to upgrade Microsoft Entra Connect Sync to meet the minimum version requirements and prevent synchronization failures after September 30, 2026.
 author: omondiatieno
-manager: mwongerapk
-ms.service: entra-id
-ms.topic: how-to
-ms.date: 04/09/2025
-ms.subservice: hybrid-connect
 ms.author: jomondi
+manager: mwongerapk
+ms.reviewer: sharonrutto
+ms.date: 09/19/2025
+ms.topic: concept-article
+ms.service: entra-id
+ms.subservice: hybrid-connect
+
+#customer intent: As an IT admin, I want to know the minimum version requirements for Microsoft Entra Connect Sync so that I can ensure compliance.
 ---
+# Hardening update to Microsoft Entra Connect Sync
 
-# Hardening update to Microsoft Entra Connect Sync by April 30, 2025 
-
-In October 2024, we released new versions [2.4.18.0](reference-connect-version-history.md#24180) of Microsoft Entra Connect Sync. These versions contain a back-end service change that hardens our services and readies Connect Sync for the [MSOnline PowerShell retirement](https://aka.ms/msonlineretirement) in April 2025. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 30, 2025**.
-
->[!IMPORTANT]
->**All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 30, 2025**.
-
-The deadline has been extended by three weeks from the earlier communicated date of April 7, 2025.
-
+In May 2025, we released a new version (2.5.79.0) of Microsoft Entra Connect Sync. This version contains a back-end service change that further hardens our services. **All customers are required to upgrade** to the minimum versions by **September 30, 2026** to avoid service disruptions.
 
 ## Expected impacts 
 
-Though the deadline has been extended, if you are not yet on a minimum supported version, you'll experience the following impacts after the original date:
+If you aren’t upgraded to the minimum required version, you might encounter the following impact to the Microsoft Entra Connect Sync service when the service change takes effect:
 
-- After April 7, 2025, configuration of Active Directory Federation Services (ADFS) scenarios through Microsoft Entra Connect wizard won't work.
- - After April 7, 2025, configuration of PingFederate scenarios through the Microsoft Entra Connect wizard won't work.
- - After April 30, 2025, all authentication requests to Microsoft Entra ID on the Microsoft Entra Connect wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes.
-
-For example, when calling the MSOnline PowerShell cmdlet `Get-MsolUserRole`, Microsoft Entra Connect wizard throws an error: _"Access Denied. You do not have permissions to call this cmdlet"_
-
-![Screenshot that shows MSOnline PowerShell error in Microsoft Entra Connect Sync wizard.](media/harden-update-ad-fs-pingfederate/msonline-connect-wizard-error.png)
-
-
-## What won't be impacted
-
-- Your sync service will run as usual, and changes will continue to sync to Microsoft Entra.
- - The ability to upgrade your Microsoft Entra Connect Sync instance. You can still perform the upgrade after April 30, 2025.
-   
->[!NOTE]
->If you're unable to upgrade by the deadline, you can still restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You will, however, lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 30, 2025 and when you upgrade**.
-
-### Minimum versions 
-
-To avoid service impacts, customers should be on version by April 30, 2025. 
-- Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or any newer version (see [version history](reference-connect-version-history.md)\)
-- Customers in noncommercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or any newer version (see [version history](reference-connect-version-history.md))
-
-To upgrade to the latest version.
-> [!div class="nextstepaction"]
-> [Install the latest Microsoft Entra Connect Sync](https://www.microsoft.com/download/details.aspx?id=47594)
-
->[!IMPORTANT]
-> Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the versions, including but not limited to: 
->  - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
-
-To assist customers with the upgrade process, we perform autoupgrades for select releases, which can help streamline the upgrade process for you. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), ensure that you meet the [minimum requirements](how-to-connect-install-automatic-upgrade.md#auto-upgrade-eligibility) for autoupgrade. 
-
-### Workaround for enabling Staging mode post MSOnline retirement
-
-Post the MSOnline retirement date, older versions of Microsoft Entra Connect can’t switch Staging mode via the wizard.
-
-You can safely proceed with the in-place upgrade to fully restore Microsoft Entra Connect functionally, but in case you want to enable Staging mode prior to upgrade your server, the following workaround via PowerShell is available.
+All synchronization services in Microsoft Entra Connect Sync will fail.
 
 > [!NOTE]
-> The following cmdlet is not supported in PowerShell 7 and only works on older Microsoft Entra Connect versions that have MSOnline module dependencies.
+> If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the latest version. However, **all synchronization services will fail** during the period between **September 30, 2026, and when you upgrade**.
 
-1. Open a PowerShell session with "Run as administrator".
+## Minimum versions
 
-1. Run the following commands to import ADSyncTools module. If ADSyncTools is already present, this command updates it, otherwise it installs the latest version.
+To avoid any service impact, customers should be on the following version by September 30, 2026:
 
-      ```PowerShell
-   if (Get-Module -Name ADSyncTools -ListAvailable) {Update-Module -Name ADSyncTools} else {Install-Module -Name ADSyncTools}
-   Import-Module ADSyncTools
-   ```
+Version [2.5.79.0](/entra/identity/hybrid/connect/reference-connect-version-history#2530) or higher.
 
-1. To enable staging mode, type:
+The Microsoft Entra Connect Sync .msi installation file for this version is exclusively available on Microsoft Entra Admin Center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted).
 
-   ```PowerShell
-   Enable-ADSyncToolsStagingMode
-   ```
+> [!IMPORTANT]
+> Make sure you familiarize yourself with the [minimum requirements](/entra/identity/hybrid/connect/how-to-connect-install-prerequisites) for the versions, including but not limited to:
 
-1. You can now upgrade your server while in Staging mode. After the server has been upgraded you can switch staging mode as normally via the wizard and re-enable the sync scheduler.
+- [.NET framework of 4.7.2](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
 
+- [TLS1.2](/entra/identity/hybrid/connect/reference-connect-tls-enforcement)
+
+To assist customers with the upgrade process, we occasionally auto upgrade customers where supported. If you would like to be auto upgraded, ensure you have the [auto upgrade feature](/entra/identity/hybrid/connect/how-to-connect-install-automatic-upgrade) configured.
+For [auto upgrade to work](/entra/identity/hybrid/connect/security-updates-pks), you should be on version [2.3.20.0](/entra/identity/hybrid/connect/reference-connect-version-history#23200) or higher.
 
 ## Consider moving to Microsoft Entra Cloud Sync
 

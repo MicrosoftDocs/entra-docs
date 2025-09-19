@@ -21,7 +21,7 @@ The following table provides information on the features and impact to services,
 
 |Service|Impact|
 |-----|-----|
-|Microsoft Entra Connect| Autoupgrade stops working. Synchronization isn't impacted|
+|Microsoft Entra Connect| All synchronization services will fail |
 |Microsoft Entra Connect Health Connect Sync agent|A subset of [alerts](how-to-connect-health-alert-catalog.md#alerts-for-microsoft-entra-connect-sync) are impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service can't start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
 |Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-domain-services)|
 |Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services)|
