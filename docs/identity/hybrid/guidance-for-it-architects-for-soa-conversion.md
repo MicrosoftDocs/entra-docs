@@ -109,13 +109,13 @@ There may also be some apps already using modern protocols (SAML/OIDC via AD FS 
 
 ## Recommended sequence for application-centric migration:
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image3.png" alt-text="A screenshot of a computer program AI-generated content may be incorrect.":::
+:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/source-of-authority-phase-list.png" alt-text="A screenshot of an overview of the phases to complete application-centric migration.":::
 
-## Phase 1: Application Inventory and Authentication Analysis
+## Phase 1: Application Inventory and Authentication Analysis [Phase 1: Application Inventory and Authentication Analysis](#tab/application-inventory)
 
-It’s critical to **discover and categorize all on-premises applications** before planning the migration. The goal is to determine for each app: *How does it currently authenticate users, and what is the best path to integrate or modernize that authentication with Entra ID?*
+It’s critical to **discover and categorize all on-premises applications** before planning the migration. The goal is to determine for each app: *How does it currently authenticate users, and what is the best path to integrate or modernize that authentication with Microsoft Entra ID?*
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image4.png" alt-text="Visualization":::
+:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/application-inventory.png" alt-text="Visualization":::
 
 A thorough application analysis forms the foundation for a successful migration to cloud-based identity management in AD-heavy environments. The process involves methodically assessing every application that depends on Active Directory for authentication, determining how each authenticates users, and mapping a modernization or integration plan that fits each application's unique requirements.
 
@@ -137,7 +137,7 @@ Determine users by extracting group memberships for each application's AD groups
 
 ###  Step 2. Determine Authentication Method
 
-> For each application in your inventory, identify the authentication mechanism it uses. This step is essential for choosing the most appropriate migration or integration strategy. The main categories to consider include:
+For each application in your inventory, identify the authentication mechanism it uses. This step is essential for choosing the most appropriate migration or integration strategy. The main categories to consider include:
 
 - *Integrated Windows Authentication (Kerberos/NTLM)* – Common in
   IIS/.NET applications using Windows Authentication, file servers,
