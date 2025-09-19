@@ -46,7 +46,7 @@ To set the policy to `proxy`:
 1. Select **Add application segment**:
     - Destination type: `FQDN` 
     - Fully Qualified Domain Name (FQDN): `<fqdn of the SQL server>`. For example, `contosodbserver1.database.windows.net`.
-    - Ports: `1443`
+    - Ports: `1433`
     - Protocol: `TCP`
 1. Select **Apply** to add the application segment.
 1. Select **Save** to save the application.
