@@ -166,7 +166,7 @@ function Set-TenantSettingsMFAPostponement {
     # Get tokens
     Write-Host "Fetching necessary authorization tokens..."
     try {
-        $armToken = (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
+        $armToken = Get-StringFromSecureString -secureString (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
         if ($null -eq $armToken) {
             Write-Host "Failed to fetch an authorization token for Azure Resource Manager. Make sure you run: Connect-AzAccount -TenantId '<your tenant id>'" -ForegroundColor Red
             return
@@ -180,7 +180,7 @@ function Set-TenantSettingsMFAPostponement {
     }
 
     try {
-        $coreToken = (Get-AzAccessToken -ResourceUrl "https://management.core.windows.net/").Token
+        $coreToken = Get-StringFromSecureString -secureString (Get-AzAccessToken -ResourceUrl "https://management.core.windows.net/").Token
         if ($null -eq $coreToken) {
             Write-Host "Failed to fetch an authorization token for Azure Resource Manager core. Make sure you run: Connect-AzAccount -TenantId '<your tenant id>'" -ForegroundColor Red
             return
@@ -429,7 +429,7 @@ function Remove-ElevatedAccess {
     Write-Host "Refreshing authorization tokens..."
     Start-Sleep -Seconds 3
     try {
-        $coreToken = (Get-AzAccessToken -ResourceUrl "https://management.core.windows.net/").Token
+        $coreToken = Get-StringFromSecureString -secureString (Get-AzAccessToken -ResourceUrl "https://management.core.windows.net/").Token
         if ($null -eq $coreToken) {
             Write-Host "Failed to fetch an authorization token for Azure Resource Manager core. You will need to manually delete your elevated status." -ForegroundColor Red
             return
@@ -482,6 +482,18 @@ function Delete-Elevated-Access {
         Start-Sleep -Seconds 3
         return $false
     }
+}
+
+function Get-StringFromSecureString {
+    param (
+        [System.Security.SecureString] $secureString
+    )
+    
+    $ptr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureString)
+    $plainText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptr)
+    [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ptr)
+    
+    return $plainText
 }
 
 function Decode-JwtPayload {
