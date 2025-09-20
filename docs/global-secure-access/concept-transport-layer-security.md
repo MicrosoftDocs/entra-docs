@@ -16,8 +16,7 @@ The Transport Layer Security (TLS) protocol uses certificates at the transport l
 
 > [!IMPORTANT]
 > The Transport Layer Security inspection feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.   
-> While in preview, don't use TLS inspection in production environments.      
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. While in preview, use TLS inspection with care, especially in production environments, thoroughly evaluate before deployment.    
 
 This article gives an overview of the TLS inspection process.
 

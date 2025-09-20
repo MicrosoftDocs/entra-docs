@@ -30,7 +30,7 @@ User identities must be synchronized from an on-premises directory or created di
 The Microsoft Entra private network connector requires a server running Windows Server 2016 or later. You'll install the private network connector on the server. This connector server needs to connect to the Microsoft Entra Private Access service or application proxy service and the private resources or applications that you plan to publish.
 
 * For high availability in your environment, we recommend having more than one Windows server.
-* The minimum .NET version required for the connector is v4.7.1+.
+* The minimum .NET version required for the connector is v4.7.2+.
 * For more information, see [private network connectors](../identity/app-proxy/application-proxy-connectors.md#requirements-and-deployment)
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 

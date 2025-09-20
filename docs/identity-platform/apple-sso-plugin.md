@@ -32,12 +32,6 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 - It extends SSO to applications that use OAuth 2, OpenID Connect, and SAML.
 - It's natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
 
->[!NOTE]
-> On May 2024, [Microsoft announced that Platform SSO for macOS devices is available in public preview for Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/platform-sso-for-macos-now-in-public-preview/ba-p/4051574).
->
-> For more information, see [macOS Platform Single Sign-on overview (preview)](/entra/identity/devices/macos-psso). 
-
-
 ## Requirements
 
 To use the Microsoft Enterprise SSO plug-in for Apple devices:
@@ -436,7 +430,7 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 
 ## Device Identity Key Storage
 
-In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning August 2025 as part of the Secure Enclave rollout, certain new device registrations will require Secure Enclave for key storage. Eventually, all new device registrations will require Secure Enclave.
+In March 2024, Microsoft announced that Microsoft Entra ID will transition from Apple's Keychain to Apple's Secure Enclave for storing device identity keys. Starting August 2025, the Secure Storage rollout will make Secure Enclave the default key storage for all new device registrations. New device registrations will use secure storage model by default. Existing devices that do not support Secure Enclave will have registration keys stored in the user's iCloud Keychain instead of the Login Keychain, which provides stronger protection than legacy Login Keychain storage. Existing functionality for older devices remains the same.
 
 If your applications or MDM solutions depend on accessing Microsoft Entra device registration keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
