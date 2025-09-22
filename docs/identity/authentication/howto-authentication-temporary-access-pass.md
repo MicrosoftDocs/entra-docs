@@ -149,7 +149,7 @@ For joined devices to Microsoft Entra ID:
 
 For hybrid-joined devices, users must first authenticate with another method such as a password, smartcard or FIDO2 key, before using TAP to set up Windows Hello for Business. 
 > [!NOTE]
-> For federated domains, the **FederatedIdpMfaBehavior** changes the behavior when MFA is required. If set to **enforceMfaByFederatedIdp** the user is redirected to the federated IDP and does not get the chance to use the TAP. However, if set to **acceptIfMfaDoneByFederatedIdp** then the user will see a TAP prompt in Entra ID during MFA for windows hello for business provisioning.
+> For federated domains, the **FederatedIdpMfaBehavior** changes the behavior when MFA is required. If set to **enforceMfaByFederatedIdp** the user is redirected to the federated IDP and does not get the chance to use the TAP. However, if set to **acceptIfMfaDoneByFederatedIdp** then the user will see a TAP prompt in Entra ID during MFA for Windows Hello for Business provisioning.
 
 :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/windows-10-tap.png" alt-text="Screenshot of how to enter Temporary Access Pass when setting up Windows.":::
 
