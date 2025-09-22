@@ -35,10 +35,6 @@ ms.custom: include file, sfi-image-nochange
 
    :::image type="content" source="media/entra-cloud-sync-how-to-install/username.png" alt-text="Screenshot that shows the Connect Microsoft Entra ID screen." lightbox="media/entra-cloud-sync-how-to-install/username.png":::
 
-1. If you need to add or remove a domain, enter your credentials again.
-
-   :::image type="content" source="media/entra-cloud-sync-how-to-install/confirm-username.png" alt-text="Screenshot that shows how to enter credentials again." lightbox="media/entra-cloud-sync-how-to-install/confirm-username.png":::
-
 1. On the **Configure Service Account** screen, select a group Managed Service Account (gMSA). This account is used to run the agent service. If a managed service account is already configured in your domain by another agent and you're installing a second agent, select **Create gMSA**. The system detects the existing account and adds the required permissions for the new agent to use the gMSA account. When you're prompted, choose one of two options:
 
    - **Create gMSA**: Let the agent create the **provAgentgMSA$** managed service account for you. The group managed service account (for example, `CONTOSO\provAgentgMSA$`) is created in the same Active Directory domain where the host server joined. To use this option, enter the Active Directory domain administrator credentials (recommended).
