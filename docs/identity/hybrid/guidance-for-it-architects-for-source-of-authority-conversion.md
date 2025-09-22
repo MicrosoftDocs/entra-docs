@@ -18,21 +18,21 @@ ms.reviewer: dhanyak
 
 Modern enterprises are under increasing pressure to modernize identity management, reduce security risks, and streamline operations. This guide provides a strategic and technical framework for IT architects to shift user and group management from on-premises Active Directory (AD) to Microsoft Entra ID using Source of Authority (SOA) conversion. Legacy AD environments are complex, costly to maintain, and increasingly vulnerable to modern threats. Microsoft’s long-term vision is to minimize on-premises AD dependencies, and move identity workloads to the cloud. SOA conversion enables a phased, low-risk migration path—avoiding the disruption of a “*big bang*” cutover.
 
-**This guide covers the following areas:**
+**This guide covers the following areas**:
 
-1. The business and security benefits of cloud-based identity.
+1. [The business and security benefits of cloud-based identity](guidance-for-it-architects-for-source-of-authority-conversion.md#business-and-security-benefits).
 
-1. A phased roadmap from going from hybrid, to cloud-first, to AD-minimized environments.
+1. [A phased roadmap from going from hybrid, to cloud-first, to AD-minimized environments](guidance-for-it-architects-for-source-of-authority-conversion.md#roadmap-to-cloud-identity-hybrid-to-cloud-firstad-minimized-state).
 
-1. Criteria to determine SOA readiness for users and groups.
+1. [Criteria to determine SOA readiness for users and groups]().
 
-1. An app-centric approach to shift your user and group management to the cloud if you aren't yet ready.
+1. [An app-centric approach to shift your user and group management to the cloud if you aren't yet ready]().
 
-1. Integration strategies for Kerberos and LDAP-based applications.
+1. [Integration strategies for Kerberos and LDAP-based applications]().
 
-1. Key limitations and considerations for hybrid coexistence.
+1. [Key limitations and considerations for hybrid coexistence]().
 
-1. A practical checklist to guide planning, execution, and governance.
+1. [A practical checklist to guide planning, execution, and governance]().
 
 ## Business and Security Benefits
 
