@@ -747,7 +747,7 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 
 ```Example for usage within the workflow
 {
-    "category": "leaver,mover",
+    "category": "leaver, mover",
     "continueOnError": false,
     "description": "Remove user assignment of selected access package",
     "displayName": "Remove access package assignment for user",
@@ -845,7 +845,7 @@ Example of usage within the workflow:
 
 ```Example for usage within the workflow 
 {
-            "category": "leaver,mover",
+            "category": "leaver, mover",
             "description": "Remove selected licenses assigned to the user",
             "displayName": "Remove licenses from user",
             "id": "5fc402a8-daaf-4b7b-9203-da868b05fc5f",
@@ -872,7 +872,7 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 
 |Parameter |Definition  |
 |---------|---------|
-|category    |  leaver,mover      |
+|category    |  leaver, mover      |
 |displayName     |  Revoke all refresh tokens for user        |
 |description     |  Revoke all refresh tokens for user        |
 |taskDefinitionId     |   509589a4-0466-4471-829e-49c5e502bdee      |
