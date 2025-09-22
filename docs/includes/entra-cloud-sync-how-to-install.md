@@ -1,11 +1,13 @@
 ---
 title: Include file
 description: Include file
-author: billmath
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: include
-ms.date: 09/18/2025
-ms.author: billmath
+ms.topic: how-to
+ms.date: 09/22/2025
+ms.subservice: hybrid-cloud-sync
+ms.author: jomondi
 ms.custom: include file, sfi-image-nochange
 ---
 
@@ -58,8 +60,4 @@ ms.custom: include file, sfi-image-nochange
 
    :::image type="content" source="media/entra-cloud-sync-how-to-install/finish.png" alt-text="Screenshot that shows the finish screen." lightbox="media/entra-cloud-sync-how-to-install/finish.png":::
 
-1. After the operation finishes, you see a notification that your agent configuration was successfully verified. Select **Exit**.
-
-   :::image type="content" source="media/entra-cloud-sync-how-to-install/exit.png" alt-text="Screenshot that shows how to exit the installation." lightbox="media/entra-cloud-sync-how-to-install/exit.png":::
-
-1. If you still get the initial screen, select **Close**.
+1. After the operation finishes, you see a notification that your agent configuration was successfully verified. Select **Exit**. If you still get the initial screen, select **Close**.
