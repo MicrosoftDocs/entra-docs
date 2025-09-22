@@ -34,6 +34,9 @@ To update an existing agent to use the Group Managed Service Account created dur
 
 ## Install the agent
 
+>[!NOTE]
+>By default, the Microsoft Entra provisioning agent is installed in the default Azure environment.
+
 [!INCLUDE [active-directory-cloud-sync-how-to-install](~/includes/entra-cloud-sync-how-to-install.md)]
 
 ## Verify the agent installation
@@ -69,14 +72,6 @@ To use *password writeback* and enable the self-service password reset (SSPR) se
   ```
 
 For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment ](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
-
-## Install an agent in the US government cloud
-
-By default, the Microsoft Entra provisioning agent is installed in the default Azure environment. If you're installing the agent for US government use, make this change in step 7 of the preceding installation procedure:
-
-- Instead of selecting **Open file**, select **Start** > **Run**, and then go to the *AADConnectProvisioningAgentSetup.exe* file.  In the **Run** box, after the executable, enter **ENVIRONMENTNAME=AzureUSGovernment**, and then select **OK**.
-
-    [![Screenshot that shows how to install an agent in the US government cloud.](media/how-to-install/new-install-12.png)](media/how-to-install/new-install-12.png#lightbox)
 
 ## Password hash synchronization and FIPS with cloud sync
 
