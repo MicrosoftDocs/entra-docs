@@ -395,6 +395,8 @@
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
+        - name: Reprocess workflows (Preview)
+          href: reprocess-workflow.md    
         - name: Download workflow history reports
           href: download-workflow-history.md
         - name: Manage inactive users (Preview)
@@ -404,7 +406,7 @@
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
         - name: Manage synced AD DS users
-          href: manage-workflow-on-premises.md              
+          href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
           href: manage-workflow-insights.md             
       - name: Delete
