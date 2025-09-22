@@ -31,7 +31,7 @@ A high-level Private DNS flow for Windows clients is shown in the following diag
 
 1. User requests a DNS query for `app.contoso.com`. If not cached locally, the DNS query is sent to the DNS proxy at the GSA edge. 
 1. DNS proxy either responds from its cache or forwards the query to the Connector Group defined in Quick Access.  
-1.The connector server sends the DNS query to the DNS servers configured at operating system level. 
+1. The connector server sends the DNS query to the DNS servers configured at operating system level. 
 1. DNS proxy responds back to the client with the internal IP. The client stores the internal IP address and returns a synthetic IP to the application.
 
 
