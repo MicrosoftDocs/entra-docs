@@ -23,7 +23,7 @@ ms.custom: include file, sfi-image-nochange
 
 1. On the screen that opens, select the **I agree to the license terms and conditions** checkbox, and then select **Install**.
 
-   :::image type="content" source="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-splash-screen.png" alt-text="Screenshot that shows the Microsoft Entra Provisioning Agent Package screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-2.png":::
+   :::image type="content" source="media/entra-cloud-sync-how-to-install/agree-license-terms.png" alt-text="Screenshot that shows the Microsoft Entra Provisioning Agent Package licensing terms." lightbox="media/entra-cloud-sync-how-to-install/agree-license-terms.png":::
 
 1. After the installation finishes, the configuration wizard opens. Select **Next** to start the configuration.
 
