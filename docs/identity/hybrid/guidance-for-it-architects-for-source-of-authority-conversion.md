@@ -4,7 +4,7 @@ description: This is a guide for IT architects on how to transition their hybrid
 author: OWinfreyATL
 ms.author: owinfrey
 ms.reviewer: owinfrey
-ms.date: 09/18/2025
+ms.date: 09/17/2025
 ms.topic: concept-article
 ms.service: entra-id
 ms.subservice: hybrid
