@@ -74,19 +74,19 @@ You can now use Microsoft Entra ID Governance to enable lifecycle and access gov
 > [!TIP]
 > Use Microsoft Entra ID Governance features like Access Reviews and Lifecycle Workflows to automate compliance and reduce manual overhead.
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image1.png" alt-text="Screenshot of a green and red sign indicating AI-generated content may be incorrect.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/image1.png" alt-text="Screenshot of a green and red sign indicating AI-generated content may be incorrect.":::
 
 ## Is SOA the right solution for you? (ARTICLE 2)
 
 The following diagram outlines if you are ready to transfer the source of authority (SOA) of users and groups:
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/source-of-authority-readiness-diagram.png" alt-text="Screenshot of a diagram of steps to show if you are ready to transfer source of authority.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.png" alt-text="Screenshot of a diagram of steps to show if you are ready to transfer source of authority.":::
 
 ### Considerations
 
 **Users:** For users who are still tied to legacy applications and dependence on AD DS, SOA is not recommended due to gaps in capabilities present today in the cloud to manage password based applications. Identifying which applications require passwords vs. not and planning their migration is critical.
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/image1.png" alt-text="A green and red signs AI-generated content may be incorrect.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/image1.png" alt-text="A green and red signs AI-generated content may be incorrect.":::
 
 **Groups:** For groups, we recommend you start with shifting security groups to the cloud and provisioning them back to AD from Microsoft Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workload is in the cloud and you no longer need On-premises Exchange server.
 
@@ -109,13 +109,13 @@ There may also be some apps already using modern protocols (SAML/OIDC via AD FS 
 
 ## Recommended sequence for application-centric migration:
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/source-of-authority-phase-list.png" alt-text="A screenshot of an overview of the phases to complete application-centric migration.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-phase-list.png" alt-text="A screenshot of an overview of the phases to complete application-centric migration.":::
 
 # [Phase 1: Application Inventory and Authentication Analysis](#tab/application-inventory)
 
 It’s critical to **discover and categorize all on-premises applications** before planning the migration. The goal is to determine for each app: *How does it currently authenticate users, and what is the best path to integrate or modernize that authentication with Microsoft Entra ID?*
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/application-inventory.png" alt-text="Visualization":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/application-inventory.png" alt-text="Visualization":::
 
 A thorough application analysis forms the foundation for a successful migration to cloud-based identity management in AD-heavy environments. The process involves methodically assessing every application that depends on Active Directory for authentication, determining how each authenticates users, and mapping a modernization or integration plan that fits each application's unique requirements.
 
@@ -389,4 +389,4 @@ on-prem apps in a cloud-first model:
 
 ## Infographic
 
-:::image type="content" source="media/guidance-for-it-architects-for-soa-conversion/conversion-checklist.png" alt-text="Screenshot of the checklist to view before transferring Source of Authority.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/conversion-checklist.png" alt-text="Screenshot of the checklist to view before transferring Source of Authority.":::
