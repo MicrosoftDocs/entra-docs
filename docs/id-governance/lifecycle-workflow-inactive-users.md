@@ -46,5 +46,5 @@ As part of supporting users no matter where they fall in the Joiner-Mover-Leaver
 ## Next step
 
 - [Manage workflow versions](manage-workflow-tasks.md)
-> [Manage workflow properties](manage-workflow-properties.md)
+- [Manage workflow properties](manage-workflow-properties.md)
 
