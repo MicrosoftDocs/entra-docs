@@ -23,7 +23,7 @@ Say goodbye to time-consuming research and the uncertainty of rushed decisions. 
 - Admins must have at least **all** the following roles to set up and manage the agent in the Microsoft Entra admin center:
    - [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator)
    - [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator)
-   - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access)
+   - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) in Security Copilot
 - For reviewers to use the Access Review Agent, they must have access to Microsoft Teams and must have an active access review assigned to them. They must also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role assigned to them.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
