@@ -52,45 +52,7 @@ One clear sign of a procedural article would be the use of a numbered list. With
 
 This part of the guide walks you through determining if you are ready to convert the source of authority of users and groups within your environment. There are many things to consider before you convert the source of authority for users and groups. This articles gives you a diagram of what users and groups you can immediately transfer source of authority for, gives you guidance of how to prepare those you cant immediately transfer source of authority for, and outlines what you should consider before transferring source of authority.
 
-<!-- 2. Introductory paragraph
-----------------------------------------------------------
 
-Required. Lead with a light intro that describes what the article covers. Answer the fundamental “why would I want to know this?” question. Keep it short.
-
-* Answer the fundamental "Why do I want this knowledge?" question.
-* Don't start the article with a bunch of notes or caveats.
-* Don’t link away from the article in the introduction.
-* For definitive concepts, it's better to lead with a sentence in the form, "X is a (type of) Y that does Z."
-
--->
-
-[Introductory paragraph]
-TODO: Add your introductory paragraph
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Optional: Make **Prerequisites** your first H2 in the article. Use clear and unambiguous
-language and use a unordered list format. 
-
--->
-
-## Prerequisites
-TODO: [List the prerequisites if appropriate]
-
-<!-- 4. H2s (Article body)
---------------------------------------------------------------------
-
-Required: In a series of H2 sections, the article body should discuss the ideas that explain how "X is a (type of) Y that does Z":
-
-* Give each H2 a heading that sets expectations for the content that follows.
-* Follow the H2 headings with a sentence about how the section contributes to the whole.
-* Describe the concept's critical features in the context of defining what it is.
-* Provide an example of how it's used where, how it fits into the context, or what it does. If it's complex and new to the user, show at least two examples.
-* Provide a non-example if contrasting it will make it clearer to the user what the concept is.
-* Images, code blocks, or other graphical elements come after the text block it illustrates.
-* Don't number H2s.
-
--->
 
 ## [Section 1 heading]
 TODO: add your content

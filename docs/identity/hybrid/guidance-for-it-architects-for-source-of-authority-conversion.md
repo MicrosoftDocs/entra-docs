@@ -387,6 +387,6 @@ on-prem apps in a cloud-first model:
 
 
 
-## Infographic
+## Checklist before transferring Source of Authority
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/conversion-checklist.png" alt-text="Screenshot of the checklist to view before transferring Source of Authority.":::
