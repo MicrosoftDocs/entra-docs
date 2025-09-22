@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/25/2025
+ms.date: 09/22/2025
 ms.custom: template-how-to
 ---
 
