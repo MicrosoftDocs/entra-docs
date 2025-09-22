@@ -283,7 +283,7 @@ have an empty or unknown password. **The user cannot log in to on-prem apps with
 
 ---
 
-# Conclusion
+## Conclusion
 
 This approach works for customers who are far into their password-less
 journey. For apps that require password, currently, there’s no path to
@@ -297,9 +297,9 @@ on-prem apps in a cloud-first model:
 | **Kerberos-based Apps**<br>(Windows Integrated Authentication, intranet web apps, file shares) | **Microsoft Entra ID Application Proxy with Kerberos (KCD):** Publish on-prem web apps through Microsoft Entra ID and use a connector for Kerberos on-prem.<br>**Microsoft Entra ID Cloud Kerberos Trust:** For Microsoft Entra ID joined devices (non-web, e.g. file shares). | **Requirements:**<br>- Microsoft Entra Private Access installed on-prem<br>- Configured SPN and delegation rights<br>- Microsoft Entra ID P1/P2 or Suite licenses<br>- AD account for user (synced or provisioned)<br>**Considerations:**<br>- Seamless SSO using Entra ID credentials<br>- Password-less and phish-resistant methods for Kerberos apps<br>- Secure access to on-prem resources |
 | **LDAP-based Apps**<br>(Apps that bind to AD DS over LDAP for auth/queries) | **Entra ID Domain Services (Managed AD):** Cloud-hosted AD domain synced with Entra ID; repoint app’s LDAP connection to this domain (LDAPS). | **Requirements:**<br>- Set up Microsoft Entra ID DS instance in Azure<br>- Configure virtual network, secure LDAP cert, firewall rules<br>- Users/groups must be in Microsoft Entra ID (synced to Microsoft Entra ID DS)<br>- May require password reset to generate hashes<br>**Considerations:**<br>- Minimal app changes (just new LDAP endpoint)<br>- Cloud users’ passwords present in Microsoft Entra ID DS<br>- If Microsoft Entra ID DS not feasible, fallback is provisioning users into on-prem AD and maintaining password parity manually. |
 
-# SOA Conversion Executive Checklist for IT Architects
+## SOA Conversion Executive Checklist for IT Architects
 
-**□ Understand Strategic Benefits**
+**Understand Strategic Benefits**
 
 - Reduce security risks by minimizing on-prem AD dependency.
 
@@ -308,7 +308,7 @@ on-prem apps in a cloud-first model:
 
 - Streamline identity management and governance in Microsoft Entra ID.
 
-**□ Assess Readiness**
+**Assess Readiness**
 
 - Inventory all users, groups, and applications.
 
@@ -317,14 +317,14 @@ on-prem apps in a cloud-first model:
 - Map authentication dependencies for each application (Kerberos, LDAP,
   SAML/OIDC).
 
-**□ Choose the Right Approach**
+**Choose the Right Approach**
 
 - User-centric: Only for users not tied to password-based AD apps.
 
 - App-centric: Required if any apps still use AD for authentication
   (recommended).
 
-**□ Plan Group Migration**
+**Plan Group Migration**
 
 - Shift security groups to the cloud; provision back to AD from Entra ID
   if needed.
@@ -332,7 +332,7 @@ on-prem apps in a cloud-first model:
 - Shift DLs and MESGs only after Exchange workloads are fully
   cloud-based.
 
-**□ Modernize Application Authentication**
+**Modernize Application Authentication**
 
 - For Kerberos/NTLM apps:  
   <https://learn.microsoft.com/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust>
@@ -343,7 +343,7 @@ on-prem apps in a cloud-first model:
 - For modern/federated apps:  
   Reconfigure to authenticate directly against Entra ID (SAML/OIDC).
 
-**□ Enable Password-less Authentication**
+**Enable Password-less Authentication**
 
 - Deploy
   [https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-feature-fido2
@@ -356,7 +356,7 @@ on-prem apps in a cloud-first model:
   for seamless ticket-based
   authentication.](https://learn.microsoft.com/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust%20for%20seamless%20ticket-based%20authentication.)
 
-**□ Implement Entra ID Governance**
+**Implement Entra ID Governance**
 
 - <https://learn.microsoft.com/entra/governance/entitlement/lifecycle-workflows>
 
@@ -366,7 +366,7 @@ on-prem apps in a cloud-first model:
 
 - <https://learn.microsoft.com/entra/privileged-identity-management/pim-resource-roles-overview>
 
-**□ Address Key Limitations**
+**Address Key Limitations**
 
 - No password writeback for cloud-only users—keep hybrid directory if
   you need writeback.
@@ -374,7 +374,7 @@ on-prem apps in a cloud-first model:
 - Legacy apps with hardcoded AD dependencies may require custom proxies
   or remain on-prem.
 
-**□ Monitor & Iterate**
+**Monitor & Iterate**
 
 - Track migration progress: users/groups converted, apps modernized.
 

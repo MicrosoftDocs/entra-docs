@@ -1,6 +1,6 @@
 ---
 title: Source of Authority Readiness
-description: This article describes the situations in which IT architects are ready to convert the source of authority for users and groups in their envrionment.
+description: This article describes the situations in which IT architects are ready to convert the source of authority for users and groups in their environment.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id
