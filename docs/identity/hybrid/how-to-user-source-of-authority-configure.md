@@ -21,7 +21,7 @@ This article explains the prerequisites, and steps, to configure User Source of 
 | Requirement | Description |
 |-------------|-------------|
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of users.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
-| **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
+| **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to consent to this permission](how-to-user-source-of-authority-configure.md#use-microsoft-graph-explorer-to-consent-permission-to-apps) using Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free license. |
 | **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760) |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
@@ -311,9 +311,6 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 TODO: Add your next step link(s)
 
-- [Write concepts](article-concept.md)
+- [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)](user-source-of-authority-audit-monitor.md)
 
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
 
