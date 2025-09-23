@@ -24,11 +24,11 @@ Modern enterprises are under increasing pressure to modernize identity managemen
 
 1. [A phased roadmap from going from hybrid, to cloud-first, to AD-minimized environments](guidance-for-it-architects-for-source-of-authority-conversion.md#roadmap-to-cloud-identity-hybrid-to-cloud-firstad-minimized-state).
 
-1. [Criteria to determine SOA readiness for users and groups]().
+1. [Criteria to determine SOA readiness for users and groups](guidance-for-it-architects-for-source-of-authority-conversion.md#is-soa-the-right-solution-for-you).
 
-1. [An app-centric approach to shift your user and group management to the cloud if you aren't yet ready]().
+1. [An app-centric approach to shift your user and group management to the cloud if you aren't yet ready](guidance-for-it-architects-for-source-of-authority-conversion.md#application-centric-approach-modernize-on-premises-authentication).
 
-1. [Integration strategies for Kerberos and LDAP-based applications]().
+1. [Integration strategies for Kerberos and LDAP-based applications](guidance-for-it-architects-for-source-of-authority-conversion.md#key-considerations-before-migrating-kerberos-workloads).
 
 1. [Key limitations and considerations for hybrid coexistence]().
 
@@ -260,7 +260,7 @@ The following are key considerations for Kerberos applications before shifting  
 
 - **Authentication:** If using password-based sign-ins, **the Active Directory account’s credentials must be usable**. Currently, there's no capability to provision users from Microsoft Entra ID to AD and synchronize the Microsoft Entra ID password to AD. Until this feature is available, users should remain in a hybrid state. If using the Cloud Kerberos Trust type and password-less methods  such as WHfB, FIDO2, Microsoft Entra CBA, or PassKeys, a password isn't required, but other on-premises user attributes must be kept in sync. These can be managed through MS Graph API (dual write to both Microsoft Entra ID and AD) for SOA transferred users.
 
-- **Entra ID joined devices:** For true single sign-on, devices accessing Kerberos resources should be Microsoft Entra ID-joined or hybrid-joined. When a user logs into a device using Microsoft Entra ID credentials, the device can obtain a token from Microsoft Entra ID that's convertible to a Kerberos ticket via trust or connector. If a device is only domain-joined, and the user is cloud-managed, seamless SSO can be difficult, possibly requiring manual credential entry. Microsoft recommends migrating devices to Microsoft Entra ID join with cloud trust as part of cloud transformation so that user and device trust are aligned. 
+- **Microsoft Entra ID joined devices:** For true single sign-on, devices accessing Kerberos resources should be Microsoft Entra ID-joined or hybrid-joined. When a user logs into a device using Microsoft Entra ID credentials, the device can obtain a token from Microsoft Entra ID that's convertible to a Kerberos ticket via trust or connector. If a device is only domain-joined, and the user is cloud-managed, seamless SSO can be difficult, possibly requiring manual credential entry. Microsoft recommends migrating devices to Microsoft Entra ID join with cloud trust as part of cloud transformation so that user and device trust are aligned. 
 
 > [!NOTE]
 > Device migration is outside the current scope.
