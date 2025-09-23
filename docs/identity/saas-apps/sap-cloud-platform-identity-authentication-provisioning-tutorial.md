@@ -18,7 +18,13 @@ This article demonstrates the steps for configuring provisioning from Microsoft 
 
 > [!NOTE]
 > This article describes a connector built in the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). SAP Cloud Identity Services also has its own separate connector to read users and groups from Microsoft Entra ID. For more information, see [SAP Cloud Identity Services - Identity Provisioning - Microsoft Entra ID as a source system](https://help.sap.com/docs/identity-provisioning/identity-provisioning/microsoft-azure-active-directory).
->
+
+> [!NOTE]
+> A new version of the SAP Cloud Identity Services connector is Generally Available and is now the default for the SAP Cloud Identity Services listing in the Microsoft Entra app gallery. This current version of the connector features the following changes:
+> * Updated to the SCIM 2.0 standard
+> * Support for group provisioning and deprovisioning to SAP Cloud Identity Services
+> * Support for custom extension attributes
+> * Support for the [OAuth 2.0 Client Credentials grant](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-client-creds-grant-flow)
 
 ## Prerequisites
 
@@ -27,6 +33,7 @@ The scenario outlined in this article assumes that you already have the followin
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [An SAP Cloud Identity Services tenant](https://www.sap.com/products/cloud-platform.html)
 * A user account in SAP Cloud Identity Services with Admin permissions.
+* A Microsoft Entra ID P1 license is required to use group provisioning capabilities.
 
 > [!NOTE]
 > This integration is also available to use from the Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from the public cloud environment.
