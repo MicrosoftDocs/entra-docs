@@ -1,6 +1,6 @@
 ---
-title: Learn about Global Secure Access B2B Guest Access (Preview)
-description: Learn about Global Secure Access B2B Guest Access (Preview).
+title: Learn about Global Secure Access B2B Guest Access (preview)
+description: Learn how Global Secure Access enables secure B2B guest access for external partners through Windows 365 and Azure Virtual Desktop with enhanced security controls.
 author: kenwith    
 ms.author: kenwith
 manager: dougeby
