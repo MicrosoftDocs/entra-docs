@@ -40,6 +40,9 @@ The following devices and applications support accessing resources where a token
 - Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the [known limitations section](#known-limitations) for unsupported device types.  
 - Windows Server 2019 or newer that are hybrid Microsoft Entra joined.
 
+> [!NOTE]  
+> For detailed steps on how to register your device, see [How it works: Device registration – Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/devices/device-registration-how-it-works).
+
 ### Supported applications
 
 - OneDrive sync client version 22.217 or newer 
