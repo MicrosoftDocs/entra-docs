@@ -74,8 +74,6 @@ You can now use Microsoft Entra ID Governance to enable lifecycle and access gov
 > [!TIP]
 > Use Microsoft Entra ID Governance features like Access Reviews and Lifecycle Workflows to automate compliance and reduce manual overhead.
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/password-dependent-eligible.png" alt-text="Screenshot of whether apps dependent on passwords are eligible for Source of authority conversion.":::
-
 ## Is SOA the right solution for you?
 
 The following diagram outlines if you're ready to transfer the source of authority (SOA) of users and groups:
@@ -276,6 +274,12 @@ it introduces a complex hybrid architecture during the interim. Key
 challenges and mitigation strategies include:
 
 - **User Provision to AD and Password writeback gap:** This is a significant current limitation. When a user is converted to cloud management, **Microsoft Entra ID does not provision the user to AD, and automatically synchronize the user’s password into AD**. Microsoft Entra ID Connect’s password writeback only works for users originally from AD (hybrid identities). For cloud-originated users, there's no built-in solution to push their password to AD, meaning their AD account might have an empty or unknown password. **The user cannot log in to on-prem apps with their usual password**.
+
+---
+
+# [Phase 5: Verify and optimize](#tab/verify-optimize)
+
+
 
 ---
 
