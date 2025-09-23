@@ -475,10 +475,10 @@ The following example prompts can be used to investigate network traffic logs in
 
 - *Show the top 5 users with the highest data consumption in the last day.*
 - *Show all blocked traffic for user {user principal name} in the last 24 hours.*
-- *List all applications with high-risk scores accessed in the last 24 hours.*
-- *List all applications that user {user principal name} has accessed in the last 24 hours based on network traffic.*
-- *List of the top 10 accessed applications in the last week.*
-- *Show all cross-tenant traffic to tenant {Enter_Tenant_ID_Here} in the last day.* 
+- *List all applications with high-risk scores accessed in the last 24 hours based on network traffic logs.*
+- *List all applications names that user {user principal name} has accessed in the last 24 hours based on network traffic logs.*
+- *List the top 10 accessed applications names in the last week based on network traffic logs.*
+- *Show all cross-tenant traffic to tenant {Enter_Tenant_ID_Here} in the last day based on network.* 
 
 ## See also
 
