@@ -28,7 +28,7 @@ Admins are faced with two primary goals:
 Use Conditional Access policies to apply the right access controls when needed to keep your organization secure.
 
 > [!IMPORTANT]
-> Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's first line of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.
+> Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's frontline of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.
 
 ## Common signals
 
@@ -55,8 +55,7 @@ These signals include:
 
 ## Common decisions
 
-- Block access.
-   - This is the most restrictive decision.
+- Block access is the most restrictive decision.
 - Grant access.
 - A less restrictive decision that might require one or more of the following options:
    - Require multifactor authentication.
@@ -108,9 +107,9 @@ The [Conditional Access optimization agent](agent-optimization.md) (preview) wit
 
 Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) can also use Conditional Access features.
 
-Other products and features that interact with Conditional Access policies require appropriate licensing for those products and features. This includes Microsoft Entra Workload ID, Microsoft Entra ID Protection, and features like Microsoft Purview.
+Other products and features that interact with Conditional Access policies require appropriate licensing for those products and features. This includes Microsoft Entra Workload ID, Microsoft Entra ID Protection, and Microsoft Purview.
 
-When the licenses required for Conditional Access expire, policies aren't automatically disabled or deleted. This lets customers migrate away from Conditional Access policies without a sudden change in their security posture. You can view and delete remaining policies, but you can't update them.
+When the licenses required for Conditional Access expire, policies aren't automatically disabled or deleted. This graceful state lets customers migrate away from Conditional Access policies without a sudden change in their security posture. You can view and delete remaining policies, but you can't update them.
 
 [Security defaults](~/fundamentals/security-defaults.md) help protect against identity-related attacks and are available for all customers.  
 
