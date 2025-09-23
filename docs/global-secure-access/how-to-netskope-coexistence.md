@@ -322,21 +322,16 @@ In the Netskope portal:
 1. Create [Real-time Protection policy](https://docs.netskope.com/en/inline-policies/) to allow access to Private Apps.
 1. Install the [Netskope Private Access Publisher](https://docs.netskope.com/en/deploy-a-publisher).
 
-#### Add Steering Configuration for Internet Access and Private Apps
+#### Add Steering Configuration for Private Apps
 
 1. Navigate to **Netskope portal** > **Settings** > **Security Cloud Platform** > **Steering Configuration**> **New Configuration**.
 1. Add a **Configuration Name** such as `MSFTSSEPrivate`.
 1. Choose a **User Group** or **OU** to apply the configuration to.
-1. Under **Cloud, Web and Firewall** > **Web Traffic.**
-1. **Bypass exception traffic at** > **Client.**
-1. Under **Private Apps**, select **Specific Private Apps**.
+1. Under **Cloud, Web and Firewall** > **None.**
+1. Under **Private Apps**, select **All Private Apps**.
 1. On the next line > **Netskope will** > **Steer.**
 1. Under **Borderless SD-WAN Apps** > **None**.
 1. Set **Status** to **Disabled** and select **Save**.
-1. Select the `MSFTSSEPrivate` configuration > **Exceptions** > **New Exception** > **Destination Locations** > Select `MSFT SSE Service` and `MSFT SSE M365` (Instructions for creating this object are listed in the Netskope profiles section).
-1. Select **Bypass** and **Treat it like local IP address** options.
-1. Select **Exceptions** > **New Exception** > **Domains** and add these exceptions: `*.globalsecureaccess.microsoft.com`, `*.auth.microsoft.com`, `*.msftidentity.com`, `*.msidentity.com`, `*.onmicrosoft.com`, `*.outlook.com`, `*.protection.outlook.com`, `*.sharepoint.com`, `*.sharepointonline.com`, `*.svc.ms`, `*.wns.windows.com`, `account.activedirectory.windowsazure.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.cloud.microsoft`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`.
-1. Select **Add Steered Item** > Select **Private App** and select the private applications for Netskope to steer > **Add**.
 1. Ensure that the `MSFTSSEPrivate` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
 
 #### Add Netskope Private App Real-time Protection Policy
