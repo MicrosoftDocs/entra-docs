@@ -36,7 +36,7 @@ Modern enterprises are under increasing pressure to modernize identity managemen
 
 ## Business and Security Benefits
 
-Active Directory has long been considered the **“keys to the kingdom”** for organizations, making it an attractive target for attackers if compromised. By shifting towards a cloud first approach, you are able to see business and security benefits in the following ways:
+Active Directory has long been considered the **“keys to the kingdom”** for organizations, making it an attractive target for attackers if compromised. By shifting towards a cloud first approach, you're able to see business and security benefits in the following ways:
 
 ### Reducing reliance on AD
 
@@ -52,11 +52,11 @@ A cloud-first approach can help enhance IT efficiency and user experience in you
 
 - Microsoft Entra ID governance features such as Entitlement Management, Access Reviews, and Lifecycle Workflows streamline governance for apps relying on groups formerly managed in AD. This introduces automation to ensure compliance throughout the identity lifecycle.
 
-- Users benefit from **single sign-on** across both cloud, and on-premises, applications using modern access controls such as risk-based conditional access policies. After migration, employees can use their Microsoft Entra ID credentials, such as phishing-resistant password-less methods,to seamlessly access legacy intranet applications. This reduces the need to manage multiple AD passwords and mitigates credential sprawl.
+- Users benefit from **single sign-on** across both cloud, and on-premises, applications using modern access controls such as risk-based conditional access policies. After migration, employees can use their Microsoft Entra ID credentials, such as phishing-resistant password-less methods, to seamlessly access legacy intranet applications. This reduces the need to manage multiple AD passwords and mitigates credential sprawl.
 
 ## Roadmap to Cloud Identity: Hybrid to Cloud-First/AD Minimized state.
 
-Organizations typically advance through distinct stages on the “*road to the cloud*,” beginning with a **hybrid** approach that consists of using both cloud and on-prem AD within their environment. This is followed by the [cloud-first](../../architecture/road-to-the-cloud-posture.md#state-3-cloud-first) stage, where resources are increasingly shifted to the cloud. The final stage organizations achieve is the [AD-minimized](../../architecture/road-to-the-cloud-posture.md#state-4-active-directory-minimized) state. Source of Authority (SOA) transfer for users, groups, and contacts facilitates this journey by allowing incremental migration of identities to Microsoft Entra ID. Rather than decommissioning AD all at once, which would necessitate rewriting or re-platforming numerous applications, SOA enables a *phased approach*. With this approach, organizations can migrate suitable identities to the cloud, and gradually reduce their AD footprint over time.
+Organizations typically advance through distinct stages on the “*road to the cloud*,” beginning with a **hybrid** approach that consists of using both cloud and on-premises AD within their environment. This is followed by the [cloud-first](../../architecture/road-to-the-cloud-posture.md#state-3-cloud-first) stage, where resources are increasingly shifted to the cloud. The final stage organizations achieve is the [AD-minimized](../../architecture/road-to-the-cloud-posture.md#state-4-active-directory-minimized) state. Source of Authority (SOA) transfer for users, groups, and contacts facilitates this journey by allowing incremental migration of identities to Microsoft Entra ID. Rather than decommissioning AD all at once, which would necessitate rewriting or re-platforming numerous applications, SOA enables a *phased approach*. With this approach, organizations can migrate suitable identities to the cloud, and gradually reduce their AD footprint over time.
 
 > [!NOTE]
 > Always begin with an application inventory before initiating SOA transfer. This ensures you don’t break access for users tied to legacy AD apps.
@@ -65,47 +65,49 @@ Organizations typically advance through distinct stages on the “*road to the c
 
 ### Minimize AD footprint for Users and Groups No Longer Needed in AD
 
-After transitioning to cloud services and modern applications, certain AD accounts and groups might become obsolete. Today, these users and groups are still being created in AD through traditional identity management IDP solutions such as MIM since manually creating these in the cloud is a high effort manual effort. With SOA, you can now decide to remove AD out of the picture for these users and groups. They can be converted to cloud-only (SOA) and removed from AD. This targeted transition allows organizations to automate the migration and monitor its progress—such as the percentage of groups and users migrated—while minimizing operational disruption.
+After you transition to cloud services and modern applications, certain AD accounts and groups might become obsolete. Today these users and groups are still being created in AD through traditional identity management IDP solutions such as MIM since manually creating these in the cloud is a high effort manual effort. With SOA, you can now decide to remove AD out of the picture for these users and groups. They can be converted to cloud-only (SOA) and removed from AD. This targeted transition allows organizations to automate the migration and monitor its progress—such as the percentage of groups and users migrated—while minimizing operational disruption.
 
 ### Shifting Lifecycle Management to the Cloud
 
-You can now use Microsoft Entra ID Governance to enable lifecycle and access governance of SOA transferred users and groups from the cloud. For Users, this means, you are now provisioning the users directly into Microsoft Entra ID and can use Microsoft Entra ID Governance capabilities to govern these users. You can also use Microsoft Entra ID as your authentication provider to secure and access on-premises AD resources using Entra Private Access. For groups, you can modernize your groups and enable access governance of apps tied to them from the cloud. Some caveats apply here where groups that are Exchange constructs like mail-enabled security groups and Distribution Lists, require modernization before being managed in the cloud. Refer to [Group SOA guidance for more info](../../identity/hybrid/concept-source-of-authority-overview.md).
+You can now use Microsoft Entra ID Governance to enable lifecycle and access governance of SOA transferred users and groups from the cloud. For Users, this means, you're now provisioning the users directly into Microsoft Entra ID and can use Microsoft Entra ID Governance capabilities to govern these users. You can also use Microsoft Entra ID as your authentication provider to secure and access on-premises AD resources using Microsoft Entra Private Access. For groups, you can modernize your groups and enable access governance of apps tied to them from the cloud. Some caveats apply here where groups that are Exchange constructs like mail-enabled security groups and Distribution Lists, require modernization before being managed in the cloud. Refer to [Group SOA guidance for more info](../../identity/hybrid/concept-source-of-authority-overview.md).
 
 > [!TIP]
 > Use Microsoft Entra ID Governance features like Access Reviews and Lifecycle Workflows to automate compliance and reduce manual overhead.
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/image1.png" alt-text="Screenshot of a green and red sign indicating AI-generated content may be incorrect.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/password-dependent-eligible.png" alt-text="Screenshot of whether apps dependent on passwords are eligible for Source of authority conversion.":::
 
 ## Is SOA the right solution for you? (ARTICLE 2)
 
-The following diagram outlines if you are ready to transfer the source of authority (SOA) of users and groups:
+The following diagram outlines if you're ready to transfer the source of authority (SOA) of users and groups:
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.png" alt-text="Screenshot of a diagram of steps to show if you are ready to transfer source of authority.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.png" alt-text="Screenshot of a diagram of steps to show if you're ready to transfer source of authority.":::
 
 ### Considerations
 
-**Users:** For users who are still tied to legacy applications and dependence on AD DS, SOA is not recommended due to gaps in capabilities present today in the cloud to manage password based applications. Identifying which applications require passwords vs. not and planning their migration is critical.
+**Users:** For users who are still tied to legacy applications and dependence on AD DS, SOA isn't recommended due to gaps in capabilities present today in the cloud to manage password based applications. Identifying which applications require passwords vs. not and planning their migration is critical.
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/image1.png" alt-text="A green and red signs AI-generated content may be incorrect.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/password-dependent-eligible.png" alt-text="Screenshot of whether apps dependent on passwords are eligible for Source of authority conversion.":::
 
 **Groups:** For groups, we recommend you start with shifting security groups to the cloud and provisioning them back to AD from Microsoft Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workload is in the cloud and you no longer need On-premises Exchange server.
 
 
-## Application-Centric Approach: Modernize On-Prem Authentication (ARTICLE 3)
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/shift-group-priority.png" alt-text="Screenshot of shifting group priority when transferring source of Authority.":::
+
+## Application-Centric Approach: Modernize on-premises Authentication (ARTICLE 3)
 
 This guide outlines principal cloud migration strategy for AD-heavy environments: the application-centric approach, which enables on-premises applications to utilize Microsoft Entra ID for identity. Detailed steps, prerequisites, and guidance for addressing challenges such as password synchronization for legacy applications are also included.
 
-## Application-Centric Approach: Modernize On-Prem Authentication
+## Application-Centric Approach: Modernize on-premises Authentication
 
-**The application-centric approach tackles the problem from the perspective of your applications.** In this approach, you try to modernize your app authentication by leveraging the following framework:
+**The application-centric approach tackles the problem from the perspective of your applications.** In this approach, you try to modernize your app authentication by applying the following framework:
 
 - **Inventory Applications:** List all on-premises apps that use AD for authentication (Kerberos/NTLM or LDAP).
 
-- **Integration Goal:** Reconfigure each app to use Microsoft Entra ID for authentication, reducing reliance on on-prem AD.
+- **Integration Goal:** Reconfigure each app to use Microsoft Entra ID for authentication, reducing reliance on on-premises AD.
 
 - **Bridging Solutions:** Use Microsoft Entra Application Proxy, Microsoft Entra Domain Services, or other cloud services to connect legacy apps to Microsoft Entra ID without major rewrites.
 
-There may also be some apps already using modern protocols (SAML/OIDC via AD FS or third-party IdPs) – those are easier to migrate directly to Entra ID, and some truly legacy cases (like hardcoded NTLM-only apps) that might need special handling. Below is the recommended sequence for an app centric migration.
+There can also be some apps already using modern protocols such as SAML/OIDC via AD FS or third-party IdPs. These apps are easier to migrate directly to Microsoft, while some other legacy cases like hardcoded NTLM-only apps, might need special handling. The following is the recommended sequence for an app centric migration.
 
 ## Recommended sequence for application-centric migration:
 
@@ -113,19 +115,19 @@ There may also be some apps already using modern protocols (SAML/OIDC via AD FS 
 
 # [Phase 1: Application Inventory and Authentication Analysis](#tab/application-inventory)
 
-It’s critical to **discover and categorize all on-premises applications** before planning the migration. The goal is to determine for each app: *How does it currently authenticate users, and what is the best path to integrate or modernize that authentication with Microsoft Entra ID?*
+It’s critical to **discover and categorize all on-premises applications** before planning the migration. The goal is to determine for each app: *How does it currently authenticate users*, and *what is the best path to integrate or modernize that authentication with Microsoft Entra ID?*
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/application-inventory.png" alt-text="Visualization":::
 
-A thorough application analysis forms the foundation for a successful migration to cloud-based identity management in AD-heavy environments. The process involves methodically assessing every application that depends on Active Directory for authentication, determining how each authenticates users, and mapping a modernization or integration plan that fits each application's unique requirements.
+A thorough application analysis forms the foundation for a successful migration to cloud-based identity management in AD-heavy environments. This process involves methodically assessing every application that depends on Active Directory for authentication, determining how each authenticates users, and mapping a modernization or integration plan that fits each application's unique requirements.
 
 ### Step 1: Cataloging Active Directory–Integrated Applications
 
-Start your migration by identifying all applications that Active Directory (AD) for authentication or authorization. Understand their dependencies to plan a move to cloud identity management, noting which AD groups and user accounts connect with each application. This helps prioritize which users and groups transition first, particularly those linked to business-critical apps.
+Start your migration by identifying all applications that uses AD for authentication or authorization. Understand their dependencies to plan a move to cloud identity management, noting which AD groups and user accounts connect with each application. This helps prioritize which users and groups transition first, particularly those linked to business-critical apps.
 
 #### Discover Active Directory–Integrated Applications
 
-Use tools like Microsoft Entra Global Secure Access Application Discovery and AD Domain Controller logs to determine what apps employees are accessing and how those apps interact with AD. Prioritize high-usage applications using dashboards that sort by user count and filter by individual user activity.
+Use tools like Microsoft Entra Global Secure Access Application Discovery and AD Domain Controller logs to determine what apps employees are accessing, and how those apps interact with AD. Prioritize high-usage applications using dashboards that sort by user count and filter by individual user activity.
 
 #### Map Applications to AD Security Groups
 
@@ -141,17 +143,16 @@ For each application in your inventory, identify the authentication mechanism it
 
 - *Integrated Windows Authentication (Kerberos/NTLM)* – Common in
   IIS/.NET applications using Windows Authentication, file servers,
-  SharePoint, and similar platforms. These typically allow users to log
-  in with domain credentials, often without a separate prompt.
+  SharePoint, and similar platforms. These typically allow users to sign in with domain credentials, often without a separate prompt.
 
-- *LDAP Authentication/Queries* – Applications may have LDAP server
+- *LDAP Authentication/Queries* – Applications might have LDAP server
   settings pointing to AD and perform binds or lookups, usually
   custom-developed or third-party products prompting users for AD
   credentials.
 
 - *Federation/Modern Authentication* – Some applications are already
   federated via AD FS or support modern protocols such as SAML or OAuth.
-  These can generally be reconfigured to use Entra ID with minimal
+  These can generally be reconfigured to use Microsoft Entra ID with minimal
   effort.
 
 - *Other Legacy Methods* – Includes cases where apps use RADIUS against
@@ -160,7 +161,7 @@ For each application in your inventory, identify the authentication mechanism it
 
 ### Step 3. Assess Modernization Feasibility
 
-Evaluate each application's ability to adopt modern authentication protocols (SAML/OIDC) natively. If a vendor update is available or if the app is in-house and can be re-coded, transitioning to Microsoft Entra ID as the identity provider is typically the best long-term solution. This approach removes AD dependency and unlocks the full benefits of cloud identity management. However, for older applications that cannot be easily updated, plan for a "bridge" solution to integrate them with Microsoft Entra ID, even if indirect integration is required.
+Evaluate each application's ability to adopt modern authentication protocols (SAML/OIDC) natively. If a vendor update is available, or if the app is in-house and can be re-coded, transitioning to Microsoft Entra ID as the identity provider is typically the best long-term solution. This approach removes AD dependency and unlocks the full benefits of cloud identity management. However, for older applications that cannot be easily updated, plan for a "*bridge*" solution to integrate them with Microsoft Entra ID, even if indirect integration is required.
 
 Some older applications may have hard-coded assumptions about AD such as expecting to find a user in a specific OU, or writing attributes to AD. Those apps are **out of scope** for this kind of identity migration. Applications that *write*, and not just read, to LDAP are particularly problematic. These applications are not easily supported by Microsoft Entra ID or Microsoft Entra ID DS unless you keep write permissions there, which is possible, but then you have divergent data. Make sure to identify if any app does LDAP writes or depends on obscure AD features (like dynamic auxiliary classes, etc.). Those might have to remain on AD until they’re retired. The focus should be on apps that *read/authenticate* via AD – those can be moved to cloud auth as described.
 
@@ -173,29 +174,29 @@ Some older applications may have hard-coded assumptions about AD such as expecti
 
 After determining authentication methods and modernization feasibility, group applications into distinct categories to guide your integration plan:
 
-- **Minimize # of Apps that you need to manage:** For apps that are in plans to be sunset with a target date, these can be considered out of scope and any management of users/groups tied to these apps can be shifted to the cloud. For apps that are redundant (apps doing the same thing), consolidate the app and determine if it can be modernized or not.
+- **Minimize number of Apps that you need to manage:** For apps that are in plans to be sunset with a target date, these can be considered out of scope and any management of users/groups tied to these apps can be shifted to the cloud. For apps that are redundant, consolidate the app and determine if it can be modernized or not.
 
-- **Apps Already Using or Capable of Modern Auth:** These can be migrated directly to Entra ID as the identity provider, such as updating AD FS applications to point to Entra ID or moving files to Azure file shares. While not the central focus, addressing these reduces overall legacy dependency. Any management of users/groups tied to these apps are in scope to be converted to the cloud.
+- **Apps already using or capable of modern auth:** These can be migrated directly to Microsoft Entra ID as the identity provider, such as updating AD FS applications to point to Microsoft Entra ID or moving files to Azure file shares. While not the central focus, addressing these reduces overall legacy dependency. Any management of users/groups tied to these apps are in scope to be transferred to the cloud.
 
-- **Kerberos/NTLM Apps (Not Easily Modernizable):** Use Microsoft Entra as a front-end through Application Proxy or similar solutions. The application remains on-premises, but user authentication switches to Entra ID tokens, which are translated into Kerberos tickets within AD.
+- **Kerberos/NTLM Apps (not easily modernized):** Use Microsoft Entra as a front-end through Application Proxy or similar solutions. The application remains on-premises, but user authentication switches to Microsoft Entra ID tokens, which are translated into Kerberos tickets within AD.
 
 - **LDAP-Binding Apps:** Introduce a managed AD instance in Azure—specifically, Microsoft Entra Domain Services—allowing these apps to bind to a cloud-managed AD instead of the on-premises environment.
 
-- **Other Special Cases:** For applications that cannot be altered or proxied (such as older client-server apps limited to AD-joined machines), consider hosting them on VDI solutions like Azure Virtual Desktop Windows 365 Cloud PC etc. This maintains a managed environment for these apps while enabling cloud migration elsewhere, though this should be a last resort due to added complexity and cost.
+- **Other Special Cases:** For applications that cannot be altered or proxied, such as older client-server apps limited to AD-joined machines, consider hosting them on VDI solutions like Azure Virtual Desktop, Windows 365 Cloud PC, or others. This maintains a managed environment for these apps while enabling cloud migration elsewhere. This should be a last resort due to added complexity and cost.
 
-- **Disconnected apps:** For apps that have business requirements to be working without internet connections and work in a disconnected environment, you need to keep on-premises and users leveraging these won’t be eligible for SOA conversion.
+- **Disconnected apps:** For apps that have business requirements of working without internet connections or work in a disconnected environment, you need to stay on-premises. Users using these apps are not eligible to transfer SOA.
 
 ### Step 5. Mapping and Planning
 
-By concluding the analysis phase, you should have a clear mapping of which applications fall into the "Kerberos category," "LDAP category," or other buckets, along with the specific integration mechanism each will require. This planning step is vital: each application has unique characteristics that must be carefully considered before selecting a migration strategy. Fortunately, Microsoft Entra ID offers solutions for most AD-based authentication patterns, and even legacy applications that cannot be modified can benefit from secure hybrid access and modern governance.
+By concluding the analysis phase, you should have a clear mapping of which applications fall into the "*Kerberos category*," "*LDAP category*," or other buckets, along with the specific integration mechanism each will require. This planning step is vital as each application has unique characteristics that must be carefully considered before selecting a migration strategy. Microsoft Entra ID fortunately offers solutions for most AD-based authentication patterns, and even legacy applications that cannot be modified can benefit from secure hybrid access and modern governance.
 
 # [Phase 2: Migrate groups to the cloud](#tab/migrate-groups-to-cloud)
 
-In an app-centric approach, it's generally best to migrate groups (and
-app access controls) to the cloud first. This enables centralized access
-management and ensures group memberships remain intact before moving
-users. Microsoft recommends converting groups to SOA ahead of users to
-maintain membership integrity and allow testing. However, you can adjust
+In an app-centric approach, it's generally best to migrate groups and
+app access controls to the cloud first. This enables centralized access
+management, and ensures group memberships remain intact before moving
+users. Microsoft recommends transferring groups to SOA ahead of users to
+maintain membership integrity and allow testing. You can however adjust
 the sequence for each app, such as piloting an application with its
 groups and test users end-to-end. When shifting them to the cloud, we
 have outlined specific guidance on how you can map them to cloud groups
@@ -219,19 +220,17 @@ authentication using a simple bind with username and password, or for
 directory reads. Common examples include older enterprise applications,
 network appliances, or custom-developed apps that rely on LDAP binds to
 validate credentials. These applications typically require an LDAP
-server and cannot easily transition to modern authentication protocols.
+server, and cannot easily transition to modern authentication protocols.
 
 #### Recommended Solution: Microsoft Entra Domain Services
 
 The recommended solution for supporting LDAP-bound apps in the cloud is
-Microsoft Entra Domain Services (Entra ID DS). Hosted on Azure, Entra ID
-DS provides LDAP, Kerberos, and NTLM endpoints, syncing user accounts
-and credentials from your Entra ID tenant. This allows legacy
+Microsoft Entra Domain Services (Microsoft Entra ID DS). Hosted on Azure, Microsoft Entra ID DS provides LDAP, Kerberos, and NTLM endpoints, syncing user accounts and credentials from your Microsoft Entra ID tenant. This allows legacy
 applications to use cloud-hosted AD for authentication without switching
-to modern protocols. While implementing Entra ID DS adds cost and
+to modern protocols. While implementing Microsoft Entra ID DS adds cost and
 requires network connectivity, it enables organizations to migrate
 LDAP-dependent apps and retire on-premises AD. Management occurs
-directly in Entra ID; the managed domain mainly supports read and
+directly in Microsoft Entra ID, the managed domain mainly supports read and
 authentication for LDAP clients.
 
 # [Phase 4: Handling Kerberos-Based Applications (Windows Integrated Auth)](#tab/handling-kerberos-based-applications)
@@ -240,17 +239,16 @@ authentication for LDAP clients.
 using Windows Authentication, file servers (SMB) that rely on Kerberos
 tickets, and other services where Active Directory (AD) login is
 required. Microsoft offers intermediary solutions to integrate these
-applications with Entra ID.
+applications with  Microsoft Entra ID.
 
 **Microsoft Entra Application Proxy or Private Access with Kerberos Constrained Delegation (KCD):**
 
 *Recommended solution:*
 
-- **Microsoft Entra Application Proxy or Private Access with Kerberos Constrained Delegation (KCD):** This cloud service enables the publication of an on-premises web application through Entra ID. Users authenticate to Entra ID (for instance, using OAuth/OpenID Connect), and the Application Proxy connector operating on-premises obtains a Kerberos ticket to the backend application on the user’s behalf using KCD. Entra ID serves as the authentication gateway, translating
-authentication to Kerberos for the application. This solution supports web-based applications (HTTP/HTTPS) and can provide single sign-on (SSO) for cloud-managed users *provided those users have an account in AD*.
+- **Microsoft Entra Application Proxy or Private Access with Kerberos Constrained Delegation (KCD):** This cloud service enables the publication of an on-premises web application through Microsoft Entra ID. Users authenticate to Microsoft Entra ID, such as using OAuth/OpenID Connect, and the Application Proxy connector operating on-premises obtains a Kerberos ticket to the backend application on the user’s behalf using KCD. Microsoft Entra ID serves as the authentication gateway, translating authentication to Kerberos for the application. This solution supports web-based applications (HTTP/HTTPS) and can provide single sign-on (SSO) for cloud-managed users *provided those users have an account in AD*.
 
 - **Passwordless with Cloud Kerberos Trust:** This method lets Microsoft Entra ID
-issue Kerberos tickets for on-premises AD resources when users sign in with Microsoft Entra ID credentials using password-less authentication (like WHfB and FIDO2). It requires configuring the AD domain to trust Microsoft Entra ID’s cloud Kerberos service and ensuring users’ AD objects have the necessary keys. The process is fully password-less, making it ideal for cloud users to access on-prem resources.
+issue Kerberos tickets for on-premises AD resources when users sign in with Microsoft Entra ID credentials using password-less authentication such as WHfB and FIDO2. It requires configuring the AD domain to trust Microsoft Entra ID’s cloud Kerberos service and ensuring users’ AD objects have the necessary keys. The process is fully password-less, making it ideal for cloud users to access on-prem resources.
 
 
 > [!NOTE]
@@ -258,14 +256,13 @@ issue Kerberos tickets for on-premises AD resources when users sign in with Micr
 
 ### Key Considerations Before Migrating Kerberos Workloads
 
-The following are Key considerations for Kerberos applications before shifting  user and group workloads associated with these apps:
+The following are key considerations for Kerberos applications before shifting  user and group workloads associated with these apps:
 
-- **User lifecycle management:** Even after transitioning a user to cloud management, an AD account (with matching UserPrincipalName) must remain for Kerberos functionality.
+- **User lifecycle management:** Even after transitioning a user to cloud management, an AD account with matching UserPrincipalName must remain for Kerberos functionality.
 
-- **Authentication:** If using password-based sign-ins, **the Active Directory account’s credentials must be usable**. Currently, there is no capability to provision users from Entra ID to AD and synchronize the Microsoft Entra ID password to AD. Until this feature is available, users should remain in a hybrid state. If using the Cloud Kerberos Trust type and password-less methods (WHfB, FIDO2, Microsoft Entra CBA, Passkeys etc), a password is not required, but other on-premises user attributes must be kept in sync. These can be managed through MS Graph API (dual write to both Microsoft Entra ID and AD) for SOA transferred users.
+- **Authentication:** If using password-based sign-ins, **the Active Directory account’s credentials must be usable**. Currently, there is no capability to provision users from Microsoft Entra ID to AD and synchronize the Microsoft Entra ID password to AD. Until this feature is available, users should remain in a hybrid state. If using the Cloud Kerberos Trust type and password-less methods  such as WHfB, FIDO2, Microsoft Entra CBA, or PassKeys, a password is not required, but other on-premises user attributes must be kept in sync. These can be managed through MS Graph API (dual write to both Microsoft Entra ID and AD) for SOA transferred users.
 
-- **Entra ID joined devices:** For true single sign-on, devices accessing Kerberos resources should be Microsoft Entra ID-joined or hybrid-joined. When a user logs into a device using Microsoft Entra ID credentials, the device can obtain a token from Entra ID that is convertible to a Kerberos ticket (via trust or connector). If a device is only domain-joined and the user is cloud-managed, seamless SSO may
-be difficult, possibly requiring manual credential entry. Microsoft recommends migrating devices to Microsoft Entra ID join with Cloud trust as part of cloud transformation so that user and device trust are aligned. 
+- **Entra ID joined devices:** For true single sign-on, devices accessing Kerberos resources should be Microsoft Entra ID-joined or hybrid-joined. When a user logs into a device using Microsoft Entra ID credentials, the device can obtain a token from Microsoft Entra ID that is convertible to a Kerberos ticket via trust or connector. If a device is only domain-joined, and the user is cloud-managed, seamless SSO can be difficult, possibly requiring manual credential entry. Microsoft recommends migrating devices to Microsoft Entra ID join with cloud trust as part of cloud transformation so that user and device trust are aligned. 
 
 > [!NOTE]
 > Device migration is outside the current scope.
