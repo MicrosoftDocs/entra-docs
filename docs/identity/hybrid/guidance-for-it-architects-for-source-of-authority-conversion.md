@@ -267,7 +267,7 @@ The following are key considerations for Kerberos applications before shifting  
 > [!NOTE]
 > Device migration is outside the current scope.
 
-- **Conditional Access for on-prem apps:** Once App Proxy or Microsoft Entra Private Access is deployed for an application, Conditional Access policies (MFA, trusted device, etc.) can be enforced on application access since authentication passes through Microsoft Entra ID. This enhances security—even legacy apps benefit from Zero Trust conditions without modification. For Kerberos trust scenarios, Conditional Access applies when the user initially authenticates to Microsoft Entra ID on the device.
+- **Conditional Access for on-prem apps:** Once App Proxy or Microsoft Entra Private Access is deployed for an application, Conditional Access policies (MFA, trusted device, etc.) can be enforced on application access since authentication passes through Microsoft Entra ID. This enhances security as even legacy apps benefit from Zero Trust conditions without modification. For Kerberos trust scenarios, Conditional Access applies when the user initially authenticates to Microsoft Entra ID on the device.
 
 ## Challenges and Important Considerations in the App-Centric Approach
 
@@ -275,8 +275,7 @@ While the app-centric migration approach allows for gradual transition,
 it introduces a complex hybrid architecture during the interim. Key
 challenges and mitigation strategies include:
 
-- **User Provision to AD and Password writeback gap:** This is a significant current limitation. When a user is converted to cloud management, **Microsoft Entra ID does not provision the user to AD and automatically synchronize the user’s password into AD**. Microsoft Entra ID Connect’s password writeback only works for users originally from AD (hybrid identities). For cloud-originated users, there is no built-in solution to push their password to AD, meaning their AD account may
-have an empty or unknown password. **The user cannot log in to on-prem apps with their usual password**.
+- **User Provision to AD and Password writeback gap:** This is a significant current limitation. When a user is converted to cloud management, **Microsoft Entra ID does not provision the user to AD and automatically synchronize the user’s password into AD**. Microsoft Entra ID Connect’s password writeback only works for users originally from AD (hybrid identities). For cloud-originated users, there is no built-in solution to push their password to AD, meaning their AD account might have an empty or unknown password. **The user cannot log in to on-prem apps with their usual password**.
 
 ---
 
