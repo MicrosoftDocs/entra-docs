@@ -1,9 +1,11 @@
 ---
-author: billmath
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
-ms.author: billmath
+ms.subservice: hybrid-cloud-sync
+ms.author: jomondi
 ms.custom: sfi-ga-nochange
 # Used by articles entra governance
 ---
@@ -55,7 +57,7 @@ If you're using the  [Basic AD and Azure environment](~/identity/hybrid/cloud-sy
 Use the following steps to configure and start the provisioning:
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
- 3. Select **New Configuration**
+ 3. Select **New configuration**
  4. On the configuration screen, enter a **Notification email**, move the selector to **Enable** and select **Save**.
  5. The configuration status should now be **Healthy**.
 
