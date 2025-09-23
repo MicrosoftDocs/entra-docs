@@ -83,11 +83,7 @@
   - name: Partner gallery
     items:
     - name: IDV partners
-      items:
-      - name: IDV partner network
-        href: partner-gallery.md
-    - name: Services partners
-      href: services-partners.md
+      href: partner-gallery.md
 - name: Samples
   expanded: true
   items:
