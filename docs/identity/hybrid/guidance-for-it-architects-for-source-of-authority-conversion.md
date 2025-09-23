@@ -3,12 +3,12 @@ title: "Cloud-First Identity Management: Guidance for IT Architects"
 description: This is a guide for IT architects on how to transition their hybrid environment into a cloud-first approach. Including best practices, scenarios, and considerations.
 author: OWinfreyATL
 ms.author: owinfrey
-ms.reviewer: owinfrey
+ms.reviewer: dhanyak
 ms.date: 09/17/2025
 ms.topic: concept-article
 ms.service: entra-id
 ms.subservice: hybrid
-ms.reviewer: dhanyak
+
 
 #customer intent: As an IT Architect, I want to learn best practices for beginning the process to transfer SOA and become cloud-first within my environment.
 
@@ -76,11 +76,11 @@ You can now use Microsoft Entra ID Governance to enable lifecycle and access gov
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/password-dependent-eligible.png" alt-text="Screenshot of whether apps dependent on passwords are eligible for Source of authority conversion.":::
 
-## Is SOA the right solution for you? (ARTICLE 2)
+## Is SOA the right solution for you?
 
 The following diagram outlines if you're ready to transfer the source of authority (SOA) of users and groups:
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.png" alt-text="Screenshot of a diagram of steps to show if you're ready to transfer source of authority.":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.png" alt-text="Screenshot of a diagram of steps to show if you're ready to transfer source of authority." lightbox="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.png":::
 
 ### Considerations
 
@@ -93,11 +93,11 @@ The following diagram outlines if you're ready to transfer the source of authori
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/shift-group-priority.png" alt-text="Screenshot of shifting group priority when transferring source of Authority.":::
 
-## Application-Centric Approach: Modernize on-premises Authentication (ARTICLE 3)
-
-This guide outlines principal cloud migration strategy for AD-heavy environments: the application-centric approach, which enables on-premises applications to utilize Microsoft Entra ID for identity. Detailed steps, prerequisites, and guidance for addressing challenges such as password synchronization for legacy applications are also included.
-
 ## Application-Centric Approach: Modernize on-premises Authentication
+
+This section outlines principal cloud migration strategy for AD-heavy environments: the application-centric approach, which enables on-premises applications to utilize Microsoft Entra ID for identity. Detailed steps, prerequisites, and guidance for addressing challenges such as password synchronization for legacy applications are also included.
+
+### Application-Centric Approach: Modernize on-premises Authentication
 
 **The application-centric approach tackles the problem from the perspective of your applications.** In this approach, you try to modernize your app authentication by applying the following framework:
 
@@ -351,13 +351,10 @@ shift users to the cloud. The following table is a summary of the options for ha
 
 **Implement Entra ID Governance**
 
-- <https://learn.microsoft.com/entra/governance/entitlement/lifecycle-workflows>
-
-- <https://learn.microsoft.com/entra/governance/entitlement-management/overview>
-
-- <https://learn.microsoft.com/entra/governance/access-review/overview>
-
-- <https://learn.microsoft.com/entra/privileged-identity-management/pim-resource-roles-overview>
+- [Lifecycle Workflows in Microsoft Entra ID](/entra/governance/entitlement/lifecycle-workflows)
+- [Entitlement Management Overview](/entra/governance/entitlement-management/overview)
+- [Access Reviews Overview](/entra/governance/access-review/overview)
+- [Privileged Identity Management for Resource Roles](/entra/privileged-identity-management/pim-resource-roles-overview)
 
 **Address Key Limitations**
 
