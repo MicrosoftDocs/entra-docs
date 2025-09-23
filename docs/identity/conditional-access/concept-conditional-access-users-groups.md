@@ -37,8 +37,8 @@ The following options are available when creating a Conditional Access policy.
          - Other external users, or users not represented by the other user type selections
       - One or more tenants can be specified for the selected user types, or you can specify all tenants. 
    - Directory roles
-      - Lets administrators select specific [built-in directory roles](../role-based-access-control/permissions-reference.md) to determine policy assignment. For example, organizations might create a more restrictive policy on users actively assigned a privileged role. Other role types aren't supported, including administrative unit-scoped roles and custom roles.
-         - Conditional Access allows administrators to select some [roles that are listed as deprecated](../role-based-access-control/permissions-reference.md#deprecated-roles). These roles still appear in the underlying API and we allow administrators to apply policy to them.
+      - Lets admins select specific [built-in directory roles](../role-based-access-control/permissions-reference.md) to determine policy assignment. For example, organizations might create a more restrictive policy on users actively assigned a privileged role. Other role types aren't supported, including administrative unit-scoped roles and custom roles.
+         - Conditional Access allows admins to select some [roles that are listed as deprecated](../role-based-access-control/permissions-reference.md#deprecated-roles). These roles still appear in the underlying API and we allow admins to apply policy to them.
    - Users and groups
       - Allows targeting of specific sets of users. For example, organizations can select a group that contains all members of the HR department when an HR app is selected as the cloud app. A group can be any type of user group in Microsoft Entra ID, including dynamic or assigned security and distribution groups. Policy is applied to nested users and groups.
 
@@ -72,17 +72,19 @@ The following options are available for exclusion when creating a Conditional Ac
        - Other external users, or users not represented by the other user type selections
     - One or more tenants can be specified for the selected user types, or you can specify all tenants.
 - Directory roles
-   - Allows administrators to select specific [Microsoft Entra directory roles](../role-based-access-control/permissions-reference.md) used to determine assignment.
+   - Allows admins to select specific [Microsoft Entra directory roles](../role-based-access-control/permissions-reference.md) used to determine assignment.
 - Users and groups
    - Allows targeting of specific sets of users. For example, organizations can select a group that contains all members of the HR department when an HR app is selected as the cloud app. A group can be any type of group in Microsoft Entra ID, including dynamic or assigned security and distribution groups. Policy is applied to nested users and groups.
 
-### Preventing administrator lockout
+<a name='preventing-administrator-lockout'></a>
 
-To prevent administrator lockout, when creating a policy applied to **All users** and **All apps**, the following warning appears.
+### Preventing admin lockout
 
-> Don't lock yourself out! We recommend applying a policy to a small set of users first to verify it behaves as expected. We also recommend excluding at least one administrator from this policy. This ensures that you still have access and can update a policy if a change is required. Please review the affected users and apps.
+To prevent admin lockout, when creating a policy applied to **All users** and **All apps**, the following warning appears.
 
-By default, the policy provides an option to exclude the current user, but an administrator can override it as shown in the following image. 
+> Don't lock yourself out! We recommend applying a policy to a small set of users first to verify it behaves as expected. We also recommend excluding at least one admin from this policy. This ensures that you still have access and can update a policy if a change is required. Please review the affected users and apps.
+
+By default, the policy provides an option to exclude the current user, but an admin can override it as shown in the following image. 
 
 ![Warning, don't lock yourself out!](./media/concept-conditional-access-users-groups/conditional-access-users-and-groups-lockout-warning.png)
 

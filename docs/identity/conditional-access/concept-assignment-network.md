@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 ---
 # Conditional Access: Network assignment
 
-Administrators can create policies that target specific network locations as a signal along with other conditions in their decision making process. They can include or exclude these network locations as part of their policy configuration. These network locations might include public IPv4 or IPv6 network information, countries or regions, unknown areas that don't map to specific countries or regions, or [Global Secure Access compliant network](../../global-secure-access/how-to-compliant-network.md).
+Admins can create policies that target specific network locations as a signal along with other conditions in their decision making process. They can include or exclude these network locations as part of their policy configuration. These network locations might include public IPv4 or IPv6 network information, countries or regions, unknown areas that don't map to specific countries or regions, or [Global Secure Access compliant network](../../global-secure-access/how-to-compliant-network.md).
 
 :::image type="content" source="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png" alt-text="Diagram showing Conditional Access signals and the decision to enforce organizational policy." lightbox="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png":::
 
