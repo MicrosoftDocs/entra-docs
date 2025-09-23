@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 09/22/2025
+ms.date: 09/23/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: include file, sfi-image-nochange
