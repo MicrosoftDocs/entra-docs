@@ -81,9 +81,7 @@
   - name: Using the Request Service REST API
     href: get-started-request-api.md
   - name: Partner gallery
-    items:
-    - name: IDV partners
-      href: partner-gallery.md
+    href: partner-gallery.md
 - name: Samples
   expanded: true
   items:
