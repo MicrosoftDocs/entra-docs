@@ -302,14 +302,16 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 ## Clear on-premises resources for SOA transferred users
 
+The following are the list of on-premises attributes present on the cloud user object which is used for accessing on-premises resources:
 
 
+
+
+If Admins want to access on-premises resources after transfer of SOA, you must manually maintain attributes, and not delete, these attributes.
 
 
 
 ## Related content
-
-TODO: Add your next step link(s)
 
 - [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)](user-source-of-authority-audit-monitor.md)
 
