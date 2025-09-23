@@ -345,8 +345,7 @@ shift users to the cloud. The following table is a summary of the options for ha
 
 **Enable Password-less Authentication**
 
-- Deploy [Hello For Business](/windows/security/identity-protection/hello-for-business/hello-feature-fido2) and
-  [FIDO2 keys](https:/learn.microsoft.com/entra/identity/authentication-methods-fido2%20keys.)
+- Deploy [Hello For Business](/windows/security/identity-protection/hello-for-business/hello-feature-fido2)
 
 - Integrate with [cloud kerberos trust](/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust) for seamless ticket-based authentication.
 
