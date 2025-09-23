@@ -161,9 +161,9 @@ For each application in your inventory, identify the authentication mechanism it
 
 ### Step 3. Assess Modernization Feasibility
 
-Evaluate each application's ability to adopt modern authentication protocols (SAML/OIDC) natively. If a vendor update is available, or if the app is in-house and can be re-coded, transitioning to Microsoft Entra ID as the identity provider is typically the best long-term solution. This approach removes AD dependency and unlocks the full benefits of cloud identity management. However, for older applications that cannot be easily updated, plan for a "*bridge*" solution to integrate them with Microsoft Entra ID, even if indirect integration is required.
+Evaluate each application's ability to adopt modern authentication protocols (SAML/OIDC) natively. If a vendor update is available, or if the app is in-house and can be re-coded, transitioning to Microsoft Entra ID as the identity provider is typically the best long-term solution. This approach removes AD dependency and unlocks the full benefits of cloud identity management. However, for older applications that can't be easily updated, plan for a "*bridge*" solution to integrate them with Microsoft Entra ID, even if indirect integration is required.
 
-Some older applications may have hard-coded assumptions about AD such as expecting to find a user in a specific OU, or writing attributes to AD. Those apps are **out of scope** for this kind of identity migration. Applications that *write*, and not just read, to LDAP are problematic. These applications aren't easily supported by Microsoft Entra ID or Microsoft Entra ID DS unless you keep write permissions there, which is possible, but then you have divergent data. Make sure to identify if any app does LDAP writes or depends on obscure AD features (like dynamic auxiliary classes, etc.). Those might have to remain on AD until they’re retired. The focus should be on apps that *read/authenticate* via AD – those can be moved to cloud auth as described.
+Some older applications might have hard-coded assumptions about AD such as expecting to find a user in a specific OU, or writing attributes to AD. Those apps are **out of scope** for this kind of identity migration. Applications that *write*, and not just read, to LDAP are problematic. These applications aren't easily supported by Microsoft Entra ID or Microsoft Entra ID DS unless you keep write permissions there, which is possible, but then you have divergent data. Make sure to identify if any app does LDAP writes or depends on obscure AD features (like dynamic auxiliary classes, etc.). Those might have to remain on AD until they’re retired. The focus should be on apps that *read/authenticate* via AD – those can be moved to cloud auth as described.
 
 
 > [!NOTE]  
@@ -289,8 +289,13 @@ shift users to the cloud. The following table is a summary of the options for ha
 
 | App Type | Cloud Integration Method & Tools | Requirements & Considerations |
 |:--------:|:-------------------------------:|:-----------------------------|
-| **Kerberos-based Apps**<br>(Windows Integrated Authentication, intranet web apps, file shares) | **Microsoft Entra ID Application Proxy with Kerberos (KCD):** Publish on-premises web apps through Microsoft Entra ID and use a connector for Kerberos on-premises.<br>**Microsoft Entra ID Cloud Kerberos Trust:** For Microsoft Entra ID joined devices (non-web for example file shares). | **Requirements:**<br>- Microsoft Entra Private Access installed on-premises<br>- Configured SPN and delegation rights<br>- Microsoft Entra ID P1/P2 or Suite licenses<br>- AD account for user (synced or provisioned)<br>**Considerations:**<br>- Seamless SSO using Microsoft Entra ID credentials<br>- Password-less and phish-resistant methods for Kerberos apps<br>- Secure access to on-premises resources |
+| **Kerberos-based Apps**<br>(Windows Integrated Authentication, intranet web apps, file shares) | **Microsoft Entra ID Application Proxy with Kerberos (KCD):** Publish on-premises web apps through Microsoft Entra ID and use a connector for Kerberos on-premises.<br>**Microsoft Entra ID Cloud Kerberos Trust:** For Microsoft Entra ID joined devices (non-web, for example,  file shares). | **Requirements:**<br>- Microsoft Entra Private Access installed on-premises<br>- Configured SPN and delegation rights<br>- Microsoft Entra ID P1/P2 or Suite licenses<br>- AD account for user (synced or provisioned)<br>**Considerations:**<br>- Seamless SSO using Microsoft Entra ID credentials<br>- Password-less and phish-resistant methods for Kerberos apps<br>- Secure access to on-premises resources |
 | **LDAP-based Apps**<br>(Apps that bind to AD DS over LDAP for auth/queries) | **Entra ID Domain Services (Managed AD):** Cloud-hosted AD domain synced with Microsoft Entra ID; repoint app’s LDAP connection to this domain (LDAPS). | **Requirements:**<br>- Set up Microsoft Entra ID DS instance in Azure<br>- Configure virtual network, secure LDAP cert, firewall rules<br>- Users/groups must be in Microsoft Entra ID (synced to Microsoft Entra ID DS)<br>- Might require password reset to generate hashes<br>**Considerations:**<br>- Minimal app changes (new LDAP endpoint)<br>- Cloud users’ passwords present in Microsoft Entra ID DS<br>- If Microsoft Entra ID DS not feasible, fallback is provisioning users into on-premises AD and maintaining password parity manually. |
+
+## Checklist before transferring Source of Authority
+
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/conversion-checklist.png" alt-text="Screenshot of the checklist to view before transferring Source of Authority.":::
+
 
 ## SOA Transfer Executive Checklist for IT Architects
 
@@ -340,10 +345,10 @@ shift users to the cloud. The following table is a summary of the options for ha
 
 **Enable Password-less Authentication**
 
-- Deploy [Hello For Business](https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-feature-fido2) and
+- Deploy [Hello For Business](/windows/security/identity-protection/hello-for-business/hello-feature-fido2) and
   [FIDO2 keys](https:/learn.microsoft.com/entra/identity/authentication-methods-fido2%20keys.)
 
-- Integrate with [cloud kerberos trust](https://learn.microsoft.com/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust) for seamless ticket-based authentication.
+- Integrate with [cloud kerberos trust](/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust) for seamless ticket-based authentication.
 
 **Implement Entra ID Governance**
 
@@ -360,8 +365,8 @@ shift users to the cloud. The following table is a summary of the options for ha
 - No password writeback for cloud-only users—keep hybrid directory if
   you need writeback.
 
-- Legacy apps with hardcoded AD dependencies may require custom proxies
-  or remain on-prem.
+- Legacy apps with hardcoded AD dependencies might require custom proxies
+  or remain on-premises.
 
 **Monitor & Iterate**
 
@@ -374,8 +379,3 @@ shift users to the cloud. The following table is a summary of the options for ha
 > access for users tied to legacy AD apps. Use phased migration—avoid a
 > “*big bang*” cutover.
 
-
-
-## Checklist before transferring Source of Authority
-
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/conversion-checklist.png" alt-text="Screenshot of the checklist to view before transferring Source of Authority.":::
