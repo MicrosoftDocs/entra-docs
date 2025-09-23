@@ -41,3 +41,4 @@ Once configured, the Global Secure Access client automatically connects to the t
 - [Global Secure Access client for macOS](how-to-install-macos-client.md)
 - [Global Secure Access client for iOS](how-to-install-ios-client.md)
 - [Client for Windows version release notes](reference-windows-client-release-history.md)
+- [Known limitations](/entra/global-secure-access/reference-current-known-limitations#b2b-guest-access-limitations)
