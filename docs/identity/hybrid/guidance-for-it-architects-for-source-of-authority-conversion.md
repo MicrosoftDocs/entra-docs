@@ -375,3 +375,8 @@ shift users to the cloud. The following table is a summary of the options for ha
 > access for users tied to legacy AD apps. Use phased migration—avoid a
 > “*big bang*” cutover.
 
+## Next step
+
+
+- [Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)](concept-source-of-authority-overview.md)
+- [Embrace cloud-first posture: Transfer User Source of Authority (SOA) to the cloud (Preview)](user-source-of-authority-overview.md)
