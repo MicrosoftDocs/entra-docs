@@ -408,7 +408,7 @@ DELETE https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchroniz
 POST https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs { "templateId": "sapcloudidentityservices" }
 ```
 
-1. Return to the first web browser window and select the Provisioning tab for your application. Your configuration is reset. You can confirm the upgrade is successful by confirming the Job ID starts with "sapcloudidentityservices".
+1. Return to the first web browser window and select the **Provisioning** tab for your application. Your configuration is reset. You can confirm the upgrade is successful by confirming the Job ID starts with "sapcloudidentityservices".
 
 1. Update the tenant URL in the **Admin credentials** section to the following: `https://<tenantID>.accounts.ondemand.com/scim`, or `https://<tenantid>.trial-accounts.ondemand.com/service/scim` if a trial.
 
