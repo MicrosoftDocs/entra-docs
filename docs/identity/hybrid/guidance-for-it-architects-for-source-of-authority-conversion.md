@@ -28,11 +28,11 @@ Modern enterprises are under increasing pressure to modernize identity managemen
 
 1. [An app-centric approach to shift your user and group management to the cloud if you aren't yet ready](guidance-for-it-architects-for-source-of-authority-conversion.md#application-centric-approach-modernize-on-premises-authentication).
 
-1. [Integration strategies for Kerberos and LDAP-based applications](guidance-for-it-architects-for-source-of-authority-conversion.md#key-considerations-before-migrating-kerberos-workloads).
+1. [Integration strategies for Kerberos and LDAP-based applications](guidance-for-it-architects-for-source-of-authority-conversion.md#application-centric-approach-modernize-on-premises-authentication-1).
 
-1. [Key limitations and considerations for hybrid coexistence]().
+1. [Key limitations and considerations for hybrid coexistence](guidance-for-it-architects-for-source-of-authority-conversion.md#key-considerations-before-migrating-kerberos-workloads).
 
-1. [A practical checklist to guide planning, execution, and governance]().
+1. [A practical checklist to guide planning, execution, and governance](guidance-for-it-architects-for-source-of-authority-conversion.md#checklist-before-transferring-source-of-authority).
 
 ## Business and Security Benefits
 
