@@ -345,16 +345,10 @@ on-prem apps in a cloud-first model:
 
 **Enable Password-less Authentication**
 
-- Deploy
-  [https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-feature-fido2
-  and
-  https://learn.microsoft.com/entra/identity/authentication-methods-fido2
-  keys.](https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-feature-fido2%20and%20https:/learn.microsoft.com/entra/identity/authentication-methods-fido2%20keys.)
+- Deploy [Hello For Business](https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-feature-fido2) and
+  [FIDO2 keys](https:/learn.microsoft.com/entra/identity/authentication-methods-fido2%20keys.)
 
-- Integrate with
-  [https://learn.microsoft.com/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust
-  for seamless ticket-based
-  authentication.](https://learn.microsoft.com/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust%20for%20seamless%20ticket-based%20authentication.)
+- Integrate with [cloud kerberos trust](https://learn.microsoft.com/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust) for seamless ticket-based authentication.
 
 **Implement Entra ID Governance**
 
