@@ -2,7 +2,7 @@
 title: Configure Verified ID by IDEMIA as your identity verification partner 
 description: This article shows you the steps you need to follow to configure IDEMIA as your identity verification partner.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 04/30/2025
