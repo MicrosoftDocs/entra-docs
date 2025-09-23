@@ -5,7 +5,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: whats-new
-ms.date: 04/30/2025
+ms.date: 09/23/2025
 ms.custom: references_regions
 ms.author: barclayn
 
@@ -16,6 +16,17 @@ ms.author: barclayn
 # What's new in Microsoft Entra Verified ID
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
+
+
+## September 2025
+
+- Entra Verified ID is supported on Microsoft GCC environments. 
+    
+    >[!NOTE] 
+    > This is GCC only and not GCC High.
+
+- Updates to the IDV Partner Gallery
+
 
 ## January 2025
 
