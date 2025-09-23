@@ -335,10 +335,10 @@ shift users to the cloud. The following table is a summary of the options for ha
 **Modernize Application Authentication**
 
 - For Kerberos/NTLM apps:  
-  <https://learn.microsoft.com/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust>
+  [Cloud Kerberos Trust](/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust)
 
 - For LDAP apps:  
-  <https://learn.microsoft.com/entra/identity/hybrid/ldap/ldap-overview>
+  [LDAP Overview](/entra/identity/hybrid/ldap/ldap-overview)
 
 - For modern/federated apps:  
   Reconfigure to authenticate directly against Microsoft Entra ID (SAML/OIDC).
