@@ -335,26 +335,26 @@ shift users to the cloud. The following table is a summary of the options for ha
 **Modernize Application Authentication**
 
 - For Kerberos/NTLM apps:  
-  [Cloud Kerberos Trust](/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust)
+  [Cloud Kerberos Trust](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust)
 
 - For LDAP apps:  
-  [LDAP Overview](/entra/identity/hybrid/ldap/ldap-overview)
+  [LDAP Overview](/entra/architecture/auth-ldap)
 
 - For modern/federated apps:  
   Reconfigure to authenticate directly against Microsoft Entra ID (SAML/OIDC).
 
 **Enable Password-less Authentication**
 
-- Deploy [Hello For Business](/windows/security/identity-protection/hello-for-business/hello-feature-fido2)
+- Deploy [Hello For Business](/windows/security/identity-protection/hello-for-business)
 
-- Integrate with [cloud kerberos trust](/entra/identity/hybrid/connect/kerberos/cloud-kerberos-trust) for seamless ticket-based authentication.
+- Integrate with [cloud kerberos trust](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) for seamless ticket-based authentication.
 
 **Implement Entra ID Governance**
 
-- [Lifecycle Workflows in Microsoft Entra ID](/entra/governance/entitlement/lifecycle-workflows)
-- [Entitlement Management Overview](/entra/governance/entitlement-management/overview)
-- [Access Reviews Overview](/entra/governance/access-review/overview)
-- [Privileged Identity Management for Resource Roles](/entra/privileged-identity-management/pim-resource-roles-overview)
+- [Lifecycle Workflows in Microsoft Entra ID](/entra/id-governance/what-are-lifecycle-workflows)
+- [Entitlement Management Overview](/entra/id-governance/entitlement-management-overview)
+- [Access Reviews Overview](/entra/id-governance/access-reviews-overview)
+- [Privileged Identity Management for Resource Roles](/entra/id-governance/privileged-identity-management/pim-configure)
 
 **Address Key Limitations**
 
