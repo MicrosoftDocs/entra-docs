@@ -5,14 +5,14 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 09/22/2025
+ms.date: 09/23/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: include file, sfi-image-nochange
 ---
 
-1. In the Azure portal, select **Microsoft Entra ID**.
-1. On the left pane, select **Microsoft Entra Connect**, and then select **Cloud Sync**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. On the left pane, select **Entra Connect**, and then select **Cloud Sync**.
 
    :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot that shows the Get started screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-1.png":::
 
