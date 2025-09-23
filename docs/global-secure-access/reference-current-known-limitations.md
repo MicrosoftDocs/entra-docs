@@ -271,4 +271,4 @@ Known limitations for Internet Access include:
 
 ## B2B Guest Access (preview) limitations
 <a name="b2b-guest-access-limitations"></a>
-- Multi-session Azure Virtual Desktop as not supported by the Global Secure Access clients.
+- Multi-session Azure Virtual Desktop is not supported by the Global Secure Access clients.
