@@ -46,7 +46,7 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 |---------------------|------------ |
 | Identity            | Runs with identity of the administrator who configured the agent. Final decisions as part of the Microsoft Teams conversation use the reviewer's identity. |
 | Licenses            | [Microsoft Entra ID Governance or Microsoft Entra Suite](../id-governance/licensing-fundamentals.md) |
-| Permissions         | Reviews users currently in the scope of your access reviews<br>Makes suggestions on whether access should be approved or declined<br>Makes updates to ID Governance settings based on your response |
+| Permissions         | Get details for access reviews<br>Read details and lifecycle workflow history for users, groups, apps, and access packages<br>Save access review suggestions and justifications |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Access Reviews](../id-governance/access-reviews-overview.md) |
 | Role-based access   | Both [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) are required to configure and use the agent |
@@ -62,7 +62,7 @@ The [Conditional Access optimization agent](../identity/conditional-access/agent
 | Licenses            | [Microsoft Entra ID P1](licensing.md) |
 | Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
-| Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/), [Security Copilot](/copilot/security/microsoft-security-copilot) |
+| Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
 | Role requirements   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to configure the agent<br>[Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to use the agent |
 | Trigger             | Runs every 24 hours or triggered manually |
 
