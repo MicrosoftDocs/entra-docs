@@ -130,7 +130,7 @@ When the agent suggests a new policy, it creates the policy in report-only mode.
 
 ## Review policy reports (Preview)
 
-The Conditional Access optimization agent also detects spikes and dips in activity related to existing policies. These anomalies often indicate a misconfiguration of a policy that needs to be investigated. If the agent identifies a significant change in activity, a report appears in the list of suggestions. In the **Actions taken by agent** column, you'll see **Suggested policy review** as the value.
+The Conditional Access optimization agent also detects spikes and dips in activity related to existing policies. These anomalies often indicate a misconfiguration of a policy that needs to be investigated. If the agent identifies a significant change in activity, a report appears in the list of suggestions. The reports apply to both active and report-only policies. In the **Actions taken by agent** column, you'll see **Suggested policy review** as the value.
 
 > [!IMPORTANT]
 > The policy reports in the Conditional Access Optimization agent are currently in PREVIEW.
