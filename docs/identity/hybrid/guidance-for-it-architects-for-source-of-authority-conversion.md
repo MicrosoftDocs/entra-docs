@@ -78,13 +78,13 @@ The following diagram outlines if you're ready to transfer the source of authori
 
 **Groups:** For groups, we recommend you start with shifting security groups to the cloud. Once in the cloud, provision them back to AD from Microsoft Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workloads is in the cloud, and you no longer need an On-premises Exchange server.
 
-## Application-Centric Approach: Modernize on-premises Authentication
+## Cloud Migration Strategy
 
 This section outlines a principal cloud migration strategy for AD-heavy environments called the application-centric approach. This approach enables on-premises applications to utilize Microsoft Entra ID for identity. This section also includes detailed steps, prerequisites, and guidance for addressing challenges like legacy application password synchronization.
 
-### Application-Centric Approach: Modernize on-premises Authentication
+## Application-Centric Approach: Modernize on-premises Authentication
 
-**The application-centric approach tackles the problem from the perspective of your applications.** In this approach, you try to modernize your app authentication by applying the following framework:
+The application-centric approach tackles cloud migration from the perspective of your applications. In this approach, you try to modernize your app authentication by applying the following framework:
 
 - **Inventory Applications:** List all on-premises apps that use AD for authentication (Kerberos/NTLM or LDAP).
 
@@ -92,9 +92,9 @@ This section outlines a principal cloud migration strategy for AD-heavy environm
 
 - **Bridging Solutions:** Use Microsoft Entra Application Proxy, Microsoft Entra Domain Services, or other cloud services to connect legacy apps to Microsoft Entra ID without major rewrites.
 
-There can also be some apps already using modern protocols such as SAML/OIDC via AD FS or third-party IdPs. These apps are easier to migrate directly to Microsoft, while some other legacy cases like hardcoded NTLM-only apps, might need special handling. The following is the recommended sequence for an app centric migration.
+### Recommended sequence for application-centric migration:
 
-## Recommended sequence for application-centric migration:
+There can also be some apps already using modern protocols like SAML/OIDC via Active Directory Federation Service (AD FS) or third-party IdPs. These apps are easier to migrate directly to Microsoft, while some other legacy cases like hardcoded NTLM-only apps, might need special handling. The following is the recommended sequence for an app centric migration.
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-phase-list.png" alt-text="A screenshot of an overview of the phases to complete application-centric migration.":::
 
@@ -108,7 +108,7 @@ A thorough application analysis forms the foundation for a successful migration 
 
 ### Step 1: Cataloging Active Directory–Integrated Applications
 
-Start your migration by identifying all applications that uses AD for authentication or authorization. Understand their dependencies to plan a move to cloud identity management, noting which AD groups and user accounts connect with each application. This helps prioritize which users and groups transition first, particularly those linked to business-critical apps.
+Start your migration by identifying all applications that use AD for authentication or authorization. Understand their dependencies to plan a move to cloud identity management, noting which AD groups and user accounts connect with each application. This helps prioritize which users and groups transition first, particularly those linked to business-critical apps.
 
 #### Discover Active Directory–Integrated Applications
 
@@ -116,7 +116,7 @@ Use tools like Microsoft Entra Global Secure Access Application Discovery and AD
 
 #### Map Applications to AD Security Groups
 
-For every app found, identify the AD security groups that control its access. Collaborate with owners or review configurations to list these groups. Use scripts or AD queries when necessary to locate relevant groups, especially if group names or descriptions reference the app.
+For every app found, identify the AD security groups that control its access. Collaborate with owners, or review configurations, to list these groups. Use scripts or AD queries when necessary to locate relevant groups, especially if group names or descriptions reference the app.
 
 #### Identify Users for Each Application
 
@@ -124,15 +124,15 @@ Determine users by extracting group memberships for each application's AD groups
 
 ###  Step 2. Determine Authentication Method
 
-For each application in your inventory, identify the authentication mechanism it uses. This step is essential for choosing the most appropriate migration or integration strategy. The main categories to consider include:
+For each application in your inventory, identify the authentication mechanism it uses. This step is essential for choosing the most appropriate migration, or integration, strategy. The main categories to consider include:
 
-- *Integrated Windows Authentication (Kerberos/NTLM)* – Common in IIS/.NET applications using Windows Authentication, file servers, SharePoint, and similar platforms. These typically allow users to sign in with domain credentials, often without a separate prompt.
+- **Integrated Windows Authentication (Kerberos/NTLM)** – Common in IIS/.NET applications using Windows Authentication, file servers, SharePoint, and similar platforms. These typically allow users to sign in with domain credentials, often without a separate prompt.
 
-- *LDAP Authentication/Queries* – Applications might have LDAP server settings pointing to AD and perform binds or lookups, custom-developed or third-party products prompting users for AD credentials.
+- **LDAP Authentication/Queries** – Applications can have LDAP server settings pointing to AD and perform binds or lookups, custom-developed or third-party products prompting users for AD credentials.
 
-- *Federation/Modern Authentication* – Some applications are already federated via AD FS or support modern protocols such as SAML or OAuth. These can generally be reconfigured to use Microsoft Entra ID with minimal effort.
+- **Federation/Modern Authentication** – Some applications are already federated via AD FS, or support modern protocols such as SAML or OAuth. These can generally be reconfigured to use Microsoft Entra ID with minimal effort.
 
-- *Other Legacy Methods* – Includes cases where apps use RADIUS against AD or local accounts. Though not the primary focus, these should be documented for completeness.
+- **Other Legacy Methods** – Includes cases where apps use RADIUS against AD or local accounts. Though not the primary focus, these should be documented for completeness.
 
 ### Step 3. Assess Modernization Feasibility
 
