@@ -65,8 +65,7 @@ The following section covers support for passkey (FIDO2) authentication in web b
 
 ### Android
 - Sign-in with passkey requires Google Play Services 21 or later because Microsoft Entra ID requires user verification for multifactor authentication.
-- BLE security keys aren't supported on Android by Google.
-- NFC security keys aren't supported on Android in web browser or native app scenarios.
+- BLE and NFC security keys aren't supported on Android by Google.
 - Sign-in with passkey isn't supported in Firefox on Android.
 
 ## Known issues
