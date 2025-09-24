@@ -115,7 +115,7 @@ A two-gate policy applies in the following circumstances:
 
 * Microsoft Entra Connect synchronizes identities from your on-premises directory
 
-You can disable the use of SSPR for administrator accounts by setting the value of the `AllowedToUseSspr` property on the tenant authorization policy to `false`. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect. To 
+You can disable the use of SSPR for administrator accounts by setting the value of the `AllowedToUseSspr` property on the tenant authorization policy to `false`. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect.
 
 # [PowerShell](#tab/ms-powershell)
 
@@ -136,6 +136,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
   "allowedToUseSSPR":false
 }
 ```
+---
 
 ### Exceptions
 
