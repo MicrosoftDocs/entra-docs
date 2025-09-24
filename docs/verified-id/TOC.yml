@@ -80,8 +80,10 @@
     href: using-wallet-library.md
   - name: Using the Request Service REST API
     href: get-started-request-api.md
-  - name: Partner gallery
+  - name: IDV partner gallery
     href: partner-gallery.md
+  - name: Services partners
+    href: services-partners.md
 - name: Samples
   expanded: true
   items:
