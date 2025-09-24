@@ -218,28 +218,22 @@ To integrate HUMAN Security with Microsoft Entra External ID, you can use the Se
 1. Enter a name for the policy, such as *HUMANPolicy*.
 1. Select the scenarios to apply the fraud protection policy to and select **Next**.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/policy-setup.png" alt-text="Screenshot showing setting up a protection policy.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/policy-setup-human.png" alt-text="Screenshot showing setting up a protection policy.":::
 
 1. In the **Chose a fraud protection provider for sign-up** step, select **HUMAN Security** as the provider and select **Next**.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/choose-fraud-protection-provider.png" alt-text="Screenshot showing selecting the HUMAN Security fraud protection provider.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/-human.png" alt-text="Screenshot showing selecting the HUMAN Security fraud protection provider.":::
 
 1. In the **Configure HUMAN Security for sign-up protection** step, select the **Create new** configuration, and enter the configuration values you received from HUMAN Security:
     - **App Id**: Enter the Application ID from HUMAN Security.
     - **Server token**: Enter the Server token from HUMAN Security that you can find in the HUMAN Security admin console.
 
 1. Or select an existing configuration if you have already set one up and select **Next**.
-
-   :::image type="content" source="media/how-to-integrate-fraud-protection/provider-configuration.png" alt-text="Screenshot showing configuring the HUMAN Security provider.":::
-
 1. Select the app you want to protect with HUMAN Security fraud protection. You can select one or more applications that you have registered in your external tenant.
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/select-apps-to-protect.png" alt-text="Screenshot showing selecting an application to protect.":::
 
 1. Review the configuration and select **Create policy** to create the fraud protection policy.
-
-   :::image type="content" source="media/how-to-integrate-fraud-protection/create-policy.png" alt-text="Screenshot showing creating a policy for HUMAN Security.":::
-
 1. Once you receive the confirmation that the policy was created successfully, select **Done** to finish the wizard.
 
 Once the policy is created, it's applied to the selected applications. When a user attempts to sign up, HUMAN Security evaluates the request in real-time to determine if it's likely to be fraudulent. If the request is flagged as suspicious, appropriate measures are taken to block the sign-up attempt, thereby preventing fake account registrations.
