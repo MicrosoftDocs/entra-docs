@@ -18,6 +18,7 @@ ms.subservice: hybrid
 
 Modern enterprises are under increasing pressure to modernize identity management, reduce security risks, and streamline operations. This guide provides a strategic and technical framework for IT architects to shift user and group management from on-premises Active Directory (AD) to Microsoft Entra ID using Source of Authority (SOA) conversion. Legacy AD environments are complex, costly to maintain, and increasingly vulnerable to modern threats. Microsoft’s long-term vision is to minimize on-premises AD dependencies, and move identity workloads to the cloud. SOA conversion enables a phased, low-risk migration path—avoiding the disruption of a “*big bang*” cutover.
 
+This guide provides IT architects with an comprehensive overview of cloud-first identity management. It explains the business and security benefits of moving to cloud-based identity, outlines a phased roadmap for transitioning from hybrid environments to cloud-first and AD-minimized states, and describes how to assess readiness for SOA transfer of users and groups. The article details an app-centric approach for organizations not yet ready to fully shift, covers integration strategies for Kerberos and LDAP-based applications, highlights key limitations and considerations for hybrid coexistence, and offers a practical checklist to support planning, execution, and governance throughout the migration process.
 
 ## Business and Security Benefits
 
