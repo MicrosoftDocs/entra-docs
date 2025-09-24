@@ -80,7 +80,7 @@ The following diagram outlines if you're ready to transfer the source of authori
 
 ## Application-Centric Approach: Modernize on-premises Authentication
 
-This section outlines principal cloud migration strategy for AD-heavy environments: the application-centric approach, which enables on-premises applications to utilize Microsoft Entra ID for identity. Detailed steps, prerequisites, and guidance for addressing challenges such as password synchronization for legacy applications are also included.
+This section outlines a principal cloud migration strategy for AD-heavy environments called the application-centric approach. This approach enables on-premises applications to utilize Microsoft Entra ID for identity. This section also includes detailed steps, prerequisites, and guidance for addressing challenges like legacy application password synchronization.
 
 ### Application-Centric Approach: Modernize on-premises Authentication
 
