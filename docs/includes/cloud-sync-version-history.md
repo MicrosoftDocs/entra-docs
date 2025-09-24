@@ -29,10 +29,11 @@ Sept 22, 2025: released for download only
 - Simplified how to choose your provisioning scenario
 - Configured installation for the current cloud environment by default
 - Faster enumeration for large groups by preventing service timeouts
-- Improved sync reliability with a registry entry named **RegistryValueNameUserPasswordLength** to configure user password length
 - Improved how admins can view their domain controller priority list
 - Added UserAccountControl as a System for Cross-domain Identity Management (SCIM) property
+- Added a configurable password length for newly created users. The default password length for newly created users is 256. Admins can set an integer value between 127 and 256 for newly created users by creating a registry entry with REG_DWORD data type at:
 
+  `HKLM\Software\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent\UserPasswordLength`
 
 ## 1.1.1586.0
 
