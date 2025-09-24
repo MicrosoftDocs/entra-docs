@@ -18,14 +18,14 @@ ms.date: 09/29/2025
 
 Native authentication supports two authentication flows:
 
-- Email with one-time passcode (OTP).
-- Email and password with support for self-service password reset (SSPR).
+- Email with one-time passcode (OTP)
+- Email and password with support for self-service password reset (SSPR)
 
-A client app that uses native authentication to sign in users can use either of the authentication flows. To make successful calls to native authentication API, the app needs to indicate the authentication flows or capabilities it supports. Native authentication API enables the client app to advertise the challenge types and capabilities by using predefined values.
+A client app that uses native authentication to sign in users can use either authentication flow. To make successful calls to the native authentication API, the app must declare which authentication flows and capabilities it supports. The native authentication API enables client apps to advertise their supported challenge types and capabilities using predefined values.
 
 ## Challenge types
 
-Challenge types are predefined values, which the client app includes in its request to notify the native authentication API about the authentication flow the app supports.
+Challenge types are predefined values that client apps include in their requests to declare which authentication flows they support to the native authentication API.
 
 The following table contains the supported challenge type values:
 
@@ -33,29 +33,38 @@ The following table contains the supported challenge type values:
 
 ### Challenge types usage
 
-The following table summarizes the challenge type values an app should use for the various authentication flows:
+The following table summarizes the challenge type values an app should use for various authentication flows:
 
 |   | Sign-up flow | Sign-in flow | SSPR |
 | ---- | --- |  --- | --- | 
 | **Email with password** | *oob*, *password*, and *redirect*  | *oob*, *password*, and *redirect*  | *oob* and *redirect* |
 | **Email OTP** | *oob* and *redirect* | *oob* and *redirect*  | Not applicable |
 
-- Apps that use [native authentication API](reference-native-authentication-overview.md) must include the *redirect* challenge type in the list when they indicate the challenge type that they support.
-- Apps that use native authentication SDKs, such as Android, iOS and JavaScript SDKs don't need to include the *redirect* challenge type as the SDK automatically includes it.  
+**Important notes:**
+- Apps that use the [native authentication API](reference-native-authentication-overview.md) directly must include the *redirect* challenge type when declaring their supported challenge types.
+- Apps that use native authentication SDKs (Android, iOS, or JavaScript) don't need to include the *redirect* challenge type as the SDK automatically includes it.
 
 ## Capabilities
 
-TODO
+In addition to challenge types, client apps can specify a list of *capabilities*. While `challenge_type` defines which authentication methods the app supports, `capabilities` indicate which additional flows the client app can handle and what UI experiences it can provide to users.
 
+Native authentication API supports the following capabilities:
 
-The following table summarizes what happens if either native authentication API or the client app doesn't support a given challenge type or capability:
+- `mfa_required`: Indicates that the client app can handle multifactor authentication (MFA) flows, including displaying the appropriate UI for users to complete MFA challenges when required.
+- `registration_required`: The client can handle strong authentication registration: it can call the registration APIs and show UI to guide users through registering strong authentication methods.
 
-|  Scenario | What happens | 
+## Behavior for unsupported challenge types and capabilities
+
+The following table summarizes the behavior when either the native authentication API or the client app doesn't support a given challenge type or capability:
+
+| Scenario | Behavior | 
 | ---- | --- |
-|**A client app includes unsupported challenge type**| Native authentication API returns an error as it treats this request as invalid. |
-|**A client app includes unsupported capability**| Native authentication API returns an error as it treats this request as invalid. |
-|**A client app fails to include a supported challenge type**| It indicates that the client app doesn't support a challenge type that the administrator configures in the Microsoft Entra admin center. In this case, native authentication API notifies the client app to use [web fallback](concept-native-authentication-web-fallback.md).|
-|**A client app fails to include a supported capability**| app works okay if `mfa_required` or `registration_required not rquired, otherwise web fallback happens===<<TODO>>|
+| **Client app includes unsupported challenge type** | Native authentication API returns an error and treats the request as invalid. |
+| **Client app includes unsupported capability** | Native authentication API returns an error and treats the request as invalid. |
+| **Client app fails to include a required challenge type** | The app doesn't support a challenge type configured by the administrator. Native authentication API initiates a [web fallback](concept-native-authentication-web-fallback.md). |
+| **Client app fails to include a required capability** | The app functions normally if MFA or strong authentication registration is not required. If these capabilities are required but not supported, native authentication API initiates a [web fallback](concept-native-authentication-web-fallback.md) to complete the authentication flow. |
+
+
 
 ## Related content 
 
