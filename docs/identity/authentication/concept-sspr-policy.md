@@ -115,7 +115,28 @@ A two-gate policy applies in the following circumstances:
 
 * Microsoft Entra Connect synchronizes identities from your on-premises directory
 
-You can disable the use of SSPR for administrator accounts using the [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) PowerShell cmdlet. The `-AllowedToUseSspr:$true|$false` parameter enables/disables SSPR for administrators. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect. 
+You can disable the use of SSPR for administrator accounts by setting the value of the `AllowedToUseSspr` property on the tenant authorization policy to `false`. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect.
+
+# [PowerShell](#tab/ms-powershell)
+
+[Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy)
+
+```powershell
+Connect-MgGraph -Scopes Policy.ReadWrite.Authorization
+Update-MgPolicyAuthorizationPolicy -AllowedToUseSspr:$false
+```
+
+# [Microsoft Graph](#tab/ms-graph)
+
+[Update authorizationPolicy](/graph/api/authorizationpolicy-update)
+
+```http
+PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
+{
+  "allowedToUseSSPR":false
+}
+```
+---
 
 ### Exceptions
 
