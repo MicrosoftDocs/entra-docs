@@ -275,11 +275,10 @@ challenges and mitigation strategies include:
 
 - **User Provision to AD and Password writeback gap:** This is a significant current limitation. When a user is converted to cloud management, **Microsoft Entra ID does not provision the user to AD, and automatically synchronize the user’s password into AD**. Microsoft Entra ID Connect’s password writeback only works for users originally from AD (hybrid identities). For cloud-originated users, there's no built-in solution to push their password to AD, meaning their AD account might have an empty or unknown password. **The user cannot log in to on-prem apps with their usual password**.
 
----
 
 # [Phase 5: Verify and optimize](#tab/verify-optimize)
 
-
+Ensure that all users whos source of authority was transferred are able to still access the application. Ensure that group memberships that were present in AD is also present in Microsoft Entra ID. Verify using [Group logs](how-to-source-of-authority-auditing-monitoring.md) and [User logs](user-source-of-authority-audit-monitor.md) that source of authority was successfully transferred.
 
 ---
 
