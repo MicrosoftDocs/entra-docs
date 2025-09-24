@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/21/2025
+ms.date: 09/24/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
