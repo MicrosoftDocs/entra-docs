@@ -138,7 +138,7 @@ For each application in your inventory, identify the authentication mechanism it
 
 Evaluate each application's ability to adopt modern authentication protocols (SAML/OIDC) natively. If a vendor update is available, or if the app is in-house and can be re-coded, transitioning to Microsoft Entra ID as the identity provider is typically the best long-term solution. This approach removes AD dependency and unlocks the full benefits of cloud identity management. However, for older applications that can't be easily updated, plan for a "*bridge*" solution to integrate them with Microsoft Entra ID, even if indirect integration is required.
 
-Some older applications might have hard-coded assumptions about AD such as expecting to find a user in a specific OU, or writing attributes to AD. Those apps are **out of scope** for this kind of identity migration. Applications that *write*, and not just read, to LDAP are problematic. These applications aren't easily supported by Microsoft Entra ID or Microsoft Entra ID DS unless you keep write permissions there, which is possible, but then you have divergent data. Make sure to identify if any app does LDAP writes or depends on obscure AD features (like dynamic auxiliary classes, etc.). Those might have to remain on AD until they’re retired. The focus should be on apps that *read/authenticate* via AD – those can be moved to cloud auth as described.
+Some older applications might have hard-coded assumptions about AD such as expecting to find a user in a specific OU, or writing attributes to AD. Those apps are **out of scope** for this kind of identity migration. Applications that *write*, and not just read, to LDAP are problematic. These applications aren't easily supported by Microsoft Entra ID or Microsoft Entra Domain Services unless you keep write permissions there, which is possible, but then you'll have divergent data. Make sure to identify if any app does LDAP writes or depends on obscure AD features such as dynamic auxiliary classes. Those might have to remain on AD until they’re retired. The focus should be on apps that *read/authenticate* via AD as those can be moved to cloud auth as described.
 
 
 > [!NOTE]  
@@ -155,9 +155,9 @@ After you determine authentication methods and modernization feasibility, group 
 
 - **Kerberos/NTLM Apps (not easily modernized):** Use Microsoft Entra as a front-end through Application Proxy or similar solutions. The application remains on-premises, but user authentication switches to Microsoft Entra ID tokens, which are translated into Kerberos tickets within AD.
 
-- **LDAP-Binding Apps:** Introduce a managed AD instance in Azure—specifically, Microsoft Entra Domain Services—allowing these apps to bind to a cloud-managed AD instead of the on-premises environment.
+- **LDAP-Binding Apps:** Introduce a managed AD instance in Azure, specifically Microsoft Entra Domain Services, allowing these apps to bind to a cloud-managed AD instead of the on-premises environment.
 
-- **Other Special Cases:** For applications that can't be altered or proxied, such as older client-server apps limited to AD-joined machines, consider hosting them on VDI solutions like Azure Virtual Desktop, Windows 365 Cloud PC, or others. This maintains a managed environment for these apps while enabling cloud migration elsewhere. This should be a last resort due to added complexity and cost.
+- **Other Special Cases:** For applications that can't be altered or proxied, such as older client-server apps limited to AD joined machines, consider hosting them on VDI solutions like Azure Virtual Desktop, Windows 365 Cloud PC, or others. This maintains a managed environment for these apps while enabling cloud migration elsewhere. This should be a last resort due to added complexity and cost.
 
 - **Disconnected apps:** For apps that have business requirements of working without internet connections or work in a disconnected environment, you need to stay on-premises. Users using these apps aren't eligible to transfer SOA.
 
@@ -170,14 +170,12 @@ By concluding the analysis phase, you should have a clear mapping of which appli
 In an app-centric approach, it's best to migrate groups and
 app access controls to the cloud first. This enables centralized access
 management, and ensures group memberships remain intact before moving
-users. Microsoft recommends transferring groups to SOA ahead of users to
+users. Microsoft recommends transferring group's SOA ahead of users to
 maintain membership integrity and allow testing. You can however adjust
 the sequence for each app, such as piloting an application with its
-groups and test users end-to-end. When shifting them to the cloud, we
+groups, and test users end-to-end. When shifting them to the cloud, we
 have outlined specific guidance on how you can map them to cloud groups
-as outlined in 
-[Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID (Preview)](../../identity/hybrid/concept-group-source-of-authority-guidance.md)
-or watch the following video:
+as outlined in [Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID (Preview)](../../identity/hybrid/concept-group-source-of-authority-guidance.md) or watch the following video:
 
 > [!VIDEO https://www.youtube.com/embed/VpRDtulXcUw]
 
@@ -214,7 +212,7 @@ authentication for LDAP clients.
 using Windows Authentication, file servers (SMB) that rely on Kerberos
 tickets, and other services where Active Directory (AD) sign in is
 required. Microsoft offers intermediary solutions to integrate these
-applications with  Microsoft Entra ID.
+applications with Microsoft Entra ID.
 
 **Microsoft Entra Application Proxy or Private Access with Kerberos Constrained Delegation (KCD):**
 
@@ -338,7 +336,7 @@ Integration Options for on-premises AD Applications:
 
 **Address Key Limitations**
 
-- No password writeback for cloud-only users—keep hybrid directory if
+- No password writeback for cloud-only users. Keep hybrid directory if
   you need writeback.
 
 - Legacy apps with hardcoded AD dependencies might require custom proxies
@@ -352,7 +350,7 @@ Integration Options for on-premises AD Applications:
 
 > [!TIP]
 > Always start with an app-centric analysis to avoid breaking
-> access for users tied to legacy AD apps. Use phased migration—avoid a
+> access for users tied to legacy AD apps. Use phased migration, avoid a
 > “*big bang*” cutover.
 
 ## Next step
