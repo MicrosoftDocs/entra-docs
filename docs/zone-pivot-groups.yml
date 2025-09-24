@@ -381,3 +381,12 @@ groups:
     title: Virtual Machine
   - id: identity-extension-hybrid
     title: Arc-enabled Server
+# Owner: cmulligan
+- id: fraud-protection-integration
+  title: Fraud protection integration in external tenants
+  prompt: Choose an option
+  pivots:
+  - id: arkose-fraud-protection
+    title: Arkose
+  - id: human-fraud-protection
+    title: HUMAN    
