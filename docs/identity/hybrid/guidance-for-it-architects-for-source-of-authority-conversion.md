@@ -49,11 +49,15 @@ Organizations typically advance through distinct stages on the “*road to the c
 
 ### Minimize AD footprint for Users and Groups No Longer Needed in AD
 
+:::image type="content" source="media/concept-source-of-authority-overview/minimization.png" alt-text="Screenshot of cloud managed groups and best practices for managing groups in the cloud." lightbox="media/concept-source-of-authority-overview/minimization.png":::
+
 After you transition to cloud services and modern applications, certain AD accounts and groups might become obsolete. Today, these users and groups are still created in AD through traditional identity management IDP solutions such as MIM. This is done because manually creating these objects in the cloud is an intensive manual effort. With SOA, you can now decide to remove AD out of the picture for these users and groups. They can have their SOA transferred, and then be removed from AD. This targeted transition allows organizations to automate the migration, and monitor its progress while minimizing operational disruption.
 
 ### Shifting Lifecycle Management to the Cloud
 
-You can now use Microsoft Entra ID Governance to enable lifecycle and access governance of SOA transferred users and groups from the cloud. For Users, this means, you're now provisioning the users directly into Microsoft Entra ID and can use Microsoft Entra ID Governance capabilities to govern these users. You can also use Microsoft Entra ID as your authentication provider to secure and access on-premises AD resources using Microsoft Entra Private Access. For groups, you can modernize your groups and enable access governance of apps tied to them from the cloud. Some caveats apply here where groups that are Exchange constructs like mail-enabled security groups and Distribution Lists, require modernization before being managed in the cloud. Refer to [Group SOA guidance for more info](../../identity/hybrid/concept-source-of-authority-overview.md).
+:::image type="content" source="media/user-source-of-authority-overview/user-source-of-authority-minimization.png" alt-text="Screenshot of user soa minimization.":::
+
+You can use Microsoft Entra ID Governance to enable lifecycle and access governance of SOA transferred users and groups from the cloud. For Users, this means, you're now provisioning the users directly into Microsoft Entra ID and can use Microsoft Entra's ID Governance capabilities to govern these users. You can also use Microsoft Entra ID as your authentication provider to secure, and access, on-premises AD resources using Microsoft Entra Private Access. For groups, you can modernize your groups and enable access governance of apps tied to them from the cloud. Some caveats apply here where groups that are Exchange constructs like mail-enabled security groups and Distribution Lists, require modernization before being managed in the cloud. Refer to [Group SOA guidance for more info](../../identity/hybrid/concept-source-of-authority-overview.md).
 
 > [!TIP]
 > Use Microsoft Entra ID Governance features like Access Reviews and Lifecycle Workflows to automate compliance and reduce manual overhead.
