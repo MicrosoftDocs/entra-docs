@@ -240,7 +240,7 @@ The following are key considerations for Kerberos applications before shifting  
 > [!NOTE]
 > Device migration is outside the current scope.
 
-- **Conditional Access for on-prem apps:** Once App Proxy or Microsoft Entra Private Access is deployed for an application, Conditional Access policies (MFA, trusted device, etc.) can be enforced on application access since authentication passes through Microsoft Entra ID. This enhances security as even legacy apps benefit from Zero Trust conditions without modification. For Kerberos trust scenarios, Conditional Access applies when the user initially authenticates to Microsoft Entra ID on the device.
+- **Conditional Access for on-prem apps:** Once App Proxy or Microsoft Entra Private Access is deployed for an application, Conditional Access policies (MFA, trusted device, etc) can be enforced on application access since authentication passes through Microsoft Entra ID. This enhances security as even legacy apps benefit from Zero Trust conditions without modification. For Kerberos trust scenarios, Conditional Access applies when the user initially authenticates to Microsoft Entra ID on the device.
 
 ## Challenges and Important Considerations in the App-Centric Approach
 
