@@ -24,13 +24,11 @@ This guide provides IT architects with a comprehensive overview of cloud-first i
 
 Active Directory has long been considered the **“keys to the kingdom”** for organizations, making it an attractive target for attackers if compromised. By shifting towards a cloud first approach, you're able to see business and security benefits in the following ways:
 
-### Reducing reliance on AD
+### Reduce reliance on AD
 
-A breach of on-premises AD can result in broad access to corporate resources. By shifting to Microsoft Entra ID, you gain access to robust, integrated security controls. Migrating identities and authentication to Microsoft Entra ID also unlocks **modern capabilities** such as Conditional Access policies, password-less authentication, and advanced identity governance for users and applications, including those originally managed on-premises. Centralizing management using Microsoft Entra ID enhances an organization’s security posture by allowing you to take advantage of these capabilities.
+A breach of on-premises AD can result in broad access to corporate resources. By shifting to Microsoft Entra ID, you gain access to robust, integrated security controls. Migrating identities and authentication to Microsoft Entra ID also unlocks **modern capabilities** such as Conditional Access policies and password-less authentication. You also unlock advanced identity governance features for users and applications, including those originally managed on-premises. Centralizing management using Microsoft Entra ID enhances an organization’s security posture by allowing you to take advantage of these capabilities.
 
-
-
-### Enhanced IT efficiency and user experience
+### Enhance IT efficiency and user experience
 
 A cloud-first approach can help enhance IT efficiency and user experience in your organization in the following ways:
 
