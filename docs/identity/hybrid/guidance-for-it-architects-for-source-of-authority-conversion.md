@@ -125,23 +125,13 @@ Determine users by extracting group memberships for each application's AD groups
 
 For each application in your inventory, identify the authentication mechanism it uses. This step is essential for choosing the most appropriate migration or integration strategy. The main categories to consider include:
 
-- *Integrated Windows Authentication (Kerberos/NTLM)* – Common in
-  IIS/.NET applications using Windows Authentication, file servers,
-  SharePoint, and similar platforms. These typically allow users to sign in with domain credentials, often without a separate prompt.
+- *Integrated Windows Authentication (Kerberos/NTLM)* – Common in IIS/.NET applications using Windows Authentication, file servers, SharePoint, and similar platforms. These typically allow users to sign in with domain credentials, often without a separate prompt.
 
-- *LDAP Authentication/Queries* – Applications might have LDAP server
-  settings pointing to AD and perform binds or lookups, usually
-  custom-developed or third-party products prompting users for AD
-  credentials.
+- *LDAP Authentication/Queries* – Applications might have LDAP server settings pointing to AD and perform binds or lookups, custom-developed or third-party products prompting users for AD credentials.
 
-- *Federation/Modern Authentication* – Some applications are already
-  federated via AD FS or support modern protocols such as SAML or OAuth.
-  These can generally be reconfigured to use Microsoft Entra ID with minimal
-  effort.
+- *Federation/Modern Authentication* – Some applications are already federated via AD FS or support modern protocols such as SAML or OAuth. These can generally be reconfigured to use Microsoft Entra ID with minimal effort.
 
-- *Other Legacy Methods* – Includes cases where apps use RADIUS against
-  AD or local accounts. Though not the primary focus, these should be
-  documented for completeness.
+- *Other Legacy Methods* – Includes cases where apps use RADIUS against AD or local accounts. Though not the primary focus, these should be documented for completeness.
 
 ### Step 3. Assess Modernization Feasibility
 
@@ -264,7 +254,7 @@ challenges and mitigation strategies include:
 
 # [Phase 5: Verify and optimize](#tab/verify-optimize)
 
-Ensure that all users whos source of authority was transferred are able to still access the application. Ensure that group memberships that were present in AD is also present in Microsoft Entra ID. Verify using [Group logs](how-to-source-of-authority-auditing-monitoring.md) and [User logs](user-source-of-authority-audit-monitor.md) that source of authority was successfully transferred.
+Ensure that all users whose source of authority was transferred are able to still access the application. Ensure that group memberships that were present in AD is also present in Microsoft Entra ID. Verify using [Group logs](how-to-source-of-authority-auditing-monitoring.md) and [User logs](user-source-of-authority-audit-monitor.md) that source of authority was successfully transferred.
 
 ---
 
@@ -274,11 +264,11 @@ This approach works for customers who are far into their password-less
 journey. For apps that require password, currently, there’s no path to
 shift users to the cloud. The following table is a summary of the options for handling on-premises apps in a cloud-first model:
 
-Integration Options for On-Premises AD Applications:
+Integration Options for on-premises AD Applications:
 
 | App Type | Cloud Integration Method & Tools | Requirements & Considerations |
 |:--------:|:-------------------------------:|:-----------------------------|
-| **Kerberos-based Apps**<br>(Windows Integrated Authentication, intranet web apps, file shares) | **Microsoft Entra ID Application Proxy with Kerberos (KCD):** Publish on-premises web apps through Microsoft Entra ID and use a connector for Kerberos on-premises.<br>**Microsoft Entra ID Cloud Kerberos Trust:** For Microsoft Entra ID joined devices (non-web, for example,  file shares). | **Requirements:**<br>- Microsoft Entra Private Access installed on-premises<br>- Configured SPN and delegation rights<br>- Microsoft Entra ID P1/P2 or Suite licenses<br>- AD account for user (synced or provisioned)<br>**Considerations:**<br>- Seamless SSO using Microsoft Entra ID credentials<br>- Password-less and phish-resistant methods for Kerberos apps<br>- Secure access to on-premises resources |
+| **Kerberos-based Apps**<br>(Windows Integrated Authentication, intranet web apps, file shares) | **Microsoft Entra ID Application Proxy with Kerberos (KCD):** Publish on-premises web apps through Microsoft Entra ID and use a connector for Kerberos on-premises.<br>**Microsoft Entra ID Cloud Kerberos Trust:** For Microsoft Entra ID joined devices (for example, non-web file shares). | **Requirements:**<br>- Microsoft Entra Private Access installed on-premises<br>- Configured SPN and delegation rights<br>- Microsoft Entra ID P1/P2 or Suite licenses<br>- AD account for user (synced or provisioned)<br>**Considerations:**<br>- Seamless SSO using Microsoft Entra ID credentials<br>- Password-less and phish-resistant methods for Kerberos apps<br>- Secure access to on-premises resources |
 | **LDAP-based Apps**<br>(Apps that bind to AD DS over LDAP for auth/queries) | **Entra ID Domain Services (Managed AD):** Cloud-hosted AD domain synced with Microsoft Entra ID; repoint app’s LDAP connection to this domain (LDAPS). | **Requirements:**<br>- Set up Microsoft Entra ID DS instance in Azure<br>- Configure virtual network, secure LDAP cert, firewall rules<br>- Users/groups must be in Microsoft Entra ID (synced to Microsoft Entra ID DS)<br>- Might require password reset to generate hashes<br>**Considerations:**<br>- Minimal app changes (new LDAP endpoint)<br>- Cloud users’ passwords present in Microsoft Entra ID DS<br>- If Microsoft Entra ID DS not feasible, fallback is provisioning users into on-premises AD and maintaining password parity manually. |
 
 ## Checklist before transferring Source of Authority
