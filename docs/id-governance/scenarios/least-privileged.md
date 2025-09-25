@@ -5,10 +5,10 @@ ms.service: entra-id-governance
 ms.subservice:
 
 author: billmath
-manager: femila
+manager: dougeby
 
 
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.author: billmath
 ---

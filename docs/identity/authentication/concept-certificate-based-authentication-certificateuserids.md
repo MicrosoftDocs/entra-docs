@@ -1,17 +1,15 @@
 ---
-title: Mapping to the certificateUserIds attribute in Microsoft Entra ID 
+title: Mapping to the certificateUserIds attribute in Microsoft Entra ID
 description: Learn about certificate user IDs for Microsoft Entra certificate-based authentication without federation
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: vimrang
-manager: femila
+manager: dougeby
 ms.reviewer: vranganathan
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-image-nochange
 ---
 
 # Mapping to the certificateUserIds attribute in Microsoft Entra ID
@@ -24,7 +22,7 @@ User objects in Microsoft Entra ID have an attribute named certificateUserIds.
 - The value doesn't need to be in email ID format. The certificateUserIds attribute can store nonroutable user principal names (UPNs) like *bob@woodgrove* or *bob@local*.
 
 > [!NOTE]
-> Although each value must be unique in Microsoft Entra ID, you can map a single certificate to multiple accounts by implementing multiple username bindings. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
+> Although each value must be unique in Microsoft Entra ID, you can map a single certificate to multiple accounts by implementing multiple username bindings. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#secure-microsoft-entra-configuration-by-using-multiple-username-bindings).
  
 ## Supported patterns for certificate user IDs
  
@@ -383,7 +381,7 @@ Before you begin, make sure all user accounts that are synchronized from on-prem
 - No value with more than 1,024 characters
 - No duplicate values
   
-  Carefully consider if a duplicate value is meant to map a single certificate to multiple on-premises Active Directory accounts. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
+  Carefully consider if a duplicate value is meant to map a single certificate to multiple on-premises Active Directory accounts. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#secure-microsoft-entra-configuration-by-using-multiple-username-bindings).
 
   >[!NOTE]
   >In specific scenarios, a subset of users might have a valid business justification to map a single certificate to more than one on-premises Active Directory account. Review these scenarios and where needed, implement separate mapping methods to map to more than one account in both the on-premises Active Directory and Microsoft Entra ID.
@@ -516,6 +514,7 @@ Administrators can filter values from altSecurityIdentities that align with the 
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)
 - [Technical deep dive for Microsoft Entra CBA](concept-certificate-based-authentication-technical-deep-dive.md)
 - [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
 - [Microsoft Entra CBA on iOS devices](concept-certificate-based-authentication-mobile-ios.md)
 - [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
 - [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)

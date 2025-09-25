@@ -2,13 +2,13 @@
 title: Group management permissions for Microsoft Entra custom roles
 description: Group management permissions for Microsoft Entra custom roles in the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
 
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 08/25/2024
-ms.author: rolyon
+ms.author: barclayn
 ms.custom: it-pro
 ---
 

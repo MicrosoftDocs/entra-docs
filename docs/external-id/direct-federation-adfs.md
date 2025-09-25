@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin, I want to configure SAML/WS-Fed based identity provider federation with AD FS, so that I can enable federation between Microsoft Entra B2B and IdPs that use the SAML or WS-Fed protocol.

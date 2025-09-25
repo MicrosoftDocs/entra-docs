@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Change Process Management
+title: Configure Change Process Management for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Change Process Management.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Change Process Management so that I can control who has access to Change Process Management, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Change Process Management
+# Configure Change Process Management for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Change Process Management with Microsoft Entra ID. When you integrate Change Process Management with Microsoft Entra ID, you can:
 

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with New Relic
+title: Configure New Relic for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and New Relic.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and New Relic (By Organization) so that I can control who has access to New Relic (By Organization), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with New Relic
+# Configure New Relic for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate New Relic with Microsoft Entra ID. When you integrate New Relic with Microsoft Entra ID, you can:
 

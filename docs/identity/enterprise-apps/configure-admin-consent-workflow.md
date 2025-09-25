@@ -2,7 +2,7 @@
 title: Configure the admin consent workflow
 description: Learn how to configure a way for end users to request access to applications that require admin consent.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to

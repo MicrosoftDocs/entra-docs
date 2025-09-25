@@ -2,13 +2,13 @@
 title: Microsoft Entra ID and SAP SuccessFactors integration reference
 description: Technical deep dive into SAP SuccessFactors-HR driven provisioning for Microsoft Entra ID.
 
-author: kenwith
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 03/04/2025
-ms.author: kenwith
+ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 ---

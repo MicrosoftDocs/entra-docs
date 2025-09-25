@@ -3,11 +3,11 @@ title: What is Microsoft Entra monitoring and health?
 description: Learn about the features and capabilities of the logs and reports in Microsoft Entra monitoring and health.
 
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.subservice: monitoring-health
-ms.date: 10/01/2024
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -67,7 +67,7 @@ You can use the provisioning logs to find answers to questions like:
 
 Reviewing the data in the Microsoft Entra activity logs can provide helpful information for IT administrators. To streamline the process of reviewing data on key scenarios, we've created several reports on common scenarios that use the activity logs.
 
-- [Identity Protection](~/id-protection/overview-identity-protection.md) uses sign-in data to create reports on risky users and sign-in activities.
+- [Identity Protection](../../id-protection/overview-identity-protection.md) uses sign-in data to create reports on risky users and sign-in activities.
 - Activity related to your applications, such as service principal and app credential activity, are used to create reports in [Usage and insights](concept-usage-insights-report.md).
 - [Microsoft Entra workbooks](overview-workbooks.md) provide a customizable way to view and analyze the activity logs. 
 - Use [Microsoft Entra recommendations](overview-recommendations.md) to monitor and improve your tenant's security.

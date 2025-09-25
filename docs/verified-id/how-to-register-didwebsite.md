@@ -27,7 +27,7 @@ For the web trust system, you need to register your DID to be able to issue and 
 
 ## How do I register my decentralized ID?
 
-1. Go to the **Verified ID** page in the Azure portal.
+1. Go to the **Verified ID** page in the **Azure portal**.
 1. On the leftmost menu, select **Setup**.
 1. On the middle menu, under **Register decentralized ID**, select **Update**.
 

@@ -2,7 +2,7 @@
 title: Quickstart - Call a web API in a sample daemon app
 description: A daemon app code sample quickstart that shows how to acquire an access token to call a protected web API by using Microsoft identity platform
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/20/2024
@@ -305,11 +305,11 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 #### [Python](#tab/python-workforce)
 
-* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-registration.md)
+* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-configuration.md)
 
 #### [Java](#tab/java-workforce)
 
-* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-registration.md)
+* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-configuration.md)
 ---
 
 

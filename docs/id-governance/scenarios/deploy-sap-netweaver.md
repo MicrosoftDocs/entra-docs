@@ -5,10 +5,10 @@ ms.service: entra-id-governance
 ms.subservice: 
 author: billmath
 manager: femila
-ms.topic: conceptual
+ms.topic: install-set-up-deploy
 ms.date: 04/09/2025
 ms.author: billmath
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Deploy SAP NetWeaver AS ABAP 7.51

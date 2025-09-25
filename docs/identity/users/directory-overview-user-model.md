@@ -3,7 +3,7 @@ title: Users, groups, licensing, and roles in Microsoft Entra ID
 description: The relationship between users and licenses assigned, administrator roles, dynamic membership groups in Microsoft Entra ID
 keywords: 
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.author: barclayn
 ms.reviewer: krbain
 ms.date: 01/31/2025
@@ -16,7 +16,7 @@ ms.custom: it-pro, sfi-ga-nochange
 ---
 # What is enterprise user management?
 
-This article introduces an administrator for Microsoft Entra ID, part of Microsoft Entra, to the relationship between top [identity management](~/fundamentals/whatis.md?context=azure/active-directory/users-groups-roles/context/ugr-context) tasks for users in terms of their groups, licenses, deployed enterprise apps, and administrator roles. As your organization grows, you can use Microsoft Entra groups and administrator roles to:
+This article introduces an administrator for Microsoft Entra ID, part of Microsoft Entra, to the relationship between top [identity management](~/fundamentals/what-is-entra.md?context=azure/active-directory/users-groups-roles/context/ugr-context) tasks for users in terms of their groups, licenses, deployed enterprise apps, and administrator roles. As your organization grows, you can use Microsoft Entra groups and administrator roles to:
 
 * Assign licenses to groups instead of assigning licenses to individual users.
 * Grant permissions to delegate Microsoft Entra management work to personnel in less-privileged roles.

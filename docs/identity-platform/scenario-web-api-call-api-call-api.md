@@ -2,12 +2,13 @@
 title: Web API that calls web APIs
 description: 'Build a web API that calls other APIs using the Microsoft identity platform. Learn how to acquire tokens and make secure API calls.  '
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom:
 ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
 ---

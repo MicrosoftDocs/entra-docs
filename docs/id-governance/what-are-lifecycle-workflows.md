@@ -2,17 +2,17 @@
 title: What are lifecycle workflows?
 description: Get an overview of the lifecycle workflow feature of Microsoft Entra ID.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: overview
-ms.date: 08/25/2024
+ms.date: 06/25/2024
 ms.author: owinfrey
 ---
 
 # What are lifecycle workflows?
 
-Lifecycle workflows are a new identity governance feature that enables organizations to manage Microsoft Entra users by automating these three basic lifecycle processes:
+Lifecycle workflows (LCW) are identity governance capabilities that enable organizations to manage Microsoft Entra users across the three phases of a user's lifecycle with an organization:
 
 - **Joiner**: When an individual enters the scope of needing access. An example is a new employee joining a company or organization.
 - **Mover**: When an individual moves between boundaries within an organization. This movement might require more access or authorization. An example is a user who was in marketing and is now a member of the sales organization.

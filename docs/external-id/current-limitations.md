@@ -9,7 +9,7 @@ ms.date: 04/15/2025
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.collection: content-health, M365-identity-device-management
 

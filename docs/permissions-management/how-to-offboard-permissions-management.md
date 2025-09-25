@@ -2,7 +2,7 @@
 title: Microsoft Entra Permissions Management offboarding guidance
 description: How to transition off of Microsoft Entra Permissions Management for the anticipated product deprecation.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

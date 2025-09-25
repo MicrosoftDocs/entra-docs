@@ -2,12 +2,12 @@
 title: What are access reviews? - Microsoft Entra
 description: Using access reviews, you can control group membership and application access to meet governance, risk management, and compliance initiatives in your organization.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: reference
-ms.date: 11/25/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange
@@ -42,7 +42,7 @@ Microsoft Entra ID enables you to collaborate with users from inside your organi
 - **Have reviews recur periodically:** You can set up recurring access reviews of users at set frequencies such as weekly, monthly, quarterly or annually, and the reviewers are notified at the start of each review. Reviewers can approve or deny access with a friendly interface and with the help of smart recommendations.
 
 >[!NOTE]
->If you are ready to try Access reviews take a look at [Create an access review of groups or applications](create-access-review.md)
+>If you're ready to try Access reviews take a look at [Create an access review of groups or applications](create-access-review.md)
 
 ## Where do you create reviews?
 

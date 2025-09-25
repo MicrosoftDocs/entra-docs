@@ -2,7 +2,7 @@
 title: Translate links and URLs for Microsoft Entra application proxy.
 description: Learn how to redirect hard coded links for applications published with Microsoft Entra application proxy.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to

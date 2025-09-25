@@ -1,17 +1,15 @@
 ---
 title: Set up claims mapping for OIDC
 description: Learn how to configure the standard OpenID Connect claims with the claims your identity provider provides in your external tenant.
- 
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
 ms.date: 03/12/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a developer, devops, or it administrator, I want to learn how to configure the standard OpenID Connect claims with the claims my identity provider provides in my external tenant.
 ---
 

@@ -9,7 +9,7 @@ ms.date: 04/15/2025
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.custom: it-pro, has-adal-ref, devx-track-linux, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin managing B2B collaboration, I want to bulk-invite external users to my organization by using PowerShell or by uploading a .csv file to the admin center or portal, so that I can streamline the onboarding process and save time.

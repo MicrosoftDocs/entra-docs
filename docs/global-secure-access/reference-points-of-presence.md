@@ -3,9 +3,9 @@ title: Global Secure Access points of presence and IP addresses
 description: Global Secure Access points of presence and IP addresses for Microsoft Entra Internet Access and Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: reference
-ms.date: 02/21/2025
+ms.date: 08/28/2025
 ms.service: global-secure-access
 ms.custom: references_regions
 ai-usage: ai-assisted
@@ -23,70 +23,70 @@ The tables list information about deployment status.
 ### Asia Pacific (APAC)
 The table lists the deployment status for the APAC region.
 
-|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
-| ---                        | --- | --- | 
-|Auckland, New Zealand       | ✅ |    |
-|Busan, South Korea          | ✅ | ✅ |
-|Chennai, India              | ✅ | ✅ |
-|Melbourne, Australia        | ✅ | ✅ |
-|Osaka, Japan                | ✅ | ✅ |
-|Pune, India                 | ✅ |    |
-|Seoul, South Korea          | ✅ | ✅ |
-|Singapore, Singapore        | ✅ |    |
-|Sydney, Australia           | ✅ | ✅ |
-|Taipei, Taiwan              | ✅ |    |
-|Tokyo, Japan                | ✅ | ✅ |
+| Azure Region           | Physical Location           | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                    | ---                         | --- | --- | 
+| New Zealand North      | Auckland, New Zealand       | ✅ |    |
+| Korea South            | Busan, South Korea          | ✅ | ✅ |
+| South India            | Chennai, India              | ✅ | ✅ |
+| Australia Southeast    | Melbourne, Australia        | ✅ | ✅ |
+| Japan West             | Osaka, Japan                | ✅ | ✅ |
+| Central India          | Pune, India                 | ✅ |    |
+| Korea Central          | Seoul, South Korea          | ✅ | ✅ |
+| Southeast Asia         | Singapore, Singapore        | ✅ |    |
+| Australia East         | Sydney, Australia           | ✅ | ✅ |
+| Taiwan North           | Taipei, Taiwan              | ✅ |    |
+| Japan East             | Tokyo, Japan                | ✅ | ✅ |
 
 
 ### Europe Middle East Africa (EMEA)
 The table lists the deployment status for the EMEA region.
 
-|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
-| ---                        | --- | --- |
-|Amsterdam, Netherlands      | ✅ | ✅ |
-|Berlin, Germany             | ✅ |    |
-|Cape Town, South Africa     | ✅ | ✅ | 
-|Dubai, UAE                  | ✅ | ✅ |
-|Dublin, Ireland             | ✅ | ✅ |
-|Frankfurt, Germany          | ✅ | ✅ |
-|Gavle, Sweden               | ✅ | ✅ | 
-|Johannesburg, South Africa  | ✅ | ✅ | 
-|London, UK                  | ✅ | ✅ |
-|Madrid, Spain               | ✅ |    | 
-|Milan, Italy                | ✅ | ✅ |
-|Marseille, France           | ✅ | ✅ |
-|Paris, France               | ✅ | ✅ |
-|Tel Aviv, Israel            | ✅ | ✅ |
-|Warsaw, Poland              | ✅ | ✅ |
-|Zurich, Switzerland         | ✅ | ✅ |
+| Azure Region            | Physical Location            | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                     | ---                         | --- | --- |
+| West Europe             | Amsterdam, Netherlands       | ✅ | ✅ |
+| Germany North           | Berlin, Germany              | ✅ |    |
+| South Africa West       | Cape Town, South Africa      | ✅ | ✅ | 
+| UAE North               | Dubai, UAE                   | ✅ | ✅ |
+| North Europe            | Dublin, Ireland              | ✅ | ✅ |
+| Germany West Central    | Frankfurt, Germany           | ✅ | ✅ |
+| Sweden Central          | Gavle, Sweden                | ✅ | ✅ | 
+| South Africa North      | Johannesburg, South Africa   | ✅ | ✅ | 
+| UK South                | London, UK                   | ✅ | ✅ |
+| Spain Central           | Madrid, Spain                | ✅ |    | 
+| Italy North             | Milan, Italy                 | ✅ | ✅ |
+| France South            | Marseille, France            | ✅ | ✅ |
+| France Central          | Paris, France                | ✅ | ✅ |
+| Israel Central          | Tel Aviv, Israel             | ✅ | ✅ |
+| Poland Central          | Warsaw, Poland               | ✅ | ✅ |
+| Switzerland North       | Zurich, Switzerland          | ✅ | ✅ |
 
 
 ### Latin America (LATAM)
 The table lists the deployment status for the LATAM region.
 
-|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
-| ---                        | --- | --- | 
-|Campinas, Brazil            | ✅ |   | 
-|Rio de Janeiro, Brazil      | ✅ |   | 
+|Azure Region            | Physical Location         | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                 | ---                         | --- | --- | 
+| Brazil South        | Campinas, Brazil             | ✅ |   | 
+| Brazil Southeast    | Rio de Janeiro, Brazil       | ✅ |   | 
 
 
 ### North America (NA)
 The table lists the deployment status for the NA region.
 
-|Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
-| ---                        | --- | --- |
-|Boydton, Virginia, USA      | ✅ | ✅ | 
-|Cheyenne, Wyoming, USA      | ✅ | ✅ | 
-|Chicago, Illinois, USA      | ✅ | ✅ | 
-|Des Moines, Iowa, USA       | ✅ | ✅ |
-|Manassas, Virginia, USA     | ✅ | ✅ | 
-|Montreal, Quebec, Canada    | ✅ | ✅ | 
-|Phoenix, Arizona, USA       | ✅ | ✅ | 
-|Queretaro, Mexico           | ✅ |    | 
-|Quincy, Washington, USA     | ✅ | ✅ | 
-|San Antonio, Texas, USA     | ✅ | ✅ | 
-|San Jose, California, USA   | ✅ | ✅ | 
-|Toronto, Ontario, Canada    | ✅ | ✅ | 
+| Azure Region             | Physical Location            | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                      | ---                         | --- | --- |
+| East US                  | Boydton, Virginia, USA       | ✅ | ✅ | 
+| West Central US          | Cheyenne, Wyoming, USA       | ✅ | ✅ | 
+| North Central US         | Chicago, Illinois, USA       | ✅ | ✅ | 
+| Central US               | Des Moines, Iowa, USA        | ✅ | ✅ |
+| East US 2                | Manassas, Virginia, USA      | ✅ | ✅ | 
+| Canada East              | Montreal, Quebec, Canada     | ✅ | ✅ | 
+| West US 3                | Phoenix, Arizona, USA        | ✅ | ✅ | 
+| Mexico Central           | Queretaro, Mexico            | ✅ |    | 
+| West US 2                | Quincy, Washington, USA      | ✅ | ✅ | 
+| South Central US         | San Antonio, Texas, USA      | ✅ | ✅ | 
+| West US                  | San Jose, California, USA    | ✅ | ✅ | 
+| Canada Central           | Toronto, Ontario, Canada     | ✅ | ✅ | 
 
 
 ## IP addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service

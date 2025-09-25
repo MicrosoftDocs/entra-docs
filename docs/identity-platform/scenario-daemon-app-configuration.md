@@ -2,12 +2,12 @@
 title: How to configure daemon apps that call web APIs
 description: Learn how to configure the code for your daemon application that calls web APIs (app configuration)
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 03/25/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---

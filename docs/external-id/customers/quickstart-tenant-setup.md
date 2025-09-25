@@ -3,7 +3,7 @@ title: External Tenant Quickstart
 description: In this quickstart, learn how to create an external tenant for customer identity and access management (CIAM). Customize a sign-in experience and try it out with a sample app.
  
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
@@ -25,7 +25,7 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 ## Prerequisites
 
 - An Azure subscription. 
-- An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription.
+- An Azure account that's been assigned at least the [Tenant Creator](/entra/identity/role-based-access-control/permissions-reference#tenant-creator) role scoped to the subscription.
 
 ## Create a new tenant with external configurations 
 

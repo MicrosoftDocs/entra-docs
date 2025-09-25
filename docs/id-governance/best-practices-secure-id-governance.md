@@ -4,10 +4,10 @@ description: This article provides best practices for securing deploying Microso
 services: entra-id-governance
 documentationcenter: ''
 author: billmath
-manager: femila
+manager: dougeby
 editor: ''
 ms.service: entra-id-governance
-ms.topic: conceptual
+ms.topic: best-practice
 ms.date: 04/09/2025
 ms.author: billmath
 ms.custom: sfi-ga-nochange

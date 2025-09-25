@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra SSO integration with Arena EU
+title: Configure Arena EU for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Arena EU.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Arena EU so that I can control who has access to Arena EU, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Arena EU
+# Configure Arena EU for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Arena EU with Microsoft Entra ID. When you integrate Arena EU with Microsoft Entra ID, you can:
 

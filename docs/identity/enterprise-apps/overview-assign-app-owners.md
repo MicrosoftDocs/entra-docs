@@ -3,7 +3,7 @@ title: Overview of enterprise application ownership
 description: Learn about application ownership in Microsoft Entra ID, including default assignments, managing configurations, and handling ownerless apps effectively.
 
 author: omondiatieno
-manager: celesteDG
+manager: mwongerapk
 ms.service: entra-id
 
 ms.subservice: enterprise-apps

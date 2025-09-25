@@ -3,7 +3,7 @@ title: First party app service principal reference table
 description: Reference table that maps application IDs to applications and their service principal usage from the sign-in logs.
 
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health

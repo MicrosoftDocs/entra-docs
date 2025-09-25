@@ -3,7 +3,7 @@ title: Get started guide features
 description: Learn about the features you set up with the get started guide. 
 
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 
 ms.subservice: external

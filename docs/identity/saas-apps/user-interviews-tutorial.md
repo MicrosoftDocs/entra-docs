@@ -1,21 +1,21 @@
 ---
-title: Microsoft Entra SSO integration with User Interviews
+title: Configure User Interviews for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and User Interviews.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 04/05/2024
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with User Interviews
+# Configure User Interviews for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate User Interviews with Microsoft Entra ID. When you integrate User Interviews with Microsoft Entra ID, you can:
 

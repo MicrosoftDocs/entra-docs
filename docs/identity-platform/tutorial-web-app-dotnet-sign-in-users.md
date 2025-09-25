@@ -2,7 +2,7 @@
 title: "Configure an ASP.NET Core web app for authorization and authentication"
 description: Learn how to install identity packages and sign-in components to an ASP.NET Core application and enable user authentication.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 01/18/2024
 ms.service: identity-platform

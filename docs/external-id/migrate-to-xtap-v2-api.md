@@ -4,7 +4,7 @@ description: Learn how to Migrate to version 2 of the CrossTenantAccessPolicy Mi
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 
 ROBOTS: NOINDEX, NOFOLLOW
@@ -334,7 +334,7 @@ The following configuration allows all users in group `aaaaaaaa-0000-1111-2222-b
 ]	
 ```
 
-The following configuration allows B2B direct connect access to all external tenants for all users in the group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` in the home tenant. It also blocks access to one external application with application ID `cccccccc-2222-3333-4444-dddddddddddd`. The last configuration blocks access to the rest of the users in the home tenant for the B2B direct connect feature. 
+The following configuration allows B2B direct connect access to all external tenants for all users in the group `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` in the home tenant. It also blocks access to one external application with application ID `00001111-aaaa-2222-bbbb-3333cccc4444`. The last configuration blocks access to the rest of the users in the home tenant for the B2B direct connect feature. 
 
 ```json
 "ToMyTenancy": [

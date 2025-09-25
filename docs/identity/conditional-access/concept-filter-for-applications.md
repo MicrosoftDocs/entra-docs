@@ -1,23 +1,25 @@
 ---
 title: Filter for applications in Conditional Access policy
-description: Use filter for applications in Conditional Access to manage conditions.
+description: Discover how to use Conditional Access filters for applications to streamline policy management and enhance security in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 03/11/2024
-
+ms.topic: how-to
+ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: calebb, oanae
-
-ms.custom: subject-rbac-steps
+ms.custom:
+  - subject-rbac-steps
+  - ai-gen-docs-bap
+  - ai-gen-description
+  - ai-seo-date:07/22/2025
 ---
 # Conditional Access: Filter for applications
 
 Currently Conditional Access policies can be applied to all apps or to individual apps. Organizations with a large number of apps might find this process difficult to manage across multiple Conditional Access policies.
 
-Application filters for Conditional Access allow organizations to tag service principals with custom attributes. These custom attributes are then added to their Conditional Access policies. Filters for applications are evaluated at token issuance runtime, a common question is if apps are assigned at runtime or configuration time.
+Application filters for Conditional Access allow organizations to tag service principals with custom attributes. These custom attributes are then added to their Conditional Access policies. Filters for applications are evaluated at token issuance runtime, not configuration.
 
 In this document, you create a custom attribute set, assign a custom security attribute to your application, and create a Conditional Access policy to secure the application.
 
@@ -52,7 +54,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
 :::image type="content" source="media/concept-filter-for-applications/custom-attributes.png" alt-text="A screenshot showing custom security attribute and predefined values in Microsoft Entra ID." lightbox="media/concept-filter-for-applications/custom-attributes.png":::
 
 > [!NOTE]
-> Conditional Access filters for applications only works with custom security attributes of type "string". Custom Security Attributes support creation of Boolean data type but Conditional Access Policy only supports "string".
+> Conditional Access filters for applications only work with custom security attributes of type `string`. Custom Security Attributes support creation of Boolean data type but Conditional Access Policy only supports `string`.
 
 ## Create a Conditional Access policy
 

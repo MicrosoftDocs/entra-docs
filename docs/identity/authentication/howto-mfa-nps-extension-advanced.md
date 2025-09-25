@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: michmcla
 ---
 # Advanced configuration options for the NPS extension for multifactor authentication

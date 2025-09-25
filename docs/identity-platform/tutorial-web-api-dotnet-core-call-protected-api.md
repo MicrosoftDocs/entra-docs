@@ -2,7 +2,7 @@
 title: "Tutorial: Call a protected ASP.NET Core web API"
 description:  Learn how to call a web API whose endpoints are protected using the Microsoft identity platform 
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 03/18/2025
 ms.service: identity-platform

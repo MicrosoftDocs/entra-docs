@@ -98,7 +98,7 @@ When you want the user to enter information themselves. This type is also called
 | `type` | string (array) | a list of verifiable credential types this contract can issue |
 
 ## Example rules definition:
-```
+```json
 {
   "attestations": {
     "idTokenHints": [
@@ -128,7 +128,6 @@ When you want the user to enter information themselves. This type is also called
     ]
   }
 }
-
 ```
 
 ## displayModel type
@@ -177,7 +176,7 @@ When you want the user to enter information themselves. This type is also called
 |`description` | string (optional) | the description of the claim |
 
 ## Example display definition:
-```
+```json
 {
   "locale": "en-US",
   "card": {

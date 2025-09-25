@@ -10,8 +10,7 @@ ms.date: 04/19/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.reviewer: v-nisba
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to integrate F5 BIG-IP SSL-VPN with Microsoft Entra SSO. I want to provide improved Zero Trust governance, passwordless authentication. My goal is to manage identities and access from a single control plane.
 ---
 

@@ -1,8 +1,9 @@
 ---
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 01/16/2025
 ms.topic: include
+ms.custom: sfi-image-nochange
 ---
 
 In this article, you learn how to enable and disable system and user-assigned managed identities for an Azure Virtual Machine (VM), using the Azure portal. 

@@ -4,12 +4,12 @@ description: Explore Microsoft Entra External ID training, live demos, and video
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/14/2025
+ms.date: 09/16/2025
 ms.custom: it-pro
 
 
@@ -31,12 +31,6 @@ In the training module, you'll:
 - Protect access to your application with Conditional Access and multifactor authentication.
 
 To start the training, go to [Guided project – Build a sample app to evaluate Microsoft Entra External ID](https://aka.ms/eeid/training-module) and follow the units in order.
-
-## Woodgrove Groceries live demo
-
-The Woodgrove Groceries live demo app is a fictional grocery store that incorporates Microsoft Entra External ID into its online shopping platform. It illustrates several common authentication experiences that can be configured for your apps. To explore the demo environment, visit [Woodgrove Groceries](https://woodgrovedemo.com/). On the right side of the screen, choose the **Select a use case** button, or use [this link](https://woodgrovedemo.com/#usecase=Default). Then, choose from a list of features and use cases related to authentication experiences.
-
-:::image type="content" source="media/overview-solutions-customers/demo-woodgrove.png" alt-text="Screenshot of the Woodgrove Groceries demo home page.":::
 
 ## Visit our video library
 
@@ -74,6 +68,12 @@ The video covers how to integrate social identity providers like Facebook, Googl
 
 > [!VIDEO https://www.youtube.com/embed/lIdGt9rDM-E?si=8n1_G_AqFbYDP22y]
 
+### Enable sign-in with OpenID Connect identity providers
+
+This video explains how to configure a custom OpenID Connect identity provider in Microsoft Entra External ID. It will guide you through the steps to set up a new federation, including entering the necessary details such as the well-known endpoint, issuer URI, claims mapping and more. 
+
+> [!VIDEO https://www.youtube.com/embed/L0QmRs-x-1c?si=p8A-dGOg48IxvgzL]
+
 ## Protect access to applications
 
 The following video provides instructions on how to protect access to applications using Microsoft Entra external ID. It outlines the steps for securing application access and implementing enhanced protection with Microsoft Entra external ID to ensure only authorized users and software components can access your application.
@@ -89,7 +89,7 @@ The [second part](https://youtu.be/Sc1y4WBHP2k?si=kDCv0Cts5UUHyM-b) guides you t
 
 ### Step-up authentication
 
-The video explains step-up authentication and tenant configuration. In step-up authentication, users sign in with minimal authentication steps, like a username and password, or a social identity. However, upon risky actions, like high-value transactions or accessing sensitive data, the application requires more verification.
+The video explains step-up authentication and tenant configuration. In step-up authentication, users sign in with minimal authentication steps, like a username and password, or a social identity. However, upon risky actions, like high-value transactions or accessing sensitive data, the application requires more verifications.
 
 > [!VIDEO https://www.youtube.com/embed/869Opl4TQT0?si=pNYU5zrrpP1r9PTz]
 
@@ -110,6 +110,12 @@ This video provides detailed instructions on configuring Microsoft Entra custom 
 Microsoft Entra custom authentication extensions allow organizations to integrate custom business logic into their authentication workflows. This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom authentication extensions (knonwd as custom claims provider).
 
 > [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
+
+### Build Microsoft Entra custom authentication extensions
+
+This video explains how to create Microsoft Entra custom authentication extensions with Azure Logic Apps, without writing code. Azure Logic App empowers users to build workflows using a visual designer. The video covers customizing verification emails, and it applies to all types of custom authentication extensions, including custom claims providers.
+
+> [!VIDEO https://www.youtube.com/embed/2ZzX6_W93Sk?si=P9URBkKVnXPZ6Kfc]
 
 ### Edit user's profile
 

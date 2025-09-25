@@ -2,7 +2,7 @@
 title: Access activity logs in Microsoft Entra ID
 description: How to choose the right method for accessing and integrating the activity logs in Microsoft Entra ID.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

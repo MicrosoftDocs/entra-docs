@@ -3,12 +3,12 @@ title: Service limits and restrictions
 description: Learn about the service limits and restrictions in an external tenant.
  
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: reference
-ms.date: 10/07/2024
+ms.date: 07/07/2025
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -86,11 +86,13 @@ The following table lists the administrative configuration limits in the Microso
 |Total number of objects (user accounts and applications) per tenant. If you want to increase this limit, contact [Microsoft Support](/entra/identity-platform/developer-support-help-options?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json#create-an-azure-support-request). | 300,000 |
 |Number of [custom authentication extensions](/entra/identity-platform/custom-extension-overview)    |100         |
 |Number of event listener policies    |249         |
+|Maximum custom authentication extension timeout    |2,000 ms         |
+|Maximum custom authentication extension retries    |1         |
 
 ## Telephony throttling limits
 The following table lists the service limits we implement to prevent outages and slowdowns. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
 
-|Limit                        |Texts every 15 minutes|Texts every 60 minutes|Texts every 24 hours                                 |Texts every 7 days |
+|Limit                        |Texts every 15 minutes|Texts every 60 minutes|Texts every 24 hours                                 |Texts every seven days |
 |-----------------------------|----------------------|----------------------|-----------------------------------------------------|-------------------|
 |Limits based on IP address   |20 texts              |60 texts              |100 texts without a proxy</br>200 texts with a proxy |No limit           |
 |Limits based on phone number |15 texts              |20 texts              |30 texts                                             |50 texts           |

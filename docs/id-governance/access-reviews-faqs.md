@@ -2,11 +2,11 @@
 title: 'Access Reviews FAQs'
 description: Frequently asked questions about Access Reviews.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: faq
-ms.date: 05/02/2025
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: jgangadhar
 ms.custom: template-tutorial

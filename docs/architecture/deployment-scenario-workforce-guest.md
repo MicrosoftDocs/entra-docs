@@ -8,7 +8,7 @@ ms.service: entra
 ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want to provide remote employees with secure access to apps and resources so that we prevent unauthorized access.
 ---
 # Microsoft Entra Suite deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
@@ -50,7 +50,7 @@ To successfully deploy and test the solution, configure the prerequisites that w
 
 For this scenario, complete these prerequisite steps to configure Microsoft Entra Verified ID with Quick setup (Preview):
 
-1. Register a custom domain (required for Quick setup) by following the steps in the [Add your custom domain](../fundamentals/add-custom-domain.yml) article.
+1. Register a custom domain (required for Quick setup) by following the steps in the [Add your custom domain](../fundamentals/add-custom-domain.md) article.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator).
    - Select **Verified ID**.
    - Select **Setup**.

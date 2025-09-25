@@ -2,11 +2,11 @@
 title: Delete a lifecycle workflow
 description: Learn how to delete a lifecycle workflow.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 06/25/2025
 ms.author: owinfrey
 ms.reviewer: krbain
 ---

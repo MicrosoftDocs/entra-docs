@@ -2,7 +2,7 @@
 title: Add and verify custom domain names
 description: Management concepts and how-tos for managing a domain name in Microsoft Entra ID
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
@@ -127,6 +127,6 @@ Most management tasks for domain names in Microsoft Entra ID can also be complet
 
 ## Next steps
 
-* [Add custom domain names](~/fundamentals/add-custom-domain.yml?context=azure/active-directory/users-groups-roles/context/ugr-context)
+* [Add custom domain names](~/fundamentals/add-custom-domain.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
 * [Remove Exchange mail-enabled security groups in Exchange Admin Center on a custom domain name in Microsoft Entra ID](/exchange/recipients/mail-enabled-security-groups?preserve-view=true#Remove%20mail-enabled%20security%20groups)
 * [ForceDelete a custom domain name with Microsoft Graph API](/graph/api/domain-forcedelete)

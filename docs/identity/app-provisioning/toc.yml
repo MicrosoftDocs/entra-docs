@@ -97,7 +97,7 @@ items:
       items:
       - name: On-demand provisioning
         href: provision-on-demand.md
-      - name: Provision custom security attributes (preview)
+      - name: Provision custom security attributes
         href: provision-custom-security-attributes.md
     - name: Monitor and report on provisioning
       items:
@@ -149,6 +149,8 @@ items:
         href: hr-manager-update-issues.md
       - name: HR writeback issues
         href: hr-writeback-issues.md
+      - name: Index the employeeID attribute 
+        href: index-employeeid-attribute-entra-id-to-active-directory.md
       - name: Insufficient access rights error
         href: insufficient-access-rights-error-troubleshooting.md
     - name: Troubleshoot API-driven inbound provisioning
@@ -171,6 +173,10 @@ items:
       href: scim-graph-scenarios.md
     - name: Cloud HR provisioning
       items:
+      - name: Workday expression mapping guide
+        href: workday-expression-mapping-functions-guide.md
+      - name: SuccessFactors expression mapping guide
+        href: successfactors-expression-mapping-functions-guide.md
       - name: SuccessFactors attribute reference
         href: sap-successfactors-attribute-reference.md
       - name: Workday attribute reference

@@ -2,7 +2,7 @@
 title: Configure optional claims
 description: Learn how to configure optional claims and attributes in access tokens issued by Microsoft identity platform; optional claims can add useful user information for your app.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 01/27/2025

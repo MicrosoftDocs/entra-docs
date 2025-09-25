@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
-manager: femila
+manager: dougeby
 ms.reviewer: alexpav
 ai-usage: ai-assisted
 ---

@@ -9,7 +9,7 @@ ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth, cokoopma
 ---
 # Require a secure password change for elevated user risk
@@ -27,10 +27,9 @@ Microsoft works with researchers, law enforcement, various security teams at Mic
 
 ## Related content
 
-- [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
-- [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
+- [Require reauthentication every time](../../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
+- [Remediate risks and unblock users](../../id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)
 - [Sign-in risk-based Conditional Access](policy-risk-based-sign-in.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions](concept-conditional-access-report-only.md)
-

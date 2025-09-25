@@ -2,19 +2,19 @@
 title: Configure Appaegis Isolation Access Cloud for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Appaegis Isolation Access Cloud.
 
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 02/27/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Appaegis Isolation Access Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Appaegis Isolation Access Cloud.
 ---
 
-# Configure Appaegis Isolation Access Cloud for automatic user provisioning
+# Configure Appaegis Isolation Access Cloud for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to do in both Appaegis Isolation Access Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to Appaegis Isolation Access Cloud using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 

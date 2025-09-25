@@ -1,17 +1,14 @@
 ---
 title: About B2B Invitations
 description: Learn about the B2B collaboration invitation email you can send to business partners and external guest users who need to authenticate and access your apps.
-
- 
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 04/09/2025
-
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
-ms.custom: it-pro, seo-july-2024
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 # Customer intent: As a B2B collaboration user, I want to understand the elements of the invitation email, so that I can effectively invite partners to join my organization and provide them with the necessary information to make an informed decision.
 ---
 
@@ -65,7 +62,7 @@ The next section of the email shows where the invitee is redirected after accept
 
 ### Footer section
 
-The footer provides additional details about the invitation. If the organization [configured a privacy statement](~/fundamentals/properties-area.yml), the link to the statement is displayed here. Otherwise, a note indicates the organization's privacy statement isn't available.
+The footer provides additional details about the invitation. If the organization [configured a privacy statement](~/fundamentals/properties-area.md), the link to the statement is displayed here. Otherwise, a note indicates the organization's privacy statement isn't available.
 
 :::image type="content" source="media/invitation-email-elements/footer-section.png" alt-text="Screenshot showing the footer section in the email.":::
 

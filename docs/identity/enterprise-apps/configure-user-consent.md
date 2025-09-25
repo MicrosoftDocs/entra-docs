@@ -4,12 +4,12 @@ title: Configure how users consent to applications
 description: Configure user consent settings in Microsoft Entra ID to control when and how users grant permissions to your organization's data. Secure your environment with step‑by‑step guidance.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 06/15/2025
 ms.author: jomondi
 ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
@@ -36,6 +36,7 @@ To configure user consent, you need:
 
 - A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - A [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
+- A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role is only required when using the Microsoft Entra admin center.
 
 ## Configure user consent settings
 
@@ -47,9 +48,9 @@ You can configure user consent settings in Microsoft Entra ID using either the M
 
 To configure user consent settings through the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
-1. Browse to **Entra ID** > **Enterprise apps** > **Consent and permissions** > **User consent settings**.
+1. Browse to **Identity** > **Applications** > **Enterprise apps** > **Consent and permissions** > **User consent settings**.
 
 1. Under **User consent for applications**, select which consent setting you want to configure for all users.
 
@@ -60,6 +61,15 @@ To configure user consent settings through the Microsoft Entra admin center:
 :::zone-end
 
 :::zone pivot="ms-powershell"
+
+### Understand authorization and permission grant policies in Microsoft Graph PowerShell
+
+To configure user consent settings programmatically using Microsoft Graph PowerShell, it's important to understand the distinction between the tenant-wide **authorization policy** and individual **permission grant policies**. The `authorizationPolicy`, retrieved using [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) governs global settings such as whether users can consent to apps and which permission grant policies are assigned to the default user role. For example, you can disable user consent while still allowing developers to manage permissions for the apps they own by assigning only `ManagePermissionGrantsForOwnedResource.DeveloperConsent` in the `permissionGrantPoliciesAssigned` collection.
+
+On the other hand, the [permissionGrantPolicies](/powershell/module/microsoft.graph.identity.signins/get-mgpolicypermissiongrantpolicy) endpoint lists your current permission grant policies. These policies determine what permissions can be granted to applications and under what circumstances. Each policy 'includes' certain conditions, but 'excludes' others. When a user tries to consent to an application, the system checks the permission grant policies to see if any of them apply to the user's request. For example, the low-risk policy would allow users to consent to those permissions configured as 'low risk'. It includes these low-risk policies (as a GUID). In another scenario, if a user tries to consent in a context that matches the 'AdminOnly' policy, they're unable to consent.
+
+> [!NOTE]
+> Before updating consent settings with a `Update-MgPolicyPermissionGrantPolicy` command, always retrieve the current `authorizationPolicy` to identify which permission grant policies are already assigned. This ensures you preserve necessary permissions—such as those enabling developers to manage consent for apps they own—and avoid unintentionally removing existing functionality.
 
 To choose which app consent policy governs user consent for applications, use the [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?view=graph-powershell-1.0&preserve-view=true) module. The cmdlets used here are included in the [Microsoft.Graph.Identity.SignIns](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.SignIns) module.
 
@@ -120,6 +130,15 @@ $body = @{
 
 :::zone pivot="ms-graph"
 
+### Understand authorization and permission grant policies in Microsoft Graph
+
+To configure user consent settings programmatically using Microsoft Graph, it's important to understand the distinction between the tenant-wide **authorization policy** and individual **permission grant policies**. The `authorizationPolicy` (retrieved using `GET https://graph.microsoft.com/v1.0/policies/authorizationPolicy/authorizationPolicy`) governs global settings such as whether users can consent to apps and which permission grant policies are assigned to the default user role. For example, you can disable user consent while still allowing developers to manage permissions for the apps they own by assigning only `ManagePermissionGrantsForOwnedResource.DeveloperConsent` in the `permissionGrantPoliciesAssigned` collection.
+
+On the other hand, the `permissionGrantPolicies` endpoint (`GET https://graph.microsoft.com/v1.0/policies/permissionGrantPolicies`) lists your current permission grant policies. These policies determine what permissions can be granted to applications and under what circumstances. Each policy 'includes' certain conditions, but 'excludes' others. When a user tries to consent to an application, the system checks the permission grant policies to see if any of them apply to the user's request. For example, the low-risk policy would allow users to consent to those permissions configured as 'low risk'. It includes these low-risk policies (as a GUID). In another scenario, if a user tries to consent in a context that matches the 'AdminOnly' policy, they're unable to consent.
+
+> [!NOTE]
+> Before updating consent settings with a `PATCH` request, always retrieve the current `authorizationPolicy` to identify which permission grant policies are already assigned. This ensures you preserve necessary permissions—such as those enabling developers to manage consent for apps they own—and avoid unintentionally removing existing functionality.
+
 Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which app consent policy governs user consent for applications. You need to sign in as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 ### Disable user consent using Microsoft Graph
@@ -175,6 +194,8 @@ PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
 ```
 
 :::zone-end
+
+Any updates to user consent settings only affect future consent operations for applications. Existing consent grants remain unchanged, and users continue to have access based on the permissions previously granted. To learn how to revoke existing consent grants, see [Review permissions granted to enterprise applications](manage-application-permissions.md).
 
 > [!TIP]
 > To allow users to request an administrator's review and approval of an application that the user isn't allowed to consent to, [enable the admin consent workflow](configure-admin-consent-workflow.md). For example, you might do this when user consent has been disabled or when an application is requesting permissions that the user isn't allowed to grant.

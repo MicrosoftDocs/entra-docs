@@ -1,15 +1,13 @@
 ---
 title: B2B Invitation Redemption
 description: Learn how Microsoft Entra B2B invitation redemption works, including guest sign-in, consent process, and privacy terms. Ensure secure access for your organization’s resources.
-
 ms.topic: concept-article
 ms.date: 05/14/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
-ms.custom: seo-july-2024
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: seo-july-2024, sfi-image-nochange
 # Customer intent: As a Microsoft Entra B2B administrator, I want to understand the redemption process for guest users, so that I can ensure they can access our resources and complete the consent process smoothly.
 ---
 
@@ -97,7 +95,7 @@ When a guest signs in to a resource in a partner organization for the first time
    :::image type="content" source="media/redemption-experience/new-review-permissions.png" alt-text="Screenshot showing the Review permissions page.":::
 
    > [!NOTE]
-   > For information about how you as a tenant administrator can link to your organization's privacy statement, see [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.yml).
+   > For information about how you as a tenant administrator can link to your organization's privacy statement, see [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.md).
 
 2. If terms of use are configured, the guest opens and reviews the terms of use, and then selects **Accept**. 
 

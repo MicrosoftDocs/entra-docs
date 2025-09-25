@@ -2,14 +2,14 @@
 title: Execute employee termination tasks by using lifecycle workflows
 description: Learn how to remove users from an organization in real time on their last day of work by using lifecycle workflows in the Microsoft Entra admin center.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 04/08/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial
+ms.custom: template-tutorial, sfi-image-nochange
 ---
 
 # Execute employee termination tasks by using lifecycle workflows

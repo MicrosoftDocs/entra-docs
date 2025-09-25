@@ -3,7 +3,7 @@ title: Delegated administration in Microsoft Entra ID
 description: The relationship between older delegated admin permissions and new granular delegated admin permissions in Microsoft Entra ID
 keywords: 
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.author: barclayn
 ms.reviewer: yuank
 ms.date: 12/13/2024

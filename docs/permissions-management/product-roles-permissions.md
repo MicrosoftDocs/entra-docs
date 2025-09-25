@@ -2,7 +2,7 @@
 title: Microsoft Entra Permissions Management roles and permissions
 description: Review roles and the level of permissions assigned in Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 ms.topic: how-to
 ms.date: 04/01/2025

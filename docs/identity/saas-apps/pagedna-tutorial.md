@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with PageDNA
+title: Configure PageDNA for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and PageDNA.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PageDNA so that I can control who has access to PageDNA, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with PageDNA
+# Configure PageDNA for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate PageDNA with Microsoft Entra ID. When you integrate PageDNA with Microsoft Entra ID, you can:
 
@@ -85,6 +85,13 @@ Follow these steps to enable Microsoft Entra SSO.
     1. In the **Identifier (Entity ID)** box, type a URL by using one of the following patterns:
 
         | **Identifier** |
+        |------|
+        |`https://stores.pagedna.com/<your site>/saml2ep.cgi`|
+        |`https://www.nationsprint.com/<your site>/saml2ep.cgi`|
+    
+    1. In the **Reply URL (Assertion Consumer Service URL)** box, type a URL by using one of the following patterns:
+
+        | **Reply URL** |
         |------|
         |`https://stores.pagedna.com/<your site>/saml2ep.cgi`|
         |`https://www.nationsprint.com/<your site>/saml2ep.cgi`|

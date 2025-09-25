@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
 ms.date: 02/27/2024
-ms.reviewer: jamesmantu
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: quickstart

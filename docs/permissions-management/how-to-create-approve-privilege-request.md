@@ -2,7 +2,7 @@
 title: Create or approve a request for permissions in the Remediation dashboard
 description: How to create or approve a request for permissions in the Remediation dashboard.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

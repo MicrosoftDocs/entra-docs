@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 09/02/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 
 1. From the **App registrations** page, select the application that you created (such as *edit-profile-service*) to open its **Overview** page.

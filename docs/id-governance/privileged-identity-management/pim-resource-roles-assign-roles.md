@@ -3,12 +3,12 @@ title: Assign Azure resource roles in Privileged Identity Management
 description: Learn how to assign Azure resource roles in Privileged Identity Management (PIM).
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.subservice: privileged-identity-management
-ms.custom: sfi-ga-nochange
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Assign Azure resource roles in Privileged Identity Management

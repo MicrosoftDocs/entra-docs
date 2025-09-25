@@ -1,10 +1,10 @@
 ---
 title: Retrieve and return data from an OnAttributeCollectionSubmit event
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionSubmit event for External ID customer configurations.
-author: msmimart
-manager: CelesteDG
-ms.author: mimart 
-ms.date: 04/28/2025
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
+ms.date: 09/16/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -24,11 +24,6 @@ To modify the sign-up experience for your customer self-service sign-up user flo
 - **showBlockPage** - Show an error message and block the user from signing up.
 
 This article describes the REST API schema for the OnAttributeCollectionSubmit event. (See also the related article [Custom Extension for OnAttributeCollectionStart event](custom-extension-OnAttributeCollectionStart-reference.md).)
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
     
 ## REST API schema
 
@@ -42,13 +37,19 @@ The request to your REST API is in the format shown in the following example. In
 
 The request contains the user attributes that are selected in the user flow for collection during self-service sign-up. Included are built-in attributes (for example, givenName and companyName) and [custom attributes already defined](~/external-id/customers/how-to-define-custom-attributes.md) (for example, universityGroups, graduationYear, and onMailingList). Your REST API can't add new attributes.
 
-The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password isn't sent. For attributes with multiple values, the values are sent as a comma-delimited string.
+The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password isn't sent. For attributes with multiple values, the values are sent as a comma-delimited string. The following HTTP request demonstrates how Microsoft Entra invokes your REST API. 
 
-#### JSON
+```http
+POST https://example.azureWebsites.net/api/functionName
+
+Content-Type: application/json
+
+[Request payload]
+```
+
+The following JSON document provides an example of a request payload:
 
 ```json
-POST https://exampleAzureFunction.azureWebsites.net/api/functionName
-
 {
   "type": "microsoft.graph.authenticationEvent.attributeCollectionSubmit",
   "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/<resourceAppguid>",
@@ -76,7 +77,7 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
             "appId": "<Your Test Application App Id>",
             "appDisplayName": "My Test application",
             "displayName": "My Test application"
-        },
+        }
     },
     "userSignUpInfo": {
       "attributes": {
@@ -120,16 +121,24 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
 
 ### Response from the external REST API
 
-Microsoft Entra ID expects a REST API response in the following format. The response value types match the request value types, for example:
+The response value types match the request value types, for example:
 
 - If the request contains an attribute `graduationYear` with an `@odata.type` of `int64DirectoryAttributeValue`, the response should include a `graduationYear` attribute with an integer value, such as `2010`.
 - If the request contains an attribute with multiple values specified as a comma-delimited string, the response should contain the values in a comma-delimited string.
 
-The **continueWithDefaultBehavior** action specifies that your external REST API is returning a continuation response.
+Microsoft Entra ID expects a REST API response in the following format. 
 
-```json
+```http
 HTTP/1.1 200 OK
 
+Content-Type: application/json
+
+[JSON document]
+```
+
+In the HTTP response, provide one of following JSON documents. The **continueWithDefaultBehavior** action specifies that your external REST API is returning a continuation response.
+
+```json
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",
@@ -146,8 +155,6 @@ The **modifyAttributeValues** action specifies that your external REST API retur
 
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",
@@ -167,8 +174,6 @@ HTTP/1.1 200 OK
 The **showBlockPage** action specifies that your external REST API is returning a blocking response.
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",
@@ -186,8 +191,6 @@ HTTP/1.1 200 OK
 The **showValidationError** action specifies that your REST API is returning a validation error and an appropriate message and status code.
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",

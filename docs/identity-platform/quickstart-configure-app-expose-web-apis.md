@@ -2,13 +2,13 @@
 title: "How to configure an application to expose a web API"
 description: In this how-to guide, register a web API with the Microsoft identity platform and configure its scopes, exposing it to clients for permissions-based access to the API's resources.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 05/14/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I need learn to how to register my web API with the Microsoft identity platform and expose permissions (scopes) to make the API's resources available to users of my client application.
 ---
 

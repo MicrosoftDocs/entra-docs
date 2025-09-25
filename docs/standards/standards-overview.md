@@ -3,7 +3,7 @@ title: Microsoft Entra identity standards overview
 description: You can configure Microsoft Entra ID to meet governmental and industry standards for identity management.
 ms.service: entra
 ms.subservice: standards
-ms.topic: conceptual
+ms.topic: concept-article
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco

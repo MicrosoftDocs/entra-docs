@@ -28,7 +28,7 @@ In this article, learn about the Face Check billing model and linking your Verif
 
 To take advantage of the consumptive billing, your Verified ID authority must be linked to an Azure subscription.
 
-|If your Verified ID authority is:  |You need to:  |
+|**If your Verified ID authority is:**  |**You need to:**  |
 |---------|---------|
 | A Verified ID authority not yet linked to a subscription     | [Link your Verified ID authority to an Azure subscription](#link-your-verified-id-authority-to-a-subscription) to activate consumptive billing.        |
 | A Verified ID authority linked to a subscription     | Do nothing. You're automatically billed monthly for Face Check verifications.        |
@@ -39,7 +39,7 @@ In your Microsoft Verified ID, you can verify credentials from issuer authoritie
 
 Verified ID generates individual billing events for each unique verification performed by the platform. Whether that verification succeeds or fails. The following matrix provides further clarity on Face Check verification scenarios that are billed:
 
-|Face Check Verification scenario  |Emits billing event </br>(yes/no)  |
+|**Face Check Verification scenario**  |**Emits billing event </br>(yes/no)**  |
 |---------|---------|
 | Verification request fails after reading QR Code     | No|
 | Verification request returns service error: The Verified ID service is unable to process the verification request     |    No     |
@@ -48,13 +48,13 @@ Verified ID generates individual billing events for each unique verification per
 
 ## Link your Verified ID authority to a subscription
 
-1. Go to the Verified ID overview page. Scroll down to the new Add-ons section and `Enable` the Face Check add-on
+1. Go to the **Verified ID** overview page. Scroll down to the new **Add-ons** section and **Enable** the Face Check add-on
 :::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
 
-1. In the Link a subscription section, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
+1. In the **Link a subscription** section, select a **Subscription**, a **Resource group**, and the **Resource location**. Then select **Validate**. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 :::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
 
-1. `Enable` the add-on once the information is validated
+1. **Enable** the add-on once the information is validated
 :::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot of using Face Check."::: 
 
 ## What if I can't find a subscription?

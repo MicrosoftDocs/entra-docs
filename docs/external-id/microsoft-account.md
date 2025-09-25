@@ -10,7 +10,7 @@ ms.date: 04/14/2025
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: seo-july-2024
 

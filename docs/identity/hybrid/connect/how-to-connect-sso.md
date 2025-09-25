@@ -3,15 +3,15 @@ title: 'Microsoft Entra Connect: Seamless single sign-on'
 description: This topic describes Microsoft Entra seamless single sign-on and how it allows you to provide true single sign-on for corporate desktop users inside your corporate network.
 
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 ---
 # Microsoft Entra seamless single sign-on
@@ -61,12 +61,12 @@ For more information on how SSO works with Windows 10 using PRT, see: [Primary R
 - It's supported on web browser-based clients and Office clients that support [modern authentication](/microsoft-365/enterprise/modern-auth-for-office-2013-and-2016) on platforms and browsers capable of Kerberos authentication:
 
 | OS\Browser |Internet Explorer|Microsoft Edge\*\*\*\*|Google Chrome|Mozilla Firefox|Safari|
-| --- | --- |--- | --- | --- | -- 
-|Windows 10|Yes\*|Yes|Yes|Yes\*\*\*|N/A
-|Windows 8.1|Yes\*|Yes*\*\*\*|Yes|Yes\*\*\*|N/A
-|Windows 8|Yes\*|N/A|Yes|Yes\*\*\*|N/A
-|Windows Server 2012 R2 or above|Yes\*\*|N/A|Yes|Yes\*\*\*|N/A
-|Mac OS X|N/A|N/A|Yes\*\*\*|Yes\*\*\*|Yes\*\*\*
+| --- | --- |--- | --- | --- | -- |
+|Windows 10/11|Yes\*|Yes|Yes|Yes\*\*\*|N/A|
+|Windows 8.1|Yes\*|Yes*\*\*\*|Yes|Yes\*\*\*|N/A|
+|Windows 8|Yes\*|N/A|Yes|Yes\*\*\*|N/A|
+|Windows Server 2012 R2 or above|Yes\*\*|Yes****|Yes|Yes\*\*\*|N/A|
+|Mac OS X|N/A|N/A|Yes\*\*\*|Yes\*\*\*|Yes\*\*\*|
 
  > [!NOTE]
  >Microsoft Edge legacy is no longer supported

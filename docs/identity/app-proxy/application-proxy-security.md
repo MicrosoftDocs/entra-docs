@@ -2,10 +2,10 @@
 title: Security considerations for Microsoft Entra application proxy
 description: Covers security considerations for using Microsoft Entra application proxy
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj

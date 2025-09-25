@@ -2,13 +2,13 @@
 title: Managed identities for Azure resources frequently asked questions
 description: Frequently asked questions about managed identities
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: faq
 ms.date: 02/27/2025
-ms.author: ryanwi
+ms.author: shermanouko
 ---
 
 # Managed identities for Azure resources frequently asked questions
@@ -20,7 +20,7 @@ ms.author: ryanwi
 You can find the list of resources that have a system-assigned managed identity by using the following Azure CLI Command: 
 
 ```azurecli-interactive
-az resource list --query "[?identity.type=='SystemAssigned'].{Name:name,  principalId:identity.principalId}" --output table
+az resource list --query "[?identity.type=='SystemAssigned'].{Name:name, principalId:identity.principalId}" --output table
 ```
 
 ### Which Azure role-based access control (RBAC) permissions are required to use a managed identity on a resource?

@@ -2,7 +2,7 @@
 title: Native authentication challenge types
 description: Learn how apps that use native authentication notify Microsoft Entra about the authentication methods that they support. 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external

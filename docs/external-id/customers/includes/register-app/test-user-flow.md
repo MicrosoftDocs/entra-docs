@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 10/07/2024
 ms.author: cmulligan
-ms.manager: celestedg
+ms.manager: dougeby
 ---
 
 To test a [user flow](/entra/external-id/customers/how-to-user-flow-sign-up-sign-in-customers) with this app registration, enable the implicit grant flow for authentication.

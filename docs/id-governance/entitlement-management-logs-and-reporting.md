@@ -2,7 +2,7 @@
 title: Archive & report with Azure Monitor - entitlement management
 description: Learn how to archive logs and create reports with Azure Monitor in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to

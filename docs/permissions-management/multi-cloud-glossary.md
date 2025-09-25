@@ -2,7 +2,7 @@
 title: Microsoft Entra Permissions Management glossary
 description: Microsoft Entra Permissions Management glossary
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: glossary

@@ -1,24 +1,19 @@
 ---
-title: Multi-Geo for Microsoft Entra Private Access (Preview)
+title: Multi-Geo for Microsoft Entra Private Access
 description: "Learn how to enable Multi-Geo Capability for Microsoft Entra Private Access to optimize traffic flow from Microsoft Entra Clients to Microsoft Entra Apps."
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to   
-ms.date: 04/30/2025
+ms.date: 08/18/2025
 ms.reviewer: sumi
 
 #customer intent: As an IT admin, I want to enable Multi-Geo Capability for Microsoft Entra Private Access so that I can optimize traffic flow from Microsoft Entra Clients to Microsoft Entra Apps.
 
 ---
-# Enable multi-Geo capability for Microsoft Entra Private Access (Preview)
+# Enable multi-Geo capability for Microsoft Entra Private Access
 Multi-Geo capability can help optimize the traffic flow from Microsoft Entra clients to Microsoft Entra apps through private access. This article explains how to enable the multi-Geo capability for Microsoft Entra Private Access.
-
-> [!IMPORTANT]
-> Multi-Geo capability for Microsoft Entra Private Access is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. 
-> The preview is for testing purposes; don't use the preview for production traffic. We recommend that you use a test tenant for the preview. If you must use a production tenant for testing, don't use production connector groups. Instead, create a separate test connector group. 
 
 ## Prerequisites
 
@@ -33,22 +28,20 @@ Multi-Geo capability helps optimize traffic flow from Microsoft Entra clients to
 :::image type="content" source="media/how-to-enable-multi-geo/multi-geo-support-diagram.svg" alt-text="Diagram that illustrates how Multi-Geo support routes traffic with Microsoft Entra private network connectors.":::
 
 ## Enable multi-Geo capability
-To enable the multi-Geo capability for Microsoft Entra Private Access, complete the following steps. This procedure involves creating connector groups in different geographic regions, installing connectors, and adding application segments to the connector groups.
+To enable the multi-Geo capability for Microsoft Entra Private Access, complete the following steps. This procedure involves creating connector group in different geographic region, installing connectors, and adding application segments to the connector group.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Applications** > **Enterprise applications** > **Private Network connectors**.    
-1. Create two connector groups, each associated with a different geographic region.   
+1. Create a connector group, associate it with a geographic region of your choice.   
     1. Select **+ New Connector Group**.   
     1. In the **New Connector Group** pane, enter a name for the connector group.
-    1. Under Advanced settings, select the optimized **country/region** for the connector group. The region you select determines the backend that the connector group connects to.
-    1. Repeat steps **a** - **c** for the second connector group.
-1. Install a connector in each region. These connector installations require working with an admin in the associated region. For more information, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md).   
-1. Add an application segment to each of the connector groups.   
+    1. Under Advanced settings, select the optimized **country/region** for the connector group. The region you select determines the backend that the connector group connects to.    
+1. Install a connector. The connector installation require working with an admin in the associated region. For more information, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md).   
+1. Add an application segment to the connector group.   
     1. Browse to **Global Secure Access** > **Applications** > **Enterprise applications** > **Network access properties**.   
     1. Select **+ Add application segment**.
     1. Select the application segment you want to add to the connector group.  
-    1. Select **Save**.  
-    1. Repeat steps **a** - **d** for the second connector group.
+    1. Select **Save**.      
 1. After about 30 minutes, the multi-Geo configuration takes effect and traffic begins flowing. 
 
 > [!NOTE]

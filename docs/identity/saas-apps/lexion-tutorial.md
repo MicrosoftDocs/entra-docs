@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Lexion
+title: Configure Lexion for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Lexion.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Lexion
+# Configure Lexion for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Lexion with Microsoft Entra ID. When you integrate Lexion with Microsoft Entra ID, you can:
 

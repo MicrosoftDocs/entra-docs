@@ -3,12 +3,12 @@ title: Check status of a Lifecycle workflow
 description: This article guides a user on checking the status of a Lifecycle workflow
 author: OWinfreyATL
 ms.author: owinfrey
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 01/02/2025
-ms.custom: template-how-to
+ms.custom: template-how-to, sfi-image-nochange
 ---
 
 

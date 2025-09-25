@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT administrator, I want to configure F5 BIG-IP Access Policy Manager for header-based single sign-on, so that I can implement secure hybrid access with single sign-on to header-based applications using F5 BIG-IP advanced configuration.
 ---
 

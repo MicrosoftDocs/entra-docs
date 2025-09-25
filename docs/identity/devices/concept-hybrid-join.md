@@ -4,12 +4,12 @@ description: Learn how device identity management can help you to manage devices
 
 ms.service: entra-id
 ms.subservice: devices
-ms.topic: conceptual
-ms.date: 05/09/2025
+ms.topic: concept-article
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 

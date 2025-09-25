@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Predictix Ordering
+title: Configure Predictix Ordering for Single sign-on with Microsoft Entra ID
 description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and Predictix Ordering.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Predictix Ordering so that I can control who has access to Predictix Ordering, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Predictix Ordering
+# Configure Predictix Ordering for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Predictix Ordering with Microsoft Entra ID. When you integrate Predictix Ordering with Microsoft Entra ID, you can:
 

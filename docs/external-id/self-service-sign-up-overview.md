@@ -7,7 +7,7 @@ ms.topic: concept-article
 ms.date: 10/21/2024
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As a developer building an application for external users, I want to enable self-service sign-up functionality, so that users can easily sign up and access my app without intervention.

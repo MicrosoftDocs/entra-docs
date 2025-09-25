@@ -4,7 +4,7 @@ description: Learn how to add an application to a user flow to associate the app
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

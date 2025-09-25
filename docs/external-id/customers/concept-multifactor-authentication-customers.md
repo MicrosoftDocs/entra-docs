@@ -4,7 +4,7 @@ description: Learn about using MFA to secure apps in your external tenant and en
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 
 ms.subservice: external

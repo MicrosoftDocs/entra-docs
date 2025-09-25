@@ -1,15 +1,14 @@
 ---
 title: Quickstart - Access and create new tenant
-description: Instructions about how to find Microsoft Entra ID and how to create a
-  new tenant for your organization.
+description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
 ms.date: 03/05/2025
 ms.author: barclayn
-ms.custom: it-pro, fasttrack-edit, mode-other
+ms.custom: it-pro, fasttrack-edit, mode-other, sfi-image-nochange
 ms.collection: M365-identity-device-management
 ---
 
@@ -59,7 +58,7 @@ If you're not going to continue to use this application, you can delete the tena
 
 ## Next steps
 
-- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.yml).
+- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
 
 - Add users, see [Add or delete a new user](./add-users.md)
 

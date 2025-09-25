@@ -2,7 +2,7 @@
 title: View information about active and completed tasks in Permissions Management
 description: How to view information about active and completed tasks in the Activities pane in Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

@@ -2,11 +2,11 @@
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/19/2024
+ms.date: 08/08/2025
 ms.author: barclayn
 ms.custom: pim, sfi-ga-nochange
 ---
@@ -110,7 +110,14 @@ You can require users to enter a support ticket number when they activate the el
 
 ### Require approval to activate
 
-You can require approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, you must select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, Privileged Role Administrator/Global Administrators become the default approvers.
+We recommend requiring approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, active Privileged Role Administrators/Global Administrators become the default approvers.
+
+> [!IMPORTANT]
+> You will be locked out of your tenant if all of the following conditions are true:
+> - All Privileged Role Administrators/Global Administrators have eligible assignments, but none are active.
+> - Approval is required for activation.
+> - No approvers are configured.
+> <br><strong>Avoid this situation</strong> by configuring [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) and configuring specific approvers.
 
 To learn more about approvals, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](./pim-approval-workflow.md).
 

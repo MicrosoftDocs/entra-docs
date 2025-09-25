@@ -4,10 +4,11 @@ description: This operations reference guide describes the checks and actions yo
 author: martincoetzer
 manager: travisgr
 ms.service: entra
-ms.topic: conceptual
+ms.topic: article
 ms.subservice: architecture
 ms.date: 08/25/2024
 ms.author: martinco
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra authentication management operations reference guide

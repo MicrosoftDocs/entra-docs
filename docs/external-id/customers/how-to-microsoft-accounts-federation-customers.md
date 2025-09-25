@@ -2,11 +2,11 @@
 title: Add MSA for customer sign-in
 description: Learn how to add MSA as an identity provider for your external tenant.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 03/12/2025
+ms.date: 09/16/2025
 ms.author: cmulligan
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -18,11 +18,6 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 By setting up federation with Microsoft account (live.com) using OpenID Connect (OIDC) identity provider, you enable users to sign up and sign in to your applications using their existing Microsoft accounts (MSA).
 After you add the MSA (live.com) as one of your user flow's sign-in options, customers can sign up and sign in to your application with their Microsoft account.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=MSA)
->
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Microsoft personal account (live.com)” use case.
 
 ## Prerequisites
 
@@ -37,7 +32,7 @@ To enable sign-in for users with a Microsoft account, you need to create an appl
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **App registrations** then select **New registration**.
 1. Name the application, for example *ContosoApp*.
-1. Under **Supported account types**, select _Personal Microsoft accounts only_.
+1. Under **Supported account types**, select _Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant) and personal Microsoft accounts (e.g., Skype, Xbox)_.
 1. Under **Redirect URI**, select **Web** and enter your populated redirect URI explained [here](/entra/external-id/customers/how-to-custom-oidc-federation-customers#set-up-your-openid-connect-identity-provider)
 1. Select **Register**.
 

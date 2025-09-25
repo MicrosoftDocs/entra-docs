@@ -3,7 +3,7 @@ title: "Quickstart: Access the Global Secure Access area of the Microsoft Entra 
 description: Learn how to access the Global Secure Access area of the Microsoft Entra admin center.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: quickstart
 ms.date: 02/21/2025
