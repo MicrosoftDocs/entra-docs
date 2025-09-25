@@ -21,7 +21,7 @@ By integrating Arkose Labs, HUMAN, or both with Microsoft Entra External ID, you
 
 This article explains how to integrate fraud protection providers with Microsoft Entra External ID.
 
-::: zone pivot="arkose-fraud-protection"
+::: zone pivot="arkose"
 
 ## How does it work
 
@@ -187,7 +187,7 @@ In this step, you link the Arkose fraud protection provider to your application 
 
 ::: zone-end  
 
-::: zone pivot="human-fraud-protection"
+::: zone pivot="human"
 
 ## How does HUMAN Security work
 

@@ -386,7 +386,7 @@ groups:
   title: Fraud protection integration in external tenants
   prompt: Choose an option
   pivots:
-  - id: arkose-fraud-protection
+  - id: arkose
     title: Arkose
-  - id: human-fraud-protection
+  - id: human
     title: HUMAN    
