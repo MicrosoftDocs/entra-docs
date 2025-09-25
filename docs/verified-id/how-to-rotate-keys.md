@@ -8,9 +8,8 @@ ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
 ms.author: barclayn
----
-
 #Customer intent: As an administrator, I'm looking for information on how to rotate signing keys.
+---
 
 # Rotate signing keys
 
