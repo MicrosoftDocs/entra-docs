@@ -40,20 +40,6 @@ For more information, see: [Configure cross-tenant synchronization](../identity
 
 ---
 
-### General Availability - Application Based Authentication on Microsoft Entra Connect Sync
-
-**Type:** New feature    
-**Service category:** Microsoft Entra Connect    
-**Product capability:** Microsoft Entra Connect    
-
-The Application-Based Authentication (ABA) feature is now the default authentication method for Microsoft Entra Connect. It enables Microsoft Entra Connect to securely authenticate with Microsoft Entra ID without relying on a locally stored password. This feature uses a Microsoft Entra ID application identity and Oauth 2.0 client credential flow to authenticate with Microsoft Entra ID. Microsoft Entra Connect automatically creates a single-tenant third-party application in the customer’s Microsoft Entra ID tenant, registers a certificate as the application’s credential, and grants the required permissions for directory synchronization.   
-
-The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available in the Microsoft Entra Admin Center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
-
-Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details of the change.
-
----
-
 ### General Availability - Dedicated new 1st party resource application to enable AD to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
 
 **Type:** Plan for change    
