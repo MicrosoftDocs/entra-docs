@@ -1072,7 +1072,7 @@ Content-Type: application/json
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to complete MFA.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the one-time passcode. Issued if `challenge_type` is *oob*  |
-|`challenge_channel`| The type of the MFA challenge channel through which the one-time passcode was sent. At the moment, Microsoft Entra supports *email*. |
+|`challenge_channel`| The type of the MFA challenge channel through which the one-time passcode was sent. Surported values: *email, sms*. |
 |`challenge_target_label` |An obfuscated email where the one-time passcode was sent.|
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. | 
 
@@ -1189,7 +1189,13 @@ Content-Type: application/json
             "challenge_type":"oob",
             "challenge_channel":"email",
             "login_hint":"c***r@co**o**o.com"
-        }
+        },
+        {   
+          "id": "1b1b1b1b-2222-cccc-3333-4d4d4d4d4d4d",   
+          "challenge_type": "oob",   
+          "challenge_channel": "sms",   
+          "login_hint": "+1********6   
+        }
     ]
 }
 ```
@@ -1392,9 +1398,9 @@ The strong authentication methods object has the following properties:
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `id`  |  String key of the method. Supported values*email, sms*.  |
+| `id`  |  String key of the method. Supported values *email, sms*.  |
 | `challenge_type` | Challenge type selected for the user to use as the MFA method. Current supported challenge type is *oob*.  |
-| `challenge_channel` | The type of the channel to which the the MFA method is sent. Supported values*email, sms*. |
+| `challenge_channel` | The type of the channel to which the the MFA method is sent. Supported values *email, sms*. |
 | `login_hint` | The hint for the strong authentication method such as an obfuscated email. This value is used by the client app to prepopulate the email textbox.|
 
 
