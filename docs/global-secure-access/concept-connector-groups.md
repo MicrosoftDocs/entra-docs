@@ -23,12 +23,12 @@ Use connector groups when applications run in different locations. Create groups
 
 ## Prerequisites
 
-You need multiple connectors to use connector groups. The service automatically adds new connectors to the **Default** connector groupTo install connectors, see [configure connectors](how-to-configure-connectors.md).
+You need multiple connectors to use connector groups. The service automatically adds new connectors to the **Default** connector group. To install connectors, see [configure connectors](how-to-configure-connectors.md).
 
 
 ## Assign applications to your connector groups
 
-Assign an application to a connector group when you publish it. Change theChange the connector's group at any time.
+Assign an application to a connector group when you publish it. Change the connector's group at any time.
 
 ## Use cases for connector groups
 
