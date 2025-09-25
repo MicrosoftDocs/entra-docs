@@ -113,7 +113,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    1. Change the **SSO Provider** from **Generic** to **Azure**.
    2. Copy the **Audience/Entity ID** value and paste it into the **Identifier (Entity ID)** text box in the **Basic SAML Configuration** section.
-   3. Copy **Initiate SSO URL** value and paste it into the **Sign on URL** text box in the **Basic SAML Configuration** section.
+   3. Copy the **Initiate SSO URL** value and paste it into the **Sign on URL** text box in the **Basic SAML Configuration** section.
    4. Select **Upload SAML Metadata** to upload the downloaded **metadata XML** file from the Azure portal. After uploading the metadata file the above values are auto-populated and save changes.
 
 
