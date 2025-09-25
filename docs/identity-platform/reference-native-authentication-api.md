@@ -143,7 +143,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -282,7 +282,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -464,7 +464,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -582,7 +582,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 #### Redirect response 
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -700,7 +700,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -897,7 +897,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1080,7 +1080,12 @@ Content-Type: application/json
 
 #### Redirect response
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+A fallback to a web-based authentication flow may be needed in the following scenarios:
+
+- The client app doesn't support the authentication method or capabilities that Microsoft fEntra requires.
+- The user attempts to use SMS as a strong auth method, but fraud protection blocks the request if it deems it as high risk.
+
+In these scenarios, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1217,7 +1222,7 @@ The MFA method object has the following properties:
 
 #### Redirect response
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1691,7 +1696,7 @@ Content-Type: application/json
 
 #### Redirect response 
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
@@ -1811,7 +1816,7 @@ Content-Type: application/json
 
 #### Redirect response
 
-If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in its response:
+If the client app doesn't support the authentication method or capabilities that Microsoft Entra requires, a fallback to the web-based authentication flow is needed. In this scenario, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
 ```http
 HTTP/1.1 200 OK
