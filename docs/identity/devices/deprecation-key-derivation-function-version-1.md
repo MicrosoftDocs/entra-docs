@@ -14,7 +14,7 @@ ms.reviewer: sgrandhi
 ---
 # Security update to remove KDFv1 algorithm support in Microsoft Entra authentication
 
-Microsoft is removing support for the Key Derivation Function version 1 (KDFv1) algorithm used for the authentication of Microsoft Entra joined or Microsoft Entra hybrid joined devices in builds of Windows released before July 2021. 
+Microsoft is removing support for the Key Derivation Function version 1 (KDFv1) algorithm used for Microsoft Entra device authentication in Windows builds released before July 2021. 
 
 The KDFv1 algorithm was historically used for device authentication in earlier versions of Windows. A critical security flaw was discovered that allowed unauthorized authentication, as outlined in [CVE-2021-33781](https://www.cve.org/CVERecord?id=CVE-2021-33781). To address this vulnerability, Microsoft issued a Windows security update in July 2021. All Windows builds released after July 2021 no longer use the KDFv1 algorithm.
 
@@ -37,7 +37,7 @@ Users on unpatched devices encounter the following error message when attempting
 This error message is also present in the Microsoft Entra sign-in logs, allowing administrators to identify authentication failures due to the deprecated KDFv1 algorithm.
 
 > [!NOTE]
-> Due to the incremental rollout of the security update, authentication failures on unpatched Windows devices may initially appear transient or intermittent.  Early in the rollout retrying authentication will likely succeed. It is important to address these issues promptly by applying Windows security updates to maintain seamless authentication experiences.
+> Due to the incremental rollout of the security update, authentication failures on unpatched Windows devices may initially appear transient or intermittent.  Early in the rollout retrying authentication will likely succeed. It is important to address these issues promptly by applying Windows security updates to maintain seamless authentication experiences.  This applies to all Windows devices that authenticate using Microsoft Entra, including Entra joined, Entra hybrid joined, and Entra registered devices.
 
 ## Actions required
 
