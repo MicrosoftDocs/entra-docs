@@ -797,9 +797,9 @@ To request for security tokens, your app interacts with three endpoints, `oauth/
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
 | `oauth/v2.0/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
-|   `oauth/v2.0/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to indicate the user's choice of strong authentication method challenge channel.|
+|   `oauth/v2.0/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to the user for second factor authentication method.|
 |  `oauth/v2.0/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge or register a strong authentication method.|
-| `oauth/v2.0/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered strong authentication methods. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods)|
+| `oauth/v2.0/introspect` | Your app calls it to request for a list of registered strong authentication methods. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods)|
 
 ### Sign-in challenge types
 
@@ -874,10 +874,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-|`capabilities`| No | Space-separated flags that describe the client app’s “how” readiness. While `challenge_type` defines what methods can be challenged, `capabilities` tell the native authentication API which extra flows the client app can handle and which UIs it can show. For example, `mfa_required` means another `/challenge` and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If a needed capability isn’t advertised by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
-
-
-A space-separated list of capabilities, which informs Microsoft Entra that the customer app can handle the specified challenge types not only during standard authentication flows, but also in scenarios where multifactor authentication is needed. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](concept-native-authentication-challenge-types.md)
+|`capabilities`| No | Space-separated flags that describe the client app’s "how" readiness. While `challenge_type` defines what methods can be challenged, `capabilities` tell the native authentication API which extra flows the client app can handle and which UIs it can show. For example, `mfa_required` means another `/challenge` and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If a needed capability isn't advertised by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
 
 #### Success response
 
@@ -988,8 +985,8 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/oauth2/v2.0/initiate` endpoint. The previous request can also be call to the `/oauth2/v2.0/token` or `/oauth2/v2.0/introspect` endpoints if the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-|`id`| No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods). |
-| `challenge_channel` | No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|
+|`id`| No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app changes the user for a second factor authentication. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods). |
+<!--| `challenge_channel` | No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app changes the user for a second factor authentication. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|-->
 
 #### Success response
 
@@ -1028,7 +1025,7 @@ If the tenant administrator configured email with password in the Microsoft Entr
 
 **Response if request is to select an authentication method**
 
-If the request to the `/oauth2/v2.0/challenge` endpoint is to select a method for the user to authenticate with, Microsoft Entra returns a success response, which includes a challenge type of *password*.
+If the request to the `/oauth2/v2.0/challenge` endpoint is to select a method for the user to authenticate with (first factor authentication), Microsoft Entra returns a success response, which includes a challenge type of *password*.
 
 Example:
 
@@ -1052,7 +1049,7 @@ Content-Type: application/json
 
 **Response if request is to complete an MFA challenge**
 
-If the request to the `/oauth2/v2.0/challenge` endpoint is to complete an MFA challenge, Microsoft Entra sends a one-time passcode to the user’s selected MFA challenge channel and provides more information about the one-time passcode.
+If the request to the `/oauth2/v2.0/challenge` endpoint is to complete an MFA challenge (second factor authentication), Microsoft Entra sends a one-time passcode to the user’s selected MFA challenge channel and provides more information about the one-time passcode.
 
 ```http
 HTTP/1.1 200 OK
@@ -1075,7 +1072,7 @@ Content-Type: application/json
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to complete MFA.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways for the user to enter the one-time passcode. Issued if `challenge_type` is *oob*  |
-|`challenge_channel`| The type of the MFA challenge channel through which the one-time passcode was sent. At the moment, Microsoft Entra supports email. |
+|`challenge_channel`| The type of the MFA challenge channel through which the one-time passcode was sent. At the moment, Microsoft Entra supports *email*. |
 |`challenge_target_label` |An obfuscated email where the one-time passcode was sent.|
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. | 
 
@@ -1306,7 +1303,7 @@ After the client app successfully retrieves a list of strong authentication meth
     
     client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
     &continuation_token=uY29tL2F1dGhlbnRpY...   
-    &grant_type=oob  
+    &grant_type=mfa_oob  
     &oob={otp_code}
     &scope=openid offline_access
     ```
@@ -1335,7 +1332,7 @@ To use the strong authentication method registration  API, the app interacts wit
 |----------------------|------------------------|
 |`/register/v1.0/introspect`| Call this endpoint to fetch the list of strong authentication methods that the user is allowed to register.   |
 |`/register/v1.0/challenge`| Call this endpoint to send the challenge to the user, such as email one-time passcode and to inform the client app what to collect from the user.|
-|`/register/v1.0/continue`| Call this endpoint to submit the challenge the app collects from the user such as one-time passcode to complete JIT registration flow. After a successful call to this endpoint and obtaining a continuation token, call the `/oauth2/v2.0/token` endpoint to request for security tokens.|
+|`/register/v1.0/continue`| Call this endpoint to submit the challenge the app collects from the user, such as one-time passcode, to complete JIT registration flow. After a successful call to this endpoint and obtaining a continuation token, call the `/oauth2/v2.0/token` endpoint to request for security tokens.|
 
 
 ### Step 1: Get the list of strong authentication methods
@@ -1375,7 +1372,13 @@ Content-Type: application/json
             "challenge_type":"oob",
             "challenge_channel":"email",
             "login_hint":"c***r@co**o**o.com"
-        }
+        },
+        {   
+          "id": "sms",   
+          "challenge_type": "oob",   
+          "challenge_channel": "sms",   
+          "login_hint": "+1********6   
+        }
     ]
 }
 ```
@@ -1383,15 +1386,15 @@ Content-Type: application/json
 |    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. |
-| `methods` | A list (of objects) of strong authentication methods available to the user to registered.|
+| `methods` | A list (of objects) of strong authentication methods available to the user to enroll.|
 
 The strong authentication methods object has the following properties:
 
 |    Property     | Description        |
 |----------------------|------------------------|
-| `id`  |  String key of the method. Current supported value is *email*.  |
+| `id`  |  String key of the method. Supported values*email, sms*.  |
 | `challenge_type` | Challenge type selected for the user to use as the MFA method. Current supported challenge type is *oob*.  |
-| `challenge_channel` | The type of the channel to which the the MFA method is sent. Current supported challenge channel is *email*. |
+| `challenge_channel` | The type of the channel to which the the MFA method is sent. Supported values*email, sms*. |
 | `login_hint` | The hint for the strong authentication method such as an obfuscated email. This value is used by the client app to prepopulate the email textbox.|
 
 
@@ -1455,10 +1458,10 @@ POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-|`continuation token ` | Yes |  The [Continuation token](#continuation-token) that Microsoft Entra returns from the `/register/v1.0/introspect ` endpoint |
+|`continuation_token` | Yes |  The [Continuation token](#continuation-token) that Microsoft Entra returns from the `/register/v1.0/introspect ` endpoint |
 | `challenge_type` | Yes | The challenge type of the authentication method. Current type is *oob*. |
-|`challenge_target` | Yes | The email that the user wants to register.  |
-|`challenge_channel` | No | The channel to send the challenge on. Current supported challenge channel is *email*. |
+|`challenge_target` | Yes | The email or phone number that the user wants to register.  |
+|`challenge_channel` | No | The channel to send the challenge on. Supported challenge channel values: *email, sms*. |
 
 
 #### Success response
@@ -1487,7 +1490,7 @@ Content-Type: application/json
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways to the user to enter the one-time passcode. Issued if `challenge_type` is *oob*  |
-|`challenge_channel`| The type of the channel through which the one-time passcode was sent. At the moment, we support email. |
+|`challenge_channel`| The type of the channel through which the one-time passcode was sent. Supported values *email, sms*. |
 |`code_length`|The length of the one-time passcode if `binding_method` is prompt.|
 |`challenge_target` |The target the challenge was sent to. This is the same as the input provided in the request. |
 |`interval` |The interval (in seconds) the client should wait between polling of /register/continue. Only returned when `prompt=none`. Clients should double the interval every time they receive a `HTTP 429` from the native authentication API. |
@@ -1495,7 +1498,22 @@ Content-Type: application/json
 
 #### Error response
 
-The errors here are similar to those you can experience when you call the `/register/v1.0/introspect` endpoint.
+The errors here are similar to those you can experience when you call the `/register/v1.0/introspect` endpoint except when enrolling phone number. If SMS OTP is considered high risk, this request isn blocked. 
+
+Here are the possible errors you can encounter if the request isn blocked: 
+
+|    Error value     | Description        |
+|----------------------|------------------------|
+|`access_denied`  | TODO |
+
+
+If the error parameter has a value of *access_denied*, Microsoft Entra includes a suberror property in its response. Here are the possible values of the suberror property for an invalid_grant error:
+
+|    Suberror value     | Description        |
+|----------------------|------------------------|
+|`provider_blocked_by_admin`  | TODO |
+|`provider_blocked_by_rep` | TODO  |
+
 
 ### Step 3: Submit challenge
 
@@ -1731,7 +1749,7 @@ If the error parameter has a value of *invalid_client*, Microsoft Entra includes
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`nativeauthapi_disabled`| The client ID for an app that isn't enable for native authentication.|
+|`nativeauthapi_disabled`| The client ID for an app that isn't enabled for native authentication.|
 
 
 ### Step 2: Select an authentication method
