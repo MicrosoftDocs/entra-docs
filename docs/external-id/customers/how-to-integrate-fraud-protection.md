@@ -222,7 +222,7 @@ To integrate HUMAN Security with Microsoft Entra External ID, you can use the Se
 
 1. In the **Chose a fraud protection provider for sign-up** step, select **HUMAN Security** as the provider and select **Next**.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/-human.png" alt-text="Screenshot showing selecting the HUMAN Security fraud protection provider.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/choose-fraud-protection-provider-human.png" alt-text="Screenshot showing selecting the HUMAN Security fraud protection provider.":::
 
 1. In the **Configure HUMAN Security for sign-up protection** step, select the **Create new** configuration, and enter the configuration values you received from HUMAN Security:
     - **App Id**: Enter the Application ID from HUMAN Security.
