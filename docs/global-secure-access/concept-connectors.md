@@ -133,13 +133,12 @@ The following specifications are recommended for each Entra Private Network Conn
 - **Memory:** 8 GiB or more
 - **CPU:** 4 CPU cores  or more
 
-Ensure that your connectors are less than 70% for peak memory utilization and peak CPU utilization. If your CPU or memory utilization is above the suggested maximum, you may want to consider adding more connectors to distribute your workloads effectively. 
+Keep peak CPU and memory utilization per connector under 70%. If sustained utilization exceeds 70%, add connectors to the group or scale up host capacity to distribute load. Monitor with Windows performance counters to validate that utilization returns to an acceptable range.
 
-- **Throughput:** 
-Each connector, configured with the above specifications, can support up to 1.5 Gbps throughput over TCP on an Azure VM. Throughput is measured as the total of both inbound and outbound traffic. Higher throughput can be achieved by running the connector on VMs with increased memory, CPU resources, and enhanced network link speeds.
+Up to ~1.5 Gbps aggregate TCP throughput (combined inbound + outbound) per connector on an Azure VM sized at 4 vCPU / 8 GiB RAM with standard networking. Higher throughput can be achieved by using larger VM sizes (more vCPUs, memory, accelerated/high-bandwidth NICs) or by adding additional connectors in the same group for horizontal scale.
 
 **Additional Details:**  
-- Sizing recommendations made above are based on performance testing done on a test tenant using iPerf3 tool with TCP data streams. Actual performance can vary under different testing environments. More details on specific test cases will be published as part of this documentation in coming months. 
+- Performance guidance (for example ~1.5 Gbps on a 4 vCPU / 8 GiB host) is derived from controlled lab tests using iPerf3 TCP data streams in a dedicated test tenant. Actual throughput can vary based on CPU generation, NIC capabilities (accelerated networking, offloads), TLS cipher suites, network latency and jitter, packet loss, concurrent protocol mix (HTTP(S), SMB, RDP), intermediate devices (firewalls, IDS/IPS, SSL inspection), and backend application responsiveness. Scenario-based benchmark data (mixed workloads, high-connection concurrency, latency-sensitive applications) will be added to this documentation as it becomes available.
 - Once a connector is enrolled, it establishes outbound TLS tunnels to the Private Access cloud infrastructure. These tunnels handle all data path traffic. In addition, we have some control plane channel, driving keep-alive heartbeat, health reporting, connector upgrades and so on utilizing minimal bandwidth.
 - You can deploy additional connectors within the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](../identity/app-proxy/application-proxy-high-availability-load-balancing.md#best-practices-for-high-availability-of-connectors).
 
