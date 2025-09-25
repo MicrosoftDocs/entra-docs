@@ -1,6 +1,6 @@
 ---
 title: Configure OpenText Directory Services for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to OpenText Directory Services.
+description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to OpenText Directory Services (OTDS).
 
 author: thomasakelo
 manager: jeedes
@@ -47,26 +47,26 @@ The scenario outlined in this article assumes that you already have the followin
 > The below steps  apply to an OpenText Directory Services (OTDS) installation. They don't apply for OpenText CoreShare or OpenText OT2 tenants.
 
 1. Create a dedicated confidential **OAuth client**.
-      ![OAuth Client](media/open-text-directory-services-provisioning-tutorial/oauth-client.png)
+![OAuth Client](media/open-text-directory-services-provisioning-tutorial/oauth-client.png)
 1. Set an **Access token lifetime**.
       * The access token lifetime can be any value that meets your security policies, but no shorter than 15 minutes (900 seconds).
-      ![Access Token Life](media/open-text-directory-services-provisioning-tutorial/token-life.png)
+	![Access Token Life](media/open-text-directory-services-provisioning-tutorial/token-life.png)
 
    > [!NOTE]
    > Do not specify any redirect URLs. They are not required in this scenario.
 
 1. OTDS will generate and display the **client secret**. Save the **client id** and **client secret** in a secure location.
 
-      ![OTDS Client Secret](media/open-text-directory-services-provisioning-tutorial/client-secret.png)
+	![OTDS Client Secret](media/open-text-directory-services-provisioning-tutorial/client-secret.png)
 
 1. Create a partition for the users and groups to be synchronized from Microsoft Entra ID.
 
-      ![Partition page](media/open-text-directory-services-provisioning-tutorial/partition.png)
+	![Partition page](media/open-text-directory-services-provisioning-tutorial/partition.png)
 
 1. Grant administrative rights to the OAuth client you created on the partition you use for the Microsoft Entra users and groups being synchronized.    
       * Partition -> Actions -> Edit Administrators
 
-      ![Administrator page](media/open-text-directory-services-provisioning-tutorial/administrator.png)
+	![Administrator page](media/open-text-directory-services-provisioning-tutorial/administrator.png)
 
 <a name='step-3-add-opentext-directory-services-from-the-azure-ad-application-gallery'></a>
 
@@ -116,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Test Connection** to ensure Microsoft Entra ID can connect to OpenText Directory Services. If the connection fails, ensure your OpenText Directory Services account has Admin permissions and try again.
 
-      ![Token](common/provisioning-testconnection-tenanturltoken.png)
+	![Token](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
