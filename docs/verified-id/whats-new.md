@@ -112,7 +112,7 @@ The `presentation_verified` callback from the Request Service API now returns wh
 
 ## June 2023
 
-Tutorial for getting started with the Wallet Library demo on Android and iOS available [here](using-wallet-library.md).
+Tutorial for getting started with the Wallet Library demo on Android and iOS is available in the [Wallet Library quickstart](using-wallet-library.md).
 
 ## May 2023
 
@@ -120,7 +120,7 @@ Tutorial for getting started with the Wallet Library demo on Android and iOS ava
 
 ## April 2023
 
-Instructions for setting up place of work verification on LinkedIn available [here](linkedin-employment-verification.md).
+Instructions for setting up place of work verification on LinkedIn are available in [LinkedIn employment verification guidance](linkedin-employment-verification.md).
 
 ## March 2023
 
@@ -146,7 +146,7 @@ Instructions for setting up place of work verification on LinkedIn available [he
 ## September 2022
 
 - The Request Service API now has [granular app permissions](verifiable-credentials-configure-tenant.md?#grant-permissions-to-get-access-tokens) and you can grant **VerifiableCredential.Create.IssueRequest** and **VerifiableCredential.Create.PresentRequest** separately to segregate duties of issuance and presentation to separate application. 
-- [IDV Partner Gallery](partner-gallery.md) now available in the documentation guiding you how to integrate with Microsoft's Identity Verification partners.
+- [IDV Partner Gallery](idv-partners.md) now available in the documentation guiding you how to integrate with Microsoft's Identity Verification partners.
 - How-to guide for implementing the [presentation attestation flow](how-to-use-quickstart-presentation.md) that requires presenting a verifiable credential during issuance.
 
 ## August 2022
