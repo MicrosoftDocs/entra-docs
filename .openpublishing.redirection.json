@@ -2566,6 +2566,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/verified-id/idemia.md",
+      "redirect_url": "/entra/verified-id/idv-partners",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/verified-id/partner-gallery.md",
       "redirect_url": "/entra/verified-id/idv-partners",
       "redirect_document_id": false
