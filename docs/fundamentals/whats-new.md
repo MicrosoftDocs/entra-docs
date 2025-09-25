@@ -163,7 +163,7 @@ No action is required to disable the API.
 
 The “*Automatically capture sign-in fields for an app*” option in the Microsoft Entra admin center is retired. Existing apps already configured with this feature continues to work, but it will no longer be available for new configurations. Going forward, admins should use the “*Capture sign-in fields for an app*”. This requires the MyApps Secure Sign-In Extension, available for Microsoft Edge and Chrome. 
 
-For more information, see: [Capture sign-in fields for an app](../identity/enterprise-apps/troubleshoot-password-based-sso.md#capture-sign-in-fields-for-an-app.md) 
+For more information, see: [Capture sign-in fields for an app](../identity/enterprise-apps/troubleshoot-password-based-sso.md#capture-sign-in-fields-for-an-app) 
 
 To learn about our passwordless strategy, see:[Passwordless is here and at scale](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/passwordless-is-here-and-at-scale/2810639).
 
