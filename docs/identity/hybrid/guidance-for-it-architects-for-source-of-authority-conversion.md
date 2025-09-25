@@ -259,9 +259,7 @@ Ensure that all users whose source of authority was transferred are able to stil
 
 ## Conclusion
 
-This approach works for customers who are far into their password-less
-journey. For apps that require password, currently, there’s no path to
-shift users to the cloud. The following table is a summary of the options for handling on-premises apps in a cloud-first model:
+The application-centric approach works for customers who are far into their password-less journey. For apps that require password, currently, there’s no path to shift users to the cloud. The following table is a summary of the options for handling on-premises apps in a cloud-first model:
 
 Integration Options for on-premises AD Applications:
 
