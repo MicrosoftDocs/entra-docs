@@ -265,7 +265,7 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
 1. On the **Join rules** page, select **Next**.
 1. On the **Transformations** page, select **Add**.
 
-### Create a custom group inbound rule in PowerShell
+### Create a custom group outbound rule in PowerShell
 
 1. On your Microsoft Entra Connect server, open a PowerShell prompt as an administrator.
 1. Import the module.
