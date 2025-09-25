@@ -91,16 +91,18 @@
       items:
       - name: IT architect guide for transferring Source of Authority (SOA)
         href: guidance-for-it-architects-for-source-of-authority-conversion.md
-      - name: Group Source of Authority (SOA) 
+      - name: Concepts
         items:
-        - name: Concepts
-          items:
-          - name: Group SOA overview
-            href: concept-source-of-authority-overview.md
-          - name: How Group SOA works
-            href: concept-group-source-of-authority-how-it-works.md
-          - name: Guidance for using Group SOA
-            href: concept-group-source-of-authority-guidance.md 
+        - name: Group SOA overview
+          href: concept-source-of-authority-overview.md
+        - name: How Group SOA works
+          href: concept-group-source-of-authority-how-it-works.md
+        - name: Guidance for using Group SOA
+          href: concept-group-source-of-authority-guidance.md
+        - name: User SOA overview
+          href: user-source-of-authority-overview.md
+        - name: Identify supported Applications and authentication types
+          href: user-source-of-authority-authentication.md    
         - name: How to guides
           items:
           - name: Configure Group SOA
@@ -111,16 +113,6 @@
             href: how-to-active-directory-group-cleanup.md
           - name: Set up self-service group management
             href: how-to-source-of-authority-self-service-group-management.md
-      - name: User Source of Authority
-        items:
-        - name: Concepts
-          items:
-          - name: User SOA overview
-            href: user-source-of-authority-overview.md
-          - name: Identify supported Applications and authentication types
-            href: user-source-of-authority-authentication.md 
-        - name: How to guides
-          items:  
           - name: Configure User SOA
             href: how-to-user-source-of-authority-configure.md
           - name: Audit and monitor User SOA
