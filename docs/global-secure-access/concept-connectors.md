@@ -56,7 +56,7 @@ If one or more connector servers are down because of a server, network, or simil
  
 1. Identify and remove the affected ("bad") servers from the connector group.
 2. Add available healthy servers ("good") or backup servers into the connector group to restore capacity.
-3. Reboot affected servers to drain any pre-existing connections. Existing ongoing connections don’t drain immediately with connector group changes.
+3. Reboot affected servers to drain any preexisting connections. Existing ongoing connections don’t drain immediately with connector group changes.
  
 Use this sequence to keep service stable and minimize disruption when connector servers have issues.
 
@@ -71,7 +71,7 @@ In tenants with multiple connectors, automatic updates target one connector at a
 You might experience downtime during an update if:
   
 - You have only one connector. Add a second connector and a connector group to avoid downtime and provide higher availability.  
-- The update starts while a connector processes a transaction. The initial transaction is lost, but the browser automatically retries the operation or you can refresh the page. The resent request routes to a backup connector.
+- The update starts while a connector processes a transaction. The initial transaction is lost, but the browser automatically retries the operation or you can refresh the page. The re-sent request routes to a backup connector.
 
 For details about previous versions and their changes, see [Application proxy version release history](reference-version-history.md).
 
@@ -128,7 +128,7 @@ Sample netsh commands to increase the ports
 These commands set the dynamic port range from 1025 to the maximum of 65535. The minimum start port is 1025.
 
 ## Specifications and Sizing Requirements
-The following specifications are recommended for each Entra Private Network Connector:
+The following specifications are recommended for each Microsoft Entra Private Network Connector:
 
 - **Memory:** 8 GiB or more
 - **CPU:** 4 CPU cores  or more
