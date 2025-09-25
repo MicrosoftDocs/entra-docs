@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with OpenText Directory Services (OTDS)
-description: Learn how to configure single sign-on between Microsoft Entra ID and Directory Services.
+description: Learn how to configure single sign-on between Microsoft Entra ID and OpenText Directory Services (OTDS).
 
 author: nguhiu
 manager: CelesteDG
