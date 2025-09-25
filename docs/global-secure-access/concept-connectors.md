@@ -26,7 +26,6 @@ Set up and register a connector with the application proxy service:
 
 Deploy at least two connectors for redundancy and scale. The service and connectors handle high availability, and you can add or remove connectors at any time. Each request routes to an available connector. If a connector is unavailable, it doesn't handle traffic. The service tags unused connectors as inactive and removes them after 10 days of inactivity.
 
-
 > [!NOTE]
 > You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates so that you can schedule appropriate connector upgrades.
 
@@ -55,9 +54,9 @@ You don't need to delete unused connectors manually. The service tags inactive c
 ## Handling connector server issues
 If one or more connector servers are down because of a server, network, or similar outage, follow these steps to maintain continuity:
  
-1.	Identify and remove the affected (“bad”) servers from the connector group.
-2.	Add available healthy servers (“good”) or backup servers into the connector group to restore capacity.
-3.	Reboot affected servers to drain any pre-existing connections. Existing ongoing connections don’t drain immediately with connector group changes.
+1. Identify and remove the affected ("bad") servers from the connector group.
+2. Add available healthy servers ("good") or backup servers into the connector group to restore capacity.
+3. Reboot affected servers to drain any pre-existing connections. Existing ongoing connections don’t drain immediately with connector group changes.
  
 Use this sequence to keep service stable and minimize disruption when connector servers have issues.
 
@@ -115,16 +114,16 @@ For more information about optimizing your network, see [Network topology consid
 Private Network connectors initiate TCP/UDP connections to designated destination endpoints, requiring available source ports on the connector host machine. Expanding the ephemeral port range can improve the availability of source ports, particularly when managing a high volume of concurrent connections.
 
 To view the current dynamic port range on a system, use the following netsh commands:
-- netsh int ipv4 show dynamicport tcp
-- netsh int ipv4 show dynamicport udp
-- netsh int ipv6 show dynamicport tcp
-- netsh int ipv6 show dynamicport udp
+- `netsh int ipv4 show dynamicport tcp`
+- `netsh int ipv4 show dynamicport udp`
+- `netsh int ipv6 show dynamicport tcp`
+- `netsh int ipv6 show dynamicport udp`
  
 Sample netsh commands to increase the ports
-- netsh int ipv4 set dynamicport tcp start=1025 num=64511
-- netsh int ipv4 set dynamicport udp start=1025 num=64511
-- netsh int ipv6 set dynamicport tcp start=1025 num=64511
-- netsh int ipv6 set dynamicport udp start=1025 num=64511
+- `netsh int ipv4 set dynamicport tcp start=1025 num=64511`
+- `netsh int ipv4 set dynamicport udp start=1025 num=64511`
+- `netsh int ipv6 set dynamicport tcp start=1025 num=64511`
+- `netsh int ipv6 set dynamicport udp start=1025 num=64511`
 
 These commands set the dynamic port range from 1025 to the maximum of 65535. The minimum start port is 1025.
 
@@ -193,8 +192,6 @@ You can examine the state of the service in the Services window. The connector i
 
 ## Inactive connectors
 A common issue is that connectors appear as inactive in a connector group. A firewall blocking the required ports is a common cause for inactive connectors.
-
-
 
 ## Next steps
 
