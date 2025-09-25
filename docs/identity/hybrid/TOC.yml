@@ -103,8 +103,8 @@
           href: user-source-of-authority-overview.md
         - name: Identify supported Applications and authentication types
           href: user-source-of-authority-authentication.md    
-        - name: How to guides
-          items:
+      - name: How to guides
+        items:
           - name: Configure Group SOA
             href: how-to-group-source-of-authority-configure.md
           - name: Audit and monitor Group SOA
