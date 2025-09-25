@@ -14,11 +14,13 @@ ms.subservice: hybrid-connect
 ---
 # Hardening update to Microsoft Entra Connect Sync
 
-In May 2025, we released a new version (2.5.79.0) of Microsoft Entra Connect Sync. This version contains a back-end service change that further hardens our services. **All customers are required to upgrade** to the minimum versions by **September 30, 2026** to avoid service disruptions.
+As part of increasing the security posture of Microsoft Entra Connect, Microsoft deployed a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application Id: `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016`) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of on-premises to Microsoft Entra ID synchronization functionality through Entra Connect.
+
+We have since released a new version (2.5.79.0) of Microsoft Entra Connect that contains this service change.  All customers are required to upgrade to the minimum versions by September 30, 2026 to avoid service disruptions.
 
 ## Expected impacts 
 
-If you aren’t upgraded to the minimum required version, you might encounter the following impact to the Microsoft Entra Connect Sync service when the service change takes effect:
+If you aren’t upgraded to the minimum required version (2.5.79.0), you might encounter the following impact to the Microsoft Entra Connect Sync service when the service change takes effect:
 
 All synchronization services in Microsoft Entra Connect Sync will fail.
 
