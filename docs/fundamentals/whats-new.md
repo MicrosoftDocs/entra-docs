@@ -22,6 +22,178 @@ This article provides information about the latest releases and change announcem
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+## September 2025
+
+### General Availability - Cross-tenant synchronization (cross-cloud)
+
+**Type:** New feature    
+**Service category:** Provisioning        
+**Product capability:** Collaboration    
+
+Automate creating, updating, and deleting users across tenants across Microsoft clouds. The following combinations are supported:
+
+*   Commercial -> US Gov
+*   US Gov -> Commercial
+*   Commercial -> China
+
+For more information, see: [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md)
+
+---
+
+### General Availability - Application Based Authentication on Microsoft Entra Connect Sync
+
+**Type:** New feature    
+**Service category:** Microsoft Entra Connect    
+**Product capability:** Microsoft Entra Connect    
+
+The Application-Based Authentication (ABA) feature is now the default authentication method for Microsoft Entra Connect. It enables Microsoft Entra Connect to securely authenticate with Microsoft Entra ID without relying on a locally stored password. This feature uses a Microsoft Entra ID application identity and Oauth 2.0 client credential flow to authenticate with Microsoft Entra ID. Microsoft Entra Connect automatically creates a single-tenant third-party application in the customer’s Microsoft Entra ID tenant, registers a certificate as the application’s credential, and grants the required permissions for directory synchronization.   
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available in the Microsoft Entra Admin Center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
+
+Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details of the change.
+
+---
+
+### General Availability - Dedicated new 1st party resource application to enable AD to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
+
+**Type:** Plan for change    
+**Service category:** Microsoft Entra Connect    
+**Product capability:** Microsoft Entra Connect    
+
+As part of ongoing security hardening, Microsoft has deployed a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application ID: 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of on-premises to Microsoft Entra ID synchronization functionality through Microsoft Entra Connect.
+
+Microsoft Entra Connect now uses this first party application to synchronize between Active Directory and Microsoft Entra ID. Customers are required to upgrade to version **2.5.79.0** or later by **September 2026**. 
+
+We'll auto-upgrade customers where supported. For customers who wish to be auto-upgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).  
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
+
+Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details on available versions.
+
+---
+
+### Public Preview - App management policies portal experience
+
+**Type:** New feature    
+**Service category:** Enterprise Apps    
+**Product capability:** Directory    
+
+App management policies allow administrators to improve the security of their organization by setting rules on how applications in their organization can be configured. They can use them to block insecure configurations like password credentials. These policies have been available through the Microsoft Graph API, but can now also be configured using the Microsoft Entra admin center, under the Enterprise applications experience.
+
+Learn more about [how to configure app management policies](https://aka.ms/app-mgmt-policy-ux-docs).
+
+---
+
+### Public Preview - Delegate approvals in My Access
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+Users can now delegate their access package approvals in My Access. Approvers can assign another individual to respond to access package approval requests on their behalf. The original approvers can still respond to their approvals during the delegation period.  
+
+> [!NOTE]
+> This feature currently applies only to access package approvals and will be expanded to support access reviews in November 2025.  
+  
+For more information, see: [Delegate approvals in My Access](../id-governance/delegate-approvals-my-access.md).
+
+---
+
+### Public Preview - Reprocess failed users and workflows in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Lifecycle Workflows now supports reprocessing of your workflows to help organizations streamline the reprocessing of workflows when errors or failures are discovered. This feature includes the ability to reprocess previous runs of workflows including failed runs or just runs that you might want to process again. Customers can choose from the following options to fit their needs:
+
+- Select specific workflow run to be reprocessed
+- Select which users from the workflow run to be reprocessed. For example either failed users, or all users from the run
+
+For more information, see: [Reprocess workflows](../id-governance/reprocess-workflow.md)
+
+---
+
+### Public Preview - Trigger workflows for inactive employees and guests in Lifecycle Workflows
+
+**Type:** New feature
+**Service category:** Lifecycle Workflows
+**Product capability:** Identity Governance
+
+Lifecycle Workflows now enables customers to configure custom workflows to proactively manage dormant user accounts by automating identity lifecycle actions based on sign-in inactivity. By detecting inactivity, the workflow automatically executes predefined tasks—such as sending notifications, disabling accounts, or initiating offboarding—when users exceed the inactivity threshold. Admins can configure the inactivity threshold and scope, ensuring dormant accounts are handled efficiently and consistently - reducing security exposure, reducing license waste, and enforcing governance policies at scale.
+
+For more information, see: [Manage inactive users using Lifecycle Workflows (Preview)](../id-governance/lifecycle-workflow-inactive-users.md).
+
+---
+
+### Public Preview Refresh - EAM Registration
+
+**Type:** New feature    
+**Service category:** MFA    
+**Product capability:** User Authentication    
+
+This feature enables registration of an EAM through three flows: in-line registration, through *SecurityInfo*, and through an admin on-behalf-of flow. With this feature, users need to have their EAM registered with Microsoft Entra ID before they can use it to satisfy MFA. For more information, see: [Manage an external authentication method in Microsoft Entra ID (Preview)](../identity/authentication/how-to-authentication-external-method-manage.md).
+
+---
+
+### Retirement - Microsoft Authentication Library to MSAL Recommendations API
+
+**Type:** Deprecated    
+**Service category:** Other    
+**Product capability:** Developer Experience    
+
+We’re retiring the **ADAL to MSAL Recommendations API** on **December 15, 2025**.
+
+To continue monitoring authentication library usage, customers can query sign-in logs manually via **Microsoft Graph API**. The relevant data is available in the `authenticationProcessingDetails` field under the key `"Azure AD App Authentication Library"`.
+
+For guidance, see:
+
+*   [Recommendation: Migrate from Microsoft Authentication Library to MSAL](../identity/monitoring-health/recommendation-migrate-from-adal-to-msal.md)
+*   [Analyze a sign-in with Microsoft Graph API](/azure/azure-monitor/reference/tables/aadnoninteractiveusersigninlogs)
+
+No action is required to disable the API.
+
+---
+
+### Deprecation - Automatically capture sign-in fields for an app in Microsoft Entra admin center. 
+
+**Type:** Deprecated    
+**Service category:** My Apps    
+**Product capability:** Platform    
+
+The “*Automatically capture sign-in fields for an app*” option in the Microsoft Entra admin center is retired. Existing apps already configured with this feature continues to work, but it will no longer be available for new configurations. Going forward, admins should use the “*Capture sign-in fields for an app*”. This requires the MyApps Secure Sign-In Extension, available for Microsoft Edge and Chrome. 
+
+For more information, see: [Capture sign-in fields for an app](../identity/enterprise-apps/troubleshoot-password-based-sso.md#capture-sign-in-fields-for-an-app.md) 
+
+To learn about our passwordless strategy, see:[Passwordless is here and at scale](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/passwordless-is-here-and-at-scale/2810639).
+
+---
+
+### Public Preview - Global Secure Access Internet profile support for iOS client
+
+**Type:** New feature    
+**Service category:** Internet Access    
+**Product capability:** Network Access    
+
+We're excited to announce the Internet Access support with iOS app. This feature protects access to internet and SaaS apps with an identity-based Secure Web Gateway (SWG), blocking threats, unsafe content, and malicious traffic from the iPhones and iPads.
+
+Global Secure Access client on mobile platforms requires no new agent installation/deployment for secure access to their resources, and uses existing MDE (Microsoft Defender for Endpoint) to route traffic through Microsoft SSE for both Microsoft 365, internet access and private access.
+
+For more information, see: [Global Secure Access client for iOS (Preview)](../global-secure-access/how-to-install-ios-client.md).
+
+---
+
+### Public Preview - Basic HTML support in Lifecycle Workflow custom email notifications
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Now customers can further customize their Lifecycle workflows email notifications to personalize, or emphasize, specific information using basic HTML elements. Email notifications can now be customized to include sending links using HTML hyperlinks and basic text formatting like bold, italics, and underline. For more information, see: [Customize emails sent from workflow tasks](../id-governance/customize-workflow-email.md).
+
+---
+
+
 ## August 2025
 
 ### General Availability - Microsoft Entra ID Protection: Improved detection quality
