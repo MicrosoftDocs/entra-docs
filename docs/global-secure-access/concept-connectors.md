@@ -135,12 +135,12 @@ The following specifications are recommended for each Entra Private Network Conn
 
 Keep peak CPU and memory utilization per connector under 70%. If sustained utilization exceeds 70%, add connectors to the group or scale up host capacity to distribute load. Monitor with Windows performance counters to validate that utilization returns to an acceptable range.
 
-Up to ~1.5 Gbps aggregate TCP throughput (combined inbound + outbound) per connector on an Azure VM sized at 4 vCPU / 8 GiB RAM with standard networking. Higher throughput can be achieved by using larger VM sizes (more vCPUs, memory, accelerated/high-bandwidth NICs) or by adding additional connectors in the same group for horizontal scale.
+Up to ~1.5 Gbps aggregate TCP throughput (combined inbound + outbound) per connector on an Azure VM sized at 4 vCPU / 8 GiB RAM with standard networking. Higher throughput can be achieved by using larger VM sizes (more vCPUs, memory, accelerated/high-bandwidth NICs) or by adding more connectors in the same group to scale out.
 
-**Additional Details:**  
+**More details:**  
 - Performance guidance (for example ~1.5 Gbps on a 4 vCPU / 8 GiB host) is derived from controlled lab tests using iPerf3 TCP data streams in a dedicated test tenant. Actual throughput can vary based on CPU generation, NIC capabilities (accelerated networking, offloads), TLS cipher suites, network latency and jitter, packet loss, concurrent protocol mix (HTTP(S), SMB, RDP), intermediate devices (firewalls, IDS/IPS, SSL inspection), and backend application responsiveness. Scenario-based benchmark data (mixed workloads, high-connection concurrency, latency-sensitive applications) will be added to this documentation as it becomes available.
 - Once a connector is enrolled, it establishes outbound TLS tunnels to the Private Access cloud infrastructure. These tunnels handle all data path traffic. In addition, we have some control plane channel, driving keep-alive heartbeat, health reporting, connector upgrades and so on utilizing minimal bandwidth.
-- You can deploy additional connectors within the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](../identity/app-proxy/application-proxy-high-availability-load-balancing.md#best-practices-for-high-availability-of-connectors).
+- You can deploy more connectors in the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](../identity/app-proxy/application-proxy-high-availability-load-balancing.md#best-practices-for-high-availability-of-connectors).
 
 ## Domain joining
 
