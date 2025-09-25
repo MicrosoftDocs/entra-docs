@@ -62,7 +62,7 @@ The application has to be manually configured using the steps provided in this s
 
 	![Create Token](media/britive-provisioning-tutorial/create-token.png)
 
-1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select **Recreate token** button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
+1. Copy the token generated and note it down. Select OK. Note that the user isn't able to see the token again. Select the **Recreate token** button to generate a new token if needed. These values are entered in the **Secret Token** and Tenant URL boxes on the Provisioning tab of your getAbstract application.
 
 	![Copy Token](media/britive-provisioning-tutorial/copy-token.png) 
 
