@@ -187,7 +187,7 @@ In OTDS, create a OAuth 2.0 / OpenID Connect Authentication Handler
 > If you set the OIDC Metadata Endpoint, there is no need to configure the other URL's as they will be automatically populated.
 > Set the **Enable cred validation** and **Enable token validation** as required.
 
-* In the **Configuration** tab, update the Authentication principall attribute to **mail**
+* In the **Configuration** tab, update the Authentication principal attribute to **mail**
 
 ![Screenshot shows OIDC Configuration configuration.](./media/open-text-directory-services-tutorial/otds-oidc-config.png "OIDC Configuration tab")
 
