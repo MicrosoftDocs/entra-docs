@@ -72,7 +72,7 @@ The following diagram outlines if you're ready to transfer the source of authori
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/password-dependent-eligible.png" alt-text="Screenshot of whether apps dependent on passwords are eligible for Source of authority conversion.":::
 
-**Users:** For users who are still tied to legacy applications and dependant on Active Directory Domain Services (AD DS), SOA isn't recommended due to gaps in capabilities present today in the cloud to manage password based applications. Identifying which applications require passwords, or not, and planning their migration is critical.
+**Users:** For users who are still tied to legacy applications and dependent on Active Directory Domain Services (AD DS), SOA isn't recommended due to gaps in capabilities present today in the cloud to manage password based applications. Identifying which applications require passwords, or not, and planning their migration is critical.
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/shift-group-priority.png" alt-text="Screenshot of shifting group priority when transferring source of Authority.":::
 
@@ -138,7 +138,7 @@ For each application in your inventory, identify the authentication mechanism it
 
 Evaluate each application's ability to adopt modern authentication protocols (SAML/OIDC) natively. If a vendor update is available, or if the app is in-house and can be re-coded, transitioning to Microsoft Entra ID as the identity provider is typically the best long-term solution. This approach removes AD dependency and unlocks the full benefits of cloud identity management. However, for older applications that can't be easily updated, plan for a "*bridge*" solution to integrate them with Microsoft Entra ID, even if indirect integration is required.
 
-Some older applications might have hard-coded assumptions about AD such as expecting to find a user in a specific OU, or writing attributes to AD. Those apps are **out of scope** for this kind of identity migration. Applications that *write*, and not just read, to LDAP are problematic. These applications aren't easily supported by Microsoft Entra ID or Microsoft Entra Domain Services unless you keep write permissions there, which is possible, but then you'll have divergent data. Make sure to identify if any app does LDAP writes or depends on obscure AD features such as dynamic auxiliary classes. Those might have to remain on AD until they’re retired. The focus should be on apps that *read/authenticate* via AD as those can be moved to cloud auth as described.
+Some older applications might have hard-coded assumptions about AD such as expecting to find a user in a specific OU, or writing attributes to AD. Those apps are **out of scope** for this kind of identity migration. Applications that *write*, and not just read, to LDAP are problematic. These applications aren't easily supported by Microsoft Entra ID or Microsoft Entra Domain Services unless you keep write permissions there, which is possible, but then you have divergent data. Make sure to identify if any app does LDAP writes or depends on obscure AD features such as dynamic auxiliary classes. Those might have to remain on AD until they’re retired. The focus should be on apps that *read/authenticate* via AD as those can be moved to cloud auth as described.
 
 
 > [!NOTE]  
