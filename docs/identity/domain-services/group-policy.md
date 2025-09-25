@@ -4,30 +4,6 @@
 
 The Group Policy Backup feature is a new capability added to the Domain Health Monitor that automatically creates and manages backups of Group Policy Objects (GPOs) in Active Directory Domain Services. This feature helps ensure business continuity and disaster recovery by maintaining regular backups of critical group policies.
 
-## Architecture
-
-The feature consists of three main components:
-
-1. **GroupPolicyBackupEvaluator** - Evaluates whether GPO backups are needed
-2. **GroupPolicyBackupRemediator** - Performs the actual backup operations
-3. **FileUtilitiesV2** - Provides enhanced file system operations
-
-## Configuration
-
-The feature is controlled by registry settings under the Domain Health Monitor key:
-
-### Registry Key
-```
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Entra Domain Services\Domain Health Monitor
-```
-
-### Registry Values
-
-| Value Name | Type | Default | Description |
-|------------|------|---------|-------------|
-| `BackupGroupPolicyEnabled` | DWORD | 0 (disabled) | Enables/disables the backup feature (1 = enabled, 0 = disabled) |
-| `BackupGroupPolicyTimestampHours` | DWORD | 72 | Backup retention period in hours (default: 3 days) |
-
 ## File System Structure
 
 ### Backup Location
@@ -47,54 +23,6 @@ F:\GPO\Backups\
 ```
 
 ## Functionality
-
-### GroupPolicyBackupEvaluator
-
-The evaluator runs as part of the Domain Health Monitor evaluation cycle and:
-
-1. **Checks Feature Status**: Reads the `BackupGroupPolicyEnabled` registry value
-2. **Validates Existing Backups**: Checks for existing backups in the backup location
-3. **Evaluates Backup Age**: Determines if existing backups have expired based on the configured retention period
-4. **Triggers Remediation**: If backups are missing or expired, triggers the backup remediator
-
-#### Evaluation Logic
-```csharp
-bool backupMissing = gpoBackupTimestamp == DateTime.MinValue;
-bool backupExpired = (DateTime.Now - gpoBackupTimestamp).TotalHours > groupPolicyBackupTimestampHours;
-
-if (groupPolicyBackupFeatureEnabled && (backupMissing || backupExpired))
-{
-    // Trigger backup remediation
-    return false;
-}
-```
-
-### GroupPolicyBackupRemediator
-
-The remediator performs the following operations:
-
-1. **Space Monitoring**: Checks available disk space before and after operations
-2. **Policy Enumeration**: Retrieves all group policy objects from Active Directory
-3. **Selective Backup**: Backs up all GPOs except default domain policies
-4. **Cleanup Operations**: Removes expired backups based on retention policy
-5. **Share Management**: Ensures network share exists with proper permissions
-
-#### Backup Process
-
-1. **Enumerate GPOs**: Gets all group policy objects from the domain
-2. **Filter Policies**: Excludes default domain policies:
-   - Default Domain Policy (`{31B2F340-016D-11D2-945F-00C04FB984F9}`)
-   - Default Domain Controllers Policy (`{6AC1786C-016F-11D2-945F-00C04fB984F9}`)
-3. **Create Timestamped Folder**: Uses format `MMddyyyyHHmm`
-4. **Backup Individual Policies**: Each GPO is backed up to its own subfolder named by GUID
-5. **Error Handling**: If any backup fails, the entire backup session folder is deleted
-
-#### Cleanup Process
-
-1. **Retention Check**: Compares folder creation timestamps against retention policy
-2. **Minimum Backup Preservation**: Always maintains at least one backup copy
-3. **Expired Backup Removal**: Deletes backup folders older than the retention period
-
 #### Network Share Creation
 
 Creates an encrypted SMB share with the following characteristics:
@@ -103,15 +31,6 @@ Creates an encrypted SMB share with the following characteristics:
 - **Permissions**:
   - **Full Access**: Domain Admins
   - **Read Access**: AAD DC Admins
-
-### FileUtilitiesV2
-
-Enhanced file system utilities providing:
-
-- **Directory Operations**: Creation, deletion, permission management
-- **Space Management**: Drive space monitoring and reporting
-- **Timestamp Operations**: File and folder timestamp retrieval
-- **Share Management**: SMB share creation and configuration
 
 ## Security Considerations
 
@@ -126,76 +45,7 @@ Enhanced file system utilities providing:
 ### Access Control
 The backup location and network share are configured with appropriate Active Directory security groups to ensure only authorized administrators can access the backup data.
 
-## Error Handling
-
-### Backup Failures
-- If any individual GPO backup fails, the entire backup session is rolled back
-- Cleanup operations continue even if individual folder deletions fail
-- PowerShell execution errors are logged but don't stop the overall process
-
-### Space Management
-- Monitors disk space before, during, and after operations
-- Reports space usage changes for capacity planning
-- Cleanup operations help manage storage consumption
-
-## Logging
-
-The feature provides comprehensive logging throughout the backup process:
-
-- Feature enablement status
-- Backup discovery and age evaluation
-- Individual GPO backup operations
-- Space utilization reporting
-- Cleanup operations and decisions
-- Share creation and permission setting
-- Error conditions and exceptions
-
-## Integration with Domain Health Monitor
-
-### Evaluator Registration
-The `GroupPolicyBackupEvaluator` is registered in the `EvaluatorFactory`:
-
-```csharp
-new GroupPolicyBackupEvaluator(),
-```
-
-### Execution Flow
-1. Domain Health Monitor runs its evaluation cycle
-2. `GroupPolicyBackupEvaluator` checks backup status
-3. If remediation needed, `GroupPolicyBackupRemediator` is triggered
-4. Backup operations are performed with full logging
-5. Results are reported back to the Domain Health Monitor
-
-## Testing
-
-The implementation includes comprehensive unit tests covering:
-
-### GroupPolicyBackupEvaluatorTests
-- Feature enabled/disabled scenarios
-- Backup missing conditions
-- Backup expiration logic
-- Registry value handling
-
-### GroupPolicyBackupRemediatorTests
-- Backup process execution
-- Error handling and rollback
-- Cleanup operations
-- Share creation
-
-### DomainControllerObjectTests
-- Equality and hash code implementations
-- Collection comparison logic
-
 ## Usage Examples
-
-### Enabling the Feature
-```powershell
-# Enable GPO backup feature
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Entra Domain Services\Domain Health Monitor" -Name "BackupGroupPolicyEnabled" -Value 1
-
-# Set retention to 7 days (168 hours)
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Entra Domain Services\Domain Health Monitor" -Name "BackupGroupPolicyTimestampHours" -Value 168
-```
 
 ### Verifying Backups
 ```powershell
@@ -212,55 +62,12 @@ Get-ChildItem "\\PDC-SERVER\GPOBackupsShare$"
 Get-ChildItem "F:\GPO\Backups" | Where-Object { $_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
 ```
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Feature Not Running**
-   - Verify registry settings are correctly configured
-   - Check Domain Health Monitor logs for evaluation results
-
-2. **Backup Failures**
-   - Ensure sufficient disk space on F: drive
-   - Verify Domain Health Monitor service has appropriate permissions
-   - Check for GPO corruption or access issues
-
-3. **Share Access Issues**
-   - Verify network share exists: `Get-SmbShare -Name "GPOBackupsShare$"`
-   - Check share permissions match expected security groups
-   - Ensure encryption is enabled on the share
-
-4. **Space Issues**
-   - Monitor disk space usage in logs
-   - Adjust retention period if backups consume too much space
-   - Consider external cleanup if automated cleanup fails
-
-### Log Locations
-Domain Health Monitor logs contain detailed information about the backup feature operations. Look for entries prefixed with:
-- `GroupPolicyBackupEvaluator:`
-- `GroupPolicyBackupRemediator:`
-
-## Future Enhancements
-
-Potential improvements to consider:
-
-1. **Compression**: Add backup compression to reduce storage usage
-2. **Remote Storage**: Support for backing up to remote/cloud storage
-3. **Incremental Backups**: Only backup changed GPOs
-4. **Notification**: Email/alert integration for backup success/failure
-5. **Restoration Tools**: Automated GPO restoration capabilities
-6. **Scheduling**: More granular backup scheduling options
-
-## Accessing the GPO Backup Share & Restoring GPOs
-
 This section describes how an administrator on a domain-joined computer can discover, access, and restore Group Policy Object (GPO) backups created by this feature. Both GUI (GPMC) and PowerShell workflows are provided.
 
 ### Prerequisites
 
-- The feature is enabled (`BackupGroupPolicyEnabled=1`).
 - You have network connectivity to at least one writable domain controller (ideally the PDC Emulator).
 - Your account is a member of a group with rights to read (AAD DC Admins) or modify (Domain Admins) GPOs.
-- The hidden backup share `GPOBackupsShare$` exists (created automatically by the remediator).
 - RSAT Group Policy Management Console (GPMC) installed (for GUI restoration).
 - PowerShell `GroupPolicy` module available (shipped with RSAT / on domain controllers by default).
 
