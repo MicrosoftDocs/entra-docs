@@ -1,5 +1,5 @@
 ---
-title: How to customize the block page for web content filtering
+title: How to customize Global Secure Access block page
 description: Use custom block pages to display organization-specific messaging internet access policies block users from accessing websites.
 author: fgomulka
 ms.author: frankgomulka
@@ -10,7 +10,7 @@ ms.reviewer: kenwith
 ai-usage: ai-assisted
 ---
 
-# How to customize the block page for web content filtering (preview)
+# How to customize Global Secure Access block page (preview)
 
 Use custom block pages to display organization-specific messaging internet access policies block users from accessing websites.
 
