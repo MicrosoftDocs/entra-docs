@@ -54,7 +54,7 @@ When administrators select an individual user, the Risky user details pane appea
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png" alt-text="Screenshot showing the Risky User Details flyout with samples of Risk history." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png":::
 
-If you have Copilot for Security, you have access to a [summary in natural language](../fundamentals/copilot-entra-risky-user-summarization.md) including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. 
+If you have Copilot for Security, you have access to a [summary in natural language](../security-copilot/entra-risky-user-summarization.md) including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. 
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png" alt-text="Screenshot showing the summary of risk provided by Copilot in the Risky User Details flyout." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png":::
 

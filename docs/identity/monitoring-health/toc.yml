@@ -77,6 +77,8 @@ items:
     href: howto-download-logs.md
   - name: Find inactive user accounts in Microsoft Entra ID
     href: howto-manage-inactive-user-accounts.md
+  - name: Understand monitoring and operations with Microsoft Security Copilot
+    href: ~/security-copilot/entra-monitoring-operations.md?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
   - name: Diagnostic settings and Log Analytics 
     expanded: true
     items:
