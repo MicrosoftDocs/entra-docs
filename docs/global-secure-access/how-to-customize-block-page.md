@@ -28,23 +28,30 @@ The custom block page empowers you to customize the default body of the page fro
 
 1. Navigate to **Global Secure Access** > **Settings** > **Session management** > **Custom Block Page**
 2. Switch **Custom body message** to **On**.
-3. Configure the Customized body message you would prefer.
-4. (Optional) Paste one or multiple clickable links via limited markdown language (for example `[click here](https://bing.com)`).
+3. Configure the Customized body message you would prefer. For example, ``.
+4. (Optional) Paste one or multiple clickable links via limited markdown language (for example, `[click here](https://bing.com)`).
 5. Preview the customized message with the **Preview** button.
 6. Select **Save** to save the custom block page.
 
+![Screenshot showing the preview experience in the admin portal](media/how-to-customize-block-page/custom-block-preview.png)
+
+> [!NOTE]
+> A known transient issue in public preview could result in this save failing. While Microsoft team works on a fix, the current mitigation is to re-configure the custom block page and try again.
+
+## Verify the block page
+
+1. From a device with the Global Secure Access client installed and the Internet Access traffic forwarding profile enabled, attempt to navigate to a site that your policy blocks.
+2. Observe the block experience and confirm the custom messaging displays.
+
+![Screenshot showing end user experience of the custom block page](media/how-to-customize-block-page/custom-block.png)
 
 ## Notes and limitations
 
 - The Custom body message is limited to 1024 Unicode (utf-8) characters.
 - Changes to a custom block page might take a few minutes to propagate to active sessions.
 - Custom block pages appear for TLS inspected traffic only.
+- A known transient issue in public preview could result in this save failing. We are working on a fix. The current mitigation is to re-configure the custom block page and try again.
 - Ensure any contact information you publish complies with your organization's privacy policies.
-
-## Verify the block page
-
-1. From a device with the Global Secure Access client installed and the Internet Access traffic forwarding profile enabled, attempt to navigate to a site that your policy blocks.
-2. Observe the block experience and confirm the custom messaging displays.
 
 ## Next steps
 
