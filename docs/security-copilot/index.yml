@@ -67,17 +67,17 @@ landingContent:
       - linkListType: concept
         links:
           - text: Access Review Assistant
-            url: /copilot/security/agents-overview?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
           - text: Application Risk Agent
-            url: /copilot/security/agents-overview?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
           - text: Application Discovery Agent
-            url: /copilot/security/agents-overview?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
           - text: Tenant Health Management Agent
-            url: /copilot/security/agents-overview?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
           - text: Risk Management Agent
-            url: /copilot/security/agents-overview?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
           - text: Tenant Compliance Agent
-            url: /copilot/security/agents-overview?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+            url: /copilot/security/agents-overview?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
 
   # Card
   - title: Using AI Responsibly
@@ -85,11 +85,11 @@ landingContent:
       - linkListType: overview
         links:
           - text: Responsible AI overview
-            url: /copilot/security/responsible-ai-overview-security-copilot?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+            url: /copilot/security/responsible-ai-overview-security-copilot?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
       - linkListType: concept
         links:
           - text: Responsible AI FAQ
-            url: entra-responsible-ai-faq.md
+            url: /copilot/security/rai-faqs-security-copilottoc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
 
    # Card
   - title: About Microsoft Entra ID

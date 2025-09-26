@@ -2236,7 +2236,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/fundamentals/agents.md",
+      "source_path_from_root": "/docs/fundamentals/copilot-entra-agents.md",
       "redirect_url": "/entra/security-copilot/entra-agents",
       "redirect_document_id": false
     },
@@ -2268,21 +2268,6 @@
         {
       "source_path_from_root": "/docs/fundamentals/copilot-security-entra.md",
       "redirect_url": "/entra/security-copilot/security-copilot-in-entra",
-      "redirect_document_id": false
-    },
-        {
-      "source_path_from_root": "/docs/fundamentals/",
-      "redirect_url": "/entra/security-copilot/",
-      "redirect_document_id": false
-    },
-        {
-      "source_path_from_root": "/docs/fundamentals/",
-      "redirect_url": "/entra/security-copilot/",
-      "redirect_document_id": false
-    },
-        {
-      "source_path_from_root": "/docs/fundamentals/",
-      "redirect_url": "/entra/security-copilot/",
       "redirect_document_id": false
     },
     {
