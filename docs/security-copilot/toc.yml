@@ -8,7 +8,6 @@ items:
     href: /copilot/security/microsoft-security-copilot?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
   - name: Security Copilot in Microsoft Entra
     href: security-copilot-in-entra.md
-  - name: What's new?
 - name: Microsoft Entra scenarios
   items:
   - name: Overview
