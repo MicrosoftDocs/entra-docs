@@ -46,7 +46,7 @@ Refer to the prompts and examples in [Governance and optimization with Microsoft
 - [Access review exploration and management](./entra-governance-optimization.md#access-review-exploration-and-management)
 - [Access review decision analysis](./entra-governance-optimization.md#access-review-decision-analysis)
 
-For more information about access reviews, refer to;
+For more information about access reviews, see;
 
 - [What are access reviews?](/entra/id-governance/access-reviews-overview)
 - [Prepare for an access review of users' access to an application](/entra/id-governance/access-reviews-application-preparation)
@@ -60,7 +60,7 @@ Refer to the prompts and examples in [Governance and optimization with Microsoft
 - [Catalog and access package management](./entra-governance-optimization.md#catalog-and-access-package-management)
 - [User assignments and connected organizations](./entra-governance-optimization.md#user-assignments-and-connected-organizations)
 
-For more information about entitlement management, refer to [What is entitlement management?](/entra/id-governance/entitlement-management-overview)
+For more information about entitlement management, see [What is entitlement management?](/entra/id-governance/entitlement-management-overview)
 
 ## Privileged Identity Management (PIM)
 
@@ -70,7 +70,7 @@ Refer to the prompts and examples in [Governance and optimization with Microsoft
 
 - [PIM role assignment queries](./entra-governance-optimization.md#pim-role-assignment-queries)
 
-For more information about Privileged Identity Management, refer to [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure)
+For more information about Privileged Identity Management, see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure)
 
 ## Lifecycle workflows
 
@@ -84,7 +84,7 @@ Refer to the prompts and examples in [Manage employee lifecycle using Microsoft 
 - [Troubleshoot a Lifecycle Workflow run](./entra-lifecycle-workflows.md#troubleshoot-a-lifecycle-workflow-run)
 - [Compare versions of a lifecycle workflow](./entra-lifecycle-workflows.md#compare-versions-of-a-lifecycle-workflow)
 
-For more information about lifecycle workflows, refer to [What are lifecycle workflows?](/entra/id-governance/what-are-lifecycle-workflows)
+For more information about lifecycle workflows, see [What are lifecycle workflows?](/entra/id-governance/what-are-lifecycle-workflows)
 
 ## Related content
 

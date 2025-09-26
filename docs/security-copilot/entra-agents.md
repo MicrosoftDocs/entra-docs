@@ -38,7 +38,7 @@ Administrators can configure the agent to run automatically or trigger the agent
 
 The following agents are currently available for Microsoft Entra. Due to the fast pace at which these agents are released and updated, each agent might have features at various stages of availability. Preview features are added frequently.
 
-To get started with Microsoft Entra agents, you'll need to ensure your environment meets the necessary prerequisites and licensing requirements. The setup process involves enabling Security Copilot, signing in with the appropriate permissions, and available [security compute units (SCU)](/copilot/security/manage-usage). Check the instructions for each agent for specific details.
+To get started with Microsoft Entra agents, you need to ensure your environment meets the necessary prerequisites and licensing requirements. The setup process involves enabling Security Copilot, signing in with the appropriate permissions, and available [security compute units (SCU)](/copilot/security/manage-usage). Check the instructions for each agent for specific details.
 
 ### Access Review Agent
 
@@ -48,7 +48,7 @@ Empower your reviewers to make fast, accurate access decisions. The [Access Revi
 |---------|---------|
 |Trigger     |   Runs every 24 hours or manually to gather insights and save recommendations.      |
 |Permissions     | The agent reviews users currently in the scope of your access reviews, and makes suggestions on whether access should be approved or declined. The agent acts based on your selections.        |
-|Identity     |   The agent will run with identity of the administrator who configured the agent to gather insights and save recommendations. Final decisions as part of the Microsoft Teams conversation will be written with the reviewer’s identity.       |
+|Identity     |   The agent runs with identity of the administrator who configured the agent to gather insights and save recommendations. Final decisions as part of the Microsoft Teams conversation will be written with the reviewer’s identity.       |
 |Products     |  [Access Reviews](../id-governance/access-reviews-overview.md), [Security Copilot](/copilot/security/microsoft-security-copilot)       |
 |Plugins     |   [Microsoft Entra](./security-copilot-in-entra.md)       |
 |Role-based access     | Requires both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.        |

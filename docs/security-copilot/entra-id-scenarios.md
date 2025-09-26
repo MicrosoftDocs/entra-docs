@@ -95,11 +95,11 @@ For more information, see:
 
 ## Monitoring and Health scenarios
 
-Microsoft Entra leverages the capabilities of Microsoft Security Copilot to help administrators monitor and maintain the health of their Microsoft Entra ID environment. By using natural language queries, admins can quickly access and analyze sign-in logs, audit logs, recommendations, health monitoring alerts, and SLA performance data. This enables them to identify potential issues, investigate anomalies, and take proactive measures to ensure the security and reliability of their identity infrastructure.
+Microsoft Entra uses the capabilities of Microsoft Security Copilot to help administrators monitor and maintain the health of their Microsoft Entra ID environment. By using natural language queries, admins can quickly access and analyze sign-in logs, audit logs, recommendations, health monitoring alerts, and SLA performance data. This enables them to identify potential issues, investigate anomalies, and take proactive measures to ensure the security and reliability of their identity infrastructure.
 
 ### Sign-in logs
 
-Using Security Copilot, IT admins can streamline the process of reviewing and troubleshooting sign-in activities in Microsoft Entra. Instead of manually sorting through complex log data, IT administrators and Helpdesk teams can quickly analyze sign-in logs, identify issues, and receive clear, actionable answers. Security Copilot also suggests helpful follow-up questions to support your troubleshooting process and guide your next steps.
+With Security Copilot, IT admins can streamline the process of reviewing and troubleshooting sign-in activities in Microsoft Entra. Instead of manually sorting through complex log data, IT administrators and Helpdesk teams can quickly analyze sign-in logs, identify issues, and receive clear, actionable answers. Security Copilot also suggests helpful follow-up questions to support your troubleshooting process and guide your next steps.
 
 Refer to the prompts and examples in [Understand monitoring and operations with Microsoft Security Copilot](./entra-monitoring-operations.md) to learn how to use Microsoft Security Copilot with sign-in logs for the following use-cases;
 
@@ -109,7 +109,7 @@ Refer to the prompts and examples in [Understand monitoring and operations with 
 
 ### Audit logs
 
-Using Security Copilot, IT admins can streamline the process of investigating and troubleshooting audit logs in Microsoft Entra. Instead of manually searching through extensive log data, IT administrators and Helpdesk teams can quickly analyze audit activities, identify issues, and receive clear, actionable answers. Security Copilot also suggests helpful follow-up questions to support your investigation and guide your next steps.
+With Security Copilot, IT admins can streamline the process of investigating and troubleshooting audit logs in Microsoft Entra. Instead of manually searching through extensive log data, IT administrators and Helpdesk teams can quickly analyze audit activities, identify issues, and receive clear, actionable answers. Security Copilot also suggests helpful follow-up questions to support your investigation and guide your next steps.
 
 Refer to the prompts and examples in [Understand monitoring and operations with Microsoft Security Copilot](./entra-monitoring-operations.md) to learn how to use Microsoft Security Copilot with audit logs for the following use-cases;
 
@@ -119,7 +119,7 @@ Refer to the prompts and examples in [Understand monitoring and operations with 
 
 ### Recommendations
 
-Using recommendations, Security Copilot can help you quickly investigate how to evolve your tenant to a secure and healthy state, by providing actionable insights and guidance. These recommendations cover features, best practices, and settings of Microsoft Entra, such as using least privileged administrator roles, configuring Self-Service Password Reset, and protecting your tenant with Conditional Access policies. Some recommendations factor into your Identity Secure Score, which can help you monitor and improve the security of your tenant. Using the capabilities of Microsoft Security Copilot, you can now interact with these recommendations using natural language, enabling your security team to quickly investigate how to evolve your tenant to a secure and healthy state.
+With recommendations, Security Copilot can help you quickly investigate how to evolve your tenant to a secure and healthy state, by providing actionable insights and guidance. These recommendations cover features, best practices, and settings of Microsoft Entra, such as using least privileged administrator roles, configuring Self-Service Password Reset, and protecting your tenant with Conditional Access policies. Some recommendations factor into your Identity Secure Score, which can help you monitor and improve the security of your tenant. Using the capabilities of Microsoft Security Copilot, you can now interact with these recommendations using natural language, enabling your security team to quickly investigate how to evolve your tenant to a secure and healthy state.
 
 Refer to the prompts and examples in [Governance and optimization with Microsoft Security Copilot](./entra-governance-optimization.md) to learn how to use Microsoft Security Copilot with recommendations for the following use-cases;
 
@@ -148,7 +148,7 @@ For more information, see:
 
 ### Service Level Agreement
 
-With Microsoft Security Copilot, IT administrators can easily access and analyze Service Level Agreement (SLA) reports for authentication availability in their Microsoft Entra tenant. Security Copilot leverages the Microsoft Graph API to provide monthly look-back insights on core authentication availability, helping admins quickly identify periods where SLA attainment may have fallen below 99.99%. This enables proactive review of SLA data alongside service outages, and helps determine eligibility for service credits according to the [Microsoft Entra SLA](/entra/identity/monitoring-health/reference-sla-performance). Security Copilot streamlines the process, allowing admins to use natural language queries to investigate SLA performance and ensure their organization’s authentication reliability.
+With Microsoft Security Copilot, IT administrators can easily access and analyze Service Level Agreement (SLA) reports for authentication availability in their Microsoft Entra tenant. Security Copilot uses the Microsoft Graph API to provide monthly look-back insights on core authentication availability, helping admins quickly identify periods where SLA attainment may have fallen below 99.99%. This enables proactive review of SLA data alongside service outages, and helps determine eligibility for service credits according to the [Microsoft Entra SLA](/entra/identity/monitoring-health/reference-sla-performance). Security Copilot streamlines the process, allowing admins to use natural language queries to investigate SLA performance and ensure their organization’s authentication reliability.
 
 Refer to the prompts and examples in [Understand monitoring and operations with Microsoft Security Copilot](./entra-monitoring-operations.md) to learn how to use Microsoft Security Copilot with SLA information for the following use-cases;
 
@@ -174,7 +174,7 @@ For more information, see:
 
 ## Devices
 
-Microsoft Entra uses the capabilities of Security Copilot to help administrators investigate their Microsoft Entra ID devices using natural language queries. This feature allows admins to quickly access device information, such as device IDs, compliance status, activity and whether devices are Entra ID registered, joined or hybrid joined.
+Microsoft Entra uses the capabilities of Security Copilot to help administrators investigate their Microsoft Entra ID devices using natural language queries. This feature allows admins to quickly access device information, such as device IDs, compliance status, activity and whether devices are Entra ID registered, joined, or hybrid joined.
 
 Refer to the prompts and examples in [Enterprise user management with Microsoft Security CopilotManage identities with Microsoft Security Copilot](./entra-enterprise-user-management.md) to learn how to use Microsoft Security Copilot with device management for the following use-cases;
 

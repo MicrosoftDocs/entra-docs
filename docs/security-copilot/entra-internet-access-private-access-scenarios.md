@@ -35,11 +35,11 @@ Using Security Copilot, you can apply its capabilities with Global Secure Access
 
 ## Global Secure Access
 
-For example, as a security analyst or network administrator, you can use Security Copilot to investigate and monitor network traffic usage and behavior using natural language queries. You can analyze user, device, and branch network usage, identify network issues, and detect threats or policy violations in real time. As a result, your investigation process is significantly streamlined and more effective. 
+For example, as a security analyst or network administrator, you can use Security Copilot to investigate and monitor network traffic usage and behavior using natural language queries. You can analyze user, device, and branch network usage, identify network issues, and detect threats or policy violations in real time. As a result, your investigation process is streamlined and more effective. 
 
 ### Monitor data consumption and bandwidth usage
 
-You can begin your investigation by analyzing overall network traffic patterns and identifying users with high data consumption. Understanding bandwidth usage and traffic distribution is crucial for capacity planning, identifying potential security issues, and detecting unusual usage patterns that might indicate compromised accounts or policy violations. Use the following example prompts to get the information you need:
+You can begin your investigation by analyzing overall network traffic patterns and identifying users with high data consumption. Understanding bandwidth usage and traffic distribution are crucial for capacity planning, identifying potential security issues, and detecting unusual usage patterns that might indicate compromised accounts or policy violations. Use the following example prompts to get the information you need:
 
 - *Show the top 5 users with the highest data consumption in the last day.*
 - *List the top 10 accessed applications names in the last week based on network traffic logs.*
@@ -53,7 +53,7 @@ Next, you should investigate blocked traffic and security threats to identify po
 
 ### Analyze user application access patterns
 
-You can analyse specific user access patterns to understand application usage, identify unusual behavior, and ensure compliance with corporate access policies. This analysis helps identify potential insider threats, compromised accounts, or unauthorized application usage that could pose security risks. Use the following example prompt to get the information you need:
+You can analyze specific user access patterns to understand application usage, identify unusual behavior, and ensure compliance with corporate access policies. This analysis helps identify potential insider threats, compromised accounts, or unauthorized application usage that could pose security risks. Use the following example prompt to get the information you need:
 
 - *List all applications names that user sarah.manager@woodgrovebank.com has accessed in the last 24 hours based on network traffic logs.*
 

@@ -41,7 +41,7 @@ You can add your own prompts in the Copilot window for the following use cases;
 
 ### Application risk
 
-Identity administrators and security analysts can use Microsoft Security Copilot to quickly assess the risk level of applications from workload identities. By leveraging natural language queries, you can easily discover the granted permissions, unused apps in your tenant, and the risk level of applications. This allows admins to take appropriate actions to mitigate risks and ensure the security of your organization's applications.
+Identity administrators and security analysts can use Microsoft Security Copilot to quickly assess the risk level of applications from workload identities. By using natural language queries, you can easily discover the granted permissions, unused apps in your tenant, and the risk level of applications. This allows admins to take appropriate actions to mitigate risks and ensure the security of your organization's applications.
 
 Refer to the prompts and examples in [Assess application risks using Microsoft Security Copilot in Microsoft Entra](./entra-investigate-risky-apps.md) to learn how to use Microsoft Security Copilot to assess application risk for the following use-cases;
 

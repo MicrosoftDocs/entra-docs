@@ -96,7 +96,7 @@ Begin by examining user details and organizational relationships to understand h
 
 ### User authentication and permissions
 
-You can then review user authentication methods and permissions to ensure security compliance and identify users who may need additional authentication requirements. Use these prompts get the information you need:
+You can then review user authentication methods and permissions to ensure security compliance and identify users who may need extra authentication requirements. Use these prompts get the information you need:
 
 - *What are Abbi Atin's authentication methods?*
 - *Look up Abadi Bod's permissions.*
@@ -104,7 +104,7 @@ You can then review user authentication methods and permissions to ensure securi
 
 ### User filtering and organization
 
-To identify potential compliance issues, you can filter users based on specific criteria such as licensing status, departments and account configurations. Use the following prompts to get the information you need:
+To identify potential compliance issues, you can filter users based on specific criteria such as licensing status, departments, and account configurations. Use the following prompts to get the information you need:
 
 - *List users without assigned licenses.*
 - *List users in Finance or Marketing department.*
@@ -154,9 +154,9 @@ Finally, you can review license usage and optimization opportunities to ensure t
 Use the following prompts to analyze your license allocation, usage patterns, and feature utilization for cost optimization and better license management for upcoming budget planning:
 
 - *How many Microsoft Entra P1/P2 licenses do I have?*
-- *Count of P1/P2 Entra licenses.*
+- *Count of P1/P2 Microsoft Entra licenses.*
 - *Number of Microsoft Entra ID P1/P2 licenses.*
-- *What is the usage of Entra P1/P2 license?*
+- *What is the usage of Microsoft Entra P1/P2 license?*
 - *Show me P1/P2 feature utilization.*
 - *Provide Microsoft Entra P1/P2 license usage details.*
 
