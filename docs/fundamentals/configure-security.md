@@ -54,22 +54,19 @@ Reduce credential-related risk by implementing modern identity standards.
 
 | Check | Minimum required license |
 |---|---|
-
-| Check | Minimum required license |
-|---|---|
-| [Permissions to create new tenants are limited to the Tenant Creator role](zero-trust-protect-networks.md#permissions-to-create-new-tenants-are-limited-to-the-tenant-creator-role) | Microsoft Entra ID P1 |
-| [Allow/Deny lists of domains to restrict external collaboration are configured](zero-trust-protect-networks.md#allowdeny-lists-of-domains-to-restrict-external-collaboration-are-configured) | Microsoft Entra ID P1 |
-| [Guests are not assigned high privileged directory roles](zero-trust-protect-networks.md#guests-are-not-assigned-high-privileged-directory-roles) | Microsoft Entra ID P1 |
-| [Guests can't invite other guests](zero-trust-protect-networks.md#guests-cant-invite-other-guests) | Microsoft Entra ID P1 |
-| [Guests have restricted access to directory objects](zero-trust-protect-networks.md#guests-have-restricted-access-to-directory-objects) | Microsoft Entra ID P1 |
-| [App instance property lock is configured for all multitenant applications](zero-trust-protect-networks.md#app-instance-property-lock-is-configured-for-all-multitenant-applications) | Microsoft Entra ID P1 |
-| [Guests don't have long lived sign-in sessions](zero-trust-protect-networks.md#guests-dont-have-long-lived-sign-in-sessions) | Microsoft Entra ID P1 |
-| [Guest access is protected by strong authentication methods](zero-trust-protect-networks.md#guest-access-is-protected-by-strong-authentication-methods) | Microsoft Entra ID P1 |
-| [Guest self-service sign-up via user flow is disabled](zero-trust-protect-networks.md#guest-self-service-sign-up-via-user-flow-is-disabled) | Microsoft Entra ID P1 |
-| [Outbound cross-tenant access settings are configured](zero-trust-protect-networks.md#outbound-cross-tenant-access-settings-are-configured) | Microsoft Entra ID P1 |
-| [Guests don't own apps in the tenant](zero-trust-protect-networks.md#guests-dont-own-apps-in-the-tenant) | Microsoft Entra ID P1 |
-| [All guests have a sponsor](zero-trust-protect-networks.md#all-guests-have-a-sponsor) | Microsoft Entra ID P1 |
-| [Inactive guest identities are disabled or removed from the tenant](zero-trust-protect-networks.md#inactive-guest-identities-are-disabled-or-removed-from-the-tenant) | Microsoft Entra ID P1 |
+| [Permissions to create new tenants are limited to the Tenant Creator role](zero-trust-protect-tenants.md#permissions-to-create-new-tenants-are-limited-to-the-tenant-creator-role) | Microsoft Entra ID P1 |
+| [Allow/Deny lists of domains to restrict external collaboration are configured](zero-trust-protect-tenants.md#allowdeny-lists-of-domains-to-restrict-external-collaboration-are-configured) | Microsoft Entra ID P1 |
+| [Guests are not assigned high privileged directory roles](zero-trust-protect-tenants.md#guests-are-not-assigned-high-privileged-directory-roles) | Microsoft Entra ID P1 |
+| [Guests can't invite other guests](zero-trust-protect-tenants.md#guests-cant-invite-other-guests) | Microsoft Entra ID P1 |
+| [Guests have restricted access to directory objects](zero-trust-protect-tenants.md#guests-have-restricted-access-to-directory-objects) | Microsoft Entra ID P1 |
+| [App instance property lock is configured for all multitenant applications](zero-trust-protect-tenants.md#app-instance-property-lock-is-configured-for-all-multitenant-applications) | Microsoft Entra ID P1 |
+| [Guests don't have long lived sign-in sessions](zero-trust-protect-tenants.md#guests-dont-have-long-lived-sign-in-sessions) | Microsoft Entra ID P1 |
+| [Guest access is protected by strong authentication methods](zero-trust-protect-tenants.md#guest-access-is-protected-by-strong-authentication-methods) | Microsoft Entra ID P1 |
+| [Guest self-service sign-up via user flow is disabled](zero-trust-protect-tenants.md#guest-self-service-sign-up-via-user-flow-is-disabled) | Microsoft Entra ID P1 |
+| [Outbound cross-tenant access settings are configured](zero-trust-protect-tenants.md#outbound-cross-tenant-access-settings-are-configured) | Microsoft Entra ID P1 |
+| [Guests don't own apps in the tenant](zero-trust-protect-tenants.md#guests-dont-own-apps-in-the-tenant) | Microsoft Entra ID P1 |
+| [All guests have a sponsor](zero-trust-protect-tenants.md#all-guests-have-a-sponsor) | Microsoft Entra ID P1 |
+| [Inactive guest identities are disabled or removed from the tenant](zero-trust-protect-tenants.md#inactive-guest-identities-are-disabled-or-removed-from-the-tenant) | Microsoft Entra ID P1 |
 
 ## Protect networks
 
