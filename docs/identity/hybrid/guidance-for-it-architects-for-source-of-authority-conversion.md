@@ -348,7 +348,7 @@ Integration Options for on-premises AD Applications:
 
 > [!TIP]
 > Always start with an app-centric analysis to avoid breaking
-> access for users tied to legacy AD apps. Use phased migration, avoid a
+> access for users tied to legacy AD apps. Use phased migration to avoid a
 > “*big bang*” cutover.
 
 ## Next step
