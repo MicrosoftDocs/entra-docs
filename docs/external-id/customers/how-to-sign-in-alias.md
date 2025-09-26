@@ -101,7 +101,7 @@ Content-type: application/json
 }
 ```
 
-## Update an existing user to add a username with Microsoft Graph API
+## Add a username to an existing user with the Microsoft Graph API
 
 You can also add a username to an existing user. In this scenario, you first need to retrieve a user account using a sign-in identifier. 
 
