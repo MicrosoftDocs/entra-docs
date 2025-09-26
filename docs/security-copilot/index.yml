@@ -89,7 +89,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Responsible AI FAQ
-            url: /copilot/security/rai-faqs-security-copilottoc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+            url: /copilot/security/rai-faqs-security-copilot?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
 
    # Card
   - title: About Microsoft Entra ID
