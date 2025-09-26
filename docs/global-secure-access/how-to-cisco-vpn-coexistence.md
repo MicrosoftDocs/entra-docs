@@ -73,7 +73,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 - Install the Cisco Secure Client software.
 
 > [!NOTE]
-> Currently **Split-Include** is the only supported Cisco Secure Access VPNaaS configuration. Other coexistence configurations may be added as they are validated.
+> Currently **Split-Include** is the only supported Cisco Secure Access VPNaaS configuration.
 
 ## Cisco Secure Access VPNaaS - Configuration scenarios
 
