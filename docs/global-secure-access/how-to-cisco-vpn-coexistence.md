@@ -79,6 +79,8 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 ### 1. Internet and Microsoft traffic with Cisco Secure Access VPNaaS for private access.
 
+> [!IMPORTANT]
+> A side-build of the Global Secure Access client for macOS is required for this specific scenario. Please contact support for more information.
 
 #### Steps
 
