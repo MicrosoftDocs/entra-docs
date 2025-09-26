@@ -152,6 +152,14 @@ There are several key points to consider regarding the identity and permissions 
 
    :::image type="content" source="media/agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/identity-permissions.png":::
 
+### ServiceNow integration
+
+Organizations that use the [ServiceNow integration](/copilot/security/plugin-servicenow) with Microsoft Entra ID can now have the Conditional Access optimization agent create ServiceNow incidents for each new suggestion it generates. This allows IT and security teams to track, review, and approve or reject agent suggestions within their existing ServiceNow workflows.
+
+The integration also provides a feedback loop: The agent monitors the state of the ServiceNow incident and can automatically implement the change when the incident is approved.
+
+To use the ServiceNow integration, the organization must have the ServiceNow connector configured for Security Copilot. Your tenant ID must be added to the allow list, according to the plugin setup instructions. 
+
 ### Custom instructions
 
 You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to include or exclude specific users, groups, and roles. Custom instructions can be used to exclude objects from being considered by the agent altogether or added to the Conditional Access policy itself. Exceptions can be applied to specific policies, such as excluding a specific group from a policy, such as requiring MFA or mobile application management policies. 
