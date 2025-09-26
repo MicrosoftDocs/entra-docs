@@ -28,7 +28,7 @@ The custom block page empowers you to customize the default body of the page fro
 
 1. Navigate to **Global Secure Access** > **Settings** > **Session management** > **Custom Block Page**
 2. Switch **Custom body message** to **On**.
-3. Configure the Customized body message you would prefer. For example, ``.
+3. Configure the Customized body message you would prefer. For example, `Your admin at Contoso has blocked your access.`
 4. (Optional) Paste one or multiple clickable links via limited markdown language (for example, `[click here](https://bing.com)`).
 5. Preview the customized message with the **Preview** button.
 6. Select **Save** to save the custom block page.
