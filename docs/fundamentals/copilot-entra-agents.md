@@ -5,7 +5,7 @@ keywords:
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
-ms.date: 08/22/2025
+ms.date: 09/22/2025
 ms.update-cycle: 180-days
 ms.topic: overview
 ms.service: entra
@@ -40,56 +40,44 @@ The following agents are currently available for Microsoft Entra. Due to the fas
 
 ### Access Review Agent
 
-Empower your reviewers to make fast, accurate access decisions. The [Access Review Agent](../id-governance/access-review-agent.md) delivers insights and recommendations so reviewers can complete their work through a simple conversation, right inside Microsoft Teams.
+Empower your reviewers to make fast and accurate access decisions. The [Access Review Agent](../id-governance/access-review-agent.md) with [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md) delivers insights and recommendations so reviewers can complete their work through a simple conversation, right inside Microsoft Teams.
 
-|Attribute  |Description  |
-|---------|---------|
-|Trigger     |   Runs every 24 hours or manually to gather insights and save recommendations.      |
-|Permissions     | The agent reviews users currently in the scope of your access reviews, and makes suggestions on whether access should be approved or declined. The agent acts based on your selections.        |
-|Identity     |   The agent will run with identity of the administrator who configured the agent to gather insights and save recommendations. Final decisions as part of the Microsoft Teams conversation will be written with the reviewer’s identity.       |
-|Products     |  [Access Reviews](../id-governance/access-reviews-overview.md), [Security Copilot](/copilot/security/microsoft-security-copilot)       |
-|Plugins     |   [Microsoft Entra](/entra/fundamentals/copilot-security-entra)       |
-|Role-based access     | Requires both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.        |
-
-Get started with the [Access Review Agent](../id-governance/access-review-agent.md)
-
+| Attribute           | Description |
+|---------------------|------------ |
+| Identity            | Runs with identity of the administrator who configured the agent. Final decisions as part of the Microsoft Teams conversation use the reviewer's identity. |
+| Licenses            | [Microsoft Entra ID Governance or Microsoft Entra Suite](../id-governance/licensing-fundamentals.md) |
+| Permissions         | Get details for access reviews<br>Read details and lifecycle workflow history for users, groups, apps, and access packages<br>Save access review suggestions and justifications |
+| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
+| Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Access Reviews](../id-governance/access-reviews-overview.md) |
+| Role-based access   | Both [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) are required to configure and use the agent |
+| Trigger             | Runs every 24 hours or triggered manually |
 
 ### Conditional Access optimization agent
 
 The [Conditional Access optimization agent](../identity/conditional-access/agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
 
-**Key capabilities:**
-- Identifies users and applications not covered by Conditional Access policies
-- Recommends policies for multifactor authentication enforcement or device-based controls (compliance, app protection, domain-joined devices)
-- Detects and helps block legacy authentication and device code flows
-- Creates new policies in report-only mode for safe testing
-- Builds a phased rollout plan for policy implementation
-
 | Attribute           | Description |
 |---------------------|------------ |
-| Trigger             | Runs every 24 hours or can be triggered manually                                                                                                |
-| Permissions         | Reviews policy configuration, creates new policies in report-only mode, suggests policy changes requiring approval                              |
-| Identity            | Runs with the permissions of the administrator who configured the agent                                                                         |
-| Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/), [Security Copilot](/copilot/security/microsoft-security-copilot)      |
-| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra)                                                                                    |
-| Role requirements   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) to configure the agent |
+| Identity            | Runs with the identity of the administrator who configured the agent |
+| Licenses            | [Microsoft Entra ID P1](licensing.md) |
+| Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
+| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
+| Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
+| Role requirements   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to configure the agent<br>[Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to use the agent |
+| Trigger             | Runs every 24 hours or triggered manually |
 
 ## Getting started with Microsoft Entra agents
 
 ### Prerequisites
 
-- You must have at least the [Microsoft Entra ID P1](licensing.md) license for the Conditional Access optimization agent.
-- You must have at least the [Microsoft Entra ID Governance or Microsoft Entra Suite licenses](../id-governance/licensing-fundamentals.md) for the Access Review Agent.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
     - In order to purchase security compute units, you need to have an Azure subscription. [Create your free Azure account](https://azure.microsoft.com/free).
-- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) automatically have the required permissions to configure the Conditional Access optimization agent.
-- Both [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator), or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) have the required permissions to configure and run the Access Review Agent
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Setup process
 
 1. Enable Security Copilot using the [Security Copilot setup guide](/copilot/security/get-started-security-copilot).
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or with both the roles of [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the least privileged role required for the agent you want to configure.
 1. Browse to **Agents** and select **View details** for the agent you want to configure.
 
 ## Agents in the Microsoft ecosystem
