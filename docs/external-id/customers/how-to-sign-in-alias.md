@@ -18,8 +18,6 @@ ms.custom: it-pro
 
 You can enable users who sign in with a local account (email and password) to sign in with an alias or username in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
 
-:::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option.":::
-
 ## Prerequisites
 
 - If you haven't already created your own Microsoft Entra external tenant, [create one now](how-to-create-external-tenant-portal.md).
@@ -34,7 +32,7 @@ To enable username as a sign-in identifier, you must first enable the sign-in id
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Entra ID** > **External Identities** then select **Sign-in identifiers**.
+1. In your external tenant browse to the **Entra ID** section, select **External Identities** then select **Sign-in identifiers**.
 
    :::image type="content" source="media/how-to-sign-in-alias/sign-in-identifiers-option.png" alt-text="Screenshot of the Sign-in identifiers option in the Microsoft Entra admin center.":::
 
@@ -54,17 +52,13 @@ You can also validate usernames against a custom regular expression. In the moda
 
 1. Select **Save** at the bottom of the modal window.
 
-## Create users with username as sign-in identifiers
+## Create users with username in the Microsoft Entra admin center
 
-You can create users with both email address and username as sign-in identifiers using either the Microsoft Entra admin center or the Microsoft Graph API.
-
-### Microsoft Entra admin center
-
-<!--- IS THERE A LIMIT? --->
-
+You can create users with both email address and username as sign-in identifiers using either the Microsoft Entra admin center or the Microsoft Graph API. This section describes creating users in the Microsoft Entra admin center. 
+ 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Entra ID** > **Users**.
+1. In your external tenant browse to **Entra ID** > **Users**.
 1. Select **+ New user** > **Create external user**.
 1. Next to **Identities**, you can select **Email** or **User Name** from the dropdown. You can select either or both options.  
 
@@ -76,13 +70,10 @@ You can create users with both email address and username as sign-in identifiers
 
 1. Select **Review + create** to create the user.
 
-### Microsoft Graph API
+## Create users with username using Microsoft Graph API
 
 After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to add a username to an existing user.
-
-#### Request
-
-The following example shows how to create a user with both email address and username as sign-in identifiers.
+The following request example shows how to create a user with both email address and username as sign-in identifiers.
 
 ```http
 POST https://graph.microsoft.com/v1.0/users
@@ -110,21 +101,19 @@ Content-type: application/json
 }
 ```
 
-### Add a username to an existing user
+## Update an existing user to add a username with Microsoft Graph API
 
-You can also add a username to an existing user. In this scenario, you first need to retrieve a user account using a sign-in identifier. Use `$filter` to get the user object, and `$select` to return the id and `identities[]` properties.
+You can also add a username to an existing user. In this scenario, you first need to retrieve a user account using a sign-in identifier. 
 
-#### Request
+### Step 1: Get the user details
 
-The following example shows how to get a user account using a sign-in identifier.
+Use `$filter` to get the user object, and `$select` to return the id and `identities[]` properties. The following request example shows how to retrieve a user account using a sign-in identifier.
 
 ```http
 GET https://graph.microsoft.com/v1.0/users?$select=displayName,id&$filter=identities/any(c:c/issuerAssignedId eq 'dylan@woodgrove.com' and c/issuer eq 'contoso.onmicrosoft.com')
 ```
 
-#### Response
-
-The following example shows the response with the user details.
+The following response example shows the response with the user details.
 
 ```http
 HTTP/1.1 200 OK
@@ -140,11 +129,11 @@ Content-type: application/json
 }
 ```
 
+### Step 2: Update the user details
+
 Once you have the user details from the query above, you can update the `identities[]` property of the user. You must replace the entire `identities[]` property of the user.
 
-#### Request
-
-The following example shows how to update the `identities[]` property of the user to add a username.
+The following request example shows how to update the `identities[]` property of the user to add a username.
 
 ```http
 POST https://graph.microsoft.com/v1.0/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
@@ -175,6 +164,8 @@ You can test signing in with the email address and username you assigned to the 
 
 ## Customize the sign-in page (optional)
 
+You can customize the sign-in page to provide a better experience for your users. You can customize the hint text of the identifier field on the sign-in page and localize other strings related to username.
+
 ### Customize the hint text of the identifier field on the sign-in page
 
 You can customize the hint text of identifier field on the sign-in page via Company Branding. 
@@ -193,8 +184,7 @@ You can customize the hint text of identifier field on the sign-in page via Comp
 
 You can customize and localize additional strings related to an end user's experience of signing in with a username by uploading a language file. For more information, see [Customize browser language for authentication experience](/entra/external-id/customers/how-to-customize-languages-customers).
 
-
 ## Related content
 
-- [Customize the look and feel of the authentication experience for the external tenant](/entra/external-id/customers/concept-branding-customers)
+- [Customize the look and feel of the authentication experience for the external tenant](/entra/external-id/customers/concept-branding-customers#add-language-customization-to-a-user-flow)
 

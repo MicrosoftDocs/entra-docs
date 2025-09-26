@@ -43,9 +43,9 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 You can enable users who sign in with a local account (email and password) to sign in with an [alias or username](how-to-sign-in-alias.md) in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
 
-When you enable username sign-in, users can choose to sign in with either their email address or their username. If they choose to sign in with their username, they enter the username and password on the sign-in page.
+When you enable username sign-in, users can choose to sign in with either their email address or their username. If they choose to sign in with their username, they will be prompted to enter a password, similar to Email and password sign-in. If you [enable password reset](how-to-customize-branding-customers.md#to-customize-self-service-password-reset), users can reset their password by selecting the password reset link on the sign-in page.
 
-   :::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option.":::
+   :::image type="content" source="media/how-to-sign-in-alias/alias-sign-in.png" alt-text="Screenshot of the username sign-in option.":::
 
 ## Email with one-time passcode sign-in
 
