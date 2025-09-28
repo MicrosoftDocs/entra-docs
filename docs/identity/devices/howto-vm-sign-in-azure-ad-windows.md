@@ -438,11 +438,11 @@ The computer name entered in mstsc does not match with any one of the "hostnames
 
 Try these solutions:
 
-There're multiple ways to resolve the issue:
-1.	Modify the HOSTS entry on client machine, add an A DNS record which pointing the correct device name (confirm from AAD Device record) to the IP of target machine. Use that device name in mstsc.
+There are multiple ways to resolve the issue:
+1.	Modify the HOSTS entry on client machine, add an A DNS record that points the correct device name (confirm from AAD Device record) to the IP of target machine. Use that device name in mstsc.
 2.	Check if the target machine is managed and if the hostname is set through Group Policy or MDM via the DNS Client PrimaryDnsSuffix value [ADMX_DnsClient Policy CSP | Microsoft Learn](/windows/client-management/mdm/policy-csp-admx-dnsclient#dns_primarydnssuffix). If this is set and is incorrect, it needs to be removed or set correctly. 
 3.	When customer requires to use FQDN to connect but AAD Device name is a short name, login to the target machine via local admin, add a “**Primary DNS Suffix**” for their domain suffix. Detailed instructions:
-- Navigate to **Advanced System Settings/System Properties** ->** Computer Name** tab -> Click the "**Change**" button to rename the computer -> Click "**More**..." under the existing computer name -> Type in your domain name and click **OK** -> Save and reboot.
+- Navigate to **Advanced System Settings/System Properties** ->** Computer Name** tab -> select the "**Change**" button to rename the computer -> select "**More**..." under the existing computer name -> Type in your domain name and select **OK** -> Save and reboot.
 - Once it’s done, we can RDP with FQDN directly and no need to modify the HOSTS entry.
 
 > [!NOTE]
