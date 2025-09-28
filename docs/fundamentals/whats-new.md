@@ -24,6 +24,18 @@ This article provides information about the latest releases and change announcem
 
 ## September 2025
 
+### Public Preview - Microsoft Security Copilot Access Review Agent in Microsoft Entra
+
+**Type:** New feature    
+**Service category:** Access Reviews        
+**Product capability:** Identity Governance    
+
+Say goodbye to time-consuming research and the uncertainty of rushed decisions. With the public preview of the [Microsoft Security Copilot Access Review Agent in Microsoft Entra](https://aka.ms/ARAgent), we’re bringing the power of AI directly into the heart of access governance.
+
+The agent works for your reviewers by automatically gathering insights and generating recommendations to help them make fast, accurate access decisions. Reviewers are guided through a natural, conversational flow right inside Microsoft Teams, so they can make the final call with confidence and clarity.
+
+---
+
 ### General Availability - Cross-tenant synchronization (cross-cloud)
 
 **Type:** New feature    
