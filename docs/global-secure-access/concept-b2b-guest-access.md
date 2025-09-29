@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: concept-article
-ms.date: 09/23/2025
+ms.date: 09/29/2025
 ms.service: global-secure-access
 ms.reviewer: cagautham
 ai-usage: ai-assisted
@@ -16,7 +16,7 @@ Many organizations collaborate with external partners like vendors, contractors,
 
 Global Secure Access, built into Microsoft Entra, addresses these challenges by leveraging existing B2B guest identities. This integration provides enhanced security features, including full Conditional Access, Continuous Access Evaluation, and cross-tenant trust, helping organizations manage and secure external user access more effectively.
 
-[![Diagram showing an overview of B2B guest access in Global Secure Access.](media/concept-b2b-guest-access/overview-guest-access.png)](media/concept-b2b-guest-access/overview-guest-access.png#lightbox)
+[![Diagram showing an overview of B2B guest access in Global Secure Access.](media/concept-b2b-guest-access/guest-access-overview.png)](media/concept-b2b-guest-access/guest-access-overview.png#lightbox)
 
 ## Enable B2B guest access for Azure Virtual Desktop and Windows 365
 
