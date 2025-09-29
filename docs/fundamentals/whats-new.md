@@ -27,6 +27,26 @@ This article provides information about the latest releases and change announcem
 ### Public Preview - Microsoft Security Copilot Access Review Agent in Microsoft Entra
 
 **Type:** New feature    
+**Service category:** B2C - Consumer Identity Management        
+**Product capability:** B2B/B2C    
+
+We’re excited to announce the **public preview of SMS for self-service password reset (SSPR) in Microsoft Entra External ID**. This change is actively rolling out to all tenants in production by end of October. 
+
+**What’s New**
+
+- **SMS Authentication for Password Reset:** End users can now verify their identity via SMS when using the *“forgot password”* or self-service password reset flow. Previously, only email one-time passcodes were supported.
+
+- **Enhanced Security:** If users have two or more registered methods for password reset, they'll now be required to verify their identity with at least two methods, adding an extra layer of protection.
+
+- **Fraud Protection:** With built-in integration to the Phone Reputation platform, telephony activity is processed in real time to identify risks. Each request is returned with an Allow, Block, or Challenge decision to help protect against telephony fraud.
+
+- **Billing:** SMS for password reset is a part of add-on feature with tiered pricing based on location/region. Charges per SMS include the fraud protection services. For more information, see:  [SMS pricing tiers by country/region](../external-id/customers/concept-multifactor-authentication-customers.md#sms-pricing-tiers-by-countryregion).
+
+---
+
+### Public Preview - Microsoft Security Copilot Access Review Agent in Microsoft Entra
+
+**Type:** New feature    
 **Service category:** Access Reviews        
 **Product capability:** Identity Governance    
 
