@@ -22,7 +22,7 @@ You need the following to use Microsoft Entra Cloud Sync:
 
 - Domain Administrator or Enterprise Administrator credentials to create the Microsoft Entra Connect cloud sync gMSA (group managed service account) to run the agent service.
 - A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
-- An on-premises server for the provisioning agent with Windows Server 2016 or later. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
+- An on-premises server for the provisioning agent that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
 
   - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId
     
