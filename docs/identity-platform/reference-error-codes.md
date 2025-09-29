@@ -166,7 +166,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50117 | Failed to deserialize policy specified in the request's claim parameter. |
 | AADSTS50120 | Unknown credential type, issue with the JWT header. Contact the tenant admin. |
 | AADSTS50123 | Unknown claims transformation method '{method}' was specified for principal '{principalId}'. |
-| AADSTS50124 | Invalid regular expression configured for claims transformation for this application. Contact your tenant admin to fix the claims mapping configuration. See [Customize SAML token claims](/identity/saml-claims-customization) |
+| AADSTS50124 | Invalid regular expression configured for claims transformation for this application. Contact your tenant admin to fix the claims mapping configuration. See [Customize SAML token claims](saml-claims-customization.md) |
 | AADSTS501241 | Mandatory Input '{paramName}' missing from transformation ID '{transformId}'. This error is returned while Microsoft Entra ID is trying to build a SAML response to the application. NameID claim or NameIdentifier is mandatory in SAML response and if Microsoft Entra ID failed to get source attribute for NameID claim, it returns this error. As a resolution, ensure that you add claim rules. To add claim rules, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), and then browse to **Entra ID** > **Enterprise apps**. Select your application, select **Single Sign-On** and then in **User Attributes & Claims** enter the Unique User Identifier (Name ID). |
 | AADSTS50125 | PasswordResetRegistrationRequiredInterrupt - Sign-in was interrupted because of a password reset or password registration entry. |
 | AADSTS50126 | InvalidUserNameOrPassword - Error validating credentials due to invalid username or password. The user didn't enter the right credentials. Expect to see some number of these errors in your logs due to users making mistakes. |
@@ -215,7 +215,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50170 | MissingExternalClaimsProviderMapping - The external controls mapping is missing. |
 | AADSTS50171 | The given audience can only be used in Mutual-TLS token calls. |
 | AADSTS50172 | External claims provider {provider} isn't approved. |
-| AADSTS50173 | The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '{authTime}' and the TokensValidFrom date (before which tokens are not valid) for this user is '{validDate}'. To learn more, see the troubleshooting article for error [AADSTS50173](/troubleshoot/entra/app-integration/error-code-aadsts50173-grant-expired-revoked). |
+| AADSTS50173 | The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '{authTime}' and the TokensValidFrom date (before which tokens are not valid) for this user is '{validDate}'. To learn more, see the troubleshooting article for error [AADSTS50173](/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50173-grant-expired-revoked). |
 | AADSTS50176 | Missing definition of external control: {controlId}. |
 | AADSTS50177 | ExternalChallengeNotSupportedForPassthroughUsers - External challenge isn't supported for passthrough users. |
 | AADSTS50178 | SessionControlNotSupportedForPassthroughUsers - Session control isn't supported for passthrough users. |
@@ -396,7 +396,9 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS220501 | InvalidCrlDownload |
 | AADSTS221000 | DeviceOnlyTokensNotSupportedByResource - The resource isn't configured to accept device-only tokens. |
 | AADSTS240001 | BulkAADJTokenUnauthorized - The user isn't authorized to register devices in Microsoft Entra ID. |
-| AADSTS240002 | RequiredClaimIsMissing - The id_token can't be used as `urn:ietf:params:oauth:grant-type:jwt-bearer` grant.|
+| AADSTS240002 | RequiredClaimIsMissing - The id_token can't be used as `urn:ietf:params:oauth:grant-type:jwt-bearer` grant. |
+| AADSTS240003 | Unexpected result from authorize endpoint call. |
+| AADSTS240004 | Authorization code not received from authorize endpoint call. Error: {errorInfo}. |
 | AADSTS501621 | ClaimsTransformationTimeoutRegularExpressionTimeout - Regular expression replacement for claims transformation has timed out. This indicates a too complex regular expression may have been configured for this application. A retry of the request may succeed. Otherwise, please contact your admin to fix the configuration. |
 | AADSTS530032 | BlockedByConditionalAccessOnSecurityPolicy - The tenant admin has configured a security policy that blocks this request. Check the security policies that are defined on the tenant level to determine if your request meets the policy requirements. |
 | AADSTS700016 | UnauthorizedClient_DoesNotMatchRequest - The application wasn't found in the directory/tenant. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You might have misconfigured the identifier value for the application or sent your authentication request to the wrong tenant. |
