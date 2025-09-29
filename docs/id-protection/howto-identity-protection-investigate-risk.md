@@ -1,56 +1,42 @@
 ---
-title: Investigate risk Microsoft Entra ID Protection
+title: Investigate risk with Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 08/06/2025
+ms.date: 09/29/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pwongera
 ms.reviewer: cokoopma
 ms.custom: sfi-image-nochange
 ---
-# How To: Investigate risk
+# How to investigate risk
 
-Microsoft Entra ID Protection provides organizations with reporting they can use to investigate identity risks in their environment. These reports include risky users, risky sign-ins, risky workload identities, and risk detections. Investigation of events is key to better understanding and identifying any weak points in your security strategy. All these reports allow for downloading of events in .CSV format or integration with other security solutions like a dedicated Security Information and Event Management (SIEM) tool for further analysis. Organizations can also take advantage of Microsoft Defender and Microsoft Graph API integrations to aggregate data with other sources.
+Microsoft Entra ID Protection provides several reports that can be used to investigate identity risks in your environment. These reports include risky users, risky sign-ins, risky workload identities, and risk detections. Investigation of events is key to better understanding and identifying any weak points in your security strategy. ID Protection reports can be archived for storage or integrated with security event and incident management (SEIM) tools for further analysis. Organizations can also take advantage of Microsoft Defender and Microsoft Graph API integrations to aggregate data with other sources.
 
 ## Prerequisites
 
-- The Microsoft Entra ID P2 or Microsoft Entra Suite license is required for full access to Microsoft Entra ID Protection features.
-    - For a detailed list of capabilities for each license tier, see [What is Microsoft Entra ID Protection](overview-identity-protection.md).
-- The [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role is the least privileged role required to **view the risk reports**.
-- The [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role required to **view the sign-in and audit logs**.
+- [Microsoft Entra ID P2 or Microsoft Entra Suite license](overview-identity-protection.md) is required for full access to Microsoft Entra ID Protection features.
+- [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) is the least privileged role required to **view the risk reports**.
+- [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to **view the sign-in and audit logs**.
 
-## Navigating the reports
+## Access the risk reports
 
-The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **ID Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
+The ID Protection Dashboard provides a summary of important insights that you can use to start your investigation and navigate to the corresponding reports from there.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/view-high-risk-users-from-id-protection-dashboard.png" alt-text="Screenshot showing the number of high risk users widget from the ID Protection dashboard.":::
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader).
+1. Browse to **ID Protection** > **Dashboard**.
+1. Select a report from the ID Protection navigation menu.
 
-Each report launches with a list of all detections for the period shown at the top of the report. Administrators can optionally filter and add or remove columns based on their preference. Administrators can download the data in .CSV or .JSON format for further processing.
+Each report launches with a list of all detections for the period shown at the top of the report. You can filter and add columns such as risk level, status, and risk detail. Download the data in .CSV or .JSON format for further processing. To integrate the reports with SEIM tools for further analysis, see [Configure diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 
-When administrators select one or multiple entries, options to confirm or dismiss the risks appear at the top of the report. Selecting an individual risk event opens a pane with more details to assist with investigations.
+#### How to investigate risky users
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-heading.png" alt-text="Screenshot of the heading of the Risky users report showing the options available to administrators." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-heading.png":::
-
-### Risky users report
-
-The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. [Learn more about what the levels signify](concept-risk-detection-types.md#risk-levels)
-
-#### Why is a user at risk?
-
-A user becomes a risky user when:
-
-- They have one or more risky sign-ins.
-- They have one or more [risks](concept-identity-protection-risks.md) detected on their account, like leaked credentials. 
-
-#### How to investigate risky users?
-
-To view and investigate risky users, navigate to the Risky users report and use the filters to manage the results. There's an option at the top of the page to add other columns such as risk level, status, and risk detail.
+To view and investigate risky users, navigate to the [Risky users report](concept-risk-reports.md) and use the filters to manage the results. 
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report.png" alt-text="Screenshot of the Risky users report showing examples of users at risk." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report.png":::
 
-When administrators select an individual user, the Risky user details pane appears. Risky user details provide information like: user ID, office location, recent risky sign-in, detections not linked to a sign, and risk history. The Risk history tab shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
+When you select an individual user, the **Risky user details** pane appear and displays information like: user ID, office location, recent risky sign-in, detections not linked to a sign, and risk history. The **Risk history tab** shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png" alt-text="Screenshot showing the Risky User Details flyout with samples of Risk history." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png":::
 
@@ -58,11 +44,11 @@ If you have Copilot for Security, you have access to a [summary in natural langu
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png" alt-text="Screenshot showing the summary of risk provided by Copilot in the Risky User Details flyout." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png":::
 
-With the information provided by the Risky users report, administrators can view:
+With the information provided by the **Risky users report**, you can view:
 
 - User risk that was remediated, dismissed, or is still currently at risk and needs investigation
 - Details about detections
-- Risky sign-ins associated to a given user
+- Risky sign-ins associated to a user
 - Risk history
 
 [!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
@@ -71,7 +57,7 @@ With the information provided by the Risky users report, administrators can view
 
 ## Risky sign-ins report
 
-The risky sign-ins report contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
+The [Risky sign-ins report](concept-risk-reports.md) contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png":::
 
