@@ -71,3 +71,4 @@ Organizations that use the [Subscription Activation](/windows/deployment/windows
 
 - [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy)
 - [Conditional Access grant controls](/entra/identity/conditional-access/concept-conditional-access-grant#require-device-to-be-marked-as-compliant)
+- [Configure cross-tenant access settings](/entra/external-id/cross-tenant-access-settings-b2b-collaboration#to-change-inbound-trust-settings-for-mfa-and-device-claims)
