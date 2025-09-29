@@ -9,7 +9,7 @@ ms.assetid: 31f084d8-2b89-478c-9079-76cf92e6618f
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 04/09/2025
+ms.date: 09/17/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 
@@ -21,9 +21,14 @@ ms.author: jomondi
 
 This topic describes the different methods that you can use to upgrade your Microsoft Entra Connect installation to the latest release. Microsoft recommends using the steps in the [Swing migration](#swing-migration) section when you make a substantial configuration change or upgrade from older 1.x versions.
 
->[!NOTE]
-> It's important that you keep your servers current with the latest releases of Microsoft Entra Connect. We are constantly making upgrades to Microsoft Entra Connect, and these upgrades include fixes to security issues and bugs, as well as serviceability, performance, and scalability improvements.
-> To see what the latest version is, and to learn what changes have been made between versions, please refer to the [release version history](./reference-connect-version-history.md)
+It's important that you keep your servers current with the latest releases of Microsoft Entra Connect. We are constantly making upgrades to Microsoft Entra Connect, and these upgrades include fixes to security issues and bugs, as well as serviceability, performance, and scalability improvements.
+
+>[!IMPORTANT]
+>**Mandatory Upgrade Required**: All synchronization services in Microsoft Entra Connect Sync will stop working on **September 30, 2026** if you're not on at least version 2.5.79.0. In May 2025, we released this version with a back-end service change that hardens our services. Upgrade before this deadline to avoid any service disruption.
+>
+>If you're unable to upgrade before the deadline, all synchronization services will fail until you upgrade to the latest version. The Microsoft Entra Connect Sync .msi installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
+
+To see what the latest version is, and to learn what changes have been made between versions, please refer to the [release version history](./reference-connect-version-history.md)
 
 Any versions older than Microsoft Entra Connect V2 are currently deprecated. For more information, see [Introduction to Microsoft Entra Connect V2](whatis-azure-ad-connect-v2.md). You can upgrade from any version of Microsoft Entra Connect to the current version. In-place upgrades of DirSync or ADSync aren't supported, and a swing migration is required. If you want to upgrade from DirSync, see [Upgrade from Azure AD Sync tool (DirSync)](how-to-dirsync-upgrade-get-started.md) or the [Swing migration](#swing-migration) section.
 

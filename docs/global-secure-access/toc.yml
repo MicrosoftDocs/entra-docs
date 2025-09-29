@@ -183,6 +183,8 @@ items:
         href: how-to-configure-web-content-filtering.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
+      - name: Customize the block page
+        href: how-to-customize-block-page.md
   - name: Logs and monitoring
     expanded: false
     items:
