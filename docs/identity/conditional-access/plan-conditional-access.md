@@ -181,7 +181,7 @@ Enable [protected actions](/entra/identity/role-based-access-control/protected-a
 
 ### Configure guest user settings
 
-For external organizations you know and have a relationship with, you might want to trust multifactor authentication, device compliance, or hybrid device claims presented by guests to your Conditional Access policies. For more information, see [Manage cross-tenant access settings for B2B collaboration](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims). There are some caveats related to how B2B users work with ID Protection for more information see [Microsoft Entra ID Protection for B2B Users](../../id-protection/concept-identity-protection-b2b.md).
+For external organizations you know and have a relationship with, you might want to trust multifactor authentication, device compliance, or hybrid device claims presented by guests to your Conditional Access policies. For more information, see [Manage cross-tenant access settings for B2B collaboration](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims). There are some caveats related to how B2B users work with Microsoft Entra ID Protection, for more information see [Microsoft Entra ID Protection for B2B Users](../../id-protection/concept-identity-protection-b2b.md).
 
 ### Set naming standards for your policies
 
