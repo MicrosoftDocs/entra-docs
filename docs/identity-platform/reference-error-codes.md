@@ -215,7 +215,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50170 | MissingExternalClaimsProviderMapping - The external controls mapping is missing. |
 | AADSTS50171 | The given audience can only be used in Mutual-TLS token calls. |
 | AADSTS50172 | External claims provider {provider} isn't approved. |
-| AADSTS50173 | The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '{authTime}' and the TokensValidFrom date (before which tokens are not valid) for this user is '{validDate}'. To learn more, see the troubleshooting article for error [AADSTS50173](~/troubleshoot/entra/app-integration/error-code-aadsts50173-grant-expired-revoked.md). |
+| AADSTS50173 | The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '{authTime}' and the TokensValidFrom date (before which tokens are not valid) for this user is '{validDate}'. To learn more, see the troubleshooting article for error [AADSTS50173](/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50173-grant-expired-revoked). |
 | AADSTS50176 | Missing definition of external control: {controlId}. |
 | AADSTS50177 | ExternalChallengeNotSupportedForPassthroughUsers - External challenge isn't supported for passthrough users. |
 | AADSTS50178 | SessionControlNotSupportedForPassthroughUsers - Session control isn't supported for passthrough users. |
