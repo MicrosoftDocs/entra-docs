@@ -179,6 +179,10 @@ Reduce the risk of lockout during unforeseen disruptions by [planning resilience
 
 Enable [protected actions](/entra/identity/role-based-access-control/protected-actions-add) to add another layer of security to attempts to create, change, or delete Conditional Access policies. Organizations can require a fresh multifactor authentication or other grant control before changing policy.
 
+### Configure guest user settings
+
+For external organizations you know and have a relationship with, you might want to trust multifactor authentication, device compliance, or hybrid device claims presented by guests to your Conditional Access policies. For more information, see [Manage cross-tenant access settings for B2B collaboration](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims). There are some caveats related to how B2B users work with ID Protection for more information see [Microsoft Entra ID Protection for B2B Users](../../id-protection/concept-identity-protection-b2b.md).
+
 ### Set naming standards for your policies
 
 A naming standard helps you find policies and understand their purpose without opening them. Name your policy to show:
@@ -235,10 +239,6 @@ Start with a few core Conditional Access policies like the ones that follow. Man
 | [Restrict access to high risk users](/entra/fundamentals/configure-security#restrict-access-to-high-risk-users) | All users | Microsoft Entra ID P2 |
 | [Restrict high risk sign-ins](/entra/fundamentals/configure-security#restrict-high-risk-sign-ins) | All users | Microsoft Entra ID P2 |
 | [Conditional Access policies for Privileged Access Workstations are configured](/entra/fundamentals/configure-security#conditional-access-policies-for-privileged-access-workstations-are-configured) | Privileged users | Microsoft Entra ID P1 |
-
-#### Configure guest user settings
-
-For external organizations you know and have a relationship with, you might want to trust multifactor authentication, device compliance, or hybrid device claims presented by guests to your Conditional Access policies. For more information, see [Manage cross-tenant access settings for B2B collaboration](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims). There are some caveats related to how B2B users work with ID Protection for more information see [Microsoft Entra ID Protection for B2B Users](../../id-protection/concept-identity-protection-b2b.md).
 
 #### Evaluate the policy impact
 
