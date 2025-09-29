@@ -4,7 +4,7 @@ description: Plan your Conditional Access policies to balance security and produ
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/05/2025
+ms.date: 09/29/2025
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
