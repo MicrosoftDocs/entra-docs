@@ -154,11 +154,16 @@ There are several key points to consider regarding the identity and permissions 
 
 ### ServiceNow integration
 
-Organizations that use the [ServiceNow integration](/copilot/security/plugin-servicenow) with Microsoft Entra ID can now have the Conditional Access optimization agent create ServiceNow incidents for each new suggestion it generates. This allows IT and security teams to track, review, and approve or reject agent suggestions within their existing ServiceNow workflows.
+Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/security/plugin-servicenow) can now have the Conditional Access optimization agent create ServiceNow incidents for each new suggestion the agent generates. This allows IT and security teams to track, review, and approve or reject agent suggestions within existing ServiceNow workflows. At this time, only change requests (CHG) are supported.
+
+When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow incident. The incident includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The incident is assigned to a specified group or individual for review and approval.
 
 The integration also provides a feedback loop: The agent monitors the state of the ServiceNow incident and can automatically implement the change when the incident is approved.
 
-To use the ServiceNow integration, the organization must have the ServiceNow connector configured for Security Copilot. Your tenant ID must be added to the allow list, according to the plugin setup instructions. 
+To use the ServiceNow integration:
+
+- The organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
+- Your tenant ID must be added to the allow list, according to the plugin setup instructions.
 
 ### Custom instructions
 
