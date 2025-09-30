@@ -24,7 +24,7 @@ This article provides information about the latest releases and change announcem
 
 ## September 2025
 
-### Public Preview - Use SMS as a verification method in password reset flows in Entra External ID 
+### Public Preview - Use SMS as a verification method in password reset flows in Microsoft Entra External ID 
 
 **Type:** New feature    
 **Service category:** B2C - Consumer Identity Management        
