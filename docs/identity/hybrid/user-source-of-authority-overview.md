@@ -19,21 +19,9 @@ Organizations are increasingly adopting a cloud-first approach to modernize thei
 This article introduces the concept of User SOA, its benefits, and the scenario it supports. It also outlines key considerations and prerequisites for IT administrators planning to shift user management to the cloud using Microsoft Entra ID. By using User SOA, organizations can streamline user lifecycle management, enable advanced governance capabilities, and fully embrace a cloud-first posture.
 
 
-## User SOA Scenario
+## User SOA Scenarios
 
-The next sections explain more details about the scenario that User SOA supports.
-
-### Minimizing AD Users and Govern user lifecycle with Microsoft Entra ID Governance
-
-**Scenario**: You modernized some or all your applications and removed the need to use AD DS users for access. For example, these applications now use user [claims with Security Assertion Markup Language (SAML)](../../identity-platform/saml-claims-customization.md) or [OpenID Connect](../../identity-platform/v2-protocols-oidc.md) from Microsoft Entra ID instead of federation systems such as AD FS. However, these apps still rely on the existing synched user to manage access. By implementing User SOA, you can edit the user in the cloud, remove the AD DS user completely, and govern the user through Microsoft Entra ID Governance capabilities.
-
-:::image type="content" source="media/user-source-of-authority-overview/user-source-of-authority-minimization.png" alt-text="Screenshot of user soa minimization.":::
-
-### Password-less Authentication of SOA transferred Users
-
-**Scenario**:  You’ve transferred the SOA for Users and now want to allow them to access both on-premises, and cloud, resources. Instead of completely removing users from on-premises, introduce Cloud Kerberos Trust password-less authentication to allow them to maintain a hybrid presence allowing them to continue to access their on-premises resources, while also allowing them to access cloud resources. Password-less authentication methods, such as [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/configure) or [FIDO2 security keys](../../identity/authentication/how-to-enable-passkey-fido2.md), can be used to allow these users to access both their on-premises resources, and cloud resources such as [Azure Files](/azure/storage/files/storage-files-introduction) through [Microsoft Entra Private Access](../../global-secure-access/concept-private-access.md). Using Password-less authentication also enables Multifactor Authentication on the SOA transferred users increasing security. Password-less authentication also allows you to enable Conditional Access policies on the on-premises resources, allowing greater control and security over these resources.
-
-:::image type="content" source="media/user-source-of-authority-overview/password-less-authentication-source-of-authority.png" alt-text="Screenshot of the password-less authentication scenario for User SOA.":::
+To see scenarios that can be unlocked using User SOA, see: [Scenarios you can unlock](guidance-for-it-architects-for-source-of-authority-conversion.md#scenarios-you-can-unlock).
 
 ## Consideration for User SOA
 
@@ -41,7 +29,7 @@ Before you begin transferring the SOA for users in your organization, there are 
 
 ### HR-driven Inbound Provisioning
 
-If your organization is using Microsoft Entra HR inbound provisioning from any HR system, you must direct changes to those users directly to Microsoft Entra ID. For more information, see:  [Shift Your HR Integration To The Cloud](prepare-user-source-of-authority-environment.md#shift-your-hr-integration-to-the-cloud).
+If your organization is using Microsoft Entra HR inbound provisioning from any HR system, you must direct changes to those users directly to Microsoft Entra ID. For more information, see: [Prepare your HR system](prepare-user-source-of-authority-environment.md#prepare-your-hr-system).
 
 ### Active Directory Users and Computers or the Active Directory module for PowerShell
 
