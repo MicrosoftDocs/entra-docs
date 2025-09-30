@@ -302,7 +302,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 ## Clear on-premises resources for SOA transferred users
 
-The following are the list of on-premises [properties](/graph/api/resources/user#properties) present on the cloud user object which is used for accessing on-premises resources:
+The following are the list of on-premises [properties](/graph/api/resources/user#properties) present on the cloud user object which are used for accessing on-premises resources:
 
 - onPremisesDistinguishedName
 - onPremisesDomainName
