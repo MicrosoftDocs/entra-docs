@@ -21,7 +21,7 @@ This article introduces the concept of User SOA, its benefits, and the scenario 
 
 ## User SOA Scenarios
 
-To see scenarios that can be unlocked using User SOA, see: [Scenarios you can unlock](guidance-for-it-architects-for-source-of-authority-conversion.md#scenarios-you-can-unlock).
+To see scenarios that can be unlocked using user SOA, see: [Scenarios you can unlock](guidance-for-it-architects-for-source-of-authority-conversion.md#scenarios-you-can-unlock).
 
 ## Consideration for User SOA
 
