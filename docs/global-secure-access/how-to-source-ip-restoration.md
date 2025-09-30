@@ -21,6 +21,9 @@ Source IP restoration in Global Secure Access allows backward compatibility for 
 - [Microsoft Entra ID Protection risk detections](/entra/id-protection/concept-identity-protection-risks) get a consistent view of original user Source IP address for assessing various risk scores.
 - Original user Source IP is also made available in [Microsoft Entra sign-in logs](/azure/active-directory/reports-monitoring/concept-all-sign-ins) and in [Microsoft Entra audit logs](/entra/identity/monitoring-health/concept-audit-logs)
 
+> [!NOTE]
+> To achieve source IP restoration for non-Microsoft apps, you must also configure Conditional Access policies and ensure traffic flows through a compliant network. To learn more, see [Enable compliant network check with Conditional Access](/entra/global-secure-access/how-to-compliant-network#protect-your-resources-behind-the-compliant-network).
+
 ## Prerequisites
 
 * Administrators who interact with **Global Secure Access** features must have both of the following role assignments depending on the tasks they're performing.
