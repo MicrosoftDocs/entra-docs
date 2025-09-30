@@ -88,3 +88,40 @@ The Risk detections report provides insights into the various risk detections as
 You can take appropriate action directly from the report or the details pane. You can select one or multiple entries and either confirm the risk or dismiss it. You can also start a password reset flow from the user. These capabilities have different role requirements, so if an option is greyed out, you need a higher privileged role. For more information, see [ID Protection required roles](overview-identity-protection.md#required-roles).
 
 [!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
+
+[!INCLUDE [id-protection-admin-action-sign-in](../includes/id-protection-admin-action-sign-in.md)]
+
+
+
+
+
+
+## Risky sign-ins report
+
+The [Risky sign-ins report](concept-risk-reports.md) contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
+
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png":::
+
+
+[!INCLUDE [id-protection-admin-action-sign-in](../includes/id-protection-admin-action-sign-in.md)]
+
+To learn more about when to take each of these actions, see [How does Microsoft use my risk feedback](howto-identity-protection-risk-feedback.md#how-does-microsoft-use-my-risk-feedback)
+
+## Risk detections report
+
+The Risk detections report contains filterable data for up to the past 90 days (three months).
+
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risk-detections-report.png" alt-text="Screenshot showing the Risk detections report." lightbox="media/howto-identity-protection-investigate-risk/risk-detections-report.png":::
+
+With the information provided by the Risk detections report, administrators can find:
+
+- Information about each risk detection
+- Attack type based on MITRE ATT&CK framework
+- Other risks triggered at the same time
+- Sign-in attempt location
+- Link out to more detail from Microsoft Defender for Cloud Apps.
+
+Administrators can then choose to return to the user's risk or sign-ins report to take actions based on information gathered.
+
+> [!NOTE]
+> Our system might detect that the risk event that contributed to the user risk score was a false positive or the user risk was remediated with policy enforcement such as completing an MFA prompt or secure password change. Therefore, our system will dismiss the risk state and a risk detail of “AI confirmed sign-in safe” will surface and it will no longer contribute to the user's risk.
