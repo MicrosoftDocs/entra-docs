@@ -135,16 +135,16 @@ To enable verbose logging:
 	1. Click **+ Create** > **New Custom Log (Direct Ingest)**.
 	1. Fill in the necessary details:
        - **Table Name**: Provide a Table Name.
-       - **Description**: Provide an optionbal description for your table.
+       - **Description**: Provide an optional description for your table.
        - **Table Plan**: Choose Appropriate Table Plan.
-       - **Data Collection rule**: If you don't have existing DCR, click on Create a new data collection rule
+       - **Data Collection rule**: If you don't have the existing DCR, click on Create a new data collection rule.
            - **Subscription**: Select your subscription.
            - **Resource Group**: Select an existing resource group or create a new one.
            - **Region**: Choose the region.
            - **Name**: Provide a unique name for the DCR.
-       -  **Data Collection endpoint**: Choose data collection endpoint created above.
-       -  **Schema and transformation**: Upload a sample log file in json format. Look at the logs file on the virtual machine and convert it into sample json.
-           e.g., sample.json (you can create a file sample.json with below content and upload)
+       -  **Data Collection endpoint**: Choose the data collection endpoint created above.
+       -  **Schema and transformation**: Upload a sample log file in json format. Look at the logs file on the virtual machine and convert it into a sample json.
+           e.g., create a sample.json with below content and upload.
        -  **Create**: Review and Create the Table
 ```json
 
@@ -165,7 +165,7 @@ To enable verbose logging:
 ### Set up data collection rule (DCR)
 1. Go to the [Azure portal](https://portal.azure.com/).
 2. In the search bar, search for **Data Collection Rule**.
-3. Select the DCR you created above as part of table creation. 
+3. Select the DCR you created as part of the table creation. 
 4. Go to Settings: Resources
 	1. Click **Add resources**.
 	1. Open your subscription.
@@ -258,8 +258,6 @@ By following these steps, you can securely open your Azure Log Analytics workspa
 
 ## Useful Links
 
-- [Collect data from virtual machine client with Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/vm/data-collection)
-- [Collect text file from virtual machine with Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/vm/data-collection-log-text)
 - [Understand the Microsoft Entra private network connector](concept-connectors.md)
 - [Learn about Microsoft Entra Private Access](concept-private-access.md)
 
