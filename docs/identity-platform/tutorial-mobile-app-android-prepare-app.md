@@ -257,7 +257,7 @@ PublicClientApplication.createSingleAccountPublicClientApplication(
 This code creates a single account public client application using the configuration file auth_config_single_account.json. When the application is successfully created, it assigns the instance to `mSingleAccountApp` and calls the `loadAccount()` method. If an error occurs during the creation, it handles the error by calling the displayError(exception) method.
 
 
-#### [External tenant configuration](#tab/android-external)
+#### [External tenant configuration](#tab/external-tenant)
 
 ```kotlin
 private suspend fun initClient(): ISingleAccountPublicClientApplication = withContext(Dispatchers.IO) {
