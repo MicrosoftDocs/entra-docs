@@ -111,7 +111,7 @@ Access more queries and visual insights based on AADUserRiskEvents and AADRisky 
 
 ### Risk analysis
 
-Organizations can reduce security operation center (SOC) workloads and support overhead with risk-based Conditional Access policies. Learn more in the following video, **Mastering risk analysis with Microsoft Entra ID Protection**.
+Organizations can reduce security operations center (SOC) workloads and support overhead with risk-based Conditional Access policies. Learn more in the following video, **Mastering risk analysis with Microsoft Entra ID Protection**.
 
    > [!VIDEO abb7d7fe-4155-4ee1-bcce-afa027d22f8d]
 
