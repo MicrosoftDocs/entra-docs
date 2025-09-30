@@ -6,7 +6,7 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 08/28/2025
+ms.date: 09/30/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -156,14 +156,13 @@ There are several key points to consider regarding the identity and permissions 
 
 Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/security/plugin-servicenow) can now have the Conditional Access optimization agent create ServiceNow incidents for each new suggestion the agent generates. This allows IT and security teams to track, review, and approve or reject agent suggestions within existing ServiceNow workflows. At this time, only change requests (CHG) are supported.
 
-When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow incident. The incident includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The incident is assigned to a specified group or individual for review and approval.
+To use the ServiceNow integration, your organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
 
-The integration also provides a feedback loop: The agent monitors the state of the ServiceNow incident and can automatically implement the change when the incident is approved.
+:::image type="content" source="media/agent-optimization/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/agent-optimization/agent-service-now-integration-setting.png":::
 
-To use the ServiceNow integration:
+When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow incident. The incident includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The integration also provides a feedback loop: The agent monitors the state of the ServiceNow incident and can automatically implement the change when the incident is approved.
 
-- The organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
-- Your tenant ID must be added to the allow list, according to the plugin setup instructions.
+:::image type="content" source="media/agent-optimization/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/agent-optimization/agent-service-now-integration-ticket.png":::
 
 ### Custom instructions
 
