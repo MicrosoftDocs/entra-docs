@@ -106,7 +106,7 @@ To enable verbose logging:
     1. Download the Azure Arc agent setup script from the Azure portal.
     1. Search for **Windows PowerShell ISE** in the search box on the Task bar. Right click on the application, then click **Run as administrator**.  
     From PowerShell, open the downloaded file labeled `OnboardingScript.ps1`. 
-    1. Run the script. You can bypass the execution policy if needed by running: powershell -ExecutionPolicy Bypass - File "FilePath" 
+    1. Run the script. You can bypass the execution policy if needed by running: powershell -ExecutionPolicy Bypass -File "FilePath" 
     1. Log in on the pop-up window to authenticate using the Azure account credentials. The screen returns a message that reads:
     `Authentication complete. You can return to the application. Feel free to close this browser tab.`
 
@@ -119,8 +119,7 @@ To enable verbose logging:
     
 ### Set up Log Analytics workspace
 1. Go to the [Azure portal](https://portal.azure.com/).
-2. Create a Data Collection Endpoint 
-3. Create a Log Analytics workspace: 
+2. Create a Log Analytics workspace: 
     1. In the search bar, type **Log Analytics** and select **Log Analytics workspaces**.
     1. Click **Create**.
     1. Fill in the necessary details:
@@ -129,7 +128,7 @@ To enable verbose logging:
        - **Name**: Provide a unique name for the Log Analytics workspace.
        - **Region**: Choose the region closest to your on-premises machine.
     1. Click **Review + create**, then **Create**.
-4. Create a table under the new workspace. 
+3. Create a table under the new workspace. 
 	1. Select the workspace name you created. 
 	1. Navigate to **Workspace** > ** **Settings** > **Tables**. 
 	1. Click **+ Create** > **New Custom Log (Direct Ingest)**.
