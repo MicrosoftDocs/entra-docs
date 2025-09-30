@@ -67,7 +67,7 @@ The following tables are of most interest to Microsoft Entra ID Protection admin
 - ServicePrincipalRiskEvents - Provides data like the **Workload identity detections** report.
 
 > [!NOTE]
-> Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID do not appear.
+> Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID don't appear.
 
 ### Sample queries
 
