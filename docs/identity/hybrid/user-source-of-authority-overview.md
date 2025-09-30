@@ -19,8 +19,6 @@ Organizations are increasingly adopting a cloud-first approach to modernize thei
 This article introduces the concept of User SOA, its benefits, and the scenario it supports. It also outlines key considerations and prerequisites for IT administrators planning to shift user management to the cloud using Microsoft Entra ID. By using User SOA, organizations can streamline user lifecycle management, enable advanced governance capabilities, and fully embrace a cloud-first posture.
 
 
-## User SOA Scenarios
-
 ## User SOA Scenario
  
 The next sections explain more details about the scenario that User SOA supports.
