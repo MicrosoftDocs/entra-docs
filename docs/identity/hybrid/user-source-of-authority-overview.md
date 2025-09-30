@@ -35,6 +35,20 @@ The next sections explain more details about the scenario that User SOA supports
  
 :::image type="content" source="media/user-source-of-authority-overview/password-less-authentication-source-of-authority.png" alt-text="Screenshot of the password-less authentication scenario for User SOA.":::
 
+## Prerequisites for Transferring User SOA
+
+Before you begin transferring the SOA for users in your organization, the following prerequisites are must be met:
+
+- The Cloud HR system has been configured and successfully integrated with Microsoft Entra ID.
+- No on-premises Exchange workloads.
+- Password-less authentication utilizing Windows Hello for Business (WHfB) or FIDO2 is required.
+- The Cloud Kerberos Trust type must be utilized.
+- The users intended for SOA transfer are not associated with any applications that require password-based authentication.
+
+
+
+
+
 ## Consideration for User SOA
 
 Before you begin transferring the SOA for users in your organization, there are certain conditions within your environment that you must consider. The following sections provide specific details what you must consider before implementing User SOA based on your environment. 
