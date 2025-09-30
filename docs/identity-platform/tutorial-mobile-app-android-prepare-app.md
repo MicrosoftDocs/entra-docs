@@ -116,7 +116,7 @@ You pass the required tenant identifiers, such as the application (client) ID, t
  
 Use these steps to create configuration file:
 
-#### [Workforce tenant configuration](#tab/workforce-workforce)
+#### [Workforce tenant configuration](#tab/workforce-tenant)
 
 1. In Android Studio's project pane, navigate to **app\src\main\res**.
 1. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
@@ -231,7 +231,7 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
 
 To initialize MSAL SDK instance, use the following code:
 
-#### [Workforce tenant configuration](#tab/workforce-workforce)
+#### [Workforce tenant configuration](#tab/workforce-tenant)
 
 ```java
 PublicClientApplication.createSingleAccountPublicClientApplication(
