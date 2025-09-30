@@ -16,17 +16,13 @@ ms.subservice: hybrid
 
 # Cloud-First Identity Management: Guidance for IT Architects
 
-Modern enterprises are under increasing pressure to modernize identity management, reduce security risks, and streamline operations. This guide provides a strategic and technical framework for IT architects to shift user and group management from on-premises Active Directory (AD) to Microsoft Entra ID using Source of Authority (SOA) transfer. Legacy AD environments are complex, costly to maintain, and increasingly vulnerable to modern threats. Microsoft’s long-term vision is to minimize on-premises AD dependencies, and move identity workloads to the cloud. SOA transfer enables a phased, low-risk migration path allowing you to avoid the disruption of a “*big bang*” cutover.
+Modern enterprises are under increasing pressure to improve security by modernizing identity management and streamlining operations. This document provides a strategic and technical framework for IT architects to shift user and group management from on-premises Active Directory (AD) to Microsoft Entra ID using Source of Authority (SOA) conversion. Legacy AD environments are complex, costly to maintain, and increasingly vulnerable to modern threats. Microsoft’s goal is to secure hybrid customers by establishing Microsoft Entra ID as their access control plane. SOA conversion enables a phased, low-risk migration path—avoiding the disruption of a “big bang” cutover.
 
 This guide provides IT architects with a comprehensive overview of cloud-first identity management. It explains the business and security benefits of moving to cloud-based identity, outlines a phased roadmap for transitioning from hybrid environments to cloud-first and AD-minimized states, and describes how to assess readiness for SOA transfer of users and groups. This guide also details an app-centric approach for organizations not yet ready to fully shift, covers integration strategies for Kerberos and LDAP-based applications, highlights key limitations and considerations for hybrid coexistence, and offers a practical checklist to support planning, execution, and governance throughout the migration process.
 
 ## Business and Security Benefits
 
-Active Directory has long been considered the **“keys to the kingdom”** for organizations, making it an attractive target for attackers if compromised. By shifting towards a cloud first approach, you're able to see business and security benefits in the following ways:
-
-### Reduce reliance on AD
-
-A breach of on-premises AD can result in broad access to corporate resources. By shifting to Microsoft Entra ID, you gain access to robust, integrated security controls. Migrating identities and authentication to Microsoft Entra ID also unlocks **modern capabilities** such as Conditional Access policies and password-less authentication. You also unlock advanced identity governance features for users and applications, including those originally managed on-premises. Centralizing management using Microsoft Entra ID enhances an organization’s security posture by allowing you to take advantage of these capabilities.
+Active Directory has long been considered the “**keys to the kingdom**” for organizations, making it an attractive target for attackers if compromised. **Reducing reliance on AD by establishing Entra ID as the access control plane improves security with users protected by Conditional Access and MFA**. Migrating identities and authentication to Microsoft Entra ID also unlocks modern capabilities such as Conditional Access policies, password-less authentication, and advanced identity governance for users and applications, including those originally managed on-premises. In essence, centralizing management in Microsoft Entra ID strengthens an organization’s overall security posture.
 
 ### Enhance IT efficiency and user experience
 
@@ -51,11 +47,9 @@ Organizations typically advance through distinct stages on the “*road to the c
 
 :::image type="content" source="media/concept-source-of-authority-overview/minimization.png" alt-text="Screenshot of cloud managed groups and best practices for managing groups in the cloud." lightbox="media/concept-source-of-authority-overview/minimization.png":::
 
-After you transition to cloud services and modern applications, certain AD accounts and groups might become obsolete. Today, these users and groups are still created in AD through traditional identity management IDP solutions such as MIM. This is done because manually creating these objects in the cloud is an intensive manual effort. With SOA, you can now decide to remove AD out of the picture for these users and groups. They can have their SOA transferred, and then be removed from AD. This targeted transition allows organizations to automate the migration, and monitor its progress while minimizing operational disruption.
+After you transition to cloud services and modern applications, certain AD accounts and groups might become obsolete. Today, these users and groups are still created in AD through traditional identity management IDP solutions such as MIM. This is done because manually creating these objects in the cloud is an intensive manual effort. With SOA, you can now decide to remove AD out of the picture for these users and groups. They can have their SOA transferred, and then be removed from AD. This targeted transition allows organizations to automate the migration, and monitor its progress while minimizing operational disruption. For more information, see: [Minimizing AD Users and Govern user lifecycle with Microsoft Entra ID Governance](user-source-of-authority-overview.md#minimizing-ad-users-and-govern-user-lifecycle-with-microsoft-entra-id-governance).
 
 ### Shifting Lifecycle Management to the Cloud
-
-:::image type="content" source="media/user-source-of-authority-overview/user-source-of-authority-minimization.png" alt-text="Screenshot of user soa minimization.":::
 
 You can use Microsoft Entra ID Governance to enable lifecycle and access governance of SOA transferred users and groups from the cloud. For Users, this means, you're now provisioning the users directly into Microsoft Entra ID and can use Microsoft Entra's ID Governance capabilities to govern these users. You can also use Microsoft Entra ID as your authentication provider to secure, and access, on-premises AD resources using Microsoft Entra Private Access. For groups, you can modernize your groups and enable access governance of apps tied to them from the cloud. Some caveats apply here where groups that are Exchange constructs like mail-enabled security groups and Distribution Lists, require modernization before being managed in the cloud. Refer to [Group SOA guidance for more info](../../identity/hybrid/concept-source-of-authority-overview.md).
 
@@ -72,17 +66,15 @@ The following diagram outlines if you're ready to transfer the source of authori
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/password-dependent-eligible.png" alt-text="Screenshot of whether apps dependent on passwords are eligible for Source of authority conversion.":::
 
-**Users:** For users who are still tied to legacy applications and dependent on Active Directory Domain Services (AD DS), SOA isn't recommended due to gaps in capabilities present today in the cloud to manage password based applications. Identifying which applications require passwords, or not, and planning their migration is critical.
+**Users:** SOA is suitable for users who do not have any application dependencies linked to AD DS. Identifying which users are associated with specific applications is crucial for effective migration planning. 
 
 :::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/shift-group-priority.png" alt-text="Screenshot of shifting group priority when transferring source of Authority.":::
 
 **Groups:** For groups, we recommend you start with shifting security groups to the cloud. Once in the cloud, provision them back to AD from Microsoft Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workloads is in the cloud, and you no longer need an On-premises Exchange server.
 
-## Cloud Migration Strategy
+## Application-Centric Approach: Modernize on-premises Authentication
 
 This section outlines a principal cloud migration strategy for AD-heavy environments called the application-centric approach. This approach enables on-premises applications to utilize Microsoft Entra ID for identity. This section also includes detailed steps, prerequisites, and guidance for addressing challenges like legacy application password synchronization.
-
-## Application-Centric Approach: Modernize on-premises Authentication
 
 The application-centric approach tackles cloud migration from the perspective of your applications. In this approach, you try to modernize your app authentication by applying the following framework:
 
@@ -167,15 +159,7 @@ By concluding the analysis phase, you should have a clear mapping of which appli
 
 # [Phase 2: Migrate groups to the cloud](#tab/migrate-groups-to-cloud)
 
-In an app-centric approach, it's best to migrate groups and
-app access controls to the cloud first. This enables centralized access
-management, and ensures group memberships remain intact before moving
-users. Microsoft recommends transferring group's SOA ahead of users to
-maintain membership integrity and allow testing. You can however adjust
-the sequence for each app, such as piloting an application with its
-groups, and test users end-to-end. When shifting them to the cloud, we
-have outlined specific guidance on how you can map them to cloud groups
-as outlined in [Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID (Preview)](../../identity/hybrid/concept-group-source-of-authority-guidance.md) or watch the following video:
+In an app-centric approach, it's best to migrate security groups and app access controls to the cloud first. This enables centralized access management, and ensures group memberships remain intact before moving users. Microsoft recommends transferring group's SOA ahead of users to maintain membership integrity and allow testing. You can also adjust the sequence for each app, such as piloting an application with its groups, and test users end-to-end. When shifting to the cloud, we have outlined specific guidance on how you can map them to cloud groups as outlined in [Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID (Preview)](../../identity/hybrid/concept-group-source-of-authority-guidance.md) or watch the following video:
 
 > [!VIDEO https://www.youtube.com/embed/VpRDtulXcUw]
 
