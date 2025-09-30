@@ -30,30 +30,11 @@ The ID Protection Dashboard provides a summary of important insights that you ca
 
 Each report launches with a list of all detections for the period shown at the top of the report. You can filter and add columns such as risk level, status, and risk detail. Download the data in .CSV or .JSON format for further processing. To integrate the reports with SEIM tools for further analysis, see [Configure diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 
-#### How to investigate risky users
 
-To view and investigate risky users, navigate to the [Risky users report](concept-risk-reports.md) and use the filters to manage the results. 
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report.png" alt-text="Screenshot of the Risky users report showing examples of users at risk." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report.png":::
 
-When you select an individual user, the **Risky user details** pane appear and displays information like: user ID, office location, recent risky sign-in, detections not linked to a sign, and risk history. The **Risk history tab** shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png" alt-text="Screenshot showing the Risky User Details flyout with samples of Risk history." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png":::
 
-If you have Copilot for Security, you have access to a [summary in natural language](../fundamentals/copilot-entra-risky-user-summarization.md) including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. 
-
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png" alt-text="Screenshot showing the summary of risk provided by Copilot in the Risky User Details flyout." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png":::
-
-With the information provided by the **Risky users report**, you can view:
-
-- User risk that was remediated, dismissed, or is still currently at risk and needs investigation
-- Details about detections
-- Risky sign-ins associated to a user
-- Risk history
-
-[!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
-
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png" alt-text="Screenshot showing the Risky User Details flyout and the additional actions an administrator might take." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-defender-investigate.png":::
 
 ## Risky sign-ins report
 
@@ -61,16 +42,6 @@ The [Risky sign-ins report](concept-risk-reports.md) contains filterable data fo
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png":::
 
-With the information provided by the Risky sign-ins report, administrators can view:
-
-- Sign-ins that are at risk, confirmed compromised, confirmed safe, dismissed, or remediated.
-- Real-time and aggregate risk levels associated with sign-in attempts.
-- Detection types triggered
-- Conditional Access policies applied
-- MFA details
-- Device information
-- Application information
-- Location information
 
 [!INCLUDE [id-protection-admin-action-sign-in](../includes/id-protection-admin-action-sign-in.md)]
 

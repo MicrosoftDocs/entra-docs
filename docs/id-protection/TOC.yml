@@ -36,6 +36,8 @@
     href: how-to-deploy-identity-protection.md
   - name: Configure notifications
     href: howto-identity-protection-configure-notifications.md
+  - name: Access and interpret risk reports
+    href: howto-use-risk-reports.md
   - name: Configure policies
     items:
     - name: Configure the MFA registration policy
