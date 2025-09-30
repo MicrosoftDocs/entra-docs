@@ -109,6 +109,10 @@ AADUserRiskEvents
 
 Access more queries and visual insights based on AADUserRiskEvents and AADRisky Users logs in the [Impact analysis of risk-based access policies workbook](workbook-risk-based-policy-impact.md).
 
+Organizations can reduce security operation center (SOC) workloads and support overhead with risk-based Conditional Access policies.
+
+   > [!VIDEO abb7d7fe-4155-4ee1-bcce-afa027d22f8d]
+
 ## Storage account
 
 By routing logs to an Azure storage account, you can keep data for longer than the default retention period.
