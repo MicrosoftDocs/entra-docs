@@ -114,7 +114,7 @@ Next, you should look into device activity and operating systems to ensure that 
 - *Show me how many devices are running Windows (8,10,11).*
 - *Show the count of Windows devices categorized by release.*
 
-## Analyze conditional access policies
+## Analyze Conditional Access policies
 
 Finally, you should evaluate your organization's Conditional Access policies to ensure that proper access controls are in place and that your organization's security requirements are being enforced consistently across all users and devices.
 
