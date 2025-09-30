@@ -382,7 +382,7 @@ If you are connecting to a new database or one that is empty and has no users, t
 
  5. Enter the **Secret Token** value that you defined when you created the connector.
      >[!NOTE]
-     >If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent Service**, right-click the service, and restart.
+     >If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Azure AD Connect Provisioning Agent Service**, right-click the service, and restart.
  7. Select **Test Connection**, and wait one minute.
 
      ![Screenshot that shows assigning an agent.](.\media\app-provisioning-sql\configure-5.png)

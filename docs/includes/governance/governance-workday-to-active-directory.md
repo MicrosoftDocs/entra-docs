@@ -500,7 +500,7 @@ Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](~
 
 #### Does Microsoft automatically push Provisioning Agent updates?
 
-Yes, Microsoft automatically updates the provisioning agent if the  Windows service **Microsoft Entra Connect Agent Updater** is up and running.
+Yes, Microsoft automatically updates the provisioning agent if the  Windows service **Microsoft Azure AD Connect Agent Updater** is up and running.
 
 <a name='can-i-install-the-provisioning-agent-on-the-same-server-running-azure-ad-connect'></a>
 
@@ -570,8 +570,8 @@ Yes, one Provisioning Agent can be configured to handle multiple AD domains as l
 * Sign in to the Windows server where the Provisioning Agent is installed.
 * Go to **Control Panel** > **Uninstall or Change a Program** menu
 * Uninstall the following programs:
-  * Microsoft Entra Connect Provisioning Agent
-  * Microsoft Entra Connect Agent Updater
+  * Microsoft Azure AD Connect Provisioning Agent
+  * Microsoft Azure AD Connect Agent Updater
   * Microsoft Entra Connect Provisioning Agent Package
 
 ### Workday to AD attribute mapping and configuration questions
@@ -719,7 +719,7 @@ This section covers the following aspects of troubleshooting:
 
 ### Configure provisioning agent to emit Event Viewer logs
 1. Sign in to the Windows Server machine where the provisioning agent is deployed
-1. Stop the service **Microsoft Entra Connect Provisioning Agent**.
+1. Stop the service **Microsoft Azure AD Connect Provisioning Agent**.
 1. Create a copy of the original config file: *C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\AADConnectProvisioningAgent.exe.config*.
 1. Replace the existing `<system.diagnostics>` section with the following. 
    * The listener config **etw** emits messages to the EventViewer logs
@@ -746,14 +746,14 @@ This section covers the following aspects of troubleshooting:
      </system.diagnostics>
 
    ```
-1. Start the service **Microsoft Entra Connect Provisioning Agent**.
+1. Start the service **Microsoft Azure AD Connect Provisioning Agent**.
 
 ### Setting up Windows Event Viewer for agent troubleshooting
 
 1. Sign in to the Windows Server machine where the Provisioning Agent is deployed
 1. Open **Windows Server Event Viewer** desktop app.
 1. Select **Windows Logs > Application**.
-1. Use the **Filter Current Log…** option to view all events logged under the source **Microsoft Entra Connect Provisioning Agent** and exclude events with Event ID "5", by specifying the filter "-5" as shown below.
+1. Use the **Filter Current Log…** option to view all events logged under the source **Microsoft Azure AD Connect Provisioning Agent** and exclude events with Event ID "5", by specifying the filter "-5" as shown below.
    > [!NOTE]
    > Event ID 5 captures agent bootstrap messages to the Microsoft Entra cloud service and hence we filter it while analyzing the log files. 
 
@@ -873,8 +873,8 @@ This section covers commonly seen errors with Workday user provisioning and how 
 
 |#|Error Scenario |Probable Causes|Recommended Resolution|
 |--|---|---|---|
-|1.| Error installing the provisioning agent with error message:  *Service 'Microsoft Entra Connect Provisioning Agent' (AADConnectProvisioningAgent) failed to start. Verify that you have sufficient privileges to start the system.* | This error usually shows up if you're trying to install the provisioning agent on a domain controller and group policy prevents the service from starting.  it's also seen if you have a previous version of the agent running and  you haven't uninstalled it before starting a new installation.| Install the provisioning agent on a non-DC server. Ensure that previous versions of the agent are uninstalled before installing the new agent.|
-|2.| The Windows Service 'Microsoft Entra Connect Provisioning Agent' is in *Starting* state and doesn't switch to *Running* state. | As part of the installation, the agent wizard creates a local account (**NT Service\\AADConnectProvisioningAgent**) on the server and this is the logon account used for starting the service. If a security policy on your Windows server prevents local accounts from running the services, you'll encounter this error. | Open the *Services console*. Right click on the Windows Service 'Microsoft Entra Connect Provisioning Agent' and in the logon tab specify the account of a domain administrator to run the service. Restart the service. |
+|1.| Error installing the provisioning agent with error message:  *Service 'Microsoft Azure AD Connect Provisioning Agent' (AADConnectProvisioningAgent) failed to start. Verify that you have sufficient privileges to start the system.* | This error usually shows up if you're trying to install the provisioning agent on a domain controller and group policy prevents the service from starting.  it's also seen if you have a previous version of the agent running and  you haven't uninstalled it before starting a new installation.| Install the provisioning agent on a non-DC server. Ensure that previous versions of the agent are uninstalled before installing the new agent.|
+|2.| The Windows Service 'Microsoft Azure AD Connect Provisioning Agent' is in *Starting* state and doesn't switch to *Running* state. | As part of the installation, the agent wizard creates a local account (**NT Service\\AADConnectProvisioningAgent**) on the server and this is the logon account used for starting the service. If a security policy on your Windows server prevents local accounts from running the services, you'll encounter this error. | Open the *Services console*. Right click on the Windows Service 'Microsoft Azure AD Connect Provisioning Agent' and in the logon tab specify the account of a domain administrator to run the service. Restart the service. |
 |3.| When configuring the provisioning agent with your AD domain in the step *Connect Active Directory*, the wizard takes a long time trying to load the AD schema and eventually times out. | This error usually shows up if the wizard is unable to contact the AD domain controller server due to firewall issues. | On the *Connect Active Directory* wizard screen, while providing the credentials for your AD domain, there's an option called *Select domain controller priority*. Use this option to select a domain controller that is in the same site as the agent server and ensure that there are no firewall rules blocking the communication. |
 
 #### Connectivity errors

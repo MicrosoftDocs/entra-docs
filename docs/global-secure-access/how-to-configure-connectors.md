@@ -53,7 +53,7 @@ The Microsoft Entra private network connector requires a server running Windows 
 > ```
 
 > [!WARNING]
-> If you've deployed Microsoft Entra Password Protection Proxy, do not install Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy together on the same machine. Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy install different versions of the Microsoft Entra Connect Agent Updater service. These different versions are incompatible when installed together on the same machine.
+> If you've deployed Microsoft Entra Password Protection Proxy, do not install Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy together on the same machine. Microsoft Entra application proxy and Microsoft Entra Password Protection Proxy install different versions of the Microsoft Azure AD Connect Agent Updater service. These different versions are incompatible when installed together on the same machine.
 
 #### Transport Layer Security (TLS) requirements
 

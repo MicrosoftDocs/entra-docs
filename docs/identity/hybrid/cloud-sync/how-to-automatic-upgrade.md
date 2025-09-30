@@ -32,8 +32,8 @@ To verify your version, right-click the executable and select properties and the
 ## Uninstall the agent
 To remove the agent, go to **Uninstall or change a program** and uninstall the following:
 
-- **Microsoft Entra Connect Agent Updater**
-- **Microsoft Entra Provisioning Agent**
+- **Microsoft Azure AD Connect Agent Updater**
+- **Microsoft Azure AD Connect Agent Provisioning Agent**
 - **Microsoft Entra Provisioning Agent Package**
 
 ![Agent removal](media/how-to-automatic-upgrade/agent-3.png)
