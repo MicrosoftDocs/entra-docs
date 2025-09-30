@@ -144,16 +144,6 @@ For more information, see: [Manage inactive users using Lifecycle Workflows (Pre
 
 ---
 
-### Public Preview Refresh - EAM Registration
-
-**Type:** New feature    
-**Service category:** MFA    
-**Product capability:** User Authentication    
-
-This feature enables registration of an EAM through three flows: in-line registration, through *SecurityInfo*, and through an admin on-behalf-of flow. With this feature, users need to have their EAM registered with Microsoft Entra ID before they can use it to satisfy MFA. For more information, see: [Manage an external authentication method in Microsoft Entra ID (Preview)](../identity/authentication/how-to-authentication-external-method-manage.md).
-
----
-
 ### Retirement - Microsoft Authentication Library to MSAL Recommendations API
 
 **Type:** Deprecated    
