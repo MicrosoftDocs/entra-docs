@@ -101,7 +101,7 @@ Follow these steps to transfer the SOA for a test user:
    GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
-   :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of an user.":::
+   :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a user.":::
 
 1. Confirm that the synced user is read-only. Because the user is managed on-premises, any write attempts to the user in the cloud fail. The error message differs for mail-enabled users, but updates still aren't allowed.
 
@@ -180,13 +180,13 @@ Follow these steps to transfer the SOA for a test user:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/lineage.png" alt-text="Screenshot of how to view lineage.":::
 
-1. Select **Connectors** and double-click the **Entra ID object** with "CN={\<Alphanumeric Characters\>}".
+1. Select **Connectors** and double-click the **Microsoft Entra ID object** with "CN={\<Alphanumeric Characters\>}".
 
-1. You can see that the **blockOnPremisesSync** property is set to true on the Entra ID object. This property value means that any changes made in the corresponding AD DS object don't flow to the Entra ID object:
+1. You can see that the **blockOnPremisesSync** property is set to true on the Microsoft Entra ID object. This property value means that any changes made in the corresponding AD DS object don't flow to the Microsoft Entra ID object:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/block.png" alt-text="Screenshot of how to block data flow.":::
 
-1. Let’s update the on-premises user object. We'll change the user name from *TestUserF1* to *TestUserF1.1*:
+1. Let’s update the on-premises user object. We change the user name from *TestUserF1* to *TestUserF1.1*:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/change-name.png" alt-text="Screenshot of how to change the object name.":::
 
@@ -302,7 +302,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 ## Clear on-premises attributes for SOA transferred users
 
-The following are the list of on-premises [properties](/graph/api/resources/user#properties) present on the cloud user object which are used for accessing on-premises resources:
+The following are the list of on-premises [properties](/graph/api/resources/user#properties) present on the cloud user object that are used for accessing on-premises resources:
 
 - onPremisesDistinguishedName
 - onPremisesDomainName
