@@ -59,6 +59,8 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
+  - name: B2B Guest Access (preview)
+    href: concept-b2b-guest-access.md
 - name: How-to guides
   expanded: true
   items:
