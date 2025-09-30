@@ -25,17 +25,17 @@ This article walks you through what needs to be completed to prepare Microsoft E
 
 ## Confirm your AD objects are ready to have their SOA changed 
 
-Before changing the SOA on users, retrieve the objects from your Active Directory domain and check that they’re ready to be transferred by confirming the following information:
+Before transferring the SOA of users, retrieve the objects from your Active Directory domain and check that they’re ready to be transferred by confirming the following information:
 
 - Confirm that the objects are already synchronized to Microsoft Entra. Administrative objects, or those excluded from synchronization, can’t have their SOA changed. 
-- Confirm that all attributes you have, or plan to modify, on those users are being synched to Microsoft Entra and are visible as *directory schema extensions*: `/graph/api/resources/extensionproperty` in Microsoft Graph. 
-- Confirm there are no reference-valued attributes populated on those objects in Active Directory other than the user’s manager.  
+- Confirm that all attributes you have, or plan to modify, on those users are being synched to Microsoft Entra and are visible as either directory attributes, or as *directory schema extensions*: `/graph/api/resources/extensionproperty` in Microsoft Graph. 
+- •	Confirm there are no reference-valued attributes populated on those user objects in Active Directory other than backlinks, such as memberof, and the than the user’s manager attribute.  
 - Confirm that the value of the manager and member attributes, if set, must be references to users in the same Active Directory domain and that they're synchronized to Microsoft Entra. They can’t refer to other object types, or to objects that aren’t synchronized from this domain to Microsoft Entra. 
 - Confirm that there are no attributes on the objects that are updated by another Microsoft on-premises technology, other than Active Directory Domain Services (AD DS) itself. For example, don’t change the SOA of a user whose `userCertificate` attribute is maintained by [Active Directory Certificate Services](/windows-server/identity/ad-cs/active-directory-certificate-services-overview). 
 
 ## Update Active Directory
 
-If you’re planning to only change the SOA for some Active Directory users, we recommend that you create a new AD DS OU for these objects to avoid inadvertently changing them in Active Directory. Users, whose SOA isn’t changing, can continue to be managed using Active Directory Users and Computers, Active Directory Module for PowerShell, or other Active Directory management tools. After creating an OU, move the objects to that OU. For more information, see: [Move-ADObject](/powershell/module/activedirectory/move-adobject?view=windowsserver2025-ps).
+If you’re planning to only change the SOA for some Active Directory users, and all your users are currently in a single OU using Kerberos applications which don’t use LDAP, we recommend that you create a new AD DS OU for these objects to avoid inadvertently making updates to them in Active Directory after the SOA change. Users, whose SOA isn’t changing, can continue to be managed using Active Directory Users and Computers, Active Directory Module for PowerShell, or other Active Directory management tools. After creating an OU, move the objects to that OU. For more information, see: [Move-ADObject](/powershell/module/activedirectory/move-adobject?view=windowsserver2025-ps).
 
 ## Prepare your Microsoft Exchange setup
 
@@ -74,7 +74,7 @@ For customers using Microsoft Identity Manager(MIM), you can update the sync rul
 
 :::image type="content" source="media/prepare-user-source-of-authority-environment/prepare-identity-setup.png" alt-text="Screenshot of MIM Set up for SOA.":::
 
-To prepare your MIM setup to use user SOA, do the following steps:
+To prepare your MIM setup for user SOA, do the following steps:
 
 1.	Select the attributes that will be the unique identifiers for users that are the same in both Active Directory and Microsoft Entra. 
 
