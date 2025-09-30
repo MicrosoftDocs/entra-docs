@@ -69,7 +69,7 @@ You must configure specific redirect URIs in your app registration to ensure com
 
 ### [External tenant](#tab/external-tenant)
 
-[!INCLUDE [Add platform redirect URI](../external-id/customers/includes/register-app/add-platform-redirect-url-ios.md)]
+[!INCLUDE [Add platform redirect URI](../external-id/customers/includes/register-app/add-platform-redirect-url-android.md)]
 
 ### Enable public client flow 
 
