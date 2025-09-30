@@ -23,8 +23,8 @@ When you plan to transfer external tenant logs to different monitoring solutions
 
 ## Deployment overview
 
-The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike Microsoft Entra tenants, an external tenant can't have a subscription associated with it. So, we need to take extra steps to enable the integration between external tenant and Log Analytics, which is where we send the logs.
-To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-settings) in workforce tenant within your external tenant, you use [Azure Lighthouse](/azure/lighthouse/overview) to [delegate a resource](/azure/lighthouse/concepts/architecture), which allows your external tenant (the **Service Provider**) to manage a workforce tenant (the **Customer**) resource.
+The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike Microsoft Entra workforce tenants, an external tenant can't have a subscription associated with it. So, we need to take extra steps to enable the integration between the external tenant and Log Analytics in the workforce tenant, which is where we send the logs.
+To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-settings) in the workforce tenant, use [Azure Lighthouse](/azure/lighthouse/overview). Azure Lighthouse [delegates the resource](/azure/lighthouse/concepts/architecture), allowing the external tenant (the **Service Provider**) to manage the resource in the workforce tenant (the **Customer**).
 
 > [!TIP]
 > Azure Lighthouse is typically used to manage resources for multiple customers. However, it can also be used to simplify cross-tenant administration [within an enterprise that has multiple Microsoft Entra tenants of its own](/azure/lighthouse/concepts/enterprise). In our case, we're using it to delegate management of a single resource group.
