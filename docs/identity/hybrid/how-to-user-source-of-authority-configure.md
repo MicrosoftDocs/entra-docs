@@ -300,7 +300,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
 
-## Clear on-premises resources for SOA transferred users
+## Clear on-premises attributes for SOA transferred users
 
 The following are the list of on-premises [properties](/graph/api/resources/user#properties) present on the cloud user object which are used for accessing on-premises resources:
 
