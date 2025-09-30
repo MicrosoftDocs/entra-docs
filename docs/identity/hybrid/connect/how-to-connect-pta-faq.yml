@@ -142,7 +142,7 @@ sections:
       - question: |
           How do I remove a Pass-through Authentication Agent?
         answer: |
-          As long as a Pass-through Authentication Agent is running, it remains active and continually handles user sign-in requests. If you want to uninstall an Authentication Agent, go to **Control Panel -> Programs -> Programs and Features**. Uninstall both the **Microsoft Entra Connect Authentication Agent** and the **Microsoft Entra Connect Agent Updater** programs.
+          As long as a Pass-through Authentication Agent is running, it remains active and continually handles user sign-in requests. If you want to uninstall an Authentication Agent, go to **Control Panel -> Programs -> Programs and Features**. Uninstall both the **Microsoft Entra Connect Authentication Agent** and the **Microsoft Azure AD Connect Agent Updater** programs.
           
           If you check the Pass-through Authentication blade on the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). You should see the Authentication Agent showing as **Inactive**. This is *expected*. The Authentication Agent is automatically dropped from the list after 10 days.
           

@@ -336,7 +336,7 @@ Follow these steps to confirm that the connector host has started and has read a
 
  3. Enter the **Secret Token** value that you defined when you created the connector.
      >[!NOTE]
-     >If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent** service, right-click the service, and restart.
+     >If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Azure AD Connect Provisioning Agent** service, right-click the service, and restart.
  4. Select **Test Connection**, and wait one minute.
  5. After the connection test is successful and indicates that the supplied credentials are authorized to enable provisioning, select **Save**.</br>
      [![Screenshot that shows testing an agent.](.\media\app-provisioning-sql\configure-9.png)](.\media\app-provisioning-sql\configure-9.png#lightbox)
@@ -494,7 +494,7 @@ Now that your attributes are mapped and an initial user is assigned, you can tes
  
  1. On the server the running the Microsoft Entra ECMA Connector Host, select **Start**.
  2. Enter **run** and enter **services.msc** in the box.
- 3. In the **Services** list, ensure that both the **Microsoft Entra Connect Provisioning Agent** service and the **Microsoft ECMA2Host** services are running. If not, select **Start**.
+ 3. In the **Services** list, ensure that both the **Microsoft Azure AD Connect Provisioning Agent** service and the **Microsoft ECMA2Host** services are running. If not, select **Start**.
 
 
  1. In the Azure portal, select **Enterprise applications**.

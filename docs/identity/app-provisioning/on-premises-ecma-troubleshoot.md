@@ -19,7 +19,7 @@ After you configure the provisioning agent and the Extensible Connectivity(ECMA)
 
  1. Check that the agent and ECMA host are running:
      1. On the server with the agent installed, open **Services** by going to **Start** > **Run** > **Services.msc**.
-     2. Under **Services**, make sure the **Microsoft Entra Connect Provisioning Agent**, and **Microsoft ECMA2Host** services are present and their status is *Running*.
+     2. Under **Services**, make sure the **Microsoft Azure AD Connect Provisioning Agent**, and **Microsoft ECMA2Host** services are present and their status is *Running*.
     
         ![Screenshot that shows that the ECMA service is running.](./media/on-premises-ecma-troubleshoot/tshoot-1.png)
 
@@ -41,7 +41,7 @@ After you configure the provisioning agent and the Extensible Connectivity(ECMA)
  1. Ensure that you've assigned one or more agents to the application in the Azure portal.
  1. After you assign an agent, you need to wait 10 to 20 minutes for the registration to complete. The connectivity test won't work until the registration completes.
  1. Ensure that you're using a valid certificate that has not expired. Go to the **Settings** tab of the ECMA host to view the certificate expiration date. If the certificate has expired, click `Generate certificate` to generate a new certificate.
- 1. Restart the provisioning agent by going to the taskbar on your VM by searching for the Microsoft Entra Connect provisioning agent. Right-click **Stop**, and then select **Start**.
+ 1. Restart the provisioning agent by going to the taskbar on your VM by searching for the Microsoft Azure AD Connect Provisioning Agent. Right-click **Stop**, and then select **Start**.
  1. If you continue to see `The ECMA host is currently importing data from the target application` even after restarting the ECMA Connector Host and the provisioning agent, and waiting for the initial import to complete, then you may need to cancel and start over configuring provisioning to the application in the Azure portal.
 
  1. When you provide the tenant URL in the Azure portal, ensure that it follows the following pattern. You can replace `localhost` with your host name, but it isn't required. Replace `connectorName` with the name of the connector you specified in the ECMA host. The error message 'invalid resource' generally indicates that the URL does not follow the expected format.
@@ -211,7 +211,7 @@ You might experience the following error scenarios.
 
 You might receive an error message that states:
 
-"Service 'Microsoft Entra Connect Provisioning Agent' failed to start. Check that you have sufficient privileges to start the system services." 
+"Service 'Microsoft Azure AD Connect Provisioning Agent' failed to start. Check that you have sufficient privileges to start the system services." 
 
 This problem is typically caused by a group policy that prevented permissions from being applied to the local NT Service sign-in account created by the installer (NT SERVICE\AADConnectProvisioningAgent). These permissions are required to start the service.
 
@@ -219,7 +219,7 @@ To resolve this problem:
 
  1. Sign in to the server with an administrator account.
  2. Open **Services** by either navigating to it or by going to **Start** > **Run** > **Services.msc**.
- 3. Under **Services**, double-click **Microsoft Entra Connect Provisioning Agent**.
+ 3. Under **Services**, double-click **Microsoft Azure AD Connect Provisioning Agent**.
  4. On the **Log On** tab, change **This account** to a domain admin. Then restart the service. 
 
 This test verifies that your agents can communicate with Azure over port 443. Open a browser, and go to the previous URL from the server where the agent is installed.

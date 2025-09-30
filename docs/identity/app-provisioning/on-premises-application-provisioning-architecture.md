@@ -154,8 +154,8 @@ You can also check whether all the required ports are open.
  1. Sign in to the Windows server where the provisioning agent is installed.
  2. Go to **Control Panel** > **Uninstall or Change a Program**.
  3. Uninstall the following programs:
-  - Microsoft Entra Connect Provisioning Agent
-  - Microsoft Entra Connect Agent Updater
+  - Microsoft Azure AD Connect Provisioning Agent
+  - Microsoft Azure AD Connect Agent Updater
   - Microsoft Entra Connect Provisioning Agent Package
 
 ## Provisioning agent history

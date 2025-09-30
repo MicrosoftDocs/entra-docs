@@ -284,7 +284,7 @@ Follow these steps to confirm the connector host is started and has identified a
 1. Enter the **Secret Token** value that you defined when you created the connector.
 
    > [!NOTE]
-   > If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent** service, right-select the service, and restart.
+   > If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Azure AD Connect Provisioning Agent** service, right-select the service, and restart.
 
 1. Select **Test Connection**, and wait one minute.
 1. After the connection test is successful and indicates that the supplied credentials are authorized to enable provisioning, select **Save**.
@@ -310,7 +310,7 @@ Return to the web browser window where you were configuring the application prov
 1. Enter the **Secret Token** value that you defined when you created the connector.
 
    > [!NOTE]
-   > If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Entra Connect Provisioning Agent Service**, right-select the service, and restart.
+   > If you just assigned the agent to the application, please wait 10 minutes for the registration to complete. The connectivity test won't work until the registration completes. Forcing the agent registration to complete by restarting the provisioning agent on your server can speed up the registration process. Go to your server, search for **services** in the Windows search bar, identify the **Microsoft Azure AD Connect Provisioning Agent Service**, right-select the service, and restart.
 
 1. Select **Test Connection**, and wait one minute.
 1. After the connection test is successful and indicates that the supplied credentials are authorized to enable provisioning, select **Save**.
