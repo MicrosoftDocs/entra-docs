@@ -109,7 +109,9 @@ AADUserRiskEvents
 
 Access more queries and visual insights based on AADUserRiskEvents and AADRisky Users logs in the [Impact analysis of risk-based access policies workbook](workbook-risk-based-policy-impact.md).
 
-Organizations can reduce security operation center (SOC) workloads and support overhead with risk-based Conditional Access policies.
+### Risk analysis
+
+Organizations can reduce security operation center (SOC) workloads and support overhead with risk-based Conditional Access policies. Learn more in the following video, **Mastering risk analysis with Microsoft Entra ID Protection**.
 
    > [!VIDEO abb7d7fe-4155-4ee1-bcce-afa027d22f8d]
 
