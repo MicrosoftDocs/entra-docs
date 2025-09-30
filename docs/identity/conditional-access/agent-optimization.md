@@ -6,7 +6,7 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 09/24/2025
+ms.date: 09/30/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -148,6 +148,18 @@ There are several key points to consider regarding the identity and permissions 
 - The audit logs for actions taken by the agent are associated with the user who enabled the agent. You can find the name of the account that started the agent in the **Identity and permissions** section of the settings.
 
    :::image type="content" source="media/agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/identity-permissions.png":::
+
+### ServiceNow integration
+
+Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/security/plugin-servicenow) can now have the Conditional Access optimization agent create ServiceNow incidents for each new suggestion the agent generates. This allows IT and security teams to track, review, and approve or reject agent suggestions within existing ServiceNow workflows. At this time, only change requests (CHG) are supported.
+
+To use the ServiceNow integration, your organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
+
+:::image type="content" source="media/agent-optimization/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/agent-optimization/agent-service-now-integration-setting.png":::
+
+When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow incident. The incident includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The integration also provides a feedback loop: The agent monitors the state of the ServiceNow incident and can automatically implement the change when the incident is approved.
+
+:::image type="content" source="media/agent-optimization/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/agent-optimization/agent-service-now-integration-ticket.png":::
 
 ### Custom instructions
 
