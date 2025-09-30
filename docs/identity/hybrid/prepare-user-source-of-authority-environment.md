@@ -61,7 +61,7 @@ For more information on disabling Exchange Hybrid, see: see: [Manage recipients 
 
 The next step in setting up SOA is to determine your provisioning strategy for your HR system. Ideally, you’re already provisioning new employees from your cloud HR system into Microsoft Entra ID directly, and have identified all the users that are no longer needed in Active Directory
 
-When prepping your HR integration to the cloud from Active Directory, you should do the following to your environment:
+When prepping your HR integration into the cloud from Active Directory, you should do the following to your environment:
 
 1.	Make sure you have your cloud HR system ready and in place to initiate provisioning to Microsoft Entra ID.
 
