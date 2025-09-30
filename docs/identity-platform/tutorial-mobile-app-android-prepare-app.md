@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 01/27/2025
+ms.date: 09/30/2025
 ms.custom:
 
 #Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra External ID
@@ -116,7 +116,7 @@ You pass the required tenant identifiers, such as the application (client) ID, t
  
 Use these steps to create configuration file:
 
-#### [Workforce tenant configuration](#tab/android-workforce)
+#### [Workforce tenant configuration](#tab/workforce-workforce)
 
 1. In Android Studio's project pane, navigate to **app\src\main\res**.
 1. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
@@ -177,7 +177,7 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
    You can find these values in the Authentication blade of your app registration as well.
 
 
-#### [External tenant configuration](#tab/android-external)
+#### [External tenant configuration](#tab/external-tenant)
 
 
 1. In Android Studio's project pane, navigate to *app\src\main\res*.  
@@ -231,7 +231,7 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
 
 To initialize MSAL SDK instance, use the following code:
 
-#### [Workforce tenant configuration](#tab/android-workforce)
+#### [Workforce tenant configuration](#tab/workforce-workforce)
 
 ```java
 PublicClientApplication.createSingleAccountPublicClientApplication(
