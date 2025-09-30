@@ -985,7 +985,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/oauth2/v2.0/initiate` endpoint. The previous request can also be call to the `/oauth2/v2.0/token` or `/oauth2/v2.0/introspect` endpoints if the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-|`id`| No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app changes the user for a second factor authentication. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods). |
+|`id`| No | The string identifier of the strong authentication method that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app challenges the user for a second factor authentication. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods). |
 <!--| `challenge_channel` | No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app changes the user for a second factor authentication. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|-->
 
 #### Success response
@@ -1083,7 +1083,7 @@ Content-Type: application/json
 A fallback to a web-based authentication flow may be needed in the following scenarios:
 
 - The client app doesn't support the authentication method or capabilities that Microsoft fEntra requires.
-- The user attempts to use SMS as a strong auth method, but fraud protection blocks the request if it deems it as high risk.
+- The user attempts to use SMS as a strong auth method, but fraud protection blocks the request if it deems it as high risk (only in email with password authentication).
 
 In these scenarios, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
 
@@ -1158,7 +1158,7 @@ The app makes a POST request to the `oauth2/v2.0/token` endpoint and provides th
 
 ### Get user registered strong authentication methods
 
-Use the `oauth2/v2.0/introspect` endpoint to request user's list of registered strong authentication methods.
+**For users whose primary authentication method is email with password**, use the `oauth2/v2.0/introspect` endpoint to request user's list of registered strong authentication methods.
 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
@@ -1320,18 +1320,18 @@ After the client app successfully retrieves a list of strong authentication meth
     ```
 
 
-### Determine the default MFA method
+<!--### Determine the default MFA method
 
 Microsoft Entra determines the default MFA method for the user by priority as follows:
 
 1. Use [a system-preferred MFA](../identity/authentication/concept-system-preferred-multifactor-authentication.md).
 1. Use an MFA set as default on the user by the tenant administrator.
-1. User has only one registered MFA method.
+1. User has only one registered MFA method. -->
 
 
 ## Register a strong authentication method API reference
 
-Native authentication supports just-in-time (JIT) registration of strong authentication methods. When the client app [calls the `/oauth2/v2.0/token`](#step-3-request-for-security-tokens) endpoint and MFA is required, but no strong authentication is set up for the user, the response requires that the user completes a strong authentication method registration flow. 
+**For users whose primary authentication method is email with password**, native authentication supports just‑in‑time (JIT) registration of strong authentication methods. If the client app calls the [`/oauth2/v2.0/token`](#step-3-request-for-security-tokens) endpoint and MFA is required but the user has no strong authentication method registered, the endpoint responds indicating that the user must complete the strong authentication method JIT registration flow before tokens can be issued.
 
 After the client app completes the JIT registration flow, it can call the `/oauth2/v2.0/token` endpoint to request for security tokens.
 
@@ -1509,21 +1509,21 @@ Content-Type: application/json
 
 #### Error response
 
-The errors here are similar to those you can experience when you call the `/register/v1.0/introspect` endpoint except when enrolling phone number. If SMS OTP is considered high risk, this request isn blocked. 
+The errors here are similar to those you can experience when you call the `/register/v1.0/introspect` endpoint. However, when enrolling phone number, if SMS OTP is considered high risk, the request may be blocked. 
 
-Here are the possible errors you can encounter if the request isn blocked: 
+Here are the possible errors you can encounter if the request is blocked: 
 
 |    Error value     | Description        |
 |----------------------|------------------------|
-|`access_denied`  | TODO |
+|`access_denied`  | SMS has been blocked. |
 
 
 If the error parameter has a value of *access_denied*, Microsoft Entra includes a suberror property in its response. Here are the possible values of the suberror property for an invalid_grant error:
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`provider_blocked_by_admin`  | TODO |
-|`provider_blocked_by_rep` | TODO  |
+|`provider_blocked_by_admin`  | The tenant administrator has blocked the phone region.  |
+|`provider_blocked_by_rep` | The multifactor authentication method is blocked (Phone number was blocked by RepMap).  |
 
 
 ### Step 3: Submit challenge
@@ -1616,11 +1616,9 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 |`invalid_oob_value`| The value of one-time passcode is invalid.|
 
 
-
-
 ## Self-service password reset (SSPR)
 
-If you use email and password as the authentication method in your app, use the self-service password reset (SSPR) API to enable customer users to reset their password. Use this API for forgot password or change password scenarios.
+**For users whose primary authentication method is email with password**, use the self-service password reset (SSPR) API to enable customer users to reset their password. You can use this API for forgot password or change password scenarios.
 
 ### Self-service password reset API endpoints
 

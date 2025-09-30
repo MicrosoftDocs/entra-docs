@@ -106,11 +106,12 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 If the error parameter has a value of *invalid_grant*, Microsoft Entra includes a `suberror` property in its response. Here are the possible values of the `suberror` property for an *invalid_grant* error:
 
+
 |    Suberror value     | Description        |
 |----------------------|------------------------|
 |`invalid_oob_value`| The value of one-time passcode that the app submits is invalid. |
-| `mfa_required` | The user needs to complete an MFA challenge. This type of response includes a [continuation token](../../reference-native-authentication-api.md#continuation-token). The app needs to call the `oauth2/v2.0/introspect` endpoint to request for a list of strong authentication methods registered for the user. Learn [how to get user registered strong authentication methods via the introspect endpoint](../../reference-native-authentication-api.md#get-user-registered-strong-authentication-methods).|
-|`registration_required`| A user needs to complete an MFA challenge, but they don't have a registered strong authentication method. The app needs to enable the user to register for a strong authentication method. Learn [how to registration for a strong authentication method](../../reference-native-authentication-api.md#register-a-strong-authentication-method-api-reference). |
+| `mfa_required` | The user needs to complete an MFA challenge. This type of response includes a [continuation token](../../reference-native-authentication-api.md#continuation-token). The app needs to call the `oauth2/v2.0/introspect` endpoint to request for a list of strong authentication methods registered for the user. **This error occurs when the user's primary authentication method is email with password.**. Learn [how to get user registered strong authentication methods via the introspect endpoint](../../reference-native-authentication-api.md#get-user-registered-strong-authentication-methods).|
+|`registration_required`| A user needs to complete an MFA challenge, but they don't have a registered strong authentication method. The app needs to enable the user to register for a strong authentication method. **This error occurs when the user's primary authentication method is email with password.** Learn [how to registration for a strong authentication method](../../reference-native-authentication-api.md#register-a-strong-authentication-method-api-reference). |
 
 <!--| `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered MFA method invalid.| -->
 
