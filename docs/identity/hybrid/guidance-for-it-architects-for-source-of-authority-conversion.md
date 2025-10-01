@@ -45,8 +45,6 @@ Organizations typically advance through distinct stages on the “*road to the c
 
 ### Minimize AD footprint for Users and Groups No Longer Needed in AD
 
-:::image type="content" source="media/concept-source-of-authority-overview/minimization.png" alt-text="Screenshot of cloud managed groups and best practices for managing groups in the cloud." lightbox="media/concept-source-of-authority-overview/minimization.png":::
-
 After you transition to cloud services and modern applications, certain AD accounts and groups might become obsolete. Today, these users and groups are still created in AD through traditional identity management IDP solutions such as MIM. This is done because manually creating these objects in the cloud is an intensive manual effort. With SOA, you can now decide to remove AD out of the picture for these users and groups. They can have their SOA transferred, and then be removed from AD. This targeted transition allows organizations to automate the migration, and monitor its progress while minimizing operational disruption. For more information, see: [Minimizing AD Users and Govern user lifecycle with Microsoft Entra ID Governance](user-source-of-authority-overview.md#minimizing-ad-users-and-govern-user-lifecycle-with-microsoft-entra-id-governance).
 
 ### Shifting Lifecycle Management to the Cloud
