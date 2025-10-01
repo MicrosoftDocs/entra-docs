@@ -826,11 +826,12 @@ After the app verifies the user's email with OTP, it receives security tokens. I
 - This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the two values in the same screen. 
 - If you collect the username (email) and password in the same screen, steps **two** and **three** gets merged with steps **eight** and **nine**. In this case, the app holds the password, then submits it in step **ten** where it's required.
 
-When the tenant administrator enforces MFA for the users, when the app calls the `/oauth2/v2.0/token` endpoint, the response depends on whether the user has a registered strong authentication method:
-- If the user has a registered strong authentication method, the flow requires the user to complete an MFA challenge. 
-- If the user doesn't have a registered strong authentication method, then the user needs to [register for a strong authentication method](#register-a-strong-authentication-method-api-reference). 
+If a tenant administrator enables MFA for the tenant users, the response from the `/oauth2/v2.0/token` endpoint  depends on whether the user already has a registered strong authentication method:
 
-The sequence diagram demonstrates the email OTP flow when MFA is required, and the user has or doesn't have a strong authentication method registered. The flow starts when the app collects the OTP from the user to submit it to the `/oauth2/v2.0/token` endpoint to request for security tokens.
+- If the user has a registered strong authentication method, then they complete an MFA challenge flow. 
+- If the user has no registered strong authentication method, then they complete a [register for a strong authentication method](#register-a-strong-authentication-method-api-reference) flow. 
+
+This sequence diagram shows the MFA path. It covers both cases: (1) the user already has a registered strong authentication method, or (2) the user has none and must register one just‑in‑time. The flow begins after the app has collected a correct password from the user, and is about to call `/oauth2/v2.0/token` to either obtain security tokens.
 
 :::image type="content" source="media/reference-native-auth-api/call-token-endpoint-register-authentication-method-complete-mfa.png" alt-text="Diagram of native auth call token endpoint register authentication method or complete MFA."::: 
 
