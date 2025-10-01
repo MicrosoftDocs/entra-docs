@@ -10,7 +10,7 @@ ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
-ms.custom: , sfi-image-nochange
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph by using managed identities.
 ---
 
