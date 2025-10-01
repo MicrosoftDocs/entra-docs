@@ -50,7 +50,7 @@ In this article,  you add an admin system in SAP Cloud Identity Services and the
 
 1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial. Navigate to **Users & Authorizations > Administrators**.
 
-	![Screenshot of the SAP Cloud Identity Services Admin Console.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/adminconsole.png)
+	![Screenshot of the SAP Cloud Identity Services Admin Console.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/admin-console.png)
 
 1. Press the **+Add** button on the left hand panel in order to add a new administrator to the list. Choose **Add System** and enter the name of the system.   
 
@@ -59,7 +59,7 @@ In this article,  you add an admin system in SAP Cloud Identity Services and the
 
 1. Under Configure Authorizations, switch on the toggle button against **Manage Users**. Then select **Save** to create the system.
 
-	![Screenshot of the SAP Cloud Identity Services Add SCIM.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/configurationauth.png)
+	![Screenshot of the SAP Cloud Identity Services Add SCIM.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/configuration-auth.png)
 
 1.  After the administrator system is created, add a new secret to that system.
 
@@ -110,9 +110,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Admin Credentials** section, select the **OAuth2 Client Credentials Grant**. Input `https://<tenantID>.accounts.ondemand.com/scim`, or `https://<tenantid>.trial-accounts.ondemand.com/scim` if a trial, with the tenant ID of your SAP Cloud Identity Services in **Tenant URL**. Input the **Token Endpoint**, which may look something like this `https://<tenantID>.accounts.ondemand.com/oauth2/token`. Input the **Client ID** and **Client Secret** values that you [previously generated from the admin console for SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md#set-up-sap-cloud-identity-services-for-provisioning). Select **Test Connection** to ensure Microsoft Entra ID can connect to SAP Cloud Identity Services. If the connection fails, ensure your SAP Cloud Identity Services system account has Admin permissions, the secret is still valid, and try again.
 
-	![Screenshot of the Admin Credentials section in the provisioning UX.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/authmethod.png)
+	![Screenshot of the Admin Credentials section in the provisioning UX.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/auth-method.png)
 
-	![Screenshot of the SAP Cloud Identity Services admin console.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/sapadminconsole.png)
+	![Screenshot of the SAP Cloud Identity Services admin console.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/sap-admin-console.png)
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox - **Send an email notification when a failure occurs**.
 
@@ -397,7 +397,7 @@ Completing the below steps will allow customers that were already previously usi
 
 1. Check to make sure the account being used has the correct permissions. The permission "Directory.ReadWrite.All" is required to make this change.
 
-	![Screenshot of the Permissions screen in Graph Explorer, where the admin is selecting the option to provide consent for the Directory.ReadWrite.All permission.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/graphpermissions.png)
+	![Screenshot of the Permissions screen in Graph Explorer, where the admin is selecting the option to provide consent for the Directory.ReadWrite.All permission.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/graph-permissions.png)
 
 1. Using the Object ID selected from the app previously, run the following command.
 
