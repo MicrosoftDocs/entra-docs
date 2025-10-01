@@ -37,3 +37,4 @@ The Sign-in risk-based policy protects users from registering MFA in risky sessi
 - [User risk-based Conditional Access](policy-risk-based-user.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions](concept-conditional-access-report-only.md)
+- [Configure cross-tenant access settings](/entra/external-id/cross-tenant-access-settings-b2b-collaboration#to-change-inbound-trust-settings-for-mfa-and-device-claims)
