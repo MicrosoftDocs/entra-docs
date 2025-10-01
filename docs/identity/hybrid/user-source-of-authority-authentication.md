@@ -24,7 +24,7 @@ The following sections contain information that shows the currently supported au
 
 Using Hybrid Joined Devices, no password-based sign-ins are supported for SOA transferred users.
 
-### Hybrid Joined Windows Hello for Business and FIDO2 Sign-in
+#### Hybrid Joined Windows Hello for Business and FIDO2 Sign-in
 
 Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Hybrid Joined Devices are as follows:
 
@@ -59,7 +59,7 @@ The following sections contain information that shows the currently supported au
 Using Entra Joined Devices, no password-based sign-ins are supported for SOA transferred users.
 
 
-### Microsoft Entra Joined Devices Windows Hello for Business and FIDO2 Sign-in
+#### Microsoft Entra Joined Devices Windows Hello for Business and FIDO2 Sign-in
 
 Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Microsoft Entra Joined Devices are as follows:
 
