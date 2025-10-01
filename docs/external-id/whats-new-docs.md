@@ -40,13 +40,6 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 - [Register a SAML app in your external tenant](customers/how-to-register-saml-app.md) - Enterprise applications and SAML SSO are generally available
 - [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added enterprise applications update
 
-## June 2025
-
-### Updated articles
-
-- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added activity logs and reports
-- [Microsoft Entra External ID training, live demo, and videos](customers/reference-training-videos.md) - Added video on configuring OpenID Connect identity providers
-
 # [External ID in workforce tenants](#tab/workforce-tenants)
 
 ## September 2025
