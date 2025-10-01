@@ -10,7 +10,7 @@ ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
-ms.custom: azureday1, devx-track-azurecli, devx-track-azurepowershell, subject-rbac-steps, sfi-image-nochange
+ms.custom: devx-track-azurecli, devx-track-azurepowershell, subject-rbac-steps, sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to access Azure Storage for an app by using managed identities.
 ---
 

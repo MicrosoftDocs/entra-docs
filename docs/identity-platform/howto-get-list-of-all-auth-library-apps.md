@@ -8,7 +8,7 @@ ms.date: 05/01/2024
 ms.reviewer: 
 ms.service: identity-platform
 ms.topic: how-to
-ms.custom: has-adal-ref, sfi-image-nochange
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer / IT admin, I need to know / identify which of my apps are using ADAL.
 ---
 

@@ -9,7 +9,7 @@ ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
-ms.custom: azureday1, sfi-image-nochange
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to access Azure Storage for an app using managed identities.
 ---
 
