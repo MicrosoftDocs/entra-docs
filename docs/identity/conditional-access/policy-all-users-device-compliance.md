@@ -12,7 +12,6 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: jodah
 ---
-
 # Require device compliance with Conditional Access
 
 Microsoft Intune and Microsoft Entra work together to secure your organization through [device compliance policies](/mem/intune/protect/device-compliance-get-started) and Conditional Access. Device compliance policies ensure user devices meet minimum configuration requirements. The requirements can be enforced when users access services protected with Conditional Access policies.
