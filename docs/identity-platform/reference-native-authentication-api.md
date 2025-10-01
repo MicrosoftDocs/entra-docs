@@ -797,7 +797,7 @@ To request for security tokens, your app interacts with three endpoints, `oauth/
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
 | `oauth/v2.0/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
-|   `oauth/v2.0/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to the user for second factor authentication method.|
+|   `oauth/v2.0/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to challenge the user for second factor authentication method.|
 |  `oauth/v2.0/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge or register a strong authentication method.|
 | `oauth/v2.0/introspect` | Your app calls it to request for a list of registered strong authentication methods. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods)|
 
@@ -826,8 +826,6 @@ After the app verifies the user's email with OTP, it receives security tokens. I
 - This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the two values in the same screen. 
 - If you collect the username (email) and password in the same screen, steps **two** and **three** gets merged with steps **eight** and **nine**. In this case, the app holds the password, then submits it in step **ten** where it's required.
 
----
-
 When the tenant administrator enforces MFA for the users, when the app calls the `/oauth2/v2.0/token` endpoint, the response depends on whether the user has a registered strong authentication method:
 - If the user has a registered strong authentication method, the flow requires the user to complete an MFA challenge. 
 - If the user doesn't have a registered strong authentication method, then the user needs to [register for a strong authentication method](#register-a-strong-authentication-method-api-reference). 
@@ -849,6 +847,7 @@ The following are more flows you can expect when you enforce MFA for your users:
 
 -->
 
+---
 
 In the sections that follow, we summarize the sign-in flow into three basic steps.
 
@@ -1082,7 +1081,7 @@ Content-Type: application/json
 
 A fallback to a web-based authentication flow may be needed in the following scenarios:
 
-- The client app doesn't support the authentication method or capabilities that Microsoft fEntra requires.
+- The client app doesn't support the authentication method or capabilities that Microsoft Entra requires.
 - The user attempts to use SMS as a strong auth method, but fraud protection blocks the request if it deems it as high risk (only in email with password authentication).
 
 In these scenarios, Microsoft Entra informs the app by returning a *redirect* challenge type in the response:
