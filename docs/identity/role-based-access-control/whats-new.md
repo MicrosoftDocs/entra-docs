@@ -21,6 +21,7 @@ This article provides information about new features and documentation improveme
 | Date | Area | Description |
 | --- | --- | --- |
 | Oct 2025 | Roles | Added [Dragon Administrator](permissions-reference.md#dragon-administrator) role. |
+| August 2025 | Roles | Added [Teams Reader](permissions-reference.md#teams-reader) role. |
 | June 2025 | Roles | Added [Organizational Data Source Administrator](permissions-reference.md#organizational-data-source-administrator) role. |
 | June 2025 | Administrative units | General availability of restricted management administrative units. See [Restricted management administrative units in Microsoft Entra ID](admin-units-restricted-management.md). |
 | May 2025 | Roles | Updated permissions for multiple roles. See [Microsoft Entra built-in roles](permissions-reference.md). |
