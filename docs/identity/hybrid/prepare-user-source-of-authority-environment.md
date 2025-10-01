@@ -14,7 +14,7 @@ ms.reviewer: dhanyak
 
 # Prepare Your Environment for User SOA (Preview)
 
-Once you've decided that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For other things to consider, see: [Prerequisites for Transferring User SOA](user-source-of-authority-overview.md#prerequisites-for-transferring-user-soa) and [Guidance for using User Source of Authority (SOA) (Preview)](Guidance for using User Source of Authority (SOA) (Preview)).
+Once you've decided that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For other things to consider, see: [Prerequisites for Transferring User SOA](user-source-of-authority-overview.md#prerequisites-for-transferring-user-soa) and [Guidance for using User Source of Authority (SOA) (Preview)](user-source-of-authority-guidance.md).
 
 The flow for preparing for user SOA is as follows:
 
