@@ -19,11 +19,11 @@ Say goodbye to time-consuming research and the uncertainty of rushed decisions. 
 ## Prerequisites
 - You must have [Microsoft Entra ID Governance or Microsoft Entra Suite licenses](licensing-fundamentals.md).
 - You must [Onboard to Security Copilot](/copilot/security/get-started-security-copilot#onboarding-to-security-copilot) with at least one [security compute unit (SCU)](/copilot/security/manage-usage) provisioned.
-   - Completing an access review that includes 20 decisions consumes on average one SCU. This includes the agent gathering insights and generating recommendations and the reviewer's natural language conversation in Microsoft Teams with the agent. The SCU consumption can vary based on the conversation length between the reviewer and agent.
+   - Completing an access review that includes 20 decisions consumes on average 4.5 SCU. This includes the agent gathering insights and generating recommendations and the reviewer's natural language conversation in Microsoft Teams with the agent. The SCU consumption can vary based on the conversation length between the reviewer and agent.
 - Admins must have at least **all** the following roles to set up and manage the agent in the Microsoft Entra admin center:
    - [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator)
    - [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator)
-   - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access)
+   - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) in Security Copilot
 - For reviewers to use the Access Review Agent, they must have access to Microsoft Teams and must have an active access review assigned to them. They must also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role assigned to them.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
