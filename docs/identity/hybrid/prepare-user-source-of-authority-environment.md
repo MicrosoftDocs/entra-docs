@@ -14,7 +14,7 @@ ms.reviewer: dhanyak
 
 # Prepare Your Environment for User SOA (Preview)
 
-Once you've decided that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For other things to consider, see: [Prerequisites for Transferring User SOA](user-source-of-authority-overview.md#prerequisites-for-transferring-user-soa) and [Guidance for using User Source of Authority (SOA) (Preview)](user-source-of-authority-guidance.md).
+Once you decide that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your Active Directory environment based on how users are configured. How you choose to prepare your environment is based on many factors. For other things to consider, see: [Prerequisites for Transferring User SOA](user-source-of-authority-overview.md#prerequisites-for-transferring-user-soa) and [Guidance for using User Source of Authority (SOA) (Preview)](user-source-of-authority-guidance.md).
 
 The flow for preparing for user SOA is as follows:
 
@@ -29,13 +29,13 @@ Before transferring the SOA of users, retrieve the objects from your Active Dire
 
 - Confirm that the objects are already synchronized to Microsoft Entra. Administrative objects, or those excluded from synchronization, can’t have their SOA changed. 
 - Confirm that all attributes you have, or plan to modify, on those users are being synched to Microsoft Entra and are visible as either directory attributes, or as *directory schema extensions*: `/graph/api/resources/extensionproperty` in Microsoft Graph. 
-- •	Confirm there are no reference-valued attributes populated on those user objects in Active Directory other than backlinks, such as memberof, and the than the user’s manager attribute.  
+- •	Confirm there are no reference-valued attributes populated on those user objects in Active Directory other than backlinks, such as memberof, and the user’s manager attribute.  
 - Confirm that the value of the manager and member attributes, if set, must be references to users in the same Active Directory domain and that they're synchronized to Microsoft Entra. They can’t refer to other object types, or to objects that aren’t synchronized from this domain to Microsoft Entra. 
 - Confirm that there are no attributes on the objects that are updated by another Microsoft on-premises technology, other than Active Directory Domain Services (AD DS) itself. For example, don’t change the SOA of a user whose `userCertificate` attribute is maintained by [Active Directory Certificate Services](/windows-server/identity/ad-cs/active-directory-certificate-services-overview). 
 
 ## Update Active Directory
 
-If you’re planning to only change the SOA for some Active Directory users, and all your users are currently in a single OU using Kerberos applications which don’t use LDAP, we recommend that you create a new AD DS OU for these objects to avoid inadvertently making updates to them in Active Directory after the SOA change. Users, whose SOA isn’t changing, can continue to be managed using Active Directory Users and Computers, Active Directory Module for PowerShell, or other Active Directory management tools. After creating an OU, move the objects to that OU. For more information, see: [Move-ADObject](/powershell/module/activedirectory/move-adobject?view=windowsserver2025-ps).
+If you’re planning to only change the SOA for some Active Directory users, and all your users are currently in a single OU using Kerberos applications that don’t use LDAP, we recommend that you create a new AD DS OU for these objects to avoid inadvertently making updates to them in Active Directory after the SOA change. Users, whose SOA isn’t changing, can continue to be managed using Active Directory Users and Computers, Active Directory Module for PowerShell, or other Active Directory management tools. After creating an OU, move the objects to that OU. For more information, see: [Move-ADObject](/powershell/module/activedirectory/move-adobject?view=windowsserver2025-ps).
 
 ## Prepare your Microsoft Exchange setup
 
@@ -51,21 +51,34 @@ If you're running an Exchange hybrid configuration, ensure all your mailboxes ar
 
 1.	(Optional) To secure your environment, remove the inbound and outbound connectors created by the Hybrid Configuration Wizard used for mail flow between Exchange Server and Exchange online.
 
-1.	(Optional) To secure your environment, remove the organization relationship, Fed Trust and oauth trust set up between Exchange Server and Exchange Online by HCW.
+1.	(Optional) To secure your environment, remove the organization relationship, Fed Trust, and oauth trust set up between Exchange Server and Exchange Online by HCW.
 
 1.	Stop writing to on-premises Exchange for the object and sync the object to cloud to ensure EXO has the latest changes from on-premises.
 
 For more information on disabling Exchange Hybrid, see: see: [Manage recipients in Exchange Hybrid environments using Management tools](/Exchange/manage-hybrid-exchange-recipients-with-management-tools).
 
-## Prepare your HR system
+## Shift the configuration of users in the HR system 
 
-The next step in setting up SOA is to determine your provisioning strategy for your HR system. Ideally, you’re already provisioning new employees from your cloud HR system into Microsoft Entra ID directly, and have identified all the users that are no longer needed in Active Directory
+The next step in setting up SOA is to determine your provisioning strategy for your HR system. In the pre-SOA world, users from your HR system are first provisioned in on-premises Active Directory and then synced to Microsoft Entra ID using Microsoft Entra Connect Sync or Cloud Sync. If you’re using Microsoft Entra provisioning service, you have most likely configured one of the following apps: Workday to AD user provisioning, SAP SuccessFactors to AD user provisioning or API-driven provisioning to AD. The diagram below depicts the data flow in this configuration. 
 
-When prepping your HR integration into the cloud from Active Directory, you should do the following to your environment:
+:::image type="content" source="media/prepare-user-source-of-authority-environment/before-conversion.png" alt-text="Screenshot of HR system before transferring source of authority.":::
 
-1.	Make sure you have your cloud HR system ready and in place to initiate provisioning to Microsoft Entra ID.
+To update this configuration, first identify employees from your HR system who can be provisioned into Microsoft Entra ID directly, and are no longer needed in Active Directory. You can take a phased approach to identify such employees using grouping constructs available in HR, for example: transferring SOA of users by department, cost center, or location. 
 
-1.	Go to your HR Provisioning to Active Directory configuration, and remove the users no longer needed in Active Directory from the App-> Active Directory provisioning configuration (for example, Workday to Active Directory). This stops these users from syncing into Active Directory. Apply a phased approach to provision identities from the HR system into Active directory by starting with a few users and then widening your selection criteria to scope users.
+### Update your HR provisioning configuration
+
+Once you have identified the employees for SOA conversion, you should do the following in your environment:
+
+1.	Create a new provisioning application in Microsoft Entra ID to provision users from your HR system to Microsoft Entra ID. Use scoping filters to restrict this app to only handle SOA converted users. For example: In the first phase, if you’re transferring SOA only for users in the “*Finance*” department, then set the scoping filter as department EQUALS “*Finance*”. Expand the scoping filter in future phases to include more users.  
+
+1.	Update the configuration of your HR to Active Directory provisioning app to exclude the SOA transferred users from syncing to AD. Continuing with the previous example, you can exclude *“Finance”* department users from syncing to AD by setting the filter department to NOT EQUALS “*Finance*”. 
+
+1.	Update the configuration of your Microsoft Entra Connect Sync / Cloud Sync app to exclude the SOA transferred users from syncing to Microsoft Entra ID using a similar scoping filter. 
+
+The following diagram depicts the new SOA-aware provisioning configuration:
+
+:::image type="content" source="media/prepare-user-source-of-authority-environment/after-conversion.png" alt-text="Screenshot of HR system source of authority after conversion.":::
+
 
 
 ## Prepare your MIM setup 
@@ -105,7 +118,7 @@ Once these steps are completed, your MIM-synced hybrid environment should follow
 
 ## Prep Sync Client Sequence
 
-Once your environment has been prepped for transferring user SOA, you must make sure your client is also prepped for the change. To prep your sync client, do the following:
+Once your environment is prepped for transferring user SOA, you must make sure your client is also prepped for the change. To prep your sync client, do the following:
 
 1.	Identify the users and/or groups for whom you’re going to Switch the source of authority (SOA) to Microsoft Entra ID. Ensure these users and groups are currently being synced using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync. 
     > [!NOTE]
