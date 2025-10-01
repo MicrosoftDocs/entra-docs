@@ -27,7 +27,7 @@ This article provides an overview of the logic behind the suggestions and report
    - On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
    - [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
-   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can *view the agent and take action on the suggestions*.
+   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).

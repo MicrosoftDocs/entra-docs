@@ -6,7 +6,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: overview
-ms.date: 04/09/2025
+ms.date: 09/29/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 
@@ -68,7 +68,7 @@ The following table provides a comparison between Microsoft Entra Connect and Mi
 | Support for federation |●|●|
 | Seamless Single Sign-on|● |●|
 | Supports installation on a Domain Controller |● |● |
-| Support for Windows Server 2016|● |● |
+| Support for Windows Server 2022, Windows Server 2019, and Windows Server 2016|● |● |
 | Filter on Domains/OUs/groups |● |● |
 | Filter on objects' attribute values |● | |
 | Allow minimal set of attributes to be synchronized (MinSync) |● |● |
