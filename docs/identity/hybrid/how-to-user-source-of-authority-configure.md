@@ -21,7 +21,7 @@ This article explains the prerequisites, and steps, to configure User Source of 
 | Requirement | Description |
 |-------------|-------------|
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of users.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
-| **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to consent to this permission](how-to-user-source-of-authority-configure.md#use-microsoft-graph-explorer-to-consent-permission-to-apps) using Graph Explorer or an existing app in your tenant. |
+| **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to consent to this permission](how-to-user-source-of-authority-configure.md#consent-permission-to-apps) using the Microsoft Entra Admin Center. |
 | **License needed** | Microsoft Entra Free license. |
 | **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760) |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
@@ -50,7 +50,7 @@ Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](
 
 ## Consent permission to apps
 
-You can consent permission in the Microsoft Entra admin center or in Graph Explorer. This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. You can also grant consent by using PowerShell. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
+You can consent permission in the Microsoft Entra admin center. This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. You can also grant consent by using PowerShell. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
 
 ### Custom apps
 
@@ -71,15 +71,6 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 1. You can see the list of permissions that you granted:
 
 :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/permission.png" alt-text="Screenshot of how to validate a permission is granted.":::
-
-### Use Microsoft Graph Explorer to consent permission to apps 
-
-1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
-
-1.	Select the profile icon, and select **Consent to permissions**. 
-
-1. Search for User-OnPremisesSyncBehavior, and select **Consent** for the permission.
-    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to user-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-user-source-of-authority-configure/consent.png":::
 
 ## Transfer SOA for a test user
 
