@@ -50,3 +50,4 @@ Before you begin transferring the SOA for users in your organization, your envir
 ## Related content
 
 - [Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)](how-to-user-source-of-authority-configure.md)
+- [Prepare Your Environment for User SOA (Preview)](prepare-user-source-of-authority-environment.md)

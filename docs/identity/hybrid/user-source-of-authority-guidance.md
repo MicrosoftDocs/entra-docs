@@ -55,3 +55,4 @@ We recommend that customers migrate their devices to the cloud, and use a Micros
 ## Related content
 
 - [Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)](how-to-user-source-of-authority-configure.md)
+- - [Prepare Your Environment for User SOA (Preview)](prepare-user-source-of-authority-environment.md)
