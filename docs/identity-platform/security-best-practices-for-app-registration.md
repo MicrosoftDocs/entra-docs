@@ -2,7 +2,7 @@
 title: Security best practices for application properties
 description: Learn about the best practices and general guidance for security related application properties in Microsoft Entra ID.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 01/06/2023
 ms.reviewer: 

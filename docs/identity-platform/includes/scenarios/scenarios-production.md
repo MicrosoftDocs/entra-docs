@@ -3,7 +3,7 @@ title: include file
 description: include file
 
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 editor: ''
 
 ms.service: identity-platform

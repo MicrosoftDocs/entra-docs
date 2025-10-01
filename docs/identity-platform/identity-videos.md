@@ -2,7 +2,7 @@
 title: Microsoft identity platform videos
 description: A list of videos about modern authentication and the Microsoft identity platform
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom: has-adal-ref
 ms.date: 01/06/2023
