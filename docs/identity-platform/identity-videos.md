@@ -6,7 +6,7 @@ manager: pmwongera
 ms.author: owenrichards
 ms.custom: has-adal-ref
 ms.date: 01/06/2023
-ms.reviewer: celested
+ms.reviewer:
 ms.service: identity-platform
 
 ms.topic: concept-article
