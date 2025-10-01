@@ -4,8 +4,8 @@ description: Learn how to configure your iOS app to use QR code and PIN authenti
 author: henrymbuguakiarie
 manager: pmwongera
 ms.author: henrymbugua
-ms.service: msal
-ms.subservice: msal-ios-mac
+ms.service: identity-platform
+ms.subservice:
 ms.topic: concept-article
 ms.date: 07/24/2025
 ms.reviewer: akgoel

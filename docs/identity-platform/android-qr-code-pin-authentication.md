@@ -4,8 +4,8 @@ description: Learn how to configure your Android app to use QR code and PIN auth
 author: henrymbuguakiarie
 manager: pmwongera
 ms.author: henrymbugua
-ms.service: msal
-ms.subservice: msal-android
+ms.service: identity-platform
+ms.subservice:
 ms.topic: concept-article
 ms.date: 02/05/2025
 ms.reviewer: akgoel

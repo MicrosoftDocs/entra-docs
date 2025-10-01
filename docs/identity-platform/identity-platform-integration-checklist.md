@@ -4,7 +4,7 @@ description: Learn about best practices, recommendations, and common oversights 
 author: OwenRichards1
 manager: pmwongera
 ms.author: owenrichards
-ms.custom: scenarios:getting-started, has-adal-ref
+ms.custom: has-adal-ref
 ms.date: 11/22/2023
 ms.reviewer: sureshja
 ms.service: identity-platform
