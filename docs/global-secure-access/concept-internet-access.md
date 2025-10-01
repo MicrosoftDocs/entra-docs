@@ -4,7 +4,7 @@ description: Learn about how Microsoft Entra Internet Access secures access to t
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 

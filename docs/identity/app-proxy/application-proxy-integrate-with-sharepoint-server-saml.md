@@ -33,7 +33,7 @@ This process requires two Enterprise Applications. One is a SharePoint on premis
 - A SharePoint 2013 farm or newer. The SharePoint farm must be [integrated with Microsoft Entra ID](~/identity/saas-apps/sharepoint-on-premises-tutorial.md).
 - A Microsoft Entra tenant with a plan that includes application proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on premises SharePoint farm.
-- A [custom, verified domain](~/fundamentals/add-custom-domain.yml) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
+- A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant. The verified domain must match the SharePoint URL suffix.
 - A Transport Layer Security (TLS) certificate is required. See the details in [custom domain publishing](./how-to-configure-custom-domain.md).
 - a private network connector installed and running on a machine within the corporate domain.
 

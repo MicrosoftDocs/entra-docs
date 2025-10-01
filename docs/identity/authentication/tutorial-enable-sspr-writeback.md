@@ -117,7 +117,7 @@ To enable SSPR writeback, first enable the writeback option in Microsoft Entra C
 1. When you see the configuration finish, select **Exit**.
 
 > [!Note]
-> Updating `PasswordWritebackEnabled` from [OnPremDirectorySynchronization service features](~/identity/hybrid/connect/how-to-connect-syncservice-features.md) is not supported as this feature flag is not in use.
+> Updating `PasswordWritebackEnabled` from [OnPremDirectorySynchronization service features](~/identity/hybrid/connect/how-to-connect-syncservice-features.md) isn't supported as this feature flag isn't in use.
 
 ## Enable password writeback for SSPR
 

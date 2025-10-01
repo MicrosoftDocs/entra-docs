@@ -2,15 +2,15 @@
 title: Microsoft Entra Connect - AD FS management and customization
 description: This article discusses how to manage AD FS with Microsoft Entra Connect and customize the AD FS user sign-in experience with Microsoft Entra Connect and PowerShell.
 keywords: AD FS, ADFS, AD FS management, AAD Connect, Connect, sign-in, AD FS customization, repair trust, M365, federation, relying party
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 2593b6c6-dc3f-46ef-8e02-a8e2dc4e9fb9
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 # Manage and customize AD FS by using Microsoft Entra Connect
@@ -186,7 +186,7 @@ It's easy to add a domain to be federated with Microsoft Entra ID by using Micro
 
    ![Screenshot of the "Additional tasks" pane, showing how to add an additional Microsoft Entra domain.](./media/how-to-connect-fed-management/AdditionalDomain4.PNG)
 
-    After you choose the domain, the wizard informs you about further actions that it will take and the impact of the configuration. In some cases, if you select a domain that isn't yet verified in Microsoft Entra ID, the wizard helps you verify the domain. For more information, see [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).
+    After you choose the domain, the wizard informs you about further actions that it will take and the impact of the configuration. In some cases, if you select a domain that isn't yet verified in Microsoft Entra ID, the wizard helps you verify the domain. For more information, see [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
 
 1. Select **Next**. 
 

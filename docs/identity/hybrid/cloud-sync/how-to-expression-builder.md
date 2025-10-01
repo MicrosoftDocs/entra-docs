@@ -2,13 +2,13 @@
 title: 'Use the expression builder with Microsoft Entra Cloud Sync'
 description: This article describes how to use the expression builder with cloud sync.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

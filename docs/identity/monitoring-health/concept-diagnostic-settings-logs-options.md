@@ -4,7 +4,7 @@ description: Learn about the Microsoft Entra logs available for streaming to an 
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: article
 ms.subservice: monitoring-health
 ms.date: 04/16/2025
 ms.author: sarahlipsey

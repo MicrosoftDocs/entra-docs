@@ -7,7 +7,7 @@ documentationcenter: ''
 author: billmath
 manager: femila
 editor: ''
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
 ms.custom: sfi-image-nochange

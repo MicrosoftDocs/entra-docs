@@ -3,9 +3,9 @@
 metadata:
   title: Set token lifetimes
   description: Learn how to configure token lifetimes for access, SAML, or ID tokens issued by Microsoft identity platform. Improve security and authentication management.
-  author: rwike77
-  ms.author: ryanwi
-  manager: CelesteDG
+  author: cilwerner
+  ms.author: cwerner
+  manager: pmwongera
   ms.date: 05/11/2025
   ms.service: identity-platform
   ms.custom:

@@ -30,7 +30,7 @@ Microsoft Entra External ID pricing is based on monthly active users (MAU), whic
 
 ### Does the 50,000 MAU free tier apply to add-ons?
 
-No, External ID add-ons don't have a free tier. However, the ID Governance premium feature for External ID is in preview, so currently there's no charge for this add-on.
+No, External ID add-ons don't have a free tier. To learn more about pricing visit the [External ID pricing page](/entra/external-id/external-identities-pricing).
 
 ### Does External ID have phone authentication via SMS?
 

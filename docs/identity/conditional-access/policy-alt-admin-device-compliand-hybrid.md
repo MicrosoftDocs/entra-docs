@@ -9,7 +9,7 @@ ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require compliant device or Microsoft Entra hybrid joined device for administrators

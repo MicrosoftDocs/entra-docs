@@ -34,7 +34,7 @@ The email notifications provide a basic summary of the specific recommendation w
 Tenants are opted in to receive Microsoft Entra recommendation emails by default. To turn off these emails, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Overview** > **Recommendations**.
+1. Browse to **Entra ID** > **Overview** > **Recommendations**.
 1. Select **Email settings**.
 
     ![Screenshot of the recommendations page with the email settings button highlighted.](media/howto-configure-recommendation-email-notifications/recommendation-email-settings.png)

@@ -2,15 +2,15 @@
 metadata:
   title: 'Microsoft Entra Connect FAQ -'
   description: This article answers frequently asked questions about Microsoft Entra Connect. 
-  author: billmath
-  manager: femila
+  author: omondiatieno
+  manager: mwongerapk
   ms.assetid: 4e47a087-ebcd-4b63-9574-0c31907a39a3
   ms.service: entra-id
   ms.tgt_pltfrm: na
   ms.topic: faq
   ms.date: 12/27/2024
   ms.subservice: hybrid-connect
-  ms.author: billmath
+  ms.author: jomondi
   
   
 title: Microsoft Entra Connect FAQ

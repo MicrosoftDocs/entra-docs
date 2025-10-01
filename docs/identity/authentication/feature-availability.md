@@ -5,8 +5,8 @@ description: Learn which Microsoft Entra features are available in Azure Governm
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/04/2025
+ms.topic: article
+ms.date: 08/06/2025
 
 
 ms.author: justinha
@@ -82,7 +82,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 
 | Risk Detection | Availability |
 |----------------|:--------------------:|
-|Leaked credentials (MACE) | &#x2705; |
+|Leaked credentials (Microsoft Account Compromise Exchange) | &#x2705; |
 |Microsoft Entra threat intelligence | &#10060; |
 |Anonymous IP address | &#x2705; | 
 |Atypical travel | &#x2705; |

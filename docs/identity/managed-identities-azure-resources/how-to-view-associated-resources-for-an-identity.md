@@ -70,7 +70,7 @@ https://management.azure.com/subscriptions/{resourceID of user-assigned identity
 You can see a sample request to the REST API:
 
 ```http
-POST https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/devrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/devIdentity/listAssociatedResources?$filter={filter}&$orderby={orderby}&$skip={skip}&$top={top}&skipToken={skipToken}&api-version=2021-09-30-preview 
+POST https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/devrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/devIdentity/listAssociatedResources?$filter={filter}&$orderby={orderby}&$skip={skip}&$top={top}&skiptoken={skiptoken}&api-version=2021-09-30-preview 
 ```
 
 Notice a sample response from the REST API:

@@ -5,7 +5,7 @@ ms.service: entra
 author: barclayn
 manager: pmwongera
 ms.author: barclayn
-ms.topic: conceptual
+ms.topic: article
 ms.date: 12/16/2024
 # Customer intent: I am trying to find information on the terms and conditions for Microsoft Entra ID preview programs.
 

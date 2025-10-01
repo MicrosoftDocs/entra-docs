@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: overview
-ms.date: 06/11/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
@@ -23,8 +23,6 @@ Microsoft Entra External ID includes Microsoft's customer identity and access ma
 
 :::image type="content" source="media/overview-customers-ciam/overview-ciam.png" alt-text="Diagram showing an overview customer identity and access management." border="true":::
 
- 
-
 ## Create a dedicated external tenant
 
 When getting started with External ID for your consumer and business customer apps, you first create a tenant for your apps, resources, and directory of customer accounts.
@@ -33,7 +31,7 @@ If you've worked with Microsoft Entra ID, you're already familiar with using a M
 
 - **A directory**: The directory stores your customers' credentials and profile data. When a consumer or business customer signs up for your app, a local account is created for them in your external tenant.
 
-- **Application registrations**: Microsoft Entra ID performs identity and access management only for registered applications. Registering your app establishes a trust relationship and allows you to integrate your app with Microsoft Entra ID.
+- **Application registrations**: Microsoft Entra ID performs identity and access management only for registered applications. Registering your app establishes a trust relationship and allows you to integrate your app with Microsoft Entra ID. In external tenants, you can register apps that use either the OpenID Connect (OIDC) or Security Assertion Markup Language (SAML) protocol for authentication and single sign-on (SSO). The [app registration](/entra/identity-platform/quickstart-register-app) process is optimized for OIDC-based apps. To [register a SAML app](/entra/external-id/customers/how-to-register-saml-app), use the Enterprise applications feature instead.
 
 - **User flows**: The external tenant contains the self-service sign-up, sign-in, and password reset experiences you want to enable for your customers.
 
@@ -103,10 +101,6 @@ Microsoft Entra Conditional Access brings signals together, to make decisions, a
 
 Conditional Access policies are enforced after the user has completed first-factor authentication. For example, if a user's sign-in risk level is high, they must perform MFA to gain access. Alternatively, the most restrictive approach is to block access to the application.
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and multifactor authentication” use case.
 ### Multifactor authentication (MFA)
 
 Microsoft Entra MFA helps safeguard access to data and applications while maintaining simplicity for your users. Microsoft Entra External ID integrates directly with Microsoft Entra MFA so you can add security to your sign-up and sign-in experiences by requiring a second form of authentication. You can fine-tune MFA depending on the extent of security you want to apply to your apps. Consider the following scenarios:

@@ -3,7 +3,7 @@ title: Configure Pulse Secure Virtual Traffic Manager for Single sign-on with Mi
 description: Learn how to configure single sign-on between Microsoft Entra ID and Pulse Secure Virtual Traffic Manager.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

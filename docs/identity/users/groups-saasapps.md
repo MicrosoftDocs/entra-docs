@@ -47,5 +47,5 @@ For more information on Microsoft Entra ID, see:
 * [Managing access to resources with Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md)
 * [Application management in Microsoft Entra ID](~/identity/enterprise-apps/what-is-application-management.md)
 * [Microsoft Entra cmdlets for configuring group settings](~/identity/users/groups-settings-cmdlets.md)
-* [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
+* [What is Microsoft Entra ID?](~/fundamentals/what-is-entra.md)
 * [Integrating your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md)

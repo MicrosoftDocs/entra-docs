@@ -5,7 +5,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.topic: conceptual
+ms.topic: best-practice
 ms.date: 03/30/2025
 ms.author: barclayn
 ms.reviewer: vincesm
@@ -26,7 +26,7 @@ Follow these steps to help you find the right role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Navigate to **Identity** > **Roles & admins** > **All roles**.
+1. Navigate to **Entra ID** > **Roles & admins** > **All roles**.
 
 1. Use the **Service** filter to narrow down the list of roles.
 

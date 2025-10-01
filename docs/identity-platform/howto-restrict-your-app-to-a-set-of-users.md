@@ -3,7 +3,7 @@ title: Restrict a Microsoft Entra app to a set of users
 description: Learn how to restrict access to your apps registered in Microsoft Entra ID to a selected set of users.
 
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 07/19/2024
@@ -53,6 +53,9 @@ To update an application to require user assignment, you must be owner of the ap
 1. Select **Save** on the top bar.
 
 When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
+
+> [!NOTE]
+> If the user is a Global Administrator, user assignment requirement will not be applicable. Global Administrator is an highly privileged role that allows access to all administrative features in Microsoft Entra ID and can elevate their access to manage all Azure subscriptions and management groups. 
 
 ## Assign the app to users and groups to restrict access
 

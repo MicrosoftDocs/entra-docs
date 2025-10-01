@@ -2,7 +2,7 @@
 title: "Sign in users in a Node.js/Express web app"
 description: In this tutorial, you add support for signing-in users in a web app.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 11/09/2022
 ms.service: identity-platform
@@ -218,4 +218,4 @@ In this tutorial, you instantiated an MSAL Node [ConfidentialClientApplication](
 If you'd like to dive deeper into Node.js & Express web application development on the Microsoft identity platform, see our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md)
+> [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-configuration.md)

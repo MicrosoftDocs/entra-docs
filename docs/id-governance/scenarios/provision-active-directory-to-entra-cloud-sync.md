@@ -4,7 +4,7 @@ description: This article a tutorial on how to provision users and groups using 
 author: billmath
 manager: dougeby
 ms.service: entra-id-governance
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.subservice:
 ms.author: billmath

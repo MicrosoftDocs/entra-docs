@@ -1,9 +1,9 @@
 ---
 title: Single and multitenant apps in Microsoft Entra ID
 description: Learn about the features and differences between single-tenant and multitenant apps in Microsoft Entra ID.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
 ms.custom:
 ms.date: 03/13/2025
 ms.reviewer: 
@@ -28,7 +28,7 @@ When you register an application, you can configure it to be single-tenant or mu
 
 | Audience | Single/multi-tenant | Who can sign in |
 | -------- | ------------------- | --------------- |
-| Accounts in this directory only | Single tenant | All user and guest accounts in your directory can use your application or API.<br>Use this option if your target audience is internal to your organization. |
+| Accounts in this directory only | Single tenant | All user and guest accounts in your directory can use your application or API.<br>Use this option if your target audience is internal to your organization. <br> Use if building an app registration for a third party that instructs you to build your own app registration for their app. |
 | Accounts in any Microsoft Entra directory | Multitenant | All users and guests with a work or school account from Microsoft can use your application or API. This includes schools and businesses that use Microsoft 365.<br>Use this option if your target audience is business or educational customers. |
 | Accounts in any Microsoft Entra directory and personal Microsoft accounts (such as Skype, Xbox, Outlook.com) | Multitenant | All users with a work or school, or personal Microsoft account can use your application or API. It includes schools and businesses that use Microsoft 365 as well as personal accounts that are used to sign in to services like Xbox and Skype.<br>Use this option to target the widest set of Microsoft accounts. |
 

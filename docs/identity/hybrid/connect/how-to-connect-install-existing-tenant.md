@@ -1,14 +1,14 @@
 ---
 title: 'Microsoft Entra Connect: When you already have Microsoft Entra ID'
 description: This topic describes how to use Connect when you have an existing Microsoft Entra tenant.
-author: billmath
+author: omondiatieno
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
-manager: femila
+manager: mwongerapk
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

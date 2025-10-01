@@ -4,7 +4,7 @@ description: Learn about how Microsoft Entra Private Access secures access to yo
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 

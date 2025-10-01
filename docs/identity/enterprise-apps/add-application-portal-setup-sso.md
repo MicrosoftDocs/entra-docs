@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 07/02/2024
+ms.date: 07/10/2025
 ms.author: jomondi
 ms.reviewer: ergleenl
 ms.custom: mode-other, enterprise-apps, sfi-image-nochange
@@ -19,7 +19,7 @@ In this article, you use the Microsoft Entra admin center to enable single sign-
 
 Microsoft Entra ID has a gallery that contains thousands of preintegrated applications that use SSO. This article uses an enterprise application named **Microsoft Entra SAML Toolkit 1** as an example, but the concepts apply for most preconfigured enterprise applications in the Microsoft Entra application gallery.
 
-If your application will not integrate directly with Microsoft Entra for single sign-on, and instead tokens are provided to the application by a relying party Security Token Service (STS), then see the article [Enable single sign-on for an enterprise application with a relying party security token service](add-application-portal-setup-sso-rpsts.md).
+If your application doesn't integrate directly with Microsoft Entra ID for single sign-on, and instead tokens are provided to the application by a relying party Security Token Service (STS), then see the article [Enable single sign-on for an enterprise application with a relying party security token service](add-application-portal-setup-sso-rpsts.md).
 
 We recommend that you use a nonproduction environment to test the steps in this article.
 
@@ -106,7 +106,7 @@ To test SSO:
 1. In the **Test single sign-on with Microsoft Entra SAML Toolkit 1** section, on the **Set up single sign-on with SAML** pane, select **Test**.
 1. Sign in to the application using the Microsoft Entra credentials of the user account that you assigned to the application.
 
-## Next steps
+## Related content
 
 - [Manage self service access](manage-self-service-access.md)
 - [Configure user consent](configure-user-consent.md)

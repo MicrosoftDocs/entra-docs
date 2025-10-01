@@ -4,7 +4,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/19/2025
+ms.date: 07/23/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -127,22 +127,25 @@ The following table lists more numbers for different countries/regions.
 |:---------------------|:----------------|
 | Austria              | +43 6703062076  |
 | Bangladesh           | +880 9604606026 |
-| China                | +44 1235619418, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 1235619535, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930, +86 1052026902, +86 1052026905, +86 1052026907|
+| Belgium              | +32 480298502   |
+| China                | +44 1235619418, +44 1235619535, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930, +86 1052026902, +86 1052026905, +86 1052026907, +86 2157007919, +86 2157007923, +86 2157007926|
 | Croatia              | +385 15507766   |
 | Ecuador              | +593 964256042  |
 | Estonia              | +372 6712726    |
-| France               | +33 744081468   |
+| France               | +33 744081468, +33 939370036 |
 | Ghana                | +233 308250245  |
 | Greece               | +30 2119902739  |
 | Guatemala            | +502 23055056   |
 | Hong Kong SAR        | +852 25716964   |
-| India                | +91 3371568300, +91 1205089400, +91 4471566601, +91 2271897557, +91 1203524400, +91 3335105700, +91 2235544120, +91 4435279600|
+| India                | +91 1203524400, +91 1205089400, +91 2235543727, +91 2235543728, +91 2235543729, +91 2235543730, +91 2235544120, +91 2271897557, +91 3335105700, +91 3371568300, +91 4435279600, +91 4471566601|
 | Jordan               | +962 797639442  |
 | Kenya                | +254 709605276  |
-| Netherlands          | +31 202490048   |
+| Netherlands          | +31 202490048, +31 635230021 |
+| New Zealand          | +64 95585975    |
 | Nigeria              | +234 7080627886 |
 | Pakistan             | +92 4232618686, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930  |
 | Poland               | +48 699740036   |
+| Russian Federation   | +7 9300653362   |
 | Saudi Arabia         | +966 115122726  |
 | South Africa         | +27 872405062   |
 | Spain                | +34 913305144   |
@@ -150,7 +153,7 @@ The following table lists more numbers for different countries/regions.
 | Sweden               | +46 701924176   |
 | Taiwan               | +886 277515260, +886 255686508  |
 | Türkiye              | +90 8505404893  |
-| Ukraine              | +380 443332393  |
+| Ukraine              | +380 443332000, +380 443332393  |
 | United Arab Emirates | +971 44015046   |
 | Vietnam              | +84 2039990161  |
 
@@ -197,20 +200,25 @@ You can use the following sample scripts to create your own custom messages. The
 
 Message name | Script
 -------------|--------
-OTP extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue. 
-OTP fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to continue. If you are not trying to sign in, press 0 and #.
-OTP fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
-OTP fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
-OTP goodbye | Goodbye.
-OTP greeting | This is Microsoft. If you are trying to sign in, press the # key to continue.
-OTP last verification code | Again, your code is
-Greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
-Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
-Fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
-Fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
-Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
 Authentication successful | Your sign-in was successful.
-Authentication failed | I'm sorry we can't sign you in at this time. Please try again later.
+Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
+Fraud confirmation | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
+Fraud reported | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+Activation | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Authentication denied retry | I'm sorry we can't sign you in at this time. Please try again later.
+Retry (Standard) | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Greeting (Standard) | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
+Greeting (PIN) | This is Microsoft. If you are trying to sign in, enter your PIN to finish signing in.
+Fraud greeting (PIN) | This is Microsoft. If you are trying to sign in, enter your PIN to finish signing in. If you are not trying to sign in, press 0 and #.
+Retry (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the # key to finish your verification.
+Extension prompt after digits | If already at this extension, press the # key to continue.
+Authentication denied | I'm sorry we can't sign you in at this time. Please try again later.
+Activation greeting (Standard) | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Activation retry (Standard)| Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Activation greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the # key to finish your verification.
+Extension prompt before digits | Thank you for using Microsoft's sign-in verification system. Please transfer this call to extension {0}.
+
 
 ### Set up a custom message
 

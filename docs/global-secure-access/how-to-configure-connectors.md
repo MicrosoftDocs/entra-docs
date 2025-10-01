@@ -27,10 +27,10 @@ User identities must be synchronized from an on-premises directory or created di
 
 ### Windows server
 
-The Microsoft Entra private network connector requires a server running Windows Server 2012 R2 or later. You'll install the private network connector on the server. This connector server needs to connect to the Microsoft Entra Private Access service or application proxy service and the private resources or applications that you plan to publish.
+The Microsoft Entra private network connector requires a server running Windows Server 2016 or later. You'll install the private network connector on the server. This connector server needs to connect to the Microsoft Entra Private Access service or application proxy service and the private resources or applications that you plan to publish.
 
 * For high availability in your environment, we recommend having more than one Windows server.
-* The minimum .NET version required for the connector is v4.7.1+.
+* The minimum .NET version required for the connector is v4.7.2+.
 * For more information, see [private network connectors](../identity/app-proxy/application-proxy-connectors.md#requirements-and-deployment)
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
@@ -112,6 +112,8 @@ To enable TLS 1.2:
 
 - Optimize performance between the connector and the application. Physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 - Make sure the connector server and the web application servers are in the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, use resource-based delegation for single sign-on.
+- Consider [performance and scalability](concept-connectors.md#performance-and-scalability) of your connector deployment, including [extending the TCP and UDP ephemeral ports](concept-connectors.md#expanding-ephemeral-port-range) on your connector server. See [Understand the Microsoft Entra private network connector](concept-connectors.md) for more information.
+- Consider creating a [performance baseline](https://learn.microsoft.com/troubleshoot/windows-server/performance/troubleshoot-performance-problems-in-windows) for your private network connectors.
 
 ### Prepare your on-premises environment
 

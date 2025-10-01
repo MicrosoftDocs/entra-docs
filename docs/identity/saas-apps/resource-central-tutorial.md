@@ -3,7 +3,7 @@ title: Configure Resource Central – SAML SSO for Meeting Room Booking System f
 description: Learn how to configure single sign-on between Microsoft Entra ID and Resource Central – SAML SSO for Meeting Room Booking System.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

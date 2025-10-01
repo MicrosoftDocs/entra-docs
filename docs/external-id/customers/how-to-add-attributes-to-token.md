@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 04/14/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, sfi-image-nochange
 ---
 
@@ -18,12 +18,6 @@ ms.custom: it-pro, sfi-image-nochange
 User attributes are values collected from the user during self-service sign-up. In addition to built-in user attributes, you can create custom attributes when you need to collect additional information. Because your application might rely on certain user attributes to function as designed, you can add any of these attributes to the token that is sent from Microsoft Entra ID to your application.
 
 You can specify which built-in or custom attributes you want to include as claims in the token that Microsoft Entra ID sends to your application.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
-
 
 ## Prerequisites
 

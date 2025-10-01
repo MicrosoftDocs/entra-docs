@@ -126,7 +126,7 @@ Directory data includes the objects stored in the directory such as users, appli
 
 The directory creates some values during object creation, such as object and application IDs. They can't be duplicated or re-created with the same values. 
 
-You can [restore or permanently remove recently deleted users](../fundamentals/users-restore.yml). 
+You can [restore or permanently remove recently deleted users](../fundamentals/users-restore.md). 
 
 For objects relevant to external identities, such as users, groups and service principals, see [recover from deletions in Microsoft Entra ID](recover-from-deletions.md). 
 

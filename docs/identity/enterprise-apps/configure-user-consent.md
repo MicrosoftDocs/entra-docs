@@ -50,7 +50,7 @@ To configure user consent settings through the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
-1. Browse to **Entra ID** > **Enterprise apps** > **Consent and permissions** > **User consent settings**.
+1. Browse to **Identity** > **Applications** > **Enterprise apps** > **Consent and permissions** > **User consent settings**.
 
 1. Under **User consent for applications**, select which consent setting you want to configure for all users.
 

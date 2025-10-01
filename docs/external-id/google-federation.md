@@ -195,7 +195,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 
 **To configure Google federation in the Microsoft Entra admin center** 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Entra ID** > **External Identities** > **All identity providers** and then on the **Google** line, select **Configure**.
+1. Browse to **Identity** > **External Identities** > **All identity providers** and then on the **Google** line, select **Configure**.
 1. Enter the client ID and client secret you obtained earlier. Select **Save**:
 
    ![Screenshot that shows the Add Google identity provider page.](media/google-federation/google-identity-provider.png)

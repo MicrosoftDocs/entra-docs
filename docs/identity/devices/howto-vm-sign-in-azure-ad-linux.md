@@ -463,7 +463,7 @@ To uninstall old packages:
 1. Run `sudo apt remove --purge aadlogin` (Ubuntu/Debian), `sudo yum remove aadlogin` (RHEL), or `sudo zypper remove aadlogin` (openSUSE or SLES).
 1. If the command fails, try the low-level tools with scripts disabled:
    1. For Ubuntu/Debian, run `sudo dpkg --purge aadlogin`. If it's still failing because of the script, delete the `/var/lib/dpkg/info/aadlogin.prerm` file and try again.
-   1. For everything else, run `rpm -e --noscripts aadogin`.
+   1. For everything else, run `rpm -e --noscripts aadlogin`.
 1. Repeat steps 3-4 for package `aadlogin-selinux`.
 
 ### Extension installation errors

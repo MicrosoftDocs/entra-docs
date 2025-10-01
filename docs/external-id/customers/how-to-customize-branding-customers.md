@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 05/07/2025
+ms.date: 09/16/2025
 ms.author: cmulligan
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
@@ -18,11 +18,6 @@ ms.custom: it-pro, sfi-image-nochange
 
 After creating a new external tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
 You can also create user flows programmatically using the Company Branding Graph API.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CompanyBranding)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Company branding” use case.
 
 ## Prerequisites
 
@@ -54,7 +49,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-1. Browse to **Company branding** either by using the search bar or by navigating to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Company branding** either by using the search bar or by navigating to **Entra ID** > **Custom Branding**.
 1. On the **Default sign-in** tab, select **Edit**.
 
    :::image type="content" source="media/how-to-customize-branding-customers/company-branding-default-edit-button.png" alt-text="Screenshot of the company branding edit button.":::

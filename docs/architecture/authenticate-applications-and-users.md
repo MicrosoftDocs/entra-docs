@@ -5,7 +5,7 @@ customer-intent: I'm an independent software developer, and I want to learn how 
 author: jricketts
 manager: martinco
 ms.service: entra
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/14/2024
 ms.author: jricketts
 ---

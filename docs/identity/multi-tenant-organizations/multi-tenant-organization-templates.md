@@ -5,7 +5,7 @@ author: kenwith
 manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/23/2024
 ms.author: kenwith
 ms.custom: it-pro

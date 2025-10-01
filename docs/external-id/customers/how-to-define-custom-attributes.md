@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 04/28/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a developer, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
 ---
@@ -92,11 +92,6 @@ On the **Page layout** page, you can indicate which attributes are required and 
 ### Configure a single-select checkbox (CheckboxSingleSelect)
 
 An attribute with a Boolean data type has a user input type of CheckboxSingleSelect. You can modify the text that displays next to the checkbox and include hyperlinks.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PolicyAgreement)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Add links to terms of use and privacy policies” use case.
 
 To configure a single-select checkbox, follow these steps:
 

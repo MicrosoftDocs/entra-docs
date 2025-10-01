@@ -122,12 +122,16 @@ Manually or automatically applying results doesn't have an effect on a group tha
 > - User not found / other errors can also result in an apply result not being supported.
 > - Reviewing the members of mail enabled group: The group can't be managed in Microsoft Entra ID, so membership can't be changed.
 > - Reviewing an Application that uses group assignment won't remove the members of those groups, so they'll retain the existing access from the group relationship for the application assignment
+
+
+> [!NOTE]
+> Access review decisions don't change membership in dynamic groups. These groups are managed by rules users, and remain members as long as they match the rule conditions.
  
 ## Actions taken on denied guest users in an access review
  
 On review creation, the creator can choose between two options for denied guest users in an access review. 
  - Denied guest users can have their access to the resource removed. This setting is the default.
- - The denied guest user can be blocked from signing in for 30 days, then deleted from the tenant. During the 30-day period the guest user is able to be restored access to the tenant by an administrator. After the 30-day period is completed, if the guest user hasn't had access to the resource granted to them again, they'll be removed from the tenant permanently. In addition, using the Microsoft Entra admin center, a Global Administrator can explicitly [permanently delete a recently deleted user](~/fundamentals/users-restore.yml) before that time period is reached. Once a user is permanently deleted, the data about that guest user is removed from active access reviews. Audit information about deleted users remains in the audit log.
+ - The denied guest user can be blocked from signing in for 30 days, then deleted from the tenant. During the 30-day period the guest user is able to be restored access to the tenant by an administrator. After the 30-day period is completed, if the guest user hasn't had access to the resource granted to them again, they'll be removed from the tenant permanently. In addition, using the Microsoft Entra admin center, a Global Administrator can explicitly [permanently delete a recently deleted user](~/fundamentals/users-restore.md) before that time period is reached. Once a user is permanently deleted, the data about that guest user is removed from active access reviews. Audit information about deleted users remains in the audit log.
  
 ### Actions taken on denied B2B direct connect users
 

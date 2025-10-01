@@ -6,8 +6,9 @@ summary: Learn how to securely manage access to your services and resources usin
 metadata:
   title: Microsoft Entra architecture documentation 
   description: "Learn how to securely manage access to your services and resources using Microsoft Entra ID."
-  ms.author: martinco
-  manager: travisgr
+  author: janicericketts
+  ms.author: jricketts
+  manager: martinco
   ms.date: 07/26/2023
   ms.service: entra
   ms.subservice: architecture
@@ -22,7 +23,7 @@ landingContent:
       - linkListType: architecture
         links:
           - text: What is Microsoft Entra ID?
-            url: ~/fundamentals/whatis.md
+            url: ~/fundamentals/what-is-entra.md
           - text: Microsoft Entra architecture
             url: architecture.md
 

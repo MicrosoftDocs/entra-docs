@@ -6,7 +6,7 @@ metadata:
   ms.author: barclayn
   manager: pmwongera
   ms.reviewer: rianakarim
-  ms.date: 12/19/2024
+  ms.date: 06/27/2025
   ms.service: entra-id-governance
   ms.subservice: privileged-identity-management
   ms.topic: how-to
@@ -20,9 +20,6 @@ introduction: |
   Use Microsoft Entra Privileged Identity Management (PIM), to allow eligible role members for Azure resources to schedule activation for a future date and time. They can also select a specific activation duration within the maximum (configured by administrators).
 
   This article is for members who need to activate their Azure resource role in Privileged Identity Management.
-
-  >[!NOTE]
-  >As of March 2023, you may now activate your assignments and view your access directly from blades outside of PIM in the Azure portal. Read more [here](pim-resource-roles-activate-your-roles.yml#activate-with-azure-portal).
 
   >[!IMPORTANT]
   >When a role is activated, Microsoft Entra PIM temporarily adds active assignment for the role. Microsoft Entra PIM creates active assignment (assigns user to a role) within seconds. When deactivation (manual or through activation time expiration) happens, Microsoft Entra PIM removes the active assignment within seconds as well.
@@ -42,11 +39,11 @@ procedureSection:
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
       - |
-        Browse to **ID Governance** > **Privileged Identity Management** > **My roles**.
+        Browse to **Identity Governance** > **Privileged Identity Management** > **My roles**.
 
           [ ![Screenshot of my roles page showing roles you can activate.](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png) ](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png#lightbox)
       - |
-        Select **Azure resource roles** to see a list of your eligible Azure resource roles.
+        Select **Azure resources** to see a list of your eligible Azure resource roles.
 
           ![Screenshot of my roles - Azure resource roles page.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-azure-resources.png)
       - |
@@ -64,9 +61,20 @@ procedureSection:
 
           ![Screenshot of screen to provide security verification such as a PIN code.](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
       - |
-        If you want to specify a reduced scope, select **Scope** to open the Resource filter pane.
+         It's a best practice to only request access to the resources you need. If you want to specify a reduced scope.
 
-          It's a best practice to only request access to the resources you need. On the Resource filter pane, you can specify the resource groups or resources that you need access to.
+          1. Go to the **Scope** tab.
+          2. Click **Select scope** to select the scope.
+          
+          :::image type="content" source="./media/pim-resource-roles-activate-your-roles/activate-billing-reader-select-scope.png" alt-text="Screenshot of the Scope tab in the Activate - Billing Reader pane, showing the 'Select scope' button and a management group listed under Selected resources. This helps users identify where to click to begin scoping their activation request.":::
+
+          3. Use the dropdown provided to scope the search to a specific resource.
+          4. The reduced scoped resources are shown in **Selected resources** before activation and should be selected from the grid provided. The dropdown selection does not define the reduced scope.
+
+          :::image type="content" source="./media/pim-resource-roles-activate-your-roles/active-billing-reader-set-scope.png" alt-text="Screenshot showing the process of setting the scope for activation, with a management group selected in the grid. This image demonstrates how to confirm the correct resource is selected before proceeding with activation.":::
+
+          >[!NOTE]
+          >If your eligibility is at the management group level, the dropdown will show all direct child resources (management group and subscription). You can select either a management group or subscription from the grid shown, or further scope down the search by selecting the appropriate management group or subscription.
 
           ![Screenshot of activate - Resource filter pane to specify scope.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-resource-filter.png)
       - |

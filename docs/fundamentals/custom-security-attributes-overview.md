@@ -6,7 +6,7 @@ manager: femila
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: article
 ms.date: 10/28/2024
 ms.collection: M365-identity-device-management
 ---
@@ -37,6 +37,7 @@ Custom security attributes **aren't** supported in the following areas:
 
 - [Microsoft Entra Domain Services](/entra/identity/domain-services/overview)
 - [Security Assertion Markup Language (SAML) token claims](~/identity-platform/saml-claims-customization.md)
+- [JSON Web Token claims](/entra/identity-platform/security-tokens)
 
 ## Features of custom security attributes
 

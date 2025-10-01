@@ -5,7 +5,7 @@ author: justinha
 manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: manthanm

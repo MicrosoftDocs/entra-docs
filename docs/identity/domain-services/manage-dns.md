@@ -24,7 +24,7 @@ Domain Services communicates with multiple Azure endpoints during normal operati
 Refrain from redirecting DNS zones related to windowsazure.com or core.windows.net. If DNS redirection is required, limit the redirection to individual host names instead of zones. For example, use server1.file.core.windows.net instead of file.core.windows.net.
 
 >[!NOTE]
->Creating or changing root hints or server-level DNS forwarders isn't supported and causes issues for the Domain Services managed domain. 
+>Setting the "Use Root Hints" option to Enable or changing the server-level DNS forwarder to anything other than 168.63.129.16 is not supported and will cause issues with Entra Domain Services managed domains. Avoid modifying these settings, as it can lead to an unsupported configuration for your tenant. If you encounter difficulties configuring DNS to a supported state, contact Microsoft Support for assistance.
 
 This article shows you how to install the DNS Server tools then use the DNS console to manage records and create conditional forwarders in Domain Services.
 

@@ -372,3 +372,12 @@ groups:
     title: Onboard
   - id: identity-governance-guest-offboard
     title: Offboard
+# Owner owinfrey
+- id: identity-extension-windows-environment
+  title: Azure Virtual Machine extensions and extensions for Arc-enabled Windows Server.
+  prompt: Select how your device is connected to Azure.
+  pivots:
+  - id: identity-extension-vm
+    title: Virtual Machine
+  - id: identity-extension-hybrid
+    title: Arc-enabled Server

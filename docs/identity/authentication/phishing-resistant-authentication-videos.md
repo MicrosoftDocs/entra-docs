@@ -3,7 +3,7 @@ title: Phishing resistant authentication in Microsoft Entra ID
 description: Use this video series to learn about phishing-resistant authentication methods with Microsoft Entra ID. 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 03/04/2025
 ms.author: gasinh
 author: gargi-sinha

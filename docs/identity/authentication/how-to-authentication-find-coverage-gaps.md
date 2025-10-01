@@ -3,7 +3,7 @@ title: Find and address gaps in strong authentication coverage for your administ
 description: Learn how to find and address gaps in strong authentication coverage for your administrators in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/04/2025
 ms.author: justinha
 author: inbarckMS

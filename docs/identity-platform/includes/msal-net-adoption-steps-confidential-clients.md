@@ -1,7 +1,7 @@
 ---
 author: cilwerner
 ms.author: cwerner
-manager: CelesteDG 
+manager: pmwongera
 ms.date: 02/12/2024
 ms.service: identity-platform
 ms.topic: include

@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 09/16/2024
+ms.date: 07/07/2025
 ms.author: cmulligan
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to set up Azure Monitor in external tenants to collect and analyze data in this tenant.
@@ -23,8 +23,8 @@ When you plan to transfer external tenant logs to different monitoring solutions
 
 ## Deployment overview
 
-The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike Microsoft Entra tenants, an external tenant can't have a subscription associated with it. So, we need to take extra steps to enable the integration between external tenant and Log Analytics, which is where we send the logs.
-To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-settings) in workforce tenant within your external tenant, you use [Azure Lighthouse](/azure/lighthouse/overview) to [delegate a resource](/azure/lighthouse/concepts/architecture), which allows your external tenant (the **Service Provider**) to manage a workforce tenant (the **Customer**) resource.
+The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike Microsoft Entra workforce tenants, an external tenant can't have a subscription associated with it. So, we need to take extra steps to enable the integration between the external tenant and Log Analytics in the workforce tenant, which is where we send the logs.
+To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-settings) in the workforce tenant, use [Azure Lighthouse](/azure/lighthouse/overview). Azure Lighthouse [delegates the resource](/azure/lighthouse/concepts/architecture), allowing the external tenant (the **Service Provider**) to manage the resource in the workforce tenant (the **Customer**).
 
 > [!TIP]
 > Azure Lighthouse is typically used to manage resources for multiple customers. However, it can also be used to simplify cross-tenant administration [within an enterprise that has multiple Microsoft Entra tenants of its own](/azure/lighthouse/concepts/enterprise). In our case, we're using it to delegate management of a single resource group.
@@ -242,7 +242,7 @@ Azure Monitor Logs are designed to scale and support collecting, indexing, and s
 
 ## Disable monitoring data collection
 
-To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You'll continue to incur charges for retaining log data you've already collected into your workspace. If you no longer need the monitoring data you've collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring additional data retention charges.
+To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You'll continue to incur charges for retaining log data you've already collected into your workspace. If you no longer need the monitoring data you've collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring other data retention charges.
 
 ### Delete Log Analytics workspace and resource group
 

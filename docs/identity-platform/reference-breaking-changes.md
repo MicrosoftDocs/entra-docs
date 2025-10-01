@@ -1,9 +1,9 @@
 ---
 title: Updates and breaking changes
 description: Learn about changes to the Microsoft identity platform that can impact your application.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
@@ -189,7 +189,7 @@ You can review the current text of the 50105 error and more on the error lookup 
 **Change**
 
 For single tenant applications, adding or updating the AppId URI validates that the domain in the HTTPS scheme URI is listed in the verified domain list in the customer tenant or that the value uses the default scheme (`api://{appId}`) provided by Microsoft Entra ID. This could prevent applications from adding an AppId URI if the domain isn't in the verified domain list or the value doesn't use the default scheme.
-To find more information on verified domains, refer to the [custom domains documentation](~/fundamentals/add-custom-domain.yml).
+To find more information on verified domains, refer to the [custom domains documentation](~/fundamentals/add-custom-domain.md).
 
 The change doesn't affect existing applications using unverified domains in their AppID URI. It validates only new applications or when an existing application updates an identifier URI or adds a new one to the identifierUri collection. The new restrictions apply only to URIs added to an app's identifierUris collection after October 15, 2021. AppId URIs already in an application's identifierUris collection when the restriction takes effect on October 15, 2021 will continue to function even if you add new URIs to that collection.
 
@@ -345,8 +345,8 @@ To remedy this issue, use the Admin Consent experience to create the client appl
 
 #### Example request
 
-`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&...`
-In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `00001111-aaaa-2222-bbbb-3333cccc4444`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
+`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0&...`
+In this example, the resource tenant (authority) is contoso.com, the resource app is a single-tenant app called `gateway.contoso.com/api` for the Contoso tenant, and the client app is `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`. If the client app has a service principal within Contoso.com, this request can continue. If it doesn't, however, then the request will fail with the error above.
 
 If the Contoso gateway app were a multitenant application, however, then the request would continue regardless of the client app having a service principal within Contoso.com.
 

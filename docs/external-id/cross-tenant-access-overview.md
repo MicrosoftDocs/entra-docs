@@ -148,6 +148,8 @@ Microsoft cloud settings let you collaborate with organizations from different M
 
 For more information, see the [Configure Microsoft cloud settings for B2B collaboration](cross-cloud-settings.md) article.
 
+[Cross-cloud synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) settings allows you to manage the lifecycle of users acoss tenants in your organization from different Microsoft clouds. After you enable cross-tenant synchronization settings, you can start synchronizing user data from that cloud. 
+
 ## Important considerations
 
 > [!IMPORTANT]

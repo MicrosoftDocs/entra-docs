@@ -6,7 +6,7 @@ author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.topic: conceptual
+ms.topic: best-practice
 ms.date: 03/14/2025
 ms.author: shermanouko
 ---

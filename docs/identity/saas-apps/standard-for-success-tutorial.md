@@ -3,7 +3,7 @@ title: Configure Standard for Success K-12 for Single sign-on with Microsoft Ent
 description: Learn how to configure single sign-on between Microsoft Entra ID and Standard for Success K-12.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

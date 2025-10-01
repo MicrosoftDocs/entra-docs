@@ -2,7 +2,7 @@
 title: "How to: Restore or remove a recently deleted application with the Microsoft identity platform"
 description: In this how-to, you learn how to restore or permanently delete a recently deleted application registered with the Microsoft identity platform.
 author: cilwerner
-manager: dastrock
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
