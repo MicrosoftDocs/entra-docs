@@ -6,7 +6,6 @@ manager: pmwongera
 ms.author: cwerner
 ms.custom:
 ms.date: 09/15/2023
-ms.devlang: csharp
 ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps

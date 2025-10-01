@@ -1,7 +1,6 @@
 ---
 title: Claims customization using PowerShell and Claims Mapping Policy
 description: This article describes how to customize claims in Microsoft Entra ID using PowerShell
-documentationcenter: .net
 author: cilwerner
 manager: pmwongera
 ms.service: identity-platform

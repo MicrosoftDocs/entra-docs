@@ -8,8 +8,6 @@ ms.custom:
 ms.date: 04/16/2025
 ms.reviewer: 
 ms.service: identity-platform
-
-ms.tgt_pltfrm: multiple
 ms.topic: how-to
 #Customer intent: As a developer, I want to create a service principal with a certificate, so my app or script can authenticate and access resources with its own credentials.
 ---

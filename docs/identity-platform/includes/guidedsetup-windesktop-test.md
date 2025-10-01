@@ -6,7 +6,6 @@ manager: pmwongera
 editor: ''
 ms.service: identity-platform
 ms.topic: include
-ms.tgt_pltfrm: na
 ms.date: 04/10/2019
 ms.author: owenrichards
 ms.reviewer: jmprieur

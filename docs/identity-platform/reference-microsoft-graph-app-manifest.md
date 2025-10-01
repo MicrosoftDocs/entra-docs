@@ -5,7 +5,6 @@ author: cilwerner
 manager: pmwongera
 ms.service: identity-platform
 ms.topic: reference
-ms.workload: identity
 ms.date: 02/03/2025
 ms.author: cwerner
 ms.custom:

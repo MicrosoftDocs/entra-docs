@@ -5,7 +5,6 @@ author: cilwerner
 manager: pmwongera
 ms.author: cwerner
 ms.date: 02/17/2024
-ms.devlang: csharp
 ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
