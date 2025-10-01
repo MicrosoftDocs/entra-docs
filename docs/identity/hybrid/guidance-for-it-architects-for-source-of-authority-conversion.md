@@ -64,11 +64,7 @@ The following diagram outlines if you're ready to transfer the source of authori
 
 ### Considerations
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/password-dependent-eligible.png" alt-text="Screenshot of whether apps dependent on passwords are eligible for Source of authority conversion.":::
-
 **Users:** SOA is suitable for users who do not have any application dependencies linked to AD DS. Identifying which users are associated with specific applications is crucial for effective migration planning. 
-
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/shift-group-priority.png" alt-text="Screenshot of shifting group priority when transferring source of Authority.":::
 
 **Groups:** For groups, we recommend you start with shifting security groups to the cloud. Once in the cloud, provision them back to AD from Microsoft Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workloads is in the cloud, and you no longer need an On-premises Exchange server.
 
