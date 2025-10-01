@@ -157,8 +157,6 @@ Follow these steps to transfer the SOA for a test user:
 
 1. Open Microsoft Entra admin center and confirm that the user **On-premises sync enabled** property is **Yes**.
 
-   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/source-cloud.png" alt-text="Screenshot of how to confirm user source property.":::
-
 
 ## Connect Sync client
 
