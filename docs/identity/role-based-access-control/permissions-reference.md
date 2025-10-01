@@ -560,19 +560,6 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [teams-reader](includes/teams-reader.md)]
 
-## Teams Reader
-
-Assign the Teams Reader role to users who need to do the following tasks: 
-
-- Read settings and administrative information in the Teams admin center, but not perform any management actions
-- Read the Microsoft Call Quality Dashboard (CQD), but not access any troubleshooting capabilities
-
-> [!div class="mx-tableFixed"]
-> | Actions | Description |
-> | --- | --- |
-> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
-> | microsoft.teams/allEntities/allProperties/read | Read all properties of Microsoft Teams |
-
 ## Teams Telephony Administrator
 
 [!INCLUDE [teams-telephony-administrator](includes/teams-telephony-administrator.md)]
