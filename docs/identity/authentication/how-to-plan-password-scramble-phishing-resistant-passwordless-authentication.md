@@ -1,5 +1,5 @@
 ---
-title: Considerations for scrambling user passwords in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
+title: Remove passwords from Microsoft Entra ID
 description: Password scrambling guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
 
 ms.service: entra-id 
@@ -17,9 +17,9 @@ ms.collection: M365-identity-device-management
 
 ---
 
-# Plan to scramble passwords in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
+# Plan to remove passwords from Microsoft Entra ID
 
-User accounts in Microsoft Entra ID and on-premises Active Directory Domain Service (AD DS) have their passwords managed through different processes, depending on whether the account is synced from on-premises to the cloud, or if the user is a cloud-only object. Organizations should follow the guidance for each type of user, depending on how the organization's objects are managed.
+Organizations transitioning to phishing-resistant authentication need to remove user passwords from their environment to prevent fallback to less secure authentication methods. Password scrambling ensures that users cannot authenticate using passwords, forcing them to use more secure passwordless credentials like Windows Hello for Business, FIDO2 security keys, or Microsoft Authenticator. This article provides guidance on how to scramble passwords for both hybrid users synced from on-premises Active Directory Domain Services (AD DS) and cloud-only users in Microsoft Entra ID.
 
 ## Prerequisites
 
