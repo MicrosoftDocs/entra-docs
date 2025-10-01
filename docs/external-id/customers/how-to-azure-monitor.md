@@ -15,20 +15,18 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-[Azure Monitor](/azure/azure-monitor/overview) is a comprehensive solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. The diagnostic settings on the monitored resource specify what data to send and where to send it. For Microsoft Entra, the destination options include [Azure Storage](/azure/storage/blobs/storage-blobs-introduction), [Log Analytics](/azure/azure-monitor/essentials/resource-logs#send-to-log-analytics-workspace), and [Azure Event Hubs](/azure/event-hubs/event-hubs-about).
+[Azure Monitor](/azure/azure-monitor/overview) provides a comprehensive solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. The diagnostic settings on the monitored resource specify what data to send and where to send it. For Microsoft Entra, you can send data to [Azure Storage](/azure/storage/blobs/storage-blobs-introduction), [Log Analytics](/azure/azure-monitor/essentials/resource-logs#send-to-log-analytics-workspace), or [Azure Event Hubs](/azure/event-hubs/event-hubs-about).
 
-:::image type="content" source="media/how-to-azure-monitor/azure-monitor-flow.png" alt-text="Diagram of the Azure Monitor flow.":::
+When you transfer external tenant logs to other monitoring solutions or storage locations, be aware that these logs may contain personal data. When processing personal data, use appropriate security measures to protect it. These measures should prevent unauthorized or unlawful processing by using appropriate technical and organizational safeguards.
 
-When you plan to transfer external tenant logs to different monitoring solutions, or storage locations, consider that external tenant logs contain personal data. When you process such data, ensure you use appropriate security measures on the personal data. It includes protection against unauthorized or unlawful processing, using appropriate technical or organizational measures.
+This article describes how to configure Azure Monitor in an external tenant so you can collect and analyze data in your tenant. It also explains how to configure diagnostic settings to send logs and metrics to a Log Analytics workspace in your workforce tenant.
 
 ## Deployment overview
 
-The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike workforce tenants, an external tenant can't have an associated subscription. To enable monitoring in an external tenant, you need to sign in to your workforce tenant to authenticate the subscription during configuration.
+External tenants use [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike workforce tenants, an external tenant can't have an associated subscription. To enable monitoring in an external tenant, sign in to your workforce tenant to authenticate the subscription during configuration.  
 You can also use [Azure Lighthouse](/azure/lighthouse/overview) to enable diagnostic settings for a workforce tenant (the Customer) within your external tenant (the Service Provider).
 
-<!---SET up AL >>>>> Add diagnostic settings in the customer tenant  >>>>> Wait for logs to appear in the customer tenant workspace!--->
-
-In this configuration, you use a wizard. There are two entry points to start the wizard: the **Diagnostic settings** page and the **Service Integrations** page. This article covers both approaches.
+In this configuration, you use a wizard. You can start the wizard from either of these entry points: the **Diagnostic settings** page or the **Service Integrations** page. This article covers both approaches.
 
 ## Prerequisites
 
@@ -75,7 +73,7 @@ To set up Azure Lighthouse, sign in with an account that has the Owner role on a
 
 ### Step 2: Fill out the project details
 
-In this step, provide the details of your project. When creating a resource group and a Log Analytics workspace at the same time, you can select only one [location](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/). This location is limited to the regions available for both the resource group and the Log Analytics workspace. To access the full list of locations, create the resource group and the Log Analytics workspace separately beforehand.
+In this step, provide the details of your project. When creating a resource group and a Log Analytics workspace at the same time, you can select only one [location](https://azure.microsoft.com/explore/global-infrastructure/products-by-region/). This location is limited to the regions available for both the resource group and the Log Analytics workspace. To access the full list of locations, create the resource group and the Log Analytics workspace separately beforehand.
 
 1. Select a **Subscription** from the dropdown.
 1. Use an existing **Resource Group** or create a new one.
@@ -126,10 +124,10 @@ Once the setup is complete, you see a confirmation message. Select **Done** and 
 > [!NOTE]
 > Keep this window open while the background subscription check is running. If you close or refresh the window before the check finishes, you might need to restart the wizard from **Start set up**.
 
-1. Select **Add diagnostic setting** to add a new setting or **Edit setting** to edit an existing one. You may need multiple diagnostic settings for a resource if you want to send to multiple destinations of the same type.
-1. Give your setting a descriptive name.
-1. **Logs and metrics to route**: For logs, either choose a [category group](/azure/azure-monitor/platform/diagnostic-settings?tabs=portal#category-groups) or select the individual checkboxes for each category of data you want to send to the destinations specified later. The list of categories varies for each Azure service. Select **AllMetrics** if you want to collect platform metrics.
-1. **Destination details**: Select the checkbox for each destination that should be included in the diagnostic settings and then provide the details for each. If you select Log Analytics workspace as a destination, then you may need to specify the collection mode. See [Collection mode](/azure/azure-monitor/platform/resource-logs?tabs=log-analytics#collection-mode) for details.
+6. Select **Add diagnostic setting** to add a new setting or **Edit setting** to edit an existing one. You may need multiple diagnostic settings for a resource if you want to send to multiple destinations of the same type.
+7. Give your setting a descriptive name.
+8. **Logs and metrics to route**: For logs, either choose a [category group](/azure/azure-monitor/platform/diagnostic-settings?tabs=portal#category-groups) or select the individual checkboxes for each category of data you want to send to the destinations specified later. The list of categories varies for each Azure service. Select **AllMetrics** if you want to collect platform metrics.
+9. **Destination details**: Select the checkbox for each destination that should be included in the diagnostic settings and then provide the details for each. If you select Log Analytics workspace as a destination, then you may need to specify the collection mode. See [Collection mode](/azure/azure-monitor/platform/resource-logs?tabs=log-analytics#collection-mode) for details.
 
 ## Visualize your data with log queries
 
@@ -144,43 +142,43 @@ Log queries help you to fully use the value of the data collected in Azure Monit
 1. From **Log Analytics workspace** window, select **Logs**
 1. In the query editor, paste the following [Kusto Query Language](/azure/data-explorer/kusto/query/) query. This query shows policy usage by operation over the past x days. The default duration is set to 90 days (90d). Notice that the query is focused only on the operation where a token/code is issued by policy.
 
-   ```kusto
-   AuditLogs
-   | where TimeGenerated  > ago(90d)
-   | where OperationName contains "issue"
-   | extend  UserId=extractjson("$.[0].id",tostring(TargetResources))
-   | extend Policy=extractjson("$.[1].value",tostring(AdditionalDetails))
-   | summarize SignInCount = count() by Policy, OperationName
-   | order by SignInCount desc  nulls last
-   ```
+  ```kusto
+  AuditLogs
+  | where TimeGenerated  > ago(90d)
+  | where OperationName contains "issue"
+  | extend  UserId=extractjson("$.[0].id",tostring(TargetResources))
+  | extend Policy=extractjson("$.[1].value",tostring(AdditionalDetails))
+  | summarize SignInCount = count() by Policy, OperationName
+  | order by SignInCount desc  nulls last
+  ```
 
 1. Select **Run**. The query results are displayed at the bottom of the screen.
 1. To save your query for later use, select **Save**.
 
   :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor.":::
 
-1. Fill in the following details:
+7. Fill in the following details:
 
-   - **Name** - Enter the name of your query.
-   - **Save as** - Select `query`.
-   - **Category** - Select `Log`.
+- **Name** - Enter the name of your query.
+- **Save as** - Select `query`.
+- **Category** - Select `Log`.
 
-1. Select **Save**.
+8. Select **Save**.
 
 You can also change your query to visualize the data by using the [render](/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) operator.
 
 ```kusto
-AuditLogs
-| where TimeGenerated  > ago(90d)
-| where OperationName contains "issue"
-| extend  UserId=extractjson("$.[0].id",tostring(TargetResources))
-| extend Policy=extractjson("$.[1].value",tostring(AdditionalDetails))
-| summarize SignInCount = count() by Policy
-| order by SignInCount desc  nulls last
-| render  piechart
-```
+  AuditLogs
+  | where TimeGenerated  > ago(90d)
+  | where OperationName contains "issue"
+  | extend  UserId=extractjson("$.[0].id",tostring(TargetResources))
+  | extend Policy=extractjson("$.[1].value",tostring(AdditionalDetails))
+  | summarize SignInCount = count() by Policy
+  | order by SignInCount desc  nulls last
+  | render  piechart
+  ```
 
-  :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor pie chart.":::
+  :::image type="content" source="media/how-to-azure-monitor/query-policy-usage-pie.png" alt-text="Screenshot of the Log Analytics log editor pie chart.":::
 
 ## Change the data retention period
 
