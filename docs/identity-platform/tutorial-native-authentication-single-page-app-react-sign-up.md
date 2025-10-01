@@ -3,7 +3,7 @@ title: Sign up users in a React SPA by using native authentication
 description: Learn how to build a React single-page application that uses native authentication API to sign up users.
 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
@@ -40,7 +40,7 @@ In a location of choice in your computer, run the following commands to create a
   npx create-react-app reactspa --template typescript
   cd reactspa
   npm install ajv
-  npm installreact-router-dom
+  npm install react-router-dom
   npm install
   ```
 
@@ -183,7 +183,7 @@ To define the type of responses the app can receive from the native authenticati
     }
 ```
 
-### Process sign-up requests
+### Process the sign-up requests
 
 In this section, you add code that processes sign-up flow requests. Examples of these requests are starting a sign-up flow, selecting an authentication method, and submitting a one-time passcode.
 
@@ -239,7 +239,7 @@ The `challenge_type` property shows the authentication methods that the client a
 
 ### Create UI components
 
-This app collects user details such as given name, surname (email), and  password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
+This app collects user details such as given name, username (email), and  password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
 
 1. Create a folder called */pages/SignUp* in the *src* folder.
 

@@ -1,18 +1,14 @@
 ---
 title: Analyze user activity in Microsoft Entra External ID
 description: Learn about how to analyze user activity and engagement for your registered application in the external tenant.
- 
 author: csmulligan
 ms.author: cmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 11/07/2024
-
-ms.custom: it-pro
-
+ms.date: 09/16/2025
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about data analytics into user activity and engagement for  registered applications.
 ---
 # Gain insights into your app users’ activity
@@ -20,10 +16,6 @@ ms.custom: it-pro
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 The Application user activity  feature under Usage & insights provides data analytics on user activity and engagement for registered applications in your tenant. You can use this feature to view, query, and analyze user activity data in the Microsoft Entra admin center. This feature can help you uncover valuable insights that can aid strategic decisions and drive business growth.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=UserInsights)
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Application user activity” use case.
 
 ## Supported scenarios
 

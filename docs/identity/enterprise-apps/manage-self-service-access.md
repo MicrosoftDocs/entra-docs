@@ -2,7 +2,7 @@
 title: Enable self-service application assignment
 description: Enable self-service application access to allow users to find their own applications from their My Apps portal
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to

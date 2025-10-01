@@ -2,7 +2,7 @@
 title: Set up a reverse proxy for SPA by using Azure Function App
 description: Learn how to set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App.
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
@@ -17,87 +17,54 @@ ms.date: 02/07/2025
 
 In this article, you learn how to set up a reverse proxy by using Azure Functions App to manage CORS headers in a test environment for a single-page app (SPA) that uses [native authentication API](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
 
-The native authentication API doesn't support Cross-Origin Resource Sharing (CORS). Therefore, a single-page app (SPA) that uses this API for user authentication can't make successful requests from front-end JavaScript code. To resolve this, you need to add a proxy server between the SPA and the native authentication API. This proxy server injects the appropriate CORS headers into the response.
+The native authentication API doesn't support Cross-Origin Resource Sharing (CORS). Therefore, a single-page app (SPA) that uses this API for user authentication can't make successful requests from front-end JavaScript code. To resolve this issue, you need to add a proxy server between the SPA and the native authentication API. This proxy server injects the appropriate CORS headers into the response.
 
 This solution is for testing purposes and should **NOT be used in a production environment**. If you're looking for a solution to use in a production environment, we recommended you use an Azure Front Door solution, see the instructions in [Use Azure Front Door as a reverse proxy to manage CORS headers for SPA in production](how-to-native-authentication-cors-solution-production-environment.md).
 
 ## Prerequisites
 
 - An Azure subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-- [Azure Developer CLI](/cli/azure/install-azure-cli). After you install it, sign into it for the first time. For more information, see [Sign into the Azure CLI](/cli/azure/get-started-with-azure-cli#sign-into-the-azure-cli).
+- Register `Microsoft.App` resource provider, see [How to register resource provider](/azure/azure-resource-manager/management/resource-providers-and-types). You only need to complete this step once for each newly created subscription.
+- Install [Azure Developer CLI (azd)](/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows).
 - A sample SPA that you can access via a URL such as `http://www.contoso.com`:
-    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that setup.
+    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that set up.
     - Once you run the app, record the app URL for later use in this guide.
 
-## Create reverse proxy in an Azure function app by using Azure Resource Manager template
+## Create reverse proxy in an Azure function app by using Azure Developer CLI (azd) template
 
-1. [Create a Resource Group](/azure/azure-resource-manager/management/manage-resource-groups-cli#create-resource-groups) using `az group create`
-
-    ```console
-    az group create --name Enter_Resource_Group_Name_Here --location Enter_Location_Name_Here
-    ```
-
-    Replace the placeholder:
-    - `Enter_Resource_Group_Name_Here` with the name of the new resource group.
-    - `Enter_Location_Name_Here` with the geographical region where the resource group is created. 
-
-    Wait for this process to complete before creating the function app.
-
-1. To get the Azure Resource Manager (ARM) template:
-
-    1. Clone a sample SPA that contains the ARM template:
-
-        ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples.git
-        ```
-
-    1. Navigate to the ARM template directory by using the following command:
-
-        ```console
-        cd API/CORSTestEnviroment
-        ```
-
-1. Create the function app by running the following command:
+1. To initialize the azd template, run the following command:
 
     ```console
-    az deployment group create \
-        --resource-group Enter_Resource_Group_Name_Here \
-        --template-file ReverseProxyARMTemplate.json \
-        --parameters functionAppName=Enter_App_Function_Name_Here \
-        --parameters location=Enter_Location_Name_Here \
-        --parameters SPAurl=Enter_The_SPA_URL_Here
+    azd init --template https://github.com/azure-samples/ms-identity-extid-cors-proxy-function
     ```
 
-    Replace:
-    - `Enter_Resource_Group_Name_Here` with the name of the new resource group.
-    - `Enter_App_Function_Name_Here` with the name of your function app.
-    - `Enter_Location_Name_Here` with the geographical region where the resource group is created.
-    - `Enter_The_SPA_URL_Here` with the SPA app URL you recorded earlier.
+    When prompted, enter a name for the azd environment. This name is used as a prefix for the resource group so it should be unique within your Azure subscription.
 
-1. Open */API/CORSTestEnviroment/ReverseProxy/index.js* file, then replace the placeholder `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+1. To sign into Azure, run the following command:
 
-    The name of the directory, such as *ReverseProxy*, need to match the value, such as *ReverseProxy/{\*path}*, of the `route` key in the *function.json* file. If you change the name of the directory to *TriggerFunc*, then the value of the `route` key needs to be *TriggerFunc/{\*path}*.
+    ```console
+    azd auth login
+    ```
 
-1. To deploy the project files to an Azure Function App:
+1. To build, provision, and deploy the app resources, run the following command:
 
-    1. Make sure you're in the */API/CORSTestEnviroment/* directory, then zip the project files by using the following command:
-    
-        ```console
-        zip -r ReverseProxy.zip ReverseProxy
-        ```
+    ```console
+    azd up
+    ```
 
-    1. Deploy app files by using the following command:
+    When prompted, enter the following information to complete resource creation:
 
-        ```console
-        az functionapp deployment source config-zip \
-            --resource-group "Enter_Resource_Group_Name_Here" \
-            --name "Enter_App_Function_Name_Here" \
-            --src ReverseProxy.zip  
-        ```
+    - `Azure Location`: The Azure location where your resources are deployed.
+    - `Azure Subscription`: The Azure Subscription where your resources are deployed.
+    - `corsAllowedOrigin`: The origin domain to allow CORS requests from in the format of SCHEME://DOMAIN:PORT, for example, _http://localhost:3000_.
+    - `tenantSubdomain`: The subdomain of your external tenant that we're proxying. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
 
 ## Test your sample SPA with the reverse proxy
 
-1. In your sample SPA, open the *API\React\ReactAuthSimple\src\config.ts* file, then replace the value of `BASE_API_URL`, *http://localhost:3001/api*, with `https://Enter_App_Function_Name_Here.azurewebsites.net/api/ReverseProxy`. Replace the placeholder `Enter_App_Function_Name_Here` with the name of your function app. If necessary, rerun your sample SPA.
+1. In your sample SPA, open the *API\React\ReactAuthSimple\src\config.ts* file, then replace:  
+    - the value of `BASE_API_URL`, *http://localhost:3001/api*, with `https://Enter_App_Function_Name_Here.azurewebsites.net`.  
+    - the placeholder `Enter_App_Function_Name_Here` with the name of your function app. 
+    If necessary, rerun your sample SPA.  
 
 1. Browse to the sample SPA URL, then test sign-up, sign-in and password reset flows. Your SPA app should work correctly as the reverse proxy manages CORS headers correctly.
 

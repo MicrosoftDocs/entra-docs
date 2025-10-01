@@ -1,16 +1,14 @@
 ---
 title: Add a SAML/WS-Fed identity provider
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
-
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/21/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024
+ms.date: 05/07/2025
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
@@ -19,9 +17,6 @@ ms.collection: M365-identity-device-management
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
 Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in. 
-<!-- Do we need to break down the preview status further by tenant type and invitation vs. SSSU? -->
-> [!NOTE]
-> SAML/WS-Fed federation is currently in preview for external tenants and is generally available for workforce tenants.
 
 ## Prerequisites
 
@@ -66,7 +61,7 @@ Refer to the following tables for the required values.
 
 |Attribute                |Value for a workforce tenant                   |Value for an external tenant                |
 |-------------------------|-----------------------------------------------|--------------------------------------------|
-|AssertionConsumerService |`https://login.microsoftonline.com/login.srf`  |`https://<tenantID>.ciamlogin.com/login.srf`|
+|AssertionConsumerService |`https://login.microsoftonline.com/login.srf`  |`https://<tenantID>.ciamlogin.com/login.srf` Add `https://<tenantID>.ciamlogin.com/login.srf` as the callback/ACS URL on the external IdP if required by that provider.|
 |Audience                 |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.      |`https://login.microsoftonline.com/<tenant ID>/`<br>Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.      |
 |Issuer                   |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`    |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
 

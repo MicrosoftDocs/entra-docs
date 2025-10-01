@@ -2,7 +2,7 @@
 title: Header based authentication with PingAccess for Microsoft Entra application proxy
 description: Support header-based authentication with PingAccess and Microsoft Entra application proxy.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
@@ -10,6 +10,7 @@ ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Header based authentication for single sign-on with application proxy and PingAccess
@@ -26,7 +27,7 @@ Users don't notice anything different when they sign in to use corporate applica
 
 You need a license for PingAccess and Microsoft Entra ID. However, Microsoft Entra ID P1 or P2 subscriptions include a basic PingAccess license that covers up to 20 applications. If you need to publish more than 20 header-based applications, you can purchase more licenses from PingAccess.
 
-For more information, see [Microsoft Entra editions](~/fundamentals/whatis.md).
+For more information, see [Microsoft Entra editions](~/fundamentals/licensing.md).
 
 ## Publish your application in Microsoft Entra
 

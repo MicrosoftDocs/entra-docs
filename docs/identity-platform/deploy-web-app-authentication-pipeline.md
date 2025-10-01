@@ -1,9 +1,9 @@
 ---
 title: Deploy a web app with App Service auth in a pipeline
 description: Describes how to set up a pipeline in Azure Pipelines to build and deploy a web app to Azure and enable the Azure App Service built-in authentication. The article provides step-by-step instructions on how to configure Azure resources, build and deploy a web application, create a Microsoft Entra app registration, and configure App Service built-in authentication using Azure Pipelines.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom: 
 ms.date: 07/17/2023
 ms.reviewer:
@@ -39,7 +39,7 @@ Create a sample app and push it to your GitHub repo.
 
 ### Create and clone a repo in GitHub
 
-[Create a new repo](https://docs.github.com/en/get-started/quickstart/create-a-repo?tool=webui) in GitHub, specify a name like "PipelinesTest".  Set it to **Private** and add a *.gitignore* file with `.getignore template: VisualStudio`.
+[Create a new repo](https://docs.github.com/en/get-started/quickstart/create-a-repo?tool=webui) in GitHub, specify a name like "PipelinesTest".  Set it to **Private** and add a *.gitignore* file with `.gitignore template: VisualStudio`.
 
 Open a terminal window and change the current working directory to the location where you want the cloned directory:
 

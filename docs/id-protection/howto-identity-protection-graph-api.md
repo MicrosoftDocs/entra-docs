@@ -5,31 +5,36 @@ description: Query Microsoft Graph risk detections and associated information fr
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 01/16/2024
+ms.date: 05/27/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection and the Microsoft Graph PowerShell 
 
-Microsoft Graph is the Microsoft unified API endpoint and the home of [Microsoft Entra ID Protection](./overview-identity-protection.md) APIs. This article shows you how to use the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started) to manage risky users using PowerShell. Organizations that want to query the Microsoft Graph APIs directly can use the article, [Tutorial: Identify and remediate risks using Microsoft Graph APIs](/graph/tutorial-riskdetection-api) to begin that journey.
+Microsoft Graph is the Microsoft unified API endpoint and the home of [Microsoft Entra ID Protection](./overview-identity-protection.md) APIs. This article shows you how to use the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started) to manage risky users with PowerShell. Organizations that want to query the Microsoft Graph APIs directly can use the article, [Tutorial: Identify and remediate risks using Microsoft Graph APIs](/graph/tutorial-riskdetection-api) to begin that journey.
 
-To successfully complete this tutorial, make sure you have the required prerequisites:
+## Prerequisites
 
-- Microsoft Graph PowerShell SDK is installed. For more information, see the article [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
-- Microsoft Graph PowerShell using a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role. The IdentityRiskEvent.Read.All, IdentityRiskyUser.ReadWrite.All Or IdentityRiskyUser.ReadWrite.All delegated permissions are required. To set the permissions to IdentityRiskEvent.Read.All and IdentityRiskyUser.ReadWrite.All, run:
+To use the PowerShell commands in this article, you need the following prerequisites:
+
+- Microsoft Graph PowerShell SDK is installed.
+    - For more information, see the article [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role.
+- `IdentityRiskEvent.Read.All`, `IdentityRiskyUser.ReadWrite.All` Or `IdentityRiskyUser.ReadWrite.All` delegated permissions are required.
+    - To set the permissions to `IdentityRiskEvent.Read.All` and `IdentityRiskyUser.ReadWrite.All`, run:
 
    ```powershell
    Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All","IdentityRiskyUser.ReadWrite.All"
    ```
+- If you use app-only authentication, see [Use app-only authentication with the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/app-only?view=graph-powershell-1.0&tabs=azure-portal&preserve-view=true).
+    - To register an application with the required application permissions, prepare a certificate and run:
 
-If you use app-only authentication, see the article [Use app-only authentication with the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/app-only?view=graph-powershell-1.0&tabs=azure-portal&preserve-view=true). To register an application with the required application permissions, prepare a certificate and run:
-
-```powershell
-Connect-MgGraph -ClientID YOUR_APP_ID -TenantId YOUR_TENANT_ID -CertificateName YOUR_CERT_SUBJECT ## Or -CertificateThumbprint instead of -CertificateName
-```
+    ```powershell
+    Connect-MgGraph -ClientID YOUR_APP_ID -TenantId YOUR_TENANT_ID -CertificateName YOUR_CERT_SUBJECT ## Or -CertificateThumbprint instead of -CertificateName
+    ```
 
 ## List risky detections using PowerShell
 

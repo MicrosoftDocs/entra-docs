@@ -5,7 +5,7 @@ author: CelesteDG
 manager: CelesteDG
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 08/15/2023
 ms.author: celested
 ms.reviewer: nicholepet

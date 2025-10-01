@@ -1,9 +1,9 @@
 ---
-title: Application proxy configuration for Microsoft Entra SAML SSO for Confluence
+title: Configure on-premises Confluence for Single sign-on in application proxy mode
 description: Learn application proxy configuration for Microsoft Entra SAML SSO for Confluence.
 
 author: dhivyagana
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: dhivyag
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Application proxy configuration for Confluence SAML SSO so that I can control who has access to Application proxy configuration for Confluence SAML SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Application proxy configuration for Microsoft Entra SAML SSO for Confluence
+# Configure on-premises Confluence for Single sign-on in application proxy mode
 
 This article helps to configure Microsoft Entra SAML SSO for your on-premises Confluence application using Application Proxy.
 

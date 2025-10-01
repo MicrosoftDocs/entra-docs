@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 04/06/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 To grant your client app (*ciam-client-app*) API permissions, follow these steps:
 

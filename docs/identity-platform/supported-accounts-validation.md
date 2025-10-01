@@ -2,11 +2,11 @@
 title: Validation differences by supported account types
 description: Learn about the validation differences of various properties for different supported account types when registering your app with the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 03/24/2023
-ms.reviewer: manrath, sureshja
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: reference

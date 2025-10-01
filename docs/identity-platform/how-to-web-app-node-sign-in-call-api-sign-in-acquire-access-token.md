@@ -3,7 +3,7 @@ title: Acquire an access token in your Node.js web app
 description: Learn how to acquire an access token for calling an API in your own Node.js web application.
  
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: how-to

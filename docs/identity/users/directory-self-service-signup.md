@@ -2,14 +2,14 @@
 title: Self-service sign up for email-verified users
 description: Use self-service sign-up in a Microsoft Entra organization
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: overview
 ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: elkuzmen
-
+ms.custom: sfi-ga-nochange
 ---
 # What is self-service sign-up for Microsoft Entra ID?
 
@@ -87,7 +87,7 @@ For more information and examples of how to use these parameters, see [Update-Mg
 
 ## Next steps
 
-* [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml)
+* [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md)
 * [How to install and configure Azure PowerShell](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Azure Cmdlet Reference](/powershell/azure/get-started-azureps)

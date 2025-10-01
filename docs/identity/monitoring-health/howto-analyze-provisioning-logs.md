@@ -2,16 +2,15 @@
 title: How to analyze the Microsoft Entra provisioning logs
 description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/19/2025
+ms.date: 07/10/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
-
 ---
 
 # How to download and analyze the Microsoft Entra provisioning logs
@@ -24,6 +23,7 @@ This article describes the options for downloading the provisioning logs from th
 
 - A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the provisioning logs.
+- Application owners can also view logs applications that they own.
     - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 ## How to view the provisioning logs
@@ -160,5 +160,5 @@ Use the following table to better understand how to resolve errors that you find
 ## Related content
 
 - [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)
-- [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem.md)
+- [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/troubleshoot.md)
 - [Graph API for provisioning logs](/graph/api/resources/provisioningobjectsummary)

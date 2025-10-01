@@ -2,13 +2,13 @@
 title: Understand how Application Provisioning in Microsoft Entra ID
 description: Understand how Application Provisioning works in Microsoft Entra ID.
 
-author: kenwith
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: kenwith
+ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---
@@ -201,7 +201,7 @@ Confirm the mapping for *active* for your application. If you're using an applic
 **Configure your application to delete a user**
 
 The scenario triggers a disable or a delete: 
-* A user is soft-deleted in Microsoft Entra ID (sent to the recycle bin / AccountEnabled property set to false). Thirty days after a user is deleted in Microsoft Entra ID, they're permanently deleted from the tenant. At this point, the provisioning service sends a DELETE request to permanently delete the user in the application. At any time during the 30-day window, you can [manually delete a user permanently](~/fundamentals/users-restore.yml), which sends a delete request to the application.
+* A user is soft-deleted in Microsoft Entra ID (sent to the recycle bin / AccountEnabled property set to false). Thirty days after a user is deleted in Microsoft Entra ID, they're permanently deleted from the tenant. At this point, the provisioning service sends a DELETE request to permanently delete the user in the application. At any time during the 30-day window, you can [manually delete a user permanently](~/fundamentals/users-restore.md), which sends a delete request to the application.
 * A user is permanently deleted / removed from the recycle bin in Microsoft Entra ID.
 * A user is unassigned from an app.
 * A user goes from in scope to out of scope (doesn't pass a scoping filter anymore).
@@ -246,4 +246,4 @@ When developing an application, always support both soft-deletes and hard-delete
 
 [Build a SCIM endpoint and configure provisioning when creating your own app](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
-[Troubleshoot problems with configuring and provisioning users to an application](./application-provisioning-config-problem.md).
+[Troubleshoot problems with configuring and provisioning users to an application](troubleshoot.md).

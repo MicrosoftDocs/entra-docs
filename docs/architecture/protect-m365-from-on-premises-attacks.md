@@ -8,7 +8,6 @@ ms.subservice: architecture
 ms.topic: how-to
 ms.date: 01/03/2025
 ms.author: jricketts
-ms.reviewer: ajburnle
 ms.custom:
   - it-pro
   - kr2b-contr-experiment

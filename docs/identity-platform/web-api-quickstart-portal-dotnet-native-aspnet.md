@@ -3,7 +3,7 @@ title: "Quickstart: Call an ASP.NET web API that is protected by the Microsoft i
 description: In this quickstart, learn how to call an ASP.NET web API that's protected by the Microsoft identity platform from a Windows Desktop (WPF) application.
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.custom:
 ms.date: 08/16/2022
@@ -59,7 +59,7 @@ ms.topic: quickstart
 > 1. For **Supported account types**, select **Accounts in any organizational directory**.
 > 1. Select **Register** to create the application.
 > 1. On the app **Overview** page, look for the **Application (client) ID** value, and then record it for later use. You'll need it to configure the Visual Studio configuration file for this project (that is, `ClientId` in the *TodoListService\Web.config* file).
-> 1. Under **Manage**, select **Expose an API** > **Add a scope**. Accept the proposed Application ID URI (`api://{clientId}> `) by selecting **Save and continue**, and then enter the following information:
+> 1. Under **Manage**, select **Expose an API** > **Add a scope**. Accept the proposed Application ID URI (`api://{clientId}>`) by selecting **Save and continue**, and then enter the following information:
 > 
 >     1. For **Scope name**, enter `access_as_user`.
 >     1. For **Who can consent**, ensure that the **Admins and users** option is selected.

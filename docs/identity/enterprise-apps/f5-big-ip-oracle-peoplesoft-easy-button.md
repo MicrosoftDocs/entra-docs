@@ -1,18 +1,15 @@
 ---
 title: Tutorial to configure F5 BIG-IP Easy Button for SSO to Oracle PeopleSoft
 description: Implement secure hybrid access with header-based SSO to PeopleSoft using F5 BIG-IP Easy Button Guided Configuration 16.1.
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: tutorial
-
 ms.date: 05/03/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin responsible for securing Oracle PeopleSoft using Microsoft Entra ID, I want to configure F5 BIG-IP Easy Button for SSO to Oracle PeopleSoft, so that I can integrate BIG-IP with Microsoft Entra ID and improve the application's security posture.
 ---
 
@@ -468,4 +465,4 @@ Use the **View Variables** link to determine SSO issues, particularly if BIG-IP 
 Learn more:
 
 * Go to devcentral.f5.com for [APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107)
-* Go to techdocs.f5.com for [Session Variables](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html)
+* Go to techdocs.f5.com for [Session Variables](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html)

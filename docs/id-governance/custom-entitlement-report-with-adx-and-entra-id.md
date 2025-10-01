@@ -2,11 +2,12 @@
 title: Create Custom Reports Using Microsoft Entra and Application Data
 description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from Microsoft Entra.
 author: billmath
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: tutorial
 ms.date: 04/09/2025
 ms.author: billmath
+ms.custom: sfi-ga-nochange
 ---
 
 # Tutorial: Create customized reports in Azure Data Explorer by using data from Microsoft Entra
@@ -237,11 +238,13 @@ Generate a JSON file with all applications and the corresponding service princip
     Get-MgApplication -All | ForEach-Object { 
       $app = $_ 
       $sp = Get-MgServicePrincipal -Filter "appId eq '$($app.AppId)'" 
+      $date = [datetime]::Parse($app.CreatedDateTime)
       [pscustomobject]@{ 
-        Name        = $app.DisplayName 
+        DisplayName     = $app.DisplayName
         ApplicationId   = $app.AppId 
         ServicePrincipalId = $sp.Id 
         SnapshotDate = $SnapshotDate
+        CreatedDateTime = $date.ToString("yyyy-MM-dd")
       } 
     } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
 ```
@@ -289,12 +292,16 @@ Generate a JSON file of all app role assignments of users in the tenant:
         $createdDateTime = $_.CreatedDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
         # Convert the milliseconds timestamp to a readable date format if necessary 
         $result += [PSCustomObject]@{ 
-          AppRoleId      = $_.AppRoleId 
-          CreatedDateTime   = $createdDateTime 
-          PrincipalDisplayName = $_.PrincipalDisplayName 
-          PrincipalId     = $_.PrincipalId 
-          ResourceDisplayName = $_.ResourceDisplayName 
-          ResourceId      = $_.ResourceId 
+          Id = $_.Id
+          AppRoleId      = $_.AppRoleId
+          CreatedDateTime   = $createdDateTime
+          PrincipalDisplayName = $user.DisplayName
+          PrincipalId     = $user.Id
+          AssignmentPrincipalType = $_.PrincipalType
+          AssignmentPrincipalDisplayName = $_.PrincipalDisplayName
+          AssignmentPrincipalId     = $_.PrincipalId
+          ResourceDisplayName = $_.ResourceDisplayName
+          ResourceId      = $_.ResourceId
           SnapshotDate     = $SnapshotDate
         } 
       } 

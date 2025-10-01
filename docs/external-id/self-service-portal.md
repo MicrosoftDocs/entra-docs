@@ -5,10 +5,9 @@ description: Learn how to customize the onboarding workflow for Microsoft Entra 
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 04/15/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As an organization managing B2B collaborations, I want to customize the onboarding workflow for external users, so that they can sign themselves up with policies that I control. I also want the ability to build my own onboarding experiences using the Microsoft Graph invitation manager API.

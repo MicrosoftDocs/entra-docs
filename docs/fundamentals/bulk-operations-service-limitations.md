@@ -4,10 +4,10 @@ description: Learn about Microsoft Entra bulk operations related to users, group
   and devices in the Microsoft Entra admin portal could time out and fail on large
   tenants.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/05/2025
 ms.author: barclayn
 ms.reviewer: krbain

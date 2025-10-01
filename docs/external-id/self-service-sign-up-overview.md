@@ -5,10 +5,9 @@ description: Learn how to enable self-service sign-up for Microsoft Entra Extern
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 10/21/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As a developer building an application for external users, I want to enable self-service sign-up functionality, so that users can easily sign up and access my app without intervention.

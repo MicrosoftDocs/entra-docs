@@ -2,16 +2,15 @@
 title: How to troubleshoot sign-in errors
 description: Learn how to troubleshoot sign-in errors using Microsoft Entra reports in the Microsoft Entra admin center
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
 ms.date: 11/11/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to troubleshoot sign-in errors for various scenarios and using different tools so that I can resolve sign-in issues quickly.
-
 ---
 
 # How to troubleshoot Microsoft Entra sign-in errors

@@ -29,12 +29,17 @@ In this article, you learn how to:
 
 ## Prerequisites 
 
-* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> 
-* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
-* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
-  * Application (client) ID 
-  * Directory (tenant) ID
-* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+* An external tenant. If you don't have one, [create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* If you haven't already done so, [Register an application in the Microsoft Entra admin center](quickstart-register-app.md). Make sure to:
+
+    * Record the **Application (client) ID** and **Directory (tenant) ID** for later use.
+    * [Grant admin consent](quickstart-register-app.md#grant-admin-consent-external-tenants-only) to the application.
+* If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md)
+* [Associate your app registration with the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a> 
 
 ## Enable public client and native authentication flows 

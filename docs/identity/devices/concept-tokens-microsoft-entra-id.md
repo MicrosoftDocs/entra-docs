@@ -3,7 +3,7 @@ title: Understanding Tokens in Microsoft Entra ID
 description: To protect against token theft and replay attacks, explore the types of tokens used in Microsoft Entra, their role in authentication, and strategies.
 ms.service: entra-id
 ms.subservice: devices
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/01/2025
 
 ms.author: jfields
@@ -51,7 +51,7 @@ Another difference between the two token families: Sign-in session tokens are re
 
 | Token Type | Issued by | Purpose  | Scoped to Resource | Lifetime | Revocable | Renewable |
 |------|------|------|------|------|------|------|
-| Primary Refresh Token (PRT)| Entra ID | Request Access Tokens | No – Can request an access token for any resource | 14 days\*| Yes | Yes|
+| Primary Refresh Token (PRT)| Entra ID | Request Access Tokens | No – Can request an access token for any resource | 90 days\*| Yes | Yes|
 | Refresh Token| Entra ID| Request Access Tokens | Yes | 90 days\* | Yes | Yes |
 | Access Token | Entra ID | Access the resource | Yes | Variable 60-90 minutes| Yes, if CAE capable | No |
 | App auth cookie| Web app | Access the resource | Yes  | Determined by application| Depends on application | No |

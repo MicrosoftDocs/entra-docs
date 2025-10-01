@@ -2,7 +2,7 @@
 title: Troubleshoot secure LDAP in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot secure LDAP (LDAPS) for a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.assetid: 445c60da-e115-447b-841d-96739975bdf6
 ms.service: entra-id

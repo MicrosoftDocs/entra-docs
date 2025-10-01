@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm a IT administrator, and I want to configure F5 BIG-IP Access Policy Manager for Kerberos authentication. My goal is to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications. I want to improve governance and security for my organization.
 ---
 
@@ -459,7 +458,7 @@ While troubleshooting, consider the following points:
 * Ensure there are no duplicate SPNs in your environment. Run the following query at the command line: `setspn -q HTTP/my_target_SPN`.
 
 > [!NOTE]
-> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](/entra/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
+> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](/entra/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-17-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
 
 **Increase log verbosity**
 

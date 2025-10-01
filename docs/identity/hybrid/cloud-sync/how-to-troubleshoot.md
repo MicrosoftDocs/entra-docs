@@ -1,13 +1,14 @@
 ---
 title: Microsoft Entra Cloud Sync troubleshooting
 description: This article describes how to troubleshoot problems that might arise with the cloud provisioning agent.
-author: billmath
-ms.author: billmath
-manager: femila
+author: omondiatieno
+ms.author: jomondi
+manager: mwongerapk
 ms.date: 04/09/2025
 ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Cloud sync troubleshooting

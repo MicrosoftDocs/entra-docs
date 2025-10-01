@@ -1,21 +1,21 @@
 ---
-title: Regions requiring opt-in for SMS verification
+title: Regional opt-in for MFA telephony verification with external tenants (preview)
 description: To protect customers, some regions require you to enable the country codes to receive SMS telephony verification for Microsoft Entra External ID external tenants.
 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/12/2024
-ms.author: mimart
 ms.reviewer: aloom3
 ms.custom: it-pro, references_regions
 
 #Customer intent: As a dev, devops, or it admin, I want to prevent telephony fraud by choosing which countries and regions to accept telecom traffic from.
 ---
 
-# Regions requiring opt-in for SMS verification (preview)
+# Regional opt-in for MFA telephony verification with external tenants (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -180,13 +180,17 @@ POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners
         }  
     },  
     "priority": 500,  
-    "handler": {  
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler", 
-        /* An Admin can state the country codes they would like to opt in or opt out from. */ 
-        { 
-                "includeAdditionalRegions": [222, 998], 
-                 "excludeRegions": [] 
-      } 
+    "handler": {
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler",
+        "smsOptions": {
+            "includeAdditionalRegions": [222, 998],
+            "excludeRegions": []
+        },
+        "voiceOptions": {
+          "includeAdditionalRegions": [],
+          "excludeRegions": []
+        }
+    }
 } 
 
 HTTP/1.1 201 Created 
@@ -201,14 +205,17 @@ HTTP/1.1 201 Created
             ] 
         }   
     },   
-    "handler": 
-    {   
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler ",  
-        { 
-            "includeAdditionalRegions": [222, 998], 
-            "excludeRegions": [] 
-        }, 
-    } 
+    "handler": {
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler",
+        "smsOptions": {
+            "includeAdditionalRegions": [222, 998],
+            "excludeRegions": []
+        },
+        "voiceOptions": {
+            "includeAdditionalRegions": [],
+            "excludeRegions": []
+        }
+    }
 } 
 ```
 
@@ -231,14 +238,18 @@ POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners
             ]  
         }  
     },  
-    "priority": 500,  
-    "handler": {  
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler", 
-        /* An Admin can state the country codes they would like to opt in or opt out from. */ 
-        { 
-                "includeAdditionalRegions": [222, 998], 
-                 "excludeRegions": [1001, 99, 777] 
-      } 
+    "priority": 500,
+    "handler": {
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler",
+        "smsOptions": {
+            "includeAdditionalRegions": [222, 998],
+            "excludeRegions": [1001, 99, 777]
+        },
+        "voiceOptions": {
+            "includeAdditionalRegions": [],
+            "excludeRegions": []
+        }
+    }
 } 
 
 HTTP/1.1 201 Created 
@@ -252,15 +263,18 @@ HTTP/1.1 201 Created
                 "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
             ] 
         }   
-    },   
-    "handler": 
-    {   
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler ",  
-        { 
-            "includeAdditionalRegions": [222, 998], 
-            "excludeRegions": [] 
-        }, 
-    } 
+    },
+    "handler": {
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler",
+        "smsOptions": {
+            "includeAdditionalRegions": [222, 998],
+            "excludeRegions": [1001, 99, 777]
+        },
+        "voiceOptions": {
+            "includeAdditionalRegions": [],
+            "excludeRegions": []
+        }
+    }
 }  
 ```
 

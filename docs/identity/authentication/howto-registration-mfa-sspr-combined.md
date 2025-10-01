@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: tilarso
 ---
 # Enable combined security information registration in Microsoft Entra ID

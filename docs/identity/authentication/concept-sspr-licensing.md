@@ -4,12 +4,12 @@ description: Learn about the difference Microsoft Entra self-service password re
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: tilarso
 ---
 # Licensing requirements for Microsoft Entra self-service password reset

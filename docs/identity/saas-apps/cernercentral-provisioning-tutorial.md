@@ -1,9 +1,9 @@
 ---
-title: User provisioning for Cerner Central
+title: Configure Cerner Central for automatic user provisioning in Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision users to a roster in Cerner Central.
 
 author: ArvindHarinder1
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 

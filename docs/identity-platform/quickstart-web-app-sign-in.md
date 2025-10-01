@@ -2,7 +2,7 @@
 title: Quickstart - Sign in users in a sample web app
 description: Web app quickstart that shows how to configure a sample web app that signs in employees in workforce tenant or customers in external tenant
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 03/10/2025

@@ -1,49 +1,64 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 05/01/2025
+ms.date: 10/01/2025
 ms.service: entra-external-id
 ms.topic: whats-new
-
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
+
 # Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
 
-# What's new in docs: External ID in workforce tenants
+# What's new in External ID?
 
-Welcome to what's new in documentation for Microsoft Entra External ID in workforce tenants. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+Welcome to what's new in documentation for Microsoft Entra External ID. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## April 2025
+# [External ID in external tenants](#tab/external-tenants)
+
+## September 2025
+
+### Updated articles
+
+- [Add OpenID Connect as an external identity provider](customers/how-to-custom-oidc-federation-customers.md) - Multiple editorial updates
+
+## August 2025
+
+### Updated articles
+
+- [Regional opt-in for MFA telephony verification with external tenants (preview)](customers/how-to-region-code-opt-in.md) - Rest API updates
+
+## July 2025
 
 ### New article
 
-- [Migrate CrossTenantAccessPolicy JSON to the new Microsoft Graph API](migrate-to-xtap-v2-api.md)
+- [Supported features in workforce and external tenants](customers/how-to-add-enterprise-application.md)
 
 ### Updated articles
 
-- [Tutorial - multifactor authentication for B2B](b2b-tutorial-require-mfa.md) - Editorial updates
-- [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Updated tenant restrictions v2 events
-- [Example: Set up SAML/WS-Fed IdP federation with AD FS for B2B collaboration](direct-federation-adfs.md) - Claims update
-- [Manage cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml) - Block access updates
+- [Register a SAML app in your external tenant](customers/how-to-register-saml-app.md) - Enterprise applications and SAML SSO are generally available
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added enterprise applications update
 
-## March 2025
+# [External ID in workforce tenants](#tab/workforce-tenants)
 
-### Updated articles
-
-- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated important considerations
-- [Authentication flow for non-Microsoft Entra ID external users](authentication-conditional-access.md) - Replaced retired MSOnline references 
-- [Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](bulk-invite-powershell.md) - Editorial updates
-- [B2B collaboration invitation redemption](redemption-experience.md) - Editorial updates
-
-## February 2025
-
-### New articles
-
-- [SAML/WS-Fed identity providers](direct-federation-overview.md)
+## September 2025
 
 ### Updated articles
 
-- [Add federation with SAML/WS-Fed identity providers](direct-federation.md) - Editorial updates
-- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Global Administrator role update
+- [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Added cross-cloud limitations and tenant restrictions
+
+## August 2025
+
+### Updated articles
+
+- [Microsoft Entra B2B in government and national clouds](b2b-government-national-clouds.md) - Cross-cloud synchronization update
+- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Cross-cloud synchronization update
+
+## July 2025
+
+### Updated articles
+
+- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Updated authentication experience for guest users
+
+---

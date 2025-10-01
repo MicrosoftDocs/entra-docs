@@ -3,7 +3,7 @@ title: An app page shows an error message after the user signs in
 description: How to resolve issues with Microsoft Entra sign-in when the app returns an error message.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

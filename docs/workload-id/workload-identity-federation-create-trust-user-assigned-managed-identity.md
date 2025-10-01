@@ -1,18 +1,15 @@
 ---
-title: Create a trust relationship between a user-assigned managed identity and an external identity provider
-description: Set up a trust relationship between a user-assigned managed identity in Microsoft Entra ID and an external identity provider.  This allows a software workload outside of Azure to access Microsoft Entra protected resources without using secrets or certificates.
-
-author: rwike77
+title: Create Trust Between User-Assigned Managed Identity and External Identity Provider
+description: Set up trust between a user-assigned managed identity and an external identity provider to access Microsoft Entra resources without secrets or certificates.
+author: SHERMANOUKO
 manager: CelesteDG
-
 ms.service: entra-workload-id
-
 ms.topic: how-to
-ms.date: 09/15/2023
-ms.author: ryanwi
-ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell
-ms.reviewer: shkhalide, udayh, vakarand
+ms.date: 05/12/2025
+ms.author: shermanouko
+ms.reviewer: hosamsh
 zone_pivot_groups: identity-wif-mi-methods
+ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell, sfi-image-nochange
 #Customer intent: As an application developer, I want to configure a federated credential on a user-assigned managed identity so I can create a trust relationship with an external identity provider and use workload identity federation to access Microsoft Entra protected resources without managing secrets.
 ---
 

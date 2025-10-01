@@ -1,17 +1,14 @@
 ---
 title: Add custom approvals to self-service sign-up flows
 description: Add API connectors for custom approval workflows in External ID self-service sign-up
- 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 04/14/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: "it-pro"
+ms.date: 05/20/2025
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As an IT admin managing guest user accounts in my Microsoft Entra tenant, I want to add a custom approval workflow to the self-service sign-up process, so that I can control which guest user accounts are created and manage the approval process.
 ---
 
@@ -26,13 +23,7 @@ This article gives an example of how to integrate with an approval system. In th
 - Automatically approve the user and allow Microsoft Entra ID to create the user account.
 - Trigger a manual review. If the request is approved, the approval system uses Microsoft Graph to provision the user account. The approval system can also notify the user that their account has been created.
 
-> [!IMPORTANT]
->
-> - **As of July 12, 2021**, if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-> - **On September 30, 2021**, Google [deprecated embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-
 ## Register an application for your approval system
-
 
 You need to register your approval system as an application in your Microsoft Entra tenant so it can authenticate with Microsoft Entra ID and have permission to create users. Learn more about [authentication and authorization basics for Microsoft Graph](/graph/auth/auth-concepts).
 

@@ -5,9 +5,10 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 09/06/2022
 ms.author: jricketts
+ms.custom: sfi-ropc-nochange
 ---
 
 # Microsoft Entra security operations guide for applications

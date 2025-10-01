@@ -1,21 +1,21 @@
 ---
-title: Microsoft Entra SSO integration with Reprints Desk - Article Galaxy
+title: Configure Reprints Desk - Article Galaxy for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Reprints Desk - Article Galaxy.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Reprints Desk - Article Galaxy so that I can control who has access to Reprints Desk - Article Galaxy, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Reprints Desk - Article Galaxy
+# Configure Reprints Desk - Article Galaxy for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Reprints Desk - Article Galaxy with Microsoft Entra ID. When you integrate Reprints Desk - Article Galaxy with Microsoft Entra ID, you can:
 

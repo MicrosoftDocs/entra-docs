@@ -3,7 +3,7 @@ title: How to use workbooks with Global Secure Access
 description: Workbooks provide rich, interactive reports for Global Secure Access. Learn how to integrate workbooks with log analytics for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.service: global-secure-access

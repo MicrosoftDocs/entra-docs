@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra integration with Adaptive Insights
+title: Configure Adaptive Insights for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Adaptive Insights.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/09/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adaptive Insights so that I can control who has access to Adaptive Insights, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Adaptive Insights with Microsoft Entra ID
+# Configure Adaptive Insights for automatic user provisioning with Microsoft Entra ID
 
 In this article,  you learn how to integrate Adaptive Insights with Microsoft Entra ID. When you integrate Adaptive Insights with Microsoft Entra ID, you can:
 
@@ -45,7 +43,7 @@ To configure the integration of Adaptive Insights into Microsoft Entra ID, you n
 1. In the **Add from the gallery** section, type **Adaptive Insights** in the search box.
 1. Select **Adaptive Insights** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-adaptive-insights'></a>
 
@@ -130,11 +128,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 2. Go to **Administration**.
 
-	![Screenshot that highlights Administration in the navigation panel.](./media/adaptivesuite-tutorial/administration.png "Admin")
-
 3. In the **Users and Roles** section, select **SAML SSO Settings**.
-
-	![Manage SAML SSO Settings](./media/adaptivesuite-tutorial/settings.png "Manage SAML SSO Settings")
 
 4. On the **SAML SSO Settings** page, perform the following steps:
 
@@ -172,23 +166,10 @@ To enable Microsoft Entra users to sign in to Adaptive Insights, they must be pr
 
 1. Sign in to your **Adaptive Insights** company site as an administrator.
 
-2. Go to **Administration**.
+2. Go to **Administration** > **Users and Roles** > **Users**.
 
-   ![Admin](./media/adaptivesuite-tutorial/administration.png "Admin")
-
-3. In the **Users and Roles** section, select **Users**.
-
-   ![Add User](./media/adaptivesuite-tutorial/users.png "Add User")
-
-4. In the **New User** section, perform the following steps:
-
-   ![Submit](./media/adaptivesuite-tutorial/new.png "Submit")
-
-   a. Type the **Name**, **Username**, **Email**, **Password** of a valid Microsoft Entra user you want to provision into the related textboxes.
-
-   b. Select a **Role**.
-
-   c. Select **Submit**.
+4. In the **New User** section, enter the details of the user you want to create. Ensure that the user names in Microsoft Entra ID match the corresponding user names in Adaptive Insights.
+5. Select **Submit**.
 
 > [!NOTE]
 > You can use any other Adaptive Insights user account creation tools or APIs provided by Adaptive Insights to provision Microsoft Entra user accounts.

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Employee Advocacy by Sprout Social
+title: Configure Employee Advocacy by Sprout Social for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Employee Advocacy by Sprout Social.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Employee Advocacy by Sprout Social so that I can control who has access to Employee Advocacy by Sprout Social, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Employee Advocacy by Sprout Social
+# Configure Employee Advocacy by Sprout Social for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Employee Advocacy by Sprout Social with Microsoft Entra ID. When you integrate Employee Advocacy by Sprout Social with Microsoft Entra ID, you can:
 
@@ -23,7 +23,9 @@ In this article,  you learn how to integrate Employee Advocacy by Sprout Social 
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Employee Advocacy by Sprout Social single sign-on (SSO) enabled subscription.
 
@@ -43,7 +45,7 @@ To configure the integration of Employee Advocacy by Sprout Social into Microsof
 1. In the **Add from the gallery** section, type **Employee Advocacy by Sprout Social** in the search box.
 1. Select **Employee Advocacy by Sprout Social** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-employee-advocacy-by-sprout-social'></a>
 

@@ -2,13 +2,13 @@
 title: Assign Microsoft Entra roles
 description: Learn how to assign Microsoft Entra roles to users and groups at tenant, application registration, administrative unit scopes using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API. 
 
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 01/03/2025
-ms.author: rolyon
+ms.date: 06/04/2025
+ms.author: barclayn
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
@@ -346,6 +346,8 @@ The following Microsoft Entra roles can be assigned with administrative unit sco
 | Role | Description |
 | -----| ----------- |
 | [Authentication Administrator](permissions-reference.md#authentication-administrator) | Has access to view, set, and reset authentication method information for any non-admin user in the assigned administrative unit only. |
+| [Attribute Assignment Administrator](permissions-reference.md#attribute-assignment-administrator) | Can read and update custom security attribute assignments (from any attribute set) for users or service principals within the administrative unit only. |
+| [Attribute Assignment Reader](permissions-reference.md#attribute-assignment-reader) | Can read custom security attributes (from any attribute set) for users or service principals within the administrative unit only. |
 | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | Limited access to manage devices in Microsoft Entra ID. |
 | [Groups Administrator](permissions-reference.md#groups-administrator) | Can manage all aspects of groups in the assigned administrative unit only. |
 | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | Can reset passwords for non-administrators in the assigned administrative unit only. |

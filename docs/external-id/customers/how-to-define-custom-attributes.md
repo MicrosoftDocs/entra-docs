@@ -1,17 +1,14 @@
 ---
 title: Define custom attributes
 description: Learn how to create and define new custom attributes to be collected from users during sign-up and sign-in.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 04/28/2025
-ms.author: mimart
-ms.custom: it-pro
-
+ms.date: 09/16/2025
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a developer, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
 ---
 
@@ -96,11 +93,6 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 An attribute with a Boolean data type has a user input type of CheckboxSingleSelect. You can modify the text that displays next to the checkbox and include hyperlinks.
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PolicyAgreement)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Add links to terms of use and privacy policies” use case.
-
 To configure a single-select checkbox, follow these steps:
 
 1. On the **Page layouts** page, find the attribute with data type of **Boolean** that you want to configure.
@@ -170,7 +162,23 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 
 1. On the **Page layouts** page, select **Save**.
 
-### Find the application ID for the extensions app
+## Configure attribute visibility and editability with Microsoft Graph
+
+You can control which attributes are shown or collected from users during sign-up by configuring the hidden and editable flags for each attribute. These settings aren't currently available in the admin center UI, but you can configure them using Microsoft Graph.
+
+Each attribute supports the following flags:
+
+- `hidden`: This flag is `false` by default so the attribute displays on the sign-up page, but you can set it to `true` to hide the attribute.
+- `editable`: This flag is `true` by default to allow users to edit the attribute, but you can set it to `false` to make the attribute read-only.
+
+Examples:
+
+- To show the attribute on the page but prevent users from editing it, set `hidden` to `false` and `editable` to `false` .
+- To hide the attribute from the page while still allowing it to be set programmatically, set `hidden` to `true` and `editable` to `true`. For example, you can assign a value to the attribute by [creating a custom authentication extension for an attribute collection submit event](~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
+
+To set the hidden and editable flags using Microsoft Graph, use the [authenticationAttributeCollectionInputConfiguration](/graph/api/resources/authenticationattributecollectioninputconfiguration) resource type. For reference, see the example on [updating the page layout of a self-service sign up user flow](/graph/api/authenticationeventsflow-update#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
+
+## Find the application ID for the extensions app
 
 [Custom user attributes](concept-user-attributes.md#custom-user-attributes) are [stored in an app named *b2c-extensions-app*](concept-user-attributes.md#where-custom-user-attributes-are-stored). After a user enters a value for the custom attribute during sign-up, it's added to the user object and can be called via the Microsoft Graph API using the naming convention `extension_{appId-without-hyphens}_{custom-attribute-name}` where:
 

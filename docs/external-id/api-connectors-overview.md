@@ -6,9 +6,9 @@ ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 04/14/2025
 
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.custom: "it-pro"                 
 ms.collection: M365-identity-device-management
 #customer intent: As a developer or IT administrator, I want to use API connectors to customize and extend the self-service sign-up user flows, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems for tasks such as approval workflows, identity verification, data validation, attribute manipulation, and running custom business logic.

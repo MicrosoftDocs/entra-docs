@@ -6,10 +6,10 @@ manager: martinco
 
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/10/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Header-based authentication with Microsoft Entra ID

@@ -1,17 +1,15 @@
 ---
 title: How to use the MFA Server Migration Utility to migrate to Microsoft Entra multifactor authentication
 description: Step-by-step guidance to migrate MFA server settings to Microsoft Entra ID using the MFA Server Migration Utility.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: jpettere
+ms.custom: sfi-image-nochange
 ---
 # MFA Server migration 
 

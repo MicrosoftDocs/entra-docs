@@ -3,8 +3,8 @@ metadata:
   title: 'Microsoft Entra Connect'
   description: "Answers to frequently asked questions about Microsoft Entra pass-through authentication"  
   keywords: Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-  author: billmath
-  manager: femila
+  author: omondiatieno
+  manager: mwongerapk
   ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
   ms.service: entra-id
   ms.tgt_pltfrm: na
@@ -12,7 +12,7 @@ metadata:
   ms.topic: faq
   ms.date: 12/20/2024
   ms.subservice: hybrid-connect
-  ms.author: billmath
+  ms.author: jomondi
   
 title: "Microsoft Entra pass-through authentication: Frequently asked questions"
 summary: This article addresses frequently asked questions about Microsoft Entra pass-through authentication. Keep checking back for updated content.

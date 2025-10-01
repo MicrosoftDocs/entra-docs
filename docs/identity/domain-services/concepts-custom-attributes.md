@@ -2,14 +2,14 @@
 title: Create and manage custom attributes for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to create and manage custom attributes in a Domain Services managed domain.
 author: AlexCesarini
-manager: femila
-
+manager: dougeby
 ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 03/07/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 ---
 # Custom attributes for Microsoft Entra Domain Services
 

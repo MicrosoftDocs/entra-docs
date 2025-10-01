@@ -3,7 +3,7 @@ title: How to Enable and Manage the Microsoft Profile
 description: Learn how to enable and manage the Microsoft traffic forwarding profile for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.service: global-secure-access

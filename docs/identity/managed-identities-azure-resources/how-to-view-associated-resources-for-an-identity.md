@@ -2,7 +2,7 @@
 title: View associated resources for a user-assigned managed identity
 description: Step-by-step instructions for viewing the Azure resources that are associated with a user-assigned managed identity
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: entra-id
@@ -11,7 +11,7 @@ ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 03/15/2025
-ms.author: ryanwi
+ms.author: shermanouko
 
 ---
 
@@ -70,7 +70,7 @@ https://management.azure.com/subscriptions/{resourceID of user-assigned identity
 You can see a sample request to the REST API:
 
 ```http
-POST https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/devrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/devIdentity/listAssociatedResources?$filter={filter}&$orderby={orderby}&$skip={skip}&$top={top}&skipToken={skipToken}&api-version=2021-09-30-preview 
+POST https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/devrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/devIdentity/listAssociatedResources?$filter={filter}&$orderby={orderby}&$skip={skip}&$top={top}&skiptoken={skiptoken}&api-version=2021-09-30-preview 
 ```
 
 Notice a sample response from the REST API:

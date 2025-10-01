@@ -5,11 +5,11 @@ description: Learn how to do a targeted deployment of Microsoft Entra hybrid joi
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 06/27/2024
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # Microsoft Entra hybrid join targeted deployment

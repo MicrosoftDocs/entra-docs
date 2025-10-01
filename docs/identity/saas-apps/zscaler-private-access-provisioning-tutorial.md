@@ -1,20 +1,18 @@
 ---
 title: Configure Zscaler Private Access (ZPA) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Zscaler Private Access (ZPA).
-
-author: thomasakelo
-manager: CelesteDG
+author: jeevansd
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: thomasakelo
-
+ms.date: 05/20/2025
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Private Access so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Private Access.
 ---
 
-# Configure Zscaler Private Access (ZPA) for automatic user provisioning
+# Configure Zscaler Private Access (ZPA) for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to demonstrate the steps to be performed in Zscaler Private Access (ZPA) and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Zscaler Private Access (ZPA).
 
@@ -146,8 +144,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "work"].value|String||  
    |name.givenName|String||
    |name.familyName|String||
-   |displayName|String||
+   |displayName|String||   
+   |userType|String||
+   |nickName|String||
+   |title|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|string||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+
+
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler Private Access (ZPA)**.
 

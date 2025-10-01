@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.date: 02/25/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.reviewer: besiler
 
 #Customer intent: As an IT admin, you need to know how to use the sign-in log so that you can fix sign-in issues.

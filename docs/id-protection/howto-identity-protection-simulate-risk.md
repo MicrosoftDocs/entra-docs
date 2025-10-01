@@ -9,7 +9,7 @@ ms.date: 02/28/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: chuqiaoshi
 ---
 # Simulate Risk Detections in Microsoft Entra ID Protection

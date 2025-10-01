@@ -2,7 +2,7 @@
 title: Create an access package in entitlement management
 description: Learn how to create an access package of resources that you want to share in Microsoft Entra entitlement management.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -94,7 +94,8 @@ If you're not sure which resource roles to include, you can skip adding them whi
 1. In the **Role** list, select the role that you want users to be assigned for the resource. For more information on selecting the appropriate roles for a resource, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 
     ![Screenshot that shows resource role selection for a new access package.](./media/entitlement-management-access-package-create/resource-roles-role.png)
-
+1. For [groups managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), both active and eligible roles are available as options.
+    :::image type="content" source="media/entitlement-management-access-package-create/pim-for-groups-roles.png" alt-text="Screenshot of available roles to be assigned to PIM for groups resource in an access package.":::
 1. Select **Next: Requests**.
 
 

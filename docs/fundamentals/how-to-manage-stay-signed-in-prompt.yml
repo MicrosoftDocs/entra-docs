@@ -13,6 +13,8 @@ metadata:
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-ga-nochange
+    - sfi-image-nochange
 
   # Customer intent: As an IT admin, I want to know how to configure the 'Stay signed in' prompt for Microsoft Entra users, so their sign-in experience is not interrupted unnecessarily.
 
@@ -94,4 +96,4 @@ relatedContent:
   - text: Learn how to customize branding for sign-in experiences
     url: how-to-customize-branding.md
   - text: Manage user settings in Microsoft Entra ID
-    url: how-to-manage-user-profile-info.yml
+    url: how-to-manage-user-profile-info.md

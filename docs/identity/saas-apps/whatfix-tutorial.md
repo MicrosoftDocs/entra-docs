@@ -1,20 +1,20 @@
 ---
-title: Microsoft Entra integration with Whatfix
+title: Configure Whatfix for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Whatfix.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Whatfix so that I can control who has access to Whatfix, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Integrate Whatfix with Microsoft Entra ID
+# Configure Whatfix for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Whatfix with Microsoft Entra ID. When you integrate Whatfix with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Whatfix with Microsoft Entra ID. Wh
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Whatfix single sign-on (SSO) enabled subscription.
 

@@ -2,13 +2,14 @@
 title: Troubleshoot inaccessible tenants
 description: Instructions about how to unblock a tenant.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
 ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: Sunayana
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -48,4 +49,4 @@ If you don't plan to reactivate your tenant:
 ## Related content
 
 - [Quickstart: Create a new tenant in Microsoft Entra ID](create-new-tenant.md)
-- [Add your custom domain name to your tenant](add-custom-domain.yml)
+- [Add your custom domain name to your tenant](add-custom-domain.md)

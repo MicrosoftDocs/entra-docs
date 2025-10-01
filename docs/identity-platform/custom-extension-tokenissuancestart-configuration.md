@@ -2,20 +2,23 @@
 title: "Custom claims provider: Configure a token issuance event"
 description: Learn how to configure a custom claims provider for a token issuance start event in Microsoft Entra ID. You can add custom claims to a token before it's issued.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: 
-ms.date: 04/10/2024
+ms.date: 05/04/2025
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I want to configure a custom claims provider token issuance event in the Azure portal, so that I can add custom claims to a token before it is issued.
 ---
 
 # Configure a custom claim provider for a token issuance event
 
 This article describes how to configure a custom claims provider for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using an existing Azure Functions REST API, you'll register a custom authentication extension and add attributes that you expect it to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
+
+This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+
+> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
 
 ## Prerequisites
 

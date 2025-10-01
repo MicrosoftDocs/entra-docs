@@ -9,9 +9,9 @@ metadata:
   ms.service: entra-external-id   
   ms.topic: landing-page
   ms.date: 04/15/2025
-  author: msmimart
-  ms.author: mimart
-  manager: celested
+  ms.author: cmulligan
+  author: csmulligan
+  manager: dougeby
 
 landingContent:
   - title: About External ID

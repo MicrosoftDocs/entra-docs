@@ -2,14 +2,14 @@
 title: Add and manage admin accounts
 description: Learn how to add and manage admin accounts in your external tenant with Microsoft Entra External ID.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
 ms.date: 03/10/2025
-ms.author: mimart
 ms.custom: it-pro
 
 ---
@@ -120,7 +120,7 @@ To delete an existing user, you must have at least the [User Administrator](/ent
 1. Select the user you want to delete.
 1. Select **Delete**, and then **Yes** to confirm the deletion.
 
-The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user using Microsoft Entra ID](~/fundamentals/users-restore.yml).
+The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user using Microsoft Entra ID](~/fundamentals/users-restore.md).
 
 ## Protect administrative accounts
 

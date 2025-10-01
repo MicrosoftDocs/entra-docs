@@ -1,17 +1,14 @@
 ---
 title: 'Microsoft Entra Connect: Configure AD DS Connector Account Permissions '
 description: This document details how to configure the AD DS Connector account with the new ADSyncConfig PowerShell module
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
-ms.custom:
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Connect: Configure AD DS Connector Account Permissions 

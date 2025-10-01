@@ -1,18 +1,15 @@
 ---
 title: 'Quickstart: View enterprise applications'
-description:  Access Microsoft Entra admin center to effortlessly view and filter enterprise apps. Streamline tenant oversight and take charge now.
-
+description: Access Microsoft Entra admin center to effortlessly view and filter enterprise apps. Streamline tenant oversight and take charge now.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: quickstart
 ms.date: 03/31/2025
 ms.author: jomondi
 ms.reviewer: alamaral
-ms.custom: mode-other, enterprise-apps
-
+ms.custom: mode-other, enterprise-apps, sfi-image-nochange
 #Customer intent: As an enterprise administrator, I want to view and search for enterprise applications in the Microsoft Entra admin center, so that I can manage and configure the applications in my tenant effectively.
 ---
 
@@ -57,15 +54,19 @@ Select options according to what you're looking for:
     - **Enterprise Applications** shows non-Microsoft applications.
     - **Microsoft Applications** shows Microsoft applications.
     - **Managed Identities** shows applications that are used to authenticate to services that support Microsoft Entra authentication.
+    - **Agent ID (Preview)** shows AI agent identities that are used by AI agents to to authenticate to services that support Microsoft Entra authentication.
     - **All Applications** shows both non-Microsoft and Microsoft applications.
 1. Under **Application ID starts with**, enter the first few digits of the application ID if you know the application ID.
 1. After choosing the options you want, select **Apply**.
 1. Select **Add filters** to add more options for filtering the search results. The other options include:
+   - **Application Status**
    - **Application Visibility**
    - **Created on**
    - **Assignment required**
-   - **Is app Proxy**
+   - **Is App Proxy**
    - **Owner**
+   - **Identifier URI (Entity ID)**
+   - **Homepage URL** 
 1. To remove any of the filter options already added, select the **X** icon next to the filter option.
 
 

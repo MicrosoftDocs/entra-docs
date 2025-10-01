@@ -297,7 +297,7 @@ The following list has links to documentation about common operational tasks inc
 A best practice is a tested method or technique that helps deliver higher quality results, over time.
 
 * Follow security protocols and guidelines when you assign resource access
-* Enable group writeback to control access to on-premises AD group applications and resources
+* Enable Group Provisioning to AD to control access to on-premises AD group applications and resources
   * [Govern on-premises Active Directory (Kerberos) application access with groups from the cloud](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)
 * Use autoassignment policies to streamline assignments and their removal
   * Ensure alignment with Microsoft Entra entitlement management rules and governance [service limits](../id-governance/governance-service-limits.md)

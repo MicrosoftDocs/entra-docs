@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with DataCamp
+title: Configure DataCamp for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DataCamp.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DataCamp so that I can control who has access to DataCamp, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with DataCamp
+# Configure DataCamp for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate DataCamp with Microsoft Entra ID. When you integrate DataCamp with Microsoft Entra ID, you can:
 
@@ -24,7 +24,9 @@ In this article,  you learn how to integrate DataCamp with Microsoft Entra ID. W
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * DataCamp single sign-on (SSO) enabled subscription.
 
@@ -44,7 +46,7 @@ To configure the integration of DataCamp into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **DataCamp** in the search box.
 1. Select **DataCamp** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-datacamp'></a>
 
@@ -80,11 +82,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.datacamp.com/groups/<group-slug>/sso/saml`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint/clients/datacamp-saml-login`
+    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint/clients/datacamp-saml-login`. Mark this URL as the default by selecting the checkbox.
 
-1. Select **Set additional URLs** and perform the following step:
-
-    In the **Sign-on URL** text box, type the URL:
+    c. Click on **Add Reply URL** to add a new text box in the **Reply URL** field, then type a URL using the following pattern:
     `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint`
 
 	> [!NOTE]

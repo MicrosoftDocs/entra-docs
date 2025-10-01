@@ -2,7 +2,7 @@
 title: Microsoft Entra Domain Services troubleshooting | Microsoft Docs'
 description: Learn how to troubleshoot common errors when you create or manage Microsoft Entra Domain Services
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.assetid: 4bc8c604-f57c-4f28-9dac-8b9164a0cf0b
 ms.service: entra-id

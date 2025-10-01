@@ -2,7 +2,7 @@
 title: "Web API app registration and API permissions"
 description: In this quickstart, you learn how to configure app registration and API permissions for a Web API, and how to grant admin consent to these permissions. 
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: mode-api
 ms.date: 01/27/2025
@@ -56,7 +56,7 @@ Once you've registered both your client app and web API and you've exposed the A
     - **Application permissions** are for service- or daemon-type applications that need to access a web API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your web API, this option is disabled.
 
 1. Under **Select permissions**, expand the resource whose scopes you defined for your web API, and select the permissions the client app should have on behalf of the signed-in user.
-    - If you used the example scope names specified in the [previous quickstart](./quickstart-configure-app-access-web-apis.md), you should see **Employees.Read.All** and `Employees.Write.All`.
+    - If you used the example scope names specified in the [previous quickstart](./quickstart-configure-app-expose-web-apis.md), you should see **Employees.Read.All** and `Employees.Write.All`.
     
 1. Select the permission you created while completing the prerequisites, for example, `Employees.Read.All`.
 1. Select **Add permissions** to complete the process.

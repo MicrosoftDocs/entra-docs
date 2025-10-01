@@ -5,10 +5,9 @@ description: Learn how to set up SAML/WS-Fed IdP federation with AD FS for B2B c
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/09/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin, I want to configure SAML/WS-Fed based identity provider federation with AD FS, so that I can enable federation between Microsoft Entra B2B and IdPs that use the SAML or WS-Fed protocol.

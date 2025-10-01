@@ -1,17 +1,14 @@
 ---
 title: Migrate applications from Okta to Microsoft Entra ID
 description: Discover the process of migrating applications from Okta to Microsoft Entra ID, covering SAML, OpenID Connect, and OAuth 2.0 configurations.
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
-
 ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: gasinh
 ms.subservice: enterprise-apps
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using Okta for application management, I want to migrate my applications to Microsoft Entra ID, so that I can centralize application access and management in one platform.
 ---
 

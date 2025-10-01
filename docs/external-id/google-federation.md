@@ -1,18 +1,14 @@
 ---
-
 title: Google identity provider
 description: Learn how to add Google as an identity provider in Microsoft Entra External ID. Enable customers to sign in with their Google accounts and configure Google federation for seamless access.
-
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As a B2B collaboration administrator, I want to add Google as an identity provider, so that invited users can sign in to shared apps and resources using their Gmail accounts.
 ---
 
@@ -199,7 +195,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 
 **To configure Google federation in the Microsoft Entra admin center** 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Entra ID** > **External Identities** > **All identity providers** and then on the **Google** line, select **Configure**.
+1. Browse to **Identity** > **External Identities** > **All identity providers** and then on the **Google** line, select **Configure**.
 1. Enter the client ID and client secret you obtained earlier. Select **Save**:
 
    ![Screenshot that shows the Add Google identity provider page.](media/google-federation/google-identity-provider.png)

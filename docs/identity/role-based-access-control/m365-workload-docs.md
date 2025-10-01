@@ -1,17 +1,15 @@
 ---
 title: Roles across Microsoft services
 description: Find content, API references, and audit and monitoring references related to role-based access control (RBAC) for Microsoft 365 and other services
-
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 08/31/2024
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, to delegate permissions across Microsoft 365 services quickly and accurately I want to know where the content is for admin roles.
 ---
 

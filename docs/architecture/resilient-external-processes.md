@@ -7,10 +7,12 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 06/28/2024
+ms.date: 05/20/2025
 ---
 
 # Resilient interfaces with external processes using Azure AD B2C
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 In this article, find guidance on how to plan for and implement the RESTful APIs to make your application more resilient to API failures.
 

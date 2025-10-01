@@ -3,15 +3,15 @@ title: 'Microsoft Entra Connect Sync:  Changing the AD DS account password'
 description: This topic document describes how to update Microsoft Entra Connect after the password of the AD DS account is changed.
 
 keywords: AD DS account, Active Directory account, password
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 76b19162-8b16-4960-9e22-bd64e6675ecc
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---

@@ -3,8 +3,8 @@ title: Configure embed signage for automatic user provisioning with Microsoft En
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to embed signage.
 
 
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -12,12 +12,12 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to embed signage so that I can streamline the user management process and ensure that users have the appropriate access to embed signage.
 ---
 
-# Configure embed signage for automatic user provisioning
+# Configure embed signage for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both embed signage and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [embed signage](https://embedsignage.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 

@@ -2,7 +2,7 @@
 title: Fix mismatched directory errors in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn what a mismatched directory error means and how to resolve it in Microsoft Entra Domain Services
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.assetid: 40eb75b7-827e-4d30-af6c-ca3c2af915c7
 ms.service: entra-id

@@ -2,7 +2,7 @@
 title: "Add and manage app credentials in Microsoft Entra ID"
 description: Learn to configure certificates, client secrets, and federated credentials in Microsoft Entra for secure app authentication.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: mode-other
 ms.date: 03/26/2025
@@ -17,7 +17,7 @@ When building confidential client applications, managing credentials effectively
 
 ## Prerequisites
 
-* [Quickstart: Register an app in Microsoft Entra ID](quickstart-register-app.md).
+[Quickstart: Register an app in Microsoft Entra ID](quickstart-register-app.md).
 
 ## Add a credential to your application
 

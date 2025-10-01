@@ -1,9 +1,9 @@
 ---
 title: Microsoft Entra authentication & authorization error codes
 description: Learn about the AADSTS error codes that are returned from the Microsoft Entra security token service (STS).
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom: 
 ms.date: 02/03/2025
 ms.reviewer: ludwignick
@@ -117,7 +117,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS5001256 | Failed to complete authentication with external provider due to invalid id_token. Failure details: {details} |
 | AADSTS50020 | UserUnauthorized - Users are unauthorized to call this endpoint. User account '{email}' from identity provider '{idp}' does not exist in tenant '{tenant}' and cannot access the application '{appid}'({appName}) in that tenant. This account needs to be added as an external user in the tenant first. Sign out and sign in again with a different Microsoft Entra user account. If this user should be a member of the tenant, they should be invited via the [B2B system](~/external-id/add-users-administrator.yml). For additional information, visit [AADSTS50020](/troubleshoot/azure/active-directory/error-code-aadsts50020-user-account-identity-provider-does-not-exist). |
 | AADSTS500207 | The account type can't be used for the resource you're trying to access. |
-| AADSTS500208 | The domain is not a valid login domain for the account type - This situation occurs when the user's account does not match the expected account type for the given tenant. For instance, if the tenant is configured to allow only work or school accounts, and the user tries to sign in with a personal Microsoft account, they will receive this error.
+| AADSTS500208 | The domain is not a valid login domain for the account type - This situation occurs when the user's account does not match the expected account type for the given tenant. For instance, if the tenant is configured to allow only work or school accounts, and the user tries to sign in with a personal Microsoft account, they will receive this error. |
 | AADSTS500212 | NotAllowedByOutboundPolicyTenant - The user's administrator has set an outbound access policy that doesn't allow access to the resource tenant. |
 | AADSTS500213 | NotAllowedByInboundPolicyTenant - The resource tenant's cross-tenant access policy doesn't allow this user to access this tenant. |
 | AADSTS50027 | InvalidJwtToken - Invalid JWT token because of the following reasons:<ul><li>doesn't contain nonce claim, sub claim</li><li>subject identifier mismatch</li><li>duplicate claim in idToken claims</li><li>unexpected issuer</li><li>unexpected audience</li><li>not within its valid time range </li><li>token format isn't proper</li><li>External ID token from issuer failed signature verification.</li></ul> |
@@ -131,7 +131,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50049 | NoSuchInstanceForDiscovery - Unknown or invalid instance. |
 | AADSTS50050 | MalformedDiscoveryRequest - The request is malformed. |
 | AADSTS50053 | This error can result from two different reasons: <br><ul><li>IdsLocked - The account is locked because the user tried to sign in too many times with an incorrect user ID or password. The user is blocked due to repeated sign-in attempts. See [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md).</li><li>Or, sign-in was blocked because it came from an IP address with malicious activity.</li></ul> <br>To determine which failure reason caused this error, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).  Navigate to your Microsoft Entra tenant and then **Monitoring & health** > **Sign-in logs**.  Find the failed user sign-in with **Sign-in error code** 50053 and check the **Failure reason**.|
-| AADSTS50055 | InvalidPasswordExpiredPassword - The password is expired. The user's password is expired, and therefore their login or session was ended. They will be offered the opportunity to reset it, or can ask an admin to reset it via [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.yml). |
+| AADSTS50055 | InvalidPasswordExpiredPassword - The password is expired. The user's password is expired, and therefore their login or session was ended. They will be offered the opportunity to reset it, or can ask an admin to reset it via [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.md). |
 | AADSTS50056 | Invalid or null password: password doesn't exist in the directory for this user. The user should be asked to enter their password again. |
 | AADSTS50057 | UserDisabled - The user account is disabled. The user object in Active Directory backing this account has been disabled. An admin can re-enable this account [through PowerShell](/powershell/module/activedirectory/enable-adaccount) |
 | AADSTS50058 | UserInformationNotProvided - Session information isn't sufficient for single-sign-on. This means that a user isn't signed in. This is a common error that's expected when a user is unauthenticated and hasn't yet signed in. </br>If this error is encountered in an SSO context where the user has previously signed in, this means that the SSO session was either not found or invalid. </br>This error might be returned to the application if prompt=none is specified. |
@@ -166,7 +166,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50117 | Failed to deserialize policy specified in the request's claim parameter. |
 | AADSTS50120 | Unknown credential type, issue with the JWT header. Contact the tenant admin. |
 | AADSTS50123 | Unknown claims transformation method '{method}' was specified for principal '{principalId}'. |
-| AADSTS50124 | Invalid regular expression configured for claims transformation for this application. Contact your tenant admin to fix the claims mapping configuration. See [Customize SAML token claims](/identity/saml-claims-customization) |
+| AADSTS50124 | Invalid regular expression configured for claims transformation for this application. Contact your tenant admin to fix the claims mapping configuration. See [Customize SAML token claims](saml-claims-customization.md) |
 | AADSTS501241 | Mandatory Input '{paramName}' missing from transformation ID '{transformId}'. This error is returned while Microsoft Entra ID is trying to build a SAML response to the application. NameID claim or NameIdentifier is mandatory in SAML response and if Microsoft Entra ID failed to get source attribute for NameID claim, it returns this error. As a resolution, ensure that you add claim rules. To add claim rules, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), and then browse to **Entra ID** > **Enterprise apps**. Select your application, select **Single Sign-On** and then in **User Attributes & Claims** enter the Unique User Identifier (Name ID). |
 | AADSTS50125 | PasswordResetRegistrationRequiredInterrupt - Sign-in was interrupted because of a password reset or password registration entry. |
 | AADSTS50126 | InvalidUserNameOrPassword - Error validating credentials due to invalid username or password. The user didn't enter the right credentials. Expect to see some number of these errors in your logs due to users making mistakes. |
@@ -185,7 +185,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50139 | SessionMissingMsaOAuth2RefreshToken - The session is invalid due to a missing external refresh token. |
 | AADSTS50140 | KmsiInterrupt - This error occurred due to "Keep me signed in" interrupt when the user was signing-in. This is an expected part of the sign in flow, where a user is asked if they want to remain signed into their current browser to make further logins easier. For more information, see [The new Microsoft Entra sign-in and “Keep me signed in” experiences rolling out now!](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/the-new-azure-ad-sign-in-and-keep-me-signed-in-experiences/m-p/128267). You can [open a support ticket](~/fundamentals/how-to-get-support.md) with Correlation ID, Request ID, and Error code to get more details.|
 | AADSTS50141 | Protected key isn't intended for the authenticated user. |
-| AADSTS50142 | Password change is required due to a conditional access policy. |
+| AADSTS50142 | Password change is required due to a Conditional Access policy. |
 | AADSTS50143 | Session mismatch - Session is invalid because user tenant doesn't match the domain hint due to different resource. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Correlation ID, Request ID, and Error code to get more details. |
 | AADSTS50144 | InvalidPasswordExpiredOnPremPassword - User's Active Directory password has expired. Generate a new password for the user or have the user use the self-service reset tool to reset their password. |
 | AADSTS50147 | Invalid size of the code challenge parameter. Contact the application owner to correct their use of the PKCE parameters. |
@@ -215,7 +215,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50170 | MissingExternalClaimsProviderMapping - The external controls mapping is missing. |
 | AADSTS50171 | The given audience can only be used in Mutual-TLS token calls. |
 | AADSTS50172 | External claims provider {provider} isn't approved. |
-| AADSTS50173 | The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '{authTime}' and the TokensValidFrom date (before which tokens are not valid) for this user is '{validDate}'. To learn more, see the troubleshooting article for error [AADSTS50173](/troubleshoot/entra/app-integration/error-code-aadsts50173-grant-expired-revoked). |
+| AADSTS50173 | The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '{authTime}' and the TokensValidFrom date (before which tokens are not valid) for this user is '{validDate}'. To learn more, see the troubleshooting article for error [AADSTS50173](/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50173-grant-expired-revoked). |
 | AADSTS50176 | Missing definition of external control: {controlId}. |
 | AADSTS50177 | ExternalChallengeNotSupportedForPassthroughUsers - External challenge isn't supported for passthrough users. |
 | AADSTS50178 | SessionControlNotSupportedForPassthroughUsers - Session control isn't supported for passthrough users. |
@@ -319,7 +319,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS90020 | The SAML 1.1 Assertion is missing ImmutableID of the user. Developer error - the app is attempting to sign in without the necessary or correct authentication parameters.|
 | AADSTS90022 | AuthenticatedInvalidPrincipalNameFormat - The principal name format isn't valid, or doesn't meet the expected `name[/host][@realm]` format. The principal name is required, host, and realm are optional and can be set to null. |
 | AADSTS90023 | InvalidRequest - The authentication service request isn't valid. |
-| AADSTS900236| InvalidRequestSamlPropertyUnsupported- The SAML authentication request property '{propertyName}' isn't supported and must not be set.
+| AADSTS900236| InvalidRequestSamlPropertyUnsupported- The SAML authentication request property '{propertyName}' isn't supported and must not be set. |
 | AADSTS9002313 | InvalidRequest - Request is malformed or invalid. - The issue arises because there was something wrong with the request to a certain endpoint. The suggestion to this issue is to get a fiddler trace of the error occurring and looking to see if the request is properly formatted or not. |
 | AADSTS9002332 | Application '{principalId}'({principalName}) is configured for use by Microsoft Entra users only. Please do not use the /consumers endpoint to serve this request. |
 | AADSTS90024 | RequestBudgetExceededError - A transient error has occurred. Try again. |
@@ -396,7 +396,9 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS220501 | InvalidCrlDownload |
 | AADSTS221000 | DeviceOnlyTokensNotSupportedByResource - The resource isn't configured to accept device-only tokens. |
 | AADSTS240001 | BulkAADJTokenUnauthorized - The user isn't authorized to register devices in Microsoft Entra ID. |
-| AADSTS240002 | RequiredClaimIsMissing - The id_token can't be used as `urn:ietf:params:oauth:grant-type:jwt-bearer` grant.|
+| AADSTS240002 | RequiredClaimIsMissing - The id_token can't be used as `urn:ietf:params:oauth:grant-type:jwt-bearer` grant. |
+| AADSTS240003 | Unexpected result from authorize endpoint call. |
+| AADSTS240004 | Authorization code not received from authorize endpoint call. Error: {errorInfo}. |
 | AADSTS501621 | ClaimsTransformationTimeoutRegularExpressionTimeout - Regular expression replacement for claims transformation has timed out. This indicates a too complex regular expression may have been configured for this application. A retry of the request may succeed. Otherwise, please contact your admin to fix the configuration. |
 | AADSTS530032 | BlockedByConditionalAccessOnSecurityPolicy - The tenant admin has configured a security policy that blocks this request. Check the security policies that are defined on the tenant level to determine if your request meets the policy requirements. |
 | AADSTS700016 | UnauthorizedClient_DoesNotMatchRequest - The application wasn't found in the directory/tenant. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You might have misconfigured the identifier value for the application or sent your authentication request to the wrong tenant. |

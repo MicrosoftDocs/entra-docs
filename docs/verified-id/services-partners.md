@@ -3,7 +3,7 @@ title: Service Partner gallery for Microsoft Entra Verified ID
 description: Learn how to extend and accelerate Verified ID via Service Partners.
 ms.service: entra-verified-id
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.topic: how-to
 ms.date: 01/17/2025
 ms.author: barclayn
@@ -17,7 +17,7 @@ Our Services and solutions partner network extends and accelerates Microsoft Ent
 
 You could select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service, and custom business application scenarios. If you're a Services or solution Partner and would like to be considered into Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ).
 
-| Services and solution partner | Website |
+| **Services and solution partner** | **Website** |
 |:-------------------------|:--------------|
 | :::image type="content" source="media/services-partners/affinitiquest.png" alt-text="Screenshot of Affinitiquest logo."::: | [Secure personal data | AffinitiQuest](https://affinitiquest.io/) |
 | :::image type="content" source="media/services-partners/avanade.png" alt-text="Screenshot of Avanade logo."::: | [Avanade Microsoft Entra Verified ID Consulting Services](https://appsource.microsoft.com/marketplace/consulting-services/avanadeinc.ava_entra_verified_id_fy23?exp=ubp8) |

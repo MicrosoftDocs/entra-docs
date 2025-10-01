@@ -2,19 +2,19 @@
 title: Configure TeamViewer for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TeamViewer.
 
-author: thomasakelo
-manager: CelesteDG
+author: jeevansd
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 04/30/2024
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to TeamViewer so that I can streamline the user management process and ensure that users have the appropriate access to TeamViewer.
 ---
 
-# Configure TeamViewer for automatic user provisioning
+# Configure TeamViewer for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both TeamViewer and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [TeamViewer](https://www.teamviewer.com/buy-now/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 

@@ -2,11 +2,11 @@
 title: Sign-ins requiring a compliant or managed device
 description: Learn about the Microsoft Entra Health signals and alerts for sign-ins that require a compliant or managed device
 author: shlipsey3
-manager: femila
+manager: pmwongera 
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/19/2025
+ms.date: 06/06/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -36,11 +36,11 @@ There are different roles, permissions, and license requirements to view health 
 - The [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) is the least privileged role required to *update alerts* and *update alert notification configurations*.
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
-- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
+- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#microsoft-entra-health-least-privileged-roles).
 
 ## Investigate the signals and alerts
 
-Investigating an alert starts with gathering data. With Microsoft Entra Health in the Microsoft Entra admin center, you can view the signal and alert details in one place. You can also view the signals and alerts using the Microsoft Graph API. For more information, see [How to investigate health scenario alerts](../monitoring-health/howto-investigate-health-scenario-alerts.md) for guidance on how to gather data using the Microsoft Graph API. 
+[!INCLUDE [entra-health-alerts-investigate](../../includes/entra-health-alerts-investigate.md)]
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 

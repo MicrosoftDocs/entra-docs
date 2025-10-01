@@ -2,18 +2,19 @@
 title: "Tutorial: Add Shared Device Mode support to an Android device"
 description: In this tutorial, learn how to add Shared Device Mode support to an Android device using the Microsoft Authenticator App or Intune
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 08/30/2024
 ms.service: identity-platform
-ms.reviewer: akgoel, henrymbugua
+ms.subservice: workforce
+ms.reviewer: akgoel
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to learn how to setup an Android device in Shared Device Mode using Microsoft Authenticator App.
 ---
 
 # Set up an Android device in Shared Device Mode
 
-[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-workforce-only.md)]
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 In this tutorial, you learn how to add shared device mode support to an Android device with the Microsoft Authenticator App or a Mobile Device Management (MDM) tool like Microsoft Intune. Employees sign in once for single sign-on (SSO) to all SDM-supported apps and sign out to make the device ready for the next user with no access to previous data.
 

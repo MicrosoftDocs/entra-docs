@@ -1,16 +1,14 @@
 ---
 title: Add API connectors to self-service sign-up flows
 description: Configure a web API to be used in a user flow.
- 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/15/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: "it-pro"
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As a User Administrator in Microsoft Entra, I want to add an API connector to a user flow after the authentication step or before creating the user, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems.
 ---
 

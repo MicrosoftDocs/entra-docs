@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 01/27/2025
+ms.date: 09/30/2025
 ms.custom:
 
 #Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra External ID
@@ -69,7 +69,7 @@ You must configure specific redirect URIs in your app registration to ensure com
 
 ### [External tenant](#tab/external-tenant)
 
-[!INCLUDE [Add platform redirect URI](../external-id/customers/includes/register-app/add-platform-redirect-url-ios.md)]
+[!INCLUDE [Add platform redirect URI](../external-id/customers/includes/register-app/add-platform-redirect-url-android.md)]
 
 ### Enable public client flow 
 
@@ -116,7 +116,7 @@ You pass the required tenant identifiers, such as the application (client) ID, t
  
 Use these steps to create configuration file:
 
-#### [Workforce tenant configuration](#tab/android-workforce)
+#### [Workforce tenant configuration](#tab/workforce-tenant)
 
 1. In Android Studio's project pane, navigate to **app\src\main\res**.
 1. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
@@ -177,7 +177,7 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
    You can find these values in the Authentication blade of your app registration as well.
 
 
-#### [External tenant configuration](#tab/android-external)
+#### [External tenant configuration](#tab/external-tenant)
 
 
 1. In Android Studio's project pane, navigate to *app\src\main\res*.  
@@ -231,7 +231,7 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
 
 To initialize MSAL SDK instance, use the following code:
 
-#### [Workforce tenant configuration](#tab/android-workforce)
+#### [Workforce tenant configuration](#tab/workforce-tenant)
 
 ```java
 PublicClientApplication.createSingleAccountPublicClientApplication(
@@ -257,7 +257,7 @@ PublicClientApplication.createSingleAccountPublicClientApplication(
 This code creates a single account public client application using the configuration file auth_config_single_account.json. When the application is successfully created, it assigns the instance to `mSingleAccountApp` and calls the `loadAccount()` method. If an error occurs during the creation, it handles the error by calling the displayError(exception) method.
 
 
-#### [External tenant configuration](#tab/android-external)
+#### [External tenant configuration](#tab/external-tenant)
 
 ```kotlin
 private suspend fun initClient(): ISingleAccountPublicClientApplication = withContext(Dispatchers.IO) {

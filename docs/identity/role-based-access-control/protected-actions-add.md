@@ -2,9 +2,9 @@
 title: Add, test, or remove protected actions in Microsoft Entra ID
 description: Learn how to add, test, or remove protected actions in Microsoft Entra ID.
 
-author: rolyon
-manager: femila
-ms.author: rolyon
+author: barclayn
+manager: pmwongera
+ms.author: barclayn
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
@@ -29,7 +29,7 @@ To add or remove protected actions, you must have:
 
 Protected actions use a Conditional Access authentication context, so you must configure an authentication context and add it to a Conditional Access policy. If you already have a policy with an authentication context, you can skip to the next section.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
 1. Select **Entra ID** > **Conditional Access** > **Authentication context** > **Authentication context**.
 

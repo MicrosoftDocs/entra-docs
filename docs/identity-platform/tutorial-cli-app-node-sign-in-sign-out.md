@@ -2,7 +2,7 @@
 title: "Tutorial: Authenticate users in a Node.js CLI application"
 description: Learn how to authenticate users in a Node.js CLI application registered in an external tenant
 author: Dickson-Mwendia
-manager: mwongerapk
+manager: dougeby
 ms.author: dmwendia
 ms.service: identity-platform
 ms.topic: tutorial

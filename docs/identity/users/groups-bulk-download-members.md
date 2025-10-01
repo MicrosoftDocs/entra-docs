@@ -4,7 +4,7 @@ description: Add users in bulk in the Azure admin center.
 
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id

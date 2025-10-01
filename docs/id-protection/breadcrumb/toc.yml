@@ -1,0 +1,9 @@
+items:
+- name: Microsoft Entra ID Protection
+  tocHref: /entra/id-protection/
+  topicHref: /entra/id-protection/index
+  items:
+  - name: Microsoft Entra Fundamentals
+    tocHref: /entra/fundamentals/
+    topicHref: /entra/fundamentals/index
+
