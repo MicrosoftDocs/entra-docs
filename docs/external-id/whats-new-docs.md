@@ -21,7 +21,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 ### Updated articles
 
-- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md) - Multiple editorial updates
+- [Add OpenID Connect as an external identity provider](customers/how-to-custom-oidc-federation-customers.md) - Multiple editorial updates
 
 ## August 2025
 
