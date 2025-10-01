@@ -3,7 +3,7 @@ title: Support web fallback in Android app
 description: Learn how to implement support web fallback in Android app.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
 ms.service: entra-external-id
