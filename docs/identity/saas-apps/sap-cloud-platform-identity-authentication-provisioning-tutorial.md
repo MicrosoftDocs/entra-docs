@@ -24,7 +24,7 @@ This article demonstrates the steps for configuring provisioning from Microsoft 
 > * Updated to the SCIM 2.0 standard
 > * Support for group provisioning and deprovisioning to SAP Cloud Identity Services
 > * Support for custom extension attributes
-> * Support for the [OAuth 2.0 Client Credentials grant](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-client-creds-grant-flow)
+> * Support for the [OAuth 2.0 Client Credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md)
 
 ## Prerequisites
 
@@ -108,7 +108,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, select the **OAuth2 Client Credentials Grant**. Input `https://<tenantID>.accounts.ondemand.com/scim`, or `https://<tenantid>.trial-accounts.ondemand.com/scim` if a trial, with the tenant ID of your SAP Cloud Identity Services in **Tenant URL**. Input the **Token Endpoint**, which may look something like this `https://<tenantID>.accounts.ondemand.com/oauth2/token`. Input the **Client ID** and **Client Secret** values that you [previously generated from the admin console for SAP Cloud Identity Services](https://learn.microsoft.com/entra/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial#set-up-sap-cloud-identity-services-for-provisioning). Select **Test Connection** to ensure Microsoft Entra ID can connect to SAP Cloud Identity Services. If the connection fails, ensure your SAP Cloud Identity Services system account has Admin permissions, the secret is still valid, and try again.
+1. Under the **Admin Credentials** section, select the **OAuth2 Client Credentials Grant**. Input `https://<tenantID>.accounts.ondemand.com/scim`, or `https://<tenantid>.trial-accounts.ondemand.com/scim` if a trial, with the tenant ID of your SAP Cloud Identity Services in **Tenant URL**. Input the **Token Endpoint**, which may look something like this `https://<tenantID>.accounts.ondemand.com/oauth2/token`. Input the **Client ID** and **Client Secret** values that you [previously generated from the admin console for SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial#set-up-sap-cloud-identity-services-for-provisioning). Select **Test Connection** to ensure Microsoft Entra ID can connect to SAP Cloud Identity Services. If the connection fails, ensure your SAP Cloud Identity Services system account has Admin permissions, the secret is still valid, and try again.
 
 	![Screenshot of the Admin Credentials section in the provisioning UX.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/authmethod.png)
 
@@ -169,6 +169,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	|`urn:sap:cloud:scim:schemas:extension:custom:2.0:User:attributes:customAttribute10`|String||
 	|`sendMail`|String||
 	|`mailVerified`|String||
+
+	|Group Attribute|Type|Supported for filtering|Required by SAP Cloud Identity Services|
+	|---|---|---|---|
+   |`id`|String|&check;|&check;|
+   |`externalId`|String|||
+   |`displayName`|String||&check;|
+   |`urn:sap:cloud:scim:schemas:extension:custom:2.0:Group:name`|String|||
+   |`urn:sap:cloud:scim:schemas:extension:custom:2.0:Group:description`|String|||
+   |`members`|Reference||&check;|
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -376,7 +385,7 @@ In September 2025, Microsoft released a SCIM 2.0 connector for SAP Cloud Identit
 
 Completing the below steps will allow customers that were already previously using the SAP Cloud Identity Services connector to switch from the SCIM 1.0 endpoint to the SCIM 2.0 endpoint.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Browse to **Entra ID > Enterprise Apps > SAP Cloud Identity Services**.
 
