@@ -234,7 +234,7 @@ AuditLogs
 | render  piechart
 ```
 
-  :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor pie chart.":::
+  :::image type="content" source="media/how-to-azure-monitor/query-policy-usage-pie.png" alt-text="Screenshot of the Log Analytics log editor pie chart.":::
 
 ## Change the data retention period
 
