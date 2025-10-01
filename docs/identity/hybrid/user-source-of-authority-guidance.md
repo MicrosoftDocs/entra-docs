@@ -1,9 +1,11 @@
 ---
 title: Guidance for using User Source of Authority (SOA) in Microsoft Entra ID (Preview)
-description: Discover how to manage and transition Active Directory groups to Microsoft Entra ID using Group Source of Authority (SOA). Learn best practices for group management, provisioning, restoring, and rolling back changes in hybrid and cloud environments.
+description: Streamline user management with User Source of Authority (SOA) in Microsoft Entra ID. Minimize your AD footprint and ensure a smooth migration to the cloud.
 author: owinfreyATL
 manager: dougeby
 ms.topic: conceptual
+ms.service: entra-id
+ms.subservice: hybrid
 ms.date: 09/30/2025
 ms.author: owinfrey
 ms.reviewer: dahnyahk
@@ -12,7 +14,7 @@ ms.reviewer: dahnyahk
 
 # Guidance for using User Source of Authority (SOA) (Preview)
 
-Managing user identities effectively is critical for organizations transitioning to the cloud. This article provides guidance on using the User Source of Authority (SOA) to streamline user management. Learn how to minimize your Active Directory (AD) footprint, adopt best practices for transitioning user management, and ensure a smooth migration to the cloud. 
+Managing user identities effectively is critical for organizations transitioning to the cloud. This article provides guidance on using the User Source of Authority (SOA) to streamline user management. This article discusses how to  minimize your Active Directory (AD) footprint after SOA transfer, adopt best practices for transitioning user management, and ensure a smooth migration of user management to the cloud. 
 
 
 ## Active Directory User Management
