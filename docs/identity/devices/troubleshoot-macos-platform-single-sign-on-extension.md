@@ -71,7 +71,7 @@ If the Enterprise SSO plug-in fails to activate after system updates are applied
 ### TLS Inspection URLs to be excluded for Platform SSO
 
 #### 1. URLs that need to be allowed for PSSO registration flows
-Please ensure that traffic to the URLs listed [here](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra) is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration and device auth flows that rely on TLS challenges to complete successfully.
+Please ensure that traffic to the URLs listed **[here](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra)** is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration and device auth flows that rely on TLS challenges to complete successfully.
 
 #### 2. URLs that need to be exempted for PSSO token acquisition and token refresh flows
 Please ensure below URLs are exempted from TLS interception/inspection so that Platform SSO token acquisition and refresh can be successfully performed on Platform SSO targeted devices:
