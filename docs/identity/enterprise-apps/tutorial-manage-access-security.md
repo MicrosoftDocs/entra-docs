@@ -2,7 +2,7 @@
 title: "Tutorial: Manage application access and security"
 description: In this tutorial, you learn how to manage access to an application in Microsoft Entra ID and make sure it's secure.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.service: entra-id
@@ -38,7 +38,7 @@ Using the information in this tutorial, an administrator learns how to:
 For the application that the administrator added to their tenant, they want to set it up so that all users in the organization can use it and not have to individually request consent to use it. To avoid the need for user consent, they can grant consent for the application on behalf of all users in the organization. For more information, see [Consent and permissions overview](./user-admin-consent-overview.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the application to which you want to grant tenant-wide admin consent.
 1. Under **Security**, select **Permissions**.
 1. Carefully review the permissions that the application requires. If you agree with the permissions the application requires, select **Grant admin consent**.
@@ -59,8 +59,8 @@ It's easier for an administrator to manage access to the application by assignin
 
 ### Create a Conditional Access policy for the group
 
-1. In the left menu of the tenant overview, select **Protection**.
-1. Select **Conditional Access**, select **+ New policy**, and then select **Create new policy**.
+1. In the left menu of the tenant overview, select **Entra ID** > **Conditional Access**.
+1. Select **+ New policy**, and then select **Create new policy**.
 1. Enter a name for the policy, such as *MFA Pilot*.
 1. Under **Assignments**, select **Users or workload identities**.
 1. On the **Include** tab, choose **Select users and groups**, and then select **Users and groups**.
@@ -106,8 +106,8 @@ Juan wants to make sure that certain terms and conditions are known to users bef
 
 ### Add the terms of use to the policy
 
-1. In the left menu of the tenant overview, select **Protection**.
-1. Select **Conditional Access**, and then **Policies**. From the list of policies, select the *MFA Pilot* policy.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. From the list of policies, select the *MFA Pilot* policy.
 1. Under **Access controls** and **Grant**, select the controls selected link.
 1. Select *My TOU*.
 1. Select **Require all the selected controls**, and then choose **Select**.
@@ -123,7 +123,7 @@ The My Apps portal enables administrators and users to manage the applications u
 By default, all applications are listed together on a single page. But you can use collections to group together related applications and present them on a separate tab, making them easier to find. For example, you can use collections to create logical groupings of applications for specific job roles, tasks, projects, and so on. In this section, you create a collection  and assign it to users and groups.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** .
+1. Browse to **Entra ID** > **Enterprise apps** .
 1. Under **Manage**, select **App launchers** > **Collections**.
 1. Select **New collection**. In the New collection page, enter a **Name** for the collection (it's recommended to not use "collection" in the name). Then enter a **Description**.
 1. Select the **Applications** tab. Select **+ Add application**, and then in the Add applications page, select all the applications you want to add to the collection, or use the Search box to find applications.
@@ -151,14 +151,13 @@ You can keep the resources for future use, or if you're not going to continue to
 
 ### Delete the Conditional Access policy
 
-1. Select **Enterprise applications**.
-1. Under **Protection**, select **Conditional Access**.
+1. Under **Entra ID** > **Conditional Access** > **Policies**.
 1. Search for and select **MFA Pilot**.
 1. Select **Delete** at the top of the pane.
 
 ### Delete the group
 
-1. Select **Identity** > **Groups**.
+1. Select **Entra ID** > **Groups**.
 1. From the **All groups** page, search for and select the **MFA-Test-Group** group.
 1. On the overview page, select **Delete**.
 

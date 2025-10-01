@@ -1,14 +1,13 @@
 ---
 title: Edit profile in a Node.js web app
 description: Learn how to edit profile with multifactor authentication protection in your external-facing Node.js web app
-manager: mwongerapz
+manager: dougeby
 author: kengaderdus
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/14/2025
-ms.custom: developer
+ms.custom: 
 #Customer intent: As a developer, I want to learn how to add edit profile to a Node.js web app so that customer users can update their profile after a successful sign-in to external-facing app.
 ---
 
@@ -23,7 +22,6 @@ In this how-to guide, you learn how to call Microsoft Graph API for profile edit
 ## Prerequisites
 
 - Complete the steps in the second part of this guide series, [Set up a Node.js web application for profile editing](how-to-web-app-node-edit-profile-prepare-app.md).
-
 
 ## Complete the client web app
 
@@ -331,8 +329,8 @@ In this section, you add the identity related code for the mid-tier app (EditPro
         
     - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
     - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
-    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](quickstart-web-app-node-sign-in-edit-profile.md#register-editprofileservice-app).
-    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](quickstart-web-app-node-sign-in-edit-profile.md#add-app-client-secret) value you copied earlier.
+    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](quickstart-web-app-node-sign-in-edit-profile.md).
+    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](quickstart-web-app-node-sign-in-edit-profile.md) value you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
     
 1. In your code editor, open *Api/fetch.js* file, then paste the code from *[Api/fetch.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/fetch.js)* file. The `fetch` function uses an access token and the resource endpoint to make the actual API call. 

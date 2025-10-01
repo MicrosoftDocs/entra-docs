@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 10/15/2024
 ms.author: justinha
 ms.reviewer: justinha
@@ -99,7 +99,7 @@ An enterprise agreement can be configured to support multiple tenants by setting
 
 It's important to note that the default configuration described above grants the Azure EA Account Owner privileges to manage the resources in any subscriptions they created. For subscriptions holding production workloads, consider decoupling billing and resource management by changing the service administrator of the subscription right after creation.
 
- To further decouple and prevent the account owner from regaining service administrator access to the subscription, the subscription's tenant can be [changed](~/fundamentals/how-subscriptions-associated-directory.yml) after creation. If the account owner doesn't have a user object in the Microsoft Entra tenant the subscription is moved to, they can't regain the service owner role.
+ To further decouple and prevent the account owner from regaining service administrator access to the subscription, the subscription's tenant can be [changed](~/fundamentals/how-subscriptions-associated-directory.md) after creation. If the account owner doesn't have a user object in the Microsoft Entra tenant the subscription is moved to, they can't regain the service owner role.
 
 To learn more, visit [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).  
 
@@ -164,6 +164,8 @@ Internally, managed identities are service principals of a special type, to only
 Microsoft Entra Domain Services provides a managed domain to facilitate authentication for Azure workloads using legacy protocols. Supported servers are moved from an on-premises AD DS forest and joined to a Microsoft Entra Domain Services managed domain and continue to use legacy protocols for authentication (for example, Kerberos authentication).
 
 ## Azure AD B2C directories and Azure
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 An Azure AD B2C tenant is linked to an Azure subscription for billing and communication purposes. Azure AD B2C tenants have a self-contained role structure in the directory, which is independent from the Azure RBAC privileged roles of the Azure subscription.
 

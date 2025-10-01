@@ -8,7 +8,7 @@ ms.date: 12/10/2024
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 

@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Sugar CRM
+title: Configure Sugar CRM for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sugar CRM.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sugar CRM so that I can control who has access to Sugar CRM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Sugar CRM
+# Configure Sugar CRM for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Sugar CRM with Microsoft Entra ID. When you integrate Sugar CRM with Microsoft Entra ID, you can:
 
@@ -25,6 +23,7 @@ In this article,  you learn how to integrate Sugar CRM with Microsoft Entra ID. 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Sugar CRM single sign-on (SSO) enabled subscription.
 
@@ -42,7 +41,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Sugar CRM into Microsoft Entra ID, you need to add Sugar CRM from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Sugar CRM** in the search box.
 1. Select **Sugar CRM** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -70,7 +69,7 @@ To configure and test Microsoft Entra SSO with Sugar CRM, perform the following 
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Sugar CRM** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Sugar CRM** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -148,7 +147,7 @@ In order to enable Microsoft Entra users to sign in to Sugar CRM, they must be p
 
     ![Screenshot shows the Administration section where you can select User Management.](./media/sugarcrm-tutorial/ic795893.png "Administration")
 
-1. Go to **Users \> Create New User**.
+1. Go to **Users** > **Create New User**.
 
     ![Create New User](./media/sugarcrm-tutorial/ic795894.png "Create New User")
 

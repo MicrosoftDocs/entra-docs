@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 09/30/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn about how to configure prepare your iOS/macOS app for native authentication using Microsoft Entra External ID.
 ---
 
@@ -21,7 +21,7 @@ ms.custom: developer
 
 This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS/macOS Swift app.
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

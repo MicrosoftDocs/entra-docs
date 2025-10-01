@@ -1,16 +1,15 @@
 ---
 title: Use My Staff to delegate user management
-description:  Delegate user management using My Staff and administrative units
-
-author: rolyon
-manager: femila
+description: Delegate user management using My Staff and administrative units
+author: barclayn
+manager: pmwongera
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.date: 02/12/2025
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: lenalepa
-ms.custom: oldportal;it-pro;
+ms.custom: oldportal;it-pro;, sfi-image-nochange
 ---
 # Manage your users with My Staff
 
@@ -31,7 +30,7 @@ To complete the steps in this article, you need the following resources and priv
   * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A Microsoft Entra tenant associated with your subscription.
 
-  * If needed, [create a Microsoft Entra tenant](~/fundamentals/sign-up-organization.md) or [associate an Azure subscription with your account](~/fundamentals/how-subscriptions-associated-directory.yml).
+  * If needed, [create a Microsoft Entra tenant](~/fundamentals/sign-up-organization.md) or [associate an Azure subscription with your account](~/fundamentals/how-subscriptions-associated-directory.md).
 * You need *Authentication Policy Administrator* privileges in your Microsoft Entra tenant to enable SMS-based authentication.
 * Each user who's enabled in the text message authentication method policy must be licensed, even if they don't use it. Each enabled user must have one of the following Microsoft Entra ID or Microsoft 365 licenses:
 
@@ -46,7 +45,7 @@ After configuring administrative units, you can apply this scope to your users w
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Users** > **User settings**.
+1. Browse to **Entra ID** > **Users** > **User settings**.
 
 1. Under **User feature**, select **Manage user feature settings**.
 

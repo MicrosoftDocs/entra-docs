@@ -3,13 +3,12 @@ title: SSH authentication with Microsoft Entra ID
 description: Get architectural guidance on achieving SSH integration with Microsoft Entra ID.
 author: janicericketts
 manager: martinco
-
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/10/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+ms.custom: sfi-image-nochange
 ---
 
 # SSH authentication with Microsoft Entra ID

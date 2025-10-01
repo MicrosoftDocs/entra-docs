@@ -4,9 +4,9 @@ description: Learn how to avoid page reloads when acquiring and renewing tokens 
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 05/29/2019
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to

@@ -1,7 +1,7 @@
 ---
 title: Configure an app's publisher domain
 description: Learn how to configure an app's publisher domain to let users know where their information is being sent.
-manager: CelesteDG
+manager: dougeby
 author: garrodonnell
 ms.author: godonnell
 ms.custom:
@@ -71,7 +71,7 @@ To set a publisher domain for your app by using the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top right and select the tenant where the app is registered from the **Directories + subscriptions** menu.
-1. In Microsoft Entra admin center browse to **Identity** > **Applications** > **App registrations**. 
+1. In Microsoft Entra admin center browse to **Entra ID** > **App registrations**. 
 1. Search for and select the app you want to configure.
 1. In **Overview**, in the resource menu under **Manage**, select **Branding**.
 1. In **Publisher domain**, select one of the following options:

@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra SSO integration with Alohi
+title: Configure Alohi for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Alohi.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alohi so that I can control who has access to Alohi, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Alohi
+# Configure Alohi for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Alohi with Microsoft Entra ID. When you integrate Alohi with Microsoft Entra ID, you can:
 
@@ -25,7 +25,9 @@ In this article,  you learn how to integrate Alohi with Microsoft Entra ID. When
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Alohi single sign-on (SSO) enabled subscription.
 
@@ -41,11 +43,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Alohi into Microsoft Entra ID, you need to add Alohi from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Alohi** in the search box.
 1. Select **Alohi** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 ## Configure and test Microsoft Entra SSO for Alohi
 
@@ -65,7 +67,7 @@ To configure and test Microsoft Entra SSO with Alohi, perform the following step
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Alohi** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Alohi** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

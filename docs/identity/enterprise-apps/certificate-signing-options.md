@@ -1,23 +1,20 @@
 ---
-title: Advanced certificate signing options in a SAML token
+title: Certificate signing options in a SAML token
 description: Learn how to use advanced certificate signing options in the SAML token for preintegrated apps in Microsoft Entra ID
-
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: concept-article
-ms.date: 07/19/2024
+ms.date: 07/10/2025
 ms.author: jomondi
 ms.reviewer: saumadan
-ms.custom: enterprise-apps
 ms.collection: M365-identity-device-management
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an administrator managing SAML-based single sign-on in Microsoft Entra ID, I want to change the certificate signing options and signing algorithm for an application, so that I can ensure the security and compatibility of the SAML tokens used for authentication.
 ---
 
-# Advanced certificate signing options in a SAML token
+# Certificate signing options in a SAML token
 
 Today Microsoft Entra ID supports thousands of preintegrated applications in the Microsoft Entra App Gallery. Over 500 of the applications support single sign-on by using the [Security Assertion Markup Language (SAML)](https://wikipedia.org/wiki/Security_Assertion_Markup_Language) 2.0 protocol, such as the [NetSuite](https://azuremarketplace.microsoft.com/marketplace/apps/aad.netsuite) application. When a customer authenticates to an application through Microsoft Entra ID by using SAML, Microsoft Entra ID sends a token to the application (via an HTTP POST). The application then validates and uses the token to sign in the customer instead of prompting for a username and password. These SAML tokens are signed with the unique certificate generated in Microsoft Entra ID and by specific standard algorithms.
 
@@ -56,7 +53,7 @@ To change an application's SAML certificate signing options and the certificate 
 To change an application's SAML certificate signing options and the certificate signing algorithm:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 
 Next, change the certificate signing options in the SAML token for that application:
@@ -64,13 +61,13 @@ Next, change the certificate signing options in the SAML token for that applicat
 1. In the left pane of the application overview page, select **Single sign-on**.
 1. If the **Set up Single Sign-On with SAML** page appears, go to step 5.
 1. If the **Set up Single Sign-On with SAML** page doesn't appear, select **Change single sign-on modes**.
-1. In the **Select a single sign-on method** page, select **SAML**. If **SAML** isn't available, the application doesn't support SAML, and you may ignore the rest of this procedure and article.
-1. In the **Set up Single Sign-On with SAML** page, find the **SAML Signing Certificate** heading and select the **Edit** icon (a pencil). The **SAML Signing Certificate** page appears.
+1. In the **Select a single sign-on method** page, select **SAML**. If **SAML** isn't available, the application doesn't support SAML, and you might ignore the rest of this procedure and article.
+1. In the **Set up Single Sign-On with SAML** page, find the **SAML Signing Certificate** heading, and select the **Edit** icon (a pencil). The **SAML Signing Certificate** page appears.
 1. In the **Signing Option** drop-down list, choose **Sign SAML response**, **Sign SAML assertion**, or **Sign SAML response and assertion**. Descriptions of these options appear earlier in this article in the [Certificate signing options](#certificate-signing-options).
 1. In the **Signing Algorithm** drop-down list, choose **SHA-1** or **SHA-256**. Descriptions of these options appear earlier in this article in the [Certificate signing algorithms](#certificate-signing-algorithms) section.
 1. If you're satisfied with your choices, select **Save** to apply the new SAML signing certificate settings. Otherwise, select the **X** to discard the changes.
 
-## Next steps
+## Related content
 
-- [Configure single sign-on to applications that are not in the Microsoft Entra App Gallery](~/identity-platform/single-sign-on-saml-protocol.md)
+- [Configure single sign-on to applications that aren't in the Microsoft Entra App Gallery](~/identity-platform/single-sign-on-saml-protocol.md)
 - [Troubleshoot SAML-based single sign-on](./debug-saml-sso-issues.md)

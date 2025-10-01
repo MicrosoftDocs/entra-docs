@@ -1,15 +1,15 @@
 ---
 title: API-driven inbound provisioning with PowerShell script
 description: Learn how to implement API-driven inbound provisioning with a PowerShell script.
-
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # API-driven inbound provisioning with PowerShell script
@@ -68,7 +68,7 @@ The PowerShell sample script published in the [Microsoft Entra inbound provision
 ## Download the PowerShell script
 
 1. Access the GitHub repository [`entra-id-inbound-provisioning`](https://github.com/AzureAD/entra-id-inbound-provisioning). 
-1. Use the **Code** -> **Clone**  or **Code** -> **Download ZIP** option to copy contents of this repository into your local folder. 
+1. Use the **Code** > **Clone**  or **Code** > **Download ZIP** option to copy contents of this repository into your local folder. 
 1. Navigate to the folder **PowerShell/CSV2SCIM**. It has the following directory structure:
    - src
      - CSV2SCIM.ps1 (main script)
@@ -185,7 +185,7 @@ To illustrate the procedure, let's use the CSV file `Samples/csv-with-2-records.
     $ClientCertificate = New-SelfSignedCertificate -Subject 'CN=CSV2SCIM' -KeyExportPolicy 'NonExportable' -CertStoreLocation Cert:\CurrentUser\My
     $ThumbPrint = $ClientCertificate.ThumbPrint
     ```
-    The generated certificate is stored **Current User\Personal\Certificates**. You can view it using the **Control Panel** -> **Manage user certificates** option. 
+    The generated certificate is stored **Current User\Personal\Certificates**. You can view it using the **Control Panel** > **Manage user certificates** option. 
 1. To associate this certificate with a valid service principal, log in to your Microsoft Entra admin center as Application Administrator.
 1. Open [the service principal you configured](inbound-provisioning-api-grant-access.md#configure-a-service-principal) under **App Registrations**.
 1. Copy the **Object ID** from the **Overview** blade. Use the value to replace the string `<AppObjectId>`. Copy the **Application (client) Id**. We will use it later and it is referenced as `<AppClientId>`.
@@ -338,17 +338,17 @@ It doesn't refer to the attribute mappings that you perform in the Microsoft Ent
 
 | Parameter |    Description | Processing remarks |
 |----------|----------------|--------------------|
-| Path | The full or relative path to the CSV file. For example: `.\Samples\csv-with-1000-records.csv`    | Mandatory: Yes |
-|ScimSchemaNamespace | The custom SCIM Schema namespace to use to send all columns in the CSV file as custom SCIM attributes belonging to specific namespace. For example, `urn:ietf:params:scim:schemas:extension:csv:1.0:User` | Mandatory: Only when you want to:</br>- Update the provisioning app schema or </br>When you want to include custom SCIM attributes in the payload. |
-| AttributeMapping | Points to a PowerShell Data (.psd1 extension) file that maps columns in the CSV file to SCIM Core User and Enterprise User attributes. </br>See example: [AttributeMapping.psd file for CSV2SCIM script]().</br> For example: ```powershell $AttributeMapping = Import-PowerShellDataFile '.\Samples\AttributeMapping.psd1'`-AttributeMapping $AttributeMapping``` | Mandatory: Yes </br> The only scenario when you don't need to specify this is when using the `UpdateSchema` switch.|
-| ValidateAttributeMapping |Use this Switch flag to validate that the AttributeMapping file contains attributes that comply with the SCIM Core and Enterprise user schema. | Mandatory: No</br>  Recommend using it to ensure compliance. |
-| ServicePrincipalId |The GUID value of your provisioning app's service principal ID that you can retrieve from the **Provisioning App** > **Properties** > **Object ID**| Mandatory: Only when you want to: </br>- Update the provisioning app schema, or</br>- Send the generated bulk request to the API endpoint. |
-| UpdateSchema |Use this switch to instruct the script to read the CSV columns and add them as custom SCIM attributes in your provisioning app schema.|    
-| ClientId |The Client ID of a Microsoft Entra registered app to use for OAuth authentication flow. This app must have valid certificate credentials. | Mandatory: Only when performing certificate-based authentication. |
-| ClientCertificate |The Client Authentication Certificate to use during OAuth flow. | Mandatory: Only when performing certificate-based authentication.|
-| GetPreviousCycleLogs |To get the provisioning logs of the latest sync cycles. |    
-| NumberOfCycles | To specify how many sync cycles should be retrieved. This value is 1 by default.|
-| RestartService | With this option, the script temporarily pauses the provisioning job before uploading the data, it uploads the data and then starts the job again to ensure immediate processing of the payload. | Use this option only during testing. |     
+| Path | The full or relative path to the CSV file. For example: `.\Samples\csv-with-1000-records.csv` | Mandatory: Yes |
+| ScimSchemaNamespace | The custom SCIM Schema namespace to use to send all columns in the CSV file as custom SCIM attributes belonging to specific namespace. For example, `urn:ietf:params:scim:schemas:extension:csv:1.0:User` | Mandatory: Only when you want to:</br>- Update the provisioning app schema or </br>When you want to include custom SCIM attributes in the payload. |
+| AttributeMapping | Points to a PowerShell Data (.psd1 extension) file that maps columns in the CSV file to SCIM Core User and Enterprise User attributes. </br>See example: [AttributeMapping.psd file for CSV2SCIM script]().</br> For example: ```powershell $AttributeMapping = Import-PowerShellDataFile '.\Samples\AttributeMapping.psd1'`-AttributeMapping $AttributeMapping``` | Mandatory: Yes </br> The only scenario when you don't need to specify this is when using the `UpdateSchema` switch. |
+| ValidateAttributeMapping | Use this Switch flag to validate that the AttributeMapping file contains attributes that comply with the SCIM Core and Enterprise user schema. | Mandatory: No</br>  Recommend using it to ensure compliance. |
+| ServicePrincipalId | The GUID value of your provisioning app's service principal ID that you can retrieve from the **Provisioning App** > **Properties** > **Object ID** | Mandatory: Only when you want to: </br>- Update the provisioning app schema, or</br>- Send the generated bulk request to the API endpoint. |
+| UpdateSchema | Use this switch to instruct the script to read the CSV columns and add them as custom SCIM attributes in your provisioning app schema. | |
+| ClientId | The Client ID of a Microsoft Entra registered app to use for OAuth authentication flow. This app must have valid certificate credentials. | Mandatory: Only when performing certificate-based authentication. |
+| ClientCertificate | The Client Authentication Certificate to use during OAuth flow. | Mandatory: Only when performing certificate-based authentication. |
+| GetPreviousCycleLogs | To get the provisioning logs of the latest sync cycles. | |
+| NumberOfCycles | To specify how many sync cycles should be retrieved. This value is 1 by default. | |
+| RestartService | With this option, the script temporarily pauses the provisioning job before uploading the data, it uploads the data and then starts the job again to ensure immediate processing of the payload. | Use this option only during testing. |
 
 ### AttributeMapping.psd file
 

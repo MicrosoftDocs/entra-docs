@@ -3,11 +3,11 @@ title: Configure group settings using PowerShell
 description: How to manage the settings for groups using Microsoft Entra cmdlets
 
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 12/12/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -183,7 +183,7 @@ Here are the settings defined in the `Group.Unified SettingsTemplate`. Unless ot
 | **GuestUsageGuidelinesUrl**<br>Type: `String`<br>Default: `""` | The URL of a link to the guest usage guidelines. |
 | **AllowToAddGuests**<br>Type: `Boolean`<br>Default: `True` | A boolean indicating whether or not it is allowed to add guests to this directory. <br>This setting may be overridden and become read-only if `EnableMIPLabels` is set to *True* and a guest policy is associated with the sensitivity label assigned to the group.<br>If the `AllowToAddGuests` setting is set to False at the organization level, any `AllowToAddGuests` setting at the group level is ignored. If you want to enable guest access for only a few groups, you must set `AllowToAddGuests` to be true at the organization level, and then selectively disable it for specific groups. |
 | **ClassificationList**<br>Type: `String`<br>Default: `""` | A comma-delimited list of valid classification values that can be applied to Microsoft 365 groups. <br>This setting doesn't apply when EnableMIPLabels == True. |
-| **EnableMIPLabels**<br>Type: `Boolean`<br>Default: `False` | The flag indicating whether sensitivity labels published in Microsoft Purview compliance portal can be applied to Microsoft 365 groups. For more information, see [Assign Sensitivity Labels for Microsoft 365 groups](groups-assign-sensitivity-labels.md). |
+| **EnableMIPLabels**<br>Type: `Boolean`<br>Default: `False` | The flag indicating whether sensitivity labels published in Microsoft Purview portal can be applied to Microsoft 365 groups. For more information, see [Assign Sensitivity Labels for Microsoft 365 groups](groups-assign-sensitivity-labels.md). |
 | **NewUnifiedGroupWritebackDefault**<br>Type: `Boolean`<br>Default: `True` | The flag that allows an admin to create new Microsoft 365 groups without setting the groupWritebackConfiguration resource type in the request payload. This setting is applicable when group writeback is configured in Microsoft Entra Connect. `NewUnifiedGroupWritebackDefault` is a global Microsoft 365 group setting. Default value is true. Updating the setting value to false changes the default writeback behavior for newly created Microsoft 365 groups, and doesn't change the **isEnabled** property value for existing Microsoft 365 groups. Group admin needs to explicitly update the group isEnabled property value to change the writeback state for existing Microsoft 365 groups. |
 
 ## Example: Configure Guest policy for groups at the directory level

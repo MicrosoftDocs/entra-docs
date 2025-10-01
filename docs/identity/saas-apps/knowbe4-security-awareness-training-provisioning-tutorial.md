@@ -3,8 +3,8 @@ title: Configure KnowBe4 Security Awareness Training for automatic user provisio
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to KnowBe4 Security Awareness Training.
 
 
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -12,12 +12,12 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to KnowBe4 Security Awareness Training so that I can streamline the user management process and ensure that users have the appropriate access to KnowBe4 Security Awareness Training.
 ---
 
-# Configure KnowBe4 Security Awareness Training for automatic user provisioning
+# Configure KnowBe4 Security Awareness Training for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both KnowBe4 Security Awareness Training and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [KnowBe4 Security Awareness Training](https://www.knowbe4.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -99,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for KnowBe4 Security Awareness Training in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -129,6 +129,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to KnowBe4 Security Awareness Training in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in KnowBe4 Security Awareness Training for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the KnowBe4 Security Awareness Training API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
+>[!NOTE]
+>Attribute list editing is now enabled, allowing the set of target attributes to be modified so that customers can create new KnowBe4 target attributes as needed.
+
    |Attribute|Type|Supported for filtering|Required by KnowBe4 Security Awareness Training|
    |---|---|---|---|
    |userName|String|&check;|&check;
@@ -139,6 +142,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String||
    |externalId|String||
    |displayName|String||
+   |addresses[type eq "work"].formatted|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
+   |userType|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
@@ -149,6 +156,18 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:customField2|String||
    |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:customField3|String||
    |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:customField4|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:outOfOfficeEnd|DateTime||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:phishingLanguage|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:trainingLanguage|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:userRole|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:hostname|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:companyName|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:country|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:mailNickName|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:onPremisesSamAccountName|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:onPremisesSecurityIdentifier|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:userPrincipalName|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:lastPasswordChangeDateTime|DateTime||
 |
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to KnowBe4 Security Awareness Training**.

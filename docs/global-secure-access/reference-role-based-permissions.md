@@ -1,35 +1,32 @@
 ---
-title: Microsoft Global Secure Access built-in roles 
+title: Microsoft Global Secure Access built-in roles
 description: Learn about the built-in administrator roles you can assign to manage Global Secure Access permissions.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: reference
-ms.date: 03/05/2025
-
+ms.date: 08/13/2025
+ai-usage: ai-assisted
 ms.service: global-secure-access
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Global Secure Access built-in roles
 
-Global Secure Access (GSA) uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, Microsoft Entra ID requires specific administrator roles for accessing Global Secure Access.
+Global Secure Access uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, Microsoft Entra ID requires specific administrator roles for accessing Global Secure Access.
 
 This article details the built-in Microsoft Entra roles you can assign for managing Global Secure Access.
 
-### Global Administrator 
-
-**Full access**: This role grants administrators full permissions within Global Secure Access. They can manage policies, configure settings, and view logs; including Conditional Access scenarios, configurations for Private Access, write operations on application segments, and management of user assignments for traffic profiles.
-
 > [!IMPORTANT]
-> It's highly recommended to use a least privilege approach for security reasons. The Global Administrator role is only required to configure enriched Microsoft 365 logs as outlined in the table. For all other scenarios, use the least privileged role required to administer the service. To learn more about least privileged, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
+> It's highly recommended to use the least privileged role required to administer the service. To learn more about least privileged, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
 
 ### Security Administrator 
 
-**Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, security admins can't configure Private Access or enable enriched Microsoft 365 logs.
+**Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, security admins can't configure Private Access.
 
 ### Global Secure Access Administrator
 
-**Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, Global Secure Access admins can't configure Private Access, create or manage Conditional Access policies, manage user and group assignments, or configure enriched Microsoft 365 logs.
+**Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, Global Secure Access admins can't configure Private Access, create or manage Conditional Access policies, or manage user and group assignments.
 
 > [!NOTE]
 > To perform additional Microsoft Entra tasks, such as editing Conditional Access policies, you need to be both a Global Secure Access Administrator and have at least one other administrator role assigned to you. Consult the Role-based permissions table above.
@@ -44,7 +41,7 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 
 ### Global Secure Access Log Reader
 
-**Read-only access**: This role is primarily intended for security and network personnel who need read-only visibility into traffic logs and related insights to effectively monitor and analyze network activity without the ability to make changes to the environment. Users with this role can view detailed GSA traffic logs, including session, connection, and transaction data, as well as access and review alerts and reports in the GSA portal.
+**Read-only access**: This role is primarily intended for security and network personnel who need read-only visibility into traffic logs and related insights to effectively monitor and analyze network activity without the ability to make changes to the environment. Users with this role can view detailed Global Secure Access traffic logs, including session, connection, and transaction data, as well as access and review alerts and reports in the Global Secure Access area of the Microsoft Entra admin center.
 
 ### Security Reader and Global Reader
 
@@ -55,7 +52,7 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 The following Microsoft Entra ID admin roles have access to Global Secure Access:
 
 
-| Permissions | [Global Admin](#global-administrator) | [Security Admin](#security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) | [GSA Log Reader](#global-secure-access-log-reader)
+| Permissions | Global Admin | [Security Admin](#security-administrator) | [Global Secure Access Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) | [Global Secure Access Log Reader](#global-secure-access-log-reader)
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Configure Private Access (Quick Access, private network connectors, application segments, and enterprise apps) | ✅ |  |  |  | ✅ |  |  |
 | Create and interact with Conditional Access policies | ✅ | ✅ |  | ✅ |  |  |  |
@@ -66,7 +63,6 @@ The following Microsoft Entra ID admin roles have access to Global Secure Access
 | View traffic logs and alerts | ✅ | ✅ | ✅ |  |  |  |  | ✅ |
 | View all other logs and dashboards | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 | Configure universal tenant restrictions and Global Secure Access signaling for Conditional Access | ✅ | ✅ | ✅ |  |  |  |  |
-| Configure enriched Microsoft 365 logs | ✅ |  |  |  |  |  |  |
 | Read-only access to product settings | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 
 ## Next steps

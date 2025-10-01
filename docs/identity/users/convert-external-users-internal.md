@@ -3,13 +3,13 @@ title: Convert external users to internal users (Preview)
 description: You can convert users from external to internal without the need to recreate them.
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.date: 01/06/2025
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
 ms.workload: identity
-ms.custom: 
+ms.custom: sfi-image-nochange
 ms.reviewer: yuank
 ---
 
@@ -68,7 +68,7 @@ You can convert external users, such as cloud-only and synced users, to internal
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 
 1. Select an external user.
 1. Select **Convert to internal user**.

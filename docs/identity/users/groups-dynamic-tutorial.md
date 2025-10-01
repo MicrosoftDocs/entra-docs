@@ -1,17 +1,16 @@
 ---
 title: Add users to a dynamic group
 description: Use groups with user membership rules to add or remove users automatically
-
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: tutorial
 ms.date: 01/31/2025
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, I want to automatically add or remove users, so I don't have to manually do it."
 ---
 
@@ -73,7 +72,7 @@ First, you create a group for your guest users who all are from a single partner
 
 Now that you have your new group, you can apply the licenses that these partner users need.
 
-1. In the Microsoft Entra admin center browse to **Identity** > **Billing** > **Licenses** > **All products**, select one or more licenses, and then select **Licensed groups**.
+1. In the Microsoft Entra admin center browse to **Billing** > **Licenses** > **All products**, select one or more licenses, and then select **Licensed groups**.
 
    :::image type="content" source="./media/groups-dynamic-tutorial/add-licensed-group.png" alt-text="Screenshot of Assign licenses to a new group.":::
 
@@ -97,7 +96,7 @@ Perhaps your ultimate administrative plan is to assign all of your guest users t
 
 ### To restore the All Users group
 
-1. Select **Identity** > **Groups** > **All groups**. Select the name of the **All users** group to open the group.
+1. Select **Entra ID** > **Groups** > **All groups**. Select the name of the **All users** group to open the group.
 1. Select **Dynamic membership rules**, clear all the text in the rule, and select **Save**.
 
 ## Next steps

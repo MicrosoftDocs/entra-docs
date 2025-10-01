@@ -2,7 +2,7 @@
 title: 'Tutorial: Add add sign-in in your Node/Express.js web app by using Microsoft identity platform'
 description: Learn how to add sign-in in your Node.js web app with an external tenant or workforce tenant by using Microsoft identity platform. 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: tutorial
@@ -18,7 +18,7 @@ In this tutorial, you add sign-in and sign-out logic to your Node/Express web ap
 
 This tutorial is part 2 of the 3-part tutorial series.
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

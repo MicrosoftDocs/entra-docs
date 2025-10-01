@@ -3,8 +3,8 @@ title: Configure BullseyeTDP for automatic user provisioning with Microsoft Entr
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to BullseyeTDP.
 
 
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -12,12 +12,12 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BullseyeTDP so that I can streamline the user management process and ensure that users have the appropriate access to BullseyeTDP.
 ---
 
-# Configure BullseyeTDP for automatic user provisioning
+# Configure BullseyeTDP for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both BullseyeTDP and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [BullseyeTDP](https://www.bullseyeengagement.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -67,7 +67,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for BullseyeTDP in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -99,21 +99,21 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by BullseyeTDP|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |externalId|String|&check;|&check;
-   |userType|String||&check;
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference||
-   |active|Boolean||
-   |title|String||&check;
-   |emails[type eq "work"].value|String||&check;  
-   |name.givenName|String||&check; 
-   |name.familyName|String||&check; 
-   |addresses[type eq "work"].locality|String||&check;
-   |phoneNumbers[type eq "work"].value|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;  
+   |userName|String|&check;|&check;|
+   |externalId|String|&check;|&check;|
+   |userType|String||&check;|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference|||
+   |active|Boolean|||
+   |title|String||&check;|
+   |emails[type eq "work"].value|String||&check;|
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |addresses[type eq "work"].locality|String||&check;|
+   |phoneNumbers[type eq "work"].value|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for BullseyeTDP, change the **Provisioning Status** to **On** in the **Settings** section.
 

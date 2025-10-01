@@ -2,12 +2,12 @@
 title: Create a Node.js web app that calls a web API
 description: Learn how to prepare your Node.js client web app to call a protected API using access tokens from Microsoft Entra External ID.
 author: kengaderdus
-manager: mwongerapz
+manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025
-ms.custom: developer, devx-track-js
+ms.custom:
 #Customer intent: As a developer, I want to learn about how to start building my Node.js web app so that I can call a web API 
 ---
 

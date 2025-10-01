@@ -6,10 +6,10 @@ manager: martinco
 
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 2/8/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Microsoft Entra integrations with authentication protocols

@@ -2,13 +2,13 @@
 title: 'Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync'
 description: This article describes how to migrate groups that were initially set up for Group Writeback by using Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/17/2024
+ms.date: 09/29/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -31,9 +31,11 @@ Mail-enabled groups and distribution lists written back to Active Directory cont
  - An on-premises Active Directory account with at least domain administrator permissions.
      
    Required to access the `adminDescription` attribute and copy it to the `msDS-ExternalDirectoryObjectId` attribute.
- - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later.
+
+ - On-premises Active Directory Domain Services environment that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016.
      
    Required for the Active Directory Schema attribute `msDS-ExternalDirectoryObjectId`.
+
  - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#) or later.
  - The provisioning agent must be able to communicate with the domain controllers on ports TCP/389 (LDAP) and TCP/3268 (global catalog).
      

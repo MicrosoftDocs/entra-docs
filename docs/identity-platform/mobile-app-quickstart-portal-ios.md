@@ -5,9 +5,9 @@ ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, "languages:iOS", mode-api
+ms.custom:
 ms.date: 02/15/2022
-ms.reviewer: jmprieur, saeeda
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article

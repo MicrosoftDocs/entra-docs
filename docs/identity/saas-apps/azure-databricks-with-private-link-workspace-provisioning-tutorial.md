@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
+title: Configure Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
 description: This article describes how to use the Microsoft Entra provisioning service to provision users into Azure Databricks with Private Link Workspace.
 author: billmath
 manager: femila
@@ -14,11 +14,11 @@ ms.reviewer: owinoakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Azure Databricks with Private Link Workspace so that I can streamline the user management process and ensure that users have the appropriate access to Azure Databricks with Private Link Workspace.
 ---
 
-# Microsoft Entra Application Provisioning to Azure Databricks with Private Link Workspace
+# Configure Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
 
 The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010) client that can be used to automatically provision users into cloud or on-premises applications. This article outlines how you can use the Microsoft Entra provisioning service to provision users into Azure Databricks workspaces with no public access.
 
-[ ![Diagram that shows SCIM architecture.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png#lightbox)
+[![Diagram that shows SCIM architecture.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png#lightbox)
 
 ## Prerequisites
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)] with Microsoft Entra ID Governance and Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/microsoft-entra-pricing).
@@ -33,7 +33,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
+1. Browse to **Entra ID** > **Entra Connect** > **Cloud sync**.
 
    [![Screenshot of new UX screen.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-entra-connect-new-ux.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-entra-connect-new-ux.png#lightbox)
 
@@ -53,7 +53,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 Once the agent is installed, no further configuration is necessary on-premises, and all provisioning configurations are then managed. 
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Add the **On-premises SCIM app** from the [gallery](~/identity/enterprise-apps/add-application-portal.md).
 1. From the left hand menu, navigate to the **Provisioning** option and select **Get started**.
 1. Select **Automatic** from the dropdown list and expand the **On-Premises Connectivity** option.

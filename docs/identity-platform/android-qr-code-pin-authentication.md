@@ -8,7 +8,7 @@ ms.service: msal
 ms.subservice: msal-android
 ms.topic: concept-article
 ms.date: 02/05/2025
-ms.reviewer: amgusain, akgoel, dmwendia
+ms.reviewer: akgoel
 
 #Customer intent: As a developer, I want to learn how to configure your Android app to have optimized QR code authentication experience using the Microsoft Authentication Library for Android 
 ---
@@ -68,6 +68,23 @@ mpca.getPreferredAuthConfiguration()
 ```
 
 The `getPreferredAuthConfiguration` method requires the Microsoft Authenticator app to be installed on the device. If the Microsoft Authenticator app isn't installed, the method returns `None`.
+
+## Suppress camera consent prompt
+
+By default, QR code and PIN authentication prompts users for camera permission every time they need to use the camera to scan a QR code. However, administrators can suppress this behavior and skip requesting camera permission.
+
+![Screenshot showing Android QR code and PIN authentication prompt.](media/common/android-qr-pin-prompt.png)
+
+This is configured by the Authentication Policy Administrator through an [app configuration policy for managed Android Enterprise devices](/mem/intune/apps/app-configuration-policies-use-android) on the Microsoft Authenticator App, setting `sdm_suppress_camera_consent` equal to `true`, similar to how the `preferred_auth_method` is configured.
+
+When this setting is enabled:
+
+- The app won't show the camera consent prompt if camera permissions are already granted at the OS level.
+- Users will have a smoother authentication experience without repeated permission requests.
+- The QR code scanning flow will be more streamlined for managed devices.
+
+This configuration is useful in enterprise environments where devices are managed and camera permissions can be preconfigured by IT administrators.
+
 
 ## Related content
 

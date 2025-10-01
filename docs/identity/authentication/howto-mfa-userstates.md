@@ -1,20 +1,15 @@
 ---
 title: Enable per-user multifactor authentication
 description: Learn how to enable per-user Microsoft Entra multifactor authentication by changing the user state
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
-
+ms.date: 07/13/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: lvandenende
-
-
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 # Enable per-user Microsoft Entra multifactor authentication to secure sign-in events
 
@@ -57,6 +52,7 @@ The per-user MFA administration experience in the Microsoft Entra admin center i
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
+1. Click **Per-user MFA**.
 1. Select a user account, and select **User MFA settings**.
 1. After you make any changes, select **Save**.
 
@@ -74,6 +70,7 @@ To change the per-user Microsoft Entra multifactor authentication state for a us
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
+1. Click **Per-user MFA**.
 1. Select a user account, and select **Enable MFA**. 
    :::image type="content" border="true" source="./media/howto-mfa-userstates/new-enable.png" alt-text="Screenshot that shows how to enable a user for Microsoft Entra multifactor authentication.":::
 

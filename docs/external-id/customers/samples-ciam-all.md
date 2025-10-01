@@ -1,14 +1,14 @@
 ---
 title: Samples and guides for integrating apps with External ID
 description: Learn how to build and integrate apps with external tenants with scenarios such as sign-up, sign in, and getting an access token to call an API.
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: sample
 ms.date: 03/11/2025
-ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
 ---
@@ -63,7 +63,7 @@ These samples and how-to guides demonstrate how to write a desktop application t
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- | 
 > | JavaScript, Electron | &#8226; [Sign in users](/entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=node-js-external) | ---   |
-> | ASP.NET (MAUI) | &#8226; [Sign in users](/entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=wpfdotnet-maui-external) |&#8226; [Sign in users](tutorial-desktop-app-maui-sign-in-prepare-tenant.md)|
+> | ASP.NET (MAUI) | &#8226; [Sign in users](/entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=wpfdotnet-maui-external) |&#8226; [Sign in users](/entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)|
 > | .NET (MAUI) WPF | &#8226; [Sign in users](/entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=wpfdotnet-wpf-external) | ---   |
 
 ### Mobile: Browser delegated authentication
@@ -105,7 +105,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> | Node.js | &#8226; [Call an API](/entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=node-external) |  &#8226; [Call an API](tutorial-daemon-node-call-api-prepare-tenant.md)  |
+> | Node.js | &#8226; [Call an API](/entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=node-external) |  &#8226; [Call an API](/entra/identity-platform/tutorial-daemon-node-call-api-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=asp-dot-net-core-external)  |
 > | .NET |  &#8226; [Call an API](/entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=asp-dot-net-core-external)  |  &#8226; [Call an API](/entra/identity-platform/tutorial-dotnet-daemon-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)  |
 
 
@@ -139,7 +139,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | Desktop | &#8226; [Sign in users](/entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=wpfdotnet-maui-external) |&#8226; [Sign in users](tutorial-desktop-app-maui-sign-in-prepare-tenant.md)  |
+> | Desktop | &#8226; [Sign in users](/entra/identity-platform/quickstart-desktop-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=wpfdotnet-maui-external) |&#8226; [Sign in users](/entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)  |
 > | Mobile: Browser delegated authentication |  &#8226; [Sign in users](/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=android-netmaui-external) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)   |
 
 ### Python, Django
@@ -191,7 +191,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | Daemon | &#8226; [Call an API](/entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=node-external) |  &#8226; [Call an API](tutorial-daemon-node-call-api-prepare-tenant.md) |
+> | Daemon | &#8226; [Call an API](/entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=node-external) |  &#8226; [Call an API](/entra/identity-platform/tutorial-daemon-node-call-api-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=asp-dot-net-core-external) |
 
 
 ### JavaScript, Node.js (Express)

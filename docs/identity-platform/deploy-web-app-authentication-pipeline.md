@@ -1,9 +1,9 @@
 ---
 title: Deploy a web app with App Service auth in a pipeline
 description: Describes how to set up a pipeline in Azure Pipelines to build and deploy a web app to Azure and enable the Azure App Service built-in authentication. The article provides step-by-step instructions on how to configure Azure resources, build and deploy a web application, create a Microsoft Entra app registration, and configure App Service built-in authentication using Azure Pipelines.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom: 
 ms.date: 07/17/2023
 ms.reviewer:
@@ -39,7 +39,7 @@ Create a sample app and push it to your GitHub repo.
 
 ### Create and clone a repo in GitHub
 
-[Create a new repo](https://docs.github.com/en/get-started/quickstart/create-a-repo?tool=webui) in GitHub, specify a name like "PipelinesTest".  Set it to **Private** and add a *.gitignore* file with `.getignore template: VisualStudio`.
+[Create a new repo](https://docs.github.com/en/get-started/quickstart/create-a-repo?tool=webui) in GitHub, specify a name like "PipelinesTest".  Set it to **Private** and add a *.gitignore* file with `.gitignore template: VisualStudio`.
 
 Open a terminal window and change the current working directory to the location where you want the cloned directory:
 
@@ -143,7 +143,7 @@ Add a [service connection](/azure/devops/pipelines/library/service-endpoints) so
 An application is also created in your Microsoft Entra tenant that provides an identity for the pipeline.  You need the display name of the app registration in later steps.  To find the display name:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
+1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. Find the display name of the app registration, which is of the form `{organization}-{project}-{guid}`.
 
 Grant the service connection permission to access the pipeline:
@@ -195,7 +195,7 @@ Next, add a stage to the pipeline that deploys Azure resources.  The pipeline us
 The inline script runs in the context of the pipeline, assign the [Application.Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role to the app so the script can create app registrations:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 1. Select **Application Administrator** from the list of built-in roles and then **Add assignment**.
 1. Search for the pipeline app registration by display name.
 1. Select the app registration from the list and select **Add**.
@@ -286,7 +286,7 @@ Choose this option if you don't need your DevOps project for future reference. T
 
 ### Delete app registrations in Microsoft Entra ID
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com/), select **Identity** > **Applications** > **App registrations** > **All applications**.
+In the [Microsoft Entra admin center](https://entra.microsoft.com/), select **Entra ID** > **App registrations** > **All applications**.
 
 Select the application for the pipeline, the display name has the form `{organization}-{project}-{guid}`, and delete it.
 

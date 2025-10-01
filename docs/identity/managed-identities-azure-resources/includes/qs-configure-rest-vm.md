@@ -1,6 +1,6 @@
 ---
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 04/24/2024
 ms.topic: include
 ---
@@ -488,7 +488,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 
    |Request header  |Description  |
    |---------|---------|
-   |*Authorization*     | Required. Set to a valid `Bearer` access token.
+   |*Authorization*     | Required. Set to a valid `Bearer` access token.|
 
     If you have any user or system-assigned managed identities assigned to the VM as identified in the `identity` value in the response, skip to step 5 that shows you how to retain the system-assigned managed identity while adding a user-assigned managed identity on your VM.
 
@@ -658,7 +658,7 @@ To remove a user-assigned identity to a VM, your account needs the [Virtual Mach
    |Request header  |Description  |
    |---------|---------|
    |*Content-Type*     | Required. Set to `application/json`.        |
-   |*Authorization*     | Required. Set to a valid `Bearer` access token.
+   |*Authorization*     | Required. Set to a valid `Bearer` access token.|
  
    If you have managed identities assigned to the VM, they are listed in the response in the `identity` value.
 

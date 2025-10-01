@@ -1,17 +1,14 @@
 ---
 title: Migrate applications from Okta to Microsoft Entra ID
 description: Discover the process of migrating applications from Okta to Microsoft Entra ID, covering SAML, OpenID Connect, and OAuth 2.0 configurations.
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
-
 ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: gasinh
 ms.subservice: enterprise-apps
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using Okta for application management, I want to migrate my applications to Microsoft Entra ID, so that I can centralize application access and management in one platform.
 ---
 
@@ -92,7 +89,7 @@ We recommend you copy and convert this JSON list to a CSV format:
 To migrate a SAML 2.0 application to Microsoft Entra ID, configure the application in your Microsoft Entra tenant for application access. In this example, we convert a Salesforce instance. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**, then select **New application**.
 
 3. In **Microsoft Entra Gallery**, search for **Salesforce**, select the application, and then select **Create**.
 
@@ -164,7 +161,7 @@ To migrate an OpenID Connect (OIDC) or OAuth 2.0 application to Microsoft Entra 
 To complete the migration, repeat configuration for all applications in the Okta tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 2. Select **New application**.
 3. Select **Create your own application**. 
 4. On the menu that appears, name the OIDC app and then select **Register an application you're working on to integrate with Microsoft Entra ID**. 

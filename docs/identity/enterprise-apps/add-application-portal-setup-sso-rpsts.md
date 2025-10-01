@@ -3,7 +3,7 @@ title: Enable single sign-on for an enterprise application with a relying party 
 description: Enable single sign-on for an enterprise application that has a relying party security token service in Microsoft Entra ID.
 
 author: markwahl-msft
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -31,7 +31,7 @@ To configure SSO, you need:
 
 - A relying party STS, such as Active Directory Federation Services (AD FS) or PingFederate, with HTTPS endpoints
    1. You'll need the entity identifier (entity ID) of the relying party STS. This must be unique across all relying party STS and applications configured in a Microsoft Entra tenant. There cannot be two applications in a single Microsoft Entra tenant with the same entity identifier. For example, if Active Directory Federation Services (AD FS) is the relying party STS, then the identifier may be a URL of the form `http://{hostname.domain}/adfs/services/trust`.
-   1. You'l also need the assertion consumer service URL, or reply URL, of the relying party STS. This URL must be a `HTTPS` URL to securely transfer SAML tokens from Microsoft Entra to the relying party STS as part of single sign-on to an application. For example, if AD FS is the relying party STS, then the URL may be of the form `https://{hostname.domain}/adfs/ls/`.
+   1. You'll also need the assertion consumer service URL, or reply URL, of the relying party STS. This URL must be a `HTTPS` URL to securely transfer SAML tokens from Microsoft Entra to the relying party STS as part of single sign-on to an application. For example, if AD FS is the relying party STS, then the URL may be of the form `https://{hostname.domain}/adfs/ls/`.
 - An application, which has already been integrated with that relying party STS
 - One of the following roles in Microsoft Entra: Cloud Application Administrator, Application Administrator
 - A test user in Microsoft Entra who can sign into the application
@@ -44,7 +44,7 @@ To configure SSO, you need:
 First, create an enterprise application in Microsoft Entra, which enables Microsoft Entra to generate SAML tokens for the relying party STS to provide to the application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. If you have already configured an application representing the relying party STS, then enter the name of the existing application in the search box, select the application from the search results, and continue at the next section.
 1. Select **New application**.
 1. Select **Create your own application**.

@@ -1,16 +1,15 @@
 ---
 title: Username lookup during sign-in
 description: How on-screen messaging reflects username lookup during sign-in in Microsoft Entra ID
-
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
-ms.topic: conceptual
+ms.topic: article
 ms.date: 12/17/2024
 ms.author: barclayn
 ms.reviewer: kexia
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ---
 
 # Home realm discovery for Microsoft Entra sign-in pages
@@ -49,4 +48,4 @@ If you have concerns with the new behavior, leave your remarks in the **Feedback
 
 ## Next steps
 
-[Customize your sign-in branding](~/fundamentals/add-custom-domain.yml)
+[Customize your sign-in branding](~/fundamentals/add-custom-domain.md)

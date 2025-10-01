@@ -1,20 +1,18 @@
 ---
 title: Configure Zscaler One for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler One.
-
-author: thomasakelo
-manager: CelesteDG
+author: jeevansd
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: thomasakelo
-
+ms.date: 05/20/2025
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler One so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler One.
 ---
 
-# Configure Zscaler One for automatic user provisioning
+# Configure Zscaler One for automatic user provisioning with Microsoft Entra ID
 
 This article demonstrates the steps to perform in Zscaler One and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users and groups to Zscaler One.
 
@@ -40,7 +38,7 @@ Before you configure Zscaler One for automatic user provisioning with Microsoft 
 To add Zscaler One from the Marketplace, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Zscaler One** and select **Zscaler One** from the result panel. To add the application, select **Add**.
 
 	![Screenshot of Zscaler One in the results list.](common/search-new-app.png)
@@ -72,7 +70,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### Configure automatic user provisioning for Zscaler One in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler One**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler One**.
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 

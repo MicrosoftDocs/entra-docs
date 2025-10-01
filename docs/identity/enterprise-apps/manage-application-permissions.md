@@ -3,7 +3,7 @@ title: Review permissions granted to enterprise applications
 description: Learn how to review and revoke permissions, and invalidate refresh tokens for an application in Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
@@ -46,7 +46,7 @@ For information on how to restore revoked or deleted permissions, see [Restore p
 To review an application's permissions granted for the entire organization or to a specific user or group:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application that you want to restrict access to.
 1. Select **Permissions**. 
 1. To view permissions that apply to your entire organization, select the **Admin consent** tab. To view permissions granted to a specific user or group, select the **User consent** tab.

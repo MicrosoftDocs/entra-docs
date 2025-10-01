@@ -1,9 +1,9 @@
 ---
-title: Set up CORS proxy server to manage headers for SPA with native authentication
+title: Set Up CORS Proxy Server to Manage Headers for SPA With Native Authentication
 description: Learn how to set up a CORS proxy server for single-page application that uses native authentication API.
 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
@@ -18,7 +18,7 @@ ms.date: 02/07/2025
 
 In this tutorial, you learn how to set up the CORS proxy server to manage CORS headers while interacting with native authentication API from a React single-page app (SPA). The CORS proxy server is a solution to the native authentication API's inability to support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 >[!div class="checklist"]
 >

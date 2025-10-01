@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra integration with Wizergos Productivity Software
+title: Configure Wizergos Productivity Software for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wizergos Productivity Software.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wizergos Productivity Software so that I can control who has access to Wizergos Productivity Software, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Wizergos Productivity Software
+# Configure Wizergos Productivity Software for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Wizergos Productivity Software with Microsoft Entra ID.
 Integrating Wizergos Productivity Software with Microsoft Entra ID provides you with the following benefits:
@@ -28,6 +26,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Wizergos Productivity Software single sign-on enabled subscription
 
@@ -44,7 +43,7 @@ To configure the integration of Wizergos Productivity Software into Microsoft En
 **To add Wizergos Productivity Software from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, type **Wizergos Productivity Software**, select **Wizergos Productivity Software** from result panel then select **Add** button to add the application.
 
 	 ![Wizergos Productivity Software in the results list](common/search-new-app.png)
@@ -74,7 +73,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with Wizergos Productivity Software, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Wizergos Productivity Software** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Wizergos Productivity Software** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 

@@ -1,16 +1,14 @@
 ---
 title: Microsoft Entra ID Protection overview
-description: Learn how the Microsoft Entra ID Protection overview provides a view into security posture.
-
+description: Learn how the Microsoft Entra ID Protection overview dashboard provides a view into security posture.
 ms.service: entra-id-protection
-
 ms.topic: how-to
-ms.date: 02/28/2025
-
+ms.date: 06/05/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra ID Protection dashboard
 
@@ -28,13 +26,14 @@ To access this dashboard, you need:
 
 - Microsoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
 - Microsoft Entra ID P2 licenses to view a comprehensive list of recommendations and select the recommended action links.
+- Microsoft 365 E5 or Microsoft Enterprise Mobility + Security E5 licenses for some risk detections. For more information, see [What is Microsoft Entra ID Protection?](overview-identity-protection.md#microsoft-defender).
 
 ## Access the dashboard
 
 You can access the dashboard by:
 
 1. Sign in to the **[Microsoft Entra admin center](https://entra.microsoft.com)** as at least a [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Protection** > **Identity Protection** > **Dashboard**.
+1. Browse to **ID Protection** > **Dashboard**.
 
 ### Metric cards
  
@@ -65,9 +64,9 @@ To help you better understand your risk exposure, our attack graphic displays co
 
 #### What is considered an attack in Microsoft Entra ID Protection?
 
-An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-identity-protection-risks.md#what-are-risk-detections) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
+An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-risk-detection-types.md) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
 
-Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#risk-detections-mapped-to-riskeventtype) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
+Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#user-risk-detections-mapped-to-riskeventtype) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
 
 #### How to interpret the attack graphic?
 
@@ -146,4 +145,4 @@ Depending on the configuration of your tenant, there might not be recommendation
 
 - [Plan a deployment](how-to-deploy-identity-protection.md)
 - [What are risks?](concept-identity-protection-risks.md)
-- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy)
+- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#end-user-self-remediation)

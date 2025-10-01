@@ -5,12 +5,15 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 02/28/2023
+ms.topic: article
+ms.date: 05/20/2025
 ms.author: jricketts
+ms.custom: sfi-ropc-nochange
 ---
 
 # Microsoft Entra security operations for consumer accounts
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 Consumer identity activities are an important area for your organization to protect and monitor. This article is for Azure Active Directory B2C (Azure AD B2C) tenants and has guidance for monitoring consumer account activities. The activities are:
 

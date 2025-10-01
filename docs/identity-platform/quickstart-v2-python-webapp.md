@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-api
+ms.custom:
 ms.date: 01/24/2023
 ms.service: identity-platform
 
@@ -98,4 +98,4 @@ ms.topic: quickstart
 > Learn more about web apps that sign in users in our multi-part scenario series.
 > 
 > > [!div class="nextstepaction"]
-> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-registration.md)
+> > [Scenario: Web app that signs in users](scenario-web-app-sign-user-app-configuration.md)

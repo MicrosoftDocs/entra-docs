@@ -1,15 +1,14 @@
 ---
 title: Create an access review of Azure resource and Microsoft Entra roles in PIM
-description: Learn how to create an access review of Azure resource and Microsoft
-  Entra roles in Privileged Identity Management (PIM).
+description: Learn how to create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongmrgera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
-ms.custom: pim
+ms.custom: pim, sfi-image-nochange
 ---
 
 # Create an access review of Azure resource and Microsoft Entra roles in PIM
@@ -37,7 +36,7 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one of the prerequisite roles.
 
-1. Browse to **Identity governance** > **Privileged Identity Management**.
+1. Browse to **ID Governance** > **Privileged Identity Management**.
 
 1. For **Microsoft Entra roles**, select **Microsoft Entra roles**. For **Azure resources**, select **Azure resources**
 
@@ -168,6 +167,9 @@ After one or more access reviews have been started, you may want to modify or up
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/current-v-series-setting.png" alt-text="Screenshot of the settings page under access reviews." lightbox="./media/pim-create-azure-ad-roles-and-resource-roles-review/current-v-series-setting.png":::
     
+> [!NOTE]
+> Creating Access Reviews for Azure resources using AOBO (Admin On Behalf Of) under the Azure Plan is not supported. If you're a CSP partner managing a customer's subscription via AOBO, you cannot create Access Reviews from your own (partner) tenant.<br>**Workaround**:<br> Have the CSP partner added as a **guest user** in the customer's tenant with the necessary permissions, and create the Access Review **from within the customer's tenant**.
+
 ## Next steps
 
 - [Perform an access review of Azure resource and Microsoft Entra roles in PIM](./pim-perform-roles-and-resource-roles-review.md)

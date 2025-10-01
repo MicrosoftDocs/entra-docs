@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Cirrus Identity Bridge for Microsoft Entra ID
+title: Configure Cirrus Identity Bridge for Microsoft Entra ID for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cirrus Identity Bridge for Microsoft Entra ID.
 
 author: nguhiu
-manager: CelesteDG
-ms.reviewer: CelesteDG
+manager: mwongerapk
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cirrus Identity Bridge for Microsoft Entra ID so that I can control who has access to Cirrus Identity Bridge for Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Cirrus Identity Bridge for Microsoft Entra ID
+# Configure Cirrus Identity Bridge for Microsoft Entra ID for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Cirrus Identity Bridge for Microsoft Entra ID with Microsoft Entra ID using the Microsoft Graph API based integration pattern. When you integrate Cirrus Identity Bridge for Microsoft Entra ID with Microsoft Entra ID in this way, you can:
 
@@ -26,7 +26,9 @@ In this article,  you learn how to integrate Cirrus Identity Bridge for Microsof
 * Manage your application access in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Cirrus Identity Bridge for Microsoft Entra single sign-on (SSO) enabled subscription. If you aren't already a subscriber, please visit the [Cirrus Identity Microsoft Entra ID Bridge Registration Page](https://info.cirrusidentity.com/cirrus-identity-azure-ad-app-gallery-registration).
 
@@ -43,7 +45,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 When subscribing to the Cirrus Identity Bridge for Microsoft Entra ID, you are asked for your Microsoft Entra TenantID. To view this:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Overview** > **Properties**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 1. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
 1. Copy the value and send it to the Cirrus Identity contract representative you're working with.
 
@@ -77,11 +79,11 @@ Once Cirrus Identity has the Tenant ID, and access has been granted, we will pro
 To configure the integration of Cirrus Identity Bridge for Microsoft Entra ID into Microsoft Entra ID, you need to add Cirrus Identity Bridge for Microsoft Entra ID from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Cirrus Identity Bridge for Microsoft Entra ID** in the search box.
 1. Select **Cirrus Identity Bridge for Microsoft Entra ID** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-cirrus-identity-bridge-for-azure-ad'></a>
 
@@ -105,12 +107,12 @@ To configure and test Microsoft Entra SSO with Cirrus Identity Bridge for Micros
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cirrus Identity Bridge for Microsoft Entra ID** application integration page, find the **Manage** section and select **Properties**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Cirrus Identity Bridge for Microsoft Entra ID** application integration page, find the **Manage** section and select **Properties**.
 1. On the **Properties** page, toggle **Assignment Required** based on your access requirements. If set to **Yes**, you need to assign the **Cirrus Identity Bridge for Microsoft Entra ID** application to an access control group on the **Users and Groups** page.
 1. While still on the **Properties** page, toggle **Visible to users** to **No**. The initial integration will always represent the default integration used for multiple service providers. In this case, there isn't any one service provider to direct end users to. To make specific applications visible to end users, you have to use linking single sign-on to give end user access in My Apps to specific service providers. [See here](~/identity/enterprise-apps/configure-linked-sign-on.md) for more details.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cirrus Identity Bridge for Microsoft Entra ID** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Cirrus Identity Bridge for Microsoft Entra ID** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

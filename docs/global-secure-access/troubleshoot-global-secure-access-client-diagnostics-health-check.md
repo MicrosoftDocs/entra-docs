@@ -6,10 +6,9 @@ ms.topic: troubleshooting
 ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.reviewer: lirazbarak
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ---
 # Troubleshoot the Global Secure Access client: Health check tab

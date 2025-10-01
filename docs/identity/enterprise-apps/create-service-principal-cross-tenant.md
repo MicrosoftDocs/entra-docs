@@ -1,5 +1,5 @@
 ---
-title: 'Create an enterprise application from a multitenant application'
+title: Create an enterprise application from a multitenant application
 description: Create an enterprise application using the client ID for a multitenant application.
 
 author: omondiatieno
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 07/19/2024
+ms.date: 07/10/2025
 ms.author: jomondi
 ms.reviewer: karavar
 ms.custom: mode-other, devx-track-azurecli
@@ -18,13 +18,13 @@ zone_pivot_groups: enterprise-apps-cli
 
 ---
 
-# Create an enterprise application from a multitenant application in Microsoft Entra ID
+# Create an enterprise application from a multitenant application
 
-In this article, you'll learn how to create an enterprise application in your tenant using the client ID for a multitenant application. An enterprise application refers to a service principal within a tenant. The service principal discussed in this article is the local representation, or application instance, of a global application object in a single tenant or directory. 
+In this article, you learn how to create an enterprise application in your tenant using the client ID for a multitenant application. An enterprise application refers to a service principal within a tenant. The service principal discussed in this article is the local representation, or application instance, of a global application object in a single tenant or directory. 
 
 Before you proceed to add the application using any of these options, check whether the enterprise application is already in your tenant by attempting to sign in to the application. If the sign-in is successful, the enterprise application already exists in your tenant.
 
-If you have verified that the application isn't in your tenant, proceed with any of the following ways to add the enterprise application to your tenant.
+If you verify that the application isn't in your tenant, proceed with any of the following ways to add the enterprise application to your tenant.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ To add an enterprise application to your Microsoft Entra tenant, you need:
 
 :::zone pivot="admin-consent-url"
 
-If you've been provided with the admin consent URL, navigate to the URL through a web browser to [grant tenant-wide admin consent](grant-admin-consent.md) to the application. Granting tenant-wide admin consent to the application will add it to your tenant. The tenant-wide admin consent URL has the following format:
+If you're provided with the admin consent URL, navigate to the URL through a web browser to [grant tenant-wide admin consent](grant-admin-consent.md) to the application. Granting tenant-wide admin consent to the application adds it to your tenant. The tenant-wide admin consent URL has the following format:
 
 ```http
 https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=248e869f-0e5c-484d-b5ea1fba9563df41&redirect_uri=https://www.your-app-url.com
@@ -49,7 +49,7 @@ Where:
 - `{client-id}` is the application's client ID (also known as appId).
 
 >[!NOTE]
->If you are attempting to use an enterprise application, and the service principal is not yet created in your tenant, Entra will respond with a (401) Unauthorized error stating: “The client application {appId} is missing service principal in the tenant {tenantId}." To resolve this, performing consent with the admin consent URL as mentioned above will instantiate the service principal in your tenant and resolve the issue.  
+>If you're attempting to use an enterprise application, and the service principal isn't yet created in your tenant, Microsoft Entra responds with a (401) Unauthorized error stating: "The client application {appId} is missing a service principal in the tenant {tenantId}." To resolve this, performing consent with the admin consent URL as mentioned earlier instantiates the service principal in your tenant and resolve the issue.  
 
 :::zone-end
 
@@ -112,7 +112,6 @@ You can use an API client such as [Graph Explorer](https://aka.ms/ge) to work wi
 
 :::zone-end
 
-## Next steps
+## Related content
 
-- [Add RBAC role to the enterprise application](/azure/role-based-access-control/role-assignments-portal)
 - [Assign users to your application](add-application-portal-assign-users.md)

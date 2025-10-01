@@ -208,6 +208,11 @@
           "identity/app-provisioning/sap-successfactors-integration-reference.md",
           "identity/authentication/howto-mfa-nps-extension-advanced.md"
         ]
+      },
+      "filename-incomplete": {
+        "exclude": [
+          "/identity/role-based-access-control/includes/*.md"
+        ]
       }
     }
   } 

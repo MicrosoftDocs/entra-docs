@@ -6,9 +6,9 @@ author: barclayn
 manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 12/13/2024
+ms.date: 04/30/2025
+ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Configure Microsoft Entra Verified ID verifier
@@ -60,7 +60,7 @@ git clone git@github.com:Azure-Samples/active-directory-verifiable-credentials-d
 
 Create a client secret for the registered application you created. The sample application uses the client secret to prove its identity when it requests tokens.
 
-1. In Microsoft Entra ID, go to **App registrations**.
+1. In **Microsoft Entra ID**, go to **App registrations**.
 
 1. Select the **verifiable-credentials-app** application you created earlier.
 

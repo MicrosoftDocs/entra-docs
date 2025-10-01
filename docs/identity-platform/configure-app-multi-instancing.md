@@ -2,11 +2,11 @@
 title: Configure app multi-instancing
 description: Learn about multi-instancing, which is needed for configuring multiple instances of the same application within a tenant.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 06/09/2023
-ms.reviewer: rahulnagraj, alamaral, jeedes
+ms.reviewer: alamaral
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -48,7 +48,7 @@ The IDP initiated SSO feature exposes the following settings for each applicatio
 ### Configure IDP initiated SSO
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**. 
+1. Browse to **Entra ID** > **Enterprise apps**. 
 1. Open any SSO enabled enterprise app and navigate to the SAML single sign-on blade.
 1. Select **Edit** on the **User Attributes & Claims** panel.
 1. Select **Edit** to open the advanced options blade.

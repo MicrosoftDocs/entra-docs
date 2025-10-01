@@ -3,12 +3,12 @@ title: Quickstart - Set up an external tenant free trial
 description: Use our quickstart to set up the external tenant free trial.
  
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 08/15/2024
+ms.date: 05/09/2025
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -17,6 +17,9 @@ ms.custom: it-pro
 # Quickstart: Get started with Microsoft Entra External ID free trial
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+> [!IMPORTANT]
+> The free trial feature described in this article is temporarily unavailable. Please check back for updates.
 
 Get started with Microsoft External ID for consumer and business customer apps, which lets you create secure, customized sign-in experiences for your apps and services. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
@@ -40,7 +43,6 @@ During the free trial period, you have access to all product features with few e
 | **MFA**  | :x: |  :heavy_check_mark:  |  
 | **Custom token augmentation** (From external sources.) |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Social identity providers**   |  :heavy_check_mark: |  :heavy_check_mark:  |
-| **ID Protection** (Adaptive risk-based Conditional Access policies.)  | :x: |  :heavy_check_mark:  |
 | Default, least-access privileges for CIAM end-users. |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Rich authorization** (Including group and role management.)  |  :heavy_check_mark: |  :heavy_check_mark:  | 
 | **Customizable** (Sign-in/sign-up experiences - background, logo, strings.) |  :heavy_check_mark: |  :heavy_check_mark:  |

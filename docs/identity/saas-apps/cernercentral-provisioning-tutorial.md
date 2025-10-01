@@ -1,9 +1,9 @@
 ---
-title: User provisioning for Cerner Central
+title: Configure Cerner Central for automatic user provisioning in Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision users to a roster in Cerner Central.
 
 author: ArvindHarinder1
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -82,7 +82,7 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
 1. Finally, you need to acquire User Roster Realm IDs for both the sandbox and production environments in Cerner to complete the configuration. For information on how to acquire this, see: https://wiki.ucern.com/display/public/reference/Publishing+Identity+Data+Using+SCIM. 
 
 1. Now you can configure Microsoft Entra ID to provision user accounts to Cerner. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 
 1. If you have already configured Cerner Central for single sign-on, search for your instance of Cerner Central using the search field. Otherwise, select **Add** and search for **Cerner Central** in the application gallery. Select Cerner Central from the search results, and add it to your list of applications.
 

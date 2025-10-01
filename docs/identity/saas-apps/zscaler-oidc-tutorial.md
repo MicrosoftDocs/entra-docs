@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Zscaler
+title: Configure Zscaler for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Zscaler.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -11,9 +11,10 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 05/06/2024
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Zscaler
+# Configure Zscaler for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Zscaler with Microsoft Entra ID. When you integrate Zscaler with Microsoft Entra ID, you can:
 
@@ -34,7 +35,7 @@ To configure the integration of Zscaler into Microsoft Entra ID, you need to add
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **Zscaler** in the search box.
 
@@ -46,7 +47,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
@@ -84,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -98,7 +99,7 @@ In this section, you create a test user called B.Simon.
 In this section, you enable B.Simon to use single sign-on by granting access to Zscaler.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.

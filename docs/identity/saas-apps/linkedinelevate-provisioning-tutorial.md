@@ -1,9 +1,9 @@
 ---
-title: User provisioning for LinkedIn Elevate
+title: Configure LinkedIn Elevate for automatic user provisioning in Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to LinkedIn Elevate.
 
 author: ArvindHarinder1
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -14,7 +14,7 @@ ms.author: arvinh
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to LinkedIn Elevate so that I can streamline the user management process and ensure that users have the appropriate access to LinkedIn Elevate.
 ---
 
-# Configure LinkedIn Elevate for automatic user provisioning
+# Configure LinkedIn Elevate for automatic user provisioning in Microsoft Entra ID
 
 The objective of this article is to show you the steps you need to perform in LinkedIn Elevate and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to LinkedIn Elevate.
 
@@ -81,7 +81,7 @@ The first step is to retrieve your LinkedIn access token. If you're an Enterpris
 1. Save your access token to your clipboard or computer before leaving the page.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. If you have already configured LinkedIn Elevate for single sign-on, search for your instance of LinkedIn Elevate using the search field. Otherwise, select **Add** and search for **LinkedIn Elevate** in the application gallery. Select LinkedIn Elevate from the search results, and add it to your list of applications.
 

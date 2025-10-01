@@ -1,17 +1,15 @@
 ---
 title: Manage emergency access admin accounts
 description: This article describes how to use emergency access accounts to help prevent being inadvertently locked out of your Microsoft Entra organization.
-
-author: markwahl-msft
-manager: femila
-ms.author: rolyon
+author: barclayn
+manager: pmwongera
+ms.author: barclayn
 ms.date: 02/10/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.custom: it-pro
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ms.reviewer: mwahl
-
 ---
 
 # Manage emergency access accounts in Microsoft Entra ID
@@ -95,7 +93,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 
 1. Search for the emergency access account and select the user's name.
 

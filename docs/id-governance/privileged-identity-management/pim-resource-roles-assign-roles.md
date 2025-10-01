@@ -1,14 +1,14 @@
 ---
 title: Assign Azure resource roles in Privileged Identity Management
-description: Learn how to assign Azure resource roles in Privileged Identity Management
-  (PIM).
+description: Learn how to assign Azure resource roles in Privileged Identity Management (PIM).
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.subservice: privileged-identity-management
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Assign Azure resource roles in Privileged Identity Management
@@ -49,7 +49,7 @@ Follow these steps to make a user eligible for an Azure resource role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a User Access Administrator.
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**.
 
 1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Select the Select button for the resource you want to manage to open its overview page.
 

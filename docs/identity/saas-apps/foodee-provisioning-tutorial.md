@@ -1,20 +1,18 @@
 ---
-title: Configure Foodee for automatic user provisioning by using Microsoft Entra ID
+title: Configure Configure Foodee for for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Foodee.
-
-author: thomasakelo
-manager: CelesteDG
+author: jeevansd
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 02/27/2025
-ms.author: thomasakelo
-
+ms.author: jeedes
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Foodee so that I can streamline the user management process and ensure that users have the appropriate access to Foodee.
 ---
 
-# Configure Foodee for automatic user provisioning
+# Configure Configure Foodee for for automatic user provisioning with Microsoft Entra ID
 
 This article shows you how to configure Microsoft Entra ID in Foodee and Microsoft Entra ID to automatically provision or deprovision users or groups to Foodee.
 
@@ -68,7 +66,7 @@ To configure Foodee for automatic user provisioning by using Microsoft Entra ID,
 To add Foodee from the Microsoft Entra application gallery, do the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![The Enterprise applications pane](common/enterprise-applications.png)
 
@@ -90,7 +88,7 @@ In this section, you configure the Microsoft Entra provisioning service to creat
 Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![Enterprise applications pane](common/enterprise-applications.png)
 

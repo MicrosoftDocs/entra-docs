@@ -3,7 +3,7 @@ title: Microsoft Entra ID and Workday integration reference
 description: Technical deep dive into Workday-HR driven provisioning in Microsoft Entra ID
 
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -420,7 +420,7 @@ The above data sets aren't included by default.
 To retrieve these data sets:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select your Workday to Active Directory / Microsoft Entra user provisioning application.
 1. Select **Provisioning**.
 1. Edit the mappings and open the Workday attribute list from the advanced section. 

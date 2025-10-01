@@ -7,7 +7,7 @@ ms.author: jricketts
 ms.reviewer: jebley
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/29/2024
 ---
 
@@ -45,8 +45,6 @@ When you meet the prerequisites, perform the following steps to deploy private n
 
 1. [Install a private network connector](how-to-configure-connectors.md) in a private network that has outbound connectivity to the destination web application. A good option is to host the connector in an Azure Virtual Network where you control the outbound egress IP. We recommend that you install two or more connectors for resiliency and high availability.
 1. Provide the public IP address of the connectors to the SaaS app so that your users can connect to the app.
-
-Placement and use of a forward proxy between the private network connector and the destination web application isn't supported.
 
 ## Configure source IP anchoring
 

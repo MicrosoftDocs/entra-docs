@@ -1,15 +1,14 @@
 ---
 title: Bulk create users in the Azure portal
 description: Add users in bulk in Microsoft Entra ID
-
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
 
@@ -53,8 +52,7 @@ The rows in a downloaded CSV template are as follows:
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Select Microsoft Entra ID.
-1. Select **All users** >  **Users** > **Bulk create**.
+1. Browse to **Entra ID** > **Users** > **Bulk create**.
 1. On the **Bulk create user** page, select **Download** to receive a valid comma-separated values (CSV) file of user properties, and then add users you want to create.
 
    :::image type="content" source="./media/users-bulk-add/upload-button.png" alt-text="Screenshot showing how to select a local CSV file in which you list the users you want to add.":::

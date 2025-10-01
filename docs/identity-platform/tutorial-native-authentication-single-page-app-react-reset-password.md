@@ -3,7 +3,7 @@ title: Reset password in a React SPA by using native auth
 description: Learn how to build a React single-page app that reset password for users in an external tenant by using native authentication.
 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external

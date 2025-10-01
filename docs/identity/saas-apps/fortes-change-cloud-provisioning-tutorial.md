@@ -2,19 +2,19 @@
 title: Configure Fortes Change Cloud for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Fortes Change Cloud.
 
-author: thomasakelo
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Fortes Change Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Fortes Change Cloud.
 ---
 
-# Configure Fortes Change Cloud for automatic user provisioning
+# Configure Fortes Change Cloud for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Fortes Change Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Fortes Change Cloud](https://fortesglobal.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -45,11 +45,11 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Login with your admin account to Fortes Change Cloud. Select the **Settings icon** and then navigate to **User Provisioning (SCIM)**.
 
-    [ ![The Fortes Change Cloud SCIM Setting](media/fortes-change-cloud-provisioning-tutorial/scim-settings.png) ](media/fortes-change-cloud-provisioning-tutorial/scim-settings.png#lightbox)
+    [![The Fortes Change Cloud SCIM Setting](media/fortes-change-cloud-provisioning-tutorial/scim-settings.png)](media/fortes-change-cloud-provisioning-tutorial/scim-settings.png#lightbox)
 
 2. In the new window, copy and save the **Tenant URL** and the **Primary token**. The Tenant URL is entered in the **Tenant URL** * field and primary token is entered in the **Secret** * Token field in the Provisioning tab of your Fortes Change Cloud application.
      
-      [ ![The Fortes Change Cloud primary token](media/fortes-change-cloud-provisioning-tutorial/primary-token.png)](media/fortes-change-cloud-provisioning-tutorial/primary-token.png#lightbox)
+      [![The Fortes Change Cloud primary token](media/fortes-change-cloud-provisioning-tutorial/primary-token.png)](media/fortes-change-cloud-provisioning-tutorial/primary-token.png#lightbox)
 
 <a name='step-3-add-fortes-change-cloud-from-the-azure-ad-application-gallery'></a>
 
@@ -70,7 +70,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Fortes Change Cloud in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -103,18 +103,18 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |active|Boolean|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.formatted|String|
-   |externalId|String|
-   |urn:ietf:params:scim:schemas:extension:fcc:2.0:User:administrator|Boolean|
-   |urn:ietf:params:scim:schemas:extension:fcc:2.0:User:loginDisabled|Boolean|
+   |active|Boolean||
+   |emails[type eq "work"].value|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.formatted|String||
+   |externalId|String||
+   |urn:ietf:params:scim:schemas:extension:fcc:2.0:User:administrator|Boolean||
+   |urn:ietf:params:scim:schemas:extension:fcc:2.0:User:loginDisabled|Boolean||
 
   
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Fortes Change Cloud, change the **Provisioning Status** to **On** in the **Settings** section.
 

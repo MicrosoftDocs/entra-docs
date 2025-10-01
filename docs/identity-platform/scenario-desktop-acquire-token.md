@@ -4,10 +4,9 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref 
 ms.date: 03/27/2023
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---

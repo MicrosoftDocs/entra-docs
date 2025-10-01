@@ -2,7 +2,7 @@
 title: "How to: Remove a registered app from the Microsoft identity platform"
 description: Learn how to remove an application registered with the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
@@ -36,7 +36,7 @@ Applications that you or your organization have registered are represented by bo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations** and then select the application that you want to configure. Once you've selected the app, you see the application's **Overview** page.
+1. Browse to **Entra ID** > **App registrations** and then select the application that you want to configure. Once you've selected the app, you see the application's **Overview** page.
 1. From the **Overview** page, select **Delete**.
 1. Read the deletion consequences.  Check the box if one appears at the bottom of the pane.
 1. Select **Delete** to confirm that you want to delete the app.

@@ -9,6 +9,7 @@ metadata:
   ms.date: 02/21/2025
   ms.author: kenwith
   ms.reviewer: ashishj
+  ai-usage: ai-assisted
 title: Microsoft Entra application proxy frequently asked questions
 summary: This page answers frequently asked questions about Microsoft Entra application proxy.
 
@@ -44,11 +45,7 @@ sections:
          Why is the Enable application proxy button grayed out?
         answer: |
               Make sure you have at least a Microsoft Entra ID P1 or P2 license and a Microsoft Entra private network connector installed. After you successfully install your first connector, the Microsoft Entra application proxy service is enabled automatically.
-      - question: |
-         What are TCP ports 10200 and 10201 used for?
-        answer: |
-              Using a port scan utility on application proxy public endpoints (msappproxy.net or custom) may show that TCP ports 10200 and 10201 are open, in addition to ports 80 and/or 443. These ports are used for internal service health monitoring purposes. No customer data is accessible over these ports, and the services behind them do not process any information; they simply respond with "OK".
-
+      
   - name: Connector configuration
     questions:
       - question: |

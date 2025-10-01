@@ -3,12 +3,13 @@ title: How to configure Global Secure Access web content filtering
 description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
 author: kenwith    
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
+ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
@@ -56,8 +57,6 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md) or a valid FQDN, and then select **Add**.
      - Valid FQDNs in this feature can also include wildcards using the asterisk symbol, *.
 1. Select **Next** to review the policy and then select **Create policy**.
-> [!IMPORTANT]
-> Changes to web content filtering can take up to one hour to deploy.
 
 ## Create a security profile
 
@@ -81,7 +80,7 @@ In this step, you create a security profile to group filtering policies. Then yo
 
 Create a Conditional Access policy for end users or groups and deliver your security profile through Conditional Access Session controls. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about session controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session).
 
-1. Browse to **Identity** > **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
 1. Select **Target resources** and **All internet resources with Global Secure Access**.
@@ -129,7 +128,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
 
-![Screenshot showing a plaintext browser error for HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
+![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
 
 ![Screenshot showing a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
 

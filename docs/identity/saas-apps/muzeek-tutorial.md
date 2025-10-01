@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Muzeek
+title: Configure Muzeek for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Muzeek.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -11,9 +11,10 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 06/19/2024
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Muzeek
+# Configure Muzeek for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Muzeek with Microsoft Entra ID. When you integrate Muzeek with Microsoft Entra ID, you can:
 
@@ -23,6 +24,7 @@ Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Muzeek single sign-on (SSO) enabled subscription.
 
@@ -32,7 +34,7 @@ To configure the integration of Muzeek into Microsoft Entra ID, you need to add 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **Muzeek** in the search box.
 
@@ -44,7 +46,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Muzeek** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Muzeek** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
@@ -110,7 +112,7 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 To connect your MyApps account to Muzeek in the Microsoft Entra admin center, please follow the below steps:
 
-1. Navigate to **App Registrations** > **Muzeek**  > **Branding & Properties**.
+1. Navigate to **App Registrations** > **Muzeek **Branding & Properties**.
 [![Screenshot showing the app registrations of Muzeek.](./media/Muzeek-tutorial/home.png)](./media/Muzeek-tutorial/home.png#lightbox)
 
 1. Paste the Home Page URL you copied from Muzeek portal into the **Home Page URL** field in Microsoft Entra admin center.

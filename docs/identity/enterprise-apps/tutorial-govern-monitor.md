@@ -2,7 +2,7 @@
 title: "Tutorial: Govern and monitor applications"
 description: Learn how to govern and monitor an application in Microsoft Entra ID, including access reviews and integrating logs with Azure Monitor.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.author: jomondi
 ms.service: entra-id
 ms.subservice: enterprise-apps
@@ -41,7 +41,7 @@ The administrator wants to make sure that users or guests have appropriate acces
 To create an access review:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Identity Governance** > **Access reviews**.
+1. Browse to **ID Governance** > **Access reviews**.
 1. Select **New access review** to create a new access review.
 1. In **Select what to review**, select **Applications**.
 1. Select **+ Select application(s)**, select the application, and then choose **Select**.
@@ -73,7 +73,7 @@ If you've assigned guests as reviewers and they haven't accepted their invitatio
 
 You can track the progress of access reviews as they're completed.
  
-1. Go to **Identity** > **Identity Governance** > **Access reviews**.
+1. Go to **ID Governance** > **Access reviews**.
 1. In the list, select the access review you created.
 1. On the **Overview** page, check the progress of the access review. 
 
@@ -83,7 +83,7 @@ The **Results** page provides information on each user under review in the insta
 
 The Microsoft Entra audit logs capture a wide variety of activities within your tenant. These logs provide valuable insights into the activities you need to monitor. For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
 
-To access the audit logs, go to **Identity** > **Monitoring & health** > **Audit logs**.
+To access the audit logs, go to **Entra ID** > **Monitoring & health** > **Audit logs**.
 
 The audit logs capture activities that fall under the following categories. This list is not exhaustive. For a full list of the audit log categories and activities, see [Audit log activities](../monitoring-health/reference-audit-activities.md).
 
@@ -99,7 +99,7 @@ The audit logs capture activities that fall under the following categories. This
 
 The Microsoft Entra sign-in logs capture interactive, non-interactive, managed identity, and service principal sign-ins. For more information, see [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
 
-To access the sign-in logs, go to **Identity** > **Monitoring & health** > **Sign-in logs**.
+To access the sign-in logs, go to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 
 You also can view application sign-in information from the Enterprise applications area. The sign-in logs open the same logs from **Monitoring & health** > **Sign-in logs**, but the filter is already set to the selected application. The **Usage & insights** report also summarizes sign-in activity for the application.
 

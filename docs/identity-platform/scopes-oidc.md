@@ -4,12 +4,11 @@ description: Learn about openID connect scopes and permissions in the Microsoft 
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.date: 01/03/2025
+ms.date: 07/24/2025
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
-
 ms.topic: concept-article
-
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how to request scopes and permissions, so that I can access web-hosted resources on behalf of a user and ensure fine-grained control over data access and API functionality.
 ---
 
@@ -36,8 +35,6 @@ Because of these types of permission definitions, the resource has fine-grained 
 When a resource's functionality is chunked into small permission sets, third-party apps can be built to request only the permissions that they need to perform their function. Users and administrators can know what data the app can access. And they can be more confident that the app isn't behaving with malicious intent. Developers should always abide by the principle of least privilege, asking for only the permissions they need for their applications to function.
 
 In OAuth 2.0, these types of permission sets are called *scopes*. They're also often referred to as *permissions*. In the Microsoft identity platform, a permission is represented as a string value. An app requests the permissions it needs by specifying the permission in the `scope` query parameter. Identity platform supports several well-defined [OpenID Connect scopes](#openid-connect-scopes) and resource-based permissions (each permission is indicated by appending the permission value to the resource's identifier or application ID URI). For example, the permission string `https://graph.microsoft.com/Calendars.Read` is used to request permission to read users calendars in Microsoft Graph.
-
-In requests to the authorization server, for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `scope=User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
 
 ## Admin-restricted permissions
 
@@ -84,7 +81,7 @@ For a complete list of the `profile` claims available in the `id_tokens` paramet
 
 The [`offline_access` scope](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess) gives your app access to resources on behalf of the user for an extended time. On the consent page, this scope appears as the **Maintain access to data you have given it access to** permission.
 
-If any of the requested delegated permissions from the `scope` parameter (excluding `openid`, `profile`, `email`) are granted, this is sufficient for the app to request a refresh token using `offline_access`. For example, if `User.Read` for Microsoft is granted, the app will only receive an access token. That said, if the app were to subsequently request a refresh token, the fact that `User.Read` had been granted is sufficient for a refresh token to be provided. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
+If any delegated permission is granted, offline_access is implicitly granted. You can assume that the application has offline_access if there are any delegated permissions granted. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
 
 > [!NOTE]
 > This permission currently appears on all consent pages, even for flows that don't provide a refresh token (such as the [implicit flow](v2-oauth2-implicit-grant-flow.md)). This setup addresses scenarios where a client can begin within the implicit flow and then move to the code flow where a refresh token is expected.

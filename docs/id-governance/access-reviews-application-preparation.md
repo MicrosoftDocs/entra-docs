@@ -2,13 +2,14 @@
 title: Preparing for an access review of users' access to an application
 description: Planning for a successful access reviews campaign for a particular application starts with understanding how to model access for that application in Microsoft Entra ID.
 author: markwahl-msft
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 03/11/2024
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an IT admin, I want to ensure access to specific applications is governed, by setting up access reviews for those applications.
 ---
 
@@ -63,7 +64,7 @@ The integration patterns listed in the previous section are applicable to third 
 Now that you have identified the integration pattern for the application, check the application as represented in Microsoft Entra ID is ready for review.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-1. Browse to > **Identity** > **Applications** > **Enterprise Applications**. 
+1. Browse to > **Entra ID** > **Enterprise apps**. 
 1. Here you can check to see whether your application is on the [list of enterprise applications](../identity/enterprise-apps/view-applications-portal.md) in your tenant.
 1. If the application isn't already listed, then check if the application is available the [application gallery](../identity/enterprise-apps/overview-application-gallery.md) for applications that can be integrated for federated SSO or provisioning. If it is in the gallery, then use the [tutorials](../identity/saas-apps/tutorial-list.md) to configure the application for federation, and if it supports provisioning, also [configure the application](../identity/app-provisioning/configure-automatic-user-provisioning-portal.md) for provisioning. 
 1. If the application isn't already listed, but uses AD security groups and is a web application, and the application's configuration can be changed to look for different security groups in AD, then [add the application for remote access through Application Proxy](../identity/app-proxy/application-proxy-add-on-premises-application.md), move the membership of the existing AD security groups to new Microsoft Entra groups and [configure group writeback to AD](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md). Then, update the application to check for the new AD groups created by group writeback, as described in [govern on-premises Active Directory based apps (Kerberos)](../identity/hybrid/cloud-sync/govern-on-premises-groups.md).

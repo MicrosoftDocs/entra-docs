@@ -6,10 +6,9 @@ manager: femila
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-
 ms.date: 05/06/2024
 ms.author: chmutali
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors to Active Directory.
 ---
 # Configure SAP SuccessFactors to Active Directory user provisioning 
@@ -160,7 +159,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 **To configure SuccessFactors to Active Directory provisioning:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. Search for **SuccessFactors to Active Directory User Provisioning**, and add that app from the gallery.
 
@@ -182,7 +181,7 @@ Transfer the downloaded agent installer to the server host and follow the steps 
 In this step, we establish connectivity with SuccessFactors and Active Directory. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > SuccessFactors to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent)
+1. Browse to **Entra ID** > **Enterprise apps** > SuccessFactors to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent)
 
 1. Complete the **Admin Credentials** section as follows:
 

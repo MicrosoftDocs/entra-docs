@@ -1,27 +1,26 @@
 ---
-title: Customize the browser language for authentication
-description: Learn about how to customize the browser language of your app's authentication experience.
- 
+title: Customize the browser language
+description: Learn about how to customize the browser language for your app's authentication experience to provide a personalized sign-in.
 author: csmulligan
 ms.author: cmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 03/13/2025
+ms.date: 09/16/2025
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to add customized browser languages to my app's authentication experience.
 ---
-# Customize the language of the authentication experience
+# Customize browser language for authentication experience
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Language customization in Microsoft Entra External ID](../user-flow-customize-language.md).
 
-You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements for that browser language. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
+This article explains how to customize the browser language for your app's authentication experience. By personalizing the sign-in process based on browser language, you can deliver a tailored experience for your users and override default branding settings.
 
 ## Prerequisites
 
@@ -29,11 +28,6 @@ You can create a personalized sign-in experience for users who sign in using a s
 - [Register an application](/entra/identity-platform/quickstart-register-app).  
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - Review the file size requirements for each image you want to add. You might need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Language)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Language customization” use case.
 
 ## Add browser language under Company branding
 
@@ -98,7 +92,7 @@ Language customization in the external tenant lets your user flow accommodate di
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).  
 2. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-3. Browse to **Identity** > **External Identities** > **User flows**.
+3. Browse to **Entra ID** > **External Identities** > **User flows**.
 4. Select the user flow that you want to enable for translations.
 5. Select **Languages**.
 6. On the **Languages** page for the user flow, select the language that you want to customize.

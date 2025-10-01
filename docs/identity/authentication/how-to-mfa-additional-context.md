@@ -3,10 +3,11 @@ title: Use additional context in Authenticator notifications
 description: Learn how to use additional context in multifactor authentication (MFA) notifications.
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: mjsantani
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to encourage users to use the Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 # Use additional context in Authenticator notifications - Authentication methods policy
@@ -350,7 +351,7 @@ To turn off additional context, you need to `PATCH` `displayAppInformationRequir
 To enable the application name or geographic location in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Microsoft Authenticator**.
+1. Browse to **Entra ID** > **Authentication methods** > **Microsoft Authenticator**.
 1. On the **Basics** tab, select **Yes** and **All users** to enable the policy for everyone. Change **Authentication mode** to **Any**.
 
    Only users who are enabled for Authenticator here are included in the policy to show the application name or geographic location of the sign-in, or excluded from it. Users who aren't enabled for Authenticator can't see the application name or geographic location.

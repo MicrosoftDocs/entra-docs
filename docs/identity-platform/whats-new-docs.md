@@ -4,8 +4,7 @@ description: "New and updated articles in the Microsoft identity platform docume
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-adal-ref
-ms.date: 02/04/2025
+ms.date: 05/02/2025
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -16,22 +15,29 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## February 2025
+## August 2025
+
+### Updated articles
+
+- [Microsoft Enterprise SSO plug-in for Apple devices](apple-sso-plugin.md) - We adjusted Apple SSO, updated the token protection image, and troubleshot secure enclave issues.
+
+## July 2025
+
+### Updated articles
+
+- [What is the Microsoft identity platform?](v2-overview.md) - The update improved content clarity.
+
+## June 2025
 
 ### New articles
 
-- [Best practices to protect frontline workers](security-best-practices-for-frontline-workers.md) - Best Practices to Protect Frontline Workers
+- [Restrictions on identifier URIs of Microsoft Entra applications](identifier-uri-restrictions.md)
 
 ### Updated articles
 
-- [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](v2-oauth-ropc.md) - Added clarity to the content
+- [Retrieve and return data from an OnAttributeCollectionStart event](custom-extension-onattributecollectionstart-retrieve-return-data.md) - Update request payload and response
+- [Retrieve and return data from an OnAttributeCollectionSubmit event](custom-extension-onattributecollectionsubmit-retrieve-return-data.md) - Update request payload and response
+- [Security best practices for application properties in Microsoft Entra ID](security-best-practices-for-app-registration.md) - Update security best practices
+- [Run automated integration tests](test-automate-integration-testing.md) - The update improved content clarity.
 
-## January 2025
 
-### Updated articles
-
-- [Set up your application's Microsoft Entra test environment](test-setup-environment.md) - Added clarity to the content
-
-## December 2024
-
-No updates available.

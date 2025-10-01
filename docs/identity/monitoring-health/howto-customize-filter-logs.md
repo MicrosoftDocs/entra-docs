@@ -2,14 +2,14 @@
 title: Customize and filter activity logs in Microsoft Entra ID
 description: Learn how to customize the columns and filter of the Microsoft Entra activity logs so you can analyze the results.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to customize my view of the logs so I can more effectively filter the results.
 ---
 
@@ -32,7 +32,7 @@ You can always access your own sign-in history at [https://mysignins.microsoft.c
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
 
 ## [Audit logs](#tab/audit-logs)
 

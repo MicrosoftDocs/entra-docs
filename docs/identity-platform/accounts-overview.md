@@ -2,12 +2,11 @@
 title: Microsoft identity platform accounts & tenant profiles on Android
 description: An overview of the Microsoft identity platform accounts for Android
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: devx-track-java, has-adal-ref
-ms.date: 09/14/2019
+ms.date: 05/14/2025
 ms.devlang: java
-ms.reviewer: shoatman
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -76,7 +75,7 @@ The MSAL token cache stores a *single refresh token* per account. That refresh t
 
 The MSAL account ID isn't an account object ID. It isn't meant to be parsed and/or relied upon to convey anything other than uniqueness within the Microsoft identity platform.
 
-For compatibility with the Azure AD Authentication Library (ADAL), and to ease Migration from ADAL to MSAL, MSAL can look up accounts using any valid identifier for the account available in the MSAL cache.  For example, the following will always retrieve the same account object for tom@live.com because each of the identifiers is valid:
+MSAL can look up accounts using any valid identifier for the account available in the MSAL cache.  For example, the following will always retrieve the same account object for tom@live.com because each of the identifiers is valid:
 
 ```java
 // The following would always retrieve the same account object for tom@live.com because each identifier is valid

@@ -1,24 +1,29 @@
 ---
 title: Investigate risk Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
-ms.date: 08/09/2024
-
+ms.date: 08/06/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: cokoopma
+ms.custom: sfi-image-nochange
 ---
 # How To: Investigate risk
 
 Microsoft Entra ID Protection provides organizations with reporting they can use to investigate identity risks in their environment. These reports include risky users, risky sign-ins, risky workload identities, and risk detections. Investigation of events is key to better understanding and identifying any weak points in your security strategy. All these reports allow for downloading of events in .CSV format or integration with other security solutions like a dedicated Security Information and Event Management (SIEM) tool for further analysis. Organizations can also take advantage of Microsoft Defender and Microsoft Graph API integrations to aggregate data with other sources.
 
+## Prerequisites
+
+- The Microsoft Entra ID P2 or Microsoft Entra Suite license is required for full access to Microsoft Entra ID Protection features.
+    - For a detailed list of capabilities for each license tier, see [What is Microsoft Entra ID Protection](overview-identity-protection.md).
+- The [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role is the least privileged role required to **view the risk reports**.
+- The [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role required to **view the sign-in and audit logs**.
+
 ## Navigating the reports
 
-The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Identity Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
+The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **ID Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/view-high-risk-users-from-id-protection-dashboard.png" alt-text="Screenshot showing the number of high risk users widget from the ID Protection dashboard.":::
 
@@ -30,7 +35,7 @@ When administrators select one or multiple entries, options to confirm or dismis
 
 ### Risky users report
 
-The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. [Learn more about what the levels signify](concept-identity-protection-risks.md#risk-levels)
+The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. [Learn more about what the levels signify](concept-risk-detection-types.md#risk-levels)
 
 #### Why is a user at risk?
 
@@ -154,7 +159,7 @@ Once the risk is contained, more investigation might be required to mark the ris
 
 #### Microsoft Entra threat intelligence
 
-To investigate a Microsoft Entra Threat Intelligence risk detection, follow these steps based on the information provided in the "additional info" field of the Risk Detection Details pane:
+To investigate a Microsoft Entra threat intelligence risk detection, follow these steps based on the information provided in the "additional info" field of the Risk Detection Details pane:
 
 1. Sign-in was from a suspicious IP Address:
    1. Confirm if the IP address shows suspicious behavior in your environment.

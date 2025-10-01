@@ -42,7 +42,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
       - |
-        Browse to **Identity** > **Users** > **All users**.
+        Browse to **Entra ID** > **Users**.
       - |
         Search for and select the user getting the role assignment.
 
@@ -75,7 +75,7 @@ procedureSection:
       You can change the settings of a role assignment, for example to change an active role to eligible.
     steps: 
       - |
-        Browse to **Identity** > **Users** > **All users**.
+        Browse to **Entra ID** > **Users**.
       - |
         Search for and select the user getting their role updated.
       - |
@@ -94,7 +94,7 @@ procedureSection:
       You can remove role assignments from the **Administrative roles** page for a selected user.
     steps:
       - |
-        Browse to **Identity** > **Users** > **All users**.
+        Browse to **Entra ID** > **Users**.
       - | 
         Search for and select the user getting the role assignment removed.
       - |
@@ -105,7 +105,7 @@ relatedContent:
   - text: Add or delete users
     url: ./add-users.md
   - text: Add or change profile information
-    url: ./how-to-manage-user-profile-info.yml
+    url: ./how-to-manage-user-profile-info.md
   - text: Add guest users from another directory
     url: ~/external-id/what-is-b2b.md
 

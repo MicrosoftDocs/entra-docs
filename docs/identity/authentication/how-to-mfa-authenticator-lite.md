@@ -1,17 +1,15 @@
 ---
 title: Enable Authenticator Lite for Outlook mobile
 description: Learn about how you can set up Authenticator Lite for Outlook mobile to help users validate their identity.
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 ms.reviewer: guptashi
-manager: femila
-
+manager: dougeby
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---
 # Enable Authenticator Lite for Outlook mobile
@@ -51,7 +49,7 @@ By default, Authenticator Lite is [Microsoft managed](concept-authentication-def
 To disable Authenticator Lite in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Microsoft Authenticator**.
+1. Browse to **Entra ID** > **Authentication methods** > **Microsoft Authenticator**.
 
 1. On the **Enable and Target** tab, select **Enable** and **All users** to enable the Authenticator policy for everyone, or add select groups. Set the Authentication mode for these users or groups to **Any** or **Push**.
 

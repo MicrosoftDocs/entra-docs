@@ -2,14 +2,14 @@
 title: How to manage inactive user accounts
 description: Learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete using the Microsoft Entra admin center and Microsoft Graph.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 02/21/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete.
 ---
 # How to detect and investigate inactive user accounts
@@ -49,7 +49,7 @@ To find the last sign-in time for a user, you can look at your user list in the 
 ### Find the last sign-in time for all users
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **Manage view** and then **Edit columns**.
 
     ![Screenshot of the Users view with the manage view option highlighted.](media/howto-manage-inactive-user-accounts/users-manage-views.png)
@@ -68,7 +68,7 @@ To find the last sign-in time for a user, you can look at your user list in the 
 If you need to view the latest sign-in activity for a user, you can view the user's sign-in details in Microsoft Entra ID. You can also use the Microsoft Graph API described in the [Users by name section](#users-by-name).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select a user from the list.
 1. In the **My Feed** area of the user's Overview, locate the **Sign-ins** tile.
 

@@ -1,13 +1,13 @@
 ---
 title: 'Use a group managed service account with Microsoft Entra Cloud Sync '
 description: This document details using a gMSA account with cloud sync
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 09/29/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ---
 
 
@@ -22,7 +22,7 @@ A group Managed Service Account is a managed domain account that provides automa
 - The Active Directory schema in the gMSA domain's forest needs to be updated to Windows Server 2012 or later.
 - [PowerShell RSAT modules](/windows-server/remote/remote-server-administration-tools) on a domain controller.
 - At least one domain controller in the domain must be running Windows Server 2012 or later.
-- A domain joined server where the agent is being installed needs to be either Windows Server 2016 or later.
+- A domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016 for the agent installation.
 
 
 ## Permissions set on a gMSA account (ALL permissions)

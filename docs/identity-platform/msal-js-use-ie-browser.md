@@ -4,9 +4,9 @@ description: Use the Microsoft Authentication Library for JavaScript (MSAL.js) w
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 12/01/2021
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article

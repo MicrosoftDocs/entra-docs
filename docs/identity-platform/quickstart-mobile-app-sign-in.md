@@ -1,7 +1,6 @@
 ---
 title: Quickstart - Sign in users in a sample mobile app
 description: Quickstart for configuring a sample mobile app to sign in employees or customers with Microsoft identity platform.
-services: identity-platform
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.service: identity-platform
@@ -41,22 +40,21 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
 
 #### [Android](#tab/android-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 * Android Studio
 * Android 16+
 
 #### [iOS/macOS](#tab/ios-macos-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-web-app*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 * XCode 10+
 * iOS 10+
 * macOS 10.12+
@@ -65,7 +63,7 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 ## Add a redirect URI
 
-You will need to add a redirect URI to your app registration. This URI is used to redirect users to the app after they have signed in.
+You must configure specific redirect URIs in your app registration to ensure compatibility with the downloaded code sample. These URIs are essential for redirecting users back to the app after they successfully sign in.
 
 #### [Android](#tab/android-workforce)
 
@@ -272,13 +270,13 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-mobile-app*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+
 
 #### [Android](#tab/android-external)
 
@@ -287,11 +285,11 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 #### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
-* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
-- [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
-  - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
-  - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application).
+* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+* [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
+  * [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
+  * [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
 
 #### [iOS/macOS](#tab/ios-macos-external)
 
@@ -300,6 +298,8 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 ---
 
 ## Add a platform redirect URL
+
+You must configure specific redirect URIs in your app registration to ensure compatibility with the downloaded code sample. These URIs are essential for redirecting users back to the app after they successfully sign in.
 
 #### [Android](#tab/android-external)
 
@@ -323,28 +323,12 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 
 ---
 
-## Grant admin consent
-
-#### [Android](#tab/android-external)
-
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-#### [Android(.NET MAUI)](#tab/android-netmaui-external)
-
-[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-#### [iOS/macOS](#tab/ios-macos-external)
-
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
----
-
 ## Clone sample application
 
 
 #### [Android](#tab/android-external)
 
-To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+To obtain the sample application, you can either clone it from GitHub or [download it as a .zip file](https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-android-sample/archive/refs/heads/main.zip).
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
  
@@ -390,7 +374,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
     - `ENTER_YOUR_SIGNATURE_HASH_HERE` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
 
 1. Open */app/src/main/java/com/azuresamples/msaldelegatedandroidkotlinsampleapp/MainActivity.kt* file.
-1. Find property named `scopes` and set the scopes recorded in [Grant admin consent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
+1. Find property named `scopes` and set the scopes recorded in [Grant admin consent](./quickstart-register-app.md#grant-admin-consent-external-tenants-only). If you haven't recorded any scopes, you can leave this scope list empty.
 
     ```kotlin
     private const val scopes = "" // Developers should set the respective scopes of their Microsoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
@@ -419,7 +403,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
-    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant admin consent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
+    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant admin consent](./quickstart-register-app.md#grant-admin-consent-external-tenants-only). If you haven't recorded any scopes, you can leave this scope list empty.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 

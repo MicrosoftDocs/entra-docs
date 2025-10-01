@@ -1,15 +1,15 @@
 ---
 title: Audit activity history for group assignments in Privileged Identity Management
-description: View activity and audit activity history for group assignments in Privileged
-  Identity Management (PIM).
+description: View activity and audit activity history for group assignments in Privileged Identity Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
-ms.topic: article
+ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
+ms.custom: sfi-image-nochange
 ---
 # Audit activity history for group assignments in Privileged Identity Management
 
@@ -26,7 +26,7 @@ Follow these steps to view the audit history for groups in Privileged Identity M
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
 
 1. Select the group you want to view audit history for.
 
@@ -42,7 +42,7 @@ Follow these steps to view the audit history for groups in Privileged Identity M
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
 
 1. Select the group you want to view audit history for.
 

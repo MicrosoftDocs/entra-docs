@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Meraki Dashboard
+title: Configure Meraki Dashboard for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Meraki Dashboard.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Meraki Dashboard so that I can control who has access to Meraki Dashboard, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Meraki Dashboard
+# Configure Meraki Dashboard for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Meraki Dashboard with Microsoft Entra ID. When you integrate Meraki Dashboard with Microsoft Entra ID, you can:
 
@@ -25,6 +23,7 @@ In this article,  you learn how to integrate Meraki Dashboard with Microsoft Ent
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - Meraki Dashboard single sign-on (SSO) enabled subscription.
 
@@ -42,7 +41,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Meraki Dashboard into Microsoft Entra ID, you need to add Meraki Dashboard from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Meraki Dashboard** in the search box.
 1. Select **Meraki Dashboard** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -70,7 +69,7 @@ To configure and test Microsoft Entra SSO with Meraki Dashboard, perform the fol
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Meraki Dashboard** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Meraki Dashboard** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
@@ -119,7 +118,7 @@ Follow these steps to enable Microsoft Entra SSO.
 ## Configure Meraki Dashboard SSO
 1. In a different web browser window, sign in to your Meraki Dashboard company site as an administrator
 
-4. Navigate to **Organization** -> **Settings**.
+4. Navigate to **Organization** > **Settings**.
 
    ![Meraki Dashboard Settings tab](./media/meraki-dashboard-tutorial/configure-1.png)
 
@@ -139,7 +138,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign into meraki dashboard as an administrator.
 
-1. Navigate to **Organization** -> **Administrators**.
+1. Navigate to **Organization** > **Administrators**.
 
    ![Meraki Dashboard Administrators](./media/meraki-dashboard-tutorial/user-1.png)
 

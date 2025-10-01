@@ -3,9 +3,9 @@
 metadata:
   title: Verify Microsoft Entra hybrid join state
   description: Verify configurations for Microsoft Entra hybrid joined devices
-  author: MicrosoftGuyJFlo
-  ms.author: joflore
-  manager: femila
+  author: owinfreyATL
+  ms.author: owinfrey
+  manager: dougeby
   ms.reviewer: sandeo
   ms.date: 11/25/2024
   ms.service: entra-id
@@ -45,7 +45,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Device Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-device-administrator).
       - |
-        Browse to **Identity** > **Devices** > **All devices**.
+        Browse to **Entra ID** > **Devices** > **All devices**.
       - |  
         If the **Registered** column says **Pending**, then Microsoft Entra hybrid join hasn't completed. In federated environments, this state happens only if it failed to register and Microsoft Entra Connect is configured to sync the devices. Wait for Microsoft Entra Connect to complete a sync cycle.
       - |  

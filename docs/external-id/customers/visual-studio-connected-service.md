@@ -2,7 +2,7 @@
 title: Get Started with the Microsoft identity platform Visual Studio's Connected Services
 description: Learn how to use Visual Studio Connected Services to integrate Microsoft Entra ID into your applications right from your development environment.
 author: Dickson-Mwendia
-manager: celestedg
+manager: dougeby
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 12/23/2024

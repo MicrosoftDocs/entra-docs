@@ -5,8 +5,8 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: scenarios:getting-started, languages:java, devx-track-java, mode-api, devx-track-extended-java
-ms.date: 09/24/2024
+ms.custom:
+ms.date: 04/16/2025
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -86,7 +86,7 @@ ms.topic: concept-article
 > 
 > ### MSAL Java
 > 
-> [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by using the application own identity instead of delegated permissions. The authentication flow used in this case is known as *[client credentials oauth flow](v2-oauth2-client-creds-grant-flow.md)*. For more information on how to use MSAL Java with daemon apps, see [this article](scenario-daemon-app-registration.md).
+> [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by using the application own identity instead of delegated permissions. The authentication flow used in this case is known as *[client credentials oauth flow](v2-oauth2-client-creds-grant-flow.md)*. For more information on how to use MSAL Java with daemon apps, see [this article](scenario-daemon-app-configuration.md).
 > 
 > Add MSAL4J to your application by using Maven or Gradle to manage your dependencies by making the following changes to the application's pom.xml (Maven) or build.gradle (Gradle) file.
 > 
@@ -177,4 +177,4 @@ ms.topic: concept-article
 > To learn more about daemon applications, see the scenario landing page.
 > 
 > > [!div class="nextstepaction"]
-> > [Daemon application that calls web APIs](scenario-daemon-app-registration.md)
+> > [Daemon application that calls web APIs](scenario-daemon-app-configuration.md)

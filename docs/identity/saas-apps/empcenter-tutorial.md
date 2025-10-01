@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra integration with EmpCenter
+title: Configure EmpCenter for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and EmpCenter.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EmpCenter so that I can control who has access to EmpCenter, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with EmpCenter
+# Configure EmpCenter for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate EmpCenter with Microsoft Entra ID.
 Integrating EmpCenter with Microsoft Entra ID provides you with the following benefits:
@@ -46,7 +46,7 @@ To configure the integration of EmpCenter into Microsoft Entra ID, you need to a
 **To add EmpCenter from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, type **EmpCenter**, select **EmpCenter** from result panel then select **Add** button to add the application.
 
 	 ![EmpCenter in the results list](common/search-new-app.png)
@@ -76,7 +76,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with EmpCenter, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **EmpCenter** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **EmpCenter** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 
@@ -127,7 +127,7 @@ To configure single sign-on on **EmpCenter** side, you need to send the download
 The objective of this section is to create a test user called Britta Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -143,7 +143,7 @@ The objective of this section is to create a test user called Britta Simon.
 In this section, you enable Britta Simon to use Azure single sign-on by granting access to EmpCenter.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **EmpCenter**.
+1. Browse to **Entra ID** > **Enterprise apps** > **EmpCenter**.
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 

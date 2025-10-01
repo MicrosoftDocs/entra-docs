@@ -3,7 +3,7 @@ title: 'Properties of an enterprise application'
 description: Learn about the properties of an enterprise application in Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
@@ -73,6 +73,9 @@ This option only applies to the following types of applications and services:
 - WS-Federation for user sign
 - Application Proxy applications with Microsoft Entra preauthentication enabled
 - Applications or services for which other applications or service are requesting access tokens
+
+>[!NOTE]
+>Users with a Global Administrator role can sign in to applications, regardless of the assignment required settings.
 
 ## Visible to users
 

@@ -2,11 +2,10 @@
 title: Acquire and cache tokens with Microsoft Authentication Library (MSAL)
 description: Learn about acquiring and caching tokens using MSAL.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: has-adal-ref 
-ms.date: 03/19/2025
-ms.reviewer: saeeda, ddelimarsky
+ms.date: 05/14/2025
+ms.reviewer: 
 ms.service: identity-platform
 ms.topic: concept-article
 
@@ -34,7 +33,7 @@ When your application needs to request an access token with specific permissions
 Some example scope values for different resources:
 
 - Microsoft Graph API: `https://graph.microsoft.com/User.Read`
-- Custom web API: `api://00001111-aaaa-2222-bbbb-3333cccc4444/api.read`
+- Custom web API: `api://aaaabbbb-0000-cccc-1111-dddd2222eeee/api.read`
 
 The format of the scope value varies depending on the resource (the API) receiving the access token and the `aud` claim values it accepts.
 

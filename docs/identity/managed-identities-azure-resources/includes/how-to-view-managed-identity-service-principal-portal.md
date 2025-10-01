@@ -1,17 +1,18 @@
 ---
-author: rwike77 
-ms.author: ryanwi
-ms.date: 03/14/2025 
+author: SHERMANOUKO
+ms.author: shermanouko
+ms.date: 03/14/2025
 ms.topic: include
 ms.service: entra-id
 ms.subservice: managed-identities
+ms.custom: sfi-image-nochange
 ---
 <!-- zone pivots doesn't support YML files -->
 
 ## View the service principal for a managed identity using the Azure portal
     
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. In the left nav blade, select **Identity**, then **Applications**, and then select **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. In the **Manage** section select **All applications**.
 1. Set a filter for "Application type == Managed Identities" and select **Apply**.
 1. (Optional) In the search filter box, enter the name of the Azure resource that has system managed identities enabled or the name of the user assigned managed identity.

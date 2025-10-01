@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with HighGround
+title: Configure HighGround for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HighGround.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HighGround so that I can control who has access to HighGround, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with HighGround
+# Configure HighGround for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate HighGround with Microsoft Entra ID. When you integrate HighGround with Microsoft Entra ID, you can:
 
@@ -26,7 +26,9 @@ In this article,  you learn how to integrate HighGround with Microsoft Entra ID.
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HighGround single sign-on (SSO) enabled subscription.
 
@@ -42,11 +44,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of HighGround into Microsoft Entra ID, you need to add HighGround from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **HighGround** in the search box.
 1. Select **HighGround** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-highground'></a>
@@ -71,7 +73,7 @@ To configure and test Microsoft Entra SSO with HighGround, complete the followin
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HighGround** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **HighGround** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
@@ -91,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.highground.com/#/login/<company-slug>`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [HighGround Client support team](https://youearnedit.freshdesk.com/support/home) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact HighGround client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -108,7 +110,7 @@ Follow these steps to enable Microsoft Entra SSO.
 In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -124,7 +126,7 @@ In this section, you create a test user called B.Simon.
 In this section, you enable B.Simon to use single sign-on by granting access to HighGround.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HighGround**.
+1. Browse to **Entra ID** > **Enterprise apps** > **HighGround**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 
    ![The "Users and groups" link](common/users-groups-blade.png)
@@ -139,11 +141,11 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 ## Configure HighGround SSO
 
-To configure single sign-on on **HighGround** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [HighGround support team](https://youearnedit.freshdesk.com/support/home). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **HighGround** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to HighGround support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create HighGround test user
 
-In this section, you create a user called Britta Simon in HighGround. Work with [HighGround support team](https://youearnedit.freshdesk.com/support/home) to add the users in the HighGround platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in HighGround. Work with HighGround support team to add the users in the HighGround platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 

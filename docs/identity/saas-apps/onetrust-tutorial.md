@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra integration with OneTrust Privacy Management Software
+title: Configure OneTrust Privacy Management Software for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and OneTrust Privacy Management Software.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OneTrust Privacy Management Software so that I can control who has access to OneTrust Privacy Management Software, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with OneTrust Privacy Management Software
+# Configure OneTrust Privacy Management Software for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate OneTrust Privacy Management Software with Microsoft Entra ID. When you integrate OneTrust Privacy Management Software with Microsoft Entra ID, you can:
 
@@ -45,11 +45,11 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of OneTrust Privacy Management Software into Microsoft Entra ID, you need to add OneTrust Privacy Management Software from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **OneTrust Privacy Management Software** in the search box.
 1. Select **OneTrust Privacy Management Software** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-onetrust-privacy-management-software'></a>
 
@@ -73,7 +73,7 @@ To configure and test Microsoft Entra SSO with OneTrust Privacy Management Softw
 In this section, you enable Microsoft Entra SSO.
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **OneTrust Privacy Management Software** application integration page, find the **Manage** section and select **Single Sign-On**.
+1. Browse to **Entra ID** > **Enterprise apps** > **OneTrust Privacy Management Software** application integration page, find the **Manage** section and select **Single Sign-On**.
 1. On the **Select a Single Sign-On Method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -115,7 +115,7 @@ In this section, you enable Microsoft Entra SSO.
 
 In this section, you create a test user called B.Simon.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -130,7 +130,7 @@ In this section, you create a test user called B.Simon.
 
 In this section, you enable B.Simon to use Azure single sign-on by granting access to OneTrust Privacy Management Software.
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. In the applications list, select **OneTrust Privacy Management Software**.
 1. In the app's overview page, find the **Manage** section, and select **Users and groups**.
 1. Select **Add user**. Then, in the **Add Assignment** dialog box, select **Users and groups**.

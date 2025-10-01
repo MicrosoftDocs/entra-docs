@@ -2,14 +2,13 @@
 title: Tutorial - Create a Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, you learn how to create and configure a Microsoft Entra Domain Services managed domain using the Microsoft Entra admin center.
 author: justinha
-manager: femila
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: has-azure-ad-ps-ref
 ms.topic: tutorial
 ms.date: 02/19/2025
 ms.author: justinha
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services managed domain so that I can synchronize identity information with my Microsoft Entra tenant and provide Domain Services connectivity to virtual machines and applications in Azure.
 ---
 

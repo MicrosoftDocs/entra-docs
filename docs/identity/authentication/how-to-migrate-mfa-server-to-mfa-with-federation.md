@@ -361,7 +361,7 @@ Possible considerations when decommissions the MFA Servers include:
 
 * Optionally clean up logs and data directories that are left behind after backing them up first. 
 
-* Uninstall the multifactor authentication Web Server SDK if applicable, including any files left over in etpub\wwwroot\MultiFactorAuthWebServiceSdk and or MultiFactorAuth directories
+* Uninstall the multifactor authentication Web Server SDK if applicable, including any files left over inetpub\wwwroot\MultiFactorAuthWebServiceSdk and or MultiFactorAuth directories
 
 * For MFA Server versions prior to 8.0, it may also be necessary to remove the multifactor authentication Phone App Web Service
 

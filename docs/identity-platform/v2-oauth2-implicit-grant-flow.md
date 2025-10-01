@@ -4,12 +4,11 @@ description: Secure single-page apps using Microsoft identity platform implicit 
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
-ms.date: 10/01/2024
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.reviewer: jmprieur, ludwignick
+ms.topic: reference
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer integrating authentication into my application, I want to understand the limitations of the OAuth 2.0 implicit grant flow and why it is no longer recommended, so that I can choose a more suitable authentication method like the authorization code flow.
 ---
 

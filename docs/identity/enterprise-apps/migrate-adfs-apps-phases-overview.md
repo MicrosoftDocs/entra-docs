@@ -3,7 +3,7 @@ title: 'Plan application migration to Microsoft Entra ID'
 description: This article discusses the advantages of Microsoft Entra ID and provides a four-phase guide for planning and executing a migration strategy with detailed planning and exit criteria.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
@@ -43,11 +43,11 @@ Your applications are likely using the following types of authentication:
 
 To ensure that the users can easily and securely access applications, your goal is to have a single set of access controls and policies across your on-premises and cloud environments.
 
-[Microsoft Entra ID](~/fundamentals/whatis.md) offers a universal identity platform that provides your employees, partners, and customers a single identity to access the applications they want. The platform boosts collaboration from any platform and device.
+[Microsoft Entra ID](~/fundamentals/what-is-entra.md) offers a universal identity platform that provides your employees, partners, and customers a single identity to access the applications they want. The platform boosts collaboration from any platform and device.
 
 :::image type="content" source="media/migrate-adfs-apps-phases-overview/connectivity.png" alt-text="Diagram showing Microsoft Entra connectivity." lightbox="media/migrate-adfs-apps-phases-overview/connectivity.png":::
 
-Microsoft Entra ID has a [full suite of identity management capabilities](~/fundamentals/whatis.md#which-features-work-in-azure-ad). Standardizing your app authentication and authorization to Microsoft Entra ID gets you the benefits that these capabilities provide.
+Microsoft Entra ID has a full suite of identity management capabilities. Standardizing your app authentication and authorization to Microsoft Entra ID gets you the benefits that these capabilities provide.
 
 You can find more migration resources at [https://aka.ms/migrateapps](./migration-resources.md)
 
@@ -129,7 +129,7 @@ The migration states you might consider using are as follows:
 | Migration states       | Action plan                                   |
 | ---------------------- | --------------------------------------------- |
 | **Initial Request** | Find the app and contact the owner for more information |
-| **Assessment Complete** | App owner evaluates the app requirements and returns the app questionnaire</td>
+| **Assessment Complete** | App owner evaluates the app requirements and returns the app questionnaire</td> |
 | **Configuration in Progress** | Develop the changes necessary to manage authentication against Microsoft Entra ID |
 | **Test Configuration Successful** | Evaluate the changes and authenticate the app against the test Microsoft Entra tenant in the test environment |
 | **Production Configuration Successful** | Change the configurations to work against the production AD tenant and assess the app authentication in the test environment |
