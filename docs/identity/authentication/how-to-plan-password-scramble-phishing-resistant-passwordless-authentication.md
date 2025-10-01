@@ -33,7 +33,7 @@ Organizations with users synced from on-premises AD DS to Microsoft Entra ID sho
 
 Scrambling user passwords with the Smart Card Required for Interactive Logon (SCRIL) setting is the recommended method for scrambling user passwords on-premises because it's a natively available option in AD DS. When SCRIL is enabled on a user object, the user’s AD DS password is randomized by the domain controller to a value no one knows. The user has to enroll and then must authenticate to the AD DS domain by using a smart card or Windows Hello for Business. With password hash synchronization enabled, this AD DS password hash is also synced with Microsoft Entra ID.
 
-The Smart Card Required for Interactive Logon setting can be configured using the Active Directory Users and Computers tool. The following sample PowerShell script can be used to enable the setting programatically, including for many users at once. Modify the **samAccountName** variable of the script to match your environment, and then run it in a PowerShell session. Use the credentials of an admin account with appropriate permissions in on-premises AD.
+The Smart Card Required for Interactive Logon setting can be configured using the Active Directory Users and Computers tool. The following sample PowerShell script can be used to enable the setting programmatically, including for many users at once. Modify the **samAccountName** variable of the script to match your environment, and then run it in a PowerShell session. Use the credentials of an admin account with appropriate permissions in on-premises AD.
 
 ```PowerShell
 $samAccountName = <sAMAccountName of the user>
@@ -127,6 +127,6 @@ If your organization no longer needs passwords whatsoever, because all applicati
 1. Disable password writeback from [Microsoft Entra to on-premises Active Directory](~/identity/authentication/tutorial-enable-sspr-writeback.md#clean-up-resources)
 1. Set your Microsoft Entra password policy to have [no expiry](~/identity/authentication/concept-sspr-policy.md)
 
-## Relate content
+## Related content
 
 [Deploy a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
