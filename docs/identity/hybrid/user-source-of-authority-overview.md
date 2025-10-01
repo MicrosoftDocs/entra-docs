@@ -37,13 +37,13 @@ The next sections explain more details about the scenario that User SOA supports
 
 ## Prerequisites for Transferring User SOA
 
-Before you begin transferring the SOA for users in your organization, the following prerequisites are must be met:
+Before you begin transferring the SOA for users in your organization, your environment must meet the following prerequisites:
 
-- The Cloud HR system has been configured and successfully integrated with Microsoft Entra ID.
-- No on-premises Exchange workloads.
-- Password-less authentication utilizing Windows Hello for Business (WHfB) or FIDO2 is required.
-- The Cloud Kerberos Trust type must be utilized.
-- The users intended for SOA transfer are not associated with any applications that require password-based authentication.
+- The Cloud HR system has been configured and successfully integrated with Microsoft Entra ID. Changes to users provisioned from the HR system should go directly Microsoft Entra ID. For more information, see: [Prepare your HR system](prepare-user-source-of-authority-environment.md#prepare-your-hr-system).
+- No on-premises Exchange workloads. If you are currently using on-premises Exchange server, shift the users and mailboxes to the cloud and then remove on-prem-exchange. For more information, see: [Prepare your Microsoft Exchange setup](prepare-user-source-of-authority-environment.md#prepare-your-microsoft-exchange-setup)
+- Password-less authentication utilizing [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/configure) or [FIDO2 security keys](../../identity/authentication/how-to-enable-passkey-fido2.md) is required.
+- The [Cloud Kerberos Trust type](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) must be utilized.
+- The users intended for SOA transfer are not associated with any applications that require password-based authentication. If any of the users you want to transfer SOA for have any password dependencies, then transferring SOA isn't supported. If users are using federated authentication using [Active Directory Federation Service](/windows-server/identity/ad-fs/ad-fs-overview), then transferring SOA isn't supported. If your organization uses a third-party federation authentication identity provider and plans to transfer the SOA of users, you must manage the Active Directory account manually and maintain the password using the third-party sync tool.
 
 
 
@@ -64,10 +64,6 @@ Using Active Directory management tools like Active Directory Users and Computer
 ### Microsoft Identity Manager with the Active Directory Management Agent
 
 If your organization uses Microsoft Identity Manager (MIM) with the Active Directory Management Agent (AD MA) to manage AD users and groups, you must update the sync logic to stop exporting changes to those objects via AD MA before making an SOA change. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are first sent to Microsoft Entra, and then to Active Directory where needed. For more information, see: [Prepare your MIM setup](prepare-user-source-of-authority-environment.md#prepare-your-mim-setup).
-
-### Applications
-
-Your application must be modernized, and you should use [cloud authentication](../../architecture/authenticate-applications-and-users.md) for SOA to work. If you need to access on-premises resources, you can use Microsoft Entra Kerberos and [Microsoft Entra Private Access](../../global-secure-access/concept-private-access.md) to access Kerberos based AD apps. For LDAP based applications, we recommend using Microsoft Entra Domain Services.  
 
 ### Devices
 
