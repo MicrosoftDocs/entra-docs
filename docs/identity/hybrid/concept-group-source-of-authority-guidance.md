@@ -38,7 +38,7 @@ If you plan to provision a converted SOA security group (not mail-enabled) back 
 1. Confirm the custom attribute sync in Microsoft Entra ID.
 1. Provision SOA converted groups with the custom attribute.
 
-For more information, see [Prepare groups for Group SOA conversion and provisioning](tutorial-group-provisioning.md#prepare-groups-for-group-soa-conversion-and-provisioning).
+For more information, see [Prepare groups for Group SOA conversion and provisioning](/cloud-sync/tutorial-group-provisioning.md#prepare-groups-for-group-soa-conversion-and-provisioning).
 
 ### Transition group management
 
