@@ -6,7 +6,7 @@ author: henrymbuguakiarie
 ms.author: henrymbugua
 ms.date: 08/19/2024
 ms.reviewer: akgoel
-ms.service: msal
+ms.service: identity-platform
 ms.subservice:
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
