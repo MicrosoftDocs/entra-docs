@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 02/07/2024
 ms.reviewer: stsoneff
 ms.service: identity-platform
-ms.subservice: web-apps
+ms.subservice:
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to learn how to secure access to a web app running on Azure App Service.
 ---

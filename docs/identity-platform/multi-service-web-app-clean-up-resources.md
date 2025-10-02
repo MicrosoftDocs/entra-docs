@@ -7,7 +7,7 @@ ms.author: cwerner
 ms.date: 02/17/2024
 ms.reviewer: stsoneff
 ms.service: identity-platform
-ms.subservice: web-apps
+ms.subservice:
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to access Azure Storage for an app using managed identities.
