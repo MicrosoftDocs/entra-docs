@@ -152,8 +152,8 @@ Log queries help you to fully use the value of the data collected in Azure Monit
   | order by SignInCount desc  nulls last
   ```
 
-1. Select **Run**. The query results are displayed at the bottom of the screen.
-1. To save your query for later use, select **Save**.
+5. Select **Run**. The query results are displayed at the bottom of the screen.
+6. To save your query for later use, select **Save**.
 
   :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor.":::
 
