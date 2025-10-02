@@ -59,7 +59,7 @@ The [Conditional Access optimization agent](../identity/conditional-access/agent
 | Attribute           | Description |
 |---------------------|------------ |
 | Identity            | Runs with the identity of the administrator who configured the agent |
-| Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing) |
+| Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
 | Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
