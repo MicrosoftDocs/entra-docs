@@ -30,7 +30,7 @@ Follow these best practices to transition group management from on-premises to M
 
 ### Prepare groups for Group SOA conversion and provisioning
 
-If you plan to provision a converted SOA security group (not mail-enabled) back to AD DS, then you need to complete these steps to prepare the groups for provisioning to AD DS with their original OU path:
+If you plan to provision a converted SOA security group (not mail-enabled) back to AD DS, then you need to complete these steps to preserve the original organizational unit (OU) path:
 
 1. Change the group scope for the AD DS groups to Universal.
 1. Populate a custom attribute in AD DS.
