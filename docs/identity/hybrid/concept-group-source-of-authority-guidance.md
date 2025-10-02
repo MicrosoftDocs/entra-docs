@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: conceptual
-ms.date: 10/01/2025
+ms.date: 10/02/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
@@ -28,9 +28,17 @@ For more information, see [How to remove unused groups from Active Directory](ho
 
 Follow these best practices to transition group management from on-premises to Microsoft Entra ID.
 
-### Change to Universal group scope before you convert Group SOA
+### Prepare groups for Group SOA conversion and provisioning
 
-If you plan to provision a converted SOA security group (not mail-enabled) back to AD DS, then you need to change the group scope to Universal before you convert Group SOA. Global and Domain Local group scopes aren't supported for groups provisioned to AD DS. You need to check and update the group scope before you convert Group SOA for security groups that you want to provision back to AD DS.
+If you plan to provision a converted SOA security group (not mail-enabled) back to AD DS, then you need to complete these steps to to prepare the groups for provisioning to AD DS with their original OU path:
+
+1. Change the group scope for the AD DS groups to Universal.
+1. Populate a custom attribute in AD DS.
+1. Enable sync for the custom attribute in the sync client.
+1. Confirm the custom attribute sync in Microsoft Entra ID.
+1. Provision SOA converted groups with the custom attribute.
+
+For more information, see [Prepare groups for Group SOA conversion and provisioning](tutorial-group-provisioning.md#prepare-groups-for-group-soa-conversion-and-provisioning).
 
 ### Transition group management
 
