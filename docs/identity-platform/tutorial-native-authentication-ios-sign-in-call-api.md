@@ -2,7 +2,7 @@
 title: Call an API in iOS/macOS app by using native authentication
 description: Learn how to acquire multiple access tokens and call an API in iOS/macOS app by using native authentication.
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 ms.author: henrymbugua
 ms.service: entra-external-id
 ms.subservice: external

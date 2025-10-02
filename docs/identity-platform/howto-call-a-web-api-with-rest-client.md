@@ -2,7 +2,7 @@
 title: Call an ASP.NET Core web API with Insomnia
 description: Learn how to call a protected ASP.NET Core web API using the Microsoft identity platform and Insomnia.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.date: 05/21/2024
 ms.service: identity-platform
