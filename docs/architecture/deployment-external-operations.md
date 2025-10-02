@@ -82,7 +82,7 @@ Configure token lifetime to help minimize exposure from compromised tokens.
 
 |Security control|Details|
 |---|---|
-|Configure token lifetime|Reduce the access token lifetime to help mitigate risk. Malicious actors use a compromised access or ID token. The tokens can't be revoked.</br> Tokens need frequent refreshes, so the trade-off is a potential effect on performance. |
+|Configure token lifetime|Reduce the access token lifetime to help mitigate risk. Malicious actors use a compromised access or ID token. The tokens can't be revoked.</br> Tokens need frequent refreshes, so the trade-off is a potential effect on performance. For more information, see [Configurable token lifetimes in the Microsoft identity platform](../identity-platform/configurable-token-lifetimes.md). |
 
 ## Custom authentication extensions
 
