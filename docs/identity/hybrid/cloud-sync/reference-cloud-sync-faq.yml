@@ -70,7 +70,7 @@ sections:
       - question: |
           I'm provisioning users using cloud sync. I deleted the configuration. Why do I still see the old synced objects in Microsoft Entra ID? 
         answer: |
-          When you delete the configuration, cloud sync doesn't automatically remove the synced objects in Microsoft Entra ID. To ensure you Don't have the old objects, change the scope of the configuration to an empty group or Organizational Units. Once the provisioning runs and cleans up the objects, disable and delete the  configuration. 
+          When you delete the configuration, cloud sync doesn't automatically remove the synced objects in Microsoft Entra ID. To ensure you don't have the old objects, change the scope of the configuration to an empty group or Organizational Units. Once the provisioning runs and cleans up the objects, disable and delete the configuration. 
 
       - question: |
           Does cloud sync support Exchange hybrid?
@@ -100,10 +100,10 @@ sections:
       - question: |
           If I move a user from an OU that is scoped for cloud sync to an OU that is scoped for Microsoft Entra Connect, what happens?
         answer: |
-          The user are deleted and recreated.  Moving a user from an OU that is scoped for cloud sync is viewed as a delete operation.  If the user is moved to an OU that is managed by Microsoft Entra Connect, it will be reprovisioned to Microsoft Entra ID and a new user created.
+          The user is deleted and recreated.  Moving a user from an OU that is scoped for cloud sync is viewed as a delete operation.  If the user is moved to an OU that is managed by Microsoft Entra Connect, it will be reprovisioned to Microsoft Entra ID and a new user created.
 
       - question: |
-          If I rename or move the OU that is in scope for the cloud sync filter, what happens to the user that were created in Microsoft Entra ID?
+          If I rename or move the OU that is in scope for the cloud sync filter, what happens to the users that were created in Microsoft Entra ID?
         answer: |
           Nothing.  The users aren't deleted if the OU is renamed or moved.
 
