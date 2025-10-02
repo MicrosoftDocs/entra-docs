@@ -6,7 +6,7 @@ metadata:
   manager: mwongerapk
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 12/17/2024
+  ms.date: 10/02/2025
   ms.subservice: hybrid-cloud-sync
   ms.author: jomondi
   
@@ -20,7 +20,7 @@ sections:
       - question: |
           How often does cloud sync run?
         answer: |
-          Cloud provisioning is scheduled to run every 2 mins. Every 2 mins, any user, group, and password hash changes are provisioned to Microsoft Entra ID.
+          Cloud provisioning is scheduled to run every 10-20 minutes. Each time it runs, any user, group, and password hash changes are provisioned to Microsoft Entra ID.
 
       - question: |
           Seeing password hash sync failures on the first run. Why?
