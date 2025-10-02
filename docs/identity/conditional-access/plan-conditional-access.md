@@ -242,12 +242,13 @@ Establish baseline security controls and prepare for MFA enforcement. **Prerequi
 
 ### Phase 2: Core authentication (Week 2-3)
 
-Enforce MFA for all users and guests. **Key impact:** Users will be required to use MFA for all sign-ins. Ensure communication plan is executed and support resources are available.
+Enforce MFA for all users and guests, and protect mobile devices with [app protection policies](/intune/intune-service/apps/app-protection-policy). **Key impact:** Users will be required to use MFA for all sign-ins and use approved apps with app protection on mobile devices. Ensure communication plan is executed and support resources are available.
 
 | Conditional Access policy | Scenario | License requirement |
 | --- | --- | --- |
 | [All user sign-in activity uses strong authentication methods](/entra/fundamentals/zero-trust-monitor-detect#all-user-sign-in-activity-uses-strong-authentication-methods) | All users | Microsoft Entra ID P1 |
 | [Guest access is protected by strong authentication methods](/entra/fundamentals/zero-trust-protect-tenants#guest-access-is-protected-by-strong-authentication-methods) | Guest access | Microsoft Entra ID P1 |
+| [Require approved client apps or app protection policy](/entra/identity/conditional-access/howto-policy-approved-app-or-app-protection) | Mobile users | Microsoft Entra ID P1 |
 | [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/zero-trust-protect-identities#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | All users | Microsoft Entra ID P1 |
 
 ### Phase 3: Advanced protection (Week 3-4)
