@@ -54,7 +54,7 @@ To integration the ServiceNow app with Microsoft Entra Permissions Management:
 4.	Select the app, then click **Install**. 
 The installation process begins and the application is installed in your instance.
 5. Configure the app by following the instructions.
-:::image type="content" source="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png" alt-text="Screenshot of ServiceNow Microsoft Entra Permissions Management installation." lightbox="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png":::
+:::image type="content" source="media/configure-servicenow-application/servicenow-microsoft-entra-permissions-management-installation.png" alt-text="Screenshot of ServiceNow Microsoft Entra Permissions Management installation." lightbox="media/configure-servicenow-application/servicenow-microsoft-entra-permissions-management-installation.png":::
 
 
 ## Next steps

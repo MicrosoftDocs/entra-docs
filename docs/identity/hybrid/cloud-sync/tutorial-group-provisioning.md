@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 08/04/2025
+ms.date: 09/19/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
@@ -52,6 +52,82 @@ To add synced users, follow these steps:
 9. It should successfully add the user to the group.
 10. On the far left, select **All groups**. Repeat this process by using the **Sales** group, and add **Lola Jacobson** to that group.
 
+## Prepare groups for Group SOA conversion and provisioning
+
+You can preserve the original organizational unit (OU) of on-premises groups and provision the groups back to their original Active Directory Domain Services (AD DS) after you convert Group SOA to the cloud. Complete the following steps to prepare the groups for provisioning to AD DS with their original OU path.
+
+### Change the group scope for the AD DS groups to Universal
+
+1. Open Active Directory Administrative Center.
+1. Right-click a group, click **Properties**.
+1. In the **Group** section, select **Universal** as the group scope.
+1. Click **Save**.
+
+### Populate a custom attribute in AD DS
+
+You can store the OU path in a custom attribute or any other attribute like *info*. For more information about how to sync custom attributes, see [Custom attribute mapping](/entra/identity/hybrid/cloud-sync/tutorial-directory-extension-group-provisioning). In this example, the OU oath is stored in *extensionAttribute13*.
+
+Run the following cmdlet to extract the OU from each group's distinguished name (DN) and store it in the *extensionAttribute13* attribute. 
+
+```powershell
+Get-ADGroup -Filter * -SearchBase "DC=contoso,DC=com" | ForEach-Object { 
+    $ou = ($_.DistinguishedName -split ",", 2)[1]  # Extract OU path 
+    Set-ADGroup -Identity $_.DistinguishedName -Replace @{extensionAttribute13 = $ou} 
+} 
+```
+
+### Enable sync for the custom attribute in the sync client
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Browse to **Identity** > **Provisioning** > **Cloud Sync**. 
+1. Select your Cloud Sync configuration. 
+1. Under **Attribute Mapping**, for Group objects: 
+   1. Click **Edit Mapping** 
+   1. Add a new mapping: 
+
+     | Setting | Value |
+     |---------|-------|
+     | Source attribute | extensionAttribute13 |
+     | Target attribute | onPremisesExtensionAttributes.extensionAttribute13|
+     | Match objects | Leave unchecked |
+     | Apply this mapping | Always |
+
+### Confirm the custom attribute sync in Microsoft Entra ID
+
+   #### [**Microsoft Graph PowerShell**](#tab/PowerShell)
+
+   ```powershell
+   Get-MgGroup -GroupId <groupId> | Select -ExpandProperty OnPremisesExtensionAttributes 
+   ```
+
+   #### [**Graph Explorer**](#tab/GE)
+
+   ```https
+   GET https://graph.microsoft.com/v1.0/groups/{group-id}?$select=onPremisesExtensionAttributes 
+   ```
+
+   You should see: 
+
+   ```https
+   { 
+     "onPremisesExtensionAttributes": { 
+       "extensionAttribute13": "OU=Finance,DC=contoso,DC=com" 
+     } 
+   } 
+   ```
+   ---
+
+### Provision SOA converted groups with the custom attribute
+
+When you configure **Provisioning**, use the synced attribute to control the target OU. 
+ 
+1. In your **Provisioning** configuration, map onPremisesExtensionAttributes.extensionAttribute13 to a custom variable such as *preferredOU*. 
+2. Use an expression like this example to handle fallback. This expression uses the original OU if it's available, or falls back to a default OU that you specify. You can change extensionAttribute13 later to override the value. 
+
+   ```
+   IIF(IsNullOrEmpty([extensionAttribute13]), "OU=<Enter your default OU name>,DC=contoso,DC=com", [extensionAttribute13]) 
+   ```
+
 ## Configure provisioning
 
 To configure provisioning, follow these steps:
@@ -74,7 +150,7 @@ To configure provisioning, follow these steps:
 
    9. There are two possible approaches to set the OU:
 
-      - You can preserve the original OU path from on-premises. With this approach, you need to set the attribute mapping based on an extensionAttribute value. For more information, see [Preserve the original OU path](how-to-preserve-original-organizational-unit.md).
+      - You can preserve the original OU path from on-premises. With this approach, you first need to [Prepare groups for Group SOA conversion and provisioning](#prepare-groups-for-group-soa-conversion-and-provisioning).
    
       Or
 
