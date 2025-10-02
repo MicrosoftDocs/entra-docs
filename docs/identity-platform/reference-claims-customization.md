@@ -4,7 +4,7 @@ description: Learn about the custom claims policy and claims mapping policy type
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 06/02/2023
 ms.reviewer: ludwignick
 ms.service: identity-platform
