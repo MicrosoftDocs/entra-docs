@@ -219,28 +219,58 @@ Microsoft Entra ID lets you create [named locations](concept-assignment-network.
 
 ## Deploy Conditional Access policies
 
-When you're ready, deploy your Conditional Access policies in phases.
+When you're ready, deploy your Conditional Access policies in phases. Start with a few core Conditional Access policies like the ones that follow. Many policies are available as [Conditional Access policy templates](concept-conditional-access-policy-common.md). By default, each policy created from a template is in report-only mode. Test and monitor usage, to ensure the intended result, before turning on each policy.
 
-### Build your Conditional Access policies
+Deploy policies in the following three phases to balance security improvements with minimal user disruption. Organizations can adjust timelines based on their size, complexity, and change management capabilities.
 
-Start with a few core Conditional Access policies like the ones that follow. Many policies are available as [Conditional Access policy templates](concept-conditional-access-policy-common.md). By default, each policy created from a template is in report-only mode. Test and monitor usage, to ensure the intended result, before turning on each policy.
+> [!IMPORTANT]
+> Before deploying any policy:
+> - Verify [emergency access accounts](/entra/fundamentals/zero-trust-protect-engineering-systems#emergency-access-accounts-are-configured-appropriately) are excluded from all policies
+> - Test policies with a pilot group before organization-wide rollout
+> - Ensure users have registered required authentication methods
+> - Communicate changes to affected users and provide supporting documentation
+
+### Phase 1: Foundation (Week 1-2)
+
+Establish baseline security controls and prepare for MFA enforcement. **Prerequisites:** Ensure users can register for MFA before enabling enforcement policies.
 
 | Conditional Access policy | Scenario | License requirement |
 | --- | --- | --- |
-| [Block legacy authentication](/entra/fundamentals/configure-security#block-legacy-authentication) | All users | Microsoft Entra ID P1 |
-| [Privileged Microsoft Entra built-in roles enforce phishing-resistant methods](/entra/fundamentals/configure-security#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Privileged users | Microsoft Entra ID P1 |
-| [All user sign-in activity uses strong authentication methods](/entra/fundamentals/configure-security#all-user-sign-in-activity-uses-strong-authentication-methods) | All users | Microsoft Entra ID P1 |
-| [Guest access is protected by strong authentication methods](/entra/fundamentals/configure-security#guest-access-is-protected-by-strong-authentication-methods) | Guest access | Microsoft Entra ID P1 |
-| [Secure the MFA registration (My Security Info) page](/entra/fundamentals/configure-security#secure-the-mfa-registration-my-security-info-page) | All users | Microsoft Entra ID P1 |
-| [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/configure-security#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | All users | Microsoft Entra ID P1 |
-| [User sign-in activity uses token protection](/entra/fundamentals/configure-security#user-sign-in-activity-uses-token-protection) | All users | Microsoft Entra ID P1 |
-| [Restrict device code flow](/entra/fundamentals/configure-security#restrict-device-code-flow) | All users | Microsoft Entra ID P1 |
-| [Authentication transfer is blocked](/entra/fundamentals/configure-security#authentication-transfer-is-blocked) | All users | Microsoft Entra ID P1 |
-| [Restrict access to high risk users](/entra/fundamentals/configure-security#restrict-access-to-high-risk-users) | All users | Microsoft Entra ID P2 |
-| [Restrict high risk sign-ins](/entra/fundamentals/configure-security#restrict-high-risk-sign-ins) | All users | Microsoft Entra ID P2 |
-| [Conditional Access policies for Privileged Access Workstations are configured](/entra/fundamentals/configure-security#conditional-access-policies-for-privileged-access-workstations-are-configured) | Privileged users | Microsoft Entra ID P1 |
+| [Block legacy authentication](/entra/fundamentals/zero-trust-protect-identities#block-legacy-authentication) | All users | Microsoft Entra ID P1 |
+| [Secure the MFA registration (My Security Info) page](/entra/fundamentals/zero-trust-protect-identities#secure-the-mfa-registration-my-security-info-page) | All users | Microsoft Entra ID P1 |
+| [Privileged Microsoft Entra built-in roles enforce phishing-resistant methods](/entra/fundamentals/zero-trust-protect-identities#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Privileged users | Microsoft Entra ID P1 |
 
-#### Evaluate the policy impact
+### Phase 2: Core authentication (Week 2-3)
+
+Enforce MFA for all users and guests, and protect mobile devices with [app protection policies](/intune/intune-service/apps/app-protection-policy). **Key impact:** Users will be required to use MFA for all sign-ins and use approved apps with app protection on mobile devices. Ensure communication plan is executed and support resources are available.
+
+| Conditional Access policy | Scenario | License requirement |
+| --- | --- | --- |
+| [All user sign-in activity uses strong authentication methods](/entra/fundamentals/zero-trust-monitor-detect#all-user-sign-in-activity-uses-strong-authentication-methods) | All users | Microsoft Entra ID P1 |
+| [Guest access is protected by strong authentication methods](/entra/fundamentals/zero-trust-protect-tenants#guest-access-is-protected-by-strong-authentication-methods) | Guest access | Microsoft Entra ID P1 |
+| [Require approved client apps or app protection policy](/entra/identity/conditional-access/howto-policy-approved-app-or-app-protection) | Mobile users | Microsoft Entra ID P1 |
+| [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/zero-trust-protect-identities#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | All users | Microsoft Entra ID P1 |
+
+### Phase 3: Advanced protection (Week 3-4)
+
+Add risk-based policies and advanced attack prevention controls. **License requirement:** Risk-based policies require Microsoft Entra ID P2 licenses.
+
+| Conditional Access policy | Scenario | License requirement |
+| --- | --- | --- |
+| [Restrict high risk sign-ins](/entra/fundamentals/zero-trust-response-remediation#restrict-high-risk-sign-ins) | All users | Microsoft Entra ID P2 |
+| [Restrict access to high risk users](/entra/fundamentals/zero-trust-response-remediation#restrict-access-to-high-risk-users) | All users | Microsoft Entra ID P2 |
+| [User sign-in activity uses token protection](/entra/fundamentals/zero-trust-protect-identities#user-sign-in-activity-uses-token-protection) | All users | Microsoft Entra ID P1 |
+| [Restrict device code flow](/entra/fundamentals/zero-trust-protect-identities#restrict-device-code-flow) | All users | Microsoft Entra ID P1 |
+| [Authentication transfer is blocked](/entra/fundamentals/zero-trust-protect-identities#authentication-transfer-is-blocked) | All users | Microsoft Entra ID P1 |
+| [Conditional Access policies for Privileged Access Workstations (PAW) are configured](/entra/fundamentals/zero-trust-protect-engineering-systems#conditional-access-policies-for-privileged-access-workstations-are-configured) | Privileged users | Microsoft Entra ID P1 |
+
+> [!TIP]
+> Enable each policy in report-only mode for at least one week before enforcement. Review sign-in logs and communicate changes to users before moving to the next phase.
+>
+> [!NOTE]
+> Privileged Access Workstations (PAW) require significant infrastructure planning. Organizations should implement this policy only after establishing a PAW deployment strategy and provisioning secure devices for privileged users.
+
+### Evaluate the policy impact
 
 Use available tools to check the effect of your policies before and after you make changes. A simulated run gives you a good idea of how a Conditional Access policy affects sign-in, but it doesn't replace an actual test run in a properly configured development environment.
 
