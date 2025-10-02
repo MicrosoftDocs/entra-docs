@@ -230,7 +230,7 @@ Deploy policies in the following three phases to balance security improvements w
 > - Ensure users have registered required authentication methods
 > - Communicate changes to affected users and provide supporting documentation
 
-#### Phase 1: Foundation (Week 1-2)
+### Phase 1: Foundation (Week 1-2)
 
 Establish baseline security controls and prepare for MFA enforcement. **Prerequisites:** Ensure users can register for MFA before enabling enforcement policies.
 
@@ -240,7 +240,7 @@ Establish baseline security controls and prepare for MFA enforcement. **Prerequi
 | 2 | [Secure the MFA registration (My Security Info) page](/entra/fundamentals/zero-trust-protect-identities#secure-the-mfa-registration-my-security-info-page) | All users | Microsoft Entra ID P1 |
 | 3 | [Privileged Microsoft Entra built-in roles enforce phishing-resistant methods](/entra/fundamentals/zero-trust-protect-identities#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Privileged users | Microsoft Entra ID P1 |
 
-#### Phase 2: Core authentication (Week 2-3)
+### Phase 2: Core authentication (Week 2-3)
 
 Enforce MFA for all users and guests. **Key impact:** Users will be required to use MFA for all sign-ins. Ensure communication plan is executed and support resources are available.
 
@@ -250,7 +250,7 @@ Enforce MFA for all users and guests. **Key impact:** Users will be required to 
 | 5 | [Guest access is protected by strong authentication methods](/entra/fundamentals/zero-trust-protect-tenants#guest-access-is-protected-by-strong-authentication-methods) | Guest access | Microsoft Entra ID P1 |
 | 6 | [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/zero-trust-protect-identities#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | All users | Microsoft Entra ID P1 |
 
-#### Phase 3: Advanced protection (Week 3-4)
+### Phase 3: Advanced protection (Week 3-4)
 
 Add risk-based policies and advanced attack prevention controls. **License requirement:** Policies 7-8 require Microsoft Entra ID P2 licenses.
 
@@ -269,7 +269,7 @@ Add risk-based policies and advanced attack prevention controls. **License requi
 > [!NOTE]
 > Policy 12 requires dedicated secure workstations and significant infrastructure planning. Organizations should implement this policy only after establishing a PAW deployment strategy and provisioning secure devices for privileged users.
 
-#### Evaluate the policy impact
+### Evaluate the policy impact
 
 Use available tools to check the effect of your policies before and after you make changes. A simulated run gives you a good idea of how a Conditional Access policy affects sign-in, but it doesn't replace an actual test run in a properly configured development environment.
 
