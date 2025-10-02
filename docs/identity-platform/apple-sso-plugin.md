@@ -2,7 +2,7 @@
 title: Microsoft Enterprise SSO plug-in for Apple devices
 description: Learn about the Microsoft Entra SSO plug-in for Apple devices using iOS, iPadOS, and macOS devices.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom:
 ms.date: 01/28/2025

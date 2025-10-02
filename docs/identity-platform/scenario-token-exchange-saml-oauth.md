@@ -2,7 +2,7 @@
 title: Microsoft identity platform token exchange scenario with SAML and OIDC/OAuth in Microsoft Entra ID
 description: Learn about common token exchange scenarios when working with SAML and OIDC/OAuth in Microsoft Entra ID.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 05/14/2025
 ms.reviewer: jmprieur

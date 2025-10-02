@@ -2,7 +2,7 @@
 title: Configure single-page app
 description: Learn how to build a single-page application (app's code configuration)
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom: 
 ms.date: 05/12/2025

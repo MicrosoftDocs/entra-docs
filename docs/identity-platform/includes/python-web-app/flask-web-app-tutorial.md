@@ -4,7 +4,7 @@ ms.service: identity-platform
 ms.topic: include
 ms.date: 02/12/2025
 ms.author: shermanouko
-ms.manager: mwongerapk
+ms.manager: pmwongera
 ---
 
 #### [Workforce tenant](#tab/workforce-tenant)
