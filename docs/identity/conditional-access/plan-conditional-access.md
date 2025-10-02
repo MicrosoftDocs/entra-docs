@@ -219,11 +219,7 @@ Microsoft Entra ID lets you create [named locations](concept-assignment-network.
 
 ## Deploy Conditional Access policies
 
-When you're ready, deploy your Conditional Access policies in phases.
-
-### Build your Conditional Access policies
-
-Start with a few core Conditional Access policies like the ones that follow. Many policies are available as [Conditional Access policy templates](concept-conditional-access-policy-common.md). By default, each policy created from a template is in report-only mode. Test and monitor usage, to ensure the intended result, before turning on each policy.
+When you're ready, deploy your Conditional Access policies in phases. Start with a few core Conditional Access policies like the ones that follow. Many policies are available as [Conditional Access policy templates](concept-conditional-access-policy-common.md). By default, each policy created from a template is in report-only mode. Test and monitor usage, to ensure the intended result, before turning on each policy.
 
 Deploy policies in the following three phases to balance security improvements with minimal user disruption. Organizations can adjust timelines based on their size, complexity, and change management capabilities.
 
