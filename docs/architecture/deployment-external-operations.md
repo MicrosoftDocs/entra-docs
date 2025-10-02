@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 09/10/2025
+ms.date: 10/02/2025
 ms.author: gasinh
 
 #customer intent: I need to understand subscriptions and billing, consumer app security, and how to prevent fraud tactics in Microsoft Entra External ID. 
@@ -238,6 +238,5 @@ In the [Microsoft Entra admin center](https://entra.microsoft.com), under Monito
 * [Introduction to Microsoft Entra External ID deployment guide](deployment-external-intro.md)
 * [Tenant design](deployment-external-tenant-design.md)
 * [Customer authentication experience](deployment-external-customer-authentication.md)
-* Security operations
 * [Authentication and access control architecture](deployment-external-authentication-access-control.md)
-
+* [Security fundamentals for external tenants](../external-id/customers/concept-security-customers.md)
