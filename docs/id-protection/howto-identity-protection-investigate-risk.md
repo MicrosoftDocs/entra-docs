@@ -3,7 +3,7 @@ title: Investigate risk with Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 09/29/2025
+ms.date: 10/02/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pwongera
@@ -159,31 +159,14 @@ If this detection identified a leaked credential for a user:
 1. Confirm the user as compromised, and invoke a password reset if not already performed by self-remediation.
 1. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
 
+## Mitigate future risks
+
+1. Add corporate VPNs and IP address ranges to [named locations](../identity/conditional-access/concept-assignment-network.md) in your Conditional Access policies to reduce false positives.
+1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
+1. [Provide feedback in ID Protection](howto-identity-protection-risk-feedback.md) to improve detection accuracy and reduce false positives. 
+
 ## Next steps
 
 - [Remediate and unblock users](howto-identity-protection-remediate-unblock.md)
 - [Policies available to mitigate risks](concept-identity-protection-policies.md)
 - [Enable sign-in and user risk policies](howto-identity-protection-configure-risk-policies.md)
-
-
-
-
-
-
-
-## Access the risk reports
-
-The ID Protection Dashboard provides a summary of important insights that you can use to start your investigation and navigate to the corresponding reports from there.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **ID Protection** > **Dashboard**.
-1. Select a report from the ID Protection navigation menu.
-
-Each report launches with a list of all detections for the period shown at the top of the report. You can filter and add columns such as risk level, status, and risk detail. Download the data in .CSV or .JSON format for further processing. To integrate the reports with SEIM tools for further analysis, see [Configure diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
-
-
-
-## These are steps to take when you're not in an investigation and to prevent future false positives
-
-1. Add corporate VPNs and IP address ranges to [named locations](../identity/conditional-access/concept-assignment-network.md) in your Conditional Access policies to reduce false positives.
-1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
