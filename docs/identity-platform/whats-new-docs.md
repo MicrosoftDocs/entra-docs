@@ -19,8 +19,8 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ### Updated articles
 
-- [Desktop app that calls web APIs: Code configuration](scenario-desktop-app-configuration.md) - The update improved content clarity.
 - [Configure a mobile app that calls web APIs](scenario-mobile-app-configuration.md) - The update improved content clarity.
+- [Desktop app that calls web APIs: Code configuration](scenario-desktop-app-configuration.md) - The update improved content clarity.
 - [Web app that signs in users: Code configuration](scenario-web-app-sign-user-app-configuration.md) - The update improved content clarity.
 
 ## August 2025
