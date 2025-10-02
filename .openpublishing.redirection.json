@@ -2257,12 +2257,12 @@
     },
         {
       "source_path_from_root": "/docs/fundamentals/copilot-security-entra-investigate-incident.md",
-      "redirect_url": "/entra/security-copilot/entra-investigate-incident.md",
+      "redirect_url": "/entra/security-copilot/entra-investigate-incident",
       "redirect_document_id": false
     },
         {
       "source_path_from_root": "/docs/fundamentals/copilot-security-entra-investigate-risky-apps.md",
-      "redirect_url": "/entra/security-copilot/entra-investigate-risky-apps.md",
+      "redirect_url": "/entra/security-copilot/entra-investigate-risky-apps",
       "redirect_document_id": false
     },
         {
