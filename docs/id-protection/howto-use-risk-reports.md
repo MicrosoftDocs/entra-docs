@@ -26,9 +26,9 @@ The ID Protection Dashboard provides a summary of important insights that you ca
 
 Each report launches with a list of all detections for the period shown at the top of the report. You can filter and add or remove columns based on your preference. Download the data in .CSV or .JSON format for further processing. To integrate the reports with SEIM tools for further analysis, see [Configure diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 
-## View details
+## View details and take action
 
-Select an entry in a report to view more details, which differ based on the report you're viewing. From the details pane you can also take action on the selected user or sign-in.
+Select an entry in a report to view more details, which differ based on the report you're viewing. From the details pane you can also take action on the selected user or sign-in.  You can select one or multiple entries and either confirm the risk or dismiss it. You can also start a password reset flow from the user. These capabilities have different role requirements, so if an option is greyed out, you need a higher privileged role. For more information, see [ID Protection required roles](overview-identity-protection.md#required-roles).
 
 ### Risky users
 
@@ -50,6 +50,8 @@ A user becomes a risky user when:
 
 The **Risk history tab** shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
 
+[!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
+
 ### Risky sign-ins
 
 The Risky sign-ins report lists sign-ins that are at risk, confirmed compromised, confirmed safe, dismissed, or remediated. The details pane provides more information about the sign-in attempt that might help during an investigation, such as real-time and aggregate risk levels associated with sign-in attempts and the detection types triggered.
@@ -61,12 +63,20 @@ The Risky sign-ins report lists sign-ins that are at risk, confirmed compromised
 - Device, application, and location information
 - Risk state, risk level, and the source of the risk detection (ID Protection or Microsoft Defender for Endpoint)
 
+The **Risky sign-ins report** contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
+
+:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png":::
+
+[!INCLUDE [id-protection-admin-action-sign-in](../includes/id-protection-admin-action-sign-in.md)]
+
+To learn more about when to take each of these actions, see [How does Microsoft use my risk feedback](howto-identity-protection-risk-feedback.md#how-does-microsoft-use-my-risk-feedback)
+
 ### Risky Workload IDs
 
 A [workload identity](../workload-id/workload-identities-overview.md) is an identity that allows an application access to resources, sometimes in the context of a user. From the Risky Workload ID details page you can access service principal sign-in and audit logs for further analysis.
 
 > [!IMPORTANT]
-> Full risk details and risk-based access controls are available to Workload Identities Premium customers; however, customers without the [Workload Identities Premium](https://entra.microsoft.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade) licenses still receive all detections with limited reporting details.
+> Full risk details and risk-based access controls are available to Workload Identities Premium customers; however, customers without the **[Workload Identities Premium](../workload-id/workload-identities-faqs.md)** licenses still receive all detections with limited reporting details.
 
 **Risky Workload IDs details** include:
 - Service principal ID
@@ -82,32 +92,6 @@ The Risk detections report provides insights into the various risk detections as
 - Risk state, risk level, and risk detail
 - Attack type
 - Source of the risk detection (ID Protection or Microsoft Defender for Endpoint)
-
-## Take action
-
-You can take appropriate action directly from the report or the details pane. You can select one or multiple entries and either confirm the risk or dismiss it. You can also start a password reset flow from the user. These capabilities have different role requirements, so if an option is greyed out, you need a higher privileged role. For more information, see [ID Protection required roles](overview-identity-protection.md#required-roles).
-
-[!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
-
-[!INCLUDE [id-protection-admin-action-sign-in](../includes/id-protection-admin-action-sign-in.md)]
-
-
-
-
-
-
-## Risky sign-ins report
-
-The [Risky sign-ins report](concept-risk-reports.md) contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
-
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png":::
-
-
-[!INCLUDE [id-protection-admin-action-sign-in](../includes/id-protection-admin-action-sign-in.md)]
-
-To learn more about when to take each of these actions, see [How does Microsoft use my risk feedback](howto-identity-protection-risk-feedback.md#how-does-microsoft-use-my-risk-feedback)
-
-## Risk detections report
 
 The Risk detections report contains filterable data for up to the past 90 days (three months).
 
