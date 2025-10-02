@@ -1,5 +1,5 @@
 ---
-title: Supported Device Authentication for Users Transferred Using Source of Authority (SOA) 
+title: Supported Device Authentication Transferred Source of Authority (SOA) to Microsoft Entra ID
 description: This article lists authentication methods  for users using Microsoft Entra joined-devices, and information on if it supports users transferred using Source of Authority.
 author: owinfreyATL
 ms.author: owinfrey
@@ -12,7 +12,7 @@ ms.reviewer: dhanyak
 #CustomerIntent: As an IT administrator, I want to learn about what authentication methods are supported for SOA transferred users so that I am informed about options when transferring user's source of authority.
 ---
 
-# Device Authentication for Users Transferred Using Source of Authority (SOA) 
+# Supported Device Authentication Transferred Source of Authority (SOA) to Microsoft Entra ID
 
 Device authentication is a critical component for organizations managing hybrid and cloud environments. This article provides an overview of supported authentication methods for users in Microsoft Entra joined and hybrid joined devices who have transferred their Source of Authority (SOA). It outlines the compatibility of password-based and passwordless sign-in methods, such as Windows Hello for Business and FIDO2 keys, across various trust configurations. If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, or password hashes) or go passwordless. 
 
