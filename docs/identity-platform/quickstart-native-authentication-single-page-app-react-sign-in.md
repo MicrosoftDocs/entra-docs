@@ -4,7 +4,7 @@ description: Learn how to configure a sample React single-page app (SPA) that us
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 09/05/2025

@@ -4,7 +4,7 @@ description: Learn how to acquire multiple access tokens and call an API in iOS/
 author: henrymbuguakiarie
 manager: pmwongera
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/12/2024
