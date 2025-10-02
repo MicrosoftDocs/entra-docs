@@ -256,7 +256,7 @@ Request body:
 { "onPremisesSyncEnabled": true }
 ```
 
-If you run the earlier query again now, you should see that the service principal has been restored in your tenant. After this, it may take up to 24 hours for the authorization errors to go away completely and for synchronization to resume as normal. If the errors persist beyond that point, reach out to support for further assistance.
+If you run the first query again, you should see that the service principal has been restored in your tenant. After this, it may take up to 24 hours for the authorization errors to go away completely and for synchronization to resume as normal. If the errors persist beyond that point, reach out to support for further assistance.
 
 
 ## Repair the cloud sync service account
