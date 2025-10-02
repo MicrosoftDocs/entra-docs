@@ -1,5 +1,6 @@
 ---
 author: kengaderdus
+manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: include
