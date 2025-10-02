@@ -234,40 +234,40 @@ Deploy policies in the following three phases to balance security improvements w
 
 Establish baseline security controls and prepare for MFA enforcement. **Prerequisites:** Ensure users can register for MFA before enabling enforcement policies.
 
-| Order | Conditional Access policy | Scenario | License requirement |
-| --- | --- | --- | --- |
-| 1 | [Block legacy authentication](/entra/fundamentals/zero-trust-protect-identities#block-legacy-authentication) | All users | Microsoft Entra ID P1 |
-| 2 | [Secure the MFA registration (My Security Info) page](/entra/fundamentals/zero-trust-protect-identities#secure-the-mfa-registration-my-security-info-page) | All users | Microsoft Entra ID P1 |
-| 3 | [Privileged Microsoft Entra built-in roles enforce phishing-resistant methods](/entra/fundamentals/zero-trust-protect-identities#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Privileged users | Microsoft Entra ID P1 |
+| Conditional Access policy | Scenario | License requirement |
+| --- | --- | --- |
+| [Block legacy authentication](/entra/fundamentals/zero-trust-protect-identities#block-legacy-authentication) | All users | Microsoft Entra ID P1 |
+| [Secure the MFA registration (My Security Info) page](/entra/fundamentals/zero-trust-protect-identities#secure-the-mfa-registration-my-security-info-page) | All users | Microsoft Entra ID P1 |
+| [Privileged Microsoft Entra built-in roles enforce phishing-resistant methods](/entra/fundamentals/zero-trust-protect-identities#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Privileged users | Microsoft Entra ID P1 |
 
 ### Phase 2: Core authentication (Week 2-3)
 
 Enforce MFA for all users and guests. **Key impact:** Users will be required to use MFA for all sign-ins. Ensure communication plan is executed and support resources are available.
 
-| Order | Conditional Access policy | Scenario | License requirement |
-| --- | --- | --- | --- |
-| 4 | [All user sign-in activity uses strong authentication methods](/entra/fundamentals/zero-trust-monitor-detect#all-user-sign-in-activity-uses-strong-authentication-methods) | All users | Microsoft Entra ID P1 |
-| 5 | [Guest access is protected by strong authentication methods](/entra/fundamentals/zero-trust-protect-tenants#guest-access-is-protected-by-strong-authentication-methods) | Guest access | Microsoft Entra ID P1 |
-| 6 | [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/zero-trust-protect-identities#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | All users | Microsoft Entra ID P1 |
+| Conditional Access policy | Scenario | License requirement |
+| --- | --- | --- |
+| [All user sign-in activity uses strong authentication methods](/entra/fundamentals/zero-trust-monitor-detect#all-user-sign-in-activity-uses-strong-authentication-methods) | All users | Microsoft Entra ID P1 |
+| [Guest access is protected by strong authentication methods](/entra/fundamentals/zero-trust-protect-tenants#guest-access-is-protected-by-strong-authentication-methods) | Guest access | Microsoft Entra ID P1 |
+| [Require multifactor authentication for device join and device registration using user action](/entra/fundamentals/zero-trust-protect-identities#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | All users | Microsoft Entra ID P1 |
 
 ### Phase 3: Advanced protection (Week 3-4)
 
-Add risk-based policies and advanced attack prevention controls. **License requirement:** Policies 7-8 require Microsoft Entra ID P2 licenses.
+Add risk-based policies and advanced attack prevention controls. **License requirement:** Risk-based policies require Microsoft Entra ID P2 licenses.
 
-| Order | Conditional Access policy | Scenario | License requirement |
-| --- | --- | --- | --- |
-| 7 | [Restrict high risk sign-ins](/entra/fundamentals/zero-trust-response-remediation#restrict-high-risk-sign-ins) | All users | Microsoft Entra ID P2 |
-| 8 | [Restrict access to high risk users](/entra/fundamentals/zero-trust-response-remediation#restrict-access-to-high-risk-users) | All users | Microsoft Entra ID P2 |
-| 9 | [User sign-in activity uses token protection](/entra/fundamentals/zero-trust-protect-identities#user-sign-in-activity-uses-token-protection) | All users | Microsoft Entra ID P1 |
-| 10 | [Restrict device code flow](/entra/fundamentals/zero-trust-protect-identities#restrict-device-code-flow) | All users | Microsoft Entra ID P1 |
-| 11 | [Authentication transfer is blocked](/entra/fundamentals/zero-trust-protect-identities#authentication-transfer-is-blocked) | All users | Microsoft Entra ID P1 |
-| 12 | [Conditional Access policies for Privileged Access Workstations (PAW) are configured](/entra/fundamentals/zero-trust-protect-engineering-systems#conditional-access-policies-for-privileged-access-workstations-are-configured) | Privileged users | Microsoft Entra ID P1 |
+| Conditional Access policy | Scenario | License requirement |
+| --- | --- | --- |
+| [Restrict high risk sign-ins](/entra/fundamentals/zero-trust-response-remediation#restrict-high-risk-sign-ins) | All users | Microsoft Entra ID P2 |
+| [Restrict access to high risk users](/entra/fundamentals/zero-trust-response-remediation#restrict-access-to-high-risk-users) | All users | Microsoft Entra ID P2 |
+| [User sign-in activity uses token protection](/entra/fundamentals/zero-trust-protect-identities#user-sign-in-activity-uses-token-protection) | All users | Microsoft Entra ID P1 |
+| [Restrict device code flow](/entra/fundamentals/zero-trust-protect-identities#restrict-device-code-flow) | All users | Microsoft Entra ID P1 |
+| [Authentication transfer is blocked](/entra/fundamentals/zero-trust-protect-identities#authentication-transfer-is-blocked) | All users | Microsoft Entra ID P1 |
+| [Conditional Access policies for Privileged Access Workstations (PAW) are configured](/entra/fundamentals/zero-trust-protect-engineering-systems#conditional-access-policies-for-privileged-access-workstations-are-configured) | Privileged users | Microsoft Entra ID P1 |
 
 > [!TIP]
 > Enable each policy in report-only mode for at least one week before enforcement. Review sign-in logs and communicate changes to users before moving to the next phase.
 >
 > [!NOTE]
-> Policy 12 requires dedicated secure workstations and significant infrastructure planning. Organizations should implement this policy only after establishing a PAW deployment strategy and provisioning secure devices for privileged users.
+> Privileged Access Workstations (PAW) require significant infrastructure planning. Organizations should implement this policy only after establishing a PAW deployment strategy and provisioning secure devices for privileged users.
 
 ### Evaluate the policy impact
 
