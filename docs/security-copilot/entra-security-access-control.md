@@ -49,10 +49,10 @@ Begin your assessment by examining role-based access control (RBAC) to ensure th
 
 Start by investigating current role assignments to understand who has access to sensitive administrative functions and ensure that privileged access is appropriately controlled. Use the following prompts to get the information you need:
 
-- *What role does user/group/app (name/email/id) have?*
-- *What are the transitive roles user/group/app (name/email/id) has?*
-- *What are the eligible roles user/group/app (name/email/id) has?*
-- *What are the scheduled roles user/group/app (name/email/id) has?*
+- *What role does user/group/app (name/email/ID) have?*
+- *What are the transitive roles user/group/app (name/email/ID) has?*
+- *What are the eligible roles user/group/app (name/email/ID) has?*
+- *What are the scheduled roles user/group/app (name/email/ID) has?*
 - *Who has the Cloud Application Administrator role assigned to them?*
 - *Who has eligibility for the Global Reader role?*
 
@@ -60,8 +60,8 @@ Start by investigating current role assignments to understand who has access to 
 
 You can then examine specific roles and their identifiers to understand the scope of permissions and ensure that role assignments align with business requirements and security policies. Use the following prompts to get the information you need:
 
-- *What is the id of role (role name)*
-- *Name of the role with id 5d6b6bb7-de71-4623-b4af-96380a352509*
+- *What is the ID of role (role name)*
+- *Name of the role with ID 5d6b6bb7-de71-4623-b4af-96380a352509*
 
 ## Configure authentication methods and policies
 
@@ -69,7 +69,7 @@ Next, you should assess and manage authentication methods across your Microsoft 
 
 ### Authentication method configuration
 
-Next, you can assess the authentication methods to ensure that strong practices are in place and that multi-factor authentication (MFA) is properly configured to protect against unauthorized access. Use the following prompts to get the information you need:
+Next, you can assess the authentication methods to ensure that strong practices are in place and that multifactor authentication (MFA) is properly configured to protect against unauthorized access. Use the following prompts to get the information you need:
 
 - *What authentication methods are enabled in my tenant?*
 - *Is Microsoft Authenticator enabled in my tenant? For who?*
