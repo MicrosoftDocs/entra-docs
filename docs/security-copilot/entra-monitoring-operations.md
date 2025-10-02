@@ -53,7 +53,7 @@ You can begin your assessment by analyzing sign-in activities across your organi
 Start by investigating sign-in patterns related to specific applications and authentication methods to ensure security policies are being followed and to identify any anomalies or issues. Use the following prompts to get the information you need:
 
 - *Show sign-ins to a specific application.*
-- *Show sign-ins without multi-factor authentication.*
+- *Show sign-ins without multifactor authentication.*
 - *Show sign-in failures due to a specific Conditional Access policy.*
 - *Show sign-ins with unsatisfied Conditional Access Policies.*
 
@@ -163,11 +163,11 @@ For a general overview of your system's health, you can start by monitoring heal
 - *List all active health monitoring alerts.*
 - *What are my recent health monitoring alerts?*
 - *What users are impacted according to the active health monitoring alerts?*
-- *Show me health monitoring alert details for alert id [alertId].*
+- *Show me health monitoring alert details for alert ID [alertId].*
 
 ### Scenario-specific health monitoring
 
-Once you have a general overview, you can focus on specific health monitoring scenarios to address particular areas of concern, such as multi-factor authentication (MFA) issues or device compliance. Use the following prompts or ones specific to your scenario to get the information you need:
+Once you have a general overview, you can focus on specific health monitoring scenarios to address particular areas of concern, such as multifactor authentication (MFA) issues or device compliance. Use the following prompts or ones specific to your scenario to get the information you need:
 
 - *Show me health monitoring alerts related to MFA sign in failure.*
 - *Show me managed device health monitoring alerts.*
