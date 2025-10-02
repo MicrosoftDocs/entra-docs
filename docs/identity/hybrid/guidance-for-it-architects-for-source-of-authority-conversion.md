@@ -49,7 +49,7 @@ After you transition to cloud services and modern applications, certain AD accou
 
 ### Shifting lifecycle management to the cloud
 
-You can use Microsoft Entra ID Governance to enable lifecycle and access governance of SOA transferred users and groups from the cloud. For Users, this means you're now provisioning the users directly into Microsoft Entra ID and can use Microsoft Entra's ID Governance capabilities to govern these users. For groups, you can modernize your groups and enable access governance of apps tied to them from the cloud. Some caveats apply here where groups that are Exchange constructs like mail-enabled security groups and Distribution Lists, require modernization before being managed in the cloud. Refer to [Group SOA guidance for more info](../../identity/hybrid/concept-source-of-authority-overview.md).
+You can use Microsoft Entra ID Governance to enable lifecycle and access governance of SOA transferred users and groups from the cloud. For Users, this means you're now provisioning the users directly into Microsoft Entra ID and can use Microsoft Entra's ID Governance capabilities to govern these users. For groups, you can modernize your groups and enable access governance of apps tied to them from the cloud. Some caveats apply here where groups that are Exchange constructs like Mail-Enabled Security Groups (MESGs) and Distribution Lists (DLs), require modernization before being managed in the cloud. Refer to [Group SOA guidance for more info](../../identity/hybrid/concept-source-of-authority-overview.md).
 
 
 ## Is SOA the right solution for you?
@@ -62,7 +62,7 @@ The following diagram outlines if you're ready to transfer the source of authori
 
 **Users:** SOA is suitable for users who do not have any application dependencies linked to AD DS. Identifying which users are associated with specific applications is crucial for effective migration planning. 
 
-**Groups:** For groups, we recommend you start with shifting security groups to the cloud. Once in the cloud, provision them back to AD from Microsoft Entra ID if needed. For DLs and MESGs, our recommendation is to shift them once all your exchange workloads is in the cloud, and you no longer need an On-premises Exchange server.
+**Groups:** For groups, we recommend you start with shifting security groups to the cloud. Once in the cloud, provision them back to AD from Microsoft Entra ID if needed. For Distribution Lists (DLs) and Mail-Enabled Security Groups (MESGs), our recommendation is to shift them once all your Exchange workloads is in the cloud, and you no longer need an On-premises Exchange server.
 
 ## Application-Centric Approach: Modernize on-premises authentication
 
@@ -78,9 +78,13 @@ The application-centric approach tackles cloud migration from the perspective of
 
 ### Recommended sequence for application-centric migration:
 
-There can also be some apps already using modern protocols like SAML/OIDC via Active Directory Federation Service (AD FS) or third-party IdPs. These apps are easier to migrate directly to Microsoft, while some other legacy cases like hardcoded NTLM-only apps, might need special handling. The following is the recommended sequence for an app centric migration.
+There can also be some apps already using modern protocols like SAML/OIDC via Active Directory Federation Service (AD FS) or third-party IdPs. These apps are easier to migrate directly to Microsoft, while some other legacy cases like hardcoded NTLM-only apps, might need special handling. The following is the recommended sequence for an app centric migration:
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-phase-list.png" alt-text="A screenshot of an overview of the phases to complete application-centric migration.":::
+- Application inventory and authentication analysis
+- Migrate groups to the cloud
+- Handling LDAP-based applications (Directory-Bound Apps)
+- Handling Kerberos-Based Applications (Windows Integrated Auth)
+- Verify and optimize
 
 ## Phase 1: Application inventory and authentication analysis
 
@@ -211,6 +215,9 @@ challenges and mitigation strategies include:
 
 
 ## Phase 5: Verify and optimize
+
+
+Test each integrated application thoroughly. Ensure that existing AD-sourced users can access the application via the new method. Verify that group memberships from Microsoft Entra ID are honored via group provisioning to AD. Monitor performance and login logs. Optimize any settings for production use.
 
 Ensure that all users whose source of authority was transferred are able to still access the application. Ensure that group memberships that were present in AD is also present in Microsoft Entra ID. Verify using [Group logs](how-to-source-of-authority-auditing-monitoring.md) and [User logs](user-source-of-authority-audit-monitor.md) that source of authority was successfully transferred.
 
