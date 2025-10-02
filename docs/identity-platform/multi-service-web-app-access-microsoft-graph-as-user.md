@@ -7,7 +7,7 @@ ms.author: cwerner
 ms.custom:
 ms.date: 09/15/2023
 ms.reviewer: stsoneff
-ms.service: azure-app-service
+ms.service: identity-platform
 ms.subservice: web-apps
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph from a web app for a signed-in user.
