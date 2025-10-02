@@ -143,8 +143,8 @@ Once the risk is contained, more investigation might be required to mark the ris
       1. IP address
       1. User agent string
    1. If you have access to other security tools like [Microsoft Sentinel](/azure/sentinel/overview), check for corresponding alerts that might indicate a larger issue.
-   1. Organizations with access to [Microsoft 365 Defender](/defender-for-identity/understanding-security-alerts) can follow a user risk event through other related alerts, incidents, and the MITRE ATT&CK chain.
-      1. To navigate from the Risky users report, select the user in the Risky users report and select the ellipsis (...) in the toolbar then choose Investigate with Microsoft 365 Defender.
+   1. Organizations with access to [Microsoft Defender XDR](/defender-for-identity/understanding-security-alerts) can follow a user risk event through other related alerts, incidents, and the MITRE ATT&CK chain.
+      1. To navigate from the Risky users report, select the user in the Risky users report and select the ellipsis (...) in the toolbar then choose Investigate with Microsoft Defender XDR.
 1. Reach out to the user to confirm if they recognize the sign-in; however, consider methods such as email or Teams might be compromised.
    1. Confirm the information you have such as:
       1. Timestamp
