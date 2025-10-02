@@ -92,7 +92,7 @@ Follow these steps to transfer the SOA for a test user:
    GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
-   :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a user.":::
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify user properties.":::
 
 1. Confirm that the synced user is read-only. Because the user is managed on-premises, any write attempts to the user in the cloud fail. The error message differs for mail-enabled users, but updates still aren't allowed.
 
@@ -129,7 +129,7 @@ Follow these steps to transfer the SOA for a test user:
    GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
-   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify user properties.":::
+   :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a user.":::
 
 1. Confirm the change in the Audit Logs. To access Audit Logs in the Azure portal, open **Manage Microsoft Entra ID** > **Monitoring** > **Audit Logs**, or search for *audit logs*. Select **Change Source of Authority from AD to cloud** as the activity.
 
