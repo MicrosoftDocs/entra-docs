@@ -10,8 +10,6 @@ items:
     href: entra-admin-center.md
   - name: Introduction to identity and access management (IAM)
     href: identity-fundamental-concepts.md
-  - name: Microsoft Security Copilot in Microsoft Entra
-    href: /security/copilot/security-copilot-in-entra
 - name: Set up your tenant and directory
   expanded: true
   items:
@@ -167,4 +165,5 @@ items:
   - name: Microsoft Graph extensions
     href: /graph/extensibility-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Frontline worker management
+
     href: frontline-worker-management.md
