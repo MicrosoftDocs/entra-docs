@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 06/11/2025
+ms.date: 10/02/2025
 ms.custom: it-pro
 ---
 
@@ -43,3 +43,4 @@ Customizable policies and MFA enhance security by reducing unauthorized access t
 
 - [Planning for customer identity and access management](concept-planning-your-solution.md)
 - [Microsoft Entra Blog: Built-in security controls for external-facing apps](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/built-in-security-controls-for-external-facing-apps/4175879)
+- [Microsoft Entra External ID deployment guide for security operations](../../architecture/deployment-external-operations.md)
