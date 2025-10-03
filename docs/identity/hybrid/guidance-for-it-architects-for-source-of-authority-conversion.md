@@ -56,7 +56,7 @@ You can use Microsoft Entra ID Governance to enable lifecycle and access governa
 
 The following diagram outlines if you're ready to transfer the source of authority (SOA) of users and groups:
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.svg" alt-text="source of authority diagram image":::
+:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/retention-flowchart.svg" alt-text="test image.":::
 
 ### Considerations
 
