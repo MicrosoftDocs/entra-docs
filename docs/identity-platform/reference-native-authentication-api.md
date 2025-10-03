@@ -92,7 +92,6 @@ Example 1:
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &username=contoso-consumer@contoso.com 
@@ -103,7 +102,6 @@ Example 2 (include user attributes and password in the request):
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/start
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &password={secure_password}
@@ -236,7 +234,6 @@ Here's an example of the request(we present the example request in multiple line
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &continuation_token=AQABAAEAAA…
@@ -350,7 +347,6 @@ Here's an example of the request(we present the example request in multiple line
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
-
 continuation_token=uY29tL2F1dGhlbnRpY...
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
@@ -428,7 +424,6 @@ Here's an example of the request(we present the example request in multiple line
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/challenge
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob password redirect
 &continuation_token=AQABAAEAAA…
@@ -492,7 +487,6 @@ Here's an example of the request(we present the example request in multiple line
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
-
 continuation_token=uY29tL2F1dGhlbnRpY...
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=password 
@@ -664,7 +658,6 @@ Here's an example of the request(we present the example request in multiple line
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/signup/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
-
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=attributes 
 &attributes={"displayName": "{given_name}", "extension_2588abcdwhtfeehjjeeqwertc_age": "{user_age}", "postaCode": "{postal_code}"}
@@ -799,7 +792,7 @@ To request for security tokens, your app interacts with three endpoints, `oauth/
 | `oauth/v2.0/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
 |   `oauth/v2.0/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to challenge the user for second factor authentication method.|
 |  `oauth/v2.0/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge or register a strong authentication method.|
-| `oauth/v2.0/introspect` | Your app calls it to request for a list of registered strong authentication methods. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods)|
+| `oauth/v2.0/introspect` | Your app calls it to request for a list of registered strong authentication methods for multifactor authentication (MFA). This endpoint only returns methods used as a second factor when MFA is required. Learn [how to use the introspect endpoint](#get-user-registered-strong-authentication-methods)|
 
 ### Sign-in challenge types
 
@@ -831,7 +824,7 @@ If a tenant administrator enables MFA for the tenant users, the response from th
 - If the user has a registered strong authentication method, then they complete an MFA challenge flow. 
 - If the user has no registered strong authentication method, then they complete a [register for a strong authentication method](#register-a-strong-authentication-method-api-reference) flow. 
 
-This sequence diagram shows the MFA path. It covers both cases: (1) the user already has a registered strong authentication method, or (2) the user has none and must register one just‑in‑time. The flow begins after the app has collected a correct password from the user, and is about to call `/oauth2/v2.0/token` to either obtain security tokens.
+This sequence diagram shows the MFA path. It covers both cases: (1) the user already has a registered strong authentication method, or (2) the user has none and must register one just‑in‑time. The flow begins after the app has collected a correct password from the user and calls /oauth2/v2.0/token, which then responds indicating whether the user needs to complete MFA or register a strong authentication method.
 
 :::image type="content" source="media/reference-native-auth-api/call-token-endpoint-register-authentication-method-complete-mfa.png" alt-text="Diagram of native auth call token endpoint register authentication method or complete MFA."::: 
 
@@ -861,11 +854,10 @@ Here's an example of the request(we present the example request in multiple line
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/initiate
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=password redirect
 &username=contoso-consumer@contoso.com
-&capabilities=registration_required,mfa_required
+&capabilities=registration_required mfa_required
 ```
 
 |    Parameter     | Required                     |           Description        |
@@ -874,7 +866,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-|`capabilities`| No | Space-separated flags that describe the client app’s "how" readiness. While `challenge_type` defines what methods can be challenged, `capabilities` tell the native authentication API which extra flows the client app can handle and which UIs it can show. For example, `mfa_required` means another `/challenge` and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If a needed capability isn't advertised by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
+|`capabilities`| No | Space-separated flags that describe the client app’s "how" readiness. While `challenge_type` defines what methods can be challenged, `capabilities` tell the native authentication API which extra flows the client app can handle and which UIs it can show. For example, `mfa_required` means `/introspect`, `/challenge`, and `/token` loop; `registration_required` means the client app calls registration APIs and show registration UI. If the needed capability isn't included by the client app, the API returns redirect. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
 
 #### Success response
 
@@ -973,7 +965,6 @@ Here's an example of the request (we present the example request in multiple lin
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=password redirect 
 &continuation_token=uY29tL2F1dGhlbnRpY... 
@@ -985,7 +976,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/oauth2/v2.0/initiate` endpoint. The previous request can also be call to the `/oauth2/v2.0/token` or `/oauth2/v2.0/introspect` endpoints if the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-|`id`| No | The string identifier of the strong authentication method that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app challenges the user for a second factor authentication. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods). |
+|`id`| No | The string identifier of the strong authentication method that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app challenges the user for a second factor authentication. Learn [how to use the introspect endpoint](#get-user-registered-strong-authentication-methods). |
 <!--| `challenge_channel` | No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app changes the user for a second factor authentication. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|-->
 
 #### Success response
@@ -1165,7 +1156,6 @@ Here's an example of the request(we present the example request in multiple line
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/introspect
 Content-Type: application/x-www-form-urlencoded
-
 continuation_token=uY29tL2F1dGhlbnRpY...
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 ```
@@ -1281,8 +1271,7 @@ After the client app successfully retrieves a list of strong authentication meth
     
     ```http
     POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/challenge
-    Content-Type: application/x-www-form-urlencoded
-    
+    Content-Type: application/x-www-form-urlencoded    
     client_id=00001111-aaaa-2222-bbbb-3333cccc4444
     &id=0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c 
     &continuation_token=uY29tL2F1dGhlbnRpY... 
@@ -1310,8 +1299,7 @@ After the client app successfully retrieves a list of strong authentication meth
 
     ```http
     POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token
-    Content-Type: application/x-www-form-urlencoded
-    
+    Content-Type: application/x-www-form-urlencoded    
     client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
     &continuation_token=uY29tL2F1dGhlbnRpY...   
     &grant_type=mfa_oob  
@@ -1337,7 +1325,7 @@ After the client app completes the JIT registration flow, it can call the `/oaut
 
 ### Strong authentication method registration endpoints
 
-To use the strong authentication method registration  API, the app interacts with the endpoint shown in the following table:
+To use the strong authentication method registration  API, the app uses the endpoint shown in the following table:
 
 |    Endpoint     | Description        |
 |----------------------|------------------------|
@@ -1355,7 +1343,6 @@ Here's an example of the request(we present the example request in multiple line
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/register/v1.0/introspect
 Content-Type: application/x-www-form-urlencoded
-
 ?continuation_token=uY29tL2F1dGhlbnRpY... 
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444  
 ```
@@ -1622,7 +1609,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 
 ### Self-service password reset API endpoints
 
-To use this API, the app interacts with the endpoint shown in the following table:
+To use this API, the app uses the endpoint shown in the following table:
 
 |    Endpoint     | Description        |
 |----------------------|------------------------|
@@ -1659,7 +1646,6 @@ Here's an example of the request (we present the example request in multiple lin
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/start
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &challenge_type=oob redirect 
 &username=contoso-consumer@contoso.com 
@@ -1770,7 +1756,6 @@ Here's an example (we present the example request in multiple lines for readabil
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/challenge
 Content-Type: application/x-www-form-urlencoded
-
 client_id=client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &challenge_type=oob redirect
 &continuation_token=uY29tL2F1dGhlbnRpY... 
@@ -1881,7 +1866,6 @@ Here's an example of the request (we present the example request in multiple lin
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/continue
 Content-Type: application/x-www-form-urlencoded
-
 continuation_token=uY29tL2F1dGhlbnRpY... 
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444 
 &grant_type=oob 
@@ -1974,7 +1958,6 @@ Here's an example (we present the example request in multiple lines for readabil
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/submit
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &continuation_token=czZCaGRSa3F0Mzp...
 &new_password={new_password}
@@ -2068,7 +2051,6 @@ Here's an example (we present the example request in multiple lines for readabil
 ```http
 POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/resetpassword/v1.0/poll_completion
 Content-Type: application/x-www-form-urlencoded
-
 client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &continuation_token=czZCaGRSa3F0... 
 ```

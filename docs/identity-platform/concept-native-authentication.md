@@ -64,8 +64,8 @@ The following table shows the availability of features for browser-delegated and
 | **Self-service password reset (SSPR)** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
+| **Multifactor authentication with SMS one-time passcode (OTP)**| :heavy_check_mark:  | :heavy_check_mark:  |
 | **Social identity provider sign-in** | :heavy_check_mark:  | :x: |
-| **Multifactor authentication with SMS**| :heavy_check_mark:  | :x:  |
 | **Single sign-on (SSO)** | :heavy_check_mark:  | :x:  |
 
 ## How to enable native authentication
