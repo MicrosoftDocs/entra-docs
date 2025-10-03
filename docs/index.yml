@@ -68,7 +68,7 @@ productDirectory:
     - title: Security Copilot + Microsoft Entra
       imageSrc: ./media/index/copilot-color.png
       summary: "Use the power of Security Copilot for identity and network security."
-      url: /entra/workload-id/
+      url: /entra/security-copilot/security-copilot-in-entra
 
 conceptualContent:
   title: Learn more
