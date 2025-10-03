@@ -44,9 +44,6 @@ If you’re planning to only change the SOA for some Active Directory users, and
 
 ## Prepare your Microsoft Exchange setup
 
-> [!NOTE]
-> We recommend that you get rid of exchange server set up before transferring User Source of Authority.
-
 In case you have Exchange Hybrid setup with Microsoft 365 Exchange Online, prepare your Exchange Server and Exchange Online as per the following guidance before switching the SOA of your user accounts.
 If you're running an Exchange Hybrid configuration, ensure all your mailboxes are migrated to Exchange Online before you switch the SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365, and you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
 
@@ -68,7 +65,7 @@ The next step in setting up SOA is to determine your provisioning strategy for y
 
 :::image type="content" source="media/prepare-user-source-of-authority-environment/before-conversion.png" alt-text="Screenshot of HR system before transferring source of authority.":::
 
-To update this configuration, first identify employees from your HR system who can be provisioned into Microsoft Entra ID directly, and are no longer needed in Active Directory. You can take a phased approach to identify such employees using grouping constructs available in HR, for example: transferring SOA of users by department, cost center, or location. 
+To update this configuration, first identify employees from your HR system who can be provisioned into Microsoft Entra ID directly, and are no longer needed in Active Directory. You can take a phased approach to identify such employees using grouping constructs available in HR, for example: transferring SOA of users by department, cost center, or location. Then update your Microsoft Entra provisioning configuration as described in the following section:
 
 ### Update your HR provisioning configuration
 
