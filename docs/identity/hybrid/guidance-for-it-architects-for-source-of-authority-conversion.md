@@ -68,7 +68,7 @@ The following diagram outlines if you're ready to transfer the source of authori
 
 This section outlines a principal cloud migration strategy for AD-heavy environments called the application-centric approach. This approach enables on-premises applications to utilize Microsoft Entra ID for identity. This section also includes detailed steps, prerequisites, and guidance for addressing challenges like legacy application password synchronization. The application-centric approach works for customers who are far into their password-less journey. For apps that require password, currently, there’s no path to shift users to the cloud.
 
-The application-centric approach tackles cloud migration from the perspective of your applications. In this approach, you try to modernize your app authentication by applying the following framework:
+The application-centric approach tackles cloud migration from the perspective of your applications. In this approach, you try to modernize your app authentication by applying the following framework: 
 
 - **Inventory Applications:** List all on-premises apps that use AD for authentication (Kerberos/NTLM or LDAP).
 
