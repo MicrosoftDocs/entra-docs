@@ -72,6 +72,16 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 
 :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/permission.png" alt-text="Screenshot of how to validate a permission is granted.":::
 
+### Grant permission to Graph Explorer
+
+1. Open [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+
+1.	Select the profile icon, and select **Consent to permissions**.
+
+1.	Search for User-OnPremisesSyncBehavior, and select **Consent** for the permission.
+:::image type="content" source="media/how-to-user-source-of-authority-configure/graph-permissions.png" alt-text="screenshot of graph permissions.":::
+
+
 ## Transfer SOA for a test user
 
 Follow these steps to transfer the SOA for a test user:
