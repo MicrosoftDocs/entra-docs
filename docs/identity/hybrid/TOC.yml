@@ -121,8 +121,6 @@
             href: prepare-user-source-of-authority-environment.md
           - name: Guidance for using User SOA
             href: user-source-of-authority-guidance.md          
-          - name: Identify supported Applications and authentication types
-            href: user-source-of-authority-authentication.md    
         - name: How to guides
           items:
             - name: Configure User SOA
