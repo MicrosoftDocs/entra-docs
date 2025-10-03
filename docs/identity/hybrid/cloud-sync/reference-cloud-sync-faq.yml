@@ -20,7 +20,7 @@ sections:
       - question: |
           How often does cloud sync run?
         answer: |
-          Cloud provisioning is scheduled to run every 10-20 minutes. Each time it runs, any user, group, and password hash changes are provisioned to Microsoft Entra ID.
+          Cloud provisioning sync cycles are scheduled approximately every 10 to 20 minutes. However, the actual time it takes to provision objects in Microsoft Entra ID depends on the number of changes pending in each sync cycle. Larger volumes of changes may extend the provisioning time, while smaller sets may complete more quickly. Therefore, object sync latency is influenced by both the sync cycle interval and the volume of changes being processed.
 
       - question: |
           Seeing password hash sync failures on the first run. Why?
