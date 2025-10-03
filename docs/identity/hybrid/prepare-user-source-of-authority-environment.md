@@ -127,7 +127,7 @@ Once your environment is prepped for transferring user SOA, the sequence for tra
     > Switch SOA of groups before switching SOA of users.
 1.	Remove these users from the App-> AD provisioning configuration (for example, Workday to AD or MIM to AD etc.) so they no longer sync into AD.  
          
-1.	Wait for the sync cycle to complete and make sure the object data is the same between AD and Microsoft Entra ID. You can use tools like provision on-demand to do this manually, or do a bulk sync to handle multiple users.
+1.	Wait for the sync cycle to complete and make sure the object data is the same between AD and Microsoft Entra ID.
 
 1.	Stop making any changes to these users and/or groups in AD directly.  
 

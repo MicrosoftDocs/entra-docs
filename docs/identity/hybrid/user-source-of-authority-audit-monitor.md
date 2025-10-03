@@ -27,7 +27,8 @@ You can access Audit Logs in the Azure portal. They retain a record of SOA chang
 
 1. Select activity as **Change Source of Authority from AD DS to cloud**.
     :::image type="content" source="media/user-source-of-authority-audit-monitor/audit-logs.png" alt-text="Screenshot of the user source of authority audit logs.":::
-
+1. Alternatively, you can also see activity of when a user has their source of authority reverted away from the cloud.
+    :::image type="content" source="media/user-source-of-authority-audit-monitor/undo-source-of-authority-logs.png" alt-text="Screenshot of audit logs when source of authority is reverted.":::
 
 
 ## How to use Azure Monitor to create workbooks and reports using Log Analytics 
