@@ -24,9 +24,6 @@ For important details on what this service does, how it works, and frequently as
 ::: zone-end
 
 ::: zone pivot="cross-cloud-synchronization"
-> [!IMPORTANT]
-> Cross-cloud synchronization is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 This article describes the steps to configure cross-tenant synchronization between Microsoft clouds. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. While this tutorial focuses on synchronizing identities from the commercial cloud --> US Government, the same steps apply for Government --> Commercial and Commercial --> China.
 
@@ -612,7 +609,7 @@ Restoring a previously soft-deleted user in the target tenant isn't supported.
 
 **Solution**
 
-Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.yml).
+Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.md).
 
 #### Symptom - Users are skipped because SMS sign-in is enabled on the user
 

@@ -265,10 +265,9 @@ Suppose you use tenant restrictions to block access by default, but you want to 
    > User granularity isn't supported with Microsoft accounts, so the **Select &lt;organization&gt; users and groups** capability isn't available. For other organizations, you could choose **Select &lt;organization&gt; users and groups**, and then perform these steps:
    >
    > 1. Select **Add external users and groups**.
-   > 1. On the **Select** pane, enter the username or group name in the search box.
-   > 1. Select the user or group in the search results.
-   > 1. If you want to add more, select **Add** and repeat these steps.
-   > 1. When you finish selecting the users and groups that you want to add, select **Submit**.
+   > 1. In the **Add external user or group id** pane, type the object ID of the user or group you want to add.
+   > 1. In the right dropdown, select whether it is a user or group.
+   > 1. If you want to add more, select **Add** and repeat these steps. When you're done entering the users and groups you want to add, select **Submit**.
 
 1. Select the **External applications** tab. Under **Access status**, choose whether to allow or block access to external applications:
 
@@ -680,9 +679,14 @@ Use Microsoft Graph to get policy information.
 
 ## Known limitations
 
-Tenant restrictions v2 is supported on all clouds. However, tenant restrictions v2 is not enforced with cross-cloud requests.
+- Tenant restrictions v2 is supported on all clouds.
 
-Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers. An example of such a solution is a proxy that uses a certificate trust chain outside Apple system root certificates.
+- TRv2 does not enforce restrictions on cross-cloud requests at the authentication plane, so access is permitted during authentication. However, TRv2 does block cross-cloud requests at the data plane. As a result, when using Windows Group Policy (GPO), users will be unable to access TRv2-enlightened resources across cloud boundaries.
+
+- Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers. An example of such a solution is a proxy that uses a certificate trust chain outside Apple system root certificates.
+
+- When TRv2 is enabled, accessing the Microsoft Entra admin center may result in an "Access denied" error. To resolve this issue, append the following feature flags to the Microsoft Entra admin center URL: `?feature.msaljs=true&exp.msaljsexp=true`. If you're accessing the admin center for a partner tenant (e.g., Fabrikam) and encounter the error at `https://entra.microsoft.com/`, update the URL as follows: `https://entra.microsoft.com/?feature.msaljs=true&exp.msaljsexp=true#home`. This will enable the necessary flags and restore access.
+
 
 ## Related content
 

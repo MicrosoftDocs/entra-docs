@@ -3,7 +3,7 @@ title: Configure SafetyCulture (formerly iAuditor) for Single sign-on with Micro
 description: Learn how to configure single sign-on between Microsoft Entra ID and SafetyCulture (formerly iAuditor).
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

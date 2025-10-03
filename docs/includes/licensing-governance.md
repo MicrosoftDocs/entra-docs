@@ -17,6 +17,7 @@ The following table shows what features associated with identity governance are 
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance| Microsoft Entra Suite |
 |-----|:-----:|:-----:|:-----:|:-----:|:-----:|
+|[Access Review Agent (Preview)](~/id-governance/access-review-agent.md)|| | | :white_check_mark: | :white_check_mark: |
 |[API-driven provisioning](~/identity/app-provisioning/inbound-provisioning-api-concepts.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -25,7 +26,8 @@ The following table shows what features associated with identity governance are 
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Conditional Access Scoping](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Entitlement management MyAccess Search](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Entitlement management My Access Search](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Entitlement management My Access Delegation](~/id-governance/my-access-portal-overview.md)||| | :white_check_mark: | :white_check_mark: |
 |[Entitlement management with Verified ID](~/id-governance/entitlement-management-verified-id-settings.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Custom Extensions (Logic Apps)](~/id-governance/entitlement-management-logic-apps-integration.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Auto Assignment Policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: | :white_check_mark: |

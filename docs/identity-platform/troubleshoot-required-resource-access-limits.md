@@ -2,7 +2,7 @@
 title: Troubleshooting the configured permissions limits
 description: Learn why some apps may exceed the limits on configured permissions and how to address this issue.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom: 
 ms.date: 04/10/2024

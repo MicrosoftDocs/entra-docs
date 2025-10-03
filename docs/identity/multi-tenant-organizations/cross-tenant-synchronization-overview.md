@@ -139,7 +139,7 @@ Within the same cloud, which clouds can cross-tenant synchronization be used in?
 
 Is [cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) supported?
 
-- Cross-cloud synchronization (such as public cloud to Azure Government) is currently in public preview.
+- Yes, cross-cloud synchronization (such as public cloud to Azure Government) is supported.
 - For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). 
 
 What cloud pairs are supported for cross-cloud synchronization?
@@ -315,7 +315,7 @@ Does cross-tenant synchronization support deprovisioning users?
 Does cross-tenant synchronization support restoring users?
 
 - If the user in the source tenant is restored, reassigned to the app, meets the scoping condition again within 30 days of soft deletion, it will be restored in the target tenant.
-- IT admins can also manually [restore](~/fundamentals/users-restore.yml) the user directly in the target tenant.
+- IT admins can also manually [restore](~/fundamentals/users-restore.md) the user directly in the target tenant.
 
 How can I deprovision all the users that are currently in scope of cross-tenant synchronization?
 

@@ -4,11 +4,11 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 08/05/2025
+ms.date: 09/23/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: nashahid, gkinasewitz
+ms.reviewer: shahjoy
 ms.custom: sfi-ga-nochange
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
 ---
@@ -16,7 +16,7 @@ ms.custom: sfi-ga-nochange
 
 At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://www.microsoft.com/security/blog/2019/08/20/one-simple-action-you-can-take-to-prevent-99-9-percent-of-account-attacks) shows that MFA can block more than 99.2% of account compromise attacks. 
 
-That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
+That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our blog posts [Azure mandatory multifactor authentication: Phase 2 starting in October 2025](https://azure.microsoft.com/blog/azure-mandatory-multifactor-authentication-phase-2-starting-in-october-2025/) and [Announcing mandatory multifactor authentication for Azure sign-in](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
 
 There's no change for users if your organization already enforces MFA for them, or if they sign in with stronger methods like passwordless or passkey (FIDO2). To verify that MFA is enabled, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md). 
 
@@ -27,7 +27,7 @@ The scope of enforcement includes when enforcement is planned to occur, which ap
 ### Enforcement phases 
 
 > [!NOTE]
-> The date of enforcement for Phase 2 has changed to September 15, 2025.
+> The date of enforcement for Phase 2 has changed to October 1, 2025.
 
 The enforcement of MFA for applications rolls out in two phases. 
 
@@ -37,7 +37,7 @@ Starting in October 2024, MFA is required for accounts that sign in to the Azure
 
 #### Phase 2 applications
 
-Starting September 15, 2025, MFA enforcement will gradually begin for accounts that sign in to Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints to perform any Create, Update, or Delete operation. Read operations won't require MFA. 
+Starting October 1, 2025, MFA enforcement will gradually begin for accounts that sign in to Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints to perform any Create, Update, or Delete operation. Read operations won't require MFA. 
 
 Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud-based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md).
 
@@ -51,12 +51,12 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
-| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | September 15, 2025 |
-| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | September 15, 2025 |
-| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | September 15, 2025 |
-| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | September 15, 2025 | 
-| [REST API (Control Plane)](/azure/azure-resource-manager/management/control-plane-and-data-plane#control-plane) | N/A | September 15, 2025 | 
-| [Azure SDK](/azure/developer/intro/azure-developer-create-resources#azure-sdk-and-rest-apis) | N/A | September 15, 2025 | 
+| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | October 1, 2025 |
+| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | October 1, 2025 |
+| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | October 1, 2025 |
+| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | October 1, 2025 | 
+| [REST API (Control Plane)](/azure/azure-resource-manager/management/control-plane-and-data-plane#control-plane) | N/A | October 1, 2025 | 
+| [Azure SDK](/azure/developer/intro/azure-developer-create-resources#azure-sdk-and-rest-apis) | N/A | October 1, 2025 | 
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
@@ -70,7 +70,7 @@ The following table lists affected apps and URLs for Microsoft 365.
 
 All accounts that sign in to perform operations cited in the [applications section](#application-ids-and-urls) must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
 
-Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
+[Break glass or emergency access accounts](/entra/identity/role-based-access-control/security-emergency-access) are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
 Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
 
@@ -172,8 +172,8 @@ Review [How to verify that users are set up for mandatory MFA](how-to-mandatory-
 
 For more information about how to migrate from user-based service accounts to workload identities for authentication with these applications, see: 
 
-- [Sign into Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
-- [Sign into Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
+- [Sign in to Azure with a managed identity using the Azure CLI](/cli/azure/authenticate-azure-cli-managed-identity)
+- [Sign in to Azure with a service principal using the Azure CLI](/cli/azure/authenticate-azure-cli-service-principal)
 - [Sign in to Azure PowerShell non-interactively for automation scenarios](/powershell/azure/authenticate-noninteractive) includes guidance for both managed identity and service principal use cases
 
 Some customers apply Conditional Access policies to user-based service accounts. You can reclaim the user-based license, and add a [workload identities](~/workload-id/workload-identities-overview.md) license to apply [Conditional Access for workload identities](~/identity/conditional-access/workload-identity.md). 
@@ -184,7 +184,6 @@ Support for external MFA solutions is in preview with [external authentication m
 
 If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. For more information, see [Expected inbound assertions for Microsoft Entra MFA](how-to-mfa-expected-inbound-assertions.md).
 
-
 ## Prepare for mandatory MFA enforcement
 
 To prepare for MFA enforcement, configure a [Conditional Access policy](how-to-mandatory-multifactor-authentication.md#verify-mfa-is-enabled-for-microsoft-entra-id-p1-or-microsoft-entra-id-p2-license) that requires users to sign in with MFA. If you configured exceptions or exclusions in the policy, they no longer apply. If you have more restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, they remain enforced. 
@@ -192,6 +191,11 @@ To prepare for MFA enforcement, configure a [Conditional Access policy](how-to-m
 Conditional Access requires a Microsoft Entra ID P1 or P2 license. If you can't use Conditional Access, enable [security defaults](~/fundamentals/security-defaults.md).
 
 You can self-enforce MFA by using built-in definitions in Azure Policy. To learn more and follow a step-by-step overview to apply these policy assignments in your environment, see [Tutorial: Apply MFA self-enforcement through Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement).
+
+For the best compatibility experience, ensure users in your tenant are using Azure CLI version 2.76 and Azure PowerShell version 14.3 or later. Otherwise, you can expect to see error messages as explained in these topics: 
+
+- [Troubleshoot MFA errors in Azure PowerShell](/powershell/azure/troubleshooting#troubleshooting-multifactor-authentication-mfa)
+- [Troubleshoot MFA errors in Azure CLI](/cli/azure/use-azure-cli-successfully-troubleshooting#troubleshooting-multifactor-authentication-mfa)
 
 >[!NOTE] 
 >Users who sign in without MFA can use a [Phase 2 application](#phase-2-applications). But if they try to create, update, or delete a resource, the app returns an error that says they need to sign in with MFA and a claims challenge. Some clients use the claims challenge to prompt the user to step up and perform MFA. Other clients return only the error without an MFA prompt. A Conditional Access policy or security defaults are recommended to help users satisfy MFA before they see an error. 
@@ -205,14 +209,6 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 >[!Caution]
 >
 >By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
-
-If you never previously signed in to the Azure portal with MFA, you're prompted to complete MFA to sign in, or postpone MFA enforcement. This screen is displayed only once. For more information about how to set up MFA, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md).
-
-:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/mandatory.png" alt-text="Screenshot of prompt to confirm mandatory MFA."
-
-If you select **Postpone MFA**, the date of MFA enforcement will be one month in the future, or Sept 30, 2025, whichever is earlier. After you sign in, you can change the date at [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure). To confirm that you want to proceed with the postponement request, click **Confirm postponement**. A Global Administrator must [elevate access](https://aka.ms/enableelevatedaccess) to postpone the start date of MFA enforcement.  
-
-:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone.png" alt-text="Screenshot of how to postpone mandatory MFA."
 
 ## Request more time to prepare for Phase 2 MFA enforcement 
 

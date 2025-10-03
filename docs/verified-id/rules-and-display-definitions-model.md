@@ -3,7 +3,7 @@ title: Rules and Display Definition Reference
 description: Rules and Display Definition Reference
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025

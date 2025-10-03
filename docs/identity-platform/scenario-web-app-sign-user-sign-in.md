@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
@@ -199,7 +199,7 @@ To learn more, see the [Send a sign out request](v2-protocols-oidc.md#send-a-sig
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-During the application registration, you register a front-channel logout URL. In our tutorial, you registered `https://localhost:44321/signout-oidc` in the **Front-channel logout URL** field on the **Authentication** page. For details, see [Register the webApp app](scenario-web-app-sign-user-app-registration.md#register-an-app-by-using-the-azure-portal).
+During the application registration, you register a front-channel logout URL. In our tutorial, you registered `https://localhost:44321/signout-oidc` in the **Front-channel logout URL** field on the **Authentication** page. For further details, see [How to add a redirect URI to your application](./how-to-add-redirect-uri.md).
 
 # [ASP.NET](#tab/aspnet)
 

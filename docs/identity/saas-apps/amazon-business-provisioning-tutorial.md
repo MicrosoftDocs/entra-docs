@@ -2,14 +2,14 @@
 title: Configure Amazon Business for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business.
 
-author: adimitui
-manager: jeedes
+author: jeevansd
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: addimitu
+ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business so that I can streamline the user management process and ensure that users have the appropriate access to Amazon Business.
 
@@ -117,6 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Japan|https://jp.business-api.amazon.com/scim/v2/|https://www.amazon.co.jp/b2b/abws/oauth?state=1&redirect_uri=https://portal.azure.com/TokenAuthorize&applicationId=amzn1.sp.solution.ee27ec8c-1ee9-4c6b-9e68-26bdc37479d3|
    |Mexico|https://na.business-api.amazon.com/scim/v2/|https://www.amazon.com.mx/b2b/abws/oauth?state=1&redirect_uri=https://portal.azure.com/TokenAuthorize&applicationId=amzn1.sp.solution.ee27ec8c-1ee9-4c6b-9e68-26bdc37479d3|
    |US|https://na.business-api.amazon.com/scim/v2/|https://www.amazon.com/b2b/abws/oauth?state=1&redirect_uri=https://portal.azure.com/TokenAuthorize&applicationId=amzn1.sp.solution.ee27ec8c-1ee9-4c6b-9e68-26bdc37479d3|
+   |Australia|https://jp.business-api.amazon.com/scim/v2/|https://www.amazon.com.au/b2b/abws/oauth?state=1&redirect_uri=https://portal.azure.com/TokenAuthorize&applicationId=amzn1.sp.solution.ee27ec8c-1ee9-4c6b-9e68-26bdc37479d3|
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 

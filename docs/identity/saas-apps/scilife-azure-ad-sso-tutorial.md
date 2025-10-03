@@ -3,7 +3,7 @@ title: Configure Scilife Microsoft Entra SSO for Single sign-on with Microsoft E
 description: Learn how to configure single sign-on between Microsoft Entra ID and Scilife Microsoft Entra SSO.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

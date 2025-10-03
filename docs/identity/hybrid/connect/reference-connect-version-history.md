@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: mwongerapk
 ms.topic: reference
-ms.date: 08/01/2025
+ms.date: 09/17/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
@@ -20,11 +20,10 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have released and the changes in those versions.
 
-### Breaking Change on Entra Connect Sync
-
-> [!IMPORTANT]
-> New Microsoft Entra Connect Sync Versions are only available via the Microsoft Entra admin center 
-> > Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer being released to the Microsoft Download Center.
+>[!IMPORTANT]
+>**Mandatory Upgrade Required**: All synchronization services in Microsoft Entra Connect Sync will stop working on **September 30, 2026** if you're not on at least version 2.5.79.0. In May 2025, we released this version with a back-end service change that hardens our services. Upgrade before this deadline to avoid any service disruption.
+>
+>If you're unable to upgrade before the deadline, all synchronization services will fail until you upgrade to the latest version. The Microsoft Entra Connect Sync .msi installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
 
 ## Looking for the latest versions?
 
@@ -68,7 +67,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
-|[2.5.76.0](#25760)||
+|[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
+|[2.5.79.0](#25790)||
 
 **All other versions are not supported**
 
@@ -91,11 +91,31 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
+## 2.5.79.0
+
+### Release status
+
+09/01/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting September 4, 2025 and will be done in multiple phases.  
+
+
+### Added Features 
+
+- Improved the setup process for Application-Based Authentication to handle TPM-backed certificates (certificates protected by a Trusted Platform Module, see [What is a TPM?](/windows/security/information-protection/tpm/trusted-platform-module-overview)). The system now tests a certificate’s signing capability upfront and automatically falls back to software-based certificates if TPM signature fails. 
+- Implemented automatic removal of certificates if an Application-Based Authentication configuration fails after a certificate is created. This prevents unused certificates from lingering on the server in failure scenarios, improving security by avoiding accumulation of orphaned certificates. 
+
+### Bug fixes
+
+- Resolved an issue on FIPS-enabled servers that was causing setup failures. Application-Based Authentication now works correctly on servers with FIPS mode enabled by using FIPS-compliant cryptographic algorithms. 
+  > [!TIP]
+  > FIPS (Federal Information Processing Standards) mode is a Windows security setting that enforces the use of cryptographic algorithms for sensitive data. When FIPS mode is enabled, only FIPS-compliant algorithms can be used, which is why this fix ensures compatibility for environments requiring strict security standards.
+- Fixed an issue where certificate auto-rotation was incorrectly reported as active when the scheduler was suspended. The auto-rotation logic now checks the scheduler’s state before indicating status, ensuring the *View or export current configuration wizard* accurately reflects whether auto-rotation is enabled. 
+- Removed an inappropriate admin audit event that was being logged for automatic certificate operations. These background certificate actions no longer generate administrative audit log entries, resulting in a cleaner audit trail (only actual administrator-initiated changes will appear in the Entra Connect Sync audit logs). 
+
 ## 2.5.76.0
 
 ### Release status
 
-07/31/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgrades to this build starting August 14th, 2025, and will be done in multiple phases.  
+07/31/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting August 14th, 2025, and will be done in multiple phases.  
 
 
 ### Added Features 

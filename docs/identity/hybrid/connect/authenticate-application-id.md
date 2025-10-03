@@ -191,7 +191,7 @@ The following prerequisites are required to implement authentication by using ap
 >[!IMPORTANT]
 > New Microsoft Entra Connect Sync versions are available only via the Microsoft Entra admin center.
 >
-> Following up on the [What's New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are available only on the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within the Microsoft Entra admin center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
+> Following up on the [What's New](../../../fundamentals/whats-new-archive.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are available only on the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within the Microsoft Entra admin center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
 - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.3.0](reference-connect-version-history.md#2530) or greater for manual onboarding.
 - Microsoft Entra Connect version [2.5.76.0](reference-connect-version-history.md#25760) or greater for automatic onboarding
@@ -480,7 +480,7 @@ $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 
 For self-signed certificates, either Microsoft Entra Managed or BYOC, an administrator must perform manual revocation by removing the `keyCredential` value from Microsoft Entra ID. An on-demand rotation of the certificate is also an option.
 
-For BYOC certificates issued by a Certificate Authority registered with Microsoft Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-revocation-process).
+For BYOC certificates issued by a Certificate Authority registered with Microsoft Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-certificate-revocation-list.md#enforce-crl-validation-for-cas).
 
 ## Remove a legacy service account
 

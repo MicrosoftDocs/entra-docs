@@ -3,6 +3,8 @@ title: Track and investigate identity activities with linkable identifiers in Mi
 description: Discover how linkable identifiers like session IDs and unique token identifiers in Microsoft Entra help track and investigate identity-related activities, enhancing security and transparency.
 ms.topic: how-to
 ms.date: 05/27/2025
+ms.service: entra-id
+ms.subservice: hybrid
 ms.author: justinha
 author: vimrang
 manager: dougeby

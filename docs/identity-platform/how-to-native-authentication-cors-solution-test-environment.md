@@ -4,7 +4,7 @@ description: Learn how to set up a reverse proxy for a single-page app that call
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: how-to
 ms.date: 02/07/2025

@@ -22,7 +22,7 @@ To perform the configuration, you need the following resources:
 - A SharePoint 2016 farm or newer.
 - A Microsoft Entra tenant with a plan that includes application proxy. Learn more about [Microsoft Entra ID plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
-- A [custom, verified domain](~/fundamentals/add-custom-domain.yml) in the Microsoft Entra tenant.
+- A [custom, verified domain](~/fundamentals/add-custom-domain.md) in the Microsoft Entra tenant.
 - On-premises Active Directory deployments synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).
 - A private network connector installed and running on a machine within the corporate domain.
 

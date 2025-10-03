@@ -88,6 +88,13 @@ Follow these steps to enable Microsoft Entra SSO.
         |------|
         |`https://stores.pagedna.com/<your site>/saml2ep.cgi`|
         |`https://www.nationsprint.com/<your site>/saml2ep.cgi`|
+    
+    1. In the **Reply URL (Assertion Consumer Service URL)** box, type a URL by using one of the following patterns:
+
+        | **Reply URL** |
+        |------|
+        |`https://stores.pagedna.com/<your site>/saml2ep.cgi`|
+        |`https://www.nationsprint.com/<your site>/saml2ep.cgi`|
 
     1. In the **Sign on URL** box, type a URL by using one of the following patterns:
 

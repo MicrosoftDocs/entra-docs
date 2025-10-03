@@ -27,7 +27,7 @@ This article provides an overview of the logic behind the suggestions and report
    - On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
    - [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
-   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can *view the agent and take action on the suggestions*.
+   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
@@ -69,17 +69,11 @@ The default view of the suggestion provides the policy details, including a high
 
 From the details panel that opens, select **Policy impact** to see a visualization of the potential impact of the policy.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/policy-impact-button.png" alt-text="Screenshot of the policy suggestion details with the policy impact button highlighted." lightbox="media/agent-optimization-review-suggestions/policy-impact-button.png":::
-
 Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that the policy affects. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
-
-:::image type="content" source="media/agent-optimization-review-suggestions/policy-impact-graph.png" alt-text="Screenshot of the policy impact graph." lightbox="media/agent-optimization-review-suggestions/policy-impact-graph.png":::
 
 ### View agent's full activity
 
 To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The agent's activity assesses policy drift, or gaps in policy coverage, for users and apps. The agent also looks for policies that can be merged or consolidated.
-
-:::image type="content" source="media/agent-optimization-review-suggestions/view-agent-activity-link.png" alt-text="Screenshot of the policy suggestion details with the view agent's full activity link highlighted." lightbox="media/agent-optimization-review-suggestions/view-agent-activity-link.png":::
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion.
 
@@ -92,7 +86,13 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 - Policy details are provided as both a list of all the details that are changing and a JSON view of the entire policy, with the changes highlighted.
 - For policy changes that affect users or applications, you can download a JSON file of the users and applications affected by the policy change.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/review-policy-changes.png" alt-text="Screenshot of the policy details page with the review policy changes button highlighted." lightbox="media/agent-optimization-review-suggestions/review-policy-changes.png":::
+### Deep analysis
+
+Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions—flagging policies that exclude a large portion of users and recommending explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
+
+Because the policy suggestions that come through deep analysis might have a significant impact on your environment, you can "snooze" the suggestion for 14 days. This feature gives you time to investigate the suggestion and make any needed changes to your policies before applying the suggestion. You can also add notes about the suggestion that can be saved for other admins to review. If you choose to snooze the suggestion, it reappears in the list after 14 days with the notes intact.
+
+:::image type="content" source="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png" alt-text="Screenshot of the suggestion created with deep analysis with the snooze and notes buttons highlighted." lightbox="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png":::
 
 ## Apply suggestions
 
@@ -128,9 +128,9 @@ When the agent suggests a new policy, it creates the policy in report-only mode.
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
 
-## Review policy reports (Preview)
+## Review policy reports
 
-The Conditional Access optimization agent also detects spikes and dips in activity related to existing policies. These anomalies often indicate a misconfiguration of a policy that needs to be investigated. If the agent identifies a significant change in activity, a report appears in the list of suggestions. In the **Actions taken by agent** column, you'll see **Suggested policy review** as the value.
+The Conditional Access optimization agent also detects spikes and dips in activity related to existing policies. These anomalies often indicate a misconfiguration of a policy that needs to be investigated. If the agent identifies a significant change in activity, a report appears in the list of suggestions. The reports apply to both active and report-only policies that the agent suggests turning on. In the **Actions taken by agent** column, you'll see **Suggested policy review** as the value.
 
 > [!IMPORTANT]
 > The policy reports in the Conditional Access Optimization agent are currently in PREVIEW.
