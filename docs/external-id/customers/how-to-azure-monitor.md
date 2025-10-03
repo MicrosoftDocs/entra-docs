@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 10/01/2025
 ms.author: cmulligan
 ms.custom: sfi-ga-nochange, sfi-image-nochange
+
 #Customer intent: As an it admin, I want to learn how to set up Azure Monitor in external tenants to collect and analyze data in this tenant.
 ---
 # Set up Azure Monitor in external tenants (preview)
@@ -33,7 +34,6 @@ In this configuration, you use a wizard. You can start the wizard from either of
 - An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">free account</a> before you begin.
 - A Microsoft Entra account with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role in the Microsoft Entra subscription.
 - An account in the external tenant that's been assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role. 
-- A [log analytics workspace](/azure/azure-monitor/platform/resource-logs?tabs=log-analytics#send-to-log-analytics-workspace) in your workforce tenant to receive logs from the external tenant.
 
 > [!IMPORTANT]
 > This feature supports only the new [Azure Role-Based Access Control (RBAC) Owner role](/azure/role-based-access-control/built-in-roles/privileged#owner), not the classic administrator roles. For instructions on converting classic administrator roles to Azure RBAC, see [Azure classic subscription administrators](/azure/role-based-access-control/classic-administrators?tabs=azure-portal). After you complete the conversion, refresh the page to apply the changes.
@@ -67,7 +67,7 @@ The following steps guide you through the wizard to set up Azure Lighthouse conf
 
 ### Step 1: Sign-in to your workforce tenant
 
-To set up Azure Lighthouse, sign in with an account that has the Owner role on a subscription in your organization's tenant.
+To set up Azure Lighthouse, sign in with an account that has access to the subscription that owns the external configuration tenant.
 
 :::image type="content" source="media/how-to-azure-monitor/sign-in-to-workforce.png" alt-text="Screenshot that shows how to sign in to your workforce tenant.":::
 
@@ -89,7 +89,7 @@ In this step, choose the users or groups in your external tenant who will have a
 
 Confirm your selection with the **Select** button. After you select the users or groups, you must assign a role to them. You can choose from the following roles:
 
-- **Contributor**: Can read monitoring data and configuration.
+- **[Contributor](/azure/role-based-access-control/built-in-roles/privileged#contributor)**: Can read monitoring data and configuration.
 - **[Log Analytics Contributor](/azure/azure-monitor/logs/manage-access?tabs=portal#log-analytics-contributor)**: Can read and write monitoring data and configuration.
 - **[Monitoring Contributor](/azure/role-based-access-control/built-in-roles/monitor#monitoring-contributor)**: Can read all monitoring data and edit monitoring settings.
 - **Monitoring Policy Contributor**: Can manage security-related features, including viewing and managing security alerts and reports.
@@ -98,6 +98,10 @@ Confirm your selection with the **Select** button. After you select the users or
 After you select the users or groups and assign a role, select **Next** to continue.
 
   :::image type="content" source="media/how-to-azure-monitor/select-users-and-roles.png" alt-text="Screenshot that shows how to add users, groups, and roles.":::
+
+#### Optional: Add tags to your Log Analytics workspace
+
+You can optionally add tags to your Log Analytics workspace. Tags are name/value pairs that enable you to categorize resources and view consolidated billing by applying the same tag to multiple resources and resource groups. For more information, see [Use tags to organize your Azure resources](/azure/azure-resource-manager/management/tag-resources).
 
 ### Step 4: Review and create your Log Analytics workspace
 
@@ -113,16 +117,15 @@ Once the setup is complete, you see a confirmation message. Select **Done** and 
 
 [Diagnostic settings](/azure/azure-monitor/platform/diagnostic-settings?tabs=portal) allow you to collect [resource logs](/azure/azure-monitor/platform/resource-logs?tabs=log-analyticsd) and to send [platform metrics](/azure/azure-monitor/reference/metrics-index) and the [activity log](/azure/azure-monitor/platform/activity-log?tabs=log-analytics) to different destinations. You can create up to five different diagnostic settings to send various logs and metrics to different destinations. Follow these steps to configure diagnostic settings in your external tenant.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Entra ID** in your external tenant and select **Monitoring & health** > **Diagnostic settings**.
-1. Select **Add settings**.
-1. Review the **Subscription** and **Resource Group** on the right hand side. These fields are read-only. If you have to make changes, you need to remove the existing Service Provider information and start the wizard again. If you're satisfied with the selection, select **Done** to continue to the next step.
-
-  :::image type="content" source="media/how-to-azure-monitor/add-diagnostic-settings.png" alt-text="Screenshot that shows the Add diagnostic settings page.":::
+1. Select **Add settings** under **Add diagnostic settings**.
+1. If you select **Review** before adding settings, you can see the **Subscription** and **Resource Group** on the right hand side. These fields are read-only. If you have to make changes, you need to remove the existing Service Provider information and start the wizard again. If you're satisfied with the selection, select **Done** to continue to the next step. This is an optional step.
 
 > [!NOTE]
-> Keep this window open while the background subscription check is running. If you close or refresh the window before the check finishes, you might need to restart the wizard from **Start set up**.
+> If you select **Review** before adding settings, the **Subscription** and **Resource group** appear on the right-hand side. These fields are read-only. To make changes, remove the existing service provider information and restart the wizard.  
+Keep the window open while the background subscription check runs. If you close or refresh the window before the check finishes, you might need to restart the wizard from **Start setup**.
+
+  :::image type="content" source="media/how-to-azure-monitor/add-diagnostic-settings.png" alt-text="Screenshot that shows the Add diagnostic settings page." lightbox="media/how-to-azure-monitor/add-diagnostic-settings.png"::::::
+
 
 6. Select **Add diagnostic setting** to add a new setting or **Edit setting** to edit an existing one. You may need multiple diagnostic settings for a resource if you want to send to multiple destinations of the same type.
 7. Give your setting a descriptive name.
