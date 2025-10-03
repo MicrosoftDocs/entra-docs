@@ -59,7 +59,7 @@ The [Conditional Access optimization agent](../identity/conditional-access/agent
 | Attribute           | Description |
 |---------------------|------------ |
 | Identity            | Runs with the identity of the administrator who configured the agent |
-| Licenses            | [Microsoft Entra ID P1](licensing.md) |
+| Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
 | Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
@@ -86,6 +86,6 @@ While this article focuses on Microsoft Entra agents, similar agents are availab
 
 ## Related content
 
-- [Microsoft Security Copilot in Microsoft Entra](copilot-security-entra.md)
-- [Security Copilot scenarios in Microsoft Entra](copilot-entra-security-scenarios.md)
+- [Microsoft Security Copilot in Microsoft Entra](./security-copilot-in-entra.md)
+- [Security Copilot scenarios in Microsoft Entra](./entra-security-scenarios.md)
 - [Microsoft Security Copilot agents overview](/copilot/security/agents-overview)
