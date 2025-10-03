@@ -74,7 +74,7 @@ To update this configuration, first identify employees from your HR system who c
 
 Once you have identified the employees for SOA conversion, you should do the following in your environment:
 
-1.	Create a new provisioning application in Microsoft Entra ID to provision users from your HR system to Microsoft Entra ID. Use scoping filters to restrict this app to only handle SOA converted users. For example: In the first phase, if you’re transferring SOA only for users in the “*Finance*” department, then set the scoping filter as department EQUALS “*Finance*”. Expand the scoping filter in future phases to include more users.  
+1. Create a new provisioning application in Microsoft Entra ID to provision users from your HR system directly to Microsoft Entra ID. Use scoping filters to restrict this app to only handle SOA converted users. For example: In the first phase, if you’re transferring SOA only for users in the “*Finance*” department, then set the scoping filter as department EQUALS “*Finance*”. Expand the scoping filter in future phases to include more users.  
 
 1.	Update the configuration of your HR to Active Directory provisioning app to exclude the SOA transferred users from syncing to AD. Continuing with the previous example, you can exclude *“Finance”* department users from syncing to AD by setting the filter department to NOT EQUALS “*Finance*”. 
 
@@ -130,7 +130,7 @@ Once your environment is prepped for transferring user SOA, you must make sure y
     > Switch SOA of groups before switching SOA of users.
 1.	Remove these users from the App-> AD provisioning configuration (for example, Workday to AD or MIM to AD etc.) so they no longer sync into AD.  
     > [!NOTE]
-    > How you remove the users and/or groups from scope depends on the management tool         
+    > Note: How you remove the users and/or groups from scope depends on the management tool         
 1.	Wait for the sync cycle to complete and make sure the object data is the same between AD and Microsoft Entra ID. You can use tools like provision on-demand to do this manually, or do a bulk sync to handle multiple users.
 1.	Stop making any changes to these users and/or groups in AD directly.  
 1.	Switch the SOA of the users and/or groups.
