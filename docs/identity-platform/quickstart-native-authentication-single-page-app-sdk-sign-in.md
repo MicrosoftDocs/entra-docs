@@ -4,7 +4,7 @@ description: Configure a React single-page app with native authentication SDK to
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 09/05/2025

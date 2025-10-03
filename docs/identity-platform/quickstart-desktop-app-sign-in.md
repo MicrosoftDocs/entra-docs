@@ -2,7 +2,7 @@
 title: Quickstart - Sign in users in a sample Desktop app
 description: Quickstart for configuring a sample Desktop app to sign in employees or customers with Microsoft identity platform.
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/19/2024

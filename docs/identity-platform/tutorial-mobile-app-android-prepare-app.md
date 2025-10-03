@@ -2,7 +2,7 @@
 title: Sign in users in an Android app by using Microsoft identity platform
 description: Set up an Android app project that signs in users into customer facing app by in an external tenant or employees in a workforce tenant
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial

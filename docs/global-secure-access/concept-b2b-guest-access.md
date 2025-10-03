@@ -24,7 +24,7 @@ You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop ins
 
 To enable B2B guest access for Windows 365 or Azure Virtual Desktop (AVD) virtual machines using Global Secure Access, follow these steps:
 
-1. Configure your Windows 365 or Azure Virtual Desktop VM instance to use external ID linking. Learn more in [Configure external ID linking](/azure/virtual-desktop/authentication#external-identity).
+1. Configure your Windows 365 or Azure Virtual Desktop VM instance to use external ID linking. Learn more in [Configure external ID linking](/azure/virtual-desktop/authentication#external-identity-preview).
 
 1. Onboard your organization to Global Secure Access. See [onboarding instructions](/entra/global-secure-access/overview-what-is-global-secure-access#licensing-overview).
 

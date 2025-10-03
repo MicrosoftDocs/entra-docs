@@ -4,7 +4,7 @@ description: Learn about ID tokens used in the Microsoft identity platform.
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 05/14/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
