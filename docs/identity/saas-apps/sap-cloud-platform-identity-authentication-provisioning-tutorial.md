@@ -391,7 +391,7 @@ Completing the below steps will allow customers that were already previously usi
 
 1. In the **Properties** section, copy the Object ID.
 
-	![Screenshot of where to copy Object ID in the Properties blade of the SAP Cloud Identity Services connector.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/objectid.png)
+	![Screenshot of where to copy Object ID in the Properties blade of the SAP Cloud Identity Services connector.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/object-id.png)
 
 1. In a new web browser window, go to go to [https://developer.microsoft.com/graph/graph-explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as the administrator for the Microsoft Entra tenant where your app is added.
 
