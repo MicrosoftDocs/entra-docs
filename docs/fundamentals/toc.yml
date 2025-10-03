@@ -91,24 +91,6 @@ items:
     href: security-defaults.md
   - name: Manage 'Stay signed in?' prompt
     href: how-to-manage-stay-signed-in-prompt.yml
-- name: Microsoft Security Copilot + Microsoft Entra
-  items:
-  - name: Security Copilot in Microsoft Entra
-    href: copilot-security-entra.md
-  - name: Copilot scenarios in Microsoft Entra
-    href: copilot-entra-security-scenarios.md
-  - name: Agents
-    href: copilot-entra-agents.md
-  - name: Respond to identity threats
-    href: copilot-entra-risky-user-summarization.md  
-  - name: Manage lifecycle workflows
-    href: copilot-entra-lifecycle-workflow.md
-  - name: Investigate incidents
-    href: copilot-security-entra-investigate-incident.md 
-  - name: Investigate app risk
-    href: copilot-security-entra-investigate-risky-apps.md
-  - name: Responsible AI FAQ for Security Copilot
-    href: /copilot/security/rai-faqs-security-copilot?toc=/fundamentals/toc.json&bc=/fundamentals/breadcrumb/toc.json
 - name: Support and help
   expanded: false
   items:
@@ -183,4 +165,5 @@ items:
   - name: Microsoft Graph extensions
     href: /graph/extensibility-overview?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Frontline worker management
+
     href: frontline-worker-management.md

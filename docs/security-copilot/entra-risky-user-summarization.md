@@ -1,11 +1,11 @@
 ---
 title: Investigate risky users with Copilot
 description: Use Copilot in Microsoft Entra to quickly respond to identity threats by summarizing the risk level for a user and receiving insights relevant to the incident.
-keywords: 
 author: cilwerner
 ms.author: cwerner
 manager: pmwongera
-ms.date: 11/07/2024
+ms.reviewer: ptyagi
+ms.date: 09/23/2025
 ms.update-cycle: 180-days
 ms.topic: how-to
 ms.service: entra
@@ -23,6 +23,10 @@ Respond to identity threats quickly:
 - Recommendations: get guidance on how to mitigate and respond to these types of attacks, with quick links to help and documentation.
 
 This article describes how to access the risky user summary capability of Microsoft Entra ID Protection and Copilot in Microsoft Entra. Using this feature requires [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements).
+
+## Prerequisites
+
+- A tenant with Security Copilot enabled. Refer to [Get started with Microsoft Security Copilot](/copilot/security/get-started-security-copilot#option-2-provision-capacity-in-azure) for more information.
 
 ## Investigate risky users
 
@@ -67,13 +71,13 @@ Using Microsoft Security Copilot, you can easily retrieve and summarize informat
 
 For example:
 
-- *List all users currently flagged as risky*
-- *Show users who are currently at risk*
-- *Identify users who have been marked as risky*
-- *List all users who have been compromised*
-- *Show users who are currently considered safe*
-- *How many users are currently flagged as risky*
-- *Provide a count of all risky users*
+- *List all users currently flagged as risky.*
+- *Show users who are currently at risk.*
+- *Identify users who have been marked as risky.*
+- *List all users who have been compromised.*
+- *Show users who are currently considered safe.*
+- *How many users are currently flagged as risky?*
+- *Provide a count of all risky users.*
 
 ### User-specific risk information
 
@@ -92,6 +96,6 @@ Using Microsoft Security Copilot, you can retrieve past information about a user
 - *Has this user ever been flagged as risky*
 - *Was this user previously at risk*
 
-## Next steps
+## Related content
 
 - Learn more about [risky users](/entra/id-protection/howto-identity-protection-investigate-risk#risky-users-report).
