@@ -39,7 +39,7 @@ The next sections explain more details about the scenario that User SOA supports
 
 Before you begin transferring the SOA for users in your organization, your environment must meet the following prerequisites:
 
-- The Cloud HR system has been configured and successfully integrated with Microsoft Entra ID. Changes to users provisioned from the HR system should go directly Microsoft Entra ID. For more information, see: [Shift the configuration of users in the HR system](prepare-user-source-of-authority-environment.md#shift-the-configuration-of-users-in-the-hr-system).
+- The Cloud HR system has been configured and successfully integrated with Microsoft Entra ID. Changes to users provisioned from the HR system should go directly Microsoft Entra ID. For more information, see: [Shift the configuration of users in provisioning from the HR system](prepare-user-source-of-authority-environment.md#shift-the-configuration-of-users-in-provisioning-from-the-hr-system).
 - No on-premises Exchange workloads. If you are currently using on-premises Exchange server, shift the users and mailboxes to the cloud and then remove on-prem-exchange. For more information, see: [Prepare your Microsoft Exchange setup](prepare-user-source-of-authority-environment.md#prepare-your-microsoft-exchange-setup).
 - Password-less authentication utilizing [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/configure) or [FIDO2 security keys](../../identity/authentication/how-to-enable-passkey-fido2.md) is required.
 - The [Cloud Kerberos Trust type](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) must be utilized.
