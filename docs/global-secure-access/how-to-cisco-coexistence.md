@@ -132,9 +132,6 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
 
 ### 1. Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Cisco Umbrella DNS security.
 
-
-#### Steps
-
 **Global Secure Access configuration:**
 1. Enable Internet Access and Microsoft Access forwarding profiles.
 1. Install and configure the Global Secure Access client for Windows or macOS.
@@ -160,9 +157,6 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
 ---
 
 ### 2. Microsoft Entra Internet Access, Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS security.
-
-
-#### Steps
 
 **Global Secure Access configuration:**
 1. Enable Internet Access, Microsoft Access, and Private Access forwarding profiles.
