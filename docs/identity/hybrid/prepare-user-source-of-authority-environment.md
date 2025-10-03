@@ -18,12 +18,12 @@ Once you decide that you want to minimize your on-premises footprint by using So
 
 The flow for preparing for user SOA is as follows:
 
-- **Confirm your AD objects**:
-- **Move Objects to new OU in Active Directory**:
-- **Prepare your Microsoft Exchange Setup**:
-- **Shift the configuration of users in provisioning from the HR system**:
-- **Prepare your MIM setup**:
-- **Prepare your sync client**:
+- **Confirm your AD objects are ready to have their SOA changed**
+- **Move Objects to new OU in Active Directory**
+- **Prepare your Microsoft Exchange Setup**
+- **Shift the configuration of users in provisioning from the HR system**
+- **Prepare your MIM setup**
+- **Prepare your sync client**
 
 This article walks you through what needs to be completed to prepare Microsoft Exchange, HR integration, and Microsoft Identity Manager environments before switching user SOA.
 
