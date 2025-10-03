@@ -60,7 +60,7 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Enterprise Applications** > ***App name***.
+1. Browse to **Enterprise Apps** > ***App name***.
 
 1. Select **Permissions** > **Grant admin consent for *tenant name***.
 
@@ -259,6 +259,7 @@ Admin step | isCloudManaged value | onPremisesSyncEnabled value | Descript
 Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the *onPremisesSyncEnabled* attribute is set to `true` and *isCloudManaged* is set to `false`.  
 Admin transfers the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin transfers the SOA of an object to the cloud, the *isCloudManaged* attribute becomes set to `true` and the *onPremisesSyncEnabled* attribute value is set to `null`. 
 Admin rolls back the SOA operation | `false` | `null` | If an admin transfers the SOA back to AD, the *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null` until the sync client takes over the object.    
+Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null`.
 Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null`.
 
 
