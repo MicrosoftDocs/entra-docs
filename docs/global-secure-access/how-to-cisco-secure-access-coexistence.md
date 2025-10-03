@@ -45,21 +45,21 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ## Global Secure Access setup
 
-- **Enable and disable different traffic forwarding profiles** for your Microsoft Entra tenant. See [Traffic forwarding profiles](concept-traffic-forwarding.md).
-- **Install and configure the private network connector** for Private Access applications. See [Configure connectors](how-to-configure-connectors.md).
-- **Configure Quick Access** to private resources and set up private DNS and DNS suffixes. See [Configure Quick Access](how-to-configure-quick-access.md).
-- **Install and configure the Global Secure Access client** on end-user devices. See [Global Secure Access clients](concept-clients.md).
+1. **Enable and disable different traffic forwarding profiles** for your Microsoft Entra tenant. See [Traffic forwarding profiles](concept-traffic-forwarding.md).
+1. **Install and configure the private network connector** for Private Access applications. See [Configure connectors](how-to-configure-connectors.md).
+1. **Configure Quick Access** to private resources and set up private DNS and DNS suffixes. See [Configure Quick Access](how-to-configure-quick-access.md).
+1. **Install and configure the Global Secure Access client** on end-user devices. See [Global Secure Access clients](concept-clients.md).
 
 > [!NOTE]
 > Private Network Connectors are required for Private Access applications.
 
 ## Cisco Secure Access setup
 
-- **Set up a resource connector** for private applications. See Cisco documentation for [managing resource connectors and connector groups](https://docs.sse.cisco.com/sse-user-guide/docs/manage-resource-connectors-and-connector-groups).
-- **Provision users and groups**. Integration with Microsoft Entra ID provides the best user experience. See Cisco documentation for [Microsoft Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
-- **Add private resources and create access policies**. See Cisco documentation for [managing private access rules](https://docs.sse.cisco.com/sse-user-guide/docs/manage-private-access-rules).
-- **Set up internet security and configure bypasses** for coexistence. See Cisco documentation for [managing internet security](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
-- **Install and configure the Cisco Secure Client**. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manual-installation-of-cisco-secure-client-windows-and-macos).
+1. **Set up a resource connector** for private applications. See Cisco documentation for [managing resource connectors and connector groups](https://docs.sse.cisco.com/sse-user-guide/docs/manage-resource-connectors-and-connector-groups).
+1. **Provision users and groups**. Integration with Microsoft Entra ID provides the best user experience. See Cisco documentation for [Microsoft Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
+1. **Add private resources and create access policies**. See Cisco documentation for [managing private access rules](https://docs.sse.cisco.com/sse-user-guide/docs/manage-private-access-rules).
+1. **Set up internet security and configure bypasses** for coexistence. See Cisco documentation for [managing internet security](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
+1. **Install and configure the Cisco Secure Client**. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manual-installation-of-cisco-secure-client-windows-and-macos).
 
 > [!IMPORTANT]
   > Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation, or re-installation (not required to run again when upgrading), of CSC version 5.1.10.x (or later).
