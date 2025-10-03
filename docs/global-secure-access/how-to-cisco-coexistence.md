@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 08/26/2025
+ms.date: 10/03/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -30,10 +30,10 @@ In this scenario, Global Secure Access handles Internet, Microsoft, and Private 
  
 ## Prerequisites
 
-- Cisco SWG features must be disabled for these configurations.
-- Integration with Microsoft Entra ID is recommended for best user experience.
+1. Cisco SWG features must be disabled for these configurations.
+1. Integration with Microsoft Entra ID is recommended for best user experience.
 
-## Global Secure Access setup
+### Global Secure Access setup
 
 To configure Global Secure Access:
 
@@ -49,7 +49,7 @@ To configure Global Secure Access:
 > [!NOTE]
 > Private Network Connectors are required for Private Access applications.
 
-## Cisco Umbrella setup
+### Cisco Umbrella setup
 
 To configure Cisco Umbrella:
 
@@ -136,19 +136,18 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
 #### Steps
 
 **Global Secure Access configuration:**
-- Enable Internet Access and Microsoft Access forwarding profiles.
-- Install and configure the Global Secure Access client for Windows or macOS.
+1. Enable Internet Access and Microsoft Access forwarding profiles.
+1. Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-- Configure the required destinations bypasses. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access](#bypass-global-secure-access-ips-and-fqdns-in-umbrellacisco-secure-access) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
-- Disable the SWG for [Umbrella devices](https://docs.umbrella.com/umbrella-user-guide/docs/selective-enablement#disable-the-swg-module) or [Cisco Secure Access devices](https://docs.sse.cisco.com/sse-user-guide/docs/edit-roaming-devices-internet-security-settings#disable-the-internet-security-settings).
-
-- Install and configure Cisco Secure Client software with the Umbrella module.
+1. Configure the required destinations bypasses. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access](#bypass-global-secure-access-ips-and-fqdns-in-umbrellacisco-secure-access) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
+1. Disable the SWG for [Umbrella devices](https://docs.umbrella.com/umbrella-user-guide/docs/selective-enablement#disable-the-swg-module) or [Cisco Secure Access devices](https://docs.sse.cisco.com/sse-user-guide/docs/edit-roaming-devices-internet-security-settings#disable-the-internet-security-settings).
+1.  Install and configure Cisco Secure Client software with the Umbrella module.
 
 **Validation:**
-- Ensure both clients are enabled and the Umbrella profile is `Active`.
-- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
-- Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+1. Ensure both clients are enabled and the Umbrella profile is `Active`.
+1. To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+1. Test traffic flow by accessing various sites and validating traffic logs in both platforms.
     1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
     2. Access `bing.com`, `salesforce.com`, `yelp.com` in browsers.
     3. Verify Global Secure Access client **is** capturing traffic for these sites. We **do not** expect to see destination FQDN information for these sites in the traffic tab.
@@ -166,20 +165,20 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
 #### Steps
 
 **Global Secure Access configuration:**
-- Enable Internet Access, Microsoft Access, and Private Access forwarding profiles.
-- Install a private network connector.
-- Configure Quick Access and Private DNS.
-- Install and configure the Global Secure Access client for Windows or macOS.
+1. Enable Internet Access, Microsoft Access, and Private Access forwarding profiles.
+1. Install a private network connector.
+1. Configure Quick Access and Private DNS.
+1. Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-- Configure the required destinations bypasses. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access](#bypass-global-secure-access-ips-and-fqdns-in-umbrellacisco-secure-access) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
-- Disable the SWG for [Umbrella devices](https://docs.umbrella.com/umbrella-user-guide/docs/selective-enablement#disable-the-swg-module) or [Cisco Secure Access devices](https://docs.sse.cisco.com/sse-user-guide/docs/edit-roaming-devices-internet-security-settings#disable-the-internet-security-settings).
-- Install and configure Cisco Secure Client software with the Umbrella module.
+1. Configure the required destinations bypasses. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access](#bypass-global-secure-access-ips-and-fqdns-in-umbrellacisco-secure-access) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
+1. Disable the SWG for [Umbrella devices](https://docs.umbrella.com/umbrella-user-guide/docs/selective-enablement#disable-the-swg-module) or [Cisco Secure Access devices](https://docs.sse.cisco.com/sse-user-guide/docs/edit-roaming-devices-internet-security-settings#disable-the-internet-security-settings).
+1. Install and configure Cisco Secure Client software with the Umbrella module.
 
 **Validation:**
-- Ensure both clients are enabled and the Umbrella profile is `Active`.
-- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
-- Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+1. Ensure both clients are enabled and the Umbrella profile is `Active`.
+1. To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+1. Test traffic flow by accessing various sites and validating traffic logs in both platforms.
   1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
   2. Access `bing.com`, `salesforce.com`, `yelp.com` in browsers.
   3. Verify Global Secure Access client **is** capturing traffic for these sites. We **don't** expect to see destination FQDN information for these sites in the traffic tab.
@@ -189,8 +188,6 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
   7. Access a site blocked by Cisco and validate that the Cisco block page is displayed.
   8. Access a Microsoft Entra private application (for example, SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco isn't.
   9. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
-
-
 
 ---
 
