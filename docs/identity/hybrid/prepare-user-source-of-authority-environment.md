@@ -18,8 +18,12 @@ Once you decide that you want to minimize your on-premises footprint by using So
 
 The flow for preparing for user SOA is as follows:
 
-:::image type="content" source="media/prepare-user-source-of-authority-environment/prepare-environment-steps.png" alt-text="Screenshot of steps to preparing source of authority.":::
-
+- **Confirm your AD objects**:
+- **Move Objects to new OU in Active Directory**:
+- **Prepare your Microsoft Exchange Setup**:
+- **Shift the configuration of users in the HR system**:
+- **Prepare your MIM setup**:
+- **Prepare your sync client**:
 
 This article walks you through what needs to be completed to prepare Microsoft Exchange, HR, and Microsoft Identity Manager environments before switching user SOA.
 
