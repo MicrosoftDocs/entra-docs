@@ -78,7 +78,7 @@ The application-centric approach tackles cloud migration from the perspective of
 
 ### Recommended sequence for application-centric migration:
 
-There can also be some apps already using modern protocols like SAML/OIDC via Active Directory Federation Service (AD FS) or third-party IdPs. These apps are easier to migrate directly to Microsoft, while some other legacy cases like hardcoded NTLM-only apps, might need special handling.
+There can also be some apps already using modern protocols like SAML/OIDC via Active Directory Federation Service (AD FS) or third-party IdPs. These apps are easier to migrate directly to Microsoft Entra, while some other legacy cases like hardcoded NTLM-only apps, might need special handling.
 
 ## Application inventory and authentication analysis
 
@@ -102,7 +102,7 @@ For every app found, identify the AD security groups that control its access. Co
 
 #### Identify users for each application
 
-Determine users by extracting group memberships for each application's AD groups and analyzing actual usage data through analytics platforms. Combine membership lists and usage logs to create a definitive list of users for each app. Use this information to guide cloud migration planning, ensuring access is maintained throughout the process.
+Determine users by extracting group memberships for each application's AD groups and analyzing actual usage data. Combine membership lists and usage logs to create a definitive list of users for each app. Use this information to guide cloud migration planning, ensuring access is maintained throughout the process.
 
 ###  Step 2. Determine authentication method
 
@@ -118,7 +118,7 @@ For each application in your inventory, identify the authentication mechanism it
 
 ### Step 3. Assess modernization feasibility
 
-Evaluate each application's ability to adopt modern authentication protocols (SAML/OIDC) natively. If a vendor update is available, or if the app is in-house and can be re-coded, transitioning to Microsoft Entra ID as the identity provider is typically the best long-term solution. This approach removes AD dependency and unlocks the full benefits of cloud identity management. However, for older applications that can't be easily updated, plan for a "*bridge*" solution to integrate them with Microsoft Entra ID, even if indirect integration is required.
+Evaluate each application's ability to adopt modern authentication protocols (SAML/OIDC) natively. If a vendor update is available, or if the app was developed in-house and can be re-coded, transitioning to Microsoft Entra ID as the identity provider is typically the best long-term solution. This approach removes AD dependency and unlocks the full benefits of cloud identity management. However, for older applications that can't be easily updated, plan for a "*bridge*" solution to integrate them with Microsoft Entra ID, even if indirect integration is required.
 
 Some older applications might have hard-coded assumptions about AD such as expecting to find a user in a specific OU, or writing attributes to AD. Those apps are **out of scope** for this kind of identity migration. These applications aren't easily supported by Microsoft Entra ID or Microsoft Entra Domain Services unless you keep write permissions there, which is possible, but then you have divergent data. Make sure to identify if any app does LDAP writes or depends on obscure AD features such as dynamic auxiliary classes. Those might have to remain on AD until they’re retired. The focus should be on apps that *read/authenticate* via AD as those can be moved to cloud auth as described.
 
