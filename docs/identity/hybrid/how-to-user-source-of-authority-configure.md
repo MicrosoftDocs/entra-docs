@@ -200,7 +200,7 @@ Follow these steps to transfer the SOA for a test user:
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
 
 
-## Bulk updates for User SOA
+## Bulk updates for user SOA
 
 You can use the following PowerShell script to automate User SOA updates by using app-based authentication.
 
@@ -282,7 +282,7 @@ You can run this operation to roll back the SOA update and revert the SOA to on-
 > [!NOTE]
 > The change of *isCloudManaged* to `false` allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is finished only after *both* the API call and the next scheduled or forced run of Connect Sync are complete.
 
-### Validate the change in the Audit Logs
+### Validate the change in the audit logs
 
 Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
