@@ -181,7 +181,7 @@ The following are key considerations for Kerberos applications before shifting  
 
 - **User lifecycle management:** Even after you transition a user to cloud management, an AD account with matching UserPrincipalName must remain for Kerberos functionality.
 
-- **Authentication and Attributes:** Do not migrate users who require access to applications that rely on passwords to authenticate, and cannot be updated to use Kerberos authentication. Applications that can support Kerberos authentication and query attributes from Active Directory require those attributes to be in sync, potentially using a dual-write to Microsoft Entra ID and Active Directory.
+- **Authentication and Attributes:** Don't migrate users who require access to applications that rely on passwords to authenticate, and can't be updated to use Kerberos authentication. Applications that can support Kerberos authentication and query attributes from Active Directory require those attributes to be in sync, potentially using a dual-write to Microsoft Entra ID and Active Directory.
 
 - **Microsoft Entra ID joined devices:** For true single sign-on, devices accessing Kerberos resources should be Microsoft Entra ID-joined or hybrid-joined. When a user logs into a device using Microsoft Entra ID credentials, the device can obtain a token from Microsoft Entra ID that's convertible to a Kerberos ticket via trust or connector. If a device is only domain-joined, and the user is cloud-managed, seamless SSO can be difficult, possibly requiring manual credential entry. Microsoft recommends migrating devices to Microsoft Entra ID join with cloud trust as part of cloud transformation so that user and device trust are aligned. 
 
@@ -229,7 +229,7 @@ The following list is a summary of the options for handling on-premises apps in 
   - **Considerations:**
     - Minimal app changes (new LDAP endpoint)
     - Cloud users’ passwords present in Microsoft Entra ID DS
-    - If Microsoft Entra ID DS is not feasible, fallback is provisioning users into on-premises AD and maintaining password parity manually.
+    - If Microsoft Entra ID DS isn't feasible, fallback is provisioning users into on-premises AD and maintaining password parity manually.
 
 
 
