@@ -160,43 +160,6 @@ The following table shows examples of Lifecycle workflow's catch up window:
 |A [pre-hire template](lifecycle-workflow-templates.md#onboard-pre-hire-employee) workflow is scheduled to run for users 7 days before their **EmployeeHireDate**.    |  A new user is provisioned by HR in Microsoft Entra ID with an **EmployeeHireDate** in 3 days.     |  The workflow **does not** run for the new user, as the date is more than 3 days from the offset.      |
 |A new hire workflow runs on Feb 23 for in scope users with **EmployeeHireDate** of Feb 23.    |  A new user is provisioned by HR in Microsoft Entra ID on Feb 24 with an EmployeeHireDate set as Feb 23.      |  The workflow runs again on Feb 24 for the new user, as the date is within 3 days of the offset.     |
 
-
-
-
-Workflow Scenario
-	
-User Data
-	
-Lifecycle workflow behavior
-
-
-A pre-hire workflow is scheduled to run for users 7 days before their EmployeeHireDate.
-	
-A user is provisioned by HR in Microsoft Entra ID with an EmployeeHireDate in 10 days
-	
-The workflow runs for the new user as the date is before the offset.
-
-
-A pre-hire workflow is scheduled to run for users 7 days before their EmployeeHireDate.
-	
-A new user is provisioned by HR in Microsoft Entra ID with an EmployeeHireDate in 5 days
-	
-The workflow runs for the new user as the date is within 3 days of the offset.
-
-
-A pre-hire workflow is scheduled to run for users 7 days before their EmployeeHireDate.
-	
-A new user is provisioned by HR in Microsoft Entra ID with an EmployeeHireDate in 3 days
-	
-The workflow does not run for the new user, as the date is more than 3 days from the offset.
-
-
-A new hire workflow ran on Feb 23 for in scope users with EmployeeHireDate of Feb 23
-	
-A new user is provisioned by HR in Microsoft Entra ID on Feb 24 with an EmployeeHireDate set as Feb 23.
-	
-The workflow runs again on Feb 24 for the new user, as the date is within 3 days of the offset.
-
 ## Workflow scheduling
 
 While newly created workflows are enabled by default, scheduling is an option that must be enabled manually. To verify whether the workflow is scheduled, you can view the **Scheduled** column on the workflow overview page.
