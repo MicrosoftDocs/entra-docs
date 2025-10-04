@@ -1,5 +1,5 @@
 ---
-title: Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: Configure user Source of Authority (SOA) in Microsoft Entra ID (Preview)
 description: Learn how to transfer user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
 author: owinfreyATL
 ms.author: owinfrey
@@ -12,7 +12,7 @@ ms.reviewer: dhanyak
 #CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.
 ---
 
-# Configure User Source of Authority (SOA) (Preview)
+# Configure user Source of Authority (SOA) (Preview)
 
 This article explains the prerequisites, and steps, to configure User Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Transfer User Source of Authority to the cloud (Preview)](user-source-of-authority-overview.md).
 
@@ -32,13 +32,13 @@ This article explains the prerequisites, and steps, to configure User Source of 
 
 You need to set up Connect Sync client and the Microsoft Entra Provisioning agent.
 
-### Connect Sync client
+### Connect sync client
 
 1. Download the latest version of the Connect Sync build.
 
 1. Verify the Connect Sync build is successfully installed. Go to **Programs** in Control Panel and confirm that the version of Microsoft Entra Connect Sync is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760).
 
-### Cloud Sync client
+### Cloud sync client
 
 Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700) or later.
 
@@ -318,5 +318,6 @@ If Admins want to access on-premises resources after transfer of SOA, you must [
 ## Related content
 
 - [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)](user-source-of-authority-audit-monitor.md)
+- [Configure Group Source of Authority (SOA) (Preview)](how-to-group-source-of-authority-configure.md)
 
 
