@@ -78,7 +78,7 @@ When setting a workflow where the trigger type is **Attribute change**, the foll
 
 |Trigger detail  |Description  |
 |---------|---------|
-|Trigger Attribute     | The trigger attribute defines the attribute that is being changed to trigger the workflow to run.        |
+|Trigger Attribute     | The trigger attribute defines the attribute that's being changed to trigger the workflow to run.        |
 |Action/Operator     |  Defines the change to the attribute that triggers the workflow to run.       |
 |Value     |  The value of the trigger attribute.      |
 
