@@ -27,7 +27,27 @@ Applying Group SOA to a group that synchronizes from AD DS converts the group to
 
 ## Group SOA scenarios
 
-To see scenarios that can be unlocked using group SOA, see: [Scenarios you can unlock](guidance-for-it-architects-for-source-of-authority-conversion.md#scenarios-you-can-unlock).
+### Govern access with Microsoft Entra ID Governance
+
+**Scenario:** There are applications in your portfolio that you can’t modernize or that connect to AD DS. These applications use Kerberos or LDAP to query non-mail-enabled security groups in AD DS to determine access permissions. Your goal is to regulate access to these applications with Microsoft Entra ID and Microsoft Entra ID Governance. This goal necessitates that the group membership information that Microsoft Entra manages be accessible to the applications.
+
+:::image type="content" source="media/concept-source-of-authority-overview/governance.png" alt-text="Conceptual diagram of on-premises app governance." lightbox="media/concept-source-of-authority-overview/governance.png":::
+
+**Solution:** You can achieve your goal in one of two ways:
+
+- Concert Group SOA of on-premises groups. Provision the groups back to AD DS. In this model, you don’t need to change the app or create new groups. For more information, see [Govern on-premises Active Directory Domain Services based apps (Kerberos) using Microsoft Entra ID Governance](/entra/id-governance/scenarios/provision-entra-to-active-directory-groups).
+
+- To replicate the groups in AD DS, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD DS as Universal groups. In this model, you can change the app to use the new group security identifiers. If you use the "Account > Global > Domain Local" permission model, nest the newly provisioned group under the existing group. For more information, see [Tutorial - Provision groups to Active Directory Domain Services using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning).
+
+
+### AD DS Minimization
+
+**Scenario:** You modernized some or all your applications and removed the need to use AD DS groups for access. For example, these applications now use group claims with Security Assertion Markup Language (SAML) or OpenID Connect from Microsoft Entra ID instead of federation systems such as AD FS. However, these apps still rely on the existing synched security group to manage access. Using Group SOA, you can make the security group membership editable in the cloud, remove the AD DS security group completely, and govern the cloud security group through Microsoft Entra ID Governance capabilities if desired.
+
+
+**Solution:** You can use Group SOA to make them cloud managed groups and remove them from AD DS. You can continue to create new groups directly in the cloud. For more information, see [Best practices for managing groups in the cloud](/entra/fundamentals/concept-learn-about-groups#best-practices-for-managing-groups-in-the-cloud).
+
+:::image type="content" source="media/concept-source-of-authority-overview/minimization.png" alt-text="Screenshot of cloud managed groups and best practices for managing groups in the cloud." lightbox="media/concept-source-of-authority-overview/minimization.png":::
 
 ### Remove on-premises Exchange dependencies
 
