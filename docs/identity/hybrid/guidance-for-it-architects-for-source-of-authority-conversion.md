@@ -185,8 +185,8 @@ The following are key considerations for Kerberos applications before shifting  
 
 - **Microsoft Entra ID joined devices:** For true single sign-on, devices accessing Kerberos resources should be Microsoft Entra ID-joined or hybrid-joined. When a user logs into a device using Microsoft Entra ID credentials, the device can obtain a token from Microsoft Entra ID that's convertible to a Kerberos ticket via trust or connector. If a device is only domain-joined, and the user is cloud-managed, seamless SSO can be difficult, possibly requiring manual credential entry. Microsoft recommends migrating devices to Microsoft Entra ID join with cloud trust as part of cloud transformation so that user and device trust are aligned. 
 
-> [!NOTE]
-> Device migration is outside the current scope for transferring SOA.
+    > [!NOTE]
+    > Device migration is outside the current scope for transferring SOA.
 
 - **Conditional Access for on-prem apps:** Once App Proxy or Microsoft Entra Private Access is deployed for an application, Conditional Access policies such as MFA can be enforced on application access since authentication passes through Microsoft Entra ID. This enhances security as even legacy apps benefit from Zero Trust conditions without modification. For Kerberos trust scenarios, Conditional Access applies when the user initially authenticates to Microsoft Entra ID on the device.
 
