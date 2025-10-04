@@ -29,7 +29,7 @@ You can access Audit Logs in the Azure portal. They retain a record of SOA chang
     :::image type="content" source="media/user-source-of-authority-audit-monitor/audit-logs.png" alt-text="Screenshot of the user source of authority audit logs.":::
 1. Alternatively, you can also see activity of when a user has their source of authority reverted away from the cloud.
     :::image type="content" source="media/user-source-of-authority-audit-monitor/undo-source-of-authority-logs.png" alt-text="Screenshot of audit logs when source of authority is reverted.":::
-1. You can also get a full list of all users who've had their SOA reverted by making the following API call:
+1. You can also get a full list of all users who have had their SOA reverted by making the following API call:
     ```https
    GET https://graph.microsoft.com/v1.0/users?$count=true&$filter=OnPremisesSyncEnabled ne true and OnPremisesImmutableId ne null
    ```
