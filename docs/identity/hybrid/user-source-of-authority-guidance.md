@@ -1,5 +1,5 @@
 ---
-title: Guidance for using User Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: Guidance for using user Source of Authority (SOA) in Microsoft Entra ID (Preview)
 description: Streamline user management with User Source of Authority (SOA) in Microsoft Entra ID. Minimize your AD footprint and ensure a smooth migration to the cloud.
 author: owinfreyATL
 manager: dougeby
@@ -12,14 +12,14 @@ ms.reviewer: dahnyahk
 ---
 
 
-# Guidance for using User Source of Authority (SOA) (Preview)
+# Guidance for using user Source of Authority (SOA) (Preview)
 
-Managing user identities effectively is critical for organizations transitioning to the cloud. This article provides guidance on using the User Source of Authority (SOA) to streamline user management. This article discusses how to  minimize your Active Directory (AD) footprint after SOA transfer, adopt best practices for transitioning user management, and ensure a smooth migration of user management to the cloud. 
+Managing user identities effectively is critical for organizations transitioning to the cloud. This article provides guidance on using user Source of Authority (SOA) to help transition users from on-premises to the cloud. How to minimize your Active Directory (AD) footprint after SOA transfer, adopt best practices for transitioning user management, and ensure a smooth migration of user management to the cloud are also covered in this article. 
 
 
-## Active Directory User Management
+## Active Directory user management
 
-One of the key scenarios for transferring SOA for users, is the ability to minimize your AD footprint. Once you have completed SOA transfer, users who no longer require access to Active Directory-specific resources can be disabled within AD, or deleted completely. 
+One of the key scenarios for transferring SOA for users, is the ability to minimize your AD footprint. Once you complete the SOA transfer, users who no longer require access to Active Directory-specific resources can be disabled within AD, or deleted completely. 
 
 > [!NOTE]
 > If users still require access to on-premises resources after SOA transfer, then these attributes must be maintained manually using Microsoft Graph. For more information on these attributes, see: [Clear on-premises attributes for SOA transferred users](how-to-user-source-of-authority-configure.md#clear-on-premises-attributes-for-soa-transferred-users)
@@ -30,7 +30,7 @@ One of the key scenarios for transferring SOA for users, is the ability to minim
 Follow these best practices to transition user management from on-premises to Microsoft Entra ID
 
 
-### Move Users to an OU
+### Move users to an OU
 
 Using Active Directory management tools like Active Directory Users and Computers or the Active Directory module for PowerShell to modify AD objects with a changed Source of Authority (SOA) can lead to inconsistencies in their Microsoft Entra representation. Before you perform a SOA change, your organization should move those objects to a designated AD OU that signals that those objects should no longer be managed via AD tools. If the user who’s SOA you want to transfer is referenced in an on-premises managed group, then the user should remain in the sync scope. If you delete the on-premises user, then it's also removed from both the on-premises and Microsoft Entra group.
 
