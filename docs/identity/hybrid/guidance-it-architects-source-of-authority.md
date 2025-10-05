@@ -14,7 +14,7 @@ ms.subservice: hybrid
 
 ---
 
-# Cloud-First Identity Management: Guidance for IT Architects
+# Cloud-First Identity management: Guidance for IT architects
 
 Modern enterprises are under increasing pressure to improve security by modernizing identity management and streamlining operations. This document provides a strategic and technical framework for IT architects to shift user and group management from on-premises Active Directory (AD) to Microsoft Entra ID using Source of Authority (SOA) conversion. A legacy AD environment can be complex, costly to maintain, and if not kept up to date, increasingly vulnerable to modern threats. Microsoft's goal is to provide options to secure hybrid customers by allowing them to establish Microsoft Entra ID for identity management. Transferring SOA enables a phased, low-risk migration path—avoiding the disruption of a “big bang” cutover.
 
@@ -76,7 +76,7 @@ The application-centric approach tackles cloud migration from the perspective of
 
 - **Bridging Solutions:** Use Microsoft Entra Application Proxy, Microsoft Entra Domain Services, or other cloud services to connect legacy apps to Microsoft Entra ID without major rewrites.
 
-### Recommended sequence for application-centric migration:
+### Recommended sequence for application-centric migration
 
 There can also be some apps already using modern protocols like SAML/OIDC via Active Directory Federation Service (AD FS) or third-party IdPs. These apps are easier to migrate directly to Microsoft Entra, while some other legacy cases like hardcoded NTLM-only apps, might need special handling.
 
@@ -235,7 +235,7 @@ The following list is a summary of the options for handling on-premises apps in 
 
 ## SOA Transfer Checklist for IT Architects
 
-**Understand Strategic Benefits**
+### Understand Strategic Benefits
 
 - Reduce security risks by minimizing on-premises AD dependency.
 
@@ -244,7 +244,7 @@ The following list is a summary of the options for handling on-premises apps in 
 
 - Streamline identity management and governance in Microsoft Entra ID.
 
-**Assess Readiness**
+### Assess Readiness
 
 - Inventory all users, groups, and applications.
 
@@ -253,14 +253,14 @@ The following list is a summary of the options for handling on-premises apps in 
 - Map authentication dependencies for each application (Kerberos, LDAP,
   SAML/OIDC).
 
-**Choose the Right Approach**
+### Choose the Right Approach
 
 - User-centric: Only for users not tied to password-based AD apps.
 
 - App-centric: Required if any apps still use AD for authentication
   (recommended).
 
-**Plan Group Migration**
+### Plan Group Migration
 
 - Shift security groups to the cloud; provision back to AD from Microsoft Entra ID
   if needed.
@@ -268,7 +268,7 @@ The following list is a summary of the options for handling on-premises apps in 
 - Shift DLs and MESGs only after Exchange workloads are fully
   cloud-based.
 
-**Modernize Application Authentication**
+### Modernize Application Authentication
 
 - For Kerberos/NTLM apps:  
   [Cloud Kerberos Trust](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust)
@@ -279,20 +279,20 @@ The following list is a summary of the options for handling on-premises apps in 
 - For modern/federated apps:  
   Reconfigure to authenticate directly against Microsoft Entra ID (SAML/OIDC).
 
-**Enable Password-less Authentication**
+### Enable Password-less Authentication
 
 - Deploy [Hello For Business](/windows/security/identity-protection/hello-for-business)
 
 - Integrate with [cloud kerberos trust](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) for seamless ticket-based authentication.
 
-**Implement Entra ID Governance**
+### Implement Entra ID Governance
 
 - [Lifecycle Workflows in Microsoft Entra ID](/entra/id-governance/what-are-lifecycle-workflows)
 - [Entitlement Management Overview](/entra/id-governance/entitlement-management-overview)
 - [Access Reviews Overview](/entra/id-governance/access-reviews-overview)
 - [Privileged Identity Management for Resource Roles](/entra/id-governance/privileged-identity-management/pim-configure)
 
-**Address Key Limitations**
+### Address Key Limitations
 
 - No password writeback for cloud-only users. Keep hybrid directory if
   you need writeback.
@@ -300,7 +300,7 @@ The following list is a summary of the options for handling on-premises apps in 
 - Legacy apps with hardcoded AD dependencies might require custom proxies
   or remain on-premises.
 
-**Monitor & Iterate**
+### Monitor & Iterate
 
 - Track migration progress: users/groups converted, apps modernized.
 
