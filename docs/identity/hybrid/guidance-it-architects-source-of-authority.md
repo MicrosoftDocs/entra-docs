@@ -56,7 +56,7 @@ You can use Microsoft Entra ID Governance to enable lifecycle and access governa
 
 The following diagram outlines if you're ready to transfer the source of authority (SOA) of users and groups:
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.png" alt-text="Screenshot of the source of authority diagram." lightbox="media/guidance-for-it-architects-for-source-of-authority-conversion/source-of-authority-readiness-diagram.png":::
+:::image type="content" source="media/guidance-it-architects-source-of-authority/source-of-authority-readiness-diagram.png" alt-text="Diagram of steps to see if you are ready to transfer source of authority for user and groups." lightbox="media/guidance-it-architects-source-of-authority/source-of-authority-readiness-diagram.png":::
 
 ### Considerations
 
@@ -84,7 +84,7 @@ There can also be some apps already using modern protocols like SAML/OIDC via Ac
 
 It’s critical to **discover and categorize all on-premises applications** before planning the migration. The goal is to determine for each app: *How does it currently authenticate users*, and *what is the best path to integrate or modernize that authentication with Microsoft Entra ID?*
 
-:::image type="content" source="media/guidance-for-it-architects-for-source-of-authority-conversion/application-inventory.png" alt-text="Visualization":::
+:::image type="content" source="media/guidance-it-architects-source-of-authority/application-inventory.png" alt-text="Checklist of what needs to be considered as far as application owners, and telemetry, before transferring source of authority.":::
 
 A thorough application analysis forms the foundation for a successful migration to cloud-based identity management in AD-heavy environments. This process involves methodically assessing every application that depends on Active Directory for authentication, determining how each authenticates users, and mapping a modernization or integration plan that fits each application's unique requirements. The following steps are the recommended sequence for an app centric migration:
 
