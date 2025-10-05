@@ -33,7 +33,7 @@ The next sections explain more details about the scenario that User SOA supports
  
 **Scenario**:  You’ve transferred the SOA for users and now want to allow them to access both on-premises, and cloud, resources. Instead of completely removing users from on-premises, introduce Cloud Kerberos Trust password-less authentication to allow them to maintain a hybrid presence allowing them to continue to access their on-premises resources, while also allowing them to access cloud resources. Password-less authentication methods, such as [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/configure) or [FIDO2 security keys](../../identity/authentication/how-to-enable-passkey-fido2.md), can be used to allow these users to access both their on-premises resources, and cloud resources such as [Azure Files](/azure/storage/files/storage-files-introduction) through [Microsoft Entra Private Access](../../global-secure-access/concept-private-access.md). Using Password-less authentication also enables Multifactor Authentication on the SOA transferred users increasing security. Password-less authentication also allows you to enable Conditional Access policies on the on-premises resources, allowing greater control and security over these resources.
  
-:::image type="content" source="media/user-source-of-authority-overview/password-less-authentication-source-of-authority.png" alt-text="Screenshot of the password-less authentication scenario for User SOA.":::
+:::image type="content" source="media/user-source-of-authority-overview/passwordless-authentication-source-of-authority.png" alt-text="Screenshot of the password-less authentication scenario for User SOA.":::
 
 ## Prerequisites for transferring user SOA
 
