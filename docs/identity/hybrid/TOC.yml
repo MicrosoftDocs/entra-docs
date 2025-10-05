@@ -90,7 +90,7 @@
       expanded: true
       items:
       - name: IT architect guide for transferring Source of Authority (SOA)
-        href: guidance-for-it-architects-for-source-of-authority-conversion.md
+        href: guidance-it-architects-source-of-authority.md
       - name: Group Source of Authority (SOA) 
         items:
         - name: Concepts
