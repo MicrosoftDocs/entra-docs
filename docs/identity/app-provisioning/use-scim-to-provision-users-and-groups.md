@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 09/18/2025
+ms.date: 10/06/2025
 ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
