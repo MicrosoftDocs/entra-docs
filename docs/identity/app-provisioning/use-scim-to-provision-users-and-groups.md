@@ -643,6 +643,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 
 ##### Validations performed by SCIM Validator
 
+**Update Active Attribute to False**
 - POST /Users/ - Creates a resource based on the schema
     - HTTP 2xx success
     - Disabled user should be returned on GET request
