@@ -200,7 +200,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 1. Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass-for-cisco-asa) to exclude Cisco ASA remote access URL and public IP address.
 
 **Cisco configuration:**
-1. Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration-asa) or [tunnel all](#tunnel-all-networks-with-dynamic-exclusions-configuration) configuration, as described previously.
+1. Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration-asa) configuration, as described previously.
 1. Install Cisco Secure Client or AnyConnect software.
 1. Connect to your VPN endpoint.
 
@@ -227,7 +227,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 1. Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-1. Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration-asa) or [tunnel all](#tunnel-all-networks-with-dynamic-exclusions-configuration) configuration, as described previously.
+1. Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration-asa) configuration, as described previously.
 1. Install Cisco Secure Client software.
 1. Connect to your VPN endpoint.
 
