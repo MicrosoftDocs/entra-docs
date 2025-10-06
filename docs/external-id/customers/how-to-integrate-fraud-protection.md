@@ -335,4 +335,3 @@ In this step, you link the HUMAN Security fraud protection provider to your appl
 ## Related content
 
 - [Create fraudProtectionProvider](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders)
-- [fraudProtectionProvider resource type](/graph/api/resources/fraudprotectionprovider)
