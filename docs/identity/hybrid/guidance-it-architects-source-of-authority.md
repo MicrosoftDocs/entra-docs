@@ -232,12 +232,11 @@ The following table is a summary of the options for handling on-premises apps in
 
 - Identify users/groups no longer tied to AD-dependent apps.
 
-- Map authentication dependencies for each application (Kerberos, LDAP,
-  SAML/OIDC).
+- Map authentication dependencies for each application (Kerberos, LDAP, SAML/OIDC).
 
 ### Plan Group Migration
 
-- Shift security groups to the cloud; provision back to AD from Microsoft Entra ID if needed.
+- [Shift security groups to the cloud](concept-source-of-authority-overview.md); provision back to AD from Microsoft Entra ID if needed.
 
 - Shift DLs and MESGs only after Exchange workloads are fully cloud-based.
 
