@@ -100,7 +100,7 @@ The Risk detections report provides insights into the various risk detections as
 
 The Risk detections report contains filterable data for up to the past 90 days (three months).
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risk-detections-report.png" alt-text="Screenshot showing the Risk detections report." lightbox="media/howto-identity-protection-investigate-risk/risk-detections-report.png":::
+:::image type="content" source="media/concept-risk-reports/risk-detections-report.png" alt-text="Screenshot showing the Risk detections report." lightbox="media/concept-risk-reports/risk-detections-report.png":::
 
 With the information provided by the Risk detections report, administrators can find:
 
