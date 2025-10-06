@@ -110,7 +110,7 @@ For each application in your inventory, identify the authentication mechanism it
 
 - **Integrated Windows Authentication (Kerberos/NTLM)** – Common in IIS/.NET applications using Windows Authentication, file servers, SharePoint, and similar platforms. These typically allow users to sign in with domain credentials, often without a separate prompt.
 
-- **LDAP Authentication/Queries** – Applications can have LDAP server settings pointing to AD and perform binds or lookups, custom-developed or third-party products prompting users for AD credentials.
+- **LDAP Authentication/Queries** – Applications can have [LDAP server settings pointing to AD](../../architecture/auth-ldap.md) and perform binds or lookups, custom-developed or third-party products prompting users for AD credentials.
 
 - **Federation/Modern Authentication** – Some applications are already federated via [AD FS](/windows-server/identity/ad-fs/ad-fs-overview), or support modern protocols such as SAML or OAuth. These can generally be reconfigured to use Microsoft Entra ID with minimal effort.
 
@@ -237,11 +237,9 @@ The following table is a summary of the options for handling on-premises apps in
 
 ### Plan Group Migration
 
-- Shift security groups to the cloud; provision back to AD from Microsoft Entra ID
-  if needed.
+- Shift security groups to the cloud; provision back to AD from Microsoft Entra ID if needed.
 
-- Shift DLs and MESGs only after Exchange workloads are fully
-  cloud-based.
+- Shift DLs and MESGs only after Exchange workloads are fully cloud-based.
 
 ### Modernize Application Authentication
 
