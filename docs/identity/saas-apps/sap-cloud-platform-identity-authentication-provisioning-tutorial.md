@@ -40,7 +40,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 If you don't yet have users in Microsoft Entra ID, then start with the article [plan deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md). That article illustrates how to connect Microsoft Entra with authoritative sources for the list of workers in an organization, such as SAP SuccessFactors. It also shows you how to use Microsoft Entra to set up identities for those workers, so they can sign in to one or more SAP applications, such as SAP ECC or SAP S/4HANA.
 
-If you're configuring provisioning into SAP Cloud Identity Services in a production environment, where you be governing access to SAP workloads using Microsoft Entra ID Governance, then review the [prerequisites before configuring Microsoft Entra ID for identity governance](~/id-governance/identity-governance-applications-prepare.md#prerequisites-before-configuring-microsoft-entra-id-and-microsoft-entra-id-governance-for-identity-governance) before proceeding.
+If you're configuring provisioning into SAP Cloud Identity Services in a production environment, where you are governing access to SAP workloads using Microsoft Entra ID Governance, then review the [prerequisites before configuring Microsoft Entra ID for identity governance](~/id-governance/identity-governance-applications-prepare.md#prerequisites-before-configuring-microsoft-entra-id-and-microsoft-entra-id-governance-for-identity-governance) before proceeding.
 
 ## Set up SAP Cloud Identity Services for provisioning
 
@@ -393,7 +393,7 @@ Completing the below steps will allow customers that were already previously usi
 
 	![Screenshot of where to copy Object ID in the Properties blade of the SAP Cloud Identity Services connector.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/object-id.png)
 
-1. In a new web browser window, go to go to [https://developer.microsoft.com/graph/graph-explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as the administrator for the Microsoft Entra tenant where your app is added.
+1. In a new web browser window, go to [https://developer.microsoft.com/graph/graph-explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as the administrator for the Microsoft Entra tenant where your app is added.
 
 1. Check to make sure the account being used has the correct permissions. The permission "Directory.ReadWrite.All" is required to make this change.
 
