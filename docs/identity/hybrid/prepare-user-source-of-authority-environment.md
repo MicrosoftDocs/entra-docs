@@ -66,11 +66,19 @@ To update this configuration, first identify employees from your HR system who c
 
 Once you identify the employees for SOA conversion, follow these steps:
 
-1. Create a new provisioning application in Microsoft Entra ID to provision users from your HR system directly to Microsoft Entra ID. Use scoping filters to restrict this app to only handle SOA converted users. For example: In the first phase, if you’re transferring SOA only for users in the “*Finance*” department, then set the scoping filter as department EQUALS “*Finance*.” Expand the scoping filter in future phases to include more users.  
+1.	Stop the “*HR to on-premises Active Directory*” provisioning job. 
 
-1.	Update the configuration of your HR to Active Directory provisioning app to exclude the SOA transferred users from syncing to AD. Continuing with the previous example, you can exclude *“Finance”* department users from syncing to AD by setting the filter department to NOT EQUALS “*Finance*.” 
+1.	For users eligible for SOA conversion, switch the SOA of the users from on-premises Active Directory to Entra ID.  
 
-1.	Update the configuration of your Microsoft Entra Connect Sync / Cloud Sync app to exclude the SOA transferred users from syncing to Microsoft Entra ID using a similar scoping filter. 
+1.	Create a new “*HR to Microsoft Entra ID*” provisioning application to provision users from your HR system to Entra ID. Use scoping filters to restrict this app to only handle SOA converted users. For example: In the first phase, if you’re converting SOA only for users in the “Finance” department, then set the scoping filter as department EQUALS “Finance”. Expand the scoping filter in future phases to include more users.  
+
+1.	Start the new “*HR to Microsoft Entra ID*” provisioning job. 
+
+1.	Update the configuration of your “HR to on-premises Active Directory” provisioning app to exclude the SOA converted users from syncing to AD. Ensure that the skip out of scope deletions flag is set on the provisioning job. Continuing with the example above, you can exclude “Finance” department users from syncing to AD by setting the filter department NOT EQUALS “Finance”. 
+
+1.	Restart the “*HR to on-premises Active Directory*” provisioning job. 
+
+1.	Update the configuration of your Entra Connect Sync / Cloud Sync app to exclude the SOA converted users from syncing to Entra ID using a similar scoping filter. 
 
 The following diagram depicts the new SOA-aware provisioning configuration:
 
