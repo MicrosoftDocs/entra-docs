@@ -114,7 +114,7 @@ To configure Arkose Labs fraud protection, you need to sign in to your external 
 
 ### Step 2: Register Arkose Labs as a fraud protection provider
 
-To register Arkose Labs as a fraud protection provider, you [create a fraudProtectionProvider policy](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders?view=graph-rest-beta) in your external tenant. This policy contains the Arkose configuration values that you received from Arkose Labs.
+To register Arkose Labs as a fraud protection provider, you [create a fraudProtectionProvider policy](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders) in your external tenant. This policy contains the Arkose configuration values that you received from Arkose Labs.
 
 1. In the Microsoft Graph Explorer, select the **POST** method and enter the following URL:
 
@@ -140,7 +140,7 @@ To register Arkose Labs as a fraud protection provider, you [create a fraudProte
 
 ### Step 3: Link Arkose protection to your application
 
-In this step, you link the Arkose fraud protection provider to your application by creating a new [authenticationEventListener](/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-beta) that triggers the Arkose challenge during the sign-up flow. Make sure that you have the appId for the application where you want to enable fraud protection. Replace `<your-app-id>` with your application's ID, and replace `<id-from-previous-step>` with the Arkose provider ID from the previous step.
+In this step, you link the Arkose fraud protection provider to your application by creating a new [authenticationEventListener](/graph/api/identitycontainer-post-authenticationeventlisteners) that triggers the Arkose challenge during the sign-up flow. Make sure that you have the appId for the application where you want to enable fraud protection. Replace `<your-app-id>` with your application's ID, and replace `<id-from-previous-step>` with the Arkose provider ID from the previous step.
 
 1. In the Microsoft Graph Explorer, select the **POST** method and enter the following URL:
 
@@ -266,7 +266,7 @@ To configure HUMAN Security fraud protection, you need to sign in to your extern
 
 ### Step 2: Register HUMAN Security as a fraud protection provider
 
-To register HUMAN Security as a fraud protection provider, you [create a fraudProtectionProvider policy](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders?view=graph-rest-beta) in your external tenant. This policy contains the HUMAN Security configuration values that you've received while setting up your HUMAN Security account.
+To register HUMAN Security as a fraud protection provider, you [create a fraudProtectionProvider policy](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders) in your external tenant. This policy contains the HUMAN Security configuration values that you've received while setting up your HUMAN Security account.
 
 1. In the Microsoft Graph Explorer, select the **POST** method and enter the following URL:
 
@@ -292,7 +292,7 @@ The `displayName` is a display name for this specific  HUMAN Security  configura
 
 ### Step 3: Link HUMAN Security protection to your application
 
-In this step, you link the HUMAN Security fraud protection provider to your application by creating a new [authenticationEventListener](/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-beta) to use the HUMAN Security fraud protection during the sign-up flow. Make sure that you have the appId for the application where you want to enable fraud protection. Replace `<your-app-id>` with your application's ID, and replace `<id-from-previous-step>` with the HUMAN Security provider ID from the previous step.
+In this step, you link the HUMAN Security fraud protection provider to your application by creating a new [authenticationEventListener](/graph/api/identitycontainer-post-authenticationeventlisteners) to use the HUMAN Security fraud protection during the sign-up flow. Make sure that you have the appId for the application where you want to enable fraud protection. Replace `<your-app-id>` with your application's ID, and replace `<id-from-previous-step>` with the HUMAN Security provider ID from the previous step.
 
 1. In the Microsoft Graph Explorer, select the **POST** method and enter the following URL:
 
@@ -334,5 +334,5 @@ In this step, you link the HUMAN Security fraud protection provider to your appl
 
 ## Related content
 
-- [Create fraudProtectionProvider](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders?view=graph-rest-beta)
-- [fraudProtectionProvider resource type](/graph/api/resources/fraudprotectionprovider?view=graph-rest-beta)
+- [Create fraudProtectionProvider](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders)
+- [fraudProtectionProvider resource type](/graph/api/resources/fraudprotectionprovider)
