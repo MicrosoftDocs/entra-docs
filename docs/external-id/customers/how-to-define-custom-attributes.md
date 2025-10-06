@@ -12,12 +12,12 @@ ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a developer, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
 ---
 
-# Collect custom user attributes during sign-up
+# Collect custom user attributes during external tenant sign-up
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 > [!TIP]
-> This article applies to user flows in external tenants. For information about workforce tenants, see [Define custom attributes for user flows](../user-flow-add-custom-attributes.md).
+> This article applies to user flows in external tenants. For information about workforce tenants, see [Collect custom user attributes during B2B collaboration sign-up](../user-flow-add-custom-attributes.md).
 
 If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
