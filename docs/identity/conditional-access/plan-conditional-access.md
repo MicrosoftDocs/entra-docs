@@ -298,6 +298,10 @@ If you need to roll back newly implemented policies, use one or more of these op
 
 - If a policy is disabled and no longer needed, **delete it**.
 
+##### Restore deleted policies
+
+If a Conditional Access or location is deleted, it can be restored within the 30 day soft-delete period. For more information about restoring Conditional Access policies and named locations, see the article [Recover from deletions](../../architecture/recover-from-deletions.md#conditional-access-policies).
+
 ## Troubleshoot Conditional Access policies
 
 If a user has an issue with a Conditional Access policy, collect this information to help with troubleshooting.
