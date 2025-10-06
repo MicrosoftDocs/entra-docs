@@ -39,7 +39,7 @@ Both clients handle traffic for separate private applications. Global Secure Acc
 To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solution:
 
 1. Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
-1. Establish connectivity to Cisco Secure Access VPNaaS
+1. Establish connectivity to Cisco Secure Access VPNaaS.
 1. Set up a Cisco remote access VPN profile.
 1. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses.
 
@@ -47,18 +47,16 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 1. Enable and disable different traffic forwarding profiles for your Microsoft Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 1. Install and configure the Microsoft Entra private network connector. See [How to configure connectors](how-to-configure-connectors.md).
-
     > [!NOTE] 
     > Private network connectors are required for Microsoft Entra Private Access applications.
-   
 1. Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
 1. Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md). <a id="adding-a-custom-bypass"></a>
 1. Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPNaaS service FQDN.
-  1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
-  2. Under Internet access policies, select **View**.
-  3. Expand **Custom Bypass** and select **Add rule**.
-  4. Leave destination type as FQDN and enter `*.vpn.sse.cisco.com` in Destination.
-  5. Select **Save**.
+    1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
+    2. Under Internet access policies, select **View**.
+    3. Expand **Custom Bypass** and select **Add rule**.
+    4. Leave destination type as FQDN and enter `*.vpn.sse.cisco.com` in Destination.
+    5. Select **Save**.
 
 ### Cisco Secure Access VPNaaS - setup
 
