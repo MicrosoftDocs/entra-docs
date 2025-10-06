@@ -34,8 +34,6 @@ Applying Group SOA to a group that synchronizes from AD DS converts the group to
 
 ## Group SOA scenarios
 
-The next sections explain more details about the scenarios that Group SOA supports. 
-
 ### Govern access with Microsoft Entra ID Governance
 
 **Scenario:** There are applications in your portfolio that you can’t modernize or that connect to AD DS. These applications use Kerberos or LDAP to query non-mail-enabled security groups in AD DS to determine access permissions. Your goal is to regulate access to these applications with Microsoft Entra ID and Microsoft Entra ID Governance. This goal necessitates that the group membership information that Microsoft Entra manages be accessible to the applications.
