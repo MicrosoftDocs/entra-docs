@@ -974,7 +974,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 |-----------------------|-------------------------|------------------------|
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-| `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/oauth2/v2.0/initiate` endpoint. The previous request can also be call to the `/oauth2/v2.0/token` or `/oauth2/v2.0/introspect` endpoints if the user needs to complete MFA challenge.|
+| `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request calls the `/oauth2/v2.0/initiate` endpoint, or the `/oauth2/v2.0/introspect` endpoint if the user completes an MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
 |`id`| No | The string identifier of the strong authentication method that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app challenges the user for a second factor authentication. Learn [how to use the introspect endpoint](#get-user-registered-strong-authentication-methods). |
 <!--| `challenge_channel` | No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. This parameter is required when the client app changes the user for a second factor authentication. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|-->
@@ -1329,9 +1329,9 @@ To use the strong authentication method registration  API, the app uses the endp
 
 |    Endpoint     | Description        |
 |----------------------|------------------------|
-|`/register/v1.0/introspect`| Call this endpoint to fetch the list of strong authentication methods that the user is allowed to register.   |
-|`/register/v1.0/challenge`| Call this endpoint to send the challenge to the user, such as email one-time passcode and to inform the client app what to collect from the user.|
-|`/register/v1.0/continue`| Call this endpoint to submit the challenge the app collects from the user, such as one-time passcode, to complete JIT registration flow. After a successful call to this endpoint and obtaining a continuation token, call the `/oauth2/v2.0/token` endpoint to request for security tokens.|
+|`/register/v1.0/introspect`| Call this endpoint to fetch a list of strong authentication methods that the user can register.   |
+|`/register/v1.0/challenge`| Call this endpoint to send the challenge to the user, such as email one-time passcode.|
+|`/register/v1.0/continue`| Call this endpoint to submit the challenge the app collects from the user, such as one-time passcode, to complete JIT registration flow. After the call succeeds and you obtain a continuation token, call the `/oauth2/v2.0/token` endpoint endpoint to request security tokens. [Learn how to call the token endpoint](#step-3-request-for-security-tokens).|
 
 
 ### Step 1: Get the list of strong authentication methods
@@ -1369,13 +1369,13 @@ Content-Type: application/json
             "id":"email",
             "challenge_type":"oob",
             "challenge_channel":"email",
-            "login_hint":"c***r@co**o**o.com"
+            "login_hint":"caseyjensen@contoso.com"
         },
         {   
           "id": "sms",   
           "challenge_type": "oob",   
           "challenge_channel": "sms",   
-          "login_hint": "+1********6   
+          "login_hint": "+1234567890"   
         }
     ]
 }
@@ -1393,7 +1393,7 @@ The strong authentication methods object has the following properties:
 | `id`  |  String key of the method. Supported values *email, sms*.  |
 | `challenge_type` | Challenge type selected for the user to use as the MFA method. Current supported challenge type is *oob*.  |
 | `challenge_channel` | The type of the channel to which the the MFA method is sent. Supported values *email, sms*. |
-| `login_hint` | The hint for the strong authentication method such as an obfuscated email. This value is used by the client app to prepopulate the email textbox.|
+| `login_hint` | The hint for the strong authentication method such as an obfuscated email. This value is used by the client app to prepopulate the email textbox. <check whether login hint is obfuscated>|
 
 
 #### Error response
@@ -1496,7 +1496,7 @@ Content-Type: application/json
 
 #### Error response
 
-The errors here are similar to those you can experience when you call the `/register/v1.0/introspect` endpoint. However, when enrolling phone number, if SMS OTP is considered high risk, the request may be blocked. 
+The errors here are similar to those you can experience when you call the `/register/v1.0/introspect` endpoint. However, when enrolling phone number, if the phone number is considered high risk, the request may be blocked. 
 
 Here are the possible errors you can encounter if the request is blocked: 
 
@@ -1510,7 +1510,7 @@ If the error parameter has a value of *access_denied*, Microsoft Entra includes 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
 |`provider_blocked_by_admin`  | The tenant administrator has blocked the phone region.  |
-|`provider_blocked_by_rep` | The multifactor authentication method is blocked (Phone number was blocked by RepMap).  |
+|`provider_blocked_by_rep` | The multifactor authentication method is blocked (phone number was blocked by RepMap).  |
 
 
 ### Step 3: Submit challenge
