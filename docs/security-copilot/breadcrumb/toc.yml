@@ -1,0 +1,8 @@
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Security Copilot in Entra
+    tocHref: /entra/copilot/
+    topicHref: /entra/copilot/index

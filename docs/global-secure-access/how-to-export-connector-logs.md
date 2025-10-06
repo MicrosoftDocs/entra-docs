@@ -106,10 +106,17 @@ To enable verbose logging:
     1. Download the Azure Arc agent setup script from the Azure portal.
     1. Search for **Windows PowerShell ISE** in the search box on the Task bar. Right click on the application, then click **Run as administrator**.  
     From PowerShell, open the downloaded file labeled `OnboardingScript.ps1`. 
-    1. Run the script. 
+    1. Run the script. You can bypass the execution policy if needed by running: powershell -ExecutionPolicy Bypass -File "FilePath" 
     1. Log in on the pop-up window to authenticate using the Azure account credentials. The screen returns a message that reads:
     `Authentication complete. You can return to the application. Feel free to close this browser tab.`
- 
+
+### Set up data collection endpoint (DCE)
+1. Go to the [Azure portal](https://portal.azure.com/).
+2. In the search bar, search for **Data Collection Endpoint**.
+3. Click **Create**.
+4. Provide a name and region for the DCE.
+5. Click **Review + create** and then **Create**.
+    
 ### Set up Log Analytics workspace
 1. Go to the [Azure portal](https://portal.azure.com/).
 2. Create a Log Analytics workspace: 
@@ -124,49 +131,61 @@ To enable verbose logging:
 3. Create a table under the new workspace. 
 	1. Select the workspace name you created. 
 	1. Navigate to **Workspace** > ** **Settings** > **Tables**. 
-	1. Click **Create** > **New Custom Log (MMA-based)**.
-	1. Select log file from the virtual machine (VM) location (`C:\logs\connector_logs.log`).
-	1. Set delimiter as **New Line**.
-	1. Add Collection Path Type – windows & Path as `C:\logs\connector_logs.log`. 
-	1. Click **Create**.
+	1. Click **+ Create** > **New Custom Log (Direct Ingest)**.
+	1. Fill in the necessary details:
+       - **Table Name**: Provide a Table Name.
+       - **Description**: Provide an optional description for your table.
+       - **Table Plan**: Choose Appropriate Table Plan.
+       - **Data Collection rule**: If you don't have the existing DCR, click on Create a new data collection rule.
+           - **Subscription**: Select your subscription.
+           - **Resource Group**: Select an existing resource group or create a new one.
+           - **Region**: Choose the region.
+           - **Name**: Provide a unique name for the DCR.
+       -  **Data Collection endpoint**: Choose the data collection endpoint created above.
+       -  **Schema and transformation**: Upload a sample log file in json format. Look at the logs file on the virtual machine and convert it into a sample json.
+           e.g., create a sample.json with below content and upload.
+       -  **Create**: Review and Create the Table
+```json
 
-### Set up data collection endpoint (DCE)
-1. Go to the [Azure portal](https://portal.azure.com/).
-2. In the search bar, search for **Data Collection Endpoint**.
-3. Click **Create**.
-4. Provide a name and region for the DCE.
-5. Click **Review + create** and then **Create**.
+			[
+				{
+					"RawData": "MicrosoftEntraPrivateNetworkConnectorService.exe Information: 0 : Main was called"
+				},
+				{
+					"RawData": "MicrosoftEntraPrivateNetworkConnectorService.exe Warning: 0 : TraceMaxMessages must be an integer value and minimum of '50000'"
+				},
+				{
+					"RawData": "MicrosoftEntraPrivateNetworkConnectorService.exe Information: 0 : Tracing to text file: 'Error'"
+				}
+			] 
 
+```
+    
 ### Set up data collection rule (DCR)
 1. Go to the [Azure portal](https://portal.azure.com/).
 2. In the search bar, search for **Data Collection Rule**.
-3. Click **Create**.
-4. Fill in the necessary details:
-    - **Subscription**: Select your subscription.
-    - **Resource Group**: Select the same resource group as your Log Analytics workspace.
-    - **Name**: Provide a name for the DCR.
-    - **Region**: Choose the same region as your Log Analytics workspace.
-    - **Platform**: Windows.
-    - **Data collection Endpoint**: Select data collection endpoint you created in previous step.
-5. Click Next: Resources
+3. Select the DCR you created as part of the table creation. 
+4. Go to Settings: Resources
 	1. Click **Add resources**.
 	1. Open your subscription.
 	1. Select your resource group from the list.
 	1. Click apply. You should see your VM name list in the resources.
-6. Click Next: Collect and deliver
+5. Go to Settings: Data sources
 	1. Click **Add data source**.
 	1. For the Data source type, select **Custom Text logs**.
 	1. Specify the paths to the logs on your on-premises Windows machine (for example, C:\logs\ connector_logs.log).
 	1. Enter the table name you created under log analytics workspace. 
 	  To get the table name, open a new tab and navigate to the Azure portal and search for **Log Analytics Workspaces**. Select the table you created. Click on **setting** and open the 
       tables. Find the name of the **custom table (classic)**. 
-	1. Click **Add**, then **Next: Destination**.
+	1. Select **Record delimiter**: End-of-line
+	1. In **Transform**: add "source | extend RawData = RawData"
+    1. Click **Save**, then **Next: Destination**.
 7. Configure Destination:
 	1. Destination **Type-> Azure Monitor Logs**.
 	1. Select your subscription.
 	1. Select your Log Analytics workspace as the destination.
-	1. Ensure your Data Collection Endpoint is selected.
-	1. Click **Next: Review + create** and then **Create**.
+	1. Click **Save**.
+
 
 ### Verify data collection
 - Check Data in Log Analytics:
@@ -174,7 +193,7 @@ To enable verbose logging:
    After you've installed and configured the agent, it may take some time for data to start appearing.
 
 	1. In the Azure portal, go to your Log Analytics workspace > Select your Workspace.
-	1. Navigate to **Logs**, click exit on the pop-up hub > **Custom Logs** > Double Click on your log name. This adds the log name into the query. 
+	1. Navigate to **Logs**, click exit on the pop-up hub > Choose **KQL mode** > Type Query (Table Name | take 10). 
 	1. Select **Run**. You see your logs.
     This setup allows you to collect text logs from on-premises Windows machines and send them to Azure Log Analytics using Azure Arc. The data collection rule ensures the logs are
     collected as per the defined paths, and the agent sends them to your Log Analytics workspace.
@@ -236,7 +255,8 @@ The external user receives an email invitation to join your Microsoft Entra ID p
 
 By following these steps, you can securely open your Azure Log Analytics workspace to a user outside of your tenant, allowing them to access and query logs as needed.
 
-## Next steps
+## Useful Links
 
 - [Understand the Microsoft Entra private network connector](concept-connectors.md)
 - [Learn about Microsoft Entra Private Access](concept-private-access.md)
+

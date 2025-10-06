@@ -43,13 +43,13 @@ Detect and investigate identity threats in the Microsoft Entra admin center or w
 
 Microsoft Security in Microsoft Entra brings together the power of artificial intelligence (AI) and human expertise to help admins and security teams to respond to threats and attacks faster. Through the embedded experience, you can investigate and resolve identity risks, assess identities, and quickly access complete complex tasks.
 
-Use natural language prompts in [Microsoft Security Copilot](../fundamentals/copilot-security-entra-investigate-incident.md):
+Use natural language prompts in [Microsoft Security Copilot](../security-copilot/entra-investigate-incident.md):
 
 - Summarize why a user is risky.
 - Retrieve sign-in logs, audit trails, and group memberships.
 - Get remediation recommendations and links to documentation.
 
-Learn more about [Microsoft Security Copilot scenarios](../fundamentals/copilot-entra-security-scenarios.md) in Microsoft Entra.
+Learn more about [Microsoft Security Copilot scenarios](../security-copilot/entra-security-scenarios.md) in Microsoft Entra.
 
 ## Remediate and respond
 

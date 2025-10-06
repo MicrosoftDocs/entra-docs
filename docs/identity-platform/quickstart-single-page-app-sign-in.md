@@ -2,7 +2,7 @@
 title: "Quickstart - Sign in users in a single-page app (SPA) and call the Microsoft Graph API"
 description: Quickstart that shows how to configure a sample SPA that signs in employees or customers by using the Microsoft identity platform
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 01/27/2025

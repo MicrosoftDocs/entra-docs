@@ -23,8 +23,8 @@ When you plan to transfer external tenant logs to different monitoring solutions
 
 ## Deployment overview
 
-The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike Microsoft Entra tenants, an external tenant can't have a subscription associated with it. So, we need to take extra steps to enable the integration between external tenant and Log Analytics, which is where we send the logs.
-To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-settings) in workforce tenant within your external tenant, you use [Azure Lighthouse](/azure/lighthouse/overview) to [delegate a resource](/azure/lighthouse/concepts/architecture), which allows your external tenant (the **Service Provider**) to manage a workforce tenant (the **Customer**) resource.
+The external tenant uses [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike Microsoft Entra workforce tenants, an external tenant can't have a subscription associated with it. So, we need to take extra steps to enable the integration between the external tenant and Log Analytics in the workforce tenant, which is where we send the logs.
+To enable [Diagnostic settings](/azure/azure-monitor/essentials/diagnostic-settings) in the workforce tenant, use [Azure Lighthouse](/azure/lighthouse/overview). Azure Lighthouse [delegates the resource](/azure/lighthouse/concepts/architecture), allowing the external tenant (the **Service Provider**) to manage the resource in the workforce tenant (the **Customer**).
 
 > [!TIP]
 > Azure Lighthouse is typically used to manage resources for multiple customers. However, it can also be used to simplify cross-tenant administration [within an enterprise that has multiple Microsoft Entra tenants of its own](/azure/lighthouse/concepts/enterprise). In our case, we're using it to delegate management of a single resource group.
@@ -39,7 +39,7 @@ The following diagram depicts the components you'll configure in your workforce 
 
 During this deployment, you'll configure your external tenant where logs are generated. You'll also configure your external tenant where the Log Analytics workspace will be hosted. The external tenant accounts used (such as your admin account) should be assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role on the external tenant. The account you'll use to run the deployment in the external tenant must be assigned the [Owner](/azure/role-based-access-control/built-in-roles#owner) role in the Microsoft Entra subscription. It's also important to make sure you're signed in to the correct directory as you complete each step as described.
 
-In summary, you'll use Azure Lighthouse to allow a user or group in your external tenant to manage a resource group in a subscription associated with a different tenant (the workforce tenant). After this authorization is completed, the subscription and log analytics workspace can be selected as a target in the Diagnostic settings in external tenant.
+In summary, you'll use Azure Lighthouse to allow a user or group in your external tenant to manage a resource group in a subscription associated with a different tenant (the workforce tenant). After this authorization is completed, the subscription and Log Analytics workspace can be selected as a target in the Diagnostic settings in external tenant.
 
 ## Prerequisites
 
@@ -176,9 +176,9 @@ In this example, we use the Log Analytics workspace to create a dashboard. Follo
 
 1. Give your setting a name if it doesn't already have one.
 1. Select **AuditLogs** and **SignInLogs**.
-1. Select **Send to Log Analytics Workspace**, and then:
+1. Select **Send to Log Analytics workspace**, and then:
     1. Under **Subscription**, select your subscription. 
-    2. Under **Log Analytics Workspace**, select the name of the workspace you created earlier such as _ExtIDLogAnalytics_.
+    2. Under **Log Analytics workspace**, select the name of the workspace you created earlier such as _ExtIDLogAnalytics_.
 
 1. Select **Save**.
 
@@ -187,7 +187,7 @@ In this example, we use the Log Analytics workspace to create a dashboard. Follo
 
 ## Step 5: Workforce tenant configuration – visualize your data
 
-Now you can configure your Log Analytics workspace to visualize your data and set up alerts. You can make these configurations in both your workspace and external tenant.
+Now you can configure your Log Analytics workspace to visualize your data and set up alerts. You can make these configurations in both your workforce and external tenant.
 
 ### Create a query
 
@@ -234,7 +234,7 @@ AuditLogs
 | render  piechart
 ```
 
-  :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor pie chart.":::
+  :::image type="content" source="media/how-to-azure-monitor/query-policy-usage-pie.png" alt-text="Screenshot of the Log Analytics log editor pie chart.":::
 
 ## Change the data retention period
 

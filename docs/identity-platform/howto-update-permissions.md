@@ -2,7 +2,7 @@
 title: Update an app's requested permissions in Microsoft Entra ID
 description: Learn how developers can stop applications from requesting unnecessary permissions and also add new permissions for applications in the Microsoft identity platform.
 author: omondiatieno
-manager: celesteDG
+manager: pmwongera
 ms.author: jomondi
 ms.date: 10/01/2024
 ms.reviewer: yuhko, ergreenl

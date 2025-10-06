@@ -143,6 +143,10 @@ Multiple Conditional Access policies might prompt users for their GPS location b
 
 Some IP addresses can't be mapped to a specific country or region. To capture these IP locations, select the box **Include unknown countries/regions** when defining a geographic location. This option allows you to choose if these IP addresses should be included in the named location. Use this setting when the policy using the named location should apply to unknown locations.
 
+## Restore deleted locations
+
+If a Conditional Access policy or location is deleted, it can be restored within the 30 day soft-delete period. For more information about restoring Conditional Access policies and named locations, see the article [Recover from deletions](../../architecture/recover-from-deletions.md#conditional-access-policies).
+
 ## Common questions
 
 ### Is there Graph API support

@@ -9,7 +9,7 @@ ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 04/03/2025
+ms.date: 10/02/2025
 
 ms.custom: it-pro, seo-july-2024
 
@@ -146,3 +146,4 @@ When planning for configuring company branding, language customizations, and cus
 - [Find samples and guidance for integrating your app](samples-ciam-all.md).
 - [Learn how to migrate users from your current identity provider](how-to-migrate-users.md).
 - See also the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.
+- [Microsoft Entra External ID deployment guide for security operations](../../architecture/deployment-external-operations.md)
