@@ -37,7 +37,7 @@ When starting the initial triage, we recommend the following actions:
    1. Review which resources might be compromised, including potential data downloads or administrative modifications.
    1. Enable [self-remediation policies through Conditional Access](howto-identity-protection-configure-risk-policies.md).
 
-1. With [Insider Risk Management through Microsoft Purview](/insider-risk-management-solution-overview), you can check to see if the user performed other risky activities, such as downloading a large volume of files from a new location. This behavior is a strong indication of a possible compromise.
+1. With [Insider Risk Management through Microsoft Purview](/purview/insider-risk-management), you can check to see if the user performed other risky activities, such as downloading a large volume of files from a new location. This behavior is a strong indication of a possible compromise.
 
 If you suspect an attacker can impersonate the user, you should require the user to reset their password and perform MFA or block the user and revoke all refresh and access tokens.
 
