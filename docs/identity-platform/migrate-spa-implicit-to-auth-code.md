@@ -2,7 +2,7 @@
 title: Migrate JavaScript single-page app from implicit grant to authorization code flow
 description: How to update a JavaScript SPA using MSAL.js 2.x and the authorization code flow with PKCE and CORS support.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 05/12/2025
 ms.service: identity-platform

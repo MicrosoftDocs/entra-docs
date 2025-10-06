@@ -59,6 +59,8 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
+  - name: B2B Guest Access (preview)
+    href: concept-b2b-guest-access.md
 - name: How-to guides
   expanded: true
   items:
@@ -181,6 +183,8 @@ items:
         href: how-to-configure-web-content-filtering.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
+      - name: Customize the block page
+        href: how-to-customize-block-page.md
   - name: Logs and monitoring
     expanded: false
     items:

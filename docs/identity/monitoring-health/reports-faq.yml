@@ -75,7 +75,10 @@ sections:
           How can I find out if a user purchased a license or enabled a trial license for my tenant? I don't see this activity in the audit logs.
         answer: |
           At this time, there isn't a specific activity in the audit logs for license purchases or enablement. However, you might be able to correlate the "Onboard resource to PIM" activity from the "Resource Management" category to the purchase or enablement of a license. This activity might not always be available or provide the exact details.
-
+      - question: |
+          The IP address in the audit logs doesn't match the IP address of the user. Why is that?
+        answer: |
+          The IP address shown in the audit logs represents the OAuth client's IP address. This refers to the ipAddress of the TCP peer connecting to the service endpoint performing the action. In some cases, such as public applications or single-page web apps, the OAuth client can be the end user. However, in most situations, the IP address in the audit logs is that of the client application that received an access token to directly access a service and carry out an auditable action.
 
   - name: Sign-in logs
     questions:

@@ -2,15 +2,15 @@
 title: Don't send your middle-tier OBO token to any non-audience party
 description: Include file warning that access tokens acquired by the middle-tier shouldn't be sent to any party except that which is identified by the audience claim.
 
-author: iambmelt
-manager: CelesteDG
+author: OwenRichards1
+manager: pmwongera
 
 ms.service: identity-platform
 
 
 ms.topic: include
 ms.date: 12/7/2021
-ms.author: brianmel
+ms.author: owenrichards
 ms.reviewer: 
 ms.custom: 
 ---

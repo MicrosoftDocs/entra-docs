@@ -3,7 +3,7 @@ title: "Quickstart: Add sign in with Microsoft to an iOS or macOS app"
 description: In this quickstart, learn how an iOS or macOS app can sign in users, get an access token from the Microsoft identity platform, and call the Microsoft Graph API.
 ROBOTS: NOINDEX
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom:
 ms.date: 02/15/2022

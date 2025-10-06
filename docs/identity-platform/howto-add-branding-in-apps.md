@@ -4,7 +4,7 @@ description: Learn about application branding guidelines for Microsoft identity 
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: signin_art
+ms.custom:
 ms.date: 12/15/2023
 ms.reviewer: 
 ms.service: identity-platform
