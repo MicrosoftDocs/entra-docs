@@ -10,7 +10,7 @@ ms.date: 10/06/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera 
-ms.reviewer: cokoopma
+ms.reviewer: chuqiaoshi
 ---
 # How to read the ID Protection risk reports
 
