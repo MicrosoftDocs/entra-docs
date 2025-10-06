@@ -187,9 +187,6 @@ Configure split-include for Cisco ASA Remote Access VPN:
 > [!NOTE]
 > At this time, split-**exclude** isn't a supported coexistence configuration (ASA).
 
-> [!NOTE]
-> - There's a known issue with this configuration preventing coexistence with Global Secure Access on macOS.
-> - When using the Tunnel All Networks configuration, after the client connects, it might take a few seconds before you can access private resources through the Cisco VPN.
 
 ## Cisco ASA Remote Access VPN - configuration scenarios
 
