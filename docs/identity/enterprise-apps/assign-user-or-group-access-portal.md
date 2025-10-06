@@ -41,6 +41,7 @@ To assign users to an enterprise application, you need:
   - User Administrator
   - Owner of the service principal.
 - Microsoft Entra ID P1 or P2 for group-based assignment. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
+- Group-based assignment is supported for Security groups, Microsoft 365 groups, and Distribution groups whose SecurityEnabled setting is set to True only.
 
 :::zone pivot="portal"
 
