@@ -1,11 +1,11 @@
 ---
 title: Investigate identity risk in Microsoft Security Copilot
 description: Use Microsoft Security Copilot and Microsoft Entra skills to quickly investigate identity-based security incident.
-keywords:
 author: cilwerner
 ms.author: cwerner
 manager: pmwongera
-ms.date: 11/7/2024
+ms.reviewer: ptyagi
+ms.date: 09/23/2025
 ms.update-cycle: 180-days
 ms.topic: how-to
 ms.service: entra
@@ -20,13 +20,13 @@ ms.collection: msec-ai-copilot
 
 This article describes how a SOC analyst or IT admin could use the Microsoft Entra skills to investigate a potential security incident. 
 
-## Scenario
+## Prerequisites
 
-Natasha, a security operations center (SOC) analyst at Woodgrove Bank, receives an alert about a potential identity-based security incident. The alert indicates suspicious activity from a user account that has been flagged as a risky user.
+- A tenant with Security Copilot enabled. Refer to [Get started with Microsoft Security Copilot](/copilot/security/get-started-security-copilot#option-2-provision-capacity-in-azure) for more information.
 
-## Investigate
+## Scenario and investigation
 
-Natasha starts her investigation and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/).  In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
+Natasha, a security operations center (SOC) analyst at Woodgrove Bank, receives an alert about a potential identity-based security incident. The alert indicates suspicious activity from a user account that has been flagged as a risky user. She starts her investigation and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
 
 ### Get user details
 
@@ -86,7 +86,7 @@ By using Security Copilot, Natasha is able to gather comprehensive information a
 
 She reads about [risk remediation](/entra/id-protection/howto-identity-protection-remediate-unblock#risk-remediation), [unblocking users](/entra/id-protection/howto-identity-protection-remediate-unblock#unblocking-users), and [response playbooks](/security/operations/incident-response-playbooks) to determine possible actions to take next.
 
-## Next steps
+## Related content
 
 Learn more about: 
 - [Risky users](/entra/id-protection/howto-identity-protection-investigate-risk#risky-users)

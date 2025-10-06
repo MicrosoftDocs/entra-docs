@@ -2,9 +2,9 @@
 title: Custom role-based access control for application developers
 description: Learn about what custom RBAC is and why it's important to implement in applications.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: template-concept
+ms.custom:
 ms.date: 01/06/2023
 ms.reviewer:
 ms.service: identity-platform

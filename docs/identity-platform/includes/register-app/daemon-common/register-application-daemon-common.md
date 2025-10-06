@@ -1,7 +1,7 @@
 ---
 title: "Include file - Register a daemon in the Microsoft identity platform"
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom: sfi-image-nochange
 ms.date: 01/18/2024

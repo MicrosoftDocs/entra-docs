@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 09/08/2025
+ms.date: 09/23/2025
 ms.service: global-secure-access
 
 
@@ -268,3 +268,7 @@ Known limitations for Internet Access include:
 - Transport Layer Security (TLS) inspection is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
+
+## B2B guest access (preview) limitations
+<a name="b2b-guest-access-limitations"></a>
+- Multi-session Azure Virtual Desktop is not supported by the Global Secure Access clients.

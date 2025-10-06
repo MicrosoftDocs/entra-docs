@@ -1,39 +1,44 @@
 ---
-# required metadata
-
 title: Manage lifecycle workflows with Microsoft Security Copilot 
 description: Use Microsoft Security Copilot in the Microsoft Entra admin center to create lifecycle workflows for Joiner, Mover, and Leaver scenarios. Execute workflows on-demand and use workflow insights to monitor execution and troubleshoot as needed.
-keywords:
 author: cilwerner
 ms.author: cwerner
 manager: pmwongera
-ms.date: 02/19/2025
+ms.reviewer: ptyagi
+ms.date: 09/23/2025
 ms.update-cycle: 180-days
 ms.topic: how-to
 ms.service: entra
 ms.custom: security-copilot
 ms.collection: msec-ai-copilot
+# Customer intent: As an identity administrator, I want to learn how to use Microsoft Security Copilot for lifecycle workflows so I can manage employee lifecycle efficiently.
 ---
+
 # Manage employee lifecycle using Microsoft Security Copilot
 
 Microsoft Entra ID Governance applies the capabilities of [Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) to save identity administrators time and effort when configuring custom workflows to manage the lifecycle of users across JML scenarios. It also helps you to customize workflows more efficiently using natural language to configure workflow information including custom tasks, execute workflows, and get workflow insights.
 
-This article describes how to work with lifecycle workflows using Security Copilot in the Microsoft Entra admin center.  Using this feature requires [Microsoft Entra ID Governance licenses](/entra/id-governance/identity-governance-overview#license-requirements).
+This article describes how to work with lifecycle workflows using Security Copilot in the Microsoft Entra admin center for the following use cases: 
 
-Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator). Navigate to **ID Governance** > **Lifecycle workflows overview**.
+- [Create step-by-step guidance for a new lifecycle workflow](#create-step-by-step-guidance-for-a-new-lifecycle-workflow)
+- [Explore available workflow configurations](#explore-available-workflow-configurations)
+- [Analyze the active workflow list](#analyze-active-workflow-list)
+- [Troubleshoot the processing results of workflows](#troubleshoot-a-lifecycle-workflow-run)
+- [Compare versions of a lifecycle workflow](#compare-versions-of-a-lifecycle-workflow)
 
-Launch Security Copilot from the **Copilot** button in the Microsoft Entra admin center.  Use natural language questions or prompts to:
+## Prerequisites
 
-- Get step-by-step guidance for creating a lifecycle workflow
-- Explore available workflow configurations
-- Analyze the active workflow list
-- Troubleshoot the processing results of workflows
+- A tenant with Security Copilot enabled. Refer to [Get started with Microsoft Security Copilot](/copilot/security/get-started-security-copilot#option-2-provision-capacity-in-azure) for more information.
+- A [Microsoft Entra ID Governance license](/entra/id-governance/identity-governance-overview#license-requirements).
+- The assigned role of [Lifecycle Workflow Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflow-administrator)
 
-:::image type="content" source="./media/copilot-entra-lifecycle-workflow/security-copilot-button.png" alt-text="Screenshot that shows the Copilot in the Microsoft Entra admin center.":::
+## Launch Security Copilot in Microsoft Entra
+
+[!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
 
 ## Create step-by-step guidance for a new lifecycle workflow
 
-Security Copilot can give you the steps to guide you in creating a new lifecycle workflow. Provide a prompt with actions to take when the workflow is triggered and conditions that define which users (scope) this workflow should run against, and when (trigger) the workflow should run.  For example:
+Security Copilot can give you the steps to guide you in creating a new lifecycle workflow. Provide a prompt with actions to take when the workflow is triggered and conditions that define which users (scope) this workflow should run against, and when (trigger) the workflow should run. For example:
 
 *Create a lifecycle workflow for new hires in the Marketing department that sends a welcome email and a TAP and adds them to the "All Users in My Tenant" group.  Also, provide the option to enable the schedule of the workflow.*
 
@@ -57,11 +62,11 @@ With Microsoft Security Copilot, you can easily analyze and manage your active w
 
 For example:
 
-- *Get my lifecycle workflows with the name {workflow name}*
-- *List all mover workflows in my tenant*
-- *List all the deleted lifecycle workflows in my tenant*
-- *List all disabled lifecycle workflows in my tenant*
-- *Show me the details of disabled workflow {workflow}*
+- *Get my lifecycle workflows with the name {workflow name}.*
+- *List all mover workflows in my tenant.*
+- *List all the deleted lifecycle workflows in my tenant.*
+- *List all disabled lifecycle workflows in my tenant.*
+- *Show me the details of disabled workflow {workflow}.*
 
 ## Troubleshoot a Lifecycle Workflow run
 
@@ -69,11 +74,11 @@ You can use Security Copilot to help troubleshoot a workflow run.  Security Copi
 
 Explore workflow processing results of a specific workflow:
 
-- *Summarize the runs for {workflow} in the last 7 days*
-- *How many times did the workflow run in the last 24 hours*
+- *Summarize the runs for {workflow} in the last 7 days.*
+- *How many times did the workflow run in the last 24 hours.*
 - *Which users failed to be processed by this workflow in the last 7 days?*
 - *Which tasks failed for {workflow} in the last 7 days?*
-- *Show me the user processing results summary for {workflow} in the last 7 days*
+- *Show me the user processing results summary for {workflow} in the last 7 days.*
 
 Explore workflow processing results across workflows:
 
@@ -90,14 +95,14 @@ You can use Security Copilot to compare workflow versions. Security Copilot uses
 
 For example:
 
-- *List all workflow versions for {workflow}*
-- *Show me who last modified {workflow} and when*
-- *Show me the details of {version #} for this workflow*
+- *List all workflow versions for {workflow}.*
+- *Show me who last modified {workflow} and when.*
+- *Show me the details of {version #} for this workflow.*
 - *What changed in the last version of this workflow?*
-- *Compare the last two versions of this workflow*
-- *Compare {version #} and {version #} of this workflow*
+- *Compare the last two versions of this workflow.*
+- *Compare {version #} and {version #} of this workflow.*
 
-## Next steps
+## Related content
 
 - Learn more about [lifecycle workflows](/entra/id-governance/what-are-lifecycle-workflows).
 - [Create a lifecycle workflow](/entra/id-governance/create-lifecycle-workflow).
