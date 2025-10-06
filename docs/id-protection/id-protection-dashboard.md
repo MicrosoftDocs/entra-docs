@@ -3,7 +3,7 @@ title: Microsoft Entra ID Protection overview
 description: Learn how the Microsoft Entra ID Protection overview dashboard provides a view into security posture.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 06/05/2025
+ms.date: 10/06/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
