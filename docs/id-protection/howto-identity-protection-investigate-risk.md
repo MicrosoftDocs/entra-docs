@@ -61,10 +61,10 @@ Once the risk is contained, more investigation might be required to mark the ris
 
 1. Investigate using other security tools, where available.
    - If you have [Microsoft Sentinel](/azure/sentinel/overview), check for corresponding alerts that might indicate a larger issue.
-   - If you have [Microsoft 365 Defender](/defender-for-identity/understanding-security-alerts), you can follow a user risk event through other related alerts, incidents, and the **MITRE ATT&CK chain.**
+   - If you have [Microsoft Defender XDR](/defender-for-identity/understanding-security-alerts), you can follow a user risk event through other related alerts, incidents, and the **MITRE ATT&CK chain.**
       - To navigate from the **Risky users report**, select a user > select the ellipsis (...) > select **Investigate with Microsoft 365 Defender**.
       
-      :::image type="content" source="media/howto-identity-protection-investigate-risk/investigate-with-microsoft-365-defender.png" alt-text="Risky user details pane with the ellipsis and investigate in Microsoft 365 Defender option highlighted." lightbox="media/howto-identity-protection-investigate-risk/investigate-with-microsoft-365-defender.png":::
+      :::image type="content" source="media/howto-identity-protection-investigate-risk/investigate-with-microsoft-365-defender.png" alt-text="Risky user details pane with the ellipsis and investigate in Microsoft Defender XDR option highlighted." lightbox="media/howto-identity-protection-investigate-risk/investigate-with-microsoft-365-defender.png":::
  
 1. Contact the user to confirm if they recognize the sign-in; however, keep in mind that email or Teams might be compromised.
    1. Confirm the information you have such as:

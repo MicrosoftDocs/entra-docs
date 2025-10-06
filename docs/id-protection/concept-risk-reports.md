@@ -27,11 +27,11 @@ The [ID Protection Dashboard](id-protection-dashboard.md) provides a summary of 
 :::image type="content" source="media/concept-risk-reports/dashboard.png" alt-text="Screenshot showing the Microsoft Entra ID Protection dashboard." lightbox="media/concept-risk-reports/dashboard-expanded.png":::
 
 
-Each report launches with a list of all detections for the period shown at the top of the report. You can filter and add or remove columns based on your preference. Download the data in .CSV or .JSON format for further processing. To integrate the reports with SEIM tools for further analysis, see [Configure diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
+Each report launches with a list of all detections for the period shown at the top of the report. You can filter and add or remove columns based on your preference. Download the data in .CSV or .JSON format for further processing. To integrate the reports with Security Information and Event Management (SIEM) tools for further analysis, see [Configure diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 
 ## View details and take action
 
-Select an entry in a report to view more details, which differ based on the report you're viewing. From the details pane you can also take action on the selected user or sign-in.  You can select one or multiple entries and either confirm the risk or dismiss it. You can also start a password reset flow from the user. These capabilities have different role requirements, so if an option is greyed out, you need a higher privileged role. For more information, see [ID Protection required roles](overview-identity-protection.md#required-roles).
+Select an entry in a report to view more details, which differ based on the report you're viewing. From the details pane you can also take action on the selected user or sign-in. You can select one or multiple entries and either confirm the risk or dismiss it. You can also start a password reset flow from the user. These capabilities have different role requirements, so if an option is greyed out, you need a higher privileged role. For more information, see [ID Protection required roles](overview-identity-protection.md#required-roles).
 
 ### Risky users
 
@@ -81,7 +81,7 @@ To learn more about when to take each of these actions, see [How does Microsoft 
 A [workload identity](../workload-id/workload-identities-overview.md) is an identity that allows an application access to resources, sometimes in the context of a user. From the Risky Workload ID details page you can access service principal sign-in and audit logs for further analysis.
 
 > [!IMPORTANT]
-> Full risk details and risk-based access controls are available to Workload Identities Premium customers; however, customers without the **[Workload Identities Premium](../workload-id/workload-identities-faqs.md)** licenses still receive all detections with limited reporting details.
+> Full risk details and risk-based access controls are available to Workload Identities Premium customers; however, customers without a **[Workload Identities Premium](../workload-id/workload-identities-faqs.md)** license still receive all detections with limited reporting details.
 
 **Risky Workload IDs details** include:
 - Service principal ID
@@ -90,7 +90,7 @@ A [workload identity](../workload-id/workload-identities-overview.md) is an iden
 
 ### Risk detections
 
-The Risk detections report provides insights into the various risk detections associated with users and sign-ins. This includes information about the type of risk detected, the user or sign-in it pertains to, and the current status of the risk. From the details pane you can also access the associated user risk report, the user's sign-ins, and risk detections.
+The Risk detections report provides insights into the various risk detections associated with users and sign-ins. The details include information about the type of risk detected, the user, or sign-in it pertains to, and the current status of the risk. From the details pane you can also access the associated user risk report, the user's sign-ins, and risk detections.
 
 **Risk detections details** include:
 - Detection type
@@ -113,4 +113,8 @@ With the information provided by the Risk detections report, administrators can 
 Administrators can then choose to return to the user's risk or sign-ins report to take actions based on information gathered.
 
 > [!NOTE]
-> Our system might detect that the risk event that contributed to the user risk score was a false positive or the user risk was remediated with policy enforcement such as completing an MFA prompt or secure password change. Therefore, our system will dismiss the risk state and a risk detail of “AI confirmed sign-in safe” will surface and it will no longer contribute to the user's risk.
+> Our system might detect that:
+> - the risk event that contributed to the user risk score was a false positive; or
+> - the user risk was remediated with policy enforcement, such as completing an MFA prompt or secure password change.
+>
+> Therefore, our system dismisses the risk state and a risk detail of "AI confirmed sign-in safe" surfaces and no longer contributes to the user's risk.
