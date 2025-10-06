@@ -169,10 +169,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
       6. Validate the SMB file share traffic is captured in Global Secure Access logs and isn't shown in Cisco logs.
       7. Stop collecting traffic and confirm correct traffic handling.
 
----
-
 ### 2. Microsoft Entra Private Access with Cisco Secure Internet Access and Cisco Secure Private Access
-
 
 **Global Secure Access configuration**
 
@@ -201,13 +198,8 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
     8. Validate the RDP traffic is captured in Cisco logs and isn't shown in Global Secure Access logs.
     9. Stop collecting traffic and confirm correct traffic handling.
  
- ---
- 
 
 ### 3. Microsoft Entra Microsoft Access with Cisco Secure Internet Access and Cisco Secure Private Access
-
-
-
 
 **Global Secure Access configuration**
 
@@ -234,19 +226,13 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
     8. Validate traffic logs in both portals.
     9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
 
----
-
 ### 4. Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Private Access
-
-
-
 
 **Global Secure Access configuration**
 
 1. Enable Internet Access and Microsoft Access forwarding profiles.
 1. Install and configure the Global Secure Access client for Windows or macOS.
 1. Add a custom bypass for Cisco Secure Access: `*.zpc.sse.cisco.com`.
-
 
 **Cisco Secure Access configuration**
 
@@ -269,8 +255,6 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
     6. Validate traffic logs in both portals.
     7. Stop collecting traffic and confirm Global Secure Access **didn't** handle private application traffic.
 
-
----
 > [!NOTE]
 > For troubleshooting health check failures, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
