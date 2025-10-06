@@ -1,5 +1,5 @@
 ---
-title: "Cloud-First Identity Management: Guidance for IT Architects"
+title: "Cloud-first Identity Management: Guidance for IT Architects"
 description: This is a guide for IT architects on how to transition their hybrid environment into a cloud-first approach. Including best practices, scenarios, and considerations of transferring source of authority to Microsoft Entra ID.
 author: OWinfreyATL
 ms.author: owinfrey
