@@ -20,7 +20,7 @@ Microsoft Entra ID Protection automatically remediates many risky sign-ins and u
 
 The ID Protection Dashboard provides a summary of important insights that you can use at any time to identify potential risks.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **ID Protection** > **Dashboard**.
 1. Select a report from the ID Protection navigation menu.
 
