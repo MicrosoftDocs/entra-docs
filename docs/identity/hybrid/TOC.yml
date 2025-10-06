@@ -86,26 +86,47 @@
           href: cloud-sync/tutorial-single-forest.md
         - name: Integrate an existing forest and a new forest with a single Microsoft Entra tenant
           href: cloud-sync/tutorial-existing-forest.md
-    - name: Cloud-first approach with Group Source of Authority (SOA) 
+    - name: Cloud-first approach with Source of Authority
+      expanded: true
       items:
-      - name: Concepts
+      - name: IT architect guide for transferring Source of Authority (SOA)
+        href: guidance-it-architects-source-of-authority.md
+      - name: Group Source of Authority (SOA) 
         items:
-        - name: Group SOA overview
-          href: concept-source-of-authority-overview.md
-        - name: How Group SOA works
-          href: concept-group-source-of-authority-how-it-works.md
-        - name: Guidance for using Group SOA
-          href: concept-group-source-of-authority-guidance.md
-      - name: How to guides
+        - name: Concepts
+          items:
+          - name: Group SOA overview
+            href: concept-source-of-authority-overview.md
+          - name: How Group SOA works
+            href: concept-group-source-of-authority-how-it-works.md
+          - name: Guidance for using Group SOA
+            href: concept-group-source-of-authority-guidance.md
+        - name: How to guides
+          items:
+          - name: Configure Group SOA
+            href: how-to-group-source-of-authority-configure.md
+          - name: Audit and monitor Group SOA
+            href: how-to-source-of-authority-auditing-monitoring.md
+          - name: Remove unused AD groups
+            href: how-to-active-directory-group-cleanup.md
+          - name: Set up self-service group management
+            href: how-to-source-of-authority-self-service-group-management.md
+      - name: User Source of Authority (SOA) 
         items:
-        - name: Configure Group SOA
-          href: how-to-group-source-of-authority-configure.md
-        - name: Audit and monitor Group SOA
-          href: how-to-source-of-authority-auditing-monitoring.md
-        - name: Remove unused AD groups
-          href: how-to-active-directory-group-cleanup.md
-        - name: Set up self-service group management
-          href: how-to-source-of-authority-self-service-group-management.md
+        - name: Concepts
+          items:
+          - name: User SOA overview
+            href: user-source-of-authority-overview.md
+          - name: Prepare Your environment for User SOA
+            href: prepare-user-source-of-authority-environment.md
+          - name: Guidance for using User SOA
+            href: user-source-of-authority-guidance.md          
+        - name: How to guides
+          items:
+            - name: Configure User SOA
+              href: how-to-user-source-of-authority-configure.md
+            - name: Audit and monitor User SOA
+              href: user-source-of-authority-audit-monitor.md
     - name: Provision Microsoft Entra ID to Active Directory
       items:
         - name: Provision groups to Active Directory
