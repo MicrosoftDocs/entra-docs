@@ -16,7 +16,7 @@ Microsoft Entra ID Protection prevents identity compromises by detecting identit
 
 Our dashboard helps customers better analyze their security posture, understand how well they're protected, identify vulnerabilities, and perform recommended actions. 
 
-[![Screenshot showing the Microsoft Entra ID Protection overview dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard.png)
+:::image type="content" source="media/id-protection-dashboard/full-dashboard.png" alt-text="Screenshot showing the Microsoft Entra ID Protection overview dashboard." lightbox="media/id-protection-dashboard/full-dashboard-expanded.png":::
 
 This dashboard empowers organizations with rich insights and actionable recommendations tailored to your tenant. This information provides a better view into your organization’s security posture and lets you enable effective protections accordingly. You have access to key metrics, attack graphics, a map highlighting risky locations, top recommendations to enhance security posture, and recent activities.
 

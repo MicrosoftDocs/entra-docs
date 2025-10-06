@@ -12,17 +12,20 @@ ms.author: sarahlipsey
 manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
-# How to read the ID Protection risk reports
+# Microsoft Entra ID Protection risk reports
 
-Microsoft Entra ID Protection automatically remediates many risky sign-ins and users, but sometimes you need to investigate issues yourself. The reports in Identity Protection help you quickly identify and respond to potential threats. This article shows you how to read and use these reports more effectively.
+Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks. While automated remediation handles many threats, some situations require manual investigation and action. The ID Protection risk reports provide the insights you need to identify, investigate, and respond to potential security threats affecting your users, sign-ins, and workload identities.
 
 ## Access the risk reports
 
-The ID Protection Dashboard provides a summary of important insights that you can use at any time to identify potential risks.
+The [ID Protection Dashboard](id-protection-dashboard.md) provides a summary of important insights that you can use at any time to identify potential risks.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **ID Protection** > **Dashboard**.
 1. Select a report from the ID Protection navigation menu.
+
+:::image type="content" source="media/concept-risk-reports/dashboard.png" alt-text="Screenshot showing the Microsoft Entra ID Protection dashboard." lightbox="media/concept-risk-reports/dashboard-expanded.png":::
+
 
 Each report launches with a list of all detections for the period shown at the top of the report. You can filter and add or remove columns based on your preference. Download the data in .CSV or .JSON format for further processing. To integrate the reports with SEIM tools for further analysis, see [Configure diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 
@@ -40,7 +43,9 @@ A user becomes a risky user when:
 - They have one or more [risks](concept-identity-protection-risks.md) detected on their account, like leaked credentials.
 
 > [!TIP]
-> If you have Security Copilot, you have access to a **[summary in natural language](../fundamentals/copilot-entra-risky-user-summarization.md)** including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. 
+> If you have Security Copilot, you have access to a **[summary in natural language](../security-copilot/entra-risky-user-summarization.md)** including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation.
+
+From the **Risky users report**, select a user to view more details about their risk events and even take action on that user.
 
 **Risky users details** include:
 - User ID
@@ -65,7 +70,7 @@ The Risky sign-ins report lists sign-ins that are at risk, confirmed compromised
 
 The **Risky sign-ins report** contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
 
-:::image type="content" source="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/howto-identity-protection-investigate-risk/risky-sign-ins-report.png":::
+:::image type="content" source="media/concept-risk-reports/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/concept-risk-reports/risky-sign-ins-report.png":::
 
 [!INCLUDE [id-protection-admin-action-sign-in](../includes/id-protection-admin-action-sign-in.md)]
 
