@@ -27,7 +27,7 @@ This article provides information about the latest releases and change announcem
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
 
 **Type:** New feature  
-**Service category:** Group Management  
+**Service category:** User Management  
 **Product capability:** Microsoft Entra Connect and Microsoft Entra Cloud Sync
 
 The Source of Authority (SOA) at the object level allows administrators to convert specific users synced from Active Directory (AD) to Microsoft Entra ID into cloud-editable objects, which are no longer synced from AD and act as if originally created in the cloud. This feature supports a gradual migration process, decreasing dependencies on AD while aiming to minimize user and operational impact. Both Microsoft Entra Connect Sync and Cloud Sync recognize the SOA switch for these objects. The option to switch the SOA of synced users from AD to Microsoft Entra ID is currently available in Public Preview. For more information, see: [Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud (Preview)](../identity/hybrid/user-source-of-authority-overview.md).
