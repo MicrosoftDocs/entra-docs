@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 10/03/2025
+ms.date: 10/06/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -76,9 +76,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 2. Under **Internet access policies**, select **View**.
 3. Expand **Custom Bypass** and select **Add rule**.
 4. Enter the following IPs:
-    ```
-    208.67.222.222, 208.67.220.220, 67.215.64.0/19, 146.112.0.0/16, 155.190.0.0/16, 185.60.84.0/22, 204.194.232.0/21, 208.67.216.0/21, 208.69.32.0/21
-    ```
+    `208.67.222.222, 208.67.220.220, 67.215.64.0/19, 146.112.0.0/16, 155.190.0.0/16, 185.60.84.0/22, 204.194.232.0/21, 208.67.216.0/21, 208.69.32.0/21`
 5. Add a rule for the destination: `*.zpc.sse.cisco.com`
 6. Select **Save**.
 
@@ -89,18 +87,14 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 1. In the Cisco Secure Access portal, go to **Connect > End User Connectivity > Internet Security**.
 2. In the **Traffic Steering** section, select **Add Destination > Bypass Secure Access**, add the following FQDN, and save:
 
-  ```
-  *.globalsecureaccess.microsoft.com
-  ```
-
+    `*.globalsecureaccess.microsoft.com`
+  
   > [!NOTE]
   > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.microsoft.com`.
 
 3. Add these Microsoft 365 FQDNs (only required if Microsoft traffic forwarding profile is enabled):
 
-  ```
-  auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net
-  ```
+    `auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net`
 
 4. Add the Quick Access FQDN (only required if you use Private Access with Quick Access). `<quickaccessapplicationid>.globalsecureaccess.local`
 
@@ -111,32 +105,25 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 6. In the Traffic Steering section, select **Add Destination > Bypass web proxy only**, add these IPs, and save:
 
-  ```
-  150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
-  ```
+ `150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16`
 
   7. Add these Microsoft 365 IP addresses (only required if Microsoft traffic forwarding profile is enabled):
 
-  ```
-  132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19
-  ```
+  `132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19`
 
 8. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
 1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list:
-```
-  *.globalsecureaccess.microsoft.com
-```
+  `*.globalsecureaccess.microsoft.com`
 
   > [!NOTE]
   > Cisco Umbrella supports implied wildcards, so you can use `globalsecureaccess.microsoft.com`.
 
 2. Add these Microsoft 365 FQDNs (only required if Microsoft traffic forwarding profile is enabled):
-```
-    auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net
-```
+    `auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net`
+
 3. Add the Quick Access FQDN (only required if you use Private Access with Quick Access). `<quickaccessapplicationid>.globalsecureaccess.local`   
   
   > [!NOTE]
@@ -145,14 +132,10 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 4. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 
 5. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
-```
-  *.globalsecureaccess.microsoft.com, 150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
-```
+  `*.globalsecureaccess.microsoft.com, 150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16`
 
 6. Add these Microsoft 365 IP addresses (only required if Microsoft traffic forwarding profile is enabled):
- ```
-  132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19
-```
+  `132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19`
 
 7. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
@@ -161,9 +144,6 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 ## Configuration scenarios
 
 ### 1. Microsoft Entra Private Access with Cisco Secure Internet Access
-
-
-
 
 **Global Secure Access configuration**
 
@@ -191,10 +171,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ---
 
-
 ### 2. Microsoft Entra Private Access with Cisco Secure Internet Access and Cisco Secure Private Access
-
-
 
 
 **Global Secure Access configuration**

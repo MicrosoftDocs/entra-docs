@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 10/03/2025
+ms.date: 10/06/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
@@ -74,7 +74,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 > [!NOTE]
 > Currently **Split-Include** is the only supported Cisco Secure Access VPNaaS configuration.
 
-## Cisco Secure Access VPNaaS - Configuration scenarios
+## Cisco Secure Access VPNaaS - configuration scenarios
 
 ### 1. Internet and Microsoft traffic with Cisco Secure Access VPNaaS for private access.
 
@@ -194,7 +194,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 7. Save and apply your changes.
 
 > [!NOTE]
-> At this time, split-**exclude** isn't a supported coexistence configuration (ASA)
+> At this time, split-**exclude** isn't a supported coexistence configuration (ASA).
 
 #### Tunnel All Networks with dynamic exclusions configuration
 > [!IMPORTANT]
@@ -231,9 +231,9 @@ Configure split-include for Cisco ASA Remote Access VPN:
 
 
 **Global Secure Access configuration:**
-- Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
-- Install and configure the Global Secure Access client for Windows or macOS.
-- Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass-for-cisco-asa) to exclude Cisco ASA remote access URL and public IP address.
+1. Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
+1. Install and configure the Global Secure Access client for Windows or macOS.
+1. Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass-for-cisco-asa) to exclude Cisco ASA remote access URL and public IP address.
 
 **Cisco configuration:**
 1. Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration-asa) or [tunnel all](#tunnel-all-networks-with-dynamic-exclusions-configuration) configuration, as described previously.
