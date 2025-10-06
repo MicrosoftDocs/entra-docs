@@ -110,11 +110,11 @@ For each application in your inventory, identify the authentication mechanism it
 
 - **Integrated Windows Authentication (Kerberos/NTLM)** – Common in IIS/.NET applications using Windows Authentication, file servers, SharePoint, and similar platforms. These typically allow users to sign in with domain credentials, often without a separate prompt.
 
-- **LDAP Authentication/Queries** – Applications can have LDAP server settings pointing to AD and perform binds or lookups, custom-developed or third-party products prompting users for AD credentials.
+- **LDAP Authentication/Queries** – Applications can have [LDAP server settings pointing to AD](../../architecture/auth-ldap.md) and perform binds or lookups, custom-developed or third-party products prompting users for AD credentials.
 
-- **Federation/Modern Authentication** – Some applications are already federated via AD FS, or support modern protocols such as SAML or OAuth. These can generally be reconfigured to use Microsoft Entra ID with minimal effort.
+- **Federation/Modern Authentication** – Some applications are already federated via [AD FS](/windows-server/identity/ad-fs/ad-fs-overview), or support modern protocols such as SAML or OAuth. These can generally be reconfigured to use Microsoft Entra ID with minimal effort.
 
-- **Other Legacy Methods** – Includes cases where apps use RADIUS against AD or local accounts. Though not the primary focus, these should be documented for completeness.
+- **Other Legacy Methods** – Includes cases where apps use RADIUS against AD or local accounts. Though not the primary focus, these should be documented for completeness. For more information, see: [RADIUS authentication with Microsoft Entra ID](../../architecture/auth-radius.md).
 
 ### Step 3. Assess modernization feasibility
 
@@ -155,12 +155,12 @@ In an app-centric approach, it's best to migrate security groups and app access 
 
 ### Step 7. Handling LDAP-based applications (Directory-Bound Apps)
 
-**LDAP-bound applications** or services directly query Active Directory Domain Services (AD DS) via LDAP, most often for authentication using a simple bind with username and password, or for directory reads. Common examples include older enterprise applications, network appliances, or custom-developed apps that rely on LDAP binds to validate credentials. These applications typically require an LDAP server, and can't easily transition to modern authentication protocols.
+**LDAP-bound applications** or services directly query Active Directory Domain Services (AD DS) via LDAP, most often for authentication using a simple bind with username and password, or for directory reads. Common examples include older enterprise applications, network appliances, or custom-developed apps that rely on LDAP binds to validate credentials. These applications typically require an LDAP server, and can't easily transition to modern authentication protocols. For more information, see: [LDAP authentication with Microsoft Entra ID](../../architecture/auth-ldap.md).
 
 #### Recommended Solution: Microsoft Entra Domain Services
 
 The recommended solution for supporting LDAP-bound apps in the cloud is Microsoft Entra Domain Services. Hosted on Azure, Microsoft Entra Domain Services provides LDAP, Kerberos, and NTLM endpoints, syncing user accounts, and credentials from your Microsoft Entra ID tenant. This allows legacy applications to use cloud-hosted AD for authentication without switching
-to modern protocols. The managed domain mainly supports read and authentication for LDAP clients.
+to modern protocols. The managed domain mainly supports read and authentication for LDAP clients. For more information, see: [What is Microsoft Entra Domain Services?](../../identity/domain-services/overview.md)
 
 ### Step 8. Handling Kerberos-Based Applications (Windows Integrated Auth)
 
@@ -170,10 +170,10 @@ to modern protocols. The managed domain mainly supports read and authentication 
 
 *Recommended solution:*
 
-- **Microsoft Entra Application Proxy or Private Access with Kerberos Constrained Delegation (KCD):** This cloud service enables the publication of an on-premises web application through Microsoft Entra ID. Users authenticate to Microsoft Entra ID, such as using OAuth/OpenID Connect, and the Application Proxy connector operating on-premises obtains a Kerberos ticket to the backend application on the user’s behalf using KCD. Microsoft Entra ID serves as the authentication gateway, translating authentication to Kerberos for the application. This solution supports web-based applications (HTTP/HTTPS) and can provide single sign-on (SSO) for cloud-managed users *provided those users have an account in AD*.
+- **Microsoft Entra Application Proxy or Private Access with Kerberos Constrained Delegation (KCD):** This cloud service enables the publication of an on-premises web application through Microsoft Entra ID. Users authenticate to Microsoft Entra ID, such as using OAuth/OpenID Connect, and the Application Proxy connector operating on-premises obtains a Kerberos ticket to the backend application on the user’s behalf using KCD. Microsoft Entra ID serves as the authentication gateway, translating authentication to Kerberos for the application. This solution supports web-based applications (HTTP/HTTPS) and can provide single sign-on (SSO) for cloud-managed users *provided those users have an account in AD*. For more information, see: [Microsoft Entra Application Proxy](../../identity/app-proxy/overview-what-is-app-proxy.md) and [Microsoft Entra Private Access](../../global-secure-access/concept-private-access.md)
 
 - **Passwordless with Cloud Kerberos Trust:** This method lets Microsoft Entra ID
-issue Kerberos tickets for on-premises AD resources when users sign in with Microsoft Entra ID credentials using password-less authentication such as Windows Hello for Business and FIDO2. It requires configuring the AD domain to trust Microsoft Entra ID’s cloud Kerberos service and ensuring users’ AD objects have the necessary keys. The process is fully password-less, making it ideal for cloud users to access on-premises resources.
+issue Kerberos tickets for on-premises AD resources when users sign in with Microsoft Entra ID credentials using password-less authentication such as Windows Hello for Business and FIDO2. It requires configuring the AD domain to trust Microsoft Entra ID’s cloud Kerberos service and ensuring users’ AD objects have the necessary keys. The process is fully password-less, making it ideal for cloud users to access on-premises resources. For more information, see: [Cloud Kerberos Trust](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust).
 
 ### Key Considerations Before Migrating Kerberos Workloads
 
@@ -202,34 +202,15 @@ Ensure that all users whose source of authority was transferred are able to stil
 
 ## Conclusion
 
-The following list is a summary of the options for handling on-premises apps in a cloud-first model:
+The following table is a summary of the options for handling on-premises apps in a cloud-first model:
 
-- **Kerberos-based Apps** (Windows Integrated Authentication, intranet web apps, file shares)
-  - **Cloud Integration Method & Tools:**
-    - Microsoft Entra ID Application Proxy with Kerberos (KCD): Publish on-premises web apps through Microsoft Entra ID and use a connector for Kerberos on-premises.
-    - Microsoft Entra ID Cloud Kerberos Trust: For Microsoft Entra ID joined devices (for example, non-web file shares).
-  - **Requirements:**
-    - Microsoft Entra Private Access installed on-premises
-    - Configured SPN and delegation rights
-    - Microsoft Entra ID P1/P2 or Suite licenses
-    - AD account for user (synced or provisioned)
-  - **Considerations:**
-    - Seamless SSO using Microsoft Entra ID credentials
-    - Password-less and phish-resistant methods for Kerberos apps
-    - Secure access to on-premises resources
 
-- **LDAP-based Apps** (Apps that bind to AD DS over LDAP for auth/queries)
-  - **Cloud Integration Method & Tools:**
-    - Microsoft Entra ID Domain Services (Managed AD): Cloud-hosted AD domain synced with Microsoft Entra ID; repoint app’s LDAP connection to this domain (LDAPS).
-  - **Requirements:**
-    - Set up Microsoft Entra ID DS instance in Azure
-    - Configure virtual network, secure LDAP cert, firewall rules
-    - Users/groups must be in Microsoft Entra ID (synced to Microsoft Entra ID DS)
-    - Might require password reset to generate hashes
-  - **Considerations:**
-    - Minimal app changes (new LDAP endpoint)
-    - Cloud users’ passwords present in Microsoft Entra ID DS
-    - If Microsoft Entra ID DS isn't feasible, fallback is provisioning users into on-premises AD and maintaining password parity manually.
+| App Type | Cloud Integration Method & Tools | Requirements & Considerations |
+|:--------:|:-------------------------------:|:-----------------------------|
+| **Kerberos-based Apps**<br>(Windows Integrated Authentication, intranet web apps, file shares) | **Microsoft Entra ID Application Proxy with Kerberos (KCD):** Publish on-prem web apps through Microsoft Entra ID and use a connector for Kerberos on-prem.<br>**Microsoft Entra ID Cloud Kerberos Trust:** For Microsoft Entra ID joined devices (non-web, e.g. file shares). | **Requirements:**<br>- Microsoft Entra Private Access installed on-prem<br>- Configured SPN and delegation rights<br>- Entra ID P1/P2 or Suite licenses<br>- AD account for user (synced or provisioned)<br>**Considerations:**<br>- Provides seamless SSO using Entra ID credentials or go passwordless for Kerberos based apps and use phish-resistant method to secure and access on-premises resources |
+| **LDAP-based Apps**<br>(Apps that bind to AD DS over LDAP for auth/queries) | **Entra ID Domain Services (Managed AD):** Cloud-hosted AD domain synced with Microsoft  ID; repoint app’s LDAP connection to this domain (LDAPS). | **Requirements:**<br>- Set up Microsoft Entra Domain Services instance in Azure<br>- Configure virtual network, secure LDAP cert, firewall rules<br>- Users/groups must be in Microsoft Entra ID (synced to Microsoft Entra Domain Services)<br>- May require password reset to generate hashes<br>**Considerations:**<br>- Minimal app changes (just new LDAP endpoint)<br>- Cloud users’ passwords present in Microsoft Entra ID DS<br>- If Microsoft Entra Domain Services not feasible, fallback is provisioning users into on-prem AD and maintaining password parity manually |
+
+
 
 
 
@@ -250,23 +231,13 @@ The following list is a summary of the options for handling on-premises apps in 
 
 - Identify users/groups no longer tied to AD-dependent apps.
 
-- Map authentication dependencies for each application (Kerberos, LDAP,
-  SAML/OIDC).
-
-### Choose the Right Approach
-
-- User-centric: Only for users not tied to password-based AD apps.
-
-- App-centric: Required if any apps still use AD for authentication
-  (recommended).
+- Map authentication dependencies for each application (Kerberos, LDAP, SAML/OIDC).
 
 ### Plan Group Migration
 
-- Shift security groups to the cloud; provision back to AD from Microsoft Entra ID
-  if needed.
+- [Shift security groups to the cloud](concept-source-of-authority-overview.md); provision back to AD from Microsoft Entra ID if needed.
 
-- Shift DLs and MESGs only after Exchange workloads are fully
-  cloud-based.
+- Shift DLs and MESGs only after Exchange workloads are fully cloud-based.
 
 ### Modernize Application Authentication
 
@@ -294,11 +265,9 @@ The following list is a summary of the options for handling on-premises apps in 
 
 ### Address Key Limitations
 
-- No password writeback for cloud-only users. Keep hybrid directory if
-  you need writeback.
+- No password writeback for cloud-only users. Keep hybrid directory if you need writeback
 
-- Legacy apps with hardcoded AD dependencies might require custom proxies
-  or remain on-premises.
+- Legacy apps with hardcoded AD dependencies might require custom proxies or remain on-premises.
 
 ### Monitor & Iterate
 
