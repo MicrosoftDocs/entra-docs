@@ -62,11 +62,11 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 1. **Install and configure the Cisco Secure Client**. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manual-installation-of-cisco-secure-client-windows-and-macos).
 
 > [!IMPORTANT]
-  > Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation, or re-installation (not required to run again when upgrading), of CSC version 5.1.10.x (or later).
-  > 1. Install Cisco Secure Client version 5.1.10.x.
-  > 1. Open CMD prompt as an administrator and run these commands:
-  > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
-  > 1. `net stop csc_vpnagent && net stop acsock && net start csc_vpnagent`
+> Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation, or re-installation (not required to run again when upgrading), of CSC version 5.1.10.x (or later).
+> 1. Install Cisco Secure Client version 5.1.10.x.
+> 1. Open CMD prompt as an administrator and run these commands:
+> 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
+> 1. `net stop csc_vpnagent && net stop acsock && net start csc_vpnagent`
 
 ## Bypass configuration for coexistence
 
@@ -85,58 +85,34 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 #### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
 
 1. In the Cisco Secure Access portal, go to **Connect > End User Connectivity > Internet Security**.
-2. In the **Traffic Steering** section, select **Add Destination > Bypass Secure Access**, add the following FQDN, and save:
-
-    `*.globalsecureaccess.microsoft.com`
-  
-  > [!NOTE]
-  > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.microsoft.com`.
-
+2. In the **Traffic Steering** section, select **Add Destination > Bypass Secure Access**, add the following FQDN, and save: `*.globalsecureaccess.microsoft.com`
+    > [!NOTE]
+    > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.microsoft.com`.
 3. Add these Microsoft 365 FQDNs (only required if Microsoft traffic forwarding profile is enabled):
-
     `auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net`
-
 4. Add the Quick Access FQDN (only required if you use Private Access with Quick Access). `<quickaccessapplicationid>.globalsecureaccess.local`
-
-  > [!NOTE]
-  > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
-
- 5. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
-
-6. In the Traffic Steering section, select **Add Destination > Bypass web proxy only**, add these IPs, and save:
-
- `150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16`
-
-  7. Add these Microsoft 365 IP addresses (only required if Microsoft traffic forwarding profile is enabled):
-
-  `132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19`
-
+    > [!NOTE]
+    > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
+5. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
+6. In the Traffic Steering section, select **Add Destination > Bypass web proxy only**, add these IPs, and save: `150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16`
+7. Add these Microsoft 365 IP addresses (only required if Microsoft traffic forwarding profile is enabled):
+    `132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19`
 8. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
-1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list:
-  `*.globalsecureaccess.microsoft.com`
-
-  > [!NOTE]
-  > Cisco Umbrella supports implied wildcards, so you can use `globalsecureaccess.microsoft.com`.
-
+1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list: `*.globalsecureaccess.microsoft.com`
+    > [!NOTE]
+    > Cisco Umbrella supports implied wildcards, so you can use `globalsecureaccess.microsoft.com`.
 2. Add these Microsoft 365 FQDNs (only required if Microsoft traffic forwarding profile is enabled):
     `auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net`
-
 3. Add the Quick Access FQDN (only required if you use Private Access with Quick Access). `<quickaccessapplicationid>.globalsecureaccess.local`   
-  
-  > [!NOTE]
-  > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
-
+    > [!NOTE]
+    > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
 4. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
-
-5. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
-  `*.globalsecureaccess.microsoft.com, 150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16`
-
+5. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN: `*.globalsecureaccess.microsoft.com, 150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16`
 6. Add these Microsoft 365 IP addresses (only required if Microsoft traffic forwarding profile is enabled):
   `132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19`
-
 7. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 ---
@@ -158,16 +134,16 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 1. Deploy and configure Cisco Secure Client with Umbrella module.
 
 **Validation**
-  1. Ensure both clients are enabled and the Umbrella profile is `Active`.
-  1. To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
-  1. Test traffic flow by accessing various sites and validating traffic logs in both platforms.
-      1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
-      2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
-      3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
-      4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
-      5. Access private applications via Global Secure Access (for example, SMB file share).
-      6. Validate the SMB file share traffic is captured in Global Secure Access logs and isn't shown in Cisco logs.
-      7. Stop collecting traffic and confirm correct traffic handling.
+1. Ensure both clients are enabled and the Umbrella profile is `Active`.
+1. To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+1. Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+    1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
+    2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
+    3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
+    4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
+    5. Access private applications via Global Secure Access (for example, SMB file share).
+    6. Validate the SMB file share traffic is captured in Global Secure Access logs and isn't shown in Cisco logs.
+    7. Stop collecting traffic and confirm correct traffic handling.
 
 ### 2. Microsoft Entra Private Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
@@ -198,7 +174,6 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
     8. Validate the RDP traffic is captured in Cisco logs and isn't shown in Global Secure Access logs.
     9. Stop collecting traffic and confirm correct traffic handling.
  
-
 ### 3. Microsoft Entra Microsoft Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
 **Global Secure Access configuration**
