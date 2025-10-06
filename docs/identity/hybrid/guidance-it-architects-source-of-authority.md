@@ -160,7 +160,7 @@ In an app-centric approach, it's best to migrate security groups and app access 
 #### Recommended Solution: Microsoft Entra Domain Services
 
 The recommended solution for supporting LDAP-bound apps in the cloud is Microsoft Entra Domain Services. Hosted on Azure, Microsoft Entra Domain Services provides LDAP, Kerberos, and NTLM endpoints, syncing user accounts, and credentials from your Microsoft Entra ID tenant. This allows legacy applications to use cloud-hosted AD for authentication without switching
-to modern protocols. The managed domain mainly supports read and authentication for LDAP clients. For more information, see: [What is Microsoft Entra Domain Services?](../../identity/domain-services/overview.md).
+to modern protocols. The managed domain mainly supports read and authentication for LDAP clients. For more information, see: [What is Microsoft Entra Domain Services?](../../identity/domain-services/overview.md)
 
 ### Step 8. Handling Kerberos-Based Applications (Windows Integrated Auth)
 
