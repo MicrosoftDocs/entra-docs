@@ -118,9 +118,7 @@ Follow these steps to transfer the SOA for a test user:
 
    :::image type="content" source="media/how-to-user-source-of-authority-configure/try-update.png" alt-text="Screenshot of an attempt to update a user to verify it's read-only.":::
  
-1. Search the Microsoft Entra admin center for the user. Verify that all user fields are greyed out, and that source is Windows Server AD DS:  
-
-   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced user properties.":::
+1. Search the Microsoft Entra admin center for the user. Verify that all user fields are greyed out, and that source is Windows Server AD DS.
 
 1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the user object you want to transfer to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
@@ -142,8 +140,6 @@ Follow these steps to transfer the SOA for a test user:
    :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a user.":::
 
 1. Confirm the change in the Audit Logs. To access Audit Logs in the Azure portal, open **Manage Microsoft Entra ID** > **Monitoring** > **Audit Logs**, or search for *audit logs*. Select **Change Source of Authority from AD to cloud** as the activity.
-
-   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/audit.png" alt-text="Screenshot of change to user properties in Audit Logs.":::
 
 1. Check that the user can be updated in the cloud.
 

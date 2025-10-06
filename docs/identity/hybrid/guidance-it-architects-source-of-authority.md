@@ -14,7 +14,7 @@ ms.subservice: hybrid
 
 ---
 
-# Cloud-First Identity management: Guidance for IT architects
+# Cloud-First identity management: Guidance for IT architects
 
 Modern enterprises are under increasing pressure to improve security by modernizing identity management and streamlining operations. This document provides a strategic and technical framework for IT architects to shift user and group management from on-premises Active Directory (AD) to Microsoft Entra ID using Source of Authority (SOA) conversion. A legacy AD environment can be complex, costly to maintain, and if not kept up to date, increasingly vulnerable to modern threats. Microsoft's goal is to provide options to secure hybrid customers by allowing them to establish Microsoft Entra ID for identity management. Transferring SOA enables a phased, low-risk migration path—avoiding the disruption of a “big bang” cutover.
 
