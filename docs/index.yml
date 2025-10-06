@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: shlipsey3
   ms.author: sarahlipsey
-  ms.date: 08/25/2025
+  ms.date: 10/02/2025
 
 ## BAND 1 - HIGHLIGHTED CONTENT ##############################################
 highlightedContent:
@@ -65,6 +65,10 @@ productDirectory:
       imageSrc: ./media/index/workload-id-color.png
       summary: "Secure identities for apps and services and their access to cloud resources."
       url: /entra/workload-id/
+    - title: Security Copilot + Microsoft Entra
+      imageSrc: ./media/index/copilot-color.png
+      summary: "Use the power of Security Copilot for identity and network security."
+      url: /entra/security-copilot/security-copilot-in-entra
 
 conceptualContent:
   title: Learn more
@@ -82,8 +86,8 @@ conceptualContent:
         - text: Configure security recommendations
           url: /entra/fundamentals/configure-security
           itemType: reference
-        - text: Security Copilot in Microsoft Entra
-          url: /entra/fundamentals/copilot-security-entra
+        - text: Zero Trust guidance center
+          url: /security/zero-trust
           itemType: concept
     ## CARD 2 ######################
     - title: Architecture

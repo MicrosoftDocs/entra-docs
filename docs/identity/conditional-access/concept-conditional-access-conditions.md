@@ -1,11 +1,11 @@
 ---
-title: Conditions in Conditional Access policy
-description: What are conditions in a Microsoft Entra Conditional Access policy?
+title: How to Use Conditions in Conditional Access Policies
+description: Explore Conditional Access conditions, including user risk, sign-in risk, and insider risk, to secure your organization's resources with tailored policies.
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: article
-ms.date: 03/12/2025
+ms.topic: concept-article
+ms.date: 09/22/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,45 +14,45 @@ ms.reviewer: lhuangnorth, sandeo
 ---
 # Conditional Access: Conditions
 
-Within a Conditional Access policy, an administrator can use one or more signals to enhance their policy decisions.
+In a Conditional Access policy, admins use one or more signals to improve policy decisions.
 
 :::image type="content" source="media/concept-conditional-access-conditions/conditional-access-conditions.png" alt-text="Screenshot of available conditions for a Conditional Access policy in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-conditions/conditional-access-conditions.png":::
 
-Multiple conditions can be combined to create fine-grained and specific Conditional Access policies.
+Admins combine multiple conditions to create specific, fine-grained Conditional Access policies.
 
-When users access a sensitive application, an administrator might factor multiple conditions into their access decisions, such as: 
+When users access a sensitive application, admins might consider multiple conditions in their access decisions, such as:
 
-- Sign-in risk information from ID Protection
+- Sign-in risk information from Microsoft Entra ID Protection
 - Network location
 - Device information
 
 ## User risk 
 
-Administrators with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate user risk as part of a Conditional Access policy. User risk represents the probability that a given identity or account is compromised. More information about user risk is found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Admins with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate user risk as part of a Conditional Access policy. User risk shows the likelihood that an identity or account is compromised. Learn more about user risk in [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How to configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## Sign-in risk
 
-Administrators with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk represents the probability that a given authentication request wasn't made by the identity owner. More information about sign-in risk is found in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How To: Configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+Admins with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate sign-in risk as part of a Conditional Access policy. Sign-in risk shows the probability that an authentication request isn't made by the identity owner. Learn more about sign-in risk in the articles [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How to configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## Insider risk
 
-Administrators with access to [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) can incorporate risk signals from Microsoft Purview into Conditional Access policy decisions. Insider risk takes into account your data governance, data security, and risk and compliance configurations from Microsoft Purview. These signals are based on contextual factors like:
+Admins with access to [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) can incorporate risk signals from Microsoft Purview into Conditional Access policy decisions. Insider risk takes into account your data governance, data security, and risk and compliance configurations from Microsoft Purview. These signals are based on contextual factors such as:
 
 - User behavior
 - Historical patterns
 - Anomaly detections
 
-This condition lets administrators use Conditional Access policies to take actions like blocking access, requiring stronger authentication methods, or requiring terms of use acceptance.
+This condition lets admins use Conditional Access policies to take actions such as blocking access, requiring stronger authentication methods, or requiring terms of use acceptance.
 
-This functionality involves incorporating parameters that specifically address potential risks arising from within an organization. By configuring Conditional Access to consider Insider Risk, administrators can tailor access permissions based on contextual factors such as user behavior, historical patterns, and anomaly detection.
+This functionality incorporates parameters that specifically address potential risks arising from within an organization. Configuring Conditional Access to consider insider risk lets admins tailor access permissions based on contextual factors such as user behavior, historical patterns, and anomaly detection.
 
-For more information, see the article [Configure and enable an insider risk based policy](policy-risk-based-insider-block.md).
+For more information, see [configure and enable an insider risk-based policy](policy-risk-based-insider-block.md).
 
 ## Device platforms
 
-Conditional Access identifies the device platform by using information provided by the device, such as user agent strings. Since user agent strings can be modified, this information is unverified. Use of device platform should be pared with Microsoft Intune device compliance policies or as part of a block statement. The default is to apply to all device platforms.
+Conditional Access identifies the device platform using information provided by the device, such as user agent strings. Because user agent strings can be modified, this information isn't verified. Use device platform with Microsoft Intune device compliance policies or as part of a block statement. By default, it applies to all device platforms.
 
-Conditional Access supports the following device platforms:
+Conditional Access supports these device platforms:
 
 - Android
 - iOS
@@ -62,14 +62,14 @@ Conditional Access supports the following device platforms:
 
 If you block legacy authentication using the **Other clients** condition, you can also set the device platform condition.
 
-Selecting macOS or Linux device platforms isn't supported when selecting **Require approved client app** or **Require app protection policy** as the only grant controls or when you choose **Require all the selected controls**.
+Selecting macOS or Linux device platforms isn't supported when you select **Require approved client app** or **Require app protection policy** as the only grant controls, or when you select **Require all the selected controls**.
 
 > [!IMPORTANT]
-> Microsoft recommends having a Conditional Access policy for unsupported device platforms. For example, to block access to your corporate resources from **Chrome OS** or any other unsupported clients, configure a policy with a Device platforms condition that includes any device and excludes supported device platforms and Grant control set to Block access.
+> Microsoft recommends creating a Conditional Access policy for unsupported device platforms. For example, to block access to corporate resources from **Chrome OS** or other unsupported clients, configure a policy with a Device platforms condition that includes any device, excludes supported device platforms, and sets Grant control to Block access.
 
 ## Locations
 
-[The locations condition moved.](concept-assignment-network.md)
+[The locations condition has moved.](concept-assignment-network.md)
 
 ## Client apps
 
@@ -79,26 +79,26 @@ By default, all newly created Conditional Access policies apply to all client ap
 > The behavior of the client apps condition was updated in August 2020. If you have existing Conditional Access policies, they remain unchanged. However, if you select an existing policy, the **Configure** toggle is removed and the client apps the policy applies to are selected.
 
 > [!IMPORTANT]
-> Sign-ins from legacy authentication clients don’t support multifactor authentication (MFA) and don’t pass device state information, so they're blocked by Conditional Access grant controls, like requiring MFA or compliant devices. If you have accounts which must use legacy authentication, you must either exclude those accounts from the policy, or configure the policy to only apply to modern authentication clients.
+> Sign-ins from legacy authentication clients don’t support multifactor authentication (MFA) and don’t pass device state information, so they're blocked by Conditional Access grant controls, like requiring MFA or compliant devices. If you have accounts that must use legacy authentication, you must either exclude those accounts from the policy, or configure the policy to only apply to modern authentication clients.
 
 The **Configure** toggle when set to **Yes** applies to checked items, when set to **No** it applies to all client apps, including modern and legacy authentication clients. This toggle doesn’t appear in policies created before August 2020.
 
 - Modern authentication clients
    - Browser
-      - These include web-based applications that use protocols like SAML, WS-Federation, OpenID Connect, or services registered as an OAuth confidential client.
+      - These clients include web-based applications that use protocols like SAML, WS-Federation, OpenID Connect, or services registered as an OAuth confidential client.
    - Mobile apps and desktop clients
       -  This option includes applications like the Office desktop and phone applications.
 - Legacy authentication clients
    - Exchange ActiveSync clients
       - This selection includes all use of the Exchange ActiveSync (EAS) protocol.
 When policy blocks the use of Exchange ActiveSync, the affected user receives a single quarantine email. This email provides information on why they’re blocked and includes remediation instructions if able.
-      - Administrators can apply policy only to supported platforms (such as iOS, Android, and Windows) through the Conditional Access Microsoft Graph API.
+      - Admins can apply policy only to supported platforms (such as iOS, Android, and Windows) through the Conditional Access Microsoft Graph API.
    - Other clients
       - This option includes clients that use basic/legacy authentication protocols that don’t support modern authentication.
          - SMTP - Used by POP and IMAP client's to send email messages.
          - Autodiscover - Used by Outlook and EAS clients to find and connect to mailboxes in Exchange Online.
          - Exchange Online PowerShell - Used to connect to Exchange Online with remote PowerShell. If you block Basic authentication for Exchange Online PowerShell, you need to use the Exchange Online PowerShell Module to connect. For instructions, see [Connect to Exchange Online PowerShell using multifactor authentication](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).
-         - Exchange Web Services (EWS) - A programming interface used by Outlook, Outlook for Mac, and third-party apps.
+         - Exchange Web Services (EWS) - A programming interface used by Outlook, Outlook for Mac, and non-Microsoft apps.
          - IMAP4 - Used by IMAP email clients.
          - MAPI over HTTP (MAPI/HTTP) - Used by Outlook 2010 and later.
          - Offline Address Book (OAB) - A copy of address list collections that are downloaded and used by Outlook.
@@ -182,7 +182,7 @@ For MDM based deployments of Google Chrome and extension management, refer to [S
 
 ### Supported mobile applications and desktop clients
 
-Administrators can select **Mobile apps and desktop clients** as client app.
+Admins can select **Mobile apps and desktop clients** as client app.
 
 This setting has an effect on access attempts made from the following mobile apps and desktop clients:
 
@@ -208,9 +208,9 @@ This setting has an effect on access attempts made from the following mobile app
 
 ### Exchange ActiveSync clients
 
-- Administrators can only select Exchange ActiveSync clients when assigning policy to users or groups. Selecting **All users**, **All guest and external users**, or **Directory roles** causes all users to be subject of the policy.
-- When administrators create a policy assigned to Exchange ActiveSync clients, **Exchange Online** should be the only cloud application assigned to the policy. 
-- Administrators can narrow the scope of this policy to specific platforms using the **Device platforms** condition.
+- Admins can only select Exchange ActiveSync clients when assigning policy to users or groups. Selecting **All users**, **All guest and external users**, or **Directory roles** causes all users to be subject of the policy.
+- When admins create a policy assigned to Exchange ActiveSync clients, **Exchange Online** should be the only cloud application assigned to the policy. 
+- Admins can narrow the scope of this policy to specific platforms using the **Device platforms** condition.
 
 If the access control assigned to the policy uses **Require approved client app**, the user is directed to install and use the Outlook mobile client. In the case that **Multifactor authentication**, **Terms of use**, or **custom controls** are required, affected users are blocked, because basic authentication doesn’t support these controls.
 
@@ -225,18 +225,18 @@ By selecting **Other clients**, you can specify a condition that affects apps th
 
 ## Device state (deprecated)
 
-**This condition was deprecated.** Customers should use the **Filter for devices** condition in the Conditional Access policy, to satisfy scenarios previously achieved using the device state condition.
+**This condition is deprecated.** Customers should use the **Filter for devices** condition in the Conditional Access policy to satisfy scenarios previously achieved using the device state condition.
 
 > [!IMPORTANT]
-> Device state and filters for devices can't be used together in Conditional Access policy. Filters for devices provide more granular targeting including support for targeting device state information through the `trustType` and `isCompliant` property.
+> Device state and filters for devices can't be used together in Conditional Access policy. Filters for devices provide more granular targeting, including support for targeting device state information through the `trustType` and `isCompliant` property.
 
 ## Filter for devices
 
-When administrators configure filter for devices as a condition, they can include or exclude devices based on a filter using a rule expression on device properties. The rule expression for filter for devices can be authored using rule builder or rule syntax. This experience is similar to the one used for rules for dynamic membership groups. For more information, see the article [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
+When admins configure filter for devices as a condition, they can include or exclude devices based on a filter using a rule expression on device properties. You can author the rule expression for filter for devices using the rule builder or rule syntax. This process is similar to the one used for rules for dynamic membership groups. For more information, see [Conditional Access: Filter for devices](concept-condition-filters-for-devices.md).
 
 ## Authentication flows (preview)
 
-Authentication flows control how your organization uses certain authentication and authorization protocols and grants. These flows might provide a seamless experience to devices that might lack local input devices like shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
+Authentication flows control how your organization uses certain authentication and authorization protocols and grants. These flows can provide a seamless experience for devices that lack local input, such as shared devices or digital signage. Use this control to configure transfer methods like [device code flow or authentication transfer](concept-authentication-flows.md).
 
 ## Next steps
 

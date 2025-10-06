@@ -54,7 +54,7 @@ When administrators select an individual user, the Risky user details pane appea
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png" alt-text="Screenshot showing the Risky User Details flyout with samples of Risk history." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details.png":::
 
-If you have Copilot for Security, you have access to a [summary in natural language](../fundamentals/copilot-entra-risky-user-summarization.md) including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. 
+If you have Copilot for Security, you have access to a [summary in natural language](../security-copilot/entra-risky-user-summarization.md) including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation. 
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png" alt-text="Screenshot showing the summary of risk provided by Copilot in the Risky User Details flyout." lightbox="media/howto-identity-protection-investigate-risk/risky-users-report-risky-user-details-copilot-summary.png":::
 
@@ -143,8 +143,8 @@ Once the risk is contained, more investigation might be required to mark the ris
       1. IP address
       1. User agent string
    1. If you have access to other security tools like [Microsoft Sentinel](/azure/sentinel/overview), check for corresponding alerts that might indicate a larger issue.
-   1. Organizations with access to [Microsoft 365 Defender](/defender-for-identity/understanding-security-alerts) can follow a user risk event through other related alerts, incidents, and the MITRE ATT&CK chain.
-      1. To navigate from the Risky users report, select the user in the Risky users report and select the ellipsis (...) in the toolbar then choose Investigate with Microsoft 365 Defender.
+   1. Organizations with access to [Microsoft Defender XDR](/defender-for-identity/understanding-security-alerts) can follow a user risk event through other related alerts, incidents, and the MITRE ATT&CK chain.
+      1. To navigate from the Risky users report, select the user in the Risky users report and select the ellipsis (...) in the toolbar then choose Investigate with Microsoft Defender XDR.
 1. Reach out to the user to confirm if they recognize the sign-in; however, consider methods such as email or Teams might be compromised.
    1. Confirm the information you have such as:
       1. Timestamp
