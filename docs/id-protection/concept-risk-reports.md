@@ -5,7 +5,7 @@ description: Learn how to access, filter, and use the Microsoft Entra ID Protect
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 09/29/2025
+ms.date: 10/06/2025
 
 author: shlipsey3
 ms.author: sarahlipsey

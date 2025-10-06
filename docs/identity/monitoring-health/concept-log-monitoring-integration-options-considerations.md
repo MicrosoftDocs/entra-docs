@@ -26,8 +26,8 @@ The following logs can be integrated with one of many endpoints:
 * The [**audit logs**](concept-audit-logs.md) gives you access to the history of every task performed in your tenant.
 * With the [**sign-in logs**](concept-sign-ins.md), you can see when users attempt to sign in to your applications or troubleshoot sign-in errors.
 * With the [**provisioning logs**](../../identity/app-provisioning/application-provisioning-log-analytics.md), you can monitor which users were, updated, and deleted in all your non-Microsoft applications.
-* The [**risky users report**](../../id-protection/howto-use-risk-reports.md#risky-users) helps you monitor changes in user risk level and remediation activity.
-* With the [**risk detections report**](../../id-protection/howto-use-risk-reports.md#risk-detections), you can monitor user's risk detections and analyze trends in risk activity detected in your organization.
+* The [**risky users report**](../../id-protection/concept-risk-reports.md#risky-users) helps you monitor changes in user risk level and remediation activity.
+* With the [**risk detections report**](../../id-protection/concept-risk-reports.md#risk-detections), you can monitor user's risk detections and analyze trends in risk activity detected in your organization.
 
 ## Integration options
 

@@ -3,7 +3,7 @@ title: Investigate risk with Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 10/02/2025
+ms.date: 10/06/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pwongera
@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 ---
 # How to investigate risk
 
-Microsoft Entra ID Protection provides several reports that can be used to investigate identity risks in your environment. These reports include risky users, risky sign-ins, risky workload identities, and risk detections. Investigation of events is key to better understanding and identifying any weak points in your security strategy. ID Protection reports can be archived for storage or integrated with security event and incident management (SEIM) tools for further analysis. Organizations can also take advantage of Microsoft Defender and Microsoft Graph API integrations to aggregate data with other sources.
+Microsoft Entra ID Protection provides several [risk reports](concept-risk-reports.md) that can be used to investigate identity risks in your environment. Investigation of events is key to better understanding and identifying any weak points in your security strategy. ID Protection reports can be archived for storage or integrated with Security Information and Event Management (SIEM) tools for further analysis. Organizations can also take advantage of Microsoft Defender, Microsoft Sentinel, and Microsoft Graph API integrations to aggregate data with other sources.
 
 There are many ways to investigate risk in your environment and even more details to consider during your investigation. This article provides a framework to help you get started and outlines some of the most common scenarios and recommended actions.
 
@@ -28,7 +28,7 @@ When starting the initial triage, we recommend the following actions:
 
 1. Review the [ID Protection dashboard](id-protection-dashboard.md) to visualize number of attacks, number of high risk users, and other important metrics based on detections in your environment.
 
-1. Review the [risk reports](howto-use-risk-reports.md) to examine the details of any recent risky users, sign-ins, or detections.
+1. Review the [risk reports](concept-risk-reports.md) to examine the details of any recent risky users, sign-ins, or detections.
 
 1. Review the [Impact analysis workbook](workbook-risk-based-policy-impact.md) to understand the scenarios where risk is evident in your environment and what risk-based access policies should be enabled to manage high-risk users and sign-ins.
 
@@ -37,7 +37,7 @@ When starting the initial triage, we recommend the following actions:
    1. Review which resources might be compromised, including potential data downloads or administrative modifications.
    1. Enable [self-remediation policies through Conditional Access](howto-identity-protection-configure-risk-policies.md).
 
-1. Check to see if the user performed other risky activities, such as downloading a large volume of files from a new location. This behavior is a strong indication of a possible compromise.
+1. With [Insider Risk Management through Microsoft Purview](/insider-risk-management-solution-overview), you can check to see if the user performed other risky activities, such as downloading a large volume of files from a new location. This behavior is a strong indication of a possible compromise.
 
 If you suspect an attacker can impersonate the user, you should require the user to reset their password and perform MFA or block the user and revoke all refresh and access tokens.
 
