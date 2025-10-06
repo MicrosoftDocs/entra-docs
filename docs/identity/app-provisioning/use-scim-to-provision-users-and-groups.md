@@ -704,6 +704,24 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     "members": []
 }
 ```
+##### Validations performed by SCIM Validator
+
+**Create New Group**
+
+- POST /Groups – Creates a new group with a complete JSON payload.
+    - Endpoint returns HTTP 201
+    - POST response contains created group ID
+- GET /Group?filter={joiningProperty} eq "value" – Verifies creation by filtering on the joining property.
+    - GET returns created group
+    - Returned values from GET match the passed values from the POST request (varies based on endpoint)
+- DELETE /Groups - Cleans Up Test User.	
+    - Only called if hard delete is supported
+
+**Create Duplicate Group**	
+- POST /Groups – Attempts to create a group using an identical payload (with the same unique/joining attribute) to an existing group.
+    - Return HTTP 201 on first create request
+    - Return HTTP 409 on second create request
+
 
 #### Get Group
 
@@ -781,6 +799,18 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 
 *HTTP/1.1 204 No Content*
 
+##### Validations performed by SCIM Validator
+
+**Update Group Attributes**
+- POST /Groups - Creates a new group resource to update attributes on
+    - POST Returns HTTP 2xx
+- PATCH /Groups/{id} – Sends a JSON Patch document using the replace operation to update one or more attributes of an existing group (excluding members).
+    - PATCH returns success (HTTP 2xx)
+- GET /Groups?filter={joiningProperty} eq "value" – Confirms that the group’s attributes have been updated correctly.
+    - GET returns patched group
+    - Attributes on returned group match changed attributes on PATCH request
+
+
 ### Update Group [Add Members]
 
 ##### <a name="request-11"></a>Request
@@ -804,6 +834,17 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 ##### <a name="response-11"></a>Response
 
 *HTTP/1.1 204 No Content*
+
+##### Validations performed by SCIM Validator
+
+**Create a New Group Resource**
+- POST /Groups - Creates a new group resource to add member to
+    - POST Returns HTTP 2xx
+- POST /Users – Creates a new user resource to be used as a group member.
+    - POST Returns HTTP 2xx
+- PATCH /Groups/{id} – Adds the newly created user’s identifier to the group using a JSON Patch document.
+    - PATCH Returns success
+
 
 #### Update Group [Remove Members]
 

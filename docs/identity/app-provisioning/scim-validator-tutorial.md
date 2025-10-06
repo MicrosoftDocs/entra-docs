@@ -113,7 +113,6 @@ Finally, you need to test and validate your endpoint.
 - GET /Users?filter={joiningProperty} eq "newValue" – Confirms the joining property has been updated.	
     - Joining property is updated on user
 
-
 **Update Active Attribute to False**
 - POST /Users/ - Creates a resource based on the schema
     - HTTP 2xx success
@@ -124,7 +123,6 @@ Finally, you need to test and validate your endpoint.
     - Returned user record should have ACTIVE=FALSE"
 
 **Create New Group**
-
 - POST /Groups – Creates a new group with a complete JSON payload.
     - Endpoint returns HTTP 201
     - POST response contains created group ID
