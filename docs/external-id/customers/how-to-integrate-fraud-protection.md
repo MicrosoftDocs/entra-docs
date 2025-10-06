@@ -60,7 +60,7 @@ To integrate Arkose Labs with Microsoft Entra External ID, you can use the Servi
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/policy-setup.png" alt-text="Screenshot showing setting up a protection policy.":::
 
-1. In the **Chose a fraud protection provider for sign-up** step, select **Arkose Labs** as the provider and select **Next**.
+1. In the **Choose a fraud protection provider for sign-up** step, select **Arkose Labs** as the provider and select **Next**.
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/choose-fraud-protection-provider.png" alt-text="Screenshot showing selecting the Arkose Labs fraud protection provider.":::
 
@@ -89,7 +89,7 @@ Once the policy is created, it's applied to the selected applications. When a us
 ## Edit the Arkose Labs configuration in the Microsoft Entra admin center  
 
 1. Browse to **Home** > **Service Integrations** > **Sign-up protection (Preview)** to view the list of configurations.
-1. Select either the **Edit provider configurations** option or the pencil icon next to the policy you want to edit.
+1. Select the **Edit provider configurations** option to edit the Arkose Labs policy. If you want to edit the fraud protection policy, select the pencil icon.
 1. In the **Configure Arkose Labs for sign-up protection** step, select the configuration you want to edit and select **Next**.
 1. Select the app you want to protect with Arkose Labs fraud protection or remove the existing ones. You can select one or more applications that you have registered in your external tenant. Once you selected the app, select **Next**.
 1. Select **Done** to finish the wizard.
@@ -127,11 +127,11 @@ To register Arkose Labs as a fraud protection provider, you [create a fraudProte
     ```json
     {
         "@odata.type": "#microsoft.graph.arkoseFraudProtectionProvider",
-        "displayName": "Arkose Config 1",
-        "publicKey": "<your-public-key>",
-        "privateKey": "<your-private-key>",
-        "clientSubDomain": "client-api",
-        "verifySubDomain": "verify-api"
+        "displayName": "<your-arkose-configuration-name>",
+        "publicKey": "<your-arkose-public-key>",
+        "privateKey": "<your-arkose-private-key>",
+        "clientSubDomain": "<your-client-api>",
+        "verifySubDomain": "<your-verify-api>"
     }
     ```
 
@@ -220,7 +220,7 @@ To integrate HUMAN Security with Microsoft Entra External ID, you can use the Se
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/policy-setup-human.png" alt-text="Screenshot showing setting up a protection policy.":::
 
-1. In the **Chose a fraud protection provider for sign-up** step, select **HUMAN Security** as the provider and select **Next**.
+1. In the **Choose a fraud protection provider for sign-up** step, select **HUMAN Security** as the provider and select **Next**.
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/choose-fraud-protection-provider-human.png" alt-text="Screenshot showing selecting the HUMAN Security fraud protection provider.":::
 
@@ -241,7 +241,7 @@ Once the policy is created, it's applied to the selected applications. When a us
 ## Edit the HUMAN Security configuration in the Microsoft Entra admin center  
 
 1. Browse to **Home** > **Service Integrations** > **Sign-up protection (Preview)** to view the list of configurations.
-1. Select either the **Edit provider configurations** option or the pencil icon next to the policy you want to edit.
+1. Select the **Edit provider configurations** option to edit the HUMAN Security policy. If you want to edit the fraud protection policy, select the pencil icon.
 1. In the **Configure HUMAN Security for sign-up protection** step, select the configuration you want to edit and select **Next**.
 1. Select the app you want to protect with HUMAN Security fraud protection or remove the existing ones. You can select one or more applications that you have registered in your external tenant. Once you selected the app, select **Next**.
 1. Select **Done** to finish the wizard.
@@ -279,9 +279,9 @@ To register HUMAN Security as a fraud protection provider, you [create a fraudPr
     ```json
     {
         "@odata.type": "#microsoft.graph.HUMANFraudProtectionProvider",
-        "displayName": "HUMAN Config 1",
-        "appId": "<HUMAN appId>",  
-		    "serverToken": "<human server token>",
+        "displayName": "<your-human-configuration-name>",
+        "appId": "<your-human-appid>",  
+        "serverToken": "<your-human-server-token>",
     }
     ```
 
