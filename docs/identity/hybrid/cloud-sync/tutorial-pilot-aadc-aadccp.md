@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 04/09/2025
+ms.date: 09/29/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: sfi-image-nochange
@@ -54,7 +54,7 @@ The following are prerequisites required for completing this tutorial
 
 - A test environment with Microsoft Entra Connect Sync version 1.4.32.0 or later
 - An OU or group that is in scope of sync and can be used during the pilot. We recommend starting with a small set of objects.
-- A server running Windows Server 2016 or later that will host the provisioning agent.
+- A server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016 to host the provisioning agent.
 - Source anchor for Microsoft Entra Connect Sync should be either *objectGuid* or *ms-ds-consistencyGUID*
 
 

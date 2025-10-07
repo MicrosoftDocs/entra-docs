@@ -2,8 +2,8 @@
 title: Client credentials for web apps and web APIs calling downstream APIs
 description: Include file with a common configuration in web apps and web APIs calling downstream web APIs (ASP.NET Core and ASP.NET OWIN).
 
-author: jmprieur
-manager: CelesteDG
+author: OwenRichards1
+manager: pmwongera
 
 ms.service: identity-platform
 

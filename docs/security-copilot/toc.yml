@@ -1,0 +1,74 @@
+items:
+- name: Security Copilot in Microsoft Entra 
+  href: index.yml
+- name: Overview
+  expanded: true
+  items:
+  - name: What is Microsoft Security Copilot?
+    href: /copilot/security/microsoft-security-copilot?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+  - name: Security Copilot in Microsoft Entra
+    href: security-copilot-in-entra.md
+- name: Microsoft Entra scenarios
+  items:
+  - name: Overview
+    href: entra-security-scenarios.md
+  - name: Microsoft Entra ID scenarios
+    items:
+    - name: Scenario overviews
+      href: entra-id-scenarios.md
+    - name: Enterprise user management
+      href: entra-enterprise-user-management.md
+    - name: Security and access control
+      href: entra-security-access-control.md
+    - name: Understand monitoring and operations
+      href: entra-monitoring-operations.md
+  - name: Microsoft Entra ID Protection scenarios
+    items:
+    - name: Scenario overviews
+      href: entra-id-protection-scenarios.md
+    - name: Respond to identity threats using Risky User summarization
+      href: entra-risky-user-summarization.md
+    - name: Investigate incidents
+      href: entra-investigate-incident.md
+    - name: Investigate application risk
+      href: entra-investigate-risky-apps.md 
+  - name: Microsoft Entra ID Governance scenarios
+    items:
+    - name: Scenario overviews
+      href: entra-id-governance-scenarios.md
+    - name: Governance and optimization
+      href: entra-governance-optimization.md
+    - name: Manage lifecycle workflows
+      href: entra-lifecycle-workflows.md
+  - name: Microsoft Entra Internet Access and Private Access scenarios
+    items:
+    - name: Scenario overviews
+      href: entra-internet-access-private-access-scenarios.md
+- name: Microsoft Entra Agents
+  items:
+  - name: Overview of Microsoft Entra agents
+    href: entra-agents.md
+  - name: Conditional Access optimization agent
+    items: 
+    - name: Get started
+      href: ../identity/conditional-access/agent-optimization.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+    - name: Review and approve suggestions
+      href: ../identity/conditional-access/agent-optimization-review-suggestions.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+    - name: Chat with the optimization agent
+      href: ../identity/conditional-access/agent-optimization-chat.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+    - name: Optimization agent logs and metrics
+      href: ../identity/conditional-access/agent-optimization-logs-metrics.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+    - name: Phased rollout
+      href: ../identity/conditional-access/agent-optimization-phased-rollout.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+  - name: Access Review Assistant (Preview)
+    items: 
+    - name: Get started (Preview)
+      href: /entra/id-governance/access-review-agent?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+    - name: Access Review Agent logs and Metrics (Preview)
+      href: /entra/id-governance/access-review-agent-logs-metrics?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+- name: Responsible AI
+  items:
+  - name: Responsible AI overview
+    href: /copilot/security/responsible-ai-overview-security-copilot?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
+  - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
+    href: /copilot/security/rai-faqs-security-copilot?toc=/entra/security-copilot/toc.json&bc=/entra/security-copilot/breadcrumb/toc.json
