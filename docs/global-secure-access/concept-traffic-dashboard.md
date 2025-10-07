@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/29/2025
+ms.date: 10/07/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -66,7 +66,7 @@ This widget provides the following alerts:
 - **Unhealthy remote network**: An unhealthy remote network has one or more device links disconnected.
 - **Increased external tenants activity**: The number of users accessing external tenants has increased.
 - **Token and device inconsistency**: The original token is used on a different device.
-- **Web content blocked**: Access to the website has been blocked.
+- **Web content blocked**: Access to the website is blocked.
 
 ![Screenshot of the alerts and notifications widget showing two alert types.](media/concept-traffic-dashboard/dashboard-alerts-notifications.png)
 
@@ -136,7 +136,7 @@ Select **View all web categories** to view more details about your network traff
 
 ## Device status
 
-The **Device status** widgets display the active and inactive devices that you have deployed.
+The **Device status** widgets display the active and inactive devices that you deployed.
 
 - **Active devices**: The number of distinct device IDs seen in the last 24 hours and the % change during that time.
 - **Inactive devices**: The number of distinct device IDs that were seen in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
@@ -153,13 +153,20 @@ The **Top used cloud applications** widget shows the most used cloud application
 The **Cloud applications status** widget displays the total number of cloud applications accessed by users and devices. The widget also shows the number of Generative AI applications, and the total number of high-risk applications accessed.
 :::image type="content" source="media/concept-traffic-dashboard/total-cloud-widget.png" alt-text="Screenshot of the Cloud applications status widget showing the total cloud applications, the total Generative AI applications, and the total at-risk applications.":::   
 
+## Network activity by location (preview)
+
+The **Network activity by location** widget is an interactive map that shows connection, transaction, user, device, and remote network activity by location. Admins can visualize and analyze network activity based on the origin of source IP addresses. These geographic insights help with:
+- Security monitoring: Identify traffic from high-risk regions and detect anomalies based on geographic patterns.
+- Operational intelligence: Diagnose ISP-related issues and optimize routing decisions.
+- Compliance support: Meet location-based regulatory requirements, such as regional data protection or data residency policies.
+
+:::image type="content" source="media/concept-traffic-dashboard/network-activity-by-location.png" alt-text="Screenshot of the Network activity by location widget. One location is expanded to show more details." lightbox="media/concept-traffic-dashboard/network-activity-by-location-expanded.png":::
+
 ## No data available
 
 If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
 
 ![Screenshot of a widget with no data available.](media/concept-traffic-dashboard/no-data-available.png)
-
-
 
 ## Next steps
 
