@@ -99,11 +99,10 @@ You can set up a custom OpenID Connect (OIDC) identity provider to allow users t
 
 Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
 
-## Domain hint
+## Issuer acceleration
 
-When you use identity providers (IdPs) such as Facebook, Google, Apple, or custom OpenID Connect (OIDC), your customers typically see the Microsoft sign-in page, where they choose their social IdP. To streamline the sign-in experience, you can use the `domain_hint` parameter to to skip directly to the sign-in page of the specified identity provider.
-
-To modify the sign-in string, append the `domain_hint` parameter to the end of the URL, followed by the domain of the social IdP.
+When you use identity providers (IdPs) such as Facebook, Google, Apple, custom OpenID Connect (OIDC), or SAML, customers typically see the Microsoft sign-in page where they choose their social IdP. To streamline the sign-in experience, use the `domain_hint` parameter to skip directly to the sign-in page of the specified IdP.
+To modify the sign-in URL, append the `domain_hint`  parameter followed by the domain of the social IdP.
 
 ### Examples
 
@@ -122,23 +121,13 @@ Apple
 https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=apple
 ```
 
-### Custom OIDC example
+### Custom OIDC and SAML IdPs
 
-For custom OIDC IdPs, set `domain_hint` to the domain value in the issuer URI. You can find this domain in the **Issuer URI** of your OIDC provider.
+For custom OIDC identity providers, set `domain_hint` parameter to the domain value in the issuer URI. You can find this domain in the **Issuer URI**.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-uri.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
-For example, if your custom OIDC IdP has the issuer URI:
-
-```
-https://contoso.ciamlogin.com/account
-```
-
-Then the modified URL with the domain hint is:
-
-```
-https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=contoso.ciamlogin.com
-```
+For SAML identity providers, set the `domain_hint` parameter to the domain value. To learn more about domain hint syntax for each protocol, see [Domain Hints](/entra/identity/enterprise-apps/home-realm-discovery-policy#domain-hints).
 
 ## Updating sign-in methods
 
