@@ -1,7 +1,6 @@
 ---
 title: Identity providers for external tenants
 description: Learn sign-in and MFA options for customer identity and access management (CIAM), including email, one-time passcodes, social providers, SAML/WS-Fed, and OIDC.
-
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -9,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/07/2025
+ms.date: 10/07/2025
 ms.custom: it-pro, seo-july-2024
 #customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
 ---
@@ -75,7 +74,7 @@ By setting up federation with Facebook, you can allow users to sign in to your a
 
 The following screenshots show the sign-in with Facebook experience. In the sign-in page, users select **Sign-in with Facebook**. Then the user is redirected to the Facebook identity provider to complete the sign-in.
 
-   :::image type="content" source="media/concept-authentication-methods-customers/facebook-sign-in.png" alt-text="Screenshots of Facebook sign-in screens." border="false":::
+   :::image type="content" source=" alt-text="Screenshots of Facebook sign-in screens." border="false":::
 
 Learn how to [add Facebook as an identity provider](how-to-facebook-federation-customers.md).
 
@@ -99,6 +98,28 @@ For more information, see [SAML/WS-Fed identity providers](../direct-federation-
 You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
 
 Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
+
+## Domain hint
+
+If you're using identity providers (IdPs) such as Facebook, Google, Apple, or custom OpenID Connect (OIDC) your customer users typically see a Microsoft sign-in page where they can choose their social IdP. To streamline the user experience, you can use the `&domain_hint=` parameter to take users directly to the login page of their chosen social IdP. This feature works with all three built-in social IdPs, as well as with custom OpenID Connect (OIDC).
+
+To modify the user flow endpoint, manually add the `&domain_hint=` parameter at the end of the URL, followed by the domain of the social identity provider (IdP).
+
+As an example, if you're using Facebook as the IdP, the modified URL would look like this:
+`https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=facebook`
+
+For Google, the modified URL would look like this:
+`https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=google`
+
+For Apple, the modified URL would look like this:
+`https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=apple`
+
+When using custom OIDC, you must add the actual domain in the issuer URI after the equal sign. You can find the domain in the issuer URI of your OIDC IdP.
+
+:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-uri.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
+
+As an example, if your custom OIDC IdP has an issuer URI of `https://contoso.ciamlogin.com/account`, the modified URL would look like this:
+`https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=contoso.ciamlogin.com`
 
 ## Updating sign-in methods
 
