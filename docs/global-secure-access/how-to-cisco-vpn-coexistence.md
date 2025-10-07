@@ -41,7 +41,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 1. Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
 1. Establish connectivity to Cisco Secure Access VPNaaS.
 1. Set up a Cisco remote access VPN profile.
-1. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses.
+1. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses (instructions below).
 
 ### Cisco Secure Access VPNaaS - Global Secure Access setup
 
