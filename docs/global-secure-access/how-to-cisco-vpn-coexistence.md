@@ -146,7 +146,7 @@ To configure Microsoft and Cisco ASA remote access VPN for a unified SASE soluti
 
 1. Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
 2. Establish remote access connectivity to your Cisco ASA.
-3. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses.
+3. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses (instructions below).
 
 ### Cisco ASA Remote Access VPN - Global Secure Access setup
 
