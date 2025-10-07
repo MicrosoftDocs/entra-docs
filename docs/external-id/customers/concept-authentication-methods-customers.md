@@ -101,25 +101,44 @@ Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federat
 
 ## Domain hint
 
-If you're using identity providers (IdPs) such as Facebook, Google, Apple, or custom OpenID Connect (OIDC) your customer users typically see a Microsoft sign-in page where they can choose their social IdP. To streamline the user experience, you can use the `&domain_hint=` parameter to take users directly to the login page of their chosen social IdP. This feature works with all three built-in social IdPs, as well as with custom OpenID Connect (OIDC).
+When you use identity providers (IdPs) such as Facebook, Google, Apple, or a custom OpenID Connect (OIDC) provider, your customers typically see the Microsoft sign-in page, where they choose their social IdP. To streamline the sign-in experience, you can use the `&domain_hint=` parameter to direct users to the sign-in page of their selected IdP. This feature works with all three built-in social IdPs and with custom OIDC IdPs.
 
-To modify the user flow endpoint, manually add the `&domain_hint=` parameter at the end of the URL, followed by the domain of the social identity provider (IdP).
+To modify the user flow endpoint, append the `&domain_hint=` parameter to the end of the URL, followed by the domain of the social IdP.
 
-As an example, if you're using Facebook as the IdP, the modified URL would look like this:
-`https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=facebook`
+### Examples
 
-For Google, the modified URL would look like this:
-`https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=google`
+Facebook
+```
+https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=facebook
+```
 
-For Apple, the modified URL would look like this:
-`https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=apple`
+Google
+```
+https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=google
+```
 
-When using custom OIDC, you must add the actual domain in the issuer URI after the equal sign. You can find the domain in the issuer URI of your OIDC IdP.
+Apple  
+```
+https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=apple
+```
+
+### Custom OIDC example
+
+For custom OIDC IdPs, set `domain_hint` to the domain value in the issuer URI. You can find this domain in the **issuer URI** of your OIDC provider.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-uri.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
-As an example, if your custom OIDC IdP has an issuer URI of `https://contoso.ciamlogin.com/account`, the modified URL would look like this:
-`https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=contoso.ciamlogin.com`
+For example, if your custom OIDC IdP has the issuer URI:
+
+```
+https://contoso.ciamlogin.com/account
+```
+
+Then the modified URL is:
+
+```
+https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=contoso.ciamlogin.com
+```
 
 ## Updating sign-in methods
 
