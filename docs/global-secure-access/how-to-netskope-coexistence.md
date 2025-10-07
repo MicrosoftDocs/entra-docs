@@ -4,6 +4,7 @@ description: Learn how to configure and deploy Microsoft Entra and Netskope Secu
 author: kenwith
 contributors:
 ms.topic: concept-article
+ms.service: global-secure-access
 ms.date: 10/07/2025
 ms.author: kenwith
 ms.reviewer: shkhalid
