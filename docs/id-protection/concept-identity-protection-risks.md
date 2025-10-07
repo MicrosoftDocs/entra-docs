@@ -105,7 +105,7 @@ Anomalous token was historically tuned to incur more noise than other detections
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
+- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#anomalous-token-and-token-issuer-anomaly-detections)
 
 ### Anonymous IP address 
 
@@ -122,7 +122,7 @@ The algorithm ignores obvious "false positives" contributing to the impossible t
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating atypical travel detections.](howto-identity-protection-investigate-risk.md#investigating-atypical-travel-detections)
+- [Tips for investigating atypical travel detections.](howto-identity-protection-investigate-risk.md#atypical-travel-detections)
 
 ### Impossible travel 
 
@@ -139,7 +139,7 @@ This detection indicates sign-in from a malicious IP address. An IP address is c
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating malicious IP address detections.](howto-identity-protection-investigate-risk.md#investigating-malicious-ip-address-detections)
+- [Tips for investigating malicious IP address detections.](howto-identity-protection-investigate-risk.md#malicious-ip-address-detections)
 
 ### Mass access to sensitive files 
 
@@ -173,7 +173,7 @@ A password spray attack is where multiple identities are attacked using common p
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
+- [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#password-spray-detections)
 
 ### Suspicious browser	 
 
@@ -181,7 +181,7 @@ Suspicious browser detection indicates anomalous behavior based on suspicious si
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating suspicious browser detections.](howto-identity-protection-investigate-risk.md#investigating-suspicious-browser-detections)
+- [Tips for investigating suspicious browser detections.](howto-identity-protection-investigate-risk.md#suspicious-browser-detections)
 
 ### Suspicious inbox forwarding 
 
@@ -207,7 +207,7 @@ This risk detection indicates the SAML token issuer for the associated SAML toke
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating token issuer anomaly detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
+- [Tips for investigating token issuer anomaly detections.](howto-identity-protection-investigate-risk.md#anomalous-token-and-token-issuer-anomaly-detections)
 
 ### Unfamiliar sign-in properties 
 
@@ -246,7 +246,7 @@ Anomalous token was historically tuned to incur more noise than other detections
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
+- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#anomalous-token-and-token-issuer-anomaly-detections)
 
 ### Anomalous user activity 
 
@@ -257,7 +257,7 @@ This risk detection baselines normal administrative user behavior in Microsoft E
 
 ### Attacker in the Middle 
 
-Also referred to as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft 365 Defender for Office to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
+Also referred to as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft Defender for Cloud Apps to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
 
 - Calculated offline
 - License requirement:
@@ -270,7 +270,7 @@ This risk detection type indicates that the user's valid credentials leaked. Whe
 
 - Calculated offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
-- [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections)
+- [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#leaked-credentials-detections)
 
 ### Microsoft Entra threat intelligence (user) 
 

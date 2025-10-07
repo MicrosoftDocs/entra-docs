@@ -23,6 +23,8 @@
     href: concept-risk-detection-types.md
   - name: Risk-based access control policies
     href: concept-identity-protection-policies.md
+  - name: Risk reports
+    href: concept-risk-reports.md
   - name: User sign-in experience
     href: concept-identity-protection-user-experience.md
   - name: Securing workload identities
