@@ -101,9 +101,9 @@ Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federat
 
 ## Domain hint
 
-When you use identity providers (IdPs) such as Facebook, Google, Apple, or custom OpenID Connect (OIDC), your customers typically see the Microsoft sign-in page, where they choose their social IdP. To streamline the sign-in experience, you can use the `&domain_hint=` parameter to direct users to the sign-in page of their selected IdP.
+When you use identity providers (IdPs) such as Facebook, Google, Apple, or custom OpenID Connect (OIDC), your customers typically see the Microsoft sign-in page, where they choose their social IdP. To streamline the sign-in experience, you can use the `domain_hint` parameter to to skip directly to the sign-in page of the specified identity provider.
 
-To modify the user flow endpoint, append the `&domain_hint=` parameter to the end of the URL, followed by the domain of the social IdP.
+To modify the sign-in string, append the `domain_hint` parameter to the end of the URL, followed by the domain of the social IdP.
 
 ### Examples
 
@@ -117,14 +117,14 @@ Google
 https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=google
 ```
 
-Apple  
+Apple
 ```
 https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=apple
 ```
 
 ### Custom OIDC example
 
-For custom OIDC IdPs, set `domain_hint` to the domain value in the issuer URI. You can find this domain in the **issuer URI** of your OIDC provider.
+For custom OIDC IdPs, set `domain_hint` to the domain value in the issuer URI. You can find this domain in the **Issuer URI** of your OIDC provider.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-uri.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
@@ -134,7 +134,7 @@ For example, if your custom OIDC IdP has the issuer URI:
 https://contoso.ciamlogin.com/account
 ```
 
-Then the modified URL is:
+Then the modified URL with the domain hint is:
 
 ```
 https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=contoso.ciamlogin.com
