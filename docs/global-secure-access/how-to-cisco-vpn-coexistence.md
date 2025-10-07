@@ -192,7 +192,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 
 ### Cisco ASA Remote Access VPN
 
-#### 1. Internet and Microsoft traffic with Cisco ASA private access
+#### 1. Microsoft Entra Internet Access and Microsoft Access with Cisco ASA Remote Access VPN for private access
 
 **Global Secure Access configuration:**
 1. Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
