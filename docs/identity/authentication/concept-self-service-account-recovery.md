@@ -6,7 +6,7 @@ ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 09/24/2025
 ms.author: justinha
-author: justinha
+author: BullittRacer
 manager: dougeby
 ms.reviewer: timlarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
