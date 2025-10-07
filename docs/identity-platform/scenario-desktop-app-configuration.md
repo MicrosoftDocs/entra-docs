@@ -2,7 +2,7 @@
 title: Configure desktop apps that call web APIs
 description: Learn how to configure the code of a desktop app that calls web APIs
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 04/09/2024
 ms.reviewer: jmprieur

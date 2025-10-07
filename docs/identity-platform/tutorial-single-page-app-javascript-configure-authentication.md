@@ -2,7 +2,7 @@
 title: "Tutorial: Add sign-in and sign-out flows to a JavaScript single-page app (SPA)"
 description: Learn how to add authentication to a JavaScript single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.service: identity-platform
 ms.custom:

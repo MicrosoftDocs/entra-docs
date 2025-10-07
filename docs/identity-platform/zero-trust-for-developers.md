@@ -2,9 +2,9 @@
 title: "Increase application security using Zero Trust principles"
 description: Learn how using Zero Trust principles can help increase the security of your application and its data.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: template-concept
+ms.custom:
 ms.date: 01/06/2023
 ms.reviewer:
 ms.service: identity-platform

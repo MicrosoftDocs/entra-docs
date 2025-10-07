@@ -2236,6 +2236,41 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/copilot-entra-agents.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/fundamentals/copilot-entra-lifecycle-workflow.md",
+      "redirect_url": "/entra/security-copilot/entra-lifecycle-workflows",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/fundamentals/copilot-entra-risky-user-summarization.md",
+      "redirect_url": "/entra/security-copilot/entra-risky-user-summarization",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/fundamentals/copilot-entra-security-scenarios.md",
+      "redirect_url": "/entra/security-copilot/entra-security-scenarios",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/fundamentals/copilot-security-entra-investigate-incident.md",
+      "redirect_url": "/entra/security-copilot/entra-investigate-incident",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/fundamentals/copilot-security-entra-investigate-risky-apps.md",
+      "redirect_url": "/entra/security-copilot/entra-investigate-risky-apps",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/fundamentals/copilot-security-entra.md",
+      "redirect_url": "/entra/security-copilot/security-copilot-in-entra",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-prepare-tenant.md",
       "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app",
       "redirect_document_id": false

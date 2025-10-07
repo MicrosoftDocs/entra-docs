@@ -59,7 +59,6 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 - Azure CLI
 - Azure Data Factory portal
-- Azure DevOps
 - Azure Event Hubs
 - Azure PowerShell
 - Azure Service Bus
@@ -71,10 +70,11 @@ Because the policy is applied to the Azure management portal and API, any servic
 - SQL Managed Instance
 - Visual Studio subscriptions administrator portal
 
+> [!CAUTION]
+> Conditional Access policies associated with the Windows Azure Service Management API [no longer cover Azure DevOps](/azure/devops/organizations/accounts/conditional-access-policies#azure-resource-manager-audience).
+
 > [!NOTE]
 > The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It doesn't apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
-
-For more information on how to set up a sample policy for Windows Azure Service Management API, see [Conditional Access: Require MFA for Azure management](policy-old-require-mfa-azure-mgmt.md).
 
 > [!TIP]
 > For Azure Government, you should target the Azure Government Cloud Management API application.

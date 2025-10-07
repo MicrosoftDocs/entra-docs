@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 04/09/2025
+ms.date: 09/29/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: sfi-image-nochange
@@ -36,10 +36,10 @@ In this tutorial, you learn how to:
 
 To complete the tutorial, you need these items:
 
-- A computer with [Hyper-V](/windows-server/virtualization/hyper-v/hyper-v-technology-overview) installed. We suggest that you install Hyper-V on a [Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os) or [Windows Server 2016](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) computer.
+- A computer with [Hyper-V](/windows-server/virtualization/hyper-v/hyper-v-technology-overview) installed. We suggest that you install Hyper-V on a [Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os) or [Windows Server 2022](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) computer.
 - An Azure subscription. If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 - An [external network adapter](/virtualization/hyper-v-on-windows/quick-start/connect-to-network), so the virtual machine can connect to the internet.
-- A copy of Windows Server 2016.
+- A copy of Windows Server 2022.
 - A [custom domain](~/fundamentals/add-custom-domain.md) that can be verified.
 
 > [!NOTE]

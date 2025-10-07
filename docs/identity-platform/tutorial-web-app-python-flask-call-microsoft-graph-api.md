@@ -2,7 +2,7 @@
 title: "Tutorial: Call Microsoft Graph API from a Python Flask web app"
 description: Call Microsoft Graph API from a Python Flask web app
 author: SHERMANOUKO
-manager: CelesteDG
+manager: pmwongera
 
 ms.author: shermanouko
 ms.date: 02/24/2025

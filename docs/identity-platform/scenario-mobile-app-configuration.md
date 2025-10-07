@@ -2,7 +2,7 @@
 title: Configure mobile apps that call web APIs
 description: Learn how to configure your mobile app's code to call a web API
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.date: 03/19/2025
 ms.reviewer: jmprieur

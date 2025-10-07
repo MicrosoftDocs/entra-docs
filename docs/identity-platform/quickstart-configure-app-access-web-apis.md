@@ -4,7 +4,7 @@ description: In this quickstart, you learn how to configure app registration and
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: mode-api
+ms.custom:
 ms.date: 01/27/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
