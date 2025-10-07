@@ -33,10 +33,11 @@ Follow these best practices to transition group management from on-premises to M
 If you plan to provision a converted SOA security group (not mail-enabled) back to AD DS, then you need to complete these steps to preserve the original organizational unit (OU) path:
 
 1. Change the group scope for the AD DS groups to Universal.
-1. Populate a custom attribute in AD DS.
-1. Enable sync for the custom attribute in the sync client.
-1. Confirm the custom attribute sync in Microsoft Entra ID.
-1. Provision SOA converted groups with the custom attribute.
+1. Create a tenant-scoped directory extension property for groups. 
+1. Map an on-premises value, such as the distinguished name (DN), directly into the extension property. 
+1. Verify the property value using Microsoft Graph. 
+1. Convert the Source of Authority (SOA) when ready. 
+1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
 
 For more information, see [Prepare groups for Group SOA conversion and provisioning](cloud-sync/tutorial-group-provisioning.md#prepare-groups-for-group-soa-conversion-and-provisioning).
 
