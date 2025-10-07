@@ -87,14 +87,14 @@ Follow these steps to enable Microsoft Entra SSO.
         | **Identifier** |
         |------|
         |`https://stores.pagedna.com/<your site>/saml2ep.cgi`|
-        |`https://www.nationsprint.com/<your site>/saml2ep.cgi`|
+        |`https://www.nationsprint.com/clients/<your site>/saml2ep.cgi`|
     
     1. In the **Reply URL (Assertion Consumer Service URL)** box, type a URL by using one of the following patterns:
 
         | **Reply URL** |
         |------|
         |`https://stores.pagedna.com/<your site>/saml2ep.cgi`|
-        |`https://www.nationsprint.com/<your site>/saml2ep.cgi`|
+        |`https://www.nationsprint.com/clients/<your site>/saml2ep.cgi`|
 
     1. In the **Sign on URL** box, type a URL by using one of the following patterns:
 
@@ -103,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
         |`https://stores.pagedna.com/<your site>`|
         |`https://<your domain>`|
         |`https://<your domain>/<your site>` |
-        |`https://www.nationsprint.com/<your site>`|
+        |`https://www.nationsprint.com/clients/<your site>`|
 
     > [!NOTE]
     > These values aren't real. Update these values with the actual Identifier and Sign on URL. To get these values, contact the [PageDNA support team](mailto:success@pagedna.com). You can also refer to the patterns shown in the **Basic SAML Configuration** pane.
