@@ -23,11 +23,11 @@ In today's rapidly evolving digital landscape, organizations require robust, and
 
 This guide outlines how to configure and deploy Microsoft Entra solutions alongside Zscaler's Security Service Edge (SSE) offerings. By using the strengths of both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
 
-1. [**Microsoft Entra Private Access with Zscaler Internet Access**](microsoft-entra-private-access-with-zscaler-internet-access)
+1. [**Microsoft Entra Private Access with Zscaler Internet Access**](#microsoft-entra-private-access-with-zscaler-internet-access)
 
     In this scenario, Global Secure Access handles private application traffic. Zscaler only captures Internet traffic. Therefore, the Zscaler Private Access module is disabled from the Zscaler portal.
 
-2. **Microsoft Entra Private Access with Zscaler Private Access and Zscaler Internet Access**
+2. [**Microsoft Entra Private Access with Zscaler Private Access and Zscaler Internet Access**](#microsoft-entra-private-access-with-zscaler-private-access-and-zscaler-internet-access)
 
     In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access. Private applications in Zscaler use the Zscaler Private Access module. Zscaler Internet Access handles Internet traffic.
 
@@ -135,11 +135,11 @@ Verify configurations for clients:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
 1. Scroll to confirm the Global Secure Access client handled only private application traffic.
 
-## Configuration 2: Microsoft Entra Private Access with Zscaler Private Access and Zscaler Internet Access
+## Microsoft Entra Private Access with Zscaler Private Access and Zscaler Internet Access
 
 In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access. Private applications in Zscaler use the Zscaler Private Access module. Zscaler Internet Access handles Internet traffic.
 
-### Microsoft Entra Private Access configuration 2
+### Microsoft Entra Private Access configuration
 
 For this scenario, you need to:
 - [Enable Microsoft Entra Private Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-private-access-profile.md#enable-the-private-access-traffic-forwarding-profile).
@@ -147,7 +147,7 @@ For this scenario, you need to:
 - Configure [Quick Access and set up Private DNS](how-to-configure-quick-access.md).
 - Install and configure the [Global Secure Access client for Windows](how-to-install-windows-client.md) or [macOS](how-to-install-macos-client.md).
 
-### Zscaler Private Access and Zscaler Internet Access configuration 2
+### Zscaler Private Access and Zscaler Internet Access configuration
 
 Perform the steps in the Zscaler portal:
 - Set up and configure both Zscaler Internet Access and Zscaler Private Access.
