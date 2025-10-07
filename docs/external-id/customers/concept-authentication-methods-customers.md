@@ -74,7 +74,7 @@ By setting up federation with Facebook, you can allow users to sign in to your a
 
 The following screenshots show the sign-in with Facebook experience. In the sign-in page, users select **Sign-in with Facebook**. Then the user is redirected to the Facebook identity provider to complete the sign-in.
 
-   :::image type="content" source=" alt-text="Screenshots of Facebook sign-in screens." border="false":::
+   :::image type="content" source="media/concept-authentication-methods-customers/facebook-sign-in.png" alt-text="Screenshots of Facebook sign-in screens." border="false":::
 
 Learn how to [add Facebook as an identity provider](how-to-facebook-federation-customers.md).
 
