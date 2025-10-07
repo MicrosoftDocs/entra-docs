@@ -158,7 +158,7 @@ The **Cloud applications status** widget displays the total number of cloud appl
 The **Network activity by location** widget is an interactive map that shows connection, transaction, user, device, and remote network activity by location. Admins can visualize and analyze network activity based on the origin of source IP addresses. These geographic insights help with:
 - Security monitoring: Identify traffic from high-risk regions and detect anomalies based on geographic patterns.
 - Operational intelligence: Diagnose ISP-related issues and optimize routing decisions.
-- Compliance support: Meet location-based regulatory requirements, such as GDPR and data residency policies.
+- Compliance support: Meet location-based regulatory requirements, such as regional data protection or data residency policies.
 
 :::image type="content" source="media/concept-traffic-dashboard/network-activity-by-location.png" alt-text="Screenshot of the Network activity by location widget. One location is expanded to show more details." lightbox="media/concept-traffic-dashboard/network-activity-by-location-expanded.png":::
 
@@ -167,8 +167,6 @@ The **Network activity by location** widget is an interactive map that shows con
 If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
 
 ![Screenshot of a widget with no data available.](media/concept-traffic-dashboard/no-data-available.png)
-
-
 
 ## Next steps
 
