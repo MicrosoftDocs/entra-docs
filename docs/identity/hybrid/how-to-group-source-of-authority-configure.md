@@ -67,9 +67,9 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-group-source-of-authority-configure/consent.png":::
 
-## 
+## Prepare groups for Group SOA conversion and provisioning
 
-if you want to provision the group back to AD, ensure you can preserve the OU Path and set it in the Group Provision to AD configuration with the right mapping
+If you want to provision the group back to AD, ensure you can preserve the OU Path and set it in the **Group Provision to AD** configuration with the right mapping.
 
 ## Convert SOA for a test group
 
