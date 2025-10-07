@@ -217,7 +217,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
     7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco logs.
     8. Stop collecting traffic in Global Secure Access client.
 
-#### 2. Internet, Private Access, and Microsoft traffic with Cisco ASA private access
+#### 2. Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco ASA Remote Access VPN for private access
 
 **Global Secure Access configuration:**
 1. Enable Microsoft Entra Internet Access, Private Access, and Microsoft Access forwarding profiles.
