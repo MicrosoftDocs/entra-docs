@@ -107,6 +107,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 1. Enable Microsoft Entra Internet Access, Private Access, and Microsoft Access forwarding profiles.
 1. Install a private network connector for Microsoft Entra Private Access.
 1. Configure Quick Access and set up Private DNS.
+1. Create an app segment, for example an SMB file share. This will be the application you want to access through Global Secure Access and not Cisco VPN.
 1. Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass) to exclude Cisco Secure Access VPNaaS endpoint.
 1. Install and configure the Global Secure Access client for Windows or macOS.
 
