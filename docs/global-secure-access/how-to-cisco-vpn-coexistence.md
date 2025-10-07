@@ -58,7 +58,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
     4. Leave destination type as FQDN and enter the Cisco Secure Access VPN head end service domain, `*.vpn.sse.cisco.com` in Destination.
     5. Select **Save**.
 
-### Cisco Secure Access VPNaaS - setup
+### Cisco Secure Access VPNaaS - Cisco Secure Access setup
 
 #### Split-Include configuration
 
