@@ -103,24 +103,13 @@ Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federat
 
 When you use identity providers (IdPs) such as Facebook, Google, Apple, custom OpenID Connect (OIDC), or SAML, customers typically see the Microsoft sign-in page where they choose their social IdP. To streamline the sign-in experience, use the `domain_hint` parameter in the URL to skip directly to the sign-in page of the specified IdP.
 
-### Examples
+Domain hints are supported for the following social identity providers:
 
-Facebook
-```
-https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=facebook
-```
+- **Facebook**: for example, `&domain_hint=facebook`.  
+- **Google**: for example, `&domain_hint=google`.  
+- **Apple**: for example, `&domain_hint=apple`.  
 
-Google
-```
-https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=google
-```
-
-Apple
-```
-https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444&domain_hint=apple
-```
-
-### Custom OIDC and SAML IdPs
+### Custom OIDC and SAML
 
 For custom OIDC identity providers, set `domain_hint` parameter to the domain value in the issuer URI. You can find this domain in the **Issuer URI**.
 
