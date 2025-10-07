@@ -18,14 +18,14 @@ Continuous Access Evaluation (CAE) is a security feature designed to provide rea
 
 CAE for Application Proxy, extends benefits of CAE to any on-premises applications published through the application proxy, without requiring the application to be CAE aware.
 
-## Benefits of CAE for Application Proxy
+## Benefits of CAE for Application Proxy (preview)
 CAE for Application Proxy responds to critical identity and security events so administrators can limit access promptly. The following are common triggers where enforcement occurs in near real time:
 
 - User termination or password change/reset — user sessions and refresh tokens are revoked in near real time to prevent continued access.
 - Network location change — Conditional Access location policies are re-evaluated and enforced in near real time when a user's network context changes.
 - Token export to a machine outside of a trusted network — Conditional Access location policies can prevent token use or require additional controls to block access from untrusted machines.
 
-## Understand how CAE for Application Proxy works
+## Understand how CAE for Application Proxy (preview) works
 When you enable CAE for Application Proxy, the request and enforcement flow proceeds as follows:
 
 1. User requests access to an on-premises application through Application Proxy.
@@ -48,7 +48,7 @@ Application Proxy receives signals from Microsoft Entra ID in near real time for
 
 When Application Proxy receives any of these signals, it prompts the user to re-authenticate. If re-authentication succeeds, the user regains access to resources published through Application Proxy.
 
-## Disabling CAE for Application Proxy 
+## Disabling CAE for Application Proxy (preview)
 
 ### Disable CAE for specific Application Proxy applications
 
