@@ -59,7 +59,7 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
-  - name: Continuous Access Evaluation for Application Proxy
+  - name: Continuous Access Evaluation for Application Proxy (preview)
     href: concept-continuous-access-evaluation.md
 - name: How-to guides
   expanded: true
