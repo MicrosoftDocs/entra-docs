@@ -1,5 +1,5 @@
 ---
-title: Fraud protection integration
+title: Fraud Protection Integration
 description: Learn how to configure Arkose Labs and Human fraud protection with Microsoft Entra External ID to block bot attacks and fake account creation during user sign-up flows.
 author: csmulligan
 ms.author: cmulligan
@@ -58,7 +58,7 @@ To integrate Arkose Labs with Microsoft Entra External ID, you can use the Servi
 1. Enter a name for the policy, such as *ArkosePolicy*.
 1. Select the scenarios to apply the fraud protection policy to and select **Next**.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/policy-setup.png" alt-text="Screenshot showing setting up a protection policy.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/policy-set-up.png" alt-text="Screenshot showing setting up a protection policy.":::
 
 1. In the **Choose a fraud protection provider for sign-up** step, select **Arkose Labs** as the provider and select **Next**.
 
@@ -127,7 +127,7 @@ To integrate HUMAN Security with Microsoft Entra External ID, you can use the Se
 1. Enter a name for the policy, such as *HUMANPolicy*.
 1. Select the scenarios to apply the fraud protection policy to and select **Next**.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/policy-setup-human.png" alt-text="Screenshot showing setting up a protection policy.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/policy-set-up-human.png" alt-text="Screenshot showing setting up a protection policy.":::
 
 1. In the **Choose a fraud protection provider for sign-up** step, select **HUMAN Security** as the provider and select **Next**.
 
