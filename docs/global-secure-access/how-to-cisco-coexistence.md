@@ -105,8 +105,6 @@ To configure Cisco Umbrella:
 5. Add DNS suffixes defined in your Private DNS or Enterprise App segments (only required if Private Access traffic forwarding profile is enabled). For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 6. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
----
-
 ## Configuration scenarios
 
 ### 1. Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Cisco Umbrella DNS security.
@@ -132,8 +130,6 @@ To configure Cisco Umbrella:
     6. Verify Global Secure Access client **is** capturing traffic for these sites. We **do** expect to see destination FQDN information for these sites. 
     7. Access a site blocked by Cisco and validate that the Cisco block page is displayed.
     8. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
-
----
 
 ### 2. Microsoft Entra Internet Access, Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS security.
 
@@ -161,8 +157,6 @@ To configure Cisco Umbrella:
     7. Access a site blocked by Cisco and validate that the Cisco block page is displayed.
     8. Access a Microsoft Entra private application (for example, SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco isn't.
     9. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
-
----
 
 > [!NOTE]
 > For troubleshooting health check failures, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
