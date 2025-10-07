@@ -41,10 +41,6 @@ You can complete the integration in both the Microsoft Entra admin center and th
     - Client subdomain: use only the subdomain prefix (for example, "client-api"), not the full domain. 
     - Verify subdomain: use only the subdomain prefix (for example, "verify-api"), not the full domain.
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=ArkoseFraudProtection)
-> To try out this feature, go to the Woodgrove Groceries demo and start the 'Arkose fraud protection' use case.
-
 ## Configure Arkose Labs in the Microsoft Entra admin center
 
 To integrate Arkose Labs with Microsoft Entra External ID, you can use the Service Integration wizard in Microsoft Entra admin center to create a fraud protection provider policy.  
