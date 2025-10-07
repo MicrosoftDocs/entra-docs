@@ -101,7 +101,7 @@ Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federat
 
 ## Domain hint
 
-When you use identity providers (IdPs) such as Facebook, Google, Apple, or a custom OpenID Connect (OIDC) provider, your customers typically see the Microsoft sign-in page, where they choose their social IdP. To streamline the sign-in experience, you can use the `&domain_hint=` parameter to direct users to the sign-in page of their selected IdP. This feature works with all three built-in social IdPs and with custom OIDC IdPs.
+When you use identity providers (IdPs) such as Facebook, Google, Apple, or custom OpenID Connect (OIDC), your customers typically see the Microsoft sign-in page, where they choose their social IdP. To streamline the sign-in experience, you can use the `&domain_hint=` parameter to direct users to the sign-in page of their selected IdP.
 
 To modify the user flow endpoint, append the `&domain_hint=` parameter to the end of the URL, followed by the domain of the social IdP.
 
