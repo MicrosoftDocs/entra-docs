@@ -161,9 +161,9 @@ If this detection identified a leaked credential for a user:
 
 ## Mitigate future risks
 
-1. Add corporate VPNs and IP address ranges to [named locations](../identity/conditional-access/concept-assignment-network.md) in your Conditional Access policies to reduce false positives.
-1. Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
-1. [Provide feedback in ID Protection](howto-identity-protection-risk-feedback.md) to improve detection accuracy and reduce false positives. 
+- Add corporate VPNs and IP address ranges to [named locations](../identity/conditional-access/concept-assignment-network.md) in your Conditional Access policies to reduce false positives.
+- Consider creating a known traveler database for updated organizational travel reporting and use it to cross-reference travel activity.
+- [Provide feedback in ID Protection](howto-identity-protection-risk-feedback.md) to improve detection accuracy and reduce false positives. 
 
 ## Next steps
 
