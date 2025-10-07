@@ -95,9 +95,9 @@ Before managing teams in the My Access Portal, make sure you have the manage tea
 1. Browse to **ID Governance** > **Entitlement management** > **Control configurations**.
 
 1. On the control configurations page, select **view settings** on the My Access settings for end users card.
-    :::image type="content" source="media/entitlement-management-request-behalf/my-access-settings-end-users.png" alt-text="Screenshot of the my access settings for end user card.":::
+    :::image type="content" source="media/entitlement-management-request-behalf/my-access-settings-end-users.png" alt-text="Screenshot of the my access settings for end user card." lightbox="media/entitlement-management-request-behalf/my-access-settings-end-users.png":::
 1. On the end user settings page, make sure **View access package assignments for direct reports (preview)** is checked.
-   :::image type="content" source="media/entitlement-management-request-behalf/my-access-settings.png" alt-text="Settings for end users using my access.":::
+   :::image type="content" source="media/entitlement-management-request-behalf/my-access-settings.png" alt-text="Screenshot for the settings for end users using my access.":::
 1. Select **Save**.     
 
 With the setting enabled, do the following steps to manage your team assignments using the My Access portal:
