@@ -101,8 +101,7 @@ Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federat
 
 ## Issuer acceleration
 
-When you use identity providers (IdPs) such as Facebook, Google, Apple, custom OpenID Connect (OIDC), or SAML, customers typically see the Microsoft sign-in page where they choose their social IdP. To streamline the sign-in experience, use the `domain_hint` parameter to skip directly to the sign-in page of the specified IdP.
-To modify the sign-in URL, append the `domain_hint`  parameter followed by the domain of the social IdP.
+When you use identity providers (IdPs) such as Facebook, Google, Apple, custom OpenID Connect (OIDC), or SAML, customers typically see the Microsoft sign-in page where they choose their social IdP. To streamline the sign-in experience, use the `domain_hint` parameter in the URL to skip directly to the sign-in page of the specified IdP.
 
 ### Examples
 
