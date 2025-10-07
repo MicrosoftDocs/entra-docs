@@ -113,6 +113,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 **Cisco configuration:**
 1. Set up remote access VPN profile as [described previously](#split-include-configuration).
+1. Identify an application to access through Cisco Secure Access VPN, for example an RDP server. This should be a different app than configured in Global Secure Access.
 1. Install Cisco Secure Client with VPN.
 
 **Validation:**
