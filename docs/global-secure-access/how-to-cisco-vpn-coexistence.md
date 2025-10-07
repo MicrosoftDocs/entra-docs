@@ -28,10 +28,10 @@ This guide focuses on two Cisco remote access VPN platforms:
 ## Cisco Secure Access VPNaaS
 
 ### Cisco Secure Access VPNaaS - scenarios
-1.  **[Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPNaaS for private access](#1-internet-and-microsoft-traffic-with-cisco-secure-access-vpnaas-for-private-access).**
+1.  **[Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPNaaS for private access](#1-microsoft-entra-internet-access-and-microsoft-access-with-cisco-secure-access-vpnaas-for-private-access).**
 Global Secure Access handles internet and Microsoft traffic. Cisco Secure Access VPNaaS captures only private application traffic.
 
-2.  **[Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco Secure Access VPNaaS](#2-internet-private-access-and-microsoft-traffic-with-cisco-secure-access-vpn-for-split-private-access).**
+2.  **[Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco Secure Access VPNaaS](#2-microsoft-entra-private-access-internet-access-and-microsoft-access-with-cisco-secure-access-vpn-for-private-access).**
 Both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while private applications hosted through Cisco Secure Access VPNaaS are accessed through Cisco Secure Client VPN. Global Secure Access handles internet and Microsoft traffic.
 
 ### Cisco Secure Access VPNaaS - prerequisites
@@ -134,10 +134,10 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 ### Cisco ASA Remote Access VPN - scenarios
 
-1. **[Microsoft Entra Internet Access and Microsoft Access with Cisco ASA Remote Access VPN for private access](#1-internet-and-microsoft-traffic-with-cisco-asa-private-access).**
+1. **[Microsoft Entra Internet Access and Microsoft Access with Cisco ASA Remote Access VPN for private access](#1-microsoft-entra-internet-access-and-microsoft-access-with-cisco-asa-remote-access-vpn-for-private-access).**
 Global Secure Access handles internet and Microsoft traffic. Cisco ASA captures only private application traffic.
 
-2. **[Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco ASA Remote Access VPN](#2-internet-private-access-and-microsoft-traffic-with-cisco-asa-private-access).**
+2. **[Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco ASA Remote Access VPN](#2-microsoft-entra-private-access-internet-access-and-microsoft-access-with-cisco-asa-remote-access-vpn-for-private-access).**
 Both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client VPN. Global Secure Access handles internet and Microsoft traffic.
 
 ### Cisco ASA Remote Access VPN - prerequisites
