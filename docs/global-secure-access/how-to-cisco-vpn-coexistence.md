@@ -55,7 +55,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
     1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
     2. Under Internet access policies, select **View**.
     3. Expand **Custom Bypass** and select **Add rule**.
-    4. Leave destination type as FQDN and enter `*.vpn.sse.cisco.com` in Destination.
+    4. Leave destination type as FQDN and enter the Cisco Secure Access VPN head end service domain, `*.vpn.sse.cisco.com` in Destination.
     5. Select **Save**.
 
 ### Cisco Secure Access VPNaaS - setup
