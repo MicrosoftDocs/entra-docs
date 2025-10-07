@@ -19,7 +19,7 @@ This article explains how to view updates carried out to managed identities, and
 ## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 ## View updates made to user-assigned managed identities
 
