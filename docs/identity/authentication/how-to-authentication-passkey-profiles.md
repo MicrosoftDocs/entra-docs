@@ -6,9 +6,9 @@ ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/07/2025
 ms.author: justinha
-author: justinha
+author: hanki77
 manager: dougeby
-ms.reviewer: calui, tilarso
+ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ---
