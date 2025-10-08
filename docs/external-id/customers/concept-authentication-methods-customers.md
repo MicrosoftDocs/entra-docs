@@ -109,13 +109,17 @@ Domain hints are supported for the following social identity providers:
 - **Google**: for example, `&domain_hint=google`.  
 - **Apple**: for example, `&domain_hint=apple`.  
 
-### Custom OIDC and SAML
+### Domain hint for custom OIDC providers
 
-For custom OIDC identity providers, set `domain_hint` parameter to the domain value in the issuer URI. You can find this domain in the **Issuer URI**.
+For custom OIDC identity providers, set the `domain_hint` parameter to the domain in the **Issuer URI**.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-uri.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
-For SAML identity providers, set the `domain_hint` parameter to the domain value. To learn more about domain hint syntax for each protocol, see [Domain Hints](/entra/identity/enterprise-apps/home-realm-discovery-policy#domain-hints).
+### Domain hint for custom SAML providers
+
+For SAML identity providers, set the `domain_hint` parameter to the domain value in the **Domain name of federating IdP** field.
+
+:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
 
 ## Updating sign-in methods
 
