@@ -103,19 +103,19 @@ Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federat
 
 When you use identity providers (IdPs) such as Facebook, Google, Apple, custom OpenID Connect (OIDC), or SAML, customers typically see the Microsoft sign-in page where they choose their social IdP. To streamline the sign-in experience, use the `domain_hint` parameter in the URL to skip directly to the sign-in page of the specified IdP.
 
-Domain hints are supported for the following social identity providers:
+Issuer acceleration is supported for the following social identity providers:
 
 - **Facebook**: for example, `&domain_hint=facebook`.  
 - **Google**: for example, `&domain_hint=google`.  
 - **Apple**: for example, `&domain_hint=apple`.  
 
-### Domain hint for custom OIDC providers
+### Issuer acceleration for custom OIDC providers
 
 The `domain_hint` parameter applies only to custom OIDC identity providers from the two types of custom providers. For OIDC, set `domain_hint` to the domain specified in the **Issuer URI**. For example, `&domain_hint=contoso.com`.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
-### Domain hint for custom SAML providers
+### Issuer acceleration for custom SAML providers
 
 For SAML identity providers, we use the `whr` parameter instead of `domain_hint`. To streamline the sign-in experience, set the `whr` parameter to the domain value in the **Domain name of federating IdP** field.
 For example, `&whr=fabrikam.com`.
