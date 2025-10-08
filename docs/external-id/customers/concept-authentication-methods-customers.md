@@ -1,7 +1,6 @@
 ---
 title: Identity providers for external tenants
 description: Learn sign-in and MFA options for customer identity and access management (CIAM), including email, one-time passcodes, social providers, SAML/WS-Fed, and OIDC.
-
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -9,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/07/2025
+ms.date: 10/07/2025
 ms.custom: it-pro, seo-july-2024
 #customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
 ---
@@ -99,6 +98,22 @@ For more information, see [SAML/WS-Fed identity providers](../direct-federation-
 You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
 
 Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
+
+## Issuer acceleration
+
+When you use identity providers such as Facebook, Google, Apple, custom OIDC, or SAML, users usually see the Microsoft sign-in page first. From there, they choose their identity provider. To simplify this experience, you can use the `domain_hint` parameter in the sign-in URL. This parameter lets you skip the Microsoft sign-in page and go directly to the selected identity provider’s sign-in page.
+
+### Issuer acceleration for custom OIDC providers
+
+For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
+
+:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
+
+### Issuer acceleration for custom SAML providers
+
+For a custom SAML identity provider, use the domain specified in the **Domain name of federating IdP** field in the `domain_hint` syntax.
+
+:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
 
 ## Updating sign-in methods
 
