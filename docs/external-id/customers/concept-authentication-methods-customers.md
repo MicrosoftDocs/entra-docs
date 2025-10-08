@@ -105,7 +105,7 @@ When you use identity providers such as Facebook, Google, Apple, custom OIDC, or
 
 ### Issuer acceleration for custom OIDC providers
 
-For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint`syntax.
+For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
