@@ -81,8 +81,6 @@ When users need to unlock their account or reset their password, they're prompte
     * *Email*
     * *Mobile phone*
 
-    You can enable other authentication methods, like *Office phone* or *Security questions*, as needed to fit your business requirements.
-
 1. To apply the authentication methods, select **Save**.
 
 Before users can unlock their account or reset a password, they must register their contact information. Microsoft Entra ID uses this contact information for the different authentication methods set up in the previous steps.
