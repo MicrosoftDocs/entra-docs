@@ -10,6 +10,7 @@ author: justinha
 manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use security questions in Microsoft Entra ID to improve and secure user sign-in events.
+# Uses details from securing Entra include file entra-docs-pr\docs\includes\secure-recommendations\22072.md for important box.
 ---
 # Authentication methods in Microsoft Entra ID - security questions
 
