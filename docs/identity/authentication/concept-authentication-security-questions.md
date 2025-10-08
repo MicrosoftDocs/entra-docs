@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 
 Security questions aren't used as an authentication method during a sign-in event. Instead, security questions can be used during the self-service password reset (SSPR) process to confirm who you are. Administrator accounts can't use security questions as verification method with SSPR.
 
-> [!CAUTION]
+> [!IMPORTANT]
 > Allowing security questions as a self-service password reset (SSPR) method weakens the password reset process because answers are frequently guessable, reused across sites, or discoverable through open-source intelligence (OSINT). Threat actors enumerate or phish users, derive likely responses (family names, schools, and locations), and then trigger password reset flows to bypass stronger methods by exploiting the weaker knowledge-based gate. After they successfully reset a password on an account that isn't protected by multifactor authentication they can: gain valid primary credentials, establish session tokens, and laterally expand by registering more durable authentication methods, add forwarding rules, or exfiltrate sensitive data.
 > 
 > Eliminating this method removes a weak link in the password reset process. Some organizations might have specific business reasons for leaving security questions enabled, but this isn't recommended.
