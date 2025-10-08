@@ -111,14 +111,19 @@ Issuer acceleration is supported for the following social identity providers:
 
 ### Issuer acceleration for custom OIDC providers
 
-The `domain_hint` parameter applies only to custom OIDC identity providers from the two types of custom providers. For OIDC, set `domain_hint` to the domain specified in the **Issuer URI**. For example, `&domain_hint=contoso.com`.
+For custom identity providers, the `domain_hint` parameter depends on the app type not the identity provider type. The `domain_hint` parameter's role in issuer acceleration applies only to OIDC apps.  
+
+For example, if an OIDC app is using a SAML IdP to authenticate users, then you can use `domain_hint` for issuer acceleration. Conversely, if your SAML app uses an OIDC IdP, then you can't use `domain_hint` for issuer acceleration.
+
+To find the correct domain value for the `domain_hint` parameter, look at the identity provider settings in your external tenant. For OIDC, set `domain_hint` to the domain specified in the **Issuer URI**.
+For example, `&domain_hint=contoso.com`.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
 ### Issuer acceleration for custom SAML providers
 
-For SAML identity providers, we use the `whr` parameter instead of `domain_hint`. To streamline the sign-in experience, set the `whr` parameter to the domain value in the **Domain name of federating IdP** field.
-For example, `&whr=fabrikam.com`.
+For OIDC apps that authenticate users from a SAML IdP, set the `domain_hint` parameter to the domain specified in the **Domain name of federating IdP** field to streamline the sign-in experience.
+For example, `&domain_hint=fabrikam.com`.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
 
