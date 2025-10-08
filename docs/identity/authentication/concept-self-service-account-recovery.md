@@ -1,6 +1,6 @@
 ---
 title: Overview of Microsoft Entra ID Account Recovery
-description: Learn about Microsoft Entra ID Account Recovery (SSAR), which enables users to regain access to their accounts through identity verification when they've lost all authentication methods.
+description: Learn about Microsoft Entra ID Account Recovery, which enables users to regain access to their accounts through identity verification when they've lost all authentication methods.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
@@ -13,17 +13,17 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn about account recovery and how it differs from password reset.
 ---
 
-# Overview of Microsoft Entra ID Self-Service Account Recovery
+# Overview of Microsoft Entra ID Account Recovery
 
 In today's digital workplace, users depend on multiple authentication methods to access their organizational resources. However, situations arise where users lose access to all their authentication methods—their primary device is lost, and backup codes are unavailable. In such scenarios, traditional self-service password reset (SSPR) isn't sufficient because it relies on users having access to at least one registered authentication method. This challenge is particularly problematic for passwordless users who have no fallback self-service options and must contact their helpdesk, undergo secure identity verification processes, and receive initial credentials from IT staff to reprovision their lost authentication methods and setup replacement devices.
 
-Microsoft Entra ID Account Recovery (SSAR) addresses these critical scenarios by enabling users to regain access to their accounts through a robust identity verification process. Unlike password reset, which assumes users retain some form of authentication method, account recovery focuses on re-establishing trust in the user's identity when they've lost access to all authentication mechanisms.
+Microsoft Entra ID Account Recovery addresses these critical scenarios by enabling users to regain access to their accounts through a robust identity verification process. Unlike password reset, which assumes users retain some form of authentication method, account recovery focuses on re-establishing trust in the user's identity when they've lost access to all authentication mechanisms.
 
 Account recovery represents a paradigm shift from simple credential reset to comprehensive identity re-onboarding. It leverages advanced identity verification technologies, including Microsoft Entra Verified ID, to ensure that the person requesting account recovery is indeed the legitimate account owner. This approach not only maintains security while providing users with a path to regain access during total lockout scenarios, but also significantly reduces security risks by removing human judgment from the verification process. Traditional helpdesk-led recovery methods are vulnerable to social engineering attacks where bad actors can manipulate support staff into illegitimately recovering accounts, but account recovery's identity proofing eliminates this attack vector entirely.
 
 ## What is account recovery
 
-Microsoft Entra ID Account Recovery (SSAR) is an advanced authentication recovery mechanism that enables users to regain access to their organizational accounts when they've lost access to all registered authentication methods. Unlike traditional password reset capabilities, account recovery focuses on identity verification and trust re-establishment prior to replacement of authentication methods rather than simple credential recovery.
+Microsoft Entra ID Account Recovery is an advanced authentication recovery mechanism that enables users to regain access to their organizational accounts when they've lost access to all registered authentication methods. Unlike traditional password reset capabilities, account recovery focuses on identity verification and trust re-establishment prior to replacement of authentication methods rather than simple credential recovery.
 
 ### Key characteristics of account recovery
 
@@ -83,10 +83,10 @@ The account recovery process follows a structured workflow designed to balance s
 
 #### Phase 1: Initiation and eligibility verification
 
-1. **Account identification**: Users provide their account identifier (typically username or email address)  
+1. **Account identification**: Users provide their account identifier (typically username or email address)  (I think we can remove this as impplied with #2)
 2. **Access point**: Users access recovery through sign-in after indicating they can't access their account. 
 3. **Eligibility check**: The system verifies that the account is eligible for recovery based on organizational policies
-4. **Start recovery in Authenticator**: The user will be directed to Microsoft Authenticator to complete account recovery
+4. **Start recovery in Authenticator**: The user will be directed to Microsoft Authenticator to complete account recovery   (This is wrong)
 
 #### Phase 2: Identity verification
 
