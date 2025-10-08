@@ -87,7 +87,20 @@ For access package assignments with policies that support on behalf of requests,
 - The ability to see active access package assignment of all of their direct reports.
 - The ability to remove assignments for reports if the policy supports on behalf of requests.
 
-To manage your team assignments using the My Access portal, do the following steps:
+Before managing teams in the My Access Portal, make sure you have the manage team settings configured by doing the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Control configurations**.
+
+1. On the control configurations page, select **view settings** on the My Access settings for end users card.
+    :::image type="content" source="media/entitlement-management-request-behalf/my-access-settings-end-users.png" alt-text="Screenshot of the my access settings for end user card." lightbox="media/entitlement-management-request-behalf/my-access-settings-end-users.png":::
+1. On the end user settings page, make sure **View access package assignments for direct reports (preview)** is checked.
+   :::image type="content" source="media/entitlement-management-request-behalf/my-access-settings.png" alt-text="Screenshot for the settings for end users using my access.":::
+1. Select **Save**.     
+
+With the setting enabled, do the following steps to manage your team assignments using the My Access portal:
 
 1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com) as the direct manager of the team who you want to manage access package assignments for. For US Government, the domain in the My Access portal link is `myaccess.microsoft.us`.
 
