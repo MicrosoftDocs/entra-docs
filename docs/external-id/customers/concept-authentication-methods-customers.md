@@ -101,29 +101,17 @@ Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federat
 
 ## Issuer acceleration
 
-When you use identity providers (IdPs) such as Facebook, Google, Apple, custom OpenID Connect (OIDC), or SAML, customers typically see the Microsoft sign-in page where they choose their social IdP. To streamline the sign-in experience, use the `domain_hint` parameter in the URL to skip directly to the sign-in page of the specified IdP.
-
-Issuer acceleration is supported for the following social identity providers:
-
-- **Facebook**: for example, `&domain_hint=facebook`.  
-- **Google**: for example, `&domain_hint=google`.  
-- **Apple**: for example, `&domain_hint=apple`.  
+When you use identity providers such as Facebook, Google, Apple, custom OIDC, or SAML, users usually see the Microsoft sign-in page first. From there, they choose their identity provider. To simplify this experience, you can use the `domain_hint` parameter in the sign-in URL. This parameter lets you skip the Microsoft sign-in page and go directly to the selected identity provider’s sign-in page.
 
 ### Issuer acceleration for custom OIDC providers
 
-For custom identity providers, the `domain_hint` parameter depends on the app type not the identity provider type. The `domain_hint` parameter's role in issuer acceleration applies only to OIDC apps.  
-
-For example, if an OIDC app is using a SAML IdP to authenticate users, then you can use `domain_hint` for issuer acceleration. Conversely, if your SAML app uses an OIDC IdP, then you can't use `domain_hint` for issuer acceleration.
-
-To find the correct domain value for the `domain_hint` parameter, look at the identity provider settings in your external tenant. For OIDC, set `domain_hint` to the domain specified in the **Issuer URI**.
-For example, `&domain_hint=contoso.com`.
+For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint`syntax.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
 ### Issuer acceleration for custom SAML providers
 
-For OIDC apps that authenticate users from a SAML IdP, set the `domain_hint` parameter to the domain specified in the **Domain name of federating IdP** field to streamline the sign-in experience.
-For example, `&domain_hint=fabrikam.com`.
+For a custom SAML identity provider, use the domain specified in the **Domain name of federating IdP** field in the `domain_hint` syntax.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
 
