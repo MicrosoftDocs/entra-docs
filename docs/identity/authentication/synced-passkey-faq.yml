@@ -29,3 +29,25 @@ sections:
 additionalContent: |
   ## Related content
     * [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md)
+
+
+ What are the benefits of synced passkeys? 
+Synced passkeys stored in native and 3rd party passkey providers that already exist on user’s devices solve many of the hard issuance and management problems associated with a separate authentication device. The fact that the passkey can sync between the user’s client devices and the cloud massively reduces the recoverability and reissuance costs associated with device-bound passkeys. We expect this combination of benefits will make synced passkeys the best option for most users and organizations.  
+ 
+Can someone other than an employee use the passkeys on their device? 
+Yes, anyone with knowledge of the device PIN can access the passkeys stored on the device. The risk that an employee may share their device with a passkey with a family member is the same, whether the passkey is device-bound or synced. In fact, this risk applies to other MFA methods like SMS and Microsoft Authenticator push notification as well. Organizations will need to teach their users to treat passkeys carefully, like users should with any organization credentials. 
+ Can a bad actor spoof a passkey provider’s identity? 
+Yes, a bad actor can build their own passkey provider that uses one of the publicly documented AAGUIDs of a well-known passkey provider. They then must trick a user into downloading and using their malicious passkey provider. This is a risk for both device-bound and synced passkey providers that don’t support attestation, which is the cryptographic process of verifying that a passkey provider (or security key) is the provider/key that it claims to be. Synced passkey providers like iCloud Keychain and Google Password Manager do not currently support attestation. If attestation is a must for high assurance user segments (e.g. admin users), then consider deploying FIDO2 security keys or passkeys in Microsoft Authenticator for those specific user populations. 
+ How to do a staged rollout of ynced passkeys
+You can leverage passkey profiles to scope the rollout of synced passkeys to select user groups. Microsoft recommends the use of device-bound passkeys for admins and highly privileged users, and the use of synced passkeys for all other users in your organization. 
+
+
+How are passkeys protected from being synced to unknown, potentially malicious devices? 
+Synced passkey providers like Apple iCloud Keychain and Google Password Manager have adopted high security standards to protect synced passkeys, even from their own employees, by making sure that the passkeys are end-to-end encrypted. When users want to recover or access passkeys on a new device: 
+•	With Apple iCloud Keychain, the user must prove proximity with their old device via Bluetooth. Please see Apple’s documentation for more details: About the security of passkeys - Apple Support 
+•	With Google Password Manager, the user must confirm their device PIN from their old device. Please see Google’s documentation for more details: Google Online Security Blog: Security of Passkeys in the Google Password Manager 
+•	With 3rd party passkey providers, the access/recovery mechanism varies. Please work with 3rd party vendors to understand the security of their sync fabric. 
+If you want to implement additional protections, you can create a CA authentication strengths policy requiring the use of (1) a Temporary Access Pass or (2) a device-bound passkey to bootstrap a new device (i.e. Intune MDM enrollment). Once the user’s identity is verified and their device is compliant, then the user can satisfy subsequent authentications on the device with a synced passkey. This policy can be combined with sign-in risk (as assessed by Identity Protection) to reduce the number of required step-ups. 
+As an admin, can I revoke the use of a passkey? 
+Yes. Admins can leverage the per-user authentication methods UX or API to delete the passkey from a user’s Entra ID account. If an employee reports that their passkey provider account (e.g. Apple ID, Google account) was compromised, then this capability can be used to protect the user’s Entra ID account.
+
