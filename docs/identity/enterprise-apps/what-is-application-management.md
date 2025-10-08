@@ -127,7 +127,7 @@ Your Microsoft Entra reporting and monitoring solution depends on your legal, se
 
 ## Clean up
 
-You can clean up access to applications. For example, [removing a user’s access](methods-for-removing-user-access.md). You can also [disable how a user signs in](disable-user-sign-in-portal.md). And finally, you can delete the application if it's no longer needed for the organization. For more information on how to delete an enterprise application from your Microsoft Entra tenant, see [Quickstart: Delete an enterprise application](delete-application-portal.md).
+You can clean up access to applications. For example, [removing a user’s access](methods-for-removing-user-access.md). You can also [disable user sign-ins](disable-user-sign-in-portal.md). And finally, you can delete the application if it's no longer needed for the organization. For more information on how to delete an enterprise application from your Microsoft Entra tenant, see [Quickstart: Delete an enterprise application](delete-application-portal.md).
 
 ## Guided walkthrough
 
