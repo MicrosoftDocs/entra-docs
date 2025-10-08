@@ -17,7 +17,7 @@ This guide describes how to configure Microsoft Entra Private Access for Active 
 
 ## Prerequisites
 
-To configure Microsoft Entra Private Access for Active Directory Domain Controllers, you must have:
+To configure Microsoft Entra Private Access for Active Directory Domain Controllers, you must have the following:
 
 - The **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
