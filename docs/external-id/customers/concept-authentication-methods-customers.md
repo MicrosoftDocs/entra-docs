@@ -111,14 +111,14 @@ Domain hints are supported for the following social identity providers:
 
 ### Domain hint for custom OIDC providers
 
-The `domain_hint` parameter applies only to custom OIDC identity providers. For these providers, set `domain_hint` to the domain specified in the **Issuer URI**. For example, `domain_hint=contoso.com`.
+The `domain_hint` parameter applies only to custom OIDC identity providers from the two types of custom providers. For OIDC, set `domain_hint` to the domain specified in the **Issuer URI**. For example, `&domain_hint=contoso.com`.
 
-:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-oidc.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
+:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
 ### Domain hint for custom SAML providers
 
 For SAML identity providers, we use the `whr` parameter instead of `domain_hint`. To streamline the sign-in experience, set the `whr` parameter to the domain value in the **Domain name of federating IdP** field.
-For example, `whr=fabrikam.com`.
+For example, `&whr=fabrikam.com`.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
 
