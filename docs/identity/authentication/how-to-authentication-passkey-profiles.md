@@ -108,7 +108,7 @@ For more information about how to use Graph Explorer to create a new passkey pro
 
 1. Select which passkey profiles you want assigned to a specific target.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/select-passkey-profile" alt-text="Screenshot that shows how to select a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/select-passkey-profile":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/select-passkey-profile.png" alt-text="Screenshot that shows how to select a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/select-passkey-profile.png":::
 
    >[!NOTE]
    >A target group (e.g. Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, we allow the registration and usage of a passkey if it fully satisfies the requirement of one of the scoped passkey profiles. You can think of it as Entra looping through each passkey profile to see if there is a match with the given passkey. If there is no match at all, then we will deny the passkey. There is no particular order to this logic. If a user is in a group added to the Passkeys (FIDO2) exclude list, they will be blocked from registering or authenticating with any FIDO2 passkeys. The exception list takes precedence over any passkey profile targeting.
@@ -123,7 +123,7 @@ For more information about how to use Graph Explorer to apply a passkey profile 
    >[!Note] 
    >You can only delete a profile if it's not assigned to a group of users in **Enable and target**. If the trash can is gray, first remove any users who are assigned that profile.
 
-   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile" alt-text="Screenshot that shows how to delete a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile":::
+   :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 
 ## Examples of use cases for passkey profiles
 
