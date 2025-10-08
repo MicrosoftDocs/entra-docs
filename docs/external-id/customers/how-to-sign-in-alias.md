@@ -16,7 +16,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-You can enable users who sign in with a local account (email and password) to sign in with an alias or username in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
+You can enable users who sign in with a local account (email and password) to sign in with an alias or username in addition to their email address. An alias or username allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
 
 ## Prerequisites
 
@@ -44,9 +44,9 @@ To enable username as a sign-in identifier, you must first enable the sign-in id
 
 ### Enable custom username validation (optional)
 
-You can also validate usernames against a custom regular expression. In the modal window you can specify up to two regular expressions. There’s no built-in validation for custom regular expressions, apart from ensuring they don’t match the format of an email address. Authentication may fail at runtime if the provided value doesn’t match the regex or if the regex itself is invalid.
+You can also validate usernames against a custom regular expression. In the modal window, you can specify up to two regular expressions. There’s no built-in validation for custom regular expressions, apart from ensuring they don’t match the format of an email address. Authentication may fail at runtime if the provided value doesn’t match the regex or if the regex itself is invalid.
 
-1. To enable custom username validation select **Customize** and **Enable** and specify the regex patterns.
+1. To enable custom username validation, select **Customize** and **Enable** and specify the regex patterns.
 
     :::image type="content" source="media/how-to-sign-in-alias/enable-custom-username.png" alt-text="Screenshot of enabling custom username in the Sign-in identifiers option in the Microsoft Entra admin center.":::
 
@@ -58,7 +58,7 @@ You can create users with both email address and username as sign-in identifiers
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. In your external tenant browse to **Entra ID** > **Users**.
+1. In your external tenant, browse to **Entra ID** > **Users**.
 1. Select **+ New user** > **Create external user**.
 1. Next to **Identities**, you can select both **Email** and **User Name**  from the dropdown. You must select both options to create a user. The selection order doesn’t matter.
 
@@ -72,19 +72,19 @@ You can create users with both email address and username as sign-in identifiers
 
 ## Update existing users to add a username
 
-
-CHECK !!!! 
-
-You can update existing users to add a username. To do this, follow these steps:
+Follow these steps to add a username to an existing user in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. In your external tenant browse to **Entra ID** > **Users**.
+1. In your external tenant, browse to **Entra ID** > **Users**.
 1. Select the user you want to update.
 1. In the user pane, select **Edit properties**.
-1. Next to **Identities**, you can select both **Email** and **User Name** from the dropdown. You must select both options to create a user. The selection order doesn’t matter.
-1. On the **Properties** tab, specify the email attribute for the user.
-1. Select **Review + create** to create the user.
+1. On the **Identity** tab, in the **Identities** section select **+ Add identity**.
+1. Select **User Name** from the dropdown and enter the username you want to assign to the user.
+
+   :::image type="content" source="media/how-to-sign-in-alias/edit-user-to-add-alias.png" alt-text="Screenshot of adding username to an existing user in the Microsoft Entra admin center.":::
+
+1. Select **Save** to apply the changes.
 
 ## Test signing in with the alias or username
 
@@ -105,7 +105,7 @@ You can customize the hint text of identifier field on the sign-in page via Comp
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
 1. Browse to **Company branding** either by using the search bar or by navigating to **Entra ID** > **Custom Branding**.
 1. Select **Edit** to modify the branding.
-1. In the **Sign-in form** tab, you can customize the hint text of identifier field on the sign-in page. For example, you can change it to "Email or Username".
+1. In the **Sign-in form** tab, you can customize the hint text of identifier field on the sign-in page. For example, you can change it to *Email or Username*.
 
    :::image type="content" source="media/how-to-sign-in-alias/edit-username-hint.png" alt-text="Screenshot of customizing the username hint text  in the Microsoft Entra admin center.":::
 
@@ -113,10 +113,9 @@ You can customize the hint text of identifier field on the sign-in page via Comp
 
 ### Customize and localize other strings related to username
 
-You can customize and localize additional strings related to an end user's experience of signing in with a username by uploading a language file. For more information, see [Customize browser language for authentication experience](/entra/external-id/customers/how-to-customize-languages-customers).
+You can customize and localize other strings related to an end user's experience of signing in with a username by uploading a language file. For more information, see [Customize browser language for authentication experience](/entra/external-id/customers/how-to-customize-languages-customers).
 
 ## Related content
 
-- You can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers with Microsoft Graph.
-- [Customize the look and feel of the authentication experience for the external tenant](/entra/external-id/customers/concept-branding-customers#add-language-customization-to-a-user-flow)
-
+- You can use the [Users API](/graph/api/user-post-users) to create users with both email address and username with Microsoft Graph.
+- You can [customize the look and feel of the authentication experience for the external tenant](/entra/external-id/customers/concept-branding-customers#add-language-customization-to-a-user-flow).
