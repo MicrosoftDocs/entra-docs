@@ -27,7 +27,7 @@ You can enable users who sign in with a local account (email and password) to si
 
 ## Enable username in sign-in identifier policy
 
-To enable username as a sign-in identifier, you must first enable the sign-in identifier policy in the Microsoft Entra admin center. Then you can create users with both email address and username as sign-in identifiers. 
+To enable username as a sign-in identifier, you must first enable the sign-in identifier policy in the Microsoft Entra admin center. Then you can create users with both email address and username as sign-in identifiers.
 <!--- NEED TO CLARIFY THE ROLE --->
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
@@ -52,7 +52,7 @@ You can also validate usernames against a custom regular expression. In the moda
 
 1. Select **Save** at the bottom of the modal window.
 
-## Create users with username in the Microsoft Entra admin center
+## Create users with username
 
 You can create users with both email address and username as sign-in identifiers using either the Microsoft Entra admin center or the Microsoft Graph API. This section describes creating users in the Microsoft Entra admin center. 
  
@@ -60,100 +60,31 @@ You can create users with both email address and username as sign-in identifiers
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. In your external tenant browse to **Entra ID** > **Users**.
 1. Select **+ New user** > **Create external user**.
-1. Next to **Identities**, you can select **Email** or **User Name** from the dropdown. You can select either or both options.  
+1. Next to **Identities**, you can select both **Email** and **User Name**  from the dropdown. You must select both options to create a user. The selection order doesn’t matter.
 
    :::image type="content" source="media/how-to-sign-in-alias/sign-in-method-dropdown.png" alt-text="Screenshot of the Sign-in method dropdown in the Create external user pane in the Microsoft Entra admin center.":::
 
-1. On the **Properties** tab, you can specify the email attribute for the user. This is required if you want the user to be able to sign in with their email address.
+1. On the **Properties** tab, specify the email attribute for the user.
 
    :::image type="content" source="media/how-to-sign-in-alias/email-attribute.png" alt-text="Screenshot of the Email attribute field in the Create external user pane in the Microsoft Entra admin center.":::
 
 1. Select **Review + create** to create the user.
 
-## Create users with username using Microsoft Graph API
+## Update existing users to add a username
 
-After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to add a username to an existing user.
-The following request example shows how to create a user with both email address and username as sign-in identifiers.
 
-```http
-POST https://graph.microsoft.com/v1.0/users
-Content-type: application/json
-{
-    "displayName": "Test User",
-    "identities": [
-        {
-            "signInType": "emailAddress",
-            "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "dylan@woodgrove.com"
-        },
-        {
-            "signInType": "username",
-            "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "dylan123"
-        }
-    ],
-    "mail": "dylan@woodgrove.com",
-    "passwordProfile": {
-        "password": "passwordValue",
-        "forceChangePasswordNextSignIn": false
-    },
-    "passwordPolicies": "DisablePasswordExpiration"
-}
-```
+CHECK !!!! 
 
-## Add a username to an existing user with the Microsoft Graph API
+You can update existing users to add a username. To do this, follow these steps:
 
-You can also add a username to an existing user. In this scenario, you first need to retrieve a user account using a sign-in identifier. 
-
-### Step 1: Get the user details
-
-Use `$filter` to get the user object, and `$select` to return the id and `identities[]` properties. The following request example shows how to retrieve a user account using a sign-in identifier.
-
-```http
-GET https://graph.microsoft.com/v1.0/users?$select=displayName,id&$filter=identities/any(c:c/issuerAssignedId eq 'dylan@woodgrove.com' and c/issuer eq 'contoso.onmicrosoft.com')
-```
-
-The following response example shows the response with the user details.
-
-```http
-HTTP/1.1 200 OK
-Content-type: application/json
- 
-{
-  "value": [
-    {
-      "displayName": "Dylan Williams",
-      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
-    }
-  ]
-}
-```
-
-### Step 2: Update the user details
-
-Once you have the user details from the query above, you can update the `identities[]` property of the user. You must replace the entire `identities[]` property of the user.
-
-The following request example shows how to update the `identities[]` property of the user to add a username.
-
-```http
-POST https://graph.microsoft.com/v1.0/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-Content-type: application/json
- 
-{
-    "identities": [
-        {
-            "signInType": "emailAddress",
-            "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "dylan@woodgrove.com""
-        },
-        {
-            "signInType": "username",
-            "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "dylan123"
-        }
-    ]
-}
-```
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
+1. In your external tenant browse to **Entra ID** > **Users**.
+1. Select the user you want to update.
+1. In the user pane, select **Edit properties**.
+1. Next to **Identities**, you can select both **Email** and **User Name** from the dropdown. You must select both options to create a user. The selection order doesn’t matter.
+1. On the **Properties** tab, specify the email attribute for the user.
+1. Select **Review + create** to create the user.
 
 ## Test signing in with the alias or username
 
@@ -186,5 +117,6 @@ You can customize and localize additional strings related to an end user's exper
 
 ## Related content
 
+- You can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers with Microsoft Graph.
 - [Customize the look and feel of the authentication experience for the external tenant](/entra/external-id/customers/concept-branding-customers#add-language-customization-to-a-user-flow)
 
