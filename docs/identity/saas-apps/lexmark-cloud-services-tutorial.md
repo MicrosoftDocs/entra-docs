@@ -46,7 +46,7 @@ To configure the integration of Lexmark Cloud Services (SAML) into Microsoft Ent
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **Lexmark SSO** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Lexmark Cloud Services (SAML)** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -69,7 +69,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | `https://lexmarkb2ceu.b2clogin.com/LexmarkB2CEU.onmicrosoft.com/B2C_1A_TrustFrameworkBase_ciam/samlp/sso/assertionconsumer` |
 
     > [!Note]
-    > These values aren't the real. Update these values with the actual Identifier and Reply URL. Contact [Lexmark SSO Client support team](mailto:cloudsetup@Lexmark.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Lexmark SSO Client support team](mailto:cloudsetup@Lexmark.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Certificates** section, select the copy button to copy **App Federation Metadata Url** and save it on your computer.
 
