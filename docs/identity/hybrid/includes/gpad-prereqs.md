@@ -4,7 +4,7 @@ description: Include file
 author: omondiatieno
 ms.service: entra-id
 ms.topic: Include
-ms.date: 10/02/2025
+ms.date: 10/09/2025
 ms.author: jomondi
 ms.custom: Include file
 ---
@@ -43,7 +43,7 @@ The following prerequisites are required to implement provisioning groups to Act
 
 ### Supported groups and scale limits
 The following actions are supported:
-  - If you want to provision a converted SOA group to AD DS, make sure you preserve the OU path and set it in the **Group Provision to AD** configuration with the right mapping. For more information, see [Prepare groups for Group SOA conversion and provisioning](../cloud-sync/tutorial-group-provisioning.md#prepare-groups-for-group-soa-conversion-and-provisioning).
+  - If you want to provision a converted SOA group to AD DS, make sure you preserve the OU path and set it in the **Group Provision to AD** configuration with the right mapping. For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](../cloud-sync/tutorial-group-provisioning.md).
   - Only cloud-native or SOA converted (from AD DS to Microsoft Entra ID) [security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported.
   - These groups can have assigned or dynamic membership groups.
   - These groups can only contain on-premises synchronized users or other cloud-created security groups.
