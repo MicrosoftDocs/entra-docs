@@ -267,6 +267,7 @@ You can also confirm that the policy is applied by creating a new application an
 
 ## Related content
 
+* To learn other ways to implement this policy, see [Configure restrictions on how applications can be configured](configure-app-management-policies.md)
 * To learn how to automate secret rotation, see [Automate the rotation of a secret for resources that use one set of authentication credentials](/azure/key-vault/secrets/tutorial-rotation).
 * To learn more about available restrictions and policy settings, see [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy)
 * To learn more about security best practices for your organization, see[Configure Microsoft Entra for increased security](https://aka.ms/EntraSecurityRecommendations).
