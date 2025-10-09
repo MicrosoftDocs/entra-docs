@@ -85,13 +85,13 @@ Adjust the filters and the display as needed. Select a point on the graph to see
 
 To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The agent's activity assesses policy drift, or gaps in policy coverage, for users and apps. The agent also looks for policies that can be merged or consolidated.
 
+:::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-detail.png" alt-text="Screenshot of the agent activity map with clickable user list option highlighted." lightbox="media/agent-optimization-review-suggestions/agent-activity-detail-expanded.png":::
+
 If the policy suggestion includes adding specific users or applications to the policy, you can view the list of applications or users directly from the map. For example, in the following example you'd select the **8 users** link to see the eight users the agent identified as not being included in the policy.
 
 :::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-map-view-users.png" alt-text="Screenshot of the agent activity map." lightbox="media/agent-optimization-review-suggestions/agent-activity-map-view-users.png":::
 
-The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion.
-
-:::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-detail.png" alt-text="Screenshot of the agent activity map." lightbox="media/agent-optimization-review-suggestions/agent-activity-detail-expanded.png":::
+The **Summary of agent activity** is a natural language description of the activity illustrated in the map. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion.
 
 ### Review policy changes
 
