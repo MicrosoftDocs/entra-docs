@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 09/24/2025
 #Customer intent: As an IT admin, I want to integrate Arkose Labs and Human with Microsoft Entra External ID to prevent fake account sign-ups and bot attacks using the Microsoft Entra admin center.
 ---
-# Integrate Microsoft Entra External ID with Arkose Labs and Human for fraud protection (preview)
+# Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
