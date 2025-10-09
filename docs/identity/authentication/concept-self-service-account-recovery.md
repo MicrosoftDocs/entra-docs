@@ -81,21 +81,21 @@ Microsoft Entra ID Account Recovery operates through a comprehensive identity ve
 
 The account recovery process follows a structured workflow designed to balance security with user experience:
 
-#### Phase 1: Initiation and eligibility verification
+#### Phase 1: Discover Account Recovery Entry
 
-1. **Account identification**: Users provide their account identifier (typically username or email address)  (I think we can remove this as impplied with #2)
+1. **Account name**: Users provide their account identifier (typically username or email address)
 2. **Access point**: Users access recovery through sign-in after indicating they can't access their account. 
 3. **Eligibility check**: The system verifies that the account is eligible for recovery based on organizational policies
-4. **Start recovery in Authenticator**: The user will be directed to Microsoft Authenticator to complete account recovery   (This is wrong)
+4. **Start recovery with Identity Verification Provierr**: The user will be directed to an IDV prefered by the tenant admin for their user by geography.
 
-#### Phase 2: Identity verification
+#### Phase 2: Identity verification through Identity Verification Provider
 
 1. **External identity proofing**: Users are redirected to trusted identity verification providers to complete identity validation
 2. **Document verification**: Identity providers verify government-issued identification documents using advanced fraud detection
 3. **Biometric validation**: Liveness checks and facial recognition ensure the person presenting credentials is physically present
 4. **Credential issuance**: Upon successful verification, users receive a verifiable credential (Verified ID) attesting to their identity which is stored in Microsoft Authenticator
 
-#### Phase 3: Identity presentation and validation
+#### Phase 3: Identity presentation and onwership validation
 
 1. **Credential presentation**: Users present their newly acquired Verified ID to Entra ID
 2. **Crecential verification**: The system validates the credential's authenticity and integrity
