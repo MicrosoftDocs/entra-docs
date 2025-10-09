@@ -4,7 +4,7 @@ description: Learn how to customize the claims issued by Microsoft identity plat
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 05/14/2025
 ms.reviewer: alamaral
 ms.service: identity-platform

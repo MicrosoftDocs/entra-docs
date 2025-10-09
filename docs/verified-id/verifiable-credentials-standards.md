@@ -2,7 +2,7 @@
 title: Microsoft Entra Verified ID-supported standards
 description: This article outlines current and upcoming standards
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/16/2024
