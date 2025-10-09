@@ -92,7 +92,7 @@ Microsoft Entra ID supports only one CRL endpoint and supports only HTTP or HTTP
    >Microsoft Entra ID checks the CRL of the issuing CA and other CAs in the PKI trust chain up to the root CA.    We have a limit of up to 10 CAs from the leaf client certificate for CRL validation in the PKI chain. The    limitation is to make sure a bad actor doesn't bring down the service by uploading a PKI chain with a huge    number of CAs with a bigger CRL size.
    >If the tenant's PKI chain has more than 10 CAs, and if there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration. For more information, see [CRL Pre-fetching](/windows/win32/seccrypto/certificate-revocation-list-semantics#crl-pre-fetching).
 
-### How to configure revocation
+## How to configure revocation
 
 To revoke a client certificate, Microsoft Entra ID fetches the certificate revocation list (CRL) from the URLs uploaded as part of certificate authority information and caches it. The last publish timestamp (**Effective Date** property) in the CRL is used to ensure the CRL is still valid. The CRL is periodically referenced to revoke access to certificates that are a part of the list.
 
