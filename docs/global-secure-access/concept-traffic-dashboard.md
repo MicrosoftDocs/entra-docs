@@ -1,11 +1,11 @@
 ---
-title: Learn about the Global Secure Access dashboard
+title: Learn about the Global Secure Access Dashboard
 description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: conceptual
-ms.date: 02/21/2025
+ms.topic: how-to
+ms.date: 10/07/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -23,7 +23,7 @@ The Global Secure Access dashboard provides you with visualizations of the netwo
 - How many unique users are accessing the network across all my tenants?
 - What are the cross-tenant access activity patterns?
 - What are the most popular website categories that users are accessing?
-- What are the most used private application segments that are not attributed to an application?
+- What are the most used private application segments that aren't attributed to an application?
 
 This article describes each of the dashboard widgets and how you can use the data on the dashboard to monitor and improve your network configurations.
 
@@ -41,8 +41,7 @@ To access the dashboard:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Dashboard**.
-
-    :::image type="content" source="media/concept-traffic-dashboard/traffic-dashboard.png" alt-text="Screenshot of the Private access profile, with the view applications link highlighted." lightbox="media/concept-traffic-dashboard/traffic-dashboard.png":::
+:::image type="content" source="media/concept-traffic-dashboard/traffic-dashboard.png" alt-text="Screenshot of the Microsoft Entra admin center, with the Dashboard navigation link highlighted.":::   
 
 ## Global Secure Access snapshot
 
@@ -60,16 +59,16 @@ The **Global Secure Access snapshot** defaults to showing all types of traffic, 
 
 ## Alerts and notifications (preview)
 
-This widget shows what is happening in the network and helps identify suspicious activities or trends identified by the network data.
+This widget shows network activity and helps you spot suspicious activities or trends in the network data.
 
 This widget provides the following alerts:
 
 - **Unhealthy remote network**: An unhealthy remote network has one or more device links disconnected.
 - **Increased external tenants activity**: The number of users accessing external tenants has increased.
 - **Token and device inconsistency**: The original token is used on a different device.
-- **Web content blocked**: Access to the website has been blocked.
+- **Web content blocked**: Access to the website is blocked.
 
-![Screenshot of the alerts and notifications widget.](media/concept-traffic-dashboard/dashboard-alerts-notifications.png)
+![Screenshot of the alerts and notifications widget showing two alert types.](media/concept-traffic-dashboard/dashboard-alerts-notifications.png)
 
 Select the link next to the alert name to navigate to a related page with additional information.
 
@@ -85,7 +84,7 @@ Select the **Display by** filter to view the following usage categories:
 - Bytes sent
 - Bytes received
 
-The time period defaults to the previous month, but you can change the period of time to the last 24 hours or last week.
+The time period defaults to the previous month, but you can change the time period to the last 24 hours or last week.
 
 ![Screenshot of the usage profiling widget.](media/concept-traffic-dashboard/dashboard-usage-profiling.png)
 
@@ -137,20 +136,37 @@ Select **View all web categories** to view more details about your network traff
 
 ## Device status
 
-The **Device status** widgets display the active and inactive devices that you have deployed.
+The **Device status** widgets display the active and inactive devices that you deployed.
 
 - **Active devices**: The number of distinct device IDs seen in the last 24 hours and the % change during that time.
 - **Inactive devices**: The number of distinct device IDs that were seen in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
 
 ![Screenshot of the device status widgets.](media/concept-traffic-dashboard/device-status.png)
 
+## Top used cloud applications
+
+The **Top used cloud applications** widget shows the most used cloud applications. By default, the widget shows **All** cloud applications, but you can filter to show only the top used **Generative AI** applications.
+:::image type="content" source="media/concept-traffic-dashboard/top-used-cloud-applications.png" alt-text="Screenshot of the Top used cloud applications widget. The All tab and the Generative AI tab are both sorted by the number of transactions.":::   
+
+## Cloud applications status
+
+The **Cloud applications status** widget displays the total number of cloud applications accessed by users and devices. The widget also shows the number of Generative AI applications, and the total number of high-risk applications accessed.
+:::image type="content" source="media/concept-traffic-dashboard/total-cloud-widget.png" alt-text="Screenshot of the Cloud applications status widget showing the total cloud applications, the total Generative AI applications, and the total at-risk applications.":::   
+
+## Network activity by location (preview)
+
+The **Network activity by location** widget is an interactive map that shows connection, transaction, user, device, and remote network activity by location. Admins can visualize and analyze network activity based on the origin of source IP addresses. These geographic insights help with:
+- Security monitoring: Identify traffic from high-risk regions and detect anomalies based on geographic patterns.
+- Operational intelligence: Diagnose ISP-related issues and optimize routing decisions.
+- Compliance support: Meet location-based regulatory requirements, such as regional data protection or data residency policies.
+
+:::image type="content" source="media/concept-traffic-dashboard/network-activity-by-location.png" alt-text="Screenshot of the Network activity by location widget. One location is expanded to show more details." lightbox="media/concept-traffic-dashboard/network-activity-by-location-expanded.png":::
+
 ## No data available
 
 If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
 
 ![Screenshot of a widget with no data available.](media/concept-traffic-dashboard/no-data-available.png)
-
-
 
 ## Next steps
 

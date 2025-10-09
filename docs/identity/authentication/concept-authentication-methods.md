@@ -3,7 +3,7 @@ title: Authentication methods and features
 description: Learn about the different authentication methods and features available in Microsoft Entra ID that help improve and secure sign-in events
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
@@ -47,7 +47,7 @@ The following table outlines when an authentication method can be used during a 
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if it's used in FIDO2 authentication. Users need to be registered for passkey (FIDO2).
 
-<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-certificate-based-authentication).
+<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-cba).
 
 <sup>3</sup>Alternate phone methods can only be used for MFA.
 

@@ -80,4 +80,4 @@ To maximize the benefits of regional isolation:
 
 ## Next steps
 
-- [Enable regional isolation for user-assigned managed identities](./managed-identities-isolation-scope.md)
+- [Enable regional isolation for user-assigned managed identities](./configure-managed-identities-isolation-scope.md)

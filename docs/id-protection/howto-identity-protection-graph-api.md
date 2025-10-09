@@ -9,7 +9,7 @@ ms.date: 05/27/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection and the Microsoft Graph PowerShell 

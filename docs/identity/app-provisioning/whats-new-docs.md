@@ -5,8 +5,8 @@ ms.date: 03/04/2025
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: whats-new
-ms.author: kenwith
-author: kenwith
+ms.author: jfields
+author: jenniferf-skc
 ---
 
 # Azure Active Directory application provisioning: What's new

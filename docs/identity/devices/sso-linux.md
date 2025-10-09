@@ -33,10 +33,7 @@ The Microsoft single sign-on for Linux is supported with the following operating
  - RedHat Enterprise Linux 8  
  - RedHat Enterprise Linux 9
 
-## Configuration
 
-You can find more information and instructions on how to configure in these articles:
-- [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
 
 ## SSO experience
 
@@ -173,9 +170,7 @@ Run the following commands to uninstall the Microsoft Intune app and remove loca
 
 ---
 
-## Troubleshooting 
 
-If you experience issues when implementing macOS Platform SSO, refer to our documentation on [macOS Platform single sign-on known issues and troubleshooting](troubleshoot-macos-platform-single-sign-on-extension.md)
 
 ## Related Content
 

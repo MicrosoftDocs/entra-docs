@@ -5,10 +5,13 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
 manager: pmwongera
-ms.date: 07/21/2025
+ms.date: 08/08/2025
+ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 ---
 # View logs and metrics for the Conditional Access optimization agent
 
@@ -23,17 +26,6 @@ To ensure transparency and maintain control over automated recommendations, Micr
 - [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) roles can view the agent and take action on the suggestions.
    - For more information on roles for the Conditional Access optimization agent, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
-
-### Limitations
-
-- Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
-- Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- For policy consolidation, each agent run only looks at four similar policy pairs.
-- The agent currently runs as the user who enables it.
-- We recommend running the agent from the Microsoft Entra admin center.
-- Scanning is limited to a 24 hour period.
-- Suggestions from the agent can't be customized or overridden.
-- The agent can review up to 150 users and 100 applications in a single run.
 
 ## Agent summary
 
@@ -50,7 +42,11 @@ The values in the agent summary reflect the activity after suggestions are appli
 
 ## Audit logs 
 
-Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+Activity associated with Security Copilot agents in Microsoft Entra appears in the Microsoft Entra audit logs and the Security Copilot audit logs in Microsoft Purview. Each service provides different information about the agent's activity.
+
+The Microsoft Purview logs include tenant-level administrative actions and user interactions within the Security Copilot platform. For more information, see [Access the Security Copilot audit logs](/copilot/security/audit-log).
+
+The Microsoft Entra audit logs include changes made by an agent to Microsoft Entra resources, such as Conditional Access policies. Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
 
 :::image type="content" source="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of Agent summary tile at the top of the agent page." lightbox="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent-expanded.png":::
 

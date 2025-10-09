@@ -6,7 +6,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
@@ -40,7 +40,7 @@ Use these [Microsoft Graph PowerShell](/powershell/microsoftgraph/) commands to 
 ### Enable tenant flags
 
 ```powershell
-Connect-MgGraph -Scopes "DeviceManagementConfiguration.ReadWrite.All" ('-Environment <AzureEnvironment>')
+Connect-MgGraph -Scopes "Organization.ReadWrite.All" ('-Environment <AzureEnvironment>')
 $organizationId = (Get-MgOrganization).Id
 $params = @{
 	onPremisesSyncEnabled = $true

@@ -2,7 +2,7 @@
 title: Microsoft Identity Platform Glossary
 description: Learn key terms used in Microsoft identity platform documentation, Microsoft Entra admin center, and authentication SDKs like the Microsoft Authentication Library (MSAL).
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 05/12/2025
 ms.reviewer: 
@@ -266,7 +266,7 @@ Many of the terms in this glossary are related to the OAuth 2.0 and OpenID Conne
 [Graph-App-Resource]: /graph/api/resources/application
 [Graph-Sp-Resource]: /graph/api/resources/serviceprincipal
 [Graph-User-Resource]: /graph/api/resources/user
-[AAD-How-Subscriptions-Assoc]:~/fundamentals/how-subscriptions-associated-directory.yml
+[AAD-How-Subscriptions-Assoc]:~/fundamentals/how-subscriptions-associated-directory.md
 [AAD-How-To-Integrate]: ./how-to-integrate.md
 [AAD-How-To-Tenant]:quickstart-create-new-tenant.md
 [AAD-Integrating-Apps]:./quickstart-register-app.md

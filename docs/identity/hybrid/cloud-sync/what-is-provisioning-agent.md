@@ -5,7 +5,7 @@ description: This article describes the provisioning agent used by cloud sync an
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync

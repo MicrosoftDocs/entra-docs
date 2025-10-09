@@ -3,11 +3,11 @@ title: Microsoft-Managed Conditional Access Policies for Enhanced Security
 description: Secure your resources with Microsoft-managed Conditional Access policies. Require multifactor authentication to reduce compromise risks.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: swethar
 ms.custom: sfi-image-nochange
 ---

@@ -3,7 +3,7 @@ title: Understanding Primary Refresh Token (PRT) in Microsoft Entra ID
 description: Learn the role and management of Primary Refresh Token (PRT) in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: devices
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL

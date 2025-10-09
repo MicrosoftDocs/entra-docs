@@ -6,12 +6,12 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 11/29/2024
+ms.date: 04/10/2025
 ms.author: cmulligan
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn how to add Apple as an identity provider for my external tenant.
 ---
-# Add Apple as an identity provider (preview)
+# Add Apple as an identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 

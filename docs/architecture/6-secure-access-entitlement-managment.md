@@ -5,7 +5,7 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/29/2025
 ms.author: jricketts
 ms.reviewer: jercon

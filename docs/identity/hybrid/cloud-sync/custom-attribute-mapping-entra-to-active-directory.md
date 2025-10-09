@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi

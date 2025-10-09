@@ -5,7 +5,7 @@ description: This topic provides deep dive information on how cloud sync works.
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi

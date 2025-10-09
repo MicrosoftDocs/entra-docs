@@ -3,11 +3,11 @@ title: Building Conditional Access policies in Microsoft Entra
 description: Understand the phases of Conditional Access policy enforcement in Microsoft Entra and how to apply them to secure user access.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth
 ms.custom:
   - ai-gen-docs-bap
@@ -17,15 +17,15 @@ ms.custom:
 ---
 # Building a Conditional Access policy
 
-As explained in the article [What is Conditional Access](overview.md), a Conditional Access policy is an if-then statement, of **Assignments** and **Access controls**. A Conditional Access policy brings signals together, to make decisions, and enforce organizational policies.
+As explained in the article [What is Conditional Access](overview.md), a Conditional Access policy is an if-then statement of **Assignments** and **Access controls**. A Conditional Access policy combines signals to make decisions and enforce organizational policies.
 
 How does an organization create these policies? What is required? How are they applied?
 
 :::image type="content" source="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png" alt-text="Diagram showing concept of Conditional Access signals plus decision to enforce organizational policy." lightbox="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png":::
 
-Multiple Conditional Access policies might apply to an individual user at any time. In this case, all policies that apply must be satisfied. For example, if one policy requires multifactor authentication and another requires a compliant device, you must complete MFA, and use a compliant device. All assignments are logically **ANDed**. If you have more than one assignment configured, all assignments must be satisfied to trigger a policy.
+Multiple Conditional Access policies can apply to an individual user at any time. In this case, all applicable policies must be satisfied. For example, if one policy requires multifactor authentication and another requires a compliant device, you must complete MFA, and use a compliant device. All assignments are logically combined using **AND**. If you have more than one assignment configured, all assignments must be satisfied to trigger a policy.
 
-If a policy where "Require one of the selected controls" is selected, we prompt in the order defined, as soon as the policy requirements are satisfied, access is granted.
+If a policy with "Require one of the selected controls" is selected, prompts appear in the defined order. Once the policy requirements are satisfied, access is granted.
 
 All policies are enforced in two phases:
 
@@ -44,16 +44,23 @@ All policies are enforced in two phases:
       6. [Password change](./concept-conditional-access-grant.md#require-password-change)
       7. [Terms of use](concept-conditional-access-grant.md#terms-of-use)
       8. [Custom controls](./concept-conditional-access-grant.md#custom-controls-preview)
-   - Once all grant controls are satisfied, apply session controls (App Enforced, Microsoft Defender for Cloud Apps, and token Lifetime) 
+   - Once all grant controls are satisfied, session controls are applied (App Enforced, Microsoft Defender for Cloud Apps, and token lifetime). 
    - Phase 2 of policy evaluation occurs for all enabled policies. 
 
 ## Assignments
 
-The assignments portion controls the who, what, and where of the Conditional Access policy.
+The assignments section defines who, what, and where for the Conditional Access policy.
 
 ### Users and groups
 
 [Users and groups](concept-conditional-access-users-groups.md) assign who the policy include or exclude when applied. This assignment can include all users, specific groups of users, directory roles, or external guest users. Organizations with Microsoft Entra Workload ID licenses might target [workload identities](/entra/workload-id/workload-identities-overview) as well.
+
+Policies targeting roles or groups are evaluated only when a token is issued. This means:
+
+- Newly added users to a role or group aren't subject to the policy until they get a new token.
+- If a user already has a valid token before being added to the role or group, the policy doesn't apply retroactively.
+
+The best practice is to trigger Conditional Access evaluation during role activation or group membership activation using [Microsoft Entra Privileged Identity Management](/entra/id-governance/privileged-identity-management/pim-how-to-change-default-settings#on-activation-require-multifactor-authentication).
 
 <a name='cloud-apps-or-actions'></a>
 
@@ -65,7 +72,7 @@ The assignments portion controls the who, what, and where of the Conditional Acc
 
 ### Network
 
-[Network](concept-assignment-network.md) contains IP addresses, geographies, and [Global Secure Access' compliant network](/entra/global-secure-access/how-to-compliant-network) to Conditional Access policy decisions. Administrators can choose to define locations and mark some as trusted like those for their organization's primary network locations.
+[Network](concept-assignment-network.md) contains IP addresses, geographies, and [Global Secure Access' compliant network](/entra/global-secure-access/how-to-compliant-network) to Conditional Access policy decisions. Admins can define locations and mark some as trusted, such as their organization's primary network locations.
 
 ### Conditions
 
@@ -79,7 +86,7 @@ For organizations with [Microsoft Entra ID Protection](~/id-protection/overview-
 
 Organizations with multiple device operating system platforms might enforce specific policies on different platforms. 
 
-The information used to calculate the device platform comes from unverified sources such as user agent strings that can be changed.
+The information used to determine the device platform comes from unverified sources, like user agent strings that can be changed.
 
 #### Client apps
 
@@ -99,11 +106,11 @@ The access controls portion of the Conditional Access policy controls how a poli
 
 #### Block access
 
-Block access does just that, it blocks access under the specified assignments. The block control is powerful and should be wielded with the appropriate knowledge.
+Block access blocks access under the specified assignments. This control is powerful and requires appropriate knowledge to use effectively.
 
 #### Grant access
 
-The grant control can trigger enforcement of one or more controls. 
+The grant control triggers enforcement of one or more controls. 
 
 - Require multifactor authentication
 - Require authentication strength
@@ -114,7 +121,7 @@ The grant control can trigger enforcement of one or more controls.
 - Require password change
 - Require terms of use
 
-Administrators can choose to require one of the previous controls or all selected controls using the following options. The default for multiple controls is to require all.
+Administrators choose to require one of the previous controls or all selected controls using the following options. By default, multiple controls require all.
 
 - Require all the selected controls (control and control)
 - Require one of the selected controls (control or control)
@@ -124,8 +131,8 @@ Administrators can choose to require one of the previous controls or all selecte
 [Session controls](concept-conditional-access-session.md) can limit the experience of users.
 
 - Use app enforced restrictions:
-   - Currently works with Exchange Online and SharePoint Online only.
-   - Passes device information to allow control of experience granting full or limited access.
+   - Works only with Exchange Online and SharePoint Online.
+   - Passes device information to control the experience, granting full or limited access.
 - Use Conditional Access App Control:
    - Uses signals from Microsoft Defender for Cloud Apps to do things like: 
       - Block download, cut, copy, and print of sensitive documents.
@@ -135,23 +142,23 @@ Administrators can choose to require one of the previous controls or all selecte
    - Ability to change the default sign in frequency for modern authentication.
 - Persistent browser session:
    - Allows users to remain signed in after closing and reopening their browser window.
-- Customize continuous access evaluation
-- Disable resilience defaults 
+- Customize continuous access evaluation.
+- Disable resilience defaults. 
 
 ## Simple policies
 
-A Conditional Access policy must contain at minimum the following to be enforced:
+A Conditional Access policy must include at least the following to be enforced:
 
-- **Name** of the policy.
+- **Name** of the policy
 - **Assignments**
-   - **Users and/or groups** to apply the policy to.
-   - **Target resources** to apply the policy to.
+   - **Users and/or groups** to apply the policy to
+   - **Target resources** to apply the policy to
 - **Access controls**
    - **Grant** or **Block** controls
 
 ![Blank Conditional Access policy](./media/concept-conditional-access-policies/conditional-access-blank-policy.png)
 
-The article [Common Conditional Access policies](concept-conditional-access-policy-common.md) includes some policies that we think would be useful to most organizations.
+The article [Common Conditional Access policies](concept-conditional-access-policy-common.md) includes policies that might be useful to most organizations.
 
 ## Related content
 

@@ -56,7 +56,7 @@ App developers must meet a few requirements to complete the publisher verificati
 
 - The app must be registered in a Microsoft Entra tenant and have a [publisher domain](howto-configure-publisher-domain.md) set. The feature is not supported in Azure AD B2C tenant.
 
-- The domain of the email address that's used during CPP account verification must either match the publisher domain that's set for the app or be a DNS-verified [custom domain](~/fundamentals/add-custom-domain.yml) that's added to the Microsoft Entra tenant. (**NOTE**__: the app's publisher domain can't be *.onmicrosoft.com to be publisher verified) 
+- The domain of the email address that's used during CPP account verification must either match the publisher domain that's set for the app or be a DNS-verified [custom domain](~/fundamentals/add-custom-domain.md) that's added to the Microsoft Entra tenant. (**NOTE**__: the app's publisher domain can't be *.onmicrosoft.com to be publisher verified) 
 
 - The user who initiates verification must be authorized to make changes both to the app registration in Microsoft Entra ID and to the CPP account in Partner Center.  The user who initiates the verification must have one of the required roles in both Microsoft Entra ID and Partner Center.
 

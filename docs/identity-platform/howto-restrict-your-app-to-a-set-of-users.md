@@ -3,7 +3,7 @@ title: Restrict a Microsoft Entra app to a set of users
 description: Learn how to restrict access to your apps registered in Microsoft Entra ID to a selected set of users.
 
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 07/19/2024

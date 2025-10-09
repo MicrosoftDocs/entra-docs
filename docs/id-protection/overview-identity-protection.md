@@ -9,7 +9,7 @@ ms.date: 06/03/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: chuqiaoshi
 ---
 # What is Microsoft Entra ID Protection?

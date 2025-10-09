@@ -5,7 +5,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: shaunliu

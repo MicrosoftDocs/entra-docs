@@ -5,7 +5,7 @@ description: This article describes the steps to verify the version of the provi
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid

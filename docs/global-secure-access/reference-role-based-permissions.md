@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: reference
-ms.date: 06/12/2025
+ms.date: 08/13/2025
 ai-usage: ai-assisted
 ms.service: global-secure-access
 ms.custom: sfi-ga-nochange
@@ -41,7 +41,7 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 
 ### Global Secure Access Log Reader
 
-**Read-only access**: This role is primarily intended for security and network personnel who need read-only visibility into traffic logs and related insights to effectively monitor and analyze network activity without the ability to make changes to the environment. Users with this role can view detailed GSA traffic logs, including session, connection, and transaction data, as well as access and review alerts and reports in the GSA portal.
+**Read-only access**: This role is primarily intended for security and network personnel who need read-only visibility into traffic logs and related insights to effectively monitor and analyze network activity without the ability to make changes to the environment. Users with this role can view detailed Global Secure Access traffic logs, including session, connection, and transaction data, as well as access and review alerts and reports in the Global Secure Access area of the Microsoft Entra admin center.
 
 ### Security Reader and Global Reader
 
@@ -52,7 +52,7 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 The following Microsoft Entra ID admin roles have access to Global Secure Access:
 
 
-| Permissions | Global Admin | [Security Admin](#security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) | [GSA Log Reader](#global-secure-access-log-reader)
+| Permissions | Global Admin | [Security Admin](#security-administrator) | [Global Secure Access Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) | [Global Secure Access Log Reader](#global-secure-access-log-reader)
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Configure Private Access (Quick Access, private network connectors, application segments, and enterprise apps) | ✅ |  |  |  | ✅ |  |  |
 | Create and interact with Conditional Access policies | ✅ | ✅ |  | ✅ |  |  |  |

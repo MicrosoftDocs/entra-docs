@@ -3,11 +3,11 @@ title: Configure Security Defaults for Microsoft Entra ID
 description: Enable Microsoft Entra ID security defaults to strengthen your organization's security posture with preconfigured MFA requirements and legacy authentication protection.
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: sama
 ms.custom:
   - sfi-ga-nochange, sfi-image-nochange

@@ -2,13 +2,13 @@
 title: Customize app JSON Web Token (JWT) claims
 description: Learn how to customize the claims issued by Microsoft identity platform in the JSON web token (JWT) token for enterprise applications.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 05/30/2025
 ms.reviewer: alamaral
 ms.service: identity-platform
 ms.topic: how-to
-ms.custom: curation-claims, sfi-ropc-nochange
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to customize the claims issued in the JSON web tokens so that I can tailor the information about the user that is included in the token for my enterprise application.
 ---
 

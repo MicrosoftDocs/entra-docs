@@ -6,7 +6,7 @@ author: billmath
 manager: dougeby
 
 
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.author: billmath
 ---

@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 05/28/2025
+ms.date: 09/10/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -42,15 +42,16 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **TLS inspection policies**.
 1. Switch to the **TLS inspection settings** tab.
-1. Select **+ Create certificate**.
+1. Select **+ Create certificate**. This step starts with generating a Certificate Sign Request (CSR). 
 1. In the **Create certificate** pane, fill in the following fields:
    - **Certificate name**: This name appears in the certificate hierarchy when viewed in a browser. It must be unique, contain no spaces, and be no more than 12 characters long. You can't reuse previous names.
    - **Common name** (CN): Common name, for example, Contoso TLS ICA, that identifies the intermediate certificate.
    - **Organizational Unit** (OU): Organization name, for example, Contoso IT.
-1. Select **Create CSR**.
+1. Select **Create CSR**. This step creates a .csr file and saves it to your default download folder.
 :::image type="content" source="media/how-to-transport-layer-security/create-certificate.png" alt-text="Screenshot of the Create certificate pane with fields filled and the Create CSR button highlighted.":::   
 
-1. Sign the CSR using your PKI service. Make sure Server Auth is in Extended Key Usage and `certificate authority (CA)=true`, `keyUsage=critical,keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certifcate in .pem format.
+1. Sign the CSR using your PKI service. Make sure Server Auth is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certificate in .pem format. If you're testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
+   
 1. Select **+Upload certificate**.
 1. In the Upload certificate form, upload the certificate.pem and chain.pem files.
 1. Select **Upload signed certificate**.
@@ -89,7 +90,11 @@ Alternatively, add a TLS policy to a security profile and link it to a [Conditio
 :::image type="content" source="media/how-to-transport-layer-security/conditional-access-group-assignment.png" alt-text="Screenshot of the new Conditional Access policy form with all fields completed with sample information.":::   
 
 ### Step 4: Test the configuration
+
+Ensure your devices trust the root certificate used to break and inspect TLS traffic. You can use Intune to [deploy the trusted certificate](/intune/intune-service/protect/certificates-trusted-root#to-create-a-trusted-certificate-profile) to your managed Windows devices.
+
 To test the configuration:
+
 1. Make sure the end user device has the root certificate installed in the Trusted Root Certification Authorities folder.
 :::image type="content" source="media/how-to-transport-layer-security/trusted-store.png" alt-text="Screenshot of the Trusted Root Certification Authorities folder.":::   
 
@@ -151,7 +156,7 @@ extendedKeyUsage = serverAuth
 ```openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCAchain.key -sha256 -days 370 -out rootCAchain.pem -subj "/C=US/ST=US/O=Self Signed/CN=Self Signed Root CA" -config openssl.cnf -extensions rootCA_ext```
 1. Sign the CSR using the following command:
  ```openssl x509 -req -in <CSR file> -CA rootCAchain.pem -CAkey rootCAchain.key -CAcreateserial -out signedcertificate.pem -days 370 -sha256 -extfile openssl.cnf -extensions signedCA_ext```
-1. Upload the signed certificates according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
+1. Upload the signed certificates (```signedcertificate.pem```and ```rootCAchain.pem```) according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
 
 ## Related content
 

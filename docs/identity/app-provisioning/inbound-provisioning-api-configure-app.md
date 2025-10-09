@@ -2,7 +2,7 @@
 title: Configure API-driven inbound provisioning app
 description: Learn how to configure API-driven inbound provisioning app.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to

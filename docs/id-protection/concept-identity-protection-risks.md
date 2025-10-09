@@ -4,8 +4,8 @@ description: Explore the full list of risk detections and their corresponding ri
 
 ms.service: entra-id-protection
 
-ms.topic: reference
-ms.date: 07/16/2025
+ms.topic: article
+ms.date: 09/11/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -78,11 +78,13 @@ Select a risk detection from the list to view the description of the risk detect
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address identified as an anonymous proxy IP address. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Additional risk detected (sign-in) 
 
-This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled **Additional risk detected** for customers without Microsoft Entra ID P2 licenses. 
+This detection indicates that one of the premium detections was triggered. Since premium detections are only visible to Microsoft Entra ID P2 customers, they are labeled as **Additional risk detected** for users without Microsoft Entra ID P2 licenses. 
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
@@ -97,13 +99,13 @@ This detection indicates an administrator selected **Confirm user compromised** 
 ### Anomalous token (sign-in)
 <a name='anomalous-token'></a>
 
-This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens."
+This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens." If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
 
-Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
+Anomalous token was historically tuned to incur more noise than other detections. Recent improvements to the detection have reduced the noise; however, there's still a higher than normal chance that some of the sessions flagged by this detection are false positives at low and medium risk levels. 
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
+- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#anomalous-token-and-token-issuer-anomaly-detections)
 
 ### Anonymous IP address 
 
@@ -120,14 +122,16 @@ The algorithm ignores obvious "false positives" contributing to the impossible t
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating atypical travel detections.](howto-identity-protection-investigate-risk.md#investigating-atypical-travel-detections)
+- [Tips for investigating atypical travel detections.](howto-identity-protection-investigate-risk.md#atypical-travel-detections)
 
 ### Impossible travel 
 
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (in a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: 
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Malicious IP address 
 
@@ -135,18 +139,20 @@ This detection indicates sign-in from a malicious IP address. An IP address is c
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating malicious IP address detections.](howto-identity-protection-investigate-risk.md#investigating-malicious-ip-address-detections)
+- [Tips for investigating malicious IP address detections.](howto-identity-protection-investigate-risk.md#malicious-ip-address-detections)
 
 ### Mass access to sensitive files 
 
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-anomaly-alerts#unusual-file-access-by-user). This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint Online or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Microsoft Entra threat intelligence (sign-in) 
 
-This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. 
+Microsoft Entra threat intelligence indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. These detections show up as "Microsoft Entra threat intelligence" in logs and ID Protection reports.
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
@@ -157,7 +163,9 @@ This risk detection type indicates user activity that is unusual for the user or
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-infrequent-country). This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Password spray 
 
@@ -165,7 +173,7 @@ A password spray attack is where multiple identities are attacked using common p
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
+- [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#password-spray-detections)
 
 ### Suspicious browser	 
 
@@ -173,21 +181,25 @@ Suspicious browser detection indicates anomalous behavior based on suspicious si
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating suspicious browser detections.](howto-identity-protection-investigate-risk.md#investigating-suspicious-browser-detections)
+- [Tips for investigating suspicious browser detections.](howto-identity-protection-investigate-risk.md#suspicious-browser-detections)
 
 ### Suspicious inbox forwarding 
 
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-forwarding). This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Suspicious inbox manipulation rules 
 
 This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-manipulation-rules). This detection looks at your environment and triggers alerts when suspicious rules that delete or move messages or folders are set on a user's inbox. This detection might indicate: a user's account is compromised, messages are being intentionally hidden, and the mailbox is being used to distribute spam or malware in your organization. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
+- License requirement: 
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Token issuer anomaly 
 
@@ -195,7 +207,7 @@ This risk detection indicates the SAML token issuer for the associated SAML toke
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating token issuer anomaly detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
+- [Tips for investigating token issuer anomaly detections.](howto-identity-protection-investigate-risk.md#anomalous-token-and-token-issuer-anomaly-detections)
 
 ### Unfamiliar sign-in properties 
 
@@ -228,13 +240,13 @@ This detection indicates that one of the premium detections was detected. Since 
 
 ### Anomalous token (user)
 
-This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens." 
+This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens." If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
 
-Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
+Anomalous token was historically tuned to incur more noise than other detections. Recent improvements to the detection have reduced the noise; however, there's still a higher than normal chance that some of the sessions flagged by this detection are false positives at low and medium risk levels.
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
-- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
+- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#anomalous-token-and-token-issuer-anomaly-detections)
 
 ### Anomalous user activity 
 
@@ -245,10 +257,12 @@ This risk detection baselines normal administrative user behavior in Microsoft E
 
 ### Attacker in the Middle 
 
-Also referred to as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft 365 Defender for Office to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
+Also referred to as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft Defender for Cloud Apps to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Leaked credentials 
 
@@ -256,7 +270,7 @@ This risk detection type indicates that the user's valid credentials leaked. Whe
 
 - Calculated offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
-- [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections)
+- [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#leaked-credentials-detections)
 
 ### Microsoft Entra threat intelligence (user) 
 
@@ -271,7 +285,9 @@ This risk detection type indicates user activity that is unusual for the user or
 This risk detection type is discovered using information provided by Microsoft Defender for Endpoint (MDE). A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication on Windows 10, Windows Server 2016, and later versions, iOS, and Android devices. A PRT is a JSON Web Token (JWT) issued to Microsoft first-party token brokers to enable single sign-on (SSO) across the applications used on those devices. Attackers can attempt to access this resource to move laterally into an organization or perform credential theft. This detection moves users to high risk and only fires in organizations that deploy MDE. This detection is high risk and we recommend prompt remediation of these users. It appears infrequently in most organizations due to its low volume.  
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Suspicious API traffic 
 
@@ -285,7 +301,9 @@ This risk detection is reported when abnormal GraphAPI traffic or directory enum
 This risk detection type is discovered using information provided by [Microsoft Defender for Office 365 (MDO)](/defender-office-365/air-about). This alert is generated when someone in your organization sent suspicious email and is either at risk of being or is restricted from sending email. This detection moves users to medium risk and only fires in organizations that deploy MDO. This detection is low-volume and is seen infrequently in most organizations. 
 
 - Calculated offline
-- License requirement: Microsoft Entra ID P2
+- License requirement:
+    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
+    - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### User reported suspicious activity 
 

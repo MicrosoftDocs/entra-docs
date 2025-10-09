@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 03/12/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about personalizing my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
@@ -24,11 +24,6 @@ Using a verified custom URL domain has several benefits:
 
 - It provides a more consistent user experience. From the user's perspective, they remain in your domain during the sign in process rather than redirecting to the default domain *&lt;tenant-name&gt;.ciamlogin.com*.
 - You mitigate the effect of [third-party cookie blocking](~/identity-platform/reference-third-party-cookies-spas.md) by staying in the same domain for your application during sign-in.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomDomain)
->
-> To try out this feature, go to the Woodgrove Groceries demo and start the "custom URL domain name” use case.
 
 ## How a custom URL domain works
 

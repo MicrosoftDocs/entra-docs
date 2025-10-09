@@ -1,13 +1,13 @@
 ---
 title: Native authentication
 description: Learn how to set up native authentication in Microsoft Entra External ID. Customize the user interface for mobile and desktop apps, and provide a seamless sign-in experience.
- 
+
 author: csmulligan
 manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-ms.date:  04/28/2025
+ms.date: 08/08/2025
 ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
@@ -50,7 +50,7 @@ The following table compares the two authentication methods to help you decide t
 | **Go live effort** |  Low. Use it straight out of the box.  |High. The developer builds, owns, and maintains the authentication experience. |
 | **Maintenance effort** | Low. |High. For each feature that Microsoft releases, you need to update the SDK to use it.  |
 | **Security** | Most secure option. |Security responsibility is shared with developers, and best practices need to be followed. It's prone to phishing attacks. |
-| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).  |
+| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular) </li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).  |
 
 
 ## Feature availability
@@ -93,15 +93,17 @@ Microsoft Entra's native authentication doesn't support single sign-on (SSO), an
 
 ## How to use native authentication
 
-You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android and iOS/macOS. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
+You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android, iOS/macOS and web applications. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
 
 For more information on native authentication samples and tutorials, see the following table.
 
-| Language/<br/>Platform | Code sample guide | Build and integrate guide |
+| Language/<br/>Platform | Quickstart | Build and integrate guide |
 | ----------- | ----------- |----------- |
 |Android (Kotlin) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-android-app)|
 |iOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
 |macOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-macos-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
+|React (Next.js) | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md)|
+|Angular | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-angular-sign-up.md)|
 
 If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](reference-native-authentication-api.md).
 
@@ -109,4 +111,6 @@ If you're planning to create an app on a framework currently not supported by MS
 
 - [Android native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app).
 - [iOS native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app).
+- [Native authentication in React SPA tutorial](quickstart-native-authentication-single-page-app-sdk-sign-in.md).
+- [Native authentication in Angular SPA tutorial](quickstart-native-authentication-single-page-app-sdk-sign-in.md).
 - [Native authentication API documentation](reference-native-authentication-api.md).

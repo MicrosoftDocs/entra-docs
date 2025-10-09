@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 03/12/2025
+ms.date: 09/16/2025
 ms.author: cmulligan
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -18,11 +18,6 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 By setting up federation with Microsoft account (live.com) using OpenID Connect (OIDC) identity provider, you enable users to sign up and sign in to your applications using their existing Microsoft accounts (MSA).
 After you add the MSA (live.com) as one of your user flow's sign-in options, customers can sign up and sign in to your application with their Microsoft account.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=MSA)
->
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Microsoft personal account (live.com)” use case.
 
 ## Prerequisites
 

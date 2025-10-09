@@ -5,7 +5,7 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/25/2024
 ms.author: jricketts
 ms.reviewer: jricketts

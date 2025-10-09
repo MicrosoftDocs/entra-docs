@@ -2,12 +2,12 @@
 title: Developer guidance for Microsoft Entra Conditional Access
 description: Developer guidance and scenarios for Microsoft Entra Conditional Access and Microsoft identity platform.
 author: OwenRichards1
-keywords: 
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 05/18/2020
 ms.reviewer: jmprieur
 ms.service: identity-platform
+ms.subservice: workforce
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 #Customer intent: As a developer building apps for Microsoft Entra ID, I want to understand how my app is impacted by Conditional Access challenges, so that I can secure my app and protect the services it accesses.
@@ -87,7 +87,7 @@ Developers can take this challenge and append it onto a new request to Microsoft
 
 ### Prerequisites
 
-Microsoft Entra Conditional Access is a feature included in [Microsoft Entra ID P1 or P2](~/fundamentals/whatis.md). Customers with [Microsoft 365 Business licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
+Microsoft Entra Conditional Access is a feature included in [Microsoft Entra ID P1 or P2](~/fundamentals/licensing.md). Customers with [Microsoft 365 Business licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) also have access to Conditional Access features.
 
 ### Considerations for specific scenarios
 

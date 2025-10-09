@@ -2,9 +2,9 @@
 title: "How to register an app in Microsoft Entra ID"
 description: Learn how to register your app in Microsoft Entra ID and configure it for single-tenant or multitenant use.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: mode-other
+ms.custom:
 ms.date: 01/29/2025
 ms.service: identity-platform
 ms.topic: how-to

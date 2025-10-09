@@ -25,7 +25,7 @@ Learn more: [Zero Trust security](/azure/security/fundamentals/zero-trust)
 
 Datawiza integration includes the following components:
 
-* **[Microsoft Entra ID](~/fundamentals/whatis.md)** - Identity and access management service that helps users sign in and access external and internal resources
+* **[Microsoft Entra ID](~/fundamentals/what-is-entra.md)** - Identity and access management service that helps users sign in and access external and internal resources
 * **Datawiza Access Proxy (DAP)** - This service transparently passes identity information to applications through HTTP headers
 * **Datawiza Cloud Management Console (DCMC)** - UI and RESTful APIs for administrators to manage the DAP configuration and access control policies
 

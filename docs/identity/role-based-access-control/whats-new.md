@@ -2,13 +2,13 @@
 title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 
-author: barclayn
+author: rolyon
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: whats-new
-ms.date: 05/26/2025
-ms.author: barclayn
+ms.date: 10/02/2025
+ms.author: rolyon
 
 ---
 
@@ -20,6 +20,8 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| Oct 2025 | Roles | Added [Dragon Administrator](permissions-reference.md#dragon-administrator) role. |
+| August 2025 | Roles | Added [Teams Reader](permissions-reference.md#teams-reader) role. |
 | June 2025 | Roles | Added [Organizational Data Source Administrator](permissions-reference.md#organizational-data-source-administrator) role. |
 | June 2025 | Administrative units | General availability of restricted management administrative units. See [Restricted management administrative units in Microsoft Entra ID](admin-units-restricted-management.md). |
 | May 2025 | Roles | Updated permissions for multiple roles. See [Microsoft Entra built-in roles](permissions-reference.md). |

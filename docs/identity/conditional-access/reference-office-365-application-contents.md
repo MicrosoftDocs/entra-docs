@@ -9,7 +9,7 @@ ms.date: 12/6/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: kvenkit
 ---
 
@@ -21,6 +21,7 @@ The following list is provided as a reference and includes a detailed list of se
 - Augmentation Loop
 - Call Recorder
 - Connectors
+- Copilot Data Platform 
 - DataSecurityInvestigation
 - Device Management Service
 - EDU Assignments
@@ -123,6 +124,7 @@ The following list is provided as a reference and includes a detailed list of se
 - OneDrive
 - OneDrive SyncEngine
 - OneNote
+- OneOutlook
 - Outlook Browser Extension
 - Outlook Service for Exchange
 - PowerApps Service

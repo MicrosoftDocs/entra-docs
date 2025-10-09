@@ -38,6 +38,10 @@ items:
     href: ./scripts/powershell-bypass-script.md
   - name: Bypass Intune endpoints from the Internet Access profile
     href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
+  - name: Create a TLS certificate using ADCS
+    href: ./scripts/powershell-active-directory-certificate-service.md
+  - name: Create a TLS certificate using OpenSSL
+    href: ./scripts/powershell-open-secure-sockets-layer.md
 - name: Concepts
   expanded: true
   items: 
@@ -53,6 +57,12 @@ items:
     href: concept-remote-network-connectivity.md
   - name: Universal Continuous Access Evaluation
     href: concept-universal-continuous-access-evaluation.md
+  - name: Application Usage Analytics
+    href: overview-application-usage-analytics.md
+  - name: Continuous Access Evaluation for Application Proxy (preview)
+    href: concept-continuous-access-evaluation.md
+  - name: B2B Guest Access (preview)
+    href: concept-b2b-guest-access.md
 - name: How-to guides
   expanded: true
   items:
@@ -76,6 +86,8 @@ items:
         href: concept-remote-network-connectivity.md
       - name: Create a remote network
         href: how-to-create-remote-networks.md
+      - name: Enhance remote network resilience
+        href: remote-network-resilience.md
       - name: Create remote network with custom Internet Key Exchange (IKE) policy
         href: how-to-create-remote-network-custom-ike-policy.md
       - name: Configure customer premises equipment
@@ -163,10 +175,18 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Check URL category
+        href: how-to-check-web-content-filtering-categories.md
       - name: What is Transport Layer Security inspection? 
         href: concept-transport-layer-security.md 
       - name: Configure Transport Layer Security inspection 
         href: how-to-transport-layer-security.md 
+      - name: Configure web content filtering
+        href: how-to-configure-web-content-filtering.md
+      - name: Configure threat intelligence
+        href: how-to-configure-threat-intelligence.md
+      - name: Customize the block page
+        href: how-to-customize-block-page.md
   - name: Logs and monitoring
     expanded: false
     items:
@@ -188,6 +208,8 @@ items:
         href: how-to-use-workbooks.md 
       - name: Export private network connector logs
         href: how-to-export-connector-logs.md
+      - name: Microsoft Sentinel integration
+        href: how-to-sentinel-integration.md  
   - name: Microsoft Global Secure Access deployment guides
     expanded: false
     items:
@@ -232,7 +254,14 @@ items:
          expanded: false
          items:
            - name: Coexistence with Cisco
-             href: concept-cisco-coexistence.md
+             expanded: false
+             items:
+               - name: Coexistence with Cisco Umbrella
+                 href: how-to-cisco-coexistence.md
+               - name: Coexistence with Cisco Secure Access
+                 href: how-to-cisco-secure-access-coexistence.md
+               - name: Coexistence with Cisco VPNs
+                 href: how-to-cisco-vpn-coexistence.md
            - name: Coexistence with Palo Alto Networks
              href: how-to-palo-alto-coexistence.md
            - name: Coexistence with Zscaler
@@ -254,6 +283,8 @@ items:
     href: reference-data-storage-and-privacy.md
   - name: Web content filtering categories
     href: reference-web-content-filtering-categories.md
+  - name: Threat intelligence threat types
+    href: reference-threat-intelligence-threat-types.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: Ciphers for Microsoft Entra Private Access
@@ -262,8 +293,6 @@ items:
     href: resource-faq.yml
   - name: Transport Layer Security inspection FAQs
     href: faq-transport-layer-security.yml
-  - name: Ciphers for Microsoft Entra Private Access
-    href: reference-ciphers.md       
   - name: Connector version history
     href: reference-version-history.md
   - name: Windows client version history

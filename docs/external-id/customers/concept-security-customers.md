@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 06/11/2025
+ms.date: 10/02/2025
 ms.custom: it-pro
 ---
 
@@ -36,10 +36,11 @@ Customizable policies and MFA enhance security by reducing unauthorized access t
 
 |Feature Name	|Description |
 |---------------|------------| 
-|Conditional Access policies	    |Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. [Learn more](~/identity/conditional-access/overview.md)   |
+|Conditional Access policies	    |Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. See [What is Conditional Access?](~/identity/conditional-access/overview.md) and [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md) for more information about Conditional Access.   |
 |Multifactor authentication (MFA)	|MFA methods configured to ensure only legitimate users can access applications, significantly reducing the risk of unauthorized access. [Learn more](concept-multifactor-authentication-customers.md)     |
 
 ## Related content
 
 - [Planning for customer identity and access management](concept-planning-your-solution.md)
 - [Microsoft Entra Blog: Built-in security controls for external-facing apps](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/built-in-security-controls-for-external-facing-apps/4175879)
+- [Microsoft Entra External ID deployment guide for security operations](../../architecture/deployment-external-operations.md)

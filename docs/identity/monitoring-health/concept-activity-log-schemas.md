@@ -5,7 +5,7 @@ description: Learn how to interpret the details found in the Microsoft Entra aud
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.subservice: monitoring-health
 ms.date: 05/27/2025
 ms.author: sarahlipsey
@@ -65,6 +65,7 @@ Some values are common across all log schemas.
 - `category`: Indicates which resource category that's targeted by the activity. For example: `UserManagement`, `GroupManagement`, `ApplicationManagement`, `RoleManagement`. For more information, see [Audit log activities](reference-audit-activities.md).
 - `initiatedBy`: Indicates information about the user or app that initiated the activity.
 - `targetResources`: Provides information on which resource was changed. Possible values include `User`, `Device`, `Directory`, `App`, `Role`, `Group`, `Policy` or `Other`.
+- `ipAddress`: Found in the `initiatedBy` section, this is the OAuth client's IP address. The IP address is the peer (directly connected client) of the service's endpoint.
 
 ### Sign-in logs
 

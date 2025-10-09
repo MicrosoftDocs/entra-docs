@@ -4,7 +4,7 @@ description: Learn about how to manage OATH tokens in Microsoft Entra ID to help
 services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/26/2025
 ms.author: justinha
 author: justinha

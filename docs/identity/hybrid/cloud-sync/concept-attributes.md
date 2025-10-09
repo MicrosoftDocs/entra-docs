@@ -4,7 +4,7 @@ description: This article describes the Microsoft Entra schema, the attributes t
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync

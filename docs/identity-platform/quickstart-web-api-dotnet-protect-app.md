@@ -2,7 +2,7 @@
 title: "Quickstart: Call a web API that is protected by the Microsoft identity platform"
 description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET web API by using the Microsoft identity platform for authorization.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom:
 ms.date: 04/03/2025

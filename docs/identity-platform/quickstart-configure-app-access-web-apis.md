@@ -2,9 +2,9 @@
 title: "Web API app registration and API permissions"
 description: In this quickstart, you learn how to configure app registration and API permissions for a Web API, and how to grant admin consent to these permissions. 
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: mode-api
+ms.custom:
 ms.date: 01/27/2025
 ms.reviewer: sureshja
 ms.service: identity-platform

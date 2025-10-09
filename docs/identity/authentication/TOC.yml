@@ -104,6 +104,8 @@
       href: /microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication
     - name: FAQ
       href: multi-factor-authentication-faq.yml
+  - name: Introduction to Microsoft Entra Kerberos
+    href: kerberos.md
   - name: Password protection
     items:
     - name: Combined password policy check
@@ -197,6 +199,8 @@
           href: how-to-certificate-based-authentication.md
         - name: Configure certificate authorities
           href: how-to-configure-certificate-authorities.md
+        - name: Certificate revocation list 
+          href: concept-certificate-based-authentication-certificate-revocation-list.md
         - name: Windows smart card sign-in
           href: concept-certificate-based-authentication-smartcard.md
         - name: Apple devices

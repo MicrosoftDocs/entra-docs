@@ -4,7 +4,7 @@ description: Learn about the type of information captured in the interactive use
 author: shlipsey3
 manager: pmwongera 
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ms.subservice: monitoring-health
 ms.date: 06/02/2025
 ms.author: sarahlipsey

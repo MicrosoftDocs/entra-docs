@@ -6,7 +6,7 @@ author: justinha
 ms.assetid: 56ccb219-11b2-4e43-9f07-5a76e3cd8da8
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/21/2025
 ms.author: justinha
 ---

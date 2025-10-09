@@ -2,13 +2,13 @@
 title: 'Use partner driven integrations to provision accounts into all your applications'
 description: Use partner driven integrations to provision accounts into all your applications.
 
-author: kenwith
-manager: dougeby
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.topic: overview
-ms.date: 04/09/2025
+ms.date: 07/24/2025
 ms.subservice: hybrid
-ms.author: kenwith
+ms.author: jfields
 ms.collection: M365-identity-device-management
 ---
 # Partner-driven provisioning integrations
@@ -38,10 +38,10 @@ In cases where an application doesn't support SCIM, partners have built [custom 
 ## How-to add partner-driven integrations to this document
 If you've built a SCIM Gateway and would like to add it to this list, follow these steps: 
 
-1. Review the Microsoft Entra SCIM [documentation](use-scim-to-provision-users-and-groups.md) to understand the Microsoft Entra SCIM implementation.
+1. To understand the Microsoft Entra SCIM implementation, review the Microsoft Entra SCIM [documentation](use-scim-to-provision-users-and-groups.md).
 1. Test compatibility between the Microsoft Entra SCIM client and your SCIM gateway.
 1. Navigate to the following [github repository](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/includes/application-integration-partners.md).
-1. Select the pencil at the top of the article to start making changes
+1. To start making changes, select the pencil at the top of the article.
 1. Make changes in the article using the Markdown language and create a pull request. Make sure to provide a description for the pull request.  
 1. An admin of the repository reviews and merges your changes so that others can view them.
 
@@ -55,6 +55,6 @@ If you've built a SCIM Gateway and would like to add it to this list, follow the
 ## Disclaimer
 For independent software vendors: The Microsoft Entra Application Gallery Terms & Conditions, excluding Sections 2–4, apply to this Partner-Driven Integrations Catalog (the “Integrations Catalog”). References to the “Gallery” shall be read as the “Integrations Catalog” and references to an “App” shall be read as “Integration”.  
 
-If you don't agree with these terms, you shouldn't submit your Integration for listing in the Integrations Catalog. If you submit an Integration to the Integrations Catalog, you agree that you or the entity you represent (“YOU” or “YOUR”) is bound by these terms. 
+If you don't agree with these terms, don't submit your Integration for listing in the Integrations Catalog. If you submit an Integration to the Integrations Catalog, you agree that you or the entity you represent (“YOU” or “YOUR”) agree to these terms. 
  
 Microsoft reserves the right to accept or reject your proposed Integration in its sole discretion and reserves the right to determine the manner in which Apps are presented, promoted, or featured in this Integrations Catalog. 

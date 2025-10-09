@@ -2,12 +2,12 @@
 title: Register a Microsoft Entra app and create a service principal
 description: Create a new Microsoft Entra app and service principal to manage access to resources with role-based access control in Azure Resource Manager.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 05/26/2025
 ms.service: identity-platform
 ms.topic: how-to
-ms.custom: subject-rbac-steps, devx-track-arm-template, sfi-image-nochange
+ms.custom:  sfi-image-nochange
 #Customer intent: As a developer, I want to understand how to create a Microsoft Entra application and service principal, so that I can access resources with RBAC and manage permissions for my application.
 ---
 

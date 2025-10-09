@@ -1,14 +1,14 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-author: barclayn
+author: rolyon
 manager: pmwongera
 search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 07/09/2025
-ms.author: barclayn
+ms.date: 09/11/2025
+ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -59,6 +59,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service. | d29b2b05-8046-44ba-8758-1e26182fcf32 |
 > | [Directory Writers](#directory-writers) | Can read and write basic directory information. For granting access to applications, not intended for users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9360feb5-f418-4baa-8175-e2a00bac4301 |
 > | [Domain Name Administrator](#domain-name-administrator) | Can manage domain names in cloud and on-premises.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8329153b-31d0-4727-b945-745eb3bc5f31 |
+> | [Dragon Administrator](#dragon-administrator) | Manage all aspects of the Microsoft Dragon admin center. | e93e3737-fa85-474a-aee4-7d3fb86510f3 |
 > | [Dynamics 365 Administrator](#dynamics-365-administrator) | Can manage all aspects of the Dynamics 365 product. | 44367163-eba1-44c3-98af-f5787879f96a |
 > | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Access and perform all administrative tasks on Dynamics 365 Business Central environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
@@ -71,7 +72,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Fabric Administrator](#fabric-administrator) | Can manage all aspects of the Fabric and Power BI products. | a9ea8996-122f-4c74-9520-8edcd192826c |
 > | [Global Administrator](#global-administrator) | Can manage all aspects of Microsoft Entra ID and Microsoft services that use Microsoft Entra identities.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 62e90394-69f5-4237-9190-012177145e10 |
 > | [Global Reader](#global-reader) | Can read everything that a Global Administrator can, but not update anything.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | f2ef992c-3afb-46b9-b7cf-a126ee74c451 |
-> | [Global Secure Access Administrator](#global-secure-access-administrator) | Create and manage all aspects of Global Secure Internet Access and Microsoft Global Secure Private Access, including managing access to public and private endpoints. | ac434307-12b9-4fa1-a708-88bf58caabc1 |
+> | [Global Secure Access Administrator](#global-secure-access-administrator) | Create and manage all aspects of Global Secure Internet Access and Microsoft Global Secure Private Access, including managing access to public and private endpoints. | ac434307-12b9-4fa1-a708-88bf58caabc1 |
 > | [Global Secure Access Log Reader](#global-secure-access-log-reader) | Provides designated security personnel with read-only access to network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for detailed analysis. | 843318fb-79a6-4168-9e6f-aa9a07481cc4 |
 > | [Groups Administrator](#groups-administrator) | Members of this role can create/manage groups, create/manage groups settings like naming and expiration policies, and view groups activity and audit reports. | fdd7a751-b60b-444a-984c-02652fe8fa1c |
 > | [Guest Inviter](#guest-inviter) | Can invite guest users independent of the 'members can invite guests' setting. | 95e79109-95c0-4d8e-aee3-d01accf2d47b |
@@ -107,6 +108,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Password Administrator](#password-administrator) | Can reset passwords for non-administrators and Password Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 966707d0-3269-4727-9be2-8c3a10f19b9d |
 > | [People Administrator](#people-administrator) | Manage profile photos of users and people settings for all users in the organization. | 024906de-61e5-49c8-8572-40335f1e0e10 |
 > | [Permissions Management Administrator](#permissions-management-administrator) | Manage all aspects of Microsoft Entra Permissions Management. | af78dc32-cf4d-46f9-ba4e-4428526346b5 |
+> | [Places Administrator](#places-administrator) | Manage all aspects of the Microsoft Places service. | 78b0ccd1-afc2-4f92-9116-b41aedd09592 |
 > | [Power Platform Administrator](#power-platform-administrator) | Can create and manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate. | 11648597-926c-4cf3-9c36-bcebb0ba8dcc |
 > | [Printer Administrator](#printer-administrator) | Can manage all aspects of printers and printer connectors. | 644ef478-e28f-4e28-b9dc-3fdde9aa0b1f |
 > | [Printer Technician](#printer-technician) | Can register and unregister printers and update printer status. | e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477 |
@@ -273,6 +275,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Domain Name Administrator
 
 [!INCLUDE [domain-name-administrator](includes/domain-name-administrator.md)]
+
+## Dragon Administrator
+
+[!INCLUDE [dragon-administrator](includes/dragon-administrator.md)]
 
 ## Dynamics 365 Administrator
 
@@ -465,6 +471,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Permissions Management Administrator
 
 [!INCLUDE [permissions-management-administrator](includes/permissions-management-administrator.md)]
+
+## Places Administrator
+
+[!INCLUDE [places-administrator](includes/places-administrator.md)]
 
 ## Power Platform Administrator
 

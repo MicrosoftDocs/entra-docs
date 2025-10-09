@@ -68,7 +68,7 @@ Severity: **Low**
 | | Description |
 | --- | --- |
 | **Why do I get this alert?** | The current Microsoft Entra organization doesn't have Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
-| **How to fix?** | Review information about [Microsoft Entra editions](~/fundamentals/whatis.md). Upgrade to Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
+| **How to fix?** | Review information about [Microsoft Entra editions](~/fundamentals/licensing.md). Upgrade to Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
 
 ### Potential stale accounts in a privileged role
 

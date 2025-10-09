@@ -3,7 +3,7 @@ title: Configure Standard for Success Accreditation for Single sign-on with Micr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Standard for Success Accreditation.
 author: nguhiu
 manager: mwongerapk
-ms.reviewer: CelesteDG
+ms.reviewer: jomondi
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

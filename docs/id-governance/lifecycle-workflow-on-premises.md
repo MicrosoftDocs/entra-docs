@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity
-ms.topic: conceptual 
+ms.topic: concept-article
 ms.date: 06/25/2025
 ms.custom: template-concept 
 

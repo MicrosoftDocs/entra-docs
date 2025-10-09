@@ -1166,7 +1166,7 @@
       - name: GitHub
         href: github-tutorial.md
       - name: GitHub Enterprise Server
-        href: github-ae-tutorial.md
+        href: github-enterprise-server-tutorial.md
       - name: GitHub Enterprise Cloud - Enterprise Account
         href: github-enterprise-cloud-enterprise-account-tutorial.md  
       - name: GitHub Enterprise Managed User
@@ -2135,8 +2135,8 @@
         href: pinpoint-tutorial.md
       - name: Pipedrive
         href: pipedrive-tutorial.md
-      - name: PKSHA Chatbot
-        href: pksha-chatbot-tutorial.md
+      - name: PKSHA ChatAgent
+        href: pksha-chatagent-tutorial.md
       - name: PlanGrid
         href: plangrid-tutorial.md
       - name: PlanMyLeave
@@ -2644,9 +2644,7 @@
       - name: Softeon WMS
         href: softeon-tutorial.md
       - name: Software AG Cloud
-        href: software-ag-cloud-tutorial.md
-      - name: SolarWinds Orion
-        href: solarwinds-orion-tutorial.md  
+        href: software-ag-cloud-tutorial.md 
       - name: SolarWinds Service Desk
         href: samanage-tutorial.md  
       - name: Soloinsight-CloudGate SSO
@@ -3492,8 +3490,8 @@
         href: getabstract-provisioning-tutorial.md
       - name: GitHub
         href: github-provisioning-tutorial.md
-      - name: GitHub AE
-        href: github-ae-provisioning-tutorial.md
+      - name: GitHub Enterprise Server
+        href: github-enterprise-server-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User
         href: github-enterprise-managed-user-provisioning-tutorial.md
       - name: GitHub Enterprise Managed User (OIDC)

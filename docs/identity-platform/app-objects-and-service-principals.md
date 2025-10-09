@@ -2,13 +2,13 @@
 title: Apps & service principals in Microsoft Entra ID
 description: Learn about the relationship between application and service principal objects in Microsoft Entra ID.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 10/01/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 ms.topic: concept-article
-ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
+ms.custom: sfi-image-nochange
 # Customer intent: As an application developer, I want to understand the relationship between application objects and service principal objects in Microsoft Entra ID, so that I can properly register and manage my application's identity and access management functions.
 ---
 

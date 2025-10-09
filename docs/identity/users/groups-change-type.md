@@ -121,6 +121,6 @@ ConvertStaticGroupToDynamic "a58913b2-eee4-44f9-beb2-e381c375058f" "user.display
 
 ## Related content
 
-- [Create a group with members and view all groups and members](~/fundamentals/groups-view-azure-portal.md)
+
 - [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-membership.md)

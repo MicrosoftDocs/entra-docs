@@ -8,13 +8,13 @@ ms.assetid: 57cbf436-fc1d-4bab-b991-7d25b6e987ef
 ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/19/2025
 ms.author: justinha
 ---
 # How objects and credentials are synchronized in a Microsoft Entra Domain Services managed domain
 
-Objects and credentials in a Microsoft Entra Domain Services managed domain can either be created locally within the domain, or synchronized from a Microsoft Entra tenant. When you first deploy Domain Services, an automatic one-way synchronization is configured and started to replicate the objects from Microsoft Entra ID. This one-way synchronization continues to run in the background to keep the  Domain Services managed domain up-to-date with any changes from Microsoft Entra ID. No synchronization occurs from Domain Services back to Microsoft Entra ID.
+Objects and credentials in a Microsoft Entra Domain Services managed domain can either be created locally within the domain, or synchronized from a Microsoft Entra tenant. When you first deploy Domain Services, an automatic one-way synchronization is configured and started to replicate the objects from Microsoft Entra ID. This one-way synchronization continues to run in the background to keep the Domain Services managed domain up-to-date with any changes from Microsoft Entra ID. No synchronization occurs from Domain Services back to Microsoft Entra ID.
 
 In a hybrid environment, objects and credentials from an on-premises AD DS domain can be synchronized to Microsoft Entra ID using Microsoft Entra Connect. Once those objects are successfully synchronized to Microsoft Entra ID, the automatic background sync then makes those objects and credentials available to applications using the managed domain.
 

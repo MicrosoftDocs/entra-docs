@@ -6,7 +6,7 @@ ms.author: owinfrey
 manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/10/2024
 ms.custom: template-howto
 ---

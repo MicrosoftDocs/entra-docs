@@ -134,7 +134,7 @@ Multitenant organization people search is a collaboration feature that enables s
 Here are the primary benefits of using Microsoft 365 people search across multiple tenants:
 
 - B2B collaboration users can be made available for collaboration in Outlook. This can be enabled using the [showInAddressList](/graph/api/resources/user#properties) property set to true for Exchange Online mail users in the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant.
-- B2B collaboration users already shown in address lists can be made available for collaboration in most Microsoft 365 applications using the [userType](/graph/api/resources/user#properties) property set to Member, managed in [Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.yml) of the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant.
+- B2B collaboration users already shown in address lists can be made available for collaboration in most Microsoft 365 applications using the [userType](/graph/api/resources/user#properties) property set to Member, managed in [Microsoft Entra admin center](../../fundamentals/how-to-manage-user-profile-info.md) of the host tenant, or using [cross-tenant synchronization](#cross-tenant-synchronization) from the source tenant.
 
 Here are the primary constraints of using Microsoft 365 people search across multiple tenants:
 

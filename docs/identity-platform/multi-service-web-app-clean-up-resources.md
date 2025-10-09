@@ -2,14 +2,14 @@
 title: Tutorial - Clean up resources
 description: In this tutorial, you learn how to clean up the Azure resources allocated while creating the web app.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 02/17/2024
 ms.reviewer: stsoneff
-ms.service: azure-app-service
-ms.subservice: web-apps
+ms.service: identity-platform
+ms.subservice:
 ms.topic: tutorial
-ms.custom: azureday1, sfi-image-nochange
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to access Azure Storage for an app using managed identities.
 ---
 
