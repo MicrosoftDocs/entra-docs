@@ -76,32 +76,7 @@ To configure provisioning, follow these steps:
 
    9. There are two possible approaches to set the OU:
 
-      - You can use custom expressions ensure the group is re-created with the same CN and OU.
-        
-        Expression for CN value:
-
-        ```https
-        IIF(
-            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
-            Replace(
-                Replace(
-                    Replace(
-                        Word(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), 1, ","),
-                        "CN=", , , "", ,
-                    ),
-                    "cn=", , , "", ,
-                ),
-                "\2C", , , ",", ,
-            ),
-        Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12)),
-        )
-        ```
-
-        This expression:
-        - If the extension is empty, generates a fallback CN from DisplayName + ObjectId.
-        - Otherwise extracts the CN, handling escaped commas by temporarily replacing them with hex values.
-
-        Expression for ParentDistinguishedName value:
+      - You can use custom expressions ensure the group is re-created with the same OU. Us the following expression for ParentDistinguishedName value:
 
         ```https
         IIF(
@@ -141,10 +116,33 @@ To configure provisioning, follow these steps:
 
         1. Select **Apply**. The target container changes depending on the group displayName attribute.
 
-   14. Select **Save**.
-   15. On the left, select **Overview**.
-   16. At the top, select **Review and enable**.
-   17. On the right, select **Enable configuration**.
+   10. You can use custom expressions to ensure the group is re-created with the same CN. Use the following expression for CN value:
+
+        ```https
+        IIF(
+            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+            Replace(
+                Replace(
+                    Replace(
+                        Word(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), 1, ","),
+                        "CN=", , , "", ,
+                    ),
+                    "cn=", , , "", ,
+                ),
+                "\2C", , , ",", ,
+            ),
+        Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12)),
+        )
+        ```
+
+        This expression:
+        - If the extension is empty, generates a fallback CN from DisplayName + ObjectId.
+        - Otherwise extracts the CN, handling escaped commas by temporarily replacing them with hex values.
+
+   11. Select **Save**.
+   12. On the left, select **Overview**.
+   13. At the top, select **Review and enable**.
+   14. On the right, select **Enable configuration**.
 
 
 ## Test configuration 
