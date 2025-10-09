@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: conceptual
-ms.date: 10/02/2025
+ms.date: 10/09/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
@@ -39,7 +39,7 @@ If you plan to provision a converted SOA security group (not mail-enabled) back 
 1. Convert the Source of Authority (SOA) when ready. 
 1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
 
-For more information, see [Prepare groups for Group SOA conversion and provisioning](cloud-sync/tutorial-group-provisioning.md#prepare-groups-for-group-soa-conversion-and-provisioning).
+For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/tutorial-group-provisioning.md).
 
 ### Transition group management
 
