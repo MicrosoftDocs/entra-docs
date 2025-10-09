@@ -479,6 +479,8 @@ items:
           href: tutorial-configure-external-id-web-app-firewall.md
         - name: Cloudflare
           href: tutorial-configure-cloudflare-integration.md
+      - name: Fraud protection integration
+        href: how-to-integrate-fraud-protection.md
     - name: Manage users
       items:
         - name: Manage admin accounts

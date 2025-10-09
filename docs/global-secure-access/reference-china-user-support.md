@@ -12,16 +12,13 @@ ms.reviewer: sumeetmittal
 # Customer intent: As an IT admin, I want to evaluate the regulatory constraints of using Global Secure Access in China so that I can ensure compliance and plan connectivity strategies effectively.   
 ---
 
-# Global Secure Access support in China (Preview)
+# Global Secure Access support in China
 Microsoft supports Global Secure Access capabilities in China, offering secure and compliant connectivity solutions tailored to the needs of organizations operating in China. 
 
-> [!IMPORTANT]
-> Global Secure Access support in China is currently in PREVIEW.
-> This information relates to a prerelease functionality that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided in this article.
-
 There are two scenarios that are applicable to Global Secure Access in China:      
-- Global Secure Access availability for customer tenants deployed on Microsoft Azure in China. **Microsoft currently doesn’t support this scenario**. 
-- Global Secure Access availability for tenants outside China. This scenario includes use cases where Global Secure Access customers with a presence in multiple geographies make a temporary visit to China. For example, when an employee of USA-based company Contoso, using Global Secure Access, travels to China. **Microsoft supports this scenario**.    
+- Global Secure Access availability for **customer tenants deployed on Microsoft Azure in China**. **Microsoft currently doesn’t support this scenario**. 
+- Global Secure Access availability for **customer tenants deployed on Microsoft Azure outside China**. **Microsoft supports this scenario**.
+  - This scenario includes use cases where Global Secure Access (GSA) customers with a presence in multiple geographies and tenants deployed outside China use GSA while in China. For example, when an employee of USA-based company Contoso, using GSA, travels to China.     
 
 However, it’s important to recognize the specific connectivity disclaimers that apply to Secure Access Service Edge (SASE) providers operating in China. Because of regulatory restrictions and local infrastructure requirements, SASE providers might encounter:    
 - **Service limitations**: Connectivity performance can vary because of internet regulations and restrictions on VPN usage. Local routing policies can also affect network latency and bandwidth. Because connectivity is unpredictable, user experience might vary. 

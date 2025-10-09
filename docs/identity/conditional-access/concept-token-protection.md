@@ -143,7 +143,7 @@ The following steps help you create a Conditional Access policy to require token
        1. Select **Done**.
 1. Under **Access controls** > **Session**, select **Require token protection for sign-in sessions** and select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select create to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
