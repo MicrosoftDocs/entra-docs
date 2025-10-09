@@ -83,7 +83,7 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 [!INCLUDE [21829](../includes/secure-recommendations/21829.md)]
 
 ### All users are required to register for MFA
-[!INCLUDE [21839](../includes/secure-recommendations/21839.md)]
+[!INCLUDE [21893](../includes/secure-recommendations/21893.md)]
 
 ### Users have strong authentication methods configured
 [!INCLUDE [21801](../includes/secure-recommendations/21801.md)]
