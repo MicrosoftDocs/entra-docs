@@ -336,11 +336,10 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Genesys Cloud for Azure](../identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
 | [getAbstract](../identity/saas-apps/getabstract-provisioning-tutorial.md) | ● | ● |
 | [Getty Images](../identity/saas-apps/getty-images-tutorial.md) |  | ● |
-| [GitHub AE](../identity/saas-apps/github-ae-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Cloud - Enterprise Account](../identity/saas-apps/github-enterprise-cloud-enterprise-account-tutorial.md) |  | ● |
 | [GitHub Enterprise Managed User (OIDC)](../identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Managed User](../identity/saas-apps/github-enterprise-managed-user-provisioning-tutorial.md) | ● | ● |
-| [GitHub Enterprise Server](../identity/saas-apps/github-ae-tutorial.md) |  | ● |
+| [GitHub Enterprise Server](../identity/saas-apps/github-enterprise-server-provisioning-tutorial.md) | ● | ● |
 | [GitHub](../identity/saas-apps/github-provisioning-tutorial.md) | ● | ● |
 | [Global Relay Identity Sync](../identity/saas-apps/global-relay-identity-sync-provisioning-tutorial.md) | ● |  |
 | [GlobalOne](../identity/saas-apps/globalone-tutorial.md) |  | ● |
@@ -348,7 +347,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [goFLUENT](../identity/saas-apps/gofluent-tutorial.md) |  | ● |
 | [GoLinks](../identity/saas-apps/golinks-provisioning-tutorial.md) | ● | ● |
 | [Gong](../identity/saas-apps/gong-provisioning-tutorial.md) | ● |  |
-| [Google Cloud Platform](../identity/saas-apps/g-suite-provisioning-tutorial.md) | ● | ● |
 | [GoProfiles](../identity/saas-apps/goprofiles-tutorial.md) |  | ● |
 | [GoSearch](../identity/saas-apps/gosearch-tutorial.md) |  | ● |
 | [GoTo](../identity/saas-apps/goto-provisioning-tutorial.md) | ● | ● |
@@ -501,7 +499,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [MIC SAAS Portal](../identity/saas-apps/mic-saas-portal-tutorial.md) |  | ● |
 | [MicroFocus Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Microsoft 365](../fundamentals/concept-group-based-licensing.md) | ● | ● |
-| [Microsoft Active Directory Domain Services](../identity/domain-services/scoped-synchronization.md) | ● | ● |
 | [Microsoft Azure SQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Microsoft Azure](/azure/role-based-access-control/role-assignments-portal) | ● | ● |
 | [Microsoft Entra Domain Services](../identity/domain-services/synchronization.md) | ● | ● |
