@@ -108,7 +108,7 @@ procedureSection:
           - **Require re-register MFA** deactivates the user's hardware OATH tokens and deletes the following authentication methods from this user: phone numbers, Microsoft Authenticator apps and software OATH tokens. If needed, the user is requested to set up a new MFA authentication method the next time they sign in.
           - **Revoke MFA sessions** forces users with enforced or enabled status in [per-user MFA](/entra/identity/authentication/howto-mfa-userstates) to complete MFA again by clearing their remembered sessions.  
  
-            :::image type="content" source="media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png" alt-text="Screenshot of manage authentication methods from the Microsoft Entra admin center.":::
+            :::image type="content" source="media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png" alt-text="Screenshot of manage authentication methods from the Microsoft Entra admin center." lightbox="media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png":::
 
             Microsoft recommends using **Revoke sessions** instead because it signs out users from all active sessions. To revoke sessions for a user in the Microsoft Entra ID admin center, select **Users** > select a user > **Overview** > **Revoke sessions**.
 
