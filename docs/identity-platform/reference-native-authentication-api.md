@@ -1319,9 +1319,10 @@ Microsoft Entra determines the default MFA method for the user by priority as fo
 
 ## Register a strong authentication method API reference
 
-**For users whose primary authentication method is email with password**, native authentication supports just‑in‑time (JIT) registration of strong authentication methods. If the client app calls the [`/oauth2/v2.0/token`](#step-3-request-for-security-tokens) endpoint and MFA is required but the user has no strong authentication method registered, the endpoint responds indicating that the user must complete the strong authentication method JIT registration flow before tokens can be issued.
+**For users whose primary authentication method is email with password**, native authentication supports registration of strong authentication method. When the app calls the [/oauth2/v2.0/token](#step-3-request-for-security-tokens) endpoint and MFA is required but the user has no registered strong method, the response, *registeration_required*, tells the app to have the user register one before tokens can be issued.
 
-After the client app completes the JIT registration flow, it can call the `/oauth2/v2.0/token` endpoint to request for security tokens.
+
+After the client app completes the flow to register a strong authentication method, it calls the `/oauth2/v2.0/token` endpoint to request for security tokens.
 
 ### Strong authentication method registration endpoints
 
@@ -1331,12 +1332,12 @@ To use the strong authentication method registration  API, the app uses the endp
 |----------------------|------------------------|
 |`/register/v1.0/introspect`| Call this endpoint to fetch a list of strong authentication methods that the user can register.   |
 |`/register/v1.0/challenge`| Call this endpoint to send the challenge to the user, such as email one-time passcode.|
-|`/register/v1.0/continue`| Call this endpoint to submit the challenge the app collects from the user, such as one-time passcode, to complete JIT registration flow. After the call succeeds and you obtain a continuation token, call the `/oauth2/v2.0/token` endpoint endpoint to request security tokens. [Learn how to call the token endpoint](#step-3-request-for-security-tokens).|
+|`/register/v1.0/continue`| Call this endpoint to submit the challenge the app collects from the user, such as one-time passcode, to complete a flow to register a strong authentication method. After the call succeeds and you obtain a continuation token, call the `/oauth2/v2.0/token` endpoint endpoint to request security tokens. [Learn how to call the token endpoint](#step-3-request-for-security-tokens).|
 
 
 ### Step 1: Get the list of strong authentication methods
 
-JIT registration flow starts when the app requests for a list of strong authentication methods that the user is allowed to register.
+The registration flow begins when the app requests the list of strong authentication methods the user is permitted to enroll.
 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
@@ -1374,8 +1375,7 @@ Content-Type: application/json
         {   
           "id": "sms",   
           "challenge_type": "oob",   
-          "challenge_channel": "sms",   
-          "login_hint": "+1234567890"   
+          "challenge_channel": "sms"
         }
     ]
 }
@@ -1393,7 +1393,7 @@ The strong authentication methods object has the following properties:
 | `id`  |  String key of the method. Supported values *email, sms*.  |
 | `challenge_type` | Challenge type selected for the user to use as the MFA method. Current supported challenge type is *oob*.  |
 | `challenge_channel` | The type of the channel to which the the MFA method is sent. Supported values *email, sms*. |
-| `login_hint` | The hint for the strong authentication method such as an obfuscated email. This value is used by the client app to prepopulate the email textbox. <check whether login hint is obfuscated>|
+| `login_hint` | The hint for the strong authentication method such as an email. This value is used by the client app to prepopulate the email textbox.|
 
 
 #### Error response
@@ -1614,10 +1614,10 @@ To use this API, the app uses the endpoint shown in the following table:
 |    Endpoint     | Description        |
 |----------------------|------------------------|
 | `/resetpassword/v1.0/start`  | Your app calls this endpoint when the customer user selects **Forgot password** or **Change password** link or button in the app. This endpoint validates the user's username (email), then returns a *continuation token* to use in the password reset flow. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow. |
-|`/resetpassword/v1.0/challenge`|  Accepts a list of challenge types supported by the client and the *continuation token*. A challenge is issued to one of the preferred recovery credentials. For example, oob challenge issues an out-of-band one-time passcode to the email associated with the customer user account. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.    |
+|`/resetpassword/v1.0/challenge`| Accepts a list of challenge types supported by the client and the *continuation token*. A challenge is issued to one of the preferred recovery credentials. For example, oob challenge issues an out-of-band one-time passcode to the email associated with the customer user account. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.    |
 |`/resetpassword/v1.0/continue`| Validates the challenge issued by the `/resetpassword/v1.0/challenge` endpoint, then either returns a *continuation token* for the `/resetpassword/v1.0/submit` endpoint, or issues another challenge to the user.  |
-|`/resetpassword/v1.0/submit`|  Accepts a new password input by the user along with the *continuation token* to complete the password reset flow. This endpoint issues another *continuation token*. |
-|`/resetpassword/v1.0/poll_completion`|  The app can use the *continuation token* issued by the `/resetpassword/v1.0/submit` endpoint to check the status of the password reset request.    |
+|`/resetpassword/v1.0/submit`| Accepts a new password input by the user along with the *continuation token* to complete the password reset flow. This endpoint issues another *continuation token*. |
+|`/resetpassword/v1.0/poll_completion`|  The app can use the *continuation token* issued by the `/resetpassword/v1.0/submit` endpoint to check the status of the password reset request. |
 |`oauth2/v2.0/token`| If password reset is successfull, the app can use the continuation token it obtains from the `/resetpassword/v1.0/poll_completion` endpoint to obtain security tokens from the `oauth2/v2.0/token` endpoint. |
 
 ### Self-service password reset challenge types
