@@ -23,6 +23,9 @@ Even smaller organizations can protect their environments by implementing strict
 ### Permissions to create new tenants are limited to the Tenant Creator role
 [!INCLUDE [21787](../includes/secure-recommendations/21787.md)]
 
+### Protected actions are enabled for high-impact management tasks
+[!INCLUDE [21831](../includes/secure-recommendations/21831.md)]
+
 ### Allow/Deny lists of domains to restrict external collaboration are configured
 [!INCLUDE [21874](../includes/secure-recommendations/21874.md)]
 
