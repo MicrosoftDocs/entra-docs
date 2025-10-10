@@ -76,7 +76,7 @@ To configure provisioning, follow these steps:
 
    9. There are two possible approaches to set the OU:
 
-      - You can use custom expressions ensure the group is re-created with the same OU. Us the following expression for ParentDistinguishedName value:
+      - You can use custom expressions ensure the group is re-created with the same OU. Use the following expression for ParentDistinguishedName value:
 
         ```https
         IIF(
