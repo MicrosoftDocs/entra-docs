@@ -36,6 +36,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Admin consent workflow is enabled](zero-trust-protect-identities.md#admin-consent-workflow-is-enabled) | Microsoft Entra ID P1 |
 | [Privileged accounts are cloud native identities](zero-trust-protect-identities.md#privileged-accounts-are-cloud-native-identities) | Microsoft Entra ID P2 |
 | [All privileged role assignments are activated just in time and not permanently active](zero-trust-protect-identities.md#all-privileged-role-assignments-are-activated-just-in-time-and-not-permanently-active) | Microsoft Entra ID P2 |
+| [Passkey authentication method enabled](zero-trust-protect-identities.md#passkey-authentication-method-enabled) | None (included with Microsoft Entra ID) |
 | [Privileged accounts have phishing-resistant methods registered](zero-trust-protect-identities.md#privileged-accounts-have-phishing-resistant-methods-registered) | Microsoft Entra ID P1 |
 | [Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods](zero-trust-protect-identities.md#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Microsoft Entra ID P1 |
 | [Require password reset notifications for administrator roles](zero-trust-protect-identities.md#require-password-reset-notifications-for-administrator-roles) | Microsoft Entra ID P1 |

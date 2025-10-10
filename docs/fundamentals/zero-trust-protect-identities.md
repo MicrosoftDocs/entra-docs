@@ -49,8 +49,11 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### All privileged role assignments are activated just in time and not permanently active
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
 
+### Passkey authentication method enabled
+[!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
+
 ### Privileged accounts have phishing-resistant methods registered
-[!INCLUDE [21782](../includes/secure-recommendations/21782.md)]
+[!INCLUDE [21839](../includes/secure-recommendations/21839.md)]
 
 ### Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
 [!INCLUDE [21783](../includes/secure-recommendations/21783.md)]
