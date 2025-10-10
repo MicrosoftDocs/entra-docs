@@ -4,7 +4,7 @@ description: Steps to prepare SOA converted groups for provisioning to their ori
 author: omondiatieno
 ms.service: entra-id
 ms.topic: Include
-ms.date: 10/09/2025
+ms.date: 10/10/2025
 ms.author: jomondi
 ms.custom: Include file
 ---
@@ -115,7 +115,7 @@ Next, tell Cloud Sync to populate this extension property with the group’s Dis
 4. At the top, switch **Object type** to **Group**.
 5. Add a new attribute mapping.
    - Mapping type: Direct
-   - Source attribute: distinguishedName (the on-prem group’s DN)
+   - Source attribute: distinguishedName (the on-premises group’s DN)
    - Target attribute: `extension_<appIdWithoutHyphens>_GroupDN`
 6. Save the schema to trigger a sync.
 

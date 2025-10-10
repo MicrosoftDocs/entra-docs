@@ -34,7 +34,7 @@ The following prerequisites are required to implement provisioning groups to Act
  >
  >These permissions aren't applied to AdminSDHolder objects by default. For more information, see [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](../cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain). 
 
- - The provisioning agent must beinstalled on a server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016.
+ - The provisioning agent must be installed on a server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016.
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for Global Catalog lookup to filter out invalid membership references
  - Microsoft Entra Connect Sync with build version [2.22.8.0](../connect/reference-connect-version-history.md#2280)
