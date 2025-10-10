@@ -15,12 +15,12 @@ ms.custom: sfi-image-nochange
 
 Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
-1. Select any of the available methods you want to allow.
+1. Select the available methods you want to allow, like those under Phishing-resistant MFA, Passwordless MFA, and Temporary Access Pass.
 1. Choose **Next** and review the policy configuration.
 
    :::image type="content" border="true" source="media/concept-authentication-strengths/authentication-strength-custom.png" alt-text="Screenshot showing the creation of a custom authentication strength.":::

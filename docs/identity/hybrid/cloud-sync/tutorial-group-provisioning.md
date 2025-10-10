@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 10/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
@@ -52,81 +52,7 @@ To add synced users, follow these steps:
 9. It should successfully add the user to the group.
 10. On the far left, select **All groups**. Repeat this process by using the **Sales** group, and add **Lola Jacobson** to that group.
 
-## Prepare groups for Group SOA conversion and provisioning
-
-You can preserve the original organizational unit (OU) of on-premises groups and provision the groups back to their original Active Directory Domain Services (AD DS) after you convert Group SOA to the cloud. Complete the following steps to prepare the groups for provisioning to AD DS with their original OU path.
-
-### Change the group scope for the AD DS groups to Universal
-
-1. Open Active Directory Administrative Center.
-1. Right-click a group, click **Properties**.
-1. In the **Group** section, select **Universal** as the group scope.
-1. Click **Save**.
-
-### Populate a custom attribute in AD DS
-
-You can store the OU path in a custom attribute or any other attribute like *info*. For more information about how to sync custom attributes, see [Custom attribute mapping](/entra/identity/hybrid/cloud-sync/tutorial-directory-extension-group-provisioning). In this example, the OU oath is stored in *extensionAttribute13*.
-
-Run the following cmdlet to extract the OU from each group's distinguished name (DN) and store it in the *extensionAttribute13* attribute. 
-
-```powershell
-Get-ADGroup -Filter * -SearchBase "DC=contoso,DC=com" | ForEach-Object { 
-    $ou = ($_.DistinguishedName -split ",", 2)[1]  # Extract OU path 
-    Set-ADGroup -Identity $_.DistinguishedName -Replace @{extensionAttribute13 = $ou} 
-} 
-```
-
-### Enable sync for the custom attribute in the sync client
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Provisioning** > **Cloud Sync**. 
-1. Select your Cloud Sync configuration. 
-1. Under **Attribute Mapping**, for Group objects: 
-   1. Click **Edit Mapping** 
-   1. Add a new mapping: 
-
-     | Setting | Value |
-     |---------|-------|
-     | Source attribute | extensionAttribute13 |
-     | Target attribute | onPremisesExtensionAttributes.extensionAttribute13|
-     | Match objects | Leave unchecked |
-     | Apply this mapping | Always |
-
-### Confirm the custom attribute sync in Microsoft Entra ID
-
-   #### [**Microsoft Graph PowerShell**](#tab/PowerShell)
-
-   ```powershell
-   Get-MgGroup -GroupId <groupId> | Select -ExpandProperty OnPremisesExtensionAttributes 
-   ```
-
-   #### [**Graph Explorer**](#tab/GE)
-
-   ```https
-   GET https://graph.microsoft.com/v1.0/groups/{group-id}?$select=onPremisesExtensionAttributes 
-   ```
-
-   You should see: 
-
-   ```https
-   { 
-     "onPremisesExtensionAttributes": { 
-       "extensionAttribute13": "OU=Finance,DC=contoso,DC=com" 
-     } 
-   } 
-   ```
-   ---
-
-### Provision SOA converted groups with the custom attribute
-
-When you configure **Provisioning**, use the synced attribute to control the target OU. 
- 
-1. In your **Provisioning** configuration, map onPremisesExtensionAttributes.extensionAttribute13 to a custom variable such as *preferredOU*. 
-2. Use an expression like this example to handle fallback. This expression uses the original OU if it's available, or falls back to a default OU that you specify. You can change extensionAttribute13 later to override the value. 
-
-   ```
-   IIF(IsNullOrEmpty([extensionAttribute13]), "OU=<Enter your default OU name>,DC=contoso,DC=com", [extensionAttribute13]) 
-   ```
+[!INCLUDE [pre-requisites](../includes/prepare-converted-groups.md)]
 
 ## Configure provisioning
 
@@ -150,26 +76,73 @@ To configure provisioning, follow these steps:
 
    9. There are two possible approaches to set the OU:
 
-      - You can preserve the original OU path from on-premises. With this approach, you first need to [Prepare groups for Group SOA conversion and provisioning](#prepare-groups-for-group-soa-conversion-and-provisioning).
-   
-      Or
+      - You can use custom expressions ensure the group is re-created with the same OU. Use the following expression for ParentDistinguishedName value:
 
-      - Under **Target container** select **Edit attribute mapping**.
+        ```https
+        IIF(
+            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+            Replace(
+                Mid(
+                    Mid(
+                        Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ),
+                        Instr(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), ",", , ),
+                        9999
+                    ),
+                    2,
+                    9999
+                ),
+                "\2C", , , ",", ,
+            ),
+        "<Existing ParentDistinguishedName>",
+        )
+        ```
 
-   10. Change **Mapping type** to **Expression**.
-   11. In the expression box, enter:
+        This expression:
+        - Uses a default OU if the extension is empty.
+        - Otherwise strips the CN portion and preserves the parentDN path, again handling escaped commas.
 
-       ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+        This changes causes a full sync and doesn't affect existing groups. Test setting the GroupDN attribute for an existing group using Microsoft Graph and ensure that it moves back to original OU.
 
-   12. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+      - If you don't want to preserve the original OU path and CN information from on-premises, under **Target container** select **Edit attribute mapping**.
 
-       :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
+        1. Change **Mapping type** to **Expression**.
+        1. In the expression box, enter:
 
-   13. Select **Apply** - This changes the target container depending on the group displayName attribute.
-   14. Select **Save**.
-   15. On the left, select **Overview**.
-   16. At the top, select **Review and enable**.
-   17. On the right, select **Enable configuration**.
+           ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+
+        1. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+
+           :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
+
+        1. Select **Apply**. The target container changes depending on the group displayName attribute.
+
+   10. You can use custom expressions to ensure the group is re-created with the same CN. Use the following expression for CN value:
+
+        ```https
+        IIF(
+            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+            Replace(
+                Replace(
+                    Replace(
+                        Word(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), 1, ","),
+                        "CN=", , , "", ,
+                    ),
+                    "cn=", , , "", ,
+                ),
+                "\2C", , , ",", ,
+            ),
+        Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12)),
+        )
+        ```
+
+        This expression:
+        - If the extension is empty, generates a fallback CN from DisplayName + ObjectId.
+        - Otherwise extracts the CN, handling escaped commas by temporarily replacing them with hex values.
+
+   11. Select **Save**.
+   12. On the left, select **Overview**.
+   13. At the top, select **Review and enable**.
+   14. On the right, select **Enable configuration**.
 
 
 ## Test configuration 

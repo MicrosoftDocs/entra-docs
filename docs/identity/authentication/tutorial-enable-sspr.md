@@ -74,14 +74,12 @@ When users need to unlock their account or reset their password, they're prompte
 
     To improve security, you can increase the number of authentication methods required for SSPR.
 
-1. Choose the **Methods available to users** that your organization wants to allow. For this tutorial, check the boxes to enable the following methods:
+1. Choose the **Methods available to users** that your organization wants to allow. For this tutorial, enable the following methods:
 
     * *Mobile app notification*
     * *Mobile app code*
     * *Email*
     * *Mobile phone*
-
-    You can enable other authentication methods, like *Office phone* or *Security questions*, as needed to fit your business requirements.
 
 1. To apply the authentication methods, select **Save**.
 

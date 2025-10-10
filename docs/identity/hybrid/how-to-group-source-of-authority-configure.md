@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: how-to
-ms.date: 09/04/2025
+ms.date: 10/02/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -23,7 +23,7 @@ This article explains the prerequisites and steps to configure Group Source of A
 | **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free license. |
 | **Sync client** | You can use either sync client to to synchronize SOA converted groups. If you use Connect Sync, upgrade to the minimum version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). If you use Cloud Sync, upgrade to minimum version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700).  |
-| **Provisioning to AD (optional)** |  To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. |
+| **Provisioning to AD DS (optional)** | To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. You also need to complete steps to prepare the groups for provisioning to AD DS with their original OU path. For more information, see [Prepare groups for Group SOA conversion and provisioning](concept-group-source-of-authority-guidance.md#prepare-groups-for-group-soa-conversion-and-provisioning). |
 
 ### Download Connect Sync client
 
@@ -66,6 +66,10 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 1.	Search for Group-OnPremisesSyncBehavior, and select **Consent** for the permission.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-group-source-of-authority-configure/consent.png":::
+
+## Prepare groups for Group SOA conversion and provisioning
+
+If you want to provision the group back to AD, ensure you can preserve the OU Path and set it in the **Group Provision to AD** configuration with the right mapping.
 
 ## Convert SOA for a test group
 

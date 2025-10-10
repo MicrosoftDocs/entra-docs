@@ -2634,6 +2634,11 @@
       "source_path_from_root": "/docs/identity/saas-apps/pksha-chatbot-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/pksha-chatagent-tutorial",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md",
+      "redirect_url": "/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning",
+      "redirect_document_id": false
     }
   ]
 }
