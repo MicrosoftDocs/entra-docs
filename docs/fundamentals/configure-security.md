@@ -64,7 +64,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | Check | Minimum required license |
 |---|---|
 | [Permissions to create new tenants are limited to the Tenant Creator role](zero-trust-protect-tenants.md#permissions-to-create-new-tenants-are-limited-to-the-tenant-creator-role) | Microsoft Entra ID Free |
-| [Allow/Deny lists of domains to restrict external collaboration are configured](zero-trust-protect-tenants.md#allowdeny-lists-of-domains-to-restrict-external-collaboration-are-configured) | Microsoft Entra ID Free |
+| [Guest access limited to approved tenants](zero-trust-protect-tenants.md#allowdeny-lists-of-domains-to-restrict-external-collaboration-are-configured) | Microsoft Entra ID Free |
 | [Guests are not assigned high privileged directory roles](zero-trust-protect-tenants.md#guests-are-not-assigned-high-privileged-directory-roles) | Microsoft Entra ID Free<br>Microsoft Entra ID P2 or Microsoft ID Governance for PIM |
 | [Guests can't invite other guests](zero-trust-protect-tenants.md#guests-cant-invite-other-guests) | Microsoft Entra ID Free |
 | [Guests have restricted access to directory objects](zero-trust-protect-tenants.md#guests-have-restricted-access-to-directory-objects) | Microsoft Entra ID Free |
