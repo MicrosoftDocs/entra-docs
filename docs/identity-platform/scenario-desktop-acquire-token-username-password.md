@@ -18,7 +18,7 @@ ms.topic: how-to
 In your desktop applications, you can use the username and password flow, also known as Resource Owner Password Credentials (ROPC), to acquire a token silently.
 
 >[!WARNING]
-> The username and password flow is **not recommended** as the application will be asking a user for their password directly, which is an insecure pattern. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
+> The username and password flow has been deprecated due to security risks, use a more secure flow. Follow [this guide](https://aka.ms/msal-ropc-migration) for migration guidance. For more information about the risks and challenges the ROPC flow poses, refer to ["What’s the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
 
 Additionally, by using a username and password, developers give up a number of things, including:
 
