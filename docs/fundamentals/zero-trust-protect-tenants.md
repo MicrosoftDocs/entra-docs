@@ -26,7 +26,7 @@ Even smaller organizations can protect their environments by implementing strict
 ### Protected actions are enabled for high-impact management tasks
 [!INCLUDE [21831](../includes/secure-recommendations/21831.md)]
 
-### Guest access limited to approved tenants
+### Guest access is limited to approved tenants
 [!INCLUDE [21874](../includes/secure-recommendations/21874.md)]
 
 ### Guests are not assigned high privileged directory roles
