@@ -426,6 +426,8 @@ items:
           items:
             - name: Default branding
               href: how-to-customize-branding-customers.md
+            - name: Customize sign-in with branding themes
+              href: how-to-customize-branding-themes-apps.md
             - name: Language-specific branding
               href: how-to-customize-languages-customers.md
         - name: Customize attribute collection

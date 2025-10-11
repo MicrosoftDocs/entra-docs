@@ -627,8 +627,6 @@
               href: quickstart-create-new-tenant.md
             - name: Register app or web API
               href: quickstart-register-app.md
-            - name: Customize sign-in with branding themes
-              href: howto-add-branding-themes-apps.md
             - name: Add a redirect URI to an app
               href: how-to-add-redirect-uri.md
             - name: Add credentials to an app
