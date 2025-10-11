@@ -24,15 +24,15 @@ This article describes how you can create multiple branding themes for different
 
 ## Prerequisites
 
-- A Microsoft Entra [workforce](../fundamentals/create-new-tenant.md) or [external](../external-id/customers/quickstart-tenant-setup.md) tenant.
+- A Microsoft Entra [workforce](../../fundamentals/create-new-tenant.md) or [external](quickstart-tenant-setup.md) tenant.
 - Have at least the [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator) role.
-- Have at least the [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator) role for applications that you want to apply a theme to.
-- A registered application in your tenant. If you haven't registered an application yet, see [Register an application](../identity-platform/quickstart-register-app.md).
+- Have at least the [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) role for applications that you want to apply a theme to.
+- A registered application in your tenant. If you haven't registered an application yet, see [Register an application](../../identity-platform/quickstart-register-app.md).
 - Review the file size requirements for each image you want to add. Use a photo editor if needed to create correctly sized and formatted images: PNG, JPG, or JPEG with image size 245x36px and maximum file size 10KB.
 
 ## Step 1: Create a theme and attach it to your application
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator) and [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as [Organizational Branding Administrator](../../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator) and [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 1. On the **Company Branding** page, select the **Themes** tab, and then select **Create new theme**.
    
