@@ -430,6 +430,25 @@ Try these solutions:
 
   Sign in with the user account in a web browser. For instance, sign in to the [Azure portal](https://portal.azure.com) in a private browsing window. If you're prompted to change the password, set a new password. Then try connecting again.
 
+### AADSTS293004: The target-device identifier in the request xxx was not found in the tenant xxx
+
+Cause:
+
+The computer name entered in mstsc does not match with any one of the "hostnames" attributes for target AADJ device. For example, AADJ device host name is the short name like device_1, but the computer name entered in mstsc is the FQDN like device_1.contoso.com.
+
+Try these solutions:
+
+There are multiple ways to resolve the issue:
+1.	Modify the HOSTS entry on client machine, add an A DNS record that points the correct device name (confirm from AAD Device record) to the IP of target machine. Use that device name in mstsc.
+2.	Check if the target machine is managed and if the hostname is set through Group Policy or MDM via the DNS Client PrimaryDnsSuffix value [ADMX_DnsClient Policy CSP | Microsoft Learn](/windows/client-management/mdm/policy-csp-admx-dnsclient#dns_primarydnssuffix). If this is set and is incorrect, it needs to be removed or set correctly. 
+3.	When customer requires to use FQDN to connect but AAD Device name is a short name, login to the target machine via local admin, add a “**Primary DNS Suffix**” for their domain suffix. Detailed instructions:
+- Navigate to **Advanced System Settings/System Properties** ->** Computer Name** tab -> select the "**Change**" button to rename the computer -> select "**More**..." under the existing computer name -> Type in your domain name and select **OK** -> Save and reboot.
+- Once it’s done, we can RDP with FQDN directly and no need to modify the HOSTS entry.
+
+> [!NOTE]
+> In such case, when Primary DNS Suffix is added, the Device-Sync scheduled task will be triggered which adding the FQDN into AAD device "hostnames" attributes. This is why it will resolve the issue.
+
+
 ### MFA sign-in method required
 
 You might see the following error message when you initiate a remote desktop connection to your device: "The sign-in method you're trying to use isn't allowed. Try a different sign-in method or contact your system administrator."

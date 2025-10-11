@@ -12,13 +12,28 @@ This article lists the versions and features of Microsoft Entra provisioning age
 
 ## Download link
 
-From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), select "Cloud Sync" and go to "Agents" to download the "Provisioning Agent."
+From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), select **Cloud Sync**, and go to **Agents** to download the **Provisioning Agent**.
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
 
+## 1.1.2102.0
 
+Sept 22, 2025: released for download only
 
+### Fixed issues
+
+- Improved reliability of agent install and upgrade by preventing service timeouts
+- Streamlined how to enable Windows Credential Manager during agent installation
+- Added a check for the Hybrid Administrator role prerequisite, and activate the role for eligible authenticated users
+- Simplified how to choose your provisioning scenario
+- Configured installation for the current cloud environment by default
+- Faster enumeration for large groups by preventing service timeouts
+- Improved how admins can view their domain controller priority list
+- Added UserAccountControl as a System for Cross-domain Identity Management (SCIM) property
+- Added a configurable password length for newly created users. The default password length for newly created users is 256. Admins can set an integer value between 127 and 256 for newly created users by creating a registry entry with REG_DWORD data type at:
+
+  `HKLM\Software\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent\UserPasswordLength`
 
 ## 1.1.1586.0
 
@@ -214,7 +229,7 @@ January 20, 2021: released for download only
 ### Fixed issues
 -	Prevent quarantine when scoping group is out of scope
 -	PHS job now only operates for in-scope users, when scoping filters are configured
--	Agent would sometime stop responding during upgrade
+-	Agent would sometimes stop responding during upgrade
 -	Initial Sync for objects in nested OUs when using OU scoping
 -	Make the Repair-AADCloudSyncToolsAccount more robust
 -	Reduce large memory usage of OU scoping filters

@@ -5,7 +5,7 @@ description: Learn how to build Angular single-page app that signs in users into
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 07/30/2025

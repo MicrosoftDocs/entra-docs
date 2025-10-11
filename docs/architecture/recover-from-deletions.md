@@ -1,26 +1,25 @@
 ---
 title: Recover from deletions in Microsoft Entra ID
-description: Learn how to recover from unintended deletions.
+description: Understand the difference between soft and hard deletions and how to recover or recreate objects in Microsoft Entra ID.
 author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: article
-ms.date: 11/14/2022
+ms.date: 10/06/2025
 ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: sfi-image-nochange
 ---
-
 # Recover from deletions
 
-This article addresses recovering from soft and hard deletions in your Microsoft Entra tenant. If you haven't already done so, read [Recoverability best practices](recoverability-overview.md) for foundational knowledge.
+Managing deletions in Microsoft Entra ID is a critical aspect of maintaining the integrity and availability of your organization's identity infrastructure. This article provides a comprehensive guide to understand the differences between soft and hard deletions, monitor for deletions, and recover or recreate objects in your Microsoft Entra tenant. Whether you're dealing with accidental deletions or preparing recovery strategies, this guide equips you with the knowledge and tools to minimize disruption and ensure continuity. For foundational insights, start with [Recoverability best practices](recoverability-overview.md).
 
 ## Monitor for deletions
 
-The [Microsoft Entra audit log](~/identity/monitoring-health/concept-audit-logs.md) contains information on all delete operations performed in your tenant. Export these logs to a security information and event management tool such as [Microsoft Sentinel](/azure/sentinel/overview).
+The [Microsoft Entra audit log](~/identity/monitoring-health/concept-audit-logs.md) contains information on all delete operations performed in your tenant. Export these logs to a security information and event management tool, such as [Microsoft Sentinel](/azure/sentinel/overview).
 
-You can also use Microsoft Graph to audit changes and build a custom solution to monitor differences over time. For more information on how to find deleted items by using Microsoft Graph, see [List deleted items - Microsoft Graph v1.0](/graph/api/directory-deleteditems-list?tabs=http).
+Use Microsoft Graph to audit changes, and build a custom solution to monitor differences over time. For more information on how to find deleted items by using Microsoft Graph, see [List deleted items - Microsoft Graph v1.0](/graph/api/directory-deleteditems-list?tabs=http).
 
 ### Audit log
 
@@ -41,60 +40,61 @@ A delete event for applications, users, and Microsoft 365 Groups is a soft delet
 | All other objects| Delete "objectType"| Hard deleted |
 
 > [!NOTE]
-> The Audit log doesn't distinguish the group type of a deleted group. Only Microsoft 365 Groups are soft deleted. If you see a Delete group entry, it might be the soft delete of a Microsoft 365 Group or the hard delete of another type of group.
+> The audit log doesn't distinguish the group type of a deleted group. Only Microsoft 365 Groups are soft deleted. If you see a Delete group entry, it might be the soft delete of a Microsoft 365 Group or the hard delete of another type of group.
 >
 >*It's important that your documentation of your known good state includes the group type for each group in your organization*. To learn more about documenting your known good state, see [Recoverability best practices](recoverability-overview.md).
 
 ### Monitor support tickets
 
-A sudden increase in support tickets about access to a specific object might indicate that a deletion occurred. Because some objects have dependencies, deletion of a group used to access an application, an application itself, or a Conditional Access policy that targets an application can all cause broad sudden impact. If you see a trend like this, check to ensure that none of the objects required for access were deleted.
+A sudden increase in support tickets about access to a specific object might indicate that a deletion happened. Because some objects have dependencies, deleting a group used to access an application, an application itself, or a Conditional Access policy that targets an application can cause broad, sudden impact. If you see a trend like this, check to ensure that none of the objects required for access were deleted.
 
 ## Soft deletions
 
-When objects such as users, Microsoft 365 Groups, or application registrations are soft deleted, they enter a suspended state in which they aren't available for use by other services. In this state, items retain their properties and can be restored for 30 days. After 30 days, objects in the soft-deleted state are permanently, or hard, deleted.
+When objects such as users, Microsoft 365 Groups, or application registrations are soft deleted, they enter a suspended state in which they aren't available for use by other services. In this state, items keep their properties and can be restored for 30 days. After 30 days, objects in the soft-deleted state are permanently deleted or hard deleted.
 
 > [!NOTE]
-> Objects can't be restored from a hard-deleted state. They must be re-created and reconfigured.
+> Objects can't be restored from a hard-deleted state. Re-create and reconfigure them.
 
-### When soft deletes occur
+<a name='when-soft-deletes-occur'></a>
+### When soft deletes happen
 
-It's important to understand why object deletions occur in your environment so that you can prepare for them. This section outlines frequent scenarios for soft deletion by object class. You might see scenarios that are unique to your organization, so a discovery process is key to preparation.
+Understanding why object deletions happen in your environment helps you prepare for them. This section outlines frequent scenarios for soft deletion by object class. You might see scenarios that are unique to your organization, so a discovery process is key to preparation.
 
 ### Users
 
-Users enter the soft-delete state anytime the user object is deleted by using the Azure portal, Microsoft Graph, or PowerShell.
+Users enter a soft-deleted state when the user object is deleted using the Microsoft Entra admin center, Microsoft Graph, or PowerShell.
 
-The most frequent scenarios for user deletion are:
+Common scenarios for deleting users include:
 
-* An administrator intentionally deletes a user in the Azure portal in response to a request or as part of routine user maintenance.
-* An automation script in Microsoft Graph or PowerShell triggers the deletion. For example, you might have a script that removes users who haven't signed in for a specified time.
-* A user is moved out of scope for synchronization with Microsoft Entra Connect.
-* A user is removed from an HR system and is deprovisioned via an automated workflow.
+* An administrator deletes a user in the Microsoft Entra admin center in response to a request or as part of routine user maintenance.
+* An automation script in Microsoft Graph or PowerShell triggers the deletion. For example, you might have a script that removes users who don't sign in for a specified time.
+* A user moves out of scope for synchronization with Microsoft Entra Connect.
+* A user retires, is removed from an HR system, and is deprovisioned via an automated workflow.
 
 ### Microsoft 365 Groups
 
-The most frequent scenarios for Microsoft 365 Groups being deleted are:
+The most frequent scenarios for deleting Microsoft 365 Groups are:
 
 * An administrator intentionally deletes the group, for example, in response to a support request.
-* An automation script in Microsoft Graph or PowerShell triggers the deletion. For example, you might have a script that deletes groups that haven't been accessed or attested to by the group owner for a specified time.
+* An automation script in Microsoft Graph or PowerShell triggers the deletion. For example, you might have a script that deletes groups that aren't accessed or attested to by the group owner for a specified time.
 * Unintentional deletion of a group owned by non-admins.
 
 ### Application objects and service principals
 
-The most frequent scenarios for application deletion are:
+The most frequent scenarios for deleting applications are:
 
 * An administrator intentionally deletes the application, for example, in response to a support request.
 * An automation script in Microsoft Graph or PowerShell triggers the deletion. For example, you might want a process for deleting abandoned applications that are no longer used or managed. In general, create an offboarding process for applications rather than scripting to avoid unintentional deletions.
 
-When you delete an application, the application registration by default enters the soft-delete state. To understand the relationship between application registrations and service principals, see [Apps and service principals in Microsoft Entra ID - Microsoft identity platform](~/identity-platform/app-objects-and-service-principals.md).
+When you delete an application, the application registration by default enters the soft-deleted state. To understand the relationship between application registrations and service principals, see [Apps and service principals in Microsoft Entra ID - Microsoft identity platform](~/identity-platform/app-objects-and-service-principals.md).
 
 ### Administrative units
 
-The most common scenario for deletions is when administrative units (AU) are deleted by accident, although still needed. 
+The most common scenario for deletions is when administrative units are accidentally deleted but still needed. 
 
 ## Recover from soft deletion
 
-You can restore soft-deleted items in the administrative portal, or by using Microsoft Graph. Not all object classes can manage soft-delete capabilities in the portal, some are only listed, viewed, hard deleted, or restored using the deletedItems Microsoft Graph API.
+Not all object classes manage soft-delete capabilities in the Microsoft Entra admin center. Some are only listed, viewed, hard deleted, or restored using the deletedItems Microsoft Graph API.
 
 ### Properties maintained with soft delete
 
@@ -104,12 +104,13 @@ You can restore soft-deleted items in the administrative portal, or by using Mic
 |Microsoft 365 Groups|All properties maintained, including ObjectID, group memberships, licenses, and application assignments|
 |Application registration | All properties maintained. See more information after this table.|
 |Service principal|All properties maintained|
-|Administrative unit (AU)|All properties maintained|
+|Administrative unit|All properties maintained|
+|Conditional Access policies|All properties maintained|
+|Named locations|All properties maintained|
 
 ### Users
 
 You can see soft-deleted users in the Azure portal on the **Users | Deleted users** page.
-
 
 For more information on how to restore users, see the following documentation:
 
@@ -129,61 +130,88 @@ For more information on how to restore soft-deleted Microsoft 365 Groups, see th
 
 ### Applications and service principals
 
-Applications have two objects: the application registration and the service principal. For more information on the differences between the registration and the service principal, see [Apps and service principals in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md).
+Applications include two objects: the application registration and the service principal. For more information on the differences between the registration and the service principal, see [Apps and service principals in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md).
 
-To restore an application from the Azure portal, select **App registrations** > **Deleted applications**. Select the application registration to restore, and then select **Restore app registration**.
+To restore an application from the Microsoft Entra admin center, browse to **Entra ID** > **App registrations** > **Deleted applications**. Select the application registration to restore, and then select **Restore app registration**.
 
-Currently, service principals can be listed, viewed, hard deleted, or restored via the deletedItems Microsoft Graph API. To restore applications using Microsoft Graph, see [Restore deleted item - Microsoft Graph v1.0.](/graph/api/directory-deleteditems-restore?tabs=http).
+Service principals can be listed, viewed, hard deleted, or restored using the deletedItems Microsoft Graph API. To restore applications using Microsoft Graph, see [Restore deleted item - Microsoft Graph v1.0.](/graph/api/directory-deleteditems-restore?tabs=http).
 
 ### Administrative units
 
-AUs can be listed, viewed, or restored via the deletedItems Microsoft Graph API. To restore AUs using Microsoft Graph, see [Restore deleted item - Microsoft Graph v1.0.](/graph/api/directory-deleteditems-restore?tabs=http). Once an AU is deleted it remains in a soft deleted state and can be restored for 30 days, but cannot be hard deleted during that time. Soft deleted AUs are hard deleted automatically after 30 days.
+Administrative units can be listed, viewed, or restored via the deletedItems Microsoft Graph API. To restore administrative units using Microsoft Graph, see [Restore deleted item - Microsoft Graph v1.0.](/graph/api/directory-deleteditems-restore?tabs=http). When an administrative unit is deleted, it remains in a soft-deleted state and can be restored for 30 days but can't be hard deleted during that time. Soft deleted administrative units are hard deleted automatically after 30 days.
+
+### Conditional Access policies
+
+You should review and validate the Conditional Access policy configuration after restoring to ensure it behaves as expected.
+
+To restore a Conditional access policy:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Deleted Policies (Preview**).
+1. Select the ellipsis (...) on the far right of the policy to restore.
+1. Select **Restore**.
+1. In the **Restore Conditional Access policy?** dialog box, you can choose to restore the policy in [Report-only mode](../identity/conditional-access/concept-conditional-access-report-only.md) or leave it in the state it was when deleted, which might be **On**. Make your selection and select **Restore**.
+
+> [!WARNING]
+> Restoring a policy to its previous state might have unintended consequences. Microsoft recommends administrators restore their policies in Report-only mode first, then take time to review and enable.
+
+### Named locations
+
+Named locations can't be deleted when marked as trusted, and when recovered from soft-delete, they aren't marked as trusted. Any recovered named locations should be reviewed after restoring before marking as trusted again.
+
+To restore a named location:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations** > **Deleted Named Locations (Preview)**.
+1. Select the ellipsis (...) on the far right of the location you want to restore.
+1. Select **Restore**.
+1. In the **Restore selected Named location?** dialog box, select **Restore**.
 
 ## Hard deletions
 
-A hard deletion is the permanent removal of an object from your Microsoft Entra tenant. Objects that don't support soft delete are removed in this way. Similarly, soft-deleted objects are hard deleted after a deletion time of 30 days. The only object types that support a soft delete are:
+A hard deletion permanently removes an object from your Microsoft Entra tenant. Objects that don't support soft delete are removed in this way. Soft-deleted objects are also hard deleted after 30 days. Only these object types support soft delete:
 
 * Users
 * Microsoft 365 Groups
 * Application registration
 * Service principal
 * Administrative unit
+* Conditional Access policies
+* Named locations
 
 > [!IMPORTANT]
-> All other item types are hard deleted. When an item is hard deleted, it can't be restored. It must be re-created. Neither administrators nor Microsoft can restore hard-deleted items. Prepare for this situation by ensuring that you have processes and documentation to minimize potential disruption from a hard delete.
+> All other item types are hard deleted and can't be restored. They must be re-created. **Your administrators and Microsoft can't restore hard-deleted items**. Prepare by creating processes and documentation to minimize disruption.
 >
 > For information on how to prepare for and document current states, see [Recoverability best practices](recoverability-overview.md).
 
 ### When hard deletes usually occur
 
-Hard deletes might occur in the following circumstances.
+Hard deletes can occur in these circumstances:
 
 Moving from soft to hard delete:
 
-* A soft-deleted object wasn't restored within 30 days.
+* A soft-deleted object isn't restored within 30 days.
 * An administrator intentionally deletes an object in the soft delete state.
 
 Directly hard deleted:
 
 * The object type that was deleted doesn't support soft delete.
 * An administrator chooses to permanently delete an item by using the portal, which typically occurs in response to a request.
-* An automation script triggers the deletion of the object by using Microsoft Graph or PowerShell. Use of an automation script to clean up stale objects isn't uncommon. A robust off-boarding process for objects in your tenant helps you to avoid mistakes that might result in mass deletion of critical objects.
+* An automation script triggers the deletion of the object using Microsoft Graph or PowerShell. Automation scripts are commonly used to clean up stale objects. A robust off-boarding process helps avoid mistakes that can result in mass deletion of critical objects.
 
 ## Recover from hard deletion
 
-Hard-deleted items must be re-created and reconfigured. It's best to avoid unwanted hard deletions.
+Hard-deleted items need to be recreated and reconfigured. Avoiding unwanted hard deletions is best.
 
 ### Review soft-deleted objects
 
-Ensure you have a process to frequently review items in the soft-delete state and restore them if appropriate. To do so, you should:
+Make sure you have a process to regularly review items in the soft-delete state and restore them if needed. To prepare:
 
-* Frequently [list deleted items](/graph/api/directory-deleteditems-list?tabs=http).
-* Ensure that you have specific criteria for what should be restored.
-* Ensure that you have specific roles or users assigned to evaluate and restore items as appropriate.
-* Develop and test a continuity management plan. For more information, see [Considerations for your Enterprise Business Continuity Management Plan](/compliance/assurance/assurance-developing-your-ebcm-plan).
+* Regularly [list deleted items](/graph/api/directory-deleteditems-list?tabs=http).
+* Define specific criteria for what to restore.
+* Assign specific roles or users to evaluate and restore items as needed.
+* Create and test a continuity management plan. Learn more in [Considerations for your Enterprise Business Continuity Management Plan](/compliance/assurance/assurance-developing-your-ebcm-plan).
 
-For more information on how to avoid unwanted deletions, see the following articles in [Recoverability best practices](recoverability-overview.md):
+## Next steps
 
-* Business continuity and disaster planning
-* Document known good states
-* Monitoring and data retention
+Learn how to avoid unwanted deletions in, [Recoverability best practices](recoverability-overview.md).

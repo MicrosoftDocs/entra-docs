@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 09/17/2025
+ms.date: 09/23/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -209,8 +209,6 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 >[!Caution]
 >
 >By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
-
-Customers need to contact customer support to request postponement of Phase 1 MFA enforcement past September 30, 2025.
 
 ## Request more time to prepare for Phase 2 MFA enforcement 
 

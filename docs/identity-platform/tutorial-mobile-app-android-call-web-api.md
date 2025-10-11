@@ -2,7 +2,7 @@
 title: Call a protected web API in an Android app using the Microsoft identity platform
 description: The tutorials provide a step-by-step guide on how to call a protected web API in Android app for authentication. 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial
