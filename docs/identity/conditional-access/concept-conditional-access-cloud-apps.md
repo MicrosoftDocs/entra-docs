@@ -76,6 +76,9 @@ Because the policy is applied to the Azure management portal and API, any servic
 > [!NOTE]
 > The Windows Azure Service Management API application applies to [Azure PowerShell](/powershell/azure/what-is-azure-powershell), which calls the [Azure Resource Manager API](/azure/azure-resource-manager/management/overview). It doesn't apply to [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), which calls the [Microsoft Graph API](/graph/overview).
 
+> [!NOTE]
+> Conditional Access doesn't apply to Windows sign-in, such as Windows Hello for Business. Conditional Access protects sign-in attempts to cloud resources, not the device sign-in process. 
+
 > [!TIP]
 > For Azure Government, you should target the Azure Government Cloud Management API application.
 
