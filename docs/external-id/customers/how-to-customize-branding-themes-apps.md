@@ -1,6 +1,6 @@
 ---
-title: Customize the sign-in experience for your application with branding themes using the Microsoft Entra admin center (Preview)
-description: Learn about how to create branding themes and apply them to the sign-in experience for your application using the Microsoft Entra admin center.
+title: Customize the sign-in experience for your application with branding themes (Preview)
+description: Learn about how to create branding themes and apply them to the sign-in experience for your application.
 author: rolyon
 manager: pmwongera
 ms.author: rolyon
@@ -12,7 +12,7 @@ ms.topic: how-to
 
 ---
 
-# Customize the sign-in experience for your application with branding themes using the Microsoft Entra admin center (Preview)
+# Customize the sign-in experience for your application with branding themes (Preview)
 
 > [!IMPORTANT]
 > Branding themes for applications are currently in PREVIEW.
@@ -34,40 +34,44 @@ This article describes how you can create multiple branding themes for different
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as [Organizational Branding Administrator](../../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator) and [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator).
 
-1. On the **Company Branding** page, select the **Themes** tab, and then select **Create new theme**.
+1. Select **Entra ID** > **Custom branding**.
+
+1. On the **Company branding** page, select **Branding Themes** and then select the **Themes** tab.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/create-new-theme.png" alt-text="Screenshot of the Company Branding page and the Themes tab." lightbox="./media/how-to-customize-branding-themes-apps/create-new-theme.png":::
+
+1. Select **Create new theme**.
    
-1. Enter a **Name** for your theme. To select the applications that will use this theme, under **Apply theme to**, select **Add applications**. (Or you can add applications later and skip the next step.)
+1. On the **Basics** tab, enter a **Name** for your theme.
+
+1. To select the applications that will use this theme, under **Apply theme to**, select **Add applications**. (Or you can add applications later and skip the next step.)
 
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/add-application-to-theme.png" alt-text="Screenshot of the Create a theme page and the Basics tab to apply themes to applications." lightbox="./media/how-to-customize-branding-themes-apps/add-application-to-theme.png":::
 
-1. Search for or browse to the application you created in **Step 1. Create your application**. Select the check box, and then choose **Select**.
+1. Search for or browse to your application. Select the check box, and then choose **Select**.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/select-application.png" alt-text="Screenshot of the Add applications page to select applications." lightbox="./media/how-to-customize-branding-themes-apps/select-application.png":::
-
-1. To customize the theme, select  **Next: Layout** and follow the steps in the next section. To create the theme and customize it later select **Review + create**.
 
 ## Step 2: Configure the branding theme properties
 
 In this step, you configure branding properties on the theme you created.
 
 1. On the **Layout** tab, select the placement of web page elements on the sign-in page.
+
    - **Layout template** – Choose whether the sign-in pane is centre-aligned on the page or right-aligned.
    - **Header** – To show an image in a page header, select the checkbox and browse for the image you want to display. Requirements: Transparent PNG, JPG, or JPEG with image size 245x36px and maximum file size 10KB.
    - **Footer** – To show a page footer that includes links to your published privacy and cookies and/or terms of use statements, select the appropriate checkbox, enter the link text, and add the URL for your content.
      
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/layout-tab.png" alt-text="Screenshot of the Create a theme page and the Layout tab to specify the sign-in experience." lightbox="./media/how-to-customize-branding-themes-apps/layout-tab.png":::
 
-1. Select **Preview** to see your changes to the layout.
+1. Select the **Preview** button to see your changes to the layout.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/preview-button.png" alt-text="Screenshot of the Preview button to preview a layout." lightbox="./media/how-to-customize-branding-themes-apps/preview-button.png":::
 
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in-preview.png" alt-text="Screenshot of the Microsoft Sign in experience and the background layout." lightbox="./media/how-to-customize-branding-themes-apps/sign-in-preview.png":::
 
-1. To continue customizing the theme, select **Next: Styling** and follow the steps in the next section. Or select **Review + create** if you have finished setting up your theme.
-
 1. On the **Styling** tab, modify any of the background elements.
+
    - **Background color** – The color that replaces the background image whenever the image can't be loaded, for example due to connection latency.
    - **Background image** – The large image that displays on the sign-in page. If you upload an image, it scales and crops to fill the browser window.
    - **Favicon** – The icon that displays in the web browser tab.
@@ -78,34 +82,50 @@ In this step, you configure branding properties on the theme you created.
      
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/styling-tab.png" alt-text="Screenshot of the Create a theme page and the Styling tab settings." lightbox="./media/how-to-customize-branding-themes-apps/styling-tab.png":::
 
-1. Select **Preview** to see your styling changes.
+1. Select the **Preview** button to see your styling changes.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in.png" alt-text="Screenshot of the customized Sign in experience." lightbox="./media/how-to-customize-branding-themes-apps/sign-in.png":::
 
-1. Select **Next: Custom text** to continue customizing or **Review + create** if you have finished setting up your theme.
-1. On the **Custom text** tab, add custom text to the sign-up and sign-in experience.
-   - **Select a page** – Select the sign-up and sign-in experience you want to customize. The options are **Sign-in**, **Sign-up**, and **Sign-in/up one time code**.
-   - **Custom text** – Customize the text that appears on the selected page.
-     
-    :::image type="content" source="./media/how-to-customize-branding-themes-apps/create-a-theme.png" alt-text="Screenshot of the Create a theme page and the Custom text tab settings." lightbox="./media/how-to-customize-branding-themes-apps/create-a-theme.png":::
+1. On the **Custom text** tab, select a page you want to customize.
 
-1. Select **Next: Review and Create** to create the theme.
+    :::image type="content" source="./media/how-to-customize-branding-themes-apps/custom-text-tab.png" alt-text="Screenshot of the Create a theme page and the Custom text tab settings." lightbox="./media/how-to-customize-branding-themes-apps/custom-text-tab.png":::
 
-You can also customize the language of the theme. Select the theme you created and select the **Languages** tab. Follow the steps to customize the language of the theme and select **Add** when you're finished.
+1. Customize the text for the selected page and then select **Add**.
+
+    Custom text set for a theme may impact localized UX as they will not be localized. To ensure full localization of all text, set custom text for each theme language.
+  
+    :::image type="content" source="./media/how-to-customize-branding-themes-apps/custom-text-edit.png" alt-text="Screenshot of the Edit custom text page for the Sign-in page." lightbox="./media/how-to-customize-branding-themes-apps/custom-text-edit.png":::
+
+1. On the **Review** tab, review your settings.
+
+1. Select **Create** to create the theme.
 
 ## To edit the theme and apply it to applications
 
 In this step, you can edit the themes you created and apply them to applications in your tenant.
 
-1. On the **Company Branding** page, select the **Themes** tab, and then select the theme you created to open the overview.
-1. To select the applications that will use this theme, under **Apply theme to**, select **Add applications**. (Or you can add applications later and skip the next step.)
-1. Search for or browse to the application you created in **Step 1. Create your application**. Select the check box, and then choose **Select**.
-1. To customize the theme, select **Next: Layout** and follow the steps in the next section. To create the theme and customize it later select **Review + create**.
+1. On the **Branding Themes** page, select the **Themes** tab.
+
+1. Select the theme you created to open the overview.
+
+1. To select the applications that will use this theme, under **Basics**, select the pencil edit icon.
+  
+    :::image type="content" source="./media/how-to-customize-branding-themes-apps/edit-theme-overview.png" alt-text="Screenshot of the Overview tab of the edit theme page." lightbox="./media/how-to-customize-branding-themes-apps/edit-theme-overview.png":::
+
+1. Under **Apply theme to**, select **Edit** to edit the list of applications.
+  
+    :::image type="content" source="./media/how-to-customize-branding-themes-apps/edit-basics.png" alt-text="Screenshot of the Edit Basics page to edit the list of applications." lightbox="./media/how-to-customize-branding-themes-apps/edit-basics.png":::
+
+1. Search for or browse to your application. Select the check box, and then choose **Select**.
+
+1. To edit other parts of the theme, select pencil edit icon of the parts you want to edit.
+
+1. On the **Languages** tab, select **Add a language** to also customize the language of the theme.
+  
+    :::image type="content" source="./media/how-to-customize-branding-themes-apps/languages-tab.png" alt-text="Screenshot of the Languages tab to add a language." lightbox="./media/how-to-customize-branding-themes-apps/languages-tab.png":::
 
 ## Use Microsoft Graph API
 
 To create app-based branding with Microsoft Graph APIs, see .
-
-## Known issues
 
 ## Related content
