@@ -1,17 +1,19 @@
 ---
 title: Known Limitations for Global Secure Access
-description: This article details the known issues and limitations you might encounter when using Global Secure Access.
+ms.reviewer: teresayao
+description: Discover the known limitations of Global Secure Access, including platform-specific issues and mitigations, to ensure seamless deployment and management.
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 09/23/2025
+ms.date: 10/13/2025
 ms.service: global-secure-access
 
 
 
 # Customer intent: As an administrator, I want to access the known limitations for Global Secure Access in one place. This article gathers all known issues and limitations into a single reference point. Global Secure Access articles with a "known limitations" section point to this article. 
 ---
+
 # Known limitations for Global Secure Access
 
 Global Secure Access is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. 
@@ -221,10 +223,9 @@ Known limitations for the Global Secure Access client for iOS include:
 
 ## Remote networks limitations   
 Known limitations for remote networks include:   
-- The maximum number of remote networks per tenant is 10. The maximum number of device links per remote network is four.
-- Microsoft traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access client.
+- The maximum number of remote networks per tenant is 200. The maximum number of device links per remote network is 25. If you need to increase these limits, contact Microsoft Support.   
+- Universal Condition Access enables you to apply identity controls like requiring multifactor authentication, requiring a compliant device, or defining an acceptable sign-in risk to network traffic not just cloud apps. This is applicable to devices with the Global Secure Access client installed on it. Remote network connectivity is a clientless approach where customer creates IPsec tunnel from their on-prem equipment to Global Secure Access edge service. Network traffic from all devices at that remote network (or branch office) is sent to Global Secure Access through that IPsec tunnel. In other words, Conditional Access policies for the Microsoft or Internet traffic are only enforced when a user has the Global Secure Access client.
 - You must use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity only supports Microsoft Entra Internet Access.
-- At this time, remote networks can only be assigned to the Microsoft traffic forwarding profile.
 
 ## Access controls limitations
 Known limitations for access controls include:   
@@ -264,10 +265,10 @@ Known limitations for Internet Access include:
 - The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To make sure that all traffic is routed to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
 - UDP isn't supported on this platform yet.
 - User-friendly end-user notifications are in development.
-- Remote network connectivity for Internet Access is in development.
 - Transport Layer Security (TLS) inspection is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
+- The [Custom Bypass](how-to-manage-internet-access-profile.md#internet-access-traffic-forwarding-profile-policies) feature in the Internet traffic forwarding profile does not work with remote network connectivity. You must manually bypass specific URLs from your Customer Premises Equipment (CPE).
 
 ## B2B guest access (preview) limitations
 <a name="b2b-guest-access-limitations"></a>
