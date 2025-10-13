@@ -30,6 +30,7 @@ Here are some of the limits and constraints for branding themes.
 - There is no inheritance from company branding.
 - Company branding is used as fallback for any properties not defined in the branding theme.
 - Default branding is used for any properties not defined in company branding.
+- The live preview capability previews style and layout changes and only shows the Sign in page. Live preview does not include any custom text overrides.
 
 ## Prerequisites
 
