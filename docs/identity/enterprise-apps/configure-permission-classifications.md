@@ -3,7 +3,7 @@ title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 03/03/2025
 ms.author: jomondi
 ms.reviewer: phsignor, jawoods
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
 #customer intent: As an administrator managing permissions in Microsoft Entra ID, I want to configure permission classifications, so that I can identify the impact of different permissions according to my organization's policies and risk evaluations.
 ---
@@ -39,7 +39,7 @@ To configure permission classifications, you need:
 Follow these steps to classify permissions using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **Permission classifications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Consent and permissions** > **Permission classifications**.
 1. Choose the tab for the permission classification you'd like to update.
 1. Choose **Add permissions** to classify another permission.
 1. Select the API and then select one or more delegated permissions.

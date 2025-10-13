@@ -2,7 +2,7 @@
 title: Quickstart - Call a web API in a sample daemon app
 description: A daemon app code sample quickstart that shows how to acquire an access token to call a protected web API by using Microsoft identity platform
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/20/2024
@@ -14,6 +14,8 @@ zone_pivot_groups: entra-tenants
 
 # Quickstart: Call a web API in a sample daemon app
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 In this quickstart, you use a sample daemon application to acquire an access token and call a protected web API by using the [Microsoft Authentication Library (MSAL)](msal-overview.md).
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
@@ -24,9 +26,19 @@ The sample app you use in this quickstart acquires an access token to call Micro
 
 ## Prerequisites
 
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator
+* A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
+
 #### [.NET](#tab/asp-dot-net-core-workforce)
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -47,16 +59,6 @@ The sample app you use in this quickstart acquires an access token to call Micro
 * A suitable code editor.
 
 --- 
-
-## Register the application and record identifiers
-
-[!INCLUDE [Register a daemon in the Microsoft identity platform](includes/register-app/daemon-common/register-application-daemon-common.md)]
-
-## Create a client secret
-
-[!INCLUDE [add-app-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
-
-[!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
 
 ## Grant API permissions to the daemon app
 
@@ -79,7 +81,6 @@ For the .NET daemon app, you don't need to grant and consent to any permission. 
 [!INCLUDE [grant-permissions-to-daemon-app](./includes/register-app/grant-permissions-to-daemon-app.md)]
 
 ---
-
 
 ## Clone or download the sample application
 
@@ -143,7 +144,7 @@ To use your app registration details in the client daemon app sample, use the fo
     // 'Enter the client ID obtained from the Microsoft Entra admin center
     ClientId = "Enter the client ID obtained from the Microsoft Entra admin center",
     // Client secret 'Value' (not its ID) from 'Client secrets' in the Microsoft Entra admin center
-    ClientSecret = "Enter the client secret value obtained from the Mifcrosoft Entra admin center",
+    ClientSecret = "Enter the client secret value obtained from the Microsoft Entra admin center",
     // Client 'Object ID' of app registration in Microsoft Entra admin center - this value is a GUID
     ClientObjectId = "Enter the client Object ID obtained from the Microsoft Entra admin center"
    ```
@@ -304,11 +305,11 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 #### [Python](#tab/python-workforce)
 
-* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-registration.md)
+* Learn how to [build a Python daemon application that calls web APIs](scenario-daemon-app-configuration.md)
 
 #### [Java](#tab/java-workforce)
 
-* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-registration.md)
+* Learn how to [build a Java daemon application that calls web APIs](scenario-daemon-app-configuration.md)
 ---
 
 
@@ -319,54 +320,38 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 ## Prerequisites
 
-#### [Node](#tab/node-external)
-
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator
+* An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *ciam-daemon-app*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-* [Node.js](https://nodejs.org).
 * [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-* An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* [Node.js](https://nodejs.org) (for Node implementation only)
 
-#### [.NET](#tab/asp-dot-net-core-external)
-
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
-* [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-* An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-
---- 
-
-## Register the applications and record identifiers
-
-In this step, you register the daemon app and the web API app in the Microsoft Entra admin center, and you specify the scopes of your web API.
-
-### Register a web API application
-
-[!INCLUDE [register-api-app](../external-id/customers/includes/register-app/register-api-app.md)]
-
-### Configure app roles
-
-[!INCLUDE [add-app-role](../external-id/customers/includes/register-app/add-app-role.md)]
-
-### Configure optional claims
-
-[!INCLUDE [add-optional-claims-access](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
-
-### Register the daemon app
-
-[!INCLUDE [register-client-app-common](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
-### Create a client secret
+## Create a client secret
 
 [!INCLUDE [add-app-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
 [!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
 
-### Grant API permissions to the daemon app
+## Grant API permissions to the daemon app
 
 [!INCLUDE [grant-api-permissions-app-permissions](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
+
+## Configure app roles
+
+[!INCLUDE [add-app-role](../external-id/customers/includes/register-app/add-app-role.md)]
+
+## Configure optional claims
+
+[!INCLUDE [add-optional-claims-access](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
 
 ## Clone or download sample daemon application and web API
 

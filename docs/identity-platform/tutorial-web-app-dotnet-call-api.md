@@ -2,12 +2,12 @@
 title: "Tutorial: Test an ASP.NET Core web app that signs in users"
 description: Learn how to call the Microsoft Graph web API, sign-in, and display the profile information of the logged-in user
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 01/18/2024
 ms.service: identity-platform
-
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to use my app to call a web API, in this case Microsoft Graph. I need to know how to modify my code so the API can be called successfully.
 ---
 
@@ -17,7 +17,7 @@ ms.topic: tutorial
 
 In this tutorial, you test the sign in and sign out experience of your ASP.NET Core web app and view the claims in the ID token. In the [previous tutorial](./tutorial-web-app-dotnet-sign-in-users.md), you added the authentication elements, the sign-in, and sign-out experiences to the application to enable your app call a web API. For the purposes of this tutorial, the Microsoft Graph API is called to display the profile information of the logged-in user.
 
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -45,7 +45,7 @@ This section demonstrates how to test the application by signing in and calling 
 1. After the sign-in window appears, select the account in which to sign in with. Ensure the account matches the criteria of the app registration.
 1. Fill in your email, one time-passcode as instructed to complete the sign-in flow. You can choose to stay signed in or not in the **Stay signed in** window.
 1. The application requests permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**.
-1. The following screenshot appears, indicating that you've signed in to the application, and can view the ID token claims.
+1. The following screenshot appears, indicating that you've signed in to the application. The ID token claims are displayed automatically.
 
     :::image type="content" source="./media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png" alt-text="Screenshot depicting the results of the API call." lightbox="./media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png":::
 
@@ -63,7 +63,7 @@ This section demonstrates how to test the application by signing in and calling 
 1. In the **Create account** window, enter the email address registered to your external tenant, which starts the sign-up flow as a user for your application.
 1. Fill in your email, one time-passcode, new password as instructed to complete the sign-up flow. You can choose to stay signed in or not in the **Stay signed in** window.
 1. The application requests permission to maintain access to data it you have given it access to, and to sign you in and read your profile. Select **Accept**.
-1. The following screenshot appears, indicating that you've signed in to the application, and can view the ID token claims.
+1. The following screenshot appears, indicating that you've signed in to the application. The ID token claims are displayed automatically.
 
     :::image type="content" source="./media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png" alt-text="Screenshot depicting the results of the API call." lightbox="./media/tutorial-web-app-dotnet-sign-in-sign-in-out/display-aspnet-welcome.png":::
 

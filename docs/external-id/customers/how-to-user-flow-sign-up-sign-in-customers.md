@@ -1,22 +1,19 @@
 ---
 title: Create a User Flow
 description: Add sign-up and sign-in user flows for your consumer and business customers. Create a branded, customized user experience for apps in your external tenant.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 10/21/2024
-ms.author: mimart
+ms.date: 09/16/2025
 ms.reviewer: kengaderdus
-ms.custom: it-pro, seo-july-2024
-
-#Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-i experience for my customer users.
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
+#Customer intent: As a dev, devops, or it admin, I want to create and customize a user flow, which determines the sign-up and sign-in experience for my customer users.
 ---
 
-# Create self-service sign-up user flows for apps in external tenants
+# Create a sign-up and sign-in user flow for an external tenant app
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -25,16 +22,7 @@ ms.custom: it-pro, seo-july-2024
 
 You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md)) or a custom [OIDC federation](how-to-custom-oidc-federation-customers.md). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
 
-You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow.
-
-> [!NOTE]
-> If you're creating local user accounts via Microsoft Graph and only need to support sign-in, you don't need to attach a user flow to your app. Refer to the Microsoft Graph REST API reference for an example of how to [create a customer account in external tenants](/graph/api/user-post-users#example-3-create-a-customer-account-in-external-tenants).
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=OnlineRetail)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Online retail” use case.
-
+This article describes how to create a sign-in and sign-up user flow. After you create the user flow, the next step is to [add your application to the user flow](how-to-user-flow-add-application.md). You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow. 
 
 ## Prerequisites
 
@@ -53,7 +41,7 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select **New user flow**.
 

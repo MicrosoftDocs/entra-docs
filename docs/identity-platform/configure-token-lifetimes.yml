@@ -1,12 +1,12 @@
 ### YamlMime:HowTo
 
 metadata:
-  title: Set lifetimes for tokens
-  description: Learn how to set lifetimes for access tokens issued by Microsoft identity platform.
-  author: rwike77
-  ms.author: ryanwi
-  manager: CelesteDG
-  ms.date: 05/31/2024
+  title: Set token lifetimes
+  description: Learn how to configure token lifetimes for access, SAML, or ID tokens issued by Microsoft identity platform. Improve security and authentication management.
+  author: cilwerner
+  ms.author: cwerner
+  manager: pmwongera
+  ms.date: 05/11/2025
   ms.service: identity-platform
   ms.custom:
     - ge-structured-content-pilot
@@ -17,8 +17,8 @@ metadata:
 title: |
   Configure token lifetime policies (preview)
 introduction: 
-  In the following steps, you'll implement a common policy scenario that imposes new rules for token lifetime. It's possible to specify the lifetime of an access, SAML, or ID token issued by the Microsoft identity platform. This can be set for all apps in your organization or for a specific app or principal. They can also be set for multi-organizations (multitenant application).
-
+  This article explains how to configure token lifetime policies for access, SAML, or ID tokens issued by the Microsoft identity platform. Learn how to set token lifetimes for all apps in your organization, specific apps, or multi-tenant applications to improve security and authentication management.
+  
   You might want to increase the token lifetime so that a script will run for more than an hour. Many Microsoft libraries, such as Microsoft Graph PowerShell SDK, extend the token lifetime as needed and you don't need to makes changes to the access token policy. 
 
   For more information, see [configurable token lifetimes](configurable-token-lifetimes.md).

@@ -3,7 +3,7 @@ title: Issue verifiable credentials by presenting claims from an existing verifi
 description: Learn how to use a quickstart to create custom credentials for from other Verifiable Credential attestation.
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/21/2025
@@ -19,7 +19,7 @@ A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) tha
 
 ## Create a custom credential with the presentations attestation type
 
-In the Azure portal, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**. 
+In the **Azure portal**, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**.
 
 :::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the 'Issue credentials' quickstart for creating a custom credential.":::
 
@@ -106,7 +106,7 @@ The following rules definition prompts the user to present the **True Identity**
 }
 ```
 
-| Property | Type | Description |
+| **Property** | **Type** | **Description** |
 | -------- | -------- | -------- |
 |`credentialType`| string | credential type being requested during issuance. `TrueIdentity` in the previous example. |
 |`contracts` | string (array) | list of manifest URLs of credentials requested. In the earlier example, the manifest URL is the manifest for `True Identity` |

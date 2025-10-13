@@ -1,21 +1,19 @@
 ---
-title: Configure Salesforce for Single sign-on
+title: Configure Salesforce for Single sign-on in Microsoft Entra ID
 description: Learn how to configure the single sign-on between Microsoft Entra ID and Salesforce.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce so that I can control who has access to Salesforce, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Configure Salesforce for Single sign-on
+# Configure Salesforce for Single sign-on in Microsoft Entra ID
 
 In this article, you learn how to integrate Salesforce with Microsoft Entra ID. When you integrate Salesforce with Microsoft Entra ID, you can:
 
@@ -27,8 +25,8 @@ In this article, you learn how to integrate Salesforce with Microsoft Entra ID. 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* Salesforce single sign-on (SSO) enabled subscription.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+- Salesforce single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
@@ -47,11 +45,11 @@ In this article, you configure and test Microsoft Entra SSO in a test environmen
 To configure the integration of Salesforce into Microsoft Entra ID, you need to add Salesforce from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Salesforce** in the search box.
 1. Select **Salesforce** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-salesforce'></a>
 
@@ -62,10 +60,10 @@ Configure and test Microsoft Entra SSO with Salesforce using a test user called 
 To configure and test Microsoft Entra SSO with Salesforce, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    * **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    * **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    * **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    * **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Salesforce SSO](#configure-salesforce-sso)** - to configure the single sign-on settings on application side.
-    * **[Create Salesforce test user](#create-salesforce-test-user)** - to have a counterpart of B.Simon in Salesforce that is linked to the Microsoft Entra representation of user.
+    * **[Create Salesforce test user](#create-salesforce-test-user)** - to have a counterpart of B.Simon in Salesforce that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -75,7 +73,7 @@ To configure and test Microsoft Entra SSO with Salesforce, perform the following
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Salesforce** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Salesforce** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
@@ -120,7 +118,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In a different web browser window, sign in to your up Salesforce company site as an administrator
 
-1. Select on the **Setup** under **settings icon** on the top right corner of the page.
+1. Select the **Setup** under **settings icon** on the top right corner of the page.
 
 	![Configure Single Sign-On settings icon](./media/salesforce-tutorial/configure1.png)
 
@@ -180,7 +178,7 @@ In this section, a user called B.Simon is created in Salesforce. Salesforce supp
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Select **Test this application**, this will redirect to Salesforce Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Salesforce Sign-on URL where you can initiate the login flow. 
 
 * Go to Salesforce Sign-on URL directly and initiate the login flow from there.
 
@@ -204,7 +202,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
     ![Salesforce mobile app Allow Access](media/salesforce-tutorial/mobile-app4.png)
 
-1. Finally after successful sign-in, the application homepage will be displayed.
+1. Finally after successful sign-in, the application homepage is displayed.
 
     ![Salesforce mobile app homepage](media/salesforce-tutorial/mobile-app5.png)
     ![Salesforce mobile app](media/salesforce-tutorial/mobile-app6.png)

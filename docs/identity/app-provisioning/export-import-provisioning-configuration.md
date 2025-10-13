@@ -1,15 +1,16 @@
 ---
 title: Export Application Provisioning configuration and roll back to a known good state for disaster recovery in Microsoft Entra ID
 description: Learn how to export your Application Provisioning configuration and roll back to a known good state for disaster recovery in Microsoft Entra ID.
-
-author: kenwith
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
-ms.author: kenwith
+ms.author: jfields
 ms.reviewer: arvinh
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # How-to: Export provisioning configuration and roll back to a known good state
@@ -27,7 +28,7 @@ In this article, you learn how to:
 To export your configuration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** and choose your application.
+1. Browse to **Entra ID** > **Enterprise apps** and choose your application.
 1. In the left navigation pane, select **provisioning**. From the provisioning configuration page, select **attribute mappings**, then **show advanced options**, and finally **review your schema**. The schema editor opens.
 1. Select download in the command bar at the top of the page to download your schema.
 

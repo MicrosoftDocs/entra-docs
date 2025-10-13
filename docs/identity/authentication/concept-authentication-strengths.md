@@ -5,12 +5,12 @@ description: Learn how admins can use Microsoft Entra Conditional Access to dist
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckms
-manager: femila
+manager: dougeby
 ms.reviewer: inbarc
 ---
 # Conditional Access authentication strength 
@@ -43,7 +43,7 @@ Built-in authentication strengths are combinations of authentication methods tha
 
 For an example, the built-in **Phishing-resistant MFA strength** allows the following combinations:
 
-- Windows Hello for Business
+- Windows Hello for Business / Platform Credential
 
   Or
 
@@ -53,7 +53,9 @@ For an example, the built-in **Phishing-resistant MFA strength** allows the foll
 
 - Microsoft Entra certificate-based authentication (Multifactor)
 
-:::image type="content" border="true" source="./media/concept-authentication-strengths/authentication-strength-definitions.png" alt-text="Screenshot showing the phishing-resistant MFA strength definition.":::
+:::image type="content" border="true" source="./media/concept-authentication-strengths/authentication-strength-definitions.png" alt-text="Screenshot showing the phishing-resistant MFA strength definition." lightbox="./media/concept-authentication-strengths/authentication-strength-definitions.png":::
+
+
 
 The combinations of authentication methods for each built-in authentication strength are listed in the following table. These combinations include methods that need to be registered by users and enabled in the Authentication methods policy or the legacy MFA settings policy.
 
@@ -64,7 +66,7 @@ The combinations of authentication methods for each built-in authentication stre
 |Authentication method combination |MFA strength | Passwordless MFA strength| Phishing-resistant MFA strength|
 |----------------------------------|-------------|-------------------------------------|-------------------------------------------|
 |FIDO2 security key| &#x2705; | &#x2705; | &#x2705; |
-|Windows Hello for Business| &#x2705; | &#x2705; | &#x2705; |
+|Windows Hello for Business / Platform Credential| &#x2705; | &#x2705; | &#x2705; |
 |Certificate-based authentication (Multi-Factor) | &#x2705; | &#x2705; | &#x2705; |
 |Microsoft Authenticator (Phone Sign-in)| &#x2705; | &#x2705; | | 
 |Temporary Access Pass (One-time use AND Multi-use)| &#x2705; | | | 
@@ -107,8 +109,6 @@ Conditional Access Administrators can also create custom authentication strength
   For example, let's say a resource requires passkey (FIDO2) for the authentication strength, and a 1-hour sign-in frequency. 24 hours ago, a user signed in with passkey (FIDO2) to access the resource. 
   
   When the user unlocks their Windows device using Windows Hello for Business, they can access the resource again. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
-
-- **Authentication strength blade double representation** - Platform credentials, such as Windows Hello for Business and **Platform Credential for macOS** are both represented in authentication strength under **Windows Hello For Business**. To configure a custom authentication strength that allows the use of **Platform Credential for macOS**, use **Windows Hello For Business**.
 
 ## FAQ
 

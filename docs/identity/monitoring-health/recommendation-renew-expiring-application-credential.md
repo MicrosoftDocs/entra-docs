@@ -1,16 +1,15 @@
 ---
 title: Recommendation to renew expiring application credentials
 description: Learn how the Microsoft Entra recommendation to renew expiring application credentials works and why it's important.
-
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/22/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT Admin I need to know when application credentials are expiring so I can renew them to prevent downtime.
 ---
 # Microsoft Entra recommendation: Renew expiring application credentials (preview)
@@ -50,7 +49,7 @@ This recommendation is available in the Microsoft Entra admin center and using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
 
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 
 1. Select the **Recommendations** tab and select the **Renew expiring application credentials** recommendation.
 
@@ -63,7 +62,7 @@ This recommendation is available in the Microsoft Entra admin center and using t
 1. Select **More Details** from the **Actions** column.
 
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Certificates & secrets** area of the app registration to renew the expiring credential.
-    1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and locate the application for which the credential needs to be rotated.
+    1. Alternatively, browse to **Entra ID** > **App registrations** and locate the application for which the credential needs to be rotated.
 
       :::image type="content" source="media/recommendation-renew-expiring-application-credential/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-renew-expiring-application-credential/app-registrations-list-expanded.png":::
 
@@ -92,18 +91,18 @@ To retrieve all recommendations for your tenant:
 GET https://graph.microsoft.com/beta/directory/recommendations
 ```
 
-From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry`.
+From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_ApplicationCredentialExpiry`.
 
 To identify impacted resources:
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_ApplicationCredentialExpiry
 ```
 
 To filter the resources based on their status (for example, *active* resources):
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights. ApplicationCredentialExpiry’/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
+GET https://graph.microsoft.com/beta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_ ApplicationCredentialExpiry’/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
 ```
 
 Take note of the `AppId`, `CredentialId`, and `Origin` of the credential you want to remove. To remove the credential, use the following Microsoft Graph guidance:
@@ -117,7 +116,7 @@ Take note of the `AppId`, `CredentialId`, and `Origin` of the credential you wan
 
 ```json
  {
-  "id": "536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.ApplicationCredentialExpiry",
+  "id": "aaaabbbb-6666-cccc-7777-dddd8888eeee_ApplicationCredentialExpiry",
   "recommendationType": "applicationCredentialExpiry",
   "createdDateTime": "2022-06-08T00:08:01Z",
   "impactStartDateTime": "2022-06-08T00:08:01Z",
@@ -170,4 +169,4 @@ Take note of the `AppId`, `CredentialId`, and `Origin` of the credential you wan
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)
-- [Learn about app and service principal objects in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md)
+- [Learn about app and service principal objects in Microsoft Entra ID](../../identity-platform/app-objects-and-service-principals.md)

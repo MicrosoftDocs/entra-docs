@@ -1,13 +1,13 @@
 ---
 title: Secure and govern security operations center (SOC) access in a multitenant organization with Microsoft Defender for Cloud XDR and Microsoft Entra ID Governance
 description: Learn how to provide security operations analysts access to resources across tenants.
-author: rolyon
-manager: femila
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 05/01/2024
-ms.author: rolyon
+ms.date: 07/03/2025
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, DevOps, or it admin, I want to
 ---
@@ -25,11 +25,11 @@ Multitenant management in [Microsoft Defender XDR](/microsoft-365/security/defen
 
 ## Manage the lifecycle and access of a SOC user
 
-Microsoft Entra provides the controls needed to govern the lifecycle of a SOC user and to securely provide access to the resources they need. In this document, the term source tenant refers to where the SOC users originate and authenticate against. Target tenant refers to the tenant that they're investigating when there's an incident. Organizations have multiple target tenants due to mergers and acquisitions, aligning tenants with business units, and aligning tenants with geos.
+Microsoft Entra provides the controls needed to govern the lifecycle of a SOC user and to securely provide access to the resources they need. In this document, the term source tenant refers to where the SOC users originate and authenticate against. Target tenant refers to the tenant that they're investigating when there's an incident. Organizations have multiple target tenants due to mergers and acquisitions, aligning tenants with business units, and aligning tenants with geos. 
 
 ### Lifecycle control
 
-**Entitlement management, through access packages and connected organizations** allows the target tenant administrator to define collections of resources (ex: app roles, directory roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don't yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant. When they don't have any remaining entitlements in the target tenant, their B2B account will automatically be removed.
+**Entitlement management, through access packages and connected organizations** allows the target tenant administrator to define collections of resources (ex: app roles, directory roles, and groups) that users from the source tenant can request access to. If the user is approved for the resources they need, but don't yet have a B2B account, entitlement management will automatically create a B2B account for the user in the target tenant. When they don't have any remaining entitlements in the target tenant, their B2B account will automatically be removed. Entitlement management can be used both within an organization and across organizations. 
 
 [Learn more](../../id-governance/entitlement-management-organization.md)
 

@@ -2,13 +2,14 @@
 title: Bring groups into Privileged Identity Management
 description: Learn how to bring groups into Privileged Identity Management.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 01/06/2025
 ms.author: barclayn
 ms.reviewer: ilyal
+ms.custom: sfi-image-nochange
 ---
 
 # Bring groups into Privileged Identity Management
@@ -30,7 +31,7 @@ You need appropriate permissions to bring groups in Microsoft Entra PIM. For rol
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Groups**.
 
 1. Here you can view groups that are already enabled for PIM for Groups.
 

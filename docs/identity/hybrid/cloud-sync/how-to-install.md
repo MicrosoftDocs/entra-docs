@@ -1,15 +1,14 @@
 ---
 title: 'Install the Microsoft Entra provisioning agent'
 description: Learn how to install the Microsoft Entra provisioning agent and how to configure it in the Microsoft Entra admin center.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/17/2024
+ms.date: 09/18/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-ga-nochange
 ---
 
 # Install the Microsoft Entra provisioning agent
@@ -35,6 +34,9 @@ To update an existing agent to use the Group Managed Service Account created dur
 
 ## Install the agent
 
+>[!NOTE]
+>By default, the Microsoft Entra provisioning agent is installed in the default Azure environment.
+
 [!INCLUDE [active-directory-cloud-sync-how-to-install](~/includes/entra-cloud-sync-how-to-install.md)]
 
 ## Verify the agent installation
@@ -54,7 +56,7 @@ You can enable password writeback in SSPR directly in the portal or through Powe
 To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, using the portal, complete the following steps: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
- 2. On the left, select **Protection**, select **Password reset**, then choose **On-premises integration**.
+ 2. Browse to **Entra ID** > **Password reset** > **On-premises integration**.
  3. Check the option for **Enable password write back for synced users** .
  4. (optional) If Microsoft Entra Connect provisioning agents are detected, you can additionally check the option for **Write back passwords with Microsoft Entra Cloud Sync**.   
  5. Check the option for **Allow users to unlock accounts without resetting their password** to *Yes*.
@@ -70,14 +72,6 @@ To use *password writeback* and enable the self-service password reset (SSPR) se
   ```
 
 For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment ](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
-
-## Install an agent in the US government cloud
-
-By default, the Microsoft Entra provisioning agent is installed in the default Azure environment. If you're installing the agent for US government use, make this change in step 7 of the preceding installation procedure:
-
-- Instead of selecting **Open file**, select **Start** > **Run**, and then go to the *AADConnectProvisioningAgentSetup.exe* file.  In the **Run** box, after the executable, enter **ENVIRONMENTNAME=AzureUSGovernment**, and then select **OK**.
-
-    [![Screenshot that shows how to install an agent in the US government cloud.](media/how-to-install/new-install-12.png)](media/how-to-install/new-install-12.png#lightbox)
 
 ## Password hash synchronization and FIPS with cloud sync
 

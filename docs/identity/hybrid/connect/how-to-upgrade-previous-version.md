@@ -2,16 +2,16 @@
 title: 'Microsoft Entra Connect: Upgrade from a previous version'
 description: Explains the different methods to upgrade to the latest release of Microsoft Entra Connect, including an in-place upgrade and a swing migration.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 
 ms.assetid: 31f084d8-2b89-478c-9079-76cf92e6618f
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 12/26/2024
+ms.date: 09/17/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---
@@ -21,9 +21,14 @@ ms.author: billmath
 
 This topic describes the different methods that you can use to upgrade your Microsoft Entra Connect installation to the latest release. Microsoft recommends using the steps in the [Swing migration](#swing-migration) section when you make a substantial configuration change or upgrade from older 1.x versions.
 
->[!NOTE]
-> It's important that you keep your servers current with the latest releases of Microsoft Entra Connect. We are constantly making upgrades to Microsoft Entra Connect, and these upgrades include fixes to security issues and bugs, as well as serviceability, performance, and scalability improvements.
-> To see what the latest version is, and to learn what changes have been made between versions, please refer to the [release version history](./reference-connect-version-history.md)
+It's important that you keep your servers current with the latest releases of Microsoft Entra Connect. We are constantly making upgrades to Microsoft Entra Connect, and these upgrades include fixes to security issues and bugs, as well as serviceability, performance, and scalability improvements.
+
+>[!IMPORTANT]
+>**Mandatory Upgrade Required**: All synchronization services in Microsoft Entra Connect Sync will stop working on **September 30, 2026** if you're not on at least version 2.5.79.0. In May 2025, we released this version with a back-end service change that hardens our services. Upgrade before this deadline to avoid any service disruption.
+>
+>If you're unable to upgrade before the deadline, all synchronization services will fail until you upgrade to the latest version. The Microsoft Entra Connect Sync .msi installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
+
+To see what the latest version is, and to learn what changes have been made between versions, please refer to the [release version history](./reference-connect-version-history.md)
 
 Any versions older than Microsoft Entra Connect V2 are currently deprecated. For more information, see [Introduction to Microsoft Entra Connect V2](whatis-azure-ad-connect-v2.md). You can upgrade from any version of Microsoft Entra Connect to the current version. In-place upgrades of DirSync or ADSync aren't supported, and a swing migration is required. If you want to upgrade from DirSync, see [Upgrade from Azure AD Sync tool (DirSync)](how-to-dirsync-upgrade-get-started.md) or the [Swing migration](#swing-migration) section.
 
@@ -50,7 +55,7 @@ This method is preferred when you have a single server and less than about 100,0
 
 ![In-place upgrade](./media/how-to-upgrade-previous-version/inplaceupgrade.png)
 
-If made changes to the out-of-box synchronization rules, then these rules are set back to the default configuration on upgrade. To make sure that your configuration is kept between upgrades, make sure that you make changes as they're described in [Best practices for changing the default configuration](how-to-connect-sync-best-practices-changing-default-configuration.md). If you already changed the default sync rules, please see how to [Fix modified default rules in Microsoft Entra Connect](./how-to-connect-sync-best-practices-changing-default-configuration.md), before starting the upgrade process.
+If you made changes to the out-of-box synchronization rules, then these rules are set back to the default configuration on upgrade. To make sure that your configuration is kept between upgrades, make sure that you make changes as they're described in [Best practices for changing the default configuration](how-to-connect-sync-best-practices-changing-default-configuration.md). If you already changed the default sync rules, please see how to [Fix modified default rules in Microsoft Entra Connect](./how-to-connect-sync-best-practices-changing-default-configuration.md), before starting the upgrade process.
 
 During in-place upgrade, there may be changes introduced that require specific synchronization activities (including Full Import step and Full Synchronization step) to be executed after upgrade completes. To defer such activities, refer to section [How to defer full synchronization after upgrade](#how-to-defer-full-synchronization-after-upgrade).
 
@@ -152,9 +157,9 @@ If you need to upgrade the operating system(OS) of your Microsoft Entra Connect 
 
 However, if this isn't possible, the following in-place OS upgrades are supported.
 
-|Intial OS|Supported in-place upgrade OS|
+|Initial OS|Supported in-place upgrade OS|
 |-----|-----|
-|Windows Server 2106|Windows Server 2022|
+|Windows Server 2016|Windows Server 2022|
 |Windows Server 2019|Windows Server 2022|
 
 ## Troubleshooting

@@ -1,17 +1,14 @@
 ---
 title: Overview of custom URL domains for External ID
 description: Learn about setting up custom URL domains to personalize the authentication sign-in endpoints for the external customers and consumers of your app.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 12/03/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.date: 09/16/2025
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about personalizing my application’s sign-in endpoints with my own branding or naming instead of Microsoft’s default domain name by using a custom URL domain.
 ---
 
@@ -27,11 +24,6 @@ Using a verified custom URL domain has several benefits:
 
 - It provides a more consistent user experience. From the user's perspective, they remain in your domain during the sign in process rather than redirecting to the default domain *&lt;tenant-name&gt;.ciamlogin.com*.
 - You mitigate the effect of [third-party cookie blocking](~/identity-platform/reference-third-party-cookies-spas.md) by staying in the same domain for your application during sign-in.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomDomain)
->
-> To try out this feature, go to the Woodgrove Groceries demo and start the "custom URL domain name” use case.
 
 ## How a custom URL domain works
 
@@ -63,7 +55,7 @@ When using custom URL domains:
 > [!IMPORTANT]
 >
 >- Azure Front Door: The connection from the browser to Azure Front Door should always use IPv4 instead of IPv6.
->- Social identity providers: Custom URL domains support Apple. However, Google and Facebook are not currently supported. Users who want to sign up or sign in using Google or Facebook must use the default endpoint, *&lt;tenant-name&gt;.ciamlogin.com*, instead of the custom URL domain endpoint.
+>- Social identity providers: Custom URL domains now support Google and Facebook in addition to Apple.
 
 ## Blocking the default domain
 

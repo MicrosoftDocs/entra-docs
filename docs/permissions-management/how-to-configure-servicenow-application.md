@@ -2,15 +2,18 @@
 title: Configure the ServiceNow application with Permissions Management
 description: How to configure ServiceNow with Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
-
 ms.topic: how-to
-ms.date: 08/07/2024
+ms.date: 04/01/2025
 ms.author: jfields
+ms.custom: sfi-image-nochange
 ---
 
 # Configure the ServiceNow app for Microsoft Entra Permissions Management
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on November 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 Manage your multicloud permissions by integrating ServiceNow with Microsoft Entra Permissions Management. 
 
@@ -51,7 +54,7 @@ To integration the ServiceNow app with Microsoft Entra Permissions Management:
 4.	Select the app, then click **Install**. 
 The installation process begins and the application is installed in your instance.
 5. Configure the app by following the instructions.
-:::image type="content" source="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png" alt-text="Screenshot of ServiceNow Microsoft Entra Permissions Management installation." lightbox="media/configure-servicenow-application/servicenow_microsoft-entra-permissions-management-installation.png":::
+:::image type="content" source="media/configure-servicenow-application/servicenow-microsoft-entra-permissions-management-installation.png" alt-text="Screenshot of ServiceNow Microsoft Entra Permissions Management installation." lightbox="media/configure-servicenow-application/servicenow-microsoft-entra-permissions-management-installation.png":::
 
 
 ## Next steps

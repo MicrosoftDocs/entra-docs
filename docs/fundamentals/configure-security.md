@@ -5,12 +5,12 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 02/07/2025
+ms.date: 09/11/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
-ms.reviewer: 
+manager: dougeby
+ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for increased security (Preview)
 
@@ -19,87 +19,120 @@ In Microsoft Entra, we group our security recommendations into several main area
 > [!TIP]
 > Some organizations might take these recommendations exactly as written, while others might choose to make modifications based on their own business needs. In our initial release of this guidance, we focus on traditional [workforce tenants](/entra/external-id/tenant-configurations#workforce-tenants). These workforce tenants are for your employees, internal business apps, and other organizational resources. 
 
-We recommend that all of the following controls be implemented where licenses are available. This helps to provide a foundation for other resources built on top of this solution. More controls will be added to this document over time.
+We recommend that all of the following controls be implemented where licenses are available. These patterns and practices help to provide a foundation for other resources built on top of this solution. More controls will be added to this document over time.
 
-## Privileged access
+## Protect identities and secrets
 
-### Privileged accounts are cloud native identities  
+Reduce credential-related risk by implementing modern identity standards.
 
-[!INCLUDE [21814](../includes/secure-recommendations/21814.md)]
+| Check | Minimum required license |
+|---|---|
+| [Applications don't have client secrets configured](zero-trust-protect-identities.md#applications-dont-have-client-secrets-configured) | Microsoft Entra ID P1 |
+| [Applications don't have certificates with expiration longer than 180 days](zero-trust-protect-identities.md#applications-dont-have-certificates-with-expiration-longer-than-180-days) | Microsoft Entra ID P1 |
+| [Application Certificates need to be rotated on a regular basis](zero-trust-protect-identities.md#application-certificates-need-to-be-rotated-on-a-regular-basis) | Microsoft Entra ID P1 |
+| [Enforce standards for app secrets and certificates](zero-trust-protect-identities.md#enforce-standards-for-app-secrets-and-certificates) | Microsoft Entra ID P1 |
+| [Microsoft services applications don't have credentials configured](zero-trust-protect-identities.md#microsoft-services-applications-dont-have-credentials-configured) | Microsoft Entra ID P1 |
+| [User consent settings are restricted](zero-trust-protect-identities.md#user-consent-settings-are-restricted) | Microsoft Entra ID P1 |
+| [Admin consent workflow is enabled](zero-trust-protect-identities.md#admin-consent-workflow-is-enabled) | Microsoft Entra ID P1 |
+| [Privileged accounts are cloud native identities](zero-trust-protect-identities.md#privileged-accounts-are-cloud-native-identities) | Microsoft Entra ID P2 |
+| [All privileged role assignments are activated just in time and not permanently active](zero-trust-protect-identities.md#all-privileged-role-assignments-are-activated-just-in-time-and-not-permanently-active) | Microsoft Entra ID P2 |
+| [Passkey authentication method enabled](zero-trust-protect-identities.md#passkey-authentication-method-enabled) | None (included with Microsoft Entra ID) |
+| [Privileged accounts have phishing-resistant methods registered](zero-trust-protect-identities.md#privileged-accounts-have-phishing-resistant-methods-registered) | Microsoft Entra ID P1 |
+| [Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods](zero-trust-protect-identities.md#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Microsoft Entra ID P1 |
+| [Require password reset notifications for administrator roles](zero-trust-protect-identities.md#require-password-reset-notifications-for-administrator-roles) | Microsoft Entra ID P1 |
+| [Block legacy authentication](zero-trust-protect-identities.md#block-legacy-authentication) | Microsoft Entra ID P1 |
+| [Temporary access pass is enabled](zero-trust-protect-identities.md#temporary-access-pass-is-enabled) | Microsoft Entra ID P1 |
+| [Migrate from legacy MFA and SSPR policies](zero-trust-protect-identities.md#migrate-from-legacy-mfa-and-sspr-policies) | Microsoft Entra ID P1 |
+| [Self-service password reset doesn't use security questions](zero-trust-protect-identities.md#self-service-password-reset-doesnt-use-security-questions) | Microsoft Entra ID P1 |
+| [SMS and Voice Call authentication methods are disabled](zero-trust-protect-identities.md#sms-and-voice-call-authentication-methods-are-disabled) | Microsoft Entra ID P1 |
+| [Secure the MFA registration (My Security Info) page](zero-trust-protect-identities.md#secure-the-mfa-registration-my-security-info-page) | Microsoft Entra ID P1 |
+| [Use cloud authentication](zero-trust-protect-identities.md#use-cloud-authentication) | Microsoft Entra ID P1 |
+| [All users are required to register for MFA](zero-trust-protect-identities.md#all-users-are-required-to-register-for-mfa) | Microsoft Entra ID P2 |
+| [Users have strong authentication methods configured](zero-trust-protect-identities.md#users-have-strong-authentication-methods-configured) | Microsoft Entra ID P1 |
+| [User sign-in activity uses token protection](zero-trust-protect-identities.md#user-sign-in-activity-uses-token-protection) | Microsoft Entra ID P1 |
+| [Microsoft Authenticator app shows sign-in context](zero-trust-protect-identities.md#microsoft-authenticator-app-shows-sign-in-context) | Microsoft Entra ID P1 |
+| [Microsoft Authenticator app report suspicious activity setting is enabled](zero-trust-protect-identities.md#microsoft-authenticator-app-report-suspicious-activity-setting-is-enabled) | Microsoft Entra ID P1 |
+| [Password expiration is disabled](zero-trust-protect-identities.md#password-expiration-is-disabled) | Microsoft Entra ID P1 |
+| [Smart lockout threshold set to 10 or less](zero-trust-protect-identities.md#smart-lockout-threshold-set-to-10-or-less) | Microsoft Entra ID P1 |
+| [Add organizational terms to the banned password list](zero-trust-protect-identities.md#add-organizational-terms-to-the-banned-password-list) | Microsoft Entra ID P1 |
+| [Require multifactor authentication for device join and device registration using user action](zero-trust-protect-identities.md#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | Microsoft Entra ID P1 |
+| [Local Admin Password Solution is deployed](zero-trust-protect-identities.md#local-admin-password-solution-is-deployed) | Microsoft Entra ID P1 |
+| [Enable Microsoft Entra ID security defaults](zero-trust-protect-identities.md#enable-microsoft-entra-id-security-defaults) | None (included with Microsoft Entra ID) |
 
-### Privileged accounts have phishing-resistant methods registered
+## Protect tenants and isolation production systems
 
-[!INCLUDE [21782](../includes/secure-recommendations/21782.md)]
+| Check | Minimum required license |
+|---|---|
+| [Permissions to create new tenants are limited to the Tenant Creator role](zero-trust-protect-tenants.md#permissions-to-create-new-tenants-are-limited-to-the-tenant-creator-role) | Microsoft Entra ID Free |
+| [Guest access is limited to approved tenants](zero-trust-protect-tenants.md#guest-access-is-limited-to-approved-tenants) | Microsoft Entra ID Free |
+| [Guests are not assigned high privileged directory roles](zero-trust-protect-tenants.md#guests-are-not-assigned-high-privileged-directory-roles) | Microsoft Entra ID Free<br>Microsoft Entra ID P2 or Microsoft ID Governance for PIM |
+| [Guests can't invite other guests](zero-trust-protect-tenants.md#guests-cant-invite-other-guests) | Microsoft Entra ID Free |
+| [Guests have restricted access to directory objects](zero-trust-protect-tenants.md#guests-have-restricted-access-to-directory-objects) | Microsoft Entra ID Free |
+| [App instance property lock is configured for all multitenant applications](zero-trust-protect-tenants.md#app-instance-property-lock-is-configured-for-all-multitenant-applications) | Microsoft Entra ID Free |
+| [Guests don't have long lived sign-in sessions](zero-trust-protect-tenants.md#guests-dont-have-long-lived-sign-in-sessions) | Microsoft Entra ID P1 |
+| [Guest access is protected by strong authentication methods](zero-trust-protect-tenants.md#guest-access-is-protected-by-strong-authentication-methods) | Microsoft Entra ID Free<br>Microsoft Entra ID P1 recommended for Conditional Access |
+| [Guest self-service sign-up via user flow is disabled](zero-trust-protect-tenants.md#guest-self-service-sign-up-via-user-flow-is-disabled) | Microsoft Entra ID Free |
+| [Outbound cross-tenant access settings are configured](zero-trust-protect-tenants.md#outbound-cross-tenant-access-settings-are-configured) | Microsoft Entra ID Free<br>Microsoft Entra ID P1 recommended for Conditional Access |
+| [Guests don't own apps in the tenant](zero-trust-protect-tenants.md#guests-dont-own-apps-in-the-tenant) | Microsoft Entra ID Free |
+| [All guests have a sponsor](zero-trust-protect-tenants.md#all-guests-have-a-sponsor) | Microsoft Entra ID Free<br>Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
+| [Inactive guest identities are disabled or removed from the tenant](zero-trust-protect-tenants.md#inactive-guest-identities-are-disabled-or-removed-from-the-tenant) | Microsoft Entra ID Free<br>Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
 
-### Privileged users sign in with phishing-resistant methods
+## Protect networks
 
-[!INCLUDE [21781](../includes/secure-recommendations/21781.md)]
+Protect your network perimeter.
 
-## Credential management
+| Check | Minimum required license |
+|---|---|
+| [Named locations are configured](zero-trust-protect-networks.md#named-locations-are-configured) | Microsoft Entra ID P1 |
+| [Tenant restrictions v2 policy is configured](zero-trust-protect-networks.md#tenant-restrictions-v2-policy-is-configured) | Microsoft Entra ID P1 |
 
-### Users have strong authentication methods configured
+## Protect engineering systems
 
-[!INCLUDE [21801](../includes/secure-recommendations/21801.md)]
+Protect software assets and improve code security.
 
-## Access control
+| Check | Minimum required license |
+|---|---|
+| [Emergency access accounts are configured appropriately](zero-trust-protect-engineering-systems.md#emergency-access-accounts-are-configured-appropriately) | Microsoft Entra ID P1 |
+| [Global Administrator role activation triggers an approval workflow](zero-trust-protect-engineering-systems.md#global-administrator-role-activation-triggers-an-approval-workflow) | Microsoft Entra ID P2 |
+| [Global Administrators don't have standing access to Azure subscriptions](zero-trust-protect-engineering-systems.md#global-administrators-dont-have-standing-access-to-azure-subscriptions) | Microsoft Entra ID P2 |
+| [Creating new applications and service principals is restricted to privileged users](zero-trust-protect-engineering-systems.md#creating-new-applications-and-service-principals-is-restricted-to-privileged-users) | Microsoft Entra ID P1 |
+| [Inactive applications don't have highly privileged Microsoft Graph API permissions](zero-trust-protect-engineering-systems.md#inactive-applications-dont-have-highly-privileged-microsoft-graph-api-permissions) | Microsoft Entra ID P1 |
+| [Inactive applications don't have highly privileged built-in roles](zero-trust-protect-engineering-systems.md#inactive-applications-dont-have-highly-privileged-built-in-roles) | Microsoft Entra ID P1 |
+| [App registrations use safe redirect URIs](zero-trust-protect-engineering-systems.md#app-registrations-use-safe-redirect-uris) | Microsoft Entra ID P1 |
+| [Service principals use safe redirect URIs](zero-trust-protect-engineering-systems.md#service-principals-use-safe-redirect-uris) | Microsoft Entra ID P1 |
+| [App registrations must not have dangling or abandoned domain redirect URIs](zero-trust-protect-engineering-systems.md#app-registrations-must-not-have-dangling-or-abandoned-domain-redirect-uris) | Microsoft Entra ID P1 |
+| [Resource-specific consent to application is restricted](zero-trust-protect-engineering-systems.md#resource-specific-consent-to-application-is-restricted) | Microsoft Entra ID P1 |
+| [Workload Identities are not assigned privileged roles](zero-trust-protect-engineering-systems.md#workload-identities-are-not-assigned-privileged-roles) | Microsoft Entra ID P1 |
+| [Enterprise applications must require explicit assignment or scoped provisioning](zero-trust-protect-engineering-systems.md#enterprise-applications-must-require-explicit-assignment-or-scoped-provisioning) | Microsoft Entra ID P1 |
+| [Limit the maximum number of devices per user to 10](zero-trust-protect-engineering-systems.md#limit-the-maximum-number-of-devices-per-user-to-10) | None (included with Microsoft Entra ID) |
+| [Conditional Access policies for Privileged Access Workstations are configured](zero-trust-protect-engineering-systems.md#conditional-access-policies-for-privileged-access-workstations-are-configured) | Microsoft Entra ID P1 |
 
-### Block legacy authentication
+## Monitor and detect cyberthreats
 
-[!INCLUDE [21796](../includes/secure-recommendations/21796.md)]
+Collect and analyze security logs and triage alerts.
 
-### Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods 
+| Check | Minimum required license |
+|--- | --- |
+| [Diagnostic settings are configured for all Microsoft Entra logs](zero-trust-monitor-detect.md#diagnostic-settings-are-configured-for-all-microsoft-entra-logs) | Microsoft Entra ID P1 |
+| [Privileged role activations have monitoring and alerting configured](zero-trust-monitor-detect.md#privileged-role-activations-have-monitoring-and-alerting-configured) | Microsoft Entra ID P2 |
+| [Privileged users sign in with phishing-resistant methods](zero-trust-monitor-detect.md#privileged-users-sign-in-with-phishing-resistant-methods) | Microsoft Entra ID P1 |
+| [All high-risk users are triaged](zero-trust-monitor-detect.md#all-high-risk-users-are-triaged) | Microsoft Entra ID P2 |
+| [All high-risk sign-ins are triaged](zero-trust-monitor-detect.md#all-high-risk-sign-ins-are-triaged) | Microsoft Entra ID P2  |
+| [All user sign-in activity uses strong authentication methods](zero-trust-monitor-detect.md#all-user-sign-in-activity-uses-strong-authentication-methods) | Microsoft Entra ID P1 |
+| [High priority Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#high-priority-microsoft-entra-recommendations-are-addressed) | Microsoft Entra ID P1 |
+| [ID Protection notifications enabled](zero-trust-monitor-detect.md#id-protection-notifications-enabled) | Microsoft Entra ID P2 |
+| [No legacy authentication sign-in activity](zero-trust-monitor-detect.md#no-legacy-authentication-sign-in-activity) | Microsoft Entra ID P1 |
+| [All Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#all-microsoft-entra-recommendations-are-addressed) | Microsoft Entra ID P1 |
 
-[!INCLUDE [21783](../includes/secure-recommendations/21783.md)]
+## Accelerate response and remediation
 
-## Application management
+Improve security incident response and incident communications.
 
-### Inactive applications don't have highly privileged Microsoft Graph API permissions 
-
-[!INCLUDE [21770](../includes/secure-recommendations/21770.md)]
-
-### Inactive applications don't have highly privileged built-in roles 
-
-[!INCLUDE [21771](../includes/secure-recommendations/21771.md)]
-
-### Applications don't have secrets configured 
-
-[!INCLUDE [21772](../includes/secure-recommendations/21772.md)]
-
-### Applications don't have certificates with expiration longer than 180 days 
-
-[!INCLUDE [21773](../includes/secure-recommendations/21773.md)]
-
-### Creating new applications and service principles is restricted to privileged users 
-
-[!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
-
-## External collaboration
-
-### Guests can't invite other guests
-
-[!INCLUDE [21791](../includes/secure-recommendations/21791.md)]
-
-### Guests have restricted access to directory objects
-
-[!INCLUDE [21792](../includes/secure-recommendations/21792.md)]
-
-### Guest access is protected by strong authentication methods 
-
-[!INCLUDE [21851](../includes/secure-recommendations/21851.md)]
-
-## Monitoring
-
-### Diagnostic settings are configured for all Microsoft Entra logs 
-
-[!INCLUDE [21860](../includes/secure-recommendations/21860.md)]
-
-### No legacy authentication sign-in activity 
-
-[!INCLUDE [21795](../includes/secure-recommendations/21795.md)]
-
-### All user sign-in activity uses strong authentication methods 
-
-[!INCLUDE [21800](../includes/secure-recommendations/21800.md)]
+| Check | Minimum required license |
+|---|---|
+| [Workload identities based on risk policies are configured](zero-trust-response-remediation.md#workload-identities-based-on-risk-policies-are-configured) | Microsoft Entra Workload ID |
+| [Restrict high risk sign-ins](zero-trust-response-remediation.md#restrict-high-risk-sign-ins) | Microsoft Entra ID P2 |
+| [Restrict access to high risk users](zero-trust-response-remediation.md#restrict-access-to-high-risk-users) | Microsoft Entra ID P2 |
 
 ## Related content
 

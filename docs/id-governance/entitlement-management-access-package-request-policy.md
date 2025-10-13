@@ -2,12 +2,13 @@
 title: Change request settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change request settings for an access package in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 06/26/2025
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
 # Change request settings for an access package in entitlement management
@@ -20,7 +21,7 @@ The way you specify who can request an access package is with a policy. Before c
 
 When you create an access package, you can specify the request, approval and lifecycle settings, which are stored on the first policy of the access package. Most access packages have a single policy for users to request access, but a single access package can have multiple policies. You would create multiple policies for an access package if you want to allow different sets of users to be granted assignments with different request and approval settings.
 
-For example, a single policy can't be used to assign internal and external users to the same access package. However, you can create two policies in the same access package, one for internal users and one for external users. If there are multiple policies that apply to a user to request, they are prompted at the time of their request to select the policy they would like to be assigned to. The following diagram shows an access package with two policies.
+For example, a single policy can't be used to assign internal and external users to the same access package. However, you can create two policies in the same access package, one for internal users and one for external users. If there are multiple policies that apply to a user to request, they're prompted at the time of their request to select the policy they would like to be assigned to. The following diagram shows an access package with two policies.
 
 ![Diagram that illustrates multiple policies, along with multiple resource roles, can be contained within an access package.](./media/entitlement-management-access-package-request-policy/access-package-policy.png)
 
@@ -48,7 +49,7 @@ If you have a set of users that should have different request and approval setti
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open the access package you want to edit.
 
@@ -102,7 +103,7 @@ Follow these steps if you want to allow users in your directory to be able to re
  **Users not in your directory** refers to users who are in another Microsoft Entra directory or domain. These users might not have yet been invited into your directory. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](../external-id/external-collaboration-settings-configure.md).
 
 > [!NOTE]
-> A guest user account will be created for a user not yet in your directory whose request is approved or auto-approved. The guest will be invited, but will not receive an invite email. Instead, they will receive an email when their access package assignment is delivered. By default, later when that guest user no longer has any access package assignments, because their last assignment has expired or been cancelled, that guest user account will be blocked from sign in and subsequently deleted. If you want to have guest users remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](../external-id/user-properties.md).
+> A guest user account will be created for a user not yet in your directory whose request is approved or auto-approved. The guest will be invited, but will not receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. By default, later when that guest user no longer has any access package assignments, because their last assignment has expired or been cancelled, that guest user account will be blocked from sign in and subsequently deleted. If you want to have guest users remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](../external-id/user-properties.md).
 
 Follow these steps if you want to allow users not in your directory to request this access package:
 
@@ -132,7 +133,7 @@ Follow these steps if you want to allow users not in your directory to request t
 1. Once you've selected all your connected organizations, select **Select**.
 
     > [!NOTE]
-    > All users from the selected connected organizations can request this access package. For a connected organization that has a Microsoft Entra directory, users from all verified domains associated with the Microsoft Entra directory can request, unless those domains are blocked by the Azure B2B allow or deny list. For more information, see [Allow or block invitations to B2B users from specific organizations](../external-id/allow-deny-list.md).
+    > All users from the selected connected organizations can request this access package. For a connected organization that has a Microsoft Entra directory, users from all verified domains associated with the Microsoft Entra directory can request, unless those domains are blocked by the Azure B2B allow or blocklist. For more information, see [Allow or block invitations to B2B users from specific organizations](../external-id/allow-deny-list.md).
 
 1. Next, use the steps in [Change approval settings for an access package in entitlement management](entitlement-management-access-package-approval-policy.md) to configure approval settings to specify who should approve requests from users not in your organization.
  
@@ -161,7 +162,7 @@ To change the request and approval settings for an access package, you need to o
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open the access package whose policy request settings you want to edit.
 

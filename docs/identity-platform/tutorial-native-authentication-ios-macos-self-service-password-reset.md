@@ -3,15 +3,15 @@ title: Self-service password reset
 description: Learn how to implement self-service password reset (SSPR) to my iOS/macOS app using native authentication.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/19/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn how to implement self-service password reset (SSPR) to my iOS/macOS app using native authentication.
 ---
 
@@ -21,7 +21,7 @@ ms.custom: developer
 
 This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement. 
 
-In this tutorial, you learn how to: 
+In this tutorial, you: 
 
 > [!div class="checklist"]
 >

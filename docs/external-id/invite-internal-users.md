@@ -1,18 +1,14 @@
 ---
 title: Invite internal users to B2B collaboration
 description: If you have internal user accounts for partners, distributors, suppliers, vendors, and other guests, you can change to Microsoft Entra B2B collaboration by inviting them to sign in with their own external credentials or sign-in. Use either PowerShell or the Microsoft Graph invitation API.
-
- 
 ms.service: entra-external-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
 ms.date: 02/25/2025
-
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
-
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing internal guest users, I want to invite them to use B2B collaboration, so that they can sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
 ---
 
@@ -49,7 +45,7 @@ You can use the Microsoft Entra admin center, PowerShell, or the invitation API 
 ## Use the Microsoft Entra admin center to send a B2B invitation
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Find the user in the list or use the search box. Then select the user.
 1. In the **Overview** tab, under **My Feed**, select **Convert to external user**. 
 

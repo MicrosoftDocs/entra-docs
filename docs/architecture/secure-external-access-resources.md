@@ -5,10 +5,10 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 4/28/2023
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Plan a Microsoft Entra B2B collaboration deployment

@@ -2,27 +2,34 @@
 title: Configure a web app that calls web APIs
 description: Learn how to configure the code of a web app that calls web APIs
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: 
 ms.date: 07/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # A web app that calls web APIs: Code configuration
 
-In the [previous article](./scenario-web-app-call-api-app-registration.md), you registered an application in Microsoft Entra. This article will show you how to configure the application code, and modify your web app so that it not only signs users in but also now calls web APIs. The application you create uses the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) to sign the user in. This flow has two steps:
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
+This article will show you how to configure the application code, and modify your web app so that it not only signs users in but also now calls web APIs. The application you create uses the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) to sign the user in. This flow has two steps:
 
 1. Request an authorization code. This part delegates a private dialogue with the user to the Microsoft identity platform. During that dialogue, the user signs in and consents to the use of web APIs. When the private dialogue ends successfully, the web app receives an authorization code on its redirect URI.
 1. Request an access token for the API by redeeming the authorization code.
 
 ## Prerequisites
 
-- [A web app that calls web APIs: App registration](./scenario-web-app-call-api-app-registration.md)
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
+  * Application Administrator
+  * Application Developer
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 
 ## Microsoft libraries supporting web apps
 

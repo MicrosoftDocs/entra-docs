@@ -2,11 +2,11 @@
 title: Lifecycle Workflow Insights
 description: Conceptual article about Lifecycle Workflows reporting and history capabilities.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 08/27/2024
+ms.date: 06/25/2025
 ms.author: owinfrey
 ms.reviewer: krbain
 

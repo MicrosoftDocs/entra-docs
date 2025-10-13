@@ -3,11 +3,11 @@ title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 
 author: rolyon
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: whats-new
-ms.date: 03/10/2025
+ms.date: 10/02/2025
 ms.author: rolyon
 
 ---
@@ -20,6 +20,14 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| Oct 2025 | Roles | Added [Dragon Administrator](permissions-reference.md#dragon-administrator) role. |
+| August 2025 | Roles | Added [Teams Reader](permissions-reference.md#teams-reader) role. |
+| June 2025 | Roles | Added [Organizational Data Source Administrator](permissions-reference.md#organizational-data-source-administrator) role. |
+| June 2025 | Administrative units | General availability of restricted management administrative units. See [Restricted management administrative units in Microsoft Entra ID](admin-units-restricted-management.md). |
+| May 2025 | Roles | Updated permissions for multiple roles. See [Microsoft Entra built-in roles](permissions-reference.md). |
+| May 2025 | Roles | Added [Microsoft Graph Data Connect Administrator](permissions-reference.md#microsoft-graph-data-connect-administrator) role. |
+| March 2025 | Roles | Added [Viva Glint Tenant Administrator](permissions-reference.md#viva-glint-tenant-administrator) role. |
+| March 2025 | Roles | Added [IoT Device Administrator](permissions-reference.md#iot-device-administrator) role. |
 | March 2025 | Roles | Added [People Administrator](permissions-reference.md#people-administrator) role. |
 | February 2025 | Roles | Added [Global Secure Access Log Reader](permissions-reference.md#global-secure-access-log-reader) role. |
 | February 2025 | Security | Updated guidance for emergency access accounts. See [Manage emergency access accounts in Microsoft Entra ID](security-emergency-access.md). |

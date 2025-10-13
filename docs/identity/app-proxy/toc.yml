@@ -132,17 +132,17 @@ items:
         href: application-proxy-application-gateway-waf.md
     - name: Troubleshoot
       items:
-      - name: Application proxy troubleshooting
+      - name: Troubleshoot application proxy apps
         href: application-proxy-troubleshoot.md
-      - name: Application troubleshooting flowchart
+      - name: Debug apps and troubleshooting flowchart
         href: application-proxy-debug-apps.md
-      - name: Links on application page not working
+      - name: Broken links in application
         href: application-proxy-page-links-broken-problem.md
-      - name: Configure Kerberos Constrained Delegation
+      - name: Kerberos constrained delegation errors
         href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
       - name: Can't Access this Corporate Application error
         href: application-proxy-sign-in-bad-gateway-timeout-error.md
-      - name: CORS issues in application proxy
+      - name: CORS issues
         href: application-proxy-understand-cors-issues.md
   - name: Reference
     items:

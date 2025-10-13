@@ -5,7 +5,7 @@ customer intent: As a Microsoft Partner, I want to deploy Microsoft Global Secur
 author: jricketts
 manager: martinco
 ms.service: global-secure-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/06/2025
 ms.author: jricketts
 ---
@@ -19,7 +19,7 @@ Here are key Global Secure Access deployment scenarios:
 - Secure and monitor Microsoft Traffic for on-site and remote employees.
 - Secure and monitor internet traffic for on-site and remote employees.
 
-This Deployment Guide helps you to plan and deploy Microsoft Global Secure Access. See [Global Secure Access licensing overview](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) for licensing information. While most of the services are generally available (GA), some parts of the service are in public preview. ​
+This Deployment Guide helps you to plan and deploy Microsoft Global Secure Access. See [Global Secure Access licensing overview](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) for licensing information. While most of the services are generally available (GA), some parts of the service are in public preview. ​See [425 Show: Plan and Implement your Global Secure Access deployment](https://youtu.be/px6dd9ZJ7R0) for a video walk through detailing deployment planning and implementation recommendations.
 
 ## Perform a Proof of Concept
 
@@ -34,6 +34,8 @@ Depending on which capabilities you plan to deploy in a PoC for Microsoft Global
 - Deploy and test Microsoft Entra Internet Access: One hour
 - Deploy and test Microsoft Entra Private Access: One hour
 - Close PoC: 30 minutes
+
+See [425 Show: Global Secure Access Proof of Concept Deep Dive](https://youtu.be/BKLvA0p_v1g) for a video walk-through detailing proof of concept procedures.
 
 ## Initiate your Global Secure Access project
 
@@ -274,12 +276,14 @@ Congratulations! You completed your Microsoft Global Secure Access deployment. T
 
 ## Next steps
 
+- [425 Show: Plan and Implement your Global Secure Access deployment](https://youtu.be/px6dd9ZJ7R0).
 - Learn how to accelerate your transition to a Zero Trust security model with [Microsoft Entra Suite and Microsoft's unified security operations platform](https://www.microsoft.com/security/blog/2024/07/11/simplified-zero-trust-security-with-the-microsoft-entra-suite-and-unified-security-operations-platform-now-generally-available/)
 - [Microsoft Global Secure Access deployment guide for Microsoft Traffic](gsa-deployment-guide-microsoft-traffic.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Internet Access](gsa-deployment-guide-internet-access.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)
 - [Simulate remote network connectivity using Azure Virtual Network Gateway - Global Secure Access](../global-secure-access/how-to-simulate-remote-network.md)
 - [Simulate remote network connectivity using Azure vWAN - Global Secure Access](../global-secure-access/how-to-create-remote-network-vwan.md)
-- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)
+- [Video - 425 Show: Global Secure Access Proof of Concept Deep Dive](https://youtu.be/BKLvA0p_v1g)
 - [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
 - [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)

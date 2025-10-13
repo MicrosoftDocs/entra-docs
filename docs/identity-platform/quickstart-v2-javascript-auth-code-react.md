@@ -3,11 +3,11 @@ title: "Quickstart: Sign in users in JavaScript React single-page apps (SPA) wit
 description: In this quickstart, learn how a JavaScript React single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
 ROBOTS: NOINDEX
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom:
 ms.date: 02/27/2024
-ms.reviewer: jamesmantu
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: quickstart

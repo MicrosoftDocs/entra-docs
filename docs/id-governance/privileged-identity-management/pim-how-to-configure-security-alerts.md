@@ -1,16 +1,15 @@
 ---
 title: Security alerts for Microsoft Entra roles in PIM
-description: Configure security alerts for Microsoft Entra roles Privileged Identity
-  Management.
+description: Configure security alerts for Microsoft Entra roles Privileged Identity Management.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim
+ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
 # Configure security alerts for Microsoft Entra roles in Privileged Identity Management
 
@@ -69,7 +68,7 @@ Severity: **Low**
 | | Description |
 | --- | --- |
 | **Why do I get this alert?** | The current Microsoft Entra organization doesn't have Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
-| **How to fix?** | Review information about [Microsoft Entra editions](~/fundamentals/whatis.md). Upgrade to Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
+| **How to fix?** | Review information about [Microsoft Entra editions](~/fundamentals/licensing.md). Upgrade to Microsoft Entra ID P2 or Microsoft Entra ID Governance. |
 
 ### Potential stale accounts in a privileged role
 
@@ -132,7 +131,7 @@ Follow these steps to configure security alerts for Microsoft Entra roles in Pri
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Alerts** > **Setting**. For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Alerts** > **Setting**. For information about how to add the Privileged Identity Management tile to your dashboard, see [Start using Privileged Identity Management](pim-getting-started.md).
 
     :::image type="content" source="media/pim-how-to-configure-security-alerts/alert-settings.png" alt-text="Screenshot of the alerts page with the settings highlighted.":::
 

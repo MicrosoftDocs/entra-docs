@@ -1,27 +1,40 @@
 ---
-title: How to enable QR code authentication in Microsoft Entra ID (preview)
+title: How to enable QR code authentication in Microsoft Entra ID
 description: Learn about how to enable QR code authentication method in Microsoft Entra ID to help improve and secure sign-in events for frontline workers.
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/04/2025
+ms.topic: how-to
+ms.date: 06/24/2025
 
 ms.author: justinha
 author: aanjusingh
+contributors: minatoruan
 ms.reviewer: anjusingh
-manager: femila
+manager: dougeby
 
 # Customer intent: As an identity administrator, I want to understand how to enable QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
 
-# How to enable the QR code authentication method in Microsoft Entra ID (Preview)
+# How to enable the QR code authentication method in Microsoft Entra ID 
 
 This topic covers how to enable the QR code authentication method in the Authentication methods policy in Microsoft Entra ID. It also covers how to manage the QR code authentication method for users, and how they can sign in with a QR code and PIN. 
 
+Before you enable QR code authentication method, review the best practices for using security controls for work or home access for frontline workers. For more information, see [Best practices to protect frontline workers](/entra/identity-platform/security-best-practices-for-frontline-workers).
+
 ## Prerequisites to enable the QR code authentication method
 
-- Microsoft Entra ID tenant with at least an F1, F3, or P1 license. 
+
+- An active Azure subscription.
+  - If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra tenant associated with your subscription.
+  - If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
+- You need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role in your Microsoft Entra tenant to enable the QR code authentication method.
+- Each user that's enabled in the QR code authentication method policy must be licensed, even if they don't use it. Each enabled user must have one of the following Microsoft Entra ID, EMS, Microsoft 365 licenses:
+    - [Microsoft 365 F1 or F3][m365-firstline-workers-licensing]
+    - [Microsoft Entra ID P1 or P2](https://www.microsoft.com/security/business/microsoft-entra-pricing)
+    - [Enterprise Mobility + Security (EMS) E3 or E5][ems-licensing] or [Microsoft 365 E3 or E5][m365-licensing]
+    - [Office 365 F3][o365-f3]
 - Android, iOS, or iPadOS (iOS/iPadOS version 15.0 or later) shared devices. 
 - Shared device mode enabled on the shared devices (optional but highly recommended). 
 - A printer to print 2" x 2" QR codes. 
@@ -35,7 +48,7 @@ You can enable the QR code authentication method by using the Microsoft Entra ad
 ### Enable QR code authentication method in the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Go to **Protection** > **Authentication methods** > **Policies**.
+1. Go to **Entra ID** > **Authentication methods** > **Policies**.
 1. Click **QR code** > **Enable and target** > **Add target** > select a group of users who need to sign in with a QR code. 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/enable-qr-code.png" alt-text="Screenshot that shows how to enable QR code for an organization.":::
@@ -486,10 +499,10 @@ When configuring with Intune, assign Microsoft Authenticator as a required app f
 
 Users need to [download Teams](https://aka.ms/teamsmobiledownload). The following table lists the minimum Teams version for mobile operating systems. For more information about Teams versions, see [Version update history for the new and classic Microsoft Teams app](/officeupdates/teams-app-versioning).
 
-Mobile OS | Release date | Teams version 
-----------|--------------|--------------
-iOS and iPadOS | July 21, 2024 | 6.13.1 (1.0.0.77.2024132501)	
-Android | August 08, 2024 | 1416/1.0.0.2024143204 (2024143204)	
+|   Mobile OS    |  Release date   |           Teams version            |
+|----------------|-----------------|------------------------------------|
+| iOS and iPadOS | July 21, 2024   | 6.13.1 (1.0.0.77.2024132501)       |
+| Android        | August 08, 2024 | 1416/1.0.0.2024143204 (2024143204) |
 
 Users can follow these steps to sign in with a QR code in Teams:
 
@@ -519,7 +532,7 @@ Restrict the QR code authentication method to only frontline workers, compliant,
 ### Restrict QR code authentication to frontline workers  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **QR code** > **Enable and target**.
+1. Browse to **Entra ID** > **Authentication methods** > **QR code** > **Enable and target**.
 1. Click **Add target** > select a group that only includes frontline workers, such as **Frontline workers** in the following screenshot. This group selection restricts enablement of the QR code authentication method only to frontline workers added to the **Frontline workers** group. 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-groups-and-roles.png" alt-text="Screenshot that shows the Microsoft Entra admin center that shows how to add groups to the QR code settings.":::
@@ -531,7 +544,7 @@ Restrict the QR code authentication method to only frontline workers, compliant,
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/new-authentication-strength.png" alt-text="Screenshot that shows how to create a new authentication strength.":::
 
-1. Create a custom authentication strength Conditional Access policy. Select authentication **QR code (Preview)**.  
+1. Create a custom authentication strength Conditional Access policy. Select authentication **QR code**.  
 
 1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or another MDM solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device that they signed into with a QR code.
    
@@ -550,8 +563,20 @@ Restrict the QR code authentication method to only frontline workers, compliant,
 
 ## Related content
 
-- [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](concept-authentication-qr-code.md)
+- [Authentication methods in Microsoft Entra ID - QR code authentication method](concept-authentication-qr-code.md)
 - [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
 
+
+<!-- INTERNAL LINKS -->
+[create-azure-ad-tenant]: ~/fundamentals/sign-up-organization.md
+[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.md
+
+<!-- EXTERNAL LINKS -->
+[m365-firstline-workers-licensing]: https://www.microsoft.com/licensing/news/m365-firstline-workers
+[azuread-licensing]: https://azure.microsoft.com/pricing/details/active-directory/
+[ems-licensing]: https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing
+[m365-licensing]: https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans
+[o365-f1]: https://www.microsoft.com/microsoft-365/business/office-365-f1?market=af
+[o365-f3]: https://www.microsoft.com/microsoft-365/business/office-365-f3?activetab=pivot%3aoverviewtab
 

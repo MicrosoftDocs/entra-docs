@@ -6,11 +6,11 @@ description: Enable your external business partners and guest users to use their
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 04/14/2025
 
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: seo-july-2024
 

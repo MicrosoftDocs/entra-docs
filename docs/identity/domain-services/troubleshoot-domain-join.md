@@ -2,7 +2,7 @@
 title: Troubleshoot domain-join with Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot common problems when you try to domain-join a VM or connect an application to Microsoft Entra Domain Services and you can't connect or authenticate to the managed domain.
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services

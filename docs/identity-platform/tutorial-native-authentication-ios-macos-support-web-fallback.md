@@ -3,15 +3,15 @@ title: Support web fallback
 description: Learn how to implement web fallback in an iOS/macOS application by using native authentication to ensure stability in authentication flow.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 09/02/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a developer, I want to support web fallback in my iOS/macOS app's native authentication flow so that I can ensure stability of my app's authentication flow.
 ---
 
@@ -21,7 +21,7 @@ ms.custom: developer
 
 This tutorial demonstrates how to acquire a token through a browser where native authentication isn't sufficient to complete the user flow. 
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

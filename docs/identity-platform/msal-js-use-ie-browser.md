@@ -2,11 +2,11 @@
 title: Issues on Internet Explorer (MSAL.js)
 description: Use the Microsoft Authentication Library for JavaScript (MSAL.js) with Internet Explorer browser.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 12/01/2021
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article

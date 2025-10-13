@@ -9,7 +9,7 @@ ms.date: 02/28/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: chuqiaoshi
 ---
 # Simulate Risk Detections in Microsoft Entra ID Protection
@@ -80,7 +80,7 @@ This risk detection indicates that the application's valid credentials are leake
 ### Simulate Leaked Credentials in GitHub for Workload Identities
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration** to register a new application or reuse an existing stale application.
 1. Select **Certificates & Secrets** > **New client Secret** , add a description of your client secret and set an expiration for the secret or specify a custom lifetime and select **Add**. Record the secret's value for later use for your GitHub Commit.
 
@@ -88,7 +88,7 @@ This risk detection indicates that the application's valid credentials are leake
    > **You can not retrieve the secret again after you leave this page**.
    
 1. Get the TenantID and Application(Client)ID in the **Overview** page.
-1. Ensure you disable the application via **Identity** > **Applications** > **Enterprise Application** > **Properties** > Set **Enabled for users to sign-in** to **No**.
+1. Ensure you disable the application via **Entra ID** > **Enterprise apps** > **Properties** > Set **Enabled for users to sign-in** to **No**.
 1. Create a **public** GitHub Repository, add the following config and commit the change as a file with the .txt extension.
    ```GitHub file
      "AadClientId": "XXXX-2dd4-4645-98c2-960cf76a4357",
@@ -96,7 +96,7 @@ This risk detection indicates that the application's valid credentials are leake
      "AadTenantDomain": "XXXX.onmicrosoft.com",
      "AadTenantId": "99d4947b-XXX-XXXX-9ace-abceab54bcd4",
    ```
-1. In about 8 hours, you're able to view a leaked credential detection under **Protection** > **Identity Protection** > **Risk Detection** > **Workload identity detections** where other info contains the URL of your GitHub commit.
+1. In about 8 hours, you're able to view a leaked credential detection under **ID Protection** > **Dashboard** > **Risk Detections** > **Workload identity detections** where other info contains the URL of your GitHub commit.
 
 ## Testing risk policies
 

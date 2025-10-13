@@ -2,7 +2,7 @@
 title: Common alerts and resolutions in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to resolve common alerts generated as part of the health status for Microsoft Entra Domain Services
 author: justinha
-manager: femila
+manager: dougeby
 
 ms.assetid: 54319292-6aa0-4a08-846b-e3c53ecca483
 ms.service: entra-id
@@ -30,6 +30,8 @@ When you move an Azure subscription to a new Microsoft Entra directory, it usual
 This error is unrecoverable. To resolve the alert, [delete your existing managed domain](delete-aadds.md) and recreate it in your new directory. If you have trouble deleting the managed domain, [open an Azure support request][azure-support] for more troubleshooting help.
 
 ## AADDS101: Azure AD B2C is running in this directory
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ### Alert message
 

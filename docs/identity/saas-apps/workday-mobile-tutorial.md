@@ -1,19 +1,18 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
+title: Configure Workday Mobile Application for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workday Mobile Application.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
+# Configure Workday Mobile Application for Single sign-on with Microsoft Entra ID
 
 In this article,  you’ll learn how to integrate Microsoft Entra ID, Conditional Access, and Intune with Workday Mobile Application. When you integrate Workday Mobile Application with Microsoft, you can:
 
@@ -140,7 +139,7 @@ To ensure that iOS devices are only able to sign in through Workday managed by m
 1. Under **Platform**, choose **iOS/iPadOS**.
 1. Under **Associated App**, choose the Workday for iOS app that you added.
 1. Select **Configuration Settings**. Under **Configuration settings format**, select **Enter XML Data**.
-1. Here's an example XML file. Add the configurations you want to apply. Replace `STRING_VALUE` with the string you want to use. Replace `<true /> or <false />` with `<true />` or  `<false />`. If you don't add a configuration, this example functions like it is set to `True`.
+1. Here's an example XML file. Add the configurations you want to apply. Replace `STRING_VALUE` with the string you want to use. Replace `<true /> or <false />` with `<true />` or  `<false />`. If you don't add a configuration, this example functions like it's set to `True`.
 
     ```
     <dict>

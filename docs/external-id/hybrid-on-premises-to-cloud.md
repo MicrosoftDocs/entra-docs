@@ -8,7 +8,7 @@ ms.date: 09/24/2024
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 # Customer intent: As an IT admin managing partner accounts in a hybrid organization, I want to sync partner accounts from our on-premises directory to the cloud using Microsoft Entra Connect, so that our partners can access the resources they need with the same sign-in credentials for both on-premises and cloud resources.

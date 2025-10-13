@@ -1,9 +1,8 @@
 ---
 title: Quickstart - Sign in users in a sample mobile app
 description: Quickstart for configuring a sample mobile app to sign in employees or customers with Microsoft identity platform.
-services: identity-platform
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 10/30/2024
@@ -14,6 +13,8 @@ zone_pivot_groups: entra-tenants
 ---
 
 # Quickstart: Sign in users in a sample mobile app
+
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
@@ -35,73 +36,76 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 ## Prerequisites
 
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+* A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
+
 #### [Android](#tab/android-workforce)
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Android Studio
-- Android 16+
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Android Studio
+* Android 16+
 
 #### [iOS/macOS](#tab/ios-macos-workforce)
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
 * XCode 10+
 * iOS 10+
 * macOS 10.12+
 
 ---
 
-## Register the application
+## Add a redirect URI
 
-To register your application and add the app's registration information to your solution manually, follow these steps:
+You must configure specific redirect URIs in your app registration to ensure compatibility with the downloaded code sample. These URIs are essential for redirecting users back to the app after they successfully sign in.
 
 #### [Android](#tab/android-workforce)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
-1. Select **New registration**.
-1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
-1. For **Supported account types**, select **Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. For information on different account types, select the **Help me choose** option.
-1. Select **Register**.
 1. Under **Manage**, select **Authentication** > **Add a platform** > **Android**.
-2. Enter your project's Package Name based on the sample type you downloaded above.
+1. Enter your project's Package Name based on the sample type you downloaded above.
    - Java sample - `com.azuresamples.msalandroidapp`
    - Kotlin sample - `com.azuresamples.msalandroidkotlinapp`
-3. In the **Signature hash** section of the **Configure your Android app** pane, select **Generating a development Signature Hash.** and copy the KeyTool command to your command line.
+1. In the **Signature hash** section of the **Configure your Android app** pane, select **Generating a development Signature Hash.** and copy the KeyTool command to your command line.
 
    - KeyTool.exe is installed as part of the Java Development Kit (JDK). You must also install the OpenSSL tool to execute the KeyTool command. For more information, see [Android documentation on generating a key](https://developer.android.com/studio/publish/app-signing#generate-key) for more information.
 
-4. Enter the **Signature hash** generated by KeyTool.
-5. Select **Configure** and save the **MSAL Configuration** that appears in the **Android configuration** pane so you can enter it when you configure your app later.
-6. Select **Done**.
-
-#### Get the sample app
-
-- Java: [Download the code](https://github.com/Azure-Samples/ms-identity-android-java/archive/master.zip).
-- Kotlin: [Download the code](https://github.com/Azure-Samples/ms-identity-android-kotlin/archive/master.zip).
+1. Enter the **Signature hash** generated by KeyTool.
+1. Select **Configure** and save the **MSAL Configuration** that appears in the **Android configuration** pane so you can enter it when you configure your app later.
+1. Select **Done**.
 
 #### [iOS/macOS](#tab/ios-macos-workforce)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
-1. Select **New registration**.
-1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
-1. Select **Register**.
 1. Under **Manage**, select **Authentication** > **Add Platform** > **iOS**.
 1. Enter the **Bundle Identifier** for your application. The bundle identifier is a unique string that uniquely identifies your application, for example `com.<yourname>.identitysample.MSALMacOS`. Make a note of the value you use. Note that the iOS configuration is also applicable to macOS applications.
 1. Select **Configure** and save the **MSAL Configuration** details for later in this quickstart.
 1. Select **Done**.
 
-#### Step 2: Download the sample project
+---
+
+## Download the sample app
+
+### [Android](#tab/android-workforce)
+
+- Java: [Download the code](https://github.com/Azure-Samples/ms-identity-android-java/archive/master.zip).
+- Kotlin: [Download the code](https://github.com/Azure-Samples/ms-identity-android-kotlin/archive/master.zip).
+
+### [iOS/macOS](#tab/ios-macos-workforce)
+
+Download the sample project
 
 - [Download the code sample for iOS](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
 - [Download the code sample for macOS](https://github.com/Azure-Samples/active-directory-macOS-swift-native-v2/archive/master.zip)
 
-#### Step 3: Install dependencies
+### Install dependencies
 
 1. Extract the zip file.
-2. In a terminal window, navigate to the folder with the downloaded code sample and run `pod install` to install the latest MSAL library.
+1. In a terminal window, navigate to the folder with the downloaded code sample and run `pod install` to install the latest MSAL library.
 
 ---
 
@@ -110,8 +114,8 @@ To register your application and add the app's registration information to your 
 #### [Android](#tab/android-workforce)
 
 1. In Android Studio's project pane, navigate to **app\src\main\res**.
-2. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
-3. In **app** > **src** > **main** > **res** > **raw**, go to JSON file called `auth_config_single_account.json` and paste the MSAL Configuration that you saved earlier.
+1. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
+1. In **app** > **src** > **main** > **res** > **raw**, go to JSON file called `auth_config_single_account.json` and paste the MSAL Configuration that you saved earlier.
 
    Below the redirect URI, paste:
 
@@ -126,7 +130,7 @@ To register your application and add the app's registration information to your 
      "client_id": "00001111-aaaa-bbbb-3333-cccc4444",
      "authorization_user_agent": "WEBVIEW",
      "redirect_uri": "msauth://com.azuresamples.msalandroidapp/00001111%cccc4444%3D",
-     "broker_redirect_uri_registered": true,
+     "broker_redirect_uri_registered": false,
      "account_mode": "SINGLE",
      "authorities": [
        {
@@ -140,9 +144,15 @@ To register your application and add the app's registration information to your 
    }
    ```
 
+1. Open */app/src/main/AndroidManifest.xml* file.
+1. Find the placeholder:
+
+    - `enter_the_signature_hash` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
+
+
    As this tutorial only demonstrates how to configure an app in Single Account mode, see [single vs. multiple account mode](./single-multi-account.md) and [configuring your app](./msal-configuration.md) for more information
 
-##  Run the sample app
+## Run the sample app
 
 Select your emulator, or physical device, from Android Studio's **available devices** dropdown and run the app.
 
@@ -256,44 +266,40 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 
 ## Prerequisites
 
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+* An external tenant. To create one, choose from the following methods:
+  * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+
+
 #### [Android](#tab/android-external)
 
 - <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
 
 #### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
-- [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
-  - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
-  - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
-- An external tenant. If you don't already have one, [sign up for a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl).
+* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application).
+* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+* [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
+  * [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
+  * [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
 
 #### [iOS/macOS](#tab/ios-macos-external)
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
-
----
-
-## Register the application
-
-#### [Android](#tab/android-external)
-
-[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
-#### [Android(.NET MAUI)](#tab/android-netmaui-external)
-
-[!INCLUDE [active-directory-b2c-register-app](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
-
-#### [iOS/macOS](#tab/ios-macos-external)
-
-[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
 ---
 
 ## Add a platform redirect URL
+
+You must configure specific redirect URIs in your app registration to ensure compatibility with the downloaded code sample. These URIs are essential for redirecting users back to the app after they successfully sign in.
 
 #### [Android](#tab/android-external)
 
@@ -317,37 +323,12 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 
 ---
 
-## Grant admin consent
-
-#### [Android](#tab/android-external)
-
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-#### [Android(.NET MAUI)](#tab/android-netmaui-external)
-
-[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-## Create a user flow
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)]
-
-## Associate the .NET MAUI Android application with the user flow
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
-
-
-#### [iOS/macOS](#tab/ios-macos-external)
-
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
----
-
 ## Clone sample application
 
 
 #### [Android](#tab/android-external)
 
-To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
+To obtain the sample application, you can either clone it from GitHub or [download it as a .zip file](https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-android-sample/archive/refs/heads/main.zip).
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
  
@@ -381,7 +362,6 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 To enable authentication and access to Microsoft Graph resources, configure the sample by following these steps:
  
 1. In Android Studio, open the project that you cloned. 
- 
 1. Open */app/src/main/res/raw/auth_config_ciam.json* file. 
 1. Find the placeholder: 
  
@@ -394,7 +374,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
     - `ENTER_YOUR_SIGNATURE_HASH_HERE` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
 
 1. Open */app/src/main/java/com/azuresamples/msaldelegatedandroidkotlinsampleapp/MainActivity.kt* file.
-1. Find property named `scopes` and set the scopes recorded in [Grant admin consent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
+1. Find property named `scopes` and set the scopes recorded in [Grant admin consent](./quickstart-register-app.md#grant-admin-consent-external-tenants-only). If you haven't recorded any scopes, you can leave this scope list empty.
 
     ```kotlin
     private const val scopes = "" // Developers should set the respective scopes of their Microsoft Graph resources here. For example, private const val scopes = "api://{clientId}/{ToDoList.Read} api://{clientId}/{ToDoList.ReadWrite}"
@@ -423,14 +403,13 @@ To enable authentication and access to Microsoft Graph resources, configure the 
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
-    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant admin consent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
+    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant admin consent](./quickstart-register-app.md#grant-admin-consent-external-tenants-only). If you haven't recorded any scopes, you can leave this scope list empty.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 
 You've configured the app and it's ready to run.
 
 ---
-
 
 ## Run and test the sample app
 

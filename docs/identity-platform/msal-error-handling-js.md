@@ -2,11 +2,11 @@
 title: Handle errors and exceptions in MSAL.js
 description: Learn how to handle errors and exceptions, Conditional Access claims challenges, and retries in MSAL.js applications.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 12/19/2023
-ms.reviewer: saeeda, hahamil
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to

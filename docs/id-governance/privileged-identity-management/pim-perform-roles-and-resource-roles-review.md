@@ -3,7 +3,7 @@ title: Perform an access review of Azure resource and Microsoft Entra roles in P
 description: Learn how to review access of Azure resource and Microsoft Entra roles
   in Privileged Identity Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
@@ -32,7 +32,7 @@ Follow these steps to find and complete the access review:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Review access**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Review access**.
 
 1. If you have any pending access reviews, they appear in the access reviews page.
 

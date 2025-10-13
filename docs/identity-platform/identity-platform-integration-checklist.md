@@ -1,12 +1,12 @@
 ---
 title: Best practices for the Microsoft identity platform
 description: Learn about best practices, recommendations, and common oversights when integrating with the Microsoft identity platform.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
-ms.custom: scenarios:getting-started, has-adal-ref
+author: OwenRichards1
+manager: pmwongera
+ms.author: owenrichards
+ms.custom: has-adal-ref
 ms.date: 11/22/2023
-ms.reviewer: sureshja, jesakowi
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: concept-article

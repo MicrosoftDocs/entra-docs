@@ -5,11 +5,11 @@ description: How users can set up Microsoft Entra join during OOBE.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 04/25/2024
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: 
 ---
 # Microsoft Entra join a new Windows device during the out of box experience

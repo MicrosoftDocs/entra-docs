@@ -3,12 +3,12 @@ title: Add password-based single sign-on to an application
 description: Add password-based single sign-on to an application in Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: concept-article
+ms.topic: how-to
 
-ms.date: 06/27/2024
+ms.date: 06/20/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
@@ -38,7 +38,7 @@ To configure password-based SSO in your Microsoft Entra tenant, you need:
 ## Configure password-based single sign-on
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Select **Single sign-on** and then select **Password-based**.
 1. Enter the URL for the sign-in page of the application.
@@ -72,8 +72,8 @@ For password-based SSO, the end user’s browsers can be:
 - Microsoft Edge on Windows 10 Anniversary Edition or later
 - Chrome--on Windows 7 or later, and on macOS X or later
 
-Users may only have a maximum of [48 credentials](~/identity/users/directory-service-limits-restrictions.md) configured for applications utilizing password-based single sign-on. 
+Users might only have a maximum of [48 credentials](~/identity/users/directory-service-limits-restrictions.md) configured for applications utilizing password-based single sign-on. 
 
-## Next steps
+## Related content
 
 - [Manage access to apps](what-is-access-management.md)

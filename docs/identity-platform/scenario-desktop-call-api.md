@@ -2,13 +2,13 @@
 title: Call web APIs from a desktop app
 description: Learn how to build a desktop app that calls web APIs
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom: 
 ms.date: 10/30/2019
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---

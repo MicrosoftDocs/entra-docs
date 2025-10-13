@@ -5,11 +5,11 @@ description: Provides answers to some questions IT administrators might have abo
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 08/01/2024
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sempofu, micrider
 ---
 # Troubleshooting Enterprise State Roaming settings in Microsoft Entra ID
@@ -38,7 +38,7 @@ This section gives suggestions on how to troubleshoot and diagnose problems rela
 ## Verify sync, and the "Sync your settings" settings page
 
 1. After joining your Windows 10 or newer PC to a domain that is configured to allow Enterprise State Roaming, sign on with your work account. Go to **Settings** > **Accounts** > **Sync Your Settings** and confirm that sync and the individual settings are on, and that the top of the settings page indicates that you're syncing with your work account. Confirm the same account is also used as your account in **Settings** > **Accounts** > **Your Info**.
-1. Verify that sync works across multiple machines by making some changes on the original machine, such as changing the "Country or Region" or using other supported settings see [Windows roaming settings reference](enterprise-state-roaming-windows-settings-reference.md). Watch the change propagate to the second machine within five minutes.
+1. Verify that sync works across multiple machines by making some changes on the original machine, such as changing the "Country or Region" or using other supported settings see [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr). Watch the change propagate to the second machine within five minutes.
 
    * Locking and unlocking the screen (Win + L) can help trigger a sync.
    * You must be signing in with the same account on both PCs for sync to work – as Enterprise State Roaming is tied to the user account and not the machine account.
@@ -55,7 +55,7 @@ Enterprise State Roaming requires the device to be registered with Microsoft Ent
 
 **Potential issue**: **WamDefaultSet** and **AzureAdJoined** both have "NO" in the field value, the device was domain-joined and registered with Microsoft Entra ID, and the device doesn't sync. If it's showing this, the device might need to wait for policy to be applied or the authentication for the device failed when connecting to Microsoft Entra ID. The user might have to wait a few hours for the policy to be applied. Other troubleshooting steps might include retrying autoregistration by signing out and back in, or launching the task in Task Scheduler. In some cases, running "*dsregcmd.exe /leave*" in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
 
-**Potential issue**: The field for **SettingsUrl** is empty and the device doesn't sync. The user might have last logged in to the device before Enterprise State Roaming was enabled. Restart the device and have the user sign-in. Optionally, in the portal, try having the IT Admin navigate to **Identity** > **Devices** > **Overview** > **Enterprise State Roaming** disable and re-enable **Users may sync settings and app data across devices**. To disable click on "None" and to re-enable click on "All" or "Selected". Once re-enabled, restart the device and have the user sign-in. If this doesn't resolve the issue, **SettingsUrl** might be empty if there's a bad device certificate. In this case, running "*dsregcmd.exe /leave*" in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
+**Potential issue**: The field for **SettingsUrl** is empty and the device doesn't sync. The user might have last logged in to the device before Enterprise State Roaming was enabled. Restart the device and have the user sign-in. Optionally, in the portal, try having the IT Admin navigate to **Entra ID** > **Devices** > **Overview** > **Enterprise State Roaming** disable and re-enable **Users may sync settings and app data across devices**. To disable click on "None" and to re-enable click on "All" or "Selected". Once re-enabled, restart the device and have the user sign-in. If this doesn't resolve the issue, **SettingsUrl** might be empty if there's a bad device certificate. In this case, running "*dsregcmd.exe /leave*" in an elevated command prompt window, rebooting, and trying registration again might help with this issue.
 
 ## Enterprise State Roaming and multifactor authentication
 

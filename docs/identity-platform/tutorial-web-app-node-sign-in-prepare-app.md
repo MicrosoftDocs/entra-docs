@@ -2,7 +2,7 @@
 title: 'Sign in users in a Node.js/Express web app by using Microsoft identity platform'
 description: Set up node web app project that signs in users into customer facing app by in an external tenant or employees in a workforce tenant
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: tutorial
@@ -28,9 +28,31 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-- If you've not already done so, complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external). In the quickstart, you don't have to clone and run the the code sample.
-- [Node.js](https://nodejs.org).
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+#### [Workforce tenant](#tab/workforce-tenant)
+
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `http://localhost:3000/auth/redirect`
+  * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
+
+#### [External tenant](#tab/external-tenant)
+
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `http://localhost:3000/auth/redirect`
+  * **Front-channel logout URL**: `https://localhost:5001/signout-callback-oidc`
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+
+---
+
+* [Node.js](https://nodejs.org).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ## Create the Node.js project
 

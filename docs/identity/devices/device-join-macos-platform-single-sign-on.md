@@ -1,20 +1,19 @@
 ---
-title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
+title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO
 description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign-on
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/19/2024
-
 ms.author: cwerner
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.reviewer: brianmel
+ms.custom: sfi-image-nochange
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference between setting up with secure enclave, smart card, or password based authentication methods.
 ---
 
-# Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
+# Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO
 
 Mac users can join their new device to Microsoft Entra ID during the first-run out-of-box experience (OOBE). The macOS Platform single sign-on (PSSO) is a capability on macOS that is enabled using the [Microsoft Enterprise Single Sign-on Extension](../../identity-platform/apple-sso-plugin.md). PSSO allows users to sign in to a Mac device using a hardware-bound key, smart card or their Microsoft Entra ID password. This tutorial shows you how to set up a Mac device during the OOBE to use PSSO using Automated Device Enrollment.
 
@@ -27,6 +26,8 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 - A configured single sign-on (SSO) extension MDM payload with [PSSO settings in Intune](/mem/intune/configuration/platform-sso-macos) by an administrator
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
 - For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
+- Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#insufficient-permissions).
+- If you have network proxy filtering or TLS inspection enabled in your environment, be sure to review the suggested settings documented in the [Platform Single Sign-On troubleshooting guide](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#tls-inspection-urls-to-be-excluded-for-platform-sso)
 
 ## Set up your macOS device
 
@@ -45,8 +46,8 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 There are three authentication methods for PSSO registration:
 
 - **Secure Enclave**: User logs on to their device which has a secure enclave backed cryptographic key used for SSO across apps that use Microsoft Entra ID for authentication. It can also be referred to as Platform Credential for macOS.
-- **Smart card**: User logs into the machine using an external smart card or smart card compatible hard token
-- **Password**: User logs on to their local device with a local account, updated to use their Microsoft Entra ID password
+- **Smart card**: User logs into the machine using an external smart card or smart card compatible hard token.
+- **Password**: User logs on to their local device with a local account, updated to use their Microsoft Entra ID password. This method also supports federated identity credentials.
 
 Check that your system administrator has the Mac enrolled using secure enclave or smart card. These new passwordless features are supported only by PSSO. Check which authentication method has been set up by your administrator before continuing.
 

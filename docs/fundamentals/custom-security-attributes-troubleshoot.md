@@ -9,6 +9,7 @@ ms.subservice: fundamentals
 ms.topic: troubleshooting
 ms.date: 11/27/2024
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot custom security attributes in Microsoft Entra ID

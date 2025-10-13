@@ -2,7 +2,7 @@
 title: PowerShell sample - Get the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS, or GCP Marketplaces. 
 description: PowerShell example that gets the Auth Token for registering your Microsoft Entra private network connector through Azure, AWS, or GCP Marketplaces. 
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: sample
 ms.date: 02/21/2025

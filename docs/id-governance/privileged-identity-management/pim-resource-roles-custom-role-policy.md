@@ -1,15 +1,15 @@
 ---
 title: Use Azure custom roles in PIM
-description: Learn how to use Azure custom roles in Microsoft Entra Privileged Identity
-  Management (PIM).
+description: Learn how to use Azure custom roles in Microsoft Entra Privileged Identity Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
+ms.custom: sfi-image-nochange
 ---
 
 # Use Azure custom roles in Privileged Identity Management

@@ -3,8 +3,8 @@ author: billmath
 ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
-ms.author: billmath
-# Used by articles entra governance
+ms.author: billmath # Used by articles entra governance
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -227,7 +227,7 @@ This section provides steps for user account provisioning from Workday to each A
 **To configure Workday to Active Directory provisioning:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Search for **Workday to Active Directory User Provisioning**, and add that app from the gallery.
 1. After the app is added and the app details screen is shown, select **Provisioning**.
 1. Change the **Provisioning** **Mode** to **Automatic**.
@@ -246,7 +246,7 @@ Transfer the downloaded agent installer to the server host and follow the steps 
 In this step, we establish connectivity with Workday and Active Directory. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > Workday to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent).
+1. Browse to **Entra ID** > **Enterprise apps** > Workday to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent).
 
 1. Complete the **Admin Credentials** section as follows:
 
@@ -360,7 +360,7 @@ In this section, you configure how user data flows from Workday to Active Direct
 | ---------- | ---------- | ---------- | ---------- |
 | **WorkerID**  |  EmployeeID | **Yes** | Written on create only |
 | **PreferredNameData**    |  cn    |   |   Written on create only |
-| **SelectUniqueValue( Join("\@", Join(".",  \[FirstName\], \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Written on create only 
+| **SelectUniqueValue( Join("\@", Join(".",  \[FirstName\], \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), Join("\@", Join(".",  Mid(\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Written on create only |
 | `Replace(Mid(Replace([UserID], , "([\\/\\\\\\[\\]\\:\\;\\|\\=\\,\\+\\*\\?\\<\\>])", , "", , ), 1, 20), , "(\\.)*$", , "", , )`      |    sAMAccountName            |     |         Written on create only |
 | **Switch(\[Active\], , "0", "True", "1", "False")** |  accountDisabled      |     | Create + update |
 | **FirstName**   | givenName       |     |    Create + update |
@@ -495,7 +495,7 @@ Refer to [Microsoft Entra Connect Provisioning Agent: Version release history](~
 #### How do I know the version of my Provisioning Agent?
 
 1. Sign in to the Windows server where the Provisioning Agent is installed.
-1. Go to **Control Panel** -> **Uninstall or Change a Program** menu.
+1. Go to **Control Panel** > **Uninstall or Change a Program** menu.
 1. Look for the version corresponding to the entry **Microsoft Entra Connect Provisioning Agent**.
 
 #### Does Microsoft automatically push Provisioning Agent updates?
@@ -568,7 +568,7 @@ Yes, one Provisioning Agent can be configured to handle multiple AD domains as l
 #### How do I uninstall the Provisioning Agent?
 
 * Sign in to the Windows server where the Provisioning Agent is installed.
-* Go to **Control Panel** -> **Uninstall or Change a Program** menu
+* Go to **Control Panel** > **Uninstall or Change a Program** menu
 * Uninstall the following programs:
   * Microsoft Entra Connect Provisioning Agent
   * Microsoft Entra Connect Agent Updater

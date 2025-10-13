@@ -3,7 +3,7 @@ title: "Quickstart: Add sign in to a React SPA"
 description: Learn how to run a sample React SPA to sign in users
  
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
  

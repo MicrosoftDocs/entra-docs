@@ -1,28 +1,25 @@
 --- 
-title: Enforce signed SAML authentication requests 
-description: Learn how to enforce signed SAML authentication requests. 
- 
+title: Enforce signed SAML authentication requests
+description: Learn how to enforce signed SAML authentication requests.
 author: omondiatieno
-manager: CelesteDG 
-ms.service: entra-id 
-ms.subservice: enterprise-apps 
- 
-ms.topic: concept-article 
-ms.date: 07/19/2024
+manager: mwongerapk
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: how-to
+ms.date: 07/10/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT Admin, I want to enable and disable the enforcement of signed authentication requests and upload public keys for validation, so that I can ensure the security and integrity of the requests made to Microsoft Entra ID.
 --- 
 
 
 # Enforce signed SAML authentication requests  
 
-SAML Request Signature Verification is a functionality that validates the signature of signed authentication requests. An App Admin now can enable and disable the enforcement of signed requests and upload the public keys that should be used to do the validation.  
+SAML Request Signature Verification is a functionality that validates the signature of signed authentication requests. An App Admin can enable and disable the enforcement of signed requests and upload the public keys that should be used to do the validation.  
 
-If enabled Microsoft Entra ID validates the requests against the public keys configured. There are some scenarios where the authentication requests can fail:  
+If enabled, Microsoft Entra ID validates the requests against the public keys configured. There are some scenarios where the authentication requests can fail:  
 
 - Protocol not allowed for signed requests. Only SAML protocol is supported.  
 - Request not signed, but verification is enabled.  
@@ -34,7 +31,7 @@ If enabled Microsoft Entra ID validates the requests against the public keys con
 - Signature algorithm not allowed. Only RSA-SHA256 is supported.
 
 > [!NOTE] 
-> A `Signature` element in `AuthnRequest` elements is optional. If `Require Verification certificates` is not checked, Microsoft Entra ID does not validate signed authentication requests if a signature is present. Requestor verification is provided for by only responding to registered Assertion Consumer Service URLs.
+> A `Signature` element in `AuthnRequest` elements is optional. If `Require Verification certificates` isn't checked, Microsoft Entra ID doesn't validate signed authentication requests if a signature is present. Requestor verification is provided for by only responding to registered Assertion Consumer Service URLs.
 
 >  If `Require Verification certificates` is checked, SAML Request Signature Verification will work for SP-initiated(service provider/relying party initiated) authentication requests only. Only the application configured by the service provider will have the access to to the private and public keys for signing the incoming SAML Authentication Requests from the application. The public key should be uploaded to allow the verification of the request, in which case Microsoft Entra ID will have access to only the public key.
 
@@ -51,7 +48,7 @@ To configure SAML request signature verification, you need:
 ## Configure SAML Request Signature Verification
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Navigate to **Single sign-on**.
 1. In the **Single sign-on** screen, scroll to the subsection called **Verification certificates** under **SAML Certificates.** 
@@ -76,7 +73,7 @@ To configure SAML request signature verification, you need:
     
     ![Screenshot of enterprise application configuration in single sign-on screen.](./media/howto-enforce-signed-saml-authentication/samlsignaturevalidation10.png) 
 
-## Next steps  
+## Related content
 
 - Find out [How Microsoft Entra ID uses the SAML protocol](~/identity-platform/saml-protocol-reference.md) 
 - Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](~/identity-platform/reference-saml-tokens.md)

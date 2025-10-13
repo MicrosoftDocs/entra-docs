@@ -2,12 +2,12 @@
 title: Acquire a token to call a web API by using Web Account Manager (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app by using Web Account Manager.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.custom: 
 ms.date: 01/15/2024
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform for developers.
 ---
@@ -87,7 +87,8 @@ If a broker isn't present (for example, Windows 8.1, Mac, or Linux), MSAL falls 
 You don't need to configure WAM redirect URIs in MSAL, but you do need to configure them in the app registration:
 
 ```
-ms-appx-web://microsoft.aad.brokerplugin/{client_id}
+ms-appx-web://Microsoft.AAD.BrokerPlugin/{client_id}
+
 ```
 
 ### Token cache persistence

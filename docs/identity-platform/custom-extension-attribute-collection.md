@@ -1,36 +1,25 @@
 ---
 title: Create a custom authentication extension for attribute collection start and submit events (preview)
-description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.  
-author: msmimart
-manager: CelesteDG
-ms.author: mimart
-ms.date: 10/01/2024
+description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
+ms.date: 09/16/2025
 ms.service: identity-platform
-
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
+ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Create a custom authentication extension for attribute collection start and submit events (preview)
+# Create a custom authentication extension for attribute collection start and submit events
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This article describes how to extend the user sign-up experience in Microsoft Entra External ID for customers. In customer sign-up user flows, event listeners can be used to extend the attribute collection process before attribute collection and at the time of attribute submission:
 
 - The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error.
-
-    > [!TIP]
-    > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
-    > 
-    > To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
-    
 - The **OnAttributeCollectionSubmit** event occurs after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries.
-
-    > [!TIP]
-    > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
-    > 
-    > To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
     
 In addition to creating a custom authentication extension for the attribute collection start and submit events, you need to create a REST API that defines the workflow actions to take for each event. You can use any programming language, framework, and hosting environment to create and host your REST API. This article demonstrates a quick way to get started using a C# Azure Function. With Azure Functions, you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
@@ -599,7 +588,7 @@ In this step, you register a custom authentication extension that is used by Mic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
-1. Browse to **Identity** > **External Identities** > **Custom authentication extensions**.
+1. Browse to **Entra ID** > **External Identities** > **Custom authentication extensions**.
 1. Select **Create a custom extension**.
 1. In **Basics**, select the **AttributeCollectionStart** event or the **AttributeCollectionSubmit** event, and then select **Next**. Be sure that this matches the configuration in the [previous step](#11-create-http-trigger-functions).
 1. In **Endpoint Configuration**, fill in the following properties:
@@ -618,7 +607,7 @@ In this step, you register a custom authentication extension that is used by Mic
 
 After your custom authentication extension is created, grant application consent to the registered app, which allows the custom authentication extension to authenticate to your API.
 
-1. Browse to **Identity** > **External Identities** > **Custom authentication extensions (Preview)**.
+1. Browse to **Entra ID** > **External Identities** > **Custom authentication extensions**.
 1. Select your custom authentication extension from the list.
 1. On the **Overview** tab, select the **Grant permission** button to give admin consent to the registered app. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission. Select **Accept**. 
 
@@ -633,7 +622,7 @@ Now you can associate the custom authentication extension with one or more of yo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator)
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/custom-extension-attribute-collection/settings-icon.png" border="false"::: in the top menu to switch to your external tenant.
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow from the list.
 1. Select **Custom authentication extensions**.
 1. On the **Custom authentication extensions** page, you can associate your custom authentication extension with two different steps in your user flow:
@@ -653,7 +642,7 @@ Follow these steps to register the **jwt.ms** web application:
 ### 4.1 Register the jwt.ms web application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
@@ -747,5 +736,5 @@ To test your custom authentication extension, follow these steps:
 
 ## Next steps
 
-- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-reference.md)
-- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-reference.md)
+- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-retrieve-return-data.md)
+- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-retrieve-return-data.md)
