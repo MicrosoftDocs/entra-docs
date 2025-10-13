@@ -22,6 +22,30 @@ Previously, you could only use a single branding theme for your entire tenant wh
 
 This article describes how you can create multiple branding themes for different applications in your tenant.
 
+## Branding theme properties
+
+When you create a branding theme, here are some of the properties you can customize.
+
+:::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in-page-map-expanded.png" alt-text="Screenshot of the sign-in page, with each of the company branding elements highlighted." lightbox="./media/how-to-customize-branding-themes-apps/sign-in-page-map-expanded.png":::
+
+| Property | Description |
+| --- | --- |
+| Favicon | Small icon that appears on the left side of the browser tab. |
+| Header | Space across the top of the sign-in page, behind the header log. |
+| Header logo | Logo that appears in the upper-left corner of the sign-in page. |
+| Background image | The entire space behind the sign-in box. |
+| Page background color | The entire space behind the sign-in box. |
+| Banner logo | Logo that appears at the top of the sign-in box |
+| Sign-in page title | Larger text that appears below the banner logo. |
+| Sign-in page description | Text to describe the sign-in page. |
+| Username hint and text | The text that appears before a user enters their information. |
+| Self-service password reset | A link you can add below the sign-in page text for password resets. |
+| Sign-in page text | Text you can add below the username field. |
+| Footer link: Privacy & Cookies | Link you can add to the lower-right corner for privacy information. |
+| Footer: Terms of Use | Text in the lower-right corner of the page where you can add Terms of use information. |
+| Footer | Space across the bottom of the page for privacy and Terms of Use information. |
+| Template | The layout of the page and sign-in boxes. |
+
 ## Branding themes and company branding
 
 Branding themes are similar to [company branding](../../fundamentals/how-to-customize-branding.md), but with some differences.
@@ -46,30 +70,6 @@ Here are some of the limits and constraints for branding themes.
 - Have at least the [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) role for applications that you want to apply a theme to.
 - A registered application in your tenant. If you haven't registered an application yet, see [Register an application](../../identity-platform/quickstart-register-app.md).
 - Review the file size requirements for each image you want to add. Use a photo editor if needed to create correctly sized and formatted images: PNG, JPG, or JPEG with image size 245x36px and maximum file size 10KB.
-
-## Branding theme properties
-
-When you create a branding theme, here are some of the properties you customize.
-
-:::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in-page-map-expanded.png" alt-text="Screenshot of the sign-in page, with each of the company branding elements highlighted." lightbox="./media/how-to-customize-branding-themes-apps/sign-in-page-map-expanded.png":::
-
-| Property | Description |
-| --- | --- |
-| Favicon | Small icon that appears on the left side of the browser tab. |
-| Header | Space across the top of the sign-in page, behind the header log. |
-| Header logo | Logo that appears in the upper-left corner of the sign-in page. |
-| Background image | The entire space behind the sign-in box. |
-| Page background color | The entire space behind the sign-in box. |
-| Banner logo | Logo that appears at the top of the sign-in box |
-| Sign-in page title | Larger text that appears below the banner logo. |
-| Sign-in page description | Text to describe the sign-in page. |
-| Username hint and text | The text that appears before a user enters their information. |
-| Self-service password reset | A link you can add below the sign-in page text for password resets. |
-| Sign-in page text | Text you can add below the username field. |
-| Footer link: Privacy & Cookies | Link you can add to the lower-right corner for privacy information. |
-| Footer: Terms of Use | Text in the lower-right corner of the page where you can add Terms of use information. |
-| Footer | Space across the bottom of the page for privacy and Terms of Use information. |
-| Template | The layout of the page and sign-in boxes. |
 
 ## Create a new theme
 
