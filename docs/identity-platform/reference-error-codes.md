@@ -209,7 +209,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS501631 | Regular expression replacement for claims transformation results in too many replacements in the input sourceClaim. Please contact your admin to fix the configuration. |
 | AADSTS501632 | Regular expression replacement for claims transformation has too many substitution parameters in the replacement input parameter. Please contact your admin to fix the configuration. |
 | AADSTS50164 | The supplied access token was not issued for the purpose for which it is being used. Expected a token with purpose '{name}'. |
-| AADSTS50165 | The token encrypting algorithm '{al5gorithm}' requested by the application isn't supported for this type of token. This indicates the application is misconfigured. |
+| AADSTS50165 | The token encrypting algorithm '{algorithm}' requested by the application isn't supported for this type of token. This indicates the application is misconfigured. |
 | AADSTS50166 | Request to External OIDC endpoint failed. |
 | AADSTS50167 | Invalid pop_jwk key. |
 | AADSTS50168 | The client is capable of utilizing the Windows 10 Accounts extension to perform SSO but no SSO token was found in the request or the token was expired. Request has been interrupted to attempt to pull an SSO token. |
