@@ -1,5 +1,5 @@
 ---
-title: Restore group policy objects from backups in Microsoft Entra Domain Services | Microsoft Docs'
+title: Restore group policy objects from backups in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to restore group policy objects in a Microsoft Entra Domain Services managed domain.
 author: JamesNyamu
 
@@ -9,9 +9,11 @@ ms.topic: how-to
 ms.date: 10/07/2025
 ---
 
-# Group Policy Backup Feature
+# Group Policy
 
-## Overview
+Group Policy Objects (GPOs) are collections of policy settings that define how computer systems and user accounts behave within a Windows Active Directory domain environment. GPOs serve as the primary mechanism for centralized configuration management, security enforcement, and administrative control across Windows networks.
+
+## Backup Feature Overview
 
 The Group Policy Backup feature is a new capability added to the Domain Health Monitor that automatically creates and manages backups of Group Policy Objects (GPOs) in Active Directory Domain Services. This feature helps ensure business continuity and disaster recovery by maintaining regular backups of critical group policies.
 
@@ -162,7 +164,7 @@ New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDCShortName>\\GPOBacku
 
 ```
 
-> Note: The exact file set may vary depending on the provider implementation, but a GUID folder per GPO is the key identity.
+> **Note:** The exact file set may vary depending on the provider implementation, but a GUID folder per GPO is the key identity.
 
 ### Identifying the Correct Backup
 
@@ -227,7 +229,7 @@ If metadata is absent, rely on the GPO GUID from production (`Get-GPO -All`).
 #### Post-Restore Validation
 
 - Run: `gpresult /h report.html` on a target workstation to confirm policy application.
-- Use \*\*GPO Status\*\* in GPMC to ensure both User \& Computer portions are enabled.
+- Use \*\*GPO Status\*\* in GPMC to ensure both User and Computer portions are enabled.
 - Validate WMI filter association (WMI filters are not always embedded inside raw file-level backups and may need reassociation).
 
 ### Restoring a GPO via PowerShell
@@ -258,23 +260,23 @@ Restore-GPO -Name 'My Application Baseline' -Path $backupRoot -Confirm:$false
 
 If the original GPO (GUID) is gone, you have two options:
 
-Option A – Recreate with Original GUID (Only if you know the GUID and want to keep it):
+    A. Recreate with Original GUID (Only if you know the GUID and want to keep it):
 
 ```powershell
 
-$backup = Get-GPOBackup -Path $backupRoot | Where-Object { $\_.DisplayName -eq 'My Application Baseline' }
+    $backup = Get-GPOBackup -Path $backupRoot | Where-Object { $\_.DisplayName -eq 'My Application Baseline' }
 
-Restore-GPO -Guid $backup.Id -Path $backupRoot -CreateIfNeeded
+    Restore-GPO -Guid $backup.Id -Path $backupRoot -CreateIfNeeded
 
 ```
 
-Option B – Create a New GPO and Import Settings:
+    B. Option B – Create a New GPO and Import Settings:
 
 ```powershell
 
-$newGpo = New-GPO -Name 'My Application Baseline (Restored)'
-
-Import-GPO -TargetName $newGpo.DisplayName -BackupId $backup.Id -Path $backupRoot -CreateIfNeeded
+    $newGpo = New-GPO -Name 'My Application Baseline (Restored)'
+    
+    Import-GPO -TargetName $newGpo.DisplayName -BackupId $backup.Id -Path $backupRoot -CreateIfNeeded
 
 ```
 
@@ -326,9 +328,9 @@ Get-GPOBackup -Path 'C:\\Temp\\GPOBackups\\092520251430' | ForEach-Object {
 
 ```
 
-> Ensure any domain-specific security principals inside the GPO (delegation ACLs, group SIDs (Security Identifier) in preferences) are reviewed after cross-domain imports.
+> **Note:** Ensure any domain-specific security principals inside the GPO (delegation ACLs, group SIDs (Security Identifier) in preferences) are reviewed after cross-domain imports.
 
-### Handling Linked Objects \& Dependencies
+### Handling Linked Objects and Dependencies
 
 Restoring raw GPO content does \*not\* automatically:
 
@@ -354,7 +356,7 @@ Set-GPWmiFilter -Guid '{RESTORED-GPO-GUID}' -WmiFilter (Get-GPWmiFilter -All | W
 
 ```
 
-### Verification \& Reporting
+### Verification and Reporting
 
 To confirm settings, generate an HTML report:
 
@@ -380,24 +382,18 @@ If a restored GPO introduces issues:
 
 1. Use another (earlier) timestamp folder and rerun `Restore-GPO` with that backup.
 
-2. Or disable the GPO (set both User \& Computer configurations to Disabled) while investigating.
+2. Or disable the GPO (set both User and Computer configurations to Disabled) while investigating.
 
 3. To ensure easy rollback path, maintain at least two recent timestamp folders.
 
 ### Common Restoration Pitfalls
 
 | Issue | Cause | Resolution |
-
 |-------|-------|-----------|
-
 | `Get-GPOBackup` returns nothing | Wrong path depth (pointed at root instead of timestamp folder) | Point `-Path` to specific timestamp folder, not higher-level parent |
-
 | `Access denied` on share | Missing group membership or blocked firewall | Confirm membership in Domain Admins / AAD DC Admins; verify SMB inbound rules |
-
 | GPO links missing after import | Used Import-GPO to new GPO | Re-create links manually with `New-GPLink` |
-
 | WMI filter missing | Not included / not recreated | Recreate filter in GPMC and reassign |
-
 | Security filtering ineffective | SID mismatch (cross-domain) | readd groups from target domain |
 
 ### Minimal End-to-End PowerShell Example
@@ -433,4 +429,3 @@ Start-Process .\\Restored.html
 ---
 
 With these procedures, administrators can reliably identify, retrieve, and restore GPO backups whether performing routine recovery, migration to a lab, or emergency rollback.
-
