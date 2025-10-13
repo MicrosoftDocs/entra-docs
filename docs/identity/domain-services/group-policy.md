@@ -122,7 +122,7 @@ Get-ADDomain | Select-Object PDCEmulator
 
 Or (legacy / without AD module):
 
-```powershell
+```
 
 nltest /dsgetdc:<yourDomainFQDN> /pdc
 
@@ -164,7 +164,8 @@ New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDCShortName>\\GPOBacku
 
 ```
 
-> **Note:** The exact file set may vary depending on the provider implementation, but a GUID folder per GPO is the key identity.
+> [!NOTE]
+> The exact file set may vary depending on the provider implementation, but a GUID folder per GPO is the key identity.
 
 ### Identifying the Correct Backup
 
@@ -259,25 +260,21 @@ Restore-GPO -Name 'My Application Baseline' -Path $backupRoot -Confirm:$false
 #### 2. Restore When Original GPO Was Deleted
 
 If the original GPO (GUID) is gone, you have two options:
-
-    A. Recreate with Original GUID (Only if you know the GUID and want to keep it):
+    
+1. Recreate with Original GUID (Only if you know the GUID and want to keep it):
 
 ```powershell
-
-    $backup = Get-GPOBackup -Path $backupRoot | Where-Object { $\_.DisplayName -eq 'My Application Baseline' }
-
-    Restore-GPO -Guid $backup.Id -Path $backupRoot -CreateIfNeeded
-
+  $backup = Get-GPOBackup -Path $backupRoot | Where-Object { $\_.DisplayName -eq 'My Application Baseline' }
+  
+  Restore-GPO -Guid $backup.Id -Path $backupRoot -CreateIfNeeded
 ```
 
-    B. Option B – Create a New GPO and Import Settings:
+2. Option B – Create a New GPO and Import Settings:
 
 ```powershell
-
-    $newGpo = New-GPO -Name 'My Application Baseline (Restored)'
-    
-    Import-GPO -TargetName $newGpo.DisplayName -BackupId $backup.Id -Path $backupRoot -CreateIfNeeded
-
+  $newGpo = New-GPO -Name 'My Application Baseline (Restored)'
+  
+  Import-GPO -TargetName $newGpo.DisplayName -BackupId $backup.Id -Path $backupRoot -CreateIfNeeded
 ```
 
 #### 3. Select Backup by GUID Only
@@ -328,7 +325,8 @@ Get-GPOBackup -Path 'C:\\Temp\\GPOBackups\\092520251430' | ForEach-Object {
 
 ```
 
-> **Note:** Ensure any domain-specific security principals inside the GPO (delegation ACLs, group SIDs (Security Identifier) in preferences) are reviewed after cross-domain imports.
+> [!NOTE]
+> Ensure any domain-specific security principals inside the GPO (delegation ACLs, group SIDs (Security Identifier) in preferences) are reviewed after cross-domain imports.
 
 ### Handling Linked Objects and Dependencies
 
