@@ -21,7 +21,7 @@ In this quickstart, you use a sample web app to show you how to protect an ASP.N
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *NewWebAPI1*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*

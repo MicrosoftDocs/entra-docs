@@ -17,7 +17,7 @@ In this how-to guide, you learn how to register an application in Microsoft Entr
 
 ## Prerequisites
 
-- An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - The Azure account must be at least a [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 - A workforce or external tenant. You can use your **Default Directory** for this quickstart. If you need an external tenant, complete [set up an external tenant](/entra/external-id/customers/quickstart-tenant-setup).
 
