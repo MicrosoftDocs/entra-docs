@@ -1,5 +1,5 @@
 ---
-title: Remove passwords from Microsoft Entra ID
+title: Remove Passwords from Microsoft Entra ID
 description: Password scrambling guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
 
 ms.service: entra-id 
@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 # Plan to remove passwords from Microsoft Entra ID
 
-Passwords are one of the least secure authentication methods available. They are vulnerable to a wide range of threats—including phishing, credential stuffing, brute-force attacks, and social engineering. To realise the benefits of passwordless authentication in Microsoft Entra ID, you must ensure passwords are no longer available as a sign-in option in your tenant.
+Passwords are one of the least secure authentication methods available. They are vulnerable to a wide range of threats—including phishing, credential stuffing, brute-force attacks, and social engineering. To realize the benefits of passwordless authentication in Microsoft Entra ID, you must ensure passwords are no longer available as a sign-in option in your tenant.
 
 Password scrambling ensures that users can't authenticate using passwords. It forces them to use more secure passwordless credentials like Windows Hello for Business, FIDO2 security keys, or Microsoft Authenticator. This article provides guidance about how to scramble passwords for both hybrid users who are synced from on-premises Active Directory Domain Services (AD DS) and cloud-only users in Microsoft Entra ID.
  
