@@ -22,6 +22,15 @@ Previously, you could only use a single branding theme for your entire tenant wh
 
 This article describes how you can create multiple branding themes for different applications in your tenant.
 
+## Limits and constraints
+
+Here are some of the limits and constraints for branding themes.
+
+- You can create up to 5 branding themes per tenant.
+- There is no inheritance from company branding.
+- Company branding is used as fallback for any properties not defined in the branding theme.
+- Default branding is used for any properties not defined in company branding.
+
 ## Prerequisites
 
 - A Microsoft Entra [workforce](../../fundamentals/create-new-tenant.md) or [external](quickstart-tenant-setup.md) tenant.
