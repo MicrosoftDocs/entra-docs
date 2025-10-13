@@ -263,7 +263,7 @@ Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | I
 ## Roll back SOA update
 
 > [!IMPORTANT] 
-> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to AD DS. The sync client takes over the object in the next sync cycle.
+> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to AD DS. The sync client takes over the object in the next sync cycle. For a sample PowerShell script to identify and remove cloud users from Groups, see: []()
 
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
@@ -306,6 +306,14 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 - **No SOA conversion of nested groups**: If there are nested groups in AD DS, and you want to convert the SOA of the parent group or top group to Microsoft Entra ID, only the parent group SOA is converted. Nested groups in the parent group continue to be AD DS groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest in the hierarchy, and move up the tree.
 
 - **No support for extension attributes (1-15)**: Extension attributes 1–15 aren't supported on cloud security groups and aren't supported after SOA is converted.
+
+
+## Script to identify cloud members (users) of a group
+
+> [!NOTE]
+> This script is being provided as an example and should not be considered as official guidance on how to identify and remove cloud users from group memberships.
+ 
+The script to identify and remove cloud users from groups can be downloaded [from this repo](https://msazure.visualstudio.com/One/_git/AD-MSODS-Core/pullrequest/13603409?_a=files).
 
 ## Related content
 
