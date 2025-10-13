@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: how-to
-ms.date: 10/02/2025
+ms.date: 10/13/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -69,7 +69,16 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 
 ## Prepare groups for Group SOA conversion and provisioning
 
-If you want to provision the group back to AD, ensure you can preserve the OU Path and set it in the **Group Provision to AD** configuration with the right mapping.
+If you want to provision the group back to AD DS, plan to complete the following steps to preserve the OU Path and set it in the **Group Provision to AD** configuration with the right mapping:
+
+1. Change the group scope for the AD DS groups to Universal.
+1. Create a tenant-scoped directory extension property for groups. 
+1. Map an on-premises value, such as the distinguished name (DN), directly into the extension property. 
+1. Verify the property value using Microsoft Graph. 
+1. Convert the Source of Authority (SOA) when ready. 
+1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
+
+For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/tutorial-group-provisioning.md).
 
 ## Convert SOA for a test group
 

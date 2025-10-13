@@ -57,7 +57,7 @@ SHA for this scenario supports SP and IdP initiated flows. The following image i
 
 Prior BIG-IP experience isn't necessary, but you need:
 
-- An [Azure free account](https://azure.microsoft.com/free/active-directory/), or a higher-tier subscription
+- An [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn/), or a higher-tier subscription
 - A BIG-IP or [deploy a BIG-IP Virtual Edition (VE) in Azure](./f5-bigip-deployment-guide.md)
 - Any of the following F5 BIG-IP licenses:
   - F5 BIG-IP® Best bundle

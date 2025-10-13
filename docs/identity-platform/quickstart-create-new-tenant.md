@@ -23,7 +23,7 @@ Each Microsoft Entra tenant is distinct and separate from other Microsoft Entra 
 
 ## Prerequisites
 
-An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 ## Determining the type of users you'll create apps for
 
