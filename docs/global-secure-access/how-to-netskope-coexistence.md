@@ -4,7 +4,8 @@ description: Learn how to configure and deploy Microsoft Entra and Netskope Secu
 author: kenwith
 contributors:
 ms.topic: concept-article
-ms.date: 07/07/2025
+ms.service: global-secure-access
+ms.date: 10/07/2025
 ms.author: kenwith
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
@@ -16,19 +17,19 @@ In today's rapidly evolving digital landscape, organizations require robust, and
 
 This guide outlines how to configure and deploy Microsoft Entra solutions alongside Netskope's Security Service Edge (SSE) offerings. By using the strengths of both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
 
-**[Configuration 1: Microsoft Entra Private Access with Netskope Internet Access](#configuration-1-microsoft-entra-private-access-with-netskope-internet-access)**
+1. **[Microsoft Entra Private Access with Netskope Internet Access](#microsoft-entra-private-access-with-netskope-internet-access)**
 
 In the first scenario, Global Secure Access handles private application traffic. Netskope only captures Internet traffic.
 
-**[Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access](#configuration-2-microsoft-entra-private-access-with-netskope-private-access-and-netskope-internet-access)**
+2. **[Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access](#microsoft-entra-private-access-with-netskope-private-access-and-netskope-internet-access)**
 
 In the second scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access. Private applications in Netskope Private Access are accessed through the Netskope client. Netskope handles Internet traffic.
 
-**[Configuration 3: Microsoft Entra Microsoft Access with Netskope Private Access and Netskope Internet Access](#configuration-3-microsoft-entra-microsoft-access-with-netskope-private-access-and-netskope-internet-access)**
+3. **[Microsoft Entra Microsoft Access with Netskope Private Access and Netskope Internet Access](#microsoft-entra-microsoft-access-with-netskope-private-access-and-netskope-internet-access)**
 
 In the third scenario, Global Secure Access handles all Microsoft 365 traffic. Netskope handles private application and Internet traffic.
 
-**[Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Netskope Private Access](#configuration-4-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-netskope-private-access)**
+4. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Netskope Private Access](#microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-netskope-private-access)**
 
 In the fourth scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Netskope only captures Private application traffic.
 
@@ -75,7 +76,7 @@ Configure the `MSFT SSE M365` policy:
 
 The `MSFT SSE Service` and `MSFT SSE M365` profiles are used in steering configurations.
 
-## Configuration 1: Microsoft Entra Private Access with Netskope Internet Access
+## Microsoft Entra Private Access with Netskope Internet Access
 
 In this scenario, Global Secure Access handles private application traffic. Netskope only captures Internet traffic.
 
@@ -134,7 +135,7 @@ Netskope portal configuration
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
 1. Scroll to confirm the Global Secure Access client handled only private application traffic.
 
-## Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access
+## Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access
 
 In this scenario, both clients handle traffic for separate private applications. The Global Secure Access client handles private applications in Microsoft Entra Private Access and the Netskope client handles private applications in Netskope Private Access. Netskope handles internet traffic.
 
@@ -213,7 +214,7 @@ In the Netskope portal:
 1. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
 1. Scroll to confirm the Global Secure Access client handled private application traffic for the SMB file share and didn't handle the RDP session traffic.
 
-## Configuration 3: Microsoft Entra Microsoft Access with Netskope Private Access and Netskope Internet Access
+## Microsoft Entra Microsoft Access with Netskope Private Access and Netskope Internet Access
 
 In this scenario, Global Secure Access handles all Microsoft 365 traffic. Netskope Private Access handles Private application traffic and Netskope Internet Access handles Internet traffic.
 
@@ -292,7 +293,7 @@ In the Netskope portal:
 1. You can also validate that the traffic is captured in the Global Secure Access traffic logs. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Traffic logs**.
 1. Validate traffic related to Outlook Online and SharePoint Online is missing from Netskope portal in **Skope IT** > **Events & Alerts** > **Page Events**.
 
-## Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Netskope Private Access
+## Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Netskope Private Access
 
 In this scenario Netskope only captures private application traffic. Global Secure Access handles all other traffic.
 
@@ -322,21 +323,16 @@ In the Netskope portal:
 1. Create [Real-time Protection policy](https://docs.netskope.com/en/inline-policies/) to allow access to Private Apps.
 1. Install the [Netskope Private Access Publisher](https://docs.netskope.com/en/deploy-a-publisher).
 
-#### Add Steering Configuration for Internet Access and Private Apps
+#### Add Steering Configuration for Private Apps
 
 1. Navigate to **Netskope portal** > **Settings** > **Security Cloud Platform** > **Steering Configuration**> **New Configuration**.
 1. Add a **Configuration Name** such as `MSFTSSEPrivate`.
 1. Choose a **User Group** or **OU** to apply the configuration to.
-1. Under **Cloud, Web and Firewall** > **Web Traffic.**
-1. **Bypass exception traffic at** > **Client.**
-1. Under **Private Apps**, select **Specific Private Apps**.
+1. Under **Cloud, Web and Firewall** > **None.**
+1. Under **Private Apps**, select **All Private Apps**.
 1. On the next line > **Netskope will** > **Steer.**
 1. Under **Borderless SD-WAN Apps** > **None**.
 1. Set **Status** to **Disabled** and select **Save**.
-1. Select the `MSFTSSEPrivate` configuration > **Exceptions** > **New Exception** > **Destination Locations** > Select `MSFT SSE Service` and `MSFT SSE M365` (Instructions for creating this object are listed in the Netskope profiles section).
-1. Select **Bypass** and **Treat it like local IP address** options.
-1. Select **Exceptions** > **New Exception** > **Domains** and add these exceptions: `*.globalsecureaccess.microsoft.com`, `*.auth.microsoft.com`, `*.msftidentity.com`, `*.msidentity.com`, `*.onmicrosoft.com`, `*.outlook.com`, `*.protection.outlook.com`, `*.sharepoint.com`, `*.sharepointonline.com`, `*.svc.ms`, `*.wns.windows.com`, `account.activedirectory.windowsazure.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.cloud.microsoft`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`.
-1. Select **Add Steered Item** > Select **Private App** and select the private applications for Netskope to steer > **Add**.
 1. Ensure that the `MSFTSSEPrivate` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
 
 #### Add Netskope Private App Real-time Protection Policy

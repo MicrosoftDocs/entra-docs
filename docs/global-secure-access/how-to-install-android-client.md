@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 09/02/2025
+ms.date: 10/03/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -13,9 +13,9 @@ ms.custom: sfi-image-nochange
 ---
 # Global Secure Access client for Android
 
-The Global Secure Access client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how your end users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
+The Global Secure Access client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how end users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
 
-This article explains how to deploy the Global Secure Access client onto Android devices.
+This article explains how to deploy the Global Secure Access client to Android devices.
 
 ## Prerequisites
 
@@ -36,9 +36,9 @@ This article explains how to deploy the Global Secure Access client onto Android
 
 The Global Secure Access client for Android supports deployment in these Android Enterprise scenarios:
 
-- Corporate-owned, fully managed user devices
-- Corporate-owned devices with a work profile
-- Personal devices with a work profile
+- Corporate-owned, fully managed user devices.
+- Corporate-owned devices with a work profile.
+- Personal devices with a work profile.
 
 ### Non-Microsoft mobile device management
 
@@ -77,7 +77,7 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
         | GlobalSecureAccessPrivateChannel | No value | Global Secure Access defaults to value 2 behavior. |
         |                                  | 0        | Private Access isn't enabled and the toggle option isn't visible to the user. |
         |                                  | 1        | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
-        |                                  | 2        | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
+        |                                  | 2        | The Private Access toggle is visible and defaults to the enabled state. The user can enable or disable Private Access. |
         |                                  | 3        | The Private Access toggle is visible but grayed out, and defaults to the enabled state. The user **can't** disable Private Access. |
 
     > [!NOTE]
@@ -100,15 +100,15 @@ To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and 
 
 Because the Android client is integrated with Defender for Endpoint, it's helpful to understand the end user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access. Onboarding happens by enabling a traffic forwarding profile.
 
-![Screenshot of the Defender app with the Global Secure Access tile on the dashboard.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
+![Screenshot of the Defender app showing the Global Secure Access tile on the dashboard.](media/how-to-install-android-client/defender-endpoint-dashboard.png)
 
 **The client is disabled by default when it's deployed to user devices.** Users need to enable the client from the Defender app. To enable the client, tap the toggle.
 
-![Screenshot of the disabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
+![Screenshot of the Global Secure Access client in a disabled state.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
 
 To view client details, tap the tile on the dashboard. When enabled and working properly, the client shows an "Enabled" message. It also shows the date and time when the client connected to Global Secure Access.
 
-![Screenshot of the enabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-enabled.png)
+![Screenshot of the Global Secure Access client in an enabled state.](media/how-to-install-android-client/defender-global-secure-access-enabled.png)
 
 If the client can't connect, a toggle appears to disable the service. Users can return later to enable the client.
 

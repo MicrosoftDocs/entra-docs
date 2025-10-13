@@ -4,7 +4,7 @@ description: Learn how to configure optional claims and attributes in access tok
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 01/27/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform

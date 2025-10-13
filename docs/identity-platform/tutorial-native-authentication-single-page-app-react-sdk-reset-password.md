@@ -5,7 +5,7 @@ description: Learn how to build a React single-page app that enables users to re
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/30/2025

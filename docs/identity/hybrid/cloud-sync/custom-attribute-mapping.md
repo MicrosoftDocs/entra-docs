@@ -34,121 +34,122 @@ You can use [directory extensions](/graph/api/resources/extensionproperty?view=g
 
 ### Create application and service principal for directory extension 
 
-You need to create an [application](/graph/api/resources/application?view=graph-rest-1.0&preserve-view=true) with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` if it doesn't exist and create a service principal for the application if it doesn't exist. 
+You need to create an [application](/graph/api/resources/application) with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` if it doesn't exist and create a service principal for the application if it doesn't exist. 
 
+#### [**Graph PowerShell**](#tab/ps)
 
- 1. Check if application with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` exists.
+1. Check if application with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` exists:
 
-     - Using Microsoft Graph 
+   ```powershell
+   $tenantId = (Get-MgOrganization).Id
 
-     ```
-     GET /applications?$filter=identifierUris/any(uri:uri eq 'api://<tenantId>/CloudSyncCustomExtensionsApp')
-     ```
+   Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')"
+   ```
 
-     For more information, see [Get application](/graph/api/application-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
+   For more information, see [Get-MgApplication](/powershell/module/microsoft.graph.applications/get-mgapplication).
 
-     - Using PowerShell 
-     
-     ```powershell
-     $tenantId = (Get-MgOrganization).Id
-     
-     Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')"
-     ```
+1. If the application doesn't exist, use the `$tenantId` variable from previous step to create the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
 
-     For more information, see [Get-MgApplication](/powershell/module/microsoft.graph.applications/get-mgapplication)
+   ```powershell
+   New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "API://$tenantId/CloudSyncCustomExtensionsApp"
+   ```
 
- 2. If the application doesn't exist, create the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`.
-
-     - Using Microsoft Graph 
-     ```
-     POST https://graph.microsoft.com/v1.0/applications
-     Content-type: application/json
-
-     {
-      "displayName": "CloudSyncCustomExtensionsApp",
-      "identifierUris": ["api://<tenant id>/CloudSyncCustomExtensionsApp"]
-     }
-     ```
-     For more information, see [create application](/graph/api/application-post-applications?view=graph-rest-1.0&tabs=http&preserve-view=true)
-
-     - Using PowerShell (Note: take the `$tenantId` variable from previous steps)
-
-     ```powershell
-     New-MgApplication -DisplayName "CloudSyncCustomExtensionsApp" -IdentifierUris "API://$tenantId/CloudSyncCustomExtensionsApp"
-     ```
-
-     For more information, see [New-MgApplication](/powershell/module/microsoft.graph.applications/new-mgapplication)
+   For more information, see [New-MgApplication](/powershell/module/microsoft.graph.applications/new-mgapplication).
  
+1. Use the `$tenantId` variable from previous step to check if the service principal exists for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
 
- 3. Check if the service principal exists for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`.
-
-     - Using Microsoft Graph 
-     ```
-     GET /servicePrincipals?$filter=(appId eq '{appId}')
-     ```
-     For more information, see [get service principal](/graph/api/serviceprincipal-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
-
-     - Using PowerShell (Note: take the `$tenantId` variable from previous steps)
-
-     ```powershell
-     $appId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").AppId
+   ```powershell
+   $appId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").AppId
      
-     Get-MgServicePrincipal -Filter "AppId eq '$appId'"
-     ```
+   Get-MgServicePrincipal -Filter "AppId eq '$appId'"
+   ```
 
-     For more information, see [Get-MgServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal)
+   For more information, see [Get-MgServicePrincipal](/powershell/module/microsoft.graph.applications/get-mgserviceprincipal).
+
+1. If a service principal doesn't exist, use the `$tenantId` variable from previous step to create a new service principal for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
+
+   ```powershell     
+   New-MgServicePrincipal -AppId $appId
+   ```
+
+   For more information, see [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal).
+
+1. Use the `$tenantId` variable from previous step to create a directory extension in Microsoft Entra ID. For example, a new extension called 'GroupDN', of string type, for Group objects:
+
+   ```powershell     
+   $appObjId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").Id
+     
+   New-MgApplicationExtensionProperty -ApplicationId $appObjId -Name GroupDN -DataType String -TargetObjects Group
+   ```
+
+#### [**Graph Explorer**](#tab/ge)
  
+1. Check if application with the identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp` exists.
 
- 4. If a service principal doesn't exist, create a new service principal for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`.
+   ```https
+   GET /applications?$filter=identifierUris/any(uri:uri eq 'api://<tenantId>/CloudSyncCustomExtensionsApp')
+   ```
 
-     - Using Microsoft Graph 
-     ```
-     POST https://graph.microsoft.com/v1.0/servicePrincipals
-     Content-type: application/json
-
-     {
-     "appId": 
-     "<application appId>"
-     }
-     ```
-     For more information, see [create servicePrincipal](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http&preserve-view=true)
-
-     - Using PowerShell (Note: take the `$appId` variable from previous steps)
+   For more information, see [Get application](/graph/api/application-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
      
-     ```powershell     
-     New-MgServicePrincipal -AppId $appId
-     ```
-     For more information, see [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal)
- 
- 5. Create a directory extension in Microsoft Entra ID. For example, a new extension called 'WritebackEnabled', of boolean type, for Group objects.
+1. If the application doesn't exist, create the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
 
-     - Using Microsoft Graph 
-     ```
-     POST https://graph.microsoft.com/v1.0/applications/<ApplicationId>/extensionProperties
-     Content-type: application/json
-     
-     {
-         "name": "WritebackEnabled",
-         "dataType": "Boolean",
-         "isMultiValued": false,
-         "targetObjects": [
-             "Group"
-         ]
-     }    
-     ```
+   ```https
+   POST https://graph.microsoft.com/v1.0/applications
+   Content-type: application/json
 
-     - Using PowerShell (Note: take the `$tenantId` variable from previous steps)
-     ```powershell     
-     $appObjId = (Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'API://$tenantId/CloudSyncCustomExtensionsApp')").Id
+   {
+   "displayName": "CloudSyncCustomExtensionsApp",
+   "identifierUris": ["api://<tenant id>/CloudSyncCustomExtensionsApp"]
+   }
+   ```
+   
+   For more information, see [create application](/graph/api/application-post-applications?view=graph-rest-1.0&tabs=http&preserve-view=true).
+
+1. Check if the service principal exists for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
+
+   ```
+   GET /servicePrincipals?$filter=(appId eq '{appId}')
+   ```
+   For more information, see [get service principal](/graph/api/serviceprincipal-get?view=graph-rest-1.0&tabs=http&preserve-view=true)
+
+1. If a service principal doesn't exist, create a new service principal for the application with identifier URI `API://<tenantId>/CloudSyncCustomExtensionsApp`:
+
+   ```https
+   POST https://graph.microsoft.com/v1.0/servicePrincipals
+   Content-type: application/json
+
+   {
+   "appId": 
+   "<application appId>"
+   }
+   ```
+
+   For more information, see [create servicePrincipal](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http&preserve-view=true).
      
-     New-MgApplicationExtensionProperty -ApplicationId $appObjId -Name WritebackEnabled -DataType Boolean -TargetObjects Group
-     ```
- 
+1. Create a directory extension in Microsoft Entra ID. For example, a new extension called 'GroupDN', of string type, for Group objects:
+
+   ```https
+   POST https://graph.microsoft.com/v1.0/applications/<ApplicationId>/extensionProperties
+   Content-type: application/json
+     
+   {
+     "name": "GroupDN",
+     "dataType": "String",
+     "isMultiValued": false,
+     "targetObjects": [
+         "Group"
+     ]
+   }    
+   ```
+
+---
+
 You can create directory extensions in Microsoft Entra ID in several different ways, as described in the following table:
 
 |Method|Description|URL|
 |-----|-----|-----|
-|MS Graph|Create extensions using GRAPH|[Create extensionProperty](/graph/api/application-post-extensionproperty?view=graph-rest-1.0&tabs=http&preserve-view=true)|
+|MS Graph|Create extensions using Microsoft Graph|[Create extensionProperty](/graph/api/application-post-extensionproperty?view=graph-rest-1.0&tabs=http&preserve-view=true)|
 |PowerShell|Create extensions using PowerShell|[New-MgApplicationExtensionProperty](/powershell/module/microsoft.graph.applications/new-mgapplicationextensionproperty)| 
 Using cloud sync and Microsoft Entra Connect|Create extensions using Microsoft Entra Connect|[Create an extension attribute using Microsoft Entra Connect](../../app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-using-azure-ad-connect)|
 |Customizing attributes to sync|Information on customizing, which attributes to synch|[Customize which attributes to synchronize with Microsoft Entra ID](../connect/how-to-connect-sync-feature-directory-extensions.md#select-which-attributes-to-synchronize-with-microsoft-entra-id)

@@ -87,7 +87,8 @@ If a broker isn't present (for example, Windows 8.1, Mac, or Linux), MSAL falls 
 You don't need to configure WAM redirect URIs in MSAL, but you do need to configure them in the app registration:
 
 ```
-ms-appx-web://microsoft.aad.brokerplugin/{client_id}
+ms-appx-web://Microsoft.AAD.BrokerPlugin/{client_id}
+
 ```
 
 ### Token cache persistence
