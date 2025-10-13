@@ -263,7 +263,7 @@ Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | I
 ## Roll back SOA update
 
 > [!IMPORTANT] 
-> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to AD DS. The sync client takes over the object in the next sync cycle. For a sample PowerShell script to identify and remove cloud users from Groups, see: []()
+> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to AD DS. The sync client takes over the object in the next sync cycle. For a sample PowerShell script to identify and remove cloud users from Groups, see: [Script to identify cloud members (users) of a group](how-to-group-source-of-authority-configure.md#script-to-identify-cloud-members-users-of-a-group).
 
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
