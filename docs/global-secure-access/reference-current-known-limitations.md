@@ -207,13 +207,11 @@ Known limitations for the Global Secure Access client for Android include:
 - Private Domain Name System (DNS) must be disabled on the device. You can usually find this setting in System > Network and Internet.
 - Using non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance issues and unpredictable system errors.  
 - Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
-- Kerberos SSO isn't supported.
 
 ### [iOS client](#tab/ios-client)
 Known limitations for the Global Secure Access client for iOS include:
 - Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for Exchange Online) isn't supported.
 - Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
-- Kerberos SSO isn't supported.
 - Captive portal isn't supported.
 - Compliant network check enforcement isn't supported.
 - Memory leaks can result in the gradual increase of memory usage. This increased memory usage might lead to occasional VPN restarts, but the impact on user experience is minimal.
