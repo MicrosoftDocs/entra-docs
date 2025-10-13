@@ -43,7 +43,7 @@ In summary, you'll use Azure Lighthouse to allow a user or group in your externa
 
 ## Prerequisites
 
-- An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">free account</a> before you begin.
+- An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn" target="_blank">free account</a> before you begin.
 - A Microsoft Entra account with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role in the Microsoft Entra subscription.
 - An account in the external tenant that's been assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role. 
 

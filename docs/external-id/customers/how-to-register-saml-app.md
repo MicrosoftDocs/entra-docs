@@ -22,7 +22,7 @@ This article describes how to register your own SAML application in your externa
 
 ## Prerequisites
 
-- An Azure account that has an active subscription. <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">Create an account for free</a>.
+- An Azure account that has an active subscription. <a href="https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn" target="_blank">Create an account for free</a>.
 - A Microsoft Entra [external tenant](how-to-create-external-tenant-portal.md).
 - [A sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 

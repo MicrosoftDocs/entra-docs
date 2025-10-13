@@ -28,7 +28,7 @@ This article describes the available methods for exporting risk data from Micros
 
 To export risk data for storage and analysis, you need:
 
-- An Azure subscription to create a Log Analytics workspace, Azure event hub, or Azure storage account. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- An Azure subscription to create a Log Analytics workspace, Azure event hub, or Azure storage account. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **configure diagnostic settings for the Microsoft Entra tenant**.
 
 ## Diagnostic settings
