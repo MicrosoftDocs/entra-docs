@@ -313,7 +313,121 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 > [!NOTE]
 > This script is being provided as an example and should not be considered as official guidance on how to identify and remove cloud users from group memberships.
  
-The script to identify and remove cloud users from groups can be downloaded [from this repo](https://msazure.visualstudio.com/One/_git/AD-MSODS-Core/pullrequest/13603409?_a=files).
+The following script is used to identify and remove cloud users from groups:
+
+
+```powershell
+<#
+.SYNOPSIS
+    Finds cloud users in an Entra ID group and optionally removes them.
+.DESCRIPTION
+    This script pages through all users in a specified Entra ID group, identifies cloud users
+    (users where onPremisesSyncEnabled is not set to true), and prints their details.
+    Optionally removes these users from the group if removeUsers is set to true.
+.PARAMETER GroupId
+    The GUID of the Entra ID group to process. This parameter is required.
+.PARAMETER RemoveUsers
+    Boolean flag to indicate whether to remove cloud users from the group. 
+    Default is false (optional parameter).
+.EXAMPLE
+    .\Find-CloudUsersInGroup.ps1 -GroupId "12345678-1234-1234-1234-123456789012"
+    
+.EXAMPLE
+    .\Find-CloudUsersInGroup.ps1 -GroupId "12345678-1234-1234-1234-123456789012" -RemoveUsers $true
+.NOTES
+    Requires Microsoft.Graph PowerShell module to be installed and appropriate permissions.
+    Required Graph permissions: Group.Read.All, GroupMember.Read.All, User.Read.All and GroupMember.ReadWrite.All (if removing users)
+#>
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $true)]
+    [System.Guid]$GroupId,
+    [Parameter(Mandatory = $false)]
+    [bool]$RemoveUsers = $false
+)
+# Import required modules
+try {
+    Import-Module Microsoft.Graph.Groups -ErrorAction Stop
+    Import-Module Microsoft.Graph.Users -ErrorAction Stop
+    Write-Host "Microsoft Graph modules imported successfully"
+}
+catch {
+    Write-Error "Failed to import Microsoft Graph modules. Please install Microsoft.Graph PowerShell module."
+    Write-Error "Run: Install-Module Microsoft.Graph -Scope CurrentUser"
+    exit 1
+}
+# Connect to MS Graph and Verify the group exists
+$context = Get-MgContext
+if (-not $context) {
+    Connect-MgGraph -Scopes 'Group.Read.All','GroupMember.Read.All','GroupMember.ReadWrite.All','User.Read.All'
+}
+$group = Get-MgGroup -GroupId $GroupId
+Write-Host "Processing group: $($group.DisplayName) (ID: $GroupId)"
+# Initialize counters
+$totalUsers = 0
+$cloudUsers = 0
+$removedUsers = 0
+Write-Host "`nStarting to process group users..."
+try {
+    # Get all group members that are users
+    $usersInGroup = Get-MgGroupMemberAsUser -GroupId $GroupId -All -Property "Id"
+    if ($usersInGroup.Count -ge 1) {
+        $totalUsers = $usersInGroup.Count
+        Write-Host "Found $totalUsers total users in the group"
+    }
+    else {
+        Write-Host "No users found in the group"
+        exit 0
+    }
+}
+catch {
+    Write-Error "Failed to retrieve group users: $($_.Exception.Message)"
+    exit 1
+}
+Write-Host "`nProcessing each user to identify cloud users..."
+Write-Host "-----------------"
+# Process each user
+foreach ($user in $usersInGroup) {
+    try {
+        # Get detailed user information
+        $user = Get-MgUser -UserId $user.Id -Property "Id,DisplayName,UserPrincipalName,OnPremisesSyncEnabled"
+        # Check if user is a cloud user
+        $isCloudUser = -not $user.OnPremisesSyncEnabled
+        if ($isCloudUser) {
+            $cloudUsers++
+            # Print cloud user details
+            Write-Host "Cloud User Found:"
+            Write-Host "  Object ID: $($user.Id)"
+            Write-Host "  Display Name: $($user.DisplayName)"
+            Write-Host "  User Principal Name: $($user.UserPrincipalName)"
+            Write-Host "  OnPremisesSyncEnabled: $($user.OnPremisesSyncEnabled)"
+            # Remove user from group if requested
+            if ($RemoveUsers) {
+                Remove-MgGroupMemberByRef -GroupId $GroupId -DirectoryObjectId $user.Id -ErrorAction Stop
+                Write-Host "REMOVED from group"
+                $removedUsers++
+            }
+        }
+    }
+    catch {
+        Write-Warning "Failed to process User ID $($user.Id): $($_.Exception.Message)"
+    }
+}
+# Summary
+Write-Host "-----------------"
+Write-Host "SUMMARY:"
+Write-Host "-----------------"
+Write-Host "Total group users processed: $totalUsers"
+Write-Host "Cloud users identified: $cloudUsers"
+if ($RemoveUsers) {
+    Write-Host "Cloud users successfully removed: $removedUsers"
+}
+if ($cloudUsers -eq 0) {
+    Write-Host "No cloud users found in this group."
+}
+Write-Host "`nScript completed."
+```
+
 
 ## Related content
 
