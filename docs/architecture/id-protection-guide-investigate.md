@@ -35,9 +35,9 @@ Configure the following features for identity risk-related telemetry with Micros
 
 Detect and investigate identity threats in the Microsoft Entra admin center or with Microsoft Graph APIs:
 
-1. [Risky sign-ins](../id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins-report) such as [impossible travel](../id-protection/howto-identity-protection-investigate-risk.md#investigating-atypical-travel-detections), [anonymous IPs, and malware-linked IPs](../id-protection/howto-identity-protection-investigate-risk.md#investigating-malicious-ip-address-detections).
-1. [Risky users](../id-protection/howto-identity-protection-investigate-risk.md#risky-users-report) such as accounts with [leaked credentials](../id-protection/howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections) and [suspicious behavior](../id-protection/howto-identity-protection-investigate-risk.md#investigating-password-spray-detections).
-1. [Risk detections](../id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report) such as [token replay](../id-protection/howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections) and unfamiliar sign-in properties.
+1. [Risky sign-ins](../id-protection/concept-risk-reports.md#risky-sign-ins) such as [impossible travel](../id-protection/howto-identity-protection-investigate-risk.md#atypical-travel-detections), [anonymous IPs, and malware-linked IPs](../id-protection/howto-identity-protection-investigate-risk.md#malicious-ip-address-detections).
+1. [Risky users](../id-protection/concept-risk-reports.md#risky-users) such as accounts with [leaked credentials](../id-protection/howto-identity-protection-investigate-risk.md#leaked-credentials-detections) and [suspicious behavior](../id-protection/howto-identity-protection-investigate-risk.md#password-spray-detections).
+1. [Risk detections](../id-protection/concept-risk-reports.md#risk-detections) such as [token replay](../id-protection/howto-identity-protection-investigate-risk.md#anomalous-token-and-token-issuer-anomaly-detections) and unfamiliar sign-in properties.
 
 ## Investigate with Microsoft Security Copilot in Microsoft Entra
 

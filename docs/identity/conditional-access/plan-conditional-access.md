@@ -35,7 +35,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
 - Admins who interact with Conditional Access need one of the following role assignments, depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to activate privileged role assignments just in time.
    - Read Conditional Access policies and configurations.
       - [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
-   - Create or modify Conditional Access policies.
+   - Create, modify, or restore soft-deleted Conditional Access policies.
       - [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
 - A test user (not an admin) to check that policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 - A group that includes the test user. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
@@ -297,6 +297,10 @@ If you need to roll back newly implemented policies, use one or more of these op
    > Use exclusions sparingly, only in situations where the user is trusted. Add users back to the policy or group as soon as possible.
 
 - If a policy is disabled and no longer needed, **delete it**.
+
+##### Restore deleted policies
+
+If a Conditional Access or location is deleted, it can be restored within the 30 day soft-delete period. For more information about restoring Conditional Access policies and named locations, see the article [Recover from deletions](../../architecture/recover-from-deletions.md#conditional-access-policies).
 
 ## Troubleshoot Conditional Access policies
 

@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 09/18/2025
+ms.date: 10/06/2025
 ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
@@ -643,6 +643,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 
 ##### Validations performed by SCIM Validator
 
+**Update Active Attribute to False**
 - POST /Users/ - Creates a resource based on the schema
     - HTTP 2xx success
     - Disabled user should be returned on GET request
@@ -703,7 +704,6 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     "members": []
 }
 ```
-
 ##### Validations performed by SCIM Validator
 
 **Create New Group**
@@ -716,7 +716,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
     - Returned values from GET match the passed values from the POST request (varies based on endpoint)
 - DELETE /Groups - Cleans Up Test User.	
     - Only called if hard delete is supported
-    
+
 **Create Duplicate Group**	
 - POST /Groups – Attempts to create a group using an identical payload (with the same unique/joining attribute) to an existing group.
     - Return HTTP 201 on first create request
@@ -801,6 +801,7 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 
 ##### Validations performed by SCIM Validator
 
+**Update Group Attributes**
 - POST /Groups - Creates a new group resource to update attributes on
     - POST Returns HTTP 2xx
 - PATCH /Groups/{id} – Sends a JSON Patch document using the replace operation to update one or more attributes of an existing group (excluding members).
@@ -835,6 +836,8 @@ This article provides example SCIM requests emitted by the Microsoft Entra provi
 *HTTP/1.1 204 No Content*
 
 ##### Validations performed by SCIM Validator
+
+**Create a New Group Resource**
 - POST /Groups - Creates a new group resource to add member to
     - POST Returns HTTP 2xx
 - POST /Users – Creates a new user resource to be used as a group member.

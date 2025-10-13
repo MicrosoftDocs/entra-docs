@@ -25,6 +25,7 @@ ms.reviewer: amycolannino
 | [SQL database](../identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x|
 | Cloud platform| [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
 | Cloud platform| [Google Cloud Platform - User Provisioning](../identity/saas-apps/g-suite-provisioning-tutorial.md) |
+| Business applications| Multiple. With Microsoft Entra integrations to [SAP access governance](https://learning.sap.com/learning-journeys/exploring-the-fundamentals-of-sap-system-security/discussing-access-governance-integration-scenarios-ac-iag-), to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance. |
 | Business applications|SAP applications integrated with [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
 | Business applications|Applications on SAP BTP [using role collections](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276) |
 | CRM| [Salesforce - User Provisioning](../identity/saas-apps/salesforce-provisioning-tutorial.md) |
@@ -336,11 +337,10 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Genesys Cloud for Azure](../identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
 | [getAbstract](../identity/saas-apps/getabstract-provisioning-tutorial.md) | ● | ● |
 | [Getty Images](../identity/saas-apps/getty-images-tutorial.md) |  | ● |
-| [GitHub AE](../identity/saas-apps/github-ae-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Cloud - Enterprise Account](../identity/saas-apps/github-enterprise-cloud-enterprise-account-tutorial.md) |  | ● |
 | [GitHub Enterprise Managed User (OIDC)](../identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Managed User](../identity/saas-apps/github-enterprise-managed-user-provisioning-tutorial.md) | ● | ● |
-| [GitHub Enterprise Server](../identity/saas-apps/github-ae-tutorial.md) |  | ● |
+| [GitHub Enterprise Server](../identity/saas-apps/github-enterprise-server-provisioning-tutorial.md) | ● | ● |
 | [GitHub](../identity/saas-apps/github-provisioning-tutorial.md) | ● | ● |
 | [Global Relay Identity Sync](../identity/saas-apps/global-relay-identity-sync-provisioning-tutorial.md) | ● |  |
 | [GlobalOne](../identity/saas-apps/globalone-tutorial.md) |  | ● |
@@ -348,7 +348,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [goFLUENT](../identity/saas-apps/gofluent-tutorial.md) |  | ● |
 | [GoLinks](../identity/saas-apps/golinks-provisioning-tutorial.md) | ● | ● |
 | [Gong](../identity/saas-apps/gong-provisioning-tutorial.md) | ● |  |
-| [Google Cloud Platform](../identity/saas-apps/g-suite-provisioning-tutorial.md) | ● | ● |
 | [GoProfiles](../identity/saas-apps/goprofiles-tutorial.md) |  | ● |
 | [GoSearch](../identity/saas-apps/gosearch-tutorial.md) |  | ● |
 | [GoTo](../identity/saas-apps/goto-provisioning-tutorial.md) | ● | ● |
@@ -501,7 +500,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [MIC SAAS Portal](../identity/saas-apps/mic-saas-portal-tutorial.md) |  | ● |
 | [MicroFocus Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Microsoft 365](../fundamentals/concept-group-based-licensing.md) | ● | ● |
-| [Microsoft Active Directory Domain Services](../identity/domain-services/scoped-synchronization.md) | ● | ● |
 | [Microsoft Azure SQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Microsoft Azure](/azure/role-based-access-control/role-assignments-portal) | ● | ● |
 | [Microsoft Entra Domain Services](../identity/domain-services/synchronization.md) | ● | ● |
