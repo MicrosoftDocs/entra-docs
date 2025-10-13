@@ -22,14 +22,21 @@ Previously, you could only use a single branding theme for your entire tenant wh
 
 This article describes how you can create multiple branding themes for different applications in your tenant.
 
+## Branding themes and company branding
+
+Branding themes are similar to [company branding](../../fundamentals/how-to-customize-branding.md), but with some differences.
+
+- Branding themes can be applied to specific applications, while company branding applies to all applications in a tenant.
+- Branding themes don't inherit from company branding.
+- Any properties defined in branding themes will override settings in company branding.
+- Company branding is used as fallback for any properties not defined in the branding theme.
+- Default branding is used for any properties not defined in company branding.
+
 ## Limits and constraints
 
 Here are some of the limits and constraints for branding themes.
 
 - You can create up to 5 branding themes per tenant.
-- There is no inheritance from company branding.
-- Company branding is used as fallback for any properties not defined in the branding theme.
-- Default branding is used for any properties not defined in company branding.
 - The live preview capability previews style and layout changes and only shows the Sign in page. Live preview does not include any custom text overrides.
 
 ## Prerequisites
