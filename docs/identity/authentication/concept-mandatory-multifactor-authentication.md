@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 09/17/2025
+ms.date: 10/14/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -236,13 +236,17 @@ Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.
 
 **Answer**: Azure Phase 2 enforcement applies to all user accounts that make Azure resource management actions through any Azure client, including PowerShell, CLI, SDKs, or even REST APIs. This enforcement is on the Azure Resource Manager server side, so any requests that target `https://management.azure.com` are under scope of enforcement. Automation accounts are not in scope as long as they use a managed identity or service principle. Any automation accounts that is set up as a user identity will be enforced upon. 
 
-**Question**:  How can I understand the impact of MFA enforcement without Conditional Access? 
+**Question**: How can I understand the impact of MFA enforcement without Conditional Access? 
 
 **Answer**: If your Microsoft Entra ID license doesn't include Conditional Access, you can use Azure Policy to understand how MFA enforcement impacts your tenant. During system enforcement, Microsoft deploys the [Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement) to your tenant. You can folow those steps to deploy the same Azure policy themselves at any time. You can deploy the policy in Audit mode, and then convert to Enforcement mode. You can choose the date to apply this policy in your tenant while you are in Enforcement mode. Then when Microsoft enforce MFA, there's no further impact to your tenant. 
 
-**Question**:  Are there any exceptions for specific accounts?
+**Question**: Are there any exceptions for specific accounts?
 
 **Answer**: The system enforcement applies to all user accounts, regardless if they are a student account, break-glass account, an administrator account with activated or eligible roles, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them. Each of these account types can perform resource management actions in Azure, posing the same security risk if they are compromised. 
+
+**Question**: Are Microsoft Graph APIs under the scope for Phase 2 enforcement? 
+
+**Answer**: Generally, Microsoft Graph APIs aren't in scope for Azure MFA enforcement. Only requests sent to `https://management.azure.com/` are under scope of enforcement.
 
 **Question**: If the tenant is only used for testing, is MFA required? 
 
