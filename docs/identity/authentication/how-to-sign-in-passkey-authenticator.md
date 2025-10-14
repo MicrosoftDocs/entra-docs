@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 10/14/2025
 
 ms.author: justinha
 author: justinha
@@ -163,9 +163,7 @@ This sign-in option requires Bluetooth and an internet connection for both devic
 
    > [!NOTE]
    > Bluetooth and an internet connection are required for this step and both must be enabled on your mobile and remote device.
-   >
-   > For quicker sign-in, Android allows you to remember some browsers and Windows devices after you scan the WebAuthn QR code. In such cases, instead of having to scan a QR code each time, you can select the device and receive a notification to continue the passkey authentication.
-
+   
 1. To select your passkey, follow the steps in the Android operating system dialog. Verify yourself by scanning your face or fingerprint, or enter your device PIN or unlock gesture.
 
 On your other device, you're now signed in to Microsoft Entra ID.
