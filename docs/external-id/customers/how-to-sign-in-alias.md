@@ -18,6 +18,8 @@ ms.custom: it-pro
 
 You can enable users who sign in with a local account (email and password) to sign in with an alias or username in addition to their email address. An alias or username allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
 
+:::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option.":::
+
 ## Prerequisites
 
 - If you haven't already created your own Microsoft Entra external tenant, [create one now](how-to-create-external-tenant-portal.md).
