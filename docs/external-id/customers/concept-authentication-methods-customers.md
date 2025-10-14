@@ -85,6 +85,12 @@ By setting up federation with Apple, you can allow users to sign in to your appl
 The following screenshots show the sign-in with Apple experience. In the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
 Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
 
+## Custom OIDC identity provider
+
+You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
+
+Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
+
 ## Custom SAML/WS-Fed identity providers
 
 You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As a result, updating the federation setup by adding, changing, or removing domains won't affect the experience for existing users.
@@ -93,33 +99,32 @@ A user who enters an email address on the sign-in page that matches a predefined
 
 For more information, see [SAML/WS-Fed identity providers](../direct-federation-overview.md). For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
 
-## Custom OIDC identity provider
+### Domain acceleration
 
-You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
-
-Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
-
-## Issuer acceleration
-
-When you use identity providers such as Facebook, Google, Apple, custom OIDC, or SAML, users usually see the Microsoft sign-in page first. From there, they choose their identity provider. To simplify this experience, you can use the `domain_hint` parameter in the sign-in URL. This parameter lets you skip the Microsoft sign-in page and go directly to the selected identity provider’s sign-in page.
-
-### Issuer acceleration for custom OIDC providers
-
-For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
-
-:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
-
-### Issuer acceleration for custom SAML providers
+When you federate with custom SAML/WS-Fed IdPs, users usually see the Microsoft sign-in page first and then choose their identity provider. These IdPs can be associated with one or more domains. Including the `domain_hint` parameter in the sign-in URL allows users to go directly to the sign-in page for the identity provider associated with the specified domain.
 
 For a custom SAML identity provider, use the domain specified in the **Domain name of federating IdP** field in the `domain_hint` syntax.
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
 
+## Issuer acceleration
+
+For other external identity providers—such as Facebook, Google, Apple, or a custom OpenID Connect IdP—you can also use the `domain_hint` parameter to streamline sign-in. By adding an appropriate provider-specific hint users skip the Microsoft sign-in page and go directly to that provider’s sign-in screen.
+
+For example, you can use the following `domain_hint` values to go directly to the sign-in page for these identity providers:
+
+- **Facebook**: `&domain_hint=facebook`.  
+- **Google**: `&domain_hint=google`.  
+- **Apple**: `&domain_hint=apple`.
+- **Custom OIDC**: `&domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
+
+   :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
+
 ## Updating sign-in methods
 
 At any time, you can update the sign-in options for an app. For example, you can add social identity providers or change the local account sign-in method.
 
-When you change sign-in methods, the change affects only new users. Existing users continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users sign in using a one-time passcode, but any users who already signed up with an email and password continue to be prompted for their email and password. 
+When you change sign-in methods, the change affects only new users. Existing users continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users sign in using a one-time passcode, but any users who already signed up with an email and password continue to be prompted for their email and password.
 
 ## Microsoft Graph APIs
 
