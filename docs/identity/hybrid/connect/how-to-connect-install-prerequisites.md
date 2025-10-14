@@ -69,10 +69,10 @@ To read more about securing your Active Directory environment, see [Best practic
   >**Windows Server 2025 is NOT supported. There is a known issue on Windows server 2025 with the [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) update installed that will cause Microsoft Entra Connect Sync to encounter sync issues.** If you upgraded to Windows Server 2025 and installed update [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9), apply the following registry key as soon as possible to avoid sync disruption.
   >
   >```
-  >Path: Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides
-  >Name: 2362988687
-  >Type: REG_DWORD
-  >Value: 0
+  >Windows Registry Editor Version 5.00
+  >
+  >[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides]
+  >"2362988687"=dword:00000000
   >```
   >
   >This registry modification is a workaround. Windows Server 2025 support for Microsoft Entra Connect Sync is planned for a future release.
