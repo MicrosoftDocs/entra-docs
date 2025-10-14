@@ -130,10 +130,14 @@
   items:
   - name: Get started with the Access Review Agent (Preview)
     href: access-review-agent.md
-  - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
-    href: ~/fundamentals/copilot-entra-lifecycle-workflow.md 
+  - name: Identity Governance and optimization with Microsoft Security Copilot
+    href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+  - name: Manage lifecycle workflows using Microsoft Security Copilot
+    href: ~/security-copilot/entra-lifecycle-workflows.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Access Review Agent logs and metrics (Preview)
     href: access-review-agent-logs-metrics.md
+  - name: Identity Governance and optimization with Microsoft Security Copilot
+    href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
 - name: Tutorials
   expanded: true
   items:
@@ -395,14 +399,18 @@
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
+        - name: Reprocess workflows (Preview)
+          href: reprocess-workflow.md    
         - name: Download workflow history reports
-          href: download-workflow-history.md  
+          href: download-workflow-history.md
+        - name: Manage inactive users (Preview)
+          href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
         - name: Manage synced AD DS users
-          href: manage-workflow-on-premises.md              
+          href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
           href: manage-workflow-insights.md             
       - name: Delete

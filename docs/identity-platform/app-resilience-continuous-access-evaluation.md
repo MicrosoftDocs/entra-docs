@@ -2,7 +2,7 @@
 title: "How to use Continuous Access Evaluation enabled APIs in your applications"
 description: Increase app security and resilience by adding support for Continuous Access Evaluation, enabling long-lived access tokens that can be revoked based on critical events and policy evaluation.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 11/18/2024
 ms.reviewer: 

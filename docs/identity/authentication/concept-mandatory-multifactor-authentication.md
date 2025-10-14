@@ -210,8 +210,6 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 >
 >By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
 
-Customers need to contact customer support to request postponement of Phase 1 MFA enforcement past September 30, 2025.
-
 ## Request more time to prepare for Phase 2 MFA enforcement 
 
 Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. 

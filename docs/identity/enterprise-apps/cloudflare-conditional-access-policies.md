@@ -23,7 +23,7 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 ## Prerequisites
 
 * A Microsoft Entra subscription
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * A Microsoft Entra tenant linked to the Microsoft Entra subscription
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 * One of the following roles: Cloud Application Administrator, or Application Administrator.

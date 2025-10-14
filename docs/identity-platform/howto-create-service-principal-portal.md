@@ -7,7 +7,7 @@ ms.author: cwerner
 ms.date: 05/26/2025
 ms.service: identity-platform
 ms.topic: how-to
-ms.custom: subject-rbac-steps, devx-track-arm-template, sfi-image-nochange
+ms.custom:  sfi-image-nochange
 #Customer intent: As a developer, I want to understand how to create a Microsoft Entra application and service principal, so that I can access resources with RBAC and manage permissions for my application.
 ---
 
@@ -26,7 +26,7 @@ For more information on the relationship between app registration, application o
 
 To register an application in your Microsoft Entra tenant, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - Sufficient permissions to register an application with your Microsoft Entra tenant, and assign to the application a role in your Azure subscription. To complete these tasks, you'll need the `Application.ReadWrite.All` permission.
 
 ## Register an application with Microsoft Entra ID and create a service principal

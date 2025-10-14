@@ -25,7 +25,7 @@ If you use Microsoft Entra B2B collaboration to work with external partners, you
 > * Verify the users were added to the directory
 
 ## Prerequisites
-- If you don’t have Microsoft Entra ID, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+- If you don’t have Microsoft Entra ID, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 - You need two or more test email accounts that you can send the invitations to. The accounts must be from outside your organization. You can use any type of account, including social accounts such as gmail.com or outlook.com addresses.
 
 ## Invite guest users in bulk

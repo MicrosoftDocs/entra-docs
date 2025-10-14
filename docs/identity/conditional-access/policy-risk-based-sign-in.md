@@ -1,11 +1,11 @@
 ---
 title: Sign-in risk-based multifactor authentication
-description: Create Conditional Access policies using Microsoft Entra ID Protection sign-in risk.
+description: Protect your organization by implementing Conditional Access policies that address sign-in risks using Microsoft Entra ID Protection.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 10/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,11 +14,11 @@ ms.reviewer: lhuangnorth, cokoopma
 ---
 # Require multifactor authentication for elevated sign-in risk
 
-Most users have a normal behavior that can be tracked, when they fall outside of this norm it could be risky to allow them to just sign in. You might want to block that user or maybe ask them to perform multifactor authentication to prove that they're really who they say they are. 
+Most users have normal behavior that can be tracked. When their behavior falls outside this norm, it might be risky to let them sign in. You might want to block the user or ask them to complete multifactor authentication to confirm their identity. 
 
-A sign-in risk represents the probability that a given authentication request isn't the identity owner. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection sign-in risk detections](~/id-protection/concept-identity-protection-risks.md). 
+Sign-in risk represents the likelihood that an authentication request isn't from the identity owner. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection sign-in risk detections](~/id-protection/concept-identity-protection-risks.md). 
 
-The Sign-in risk-based policy protects users from registering MFA in risky sessions. If users aren't registered for MFA, their risky sign-ins are blocked, and they see an AADSTS53004 error.
+The sign-in risk-based policy prevents users from registering MFA during risky sessions. If users aren't registered for MFA, their risky sign-ins are blocked, and they receive an AADSTS53004 error.
 
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
@@ -37,3 +37,4 @@ The Sign-in risk-based policy protects users from registering MFA in risky sessi
 - [User risk-based Conditional Access](policy-risk-based-user.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions](concept-conditional-access-report-only.md)
+- [Configure cross-tenant access settings](/entra/external-id/cross-tenant-access-settings-b2b-collaboration#to-change-inbound-trust-settings-for-mfa-and-device-claims)

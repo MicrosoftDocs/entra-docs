@@ -8,12 +8,17 @@ ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ms.topic: how-to
-ms.date: 08/28/2025
+ms.date: 09/29/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ---
 # Prerequisites for Microsoft Entra Connect
 This article describes the prerequisites and the hardware requirements for Microsoft Entra Connect.
+
+>[!IMPORTANT]
+>**Mandatory Upgrade Required**: All synchronization services in Microsoft Entra Connect Sync will stop working on **September 30, 2026** if you're not on at least version 2.5.79.0. In May 2025, we released this version with a back-end service change that hardens our services. Upgrade before this deadline to avoid any service disruption.
+>
+>If you're unable to upgrade before the deadline, all synchronization services will fail until you upgrade to the latest version. The Microsoft Entra Connect Sync installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
 
 <a name='before-you-install-azure-ad-connect'></a>
 
@@ -58,8 +63,21 @@ To read more about securing your Active Directory environment, see [Best practic
 
 #### Installation prerequisites
 
-- Microsoft Entra Connect must be installed on a domain-joined Windows Server 2016 or later. We recommend using domain-joined Windows Server 2022. You can deploy Microsoft Entra Connect on Windows Server 2016. However, since Windows Server 2016 is in extended support, you might need [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for this configuration.
-- The minimum .NET Framework version required is 4.6.2, and newer versions of .NET are also supported.  .NET version 4.8 and greater offers the best accessibility compliance.
+- Microsoft Entra Connect must be installed on a domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016. We recommend Windows Server 2022. You can deploy Microsoft Entra Connect on Windows Server 2016. However, since Windows Server 2016 is in extended support, you might need [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for this configuration. Installing on unsupported versions of Windows Server may cause service failures or unexpected behavior.
+
+  >[!IMPORTANT]
+  >**Windows Server 2025 is NOT supported. There is a known issue on Windows server 2025 with the [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) update installed that will cause Microsoft Entra Connect Sync to encounter sync issues.** If you upgraded to Windows Server 2025 and installed update [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9), apply the following registry key as soon as possible to avoid sync disruption.
+  >
+  >```
+  >Path: Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides
+  >Name: 2362988687
+  >Type: REG_DWORD
+  >Value: 0
+  >```
+  >
+  >This registry modification is a workaround. Windows Server 2025 support for Microsoft Entra Connect Sync is planned for a future release.
+
+- The minimum .NET Framework version required is 4.6.2, and newer versions of .NET are also supported. The .NET version 4.8 and greater offers the best accessibility compliance.
 - Microsoft Entra Connect can't be installed on Small Business Server or Windows Server Essentials before 2019 (Windows Server Essentials 2019 is supported). The server must be using Windows Server standard or better. 
 - The Microsoft Entra Connect server must have a full GUI installed. Installing Microsoft Entra Connect on Windows Server Core isn't supported. 
 - The Microsoft Entra Connect server must not have PowerShell Transcription Group Policy enabled if you use the Microsoft Entra Connect wizard to manage Active Directory Federation Services (AD FS) configuration. You can enable PowerShell transcription if you use the Microsoft Entra Connect wizard to manage sync configuration.
@@ -97,12 +115,11 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
 ### SQL Server used by Microsoft Entra Connect
 * Microsoft Entra Connect requires a SQL Server database to store identity data. By default, a SQL Server 2019 Express LocalDB (a light version of SQL Server Express) is installed. SQL Server Express has a 10-GB size limit that enables you to manage approximately 100,000 objects. If you need to manage a higher volume of directory objects, point the installation wizard to a different installation of SQL Server. The type of SQL Server installation can impact the [performance of Microsoft Entra Connect](./plan-connect-performance-factors.md#sql-database-factors).
 * If you use a different installation of SQL Server, these requirements apply:
-  * Microsoft Entra Connect support all mainstream supported SQL Server versions up to SQL Server 2022 running on Windows. Refer to the [SQL Server lifecycle article](/lifecycle/products/?products=sql-server) to verify the support status of your SQL Server version. SQL Server 2012 is no longer supported. Azure SQL Database *isn't supported* as a database.  This includes both Azure SQL Database and Azure SQL Managed Instance.
-  * You must use a case-insensitive SQL collation. These collations are identified with a \_CI_ in their name. Using a case-sensitive collation identified by \_CS_ in their name *isn't supported*.
-  * You can have only one sync engine per SQL instance. Sharing a SQL instance with MIM Sync, DirSync, or Azure AD Sync *isn't supported*.
-  * Maintain ODBC Driver for SQL Server version 17 and OLE DB Driver for SQL Server version 18 that are bundled with Microsoft Entra Connect. Upgrading ODBC/OLE DB drivers' major or minor versions isn't supported. Microsoft Entra Connect product group team includes new ODBC/OLE DB drivers as these become available and have a requirement to be updated.
-    
-  * Microsoft Entra Connect does not support SQL Named Pipes protocol.
+  * Microsoft Entra Connect supports mainstream supported SQL Server versions running on Windows up to SQL Server 2022. Refer to the [SQL Server lifecycle article](/lifecycle/products/?products=sql-server) to verify the support status of your SQL Server version. SQL Server 2012 and SQL Server 2016 are no longer supported. Azure SQL Database *isn't supported* as a database. This includes both Azure SQL Database and Azure SQL Managed Instance.
+    * You must use a case-insensitive SQL collation. These collations are identified with a \_CI\_ in their name. Using a case-sensitive collation identified by \_CS\_ in their name *isn't supported*.
+    * You can have only one sync engine per SQL instance. Sharing a SQL instance with MIM Sync, DirSync, or Azure AD Sync *isn't supported*.
+    * Maintain ODBC Driver for SQL Server version 17 and OLE DB Driver for SQL Server version 18 that are bundled with Microsoft Entra Connect. Upgrading ODBC/OLE DB drivers' major or minor versions isn't supported. Microsoft Entra Connect product group team includes new ODBC/OLE DB drivers as these become available and have a requirement to be updated.
+    * Microsoft Entra Connect does not support the SQL Named Pipes protocol.
     
 > [!NOTE]
 > If you're installing SQL on the same server as Microsoft Entra Connect, we recommend configuring SQL to limit the maximum memory that it can use from the system.

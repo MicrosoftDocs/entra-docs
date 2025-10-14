@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: conceptual
-ms.date: 08/07/2025
+ms.date: 10/09/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
@@ -28,13 +28,22 @@ For more information, see [How to remove unused groups from Active Directory](ho
 
 Follow these best practices to transition group management from on-premises to Microsoft Entra ID.
 
-### Change to Universal group scope before you convert Group SOA
+### Prepare groups for Group SOA conversion and provisioning
 
-If you plan to provision a converted SOA security group (not mail-enabled) back to AD DS, then you need to change the group scope to Universal before you convert Group SOA. Global and Domain Local group scopes aren't supported for groups provisioned to AD DS. You need to check and update the group scope before you convert Group SOA for security groups that you want to provision back to AD DS.
+If you plan to provision a converted SOA security group (not mail-enabled) back to AD DS, then you need to complete these steps to preserve the original organizational unit (OU) path:
+
+1. Change the group scope for the AD DS groups to Universal.
+1. Create a tenant-scoped directory extension property for groups. 
+1. Map an on-premises value, such as the distinguished name (DN), directly into the extension property. 
+1. Verify the property value using Microsoft Graph. 
+1. Convert the Source of Authority (SOA) when ready. 
+1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
+
+For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/tutorial-group-provisioning.md).
 
 ### Transition group management
 
-Microsoft Entra ID Governance supports governance of Microsoft Entra ID security groups and Microsoft 365 groups. While Distribution Lists (DLs) and Mail-Enabled Security Groups (MESGs) can exist in the cloud, they're Exchange concepts and you can't manage them in the Microsoft Entra admin center or with Microsoft Graph APIs.
+Microsoft Entra ID Governance supports governance of Microsoft Entra ID security groups and Microsoft 365 groups. While Distribution Lists (DLs) and Mail-Enabled Security Groups (MESGs) can exist in the cloud, they're Exchange concepts and you can't manage them in the Microsoft Entra admin center or with Microsoft Graph APIs. So, if you don't need a group to remain mail-enabled, convert it to a standard security group in AD DS, sync the group, and then convert the SOA.
 
 You should replace DLs and MESGs with Microsoft 365 groups for collaboration and access management scenarios. They offer built-in capabilities for governance, collaboration, and self-service. In most cases, DLs and MESGs need to be recreated as Microsoft 365 groups. However, you can directly upgrade simple, non-nested cloud-managed DLs to Microsoft 365 groups. For more information, see [Upgrade Distribution Lists to Microsoft 365 Groups](/exchange/recipients-in-exchange-online/manage-distribution-groups/upgrade-distribution-lists).
 

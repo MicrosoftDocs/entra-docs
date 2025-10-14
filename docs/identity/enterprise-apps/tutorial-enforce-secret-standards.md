@@ -32,7 +32,7 @@ Policies can be applied to all applications in your organization or to specific 
 
 ## Prerequisites
 
-* A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * At least the [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role.
 * An API client such as [Graph Explorer](https://aka.ms/ge) **OR**
 * Microsoft Graph PowerShell module installed. See [Install the Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
@@ -267,6 +267,7 @@ You can also confirm that the policy is applied by creating a new application an
 
 ## Related content
 
+* To learn other ways to implement this policy, see [Configure restrictions on how applications can be configured](configure-app-management-policies.md)
 * To learn how to automate secret rotation, see [Automate the rotation of a secret for resources that use one set of authentication credentials](/azure/key-vault/secrets/tutorial-rotation).
 * To learn more about available restrictions and policy settings, see [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy)
 * To learn more about security best practices for your organization, see[Configure Microsoft Entra for increased security](https://aka.ms/EntraSecurityRecommendations).

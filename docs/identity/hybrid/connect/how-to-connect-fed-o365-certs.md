@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/18/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ---
@@ -19,7 +19,7 @@ For successful federation between Microsoft Entra ID and Active Directory Federa
 > [!NOTE]
 > This article provides information on managing your federation certificates. For information on emergency rotation see [Emergency Rotation of the AD FS certificates](how-to-connect-emergency-ad-fs-certificate-rotation.md)
 
-This article provides you additional information to manage your token signing certificates and keep them in sync with Microsoft Entra ID, in the following cases:
+This article provides you with additional information to manage your token signing certificates and keep them in sync with Microsoft Entra ID, in the following cases:
 
 * You aren't deploying the Web Application Proxy, and therefore the federation metadata is not available in the extranet.
 * You aren't using the default configuration of AD FS for token signing certificates.
@@ -88,7 +88,7 @@ Connect-Entra -Scopes 'Domain.Read.All'
 Check the certificates configured in AD FS and Microsoft Entra ID trust properties for the specified domain.
 
 ```azurepowershell-interactive
-Get-EntraFederationProperty -DomainName <domain.name> | FL Source, TokenSigningCertificate
+Get-EntraFederationProperty -DomainName <domain.name> | FL Source, SigningCertificate
 ```
 If the thumbprints in both the outputs match, your certificates are in sync with Microsoft Entra ID.
 
@@ -160,18 +160,31 @@ On the other hand, if **AutoCertificateRollover** is set to **True**, but your f
 Two certificates should be listed now, one of which has a **NotAfter** date of approximately one year in the future, and for which the **IsPrimary** value is **False**.
 
 ### Step 2: Update the new token signing certificates for the Microsoft 365 trust
+
 Update Microsoft 365 with the new token signing certificates to be used for the trust, as follows.
 
 1. Open Azure PowerShell.
-1. Run `Connect-Entra -Scopes 'Domain.Read.All'`. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
-1. Run `Update-MgDomainFederationConfiguration -DomainId <domain> -InternalDomainFederationId <AD FS primary server>`. This cmdlet updates the settings from AD FS into the cloud service, and configures the trust relationship between the two.
+2. Run `Connect-Entra -Scopes 'Domain.Read.All'`. This cmdlet connects you to the cloud service. Creating a context that connects you to the cloud service is required before running any of the additional cmdlets installed by the tool.
+  
+    > [!NOTE]
+    > `-InternalDomainFederationId` can be found by running the command `Get-EntraFederationProperty -Domainname your_domain.com`
 
-> [!NOTE]
-> If you need to support multiple top-level domains, such as contoso.com and fabrikam.com, you must use the **SupportMultipleDomain** switch with any cmdlets. For more information, see [Support for Multiple Top Level Domains](how-to-connect-install-multiple-domains.md).
->
-> If your tenant is federated with more than one domain, the `Update-MgDomainFederationConfiguration` needs to be run for all the domains, listed in the output from `Get-EntraDomain | Select-Object -Property AuthenticationType:Federated`. This ensures that all of the federated domains are updated to the Token-Signing certificate.
->You can achieve this by running:
->`Get-EntraDomain | Select-Object -Property AuthenticationType:Federated | % { Update-MgDomainFederationConfiguration -DomainName $_.Name -SupportMultipleDomain }`
+    :::image type="content" source="./media/how-to-connect-install-multiple-domains/entra-fed-property.png" alt-text="Screenshot shows output of the Get-EntraFederationProperty cmdlet.":::
+
+3. Run `Update-MgDomainFederationConfiguration -DomainId <your_domain.com> -InternalDomainFederationId <hex_domain ID>`. This cmdlet updates the settings from AD FS into the cloud service, and configures the trust relationship between the two.
+
+    > [!NOTE]
+    > If you need to support multiple top-level domains, such as contoso.com and fabrikam.com, you must apply the above settings and go domain by domain without the **-SupportMultipleDomain** switch since it's no longer available for **Microsoft.Entra** and **Microsoft.Graph** modules.
+
+For more information, see [Support for Multiple Top Level Domains](how-to-connect-install-multiple-domains.md).
+
+If your tenant is federated with more than one domain, the `Update-MgDomainFederationConfiguration` needs to be run for all the domains, listed in the output from:
+
+`Get-EntraDomain | Where-Object {$ _. 'AuthenticationType' -eq 'Federated'} | Select-object Name, AuthenticationType`.
+
+This ensures that all of the federated domains are updated to the Token-Signing certificate and you can achieve this by running:
+
+`Update-MgDomainFederationConfiguration -DomainId <your_domain.com> -InternalDomainFederationId <hex_domain ID>`
 
 <a name='repair-azure-ad-trust-by-using-azure-ad-connect-a-nameconnectrenewa'></a>
 

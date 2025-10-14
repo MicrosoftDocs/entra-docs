@@ -27,7 +27,7 @@ Tenant administrators and developers often have requirements where an applicatio
 
 ## Prerequisites
 
-- A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An [application registered in your Microsoft Entra tenant](quickstart-register-app.md)
 - You must be the application owner or be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) in your tenant.
 
