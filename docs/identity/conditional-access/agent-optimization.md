@@ -6,7 +6,7 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 10/01/2025
+ms.date: 10/13/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -113,10 +113,6 @@ Once the agent is enabled, you can adjust a few settings. After making any chang
 
 :::image type="content" source="media/agent-optimization/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/agent-settings.png":::
 
-### Agent capabilities
-
-By default, the Conditional Access optimization agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
-
 ### Trigger
 
 The agent is configured to run every 24 hours based on when it's initially configured. You can change when the agent runs by toggling the **Trigger** setting off and then back on when you want it to run.
@@ -127,7 +123,30 @@ Use the checkboxes under **Microsoft Entra objects to monitor** to specify what 
 
 ### Agent capabilities
 
-By default, the Conditional Access optimization agent can create new policies in report-only mode. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+By default, the Conditional Access optimization agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+
+### Notifications
+
+The Conditional Access optimization agent can send notifications through Microsoft Teams to a select set of recipients. With the **Conditional Access agent** app in Microsoft Teams, recipients receive notifications directly in their Teams chat when the agent surfaces a new suggestion.
+
+To add the agent app to Microsoft Teams:
+
+1. In Microsoft Teams, select **Apps** from the left navigation menu and search for **Conditional Access agent**.
+   :::image type="content" source="media/agent-optimization/agent-teams-app.png" alt-text="Screenshot of the Conditional Access app button in Teams." lightbox="media/agent-optimization/agent-teams-app.png":::
+
+1. Select the **Add** button, then select the **Open** button to open the app.
+1. To make accessing the agent app later, right-click the app icon in the left navigation menu and select **Pin**.
+
+To configure notifications in the Conditional Access optimization agent settings:
+
+1. In the Conditional Access optimization agent settings, select the **Users and groups** link.
+1. Select the users or groups you want to receive notifications, then select the **Save** button.
+1. When the app sends a message about a new suggestion, select the **Review suggestion** button in the message to go directly to the agent experience in the Microsoft Entra admin center.
+   :::image type="content" source="media/agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/agent-optimization/agent-teams-suggestion-message.png":::
+
+You can select up to ten recipients to receive notifications. You can select a group to receive the notifications, but the membership of that group can't exceed ten users. If you select a group that has fewer than ten users but more are added later, the group no longer receives notifications. Similarly, the notifications can only be sent to five objects, such as a combination of individual users or groups.
+
+At this time, the agent's communication is one direction, so you can only receive notifications but can't respond to them in Microsoft Teams. To take action on a suggestion, you must go to the Conditional Access optimization agent in the Microsoft Entra admin center.
 
 ### Phased rollout
 
