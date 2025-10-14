@@ -6,7 +6,7 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 10/13/2025
+ms.date: 10/14/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -140,15 +140,18 @@ To add the agent app to Microsoft Teams:
 
 To configure notifications in the Conditional Access optimization agent settings:
 
-1. In the Conditional Access optimization agent settings, select the **Users and groups** link.
-1. Select the users or groups you want to receive notifications, then select the **Save** button.
+1. In the Conditional Access optimization agent settings, select the **Select users and groups** link.
+1. Select the users or groups you want to receive notifications, then select the **Select** button.
+ 
+   :::image type="content" source="media/agent-optimization/agent-teams-people-picker.png" alt-text="Screenshot of the Conditional Access agent setting to pick the users and groups for notifications." lightbox="media/agent-optimization/agent-teams-people-picker.png":::
 
-   :::image type="content" source="media/agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/agent-optimization/agent-teams-suggestion-message.png":::
+1. At the bottom of the main **Settings** page, select the **Save** button.
 
 You can select up to ten recipients to receive notifications. You can select a group to receive the notifications, but the membership of that group can't exceed ten users. If you select a group that has fewer than ten users but more are added later, the group no longer receives notifications. Similarly, the notifications can only be sent to five objects, such as a combination of individual users or groups.
 
 At this time, the agent's communication is one direction, so you can receive notifications but can't respond to them in Microsoft Teams. To take action on a suggestion, select **Review suggestion** from the chat to open the Conditional Access optimization agent in the Microsoft Entra admin center.
 
+   :::image type="content" source="media/agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/agent-optimization/agent-teams-suggestion-message.png":::
 ### Phased rollout
 
 When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default.
