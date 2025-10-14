@@ -65,7 +65,9 @@ These links provide more information about groups:
 
 ## Users
 
-You and your team might feel compelled to change your current employee provisioning to use cloud-only accounts at this stage. The effort is nontrivial but doesn't provide enough business value. We recommend that you plan this transition at a different phase of your transformation.
+If there are groups of users in your organization that do not have application dependencies to Active Directory, you can take a cloud-first approach by provisioning those users directly to Entra ID. If there are users that do not require access to Active Directory but have Active Directory accounts, you can use change their source of authority, and clean up their Active Directory account. 
+
+[Transferring SOA](../identity/hybrid/user-source-of-authority-overview.md) is suitable for users who don't have any application dependencies linked to AD DS. Identifying which users are associated with specific applications is crucial for effective migration planning.
 
 ## Devices
 
