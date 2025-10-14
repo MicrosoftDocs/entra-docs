@@ -75,7 +75,7 @@ To read more about securing your Active Directory environment, see [Best practic
   >Value: 0
   >```
   >
-  >This registry modification is a mitigation. Windows Server 2025 support for Microsoft Entra Connect Sync is planned for a future release.
+  >This registry modification is a workaround. Windows Server 2025 support for Microsoft Entra Connect Sync is planned for a future release.
 
 - The minimum .NET Framework version required is 4.6.2, and newer versions of .NET are also supported. The .NET version 4.8 and greater offers the best accessibility compliance.
 - Microsoft Entra Connect can't be installed on Small Business Server or Windows Server Essentials before 2019 (Windows Server Essentials 2019 is supported). The server must be using Windows Server standard or better. 
