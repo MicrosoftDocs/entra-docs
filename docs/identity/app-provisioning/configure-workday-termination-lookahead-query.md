@@ -136,7 +136,7 @@ The expression checks for the presence of `StatusTerminationLastDayOfWork`, whic
 
 - Optionally, you can flow the last day of work to an extension attribute in on-premises AD.
 
-- - After changing any settings, make sure to save the provisioning job.
+- After changing any settings, make sure to save the provisioning job.
 
 ## Test the query
 
