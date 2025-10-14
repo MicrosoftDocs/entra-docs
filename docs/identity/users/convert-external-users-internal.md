@@ -1,5 +1,5 @@
 ---
-title: Convert external users to internal users (Preview)
+title: Convert external users to internal users
 description: You can convert users from external to internal without the need to recreate them.
 author: barclayn
 ms.author: barclayn
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 ms.reviewer: yuank
 ---
 
-# Convert external users to internal users (Preview)
+# Convert external users to internal users
 
 Enterprises, such as those going through reorganizations, mergers, and acquisitions, sometimes need to change the way they work with some or all of their existing users. In some cases, administrators need to change existing external users into internal ones. 
 
