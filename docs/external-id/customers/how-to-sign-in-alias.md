@@ -28,11 +28,10 @@ You can enable users who sign in with a local account (email and password) to si
 ## Enable username in sign-in identifier policy
 
 To enable username as a sign-in identifier, you must first enable the sign-in identifier policy in the Microsoft Entra admin center. Then you can create users with both email address and username as sign-in identifiers.
-<!--- NEED TO CLARIFY THE ROLE --->
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. In your external tenant browse to the **Entra ID** section, select **External Identities** then select **Sign-in identifiers**.
+1. Select **External Identities** or **Authentication methods** then select **Sign-in identifiers**.
 
    :::image type="content" source="media/how-to-sign-in-alias/sign-in-identifiers-option.png" alt-text="Screenshot of the Sign-in identifiers option in the Microsoft Entra admin center.":::
 
@@ -72,7 +71,7 @@ You can create users with both email address and username as sign-in identifiers
 
 ## Update existing users to add a username
 
-Follow these steps to add a username to an existing user in the Microsoft Entra admin center.
+Follow these steps to add a username to an existing external user in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
