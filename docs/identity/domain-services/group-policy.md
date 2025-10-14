@@ -21,30 +21,28 @@ The Group Policy Backup feature is a new capability added to the Domain Health M
 
 ### Backup Location
 
-- \*\*Primary Path\*\*: `F:\\GPO\\Backups`
+- **Primary Path**: `F:\\GPO\\Backups`
 
-- \*\*Network Share\*\*: `GPOBackupsShare$` (hidden share)
+- **Network Share**: `GPOBackupsShare$` (hidden share)
 
 ### Directory Structure
 
 ```
+F:\GPO\Backups\
 
-F:\\GPO\\Backups\\
+├── MMddyyyyHHmm\          # Timestamp folder (e.g., 092520251430)
 
-├── MMddyyyyHHmm\\          # Timestamp folder (e.g., 092520251430)
+│   ├── {GUID-1}\          # Individual GPO backup folder
 
-│   ├── {GUID-1}\\          # Individual GPO backup folder
-
-│   ├── {GUID-2}\\          # Individual GPO backup folder
+│   ├── {GUID-2}\          # Individual GPO backup folder
 
 │   └── ...
 
-├── MMddyyyyHHmm\\          # Previous backup
+├── MMddyyyyHHmm\          # Previous backup
 
 │   └── ...
 
 └── ...
-
 ```
 
 ## Functionality
@@ -53,21 +51,21 @@ F:\\GPO\\Backups\\
 
 Creates an encrypted SMB (Server Message Block) share with the following characteristics:
 
-- \*\*Share Name\*\*: `GPOBackupsShare$` (hidden)
-- \*\*Encryption\*\*: Enabled for security
-- \*\*Permissions\*\*:
-  - \*\*Full Access\*\*: Domain Admins
-  - \*\*Read Access\*\*: AAD (Azure Active Directory) DC Admins
+- **Share Name**: `GPOBackupsShare$` (hidden)
+- **Encryption**: Enabled for security
+- **Permissions**:
+  - **Full Access**: Domain Admins
+  - **Read Access**: AAD (Azure Active Directory) DC Admins
 
 ## Security Considerations
 
 ### Permissions
 
-- \*\*Folder Permissions\*\*: 
+- **Folder Permissions**: 
   - Domain Admins: Full Control
   - AAD DC Admins: Read Access
 
-- \*\*Share Permissions\*\*: 
+- **Share Permissions**: 
   - Encrypted SMB share for network access
   - Hidden share (`$` suffix) for security through obscurity
 
@@ -80,25 +78,18 @@ The backup location and network share are configured with appropriate Active Dir
 ### Verifying Backups
 
 ```powershell
-
 # Check backup location
-
-Get-ChildItem "F:\\GPO\\Backups" -Directory
+Get-ChildItem "F:\GPO\Backups" -Directory
 
 # Access via network share (from another machine)
-
-Get-ChildItem "\\PDC-SERVER\\GPOBackupsShare$"
-
+Get-ChildItem "\\PDC-SERVER\GPOBackupsShare$"
 ```
 
 ### Manual Cleanup
 
 ```powershell
-
 # The feature handles cleanup automatically, but for manual operations:
-
-Get-ChildItem "F:\\GPO\\Backups" | Where-Object { $\_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
-
+Get-ChildItem "F:\\GPO\Backups" | Where-Object { $\_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
 ```
 
 This section describes how an administrator on a domain-joined computer can discover, access, and restore Group Policy Object (GPO) backups created by this feature. Both GUI (GPMC) and PowerShell workflows are provided.
@@ -115,17 +106,13 @@ This section describes how an administrator on a domain-joined computer can disc
 Although the code attempts to resolve and publish the share on the PDC, you can explicitly discover the PDC Emulator using either:
 
 ```powershell
-
 Get-ADDomain | Select-Object PDCEmulator
-
 ```
 
 Or (legacy / without AD module):
 
 ```
-
 nltest /dsgetdc:<yourDomainFQDN> /pdc
-
 ```
 
 Take the short hostname (left of the first dot) for UNC (Universal Naming Convention) paths.
@@ -135,17 +122,13 @@ Take the short hostname (left of the first dot) for UNC (Universal Naming Conven
 1. Press Win+R, enter a UNC path:
 
 ```powershell
-
-\\<PDCShortName>\\GPOBackupsShare$
-
+\\<PDCShortName>\GPOBackupsShare$
 ```
 
 2. (Optional) Map a drive letter:
 
 ```powershell
-
-New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDCShortName>\\GPOBackupsShare$" -Persist
-
+New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDCShortName>\GPOBackupsShare$" -Persist
 ```
 
 3. Browse timestamp folders (format `MMddyyyyHHmm`). Each subfolder contains GUID-named folders for each backed-up GPO.
@@ -153,15 +136,10 @@ New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDCShortName>\\GPOBacku
 ### Backup Folder Layout Recap
 
 ```powershell
-
-\\<PDCShortName>\\GPOBackupsShare$\\<TimestampFolder>\\{GPO-GUID}\\
-
+\\<PDCShortName>\GPOBackupsShare$\<TimestampFolder>\{GPO-GUID}\
   +-- backup.xml          (metadata, if present)
-
   +-- GPO.tmf / Gpt.ini / Machine / User  (typical structural contents)
-
   +-- (Optional manifest files depending on API)
-
 ```
 
 > [!NOTE]
@@ -172,29 +150,20 @@ New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDCShortName>\\GPOBacku
 You can correlate a GUID to a friendly GPO name:
 
 ```powershell
-
 Get-GPO -All | Where-Object Id -eq '{GUID-HERE}' | Select DisplayName, Id
-
 ```
 
 Or search by name across GUID folders (if `backup.xml` or `gpreport.xml` exists):
 
 ```powershell
-
-Get-ChildItem "\\<PDCShortName>\\GPOBackupsShare$" -Directory -Recurse -Depth 2 | Where-Object { Test-Path (Join-Path $\_.FullName 'backup.xml') } |
-
+Get-ChildItem "\\<PDCShortName>\GPOBackupsShare$" -Directory -Recurse -Depth 2 | Where-Object { Test-Path (Join-Path $\_.FullName 'backup.xml') } |
   ForEach-Object {
+    [xml]$meta = Get-Content (Join-Path $\_.FullName 'backup.xml') -ErrorAction SilentlyContinue
 
-  \[xml]$meta = Get-Content (Join-Path $\_.FullName 'backup.xml') -ErrorAction SilentlyContinue
-
-  if ($meta.BackupInformation.GPOName) {
-
-     \[pscustomobject]@{ Folder=$\_.FullName; GPOName=$meta.BackupInformation.GPOName; GPOId=$meta.BackupInformation.GPOID }
-
+    if ($meta.BackupInformation.GPOName) {
+      [pscustomobject]@{ Folder=$\_.FullName; GPOName=$meta.BackupInformation.GPOName; GPOId=$meta.BackupInformation.GPOID }
+    }
   }
-
-  }
-
 ```
 
 If metadata is absent, rely on the GPO GUID from production (`Get-GPO -All`).
@@ -203,25 +172,23 @@ If metadata is absent, rely on the GPO GUID from production (`Get-GPO -All`).
 
 1. Launch "Group Policy Management" (GPMC.msc).
 
-2. In the left tree, right-click the \*\*Group Policy Objects\*\* container (or an individual GPO if performing an in-place restore).
+2. In the left tree, right-click the **Group Policy Objects** container (or an individual GPO if performing an in-place restore).
 
-3. Choose \*\*Manage Backups…\*\*.
+3. Choose **Manage Backups…**.
 
-4. Click \*\*Browse\*\* and select the timestamp folder path:
+4. Click **Browse** and select the timestamp folder path:
 
 ```powershell
-
-\\<PDCShortName>\\GPOBackupsShare$\\<TimestampFolder>
-
+\\<PDCShortName>\GPOBackupsShare$\<TimestampFolder>
 ```
 
 5. The list populates with discoverable backups. Select the target GPO backup.
 
 6. Decide between:
 
-    - \*\*Restore\*\*: Overwrites the existing GPO (matching GUID) in-place.
-    - \*\*Restore To…\*\*: Lets you restore to a \*different\* GPO (choose existing target).
-    - \*\*Copy\*\* (if available): Create a new GPO from backup (GUID changes; links must be re-established manually).
+    - **Restore**: Overwrites the existing GPO (matching GUID) in-place.
+    - **Restore To…**: Lets you restore to a *different* GPO (choose existing target).
+    - **Copy** (if available): Create a new GPO from backup (GUID changes; links must be re-established manually).
 
 7. Confirm the operation. Review the results pane for success/failure.
 
@@ -230,7 +197,7 @@ If metadata is absent, rely on the GPO GUID from production (`Get-GPO -All`).
 #### Post-Restore Validation
 
 - Run: `gpresult /h report.html` on a target workstation to confirm policy application.
-- Use \*\*GPO Status\*\* in GPMC to ensure both User and Computer portions are enabled.
+- Use **GPO Status** in GPMC to ensure both User and Computer portions are enabled.
 - Validate WMI filter association (WMI filters are not always embedded inside raw file-level backups and may need reassociation).
 
 ### Restoring a GPO via PowerShell
@@ -240,21 +207,17 @@ The `GroupPolicy` module provides `Restore-GPO`, `Import-GPO`, and `New-GPO` for
 #### 1. In-Place Restore (Same GUID)
 
 ```powershell
-
 $timestampFolder = '092520251430'              # Example
 
-$pdc = (Get-ADDomain).PDCEmulator.Split('.')\[0]
+$pdc = (Get-ADDomain).PDCEmulator.Split('.')[0]
 
-$backupRoot = "\\<PDCShortName>\\GPOBackupsShare$\\$timestampFolder"
+$backupRoot = "\\<PDCShortName>\GPOBackupsShare$\$timestampFolder"
 
 # List available backups in that timestamp folder
-
 Get-GPOBackup -Path $backupRoot | Format-Table DisplayName, Id, CreationTime
 
 # Restore specific GPO by name (must already exist in domain)
-
 Restore-GPO -Name 'My Application Baseline' -Path $backupRoot -Confirm:$false
-
 ```
 
 #### 2. Restore When Original GPO Was Deleted
@@ -280,23 +243,19 @@ If the original GPO (GUID) is gone, you have two options:
 #### 3. Select Backup by GUID Only
 
 ```powershell
-
 $gpoGuid = '{12345678-90AB-CDEF-1234-567890ABCDEF}'
 
 Restore-GPO -Guid $gpoGuid -Path $backupRoot -Confirm:$false
-
 ```
 
 #### 4. Copy Backup to a New GPO (Preserve Original for Forensics)
 
 ```powershell
-
 $backup = Get-GPOBackup -Path $backupRoot | Where-Object DisplayName -eq 'Legacy GPO'
 
 $copy = New-GPO -Name "Recovered - $($backup.DisplayName)"
 
 Import-GPO -BackupId $backup.Id -TargetName $copy.DisplayName -Path $backupRoot
-
 ```
 
 #### 5. Cross-Domain / Lab Import
@@ -304,25 +263,18 @@ Import-GPO -BackupId $backup.Id -TargetName $copy.DisplayName -Path $backupRoot
 Copy the entire timestamp folder to the target domain's admin workstation (retain structure) and run:
 
 ```powershell
-
-Get-GPOBackup -Path 'C:\\Temp\\GPOBackups\\092520251430' | ForEach-Object {
+Get-GPOBackup -Path 'C:\Temp\GPOBackups\092520251430' | ForEach-Object {
 
   $existing = Get-GPO -All | Where-Object Id -eq $\_.Id -ErrorAction SilentlyContinue
 
   if ($existing) {
-
-  Restore-GPO -Guid $\_.Id -Path 'C:\\Temp\\GPOBackups\\092520251430' -Confirm:$false
-
+    Restore-GPO -Guid $\_.Id -Path 'C:\Temp\GPOBackups\092520251430' -Confirm:$false
   } else {
+    New-GPO -Name $\_.DisplayName | Out-Null
 
-  New-GPO -Name $\_.DisplayName | Out-Null
-
-  Import-GPO -BackupId $\_.Id -TargetName $\_.DisplayName -Path 'C:\\Temp\\GPOBackups\\092520251430'
-
+    Import-GPO -BackupId $\_.Id -TargetName $\_.DisplayName -Path 'C:\Temp\GPOBackups\092520251430'
   }
-
 }
-
 ```
 
 > [!NOTE]
@@ -330,7 +282,7 @@ Get-GPOBackup -Path 'C:\\Temp\\GPOBackups\\092520251430' | ForEach-Object {
 
 ### Handling Linked Objects and Dependencies
 
-Restoring raw GPO content does \*not\* automatically:
+Restoring raw GPO content does *not* automatically:
 
 - Relink the GPO to OUs (links are preserved for in-place restore; new GPOs need manual linking).
 
@@ -341,17 +293,13 @@ Restoring raw GPO content does \*not\* automatically:
 #### ReLinking Example
 
 ```powershell
-
 New-GPLink -Name 'My Application Baseline (Restored)' -Target 'OU=Workstations,DC=contoso,DC=com' -Enforced:$false
-
 ```
 
 #### Re-Associate WMI Filter
 
 ```powershell
-
 Set-GPWmiFilter -Guid '{RESTORED-GPO-GUID}' -WmiFilter (Get-GPWmiFilter -All | Where-Object Name -eq 'Win11Only')
-
 ```
 
 ### Verification and Reporting
@@ -359,19 +307,15 @@ Set-GPWmiFilter -Guid '{RESTORED-GPO-GUID}' -WmiFilter (Get-GPWmiFilter -All | W
 To confirm settings, generate an HTML report:
 
 ```powershell
+Get-GPO -Name 'My Application Baseline' | Get-GPOReport -ReportType Html -Path .\BaselineReport.html
 
-Get-GPO -Name 'My Application Baseline' | Get-GPOReport -ReportType Html -Path .\\BaselineReport.html
-
-Start-Process .\\BaselineReport.html
-
+Start-Process .\BaselineReport.html
 ```
 
 Force a client to refresh and inspect Resultant Set of Policy (RSoP):
 
 ```powershell
-
 Invoke-GPUpdate -Computer 'CLIENT01' -RandomDelayInMinutes 0
-
 ```
 
 ### Rollback Strategy
@@ -397,31 +341,26 @@ If a restored GPO introduces issues:
 ### Minimal End-to-End PowerShell Example
 
 ```powershell
-
 # Variables
 
-$pdc = (Get-ADDomain).PDCEmulator.Split('.')\[0]
+$pdc = (Get-ADDomain).PDCEmulator.Split('.')[0]
 
-$latestTimestamp = Get-ChildItem "\\\\<PDCShortName>\\GPOBackupsShare$" -Directory | Sort-Object Name -Descending | Select-Object -First 1 -ExpandProperty Name
+$latestTimestamp = Get-ChildItem "\\<PDCShortName>\GPOBackupsShare$" -Directory | Sort-Object Name -Descending | Select-Object -First 1 -ExpandProperty Name
 
-$backupPath = "\\\\<PDCShortName>\\GPOBackupsShare$\\$latestTimestamp"
+$backupPath = "\\<PDCShortName>\GPOBackupsShare$\$latestTimestamp"
 
 $gpoName = 'Baseline Workstation Policy'
 
 # Inspect backups
-
 Get-GPOBackup -Path $backupPath | Where-Object DisplayName -eq $gpoName
 
 # Restore (in-place)
-
 Restore-GPO -Name $gpoName -Path $backupPath -Confirm:$false
 
 # Report
+Get-GPO -Name $gpoName | Get-GPOReport -ReportType Html -Path .\Restored.html
 
-Get-GPO -Name $gpoName | Get-GPOReport -ReportType Html -Path .\\Restored.html
-
-Start-Process .\\Restored.html
-
+Start-Process .\Restored.html
 ```
 
 ---
