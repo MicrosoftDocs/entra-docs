@@ -1,5 +1,5 @@
 ---
-title: Configure Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to convert group management from Active Directory Domain Services to Microsoft Entra ID by using Group Source of Authority (SOA).
 author: Justinha
 manager: dougeby
@@ -11,9 +11,9 @@ ms.author: justinha
 ms.reviewer: dhanyak
 ---
 
-# Configure Group Source of Authority (SOA) (Preview)
+# Configure Group Source of Authority (SOA)
 
-This article explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)](concept-source-of-authority-overview.md). 
+This article explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Embrace cloud-first posture: Convert Group Source of Authority to the cloud](concept-source-of-authority-overview.md). 
 
 ## Prerequisites
 
@@ -96,7 +96,7 @@ Follow these steps to convert the SOA for a test group:
 1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 
    ```https
-   GET https://graph.microsoft.com/beta/groups/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" source="media/how-to-group-source-of-authority-configure/get-group.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a group.":::
@@ -124,7 +124,7 @@ Follow these steps to convert the SOA for a test group:
 1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
-   PATCH https://graph.microsoft.com/beta/groups/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": true
       }   
@@ -135,7 +135,7 @@ Follow these steps to convert the SOA for a test group:
 1. To validate the change, call GET to verify *isCloudManaged* is true.
 
    ```https
-   GET https://graph.microsoft.com/beta/groups/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify group properties.":::
@@ -227,7 +227,7 @@ if ($null -ne $group)
 {
     $groupObjectID = $($group.Id)
     # Define the Microsoft Graph API endpoint for the group
-    $url = "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior"
+    $url = "https://graph.microsoft.com/v1.0/groups/$groupObjectID/onPremisesSyncBehavior"
 
     # Define the JSON payload for the PATCH request
     $jsonPayload = @{
@@ -237,7 +237,7 @@ if ($null -ne $group)
     # Make the PATCH request to update the JSON payload
     Invoke-MgGraphRequest -Uri $url -Method Patch -ContentType "application/json" -Body $jsonPayload
 
-    $result = Invoke-MgGraphRequest -Method Get -Uri "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior?`$select=id,isCloudManaged"
+    $result = Invoke-MgGraphRequest -Method Get -Uri "https://graph.microsoft.com/v1.0/groups/$groupObjectID/onPremisesSyncBehavior?`$select=id,isCloudManaged"
 
     Write-Host "Group Name: $($group.DisplayName)"
     Write-Host "Group ID: $($result.id)"
@@ -268,7 +268,7 @@ Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | I
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
    ```https
-   PATCH https://graph.microsoft.com/beta/groups/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": false
       }   
