@@ -109,7 +109,7 @@ For a custom SAML identity provider, use the domain specified in the **Domain na
 
 ## Issuer acceleration
 
-When you federate with other external identity providers—such as Facebook, Google, Apple, or a custom OpenID Connect IdP, users usually see the Microsoft sign-in page first and then choose their identity provider. These IdPs can be associated with one or more domains. Including the `domain_hint` parameter in the sign-in URL allows users to go directly to the sign-in page for the identity provider associated with the specified domain.
+When you federate with other external identity providers—such as Facebook, Google, Apple, or a custom OpenID Connect IdP, users usually see the Microsoft sign-in page first and then choose their identity provider. Including the `domain_hint` parameter in the sign-in URL allows users to go directly to the sign-in page for the identity provider associated with the specified domain.
 
 You can use the following `domain_hint` values to go directly to the sign-in page for these identity providers:
 
