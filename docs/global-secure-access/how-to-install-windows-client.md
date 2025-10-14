@@ -165,8 +165,8 @@ if ($rebootRequired) {
    :::image type="content" source="media/how-to-install-windows-client/raw-file-download.png" alt-text="Screenshot of More file actions menu to select Download.":::
 
 1. Navigate to and run `IntuneWinAppUtil.exe`. A command prompt opens.
-1. Enter the folder path location of the Global Secure Access `.exe` file. Select **Enter**.
-1. Enter the name of the Global Secure Access `.exe` file. Select **Enter**.
+1. Enter the folder path location of the PowerShell script `.ps1` file. Select **Enter**.
+1. Enter the name of the PowerShell script `.ps1` file. Select **Enter**.
 1. Enter the folder path in which to place the `.intunewin` file. Select **Enter**.
 1. Enter **N**. Select **Enter**.
 
@@ -211,7 +211,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 |Return code|Code type|
 |-----------|---------|
 |0|Success|
-|3010|Success|
+|3010|Soft reboot|
 |1618|Retry|
 
    :::image type="content" source="media/how-to-install-windows-client/program-install-parameters.png" alt-text="Screenshot of Program to configure installation parameters." lightbox="media/how-to-install-windows-client/program-install-parameters.png":::
