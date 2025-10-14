@@ -18,7 +18,7 @@ ai-usage: ai-assisted
 
 The Microsoft Entra Workday provisioning connector retrieves worker data using the Workday Integration System User (ISU) account via the `Get_Workers` SOAP API. However, the Workday ISU account always operates in the Pacific Time Zone (PT), causing delays in processing termination events for workers in time zones ahead of PT.
 
-For example, if a Workday worker in **Melbourne (UTC+10, +17 hours ahead of PDT in May)** is terminated with a last working day of **May 14, 2025, 11:59 PM Melbourne time**, the termination event won’t process until **May 14, 2025, 11:59 PM PDT**, which is **May 15, 2025, 4:59 PM Melbourne time**—a significant delay.
+For example, if a Workday user in **Melbourne (UTC+10, +17 hours ahead of PDT in May)** is terminated with a last work day of **May 14, 2025, 11:59 PM Melbourne time**, the termination event won’t process until **May 14, 2025, 11:59 PM PDT**, which is **May 15, 2025, 4:59 PM Melbourne time**—a significant delay.
 
 To mitigate this issue, the connector now includes a **24-hour termination lookahead query**. This query ensures termination-related attributes (`StatusTerminationLastDayOfWork`, `StatusTerminationDate`) appear in the connector feed when the termination day begins in PT. The exact processing time varies due to daylight saving time adjustments.
 
@@ -52,7 +52,7 @@ This adjustment ensures the termination data is available earlier for workers in
 > [!NOTE] 
 > This link includes a feature flag in the URL (`userProvisioningWorkdayLookaheadQueryForTerminations=true`) required to configure the lookahead query setting.
 
-1. Open your test Workday to AD/Entra ID provisioning job.
+1. Open your test Workday-to-AD/Entra ID provisioning job.
 
 1. If it's in a **Running** state, select **Stop provisioning** to first pause the job.
 
@@ -62,11 +62,13 @@ This adjustment ensures the termination data is available earlier for workers in
 
 :::image type="content" source="media/configure-workday-termination-lookahead-query/enable-termination-lookahead-box.png" alt-text="Screenshot showing the selection of Enabling the Termination lookahead query box.":::
 
-1. Click **Save**.
+5. Click **Save**.
 
-- Expand **Mappings** and open the attribute mapping page.
+6. Expand **Mappings** and open the attribute mapping page.
 
-### Workday to Entra ID Provisioning Job settings
+### Workday-to-Entra ID Provisioning Job settings
+
+The termination lookahead query works for a variety of potential scenarios for your Workday-to-Entra ID provisioning job and attribute mapping settings. 
 
 - If your Workday provisioning job target is **Entra ID**, then in the attribute mappings section, update the logic associated with `accountEnabled` flag to include a check for **Last Day of Work**.
 
@@ -94,13 +96,15 @@ The expression checks for the presence of `StatusTerminationLastDayOfWork`, whic
 
 :::image type="content" source="media/configure-workday-termination-lookahead-query/edit-attribute-mapping.png" alt-text="A screenshot of the Edit Attribute fields.":::
 
-If your Workday provisioning job target is **Entra ID**, you can also flow the `StatusTerminationLastDayOfWork` to the `employeeLeaveDateTime` attribute and then trigger Leaver Lifecycle Workflows based on the `employeeLeaveDateTime`. The advantage of this approach is that it'll always use the UTC time zone to trigger the account to disable the task. This saves you from using UTC offsets in expression mappings.
+- If your Workday provisioning job target is **Entra ID**, you can also flow the `StatusTerminationLastDayOfWork` to the `employeeLeaveDateTime` attribute and then trigger Leaver Lifecycle Workflows based on the `employeeLeaveDateTime`. The advantage of this approach is that it'll always use the UTC time zone to trigger the account to disable the task. This saves you from using UTC offsets in expression mappings.
 
 :::image type="content" source="media/configure-workday-termination-lookahead-query/entra-id-workday-attribute-mappings.png" alt-text="A screenshot of Entra ID and Workday attribute mappings.":::
 
-- Save the provisioning job.
+- After changing any settings, make sure to save the provisioning job.
 
-### Workday to AD Provisioning Job settings
+### Workday-to-AD Provisioning Job settings
+
+The termination lookahead query works for a variety of potential scenarios for your Workday-to-AD provisioning job and attribute mapping settings. 
 
 - If your Workday provisioning job target is **Active Directory**, then in the attribute mappings section, update the logic associated with the `accountDisabled` flag to include a check for **Last Day of Work**.
 
@@ -132,23 +136,23 @@ The expression checks for the presence of `StatusTerminationLastDayOfWork`, whic
 
 - Optionally, you can flow the last day of work to an extension attribute in on-premises AD.
 
-- Save the provisioning job.
+- - After changing any settings, make sure to save the provisioning job.
 
 ## Test the query
 
 ### Terminate a worker in Workday
 
-Scenario: Terminate a worker in Workday (who is in a time zone ahead of PST). Set termination date to a value in the future with PT as reference.
+Terminate a worker in Workday (who is in a time zone ahead of PST). Set termination date to a value in the future with PT as reference.
 
 :::image type="content" source="media/configure-workday-termination-lookahead-query/workday-worker-history.png" alt-text="A screenshot of business process history of an employee.":::
 
-For example, the previous scenario is set in the PST time zone (May 28, 2025) and the user, Aus Mike Jordan who is the Melbourne time zone, has been terminated and the last day of work is set to May 28, 2025 Melbourne time. If this was a usual provisioning job run (without lookahead query), we would not see this termination event until the end of day PT on May 28, 2025.
+For example, the previous scenario is set in the PST time zone (May 28, 2025) and the user, Aus Mike Jordan who is in the Melbourne time zone, has been terminated and the last day of work is set to May 28, 2025 Melbourne time. If this was a usual provisioning job run (without the lookahead query), we wouldn't see this termination event until the end of day PT on May 28, 2025.
 
 ### Run provision on demand for the worker
 
-For the previous scenario, Provision on Demand for this user ran on May 28, 2025 at 6pm PT.
+For the previous scenario, Provision on Demand for this user ran on May 28, 2025 at 6:00pm PT.
 
-With the lookahead query, the last day of work for the user was fetched and the `accountEnabled` flag was updated to **false**.
+With the lookahead query, the last day of work for the user was fetched and the `accountEnabled` flag was updated to **False**.
 
 :::image type="content" source="media/configure-workday-termination-lookahead-query/modified-attributes.png" alt-text="A screenshot showing modified attributes.":::
 
@@ -156,5 +160,5 @@ With the lookahead query, the last day of work for the user was fetched and the 
 
 If you’ve stopped your test provisioning job, restart it.
 
-Let it reach **steady state** performing incremental sync. Schedule terminations for future. Verify if those get picked properly in your time zone.
+Let it reach **steady state** before performing the incremental sync. Schedule terminations for the future. Verify if those get picked properly in your time zone.
 
