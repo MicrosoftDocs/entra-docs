@@ -311,7 +311,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 ## Script to identify cloud members (users) of a group
 
  
-The following script is used to identify and remove cloud users from groups:
+The following script can be used to identify and remove cloud users from groups:
 
 
 ```powershell
