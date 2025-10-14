@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/25/2025
+ms.date: 10/04/2025
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -25,7 +25,6 @@ This article discusses known issues to be aware of when you work with app provis
 ### Unsupported synchronization scenarios
 
 - Synchronizing groups, devices, and contacts into another tenant
-- Synchronizing users across clouds
 - Synchronizing photos across tenants
 - Synchronizing contacts and converting contacts to B2B users
 - Synchronizing meeting rooms across tenants
