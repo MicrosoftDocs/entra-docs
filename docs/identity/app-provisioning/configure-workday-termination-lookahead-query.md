@@ -26,15 +26,15 @@ Examples of when termination details start appearing in the feed:
 
 - **Melbourne (UTC+10, PDT+17)** → May 14, 2025, **5:00 PM Melbourne time**
 
-> For a user in Melbourne whose last working day is 14-May-2025, the connector starts including the attributes `StatusTerminationLastDayOfWork` and `StatusTerminationDate`, starting Melbourne time at 5:00pm on 14-May-2025, which corresponds to the 17-hour time difference between PDT and Melbourne time in May.
+For a user in Melbourne whose last working day is 14-May-2025, the connector starts including the attributes `StatusTerminationLastDayOfWork` and `StatusTerminationDate`, starting Melbourne time at 5:00pm on 14-May-2025, which corresponds to the 17-hour time difference between PDT and Melbourne time in May.
 
 - **India (IST, UTC+5:30, PDT+13.5)** → May 14, 2025, **1:30 PM India time**
 
-> For a user in India whose last working day is 14-May-2025, the connector starts including the attributes `StatusTerminationLastDayOfWork` and `StatusTerminationDate`, starting India time 1:30pm on 14-May-2025, which corresponds to the 13.5-hour time difference between PDT and Indian Standard time in May.
+For a user in India whose last working day is 14-May-2025, the connector starts including the attributes `StatusTerminationLastDayOfWork` and `StatusTerminationDate`, starting India time 1:30pm on 14-May-2025, which corresponds to the 13.5-hour time difference between PDT and Indian Standard time in May.
 
 - **Japan (JST, UTC+9, PDT+16)** → May 14, 2025, **4:00 PM Japan time**
 
-> For a user in Japan whose last working day is 14-May-2025, the connector starts including the attributes `StatusTerminationLastDayOfWork` and `StatusTerminationDate`, starting Japan time 4:00pm on 14-May-2025, which corresponds to the 16-hour time difference between PDT and Japan Standard time in May.
+For a user in Japan whose last working day is 14-May-2025, the connector starts including the attributes `StatusTerminationLastDayOfWork` and `StatusTerminationDate`, starting Japan time 4:00pm on 14-May-2025, which corresponds to the 16-hour time difference between PDT and Japan Standard time in May.
 
 This adjustment ensures the termination data is available earlier for workers in time zones ahead of Pacific Time. By updating attribute mapping rules in Entra ID, you can then implement time-zone aware terminations.
 
@@ -46,7 +46,7 @@ This adjustment ensures the termination data is available earlier for workers in
 
 ## Job Configuration
 
-1. Got to your [Entra portal](https://aka.ms/EnableLastDayOfWork), where you want to test this feature. 
+1. Got to your [Entra portal](https://aka.ms/EnableLastDayOfWork). 
 > [!IMPORTANT] 
 > Do not use a production provisioning job. Perform the configurations described only with test users using  test instance of Workday and Entra ID.
 > [!NOTE] 
