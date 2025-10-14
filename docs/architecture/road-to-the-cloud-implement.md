@@ -65,9 +65,7 @@ These links provide more information about groups:
 
 ## Users
 
-If there are groups of users in your organization that do not have application dependencies to Active Directory, you can take a cloud-first approach by provisioning those users directly to Entra ID. If there are users that do not require access to Active Directory but have Active Directory accounts, you can use change their source of authority, and clean up their Active Directory account. 
-
-[Transferring SOA](../identity/hybrid/user-source-of-authority-overview.md) is suitable for users who don't have any application dependencies linked to AD DS. Identifying which users are associated with specific applications is crucial for effective migration planning.
+If there are users in your organization that do not have application dependencies to Active Directory, you can take a cloud-first approach by provisioning those users directly to Microsoft Entra ID. If there are users that do not require access to Active Directory, but have Active Directory accounts provisioned to them, their source of authority can be changed allowing you to clean their Active Directory account. 
 
 ## Devices
 

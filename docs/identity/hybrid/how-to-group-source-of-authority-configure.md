@@ -310,8 +310,6 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 ## Script to identify cloud members (users) of a group
 
-> [!NOTE]
-> This script is being provided as an example and should not be considered as official guidance on how to identify and remove cloud users from group memberships.
  
 The following script is used to identify and remove cloud users from groups:
 
@@ -450,6 +448,7 @@ if ($cloudUsers -eq 0) {
 Write-Host "`nScript completed."
 ```
 
+This script is being provided as an example and should not be considered as official guidance on how to identify and remove cloud users from group memberships.
 
 ## Related content
 
