@@ -20,7 +20,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
@@ -52,7 +52,7 @@ You can also configure options for showing, hiding, or customizing the self-serv
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email one-time passcode** is one of the local account options.
 
-## Social identity providers: Facebook, Google and Apple
+## Social identity providers: Facebook, Google, and Apple
 
 For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your users a seamless sign-up and sign-in experience. In an external tenant, you can allow a user to sign up and sign in using their own Facebook, Google, or Apple account.
 
@@ -103,20 +103,20 @@ For more information, see [SAML/WS-Fed identity providers](../direct-federation-
 
 When you federate with custom SAML/WS-Fed IdPs, users usually see the Microsoft sign-in page first and then choose their identity provider. These IdPs can be associated with one or more domains. Including the `domain_hint` parameter in the sign-in URL allows users to go directly to the sign-in page for the identity provider associated with the specified domain.
 
-For a custom SAML identity provider, use the domain specified in the **Domain name of federating IdP** field in the `domain_hint` syntax.
+For a custom SAML identity provider, use the domain specified in the **Domain name of federating IdP** field in the `domain_hint` syntax: `domain_hint=<domain name of federating idp>`
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
 
 ## Issuer acceleration
 
-For other external identity providers—such as Facebook, Google, Apple, or a custom OpenID Connect IdP—you can also use the `domain_hint` parameter to streamline sign-in. By adding an appropriate provider-specific hint users skip the Microsoft sign-in page and go directly to that provider’s sign-in screen.
+For other external identity providers—such as Facebook, Google, Apple, or a custom OpenID Connect IdP—you can also use the `domain_hint` parameter to streamline sign-in. By adding an appropriate provider-specific hint, users skip the Microsoft sign-in page and go directly to that provider’s sign-in screen.
 
 For example, you can use the following `domain_hint` values to go directly to the sign-in page for these identity providers:
 
-- **Facebook**: `&domain_hint=facebook`.  
-- **Google**: `&domain_hint=google`.  
-- **Apple**: `&domain_hint=apple`.
-- **Custom OIDC**: `&domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
+- **Facebook**: `domain_hint=facebook`.  
+- **Google**: `domain_hint=google`.  
+- **Apple**: `domain_hint=apple`.
+- **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
 
    :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
