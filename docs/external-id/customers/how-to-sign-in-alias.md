@@ -85,6 +85,52 @@ Follow these steps to add a username to an existing external user in the Microso
 
 1. Select **Save** to apply the changes.
 
+
+## Create users with username using Microsoft Graph API
+
+
+
+
+
+
+
+## Update an existing user to add a username with Microsoft Graph API
+
+You can also add a username to an existing user. In this scenario, you first need to retrieve a user account using a sign-in identifier.
+
+### Step 1: Get the user details
+
+The following example shows how to get a user account using a sign-in identifier.
+Use `$filter` to get the user object, and `$select` to return the id and `identities[]` properties. The following request example shows how to retrieve a user account using a sign-in identifier.
+
+```http
+GET https://graph.microsoft.com/v1.0/users?$select=displayName,id&$filter=identities/any(c:c/issuerAssignedId eq 'dylan@woodgrove.com' and c/issuer eq 'contoso.onmicrosoft.com')
+```
+
+The following response example shows the response with the user details.
+
+```http
+HTTP/1.1 200 OK
+Content-type: application/json
+ 
+{
+  "value": [
+    {
+      "displayName": "Dylan Williams",
+      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
+    }
+  ]
+}
+```
+
+### Step 2: Update the user details
+
+
+
+
+
+
+
 ## Test signing in with the alias or username
 
 You can test signing in with the email address and username you assigned to the user you created using the [Run user flow](how-to-test-user-flows.md) feature.
