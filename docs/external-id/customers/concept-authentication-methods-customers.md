@@ -107,6 +107,8 @@ For a custom SAML identity provider, use the domain specified in the **Domain na
 
 :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
 
+## Issuer acceleration
+
 For other external identity providers—such as Facebook, Google, Apple, or a custom OpenID Connect IdP—you can also use the `domain_hint` parameter to streamline sign-in. By adding an appropriate provider-specific hint, users skip the Microsoft sign-in page and go directly to that provider’s sign-in screen.
 
 For example, you can use the following `domain_hint` values to go directly to the sign-in page for these identity providers:
