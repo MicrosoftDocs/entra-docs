@@ -123,6 +123,11 @@
     items:
     - name: Configure Microsoft Entra hybrid join manually
       href: hybrid-join-manual.md
+  - name: Third-Party device management
+    expanded: false
+    items:
+    - name: Browser access guidance for third party mobile device management providers
+      href: browser-access-guidance-third-party-devices.md    
   - name: Enforce TLS 1.2
     href: reference-device-registration-tls-1-2.md
   - name: Microsoft Graph APIs
