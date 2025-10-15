@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 08/05/2025
+ms.date: 10/15/2025
 ms.author: jomondi
 ms.reviewer: ergreenl, phsignor
 ms.custom: enterprise-apps
@@ -28,7 +28,7 @@ In this article, you learn how to manage built-in and custom app consent policie
 An app consent policy consists of one or more "include" condition sets and zero or more "exclude" condition sets. For an event to be considered in an app consent policy, it must match *at least* one "include" condition set, and must not match *any* "exclude" condition set. The exclusion and inclusions are used to determine whether the actor affected by the given policy can grant consent or not.
 
 There are three main parts of app consent policies: 
-- **Metadata:** Properties of an app consent policy hold information such as the id, the description, and the display name of the consent policy.
+- **Metadata:** Properties of an app consent policy hold information such as the ID, the description, and the display name of the consent policy.
 - **Included condition sets:** A collection of condition sets that a given app consent request must match *at least one of* for the policy to pass. This collection must have at least *one* condition set. Each condition set contains rules that describe characteristics of an app consent request, such as verified publisher status, permissions requested, and more. 
 - **Excluded condition sets:** A collection of condition sets that a given app consent request shouldn't match *any* of to pass. This collection can be empty (it can contain zero excluded condition sets). Each condition set contains rules that describe characteristics of an app consent request, such as verified publisher status, permissions requested, and more.
 
@@ -59,9 +59,14 @@ Every tenant comes with a set of app consent policies that are the same across a
 
 ## Microsoft recommended current settings
 
-The setting labelled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT: Files.Read.All, Files.ReadWrite.All, Sites.Read.All, Sites.ReadWrite.All.
+The setting labeled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT: Files.Read.All, Files.ReadWrite.All, Sites.Read.All, Sites.ReadWrite.All.
 
 Updates to this consent policy will have at least 30 days of given notice.
+
+> [!NOTE]
+> Starting at the end of October 2025, the Microsoft managed policy will be updated to require admin consent for the following MS Graph permissions: Mail.Read, Mail.ReadWrite, Mail.ReadBasic, Mail.Read.Shared, Mail.ReadBasic.Shared, Mail.ReadWrite.Shared, MailboxItem.Read, Calendars.Read, Calendars.ReadBasic, Calendars.ReadWrite, Calendars.Read.Shared, Calendars.ReadBasic.Shared, Calendars.ReadWrite.Shared, Chat.Read, Chat.ReadWrite, ChannelMessage.Read.All,OnlineMeetings.Read, OnlineMeetings.ReadWrite, OnlineMeetingTranscript.Read.All, OnlineMeetingsRecording.Read.All. At the end of November 2025, this will expand to include EAS.AccessAsUser.All, EWS.AccessAsUser.All, IMAP.AcessAsUser.All, POP.AccessAsUser.All
+
+
 
 ## Multiple policies
 
