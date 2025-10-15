@@ -18,21 +18,13 @@ ms.reviewer: zhvolosh
 
 # Browser access guidance for third party mobile device management providers
 
+Update your [Android Device policy](https://developers.google.com/android/management/reference/rest/v1/enterprises.policies) resource to support automatically enabling browser access during device registration.
 
-<!-- 2. Introductory paragraph
-----------------------------------------------------------
+As announced in September 2024 and November 2025 in the What’s New in Microsoft Entra blog, we are automatically enabling browser access by default for Android users. This change is part of hardening all Microsoft products as part of the [Secure Future Initiative](https://www.microsoft.com/microsoft-cloud/resources/secure-future-initiative). As part of this initiative, we are eliminating the mechanism to export device registration keys from device storage after registration completes. 
 
-Required. Lead with a light intro that describes what the article covers. Answer the fundamental “why would I want to know this?” question. Keep it short.
 
-* Answer the fundamental "Why do I want this knowledge?" question.
-* Don't start the article with a bunch of notes or caveats.
-* Don’t link away from the article in the introduction.
-* For definitive concepts, it's better to lead with a sentence in the form, "X is a (type of) Y that does Z."
+This change means that users of Android devices will no longer be able to modify their browser access settings in Authenticator app or Company Portal after their device has been registered in Microsoft Entra ID.  Instead, Android users will have browser access enabled by default. 
 
--->
-
-[Introductory paragraph]
-TODO: Add your introductory paragraph
 
 <!-- 3. Prerequisites --------------------------------------------------------------------
 
@@ -41,8 +33,8 @@ language and use a unordered list format.
 
 -->
 
-## Prerequisites
-TODO: [List the prerequisites if appropriate]
+## If you are an MDM provider
+
 
 <!-- 4. H2s (Article body)
 --------------------------------------------------------------------
@@ -59,59 +51,8 @@ Required: In a series of H2 sections, the article body should discuss the ideas 
 
 -->
 
-## [Section 1 heading]
-TODO: add your content
-
-## [Section 2 heading]
-TODO: add your content
-
-## [Section n heading]
-TODO: add your content
-
-<!-- 5. Next step/Related content ------------------------------------------------------------------------ 
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
-
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
 
 
-<!-- 6. Next step/Related content ------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related
-content. You don't have to use either, but don't use both. For Next step, provide one link to the
-next step in a sequence. Use the blue box format For Related content provide 1-3 links. Include some
-context so the customer can determine why they would click the link. Add a context sentence for the
-following links.
-
--->
-
-## Next step
-TODO: Add your next step link(s)
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
 
 ## Related content
 TODO: Add your next step link(s)
