@@ -68,6 +68,6 @@ Use the instructions below to identify the exact effect in your tenant.
 1. Go through a sign-in flow with the dev console open to identify any violations.
 1. Review the information about the violation displayed in red. If a specific team or person caused the violation, it appears only in their flows. To ensure accuracy, thoroughly assess different sign-in scenarios within your organization. Here's an example of a violation:
 
-   ![Screenshot showing CSP violation example](./media/content-security-policy/content-security-policy-violation-example.png)
+   [![Screenshot showing CSP violation example](./media/content-security-policy/content-security-policy-violation-example.png)](./media/content-security-policy/content-security-policy-violation-example.png)
 
 The CSP update helps keep your organization safe by blocking unauthorized scripts and protecting your organization against modern threats. To ensure a smooth rollout, test your sign-in flows thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless. 
