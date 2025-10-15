@@ -15,6 +15,17 @@ ms.date: 10/15/2025
 
 Content Security Policy (CSP) is a browser security header that allows only trusted scripts and resources to load. Microsoft Entra ID enforces CSP on sign-in pages to block unapproved non-Microsoft scripts and reduce Cross-Site Scripting (XSS) risks.
 
+## Why script or code injection is dangerous
+
+Script or code injection occurs when malicious scripts run in a user’s browser without authorization. This vulnerability can lead to:
+
+- **Data theft**: Attackers can steal sensitive information such as credentials or tokens.
+- **Session hijacking**: Injected scripts can take control of active sessions.
+- **Malware delivery**: Malicious code can install harmful software on user devices.
+- **Loss of trust**: Compromised sign-in pages damage user confidence and brand reputation.
+
+CSP helps prevent these attacks by restricting which scripts can execute in the browser. By enforcing CSP, Microsoft Entra ID ensures only trusted Microsoft code runs during sign-in.
+
 ## CSP enforcement scope and key details
 
 CSP protects sign-in experiences by allowing only trusted Microsoft code. Our report-only mode analysis showed no first-party issues. Violations came from external browser extensions or injected scripts, often linked to non-Microsoft tools.
