@@ -205,48 +205,143 @@ Follow these steps to convert the SOA for a test group:
 You can use the following PowerShell script to automate Group SOA updates by using app-based authentication.
 
 ```powershell
-# Define your Microsoft Entra ID app details and tenant information
-$tenantId = ""
-$clientId = ""
-$certThumbprint = ""
+<#
+.SYNOPSIS
+    Updates groups to set isCloudManaged parameter to true for on-premises synchronized groups.
 
-# Connect to Microsoft Graph as App-Only using a certificate. The app registration must have the Group.Read.All Group-OnPremisesSyncBehavior.ReadWrite.All permissions granted.
-Connect-MgGraph -ClientId $clientId -TenantId $tenantId -CertificateThumbprint $certThumbprint
+.DESCRIPTION
+    This script reads a file containing group Ids, checks each group's OnPremisesSyncEnabled property,
+    and if true, calls the onPremisesSyncBehavior API to set isCloudManaged to true.
 
-#Connect to Microsoft Graph using delegated permissions
-#Connect-MgGraph -Scopes "Group.Read.All Group-OnPremisesSyncBehavior.ReadWrite.All" -TenantId $tenantId
+.PARAMETER FilePath
+    Mandatory. Path to the file containing group Ids (one per line).
 
-# Define the group name you want to query
-$groupName = "HR India"
+.PARAMETER WhatIf
+    Boolean parameter. When true (default), shows what would be done without making actual changes.
 
-# Retrieve the group using group name
-$group = Get-MgBetaGroup -Filter "displayName eq '$groupName'"
+.EXAMPLE
+    .\Update-GroupSoA.ps1 -FilePath "C:\temp\groups.txt"
+    .\Update-GroupSoA.ps1 -FilePath "C:\temp\groups.txt" -WhatIf $false
 
-# Ensure group is found
-if ($null -ne $group)
-{
-    $groupObjectID = $($group.Id)
-    # Define the Microsoft Graph API endpoint for the group
-    $url = "https://graph.microsoft.com/v1.0/groups/$groupObjectID/onPremisesSyncBehavior"
+.NOTES
+    Requires Microsoft.Graph PowerShell module to be installed and appropriate permissions.
+    Required Graph permissions: Group.ReadWrite.All, Group-OnPremisesSyncBehavior.ReadWrite.All
 
-    # Define the JSON payload for the PATCH request
-    $jsonPayload = @{
-        isCloudManaged = "true"
-    } | ConvertTo-Json
+    Input file should contain one group Id (GUID) per line.
+#>
 
-    # Make the PATCH request to update the JSON payload
-    Invoke-MgGraphRequest -Uri $url -Method Patch -ContentType "application/json" -Body $jsonPayload
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $true)]
+    [string]$FilePath,
 
-    $result = Invoke-MgGraphRequest -Method Get -Uri "https://graph.microsoft.com/v1.0/groups/$groupObjectID/onPremisesSyncBehavior?`$select=id,isCloudManaged"
+    [Parameter(Mandatory = $false)]
+    [bool]$WhatIf = $true
+)
 
-    Write-Host "Group Name: $($group.DisplayName)"
-    Write-Host "Group ID: $($result.id)"
-    Write-Host "SOA Converted: $($result.isCloudManaged)"
+# Import Groups module
+try {
+    $moduleName = "Microsoft.Graph.Groups"
+    if (-not (Get-Module -Name $moduleName)) {
+        Import-Module -Name $moduleName
+    }
+    Write-Host "Successfully imported Microsoft Graph modules."
 }
-else 
-{
-    Write-Warning "Group '$groupName' not found."
+catch {
+    Write-Error "Failed to import Microsoft Graph modules. Please ensure Microsoft.Graph PowerShell SDK is installed."
+    Write-Host "Install with: Install-Module Microsoft.Graph -Scope CurrentUser"
+    exit 1
 }
+
+# Connect to MS Graph
+$context = Get-MgContext
+if (-not $context) {
+    Connect-MgGraph -Scopes 'Group.ReadWrite.All', 'Group-OnPremisesSyncBehavior.ReadWrite.All'
+}
+
+# Validate input file
+if (-not (Test-Path $FilePath)) {
+    Write-Error "Input file not found: $FilePath"
+    exit 1
+}
+
+Write-Host "Starting group update process using $FilePath (WhatIf: $WhatIf)..."
+Write-Host "-----------------------------------"
+
+# Read group Ids from file
+$groupGuids = Get-Content $FilePath
+
+if ($groupGuids.Count -eq 0) {
+    Write-Error "No group Ids found in the input file."
+    exit 1
+}
+
+Write-Host "Found $($groupGuids.Count) group Ids to process."
+
+# Initialize counters for summary
+$totalGroups = $groupGuids.Count
+$processedCount = 0
+$updatedCount = 0
+$skippedCount = 0
+$errorCount = 0
+
+# Process each group
+foreach ($groupId in $groupGuids) {
+    $processedCount++
+    Write-Host "`nProcessing $groupId ($processedCount/$totalGroups)"
+
+    try {
+        $group = Get-MgGroup -GroupId $groupId -Property "Id,DisplayName,OnPremisesSyncEnabled"
+
+        Write-Host "Group Name: $($group.DisplayName)"
+        Write-Host "OnPremisesSyncEnabled: $($group.OnPremisesSyncEnabled)"
+
+        if ($group.OnPremisesSyncEnabled -eq $true) {
+            $actionDescription = "Set isCloudManaged to true for group '$($group.DisplayName)'"
+
+            if ($WhatIf) {
+                Write-Host "Skipping since WhatIf is enabled: $actionDescription"
+                $skippedCount++
+            }
+            else {
+                try {
+                    # Call the onPremisesSyncBehavior API to set isCloudManaged to true
+                    $body = @{
+                        isCloudManaged = $true
+                    }
+
+                    $uri = "https://graph.microsoft.com/v1.0/groups/$groupId/onPremisesSyncBehavior"
+                    Invoke-MgGraphRequest -Uri $uri -Method PATCH -Body ($body | ConvertTo-Json) -ContentType "application/json"
+
+                    Write-Host "SUCCESS: Updated group to cloud-managed"
+                    $updatedCount++
+                }
+                catch {
+                    Write-Host "ERROR: Failed to update group: $_"
+                    $errorCount++
+                }
+            }
+        }
+        else {
+            Write-Host "SKIPPED: Group is not on-premises synchronized"
+            $skippedCount++
+        }
+    }
+    catch {
+        Write-Host "ERROR: Failed to retrieve group information: $_"
+        $errorCount++
+    }
+}
+
+Write-Host "`n-----------------------------------"
+Write-Host "SUMMARY"
+Write-Host "-----------------------------------"
+Write-Host "Total groups processed: $totalGroups"
+Write-Host "Successfully updated: $updatedCount"
+Write-Host "Skipped (not sync-enabled or WhatIf): $skippedCount"
+Write-Host "Errors encountered: $errorCount"
+
+Write-Host "`nScript completed."
 ```
 
 ### Status of attributes after you convert SOA
@@ -333,8 +428,6 @@ The following script can be used to identify and remove cloud users from groups:
 
 .EXAMPLE
     .\Find-CloudUsersInGroup.ps1 -GroupId "12345678-1234-1234-1234-123456789012"
- 
-.EXAMPLE
     .\Find-CloudUsersInGroup.ps1 -GroupId "12345678-1234-1234-1234-123456789012" -RemoveUsers $true
 
 .NOTES
@@ -353,8 +446,14 @@ param(
 
 # Import required modules
 try {
-    Import-Module Microsoft.Graph.Groups -ErrorAction Stop
-    Import-Module Microsoft.Graph.Users -ErrorAction Stop
+    $moduleName = "Microsoft.Graph.Groups"
+    if (-not (Get-Module -Name $moduleName)) {
+        Import-Module -Name $moduleName
+    }
+    $moduleName = "Microsoft.Graph.Users"
+    if (-not (Get-Module -Name $moduleName)) {
+        Import-Module -Name $moduleName
+    }
     Write-Host "Microsoft Graph modules imported successfully"
 }
 catch {
@@ -363,14 +462,18 @@ catch {
     exit 1
 }
 
-# Connect to MS Graph and Verify the group exists
+# Connect to MS Graph and verify the group exists
 $context = Get-MgContext
 if (-not $context) {
     Connect-MgGraph -Scopes 'Group.Read.All','GroupMember.Read.All','GroupMember.ReadWrite.All','User.Read.All'
 }
 
-$group = Get-MgGroup -GroupId $GroupId
+$group = Get-MgGroup -GroupId $GroupId -Property "Id,DisplayName,MailEnabled"
 Write-Host "Processing group: $($group.DisplayName) (ID: $GroupId)"
+
+if ($group.MailEnabled -eq $true) {
+    Write-Warning "The specified group is mail-enabled. Users can only be identified using this script. To remove users, use Exchange."
+}
 
 # Initialize counters
 $totalUsers = 0
@@ -408,6 +511,7 @@ foreach ($user in $usersInGroup) {
 
         # Check if user is a cloud user
         $isCloudUser = -not $user.OnPremisesSyncEnabled
+
         if ($isCloudUser) {
             $cloudUsers++
 
