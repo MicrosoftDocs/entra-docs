@@ -24,6 +24,8 @@ Script or code injection occurs when malicious scripts run in a user’s browser
 - **Malware delivery**: Malicious code can install harmful software on user devices.
 - **Loss of trust**: Compromised sign-in pages damage user confidence and brand reputation.
 
+XSS is one of the most common injection attacks. It enables attackers to run malicious scripts in a user’s browser, which can steal credentials, hijack sessions, and compromise sensitive data.
+
 CSP helps prevent these attacks by restricting which scripts can execute in the browser. By enforcing CSP, Microsoft Entra ID ensures only trusted Microsoft code runs during sign-in.
 
 ## CSP enforcement scope and key details
