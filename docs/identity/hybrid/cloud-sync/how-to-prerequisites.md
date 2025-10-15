@@ -21,11 +21,27 @@ This article provides guidance on using Microsoft Entra Cloud Sync as your ident
 You need the following to use Microsoft Entra Cloud Sync:
 
 - Domain Administrator or Enterprise Administrator credentials to create the Microsoft Entra Connect cloud sync gMSA (group managed service account) to run the agent service.
-- A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
-- An on-premises server for the provisioning agent that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
 
-  - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId
-    
+- A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
+
+- Microsoft Entra Cloud Sync agent must be installed on a domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016. We recommend Windows Server 2022. You can deploy Microsoft Entra Cloud Sync on Windows Server 2016, but since it's in extended support, you might need [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for this configuration. Installing on unsupported versions of Windows Server may cause service failures or unexpected behavior.
+
+- This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
+
+  >[!IMPORTANT]
+  >**Windows Server 2025 is NOT supported. There is a known issue on Windows server 2025 with the [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) update installed that will cause Microsoft Entra Connect Sync to encounter sync issues.** If you upgraded to Windows Server 2025 and installed update [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9), apply the following registry key as soon as possible to avoid sync disruption.
+  >
+  >```
+  >Windows Registry Editor Version 5.00
+  >
+  >[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides]
+  >"2362988687"=dword:00000000
+  >```
+  >
+  >This registry modification is a workaround. Windows Server 2025 support for Microsoft Entra Cloud Sync is planned for a future release.
+
+- The Active Directory Schema is required to have the attribute msDS-ExternalDirectoryObjectId, which is available in Windows Server 2016 and later.
+
 - The Windows Credential Manager service (VaultSvc) cannot be disabled as that prevents the provisioning agent from installing.
 
 - High availability refers to the Microsoft Entra Cloud Sync's ability to operate continuously without failure for a long time. By having multiple active agents installed and running, Microsoft Entra Cloud Sync can continue to function even if one agent should fail. Microsoft recommends having 3 active agents installed for high availability.

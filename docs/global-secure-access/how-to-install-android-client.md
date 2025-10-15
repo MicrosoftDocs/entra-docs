@@ -1,21 +1,23 @@
 ---
 title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
+#customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/03/2025
+ms.date: 10/13/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
 ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
-# Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
+
 ---
+
 # Global Secure Access client for Android
 
 The Global Secure Access client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how end users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
 
-This article explains how to deploy the Global Secure Access client to Android devices.
+This article describes how to deploy the Global Secure Access client to Android devices.
 
 ## Prerequisites
 
@@ -27,6 +29,7 @@ This article explains how to deploy the Global Secure Access client to Android d
   - Devices not managed by your organization need to have the Microsoft Authenticator app installed.
   - Devices not managed through Intune need to have the Company Portal app installed.
   - Device enrollment is required to enforce Intune device compliance policies.
+- To enable a Kerberos single sign-on (SSO) experience, install and configure a third-party SSO client.
 
 ### Known limitations
 
@@ -106,7 +109,7 @@ Because the Android client is integrated with Defender for Endpoint, it's helpfu
 
 ![Screenshot of the Global Secure Access client in a disabled state.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
 
-To view client details, tap the tile on the dashboard. When enabled and working properly, the client shows an "Enabled" message. It also shows the date and time when the client connected to Global Secure Access.
+To view client details, tap the tile on the dashboard. When enabled and working properly, the client displays an "Enabled" message. It also shows the date and time when the client connected to Global Secure Access.
 
 ![Screenshot of the Global Secure Access client in an enabled state.](media/how-to-install-android-client/defender-global-secure-access-enabled.png)
 
