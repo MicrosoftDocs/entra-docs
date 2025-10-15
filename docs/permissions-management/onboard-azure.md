@@ -13,7 +13,7 @@ ms.author: jfields
 # Onboard a Microsoft Azure subscription
 
 > [!NOTE]
-> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on November 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how to onboard a Microsoft Azure subscription or subscriptions on Permissions Management. Onboarding a subscription creates a new authorization system to represent the Azure subscription in Permissions Management.
 
@@ -31,7 +31,7 @@ The Permissions Management service is built on Azure, and given you're onboardin
 ## Prerequisites
 
 To add Permissions Management to your Microsoft Entra tenant:
-- You must have a Microsoft Entra user account and an Azure command-line interface (Azure CLI) on your system, or an Azure subscription. If you don't already have one, [create a free account](https://azure.microsoft.com/free/).
+- You must have a Microsoft Entra user account and an Azure command-line interface (Azure CLI) on your system, or an Azure subscription. If you don't already have one, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - You must have **Microsoft.Authorization/roleAssignments/write** permission at the subscription or management group scope to perform these tasks. If you don't have this permission, you can ask someone who has this permission to perform these tasks for you.
 
 ## How to onboard an Azure subscription

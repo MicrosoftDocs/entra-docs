@@ -23,6 +23,13 @@ Microsoft Entra Connect Health for Sync is integrated with Microsoft Entra Conne
 
 For feature feedback, vote at [Connect Health User Voice channel](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
 
+## September 2025
+**Agent Updates**
+
+Microsoft Entra Connect Health (version 4.5.2528.0)
+  - Updated installer to default to US Government cloud for US Government cloud users
+  - Quality improvements & bug fixes
+    
 ## March 2025
 **Agent Updates**
 

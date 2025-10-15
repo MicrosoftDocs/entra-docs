@@ -13,19 +13,27 @@ ms.custom: it-pro
 ms.reviewer: yuan.karppanen
 ---
 
-# Bulk download members of a group in Microsoft Entra ID
+# Bulk download group members in Microsoft Entra ID
 
 You can bulk download the members of a group in your organization to a comma-separated values (CSV) file from the Microsoft Entra admin center. All admins and nonadmin users can download group membership lists.
 
-## Bulk download group membership
+## Bulk download group members
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Select **Microsoft Entra ID**.
-1. Select **Groups** > **All groups**.
-1. Open the group whose membership you want to download, and then select **Members**.
-1. On the **Members** page, select **Bulk operations** and choose **Download members** to download a CSV file that lists the group members.
+To download all members of a specific group:
 
-   :::image type="content" source="./media/groups-bulk-download-members/download-panel.png" alt-text="Screenshot that shows the Download Members command is on the profile page for the group.":::
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade) and in the left-hand navigation pane, select the **Groups** tab.
+
+2. Select a group from the list and navigate to the **Members** tab.
+
+    :::image type="content" source="media/bulk-operations/group-members-tab.png" alt-text="Screenshot of a selected group's Members tab listing users and service principals.":::
+
+3. Select **Bulk operations** > **Download members**.
+
+    :::image type="content" source="media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
+
+4. Enter a filename and select **Start download**.
+
+5. Follow the download process as described in [Bulk download groups](groups-bulk-download.md#bulk-download-groups).
 
 If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk download service limits](#bulk-download-service-limits).
 
@@ -42,4 +50,4 @@ You can see the status of all of your pending bulk requests on the **Bulk operat
 ## Next steps
 
 - [Bulk import group members](groups-bulk-import-members.md)
-- [Bulk remove group members](groups-bulk-download-members.md)
+- [Bulk remove group members](groups-bulk-remove-members.md)
