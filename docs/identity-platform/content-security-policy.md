@@ -22,7 +22,7 @@ CSP protects sign-in experiences by allowing only trusted Microsoft code. Our re
 Here’s what you need to know about the scope and key details of CSP enforcement:
 
 - **Header enforcement scope**: CSP enforcement applies only to browser-based sign-in experiences at `login.microsoftonline.com`. Other domains and nonbrowser authentication flows aren't affected.
-- **MSAL and API authentication**: MSAL-based authentication flows that interact with Microsoft Entra security token service (STS) APIs remain unaffected because enforcement is limited to the browser sign-in URL.
+- **Microsoft Authentication Library (MSAL) and API authentication**: MSAL-based authentication flows that interact with Microsoft Entra security token service (STS) APIs remain unaffected because enforcement is limited to the browser sign-in URL.
 - **External ID and custom domains**: External ID customers using custom domains or CIAM/B2C domains for sign-in aren't impacted. Enforcement is restricted to the Microsoft online login domain.
 
 ## Non-Microsoft tools with CSP violations
