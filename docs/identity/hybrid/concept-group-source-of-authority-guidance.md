@@ -1,5 +1,5 @@
 ---
-title: Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID
 description: Discover how to manage and transition Active Directory groups to Microsoft Entra ID using Group Source of Authority (SOA). Learn best practices for group management, provisioning, restoring, and rolling back changes in hybrid and cloud environments.
 author: justinha
 manager: dougeby
@@ -11,7 +11,7 @@ ms.author: justinha
 ms.reviewer: dahnyahk
 ---
 
-# Guidance for using Group Source of Authority (SOA) (Preview)
+# Guidance for using Group Source of Authority (SOA)
 
 Managing groups across hybrid environments is essential for organizations that transition from on-premises Active Directory Domain Services (AD DS) to the cloud. Group Source of Authority (SOA) in Microsoft Entra ID enables you to transfer group management from AD DS to the cloud, providing greater flexibility, modern governance, and streamlined administration. This guidance explains how to use Group SOA to manage, provision, restore, and roll back groups in hybrid and cloud environments. It explains best practices to clean up groups, convert group management, and ensure secure, efficient access control as you modernize your identity infrastructure.
 
