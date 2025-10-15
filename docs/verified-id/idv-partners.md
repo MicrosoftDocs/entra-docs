@@ -106,7 +106,7 @@ The following table showcases the list of Verified ID  IDV partners. If you're a
 | Persona | [Persona deployment guide](https://aka.ms/personaguide) | Persona integrates with Microsoft Entra Verified ID to unlock identity verification processes, enabling trusted user-owned credentials and frictionless onboarding. |
 | Transmit Security | [Transmit Security deployment guide](https://aka.ms/transmitsecurityguide) | Mosaic by Transmit Security integrates with Microsoft Entra Verified ID to deliver seamless, secure, and accurate identity verification through verifiable credentials. |
 | Vu | [Vu documentation](https://www.vusecurity.com/es/products/digital-identity) | Vu verifiable credentials with just a selfie and your ID. |
-| ZealID | [ZealID deployment guide](https://aka.ms/zealidguide) | ZealID Verified Credential Wallet powered by Microsoft Entra Verified ID completes the full cycle of identification and signing for various workflows. |
+| ZealID | [ZealID deployment guide](https://developer.zealid.com/docs/zealid-vc) | ZealID Verified Credential Wallet powered by Microsoft Entra Verified ID completes the full cycle of identification and signing for various workflows. |
 
 
 
