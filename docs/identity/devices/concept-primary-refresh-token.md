@@ -8,7 +8,7 @@ ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
 manager: dougeby
-ms.reviewer: 
+ms.reviewer: jploegert
 ms.custom: sfi-image-nochange
 ---
 # Understanding Primary Refresh Token (PRT)
@@ -152,7 +152,7 @@ A PRT is used by two key components in Windows:
 
 ### [macOS](#tab/macos-prt-used)
 
-A PSSO PRT is used by the [SSO extension](../../identity-platform/apple-sso-plugin.md) to provide SSO to apps and websites. A PRT is used to request refresh and access tokens for applications that rely on the SSO extension for token requests. It also enables SSO on browsers by injecting the PRT into browser requests.
+A PRT is used by the [SSO extension](../../identity-platform/apple-sso-plugin.md) to provide SSO to apps and websites. A PRT is used to request refresh and access tokens for applications that rely on the SSO extension for token requests. It also enables SSO on browsers by injecting the PRT into browser requests.
 
 The browsers that support Browser SSO are Safari, Firefox, Chrome, and Microsoft Edge.
 
@@ -172,7 +172,7 @@ The only native apps integrated today are Intune and Microsoft Edge Browser. For
 
 ## What is the lifetime of a PRT?
 
-Once issued, a PRT is valid for 90 days and is continuously renewed as long as the user actively uses the device. Organizations can limit the lifetime of PRT sessions using the Sign-in [frequency session control](../conditional-access/concept-conditional-access-session.md)
+Once issued, a PRT is valid for 90 days and is continuously renewed as long as the user actively uses the device. Organizations can require users re-authenticate in order to acces resources using the Sign-in [frequency session control](../conditional-access/concept-conditional-access-session.md)
 
 ## How is a PRT renewed?
 
