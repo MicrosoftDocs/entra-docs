@@ -25,31 +25,31 @@ As announced in September 2024 and November 2025 in the What’s New in Microsof
 
 This change means that users of Android devices will no longer be able to modify their browser access settings in Authenticator app or Company Portal after their device has been registered in Microsoft Entra ID.  Instead, Android users will have browser access enabled by default. 
 
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Optional: Make **Prerequisites** your first H2 in the article. Use clear and unambiguous
-language and use a unordered list format. 
-
--->
-
 ## If you are an MDM provider
 
 
-<!-- 4. H2s (Article body)
---------------------------------------------------------------------
+We request that you modify your [Android Device policy](https://developers.google.com/android/management/reference/rest/v1/enterprises.policies) resource to support enabling browser access during device registration. The policy resource is used to create and save groups of device and app management settings for your customers to apply to devices.
 
-Required: In a series of H2 sections, the article body should discuss the ideas that explain how "X is a (type of) Y that does Z":
+To enable browser access on behalf of your customers, you need to either create or modify an existing policy to provide a delegated certificate to the Authenticator app and Company Portal. 
 
-* Give each H2 a heading that sets expectations for the content that follows.
-* Follow the H2 headings with a sentence about how the section contributes to the whole.
-* Describe the concept's critical features in the context of defining what it is.
-* Provide an example of how it's used where, how it fits into the context, or what it does. If it's complex and new to the user, show at least two examples.
-* Provide a non-example if contrasting it will make it clearer to the user what the concept is.
-* Images, code blocks, or other graphical elements come after the text block it illustrates.
-* Don't number H2s.
+The following is an example of a policy: 
 
--->
+**Policy example for setting delegated scope CERT_INSTALL for authenticator**
+
+
+```html
+"applications": [{
+    "packageName": "com.azure.authenticator"
+    "installType": "REQUIRED_FOR_SETUP"
+    "delegatedScopes": [
+        "CERT_INSTALL"
+      ]   
+}],
+```
+
+
+
+
 
 
 
