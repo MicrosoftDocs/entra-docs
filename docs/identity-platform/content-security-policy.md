@@ -25,7 +25,6 @@ Here’s what you need to know about the scope and key details of CSP enforcemen
 - **MSAL and API authentication**: MSAL-based authentication flows that interact with Microsoft Entra security token service (STS) APIs remain unaffected because enforcement is limited to the browser sign-in URL.
 - **External ID and custom domains**: External ID customers using custom domains or CIAM/B2C domains for sign-in aren't impacted. Enforcement is restricted to the Microsoft online login domain.
 
-
 ## Non-Microsoft tools with CSP violations
 
 Several tools inject scripts into sign-in pages, causing CSP violations. These violations typically come from monitoring or workforce management extensions rather than Microsoft code.
