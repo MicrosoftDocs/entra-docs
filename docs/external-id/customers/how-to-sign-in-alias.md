@@ -29,7 +29,7 @@ You can enable users who sign in with a local account (email and password) to si
 
 ## Enable username in sign-in identifier policy
 
-To enable username as a sign-in identifier, you must first enable the sign-in identifier policy in the Microsoft Entra admin center. Enabling the username option in the policy allows users to sign in using their username. Otherwise, users can only sign in with their email address. Once the policy is enabled, users who have been assigned a username will be able to sign in using either their email address or username. Changing this setting applies to all sign-in pages.
+To enable username as a sign-in identifier, first enable the sign-in identifier policy in the Microsoft Entra admin center. Once enabled, users who have been assigned a username will be able to sign in using either their email address or username.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
@@ -57,7 +57,7 @@ You can also validate usernames against a custom regular expression. In the moda
 
 You can create users with both email address and username as sign-in identifiers using either the Microsoft Entra admin center or the Microsoft Graph API. This section describes creating users in the Microsoft Entra admin center.
  
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. In your external tenant, browse to **Entra ID** > **Users**.
 1. Select **+ New user** > **Create external user**.
@@ -75,10 +75,10 @@ You can create users with both email address and username as sign-in identifiers
 
 Follow these steps to add a username to an existing external user in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. In your external tenant, browse to **Entra ID** > **Users**.
-1. Select the user you want to update.
+1. Select the external user you want to update.
 1. In the user pane, select **Edit properties**.
 1. On the **Identity** tab, in the **Identities** section select **+ Add identity**.
 1. Select **User Name** from the dropdown and enter the username you want to assign to the user.
@@ -87,9 +87,9 @@ Follow these steps to add a username to an existing external user in the Microso
 
 1. Select **Save** to apply the changes.
 
-## Create users with username using Microsoft Graph API
+## Create users with username with the Microsoft Graph API
 
-After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to add a username to an existing user.
+After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to [add a username](/entra/external-id/customers/how-to-sign-in-alias#add-a-username-to-an-existing-user-with-the-microsoft-graph-api) to an existing user.
 The following request example shows how to create a user with both email address and username as sign-in identifiers.
 
 ```http
@@ -120,7 +120,7 @@ Content-type: application/json
 
 ## Add a username to an existing user with the Microsoft Graph API
 
-You can also add a username to an existing user. In this scenario, you first need to retrieve a user account using a sign-in identifier. 
+You can also add a username to an existing external user. In this scenario, you first need to retrieve a user account using a sign-in identifier.
 
 ### Step 1: Get the user details
 
@@ -185,7 +185,7 @@ You can customize the sign-in page to provide a better experience for your users
 
 ### Customize the hint text of the identifier field on the sign-in page
 
-You can customize the hint text of identifier field on the sign-in page via Company Branding. 
+You can customize the hint text of identifier field on the sign-in page for all apps via Company Branding.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
