@@ -1,6 +1,6 @@
 ---
 title: Content Security Policy (CSP) rollout in Microsoft Entra ID
-description: Learn how Microsoft Entra ID enforces CSP headers to protect sign-in pages from Cross-Site Scripting (XSS) attacks and how to prepare for phased rollout.
+description: Learn how Microsoft Entra ID enforces CSP headers to protect sign-in pages from cross-site scripting (XSS) attacks and how to prepare for phased rollout.
 author: henrymbuguakiarie
 manager: pmwongera
 ms.author: henrymbugua
@@ -13,7 +13,7 @@ ms.date: 10/15/2025
 
 # Content Security Policy overview for Microsoft Entra ID
 
-Content Security Policy (CSP) is a browser security header that allows only trusted scripts and resources to load. Microsoft Entra ID enforces CSP on sign-in pages to block unapproved non-Microsoft scripts and reduce Cross-Site Scripting (XSS) risks.
+Content Security Policy (CSP) is a browser security header that allows only trusted scripts and resources to load. Microsoft Entra ID enforces CSP on sign-in pages to block unapproved non-Microsoft scripts and reduce cross-site scripting (XSS) risks.
 
 ## Risk of script or code injection
 
