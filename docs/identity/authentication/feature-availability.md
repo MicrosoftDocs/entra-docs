@@ -6,7 +6,7 @@ description: Learn which Microsoft Entra features are available in Azure Governm
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 08/06/2025
+ms.date: 10/14/2025
 
 
 ms.author: justinha
@@ -19,7 +19,7 @@ ms.reviewer: mattsmith
 
 <!---Jeremy said there are additional features that don't fit nicely in this list that we need to add later--->
 
-This following tables list Microsoft Entra feature availability in Azure Government.
+This following tables list Microsoft Entra feature availability in Azure for US Government.
 
 <a name='azure-active-directory'></a>
 
@@ -46,6 +46,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 || ID Protection (vulnerabilities and risky accounts) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
 || ID Protection (risk events investigation, SIEM connectivity) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
 |**Administration and hybrid identity**|User and group management | &#x2705; | 
+|| Group Source of Authority (SOA) | &#x2705; | 
 || Advanced group management (Dynamic groups, naming policies, expiration, default classification) | &#x2705; | 
 || Directory synchronization—Microsoft Entra Connect (sync and cloud sync) | &#x2705; | 
 || Microsoft Entra Connect Health reporting | &#x2705; | 

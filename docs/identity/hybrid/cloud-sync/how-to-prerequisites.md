@@ -6,7 +6,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/29/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 
@@ -21,11 +21,27 @@ This article provides guidance on using Microsoft Entra Cloud Sync as your ident
 You need the following to use Microsoft Entra Cloud Sync:
 
 - Domain Administrator or Enterprise Administrator credentials to create the Microsoft Entra Connect cloud sync gMSA (group managed service account) to run the agent service.
-- A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
-- An on-premises server for the provisioning agent with Windows 2016 or later. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
 
-  - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId
-    
+- A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
+
+- Microsoft Entra Cloud Sync agent must be installed on a domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016. We recommend Windows Server 2022. You can deploy Microsoft Entra Cloud Sync on Windows Server 2016, but since it's in extended support, you might need [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for this configuration. Installing on unsupported versions of Windows Server may cause service failures or unexpected behavior.
+
+- This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
+
+  >[!IMPORTANT]
+  >**Windows Server 2025 is NOT supported. There is a known issue on Windows server 2025 with the [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) update installed that will cause Microsoft Entra Connect Sync to encounter sync issues.** If you upgraded to Windows Server 2025 and installed update [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9), apply the following registry key as soon as possible to avoid sync disruption.
+  >
+  >```
+  >Windows Registry Editor Version 5.00
+  >
+  >[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides]
+  >"2362988687"=dword:00000000
+  >```
+  >
+  >This registry modification is a workaround. Windows Server 2025 support for Microsoft Entra Cloud Sync is planned for a future release.
+
+- The Active Directory Schema is required to have the attribute msDS-ExternalDirectoryObjectId, which is available in Windows Server 2016 and later.
+
 - The Windows Credential Manager service (VaultSvc) cannot be disabled as that prevents the provisioning agent from installing.
 
 - High availability refers to the Microsoft Entra Cloud Sync's ability to operate continuously without failure for a long time. By having multiple active agents installed and running, Microsoft Entra Cloud Sync can continue to function even if one agent should fail. Microsoft recommends having 3 active agents installed for high availability.
@@ -43,7 +59,7 @@ We recommend that you harden your Microsoft Entra provisioning agent server to d
 - Ensure every machine has a unique local administrator password. For more information, see [Local Administrator Password Solution (Windows LAPS)](/windows-server/identity/laps/laps-overview) can configure unique random passwords on each workstation and server store them in Active Directory protected by an ACL. Only eligible authorized users can read or request the reset of these local administrator account passwords. Additional guidance for operating an environment with Windows LAPS and privileged access workstations (PAWs) can be found in [Operational standards based on clean source principle](/security/privileged-access-workstations/privileged-access-access-model#operational-standards-based-on-clean-source-principle). 
 - Implement dedicated [privileged access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) for all personnel with privileged access to your organization's information systems. 
 - Follow these [additional guidelines](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) to reduce the attack surface of your Active Directory environment.
-- Follow the [Monitor changes to federation configuration](../connect/how-to-connect-monitor-federation-changes.md) to set up alerts to monitor changes to the trust established between your Idp and Microsoft Entra ID. 
+- Follow the [Monitor changes to federation configuration](../connect/how-to-connect-monitor-federation-changes.md) to set up alerts to monitor changes to the trust established between your IdP and Microsoft Entra ID. 
 - Enable multifactor authentication (MFA) for all users that have privileged access in Microsoft Entra ID or in AD. One security issue with using Microsoft Entra provisioning agent is that if an attacker can get control over the Microsoft Entra provisioning agent server they can manipulate users in Microsoft Entra ID. To prevent an attacker from using these capabilities to take over Microsoft Entra accounts, MFA offers protections. For example, even if an attacker manages to reset a user's password using the Microsoft Entra provisioning agent, they still can't bypass the second factor.
 
 
@@ -53,10 +69,10 @@ A group Managed Service Account is a managed domain account that provides automa
 
 ### Prerequisites for gMSA
 
-1. The Active Directory schema in the gMSA domain's forest needs to be updated to Windows Server 2012 or later.
-2. [PowerShell RSAT modules](/windows-server/remote/remote-server-administration-tools) on a domain controller.
-3. At least one domain controller in the domain must be running Windows Server 2012 or later.
-4. A domain joined server where the agent is being installed needs to be either Windows Server 2016 or later.
+- The Active Directory schema in the gMSA domain's forest needs to be updated to Windows Server 2012 or later.
+- [PowerShell RSAT modules](/windows-server/remote/remote-server-administration-tools) on a domain controller.
+- At least one domain controller in the domain must be running Windows Server 2012 or later.
+- A domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016 for the agent installation.
 
 ### Custom gMSA account
 
@@ -88,7 +104,7 @@ Run the [IdFix tool](/microsoft-365/enterprise/set-up-directory-synchronization)
 
 ## In your on-premises environment
 
-1. Identify a domain-joined host server running Windows Server 2016 or greater with a minimum of 4-GB RAM and .NET 4.7.1+ runtime.
+1. Identify a domain-joined host server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016 with a minimum of 4-GB RAM and .NET 4.7.1+ runtime.
 2. The PowerShell execution policy on the local server must be set to Undefined or RemoteSigned.
 3. If there's a firewall between your servers and Microsoft Entra ID, see [Firewall and proxy requirements](#firewall-and-proxy-requirements).
 

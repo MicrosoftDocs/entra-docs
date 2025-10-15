@@ -44,7 +44,7 @@ This capability of inter-directory provisioning offers the following significant
 
 
 ### Common scenarios
-For a list of common hybrid synchronization scenarios, see [Common scenarios](#common-scenarios).
+For a list of common hybrid synchronization scenarios, see [Common scenarios](common-scenarios.md).
 
 ## Next steps 
 - [What is identity lifecycle management](~/id-governance/scenarios/govern-the-employee-lifecycle.md)

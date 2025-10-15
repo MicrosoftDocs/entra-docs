@@ -31,7 +31,7 @@ In this article, you learn how to:
 > * Create a one-way inbound forest trust in an on-premises AD DS environment
 > * Test and validate the trust relationship for authentication and resource access
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 > [!IMPORTANT]
 > Managed domain forests don't currently support Azure HDInsight or Azure Files. The default managed domain forests do support both of these additional services.
@@ -41,7 +41,7 @@ If you don't have an Azure subscription, [create an account](https://azure.micro
 To complete this article, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 

@@ -25,14 +25,14 @@ In this tutorial, you learn how to:
 > * Create a managed domain
 > * Enable password hash synchronization
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 
 To complete this tutorial, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * You need [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to enable Domain Services.
@@ -160,7 +160,7 @@ To authenticate users on the managed domain, Domain Services needs password hash
 >
 > Synchronized credential information in Microsoft Entra ID can't be re-used if you later create a managed domain - you must reconfigure the password hash synchronization to store the password hashes again. Previously domain-joined VMs or users won't be able to immediately authenticate - Microsoft Entra ID needs to generate and store the password hashes in the new managed domain.
 >
-> [Microsoft Entra Connect cloud sync is not supported with Domain Services](/azure/active-directory/hybrid/cloud-sync/what-is-cloud-sync#comparison-between-azure-ad-connect-and-cloud-sync). On-premises users need to be synced using Microsoft Entra Connect in order to be able to access domain-joined VMs. For more information, see [Password hash sync process for Domain Services and Microsoft Entra Connect][password-hash-sync-process].
+> [Microsoft Entra Cloud sync isn't supported with Domain Services](/azure/active-directory/hybrid/cloud-sync/what-is-cloud-sync#comparison-between-azure-ad-connect-and-cloud-sync). On-premises users need to be synced using Microsoft Entra Connect sync in order to be able to access domain-joined VMs. Connect sync must be installed on Windows Server 2022, Windows Server 2019, or Windows Server 2016. For more information, see [Password hash sync process for Domain Services and Microsoft Entra Connect][password-hash-sync-process].
 
 The steps to generate and store these password hashes are different for cloud-only user accounts created in Microsoft Entra ID versus user accounts that are synchronized from your on-premises directory using Microsoft Entra Connect.
 

@@ -1,19 +1,19 @@
 ---
-title: Configure Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to convert group management from Active Directory Domain Services to Microsoft Entra ID by using Group Source of Authority (SOA).
 author: Justinha
 manager: dougeby
 ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: how-to
-ms.date: 09/04/2025
+ms.date: 10/13/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
 
-# Configure Group Source of Authority (SOA) (Preview)
+# Configure Group Source of Authority (SOA)
 
-This article explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)](concept-source-of-authority-overview.md). 
+This article explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Embrace cloud-first posture: Convert Group Source of Authority to the cloud](concept-source-of-authority-overview.md). 
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This article explains the prerequisites and steps to configure Group Source of A
 | **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free license. |
 | **Sync client** | You can use either sync client to to synchronize SOA converted groups. If you use Connect Sync, upgrade to the minimum version [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). If you use Cloud Sync, upgrade to minimum version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700).  |
-| **Provisioning to AD (optional)** |  To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. |
+| **Provisioning to AD DS (optional)** | To provision a SOA converted group from Microsoft Entra ID to Active Directory Domain Services (AD DS), you need to use Cloud Sync. You also need to complete steps to prepare the groups for provisioning to AD DS with their original OU path. For more information, see [Prepare groups for Group SOA conversion and provisioning](concept-group-source-of-authority-guidance.md#prepare-groups-for-group-soa-conversion-and-provisioning). |
 
 ### Download Connect Sync client
 
@@ -67,6 +67,19 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-group-source-of-authority-configure/consent.png":::
 
+## Prepare groups for Group SOA conversion and provisioning
+
+If you want to provision the group back to AD DS, plan to complete the following steps to preserve the OU Path and set it in the **Group Provision to AD** configuration with the right mapping:
+
+1. Change the group scope for the AD DS groups to Universal.
+1. Create a tenant-scoped directory extension property for groups. 
+1. Map an on-premises value, such as the distinguished name (DN), directly into the extension property. 
+1. Verify the property value using Microsoft Graph. 
+1. Convert the Source of Authority (SOA) when ready. 
+1. Use custom expressions to ensure Cloud Sync provisions groups back to AD DS with the same CN and OU values. 
+
+For more information, see [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](cloud-sync/tutorial-group-provisioning.md).
+
 ## Convert SOA for a test group
 
 Follow these steps to convert the SOA for a test group:
@@ -83,7 +96,7 @@ Follow these steps to convert the SOA for a test group:
 1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 
    ```https
-   GET https://graph.microsoft.com/beta/groups/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" source="media/how-to-group-source-of-authority-configure/get-group.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a group.":::
@@ -111,7 +124,7 @@ Follow these steps to convert the SOA for a test group:
 1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
-   PATCH https://graph.microsoft.com/beta/groups/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": true
       }   
@@ -122,7 +135,7 @@ Follow these steps to convert the SOA for a test group:
 1. To validate the change, call GET to verify *isCloudManaged* is true.
 
    ```https
-   GET https://graph.microsoft.com/beta/groups/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify group properties.":::
@@ -192,48 +205,143 @@ Follow these steps to convert the SOA for a test group:
 You can use the following PowerShell script to automate Group SOA updates by using app-based authentication.
 
 ```powershell
-# Define your Microsoft Entra ID app details and tenant information
-$tenantId = ""
-$clientId = ""
-$certThumbprint = ""
+<#
+.SYNOPSIS
+    Updates groups to set isCloudManaged parameter to true for on-premises synchronized groups.
 
-# Connect to Microsoft Graph as App-Only using a certificate. The app registration must have the Group.Read.All Group-OnPremisesSyncBehavior.ReadWrite.All permissions granted.
-Connect-MgGraph -ClientId $clientId -TenantId $tenantId -CertificateThumbprint $certThumbprint
+.DESCRIPTION
+    This script reads a file containing group Ids, checks each group's OnPremisesSyncEnabled property,
+    and if true, calls the onPremisesSyncBehavior API to set isCloudManaged to true.
 
-#Connect to Microsoft Graph using delegated permissions
-#Connect-MgGraph -Scopes "Group.Read.All Group-OnPremisesSyncBehavior.ReadWrite.All" -TenantId $tenantId
+.PARAMETER FilePath
+    Mandatory. Path to the file containing group Ids (one per line).
 
-# Define the group name you want to query
-$groupName = "HR India"
+.PARAMETER WhatIf
+    Boolean parameter. When true (default), shows what would be done without making actual changes.
 
-# Retrieve the group using group name
-$group = Get-MgBetaGroup -Filter "displayName eq '$groupName'"
+.EXAMPLE
+    .\Update-GroupSoA.ps1 -FilePath "C:\temp\groups.txt"
+    .\Update-GroupSoA.ps1 -FilePath "C:\temp\groups.txt" -WhatIf $false
 
-# Ensure group is found
-if ($null -ne $group)
-{
-    $groupObjectID = $($group.Id)
-    # Define the Microsoft Graph API endpoint for the group
-    $url = "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior"
+.NOTES
+    Requires Microsoft.Graph PowerShell module to be installed and appropriate permissions.
+    Required Graph permissions: Group.ReadWrite.All, Group-OnPremisesSyncBehavior.ReadWrite.All
 
-    # Define the JSON payload for the PATCH request
-    $jsonPayload = @{
-        isCloudManaged = "true"
-    } | ConvertTo-Json
+    Input file should contain one group Id (GUID) per line.
+#>
 
-    # Make the PATCH request to update the JSON payload
-    Invoke-MgGraphRequest -Uri $url -Method Patch -ContentType "application/json" -Body $jsonPayload
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $true)]
+    [string]$FilePath,
 
-    $result = Invoke-MgGraphRequest -Method Get -Uri "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior?`$select=id,isCloudManaged"
+    [Parameter(Mandatory = $false)]
+    [bool]$WhatIf = $true
+)
 
-    Write-Host "Group Name: $($group.DisplayName)"
-    Write-Host "Group ID: $($result.id)"
-    Write-Host "SOA Converted: $($result.isCloudManaged)"
+# Import Groups module
+try {
+    $moduleName = "Microsoft.Graph.Groups"
+    if (-not (Get-Module -Name $moduleName)) {
+        Import-Module -Name $moduleName
+    }
+    Write-Host "Successfully imported Microsoft Graph modules."
 }
-else 
-{
-    Write-Warning "Group '$groupName' not found."
+catch {
+    Write-Error "Failed to import Microsoft Graph modules. Please ensure Microsoft.Graph PowerShell SDK is installed."
+    Write-Host "Install with: Install-Module Microsoft.Graph -Scope CurrentUser"
+    exit 1
 }
+
+# Connect to MS Graph
+$context = Get-MgContext
+if (-not $context) {
+    Connect-MgGraph -Scopes 'Group.ReadWrite.All', 'Group-OnPremisesSyncBehavior.ReadWrite.All'
+}
+
+# Validate input file
+if (-not (Test-Path $FilePath)) {
+    Write-Error "Input file not found: $FilePath"
+    exit 1
+}
+
+Write-Host "Starting group update process using $FilePath (WhatIf: $WhatIf)..."
+Write-Host "-----------------------------------"
+
+# Read group Ids from file
+$groupGuids = Get-Content $FilePath
+
+if ($groupGuids.Count -eq 0) {
+    Write-Error "No group Ids found in the input file."
+    exit 1
+}
+
+Write-Host "Found $($groupGuids.Count) group Ids to process."
+
+# Initialize counters for summary
+$totalGroups = $groupGuids.Count
+$processedCount = 0
+$updatedCount = 0
+$skippedCount = 0
+$errorCount = 0
+
+# Process each group
+foreach ($groupId in $groupGuids) {
+    $processedCount++
+    Write-Host "`nProcessing $groupId ($processedCount/$totalGroups)"
+
+    try {
+        $group = Get-MgGroup -GroupId $groupId -Property "Id,DisplayName,OnPremisesSyncEnabled"
+
+        Write-Host "Group Name: $($group.DisplayName)"
+        Write-Host "OnPremisesSyncEnabled: $($group.OnPremisesSyncEnabled)"
+
+        if ($group.OnPremisesSyncEnabled -eq $true) {
+            $actionDescription = "Set isCloudManaged to true for group '$($group.DisplayName)'"
+
+            if ($WhatIf) {
+                Write-Host "Skipping since WhatIf is enabled: $actionDescription"
+                $skippedCount++
+            }
+            else {
+                try {
+                    # Call the onPremisesSyncBehavior API to set isCloudManaged to true
+                    $body = @{
+                        isCloudManaged = $true
+                    }
+
+                    $uri = "https://graph.microsoft.com/v1.0/groups/$groupId/onPremisesSyncBehavior"
+                    Invoke-MgGraphRequest -Uri $uri -Method PATCH -Body ($body | ConvertTo-Json) -ContentType "application/json"
+
+                    Write-Host "SUCCESS: Updated group to cloud-managed"
+                    $updatedCount++
+                }
+                catch {
+                    Write-Host "ERROR: Failed to update group: $_"
+                    $errorCount++
+                }
+            }
+        }
+        else {
+            Write-Host "SKIPPED: Group is not on-premises synchronized"
+            $skippedCount++
+        }
+    }
+    catch {
+        Write-Host "ERROR: Failed to retrieve group information: $_"
+        $errorCount++
+    }
+}
+
+Write-Host "`n-----------------------------------"
+Write-Host "SUMMARY"
+Write-Host "-----------------------------------"
+Write-Host "Total groups processed: $totalGroups"
+Write-Host "Successfully updated: $updatedCount"
+Write-Host "Skipped (not sync-enabled or WhatIf): $skippedCount"
+Write-Host "Errors encountered: $errorCount"
+
+Write-Host "`nScript completed."
 ```
 
 ### Status of attributes after you convert SOA
@@ -250,12 +358,12 @@ Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | I
 ## Roll back SOA update
 
 > [!IMPORTANT] 
-> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to AD DS. The sync client takes over the object in the next sync cycle.
+> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to AD DS. The sync client takes over the object in the next sync cycle. For a sample PowerShell script to identify and remove cloud users from groups, see: [Script to identify cloud members (users) of a group](how-to-group-source-of-authority-configure.md#script-to-identify-cloud-members-users-of-a-group).
 
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
    ```https
-   PATCH https://graph.microsoft.com/beta/groups/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/groups/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": false
       }   
@@ -293,6 +401,158 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 - **No SOA conversion of nested groups**: If there are nested groups in AD DS, and you want to convert the SOA of the parent group or top group to Microsoft Entra ID, only the parent group SOA is converted. Nested groups in the parent group continue to be AD DS groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest in the hierarchy, and move up the tree.
 
 - **No support for extension attributes (1-15)**: Extension attributes 1–15 aren't supported on cloud security groups and aren't supported after SOA is converted.
+
+
+## Script to identify cloud members (users) of a group
+
+ 
+The following script can be used to identify and remove cloud users from groups:
+
+
+```powershell
+<#
+.SYNOPSIS
+    Finds cloud users in an Entra ID group and optionally removes them.
+
+.DESCRIPTION
+    This script pages through all users in a specified Entra ID group, identifies cloud users
+    (users where onPremisesSyncEnabled is not set to true), and prints their details.
+    Optionally removes these users from the group if removeUsers is set to true.
+
+.PARAMETER GroupId
+    The GUID of the Entra ID group to process. This parameter is required.
+
+.PARAMETER RemoveUsers
+    Boolean flag to indicate whether to remove cloud users from the group. 
+    Default is false (optional parameter).
+
+.EXAMPLE
+    .\Find-CloudUsersInGroup.ps1 -GroupId "12345678-1234-1234-1234-123456789012"
+    .\Find-CloudUsersInGroup.ps1 -GroupId "12345678-1234-1234-1234-123456789012" -RemoveUsers $true
+
+.NOTES
+    Requires Microsoft.Graph PowerShell module to be installed and appropriate permissions.
+    Required Graph permissions: Group.Read.All, GroupMember.Read.All, User.Read.All and GroupMember.ReadWrite.All (if removing users)
+#>
+
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $true)]
+    [System.Guid]$GroupId,
+
+    [Parameter(Mandatory = $false)]
+    [bool]$RemoveUsers = $false
+)
+
+# Import required modules
+try {
+    $moduleName = "Microsoft.Graph.Groups"
+    if (-not (Get-Module -Name $moduleName)) {
+        Import-Module -Name $moduleName
+    }
+    $moduleName = "Microsoft.Graph.Users"
+    if (-not (Get-Module -Name $moduleName)) {
+        Import-Module -Name $moduleName
+    }
+    Write-Host "Microsoft Graph modules imported successfully"
+}
+catch {
+    Write-Error "Failed to import Microsoft Graph modules. Please install Microsoft.Graph PowerShell module."
+    Write-Error "Run: Install-Module Microsoft.Graph -Scope CurrentUser"
+    exit 1
+}
+
+# Connect to MS Graph and verify the group exists
+$context = Get-MgContext
+if (-not $context) {
+    Connect-MgGraph -Scopes 'Group.Read.All','GroupMember.Read.All','GroupMember.ReadWrite.All','User.Read.All'
+}
+
+$group = Get-MgGroup -GroupId $GroupId -Property "Id,DisplayName,MailEnabled"
+Write-Host "Processing group: $($group.DisplayName) (ID: $GroupId)"
+
+if ($group.MailEnabled -eq $true) {
+    Write-Warning "The specified group is mail-enabled. Users can only be identified using this script. To remove users, use Exchange."
+}
+
+# Initialize counters
+$totalUsers = 0
+$cloudUsers = 0
+$removedUsers = 0
+
+Write-Host "`nStarting to process group users..."
+
+try {
+    # Get all group members that are users
+    $usersInGroup = Get-MgGroupMemberAsUser -GroupId $GroupId -All -Property "Id"
+
+    if ($usersInGroup.Count -ge 1) {
+        $totalUsers = $usersInGroup.Count
+        Write-Host "Found $totalUsers total users in the group"
+    }
+    else {
+        Write-Host "No users found in the group"
+        exit 0
+    }
+}
+catch {
+    Write-Error "Failed to retrieve group users: $($_.Exception.Message)"
+    exit 1
+}
+
+Write-Host "`nProcessing each user to identify cloud users..."
+Write-Host "-----------------"
+
+# Process each user
+foreach ($user in $usersInGroup) {
+    try {
+        # Get detailed user information
+        $user = Get-MgUser -UserId $user.Id -Property "Id,DisplayName,UserPrincipalName,OnPremisesSyncEnabled"
+
+        # Check if user is a cloud user
+        $isCloudUser = -not $user.OnPremisesSyncEnabled
+
+        if ($isCloudUser) {
+            $cloudUsers++
+
+            # Print cloud user details
+            Write-Host "Cloud User Found:"
+            Write-Host "  Object ID: $($user.Id)"
+            Write-Host "  Display Name: $($user.DisplayName)"
+            Write-Host "  User Principal Name: $($user.UserPrincipalName)"
+            Write-Host "  OnPremisesSyncEnabled: $($user.OnPremisesSyncEnabled)"
+
+            # Remove user from group if requested
+            if ($RemoveUsers) {
+                Remove-MgGroupMemberByRef -GroupId $GroupId -DirectoryObjectId $user.Id -ErrorAction Stop
+                Write-Host "REMOVED from group"
+                $removedUsers++
+            }
+        }
+    }
+    catch {
+        Write-Warning "Failed to process User ID $($user.Id): $($_.Exception.Message)"
+    }
+}
+
+# Summary
+Write-Host "-----------------"
+Write-Host "SUMMARY:"
+Write-Host "-----------------"
+Write-Host "Total group users processed: $totalUsers"
+Write-Host "Cloud users identified: $cloudUsers"
+if ($RemoveUsers) {
+    Write-Host "Cloud users successfully removed: $removedUsers"
+}
+
+if ($cloudUsers -eq 0) {
+    Write-Host "No cloud users found in this group."
+}
+
+Write-Host "`nScript completed."
+```
+
+This script is being provided as an example and should not be considered as official guidance on how to identify and remove cloud users from group memberships.
 
 ## Related content
 

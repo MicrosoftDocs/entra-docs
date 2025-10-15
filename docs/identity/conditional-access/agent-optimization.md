@@ -6,7 +6,7 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 08/28/2025
+ms.date: 10/14/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -31,9 +31,9 @@ The Conditional Access optimization agent evaluates policies such as requiring m
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
-   - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role is required to *activate the agent the first time*.
+   - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) is required to *activate the agent the first time*.
    - [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
-   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can *view the agent and take action on the suggestions*.
+   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
    - You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
@@ -53,13 +53,13 @@ The Conditional Access optimization agent evaluates policies such as requiring m
 
 The Conditional Access optimization agent scans your tenant for new users and applications from the last 24 hours and determines if Conditional Access policies are applicable. If the agent finds users or applications that aren't protected by Conditional Access policies, it provides suggested next steps, such as turning on or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
 
-Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
+Each time the agent runs, it takes the following steps. **These initial scanning steps do not consume any SCUs.**
 
 1. The agent scans all Conditional Access policies in your tenant.
 1. The agent checks for policy gaps and if any policies can be combined.
 1. The agent reviews previous suggestions so it won't suggest the same policy again.
 
-If the agent identifies something that wasn't previously suggested, it takes the following steps. **The agent action steps consume SCUs.**
+If the agent identifies something that wasn't previously suggested, it takes the following steps. **These agent action steps consume SCUs.**
 
 1. The agent identifies a policy gap or a pair of policies that can be consolidated.
 1. The agent evaluates any custom instructions you provided.
@@ -96,10 +96,7 @@ The policy suggestions identified by the agent include:
 
    :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the view details button highlighted." lightbox="media/agent-optimization/view-details.png":::
 
-1. Select **Start agent** to begin your first run. 
-   - Avoid using an account with a role activated through PIM.
-   - A message that says "The agent is starting its first run" appears in the upper-right corner.
-   - The first run might take a few minutes to complete.
+1. Select **Start agent** to begin your first run. Avoid using an account with a role activated through PIM.
 
    :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization start agent page." lightbox="media/agent-optimization/start-agent.png":::
 
@@ -109,20 +106,16 @@ When the agent overview page loads, any suggestions appear in the **Recent sugge
 
 ## Settings
 
-Once the agent is enabled, you can adjust a few settings. You can access the settings from two places in the Microsoft Entra admin center:
+Once the agent is enabled, you can adjust a few settings. After making any changes, select the **Save** button at the bottom of the page. You can access the settings from two places in the Microsoft Entra admin center:
 
 - From **Agents** > **Conditional Access optimization agent** > **Settings**.
 - From **Conditional Access** > select the **Conditional Access optimization agent** card under **Policy summary** > **Settings**.
 
-### Agent capabilities
-
-By default, the Conditional Access optimization agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+:::image type="content" source="media/agent-optimization/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/agent-settings.png":::
 
 ### Trigger
 
-The agent is configured to run every 24 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
-
-:::image type="content" source="media/agent-optimization/trigger-setting.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/trigger-setting.png":::
+The agent is configured to run every 24 hours based on when it's initially configured. You can change when the agent runs by toggling the **Trigger** setting off and then back on when you want it to run.
 
 ### Microsoft Entra objects to monitor
 
@@ -130,13 +123,40 @@ Use the checkboxes under **Microsoft Entra objects to monitor** to specify what 
 
 ### Agent capabilities
 
-By default, the Conditional Access optimization agent can create new policies in report-only mode. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+By default, the Conditional Access optimization agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
 
+### Notifications
+
+The Conditional Access optimization agent can send notifications through Microsoft Teams to a select set of recipients. With the **Conditional Access agent** app in Microsoft Teams, recipients receive notifications directly in their Teams chat when the agent surfaces a new suggestion.
+
+To add the agent app to Microsoft Teams:
+
+1. In Microsoft Teams, select **Apps** from the left navigation menu and search for and select the **Conditional Access agent**.
+
+   :::image type="content" source="media/agent-optimization/agent-teams-app.png" alt-text="Screenshot of the Conditional Access app button in Teams." lightbox="media/agent-optimization/agent-teams-app.png":::
+
+1. Select the **Add** button, then select the **Open** button to open the app.
+1. To make accessing the app easier, right-click the app icon in the left navigation menu and select **Pin**.
+
+To configure notifications in the Conditional Access optimization agent settings:
+
+1. In the Conditional Access optimization agent settings, select the **Select users and groups** link.
+1. Select the users or groups you want to receive notifications, then select the **Select** button.
+ 
+   :::image type="content" source="media/agent-optimization/agent-teams-people-picker.png" alt-text="Screenshot of the Conditional Access agent setting to pick the users and groups for notifications." lightbox="media/agent-optimization/agent-teams-people-picker.png":::
+
+1. At the bottom of the main **Settings** page, select the **Save** button.
+
+You can select up to 10 recipients to receive notifications. You can select a group to receive the notifications, but the membership of that group can't exceed 10 users. If you select a group that has fewer than 10 users but more are added later, the group no longer receives notifications. Similarly, the notifications can only be sent to five objects, such as a combination of individual users or groups.
+
+At this time, the agent's communication is one direction, so you can receive notifications but can't respond to them in Microsoft Teams. To take action on a suggestion, select **Review suggestion** from the chat to open the Conditional Access optimization agent in the Microsoft Entra admin center.
+
+   :::image type="content" source="media/agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/agent-optimization/agent-teams-suggestion-message.png":::
 ### Phased rollout
 
-When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can control and monitor the effect of the new policy. Phased rollout is on by default.
+When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default.
 
-You can change the number of days between each phase by either dragging the slider or entering a number in the text box. After making any changes, select the **Save** button at the bottom of the page. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
+You can change the number of days between each phase by either dragging the slider or entering a number in the text box. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
 
 :::image type="content" source="media/agent-optimization/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/phased-rollout-settings.png":::
 
@@ -146,15 +166,31 @@ There are several key points to consider regarding the identity and permissions 
 
 - The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*.
 - Avoid using an account that requires elevation through PIM for just-in-time elevation. If that user hasn't elevated to the appropriate role when the agent runs, the run fails.
-- The Security Administrator and Global Administrator roles have access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+- Security Administrator has access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - The user who approves a suggestion to add users to a policy becomes an owner of a new group that adds the users to a policy. 
 - The audit logs for actions taken by the agent are associated with the user who enabled the agent. You can find the name of the account that started the agent in the **Identity and permissions** section of the settings.
 
    :::image type="content" source="media/agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/identity-permissions.png":::
 
+### ServiceNow integration (Preview)
+
+Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/security/plugin-servicenow) can now have the Conditional Access optimization agent create ServiceNow change requests for each new suggestion the agent generates. This allows IT and security teams to track, review, and approve or reject agent suggestions within existing ServiceNow workflows. At this time, only change requests (CHG) are supported.
+
+To use the ServiceNow integration, your organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
+
+:::image type="content" source="media/agent-optimization/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/agent-optimization/agent-service-now-integration-setting.png":::
+
+When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow change request. The change request includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The integration also provides a feedback loop: The agent monitors the state of the ServiceNow change request and can automatically implement the change when the change request is approved.
+
+:::image type="content" source="media/agent-optimization/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/agent-optimization/agent-service-now-integration-ticket.png":::
+
 ### Custom instructions
 
-You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to include or exclude specific users, groups, and roles. Custom instructions can be used to exclude objects from being considered by the agent altogether or added to the Conditional Access policy itself. Exceptions can be applied to specific policies, such as excluding a specific group from a policy, such as requiring MFA or mobile application management policies. 
+You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to:
+
+- Include or exclude specific users, groups, and roles
+- Exclude objects from being considered by the agent or added to the Conditional Access policy 
+- Apply exceptions to specific policies, such as excluding a specific group from a policy, requiring MFA, or requiring mobile application management policies. 
 
 You can enter either the name or the object ID in the custom instructions. Both values are validated. If you add the name of the group, the object ID for that group is automatically added on your behalf. Example custom instructions:
 
@@ -176,11 +212,11 @@ Please note that some of the content in the video, such as the user interface el
 
 ## Intune integration
 
-The Conditional Access Optimization Agent integrates with Microsoft Intune to monitor application protection policies configured in Intune and identify potential gaps in Conditional Access enforcement. This proactive and automated approach ensures that Conditional Access policies remain aligned with organizational security goals and compliance requirements. The agent suggestions are the same as the other policy suggestions, except that Intune provides part of the signal to the agent.
+The Conditional Access Optimization Agent integrates with Microsoft Intune to monitor device compliance and application protection policies configured in Intune and identify potential gaps in Conditional Access enforcement. This proactive and automated approach ensures that Conditional Access policies remain aligned with organizational security goals and compliance requirements. The agent suggestions are the same as the other policy suggestions, except that Intune provides part of the signal to the agent.
 
 Agent suggestions for Intune scenarios cover specific user groups and platforms (iOS or Android). For example, the agent identifies an active Intune app protection policy that targets the "Finance" group, but determines there isn't a sufficient Conditional Access policy that enforces app protection. The agent creates a report-only policy that requires users to access resources only through compliant applications on iOS devices.
 
-To identify Intune app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator AND Global Reader. Conditional Access Administrator is not sufficient on its own for the agent to product Intune suggestions.
+To identify Intune device compliance and app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator AND Global Reader. Conditional Access Administrator isn't sufficient on its own for the agent to produce Intune suggestions.
 
 ## Remove agent
 
