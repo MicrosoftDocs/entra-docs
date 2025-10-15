@@ -47,7 +47,23 @@ The following is an example of a policy:
 }],
 ```
 
+CERT_INSTALL - Grants access to certificate installation and management. - https://developer.android.com/reference/android/app/admin/DevicePolicyManager#DELEGATION_CERT_INSTALL
 
+
+More information can be found here: [Android MDM create and apply policy](https://microsoft.sharepoint-df.com/:w:/t/AzureADDevices/EUBvQT-nqK1GhgrNwoOsUbYBUfCGH0uZM7bLQBPS56bggw?e=UvUuF0).
+
+
+If you fail to make the requested change, your end users will encounter the following behavior: 
+
+-	If the device is registered in Entra with Browser Access enabled
+    - No effect 
+-	If the device is registered in Entra but Browser Access is not enabled: 
+    - Access to CA-protected resources on a non-Edge browser will be blocked.
+    - If the user requires access to CA-protected resources on a web browser, they will have to use Edge. 
+-	If the device is undergoing registration for the first time: 
+    - The user will be prompted to choose a certificate type and name their certificate as part of the registration flow. 
+    - This certificate will be used to enable browser access. 
+    - Once this certificate is on the device, browser access will be enabled, and the user can access CA-protected resources on any browser of their choice. 
 
 
 
@@ -55,11 +71,5 @@ The following is an example of a policy:
 
 
 ## Related content
-TODO: Add your next step link(s)
-- [Write concepts](article-concept.md)
 
-<!--
-Remove all the comments in this template before you sign-off or merge to the 
-main branch.
-
--->
+- [What's new in Microsoft Entra - September 2024](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/whats-new-in-microsoft-entra---september-2024/4253153)
