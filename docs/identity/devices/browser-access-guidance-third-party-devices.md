@@ -55,9 +55,9 @@ More information can be found here: [Android MDM create and apply policy](https:
 
 If you fail to make the requested change, your end users will encounter the following behavior: 
 
--	If the device is registered in Entra with Browser Access enabled
+-	If the device is registered in Microsoft Entra with Browser Access enabled
     - No effect 
--	If the device is registered in Entra but Browser Access is not enabled: 
+-	If the device is registered in Microsoft Entra but Browser Access is not enabled: 
     - Access to CA-protected resources on a non-Edge browser will be blocked.
     - If the user requires access to CA-protected resources on a web browser, they will have to use Edge. 
 -	If the device is undergoing registration for the first time: 
