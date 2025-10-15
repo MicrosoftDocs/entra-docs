@@ -22,6 +22,14 @@ Previously, you could only use a single branding theme for your entire tenant wh
 
 This article describes how you can create multiple branding themes for different applications in your tenant.
 
+## Prerequisites
+
+- A Microsoft Entra [workforce](../../fundamentals/create-new-tenant.md) or [external](quickstart-tenant-setup.md) tenant.
+- Have at least the [Organizational Branding Administrator](../../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator) role.
+- Have at least the [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) role for applications that you want to apply a theme to.
+- A registered application in your tenant. If you haven't registered an application yet, see [Register an application](../../identity-platform/quickstart-register-app.md).
+- Review the file size requirements for each image you want to add. Use a photo editor if needed to create correctly sized and formatted images: PNG, JPG, or JPEG with image size 245x36px and maximum file size 10KB.
+
 ## Branding theme properties
 
 When you create a branding theme, here are some of the properties you can customize.
@@ -46,9 +54,9 @@ When you create a branding theme, here are some of the properties you can custom
 | Footer | Space across the bottom of the page for privacy and Terms of Use information. |
 | Template | The layout of the page and sign-in boxes. |
 
-## Branding themes and company branding
+## How branding themes work
 
-Branding themes are similar to [company branding](../../fundamentals/how-to-customize-branding.md), but with some differences.
+Here are some important things to know about how branding themes work.
 
 - Branding themes can be applied to specific applications, while company branding applies to all applications in a tenant.
 - Branding themes don't inherit from company branding.
@@ -62,14 +70,7 @@ Here are some of the limits and constraints for branding themes.
 
 - You can create up to 5 branding themes per tenant.
 - The live preview capability previews style and layout changes and only shows the Sign in page. Live preview does not include any custom text overrides.
-
-## Prerequisites
-
-- A Microsoft Entra [workforce](../../fundamentals/create-new-tenant.md) or [external](quickstart-tenant-setup.md) tenant.
-- Have at least the [Organizational Branding Administrator](../../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator) role.
-- Have at least the [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) role for applications that you want to apply a theme to.
-- A registered application in your tenant. If you haven't registered an application yet, see [Register an application](../../identity-platform/quickstart-register-app.md).
-- Review the file size requirements for each image you want to add. Use a photo editor if needed to create correctly sized and formatted images: PNG, JPG, or JPEG with image size 245x36px and maximum file size 10KB.
+- You can't use the name **Default theme** for your branding theme name. This name is reserved for company branding settings.
 
 ## Create a new theme
 
@@ -180,3 +181,5 @@ In this section, you add a language to a theme.
 To create app-based branding with Microsoft Graph APIs, see .
 
 ## Related content
+
+- [Configure your company branding](../../fundamentals/how-to-customize-branding.md)
