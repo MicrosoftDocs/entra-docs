@@ -63,6 +63,11 @@ The setting labelled "Let Microsoft manage your consent settings," the Microsoft
 
 Updates to this consent policy will have at least 30 days of given notice.
 
+> [!NOTE]
+> Starting at the end of October 2025, the Microsoft managed policy will be updated to require admin consent for the following MS Graph permissions: Mail.Read, Mail.ReadWrite, Mail.ReadBasic, Mail.Read.Shared, Mail.ReadBasic.Shared, Mail.ReadWrite.Shared, MailboxItem.Read, Calendars.Read, Calendars.ReadBasic, Calendars.ReadWrite, Calendars.Read.Shared, Calendars.ReadBasic.Shared, Calendars.ReadWrite.Shared, Chat.Read, Chat.ReadWrite, ChannelMessage.Read.All,OnlineMeetings.Read, OnlineMeetings.ReadWrite, OnlineMeetingTranscript.Read.All, OnlineMeetingsRecording.Read.All. At the end of November 2025, this will expand to include EAS.AccessAsUser.All, EWS.AccessAsUser.All, IMAP.AcessAsUser.All, POP.AccessAsUser.All
+
+
+
 ## Multiple policies
 
 A user can have more than one policy that allows them to give consent. Each policy is evaluated separately (as in, an exclusion from one policy does not affect inclusions of another policy) and the user only needs one policy to approve to be allowed to consent for a specific event. For example, an application admin can consent to everything a regular user can (thanks to the default policy applied to all users), and they also have broader permissions through the microsoft-application-admin policy, which lets them approve requests for any API permission—except Microsoft Graph app roles.
