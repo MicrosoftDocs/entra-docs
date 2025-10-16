@@ -40,7 +40,7 @@ Here’s what you need to know about the scope and key details of CSP enforcemen
 
 ## Non-Microsoft tools with CSP violations
 
-Some third-party tools may inject scripts into sign-in pages, which can cause CSP violations. When CSP is enforced on login.microsoftonline.com, these scripts will be blocked from executing. Users will still be able to sign in normally, but this may disrupt certain sign-in or monitoring workflows.
+Some third-party tools may inject scripts into sign-in pages, which can cause CSP violations. When CSP is enforced on `login.microsoftonline.com`, these scripts will be blocked from executing. Users will still be able to sign in normally, but this may disrupt certain sign-in or monitoring workflows.
  
 Customers using tools that rely on injected scripts should work directly with their vendors to identify and implement fixes that comply with CSP requirements.
 
