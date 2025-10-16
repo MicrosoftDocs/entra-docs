@@ -151,6 +151,8 @@ Some organizations also used SAP IDM to read from [SAP Human Capital Management 
 
 ![Diagram of SAP HR integrations.](~/id-governance/media/sap/sap-hr.png)
 
+Other integration options for organizations which have SAP HCM and don't have SuccessFactors are listed in [Provision users from SAP human capital management (HCM) to Microsoft Entra ID](../../identity/saas-apps/sap-hcm-microsoft-entra-identity-provisioning.md).
+
 If you have other systems of record sources besides SuccessFactors or SAP HCM, you can use the Microsoft Entra [inbound provisioning API](~/identity/app-provisioning/inbound-provisioning-api-concepts.md) to bring in workers from that system of record as users in Windows Server or Microsoft Entra ID.
 
   :::image type="content" source="~/identity/app-provisioning/media/inbound-provisioning-api-concepts/api-workflow-scenarios.png" alt-text="Diagram showing API workflow scenarios." lightbox="~/identity/app-provisioning/media/inbound-provisioning-api-concepts/api-workflow-scenarios.png":::
