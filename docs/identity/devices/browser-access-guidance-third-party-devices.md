@@ -63,9 +63,7 @@ If you fail to make the requested change, your end users encounter the following
     - Once this certificate is on the device, browser access is enabled, and the user can access CA-protected resources on any browser of their choice. 
 
 
-:::image type="content" source="media/browser-access-guidance-third-party-devices/choose-certificate-type.png" alt-text="Screenshot of choosing certificate type on phone." lightbox="media/browser-access-guidance-third-party-devices/choose-certificate-type.png":::
-
-:::image type="content" source="media/browser-access-guidance-third-party-devices/name-certificate.png" alt-text="Screenshot of naming certificate on phone." lightbox="media/browser-access-guidance-third-party-devices/name-certificate.png":::
+:::image type="content" source="media/browser-access-guidance-third-party-devices/choose-certificate-type.png" alt-text="Screenshot of choosing certificate type on phone." lightbox="media/browser-access-guidance-third-party-devices/choose-certificate-type.png"::: :::image type="content" source="media/browser-access-guidance-third-party-devices/name-certificate.png" alt-text="Screenshot of naming certificate on phone." lightbox="media/browser-access-guidance-third-party-devices/name-certificate.png":::
 
 
 
