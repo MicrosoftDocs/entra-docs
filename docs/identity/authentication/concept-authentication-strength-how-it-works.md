@@ -1,5 +1,5 @@
 ---
-title: Overview of How Microsoft Entra Authentication Strengths Work in a Conditional Access Policy
+title: How Authentication Strengths Work in a Conditional Access Policy
 description: Learn how admins can use a Conditional Access policy to require specific authentication combinations to access a resource.
 ms.service: entra-id
 ms.subservice: authentication

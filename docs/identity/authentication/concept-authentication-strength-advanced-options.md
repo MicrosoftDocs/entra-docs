@@ -46,11 +46,11 @@ To check if a Conditional Access policy references an authentication strength, g
 
 ## Configure advanced options for passkeys (FIDO2)
 
-You can restrict the usage of passkeys (FIDO2) based on their Authenticator Attestation GUIDs (AAGUIDs). You can use this capability to require a FIDO2 security key from a specific manufacturer for access to a resource. To require a specific FIDO2 security key:
+You can restrict the usage of passkeys (FIDO2) based on their Authenticator Attestation GUIDs (AAGUIDs). You can use this capability to require a FIDO2 security key from a specific manufacturer for access to a resource:
 
 1. After you create a custom authentication strength, select **Passkeys (FIDO2)** > **Advanced options**.
 
-   :::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot that shows the link for advanced options for passkeys (FIDO2).":::
+   :::image type="content" border="true" source="./media/concept-authentication-strengths/key.png" alt-text="Screenshot that shows the link for advanced options for passkeys.":::
 
 1. Next to **Add AAGUID**, select the plus sign (**+**), copy the AAGUID value, and then select **Save**.
 
@@ -58,17 +58,17 @@ You can restrict the usage of passkeys (FIDO2) based on their Authenticator Atte
 
 ## Configure advanced options for certificate-based authentication
 
-In the [authentication binding policy](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the object identifier (OID) for the certificate issuer or policy. You can also require single-factor or multifactor authentication certificates for specific resources, based on a Conditional Access authentication strength policy.
+In the [authentication binding policy](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy object identifier (OID). You can also require single-factor or multifactor authentication certificates for specific resources, based on a Conditional Access authentication strength policy.
 
 By using advanced options for authentication strength, you can require a specific certificate issuer or policy OID to further restrict sign-ins to an application.
 
-For example, assume that an organization named Contoso issues smart cards to employees with three different types of multifactor certificates. One certificate is for confidential clearance, another for secret clearance, and a third is for top-secret clearance. Each one is distinguished by properties of the certificate, such as policy OID or issuer. Contoso wants to ensure that only users who have the appropriate multifactor certificate can access data for each classification.
+For example, assume that an organization named Contoso issues smart cards to employees with three different types of multifactor certificates. One certificate is for confidential clearance, another is for secret clearance, and a third is for top-secret clearance. Each one is distinguished by properties of the certificate, such as issuer or policy OID. Contoso wants to ensure that only users who have the appropriate multifactor certificate can access data for each classification.
 
 The next sections show how to configure advanced options for certificate-based authentication (CBA) by using the Microsoft Entra admin center and Microsoft Graph.
 
 ### Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator.
 
 1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 
@@ -84,9 +84,9 @@ The next sections show how to configure advanced options for certificate-based a
 
 1. Select or enter the certificate issuers, and enter the allowed policy OIDs.
 
-   You can configure certificate issuers either by selecting them in the **Certificate issuers from the certificate authorities in your tenant** dropdown list. The dropdown menu lists all certificate authorities from the tenant,whether they're single-factor or multifactor.
+   You can configure certificate issuers by selecting them in the **Certificate issuers from the certificate authorities in your tenant** dropdown list. The dropdown menu lists all certificate authorities from the tenant, whether they're single-factor or multifactor.
 
-   You can enter certificate issuers in the **Other Certificate Issuers by SubjectkeyIdentifier** box for scenarios where the certificate that you want to use is not uploaded to the certificate authorities in your tenant. One such example is external user scenarios, where the user could be authenticating in their home tenant and auth strength is being enforced on the resource tenant.
+   For scenarios where the certificate that you want to use is not uploaded to the certificate authorities in your tenant, you can enter certificate issuers in the **Other Certificate Issuers by SubjectkeyIdentifier** box. One such example is external user scenarios, where the user could be authenticating in the home tenant and the authentication strength is being enforced on the resource tenant.
 
    :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or-other-issuer.png" alt-text="Screenshot that shows the configuration options for certificate issuers and policy object identifiers.":::
 
@@ -150,7 +150,7 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 
 ### Advanced options for passkeys (FIDO2)
 
-Advanced options for passkeys (FIDO2) aren't supported for external users whose home tenant and resource tentant are located in a different Microsoft cloud services.
+Advanced options for passkeys (FIDO2) aren't supported for external users whose home tenant and resource tenant are located in different Microsoft cloud services.
 
 ### Advanced options for certificate-based authentication
 
@@ -163,33 +163,37 @@ Advanced options for passkeys (FIDO2) aren't supported for external users whose 
   > [!NOTE]
   > If the certificate doesn't conform, user authentication might succeed but not satisfy the issuer SKI restrictions for the authentication strength policy.
 
-- During sign-in, the first five policy OIDs from the end user certificate are considered, and compared with the policy OIDs configured in the authentication strength policy. If the user certificate has more than five policy OIDs, Microsoft Entra ID takes into account the first five policy OIDs (in lexical order) that match the authentication strength requirements.
+- During sign-in, Microsoft Entra ID considers the first five policy OIDs from the user certificate and compares them with the policy OIDs configured in the authentication strength policy. If the user certificate has more than five policy OIDs, Microsoft Entra ID takes into account the first five policy OIDs (in lexical order) that match the authentication strength requirements.
 
-- For business-to-business users, let's take an example where Contoso invites users from another organization (Fabrikam) to its tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant. Access dependson the cross-tenant access setting:
-  - When cross-tenant access setting is **Off** (Contoso doesn't accept MFA that was performed by the home tenant) - Using certificate-based authentication on the resource tenant isn't supported.
-  - When cross-tenant access setting is **On**, Fabrikam and Contoso are on the same Microsoft cloud – meaning, both Fabrikam and Contoso tenants are on the Azure commercial cloud or on the Azure for US Government cloud. In addition, Contoso trusts MFA that was performed on the home tenant. In this case:
-    - Access to a specific resource can be restricted by using the policy OIDs or the "other certificate issuer by SubjectkeyIdentifier" in the custom authentication strength policy.
-    - Access to specific resources can be restricted by using the "Other certificate issuer by SubjectkeyIdentifier" setting in the custom authentication strength policy.
-  - When cross-tenant access setting is **On**, Fabrikam and Contoso aren't on the same Microsoft cloud – for example, Fabrikam's tenant is on the Azure commercial cloud and Contoso's tenant is on the Azure for US Government cloud – access to specific resources can't be restricted by using the issuer ID or policy OIDs in the custom authentication strength policy.
+- For business-to-business users, let's take an example where Contoso invites users from another organization (Fabrikam) to its tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant. Access depends on the cross-tenant access setting:
+  - When the cross-tenant access setting is **Off**, it means Contoso doesn't accept MFA that the home tenant performed. Certificate-based authentication on the resource tenant isn't supported.
+  - When cross-tenant access setting is **On**, Fabrikam and Contoso tenants are on the same Microsoft cloud service (the Azure commercial cloud platform or the Azure for US Government cloud platform). In addition, Contoso trusts MFA that was performed on the home tenant. In this case:
+    - The admin can restrict access to a specific resource by using the policy OIDs or the **Other Certificate Issuers by SubjectkeyIdentifier** setting in the custom authentication strength policy.
+    - The admin can restrict access to specific resources by using the **Other Certificate Issuers by SubjectkeyIdentifier** setting in the custom authentication strength policy.
+  - When the cross-tenant access setting is **On**, Fabrikam and Contoso aren't on the same Microsoft cloud service. For example, Fabrikam's tenant is on the Azure commercial cloud platform and Contoso's tenant is on the Azure for US Government cloud platform. The admin can't restrict access to specific resources by using the issuer ID or policy OIDs in the custom authentication strength policy.
 
-## Troubleshoot advanced options for authentication strength
+## Troubleshoot advanced options for authentication strengths
 
 ### Users can't use their passkey (FIDO2) to sign in
 
-A Conditional Access Administrator can restrict access to specific security keys. When a user tries to sign in by using a key they can't use, this **You can't get there from here** message appears. The user has to restart the session, and sign-in with a different passkey (FIDO2).
+A Conditional Access administrator can restrict access to specific security keys. When a user tries to sign in with a key that they can't use, a "You can't get there from here" message appears. The user has to restart the session and sign in with a different passkey (FIDO2).
 
-:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when using a restricted passkey (FIDO2).":::
+:::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when a user is using a restricted passkey.":::
 
-### How to check certificate policy OIDs and issuer
+### You need to check certificate issuer or policy OID
 
-You can confirm the personal certificate properties match the configuration in authentication strength advanced options.
+You can confirm that the personal certificate properties match the configuration in the advanced options for authentication strengths:
 
-On the user's device, sign in as an Administrator. Click **Run**, type `certmgr.msc`, and press Enter. To check policy OIDs, click **Personal**, right-click the certificate and click **Details**.
+1. On the user's device, sign in as an administrator.
 
-:::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certificate-manager-msc.png" alt-text="Screenshot that shows how to check certificate policy OIDs and issuer.":::
+1. Select **Run**, type **certmgr.msc**, and then select the <kbd>Enter</kbd> key.
+
+1. Select **Personal** > **Certificates**, right-click the certificate, and then go to the **Details** tab.
+
+:::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certificate-manager-msc.png" alt-text="Screenshot that shows selections for checking a certificate issuer or policy OID.":::
 
 ## Related content
 
 - [Built-in Conditional Access authentication strengths](concept-authentication-strengths.md)
-- [How authentication strength works for external users](concept-authentication-strength-external-users.md)
-- [Troubleshoot authentication strengths](troubleshoot-authentication-strengths.md) 
+- [How authentication strengths work for external users](concept-authentication-strength-external-users.md)
+- [Troubleshoot authentication strengths](troubleshoot-authentication-strengths.md)
