@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 09/10/2025
+ms.date: 10/16/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -211,7 +211,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 |Return code|Code type|
 |-----------|---------|
 |0|Success|
-|3010|Success|
+|3010|Soft reboot|
 |1618|Retry|
 
    :::image type="content" source="media/how-to-install-windows-client/program-install-parameters.png" alt-text="Screenshot of Program to configure installation parameters." lightbox="media/how-to-install-windows-client/program-install-parameters.png":::
@@ -248,7 +248,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 1. Select **OK**. Select **Next**.
 1. Select **Next** twice to go to **Assignments**.
 1. Under **Required**, select **+Add group**. Select a group of users or devices. Select **Select**.
-1. The restart grace period is enabled, since the script prompts for a reboot.
+1. Set the **Restart grace period** to **Enabled** to avoid disrupting users with an abrupt device reboot.
 
     :::image type="content" source="media/how-to-install-windows-client/restart-grace-period.png" alt-text="Screenshot of the Assignments tab showing the required groups and that restart grace period is enabled." lightbox="media/how-to-install-windows-client/restart-grace-period.png":::
 
