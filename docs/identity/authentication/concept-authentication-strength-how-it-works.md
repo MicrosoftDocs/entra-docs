@@ -38,13 +38,13 @@ For example, an administrator configures a Conditional Access policy with a cust
 
 During sign-in, Microsoft Entra ID checks all settings to determine which methods are allowed, which methods are registered, and which methods the Conditional Access policy requires. For a successful sign-in, the method must be allowed, be registered by the user (either before or as part of the access request), and satisfy the authentication strength.
 
-## How multiple Conditional Access authentication strength policies are evaluated
+## How multiple authentication strength policies are evaluated
 
 In general, when multiple Conditional Access policies apply for a sign-in, the user must meet all conditions from all policies. In the same vein, when multiple Conditional Access authentication strength policies apply to the sign-in, the user must satisfy all of the authentication strength conditions.
 
 For example, if two authentication strength policies both require a passkey (FIDO2), the user can use a FIDO2 security key to satisfy both policies. If the two authentication strength policies have different sets of methods, the user must use multiple methods to satisfy both policies.
 
-### How multiple Conditional Access authentication strength policies are evaluated for registering security info
+### How multiple authentication strength policies are evaluated for registering security info
 
 For [Interrupt mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#interrupt-mode) in security info registration, the evaluation of authentication is treated differently. Authentication strengths that target the user action of **Registering security info** are preferred over other authentication strength policies that target **All resources** (formerly **All cloud apps**). All other grant controls (such as **Require device to be marked as compliant**) from other Conditional Access policies that are in scope for the sign-in apply as usual.
 
@@ -95,9 +95,9 @@ The following authentication methods can't be registered as part of Interrupt mo
 
 ### Federated user experience
 
-For federated domains, an admin can enforce MFA by using Microsoft Entra Conditional Access or by setting `federatedIdpMfaBehavior` for the on-premises federation provider. If `federatedIdpMfaBehavior` is set to `enforceMfaByFederatedIdp`, the user must authenticate on the federated identity provider and can satisfy only the **Federated Multi-Factor** combination of the authentication strength requirement. For more information about the federation settings, see [Migrate from federation to cloud authentication](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md).
+For federated domains, an admin can enforce MFA by using Microsoft Entra Conditional Access or by setting `federatedIdpMfaBehavior` for the on-premises federation provider. If `federatedIdpMfaBehavior` is set to `enforceMfaByFederatedIdp`, the user must authenticate on the federated identity provider and can satisfy only the *federated multifactor* combination of the authentication strength requirement. For more information about the federation settings, see [Migrate from federation to cloud authentication](../hybrid/connect/migrate-from-federation-to-cloud-authentication.md).
 
-If a user from a federated domain has MFA settings in scope for staged rollout, the user can complete multifactor authentication in the cloud and satisfy any of the **Federated single-factor + something you have** combinations. For more information about staged rollout, see [Enable staged rollout](how-to-mfa-server-migration-utility.md#enable-staged-rollout).
+If a user from a federated domain has MFA settings in scope for staged rollout, the user can complete multifactor authentication in the cloud and satisfy any of the *federated single-factor plus something the user has* combinations. For more information about staged rollout, see [Enable staged rollout](how-to-mfa-server-migration-utility.md#enable-staged-rollout).
 
 ## Related content
 

@@ -84,7 +84,7 @@ The next sections show how to configure advanced options for certificate-based a
 
 1. Select or enter the certificate issuers, and enter the allowed policy OIDs.
 
-   You can configure certificate issuers by selecting them in the **Certificate issuers from the certificate authorities in your tenant** dropdown list. The dropdown menu lists all certificate authorities from the tenant, whether they're single-factor or multifactor.
+   You can configure certificate issuers by selecting them in the **Certificate issuers from the certificate authorities in your tenant** dropdown list. The dropdown list shows all certificate authorities from the tenant, whether they're single-factor or multifactor.
 
    For scenarios where the certificate that you want to use is not uploaded to the certificate authorities in your tenant, you can enter certificate issuers in the **Other Certificate Issuers by SubjectkeyIdentifier** box. One such example is external user scenarios, where the user could be authenticating in the home tenant and the authentication strength is being enforced on the resource tenant.
 
@@ -150,7 +150,7 @@ POST beta/identity/conditionalAccess/authenticationStrength/policies/{authentica
 
 ### Advanced options for passkeys (FIDO2)
 
-Advanced options for passkeys (FIDO2) aren't supported for external users whose home tenant and resource tenant are located in different Microsoft cloud services.
+Advanced options for passkeys (FIDO2) aren't supported for external users whose home tenant and resource tenant are located in different Microsoft clouds.
 
 ### Advanced options for certificate-based authentication
 
@@ -167,10 +167,10 @@ Advanced options for passkeys (FIDO2) aren't supported for external users whose 
 
 - For business-to-business users, let's take an example where Contoso invites users from another organization (Fabrikam) to its tenant. In this case, Contoso is the resource tenant and Fabrikam is the home tenant. Access depends on the cross-tenant access setting:
   - When the cross-tenant access setting is **Off**, it means Contoso doesn't accept MFA that the home tenant performed. Certificate-based authentication on the resource tenant isn't supported.
-  - When cross-tenant access setting is **On**, Fabrikam and Contoso tenants are on the same Microsoft cloud service (the Azure commercial cloud platform or the Azure for US Government cloud platform). In addition, Contoso trusts MFA that was performed on the home tenant. In this case:
+  - When cross-tenant access setting is **On**, Fabrikam and Contoso tenants are on the same Microsoft cloud (the Azure commercial cloud platform or the Azure for US Government cloud platform). In addition, Contoso trusts MFA that was performed on the home tenant. In this case:
     - The admin can restrict access to a specific resource by using the policy OIDs or the **Other Certificate Issuers by SubjectkeyIdentifier** setting in the custom authentication strength policy.
     - The admin can restrict access to specific resources by using the **Other Certificate Issuers by SubjectkeyIdentifier** setting in the custom authentication strength policy.
-  - When the cross-tenant access setting is **On**, Fabrikam and Contoso aren't on the same Microsoft cloud service. For example, Fabrikam's tenant is on the Azure commercial cloud platform and Contoso's tenant is on the Azure for US Government cloud platform. The admin can't restrict access to specific resources by using the issuer ID or policy OIDs in the custom authentication strength policy.
+  - When the cross-tenant access setting is **On**, Fabrikam and Contoso aren't on the same Microsoft cloud. For example, Fabrikam's tenant is on the Azure commercial cloud platform and Contoso's tenant is on the Azure for US Government cloud platform. The admin can't restrict access to specific resources by using the issuer ID or policy OIDs in the custom authentication strength policy.
 
 ## Troubleshoot advanced options for authentication strengths
 
@@ -180,7 +180,7 @@ A Conditional Access administrator can restrict access to specific security keys
 
 :::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/restricted-security-key.png" alt-text="Screenshot of a sign-in error when a user is using a restricted passkey.":::
 
-### You need to check certificate issuer or policy OID
+### You need to check the certificate issuer or policy OID
 
 You can confirm that the personal certificate properties match the configuration in the advanced options for authentication strengths:
 

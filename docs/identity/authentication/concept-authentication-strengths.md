@@ -106,7 +106,7 @@ Conditional Access administrators can also create custom authentication strength
 
 ## FAQ
 
-### Should I use an authentication strength or the Authentication methods policy?
+### Should I use an authentication strength or the policy for authentication methods?
 
 An authentication strength is based on the **Authentication methods** policy. The **Authentication methods** policy helps to scope and configure authentication methods that users and groups can use across Microsoft Entra ID. An authentication strength allows another restriction of methods for specific scenarios, such as sensitive resource access, user risk, and location.
 
