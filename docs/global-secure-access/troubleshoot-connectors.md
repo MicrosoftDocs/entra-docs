@@ -51,7 +51,7 @@ Sample PowerShell Output:
 
 Sample User Interface Output (Starting version 1.5.4522.0):
 
-![Screenshot showing the "ConnectorDiagnosticsTool" application UI output.](https://github.com/user-attachments/assets/e04fd857-3495-48d0-a4f8-5938d19785ac)
+<img width="1734" height="1235" alt="connector-diagnostic-tool-ui" src="https://github.com/user-attachments/assets/f8375772-2d0a-4228-bd77-7215107eaec8" />
 
 ## Verify connectivity to the cloud application proxy service and Microsoft sign in page
 
