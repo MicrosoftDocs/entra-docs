@@ -58,9 +58,7 @@ When you create a branding theme, here are some of the properties you can custom
 
 Here are some important things to know about how branding themes work.
 
-- Branding themes can be applied to specific applications, while company branding applies to all applications in a tenant.
-- Branding themes don't inherit from company branding.
-- Any properties defined in branding themes will override settings in company branding.
+- Branding themes can be applied to specific applications, while company branding applies tenant-wide.
 - Company branding is used as fallback for any properties not defined in the branding theme.
 - Default branding is used for any properties not defined in company branding.
 
