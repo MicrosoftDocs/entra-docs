@@ -40,14 +40,9 @@ Here’s what you need to know about the scope and key details of CSP enforcemen
 
 ## Non-Microsoft tools with CSP violations
 
-Several tools inject scripts into sign-in pages, causing CSP violations. The most common tools include:
-
-- **UKG Pro Mobile App** – HR/workforce management plugin.
-- **Datadog Synthetics** – Monitoring and synthetic testing.
-- **Kronos WFD Mobile App** – Workforce management extension.
-- **Site24x7** – Website and application monitoring.
-
-When CSP is enforced on `login.microsoftonline.com`, these tools will be blocked from executing, which can disrupt sign-in or monitoring workflows. Customers using these tools should coordinate with vendors for fixes. 
+Some third-party tools may inject scripts into sign-in pages, which can cause CSP violations. When CSP is enforced on login.microsoftonline.com, these scripts will be blocked from executing. Users will still be able to sign in normally, but this may disrupt certain sign-in or monitoring workflows.
+ 
+Customers using tools that rely on injected scripts should work directly with their vendors to identify and implement fixes that comply with CSP requirements.
 
 ## When will you see CSP enforcement?
 
