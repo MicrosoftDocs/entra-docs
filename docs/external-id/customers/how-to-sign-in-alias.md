@@ -16,7 +16,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-You can enable users who sign in with a local account (email and password) to sign in with an alias or username (alternate sign-in identifier) in addition to their email address. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
+You can enable users who sign in with a local account (email and password) to also sign in using a username or alias (alternative sign-in identifier) in addition to their email address. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
 
 :::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option.":::
 
@@ -29,7 +29,7 @@ You can enable users who sign in with a local account (email and password) to si
 
 ## Enable username in sign-in identifier policy
 
-To enable username as a sign-in identifier, first enable the sign-in identifier policy in the Microsoft Entra admin center. UserPrincipalName (UPN) and Email address are selected by default. Once username is also  enabled, users who have been assigned a username will be able to sign in using either their email address or username.
+To enable username as a sign-in identifier, first enable the sign-in identifier policy in the Microsoft Entra admin center. UserPrincipalName (UPN) and email address are selected by default. Once username is also  enabled, users who have been assigned a username will be able to sign in using either their email address or username.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
@@ -73,7 +73,7 @@ You can create external users with both email address and username as sign-in id
 
 ## Update existing users to add a username in the admin center
 
-Follow these steps to add a username to an existing external user in the Microsoft Entra admin center. Username can only be added to external users with email/password accounts.
+Follow these steps to add a username to an existing external user in the Microsoft Entra admin center. Username can only be added to external users with email and password accounts.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
