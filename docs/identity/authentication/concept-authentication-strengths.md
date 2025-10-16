@@ -15,7 +15,7 @@ ms.reviewer: inbarc
 
 An authentication strength is a Microsoft Entra Conditional Access control that specifies which combinations of authentication methods users can use to access a resource. Users can satisfy the strength requirements by authenticating with any of the allowed combinations.
 
-For example, an authentication strength can require that users can use only phishing-resistant authentication methods to access a sensitive resource. To access a nonsensitive resource, administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as a password and a text message.
+For example, an authentication strength can require users to use only phishing-resistant authentication methods to access a sensitive resource. To access a nonsensitive resource, administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as a password and a text message.
 
 An authentication strength is based on the [policy for authentication method](concept-authentication-methods.md). That is, administrators can scope authentication methods for specific users and groups to be used across Microsoft Entra ID federated applications. An authentication strength allows further control over the usage of these methods, based on specific scenarios such as sensitive resource access, user risk, and location.
 

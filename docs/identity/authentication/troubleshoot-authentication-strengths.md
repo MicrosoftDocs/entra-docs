@@ -56,7 +56,7 @@ Use the **Sign-ins** log to find more information about the sign-in:
 
 ## A user can't register a new method during sign-in
 
-Some methods can't be registered during sign-in, or they need more setup beyond the combined registration. For more information, see [Register passwordless authentication methods](concept-authentication-strength-how-it-works.md#register-passwordless-authentication-methods).
+Some methods can't be registered during sign-in, or they need more setup beyond the combined registration. For more information, see [Register passwordless authentication methods](concept-authentication-strength-how-it-works.md#registration-of-passwordless-authentication-methods).
 
 :::image type="content" border="true" source="./media/troubleshoot-authentication-strengths/register.png" alt-text="Screenshot of a sign-in error when a user can't register a method.":::
 
