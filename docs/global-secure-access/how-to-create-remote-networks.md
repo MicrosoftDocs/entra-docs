@@ -5,7 +5,7 @@ ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
 ms.topic: how-to
-ms.date: 09/02/2025
+ms.date: 10/16/2025
 ms.service: global-secure-access
 ms.reviewer: abhijeetsinha
 ms.custom: sfi-image-nochange
@@ -82,6 +82,8 @@ You can assign the remote network to a traffic forwarding profile when you creat
 1. Either select the **Next** button or select the **Traffic profiles** tab.
 1. Select the appropriate traffic forwarding profile.
 1. Select the **Review + Create** button.
+
+<!-- need new screenshot of the traffic profiles page with the Microsoft access profile enabled. -->
 
 The final tab in the process is to review all of the settings that you provided. Review the details provided here and select the **Create remote network** button.
 
