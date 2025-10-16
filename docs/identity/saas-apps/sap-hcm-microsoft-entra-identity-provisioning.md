@@ -24,7 +24,7 @@ At a high level, this document describes three integration options for SAP HCM, 
 - Option 2: SAP BAPI-based inbound provisioning using the Azure Logic Apps SAP connector
 - Option 3: SAP IDocs-based inbound provisioning using the Azure Logic Apps SAP connector
 
-There is also a fourth option,
+There's also a fourth option,
 
  - Option 4: Organizations that use both SAP SuccessFactors and SAP HCM can also bring identities into Microsoft Entra ID, by using SAP Integration Suite to synchronize lists of workers between SAP HCM and SAP SuccessFactors. From there, you can bring identities for employees [from SuccessFactors into Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) or provision them [from SuccessFactors into on-premises Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), by using Microsoft Entra ID connectors.
 
@@ -119,7 +119,7 @@ This integration uses the [Azure Logic Apps SAP connector](/azure/logic-apps/con
 - [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
 - [SAP managed connector](/azure/logic-apps/connectors/sap) that's hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
 
-The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented in this article. For example, With the SAP built-in connector, on-premises connections don't require the on-premises data gateway and dedicated actions provide better experience for stateful BAPIs and RFC transactions. 
+The SAP "built-in connector" has certain advantages over the managed connector” for the reasons documented in this article. For example, With the SAP built-in connector, on-premises connections don't require the on-premises data gateway and dedicated actions provide better experience for stateful BAPIs and RFC transactions. 
 
 ### High level data flow and configuration steps
 
@@ -135,7 +135,7 @@ This diagram illustrates the high-level data flow and configuration steps for SA
  
 :::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/diagram-prereqs-deployment-components-sap-azure-logic-apps-built-in-connector.png" alt-text="Diagram of high-level data flow of deployment components for SAP BAPI-based inbound provisioning.":::
 
-- **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The RPY* and SWO* function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
+- **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The `RPY*` and `SWO*` function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
  
     - `RFC_READ_DATA`
     - `RFC_READ_TABLE`
@@ -227,7 +227,7 @@ This integration uses the Azure Logic Apps SAP Connector. Azure Logic Apps ships
 - [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
 - [SAP managed connector](/azure/logic-apps/connectors/sap), which is hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
 
-The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented [in this article](/azure/logic-apps/connectors/sap#connector-differences). For example, with the SAP built-in connector, on-premises connections don't require the on-premises data gateway, it supports IDoc deduplication and has better support for handling IDoc file formats in the trigger [when a message is received](/azure/logic-apps/connectors/built-in/reference/sap#when-a-message-is-received). 
+The SAP built-in connector has certain advantages over the managed connector for the reasons documented [in this article](/azure/logic-apps/connectors/sap#connector-differences). For example, with the SAP built-in connector, on-premises connections don't require the on-premises data gateway, it supports IDoc deduplication and has better support for handling IDoc file formats in the trigger [when a message is received](/azure/logic-apps/connectors/built-in/reference/sap#when-a-message-is-received). 
 
 
 ### High level data flow and configuration steps
@@ -265,7 +265,8 @@ Follow these steps to configure writeback:
 3. In this Logic Apps extension, call the `BAPI_USER_CHANGE` function to update the user’s email address and username.
 
 
-## Acknowledgements
+## Acknowledgments
+
 We thank the following partners for their help reviewing and contributing to this article:
 - [Kocho](https://kocho.co.uk/)
 - [iC Consult](https://ic-consult.com/en/)
