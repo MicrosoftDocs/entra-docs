@@ -166,7 +166,7 @@ if ($rebootRequired) {
 
 1. Navigate to and run `IntuneWinAppUtil.exe`. A command prompt opens.
 1. Enter the folder path location of the Global Secure Access `.exe` file. Select **Enter**.
-1. Enter the name of the Global Secure Access `.exe` file. Select **Enter**.
+1. Enter the name of the Global Secure Access installation `.ps1` file. Select **Enter**.
 1. Enter the folder path in which to place the `.intunewin` file. Select **Enter**.
 1. Enter **N**. Select **Enter**.
 
@@ -202,7 +202,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 10. Select **Next**.
 1. On the **Program** tab, configure these fields:
 
-   - **Install command**: Use the original name of the `.exe` file for `"OriginalNameOfFile.exe" /install /quiet /norestart`.
+   - **Install command**: Use the original name of the `.ps1` file for `powershell.exe -ExecutionPolicy Bypass -File OriginalNameOfFile.ps1`.
    - **Uninstall command**: Use the original name of the `.exe` file for `"OriginalNameOfFile.exe" /uninstall /quiet /norestart`.
    - **Allow available uninstall**: Select **No**.
    - **Install behavior**: Select **System**.
