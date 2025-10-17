@@ -17,7 +17,7 @@ An authentication strength is a Microsoft Entra Conditional Access control that 
 
 For example, an authentication strength can require users to use only phishing-resistant authentication methods to access a sensitive resource. To access a nonsensitive resource, administrators can create another authentication strength that allows less secure multifactor authentication (MFA) combinations, such as a password and a text message.
 
-An authentication strength is based on the [policy for authentication method](concept-authentication-methods.md). That is, administrators can scope authentication methods for specific users and groups to be used across Microsoft Entra ID federated applications. An authentication strength allows further control over the usage of these methods, based on specific scenarios such as sensitive resource access, user risk, and location.
+An authentication strength is based on the [policy for authentication methods](concept-authentication-methods.md). That is, administrators can scope authentication methods for specific users and groups to be used across Microsoft Entra ID federated applications. An authentication strength allows further control over the usage of these methods, based on specific scenarios such as sensitive resource access, user risk, and location.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ Authentication strengths can help customers address these scenarios:
 
 - Require specific authentication methods to access a sensitive resource.
 - Require a specific authentication method when a user takes a sensitive action within an application (in combination with Conditional Access authentication context).
-- Require users to use a specific authentication method when they access sensitive applications outside of the corporate network.
+- Require users to use a specific authentication method when they access sensitive applications outside the corporate network.
 - Require more secure authentication methods for users at high risk.
 - Require specific authentication methods from guest users who access a resource tenant (in combination with cross-tenant settings).
 
@@ -82,7 +82,7 @@ GET https://graph.microsoft.com/beta/identity/conditionalAccess/authenticationSt
 
 ### Custom authentication strengths
 
-Conditional Access administrators can also create custom authentication strengths to exactly suit their access requirements. For more information, see [Custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md).
+Conditional Access administrators can also create custom authentication strengths to exactly suit their access requirements. For more information, see [Create and manage custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md).
 
 ## Limitations
 
@@ -92,15 +92,15 @@ Conditional Access administrators can also create custom authentication strength
 
 - **Unsupported combination of grant controls**: You can't use the **Require multifactor authentication** and **Require authentication strength** grant controls together in the same Conditional Access policy. The reason is that the built-in **Multifactor authentication** authentication strength is equivalent to the **Require multifactor authentication** grant control.
 
-- **Unsupported authentication method**: The **Email one-time pass (Guest)** authentication method isn't currently supported in the available combinations for authentication strengths.
+- **Unsupported authentication method**: The **Email one-time pass (Guest)** authentication method isn't currently supported in the available combinations.
 
-- **Windows Hello for Business**: If the user signed in with Windows Hello for Business as the primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. But if the user signed in with another method (like a password) as the primary authentication method, and the authentication strength requires Windows Hello for Business, the user isn't prompted to sign in with Windows Hello for Business. The user needs to restart the session, select **Sign-in options**, and select a method that the authentication strength requires.
+- **Windows Hello for Business**: If the user signs in with Windows Hello for Business as the primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. But if the user signs in with another method (like a password) as the primary authentication method, and the authentication strength requires Windows Hello for Business, the user isn't prompted to sign in with Windows Hello for Business. The user needs to restart the session, select **Sign-in options**, and select a method that the authentication strength requires.
 
 ## Known issues
 
 - **Authentication strength and sign-in frequency**: When a resource requires an authentication strength and a sign-in frequency, users can satisfy both requirements at two different times.
 
-  For example, let's say a resource requires a passkey (FIDO2) for the authentication strength, along with a 1-hour sign-in frequency. A user signed in with passkey (FIDO2) to access the resource 24 hours ago.
+  For example, let's say a resource requires a passkey (FIDO2) for the authentication strength, along with a 1-hour sign-in frequency. A user signed in with a passkey (FIDO2) to access the resource 24 hours ago.
   
   When the user unlocks their Windows device by using Windows Hello for Business, they can access the resource again. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
 
