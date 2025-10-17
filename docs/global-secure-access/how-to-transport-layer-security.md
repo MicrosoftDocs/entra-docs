@@ -159,7 +159,6 @@ extendedKeyUsage = serverAuth
 1. Upload the signed certificates (```signedcertificate.pem```and ```rootCAchain.pem```) according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
 
 Examples of configuring TLS certificate using powershell are listed in the below related content section.
-
 ## Related content
 * [Create a TLS certificates using ADCS](powershell-active-directory-certificate-service)
 * [Create a TLS certificate using OpenSSL](powershell-active-directory-certificate-service) 
