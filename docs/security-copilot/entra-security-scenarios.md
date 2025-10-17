@@ -24,16 +24,18 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 
 :::image type="content" source="./media/copilot-security-entra/security-copilot-entra-admin-center.png" alt-text="Screenshot that shows Security Copilot in the Microsoft Entra admin center.":::
 
+Security Copilot in Microsoft Entra now goes beyond chat-based summaries to give you a deeper look at your identity, device and access data with a single, visual workspace in the Microsoft Entra admin center. From a Copilot chat response, select **Open list** to open a full, interactive data grid. You can access large, complex datasets with complete and accurate results for exploration and efficient decision-making. Each data grid includes the underlying Microsoft Graph URL, allowing you to verify query accuracy and build trust in the results
+
 ## Security Copilot scenarios in Microsoft Entra
 
 There's a large selection of Security Copilot scenarios available in Microsoft Entra. Use the following table to learn more about each scenario by product area, their use cases, license and role requirements.
 
-| Microsoft Entra product | Security Copilot scenarios |
-| --- | --- |
-| **Microsoft Entra ID** | [Tenants](./entra-id-scenarios.md#tenants)<br>[Users](./entra-id-scenarios.md#users)<br>[Groups](./entra-id-scenarios.md#groups)<br>[Domains](./entra-id-scenarios.md#domains)<br>[Licenses](./entra-id-scenarios.md#licenses)<br>[Sign-in logs](./entra-id-scenarios.md#sign-in-logs)<br>[Audit logs](./entra-id-scenarios.md#audit-logs)<br>[Recommendations](./entra-id-scenarios.md#recommendations)<br>[Health monitoring alerts](./entra-id-scenarios.md#health-monitoring-alerts)<br>[Service Level Agreement](./entra-id-scenarios.md#service-level-agreement)<br>[Roles and administrators](./entra-id-scenarios.md#roles-and-administrators)<br>[Devices](./entra-id-scenarios.md#devices)<br>[Conditional Access](./entra-id-scenarios.md#conditional-access)<br>[Authentication](./entra-id-scenarios.md#authentication) |
-| **Microsoft Entra ID Protection** | [Risky users](./entra-id-protection-scenarios.md#risky-users)<br>[Application risk](./entra-id-protection-scenarios.md#application-risk) |
-| **Microsoft Entra ID Governance** | [Access reviews](./entra-id-governance-scenarios.md#access-reviews)<br>[Entitlement management](./entra-id-governance-scenarios.md#entitlement-management)<br>[Privileged Identity Management (PIM)](./entra-id-governance-scenarios.md#privileged-identity-management-pim)<br>[Lifecycle workflows](./entra-id-governance-scenarios.md#lifecycle-workflows) |
-| **Microsoft Entra Internet Access**<br>**Microsoft Entra Private Access** | [Global Secure Access](./entra-internet-access-private-access-scenarios.md#global-secure-access) |
+| Microsoft Entra product | Security Copilot scenarios | Data Exploration Enabled |
+| --- | --- | --- |
+| **Microsoft Entra ID** | [Tenants](./entra-id-scenarios.md#tenants)<br>[Users](./entra-id-scenarios.md#users)<br>[Groups](./entra-id-scenarios.md#groups)<br>[Domains](./entra-id-scenarios.md#domains)<br>[Licenses](./entra-id-scenarios.md#licenses)<br>[Sign-in logs](./entra-id-scenarios.md#sign-in-logs)<br>[Audit logs](./entra-id-scenarios.md#audit-logs)<br>[Recommendations](./entra-id-scenarios.md#recommendations)<br>[Health monitoring alerts](./entra-id-scenarios.md#health-monitoring-alerts)<br>[Service Level Agreement](./entra-id-scenarios.md#service-level-agreement)<br>[Roles and administrators](./entra-id-scenarios.md#roles-and-administrators)<br>[Devices](./entra-id-scenarios.md#devices)<br>[Conditional Access](./entra-id-scenarios.md#conditional-access)<br>[Authentication](./entra-id-scenarios.md#authentication) | | 
+| **Microsoft Entra ID Protection** | [Risky users](./entra-id-protection-scenarios.md#risky-users)<br>[Application risk](./entra-id-protection-scenarios.md#application-risk) | | 
+| **Microsoft Entra ID Governance** | [Access reviews](./entra-id-governance-scenarios.md#access-reviews)<br>[Entitlement management](./entra-id-governance-scenarios.md#entitlement-management)<br>[Privileged Identity Management (PIM)](./entra-id-governance-scenarios.md#privileged-identity-management-pim)<br>[Lifecycle workflows](./entra-id-governance-scenarios.md#lifecycle-workflows) | ![Access reviews data exploration enabled](../media/common/applies-to-yes.png) <br> ![Access reviews data exploration enabled](../media/common/applies-to-yes.png) <br> ![Access reviews data exploration enabled](../media/common/applies-to-yes.png) <br> ![Access reviews data exploration enabled](../media/common/applies-to-yes.png)|
+| **Microsoft Entra Internet Access**<br>**Microsoft Entra Private Access** | [Global Secure Access](./entra-internet-access-private-access-scenarios.md#global-secure-access) | ![Access reviews data exploration enabled](../media/common/applies-to-yes.png) |
 
 ## Microsoft Entra ID scenarios
 
