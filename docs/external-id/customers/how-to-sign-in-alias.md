@@ -16,7 +16,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-You can enable users who sign in with a local account (email and password) to also sign in using a username or alias (alternative sign-in identifier) in addition to their email address. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
+You can allow users who sign in with an email address and password to also sign in with a username and password. The username, also called an alternate sign-in identifier, can be a customer ID, account number, or another identifier that you choose to use as a username.
 
 :::image type="content" source="media/how-to-sign-in-alias/username-login-option.png" alt-text="Screenshot of the username sign-in option.":::
 
