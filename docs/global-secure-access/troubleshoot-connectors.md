@@ -43,7 +43,7 @@ The tool also provides additional information, such as certificate details (if t
 
 **How to use the tool:** After you verify the installation, you can find the tool in the connector installation folder. The default location is `C:/Program Files/Microsoft Entra Private Network Connector`. Select the application **ConnectorDiagnosticsTool** to launch the tool.
 
-:::image type="content" source="media/troubleshoot-connectors/diagnostics-tool-download.png" alt-text="Screenshot of the "ConnectorDiagnosticsTool" application selected in file explorer." lightbox="media/troubleshoot-connectors/diagnostics-tool-download.png":::   
+:::image type="content" source="media/troubleshoot-connectors/diagnostics-tool-download.png" alt-text="Screenshot of the Connector Diagnostics Tool application selected in file explorer." lightbox="media/troubleshoot-connectors/diagnostics-tool-download.png":::   
 
 Sample PowerShell Output:
 
