@@ -93,7 +93,7 @@ This diagram illustrates the high-level data flow and configuration steps.
     - References: 
         - [Replicating employee data from SAP ERP HCM](https://help.sap.com/doc/2eff62546be748739ca05477c2ab7ba7/2505/en-US/SF_ERP_EC_EE_Data_HCI_en-US.pdf)
         - [2214465 - Integration Add-On 3.0 for SAP ERP HCM - SAP for Me](https://me.sap.com/notes/0002214465) (requires SAP support login) 
-        - Slide deck explaining integration between [SAP ERP HCM and SuccessFactors](https://s3-eu-west-1.amazonaws.com/static.wm3.se/sites/572/media/339260_Integration_between_SAP_ERP_HCM_and_SuccessFactors_BizX.pdf?1572267595)
+        - Slide deck explaining the integration between **SAP ERP HCM and SuccessFactors**, presented at the [SBN Conference 2019](https://sbn.no/2019_sbnconference). To download the presentation from the conference site, go to **Day 1 > Wed 13:30-14:10 > Integration between SAP ERP HCM and SuccessFactors Trygve Berg, Capgemini**.
 	> [!NOTE]
     > CSV Files can have delta (or incremental) data. 
 - **Step 2**: In Microsoft Entra, configure the API-driven provisioning app to receive employee data from SAP HCM.
