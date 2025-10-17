@@ -1,5 +1,5 @@
 ---
-title: Understand Microsoft Entra private network connector groups
+title: Microsoft Entra Private Network Connector Groups
 description: Learn how Microsoft Entra private network connector groups work and how they're used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
@@ -24,7 +24,6 @@ Use connector groups when applications run in different locations. Create groups
 ## Prerequisites
 
 You need multiple connectors to use connector groups. The service automatically adds new connectors to the **Default** connector group. To install connectors, see [configure connectors](how-to-configure-connectors.md).
-
 
 ## Assign applications to your connector groups
 
@@ -62,8 +61,8 @@ Single sign-on often uses Kerberos constrained delegation (KCD). Connector machi
 
 There are two approaches to consider for disaster recovery (DR) sites:
 
-* Your DR site runs in active-active mode and matches the main site networking and Active Directory (AD) settings. Create the connectors on the DR site in the same connector group as the main site. Microsoft Entra ID detects failovers.
-* Your DR site is separate from the main site. Create a different connector group there. Use backup apps or manually divert existing apps to the DR connector group as needed.
+- Your DR site runs in active-active mode and matches the main site networking and Active Directory (AD) settings. Create the connectors on the DR site in the same connector group as the main site. Microsoft Entra ID detects failovers.
+- Your DR site is separate from the main site. Create a different connector group there. Use backup apps or manually divert existing apps to the DR connector group as needed.
 
 ### Serve multiple companies from a single tenant
 
@@ -75,7 +74,7 @@ Consider these sample connector group configurations.
 
 ### Default configuration – no use for connector groups
 
-If you don’t use connector groups, your configuration looks like this:
+If you don't use connector groups, your configuration looks like this:
 
 ![Screenshot of a single Application Proxy connector setup with no connector groups, showing one connector handling all published applications.](./media/concept-connector-groups/application-proxy-sample-config-1.png)
 
@@ -89,15 +88,12 @@ This configuration evolves the default. A specific app runs in an isolated netwo
 
 ### Recommended configuration – specific groups and a default idle group
 
-For large, complex organizations, set the default connector group to hold idle or newly installed connectors. Don’t assign applications to it. Serve all applications through custom connector groups.
+For large, complex organizations, set the default connector group to hold idle or newly installed connectors. Don't assign applications to it. Serve all applications through custom connector groups.
 
 In this example, the company has two datacenters (A and B). Two connectors serve each site. Each site runs different applications.
 
 ![Screenshot of recommended setup with two datacenters (A and B), two connectors per site, a default idle connector group, and custom groups serving all applications.](./media/concept-connector-groups/application-proxy-sample-config-3.png)
 
-
-
-## Next steps
+## Related content
 
 - [Microsoft Entra private network connectors](concept-connectors.md)
-
