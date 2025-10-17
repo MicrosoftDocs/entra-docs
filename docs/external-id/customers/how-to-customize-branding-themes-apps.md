@@ -1,6 +1,6 @@
 ---
-title: Customize the sign-in experience for your application with branding themes (Preview)
-description: Learn about how to create branding themes and apply them to the sign-in experience for your application.
+title: Customize the sign-in experience for your application with branding themes in external tenants (Preview)
+description: Learn about how to create branding themes and apply them to the sign-in experience for your application in Microsoft External ID for external tenants.
 author: rolyon
 manager: pmwongera
 ms.author: rolyon
@@ -12,7 +12,7 @@ ms.topic: how-to
 
 ---
 
-# Customize the sign-in experience for your application with branding themes (Preview)
+# Customize the sign-in experience for your application with branding themes in external tenants (Preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
