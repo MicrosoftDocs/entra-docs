@@ -47,7 +47,7 @@ To integrate Arkose Labs with Microsoft Entra External ID, you can use the Servi
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Extensibility Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-extensibility-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Service Integrations** > **Sign-up protection (Preview)** to start the wizard.
+1. Browse to **Home** > **Security Store** > **Sign-up protection (Preview)** to start the wizard.
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection (Preview) page.":::
 
@@ -84,11 +84,102 @@ Once the policy is created, it's applied to the selected applications. When a us
 
 ## Edit the Arkose Labs configuration in the Microsoft Entra admin center  
 
-1. Browse to **Home** > **Service Integrations** > **Sign-up protection (Preview)** to view the list of configurations.
+1. Browse to **Home** > **Security Store** > **Sign-up protection (Preview)** to view the list of configurations.
 1. Select the **Edit provider configurations** option to edit the Arkose Labs policy. If you want to edit the fraud protection policy, select the pencil icon.
 1. In the **Configure Arkose Labs for sign-up protection** step, select the configuration you want to edit and select **Next**.
 1. Select the app you want to protect with Arkose Labs fraud protection or remove the existing ones. You can select one or more applications that you have registered in your external tenant. Once you selected the app, select **Next**.
 1. Select **Done** to finish the wizard.
+
+## Configure Arkose Labs using Microsoft Graph API
+
+Configure Arkose Labs fraud protection by using the Microsoft Graph API. This approach is useful if you want to automate the configuration or if you prefer using APIs over the Microsoft Entra admin center.
+
+### Step 1: Sign in to the tenant
+
+To configure Arkose Labs fraud protection, you need to sign in to your external tenant and consent to the required permissions.
+
+1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
+
+1. Sign in to your external tenant: `https://developer.microsoft.com/en-us/graph/graph-explorer?tenant=<your-tenant-name.onmicrosoft.com>`.
+
+1. Select your profile and then select **Consent to permissions**.
+
+1. Consent to the following required permission.
+
+    - `RiskPreventionProviders.ReadWrite.All`
+
+### Step 2: Register Arkose Labs as a fraud protection provider
+
+To register Arkose Labs as a fraud protection provider, you [create a fraudProtectionProvider policy](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders) in your external tenant. This policy contains the Arkose configuration values that you received from Arkose Labs.
+
+1. In the Microsoft Graph Explorer, select the **POST** method and enter the following URL:
+
+    ```http
+    https://graph.microsoft.com/beta/identity/riskPrevention/fraudProtectionProviders
+    ```
+
+2. In the **Request Body** section, enter the following JSON payload, replacing the placeholders with your Arkose configuration values:
+
+    ```json
+    {
+        "@odata.type": "#microsoft.graph.arkoseFraudProtectionProvider",
+        "displayName": "<your-arkose-configuration-name>",
+        "publicKey": "<your-arkose-public-key>",
+        "privateKey": "<your-arkose-private-key>",
+        "clientSubDomain": "<your-client-api>",
+        "verifySubDomain": "<your-verify-api>"
+    }
+    ```
+
+3. Select **Run Query** to create the fraud protection provider.
+4. If the request is successful, a **201 Created** response is returned. Copy the `id` value from the response for the next step.
+
+### Step 3: Link Arkose protection to your application
+
+In this step, you link the Arkose fraud protection provider to your application by creating a new [authenticationEventListener](/graph/api/identitycontainer-post-authenticationeventlisteners) that triggers the Arkose challenge during the sign-up flow. Make sure that you have the appId for the application where you want to enable fraud protection. Replace `<your-app-id>` with your application's ID, and replace `<id-from-previous-step>` with the Arkose provider ID from the previous step.
+
+1. In the Microsoft Graph Explorer, select the **POST** method and enter the following URL:
+
+    ```http
+    https://graph.microsoft.com/beta/identity/authenticationEventListeners
+    ```
+
+1. In the **Request Body** section, enter the following JSON payload:
+
+    ```json
+    { 
+      "@odata.type": "#microsoft.graph.onFraudProtectionLoadStartListener", 
+      "conditions": { 
+        "applications": { 
+          "includeApplications": [ 
+            { 
+              "appId": "<your-app-id>" 
+            } 
+          ] 
+        } 
+      }, 
+      "handler": { 
+        "@odata.type": "#microsoft.graph.onFraudProtectionLoadStartExternalUsersAuthHandler", 
+        "signUp": { 
+          "@odata.type": "#microsoft.graph.fraudProtectionProviderConfiguration", 
+          "fraudProtectionProvider": { 
+            "@odata.type": "#microsoft.graph.arkoseFraudProtectionProvider", 
+            "id": "<id-from-previous-step>" 
+          } 
+        } 
+      } 
+    }
+    ```
+
+1. Select **Run Query**.
+1. If the request is successful, a **201 Created** response is returned. Test the sign-up flow in your application to verify that the Arkose challenge appears when a suspicious sign-up is detected.
+
+### Troubleshooting tips
+
+| Issue                        | Possible Cause                   | Resolution                                              |
+|-----------------------------|----------------------------------|---------------------------------------------------------|
+| Challenge doesn't appear.   | Event listener not linked to app. | Verify app ID and listener configuration.              |
+| Users blocked on challenge. | Strict Arkose thresholds.         | Work with Arkose to adjust challenge behavior.         |
 
 ::: zone-end  
 
@@ -96,7 +187,7 @@ Once the policy is created, it's applied to the selected applications. When a us
 
 ## How HUMAN Security works
 
-When a user initiates the sign-up process, it is critical to prevent automated bots and malicious actors from creating fraudulent accounts. To address this, Entra External ID supports integration with third-party fraud detection providers such as HUMAN Security. This integration enables real-time analysis of sign-up attempts, leveraging HUMAN Security’s advanced detection algorithms to identify and block suspicious activity before account creation is completed. The solution is natively integrated with Microsoft identity infrastructure, allowing for streamlined deployment and management. By implementing this approach, organizations can access detailed telemetry and actionable insights to monitor sign-up flows, fine-tune detection thresholds, and respond proactively to emerging threats, thereby maintaining the integrity of their user base.
+When a user initiates the sign-up process, it is critical to prevent automated bots and malicious actors from creating fraudulent accounts. To address this, Entra External ID supports integration with third-party fraud detection providers such as HUMAN Security. This integration enables real-time analysis of sign-up attempts, leveraging HUMAN Security’s advanced detection algorithms to identify and block suspicious activity before account creation is completed. The solution is natively integrated with Microsoft identity infrastructure, allowing for streamlined deployment and management. By implementing this approach, organizations can access detailed data and actionable insights to monitor sign-up flows, fine-tune detection thresholds, and respond proactively to emerging threats, thereby maintaining the integrity of their user base.
 
 ## Prerequisites
 
@@ -116,7 +207,7 @@ To integrate HUMAN Security with Microsoft Entra External ID, you can use the Se
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Extensibility Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-extensibility-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Service Integrations** > **Sign-up protection (Preview)** to start the wizard.
+1. Browse to **Home** > **Security Store** > **Sign-up protection (Preview)** to start the wizard.
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection (Preview) page.":::
 
@@ -145,12 +236,98 @@ Once the policy is created, it's applied to the selected applications. When a us
 
 ## Edit the HUMAN Security configuration in the Microsoft Entra admin center  
 
-1. Browse to **Home** > **Service Integrations** > **Sign-up protection (Preview)** to view the list of configurations.
+1. Browse to **Home** > **Security Store** > **Sign-up protection (Preview)** to view the list of configurations.
 1. Select the **Edit provider configurations** option to edit the HUMAN Security policy. If you want to edit the fraud protection policy, select the pencil icon.
 1. In the **Configure HUMAN Security for sign-up protection** step, select the configuration you want to edit and select **Next**.
 1. Select the app you want to protect with HUMAN Security fraud protection or remove the existing ones. You can select one or more applications that you have registered in your external tenant. Once you selected the app, select **Next**.
 1. Select **Done** to finish the wizard.
 
+## Configure HUMAN Security using Microsoft Graph API
+
+Configure HUMAN Security fraud protection by using the Microsoft Graph API. This approach is useful if you want to automate the configuration or if you prefer using APIs over the Microsoft Entra admin center.
+
+### Step 1: Sign in to the tenant
+
+To configure HUMAN Security fraud protection, you need to sign in to your external tenant and consent to the required permissions.
+
+1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
+
+1. Sign in to your external tenant: `https://developer.microsoft.com/en-us/graph/graph-explorer?tenant=<your-tenant-name.onmicrosoft.com>`.
+
+1. Select your profile and then select **Consent to permissions**.
+
+1. Consent to the following required permission.
+
+    - `RiskPreventionProviders.ReadWrite.All`
+
+### Step 2: Register HUMAN Security as a fraud protection provider
+
+To register HUMAN Security as a fraud protection provider, you [create a fraudProtectionProvider policy](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders) in your external tenant. This policy contains the HUMAN Security configuration values that you've received while setting up your HUMAN Security account.
+
+1. In the Microsoft Graph Explorer, select the **POST** method and enter the following URL:
+
+    ```http
+    https://graph.microsoft.com/beta/identity/riskPrevention/fraudProtectionProviders
+    ```
+
+2. In the **Request Body** section, enter the following JSON payload, replacing the placeholders with your HUMAN configuration values:
+
+    ```json
+    {
+        "@odata.type": "#microsoft.graph.HUMANFraudProtectionProvider",
+        "displayName": "<your-human-configuration-name>",
+        "appId": "<your-human-appid>",  
+        "serverToken": "<your-human-server-token>",
+    }
+    ```
+
+The `displayName` is a display name for this specific  HUMAN Security  configuration, for example, "HUMAN Config 1". The `appId` is the Application ID from HUMAN Security, and the `serverToken` is the Server token from HUMAN Security that you can find in the HUMAN Security admin console. If you're unsure about any value, contact HUMAN Security for assistance.
+
+3. Select **Run Query** to create the fraud protection provider.
+4. If the request is successful, a **201 Created** response is returned. Copy the `id` value from the response for the next step.
+
+### Step 3: Link HUMAN Security protection to your application
+
+In this step, you link the HUMAN Security fraud protection provider to your application by creating a new [authenticationEventListener](/graph/api/identitycontainer-post-authenticationeventlisteners) to use the HUMAN Security fraud protection during the sign-up flow. Make sure that you have the appId for the application where you want to enable fraud protection. Replace `<your-app-id>` with your application's ID, and replace `<id-from-previous-step>` with the HUMAN Security provider ID from the previous step.
+
+1. In the Microsoft Graph Explorer, select the **POST** method and enter the following URL:
+
+    ```http
+    https://graph.microsoft.com/beta/identity/authenticationEventListeners
+    ```
+
+1. In the **Request Body** section, enter the following JSON payload:
+
+    ```json
+    { 
+      "@odata.type": "#microsoft.graph.onFraudProtectionLoadStartListener", 
+      "conditions": { 
+        "applications": { 
+          "includeApplications": [ 
+            { 
+              "appId": "<your-app-id>" 
+            } 
+          ] 
+        } 
+      }, 
+      "handler": { 
+        "@odata.type": "#microsoft.graph.onFraudProtectionLoadStartExternalUsersAuthHandler", 
+        "signUp": { 
+          "@odata.type": "#microsoft.graph.fraudProtectionProviderConfiguration", 
+          "fraudProtectionProvider": { 
+            "@odata.type": "#microsoft.graph.HUMANFraudProtectionProvider", 
+            "id": "<id-from-previous-step>" 
+          } 
+        } 
+      } 
+    }
+    ```
+
+1. Select **Run Query**.
+1. If the request is successful, a **201 Created** response is returned. Test the sign-up flow in your application to verify that the HUMAN challenge appears when a suspicious sign-up is detected.
+
 ::: zone-end  
 
+## Related content
 
+- [Create fraudProtectionProvider](/graph/api/riskpreventioncontainer-post-fraudprotectionproviders)
