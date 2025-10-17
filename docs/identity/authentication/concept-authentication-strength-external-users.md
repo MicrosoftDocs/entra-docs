@@ -12,7 +12,7 @@ ms.reviewer: namkedia
 ---
 # How Conditional Access authentication strengths work for external users
 
-The Microsoft Entra Conditional Access policy for authentication methods is especially useful for restricting external access to sensitive apps in your organization. You can use it to enforce specific authentication methods, such as phishing-resistant methods, for external users.
+Authentication strengths are especially useful for restricting external access to sensitive apps in your organization. They can enforce specific authentication methods, such as phishing-resistant methods, for external users.
 
 When you apply a Conditional Access authentication strength policy to external Microsoft Entra users, the policy works together with multifactor authentication (MFA) trust settings in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user authenticates in their home Microsoft Entra tenant. When the user accesses your resource, Microsoft Entra ID applies the policy and checks if you enabled MFA trust.
 

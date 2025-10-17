@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 
 # How Conditional Access authentication strengths work
 
-This article explains how authentication strengths in Microsoft Entra Conditional Access can restrict which authentication methods have access to a resource.
+This article explains how authentication strengths in Microsoft Entra Conditional Access can restrict which authentication method combinations can be used to sign in and access a resource.
 
 ## How authentication strengths work with the policies for authentication methods
 
