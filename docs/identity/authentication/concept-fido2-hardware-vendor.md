@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 10/03/2025
+ms.date: 10/17/2025
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -129,8 +129,8 @@ IDCore 3121 Fido|e86addcd-7711-47e5-b42a-c18257b0bf61|&#10060;|&#10060;|&#x2705;
 IDEMIA ID-ONE Card|8d1b1fcb-3c76-49a9-9129-5515b346aa02|&#10060;|&#x2705;|&#x2705;|&#10060;
 IDEMIA SOLVO Fly 80 R3 FIDO Card c|dda9aa35-aaf1-4d3c-b6db-7902fd7dbbbf|&#10060;|&#10060;|&#x2705;|&#10060;
 IDEMIA SOLVO Fly 80 R3 FIDO Card e|def8ab1a-9f91-44f1-a103-088d8dc7d681|&#10060;|&#10060;|&#x2705;|&#10060;
-IDmelon Android Authenticator|39a5647e-1853-446c-a1f6-a79bae9f5bc7|&#x2705;|&#10060;|&#10060;|&#10060;
-IDmelon iOS Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|&#x2705;|&#10060;|&#10060;|&#10060;
+IDmelon Android Authenticator|39a5647e-1853-446c-a1f6-a79bae9f5bc7|&#x2705;|&#x2705;|&#10060;|&#x2705;
+IDmelon iOS Authenticator|820d89ed-d65a-409e-85cb-f73f0578f82a|&#x2705;|&#x2705;|&#10060;|&#x2705;
 ID-One Card|bb405265-40cf-4115-93e5-a332c1968d8c|&#10060;|&#10060;|&#x2705;|&#10060;
 ID-One Key|82b0a720-127a-4788-b56d-d1d4b2d82eac|&#10060;|&#x2705;|&#x2705;|&#10060;
 ID-One Key|f2145e86-211e-4931-b874-e22bba7d01cc|&#10060;|&#x2705;|&#x2705;|&#10060;
