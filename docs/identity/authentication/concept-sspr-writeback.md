@@ -4,7 +4,7 @@ description: Learn how password change or reset events in Microsoft Entra ID can
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 07/21/2025
+ms.date: 10/25/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -26,7 +26,7 @@ Password writeback is supported in environments that use the following hybrid id
 * [Active Directory Federation Services](~/identity/hybrid/connect/how-to-connect-fed-management.md)
 
 > [!NOTE]
-> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. 
+> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. Although it works in some cases, SSPR can't be guaranteed to work consistently when staged rollout is enabled.
 
 Password writeback provides the following features:
 
