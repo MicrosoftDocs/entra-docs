@@ -53,7 +53,7 @@ To configure Azure Lighthouse in an external tenant, start the wizard from eithe
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Service Integrations** > **Monitor logs with Azure Monitor**.
+1. Browse to **Home** > **Security Store** > **Monitor logs with Azure Monitor**.
 1. Select **Get started** to open the **Diagnostic settings** page. If Azure monitoring is already configured, you can select **View logs** to open the logs experience.
 1. Select **Start set up** to launch the wizard.
 
