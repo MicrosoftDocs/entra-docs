@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Customize the sign-in experience for your application with branding themes (Preview)
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 > [!IMPORTANT]
 > Branding themes for applications are currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -34,7 +36,7 @@ This article describes how you can create multiple branding themes for different
 
 When you create a branding theme, here are some of the properties you can customize.
 
-:::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in-page-map-expanded.png" alt-text="Screenshot of the sign-in page, with each of the company branding elements highlighted." lightbox="./media/how-to-customize-branding-themes-apps/sign-in-page-map-expanded.png":::
+:::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in-page-map.png" alt-text="Screenshot of the sign-in page, with each of the company branding elements highlighted." lightbox="./media/how-to-customize-branding-themes-apps/sign-in-page-map.png":::
 
 | Property | Description |
 | --- | --- |
@@ -47,8 +49,8 @@ When you create a branding theme, here are some of the properties you can custom
 | Sign-in page title | Larger text that appears below the banner logo. |
 | Sign-in page description | Text to describe the sign-in page. |
 | Username hint and text | The text that appears before a user enters their information. |
-| Self-service password reset | A link you can add below the sign-in page text for password resets. |
-| Sign-in page text | Text you can add below the username field. |
+| ??? | A link you can add below the sign-in page text for password resets. |
+| Sign-in display message box | Text you can add below the username field. |
 | Footer link: Privacy & Cookies | Link you can add to the lower-right corner for privacy information. |
 | Footer: Terms of Use | Text in the lower-right corner of the page where you can add Terms of use information. |
 | Footer | Space across the bottom of the page for privacy and Terms of Use information. |
