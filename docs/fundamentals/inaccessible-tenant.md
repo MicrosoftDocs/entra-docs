@@ -32,7 +32,7 @@ Take the appropriate steps depending on your goals for the tenant and your role 
 
 If you need to reactivate your tenant:
 
-- The tenant administrator can reach out to Microsoft, see the [global support phone numbers](https://support.microsoft.com/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2).
+- The tenant administrator can try to reach out to Microsoft, see the [global support phone numbers](https://support.microsoft.com/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2), but anyways, the answering machine will finally instruct them to file a support ticket online. Unfortunately, Azure-related support tickets have to be submitted in Azure's own support ticket system, which is not accessible with a blocked tenant. So actually, there is no obvious way of asking for support on this issue.
 - Refrain from submitting another assistance request while your existing case is in process and until you receive a response with a decision on this case.
 
 If you don't plan to reactivate your tenant:
