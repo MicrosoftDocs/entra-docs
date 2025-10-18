@@ -53,12 +53,31 @@ The service routes new requests to an available connector. If a connector is tem
 
 Connectors are stateless and store no configuration data on the machine. They store only the settings for connecting to the service and the authentication certificate. When they connect to the service, they pull the required configuration data and refresh it every few minutes.
 
-Monitor connectors on the host machine by using the event log and performance counters. View status in the Microsoft Entra admin center:
+### Connector status
+
+You can view status of connectors in the Microsoft Entra admin center:
 
 - For Private Access: Go to **Global Secure Access** > **Connect** > **Connectors**.
 - For application proxy: Go to **Identity** > **Applications** > **Enterprise applications**, and then select the application. On the application page, select **Application proxy**.
 
-You don't need to delete unused connectors manually. The service tags inactive connectors as `_inactive_` and removes them after 10 days. To uninstall a connector, uninstall both the connector service and the updater service, and then restart the computer.
+### Logs
+
+Connectors are installed on Windows Server, so they have most of the same management tools. You can use Windows event logs and Windows performance counters to monitor connectors.
+
+Connectors have both **Admin** and **Session** logs. The **Admin** log includes key events and their errors. The **Session** log includes all the transactions and their processing details.
+
+To view the logs:
+
+1. Open **Event Viewer** and go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector**.
+
+   The **Admin** log is visible by default.
+1. To make the **Session** log visible, on the **View** menu, select **Show Analytic and Debug Logs**.
+
+   The **Session** log is typically used for troubleshooting and is disabled by default. Enable it to start collecting events, and disable it when you no longer need it.
+
+### Service state
+
+The connector consists of two Windows services: the actual connector and the updater. Both of them must run all the time. You can examine the state of the services in the **Services** window.
 
 ## Handling connector server problems
 
@@ -83,7 +102,7 @@ Not all releases are scheduled for automatic update. Monitor the [version histor
 In tenants with multiple connectors, automatic updates target one connector at a time in each group to prevent downtime. You might experience downtime during an update if:
   
 - You have only one connector. To avoid downtime and provide higher availability, add a second connector and a connector group.  
-- The update starts while a connector processes a transaction. The initial transaction is lost, but the browser automatically retries the operation or you can refresh the page. The re-sent request is routeed to a backup connector.
+- The update starts while a connector processes a transaction. The initial transaction is lost, but the browser automatically retries the operation or you can refresh the page. The re-sent request is routed to a backup connector.
 
 For details about previous versions and their changes, see [Microsoft Entra private network connector: Version release history](reference-version-history.md).
 
@@ -94,8 +113,6 @@ Connectors can be installed anywhere on the network that allows them to send req
 You can install connectors inside your corporate network or on a virtual machine (VM) that runs in the cloud. Connectors can run within a perimeter network, but it's not necessary because all traffic is outbound for network security.
 
 Connectors only send outbound requests. The outbound traffic is sent to the service and to the published resources and applications. You don't have to open inbound ports because traffic flows both ways after a session is established. You also don't have to configure inbound access through your firewalls.
-
-A common issue is that connectors appear as inactive in a connector group. A firewall blocking the required ports is a common cause for inactive connectors. For more information about configuring outbound firewall rules, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
 
 ## Performance and scalability
 
@@ -205,15 +222,13 @@ For government, use `-EnvironmentName "AzureUSGovernment"`. For more information
 
 To learn how to verify the certificate and troubleshoot problems, see [Troubleshoot problems installing the private network connector](../identity/app-proxy/application-proxy-connector-installation-problem.md).
 
-## Under the hood
+## Inactive connectors
 
-Connectors are installed on Windows Server, so they have most of the same management tools including Windows Event Logs and Windows performance counters.
+You don't need to delete unused connectors manually. The service tags inactive connectors as `_inactive_` and removes them after 10 days.
 
-The connectors have both **Admin** and **Session** logs. The **Admin** log includes key events and their errors. The **Session** log includes all the transactions and their processing details.
+To uninstall a connector, uninstall both the connector service and the updater service. Then, restart the computer.
 
-To see the logs, open **Event Viewer** and go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector**. To make the **Session** log visible, on the **View** menu, select **Show Analytic and Debug Logs**. The **Session** log is typically used for troubleshooting, and is disabled by default. Enable it to start collecting events and disable it when it's no longer needed.
-
-You can examine the state of the service in the Services window. The connector is made up of two Windows Services: the actual connector, and the updater. Both of them must run all the time.
+If connectors that you expect to be active appear as inactive in a connector group, a firewall might be blocking the required ports. For more information about configuring outbound firewall rules, see [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
 
 ## Related content
 
