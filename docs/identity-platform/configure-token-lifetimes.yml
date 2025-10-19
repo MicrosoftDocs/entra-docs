@@ -131,6 +131,10 @@ procedureSection:
         ```powershell
         GET https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/4d2f137b-e8a9-46da-a5c3-cc85b2b840a4/appliesTo
         ```
+
+> [!NOTE]
+> For a token lifetime policy to apply, the resource (audience) of the token has to match where the token lifetime policy was applied.
+> Example. Entra ID will receive an authentication request and as part of that authentication request is the scope parameter. The scope parameter tells Entra ID what resource (audience) to issue the token from. The scope parameter value needs to equal the application where the token lifetime policy was applied.
 nextStep:
   text: Learn about authentication session management
   url: ~/identity/conditional-access/howto-conditional-access-session-lifetime.md 
