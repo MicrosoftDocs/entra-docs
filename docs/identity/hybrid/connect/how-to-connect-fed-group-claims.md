@@ -172,8 +172,7 @@ You can configure filters to be applied to the group's display name or `SAMAccou
 
  ![Screenshot that shows filtering options.](media/how-to-connect-fed-group-claims/group-filter-1.png)
 
-**Group Filtering Limitations** 
-Microsoft Entra ID supports group filtering only if a user belongs to 1,000 or fewer groups (including direct and transitive memberships). If this limit is exceeded, filtering won’t apply and an overage claim is sent instead.
+**Group Filtering Limitations**: Microsoft Entra ID supports group filtering only if a user belongs to 1,000 or fewer groups (including direct and transitive memberships). If this limit is exceeded, filtering won’t apply and an overage claim is sent instead.
 
 #### Group transformation
 Some applications might require the groups in a different format from how they're represented in Microsoft Entra ID. To support this requirement, you can apply a transformation to each group that will be emitted in the group claim. You achieve it by allowing the configuration of a regular expression (regex) and a replacement value on custom group claims. 
