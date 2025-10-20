@@ -211,6 +211,21 @@ Now customers can further customize their Lifecycle workflows email notification
 
 ---
 
+### Public Preview - Microsoft Entra Internet Access Custom Block Pages
+
+**Type:** New feature    
+**Service category:** Microsoft Entra Internet Access 
+**Product capability:** Network Access
+
+When administrators configure policies that block users from accessing risky, NSFW, or unsanctioned sites or apps in Global Secure Access (GSA), users receive a clear HTML error message branded with Microsoft Entra Internet Access. Many administrators have expressed interest in customizing this experience to align with company style guides, include references to Terms of Use, add hyperlinks to IT workflows, and more.
+Global Secure Access now supports customized block pages for Internet Access. Through the Microsoft Graph API, administrators can:
+
+- Configure the tenant-wide body text of the GSA block page.
+- Add hyperlinks using limited markdown to reference resources such as Terms of Use, ServiceNow/IT ticketing systems, or MyAccess for identity governance workflow integration.
+
+For more information, see: [How to customize Global Secure Access block page (preview)](../global-secure-access/how-to-customize-block-page.md).
+
+---
 
 ## August 2025
 
