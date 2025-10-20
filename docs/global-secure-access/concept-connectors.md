@@ -159,11 +159,11 @@ These commands set the dynamic port range from 1025 to the maximum of 65535. The
 We recommend the following specifications for each Microsoft Entra private network connector:
 
 - **Memory**: 8 GiB or more.
-- **CPU**: 4 CPU cores or more.
+- **CPU**: Four CPU cores or more.
 
 Keep peak CPU and memory utilization per connector under 70%. If sustained utilization exceeds 70%, add connectors to the group or scale up host capacity to distribute load. Monitor with Windows performance counters to validate that utilization returns to an acceptable range.
 
-You can expect up to ~1.5 Gbps aggregate TCP throughput (combined inbound and outbound) per connector on an Azure VM sized at 4 vCPU and 8 GiB RAM with standard networking. You can achieve higher throughput by using larger VM sizes (more vCPUs, more memory, and accelerated or high-bandwidth NICs), or by adding more connectors in the same group to scale out.
+You can expect up to about 1.5-Gbps aggregate TCP throughput (combined inbound and outbound) per connector on an Azure VM sized at four vCPUs and 8 GiB of RAM with standard networking. You can achieve higher throughput by using larger VM sizes (more vCPUs, more memory, and accelerated or high-bandwidth NICs), or by adding more connectors in the same group to scale out.
 
 We derived this performance guidance from controlled lab tests that used iPerf3 TCP data streams in a dedicated test tenant. Actual throughput can vary based on:
 
