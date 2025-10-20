@@ -43,7 +43,7 @@ Use connector groups for:
 - Application segmentation and isolation.
 - Publishing web apps running in the cloud or on-premises.
 
-Connector groups simplify management of large deployments. They can reduce latency for tenants with resources and applications in different regions. Create location-based connector groups to serve only local applications.
+Connector groups simplify management of large deployments. They can reduce latency for tenants that have resources and applications in different regions. Create location-based connector groups to serve only local applications.
 
 Learn more in [Microsoft Entra private network connector groups](concept-connector-groups.md).
 
@@ -55,7 +55,7 @@ Connectors are stateless and store no configuration data on the machine. They st
 
 ### Connector status
 
-You can view status of connectors in the Microsoft Entra admin center:
+You can view the status of connectors in the Microsoft Entra admin center:
 
 - For Private Access: Go to **Global Secure Access** > **Connect** > **Connectors**.
 - For application proxy: Go to **Identity** > **Applications** > **Enterprise applications**, and then select the application. On the application page, select **Application proxy**.
@@ -91,18 +91,18 @@ Use this sequence to keep the service stable and minimize disruption when connec
 
 ## Connector updates
 
-Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. Connectors poll the connector updater service for updates. When a newer version is available, they update themselves.
+Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. Connectors poll the updater service for updates. When a newer version is available, they update themselves.
 
-As long as the private network connector updater service is running, your connectors can update to the latest major connector release automatically. If you don't see the updater service on your server, you need to reinstall your connector to get updates.
+As long as the updater service is running, your connectors can update to the latest major connector release automatically. If you don't see the updater service on your server, you need to reinstall your connector to get updates.
 
 If you don't want to wait for an automatic update, do a manual update. On the server that hosts your connector, go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) and select **Download**. This action starts an update for the local connector.
 
 Not all releases are scheduled for automatic update. Monitor the [version history page](reference-version-history.md) to see whether an update is deployed automatically or requires a manual deployment in the Microsoft Entra portal.
 
-In tenants with multiple connectors, automatic updates target one connector at a time in each group to prevent downtime. You might experience downtime during an update if:
+In tenants that have multiple connectors, automatic updates target one connector at a time in each group to prevent downtime. You might experience downtime during an update if:
   
 - You have only one connector. To avoid downtime and provide higher availability, add a second connector and a connector group.  
-- The update starts while a connector processes a transaction. The initial transaction is lost, but the browser automatically retries the operation or you can refresh the page. The re-sent request is routed to a backup connector.
+- The update starts while a connector processes a transaction. The initial transaction is lost, but the browser automatically retries the operation, or you can refresh the page. The re-sent request is routed to a backup connector.
 
 For details about previous versions and their changes, see [Microsoft Entra private network connector: Version release history](reference-version-history.md).
 
@@ -118,7 +118,7 @@ Connectors only send outbound requests. The outbound traffic is sent to the serv
 
 Scale for the Private Access and application proxy services is transparent, but scale is a factor for connectors. You need to have enough connectors to handle peak traffic.
 
-Connectors are stateless, and the number of users or sessions don't affect them. Instead, they respond to the number of requests and their payload size. With standard web traffic, an average machine can handle 2,000 requests per second. The specific capacity depends on the exact machine characteristics.
+Connectors are stateless, and the number of users or sessions doesn't affect them. Instead, they respond to the number of requests and the payload size. With standard web traffic, an average machine can handle 2,000 requests per second. The specific capacity depends on the exact machine characteristics.
 
 CPU and the network define connector performance. CPU performance is needed for TLS encryption and decryption, whereas networking is important to get fast connectivity to the applications and the online service.
 
@@ -158,8 +158,8 @@ These commands set the dynamic port range from 1025 to the maximum of 65535. The
 
 We recommend the following specifications for each Microsoft Entra private network connector:
 
-- **Memory**: 8 GiB or more
-- **CPU**: 4 CPU cores or more
+- **Memory**: 8 GiB or more.
+- **CPU**: 4 CPU cores or more.
 
 Keep peak CPU and memory utilization per connector under 70%. If sustained utilization exceeds 70%, add connectors to the group or scale up host capacity to distribute load. Monitor with Windows performance counters to validate that utilization returns to an acceptable range.
 
@@ -167,14 +167,14 @@ You can expect up to ~1.5 Gbps aggregate TCP throughput (combined inbound and ou
 
 We derived this performance guidance from controlled lab tests that used iPerf3 TCP data streams in a dedicated test tenant. Actual throughput can vary based on:
 
-- CPU generation
-- NIC capabilities (accelerated networking, offloads)
-- TLS cipher suites
-- Network latency and jitter
-- Packet loss
-- Concurrent protocol mix (HTTPS, SMB, RDP)
-- Intermediate devices (firewalls, IDS/IPS, SSL inspection)
-- Back-end application responsiveness
+- CPU generation.
+- NIC capabilities (accelerated networking, offloads).
+- TLS cipher suites.
+- Network latency and jitter.
+- Packet loss.
+- Concurrent protocol mix (HTTPS, SMB, RDP).
+- Intermediate devices (firewalls, IDS/IPS, SSL inspection).
+- Back-end application responsiveness.
 
 Scenario-based benchmark data (mixed workloads, high-connection concurrency, latency-sensitive applications) will be added to this documentation as it becomes available.
 
@@ -186,14 +186,14 @@ To learn more, see [Best practices for high availability of connectors](../ident
 
 ## Domain joining
 
-Connectors can run on a machine that isn't domain joined. However, if you want single sign-on (SSO) to applications that use integrated Windows authentication, you need a domain-joined machine. In this case, the connector machines must be joined to a domain that can perform [Kerberos](https://web.mit.edu/kerberos) constrained delegation on behalf of the users for the published applications.
+Connectors can run on a machine that isn't domain joined. However, if you want SSO to applications that use integrated Windows authentication, you need a domain-joined machine. In this case, the connector machines must be joined to a domain that can perform [Kerberos](https://web.mit.edu/kerberos) constrained delegation on behalf of the users for the published applications.
 
 You can also joint connectors to:
 
 - Domains in forests that have a partial trust.
 - Read-only domain controllers.
 
-## Connector deployments on hardened environments
+## Connector deployments in hardened environments
 
 Usually, connector deployment is straightforward and requires no special configuration. But consider these unique conditions:
 
@@ -207,7 +207,7 @@ To provide a secure service, connectors have to authenticate toward the service,
 
 The certificates are specific to the service. They're created during the initial registration and automatically renewed every couple of months.
 
-After the first successful certificate renewal, the Microsoft Entra private network connector service has no permission to remove the old certificate from the local machine store. If the certificate expires or the service doesn't use it, you can delete it safely.
+After the first successful certificate renewal, the connector service has no permission to remove the old certificate from the local machine store. If the certificate expires or the service doesn't use it, you can delete it safely.
 
 To avoid problems with certificate renewal, ensure that the network communication from the connector toward the documented destinations is enabled.
 
@@ -218,7 +218,7 @@ Import-module MicrosoftEntraPrivateNetworkConnectorPSModule
 Register-MicrosoftEntraPrivateNetworkConnector -EnvironmentName "AzureCloud"
 ```
 
-For government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install the agent for the Azure Government cloud](../identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
+For Azure Government, use `-EnvironmentName "AzureUSGovernment"`. For more information, see [Install the agent for the Azure Government cloud](../identity/hybrid/connect/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 
 To learn how to verify the certificate and troubleshoot problems, see [Troubleshoot problems installing the private network connector](../identity/app-proxy/application-proxy-connector-installation-problem.md).
 
@@ -233,6 +233,5 @@ If connectors that you expect to be active appear as inactive in a connector gro
 ## Related content
 
 - [Understand Microsoft Entra private network connector groups](concept-connector-groups.md)
-- [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md)
 - [Troubleshoot application proxy and connector errors](../identity/app-proxy/application-proxy-troubleshoot.md)
 - [How to silently install the Microsoft Entra private network connector](how-to-register-connector-powershell.md)
