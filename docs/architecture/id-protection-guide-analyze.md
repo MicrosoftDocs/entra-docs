@@ -61,7 +61,7 @@ To use Azure Monitor, ensure the following prerequisites are met.
 
 A Log Analytics workspace is a data store to collect log data types from Azure and non-Azure resources and applications. We recommend you send all log data to one Log Analytics workspace. 
 
-1. Create a Log Analytics workspace.
+1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
 2. To incorporate the data you want to analyze, add diagnostics settings: 
 
 * AuditLogs
@@ -74,5 +74,8 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 * RiskyServicePrincipals
 * ServicePrincipalRiskEvents 
 
+3. To view the Queries hub, in the Log Analytics workspace, select **Logs**.
 
+   ![The Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
 
+4. 
