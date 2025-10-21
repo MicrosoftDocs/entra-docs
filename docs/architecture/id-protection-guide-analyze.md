@@ -9,6 +9,7 @@ ms.topic: concept-article
 ms.date: 10/21/2025
 
 #CustomerIntent: As an identity administrator, I want to understand risk assessment and resulting actions. I need to prepare for common risk event types, risky users, and risk level patterns.
+---
 
 # Analyze risk
 
