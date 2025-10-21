@@ -55,9 +55,9 @@ With Microsoft Entra private network connector groups, you can enable a common s
 
 ![Diagram that shows multiple cloud vendors for Microsoft Entra IaaS.](./media/concept-connector-groups/application-proxy-multiple-cloud-vendors.png)
 
-### Different connector groups for each forest in a multi-forest environment
+### Different connector groups for each forest in a multiple-forest environment
 
-Single sign-on often uses Kerberos constrained delegation (KCD). Connector machines join a domain that can delegate users to the application. KCD supports cross-forest scenarios, but in distinct multi-forest environments with no trust, a single connector can't serve all forests.
+Single sign-on often uses Kerberos constrained delegation (KCD). Connector machines join a domain that can delegate users to the application. KCD supports cross-forest scenarios, but in distinct multiple-forest environments with no trust, a single connector can't serve all forests.
 
 Deploy dedicated connectors per forest and scope them to apps for users in that forest. Each connector group represents a forest. The tenant and most of the experience are unified, and you assign users to their forest apps by using Microsoft Entra groups.
 

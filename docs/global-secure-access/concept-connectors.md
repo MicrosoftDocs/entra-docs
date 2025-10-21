@@ -91,13 +91,13 @@ Use this sequence to keep the service stable and minimize disruption when connec
 
 ## Connector updates
 
-Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. Connectors poll the updater service for updates. When a newer version is available, they update themselves.
+Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. Connectors poll the updater service for updates. When a newer version is available, the connectors update themselves.
 
 As long as the updater service is running, your connectors can update to the latest major connector release automatically. If you don't see the updater service on your server, you need to reinstall your connector to get updates.
 
 If you don't want to wait for an automatic update, do a manual update. On the server that hosts your connector, go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) and select **Download**. This action starts an update for the local connector.
 
-Not all releases are scheduled for automatic update. Monitor the [version history page](reference-version-history.md) to see whether an update is deployed automatically or requires a manual deployment in the Microsoft Entra portal.
+Not all releases are scheduled for automatic updates. Monitor the [version history page](reference-version-history.md) to see whether an update is deployed automatically or requires a manual deployment in the Microsoft Entra portal.
 
 In tenants that have multiple connectors, automatic updates target one connector at a time in each group to prevent downtime. You might experience downtime during an update if:
   
@@ -130,11 +130,11 @@ Another factor that affects performance is the quality of the networking between
 
 - **Online service**: Slow or high-latency connections to the Microsoft Entra service influence the connector performance. For the best performance, connect your organization to Microsoft through Azure ExpressRoute. Otherwise, have your networking team ensure that connections to Microsoft are handled as efficiently as possible.
 - **Back-end applications**: In some cases, there are extra proxies between the connector and the back-end resources and applications that can slow or prevent connections. To troubleshoot this scenario, open a browser from the connector server and try to access the application or resource. If you run the connectors in cloud but the applications are on-premises, the experience might not be what your users expect.
-- **Domain controllers**: If the connectors perform single sign-on (SSO) by using Kerberos constrained delegation, they contact the domain controllers before sending the request to the back end. The connectors have a cache of Kerberos tickets, but the responsiveness of the domain controllers can affect performance in a busy environment. This issue is more common for connectors that run in Azure but communicate with domain controllers that are on-premises.
+- **Domain controllers**: If the connectors perform single sign-on (SSO) by using [Kerberos](https://web.mit.edu/kerberos) constrained delegation (KCD), they contact the domain controllers before sending the request to the back end. The connectors have a cache of Kerberos tickets, but the responsiveness of the domain controllers can affect performance in a busy environment. This issue is more common for connectors that run in Azure but communicate with domain controllers that are on-premises.
 
 For guidance on where to install connectors and how to optimize your network, see [Optimize traffic flow with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 
-## Expanding ephemeral port range
+## Expanding the ephemeral port range
 
 Private network connectors initiate TCP and UDP connections to designated destination endpoints. These connections require available source ports on the connector host machine. Expanding the ephemeral port range can improve the availability of source ports, particularly when you're managing a high volume of concurrent connections.
 
@@ -163,7 +163,7 @@ We recommend the following specifications for each Microsoft Entra private netwo
 
 Keep peak CPU and memory utilization per connector under 70%. If sustained utilization exceeds 70%, add connectors to the group or scale up host capacity to distribute load. Monitor with Windows performance counters to validate that utilization returns to an acceptable range.
 
-You can expect up to about 1.5-Gbps aggregate TCP throughput (combined inbound and outbound) per connector on an Azure VM sized at four vCPUs and 8 GiB of RAM with standard networking. You can achieve higher throughput by using larger VM sizes (more vCPUs, more memory, and accelerated or high-bandwidth NICs), or by adding more connectors in the same group to scale out.
+You can expect up to 1.5-Gbps aggregate TCP throughput (combined inbound and outbound) per connector on an Azure VM sized at four vCPUs and 8 GiB of RAM with standard networking. You can achieve higher throughput by using larger VM sizes (more vCPUs, more memory, and accelerated or high-bandwidth NICs), or by adding more connectors in the same group to scale out.
 
 We derived this performance guidance from controlled lab tests that used iPerf3 TCP data streams in a dedicated test tenant. Actual throughput can vary based on:
 
@@ -186,9 +186,9 @@ To learn more, see [Best practices for high availability of connectors](../ident
 
 ## Domain joining
 
-Connectors can run on a machine that isn't domain joined. However, if you want SSO to applications that use integrated Windows authentication, you need a domain-joined machine. In this case, the connector machines must be joined to a domain that can perform [Kerberos](https://web.mit.edu/kerberos) constrained delegation on behalf of the users for the published applications.
+Connectors can run on a machine that isn't domain joined. However, if you want SSO to applications that use integrated Windows authentication, you need a domain-joined machine. In this case, the connector machines must be joined to a domain that can perform KCD on behalf of the users for the published applications.
 
-You can also joint connectors to:
+You can also join connectors to:
 
 - Domains in forests that have a partial trust.
 - Read-only domain controllers.
@@ -232,6 +232,6 @@ If connectors that you expect to be active appear as inactive in a connector gro
 
 ## Related content
 
-- [Understand Microsoft Entra private network connector groups](concept-connector-groups.md)
+- [Microsoft Entra private network connector groups](concept-connector-groups.md)
 - [Troubleshoot application proxy and connector errors](../identity/app-proxy/application-proxy-troubleshoot.md)
-- [How to silently install the Microsoft Entra private network connector](how-to-register-connector-powershell.md)
+- [Create an unattended installation script for the Microsoft Entra private network connector](how-to-register-connector-powershell.md)
