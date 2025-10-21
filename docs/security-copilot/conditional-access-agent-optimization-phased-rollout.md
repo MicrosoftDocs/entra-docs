@@ -48,7 +48,7 @@ Regardless of how the plan is executed or if you made changes to the plan, when 
 
 The agent creates a report-only policy and builds a separate phased rollout plan. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
 
-:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
 
 In the list of suggestions from the agent, look for **Suggested phased rollout** in the **Actions taken by agent** column.
 
@@ -62,17 +62,17 @@ Administrators need to review the details of the plan, including the groups incl
 
 1. From the policy details page, select **Review phases**.
 
-    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-review-phases-button.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-review-phases-button.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-review-phases-button.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-review-phases-button.png":::
 
 1. Select **Edit Groups** to edit the groups included in the phase.
 
-    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-edit-groups-button.png" alt-text="Screenshot of the phases that can be edited with the edit groups button highlighted." lightbox="media/agent-optimization-phased-rollout/phased-rollout-edit-groups-button.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-edit-groups-button.png" alt-text="Screenshot of the phases that can be edited with the edit groups button highlighted." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-edit-groups-button.png":::
 
 1. Select the down arrow on the **Automatically roll out phases** button to select an execution mode.
     - **Automatically roll out phases**: Agent automatically rolls out each phase, based on timing and impact signals.
     - **Manually roll out phases**: Administrator manually advances each phase of the rollout.
 
-    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-execution-mode-button.png" alt-text="Screenshot of the option to change execution mode." lightbox="media/agent-optimization-phased-rollout/phased-rollout-execution-mode-button.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-execution-mode-button.png" alt-text="Screenshot of the option to change execution mode." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-execution-mode-button.png":::
 
 > [!TIP]
 > You can intervene at any time with automatic and manual rollout plans. You can also change execution modes at any time during rollout.
@@ -95,7 +95,7 @@ If you selected automatic rollout, the agent automatically executes the plan by 
 
 The agent deploys the policy to the groups in the next phases based on the defined schedule. At any time during the phased rollout, you can pause the execution of the plan or choose to manually roll out the remaining phases.
 
-:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-automatic-details.png" alt-text="Screenshot of an automatically executed phased rollout." lightbox="media/agent-optimization-phased-rollout/phased-rollout-automatic-details.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-automatic-details.png" alt-text="Screenshot of an automatically executed phased rollout." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-automatic-details.png":::
 
 You can continue to monitor between each phase of the rollout to ensure the policy does what's expected. While the policy is being rolled out, the original report-only policy remains in report-only mode for the remaining phases. After the phased rollout is complete, the agent recommends deleting the report-only policy the next time it runs, so you can maintain a clean policy list.
 
@@ -103,7 +103,7 @@ You can continue to monitor between each phase of the rollout to ensure the poli
 
 If you chose to manually execute the phased rollout plan, you're provided several options to manage each step.
 
-:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-manual-details.png" alt-text="Screenshot of a phased rollout plan in manual execution mode." lightbox="media/agent-optimization-phased-rollout/phased-rollout-manual-details.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-manual-details.png" alt-text="Screenshot of a phased rollout plan in manual execution mode." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-manual-details.png":::
 
 You must select the **Move to next phase** to advance each phase of the rollout. At any phase, you can revert to the previous phase or opt to have the agent automatically roll out the remaining phases.
 
