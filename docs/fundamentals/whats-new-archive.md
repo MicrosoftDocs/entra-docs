@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 06/18/2025
+ms.date: 10/21/2025
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -1989,13 +1989,13 @@ Here are some resources to guide you rename your own product experiences or cont
 
 ---
 
-### General Availability - End users will no longer be able to add password SSO apps in My Apps  
+### General Availability - End users will no longer be able to add password SSO and gallery apps in My Apps  
 
 **Type:** Deprecated   
 **Service category:** My Apps                     
 **Product capability:** End User Experiences            
 
-Effective November 15, 2023, end users will no longer be able to add password SSO Apps to their gallery in My Apps. However, admins can still add password SSO apps following [these instructions](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md). Password SSO apps previously added by end users remain available in My Apps.
+Effective November 15, 2023, end users will no longer be able to add password SSO Apps to their gallery in My Apps. However, admins can still add password SSO apps following [these instructions](~/identity/enterprise-apps/configure-password-single-sign-on-non-gallery-applications.md). Password SSO apps previously added by end users remain available in My Apps. The feature **Users can add gallery apps to My Apps** was retired, and admins can no longer see the option to enable this feature for their users in the Entra portal under user settings within Enterprise Apps.
 
 For more information, see: [Discover applications](~/identity/enterprise-apps/myapps-overview.md#discover-applications).
 
