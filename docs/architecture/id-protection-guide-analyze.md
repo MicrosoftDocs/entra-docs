@@ -55,7 +55,7 @@ To use Azure Monitor, ensure the following prerequisites are met.
 * An Azure account with an active subscription
   * Learn about [Azure accounts](https://azure.microsoft.com/pricing/purchase-options/azure-account/)
 * Microsoft.OperationalInsights/workspaces/write permissions to the resource group for the Log Analytics workspace
-  * Learn about the **Log Analytics Contributor** role in [Manage access to Log Analytics workspaces](/azure/azure-monitor/logs/manage-access)
+  * Learn about the **Log Analytics Contributor** role in [manage access to Log Analytics workspaces](/azure/azure-monitor/logs/manage-access)
 
 ## Create a Log Analytics workspace
 
@@ -73,5 +73,6 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 * UserRiskEvents
 * RiskyServicePrincipals
 * ServicePrincipalRiskEvents 
+
 
 
