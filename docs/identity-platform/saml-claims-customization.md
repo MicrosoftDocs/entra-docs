@@ -155,6 +155,8 @@ You can use the following functions to transform claims.
 
 ## Regex-based claims transformation
 
+You can use regular expressions to transform claims. A maximum of 20 total regex replacements can be made when using regex-based claims transformations.
+
 The following image shows an example of the first level of transformation:
 
 :::image type="content" source="./media/saml-claims-customization/regexreplace-transform1.png" alt-text="Screenshot of the first level of transformation.":::
@@ -170,7 +172,7 @@ The actions listed in the following table provide information about the first le
 | `5` | `Add additional parameter` | More than one user attribute can be used for the transformation. The values of the attributes would then be merged with regex transformation output. Up to five more parameters are supported. |
 | `6` | `Replacement pattern` | The replacement pattern is the text template, which contains placeholders for regex outcome. All group names must be wrapped inside the curly braces such as `{group-name}`. Let's say the administration wants to use user alias with some other domain name, for example `xyz.com` and merge country name with it. In this case, the replacement pattern would be `{country}.{domain}@xyz.com`, where `{country}` is the value of input parameter and `{domain}` is the group output from the regular expression evaluation. In such a case, the expected outcome is `US.swmal@xyz.com`. |
 
-The following image shows an example of the second  level of transformation:
+The following image shows an example of the second level of transformation:
 
 :::image type="content" source="./media/saml-claims-customization/regexreplace-transform2.png" alt-text="Screenshot of second level of claims transformation.":::
 
