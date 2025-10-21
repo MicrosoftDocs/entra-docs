@@ -134,7 +134,7 @@ Another factor that affects performance is the quality of the networking between
 
 For guidance on where to install connectors and how to optimize your network, see [Optimize traffic flow with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 
-## Expanding the ephemeral port range
+## Expanding ephemeral port range
 
 Private network connectors initiate TCP and UDP connections to designated destination endpoints. These connections require available source ports on the connector host machine. Expanding the ephemeral port range can improve the availability of source ports, particularly when you're managing a high volume of concurrent connections.
 
