@@ -91,6 +91,8 @@ If you need other transformations, submit your idea in the [feedback forum in Mi
 
 ## Regex-based claims transformation
 
+You can use regular expressions to transform claims. A maximum of 20 total regex replacements can be made when using regex-based claims transformations.
+
 The following image shows an example of the first level of transformation:
 
 :::image type="content" source="./media/jwt-claims-customization/regexreplace-transform1.png" alt-text="Screenshot of the first level of transformation.":::
