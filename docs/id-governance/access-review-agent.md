@@ -14,7 +14,9 @@ ms.date: 09/04/2025
 # Access Review Agent
 Say goodbye to time-consuming research and the uncertainty of rushed decisions. The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity.
 
+
 > [!VIDEO https://www.youtube.com/embed/T3Psj8Z2Ghc?si=S5bD8vmhy9gm5UuZ]
+
 
 ## Prerequisites
 - You must have [Microsoft Entra ID Governance or Microsoft Entra Suite licenses](licensing-fundamentals.md).
