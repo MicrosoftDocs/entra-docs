@@ -27,7 +27,7 @@ This article walks you through making a custom extension, its underlying Azure L
 
 Want to learn how this feature can use SAP organizational business context for approvals? Check out this episode of the SAP on Azure podcast:
 
-[!VIDEO https://www.youtube.com/embed/qpEkNQtLLRY?si=ImIiD2jZPE8YTJGq]
+> [!VIDEO https://www.youtube.com/embed/qpEkNQtLLRY?si=ImIiD2jZPE8YTJGq]
 
 ## License requirements
 
