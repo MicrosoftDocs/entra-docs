@@ -23,9 +23,9 @@ The Conditional Access optimization agent features a conversational interface th
 
 ## Prerequisites
 
-- You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
+- You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-- [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can use the chat capability.
+- [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can use the chat capability.
 
 ### Limitations
 
@@ -82,7 +82,7 @@ Sample prompts:
 
 You can access the chat from the main Conditional Access Optimization Agent page or from any policy suggestion details page.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Conditional Access Optimization Agent**.
     - Select **Chat with agent** from the agent page to chat with the agent about all policy suggestions.
@@ -125,5 +125,5 @@ You're prompted a second time to turn on the policy. If you select **Confirm** a
 
 ## Related content
 
-- [Conditional Access optimization agent overview](overview.md)
-- [Conditional Access optimization agent phased rollout](agent-optimization-phased-rollout.md)
+- [Conditional Access optimization agent overview](../identity/conditional-access/overview.md)
+- [Conditional Access optimization agent phased rollout](./conditional-access-agent-optimization-phased-rollout.md)
