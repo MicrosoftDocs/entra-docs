@@ -16,7 +16,7 @@ ms.date: 10/21/2025
 When configuring access to resources, a proactive approach to risk mitigates the accelerating pace of cyber attack complexity. Create automated conditions for access and save on operations and support costs. Organizations gain visibility into risk assessment and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs) reference tables. Learn about common risk event types, repeatedly flagged users, and risk level patterns. 
 
 * Track risk events across users and sign-ins 
-* Correlate anomalies with [Conditional Access](/identity/conditional-access/overview) policies and sign-in logs 
+* Correlate anomalies with [Conditional Access](../identity/conditional-access/overview.md) policies and sign-in logs 
 * Identify potential threat patterns
   * Enrich investigations and stream telemetry to [Microsoft Defender XDR](/defender-xdr/microsoft-365-defender) and [Microsoft Sentinel](/azure/sentinel/overview)
 
@@ -74,4 +74,5 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
    ![The Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
 
 4. 
+
 
