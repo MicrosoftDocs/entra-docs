@@ -80,28 +80,28 @@ Microsoft Entra ID Account Recovery operates through a comprehensive identity ve
 ### Recovery workflow
 
 The account recovery process follows a structured workflow designed to balance security with user experience:
-
-#### Phase 1: Discover Account Recovery Entry
+![alt text](media/concept-self-service-account-recovery/recovery-steps-overview.png)
+#### Step 1: Discover Account Recovery Entry
 
 1. **Account name**: Users provide their account identifier (typically username or email address)
 2. **Access point**: Users access recovery through sign-in after indicating they can't access their account. 
 3. **Eligibility check**: The system verifies that the account is eligible for recovery based on organizational policies
 4. **Start recovery with Identity Verification Provierr**: The user will be directed to an IDV prefered by the tenant admin for their user by geography.
 
-#### Phase 2: Identity verification through Identity Verification Provider
+#### Step 2: Identity verification through Identity Verification Provider
 
 1. **External identity proofing**: Users are redirected to trusted identity verification providers to complete identity validation
 2. **Document verification**: Identity providers verify government-issued identification documents using advanced fraud detection
 3. **Biometric validation**: Liveness checks and facial recognition ensure the person presenting credentials is physically present
 4. **Credential issuance**: Upon successful verification, users receive a verifiable credential (Verified ID) attesting to their identity which is stored in Microsoft Authenticator
 
-#### Phase 3: Identity presentation and onwership validation
+#### Step 3: Identity presentation and ownershiop validation
 
 1. **Credential presentation**: Users present their newly acquired Verified ID to Entra ID
-2. **Crecential verification**: The system validates the credential's authenticity and integrity
+2. **Credential verification**: The system validates the credential's authenticity and integrity
 3. **Attribute correlation**: The system matches identity attributes from the credential against stored user profile information
 
-#### Phase 4: Access restoration
+#### Step 4: Access restoration
 
 1. **Temporary access provision**: Users receive temporary access credentials (such as Temporary Access Pass) with limited validity
 2. **Guided re-enrollment**: Users are directed through the process of registering new authentication methods
