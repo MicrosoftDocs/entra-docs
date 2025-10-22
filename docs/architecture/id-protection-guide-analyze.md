@@ -86,6 +86,10 @@ See the following screenshot of the **Logs** option and the Queries hub page.
 
 The following sections illustrate how to analyze risk with Azure Monitor. 
 
+* **Identify risky users** - Users with one or more risky sign-ins, or other risky actions
+* **Discern risk event types** - Unfamiliar sign-in, unusual tokens, and unlikely travel are examples
+* **Examine risk levels** - Risk-level totals enable effective decision making
+
 ### Step one: Identify risky users
 
 1. Run the query to summarize the count by UserDisplayName.
@@ -178,6 +182,7 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
