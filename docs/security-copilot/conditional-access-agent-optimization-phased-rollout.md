@@ -22,10 +22,10 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 ## Prerequisites
 
-- You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
+- You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-- [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can view the agent and any suggestions, but can't take any actions.
-- [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can view the agent and take action on the suggestions.
+- [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can view the agent and any suggestions, but can't take any actions.
+- [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can view the agent and take action on the suggestions.
 - Tenants must have at least five defined groups that are currently used in Conditional Access policies for the agent to generate a phased rollout plan.
 
 ## How it works
@@ -56,7 +56,7 @@ In the list of suggestions from the agent, look for **Suggested phased rollout**
 
 Administrators need to review the details of the plan, including the groups included in each phase, the timing of each phase, and how the plan will be executed.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Conditional Access Optimization Agent** and select the **Review suggestions** button for a policy suggestion that includes a phased rollout.
 
@@ -83,7 +83,7 @@ To adjust the time between phases:
 1. Adjust the days between phases in the **Phased rollout** section.
 1. Select the **Save** button to apply the changes.
 
-For more information, review the [Phased rollout settings](agent-optimization.md#phased-rollout).
+For more information, review the [Phased rollout settings](./conditional-access-agent-optimization.md#phased-rollout).
 
 ## Agent or administrator executes the approved rollout plan
 
@@ -124,4 +124,4 @@ The phased rollout capability is turned on by default. To turn it off, go to the
 ## Related content
 
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)
-- [Conditional Access optimization agent overview](agent-optimization.md)
+- [Conditional Access optimization agent overview](./conditional-access-agent-optimization.md)
