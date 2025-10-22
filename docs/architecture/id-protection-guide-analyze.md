@@ -65,7 +65,7 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 5. Locate the **Recent user risk events** query.
 6. Select **Run**.
 
-**Diagnostic settings**
+**Diagnostics settings**
   * AuditLogs
   * SignInLogs
   * NonInteractiveUserSignInLogs
@@ -109,7 +109,7 @@ AADUserRiskEvents
 | summarize count()by UserDisplayName 
 ```
 
-Use this query to identify common user patterns, such as service accounts or small user subsets generating a large amount of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user or require a secure password change. 
+Use the previous query to identify common user patterns, such as service accounts, or small user subsets generating large amounts of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user, or require a secure password change. 
 
    ![Screenshot of risky user data from the query.](./media/id-protection-guide-analyze/risky-users.png)
 
@@ -137,7 +137,7 @@ While reviewing risk types, pay attention to large volumes. In the following scr
   * Enforce session controls such as sign-in frequency, application restrictions, and persistent browser controls
 * **AnomalousToken** - Set up Conditional Access policies to require password reset and perform multifactor authentication (MFA)
   * Block access for high-risk sign-ins
-* **UnlikelyTravel** – Add named locations as trusted IPs
+* **UnlikelyTravel** - Add named locations as trusted IPs
   * Enable trusted locations for users that travel frequently
 
 See the following screenshot of results from the active-user risk events query.
@@ -176,7 +176,7 @@ To help you get started, use Azure Monitor Log reference tables for Microsoft En
 
 ## Next steps
 
-Microsoft Entra ID Protection has detections and improved diagnostics to help make identity risk management proactive, scalable, and effective. You can learn more.  
+Microsoft Entra ID Protection has features to help build a proactive approach to identity risk management. You can learn more.  
 
 * See [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](/entra/architecture/id-protection-guide-introduction)
 * Watch instructional videos in the [IDProtect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
@@ -191,6 +191,7 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
