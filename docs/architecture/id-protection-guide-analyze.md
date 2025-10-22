@@ -79,6 +79,7 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 6. Select **Run**.
 7. From the dropdown, change **Simple mode** to ***KQL mode**.
 
+
    ![Screenshot of the KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
 
 ## Three steps to analyze risk
@@ -174,3 +175,4 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 ⁠* [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 ⁠* [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 ⁠* [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
