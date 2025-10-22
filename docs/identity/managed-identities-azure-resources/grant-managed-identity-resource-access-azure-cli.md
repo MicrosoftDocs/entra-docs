@@ -18,7 +18,7 @@ This article shows you how to use the Azure CLI to give a managed identity acces
 ## Prerequisites
 
 - Be sure you've enabled managed identity on an Azure resource, such as an [Azure virtual machine](how-to-configure-managed-identities.md). 
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Prepare your environment
 

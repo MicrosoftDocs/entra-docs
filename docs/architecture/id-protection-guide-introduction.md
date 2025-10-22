@@ -47,7 +47,7 @@ Understanding the products and their core concepts is the first step toward runn
 
 To kick off a Microsoft Entra ID Protection PoC, you need these prerequisites.
 
-- An enabled working Microsoft Entra tenant with Microsoft Entra ID P2 or trial license. You can [create one for free](https://azure.microsoft.com/free/).
+- An enabled working Microsoft Entra tenant with Microsoft Entra ID P2 or trial license. You can [create one for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - Microsoft 365 E5 or Microsoft Enterprise Mobility + Security E5 licenses for some risk detections.
 - One or more of the following role assignments, depending on tasks performed. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
 

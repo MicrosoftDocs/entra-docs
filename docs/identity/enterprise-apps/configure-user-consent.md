@@ -34,7 +34,7 @@ To reduce the risk of malicious applications attempting to trick users into gran
 
 To configure user consent, you need:
 
-- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
 - A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role is only required when using the Microsoft Entra admin center.
 

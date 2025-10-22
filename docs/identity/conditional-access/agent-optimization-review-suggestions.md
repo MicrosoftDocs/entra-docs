@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
 manager: pmwongera
-ms.date: 08/25/2025
+ms.date: 10/09/2025
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -57,13 +57,23 @@ We want to provide as much information as possible about the logic used to ident
 
 ## Review suggestions and agent logic
 
-Select **Review suggestion** to review a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
+Select **Review suggestion** to review a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy. The options available in the policy suggestion details vary depending on the type of suggestion. For example, new policy suggestions include a **Turn on policy** button while suggestions to modify an existing policy include an **Add accounts** button to add users or groups to exclude from the policy.
 
 ### Policy details
 
 The default view of the suggestion provides the policy details, including a high-level description at the top followed by the details that are used in the policy.
 
 :::image type="content" source="media/agent-optimization-review-suggestions/review-suggestions-details.png" alt-text="Screenshot of the agent with the policy suggestion details open." lightbox="media/agent-optimization-review-suggestions/review-suggestions-details-expanded.png":::
+
+From this view you can make decisions about the suggestion, including:
+
+- Turn on a new policy in report-only mode
+- Apply changes to an existing policy
+- Mark a suggestion as reviewed
+- Snooze a suggestion for 14 days
+- Add notes about the suggestion for other admins to review
+
+You can also edit, duplicate, or download the policy from this page. The policy suggestions detail page is detailed and provides every option needed to make an informed decision about the suggestion. But if you need more information, you can also view the policy impact and see details about the agent's activity.
 
 ### Policy impact
 
@@ -75,9 +85,13 @@ Adjust the filters and the display as needed. Select a point on the graph to see
 
 To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The agent's activity assesses policy drift, or gaps in policy coverage, for users and apps. The agent also looks for policies that can be merged or consolidated.
 
-The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion.
+:::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-detail.png" alt-text="Screenshot of the agent activity map with clickable user list option highlighted." lightbox="media/agent-optimization-review-suggestions/agent-activity-detail-expanded.png":::
 
-:::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-detail.png" alt-text="Screenshot of the agent activity map." lightbox="media/agent-optimization-review-suggestions/agent-activity-detail-expanded.png":::
+If the policy suggestion includes adding specific users or applications to the policy, you can view the list of applications or users directly from the map. For example, in the following example you'd select the **8 users** link to see the eight users the agent identified as not being included in the policy.
+
+:::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-map-view-users.png" alt-text="Screenshot of the agent activity map." lightbox="media/agent-optimization-review-suggestions/agent-activity-map-view-users.png":::
+
+The **Summary of agent activity** is a natural language description of the activity illustrated in the map. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion.
 
 ### Review policy changes
 
@@ -90,7 +104,7 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 
 Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions—flagging policies that exclude a large portion of users and recommending explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
 
-Because the policy suggestions that come through deep analysis might have a significant impact on your environment, you can "snooze" the suggestion for 14 days. This feature gives you time to investigate the suggestion and make any needed changes to your policies before applying the suggestion. You can also add notes about the suggestion that can be saved for other admins to review. If you choose to snooze the suggestion, it reappears in the list after 14 days with the notes intact.
+Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and make any needed changes to your policies before applying the suggestion. You can also add notes about the suggestion that can be saved for other admins to review. If you choose to snooze the suggestion, it reappears in the list after 14 days with the notes intact.
 
 :::image type="content" source="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png" alt-text="Screenshot of the suggestion created with deep analysis with the snooze and notes buttons highlighted." lightbox="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png":::
 

@@ -18,7 +18,7 @@ In this how-to guide, you'll register a web API with the Microsoft identity plat
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * An application registered in the [Microsoft Entra admin center](https://entra.microsoft.com/). If you don't have one, [register an application](quickstart-register-app.md#register-an-application) now.
 
 ## Register the web API

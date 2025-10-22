@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 09/11/2025
+ms.date: 10/16/2025
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
@@ -64,6 +64,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Access and perform all administrative tasks on Dynamics 365 Business Central environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
+> | [Exchange Backup Administrator](#exchange-backup-administrator) | Back up and restore content (including granular restore) for Exchange in Microsoft 365 Backup | 49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31 |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
 > | [Extended Directory User Administrator](#extended-directory-user-administrator) | Manage all aspects of external user profiles in the extended directory for Teams. | dd13091a-6207-4fc0-82ba-3641e056ab95 |
 > | [External ID User Flow Administrator](#external-id-user-flow-administrator) | Can create and manage all aspects of user flows. | 6e591065-9bad-43ed-90f3-e9424366d2f0 |
@@ -122,6 +123,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Security Reader](#security-reader) | Can read security information and reports in Microsoft Entra ID and Office 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 5d6b6bb7-de71-4623-b4af-96380a352509 |
 > | [Service Support Administrator](#service-support-administrator) | Can read service health information and manage support tickets. | f023fd81-a637-4b56-95fd-791ac0226033 |
 > | [SharePoint Administrator](#sharepoint-administrator) | Can manage all aspects of the SharePoint service. | f28a1f50-f6e7-4571-818b-6a12f2af6b6c |
+> | [SharePoint Backup Administrator](#sharepoint-backup-administrator) | Back up and restore content (including granular restore) for SharePoint and OneDrive in Microsoft 365 Backup | 9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be |
 > | [SharePoint Embedded Administrator](#sharepoint-embedded-administrator) | Manage all aspects of SharePoint Embedded containers. | 1a7d78b6-429f-476b-b8eb-35fb715fffd4 |
 > | [Skype for Business Administrator](#skype-for-business-administrator) | Can manage all aspects of the Skype for Business product. | 75941009-915a-4869-abe7-691bff18279e |
 > | [Teams Administrator](#teams-administrator) | Can manage the Microsoft Teams service. | 69091246-20e8-4a56-aa4d-066075b2a7a8 |
@@ -295,6 +297,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Exchange Administrator
 
 [!INCLUDE [exchange-administrator](includes/exchange-administrator.md)]
+
+## Exchange Backup Administrator
+
+[!INCLUDE [exchange-backup-administrator](includes/exchange-backup-administrator.md)]
 
 ## Exchange Recipient Administrator
 
@@ -527,6 +533,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## SharePoint Administrator
 
 [!INCLUDE [sharepoint-administrator](includes/sharepoint-administrator.md)]
+
+## SharePoint Backup Administrator
+
+[!INCLUDE [sharepoint-backup-administrator](includes/sharepoint-backup-administrator.md)]
 
 ## SharePoint Embedded Administrator
 

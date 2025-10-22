@@ -52,6 +52,8 @@
       href: howto-authentication-use-email-signin.md
     - name: Security questions
       href: concept-authentication-security-questions.md
+    - name: Remove passwords from Microsoft Entra ID
+      href: how-to-plan-password-scramble-phishing-resistant-passwordless-authentication.md
   - name: Conditional Access authentication strength
     items:
     - name: Overview

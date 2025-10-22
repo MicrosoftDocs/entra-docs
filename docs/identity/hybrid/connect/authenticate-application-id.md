@@ -49,7 +49,7 @@ In the Bring Your Own Application (BYOA) setup, administrator manages the applic
 
 The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics). The application needs the required permissions configured. To configure the required permissions on the application, you can use Microsoft Graph API or PowerShell. In this section, we'll use Microsoft Graph API.
 
- - `ConnectSyncAppId` refers to the application (client) ID of the application for which we want to configure permissions.
+- `ConnectSyncAppId` refers to the application (client) ID of the application for which we want to configure permissions.
  - `SynchronizationServiceAppId` refers to the application (client) ID for **Microsoft Entra AD Synchronization Service**. The value is `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016` for all clouds.
  - `PasswordResetServiceAppId` refers to the application (client) ID for **Microsoft password reset service**. The value is `93625bc8-bfe2-437a-97e0-3d0060024faa` for all clouds except Arlington where it's `2e5ecfc8-ea79-48bd-8140-c19324acb278`.
 
@@ -191,7 +191,7 @@ The following prerequisites are required to implement authentication by using ap
 >[!IMPORTANT]
 > New Microsoft Entra Connect Sync versions are available only via the Microsoft Entra admin center.
 >
-> Following up on the [What's New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are available only on the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within the Microsoft Entra admin center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
+> Following up on the [What's New](../../../fundamentals/whats-new-archive.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are available only on the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within the Microsoft Entra admin center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
 
 - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.3.0](reference-connect-version-history.md#2530) or greater for manual onboarding.
 - Microsoft Entra Connect version [2.5.76.0](reference-connect-version-history.md#25760) or greater for automatic onboarding
@@ -372,7 +372,7 @@ If you want to configure application-based authentication using the default opti
 
 Microsoft Entra Connect warns if the certificate rotation is due. That is, if expiration is less than or equal to 150 days. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
 
-This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if the scheduler is suspended.
+This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncScheduler` to see if the scheduler is suspended.
 
 ### Automatic
 
