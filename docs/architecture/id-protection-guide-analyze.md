@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 10/21/2025
+ms.date: 10/22/2025
 
 #CustomerIntent: As an administrator, I want to learn more about risk assessment and resulting actions. I need to prepare for common risk event types and risky users, also to understand risk level patterns.
 ---
@@ -73,6 +73,10 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 
    ![The Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
 
-4. 
+4. Search for **Risk**.
+5. Locate the **Recent user risk events** query.
+6. Select **Run**.
+7. From the dropdown, change **Simple mode** to ***KQL mode**.
 
+   ![The KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
 
