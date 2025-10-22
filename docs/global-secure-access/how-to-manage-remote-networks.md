@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 10/16/2025
+ms.date: 10/21/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -55,7 +55,7 @@ Add a new device link or delete an existing device link from this page. You can'
 
 From this page, you can enable or disable the available traffic forwarding profile. At this time, only the Microsoft access profile can be applied to remote networks.
 
-<!-- need new screenshot of the traffic profiles page with the Microsoft access profile enabled. -->
+:::image type="content" source="media/how-to-manage-remote-networks/microsoft-traffic-profile-selected.png" alt-text="Screenshot of the Create a remote network page, open to the Traffic profiles tab, with Microsoft traffic profile selected.":::
 
 You can also assign a remote network to the Microsoft traffic forwarding profile from **Traffic forwarding** area of Global Secure Access. Browse to **Connect** > **Traffic forwarding** and select **Add/edit assignments** for the traffic profile. For more information, see [Global Secure Access traffic forwarding](concept-traffic-forwarding.md).
 

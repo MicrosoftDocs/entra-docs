@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 10/16/2025
+ms.date: 10/21/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -36,17 +36,17 @@ To assign a remote network to a traffic forwarding profile to, you must have:
 1. Browse to **Global Secure Access** > **Connect** > **Remote networks**.
 1. Select a remote network. 
 1. Select **Traffic profiles**. 
-1. Select (or unselect) the checkbox for **Microsoft traffic forwarding profile**. 
+1. Select (or unselect) the checkbox for **Microsoft traffic profile**. 
 1. Select **Save**.
 
-<!-- need new screenshot of the traffic profiles page with the Microsoft access profile enabled. -->
+    :::image type="content" source="media/how-to-assign-traffic-profile-to-remote-network/microsoft-traffic-profile-selected.png" alt-text="Screenshot of the Create a remote network page, open to the Traffic profiles tab, with Microsoft traffic profile selected.":::
 
 ## Assign a remote network to the Microsoft traffic forwarding profile
 
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select **Add/edit assignments** for **Microsoft traffic profile**. 
 
-![Screenshot of add/edit assignment on the Microsoft traffic profile.](media/how-to-assign-traffic-profile-to-remote-network/microsoft-traffic-profile-remote-network.png)
+    :::image type="content" source="media/how-to-assign-traffic-profile-to-remote-network/microsoft-traffic-profile-remote-network.png" alt-text="Screenshot of the add/edit assignment on the Microsoft traffic profile." lightbox="media/how-to-assign-traffic-profile-to-remote-network/microsoft-traffic-profile-remote-network.png":::
 
 ### Assign a traffic profile to a remote network using the Microsoft Graph API
 
