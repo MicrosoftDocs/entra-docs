@@ -157,7 +157,7 @@ AADUserRiskEvents
 | summarize count()by RiskLevel  
 ```
 
-In the following screenshot, three detections are high-risk, which you could address first. We recommend a minimum baseline Conditional Access policy to require secure password change, or to block the high-risk users. 
+In the following screenshot, three detections are high-risk, which you can prioritize. We recommend a minimum baseline Conditional Access policy that requires secure password change, or that blocks the high-risk users. 
 
    ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/three-high.png)
 
@@ -189,6 +189,7 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
