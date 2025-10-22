@@ -91,7 +91,7 @@ The following sections illustrate how to analyze risk with Azure Monitor.
 1. Run the query to summarize the count by UserDisplayName
 2. Add a time range in DetectedDateTime < ago().  
 
-In the following example, 30d is the date range. 
+In the following example, **30d** is the date range. 
 
 ```KQL
 // Recent user risk events 
@@ -177,5 +177,6 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 ⁠* [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 ⁠* [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 ⁠* [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
