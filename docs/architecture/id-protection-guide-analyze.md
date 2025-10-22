@@ -172,7 +172,7 @@ To help you get started, use Azure Monitor Log reference tables for Microsoft En
 
 ## Next steps
 
-Microsoft Entra ID Protection is continuously updated to help organizations stay ahead of emerging threats. New detections and improved diagnostics help make identity risk management proactive, scalable, and effective. You can learn more.  
+Microsoft Entra ID Protection has detections and improved diagnostics to help make identity risk management proactive, scalable, and effective. You can learn more.  
 
 * See [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](/entra/architecture/id-protection-guide-introduction)
 * Watch instructional videos in the [IDProtect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
@@ -187,6 +187,7 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
