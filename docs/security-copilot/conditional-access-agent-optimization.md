@@ -100,7 +100,7 @@ The policy suggestions identified by the agent include:
 
    :::image type="content" source="media/conditional-access-agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization start agent page." lightbox="media/conditional-access-agent-optimization/start-agent.png":::
 
-When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and approve Conditional Access agent suggestions](agent-optimization-review-suggestions.md).
+When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and approve Conditional Access agent suggestions](./conditional-access-agent-optimization-review-suggestions.md).
 
    :::image type="content" source="media/conditional-access-agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the review suggestion buttons highlighted." lightbox="media/conditional-access-agent-optimization/review-suggestions.png":::
 
@@ -259,5 +259,5 @@ You can resolve this issue by removing the agent, then enabling the agent again 
 ## Related content
 
 - [Review and approve agent suggestions](./conditional-access-agent-optimization-review-suggestions.md)
-- [Conditional Access policy templates](../identity/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
+- [Conditional Access policy templates](../identity/conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)

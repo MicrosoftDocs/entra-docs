@@ -63,9 +63,9 @@ items:
   - name: Access Review Assistant (Preview)
     items: 
     - name: Get started (Preview)
-      href: /entra/id-governance/access-review-agent?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: access-review-agent.md
     - name: Access Review Agent logs and Metrics (Preview)
-      href: /entra/id-governance/access-review-agent-logs-metrics?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: access-review-agent-logs-metrics.md
 - name: Responsible AI
   items:
   - name: Responsible AI overview

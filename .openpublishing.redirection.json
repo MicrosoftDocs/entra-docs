@@ -116,6 +116,16 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/id-governance/access-review-agent-logs-metrics.md",
+      "redirect_url": "/entra/security-copilot/access-review-agent-logs-metrics",
+      "redirect_document_id": true
+    },
+   {
+      "source_path_from_root": "/docs/id-governance/access-review-agent.md",
+      "redirect_url": "/entra/security-copilot/access-review-agent",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
       "redirect_url": "/entra/id-protection/overview-identity-protection",
       "redirect_document_id": false
