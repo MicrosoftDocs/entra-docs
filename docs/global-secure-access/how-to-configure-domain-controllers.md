@@ -60,7 +60,6 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Go to **Global Secure Access** > **Applications** > **Quick Access** and then select **Add Quick Access application segment**. Use port `88` and select **TCP**.
-1. You can configure the port in either a Quick Access or Enterprise Application.
 1. Add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
 
 ![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers.](media/how-to-configure-domain-controllers/quick-access-settings.png)
