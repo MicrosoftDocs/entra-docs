@@ -73,6 +73,7 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 
    ![The Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
 
+
 4. Search for **Risk**.
 5. Locate the **Recent user risk events** query.
 6. Select **Run**.
@@ -80,3 +81,23 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 
    ![The KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
 
+## Three steps to analyze risk
+
+The following sections illustrate how to analyze risk with Azure Monitor. 
+
+### Step one: Identify risky users
+
+1. Run the query to summarize the count by UserDisplayName
+2. Add a time range in DetectedDateTime < ago().  
+
+In the following example, 30d is the date range. 
+
+```query
+// Recent user risk events 
+// Gets list of the top 100 active user risk events. 
+AADUserRiskEvents 
+| where DetectedDateTime > ago(30d) 
+| where RiskState == "atRisk" 
+| take 100 
+| summarize count()by UserDisplayName 
+```
