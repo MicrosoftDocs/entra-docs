@@ -26,6 +26,7 @@ Follow these steps to enable suggested access packages in My Access.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **ID Governance** > **Entitlement management** > **Control configurations** > **My Access settings for end users**.
+    
     :::image type="content" source="media/entitlement-management-suggested-access-packages/opt-in-features-selection.png" alt-text="Screenshot of opt-in feature selection option." lightbox="media/entitlement-management-suggested-access-packages/opt-in-features-selection.png":::
 1. For Show insights for suggested access packages in My Access, select *Past assignments, Past assignments and peers without names*, or *Past assignments and peers with names*.
 1. Select **Save**.
