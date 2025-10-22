@@ -130,6 +130,10 @@ While reviewing risk types, pay attention to large volumes. In the following scr
 
    ![Screenshot of the results from the active-user risk events query.](./media/id-protection-guide-analyze/risk-events.png)
 
+## Step three: Examine risk levels
+
+Examine the **AADUserRiskEvents** table to review low-, medium-, and high-risk levels. Summarize risk events by level and analyze risk level totals. 
+
 ```kql
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
@@ -142,5 +146,31 @@ AADUserRiskEvents
 
 In the following screenshot, three detections are high-risk, which you could address first. We recommend a minimum baseline Conditional Access policy to require secure password change, or to block the high-risk users. 
 
-   ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/risk-events.png)
+   ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/three-high.png)
 
+### Azure Monitor Logs reference tables
+
+To help you get started, use the following of Azure Monitor Log reference tables for Microsoft Entra ID Protection: 
+
+* [AADUserRiskEvents](/azure/azure-monitor/reference/tables/aaduserriskevents)
+* [AADRiskyUsers](/azure/azure-monitor/reference/tables/aadriskyusers)
+* [AADServicePrincipalRiskEvents](/azure/azure-monitor/reference/tables/aadserviceprincipalriskevents)
+* [AADRiskyServicePrincipals](/azure/azure-monitor/reference/tables/aadriskyserviceprincipals)
+
+## Next steps
+
+Microsoft Entra ID Protection is continuously updated to help organizations stay ahead of emerging threats. New detections and improved diagnostics help make identity risk management proactive, scalable, and effective. You can learn more.  
+
+See Introduction to Microsoft Entra ID Protection proof-of-concept guidance 
+Watch videos in the aka.ms/IDProtect  YouTube playlist  
+Visit the Tech Community for updates and technical information 
+Learn to configuring diagnostics at https://aka.ms/idpdiagnosticssettings 
+
+### Learn about Microsoft Entra
+
+With Microsoft Entra, organizations enable real-time access decisions for identities across hybrid and multicloud environments. Discover its features and capabilities for secure access. 
+
+⁠* [Microsoft Entra documentation](/entra/)
+⁠* [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
+⁠* [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
+⁠* [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
