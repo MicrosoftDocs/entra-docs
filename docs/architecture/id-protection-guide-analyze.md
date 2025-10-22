@@ -129,3 +129,17 @@ While reviewing risk types, pay attention to large volumes. In the following scr
 * **UnlikelyTravel** – If some users travel frequently, add named locations as trusted IPs and ensure trusted locations aren’t flagged as risky
 
    ![Screenshot of the results from the active-user risk events query.](./media/id-protection-guide-analyze/risk-events.png)
+
+```kusto
+// Recent user risk events 
+// Gets list of the top 100 active user risk events. 
+AADUserRiskEvents 
+| where DetectedDateTime > ago(30d) 
+| where RiskState == "atRisk" 
+| take 100 
+| summarize count()by RiskLevel  
+```
+
+In the following screenshot, three detections are high-risk, which you could address first. We recommend a minimum baseline Conditional Access policy to require secure password change, or to block the high-risk users. 
+
+   ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/risk-events.png)
