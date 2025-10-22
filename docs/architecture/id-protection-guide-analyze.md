@@ -24,9 +24,9 @@ You can [search the audit log for events in Microsoft Defender XDR](/defender-xd
 
 ## Risk analysis with the AADUserRiskEvents table 
 
-Identity risks grow in speed and complexity every year. You can use risk insights to grasp the volume and details of potential identity attacks and compromises. Enable Azure Monitor Logs reference tables to analyze risk insights with [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md), which is continuously updated to help organizations stay ahead of emerging threats. New detections and improved diagnostics help make identity risk management proactive, scalable, and effective. 
+Identity risks grow in speed and complexity every year. You can use risk insights to grasp the volume and details of potential identity attacks and compromises. Enable Azure Monitor Logs reference tables to analyze risk insights with [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) that detects, investigates, and remediates identity risks. Risk data goes to access decisions tools, or tools for investigation and correlation. Microsoft Entra ID Protection is continuously updated to help organizations stay ahead of emerging threats. Identity risk management becomes more proactive, scalable, and effective. 
 
-With these tools, detections, and diagnostics, you can investigate and remediate identity risks with Conditional Access and construct targeted policies to address your orgnanization's risks.  
+With insights, reference tables, and more, you can investigate and remediate identity risks with Conditional Access and construct targeted policies to address your orgnanization's risks.  
 
 Learn more in the [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs).
 
@@ -191,6 +191,7 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
