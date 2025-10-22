@@ -1,6 +1,9 @@
 ---
 title: include file
 description: include file
+
+manager: CelesteDG
+
 ms.service: identity-platform
 ms.topic: include
 ms.date: 10/13/2020
