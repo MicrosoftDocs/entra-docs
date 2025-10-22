@@ -24,9 +24,9 @@ You can [search the audit log for events in Microsoft Defender XDR](/defender-xd
 
 ## Risk analysis with the AADUserRiskEvents table 
 
-Identity risks grow in speed and complexity every year. You can use risk insights to grasp the volume and details of potential identity attacks and compromises. Enable Azure Monitor Logs reference tables to analyze risk insights with [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md), then investigate and remediate identity risks with Conditional Access. With these tools, you can construct targeted policies to address risks.  
+Identity risks grow in speed and complexity every year. You can use risk insights to grasp the volume and details of potential identity attacks and compromises. Enable Azure Monitor Logs reference tables to analyze risk insights with [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md), then investigate and remediate identity risks with Conditional Access. Construct targeted policies to address risks.  
 
-Learn more in the [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs)
+Learn more in the [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs).
 
 In Microsoft Entra ID Protection, there are four risk tables to query risk events, risky users, and risky [Service Principals](/azure/databricks/admin/users-groups/service-principals). 
 
@@ -88,7 +88,7 @@ The following sections illustrate how to analyze risk with Azure Monitor.
 
 ### Step one: Identify risky users
 
-1. Run the query to summarize the count by UserDisplayName
+1. Run the query to summarize the count by UserDisplayName.
 2. Add a time range in DetectedDateTime < ago().  
 
 In the following example, **30d** is the date range. 
@@ -102,7 +102,8 @@ AADUserRiskEvents
 | take 100 
 | summarize count()by UserDisplayName 
 ```
-Use this query to identify common user patterns, such as service accounts or small user subsets generating a large amount of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user or require a secure password change. See the following screenshot of risky user data from the query.
+
+Use this query to identify common user patterns, such as service accounts or small user subsets generating a large amount of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user or require a secure password change. 
 
    ![Screenshot of risky user data from the query.](./media/id-protection-guide-analyze/risky-users.png)
 
@@ -110,8 +111,8 @@ Use this query to identify common user patterns, such as service accounts or sma
 
 After you determine user patterns, review detections and summarize them by the risk event type.  
 
-1. Use the AADUserRiskEvents table.
-2. Summarize with RiskEventType. 
+1. Use the **AADUserRiskEvents** table.
+2. Summarize with **RiskEventType**. 
 
 ```KQL
 // Recent user risk events 
@@ -177,6 +178,7 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
