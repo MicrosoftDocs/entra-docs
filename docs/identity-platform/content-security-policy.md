@@ -30,7 +30,7 @@ CSP helps prevent these attacks by restricting which scripts can execute in the 
 
 ## CSP enforcement scope and key details
 
-CSP protects sign-in experiences by allowing only trusted Microsoft code. Our analysis showed that violations mostly came from external browser extensions or injected scripts, often linked to non-Microsoft tools.
+CSP protects your organization by allowing only trusted Microsoft code to run, minimizing opportunities for unauthorized external script and code injection. Our analysis showed that violations mostly came from external browser extensions or injected scripts, often linked to non-Microsoft tools.
 
 Here’s what you need to know about the scope and key details of CSP enforcement:
 
@@ -46,23 +46,22 @@ Customers using tools that rely on injected scripts should work directly with th
 
 ## When will you see CSP enforcement?
 
-To minimize disruption, Microsoft Entra ID will enforce CSP in phases. The rollout consists of two phases, each with specific goals and actions. Microsoft will communicate timelines and details through targeted emails and broad notifications before each phase:
+Microsoft Entra ID will enforce CSP globally starting mid-to-late October 2026. Timelines and details will be communicated through targeted messaging and broad notifications before release.   
 
-- Phase 1 begins in mid-to-late April 2026 for tenants identified as having minimal effect.
-- Phase 2 begins in mid-to-late October 2026 for all remaining tenants.
+Microsoft recommends not using browser extensions or tools that inject code into the Microsoft Entra sign-in experience. If you follow this advice, your experience will remain unchanged, and no further action is needed.  
+
+If you use tools or browser extensions that inject code into the Microsoft Entra sign-in page, switch to alternative tools that don’t inject code before this change is released. 
 
 ## Customer guidance
 
 Follow these steps to prepare for CSP enforcement and minimize disruption:
 
-- **Review violation logs**: Check tenant-specific CSP violation reports to understand which scripts or tools might be blocked. This helps prioritize remediation.
-- **Coordinate with vendors**: If violations involve non-Microsoft tools, contact vendors early to ensure compatibility with CSP enforcement.
+- **Coordinate with vendors**: If violations involve non-Microsoft tools, contact vendors early to ensure compatibility with CSP enforcement. 
+- **Test various sign in flows in your tenant for violations**: Use the instructions below to identify the exact effect in your tenant. 
 
-Use the instructions below to identify the exact effect in your tenant.
+    - **Step 1**: Go through a sign-in flow with the dev console open to identify any violations.
+    - **Step 2**: Review the information about the violation displayed in red. If a specific team or person caused the violation, it appears only in their flows. To ensure accuracy, thoroughly assess different sign-in scenarios within your organization. Here's an example of a violation:
 
-1. Go through a sign-in flow with the dev console open to identify any violations.
-1. Review the information about the violation displayed in red. If a specific team or person caused the violation, it appears only in their flows. To ensure accuracy, thoroughly assess different sign-in scenarios within your organization. Here's an example of a violation:
-
-   [![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
+       [![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
 
 The CSP update helps keep your organization safe by blocking unauthorized scripts and protecting your organization against modern threats. To ensure a smooth rollout, test your sign-in flows thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless. 
