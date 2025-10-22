@@ -92,7 +92,7 @@ The following sections illustrate how to analyze risk with Azure Monitor.
 
 In the following example, 30d is the date range. 
 
-```kusto
+```kql
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -112,7 +112,7 @@ After you determine user patterns, review detections and summarize them by the r
 1. Use the AADUserRiskEvents table.
 2. Summarize with RiskEventType. 
 
-```kusto
+```kql
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -130,7 +130,7 @@ While reviewing risk types, pay attention to large volumes. In the following scr
 
    ![Screenshot of the results from the active-user risk events query.](./media/id-protection-guide-analyze/risk-events.png)
 
-```kusto
+```kql
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -143,3 +143,4 @@ AADUserRiskEvents
 In the following screenshot, three detections are high-risk, which you could address first. We recommend a minimum baseline Conditional Access policy to require secure password change, or to block the high-risk users. 
 
    ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/risk-events.png)
+
