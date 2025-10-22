@@ -71,7 +71,7 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 
 3. To view the Queries hub, in the Log Analytics workspace, select **Logs**.
 
-   ![The Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
+   ![Screenshot of the Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
 
 
 4. Search for **Risk**.
@@ -79,7 +79,7 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 6. Select **Run**.
 7. From the dropdown, change **Simple mode** to ***KQL mode**.
 
-   ![The KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
+   ![Screenshot of the KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
 
 ## Three steps to analyze risk
 
@@ -92,7 +92,7 @@ The following sections illustrate how to analyze risk with Azure Monitor.
 
 In the following example, 30d is the date range. 
 
-```query
+```kusto
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -101,3 +101,31 @@ AADUserRiskEvents
 | take 100 
 | summarize count()by UserDisplayName 
 ```
+Use this query to identify common user patterns, such as service accounts or small user subsets generating a large amount of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user or require a secure password change. 
+
+   ![Screenshot of risky user data from the query.](./media/id-protection-guide-analyze/risky-users.png)
+
+## Step two: Discern risk event types
+
+After you determine user patterns, review detections and summarize them by the risk event type.  
+
+1. Use the AADUserRiskEvents table.
+2. Summarize with RiskEventType. 
+
+```kusto
+// Recent user risk events 
+// Gets list of the top 100 active user risk events. 
+AADUserRiskEvents 
+| where DetectedDateTime > ago(30d) 
+| where RiskState == "atRisk" 
+| take 100  
+| summarize count()by RiskEventType 
+```
+
+While reviewing risk types, pay attention to large volumes. In the following screenshot, there are flagged risk events, most related to:
+
+* **UnfamiliarFeatures** - Unfamiliar sign-in properties for a user. Enforce session controls such as sign-in frequency, application restrictions, and persistent browser controls
+* **AnomalousToken** - Set up Conditional Access policies to require password reset, perform multifactor authentication (MFA), or block access for high-risk sign-ins
+* **UnlikelyTravel** – If some users travel frequently, add named locations as trusted IPs and ensure trusted locations aren’t flagged as risky
+
+   ![Screenshot of the results from the active-user risk events query.](./media/id-protection-guide-analyze/risk-events.png)
