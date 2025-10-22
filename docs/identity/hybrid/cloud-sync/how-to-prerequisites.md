@@ -26,19 +26,18 @@ You need the following to use Microsoft Entra Cloud Sync:
 
 - Microsoft Entra Cloud Sync agent must be installed on a domain-joined server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016. We recommend Windows Server 2022. You can deploy Microsoft Entra Cloud Sync on Windows Server 2016, but since it's in extended support, you might need [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for this configuration. Installing on unsupported versions of Windows Server may cause service failures or unexpected behavior.
 
-> [!IMPORTANT]
-> **Windows Server 2025 is NOT supported. There is a known issue on Windows server 2025 with the [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) update installed that will cause Microsoft Entra Cloud Sync to encounter sync issues.** If you upgraded to Windows Server 2025 and installed update [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9), apply the following registry key as soon as possible to avoid sync disruption.
-> ```
-> Windows Registry Editor Version 5.00
-> ```
->   >
-> ```
->   >[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides]
-> ```
->   >"2362988687"=dword:00000000
-> ```
-> After applying this registry modification, you must restart the server for the change to take effect.
-> This registry modification is a workaround. Windows Server 2025 support for Microsoft Entra Cloud Sync is planned for a future release.
+  >[!IMPORTANT]
+  >**Windows Server 2025 is NOT supported. There is a known issue on Windows server 2025 with the [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) update installed that will cause Microsoft Entra Cloud Sync to encounter sync issues.** If you upgraded to Windows Server 2025 and installed update [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9), apply the following registry key as soon as possible to avoid sync disruption.
+  >
+  >```
+  >Windows Registry Editor Version 5.00
+  >
+  >[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides]
+  >"2362988687"=dword:00000000
+  >```
+  >
+  >After applying this registry modification, you must restart the server for the change to take effect. This registry modification is a workaround. Windows Server 2025 support for Microsoft Entra Connect Sync is planned for a future release.
+
 
 - This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
 
