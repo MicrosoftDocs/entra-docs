@@ -28,7 +28,7 @@ Identity risks grow in speed and complexity every year. You can use risk insight
 
 Learn more in the [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs)
 
-In Microsoft Entra ID Protection, there are four risk tables to query risk events, risky users, and risky Service Principals. 
+In Microsoft Entra ID Protection, there are four risk tables to query risk events, risky users, and risky [Service Principals](/azure/databricks/admin/users-groups/service-principals). 
 
 * AADUserRiskEvents 
 * AADRiskyUsers 
@@ -57,28 +57,28 @@ To use Azure Monitor, ensure the following prerequisites are met.
 A Log Analytics workspace is a data store to collect log data types from Azure and non-Azure resources and applications. We recommend you send all log data to one Log Analytics workspace. 
 
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-2. To incorporate the data you want to analyze, add diagnostics settings: 
-
-* AuditLogs
-* SignInLogs
-* NonInteractiveUserSignInLogs
-* ServicePrincipalSignInLogs
-* ManagedIdentitySignInLogs
-* RiskyUsers
-* UserRiskEvents
-* RiskyServicePrincipals
-* ServicePrincipalRiskEvents 
-
+2. To incorporate the data you want to analyze, add diagnostics settings.
 3. To view the Queries hub, in the Log Analytics workspace, select **Logs**.
-
-   ![Screenshot of the Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
-
-
 4. Search for **Risk**.
 5. Locate the **Recent user risk events** query.
 6. Select **Run**.
-7. From the dropdown, change **Simple mode** to ***KQL mode**.
 
+**Diagnostic settings**
+  * AuditLogs
+  * SignInLogs
+  * NonInteractiveUserSignInLogs
+  * ServicePrincipalSignInLogs
+  * ManagedIdentitySignInLogs
+  * RiskyUsers
+  * UserRiskEvents
+  * RiskyServicePrincipals
+  * ServicePrincipalRiskEvents
+
+See the following screenshot of the **Logs** option and the Queries hub page.
+
+   ![Screenshot of the Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
+
+7. From the dropdown, change **Simple mode** to **KQL mode**.
 
    ![Screenshot of the KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
 
@@ -93,7 +93,7 @@ The following sections illustrate how to analyze risk with Azure Monitor.
 
 In the following example, 30d is the date range. 
 
-```kql
+```KQL
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -102,7 +102,7 @@ AADUserRiskEvents
 | take 100 
 | summarize count()by UserDisplayName 
 ```
-Use this query to identify common user patterns, such as service accounts or small user subsets generating a large amount of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user or require a secure password change. 
+Use this query to identify common user patterns, such as service accounts or small user subsets generating a large amount of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user or require a secure password change. See the following screenshot of risky user data from the query.
 
    ![Screenshot of risky user data from the query.](./media/id-protection-guide-analyze/risky-users.png)
 
@@ -113,7 +113,7 @@ After you determine user patterns, review detections and summarize them by the r
 1. Use the AADUserRiskEvents table.
 2. Summarize with RiskEventType. 
 
-```kql
+```KQL
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -129,13 +129,15 @@ While reviewing risk types, pay attention to large volumes. In the following scr
 * **AnomalousToken** - Set up Conditional Access policies to require password reset, perform multifactor authentication (MFA), or block access for high-risk sign-ins
 * **UnlikelyTravel** – If some users travel frequently, add named locations as trusted IPs and ensure trusted locations aren’t flagged as risky
 
+See the following screenshot of results from the active-user risk events query.
+
    ![Screenshot of the results from the active-user risk events query.](./media/id-protection-guide-analyze/risk-events.png)
 
 ## Step three: Examine risk levels
 
 Examine the **AADUserRiskEvents** table to review low-, medium-, and high-risk levels. Summarize risk events by level and analyze risk level totals. 
 
-```kql
+```KQL
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -151,7 +153,7 @@ In the following screenshot, three detections are high-risk, which you could add
 
 ### Azure Monitor Logs reference tables
 
-To help you get started, use the following of Azure Monitor Log reference tables for Microsoft Entra ID Protection: 
+To help you get started, use Azure Monitor Log reference tables for Microsoft Entra ID Protection: 
 
 * [AADUserRiskEvents](/azure/azure-monitor/reference/tables/aaduserriskevents)
 * [AADRiskyUsers](/azure/azure-monitor/reference/tables/aadriskyusers)
@@ -162,10 +164,10 @@ To help you get started, use the following of Azure Monitor Log reference tables
 
 Microsoft Entra ID Protection is continuously updated to help organizations stay ahead of emerging threats. New detections and improved diagnostics help make identity risk management proactive, scalable, and effective. You can learn more.  
 
-See Introduction to Microsoft Entra ID Protection proof-of-concept guidance 
-Watch videos in the aka.ms/IDProtect  YouTube playlist  
-Visit the Tech Community for updates and technical information 
-Learn to configuring diagnostics at https://aka.ms/idpdiagnosticssettings 
+* See [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](/entra/architecture/id-protection-guide-introduction)
+* Watch instructional videos in the [IDProtect](aka.ms/IDProtect) YouTube playlist
+* Visit the [Tech Community](https://techcommunity.microsoft.com/) for updates and technical information
+* Learn to configure diagnostics at [idpdiagnosticssettings](https://aka.ms/idpdiagnosticssettings)
 
 ### Learn about Microsoft Entra
 
@@ -175,4 +177,5 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 ⁠* [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 ⁠* [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 ⁠* [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
