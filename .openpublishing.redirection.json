@@ -2261,8 +2261,8 @@
       "redirect_document_id": false
     },
         {
-      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-log-metrics.md",
-      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-log-metrics",
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-logs-metrics.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-logs-metrics",
       "redirect_document_id": false
     },
         {
