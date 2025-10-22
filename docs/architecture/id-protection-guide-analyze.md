@@ -173,10 +173,11 @@ Microsoft Entra ID Protection is continuously updated to help organizations stay
 
 With Microsoft Entra, organizations enable real-time access decisions for identities across hybrid and multicloud environments. Discover its features and capabilities for secure access. 
 
-⁠* [Microsoft Entra documentation](/entra/)
-⁠* [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
-⁠* [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
-⁠* [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+⁠[Microsoft Entra documentation](/entra/)
+[Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
+[Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
+[Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
