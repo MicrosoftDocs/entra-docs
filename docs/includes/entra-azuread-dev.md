@@ -1,14 +1,9 @@
 ---
 title: include file
 description: include file
-
-author: rwike77
-manager: CelesteDG
-
 ms.service: identity-platform
 ms.topic: include
 ms.date: 10/13/2020
-ms.author: ryanwi
 ---
 
 > [!WARNING]
