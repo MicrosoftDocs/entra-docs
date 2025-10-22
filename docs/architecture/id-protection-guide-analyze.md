@@ -120,6 +120,7 @@ After you determine user patterns, review detections and summarize them by the r
 1. Use the **AADUserRiskEvents** table.
 2. Summarize with **RiskEventType**. 
 
+**Example query**
 ```KQL
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
@@ -147,6 +148,7 @@ See the following screenshot of results from the active-user risk events query.
 
 Examine the **AADUserRiskEvents** table to review low-, medium-, and high-risk levels. Summarize risk events by level and analyze risk level totals. 
 
+**Example query**
 ```KQL
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
@@ -189,6 +191,7 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
