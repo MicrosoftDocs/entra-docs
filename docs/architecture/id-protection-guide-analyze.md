@@ -92,10 +92,10 @@ The following sections illustrate how to analyze risk with Azure Monitor.
 
 ### Step one: Identify risky users
 
-1. Run the query to summarize the count by UserDisplayName.
-2. Add a time range in DetectedDateTime < ago().  
+1. Run the query to summarize the count by **UserDisplayName**.
+2. Add a time range in **DetectedDateTime < ago()**.  
 
-In the following example, **30d** is the date range. 
+In the following example query, **30d** is the date range. 
 
 ```KQL
 // Recent user risk events 
@@ -128,11 +128,14 @@ AADUserRiskEvents
 | summarize count()by RiskEventType 
 ```
 
-While reviewing risk types, pay attention to large volumes. In the following screenshot, there are flagged risk events, most related to:
+While reviewing risk types, pay attention to large volumes. In the following screenshot, there are flagged risk events, most are related to:
 
-* **UnfamiliarFeatures** - Unfamiliar sign-in properties for a user. Enforce session controls such as sign-in frequency, application restrictions, and persistent browser controls
-* **AnomalousToken** - Set up Conditional Access policies to require password reset, perform multifactor authentication (MFA), or block access for high-risk sign-ins
-* **UnlikelyTravel** – If some users travel frequently, add named locations as trusted IPs and ensure trusted locations aren’t flagged as risky
+* **UnfamiliarFeatures** - Detect unfamiliar sign-in properties for a user
+  * Enforce session controls such as sign-in frequency, application restrictions, and persistent browser controls
+* **AnomalousToken** - Set up Conditional Access policies to require password reset and perform multifactor authentication (MFA)
+  * Block access for high-risk sign-ins
+* **UnlikelyTravel** – Add named locations as trusted IPs
+  * Enable trusted locations for users that travel frequently
 
 See the following screenshot of results from the active-user risk events query.
 
@@ -182,6 +185,7 @@ With Microsoft Entra, organizations enable real-time access decisions for identi
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
