@@ -31,10 +31,10 @@ The Conditional Access optimization agent evaluates policies such as requiring m
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
-   - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) is required to *activate the agent the first time*.
+   - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) is required to *activate the agent the first time*.
    - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
    - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
-   - You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
+   - You can assign [Conditional Access Administrators](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
@@ -258,6 +258,6 @@ You can resolve this issue by removing the agent, then enabling the agent again 
 
 ## Related content
 
-- [Review and approve agent suggestions](agent-optimization-review-suggestions.md)
-- [Conditional Access policy templates](concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
+- [Review and approve agent suggestions](./conditional-access-agent-optimization-review-suggestions.md)
+- [Conditional Access policy templates](../identity/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)

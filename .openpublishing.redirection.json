@@ -2240,6 +2240,31 @@
       "redirect_url": "/entra/fundamentals/licensing",
       "redirect_document_id": false
     },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-chat.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-chat",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-log-metrics.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-log-metrics",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-phased-rollout.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-phased-rollout",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-review-suggestions.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-review-suggestions",
+      "redirect_document_id": false
+    },
     {
       "source_path_from_root": "/docs/fundamentals/copilot-entra-agents.md",
       "redirect_url": "/entra/security-copilot/entra-agents",
