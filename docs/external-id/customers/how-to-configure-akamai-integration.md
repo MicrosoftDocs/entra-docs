@@ -30,7 +30,7 @@ To get started, you need:
 - An [external tenant](how-to-create-external-tenant-portal.md).
 - A Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview) configuration. Traffic from the Akamai WAF routes to Azure Front Door, which then routes to the external tenant.
 - An [Akamai Web Application Firewall (WAF)](https://www.akamai.com/glossary/what-is-a-waf) that manages traffic sent to the authorization server.
-- A [verified domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant.  A custom domain lets you brand your application’s sign-in endpoints with your own URL instead of Microsoft’s default domain name.
+- A [custom domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant that’s enabled with Azure Front Door (AFD).
 
 ## Step 1: Configure Akamai WAF
 
