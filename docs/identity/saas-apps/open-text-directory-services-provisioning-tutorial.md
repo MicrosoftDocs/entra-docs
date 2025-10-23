@@ -98,7 +98,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    * Non-specific tenant URL : {OTDS URL}/scim/{partitionName}
    * Specific tenant URL :  {OTDS URL}/otdstenant/{tenantID}/scim/{partitionName}
 
-7. Select 'OAuth2 Client Credentials Grant' as the Authentication Method and enter the Client ID and Client Secret retrieved from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to OpenText Directory Services. If the connection fails, ensure your OpenText Directory Services account has Admin permissions and try again.
+7. Select 'OAuth2 Client Credentials Grant' as the Authentication Method.
+   Enter the Client ID and Client Secret retrieved from Step 2.
+   Select **Test Connection** to ensure Microsoft Entra ID can connect to OpenText Directory Services.
+   If the connection fails, ensure your OpenText Directory Services account has Admin permissions and try again.
 
       ![Token](media/open-text-directory-services-provisioning-tutorial/oauth2-entra-config.png)
 
