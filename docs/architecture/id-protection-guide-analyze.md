@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Protection scenario: Analyze risk
+title: Microsoft Entra ID Protection scenario to analyze risk
 description: Learn about risk analysis to identify risky users, discern risk event types, and examine risk levels for access and identity decisions.
 author: gargi-sinha
 manager: martinco
@@ -198,6 +198,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
