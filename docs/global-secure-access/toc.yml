@@ -187,6 +187,8 @@ items:
         href: how-to-configure-threat-intelligence.md
       - name: Customize the block page
         href: how-to-customize-block-page.md
+      - name: Network content filtering
+        href: how-to-network-content-filtering.md
   - name: Logs and monitoring
     expanded: false
     items:
