@@ -57,7 +57,7 @@ To use Azure Monitor, ensure the following prerequisites are met.
 A Log Analytics workspace is a data store to collect log data types from Azure and non-Azure resources and applications. We recommend you send all log data to one Log Analytics workspace. 
 
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-2. To incorporate the data you want to analyze, add diagnostics settings. See list below.
+2. To incorporate the data you want to analyze, add diagnostics settings. See the following list.
 3. To view the Queries hub, in the Log Analytics workspace, select **Logs**.
 4. Search for **Risk**.
 5. Locate the **Recent user risk events** query.
@@ -177,7 +177,7 @@ To help you get started, use Azure Monitor Log reference tables for Microsoft En
 Microsoft Entra ID Protection helps organizations build a proactive approach to identity risk management. You can learn more.  
 
 * See [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](/entra/architecture/id-protection-guide-introduction)
-* Watch instructional videos in the [IDProtect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
+* Watch instructional videos in the [ID Protect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
 * Visit the [Tech Community](https://techcommunity.microsoft.com/) for updates and technical information
 * Learn to configure diagnostics at [idpdiagnosticssettings](https://aka.ms/idpdiagnosticssettings)
 
@@ -197,6 +197,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
