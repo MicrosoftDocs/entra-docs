@@ -54,7 +54,7 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 
 ### Conditional Access optimization agent
 
-The [Conditional Access optimization agent](../identity/conditional-access/agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
+The [Conditional Access optimization agent](./conditional-access-agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
 
 | Attribute           | Description |
 |---------------------|------------ |

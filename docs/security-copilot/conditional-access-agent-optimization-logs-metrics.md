@@ -21,9 +21,9 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 ## Prerequisites
 
-- To view the Microsoft Entra audit logs, you need at least the [Reports reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
-- [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
-- [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) roles can view the agent and take action on the suggestions.
+- To view the Microsoft Entra audit logs, you need at least the [Reports reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
+- [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
+- [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) roles can view the agent and take action on the suggestions.
    - For more information on roles for the Conditional Access optimization agent, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
@@ -31,7 +31,7 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 The **Agent summary** at the top of the Conditional Access optimization agent page provides a quick summary of what the agent has discovered in the last 30 days. The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent is also provided.
 
-:::image type="content" source="media/agent-optimization-logs-metrics/agent-summary-tile.png" alt-text="Screenshot of the agent summary tile." lightbox="media/agent-optimization-logs-metrics/agent-summary-tile.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-logs-metrics/agent-summary-tile.png" alt-text="Screenshot of the agent summary tile." lightbox="media/conditional-access-agent-optimization-logs-metrics/agent-summary-tile.png":::
 
 - **Unprotected users discovered**: The number of users who were identified by the agent and protected by a policy suggested by the agent.
 - **Unprotected apps discovered**: The number of applications that were identified by the agent and protected by a policy suggested by the agent.
@@ -48,8 +48,8 @@ The Microsoft Purview logs include tenant-level administrative actions and user 
 
 The Microsoft Entra audit logs include changes made by an agent to Microsoft Entra resources, such as Conditional Access policies. Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
 
-:::image type="content" source="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of Agent summary tile at the top of the agent page." lightbox="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent-expanded.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of Agent summary tile at the top of the agent page." lightbox="media/conditional-access-agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent-expanded.png":::
 
 In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent. To quickly see agent activity, filter to **Service: Conditional Access**. 
 
-:::image type="content" source="media/agent-optimization-logs-metrics/audit-logs.png" alt-text="Screenshot of audit logs filtered to Conditional Access." lightbox="media/agent-optimization-logs-metrics/audit-logs.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-logs-metrics/audit-logs.png" alt-text="Screenshot of audit logs filtered to Conditional Access." lightbox="media/conditional-access-agent-optimization-logs-metrics/audit-logs.png":::

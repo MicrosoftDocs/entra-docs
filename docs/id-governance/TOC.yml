@@ -126,16 +126,16 @@
         href: scenarios/sap-template.md
       - name: Deploy SAP NetWeaver AS ABAP 7
         href: scenarios/deploy-sap-netweaver.md
-- name: Security Copilot + Microsoft Entra
+- name: Access Review Agent
   items:
   - name: Get started with the Access Review Agent (Preview)
-    href: access-review-agent.md
+    href: ~/security-copilot/access-review-agent.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Identity Governance and optimization with Microsoft Security Copilot
     href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Manage lifecycle workflows using Microsoft Security Copilot
     href: ~/security-copilot/entra-lifecycle-workflows.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Access Review Agent logs and metrics (Preview)
-    href: access-review-agent-logs-metrics.md
+    href: ~/security-copilot/access-review-agent-logs-metrics.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Identity Governance and optimization with Microsoft Security Copilot
     href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
 - name: Tutorials

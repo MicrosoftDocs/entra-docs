@@ -23,9 +23,9 @@ The Conditional Access optimization agent features a conversational interface th
 
 ## Prerequisites
 
-- You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
+- You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-- [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can use the chat capability.
+- [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can use the chat capability.
 
 ### Limitations
 
@@ -82,22 +82,22 @@ Sample prompts:
 
 You can access the chat from the main Conditional Access Optimization Agent page or from any policy suggestion details page.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 
 1. Browse to **Conditional Access Optimization Agent**.
     - Select **Chat with agent** from the agent page to chat with the agent about all policy suggestions.
     
-    :::image type="content" source="media/agent-optimization-chat/agent-chat-button.png" alt-text="Screenshot of the Conditional Access optimization agent with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-button.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-button.png" alt-text="Screenshot of the Conditional Access optimization agent with the Chat with agent button highlighted." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-button.png":::
     
     - Or select **Review suggestion** for any policy suggestion then select **Chat with agent** to chat with the agent about that specific policy suggestion.
 
-    :::image type="content" source="media/agent-optimization-chat/agent-chat-policy-suggestions.png" alt-text="Screenshot of a policy suggestion details page with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-policy-suggestions.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-policy-suggestions.png" alt-text="Screenshot of a policy suggestion details page with the Chat with agent button highlighted." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-policy-suggestions.png":::
 
 1. Enter a prompt in the chat window using natural language from the supported scenarios in the [What you can do with chat](#what-you-can-do-with-chat) section.
 
 1. Review the response and apply the recommended changes. For more information, see the [Confirm changes in chat](#confirm-changes-in-chat) section.
 
-    :::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-cancel.png" alt-text="Screenshot of the Conditional Access optimization agent chat with the options to confirm or cancel changes." lightbox="media/agent-optimization-chat/agent-chat-confirm-cancel.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-confirm-cancel.png" alt-text="Screenshot of the Conditional Access optimization agent chat with the options to confirm or cancel changes." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-confirm-cancel.png":::
 
 ## Confirm changes in chat
 
@@ -109,7 +109,7 @@ To illustrate what happens when you confirm a change to an existing policy, let'
 
 In the chat, the agent was asked to exclude any breakglass accounts and it identified five accounts that match.
 
-:::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-closeup.png" alt-text="Screenshot of the Conditional Access optimization agent chat focused on the suggested changes." lightbox="media/agent-optimization-chat/agent-chat-confirm-closeup.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-confirm-closeup.png" alt-text="Screenshot of the Conditional Access optimization agent chat focused on the suggested changes." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-confirm-closeup.png":::
 
 When you select **Confirm**, the agent makes changes *directly to the policy*. The original suggestion, however, was to add 21 users to the policy. Because we excluded 5 users from the policy update, this suggestion will continue to appear in the recent suggestions lists. Any future agent runs will likely identify the users that we excluded. If you don't want to make any changes to the policy, select **Cancel**.
 
@@ -117,13 +117,13 @@ When you select **Confirm**, the agent makes changes *directly to the policy*. T
 
 When the agent creates a new policy *in report-only mode* you can use the chat make adjustments to the policy and even turn on the policy. In the following example to create a new policy, the agent was asked to include a specific user. When you're using chat for new policies, the first **Confirm** button updates the policy in report-only mode.
 
-:::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-buttons.png" alt-text="Screenshot of the chat with the confirm changes button highlighted." lightbox="media/agent-optimization-chat/agent-chat-confirm-buttons.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons.png" alt-text="Screenshot of the chat with the confirm changes button highlighted." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons.png":::
 
 You're prompted a second time to turn on the policy. If you select **Confirm** at this step, the policy is turned on. Select **Cancel** to save the report-only changes without turning on the policy. 
 
-:::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-buttons-second-set.png" alt-text="Screenshot of the chat with the second set of confirm changes buttons highlighted." lightbox="media/agent-optimization-chat/agent-chat-confirm-buttons-second-set.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons-second-set.png" alt-text="Screenshot of the chat with the second set of confirm changes buttons highlighted." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons-second-set.png":::
 
 ## Related content
 
-- [Conditional Access optimization agent overview](overview.md)
-- [Conditional Access optimization agent phased rollout](agent-optimization-phased-rollout.md)
+- [Conditional Access optimization agent overview](../identity/conditional-access/overview.md)
+- [Conditional Access optimization agent phased rollout](./conditional-access-agent-optimization-phased-rollout.md)
