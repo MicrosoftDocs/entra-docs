@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Protection to analyze risk
+title: Microsoft Entra ID Protection scenario: Analyze risk
 description: Learn about risk analysis to identify risky users, discern risk event types, and examine risk levels for access and identity decisions.
 author: gargi-sinha
 manager: martinco
@@ -11,7 +11,7 @@ ms.date: 10/23/2025
 #CustomerIntent: As an administrator, I want to improve my risk analysis, risk assessment, and resulting actions for common risk event types, flagged users, and risk-level patterns.
 ---
 
-# Microsoft Entra ID Protection to analyze risk
+# Microsoft Entra ID Protection scenario: Analyze risk
 
 When you configure access to your organization's resources, a proactive approach to risk mitigates the accelerating pace of cyber attack complexity. Create automated conditions for access and save on operationional and support costs. Gain visibility into risk assessment and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs) to collect, transform, remove, optimize, and route data. Learn how to manage common risk event types, repeatedly flagged users, and risk level patterns. 
 
@@ -199,6 +199,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
