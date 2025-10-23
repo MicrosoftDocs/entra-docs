@@ -185,7 +185,7 @@ Microsoft Entra ID Protection helps organizations build a proactive approach to 
 
 ### Learn about Microsoft Entra
 
-Microsoft Entra is a family of identity and network access products to implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) to: 
+[Microsoft Entra](../fundamentals/what-is-entra.md) is a family of identity and network access products to implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) to: 
 
 * Verify identity
 * Validate access conditions
@@ -199,6 +199,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
