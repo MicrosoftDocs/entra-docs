@@ -86,6 +86,8 @@
       href: concept-self-service-account-recovery.md
     - name: FAQ
       href: self-service-account-recovery.yml
+    - name: Audit log events
+      href: concept-account-recovery-audit-log-events.md
   - name: Multifactor authentication
     items:
     - name: How MFA works
@@ -260,9 +262,9 @@
   - name: Microsoft Entra account recovery
     items:
     - name: Admin guide
-      href: howto-mfa-getstarted.md
+      href: how-to-account-recovery-configure.md
     - name: User guide
-      href: howto-mfa-getstarted.md
+      href: how-to-account-recovery-user-setup.md
   - name: Microsoft Entra multifactor authentication
     items:
     - name: Deployment guide
@@ -354,8 +356,6 @@
   - name: Troubleshoot
     items:
     - name: Self-service password reset (SSPR)
-      href: troubleshoot-sspr.md
-    - name: Self-service account recovery (SSAR)
       href: troubleshoot-sspr.md
     - name: SSPR writeback
       href: troubleshoot-sspr-writeback.md
