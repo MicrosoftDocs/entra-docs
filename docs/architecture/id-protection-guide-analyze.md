@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 10/22/2025
+ms.date: 10/23/2025
 
 #CustomerIntent: As an administrator, I want to learn more about risk assessment and resulting actions. I need to prepare for common risk event types and risky users, also to understand risk level patterns.
 ---
@@ -18,7 +18,7 @@ When configuring access to resources, a proactive approach to risk mitigates the
 * Track risk events across users and sign-ins 
 * Correlate anomalies with [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) policies and sign-in logs 
 * Identify potential threat patterns
-  * Enrich investigations and stream telemetry to [Microsoft Defender XDR](/defender-xdr/microsoft-365-defender) and [Microsoft Sentinel](/azure/sentinel/overview)
+  * Enrich investigations and stream telemetry to [Microsoft Defender XDR](/defender-xdr/microsoft-365-defender) and [Microsoft Sentinel](/azure/sentinel/overview), a security information and event management (SIEM) tool with threat intelligence and a data-lake architecture
 
 You can [search the audit log for events in Microsoft Defender XDR](/defender-xdr/microsoft-xdr-auditing).
 
@@ -37,9 +37,7 @@ In Microsoft Entra ID Protection, there are four risk tables to query risk event
 * AADServicePrincipalRiskEvents 
 * AADRiskyServicePrincipals 
 
-In this article, the focus is the **AADUserRiskEvents** table. 
-
-To understand more about discerning risks to your organization, see the following video, </br>**Mastering risk analysis with Microsoft Entra ID Protection**. 
+In this article, the focus is the **AADUserRiskEvents** table. To understand more about discerning risks to your organization, see the following video, </br>**Mastering risk analysis with Microsoft Entra ID Protection**. 
 
    > [!VIDEO abb7d7fe-4155-4ee1-bcce-afa027d22f8d]
 
@@ -59,7 +57,7 @@ To use Azure Monitor, ensure the following prerequisites are met.
 A Log Analytics workspace is a data store to collect log data types from Azure and non-Azure resources and applications. We recommend you send all log data to one Log Analytics workspace. 
 
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-2. To incorporate the data you want to analyze, add diagnostics settings.
+2. To incorporate the data you want to analyze, add diagnostics settings. See list below.
 3. To view the Queries hub, in the Log Analytics workspace, select **Logs**.
 4. Search for **Risk**.
 5. Locate the **Recent user risk events** query.
@@ -176,7 +174,7 @@ To help you get started, use Azure Monitor Log reference tables for Microsoft En
 
 ## Next steps
 
-Microsoft Entra ID Protection has features to help build a proactive approach to identity risk management. You can learn more.  
+Microsoft Entra ID Protection helps organizations build a proactive approach to identity risk management. You can learn more.  
 
 * See [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](/entra/architecture/id-protection-guide-introduction)
 * Watch instructional videos in the [IDProtect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
@@ -185,12 +183,21 @@ Microsoft Entra ID Protection has features to help build a proactive approach to
 
 ### Learn about Microsoft Entra
 
-With Microsoft Entra, organizations enable real-time access decisions for identities across hybrid and multicloud environments. Discover its features and capabilities for secure access. 
+Microsoft Entra is a family of identity and network access products to implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) to: 
+
+* Veryify identity
+* Validate access conditions
+* Check permissions
+* Encrypt connection channels
+* Monitor for compromise
+
+With Microsoft Entra, organizations enable real-time access and identity decisions across hybrid and multicloud environments. Discover its features and capabilities for secure access. 
 
 * [Microsoft Entra documentation](/entra/)
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
