@@ -64,4 +64,4 @@ Follow these steps to prepare for CSP enforcement and minimize disruption:
 
        [![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
 
-The CSP update helps keep your organization safe by blocking unauthorized scripts and protecting your organization against modern threats. To ensure a smooth rollout, test your sign-in flows thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless. 
+The CSP update helps keep your organization safe by blocking unauthorized scripts and hardening your organization against modern threats. To ensure a smooth rollout, test your sign-in flows thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless.
