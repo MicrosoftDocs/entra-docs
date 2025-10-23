@@ -13,7 +13,7 @@ ms.date: 10/23/2025
 
 # Microsoft Entra ID Protection to analyze risk
 
-When you configure access to resources, a proactive approach to risk mitigates the accelerating pace of cyber attack complexity. Create automated conditions for access and save on operationional and support costs. Organizations gain visibility into risk assessment and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs) reference tables. Learn how to manage common risk event types, repeatedly flagged users, and risk level patterns. 
+When you configure access to your organization's resources, a proactive approach to risk mitigates the accelerating pace of cyber attack complexity. Create automated conditions for access and save on operationional and support costs. Organizations gain visibility into risk assessment and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs) reference tables. Learn how to manage common risk event types, repeatedly flagged users, and risk level patterns. 
 
 * Track risk events across users and sign-ins 
 * Correlate anomalies with [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) policies and sign-in logs 
@@ -197,6 +197,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
