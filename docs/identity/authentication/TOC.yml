@@ -80,6 +80,12 @@
       href: concept-sspr-licensing.md
     - name: Deployment guide
       href: concept-sspr-deploy.md
+  - name: Microsoft Entra account recovery
+    items:
+    - name: Overview
+      href: concept-self-service-account-recovery.md
+    - name: FAQ
+      href: self-service-account-recovery.yml
   - name: Multifactor authentication
     items:
     - name: How MFA works
@@ -251,6 +257,12 @@
       href: howto-sspr-authenticationdata.md
     - name: SSPR for Windows clients
       href: howto-sspr-windows.md
+  - name: Microsoft Entra account recovery
+    items:
+    - name: Admin guide
+      href: howto-mfa-getstarted.md
+    - name: User guide
+      href: howto-mfa-getstarted.md
   - name: Microsoft Entra multifactor authentication
     items:
     - name: Deployment guide
@@ -342,6 +354,8 @@
   - name: Troubleshoot
     items:
     - name: Self-service password reset (SSPR)
+      href: troubleshoot-sspr.md
+    - name: Self-service account recovery (SSAR)
       href: troubleshoot-sspr.md
     - name: SSPR writeback
       href: troubleshoot-sspr-writeback.md
