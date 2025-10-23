@@ -76,7 +76,7 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 
 See the following screenshot of the **Logs** option and the Queries hub page.
 
-    ![Screenshot of the Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
+   ![Screenshot of the Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
 
 7. From the dropdown, change **Simple mode** to **KQL mode**.
 
@@ -197,6 +197,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
