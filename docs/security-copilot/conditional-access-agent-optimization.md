@@ -27,14 +27,14 @@ The Conditional Access optimization agent evaluates policies such as requiring m
 
 ## Prerequisites
 
-- You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
+- You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
-   - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) is required to *activate the agent the first time*.
-   - [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
-   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
-   - You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
+   - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) is required to *activate the agent the first time*.
+   - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
+   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
+   - You can assign [Conditional Access Administrators](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
@@ -86,23 +86,23 @@ The policy suggestions identified by the agent include:
 
 ## Getting started
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. From the new home page, select **Go to agents** from the agent notification card.
    - You can also select **Agents** from the left navigation menu.
 
-   :::image type="content" source="media/agent-optimization/go-to-agents.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/agent-optimization/go-to-agents.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/go-to-agents.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/conditional-access-agent-optimization/go-to-agents.png":::
 
 1. Select **View details** on the Conditional Access Optimization Agent tile.
 
-   :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the view details button highlighted." lightbox="media/agent-optimization/view-details.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the view details button highlighted." lightbox="media/conditional-access-agent-optimization/view-details.png":::
 
 1. Select **Start agent** to begin your first run. Avoid using an account with a role activated through PIM.
 
-   :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization start agent page." lightbox="media/agent-optimization/start-agent.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization start agent page." lightbox="media/conditional-access-agent-optimization/start-agent.png":::
 
-When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and approve Conditional Access agent suggestions](agent-optimization-review-suggestions.md).
+When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and approve Conditional Access agent suggestions](./conditional-access-agent-optimization-review-suggestions.md).
 
-   :::image type="content" source="media/agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the review suggestion buttons highlighted." lightbox="media/agent-optimization/review-suggestions.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the review suggestion buttons highlighted." lightbox="media/conditional-access-agent-optimization/review-suggestions.png":::
 
 ## Settings
 
@@ -111,7 +111,7 @@ Once the agent is enabled, you can adjust a few settings. After making any chang
 - From **Agents** > **Conditional Access optimization agent** > **Settings**.
 - From **Conditional Access** > select the **Conditional Access optimization agent** card under **Policy summary** > **Settings**.
 
-:::image type="content" source="media/agent-optimization/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/agent-settings.png":::
+:::image type="content" source="media/conditional-access-agent-optimization/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization/agent-settings.png":::
 
 ### Trigger
 
@@ -133,7 +133,7 @@ To add the agent app to Microsoft Teams:
 
 1. In Microsoft Teams, select **Apps** from the left navigation menu and search for and select the **Conditional Access agent**.
 
-   :::image type="content" source="media/agent-optimization/agent-teams-app.png" alt-text="Screenshot of the Conditional Access app button in Teams." lightbox="media/agent-optimization/agent-teams-app.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/agent-teams-app.png" alt-text="Screenshot of the Conditional Access app button in Teams." lightbox="media/conditional-access-agent-optimization/agent-teams-app.png":::
 
 1. Select the **Add** button, then select the **Open** button to open the app.
 1. To make accessing the app easier, right-click the app icon in the left navigation menu and select **Pin**.
@@ -143,7 +143,7 @@ To configure notifications in the Conditional Access optimization agent settings
 1. In the Conditional Access optimization agent settings, select the **Select users and groups** link.
 1. Select the users or groups you want to receive notifications, then select the **Select** button.
  
-   :::image type="content" source="media/agent-optimization/agent-teams-people-picker.png" alt-text="Screenshot of the Conditional Access agent setting to pick the users and groups for notifications." lightbox="media/agent-optimization/agent-teams-people-picker.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/agent-teams-people-picker.png" alt-text="Screenshot of the Conditional Access agent setting to pick the users and groups for notifications." lightbox="media/conditional-access-agent-optimization/agent-teams-people-picker.png":::
 
 1. At the bottom of the main **Settings** page, select the **Save** button.
 
@@ -151,14 +151,14 @@ You can select up to 10 recipients to receive notifications. You can select a gr
 
 At this time, the agent's communication is one direction, so you can receive notifications but can't respond to them in Microsoft Teams. To take action on a suggestion, select **Review suggestion** from the chat to open the Conditional Access optimization agent in the Microsoft Entra admin center.
 
-   :::image type="content" source="media/agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/agent-optimization/agent-teams-suggestion-message.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/conditional-access-agent-optimization/agent-teams-suggestion-message.png":::
 ### Phased rollout
 
 When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default.
 
 You can change the number of days between each phase by either dragging the slider or entering a number in the text box. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
 
-:::image type="content" source="media/agent-optimization/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/phased-rollout-settings.png":::
+:::image type="content" source="media/conditional-access-agent-optimization/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization/phased-rollout-settings.png":::
 
 ### Identity and permissions
 
@@ -170,7 +170,7 @@ There are several key points to consider regarding the identity and permissions 
 - The user who approves a suggestion to add users to a policy becomes an owner of a new group that adds the users to a policy. 
 - The audit logs for actions taken by the agent are associated with the user who enabled the agent. You can find the name of the account that started the agent in the **Identity and permissions** section of the settings.
 
-   :::image type="content" source="media/agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/identity-permissions.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization/identity-permissions.png":::
 
 ### ServiceNow integration (Preview)
 
@@ -178,11 +178,11 @@ Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/sec
 
 To use the ServiceNow integration, your organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
 
-:::image type="content" source="media/agent-optimization/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/agent-optimization/agent-service-now-integration-setting.png":::
+:::image type="content" source="media/conditional-access-agent-optimization/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/conditional-access-agent-optimization/agent-service-now-integration-setting.png":::
 
 When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow change request. The change request includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The integration also provides a feedback loop: The agent monitors the state of the ServiceNow change request and can automatically implement the change when the change request is approved.
 
-:::image type="content" source="media/agent-optimization/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/agent-optimization/agent-service-now-integration-ticket.png":::
+:::image type="content" source="media/conditional-access-agent-optimization/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/conditional-access-agent-optimization/agent-service-now-integration-ticket.png":::
 
 ### Custom instructions
 
@@ -258,6 +258,6 @@ You can resolve this issue by removing the agent, then enabling the agent again 
 
 ## Related content
 
-- [Review and approve agent suggestions](agent-optimization-review-suggestions.md)
-- [Conditional Access policy templates](concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
+- [Review and approve agent suggestions](./conditional-access-agent-optimization-review-suggestions.md)
+- [Conditional Access policy templates](../identity/conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)
