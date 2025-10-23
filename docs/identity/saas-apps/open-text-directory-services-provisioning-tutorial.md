@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 > The below steps  apply to an OpenText Directory Services installation. They don't apply for OpenText CoreShare or OpenText OT2 tenants.
 
 1. Create a dedicated confidential **OAuth client**.
-2. Do not specify any redirect URLs. They aren't required. 
+2. Don't specify any redirect URLs. They aren't required. 
 3. OTDS will generate and display the **client secret**. Save the **client id** and **client secret** in a secure location.
 
       ![Client Secret](media/open-text-directory-services-provisioning-tutorial/client-secret.png)
