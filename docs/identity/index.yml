@@ -12,7 +12,7 @@ metadata:
   author: justinha
   ms.author: justinha
   manager: dougeby
-  ms.date: 10/21/2025
+  ms.date: 10/23/2025
 
 productDirectory:
   title: Getting started
@@ -25,10 +25,6 @@ productDirectory:
       imageSrc: ./media/index/authentication.svg
       summary: "Configure sign-in methods and security features like self-service password reset and multifactor authentication."
       url: ./authentication/overview-authentication.md
-    - title: Account Recovery
-      imageSrc: ./media/index/authentication.svg
-      summary: "Enable users to regain access to their accounts through a robust identity verification process."
-      url: ./authentication/concept-self-service-account-recovery.md
     - title: Application management
       imageSrc: ./media/index/enterprise-applications.svg
       summary: "Develop, add, or connect an app to Microsoft Entra ID and manage access."
