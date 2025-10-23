@@ -24,9 +24,11 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 
 :::image type="content" source="./media/copilot-security-entra/security-copilot-entra-admin-center.png" alt-text="Screenshot that shows Security Copilot in the Microsoft Entra admin center.":::
 
-## Data exploration
+### Data exploration (preview)
 
-Security Copilot in Microsoft Entra now goes beyond chat-based summaries to give you a deeper look at your identity, device and access data with a single, visual workspace in the Microsoft Entra admin center. From a Copilot chat response, select **Open list** to open a full, interactive data grid. You can access large, complex datasets with complete and accurate results for exploration and efficient decision-making. Each data grid includes the underlying Microsoft Graph URL, allowing you to verify query accuracy and build trust in the results
+Security Copilot in Microsoft Entra now goes beyond chat-based summaries to give you a deeper look at your identity, device and access data with a single, visual workspace in the Microsoft Entra admin center. 
+
+From a Copilot chat response, select **Open list** to open a full, interactive data grid. You can access large, complex datasets with complete and accurate results for exploration and efficient decision-making. Each data grid includes the underlying Microsoft Graph URL, allowing you to verify query accuracy and build trust in the results. This feature is currently in preview and available for select Microsoft Entra scenarios where prompts return large datasets in excess of 10 items.
 
 ## Security Copilot scenarios in Microsoft Entra
 
