@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-You can integrate third-party Web Application Firewall (WAF) solutions with Microsoft Entra External ID to strengthen your security posture. A WAF helps protect your organization from attacks such as distributed denial of service (DDoS), malicious bots, and the Open Worldwide Application Security Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks.
+You can integrate third-party Web Application Firewall (WAF) solutions with Microsoft Entra External ID to  to improve overall security. A WAF helps protect your organization from attacks such as distributed denial of service (DDoS), malicious bots, and Open Worldwide Application Security Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks.
 
 Akamai Web Application Firewall ([Akamai WAF](https://www.akamai.com/glossary/what-is-a-waf)) protects your web apps from common exploits and vulnerabilities. By integrating Akamai WAF with Microsoft Entra External ID, you add an extra layer of security for your applications.
 
@@ -28,9 +28,9 @@ This article provides step-by-step guidance for configuring your external tenant
 To get started, you need:
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
-- A Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview) setup.
+- A Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview) configuration. Traffic from the Akamai WAF routes to Azure Front Door, which then routes to the external tenant.
 - An [Akamai Web Application Firewall (WAF)](https://www.akamai.com/glossary/what-is-a-waf) that manages traffic sent to the authorization server.
-- In addition you should also configure a [verified domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant.
+- A [verified domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant.  A custom domain lets you brand your application’s sign-in endpoints with your own URL instead of Microsoft’s default domain name.
 
 ## Step 1: Configure Akamai WAF
 
@@ -72,10 +72,15 @@ Additionally, update the **API restrictions** for the actions to the appropriate
 
 You can connect the AuthCredentials to pull and verify the WAF configuration for your domain. For WAF verification, use the Microsoft Graph API endpoint. You can call this endpoint through [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) or any REST client.
 
-- Make sure the caller has the [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) role and has consented to the [RiskPreventionProviders.Read.All](/graph/permissions-reference#riskpreventionprovidersreadall) permission.
-- Provide the **API token** you created in the previous step and the **Zone ID** for your domain. This information is required so the backend can call Cloudflare on your behalf to pull and verify the WAF configuration.  
-  - Treat the token like any client secret. Never store or log it in plain text or without encryption.
-- The verification process checks that a DNS record is properly configured and validates whether recommended managed rulesets are enabled. It also reports all enabled managed rulesets and custom rules in the specified Cloudflare zone.
+- Make sure the caller has the [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) role and has consented to the [RiskPreventionProviders.Read.All](/graph/permissions-reference#riskpreventionprovidersreadall) permission. See more details about the RiskPreventionProviders.Read.All permission in the [next section](/entra/external-id/customers/how-to-configure-akamai-integration#risk-prevention-provider-permission-details).
+
+  :::image type="content" source="media\how-to-configure-akamai-integration\consent-to-permissions.png" alt-text="Screenshot showing consent to permissions." :::
+
+  :::image type="content" source="media\how-to-configure-akamai-integration\consent-button.png" alt-text="Screenshot showing the consent button." :::
+
+- The verification Graph API endpoint requires the **API token** that you created in the previous step. The backend uses this token to call Akamai on your behalf to retrieve and verify the WAF configuration.
+  - The token is treated like any client secret and is never stored or logged in plain text or without encryption.
+- The verification process checks that a DNS record is correctly configured and validates whether the recommended managed rulesets are enabled.
 - The API returns detailed error codes to help you identify configuration issues and provides actionable recommendations.
 
 ### Risk prevention provider permission details
@@ -88,7 +93,7 @@ The following permission allows the app to read your organization's risk prevent
 
 ### Sample request and response
 
-To connect Cloudflare WAF with Microsoft Entra External ID, use the following example request and response.
+To connect Akamai WAF with Microsoft Entra External ID, use the following example request and response.
 
 Sample request:
 
@@ -127,7 +132,7 @@ Content-type: application/json
       "name": "contoso.marketing.com",
       "isProxied": true,
       "recordType": "CNAME",
-      "value": "login-fga5gccshhbeb9hp.z01.azurefd.net",
+      "value": "login-abc1defghijkl2mn.o01.azurefd.net",
       "isDomainVerified": true
     }
   }

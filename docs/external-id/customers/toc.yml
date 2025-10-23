@@ -480,7 +480,7 @@ items:
         - name: Cloudflare
           href: tutorial-configure-cloudflare-integration.md
         - name: Akamai
-          href: tutorial-configure-akamai-integration.md
+          href: how-to-configure-akamai-integration.md
       - name: Fraud protection integration
         href: how-to-integrate-fraud-protection.md
     - name: Manage users
