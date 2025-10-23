@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra ID Protection to analyze risk
-description: Learn about risk assessment through event types, risky users, and risk level patterns.
+description: Learn about risk analysis to identify risky users, discern risk event types, and examine risk levels for access and identity decisions.
 author: gargi-sinha
 manager: martinco
 ms.author: gasinh
@@ -8,7 +8,7 @@ ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 10/23/2025
 
-#CustomerIntent: As an administrator, I want to learn more about risk assessment and resulting actions. I need to prepare for common risk event types and risky users, also to understand risk level patterns.
+#CustomerIntent: As an administrator, I want to learn more about risk analysis, assessment, and resulting actions. I must prepare for common risk event types and flagged users; also to understand risk-level patterns.
 ---
 
 # Microsoft Entra ID Protection to analyze risk
@@ -197,6 +197,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
