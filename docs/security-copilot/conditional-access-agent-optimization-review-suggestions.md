@@ -22,12 +22,12 @@ This article provides an overview of the logic behind the suggestions and report
 
 ## Prerequisites
 
-- You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
+- You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
-   - [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
-   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
+   - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
+   - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
@@ -63,7 +63,7 @@ Select **Review suggestion** to review a thorough overview of the suggestion, in
 
 The default view of the suggestion provides the policy details, including a high-level description at the top followed by the details that are used in the policy.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/review-suggestions-details.png" alt-text="Screenshot of the agent with the policy suggestion details open." lightbox="media/agent-optimization-review-suggestions/review-suggestions-details-expanded.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/review-suggestions-details.png" alt-text="Screenshot of the agent with the policy suggestion details open." lightbox="media/conditional-access-agent-optimization-review-suggestions/review-suggestions-details-expanded.png":::
 
 From this view you can make decisions about the suggestion, including:
 
@@ -79,17 +79,17 @@ You can also edit, duplicate, or download the policy from this page. The policy 
 
 From the details panel that opens, select **Policy impact** to see a visualization of the potential impact of the policy.
 
-Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that the policy affects. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
+Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that the policy affects. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](../identity/conditional-access/concept-conditional-access-report-only.md#reviewing-results).
 
 ### View agent's full activity
 
 To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The agent's activity assesses policy drift, or gaps in policy coverage, for users and apps. The agent also looks for policies that can be merged or consolidated.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-detail.png" alt-text="Screenshot of the agent activity map with clickable user list option highlighted." lightbox="media/agent-optimization-review-suggestions/agent-activity-detail-expanded.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/agent-activity-detail.png" alt-text="Screenshot of the agent activity map with clickable user list option highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/agent-activity-detail-expanded.png":::
 
 If the policy suggestion includes adding specific users or applications to the policy, you can view the list of applications or users directly from the map. For example, in the following example you'd select the **8 users** link to see the eight users the agent identified as not being included in the policy.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-map-view-users.png" alt-text="Screenshot of the agent activity map." lightbox="media/agent-optimization-review-suggestions/agent-activity-map-view-users.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/agent-activity-map-view-users.png" alt-text="Screenshot of the agent activity map." lightbox="media/conditional-access-agent-optimization-review-suggestions/agent-activity-map-view-users.png":::
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the map. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion.
 
@@ -106,7 +106,7 @@ Deep analysis performs an in-depth review of Conditional Access policies for sce
 
 Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and make any needed changes to your policies before applying the suggestion. You can also add notes about the suggestion that can be saved for other admins to review. If you choose to snooze the suggestion, it reappears in the list after 14 days with the notes intact.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png" alt-text="Screenshot of the suggestion created with deep analysis with the snooze and notes buttons highlighted." lightbox="media/agent-optimization-review-suggestions/deep-analysis-suggestion.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/deep-analysis-suggestion.png" alt-text="Screenshot of the suggestion created with deep analysis with the snooze and notes buttons highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/deep-analysis-suggestion.png":::
 
 ## Apply suggestions
 
@@ -118,11 +118,11 @@ The agent could suggest modifying an existing policy or consolidating overlappin
 
 - From the **Policy details** page, select **Apply suggestion** to apply the changes to the policy.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/policy-update-details.png" alt-text="Screenshot of a modify policy details page with the apply suggestion button highlighted." lightbox="media/agent-optimization-review-suggestions/policy-update-details.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/policy-update-details.png" alt-text="Screenshot of a modify policy details page with the apply suggestion button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/policy-update-details.png":::
 
 - From the **Review policy changes** page, you can also select **Approve suggested changes** from the bottom of the page.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/approve-suggested-changes.png" alt-text="Screenshot of the review policy page with the approve suggested changes button highlighted." lightbox="media/agent-optimization-review-suggestions/approve-suggested-changes.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/approve-suggested-changes.png" alt-text="Screenshot of the review policy page with the approve suggested changes button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/approve-suggested-changes.png":::
 
 ### Turn on a new policy
 
@@ -130,11 +130,11 @@ When the agent suggests a new policy, it creates the policy in report-only mode.
 
 - Select **Turn on policy** to have the agent apply the changes to the policy *in report-only mode*.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/turn-on-policy.png" alt-text="Screenshot of the policy details with the turn on policy button highlighted." lightbox="media/agent-optimization-review-suggestions/turn-on-policy.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/turn-on-policy.png" alt-text="Screenshot of the policy details with the turn on policy button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/turn-on-policy.png":::
 
 - From Conditional Access, select the policy and then change the **Enable policy** toggle from **Report-only** to **On**.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/report-only-mode-toggle.png" alt-text="Screenshot of the report-only mode toggle in Conditional Access." lightbox="media/agent-optimization-review-suggestions/report-only-mode-toggle.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/report-only-mode-toggle.png" alt-text="Screenshot of the report-only mode toggle in Conditional Access." lightbox="media/conditional-access-agent-optimization-review-suggestions/report-only-mode-toggle.png":::
 
 > [!TIP]
 > As a best practice, organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
@@ -155,7 +155,7 @@ To view a policy review report:
 1. Select **Review suggestion** to view the details of the suggested policy review.
 1. On the policy details page, select **Review report**. A detailed report with a visualization of the activity related to the policy appears.
 
-    :::image type="content" source="media/agent-optimization-review-suggestions/agent-policy-report-button.png" alt-text="Screenshot of the policy details for a report with the Review report button highlighted." lightbox="media/agent-optimization-review-suggestions/agent-policy-report-button.png":::
+    :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/agent-policy-report-button.png" alt-text="Screenshot of the policy details for a report with the Review report button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/agent-policy-report-button.png":::
 
 1. Review the report and investigate the policy as needed.
 

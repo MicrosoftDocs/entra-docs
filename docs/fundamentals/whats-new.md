@@ -395,7 +395,7 @@ You can now interact with Copilot in Microsoft Entra to investigate threats, man
 **Service category:** Conditional Access  
 **Product capability:** Identity Security & Protection  
 
-Conditional Access Optimization Agent in Microsoft Entra monitors for new users or apps not covered by existing policies, identifies necessary updates to close security gaps, and recommends quick fixes for identity teams to apply with a single selection. For more information, see: [Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot](../identity/conditional-access/agent-optimization.md).
+Conditional Access Optimization Agent in Microsoft Entra monitors for new users or apps not covered by existing policies, identifies necessary updates to close security gaps, and recommends quick fixes for identity teams to apply with a single selection. For more information, see: [Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot](../security-copilot/conditional-access-agent-optimization.md).
 
 ---
 
@@ -405,7 +405,7 @@ Conditional Access Optimization Agent in Microsoft Entra monitors for new users 
 **Service category:** Conditional Access  
 **Product capability:** Identity Security & Protection  
 
-The Conditional Access Optimization Agent now supports a new setting that allows admins to configure if the agent can or cannot create report-only mode policies autonomously. If turned off, the agent will only create policies upon admin approval. For more information, see: [Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot](../identity/conditional-access/agent-optimization.md#agent-capabilities).
+The Conditional Access Optimization Agent now supports a new setting that allows admins to configure if the agent can or cannot create report-only mode policies autonomously. If turned off, the agent will only create policies upon admin approval. For more information, see: [Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot](../security-copilot/conditional-access-agent-optimization.md#agent-capabilities).
 
 ---
 
@@ -706,7 +706,7 @@ Deployment logs feature provide visibility into the status and progress of confi
 **Service category:** Conditional Access    
 **Product capability:** Identity Security & Protection    
 
-[Conditional Access Optimization Agent in Microsoft Entra](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/new-innovations-in-microsoft-entra-to-strengthen-ai-security-and-identity-protec/3827393) monitors for new users or apps not covered by existing policies, identifies necessary updates to close security gaps, and recommends quick fixes for identity teams to apply with a single selection. For more information, see: [Microsoft Entra Conditional Access optimization agent](../identity/conditional-access/agent-optimization.md).
+[Conditional Access Optimization Agent in Microsoft Entra](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/new-innovations-in-microsoft-entra-to-strengthen-ai-security-and-identity-protec/3827393) monitors for new users or apps not covered by existing policies, identifies necessary updates to close security gaps, and recommends quick fixes for identity teams to apply with a single selection. For more information, see: [Microsoft Entra Conditional Access optimization agent](../security-copilot/conditional-access-agent-optimization.md).
 
 ---
 
