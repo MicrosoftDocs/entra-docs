@@ -259,7 +259,7 @@
       href: howto-sspr-authenticationdata.md
     - name: SSPR for Windows clients
       href: howto-sspr-windows.md
-  - name: Microsoft Entra account recovery
+  - name: Account recovery
     items:
     - name: Admin guide
       href: how-to-account-recovery-configure.md

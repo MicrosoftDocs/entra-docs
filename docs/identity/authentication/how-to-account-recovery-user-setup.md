@@ -8,25 +8,34 @@ ms.date: 10/17/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: timlarso
+ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how end users can set up account recovery for Microsoft Entra ID.
 ---
 
 # How end users can perform account recovery in Microsoft Entra ID
 
-1. Sign in to the identity proofing application, and select **Start**.
-1. If necessary, download and install Microsoft Authenticator, then select **Yes, I have it installed**.
-1. Open the camera on your mobile device, and scan the QR code on the website of the identity proofing application. 
-1. After the identity proofing application opens on your mobile device, select **Continue**.
-1. Enter your name and email, agree to the terms of use for the app, and select **Continue**.
-1. Choose your country/region, and the type of identity verification document you have, such as **Passport**.
-1. Review how to take a clear document photo, and select **Continue** after you read each step.
-1. After you take the photo, select **Submit photos**.
-1. Review how to take a clear photo of your face, and select **Continue** after you read each step.
-1. After you take the photo, the identity proofing application verifies your identity, and issues a Verifiable Credential.
-1. On the **Success** page, select **Add Verifiable Credential**.
-1. When you're prompted to open in Authenticator, select **Open**, and unlock Microsoft Authenticator.
-1. On the **Add a Verified ID** page in Authenticator, select **Next**.
-1. Sign in to the identity proofing application, and select **Start**.
-1. The new Verifiable Credential is listed in Authenticator under **Verified IDs**, and Authenticator and the identity proofing application both show **Success**.
+Users can recover their accounts in just a few simple steps. Below we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organizations configured provider. 
+
+:::image type="content" border="true" source="media/how-to-account-recovery-user-setup/recover-steps-1-5.png" alt-text="Initial steps to enter recovery.":::
+
+1. User attempts to login to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com)](https://login.microsoftonline.com) 
+2. The user is presented with an initial authentication method to sign-in with.
+3. Unable to use this method, the user can then click **Other ways to sign-in** and is presented with additional sign-in options. 
+4. As the user has lost all ability to sign-in with any registered authentication methods, they click **Recover your account** 
+5. The user is presented with an informational screen that explains the account recovery process and provides guidance to complete identity verification through the organization's configured external identity proofing service.
+6. Sign in to the identity proofing application and select **Start**.
+7. If necessary, download and install Microsoft Authenticator, then select **Yes, I have it installed**.
+8. Open the camera on your mobile device, and scan the QR code on the website of the identity proofing application. 
+9. After the identity proofing application opens on your mobile device, select **Continue**.
+10. Enter your name and email, agree to the terms of use for the app, and select **Continue**.
+11. Choose your country/region, and the type of identity verification document you have, such as **Passport**.
+12. Review how to take a clear document photo, and select **Continue** after you read each step.
+13. After you take the photo, select **Submit photos**.
+14. Review how to take a clear photo of your face, and select **Continue** after you read each step.
+15. After you take the photo, the identity proofing application verifies your identity, and issues a Verifiable Credential.
+16. On the **Success** page, select **Add Verifiable Credential**.
+17. When you're prompted to open in Authenticator, select **Open**, and unlock Microsoft Authenticator.
+18. On the **Add a Verified ID** page in Authenticator, select **Next**.
+19. Sign in to the identity proofing application, and select **Start**.
+20. The new Verifiable Credential is listed in Authenticator under **Verified IDs**, and Authenticator and the identity proofing application both show **Success**.
