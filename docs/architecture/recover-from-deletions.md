@@ -193,9 +193,8 @@ Moving from soft to hard delete:
 * A soft-deleted object isn't restored within 30 days.
 * An administrator intentionally deletes an object in the soft delete state.
 
-Note
-
-Application objects are not hard deleted automatically even after 30 days when ‘signInAudience’ value of the apps are set to  one of ("AzureADMultipleOrgs", "AzureADandPersonalMicrosoftAccount", or "PersonalMicrosoftAccount"). In this case, application objects should be manaully hard deleted.
+>[!Note]
+> Application objects are not hard deleted automatically even after 30 days when ‘signInAudience’ value of the apps are set to one of ("AzureADMultipleOrgs", "AzureADandPersonalMicrosoftAccount", or "PersonalMicrosoftAccount"). In this case, application objects should be manually hard deleted.
 
 Directly hard deleted:
 
