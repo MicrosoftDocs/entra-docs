@@ -23,6 +23,14 @@ Akamai Web Application Firewall ([Akamai WAF](https://www.akamai.com/glossary/wh
 
 This article provides step-by-step guidance for configuring your external tenant with Akamai for Web Application Firewall (WAF) settings.
 
+## Solution overview
+
+The solution uses three main components:
+
+- **External tenant** – Acts as the identity provider (IdP) and authorization server, enforcing custom policies for authentication.
+- **Azure Front Door (AFD)** – Handles custom domain routing and forwards traffic to Microsoft Entra External ID.
+- **Akamai WAF** – The [Web Application Protector](https://www.akamai.com/us/en/resources/waf.jsp) firewall that manages traffic sent to the authorization server.
+
 ## Prerequisites
 
 To get started, you need:
