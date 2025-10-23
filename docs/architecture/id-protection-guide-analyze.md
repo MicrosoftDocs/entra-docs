@@ -8,7 +8,7 @@ ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 10/23/2025
 
-#CustomerIntent: As an administrator, I want to improve risk analysis, risk assessment, and resulting actions for common risk event types, flagged users, and risk-level patterns.
+#CustomerIntent: As an administrator, I want to improve my risk analysis, risk assessment, and resulting actions for common risk event types, flagged users, and risk-level patterns.
 ---
 
 # Microsoft Entra ID Protection to analyze risk
@@ -199,6 +199,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
