@@ -30,7 +30,7 @@ CSP helps prevent these attacks by restricting which scripts can execute in the 
 
 ## CSP enforcement scope and key details
 
-CSP protects your organization by allowing only trusted Microsoft code to run, minimizing opportunities for unauthorized external script and code injection. Our analysis showed that violations mostly came from external browser extensions or injected scripts, often linked to non-Microsoft tools.
+CSP protects your organization by ensuring that only scripts from trusted Microsoft domains will be allowed to run during the Microsoft Entra sign-in experience, minimizing opportunities for unauthorized external script and code injection. Our analysis showed that violations mostly came from external browser extensions or injected scripts, often linked to non-Microsoft tools.
 
 Here’s what you need to know about the scope and key details of CSP enforcement:
 
@@ -46,7 +46,7 @@ Customers using tools that rely on injected scripts should work directly with th
 
 ## When will you see CSP enforcement?
 
-Microsoft Entra ID will enforce CSP globally starting mid-to-late October 2026. Timelines and details will be communicated through targeted messaging and broad notifications before release.   
+Microsoft Entra ID will enforce CSP globally **starting mid-to-late October 2026**. Timelines and details will be communicated through targeted messaging and broad notifications before release.   
 
 Microsoft recommends not using browser extensions or tools that inject code into the Microsoft Entra sign-in experience. If you follow this advice, your experience will remain unchanged, and no further action is needed.  
 
