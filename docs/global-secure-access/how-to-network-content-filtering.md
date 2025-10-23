@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 
 ---
 
-# Create a file policy to filter network content
+# Create a file policy to filter network content (preview)
 
 Global Secure Access supports network content filtering. This feature helps you safeguard against unintended data exposure and prevents inline data leaks to generative AI applications and internet destinations. By extending data protection capabilities to the network layer through Global Secure Access, network content filtering enables your organization to enforce data policies on network traffic in real time. You can discover and protect files shared with unsanctioned destinations, such as generative AI and unmanaged cloud apps, from managed endpoints through browsers, applications, add-ins, APIs, and more.
 
