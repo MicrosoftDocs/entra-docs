@@ -167,7 +167,7 @@ Learn more about access control decisions: [What is Conditional Access?](/azure/
 
 ### Azure Monitor Logs reference tables
 
-To help you get started, use Azure Monitor Log reference tables for Microsoft Entra ID Protection: 
+To help you get started, see and learn more about Azure Monitor Log reference tables for Microsoft Entra ID Protection. The following links go to a list of tables by table name. 
 
 * [AADUserRiskEvents](/azure/azure-monitor/reference/tables/aaduserriskevents)
 * [AADRiskyUsers](/azure/azure-monitor/reference/tables/aadriskyusers)
@@ -199,6 +199,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
