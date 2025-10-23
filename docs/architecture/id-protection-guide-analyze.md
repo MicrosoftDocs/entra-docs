@@ -37,9 +37,9 @@ In Microsoft Entra ID Protection, there are four risk tables to query risk event
 * AADServicePrincipalRiskEvents 
 * AADRiskyServicePrincipals 
 
-In this article, the focus is the **AADUserRiskEvents** table. To understand more about discerning risks to your organization, see the following video, 
+In this article, the focus is the **AADUserRiskEvents** table. To understand more about discerning risks to your organization, see the following video. 
 
-**Mastering risk analysis with Microsoft Entra ID Protection**. 
+**Mastering risk analysis with Microsoft Entra ID Protection** 
 
    > [!VIDEO abb7d7fe-4155-4ee1-bcce-afa027d22f8d]
 
@@ -199,6 +199,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
