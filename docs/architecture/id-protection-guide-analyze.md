@@ -13,7 +13,7 @@ ms.date: 10/23/2025
 
 # Microsoft Entra ID Protection to analyze risk
 
-When configuring access to resources, a proactive approach to risk mitigates the accelerating pace of cyber attack complexity. Create automated conditions for access and save on operationional and support costs. Organizations gain visibility into risk assessment and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs) reference tables. Learn how to manage common risk event types, repeatedly flagged users, and risk level patterns. 
+When you configure access to resources, a proactive approach to risk mitigates the accelerating pace of cyber attack complexity. Create automated conditions for access and save on operationional and support costs. Organizations gain visibility into risk assessment and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs) reference tables. Learn how to manage common risk event types, repeatedly flagged users, and risk level patterns. 
 
 * Track risk events across users and sign-ins 
 * Correlate anomalies with [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) policies and sign-in logs 
@@ -90,7 +90,7 @@ The following sections illustrate how to analyze risk with Azure Monitor.
 * **Discern risk event types** - Unfamiliar sign-in, unusual tokens, and unlikely travel are examples
 * **Examine risk levels** - Risk-level totals enable effective decision making
 
-### Step one: Identify risky users
+### Step 1: Identify risky users
 
 1. Run the query to summarize the count by **UserDisplayName**.
 2. Add a time range in **DetectedDateTime < ago()**.  
@@ -111,7 +111,7 @@ Use the previous query to identify common user patterns, such as service account
 
    ![Screenshot of risky user data from the query.](./media/id-protection-guide-analyze/risky-users.png)
 
-## Step two: Discern risk event types
+## Step 2: Discern risk event types
 
 After you determine user patterns, review detections and summarize them by the risk event type.  
 
@@ -142,7 +142,7 @@ See the following screenshot of results from the active-user risk events query.
 
    ![Screenshot of the results from the active-user risk events query.](./media/id-protection-guide-analyze/risk-events.png)
 
-## Step three: Examine risk levels
+## Step 3: Examine risk levels
 
 Examine the **AADUserRiskEvents** table to review low-, medium-, and high-risk levels. Summarize risk events by level and analyze risk level totals. 
 
@@ -185,7 +185,7 @@ Microsoft Entra ID Protection helps organizations build a proactive approach to 
 
 Microsoft Entra is a family of identity and network access products to implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) to: 
 
-* Veryify identity
+* Verify identity
 * Validate access conditions
 * Check permissions
 * Encrypt connection channels
@@ -197,6 +197,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
