@@ -80,7 +80,7 @@ See the following screenshot of the **Logs** option and the Queries hub page.
 
    ![Screenshot of the Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
 
-7. From the dropdown, change **Simple mode** to **KQL mode**.
+7. From the dropdown, change **Simple mode** to Kusto Query Language mode (**KQL mode**).
 
    ![Screenshot of the KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
 
@@ -99,7 +99,7 @@ The following sections illustrate how to analyze risk with Azure Monitor.
 
 In the following example query, **30d** is the date range. 
 
-```KQL
+```kusto
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -121,7 +121,7 @@ After you determine user patterns, review detections and summarize them by the r
 2. Summarize with **RiskEventType**. 
 
 **Example query**
-```KQL
+```kusto
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -149,7 +149,7 @@ See the following screenshot of results from the active-user risk events query.
 Examine the **AADUserRiskEvents** table to review low-, medium-, and high-risk levels. Summarize risk events by level and analyze risk level totals. 
 
 **Example query**
-```KQL
+```kusto
 // Recent user risk events 
 // Gets list of the top 100 active user risk events. 
 AADUserRiskEvents 
@@ -199,6 +199,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
