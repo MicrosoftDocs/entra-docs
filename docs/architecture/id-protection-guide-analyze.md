@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Protection scenario to analyze risk
+title: Microsoft Entra ID Protection scenario for visibility into risk analysis for resulting actions
 description: Learn about risk analysis to identify risky users, discern risk event types, and examine risk levels for access and identity decisions.
 author: gargi-sinha
 manager: martinco
@@ -10,7 +10,7 @@ ms.date: 10/24/2025
 
 #CustomerIntent: As an administrator, I want to improve my risk analysis, risk assessment, and resulting actions for common risk event types, flagged users, and risk-level patterns.
 ---
-# Microsoft Entra ID Protection scenario: Analyze risk
+# Microsoft Entra ID Protection scenario: Visibility into risk analysis for resulting actions
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks.
 
@@ -21,7 +21,7 @@ Detailed guidance continues with these scenarios:
 - [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 - [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
-This article helps identity administrators configure access to the organization's resources, a proactive approach to risk mitigates the accelerating pace of cyber attack complexity. Create automated conditions for access and save on operationional and support costs. Gain visibility into risk assessment and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs). 
+This article helps identity administrators gain visibility into risk analysis and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs). Configure access to your organization's resources with a proactive approach to risk. Create automated conditions for access and save on operationional and support costs. Mitigate the accelerating pace of cyber attack complexity. 
 
 * Track risk events across users and sign-ins 
 * Correlate anomalies with [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) policies and sign-in logs 
@@ -210,6 +210,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
