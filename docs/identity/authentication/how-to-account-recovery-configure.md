@@ -81,9 +81,9 @@ After testing account recovery in evaluation mode and confirming that the identi
 9. After reviewing the configuration, select **Complete** to apply the changes.
 10. A confirmation message will appear indicating that account recovery has been successfully updated.
 
-Once these steps are complete, users in the scoped groups will be able to use account recovery to fully regain access to their accounts when they lose all authentication methods. Users will complete identity verification through the configured provider and receive a Temporary Access Pass to re-enroll their authentication methods.
+Once these steps are complete, users in the scoped groups can use account recovery to fully regain access to their accounts when they lose all authentication methods. Users complete identity verification by using the configured provider, and they get a Temporary Access Pass to re-enroll their authentication methods.
 
 ## Related content
 
-- [Microsoft Security Store](https://learn.microsoft.com/security/store/) - Learn about Microsoft Security Store capabilities and offerings
+- [Microsoft Security Store](/security/store/) - Learn about Microsoft Security Store capabilities and offerings
 - [How end users can perform account recovery](how-to-account-recovery-user-setup.md) - walkthrough of the end-user account recovery experience
