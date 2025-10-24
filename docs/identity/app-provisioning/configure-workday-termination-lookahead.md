@@ -1,6 +1,6 @@
 ---
 title: Configure Workday Termination Lookahead 
-description: Enable Termination Lookahead query for your Workday-to-AD/Entra ID provisioning job.
+description: Enable Termination Lookahead query for your Workday-to-AD/Microsoft Entra ID provisioning job.
 author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-id
@@ -11,7 +11,7 @@ ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 
-#customer intent: As an IT admin, I want to understand how to enable the Workday Termination Lookahead query so I can leverage it for Workday-to-AD/Entra ID provisioning.
+#customer intent: As an IT admin, I want to understand how to enable the Workday Termination Lookahead query so I can leverage it for Workday-to-AD/Microsoft Entra ID provisioning.
 ---
 
 # Configure Workday termination lookahead (Preview)
@@ -39,17 +39,17 @@ For a user in India whose last working day is 14-May-2025, the connector starts 
 
 For a user in Japan whose last working day is 14-May-2025, the connector starts including the attributes `StatusTerminationLastDayOfWork` and `StatusTerminationDate`, starting Japan time 4:00pm on 14-May-2025, which corresponds to the 16-hour time difference between PDT and Japan Standard time in May.
 
-This adjustment ensures the termination data is available earlier for workers in time zones ahead of Pacific Time. By updating attribute mapping rules in Entra ID, you can then implement time-zone aware terminations.
+This adjustment ensures the termination data is available earlier for workers in time zones ahead of Pacific Time. By updating attribute mapping rules in Microsoft Entra ID, you can then implement time-zone aware terminations.
 
-## Job Configuration
+## Job configuration
 
-1. Go to your [Entra portal](https://aka.ms/EnableLastDayOfWork). 
-> [!IMPORTANT] 
-> Test the configuration changes described in this document in your test environment, before enabling the configuration in your production setup.
-> [!NOTE] 
-> This link includes a feature flag in the URL (`userProvisioningWorkdayLookaheadQueryForTerminations=true`) required to configure the lookahead query setting.
+1. Go to your [Microsoft Entra admin center](https://aka.ms/EnableLastDayOfWork).         
+   > [!IMPORTANT] 
+   > Test the configuration changes described in this document in your test environment, before enabling the configuration in your production setup.
+   > [!NOTE] 
+   > This link includes a feature flag in the URL (`userProvisioningWorkdayLookaheadQueryForTerminations=true`) required to configure the lookahead query setting.
 
-1. Open your Workday-to-AD/Entra ID provisioning job.
+1. Open your Workday-to-AD/Microsoft Entra ID provisioning job.
 
 1. If it's in a **Running** state, select **Stop provisioning** to first pause the job.
 
@@ -57,14 +57,14 @@ This adjustment ensures the termination data is available earlier for workers in
 
 1. Expand **Settings**, then check the box for **Enable termination lookahead query**.
 
-:::image type="content" source="media/configure-workday-termination-lookahead/enable-termination-lookahead-box.png" alt-text="Screenshot showing the selection of Enabling the Termination lookahead query box.":::
+   :::image type="content" source="media/configure-workday-termination-lookahead/enable-termination-lookahead-box.png" alt-text="Screenshot showing the selection of Enabling the Termination lookahead query box.":::
 
 5. Click **Save**.    
 
 6. Expand **Mappings** and open the attribute mapping page.
-Depending on your provisioning job type, update the expression logic for the account status attribute. If your provisioning target is Entra ID, follow steps in the next section. If your provisioning target is on-premises AD, follow steps in the section [Workday to AD job settings](#workday-to-ad-provisioning-job-settings).
+Depending on your provisioning job type, update the expression logic for the account status attribute. If your provisioning target is Microsoft Entra ID, follow steps in the next section. If your provisioning target is on-premises AD, follow steps in the section [Workday to AD job settings](#workday-to-ad-provisioning-job-settings).
 
-### Workday-to-Entra ID Provisioning Job settings
+### Workday-to-Microsoft Entra ID Provisioning Job settings
 
 - If your Workday provisioning job target is **Entra ID**, then in the attribute mappings section, update the logic associated with `accountEnabled` flag to include a check for **Last Day of Work**.
 
@@ -84,7 +84,7 @@ Switch([StatusTerminationLastDayOfWork], 
 
 The expression checks for the presence of `StatusTerminationLastDayOfWork`, which is the attribute that is retrieved as part of the termination lookahead query.
 
-- If the attribute `StatusTerminationLastDayOfWork` is present and if the worker is inactive in Workday, then the Worker account is disabled in Entra.
+- If the attribute `StatusTerminationLastDayOfWork` is present and if the worker is inactive in Workday, then the Worker account is disabled in Microsoft Entra.
 
 - If the attribute `StatusTerminationLastDayOfWork` is present and if the worker is still active, then the DateDiff logic is triggered, which checks if `StatusTerminationLastDayOfWork` is today. In the DateAdd parameter, use the UTC offset corresponding to your region, so your date comparison logic returns the correct value. For example, if your region is Japan, then use the value **9**.
 
@@ -94,7 +94,7 @@ The expression checks for the presence of `StatusTerminationLastDayOfWork`, whic
 
 - If your Workday provisioning job target is **Entra ID**, you can also flow the `StatusTerminationLastDayOfWork` to the `employeeLeaveDateTime` attribute and then trigger Leaver Lifecycle Workflows based on the `employeeLeaveDateTime`. The advantage of this approach is that it'll always use the UTC time zone to trigger the account to disable the task. This saves you from using UTC offsets in expression mappings.
 
-:::image type="content" source="media/configure-workday-termination-lookahead/entra-id-workday-attribute-mappings.png" alt-text="A screenshot of Entra ID and Workday attribute mappings.":::
+:::image type="content" source="media/configure-workday-termination-lookahead/entra-id-workday-attribute-mappings.png" alt-text="A screenshot of Microsoft Entra ID and Workday attribute mappings.":::
 
 - After changing any settings, make sure to save the provisioning job.
 
