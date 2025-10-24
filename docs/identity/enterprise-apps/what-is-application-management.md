@@ -47,7 +47,7 @@ If you want to make your application available through the gallery, you can [sub
 
 ### On-premises applications
 
-If you want to deploy an on-premises application or continue using an existing on-premises application, but take advantage of what Microsoft Entra ID offers, connect it with Microsoft Entra ID using [Microsoft Entra Private Access](../../global-secure-access/overview-what-is-global-secure-access.md), [Microsoft Entra application proxy](/entra/identity/app-proxy) or [provisioning](../app-provisioning/user-provisioning.md), depending on the supported protocols of the application. Application Proxy can be implemented when you want to publish on-premises applications externally. Remote users who need access to internal applications can then access them in a secure manner.
+If you want to deploy an on-premises application or continue using an existing on-premises application, but take advantage of what Microsoft Entra ID offers, connect it with Microsoft Entra ID using [Microsoft Entra Private Access](../../global-secure-access/overview-what-is-global-secure-access.md), [Microsoft Entra application proxy](/entra/identity/app-proxy), or [provisioning](../app-provisioning/user-provisioning.md), depending on the supported protocols of the application. Application Proxy can be implemented when you want to publish on-premises applications externally. Remote users who need access to internal applications can then access them in a secure manner.
 
 ## Manage access
 
@@ -77,7 +77,7 @@ You can select that all users in your tenant can access your enterprise applicat
 
 If included in your subscription, [assign groups to an application](assign-user-or-group-access-portal.md) or [include the application role in an access package](../../id-governance/entitlement-management-access-package-create.md) so that you can delegate ongoing access management to the group owner. You can also [bring in the existing users of an application to Microsoft Entra](../../id-governance/identity-governance-applications-existing-users.md).
 
-[Assigning owners](assign-app-owners.md) is a simple way to grant the ability to manage all aspects of Microsoft Entra configuration for an application. As an owner, a user can manage the organization-specific configuration of the application. As a best practice, you should [configure lifecycle workflows for when employees leave](../../id-governance/what-are-liefcycle-workflows.md), or it not included in your subscriptions, proactively monitor applications in your tenant to ensure they have at least two owners, to avoid the situation of ownerless applications.
+[Assigning owners](assign-app-owners.md) is a simple way to grant the ability to manage all aspects of Microsoft Entra configuration for an application. As an owner, a user can manage the organization-specific configuration of the application. As a best practice, you should [configure lifecycle workflows for when employees leave](../../id-governance/what-are-lifecycle-workflows.md), or it not included in your subscriptions, proactively monitor applications in your tenant to ensure they have at least two owners, to avoid the situation of ownerless applications.
 
 ### Automate provisioning
 
@@ -133,7 +133,7 @@ You can clean up access to applications. For example, [removing a user’s acces
 
 ## Guided walkthrough
 
-For a guided walkthrough of many of the recommendations in this article, see the [Microsoft 365 Secure your cloud apps with Single Sign On (SSO) guided walkthrough](https://go.microsoft.com/fwlink/?linkid=2221502) and [Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access](../../id-govoernance/identity-governance-applications-integrate.md).
+For a guided walkthrough of many of the recommendations in this article, see the [Microsoft 365 Secure your cloud apps with Single Sign On (SSO) guided walkthrough](https://go.microsoft.com/fwlink/?linkid=2221502) and [Integrating applications with Microsoft Entra ID and establishing a baseline of reviewed access](../../id-governance/identity-governance-applications-integrate.md).
 
 ## Next steps
 
