@@ -19,7 +19,7 @@ zone_pivot_groups: enterprise-apps-all
 
 # Manage users and groups assignment to an application
 
-This article shows you how to assign users and groups to an enterprise application in Microsoft Entra ID. When you assign a user to an application, the application appears in the user's [My Apps](https://myapps.microsoft.com/) portal for easy access. If the application exposes app roles, you can also assign a specific app role to the user.
+This article shows you how to assign users and groups to an enterprise application in Microsoft Entra ID. When you assign a user to an application, the application appears in the user's [My Apps](https://myapps.microsoft.com/) portal for easy access. If the application exposes app roles, you can also assign a specific app role to the user. If provisioning is enabled for the application, then the user is provisioned into the application.
 
 When you assign a group to an application, only users in the group have access. The assignment doesn't cascade to nested groups.
 
