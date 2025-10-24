@@ -94,7 +94,7 @@ The expression checks for the presence of `StatusTerminationLastDayOfWork`, whic
 
 - If your Workday provisioning job target is **Entra ID**, you can also flow the `StatusTerminationLastDayOfWork` to the `employeeLeaveDateTime` attribute and then trigger Leaver Lifecycle Workflows based on the `employeeLeaveDateTime`. The advantage of this approach is that it'll always use the UTC time zone to trigger the account to disable the task. This saves you from using UTC offsets in expression mappings.
 
-:::image type="content" source="media/configure-workday-termination-lookahead/entra-id-workday-attribute-mappings.png" alt-text="A screenshot of Microsoft Entra ID and Workday attribute mappings.":::
+:::image type="content" source="media/configure-workday-termination-lookahead/entra-id-workday-attribute-mappings.png" alt-text="A screenshot of Microsoft Entra ID and Workday attribute mappings." lightbox="media/configure-workday-termination-lookahead/entra-id-workday-attribute-mappings.png":::
 
 - After changing any settings, make sure to save the provisioning job.
 
