@@ -147,7 +147,7 @@ To configure notifications in the Conditional Access optimization agent settings
 
 1. At the bottom of the main **Settings** page, select the **Save** button.
 
-You can select up to 10 recipients to receive notifications. You can select a group to receive the notifications, but the membership of that group can't exceed 10 users. If you select a group that has fewer than 10 users but more are added later, the group no longer receives notifications. Similarly, the notifications can only be sent to five objects, such as a combination of individual users or groups.
+You can select up to 10 recipients to receive notifications. You can select a group to receive the notifications, but the membership of that group can't exceed 10 users. If you select a group that has fewer than 10 users but more are added later, the group no longer receives notifications. Similarly, the notifications can only be sent to five objects, such as a combination of individual users or groups. To stop receiving notifications, remove your user object or the group you're included in from the recipient's list. 
 
 At this time, the agent's communication is one direction, so you can receive notifications but can't respond to them in Microsoft Teams. To take action on a suggestion, select **Review suggestion** from the chat to open the Conditional Access optimization agent in the Microsoft Entra admin center.
 
