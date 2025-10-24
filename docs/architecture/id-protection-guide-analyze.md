@@ -18,8 +18,9 @@ An overview of the guidance begins with [Introduction to Microsoft Entra ID Prot
 
 Detailed guidance continues with these scenarios:
 
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
 
 This article helps identity administrators gain visibility into risk analysis and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs). Configure access to your organization's resources with a proactive approach to risk. Create automated conditions for access and save on operationional and support costs. Mitigate the accelerating pace of cyber attack complexity. 
 
@@ -210,6 +211,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
