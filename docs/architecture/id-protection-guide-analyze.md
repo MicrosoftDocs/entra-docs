@@ -30,12 +30,12 @@ This article helps identity administrators gain visibility into risk analysis an
   * Enrich investigations and stream telemetry to [Microsoft Defender XDR](/defender-xdr/microsoft-365-defender) and [Microsoft Sentinel](/azure/sentinel/overview), a security information and event management (SIEM) tool with threat intelligence and a data-lake architecture
   * You can [search the audit log in Microsoft Defender XDR](/defender-xdr/microsoft-xdr-auditing).
 
-Use the following sections to learn how to collect, transform, remove, optimize, and route data. Also learn how to manage common risk event types, repeatedly flagged users, and risk level patterns with Azure Monitor logs and Microsoft Entra ID Protection.
+Use the following sections to learn how to collect, transform, remove, optimize, and route data. Learn to manage common risk event types, flagged users, and risk-level patterns with Azure Monitor logs and Microsoft Entra ID Protection.
 
 * [Enable risk analysis with the AADUserRiskEvents table](#enable-risk-analysis-with-the-aaduserriskevents-table)
 * [Ensure prerequisites are met](#ensure-prerequisites-are-met)
 * [Create a Log Analytics workspace](#create-a-log-analytics-workspace)
-* [Idenitify risky users](#identify-risky-users)
+* [Identify risky users](#identify-risky-users)
 * [Discern risk event types](#discern-risk-event-types)
 * [Examine risk levels](#examine-risk-levels)
 * [Get started with Azure Monitor Logs reference tables](#get-started-with-azure-monitor-logs-reference-tables)
@@ -44,7 +44,7 @@ Use the following sections to learn how to collect, transform, remove, optimize,
 
 Identity risks grow in speed and complexity every year. You can use risk insights to grasp the volume and details of potential identity attacks and compromises. Enable Azure Monitor Logs reference tables to analyze risk insights with [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) that detects, investigates, and remediates identity risks. Risk data goes to access decisions tools, or tools for investigation and correlation. Microsoft Entra ID Protection is continuously updated to help organizations stay ahead of emerging threats. Identity risk management becomes more proactive, scalable, and effective. 
 
-With insights, reference tables, and more, you can investigate and remediate identity risks with Conditional Access and construct targeted policies to address your orgnanization's risks.  
+With insights, reference tables, and more, you can investigate and remediate identity risks with Conditional Access and construct targeted policies to address your organization's risks.  
 
 Learn more in the [Azure Monitor Logs overview](/azure/azure-monitor/logs/data-platform-logs).
 
@@ -216,6 +216,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
