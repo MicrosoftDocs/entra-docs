@@ -10,7 +10,7 @@ ms.date: 09/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
-ms.reviewer: lhuangnorth
+ms.reviewer: kvenkit
 ---
 # Conditional Access and agent identities (Preview)
 
