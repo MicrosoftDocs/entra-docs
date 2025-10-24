@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/22/2025
+ms.date: 10/24/2025
 
 #CustomerIntent: As an IT admin, I want to learn, deploy, and test Microsoft Entra ID Protection so that I can detect, investigate, and remediate identity-based risks.
 ---
@@ -14,9 +14,10 @@ ms.date: 08/22/2025
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks. Detailed guidance for specific scenarios continues in these articles:
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* [Enable visibility into risk analysis for resulting actions](id-protection-guide-analyze.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
 This guide assumes you're running a PoC in a production environment. Running a PoC in a test environment might give you more flexibility. Follow the guidance in these articles to ensure a successful Microsoft Entra ID Protection PoC launch.
 
