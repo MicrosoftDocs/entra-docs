@@ -127,7 +127,7 @@ You can also add a username to an existing external user.
 Use `$filter` to get the user object, and `$select` to return the ID and `identities[]` properties. The following request example shows how to retrieve a user account using the email address as a sign-in identifier.
 
 ```http
-GET https://graph.microsoft.com/v1.0/users?$select=displayName,id&$filter=identities/any(c:c/issuerAssignedId eq 'dylan@woodgrove.com' and c/issuer eq 'contoso.onmicrosoft.com')
+GET https://graph.microsoft.com/v1.0/users?$select=displayName,id,identities&$filter=identities/any… eq 'dylan@woodgrove.com' and c/issuer eq 'contoso'
 ```
 
 The following response example shows the response with the user details.
@@ -137,12 +137,25 @@ HTTP/1.1 200 OK
 Content-type: application/json
  
 {
-  "value": [
-    {
-      "displayName": "Dylan Williams",
-      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
-    }
-  ]
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(displayName,id,identities)",
+    "value": [
+        {
+            "displayName": "ciam test 1",
+            "id": "0daaf9dd-3583-4cd4-8934-a2ffd0490287",
+            "identities": [
+                {
+                    "signInType": "userPrincipalName",
+                    "issuer": "contoso.onmicrosoft.com",
+                    "issuerAssignedId": "0daaf9dd-3583-4cd4-8934-a2ffd0490287@contoso.onmicrosoft.com"
+                },
+                {
+                    "signInType": "emailAddress",
+                    "issuer": "contoso.onmicrosoft.com",
+                    "issuerAssignedId": "adelev@adatum.com"
+                }
+            ]
+        }
+    ]
 }
 ```
 
@@ -154,21 +167,25 @@ The following request example shows how to update the `identities[]` property of
 
 ```http
 POST https://graph.microsoft.com/v1.0/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-Content-type: application/json
- 
+Content-type: application/json 
 {
-    "identities": [
-        {
-            "signInType": "emailAddress",
-            "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "dylan@woodgrove.com""
-        },
-        {
-            "signInType": "username",
-            "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "dylan123"
-        }
-    ]
+            "identities": [
+                {
+                    "signInType": "userPrincipalName",
+                    "issuer": "contoso.onmicrosoft.com",
+                    "issuerAssignedId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee@contoso.onmicrosoft.com"
+                },
+                {
+                    "signInType": "emailAddress",
+                    "issuer": "contoso.onmicrosoft.com",
+                    "issuerAssignedId": "dylan@woodgrove.com"
+                },
+                {
+                    "signInType": "userName",
+                    "issuer": "contoso.onmicrosoft.com",
+                    "issuerAssignedId": "dylan1234"
+                }
+            ]
 }
 ```
 
@@ -185,7 +202,7 @@ You can customize the sign-in page to provide a better experience for your users
 
 ### Customize the hint text of the identifier field on the sign-in page
 
-You can customize the hint text of identifier field on the sign-in page for all apps via Company Branding.
+You can customize the hint text of identifier field on the sign-in page for all apps via [Custom branding](/entra/external-id/customers/how-to-customize-branding-customers#to-customize-the-sign-in-form).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Organizational Branding Administrator](~/identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
