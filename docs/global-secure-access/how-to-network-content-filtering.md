@@ -3,7 +3,7 @@ title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/23/2025
+ms.date: 10/24/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -20,11 +20,27 @@ Global Secure Access supports network content filtering. This feature helps you 
 
 The network content filtering solution brings together Microsoft Purview's data classification service and the identity-centric network security policies in Global Secure Access. This combination creates an advanced network-layer data security solution, Data Loss Prevention (DLP), that's identity-centric and policy-driven. By combining deep content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
 
+### High-level architecture
+:::image type="content" source="media/how-to-network-content-filtering/network-content-filtering-architecture.png" alt-text="Diagram showing the architecture of network content filtering with Global Secure Access and Microsoft Purview." lightbox="media/how-to-network-content-filtering/network-content-filtering-architecture.png":::
+
+This article explains how to create a file policy to filter internet traffic flowing through Global Secure Access.
+
 > [!IMPORTANT]
 > The network content filtering feature is currently in PREVIEW.   
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.      
 
-This article explains how to create a file policy to filter internet traffic flowing through Global Secure Access.
+## Scenarios included in this preview 
+
+This preview supports the following key scenarios and outcomes for HTTP/1.1 traffic:
+- Using **Basic content inspection**, you can block files based on file MIME type. 
+- Using **Advanced content inspection with Microsoft Purview**, you can audit and block files based on:
+    - Microsoft Purview sensitivity labels
+    - Sensitive content in the file
+    - The user's risk level
+- You can generate Data loss prevention (DLP) admin alerts for rule matches.
+
+> [!IMPORTANT]
+> This preview supports network data security only for files over HTTP/1.1.
 
 ## Prerequisites
 
@@ -55,7 +71,7 @@ To configure file policies, complete the following initial setup steps:
 
 ## Configure a file policy
 
-There are three main steps to configure a file policy in Global Secure Access:
+To configure a file policy in Global Secure Access, complete the following steps:
 1. [Create a file policy](#create-a-file-policy).
 1. [Link the file policy to a security profile](#link-the-file-policy-to-a-security-profile).
 1. [Configure a Conditional Access policy](#configure-a-conditional-access-policy).
@@ -73,6 +89,7 @@ There are three main steps to configure a file policy in Global Secure Access:
     1. Add a new rule.
     1. Enter the **Name**, **Description**, **Priority**, and **Status** as appropriate.
     1. If you configured data policies in Microsoft Purview, select **Scan with Purview** from the **Action** menu.
+        :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **File types**.
     1. Select **+ Add destination** and choose an option for the destination.
 1. Select **Next**.
@@ -110,7 +127,7 @@ For more information, see [Create and link a Conditional Access policy](how-to
 The file policy is successfully configured. 
 
 ## Test the file policy
-Test the configuration by attempting to upload or download files that match the file policy conditions. Verify that the actions are blocked or allowed according to the policy settings.
+Test the configuration by attempting to upload or download files that match the file policy conditions. Verify that the policy settings block or allow the actions.
 
 1. Open a test file that contains personal data, such as dlptest.com/sample-data.pdf.
 1. Try to share the test file with the destination you configured in the file policy. If the policy is configured properly, the action is blocked.
