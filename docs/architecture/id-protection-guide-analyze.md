@@ -35,7 +35,7 @@ Use the following sections to learn how to collect, transform, remove, optimize,
 * [Enable risk analysis with the AADUserRiskEvents table](#enable-risk-analysis-with-the-aaduserriskevents-table)
 * [Ensure prerequisites are met](#ensure-prerequisites-are-met)
 * [Create a Log Analytics workspace](#create-a-log-analytics-workspace)
-* [Idenitify risky users](#idenitify-risky-users)
+* [Idenitify risky users](#identify-risky-users)
 * [Discern risk event types](#discern-risk-event-types)
 * [Examine risk levels](#examine-risk-levels)
 * [Get started with Azure Monitor Logs reference tables](#get-started-with-azure-monitor-logs-reference-tables)
@@ -211,6 +211,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
