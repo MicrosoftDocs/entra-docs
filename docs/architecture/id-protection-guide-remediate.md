@@ -62,7 +62,7 @@ Configure user alerts and notifications for the following scenarios:
 
 ## Next steps
 
-* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](#id-protection-guide-introduction.md)
+* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
 * [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
 * [Enable visibility into risk analysis for resulting actions](id-protection-guide-analyze.md)
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
