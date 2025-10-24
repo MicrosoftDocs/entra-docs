@@ -10,7 +10,7 @@ ms.date: 10/24/2025
 
 #CustomerIntent: As an SOC administrator, I want to use Microsoft Entra ID Protection so that I can bring identity risk-related telemetry into security investigations.
 ---
-# Microsoft Entra ID Protection scenario: identity risk-related telemetry in security investigations
+# Microsoft Entra ID Protection scenario: Identity risk-related telemetry in security investigations
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks.
 
