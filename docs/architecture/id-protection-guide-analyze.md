@@ -18,9 +18,9 @@ An overview of the guidance begins with [Introduction to Microsoft Entra ID Prot
 
 Detailed guidance continues with these scenarios:
 
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
-* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
 
 This article helps identity administrators gain visibility into risk analysis and resulting actions with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs). Configure access to your organization's resources with a proactive approach to risk. Create automated conditions for access and save on operationional and support costs. Mitigate the accelerating pace of cyber attack complexity. 
 
@@ -188,9 +188,14 @@ To help you get started, see and learn more about Azure Monitor Log reference ta
 
 ## Next steps
 
-Microsoft Entra ID Protection helps organizations build a proactive approach to identity risk management:  
+* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](#id-protection-guide-introduction.md)
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* Enable visibility into risk analysis for resulting actions
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
 
-* See [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](/entra/architecture/id-protection-guide-introduction)
+**Additional links**
+
 * Watch instructional videos in the [ID Protect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
 * Visit the [Tech Community](https://techcommunity.microsoft.com/) for updates and technical information
 * Learn to configure diagnostics at [idpdiagnosticssettings](https://aka.ms/idpdiagnosticssettings)
@@ -211,6 +216,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
