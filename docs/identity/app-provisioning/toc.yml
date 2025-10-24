@@ -121,6 +121,8 @@ items:
       items:
       - name: Retrieve pronoun information
         href: workday-retrieve-pronoun-information.md
+      - name: Configure Workday termination lookahead (Preview)
+        href: configure-workday-termination-lookahead.md
     - name: Troubleshoot application provisioning
       items:
       - name: Known issues
