@@ -79,6 +79,8 @@ For [multitenant environments](../identity/multi-tenant-organizations/defender-x
 
 ## Next steps
 
-- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
-- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](#id-protection-guide-introduction.md)
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* [Enable visibility into risk analysis for resulting actions](id-protection-guide-analyze.md)
+* Bring identity risk-related telemetry into security investigations
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
