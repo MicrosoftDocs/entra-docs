@@ -188,7 +188,7 @@ To help you get started, see and learn more about Azure Monitor Log reference ta
 
 ## Next steps
 
-* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](#id-protection-guide-introduction.md)
+* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
 * [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
 * Enable visibility into risk analysis for resulting actions
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
@@ -216,6 +216,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
