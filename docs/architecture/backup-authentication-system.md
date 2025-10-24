@@ -74,7 +74,7 @@ Certain other types of policies don't support use of the backup authentication s
 
 ### How does certificate revocation work in an outage? 
 
-To enhance its resilience posture, the backup authentication system does not have the ability to perform fresh revocation checks. Instead it relies on the state of the certificate revocation list (CRL) check performed when the session was last backed up. If you need to revoke before this backup expires, you should explicitly revoke the session instead of waiting for the CRL.  
+To enhance its resilience posture, the backup authentication system can't perform fresh revocation checks. Instead, it relies on the state of the certificate revocation list (CRL) check that's performed when the session was last backed up. If you need to revoke before this backup expires, you should explicitly revoke the session instead of waiting for the CRL.  
 
 ## Workload identity resilience in the backup authentication system
 
