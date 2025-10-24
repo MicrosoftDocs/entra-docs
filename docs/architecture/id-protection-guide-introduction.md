@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Protection Proof-of-Concept Guidance
+title: Introduction to Microsoft Entra ID Protection proof-of-concept guidance
 description: Learn, deploy, and test Microsoft Entra ID Protection so that you can detect, investigate, and remediate identity-based risks.
 author: gargi-sinha
 manager: martinco
@@ -130,6 +130,8 @@ Microsoft 365 E5 covers these signals:
 
 ## Next steps
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* Introduction to Microsoft Entra ID Protection proof-of-concept guidance
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* [Enable visibility into risk analysis for resulting actions](id-protection-guide-analyze.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
