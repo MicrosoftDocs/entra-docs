@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/22/2025
+ms.date: 10/24/2025
 
 #CustomerIntent: As an SOC administrator, I want to use Microsoft Entra ID Protection so that I can bring identity risk-related telemetry into security investigations.
 ---
@@ -18,8 +18,9 @@ An overview of the guidance begins with [Introduction to Microsoft Entra ID Pro
 
 Detailed guidance continues with these scenarios:
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* [Enable visibility into risk analysis for resulting actions](id-protection-guide-analyze.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
 This article helps Security Operations Center (SOC) administrators to bring identity risk-related telemetry into security investigations.
 
