@@ -27,20 +27,20 @@ This article describes how to configure Azure Monitor in an external tenant so y
 External tenants use [Microsoft Entra monitoring](/entra/identity/monitoring-health/overview-monitoring-health). Unlike workforce tenants, an external tenant can't have an associated subscription. To enable monitoring in an external tenant, sign in to your workforce tenant to authenticate the subscription during configuration.  
 You can also use [Azure Lighthouse](/azure/lighthouse/overview) to enable diagnostic settings for a workforce tenant (the Customer) within your external tenant (the Service Provider).
 
-In this configuration, you use a wizard. You can start the wizard from either of these entry points: the **Diagnostic settings** page or the **Service Integrations** page. This article covers both approaches.
+In this configuration, you use a wizard. You can start the wizard from either of these entry points: the **Diagnostic settings** page or the **Security Store** page. This article covers both approaches.
 
 ## Prerequisites
 
 - An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">free account</a> before you begin.
 - A Microsoft Entra account with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role in the Microsoft Entra subscription.
-- An account in the external tenant that's been assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role. 
+- An account in the external tenant that's been assigned the [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) or the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.
 
 > [!IMPORTANT]
 > This feature supports only the new [Azure Role-Based Access Control (RBAC) Owner role](/azure/role-based-access-control/built-in-roles/privileged#owner), not the classic administrator roles. For instructions on converting classic administrator roles to Azure RBAC, see [Azure classic subscription administrators](/azure/role-based-access-control/classic-administrators?tabs=azure-portal). After you complete the conversion, refresh the page to apply the changes.
 
 ## Start the wizard to set up Azure Lighthouse
 
-To configure Azure Lighthouse in an external tenant, start the wizard from either the **Diagnostic settings** page or the **Service Integrations** page. Choose one of the following tabs with the entry points to get started.
+To configure Azure Lighthouse in an external tenant, start the wizard from either the **Diagnostic settings** page or the **Security Store** page. Choose one of the following tabs with the entry points to get started.
 
 # [Diagnostic settings](#tab/diagnostic-settings)
 
@@ -49,7 +49,7 @@ To configure Azure Lighthouse in an external tenant, start the wizard from eithe
 1. Browse to **Entra ID** in your external tenant and select **Monitoring & health** > **Diagnostic settings**.
 1. Select **Start set up** to launch the wizard.
 
-# [Service Integrations](#tab/service-integrations)
+# [Security Store](#tab/service-integrations)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories + subscriptions** menu.
