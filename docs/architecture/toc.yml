@@ -241,7 +241,7 @@ items:
         href: id-protection-guide-introduction.md
       - name: Scenario - Detect protected resource risk
         href: id-protection-guide-detect.md
-      - name: Scenario - Analyze risk
+      - name: Scenario - Analyze risk to resources
         href: id-protection-guide-analyze.md
       - name: Scenario - Investigate identity risk-related telemetry
         href: id-protection-guide-investigate.md
