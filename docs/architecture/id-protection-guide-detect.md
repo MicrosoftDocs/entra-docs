@@ -71,6 +71,7 @@ Monitor the impact of policies using these features:
 
 ## Next steps
 
-- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Enable visibility into risk analysis for resulting actions](id-protection-guide-analyze.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
