@@ -22,6 +22,149 @@ This article provides information about the latest releases and change announcem
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+## October 2025
+
+### Public Preview - Soft Delete & Restore for Conditional Access Policies and Named Locations
+
+**Type:** New feature    
+**Service category:** Conditional Access    
+**Product capability:** Identity Security & Protection    
+
+We’re thrilled to announce the **Public Preview of soft delete and restore for Conditional Access (CA) policies and Named Locations** in Microsoft Entra. This new capability extends our proven soft delete model to critical security configurations across **Microsoft Graph APIs (in beta) and the Microsoft Entra Admin Center**, helping admins recover from accidental or malicious deletions quickly and strengthen overall security posture.
+
+With this feature, admins can:
+
+- Restore deleted items to their exact prior state within 30 days  
+- Review deleted items before restoring   
+- Permanently delete when needed
+
+Soft delete has already been proven at scale across Microsoft Entra (7M+ objects restored in the last 30 days). Bringing it to CA policies and Named Locations ensure quick disaster recovery, minimizes downtime, and maintains security integrity.
+
+---
+
+### General Availability - Suggested Access Packages can be shown to users in My Access
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+In My Access, Microsoft Entra ID Governance users can see a curated list of suggested access packages in My Access. This capability allows users to quickly view the most relevant access packages for them based off their peers' access packages and previous assignments without scrolling through all their available access packages.
+
+The suggested access packages list is created by finding people related to the user (manager, direct reports, organization, team members) and recommending access packages based on what the users’ peers have. The user is also suggested access packages that were previously assigned to them.
+
+We recommend admins turn on the peer-based insights for suggested access packages via this setting. For more information, see: [Suggested access packages in My Access](../id-governance/entitlement-management-suggested-access-packages.md)
+
+---
+
+### General Availability - Conversion of external users to internal members
+
+**Type:** New feature    
+**Service category:** User Management    
+**Product capability:** User Management    
+
+External user conversion enables customers to convert external users to internal members without needing to delete and create new user objects. Maintaining the same underlying object ensures the user’s account and access to resources isn’t disrupted and that their history of activities remains intact as their relationship with the host organization changes. 
+
+The external to internal user conversion feature includes the ability to convert on-premises synchronized users as well.
+
+---
+
+### General Availability - Granular, Least-Privileged Permissions for UserAuthenticationMethod APIs
+
+**Type:** New feature
+**Service category:** MS Graph
+**Product capability:** Developer Experience
+
+**Summary**
+
+We're introducing new, granular permissions for the UserAuthenticationMethod APIs in Microsoft Entra ID. This update enables organizations to apply the principle of least privilege when managing authentication methods, supporting both security and operational efficiency.
+
+**What’s New?**
+
+- **New per-method permissions:** Fine-grained permissions for each authentication method (e.g., Password, Microsoft Authenticator, Phone, Email, Temporary Access Pass, Passkey, Windows Hello for Business, QR+PIN, and others).
+- **Read-only policy permission:** A new permission allows read-only access to authentication method policies, improving role separation and auditability.
+
+For more details, see [Microsoft Graph permissions reference - Microsoft Graph | Microsoft Learn](/graph/permissions-reference)
+
+---
+
+### Public Preview - Cloud Managed Remote Mailboxes
+
+**Type:** New feature    
+**Service category:** User Management    
+**Product capability:** Microsoft Entra Cloud Sync    
+
+The Source of Authority (SOA) at the object level allows administrators to convert specific users synced from Active Directory (AD) to Microsoft Entra ID into cloud-editable objects, which are no longer synced from AD and act as if originally created in the cloud. This feature supports a gradual migration process, decreasing dependencies on AD while aiming to minimize user and operational impact. Both Microsoft Entra Connect Sync and Cloud Sync recognize the SOA switch for these objects. The option to switch the SOA of synced users from AD to Microsoft Entra ID is currently available in Public Preview. For more information, see: [Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud (Preview)](../identity/hybrid/user-source-of-authority-overview.md).
+
+---
+
+### Public Preview - Prefetch Workday termination data to customize account disable logic
+
+**Type:** Fixed    
+**Service category:** Provisioning    
+**Product capability:** Inbound to Microsoft Entra ID    
+
+This Workday connector update resolves termination processing delays observed for workers in APAC and ANZ regions. Admins can now enable termination lookahead setting to prefetch data and tailor deprovisioning logic for accounts in Microsoft Entra ID and on-premises Active Directory. For more details, refer to: [https://aka.ms/WorkdayTerminationLookaheadDoc](https://aka.ms/WorkdayTerminationLookaheadDoc)
+
+---
+
+### General Availability - Ability to convert Source of Authority of synced on-prem AD groups to cloud groups is now available 
+
+**Type:** New feature    
+**Service category:** Group Management    
+**Product capability:** Microsoft Entra Cloud Sync    
+
+The Group SOA feature lets organizations move application access governance from on-premises to the cloud by transferring Active Directory group authority to Microsoft Entra ID using Connect Sync or Cloud Sync. With phased migration, admins can reduce AD dependencies gradually and minimize disruption. Microsoft Entra ID Governance manages access for both cloud and on-premises apps linked to security groups, and customers of either sync client can now use this feature. For more information see: [Group source of authority](https://aka.ms/groupsoadocs).
+
+---
+
+### Plan for Change - Jailbreak Detection in Authenticator App
+
+**Type:** Plan for change
+**Service category:** Microsoft Authenticator App
+**Product capability:** Identity Security & Protection
+
+**Starting February 2026**, we will introduce **Jailbreak/Root detection for Microsoft Entra credentials in the Authenticator app**. This update strengthens security by preventing Microsoft Entra credentials from functioning on jail-broken or rooted devices. All existing credentials on such devices will be wiped to protect your organization.
+
+This capability is secure by default and requires no admin configuration or control. The change applies to both iOS and Android. This change will not apply to personal or 3rd party accounts.
+
+**Action required:** Notify end users about this upcoming change. Authenticator will become unusable for Microsoft Entra accounts on jail-broken or rooted devices.
+
+For more information, see: [About Microsoft Authenticator](https://support.microsoft.com/account-billing/about-microsoft-authenticator-9783c865-0308-42fb-a519-8cf666fe0acc).
+
+---
+
+### General Availability - Issuer acceleration for External Identity Providers
+
+**Type:** New feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+
+Provide end users with custom links to authenticate with a specific External Identity Provider.  For more information, see [Issuer acceleration](../external-id/customers/concept-authentication-methods-customers.md#issuer-acceleration).
+
+---
+
+### Public Preview - Global Secure Access B2B support with AVD and W365
+
+**Type:** New feature    
+**Service category:** B2B    
+**Product capability:** Network Access    
+
+Guest access support for Global Secure Access (GSA) using W365 and AVD is now in public preview. This B2B support addresses secure access using GSA to external identities such as Guests, Partners, Contractors using Windows Cloud - Azure Virtual Desktop (AVD), and Windows 365 (W365). This feature empowers 3rd party users from a foreign tenant to securely access resources within a company’s tenant also known as the resource tenant. As a resource tenant administrator, you can enable Private Access, Internet Access, and M365 traffic to these 3rd party users.
+
+For more information, see: [Learn about Global Secure Access B2B Guest Access (Preview) - Global Secure Access | Microsoft Learn](../global-secure-access/concept-b2b-guest-access.md).
+
+---
+
+### Public Preview - Global Secure Access Internet profile support for iOS client
+
+**Type:** New feature    
+**Service category:** Internet Access    
+**Product capability:** Network Access    
+
+Kerberos SSO experience for users on mobile devices with Global Secure Access is now supported.  On IOS, create and deploy profile for Single sign-on app extension, see: [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension). On Android. you'll need to install and configure a 3rd party SSO client.
+
+---
+
 ## September 2025
 
 ### Public Preview - Convert Source of Authority of synced Active Directory users to the cloud
