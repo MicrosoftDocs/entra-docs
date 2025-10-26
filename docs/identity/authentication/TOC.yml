@@ -25,9 +25,9 @@
   items:
   - name: Authentication methods
     items:
-    - name: Overview
+    - name: What methods are available?
       href: concept-authentication-methods.md
-    - name: Manage
+    - name: Manage authentication methods
       href: concept-authentication-methods-manage.md
     - name: Temporary Access Pass
       href: howto-authentication-temporary-access-pass.md
@@ -40,14 +40,14 @@
     - name: Certificates
       href: concept-certificate-based-authentication.md
     - name: Platform Credential for macOS
-      href: concept-authentication-platform-credential-for-macos
+      href: concept-authentication-platform-credential-for-macos.md
     - name: OATH tokens
       href: concept-authentication-oath-tokens.md
     - name: Phone options
       href: concept-authentication-phone-options.md
     - name: QR code
       href: concept-authentication-qr-code.md
-    - name: Text
+    - name: SMS
       href: howto-authentication-sms-signin.md
     - name: Email
       href: howto-authentication-use-email-signin.md

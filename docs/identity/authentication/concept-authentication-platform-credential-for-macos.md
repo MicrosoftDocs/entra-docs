@@ -35,7 +35,7 @@ Refer to [macOS Platform SSO](../devices/macos-psso.md) for more information on 
 
 ## Platform single sign-on for macOS with SmartCard
 
-Platform single sign-on (PSSO) for macOS allows users to go passwordless using the SmartCard authentication method. The user signs in to the machine using an external smart card, or smart card-compatible hard token (such as Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication using [certificate-based authentication (CBA)](#certificate-based-authentication). CBA needs to be configured and enabled for users for this feature to work. For configuring CBA, refer to [How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).
+Platform single sign-on (PSSO) for macOS allows users to go passwordless using the SmartCard authentication method. The user signs in to the device by using an external smart card, or smart card-compatible hardware-based token (such as Yubikey). Once the device is unlocked, the smart card is used with Microsoft Entra ID to grant SSO across apps that use Microsoft Entra ID for authentication by using [certificate-based authentication (CBA)](concept-certificate-based-authentication.md). CBA needs to be configured and enabled for users for this feature to work. For more information about how to configure CBA, see [How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).
 
 To enable it, an administrator needs to configure PSSO by using Microsoft Intune or another supported Mobile Device Management (MDM) solution. 
 
