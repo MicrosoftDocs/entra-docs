@@ -48,10 +48,7 @@ The following process is used when a user signs in with a FIDO2 security key:
 
 For a list of FIDO2 security key providers, see [Become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
 
-To get started with FIDO2 security keys, complete the following how-to:
-
-> [!div class="nextstepaction"]
-> [Enable passwordless sign using FIDO2 security keys](howto-authentication-passwordless-security-key.md)
+To get started with FIDO2 security keys, see [Enable passwordless sign using FIDO2 security keys](howto-authentication-passwordless-security-key.md).
 
 ## Compare device-bound passkeys with synced passkeys
 
