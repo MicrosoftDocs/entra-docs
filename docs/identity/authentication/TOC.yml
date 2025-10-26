@@ -25,21 +25,22 @@
   items:
   - name: Authentication methods
     items:
-    - name: Accessibility
-      displayName: Accessibility, Special People, MFA Accessibility
-      href: ./accessibility/authentication-methods-accessibility.md
     - name: Overview
       href: concept-authentication-methods.md
     - name: Manage
       href: concept-authentication-methods-manage.md
     - name: Temporary Access Pass
       href: howto-authentication-temporary-access-pass.md
-    - name: Passwordless
-      href: concept-authentication-passwordless.md
+    - name: Passkeys (FIDO2)
+      href: concept-authentication-passkeys-fido2.md
+    - name: Windows Hello for Business
+      href: concept-authentication-windows-hello-for-business.md
     - name: Microsoft Authenticator
       href: concept-authentication-authenticator-app.md
     - name: Certificates
       href: concept-certificate-based-authentication.md
+    - name: Platform Credential for macOS
+      href: concept-authentication-platform-credential-for-macos
     - name: OATH tokens
       href: concept-authentication-oath-tokens.md
     - name: Phone options
@@ -351,6 +352,9 @@
       href: multi-factor-authentication-faq.yml
 - name: Reference
   items:
+  - name: Accessibility
+    displayName: Accessibility, Special People, MFA Accessibility
+    href: ./accessibility/authentication-methods-accessibility.md
   - name: MFA user guide
     href: https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc
   - name: Code samples
