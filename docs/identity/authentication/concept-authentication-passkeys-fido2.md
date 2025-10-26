@@ -46,7 +46,7 @@ The following process is used when a user signs in with a FIDO2 security key:
 8. Microsoft Entra ID verifies the signed nonce using the FIDO2 public key.
 9. Microsoft Entra ID returns PRT to enable access to on-premises resources.
 
-For a list FIDO2 security key providers, see [Become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
+For a list of FIDO2 security key providers, see [Become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
 
 To get started with FIDO2 security keys, complete the following how-to:
 
