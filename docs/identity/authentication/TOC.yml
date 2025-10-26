@@ -34,7 +34,7 @@
     - name: Passkeys (FIDO2)
       href: concept-authentication-passkeys-fido2.md
     - name: Windows Hello for Business
-      href: concept-authentication-windows-hello-for-business.md
+      href: concept-authentication-windows-hello.md
     - name: Microsoft Authenticator
       href: concept-authentication-authenticator-app.md
     - name: Certificates
