@@ -80,10 +80,10 @@ We're introducing new, granular permissions for the UserAuthenticationMethod API
 
 **What’s New?**
 
-- **New per-method permissions:** Fine-grained permissions for each authentication method (e.g., Password, Microsoft Authenticator, Phone, Email, Temporary Access Pass, Passkey, Windows Hello for Business, QR+PIN, and others).
+- **New per-method permissions:** Fine-grained permissions for each authentication method (for example, Password, Microsoft Authenticator, Phone, Email, Temporary Access Pass, Passkey, Windows Hello for Business, QR+PIN, and others).
 - **Read-only policy permission:** A new permission allows read-only access to authentication method policies, improving role separation and auditability.
 
-For more details, see [Microsoft Graph permissions reference - Microsoft Graph | Microsoft Learn](/graph/permissions-reference)
+For more information, see [Microsoft Graph permissions reference - Microsoft Graph | Microsoft Learn](/graph/permissions-reference)
 
 ---
 
@@ -103,17 +103,17 @@ The Source of Authority (SOA) at the object level allows administrators to conve
 **Service category:** Provisioning    
 **Product capability:** Inbound to Microsoft Entra ID    
 
-This Workday connector update resolves termination processing delays observed for workers in APAC and ANZ regions. Admins can now enable termination lookahead setting to prefetch data and tailor deprovisioning logic for accounts in Microsoft Entra ID and on-premises Active Directory. For more details, refer to: [https://aka.ms/WorkdayTerminationLookaheadDoc](https://aka.ms/WorkdayTerminationLookaheadDoc)
+This Workday connector update resolves termination processing delays observed for workers in APAC and ANZ regions. Admins can now enable termination lookahead setting to prefetch data and tailor deprovisioning logic for accounts in Microsoft Entra ID and on-premises Active Directory. For more information, see: [https://aka.ms/WorkdayTerminationLookaheadDoc](https://aka.ms/WorkdayTerminationLookaheadDoc)
 
 ---
 
-### General Availability - Ability to convert Source of Authority of synced on-prem AD groups to cloud groups is now available 
+### General Availability - Ability to convert Source of Authority of synced on-premises AD groups to cloud groups is now available 
 
 **Type:** New feature    
 **Service category:** Group Management    
 **Product capability:** Microsoft Entra Cloud Sync    
 
-The Group SOA feature lets organizations move application access governance from on-premises to the cloud by transferring Active Directory group authority to Microsoft Entra ID using Connect Sync or Cloud Sync. With phased migration, admins can reduce AD dependencies gradually and minimize disruption. Microsoft Entra ID Governance manages access for both cloud and on-premises apps linked to security groups, and customers of either sync client can now use this feature. For more information see: [Group source of authority](https://aka.ms/groupsoadocs).
+The Group SOA feature lets organizations move application access governance from on-premises to the cloud by transferring Active Directory group authority to Microsoft Entra ID using Connect Sync or Cloud Sync. With phased migration, admins can reduce AD dependencies gradually and minimize disruption. Microsoft Entra ID Governance manages access for both cloud and on-premises apps linked to security groups, and customers of either sync client can now use this feature. For more information, see: [Group source of authority](https://aka.ms/groupsoadocs).
 
 ---
 
@@ -123,9 +123,9 @@ The Group SOA feature lets organizations move application access governance from
 **Service category:** Microsoft Authenticator App
 **Product capability:** Identity Security & Protection
 
-**Starting February 2026**, we will introduce **Jailbreak/Root detection for Microsoft Entra credentials in the Authenticator app**. This update strengthens security by preventing Microsoft Entra credentials from functioning on jail-broken or rooted devices. All existing credentials on such devices will be wiped to protect your organization.
+**Starting February 2026**, we'll introduce **Jailbreak/Root detection for Microsoft Entra credentials in the Authenticator app**. This update strengthens security by preventing Microsoft Entra credentials from functioning on jail-broken or rooted devices. All existing credentials on such devices will be wiped to protect your organization.
 
-This capability is secure by default and requires no admin configuration or control. The change applies to both iOS and Android. This change will not apply to personal or 3rd party accounts.
+This capability is secure by default and requires no admin configuration or control. The change applies to both iOS and Android.This change won't apply to personal or third party accounts.
 
 **Action required:** Notify end users about this upcoming change. Authenticator will become unusable for Microsoft Entra accounts on jail-broken or rooted devices.
 
@@ -139,7 +139,7 @@ For more information, see: [About Microsoft Authenticator](https://support.micro
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C    
 
-Provide end users with custom links to authenticate with a specific External Identity Provider.  For more information, see [Issuer acceleration](../external-id/customers/concept-authentication-methods-customers.md#issuer-acceleration).
+Provide end users with custom links to authenticate with a specific External Identity Provider. For more information, see [Issuer acceleration](../external-id/customers/concept-authentication-methods-customers.md#issuer-acceleration).
 
 ---
 
@@ -149,7 +149,7 @@ Provide end users with custom links to authenticate with a specific External Ide
 **Service category:** B2B    
 **Product capability:** Network Access    
 
-Guest access support for Global Secure Access (GSA) using W365 and AVD is now in public preview. This B2B support addresses secure access using GSA to external identities such as Guests, Partners, Contractors using Windows Cloud - Azure Virtual Desktop (AVD), and Windows 365 (W365). This feature empowers 3rd party users from a foreign tenant to securely access resources within a company’s tenant also known as the resource tenant. As a resource tenant administrator, you can enable Private Access, Internet Access, and M365 traffic to these 3rd party users.
+Guest access support for Global Secure Access (GSA) using W365 and AVD is now in public preview. This B2B support addresses secure access using GSA to external identities such as Guests, Partners, Contractors using Windows Cloud - Azure Virtual Desktop (AVD), and Windows 365 (W365). This feature empowers 3rd party users from a foreign tenant to securely access resources within a company’s tenant also known as the resource tenant. As a resource tenant administrator, you can enable Private Access, Internet Access, and Microsoft 365 traffic to these 3rd party users.
 
 For more information, see: [Learn about Global Secure Access B2B Guest Access (Preview) - Global Secure Access | Microsoft Learn](../global-secure-access/concept-b2b-guest-access.md).
 
@@ -161,7 +161,7 @@ For more information, see: [Learn about Global Secure Access B2B Guest Access (
 **Service category:** Internet Access    
 **Product capability:** Network Access    
 
-Kerberos SSO experience for users on mobile devices with Global Secure Access is now supported.  On IOS, create and deploy profile for Single sign-on app extension, see: [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension). On Android. you'll need to install and configure a 3rd party SSO client.
+Kerberos SSO experience for users on mobile devices with Global Secure Access is now supported.  On IOS, create and deploy profile for Single sign-on app extension, see: [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension). On Android. You need to install and configure a 3rd party SSO client.
 
 ---
 
