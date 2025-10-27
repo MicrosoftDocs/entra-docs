@@ -20,6 +20,10 @@ The Microsoft Entra Conditional Access optimization agent provides suggestions t
 
 This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
+> [!IMPORTANT]
+> The Microsoft Teams integrations in the Conditional Access optimization agent is currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 ## Prerequisites
 
 - You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
@@ -65,7 +69,7 @@ The default view of the suggestion provides the policy details, including a high
 
 :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/review-suggestions-details.png" alt-text="Screenshot of the agent with the policy suggestion details open." lightbox="media/conditional-access-agent-optimization-review-suggestions/review-suggestions-details-expanded.png":::
 
-From the policy details, you can take action on the suggestion using several options. At the top of the page, you can edit, duplicate, download, or delete the policy. You can also use the [Chat with agent (Preview)](conditional-access-agent-optimization-chat.md) feature.
+From the policy details, you can take action on the suggestion using several options. At the top of the page, you can edit, duplicate, download, or delete the policy. You can also use the [Chat with agent](conditional-access-agent-optimization-chat.md) feature.
 
 :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/policy-details-buttons.png" alt-text="Screenshot of the policy details with the buttons highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/policy-details-buttons.png":::
 
@@ -145,6 +149,12 @@ When the agent suggests a new policy, it creates the policy in report-only mode.
 
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
+
+## Microsoft Teams agent suggestion notifications (Preview)
+
+Microsoft Teams can be used to receive notifications from the Conditional Access optimization agent when new suggestions are available. This preview feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
+
+For more information, see the **Notifications** section of [Conditional Access Optimization Agent](conditional-access-agent-optimization.md).
 
 ## Review policy reports
 
