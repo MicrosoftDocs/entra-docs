@@ -89,7 +89,7 @@ Follow these steps to add a username to an existing external user in the Microso
 
 ## Create users with username with the Microsoft Graph API
 
-After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to [add a username](/entra/external-id/customers/how-to-sign-in-alias#add-a-username-to-an-existing-user-with-the-microsoft-graph-api) to an existing user.
+After you sign in to the [MS Graph explorer](https://developer.microsoft.com/en-us/graph/graph-explorer), you can use the [Users API](/graph/api/user-post-users) to create users with both email address and username as sign-in identifiers. You can also use the Users API to [add a username](/entra/external-id/customers/how-to-sign-in-alias#add-a-username-to-existing-users-with-the-microsoft-graph-api) to an existing user.
 The following request example shows how to create a user with both email address and username as sign-in identifiers.
 
 ```http
@@ -118,7 +118,7 @@ Content-type: application/json
 }
 ```
 
-## Add a username to an existing user with the Microsoft Graph API
+## Add a username to existing users with the Microsoft Graph API
 
 You can also add a username to an existing external user.
 
@@ -127,7 +127,7 @@ You can also add a username to an existing external user.
 Use `$filter` to get the user object, and `$select` to return the ID and `identities[]` properties. The following request example shows how to retrieve a user account using the email address as a sign-in identifier.
 
 ```http
-GET https://graph.microsoft.com/v1.0/users?$select=displayName,id,identities&$filter=identities/any(c:c/issuerAssignedId eq 'adelev@adatum.com' and c/issuer eq 'contoso.onmicrosoft.com')
+GET https://graph.microsoft.com/v1.0/users?$select=displayName,id,identities&$filter=identities/any(c:c/issuerAssignedId eq 'dylan@woodgrove.com' and c/issuer eq 'contoso.onmicrosoft.com')
 ```
 
 The following response example shows the response with the user details.
@@ -151,7 +151,7 @@ Content-type: application/json
                 {
                     "signInType": "emailAddress",
                     "issuer": "contoso.onmicrosoft.com",
-                    "issuerAssignedId": "adelev@adatum.com"
+                    "issuerAssignedId": "dylan@woodgrove.com"
                 }
             ]
         }
