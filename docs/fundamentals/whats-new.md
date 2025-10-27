@@ -161,7 +161,7 @@ For more information, see: [Learn about Global Secure Access B2B Guest Access (
 **Service category:** Internet Access    
 **Product capability:** Network Access    
 
-Kerberos SSO experience for users on mobile devices with Global Secure Access is now supported.  On IOS, create and deploy profile for Single sign-on app extension, see: [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension). On Android. You need to install and configure a 3rd party SSO client.
+Kerberos SSO experience for users on mobile devices with Global Secure Access is now supported. On IOS, create and deploy profile for Single sign-on app extension, see: [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension). On Android. You need to install and configure a 3rd party SSO client.
 
 ---
 
@@ -235,7 +235,7 @@ As part of ongoing security hardening, Microsoft has deployed a dedicated first-
 
 Microsoft Entra Connect now uses this first party application to synchronize between Active Directory and Microsoft Entra ID. Customers are required to upgrade to version **2.5.79.0** or later by **September 2026**. 
 
-We'll auto-upgrade customers where supported. For customers who wish to be auto-upgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).  
+We auto-upgrade customers where supported. For customers who wish to be auto-upgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).  
 
 The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
 
