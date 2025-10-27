@@ -19,7 +19,7 @@ Say goodbye to time-consuming research and the uncertainty of rushed decisions. 
 
 
 ## Prerequisites
-- You must have [Microsoft Entra ID Governance or Microsoft Entra Suite licenses](licensing-fundamentals.md).
+- You must have [Microsoft Entra ID Governance or Microsoft Entra Suite licenses](../id-governance/licensing-fundamentals.md).
 - You must [Onboard to Security Copilot](/copilot/security/get-started-security-copilot#onboarding-to-security-copilot) with at least one [security compute unit (SCU)](/copilot/security/manage-usage) provisioned.
    - Completing an access review that includes 20 decisions consumes on average 4.5 SCU. This includes the agent gathering insights and generating recommendations and the reviewer's natural language conversation in Microsoft Teams with the agent. The SCU consumption can vary based on the conversation length between the reviewer and agent.
 - Admins must have at least **all** the following roles to set up and manage the agent in the Microsoft Entra admin center:
@@ -69,8 +69,8 @@ The agents recommendation (approve / deny) for each decision relies on a determi
 
 The agent considers the following signals:
 
-- **User inactivity**: If the user has [signed in](review-recommendations-access-reviews.md#inactive-user-recommendations)
-- **User-to-Group affiliation**: If the user has a [low affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) with other users who have this access
+- **User inactivity**: If the user has [signed in](../id-governance/review-recommendations-access-reviews.md#inactive-user-recommendations)
+- **User-to-Group affiliation**: If the user has a [low affiliation](../id-governance/review-recommendations-access-reviews.md#user-to-group-affiliation) with other users who have this access
 - **Account enabled**: If the user's account is enabled (accountEnabled property)
 - **Employment status**: If the user's employment ended ([employeeLeaveDateTime property](/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime))
 - **Lifecycle workflow history**: If the user has had a mover workflow ran for them in the past 30 days
@@ -229,5 +229,5 @@ The agent responds with this message if your tenant is out of provisioned and ov
 ## Related content
 
 - [Access Review Agent logs and metrics (Preview)](access-review-agent-logs-metrics.md)
-- [Review recommendations for Access reviews](review-recommendations-access-reviews.md)
+- [Review recommendations for Access reviews](../id-governance/review-recommendations-access-reviews.md)
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)

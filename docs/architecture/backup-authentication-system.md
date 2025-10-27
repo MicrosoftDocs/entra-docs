@@ -8,7 +8,7 @@ ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
-ms.reviewer: joroja
+ms.reviewer: ludwignick
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
@@ -71,6 +71,10 @@ Certain other types of policies don't support use of the backup authentication s
 - Use of the [sign-in frequency control](~/identity/conditional-access/concept-conditional-access-session.md#sign-in-frequency) as part of a Conditional Access policy.
 - Use of the [authentication methods policy](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength).
 - Use of [classic Conditional Access policies](~/identity/conditional-access/policy-migration-mfa.md).
+
+### How does certificate revocation work in an outage? 
+
+To enhance its resilience posture, the backup authentication system can't perform fresh revocation checks. Instead, it relies on the state of the certificate revocation list (CRL) check that's performed when the session was last backed up. If you need to revoke before this backup expires, you should explicitly revoke the session instead of waiting for the CRL.  
 
 ## Workload identity resilience in the backup authentication system
 
