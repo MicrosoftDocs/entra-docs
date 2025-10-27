@@ -160,10 +160,6 @@ For more information, see the **Notifications** section of [Conditional Access O
 
 The Conditional Access optimization agent also detects spikes and dips in activity related to existing policies. These anomalies often indicate a misconfiguration of a policy that needs to be investigated. If the agent identifies a significant change in activity, a report appears in the list of suggestions. The reports apply to both active and report-only policies that the agent suggests turning on. In the **Actions taken by agent** column, you'll see **Suggested policy review** as the value.
 
-> [!IMPORTANT]
-> The policy reports in the Conditional Access Optimization agent are currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
 To view a policy review report:
 
 1. Select **Review suggestion** to view the details of the suggested policy review.
