@@ -17,8 +17,6 @@ ms.custom: sfi-image-nochange
 
 
 
-## Synced passkeys
-
 ## Device-bound passkeys
 
 Users can register a passkey (FIDO2) security key and choose it as their primary sign-in method. With a hardware device that handles the authentication, the security of an account is increased as there's no password that can be exposed or guessed. Currently in preview, an Authentication Administrator can also [provision a FIDO2 security](https://aka.ms/passkeyprovision) on behalf of a user by using Microsoft Graph API and a custom client. Provisioning on behalf of users is currently limited to security keys at this time. 
@@ -50,6 +48,12 @@ The following process is used when a user signs in with a FIDO2 security key:
 For a list of FIDO2 security key providers, see [Become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
 
 To get started with FIDO2 security keys, see [Enable passwordless sign using FIDO2 security keys](howto-authentication-passwordless-security-key.md).
+
+## Synced passkeys (preview)
+
+Synced passkeys represent a newer, more user-centric approach to authentication that removes the password entirely, works across devices by using services like iCloud Keychain, or Google Password Manager. Synced passkeys offer a seamless experience. Users authenticate with biometrics or device PINs. The don't need to remember or enter passwords or codes. Synced passkeys are built on the WebAuthn standard, where users verify their identity locally by using biometrics or device PINs. WebAuthn is supported across all major operating systems and browsers, including Windows, macOS, iOS, Android, Chrome, Safari, and Edge, which removes a key technical barrier and paves the way for broad, cross-platform adoption at scale. 
+
+Admins can configure security groups for passkey authentication. Instead of a single tenant-wide setting, admins can customize requirements, such as attestation, passkey type (device-bound or synced), or a specific provider and model for their users, and apply them to different security groups in the enterprise. Enrollment campaigns can begin quickly. 
 
 ## Compare device-bound passkeys with synced passkeys
 
