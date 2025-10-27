@@ -65,15 +65,21 @@ The default view of the suggestion provides the policy details, including a high
 
 :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/review-suggestions-details.png" alt-text="Screenshot of the agent with the policy suggestion details open." lightbox="media/conditional-access-agent-optimization-review-suggestions/review-suggestions-details-expanded.png":::
 
-From this view you can make decisions about the suggestion, including:
+From the policy details, you can take action on the suggestion using several options. At the top of the page, you can edit, duplicate, download, or delete the policy. You can also use the [Chat with agent (Preview)](conditional-access-agent-optimization-chat.md) feature.
 
-- Turn on a new policy in report-only mode
-- Apply changes to an existing policy
-- Mark a suggestion as reviewed
-- Snooze a suggestion for 14 days
-- Add notes about the suggestion for other admins to review
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/policy-details-buttons.png" alt-text="Screenshot of the policy details with the buttons highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/policy-details-buttons.png":::
 
-You can also edit, duplicate, or download the policy from this page. The policy suggestions detail page is detailed and provides every option needed to make an informed decision about the suggestion. But if you need more information, you can also view the policy impact and see details about the agent's activity.
+Below the policy suggestion summary, you can take several actions:
+
+- **Review policy changes**: View a summary or JSON details of the suggestion.Further details described in the [Review policy changes](#review-policy-changes) section.
+- **Turn on policy**: Turn on new policies that were created in report-only mode by the agent.
+- **Mark suggestion as reviewed**: Select from the down arrow on the **Turn on policy** button to indicate that you've reviewed the suggestion without applying it.
+- **Snooze for 14 days**: Select from the down arrow on the **Turn on policy** button to temporarily hide the suggestion. The suggestion reappears in the list after 14 days.
+- **View agent's full activity**: View the full activity and decisions. Further details described in the [View agent's full activity](#view-agents-full-activity) section.
+- **Add notes**: Select the pen and paper icon to add notes about the suggestion for other admins to review
+
+The policy suggestions detail page is detailed and provides every option needed to make an informed decision about the suggestion. But if you need more information, you can also view the policy impact and see details about the agent's activity. 
+Ask Copilot about this file-diff
 
 ### Policy impact
 
@@ -104,9 +110,7 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 
 Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions—flagging policies that exclude a large portion of users and recommending explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
 
-Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and make any needed changes to your policies before applying the suggestion. You can also add notes about the suggestion that can be saved for other admins to review. If you choose to snooze the suggestion, it reappears in the list after 14 days with the notes intact.
-
-:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/deep-analysis-suggestion.png" alt-text="Screenshot of the suggestion created with deep analysis with the snooze and notes buttons highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/deep-analysis-suggestion.png":::
+Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and the "notes" option to provide context and rationale for your decision-making process.
 
 ## Apply suggestions
 
