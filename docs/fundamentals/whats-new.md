@@ -70,9 +70,9 @@ The external to internal user conversion feature includes the ability to convert
 
 ### General Availability - Granular, Least-Privileged Permissions for UserAuthenticationMethod APIs
 
-**Type:** New feature
-**Service category:** MS Graph
-**Product capability:** Developer Experience
+**Type:** New feature    
+**Service category:** MS Graph    
+**Product capability:** Developer Experience    
 
 **Summary**
 
@@ -119,9 +119,9 @@ The Group SOA feature lets organizations move application access governance from
 
 ### Plan for Change - Jailbreak Detection in Authenticator App
 
-**Type:** Plan for change
-**Service category:** Microsoft Authenticator App
-**Product capability:** Identity Security & Protection
+**Type:** Plan for change    
+**Service category:** Microsoft Authenticator App    
+**Product capability:** Identity Security & Protection    
 
 **Starting February 2026**, we'll introduce **Jailbreak/Root detection for Microsoft Entra credentials in the Authenticator app**. This update strengthens security by preventing Microsoft Entra credentials from functioning on jail-broken or rooted devices. All existing credentials on such devices will be wiped to protect your organization.
 
