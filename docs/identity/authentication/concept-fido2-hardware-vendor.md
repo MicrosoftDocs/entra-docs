@@ -10,14 +10,14 @@ ms.reviewer: padvasu
 ms.topic: article
 ---
 
-# Microsoft Entra ID attestation for FIDO2 security key vendors
+# Microsoft Entra ID attestation for passkey (FIDO2) vendors
 
-FIDO2 security keys enable phishing-resistant authentication. They can replace weak credentials with strong hardware-backed public/private-key credentials that can't be reused, replayed, or shared across services. Security keys support shared device scenarios, allowing you to carry your credential with you and safely authenticate on any supported device.
+Passkeys (FIDO2) enable phishing-resistant authentication. They can replace weak credentials with strong phishing-resistant public/private-key credentials that can't be reused, replayed, or shared across services. They can be stored securely on a device or synced across trusted devices through an encrypted cloud service.
 
-In Microsoft Entra ID Authentication methods policy, administrators can enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires extra metadata from FIDO2 security keys that are registered with the tenant. As a vendor, your FIDO2 security key is usable when attestation is enforced, if the following requirements are met.
+In Microsoft Entra ID Authentication methods policy, administrators can enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires extra metadata from passkeys (FIDO2) that are registered with the tenant. As a vendor, your passkey (FIDO2) is usable when attestation is enforced, if the following requirements are met.
 
 >[!NOTE]
->Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We're investing in both synced and device-bound passkeys for work accounts.
+>Microsoft Entra ID supports device-bound passkeys (FIDO2), and synced passkeys (FIDO2) are in preview. For more information about how to enable passkeys (FIDO2), see [Enable passkeys (FIDO2) for your organization](how-to-enable-passkey-fido2.md).
 
 ## Attestation requirements
 
