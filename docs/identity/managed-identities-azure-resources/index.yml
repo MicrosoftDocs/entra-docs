@@ -48,7 +48,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Acquire an access token
-            url: qs-configure-rest-vmss.md
+            url: how-to-use-vm-token.md
           - text: Sign in to PowerShell and CLI
             url: how-to-use-vm-sign-in.md
           - text: Use with Azure SDK
