@@ -75,7 +75,6 @@ To use Azure Monitor, ensure the following prerequisites are met.
 ## Create a Log Analytics workspace
 
 A Log Analytics workspace is a data store to collect log data types from Azure and non-Azure resources and applications. We recommend you send all log data to one Log Analytics workspace. 
-   ![Screenshot of the KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
 
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
 2. To incorporate the data you want to analyze, add diagnostics settings. See the following list.
@@ -83,7 +82,18 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 4. Search for **Risk**.
 5. Locate the **Recent user risk events query**.
 6. Select **Run**.
-7. From the dropdown, change Simple mode to Kusty Query Language mode (**KQL mode**).
+7. From the dropdown, change **Simple mode** to Kusto Query Language mode (**KQL mode**).
+
+**Audit logs**
+* AuditLogs
+* SignInLogs
+* NonInteractiveUserSignInLogs
+* ServicePrincipalSignInLogs
+* ManagedIdentitySignInLogs
+* RiskyUsers
+* UserRiskEvents
+* RiskyServicePrincipals
+* ServicePrincipalRiskEvents
 
 ## Identify risky users
 
@@ -199,6 +209,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
