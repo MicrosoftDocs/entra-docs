@@ -32,7 +32,7 @@
     - name: Temporary Access Pass
       href: howto-authentication-temporary-access-pass.md
     - name: Passkeys (FIDO2)
-      href: concept-authentication-passkey-fido2.md
+      href: concept-authentication-passkeys-fido2.md
     - name: Windows Hello for Business
       href: concept-authentication-windows-hello.md
     - name: Microsoft Authenticator
