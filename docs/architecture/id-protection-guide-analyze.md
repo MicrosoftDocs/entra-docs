@@ -78,12 +78,7 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
 
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
 2. To incorporate the data you want to analyze, add diagnostics settings. See the following list.
-3. To view the Queries hub, in the Log Analytics workspace, select **Logs**.
-4. Search for **Risk**.
-5. Locate the **Recent user risk events** query.
-6. Select **Run**.
 
-**Diagnostics settings**
   * AuditLogs
   * SignInLogs
   * NonInteractiveUserSignInLogs
@@ -94,11 +89,10 @@ A Log Analytics workspace is a data store to collect log data types from Azure a
   * RiskyServicePrincipals
   * ServicePrincipalRiskEvents
 
-See the following screenshot of the **Logs** option and the Queries hub page.
+3. To view the Queries hub, in the Log Analytics workspace, select **Logs**.
 
    ![Screenshot of the Logs option and the Queries hub page.](./media/id-protection-guide-analyze/queries-hub.png)
-
-7. From the dropdown, change **Simple mode** to Kusto Query Language mode (**KQL mode**).
+</br>4. Search for **Risk**.</br>5. Locate the **Recent user risk events** query.</br>6. Select **Run**.</br>7. From the dropdown, change **Simple mode** to Kusto Query Language mode (**KQL mode**).
 
    ![Screenshot of the KQL-mode option in the dropdown menu.](./media/id-protection-guide-analyze/kql-mode.png)
 
@@ -216,6 +210,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
