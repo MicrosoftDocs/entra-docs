@@ -4,11 +4,11 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/21/2025
+ms.date: 10/27/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: calui, tilarso
+ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
 ---
@@ -22,13 +22,13 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 
 For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
-> [!NOTE]
-> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We're investing in both synced and device-bound passkeys for work accounts.
+>[!NOTE]
+>Microsoft Entra ID supports device-bound passkeys (FIDO2), and synced passkeys (FIDO2) are in preview. 
 
 ## Requirements
 
 - Users must complete multifactor authentication (MFA) within the past five minutes before they can register a passkey (FIDO2). 
-- Users need a [FIDO2 security key eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
+- Users need a [passkey (FIDO2) eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 Passkeys (FIDO2) are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).

@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 author: justinha
 ms.author: justinha
-ms.reviewer: padvasu
+ms.reviewer: kimhana
 ms.topic: article
 ---
 
@@ -21,15 +21,15 @@ In Microsoft Entra ID Authentication methods policy, administrators can enforce 
 
 ## Attestation requirements
 
-Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoalliance.org/metadata/) to determine security key compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Vendors report data to the FIDO MDS.
+Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoalliance.org/metadata/) to determine passkey authenticator compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Vendors report data to the FIDO MDS.
 
-During FIDO2 registration, Microsoft Entra ID requires security keys to provide an attestation statement. For vendors, the expected attestation format is *packed*, as defined by [the FIDO standard](https://www.w3.org/TR/webauthn-2/#sctn-packed-attestation).
+FIDO2 standards (WebAuthN and CTAP) require providers return a valid attestation statement. 
 
-The specific requirements vary based on how an administrator configures the FIDO2 authentication methods policy.
+The specific requirements vary based on how an administrator configures the **Passkeys (FIDO2)** Authentication methods policy.
 
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
-|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide a valid *packed* attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn't need to be associated with a particular certificate chain). |
+|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide one of the following valid attestation statements:<br>- "none"<br>- "tpm"<br>- "packed (AttCA)"<br>- Custom attestation formats <= 32 characters  |
 
 >[!NOTE]
 >Vendors are responsible to publish all root attestation certificates to the FIDO Alliance MDS; otherwise, attestation verification can fail.
