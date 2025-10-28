@@ -1,5 +1,5 @@
 ---
-title: Configure Transport Layer Security Inspection (Preview)
+title: Configure Transport Layer Security Inspection Policy (Preview)
 description: Learn how to configure a Transport Layer Security inspection policy and assign it to users in your organization.
 author: HULKsmashGithub
 ms.author: jayrusso
@@ -13,7 +13,7 @@ ms.date: 09/10/2025
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
 ---
 
-# Configure Transport Layer Security inspection (Preview)
+# Configure Transport Layer Security inspection policy (Preview)
 Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access lets you decrypt and inspect encrypted traffic at service edge locations. This feature lets Global Secure Access apply advanced security controls like threat detection, content filtering, and granular access policies. These access policies help protect against threats that might be hidden in encrypted communications.
 
 > [!IMPORTANT]
