@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 10/24/2025
+ms.date: 10/28/2025
 
 #CustomerIntent: As an SOC administrator, I want to use Microsoft Entra ID Protection so that I can bring identity risk-related telemetry into security investigations.
 ---
@@ -66,7 +66,7 @@ After you confirm a threat:
 Log and audit all SOC actions in Microsoft Entra to perform the following steps:
 
 1. Review logs in the Microsoft Entra admin center.
-1. For correlation and storage, export logs to [Azure Monitor Log Analytics](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md), [Microsoft Sentinel](/azure/sentinel/overview?tabs=defender-portal), or your dedicated SIEM.
+1. For correlation and storage, export logs to [Azure Monitor Log Analytics](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md), [Microsoft Sentinel](/azure/sentinel/overview?tabs=defender-portal), or your dedicated security information and event management (SIEM) system.
 1. Generate alerts for specific actions such as policy changes, user unblocks.
 
 ## Configure access in multitenant environments
