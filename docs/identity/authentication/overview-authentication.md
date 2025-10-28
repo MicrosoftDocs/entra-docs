@@ -5,7 +5,7 @@ description: Learn about the authentication methods and security features for us
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 10/26/2025
+ms.date: 10/28/2025
 
 ms.author: justinha
 author: justinha
@@ -18,12 +18,18 @@ ms.reviewer: sranjit
 
 As phishing attacks increase, the estimated financial impact reaches billions of dollars.
 Traditional multifactor (MFA) methods like one-time passwords (OTPs) and authenticator apps are cumbersome, which leads to user resistance and vulnerability to impersonation.
-Passkeys, based on FIDO (Fast Identity Online) standards and origin-bound public cryptography, prevent credential phishing and impersonation by binding credentials to devices, or syncing across devices securely.
-Users with passkeys experience faster sign-in with a higher success rate. 
 
-Microsoft Entra ID helps administrators conveniently adopt passkeys and improve user sign-in security, and tenants have issuesd millions of passkeys for phishing-resistant MFA. New architecture prioritizes the most secure and convenient credentials per device, further reducing password reset attempts and password use.
+Passkeys prevent credential phishing and impersonation by binding credentials to devices, or syncing across devices securely. 
+They're based on FIDO (Fast Identity Online) standards and origin-bound public cryptography. 
+Users with passkeys also see faster sign-in and a higher success rate. 
 
-## Passkey (FIDO2) and phishing-resistant MFA
+Microsoft Entra ID helps administrators conveniently adopt passkeys and improve user sign-in security. Admins can use Microsoft Entra admin center or Microsoft Graph APIs to manage passkeys (FIDO2) and other authentication methods. 
+
+Microsoft tenants have issued millions of passkeys for phishing-resistant MFA. New architecture prioritizes the most secure and convenient credentials per device, further reducing password reset attempts and password use.
+
+The next sections cover recent improvements for Microsoft Entra authentication.
+
+## Passkeys (FIDO2) and phishing-resistant MFA
 
 Device-bound passkeys (FIDO2) in Microsoft Entra ID are in General Availability and synced passkeys are in preview. 
 
