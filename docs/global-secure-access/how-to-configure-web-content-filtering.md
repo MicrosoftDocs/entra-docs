@@ -18,7 +18,7 @@ Web content filtering empowers you to implement granular Internet access control
 
 Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
-The web filtering feature is currently limited to user- and context-aware Fully Qualified Domain Name (FQDN)-based web category filtering and FQDN filtering.
+The web filtering feature currently supports user- and context-aware Uniform Resource Locator (URL)-based web category filtering, URL filtering, and FQDN filtering.
 
 ## Prerequisites
 
@@ -54,8 +54,8 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Add rule**.
-1. Enter a name, select a [web category](reference-web-content-filtering-categories.md) or a valid FQDN, and then select **Add**.
-     - Valid FQDNs in this feature can also include wildcards using the asterisk symbol, *.
+1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), a valid URL, or a valid FQDN, and then select **Add**.
+     - Valid URLs and FQDNs in this feature can also include wildcards using the asterisk symbol, *, and can be comma-separated lists.
 1. Select **Next** to review the policy and then select **Create policy**.
 
 ## Create a security profile
