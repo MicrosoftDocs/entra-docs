@@ -72,7 +72,7 @@ Certain other types of policies don't support use of the backup authentication s
 - Use of the [authentication methods policy](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength).
 - Use of [classic Conditional Access policies](~/identity/conditional-access/policy-migration-mfa.md).
 
-### How does certificate revocation work in an outage? 
+### Certificate revocation and the backup authentication system 
 
 To enhance its resilience posture, the backup authentication system can't perform fresh revocation checks. Instead, it relies on the state of the certificate revocation list (CRL) check that's performed when the session was last backed up. If you need to revoke before this backup expires, you should explicitly revoke the session instead of waiting for the CRL.  
 
