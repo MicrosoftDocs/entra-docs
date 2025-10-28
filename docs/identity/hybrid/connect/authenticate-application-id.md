@@ -123,136 +123,6 @@ If the server is using username and password, you should be able to see the acco
 
 :::image type="content" source="media/authenticate-application-id/authentication-account-name.png" alt-text="Screenshot that shows the account name." lightbox="media/authenticate-application-id/authentication-account-name.png":::
 
-
-
-- `ConnectSyncAppId` refers to the application (client) ID of the application for which we want to configure permissions.
- - `SynchronizationServiceAppId` refers to the application (client) ID for **Microsoft Entra AD Synchronization Service**. The value is `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016` for all clouds.
- - `PasswordResetServiceAppId` refers to the application (client) ID for **Microsoft password reset service**. The value is `93625bc8-bfe2-437a-97e0-3d0060024faa` for all clouds except Arlington where it's `2e5ecfc8-ea79-48bd-8140-c19324acb278`.
-
-1. Open Graph explorer and sign in using Application Administrator or Global Administrator credentials.
-
-1. Get the service principal ID for Microsoft Entra AD Synchronization Service. We'll refer to this as `SynchronizationServiceSPId`
-
-   ```http
-   GET /servicePrincipals/(appId=’{SynchronizationServiceAppId}’)?$select=id
-   ```
-
-1. Get the app role ID for `ADSynchronization.ReadWrite.All permission`. We'll refer to this as `SynchronizationServiceAppRoleId`
-
-   ```http
-   GET /servicePrincipals/(appId=’{SynchronizationServiceAppId}’)?$select=appRoles
-   ```
-
-   `SynchronizationServiceAppRoleId` is the id property of the app role in the response where value=`ADSynchronization.ReadWrite.All`
-
-1. Get the service principal ID for Microsoft password reset service. We'll refer to this as `PasswordResetServiceSPId`. Note that the service principal might not exist in the tenant.
-
-   ```http
-   GET /servicePrincipals/(appId=’{PasswordResetServiceAppId}’)?$select=id
-   ```
-
-1. Get the app role IDs for `PasswordWriteback.OffboardClient.All`, `PasswordWriteback.RegisterClientVersion.All` and `PasswordWriteback.RefreshClient.All` permissions. This step is relevant only if password reset service principal exists in the tenant. We'll refer to these as `PasswordResetServiceServiceOffboardClientAppRoleId`, `PasswordResetServiceServiceRegisterClientAppRoleId`, `PasswordResetServiceServiceRefreshClientAppRoleId` respectively.
-
-   - `PasswordResetServiceServiceOffboardClientAppRoleId` is the id of the app role in the response where value=`PasswordWriteback.OffboardClient.All`
-   - `PasswordResetServiceServiceRegisterClientAppRoleId` is the id of the app role in the response where value=`PasswordWriteback.RegisterClientVersion.All`
-   - `PasswordResetServiceServiceRefreshClientAppRoleId` is the id of the app role in the response where value=`PasswordWriteback.RefreshClient.All`
-
-1. Update application `requiredResourceAccess` to configure required permissions for Microsoft Entra AD Synchronization Service and Microsoft password reset service.
-
-     ```http 
-          PATCH /applications(appId='{ConnectSyncAppId}')
-          {
-               "requiredResourceAccess": [
-                    {
-                         "resourceAppId": "{PasswordResetServiceAppId}",
-                         "resourceAccess": [
-                              {
-                                   "id": “{PasswordResetServiceServiceOffboardClientAppRoleId}",
-                                   "type": "Role"
-                              },
-                              {
-                                   "id": “{PasswordResetServiceServiceRegisterClientAppRoleId}",
-                                   "type": "Role"
-                              },
-                              {
-                                   "id": “{PasswordResetServiceServiceRefreshClientAppRoleId}",
-                                   "type": "Role"
-                              }
-                         ]
-                    },
-                    {
-                         "resourceAppId": "{SynchronizationServiceAppId}",
-                         "resourceAccess": [
-                              {
-                                   "id": "{SynchronizationServiceAppRoleId}",
-                                   "type": "Role"
-                              }
-                         ]
-                    }
-               ]
-          }
-     ```
-
-1. Assign app roles to the Connect Sync application service principal:
-
-   1. Add an app role assignment for `ADSynchronization.ReadWrite.All`
-     
-      ```http
-      POST /servicePrincipals(appId='{ConnectSyncAppId}')/appRoleAssignments
-      {
-      "principalId": “{ConnectSyncSPId}”,
-      "resourceId": “{SynchronizationServiceSPId}”,
-      "appRoleId": "{SynchronizationServiceAppRoleId}"
-      }
-      ```
-
- 1. If password writeback is enabled on the Connect Sync server, add the three app role assignments for password reset service.
-
-    1. Add app role assignment for `PasswordWriteback.OffboardClient.All`
-
-       ```http   
-       POST /servicePrincipals(appId='{ConnectSyncAppId}')/appRoleAssignments
-       {
-       "principalId": “{ConnectSyncSPId}”,
-       "resourceId": “{PasswordResetServiceSPId}”,
-       "appRoleId": "{PasswordResetServiceServiceOffboardClientAppRoleId}"
-       }
-       ```
-
-   1. Add app role assignment for `PasswordWriteback.RegisterClientVersion.All`
-
-      ```http
-      POST /servicePrincipals(appId='{ConnectSyncAppId}')/appRoleAssignments
-      {
-      "principalId": “{ConnectSyncSPId}”,
-      "resourceId": “{PasswordResetServiceSPId}”,
-      "appRoleId": "{PasswordResetServiceServiceRegisterClientAppRoleId}"
-      }
-      ```
-     
-   1. Add app role assignment for value=`PasswordWriteback.RefreshClient.All`
-
-      ```http
-      POST /servicePrincipals(appId='{ConnectSyncAppId}')/appRoleAssignments
-      {
-      "principalId": “{ConnectSyncSPId}”,
-      "resourceId": “{PasswordResetServiceSPId}”,
-      "appRoleId": “{PasswordResetServiceServiceRefreshClientAppRoleId}”
-      }
-      ```
-
-The administrator is responsible for creating the certificate, rotation, and deletion of unused or expired certificates. The certificate must be stored in the `LOCAL_MACHINE` store.
-
-The administrator is responsible for securing the private key of the certificate and ensuring that only Microsoft Entra Connect Sync can access the private key for signing.
-
-We recommend that you use a TPM or a Hardware Security Module (HSM) to provide a hardware-based security boundary, as opposed to the default. To check the status of the TPM, use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm) PowerShell cmdlet.
-
-If you use Hyper-V virtual machines (VMs), you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs. Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
-
-
-
-
-
 ## Installation and upgrade (managed by Microsoft Entra Connect)
 
 The Microsoft Entra Connect Sync managed application and credential is automatically set up during initial installation or manual interactive upgrades. To confirm that Microsoft Entra Connect is using the application identity, you can view the [current authentication configuration](#view-the-current-authentication-configuration).
@@ -269,7 +139,7 @@ If application authentication wasn't automatically configured, you can switch to
 
 If you want to configure application-based authentication using the default option (Managed by Microsoft Entra Connect), you can use the wizard. However, if you want to configure application-based authentication using BYOC or BYOA, you must use PowerShell.
 
-# [Default](#tab/default)
+# [Default Application](#tab/default)
 
 1.	Start the Microsoft Entra Connect wizard
 2.	Go to **Additional tasks** > **Configure application-based authentication to Microsoft Entra ID** and then follow the prompts.
