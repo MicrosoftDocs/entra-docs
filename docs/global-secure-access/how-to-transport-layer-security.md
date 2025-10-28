@@ -25,7 +25,7 @@ This article explains how to create a context-aware Transport Layer Security ins
 
 ## Prerequisites   
 To complete the steps in this process, you must have the following prerequisites in place:      
-- Completed TLS inspection settings with an active enabled certificate authority. Follow <> to  sign the Certificate Signing Request (CSR) and generate an intermediate certificate for TLS inspection. For testing scenarios, you can also use a self-signed root certificate created with OpenSSL.   
+- Completed TLS inspection settings with an active enabled certificate authority.   
 - Test devices or virtual machines running Windows that are either Microsoft Entra joined or hybrid joined to your organization's Microsoft Entra ID.  
 - A trial license for Microsoft Entra Internet Access.  
 - [Global Secure Access prerequisites](how-to-configure-web-content-filtering.md) 
