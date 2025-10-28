@@ -5,16 +5,61 @@ description: Learn about the authentication methods and security features for us
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 03/04/2025
+ms.date: 10/26/2025
 
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: sahenry, michmcla
+ms.reviewer: sranjit
 
-# Customer intent: As a Microsoft Entra administrator, I want to understand which Microsoft Entra features I can use to help secure sign-in and make the user authentication process safe and easy.
+# Customer intent: As a Microsoft Entra administrator, I want to understand how Microsoft Entra ID makes it convenient to improve user sign-in security.
 ---
 # What is Microsoft Entra authentication?
+
+We're making it convenient to make your users secure
+
+Microsoft has significantly advanced the adoption of passkeys for secure authentication by issuing millions of passkeys for Microsoft Entra ID. Users with passkeys experience faster sign-in with a higher success rate.
+
+Microsoft Entra account recovery aims to enhance real-world identity verification and reduce reliance on phishable credentials by using Verified ID.  using government-issued IDs and face ID verification. 
+
+## Adoption and User Experience
+
+Over 200 million synced passkeys have been registered, enabling passwordless authentication across devices.
+New architecture prioritizes the most secure and convenient credentials per device, reducing password reset attempts and password use on iOS, with Android deployment underway.
+
+
+## Security challenges and solutions
+
+Phishing attacks increased by 58% in 2023, with an estimated financial impact of $3.5 billion in 2024.
+Traditional MFA methods like OTPs and authenticator apps are cumbersome, leading to user resistance and vulnerability to impersonation.
+Passkeys, based on FIDO standards and origin-bound public cryptography, prevent credential phishing and impersonation by binding credentials to devices or syncing across devices securely .
+
+## Enterprise rollout and Microsoft Entra account recovery
+
+Microsoft secured 92% of employee productivity accounts with phishing-resistant methods, including 42 million passkeys for Entra ID.
+Challenges addressed include secure remote onboarding, account recovery with biometric verification against government IDs, and phased rollouts targeting device compatibility and productivity impact.
+Custom applications for real-time biometric matching improve confidence in recovery and onboarding processes .
+
+## Passkey management and customer benefits
+Entra customers can now provision synced passkeys with configurable types for user groups, benefiting from intelligent credential prioritization and improved manageability.
+New account recovery flows integrate biometric ID verification across 192 countries and support billing with leading identity verification providers, simplifying integration.
+Planned features include step-up verification powered by Conditional Access starting Spring 2026 .
+
+## Deployment best practices
+
+Successful rollout strategies include forming user cohorts based on device and OS usage, prioritizing administrators, and starting with easier cohorts to build momentum.
+Emphasis on strong helpdesk support, proactive exception management, geographic considerations, and targeted guidance for new hires ensures smooth transitions.
+Account recovery security is enhanced by adopting robust identity proofing solutions alongside phishing-resistant credentials .
+
+## Account recovery
+Account recovery is a critical component of your organization’s security posture. The recovery process should be as strong as user authentication to prevent unauthorized access and preserve trust. For users protected by phishing-resistant authentication, such as passkeys (FIDO2) or certificate-based authentication, account recovery should be as robust as the initial onboarding process. This means you should perform strong identity verification and validation of account ownership as part of the recovery process. 
+
+In Microsoft Entra ID, we offer an integrated and seamless process for identity verification. Organizations can configure trusted partners to verify a user’s identity, typically by presenting government-issued identification. After other validation steps, users can securely replace lost credentials, such as by registering a new passkey, to maintain account security throughout the recovery process. See more information on Entra ID Account recovery.  
+
+For users who rely on passwords and do not have access to phishing-resistant methods, self-service password reset (SSPR) remains available. To enhance security for these users, especially those with multi-factor authentication (MFA) capability, we recommend requiring at least two distinct authentication methods to complete password reset. This layered approach reduces the risk of account compromise during recovery. 
+
+
+
 
 One of the main features of an identity platform is to verify, or *authenticate*, credentials when a user signs in to a device, application, or service. In Microsoft Entra ID, authentication involves more than just the verification of a username and password. To improve security and reduce the need for help-desk assistance, Microsoft Entra authentication includes the following components:
 
@@ -28,29 +73,9 @@ To learn more about these authentication components, watch our short video.
 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=5ee3cad5-3360-48da-b520-1a0d96710a38]
 
-## Improvements to the user experience
 
-Microsoft Entra ID helps protect users' identities and simplify their sign-in experience. Features like SSPR let users update or change their passwords by using a web browser from any device. This feature is especially useful when users forget their passwords or their accounts are locked. Without waiting for a helpdesk or administrator to provide support, users can unblock themselves and continue to work.
 
-MFA lets users choose an additional form of authentication during sign-in, such as a phone call or a mobile app notification. This ability reduces the requirement for a single, fixed form of secondary authentication, like a hardware token. If users don't currently have one form of additional authentication, they can choose a different method and continue to work.
 
-![Screenshot that shows authentication methods in use at the sign-in screen.](media/concept-authentication-methods/overview-login.png)
-
-Passwordless authentication removes the need for users to create and remember secure passwords. Capabilities like Windows Hello for Business or FIDO2 security keys let users sign in to devices or applications without a password. This ability can reduce the complexity of managing passwords across environments.
-
-## Self-service password reset
-
-SSPR gives users the ability to change or reset their passwords with no administrator or help-desk involvement. If users' accounts are locked or they forget their passwords, they can follow prompts to unblock themselves and get back to work. This ability reduces help-desk calls and loss of productivity when users can't sign in to their devices or applications.
-
-SSPR works in the following scenarios:
-
-* **Password change**: When a user knows the password but wants to change it to something new.
-* **Password reset**: When a user can't sign in (for example, after forgetting the password) and wants to reset the password.
-* **Account unlock**: When a user can't sign in because the account is locked, and the user wants to unlock the account.
-
-When a user updates or resets a password by using SSPR, that password can also be written back to an on-premises Active Directory environment. Password writeback makes sure that a user can immediately use the updated credentials with on-premises devices and applications.
-
-<a name='azure-ad-multi-factor-authentication'></a>
 
 ## Multifactor authentication
 
@@ -68,28 +93,6 @@ Microsoft Entra MFA works by requiring two or more of the following authenticati
 
 Users can register themselves for both SSPR and MFA in one step to simplify the onboarding experience. Administrators can define what forms of secondary authentication to use. Administrators can also require MFA when users perform a self-service password reset, to further secure that process.
 
-## Password protection
-
-By default, Microsoft Entra ID blocks weak passwords such as *Password1*. Microsoft Entra ID automatically updates and enforces a list of banned passwords that are known to be weak. A Microsoft Entra user who tries to set a password to one of these weak passwords receives a notification to choose a password that's more secure.
-
-To increase security, you can define custom policies for password protection. These policies can use filters to block any variation of a password that contains a name such as *Contoso* or a location like *London*, for example.
-
-For hybrid security, you can integrate Microsoft Entra password protection with an on-premises Active Directory environment. A component installed in the on-premises environment receives the list of banned passwords and the custom policies for password protection from Microsoft Entra ID. Domain controllers then use that information to process password changes. This hybrid approach makes sure that no matter how or where users change their credentials, you enforce the use of strong passwords.
-
-## Passwordless authentication
-
-The goal for many environments is to remove the use of passwords as part of sign-in events. Features like Azure password protection or Microsoft Entra MFA help improve security, but a username/password combination remains a weak form of authentication that can be exposed or brute-force attacked.
-
-![Diagram that illustrates security versus convenience with the authentication process that leads to passwordless sign-in.](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
-
-When users sign in without a password, they provide credentials by using methods like:
-
-* Biometrics with Windows Hello for Business.
-* A FIDO2 security key.
-
-An attacker can't easily duplicate these authentication methods.
-
-Microsoft Entra ID provides ways to natively authenticate by using passwordless methods to simplify the sign-in experience for users and reduce the risk of attacks.  
 
 ## Related content
 
