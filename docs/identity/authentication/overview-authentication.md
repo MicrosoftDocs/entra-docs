@@ -32,6 +32,16 @@ Passkey type | Description | Examples
 Device-bound passkeys | The private key is created and stored on a single physical device and never leaves it | Microsoft Authenticator<br>FIDO2 security keys
 Synced passkeys (preview) | The private key is stored in a passkey provider’s cloud and synced across devices signed-in to the same passkey provider account. Synced passkeys don't support attestation. | Apple iCloud Keychain<br>Google Password Manager  
 
+Attestation verifies the authenticity of the passkey provider or device during registration. When enforced: 
+
+- Attestation confirms the credential originates from a trusted authenticator
+- Attestation helps prevent spoofed Authenticator Attestation GUIDs (AAGUIDs) that could misrepresent device type
+
+In Microsoft Entra ID: 
+
+- Attestation can be enforced at the passkey profile level. 
+- If attestation is enabled, only device-bound passkeys are allowed; synced passkeys are excluded. 
+
 ## High assurance account recovery (preview)
 Account recovery is a critical component of your organization’s security posture. The recovery process should be as strong as user authentication to prevent unauthorized access and preserve trust. For users protected by phishing-resistant authentication, such as passkeys (FIDO2) or certificate-based authentication, account recovery should be as robust as the initial onboarding process. This means you should perform strong identity verification and validation of account ownership as part of the recovery process. 
 
@@ -56,4 +66,4 @@ Additionally, the document details a phased deployment strategy and emphasizes e
 ## Related content
 
 * [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
-* [Account Recovery (preview)](concept-self-service-account-recovery)
+* [Account Recovery (preview)](concept-self-service-account-recovery.md)
