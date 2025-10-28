@@ -101,7 +101,7 @@ Content-type: application/json
         {
             "signInType": "emailAddress",
             "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "dylan@woodgrove.com"
+            "issuerAssignedId": "dylan@woodgrovebank.com"
         },
         {
             "signInType": "username",
@@ -109,7 +109,7 @@ Content-type: application/json
             "issuerAssignedId": "dylan123"
         }
     ],
-    "mail": "dylan@woodgrove.com",
+    "mail": "dylan@woodgrovebank.com",
     "passwordProfile": {
         "password": "passwordValue",
         "forceChangePasswordNextSignIn": false
@@ -127,7 +127,7 @@ You can also add a username to an existing external user.
 Use `$filter` to get the user object, and `$select` to return the ID and `identities[]` properties. The following request example shows how to retrieve a user account using the email address as a sign-in identifier.
 
 ```http
-GET https://graph.microsoft.com/v1.0/users?$select=displayName,id,identities&$filter=identities/any(c:c/issuerAssignedId eq 'dylan@woodgrove.com' and c/issuer eq 'contoso.onmicrosoft.com')
+GET https://graph.microsoft.com/v1.0/users?$select=displayName,id,identities&$filter=identities/any(c:c/issuerAssignedId eq 'dylan@woodgrovebank.com' and c/issuer eq 'contoso.onmicrosoft.com')
 ```
 
 The following response example shows the response with the user details.
@@ -151,7 +151,7 @@ Content-type: application/json
                 {
                     "signInType": "emailAddress",
                     "issuer": "contoso.onmicrosoft.com",
-                    "issuerAssignedId": "dylan@woodgrove.com"
+                    "issuerAssignedId": "dylan@woodgrovebank.com"
                 }
             ]
         }
@@ -178,7 +178,7 @@ Content-type: application/json
                 {
                     "signInType": "emailAddress",
                     "issuer": "contoso.onmicrosoft.com",
-                    "issuerAssignedId": "dylan@woodgrove.com"
+                    "issuerAssignedId": "dylan@woodgrovebank.com"
                 },
                 {
                     "signInType": "userName",
