@@ -16,13 +16,13 @@ ms.author: jomondi
 
 Microsoft Entra Connect uses the [Microsoft Entra Connector account](reference-connect-accounts-permissions.md#accounts-used-for-microsoft-entra-connect) to authenticate and sync identities from Active Directory to Microsoft Entra Connect. This account uses a username and password to authenticate requests.
 
-To enhance the security of the service, we're rolling out an application identity that uses Oauth 2.0 client credential flow with certificate credentials. In this new method, Microsoft Entra or an administrator creates a single tenant non-Microsoft application in Microsoft Entra ID and uses one of the following relevant certificate management options for the credentials.
+To enhance the security of thGet-e service, we're rolling out an application identity that uses Oauth 2.0 client credential flow with certificate credentials. In this new method, Microsoft Entra or an administrator creates a single tenant non-Microsoft application in Microsoft Entra ID and uses one of the following relevant certificate management options for the credentials.
 
 Microsoft Entra Connect provides three options for application and certificate management:
 
 - [Managed by Microsoft Entra Connect (default)](#managed-by-microsoft-entra-connect-default)
-- [Bring Your Own Application (BYOA)](#bring-your-own-application)
 - [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate)
+- [Bring Your Own Application (BYOA)](#bring-your-own-application)
 
 > [!NOTE]
 > The [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role grants the ability to consent for application permissions, with the exception of application permissions for Azure AD Graph and Microsoft Graph. This means that the application administrator can still consent to application permissions for other apps, notably the AWS first-party app and SSPR first-party app.
@@ -43,11 +43,87 @@ We recommend the Microsoft Entra Connect certificate management (default) option
 
 Microsoft Entra Connect Sync uses the scheduler to check if the certificate is due for rotation and then automatically rotate the certificate. If the scheduler is suspended, automatic certificate rotation can't happen even though Microsoft Entra Connect Sync manages the certificate.
 
+## Bring Your Own Certificate
+
+In the Bring Your Own Certificate (BYOC) setup, the administrator manages the certificate credential that the application uses. The administrator is responsible for creating the certificate, rotation, and deletion of unused or expired certificates. The certificate must be stored in the `LOCAL_MACHINE` store.
+
+The administrator is responsible for securing the private key of the certificate and ensuring that only Microsoft Entra Connect Sync can access the private key for signing.
+
+We recommend that you use a TPM or a Hardware Security Module (HSM) to provide a hardware-based security boundary, as opposed to the default. To check the status of the TPM, use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm) PowerShell cmdlet.
+
+If you use Hyper-V virtual machines (VMs), you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs. Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
+
 ## Bring Your Own Application
 
 In the Bring Your Own Application (BYOA) setup, administrator manages the application that Microsoft Entra Connect Sync uses to authenticate to Microsoft Entra ID, the application permissions, and the certificate credential that the application uses.
 
-The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics). The application needs the required permissions configured. To configure the required permissions on the application, you can use Microsoft Graph API or PowerShell. In this section, we'll use Microsoft Graph API.
+The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics). The application needs the required permissions configured. To configure the required permissions on the application, you can use Microsoft Graph API or PowerShell. In this section, we'll use PowerShell MgGraph commands.
+
+> [!NOTE]
+> Microsoft Entra Connect Sync version 2.5.76.0 or later is required to proceed with the following steps to authenticate to Microsoft Entra ID by using application identity.
+
+> [!NOTE]
+> Using Bring Your Own Application requires having Your Own Certificate.
+
+## Prerequisites
+
+The following prerequisites are required to implement authentication by using application identity.
+
+>[!IMPORTANT]
+> New Microsoft Entra Connect Sync versions are available only via the Microsoft Entra admin center.
+>
+> Following up on the [What's New](../../../fundamentals/whats-new-archive.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are available only on the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within the Microsoft Entra admin center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
+
+- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.3.0](reference-connect-version-history.md#2530) or greater for manual onboarding.
+- Microsoft Entra Connect version [2.5.76.0](reference-connect-version-history.md#25760) or greater for automatic onboarding
+- Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
+- Optional: TPM 2.0 present and ready to use (highly recommended for security).
+
+The following extra requirements are needed for BYOA and BYOC certificate management option:
+
+- A certificate is created in an HSM or TPM by using a Cryptography API: Next Generation provider. The private key is marked as NonExportable. A warning event 1014 is emitted if TPM isn't used. The following certificate configurations are supported:
+   - `KeyUsage`: DigitalSignature
+   - `KeyLength`: 2048
+   - `KeyAlgorithm`: RSA
+   - `KeyHashAlgorithm`: SHA256
+- The created certificate is stored in the `LOCAL_MACHINE` store.
+- Grant the Microsoft Entra Connect Sync account permission to perform signing by using the private key.
+
+The following extra requirements are needed for the BYOA application management option:
+
+- The customer creates a certificate as instructed in the preceding BYOC prerequisites.
+- The customer registers an application in Microsoft Entra ID and creates a service principal. The necessary permissions are granted to the application.
+- The customer registers the certificate with the application.
+
+## View the current authentication configuration
+
+To view the current authentication configuration, run the Wizard and go to **Tasks**, and then select **View or export current configuration**. 
+
+If the server is configured to use application-based authentication, you should be able to see the application (client) ID as shown in the following screenshot.
+
+:::image type="content" source="media/authenticate-application-id/authentication-client-id.png" alt-text="Screenshot that shows the client ID." lightbox="media/authenticate-application-id/authentication-client-id.png":::
+
+ Scroll down to the certificate details. The following table provides information about the certificate.
+ 
+|Property|Description|
+|-----|-----|
+|**Certificate managed by**|Whether Microsoft Entra Connect Sync or BYOC manages the certificate|
+|**Automatic rotation enabled**|Whether automatic rotation or manual rotation is enabled|
+|**Certificate thumbprint**|Unique identifier for the certificate|
+|**Certificate SHA256 hash**|A fingerprint for the certificate generated by using the SHA-256 hashing algorithm|
+|**Subject name**|Identifies the entity associated with the certificate|
+|**Issued by**|Who is the issuer of the certificate|
+|**Serial number**|Uniquely identifies the certificate among certificates by the same issuer|
+|**Not valid before**|The first date that the certificate is valid|
+|**Not valid after**|The last date that the certificate is valid|
+
+ :::image type="content" source="media/authenticate-application-id/auth-7.png" alt-text="Screenshot that shows the certificate." lightbox="media/authenticate-application-id/auth-7.png":::
+
+If the server is using username and password, you should be able to see the account name as shown in the following screenshot.
+
+:::image type="content" source="media/authenticate-application-id/authentication-account-name.png" alt-text="Screenshot that shows the account name." lightbox="media/authenticate-application-id/authentication-account-name.png":::
+
+
 
 - `ConnectSyncAppId` refers to the application (client) ID of the application for which we want to configure permissions.
  - `SynchronizationServiceAppId` refers to the application (client) ID for **Microsoft Entra AD Synchronization Service**. The value is `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016` for all clouds.
@@ -174,72 +250,7 @@ We recommend that you use a TPM or a Hardware Security Module (HSM) to provide a
 If you use Hyper-V virtual machines (VMs), you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs. Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
 
 
-## Bring Your Own Certificate
 
-In the Bring Your Own Certificate (BYOC) setup, the administrator manages the certificate credential that the application uses. The administrator is responsible for creating the certificate, rotation, and deletion of unused or expired certificates. The certificate must be stored in the `LOCAL_MACHINE` store.
-
-The administrator is responsible for securing the private key of the certificate and ensuring that only Microsoft Entra Connect Sync can access the private key for signing.
-
-We recommend that you use a TPM or a Hardware Security Module (HSM) to provide a hardware-based security boundary, as opposed to the default. To check the status of the TPM, use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm) PowerShell cmdlet.
-
-If you use Hyper-V virtual machines (VMs), you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs. Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
-
-## Prerequisites
-
-The following prerequisites are required to implement authentication by using application identity.
-
->[!IMPORTANT]
-> New Microsoft Entra Connect Sync versions are available only via the Microsoft Entra admin center.
->
-> Following up on the [What's New](../../../fundamentals/whats-new-archive.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are available only on the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within the Microsoft Entra admin center and will no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
-
-- [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.3.0](reference-connect-version-history.md#2530) or greater for manual onboarding.
-- Microsoft Entra Connect version [2.5.76.0](reference-connect-version-history.md#25760) or greater for automatic onboarding
-- Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
-- Optional: TPM 2.0 present and ready to use (highly recommended for security).
-
-The following extra requirements are needed for the BYOC certificate management option:
-
-- A certificate is created in an HSM or TPM by using a Cryptography API: Next Generation provider. The private key is marked as nonexportable. A warning event 1014 is emitted if TPM isn't used. The following certificate configurations are supported:
-   - `KeyLength`: 2048
-   - `KeyAlgorithm`: RSA
-   - `KeyHashAlgorithm`: SHA256
-- The created certificate is stored in the `LOCAL_MACHINE` store.
-- Grant the Microsoft Entra Connect Sync account permission to perform signing by using the private key.
-
-The following extra requirements are needed for the BYOA application management option:
-
-- The customer creates a certificate as instructed in the preceding BYOC prerequisites.
-- The customer registers an application in Microsoft Entra ID and creates a service principal. The necessary permissions are granted to the application.
-- The customer registers the certificate with the application.
-
-## View the current authentication configuration
-
-To view the current authentication configuration, run the Wizard and go to **Tasks**, and then select **View or export current configuration**. 
-
-If the server is configured to use application-based authentication, you should be able to see the application (client) ID as shown in the following screenshot.
-
-:::image type="content" source="media/authenticate-application-id/authentication-client-id.png" alt-text="Screenshot that shows the client ID." lightbox="media/authenticate-application-id/authentication-client-id.png":::
-
- Scroll down to the certificate details. The following table provides information about the certificate.
- 
-|Property|Description|
-|-----|-----|
-|**Certificate managed by**|Whether Microsoft Entra Connect Sync or BYOC manages the certificate|
-|**Automatic rotation enabled**|Whether automatic rotation or manual rotation is enabled|
-|**Certificate thumbprint**|Unique identifier for the certificate|
-|**Certificate SHA256 hash**|A fingerprint for the certificate generated by using the SHA-256 hashing algorithm|
-|**Subject name**|Identifies the entity associated with the certificate|
-|**Issued by**|Who is the issuer of the certificate|
-|**Serial number**|Uniquely identifies the certificate among certificates by the same issuer|
-|**Not valid before**|The first date that the certificate is valid|
-|**Not valid after**|The last date that the certificate is valid|
-
- :::image type="content" source="media/authenticate-application-id/auth-7.png" alt-text="Screenshot that shows the certificate." lightbox="media/authenticate-application-id/auth-7.png":::
-
-If the server is using username and password, you should be able to see the account name as shown in the following screenshot.
-
-:::image type="content" source="media/authenticate-application-id/authentication-account-name.png" alt-text="Screenshot that shows the account name." lightbox="media/authenticate-application-id/authentication-account-name.png":::
 
 
 ## Installation and upgrade (managed by Microsoft Entra Connect)
@@ -265,222 +276,382 @@ If you want to configure application-based authentication using the default opti
 
  :::image type="content" source="media/authenticate-application-id/auth-4.png" alt-text="Screenshot that shows configuring application-based authentication on the Additional tasks pane." lightbox="media/authenticate-application-id/auth-4.png":::
 
-# [BYOC](#tab/byoc)
+# [BYOC with Default Application](#tab/BYOC)
 
 > [!NOTE]
-> Ensure that you're on the Microsoft Entra Connect server and that the Microsoft Entra Connect Sync PowerShell module is installed.
+> Ensure that you're on the Microsoft Entra Connect server and that the Microsoft Entra Connect Sync (ADSync) PowerShell module is installed.
 
-1. Use the PowerShell command to verify the current authentication method.
-
-     ``` powershell
-     Get-ADSyncEntraConnectorCredential
-     ```
-
-    This step should return the `ConnectorIdentityType` value currently in use, and the value must be `ServiceAccount` in order to proceed.
-
-1. Disable the scheduler to ensure that no sync cycles run until this change is completed.
-    
-     ``` powershell
-    Set-ADSyncScheduler -SyncCycleEnabled $false
-     ```
-
-1. Register an application and create a service principal in Microsoft Entra ID.
-   
-     > [!NOTE]
-     > The certificate `SHA256Hash` must be provided when you register the application. Use the [generation script](#script-to-generate-the-sha256-hash-of-the-certificate) to generate the hash.
-
-     ``` powershell
-     Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash>
-     ```
-
-     Replace `<CertificateSHA256Hash>` with `CertificateSHA256Hash`.
-
-1. Link Microsoft Entra application with Microsoft Entra Connect Sync by using administrator credentials.
-    
-     ``` powershell
-     Add-ADSyncApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash>
-     ```
-
-     Replace `<CertificateSHA256Hash>` with `CertificateSHA256Hash`
-
-1. Run the following cmdlet to get the current authentication and ensure that it has the `ConnectorIdentityType` value as `Application`.
+Use the wizard view the [current authentication configuration](#view-the-current-authentication-configuration) to confirm that Microsoft Entra Connect is using the application identity, or use PowerShell command to verify the current authentication method.
 
      ``` powershell
      Get-ADSyncEntraConnectorCredential
      ```
 
-1. Reenable the scheduler to begin the synchronization service by using the following cmdlet:
+This command returns the `ConnectorIdentityType` value currently in use. The value can be `ServiceAccount` or `Application`. If the authentication is using `ServiceAccount` then proceed with following steps to switch from `ServiceAccount` to `Application`. If the authentication is using `Application`, then skip to "Change Application certificate to your own certificate" steps.
+
+#### Switch from ServiceAccount to Application
+
+1. Start the Microsoft Entra Connect wizard.
+2.	Go to **Additional tasks** > **Configure application-based authentication to Microsoft Entra ID** and then follow the prompts.
+
+ :::image type="content" source="media/authenticate-application-id/auth-4.png" alt-text="Screenshot that shows configuring application-based authentication on the Additional tasks pane." lightbox="media/authenticate-application-id/auth-4.png":::
+
+#### Change Application certificate to your own certificate
+
+**Step 1:** Export the certificate (.cer) file to upload it Entra ID App registration using one of the following options:
+**Option 1**: Using mmc console to export a certificate from the Windows certificate stores:
+1.	Open the certificate management console for the local computer by running the following command. Some methods of running this command are from the Start menu, the Windows Run prompt, PowerShell prompt, or command prompt.
 
      ``` powershell
-     Set-ADSyncScheduler -SyncCycleEnabled $true
+     certlm.msc
      ```
+2.	In the console tree, navigate to the certificate you want to export.
+3.	Right-click the certificate, select **All Tasks**, and then select **Export**.
+4.	On the screen **Welcome to the Certificate Export Wizard**, select **Next**.
+5.	If prompted to export the private key, select **No, do not export the private key**, then select **Next**.
+6.	For the file format, select **DER encoded binary X.509 (.CER)**, then select **Next**.
+7.	Enter or browse to the file path, then select **Next**.
+8.	Review the summary, then select **Finish**.
 
-1. [Remove the Directory Synchronization Account (DSA) from Microsoft Entra ID (recommended)](#remove-a-legacy-service-account).
-
-# [BYOA](#tab/byoa)
-
-> [!NOTE]
-> Ensure that you're on the Microsoft Entra Connect server and that the Microsoft Entra Connect Sync PowerShell module is installed.
-
-1. Use the PowerShell command to verify the current authentication method.
-
-     ``` powershell
-     Get-ADSyncEntraConnectorCredential
-     ```
-
-    This step should return the `ConnectorIdentityType` value currently in use, and the value must be `ServiceAccount` in order to proceed.
-
-1. Disable the scheduler to ensure that no sync cycles run until this change is completed.
-    
-     ``` powershell
-    Set-ADSyncScheduler -SyncCycleEnabled $false
-     ```
-
-1. Register an application and create a service principal in Microsoft Entra ID.
-
-      
-     > [!NOTE]
-     > The certificate `SHA256Hash` must be provided when you register the application. Use the [generation script](#script-to-generate-the-sha256-hash-of-the-certificate) to generate the hash.
-
-     [Register a Microsoft Entra app and create a service principal](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). Note the application ID because you need it in the next section.
-
-1. Link Microsoft Entra Application with Microsoft Entra Connect Sync by using administrator credentials.
-   
-     ``` powershell
-     Add-ADSyncApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash> –ApplicationAppId <appId>
-     ```
-
-    Replace `<CertificateSHA256Hash>` with `CertificateSHA256Hash` and `<appId>` with the ID of the application that was created in Microsoft Entra ID.
-
-1. Run the following cmdlet to get the current authentication and ensure that it has the `ConnectorIdentityType` value as `Application`.
-
-     ``` powershell
-     Get-ADSyncEntraConnectorCredential
-     ```
-
-1. Reenable the scheduler to begin the synchronization service by using the following cmdlet:
-
-     ``` powershell
-     Set-ADSyncScheduler -SyncCycleEnabled $true
-     ```
-
-1. [Remove the Directory Synchronization Account (DSA) from Microsoft Entra ID (recommended)](#remove-a-legacy-service-account).
-
----
-
-## Certificate rotation
-
-Microsoft Entra Connect warns if the certificate rotation is due. That is, if expiration is less than or equal to 150 days. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
-
-This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncScheduler` to see if the scheduler is suspended.
-
-### Automatic
-
-If Microsoft Entra Connect manages the certificate, *no action* is required from you unless the scheduler is suspended, Microsoft Entra Connect Sync adds the new certificate credential to the application, and tries to remove the old certificate credential. 
-
-If it fails to remove the old certificate credential, an error event appears in the Application logs in the Event Viewer.
-
-If you see this error, run the following cmdlet in PowerShell to clean up the old certificate credential from Microsoft Entra. The cmdlet takes the `CertificateId` value of the certificate that must be removed, which you can obtain from the log or the Microsoft Entra admin center.
-
- ``` powershell
-Remove-EntraApplicationKey -CertificateId <certificateId>
- ```
-
-### Manual
-
-If your configuration isn't eligible for automatic certificate rotation, you can rotate the certificate at any point in time, even if the current certificate is still not due for rotation or the current certificate expired.
-
-# [Default](#tab/default)
-
-1. Start the Microsoft Entra Connect wizard
-1. Go to **Additional tasks** > **Rotate application certificate** and then follow the prompts.
-
-
- :::image type="content" source="media/authenticate-application-id/auth-6.png" alt-text="Screenshot that shows the Rotate application certificate option on the Additional tasks pane." lightbox="media/authenticate-application-id/auth-6.png":::
-
-# [BYOC](#tab/byoc)
-
-When you get a warning from Microsoft Entra Connect Sync, we *highly recommend that you generate a new key and certificate and rotate the certificate* that Microsoft Entra Connect Sync uses.
-
-1. Disable the scheduler to ensure that no sync cycles run until this change is completed.
-
-     ``` powershell
-     Set-ADSyncScheduler -SyncCycleEnabled $false
-     ```
-
-1. Invoke certificate credential rotation
-
-   > [!NOTE]
-   > The `certificate SHA256Hash` must be provided when you rotate the certificate. Use the [generation script](#script-to-generate-the-sha256-hash-of-the-certificate) to generate the hash.
-  
-     ``` powershell
-     Invoke-ADSyncApplicationCredentialRotation -CertificateSHA256Hash <CertificateSHA256Hash>
-     ```    
-    Replace `<CertificateSHA256Hash>` with the `CertificateSHA256Hash`.
-    
-1. Reenable the scheduler to begin the synchronization service:
-    
-     ``` powershell
-     Set-ADSyncScheduler -SyncCycleEnabled $true
-     ```
-
-1. Verify that the sync cycle is successful.
-1. Remove the old certificate from the `LOCAL_MACHINE` store.
-
-# [BYOA](#tab/byoa)
-
-When you get a warning from Microsoft Entra Connect Sync, we *highly recommend that you generate a new key and certificate and rotate the certificate* that Microsoft Entra Connect Sync uses.
-
-1. Disable the scheduler to ensure that no sync cycles run until this change is completed. Use the following PowerShell cmdlet to disable the scheduler:
-
-     ``` powershell
-     Set-ADSyncScheduler -SyncCycleEnabled $false
-     ```
-
-1. Invoke certificate credential rotation
-
-   > [!NOTE]
-   > The `certificate SHA256Hash` must be provided when you rotate the certificate. Use the [generation script](#script-to-generate-the-sha256-hash-of-the-certificate) to generate the hash.
-   
-     ``` powershell
-     Invoke-ADSyncApplicationCredentialRotation -CertificateSHA256Hash <CertificateSHA256Hash>
-     ```
-    
-        
-    Replace `<CertificateSHA256Hash>` with the `CertificateSHA256Hash`.    
-1. Reenable the scheduler to begin the synchronization service:
-    
-     ``` powershell
-     Set-ADSyncScheduler -SyncCycleEnabled $true
-     ```
-
-1. Verify that the sync cycle is successful.
-1. Remove the old certificate from the `LOCAL_MACHINE` store.
-
----
-
-## Script to generate the SHA256 hash of the certificate
+**Option 2:** Use PowerShell to export the certificate:
 
 ``` powershell
+$cerFile  = "C:\Temp\MyBYOC.cer"
+$cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+Export-Certificate -Cert $cert -FilePath $cerFile
+```
+
+**Step 2:** In Entra Admin Center https://entra.microsoft.com/ navigate to **App Registration**, and select the application that was created during the installation, configuration or the upgrade of Connect Sync. To confirm which application used by Connect Sync you can run the `Get-ADSyncEntraConnectorCredential` command to retrieve the application (client) ID. The username format is `{AppID}@tenantName.onmicrosoft.com`. Under **Certificate & secrets** click on **Upload certificate** and upload the exported .cer file and click on **Add**:
+
+ :::image type="content" source="media/authenticate-application-id/app-registration-cert.png" alt-text="Screenshot that shows uploading certificate to App Registration." lightbox="media/authenticate-application-id/app-registration-cert.png":::
+
+**Step 3:** Get the certificate Hash using following PowerShell commands
+
+``` powershell
+$cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+
 # Get raw data from X509Certificate cert
 $certRawDataString = $cert.GetRawCertData()
-
+ 
 # Compute SHA256Hash of certificate 
 $sha256 = [System.Security.Cryptography.SHA256]::Create()
 $hashBytes = $sha256.ComputeHash($certRawDataString)
-
-# Convert hash to bytes for PowerShell (Core) 7.1+:
-$certHash = [System.Convert]::ToHexString($hashBytes)
-
-# Convert hash to bytes for older PowerShell:
-$certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 ```
 
-## Certificate revocation process
+If you are using **PowerShell version 7**, use following command:
 
-For self-signed certificates, either Microsoft Entra Managed or BYOC, an administrator must perform manual revocation by removing the `keyCredential` value from Microsoft Entra ID. An on-demand rotation of the certificate is also an option.
+``` powershell
+$certHash = [System.Convert]::ToHexString($hashBytes)
+```
 
-For BYOC certificates issued by a Certificate Authority registered with Microsoft Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-certificate-revocation-list.md#enforce-crl-validation-for-cas).
+If you are using **older PowerShell versions** or **PowerShell ISE**, use following command:
+
+``` powershell
+$certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
+```
+**Step 4:** Grant Connect Sync (ADSync) service account permissions to retrieve the certificate private key:
+``` powershell
+$rsaCert = [System.Security.Cryptography.X509Certificates.RSACertificateExtensions]::GetRSAPrivateKey($cert)
+```
+
+If the certificate was **issued by a Certificate Authority (CA)** use following `$path` variable:
+```powershell
+$path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\RSA\MachineKeys\$($rsaCert.key.UniqueName)"
+```
+
+If you are using a **self-signed** certificate, use the following `$path` variable:
+``` powershell
+$path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\Keys\$($rsaCert.key.UniqueName)"
+```
+
+Then proceed to run the following commands to grant the permission:
+
+``` powershell
+$permissions = Get-Acl -Path $path
+$serviceAccount = (Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\ADSync -Name ObjectName).ObjectName
+$rule = New-Object Security.Accesscontrol.FileSystemAccessRule "$serviceAccount", "read", allow
+$permissions.AddAccessRule($rule)
+Set-Acl -Path $path -AclObject $permissions
+ 
+# Verify permissions
+$permissions = Get-Acl -Path $path
+$permissions.Access
+```
+
+**Step 5:** Disable the sync scheduler 
+```powershell
+Set-ADSyncScheduler -SyncCycleEnabled $false
+```
+
+**Step 6:** Import ADSync module:
+If you are using **PowerShell version 7**, use following command to import ADSync module:
+``` powershell
+Import-Module -Name "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync" -UseWindowsPowerShell
+```
+
+If you are using **older PowerShell versions** or **PowerShell ISE**, use following command to import ADSync module:
+``` powershell
+Import-Module -Name "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync"
+```
+
+**Step 7:** Update the application certificate using the certificate rotation command
+``` powershell
+Invoke-ADSyncApplicationCredentialRotation -CertificateSHA256Hash $certHash 
+```
+
+**Step 8:** Use the wizard view the [current authentication configuration](#view-the-current-authentication-configuration) to confirm that Microsoft Entra Connect is using your new certificate.
+
+**Step 9:** Enable the sync scheduler
+``` powershell
+Set-ADSyncScheduler -SyncCycleEnabled $true
+```
+
+**Step 10:** [Remove the Directory Synchronization Account (DSA) from Microsoft Entra ID (recommended)](#remove-a-legacy-service-account).
+
+# [BYOA with BYOC](#tab/byoa)
+#### Create the application using PowerShell:
+
+**Step 1:** Connect to your tenant
+``` powershell
+Connect-MgGraph -scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
+```
+
+**Step 2:** Create and initialize BYOA application
+``` powershell
+$BYOApp = New-MgApplication -DisplayName "My BYOA For Connect Sync serverName"
+```
+
+**Step 3:** Create and initialize BYOA service principal name
+``` powershell
+$BYOA_ServicePrincipal = New-MgServicePrincipal -AppId $BYOApp.AppId
+```
+
+**Step 4:** Initialize `ConnectSyncAppId` and `ConnectSyncSPId` variables:
+``` powershell
+$ConnectSyncAppId = $BYOApp.AppId
+$ConnectSyncSPId = $BYOA_ServicePrincipal.Id
+```
+
+**Step 5:** Initialize `SynchronizationServiceAppId` variable that represents the application (client) ID for **Microsoft Entra AD Synchronization Service**. The value is `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016` for **all clouds**:
+
+``` powershell
+$SynchronizationServiceAppId = "6bf85cfa-ac8a-4be5-b5de-425a0d0dc016"
+```
+
+**Step 6:** Initialize `SynchronizationServiceSPId` variable:
+```powershell
+$SynchronizationServiceSPId = (Get-MgServicePrincipal -Filter "appId eq '$SynchronizationServiceAppId'").Id
+```
+
+**Step 7:** Initialize `SynchronizationServiceAppRoleId` variable:
+```powershell
+$SynchronizationServiceAppRoleId =  (Get-MgServicePrincipal -Filter "appId eq '$SynchronizationServiceAppId'").AppRoles | Where-Object {$_.Value -eq "ADSynchronization.ReadWrite.All"} | Select-Object -ExpandProperty Id
+```
+> [!NOTE]
+> If you are using **Password Writeback** feature then proceed with following steps, otherwise you can skip to step 11.
+
+**Step 8:** Initialize `PasswordResetServiceAppId` variable:
+For **all clouds** except Arlington use:
+```powershell
+$PasswordResetServiceAppId = "93625bc8-bfe2-437a-97e0-3d0060024faa"
+```
+
+For **Arlington** cloud use:
+```powershell
+$PasswordResetServiceAppId = "2e5ecfc8-ea79-48bd-8140-c19324acb278"
+```
+
+**Step 9:** Initialize `PasswordResetServiceSPId` variable:
+```powershell
+$PasswordResetServiceSPId = (Get-MgServicePrincipal -Filter "appId eq '$PasswordResetServiceAppId'").Id
+```
+
+**Step 10:** Initialize Password Reset AppRoles variables:
+```powershell
+$PasswordResetServiceServiceOffboardClientAppRoleId = (Get-MgServicePrincipal -Filter "appId eq '$PasswordResetServiceAppId'").AppRoles | Where-Object {$_.Value -eq "PasswordWriteback.OffboardClient.All"} | Select-Object -ExpandProperty Id
+$PasswordResetServiceServiceRegisterClientAppRoleId = (Get-MgServicePrincipal -Filter "appId eq '$PasswordResetServiceAppId'").AppRoles | Where-Object {$_.Value -eq "PasswordWriteback.RegisterClientVersion.All"} | Select-Object -ExpandProperty Id
+$PasswordResetServiceServiceRefreshClientAppRoleId = (Get-MgServicePrincipal -Filter "appId eq '$PasswordResetServiceAppId'").AppRoles | Where-Object {$_.Value -eq "PasswordWriteback.RefreshClient.All"} | Select-Object -ExpandProperty Id
+```
+
+**Step 11:** Initialize `RequiredResourceAccess` variable to configure required permissions for Microsoft Entra AD Synchronization Service and Microsoft password reset service:
+If you **don’t use Password writeback**, then use:
+```powershell
+$RequiredResourceAccess = @(
+    @{
+        ResourceAppId = $SynchronizationServiceAppId
+        ResourceAccess = @(
+            @{
+                Id = $SynchronizationServiceAppRoleId
+                Type = "Role"
+            }
+        )
+    }
+)
+```
+If you **use Password writeback**, then use:
+```powershell
+$RequiredResourceAccess = @(
+    @{
+        ResourceAppId = $SynchronizationServiceAppId
+        ResourceAccess = @(
+            @{
+                Id = $SynchronizationServiceAppRoleId
+                Type = "Role"
+            }
+        )
+    },
+    @{
+        ResourceAppId = $PasswordResetServiceAppId
+        ResourceAccess = @(
+            @{
+                Id = $PasswordResetServiceServiceOffboardClientAppRoleId
+                Type = "Role"
+            },
+            @{
+                Id = $PasswordResetServiceServiceRegisterClientAppRoleId
+                Type = "Role"
+            },
+            @{
+                Id = $PasswordResetServiceServiceRefreshClientAppRoleId
+                Type = "Role"
+            }
+        )
+    }
+)
+```
+
+**Step 12:** Update the application with the required permissions:
+``` powershell
+Update-MgApplication -ApplicationId $BYOApp.Id -RequiredResourceAccess $RequiredResourceAccess
+```
+
+**Step 13:** Create app role assignment for Synchronization Service:
+``` powershell
+$SyncAppRoleAssignment = New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $BYOA_ServicePrincipal.Id -PrincipalId $BYOA_ServicePrincipal.Id -ResourceId $SynchronizationServiceSPId -AppRoleId $SynchronizationServiceAppRoleId
+```
+> [!NOTE]
+>If you are using **Password Writeback** feature then proceed with following steps, otherwise you can skip to step #15.
+
+**Step 14:** Create app role assignment for Password Writeback feature:
+``` powershell
+$OffboardAppRoleAssignment = New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $BYOA_ServicePrincipal.Id -PrincipalId $BYOA_ServicePrincipal.Id -ResourceId $PasswordResetServiceSPId -AppRoleId $PasswordResetServiceServiceOffboardClientAppRoleId
+ 
+$RegisterAppRoleAssignment = New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $BYOA_ServicePrincipal.Id -PrincipalId $BYOA_ServicePrincipal.Id -ResourceId $PasswordResetServiceSPId -AppRoleId $PasswordResetServiceServiceRegisterClientAppRoleId
+ 
+$RefreshAppRoleAssignment = New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $BYOA_ServicePrincipal.Id -PrincipalId $BYOA_ServicePrincipal.Id -ResourceId $PasswordResetServiceSPId -AppRoleId $PasswordResetServiceServiceRefreshClientAppRoleId
+```
+
+**Step 15:** Export the certificate (.cer) file to upload it Entra ID App registration using one of the following options:
+
+**Option 1**: Using mmc console to export a certificate from the Windows certificate stores:
+1.	Open the certificate management console for the local computer by running the following command. Some methods of running this command are from the Start menu, the Windows Run prompt, PowerShell prompt, or command prompt.
+
+     ``` powershell
+     certlm.msc
+     ```
+2.	In the console tree, navigate to the certificate you want to export.
+3.	Right-click the certificate, select **All Tasks**, and then select **Export**.
+4.	On the screen **Welcome to the Certificate Export Wizard**, select **Next**.
+5.	If prompted to export the private key, select **No, do not export the private key**, then select **Next**.
+6.	For the file format, select **DER encoded binary X.509 (.CER)**, then select **Next**.
+7.	Enter or browse to the file path, then select **Next**.
+8.	Review the summary, then select **Finish**.
+
+**Option 2:** Use PowerShell to export the certificate:
+
+``` powershell
+$cerFile  = "C:\Temp\MyBYOC.cer"
+$cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+Export-Certificate -Cert $cert -FilePath $cerFile
+```
+
+**Step 16:** In Entra Admin Center https://entra.microsoft.com/ navigate to **App Registration**, and select the application that was created in step 2. Under **Certificate & secrets** click on **Upload certificate** and upload the exported .cer file and click on **Add**:
+
+ :::image type="content" source="media/authenticate-application-id/app-registration-cert-byoa.png" alt-text="Screenshot that shows uploading certificate to App Registration." lightbox="media/authenticate-application-id/app-registration-cert-byoa.png":::
+
+**Step 17:** Get the certificate Hash using following PowerShell commands
+
+``` powershell
+$cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+
+# Get raw data from X509Certificate cert
+$certRawDataString = $cert.GetRawCertData()
+ 
+# Compute SHA256Hash of certificate 
+$sha256 = [System.Security.Cryptography.SHA256]::Create()
+$hashBytes = $sha256.ComputeHash($certRawDataString)
+```
+
+If you are using **PowerShell version 7**, use following command:
+
+``` powershell
+$certHash = [System.Convert]::ToHexString($hashBytes)
+```
+
+If you are using **older PowerShell versions** or **PowerShell ISE**, use following command:
+
+``` powershell
+$certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
+```
+**Step 18:** Grant Connect Sync (ADSync) service account permissions to retrieve the certificate private key:
+``` powershell
+$rsaCert = [System.Security.Cryptography.X509Certificates.RSACertificateExtensions]::GetRSAPrivateKey($cert)
+```
+
+If the certificate was **issued by a Certificate Authority (CA)** use following `$path` variable:
+```powershell
+$path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\RSA\MachineKeys\$($rsaCert.key.UniqueName)"
+```
+
+If you are using a **self-signed** certificate, use the following `$path` variable:
+``` powershell
+$path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\Keys\$($rsaCert.key.UniqueName)"
+```
+
+Then proceed to run the following commands to grant the permission:
+
+``` powershell
+$permissions = Get-Acl -Path $path
+$serviceAccount = (Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\ADSync -Name ObjectName).ObjectName
+$rule = New-Object Security.Accesscontrol.FileSystemAccessRule "$serviceAccount", "read", allow
+$permissions.AddAccessRule($rule)
+Set-Acl -Path $path -AclObject $permissions
+ 
+# Verify permissions
+$permissions = Get-Acl -Path $path
+$permissions.Access
+```
+
+**Step 19:** Disable the sync scheduler 
+```powershell
+Set-ADSyncScheduler -SyncCycleEnabled $false
+```
+
+**Step 20:** Import ADSync module:
+If you are using **PowerShell version 7**, use following command to import ADSync module:
+``` powershell
+Import-Module -Name "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync" -UseWindowsPowerShell
+```
+
+**Step 21:** Switch to using your new application for authentication
+``` powershell
+Add-ADSyncApplicationRegistration -CertificateSHA256Hash $certHash –ApplicationAppId $ConnectSyncAppId 
+```
+
+**Step 22:** Use the wizard view the [current authentication configuration](#view-the-current-authentication-configuration) to confirm that Microsoft Entra Connect is using the application identity, or use PowerShell command to verify the current authentication method.
+
+``` powershell
+Get-ADSyncEntraConnectorCredential
+```
+
+
+**Step 23:** Enable the sync scheduler
+``` powershell
+Set-ADSyncScheduler -SyncCycleEnabled $true
+```
+
+**Step 24:** [Remove the Directory Synchronization Account (DSA) from Microsoft Entra ID (recommended)](#remove-a-legacy-service-account).
+
 
 ## Remove a legacy service account
 
@@ -491,18 +662,18 @@ Follow these steps to remove the legacy service account.
 1. Add the service account username and password.
 
      ``` powershell 
-     $HACredential
+     $HACredential = Get-Credential
      ```
 
- 1. You're prompted to enter the Microsoft Entra administrator `UserPrincipalName` value and the password. Enter the username and password.
+ 2. You're prompted to enter the Microsoft Entra administrator `UserPrincipalName` value and the password. Enter the username and password.
 
- 1. Next, remove the service account.
+ 3. Next, remove the service account.
 
      ``` powershell
      Remove-ADSyncAADServiceAccount -AADCredential $HACredential -Name <$serviceAccountName>
      ```
 
-    The `ServiceAccountName` value is the first part of the `UserPrincipalName` value of the service account used in Microsoft Entra ID. You can find this user in the list of users in the Microsoft Entra admin center. If the UPN is `aringdahl@fabrikam.com`, use `aringdahl` as the `ServiceAccountName` value.
+    The `ServiceAccountName` value is the first part of the `UserPrincipalName` value of the service account used in Microsoft Entra ID. You can find this user in the list of users in the Microsoft Entra admin center. If the UPN is `Sync_Server_id@tenant.onmicrosoft.com`, use `Sync_Server_id` as the `ServiceAccountName` value.
 
 ## Roll back to a legacy service account by using PowerShell
 
@@ -533,6 +704,276 @@ As part of the rollback, we'll be re-creating the DSA account. This new account 
      ``` powershell
      Set-ADSyncScheduler -SyncCycleEnabled $true
      ```
+
+## Certificate rotation
+
+Microsoft Entra Connect warns if the certificate rotation is due. That is, if expiration is less than or equal to 150 days. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
+
+This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncScheduler` to see if the scheduler is suspended.
+
+### Automatic
+
+If Microsoft Entra Connect manages the certificate, *no action* is required from you unless the scheduler is suspended, Microsoft Entra Connect Sync adds the new certificate credential to the application, and tries to remove the old certificate credential. 
+
+If it fails to remove the old certificate credential, an error event appears in the Application logs in the Event Viewer.
+
+If you see this error, run the following cmdlet in PowerShell to clean up the old certificate credential from Microsoft Entra. The cmdlet takes the `CertificateId` value of the certificate that must be removed, which you can obtain from the log or the Microsoft Entra admin center.
+
+ ``` powershell
+Remove-EntraApplicationKey -CertificateId <certificateId>
+ ```
+
+### Manual
+
+If your configuration isn't eligible for automatic certificate rotation, you can rotate the certificate at any point in time, even if the current certificate is still not due for rotation or the current certificate expired.
+
+# [Default Application](#tab/default)
+
+1. Start the **Microsoft Entra Connect wizard**
+1. Go to **Additional tasks** > **Rotate application certificate** and then follow the prompts.
+
+
+ :::image type="content" source="media/authenticate-application-id/auth-6.png" alt-text="Screenshot that shows the Rotate application certificate option on the Additional tasks pane." lightbox="media/authenticate-application-id/auth-6.png":::
+
+# [BYOC with Default Application](#tab/byoc)
+
+When you get a warning from Microsoft Entra Connect Sync, we *highly recommend that you generate a new key and certificate and rotate the certificate* that Microsoft Entra Connect Sync uses.
+
+
+**Step 1:** Export the certificate (.cer) file to upload it Entra ID App registration using one of the following options:
+**Option 1**: Using mmc console to export a certificate from the Windows certificate stores:
+1.	Open the certificate management console for the local computer by running the following command. Some methods of running this command are from the Start menu, the Windows Run prompt, PowerShell prompt, or command prompt.
+
+     ``` powershell
+     certlm.msc
+     ```
+2.	In the console tree, navigate to the certificate you want to export.
+3.	Right-click the certificate, select **All Tasks**, and then select **Export**.
+4.	On the screen **Welcome to the Certificate Export Wizard**, select **Next**.
+5.	If prompted to export the private key, select **No, do not export the private key**, then select **Next**.
+6.	For the file format, select **DER encoded binary X.509 (.CER)**, then select **Next**.
+7.	Enter or browse to the file path, then select **Next**.
+8.	Review the summary, then select **Finish**.
+
+**Option 2:** Use PowerShell to export the certificate:
+
+``` powershell
+$cerFile  = "C:\Temp\MyBYOC.cer"
+$cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+Export-Certificate -Cert $cert -FilePath $cerFile
+```
+
+**Step 2:** In Entra Admin Center https://entra.microsoft.com/ navigate to **App Registration**, and select the application that was created during the installation, configuration or the upgrade of Connect Sync. To confirm which application used by Connect Sync you can run the `Get-ADSyncEntraConnectorCredential` command to retrieve the application (client) ID. The username format is `{AppID}@tenantName.onmicrosoft.com`. Under **Certificate & secrets** click on **Upload certificate** and upload the exported .cer file and click on **Add**:
+
+ :::image type="content" source="media/authenticate-application-id/app-registration-cert.png" alt-text="Screenshot that shows uploading certificate to App Registration." lightbox="media/authenticate-application-id/app-registration-cert.png":::
+
+**Step 3:** Get the certificate Hash using following PowerShell commands
+
+``` powershell
+$cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+
+# Get raw data from X509Certificate cert
+$certRawDataString = $cert.GetRawCertData()
+ 
+# Compute SHA256Hash of certificate 
+$sha256 = [System.Security.Cryptography.SHA256]::Create()
+$hashBytes = $sha256.ComputeHash($certRawDataString)
+```
+
+If you are using **PowerShell version 7**, use following command:
+
+``` powershell
+$certHash = [System.Convert]::ToHexString($hashBytes)
+```
+
+If you are using **older PowerShell versions** or **PowerShell ISE**, use following command:
+
+``` powershell
+$certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
+```
+**Step 4:** Grant Connect Sync (ADSync) service account permissions to retrieve the certificate private key:
+``` powershell
+$rsaCert = [System.Security.Cryptography.X509Certificates.RSACertificateExtensions]::GetRSAPrivateKey($cert)
+```
+
+If the certificate was **issued by a Certificate Authority (CA)** use following `$path` variable:
+```powershell
+$path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\RSA\MachineKeys\$($rsaCert.key.UniqueName)"
+```
+
+If you are using a **self-signed** certificate, use the following `$path` variable:
+``` powershell
+$path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\Keys\$($rsaCert.key.UniqueName)"
+```
+
+Then proceed to run the following commands to grant the permission:
+
+``` powershell
+$permissions = Get-Acl -Path $path
+$serviceAccount = (Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\ADSync -Name ObjectName).ObjectName
+$rule = New-Object Security.Accesscontrol.FileSystemAccessRule "$serviceAccount", "read", allow
+$permissions.AddAccessRule($rule)
+Set-Acl -Path $path -AclObject $permissions
+ 
+# Verify permissions
+$permissions = Get-Acl -Path $path
+$permissions.Access
+```
+
+**Step 5:** Disable the sync scheduler 
+```powershell
+Set-ADSyncScheduler -SyncCycleEnabled $false
+```
+
+**Step 6:** Import ADSync module:
+If you are using **PowerShell version 7**, use following command to import ADSync module:
+``` powershell
+Import-Module -Name "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync" -UseWindowsPowerShell
+```
+
+If you are using **older PowerShell versions** or **PowerShell ISE**, use following command to import ADSync module:
+``` powershell
+Import-Module -Name "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync"
+```
+
+**Step 7:** Update the application certificate using the certificate rotation command
+``` powershell
+Invoke-ADSyncApplicationCredentialRotation -CertificateSHA256Hash $certHash 
+```
+
+**Step 8:** Use the wizard view the [current authentication configuration](#view-the-current-authentication-configuration) to confirm that Microsoft Entra Connect is using your new certificate.
+
+**Step 9:** Enable the sync scheduler
+``` powershell
+Set-ADSyncScheduler -SyncCycleEnabled $true
+```
+
+**Step 10:** Remove the old certificate from the LOCAL_MACHINE store.
+
+
+
+---
+
+# [BYOA with BYOC](#tab/byoa)
+
+When you get a warning from Microsoft Entra Connect Sync, we *highly recommend that you generate a new key and certificate and rotate the certificate* that Microsoft Entra Connect Sync uses.
+
+**Step 1:** Export the certificate (.cer) file to upload it Entra ID App registration using one of the following options:
+**Option 1**: Using mmc console to export a certificate from the Windows certificate stores:
+1.	Open the certificate management console for the local computer by running the following command. Some methods of running this command are from the Start menu, the Windows Run prompt, PowerShell prompt, or command prompt.
+
+     ``` powershell
+     certlm.msc
+     ```
+2.	In the console tree, navigate to the certificate you want to export.
+3.	Right-click the certificate, select **All Tasks**, and then select **Export**.
+4.	On the screen **Welcome to the Certificate Export Wizard**, select **Next**.
+5.	If prompted to export the private key, select **No, do not export the private key**, then select **Next**.
+6.	For the file format, select **DER encoded binary X.509 (.CER)**, then select **Next**.
+7.	Enter or browse to the file path, then select **Next**.
+8.	Review the summary, then select **Finish**.
+
+**Option 2:** Use PowerShell to export the certificate:
+
+``` powershell
+$cerFile  = "C:\Temp\MyBYOC.cer"
+$cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+Export-Certificate -Cert $cert -FilePath $cerFile
+```
+
+**Step 2:** In Entra Admin Center https://entra.microsoft.com/ navigate to **App Registration**, and select the application that was created during the installation, configuration or the upgrade of Connect Sync. To confirm which application used by Connect Sync you can run the `Get-ADSyncEntraConnectorCredential` command to retrieve the application (client) ID. The username format is `{AppID}@tenantName.onmicrosoft.com`. Under **Certificate & secrets** click on **Upload certificate** and upload the exported .cer file and click on **Add**:
+
+ :::image type="content" source="media/authenticate-application-id/app-registration-cert-byoa.png" alt-text="Screenshot that shows uploading certificate to App Registration." lightbox="media/authenticate-application-id/app-registration-cert-byoa.png":::
+
+
+**Step 3:** Get the certificate Hash using following PowerShell commands
+
+``` powershell
+$cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+
+# Get raw data from X509Certificate cert
+$certRawDataString = $cert.GetRawCertData()
+ 
+# Compute SHA256Hash of certificate 
+$sha256 = [System.Security.Cryptography.SHA256]::Create()
+$hashBytes = $sha256.ComputeHash($certRawDataString)
+```
+
+If you are using **PowerShell version 7**, use following command:
+
+``` powershell
+$certHash = [System.Convert]::ToHexString($hashBytes)
+```
+
+If you are using **older PowerShell versions** or **PowerShell ISE**, use following command:
+
+``` powershell
+$certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
+```
+**Step 4:** Grant Connect Sync (ADSync) service account permissions to retrieve the certificate private key:
+``` powershell
+$rsaCert = [System.Security.Cryptography.X509Certificates.RSACertificateExtensions]::GetRSAPrivateKey($cert)
+```
+
+If the certificate was **issued by a Certificate Authority (CA)** use following `$path` variable:
+```powershell
+$path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\RSA\MachineKeys\$($rsaCert.key.UniqueName)"
+```
+
+If you are using a **self-signed** certificate, use the following `$path` variable:
+``` powershell
+$path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\Keys\$($rsaCert.key.UniqueName)"
+```
+
+Then proceed to run the following commands to grant the permission:
+
+``` powershell
+$permissions = Get-Acl -Path $path
+$serviceAccount = (Get-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\ADSync -Name ObjectName).ObjectName
+$rule = New-Object Security.Accesscontrol.FileSystemAccessRule "$serviceAccount", "read", allow
+$permissions.AddAccessRule($rule)
+Set-Acl -Path $path -AclObject $permissions
+ 
+# Verify permissions
+$permissions = Get-Acl -Path $path
+$permissions.Access
+```
+
+**Step 5:** Disable the sync scheduler 
+```powershell
+Set-ADSyncScheduler -SyncCycleEnabled $false
+```
+
+**Step 6:** Import ADSync module:
+If you are using **PowerShell version 7**, use following command to import ADSync module:
+``` powershell
+Import-Module -Name "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync" -UseWindowsPowerShell
+```
+
+If you are using **older PowerShell versions** or **PowerShell ISE**, use following command to import ADSync module:
+``` powershell
+Import-Module -Name "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync"
+```
+
+**Step 7:** Update the application certificate using the certificate rotation command
+``` powershell
+Invoke-ADSyncApplicationCredentialRotation -CertificateSHA256Hash $certHash 
+```
+
+**Step 8:** Use the wizard view the [current authentication configuration](#view-the-current-authentication-configuration) to confirm that Microsoft Entra Connect is using your new certificate.
+
+**Step 9:** Enable the sync scheduler
+``` powershell
+Set-ADSyncScheduler -SyncCycleEnabled $true
+```
+
+**Step 10:** Remove the old certificate from the LOCAL_MACHINE store.
+
+## Certificate revocation process
+
+For self-signed certificates, either Microsoft Entra Managed or BYOC, an administrator must perform manual revocation by removing the `keyCredential` value from Microsoft Entra ID. An on-demand rotation of the certificate is also an option.
+
+For BYOC certificates issued by a Certificate Authority registered with Microsoft Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-certificate-revocation-list.md#enforce-crl-validation-for-cas).
 
 ## Related content
 
