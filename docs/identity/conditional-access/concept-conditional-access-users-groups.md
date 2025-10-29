@@ -12,9 +12,9 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---
-# Conditional Access: Users, groups, and workload identities
+# Conditional Access: Users, groups, agents, and workload identities
 
-A Conditional Access policy includes a user, group, or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access. 
+A Conditional Access policy includes a user, group, agent or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access. 
 
 ## Include users
 
@@ -93,6 +93,10 @@ If you find yourself locked out, see [What to do if you're locked out?](troubles
 ### External partner access
 
 Conditional Access policies that target external users might interfere with service provider access, such as granular delegated admin privileges. Learn more in [Introduction to granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction). For policies that are intended to target service provider tenants, use the **Service provider user** external user type available in the **Guest or external users** selection options.
+
+## Agent ID
+
+Agent IDs are first-class accounts within Entra ID that provide unique identification and authentication capabilities for AI agents. Conditional Access policies targeting these objects have specific recommendations addressed in the article [Conditional Access and agentic identities](agent-id.md)
 
 ## Workload identities 
 
