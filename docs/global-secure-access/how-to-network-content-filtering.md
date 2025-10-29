@@ -1,5 +1,5 @@
 ---
-title: Create File Policies for Network Content Filtering
+title: Create File Policies for Network content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.service: global-secure-access
 ms.topic: how-to
@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 
 ---
 
-# Create a file policy to filter network content (preview)
+# Create a file policy to filter network file content (preview)
 
 Global Secure Access supports network content filtering through file policies. This feature helps you safeguard against unintended data exposure and prevents inline data leaks to generative AI applications and internet destinations. By extending data protection capabilities to the network layer through Global Secure Access, network content filtering enables your organization to enforce data policies on network traffic in real time. You can discover and protect files shared with unsanctioned destinations, such as generative AI and unmanaged cloud apps, from managed endpoints through browsers, applications, add-ins, APIs, and more.
 
@@ -26,21 +26,21 @@ The network content filtering solution brings together Microsoft Purview's data 
 This article explains how to create a file policy to filter internet traffic flowing through Global Secure Access.
 
 > [!IMPORTANT]
-> The network content filtering feature is currently in PREVIEW.   
+> The network content filtering with file policies feature is currently in PREVIEW.   
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.      
 
 ## Scenarios included in this preview 
 
 This preview supports the following key scenarios and outcomes for HTTP/1.1 traffic:
 - Using **Basic file policy**, you can block files based on supported file MIME types. 
-- Using **Scan with Purview**, you can audit and block files based on:
+- Using **Scan with Purview** action in file policy, you can audit and block files based on:
     - Microsoft Purview sensitivity labels
     - Sensitive content in the file
     - The user's risk level
 - You can generate Data loss prevention (DLP) admin alerts for rule matches.
 
 > [!IMPORTANT]
-> This preview supports network data security only for files over HTTP/1.1.
+> This preview supports network content filtering only for files over HTTP/1.1. It doesn't support network content filtering for text yet. 
 
 ## Prerequisites
 
@@ -152,6 +152,7 @@ Test the configuration by attempting to upload or download files that match the 
 
 ## Known limitations
 
+- Network Content filtering isn't supported for text yet. It is only supported for files.  
 - Multipart encoding isn't supported, so file policy doesn't work for such applications (for example, Google Drive uses multipart encoding for file upload).
 - Compressed content is detected in zip format (the content isn't decompressed).
 - Accuracy of true file type detection might not be 100%.
