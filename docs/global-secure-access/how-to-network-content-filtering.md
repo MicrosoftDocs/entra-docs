@@ -104,9 +104,10 @@ To configure a file policy in Global Secure Access, complete the following steps
 1. On the **Rules** tab:  
     1. Add a new rule.
     1. Enter the **Name**, **Description**, **Priority**, and **Status** as appropriate.
-    1. If you want to configure a basic data policy, select **Allow** or **Block** from the **Action** menu.
-    1. If you configured data policies in Microsoft Purview, select **Scan with Purview** from the **Action** menu.
-        :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
+    1. Select the appropriate option for the **Action** menu:
+        - If you want to configure a basic data policy, select **Allow** or **Block**.
+        - If you configured data policies in Microsoft Purview, select **Scan with Purview**.
+            :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **File types**.
     1. Select **+ Add destination** and choose an option for the destination.
 1. Select **Next**.
