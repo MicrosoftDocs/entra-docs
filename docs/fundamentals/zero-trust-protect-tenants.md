@@ -61,3 +61,15 @@ Even smaller organizations can protect their environments by implementing strict
 
 ### Inactive guest identities are disabled or removed from the tenant
 [!INCLUDE [21858](../includes/secure-recommendations/21858.md)]
+
+### All entitlement management policies have an expiration date
+[!INCLUDE [21878](../includes/secure-recommendations/21878.md)]
+
+### All entitlement management assignment policies that apply to external users require connected organizations 
+[!INCLUDE [21875](../includes/secure-recommendations/21875.md)]
+
+### All entitlement management packages that apply to guests have expirations or access reviews configured in their assignment policies
+[!INCLUDE [21929](../includes/secure-recommendations/21929.md)]
+
+### Manage the local administrators on Microsoft Entra joined devices
+[!INCLUDE [21955](../includes/secure-recommendations/21955.md)]
