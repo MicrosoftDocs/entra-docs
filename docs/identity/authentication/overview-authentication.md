@@ -77,9 +77,9 @@ We've improved our phishing-resistant MFA deployment guide to emphasize phishing
 
 Additionally, the document details a phased deployment strategy and emphasizes effective user communication throughout the process. It encourages monitoring and reporting using tools like the Phishing-Resistant Passwordless Workbook and Microsoft Entra ID reports to track registration and usage of credentials. Finally, it highlights the importance of gradually enforcing the use of phishing-resistant credentials through Conditional Access policies and managing risks associated with identity-based threats using Microsoft Entra ID Protection.
 
-For more information, see [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication).
+For more information, see [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md).
 ## Related content
 
 * [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
 * [Account Recovery (preview)](concept-self-service-account-recovery.md)
-* [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication)
+* [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md)
