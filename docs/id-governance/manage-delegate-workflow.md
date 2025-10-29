@@ -14,7 +14,7 @@ ms.date: 07/31/2025
 
 # Delegated Workflow Management (Preview)
 
-Workflows by default, unless specified during creation, are managed by users with either the Lifecycle Workflows, or Global, administrator roles. As workflows grow and change to meet the needs of members of your organization, so does the need to limit who can manage them. With delegated workflow management, you can scope management of workflows using [Administrative Units](../identity/role-based-access-control/administrative-units.md). When scoped, specific admins are only granted access to manage specific workflows. This allows for greater security within your environment by following Microsoft's least privileged access guidelines by only giving access to specifically what's needed.
+Workflows by default, unless specified during creation, are managed by users with either the Lifecycle Workflows, or Global, administrator roles. As workflows grow and change to meet the needs of members of your organization, so does the need to limit who can manage them. With delegated workflow management, you can scope management of workflows using [Administrative Units](../identity/role-based-access-control/administrative-units.md). When scoped, specific admins are only granted access to manage specific workflows. Scoping allows for greater security within your environment by following Microsoft's least privileged access guidelines by only giving access to specifically what's needed.
 
 The following table shows the differences between the Lifecycle Workflows Administrator role, and the scoped workflow administrator role in terms of Lifecycle workflow capabilities:
 
@@ -32,22 +32,7 @@ The following table shows the differences between the Lifecycle Workflows Admini
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)] You must also have at least one administrative unit within your tenant. For steps on creating an administrative unit, see [Create an administrative unit](../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit). You must als
-
-With an administrative unit created, you can
-
-To use this feature, you will first need to assign Lifecycle workflow admins to an administrative unit scope, you will need to configure the scope via Graph API (UI portal support not available on private preview).
-The info you will need is:
-Lifecycle Workflow admin role id: 59d46f88-662b-457b-bceb-5c3809e5908f
-User Id for user you want to assign the scope
-ID of Admin Unit you want to assign
-Example POST call:
-POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
-{
-    "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
-    "principalId": "<Object ID of user>",
-    "roleDefinitionId": "59d46f88-662b-457b-bceb-5c3809e5908f",
-    "directoryScopeId": "/administrativeUnits/<Object ID of administrative unit>"
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)] You must also have at least one administrative unit within your tenant. For steps on creating an administrative unit, see [Create an administrative unit](../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
 }
 
 ## Assign Lifecycle Workflows Administrator role to administrative unit
@@ -120,8 +105,8 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 To assign Lifecycle workflow admins to an administrative unit scope via API, you must have the following information:
 
-- Lifecycle Workflow admin role id: 59d46f88-662b-457b-bceb-5c3809e5908f
-- User Id for user you want to assign the scope
+- Lifecycle Workflow admin role ID: 59d46f88-662b-457b-bceb-5c3809e5908f
+- User ID for user you want to assign the scope
 - ID of Admin Unit you want to assign
 
 
