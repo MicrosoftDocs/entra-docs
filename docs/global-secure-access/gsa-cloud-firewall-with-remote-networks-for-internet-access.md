@@ -1,5 +1,5 @@
 ---
-title: Global Secure Access cloud firewall with remote networks for internet access
+title: Configure Global Secure Access cloud firewall with remote networks for internet access
 description: Learn how to configure and use GSA Cloud Firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 author: jenniferf-skc    
 ms.author: jfields
@@ -10,9 +10,12 @@ ms.subservice: entra-private-access
 ms.date: 11/18/2025
 ms.custom: it-pro
 ms.reviewer: shkhalid
+ai-usage: ai-assisted
+
+#customer intent: As a Global Secure Access administrator, I want to learn how to configure and use GSA Cloud Firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 ---
 
-# Global Secure Access cloud firewall with remote networks 
+# Configure Global Secure Access cloud firewall with remote networks for Internet access
 
 GSA Cloud Firewall (CFW) protects customers from unauthorized egress access (like connections to the Internet) by applying policies on network traffic, providing centralized management, visibility, and consistent policies for branches and roaming users that use managed devices (with GSA clients). 
 
@@ -28,57 +31,21 @@ With this preview, you'll be able to:
 
 ## Prerequisites
 
-- Fully configured remote networks for Internet Access. 
+- You must have fully configured remote networks for Internet Access. 
 
 ## Available scenarios
 
 In this public preview, these scenarios are supported:
 
-<table>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 95%" />
-</colgroup>
-<thead>
-<tr>
-<th>#</th>
-<th><strong>Scenario</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><p>Admin can create a cloud firewall policy with default Allow action (can't be changed).</p>
-<p>The default action is applied to all traffic that does not match any of the rules in the policy.</p></td>
-</tr>
-<tr>
-<td>2</td>
-<td><p>Admin can add/update rules in a cloud firewall policy and assign priorities to each rule.</p>
-<p>Rule Matching conditions: In each of these rules, admin can define these traffic matching conditions: source IPv4, source Port, destination IPv4, destination Port, and Protocol (TCP, UDP or both).</p>
-<p>Action: Action for each rule can be set to **Allow** or **Block**.</p></td>
-</tr>
-<tr>
-<td>3</td>
-<td>Admin can enable or disable an individual cloud firewall policy rule.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Admin can delete an individual cloud firewall policy rule.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Admin can link a cloud firewall policy to the baseline profile for the remote network.</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Admin can enable or disable the linked firewall policy to the baseline profile (security profile with priority=65000)</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Admin can delete the linked firewall policy with the baseline profile and link another one.</td>
-</tr>
-</tbody>
-</table>
+| # | **Scenario** |
+|---|--------------|
+| 1 | Admin can create a cloud firewall policy with default Allow action (can't be changed).<br><br>The default action is applied to all traffic that does not match any of the rules in the policy. |
+| 2 | Admin can add/update rules in a cloud firewall policy and assign priorities to each rule.<br><br>Rule Matching conditions: In each of these rules, admin can define these traffic matching conditions: source IPv4, source Port, destination IPv4, destination Port, and Protocol (TCP, UDP or both).<br><br>Action: Action for each rule can be set to **Allow** or **Block**. |
+| 3 | Admin can enable or disable an individual cloud firewall policy rule. |
+| 4 | Admin can delete an individual cloud firewall policy rule. |
+| 5 | Admin can link a cloud firewall policy to the baseline profile for the remote network. |
+| 6 | Admin can enable or disable the linked firewall policy to the baseline profile (security profile with priority=65000) |
+| 7 | Admin can delete the linked firewall policy with the baseline profile and link another one. |
 
 ## Scenario configuration steps
 
