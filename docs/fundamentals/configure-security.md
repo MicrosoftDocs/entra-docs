@@ -34,15 +34,19 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Microsoft services applications don't have credentials configured](zero-trust-protect-identities.md#microsoft-services-applications-dont-have-credentials-configured) | Microsoft Entra ID P1 |
 | [User consent settings are restricted](zero-trust-protect-identities.md#user-consent-settings-are-restricted) | Microsoft Entra ID P1 |
 | [Admin consent workflow is enabled](zero-trust-protect-identities.md#admin-consent-workflow-is-enabled) | Microsoft Entra ID P1 |
+| [High Global Administrator to privileged user ratio](zero-trust-protect-identities.md#high-global-administrator-to-privileged-user-ratio) | None (included with Microsoft Entra ID) |
 | [Privileged accounts are cloud native identities](zero-trust-protect-identities.md#privileged-accounts-are-cloud-native-identities) | Microsoft Entra ID P2 |
 | [All privileged role assignments are activated just in time and not permanently active](zero-trust-protect-identities.md#all-privileged-role-assignments-are-activated-just-in-time-and-not-permanently-active) | Microsoft Entra ID P2 |
 | [Passkey authentication method enabled](zero-trust-protect-identities.md#passkey-authentication-method-enabled) | None (included with Microsoft Entra ID) |
+| [Security key attestation is enforced](zero-trust-protect-identities.md#security-key-attestation-is-enforced) | None (included with Microsoft Entra ID) |
 | [Privileged accounts have phishing-resistant methods registered](zero-trust-protect-identities.md#privileged-accounts-have-phishing-resistant-methods-registered) | Microsoft Entra ID P1 |
 | [Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods](zero-trust-protect-identities.md#privileged-microsoft-entra-built-in-roles-are-targeted-with-conditional-access-policies-to-enforce-phishing-resistant-methods) | Microsoft Entra ID P1 |
 | [Require password reset notifications for administrator roles](zero-trust-protect-identities.md#require-password-reset-notifications-for-administrator-roles) | Microsoft Entra ID P1 |
 | [Block legacy authentication](zero-trust-protect-identities.md#block-legacy-authentication) | Microsoft Entra ID P1 |
 | [Temporary access pass is enabled](zero-trust-protect-identities.md#temporary-access-pass-is-enabled) | Microsoft Entra ID P1 |
+| [Restrict Temporary Access Pass to Single Use](zero-trust-protect-identities.md#restrict-temporary-access-pass-to-single-use) | Microsoft Entra ID P1 |
 | [Migrate from legacy MFA and SSPR policies](zero-trust-protect-identities.md#migrate-from-legacy-mfa-and-sspr-policies) | Microsoft Entra ID P1 |
+| [Block administrators from using SSPR](zero-trust-protect-identities.md#block-administrators-from-using-sspr) | Microsoft Entra ID P1 |
 | [Self-service password reset doesn't use security questions](zero-trust-protect-identities.md#self-service-password-reset-doesnt-use-security-questions) | Microsoft Entra ID P1 |
 | [SMS and Voice Call authentication methods are disabled](zero-trust-protect-identities.md#sms-and-voice-call-authentication-methods-are-disabled) | Microsoft Entra ID P1 |
 | [Secure the MFA registration (My Security Info) page](zero-trust-protect-identities.md#secure-the-mfa-registration-my-security-info-page) | Microsoft Entra ID P1 |
@@ -54,9 +58,12 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Microsoft Authenticator app report suspicious activity setting is enabled](zero-trust-protect-identities.md#microsoft-authenticator-app-report-suspicious-activity-setting-is-enabled) | Microsoft Entra ID P1 |
 | [Password expiration is disabled](zero-trust-protect-identities.md#password-expiration-is-disabled) | Microsoft Entra ID P1 |
 | [Smart lockout threshold set to 10 or less](zero-trust-protect-identities.md#smart-lockout-threshold-set-to-10-or-less) | Microsoft Entra ID P1 |
+| [Smart lockout duration is set to a minimum of 60](zero-trust-protect-identities.md#smart-lockout-duration-is-set-to-a-minimum-of-60) | Microsoft Entra ID P1 |
 | [Add organizational terms to the banned password list](zero-trust-protect-identities.md#add-organizational-terms-to-the-banned-password-list) | Microsoft Entra ID P1 |
 | [Require multifactor authentication for device join and device registration using user action](zero-trust-protect-identities.md#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action) | Microsoft Entra ID P1 |
 | [Local Admin Password Solution is deployed](zero-trust-protect-identities.md#local-admin-password-solution-is-deployed) | Microsoft Entra ID P1 |
+| [No usage of ADAL in the tenant](zero-trust-protect-identities.md#no-usage-of-adal-in-the-tenant) | None (included with Microsoft Entra ID) |
+| [Block legacy Azure AD PowerShell module](zero-trust-protect-identities.md#block-legacy-azure-ad-powershell-module) | None (included with Microsoft Entra ID) |
 | [Enable Microsoft Entra ID security defaults](zero-trust-protect-identities.md#enable-microsoft-entra-id-security-defaults) | None (included with Microsoft Entra ID) |
 
 ## Protect tenants and isolation production systems
