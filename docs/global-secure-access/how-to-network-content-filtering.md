@@ -70,14 +70,20 @@ To configure file policies, complete the following initial setup steps:
 1. Confirm access to web applications you plan for file policies.
 
 ## Provision a service principal on your tenant
-To enable the integration between Global Secure Access and Microsoft Purview for file scanning, you need to manually provision a service principal on your tenant. This configuration requires at least Cloud App Administrator permission. 
+To enable the integration between Global Secure Access and Microsoft Purview for file scanning, you need to manually provision a service principal on your tenant. This configuration setup requires at least Cloud Application Administrator permission. 
 
 You can manually trigger service principal creation through PowerShell, Azure CLI, or MS Graph directly. To provision using MS Graph:
-1. Sign in to [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as a [Cloud App Administrator](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#cloud-app-administrator).
-1. 
+1. Sign in to [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as a [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Run the following POST request to create the service principal:
 
-Follow these steps:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+    ```http
+    POST https://graph.microsoft.com/v1.0/servicePrincipals
+    Content-Type: application/json
+
+    {
+      "appId": "2eba9957-8c82-4bfd-8025-e4a4a97a9110"
+    }
+    ```
 
 ## Configure a file policy
 
@@ -149,8 +155,8 @@ Test the configuration by attempting to upload or download files that match the 
 - Compressed content is detected in zip format (the content isn't decompressed).
 - Accuracy of true file type detection might not be 100%.
 - Destination application using WebSocket (such as Copilot) aren't supported.
-- You must manually provision Service Principal on your tenant.
-- Top level and Second level domains don't support wildcards (like *, *.com, *contoso.com) while configuring FQDNs.
+- You must manually provision service principal on your tenant.
+- Top level and second level domains don't support wildcards (like *, *.com, *contoso.com) while configuring FQDNs.
 
 > [!NOTE]
 > Apps might use multiple URLs and FQDNs under the hood when you interact with them. Make sure to configure the correct destination for the file policy to take effect.
@@ -159,7 +165,7 @@ Test the configuration by attempting to upload or download files that match the 
 
 To view traffic logs:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/azure/active-directory/roles/permissions-reference#reports-reader).
-1. **Global Secure Access** > **Monitor** > **Traffic logs**.
+1. Select **Global Secure Access** > **Monitor** > **Traffic logs**.
 
 To show all traffic subject to Netskope inspection:
 1. Go to the Transactions tab. 
