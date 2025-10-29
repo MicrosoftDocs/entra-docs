@@ -91,11 +91,12 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 1. On the list of workflows page, select the workflow that you want to edit the administrative scopes of.
 
-1. On the workflow overview page, select **Properties**.
+1. On the workflow overview page, select **Administration Scope**.
+    > [!TIP]
+    > You can also select the **Administration scope (Preview)** card on the overview page to get to the administration scope page.
+1. On the administration scope page, select **Assign Administration scope**.
 
-1. Under properties, select **Administrative Scope**.
-
-1. From the administrative scopes pane, you can see the list of all administrative units in your tenant. 
+1. From the administration scope pane, you can see the list of all administrative units in your tenant. 
 
 1. Select the administrative unit(s) you want to scope the workflow to. 
 
@@ -108,7 +109,6 @@ To assign Lifecycle workflow admins to an administrative unit scope via API, you
 - Lifecycle Workflow admin role ID: 59d46f88-662b-457b-bceb-5c3809e5908f
 - User ID for user you want to assign the scope
 - ID of Admin Unit you want to assign
-
 
 With this information, you can make the following API call:
 
