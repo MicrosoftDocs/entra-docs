@@ -38,7 +38,7 @@ To create a TLS inspection policy:
 ![alt textPolicy Basic Setting](image.png)
 The  **Default action" specifies what to do if there are no rules matched. By default, it is set as "Inspect".
 1. Select **Next** > **Add rule** brings you to the rules page. You may define a custom rule by specifying a FQDN or select a category.
-![Add a rule](image-3.png)
+:::image type="content" source="media/how-to-transport-layer-security/[].png" alt-text="Screenshot of the Create a TLS inspection policy screen open to the Rules tab.":::
 
 1. **Save**>**Next**>**Submit** to complete the policy configuration. Note a system rule has been auto created to exclude destinations that do not work with TLS inspection. An editable recommended bypass rule was auto-created to exclude Education, Finance, Government, and Health & Medicine categories for TLS policies migrating from the Public Preview. 
 1. Select a policy >**Edit**>**Rules**To review rules created including the pre-created rules.
