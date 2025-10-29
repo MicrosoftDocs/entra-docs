@@ -78,27 +78,6 @@ To delegate workflow management using administrative scopes, you must first assi
     > Assignment must be active to run for users in the administrative unit.
 1. Select **Save**.
 
-### Assign Lifecycle Workflows Administrator role to administrative unit programmatically 
-
-To assign Lifecycle workflow admins to an administrative unit scope via API, you must have the following information:
-
-- Lifecycle Workflow admin role id: 59d46f88-662b-457b-bceb-5c3809e5908f
-- User Id for user you want to assign the scope
-- ID of Admin Unit you want to assign
-
-
-With this information, you can make the following API call:
-
-POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
-
-```
-{
-    "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
-    "principalId": "<Object ID of user>",
-    "roleDefinitionId": "59d46f88-662b-457b-bceb-5c3809e5908f",
-    "directoryScopeId": "/administrativeUnits/<Object ID of administrative unit>"
-}
-```
 
 ## Add administrative scopes to a new workflow
 
@@ -137,6 +116,28 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 1. Select **Save**.
 
+## Assign Lifecycle Workflows Administrator role to administrative unit programmatically 
+
+To assign Lifecycle workflow admins to an administrative unit scope via API, you must have the following information:
+
+- Lifecycle Workflow admin role id: 59d46f88-662b-457b-bceb-5c3809e5908f
+- User Id for user you want to assign the scope
+- ID of Admin Unit you want to assign
+
+
+With this information, you can make the following API call:
+
+POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
+
+```
+{
+    "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
+    "principalId": "<Object ID of user>",
+    "roleDefinitionId": "59d46f88-662b-457b-bceb-5c3809e5908f",
+    "directoryScopeId": "/administrativeUnits/<Object ID of administrative unit>"
+}
+```
+
 ## View the administrative scopes of a workflow using the Microsoft Entra admin center
 
 When managing workflows, it's important to see what administrative scopes they fall under. This allows you to quickly see who can manage each specific workflow. To see the administrative scopes of a workflow, do the following steps:
@@ -172,15 +173,15 @@ Administration scopes can be removed from a workflow at any time. To remove an a
 
 ## Edit the administrative scopes of a workflow using Microsoft Graph
 
-To edit the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
+To edit the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-createnewversion).
 
 ## View the administrative scopes of a workflow using Microsoft Graph
 
-To view the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
+To view the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-get).
 
 ## Remove the administrative scopes of a workflow using Microsoft Graph
 
-To remove the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
+To remove the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-createnewversion).
 
 ## Next steps
 
