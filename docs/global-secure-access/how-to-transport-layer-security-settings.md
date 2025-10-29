@@ -1,5 +1,5 @@
 ---
-title: Configure Transport Layer Security Inspection Settings(Preview)
+title: Configure Transport Layer Security Inspection Settings (Preview)
 description: Learn how to configure a Transport Layer Security inspection certificate authority
 author: HULKsmashGithub
 ms.author: jayrusso
@@ -13,7 +13,7 @@ ms.date: 10/28/2025
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
 ---
 
-# Configure Transport Layer Security inspection settings  (Preview)
+# Configure Transport Layer Security inspection settings (Preview)
 Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access intermediate CA, including signing and uploading the certificate.
 
 > [!IMPORTANT]
@@ -88,7 +88,7 @@ extendedKeyUsage = serverAuth
  ```openssl x509 -req -in <CSR file> -CA rootCAchain.pem -CAkey rootCAchain.key -CAcreateserial -out signedcertificate.pem -days 370 -sha256 -extfile openssl.cnf -extensions signedCA_ext```
 1. Upload the signed certificates (```signedcertificate.pem```and ```rootCAchain.pem```) according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
 
-### Powershell examples to configure certificate authority for TLS inspection
+### PowerShell examples to configure certificate authority for TLS inspection
 Examples of configuring TLS certificate using ADCS and OpenSSL can be found in below links: 
 * [Create a TLS certificates using ADCS](scripts/powershell-active-directory-certificate-service.md)
 * [Create a TLS certificate using OpenSSL](scripts/powershell-open-secure-sockets-layer.md) 
