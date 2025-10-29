@@ -3,7 +3,7 @@ title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/24/2025
+ms.date: 10/28/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -16,9 +16,9 @@ ms.custom: sfi-image-nochange
 
 # Create a file policy to filter network content (preview)
 
-Global Secure Access supports network content filtering. This feature helps you safeguard against unintended data exposure and prevents inline data leaks to generative AI applications and internet destinations. By extending data protection capabilities to the network layer through Global Secure Access, network content filtering enables your organization to enforce data policies on network traffic in real time. You can discover and protect files shared with unsanctioned destinations, such as generative AI and unmanaged cloud apps, from managed endpoints through browsers, applications, add-ins, APIs, and more.
+Global Secure Access supports network content filtering through file policies. This feature helps you safeguard against unintended data exposure and prevents inline data leaks to generative AI applications and internet destinations. By extending data protection capabilities to the network layer through Global Secure Access, network content filtering enables your organization to enforce data policies on network traffic in real time. You can discover and protect files shared with unsanctioned destinations, such as generative AI and unmanaged cloud apps, from managed endpoints through browsers, applications, add-ins, APIs, and more.
 
-The network content filtering solution brings together Microsoft Purview's data classification service and the identity-centric network security policies in Global Secure Access. This combination creates an advanced network-layer data security solution, Data Loss Prevention (DLP), that's identity-centric and policy-driven. By combining deep content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
+The network content filtering solution brings together Microsoft Purview's data classification service and the identity-centric network security policies in Global Secure Access. This combination creates an advanced network-layer data security solution, Data Loss Prevention (DLP), that's identity-centric and policy-driven. By combining content inspection with real-time user risk evaluation, you can enforce granular controls over sensitive data movement across the network without compromising user productivity or security posture.
 
 ### High-level architecture
 :::image type="content" source="media/how-to-network-content-filtering/network-content-filtering-architecture.png" alt-text="Diagram showing the architecture of network content filtering with Global Secure Access and Microsoft Purview." lightbox="media/how-to-network-content-filtering/network-content-filtering-architecture.png":::
@@ -32,8 +32,8 @@ This article explains how to create a file policy to filter internet traffic flo
 ## Scenarios included in this preview 
 
 This preview supports the following key scenarios and outcomes for HTTP/1.1 traffic:
-- Using **Basic content inspection**, you can block files based on file MIME type. 
-- Using **Advanced content inspection with Microsoft Purview**, you can audit and block files based on:
+- Using **Basic file policy**, you can block files based on supported file MIME types. 
+- Using **Scan with Purview**, you can audit and block files based on:
     - Microsoft Purview sensitivity labels
     - Sensitive content in the file
     - The user's risk level
@@ -48,7 +48,7 @@ To use the File Policy feature, you need the following prerequisites:
 - A valid Microsoft Entra tenant.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
     - A valid Microsoft Entra Internet Access license.
-    - A valid Microsoft Purview license, required for advanced content inspection. (You can use basic content inspection without a Purview license.)
+    - A valid Microsoft Purview license, required for **Scan with Purview** inspection. (You can use basic file policy without a Purview license.)
 - A user with the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to configure Global Secure Access settings.
 - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role to configure Conditional Access policies.
 - The Global Secure Access client requires a device (or virtual machine) that is either Microsoft Entra ID joined or Entra ID Hybrid joined.
@@ -61,13 +61,23 @@ To configure file policies, complete the following initial setup steps:
 1. Install and configure the Global Secure Access client:
     1. Install the Global Secure Access client on Windows or macOS.
         > [!IMPORTANT]
-        > Before you continue, test and ensure your client's internet traffic is routed through Global Secure Access. See the steps in the following section to verify client configuration.
+        > Before you continue, test and ensure your client's internet traffic is routed through Global Secure Access. To verify the client configuration, see the steps in the following section.
     1. Select the **Global Secure Access** icon and select the Troubleshooting tab.
     1. Under **Advanced Diagnostics**, select **Run tool**.
     1. In the Global Secure Access Advanced Diagnostics window, select the **Forwarding Profile** tab. 
     1. Verify that **Internet Access** rules are present in the **Rules** section. This configuration might take up to 15 minutes to apply to clients after enabling the Internet Access traffic profile in the Microsoft Entra admin center.
         :::image type="content" source="media/how-to-network-content-filtering/internet-access-rules.png" alt-text="Screenshot of the Global Secure Access Advanced Diagnostics window on the Forwarding Profile tab, showing Internet Access rules in the Rules section." lightbox="media/how-to-network-content-filtering/internet-access-rules.png":::
 1. Confirm access to web applications you plan for file policies.
+
+## Provision a service principal on your tenant
+To enable the integration between Global Secure Access and Microsoft Purview for file scanning, you need to manually provision a service principal on your tenant. This configuration requires at least Cloud App Administrator permission. 
+
+You can manually trigger service principal creation through PowerShell, Azure CLI, or MS Graph directly. To provision using MS Graph:
+1. Sign in to [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as a [Cloud App Administrator](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#cloud-app-administrator).
+1. 
+
+Follow these steps:
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 
 ## Configure a file policy
 
@@ -88,6 +98,7 @@ To configure a file policy in Global Secure Access, complete the following steps
 1. On the **Rules** tab:  
     1. Add a new rule.
     1. Enter the **Name**, **Description**, **Priority**, and **Status** as appropriate.
+    1. If you want to configure a basic data policy, select **Allow** or **Block** from the **Action** menu.
     1. If you configured data policies in Microsoft Purview, select **Scan with Purview** from the **Action** menu.
         :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **File types**.
@@ -138,6 +149,8 @@ Test the configuration by attempting to upload or download files that match the 
 - Compressed content is detected in zip format (the content isn't decompressed).
 - Accuracy of true file type detection might not be 100%.
 - Destination application using WebSocket (such as Copilot) aren't supported.
+- You must manually provision Service Principal on your tenant.
+- Top level and Second level domains don't support wildcards (like *, *.com, *contoso.com) while configuring FQDNs.
 
 > [!NOTE]
 > Apps might use multiple URLs and FQDNs under the hood when you interact with them. Make sure to configure the correct destination for the file policy to take effect.
