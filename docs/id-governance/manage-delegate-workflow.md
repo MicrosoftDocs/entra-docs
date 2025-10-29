@@ -28,12 +28,12 @@ The following table shows the differences between the Lifecycle Workflows Admini
 |[Restore Workflow](delete-lifecycle-workflow.md#view-deleted-workflows-in-the-microsoft-entra-admin-center)     | Yes | Yes (only assigned workflows) |
 |[View workflow history](lifecycle-workflow-history.md)     | Yes | Yes (only assigned workflows) |
 |[Run Workflow on-demand](on-demand-workflow.md)    | Yes | Yes (only assigned workflows) |
-|[Scope Workflows](manage-delegate-workflow.md#edit-the-administrative-scopes-of-a-workflow-using-the-microsoft-entra-admin-center)     | Yes | No |
+|[Scope Workflows](manage-delegate-workflow.md#edit-the-administrative-scopes-of-an-existing-workflow-using-the-microsoft-entra-admin-center)     | Yes | No |
 
 ## Prerequisites
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)] You must also have at least one administrative unit within your tenant. For steps on creating an administrative unit, see [Create an administrative unit](../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
-}
+
 
 ## Assign Lifecycle Workflows Administrator role to administrative unit
 
