@@ -7,14 +7,14 @@ manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 09/10/2025
+ms.date: 10/28/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
 ---
 
-# Configure Transport Layer Security inspection settings (Preview)
-Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access (GSA) intermediate CA, including signing and uploading the certificate.
+# Configure Transport Layer Security inspection settings  (Preview)
+Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access intermediate CA, including signing and uploading the certificate.
 
 > [!IMPORTANT]
 > The Transport Layer Security inspection feature is currently in PREVIEW.   
@@ -40,17 +40,17 @@ To create a CSR and upload the signed certificate for TLS termination:
    - **Common name** (CN): Common name, for example, Contoso TLS ICA, that identifies the intermediate certificate.
    - **Organizational Unit** (OU): Organization name, for example, Contoso IT.
 1. Select **Create CSR**. This step creates a .csr file and saves it to your default download folder.
-:::image type="content" source="media/how-to-transport-layer-security/create-certificate.png" alt-text="Screenshot of the Create certificate pane with fields filled and the Create CSR button highlighted.":::   
+:::image type="content" source="media/how-to-transport-layer-security-settings/create-certificate.png" alt-text="Screenshot of the Create certificate pane with fields filled and the Create CSR button highlighted.":::   
 
 1. Sign the CSR using your PKI service. Make sure **Server Auth** is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certificate in .pem format. If you're testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
    
 1. Select **+Upload certificate**.
 1. In the Upload certificate form, upload the certificate.pem and chain.pem files.
 1. Select **Upload signed certificate**.
-:::image type="content" source="media/how-to-transport-layer-security/upload-certificate.png" alt-text="Screenshot of Upload certificate form with example certificate and chain certificate files in the upload fields."::: 
+:::image type="content" source="media/how-to-transport-layer-security-settings/upload-certificate.png" alt-text="Screenshot of Upload certificate form with example certificate and chain certificate files in the upload fields."::: 
 
-1. After the certificate uploads, the status changes to **Active**.   
-:::image type="content" source="media/how-to-transport-layer-security/status-active.png" alt-text="Screenshot of the TLS inspection settings tab with the certificate status set to Active.":::   
+1. After the certificate uploads, the status changes to **Active**.  We support **one** Active certificate currently.
+:::image type="content" source="media/how-to-transport-layer-security-settings/status-active.png" alt-text="Screenshot of the TLS inspection settings tab with the certificate status set to Active.":::   
 
 
 ### Test with a self-signed root certificate authority using OpenSSL
@@ -86,7 +86,7 @@ extendedKeyUsage = serverAuth
 ```openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCAchain.key -sha256 -days 370 -out rootCAchain.pem -subj "/C=US/ST=US/O=Self Signed/CN=Self Signed Root CA" -config openssl.cnf -extensions rootCA_ext```
 1. Sign the CSR using the following command:
  ```openssl x509 -req -in <CSR file> -CA rootCAchain.pem -CAkey rootCAchain.key -CAcreateserial -out signedcertificate.pem -days 370 -sha256 -extfile openssl.cnf -extensions signedCA_ext```
-1. Upload the signed certificates (```signedcertificate.pem```and ```rootCAchain.pem```) according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
+1. Upload the signed certificates (```signedcertificate.pem```and ```rootCAchain.pem```) according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
 
 ### Powershell examples to configure certificate authority for TLS inspection
 Examples of configuring TLS certificate using ADCS and OpenSSL can be found in below links: 

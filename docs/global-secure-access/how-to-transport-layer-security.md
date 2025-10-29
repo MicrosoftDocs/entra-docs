@@ -25,7 +25,7 @@ This article explains how to create a context-aware Transport Layer Security ins
 
 ## Prerequisites   
 To complete the steps in this process, you must have the following prerequisites in place:      
-- Completed TLS inspection settings with an active enabled certificate authority.   
+- Completed TLS inspection settings with an active, enabled certificate authority.   
 - Test devices or virtual machines running Windows that are either Microsoft Entra joined or hybrid joined to your organization's Microsoft Entra ID.  
 - A trial license for Microsoft Entra Internet Access.  
 - [Global Secure Access prerequisites](how-to-configure-web-content-filtering.md) 
@@ -34,7 +34,7 @@ To complete the steps in this process, you must have the following prerequisites
 To create a context-aware Transport Layer Security inspection policy and assign it to users in your organization, complete the following steps:
 ### Step 1: Global Secure Access admin: create a TLS inspection policy
 To create a TLS inspection policy:
-1. In the Microsoft Entra admin center, go to **Secure** > **TLS inspection policies** > **Create policy**
+1. In the Microsoft Entra admin center, go to **Secure** > **TLS inspection policies** > **Create policy**.
 ![alt textPolicy Basic Setting](image.png)
 The  **Default action" specifies what to do if there are no rules matched. By default, it is set as "Inspect".
 1. Select **Next** > **Add rule** brings you to the rules page. You may define a custom rule by specifying a FQDN or select a category.
