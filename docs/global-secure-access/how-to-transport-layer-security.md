@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 09/10/2025
+ms.date: 10/28/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -35,18 +35,19 @@ To create a context-aware Transport Layer Security inspection policy and assign 
 ### Step 1: Global Secure Access admin: create a TLS inspection policy
 To create a TLS inspection policy:
 1. In the Microsoft Entra admin center, go to **Secure** > **TLS inspection policies** > **Create policy**.
-![alt textPolicy Basic Setting](image.png)
-The  **Default action" specifies what to do if there are no rules matched. By default, it is set as "Inspect".
-1. Select **Next** > **Add rule** brings you to the rules page. You may define a custom rule by specifying a FQDN or select a category.
-![Add a rule](image-3.png)
+:::image type="content" source="media/how-to-transport-layer-security/create-tlsipolicy.png" alt-text="Screenshot of the Create a TLS inspection policy screen open to the Basic tab.":::
+The **Default action** specifies what to do if no rules match. The default setting is **Inspect**..
+1.  Select **Next** > **Add rule**. On the **Rules** page, you can define a custom rule by specifying an **FQDN** or selecting a **Web category**.
+:::image type="content" source="media/how-to-transport-layer-security/add-rule.png" alt-text="Screenshot of the Create a TLS inspection policy screen open to the Rules tab.":::
 
-1. **Save**>**Next**>**Submit** to complete the policy configuration. Note a system rule has been auto created to exclude destinations that do not work with TLS inspection. An editable recommended bypass rule was auto-created to exclude Education, Finance, Government, and Health & Medicine categories for TLS policies migrating from the Public Preview. 
-1. Select a policy >**Edit**>**Rules**To review rules created including the pre-created rules.
- ![alt text](image-4.png)
+1. To complete the policy configuration, go to **Save** > **Next** > **Submit**. Note a system rule has been auto created to exclude destinations that do not work with TLS inspection. An editable recommended bypass rule is automatically created to exclude Education, Finance, Government, and Health & Medicine categories for TLS policies migrating from the preview. 
+1. To review rules, including the auto-created rules, select a policy and then go to **Edit** > **Rules**.
+:::image type="content" source="media/how-to-transport-layer-security/edit-policy-rules.png" alt-text="Screenshot of the Edit a TLS inspection policy screen open to the Rules tab.":::
+
 ### Step 2: Global Secure Access admin: link the TLS inspection policy to a security profile
 Link the TLS inspection policy to a security profile. 
 
-Before you enable TLS inspection on user traffic, make sure your organization has established and communicated an appropriate Terms of Use (ToU) for end users. This step helps maintain transparency and supports compliance with privacy and consent requirements.
+Before you enable TLS inspection on user traffic, make sure your organization has established and communicated TLS policy to end users. This step helps maintain transparency and supports compliance with privacy and consent requirements.
 
 You can link the TLS policy to a security profile in two ways:
 #### Option 1: Link the TLS policy to the baseline profile for all users   
