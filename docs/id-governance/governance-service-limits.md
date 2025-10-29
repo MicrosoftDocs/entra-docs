@@ -47,9 +47,10 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 |Workflow schedule interval in hours     |   1-24 hours      |
 |Number of users per on-demand selection	     |  10       |
 |durationBeforeTimeout range of custom task extensions     |   5 minutes-3 hours      |
+|Administrative scopes per workflow     |   5      |
 
 > [!NOTE]
-> If creating, or updating, a workflow via API the offsetInDays range will be between -180-180 days. The negative value will signal happening before the timeBasedAttribute, while the positive value will signal happening afterwards.
+> If creating, or updating, a workflow via API the offsetInDays range will be between -180 - 180 days. The negative value will signal happening before the timeBasedAttribute, while the positive value will signal happening afterwards.
 
 ## Related content
 

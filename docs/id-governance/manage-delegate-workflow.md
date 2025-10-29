@@ -34,7 +34,7 @@ The following table shows the differences between the Lifecycle Workflows Admini
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)] You must also have at least one administrative unit within your tenant. For steps on creating an administrative unit, see [Create an administrative unit](../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
 
-## Assign Lifecycle Workflows Administrator role to Scope
+## Assign Lifecycle Workflows Administrator role to administrative unit
 
 To delegate workflow management using administrative scopes, you must first assign the Lifecycle Workflows administrator role to the administrative unit. To do so, you'd follow these steps:
 
@@ -54,13 +54,32 @@ To delegate workflow management using administrative scopes, you must first assi
 1. On the add assignments page select the following:<br>
     **Select role**: Lifecycle Workflows Administrator<br>
     **Scope type**: Administrative unit
-1. On the **Selected scope** pane, select the administrative unit where your workflow will be scoped to, and select **Next**.
     :::image type="content" source="media/manage-delegate-workflow/add-administrative-unit.png" alt-text="Screenshot of adding administrative unit.":::
-1. On the **Setting** tab, you can set the assignment as either **Eligible** or **Active**.
+1. On the **Selected scope** pane, select the administrative unit where your workflow will be scoped to, and select **Next**.
 
+1. On the **Setting** tab, you can set the assignment as either **Eligible** or **Active**.
+    > [!NOTE]
+    > Assignment must be active to run for users in the administrative unit.
 1. Select **Save**.
 
-## Edit the administrative scopes of a workflow using the Microsoft Entra admin center
+## Add administrative scopes to a new workflow
+
+To add an administrative scope to a new workflow, set the administrative scope during the workflow creation by doing the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create a workflow**.
+
+1. On the **Choose a workflow** page, select the workflow template that you want to use.
+
+1. On the **Basics** tab, enter a unique display name, description, and administrative scope for the workflow, and then select **Next**. 
+    :::image type="content" source="media/manage-delegate-workflow/create-admin-scope.png" alt-text="Screenshot of setting admin scope of a new workflow.":::
+1. Finish setting the execution conditions, tasks, and create the workflow.
+
+> [!NOTE]
+> You can assign up to five administrative scopes per workflow.
+
+## Edit the administrative scopes of an existing workflow using the Microsoft Entra admin center
 
 With the role set for admins over the administrative unit, you must edit the workflow to be assigned within the scope of that administrative unit. To edit the properties of a workflow to be in an administrative unit's scope using the Microsoft Entra admin center, you do the following steps:
 
