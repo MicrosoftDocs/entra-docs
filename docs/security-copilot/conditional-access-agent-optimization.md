@@ -6,7 +6,7 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 10/14/2025
+ms.date: 10/29/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
