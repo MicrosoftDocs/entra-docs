@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 
 # Configure Global Secure Access cloud firewall with remote networks for Internet access (Preview)
 
-GSA Cloud Firewall (CFW) protects customers from unauthorized egress access (like connections to the Internet) by applying policies on network traffic, providing centralized management, visibility, and consistent policies for branches and roaming users that use managed devices (with GSA clients). 
+Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access (like connections to the Internet) by applying policies on network traffic, providing centralized management, visibility, and consistent policies for branches and roaming users that use managed devices (with GSA clients). 
 
 The current scope of this preview is using GSA Cloud Firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access (also in public preview).
 
@@ -77,9 +77,9 @@ This public preview supports these scenarios:
 
    1. Configure the source and destination matching conditions. Please note these important limitations:
 
-      - IPs can be defined as IPs or CIDRs. IP ranges aren't supported currently.
+      - IPs can be defined as IPs or Classless Inter-Domain Routings (CIDRs). IP ranges aren't supported currently.
 
-      - Destination FQDN isn't supported currently so we recommend keeping it at the **Not set** value (default).
+      - Destination Fully Qualified Domain Name (FQDN) isn't supported currently so we recommend keeping it at the **Not set** value (default).
 
       - Once the value is set, you can't restore it to the initial not-set state. As a workaround, you can delete and recreate the rule.
 
@@ -143,7 +143,7 @@ This public preview supports these scenarios:
 
 - Traffic logs from the Entra ID/GSA portal for cloud firewall aren't currently available.
 
-- It may take up to 15-20 minutes for any firewall policy updates to take effect.
+- It may take 15-20 minutes for any firewall policy updates to take effect.
 
 - Remote networks acquire all Internet traffic except IP ranges for accessing the GSA service edge and IP ranges for Internet Access default bypass policy (please see the public preview document for Remote networks for Internet Access for these ranges). Currently IP ranges in Microsoft 365 (M365) traffic profile, including Entra ID traffic, are acquired. To ensure M365 traffic isn't blocked when you configure a block-all rule to Internet traffic, please configure an allow rule for M365 traffic with a higher priority than the deny-all rule using the traffic ranges:  
   
