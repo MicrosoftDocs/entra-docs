@@ -65,8 +65,8 @@ If the agent identifies something that wasn't previously suggested, it takes the
 1. The agent evaluates any custom instructions you provided.
 1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
 
-> [!TIP]
-> Two policies can be consolidated if they differ by no more than two conditions or controls.
+> [!NOTE]
+> Security Copilot requires at least one SCU is provisioned in your tenant, but that SCU is billed each month even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
 
 The policy suggestions identified by the agent include:
 
@@ -82,7 +82,9 @@ The policy suggestions identified by the agent include:
 > [!IMPORTANT]
 > The agent doesn't make any changes to existing policies unless an administrator explicitly approves the suggestion.
 >
-> All *new* policies suggested by the agent are created in report-only mode. 
+> All *new* policies suggested by the agent are created in report-only mode.
+>
+> Two policies can be consolidated if they differ by no more than two conditions or controls.
 
 ## Getting started
 
