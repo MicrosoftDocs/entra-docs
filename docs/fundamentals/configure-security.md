@@ -27,16 +27,16 @@ Reduce credential-related risk by implementing modern identity standards.
 
 | Check | Minimum required license |
 |---|---|
-| [Applications don't have client secrets configured](zero-trust-protect-identities.md#applications-dont-have-client-secrets-configured) | Microsoft Entra ID P1 |
-| [Service principals don't have certificates or credentials associated with them](zero-trust-protect-identities.md#service-principals-dont-have-certificates-or-credentials-associated-with-them) | Microsoft Entra ID P1 |
-| [Applications don't have certificates with expiration longer than 180 days](zero-trust-protect-identities.md#applications-dont-have-certificates-with-expiration-longer-than-180-days) | Microsoft Entra ID P1 |
-| [Application Certificates need to be rotated on a regular basis](zero-trust-protect-identities.md#application-certificates-need-to-be-rotated-on-a-regular-basis) | Microsoft Entra ID P1 |
-| [Enforce standards for app secrets and certificates](zero-trust-protect-identities.md#enforce-standards-for-app-secrets-and-certificates) | Microsoft Entra ID P1 |
-| [Microsoft services applications don't have credentials configured](zero-trust-protect-identities.md#microsoft-services-applications-dont-have-credentials-configured) | Microsoft Entra ID P1 |
-| [User consent settings are restricted](zero-trust-protect-identities.md#user-consent-settings-are-restricted) | Microsoft Entra ID P1 |
-| [Admin consent workflow is enabled](zero-trust-protect-identities.md#admin-consent-workflow-is-enabled) | Microsoft Entra ID P1 |
+| [Applications don't have client secrets configured](zero-trust-protect-identities.md#applications-dont-have-client-secrets-configured) | None (included with Microsoft Entra ID) |
+| [Service principals don't have certificates or credentials associated with them](zero-trust-protect-identities.md#service-principals-dont-have-certificates-or-credentials-associated-with-them) | None (included with Microsoft Entra ID) |
+| [Applications don't have certificates with expiration longer than 180 days](zero-trust-protect-identities.md#applications-dont-have-certificates-with-expiration-longer-than-180-days) | None (included with Microsoft Entra ID) |
+| [Application Certificates need to be rotated on a regular basis](zero-trust-protect-identities.md#application-certificates-need-to-be-rotated-on-a-regular-basis) | None (included with Microsoft Entra ID) |
+| [Enforce standards for app secrets and certificates](zero-trust-protect-identities.md#enforce-standards-for-app-secrets-and-certificates) | None (included with Microsoft Entra ID) |
+| [Microsoft services applications don't have credentials configured](zero-trust-protect-identities.md#microsoft-services-applications-dont-have-credentials-configured) | None (included with Microsoft Entra ID) |
+| [User consent settings are restricted](zero-trust-protect-identities.md#user-consent-settings-are-restricted) | None (included with Microsoft Entra ID) |
+| [Admin consent workflow is enabled](zero-trust-protect-identities.md#admin-consent-workflow-is-enabled) | None (included with Microsoft Entra ID) |
 | [High Global Administrator to privileged user ratio](zero-trust-protect-identities.md#high-global-administrator-to-privileged-user-ratio) | None (included with Microsoft Entra ID) |
-| [Privileged accounts are cloud native identities](zero-trust-protect-identities.md#privileged-accounts-are-cloud-native-identities) | Microsoft Entra ID P2 |
+| [Privileged accounts are cloud native identities](zero-trust-protect-identities.md#privileged-accounts-are-cloud-native-identities) | None (included with Microsoft Entra ID) |
 | [All privileged role assignments are activated just in time and not permanently active](zero-trust-protect-identities.md#all-privileged-role-assignments-are-activated-just-in-time-and-not-permanently-active) | Microsoft Entra ID P2 |
 | [Passkey authentication method enabled](zero-trust-protect-identities.md#passkey-authentication-method-enabled) | None (included with Microsoft Entra ID) |
 | [Security key attestation is enforced](zero-trust-protect-identities.md#security-key-attestation-is-enforced) | None (included with Microsoft Entra ID) |
