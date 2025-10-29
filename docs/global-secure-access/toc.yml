@@ -104,6 +104,8 @@ items:
         href: how-to-simulate-remote-network.md
       - name: Simulate remote network connectivity using Azure vWAN
         href: how-to-create-remote-network-vwan.md
+      - name: Configure cloud firewall with remote networks for internet access
+        href: gsa-cloud-firewall-with-remote-networks-for-internet-access.md
   - name: Access controls
     expanded: false
     items:
