@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 #customer intent: As a Global Secure Access administrator, I want to learn how to configure and use GSA Cloud Firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 ---
 
-# Configure Global Secure Access cloud firewall with remote networks for Internet access
+# Configure Global Secure Access cloud firewall with remote networks for Internet access (Preview)
 
 GSA Cloud Firewall (CFW) protects customers from unauthorized egress access (like connections to the Internet) by applying policies on network traffic, providing centralized management, visibility, and consistent policies for branches and roaming users that use managed devices (with GSA clients). 
 
@@ -33,14 +33,14 @@ With this preview, you'll be able to:
 
 - You must have fully configured remote networks for Internet Access. 
 
-## Available scenarios
+## Supported scenarios
 
-In this public preview, these scenarios are supported:
+This public preview supports these scenarios:
 
 | # | **Scenario** |
 |---|--------------|
 | 1 | Admin can create a cloud firewall policy with default Allow action (can't be changed).<br><br>The default action is applied to all traffic that does not match any of the rules in the policy. |
-| 2 | Admin can add/update rules in a cloud firewall policy and assign priorities to each rule.<br><br>Rule Matching conditions: In each of these rules, admin can define these traffic matching conditions: source IPv4, source Port, destination IPv4, destination Port, and Protocol (TCP, UDP or both).<br><br>Action: Action for each rule can be set to **Allow** or **Block**. |
+| 2 | Admin can add/update rules in a cloud firewall policy and assign priorities to each rule.<br><br>Rule Matching conditions: In each of these rules, admin can define these traffic matching conditions: source IPv4, source Port, destination IPv4, destination Port, and Protocol (TCP, UDP or both).<br><br>The action for each rule can be set to **Allow** or **Block**. |
 | 3 | Admin can enable or disable an individual cloud firewall policy rule. |
 | 4 | Admin can delete an individual cloud firewall policy rule. |
 | 5 | Admin can link a cloud firewall policy to the baseline profile for the remote network. |
@@ -51,7 +51,7 @@ In this public preview, these scenarios are supported:
 
 ### Create a cloud firewall policy with the default **Allow** action.
 
-1. Login to [Entra admin center](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_isCloudFirewallPolicyEnabled=true&exp.isCloudFirewallPolicyEnabled=true#view/Microsoft_Azure_Network_Access/CloudFirewallPolicy.ReactView).
+1. Login to your [Entra admin center](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_isCloudFirewallPolicyEnabled=true&exp.isCloudFirewallPolicyEnabled=true#view/Microsoft_Azure_Network_Access/CloudFirewallPolicy.ReactView).
 
 1. Browse to **Global Secure Access 🡪 Secure 🡪 Cloud firewall policies 🡪 Create firewall policy.**
 
@@ -67,15 +67,15 @@ In this public preview, these scenarios are supported:
 
 :::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png" alt-text="Screenshot showing the Add rule option in the cloud firewall policy" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png":::
 
-1. Configure the 5-tuple rule:
+3. Configure the 5-tuple rule:
 
-   1. Provide Name/Description.
+   1. Provide a **Name** and **Description**.
 
    1. Assign a priority to the rule relevant to other rules in this policy.
 
-   1. Select Rule status to **Enable/Disable**.
+   1. Select Rule settings **Status** to set to **Enable** or **Disable**.
 
-   1. Configure source and destination matching conditions. Please note these important limitations:
+   1. Configure the source and destination matching conditions. Please note these important limitations:
 
       - IPs can be defined as IPs or CIDRs. IP ranges aren't supported currently.
 
@@ -83,7 +83,7 @@ In this public preview, these scenarios are supported:
 
       - Once the value is set, you can't restore it to the initial not-set state. As a workaround, you can delete and recreate the rule.
 
-   1. Select Action to Allow or Block.
+   1. Set the **Action** to **Allow** or **Block**.
 
 :::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/select-action.png" alt-text="Screenshot showing the cloud firewall rule configuration page" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/select-action.png":::
 
@@ -100,7 +100,7 @@ In this public preview, these scenarios are supported:
    >
    > This firewall rule matches traffic that simultaneously meets the conditions for source IP, source Port, destination Port, destination IP and Protocol.
 
-1. (Optional) Update any values in the rule and save them.
+4. (Optional) Update any values in the rule and save them.
 
 ### Delete a cloud firewall rule
 
