@@ -25,6 +25,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Applications don't have client secrets configured 
 [!INCLUDE [21772](../includes/secure-recommendations/21772.md)]
 
+### Service principals don't have certificates or credentials associated with them 
+[!INCLUDE [21896](../includes/secure-recommendations/21896.md)]
+
 ### Applications don't have certificates with expiration longer than 180 days 
 [!INCLUDE [21773](../includes/secure-recommendations/21773.md)]
 
@@ -135,6 +138,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 
 ### Local Admin Password Solution is deployed
 [!INCLUDE [21953](../includes/secure-recommendations/21953.md)]
+
+### Entra Connect Sync is configured with Service Principal Credentials
+[!INCLUDE [24570](../includes/secure-recommendations/24570.md)]
 
 ### No usage of ADAL in the tenant
 [!INCLUDE [21780](../includes/secure-recommendations/21780.md)]
