@@ -151,38 +151,35 @@ In this public preview, these scenarios are supported:
 
 1. In your Entra admin center, browse to **Global Secure Access > Secure > Security Profiles > Baseline Profile**.
 
-   :::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/image5.png" alt-text="Screenshot showing the navigation to Security Profiles":::
+:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png":::
 
-1. Click on Edit Profile and then select Link policy to an existing cloud firewall policy you have created.
+1. Click on **Edit profile**, then select **Link policy** to link an existing cloud firewall policy.
 
-   :::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/image6.png" alt-text="Screenshot showing the Link policy option":::
+:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png":::
 
 ### Enable or disable the linked firewall policy to the baseline profile
 
-1. Use the pencil icon to change the status of a linked firewall policy from enabled to disabled or vice versa.
+1. Use the pencil icon to change the State of a linked firewall policy from **enabled** to **disabled** or vice versa.
 
-   :::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/image7.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy":::
+:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png":::
 
 ### Delete the linked firewall policy and link to another one
 
-1. Use the trash bin icon to permanently delete any rule and then link to another policy.
+1. Use the trash bin icon to permanently delete any rule. 
+1. Navigate to the **Link a policy** section to link to another policy.
 
-   :::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/image8.png" alt-text="Screenshot showing the delete linked policy option":::
-
-   :::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/image9.png" alt-text="Screenshot showing the confirmation dialog for deleting linked policy":::
+:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png" alt-text="Screenshot showing the confirmation dialog for deleting linked policy" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png":::
 
 ## Known limitations
 
-- Destination FQDN is not supported in the cloud firewall rule.
+- The destination FQDN isn't supported in the cloud firewall rule.
 
-- Traffic logs from Entra/GSA portal for cloud firewall are not available currently.
+- Traffic logs from the Entra ID/GSA portal for cloud firewall aren't currently available.
 
 - It may take up to 15-20 minutes for any firewall policy updates to take effect.
 
-- Remote networks acquire all Internet traffic except IP ranges for accessing the GSA service edge and IP ranges for Internet Access default bypass policy (please see the public preview document for Remote networks for Internet Access for these ranges). Currently IP ranges in M365 traffic profile including Entra traffic are acquired. To ensure M365 traffic is not blocked when you configure a block all rule to Internet traffic, please configure an allow rule for M365 traffic with a higher priority than the deny all rule using the traffic ranges:  
+- Remote networks acquire all Internet traffic except IP ranges for accessing the GSA service edge and IP ranges for Internet Access default bypass policy (please see the public preview document for Remote networks for Internet Access for these ranges). Currently IP ranges in Microsoft 365 (M365) traffic profile, including Entra ID traffic, are acquired. To ensure M365 traffic isn't blocked when you configure a block-all rule to Internet traffic, please configure an allow rule for M365 traffic with a higher priority than the deny-all rule using the traffic ranges:  
   
   132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19.
 
-
-
-[def]: iority and enable or disable
+## Next steps
