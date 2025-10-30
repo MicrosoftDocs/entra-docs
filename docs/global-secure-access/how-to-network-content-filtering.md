@@ -1,9 +1,9 @@
 ---
-title: Create File Policies for Network content Filtering
+title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/29/2025
+ms.date: 10/30/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -70,10 +70,10 @@ To configure file policies, complete the following initial setup steps:
 1. Confirm access to web applications you plan for file policies.
 
 ## Provision a service principal on your tenant
-To enable the integration between Global Secure Access and Microsoft Purview for file scanning, you need to manually provision a service principal on your tenant. This configuration setup requires at least Cloud Application Administrator permission. 
+To enable the integration between Global Secure Access and Microsoft Purview for file scanning, you need to manually provision a service principal on your tenant. You need at least Cloud Application Administrator permission for this configuration setup. 
 
-You can manually trigger service principal creation through PowerShell, Azure CLI, or MS Graph directly. To provision using MS Graph:
-1. Sign in to [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as a [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+You can manually trigger service principal creation through PowerShell, Azure CLI, or Microsoft Graph directly. To provision using Microsoft Graph:
+1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as a [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Run the following POST request to create the service principal:
 
     ```http
@@ -105,8 +105,8 @@ To configure a file policy in Global Secure Access, complete the following steps
     1. Add a new rule.
     1. Enter the **Name**, **Description**, **Priority**, and **Status** as appropriate.
     1. Select the appropriate option for the **Action** menu:
-        - If you want to configure a basic data policy, select **Allow** or **Block**.
-        - If you configured data policies in Microsoft Purview, select **Scan with Purview**.
+        - To configure a basic data policy, select **Allow** or **Block**.
+        - To use data policies configured in Microsoft Purview, select **Scan with Purview**.
             :::image type="content" source="media/how-to-network-content-filtering/scan-with-purview.png" alt-text="Screenshot of the File scan rule screen with the Action menu expanded and the Scan with Purview option selected." lightbox="media/how-to-network-content-filtering/scan-with-purview.png":::
     1. For **Matching conditions**, select the appropriate **Activities** and **File types**.
     1. Select **+ Add destination** and choose an option for the destination.
@@ -156,7 +156,7 @@ Test the configuration by attempting to upload or download files that match the 
 - Multipart encoding isn't supported, so file policy doesn't work for such applications (for example, Google Drive uses multipart encoding for file upload).
 - Compressed content is detected in zip format (the content isn't decompressed).
 - Accuracy of true file type detection might not be 100%.
-- Destination applications using WebSocket (such as Copilot) isn't supported.
+- Destination applications using WebSocket (such as Copilot) aren't supported.
 - You must manually provision a service principal on your tenant.
 - Top level and second level domains don't support wildcards (like *, *.com, *contoso.com) while configuring FQDNs.
 
