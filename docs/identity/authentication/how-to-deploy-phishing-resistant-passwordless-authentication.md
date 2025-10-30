@@ -5,7 +5,7 @@ description: Detailed guidance to deploy passwordless and phishing-resistant aut
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 10/30/2025
 
 ms.author: justinha
 author: sipower
@@ -33,8 +33,8 @@ Any other users| <li>Any other user in the organisation, such as Information wor
 Microsoft recommends that you broadly deploy phishing-resistant passwordless authentication across your organization. We recomend you start your deployment with one of the user persona's first. 
 
 
-Microsoft recommends that you categories your users based on these personas, and then place users into a Microsoft Entra ID groups specifically for that user persona. These groups are used in later steps to [roll out credentials](~/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md#drive-usage-of-phishing-resistant-credentials) 
-to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](~/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md#enforce-phishing-resistant-methods-for-sign-in).
+Microsoft recommends that you categories your users based on these personas, and then place users into a Microsoft Entra ID groups specifically for that user persona. These groups are used in later steps to [roll out credentials](#drive-usage-of-phishing-resistant-credentials) 
+to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](#step-4-enforce-phishing-resistant-methods-for-sign-in).
 
 Using groups you can continue to onboard new parts of the organisation simultaneously. Take the approach of "*don’t let perfect be the enemy of good*" and deploy secure credentials as much as possible. As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
 
@@ -109,8 +109,7 @@ To bootstrap existing users to phishing-resistant passwordless credentials, firs
 
 For new users or users without MFA, go through a process to issue users a TAP. You can issue a TAP the same way you give new users their first credential, or by using Microsoft Entra Verified ID integrations. Once users have a TAP, they're ready to bootstrap their first phishing-resistant credential.
 
-It's important for the user’s first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using an Entra joined device and [Web sign-in for Windows](https://learn.microsoft.com/windows/security/identity-protection/web-sign-in).
-
+It's important for the user’s first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC by using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using a device joined to Microsoft Entra ID and [Web sign-in for Windows](/windows/security/identity-protection/web-sign-in).
 
 
 The following table lists recommendation portable credentials for different personas:
@@ -120,9 +119,7 @@ User Persona | Recommended portable credential | Alternative portable credential
 Admins and highly regulated users| FIDO2 Security Keys | Passkey for Microsoft Authenticator App, Certificate Based Authentication (CBA)|
 Any other user | Synced Passkey | FIDO2 Security Key, Passkeys for Microsoft Authenticator App|
 
-The passkey authentication credential can be scoped using [Passkey profiles](insert Doc link). A Passkey Profile should be setup for each persona with the reccomended portable credential selected.
-
-
+The passkey authentication credential can be scoped using passkey profiles. A passkey profile should be setup for each persona with the reccomended portable credential selected.
 
 Use the following guidance to enable recommended and alternative portable credentials for the relevant user personas for your organization:
 
@@ -337,7 +334,7 @@ As you execute these different phases, you may need to slow down depending on th
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png":::
 
-The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is [Conditional Access authentication strengths](concept-authentication-strengths.md#authentication-strengths). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
+The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is [Conditional Access authentication strengths](concept-authentication-strengths.md). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
 
 1. Admins on Windows and iOS
 1. Admins on macOS and Android
