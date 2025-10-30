@@ -69,4 +69,4 @@ The **Summary of agent activity** is a natural language description of the activ
 ## Related content
 
 - [Access Review Agent with Microsoft Security Copilot](access-review-agent.md)
-- [What are access reviews?](access-reviews-overview.md)
+- [What are access reviews?](../id-governance/access-reviews-overview.md)

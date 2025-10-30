@@ -267,6 +267,9 @@ The following table shows the minimum requirements for the Microsoft Entra Conne
 | 300,000–600,000 |1.6 GHz |32 GB |450 GB |
 | More than 600,000 |1.6 GHz |32 GB |500 GB |
 
+The specifications listed above represent combined hardware requirements for the Microsoft Entra Connect server hosting both the synchronization application and the SQL Server database (either the built-in SQL Express or a full SQL Server instance installed locally).
+If the SQL Server database is hosted remotely on a separate server, the Entra Connect application server may require fewer resources, while the SQL Server will need its own compute, memory, and storage capacity according to SQL Server sizing best practices.
+
 The minimum requirements for computers running AD FS or Web Application Proxy servers are:
 
 * CPU: Dual core 1.6 GHz or higher
