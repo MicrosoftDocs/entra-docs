@@ -57,7 +57,7 @@ This public preview supports these scenarios:
 
 1. Provide a **Name** and **Description**, then click **Create**.
 
-:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/create-cloud-firewall-policy.png" alt-text="Screenshot showing the Create firewall policy page in the Entra admin center" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/create-cloud-firewall-policy.png":::
+:::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/create-cloud-firewall-policy.png" alt-text="Screenshot showing the Create firewall policy page in the Entra admin center" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/create-cloud-firewall-policy.png":::
 
 ### Add or update a cloud firewall rule, assign priority and enable or disable
 
@@ -65,7 +65,7 @@ This public preview supports these scenarios:
 
 1. Under **Rules**, select **Add** rule.
 
-:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png" alt-text="Screenshot showing the Add rule option in the cloud firewall policy" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png":::
+:::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png" alt-text="Screenshot showing the Add rule option in the cloud firewall policy" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png":::
 
 3. Configure the 5-tuple rule:
 
@@ -85,7 +85,7 @@ This public preview supports these scenarios:
 
    1. Set the **Action** to **Allow** or **Block**.
 
-:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/select-action.png" alt-text="Screenshot showing the cloud firewall rule configuration page" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/select-action.png":::
+:::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/select-action.png" alt-text="Screenshot showing the cloud firewall rule configuration page" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/select-action.png":::
 
    > [!NOTE]
    > In the rule, source IP, source port, destination IP, destination port, and protocol are logically AND.
@@ -106,7 +106,7 @@ This public preview supports these scenarios:
 
 1. Use the trash bin icon under the **Actions** column to permanently delete any rule.
 
-:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules-2.png" alt-text="Screenshot showing the delete option for cloud firewall rules" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules-2.png":::
+:::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules-2.png" alt-text="Screenshot showing the delete option for cloud firewall rules" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules-2.png":::
 
    > [!TIP]
    > You can also disable the rule if you intend to use the rule in the future rather than deleting it.
@@ -118,24 +118,24 @@ This public preview supports these scenarios:
 
 1. In your [Entra admin center](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_isCloudFirewallPolicyEnabled=true&exp.isCloudFirewallPolicyEnabled=true#view/Microsoft_Azure_Network_Access/CloudFirewallPolicy.ReactView), browse to **Global Secure Access > Secure > Security Profiles > Baseline Profile**.
 
-:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png":::
+:::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png":::
 
 1. Click on **Edit profile**, then select **Link policy** to link an existing cloud firewall policy.
 
-:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png":::
+:::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png":::
 
 ### Enable or disable the linked firewall policy to the baseline profile
 
 1. Use the pencil icon to change the State of a linked firewall policy from **enabled** to **disabled** or vice versa.
 
-:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png":::
+:::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png":::
 
 ### Delete the linked firewall policy and link to another one
 
 1. Use the trash bin icon to permanently delete any rule. 
 1. Navigate to the **Link a policy** section to link to another policy.
 
-:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png" alt-text="Screenshot showing the confirmation dialog for deleting linked policy" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png":::
+:::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png" alt-text="Screenshot showing the confirmation dialog for deleting linked policy" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png":::
 
 ## Known limitations
 
