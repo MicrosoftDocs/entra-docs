@@ -208,7 +208,7 @@ The following restrictions apply when you configure a policy by using the passwo
 
 ### Require risk remediation
 
-When user risk is detected, users can self-remediate by completing the appropriate remediation flow, regardless of their authentication method. The Microsoft-managed remediation policy in Conditional Access accommodates all authentication methods, including password-based and passwordless. For more information, see [Require risk remediation with Microsoft-managed remediation (preview)](concept-identity-protection-policies.md#require-risk-remediation-with-microsoft-managed-remediation-preview).
+When user risk is detected, users can self-remediate by completing the appropriate remediation flow, regardless of their authentication method. The Microsoft-managed remediation policy in Conditional Access accommodates all authentication methods, including password-based and passwordless. For more information, see [Require risk remediation with Microsoft-managed remediation (preview)](../../id-protection/concept-identity-protection-policies.md#require-risk-remediation-with-microsoft-managed-remediation-preview).
 
 When you select **Require risk remediation** as a grant control, the following settings are automatically applied to the policy:
 - **Require authentication strength**
