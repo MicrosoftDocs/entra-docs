@@ -36,7 +36,7 @@ This article describes how you can create multiple branding themes for different
 
 When you create a branding theme, here are some of the properties you can customize.
 
-:::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in-page-map.png" alt-text="Screenshot of the sign-in page, with each of the company branding elements highlighted." lightbox="./media/how-to-customize-branding-themes-apps/sign-in-page-map.png":::
+:::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in-page-map.png" alt-text="Screenshot of the sign-in page, with each of the default branding elements highlighted." lightbox="./media/how-to-customize-branding-themes-apps/sign-in-page-map.png":::
 
 | Property | Description |
 | --- | --- |
@@ -49,7 +49,6 @@ When you create a branding theme, here are some of the properties you can custom
 | Sign-in page title | Larger text that appears below the banner logo. |
 | Sign-in page description | Text to describe the sign-in page. |
 | Username hint and text | The text that appears before a user enters their information. |
-| ??? | A link you can add below the sign-in page text for password resets. |
 | Sign-in display message box | Text you can add below the username field. |
 | Footer link: Privacy & Cookies | Link you can add to the lower-right corner for privacy information. |
 | Footer: Terms of Use | Text in the lower-right corner of the page where you can add Terms of use information. |
@@ -58,11 +57,17 @@ When you create a branding theme, here are some of the properties you can custom
 
 ## How branding themes work
 
+Branding themes build on neutral branding and default branding.
+
+- Branding theme - Customizations of the default branding where you can have multiple themes.
+- Default branding (company branding) - Customizations of the neutral branding for a tenant.
+- Neutral branding - Initial branding for a tenant.
+
 Here are some important things to know about how branding themes work.
 
-- Branding themes can be applied to specific applications, while company branding applies tenant-wide.
-- Company branding is used as fallback for any properties not defined in the branding theme.
-- Default branding is used for any properties not defined in company branding.
+- Branding themes can be applied to specific applications, while default branding applies tenant-wide.
+- Default branding is used as fallback for any properties not defined in the branding theme.
+- Neutral branding is used for any properties not defined in default branding.
 
 ## Limits and constraints
 
@@ -70,7 +75,9 @@ Here are some of the limits and constraints for branding themes.
 
 - You can create up to 5 branding themes per tenant.
 - The live preview capability previews style and layout changes and only shows the Sign in page. Live preview does not include any custom text overrides.
-- You can't use the name **Default theme** for your branding theme name. This name is reserved for company branding settings.
+- You can't use the name **Default theme** for your branding theme name. This name is reserved for default branding settings.
+- Custom text changes are limited to sign-in page only.
+- If you don't update the banner logo, the Microsoft logo is displayed instead of the tenant name.
 
 ## Create a new theme
 
@@ -78,7 +85,7 @@ Here are some of the limits and constraints for branding themes.
 
 1. Browse to **Entra ID** > **Custom branding**.
 
-1. On the **Company branding** page, select **Branding Themes** and then select the **Themes** tab.
+1. On the **Company branding** page, select **Branding themes** and then select the **Themes** tab.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/create-new-theme.png" alt-text="Screenshot of the Company Branding page and the Themes tab." lightbox="./media/how-to-customize-branding-themes-apps/create-new-theme.png":::
 
@@ -102,8 +109,6 @@ Here are some of the limits and constraints for branding themes.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/preview-button.png" alt-text="Screenshot of the Preview button to preview a layout." lightbox="./media/how-to-customize-branding-themes-apps/preview-button.png":::
 
-    :::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in-preview.png" alt-text="Screenshot of the Microsoft Sign in experience and the background layout." lightbox="./media/how-to-customize-branding-themes-apps/sign-in-preview.png":::
-
 1. On the **Styling** tab, modify any of the background elements.
 
    - **Background color** – The color that replaces the background image whenever the image can't be loaded, for example due to connection latency.
@@ -120,7 +125,7 @@ Here are some of the limits and constraints for branding themes.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in.png" alt-text="Screenshot of the customized Sign in experience." lightbox="./media/how-to-customize-branding-themes-apps/sign-in.png":::
 
-1. On the **Custom text** tab, select a page you want to customize, such as Sign-in, Sign-up, Attribute collection, or One-time code.
+1. On the **Custom text** tab, for the **Sign-in** page, select the **Default** link.
 
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/custom-text-tab.png" alt-text="Screenshot of the Create a theme page and the Custom text tab settings." lightbox="./media/how-to-customize-branding-themes-apps/custom-text-tab.png":::
 
@@ -175,10 +180,6 @@ In this section, you add a language to a theme.
 1. On the **Languages** tab, select **Add a language** to customize the language of the theme.
   
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/languages-tab.png" alt-text="Screenshot of the Languages tab to add a language." lightbox="./media/how-to-customize-branding-themes-apps/languages-tab.png":::
-
-## Use Microsoft Graph API
-
-To create app-based branding with Microsoft Graph APIs, see .
 
 ## Related content
 
