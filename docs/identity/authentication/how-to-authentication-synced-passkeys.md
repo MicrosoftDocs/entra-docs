@@ -1,5 +1,5 @@
 ---
-title: How to enable synced passkeys (FIDO2) in Microsoft Entra ID
+title: How to enable synced passkeys (FIDO2) in Microsoft Entra ID (Preview)
 description: Learn how to enable synced passkeys (FIDO2) in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
@@ -13,11 +13,11 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable synced passkeys (FIDO2) in Microsoft Entra ID.
 ---
 
-# How to enable synced passkeys (FIDO2) in Microsoft Entra ID
+# How to enable synced passkeys (FIDO2) in Microsoft Entra ID (preview)
 
-Passkeys (FIDO2) are a strong, phishing resistant alternative to passwords. With this public preview, Microsoft Entra ID supports synced passkeys, which are passkeys stored in platform or third party passkey providers (for example, Apple iCloud Keychain, Google Password Manager, 1Password, Bitwarden) and made available across a user’s devices. Synced passkeys greatly reduce recovery and re issuance friction, accelerating passwordless adoption for most organizations.
+Passkeys (FIDO2) are a strong, phishing resistant alternative to passwords. With this preview, Microsoft Entra ID supports synced passkeys. Synced passkeys are stored in platform or third-party passkey providers such as Apple iCloud Keychain, Google Password Manager, 1Password, or Bitwarden. They're made available across a user’s devices. Synced passkeys simplify user onboarding and account recovery, which accelerates passwordless adoption for most organizations.
 
-## What are synced vs. device-bound passkeys?
+## What are synced versus device-bound passkeys?
 
 Passkeys are FIDO2-based credentials that provide strong, phishing-resistant authentication. Microsoft Entra ID supports two main types of passkeys:
 
@@ -69,7 +69,7 @@ Learn more about how Apple and Google protect passkeys stored in their cloud wit
 
   <sup>2</sup>Passkey provider is only available in cross-device flows. 
 
-## Enable synced passkeys 
+## Enable synced passkeys (preview)
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Make sure you opted-in to the Passkey profiles (preview).

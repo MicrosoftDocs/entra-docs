@@ -50,7 +50,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
 ## Enable passkey (FIDO2) authentication method 
 
 >[!NOTE]
->If you would like to configure different passkey (FIDO2) settings for different groups of users, see [Passkey profiles (preview)](concept-authentication-passkey-profiles.md).
+>If you would like to configure different passkey (FIDO2) settings for different groups of users, see [How to enable passkey profiles (preview) in Microsoft Entra ID](how-to-authentication-passkey-profiles.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
