@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 
 # Configure Global Secure Access cloud firewall with remote networks for Internet access (Preview)
 
-Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access (like connections to the Internet) by applying policies on network traffic, providing centralized management, visibility, and consistent policies for branches and roaming users that use managed devices (with GSA clients). 
+Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access (like connections to the Internet) by applying policies on network traffic and providing centralized management, visibility, and consistent policies for branches and roaming users that use managed devices (with GSA clients). 
 
 The current scope of this preview is using GSA Cloud Firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access (also in public preview).
 
@@ -25,7 +25,7 @@ With this preview, you'll be able to:
 
 - Define granular Firewall filtering rules, where you'll define the traffic matching conditions and an action in case the traffic matches.
 
-- Define five tuple rules based on source IP, source Port, destination IP, destination Port, and destination Protocol (TCP, UDP).
+- Define 5-tuple rules based on source IP, source Port, destination IP, destination Port, and destination Protocol (TCP, UDP).
 
 - Define and enforce an action between **Allow** and **Block**.
 
@@ -57,7 +57,7 @@ This public preview supports these scenarios:
 
 1. Provide a **Name** and **Description**, then click **Create**.
 
-:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/create-cloud-firewall-policy.png" alt-text="Screenshot showing the Create firewall policy page in the Entra admin center" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/create-cloud-firewall-policy.png":::
+:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/create-cloud-firewall-policy.png" alt-text="Screenshot showing the Create firewall policy page in the Entra admin center" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/create-cloud-firewall-policy.png":::
 
 ### Add or update a cloud firewall rule, assign priority and enable or disable
 
@@ -65,7 +65,7 @@ This public preview supports these scenarios:
 
 1. Under **Rules**, select **Add** rule.
 
-:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png" alt-text="Screenshot showing the Add rule option in the cloud firewall policy" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png":::
+:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png" alt-text="Screenshot showing the Add rule option in the cloud firewall policy" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules.png":::
 
 3. Configure the 5-tuple rule:
 
@@ -85,7 +85,7 @@ This public preview supports these scenarios:
 
    1. Set the **Action** to **Allow** or **Block**.
 
-:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/select-action.png" alt-text="Screenshot showing the cloud firewall rule configuration page" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/select-action.png":::
+:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/select-action.png" alt-text="Screenshot showing the cloud firewall rule configuration page" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/select-action.png":::
 
    > [!NOTE]
    > In the rule, source IP, source port, destination IP, destination port, and protocol are logically AND.
@@ -106,7 +106,7 @@ This public preview supports these scenarios:
 
 1. Use the trash bin icon under the **Actions** column to permanently delete any rule.
 
-:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-rules-2.png" alt-text="Screenshot showing the delete option for cloud firewall rules" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-rules-2.png":::
+:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules-2.png" alt-text="Screenshot showing the delete option for cloud firewall rules" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-rules-2.png":::
 
    > [!TIP]
    > You can also disable the rule if you intend to use the rule in the future rather than deleting it.
@@ -116,26 +116,26 @@ This public preview supports these scenarios:
 > [!IMPORTANT]
 > As a best practice, we recommend creating rules in the policy first before linking the policy to the baseline profile. This ensures all changes apply collectively. This is particularly important if you create a "block all" rule for the entire branch traffic and then add rules to allow certain traffic. Without following this best practice, you might inadvertently block yourself for all branch traffic.
 
-1. In your Entra admin center, browse to **Global Secure Access > Secure > Security Profiles > Baseline Profile**.
+1. In your [Entra admin center](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_isCloudFirewallPolicyEnabled=true&exp.isCloudFirewallPolicyEnabled=true#view/Microsoft_Azure_Network_Access/CloudFirewallPolicy.ReactView), browse to **Global Secure Access > Secure > Security Profiles > Baseline Profile**.
 
-:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png":::
+:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png":::
 
 1. Click on **Edit profile**, then select **Link policy** to link an existing cloud firewall policy.
 
-:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png":::
+:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png":::
 
 ### Enable or disable the linked firewall policy to the baseline profile
 
 1. Use the pencil icon to change the State of a linked firewall policy from **enabled** to **disabled** or vice versa.
 
-:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png":::
+:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/link-policy-status.png":::
 
 ### Delete the linked firewall policy and link to another one
 
 1. Use the trash bin icon to permanently delete any rule. 
 1. Navigate to the **Link a policy** section to link to another policy.
 
-:::image type="content" source="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png" alt-text="Screenshot showing the confirmation dialog for deleting linked policy" lightbox="media/gsa-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png":::
+:::image type="content" source="configure-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png" alt-text="Screenshot showing the confirmation dialog for deleting linked policy" lightbox="configure-cloud-firewall-with-remote-networks-for-internet-access/link-a-policy.png":::
 
 ## Known limitations
 
