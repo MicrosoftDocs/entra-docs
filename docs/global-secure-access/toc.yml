@@ -177,7 +177,7 @@ items:
         href: concept-transport-layer-security.md 
       - name: Configure Transport Layer Security inspection settings
         href: how-to-transport-layer-security-settings.md
-      - name: Configure Transport Layer Security inspection policys
+      - name: Configure Transport Layer Security inspection policies
         href: how-to-transport-layer-security.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
