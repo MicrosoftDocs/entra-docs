@@ -27,9 +27,9 @@ Lifecycle Workflows allows you to trigger workflows to run automatically for use
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 
-## Use Custom Attribute Triggers in Lifecycle Workflows using the Microsoft Entra admin center
+## Use Custom Attribute Triggers in a new workflow using the Microsoft Entra admin center
 
-To use custom attribute triggers in Lifecycle Workflows, do the following steps:
+To use custom attribute triggers in a new workflow, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) and [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
@@ -46,6 +46,21 @@ To use custom attribute triggers in Lifecycle Workflows, do the following steps:
 1. Finish configuring the workflow and save it.  
     > [!NOTE]
     > Attribute changes are only detected for scheduled workflows.
+
+## Add a custom attribute to an existing workflow trigger using the Microsoft Entra admin center
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) and [Attribute Assignment Administrator](../identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
+    
+1. Select the workflow that you want to add a custom attribute to the trigger of.
+
+1. On the workflow overview page, select **Execution conditions**.
+
+1. Under **Trigger details**, update the trigger with the custom attribute you want to use to trigger the workflow.
+
+1. Select **Save**.
+
 
 ## Custom Attribute Trigger Considerations
 
@@ -78,7 +93,7 @@ For frequently asked question about using custom attribute triggers within lifec
 
 ## Next step
 
-
+- [Lifecycle workflows execution conditions and scheduling](lifecycle-workflow-execution-conditions.md)
 - [Custom security attributes (CSA)](manage-workflow-custom-security-attribute.md)
 
 
