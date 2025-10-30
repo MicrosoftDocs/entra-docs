@@ -26,6 +26,10 @@ When users access a sensitive application, admins might consider multiple condit
 - Network location
 - Device information
 
+## Agent risk
+
+FOO
+
 ## User risk 
 
 Admins with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate user risk as part of a Conditional Access policy. User risk shows the likelihood that an identity or account is compromised. Learn more about user risk in [What is risk](~/id-protection/concept-identity-protection-risks.md) and [How to configure and enable risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
