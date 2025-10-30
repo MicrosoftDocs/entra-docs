@@ -132,7 +132,7 @@
     href: howto-authentication-temporary-access-pass.md
   - name: Enable QR code auth method
     href: how-to-authentication-qr-code.md
-  - name: Plan phishing-resistant authentication
+  - name: Plan phishing-resistant MFA
     items:
     - name: Get started
       href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
