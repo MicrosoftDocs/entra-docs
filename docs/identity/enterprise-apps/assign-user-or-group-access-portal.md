@@ -19,7 +19,7 @@ zone_pivot_groups: enterprise-apps-all
 
 # Manage users and groups assignment to an application
 
-This article shows you how to assign users and groups to an enterprise application in Microsoft Entra ID. When you assign a user to an application, the application appears in the user's [My Apps](https://myapps.microsoft.com/) portal for easy access. If the application exposes app roles, you can also assign a specific app role to the user.
+This article shows you how to assign users and groups to an enterprise application in Microsoft Entra ID. When you assign a user to an application, the application appears in the user's [My Apps](https://myapps.microsoft.com/) portal for easy access. If the application exposes app roles, you can also assign a specific app role to the user. If provisioning is enabled for the application, then the user is provisioned into the application.
 
 When you assign a group to an application, only users in the group have access. The assignment doesn't cascade to nested groups.
 
@@ -28,7 +28,7 @@ Group-based assignment requires Microsoft Entra ID P1 or P2 edition. Nested grou
 For greater control, certain types of enterprise applications can be configured to require user assignment. For more information on requiring user assignment for an app, see [Manage access to an application](what-is-access-management.md#requiring-user-assignment-for-an-app). Applications that require users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
 
 > [!NOTE]
-> If you encounter limitations when managing groups through the portal, such as with application access policy groups, consider using alternative methods like [PowerShell](#assign-users-and-groups-to-an-application-using-microsoft-graph-powershell) or [Microsoft Graph API](#assign-users-and-groups-to-an-application-using-microsoft-graph-api). 
+> Applications may also support service principals assigned to app roles. If you encounter limitations when managing groups through the portal, such as with application access policy groups, or wish to assign service principals to app roles, consider using alternative methods like [PowerShell](#assign-users-and-groups-to-an-application-using-microsoft-graph-powershell) or [Microsoft Graph API](#assign-users-and-groups-to-an-application-using-microsoft-graph-api). 
 
 ## Prerequisites
 
@@ -139,7 +139,7 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
 
 To assign a group to an enterprise app, replace `Get-EntraUser` with `Get-EntraGroup` and replace `New-EntraUserAppRoleAssignment` with `New-EntraGroupAppRoleAssignment`.
 
-For more information on how to assign a group to an application role, see the documentation for [New-EntraGroupAppRoleAssignment](/powershell/module/microsoft.entra/new-entragroupapproleassignment).
+For more information on how to assign a group to an application role, see the documentation for [New-EntraGroupAppRoleAssignment](/powershell/module/microsoft.entra.groups/new-entragroupapproleassignment).
 
 ## Unassign users and groups from an application using Microsoft Entra PowerShell
 

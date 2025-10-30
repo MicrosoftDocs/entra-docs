@@ -173,16 +173,14 @@ items:
     items:
       - name: Understand Internet Access
         href: concept-internet-access.md
-      - name: Configure web content filtering
-        href: how-to-configure-web-content-filtering.md
-      - name: Check URL category
-        href: how-to-check-web-content-filtering-categories.md
       - name: What is Transport Layer Security inspection? 
         href: concept-transport-layer-security.md 
       - name: Configure Transport Layer Security inspection 
         href: how-to-transport-layer-security.md 
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: Check URL category
+        href: how-to-check-web-content-filtering-categories.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
       - name: Customize the block page
