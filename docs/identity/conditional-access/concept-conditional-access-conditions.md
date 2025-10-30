@@ -22,7 +22,7 @@ Admins combine multiple conditions to create specific, fine-grained Conditional 
 
 When users access a sensitive application, admins might consider multiple conditions in their access decisions, such as:
 
-- Sign-in risk information from Microsoft Entra ID Protection
+- Risk information from Microsoft Entra ID Protection
 - Network location
 - Device information
 
