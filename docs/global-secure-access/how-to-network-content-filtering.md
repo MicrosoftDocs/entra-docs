@@ -1,5 +1,5 @@
 ---
-title: Create File Policies for Network Content Filtering
+title: Create File Policies for Network content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.service: global-secure-access
 ms.topic: how-to
