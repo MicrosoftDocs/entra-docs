@@ -5,7 +5,7 @@ description: Explore Conditional Access conditions, including user risk, sign-in
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/22/2025
+ms.date: 10/30/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -28,7 +28,7 @@ When users access a sensitive application, admins might consider multiple condit
 
 ## Agent risk
 
-FOO
+Admins with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate user risk as part of a Conditional Access policy. Agent risk shows the likelihood that an agent is compromised. Learn more about agent risk in the [ID Protection docs](~/id-protection/concept-risky-agents.md).
 
 ## User risk 
 
