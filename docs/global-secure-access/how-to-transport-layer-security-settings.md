@@ -44,7 +44,7 @@ To create a CSR and upload the signed certificate for TLS termination:
 
 1. Sign the CSR using your PKI service. Make sure **Server Auth** is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certificate in .pem format. If you're testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
    
-1. Select **+Upload certificate**.
+1. Select **+ Upload certificate**.
 1. In the Upload certificate form, upload the certificate.pem and chain.pem files.
 1. Select **Upload signed certificate**.
 :::image type="content" source="media/how-to-transport-layer-security-settings/upload-certificate.png" alt-text="Screenshot of Upload certificate form with example certificate and chain certificate files in the upload fields."::: 
@@ -95,4 +95,6 @@ Examples of configuring TLS certificate using ADCS and OpenSSL can be found in b
 
 ## Related content
 * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
+* [How to configure Transport Layer Security inspection policy](how-to-transport-layer-security.md)
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
+

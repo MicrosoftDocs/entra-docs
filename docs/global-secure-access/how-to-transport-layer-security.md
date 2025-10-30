@@ -1,5 +1,5 @@
 ---
-title: Configure Transport Layer Security Inspection Policy (Preview)
+title: Configure Transport Layer Security Inspection Policies (Preview)
 description: Learn how to configure a Transport Layer Security inspection policy and assign it to users in your organization.
 author: HULKsmashGithub
 ms.author: jayrusso
@@ -13,7 +13,7 @@ ms.date: 10/28/2025
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
 ---
 
-# Configure Transport Layer Security inspection policy (Preview)
+# Configure Transport Layer Security inspection policies (Preview)
 Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access lets you decrypt and inspect encrypted traffic at service edge locations. This feature lets Global Secure Access apply advanced security controls like threat detection, content filtering, and granular access policies. These access policies help protect against threats that might be hidden in encrypted communications.
 
 > [!IMPORTANT]
@@ -35,8 +35,8 @@ To create a context-aware Transport Layer Security inspection policy and assign 
 ### Step 1: Global Secure Access admin: create a TLS inspection policy
 To create a TLS inspection policy:
 1. In the Microsoft Entra admin center, go to **Secure** > **TLS inspection policies** > **Create policy**.
-:::image type="content" source="media/how-to-transport-layer-security/create-tlsipolicy.png" alt-text="Screenshot of the Create a TLS inspection policy screen open to the Basic tab.":::
-The **Default action** specifies what to do if no rules match. The default setting is **Inspect**..
+:::image type="content" source="media/how-to-transport-layer-security/create-tls-inspection-policy.png" alt-text="Screenshot of the Create a TLS inspection policy screen open to the Basics tab.":::
+The **Default action** specifies what to do if no rules match. The default setting is **Inspect**.
 1.  Select **Next** > **Add rule**. On the **Rules** page, you can define a custom rule by specifying an **FQDN** or selecting a **Web category**.
 :::image type="content" source="media/how-to-transport-layer-security/add-rule.png" alt-text="Screenshot of the Create a TLS inspection policy screen open to the Rules tab.":::
 
@@ -99,6 +99,7 @@ To disable TLS inspection:
     1. Select **Delete**.      
 
 ## Related content
+* [Configure TLS inspection settings](how-to-transport-layer-security-settings.md) 
 * [Create a TLS certificates using ADCS](scripts/powershell-active-directory-certificate-service.md)
 * [Create a TLS certificate using OpenSSL](scripts/powershell-open-secure-sockets-layer.md) 
 * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
