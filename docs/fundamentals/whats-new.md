@@ -34,6 +34,26 @@ Lifecycle workflows can now be managed with Administrative Units (AUs), enabli
 
 ---
 
+### Public Preview - App-based branding via Branding themes in Microsoft Entra External ID
+
+**Type:** New feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+
+In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-customize-branding-themes-apps](/entra/external-id/customers/how-to-customize-branding-themes-apps)
+
+---
+
+### Public Preview - Delegated Workflow Management in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers are able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope.
+
+---
+
 ### Public preview - Expanded attribute support in Lifecycle Workflows attribute changes trigger
 
 **Type:** Changed feature    
@@ -51,24 +71,19 @@ This enhancement gives administrators greater flexibility to automate lifecycle 
 
 ---
 
-### General Availability - Reprocess failed users and workflows in Lifecycle Workflows
+### Public Preview - Sign-in with username/alias
 
 **Type:** New feature    
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Governance   
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C   
 
-Lifecycle Workflows now supports reprocessing of your workflows to help organizations streamline the reprocessing of workflows when errors or failures are discovered. This feature includes the ability to reprocess previous runs of workflows including failed runs or just runs that you might want to process again. Customers can choose from the following options to fit their needs:
-
-- Select specific workflow run to be reprocessed
-- Select which users from the workflow run to be reprocessed. For example, failed users or all users from the run
-
-For more information, see [Reprocess workflows](../id-governance/reprocess-workflow.md).
+In Microsoft Entra External ID (EEID), users with a local email+password credential can sign in with email address as identifier.  We are adding the ability for these users to sign in with an alternative identifier such as customer/member id, for example insurance number, frequent flier number assigned via Graph API or Microsoft Entra admin center. For more information, see [Sign in with an alias or username (preview)](/entra/external-id/customers/how-to-sign-in-alias).
 
 ---
 
-### General Availability - Iteration 2 beta APIs for Microsoft Entra PIM will be retired. Migrate to Iteration 3 APIs. 
+### Deprecation - Iteration 2 beta APIs for Microsoft Entra PIM will be retired. Migrate to Iteration 3 APIs. 
 
-**Type:** New feature    
+**Type:** Deprecated   
 **Service category:** Privileged Identity Management    
 **Product capability:** Identity Governance   
 
