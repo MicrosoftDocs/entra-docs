@@ -17,11 +17,11 @@ ai-usage: ai-assisted
 
 # Configure Global Secure Access cloud firewall with remote networks for Internet access (Preview)
 
-Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access (like connections to the Internet) by applying policies on network traffic and providing centralized management, visibility, and consistent policies for branches and roaming users that use managed devices (with GSA clients). 
+Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches and roaming users that use managed devices with GSA clients. 
 
 The current scope of this preview is using GSA Cloud Firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access (also in public preview).
 
-With this preview, you'll be able to:
+With this preview, you can:
 
 - Define granular Firewall filtering rules, where you'll define the traffic matching conditions and an action in case the traffic matches.
 
@@ -31,7 +31,7 @@ With this preview, you'll be able to:
 
 ## Prerequisites
 
-- You must have fully configured remote networks for Internet Access. 
+- Configured remote networks for Internet Access. 
 
 ## Supported scenarios
 
@@ -51,7 +51,7 @@ This public preview supports these scenarios:
 
 ### Create a cloud firewall policy with the default **Allow** action.
 
-1. Login to your [Entra admin center](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_isCloudFirewallPolicyEnabled=true&exp.isCloudFirewallPolicyEnabled=true#view/Microsoft_Azure_Network_Access/CloudFirewallPolicy.ReactView).
+1. Sign in to your [Entra admin center](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_isCloudFirewallPolicyEnabled=true&exp.isCloudFirewallPolicyEnabled=true#view/Microsoft_Azure_Network_Access/CloudFirewallPolicy.ReactView).
 
 1. Browse to **Global Secure Access 🡪 Secure 🡪 Cloud firewall policies 🡪 Create firewall policy.**
 
@@ -75,7 +75,7 @@ This public preview supports these scenarios:
 
    1. Select Rule settings **Status** to set to **Enable** or **Disable**.
 
-   1. Configure the source and destination matching conditions. Please note these important limitations:
+   1. Configure the source and destination matching conditions. Note these important limitations:
 
       - IPs can be defined as IPs or Classless Inter-Domain Routings (CIDRs). IP ranges aren't supported currently.
 
@@ -90,7 +90,7 @@ This public preview supports these scenarios:
    > [!NOTE]
    > In the rule, source IP, source port, destination IP, destination port, and protocol are logically AND.
    >
-   > For instance, you configure a rule as below:
+   > For instance, you configure a rule as shown here:
    >
    > - Source IP = 10.0.0.5
    > - Source Port = 12345
@@ -98,7 +98,7 @@ This public preview supports these scenarios:
    > - Destination Port = 443
    > - Protocol = TCP
    >
-   > This firewall rule matches traffic that simultaneously meets the conditions for source IP, source Port, destination Port, destination IP and Protocol.
+   > This firewall rule matches traffic that simultaneously meets the conditions for source IP, source Port, destination Port, destination IP, and Protocol.
 
 4. (Optional) Update any values in the rule and save them.
 
@@ -114,7 +114,7 @@ This public preview supports these scenarios:
 ### Link a cloud firewall policy to the baseline profile for the remote network
 
 > [!IMPORTANT]
-> As a best practice, we recommend creating rules in the policy first before linking the policy to the baseline profile. This ensures all changes apply collectively. This is particularly important if you create a "block all" rule for the entire branch traffic and then add rules to allow certain traffic. Without following this best practice, you might inadvertently block yourself for all branch traffic.
+> As a best practice, we recommend creating rules in the policy first before linking the policy to the baseline profile. Creating rules in the policy ensures all changes apply collectively. Ensuring collective changes is important if you create a "block-all" rule for the entire branch traffic, then add rules to allow certain traffic. Without following this best practice, you might inadvertently block yourself for all branch traffic.
 
 1. In your [Entra admin center](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_isCloudFirewallPolicyEnabled=true&exp.isCloudFirewallPolicyEnabled=true#view/Microsoft_Azure_Network_Access/CloudFirewallPolicy.ReactView), browse to **Global Secure Access > Secure > Security Profiles > Baseline Profile**.
 
@@ -145,7 +145,7 @@ This public preview supports these scenarios:
 
 - It may take 15-20 minutes for any firewall policy updates to take effect.
 
-- Remote networks acquire all Internet traffic except IP ranges for accessing the GSA service edge and IP ranges for Internet Access default bypass policy (please see the public preview document for Remote networks for Internet Access for these ranges). Currently IP ranges in Microsoft 365 (M365) traffic profile, including Entra ID traffic, are acquired. To ensure M365 traffic isn't blocked when you configure a block-all rule to Internet traffic, please configure an allow rule for M365 traffic with a higher priority than the deny-all rule using the traffic ranges:  
+- Remote networks acquire all Internet traffic except IP ranges for accessing the GSA service edge and IP ranges for Internet Access default bypass policy (SHAHZAD, CAN WE REMOVE THIS? IF NOT, WHAT DOCUMENT IS THIS REFERRING TO? please see the public preview document for Remote networks for Internet Access for these ranges). Currently IP ranges in Microsoft 365 (M365) traffic profile, including Entra ID traffic, are acquired. To ensure M365 traffic isn't blocked when you configure a block-all rule to Internet traffic, please configure an allow rule for M365 traffic with a higher priority than the deny-all rule using the traffic ranges:  
   
   132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19.
 
