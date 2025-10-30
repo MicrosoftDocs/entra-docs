@@ -91,13 +91,9 @@ Use this sequence to keep the service stable and minimize disruption when connec
 
 ## Connector updates
 
-Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. Connectors poll the updater service for updates. When a newer version is available, the connectors update themselves.
+Microsoft Entra ID occasionally provides automatic updates for the connectors that you deploy. Connectors poll the updater service for updates. When a newer version is available for an automatic update, the connectors update themselves. As long as the updater service is running, your connectors can update to the latest major connector release automatically. If you don't see the updater service on your server, you need to reinstall your connector to get updates.
 
-As long as the updater service is running, your connectors can update to the latest major connector release automatically. If you don't see the updater service on your server, you need to reinstall your connector to get updates.
-
-If you don't want to wait for an automatic update, do a manual update. On the server that hosts your connector, go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) and select **Download**. This action starts an update for the local connector.
-
-Not all releases are scheduled for automatic updates. Monitor the [version history page](reference-version-history.md) to see whether an update is deployed automatically or requires a manual deployment in the Microsoft Entra portal.
+Not all releases are scheduled for automatic updates. Monitor the [version history page](reference-version-history.md) to see whether an update is deployed automatically or requires a manual deployment in the Microsoft Entra portal. If you need to do a manual update, on the server that hosts your connector, go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) and select **Download**. This action starts an update for the local connector.
 
 In tenants that have multiple connectors, automatic updates target one connector at a time in each group to prevent downtime. You might experience downtime during an update if:
   
