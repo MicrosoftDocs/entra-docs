@@ -116,6 +116,16 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/id-governance/access-review-agent-logs-metrics.md",
+      "redirect_url": "/entra/security-copilot/access-review-agent-logs-metrics",
+      "redirect_document_id": true
+    },
+   {
+      "source_path_from_root": "/docs/id-governance/access-review-agent.md",
+      "redirect_url": "/entra/security-copilot/access-review-agent",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
       "redirect_url": "/entra/id-protection/overview-identity-protection",
       "redirect_document_id": false
@@ -2238,6 +2248,31 @@
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
       "redirect_url": "/entra/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-chat.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-chat",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-logs-metrics.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-logs-metrics",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-phased-rollout.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-phased-rollout",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-review-suggestions.md",
+      "redirect_url": "/entra/security-copilot/conditional-access-agent-optimization-review-suggestions",
       "redirect_document_id": false
     },
     {

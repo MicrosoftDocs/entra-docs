@@ -38,6 +38,14 @@ Email sign-up is enabled by default in your local account identity provider sett
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email with password** is the default option.
 
+## Username or alias sign-in (preview)
+
+You can enable users who sign in with a local account (email and password) to sign in with an [alias or username](how-to-sign-in-alias.md) in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
+
+When you enable username sign-in, users can choose to sign in with either their email address or their username. If they choose to sign in with their username, they will be prompted to enter a password, similar to Email and password sign-in. If you [enable password reset](how-to-customize-branding-customers.md#to-customize-self-service-password-reset), users can reset their password by selecting the password reset link on the sign-in page.
+
+   :::image type="content" source="media/how-to-sign-in-alias/alias-sign-in.png" alt-text="Screenshot of the username sign-in option.":::
+
 ## Email with one-time passcode sign-in
 
 Email with one-time passcode is an option in your local account identity provider settings. With this option, the user signs in with a temporary passcode instead of a stored password each time they sign in.
@@ -64,7 +72,7 @@ By setting up federation with Google, you can allow users to sign in to your app
 
 The following screenshots show the sign-in with Google experience. In the sign-in page, users select **Sign-in with Google**. At that point, the user is redirected to the Google identity provider to complete the sign-in.
 
-   :::image type="content" source="media/concept-authentication-methods-customers/google-sign-in.png" alt-text="Screenshots of google sign-in screens." border="false":::
+   :::image type="content" source="media/concept-authentication-methods-customers/google-sign-in.png" alt-text="Screenshots of Google sign-in screens." border="false":::
 
 Learn how to [add Google as an identity provider](how-to-google-federation-customers.md).
 
@@ -114,7 +122,7 @@ When you federate with other external identity providers—such as Facebook, Goo
 You can use the following `domain_hint` values to go directly to the sign-in page for these identity providers:
 
 - **Facebook**: `domain_hint=facebook`.  
-- **Google**: `domain_hint=google`.  
+- **Google**: `domain_hint=Google`.  
 - **Apple**: `domain_hint=apple`.
 - **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
 
