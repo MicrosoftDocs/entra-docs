@@ -82,3 +82,7 @@ Learn more about how Apple and Google protect passkeys stored in their cloud wit
 
 >[!Note] 
 >If you disable synced passkeys for a given passkey profile, targeted users will no longer be able to sign-in with synced passkeys even if they have already registered one.
+
+## Related content
+
+[How to enable passkey (FIDO2) profiles in Microsoft Entra ID (preview)](how-to-authentication-passkey-profiles.md)

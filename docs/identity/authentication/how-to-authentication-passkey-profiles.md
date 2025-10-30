@@ -1,5 +1,5 @@
 ---
-title: How to enable passkey (FIDO2) profiles in Microsoft Entra ID
+title: How to Enable Passkey (FIDO2) Profiles in Microsoft Entra ID (Preview)
 description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
@@ -12,7 +12,7 @@ ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ---
-# How to enable passkey (FIDO2) profiles in Microsoft Entra ID
+# How to enable passkey (FIDO2) profiles in Microsoft Entra ID (preview)
 
 Passkey profiles enable granular group-based configurations for FIDO2 (passkey) authentication. Instead of a single tenant-wide setting, you can define specific requirements such as attestation, passkey type (device-bound or synced), and AAGUID restrictions, and apply them to different user groups (for example, admins versus frontline staff).
 ! Note: Passkey profiles (preview) is a pre-requisite for enabling synced passkeys (preview). See [synced passkeys documentation]
@@ -147,3 +147,5 @@ Passkeys in Microsoft Authenticator | Pilot group 1<br>Pilot group 2 | Device-bo
 
 
 ## Related content
+
+[How to enable synced passkeys (FIDO2) in Microsoft Entra ID (preview)](how-to-authentication-synced-passkeys.md)
