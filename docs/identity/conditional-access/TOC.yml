@@ -4,18 +4,18 @@
   items:
   - name: What is Conditional Access?
     href: overview.md
-- name: Security Copilot + Microsoft Entra
+- name: Conditional Access optimization agent
   items:
   - name: Get started with the Conditional Access optimization agent
-    href: agent-optimization.md
+    href: ~/security-copilot/conditional-access-agent-optimization.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
   - name: Review and approve suggestions
-    href: agent-optimization-review-suggestions.md
+    href: ~/security-copilot/conditional-access-agent-optimization-review-suggestions.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
   - name: Chat with the optimization agent
-    href: agent-optimization-chat.md
+    href: ~/security-copilot/conditional-access-agent-optimization-chat.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
   - name: Optimization agent logs and metrics
-    href: agent-optimization-logs-metrics.md
+    href: ~/security-copilot/conditional-access-agent-optimization-logs-metrics.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
   - name: Phased rollout
-    href: agent-optimization-phased-rollout.md
+    href: ~/security-copilot/conditional-access-agent-optimization-phased-rollout.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
 - name: Tutorials
   items:
   - name: Require multifactor authentication

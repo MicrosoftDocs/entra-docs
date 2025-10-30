@@ -72,6 +72,14 @@ Certain other types of policies don't support use of the backup authentication s
 - Use of the [authentication methods policy](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength).
 - Use of [classic Conditional Access policies](~/identity/conditional-access/policy-migration-mfa.md).
 
+#### Evaluation of report-only Conditional Access policies
+
+If a request is processed by the backup authentication system, report-only Conditional Access policies will appear under the **Conditional Access** tab in **Entra ID** > **Monitoring & health** > **Sign-in logs** for that sign-in event, rather than in the **Report-only** tab. Note that even in this view, policies configured in report-only mode are never enforced. To see if tokens were issued via backup authentication system within your tenant, you can use the sign-in logs. In **Entra ID** > **Monitoring & health** > **Sign-in Logs**, add the filter `Token issuer type == Microsoft Entra Backup Auth` to display the logs processed by the backup authentication system. 
+
+### Certificate revocation and the backup authentication system 
+
+To enhance its resilience posture, the backup authentication system can't perform fresh revocation checks. Instead, it relies on the state of the certificate revocation list (CRL) check that's performed when the session was last backed up. If you need to revoke before this backup expires, you should explicitly revoke the session instead of waiting for the CRL.  
+
 ## Workload identity resilience in the backup authentication system
 
 In addition to user authentication, the backup authentication system provides resilience for [managed identities](~/identity/managed-identities-azure-resources/overview.md) and other key Azure infrastructure by offering a regionally isolated authentication service that is redundantly layered with the primary authentication service. This system enables the infrastructure authentication within an Azure region to be resilient to issues that might occur in another region or within the larger Microsoft Entra service. This system complements Azure's cross-region architecture. Building your own applications using MI and following Azure's [best practices for resilience and availability]() ensures your applications are highly resilient. In addition to MI, this regionally resilient backup system protects key Azure infrastructure and services that keep the cloud functional.
