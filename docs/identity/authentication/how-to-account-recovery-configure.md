@@ -4,7 +4,7 @@ description: How to enable Account Recovery in the Microsoft Entra admin center.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/21/2025
+ms.date: 10/30/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -29,7 +29,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 4. Select **Marketplace** and sign in to the [**Microsoft Security Store**](https://securitystore.microsoft.com/) as an Azure subscription owner or contributor.
 
    >[!NOTE]
-   >For this step, you need to begin to purchase a SaaS offer from an IDV partner, which requires an Azure subscription. Make sure your signed-in account has the owner or contributor role of the Azure subscription linked to the tenant. To check role assignments, see [List Azure role assignments using the Azure portal](/azure/role-based-access-control/role-assignments-list-portal). To assign a role, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
+   >For this step, you need to begin to purchase a Software as a Service (SaaS) offer from an IDV partner, which requires an Azure subscription. Make sure your signed-in account has the owner or contributor role of the Azure subscription linked to the tenant. To check role assignments, see [List Azure role assignments using the Azure portal](/azure/role-based-access-control/role-assignments-list-portal). To assign a role, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
 5. On the **Overview** page for your Identity verification provider, select **Get solution**.
 6. On the **Get solution** page:
@@ -41,7 +41,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 8. When your SaaS subscription is ready, select **Configure account now**.
 
    >[!NOTE]
-   >When clicking **Configure account now** you will be redirected to the SaaS provider admin portal to complete the purchase.
+   >After you select **Configure account now**, you're redirected to the SaaS provider admin portal to complete the purchase.
 
 9.  Sign in to the SaaS subscription as an Azure subscription owner or contributor.
 10. On the **General** page of the SaaS subscription, provide the required details requested by the SaaS provider (like contact name, email, and phone number), and select **Activate**.
@@ -51,11 +51,11 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 14. On the **Review and finalize** page, review the details for account recovery configuration, and select **Complete**.
 15. After setup is finalized, the Account Recovery **Home** page opens in the Microsoft Entra admin center.
 
-Once setup is complete, any users scoped to account recovery will now be able to attempt recovery and complete Identity Verification, but will not be able to recover their accounts as recovery is set in evaluation mode. 
+Once setup is complete, any users scoped to account recovery can try recovery and complete Identity Verification. But they can't recover their accounts because recovery is set in evaluation mode. 
 
 ## How to update and fully enable Account Recovery in the Microsoft Entra admin center
 
-After testing account recovery in evaluation mode and confirming that the identity verification process works as expected, you can enable full recovery capabilities for your users. This process involves changing the recovery mode from **Evaluation** to **Recovery** and reviewing your user scope configuration.
+After you test account recovery in evaluation mode and confirm that the identity verification process works as expected, you can enable full recovery capabilities for your users. This process involves changing the recovery mode from **Evaluation** to **Recovery** and reviewing your user scope configuration.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Go to **Protection** > **Account Recovery**.
@@ -63,7 +63,7 @@ After testing account recovery in evaluation mode and confirming that the identi
 1. Under **Choose a recovery mode**, select **Production** to enable full account recovery capabilities.
 
    >[!NOTE]
-   >In **Production** mode, users who complete identity verification will be able to fully recover their accounts and reset their authentication methods. In **Evaluation** mode, users can only test the identity verification process without actually recovering their accounts.
+   >In **Production** mode, users who complete identity verification can fully recover their accounts and reset their authentication methods. In **Evaluation** mode, users can only test the identity verification process without actually recovering their accounts.
 
 5. Under **User group selection**, review the groups currently configured for account recovery:
    - To add additional groups, click **Select groups**, choose the groups you want to include, and select **Save**.
@@ -79,11 +79,11 @@ After testing account recovery in evaluation mode and confirming that the identi
    - Confirm that the correct user groups are in scope
    - Verify that the appropriate identity verification provider is selected
 9. After reviewing the configuration, select **Complete** to apply the changes.
-10. A confirmation message will appear indicating that account recovery has been successfully updated.
+10. A confirmation message indicates that account recovery is successfully updated.
 
 Once these steps are complete, users in the scoped groups can use account recovery to fully regain access to their accounts when they lose all authentication methods. Users complete identity verification by using the configured provider, and they get a Temporary Access Pass to re-enroll their authentication methods.
 
 ## Related content
 
-- [Microsoft Security Store](/security/store/) - Learn about Microsoft Security Store capabilities and offerings
-- [How end users can perform account recovery](how-to-account-recovery-user-setup.md) - walkthrough of the end-user account recovery experience
+- To learn about Microsoft Security Store capabilities and offerings, see [Microsoft Security Store](/security/store/).
+- For a walkthrough of the end-user account recovery experience, see [How end users can perform account recovery](how-to-account-recovery-user-setup.md).
