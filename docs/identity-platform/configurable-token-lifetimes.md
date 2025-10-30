@@ -30,7 +30,7 @@ For practical guidance, see [examples of how to configure token lifetimes](confi
 > You might want to increase the token lifetime so that a script runs for more than an hour. Many Microsoft libraries, such as Microsoft Graph PowerShell SDK, extend the token lifetime as needed and you don't need to makes changes to the access token policy.
 
 > [!NOTE]
-> Configurable token lifetime policy is not supported for applications developed for personal Microsoft account (signInAudience is equal AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount).
+> Configurable token lifetime policy is not supported for applications developed for personal Microsoft accounts (where `signInAudience` is set to `AzureADandPersonalMicrosoftAccount` or `PersonalMicrosoftAccount`).
 
 ## License requirements
 
