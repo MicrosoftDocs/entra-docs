@@ -4,7 +4,7 @@ description: Learn about how to create branding themes and apply them to the sig
 author: rolyon
 manager: pmwongera
 ms.author: rolyon
-ms.date: 09/30/2025
+ms.date: 10/30/2025
 ms.reviewer: 
 ms.service: identity-platform
 ms.topic: how-to
