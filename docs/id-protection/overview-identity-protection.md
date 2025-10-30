@@ -5,7 +5,7 @@ description: Automation to detect, remediate, investigate, and analyze risk data
 ms.service: entra-id-protection
 
 ms.topic: overview
-ms.date: 06/03/2025
+ms.date: 10/30/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -92,7 +92,7 @@ ID Protection requires users to be assigned one or more of the following roles.
 
 | Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 / Microsoft Entra Suite |
 | --- | --- | --- | --- | --- |
-| Risk policies | Sign-in and user risk policies (via ID Protection or Conditional Access) | No | No | Yes |
+| Risk policies | Sign-in and user risk policies (via ID Protection or Conditional Access)<br>Includes Microsoft managed remediation policies | No | No | Yes |
 | Security reports | Overview | No | No | Yes |
 | Security reports | Risky users | Limited Information. Only users with medium and high risk are shown. No details drawer or risk history. | Limited Information. Only users with medium and high risk are shown. No details drawer or risk history. | Full access|
 | Security reports | Risky sign-ins | Limited Information. No risk detail or risk level is shown. | Limited Information. No risk detail or risk level is shown. | Full access |
