@@ -24,6 +24,78 @@ This article provides information about the latest releases and change announcem
 
 ## October 2025
 
+### Public Preview - Delegated Workflow Management in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers are able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope.
+
+---
+
+### Public preview - Expanded attribute support in Lifecycle Workflows attribute changes trigger
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance    
+
+The Attribute Changes trigger in Lifecycle Workflows now supports additional attribute types, enabling broader detection of organizational changes. Previously, this trigger was limited to a set of core attributes. With this update, you can configure workflows to respond when any of the following attributes change:
+
+- Custom security attributes
+- Directory extension attributes
+- EmployeeOrgData attributes
+- On-premises attributes 1–15
+
+This enhancement gives administrators greater flexibility to automate lifecycle processes for mover events based on custom or extended attributes, improving governance for complex organizational structures and hybrid environments.
+
+---
+
+### General Availability - Reprocess failed users and workflows in Lifecycle Workflows
+
+**Type:** New feature    
+**Service category:** Lifecycle Workflows    
+**Product capability:** Identity Governance   
+
+Lifecycle Workflows now supports reprocessing of your workflows to help organizations streamline the reprocessing of workflows when errors or failures are discovered. This feature includes the ability to reprocess previous runs of workflows including failed runs or just runs that you might want to process again. Customers can choose from the following options to fit their needs:
+
+- Select specific workflow run to be reprocessed
+- Select which users from the workflow run to be reprocessed. For example, failed users or all users from the run
+
+For more information, see [Reprocess workflows](../id-governance/reprocess-workflow.md).
+
+---
+
+### General Availability - Iteration 2 beta APIs for Microsoft Entra PIM will be retired. Migrate to Iteration 3 APIs. 
+
+**Type:** New feature    
+**Service category:** Privileged Identity Management    
+**Product capability:** Identity Governance   
+
+**Introduction**
+
+Starting Oct 28, 2026, all applications and scripts making calls to Microsoft Entra Privileged Identity Management (PIM) [Iteration 2](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta) (beta) APIs for Azure resources, Microsoft Entra roles and Groups will fail.
+
+**How this will affect your organization**
+
+After Oct 28, 2026, any applications or scripts calling Microsoft Entra PIM Iteration 2 (beta) API endpoints will fail. These calls will no longer return data, which might disrupt workflows or integrations relying on these endpoints. These APIs were released in beta and are being retired, Iteration 3 are generally available (GA) APIs which offer improved reliability and broader scenario support.
+
+**What you need to do to prepare**
+
+We strongly recommend migrating to the **Iteration 3 (GA) APIs**, which are generally available. 
+
+- Begin migration planning and testing as soon as possible.
+- Halt any new development using Iteration 2 APIs.
+- Review documentation for Iteration 3 APIs to ensure compatibility.
+
+Learn more: 
+
+- [API concepts in Privileged Identity management - Microsoft Entra ID Governance | Microsoft Learn](../id-governance/privileged-identity-management/pim-apis.md)
+- [Privileged Identity Management iteration 2 APIs](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta)
+- [Migrate from PIM iteration 2 APIs to PIM iteration 3 APIs](/graph/api/resources/privilegedidentitymanagement-root?view=graph-rest-beta#migrate-from-pim-iteration-2-apis-to-pim-iteration-3-apis)
+
+---
+
 ### Public Preview - Soft Delete & Restore for Conditional Access Policies and Named Locations
 
 **Type:** New feature    
