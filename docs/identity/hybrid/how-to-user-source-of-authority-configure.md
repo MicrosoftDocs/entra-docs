@@ -87,6 +87,9 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 
 ## Transfer SOA for a test user
 
+> [!NOTE]
+> You're also able to transfer contact SOA using the `https://graph.microsoft.com/v1.0/contacts` API endpoint.
+
 Follow these steps to transfer the SOA for a test user:
 
 1. Create a user within AD. You can also use an existing user that is synced to Microsoft Entra ID by using Connect Sync.
