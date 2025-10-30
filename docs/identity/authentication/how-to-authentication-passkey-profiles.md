@@ -4,9 +4,9 @@ description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/07/2025
+ms.date: 10/30/2025
 ms.author: justinha
-author: hanki77
+author: hanki71
 manager: dougeby
 ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
@@ -23,7 +23,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 - Enforce attestation
 - Target types (device-bound, synced)
-- Target specific passkeys: allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](https://learn.microsoft.com/entra/identity/authentication/how-to-enable-passkey-fido2#passkey-fido2-authenticator-attestation-guid-aaguid).
+- Target specific passkeys: allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](how-to-enable-passkey-fido2.md#passkey-fido2-authenticator-attestation-guid-aaguid).
 
 ## Before you begin
 
