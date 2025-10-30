@@ -36,7 +36,7 @@ Lifecycle workflows can now be managed with Administrative Units (AUs), enabli
 
 ### Public preview - Expanded attribute support in Lifecycle Workflows attribute changes trigger
 
-**Type:** New feature    
+**Type:** Changed feature    
 **Service category:** Lifecycle Workflows    
 **Product capability:** Identity Governance    
 
