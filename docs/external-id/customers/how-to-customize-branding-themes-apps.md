@@ -26,7 +26,6 @@ This article describes how you can create multiple branding themes for different
 
 ## Prerequisites
 
-- A Microsoft Entra [workforce](../../fundamentals/create-new-tenant.md) or [external](quickstart-tenant-setup.md) tenant.
 - Have at least the [Organizational Branding Administrator](../../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator) role.
 - Have at least the [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) role for applications that you want to apply a theme to.
 - A registered application in your tenant. If you haven't registered an application yet, see [Register an application](../../identity-platform/quickstart-register-app.md).
@@ -75,9 +74,9 @@ Here are some of the limits and constraints for branding themes.
 
 - You can create up to 5 branding themes per tenant.
 - The live preview capability previews style and layout changes and only shows the Sign in page. Live preview does not include any custom text overrides.
-- You can't use the name **Default theme** for your branding theme name. This name is reserved for default branding settings.
-- Custom text changes are limited to sign-in page only.
-- If you don't update the banner logo, the Microsoft logo is displayed instead of the tenant name.
+- You can't use the name **Default theme** for your branding theme name. This name is reserved.
+- Custom text changes are currently limited to sign-in page only.
+- If you don't update the banner logo property, the Microsoft logo is displayed instead of the tenant name (neutral branding).
 
 ## Create a new theme
 
@@ -117,7 +116,7 @@ Here are some of the limits and constraints for branding themes.
    - **Banner logo** – Displays on the sign-in page and in the user's access panel.
    - **Square logo (light theme)** – Represents user accounts in your tenant.
    - **Square logo (dark theme)** – If the light theme square logo displays poorly on dark backgrounds, you can upload a logo to be used in its place when dark backgrounds are used.
-   - **Custom CSS** – Upload your own CSS file to replace default Microsoft styling with your own styling for: color, font, text size, position of elements, and displays for different devices and screen sizes.
+   - **Custom CSS** – Upload your own CSS file to replace default Microsoft styling with your own styling for: color, font, text size, position of elements, and displays for different devices and screen sizes. For more information, see [CSS template reference guide](../../fundamentals/reference-company-branding-css-template.md).
      
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/styling-tab.png" alt-text="Screenshot of the Create a theme page and the Styling tab settings." lightbox="./media/how-to-customize-branding-themes-apps/styling-tab.png":::
 
@@ -178,6 +177,8 @@ In this section, you add a language to a theme.
 1. Select a theme you created to open the overview.
 
 1. On the **Languages** tab, select **Add a language** to customize the language of the theme.
+
+    The steps for customizing the language are similar to customizing branding theme.
   
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/languages-tab.png" alt-text="Screenshot of the Languages tab to add a language." lightbox="./media/how-to-customize-branding-themes-apps/languages-tab.png":::
 
