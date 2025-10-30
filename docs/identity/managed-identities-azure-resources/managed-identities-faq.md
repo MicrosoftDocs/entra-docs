@@ -122,8 +122,7 @@ No, if you move a subscription to another directory, you have to manually re-cre
 
 No, managed identities don't natively support cross-directory scenarios.
 
-However, you can achieve cross-tenant access without the need to manage credentials by using Workload Identity Federation. This approach allows you to configure a trust relationship between a managed identity in one tenant and an application in another tenant: [Configure an application to trust a managed identity
-](~/workload-id/workload-identity-federation-config-app-trust-managed-identity.md).
+However, you can achieve cross-tenant access without the need to manage credentials by using Workload Identity Federation. This approach allows you to configure a trust relationship between a managed identity in one tenant and an application in another tenant: [Configure an application to trust a managed identity](~/workload-id/workload-identity-federation-config-app-trust-managed-identity.md).
 
 ### Are there any rate limits that apply to managed identities?
 
