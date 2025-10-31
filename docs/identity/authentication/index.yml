@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: justinha
   ms.author: justinha
-  ms.date: 01/29/2023
+  ms.date: 10/30/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -75,23 +75,4 @@ landingContent:
           - text: Use NPS extension to integrate on-premises applications
             url: howto-mfa-nps-extension.md
 
-  # Card
-  - title: Deploy Microsoft Entra account recovery
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: What is Microsoft Entra account recovery?
-            url: concept-self-service-account-recovery.md
-      - linkListType: how-to-guide
-        links:
-          - text: Enable Microsoft Entra account recovery
-            url: how-to-account-recovery-configure.md
-          - text: User setup guide
-            url: how-to-account-recovery-user-setup.md
-      - linkListType: reference
-        links:
-          - text: FAQ for Microsoft Entra account recovery
-            url: self-service-account-recovery.yml
-          - text: Audit log events
-            url: concept-account-recovery-audit-log-events.md
 

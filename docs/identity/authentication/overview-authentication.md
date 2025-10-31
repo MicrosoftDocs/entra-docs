@@ -5,7 +5,7 @@ description: Learn about the authentication methods and security features for us
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 10/28/2025
+ms.date: 10/30/2025
 
 ms.author: justinha
 author: justinha
@@ -63,7 +63,7 @@ Account recovery is a critical component of your organization’s security postu
 
 Microsoft Entra ID offers an integrated and seamless process for identity verification. Organizations can configure trusted partners to verify a user’s identity, typically by presenting government-issued identification. After other validation steps, users can securely replace lost credentials, such as by registering a new passkey, to maintain account security throughout the recovery process. 
 
-Account recovery integrates biometric ID verification across 192 countries and regions, and supports billing with trusted identity verification providers to simplify integration. For more information about Microsoft Entra ID Account recovery, see [Account Recovery (preview)](concept-self-service-account-recovery.md).  
+Account recovery integrates biometric ID verification across 192 countries and regions, and supports billing with trusted identity verification providers to simplify integration. 
 
 For users who rely on passwords and don't have access to phishing-resistant methods, self-service password reset (SSPR) remains available. To improve security for these users, especially those with multifactor authentication (MFA) capability, you should require at least two distinct authentication methods to complete password reset. This layered approach reduces the risk of account compromise during recovery. 
 
@@ -81,5 +81,4 @@ For more information, see [Get started with phishing-resistant MFA deployment in
 ## Related content
 
 * [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
-* [Account Recovery (preview)](concept-self-service-account-recovery.md)
 * [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md)
