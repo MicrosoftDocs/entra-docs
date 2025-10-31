@@ -4,7 +4,7 @@ description: How to enable Account Recovery (Preview) in the Microsoft Entra adm
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/29/2025
+ms.date: 10/31/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
