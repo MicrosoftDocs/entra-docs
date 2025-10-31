@@ -40,8 +40,6 @@ An account used by an AI agent is referred to as an **agent identity**. Much lik
 
 These are the basic components of an agent identity that enable secure authentication and authorization. The full object schema of an agent identity is available in Microsoft Graph reference documentation.
 
-<!-- Todo: This needs a diagram. -->
-
 ## Features: What can agent IDs do?
 
 Like other accounts, agent IDs are primarily a means to access apps, web services, and other systems in your organization. An AI agent can use agent IDs to:
@@ -84,8 +82,6 @@ Because each agent identity is created using the same agent ID blueprint, all ag
 - Revoke a permission grant for all Sales Assistant agents.
 
 Agent ID blueprints give the Microsoft Entra administrator the ability to secure agent identities at scale by setting rules and performing operations based on the kind of agent. This feature ensures consistent security for each AI agent that is deployed in the organization.
-
-<!-- Todo: This needs a diagram. -->
 
 ## Credentials for agent identities
 
