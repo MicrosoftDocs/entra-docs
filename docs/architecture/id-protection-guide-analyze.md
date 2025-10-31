@@ -192,28 +192,14 @@ To help you get started, see and learn more about Azure Monitor Log reference ta
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
 
-**Additional links**
+### Additional links
 
 * Watch instructional videos in the [ID Protect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
 * Visit the [Tech Community](https://techcommunity.microsoft.com/) for updates and technical information
 * Learn to configure diagnostics at [idpdiagnosticssettings](https://aka.ms/idpdiagnosticssettings)
 
-### Learn about Microsoft Entra
 
-[Microsoft Entra](../fundamentals/what-is-entra.md) is a family of identity and network access products to implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) to: 
 
-* Verify identity
-* Validate access conditions
-* Check permissions
-* Encrypt connection channels
-* Monitor for compromise
-
-With Microsoft Entra, organizations enable real-time access and identity decisions across hybrid and multicloud environments. Discover its features and capabilities for secure access. 
-
-* [Microsoft Entra documentation](/entra/)
-* [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
-* [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
-* [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
 
 
 
