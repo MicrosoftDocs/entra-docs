@@ -210,16 +210,6 @@ For more information, see: [About Microsoft Authenticator](https://support.micro
 
 ---
 
-### General Availability - Issuer acceleration for External Identity Providers
-
-**Type:** New feature    
-**Service category:** B2C - Consumer Identity Management    
-**Product capability:** B2B/B2C    
-
-Provide end users with custom links to authenticate with a specific External Identity Provider. For more information, see [Issuer acceleration](../external-id/customers/concept-authentication-methods-customers.md#issuer-acceleration).
-
----
-
 ### Public Preview - Global Secure Access B2B support with AVD and W365
 
 **Type:** New feature    
