@@ -117,7 +117,7 @@ Steps 1-3 of the deployment flow for information workers should typically follow
 1. Step 1: Onboarding
    1. Microsoft Entra Verified ID service used to acquire a Temporary Access Pass
 1. Step 2: Portable credential registration
-   1. Synced Passkey (preferred)
+   1. Synced passkey (preferred)
    1. Passkey in Microsoft Authenticator
    1. FIDO2 security key
 1. Step 3: Local credential registration
@@ -126,7 +126,7 @@ Steps 1-3 of the deployment flow for information workers should typically follow
 
 ### Frontline workers
 
-Frontline workers often have more complicated requirements due to increased needs for the portability of their credentials and limitations on which devices they can carry in retail or manufacturing settings. Synced Passkey is a great option for frontline workers. In senarios where synced passkeys cannot be used, security keys and smart cards are alternative phishing resistent options. 
+Frontline workers often have more complicated requirements due to increased needs for the portability of their credentials and limitations on which devices they can carry in retail or manufacturing settings. Synced passkey is a great option for frontline workers. In scenarios where synced passkeys can't be used, security keys and smart cards are other phishing-resistant options. 
 
 <!-- update to include synced passkeys in point 2-->
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/frontline-worker-examples.png" alt-text="Diagram that shows examples of requirements for frontline workers.":::
@@ -141,7 +141,7 @@ Steps 1-3 of the deployment flow for frontline workers should typically follow a
    1. FIDO2 security key on-behalf-of registration (preferred)
    1. Microsoft Entra Verified ID service used to acquire a Temporary Access Pass
 1. Phase 2: Portable credential registration
-   1. Synced Passkey (preffered)
+   1. Synced passkey (preferred)
    1. FIDO2 security key 
    1. Passkey in Microsoft Authenticator
    1. Smart card 
