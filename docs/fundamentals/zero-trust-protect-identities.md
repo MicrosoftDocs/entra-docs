@@ -74,7 +74,7 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 [!INCLUDE [21796](../includes/secure-recommendations/21796.md)]
 
 ### Temporary access pass is enabled
-[!INCLUDE [21796](../includes/secure-recommendations/21796.md)]
+[!INCLUDE [21845](../includes/secure-recommendations/21845.md)]
 
 ### Restrict Temporary Access Pass to Single Use
 [!INCLUDE [21846](../includes/secure-recommendations/21846.md)]
