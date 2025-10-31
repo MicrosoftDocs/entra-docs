@@ -48,7 +48,9 @@ When setting a workflow where the trigger type is **Time based attribute**, the 
 |---------|---------|
 |Days from Event     |  The days from the event user attribute for when the workflow is triggered. Value can be from 0-180.     |
 |Event timing     |   Defines when the *Days from Event*  detail for a workflow is triggered. For example, a workflow that is scheduled to run for a user before they start working would have an event timing value of **Before**, while a workflow scheduled to run for a user after they leave your organization would have an event timing value of **After**. If selecting a template for a workflow that runs on the same day as the event user attribute, the value is **On**.      |
-|Event user attribute     | The attribute defining the change that triggers the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*" or "*LastSignInDateTime*". For a list of templates, and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md).       |
+|Event user attribute     | The attribute defining the change that triggers the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*" or "*LastSignInDateTime*". For a list of templates, and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md). You are also able to set custom attribute triggers. For more information, see [Use Custom Attribute Triggers in Lifecycle Workflows (Preview)](workflow-custom-triggers.md).       |
+
+
 
 > [!NOTE]
 > The event user attribute must be set within Microsoft Entra ID for users. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
@@ -79,7 +81,7 @@ When setting a workflow where the trigger type is **Attribute change**, the foll
 
 |Trigger detail  |Description  |
 |---------|---------|
-|Trigger Attribute     | The trigger attribute defines the attribute that's being changed to trigger the workflow to run.        |
+|Trigger Attribute     | The trigger attribute defines the attribute that's being changed to trigger the workflow to run. You are also able to set custom attribute triggers. For more information, see [Use Custom Attribute Triggers in Lifecycle Workflows (Preview)](workflow-custom-triggers.md).         |
 |Action/Operator     |  Defines the change to the attribute that triggers the workflow to run.       |
 |Value     |  The value of the trigger attribute.      |
 
