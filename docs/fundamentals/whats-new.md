@@ -57,7 +57,7 @@ The Attribute Changes trigger in Lifecycle Workflows now supports additional a
 - EmployeeOrgData attributes
 - On-premises attributes 1–15
 
-This enhancement gives administrators greater flexibility to automate lifecycle processes for mover events based on custom or extended attributes, improving governance for complex organizational structures and hybrid environments.
+This enhancement gives administrators greater flexibility to automate lifecycle processes for mover events based on custom or extended attributes, improving governance for complex organizational structures and hybrid environments. For more information, see: [Use Custom attribute triggers in lifecycle workflows (Preview)](../id-governance/workflow-custom-triggers.md).
 
 ---
 
