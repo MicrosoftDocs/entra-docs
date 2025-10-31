@@ -17,7 +17,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 Passkey profiles enable granular group-based configurations for passkey FIDO2 authentication. Instead of a single tenant-wide setting, you can define specific requirements such as attestation, passkey type (device-bound or synced), or Authenticator Attestation GUID (AAGUID) restrictions. You can apply requirements in separate passkey profiles for different user groups, such as admins versus frontline staff.
 
 >[!Note] 
->An Authentication Policy Administrator needs to configure a passkey profile (preview) to enable synced passkeys (preview). For more infomation, see [How to enable synced passkeys (FIDO2) in Microsoft Entra ID (preview)](how-to-authentication-synced-passkeys).
+>An Authentication Policy Administrator needs to configure a passkey profile (preview) to enable synced passkeys (preview). For more infomation, see [How to enable synced passkeys (FIDO2) in Microsoft Entra ID (preview)](how-to-authentication-synced-passkeys.md).
 
 ## What are passkey profiles?
 
