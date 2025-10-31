@@ -54,9 +54,9 @@ A passkey profile is a named set of policy rules that governs how users in targe
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to opt in to preview."lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
 
    >[!NOTE]
-   >If you had previous Passkey (FIDO2) policy settings, they will be automatically transferred to a Default passkey profile. Any previous user targets will also be automatically transferred to the new **Enable and target** tab.
+   >If you had Passkey (FIDO2) policy settings, they're automatically transferred to a Default passkey profile. Previous user targets are also automatically transferred to the new **Enable and target** tab.
 
-1. To complete opting-in, click on the Default passkey profile and save your selections for Target Types. Your selection will allow device-bound passkeys, synced passkeys, or both. 
+1. To complete opting-in, click on the Default passkey profile and save your selections for Target Types. Your selection allows device-bound passkeys, synced passkeys, or both. 
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/default-passkey-profile.png" alt-text="Screenshot that shows the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/default-passkey-profile.png":::
 
@@ -75,7 +75,7 @@ For more information about how to use Graph Explorer to enable passkey profiles,
    Enforce attestation | Description 
    --------|-------------------
    Yes     | Your organization wants assurance that a FIDO2 security key model or passkey provider is genuine and comes from the legitimate vendor.<br>Metadata for FIDO2 security keys needs to be published and verified with the FIDO Alliance Metadata Service, and also pass another set of validation testing by Microsoft. For more information, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).<br>You can't assign Synced passkeys to a group.<br>Selected users can only register device-bound passkeys. Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration; attestation isn't enforced during sign-in.<br>Passkeys in Microsoft Authenticator support attestation. For more information, see [How passkey attestation works with Authenticator](concept-authentication-authenticator-app.md#how-passkey-attestation-works-with-authenticator).
-   No      | Your organization wants to allow selected users to register any type of passkey<br>There's no assurance of the passkey type (device-bound vs synced) of the security key model or passkey provider<br>There's no assurance of authenticity of the passkey even if **Enforce key restrictions** is set to **Yes**.<br>Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.<br>
+   No      | Your organization wants to allow selected users to register any type of passkey.<br>There's no assurance of the passkey type (device-bound vs synced) of the security key model or passkey provider.<br>There's no assurance of authenticity of the passkey even if **Enforce key restrictions** is set to **Yes**.<br>Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.<br>
 
    **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their AAGUID. You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
        
