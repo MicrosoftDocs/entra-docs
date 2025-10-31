@@ -15,7 +15,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # How to enable and test Account Recovery (Preview) in the Microsoft Entra admin center
 
-Account Recovery (Preview) is a Microsoft Entra ID feature that helps users regain access to their accounts when they've lost all their authentication methods, such as when they lose their phone or hardware token. This capability uses third-party identity verification providers to securely verify a user's identity through alternative means, allowing them to recover their account and re-enroll their authentication methods. This article walks you through the complete process of enabling and configuring Account Recovery in your Microsoft Entra tenant, from initial setup in evaluation mode through full production deployment.
+Account Recovery (Preview) is a Microsoft Entra ID feature that helps users regain access to their accounts when they lose all their authentication methods, such as when they lose their phone or hardware token. This capability uses third-party identity verification providers to securely verify a user's identity through alternative means, allowing them to recover their account and re-enroll their authentication methods. This article walks you through the complete process of enabling and configuring Account Recovery in your Microsoft Entra tenant, from initial setup in evaluation mode through full production deployment.
 
 ## Prerequisites
 
@@ -119,3 +119,8 @@ After testing account recovery in evaluation mode and confirming that the identi
 10. A confirmation message says that account recovery was successful.
 
 Once these steps are complete, users in the scoped groups can use account recovery to fully regain access to their accounts when they lose all authentication methods. They need to complete identity verification through the configured provider and receive a Temporary Access Pass to re-enroll their authentication methods.
+
+
+## Related content
+
+[How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-user-setup)
