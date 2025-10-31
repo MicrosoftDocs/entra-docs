@@ -151,11 +151,8 @@ Steps 1-3 of the deployment flow for frontline workers should typically follow a
 
 ## General considerations
 
-When dealing with concerns about biometrics, make sure that you understand how technologies like Windows Hello for Business handle biometrics. The biometric data is stored only locally on the device and can't be converted back into raw biometric data even if stolen:
-
-- [Windows Hello for Business Biometric data storage](/windows/security/identity-protection/hello-for-business/how-it-works#biometric-data-storage)
-
-
+When dealing with concerns about biometrics, make sure that you understand how technologies like Windows Hello for Business handle biometrics. The biometric data is stored only locally on the device and can't be converted back into raw biometric data even if stolen.
+For more information, see [Windows Hello for Business Biometric data storage](/windows/security/identity-protection/hello-for-business/how-it-works#biometric-data-storage).
 
 ## Next steps
 
