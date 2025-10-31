@@ -5,7 +5,7 @@ ms.author: kenwith
 author: kenwith
 manager: dougeby
 ms.topic: overview
-ms.date: 08/04/2025
+ms.date: 10/31/2025
 ms.service: global-secure-access
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
@@ -65,6 +65,7 @@ For organizations seeking customization according to their unique network archit
 | Partner        | Partner documentation | Description    |
 |----------------|-----------------------|----------------|
 | Arista Networks | [Arista deployment guide](https://www.arista.com/assets/data/pdf/microsoft-entra-internet-access-with-arista-cv-pathfinder.pdf) | Arista Networks integrates Microsoft Entra Internet Access with Arista CloudVision Pathfinder to deliver secure internet access to Arista Data Center, Campus, Branch, and remote locations. Arista WAN Routing Systems intelligently routes traffic to Microsoft's SASE platform for inspection, ensuring secure internet and SaaS access. |
+| Arista VeloCloud | [Arista VeloCloud SD-WAN guide](https://www.arista.com/assets/data/pdf/Arista-Microsoft-SSE-VeloCloud-SD-WAN-Deployment-Guide.pdf) | Arista VeloCloud SD-WAN integrates with Microsoft’s SASE platform to provide secure, high-performance internet access across datacenter, campus and branch networks. This solution combines VeloCloud SD-WAN's dynamic path selection, application-aware routing, centralized orchestration to intelligently route traffic to Microsoft's SASE platform for inspection, ensuring secure internet and SaaS application access.| 
 | Check Point     | [Check Point configuration guide](https://support.checkpoint.com/results/sk/sk182799) | Check Point's Quantum SD-WAN solution brings advanced security to WAN connectivity, seamlessly integrating with Microsoft's SASE platform to optimize and secure Microsoft 365 and internet traffic for customers across distributed locations. This solution combines threat prevention, intelligent traffic management, and streamlined workflows, reducing complexity and strengthening security posture across both network and cloud environments. |
 | Cisco Catalyst  | [Cisco Catalyst user guide](https://www.cisco.com/c/en/us/solutions/collateral/enterprise-networks/sd-wan/catalyst-sd-wan-ms-sse-int-ug.html) | The Cisco Catalyst SD-WAN integrations with Microsoft's SASE platform use simplified network deployment and advanced threat protection capabilities to deliver comprehensive security for internet-bound traffic originating from branch offices. All internet traffic is routed to Microsoft's SASE platform for inspection, safeguarding users, devices, and data from evolving threats while securing public internet and SaaS access. |
 | Cisco Meraki    | [Meraki configuration guide](https://documentation.meraki.com/MX/Security_Service_Edge_Integrations/Meraki_Secure_SD-WAN_Microsoft_SSE_Configuration_Guide) |The Cisco Meraki SD-WAN integrations with Microsoft's SASE platform use simplified network deployment and advanced threat protection capabilities to deliver comprehensive security for internet-bound traffic originating from branch offices. All internet traffic is routed to Microsoft's SASE platform for inspection, safeguarding users, devices, and data from evolving threats while securing public internet and SaaS access. |
