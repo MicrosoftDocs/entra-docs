@@ -4,7 +4,7 @@ description: Learn how to enable synced passkeys (FIDO2) in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/1/2025
+ms.date: 10/31/2025
 ms.author: justinha
 author: hanki71
 manager: dougeby
@@ -30,14 +30,9 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   - Google Password Manager
 
 >[!Notes]
->- Attested passkeys provide cryptographically verifiable device identity through FIDO Metadata Service (MDS). 
->  When attestation is enforced, relying parties can validate the authenticator model and apply policy decisions for certified devices.
->
->- Unattested passkeys, including synced passkeys and unattested device-bound passkeys, don't provide device provenance. 
->  AAGUID values can be spoofed unless attestation is enforced.
->
->- Treat synced passkeys as phishing resistant credentials but with the same security posture as other unattested authenticators. 
->  For high assurance scenarios, enforce attestation and restrict to approved device bound authenticators.
+>- Attested passkeys provide cryptographically verifiable device identity through FIDO Metadata Service (MDS). When attestation is enforced, relying parties can validate the authenticator model and apply policy decisions for certified devices.
+>- Unattested passkeys, including synced passkeys and unattested device-bound passkeys, don't provide device provenance. AAGUID values can be spoofed unless attestation is enforced.
+>- Treat synced passkeys as phishing resistant credentials but with the same security posture as other unattested authenticators. For high assurance scenarios, enforce attestation and restrict registration to approved device-bound authenticators.
 
 ## When to use each type
 
@@ -74,14 +69,14 @@ For more information about how other providers protect passkeys stored in their 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Make sure you opted-in to the Passkey profiles (preview).
 1. Browse to **Entra ID** > **Authentication methods** > **Authentication method policy**.
-1. Under the method **Passkey (FIDO2)**, select **Configure**.
+1. Select **Passkey (FIDO2)** > **Configure**.
 1. Add a profile or edit an existing profile.
 1. Under **Target type**, select **Synced (preview)** and save the profile. 
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png" alt-text="Screenshot that shows how to enable synced passkeys."lightbox="media/how-to-authentication-passkey-profiles/enable-synced-passkeys.png":::
 
 >[!Note] 
->If you disable synced passkeys for a given passkey profile, targeted users will no longer be able to sign-in with synced passkeys even if they have already registered one.
+>If you disable synced passkeys for a given passkey profile, targeted users can't sign-in with a synced passkey even if they already registered one.
 
 ## Related content
 
