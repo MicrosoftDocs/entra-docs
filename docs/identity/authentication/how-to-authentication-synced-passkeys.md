@@ -21,11 +21,11 @@ Passkeys (FIDO2) are a strong, phishing resistant alternative to passwords. With
 
 Passkeys are FIDO2-based credentials that provide strong, phishing-resistant authentication. Microsoft Entra ID supports two main types of passkeys:
 
-- Device-bound passkeys: The private key is created and stored on a single physical device and never leaves it. Examples: TODO
+- Device-bound passkeys: The private key is created and stored on a single physical device and never leaves it. Examples:
   - Microsoft Authenticator (iOS)
   - Microsoft Authenticator (Android)
   - Security key
-- Synced passkeys: The private key is stored in a passkey provider’s cloud (such as Apple iCloud Keychain, or Google Password Manager) and synced across the user’s devices. Examples: TODO
+- Synced passkeys: The private key is stored in a passkey provider’s cloud (such as Apple iCloud Keychain, or Google Password Manager) and synced across the user’s devices. Examples: 
   - Apple iCloud Keychain
   - Google Password Manager
 
@@ -44,14 +44,14 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
 We recommend enabling passkeys for all users in your organization. Any type of passkey is a significant security improvement over traditional MFA methods that can be phished, such as SMS codes, email OTPs, or even authenticator app codes. The choice of passkey type depends on your business needs and user scenarios:
 
 - **For admins and highly privileged users**
-  Use FIDO2 security keys for scenarios like bootstrapping a new device where the user is not yet signed in. Security keys provide strong device provenance and attestation support, making them ideal for high-assurance environments or regulated industries. Keep in mind that these keys require physical distribution and management, which can involve additional planning for training, helpdesk support, and recovery in case of loss.
+  Use FIDO2 security keys for scenarios like bootstrapping a new device where the user is not yet signed in. Security keys provide strong device provenance and attestation support, making them ideal for high-assurance environments or regulated industries. Keep in mind that these keys require physical distribution and management, which can involve planning for training, helpdesk support, and recovery if they get lost.
 
-  - **Alternative option for admins and highly privileged users**: Consider passkeys in the Microsoft Authenticator app as an alternative. This option integrates well with Entra ID and offers strong phishing resistance. However, current OS limitations—such as Android Work Profiles—may introduce usability challenges. Plan for user education and recovery processes similar to those for lost devices.
+  - **Alternative option for admins and highly privileged users**: Consider passkeys in Microsoft Authenticator as an alternative. This option integrates well with Microsoft Entra ID, and offers strong phishing resistance. However, current OS limitations—such as Android Work Profiles—may add usability challenges. Plan for user education and recovery processes similar to those for lost devices.
 
 - **For information workers and frontline staff**
-  Enable synced passkeys managed by providers like Apple iCloud Keychain or Google Password Manager. These passkeys deliver a seamless registration and sign-in experience across devices, making them a great fit for roles such as marketing, HR, finance, retail, or manufacturing. Synced passkeys are phishing-resistant and designed for convenience, helping reduce friction in large-scale deployments.
+  Enable synced passkeys managed by providers like Apple iCloud Keychain or Google Password Manager. These passkeys deliver a seamless registration and sign-in experience across devices, making them a great fit for roles such as marketing, human resources (HR), finance, retail, or manufacturing. Synced passkeys are phishing-resistant and designed for convenience, helping reduce friction in large-scale deployments.
 
-Learn more about how Apple and Google protect passkeys stored in their cloud with end-to-end encryption: Apple article, Google article. 
+For more information about how other providers protect passkeys stored in their cloud with end-to-end encryption, see [About the security of passkeys](https://support.apple.com/en-us/102195) and [Manage passkeys in Chrome](https://support.google.com/chrome/answer/13168025). 
 
 ## Requirements
 
