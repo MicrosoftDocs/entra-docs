@@ -219,6 +219,12 @@ Agent suggestions for Intune scenarios cover specific user groups and platforms 
 
 To identify Intune device compliance and app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator AND Global Reader. Conditional Access Administrator isn't sufficient on its own for the agent to produce Intune suggestions.
 
+## Global Secure Access integration
+
+Microsoft Entra Internet Access and Microsoft Entra Private Access (collectively known as Global Secure Access) integrate with the Conditional Access Optimization Agent to provide suggestions specific to your organization's network access policies. The suggestion, **Turn on new policy to enforce Global Secure Access network access requirements**, helps you to align your Global Secure Access policies that include network locations and protected applications.
+
+With this integration, the agent identifies users or groups that aren't covered by a Conditional Access policy to require access to corporate resources only through approved Global Secure Access channels. This policy requires users to connect to corporate resources using the organization's secure Global Secure Access network before accessing corporate apps and data. Users connecting from unmanaged or untrusted networks are prompted to use the Global Secure Access client or web gateway. You can review sign-in logs to verify compliant connections.
+
 ## Remove agent
 
 If you no longer wish to use the Conditional Access optimization agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any policies created or updated based on the agent suggestions remain intact. Previously applied suggestions remain unchanged so you can continue to use the policies created or modified by the agent.
