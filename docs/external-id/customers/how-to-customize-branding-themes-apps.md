@@ -20,7 +20,7 @@ ms.topic: how-to
 > Branding themes for applications are currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-Previously, you could only use a single branding theme for your entire tenant when users sign in to your applications. Now you can create unique authentication experiences for applications in your tenant. Each application can have its own theme, which you can customize with a background image or color, favicon, layout, header, and footer. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
+You can create unique authentication experiences for applications in your tenant. Each application can have its own theme that you can customize with a background image or color, favicon, layout, header, and footer. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
 This article describes how you can create multiple branding themes for different applications in your tenant.
 
@@ -58,9 +58,9 @@ When you create a branding theme, here are some of the properties you can custom
 
 Branding themes build on neutral branding and default branding.
 
-- Branding theme - Customizations of the default branding where you can have multiple themes.
-- Default branding (company branding) - Customizations of the neutral branding for a tenant.
-- Neutral branding - Initial branding for a tenant.
+- **Branding theme** - Customizations of the default branding where you can have multiple themes.
+- **Default branding (company branding)** - Customizations of the neutral branding for a tenant.
+- **Neutral branding** - Initial branding for a tenant.
 
 Here are some important things to know about how branding themes work.
 
@@ -181,6 +181,56 @@ In this section, you add a language to a theme.
     The steps for customizing the language are similar to customizing branding theme.
   
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/languages-tab.png" alt-text="Screenshot of the Languages tab to add a language." lightbox="./media/how-to-customize-branding-themes-apps/languages-tab.png":::
+
+1. On the **Basics** tab, select a language.
+  
+    :::image type="content" source="./media/how-to-customize-branding-themes-apps/language-basics-tab.png" alt-text="Screenshot of the Add a language page and Basics tab to select a language." lightbox="./media/how-to-customize-branding-themes-apps/language-basics-tab.png":::
+
+    The following languages are supported:
+    
+    - Arabic (Saudi Arabia)
+    - Basque (Basque)
+    - Bulgarian (Bulgaria)
+    - Catalan (Catalan)
+    - Chinese (China)
+    - Chinese (Hong Kong SAR)
+    - Croatian (Croatia)
+    - Czech (Czechia)
+    - Danish (Denmark)
+    - Dutch (Netherlands)
+    - English (United States)
+    - Estonian (Estonia)
+    - Finnish (Finland)
+    - French (France)
+    - Galician (Galician)
+    - German (Germany)
+    - Greek (Greece)
+    - Hebrew (Israel)
+    - Hungarian (Hungary)
+    - Italian (Italy)
+    - Japanese (Japan)
+    - Kazakh (Kazakhstan)
+    - Korean (Korea)
+    - Latvian (Latvia)
+    - Lithuanian (Lithuania)
+    - Norwegian Bokmål (Norway)
+    - Polish (Poland)
+    - Portuguese (Brazil)
+    - Portuguese (Portugal)
+    - Romanian (Romania)
+    - Russian (Russia)
+    - Serbian (Latin, Serbia)
+    - Slovak (Slovakia)
+    - Slovenian (Slovenia)
+    - Spanish (Spain)
+    - Swedish (Sweden)
+    - Thai (Thailand)
+    - Turkish (Türkiye)
+    - Ukrainian (Ukraine)
+
+1. Customize the elements on the **Layout**, **Styling**, and **Custom text** tabs.
+
+1. On the **Review** tab select **Add** to add the language.
 
 ## Related content
 
