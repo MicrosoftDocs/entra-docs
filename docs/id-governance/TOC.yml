@@ -408,7 +408,9 @@
         - name: Manage inactive users (Preview)
           href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
-          href: check-workflow-execution-scope.md  
+          href: check-workflow-execution-scope.md
+        - name: Delegated Workflow Management (Preview)
+          href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
         - name: Manage synced AD DS users
