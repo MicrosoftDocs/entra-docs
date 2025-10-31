@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 10/24/2025
+ms.date: 10/31/2025
 
 #CustomerIntent: As an IT administrator, I want to use Microsoft Entra ID Protection to identify and remediate identity risks so that I can protect users that access enterprise-managed resources.
 ---
@@ -19,7 +19,7 @@ An overview of the guidance begins with [Introduction to Microsoft Entra ID Pro
 Detailed guidance continues with these scenarios:
 
 * [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-* [Enable visibility into risk analysis for resulting actions](id-protection-guide-analyze.md)
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 
 This article helps administrators to identify and remediate identity risks for users accessing enterprise-managed resources, including Microsoft 365. Use real-time and offline risk detections to evaluate sign-ins and user behavior. Apply automated responses such as multifactor authentication (MFA), password resets, or block access based on risk levels. Risk-based conditional access policies that scale across large environments enforce these protections.
@@ -64,6 +64,6 @@ Configure user alerts and notifications for the following scenarios:
 
 * [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
 * [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-* [Enable visibility into risk analysis for resulting actions](id-protection-guide-analyze.md)
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * Allow users to self-remediate identity risk for enterprise-managed resources
