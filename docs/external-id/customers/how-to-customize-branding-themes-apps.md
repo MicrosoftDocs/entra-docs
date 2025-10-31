@@ -18,7 +18,7 @@ ms.topic: how-to
 
 > [!IMPORTANT]
 > Branding themes for applications are currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 You can create unique authentication experiences for applications in your tenant. Each application can have its own theme that you can customize with a background image or color, favicon, layout, header, and footer. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
@@ -73,7 +73,7 @@ Here are some important things to know about how branding themes work.
 Here are some of the limits and constraints for branding themes.
 
 - You can create up to 5 branding themes per tenant.
-- The live preview capability previews style and layout changes and only shows the Sign in page. Live preview does not include any custom text overrides.
+- The live preview capability previews style and layout changes and only shows the Sign in page. Live preview doesn't include any custom text overrides.
 - You can't use the name **Default theme** for your branding theme name. This name is reserved.
 - Custom text changes are currently limited to sign-in page only.
 - If you don't update the banner logo property, the Microsoft logo is displayed instead of the tenant name (neutral branding).
@@ -130,7 +130,7 @@ Here are some of the limits and constraints for branding themes.
 
 1. Customize the text for the selected page and then select **Add**.
 
-    Custom text set for a theme may impact localized UX as they will not be localized. To ensure full localization of all text, set custom text for each theme language.
+    Custom text set for a theme might impact localized UX as they will not be localized. To ensure full localization of all text, set custom text for each theme language.
   
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/custom-text-edit.png" alt-text="Screenshot of the Edit custom text page for the Sign-in page." lightbox="./media/how-to-customize-branding-themes-apps/custom-text-edit.png":::
 
@@ -230,7 +230,7 @@ In this section, you add a language to a theme.
 
 1. Customize the elements on the **Layout**, **Styling**, and **Custom text** tabs.
 
-1. On the **Review** tab select **Add** to add the language.
+1. On the **Review** tab, select **Add** to add the language.
 
 ## Related content
 
