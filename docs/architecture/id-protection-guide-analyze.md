@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 10/29/2025
+ms.date: 10/31/2025
 
 #CustomerIntent: As an administrator, I want to improve my risk analysis, risk assessment, and resulting actions for common risk event types, flagged users, and risk-level patterns.
 ---
@@ -188,7 +188,7 @@ To help you get started, see and learn more about Azure Monitor Log reference ta
 
 * [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
 * [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-* Enable visibility into risk analysis for resulting actions
+* Master risk analysis for effective remediation
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
 
@@ -214,6 +214,7 @@ With Microsoft Entra, organizations enable real-time access and identity decisio
 * [Microsoft Entra News and Insights, Microsoft Security Blog](https://www.microsoft.com/security/blog/product/microsoft-entra/)
 * [Microsoft Entra blog, Tech Community](https://techcommunity.microsoft.com/)
 * [Microsoft Entra discussions, Microsoft Community](https://techcommunity.microsoft.com/)
+
 
 
 
