@@ -32,9 +32,9 @@ additionalContent:
         - title: What is Microsoft Entra Agent ID?
           links:
             - text: Security for AI with Entra Agent ID
-              url: ./what-is-agent-id.md
+              url: ./identity-professional/security-for-ai.md
             - text: Entra agent ID security capabilities
-              url: ./what-is-agent-id.md
+              url: ./identity-professional/entra-security-for-ai-agents.md
 
     ## Section 2: Microsoft agent identity platform ######################
     - title: Microsoft agent identity platform

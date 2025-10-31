@@ -16,7 +16,7 @@ ms.reviewer: dastrock
 
 This document explains how Microsoft Entra agent ID extends security capabilities to AI agents through Conditional Access policies, Identity Protection, ID Governance, network-level controls, and the agent identity platform.
 
-:::image type="content" source="media/entra-security-for-ai-agents/entra-agent-id-capabilities.png" alt-text="Diagram agent security capabilities offered by Entra agent ID.":::
+:::image type="content" source="media/entra-security-for-ai-agents/entra-agent-identity-capabilities.png" alt-text="Diagram agent security capabilities offered by Entra agent ID.":::
 
 ## Conditional Access for AI Agents
 
