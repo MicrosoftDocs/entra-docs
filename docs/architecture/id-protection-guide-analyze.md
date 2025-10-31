@@ -192,11 +192,6 @@ To help you get started, see and learn more about Azure Monitor Log reference ta
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
 
-### Additional links
-
-* Watch instructional videos in the [ID Protect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
-* Visit the [Tech Community](https://techcommunity.microsoft.com/) for updates and technical information
-* Learn to configure diagnostics at [idpdiagnosticssettings](https://aka.ms/idpdiagnosticssettings)
 
 
 
