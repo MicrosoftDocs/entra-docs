@@ -48,7 +48,7 @@ To edit the properties of a workflow using the Microsoft Entra admin center, you
 
 7. Update the desired properties. 
 > [!NOTE]
-> Display names can not be the same as other existing workflows. They must have their own unique name.
+> Display names cannot be the same as other existing workflows. They must have their own unique name.
 
 8. Select **save**.
 
