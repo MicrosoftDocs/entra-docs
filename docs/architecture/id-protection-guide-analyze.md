@@ -22,7 +22,7 @@ Detailed guidance continues with these scenarios:
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
-This article helps identity administrators begin mastering risk analysis for effective remediation with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs). Configure access to your organization's resources with a proactive approach to risk. Create automated conditions for access and save on operationional and support costs. Mitigate the accelerating pace of cyber attack complexity. 
+This article helps identity administrators begin mastering risk analysis for effective remediation with [Azure Monitor Logs](/azure/azure-monitor/logs/data-platform-logs). The following list highlights analysis areas:
 
 * Track risk events across users and sign-ins 
 * Correlate anomalies with [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) policies and sign-in logs 
@@ -197,6 +197,7 @@ To help you get started, see and learn more about Azure Monitor Log reference ta
 * Watch instructional videos in the [ID Protect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
 * Visit the [Tech Community](https://techcommunity.microsoft.com/) for updates and technical information
 * Learn to configure diagnostics at [idpdiagnosticssettings](https://aka.ms/idpdiagnosticssettings)
+
 
 
 
