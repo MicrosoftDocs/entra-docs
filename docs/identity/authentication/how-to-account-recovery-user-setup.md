@@ -4,7 +4,7 @@ description: How end users can set up account recovery for Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/17/2025
+ms.date: 10/31/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -43,7 +43,7 @@ Users can recover their accounts in just a few simple steps. Below we'll explore
 12. After you take the photo, select **Submit photos**.
 13. Review how to take a clear photo of your face, and select **Continue** after you read each step.
 
-    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/face-check.png.png" alt-text="Screenshot that shows how to complete face check for account recovery."lightbox="media/how-to-account-recovery-user-setup/face-check.png":::
+    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/face-check.png" alt-text="Screenshot that shows how to complete face check for account recovery."lightbox="media/how-to-account-recovery-user-setup/face-check.png":::
 
 14. After you take the photo, the identity proofing application verifies your identity, and issues a Verifiable Credential.
 15. On the **Success** page, select **Add Verifiable Credential**.
@@ -55,7 +55,7 @@ Users can recover their accounts in just a few simple steps. Below we'll explore
 18. Sign in to the identity proofing application, and select **Start**.
 19. The new Verifiable Credential is listed in Authenticator under **Verified IDs**, and Authenticator and the identity proofing application both show **Success**.
 
-    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/create-passkey.png" alt-text="Screenshot that shows how to sign in to set up account recovery."lightbox="media/how-to-account-recovery-user-setup/create-passkey.png":::   
+    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery."lightbox="media/how-to-account-recovery-user-setup/create-passkey.png":::   
 
 ## Related content
 
