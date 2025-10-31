@@ -16,10 +16,10 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra Agent ID?
       itemType: overview
-      url: ./what-is-agent-id.md
+      url: ./identity-professional/index.yml
     - title: What is the Microsoft agent identity platform?
       itemType: overview
-      url: ./what-is-agent-id-platform.md
+      url: ./identity-platform/index.yml
 
 additionalContent:
   # Supports up to 4 subsections
@@ -31,7 +31,9 @@ additionalContent:
         ## CARD 1 ######################
         - title: What is Microsoft Entra Agent ID?
           links:
-            - text: What is Microsoft Entra Agent ID?
+            - text: Security for AI with Entra Agent ID
+              url: ./what-is-agent-id.md
+            - text: Entra agent ID security capabilities
               url: ./what-is-agent-id.md
 
     ## Section 2: Microsoft agent identity platform ######################
@@ -42,4 +44,8 @@ additionalContent:
         - title: Agent Identity Platform
           links:
             - text: What is the Microsoft agent identity platform?
-              url: ./what-is-agent-id-platform.md
+              url: ./identity-platform/what-is-agent-id-platform.md
+            - text: What is an agent ID?
+              url: ./identity-platform/what-is-agent-id.md
+            - text: What is the agent registry?
+              url: ./identity-platform/what-is-agent-registry.md

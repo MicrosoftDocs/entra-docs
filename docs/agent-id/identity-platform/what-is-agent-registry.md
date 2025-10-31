@@ -49,8 +49,8 @@ The agent registry system consists of several integrated components that work to
 
 | Component | Purpose | Key Features | Benefits |
 |-----------|---------|--------------|----------|
-| **Metadata Store** | Centralized agent metadata repository | NoSQL-based, Agent Card support, real-time updates | Scalable storage for rich agent information and A2A protocol compliance. For more information, see [Agent registry metadata](placeholder-link). |
-| **Collection System** | Secure agent categorization and access control enforcement | baseline access controls, custom collections | Secure-by-default organization. For more information, see [Agent registry collections](agent-registry-collections.md). |
+| **Metadata Store** | Centralized agent metadata repository | NoSQL-based, Agent Card support, real-time updates | Scalable storage for rich agent information and A2A protocol compliance. For more information, see Agent registry metadata. |
+| **Collection System** | Secure agent categorization and access control enforcement | baseline access controls, custom collections | Secure-by-default organization. For more information, see Agent registry collections. |
 | **Discovery Service** | Agent and capability discovery APIs | Multi-dimensional search, collection-aware filtering, skill-based discovery | Enables secure, intelligent agent-to-agent coordination |
 | **Integration Layer** | Cross-platform and security system coordination | Microsoft Security Copilot, Defender, Purview integration | Enables ecosystem-wide security operations and custom workflows |
 
