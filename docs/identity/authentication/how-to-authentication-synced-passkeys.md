@@ -15,7 +15,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # How to enable synced passkeys (FIDO2) in Microsoft Entra ID (preview)
 
-Passkeys (FIDO2) are a strong, phishing resistant alternative to passwords. With this preview, Microsoft Entra ID supports synced passkeys. Synced passkeys are stored in platform or third-party passkey providers such as Apple iCloud Keychain, Google Password Manager, 1Password, or Bitwarden. They're made available across a user’s devices. Synced passkeys simplify user onboarding and account recovery, which accelerates passwordless adoption for most organizations.
+Passkeys (FIDO2) are a strong, phishing resistant alternative to passwords. With this preview, Microsoft Entra ID supports synced passkeys. Synced passkeys are stored in platform or with other passkey providers such as Apple iCloud Keychain, Google Password Manager, 1Password, or Bitwarden, and made available across a user’s devices. Synced passkeys simplify user onboarding and account recovery, which accelerates passwordless adoption for most organizations.
 
 ## What are synced versus device-bound passkeys?
 
@@ -61,9 +61,9 @@ For more information about how other providers protect passkeys stored in their 
 
   Passkey provider | Windows | macOS | iOS | Android
   -----------------|---------|-------|-----|--------
-  Apple Passwords (aka iCloud Keychain) | N/A<sup>1</sup> | Natively built in. macOS 13+<sup>2</sup> | Natively built in. iOS 16+<sup>2</sup> | N/A<sup>1</sup> 
+  Apple Passwords (also called iCloud Keychain) | N/A<sup>1</sup> | Natively built in. macOS 13+<sup>2</sup> | Natively built in. iOS 16+<sup>2</sup> | N/A<sup>1</sup> 
   Google Password Manager | Built in to Chrome<sup>2</sup> | Built in to Chrome<sup>2</sup> | Built in to Chrome. iOS 17+<sup>2</sup> | Natively built in (excluding Samsung devices). Android 9+<sup>2</sup>
-  Third-party passkey provider (such as 1Password, Bitwarden) | Check for browser extension<sup>2</sup> | Check for browser extension<sup>2</sup> | Check for app. iOS 17+<sup>2</sup> | Check for app. Android 14+<sup>2</sup> 
+  Other passkey providers (such as 1Password, Bitwarden) | Check for browser extension<sup>2</sup> | Check for browser extension<sup>2</sup> | Check for app. iOS 17+<sup>2</sup> | Check for app. Android 14+<sup>2</sup> 
 
   <sup>1</sup>Passkey provider is available on-device for same-device flows. 
 
