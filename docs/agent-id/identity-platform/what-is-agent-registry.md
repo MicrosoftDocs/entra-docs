@@ -78,6 +78,6 @@ At run-time, the registry applies operational constraints related to security po
 
 ## Related content
 
-- [Publish agents to registry](publish-agents-to-registry.md)
-- [Agent registry schema and metadata](agent-metadata-discoverability.md)
-- [Collection-based models](agent-registry-collections.md)
+- Publish agents to registry
+- Agent registry schema and metadata
+- Collection-based models
