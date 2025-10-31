@@ -19,7 +19,7 @@ Users can recover their accounts in just a few simple steps. Below we'll explore
 
 :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/recover-steps-1-5.png" alt-text="Initial steps to enter recovery.":::
 
-1. User attempts to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com)](https://login.microsoftonline.com).
+1. User attempts to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com](https://login.microsoftonline.com).
 2. The user is presented with an initial authentication method to sign-in with.
 3. Unable to use this method, the user can then click **Other ways to sign-in** and is presented with additional sign-in options. 
 4. As the user has lost all ability to sign-in with any registered authentication methods, they click **Recover your account**.
