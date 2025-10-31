@@ -29,7 +29,7 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   - Apple iCloud Keychain
   - Google Password Manager
 
->[!Notes]
+>[!NOTE]
 >- Attested passkeys provide cryptographically verifiable device identity through FIDO Metadata Service (MDS). When attestation is enforced, relying parties can validate the authenticator model and apply policy decisions for certified devices.
 >- Unattested passkeys, including synced passkeys and unattested device-bound passkeys, don't provide device provenance. AAGUID values can be spoofed unless attestation is enforced.
 >- Treat synced passkeys as phishing resistant credentials but with the same security posture as other unattested authenticators. For high assurance scenarios, enforce attestation and restrict registration to approved device-bound authenticators.
