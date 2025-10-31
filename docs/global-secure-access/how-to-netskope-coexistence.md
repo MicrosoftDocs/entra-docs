@@ -139,9 +139,6 @@ Netskope portal configuration
 
 In this scenario, both clients handle traffic for separate private applications. The Global Secure Access client handles private applications in Microsoft Entra Private Access and the Netskope client handles private applications in Netskope Private Access. Netskope handles internet traffic.
 
-> [!NOTE]
-> Known limitation – When the macOS Global Secure Access client is connected before the Netskope client, Global Secure Access functionality is disrupted.
-
 ### Microsoft Entra Private Access configuration
 
 For this scenario:
@@ -149,13 +146,13 @@ For this scenario:
 1. [Enable Microsoft Entra Private Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-private-access-profile.md#enable-the-private-access-traffic-forwarding-profile).
 1. Install a [Private Network Connector](/entra/global-secure-access/how-to-configure-connectors) for Microsoft Entra Private Access.
 1. Configure [Quick Access and set up Private DNS](/entra/global-secure-access/how-to-configure-quick-access).
-1. Install and configure the [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client).
+1. Install and configure the [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client) or [macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 ### Netskope Private Access and Netskope Internet Access configuration
 
 In the Netskope portal:
 1. Set up and configure [Netskope Steering Configuration](https://docs.netskope.com/en/steering-configuration/) to steer Web Traffic and Private Apps.
-1. Install the Netskope Client for [Windows](https://docs.netskope.com/en/netskope-client-for-windows).
+1. Install the Netskope Client for [Windows](https://docs.netskope.com/en/netskope-client-for-windows), or [macOS](https://docs.netskope.com/en/netskope-client-for-macos).
 1. Create [Real-time Protection policy](https://docs.netskope.com/en/inline-policies/) to allow access to Private Apps.
 1. Install the [Netskope Private Access Publisher](https://docs.netskope.com/en/deploy-a-publisher).
 
@@ -218,22 +215,19 @@ In the Netskope portal:
 
 In this scenario, Global Secure Access handles all Microsoft 365 traffic. Netskope Private Access handles Private application traffic and Netskope Internet Access handles Internet traffic.
 
-> [!NOTE]
-> Known limitation – When the macOS Global Secure Access client is connected before the Netskope client, Global Secure Access functionality is disrupted.
-
 ### Microsoft Entra Microsoft Access configuration
 
 For this scenario:
 
 1. [Enable Microsoft Entra Microsoft Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-microsoft-access-profile.md#enable-the-microsoft-access-traffic-forwarding-profile).
-1. Install and configure the [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client).
+1. Install and configure the [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client) or [macOS](/entra/global-secure-access/how-to-install-macos-client).
 
 ### Netskope Private Access and Netskope Internet Access configuration
 
 In the Netskope portal:
 
 1. Set up and configure [Netskope Steering Configuration](https://docs.netskope.com/en/steering-configuration/) to steer Web Traffic and Private Apps.
-1. Install the Netskope Client for [Windows](https://docs.netskope.com/en/netskope-client-for-windows).
+1. Install the Netskope Client for [Windows](https://docs.netskope.com/en/netskope-client-for-windows), or [macOS](https://docs.netskope.com/en/netskope-client-for-macos).
 1. Create [Real-time Protection policy](https://docs.netskope.com/en/inline-policies/) to allow access to Private Apps.
 1. Install the [Netskope Private Access Publisher](https://docs.netskope.com/en/deploy-a-publisher).
 
