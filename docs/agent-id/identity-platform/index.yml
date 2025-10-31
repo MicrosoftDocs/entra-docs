@@ -1,0 +1,25 @@
+### YamlMime:Landing
+
+title: Microsoft agent identity platform
+summary: Learn how to build agents that can authenticate users, request permissions, and access resources securely with Microsoft agent identity platform.
+
+metadata: 
+   title: Microsoft Agent Identity Platform
+   description: Learn how to build agents that can authenticate users, request permissions, and access resources securely with the Microsoft agent identity platform.
+   ms.service: entra-id
+   ms.topic: landing-page
+   ms.date: 10/07/2025
+   author: shlipsey3
+   ms.author: sarahlipsey
+
+landingContent:
+  - title: What is the Microsoft agent identity platform?
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the Microsoft agent identity platform?
+            url: ./what-is-agent-id-platform.md
+          - text: What is an agent ID?
+            url: ./what-is-agent-id.md
+          - text: What is the agent registry?
+            url: ./what-is-agent-registry.md
