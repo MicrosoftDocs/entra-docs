@@ -30,7 +30,7 @@ This article helps identity administrators begin mastering risk analysis for eff
   * Enrich investigations and stream telemetry to [Microsoft Defender XDR](/defender-xdr/microsoft-365-defender) and [Microsoft Sentinel](/azure/sentinel/overview), a security information and event management (SIEM) tool with threat intelligence and a data-lake architecture
   * You can [search the audit log in Microsoft Defender XDR](/defender-xdr/microsoft-xdr-auditing).
 
-Use the following sections to learn to manage common risk event types, flagged users, and risk-level patterns with Azure Monitor logs and Microsoft Entra ID Protection.
+Use the following sections to learn how to manage common risk event types, flagged users, and risk-level patterns with Azure Monitor logs and Microsoft Entra ID Protection.
 
 * [Enable risk analysis with the AADUserRiskEvents table](#enable-risk-analysis-with-the-aaduserriskevents-table)
 * [Ensure prerequisites are met](#ensure-prerequisites-are-met)
@@ -197,6 +197,7 @@ To help you get started, see and learn more about Azure Monitor Log reference ta
 * Watch instructional videos in the [ID Protect YouTube playlist](https://www.youtube.com/playlist?list=PL3ZTgFEc7Lyvgqywy5KvqYcFYpDSBj-qm)
 * Visit the [Tech Community](https://techcommunity.microsoft.com/) for updates and technical information
 * Learn to configure diagnostics at [idpdiagnosticssettings](https://aka.ms/idpdiagnosticssettings)
+
 
 
 
