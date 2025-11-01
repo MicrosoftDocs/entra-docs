@@ -24,6 +24,22 @@ This article provides information about the latest releases and change announcem
 
 ## October 2025
 
+### Plan for Change - Update to Revoke Multifactor Authentication Sessions 
+
+**Type:** Plan for change   
+**Service category:** MFA    
+**Product capability:** Identity Security & Protection    
+
+Starting February 2026, we are replacing the current “*Revoke multifactor authentication sessions*” button with the “*Revoke sessions*” button in the MicrosoftEntra portal.
+
+The legacy “*Revoke MFA session*s” action only applies to per-user MFA enforcement, which has led to confusion. To simplify and ensure consistent behavior, the new “*Revoke sessions*” button will invalidate all user sessions, including MFA, regardless of whether MFA is enforced via Conditional Access or per-user policies.
+
+**Action required**
+Admins should update workflows and guidance to use “*Revoke sessions*” instead of “*Revoke MFA sessions*”. The “*Revoke MFA sessions*” option will be removed from the portal after this change.
+
+---
+
+
 ### Public Preview - Delegated Workflow Management in Lifecycle Workflows
 
 **Type:** New feature    
