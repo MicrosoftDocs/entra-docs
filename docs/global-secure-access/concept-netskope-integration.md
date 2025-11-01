@@ -1,36 +1,32 @@
 ---
-title: "Global Secure Access: Advanced Threat Protection (Preview)"
+title: "Global Secure Access: Advanced Threat Protection"
 description: "Learn how to protect your organization with Global Secure Access Advanced Threat Protection (ATP) and Data Loss Prevention (DLP) policies powered by Netskope."
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to   
-ms.date: 07/08/2025
+ms.date: 10/31/2025
 manager: dougeby
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
 
 #customer intent: As an IT administrator, I want to configure Advanced Threat Protection and Data Loss Prevention policies so that I can protect my organization from malware and data leaks.
 ---
-# Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention (preview)
+# Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention
 
 In today's evolving threat landscape, organizations face challenges protecting sensitive data and systems from cyberattacks. Global Secure Access Advanced Threat Protection (ATP) combines Microsoft Security Service Edge (SSE) with Netskope's advanced threat detection and data loss prevention (DLP) capabilities to deliver a comprehensive security solution. This integration offers real-time protection against malware, zero-day vulnerabilities, and data leaks, and simplifies management through a unified platform.
 
 This guide provides step-by-step instructions for configuring ATP and DLP policies to safeguard your organization. By following these steps, IT administrators can apply the power of Microsoft SSE and Netskope to enhance their organization's security posture and streamline threat management.
-
-> [!IMPORTANT]
-> Global Secure Access Advanced Threat Protection is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before its release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. 
 
 **High-level architecture**
 :::image type="content" source="media/concept-netskope-integration/high-level-architecture.png" alt-text="Diagram that shows how data is routed and analyzed between Microsoft Entra, Global Secure Access, and Netskope.":::
 
 ## Prerequisites
 To complete these steps, make sure you have the following prerequisites:
-- A Global Secure Access Administrator role in Microsoft Entra ID to configure Global Secure Access settings.   
+- A Global Secure Access Administrator role in Microsoft Entra ID to configure Global Secure Access settings.
 - A tenant configured with a Transport Layer Security (TLS) inspection policy as described in [Configure Transport Layer Security Inspection](how-to-transport-layer-security.md). 
-- Test devices or virtual machines running Windows 10 or Windows 11 that are joined or hybrid joined to a Microsoft Entra ID.   
-- Test devices with the Global Secure Access client installed. See [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md) for requirements and installation instructions.   
+- Devices or virtual machines running Windows 10 or Windows 11 that are joined or hybrid joined to a Microsoft Entra ID.   
+- Devices with the Global Secure Access client installed. See [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md) for requirements and installation instructions.   
 - A Conditional Access Administrator role to configure Conditional Access policies.    
 - Trial Microsoft Entra Internet Access licenses. For licensing details, see the Global Secure Access [Licensing overview](overview-what-is-global-secure-access.md#licensing-overview). You can purchase licenses or get trial licenses. To activate an Internet Access trial, browse to [aka.ms/InternetAccessTrial](https://aka.ms/InternetAccessTrial).     
 
@@ -42,12 +38,12 @@ To complete these steps, make sure you have the following prerequisites:
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding** and enable the Internet access profile.  
 1. Under **Internet access profile** > **User and Group assignments**, select **View** to choose the participating users. 
 
-For more information, see [How to manage the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md). 
+    For more information, see [How to manage the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md). 
 
-> [!IMPORTANT]
-> Before continuing, check that your client's internet traffic is routed through the Global Secure Access service. 
+    > [!IMPORTANT]
+    > Before continuing, check that your client's internet traffic is routed through the Global Secure Access service. 
 
-4. On your test device, right-click the Global Secure Access icon in the system tray and select **Advanced diagnostics**. 
+1. On your test device, right-click the Global Secure Access icon in the system tray and select **Advanced diagnostics**. 
 1. On the **Forwarding Profile** tab, verify **Internet Access rules** are present in the **Rules** section. This configuration can take up to 15 minutes to apply to clients after you enable the Internet access traffic profile.
 
 :::image type="content" source="media/concept-netskope-integration/internet-access-rules.png" alt-text="Screenshot of the Forwarding Profile tab with the Internet access rules highlighted.":::
@@ -70,18 +66,41 @@ You can create ATP and DLP policies powered by Netskope engines directly from th
 1. [Test ATP policies](#test-atp-policies)   
 1. [Test DLP Policies](#test-dlp-policies)   
 
-### Activate a Netskope offer through the Global Secure Access marketplace 
-To activate the Netskope offer for your tenant:   
+### Activate a Netskope offer through the Global Secure Access marketplace
+You can activate a free trial or contact Netskope for a private offer. Select the tab to follow the steps for your preferred option.
+
+#### [Free trial](#tab/free-trial)
+To activate a free trial of Netskope through the Global Secure Access marketplace:
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
+1. Browse to **Global Secure Access** > **Third Party Security Solutions** > **Marketplace**.
+1. Select the Netskope **Get it Now** button.
+1. Select **Try free for 30 days**.
+1. Complete the form to request the trial.
+1. Netskope reaches out within two business days to alert you if they accepted or rejected the trial.
+1. If Netskope accepts your trial request, return to the Microsoft Entra admin center.
+1. Browse to **Global Secure Access** > **Third Party Security Solutions** > **Marketplace**. 
+1. Select the Netskope **Get it Now** button.
+1. Select **Validate Netskope license**. This step provisions Netskope for your tenant and begins the 30-day trial period.
+1. After 30 days, the free trial expires.
+     :::image type="content" source="media/concept-netskope-integration/offer-expired.png" alt-text="Screenshot showing that the Netskope trial is expired."::: <!-- screenshot needed -->
+
+#### [Private offer](#tab/private-offer)
+To contact Netskope to request a private offer for your tenant:   
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator). 
 1. Browse to **Global Secure Access** > **Third Party Security Solutions** > **Marketplace**. 
-1. Select the Netskope **Get it Now** button and follow the steps to activate the offer.  
+1. Select the Netskope **Get it Now** button.
+1. Select **Contact Netskope for private offer**.
+    :::image type="content" source="media/concept-netskope-integration/contact-private-offer.png" alt-text="Screenshot showing ___ withthe Contact Netskope for private offer highlighted."::: <!-- screenshot needed -->
+1. Complete the form to request the private offer.
+1. Netskope reaches out within two business days to discuss the private offer.
+1. After agreeing to the private offer terms with Netskope, return to the Microsoft Entra admin center.
+1. Browse to **Global Secure Access** > **Third Party Security Solutions** > **Marketplace**. 
+1. Select the Netskope **Get it Now** button.
+1. Select **Validate Netskope license**. This step provisions Netskope for your tenant.  
+1. Once the offer is provisioned, the **Offers** page lists the Netskope status as **Active**.
+    :::image type="content" source="media/concept-netskope-integration/offers-active.png" alt-text="Screenshot of the Offers page with the Netskope status of Active highlighted.":::
 
-> [!NOTE]
-> While in preview, Netskope's functionality is provided at no cost.   
- 
-4. Once the offer is provisioned, the Offers page lists the Netskope status as **Active**.
-
-:::image type="content" source="media/concept-netskope-integration/offers-active.png" alt-text="Screenshot of the Offers page with the Netskope status of Active highlighted.":::
+---
 
 ### Create an ATP policy 
 1. Browse to **Global Secure Access** > **Secure** > **Threat Protection policies**. 
@@ -344,7 +363,7 @@ Microsoft Entra Internet Access and Microsoft Entra Private Access are part of t
 Netskope threat engines support three activities: **Upload**, **Download**, and **Browse**.     
 
 By default, Netskope scans traffic categorized as 'Browse,' so you don't need to configure a policy. You can configure 'Upload' and 'Download' via policies that match your requirements. For more information on Netskope web activities and policy usage, see Netskope's documentation on [Real-time Protection Policies](https://docs.netskope.com/en/inline-policies/).  
-
+<!-- Is the below question about custom DLP profiles still true? -->
 ### How can I customize or modify DLP profiles to suit organizational policies?  
 The current phase of this integration offers customers out-of-the-box DLP profiles. These profiles cover predefined data identifiers and personal identifiers, including financial data, medical data, biodata, inappropriate terms, and industry-specific information. These predefined profiles can't be customized. Customizable DLP entities like data identifiers and DLP profiles are planned for future versions of this integration.  
 
@@ -357,3 +376,4 @@ Learn more about Netskope Threat Protection in these articles:
 
 - [Learn about Security Service Edge (SSE) coexistence with Microsoft and Netskope](concept-netskope-coexistence.md)
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)   
+- [Set up full Data Loss Prevention](how-to-full-data-loss-protection.md)
