@@ -53,9 +53,9 @@ The following table outlines when an authentication method can be used during a 
 |--------------------------------|:----------------------:|:-------------------------:|
 | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes   | MFA<sup>1</sup>  |
 | Platform Credential for macOS   | Yes               | MFA |
-| [FIDO2 security key](concept-authentication-passkeys-fido2.md)                | Yes                    | MFA                       |
+| FIDO2 security key                | Yes                    | MFA                       |
 | [Microsoft Authenticator passkey](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
-| [Synced passkey (preview)](concept-authentication-passkeys-fido2.md#synced-passkeys-preview)| Yes                 | MFA           |
+| Synced passkey (preview)| Yes                 | MFA           |
 | [Certificate-based authentication](concept-certificate-based-authentication.md)| Yes            | MFA                       |
 | [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md) | Yes                     | No<sup>2</sup>   |
 | [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md) | Yes                     | MFA and SSPR   |

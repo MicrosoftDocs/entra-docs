@@ -41,7 +41,7 @@ Methods include:
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
 - [FIDO2 security key](concept-authentication-passwordless.md)
 - [Microsoft Authenticator passkey](concept-authentication-authenticator-app.md)
-- [Synced passkey (preview)](concept-authentication-passkeys-fido2.md#synced-passkeys-preview)
+- Synced passkey (preview)
 - [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview)
 - [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
