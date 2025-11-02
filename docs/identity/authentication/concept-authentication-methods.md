@@ -99,14 +99,10 @@ Authentication methods that are no longer available due to **Require re-register
 
 ## Related content
 
-To get started, see the [tutorial for self-service password reset (SSPR)][tutorial-sspr] and [Microsoft Entra multifactor authentication][tutorial-azure-mfa].
+- [Plan a phishing-resistant MFA deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
+- [How Microsoft Entra multifactor authentication works](concept-mfa-howitworks.md)
+- [How Microsoft Entra self-service password reset works](concept-sspr-howitworks.md)
+- [Microsoft Graph REST API authentication methods](/graph/api/resources/authenticationmethods-overview)
 
-To learn more about SSPR concepts, see [How Microsoft Entra self-service password reset works][concept-sspr].
-
-To learn more about MFA concepts, see [How Microsoft Entra multifactor authentication works][concept-mfa].
-
-Learn more about configuring authentication methods using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
-
-To review what authentication methods are in use, see [Microsoft Entra multifactor authentication authentication method analysis with PowerShell](https://github.com/Azure-Samples/azure-mfa-authentication-method-analysis).
 
 
