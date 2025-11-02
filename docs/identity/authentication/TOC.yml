@@ -81,6 +81,12 @@
       href: concept-sspr-licensing.md
     - name: Deployment guide
       href: concept-sspr-deploy.md
+  - name: Microsoft Entra account recovery
+    items:
+    - name: Overview
+      href: concept-self-service-account-recovery.md
+    - name: FAQ
+      href: self-service-account-recovery.yml
   - name: Multifactor authentication
     items:
     - name: How MFA works
@@ -134,58 +140,66 @@
     href: how-to-authentication-qr-code.md
   - name: Plan phishing-resistant MFA
     items:
-    - name: Get started
-      href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
-    - name: Plan and deploy
-      href: how-to-deploy-phishing-resistant-passwordless-authentication.md
-    - name: Persona guidance
-      href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
-    - name: RDP guidance
-      href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
-  - name: Passkeys (FIDO2)
-    items:
-    - name: Enable passkeys (FIDO2) for an organization
-      href: how-to-enable-passkey-fido2.md
-    - name: Register a passkey (FIDO2)
-      href: how-to-register-passkey.md
-    - name: Register a passkey (FIDO2) with a mobile device
-      href: how-to-register-passkey-mobile.md
-    - name: Sign in with passkey
-      href: how-to-sign-in-passkey.md
-    - name: Register a passkey (FIDO2) with a security key
-      href: how-to-register-passkey-with-security-key.md
-    - name: Enable FIDO2 security key sign-in to Windows
-      href: howto-authentication-passwordless-security-key-windows.md
-    - name: SSO to on-premises resources
-      href: howto-authentication-passwordless-security-key-on-premises.md
-    - name: FAQs
-      href: howto-authentication-passwordless-faqs.md
-    - name: Troubleshooting
-      href: howto-authentication-passwordless-troubleshoot.md
-    - name: Passkey (FIDO2) compatibility matrix
-      href: concept-fido2-compatibility.md
-    - name: Become a FIDO2 security key vendor
-      href: concept-fido2-hardware-vendor.md
-  - name: Microsoft Authenticator
-    items:
-    - name: Enable passkeys in Authenticator
-      href: how-to-enable-authenticator-passkey.md
-    - name: Support passkeys in Authenticator
-      href: how-to-support-authenticator-passkey.md
-    - name: Register passkeys in Authenticator
-      href: how-to-register-passkey-authenticator.md
-    - name: Sign in with passkeys in Authenticator
-      href: how-to-sign-in-passkey-authenticator.md
-    - name: Passkeys in Authenticator FAQs
-      href: passkey-authenticator-faq.yml
-    - name: Enable Authenticator authentication method
-      href: howto-authentication-passwordless-phone.md
-    - name: How number matching works
-      href: how-to-mfa-number-match.md
-    - name: Use additional context
-      href: how-to-mfa-additional-context.md
-    - name: Use Authenticator Lite
-      href: how-to-mfa-authenticator-lite.md
+    - name: Plan phishing-resistant passwordless authentication
+      items:
+      - name: Get started
+        href: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
+      - name: Plan and deploy
+        href: how-to-deploy-phishing-resistant-passwordless-authentication.md
+      - name: Persona guidance
+        href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
+      - name: RDP guidance
+        href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
+    - name: Passkey (FIDO2) authentication
+      items:
+      - name: Enable passkey profiles
+        href: how-to-authentication-passkey-profiles.md
+      - name: Enable device-bound passkeys 
+        href: how-to-enable-passkey-fido2.md
+      - name: Enable synced passkeys
+        href: how-to-authentication-synced-passkeys.md
+      - name: Register passkey
+        href: how-to-register-passkey.md
+      - name: Register passkey with a mobile device
+        href: how-to-register-passkey-mobile.md
+      - name: Sign in with passkey
+        href: how-to-sign-in-passkey.md
+      - name: Passkey (FIDO2) compatibility matrix
+        href: concept-fido2-compatibility.md
+      - name: Become a FIDO2 security key vendor
+        href: concept-fido2-hardware-vendor.md
+    - name: Microsoft Authenticator
+      items:
+      - name: Enable passkeys in Authenticator
+        href: how-to-enable-authenticator-passkey.md
+      - name: Support passkeys in Authenticator
+        href: how-to-support-authenticator-passkey.md
+      - name: Register passkeys in Authenticator
+        href: how-to-register-passkey-authenticator.md
+      - name: Sign in with passkeys in Authenticator
+        href: how-to-sign-in-passkey-authenticator.md
+      - name: Passkeys in Authenticator FAQs
+        href: passkey-authenticator-faq.yml
+      - name: Enable Authenticator authentication method
+        href: howto-authentication-passwordless-phone.md
+      - name: How number matching works
+        href: how-to-mfa-number-match.md
+      - name: Use additional context
+        href: how-to-mfa-additional-context.md
+      - name: Use Authenticator Lite
+        href: how-to-mfa-authenticator-lite.md
+    - name: Hybrid
+      items:
+      - name: Register passkey with a security key
+        href: how-to-register-passkey-with-security-key.md
+      - name: Enable security key sign-in to Windows
+        href: howto-authentication-passwordless-security-key-windows.md
+      - name: SSO to on-premises resources
+        href: howto-authentication-passwordless-security-key-on-premises.md
+      - name: Hybrid FAQs
+        href: howto-authentication-passwordless-faqs.md
+      - name: Troubleshoot hybrid
+        href: howto-authentication-passwordless-troubleshoot.md
     - name: Certificate-based authentication
       items:
       - name: What is Microsoft Entra CBA?
@@ -246,6 +260,12 @@
       href: howto-sspr-authenticationdata.md
     - name: SSPR for Windows clients
       href: howto-sspr-windows.md
+  - name: Account recovery
+    items:
+    - name: Admin guide
+      href: how-to-account-recovery-configure.md
+    - name: User guide
+      href: how-to-account-recovery-user-setup.md
   - name: Microsoft Entra multifactor authentication
     items:
     - name: Deployment guide

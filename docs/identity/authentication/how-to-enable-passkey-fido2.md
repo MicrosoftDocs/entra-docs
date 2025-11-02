@@ -22,8 +22,8 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 
 For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
->[!NOTE]
->Microsoft Entra ID supports device-bound passkeys (FIDO2), and synced passkeys (FIDO2) are in preview. 
+> [!NOTE]
+> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Support for synced passkeys is currently in preview. For more information, see [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md).
 
 ## Requirements
 
@@ -48,6 +48,9 @@ You can work with your security key vendor to determine the AAGUID of the passke
 ![Screenshot of how to view the AAGUID for a passkey.](media/how-to-enable-passkey-fido2/security-key-aaguid-details.png)
 
 ## Enable passkey (FIDO2) authentication method 
+
+>[!NOTE]
+>If you would like to configure different passkey (FIDO2) settings for different groups of users, see [How to enable passkey profiles (preview) in Microsoft Entra ID](how-to-authentication-passkey-profiles.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Policies**.

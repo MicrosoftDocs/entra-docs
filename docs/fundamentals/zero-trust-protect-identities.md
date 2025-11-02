@@ -25,6 +25,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Applications don't have client secrets configured 
 [!INCLUDE [21772](../includes/secure-recommendations/21772.md)]
 
+### Service principals don't have certificates or credentials associated with them 
+[!INCLUDE [21896](../includes/secure-recommendations/21896.md)]
+
 ### Applications don't have certificates with expiration longer than 180 days 
 [!INCLUDE [21773](../includes/secure-recommendations/21773.md)]
 
@@ -43,6 +46,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Admin consent workflow is enabled
 [!INCLUDE [21809](../includes/secure-recommendations/21809.md)]
 
+### High Global Administrator to privileged user ratio
+[!INCLUDE [21813](../includes/secure-recommendations/21813.md)]
+
 ### Privileged accounts are cloud native identities
 [!INCLUDE [21814](../includes/secure-recommendations/21814.md)]
 
@@ -51,6 +57,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 
 ### Passkey authentication method enabled
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
+
+### Security key attestation is enforced
+[!INCLUDE [21840](../includes/secure-recommendations/21840.md)]
 
 ### Privileged accounts have phishing-resistant methods registered
 [!INCLUDE [21839](../includes/secure-recommendations/21839.md)]
@@ -65,10 +74,16 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 [!INCLUDE [21796](../includes/secure-recommendations/21796.md)]
 
 ### Temporary access pass is enabled
-[!INCLUDE [21796](../includes/secure-recommendations/21796.md)]
+[!INCLUDE [21845](../includes/secure-recommendations/21845.md)]
+
+### Restrict Temporary Access Pass to Single Use
+[!INCLUDE [21846](../includes/secure-recommendations/21846.md)]
 
 ### Migrate from legacy MFA and SSPR policies
 [!INCLUDE [21845](../includes/secure-recommendations/21845.md)]
+
+### Block administrators from using SSPR  
+[!INCLUDE [21842](../includes/secure-recommendations/21842.md)]
 
 ### Self-service password reset doesn't use security questions
 [!INCLUDE [22072](../includes/secure-recommendations/22072.md)]
@@ -112,6 +127,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Smart lockout threshold set to 10 or less
 [!INCLUDE [21850](../includes/secure-recommendations/21850.md)]
 
+### Smart lockout duration is set to a minimum of 60
+[!INCLUDE [21849](../includes/secure-recommendations/21849.md)]
+
 ### Add organizational terms to the banned password list
 [!INCLUDE [21848](../includes/secure-recommendations/21848.md)]
 
@@ -120,6 +138,15 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 
 ### Local Admin Password Solution is deployed
 [!INCLUDE [21953](../includes/secure-recommendations/21953.md)]
+
+### Entra Connect Sync is configured with Service Principal Credentials
+[!INCLUDE [24570](../includes/secure-recommendations/24570.md)]
+
+### No usage of ADAL in the tenant
+[!INCLUDE [21780](../includes/secure-recommendations/21780.md)]
+
+### Block legacy Azure AD PowerShell module
+[!INCLUDE [21844](../includes/secure-recommendations/21844.md)]
 
 ### Enable Microsoft Entra ID security defaults
 [!INCLUDE [21871](../includes/secure-recommendations/21871.md)]
