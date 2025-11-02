@@ -24,8 +24,9 @@ Remote phishing attacks remain one of the most common types of attacks. Remote p
 
 To better protect users from these attacks, it's recommended to use phishing-resistant authentication methods. Unlike traditional methods—such as passwords or one-time codes—that can be intercepted or socially engineered out of users, phishing-resistant authentication uses cryptographic credentials alongside a face, fingerprint, or PIN. These credentials can’t be reused, replayed, or stolen through deceptive means.
 
-Microsoft recommends using phishing-resistant authentication methods such as Windows Hello for Business, passkeys (FIDO2) and FIDO2 security keys, or certificate-based authentication (CBA) because they provide the most secure sign-in experience. Although a user can sign-in by using other common methods such as a password , voice call, SMS, these should be replaced with more secure authentication methods.
-In the table below you will find the credentials types available in Entra ID, and whether they are phishable.
+Microsoft recommends using phishing-resistant authentication methods such as Windows Hello for Business, passkeys (FIDO2) and FIDO2 security keys, or certificate-based authentication (CBA) because they provide the most secure sign-in experience. Although a user can sign-in by using other common methods such as a password, voice call, SMS, these methods should be replaced with more secure authentication methods.
+
+The following table lists phishing-resistant and phishable authentication methods in Microsoft Entra ID.
 
 Strength | Methods
 ---------|--------
@@ -87,7 +88,7 @@ Account recovery is a critical component of your organization’s security postu
 
 In Microsoft Entra ID, we offer an integrated and seamless process for identity verification. Organizations can configure trusted partners to verify a user’s identity, typically by presenting government-issued identification. After other validation steps, users can securely replace lost credentials, such as by registering a new passkey, to maintain account security throughout the recovery process. For more information, see [Microsoft Entra ID account recovery](concept-self-service-account-recovery.md). 
 
-For users who rely on passwords and do not have access to phishing-resistant methods, [self-service password reset (SSPR)](concept-sspr-howitworks.md) remains available. To enhance security for these users, especially those with multi-factor authentication (MFA) capability, we recommend requiring at least two distinct authentication methods to complete password reset. This layered approach reduces the risk of account compromise during recovery.
+For users who rely on passwords and don't have access to phishing-resistant methods, [self-service password reset (SSPR)](concept-sspr-howitworks.md) remains available. To enhance security for these users, especially users with multifactor authentication (MFA) capability, we recommend requiring at least two distinct authentication methods to complete password reset. This layered approach reduces the risk of account compromise during recovery.
 
 ## Usable and nonusable methods
 
