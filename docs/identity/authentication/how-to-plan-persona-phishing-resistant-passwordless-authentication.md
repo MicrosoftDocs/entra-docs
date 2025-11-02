@@ -114,13 +114,13 @@ Steps 1-3 of the deployment flow for information workers should typically follow
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/information-worker-deployment.png" alt-text="Diagram that shows deployment flow for information workers.":::
 
-1. Step 1: Onboarding
+1. Onboarding
    1. Microsoft Entra Verified ID service used to acquire a Temporary Access Pass
-1. Step 2: Portable credential registration
+1. Portable credential registration
    1. Synced passkey (preferred)
    1. Passkey in Microsoft Authenticator
    1. FIDO2 security key
-1. Step 3: Local credential registration
+1. Local credential registration
    1. Windows Hello for Business
    1. Platform SSO Secure Enclave Key
 

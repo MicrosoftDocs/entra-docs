@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: justinha
   ms.author: justinha
-  ms.date: 10/30/2025
+  ms.date: 10/31/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -28,7 +28,7 @@ landingContent:
           - text: What are authentication methods?
             url: concept-authentication-methods.md
           - text: What are passkeys (FIDO2)?
-            url: concept-authentication-passwordless.md
+            url: concept-authentication-passkeys-fido2.md
           - text: What are authentication strengths?
             url: concept-authentication-strengths.md
 

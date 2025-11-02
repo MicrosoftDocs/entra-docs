@@ -52,7 +52,6 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 1. After you're redirected to Security info, you can change the default name for the new sign-in method. 
 1. Tap **Done** to finish registering the new method.
 
-3
 ## Next steps
 
 - [Choosing authentication methods for your organization](concept-authentication-methods.md)

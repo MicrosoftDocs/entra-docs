@@ -4,7 +4,7 @@ description: Learn about using passkey (FIDO2) authentication in Microsoft Entra
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 10/26/2025
+ms.date: 10/31/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: kimhana
@@ -15,7 +15,9 @@ ms.custom: sfi-image-nochange
 
 # Authentication methods in Microsoft Entra ID - passkeys (FIDO2) 
 
+Passkeys (FIDO2) represent a modern, phishing-resistant authentication method that eliminates the need for passwords while providing enhanced security and improved user experience. Built on open standards from the FIDO Alliance and WebAuthn specification, passkeys use public key cryptography to create strong, unique credentials that are bound to specific websites and cannot be reused across different services. 
 
+Microsoft Entra ID supports both device-bound passkeys, which are stored locally on hardware security keys or platform authenticators, and synced passkeys (preview), which are synchronized across devices through cloud-based passkey providers like iCloud Keychain and Google Password Manager. This dual approach allows organizations to implement passwordless authentication strategies that meet diverse security requirements while accommodating different user preferences and device ecosystems.
 
 ## Device-bound passkeys
 
@@ -29,11 +31,12 @@ FIDO2 security keys can be used to sign in to their Microsoft Entra ID or Micros
 
 For more information about passkey (FIDO2) support, see [Support for passkey (FIDO2) authentication with Microsoft Entra ID](fido2-compatibility.md). For developer best practices, see [Support FIDO2 auth in the applications they develop](~/identity-platform/support-fido2-authentication.md).
 
-![Sign in to Microsoft Edge with a security key](./media/concept-authentication-passwordless/concept-web-sign-in-security-key.png)
+:::image type="content" border="true" source="./media/concept-authentication-passwordless/concept-web-sign-in-security-key.png" alt-text="Screenshot showing how to sign in to Microsoft Edge with a security key."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
+
 
 The following process is used when a user signs in with a FIDO2 security key:
 
-![Diagram that outlines the steps involved for user sign-in with a FIDO2 security key](./media/concept-authentication-passwordless/fido2-security-key-flow.png)
+:::image type="content" border="true" source="./media/concept-authentication-passwordless/fido2-security-key-flow.png" alt-text="Diagram that outlines the steps involved for user sign-in with a FIDO2 security key."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
 1. The user plugs the FIDO2 security key into their computer.
 2. Windows detects the FIDO2 security key.
@@ -45,19 +48,13 @@ The following process is used when a user signs in with a FIDO2 security key:
 8. Microsoft Entra ID verifies the signed nonce using the FIDO2 public key.
 9. Microsoft Entra ID returns PRT to enable access to on-premises resources.
 
-For a list of FIDO2 security key providers, see [Become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md).
-
-To get started with FIDO2 security keys, see [Enable passwordless sign using FIDO2 security keys](howto-authentication-passwordless-security-key.md).
+For a list of FIDO2 security key providers, see [Become a Microsoft-compatible FIDO2 security key vendor](concept-fido2-hardware-vendor.md). To get started with FIDO2 security keys, see [Enable passwordless sign using FIDO2 security keys](howto-authentication-passwordless-security-key.md).
 
 ## Synced passkeys (preview)
 
-Synced passkeys represent a newer, more user-centric approach to authentication that removes the password entirely, works across devices by using services like iCloud Keychain, or Google Password Manager. Synced passkeys offer a seamless experience. Users authenticate with biometrics or device PINs. The don't need to remember or enter passwords or codes. Synced passkeys are built on the WebAuthn standard, where users verify their identity locally by using biometrics or device PINs. WebAuthn is supported across all major operating systems and browsers, including Windows, macOS, iOS, Android, Chrome, Safari, and Edge, which removes a key technical barrier and paves the way for broad, cross-platform adoption at scale. 
+Synced passkeys represent a newer, more user-centric approach to authentication that removes the password entirely, works across devices by using services like iCloud Keychain, or Google Password Manager. Synced passkeys offer a seamless experience. Users authenticate with biometrics or device PINs. They don't need to remember or enter passwords or codes. Synced passkeys are built on the WebAuthn standard, where users verify their identity locally by using biometrics or device PINs. WebAuthn is supported across all major operating systems and browsers, including Windows, macOS, iOS, Android, Chrome, Safari, and Edge, which removes a key technical barrier and paves the way for broad, cross-platform adoption at scale. 
 
-Admins can configure security groups for passkey authentication. Instead of a single tenant-wide setting, admins can customize requirements, such as attestation, passkey type (device-bound or synced), or a specific provider and model for their users, and apply them to different security groups in the enterprise. Enrollment campaigns can begin quickly. 
-
-## Compare device-bound passkeys with synced passkeys
-
-## Common AAGUIDs for each type of passkey
+Admins can configure security groups for passkey authentication. Instead of a single tenant-wide setting, admins can customize requirements, such as attestation, passkey type (device-bound or synced), or a specific provider and model for their users, and apply them to different security groups in the enterprise. Enrollment campaigns can begin quickly.  
 
 ## Unsupported scenarios
 

@@ -2672,7 +2672,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/authentication/concept-authentication-passwordless.md",
-      "redirect_url": "/entra/identity/authentication/cconcept-authentication-passkeys-fido2",
+      "redirect_url": "/entra/identity/authentication/concept-authentication-passkeys-fido2",
       "redirect_document_id": false
     }
   ]
