@@ -29,7 +29,7 @@ To configure network security for Copilot Studio agents, you must have:
 
 To enable network controls for Copilot Studio agents, you must first enable traffic forwarding from these agents in the Power Platform Admin Center.
 
-1. Sign in to the [Power Platform Admin Center](https://admin.powerplatform.microsoft.com) as a [Power Platform Administrator](https://learn.microsoft.com/power-platform/admin/use-service-admin-role-manage-tenant).
+1. Sign in to the [Power Platform Admin Center](https://admin.powerplatform.microsoft.com) as a [Power Platform Administrator](/power-platform/admin/use-service-admin-role-manage-tenant).
 1. Browse to **Security** > **Identity & access** > **Global Secure Access for Agents**.
 1. Select the appropriate environment or environment group and select **Set up**.
 1. Enable **Global Secure Access for Agents** for the selection.
@@ -87,4 +87,3 @@ Regular monitoring and maintenance ensure your security configuration remains ef
 
 - [Learn about Secure Web and AI Gateway for Microsoft Copilot Studio agents](concept-secure-web-ai-gateway-agents.md)
 - [Configure web content filtering](how-to-configure-web-content-filtering.md)
-- [Access the traffic logs](how-to-access-traffic-logs.md)
