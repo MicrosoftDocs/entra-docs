@@ -4,11 +4,11 @@ description: How end users can set up account recovery for Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/30/2025
+ms.date: 10/31/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: tilarso
+ms.reviewer: timlarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how end users can set up account recovery for Microsoft Entra ID.
 ---
@@ -23,6 +23,9 @@ Users can recover their accounts in just a few simple steps. Below we'll explore
 2. The user is presented with an initial authentication method to sign-in with.
 3. Unable to use this method, the user can then click **Other ways to sign-in** and is presented with additional sign-in options. 
 4. As the user has lost all ability to sign-in with any registered authentication methods, they click **Recover your account**.
+
+   :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/sign-in.png" alt-text="Screenshot that shows how to sign in to set up account recovery."lightbox="media/how-to-account-recovery-user-setup/sign-in.png":::
+
 5. The user is presented with an informational screen that explains the account recovery process and provides guidance to complete identity verification through the organization's configured external identity proofing service.
 6. The user is redirected to the identity proofing service configured by their organization, and starts their identity proofing process.
 
@@ -34,15 +37,38 @@ Users can recover their accounts in just a few simple steps. Below we'll explore
 9. Enter your name and email, agree to the terms of use for the app, and select **Continue**.
 10. Choose your country/region, and the type of identity verification document you have, such as **Passport**.
 11. Review how to take a clear document photo, and select **Continue** after you read each step.
+
+    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/welcome.png" alt-text="Screenshot that shows Welcome screens for account recovery."lightbox="media/how-to-account-recovery-user-setup/welcome.png":::
+
 12. After you take the photo, select **Submit photos**.
 13. Review how to take a clear photo of your face, and select **Continue** after you read each step.
+
+    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/face-check.png" alt-text="Screenshot that shows how to complete face check for account recovery."lightbox="media/how-to-account-recovery-user-setup/face-check.png":::
+
 14. After you take the photo, the identity proofing application verifies your identity, and issues a Verifiable Credential.
 15. On the **Success** page, select **Add Verifiable Credential**.
 16. When you're prompted to open in Authenticator, select **Open**, and unlock Microsoft Authenticator.
+
+    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/validate.png" alt-text="Screenshot that shows how to validate setup for account recovery."lightbox="media/how-to-account-recovery-user-setup/validate.png":::
+
 17. On the **Add a Verified ID** page in Authenticator, select **Next**.
 18. Sign in to the identity proofing application, and select **Start**.
 19. The new Verifiable Credential is listed in Authenticator under **Verified IDs**, and Authenticator and the identity proofing application both show **Success**.
 
+    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery."lightbox="media/how-to-account-recovery-user-setup/create-passkey.png":::   
+
 ## Related content
 
 - To learn more about Microsoft Entra account recovery, see [Microsoft Security Store](/security/store/).
+
+
+
+
+
+
+
+   
+
+
+
+
