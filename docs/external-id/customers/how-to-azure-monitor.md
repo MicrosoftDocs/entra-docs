@@ -207,7 +207,7 @@ Once External ID logs from an external tenant are sent to a Log Analytics worksp
 
 - **Workbooks:**  Visualize and analyze collected logs using prebuilt workbooks.
 
-Refer to Microsoft Sentinel Documentation for more information.
+For more information, see the [Microsoft Sentinel Documentation](/azure/sentinel).
 
 These steps enable centralized monitoring, incident management, and visualization for External ID logs while using a supported, workforce-tenant setup.
 
