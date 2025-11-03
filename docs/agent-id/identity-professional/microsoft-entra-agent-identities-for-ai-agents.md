@@ -16,7 +16,7 @@ ms.reviewer: dastrock
 
 This document explains how Microsoft Entra agent ID extends security capabilities to AI agents through Conditional Access policies, Identity Protection, ID Governance, network-level controls, and the agent identity platform.
 
-:::image type="content" source="media/entra-security-for-ai-agents/entra-agent-identity-capabilities.png" alt-text="Diagram agent security capabilities offered by Entra agent ID.":::
+:::image type="content" source="media/microsoft-entra-agent-identities-for-ai-agents.md/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram that shows agent security capabilities offered by Microsoft Entra agent ID.":::
 
 ## Conditional Access for AI Agents
 
@@ -26,8 +26,6 @@ Conditional Access enables organizations to define and enforce adaptive policies
 - Using real-time signals such as Agent ID risk controlling agent access to resources, with Microsoft Managed Policies providing a secure baseline by blocking high-risk agents.
 - Deploying Conditional Access policies at scale using custom security attributes, while still supporting fine-grained controls for individual agents.
 
-For more information, see conditional access for agents
-
 ## ID Governance for agents
 
 ID Governance brings agents into the same governance processes as users, enabling them to be managed at scale. Establish controls for agent lifecycle, access packages, and who can create and manage agents.
@@ -35,8 +33,6 @@ ID Governance brings agents into the same governance processes as users, enablin
 - Govern agent IDs at scale, from deployment to expiration.
 - Ensure sponsors and owners are assigned and maintained for each agent ID, preventing orphaned agent IDs.
 - Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
-
-For more information, see Identity Governance for agents
 
 ## Identity Protection for agents
 
@@ -46,8 +42,6 @@ Identity Protection detects and blocks threats by flagging anomalous activities 
 - Provide risk signals to Conditional Access to enforce risk-based policies and session management controls.
 - Provide risk signals to the Agent Registry to inform agent discoverability and access, with automatic remediation of compromised agents using preconfigured policies.
 
-For more information, see Identity Protection for agents
-
 ## Network Controls for agents
 
 Network controls enforce consistent network security policies across users and agents across any platform or application. Provide full network visibility to all agent actions, filter malicious web content, enable network-based security controls, and prevent data exfiltration.
@@ -56,8 +50,6 @@ Network controls enforce consistent network security policies across users and a
 - Restrict file uploads and downloads using file-type policies to minimize risk, and automatically block and alert on malicious destinations using threat intelligence-based filtering.
 - Detect and block prompt injection attacks that attempt to manipulate agent behavior through malicious instructions.
 
-For more information, see Network controls for agents
-
 ## Agent Identity Platform
 
 The identity platform enables you to assign identities to AI agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols.
@@ -65,5 +57,3 @@ The identity platform enables you to assign identities to AI agents, autodiscove
 - Provides visibility into all organization agents with agent-to-agent discovery and authorization based on standard protocols such as MCP and A2A.
 - Assign secure, scalable identities to every AI agent.​ Authenticates and authorizes agents based on standard protocols.
 - Log and monitor agent activity for compliance.​
-
-For more information, see Agent Identity Platform

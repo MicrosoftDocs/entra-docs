@@ -49,8 +49,8 @@ The agent registry system consists of several integrated components that work to
 
 | Component | Purpose | Key Features | Benefits |
 |-----------|---------|--------------|----------|
-| **Metadata Store** | Centralized agent metadata repository | NoSQL-based, Agent Card support, real-time updates | Scalable storage for rich agent information and A2A protocol compliance. For more information, see Agent registry metadata. |
-| **Collection System** | Secure agent categorization and access control enforcement | baseline access controls, custom collections | Secure-by-default organization. For more information, see Agent registry collections. |
+| **Metadata Store** | Centralized agent metadata repository | NoSQL-based, Agent Card support, real-time updates | Scalable storage for rich agent information and A2A protocol compliance. |
+| **Collection System** | Secure agent categorization and access control enforcement | baseline access controls, custom collections | Secure-by-default organization. |
 | **Discovery Service** | Agent and capability discovery APIs | Multi-dimensional search, collection-aware filtering, skill-based discovery | Enables secure, intelligent agent-to-agent coordination |
 | **Integration Layer** | Cross-platform and security system coordination | Microsoft Security Copilot, Defender, Purview integration | Enables ecosystem-wide security operations and custom workflows |
 
@@ -75,9 +75,3 @@ The service supports flexible deployment patterns for single-tenant organization
 The agent registry enables coordination between agents through the Agent-to-Agent (A2A) protocol, using registry metadata to establish secure, authenticated communication channels that enable direct collaboration while maintaining appropriate security and audit controls.
 
 At run-time, the registry applies operational constraints related to security policies onto agents based on registry metadata and current system state, ensuring optimal collaboration and resource utilization.
-
-## Related content
-
-- Publish agents to registry
-- Agent registry schema and metadata
-- Collection-based models

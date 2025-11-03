@@ -52,8 +52,6 @@ Like other accounts, agent IDs are primarily a means to access apps, web service
 
 - **Authenticate incoming messages**: Agents can accept requests from other clients, users, and agents. Those requests can be secured using access tokens issued by Microsoft Entra ID, allowing the agent to reliably identify the caller and make authorization decisions.
 
-- **Sign in to apps and sites (future)**: In the future, agents are able to sign-in to websites and installed clients that depend on Microsoft Entra ID for single sign-on. This feature enables agents to utilize the same tools and systems as humans to accomplish tasks.
-
 ## Examples: Agent identities in use today
 
 Several Microsoft products already use agent IDs for authenticating AI agents. Two examples include:
@@ -95,10 +93,3 @@ Unlike human users, AI agents don't use passwords, SMS, passkeys, or authenticat
 The kinds of credentials allowed for use by agent IDs in a tenant can be controlled via app management policies.
 
 In Microsoft Entra agent ID, each agent identity doesn't have its own credentials. Instead, all credentials are configured on the agent identity blueprint. All agent identities created using the agent ID blueprint share its credentials. This relationship prevents implementers from needing to store and protect hundreds to thousands of credentials (one for each agent identity). For details, refer to the agent ID authentication protocol reference.
-
-## Next Steps
-
-To continue learning about agent IDs:
-
-- View agent IDs created in your tenant
-- Learn how agent IDs are created

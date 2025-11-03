@@ -62,11 +62,9 @@ The Microsoft agent ID platform uses OAuth for authorization and OpenID Connect 
 
 - **OAuth 2.0** allows agents to request access tokens that authorize them to access resources on behalf of themselves or users, supporting both application-only and delegated access scenarios.
 
-For more information, see Oauth protocols.
-
 ### Tokens and token claims
 
-Tokens are the fundamental security mechanism enabling secure communication and authorization in the Microsoft agent ID platform. Agentic tokens contain specialized claims that extend beyond traditional token structures to support the unique requirements of AI agents. The platform supports multiple token flow patterns designed for specific operational scenarios. For more information, see tokens in agent ID platform.
+Tokens are the fundamental security mechanism enabling secure communication and authorization in the Microsoft agent ID platform. Agentic tokens contain specialized claims that support the unique requirements of AI agents. The platform supports multiple token flow patterns designed for specific operational scenarios.
 
 ### Federated identity credentials (FIC)
 

@@ -24,7 +24,7 @@ Organizations are increasingly deploying AI agents for diverse tasks:
 
 - Autonomous agents operate independently, making decisions and taking actions without human intervention. Examples include agents that monitor network logs for security operations, manage infrastructure deployments with autoscaling, or generate and publish routine communications.
 
-- Agent users are agents designed to function with human user characteristics, including persistent identities and access to organizational systems. Agent users might join teams, access documents, participate in meetings, and require mailbox and calendar access like human users.
+- Agent users are agents designed to function with human user characteristics, including persistent identities and access to organizational systems. Agent users might join teams, access documents, participate in meetings, and require an email-box and calendar access like human users.
 
 These deployment models present distinct security and governance challenges.
 
@@ -98,7 +98,7 @@ Agent security challenges manifest in different ways depending on the agent's pu
 |-------------|-----------------|---------------------|-------|
 | **Interactive Agent**      | Agents act on behalf of users, inheriting user capabilities, and access rights. Example: A support agent can read customer cases, update status, and send communications.  | Prevent agents from misusing inherited permissions; maintain user control and enable access revocation. | Compromised agents might perform unauthorized actions as the user, such as accessing files, sending communications, or manipulating data.  |
 | **Autonomous Agent**          | Agents operate with their own identities and permissions, independent of users. Example: A supply chain agent can query inventory, create orders, and modify supplier data.    | Grant only necessary permissions for intended tasks; prevent agents from exceeding authorized scope.  | Compromised agents might operate without constraint, placing unauthorized orders, modifying data, or accessing sensitive information.  |
-| **Agent User**                | Agents function as human users with persistent identities, mailboxes, and access to collaborative systems. Example: An agent joins teams, accesses documents, and participates in meetings.  | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions.  | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members.  |
+| **Agent User**                | Agents function as human users with persistent identities, email-boxes, and access to collaborative systems. Example: An agent joins teams, accesses documents, and participates in meetings.  | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions.  | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members.  |
 | **Agent-to-Agent**            | Agents interact with other agents. Example: An orchestration agent delegates tasks to specialized agents, requiring authentication and verification of designated tasks.  | Establish authenticated agent communication; ensure agents interact only with legitimate agents; maintain audit trails of interactions.  | Unsecured communication allows adversaries to inject malicious agents or intercept/manipulate agent interactions.  |
 
 ## Microsoft Entra agent ID
@@ -107,7 +107,7 @@ Microsoft Entra agent ID provides an identity and security framework designed to
 
 The agent ID platform consists of several integrated components that work together to provide identity management for AI agents. Microsoft Entra agent ID enables you to 
 
-:::image type="content" source="media/security-for-ai/entra-agent-identities-infographic.png" alt-text="Diagram showing illustration of security for AI landscape with Entra agent ID.":::
+:::image type="content" source="media/security-for-ai/microsoft-entra-agent-identities-infographic.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra agent ID.":::
 
 - Discover and manage agents
     - Agent IDs: Creates and manages Agent ID Blueprints as templates and Agent Identities as individual instances with parent-child relationships
