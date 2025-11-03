@@ -165,11 +165,15 @@ To use Microsoft Entra ID Governance features for guest users, your tenant must 
 - User-to-group affiliation recommendation helper
     - You will not be able to update existing reviews that add these features.
 
-
-
 ### Entitlement Management
 
+
+
 ### Lifecycle Workflows
+
+- You will not be able to create new workflows if the workflow scope includes guest users: 
+    - The configured rule includes userType = Guest
+- You will not be able to update existing workflows where the execution conditions include a scope with userType=Guest.
 
 
 
