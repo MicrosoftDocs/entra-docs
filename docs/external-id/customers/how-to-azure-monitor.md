@@ -191,9 +191,9 @@ Azure Monitor Logs scale to support collecting, indexing, and storing massive am
 
 To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You continue to incur charges for retaining log data you already collected into your workspace. If you no longer need the monitoring data you collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring other data retention charges.
 
-## Using Microsoft Sentinel with Entra External ID
+## Using Microsoft Sentinel with External ID
 
-Once Entra External ID logs from an external tenant are sent to a Log Analytics workspace in a workforce tenant, you can ingest them into Microsoft Sentinel for monitoring, incident rules, alerts, and workbooks. You must configure Sentinel from the workforce tenant, as direct setup from the external tenant isn't supported. To use Sentinel:
+Once External ID logs from an external tenant are sent to a Log Analytics workspace in a workforce tenant, you can ingest them into Microsoft Sentinel for monitoring, incident rules, alerts, and workbooks. You must configure Sentinel from the workforce tenant, as direct setup from the external tenant isn't supported. To use Sentinel:
 
 1. Send logs to a Log Analytics workspace in a workforce tenant via Azure Monitor diagnostic settings. Direct configuration from the external tenant isn't supported.  
 
