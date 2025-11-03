@@ -69,7 +69,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
 |[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
 |[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.183.0)|
-|[2.5.183.0](#251830)||
+|[2.5.189.0](#251890)||
 
 **All other versions are not supported**
 
@@ -92,11 +92,11 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
-## 2.5.183.0
+## 2.5.189.0
 
 ### Release status
 
-10/23/2025: Released for download via the Microsoft Entra admin center.
+11/03/2025: Released for download via the Microsoft Entra admin center.
 
 ### Added features
 
@@ -107,11 +107,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed an issue where Application-Based Authentication failed with Trusted Platform Module (TPM) and Microsoft Authentication Library (MSAL). The fix ensures compatibility with MSAL's default signing method.
 - Fixed issue in the configuration wizard that resulted in **Directory synchronization for this directory currently has a mismatch in sync enabled and sync status** error when DirSync Status is in **Other**.
 - We updated the Last Exchange Server (LES) attribute in private preview, so Connect Sync now dynamically aligns with current cloud-managed exchange attributes at runtime, instead of relying on a static list from installation.
-
-### Buildout
-
-- We have added sovereign cloud buildout support for Singapore Government Cloud.
-- Seamless Single Sign-On (SSO) Autologon and Pass-Through Authentication (PTA) endpoints have been updated for BLEU and DELOS cloud environments.
 
 ## 2.5.79.0
 
