@@ -15,9 +15,9 @@ ai-usage: ai-assisted
 #customer intent: As a Global Secure Access administrator, I want to learn how to configure and use GSA Cloud Firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 ---
 
-# Configure GSA cloud firewall (Preview)
+# Configure Global Secure Access cloud firewall (preview)
 
-Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches and roaming users that use managed devices with GSA clients. 
+Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches. 
 
 The current scope of this preview is using GSA Cloud Firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access (also in preview).
 

@@ -183,7 +183,7 @@ items:
         href: how-to-check-web-content-filtering-categories.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
-      - name: Configure GSA cloud firewall
+      - name: Configure Global Secure Access cloud firewall (preview)
         href: configure-cloud-firewall-with-remote-networks-for-internet-access.md
       - name: Customize the block page
         href: how-to-customize-block-page.md
