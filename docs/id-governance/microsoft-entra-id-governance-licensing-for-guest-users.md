@@ -167,13 +167,20 @@ To use Microsoft Entra ID Governance features for guest users, your tenant must 
 
 ### Entitlement Management
 
+- You will not be able to create policies with guests in scope (“*For all users in your directory including guests*” or “*For users not in your directory*”) and the Microsoft Entra ID Governance features listed in this documentation (For example, sponsor approvers, custom extensions, and Verified ID).
+- You will not be able to create new auto-assignment policies where a configured rule includes `userType=Guest`
+- You will not be able to update existing entitlement management policies that add these features.
+- You will not be able to perform these operations: 
+    -	Mark guest as governed
+    -	Directly assign any guest user 
+
 
 
 ### Lifecycle Workflows
 
 - You will not be able to create new workflows if the workflow scope includes guest users: 
-    - The configured rule includes userType = Guest
-- You will not be able to update existing workflows where the execution conditions include a scope with userType=Guest.
+    - The configured rule includes `userType=Guest`
+- You will not be able to update existing workflows where the execution conditions include a scope with `userType=Guest`.
 
 
 
