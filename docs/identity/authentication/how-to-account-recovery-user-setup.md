@@ -15,7 +15,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # How end users can perform account recovery in Microsoft Entra ID
 
-Users can recover their accounts in just a few simple steps. Below we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organizations configured provider. 
+Users can recover their accounts in just a few simple steps. In this topic, we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organizations configured provider. 
 
 :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/recover-steps-1-5.png" alt-text="Initial steps to enter recovery.":::
 
