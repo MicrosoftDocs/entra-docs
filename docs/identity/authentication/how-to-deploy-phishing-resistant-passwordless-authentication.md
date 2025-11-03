@@ -25,7 +25,7 @@ Determine the user personas relevant for your organization. This step is critica
 
 User persona | Description
 -----|------------
-Admins and highly regulated users  | <li>Admins with directory roles or can perform highly priviledged actions </li><li>Users who have access to sensitive data, critical information or computing systems </li><li> Users who work in highly regulated organizations</li><li> DevOps workers or DevSecOps workers who manage and deploy automations.</li>
+Admins and highly regulated users  | <li>Admins with directory roles or can perform highly privileged actions </li><li>Users who have access to sensitive data, critical information or computing systems </li><li> Users who work in highly regulated organizations</li><li> DevOps workers or DevSecOps workers who manage and deploy automations.</li>
 Any other users| <li>Any other user in the organization, such as Information workers, Frontline workers.</li>
 
 
