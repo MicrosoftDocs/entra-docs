@@ -102,7 +102,7 @@ Screenshot of the **KQL mode** option.
 
 ## Identify risky users
 
-This section and the following sections illustrate how to analyze risk with Azure Monitor. Risk users have one or more risky sign-ins, or other risky actions
+This section and the following sections illustrate how to analyze risk with Azure Monitor. Risky users have one or more risky sign-ins, or other risky actions
 
 1. Run the query to summarize the count by **UserDisplayName**.
 2. Add a time range in **DetectedDateTime < ago()**.  
@@ -191,6 +191,7 @@ To get started, explore the Azure Monitor log reference tables for Microsoft Ent
 * Master risk analysis for effective remediation
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
+
 
 
 
