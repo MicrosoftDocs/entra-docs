@@ -15,11 +15,11 @@ ai-usage: ai-assisted
 #customer intent: As a Global Secure Access administrator, I want to learn how to configure and use GSA Cloud Firewall to protect against unauthorized internet access from branch offices using Remote Networks for Internet Access.
 ---
 
-# Configure Global Secure Access cloud firewall with remote networks for Internet access (Preview)
+# Configure GSA cloud firewall (Preview)
 
 Global Secure Access (GSA) Cloud Firewall (CFW) protects customers from unauthorized egress access by applying policies on network traffic. Cloud firewall provides centralized management, visibility, and consistent policies for branches and roaming users that use managed devices with GSA clients. 
 
-The current scope of this preview is using GSA Cloud Firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access (also in public preview).
+The current scope of this preview is using GSA Cloud Firewall to enforce policies on Internet traffic from branch offices using Remote Networks for Internet Access (also in preview).
 
 With this preview, you can:
 
@@ -31,11 +31,11 @@ With this preview, you can:
 
 ## Prerequisites
 
-- Configured remote networks for Internet Access. 
+- Configured [remote networks for internet access](how-to-create-remote-networks.md). 
 
 ## Supported scenarios
 
-This public preview supports these scenarios:
+This preview supports these scenarios:
 
 | # | **Scenario** |
 |---|--------------|
@@ -77,11 +77,9 @@ This public preview supports these scenarios:
 
    1. Configure the source and destination matching conditions. Note these important limitations:
 
-      - IPs can be defined as IPs or Classless Inter-Domain Routings (CIDRs). IP ranges aren't supported currently.
+      - IPs are defined as IPs or Classless Inter-Domain Routings (CIDRs).
 
       - Destination Fully Qualified Domain Name (FQDN) isn't supported currently so we recommend keeping it at the **Not set** value (default).
-
-      - Once the value is set, you can't restore it to the initial not-set state. As a workaround, you can delete and recreate the rule.
 
    1. Set the **Action** to **Allow** or **Block**.
 
@@ -120,7 +118,7 @@ This public preview supports these scenarios:
 
 :::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/security-baseline-profile.png":::
 
-1. Click on **Edit profile**, then select **Link policy** to link an existing cloud firewall policy.
+2. Click on **Edit profile**, then select **Link policy** to link an existing cloud firewall policy.
 
 :::image type="content" source="media/configure-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="media/configure-cloud-firewall-with-remote-networks-for-internet-access/edit-baseline-policy-link-policies.png":::
 
@@ -141,12 +139,10 @@ This public preview supports these scenarios:
 
 - The destination FQDN isn't supported in the cloud firewall rule.
 
-- Traffic logs from the Entra ID/GSA portal for cloud firewall aren't currently available.
-
 - It may take 15-20 minutes for any firewall policy updates to take effect.
 
-- Remote networks acquire all Internet traffic except IP ranges for accessing the GSA service edge and IP ranges for Internet Access default bypass policy (SHAHZAD, CAN WE REMOVE THIS? IF NOT, WHAT DOCUMENT IS THIS REFERRING TO? please see the public preview document for Remote networks for Internet Access for these ranges). Currently IP ranges in Microsoft 365 (M365) traffic profile, including Entra ID traffic, are acquired. To ensure M365 traffic isn't blocked when you configure a block-all rule to Internet traffic, please configure an allow rule for M365 traffic with a higher priority than the deny-all rule using the traffic ranges:  
-  
-  132.245.0.0/16, 204.79.197.215/32, 150.171.32.0/22, 131.253.33.215/32, 23.103.160.0/20, 40.96.0.0/13, 52.96.0.0/14, 40.104.0.0/15, 13.107.128.0/22, 13.107.18.10/31, 13.107.6.152/31, 52.238.78.88/32, 104.47.0.0/17, 52.100.0.0/14, 40.107.0.0/16, 40.92.0.0/15, 150.171.40.0/22, 52.104.0.0/14, 104.146.128.0/17, 40.108.128.0/17, 13.107.136.0/22, 40.126.0.0/18, 20.231.128.0/19, 20.190.128.0/18, 20.20.32.0/19.
+- Cloud firewall capability isn't currently supported with Global Secure Access clients. 
 
 ## Next steps
+
+[How to use the Global Secure Access traffic logs](how-to-view-traffic-logs.md)
