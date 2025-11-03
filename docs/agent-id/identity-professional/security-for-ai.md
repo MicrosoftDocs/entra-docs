@@ -123,4 +123,4 @@ The agent ID platform consists of several integrated components that work togeth
 
 ## Next steps
 
-[Microsoft Entra security capabilities for AI Agents](./entra-security-for-ai-agents.md)
+[Microsoft Entra security capabilities for AI Agents](./microsoft-entra-agent-identities-for-ai-agents.md)
