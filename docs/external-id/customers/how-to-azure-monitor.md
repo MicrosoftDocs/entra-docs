@@ -12,13 +12,13 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 #Customer intent: As an it admin, I want to learn how to set up Azure Monitor in external tenants to collect and analyze data in this tenant.
 ---
-# Set up Azure Monitor in external tenants (preview)
+# Set up Azure Monitor in external tenants
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 [Azure Monitor](/azure/azure-monitor/overview) provides a comprehensive solution for collecting, analyzing, and responding to monitoring data from your cloud and on-premises environments. The diagnostic settings on the monitored resource specify what data to send and where to send it. For Microsoft Entra, you can send data to [Azure Storage](/azure/storage/blobs/storage-blobs-introduction), [Log Analytics](/azure/azure-monitor/essentials/resource-logs#send-to-log-analytics-workspace), or [Azure Event Hubs](/azure/event-hubs/event-hubs-about).
 
-When you transfer external tenant logs to other monitoring solutions or storage locations, be aware that these logs may contain personal data. When processing personal data, use appropriate security measures to protect it. These measures should prevent unauthorized or unlawful processing by using appropriate technical and organizational safeguards.
+When you transfer external tenant logs to other monitoring solutions or storage locations, be aware that these logs might contain personal data. When processing personal data, use appropriate security measures to protect it. These measures should prevent unauthorized or unlawful processing by using appropriate technical and organizational safeguards.
 
 This article describes how to configure Azure Monitor in an external tenant so you can collect and analyze data in your tenant. It also explains how to configure diagnostic settings to send logs and metrics to a Log Analytics workspace in your workforce tenant.
 
@@ -65,7 +65,7 @@ To configure Azure Lighthouse in an external tenant, start the wizard from eithe
 
 The following steps guide you through the wizard to set up Azure Lighthouse configuration in your external tenant.
 
-### Step 1: Sign-in to your workforce tenant
+### Step 1: Sign in to your workforce tenant
 
 To set up Azure Lighthouse, sign in with an account that has access to the subscription that owns the external configuration tenant.
 
@@ -73,7 +73,7 @@ To set up Azure Lighthouse, sign in with an account that has access to the subsc
 
 ### Step 2: Fill out the project details
 
-In this step, provide the details of your project. When creating a resource group and a Log Analytics workspace at the same time, you can select only one [location](https://azure.microsoft.com/explore/global-infrastructure/products-by-region/). This location is limited to the regions available for both the resource group and the Log Analytics workspace. To access the full list of locations, create the resource group and the Log Analytics workspace separately beforehand.
+In this step, provide the details of your project. When you create a resource group and a Log Analytics workspace at the same time, you can select only one [location](https://azure.microsoft.com/explore/global-infrastructure/products-by-region/). This location is limited to the regions available for both the resource group and the Log Analytics workspace. To access the full list of locations, create the resource group and the Log Analytics workspace separately beforehand.
 
 1. Select a **Subscription** from the dropdown.
 1. Use an existing **Resource Group** or create a new one.
@@ -85,9 +85,9 @@ In this step, provide the details of your project. When creating a resource grou
 
 ### Step 3: Select user access
 
-In this step, choose the users or groups in your external tenant who will have access to the [Log Analytics workspace](/azure/azure-monitor/logs/log-analytics-workspace-overview). The selected users must have at least the [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) role to configure diagnostic settings.
+Choose the users or groups in your external tenant who can access the [Log Analytics workspace](/azure/azure-monitor/logs/log-analytics-workspace-overview). The selected users need at least the [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) role to set up diagnostic settings.
 
-Confirm your selection with the **Select** button. After you select the users or groups, you must assign a role to them. You can choose from the following roles:
+Confirm your selection with the **Select** button. After you select the users or groups, assign a role to them. You can choose from the following roles:
 
 - **[Contributor](/azure/role-based-access-control/built-in-roles/privileged#contributor)**: Can read monitoring data and configuration.
 - **[Log Analytics Contributor](/azure/azure-monitor/logs/manage-access?tabs=portal#log-analytics-contributor)**: Can read and write monitoring data and configuration.
@@ -101,24 +101,24 @@ After you select the users or groups and assign a role, select **Next** to conti
 
 #### Optional: Add tags to your Log Analytics workspace
 
-You can optionally add tags to your Log Analytics workspace. Tags are name/value pairs that enable you to categorize resources and view consolidated billing by applying the same tag to multiple resources and resource groups. For more information, see [Use tags to organize your Azure resources](/azure/azure-resource-manager/management/tag-resources).
+You can add tags to your Log Analytics workspace. Tags are name/value pairs that help you categorize resources and view consolidated billing by applying the same tag to multiple resources and resource groups. For more information, see [Use tags to organize your Azure resources](/azure/azure-resource-manager/management/tag-resources).
 
 ### Step 4: Review and create your Log Analytics workspace
 
-In this step, review your configuration. If you need to make changes, use the **Back** button to return to the previous steps. If everything looks correct, select **Create** to set up the Log Analytics workspace and assign the selected users or groups the specified role. Setting up the Log Analytics workspace and assigning roles may take a few minutes, make sure not to close the browser window.
+Review your configuration. If you need to make changes, use the **Back** button to return to the previous steps. If everything looks correct, select **Create** to set up the Log Analytics workspace and assign the selected users or groups the specified role. Setting up the Log Analytics workspace and assigning roles might take a few minutes, so don't close the browser window.
 
   :::image type="content" source="media/how-to-azure-monitor/review-and-create.png" alt-text="Screenshot that shows how to review and create your Log Analytics workspace.":::
 
-Once the setup is complete, you see a confirmation message. Select **Done** and configure diagnostic settings to start sending logs and metrics to your Log Analytics workspace.
+When the setup is complete, you see a confirmation message. Select **Done** and configure diagnostic settings to start sending logs and metrics to your Log Analytics workspace.
 
   :::image type="content" source="media/how-to-azure-monitor/successful-configuration.png" alt-text="Screenshot that shows the setup completion message.":::
 
 ## Configure diagnostic settings
 
-[Diagnostic settings](/azure/azure-monitor/platform/diagnostic-settings?tabs=portal) allow you to collect [resource logs](/azure/azure-monitor/platform/resource-logs?tabs=log-analyticsd) and to send [platform metrics](/azure/azure-monitor/reference/metrics-index) and the [activity log](/azure/azure-monitor/platform/activity-log?tabs=log-analytics) to different destinations. You can create up to five different diagnostic settings to send various logs and metrics to different destinations. Follow these steps to configure diagnostic settings in your external tenant.
+[Diagnostic settings](/azure/azure-monitor/platform/diagnostic-settings?tabs=portal) enable you to collect [resource logs](/azure/azure-monitor/platform/resource-logs?tabs=log-analyticsd) and send [platform metrics](/azure/azure-monitor/reference/metrics-index) and the [activity log](/azure/azure-monitor/platform/activity-log?tabs=log-analytics) to different destinations. You can create up to five different diagnostic settings to send various logs and metrics to different destinations. Follow these steps to configure diagnostic settings in your external tenant.
 
 1. Select **Add settings** under **Add diagnostic settings**.
-1. If you select **Review** before adding settings, you can see the **Subscription** and **Resource Group** on the right hand side. These fields are read-only. If you have to make changes, you need to remove the existing Service Provider information and start the wizard again. If you're satisfied with the selection, select **Done** to continue to the next step. This is an optional step.
+1. If you select **Review** before adding settings, you can see the **Subscription** and **Resource Group** on the right hand side. These fields are read-only. To make changes, remove the existing service provider information and start the wizard again. If you're satisfied with the selection, select **Done** to continue to the next step. This step is optional.
 
 > [!NOTE]
 > If you select **Review** before adding settings, the **Subscription** and **Resource group** appear on the right-hand side. These fields are read-only. To make changes, remove the existing service provider information and restart the wizard.  
@@ -127,23 +127,23 @@ Keep the window open while the background subscription check runs. If you close 
   :::image type="content" source="media/how-to-azure-monitor/add-diagnostic-settings.png" alt-text="Screenshot that shows the Add diagnostic settings page." lightbox="media/how-to-azure-monitor/add-diagnostic-settings.png"::::::
 
 
-6. Select **Add diagnostic setting** to add a new setting or **Edit setting** to edit an existing one. You may need multiple diagnostic settings for a resource if you want to send to multiple destinations of the same type.
+6. Select **Add diagnostic setting** to add a new setting or **Edit setting** to edit an existing one. You might need multiple diagnostic settings for a resource if you want to send data to multiple destinations of the same type.
 7. Give your setting a descriptive name.
 8. **Logs and metrics to route**: For logs, either choose a [category group](/azure/azure-monitor/platform/diagnostic-settings?tabs=portal#category-groups) or select the individual checkboxes for each category of data you want to send to the destinations specified later. The list of categories varies for each Azure service. Select **AllMetrics** if you want to collect platform metrics.
-9. **Destination details**: Select the checkbox for each destination that should be included in the diagnostic settings and then provide the details for each. If you select Log Analytics workspace as a destination, then you may need to specify the collection mode. See [Collection mode](/azure/azure-monitor/platform/resource-logs?tabs=log-analytics#collection-mode) for details.
+9. **Destination details**: Select the checkbox for each destination that should be included in the diagnostic settings and then provide the details for each. If you select Log Analytics workspace as a destination, then you might need to specify the collection mode. See [Collection mode](/azure/azure-monitor/platform/resource-logs?tabs=log-analytics#collection-mode) for details.
 
 ## Visualize your data with log queries
 
-Once your diagnostic settings are configured and data is flowing into your Log Analytics workspace, you can use log queries to analyze and visualize your data. Log queries are written in Kusto Query Language (KQL) and can help you gain insights from the logs and metrics collected. You can make these configurations in both your workforce and external tenant.
+Once you configure your diagnostic settings and data flows into your Log Analytics workspace, use log queries to analyze and visualize your data. Log queries are written in Kusto Query Language (KQL) and can help you gain insights from the logs and metrics collected. You can make these configurations in both your workforce and external tenant.
 
 ### Create a query
 
-Log queries help you to fully use the value of the data collected in Azure Monitor Logs. A powerful query language allows you to join data from multiple tables, aggregate large sets of data, and perform complex operations with minimal code. Virtually any question can be answered and analysis performed as long as the supporting data has been collected and you understand how to construct the right query. For more information, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
+Log queries help you get the most value from the data collected in Azure Monitor Logs. A powerful query language lets you join data from multiple tables, aggregate large sets of data, and perform complex operations with minimal code. You can answer virtually any question and perform analysis as long as you collect the supporting data and understand how to construct the right query. For more information, see [Get started with log queries in Azure Monitor](/azure/azure-monitor/logs/get-started-queries).
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. If you have access to multiple tenants, select the **Settings** icon in the top menu to switch to your workforce tenant from the **Directories + subscriptions** menu.
 1. From **Log Analytics workspace** window, select **Logs**
-1. In the query editor, paste the following [Kusto Query Language](/azure/data-explorer/kusto/query/) query. This query shows policy usage by operation over the past x days. The default duration is set to 90 days (90d). Notice that the query is focused only on the operation where a token/code is issued by policy.
+1. In the query editor, paste the following [Kusto Query Language](/azure/data-explorer/kusto/query/) query. This query shows policy usage by operation over the past x days. The default duration is set to 90 days (90d). Notice that the query is focused only on the operation where a token or code is issued by policy.
 
   ```kusto
   AuditLogs
@@ -155,18 +155,18 @@ Log queries help you to fully use the value of the data collected in Azure Monit
   | order by SignInCount desc  nulls last
   ```
 
-5. Select **Run**. The query results are displayed at the bottom of the screen.
-6. To save your query for later use, select **Save**.
+1. Select **Run**. The query results are displayed at the bottom of the screen.
+1. To save your query for later use, select **Save**.
 
   :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor.":::
 
-7. Fill in the following details:
+1. Fill in the following details:
 
 - **Name** - Enter the name of your query.
 - **Save as** - Select `query`.
 - **Category** - Select `Log`.
 
-8. Select **Save**.
+1. Select **Save**.
 
 You can also change your query to visualize the data by using the [render](/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) operator.
 
@@ -185,11 +185,31 @@ You can also change your query to visualize the data by using the [render](/azur
 
 ## Change the data retention period
 
-Azure Monitor Logs are designed to scale and support collecting, indexing, and storing massive amounts of data per day from any source in your enterprise or deployed in Azure. By default, logs are retained for 30 days, but retention duration can be increased to up to two years. Learn how to [manage usage and costs with Azure Monitor Logs](/azure/azure-monitor/logs/cost-logs). After you select the pricing tier, you can [Change the data retention period](/azure/azure-monitor/logs/data-retention-configure).
+Azure Monitor Logs scale to support collecting, indexing, and storing massive amounts of data each day from any source in your enterprise or deployed in Azure. By default, logs are retained for 30 days, but you can increase the retention duration to up to two years. For more information, see [manage usage and costs with Azure Monitor Logs](/azure/azure-monitor/logs/cost-logs). After you select the pricing tier, you can [Change the data retention period](/azure/azure-monitor/logs/data-retention-configure).
 
 ## Disable monitoring data collection
 
-To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You'll continue to incur charges for retaining log data you've already collected into your workspace. If you no longer need the monitoring data you've collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring other data retention charges.
+To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You continue to incur charges for retaining log data you already collected into your workspace. If you no longer need the monitoring data you collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring other data retention charges.
+
+## Using Microsoft Sentinel with Entra External ID
+
+Once Entra External ID logs from an external tenant are sent to a Log Analytics workspace in a workforce tenant, you can ingest them into Microsoft Sentinel for monitoring, incident rules, alerts, and workbooks. You must configure Sentinel from the workforce tenant, as direct setup from the external tenant isn't supported. To use Sentinel:
+
+1. Send logs to a Log Analytics workspace in a workforce tenant via Azure Monitor diagnostic settings. Direct configuration from the external tenant isn't supported.  
+
+1. In the Azure portal, add Microsoft Sentinel to the Log Analytics workspace. For more information, see [Onboard to Microsoft Sentinel](/azure/sentinel/quickstart-onboard?tabs=defender-portal#add-microsoft-sentinel-to-your-log-analytics-workspace).
+
+1. In the Defender Portal, open the Microsoft Sentinel Content Hub and install the Entra ID content pack.
+
+### Supported features
+
+- **Analytics & Alerts:**  Configure incident rules using prebuilt templates; triggered alerts appear correctly.
+
+- **Workbooks:**  Visualize and analyze collected logs using prebuilt workbooks.
+
+Refer to Microsoft Sentinel Documentation for more information.
+
+These steps enable centralized monitoring, incident management, and visualization for External ID logs while using a supported, workforce-tenant setup.
 
 ## Related content
 
