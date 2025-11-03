@@ -113,6 +113,7 @@ The account recovery process follows a structured workflow designed to balance s
 
 ## Related content
 
+- [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-user-setup.md)
 - [How it works: Microsoft Entra self-service password reset](concept-sspr-howitworks.md) - Learn about traditional password reset capabilities and when to use SSPR versus account recovery
 - [What is Microsoft Entra Verified ID?](/entra/verified-id/decentralized-identifier-overview) - Understand the decentralized identity technology that powers SSAR's verification process  
 - [Plan your Microsoft Entra Verified ID verification solution](/entra/verified-id/plan-verification-solution) - Design guidance for implementing identity verification scenarios
