@@ -391,8 +391,10 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
-        - name: Using custom security attributes
-          href: manage-workflow-custom-security-attribute.md  
+        - name: Using custom trigger attributes (Preview)
+          href: workflow-custom-triggers.md    
+        - name: Using custom security attributes scope
+          href: manage-workflow-custom-security-attribute.md    
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
         - name: Customize emails
@@ -406,7 +408,9 @@
         - name: Manage inactive users (Preview)
           href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
-          href: check-workflow-execution-scope.md  
+          href: check-workflow-execution-scope.md
+        - name: Delegated Workflow Management (Preview)
+          href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
         - name: Manage synced AD DS users

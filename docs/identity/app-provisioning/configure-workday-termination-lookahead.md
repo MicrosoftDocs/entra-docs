@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 10/24/2025
+ms.date: 10/31/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -43,11 +43,9 @@ This adjustment ensures the termination data is available earlier for workers in
 
 ## Job configuration
 
-1. Go to your [Microsoft Entra admin center](https://aka.ms/EnableLastDayOfWork).         
+1. Go to your [Microsoft Entra admin center](https://entra.microsoft.com).         
    > [!IMPORTANT] 
    > Test the configuration changes described in this document in your test environment, before enabling the configuration in your production setup.
-   > [!NOTE] 
-   > This link includes a feature flag in the URL (`userProvisioningWorkdayLookaheadQueryForTerminations=true`) required to configure the lookahead query setting.
 
 1. Open your Workday-to-AD/Microsoft Entra ID provisioning job.
 

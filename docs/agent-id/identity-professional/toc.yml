@@ -1,0 +1,10 @@
+items:
+  - name: Microsoft Entra agent ID for identity professionals
+    href: index.yml
+  - name: Overview
+    expanded: true
+    items:
+      - name: Security for AI
+        href: security-for-ai.md
+      - name: Microsoft Entra agent ID features
+        href: microsoft-entra-agent-identities-for-ai-agents.md

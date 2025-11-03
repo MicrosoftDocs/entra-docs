@@ -86,8 +86,6 @@
       href: concept-self-service-account-recovery.md
     - name: FAQ
       href: self-service-account-recovery.yml
-    - name: Audit log events
-      href: concept-account-recovery-audit-log-events.md
   - name: Multifactor authentication
     items:
     - name: How MFA works
@@ -153,8 +151,12 @@
         href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
     - name: Passkey (FIDO2) authentication
       items:
-      - name: Enable passkeys for an organization
+      - name: Enable passkey profiles
+        href: how-to-authentication-passkey-profiles.md
+      - name: Enable device-bound passkeys 
         href: how-to-enable-passkey-fido2.md
+      - name: Enable synced passkeys
+        href: how-to-authentication-synced-passkeys.md
       - name: Register passkey
         href: how-to-register-passkey.md
       - name: Register passkey with a mobile device

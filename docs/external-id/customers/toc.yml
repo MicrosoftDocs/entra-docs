@@ -426,10 +426,14 @@ items:
       items:
         - name: Customize branding
           items:
+          - name: Default branding
+            items:
             - name: Default branding
               href: how-to-customize-branding-customers.md
             - name: Language-specific branding
               href: how-to-customize-languages-customers.md
+          - name: Branding themes
+            href: how-to-customize-branding-themes-apps.md
         - name: Customize attribute collection
           items:
             - name: Collect custom user attributes during sign-up
