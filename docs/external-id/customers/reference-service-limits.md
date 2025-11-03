@@ -94,9 +94,9 @@ The following table lists the service limits we implement to prevent outages and
 
 |Limit                        |Texts every 15 minutes|Texts every 60 minutes|Texts every 24 hours                                 |Texts every seven days |
 |-----------------------------|----------------------|----------------------|-----------------------------------------------------|-------------------|
-|Limits based on IP address   |20 texts              |60 texts              |100 texts without a proxy</br>200 texts with a proxy |No limit           |
+|Limits based on IP address   |100 texts             |300 texts             |500 texts |No limit           |
 |Limits based on phone number |15 texts              |20 texts              |30 texts                                             |50 texts           |
-|Limits based on tenant       |100 texts             |300 texts             |1,000 texts                                          |No limit           |
+|Limits based on tenant       |500 texts             |1500 texts            |5,000 texts                                          |No limit           |
 
 ## Next steps
 
