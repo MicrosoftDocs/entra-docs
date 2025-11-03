@@ -31,7 +31,7 @@ With this preview, you can:
 
 ## Prerequisites
 
-- Configured [remote networks for internet access](how-to-create-remote-networks.md). 
+- Configure [remote networks for internet access](how-to-create-remote-networks.md). 
 
 ## Supported scenarios
 
