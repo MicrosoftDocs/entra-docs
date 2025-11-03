@@ -151,7 +151,7 @@ billed to the governance guest add-on. Only governance features that are exclusi
 Yes, there is no free tier for governance billing. Governance guest billing applies to all guest users, even those within the first 50,000 MAU.
 
 
-## Guest Governance Features Unavailable Without the Entra ID Governance for Guests Add-on 
+## Guest Governance Features Unavailable Without the Microsoft Entra ID Governance for Guests Add-on 
 
 To use Microsoft Entra ID Governance features for guest users, your tenant must be linked to an Azure subscription with the Entra ID Governance for guests add-on. If the guest billing meter is not enabled, the following behavior will apply:
 
