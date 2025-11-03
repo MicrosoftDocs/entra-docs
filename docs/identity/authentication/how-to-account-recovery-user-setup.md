@@ -51,13 +51,11 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
     :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery."lightbox="media/how-to-account-recovery-user-setup/create-passkey.png":::   
 
 
-## Troublshooting
+## Troubleshooting
 
 - When a profile is in the default Evaluation mode, the user sees the following screen after user verification passes with the IDV and Face Check. This experience is expected in Evaluation mode. An Authentication Policy Administrator needs to place users in Production mode before they can be issued a TAP. 
 
   :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/policy-evaluation-mode.png" alt-text="Screenshot that shows the profile for a user is in Evaluation mode."lightbox="media/how-to-account-recovery-user-setup/policy-evaluation-mode.png":::   
-
-- We also have a screen we show users when in Eval mode...and should so that somewhere that is "normal" and if the user admin wants to put some users into prod mode even during preview that's how they will get to the TAP screen. creen user will see if made it through IDV and Face Check, but account details didn't match or some other issue.
 
 - If the user sees a red error message on the TAP screen and doesn't get a TAP issued, confirm that the claims ID info and Microsoft Graph match the real name. 
 
