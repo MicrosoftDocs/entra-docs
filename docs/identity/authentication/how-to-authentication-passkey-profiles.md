@@ -48,7 +48,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 >A maximum of 3 passkey profiles, including the Default passkey profile are supported. We’re investing in support for more passkey profiles. 
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
-1. Browse to **Entra ID** > **Authentication methods** > **Authentication method policy**.
+1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
 1. Under the method Passkey (FIDO2), click **Opt-in to public preview** on the public preview banner to see the passkey profiles (preview) admin UX
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to opt in to preview."lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
@@ -93,15 +93,12 @@ For more information about how to use Graph Explorer to create a new passkey pro
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/add-target.png" alt-text="Screenshot that shows how to add a target for a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/add-target.png":::
 
-   >[!NOTE] 
-   >You can target **All users** and selected groups at the same time.
-
 1. Select which passkey profiles you want assigned to a specific target.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/select-passkey-profile.png" alt-text="Screenshot that shows how to select a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/select-passkey-profile.png":::
 
    >[!NOTE]
-   >A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and usage of a passkey is allowed if it fully satisfies the requirement of one of the scoped passkey profiles. You can think of it as Microsoft Entra ID looping through each passkey profile to check if there's a match with the given passkey. If there's no match, Microsoft Entra ID denies the  passkey. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in. **Excluded** groups take precedence over **Included** groups.
+   >A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey is allowed if it fully satisfies the requirement of one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in. **Excluded** groups take precedence over **Included** groups.
 
 For more information about how to use Graph Explorer to apply a passkey profile to a targeted group, see API docs.
 
@@ -111,21 +108,21 @@ For more information about how to use Graph Explorer to apply a passkey profile 
 1. Select the trash can to the right of the passkey profile you want to delete.
 
    >[!Note] 
-   >You can only delete a profile if it's not assigned to a group of users in **Enable and target**. If the trash can is gray, first remove any users who are assigned that profile.
+   >You can only delete a profile if it's not assigned to a group of users in **Enable and target**. If the trash can is gray, first remove any targets that are assigned that profile.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 
 ## Examples of use cases for passkey profiles
 
 >[!NOTE] 
->At least Authenticator app version X is needed to work with passkey profiles.
+>At least Microsoft Authenticator iOS v6.8.37 or Android v. 6.2507.4749 are needed to work with passkey profiles.
 
 ###  Special consideration for high-privileged accounts
 
 Passkey profile | Target groups | Passkey types | Attestation enforcement | Key Restrictions
 ----------------|---------------|---------------|-------------------------|-----------------
 All device-bound passkeys (attestation enforced) | IT admins<br>Executives<br>Engineering | Device-bound | Enabled | Disabled
-All synced or device-bound passkeys | Pilot group 1<br>Pilot group 2 | Device-bound, Synced |  Disabled |  Disabled 
+All synced or device-bound passkeys | HR<br>Sales | Device-bound, Synced |  Disabled |  Disabled 
 
 
 ### Targeted rollout of passkeys in Microsoft Authenticator 
