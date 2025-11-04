@@ -23,16 +23,16 @@ Passkey profiles enable granular group-based configurations for passkey FIDO2 au
 
 A passkey profile is a named set of policy rules that governs how users in targeted groups can register and authenticate with passkeys (FIDO2). Profiles support advanced controls such as:
 
-- Enforce attestation
-- Target types (device-bound, synced)
-- Target specific passkeys: allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](how-to-enable-passkey-fido2.md#passkey-fido2-authenticator-attestation-guid-aaguid).
+- Enforce attestation: Enabled, Disabled
+- Target types: Device-bound, Synced
+- Target specific authenticators: Allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](how-to-enable-passkey-fido2.md#passkey-fido2-authenticator-attestation-guid-aaguid).
 
 ## Before you begin
 
 - Users must complete multifactor authentication (MFA) within the past five minutes before they can register a passkey (FIDO2).
-- Users need a passkey (FIDO2) that is eligible for attestation with Microsoft Entra ID, or Microsoft Authenticator. For more information, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
+- Users need an authenticator that supports Microsoft Entra ID's attestation requirements. For more information, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
-- Passkey profiles require Microsoft Authenticator version X to be installed by end user client devices.
+- Passkey profiles require Microsoft Authenticator iOS version 6.8.37 to be installed by end user client devices.
 - Policy size limit:
   - The Authentication methods policy supports a size limit of 20KB. You can't save more passkey profiles after the size limit is reached. To check the size, use the [Get authenticationMethodsPolicy Microsoft Graph API](/graph/api/authenticationmethodspolicy-get) to retrieve the JSON for the Authentication methods policy. Save the output as a .txt file, then right-click and select **Properties** to view the file size.
   - Reference sizes:
@@ -45,7 +45,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 ## Enable passkey profiles (preview)
 
 >[!NOTE]
->A maximum of 3 passkey profiles, including the Default passkey profile are supported. We’re investing in support for more passkey profiles. 
+>Upon opting-in to passkey profiles (preview), your global passkey (FIDO2) policy settings will be automatically transferred to a "Default passkey profile". A maximum of 3 passkey profiles, including the Default passkey profile are supported. Support for additional passkey profiles will come soon.
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Authentication method policy**.

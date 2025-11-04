@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: justinha
   ms.author: justinha
-  ms.date: 01/29/2023
+  ms.date: 10/31/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -27,32 +27,33 @@ landingContent:
             url: overview-authentication.md
           - text: What are authentication methods?
             url: concept-authentication-methods.md
-          - text: Security information registration
-            url: concept-registration-mfa-sspr-combined.md
-          - text: What is passwordless?
-            url: concept-authentication-passwordless.md
+          - text: What are passkeys (FIDO2)?
+            url: concept-authentication-passkeys-fido2.md
+          - text: What are authentication strengths?
+            url: concept-authentication-strengths.md
+
 
   # Card
-  - title: Deploy self-service password reset
+  - title: Deploy phishing-resistant authentication
     linkLists:
       - linkListType: concept
         links:
-          - text: How self-service password reset works
-            url: concept-sspr-howitworks.md
-          - text: How password writeback works
-            url: concept-sspr-writeback.md
-      - linkListType: tutorial
+          - text: What are phishing-resistant authentication methods?
+            url: concept-authentication-passwordless.md
+          - text: What is Microsoft Authenticator?
+            url: concept-authentication-authenticator-app.md
+      - linkListType: how-to-guide
         links:
-          - text: Enable self-service password reset
-            url: tutorial-enable-sspr.md
-          - text: Enable password writeback to on-premises
-            url: tutorial-enable-sspr-writeback.md
+          - text: Enable passkeys (FIDO2) for your organization
+            url: how-to-enable-passkey-fido2.md
+          - text: Enable passkeys in Authenticator
+            url: how-to-enable-authenticator-passkey.md
       - linkListType: deploy
         links:
-          - text: Deployment guide for self-service password reset
+          - text: Get started with phishing-resistant MFA
             url: howto-sspr-deployment.md
-          - text: Enable password reset from the Windows login screen
-            url: howto-sspr-windows.md
+          - text: Deploy phishing-resistant MFA
+            url: how-to-deploy-phishing-resistant-passwordless-authentication.md
 
   # Card
   - title: Enable Microsoft Entra multifactor authentication
@@ -74,20 +75,4 @@ landingContent:
           - text: Use NPS extension to integrate on-premises applications
             url: howto-mfa-nps-extension.md
 
-  # Card
-  - title: Deploy Microsoft Entra password protection
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Eliminate weak passwords in the cloud
-            url: concept-password-ban-bad.md
-          - text: Eliminate weak passwords on-premises
-            url: concept-password-ban-bad-on-premises.md
-      - linkListType: get-started
-        links:
-          - text: Configure the banned password list
-            url: ./tutorial-configure-custom-password-protection.md
-      - linkListType: how-to-guide
-        links:
-          - text: Deploy Microsoft Entra password protection
-            url: howto-password-ban-bad-on-premises-deploy.md
+
