@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-You can integrate third-party Web Application Firewall (WAF) solutions with Microsoft Entra External ID to  to improve overall security. A WAF helps protect your organization from attacks such as distributed denial of service (DDoS), malicious bots, and Open Worldwide Application Security Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks.
+You can integrate third-party Web Application Firewall (WAF) solutions with Microsoft Entra External ID to improve overall security. A WAF helps protect your organization from attacks such as distributed denial of service (DDoS), malicious bots, and Open Worldwide Application Security Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks.
 
 Akamai Web Application Firewall ([Akamai WAF](https://www.akamai.com/glossary/what-is-a-waf)) protects your web apps from common exploits and vulnerabilities. By integrating Akamai WAF with Microsoft Entra External ID, you add an extra layer of security for your applications.
 
@@ -29,6 +29,7 @@ The solution uses three main components:
 
 - **External tenant** – Acts as the identity provider (IdP) and authorization server, enforcing custom policies for authentication.
 - **Azure Front Door (AFD)** – Handles custom domain routing and forwards traffic to Microsoft Entra External ID.
+- **Akamai account** – The account used to manage Akamai services. You can create an [Akamai account](https://akamai.com/) on the Cloud Computing Services page.
 - **Akamai WAF** – The [Web Application Protector](https://www.akamai.com/us/en/resources/waf.jsp) firewall that manages traffic sent to the authorization server.
 
 ## Prerequisites
@@ -40,7 +41,11 @@ To get started, you need:
 - An [Akamai Web Application Firewall (WAF)](https://www.akamai.com/glossary/what-is-a-waf) that manages traffic sent to the authorization server.
 - A [custom domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant that’s enabled with Azure Front Door (AFD).
 
-## Step 1: Configure Akamai WAF
+## Setup steps
+
+To configure Akamai WAF with Microsoft Entra External ID, complete the following steps:
+
+### Step 1: Configure Akamai WAF
 
 After you have a contract with Akamai, you can access the [portal](https://control.akamai.com/), which lets you manage all your Akamai WAF settings and more. To build your initial setup, you can choose between two options:
 
@@ -61,11 +66,50 @@ For more information, see the steps in **Configure Akamai WAF** in the [Akamai d
 
 # [Advanced mode](#tab/advanced-mode)
 
-If you prefer an advanced approach, first create and configure a property in [Property Manager](https://control.akamai.com/apps/property-manager/). Then, configure **Akamai WAF** under **Security Configurations**. 
+If you prefer an advanced approach, first create and configure a property in [Property Manager](https://control.akamai.com/apps/property-manager/). A property is a configuration file that tells our edge servers how to handle and respond to incoming requests from your end users.
+
+To learn more, see [What is a Property?](https://techdocs.akamai.com/start/docs/prop). To create and configure a property, follow these steps:
+
+## Create and configure a property
+
+1. Go to [Akamai Control Center](https://control.akamai.com/) to sign in.
+2. Navigate to **Property Manager**.
+3. For **Property version**, select **Standard** or **Enhanced TLS** (recommended).
+4. For **Property hostnames**, add a property hostname for your custom domain.  
+   Example: `login.domain.com`
+
+> [!IMPORTANT]  
+> Create or modify certificates with the correct custom domain name settings.  
+> For details, see [Configure HTTPS hostnames](https://techdocs.akamai.com/property-mgr/docs/serve-content-over-https).
+
+## Origin server property configuration settings
+
+Use these settings for the origin server:
+
+1. For **Origin type**, enter your origin type.
+2. For **Origin server hostname**, enter your hostname.  
+   Example: `yourafddomain.azurefd.net`
+3. For **Forward host header**, select **Incoming Host Header**.
+4. For **Cache key hostname**, select **Incoming Host Header**.
+
+## Configure DNS
+
+Create a Canonical Name (CNAME) record in your DNS, such as `login.domain.com`, that points to the Microsoft Edge hostname in the **Property hostname** field.
+
+## Configure Akamai Web Application Firewall
+
+1. Go to [Akamai Control Center](https://control.akamai.com/) to sign in.
+2. Navigate to **Security Configurations**.
+3. To create a new security configuration, select **Protect existing property**.
+4. Enter a configuration name in **Configuration Details**, then select **Create and activate the configuration on Production network**.
+5. To get started with the security configuration, see https://techdocs.akamai.com/cloud-security/docs/app-api-protector.
+6. In a subsequent security configuration version, change the action under **Web Application Firewall** for **Attack Group**, and set **Group Action** to **Deny**.
+
+  :::image type="content" source="media\how-to-configure-akamai-integration\denied-attack-groups.png" alt-text=" 	Screenshot of denied attack groups, in the Group action column." :::
 
 ---
 
-## Step 2: Grant access to the Akamai API to perform actions
+### Step 2: Grant access to the Akamai API to perform actions
 
 Create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`). You reuse these values in **Step 3**.
 
@@ -73,10 +117,14 @@ Additionally, update the **API restrictions** for the actions to the appropriate
 
 | Title | Description | Access level |
 |----|----|----|
-| [Edge Diagnostics](https://developer.akamai.com/) | Edge Diagnostics | READ-WRITE |
-| [Property Manager (PAPI)](https://developer.akamai.com/api/luna/papi/overview.html) | Property Manager (PAPI). PAPI requires access to Edge Hostnames. Edit your authorizations to add HAPI to your API Client. | READ-ONLY |
+| [Microsoft Edge Diagnostics](https://developer.akamai.com/) | Microsoft Edge Diagnostics | READ-WRITE |
+| [Property Manager (PAPI)](https://developer.akamai.com/api/luna/papi/overview.html) | Property Manager (PAPI). PAPI requires access to Microsoft Edge Hostnames. Edit your authorizations to add HAPI to your API Client. | READ-ONLY |
 
-## Step 3: Connect authentication credentials to the WAF configuration
+## Verification steps
+
+After completing the configuration steps, verify that Akamai WAF is protecting your external tenant by connecting the authentication credentials to the WAF configuration.
+
+### Step 3: Connect authentication credentials to the WAF configuration
 
 You can connect the AuthCredentials to pull and verify the WAF configuration for your domain. For WAF verification, use the Microsoft Graph API endpoint. You can call this endpoint through [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) or any REST client.
 
@@ -91,7 +139,7 @@ You can connect the AuthCredentials to pull and verify the WAF configuration for
 - The verification process checks that a DNS record is correctly configured and validates whether the recommended managed rulesets are enabled.
 - The API returns detailed error codes to help you identify configuration issues and provides actionable recommendations.
 
-### Risk prevention provider permission details
+#### Risk prevention provider permission details
 
 The following permission allows the app to read your organization's risk prevention providers without a signed-in user.
 
@@ -99,7 +147,7 @@ The following permission allows the app to read your organization's risk prevent
 |----|----|----|
 | RiskPreventionProviders.Read.All  | Allows reading  Web Application Firewall information.  | POST /riskPrevention/webApplicationFirewalls/Verify  |
 
-### Sample request and response
+#### Sample request and response
 
 To connect Akamai WAF with Microsoft Entra External ID, use the following example request and response.
 
