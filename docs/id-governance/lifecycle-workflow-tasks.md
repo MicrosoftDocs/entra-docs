@@ -1127,7 +1127,7 @@ Example of usage within the workflow:
 }
 ```
 
-### Send email about user inactivity (Preview)
+### Send email about user inactivity
 
 Allows an email containing information about an inactive user to be sent to the user's manager after a specified number of days as their last sign-in. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/send-email-user-inactivity-task.png" alt-text="Screenshot of Workflows task: send inactivity email.":::
