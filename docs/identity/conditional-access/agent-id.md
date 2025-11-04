@@ -20,6 +20,8 @@ These agent users are designed for experiences such as Digital Workers. Because 
 
 Admins can use new Conditional Access policies to govern agent users. During public preview, block access to all resources is the only policy configuration allowed for agent users. 
 
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
+
 ## Agent identity architecture in Microsoft Entra
 
 To understand how Conditional Access works with agent identities, it is important to understand the fundamentals of Microsoft Entra Agent ID. Agent ID introduces first-class identity constructs for agents. These are modelled as applications (agent identities) and users (agent users).
@@ -56,7 +58,7 @@ Conditional Access does not apply when:
    > Tokens scoped to AAD Token Exchange Endpoint: Public can't call MS Graph. Agentic flows are protected because we protect token acquisition from agent identity or agent user.
 
 - A Conditional Access policy is scoped to users or workload identities **not** to agents.
-- [Security defaults](../../fundamentals/security-defaults.md) are enabled.
+- [Security defaults](../../fundamentals/security-defaults.md) are.
 
 | Authentication flow | Does Conditional Access apply | Details |
 | --- | :---: | --- |
