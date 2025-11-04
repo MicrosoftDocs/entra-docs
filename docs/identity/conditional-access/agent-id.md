@@ -24,17 +24,17 @@ Admins can use new Conditional Access policies to govern agent users. During pub
 
 ## Agent identity architecture in Microsoft Entra
 
-To understand how Conditional Access works with agent identities, it is important to understand the fundamentals of Microsoft Entra Agent ID. Agent ID introduces first-class identity constructs for agents. These are modelled as applications (agent identities) and users (agent users).
+To understand how Conditional Access works with agent identities, it's important to understand the fundamentals of Microsoft Entra Agent ID. Agent ID introduces first-class identity constructs for agents. These are modeled as applications (agent identities) and users (agent users).
 
 | Term | Description |
 | --- | --- |
 | Agent blueprint | A logical definition of an agent type. Necessary for agent identity blueprint principal creation in the tenant. |
 | Agent identity blueprint principal | A service principal representing the agent blueprint in the tenant; executes only creation of agent identities and agent users |
 | Agent identity | Instantiated agent identity. Performs token acquisitions to access resources. |
-| Agent user | Non-human user identity used for agent experiences that require a user account. Performs token acquisitions to access resources. |
+| Agent user | Nonhuman user identity used for agent experiences that require a user account. Performs token acquisitions to access resources. |
 | Agent resource | Agent blueprint or agent identity acting as the resource app (for example, in agent to agent (A2A) flows) |
 
-For more information see the article [Microsoft Entra agent ID security capabilities for AI Agents](../../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md).
+For more information, see the article [Microsoft Entra agent ID security capabilities for AI Agents](../../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md).
 
 ## Conditional Access capabilities for agent apps and agent users
 
@@ -45,12 +45,12 @@ Conditional Access applies when:
 - An agent identity requests a token for any resource (agent identity → resource flow). 
 - An agent user requests a token for any resource (agent user → resource flow).
 
-Conditional Access does not apply when:
+Conditional Access doesn't apply when:
 
 - An agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent user.
 
    > [!NOTE]
-   > Agent blueprints have limited functionality. They cannot act independently to access resources and are only involved in creation of agent identities and agent users. Agentic tasks are always performed by the agent identity (Agent ID). 
+   > Agent blueprints have limited functionality. They can't act independently to access resources and are only involved in creation of agent identities and agent users. Agentic tasks are always performed by the agent identity (Agent ID). 
 
 - An agent identity blueprint or agent identity performs an intermediate token exchange at the AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936).
 
@@ -166,7 +166,7 @@ The following steps help create a Conditional Access policy to block agent ident
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
-   1. Undr **What does this policy apply to?**, select **Agents (Preview)**.
+   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
       1. Under **Include**, select **All agent identities (Preview)**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
@@ -191,16 +191,17 @@ Users accessing agents -> User sign-ins
 
 ### My organization doesn't want to deploy agents - what do I do?
 
-See [Block all agent authentication and token issueance](#block-all-agent-authentication-and-token-issuance) for complete guidance on blocking all agent authentication and token issuance in your tenant.
+See [Block all agent authentication and token issuance](#block-all-agent-authentication-and-token-issuance) for complete guidance on blocking all agent authentication and token issuance in your tenant.
 
 ### Block all agent authentication and token issuance
 
-While there is no way to completely stop your users from creating agents in your tenant, you can comprehensively block all agent authentication and token issuance by implementing **all three** of the following Conditional Access policies together. 
+While there's no way to completely stop your users from creating agents in your tenant, you can comprehensively block all agent authentication and token issuance by implementing **all three** of the following Conditional Access policies together. 
 
 > [!IMPORTANT]
 > You must implement all three policies to ensure complete coverage. Each policy blocks a different authentication path that agents can use to access resources.
 
 These policies will:
+
 - Block existing and new agent identities from authenticating
 - Block agent users from accessing resources  
 - Block human users from signing into agents
@@ -218,7 +219,7 @@ The following steps help create a Conditional Access policy to block issuance of
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
-   1. Undr **What does this policy apply to?**, select **Agents (Preview)**.
+   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
       1. Under **Include**, select **All agent identities (Preview)**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
@@ -240,7 +241,7 @@ The following steps help create a Conditional Access policy to block issuance of
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
-   1. Undr **What does this policy apply to?**, select **Agents (Preview)**.
+   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
       1. Under **Include** > **Select agents** > **Select agents acting as users** > **All agents acting as users (Preview)**
       1. Select **Select**.
 1. Under **Target resources**, select the following options: 
