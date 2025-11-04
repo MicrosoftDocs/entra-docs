@@ -11,7 +11,7 @@ ms.date: 05/21/2025
 #CustomerIntent: As an IT Administrator I want to assign eligible roles for a group within an access package.
 ---
 
-# Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)
+# Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups
 
 As an access package manager, you can assign which role you want to provide a user for a group within an access package. By [managing groups with Privileged Identity Management(PIM)](../id-governance/privileged-identity-management/groups-discover-groups.md), you're able to enhance security by designating that group access happens just-in-time. This article describes how to enable PIM for a group, adding the group to an access package, and verifying eligible assignments are available.
 
