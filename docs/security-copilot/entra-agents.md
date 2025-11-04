@@ -48,13 +48,26 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 | Licenses            | [Microsoft Entra ID Governance or Microsoft Entra Suite](../id-governance/licensing-fundamentals.md) |
 | Permissions         | Get details for access reviews<br>Read details and lifecycle workflow history for users, groups, apps, and access packages<br>Save access review suggestions and justifications |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
-| Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Access Reviews](../id-governance/access-reviews-overview.md) |
+| Products            | [ID Governance Access Reviews](../id-governance/access-reviews-overview.md) |
 | Role-based access   | Both [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) are required to configure and use the agent |
 | Trigger             | Runs every 24 hours or triggered manually |
 
-### Conditional Access optimization agent
+### Application Lifecycle Management Agent
 
-The [Conditional Access optimization agent](./conditional-access-agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
+Identify, onboard, and monitor applications in your environment with the [Application Lifecycle Management Agent](../identity/enterprise-apps/application-lifecycle-agent.md). This agent uses application discovery capabilities of Microsoft Entra Internet Access and Microsoft Entra Private Access to find unmanaged applications, recommend onboarding actions, and monitor application security posture over time.
+
+| Attribute           | Description |
+|---------------------|------------ |
+| Identity            | Runs with the identity of the administrator who configured the agent. A unique agent identity is created when the agent is turned on that provides read-only permissions. Agent authentication will expire according to your policies and need to be renewed. |
+| Licenses            |  Microsoft Entra ID P2 or Workload Identity Premium P2](/entra/fundamentals/licensing) for **App Risk Remediation** suggestions and/or Microsoft Entra Suite or [Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) licenses for **Application Discovery & Onboarding** suggestions |
+| Permissions         | Read access for Global Secure Access network logs.<br>Read access for users, applications, and service principals.<br>Read access for Microsoft Entra recommendations. |
+| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
+| Products            | [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)<br>[Microsoft Entra recommendations](../identity/monitoring-health/overview-recommendations.md)<br>[Enterprise Applications](../identity/enterprise-apps/)<br>[App Management](../identity/enterprise-apps/) |
+| Role requirements   | Use any of the following:<br>[Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)<br>[Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)<br>[Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) |
+
+### Conditional Access Optimization Agent
+
+The [Conditional Access Optimization Agent](./conditional-access-agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
 
 | Attribute           | Description |
 |---------------------|------------ |
@@ -62,9 +75,21 @@ The [Conditional Access optimization agent](./conditional-access-agent-optimizat
 | Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
 | Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
-| Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
-| Role requirements   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to configure the agent<br>[Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to use the agent |
+| Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
+| Role-based access   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to configure the agent<br>[Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to use the agent |
 | Trigger             | Runs every 24 hours or triggered manually |
+
+### Risk Management Agent
+
+| Attribute           | Description |
+|---------------------|------------ |
+| Identity            | Runs with identity of the administrator who configured the agent. |
+| Licenses            | [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) |
+| Permissions         | Read Microsoft Entra ID Protection risk detections and risk history<br>Read sign-in and audit logs<br>Read user information |
+| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
+| Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) |
+| Role-based access   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) |
+| Trigger             | Runs every 24 hours, triggered manually, or continuous monitoring |
 
 ## Getting started with Microsoft Entra agents
 
