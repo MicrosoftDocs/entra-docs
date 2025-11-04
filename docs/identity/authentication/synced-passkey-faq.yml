@@ -32,31 +32,10 @@ sections:
           In fact, this risk applies to other MFA methods like SMS and Microsoft Authenticator push notification as well. 
           Organizations will need to teach their users to treat passkeys carefully, like users should with any organization credentials. 
       - question: |
-          Can a bad actor spoof a passkey provider's identity?  
-        answer: |
-          Yes, a bad actor can build their own passkey provider that uses one of the publicly documented AAGUIDs of a well-known passkey provider. 
-          They then must trick a user into downloading and using their malicious passkey provider. 
-          This is a risk for both device-bound and synced passkey providers that don't support attestation, which is the cryptographic process of verifying that a passkey provider (or security key) is the provider/key that it claims to be. 
-          Synced passkey providers like iCloud Keychain and Google Password Manager don't currently support attestation. 
-          If attestation is a must for high assurance user segments such as admin users, then consider deploying FIDO2 security keys or passkeys in Microsoft Authenticator for those specific user populations. 
-      - question: |
           How can I do a staged rollout of synced passkeys?
         answer: |
           You can leverage passkey profiles to scope the rollout of synced passkeys to select user groups. 
           Microsoft recommends the use of device-bound passkeys for admins and highly privileged users, and the use of synced passkeys for all other users in your organization. 
-      - question: |
-          How are passkeys protected from being synced to unknown, potentially malicious devices?  
-        answer: |
-          Synced passkey providers like Apple iCloud Keychain and Google Password Manager have adopted high security standards to protect synced passkeys, even from their own employees, by making sure that the passkeys are end-to-end encrypted. 
-          When users want to recover or access passkeys on a new device: 
-
-          - With Apple iCloud Keychain, the user must prove proximity with their old device via Bluetooth. Please see Apple's documentation for more details: About the security of passkeys - Apple Support 
-          - With Google Password Manager, the user must confirm their device PIN from their old device. Please see Google's documentation for more details: Google Online Security Blog: Security of Passkeys in the Google Password Manager 
-          - With third-party passkey providers, the access/recovery mechanism varies. Please work with third-party vendors to understand the security of their sync fabric. 
-          
-          If you want to implement more protections, you can create a Conditional Access authentication strengths policy that requires the use of a Temporary Access Pass or a device-bound passkey to bootstrap a new device, such as for Intune MDM enrollment. 
-          Once the user's identity is verified and their device is compliant, then the user can satisfy subsequent authentications on the device with a synced passkey. 
-          This policy can be combined with a sign-in risk assessed by Identity Protection to reduce the number of required step-ups. 
       - question: |
           As an admin, can I revoke the use of a passkey?  
         answer: |
