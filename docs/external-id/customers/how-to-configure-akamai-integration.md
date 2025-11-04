@@ -45,7 +45,7 @@ To get started, you need:
 
 To configure Akamai WAF with Microsoft Entra External ID, complete the following steps:
 
-### Step 1: Configure Akamai WAF
+### Configure Akamai WAF
 
 After you have a contract with Akamai, you can access the [portal](https://control.akamai.com/), which lets you manage all your Akamai WAF settings and more. To build your initial setup, you can choose between two options:
 
@@ -109,7 +109,7 @@ Create a Canonical Name (CNAME) record in your DNS, such as `login.domain.com`, 
 
 ---
 
-### Step 2: Grant access to the Akamai API to perform actions
+### Grant access to the Akamai API to perform actions
 
 Create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`). You reuse these values in **Step 3**.
 
@@ -124,7 +124,7 @@ Additionally, update the **API restrictions** for the actions to the appropriate
 
 After completing the configuration steps, verify that Akamai WAF is protecting your external tenant by connecting the authentication credentials to the WAF configuration.
 
-### Step 3: Connect authentication credentials to the WAF configuration
+### Connect authentication credentials to the WAF configuration
 
 You can connect the AuthCredentials to pull and verify the WAF configuration for your domain. For WAF verification, use the Microsoft Graph API endpoint. You can call this endpoint through [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) or any REST client.
 
