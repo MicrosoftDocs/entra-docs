@@ -15,8 +15,6 @@ ms.date: 10/30/2025
 
 Microsoft Entra ID Access reviews help organizations efficiently manage group memberships, enterprise application access, and role assignments. These reviews ensure that only the right people retain access over time. Historically, access reviews  were conducted on individual resources such as groups, applications, roles, and access packages. With catalog access reviews, access reviews can review multiple resource types such as apps and groups on a catalog level by the manager of users who are having their access reviewed. Currently, Multi-stage reviews are supported with catalog access reviews. The first stage is the manager of the user having their access reviews. The second stage is resource owners for the resources being reviewed for the user. For example, group resource owners are the group owners, and application resource owners are the application owners defined on the application object. Catalog access reviews allow you to quickly approve, or deny, access to many different resources within a catalog for users at once. This article walks you through completing a catalog access review.
 
-
-
 ## License requirements
 
 [!INCLUDE [active-directory-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
