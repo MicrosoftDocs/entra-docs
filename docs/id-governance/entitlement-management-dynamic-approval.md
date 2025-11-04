@@ -54,7 +54,7 @@ To create a custom extension, and its underlying Azure Logic App, you'd do the f
     :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-basics.png" alt-text="Screenshot of custom extension basics.":::
 1. On the **Extension Type** page, select **Request workflow (triggered when an access package is request, approved, granted, or removed)** and select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extension-type.png" alt-text="Screenshot of selecting the extension type for a custom extension.":::
-1. On the **Extension Configuration** page, for Behavior select **Launch and wait**, for Response data select **Approval Stage (Preview)**, and then select **Next**.
+1. On the **Extension Configuration** page, for Behavior select **Launch and wait**, for Response data select **Approval Stage**, and then select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approval-stage.png" alt-text="Screenshot of the custom extension approval stage option.":::
 1. On the **Details** page, choose a subscription, resource group, and name for the logic app being created. Once you've entered this information, select **Create a logic app**. Once the logic app is created, select **Next**.
 
