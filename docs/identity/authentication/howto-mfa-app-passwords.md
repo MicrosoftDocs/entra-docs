@@ -88,7 +88,7 @@ By default, users can't create app passwords. The app passwords feature must be 
     
 > [!NOTE]
 >
-> If App passwords are enabled, users will be required to create an app password as part of Microsoft Entra multifactor authentiation registration.
+> If App passwords are enabled, users will be required to create an app password as part of Microsoft Entra multifactor authentication registration.
 > 
 > When you disable the ability for users to create app passwords, existing app passwords continue to work. However, users can't manage or delete those existing app passwords once you disable this ability.
 >
