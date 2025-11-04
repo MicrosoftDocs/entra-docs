@@ -68,7 +68,7 @@ For more information about how other providers protect passkeys stored in their 
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Make sure you opted-in to the Passkey profiles (preview).
-1. Browse to **Entra ID** > **Authentication methods** > **Authentication method policy**.
+1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
 1. Select **Passkey (FIDO2)** > **Configure**.
 1. Add a profile or edit an existing profile.
 1. Under **Target type**, select **Synced (preview)** and save the profile. 

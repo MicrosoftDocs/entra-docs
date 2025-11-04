@@ -4,7 +4,7 @@ description: Learn about Microsoft Entra ID Account Recovery, which enables user
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 10/21/2025
+ms.date: 11/03/2025
 ms.author: justinha
 author: BullittRacer
 manager: dougeby
@@ -25,6 +25,8 @@ Account recovery represents a paradigm shift from simple credential reset to com
 
 Microsoft Entra ID Account Recovery is an advanced authentication recovery mechanism that enables users to regain access to their organizational accounts when they've lost access to all registered authentication methods. Unlike traditional password reset capabilities, account recovery focuses on identity verification and trust re-establishment prior to replacement of authentication methods rather than simple credential recovery.
 
+Account recovery is secure by default with evaluation mode for user verification, and only takes 5 to 10 minutes to set up. [Try the preview](how-to-account-recovery-configure.md) and we appreciate your feedback!
+
 ### Key characteristics of account recovery
 
 **Identity-centric approach**: Account recovery shifts the focus from *what you know* (passwords) and *what you have* (passkeys, SMS/Voice, Software OTP, and so on) to *who you are* by using comprehensive identity verification. This approach acknowledges that in total lockout scenarios, traditional authentication factors might be compromised or unavailable.
@@ -41,7 +43,7 @@ Account recovery is designed for critical scenarios where users face complete au
 - **Complete authentication failure**: When all registered authentication methods become unavailable simultaneously  
 - **Account compromise recovery**: When a security incident requires complete authentication method reset as part of the incident response
 
-### Account recovery vs. Self-Service Password Reset (SSPR)
+### Account recovery versus self-service password reset (SSPR)
 
 Although account recovery and SSPR both aim to restore user access, they address different scenarios, and use distinct approaches:
 
@@ -83,7 +85,7 @@ The account recovery process follows a structured workflow designed to balance s
 
 :::image type="content" border="true" source="media/concept-self-service-account-recovery/recovery-steps-overview.png" alt-text="Conceptual diagram of the account recovery process.":::
 
-#### Step 1: Discover Account Recovery Entry
+#### Step 1: Discover Account Recovery entry
 
 1. **Account name**: Users provide their account identifier (typically username or email address).
 2. **Access point**: Users access recovery through sign-in after indicating they can't access their account. 
@@ -111,6 +113,7 @@ The account recovery process follows a structured workflow designed to balance s
 
 ## Related content
 
+- [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-user-setup.md)
 - [How it works: Microsoft Entra self-service password reset](concept-sspr-howitworks.md) - Learn about traditional password reset capabilities and when to use SSPR versus account recovery
 - [What is Microsoft Entra Verified ID?](/entra/verified-id/decentralized-identifier-overview) - Understand the decentralized identity technology that powers SSAR's verification process  
 - [Plan your Microsoft Entra Verified ID verification solution](/entra/verified-id/plan-verification-solution) - Design guidance for implementing identity verification scenarios
