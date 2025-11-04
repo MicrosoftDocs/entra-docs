@@ -356,7 +356,7 @@
       - name: Create an access review
         href: create-access-review.md
       - name: Catalog access reviews (Preview)
-        href: catalog-access-review.md  
+        href: catalog-access-reviews.md  
       - name: Review access
         href: perform-access-review.md
       - name: Review access for yourself
