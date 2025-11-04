@@ -7,7 +7,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to 
-ms.date: 04/12/2025
+ms.date: 11/04/2025
 
 #CustomerIntent: As an IT admin, I want to create custom extensions so that I can determine approvers of an access package externally. 
 ---
