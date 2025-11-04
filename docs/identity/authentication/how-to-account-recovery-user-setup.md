@@ -35,20 +35,11 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 9. Enter your name and email, agree to the terms of use for the app, and select **Continue**.
 10. Choose your country/region, and the type of identity verification document you have, such as **Passport**.
 11. Review how to take a clear document photo, and select **Continue** after you read each step.
-
-    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/welcome.png" alt-text="Screenshot that shows Welcome screens for account recovery."lightbox="media/how-to-account-recovery-user-setup/welcome.png":::
-
 12. After you take the photo, select **Submit photos**.
-13. Review how to take a clear photo of your face, and select **Continue** after you read each step.
-
-    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/face-check.png" alt-text="Screenshot that shows how to complete face check for account recovery."lightbox="media/how-to-account-recovery-user-setup/face-check.png":::
-
+13. Review how to take a clear photo of your face, and select **Continue** after you read each step
 14. After you take the photo, the identity proofing application verifies your identity, and issues a Verifiable Credential.
 15. On the **Success** page, select **Add Verifiable Credential**.
 16. When you're prompted to open in Authenticator, select **Open**, and unlock Microsoft Authenticator.
-
-    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/validate.png" alt-text="Screenshot that shows how to validate setup for account recovery."lightbox="media/how-to-account-recovery-user-setup/validate.png":::
-
 17. On the **Add a Verified ID** page in Authenticator, select **Next**.
 18. Sign in to the identity proofing application, and select **Start**.
 19. The new Verifiable Credential is listed in Authenticator under **Verified IDs**, and Authenticator and the identity proofing application both show **Success**.

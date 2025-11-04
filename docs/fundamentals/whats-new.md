@@ -24,23 +24,40 @@ This article provides information about the latest releases and change announcem
 
 ## October 2025
 
-### Public Preview - Delegated Workflow Management in Lifecycle Workflows
+### Plan for Change - Update to Revoke Multifactor Authentication Sessions 
 
-**Type:** New feature    
-**Service category:** Lifecycle Workflows    
-**Product capability:** Identity Governance    
+**Type:** Plan for change   
+**Service category:** MFA    
+**Product capability:** Identity Security & Protection    
 
-Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers are able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope.
+Starting February 2026, we are replacing the current “*Revoke multifactor authentication sessions*” button with the “*Revoke sessions*” button in the MicrosoftEntra portal.
+
+The legacy “*Revoke MFA session*s” action only applies to per-user MFA enforcement, which has led to confusion. To simplify and ensure consistent behavior, the new “*Revoke sessions*” button will invalidate all user sessions, including MFA, regardless of whether MFA is enforced via Conditional Access or per-user policies.
+
+**Action required**
+
+Admins should update workflows and guidance to use “*Revoke sessions*” instead of “*Revoke MFA sessions*”. The “*Revoke MFA sessions*” option will be removed from the portal after this change.
 
 ---
 
+
 ### Public Preview - Delegated Workflow Management in Lifecycle Workflows
 
 **Type:** New feature    
 **Service category:** Lifecycle Workflows    
 **Product capability:** Identity Governance    
 
-Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers are able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope.
+Lifecycle workflows can now be managed with Administrative Units (AUs), enabling organizations to segment workflows and delegate administration to specific admins. This enhancement ensures that only authorized admins can view, configure, and execute workflows relevant to their scope. Customers are able to associate workflows with AUs, assign scoped permissions to delegated admins, and ensure that workflows only impact users within their defined scope. For more information, see: [Delegated workflow management (preview)](../id-governance/manage-delegate-workflow.md).
+
+---
+
+### Public Preview - App-based branding via Branding themes in Microsoft Entra External ID
+ 
+**Type:** New feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+ 
+In Microsoft Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "*themes*" to allow customers to create different branding experiences for specific applications. For more information, see [https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-customize-branding-themes-apps](/entra/external-id/customers/how-to-customize-branding-themes-apps)
 
 ---
 

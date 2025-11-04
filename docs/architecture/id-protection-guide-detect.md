@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/22/2025
+ms.date: 10/31/2025
 
 #CustomerIntent: As an identity administrator, I want to use real-time risk detection features in Microsoft Entra ID Protection so that I can grant user access to protected resources.
 ---
@@ -18,8 +18,9 @@ An overview of the guidance begins with [Introduction to Microsoft Entra ID Prot
 
 Detailed guidance continues with these scenarios:
 
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
 This article helps identity administrators use real-time risk detection features in Microsoft Entra ID Protection to grant user access to protected resources. To set up your PoC for this scenario, begin with [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md). Then follow the detailed guidance in this article.
 
@@ -70,6 +71,8 @@ Monitor the impact of policies using these features:
 
 ## Next steps
 
-- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
+* Use real-time risk detection to grant access to protected resources
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
