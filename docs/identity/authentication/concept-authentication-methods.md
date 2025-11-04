@@ -4,7 +4,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 11/03/2025
+ms.date: 11/04/2025
 ms.author: justinha
 author: sipower
 ms.reviewer: jupetter
@@ -54,12 +54,12 @@ The following table outlines when an authentication method can be used during a 
 |--------------------------------|:----------------------:|:-------------------------:|
 | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes   | MFA<sup>1</sup>  |
 | Platform Credential for macOS   | Yes               | MFA |
-| FIDO2 security key                | Yes                    | MFA                       |
+| [FIDO2 security key](concept-authentication-passkeys-fido2.md#device-bound-passkeys)  | Yes                    | MFA             |
 | [Microsoft Authenticator passkey](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
-| Synced passkey (preview)| Yes                 | MFA           |
+| [Synced passkey (preview)](concept-authentication-passkeys-fido2.md#synced-passkeys-preview)| Yes                 | MFA           |
 | [Certificate-based authentication](concept-certificate-based-authentication.md)| Yes            | MFA                       |
-| [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md) | Yes                     | No<sup>2</sup>   |
-| [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md) | Yes                     | MFA and SSPR   |
+| [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md#passwordless-sign-in-via-notifications)| Yes | No<sup>2</sup>|
+| [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app) |Yes  | MFA and SSPR |
 | [Authenticator Lite](/entra/identity/authentication/how-to-mfa-authenticator-lite)            | No                     | MFA     |
 | [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview) | No            | MFA and SSPR |
 | [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)          | No                  | MFA and SSPR   |
