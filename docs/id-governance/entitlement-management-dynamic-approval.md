@@ -13,7 +13,7 @@ ms.date: 04/12/2025
 ---
 
 
-# Externally determine the approval requirements for an access package using custom extensions (Preview)
+# Externally determine the approval requirements for an access package using custom extensions
 
 In entitlement management, approvers for access package requests can either be directly assigned, or determined dynamically. Entitlement management natively supports dynamically determining approvers such as the requestors manager, their second-level manager, or a sponsor from a connected organization:
 
