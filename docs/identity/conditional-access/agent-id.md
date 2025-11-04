@@ -96,9 +96,9 @@ Creating a Conditional Access policy for agents involves these four key componen
 
 ## Common Conditional Access scenarios - biz scenarios
 
-### Scenario 1: My organization is testing agents. I want to configure a Conditional Access policy to allow only approved agents to access specific resources.
+### My organization is testing agents. I want to configure a Conditional Access policy to allow only approved agents to access specific resources.
 
-#### Method 1: The first method is using custom security attributes. 
+#### Method 1: The first method is using custom security attributes.
 
 ##### Create and assign custom attributes
 
@@ -107,13 +107,13 @@ This approach uses steps similar to those documented in [Filter for applications
 1. Create the custom security attributes using the following steps:
    1. Create an **Attribute set** named *AgentAttributes*.
    1. Create **New attributes** named *agentStatus* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**. 
-      1. Add the following predefined values: New, In Review, Approved.
-   1. Assign the ‘Approved’ value to agents that your organization is ready to test.
+      1. Add the following predefined values: **New**, **In Review,** **Approved**.
+   1. Assign the **Approved** value to agents that your organization is ready to test.
 1. Create another attribute set to group resources that your agents are allowed to access.
    1. Create an **Attribute set** named *sensitivity*.
    1. Create **New attributes** named *businessImpact* that **Allow multiple values to be assigned** and **Only allow predefined values to be assigned**.
-      1. Add the following predefined values: Low, Medium, High.
-   1. Assign the ‘Low’ value to resources that your agent is allowed to access.
+      1. Add the following predefined values: **Low**, **Medium**, **High**.
+   1. Assign the **Low** value to resources that your agent is allowed to access.
 
 ##### Create Conditional Access policy
 
@@ -155,9 +155,9 @@ Once done, the following steps help create a Conditional Access policy to block 
 
 #### Method 2: The second method uses enhanced agent and resource selection experience
 
+JOHN TO CREATE THIS
 
-
-### Scenario 2: I want to configure a Conditional Access policy to block high risk agent identities from accessing my organization’s resources
+### I want to block high risk agent identities from accessing my organization’s resources
 
 The following steps help create a Conditional Access policy to block agent identities at high risk.
 
@@ -179,9 +179,21 @@ The following steps help create a Conditional Access policy to block agent ident
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to enable your policy.
 
-Conditional Access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant (see below).
-Applying these policies in your tenant requires the Microsoft Entra Agent ID license, which is currently available at no cost. To acquire this license, go to this page.
-To comprehensively block authentication and token issuance of Agent IDs, create the following condtitional access block policies. It's recommended to run these policies in report-only mode and understand their impact before enforcing them.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
+
+## Investigating policy evaluation using sign-in logs
+
+Agent identities (actor) accessing any resources -> Service principal sign-in logs -> agentType: agent identity
+Agent users accessing any resources -> Non-interactive user sign-ins -> agentType: agent user
+Users accessing agents -> User sign-ins
+
+
+
+## FAQs
+
+### Can I stop people from creating agents?
+
+While there is no way to completely stop your users from creating agents, you can block authentication and stop token issuance with the following three Conditional Access policies. Applying the following three policies will prevent existing and new agent identities from authenticating. It will not prevent the creation of new agent identities in your tenant.
 
 #### Policy 1: Block agent identity authentication
 
@@ -251,11 +263,6 @@ Purpose: Block users from signing into agents and agents performing actions on t
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-## Investigating policy evaluation using sign-in logs
-
-Agent identities (actor) accessing any resources -> Service principal sign-in logs -> agentType: agent identity
-Agent users accessing any resources -> Non-interactive user sign-ins -> agentType: agent user
-Users accessing agents -> User sign-ins
 
 ## Conditional Access policy evaluation details for agents
 
