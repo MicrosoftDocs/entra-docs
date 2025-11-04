@@ -20,7 +20,7 @@ These agent users are designed for experiences such as Digital Workers. Because 
 
 Admins can use new Conditional Access policies to govern agent users. During public preview, block access to all resources is the only policy configuration allowed for agent users. 
 
-## Agents -> how is it modeled in Entra
+## Agent identity architecture in Microsoft Entra
 
 To understand how Conditional Access works with agent identities, it is important to understand the fundamentals of Microsoft Entra Agent ID. Agent ID introduces first-class identity constructs for agents. These are modelled as applications (agent identities) and users (agent users).
 
