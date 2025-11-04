@@ -20,6 +20,7 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
 ## Prerequisites
 
 - You need a Microsoft Entra ID P1 license to use Account Recovery
+- You need to enable Verified ID and configure Face Check
 - You need to be at an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) in the Microsoft Entra tenant
 - You need the Contributor or Billing Administrator role for your Azure subscription
 
@@ -44,7 +45,6 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
 
 1. After you choose groups you want to include for account recovery, select **Next**.
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/group-selection-next.png" alt-text="Screenshot that shows how to select Next after you add a group for account recovery."lightbox="media/how-to-account-recovery-configure/group-selection-next.png":::
 
 3. Under Identity verification providers, choose a provider and select **Get solution**.   
 
