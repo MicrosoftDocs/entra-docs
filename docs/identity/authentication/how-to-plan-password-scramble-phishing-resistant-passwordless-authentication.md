@@ -35,13 +35,13 @@ Organizations with users synced from on-premises AD DS to Microsoft Entra ID sho
 
 ## Scramble on-premises user passwords with a scripted random value
 
-In Active Directory, it is not possible to remove a password attribute from a user account. Therefore to prevent usage of the password you can scramble the password peridoically.
+In Active Directory, it is not possible to remove a password attribute from a user account. Therefore to prevent usage of the password you can scramble the password periodically.
 
-If you have legacy applications that still require a password for authentication, users can continue to use self-service password reset (SSPR) to set their password known state password to access these apps for a period of time, until their password is scrambled again.
+If you have legacy applications that still require a password for authentication, users can continue to use self-service password reset (SSPR) to set their password to a known state to access these apps for a period of time, until their password is scrambled again.
 
 You can use the following script to routinely scramble any passwords that users reset back to a known state.
 
-Thel script allows you to scramble a user's password in your AD DS domain. It generates a random password of 64 characters and sets it for the user specified in the variable name $samAccountName. You must modify the $samAccountName variable in the script to target the appropriate user. Use the credentials of an admin account with appropriate permissions in on-premises AD DS.
+The script allows you to scramble a user's password in your AD DS domain. It generates a random password of 64 characters and sets it for the user specified in the variable name $samAccountName. You must modify the $samAccountName variable in the script to target the appropriate user. Use the credentials of an admin account with appropriate permissions in on-premises AD DS.
 
 > [!CAUTION]
 > Execute the script only from a secure and trusted environment, and ensure that the script isn't logged. Treat the host where the script is executed as a privileged host, with the same level of security as a domain controller.
@@ -74,7 +74,7 @@ Set-ADAccountPassword -Identity $samAccountName -NewPassword $NewPassword -Reset
 ```
 
 > [!Note]
-> If your password scrambling script runs less frequently than your current password age policy, than you should consider increasing password age to be greater than this frequency, or setting password age to 0, which disables password expiration.
+> If your password scrambling script runs less frequently than your current password age policy, then you should consider increasing password age to be greater than this frequency, or setting password age to 0, which disables password expiration.
 
 ## Randomize passwords for cloud user accounts in Microsoft Entra ID
 
