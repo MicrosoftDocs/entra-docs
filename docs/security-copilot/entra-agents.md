@@ -54,15 +54,15 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 
 ### Application Lifecycle Management Agent
 
-Identify, onboard, and monitor applications in your environment with the [Application Lifecycle Management Agent](../identity/enterprise-apps/application-lifecycle-agent.md). This agent uses application discovery capabilities of Microsoft Entra Internet Access and Microsoft Entra Private Access to find unmanaged applications, recommend onboarding actions, and monitor application security posture over time.
+Identify, onboard, and monitor applications in your environment with the Application Lifecycle Management Agent. This agent uses application discovery capabilities of Microsoft Entra Internet Access and Microsoft Entra Private Access to find unmanaged applications, recommend onboarding actions, and monitor application security posture over time.
 
 | Attribute           | Description |
 |---------------------|------------ |
 | Identity            | Runs with the identity of the administrator who configured the agent. A unique agent identity is created when the agent is turned on that provides read-only permissions. Agent authentication will expire according to your policies and need to be renewed. |
-| Licenses            |  Microsoft Entra ID P2 or Workload Identity Premium P2](/entra/fundamentals/licensing) for **App Risk Remediation** suggestions and/or Microsoft Entra Suite or [Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) licenses for **Application Discovery & Onboarding** suggestions |
+| Licenses            |  [Microsoft Entra ID P2 or Workload Identity Premium P2](/entra/fundamentals/licensing) for **App Risk Remediation** suggestions and/or Microsoft Entra Suite or [Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) licenses for **Application Discovery & Onboarding** suggestions |
 | Permissions         | Read access for Global Secure Access network logs.<br>Read access for users, applications, and service principals.<br>Read access for Microsoft Entra recommendations. |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
-| Products            | [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)<br>[Microsoft Entra recommendations](../identity/monitoring-health/overview-recommendations.md)<br>[Enterprise Applications](../identity/enterprise-apps/)<br>[App Management](../identity/enterprise-apps/) |
+| Products            | [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)<br>[Microsoft Entra recommendations](../identity/monitoring-health/overview-recommendations.md)<br>[Enterprise Applications](/entra/identity/enterprise-apps/)<br>[App Management](/entra/identity/enterprise-apps/) |
 | Role requirements   | Use any of the following:<br>[Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)<br>[Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)<br>[Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) |
 
 ### Conditional Access Optimization Agent
