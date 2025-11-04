@@ -32,7 +32,7 @@ To understand how Conditional Access works with agent identities, it is importan
 | Agent user | Non-human user identity used for agent experiences that require a user account. Performs token acquisitions to access resources. |
 | Agent resource | Agent blueprint or agent identity acting as the resource app (for example, in agent to agent (A2A) flows) |
 
-For more information see the article [Microsoft Entra Agent ID](XXXXXXXXXXXXXX).
+For more information see the article [Microsoft Entra agent ID security capabilities for AI Agents](../../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md).
 
 ## Conditional Access capabilities for agent apps and agent users
 
@@ -177,7 +177,7 @@ The following steps help create a Conditional Access policy to block agent ident
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to enable your policy.
 
-Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant (see below).
+Conditional Access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant (see below).
 Applying these policies in your tenant requires the Microsoft Entra Agent ID license, which is currently available at no cost. To acquire this license, go to this page.
 To comprehensively block authentication and token issuance of Agent IDs, create the following condtitional access block policies. It's recommended to run these policies in report-only mode and understand their impact before enforcing them.
 
