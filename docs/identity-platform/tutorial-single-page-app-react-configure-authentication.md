@@ -2,6 +2,7 @@
 title: "Tutorial: Add sign-in and sign-out components to a React single-page app (SPA)"
 description: Learn how to add authentication to a React single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 02/25/2025

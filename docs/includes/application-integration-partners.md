@@ -44,12 +44,12 @@ The Microsoft Entra platform integrates with IDMWORKS IdentityForge (IDF) Gatewa
 The IDF Gateway for Microsoft Entra ID provides lifecycle management for import sources and provisioning target systems that aren't covered by the Microsoft Entra connector portfolio like Mainframe systems RACF, Top Secret, and ACF2, or Healthcare applications EPIC and Cerner. The IDF Gateway powers Microsoft Entra identity lifecycle management (LCM) to continuously synchronize user account information from Mainframe and Healthcare sources and to automate the account provisioning lifecycle use cases like create, read or import, update, deactivate, delete user accounts, and perform group management.
 
 #### Contact information
-* Company website: https://www.idmworks.com/identity-forge
+* Company website: https://www.idmworks.com/
 * Contact information: https://www.idmworks.com/contact/
 
 #### Popular applications supported
 
-Leading provider of Mainframe, Healthcare and ERP integrations. More can be found at https://www.idmworks.com/identity-forge/
+Leading provider of Mainframe, Healthcare and ERP integrations. More can be found at https://www.idmworks.com/product/identityforge-connectors/
 
 * IBM RACF
 * CA Top Secret

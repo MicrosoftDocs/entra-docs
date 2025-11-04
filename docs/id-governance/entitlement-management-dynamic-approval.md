@@ -25,6 +25,9 @@ With the introduction of [custom extensions](entitlement-management-logic-apps-i
 
 This article walks you through making a custom extension, its underlying Azure Logic App, setting its system-assigned identity and role in the catalog, editing the logic app action to perform business logic, and testing to see if it runs successfully.
 
+Want to learn how this feature can use SAP organizational business context for approvals? Check out this episode of the SAP on Azure podcast:
+
+> [!VIDEO https://www.youtube.com/embed/qpEkNQtLLRY?si=ImIiD2jZPE8YTJGq]
 
 ## License requirements
 

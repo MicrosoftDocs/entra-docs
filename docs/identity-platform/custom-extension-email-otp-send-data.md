@@ -1,9 +1,9 @@
 ---
 title: Retrieve and return data from an emailOtpSend event
 description: Reference documentation for a custom authentication extension that invokes the emailOtpSend event for External ID customer configurations.
-author: msmimart
-manager: CelesteDG
-ms.author: mimart
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
 ms.date: 05/20/2025
 ms.service: identity-platform
 

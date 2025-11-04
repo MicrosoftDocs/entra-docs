@@ -20,6 +20,7 @@ Managing workflows can be accomplished in one of two ways:
 You can update the following basic information without creating a new workflow.
    - display name
    - description
+   - [Administrative Unit Scope](manage-delegate-workflow.md)
    - whether or not it's enabled
    - Whether or not workflow schedule is enabled
    - task name
@@ -41,13 +42,13 @@ To edit the properties of a workflow using the Microsoft Entra admin center, you
     
     :::image type="content" source="media/manage-workflow-properties/manage-list.png" alt-text="Screenshot of the workflow list.":::
 
-6. To change the display name or description, select **Properties**.
+6. To change the display name, description, or the Administrative unit scope, select **Properties**.
 
     :::image type="content" source="media/manage-workflow-properties/manage-properties.png" alt-text="Screenshot of the basic properties screen.":::
 
-7. Update the display name or description how you want. 
+7. Update the desired properties. 
 > [!NOTE]
-> Display names can not be the same as other existing workflows. They must have their own unique name.
+> Display names cannot be the same as other existing workflows. They must have their own unique name.
 
 8. Select **save**.
 

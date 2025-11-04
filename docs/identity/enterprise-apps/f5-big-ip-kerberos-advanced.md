@@ -64,7 +64,7 @@ The following image illustrates the SAML SP-initiated flow for this scenario, bu
 
 Prior BIG-IP experience isn't necessary. You need:
 
-* An [Azure free account](https://azure.microsoft.com/free/active-directory/), or a higher-tier subscription.
+* An [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn/), or a higher-tier subscription.
 * A BIG-IP, or [deploy BIG-IP Virtual Edition in Azure](~/identity/enterprise-apps/f5-bigip-deployment-guide.md).
 * Any of the following F5 BIG-IP licenses:
   * F5 BIG-IP Best bundle

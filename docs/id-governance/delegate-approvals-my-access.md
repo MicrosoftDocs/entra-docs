@@ -90,17 +90,19 @@ With the delegate option enabled, you can set up a delegate to approve access on
 
 1. On the left menu, select the **Approvals** page.
 
-1. Select **Edit delegate** on the Approvals page.
+1. Select **Delegate approvals** on the Approvals page.
 
 1. Update the delegate to another user.
 
 1. Select **Save**.
 
-### To remove the delegate, you'd: 
+#### To remove the delegate, you'd: 
 
 1. Sign in to the [My Access portal](https://myaccess.microsoft.com).
 
 1. On the left menu, select the **Approvals** page.
+
+1. Select **Delegate approvals** on the Approvals page.
 
 1. Select **Remove delegate**. 
 
