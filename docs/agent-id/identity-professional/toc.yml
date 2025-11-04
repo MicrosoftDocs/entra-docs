@@ -10,7 +10,7 @@ items:
         href: microsoft-entra-agent-identities-for-ai-agents.md
   - name: Concepts
     items:
-    - name: Key concepts and APIs
+    - name: Key concepts
       href: key-concepts.md
   
 

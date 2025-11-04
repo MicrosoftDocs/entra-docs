@@ -1,5 +1,5 @@
 ---
-title: Agent Identity and Blueprint Concepts in Microsoft Entra ID
+title: Fundamental concepts in Microsoft agent identity platform
 description: Discover the role of agent identities in AI authentication. Understand their unique identifiers, token usage, and how they enable secure access to systems.
 author: omondiatieno
 ms.author: jomondi
@@ -10,7 +10,7 @@ ms.service: entra-id
 
 #customer intent: As a developer, I want to understand the core concepts of agent identities and blueprints in Microsoft Entra ID so that I can implement secure authentication patterns for AI agents in my applications.
 ---
-# Agent identity and blueprint concepts in Microsoft Entra ID
+# Fundamental concepts in Microsoft agent identity platform
 
 The Microsoft Entra agent identity platform provides specialized identity constructs designed specifically for AI agents operating in enterprise environments. These identity constructs enable secure authentication and authorization patterns that differ from traditional user and application identities, addressing the unique requirements of autonomous AI systems.
 
