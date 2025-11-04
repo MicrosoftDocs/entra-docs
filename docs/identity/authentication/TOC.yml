@@ -164,6 +164,8 @@
         href: how-to-register-passkey-mobile.md
       - name: Sign in with passkey
         href: how-to-sign-in-passkey.md
+      - name: Synced passkeys FAQ
+        href: synced-passkey-faq.yml
       - name: Passkey (FIDO2) compatibility matrix
         href: concept-fido2-compatibility.md
       - name: Become a FIDO2 security key vendor
@@ -178,7 +180,7 @@
         href: how-to-register-passkey-authenticator.md
       - name: Sign in with passkeys in Authenticator
         href: how-to-sign-in-passkey-authenticator.md
-      - name: Passkeys in Authenticator FAQs
+      - name: Passkeys in Authenticator FAQ
         href: passkey-authenticator-faq.yml
       - name: Enable Authenticator authentication method
         href: howto-authentication-passwordless-phone.md

@@ -4,7 +4,7 @@ description: How end users can set up account recovery for Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/31/2025
+ms.date: 11/03/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -16,8 +16,6 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 # How end users can perform account recovery in Microsoft Entra ID
 
 Users can recover their accounts in just a few simple steps. In this topic, we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organizations configured provider. 
-
-:::image type="content" border="true" source="media/how-to-account-recovery-user-setup/recover-steps-1-5.png" alt-text="Initial steps to enter recovery.":::
 
 1. User attempts to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com](https://login.microsoftonline.com).
 2. The user is presented with an initial authentication method to sign-in with.

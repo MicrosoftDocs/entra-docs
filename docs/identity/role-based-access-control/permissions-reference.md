@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 10/16/2025
+ms.date: 11/04/2025
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
@@ -26,6 +26,9 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > [!div class="mx-tableFixed"]
 > | Role | Description | Template ID |
 > | --- | --- | --- |
+> | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |db506228-d27e-4b7d-95e5-295956d6615f |
+> | [Agent ID Developer](#agent-id-developer) | Create an agent blueprint and its service principal in a tenant. User will be added as an owner of the agent blueprint and its service principal. |adb2368d-a9be-41b5-8667-d96778e081b0 |
+> | [Agent Registry Administrator](#agent-registry-administrator) | Manage all aspects of the Agent Registry service in Microsoft Entra ID | e733d94e-9700-4c6d-83f2-29c61df70250 |
 > | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365. | d2562ede-74db-457e-a7b6-544e236ebb61 |
 > | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
 > | [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | cf1c38e5-3621-4004-a7cb-879624dced7c |
@@ -145,6 +148,17 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Windows Update Deployment Administrator](#windows-update-deployment-administrator) | Can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. | 32696413-001a-46ae-978c-ce0f6b3620d2 |
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
 
+## Agent ID Administrator
+
+[!INCLUDE [agent-id-administrator](includes/agent-id-administrator.md)]
+
+## Agent ID Developer
+
+[!INCLUDE [agent-id-developer](includes/agent-id-developer.md)]
+
+## Agent Registry Administrator
+
+[!INCLUDE [agent-registry-administrator](includes/agent-registry-administrator.md)]
 
 ## AI Administrator
 
@@ -634,15 +648,16 @@ The following roles should not be used. They have been deprecated and will be re
 
 ## Roles not shown in the portal
 
-Not every role returned by PowerShell or Microsoft Graph API is visible in Azure portal. The following table organizes those differences.
+Not every role returned by PowerShell or Microsoft Graph API is visible in Microsoft Entra roles interface. The following table organizes those differences.
 
 | API name | Microsoft Entra admin center portal name | Notes |
 | --- | --- | --- |
+| Agent User | Not shown because it's implicitly assigned to users of agents | NA |
 | Device Join | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Device Managers | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Device Users | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Directory Synchronization Accounts | Not shown because it shouldn't be used | [Directory Synchronization Accounts documentation](#directory-synchronization-accounts) |
-| Guest User | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
+| Guest User | Not shown because it can't be used | NA |
 | Modern Commerce Administrator | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
 | Partner Tier 1 Support | Not shown because it shouldn't be used | [Partner Tier1 Support documentation](#partner-tier1-support) |
 | Partner Tier 2 Support | Not shown because it shouldn't be used | [Partner Tier2 Support documentation](#partner-tier2-support) |
