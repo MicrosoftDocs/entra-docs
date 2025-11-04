@@ -259,10 +259,6 @@ Users accessing agents -> User sign-ins
 
 ## Conditional Access policy evaluation details for agents
 
-## FAQ: (a) My org doesn't want to deploy agents - what do I do? 
-
-### SKU
-
-Requires the Microsoft Entra Agent ID SKU. Learn more about Microsoft Entra Agent ID capabilities, or any of the four new A365 SKUs.
+### My organization doesn't want to deploy agents - what do I do?
 
 ## Next steps
