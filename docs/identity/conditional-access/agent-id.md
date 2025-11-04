@@ -191,7 +191,7 @@ Users accessing agents -> User sign-ins
 
 ### My organization doesn't want to deploy agents - what do I do?
 
-See [Block all agent authentication and token issueance]() for complete guidance on blocking all agent authentication and token issuance in your tenant.
+See [Block all agent authentication and token issueance](#block-all-agent-authentication-and-token-issuance) for complete guidance on blocking all agent authentication and token issuance in your tenant.
 
 ### Block all agent authentication and token issuance
 
