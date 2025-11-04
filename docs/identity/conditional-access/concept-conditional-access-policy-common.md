@@ -96,6 +96,8 @@ Policies in this category provide new ways to protect against compromise.
 
 Policies in this category provide ways to control agents in your environment.
 
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
+
 - [Block high risk agent identities from accessing resources](policy-agent-block-high-risk.md)
 - [Block all agent identities from accessing resources](policy-agent-identities-block-all.md)
 - [Block all agent users from accessing resources](policy-agent-users-block-all.md)
