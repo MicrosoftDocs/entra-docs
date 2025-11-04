@@ -159,7 +159,7 @@ JOHN TO CREATE THIS
 
 ### I want to block high risk agent identities from accessing my organization’s resources
 
-The following steps help create a Conditional Access policy to block agent identities at high risk.
+The following steps help create a Conditional Access policy to block agent identities at high risk based on signals from Microsoft Entra ID Protection.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -187,13 +187,27 @@ Agent identities (actor) accessing any resources -> Service principal sign-in lo
 Agent users accessing any resources -> Non-interactive user sign-ins -> agentType: agent user
 Users accessing agents -> User sign-ins
 
+## Frequently asked questions
 
+### My organization doesn't want to deploy agents - what do I do?
 
-## FAQs
+See [Block all agent authentication and token issueance]() for complete guidance on blocking all agent authentication and token issuance in your tenant.
 
-### Can I stop people from creating agents?
+### Block all agent authentication and token issuance
 
-While there is no way to completely stop your users from creating agents, you can block authentication and stop token issuance with the following three Conditional Access policies. Applying the following three policies will prevent existing and new agent identities from authenticating. It will not prevent the creation of new agent identities in your tenant.
+While there is no way to completely stop your users from creating agents in your tenant, you can comprehensively block all agent authentication and token issuance by implementing **all three** of the following Conditional Access policies together. 
+
+> [!IMPORTANT]
+> You must implement all three policies to ensure complete coverage. Each policy blocks a different authentication path that agents can use to access resources.
+
+These policies will:
+- Block existing and new agent identities from authenticating
+- Block agent users from accessing resources  
+- Block human users from signing into agents
+- **Will NOT** prevent the creation of new agent identities in your tenant
+
+> [!NOTE]
+> It's recommended to run these policies in report-only mode first to understand their impact before enforcing them.
 
 #### Policy 1: Block agent identity authentication
 
@@ -266,6 +280,5 @@ Purpose: Block users from signing into agents and agents performing actions on t
 
 ## Conditional Access policy evaluation details for agents
 
-### My organization doesn't want to deploy agents - what do I do?
 
 ## Next steps
