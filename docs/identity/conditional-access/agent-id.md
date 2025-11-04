@@ -45,18 +45,18 @@ Conditional Access applies when:
 
 Conditional Access does not apply when:
 
-- Agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent user.
+- An agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent user.
 
    > [!NOTE]
    > Agent blueprints have limited functionality. They cannot act independently to access resources and are only involved in creation of agent identities and agent users. Agentic tasks are always performed by the agent identity (Agent ID). 
 
-- Agent identity blueprint or agent identity performs an intermediate token exchange at the AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936).
+- An agent identity blueprint or agent identity performs an intermediate token exchange at the AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936).
 
    > [!NOTE]
    > Tokens scoped to AAD Token Exchange Endpoint: Public can't call MS Graph. Agentic flows are protected because we protect token acquisition from agent identity or agent user.
 
-- Conditional Access policies scoped to users or workload identities don't apply to agents.
-- [Security defaults](../../fundamentals/security-defaults.md) don't apply to agents.
+- A Conditional Access policy is scoped to users or workload identities **not** to agents.
+- [Security defaults](../../fundamentals/security-defaults.md) are enabled.
 
 | Authentication flow | Does Conditional Access apply | Details |
 | --- | :---: | --- |
