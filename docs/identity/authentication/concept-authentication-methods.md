@@ -1,5 +1,5 @@
 ---
-title: Authentication methods and features
+title: Authentication and verification methods in Microsoft Entra ID
 description: Learn about the different authentication methods and features available in Microsoft Entra ID that help improve and secure sign-in events
 ms.service: entra-id
 ms.subservice: authentication
@@ -12,7 +12,7 @@ manager: dougeby
 ms.custom: sfi-image-nochange
 # As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how or why I can use them to improve and secure user sign-in events. Doc should be used as a pre-sales or for pre-intent rather than detailed doc for deployment use. 
 ---
-# What authentication and verification methods are available in Microsoft Entra ID?
+# Authentication and verification methods in Microsoft Entra ID
 
 In today’s threat landscape, a user's sign-in methods are as critical as the systems they access. Credential-based attacks, especially remote phishing attacks, continue to target password-based accounts. Microsoft Entra ID multifactor authentication (MFA) adds another layer of security for password-based accounts. Sign-in methods that can perform MFA have varying degrees of security. Some methods are phishable, and others are remote phishing resistant.
 
