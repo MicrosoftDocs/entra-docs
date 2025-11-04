@@ -45,25 +45,25 @@ Conditional Access applies when:
 
 Conditional Access does not apply when:
 
-1. Agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent user.
+- Agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent user.
 
    > [!NOTE]
-   > Agent blueprints have limited functionality. They cannot act independently to access resources and are only involved in creation of agent identities and agent users. Agentic tasks are always performed by the AGENT IDENTITY (AGENT ID). 
+   > Agent blueprints have limited functionality. They cannot act independently to access resources and are only involved in creation of agent identities and agent users. Agentic tasks are always performed by the agent identity (Agent ID). 
 
-1. Agent identity blueprint or agent identity performs an intermediate token exchange at the AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936).
+- Agent identity blueprint or agent identity performs an intermediate token exchange at the AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936).
 
    > [!NOTE]
    > Tokens scoped to AAD Token Exchange Endpoint: Public can't call MS Graph. Agentic flows are protected because we protect token acquisition from agent identity or agent user.
 
-1. Conditional Access policies scoped to users or workload identities don't apply to agents.
-1. [Security defaults](../../fundamentals/security-defaults.md) don't apply to agents.
+- Conditional Access policies scoped to users or workload identities don't apply to agents.
+- [Security defaults](../../fundamentals/security-defaults.md) don't apply to agents.
 
-| Flow | Conditional Access Applies | Details |
+| Authentication flow | Does Conditional Access apply | Details |
 | --- | --- | --- |
-| AGENT IDENTITY BLUEPRINT  → Graph (create AGENT IDENTITY (AGENT ID)/AGENT USER) | ❌ | Blueprint can only create agent identities and agent users; it's not a risk. |
-| AGENT IDENTITY BLUEPRINT  or AGENT IDENTITY (AGENT ID) → Token Exchange | ❌ | This is an internal flow with limited audience scope. |
-| AGENT IDENTITY (AGENT ID) → Resource | ✅ | Governed by agent identity policies. |
-| AGENT USER → Resource | ✅ | Governed by agent user policies. |
+| Agent identity blueprint → Graph (create agent identity (Agent ID)/agent user) | ❌ | Blueprint can only create agent identities and agent users; it's not a risk. |
+| Agent identity blueprint or Agent identity (Agent ID) → Token Exchange | ❌ | This is an internal flow with limited audience scope. |
+| Agent identity (Agent ID) → Resource | ✅ | Governed by agent identity policies. |
+| Agent user → Resource | ✅ | Governed by agent user policies. |
 
 ## Policy configuration
 
