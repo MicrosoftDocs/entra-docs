@@ -94,7 +94,7 @@ Creating a Conditional Access policy for agents involves these four key componen
 
 ## Common Conditional Access scenarios - biz scenarios
 
-### Scenario 1: My organization is testing agents. I want to configure a CA policy to allow only approved agents to access specific resources.
+### Scenario 1: My organization is testing agents. I want to configure a Conditional Access policy to allow only approved agents to access specific resources.
 
 #### Method 1: The first method is using custom security attributes. 
 
@@ -155,9 +155,27 @@ Once done, the following steps help create a Conditional Access policy to block 
 
 
 
-### Scenario 2: I want to configure a CA policy to block high risk agent identities from accessing my organization’s resources
+### Scenario 2: I want to configure a Conditional Access policy to block high risk agent identities from accessing my organization’s resources
 
-Use CA template: Block high risk agent identities from accessing resources (See CA templates section below)
+The following steps help create a Conditional Access policy to block agent identities at high risk.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
+1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
+   1. Undr **What does this policy apply to?**, select **Agents (Preview)**.
+      1. Under **Include**, select **All agent identities (Preview)**.
+1. Under **Target resources**, select the following options: 
+   1. Select what this policy applies to **Resources (formerly cloud apps)**.
+   1. Include, **All resources (formerly 'All cloud apps')**.
+1. Under **Conditions** > **Agent risk (Preview)**, set **Configure** to **Yes**.
+   1. Under **Configure agent risk levels needed for policy to be enforced**, select **High**. This guidance is based on Microsoft recommendations and might be different for each organization.
+1. Under **Access controls** > **Grant**. 
+   1. Select **Block**.
+   1. Select **Select**.
+1. Confirm your settings and set **Enable policy** to **Report-only**.
+1. Select **Create** to enable your policy.
 
 Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant (see below).
 Applying these policies in your tenant requires the Microsoft Entra Agent ID license, which is currently available at no cost. To acquire this license, go to this page.
