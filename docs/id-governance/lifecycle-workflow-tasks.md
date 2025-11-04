@@ -1138,7 +1138,7 @@ The Microsoft Entra prerequisites to run the **Send email about user inactivity*
 - A populated manager's mail attribute for the user.
 
 
-For Microsoft Graph, the parameters for the **Send email about user inactivity (Preview)** task are as follows:
+For Microsoft Graph, the parameters for the **Send email about user inactivity** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
