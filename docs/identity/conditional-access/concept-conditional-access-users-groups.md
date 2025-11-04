@@ -98,6 +98,13 @@ Conditional Access policies that target external users might interfere with serv
 
 Agent IDs are first-class accounts within Entra ID that provide unique identification and authentication capabilities for AI agents. Conditional Access policies targeting these objects have specific recommendations addressed in the article [Conditional Access and agentic identities](agent-id.md)
 
+Policy can be scoped to:
+
+- All agent identities
+- Select agents acting as users
+- Select agent identities based on attributes
+- Select individual agent identities
+
 ## Workload identities 
 
 A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user. Conditional Access policies can be applied to single tenant service principals registered in your tenant. Non-Microsoft SaaS and multi-tenanted apps are out of scope. Managed identities aren't covered by policy.

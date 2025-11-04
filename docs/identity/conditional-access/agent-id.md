@@ -282,4 +282,9 @@ Purpose: Block users from signing into agents and agents performing actions on t
 ## Conditional Access policy evaluation details for agents
 
 
-## Next steps
+## Related content
+
+- [Conditional Access: Users, groups, agents and workload identities](concept-conditional-access-users-groups.md)
+- [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)
+- [Conditional Access: Conditions](concept-conditional-access-conditions.md)
+- [Conditional Access: Grant](concept-conditional-access-grant.md)
