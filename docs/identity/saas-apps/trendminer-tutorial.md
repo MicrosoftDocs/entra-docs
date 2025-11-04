@@ -76,15 +76,15 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://<CUSTOMER>.trendminer.cloud/security/saml/metadata`
+    `https://<TENANT>.<CUSTOMER>.trendminer.io/security/saml/metadata`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<CUSTOMER>.trendminer.cloud/security/saml/SSO`
+    `https://<TENANT>.<CUSTOMER>.trendminer.io/security/saml/SSO`
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<CUSTOMER>.trendminer.cloud/`
+    `https://<TENANT>.<CUSTOMER>.trendminer.io/`
 
 	> [!NOTE]
 	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [TrendMiner Client support team](mailto:support@trendminer.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
