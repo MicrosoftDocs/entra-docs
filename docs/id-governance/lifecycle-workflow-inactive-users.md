@@ -1,5 +1,5 @@
 ---
-title: Manage inactive users using Lifecycle Workflows (Preview)
+title: Manage inactive users using Lifecycle Workflows
 description: This article walks you through managing inactive users with Lifecycle Workflows.
 author: owinfreyATL
 ms.author: owinfrey
