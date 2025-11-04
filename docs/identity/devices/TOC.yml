@@ -43,7 +43,7 @@
     items:
       - name: macOS Platform Single Sign-on overview 
         href: macos-psso.md
-      - name: Integrate macOS Platform Single Sign-On (PSSO) into your MDM solution
+      - name: Integrate macOS Platform single sign-on (PSSO) into your MDM solution
         href: macos-psso-integration-guide.md
   - name: Linux Devices
     expanded: false
