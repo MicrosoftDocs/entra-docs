@@ -26,11 +26,11 @@ To understand how Conditional Access works with agent identities, it is importan
 
 | Term | Description |
 | --- | --- |
-| Agent Blueprint | Logical definition of an agent type. Necessary for agent identity blueprint principal creation in the tenant. |
-| Agent Identity Blueprint Principal | Service Principal representing the Agent Blueprint in the tenant; executes only creation of agent identities and agent users |
-| Agent Identity | Instantiated agent identity. Performs token acquisitions to access resources. |
-| Agent User | Non-human user identity used for agentic experiences that require a user account. Performs token acquisitions to access resources. |
-| Agentic Resource | Agent blueprint or Agent identity acting as the resource app (for example, in A2A flows) |
+| Agent blueprint | A logical definition of an agent type. Necessary for agent identity blueprint principal creation in the tenant. |
+| Agent identity blueprint principal | A service principal representing the agent blueprint in the tenant; executes only creation of agent identities and agent users |
+| Agent identity | Instantiated agent identity. Performs token acquisitions to access resources. |
+| Agent user | Non-human user identity used for agent experiences that require a user account. Performs token acquisitions to access resources. |
+| Agent resource | Agent blueprint or agent identity acting as the resource app (for example, in agent to agent (A2A) flows) |
 
 For more information see the article [Microsoft Entra Agent ID](XXXXXXXXXXXXXX).
 
