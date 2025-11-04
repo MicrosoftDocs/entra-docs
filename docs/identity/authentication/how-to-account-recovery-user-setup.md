@@ -8,7 +8,7 @@ ms.date: 11/03/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: timlarso
+ms.reviewer: tilarso
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how end users can set up account recovery for Microsoft Entra ID.
 ---
@@ -17,39 +17,40 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 Users can recover their accounts in just a few simple steps. In this topic, we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organization's configured provider.
 
-:::image type="content" border="true" source="media/how-to-account-recovery-user-setup/recover-steps-1-5.png" alt-text="Initial steps to enter recovery.":::
-
 ## User steps
 
-1. User attempts to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com](https://login.microsoftonline.com).
-2. The user is presented with an initial authentication method to sign-in with.
-3. Unable to use this method, the user can then click **Other ways to sign-in** and is presented with additional sign-in options. 
-4. As the user has lost all ability to sign-in with any registered authentication methods, they click **Recover your account**.
+1. Start by attempting to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com](https://login.microsoftonline.com).
+2. You will be presented with an initial authentication method to sign-in with.
+3. As you are unable to use this method, select **Other ways to sign-in**. You will be presented with additional sign-in options. 
+4. Unable to sign in with any methods, click **Recover your account**.
 
    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/sign-in.png" alt-text="Screenshot that shows how to sign in to set up account recovery."lightbox="media/how-to-account-recovery-user-setup/sign-in.png":::
 
-5. The user is presented with an informational screen that explains the account recovery process and provides guidance to complete identity verification through the organization's configured external identity proofing service.
-6. The user is redirected to the identity proofing service configured by their organization, and starts their identity proofing process.
+5. You will be presented with an informational screen that explains the account recovery process and provides guidance to complete identity verification through the organization's configured external identity proofing service.
+6. You then will be redirected to the identity proofing service configured by your organization, and starts the identity proofing process.
 
    >[!NOTE]
    >The specific steps required for identity verification may vary depending on the identity verification partner configured by your organization.
+   >Below are common steps which a provider may present to a user. 
 
 7. Open the camera on your mobile device, and scan the QR code on the website of the identity proofing application. 
-8. After the identity proofing application opens on your mobile device, select **Continue**.
+8. After the identity proofing application or page opens on your mobile device, select **Continue**.
 9. Enter your name and email, agree to the terms of use for the app, and select **Continue**.
-10. Choose your country/region, and the type of identity verification document you have, such as **Passport**.
+10. Choose your country/region, and the type of identity verification document you have, such as a **Passport** or **Drivers License**.
 11. Review how to take a clear document photo, and select **Continue** after you read each step.
 12. After you take the photo, select **Submit photos**.
-13. Review how to take a clear photo of your face, and select **Continue** after you read each step.
-14. After you take the photo, the identity proofing application verifies your identity, and issues a Verifiable Credential.
-15. On the **Success** page, select **Add Verifiable Credential**.
-16. When you're prompted to open in Authenticator, select **Open**, and unlock Microsoft Authenticator.
-17. On the **Add a Verified ID** page in Authenticator, select **Next**.
-18. Sign in to the identity proofing application, and select **Start**.
-19. The new Verifiable Credential is listed in Authenticator under **Verified IDs**, and Authenticator and the identity proofing application both show **Success**.
+13. Review how to take a clear photo of your face, and select **Continue** after you read each step
+14. After you take the photo, the identity proofing application or page verifies your identity, and will issue a Verifiable Credential into your Microsoft Authenticator app.
+
+    >[!Note]
+    > This may be presented by the provider as an option such as **Add Verifiable Credential** or **Open in Authenticator**.
+    
+15. When you're prompted,  **Open** and unlock Microsoft Authenticator.
+16. You'll then be asked to complete a quick Face Check before your account ownership can be validated. 
+17. Once completed, you'll be shown a screen with a Temporary Access Pass, Copy this code and click **sign in**. 
+18. Finally, you'll be redirected to the My Security Info page where you can register a new authentication method and fully regain access. 
 
     :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery."lightbox="media/how-to-account-recovery-user-setup/create-passkey.png":::   
-
 
 ## Troubleshooting
 
