@@ -78,7 +78,7 @@ For more information about how to use Graph Explorer to enable passkey profiles,
      -------------------------------|--------------------------
      Requires a passkey to present a valid attestation statement at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. This gives your organization assurance that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; existing passkeys that were added without attestation aren’t blocked from signing in if you enable attestation later.<br>Synced passkeys don't support attestation. If you set **Enforce attestation** to **Yes**, synced passkeys aren't an option in **Target Types**.<br>For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md). | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if **Target specific AAGUIDs** is applied.<br>Synced passkeys are only supported if **Enforce attestation** is set to **No**.<br>For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
-     **Target Types** can allow either device-bound passkeys, synced passkeys, or both.  
+   - **Target Types** can allow either device-bound passkeys, synced passkeys, or both.  
 
      >[!Note] 
      >Synced passkeys don't show as an option if attestation is enforced. 
