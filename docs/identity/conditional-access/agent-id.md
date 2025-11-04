@@ -22,7 +22,7 @@ Admins can use new Conditional Access policies to govern agent users. During pub
 
 ## Agents -> how is it modeled in Entra
 
-To understand how Conditional Access works with Agent ID, it is important to understand the Agent ID platform fundamentals. Agent ID introduces first-class identity constructs for agents. These are modelled as applications (agent identities) and users (agent users).
+To understand how Conditional Access works with agent identities, it is important to understand the fundamentals of Microsoft Entra Agent ID. Agent ID introduces first-class identity constructs for agents. These are modelled as applications (agent identities) and users (agent users).
 
 | Term | Description |
 | --- | --- |
@@ -100,7 +100,7 @@ SCREENSHOT TO GO HERE OF A CONDITIONAL ACCESS POLICY WITH AGENT ID STUFF
 
 ##### Create and assign custom attributes
 
-This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-filter-for-applications). Attributes across multiple attribute sets can be assigned to an agent or cloud application.
+This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). Attributes across multiple attribute sets can be assigned to an agent or cloud application.
 
 1. Create the custom security attributes using the following steps:
    1. Create an **Attribute set** named *AgentAttributes*.
