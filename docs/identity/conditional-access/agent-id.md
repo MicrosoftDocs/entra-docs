@@ -59,7 +59,7 @@ Conditional Access does not apply when:
 - [Security defaults](../../fundamentals/security-defaults.md) don't apply to agents.
 
 | Authentication flow | Does Conditional Access apply | Details |
-| --- | --- | --- |
+| --- | :---: | --- |
 | Agent identity blueprint → Graph (create agent identity (Agent ID)/agent user) | ❌<br>No | Blueprint can only create agent identities and agent users; it's not a risk. |
 | Agent identity blueprint or Agent identity (Agent ID) → Token Exchange | ❌<br>No | This is an internal flow with limited audience scope. |
 | Agent identity (Agent ID) → Resource | ✅<br>Yes | Governed by agent identity policies. |
