@@ -54,7 +54,7 @@ Once you add resources to a catalog, it's time to create a catalog access review
 
 1. On the **resources** tab, select the catalog where you added the resources on and select **Next**.
 
-1. On the **Reviewers and schedule** tab, select reviewers you want to conduct access reviews. Currently only managers of the users who the access reviews are for can be set as reviewers.
+1. On the **Reviewers and schedule** tab, select reviewers you want to conduct access reviews. Currently only managers of the users who the access reviews are for can be set as reviewers. Multi-stage reviews are possible with managers of the users as primary approvers, and resource owners(Group owners for groups and Application owners for Applications) as fallback approvers.
 
 1. Enter information about reviewer experience and upon completion settings and select **Next**.
 
