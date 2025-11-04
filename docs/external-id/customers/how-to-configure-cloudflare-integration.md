@@ -143,6 +143,8 @@ For the following instructions, you can add custom HTML pages for visitors.
 
 ## Verification steps
 
+Connect Cloudflare's [API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) and [Zone ID](https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/#copy-your-zone-id) to Microsoft Entra External ID to verify WAF configuration via Microsoft Graph API, using Graph Explorer or any REST client for endpoint calls.
+
 ### Connect the API token and Zone ID
 
 You can connect the API token and Zone ID to Microsoft Entra External ID to pull and verify the WAF configuration for your domain. Use the Microsoft Graph API to interact with the Cloudflare API. To do this, you need to include the API token and Zone ID in your requests.
