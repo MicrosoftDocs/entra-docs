@@ -94,15 +94,20 @@ Creating a Conditional Access policy for agents involves these four key componen
    1. Block.
 1. Policies can be toggled On, Off, or set to Report-only for simulation.
 
-## Common Conditional Access scenarios - business scenarios
+## Common business scenario
 
-### My organization is testing agents. I want to configure a Conditional Access policy to allow only approved agents to access specific resources.
+My organization is testing agents. I want to configure a Conditional Access policy to allow only approved agents to access specific resources. 
 
-#### Method 1: The first method is using custom security attributes.
+We present two approaches:
+
+- Using custom security attributes
+- Usine the enhanced resource picker
+
+#### Using custom security attributes
+
+The recommended approach is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
 ##### Create and assign custom attributes
-
-This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
 1. Create the custom security attributes:
    1. Create an **Attribute set** named *AgentAttributes*.
@@ -115,7 +120,7 @@ This approach uses steps similar to those documented in [Filter for applications
       1. Add the following predefined values: **Low**, **Medium**, and **High**.
    1. Assign the **Low** value to resources that your agent is allowed to access.
 
-##### Create Conditional Access policy
+##### Create Conditional Access policy using custom security attributes
 
 After you complete the previous steps, create a Conditional Access policy to block all agent identities except those vetted and approved by your organization. 
 
@@ -153,9 +158,41 @@ After you complete the previous steps, create a Conditional Access policy to blo
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-#### Method 2: The second method uses enhanced agent and resource selection experience
+#### Usine the enhanced resource picker
 
-JOHN TO CREATE THIS
+Create a Conditional Access policy to block all agent identities except those vetted and approved by your organization. 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
+1. Select **New policy**.
+1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
+1. Under **Assignments**, select **Users, agents (Preview) or workload identities**. 
+   1. Under **What does this policy apply to?**, select **Agents (Preview)**.
+      1. Under **Include**, select **All agent identities (Preview)**.
+      1. Under **Exclude**: 
+         1. Select **Select individual agent identities**.
+         1. Using the enhanced resource picker 
+         1. 
+         1. 
+1. Under **Target resources**, select the following options: 
+   1. Select what this policy applies to **Resources (formerly cloud apps)**.
+   1. Include **Select resources**.
+      1. Select **Select resources based on attributes**.
+      1. Set **Configure** to **Yes**.
+      1. Select the Attribute we created earlier called **businessImpact**.
+      1. Set **Operator** to **Contains**.
+      1. Set **Value** to **low**.
+      1. Select a second Attribute called **department**.
+      1. Set **Operator** to **Contains**.
+      1. Set **Value** to **HR**.
+      1. Select **Done**.
+1. Under **Access controls** > **Grant**: 
+   1. Select **Block**.
+   1. Select **Select**.
+1. Confirm your settings and set **Enable policy** to **Report-only**.
+1. Select **Create** to create your policy.
+
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ### I want to block high risk agent identities from accessing my organization’s resources
 
