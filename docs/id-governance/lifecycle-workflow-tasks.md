@@ -1155,7 +1155,7 @@ Example of usage within the workflow:
     "category": "leaver",
     "continueOnError": false,
     "description": " Notify manager that user has been inactive",
-    "displayName": "Send email about user inactivity (Preview)",
+    "displayName": "Send email about user inactivity",
     "isEnabled": true,
     "taskDefinitionId": "92f74cb4-f1b6-4ec0-b766-96210f56edc2",
     "arguments": [
