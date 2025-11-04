@@ -14,6 +14,8 @@ ai-usage: ai-assisted
 
 # Learn about network security for Microsoft Copilot Studio agents (preview)
 
+[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
+
 As organizations adopt autonomous and interactive AI agents to perform tasks previously handled by humans, administrators need visibility and control over agent network activity. Global Secure Access for agents provides network security controls for Microsoft Copilot Studio agents, enabling you to apply the same security policies to agents that you use for users.
 
 With Global Secure Access for agents, you can regulate how agents use knowledge, tools, and actions to access external resources. You can apply network security policies including web content filtering, threat intelligence filtering and network file filtering to agent traffic.
