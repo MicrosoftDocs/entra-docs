@@ -151,7 +151,7 @@ If you have users registered for MFA using SMS or voice calls, you may want to m
 As mentioned before, ensure users are registered for more than one MFA method, so that if one is unavailable, they have a backup. 
 If the user doesn't have a backup method available, you can: 
 
-- Provide them a Temporary Access Pass so that they can manage their own authentication methods. You can also provide a Temporary Access Pass to enable temporary access to resources. 
+- Provide them with a Temporary Access Pass so that they can manage their own authentication methods. You can also provide a Temporary Access Pass to enable temporary access to resources. 
 - Update their methods as an administrator. To do so, select the user in the Microsoft Entra admin center, then select **Entra ID** > **Authentication methods** and update their methods.
 
 

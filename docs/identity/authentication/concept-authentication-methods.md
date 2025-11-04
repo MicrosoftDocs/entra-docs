@@ -4,7 +4,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 11/02/2025
+ms.date: 11/03/2025
 ms.author: justinha
 author: sipower
 ms.reviewer: jupetter
