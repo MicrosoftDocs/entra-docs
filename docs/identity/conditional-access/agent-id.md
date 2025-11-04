@@ -69,24 +69,24 @@ Conditional Access does not apply when:
 
 Creating a Conditional Access policy for agents involves these four key components: 
 
-SCREENSHOT TO GO HERE OF A CONDITIONAL ACCESS POLICY WITH AGENT ID STUFF
+:::image type="content" source="media/agent-id/conditional-access-agent-settings.png" alt-text="Screenshot of the Conditional Access interface with a policy blocking all agent identities at high risk." lightbox="media/agent-id/conditional-access-agent-settings.png":::
 
 1. Assignments (Agent Selection) 
    1. Scope policies to: 
       1. All agent identities in the tenant.
       1. Specific agent identities based on their GUID.
-      1. Agent identities grouped by Custom Security Attributes such as sensitivity, approval status, or department.
+      1. Agent identities based on custom security attributes.
       1. Agent identities grouped by their blueprint.
       1. All agent users in the tenant.*
 1. Target Resources 
    1. Resource targeting options include: 
       1. All resources (cloud apps + agent blueprints + agent identities).
       1. All agent resources (agent blueprints and agent identities).
-      1. Specific resources grouped by custom security attributes (CSAs).
+      1. Specific resources grouped by custom security attributes.
       1. Specific resources based on their GUID.
-      1. Agent blueprints (Note: targeting the blueprint covers the agent identities parented by the blueprint).
+      1. Agent blueprints (targeting the blueprint covers the agent identities parented by the blueprint).
 1. Conditions 
-   1. Agent Risk Level (high, medium, low)
+   1. Agent risk (high, medium, low)
       1. Detections: Unfamiliar Resource Access, Sign-In Spike, Failed Access Attempt, and Sign-In by Risky User.
 1. Access Controls 
    1. Block.
