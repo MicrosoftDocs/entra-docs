@@ -10,3 +10,9 @@ items:
       href: what-is-agent-id.md
     - name: What is the agent registry?
       href: what-is-agent-registry.md
+  - name: Concepts
+    items:
+    - name: Fundamentals
+      items:
+        - name: Key concepts
+          href: key-concepts.md
