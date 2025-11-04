@@ -73,13 +73,13 @@ Creating a Conditional Access policy for agents involves these four key componen
 
 :::image type="content" source="media/agent-id/conditional-access-agent-settings.png" alt-text="Screenshot of the Conditional Access interface with a policy blocking all agent identities at high risk." lightbox="media/agent-id/conditional-access-agent-settings.png":::
 
-1. Assignments (Agent Selection) 
+1. Assignments
    1. Scope policies to: 
       1. All agent identities in the tenant.
       1. Specific agent identities based on their GUID.
       1. Agent identities based on custom security attributes.
       1. Agent identities grouped by their blueprint.
-      1. All agent users in the tenant.*
+      1. All agent users in the tenant.
 1. Target Resources 
    1. Resource targeting options include: 
       1. All resources (cloud apps + agent blueprints + agent identities).
