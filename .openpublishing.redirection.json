@@ -3011,6 +3011,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-configure-cloudflare-integration.md",
+      "redirect_url": "/entra/external-id/customers/how-to-configure-cloudflare-integration",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/pksha-chatbot-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/pksha-chatagent-tutorial",
       "redirect_document_id": false
