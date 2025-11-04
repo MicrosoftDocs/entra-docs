@@ -27,25 +27,38 @@ JIT migration works by invoking a custom API during the sign-in process to valid
 
 When a user enters a password during sign in and their account is marked as not having been migrated yet, the password is sent to an external API endpoint specified by the admin. The external API validates the password against the legacy identity provider. If the password is valid, the API responds with a success message, and the password is securely stored in External ID. The user's account is then marked as migrated, allowing them to sign in seamlessly in the future.
 
-## Define an extension attribute for tracking migration status
+## Define an extension property for tracking migration status
 
-To implement JIT migration, you first need to define an extension attribute in your External ID tenant to track the migration status of each user. This attribute will indicate whether a user's credentials have been migrated from the legacy identity provider.
+To implement JIT migration, you first need to define an extension property in your External ID tenant to track the migration status of each user. This property will indicate whether a user's credentials have been migrated from the legacy identity provider.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 1. Navigate to **External Identities**, then click on **Custom user attributes**.
-1. Enter a unique name for the attribute, such as `isMigrated`, and select the data type as **Boolean**.
-1. Click **Create** to add the attribute to your directory.
+1. Enter a unique name for the property, such as `toBeMigrated`, and select the data type as **Boolean**.
+1. Click **Create** to add the property to your directory.
 
-You can also create a custom extension using Graph API. To learn more, see [Add custom data to resources by using extensions](/graph/extensibility-overview).
+You can also create a custom extension using Graph API. The below example demonstrates how to create an extension property using the Microsoft Graph API. To learn more, see [Add custom data to resources by using extensions](/graph/extensibility-overview).
 
-### Get the extension attribute ID for use in your custom authentication extension
+``` http
+POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69e287e7b/extensionProperties 
 
-After creating the extension attribute, you need to retrieve its unique identifier to use it in your custom authentication extension. The extension attribute ID is required to read and update the migration status of users during the authentication process. It's a combination of an application id and the attribute name.
+{ 
+    "name": "toBeMigrated", 
+    "dataType": "Boolean", 
+    "targetObjects":[ 
+    "User" 
+] 
+} 
+```
+
+### Get the extension property ID for use in your custom authentication extension
+
+After creating the extension property, you need to retrieve its unique identifier to use it in your custom authentication extension. The extension property ID is required to read and update the migration status of users during the authentication process. It's a combination of an application id and the property name.
 
 1. Navigate to **Entra ID** and then **App registrations** in the [Microsoft Entra admin center](https://entra.microsoft.com/).
 1. Choose **All applications** from above the the application list.
 1. Select the application named `b2c-extensions-app` and copy the **Application (client) ID** value without hyphens. This is your application id.
-1. Your extension attribute id is in the format `extension_[application-id]_[attribute-name]`. For example, if your application id is `00001111-aaaa-2222-bbbb-3333cccc4444` and your attribute name is `isMigrated`, your extension attribute id would be `extension_00001111aaaa2222bbbb3333cccc4444_isMigrated`.
+1. Your extension property id is in the format `extension_[application-id]_[attribute-name]`. For example, if your application id is `00001111-aaaa-2222-bbbb-3333cccc4444` and your attribute name is `toBeMigrated`, your extension property id would be `extension_00001111aaaa2222bbbb3333cccc4444_toBeMigrated`.
+
 
 ## Create a custom authentication extension for password validation
 
@@ -57,222 +70,385 @@ You can use your own code or deploy the following sample Azure Function to your 
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
+using System.Security.Cryptography;
+using Jose;
 
-namespace diadabal_functions
+namespace cust_auth_functions
 {
-    public static class JitMigrationEndpoint
+    /// <summary>
+    /// Azure Function for Just-In-Time (JIT) user migration in Entra External ID.
+    /// This function handles authentication events and migrates users from legacy systems.
+    /// </summary>
+    public static class JitMigrationTemplate
     {
-        private static ResponseActionType lastResponseActionType = ResponseActionType.MigratePassword;
+        #region Configuration Constants
+        
+        /// <summary>
+        /// Private key for decrypting the encrypted password context
+        /// This should be the private part of the key configured in your External ID tenant
+        /// </summary>
+        private const string DECRYPTION_PRIVATE_KEY = @"-----BEGIN PRIVATE KEY-----
+-----END PRIVATE KEY-----";
 
-        [FunctionName("JitMigrationEndpoint")]
+        #endregion
+
+
+        /// <summary>
+        /// Main Azure Function entry point for handling JIT migration requests
+        /// </summary>
+        /// <param name="req">The HTTP request from Entra External ID</param>
+        /// <param name="log">Logger instance for tracking execution</param>
+        /// <returns>Action result containing the migration response</returns>
+        [FunctionName("JitMigrationTemplate")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]
             HttpRequest req,
             ILogger log)
         {
-            string httpMethod = req.Method;
-            log.LogInformation($"C# HTTP trigger function processed a request.HTTP method used: {httpMethod}");
-            if (httpMethod == "GET")
+            log.LogInformation($"Processing {req.Method} request for JIT migration.");
+
+            // Handle GET requests (health check)
+            if (req.Method == HttpMethods.Get)
             {
-                log.LogInformation("GET request received. Returning 200 OK.");
+                log.LogInformation("GET request received. Returning 200 OK for health check.");
                 return new OkResult();
             }
 
+            // Validate request body
             if (req.Body == null || req.Body.Length == 0)
             {
-                return new BadRequestResult();
-            }
-            
-            var (userId, userPassword) = await ParseRequest(req, log);
-
-            // Validate credentials and get the response action type
-            ResponseContent response = ProcessResponse(req, log);
-            if (response.data.Actions.TrueForAll(action => action.Odatatype.Equals("microsoft.graph.passwordsubmit.MigratePassword")))
-            {
-                log.LogInformation("Response action type is MigratePassword. Proceeding with user migration.");
-                using var client = new HttpClient();
-                var accessToken = await FetchAccessTokenWithClientCredentialsAsync(log, client);
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                await UpdateUserPasswordAsync(log, userId, userPassword, client);
-            }
-            else
-            {
-                log.LogInformation($"Response action type is {response.data.Actions[0].Odatatype}. No migration needed.");
+                log.LogError("Request body is empty or null.");
+                return new BadRequestObjectResult("Request body is required for POST requests.");
             }
 
-            return new OkObjectResult(response);
+            try
+            {
+                // Parse the incoming request to extract user information
+                var (userId, userPassword, nonce) = await ParseRequestAsync(req, log);
+                
+                if (string.IsNullOrEmpty(userId))
+                {
+                    log.LogError("User ID is missing from the request.");
+                    return new BadRequestObjectResult("User ID is required in the authentication context.");
+                }
+
+                if (string.IsNullOrEmpty(userPassword))
+                {
+                    log.LogError("User password is missing from the request.");
+                    return new BadRequestObjectResult("User password is required for migration.");
+                }
+
+                // Process the response based on legacy system validation
+                ResponseContent response = await ProcessResponse(req, userId, userPassword, nonce, log);
+                
+                log.LogInformation($"Returning response action: {response.Data.Actions[0].OdataType}.");
+
+                return new OkObjectResult(response);
+            }
+            catch (Exception ex)
+            {
+                log.LogError($"Unexpected error during JIT migration processing: {ex.Message}");
+                log.LogError($"Stack trace: {ex.StackTrace}");
+                
+                // Return a generic error response to avoid exposing internal details
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
         }
 
-        private static ResponseContent ProcessResponse(HttpRequest req, ILogger log)
-        {
-            // Response Action is read from query params to control the behavior dynamically.
-            // However, when no input via query param is provided, then the fallsback to random response
-            req.Query.TryGetValue("responseActionType", out StringValues responseActionValue);
-            ResponseActionType responseActionType;
-            if (StringValues.IsNullOrEmpty(responseActionValue))
-            {
-                responseActionType = GetNextResponseActionType(log);
-            }
-            else
-            {
-                log.LogInformation($"Parsed response action type from query: {responseActionValue.ToString()}");
-                Enum.TryParse(responseActionValue, out responseActionType);
-            }
+        #region Core Processing Methods
 
-            ResponseContent response = new ResponseContent(responseActionType);
-            log.LogInformation($"EventAction Odata type returned: {response.data.Actions[0].Odatatype}");
+        /// <summary>
+        /// Processes the migration response by validating credentials against a legacy authentication system.
+        /// This example demonstrates how to integrate with your existing user store to determine migration actions.
+        /// </summary>
+        /// <param name="req">The HTTP request containing query parameters</param>
+        /// <param name="userId">The user ID to validate</param>
+        /// <param name="password">The user's password to validate</param>
+        /// <param name="nonce">The nonce from the request</param>
+        /// <param name="log">Logger instance</param>
+        /// <returns>ResponseContent with appropriate action based on legacy system validation</returns>
+        private static async Task<ResponseContent> ProcessResponse(HttpRequest req, string userId, string password, string nonce, ILogger log)
+        {
+            log.LogInformation($"Processing JIT migration response for user: {userId}");
+
+            // TODO: Call your legacy authentication provider here
+            //
+            // Then based on the response from your legacy provider:
+            // - If authentication successful AND password strong: return MigratePassword
+            // - If authentication successful BUT password weak: return UpdatePassword  
+            // - If authentication failed: return Retry
+            // - If system error: return Block
+
+            // PLACEHOLDER: Always return Retry for now
+            log.LogInformation("Using placeholder implementation - returning Retry action");
+            
+            return CreateResponse(ResponseActionType.Retry, nonce, "Authentication Pending", 
+                "Please implement legacy authentication integration.");
+        }
+
+        /// <summary>
+        /// Creates a response with the specified action type and user-facing messages
+        /// </summary>
+        /// <param name="actionType">The response action type</param>
+        /// <param name="nonce">The nonce from the request</param>
+        /// <param name="title">User-facing title (optional)</param>
+        /// <param name="message">User-facing message (optional)</param>
+        /// <returns>ResponseContent with the specified action and messages</returns>
+        private static ResponseContent CreateResponse(ResponseActionType actionType, string nonce, string title = null, string message = null)
+        {
+            var response = new ResponseContent(actionType, nonce);
+            
+            if (!string.IsNullOrEmpty(title))
+                response.Data.Actions[0].Title = title;
+                
+            if (!string.IsNullOrEmpty(message))
+                response.Data.Actions[0].Message = message;
+                
             return response;
         }
 
-        private static ResponseActionType GetNextResponseActionType(ILogger log)
-        {
-            log.LogInformation($"Generating next response action type. Last response action type: {lastResponseActionType}");
-            var values = Enum.GetValues(typeof(ResponseActionType));
-            int nextIndex = (Array.IndexOf(values, lastResponseActionType) + 1) % values.Length;
-            lastResponseActionType = (ResponseActionType)values.GetValue(nextIndex)!;
-            return lastResponseActionType;
-        }
 
-        private static async Task<(string userId, string userPassword)> ParseRequest(HttpRequest req, ILogger log)
+        /// <summary>
+        /// Parses the incoming request to extract user ID, password, and nonce
+        /// </summary>
+        private static async Task<(string userId, string userPassword, string nonce)> ParseRequestAsync(HttpRequest req, ILogger log)
         {
-            log.LogInformation($"Request URL: {req.Path}/{req.QueryString}");
+            log.LogInformation($"Parsing request from URL: {req.Path}{req.QueryString}");
+
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            JObject jObject = JObject.Parse(requestBody);
-            requestBody = jObject.ToString();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            log.LogInformation($"data: {(data == null ? "No data" : data.ToString())}");
+            if (string.IsNullOrWhiteSpace(requestBody))
+            {
+                log.LogError("Request body is empty or whitespace.");
+                return (null, null, null);
+            }
 
-            string userId = jObject["data"]?["authenticationContext"]?["user"]?["id"]?.ToString();
-            string userPassword = jObject["data"]?["passwordContext"]?["userPassword"]?.ToString();
-            
-            return (userId, userPassword);
+            try
+            {
+                JObject jObject = JObject.Parse(requestBody);
+                log.LogDebug($"Parsed request body: {jObject}");
+
+                // Extract user ID from authentication context
+                string userId = jObject["data"]?["authenticationContext"]?["user"]?["id"]?.ToString();
+                
+                // Handle both encrypted and plain text password contexts
+                string encryptedPasswordContext = jObject["data"]?["encryptedPasswordContext"]?.ToString();
+
+                (string userPassword, string nonce) = ExtractPasswordAndNonce(encryptedPasswordContext, log);
+
+                return (userId, userPassword, nonce);
+            }
+            catch (JsonReaderException ex)
+            {
+                log.LogError($"Failed to parse request body as JSON: {ex.Message}");
+                return (null, null, null);
+            }
         }
 
-        private static async Task<string> FetchAccessTokenWithClientCredentialsAsync(ILogger log, HttpClient client)
+        /// <summary>
+        /// Extracts password and nonce from encrypted password context using RSA decryption
+        /// </summary>
+        private static (string password, string nonce) ExtractPasswordAndNonce(string encryptedContext, ILogger log)
         {
-            // Acquire access token using client credentials flow
-            log.LogTrace("Acquiring access token using client credentials...");
-            var values = new Dictionary<string, string>
+            try
             {
-                { "client_id", "{clientid}" },
-                { "client_secret", "{secret}" },
-                { "scope", "https://graph.microsoft.com/.default" },
-                { "grant_type", "client_credentials" }
-            };
-            var content = new FormUrlEncodedContent(values);
-            var response = await client.PostAsync("https://login.microsoftonline.com/{tenantid}/oauth2/v2.0/token", content);
-            if (!response.IsSuccessStatusCode)
-            {
-                string errorResponse = await response.Content.ReadAsStringAsync();
-                log.LogError($"Error: {response.StatusCode}, Details: {errorResponse}");
-                return null;
-            }
+                log.LogInformation("Starting password and nonce extraction from encrypted context");
 
-            string responseString = await response.Content.ReadAsStringAsync();
-            var jsonResponse = JObject.Parse(responseString);
-            var token = jsonResponse["access_token"];
-            if (token == null)
-            {
-                log.LogError($"Error: Access token not found in the response: {responseString}");
-                return null;
+                // Validate input
+                if (string.IsNullOrEmpty(encryptedContext))
+                {
+                    log.LogError("Encrypted context is null or empty");
+                    return (string.Empty, string.Empty);
+                }
+
+                RSA rsa = null;
+                try
+                {
+                    // Create and configure RSA instance
+                    rsa = RSA.Create();
+                    log.LogDebug("RSA instance created successfully");
+
+                    // Import the private key
+                    rsa.ImportFromPem(DECRYPTION_PRIVATE_KEY);
+                    log.LogDebug("Private key imported successfully");
+                }
+                catch (CryptographicException ex)
+                {
+                    log.LogError($"Failed to initialize RSA or import private key: {ex.Message}");
+                    return (string.Empty, string.Empty);
+                }
+
+                string decryptedPayload;
+                try
+                {
+                    // Decrypt the JWT
+                    log.LogDebug("Attempting JWT decryption");
+                    decryptedPayload = JWT.Decode(encryptedContext, rsa);
+                    log.LogDebug($"JWT decrypted successfully, payload length: {decryptedPayload?.Length ?? 0}");
+                    
+                    if (string.IsNullOrEmpty(decryptedPayload))
+                    {
+                        log.LogError("JWT decryption resulted in empty payload");
+                        return (string.Empty, string.Empty);
+                    }
+                }
+                catch (Jose.JoseException ex)
+                {
+                    log.LogError($"Jose JWT library error during decryption: {ex.Message}");
+                    return (string.Empty, string.Empty);
+                }
+                finally
+                {
+                    // Dispose of RSA instance
+                    rsa?.Dispose();
+                    log.LogDebug("RSA instance disposed");
+                }
+
+                JObject payloadObj;
+                try
+                {
+                    // Parse the decrypted JSON payload
+                    log.LogDebug("Parsing decrypted JSON payload");
+                    string jsonPayload = Jose.JWT.Decode(decryptedPayload, null, JwsAlgorithm.none);
+                    payloadObj = JObject.Parse(jsonPayload);
+                    log.LogDebug("JSON payload parsed successfully");
+                    
+                    // Log the parsed JSON token structure (for debugging - remove in production)
+                    log.LogDebug($"Decrypted payload structure: {payloadObj.ToString(Formatting.Indented)}");
+                }
+                catch (JsonReaderException ex)
+                {
+                    log.LogError($"Failed to parse decrypted payload as JSON: {ex.Message}");
+                    return (string.Empty, string.Empty);
+                }
+
+                // Extract password and nonce from the payload
+                string password = payloadObj["user-password"]?.ToString();
+                string nonce = payloadObj["nonce"]?.ToString();
+
+                log.LogInformation($"Password extraction: {(string.IsNullOrEmpty(password) ? "FAILED" : "SUCCESS")}");
+                log.LogInformation($"Nonce extraction: {(string.IsNullOrEmpty(nonce) ? "FAILED" : "SUCCESS")}");
+
+                return (password ?? string.Empty, nonce ?? string.Empty);
             }
-            log.LogInformation($"Access token: {token.ToString()}");
-            return token.ToString();
+            catch (Exception ex)
+            {
+                log.LogError($"Critical error in ExtractPasswordAndNonce: {ex.Message}");
+                log.LogError($"Stack trace: {ex.StackTrace}");
+                
+                // Return empty values to allow the function to continue with fallback behavior
+                return (string.Empty, string.Empty);
+            }
         }
 
-        private static async Task UpdateUserPasswordAsync(ILogger log, string userId, string userPassword, HttpClient client)
-        {
-            var passwordPatchContent = new StringContent(
-                $"{{\"passwordProfile\": {{\"forceChangePasswordNextSignIn\": false, \"forceChangePasswordNextSignInWithMfa\": false, \"password\": \"{userPassword}\"}}, \"{extension_attribute}\": false}}",
-                System.Text.Encoding.UTF8,
-                "application/json");
-            var patchUrl = $"https://graph.microsoft.com/v1.0/users/{userId}";
-            log.LogInformation($"Patch User Url: {patchUrl}, content: {passwordPatchContent.ReadAsStringAsync().Result}");
-            var passwordPatchResponse = await client.PatchAsync(patchUrl, passwordPatchContent);
-            if (!passwordPatchResponse.IsSuccessStatusCode)
-            {
-                string patchErrorResponse = await passwordPatchResponse.Content.ReadAsStringAsync();
-                var jsonResponse = JObject.Parse(patchErrorResponse);
-                log.LogError($"Password PATCH Error: {passwordPatchResponse.StatusCode}, Details: {jsonResponse}");
-            }
-        }
+        #endregion
 
+        #region Response Models
+
+        /// <summary>
+        /// Root response object for JIT migration
+        /// </summary>
         public class ResponseContent
         {
-            [JsonProperty("data")] public Data data { get; set; }
+            [JsonProperty("data")]
+            public Data Data { get; set; }
 
-            public ResponseContent(ResponseActionType actionType)
+            public ResponseContent(ResponseActionType actionType, string nonce = null)
             {
-                data = new Data(actionType);
+                Data = new Data(actionType, nonce);
             }
         }
 
+        /// <summary>
+        /// Data payload containing actions and metadata
+        /// </summary>
         public class Data
         {
             [JsonProperty("@odata.type")]
-            public string Odatatype { get; set; }
+            public string OdataType { get; set; }
 
-            public List<Action> Actions { get; }
+            [JsonProperty("actions")]
+            public List<ActionItem> Actions { get; set; }
 
-            public Data(ResponseActionType actionType)
+            [JsonProperty("nonce")]
+            public string Nonce { get; set; }
+
+            public Data(ResponseActionType actionType, string nonce = null)
             {
-                Odatatype = "microsoft.graph.onPasswordSubmitResponseData";
-                Actions = new List<Action> { new(actionType) };
+                OdataType = "microsoft.graph.onPasswordSubmitResponseData";
+                Nonce = nonce;
+                Actions = new List<ActionItem> { new ActionItem(actionType) };
             }
         }
 
-        public class Action
+        /// <summary>
+        /// Individual action item in the response
+        /// </summary>
+        public class ActionItem
         {
             [JsonProperty("@odata.type")]
-            public string Odatatype { get; set; }
+            public string OdataType { get; set; }
 
             [JsonProperty("title", DefaultValueHandling = DefaultValueHandling.Ignore)]
-            public string title { get; set; }
+            public string Title { get; set; }
 
             [JsonProperty("message", DefaultValueHandling = DefaultValueHandling.Ignore)]
-            public string message { get; set; }
+            public string Message { get; set; }
 
-            public Action(ResponseActionType actionType)
+            public ActionItem(ResponseActionType type)
             {
-                Odatatype = actionType switch
+                OdataType = type switch
                 {
                     ResponseActionType.MigratePassword => "microsoft.graph.passwordsubmit.MigratePassword",
-                    ResponseActionType.Block => "microsoft.graph.passwordsubmit.Block",
                     ResponseActionType.UpdatePassword => "microsoft.graph.passwordsubmit.UpdatePassword",
+                    ResponseActionType.Block => "microsoft.graph.passwordsubmit.Block",
                     ResponseActionType.Retry => "microsoft.graph.passwordsubmit.Retry",
-                    _ => throw new ArgumentOutOfRangeException(nameof(actionType), actionType, null)
+                    _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
                 };
-                title = actionType switch
+
+                // Set user-facing messages for block actions
+                if (type == ResponseActionType.Block)
                 {
-                    ResponseActionType.Block => "Sign-in blocked",
-                    _ => null
-                };
-                message = actionType switch
-                {
-                    ResponseActionType.Block => "Admin has blocked your sign-in attempt. Please contact support.",
-                    _ => null
-                };
+                    Title = "Sign-in blocked";
+                    Message = "Admin has blocked your sign-in attempt. Please contact support.";
+                }
             }
         }
 
+        /// <summary>
+        /// Available response action types for JIT migration
+        /// </summary>
         public enum ResponseActionType
         {
+            /// <summary>
+            /// Migrate the user's password to Azure AD
+            /// </summary>
             MigratePassword,
+            
+            /// <summary>
+            /// Update the user's existing password
+            /// </summary>
             UpdatePassword,
+            
+            /// <summary>
+            /// Block the user's sign-in attempt
+            /// </summary>
             Block,
-            Retry,
+            
+            /// <summary>
+            /// Retry the authentication process
+            /// </summary>
+            Retry
         }
+
+        #endregion
     }
 }
 ```
@@ -280,10 +456,10 @@ Each of the response actions corresponds to a specific scenario during the authe
 
 | Action odataType  | When to Use  | Notes |
 |---|---|---|
-| microsoft.graph.passwordSubmit  .MigratePassword  | When password validation is successful.   | Upon receiving this action, Entra will continue with the authentication process.  Note that when the submitted password is considered weak by Entra standards, then an UpdatePassword flow is triggered.  |
-| microsoft.graph.passwordSubmit  .UpdatePassword  | When the password is correct, but the user needs to update the password (e.g., it is weak or expired.)  | Entra will route the user through a reset password flow.  |
-| microsoft.graph.passwordSubmit  .Retry  | When the password is incorrect.  | Let the user retry the authentication process, if allowed.  |
-| microsoft.graph.passwordSubmit  .Block  | When to block the authentication and return a custom error to the user.  | Shows a block screen to the user with the custom message provided.  |
+| microsoft.graph.passwordSubmit.MigratePassword  | When password validation is successful.   | Upon receiving this action, Entra will continue with the authentication process.  Note that when the submitted password is considered weak by Entra standards, then an UpdatePassword flow is triggered.  |
+| microsoft.graph.passwordSubmit.UpdatePassword  | When the password is correct, but the user needs to update the password (e.g., it is weak or expired.)  | Entra will route the user through a reset password flow.  |
+| microsoft.graph.passwordSubmit.Retry  | When the password is incorrect.  | Let the user retry the authentication process, if allowed.  |
+| microsoft.graph.passwordSubmit.Block  | When to block the authentication and return a custom error to the user.  | Shows a block screen to the user with the custom message provided.  |
 
 When sending a request to your custom authentication extension, Entra will include a payload with the following schema. This sample payload includes dummy data for illustration purposes only.
 
@@ -379,22 +555,9 @@ Your *Function_URL_Hostname* is the host name for the custom extension. For exam
 
 Next you need to update the value for *requiredResourceAccess* to include the permissions your application requires. In this case you will be adding the *CustomAuthenticationExtension.Receive.Payload* permission which allows the extension to receive HTTP requests triggered by authentication events. You can find more information on these permissions in the [Microsoft Graph permissions reference](/graph/permissions-reference).
 
-1. In the **App Manifest**, locate the *requiredResourceAccess* section.
-1. Add a new entry for Microsoft Graph with the necessary permissions. 
-
-```json
-"requiredResourceAccess": [  
-    {  
-        "resourceAppId": "00000003-0000-0000-c000-000000000000",  
-        "resourceAccess": [  
-            {  
-                "id": "214e810f-fda8-4fd7-a475-29461495eb00",  
-                "type": "Role"  
-            }  
-        ]  
-    }  
-]  
-```
+1. Within the application registration you just created select **API Permissions**. 
+1. Click **Add a permission** and choose **Microsoft Graph** then **Application permissions**
+1. Search for **CustomAuthenticationExtension.Receive.Payload**, select it and click **Add permissions**.
 
 ## Create a custom extension policy
 
