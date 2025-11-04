@@ -4,7 +4,7 @@ description: Learn how Conditional Access templates provide preconfigured polici
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 07/22/2025
+ms.date: 11/04/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
@@ -91,6 +91,12 @@ These policies are for highly privileged administrators in your environment, whe
 Policies in this category provide new ways to protect against compromise.
 
 - [Require phishing-resistant multifactor authentication for administrators](policy-admin-phish-resistant-mfa.md)
+
+# [AI Agents](#tab/ai-agents)
+
+- [Block high risk agent identities from accessing resources](policy-agent-block-high-risk.md)
+- [Block all agent identities from accessing resources](policy-agent-identities-block-all.md)
+- [Block all agent users from accessing resources](policy-agent-users-block-all.md)
 
 ---
 
