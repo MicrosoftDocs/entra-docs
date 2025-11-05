@@ -156,7 +156,7 @@ Yes, there's no free tier for governance billing. Governance guest billing appli
 To use Microsoft Entra ID Governance features for guest users, your tenant must be linked to an Azure subscription with the Microsoft Entra ID Governance for guests add-on. If the guest billing meter isn't enabled, the following behavior applies:
 
 > [!NOTE]
-> Guest billing meter isnt enforced until January 2026. This list might change as more features are added to Microsoft Entra ID Governance.
+> Connecting the Microsoft Entra ID Governance for Guests Add-on will be enforced beginning in January 2026. This list might change as more features are added to Microsoft Entra ID Governance.
 
 ### Access Reviews
 
