@@ -43,6 +43,8 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
+  - name: Protecting agent identities
+    href: agent-id.md
   - name: Analyze impact
     href: concept-conditional-access-report-only.md
   - name: Service dependencies
@@ -102,6 +104,14 @@
       href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
+    - name: Agents
+      items:
+      - name: Block all agent identities
+        href: policy-agent-identities-block-all.md
+      - name: Block all agent users
+        href: policy-agent-users-block-all.md
+      - name: Block high-risk agents
+        href: policy-agent-block-high-risk.md
     - name: Applications
       items:
       - name: Require approved app or app protection policy
