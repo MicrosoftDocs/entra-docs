@@ -19,6 +19,10 @@ Making sure risky users don’t gain access to sensitive resources is an importa
 
 [!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
 
+## Prerequisites
+
+To use ID-protection with Entitlement management, you must first [deploy ID protection](../id-protection/how-to-deploy-identity-protection.md).
+
 [!INCLUDE [Entitlement Management risk-based-approvals](../includes/entitlement-management-risk-based-approvals.md)]
 
 ## Configure ID protection-based approvals for an access package using the Microsoft Entra admin center
