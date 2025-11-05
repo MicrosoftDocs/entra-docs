@@ -16,3 +16,34 @@ items:
       items:
         - name: Key concepts
           href: key-concepts.md
+        - name: Agent users
+          href: agent-users.md
+        - name: Agent ID blueprints
+          href: agent-blueprint.md
+        - name: Agent service principals
+          href: agent-service-principals.md
+    - name: Registry
+      items:
+        - name: Agent registry collections
+          href: agent-registry-collections.md
+        - name: Agent metadata and discoverability
+          href: agent-metadata-discoverability.md
+    - name: Management
+      items:
+        - name: Agent owners, sponsors, and managers
+          href: agent-owners-sponsors-managers.md
+    - name: Tokens
+      items:
+        - name: Agent tokens
+          href: agent-tokens-md
+  - name: Reference
+    items:
+    - name: Oauth protocol for Agent IDs
+      items: 
+        - name: Auth protocols for agent IDs
+          href: agent-oauth-protocols.md
+        - name: Autonomous app flow in agents
+          href: agent-autonomous-app-oauth-flow.md
+        
+        
+
