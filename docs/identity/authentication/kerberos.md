@@ -30,7 +30,7 @@ A hybrid identity refers to a user identity that exists both in on-premises AD D
 
 This setup enables seamless authentication and SSO experiences across environments. It's ideal for organizations that want to transition to the cloud while maintaining legacy infrastructure.
 
-## Cloud only identity
+## Cloud only identity (Preview)
 
 A cloud-only identity refers to a user account that exists only in Microsoft Entra ID (formerly Azure AD) and does not have a corresponding account in an on-premises Active Directory.
 
@@ -40,7 +40,7 @@ A cloud-only identity refers to a user account that exists only in Microsoft Ent
 
 For example, when a Microsoft Entra ID-joined Windows client accesses a file share or application over the internet, Microsoft Entra ID can issue the necessary Kerberos tickets as a KDC associated with the resource.
 
-**Cloud-only identity support**: Cloud-only identities can now use Kerberos authentication for workloads like Azure Files without requiring on-prem AD DS. This is enabled by Entra Kerberos, which acts as a cloud-based KDC.
+**Cloud-only identity support (Preview)**: Cloud-only identities can now use Kerberos authentication for workloads like Azure Files without requiring on-prem AD DS. This is enabled by Entra Kerberos, which acts as a cloud-based KDC.
 
 **Enhanced security with modern credentials support**: Users can sign in by using passwordless methods such as Windows Hello for Business or FIDO2 security keys, yet still access on-premises resources that have Kerberos protections. This ability enables multifactor authentication (MFA) and passwordless authentication to reduce the risks associated with password theft and phishing attacks.
 
@@ -56,7 +56,7 @@ Microsoft Entra Kerberos allows your Microsoft Entra ID tenant to operate as a d
 
 In addition to the PRT, Microsoft Entra ID issues a Cloud TGT for the realm `KERBEROS.MICROSOFTONLINE.COM`. This is a partial TGT to access on-premises resources. In this model, Microsoft Entra ID acts as the KDC to facilitate seamless authentication.
 
-### Cloud only identities scenarios
+### Cloud only identities scenarios (Preview)
 
 Cloud-only identities support for Entra Kerberos requires Microsoft Entra ID tenant with Entra Kerberos enabled and
 Windows 10/11 device that is Microsoft Entra-joined.
@@ -243,7 +243,7 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 
 ## Limitations and other considerations
 
-### Support cloud-only user identities for member type only
+### Support cloud-only user identities for member type only (Preview)
 
 Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication for the member user types. External identities support is not available yet.
 
