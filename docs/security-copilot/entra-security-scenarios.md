@@ -24,15 +24,13 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 
 :::image type="content" source="./media/copilot-security-entra/security-copilot-entra-admin-center.png" alt-text="Screenshot that shows Security Copilot in the Microsoft Entra admin center.":::
 
-### Data exploration (preview)
+### Data exploration using Microsoft Security Copilot (preview)
 
-Security Copilot in Microsoft Entra extends beyond chat-based summaries to provide deeper insights into your identity, device, and access data through a unified, interactive visual workspace in the Microsoft Entra admin center.
-
-From the Copilot chat response, select **Open list** to access a comprehensive, interactive data grid. This allows you to explore large, complex datasets with complete and accurate results, enabling more efficient decision-making. Each data grid displays the underlying Microsoft Graph URL, helping you verify query accuracy and build confidence in the results. This preview feature is available for select Microsoft Entra scenarios when prompts return datasets with more than 10 items.
+From the Copilot chat response, select **Open list** to access a comprehensive data grid. This allows you to explore large datasets with complete and accurate results, enabling more efficient decision-making. Each data grid displays the underlying Microsoft Graph URL, helping you verify query accuracy and build confidence in the results. This preview feature is available for select Microsoft Entra scenarios when prompts return datasets with more than 10 items.
 
 > [!NOTE]
 >
-> Data exploration is currently in preview and limited to simple prompts only. Complex prompts that require multi-step queries are not currently supported for data exploration. Copilot will still provide chat-based summaries for complex, multi-step prompts.
+> This functionality is currently in preview and limited to simple prompts only. Complex prompts that require multi-step queries are not currently supported by this feature. Copilot will still provide chat-based summaries for all prompts.
 
 :::image type="content" source="./media/copilot-security-entra/data-explorer.png" alt-text="Screenshot that shows Data Exploration in Security Copilot for Microsoft Entra.":::
 
