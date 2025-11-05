@@ -90,28 +90,22 @@ Creating a Conditional Access policy for agents involves these four key componen
       1. Specific resources based on their GUID.
       1. Agent blueprints (targeting the blueprint covers the agent identities parented by the blueprint).
 1. Conditions 
-   1. Agent risk (high, medium, low)
-      1. Detections: Unfamiliar Resource Access, Sign-In Spike, Failed Access Attempt, and Sign-In by Risky User.
+   1. Agent risk (high, medium, low).
 1. Access Controls 
    1. Block.
 1. Policies can be toggled On, Off, or set to Report-only for simulation.
 
 ## Common business scenarios
 
-Intro two scenarios
+There are two key business scenarios that we envision Conditional Access policies taking care of when it comes to agents. 
 
-### Scenario 1
+The first scenario is your organization is testing agents and you want to configure a Conditional Access policy to allow only approved agents to access specific resources. This can be accomplished either by tagging all agents and resources with custom security attributes you target in policy, or by manually picking the agents and resources using the enhanced object picker.
 
-If your organization is testing agents and you want to configure a Conditional Access policy to allow only approved agents to access specific resources. We present two options to control access:
-
-- Using custom security attributes
-- Using the enhanced object picker
-
-#### Using custom security attributes
+### [Using custom security attributes](#tab/custom-security-attributes)
 
 The recommended approach is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
-###### Create and assign custom attributes
+##### Create and assign custom attributes
 
 1. Create the custom security attributes:
    1. Create an **Attribute set** named *AgentAttributes*.
@@ -124,7 +118,7 @@ The recommended approach is to create and assign custom security attributes to e
       1. Add the following predefined values: **Low**, **Medium**, and **High**.
    1. Assign the **Low** value to resources that your agent is allowed to access.
 
-###### Create Conditional Access policy using custom security attributes
+##### Create Conditional Access policy using custom security attributes
 
 After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agent identities except those vetted and approved by your organization. 
 
@@ -163,7 +157,7 @@ After you complete the previous steps, create a Conditional Access policy using 
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-#### Create Conditional Access policy using the enhanced object picker
+### [Using the enhanced object picker](#tab/enhanced-object-picker)
 
 Alternatively organizations can create a Conditional Access policy using the enhanced object picker to block all agent identities except those vetted and approved by your organization. 
 
