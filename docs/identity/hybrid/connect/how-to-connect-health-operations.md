@@ -31,7 +31,7 @@ You can configure the Microsoft Entra Connect Health service to send email notif
 2. Select **Sync errors**
 3. Select **Notification Settings**.
 5. At the email notification switch, select **ON**.
-6. Select the check box if you want all Hybrid Identity Administrators to receive email notifications.
+6. Select the check box if you want all Global Administrators to receive email notifications.
 7. If you want to receive email notifications at any other email addresses, specify them in the **Additional Email Recipients** box. To remove an email address from this list, right-select the entry and select **Delete**.
 8. To finalize the changes, select **Save**. Changes take effect only after you save.
 
