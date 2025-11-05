@@ -23,7 +23,8 @@ Making sure risky users dont gain access to sensitive resources is an important 
 
 To use Insider Risk Management approvals with Entitlement management, you must first [Create an Insider Risk Management policy](/purview/insider-risk-management-policies).
 
-If you also plan on [configuring Identity protection based protection for access package approvals](entitlement-management-configure-id-protection-approvals.md), you should configure it before configuring Insider risk management. After Configuring Insider Risk Management, you should apply Access Package policies.
+> [!NOTE]
+> If you also plan on [configuring Identity protection based protection for access package approvals](entitlement-management-configure-id-protection-approvals.md), you should configure it before configuring Insider risk management. After Configuring Insider Risk Management, you should apply Access Package policies.
 
 [!INCLUDE [Entitlement Management risk-based-approvals](../includes/entitlement-management-risk-based-approvals.md)]
 
@@ -51,7 +52,7 @@ To configure Insider Risk Management-based approvals for an access package in th
 ## Approving a risky user
 
 
-To Approve a risky user, approvers must have the [Security Reader role](../identity/role-based-access-control/permissions-reference.md#security-reader) at the time of approval.
+To Approve a risky user, approvers must have the [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) role at the time of approval.
 
 When a risky user submits a request for an access package, administrators are able to see their pending status via the requests page within the access package:
 :::image type="content" source="media/entitlement-management-configure-risk-approvals/insider-risky-user-pending-request.png" alt-text="Screenshot of a pending request for an access package by a risky user.":::
@@ -59,6 +60,9 @@ When a risky user submits a request for an access package, administrators are ab
 A user set as an approver, or fallback approver, for risky users can view the request to approve or deny via the my access portal:
 :::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png" alt-text="Screenshot of the approvals page in my access showing the risky user.":::
 
+
+> [!NOTE]
+> Approvers have a maximum of 14 days to take action. If they dont take action within that time frame, requests are automatically denied.
 
 
 ## Next step
