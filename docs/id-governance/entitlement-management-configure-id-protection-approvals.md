@@ -13,21 +13,6 @@ ms.date: 11/04/2025
 
 # Configure ID Protection-based approvals for access package requests in Entitlement Management (Preview)
 
-
-<!-- 2. Introductory paragraph ----------------------------------------------------------
-
-Required: Lead with a light intro that describes, in customer-friendly language, what the customer will do. Answer the fundamental “why would I want to do this?” question. Keep it short.
-
-Readers should have a clear idea of what they will do in this article after reading the introduction.
-
-* Introduction immediately follows the H1 text.
-* Introduction section should be between 1-3 paragraphs.
-* Don't use a bulleted list of article H2 sections.
-
-Example: In this article, you will migrate your user databases from IBM Db2 to SQL Server by using SQL Server Migration Assistant (SSMA) for Db2.
-
--->
-
 Making sure risky users dont gain access to sensitive resources is an important part of securing your environment. You can further secure the entitlement management request process by integrating [Microsoft Entra ID Protection (IDP)](../id-protection/overview-identity-protection.md) signals into the access package approval workflow in Microsoft Entra ID Governance’s Entitlement Management. With ID protection, Entitlement Management automatically adds a new first approval stage when a user flagged as risky requests access to an access package. This ensures that users identified as potentially compromised or at-risk are reviewed by authorized security or compliance approvers before access requests are routed for standard approval routing. This article describes how to further secure your entitlement request process with ID protection.
 
 ## License requirements
