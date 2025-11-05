@@ -1,3 +1,14 @@
+---
+author: SHERMANOUKO
+ms.author: shermanouko
+ms.date: 11/04/2025
+ms.service: entra-id
+
+ms.topic: include
+# Purpose:
+# To guide users on how to call APIs using agent identities in .NET.
+---
+
 To call an API from an agent, you need to obtain an access token that the agent can use to authenticate itself to the API. We recommend using the *Microsoft.Identity.Web* SDK for .NET to call your web APIs. This SDK simplifies the process of acquiring and validating tokens. For other languages, use the Microsoft identity sidecar.
 
 ## Prerequisites

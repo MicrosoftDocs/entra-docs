@@ -1,7 +1,7 @@
 ---
 title: Administrative relationships for agent IDs (Owners, sponsors, and managers)
 description: Learn about the administrative model for agentic applications in Microsoft Entra, including the roles of owners, sponsors, and managers in maintaining secure operations, business accountability, and compliance oversight.
-
+titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
 manager: pmwongera

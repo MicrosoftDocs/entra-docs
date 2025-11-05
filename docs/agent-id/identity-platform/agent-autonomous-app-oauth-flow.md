@@ -1,6 +1,7 @@
 ---
 title: Agent autonomous app OAuth flow - App-only protocol
 description: Learn how agent IDs operate autonomously without user context using app-only protocol with OAuth 2.0 client credentials flows.
+titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 manager: pmwongera
 ms.service: entra-id
@@ -24,8 +25,6 @@ Agent ID blueprints can only impersonate their child agent identities. Agent IDs
 ## Protocol steps
 
 The following are the protocol steps.
-
-:::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow.png" alt-text="Diagram showing the illustration of autonomous app token acquisition flow for agents.":::
 
 1. Agent ID blueprint requests an exchange token T1. The agent ID blueprint presents its credentials which could be a secret, a certificate or a managed identity token. Entra ID returns the T1 to the agent ID blueprint. In this example we use a managed identity as FIC.
     
@@ -62,6 +61,6 @@ The following are the protocol steps.
 
 ## Sequence diagram
 
-The following is a sequence diagram for the app-only flow
+The following is a sequence diagram for the app-only flow:
 
 :::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow-token-sequence.png" alt-text="Diagram showing the token sequence of autonomous app token acquisition flow for agents.":::

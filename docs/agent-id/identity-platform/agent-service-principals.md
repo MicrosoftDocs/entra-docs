@@ -1,6 +1,7 @@
 ---
 title: Agentic service principals
 description: Learn about agentic service principals in Microsoft Entra, including Agent ID Blueprint Principal (AB-SP) and Agent Identity (Agent ID), and how they differ from traditional service principals in authentication, permissions, and lifecycle management.
+titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
 ms.service: entra-id

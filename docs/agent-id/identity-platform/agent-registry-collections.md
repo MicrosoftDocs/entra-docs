@@ -1,7 +1,7 @@
 ---
 title: Agent registry collections
 description: Learn about agent registry collections in Microsoft Entra ID, which provide secure logical groupings for organizing and managing enterprise AI agents.
-
+titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
 manager: pmwongera

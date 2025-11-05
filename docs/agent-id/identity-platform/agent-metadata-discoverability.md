@@ -1,6 +1,7 @@
 ---
 title: Agent metadata and discoverability patterns
 description: Learn how to structure agent metadata for optimal discoverability in Microsoft Entra Agent Registry and understand how the collections model affects agent visibility.
+titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
