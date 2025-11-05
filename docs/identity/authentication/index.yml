@@ -25,10 +25,8 @@ landingContent:
         links:
           - text: What is authentication?
             url: overview-authentication.md
-          - text: What are authentication methods?
+          - text: Authentication methods in Microsoft Entra ID
             url: concept-authentication-methods.md
-          - text: What are passkeys (FIDO2)?
-            url: concept-authentication-passkeys-fido2.md
           - text: What are authentication strengths?
             url: concept-authentication-strengths.md
 
@@ -38,22 +36,22 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: What are phishing-resistant authentication methods?
-            url: concept-authentication-passwordless.md
-          - text: What is Microsoft Authenticator?
-            url: concept-authentication-authenticator-app.md
+          - text: What are passkeys (FIDO2)?
+            url: concept-authentication-passkeys-fido2.md
+          - text: Certificate-based authentication
+            url: concept-certificate-based-authentication.md
       - linkListType: how-to-guide
         links:
           - text: Enable passkeys (FIDO2) for your organization
             url: how-to-enable-passkey-fido2.md
-          - text: Enable passkeys in Authenticator
-            url: how-to-enable-authenticator-passkey.md
+          - text: Enable certificate-based authentication
+            url: how-to-certificate-based-authentication.md
       - linkListType: deploy
         links:
           - text: Get started with phishing-resistant MFA
             url: howto-sspr-deployment.md
-          - text: Deploy phishing-resistant MFA
-            url: how-to-deploy-phishing-resistant-passwordless-authentication.md
+          - text: Deploy multifactor authentication
+            url: howto-mfa-getstarted.md
 
   # Card
   - title: Microsoft Entra account recovery
