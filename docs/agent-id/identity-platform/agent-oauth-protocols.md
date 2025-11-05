@@ -74,5 +74,3 @@ There are three agent oauth flows:
 ## Related content
  
 - [Autonomous app flow in agents](./agent-autonomous-app-oauth-flow.md)
-- [On-behalf-of flow in agents](./agent-on-behalf-of-oauth-flow.md)
-- [Agent user flow in agents](./agent-user-oauth-flow.md)
