@@ -1,6 +1,7 @@
 ---
 title: Agent user impersonation protocol
 description: Learn how Agent IDs operate with user context through agent users using the agent user impersonation protocol with OAuth 2.0 token exchange.
+titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 manager: pmwongera
 ms.service: entra-id
@@ -20,10 +21,6 @@ Agent user impersonation enables Agent IDs to operate with user context through 
 [!INCLUDE [Managed identities support](./includes/managed-identities-preferred.md)]
 
 ## Protocol steps
-
-Then following are the protocol steps.
-
-:::image type="content" source="media/agent-user-oauth-flow/agent-user-flow.png" alt-text="Diagram showing the illustration of agent user token acquisition flow for agents.":::
 
 1. The agent ID blueprint requests an exchange token (T1) that it will use for agent ID impersonation. The agent ID blueprint presents client credentials that could be a secret, a certificate or a managed identity token used as an FIC.
 
@@ -75,11 +72,5 @@ Then following are the protocol steps.
     ```
 
 1. Entra ID then issues the resource token.
-
-### Sequence diagram
-
-The following is a sequence diagram for the agent user impersonation flow
-
-:::image type="content" source="media/agent-user-oauth-flow/agent-user-flow-token-sequence.png" alt-text="Diagram showing the token sequence of agent user token acquisition flow for agents.":::
 
 Agent user impersonation requires credential chaining that follows the pattern agent ID blueprint → Agent ID → Agent User. Each step in this chain uses the token from the previous step as a credential, creating a secure delegation pathway. The same client ID must be used for both phases to prevent privilege escalation attacks.

@@ -1,6 +1,7 @@
 ---
 title: Implement user token requests for interactive agents
 description: Learn how to implement the On-Behalf-Of flow for interactive agents to obtain access tokens on behalf of users who grant consent.
+titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id

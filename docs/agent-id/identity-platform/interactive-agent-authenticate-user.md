@@ -1,7 +1,7 @@
 ---
 title: Authenticate users in interactive agents
 description: Learn how to authenticate users for interactive agents using Agent Identity. Concepts include token requests, validation, and extraction of user claims for authorization.
-
+titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
 ms.service: entra-id

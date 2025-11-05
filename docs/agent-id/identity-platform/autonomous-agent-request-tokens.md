@@ -1,6 +1,7 @@
 ---
 title: Request agent tokens for autonomous agents
 description: Learn how to authenticate autonomous agents with Microsoft Entra ID and obtain access tokens using their agent identity through a three-step process.
+titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id

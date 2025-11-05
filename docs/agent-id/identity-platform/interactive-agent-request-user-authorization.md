@@ -1,6 +1,7 @@
 ---
 title: Configure user authorization for interactive agents
 description: Learn how to configure interactive agents to request delegated permissions from individual users through the OAuth authorization flow.
+titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id

@@ -1,6 +1,7 @@
 ---
 title: Request agent user tokens for autonomous agents
 description: Learn how to create Agent ID users and authenticate using agent identities to obtain delegated access tokens for systems that require user accounts.
+titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id

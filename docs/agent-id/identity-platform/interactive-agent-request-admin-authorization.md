@@ -1,6 +1,7 @@
 ---
 title: Configure admin authorization for interactive agents
 description: Learn how to configure interactive agents to request application permissions that require administrator consent through the admin consent flow.
+titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id

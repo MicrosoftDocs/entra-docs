@@ -1,6 +1,8 @@
 ---
 title: Grant application permissions to an autonomous agent
 description: Learn how to grant application permissions to agent identities through Microsoft Entra ID administrator consent and app role assignments for Microsoft Graph and other web services.
+titleSuffix: Microsoft Entra Agent ID
+
 author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id

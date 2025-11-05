@@ -1,6 +1,7 @@
 ---
 title: Agent OAuth flows - On-behalf-of flow
 description: Learn how agentic applications operate on behalf of signed-in users using OAuth 2.0 On-Behalf-Of flows with agent identity blueprints and agent identities.
+titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 manager: pmwongera
 ms.service: entra-id
@@ -24,8 +25,6 @@ Agentic applications have the capabilities of Microsoft Entra ID resource (API) 
 ## Protocol steps
 
 Agentic applications aren't supported for OBO (`/authorize`) flows. Supported grant types are `client_credential`, `jwt_bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate or a managed identity used as Federated Identity Credentiual (FIC).
-
-:::image type="content" source="media/agent-on-behalf-of-oauth-flow/on-behalf-of-flow.png" alt-text="Diagram showing the illustration of on-behalf-of token acquisition flow for agents.":::
 
 1. The user authenticates with the client and obtains a user access token(client token, Tc).
 
@@ -67,12 +66,6 @@ Agentic applications aren't supported for OBO (`/authorize`) flows. Supported gr
 
     - T1 (aud) == Agent ID ParenT app == Agent ID blueprint client ID
     - Tc (aud) == Agent ID blueprint client ID
-
-### Sequence diagram
-
-The following is a sequence diagram for the OBO flow
-
-:::image type="content" source="media/agent-on-behalf-of-oauth-flow/on-behalf-of-flow-token-sequence.png" alt-text="Diagram showing the token sequence of on-behalf-of token acquisition flow for agents.":::
 
 ### Refresh token support
 

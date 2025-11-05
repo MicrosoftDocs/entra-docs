@@ -1,7 +1,7 @@
 ---
 title: Token claims reference for agent IDs
 description: Learn about specialized token claims used by agentic applications in Microsoft Entra to identify entity types, relationships, and roles during authentication and authorization flows.
-
+titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
 ms.service: entra-id
