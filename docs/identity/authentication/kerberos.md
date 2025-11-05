@@ -115,7 +115,7 @@ The OnPremTgt that Microsoft Entra ID issues:
 - Is issued only if the environment is configured to support it. For example, you have a hybrid identity setup and a Microsoft Entra Kerberos server object in Active Directory.
 - Must be exchanged with an on-premises Active Directory domain controller for a full TGT that includes on-prem SID User SID, full PAC (all group memberships), session key and other access control data. The full TGT  is then used to access resources like Server Message Block (SMB) shares or SQL servers.
 
-dsregcmd /status  command will show the result for both Tgt. More info at [Troubleshoot devices by using the dsregcmd command](~identity/devices/troubleshoot-device-dsregcmd.md#sso-state)
+dsregcmd /status  command will show the result for both Tgt. More info at [Troubleshoot devices by using the dsregcmd command](~/identity/devices/troubleshoot-device-dsregcmd.md#sso-state)
 - OnPremTgt: Set the state to YES if a Cloud Kerberos ticket to access on-premises resources is present on the device for the logged-in user.
 - CloudTgt: Set the state to YES if a Cloud Kerberos ticket to access cloud resources is present on the device for the logged-in user.
 
@@ -327,37 +327,37 @@ As a short-term solution,  apps using Entra Kerberos for cloud-only identities c
  
 **Option 2: Update Tags Using Microsoft Graph API (Permissions: Application.ReadWrite.All)**
 
-    #### Request body
-    ```http
-    PATCH https://graph.microsoft.com/v1.0/applications/{applicationObjectId}
-    Content-Type: application/json
-    {
-       "tags": [
-               "kdc_enable_cloud_group_sids"
-        ]
-    }
-    ```
+#### Request body
+```http
+PATCH https://graph.microsoft.com/v1.0/applications/{applicationObjectId}
+Content-Type: application/json
+{
+   "tags": [
+           "kdc_enable_cloud_group_sids"
+    ]
+}
+```
  
 **Option 3: Update Tags Using PowerShell cmdlets**
 
-    1. Start PowerShell with administrator privileges.
-    2. Install and import the Microsoft Graph PowerShell SDK.
-    
-       ```powershell
-           Install-Module Microsoft.Graph -Scope CurrentUser
-           Import-Module Microsoft.Graph.Authentication
-           Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-       ```
-    3. Connect to the tenant and accept all.
-    
-       ```powershell
-          Connect-MGGraph -Scopes "Application.ReadWrite.All" -TenantId <tenantId>
-       ```
-    4. List certificateUserIds attribute of a given user.
-    
-       ```powershell
-         Update-MgApplication -ApplicationId "<AppObjectId>" -Tags @("kdc_enable_cloud_group_sids")
-       ```
+1. Start PowerShell with administrator privileges.
+2. Install and import the Microsoft Graph PowerShell SDK.
+
+   ```powershell
+   Install-Module Microsoft.Graph -Scope CurrentUser
+   Import-Module Microsoft.Graph.Authentication
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+3. Connect to the tenant and accept all.
+
+   ```powershell
+   Connect-MGGraph -Scopes "Application.ReadWrite.All" -TenantId <tenantId>
+   ```
+4. List certificateUserIds attribute of a given user.
+
+   ```powershell
+   Update-MgApplication -ApplicationId "<AppObjectId>" -Tags @("kdc_enable_cloud_group_sids")
+   ```
 
 ## Related content
 
