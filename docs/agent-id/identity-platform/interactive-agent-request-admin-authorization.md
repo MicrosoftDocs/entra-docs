@@ -43,4 +43,3 @@ https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 
 - [Request agent tokens](autonomous-agent-request-tokens.md) for implementing client credentials flow after consent
 - [Configure user authorization](interactive-agent-request-user-authorization.md) for requesting delegated permissions
-- [Admin consent on the Microsoft identity platform](/entra/identity-platform/admin-consent) for detailed admin consent concepts
