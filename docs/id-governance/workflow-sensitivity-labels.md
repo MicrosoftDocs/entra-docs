@@ -40,7 +40,7 @@ Sensitivity labels of groups can be viewed when using group specific tasks withi
 
 1. If group scope is chosen, when the **+Select group** option is picked you are able to see the sensitivity labels of each group.
     :::image type="content" source="media/workflow-sensitivity-labels/group-sensitivity-labels.png" alt-text="Screenshot of workflow sensitivity label.":::
-1.   
+1. If not using a group scope you are also able to see the sensitivity label of groups by selecting a group task, and then adding a group to the task.
 
 
 
@@ -48,9 +48,5 @@ Sensitivity labels of groups can be viewed when using group specific tasks withi
 
 TODO: Add your next step link(s)
 
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
+- [Lifecycle Workflow built-in tasks](lifecycle-workflow-tasks.md)
 
