@@ -13,16 +13,18 @@ ms.custom: sfi-image-nochange
 ---
 # View, add, and remove assignments for an access package in entitlement management
 
-In entitlement management, you can see who is assigned to access packages, their policy, status, and user lifecycle (preview). If an access package has an appropriate policy, you can also directly assign user to an access package. This article describes how to view, add, and remove assignments for access packages.
+In entitlement management, you can see who is assigned to access packages, their policy, status, and user lifecycle (preview). If an access package has an appropriate policy, you can also directly assign identities to an access package. This article describes how to view, add, and remove assignments for access packages.
 
 ## Prerequisites
 
-To use entitlement management and assign users to access packages, you must have one of the following licenses:
+To use entitlement management to assign users and to access packages, you must have one of the following licenses:
 
 
 - Microsoft Entra ID P2
 - Enterprise Mobility + Security (EMS) E5 license
 - Microsoft Entra ID Governance subscription
+
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license.md)]
 
 ## View who has an assignment
 
@@ -157,7 +159,10 @@ Entitlement management also allows you to directly assign external users to an a
 1. Select **Add** to directly assign the selected users to the access package.
 1. After a few moments, select **Refresh** to see the users in the Assignments list.
 
+
+
 ## Directly assigning users programmatically
+
 ### Assign a user to an access package with Microsoft Graph
 You can also directly assign a user to an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminAdd`, and the `assignment` property is a structure that contains the `targetId` of the user being assigned.
 
