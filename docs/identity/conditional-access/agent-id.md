@@ -52,14 +52,14 @@ Conditional Access doesn't apply when:
 - An agent identity blueprint acquires a token for Microsoft Graph to create an agent identity or agent user.
 
    > [!NOTE]
-   > Agent blueprints have limited functionality. They can't act independently to access resources and are only involved in creation of agent identities and agent users. Agentic tasks are always performed by the agent identity (Agent ID).
+   > Agent blueprints have limited functionality. They can't act independently to access resources and are only involved in creation of agent identities and agent users. Agentic tasks are always performed by the agent identity.
 
 - An agent identity blueprint or agent identity performs an intermediate token exchange at the AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936).
 
    > [!NOTE]
    > Tokens scoped to AAD Token Exchange Endpoint: Public can't call MS Graph. Agentic flows are protected because we protect token acquisition from agent identity or agent user.
 
-- A Conditional Access policy is scoped to users or workload identities **not** to agents.
+- The Conditional Access policy is scoped to users or workload identities, **not** to agents.
 - [Security defaults](../../fundamentals/security-defaults.md) are enabled.
 
 | Authentication flow | Does Conditional Access apply | Details |
@@ -87,7 +87,7 @@ Creating a Conditional Access policy for agents involves these four key componen
       1. All resources (cloud apps + agent blueprints + agent identities).
       1. All agent resources (agent blueprints and agent identities).
       1. Specific resources grouped by custom security attributes.
-      1. Specific resources based on their GUID.
+      1. Specific resources based on their appId.
       1. Agent blueprints (targeting the blueprint covers the agent identities parented by the blueprint).
 1. Conditions 
    1. Agent risk (high, medium, low).
@@ -159,6 +159,8 @@ After you complete the previous steps, create a Conditional Access policy using 
 
 ### [Using the enhanced object picker](#tab/enhanced-object-picker)
 
+#### Create Conditional Access policy using the enhanced object picker
+
 Alternatively organizations can create a Conditional Access policy using the enhanced object picker to block all agent identities except those vetted and approved by your organization. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
@@ -186,6 +188,8 @@ Alternatively organizations can create a Conditional Access policy using the enh
 1. Select **Create** to create your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
+
+---
 
 ### Block high risk agent identities from accessing my organization’s resources
 
