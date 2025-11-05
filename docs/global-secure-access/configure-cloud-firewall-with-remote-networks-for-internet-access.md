@@ -71,15 +71,15 @@ This preview supports these scenarios:
 
    1. Provide a **Name** and **Description**.
 
-   1. Assign a priority to the rule relevant to other rules in this policy.
+   1. Assign a priority to the rule relevant to other rules in this policy. Rule priority must be greater than or equal to 100 and should be unique within the policy. Lower value means higher priority.
 
-   1. Select Rule settings **Status** to set to **Enable** or **Disable**.
+   1. Select Rule settings **Status** to set to **Enable** or **Disable**. Default status is disabled and starting the rule with disabled status is recommended until ready to enforce. 
 
    1. Configure the source and destination matching conditions. Note these important limitations:
 
-      - IPs are defined as IPs or Classless Inter-Domain Routings (CIDRs).
+      - IPs are defined as IPs, IP ranges, or Classless Inter-Domain Routings (CIDRs).
 
-      - Destination Fully Qualified Domain Name (FQDN) isn't supported currently so we recommend keeping it at the **Not set** value (default).
+      - Destination Fully Qualified Domain Names (FQDNs) aren't supported currently so we recommend keeping it at the **Not set** value (default).
 
    1. Set the **Action** to **Allow** or **Block**.
 
@@ -96,7 +96,7 @@ This preview supports these scenarios:
    > - Destination Port = 443
    > - Protocol = TCP
    >
-   > This firewall rule matches traffic that simultaneously meets the conditions for source IP, source Port, destination Port, destination IP, and Protocol.
+   > This firewall rule matches traffic that simultaneously meets the conditions for source IP, source Port, destination Port, destination IP, and Protocol. Not set values (default) in source and destination matching conditions are ignored. 
 
 4. (Optional) Update any values in the rule and save them.
 
@@ -121,6 +121,8 @@ This preview supports these scenarios:
 2. Click on **Edit profile**, then select **Link policy** to link an existing cloud firewall policy.
 
 :::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png":::
+
+Only one cloud firewall policy can be linked to a baseline profile. Linking a cloud firewall policy to a security profile other than the baseline profile won’t have any effect.
 
 ### Enable or disable the linked firewall policy to the baseline profile
 
