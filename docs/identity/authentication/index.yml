@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: justinha
   ms.author: justinha
-  ms.date: 11/05/2025
+  ms.date: 11/04/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -52,6 +52,22 @@ landingContent:
             url: howto-sspr-deployment.md
           - text: Deploy multifactor authentication
             url: howto-mfa-getstarted.md
+
+  # Card
+  - title: Microsoft Entra account recovery
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: What is Microsoft Entra account recovery?
+            url: concept-self-service-account-recovery.md
+          - text: FAQs about Microsoft Entra account recovery
+            url: self-service-account-recovery.yml
+      - linkListType: how-to-guide
+        links:
+          - text: Configure Microsoft Entra account recovery
+            url: how-to-account-recovery-configure.md
+          - text: How users can recover their accounts
+            url: how-to-account-recovery-user-setup.md
 
   # Card
   - title: Enable Microsoft Entra multifactor authentication
