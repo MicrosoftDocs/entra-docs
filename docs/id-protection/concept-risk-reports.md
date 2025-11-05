@@ -117,7 +117,7 @@ Administrators can then choose to return to the user's risk or sign-ins report t
 
 > [!NOTE]
 > Our system might detect that:
-> - the risk event that contributed to the user risk score was a false positive; or
-> - the user risk was remediated with policy enforcement, such as completing an MFA prompt or secure password change.
+> - the risk event that contributed to the risk score was a false positive; or
+> - the risk was remediated with policy enforcement, such as completing an MFA prompt or secure password change.
 >
 > Therefore, our system dismisses the risk state and a risk detail of "AI confirmed sign-in safe" surfaces and no longer contributes to the user's risk.

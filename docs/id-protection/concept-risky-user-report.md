@@ -21,7 +21,7 @@ This article provides an overview of the information and actions available in th
 
 To access this report, you need:
 
-- Microsoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
+- Microsoft Entra ID Free, Microsoft Entra ID P1 for limited data on users.
 - Microsoft Entra ID P2 licenses for full access to the risky user data.
 - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) are the least privileged roles required to use the *standard view* of the report.
 - [Security Administrator](../identity/role-based-access-control/permissions-reference.md#search-administrator) is required to use the *agent view* of the report and access the Risk Management Agent features.
