@@ -5,6 +5,8 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
+  - name: Governing Agent IDs (Preview)
+    href: agent-ID-governance-overview.md    
 
 
 - name: Scenarios
@@ -416,7 +418,9 @@
         - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
-          href: manage-workflow-insights.md             
+          href: manage-workflow-insights.md
+        - name: Agent ID sponsor tasks (Preview)
+          href: agent-sponsor-tasks.md                
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow

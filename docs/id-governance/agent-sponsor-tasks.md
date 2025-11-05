@@ -14,15 +14,15 @@ ms.date: 10/25/2025
 # Agent ID sponsor tasks in Lifecycle Workflows (Preview)
 
 
-Managing agent identities (ID) sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent ID sponsors are responsible for overseeing the lifecycle and access decisions of agent IDs. Keeping sponsor information up to date helps with effective governance and compliance. 
+Governing agent identities (ID) sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent ID sponsors are responsible for overseeing the lifecycle and access decisions of agent IDs. Keeping sponsor information up to date helps with effective governance and compliance. 
 
-Lifecycle Workflows currently contain the following two tasks to help you manage the sponsor of agent IDs:
+Lifecycle Workflows currently contain the following two tasks that involve the governing of sponsors of agent IDs:
 
 - [Send email to manager about sponsorship transfer](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-transfer)
 - [Send email to cosponsors about sponsor changes](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes)
 
 
-This article explains how to configure Lifecycle Workflows to streamline agent ID sponsor management.
+This article explains how to configure Lifecycle Workflows to streamline agent ID sponsor governance.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ This article explains how to configure Lifecycle Workflows to streamline agent I
 
 ## Create a sponsor workflow using the Microsoft Entra Admin Center
 
-To create a workflow that notifies the manager or cosponsors of an agent ID of a user move for an existing sponsor of an agent ID, you'd do the following steps:
+To create a workflow that notifies the manager or cosponsors of an existing agent ID sponsor's move, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
