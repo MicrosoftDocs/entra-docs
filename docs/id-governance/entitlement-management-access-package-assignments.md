@@ -24,7 +24,7 @@ To use entitlement management to assign users and to access packages, you must h
 - Enterprise Mobility + Security (EMS) E5 license
 - Microsoft Entra ID Governance subscription
 
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license.md)]
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## View who has an assignment
 
