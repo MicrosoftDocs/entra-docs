@@ -34,10 +34,10 @@ To complete the steps in this process, you must have the following prerequisites
 
 To configure Prompt Shield for your organization, complete the following steps:
 1. [Enable the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md#enable-the-internet-access-traffic-forwarding-profile) and configure the appropriate user assignments.
-1. Configure [TLS inspection settings](how-to-transport-layer-security-settings.md) and [TLS Inspection policies](how-to-transport-layer-security.md).
+1. Configure [Transport Layer Security (TLS) inspection settings](how-to-transport-layer-security-settings.md) and [TLS Inspection policies](how-to-transport-layer-security.md).
 1. Install and configure the Global Secure Access client on user devices. Follow the steps in [Install the Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md).
     > [!IMPORTANT]
-    > Before continuing, test and ensure your client’s internet traffic is routed through the Global Secure Access service.
+    > Before you continue, test and ensure your client’s internet traffic is routed through the Global Secure Access service.
 
 ## Create a new content policy for Prompt Shield
 
@@ -50,7 +50,7 @@ To create new content policies for Prompt Shield protection:
 1. Select **Next**.
 1. On the **Rules** tab, select **Add rule** > **Prompt shield scan rule**.
 1. On the **Add Prompt shield scan rule** page, configure the appropriate settings for your organization.
-1. Select **Add destination** and specify the FQDNs of your Enterprise Gen AI apps.
+1. Select **Add destination** and specify the fully qualified domain name (FQDN) of your Enterprise Gen AI apps.
 1. Select **Add** and then select **Next**.
 1. To create the content policy, select **Create**.
 
@@ -82,24 +82,13 @@ For more information, see [Create a Conditional Access policy targeting Global S
 ## Known limitations
 
 - Prompt Shield currently supports only text prompts. It doesn't support files.
-- For Prompt Shield we support only JSON-based GenAI apps (for example, for public Apps chatGPT will work but 
-Gemini won't as it uses URL-based encoding).
-- Only exact URL matching for Prompt Shield (and this isn't the URL that is in your browser, this is URL which is 
-used to send prompt to the app) 
-- Note that apps may use multiple URLs and FQDNs under the hood when you interact with them (so when not 
-seeing policies applied check with dev tools to confirm URLs and FQDNs, and collect flow correlation ids for 
-investigation). E.g. chatgpt uses different URLs and FQDNs:
-    - For prompt, they use "https://chatgpt.com/backend-api/conversation", 
-"https://chatgpt.com/backend-api/f/conversation" (and "https://" part is required!, so they can use
-browser dev tools to get exact).
-    - For file upload they use FQDNs: files.oaiusercontent.com, files08.oaiusercontent.com,
-files09.oaiusercontent.com, etc.
-- For WebCat based matching you need a webcat policy (eg. something in baseline profile that will trigger 
-webcat - currently, we reuse web categorization results from web filtering filter).
-- Multipart encoding is not supported, so file policy will not work for such applications (e.g. Google Drive uses 
-multipart encoding for file upload) 
-- Compressed content will be detected just as zip (we don't decompress content yet) 
-- Accuracy of true file type detection is not 100%. 
+- Prompt Shield supports only JSON-based GenAI apps. It doesn't support URL-based encoding.
+- Prompt Shield supports only exact URL matching for the URL used to send prompt to the app.
+- Apps might use multiple URLs and FQDNs under the hood when you interact with them, which might prevent the policy from being applied.
+- WebCAT-based matching requires a WebCAT policy.
+- The file policy doesn't support applications that use multipart encoding.
+- The file policy can't decompress content. It detects compressed content as a zip file.
+- Accuracy of true file type detection isn't 100%. 
 
 ## Related content
 
