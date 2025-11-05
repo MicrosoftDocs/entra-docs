@@ -43,7 +43,7 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 14. After you take the photo, the identity proofing application or page verifies your identity, and will issue a Verifiable Credential into your Microsoft Authenticator app.
 
     >[!Note]
-    > This may be presented by the provider as an option such as **Add Verifiable Credential** or **Open in Authenticator**.
+    > This may be presented by the provider as an option such as **Add a Verified ID** or **Open in Authenticator**.
     
 15. When you're prompted,  **Open** and unlock Microsoft Authenticator.
 16. You'll then be asked to complete a quick Face Check before your account ownership can be validated. 
