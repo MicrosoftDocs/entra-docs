@@ -50,8 +50,8 @@ landingContent:
         links:
           - text: Get started with phishing-resistant MFA
             url: howto-sspr-deployment.md
-          - text: Deploy phishing-resistant MFA
-            url: how-to-deploy-phishing-resistant-passwordless-authentication.md
+          - text: Deploy multifactor authentication
+            url: howto-mfa-getstarted.md
 
   # Card
   - title: Enable Microsoft Entra multifactor authentication
