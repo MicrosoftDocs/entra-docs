@@ -6,7 +6,7 @@ description: Learn which Microsoft Entra features are available in Azure Governm
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 10/14/2025
+ms.date: 10/31/2025
 
 
 ms.author: justinha
@@ -111,7 +111,7 @@ This following tables list Microsoft Entra feature availability in Azure for US 
 |Workday Writeback | &#x2705; |
 |SuccessFactors to Microsoft Entra user provisioning | &#x2705; | 
 |SuccessFactors to Writeback | &#x2705; |
-|API-driven inbound provisioning | &#10060; |
+|API-driven inbound provisioning | &#x2705; |
 |Provisioning agent configuration and registration with Gov cloud tenant| Works with special undocumented command-line invocation:<br> `AADConnectProvisioningAgent.Installer.exe ENVIRONMENTNAME=AzureUSGovernment` |
 
 ## Other Microsoft Entra products

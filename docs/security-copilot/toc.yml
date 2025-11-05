@@ -51,21 +51,21 @@ items:
   - name: Conditional Access optimization agent
     items: 
     - name: Get started
-      href: ../identity/conditional-access/agent-optimization.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: ./conditional-access-agent-optimization.md
     - name: Review and approve suggestions
-      href: ../identity/conditional-access/agent-optimization-review-suggestions.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: ./conditional-access-agent-optimization-review-suggestions.md
     - name: Chat with the optimization agent
-      href: ../identity/conditional-access/agent-optimization-chat.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: ./conditional-access-agent-optimization-chat.md
     - name: Optimization agent logs and metrics
-      href: ../identity/conditional-access/agent-optimization-logs-metrics.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: ./conditional-access-agent-optimization-logs-metrics.md
     - name: Phased rollout
-      href: ../identity/conditional-access/agent-optimization-phased-rollout.md?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: ./conditional-access-agent-optimization-phased-rollout.md
   - name: Access Review Assistant (Preview)
     items: 
     - name: Get started (Preview)
-      href: /entra/id-governance/access-review-agent?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: access-review-agent.md
     - name: Access Review Agent logs and Metrics (Preview)
-      href: /entra/id-governance/access-review-agent-logs-metrics?toc=/entra/copilot/toc.json&bc=/entra/copilot/breadcrumb/toc.json
+      href: access-review-agent-logs-metrics.md
 - name: Responsible AI
   items:
   - name: Responsible AI overview

@@ -92,7 +92,7 @@
       href: policy-all-users-security-info-registration.md
     - name: Require MFA for risky sign-in
       href: policy-risk-based-sign-in.md
-    - name: Require password change for risky users
+    - name: Require remediation for risky users
       href: policy-risk-based-user.md
     - name: Require authentication strength for device registration
       href: policy-all-users-device-registration.md

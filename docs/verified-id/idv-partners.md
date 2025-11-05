@@ -5,7 +5,7 @@ ms.service: entra-verified-id
 author: barclayn
 manager: pmwongera
 ms.topic: how-to
-ms.date: 09/23/2025
+ms.date: 10/14/2025
 ms.author: barclayn
 ---
 
@@ -93,15 +93,19 @@ To test the user flow, you could always deploy one of the sample applications in
 
 The following table showcases the list of Verified ID  IDV partners. If you're an IDV partner seeking to get listed in this gallery, submit your solution details using the self-submission form: [https://aka.ms/VIDCertifiedPartnerForm](https://aka.ms/VIDCertifiedPartnerForm).
 
-| **IDV partner** | **Description** |
-|:-------------------------|:--------------|
-|:::image type="content" source="media/partner-gallery/au10tix.png" alt-text="Screenshot of au10tix logo."::: | [AU10TIX](https://www.au10tix.com/solutions/verifiable-credentials/) improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
-| :::image type="content" source="media/partner-gallery/lexisnexis.png" alt-text="Screenshot of a LexisNexis logo."::: | [LexisNexis](https://solutions.risk.lexisnexis.com/did-microsoft) risk solutions Verifiable credentials enable faster onboarding for employees, students, citizens, or others to access services. |
-| :::image type="content" source="media/partner-gallery/vu-logo.png" alt-text="Screenshot of a Vu logo."::: | [Vu](https://www.vusecurity.com/es/products/digital-identity) verifiable credentials with just a selfie and your ID.|
-| :::image type="content" source="media/partner-gallery/onfido.jpeg" alt-text="Screenshot of an Onfido logo."::: | Start issuing and accepting verifiable credentials in minutes. With verifiable credentials and Onfido you can verify a person’s identity while respecting privacy. Digitally validate information on a person’s ID or their biometrics.|
-| :::image type="content" source="media/partner-gallery/jumio.jpeg" alt-text="Screenshot of a Jumio logo."::: | [Jumio](https://www.jumio.com/microsoft-verifiable-credentials/) is helping to support a new form of digital identity by Microsoft based on verifiable credentials and decentralized identifiers standards to let consumers verify once and use everywhere.|
-| :::image type="content" source="media/partner-gallery/idemia.png" alt-text="Screenshot of an Idemia logo."::: | [Idemia](https://na.idemia.com/identity/verifiable-credentials/) Integration with Verified ID enables “Verify once, use everywhere” functionality.|
-| :::image type="content" source="media/partner-gallery/clear.jpeg" alt-text="Screenshot of a Clear logo."::: | [Clear](https://ir.clearme.com/news-events/press-releases/detail/25/clear-collaborates-with-microsoft-to-create-more-secure) Collaborates with Microsoft to Create More Secure Digital Experience Through Verification Credential.|
+| Partner | Partner documentation | Description |
+|---------|----------------------|-------------|
+| 1Kosmos | [1Kosmos deployment guide](https://aka.ms/1kosmosvidguide) | 1Kosmos and Microsoft Entra Verified ID unite to deliver trusted, privacy-preserving identity verification that empowers secure, passwordless access across ecosystems. |
+| Au10tix | [Au10tix documentation](https://www.au10tix.com/solutions/verifiable-credentials/) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
+| Clear | [Clear documentation](https://ir.clearme.com/news-events/press-releases/detail/25/clear-collaborates-with-microsoft-to-create-more-secure) | Clear Collaborates with Microsoft to Create More Secure Digital Experience Through Verification Credential. |
+| ID Dataweb | [ID Dataweb deployment guide](https://aka.ms/iddatawebguide) | ID Dataweb offers secure and low friction identity verification processes to ensure the validity of your Microsoft Entra Verified ID credential. Easy to integrate, easy for your users, secure for your enterprise. |
+| Idemia | [Idemia documentation](https://na.idemia.com/identity/verifiable-credentials/) | Idemia Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
+| Jumio | [Jumio deployment guide](https://www.jumio.com/microsoft-verifiable-credentials/) | Jumio is helping to support a new form of digital identity by Microsoft based on verifiable credentials and decentralized identifiers standards to let consumers verify once and use everywhere. |
+| LexisNexis | [LexisNexis documentation](https://solutions.risk.lexisnexis.com/did-microsoft) | LexisNexis risk solutions Verifiable credentials enable faster onboarding for employees, students, citizens, or others to access services. |
+| Persona | [Persona deployment guide](https://aka.ms/personaguide) | Persona integrates with Microsoft Entra Verified ID to unlock identity verification processes, enabling trusted user-owned credentials and frictionless onboarding. |
+| Transmit Security | [Transmit Security deployment guide](https://aka.ms/transmitsecurityguide) | Mosaic by Transmit Security integrates with Microsoft Entra Verified ID to deliver seamless, secure, and accurate identity verification through verifiable credentials. |
+| Vu | [Vu documentation](https://www.vusecurity.com/es/products/digital-identity) | Vu verifiable credentials with just a selfie and your ID. |
+| ZealID | [ZealID deployment guide](https://developer.zealid.com/docs/zealid-vc) | ZealID Verified Credential Wallet powered by Microsoft Entra Verified ID completes the full cycle of identification and signing for various workflows. |
 
 
 
