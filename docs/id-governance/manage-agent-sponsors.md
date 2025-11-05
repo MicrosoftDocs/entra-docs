@@ -1,0 +1,52 @@
+---
+title: Manage agent ID sponsors (Preview)
+description: This article describes workflow tasks that involve sponsors of agent identities (IDs).
+author: owinfreyATL
+ms.author: owinfrey
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
+ms.topic: how-to #Required; leave this attribute/value as-is
+ms.date: 10/25/2025
+
+#CustomerIntent: As a lifecycle workflows administrator, I want to create workflows that target agent ID sponsors so that agent ID sponsor management can be streamlined.
+---
+
+# Manage agent ID sponsors (Preview)
+
+
+Managing agent identities (ID) sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent ID sponsors are responsible for overseeing the lifecycle and access decisions of agent IDs. Keeping sponsor information up to date helps with effective governance and compliance. 
+
+Lifecycle Workflows currently contain the following two tasks to help you manage the sponsor of agent IDs:
+
+- [Send email to manager about sponsorship transfer](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-transfer)
+- [Send email to cosponsors about sponsor changes](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes)
+
+
+This article explains how to configure Lifecycle Workflows to streamline agent ID sponsor management.
+
+## Prerequisites
+
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+
+## Manage agent ID sponsors using workflows within the Microsoft Entra Admin Center
+
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
+
+1. On the workflow screen, select the specific mover or leaver workflow template you want to add the sponsorship email tasks to, or create a new workflow based on a template.
+    > [!NOTE]
+    > Both the **Send email to manager about sponsorship transfer** and **Send email to co-sponsors about sponsor changes** are mover and leaver tasks, and are only available as selectable tasks under workflow templates of the same category.
+1. On the **Basics** tab, after entering a unique display name and description for the workflow,  select your trigger and select **Next**.
+
+1. On the **Configure scope** screen, select the scope of the workflow and select **Next**.
+
+1. On the **Tasks** page, select which sponsor related tasks you want to include and select **Next**.
+    :::image type="content" source="media/manage-agent-sponsors/sponsor-workflow-tasks.png" alt-text="Screenshot of the sponsor workflow tasks.":::
+1. Review the created workflow, and then select **Create**. 
+
+## Next step
+
+- [Write concepts](manage-workflow-tasks.md)
+- [Manage workflow properties](manage-workflow-properties.md)

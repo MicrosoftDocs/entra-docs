@@ -905,6 +905,101 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 }
 ```
 
+### Send email to manager about sponsorship transfer
+
+Allows an email to be sent to the manager of an employee that has moved or left. This email notifies the manager that the employee, who moved or left, was the sponsor of one or more agent IDs. This allows the manager to decide if the agent ID should have a different employee as their sponsor.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+
+For Microsoft Graph, the parameters for the **Send email to manager about sponsorship transfer** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Send email to manager about sponsorship transfer       |
+|description     |  Notify sponsor's manager about agent identity sponsorship transfer.        |
+|taskDefinitionId     |  b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f      |
+
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "mover",
+    "continueOnError": false,
+    "description": "Notify sponsor's manager about agent identity sponsorship transfer.",
+    "displayName": "Send email to manager about sponsorship transfer",
+    "isEnabled": true,
+    "taskDefinitionId": "b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f  ",
+    "arguments": [
+        {
+            "name": "cc",
+            "value": "ac17d108-60cd-4eb2-a4b4-084cacda33f2,7d3ee937-edcc-46b0-9e2c-f832e01231ea"
+        },
+        {
+            "name": "customSubject",
+            "value": "{{userDisplayName}} has moved"
+        },
+        {
+            "name": "customBody",
+            "value": "Hello {{managerDisplayName}}\n\nwe are reaching out to let you know {{userDisplayName}} has moved in the organization and you have taken over their agent ID sponsorships.\n\nRegards\nYour IT department"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
+### Send email to co-sponsors about sponsor changes
+
+Allows an email to be sent to co-sponsors of an agent ID when a user, who was also a sponsor of the agent ID, has moved or left. This notifies cosponsors of changes happening to sponsorship of their agent ID.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+
+
+For Microsoft Graph, the parameters for the **Send email to co-sponsors about sponsor changes** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver, mover      |
+|displayName     |  Send email to co-sponsors about sponsor changes   |
+|description     |  Notify co-sponsors about agent identity sponsorship changes.       |
+|taskDefinitionId     |  ad3b85cd-75b1-43e7-b4b9-0e52faba3944      |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "mover",
+    "continueOnError": false,
+    "description": "Notify co-sponsors about agent identity sponsorship changes.",
+    "displayName": "Send email to co-sponsors about sponsor changes",
+    "isEnabled": true,
+    "taskDefinitionId": "ad3b85cd-75b1-43e7-b4b9-0e52faba3944",
+    "arguments": [
+        {
+            "name": "cc",
+            "value": "ac17d108-60cd-4eb2-a4b4-084cacda33f2,7d3ee937-edcc-46b0-9e2c-f832e01231ea"
+        },
+        {
+            "name": "customSubject",
+            "value": "{{userDisplayName}} has moved"
+        },
+        {
+            "name": "customBody",
+            "value": "Hello \n\nwe are reaching out to let you know {{userDisplayName}} has moved in the organization and will no longer have sponsorship authority over agent IDs they previously sponsored with you.\n\nRegards\nYour IT department"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
 ### Remove all license assignments from User
 
 Allows all direct license assignments to be removed from a user. For group-based license assignments, you would run a task to remove the user from the group the license assignment is part of.
