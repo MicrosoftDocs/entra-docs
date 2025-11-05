@@ -32,10 +32,6 @@ items:
       items:
         - name: Agent owners, sponsors, and managers
           href: agent-owners-sponsors-managers.md
-    - name: Tokens
-      items:
-        - name: Agent tokens
-          href: agent-tokens-md
   - name: Reference
     items:
     - name: Oauth protocol for Agent IDs

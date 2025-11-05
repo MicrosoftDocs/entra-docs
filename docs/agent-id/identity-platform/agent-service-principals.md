@@ -1,81 +1,72 @@
 ---
-title: Agent identity blueprints in Microsoft Entra agent ID
-description: Understand agent identity blueprints, how agents are defined, and how authentication works within the Agent ID platform.
+title: Agentic service principals
+description: Learn about agentic service principals in Microsoft Entra, including Agent ID Blueprint Principal (AB-SP) and Agent Identity (Agent ID), and how they differ from traditional service principals in authentication, permissions, and lifecycle management.
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: pmwongera
-ms.date: 11/04/2025
 ms.service: entra-id
 ms.topic: concept-article
+ms.date: 11/04/2025
+ms.reviewer: dastrock
 
-#customer intent: As a developer or IT administrator building AI agents, I want to understand agent identity blueprints so that I can properly create, authenticate, and manage agent identities within my organization's Microsoft Entra environment.
+#customer-intent: As a developer or IT administrator, I want to understand how agentic service principals work and how they differ from traditional service principals, so that I can effectively implement authentication, permissions, and lifecycle management for agentic applications in my organization.
 ---
 
-# Agent identity blueprints in Microsoft Entra agent ID
+# Agent service principals
 
-An Agent identity blueprint (Agent ID blueprint) is a special application registration in Microsoft Entra agent ID that serves as a template for creating agent identities. It establishes the foundation for how agents are created, authenticated, and managed within an organization.
+The agentic model introduces specific service principal types with distinct roles and characteristics compared to nonagentic application service principals. This article explains service principals in the agentic application model, how they relate to agent identity blueprint and differ from nonagentic application service principals.
 
-## Defining an agent
+## Agent ID blueprint principal
 
-In its most fundamental form, an agent is an application that attempts to achieve a goal by understanding its environment / context, making decisions and acting on them autonomously using available tools. Agents can act with or without human intervention when provided with proper goals or objectives.
+Agent ID blueprint principals are created automatically when an agent ID blueprint is instantiated in a tenant. These service principals provide the runtime representation of the agent ID blueprint within the tenant's directory and enable the agent ID blueprint to perform operations like creating instances and managing lifecycle operations.
 
-Key components of an agent include:
+The creation process involves consent operations that require permissions like `AgentIdentity.Create` and `ServicePrincipal.Manage.OwnedBy`. The agent ID blueprint principal enables the agent ID blueprint to obtain app-only tokens for Microsoft Graph calls necessary to create and manage agent identity (agent ID). This process is essential because agentic applications themselves can't directly obtain tokens for MS Graph operations.
 
-- **Model**: Model based agents have language models that serve as the centralized decision maker for agent processes. Models can be general purpose, multimodal, or fine-tuned based on specific agent architecture needs.
+## Agent identity as service principal
 
-- **Orchestration Layer**: The cyclical process that governs how the agent takes in information, performs internal reasoning, and uses that reasoning to inform its next action. This loop continues until the agent reaches its goal or a stopping point. Complexity varies from simple decision rules to chained logic.
+Agent IDs are modeled as single-tenant service principals with a new subtype classification of "agentic." This design uses existing Microsoft Entra ID service principal infrastructure while adding agentic-specific behaviors and constraints.
 
-- **Memory**: Memory in agents provides agents with more dynamic and up-to-date information, ensuring responses are accurate and relevant. This memory allows developers to provide more data in its original format to an agent, without requiring data transformations, model retraining, or fine-tuning. It differs from typical large language models (LLMs) that remain static, retaining only the knowledge they were initially trained on.
+Agent IDs inherit their protocol properties from their parent agent ID blueprint through the ParentID relationship. Unlike traditional service principals that operate independently, Agent IDs require their parent agent ID blueprint for impersonation and token exchange operations.
 
-- **Tools**: Tools enable agents to interact with their environment and extend their capabilities. Tools can include web search, database access, APIs, file systems, or integrations with other software. Each tool requires careful consideration of security, permissions, and error handling. By using tools, agents can perform complex tasks, access information, and control external systems, making them more effective and adaptable.
+Agent IDs can be granted permissions directly and appear in sign-in logs when tokens are issued for agent operations. They serve as the primary identity that customers reason about when managing agent permissions and access.
 
-Agentic workflows are in whole or part planned and driven autonomously and independently of a human user. There are many types of agentic workflows across Microsoft products, from the ones initiated directly by a user, to the ones that operate autonomously. Subcomponents, skills, tools, or APIs used in those workflows might or might not themselves be "agentic."
+Agent Identity (Agent ID) service principals are created by their parent agent ID blueprint using Microsoft Graph calls with app-only tokens and appropriate roles. The creation process establishes the parent-child relationship and configures the necessary FIC relationships for impersonation.
 
-## Defining an agent identity blueprint
+## Key Differences from nonagentic service principals
 
-An agent identity blueprint is a special application registration in Microsoft Entra agent ID that has permissions to act on behalf of agent identities or agent users. It's represented by its application ID (Agent identity blueprint Client ID). The agent identity blueprint is configured with credentials (typically FIC+MSI or client certificates) and permissions to acquire tokens for itself to call Microsoft Graph. It's the app that you develop. It's a confidential client application. The only permissions it can have are maintain (create/delete) agent identities using the Microsoft Graph. Agent identity blueprints can be multitenant, allowing a service to provision many agent identities in each of tenants where the agent ID blueprint is added.
+### Impersonation model
 
-An agent ID blueprint serves three primary purposes:
+Nonagentic service principals operate using their own credentials and identity. Agentic service principals use an impersonation model where the agent ID blueprint impersonates the agent ID to perform operations on the instance's behalf.
 
-- The blueprint establishes the "type" or "kind" of agent identity, such as "Contoso Sales Agent" or "DataDog Cloud Monitoring Agent." It allows customers to manage many individual AI agents of a common type as a collection. For instance, customers can write security policy that says "block all requests from all Contoso Sales Agent IDs." The blueprint also records attributes, metadata, and settings that are common across all of its agent IDs, such as role definitions.
+This impersonation model enables the agent ID blueprint to obtain tokens where the agent ID appears as the client, even though the agent ID blueprint is performing the actual token exchange. The resulting tokens maintain the agent ID's identity in audit logs while enabling the agent ID blueprint to orchestrate complex token flows.
 
-- The service that creates agent identities in tenants typically uses the blueprint to authenticate. Blueprints have an OAuth client ID and credentials that can include: client secrets, certificates, and various federated identity credentials such as managed identities. Services use these credentials to request access tokens from Microsoft Entra ID, then use those access tokens to authenticate requests to create, update, or delete agent identities. In this sense, the blueprint is the creator of an agent identity.
+### Multi-instance relationship
 
-- The service or platform that hosts an AI agent must use the blueprint during runtime authentication. The service uses a blueprint's OAuth credentials to request an access token, then presents that access token to Microsoft Entra ID to request a token as one of its agent identities.
+Nonagentic applications typically have a one-to-one relationship between application and service principal. The agentic model introduces a one-to-many relationship where a single agent ID blueprint can have multiple agent ID service principals across tenants and within tenants.
 
-Agent identity blueprints can be multitenant, allowing a service to provision many agent identities in each of tenants where the agent ID blueprint is added. Agent ID blueprints can't request tokens from Microsoft Entra ID outside of the tokens referenced in the previous section.
+This multi-instance model enables scenarios like creating multiple agent IDs per Teams channel, per project, or per organizational unit, all sourcing their protocol properties from the same parent agent ID blueprint.
 
-## Agent identity blueprint principals
+### Runtime credential management
 
-An agent identity blueprint principal is an object in Microsoft Entra agent ID that represents the presence of an agent ID blueprint within a specific tenant. When an agent identity blueprint application is added to a tenant, Microsoft Entra creates a corresponding principal object, which is the agent identity blueprint principal.
+Nonagentic service principals manage their own credentials (certificates, secrets, and managed identities). The service principal presents these credentials to obtain tokens for itself or to perform On-Behalf-Of operations for users. Agent identities rely on credentials from the parent agent ID blueprint and can't manage credentials independently. Agent ID service principals don't perform direct authentication.
 
-This principal serves several important roles:
+### Consent and permission model
 
-- **Token Issuance**: When the agent ID blueprint is used to acquire tokens within a tenant, the resulting token's `oid` (object ID) claim references the agent ID blueprint principal. It ensures that any authentication or authorization performed by the agent ID blueprint is traceable to its principal object in the tenant.
+Nonagentic service principals receive permissions through direct assignment or admin consent. Agentic service principals support both direct permission assignment and inheritance from parent applications.
 
-- **Audit Logging**: Actions performed by the agent ID blueprint, such as creating agent identities, are recorded in audit logs as being executed by the agent ID blueprint principal. It provides clear accountability and traceability for operations initiated by the agent ID blueprint.
+When inherit delegated permissions is enabled, an agent ID can inherit delegated permissions from their parent agent identity blueprint, reducing consent complexity for multi-instance scenarios. This inheritance applies when impersonation is used and enables efficient permission management across multiple instances.
 
-- **Orchestration and Impersonation**: Agent ID blueprint principals act as the orchestrators for agentic workflows. They're responsible for impersonating agent identities and can serve as the token audience in On-Behalf-Of (OBO) authentication scenarios.
+## Permission and role assignment
 
-Agent identity blueprints are always created in an Entra tenant. A blueprint is often used create agent identities in that same tenant. These blueprints are called "single-tenant". Agent identity blueprints can also be configured as "multi-tenant" and published to potential customers via Microsoft catalogs. Customers can then add these blueprints to their tenant, so that they can be used to create agent identities.
+Agentic service principals support both application permissions (for app-only operations) and delegated permissions (for user-delegated operations). Permission assignment can be direct or inherited depending on the scenario requirements.
 
-In either case, an agent identity blueprint principal is always created when a blueprint is added to a tenant. The presence of this principal indicates that a blueprint exists in a tenant and can be used to create agent identities. Customers can remove a blueprint from their tenant by deleting the agent identity blueprint principal.
+**Direct assignment**: Permissions can be assigned directly to an agent ID for instance-specific access requirements.
 
-## Create an agent ID blueprint
+**Inherited assignment**: When `InheritDelegatedPermissions` is enabled on the service principal, agent IDs inherit delegated permissions from their parent agent ID blueprint, simplifying permission management in multi-instance scenarios.
 
-There are multiple ways to create an agent ID blueprint in Microsoft Entra agent ID.
+**Role assignment**: Agent IDs can be assigned Azure RBAC roles and directory roles like nonagentic service principals, enabling resource access and administrative operations. Agent ID blueprints can't be assigned Azure RBAC roles
 
-## Authentication workflows
+## Audit and logging
 
-Agent ID blueprints handle authentication through OAuth 2.0 flows. Agent ID blueprints are configured with credentials for authentication, typically including:
+Agentic service principals maintain distinct identities in audit logs and sign-in reports. When an agent ID performs operations, the logs show the agent ID as the acting client while indicating the relationship to the parent AB.
 
-- Federated Identity Credentials (FIC) and Managed Service Identity (MSI)
-- Client certificates
-- Client secrets
-
-In agentic workflows, the agent ID blueprint acts as the "actor" - the application that performs actions. The subject identity (either a user or autonomous application) determines the permissions available to the agent. Agent ID blueprints facilitate the OAuth 2.0 flow where:
-
-- The agent instance is the client (or actor) for OAuth flows
-- The agent ID blueprint serves as the template, providing protocol properties (redirect URLs, App URIs, secrets)
-
-Agent ID blueprints have a parent-child relationship with agent identities, where the blueprint is the parent. It allows the agent ID blueprint to be instantiated multiple times, for example, once per Teams channel.
+Sign-in logs differentiate between agent ID blueprints, agent identities, agent users, and agent builder entities. This differentiation enables clear role identification (client, credential, subject) depending on the specific operation being performed. This enables audit trails for agentic operations.
