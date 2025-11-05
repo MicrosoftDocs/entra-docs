@@ -46,8 +46,6 @@ To configure Insider Risk Management-based approvals for an access package in th
     :::image type="content" source="media/entitlement-management-configure-risk-approvals/insider-risk-levels-settings.png" alt-text="Screenshot of the insider risk level settings in entitlement management.":::
 
 
-
-
 ## Approving a risky user
 
 When a risky user submits a request for an access package, administrators are able to see their pending status via the requests page within the access package:
