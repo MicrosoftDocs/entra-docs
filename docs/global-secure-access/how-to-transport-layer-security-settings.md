@@ -97,4 +97,5 @@ Examples of configuring TLS certificate using ADCS and OpenSSL can be found in b
 * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
 * [How to configure Transport Layer Security inspection policy](how-to-transport-layer-security.md)
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
+* [Troubleshoot Transport Layer Security inspection issues](troubleshoot-transport-layer-security.md)
 

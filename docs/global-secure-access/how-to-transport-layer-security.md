@@ -104,3 +104,4 @@ To disable TLS inspection:
 * [Create a TLS certificate using OpenSSL](scripts/powershell-open-secure-sockets-layer.md) 
 * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
+* [Troubleshoot Transport Layer Security inspection issues](troubleshoot-transport-layer-security.md)

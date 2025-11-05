@@ -240,6 +240,8 @@ items:
         href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"
         href: troubleshoot-distributed-file-system.md
+      - name: Troubleshoot Transport Layer Security inspectionissues
+        href: troubleshoot-transport-layer-security.md
   - name: Partner ecosystem
     expanded: true
     items:
