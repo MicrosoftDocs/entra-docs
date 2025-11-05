@@ -101,9 +101,11 @@ There are two key business scenarios that we envision Conditional Access policie
 
 The first scenario is your organization is testing agents and you want to configure a Conditional Access policy to allow only approved agents to access specific resources. This can be accomplished either by tagging all agents and resources with custom security attributes you target in policy, or by manually picking the agents and resources using the enhanced object picker.
 
+The second scenario looks at agents and integrates signals from Microsoft Entra ID Protection to block agents performing risky behaviors.
+
 ### [Using custom security attributes](#tab/custom-security-attributes)
 
-The recommended approach is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
+The recommended approach for the first scenario is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
 ##### Create and assign custom attributes
 
@@ -134,21 +136,17 @@ After you complete the previous steps, create a Conditional Access policy using 
          1. Set **Configure** to **Yes**. 
          1. Select the Attribute we created earlier called **agentStatus**.
          1. Set **Operator** to **Contains**.
-         1. Set **Value** to **approved**.
+         1. Set **Value** to **Approved**.
          1. Select **Done**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
-   1. Include All Exclude the following... JOHN TO UPDATE
-   1. Include **Select resources**.
-      1. Select **Select resources based on attributes**.
-      1. Set **Configure** to **Yes**.
-      1. Select the Attribute we created earlier called **businessImpact**.
-      1. Set **Operator** to **Contains**.
-      1. Set **Value** to **low**.
-      1. Select a second Attribute called **department**.
-      1. Set **Operator** to **Contains**.
-      1. Set **Value** to **HR**.
-      1. Select **Done**.
+      1. Include **All resources (formerly 'All cloud apps')**
+      1. Exclude **Select resources**.
+         1. Select **Select resources based on attributes**.
+         1. Set **Configure** to **Yes**.
+         1. Select the Attribute we created earlier called **businessImpact**.
+         1. Set **Operator** to **Contains**.
+         1. Set **Value** to **Low**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
    1. Select **Select**.
@@ -176,11 +174,11 @@ Alternatively organizations can create a Conditional Access policy using the enh
          1. Select **Select**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
-   1. Include All Exclude the following... JOHN TO UPDATE
-   1. Include **Select resources**.
-      1. Select **Select specific resources**.
-      1. Using the enhanced object picker, switch betweent the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
-      1. Select **Select**.
+      1. Include **All resources (formerly 'All cloud apps')**
+      1. Exclude **Select resources**.
+         1. Select **Select specific resources**.
+         1. Using the enhanced object picker, switch betweent the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
+         1. Select **Select**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
    1. Select **Select**.
@@ -193,7 +191,7 @@ Alternatively organizations can create a Conditional Access policy using the enh
 
 ### Block high risk agent identities from accessing my organization’s resources
 
-Create a Conditional Access policy to block high-risk agent identities based on signals from Microsoft Entra ID Protection. ADD LINK TO SARAH'S RISK ARTICLE
+Create a Conditional Access policy to block high-risk agent identities based on signals from Microsoft Entra ID Protection.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
