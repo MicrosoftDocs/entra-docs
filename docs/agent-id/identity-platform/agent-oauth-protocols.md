@@ -20,7 +20,7 @@ The agentic model supports different creation patterns that affect protocol flow
  
 All agentic entities are confidential clients that can also serve as APIs for On-Behalf-Of scenarios. Interactive flows aren't supported for any agentic entity type, ensuring that all authentication occurs through programmatic token exchanges rather than user interaction flows.
  
-[!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-sdks.md)]
+[!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-libraries.md)]
  
 ## Prerequisites
  
@@ -56,10 +56,10 @@ Agents can operate in three primary modes:
 - Agents operating on their own behalf using user principals created specifically for that agent (for instance agents having their own mailbox).
  
 Additionally, agent builders allow platforms to create individual Agent APIs or self-hosted agentic applications using a different kind of flow.
- 
-[!INCLUDE [Managed identities support](./includes/managed-identities-preffered.md)]
- 
-[!INCLUDE [Dont use secrets](./includes/dont-use-secrets.md)]
+
+[!INCLUDE [Managed identities support](./includes/managed-identities-preferred.md)]
+
+[!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
  
 ## Oauth protocols
  

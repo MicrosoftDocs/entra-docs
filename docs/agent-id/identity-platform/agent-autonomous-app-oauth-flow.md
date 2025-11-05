@@ -17,9 +17,9 @@ App-only operations enable agent IDs to act autonomously without user context, u
 
 Agent ID blueprints can only impersonate their child agent identities. Agent IDs can only be impersonated by a single agent ID blueprint. Agent ID blueprints can impersonate many agent IDs. No agent ID can be owned by multiple agents. Agent identities are always single-tenant regardless of their parent Agent identity blueprint's tenancy model. Each agent ID operates within one tenant's security and policy boundaries.
 
-[!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-sdks.md)]
+[!INCLUDE [Use Microsoft SDKs](./includes/use-microsoft-libraries.md)]
 
-[!INCLUDE [Managed identities support](./includes/managed-identities-preffered.md)]
+[!INCLUDE [Managed identities support](./includes/managed-identities-preferred.md)]
 
 ## Protocol steps
 
@@ -29,7 +29,7 @@ The following are the protocol steps.
 
 1. Agent ID blueprint requests an exchange token T1. The agent ID blueprint presents its credentials which could be a secret, a certificate or a managed identity token. Entra ID returns the T1 to the agent ID blueprint. In this example we use a managed identity as FIC.
     
-    [!INCLUDE [Dont use secrets](./includes/dont-use-secrets.md)]
+    [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
     ```
     POST /oauth2/v2.0/token
