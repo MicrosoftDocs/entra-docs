@@ -15,7 +15,11 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # How end users can perform account recovery in Microsoft Entra ID
 
-Users can recover their accounts in just a few simple steps. In this topic, we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organizations configured provider. 
+Users can recover their accounts in just a few simple steps. In this topic, we'll explore how users can discover and start the account recovery process and what users can expect during the Identity Verification process through an organization's configured provider.
+
+:::image type="content" border="true" source="media/how-to-account-recovery-user-setup/recover-steps-1-5.png" alt-text="Initial steps to enter recovery.":::
+
+## User steps
 
 1. User attempts to sign in to an application such as Microsoft Teams or directly at [https://login.microsoftonline.com](https://login.microsoftonline.com).
 2. The user is presented with an initial authentication method to sign-in with.
@@ -36,7 +40,7 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 10. Choose your country/region, and the type of identity verification document you have, such as **Passport**.
 11. Review how to take a clear document photo, and select **Continue** after you read each step.
 12. After you take the photo, select **Submit photos**.
-13. Review how to take a clear photo of your face, and select **Continue** after you read each step
+13. Review how to take a clear photo of your face, and select **Continue** after you read each step.
 14. After you take the photo, the identity proofing application verifies your identity, and issues a Verifiable Credential.
 15. On the **Success** page, select **Add Verifiable Credential**.
 16. When you're prompted to open in Authenticator, select **Open**, and unlock Microsoft Authenticator.
@@ -46,9 +50,20 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 
     :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery."lightbox="media/how-to-account-recovery-user-setup/create-passkey.png":::   
 
+
+## Troubleshooting
+
+- When a profile is in the default Evaluation mode, the user sees the following screen after user verification passes with the IDV and Face Check. This experience is expected in Evaluation mode. An Authentication Policy Administrator needs to place users in Production mode before they can be issued a TAP. 
+
+  :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/policy-evaluation-mode.png" alt-text="Screenshot that shows the profile for a user is in Evaluation mode."lightbox="media/how-to-account-recovery-user-setup/policy-evaluation-mode.png":::   
+
+- If the user sees a red error message on the TAP screen and doesn't get a TAP issued, confirm that the claims ID info and Microsoft Graph match the real name. 
+
+  :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/mismatch.png" alt-text="Screenshot that shows a red error message on the TAP screen."lightbox="media/how-to-account-recovery-user-setup/mismatch.png":::   
+
 ## Related content
 
-- To learn more about Microsoft Entra account recovery, see [Microsoft Security Store](/security/store/).
+- [Overview of Microsoft Entra ID Account Recovery](concept-self-service-account-recovery.md) - Learn more about Microsoft Entra account recovery.
 
 
 
@@ -56,7 +71,7 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 
 
 
-   
+
 
 
 
