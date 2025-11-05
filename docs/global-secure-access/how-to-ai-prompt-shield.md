@@ -1,6 +1,6 @@
 ---
-title: "AI Gateway: Prompt Shield" (preview)
-description: 
+title: AI Gateway - Prompt Shield (preview)
+description: Secure your Enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway Prompt Shield.
 ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 11/04/2025
@@ -10,7 +10,7 @@ manager: dougeby
 ms.reviewer: KaTabish
 ms.custom: sfi-image-nochange
 
-#customer intent: As an IT admin, I want to secure my Enterprise Gen AI apps from prompt injection attacks.
+#customer intent: As a security administrator, I want to configure Prompt Shield content policies so that I can safeguard AI applications against malicious inputs.
 
 ---
 
