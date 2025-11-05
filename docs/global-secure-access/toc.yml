@@ -276,7 +276,7 @@ items:
   - name: Remote network valid configurations
     href: reference-remote-network-configurations.md
   - name: IP addresses advertised over BGP by remote network connectivity
-    href: reference-internet-over-remote-network-connectivity.md
+    href: reference-ip-addresses-advertised-by-remote-network-connectivity.md
   - name: Known limitations for Global Secure Access
     href: reference-current-known-limitations.md
   - name: Points of presence and service addresses
