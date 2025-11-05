@@ -13,7 +13,7 @@ ms.date: 11/04/2025
 
 # Sensitivity Labels in Lifecycle Workflows
 
-Maintaining and classifying secure data within your environment is an important part in maintaining a secure environment. Sensitivity labels from Microsoft Purview Information Protection let you classify and protect your organization's data, while making sure that user productivity and their ability to collaborate isn't hindered. With sensitivity labels in Lifecycle Workflows, administrators are able to quickly view the sensitivity labels of groups during creation, and editing, of workflow tasks.
+Maintaining and classifying secure data within your environment is an important part in maintaining a secure environment. Sensitivity labels from Microsoft Purview Information Protection let you classify and protect your organization's data, while making sure that user productivity and their ability to collaborate isn't hindered. With sensitivity labels in Lifecycle Workflows, administrators are able to quickly view the sensitivity labels of groups during creation, and editing, of workflow tasks. 
 
 ## License requirements
 
@@ -21,12 +21,27 @@ Maintaining and classifying secure data within your environment is an important 
 
 ## Prerequisites
 
-Along with Microsoft Entra licesnes required for Lifecycle workflows, you must also have:
+Along with Microsoft Entra licenses required for Lifecycle workflows, you must also have:
 
 - [A created sensitivity label](/purview/create-sensitivity-labels?tabs=classic-label-scheme#create-and-configure-sensitivity-labels)
 - [A sensitivity applied to the group you want to use within a Lifecycle workflow task](/purview/sensitivity-labels-teams-groups-sites#using-sensitivity-labels-for-microsoft-teams-microsoft-365-groups-and-sharepoint-sites)
 
-## "\<verb\> * \<noun\>"
+## View the sensitivity label of a group used in a workflow task
+
+Sensitivity labels of groups can be viewed when using group specific tasks within lifecycle workflows. To view the sensitivity labels of groups using Lifecycle workflows, do the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create a workflow**.
+
+1. On the **Choose a workflow** page, select the workflow template that you want to use.
+
+1. Add Basic information, trigger, and scope.
+
+1. If group scope is chosen, when the **+Select group** option is picked you are able to see the sensitivity labels of each group.
+    :::image type="content" source="media/workflow-sensitivity-labels/group-sensitivity-labels.png" alt-text="Screenshot of workflow sensitivity label.":::
+1.   
+
 
 
 ## Related content
