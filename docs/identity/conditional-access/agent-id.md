@@ -71,7 +71,7 @@ Conditional Access doesn't apply when:
 
 Creating a Conditional Access policy for agents involves these four key components: 
 
-:::image type="content" source="media/agent-id/conditional-access-agent-settings.png" alt-text="Screenshot of the Conditional Access interface with a policy blocking all agent identities at high risk." lightbox="media/agent-id/conditional-access-agent-settings.png":::
+:::image type="content" source="media/agent-id/conditional-access-agent-settings.png" alt-text="Screenshot of Conditional Access interface showing a policy configured to block all high-risk agent identities, with assignments scoped to all agent identities." lightbox="media/agent-id/conditional-access-agent-settings.png":::
 
 1. Assignments
    1. Scope policies to: 
@@ -176,7 +176,7 @@ Alternatively, organizations can create a Conditional Access policy using the en
       1. Exclude **Select resources**.
          1. Select **Select specific resources**.
          1. Using the enhanced object picker, switch between the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
-            :::image type="content" source="media/agent-id/enhanced-object-picker.png" alt-text="Screenshot of the enhanced object picker giving admins the ability to easily filter and search for resources."::: 
+            :::image type="content" source="media/agent-id/enhanced-object-picker.png" alt-text="Screenshot of the enhanced object picker with tabs for All, Enterprise applications, and Agent blueprints, showing resource selection options.":::
          1. Select **Select**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
