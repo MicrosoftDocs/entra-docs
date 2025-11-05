@@ -21,7 +21,7 @@ Making sure risky users dont gain access to sensitive resources is an important 
 
 ## Prerequisites
 
-To use Insider Risk Management approvals with Entitlement management, you must first [Create an Insider Risk Management policy](purview/insider-risk-management-policies).
+To use Insider Risk Management approvals with Entitlement management, you must first [Create an Insider Risk Management policy](/purview/insider-risk-management-policies).
 
 [!INCLUDE [Entitlement Management risk-based-approvals](../includes/entitlement-management-risk-based-approvals.md)]
 
