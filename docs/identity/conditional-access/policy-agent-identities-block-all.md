@@ -12,7 +12,7 @@ ms.subservice: conditional-access
 ms.topic: how-to
 ms.reviewer: kvenkit
 --- 
-# Block all agent identiteis
+# Block all agent identities
 
 This Conditional Access policy template blocks all agent identities from accessing any resources in your organization, preventing AI agents from obtaining access tokens to perform actions on behalf of applications.
 
