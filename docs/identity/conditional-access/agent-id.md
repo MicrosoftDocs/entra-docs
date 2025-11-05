@@ -122,7 +122,7 @@ The recommended approach is to create and assign custom security attributes to e
 
 ##### Create Conditional Access policy using custom security attributes
 
-After you complete the previous steps, create a Conditional Access policy to block all agent identities except those vetted and approved by your organization. 
+After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agent identities except those vetted and approved by your organization. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -158,9 +158,9 @@ After you complete the previous steps, create a Conditional Access policy to blo
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-#### Usine the enhanced resource picker
+#### Using the enhanced resource picker
 
-Create a Conditional Access policy to block all agent identities except those vetted and approved by your organization. 
+Create a Conditional Access policy using the enhanced resource picker to block all agent identities except those vetted and approved by your organization. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -171,21 +171,14 @@ Create a Conditional Access policy to block all agent identities except those ve
       1. Under **Include**, select **All agent identities (Preview)**.
       1. Under **Exclude**: 
          1. Select **Select individual agent identities**.
-         1. Using the enhanced resource picker 
-         1. 
-         1. 
+         1. Using the enhanced resource picker, switch betweent the tabs **All**, **Agent blueprints**, and **Agent identities** to select the individual agent blueprints and/or agent identites approved for use in your environment.
+         1. Select **Select**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
    1. Include **Select resources**.
-      1. Select **Select resources based on attributes**.
-      1. Set **Configure** to **Yes**.
-      1. Select the Attribute we created earlier called **businessImpact**.
-      1. Set **Operator** to **Contains**.
-      1. Set **Value** to **low**.
-      1. Select a second Attribute called **department**.
-      1. Set **Operator** to **Contains**.
-      1. Set **Value** to **HR**.
-      1. Select **Done**.
+      1. Select **Select specific resources**.
+      1. Using the enhanced resource picker, switch betweent the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
+      1. Select **Select**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
    1. Select **Select**.
