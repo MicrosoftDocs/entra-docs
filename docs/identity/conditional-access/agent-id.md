@@ -317,7 +317,7 @@ Purpose: Block users from signing into agents and agents performing actions on t
 
 ## Related content
 
-- [Conditional Access template policies](concept-conditional-access-policy-common.md#ai-agentstabai-agents)
+- [Conditional Access template policies](concept-conditional-access-policy-common.md)
 - [Conditional Access: Users, groups, agents, and workload identities](concept-conditional-access-users-groups.md)
 - [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)
 - [Conditional Access: Conditions](concept-conditional-access-conditions.md)
