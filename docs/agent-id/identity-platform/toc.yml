@@ -63,7 +63,7 @@ items:
     - name: Oauth protocol for agent IDs
       items:
       - name: Oauth protocol for agent IDs
-        href: agentic-oauth-protocols.md
+        href: agent-oauth-protocols.md
       - name: Autonomous app flow in agents
         href: agent-autonomous-app-oauth-flow.md
       - name: On-behalf-of flow in agents
@@ -71,5 +71,5 @@ items:
       - name: Agent user flow in agents
         href: agent-user-oauth-flow.md
     - name: Token claims reference
-      href: agentic-token-claims.md
+      href: agent-token-claims.md
         
