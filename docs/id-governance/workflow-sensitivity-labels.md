@@ -28,7 +28,7 @@ Along with Microsoft Entra licenses required for Lifecycle workflows, you must a
 
 ## View the sensitivity label of a group used in a workflow task
 
-Sensitivity labels of groups can be viewed when using group specific tasks within lifecycle workflows. To view the sensitivity labels of groups using Lifecycle workflows, do the following steps:
+Sensitivity labels of groups can be viewed when using groups as a scope for workflows, and via specific group workflow tasks. To view the sensitivity labels of groups using Lifecycle workflows, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
