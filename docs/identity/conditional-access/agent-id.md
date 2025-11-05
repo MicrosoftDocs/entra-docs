@@ -96,14 +96,14 @@ Creating a Conditional Access policy for agents involves these four key componen
 
 ## Common business scenario
 
-My organization is testing agents. I want to configure a Conditional Access policy to allow only approved agents to access specific resources. 
-
-We present two approaches:
+If your organization is testing agents and you want to configure a Conditional Access policy to allow only approved agents to access specific resources. We present two options to control access:
 
 - Using custom security attributes
-- Usine the enhanced resource picker
+- Using the enhanced resource picker
 
-#### Using custom security attributes
+Additionaly incorparating signals from Microsoft Entra ID Protection allows you to [block agents with risky behavior](#block-high-risk-agent-identities-from-accessing-my-organizations-resources).
+
+### Using custom security attributes
 
 The recommended approach is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
@@ -158,9 +158,9 @@ After you complete the previous steps, create a Conditional Access policy using 
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-#### Using the enhanced resource picker
+### Create Conditional Access policy using the enhanced resource picker
 
-Create a Conditional Access policy using the enhanced resource picker to block all agent identities except those vetted and approved by your organization. 
+Alternatively organizations can create a Conditional Access policy using the enhanced resource picker to block all agent identities except those vetted and approved by your organization. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -187,7 +187,7 @@ Create a Conditional Access policy using the enhanced resource picker to block a
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-### I want to block high risk agent identities from accessing my organization’s resources
+### Block high risk agent identities from accessing my organization’s resources
 
 Create a Conditional Access policy to block high-risk agent identities based on signals from Microsoft Entra ID Protection.
 
