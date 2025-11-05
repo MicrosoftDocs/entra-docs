@@ -1,6 +1,6 @@
 ---
 title: Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)
-description: This article describes how to configure ID Protection-based approvals for access package requests.
+description: This article describes how to configure Insider risk management-based approvals for access package requests.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -11,7 +11,7 @@ ms.date: 11/04/2025
 #CustomerIntent: As an IT admin, I want to configure Insider risk management-based approvals for access package requests so that I can ensure risky users are reviewed before gaining access to sensitive resources.
 ---
 
-# Configure ID Protection-based approvals for access package requests in Entitlement Management (Preview)
+# Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)
 
 Making sure risky users dont gain access to sensitive resources is an important part of securing your environment. You can further secure the entitlement management request process by integrating [Microsoft Purview Insider Risk Management (IRM)](/purview/insider-risk-management-configure) signals into the access package approval workflow in Microsoft Entra ID Governance’s Entitlement Management. With risk management-based approvals, Entitlement Management automatically adds a new first approval stage when a user flagged as risky requests access to an access package. This ensures that users identified as potentially compromised or at-risk are reviewed by authorized security or compliance approvers before access requests are routed for standard approval routing. This article describes how to further secure your entitlement request process with these features.
 
