@@ -176,7 +176,7 @@ Alternatively, organizations can create a Conditional Access policy using the en
       1. Exclude **Select resources**.
          1. Select **Select specific resources**.
          1. Using the enhanced object picker, switch between the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
-            :::image type="content" source="media/agent-id/enhanced-object-picker.png" alt-text="Screenshot of the enhanced object picker with tabs for All, Enterprise applications, and Agent blueprints, showing resource selection options.":::
+            :::image type="content" source="media/agent-id/enhanced-object-picker.png" alt-text="Screenshot of the enhanced object picker with tabs for All, Enterprise applications, and Agent blueprints, showing resource selection options." lightbox="media/agent-id/enhanced-object-picker.png":::
          1. Select **Select**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
