@@ -23,4 +23,4 @@ When a user requests access to an access package through the **My Access** porta
     - If approved, the request continues through the rest of the regular access package approval steps.
     - If denied, the request is closed, recorded in the audit logs, and no further approval routing takes place.
 
-1.	**Audit logging**: All actions (approval and denial) and outcomes are captured in [Entitlement Management logs](entitlement-management-logs-and-reporting.md) for reporting and compliance visibility.
+1.	**Audit logging**: All actions (approval and denial) and outcomes are captured in [Entitlement Management logs](../id-governance/entitlement-management-logs-and-reporting.md) for reporting and compliance visibility.
