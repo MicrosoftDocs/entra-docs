@@ -43,6 +43,8 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
+  - name: Protecting agent identities
+    href: agent-id.md
   - name: Analyze impact
     href: concept-conditional-access-report-only.md
   - name: Service dependencies

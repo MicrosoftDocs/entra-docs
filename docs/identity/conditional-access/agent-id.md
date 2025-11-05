@@ -16,9 +16,11 @@ ms.reviewer: kvenkit
 
 Conditional Access for Agent ID is a new capability in Microsoft Entra ID that brings Conditional Access evaluation and enforcement to AI agents. This capability extends the same Zero Trust controls that already protect human users and apps to your agents. Conditional Access treats agents as first-class identities and evaluates their access requests the same way it does for human users or workload identities, but with agent-specific logic.
 
-These agent users are designed for experiences such as digital workers. Because agent users have built-in security features, such as always being authenticated with strong credentials and running in secure context, that differ from human users, existing Conditional Access conditions (like device platform, client apps) and controls (like MFA) in your existing user-based policies don't apply to them.
+Agent identities autonomos experiences... 
 
-Admins can use new Conditional Access policies to govern agent users. During public preview, blocking access to all resources is the only policy configuration allowed for agent users. 
+Agent users are designed for experiences such as digital workers. Because agent users have built-in security features, such as always being authenticated with strong credentials and running in secure context, that differ from human users, existing Conditional Access conditions (like device platform, client apps) and controls (like MFA) in your existing user-based policies don't apply to them.
+
+Admins can use new Conditional Access policies to govern agent identities and users. During public preview, blocking access to all resources is the only policy configuration allowed for agent users. 
 
 [!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
 
@@ -62,7 +64,7 @@ Conditional Access doesn't apply when:
 
 | Authentication flow | Does Conditional Access apply | Details |
 | --- | :---: | --- |
-| Agent identity blueprint → Graph (create agent identity (Agent ID)/agent user) | ❌<br>No | Blueprint can only create agent identities and agent users; it's not a risk. |
+| Agent identity blueprint → Graph (create agent identity (Agent ID)/agent user) | ❌<br>No | Blueprints can only create agent identities and agent users; it's not a risk. |
 | Agent identity blueprint or Agent identity (Agent ID) → Token Exchange | ❌<br>No | This is an internal flow with limited audience scope. |
 | Agent identity (Agent ID) → Resource | ✅<br>Yes | Governed by agent identity policies. |
 | Agent user → Resource | ✅<br>Yes | Governed by agent user policies. |
@@ -94,20 +96,22 @@ Creating a Conditional Access policy for agents involves these four key componen
    1. Block.
 1. Policies can be toggled On, Off, or set to Report-only for simulation.
 
-## Common business scenario
+## Common business scenarios
+
+Intro two scenarios
+
+### Scenario 1
 
 If your organization is testing agents and you want to configure a Conditional Access policy to allow only approved agents to access specific resources. We present two options to control access:
 
 - Using custom security attributes
-- Using the enhanced resource picker
+- Using the enhanced object picker
 
-Additionaly incorparating signals from Microsoft Entra ID Protection allows you to [block agents with risky behavior](#block-high-risk-agent-identities-from-accessing-my-organizations-resources).
-
-### Using custom security attributes
+#### Using custom security attributes
 
 The recommended approach is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
-##### Create and assign custom attributes
+###### Create and assign custom attributes
 
 1. Create the custom security attributes:
    1. Create an **Attribute set** named *AgentAttributes*.
@@ -120,7 +124,7 @@ The recommended approach is to create and assign custom security attributes to e
       1. Add the following predefined values: **Low**, **Medium**, and **High**.
    1. Assign the **Low** value to resources that your agent is allowed to access.
 
-##### Create Conditional Access policy using custom security attributes
+###### Create Conditional Access policy using custom security attributes
 
 After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agent identities except those vetted and approved by your organization. 
 
@@ -140,6 +144,7 @@ After you complete the previous steps, create a Conditional Access policy using 
          1. Select **Done**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
+   1. Include All Exclude the following... JOHN TO UPDATE
    1. Include **Select resources**.
       1. Select **Select resources based on attributes**.
       1. Set **Configure** to **Yes**.
@@ -158,9 +163,9 @@ After you complete the previous steps, create a Conditional Access policy using 
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-### Create Conditional Access policy using the enhanced resource picker
+#### Create Conditional Access policy using the enhanced object picker
 
-Alternatively organizations can create a Conditional Access policy using the enhanced resource picker to block all agent identities except those vetted and approved by your organization. 
+Alternatively organizations can create a Conditional Access policy using the enhanced object picker to block all agent identities except those vetted and approved by your organization. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -171,13 +176,14 @@ Alternatively organizations can create a Conditional Access policy using the enh
       1. Under **Include**, select **All agent identities (Preview)**.
       1. Under **Exclude**: 
          1. Select **Select individual agent identities**.
-         1. Using the enhanced resource picker, switch betweent the tabs **All**, **Agent blueprints**, and **Agent identities** to select the individual agent blueprints and/or agent identites approved for use in your environment.
+         1. Using the enhanced object picker, switch betweent the tabs **All**, **Agent blueprints**, and **Agent identities** to select the individual agent blueprints and/or agent identites approved for use in your environment.
          1. Select **Select**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
+   1. Include All Exclude the following... JOHN TO UPDATE
    1. Include **Select resources**.
       1. Select **Select specific resources**.
-      1. Using the enhanced resource picker, switch betweent the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
+      1. Using the enhanced object picker, switch betweent the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
       1. Select **Select**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
@@ -189,7 +195,7 @@ Alternatively organizations can create a Conditional Access policy using the enh
 
 ### Block high risk agent identities from accessing my organization’s resources
 
-Create a Conditional Access policy to block high-risk agent identities based on signals from Microsoft Entra ID Protection.
+Create a Conditional Access policy to block high-risk agent identities based on signals from Microsoft Entra ID Protection. ADD LINK TO SARAH'S RISK ARTICLE
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
