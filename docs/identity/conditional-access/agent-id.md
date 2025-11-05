@@ -168,14 +168,15 @@ Alternatively, organizations can create a Conditional Access policy using the en
       1. Under **Include**, select **All agent identities (Preview)**.
       1. Under **Exclude**: 
          1. Select **Select individual agent identities**.
-1. Using the enhanced object picker, switch between the tabs **All**, **Agent blueprints**, and **Agent identities** to select the individual agent blueprints and/or agent identities approved for use in your environment.
+         1. Using the enhanced object picker, switch between the tabs **All**, **Agent blueprints**, and **Agent identities** to select the individual agent blueprints and/or agent identities approved for use in your environment.
          1. Select **Select**.
 1. Under **Target resources**, select the following options: 
    1. Select what this policy applies to **Resources (formerly cloud apps)**.
       1. Include **All resources (formerly 'All cloud apps')**
       1. Exclude **Select resources**.
          1. Select **Select specific resources**.
-1. Using the enhanced object picker, switch between the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
+         1. Using the enhanced object picker, switch between the tabs **All**, **Enterprise applications**, and **Agent blueprints** to select individual resources.
+            :::image type="content" source="media/agent-id/enhanced-object-picker.png" alt-text="Screenshot of the enhanced object picker giving admins the ability to easily filter and search for resources."::: 
          1. Select **Select**.
 1. Under **Access controls** > **Grant**: 
    1. Select **Block**.
