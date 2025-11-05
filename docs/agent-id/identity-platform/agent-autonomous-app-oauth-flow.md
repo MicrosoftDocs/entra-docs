@@ -58,9 +58,3 @@ The following are the protocol steps.
     ```
 
 1. Entra ID issues an app-only resource access token (TR) to the Agent Identity after validating T1. Entra ID validates that T1 (aud) == Agent ID parent app == Agent ID blueprint
-
-## Sequence diagram
-
-The following is a sequence diagram for the app-only flow:
-
-:::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow-token-sequence.png" alt-text="Diagram showing the token sequence of autonomous app token acquisition flow for agents.":::
