@@ -5,7 +5,7 @@ description: Detailed guidance to deploy passwordless and phishing-resistant aut
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/03/2025
+ms.date: 11/05/2025
 
 ms.author: justinha
 author: sipower
@@ -34,7 +34,7 @@ Microsoft recommends that you broadly deploy phishing-resistant passwordless aut
 
 
 Microsoft recommends that you categories your users based on these personas, and then place users into a Microsoft Entra ID group specifically for that user persona. These groups are used in later steps to [roll out credentials](#drive-usage-of-phishing-resistant-credentials) 
-to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](#step-4-enforce-phishing-resistant-methods-for-sign-in).
+to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](#enforce-phishing-resistant-methods-for-sign-in).
 
 Using groups you can continue to onboard new parts of the organization simultaneously. Take the approach of "*don't let perfect be the enemy of good*" and deploy secure credentials as much as possible. As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
 
@@ -328,9 +328,7 @@ For example, you could execute your deployments and then enforcements in waves t
 
 As you execute these different phases, you may need to slow down depending on the volume of help desk tickets opened and then resume when the volume has subsided. To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each wave, and add each group to your policies one at a time. This approach helps to avoid overwhelming your support teams.
 
-## Step 4: Enforce phishing-resistant methods for sign-in
-
-
+## Enforce phishing-resistant methods for sign-in
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png":::
 
