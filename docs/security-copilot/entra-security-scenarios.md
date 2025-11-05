@@ -34,7 +34,7 @@ From a Copilot chat response, select **Open list** to open a full, interactive d
 >
 > Data exploration is currently in preview and limited to simple prompts only. Complex prompts that require multi-step queries are not currently supported for data exploration. Copilot will still provide chat-based summaries for complex, multi-step prompts.
 
-:::image type="content" source="./media/copilot-security-entra/data-exploration.png" alt-text="Screenshot that shows Data Exploration in Security Copilot for Microsoft Entra.":::
+:::image type="content" source="./media/copilot-security-entra/data-explorer.png" alt-text="Screenshot that shows Data Exploration in Security Copilot for Microsoft Entra.":::
 
 ## Security Copilot scenarios in Microsoft Entra
 
