@@ -49,7 +49,7 @@ To integrate Arkose Labs with Microsoft Entra External ID, you can use the Secur
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Home** > **Security Store** > **Sign-up protection** to start the wizard.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection  page.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection page." lightbox="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png":::
 
 1. Enter a name for the policy, such as *ArkosePolicy*.
 1. Select the scenarios to apply the fraud protection policy to and select **Next**.
@@ -209,7 +209,7 @@ To integrate HUMAN Security with Microsoft Entra External ID, you can use the Se
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Home** > **Security Store** > **Sign-up protection** to start the wizard.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection  page.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection page." lightbox="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png":::
 
 1. Enter a name for the policy, such as *HUMANPolicy*.
 1. Select the scenarios to apply the fraud protection policy to and select **Next**.
