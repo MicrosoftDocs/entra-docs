@@ -1,5 +1,5 @@
 ---
-title: IP addresses for remote network connectivity
+title: IP addresses advertised over BGP by remote network connectivity
 description: Understand critical IP address ranges to consider when configuring and troubleshooting internet over remote network connectivity.
 author: jenniferf-skc
 ms.author: jfields
@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 # Customer Intent: As a Global Secure Access Administrator, I need to know critical IP address ranges to consider when configuring and troubleshooting internet over remote network connectivity.
 ---
 
-# IP addresses for remote network connectivity
+# IP addresses advertised over BGP by remote network connectivity
 
 [Remote network connectivity](concept-remote-network-connectivity.md) enables you to send Microsoft 365 or internet traffic from your branch offices to the Global Secure Access (GSA) service through IPsec tunnels. Installing the GSA client is not required when using this connectivity method. This document provides critical IP address ranges that must be considered when configuring and troubleshooting remote connectivity.
 
