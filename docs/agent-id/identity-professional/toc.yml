@@ -6,7 +6,13 @@ items:
     items:
       - name: Security for AI
         href: security-for-ai.md
-      - name: Microsoft Entra agent ID features
-        href: microsoft-entra-agent-identities-for-ai-agents.md
+      - name: Entra security for AI features
+        href: entra-security-for-ai-agents.md
+  - name: How to guides
+    items:
+    - name: Access management
+      items:
+        - name: Authorization in Microsoft Entra Agent ID
+          href: authorization-agent-id.md
   
 

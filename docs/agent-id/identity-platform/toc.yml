@@ -10,36 +10,33 @@ items:
       href: what-is-agent-id.md
     - name: What is the agent registry?
       href: what-is-agent-registry.md
+  - name: How to guides
+    items:
+    - name: (Pro-code) Integrate an agent with Entra.
+      items:
+      - name: Call an API (.NET)
+        items:
+          - name: Call Microsoft Graph API
+            href: call-api-microsoft-graph.md
+          - name: Call custom APIs
+            href: call-api-custom.md
+          - name: Call an Azure service
+            href: call-api-azure-services.md
+      - name: Call an API (Agent ID SDK)
+        href: microsoft-entra-sdk-for-agent-identities.md
+    - name: Agent ID administration
+      items:
+        - name: View agent IDs
+          href: agent-lists.md
+        - name: Manage agent blueprint
+          href: manage-agent-blueprint.md
+        - name: Publish agents to registry
+          href: publish-agents-to-registry.md
+    - name: Registry agent to agent protocol
+      href: registry-agent-to-agent-protocol.md
   - name: Concepts
     items:
     - name: Fundamentals
       items:
         - name: Key concepts
           href: key-concepts.md
-        - name: Agent users
-          href: agent-users.md
-        - name: Agent ID blueprints
-          href: agent-blueprint.md
-        - name: Agent service principals
-          href: agent-service-principals.md
-    - name: Registry
-      items:
-        - name: Agent registry collections
-          href: agent-registry-collections.md
-        - name: Agent metadata and discoverability
-          href: agent-metadata-discoverability.md
-    - name: Management
-      items:
-        - name: Agent owners, sponsors, and managers
-          href: agent-owners-sponsors-managers.md
-  - name: Reference
-    items:
-    - name: Oauth protocol for Agent IDs
-      items: 
-        - name: Auth protocols for agent IDs
-          href: agent-oauth-protocols.md
-        - name: Autonomous app flow in agents
-          href: agent-autonomous-app-oauth-flow.md
-        
-        
-
