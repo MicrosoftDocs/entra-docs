@@ -159,7 +159,7 @@ After you complete the previous steps, create a Conditional Access policy using 
 
 ### [Using the enhanced object picker](#tab/enhanced-object-picker)
 
-#### Create Conditional Access policy using the enhanced object picker
+##### Create Conditional Access policy using the enhanced object picker
 
 Alternatively organizations can create a Conditional Access policy using the enhanced object picker to block all agent identities except those vetted and approved by your organization. 
 
