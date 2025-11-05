@@ -1,5 +1,5 @@
 ---
-title: Manage agent ID sponsors (Preview)
+title: Agent ID sponsor tasks in Lifecycle Workflows (Preview)
 description: This article describes workflow tasks that involve sponsors of agent identities (IDs).
 author: owinfreyATL
 ms.author: owinfrey
@@ -11,7 +11,7 @@ ms.date: 10/25/2025
 #CustomerIntent: As a lifecycle workflows administrator, I want to create workflows that target agent ID sponsors so that agent ID sponsor management can be streamlined.
 ---
 
-# Manage agent ID sponsors (Preview)
+# Agent ID sponsor tasks in Lifecycle Workflows (Preview)
 
 
 Managing agent identities (ID) sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent ID sponsors are responsible for overseeing the lifecycle and access decisions of agent IDs. Keeping sponsor information up to date helps with effective governance and compliance. 
@@ -28,8 +28,9 @@ This article explains how to configure Lifecycle Workflows to streamline agent I
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-## Manage agent ID sponsors using workflows within the Microsoft Entra Admin Center
+## Create a sponsor workflow using the Microsoft Entra Admin Center
 
+To create a workflow that notifies the manager or cosponsors of an agent ID of a user move for an existing sponsor of an agent ID, you'd do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
