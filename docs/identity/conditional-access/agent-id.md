@@ -213,8 +213,10 @@ Create a Conditional Access policy to block high-risk agent identities based on 
 
 ## Investigating policy evaluation using sign-in logs
 
-Agent identities (actor) accessing any resources → Service principal sign-in logs → agentType: agent identity
-Agent users accessing any resources → Non-interactive user sign-ins → agentType: agent user
+Admins can use the Sign-in logs to investigate why a Conditional Access policy did or didn't apply as explained in [Microsoft Entra sign-in events](troubleshoot-conditional-access.md#microsoft-entra-sign-in-events). For agent specific entries filter for **agentType** of **agent user** or **agent identity**. Some of these events will appear in the **User sign-ins (non-interactive)** while others will appear under **Service principal sign-ins**.
+
+- Agent identities (actor) accessing any resources → Service principal sign-in logs → agentType: agent identity
+- Agent users accessing any resources → Non-interactive user sign-ins → agentType: agent user
 Users accessing agents → User sign-ins
 
 ## Frequently asked questions
@@ -308,13 +310,14 @@ Purpose: Block users from signing into agents and agents performing actions on t
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-
 ## Conditional Access policy evaluation details for agents
 
 
 ## Related content
 
+- [[Conditional Access template policies](#tab/ai-agents)](concept-conditional-access-policy-common.md#ai-agentstabai-agents)
 - [Conditional Access: Users, groups, agents and workload identities](concept-conditional-access-users-groups.md)
 - [Conditional Access: Target resources](concept-conditional-access-cloud-apps.md)
 - [Conditional Access: Conditions](concept-conditional-access-conditions.md)
 - [Conditional Access: Grant](concept-conditional-access-grant.md)
+- [Security for AI with Microsoft Entra agent identity](../../agent-id/identity-professional/security-for-ai.md)
