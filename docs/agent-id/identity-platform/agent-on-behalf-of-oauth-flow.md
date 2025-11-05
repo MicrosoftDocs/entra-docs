@@ -24,9 +24,9 @@ Agentic applications have the capabilities of Microsoft Entra ID resource (API) 
 
 ## Protocol steps
 
-Agentic applications aren't supported for OBO (`/authorize`) flows. Supported grant types are `client_credential`, `jwt_bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate or a managed identity used as Federated Identity Credentiual (FIC).
+Agentic applications aren't supported for OBO (`/authorize`) flows. Supported grant types are `client_credential`, `jwt_bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate or a managed identity used as Federated Identity Credential (FIC).
 
-1. The user authenticates with the client and obtains a user access token(client token, Tc).
+1. The user authenticates with the client and obtains a user access token (client token, Tc).
 
 1. Client sends the user access token (Tc) to the agent identity blueprint to act on behalf of the user. It's the token that is used for the OBO exchange for the agentic app instance.
 
