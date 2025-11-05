@@ -18,11 +18,11 @@ An access package enables you to do a one-time setup of resources and policies t
 
 All access packages must be in a container called a catalog. A catalog defines what resources you can add to your access package. If you don't specify a catalog, your access package goes in the general catalog. Currently, you can't move an existing access package to a different catalog.
 
-An access package can be used to assign access to roles of multiple resources that are in the catalog. If you're an administrator or catalog owner, you can add resources to the catalog while you're creating an access package. You can also add resources after the access package is created, and users assigned to the access package will also receive the extra resources.
+An access package can be used to assign access to roles of multiple resources that are in the catalog. If you're an administrator or catalog owner, you can add resources to the catalog while you're creating an access package. You can also add resources after the access package is created, and identities assigned to the access package will also receive the extra resources.
 
 If you're an access package manager, you can't add resources that you own to a catalog. You're restricted to using the resources available in the catalog. If you need to add resources to a catalog, you can ask the catalog owner.
 
-All access packages must have at least one policy for users to be assigned to them. Policies specify who can request the access package, along with approval and lifecycle settings, or how access is automatically assigned. When you create an access package, you can create an initial policy for users in your directory, for users not in your directory, or for administrator direct assignments only.
+All access packages must have at least one policy for identities to be assigned to them. Policies specify who can request the access package, along with approval and lifecycle settings, or how access is automatically assigned. When you create an access package, you can create an initial policy for identities in your directory, for users not in your directory, or for administrator direct assignments only.
 
 ![Diagram of an example marketing catalog, including its resources and its access package.](./media/entitlement-management-access-package-create/access-package-create.png)
 
@@ -34,7 +34,7 @@ Here are the high-level steps to create an access package with an initial policy
 
 1. Add resource roles from resources in the catalog to your access package.
 
-1. Specify an initial policy for users who can request access.
+1. Specify an initial policy for users who can request access for themselves or [on-behalf-of other users](entitlement-management-request-behalf.md).
 
 1. Specify approval settings and lifecycle settings in that policy.
 
@@ -76,7 +76,7 @@ On the **Resource roles** tab, you select the resources to include in the access
 
 If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](entitlement-management-access-package-resources.md) later.
 
-1. Select the resource type that you want to add (**Groups and Teams**, **Applications**, or **SharePoint sites**).
+1. Select the resource type that you want to add (**Groups and Teams**, **Applications**, **SharePoint sites**, **Microsoft Entra role (Preview)**, or **API Permissions (Preview)**).
 
 1. In the **Select applications** panel that appears, select one or more resources from the list.
 
@@ -96,6 +96,10 @@ If you're not sure which resource roles to include, you can skip adding them whi
     ![Screenshot that shows resource role selection for a new access package.](./media/entitlement-management-access-package-create/resource-roles-role.png)
 1. For [groups managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), both active and eligible roles are available as options.
     :::image type="content" source="media/entitlement-management-access-package-create/pim-for-groups-roles.png" alt-text="Screenshot of available roles to be assigned to PIM for groups resource in an access package.":::
+1. For [assigning Microsoft Entra roles](entitlement-management-roles.md), both active and eligible member assignments are available as options.
+1. For assigning API permissions, you can specify which role permission is granted for each role type.
+    :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding api permissions as resource roles to an access package.":::
+
 1. Select **Next: Requests**.
 
 
