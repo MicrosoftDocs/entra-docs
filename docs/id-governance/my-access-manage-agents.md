@@ -17,6 +17,12 @@ ms.date: 10/20/2025
 The My Access portal is used by users to review or request access to resources within Microsoft Entra for themselves, or on behalf of other identities they have the appropriate permissions for. These identities include agent identities (IDs), which are accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. Agent IDs have sponsors, or human users, who are responsibile for access and lifecycle decisions about them. Managing the lifecycle and access of agent identities (IDs) you sponsor, or own, is a critical part of maintaining secure and efficient operations within your environment. The My Access portal provides a centralized platform to help you manage agents, view their access, and take necessary actions such as enabling or extending their access. This article guides you through the steps to effectively use the My Access portal to manage agent IDs.
 
 
+[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license.md)]
+ 
+Super basic note about the Microsoft Entra Agent ID license. Basically, if an article covers capabilities included under the yellow bar in this graphic, drop it where it makes sense in your article.
+
+
 ## Manage agent IDs using the My Access portal
  
 To manage agent IDs you own or sponsor using the My Access portal, do the following steps:
