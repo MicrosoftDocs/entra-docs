@@ -310,8 +310,9 @@ Purpose: Block users from signing into agents and agents performing actions on t
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
+<!--- PENDING INFO FROM PM
 ## Conditional Access policy evaluation details for agents
-
+--->
 
 ## Related content
 
