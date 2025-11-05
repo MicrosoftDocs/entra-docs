@@ -30,7 +30,7 @@ For details about software as a service (SaaS) app integration with Microsoft En
 
 To configure Microsoft Entra integration with Uberflip, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 * An Uberflip subscription with single sign-on enabled.
 
 ## Scenario description

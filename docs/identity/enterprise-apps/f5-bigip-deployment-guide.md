@@ -30,7 +30,7 @@ Prior F5 BIG-IP experience or knowledge isn't necessary. However, we recommend y
 Deploying a BIG-IP in Azure for SHA requires:
 
 - A paid Azure subscription
-  - If you don't have one, you can get an [Azure free trial](https://azure.microsoft.com/free/)
+  - If you don't have one, you can get an [Azure free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 - Any of the following F5 BIG-IP license SKUs:
   - F5 BIG-IP® Best bundle
   - F5 BIG-IP Access Policy Manager™ (APM) standalone license

@@ -44,7 +44,7 @@ To learn more about how the app management policy API works, visit the [API docu
 
 To configure app management policies, you need:
 
-- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - The [Security Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#security-administrator) role, AND the [Cloud App Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference?#cloud-application-administrator) or [Application Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#application-administrator) role. OR, just the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 
 ## Configure a restriction
@@ -61,7 +61,7 @@ To block new passwords using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Entra ID** > **Enterprise apps** > **App management policies**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application policies**.
 
 1. Select **Block password addition**.
 
@@ -126,7 +126,7 @@ To grant an app an exception to the restriction blocking custom identifier URIs 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Entra ID** > **Enterprise apps** > **App management policies**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application policies**.
 
 1. Select **Block custom identifier URIs**.
 
@@ -193,7 +193,7 @@ This example grants a service an exception to the restriction enforcing a max li
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Entra ID** > **Enterprise apps** > **App management policies**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application policies**.
 
 1. Select **Restrict max certificate lifetime**.
 
@@ -333,7 +333,7 @@ Sometimes, you aren't ready to apply a restriction to your entire tenant, but st
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Entra ID** > **Enterprise apps** > **App management policies**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application policies**.
 
 1. Select **Block custom passwords**.
 
