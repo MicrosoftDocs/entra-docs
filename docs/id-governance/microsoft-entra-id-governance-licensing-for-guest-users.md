@@ -17,7 +17,7 @@ This article outlines the pricing structure for Microsoft Entra ID Governance fo
 
 ## Monthly active users (MAU) billing model
 
-Microsoft Entra ID Governance utilizes Monthly Active User (MAU) licensing for guest users that is different than licensing for employees. See [Microsoft Entra ID Governance licensing fundamentals](/entra/id-governance/licensing-fundamentals) for complete details on licensing for employees.
+Microsoft Entra ID Governance utilizes Monthly Active User (MAU) licensing for guest users that's different than licensing for employees. See [Microsoft Entra ID Governance licensing fundamentals](/entra/id-governance/licensing-fundamentals) for complete details on licensing for employees.
 
 Under the guest billing model, guests are identified by a userType of **Guest** regardless of where the user authenticates. A userType of **Guest** is the default userType for all B2B invitation methods and can also be set by an Identity administrator. The bill for each month includes a record for each guest user with one or more governance actions in that month. See the Azure pricing page for pricing details.
 
