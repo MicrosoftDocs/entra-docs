@@ -53,7 +53,7 @@ From the Risky User Details page, you can take actions such as dismissing the ri
 
 From the **Risky users report**, select a user to view more details about their risk events and even take action on that user.
 
-The details include basic information about the user and a timeline of recent risk activities. The **Timeline** section provides a chronological view of risk events associated with the user. The timeline shows when the risk was detected,, the risk level, and the type of risk detected. 
+The details include basic information about the user and a timeline of recent risk activities. The **Timeline** section provides a chronological view of risk events associated with the user. The timeline shows when the risk was detected, the risk level, and the type of risk detected. 
 
 To see risk sign-in events together with risky user events, select the **Aggregate risk signals by risky sign-ins** checkbox.
 
