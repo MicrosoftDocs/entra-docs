@@ -8,7 +8,7 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 11/04/2025
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+#CustomerIntent: As an identity governance administrator, I want to view sensitivity labels of groups so that I can maintain security of groups within my environment.
 ---
 
 # Sensitivity Labels in Lifecycle Workflows
