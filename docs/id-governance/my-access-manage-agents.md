@@ -18,7 +18,7 @@ The My Access portal is used by users to review or request access to resources w
 
 
 [!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license.md)]
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
  
 Super basic note about the Microsoft Entra Agent ID license. Basically, if an article covers capabilities included under the yellow bar in this graphic, drop it where it makes sense in your article.
 
