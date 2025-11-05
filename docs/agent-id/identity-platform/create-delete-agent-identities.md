@@ -234,44 +234,5 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 })
 ```
 
-## [MSAL.NET](#tab/msal-net)
-
-```csharp
-using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.Json;
-
-class Program
-{
-    static async Task Main(string[] args)
-    {
-        string agentIdentityId = "<agent-identity-id>";        // ID of the agent identity (service principal)
-        string url = $"https://graph.microsoft.com/beta/serviceprincipals/{agentIdentityId}";
-
-        var httpClient = new HttpClient();
-
-        // Set required headers
-        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
-        httpClient.DefaultRequestHeaders.Add("OData-Version", "4.0");
-
-        // Send DELETE request
-        var response = await httpClient.DeleteAsync(url);
-
-        if (response.IsSuccessStatusCode)
-        {
-            Console.WriteLine($"Agent identity {agentIdentityId} deleted successfully.");
-        }
-        else
-        {
-            Console.WriteLine($"Failed to delete agent identity. Status: {response.StatusCode}");
-            string error = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(error);
-        }
-    }
-}
-```
 
 ---

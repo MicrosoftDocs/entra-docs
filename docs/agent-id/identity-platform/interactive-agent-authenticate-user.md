@@ -80,22 +80,22 @@ The agent, typically exposed via a web API, must validate the access token. Alwa
 
  1.  Configure authentication credentials in *appsettings.json* file:
 
-    [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
+[!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
-    ```json
-    "AzureAd": {
-      "Instance": "https://login.microsoftonline.com/",
-      "TenantId": "<my-test-tenant>",
-      "ClientId": "<agent-blueprint-id>",
-      "Audience": "<agent-blueprint-id>",
-      "ClientCredentials": [
-        {
-          "SourceType": "ClientSecret",
-          "ClientSecret": "your-client-secret"
-        }
-      ]
+```json
+"AzureAd": {
+"Instance": "https://login.microsoftonline.com/",
+"TenantId": "<my-test-tenant>",
+"ClientId": "<agent-blueprint-id>",
+"Audience": "<agent-blueprint-id>",
+"ClientCredentials": [
+    {
+    "SourceType": "ClientSecret",
+    "ClientSecret": "your-client-secret"
     }
-    ```
+]
+}
+```
 
 For more information on Microsoft.Identity.Web, [see official docs](/entra/msal/dotnet/microsoft-identity-web/).
 

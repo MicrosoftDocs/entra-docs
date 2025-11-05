@@ -20,7 +20,7 @@ Clients using Agent ID are expected to treat the access tokens issued to them to
 
 ## Core token claim types
 
-Tokens issued for Agent Identity (Agent ID) used for resource access include claims that you'd normally expect to see in access tokens that Microsoft Entra issues. For more information, see [access token claim reference](https://learn.microsoft.com/entra/identity-platform/access-token-claims-reference). The following example shows a sample access token issued to an Agent Identity (Agent ID) acting autonomously. 
+Tokens issued for Agent Identity (Agent ID) used for resource access include claims that you'd normally expect to see in access tokens that Microsoft Entra issues. For more information, see [access token claim reference](/entra/identity-platform/access-token-claims-reference). The following example shows a sample access token issued to an Agent Identity (Agent ID) acting autonomously. 
 
 ```json
 {

@@ -138,8 +138,3 @@ string authorizationHeaderWithAppTokens = await authorizationHeaderProvider.Crea
 ```
 
 ---
-
-## Related content
-
-- [Federated identity credentials in Microsoft Entra](../identity-platform/workload-identity-federation.md)
-- [Managed Identity in Azure](../identity/managed-identities-azure-resources/overview.md)

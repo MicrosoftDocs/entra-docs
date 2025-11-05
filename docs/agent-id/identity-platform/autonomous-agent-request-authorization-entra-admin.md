@@ -99,8 +99,3 @@ https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
 Agent implementations might redirect the admin to this URL in various ways, such as including it in a message sent to the admin in a chat window. When the admin is redirected to this URL, they're asked to sign in and grant consent to the permissions specified in the scope parameter. At the moment you must use the redirect URI listed, which directs the admin to a blank page after granting consent.
 
 Once you have granted the application permission, you must request a new agent access token for the permissions to take effect.
-
-## Related content
-
-- [Microsoft Graph permissions reference](https://learn.microsoft.com/graph/permissions-reference)
-- [Permissions and consent in the Microsoft identity platform](../identity-platform/permissions-consent-overview.md)

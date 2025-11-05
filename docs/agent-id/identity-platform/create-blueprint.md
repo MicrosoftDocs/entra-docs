@@ -225,7 +225,7 @@ Write-Host "Secret Text: $($response.secretText)"
 
 ---
 
-Be sure to securely store the `passwordCredential` value generated. It can't be viewed after initial creation. You can also use client certificates as credentials; see [Add a certificate credential](graph/api/application-addkey?tabs=http#example-3-add-a-certificate-credential-to-an-application).
+Be sure to securely store the `passwordCredential` value generated. It can't be viewed after initial creation. You can also use client certificates as credentials.
 
 ## Configure identifier URI and scope
 
