@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/18/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ---
@@ -24,12 +24,19 @@ If you need to rotate the Active Directory Federation Services (AD FS) certifica
 
 ## Determine your Token Signing Certificate thumbprint
 
-To revoke the old Token Signing Certificate that AD FS is currently using, you need to determine the thumbprint of the token-signing certificate. Do the following:
+To revoke the old Token Signing Certificate that AD FS is currently using, you need to determine the thumbprint of the token-signing certificate. From your ADFS Server do the following:
 
-1. Connect to the Microsoft Online Service by running in PowerShell `Connect-MsolService`.
+1. Connect to the Microsoft Entra PowerShell module:
 
-1. Document both your on-premises and cloud Token Signing Certificate thumbprint and expiration dates by running `Get-MsolFederationProperty -DomainName <domain>`.
-1. Copy down the thumbprint. You'll use it later to remove the existing certificates.
+   `Connect-Entra -Scopes 'Domain.Read.All'`.
+
+1. Document both your on-premises and cloud Token Signing Certificate thumbprint and expiration dates by running:
+  
+   - `Get-AdfsCertificate -CertificateType token-signing`
+
+   - `Get-EntraFederationProperty -DomainName <your_domain.com> | FL Source, SigningCertificate`.
+  
+1. Copy the thumbprint. You'll use it later to remove the existing certificates.
 
 You can also get the thumbprint by using AD FS Management. Go to **Service** > **Certificates**, right-click the certificate, select **View certificate**, and then select **Details**.
 
@@ -123,28 +130,28 @@ Now that you've added the first certificate, made it primary, and removed the ol
 
 ## Update Microsoft Entra ID with the new token-signing certificate
 
-1. Open the Azure AD PowerShell module. Alternatively, open Windows PowerShell, and then run the `Import-Module msonline` command.
-
 1. Connect to Microsoft Entra ID by running the following command: 
 
-   `Connect-MsolService`
+   `Connect-Entra -Scopes 'Domain.Read.All'`
    
 1. Enter your [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) credentials.
 
-    > [!Note]
-    > If you're running these commands on a computer that isn't the primary federation server, enter the following command first: 
-    >
-    >   `Set-MsolADFSContext -Computer <servername>`
-    >
-    > Replace \<servername\> with the name of the AD FS server and then, at the prompt, enter the administrator credentials for the AD FS server.
+1. Optionally, verify whether an update is required by checking the current certificate information in Microsoft Entra ID. To do so, run the following command:
+  
+   `Get-EntraFederationProperty -DomainName <your_domain.com> | FL Source, SigningCertificate` and convert the Base64 Encoded cert to a readable format to check the certificate expiration and thumbprint. 
 
-1. Optionally, verify whether an update is required by checking the current certificate information in Microsoft Entra ID. To do so, run the following command: `Get-MsolFederationProperty`. Enter the name of the Federated domain when prompted.
+1. To update the certificate information in Microsoft Entra ID, run the following command: `Update-MgDomainFederationConfiguration -DomainId <your_domain.com> -InternalDomainFederationId <hex_domainID>`.
 
-1. To update the certificate information in Microsoft Entra ID, run the following command: `Update-MsolFederatedDomain` and then enter the domain name when prompted.
+   >[!IMPORTANT]
 
-    > [!Note]
-    > If you receive an error when you run this command, run `Update-MsolFederatedDomain -SupportMultipleDomain` and then, at the prompt, enter the domain name.
+   You can get the **-InternalDomainFederationId** value by running the following command:
 
+   `Get-EntraFederationProperty -DomainName your_domain.com`
+
+    :::image type="content" source="./media/how-to-connect-install-multiple-domains/entra-fed-property.png" alt-text="Screenshot shows output of the Get-EntraFederationProperty cmdlet.":::
+
+
+  
 ## Replace SSL certificates
 
 If you need to replace your token-signing certificate because of a compromise, you should also revoke and replace the Secure Sockets Layer (SSL) certificates for AD FS and your Web Application Proxy (WAP) servers.
@@ -169,7 +176,7 @@ If you've renewed and configure a new token signing or token decryption certific
 If your federation partners can't consume your federation metadata, you must manually send them the public key of your new token-signing / token-decrypting certificate. Send your new certificate public key (.cer file or .p7b if you want to include the entire chain) to all your resource organization or account organization partners (represented in your AD FS by relying party trusts and claims provider trusts). Have the partners implement changes on their side to trust the new certificates.
 
 ## Revoke the refresh tokens via PowerShell
-Now you want to revoke the refresh tokens for users who might have them and force them to log in again and get new tokens. This logs users out of their phones, current webmail sessions, and other places that are using tokens and refresh tokens. For more information, see [Revoke-EntraUserAllRefreshToken](/powershell/module/microsoft.entra/revoke-entrauserallrefreshtoken). Also see [Revoke user access in Microsoft Entra ID](../../users/users-revoke-access.md).
+Now you want to revoke the refresh tokens for users who might have them and force them to log in again and get new tokens. This logs users out of their phones, current webmail sessions, and other places that are using tokens and refresh tokens. For more information, see [Revoke-EntraUserAllRefreshToken](/powershell/module/microsoft.entra.authentication/revoke-entrauserallrefreshtoken). Also see [Revoke user access in Microsoft Entra ID](../../users/users-revoke-access.md).
 
 ## Next steps
 

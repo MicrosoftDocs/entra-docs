@@ -3,7 +3,7 @@ title: Sign in user and call a protected web API in iOS app
 description: The tutorials provide a step-by-step guide on how to Sign in user and call a protected web API in iOS (Swift) app for authentication.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
 ms.service: identity-platform
@@ -88,7 +88,7 @@ After you sign in, the app will display the data returned from the Microsoft Gra
 Learn more about building mobile apps that call protected web APIs in our multi-part scenario series.
 
 > [!div class="nextstepaction"] 
-> [Scenario: Mobile application that calls web APIs](scenario-mobile-app-registration.md)
+> [Scenario: Mobile application that calls web APIs](scenario-mobile-app-configuration.md)
 
 
 ::: zone-end

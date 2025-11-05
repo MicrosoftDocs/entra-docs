@@ -1,10 +1,10 @@
 ---
 title: Retrieve and return data from an OnAttributeCollectionStart event
 description: Reference documentation for a custom authentication extension that invokes the OnAttributeCollectionStart event for External ID customer configurations.
-author: msmimart
-manager: CelesteDG
-ms.author: mimart
-ms.date: 06/26/2025
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
+ms.date: 09/16/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -23,11 +23,6 @@ To modify the sign-up experience for your customer self-service sign-up user flo
 - **showBlockPage** - Show an error message and block the user from signing up.
 
 This article describes the REST API schema for the OnAttributeCollectionStart event. (See also the related article [Custom Extension for OnAttributeCollectionSubmit event](custom-extension-OnAttributeCollectionSubmit-reference.md).)
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
     
 ## REST API schema
 

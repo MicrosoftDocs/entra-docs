@@ -27,6 +27,20 @@ Here's a list of related resources:
 | Understand Microsoft Entra private network connectors | Find out more about [connector management](../identity/app-proxy/application-proxy-connectors.md) and how connectors [autoupgrade](../identity/app-proxy/application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra private network connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
+## Version 1.5.4522.0
+ 
+### Release status
+ 
+October 10, 2025: Released for download. Note that Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. This version may perform auto-upgrade of your connector. As long as the private network connector updater service is running, your connectors may update with this connector release automatically. If you don’t see the connector updater service on your server, you need to reinstall your connector manually to get updates. You can install via the download page in the Microsoft Entra admin center. 
+ 
+### New features and improvements
+ 
+- New UI for the Connector Diagnostics Tool to assist with troubleshooting setup issues
+- Improvements related to connection timeout and intermittent failure logging and mitigation
+- Optimizations for improved streaming bandwidth and performance
+- Improved collection of private access sensor telemetry
+- Bug fixes and other minor improvements
+
 ## Version 1.5.4364.0
  
 ### Release status

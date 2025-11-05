@@ -30,7 +30,7 @@ In this case, an audit event is also logged with a category of "ApplicationManag
 
 To configure risk-based step-up consent, you need:
 
-- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 ## Disable or re-enable risk-based step-up consent

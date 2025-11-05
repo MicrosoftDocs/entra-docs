@@ -22,13 +22,14 @@ Using the information in this tutorial, an administrator of the application lear
 
 > [!div class="checklist"]
 > * Create an access review
-> * Access the audit logs
-> * Access the sign-ins
+> * View the audit logs
+> * View the sign-ins
 > * Send logs to Azure Monitor
 
 ## Prerequisites
 
-- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- A Microsoft Entra ID Governance subscription for your organization's member users, including for all employees who are reviewing access or having their access reviewed. Some capabilities within this feature might operate with a Microsoft Entra ID P2 subscription.
 - One of the following roles: Identity Governance Administrator, Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
 - An enterprise application that has been configured in your Microsoft Entra tenant.
 
@@ -79,11 +80,11 @@ You can track the progress of access reviews as they're completed.
 
 The **Results** page provides information on each user under review in the instance, including the ability to Stop, Reset, and Download results. To learn more, check out the [Complete an access review of groups and applications in Microsoft Entra access reviews](~/id-governance/complete-access-review.md) article. 
 
-## Access the audit logs
+## View the audit logs
 
 The Microsoft Entra audit logs capture a wide variety of activities within your tenant. These logs provide valuable insights into the activities you need to monitor. For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
 
-To access the audit logs, go to **Entra ID** > **Monitoring & health** > **Audit logs**.
+To view the audit logs, go to **Entra ID** > **Monitoring & health** > **Audit logs**.
 
 The audit logs capture activities that fall under the following categories. This list is not exhaustive. For a full list of the audit log categories and activities, see [Audit log activities](../monitoring-health/reference-audit-activities.md).
 
@@ -95,11 +96,11 @@ The audit logs capture activities that fall under the following categories. This
 - Password rollover status
 - Account provisioning errors
 
-## Access the sign-in logs
+## View the sign-in logs
 
 The Microsoft Entra sign-in logs capture interactive, non-interactive, managed identity, and service principal sign-ins. For more information, see [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
 
-To access the sign-in logs, go to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
+To view the sign-in logs, go to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 
 You also can view application sign-in information from the Enterprise applications area. The sign-in logs open the same logs from **Monitoring & health** > **Sign-in logs**, but the filter is already set to the selected application. The **Usage & insights** report also summarizes sign-in activity for the application.
 

@@ -93,17 +93,14 @@ landingContent:
       - linkListType: overview
         links:
           - text: Security Copilot in Microsoft Entra
-            url: copilot-security-entra.md
+            url: ../security-copilot/security-copilot-in-entra.md
           - text: Agents in Microsoft Entra
-            url: copilot-entra-agents.md
+            url: ../security-copilot/entra-agents.md
       - linkListType: how-to-guide
         links:
           - text: Respond to identity threats
-            url: copilot-entra-risky-user-summarization.md
+            url: ../security-copilot/entra-risky-user-summarization.md
           - text: Investigate incidents
-            url: copilot-security-entra-investigate-incident.md
+            url: ../security-copilot/entra-investigate-incident.md
           - text: Investigate app risk
-            url: copilot-security-entra-investigate-risky-apps.md
-
-
-
+            url: ../security-copilot/entra-investigate-risky-apps.md

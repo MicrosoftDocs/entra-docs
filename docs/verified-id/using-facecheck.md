@@ -3,7 +3,7 @@ title: Tutorial - Using Face Check with Microsoft Entra Verified ID and unlockin
 description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
 ms.service: entra-verified-id
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.author: barclayn
 ms.topic: tutorial
 ms.date: 04/30/2025
