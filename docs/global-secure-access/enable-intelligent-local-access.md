@@ -21,7 +21,7 @@ Intelligent Local Access capability can help optimize the traffic flow from Micr
 
 To configure a Global Secure Access Private Networks, you must have:
 
-- [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role or the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
+- [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator) role or the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role.
 
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
@@ -41,7 +41,7 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 
 3.  Select **Add Private network**.
 
-:::image type="content" source="media/enable-intelligent-local-access/add-private-network.png" alt-text="A screenshot of a computer AI-generated content may be incorrect." lightbox="media/enable-intelligent-local-access/add-private-network.png":::
+:::image type="content" source="media/enable-intelligent-local-access/add-private-network.png" alt-text="A screenshot showing the UI screen where you can add a private network." lightbox="media/enable-intelligent-local-access/add-private-network.png":::
 
 4.  In the **Add Private network** panel that opens, define following:
 
@@ -69,7 +69,7 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 
 2.  Select **Create**.
 
-:::image type="content" source="media/enable-intelligent-local-access/create-private-network.png" alt-text="A screenshot of a computer AI-generated content may be incorrect." lightbox="media/enable-intelligent-local-access/create-private-network.png":::
+:::image type="content" source="media/enable-intelligent-local-access/create-private-network.png" alt-text="A screenshot of the page where you create a private network." lightbox="media/enable-intelligent-local-access/create-private-network.png":::
 
 ## Key Capabilities
 
