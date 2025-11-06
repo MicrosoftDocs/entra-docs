@@ -50,7 +50,13 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 1. Once completed, you'll be shown a screen with a Temporary Access Pass, Copy this code and click **sign in**. 
 1. Finally, you'll be redirected to the My Security Info page where you can register a new authentication method and fully regain access. 
 
-    :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery."lightbox="media/how-to-account-recovery-user-setup/create-passkey.png":::   
+    >[!Note]
+    > This may be presented by the provider as an option such as **Add a Verified ID** or **Open in Authenticator**.
+    
+15. When you're prompted,  **Open** and unlock Microsoft Authenticator.
+16. You'll then be asked to complete a quick Face Check before your account ownership can be validated. 
+17. Once completed, you'll be shown a screen with a Temporary Access Pass. Copy this code and select **Sign in**. 
+18. Finally, you'll be redirected to [Security info](https://mysignins.microsoft.com/security-info) where you can register a new authentication method and fully regain access. 
 
 ## Troubleshooting
 
