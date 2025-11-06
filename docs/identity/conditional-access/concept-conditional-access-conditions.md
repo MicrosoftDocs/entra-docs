@@ -120,6 +120,7 @@ This setting works with all browsers. However, to satisfy a device policy, like 
 | Operating Systems | Browsers |
 | :-- | :-- |
 | Windows 10 + | Microsoft Edge, [Chrome](#chrome-support), [Firefox 91+](https://support.mozilla.org/kb/windows-sso) |
+| Windows Server 2025 | Microsoft Edge, [Chrome](#chrome-support) |
 | Windows Server 2022 | Microsoft Edge, [Chrome](#chrome-support) |
 | Windows Server 2019 | Microsoft Edge, [Chrome](#chrome-support) |
 | iOS | Microsoft Edge, Safari (see the notes) |

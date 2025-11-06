@@ -6,11 +6,11 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/22/2025
+ms.date: 10/31/2025
 
 #CustomerIntent: As an SOC administrator, I want to use Microsoft Entra ID Protection so that I can bring identity risk-related telemetry into security investigations.
 ---
-# Microsoft Entra ID Protection scenario: identity risk-related telemetry in security investigations
+# Microsoft Entra ID Protection scenario: Identity risk-related telemetry in security investigations
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks.
 
@@ -18,8 +18,9 @@ An overview of the guidance begins with [Introduction to Microsoft Entra ID Pro
 
 Detailed guidance continues with these scenarios:
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
 This article helps Security Operations Center (SOC) administrators to bring identity risk-related telemetry into security investigations.
 
@@ -65,7 +66,7 @@ After you confirm a threat:
 Log and audit all SOC actions in Microsoft Entra to perform the following steps:
 
 1. Review logs in the Microsoft Entra admin center.
-1. For correlation and storage, export logs to [Azure Monitor Log Analytics](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md), [Microsoft Sentinel](/azure/sentinel/overview?tabs=defender-portal), or your dedicated SIEM.
+1. For correlation and storage, export logs to [Azure Monitor Log Analytics](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md), [Microsoft Sentinel](/azure/sentinel/overview?tabs=defender-portal), or your dedicated security information and event management (SIEM) system.
 1. Generate alerts for specific actions such as policy changes, user unblocks.
 
 ## Configure access in multitenant environments
@@ -78,6 +79,8 @@ For [multitenant environments](../identity/multi-tenant-organizations/defender-x
 
 ## Next steps
 
-- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
-- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
+* Bring identity risk-related telemetry into security investigations
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)

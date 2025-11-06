@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 07/21/2025
+ms.date: 10/16/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: sfi-image-nochange
@@ -90,7 +90,7 @@ The following scenarios aren't supported for Staged Rollout:
 
 - Legacy authentication such as POP3 and SMTP aren't supported.
 
-- Self-service password reset with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. 
+- Self-service password reset (SSPR) with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. Although it works in some cases, SSPR can't be guaranteed to work consistently when staged rollout is enabled.
 
 - Certain applications send the "domain_hint" query parameter to Microsoft Entra ID during authentication. These flows continue, and users who are enabled for Staged Rollout continue to use federation for authentication.
 

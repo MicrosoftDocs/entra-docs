@@ -16,7 +16,7 @@ ms.date: 12/10/2024
 This article contains the default usage constraints for the Microsoft Entra ID Governance, part of Microsoft Entra, service. If you’re looking for the full set of non-governance specific Microsoft Entra service limits, see: [Microsoft Entra service limits and restrictions](../identity/users/directory-service-limits-restrictions.md).
 
 > [!NOTE]
-> Limits can be increased if your usage will exceed these listed default constraints. To go beyond the default quota, you must contact Microsoft Support.
+> Limits can be increased if your usage exceeds these listed default constraints. To go beyond the default quota, you must contact Microsoft Support.
 
 ## Entitlement Management
 
@@ -34,7 +34,7 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 |Policies - An access package assignment policy specifies the policy by which users can request or be assigned an access package    |  25,000 per tenant       |
 |Connected Organizations referenced in a single policy as part of the 'Users who can request access' definition    |  1,000 per policy       |
 |Combined number of users and groups explicitly referenced in a single policy as part of the 'Users who can request access' definition.     |  500 per policy       |
-|Requests (within 3 months)  - An access package assignment request is created by or on behalf of a user who wants to obtain, update or remove an access package assignment. This includes requests which are created by the system for automatic assignment policies   |  200,000 per tenant       |
+|Requests (within three months)  - An access package assignment request is created by or on behalf of a user who wants to obtain, update, or remove an access package assignment. This includes requests that are created by the system for automatic assignment policies   |  200,000 per tenant       |
 
 ## Lifecycle Workflows
 
@@ -47,9 +47,10 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 |Workflow schedule interval in hours     |   1-24 hours      |
 |Number of users per on-demand selection	     |  10       |
 |durationBeforeTimeout range of custom task extensions     |   5 minutes-3 hours      |
+|Administrative scopes per workflow     |   5      |
 
 > [!NOTE]
-> If creating, or updating, a workflow via API the offsetInDays range will be between -180-180 days. The negative value will signal happening before the timeBasedAttribute, while the positive value will signal happening afterwards.
+> If creating, or updating, a workflow via API the offsetInDays range will be between -180 - 180 days. The negative value signals happening before the timeBasedAttribute, while the positive value signals happening afterwards.
 
 ## Related content
 

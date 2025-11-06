@@ -31,7 +31,7 @@ prerequisites:
     - |
       **[User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator)** or **[Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator)** role is required to manage group membership settings.
     - | 
-      An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
+      An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
     - |
       Access to a Microsoft Entra tenant. For more information, see [Create a new tenant](create-new-tenant.md).
 

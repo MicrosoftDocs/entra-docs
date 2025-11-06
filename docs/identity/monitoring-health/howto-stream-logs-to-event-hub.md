@@ -20,7 +20,7 @@ This article shows how you can stream your logs to an event hub, to integrate wi
 
 ## Prerequisites
 
-- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An **Azure event hub** that is already set up. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access to create general diagnostic settings for the Microsoft Entra tenant.
 - [Attribute Log Administrator](../role-based-access-control/permissions-reference.md#attribute-log-administrator) access to create diagnostic settings for [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) logs.

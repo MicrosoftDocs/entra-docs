@@ -99,7 +99,7 @@ Conditional Access policies on the **Policies** page can be filtered by admins b
 
 ### Conditional Access optimization agent
 
-The [Conditional Access optimization agent](agent-optimization.md) (preview) with Microsoft Security Copilot suggests new policies and changes to existing ones based on Zero Trust principles and Microsoft best practices. With one click, apply the suggestion to automatically update or create a Conditional Access policy. The agent needs at least the Microsoft Entra ID P1 license and [security compute units (SCU)](/copilot/security/manage-usage).
+The [Conditional Access optimization agent](../../security-copilot/conditional-access-agent-optimization.md) (preview) with Microsoft Security Copilot suggests new policies and changes to existing ones based on Zero Trust principles and Microsoft best practices. With one click, apply the suggestion to automatically update or create a Conditional Access policy. The agent needs at least the Microsoft Entra ID P1 license and [security compute units (SCU)](/copilot/security/manage-usage).
 
 ## License requirements
 
