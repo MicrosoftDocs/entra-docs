@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra ID Security for AI Agents
+title: Microsoft Entra security capabilities for AI Agents
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how Microsoft Entra ID extends comprehensive security capabilities to AI agents. It includes Conditional Access, Identity Protection, ID Governance, and network security controls designed specifically for agentic scenarios.
 author: SHERMANOUKO
