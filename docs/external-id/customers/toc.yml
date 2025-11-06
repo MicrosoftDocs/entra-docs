@@ -484,7 +484,7 @@ items:
         - name: Azure Web Application Firewall
           href: tutorial-configure-external-id-web-app-firewall.md
         - name: Cloudflare
-          href: how-to-configure-cloudflare-integration.md
+          href: how-to-configure-waf-integration.md
       - name: Fraud protection integration
         href: how-to-integrate-fraud-protection.md
     - name: Manage users
