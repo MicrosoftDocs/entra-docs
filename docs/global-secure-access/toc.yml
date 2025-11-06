@@ -142,6 +142,8 @@ items:
     items:
       - name: Understand Private Access
         href: concept-private-access.md
+      - name: Enable Intelligent Local Access
+        href: enable-intelligent-local-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
       - name: Enable Multi-Geo Capability
