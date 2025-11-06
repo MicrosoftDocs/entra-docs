@@ -300,6 +300,8 @@ items:
       href: concept-planning-your-solution.md
     - name: Woodgrove demo overview
       href: overview-solutions-customers.md
+    - name: Data residency
+      href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Security settings
       href: concept-security-customers.md
     - name: User profile attributes
