@@ -45,7 +45,7 @@ From the [My Account portal], Sponsors and Owners are able to manage the identit
 
 
 
-From the [My Access portal], Sponsors and Owners of agent identities are able to request access packages on behalf of their agent identities. For a guide on requesting access packages , see: [Request an access package on behalf of an agent ID (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-id-preview).
+From the [My Access portal], Sponsors and Owners of agent identities are able to request access packages on behalf of their agent identities. For a guide on requesting access packages , see: [Request an access package on behalf of an agent identity (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview).
 
 
 ## Agent ID sponsor administration
