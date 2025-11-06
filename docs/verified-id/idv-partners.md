@@ -17,8 +17,8 @@ Our Identity Verification (IDV) partner network extends Microsoft Entra Verified
 
 Verified ID supports two types of IDV integrations:
 
-- **Security store based integration**: simple click to configure offers that can be purchased, subscribed and transacted via Security Store in Microsoft Entra ID Account Recovery and Entra ID Governance Access Packages in-product experience. This pattern of integration does not require any custom billing contracts and customers can select the partner offers from the respective Entra in-product feature page for Government ID checks with IDV partners. 
-- **Verified ID API based integration**:  Entra Verified ID offers REST APIs that customers and partners can use for using identity verification and proofing services integration from IDV Partners. This pattern requires customer to setup billing contracts directly with the IDV partner and the use of REST APIs for integration. The integration guidance page covers step by step process and flows for issuer and verifier integrations. 
+- **Security store based integration**: simple click to configure offers that can be purchased, subscribed and transacted via Security Store in Microsoft Entra ID Account Recovery and Entra ID Governance Access Packages in-product experience. This pattern of integration doesn't require any custom billing contracts and customers can select the partner offers from the respective Entra in-product feature page for Government ID checks with IDV partners. 
+- **Verified ID API based integration**:  Entra Verified ID offers REST APIs that customers and partners can use for using identity verification and proofing services integration from IDV Partners. This pattern requires customer to set up billing contracts directly with the IDV partner and the use of REST APIs for integration. The integration guidance page covers step by step process and flows for issuer and verifier integrations. 
 
 
 ## Partners
@@ -35,7 +35,7 @@ The following table showcases the list of Verified ID  IDV partners. If you're a
 | TrueCredential (LexisNexis) | [TrueCredential documentation](https://whoiam.ai/product/truecredential/) | TrueCredential is a secure identity verification solution powered by LexisNexis Risk Solutions, leveraging Microsoft Entra Verified ID to deliver trusted, decentralized credentials. |
 
 
-### Verfified ID API based integration partners
+### Verified ID API based integration partners
 
 | Partner | Partner documentation | Description |
 |---------|----------------------|-------------|
