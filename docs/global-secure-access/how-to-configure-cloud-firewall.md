@@ -134,8 +134,8 @@ Only one cloud firewall policy can be linked to a baseline profile. Linking a cl
 
 ### Delete the linked firewall policy and link to another one
 
-1. Use the trash bin icon to permanently delete any rule. 
-1. Navigate to **Link policies** to link to another policy.
+1. Use the trash bin icon to permanently delete any policy. 
+1. Navigate to **+ Link a policy** to link to another policy.
 
 ## Known limitations
 
