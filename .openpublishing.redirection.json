@@ -3012,7 +3012,7 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-configure-cloudflare-integration.md",
-      "redirect_url": "/entra/external-id/customers/how-to-configure-cloudflare-integration",
+      "redirect_url": "/entra/external-id/customers/how-to-configure-waf-integration",
       "redirect_document_id": true
     },
     {
