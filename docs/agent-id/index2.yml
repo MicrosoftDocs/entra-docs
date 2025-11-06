@@ -23,7 +23,7 @@ highlightedContent:
     - title: What is an agent identity?
       url: ./identity-platform/what-is-agent-id.md
       itemType: overview
-    - title: Set up your development environment
+    - title: Set up your development environment (LINK)
       url: ./identity-platform/what-is-agent-registry.md           ###./set-up-environment.md
       itemType: quickstart
 
@@ -45,19 +45,19 @@ additionalContent:
         ## CARD 2 ######################
         - title: Agent governance and lifecycles
           links:
-            - text: Microsoft Entra ID Governance for agents
+            - text: Microsoft Entra ID Governance for agents (LINK)
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
-            - text: Agent identity lifecycle management
+            - text: Agent identity lifecycle management (LINK)
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-lifecycle-management.md
 
         ## CARD 3 ######################
         - title: Protect agent access to resources
           links:
-            - text: Conditional Access for agents
+            - text: Conditional Access for agents (LINK)
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
-            - text: Microsoft Entra ID Protection for agents
+            - text: Microsoft Entra ID Protection for agents (LINK)
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
-            - text: Network controls for agents
+            - text: Network controls for agents (LINK)
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
             
     ## Section 2: Microsoft agent identity platform ######################
@@ -67,15 +67,15 @@ additionalContent:
         ## CARD 1 ######################
         - title: Agent Identity Platform
           links:
-            - text: Set up your development environment
+            - text: Set up your development environment (LINK)
               url: ./identity-platform/what-is-agent-registry.md           ###./set-up-environment.md
             - text: Create an agent identity blueprint
               url: ./identity-platform/create-blueprint.md
-            - text: Create an agent identity
+            - text: Create an agent identity (LINK)
               url: ./identity-platform/what-is-agent-registry.md           ###./create-agent-identity.md     
             - text: Create an agent user
               url: ./identity-platform/agent-users.md           
-            - text: Agent-to-agent communication
+            - text: Agent-to-agent communication (LINK)
               url: ./identity-platform/what-is-agent-registry.md           ###./agent-to-agent-communication.md
         
         ## CARD 2 ######################
@@ -85,7 +85,7 @@ additionalContent:
               url: ./identity-platform/agent-users.md
             - text: Agent ownership and sponsorship
               url: ./identity-platform/agent-owners-sponsors-managers.md
-            - text: Permissions and scopes
+            - text: Permissions and scopes (LINK)
               url: ./identity-platform/what-is-agent-registry.md           ###./agent-identity-access-control-overview.md
             - text: Sign-in and audit logs for agents
               url: ./identity-professional/sign-in-audit-logs-agents.md
@@ -96,12 +96,12 @@ additionalContent:
             - text: What is the agent registry?
               url: ./identity-platform/what-is-agent-registry.md
             - text: Publishing agent identities
-              url: ./identity-platform/create-blueprint.md    ###
-            - text: Agent certification process
+              url: ./identity-platform/create-blueprint.md    
+            - text: Agent certification process (LINK)
               url: ./identity-platform/what-is-agent-registry.md           ###./agent-certification-process.md
-            - text: Agent collections overview
+            - text: Agent collections overview (LINK)
               url: ./identity-platform/what-is-agent-registry.md           ###./agent-collections-overview.md
-            - text: Registry navigation and filtering
+            - text: Registry navigation and filtering (LINK)
               url: ./identity-platform/what-is-agent-registry.md           ###./registry-navigation-filtering.md
     
     ## Section 3: Learn more ######################
