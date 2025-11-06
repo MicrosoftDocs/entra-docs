@@ -55,7 +55,7 @@ The agent identifies unused applications with assigned owners and facilitates co
 
 - **Owner identification:** The agent scans applications for owners assigned in the Microsoft Entra application registration or service principal owner properties.
 
-- **Communication workflow:** Notifications are sent via email from `AppRiskAgent-noreply@microsoft.com` or through Microsoft Teams bot messages, depending on your configuration.
+- **Communication workflow:** Notifications are sent via email or through Microsoft Teams bot messages, depending on your configuration.
 
 - **Response tracking:** The agent monitors owner responses and integrates feedback into remediation planning. Owners can indicate whether applications should be retained, removed, or if they're not the correct contact.
 
@@ -99,7 +99,7 @@ To notify owners about unused applications:
 > [!NOTE]
 > Allow up to 15 minutes for email delivery. Teams notifications are typically delivered immediately. If emails aren't received, check spam filters for messages from `AppLifecycleManagementAgent-noreply@microsoft.com`.
 
-The agent currently supports notifying owners of up to 20 unused applications per notification cycle during private preview.
+The agent currently supports notifying owners of up to 20 unused applications per notification cycle. For larger sets of applications, consider multiple notification cycles.
 
 ## Monitor owner responses
 
@@ -123,7 +123,7 @@ Owner decisions are automatically incorporated into remediation planning workflo
 
 ## Handle applications without owners
 
-When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator (and other factors in the future). It then reviews suggested owners in the agent interface based on those factors
+When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator. It then reviews suggested owners in the agent interface based on those factors
 
 :::image type="content" source="media/agent-contact-app-owners/suggested-app-owners.png" alt-text="Screenshot showing suggested owner identification interface." lightbox="media/agent-contact-app-owners/suggested-app-owners.png":::
 

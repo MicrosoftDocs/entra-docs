@@ -69,9 +69,9 @@ If the agent identifies something that wasn't previously suggested, it takes the
 
 **App risk remediation**: The agent detects unused applications with high-privilege permissions, identifies applications without assigned owners, suggests owners for unowned apps, and facilitates communication with application owners for remediation decisions. It provides recommendations for safely disabling unnecessary applications in batches to reduce your organization's attack surface.
 
-1. The agent creates detailed recommendations with context and suggested actions.
+- The agent creates detailed recommendations with context and suggested actions.
 
-1. The agent provides onboarding suggestions with appropriate user scoping or risk remediation plans including communication with application owners.
+- The agent provides onboarding suggestions with appropriate user scoping or risk remediation plans including communication with application owners.
 
 The agent provides two main categories of suggestions to help you maintain a secure and well-managed application environment:
 
