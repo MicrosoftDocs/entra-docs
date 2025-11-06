@@ -130,7 +130,7 @@ Only one cloud firewall policy can be linked to a baseline profile. Linking a cl
 
 1. Use the pencil icon to change the State of a linked firewall policy from **enabled** to **disabled** or vice versa.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy.png":::
 
 ### Delete the linked firewall policy and link to another one
 
