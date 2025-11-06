@@ -1,5 +1,5 @@
 ---
-title: Agent ID sponsor tasks in Lifecycle Workflows (Preview)
+title: Agent identity sponsor tasks in Lifecycle Workflows (Preview)
 description: This article describes workflow tasks that involve sponsors of agent identities (IDs).
 author: owinfreyATL
 ms.author: owinfrey
@@ -11,7 +11,7 @@ ms.date: 10/25/2025
 #CustomerIntent: As a lifecycle workflows administrator, I want to create workflows that target agent ID sponsors so that agent ID sponsor management can be streamlined.
 ---
 
-# Agent ID sponsor tasks in Lifecycle Workflows (Preview)
+# Agent identity sponsor tasks in Lifecycle Workflows (Preview)
 
 
 Governing agent identities (ID) sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent ID sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. 
