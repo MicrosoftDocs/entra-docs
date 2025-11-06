@@ -16,16 +16,10 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra Agent ID?
       itemType: overview
-      url: ./identity-platform/what-is-agent-id-platform.md
+      url: ./identity-professional/index.yml
     - title: What is the Microsoft agent identity platform?
       itemType: overview
-      url: ./identity-platform/what-is-agent-id-platform.md 
-    - title: What is an agent ID?
-      url: ./identity-platform/what-is-agent-id.md
-      itemType: overview
-    - title: Set up your development environment
-      url: ./what-is-agent-registry.md           ###./set-up-environment.md
-      itemType: quickstart
+      url: ./identity-platform/index.yml
 
 additionalContent:
   # Supports up to 4 subsections
@@ -42,7 +36,6 @@ additionalContent:
             - text: Microsoft Entra agent ID features
               url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
 
-
     ## Section 2: Microsoft agent identity platform ######################
     - title: Microsoft agent identity platform
       summary: The platform that enables you to create, register, and manage agent identities. Includes the agent registry for discovering and organizing agents across your organization.
@@ -50,37 +43,9 @@ additionalContent:
         ## CARD 1 ######################
         - title: Agent Identity Platform
           links:
-            - text: Set up your development environment
-              url: ./identity-platform/what-is-agent-registry.md           ###./set-up-environment.md
-            - text: Create an agent identity blueprint
-              url: ./identity-platform/create-blueprint.md
-            - text: Create an agent identity
-              url: ./identity-platform/what-is-agent-registry.md           ###./create-agent-identity.md     
-            - text: Create an agent user
-              url: ./identity-platform/what-is-agent-registry.md           ###./create-agent-user.md
-            - text: Agent-to-agent communication
-              url: ./identity-platform/what-is-agent-registry.md           ###./agent-to-agent-communication.md
-
-    
-    ## Section 3: Learn more ######################
-    - title: Learn more
-      summary: Explore SDK references, API documentation, and code samples to build and manage agent identities.
-      items:
-        ## CARD 1 ######################
-        - title: Technical references
-          links:
-            - text: SDK Reference
-              url: ./sdk-reference.md
-            - text: Microsoft Graph API reference
-              url: /graph/api/overview
-            - text: Code samples and tutorials
-              url: ./set-up-environment.md
-            - text: OAuth protocols for Agent IDs
-              url: ./oauth-protocols-for-agent-ids.md
-        ## CARD 2 ######################
-        - title: Related content
-          links:
-            - text: Security for AI
-              url: /security/security-for-ai/
-            - text: Security Copilot + Microsoft Entra
-              url: /entra/security-copilot/security-copilot-in-entra            
+            - text: What is the Microsoft agent identity platform?
+              url: ./identity-platform/what-is-agent-id-platform.md
+            - text: What is an agent ID?
+              url: ./identity-platform/what-is-agent-id.md
+            - text: What is the agent registry?
+              url: ./identity-platform/what-is-agent-registry.md       
