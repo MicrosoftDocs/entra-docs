@@ -127,7 +127,6 @@ As the owner or sponsor of an agent ID, you can request an access package for a 
 1. On the Access packages page, locate the access package you want to request for an agent ID and select **Request**.
     
 1. On the Request pane under **Request details**, select requesting for **Sponsored agent**.
-    :::image type="content" source="media/entitlement-management-request-behalf/agent-access-package.png" alt-text="Screenshot of requesting access package for agent.":::
 
 ## Next steps
 
