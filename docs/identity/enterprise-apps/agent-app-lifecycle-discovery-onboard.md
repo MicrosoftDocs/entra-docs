@@ -110,6 +110,6 @@ After onboarding:
 
 ## Related content
 
-- [Monitor and remediate risky apps with the App lifecycle management agent](agent-app-lifecycle-remediate.md)
+- [Monitor and remediate risky apps with the App lifecycle management agent](agent-identify-prioritize-risky-apps.md)
 - [Create remediation plans for unused applications with the App lifecycle management agent](agent-app-lifecycle-remediation-plans.md)
 - [Plan a Microsoft Entra application management deployment](plan-an-application-integration.md)
