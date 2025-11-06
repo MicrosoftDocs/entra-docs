@@ -75,7 +75,7 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 3. Select **DDoS**.
 4. A message appears. 
 
-  :::image type="content" source="media/how-to-configure-cloudflare-integration/bot-protection.png" alt-text="Screenshot of bot protection options.":
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/bot-protection.png" alt-text="Screenshot of bot protection options.":::
 
 ### Bot protection
 
@@ -136,7 +136,7 @@ For the following instructions, you can add custom HTML pages for visitors.
 1. For **Place at**, select **Last**.
 1. Select **Deploy**.
 
-  :::image type="content" source="media/how-to-configure-cloudflare-integration/create-rule-name.png" alt-text="Screenshot of the name field on the create rule dialog."::
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/create-rule-name.png" alt-text="Screenshot of the name field on the create rule dialog.":::
 
 ### OWASP and managed rulesets
 
@@ -188,9 +188,9 @@ You can use the Microsoft Graph API through [Graph Explorer](https://developer.m
 
 Make sure the caller has the [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) role and has consented to the [RiskPreventionProviders.Read.All](/graph/permissions-reference#riskpreventionprovidersreadall) permission. 
 
-  :::image type="content" source="media\how-to-configure-akamai-integration\consent-to-permissions.png" alt-text="Screenshot showing consent to permissions." :::
+  :::image type="content" source="media\how-to-configure-cloudflare-integration\consent-to-permissions.png" alt-text="Screenshot showing consent to permissions." :::
 
-  :::image type="content" source="media\how-to-configure-akamai-integration\consent-button.png" alt-text="Screenshot showing the consent button." :::
+  :::image type="content" source="media\how-to-configure-cloudflare-integration\consent-button.png" alt-text="Screenshot showing the consent button." :::
 
 | **Permission**  | **Description**  | **Endpoint**  |
 |----|----|----|
@@ -344,7 +344,7 @@ The following table lists common issues you might encounter when integrating Clo
 - Cloudflare WAF [Get started guide](https://developers.cloudflare.com/waf/get-started/): Includes recommendations on how to best configure WAF and what basic protection and rules can be deployed. 
 - FAQ related to [External Tenant Overview - Microsoft Entra External ID | Microsoft Learn](/entra/external-id/customers/overview-customers-ciam) for other best practices and considerations. 
 - Check traffic results in the Cloudflare dashboard: [Security Analytics · Cloudflare Web Application Firewall (WAF) docs](https://developers.cloudflare.com/waf/analytics/security-analytics/)
-- Azure Front Door additional best practices [Domains in Azure Front Door | Microsoft Learn](https://learn.microsoft.com/en-us/azure/frontdoor/domain#domain-types)
+- Azure Front Door additional best practices [Domains in Azure Front Door | Microsoft Learn](/azure/frontdoor/domain)
 - [API Troubleshooting · Cloudflare Fundamentals docs](https://developers.cloudflare.com/fundamentals/api/troubleshooting/) 
 - [Troubleshooting · Cloudflare Support docs](https://developers.cloudflare.com/support/troubleshooting/)
 
