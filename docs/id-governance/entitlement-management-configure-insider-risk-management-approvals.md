@@ -69,7 +69,7 @@ When a risky user submits a request for an access package, administrators are ab
 :::image type="content" source="media/entitlement-management-configure-risk-approvals/insider-risky-user-pending-request.png" alt-text="Screenshot of a pending request for an access package by a risky user.":::
 
 A user set as an approver, or fallback approver, for risky users can view the request to approve or deny via the my access portal:
-:::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png" alt-text="Screenshot of the approvals page in my access showing the risky user.":::
+:::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png" alt-text="Screenshot of the approvals page in my access showing the risky user." lightbox="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png":::
 
 
 > [!NOTE]
