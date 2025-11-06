@@ -14,4 +14,4 @@ Token validation of token acquired for agent identities or agent user identities
     HttpContext.User.IsAgentUserIdentity()
     ```
 
-These two extensions methods, apply to both `ClaimsIdentity` and `ClaimsPrincipal`.
+These two extension methods apply to both `ClaimsIdentity` and `ClaimsPrincipal`.
