@@ -16,7 +16,7 @@ ms.date: 06/18/2025
 
 Entitlement Management enables admins to create access packages to manage their organization’s resources. Admins can either directly assign identities to an access package, or configure an access package policy that allows users and group members to request access. The option to create self-service processes is useful, especially as organizations scale and hire more employees. However, new employees joining an organization might not always know what they need access to, or how they can request access. In this case, a new employee would likely rely on their manager to guide them through the access request process. Instead of having new employees navigate the request process, managers can request access packages for their employees, making onboarding faster and more seamless. To enable this functionality for managers, admins can select an option when setting up an access package policy that allows managers to request access on their employees' behalf.
 
-Expanding self-service request flows to allow requests on behalf of identites ensures that identities have timely access to necessary resources, and increases productivity.
+Expanding self-service request flows to allow requests on behalf of identities ensures that identities have timely access to necessary resources, and increases productivity.
 
 
 ## Scenarios for managers requesting on behalf of employees
@@ -31,7 +31,7 @@ Now, managers are empowered to request access on behalf of new hires who haven't
 
 ## Scenarios for requesting on behalf of agent identities (Preview)
 
-The ability for administrators to request on behalf of agent identities (IDs) they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent ID, You are able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](manage-agent.md).
+The ability for administrators to request on behalf of agent identities (IDs) they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent ID, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](manage-agent.md).
 
 ## Prerequisites
 
