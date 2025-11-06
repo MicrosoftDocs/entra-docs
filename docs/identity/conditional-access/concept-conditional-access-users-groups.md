@@ -102,7 +102,7 @@ Policy can be scoped to:
 
 - All agent identities
 - Select agents acting as users
-- Select agent identities based on attributes
+- Select agent identities based on [attributes](../../fundamentals/custom-security-attributes-overview.md)
 - Select individual agent identities
 
 ## Workload identities 
