@@ -19,10 +19,11 @@ This allows agent IDs to be governed with Microsoft Entra features in the same s
 ## License requirements
 
 [!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
 ## Agent ID basics
 
-[Agent IDs](https://learn.microsoft.com/en-us/entra/agentic-identity-platform/what-is-agent-id) allows AI agents developed in either [Microsoft 365 copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-overview), or the [AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry), to take on digital identities within Microsoft Entra. Once a digital identity is established, these agent IDs are able to be governed using lifecycle and access features. Sponsors can be assigned to agent IDs after creation. Sponsors of agent IDs are human users accountable for making decisions about its lifecycle and access. For more information about the role of a sponsor of agent IDs, see: [Administrative relationships for agent IDs](https://microsoft.com/en-us/entra/agentic-identity-platform/agentic-governance-roles).
+[Agent IDs](/agentic-identity-platform/what-is-agent-id) allows AI agents to take on digital identities within Microsoft Entra. Once a digital identity is established, these agent IDs are able to be governed using lifecycle and access features. Sponsors can be assigned to agent IDs after creation. Sponsors of agent IDs are human users accountable for making decisions about its lifecycle and access. For more information about the role of a sponsor of agent IDs, see: [Administrative relationships for agent IDs](/agentic-identity-platform/agentic-governance-roles).
 
 ## Assigning access to agent IDs
 
@@ -39,9 +40,14 @@ For a guide on creating an access package, see: [Create an access package in ent
 
 ## Administration of agent IDs
 
-When agent IDs are created, its sponsors can manually manage and review parts of its access and lifecycle from the My Access portal. From this portal information about its access, activity, and lifecycle can be found.
+When agent IDs are created, Owners and sponsors of the agent can manually make decisions for the agent ID via both the My Account portal, and the My Access Portal.
 
-For a guide on managing agent identities in the My Access portal, see: [Manage Agent identity Access using the My Access Portal (Preview)](my-access-manage-agents.md).
+From the [My Account portal], Sponsors and Owners are able to manage the identity lifecycle of agents such as enabling and disabling the agent. You are also able to see information about its access, activity, and lifecycle. For more information about Managing agents, see: [Manage Agents]
+
+
+
+From the [My Access portal], Sponsors and Owners of agent IDs are able to request access packages on behalf of their agent IDs.
+For a guide on requesting access packages , see: [Manage Agent identity Access package requests using the My Access Portal (Preview)](my-access-manage-agents.md).
 
 
 ## Agent ID sponsor administration
