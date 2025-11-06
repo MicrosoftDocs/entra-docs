@@ -129,9 +129,9 @@ For the following instructions, you can add custom HTML pages for visitors.
 1. Select **WAF**.
 1. Select **Create rule**.
 1. For **Rule name**, enter a relevant name.
-1. For **If incoming requests match**, for **Field**, select **Country** or **Continent**.
+1. For **If incoming requests match**, for **Field**, select **Country/Region** or **Continent**.
 1. For **Operator**, select **equals**.
-1. For **Value**, select the country or continent to block.
+1. For **Value**, select the country/region or continent to block.
 1. For **Then take action**, select **Block**.
 1. For **Place at**, select **Last**.
 1. Select **Deploy**.
