@@ -1,6 +1,6 @@
 ---
-title: How number matching works in Authenticator preview
-description: Learn how to use number matching in preview for Microsoft Authenticator.
+title: Authenticator App same-device number matching improvements (preview)
+description: Learn about improvemenst to number matching in preview for Microsoft Authenticator.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
@@ -10,13 +10,16 @@ author: justinha
 # Customer intent: As an identity administrator, I want to explain how number matching in MFA push notifications from Authenticator in Microsoft Entra ID works in different use cases.
 ---
 
-# Authenticator App Same Device Number Matching Enhancements (preview)
+# Authenticator App same-device number matching improvements (preview)
 
 When a user signs in for MFA or phone sign-in with number match to Microsoft mobile apps like Teams and Outlook on the same device as their Authenticator app, they can reply Yes/No when prompted rather than enter the number. Users who sign in with Microsoft Edge, Chrome, or Safari web browsers continue to see today’s number matching experience. Platform-specific scenario details are provided below.
 
 >[!Note] 
 >In the following scenarios, the user signs in on the same device as Authenticator. There is no experience change when users complete number matching on a different device.
 
+## How to prepare 
+
+Administrators don't need to configure anything to prepare. Users only need to run the latest version of Microsoft Authenticator. 
 
 ## [**iOS**](#tab/iOS)
 
