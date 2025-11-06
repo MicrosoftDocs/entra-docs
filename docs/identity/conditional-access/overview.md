@@ -43,7 +43,7 @@ Some of these signals include:
    - Support for agent identities and agent users extends Zero Trust principles to AI workloads.
 - **IP location information**
    - Organizations can create IP address ranges that can be used when making policy decisions.
-   - Admins can specify entire countries' or regions' IP ranges to block or allow traffic from.
+   - Admins can specify entire countries/regions IP ranges to block or allow traffic from.
 - **Device**
    - Users with devices of specific platforms or marked with a specific state can be used when enforcing Conditional Access policies.
    - Use filters for devices to target policies to specific devices like privileged access workstations.
