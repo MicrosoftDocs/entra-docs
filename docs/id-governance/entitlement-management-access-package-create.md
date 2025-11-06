@@ -34,7 +34,7 @@ Here are the high-level steps to create an access package with an initial policy
 
 1. Add resource roles from resources in the catalog to your access package.
 
-1. Specify an initial policy for users who can request access for themselves or [on-behalf-of other users](entitlement-management-request-behalf.md).
+1. Specify an initial policy for users who can request access for themselves or [on-behalf-of other identities](entitlement-management-request-behalf.md).
 
 1. Specify approval settings and lifecycle settings in that policy.
 
@@ -97,7 +97,7 @@ If you're not sure which resource roles to include, you can skip adding them whi
 1. For [groups managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), both active and eligible roles are available as options.
     :::image type="content" source="media/entitlement-management-access-package-create/pim-for-groups-roles.png" alt-text="Screenshot of available roles to be assigned to PIM for groups resource in an access package.":::
 1. For [assigning Microsoft Entra roles](entitlement-management-roles.md), both active and eligible member assignments are available as options.
-1. For assigning API permissions, you can specify which role permission is granted for each role type.
+1. For assigning API permissions, select one of more API permission from the list.
     :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding api permissions as resource roles to an access package.":::
 
 1. Select **Next: Requests**.
