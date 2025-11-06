@@ -116,7 +116,7 @@ With the setting enabled, do the following steps to manage your team assignments
     :::image type="content" source="media/entitlement-management-request-behalf/manage-team-reviews.png" alt-text="Screenshot of managing team in the my access portal." lightbox="media/entitlement-management-request-behalf/manage-team-reviews.png":::
 
 
-## Request an access package on behalf of an agent ID (Preview)
+## Request an access package on behalf of an agent identity (Preview)
 
 As the owner or sponsor of an agent ID, you can request an access package for a direct report by doing the following steps:
 
