@@ -124,13 +124,13 @@ When the setup is complete, you see a confirmation message. Select **Done** and 
 > If you select **Review** before adding settings, the **Subscription** and **Resource group** appear on the right-hand side. These fields are read-only. To make changes, remove the existing service provider information and restart the wizard.  
 Keep the window open while the background subscription check runs. If you close or refresh the window before the check finishes, you might need to restart the wizard from **Start setup**.
 
-  :::image type="content" source="media/how-to-azure-monitor/add-diagnostic-settings.png" alt-text="Screenshot that shows the Add diagnostic settings page." lightbox="media/how-to-azure-monitor/add-diagnostic-settings.png"::::::
+  :::image type="content" source="media/how-to-azure-monitor/add-diagnostic-settings.png" alt-text="Screenshot that shows the Add diagnostic settings page." lightbox="media/how-to-azure-monitor/add-diagnostic-settings.png":::
 
 
-6. Select **Add diagnostic setting** to add a new setting or **Edit setting** to edit an existing one. You might need multiple diagnostic settings for a resource if you want to send data to multiple destinations of the same type.
-7. Give your setting a descriptive name.
-8. **Logs and metrics to route**: For logs, either choose a [category group](/azure/azure-monitor/platform/diagnostic-settings?tabs=portal#category-groups) or select the individual checkboxes for each category of data you want to send to the destinations specified later. The list of categories varies for each Azure service. Select **AllMetrics** if you want to collect platform metrics.
-9. **Destination details**: Select the checkbox for each destination that should be included in the diagnostic settings and then provide the details for each. If you select Log Analytics workspace as a destination, then you might need to specify the collection mode. See [Collection mode](/azure/azure-monitor/platform/resource-logs?tabs=log-analytics#collection-mode) for details.
+3. Select **Add diagnostic setting** to add a new setting or **Edit setting** to edit an existing one. You might need multiple diagnostic settings for a resource if you want to send data to multiple destinations of the same type.
+4. Give your setting a descriptive name.
+5. **Logs and metrics to route**: For logs, either choose a [category group](/azure/azure-monitor/platform/diagnostic-settings?tabs=portal#category-groups) or select the individual checkboxes for each category of data you want to send to the destinations specified later. The list of categories varies for each Azure service. Select **AllMetrics** if you want to collect platform metrics.
+6. **Destination details**: Select the checkbox for each destination that should be included in the diagnostic settings and then provide the details for each. If you select Log Analytics workspace as a destination, then you might need to specify the collection mode. See [Collection mode](/azure/azure-monitor/platform/resource-logs?tabs=log-analytics#collection-mode) for details.
 
 ## Visualize your data with log queries
 
@@ -155,18 +155,18 @@ Log queries help you get the most value from the data collected in Azure Monitor
   | order by SignInCount desc  nulls last
   ```
 
-1. Select **Run**. The query results are displayed at the bottom of the screen.
-1. To save your query for later use, select **Save**.
+5. Select **Run**. The query results are displayed at the bottom of the screen.
+6. To save your query for later use, select **Save**.
 
   :::image type="content" source="media/how-to-azure-monitor/query-policy-usage.png" alt-text="Screenshot of the Log Analytics log editor.":::
 
-1. Fill in the following details:
+7. Fill in the following details:
 
 - **Name** - Enter the name of your query.
 - **Save as** - Select `query`.
 - **Category** - Select `Log`.
 
-1. Select **Save**.
+8. Select **Save**.
 
 You can also change your query to visualize the data by using the [render](/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) operator.
 
