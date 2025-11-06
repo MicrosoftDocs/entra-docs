@@ -52,7 +52,7 @@ To configure ID protection-based approvals for an access package in the Microsof
 1. Browse to **ID Governance** > **Entitlement management** > **Control configurations**.
 
 1. On the control configurations screen, you're able to see the options  
-    :::image type="content" source="media/entitlement-management-configure-risk-approvals/control-configurations-cards.png" alt-text="Screenshot of the control configuration cards in Entitlement Management.":::
+    :::image type="content" source="media/entitlement-management-configure-risk-approvals/control-configurations-cards.png" alt-text="Screenshot of the control configuration cards in Entitlement Management." lightbox="media/entitlement-management-configure-risk-approvals/control-configurations-cards.png":::
 
 1. On the card **Risk-based approval (Preview)**, select **View settings**.
 
