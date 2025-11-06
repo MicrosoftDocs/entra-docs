@@ -232,9 +232,6 @@ To download all active role assignments across all roles, including built-in and
 
     :::image type="content" source="Media/bulk-operations/role-assignment-download-results.png" alt-text="Screenshot of downloading role assignment results.":::
 
-4. Sample output:
-
-    :::image type="content" source="Media/bulk-operations/role-assignment-sample-output.png" alt-text="Screenshot of sample role assignment CSV output.":::
 
 > [!NOTE]
 > Filters and sorting are **not** supported for this bulk job type; this downloads all role assignments.
