@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 # Customer intent: As an administrator, I want to enable the Intelligent Local Access (ILA) capability for Microsoft Entra Private Access, to optimize traffic flow for clients accessing Entra apps via private networks.
 ---
 
-# Enable Intelligent Local Access
+# Enable Intelligent Local Access (preview)
 
 Intelligent Local Access capability can help optimize the traffic flow from Microsoft Entra clients to Microsoft Entra apps through private access when the client is on corporate/private network. This article explains how to enable the Intelligent Private Network for Microsoft Entra Private Access.
 
@@ -31,7 +31,9 @@ Today, Entra Private Access (PA) sends all traffic, both application and authent
 
 :::image type="content" source="media/enable-intelligent-local-access/microsoft-entra-private-access-intelligent-local-access-workflow.png" alt-text="A diagram showing the workflow between Microsoft Entra Private Access and Intelligent Local Access." lightbox="media/enable-intelligent-local-access/microsoft-entra-private-access-intelligent-local-access-workflow.png":::
 
-## Enable multi-Geo capability 
+The GSA client uses DNS probes to determine if the client is inside the corporate network. Once the client identifies corpnet locations, you can define which Private Access applications should use ILA and bypass the traffic instead of sending it through the cloud backend
+
+## Enable Intelligent local access capability 
 
 To enable the Intelligent local access for Microsoft Entra Private Access, complete these steps. This procedure involves creating Private networks and adding application to the private network.
 
@@ -49,7 +51,7 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 
     2.  DNS Servers - Server address used for DNS resolution.
 
-        1.  Internet Protocol version 4 (IPv4) address, such as 192.168.2.1, that identifies a DNS server on the network.
+        1.  Internet Protocol version 4 (IPv4) address, such as 10.10.2.1, that identifies a DNS server on the network.
 
     3.  Fully qualified domain name
 
@@ -59,32 +61,30 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 
 | Resolved to IP address type | Resolved to IP address value |
 |---|---|
-| **IP address** | Internet Protocol version 4 (IPv4) address, such as 192.168.2.1, that identifies a device on the network. |
-| **IP address range (CIDR)** | Classless Inter-Domain Routing (CIDR) represents a range of IP addresses where an IP address is followed by a suffix that indicates the number of network bits in the subnet mask.<br><br>For example, 192.168.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.<br><br>Provide the starting address and network mask. |
-| **IP address range (IP to IP)** | Range of IP addresses from start IP (such as 192.168.2.1) to end IP (such as 192.168.2.10).<br><br>Provide the IP address start and end. |
+| **IP address** | Internet Protocol version 4 (IPv4) address, such as 10.10.2.1, that identifies a device on the network. |
+| **IP address range (CIDR)** | Classless Inter-Domain Routing (CIDR) represents a range of IP addresses where an IP address is followed by a suffix that indicates the number of network bits in the subnet mask.<br><br>For example, 10.10.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.<br><br>Provide the starting address and network mask. |
+| **IP address range (IP to IP)** | Range of IP addresses from start IP (such as 10.10.2.1) to end IP (such as 10.10.2.10).<br><br>Provide the IP address start and end. |
 
 1.  Select **Target Resource**.
 
-    1.  Private Access applications mapped to the Private network.
+    1.  Select Quick Access or PA enterprise app which will be locally bypassed when this private network is detected.
 
 2.  Select **Create**.
 
 :::image type="content" source="media/enable-intelligent-local-access/create-private-network.png" alt-text="A screenshot of the page where you create a private network." lightbox="media/enable-intelligent-local-access/create-private-network.png":::
 
-## Key Capabilities
+## Verify ILA flow on the client
 
-- Enables seamless Zero Trust Network Access (ZTNA) for users anywhere with consistent policy enforcement, when they're local within the corporate network or when they're connecting remotely.
+You can use the advanced diagnostic client in Global Secure Access to monitor the ILA network traffic.
 
-- Performance Optimization 
-  - Reduces latency for on-prem users by avoiding unnecessary cloud routing.
-
-- Granular Admin controls
-
-  - Can be enabled per application.
-
-  - Explicit local network detection can be configured with DNS servers, FQDN to resolve, Resolved to IP Address(es).
-
-- Traffic logs indicate whether traffic was tunneled or locally bypassed.
+Open **Advanced diagnostics** for client.
+1. Select **Start Collecting** Network traffic.
+1. Filter by Destination IP/FQDN for the end resource.
+1. Ensure the default filter for **Action == Tunnel** is removed.
+:::image type="content" source="media/enable-intelligent-local-access/advanced-diagnostics-network-traffic.png" alt-text="A screenshot of the Global Secure Access Advanced Diagnostics page showing Network traffic details." lightbox="media/enable-intelligent-local-access/advanced-diagnostics-network-traffic.png"::: 
+1. Access the application.
+1. Verify that the Connection Status is **Bypassed** and that Action is **Local** in the Network Traffic.
+:::image type="content" source="media/enable-intelligent-local-access/network-traffic-connection-status-and-action-settings.png" alt-text="A screenshot of the Global Secure Access Advanced Diagnostics page showing Network traffic status and settings." lightbox="media/enable-intelligent-local-access/network-traffic-connection-status-and-action-settings.png"::: 
 
 ## Related links
 [Understand Private Access](concept-private-access.md)
