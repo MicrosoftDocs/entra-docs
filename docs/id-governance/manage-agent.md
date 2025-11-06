@@ -3,7 +3,6 @@ title: Manage Agents in Microsoft Entra (Preview)
 description: Learn how to manage agent identities in Microsoft Entra (Preview). View, control, and take action on agents you own or sponsor with ease.
 author: owinfreyATL
 ms.author: owinfrey
-ms.author: owinfrey
 ms.service: entra-id-governance
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 11/05/2025
@@ -13,7 +12,7 @@ ms.date: 11/05/2025
 
 # Manage Agents in Microsoft Entra (Preview)
 
-The Manage agents feature in Microsoft Entra lets you view, and control, [agent identities you own or sponsor](/agentic-identity-platform/agentic-governance-roles). [Agents identities](/agentic-identity-platform/what-is-agent-id) are special identities, such as bots or automated processes, that act on behalf of users or teams. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
+The Manage agents feature in Microsoft Entra lets you view, and control, [agent identities you own or sponsor](../agent-id/identity-platform/agent-owners-sponsors-managers.md). [Agents identities](../agent-id/identity-platform/what-is-agent-id.md) are special identities, such as bots or automated processes, that act on behalf of users or teams. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
 
 > [!NOTE]
 > This feature is in public preview. Functionality might change before general availability.
