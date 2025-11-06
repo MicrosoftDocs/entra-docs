@@ -14,26 +14,6 @@ items:
     items:
     - name: (Pro-code) Integrate an agent with Entra.
       items:
-      - name: Call an API (.NET)
-        items:
-          - name: Call Microsoft Graph API
-            href: call-api-microsoft-graph.md
-          - name: Call custom APIs
-            href: call-api-custom.md
-          - name: Call an Azure service
-            href: call-api-azure-services.md
-      - name: Call an API (Agent ID SDK)
-        href: microsoft-entra-sdk-for-agent-identities.md
-    - name: Agent ID administration
-      items:
-        - name: View agent IDs
-          href: agent-lists.md
-        - name: Manage agent blueprint
-          href: manage-agent-blueprint.md
-        - name: Publish agents to registry
-          href: publish-agents-to-registry.md
-    - name: Registry agent to agent protocol
-      href: registry-agent-to-agent-protocol.md
       - name: Create an agent blueprint
         href: create-blueprint.md
       - name: Create and delete agent identities
@@ -56,6 +36,26 @@ items:
           href: interactive-agent-request-admin-authorization.md
         - name: Request user tokens
           href: interactive-agent-request-user-tokens.md
+      - name: Call an API (.NET)
+        items:
+          - name: Call Microsoft Graph API
+            href: call-api-microsoft-graph.md
+          - name: Call custom APIs
+            href: call-api-custom.md
+          - name: Call an Azure service
+            href: call-api-azure-services.md
+      - name: Call an API (Agent ID SDK)
+        href: microsoft-entra-sdk-for-agent-identities.md
+    - name: Agent ID administration
+      items:
+        - name: View agent IDs
+          href: agent-lists.md
+        - name: Manage agent blueprint
+          href: manage-agent-blueprint.md
+        - name: Publish agents to registry
+          href: publish-agents-to-registry.md
+    - name: Registry agent to agent protocol
+      href: registry-agent-to-agent-protocol.md
   - name: Concepts
     items:
     - name: Fundamentals
