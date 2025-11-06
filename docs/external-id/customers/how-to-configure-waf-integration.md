@@ -171,7 +171,7 @@ After you set up your Cloudflare account, connect it to Microsoft Entra External
 
 7. Select **Next** to save your changes.
 
-## Custom URL domains verification
+## Domain verification
 
 Select the custom URL domains that are enabled through Azure Front Door (AFD) to verify and connect them to your Cloudflare WAF configuration. This step ensures that the selected domains are protected with advanced security features.
 
@@ -180,7 +180,7 @@ Select the custom URL domains that are enabled through Azure Front Door (AFD) to
 
   :::image type="content" source=" media/how-to-configure-cloudflare-integration/verify-domain.png" alt-text="Screenshot of the verify domain page.":::
 
-1. After verification, select **Done**.
+3. After verification, select **Done**.
 
 # [Microsoft Graph API](#tab/graph-api)
 
