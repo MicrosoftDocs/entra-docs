@@ -28,7 +28,7 @@ Expiration policy is simple:
 > [!NOTE]
 > Microsoft Entra ID, part of Microsoft Entra, uses intelligence to automatically renew groups based on whether they have been in recent use. This renewal decision is based on user activity in groups across Microsoft 365 services like Outlook, SharePoint, Teams, Yammer, and others.
 
-If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisite
 

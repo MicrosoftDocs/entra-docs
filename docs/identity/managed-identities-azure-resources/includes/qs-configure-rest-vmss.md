@@ -10,7 +10,7 @@ In this article, using CURL to make calls to the Azure Resource Manager REST end
 - Enable and disable the system-assigned managed identity on an Azure virtual machine scale set
 - Add and remove a user-assigned managed identity on an Azure virtual machine scale set
 
-If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## Prerequisites
 

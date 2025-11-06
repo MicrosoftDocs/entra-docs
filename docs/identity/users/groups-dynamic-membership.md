@@ -342,6 +342,9 @@ Here's an example of using the underscore in a rule to add members based on `use
 
 You can create a group that contains all direct reports of a manager. When the manager's direct reports change in the future, the group's membership is adjusted automatically.
 
+>[!NOTE]
+> The manager is also added to a direct reports dynamic group.
+
 You construct the direct reports rule by using the following syntax:
 
 ```

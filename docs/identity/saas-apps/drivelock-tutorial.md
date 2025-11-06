@@ -27,7 +27,7 @@ In this article,  you learn how to integrate DriveLock with Microsoft Entra ID. 
 
 To integrate Microsoft Entra ID with DriveLock, you need:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * DriveLock single sign-on (SSO) enabled subscription.
 
 ## Scenario description

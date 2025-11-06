@@ -81,8 +81,6 @@ Some situations require an IT administrator to manually remediate sign-in or use
 - Confirm the user is compromised and take action to secure the account.
 - Unblock the user.
 
-You can also [remediate in Microsoft Defender for Identity](/defender-for-identity/remediation-actions).
-
 ### Generate a temporary password
 
 By generating a temporary password, you can immediately bring an identity back into a safe state. This method requires contacting the affected users because they need to know what the temporary password is. Because the password is temporary, the user is prompted to change the password to something new during the next sign-in.

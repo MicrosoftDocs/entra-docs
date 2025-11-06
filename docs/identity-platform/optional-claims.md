@@ -4,7 +4,7 @@ description: Learn how to configure optional claims and attributes in access tok
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 01/27/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
@@ -21,7 +21,7 @@ You can configure optional claims for your application through the Microsoft Ent
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Completion of [Quickstart: Register an application](quickstart-register-app.md)
 
 ## Configure optional claims in your application

@@ -4,7 +4,7 @@ description: Claims reference with details on the optional claims that can be in
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 04/10/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform

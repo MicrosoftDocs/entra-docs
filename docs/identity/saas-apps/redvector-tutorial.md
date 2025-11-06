@@ -26,7 +26,7 @@ In this article,  you learn how to integrate RedVector with Microsoft Entra ID. 
 
 To configure Microsoft Entra integration with RedVector, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 * RedVector subscription with single sign-on enabled.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID. For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 

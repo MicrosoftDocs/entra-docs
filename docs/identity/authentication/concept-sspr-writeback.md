@@ -4,7 +4,7 @@ description: Learn how password change or reset events in Microsoft Entra ID can
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 07/21/2025
+ms.date: 10/25/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -26,7 +26,7 @@ Password writeback is supported in environments that use the following hybrid id
 * [Active Directory Federation Services](~/identity/hybrid/connect/how-to-connect-fed-management.md)
 
 > [!NOTE]
-> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. 
+> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. Although it works in some cases, SSPR can't be guaranteed to work consistently when staged rollout is enabled.
 
 Password writeback provides the following features:
 
@@ -68,9 +68,9 @@ When a user account configured for federation, password hash synchronization (or
    * The user object must exist in the AD DS connector space.
    * The user object must be linked to the corresponding metaverse (MV) object.
    * The user object must be linked to the corresponding Microsoft Entra connector object.
-   * The link from the AD DS connector object to the MV must have the synchronization rule `Microsoft.InfromADUserAccountEnabled.xxx` on the link.
+   * The link from the AD DS connector object to the MV must have the synchronization rule `Microsoft.InformADUserAccountEnabled.xxx` on the link.
 
-   When the call comes in from the cloud, the synchronization engine uses the **cloudAnchor** attribute to look up the Microsoft Entra connector space object. It then follows the link back to the MV object, and then follows the link back to the AD DS object. Because there can be multiple AD DS objects (multi-forest) for the same user, the sync engine relies on the `Microsoft.InfromADUserAccountEnabled.xxx` link to pick the correct one.
+   When the call comes in from the cloud, the synchronization engine uses the **cloudAnchor** attribute to look up the Microsoft Entra connector space object. It then follows the link back to the MV object, and then follows the link back to the AD DS object. Because there can be multiple AD DS objects (multi-forest) for the same user, the sync engine relies on the `Microsoft.InformADUserAccountEnabled.xxx` link to pick the correct one.
 
 1. After the user account is found, an attempt to reset the password directly in the appropriate AD DS forest is made.
 1. If the password set operation is successful, the user is told their password has been changed.

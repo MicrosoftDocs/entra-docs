@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 08/04/2025
+ms.date: 10/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
@@ -52,6 +52,8 @@ To add synced users, follow these steps:
 9. It should successfully add the user to the group.
 10. On the far left, select **All groups**. Repeat this process by using the **Sales** group, and add **Lola Jacobson** to that group.
 
+[!INCLUDE [pre-requisites](../includes/prepare-converted-groups.md)]
+
 ## Configure provisioning
 
 To configure provisioning, follow these steps:
@@ -74,26 +76,73 @@ To configure provisioning, follow these steps:
 
    9. There are two possible approaches to set the OU:
 
-      - You can preserve the original OU path from on-premises. With this approach, you need to set the attribute mapping based on an extensionAttribute value. For more information, see [Preserve the original OU path](how-to-preserve-original-organizational-unit.md).
-   
-      Or
+      - You can use custom expressions ensure the group is re-created with the same OU. Use the following expression for ParentDistinguishedName value:
 
-      - Under **Target container** select **Edit attribute mapping**.
+        ```https
+        IIF(
+            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+            Replace(
+                Mid(
+                    Mid(
+                        Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ),
+                        Instr(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), ",", , ),
+                        9999
+                    ),
+                    2,
+                    9999
+                ),
+                "\2C", , , ",", ,
+            ),
+        "<Existing ParentDistinguishedName>",
+        )
+        ```
 
-   10. Change **Mapping type** to **Expression**.
-   11. In the expression box, enter:
+        This expression:
+        - Uses a default OU if the extension is empty.
+        - Otherwise strips the CN portion and preserves the parentDN path, again handling escaped commas.
 
-       ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+        This changes causes a full sync and doesn't affect existing groups. Test setting the GroupDN attribute for an existing group using Microsoft Graph and ensure that it moves back to original OU.
 
-   12. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+      - If you don't want to preserve the original OU path and CN information from on-premises, under **Target container** select **Edit attribute mapping**.
 
-       :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
+        1. Change **Mapping type** to **Expression**.
+        1. In the expression box, enter:
 
-   13. Select **Apply** - This changes the target container depending on the group displayName attribute.
-   14. Select **Save**.
-   15. On the left, select **Overview**.
-   16. At the top, select **Review and enable**.
-   17. On the right, select **Enable configuration**.
+           ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+
+        1. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+
+           :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
+
+        1. Select **Apply**. The target container changes depending on the group displayName attribute.
+
+   10. You can use custom expressions to ensure the group is re-created with the same CN. Use the following expression for CN value:
+
+        ```https
+        IIF(
+            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+            Replace(
+                Replace(
+                    Replace(
+                        Word(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), 1, ","),
+                        "CN=", , , "", ,
+                    ),
+                    "cn=", , , "", ,
+                ),
+                "\2C", , , ",", ,
+            ),
+        Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12)),
+        )
+        ```
+
+        This expression:
+        - If the extension is empty, generates a fallback CN from DisplayName + ObjectId.
+        - Otherwise extracts the CN, handling escaped commas by temporarily replacing them with hex values.
+
+   11. Select **Save**.
+   12. On the left, select **Overview**.
+   13. At the top, select **Review and enable**.
+   14. On the right, select **Enable configuration**.
 
 
 ## Test configuration 

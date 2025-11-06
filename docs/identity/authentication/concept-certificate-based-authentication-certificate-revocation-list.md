@@ -29,7 +29,8 @@ A CRL works by providing a mechanism to check the validity of certificates used 
 
 - **Certificate Issuance:** When a certificate is issued by a CA, it is valid until its expiration date unless it is revoked earlier. Each certificate contains a public key and is signed by the CA.
 - **Revocation:** If a certificate needs to be revoked (for example, if  the private key is compromised or the certificate is no longer needed), the CA adds it to the CRL.
-- **CRL Distribution:** The CA publishes the CRL to a location accessible by clients, such as a web server or a directory service. The CRL is typically signed by the CA to ensure its integrity.
+- **CRL Distribution:** The CA publishes the CRL to a location accessible by clients, such as a web server or a directory service. The CRL is typically signed by the CA to ensure its integrity. If the CRL is not signed by the CA, a cryptography error [AADSTS2205015](./concept-certificate-based-authentication-certificate-revocation-list.md#crl-error-reference) is thrown and follow the steps in [FAQ](./concept-certificate-based-authentication-certificate-revocation-list.md#frequently-asked-questions) to troubleshoot the issue.
+
 - **Client Check:** When a client presents a certificate for authentication, the system retrieves the CRL for each CA in the certificate chain from its published locations and checks for any revoked CAs. If any CRL location is unavailable, authentication fails because the system cannot verify the certificate’s revocation status.
 - **Authentication:** If the certificate is found in the CRL, the authentication attempt is rejected, and the client is denied access. If the certificate is not in the CRL, the authentication proceeds as normal.
 - **CRL Updates:** The CRL is updated periodically by the CA, and clients should ensure they have the latest version to make accurate decisions about certificate validity. The system does cache the CRL for a certain period to reduce network traffic and improve performance, but it does also check for updates regularly.
@@ -91,9 +92,37 @@ Microsoft Entra ID supports only one CRL endpoint and supports only HTTP or HTTP
    >Microsoft Entra ID checks the CRL of the issuing CA and other CAs in the PKI trust chain up to the root CA.    We have a limit of up to 10 CAs from the leaf client certificate for CRL validation in the PKI chain. The    limitation is to make sure a bad actor doesn't bring down the service by uploading a PKI chain with a huge    number of CAs with a bigger CRL size.
    >If the tenant's PKI chain has more than 10 CAs, and if there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration. For more information, see [CRL Pre-fetching](/windows/win32/seccrypto/certificate-revocation-list-semantics#crl-pre-fetching).
 
-### How to configure revocation
+## How to configure revocation
 
-[!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
+To revoke a client certificate, Microsoft Entra ID fetches the certificate revocation list (CRL) from the URLs uploaded as part of certificate authority information and caches it. The last publish timestamp (**Effective Date** property) in the CRL is used to ensure the CRL is still valid. The CRL is periodically referenced to revoke access to certificates that are a part of the list.
+
+**Immediate revocation of sessions with Entra CBA**
+
+There are many scenarios that could require an administrator to immediately revoke all of the session tokens so all access for a user is revoked. Such scenarios include 
+- compromised accounts
+- employee termination
+- Entra outage where cached credentials are used which does not include CRL validation
+- other insider threats.
+
+If a more instant revocation is required (for example, if a user loses a device), the authorization token of the user can be invalidated. To invalidate the authorization token, set the **StsRefreshTokensValidFrom** field for this particular user using Windows PowerShell. You must update the **StsRefreshTokensValidFrom** field for each user you want to revoke access for.
+
+To ensure that the revocation persists, you must set the **Effective Date** of the CRL to a date after the value set by **StsRefreshTokensValidFrom** and ensure the certificate in question is in the CRL.
+
+The following steps outline the process for updating and invalidating the authorization token by setting the **StsRefreshTokensValidFrom** field.
+
+
+```https
+# Authenticate to Microsoft Graph
+Connect-MgGraph -Scopes "User.Read.All"
+
+# Get the user
+$user = Get-MgUser -UserPrincipalName "test@yourdomain.com"
+
+# Get the StsRefreshTokensValidFrom property
+$user.StsRefreshTokensValidFrom
+```
+
+The date you set must be in the future. If the date is not in the future, the **StsRefreshTokensValidFrom** property is not set. If the date is in the future, **StsRefreshTokensValidFrom** is set to the current time (not the date indicated by Set-MsolUser command).
 
 ## Enforce CRL validation for CAs
 
@@ -221,6 +250,22 @@ In the CBA Authentication methods policy, select **Configure** and then select *
 ### After a CRL endpoint is configured, end users can't sign in and they see "AADSTS500173: Unable to download CRL. Invalid status code Forbidden from CRL distribution point."
 
 When a problem prevents Microsoft Entra from downloading the CRL, the cause is often firewall restrictions. In most cases, you can resolve the issue by updating firewall rules to allow the required IP addresses so Microsoft Entra can successfully download the CRL. For more information, see [List of Microsoft IPAddress](/microsoft-365/enterprise/urls-and-ip-address-ranges#microsoft-365-unified-domains).
+
+### How do I find the CRL for a CA, or how do I troubleshoot the error "AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation"?
+
+Download the CRL and compare the CA certificate and the CRL information to validate that the `crlDistributionPoint` value is valid for the CA you want to add. You can configure the CRL to the corresponding CA by matching the CA's issuer subject key identifier (SKI) to the authority key identifier (AKI) of the CRL (CA Issuer SKI == CRL AKI).
+
+The following table and figure show how to map information from the CA certificate to the attributes of the downloaded CRL.
+
+| CA certificate info |= |Downloaded CRL info|
+|----|:-:|----|
+|Subject |=|Issuer |
+|Subject Key Identifier (SKI) |=|Authority Key Identifier (KeyID) |
+
+:::image type="content" border="false" source="./media/how-to-certificate-based-authentication/certificate-crl-compare.png" alt-text="Screenshot that compares CA certificate fields with CRL information.":::
+
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
+
 
 ## Next steps
 

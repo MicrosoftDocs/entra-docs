@@ -2,7 +2,7 @@
 title: Deploy a web app with App Service auth in a pipeline
 description: Describes how to set up a pipeline in Azure Pipelines to build and deploy a web app to Azure and enable the Azure App Service built-in authentication. The article provides step-by-step instructions on how to configure Azure resources, build and deploy a web application, create a Microsoft Entra app registration, and configure App Service built-in authentication using Azure Pipelines.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom: 
 ms.date: 07/17/2023
@@ -26,7 +26,7 @@ You'll learn how to:
 
 ## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An Azure DevOps organization. [Create one for free](/azure/devops/pipelines/get-started/pipelines-sign-up).
     - To use Microsoft-hosted agents, your Azure DevOps organization must have access to Microsoft-hosted parallel jobs. [Check your parallel jobs and request a free grant](/azure/devops/pipelines/troubleshooting/troubleshooting#check-for-available-parallel-jobs).
 - A Microsoft Entra [tenant](./quickstart-create-new-tenant.md).

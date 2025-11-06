@@ -56,13 +56,13 @@ You can also store the OU information in some other attribute like *info* or any
 Use PowerShell or Microsoft Graph Explorer to verify the attribute sync.
  
 
-- **PowerShell (Microsoft Graph SDK)**
+- **Microsoft Graph PowerShell**
 
   ```powershell
   Get-MgGroup -GroupId <groupId> | Select -ExpandProperty OnPremisesExtensionAttributes 
   ```
 
-- **Microsoft Graph Explorer**
+- **Graph Explorer**
 
   ```https
   GET https://graph.microsoft.com/v1.0/groups/{group-id}?$select=onPremisesExtensionAttributes 

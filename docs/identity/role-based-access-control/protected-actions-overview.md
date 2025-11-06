@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.custom: no-azure-ad-ps-ref
 ms.topic: article
-ms.date: 01/31/2025
+ms.date: 11/03/2025
 ---
 
 # What are protected actions in Microsoft Entra ID?
@@ -72,7 +72,7 @@ Here's the initial set of permissions:
 
 Microsoft Entra ID supports two types of deletion for most directory objects: soft deletion and hard deletion. When a directory object is soft deleted, the object, its property values and relationships are preserved in the recycle bin for 30 days. A soft-deleted object can be restored with the same ID and all the property values and relationships intact. When a soft-deleted object is hard deleted, the object is permanently deleted and it cannot be recreated with the same object ID.
 
-To help protect against accidental or malicious hard deletions of some soft-deleted directory objects from the recycle bin and permanent data loss, you can add a protected action for the following permission. This deletion applies to users, Microsoft 365 groups, and applications.
+To help protect against accidental or malicious hard deletions of some soft-deleted directory objects from the recycle bin and permanent data loss, you can add a protected action for the following permission. This deletion applies to users, Microsoft 365 groups, cloud security groups, and applications.
 
 - microsoft.directory/deletedItems/delete
 

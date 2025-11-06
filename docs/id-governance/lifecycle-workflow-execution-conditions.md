@@ -30,6 +30,7 @@ The trigger you choose depends on what type of workflow you want to run for user
 - **Time based attribute**: The workflow is triggered on schedule when a time value is met.
 - **Attribute changes**: The workflow is triggered on schedule when a change to an attribute happens.
 - **Group membership change**: The workflow is triggered on schedule when a group membership change is met.
+- **Sign-in activity**: The workflow is triggered on schedule when a minimum number of days since the user last signed in is met.
 - **On-demand only**: The workflow is only triggered manually.
 
 > [!NOTE]
@@ -47,7 +48,9 @@ When setting a workflow where the trigger type is **Time based attribute**, the 
 |---------|---------|
 |Days from Event     |  The days from the event user attribute for when the workflow is triggered. Value can be from 0-180.     |
 |Event timing     |   Defines when the *Days from Event*  detail for a workflow is triggered. For example, a workflow that is scheduled to run for a user before they start working would have an event timing value of **Before**, while a workflow scheduled to run for a user after they leave your organization would have an event timing value of **After**. If selecting a template for a workflow that runs on the same day as the event user attribute, the value is **On**.      |
-|Event user attribute     | The attribute defining the change that triggers the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*" or "*LastSignInDateTime*". For a list of templates, and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md).       |
+|Event user attribute     | The attribute defining the change that triggers the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*" or "*LastSignInDateTime*". For a list of templates, and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md). You are also able to set custom attribute triggers. For more information, see [Use Custom Attribute Triggers in Lifecycle Workflows (Preview)](workflow-custom-triggers.md).       |
+
+
 
 > [!NOTE]
 > The event user attribute must be set within Microsoft Entra ID for users. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
@@ -78,7 +81,7 @@ When setting a workflow where the trigger type is **Attribute change**, the foll
 
 |Trigger detail  |Description  |
 |---------|---------|
-|Trigger Attribute     | The trigger attribute defines the attribute that is being changed to trigger the workflow to run.        |
+|Trigger Attribute     | The trigger attribute defines the attribute that's being changed to trigger the workflow to run. You are also able to set custom attribute triggers. For more information, see [Use Custom Attribute Triggers in Lifecycle Workflows (Preview)](workflow-custom-triggers.md).         |
 |Action/Operator     |  Defines the change to the attribute that triggers the workflow to run.       |
 |Value     |  The value of the trigger attribute.      |
 
@@ -116,10 +119,32 @@ The group membership change scope allows you to define for who the workflow runs
 
 When setting the scope of the group membership change trigger, the following details are defined:
 
-|Scope detail  |Description  |
+|Trigger detail  |Description  |
 |---------|---------|
 |Scope type     |  Group based.       |
 |Selected group     |  Defines the group for which the trigger action is based on.       |
+
+## Sign-in inactivity trigger
+
+The **Sign-in inactivity** trigger allows you to set a trigger based on when a certain number of days has passed since the user last signed in.
+
+:::image type="content" source="media/lifecycle-workflow-execution-conditions/sign-in-inactivity-trigger.png" alt-text="Screenshot of the sign-in inactivity trigger.":::
+
+When setting the scope of the sign-in inactivity trigger, the following details are defined:
+
+
+|Scope detail  |Description  |
+|---------|---------|
+|Days of inactivity     |   The number of days since the user last signed in.      |
+
+### Sign-in inactivity scope
+
+The sign-in inactivity scope allows you to define for who the workflow runs when the sign-in inactivity trigger is met.
+
+|Scope detail  |Description  |
+|---------|---------|
+|Scope type     |  Rule based.       |
+|Rule     |  Defines the rule for who meets the scope of the attribute changes trigger.       |
 
 ## On-demand only trigger
 
@@ -144,10 +169,21 @@ After the execution conditions are set for an enabled workflow, you're able to s
 
 If the execution conditions recently changed for the workflow, then the execution user scope list might not be current. When the execution conditions are recently changed, the list refreshes with users meeting the latest execution conditions after the workflow engine evaluates the users again. Before the workflow runs for the users, it also checks to make sure the list of users still meet the current execution conditions.
 
-> [!NOTE]
-> There's currently a catch up window for users based on a 3 day period. This means that when a workflow is created, the workflow engine considers users, who previously met its execution conditions, within 3 days of the scope of the users. For example, if you created a pre-hire workflow to run for users in a certain department 1 week before their hire date, a user who was created within 10 days before their hire date would also fall under the scope of the workflow.
-
 For a detailed guide on viewing the execution user scope of a specific workflow, see: [Check execution user scope of a workflow](check-workflow-execution-scope.md).
+
+## Lifecycle workflow catch-up window
+
+By design, Lifecycle workflows provide a three day catch up window to help customers process users that could have been missed due to delays in HR user data updates. This means when the workflow engine evaluates users that meet the current execution conditions for the scheduled workflow, it includes users for whom the expected trigger date has already passed but wasn't more than three days past the original trigger date. Once the user is processed, it would only be considered again if there was a change for the user or workflows that allowed it to meet the execution conditions again.
+
+The following table shows examples of Lifecycle workflow's catch up window:
+
+
+|Workflow Scenario  |User Data  |Lifecycle workflow behavior  |
+|---------|---------|---------|
+|A [pre-hire template](lifecycle-workflow-templates.md#onboard-pre-hire-employee) workflow is scheduled to run for users 7 days before their **EmployeeHireDate**.    |  A user is provisioned by HR in Microsoft Entra ID with an **EmployeeHireDate** in 10 days.      |  The workflow runs for the new user as the date is before the offset.      |
+|A [pre-hire template](lifecycle-workflow-templates.md#onboard-pre-hire-employee) workflow is scheduled to run for users 7 days before their **EmployeeHireDate**.    | A new user is provisioned by HR in Microsoft Entra ID with an **EmployeeHireDate** in 5 days.      |  The workflow runs for the new user as the date is within 3 days of the offset.      |
+|A [pre-hire template](lifecycle-workflow-templates.md#onboard-pre-hire-employee) workflow is scheduled to run for users 7 days before their **EmployeeHireDate**.    |  A new user is provisioned by HR in Microsoft Entra ID with an **EmployeeHireDate** in 3 days.     |  The workflow **does not** run for the new user, as the date is more than 3 days from the offset.      |
+|A new hire workflow runs on Feb 23 for in scope users with **EmployeeHireDate** of Feb 23.    |  A new user is provisioned by HR in Microsoft Entra ID on Feb 24 with an EmployeeHireDate set as Feb 23.      |  The workflow runs again on Feb 24 for the new user, as the date is within 3 days of the offset.     |
 
 ## Workflow scheduling
 

@@ -38,14 +38,14 @@ In this tutorial, you learn how to:
 > * Create a two-way forest trust between the managed domain and the on-premises domain
 > * Test and validate the forest trust relationship for authentication and resource access
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 
 To complete this tutorial, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Domain Services managed domain that is configured with a custom DNS domain name and a valid SSL certificate.

@@ -3,10 +3,10 @@ title: Add sign in and sign out in native iOS/macOS app
 description: Learn how to add sign-in and sign-out with email one-time passcode or username and password in iOS/macOS app by using native authentication.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial

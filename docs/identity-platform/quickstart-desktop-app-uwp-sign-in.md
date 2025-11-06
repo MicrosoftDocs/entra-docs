@@ -2,7 +2,7 @@
 title: "Quickstart: Sign in users and call Microsoft Graph in a Universal Windows Platform app"
 description: In this quickstart, learn how a Universal Windows Platform (UWP) application can get an access token and call an API protected by Microsoft identity platform.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 05/19/2024
@@ -21,7 +21,7 @@ See [How the sample works](#how-the-sample-works) for an illustration.
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * [Visual Studio](https://visualstudio.microsoft.com/vs/)
 
 > [!NOTE]

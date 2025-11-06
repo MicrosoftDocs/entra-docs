@@ -2,7 +2,7 @@
 title: Acquire a token to call a web API (mobile apps)
 description: Learn how to build a mobile app that calls web APIs. (Get a token for the app.)
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom: 
 ms.date: 05/07/2019
