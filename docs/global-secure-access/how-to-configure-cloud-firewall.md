@@ -55,7 +55,9 @@ This preview supports these scenarios:
 
 1. Browse to **Global Secure Access 🡪 Secure 🡪 Cloud firewall policies 🡪 Create firewall policy.**
 
-1. Provide a **Name** and **Description**, then click **Create**.
+1. Under the **Basics** tab, provide a **Name** and **Description**, then click **Next >**.
+1. Under **Policy settings**, make sure the Default Action is set to **Allow**, then click **Next >**.
+1. Under **Review and create**, review the information you've provided, then click **Create**.
 
 :::image type="content" source="media/how-to-configure-cloud-firewall/create-cloud-firewall-policy.png" alt-text="Screenshot showing the Create firewall policy page in the Entra admin center" lightbox="media/how-to-configure-cloud-firewall/create-cloud-firewall-policy.png":::
 
