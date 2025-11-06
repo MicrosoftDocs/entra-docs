@@ -1,5 +1,6 @@
 ---
 title: Agent identity logs
+titleSuffix: Microsoft Entra Agent ID
 description: Learn about enhanced logging capabilities for agent identities, including the agentSignIn resource type.
 author: omondiatieno
 ms.author: jomondi

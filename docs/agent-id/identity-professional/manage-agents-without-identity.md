@@ -1,5 +1,6 @@
 ---
 title: Manage Agents with No Agent Identities
+titleSuffix: Microsoft Entra Agent ID
 description: This article explains how to manage registry-only agents that don't have associated agent identities in Microsoft Entra ID.
 author: SHERMANOUKO
 ms.author: shermanouko

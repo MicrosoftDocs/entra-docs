@@ -1,5 +1,6 @@
 ---
 title: Control user access to agents
+titleSuffix: Microsoft Entra Agent ID
 description: Learn how to control user and agent access to applications using app roles and the assignmentRequired property for secure access management.
 author: omondiatieno
 manager: mwongerapk

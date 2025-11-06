@@ -1,5 +1,6 @@
 ---
 title: Configure inheritable permissions for Agent ID blueprints
+titleSuffix: Microsoft Entra Agent ID
 description: Learn how to configure inheritable permissions for Agent Identity blueprints to automatically grant OAuth 2.0 delegated permission scopes to agent identities.
 author: omondiatieno
 manager: mwongerapk

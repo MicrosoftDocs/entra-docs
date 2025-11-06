@@ -1,5 +1,6 @@
 ---
 title: How are agent IDs created?
+titleSuffix: Microsoft Entra Agent ID
 description: Learn the channels and roles involved in creating Microsoft Entra Agent ID blueprints, agent identities, and agent users so you can monitor and control their introduction into your tenant.
 ms.service: entra-id
 ms.topic: concept-article
