@@ -14,7 +14,7 @@ ms.date: 11/05/2025
 
 # Include custom resource access data in the catalog for catalog User Access Reviews
 
-Learn how to manage access to disconnected applications by including custom resource access data in Microsoft Entra catalogs. This guide walks you through creating a catalog, adding custom resource access data, and setting up User Access Reviews (UARs) for applications not integrated with Microsoft Entra. By leveraging this process, organizations can ensure governance over access to custom applications, enabling managers to make informed access decisions through the My Access portal.
+Learn how to manage access to disconnected applications by including custom resource access data in Microsoft Entra catalogs. This guide walks you through creating a catalog, adding custom resource access data, and setting up User Access Reviews (UARs) for applications not integrated with Microsoft Entra. By using this process, organizations can ensure governance over access to custom applications, enabling managers to make informed access decisions through the My Access portal.
 
 ## License requirements
 
@@ -50,13 +50,10 @@ With a catalog created, you can add custom resource access data to it by doing t
 
 1. Select the resource type:  **Custom resource access data**.
     :::image type="content" source="media/custom-resource-data-access-reviews/custom-resource-access-data-information.png" alt-text="Screenshot of adding custom access resource data extension information.":::
-1. On the resource page enter:
+1. On the resource page, enter:
    - **Resource name** – Example: *FinanceApp_CSV*.  
    - **Description** – Example: *Custom BYOD application data provided via CSV upload.*  
 1. Select **Save**.
-
-> [!NOTE]
-> A custom data resource represents a custom access resource dataset that customers later upload through the Upload API.
 
 ## Create a User Access Review
 
@@ -86,7 +83,7 @@ When the review is created, its **status** shows as **Initializing**.
 1. On the resource screen for the catalog, select the custom data access resource you created and select **Upload custom access data**.
     :::image type="content" source="media/custom-resource-data-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
 
-1. On the Upload access data for custom resource screen under **Basics** enter in both the access review object ID, and the Access review instance object ID. Both of these can be found under the essentials section when selecting either an access review, or access review instance.
+1. On the Upload access data for custom resource screen under **Basics**, enter in both the access review object ID, and the Access review instance object ID. Both of these can be found under the essentials section when selecting either an access review, or access review instance.
 
 1. Under **Upload files** select up to 10 CSVs to include in the access data and select **Save**. 
     > [!NOTE]
@@ -107,10 +104,10 @@ As reviewers take actions, the review progresses through several states:
 | Initializing | Review created; waiting for custom data upload. |
 | Active | Reviewers can take decisions in the My Access portal. |
 | Applying | Review decisions are being remediated. |
-| Applied | All decisions have been marked as applied. |
+| Applied | All decisions are marked as applied. |
 
 When the review status changes to **Applying**:
-- Customers can mark **individual decisions** as *Applied*, or mark the **entire review** as *Applied*, to indicate all access decisions have been remediated.  
+- Customers can mark **individual decisions** as *Applied*, or mark the **entire review** as *Applied*, to indicate all access decisions are remediated.  
 - Once all decisions are applied, the review automatically updates to **Applied**, completing the review lifecycle.
 
 
@@ -119,8 +116,8 @@ When the review status changes to **Applying**:
 
 | Action | When | Time limit |
 |-------------|-----------|----------------|
-| Upload custom data (via Upload API) | During *Initializing* | Within two hours. |
-| Review decisions | During *Active* | Until review end date. |
+| Upload custom data | During *Initializing* | Within two hours. |
+| Review decisions | During *Active* | Until the review end date. |
 | Apply decisions | During *Applying* | 30 days and review remain in applying status until all decisions are marked as applied.|
 
 
