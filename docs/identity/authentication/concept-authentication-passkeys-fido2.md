@@ -17,12 +17,12 @@ ms.custom: sfi-image-nochange
 
 Remote phishing attacks are on the rise. These attacks aim to steal or relay identity proofs—such as passwords, SMS codes, or email one-time passcodes—without physical access to the user’s device. Attackers often use social engineering, credential harvesting, or downgrade techniques to bypass stronger protections like passkeys or security keys. With AI-driven attack toolkits, these threats are becoming more sophisticated and scalable.
 
-Passkeys help prevent remote phishing by replacing phishable methods like passwords, SMS, and email codes. Built on FIDO (Fast Identity Online) standards, passkeys use origin-bound public key cryptography, ensuring credentials can't be replayed or shared with malicious actors. In addition to stronger security, passkeys (FIDO2) offer a frictionless sign-in experience by eliminating passwords, reducing prompts, and enabling fast, secure authentication across devices.
+Passkeys help prevent remote phishing by replacing phishable methods like passwords, SMS, and email codes. Built on **FIDO (Fast Identity Online) standards**, passkeys use origin-bound public key cryptography, ensuring credentials can't be replayed or shared with malicious actors. In addition to stronger security, passkeys (FIDO2) offer a frictionless sign-in experience by eliminating passwords, reducing prompts, and enabling fast, secure authentication across devices.
 
 Passkeys (FIDO2) can also be used to sign in to Microsoft Entra ID or Microsoft Entra hybrid joined Windows 11 devices and get single-sign on to cloud and on-premises resources.
 
 ## What Are Passkeys?
-Passkeys are phishing-resistant credentials that provide strong authentication and can serve as a multifactor authentication (MFA) method when combined with device biometrics or PIN. They also provide verifier impersonation resistance, which ensures an authenticator only releases secrets to the Relying Party (RP) the passkey was registered with and not an attacker pretending to be that RP. Passkeys (FIDO2) follow FIDO2 standards, using WebAuthn for browsers and CTAP for authenticator communication.
+Passkeys are phishing-resistant credentials that provide **strong authentication** and can serve as a **multifactor authentication (MFA)** method when combined with device biometrics or PIN. They also provide verifier impersonation resistance, which ensures an authenticator only releases secrets to the Relying Party (RP) the passkey was registered with and not an attacker pretending to be that RP. Passkeys (FIDO2) follow FIDO2 standards, using WebAuthn for browsers and CTAP for authenticator communication.
 
 The following process is used when a user signs in to Microsoft Entra ID with a passkey (FIDO2):
 
@@ -38,20 +38,20 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
 
 ## Types of passkeys
 
-- Device-bound passkeys: The private key is created and stored on a single physical device and never leaves it. Examples: 
+- **Device-bound passkeys**: The private key is created and stored on a single physical device and never leaves it. Examples: 
   - Microsoft Authenticator 
   - FIDO2 Security keys 
-- Synced passkeys: The private key is stored in a passkey provider’s cloud and synced across devices signed-in to the same passkey provider account. Synced passkeys do not support attestation. Examples: 
+- **Synced passkeys**: The private key is stored in a passkey provider’s cloud and synced across devices signed-in to the same passkey provider account. Synced passkeys do not support attestation. Examples: 
   - Apple iCloud Keychain 
   - Google Password Manager 
 
-Attestation verifies the authenticity of the passkey provider or device during registration. When enforced:
+**Attestation** verifies the authenticity of the passkey provider or device during registration. When enforced:
 
 - It confirms the credential originates from a trusted authenticator.
 - Helps prevent spoofed AAGUIDs (Authenticator Attestation GUIDs) that could misrepresent device type.
 
 In Microsoft Entra ID:
-- Attestation can be enforced at the passkey profile level.
+- Attestation can be enforced at the **passkey profile** level.
 - If attestation is enabled, only device-bound passkeys are allowed; synced passkeys are excluded.
 
 ## Related content
