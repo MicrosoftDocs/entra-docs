@@ -47,7 +47,6 @@ The following section covers support for passkey (FIDO2) authentication in web b
 - Sign-in with passkey requires macOS Catalina 11.1 or later with Safari 14 or later because Microsoft Entra ID requires user verification for multifactor authentication.
 - Near-field communication (NFC) and Bluetooth Low Energy (BLE) security keys aren't supported on macOS by Apple.
 - New security key registration doesn't work on these macOS browsers because they don't prompt to set up biometrics or PIN.
-- See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered) for Safari on macOS.
 
 ### ChromeOS
 - NFC and BLE security keys aren't supported on ChromeOS by Google.
@@ -61,7 +60,6 @@ The following section covers support for passkey (FIDO2) authentication in web b
 - BLE security keys aren't supported on iOS by Apple.
 - NFC with FIPS 140-3 certified security keys isn't supported on iOS by Apple.
 - New security key registration doesn't work on iOS browsers because they don't prompt to set up biometrics or PIN.
-- See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
 ### Android
 - Sign-in with passkey requires Google Play Services 21 or later because Microsoft Entra ID requires user verification for multifactor authentication.
