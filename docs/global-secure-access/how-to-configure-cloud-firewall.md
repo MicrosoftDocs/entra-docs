@@ -65,7 +65,7 @@ This preview supports these scenarios:
 
 1. Click on the created firewall policy in the previous step.
 
-1. Under **Rules**, select **Add** rule.
+1. Under **Rules**, select **+ Add rule**.
 
 :::image type="content" source="media/how-to-configure-cloud-firewall/edit-rules.png" alt-text="Screenshot showing the Add rule option in the cloud firewall policy" lightbox="media/how-to-configure-cloud-firewall/edit-rules.png":::
 
@@ -120,7 +120,7 @@ This preview supports these scenarios:
 
 :::image type="content" source="media/how-to-configure-cloud-firewall/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles" lightbox="media/how-to-configure-cloud-firewall/security-baseline-profile.png":::
 
-2. Click on **Edit profile**, then select **Link policy** to link an existing cloud firewall policy.
+2. Click on **Edit profile**, then select **Link policies > + Link a policy** to link an existing cloud firewall policy.
 
 :::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png":::
 
@@ -130,14 +130,12 @@ Only one cloud firewall policy can be linked to a baseline profile. Linking a cl
 
 1. Use the pencil icon to change the State of a linked firewall policy from **enabled** to **disabled** or vice versa.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/link-policy-status.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="media/how-to-configure-cloud-firewall/link-policy-status.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png":::
 
 ### Delete the linked firewall policy and link to another one
 
 1. Use the trash bin icon to permanently delete any rule. 
-1. Navigate to the **Link a policy** section to link to another policy.
-
-:::image type="content" source="media/how-to-configure-cloud-firewall/link-a-policy.png" alt-text="Screenshot showing the confirmation dialog for deleting linked policy" lightbox="media/how-to-configure-cloud-firewall/link-a-policy.png":::
+1. Navigate to **Link policies** to link to another policy.
 
 ## Known limitations
 
