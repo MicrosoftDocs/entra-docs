@@ -11,7 +11,7 @@ ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection risky user report
 
-Knowing which users are at risk and *why* they're at risks is a key responsibility of security and identity administrators. The Risky user report in Microsoft Entra ID Protection provides the full report, along with a risk data summary, and an activity timeline.
+Knowing which users are at risk and *why* they're at risk is a key responsibility of security and identity administrators. The Risky user report in Microsoft Entra ID Protection provides the full report, along with a risk data summary, and an activity timeline.
 
 The Risky user report is also integrated with the Identity Risk Management Agent for enhanced agent suggestions and insights. If you have the Identity Risk Management Agent enabled, you can switch between the standard view and the agent view of the report.
 

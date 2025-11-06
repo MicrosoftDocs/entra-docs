@@ -31,7 +31,7 @@ To configure policies that use Agent Risk as a condition, you must have the [Con
 
 ## How it works
 
-Because agents can operate autonomously and on behalf of a user, they can display unique sign-in behavior. Agents can take initiative, interact with sensitive data, and operate at scale. Microsoft Entra ID Protection for agents is designed to identify and mitigate risks associated with these capabilities. The system determines a baseline for an agent's normal activity and then continuously monitors it for anomalies in Microsoft Entra ID. Once an agent exhibits suspicious behavior, ID Protection flags the activity and mark it as risky. 
+Because agents can operate autonomously and on behalf of a user, they can display unique sign-in behavior. Agents can take initiative, interact with sensitive data, and operate at scale. Microsoft Entra ID Protection for agents is designed to identify and mitigate risks associated with these capabilities. The system determines a baseline for an agent's normal activity and then continuously monitors it for anomalies in Microsoft Entra ID. Once an agent exhibits suspicious behavior, ID Protection flags the activity and marks it as risky. 
 
 ## Activities contributing to risk
 
