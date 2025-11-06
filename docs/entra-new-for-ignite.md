@@ -10,7 +10,7 @@ ms.topic: overview
 ms.date: 11/5/2025
 ---
 
-# Microsoft Entra — Release Notes (by feature area)
+# What's new in Microsoft Entra docs for Ignite 2025
 
 The following sections summarize the new and updated Microsoft Entra documentation content published for the Ignite 2025 release. Each item includes a brief description and a link to the relevant documentation.
 
