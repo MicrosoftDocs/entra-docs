@@ -18,14 +18,14 @@ Entitlement management is an [identity governance](identity-governance-overview.
 
 People in organizations need access to various groups, applications, and SharePoint Online sites to perform their job. Managing this access is challenging, as requirements change. New applications are added or identities need more access rights. This scenario gets more complicated when you collaborate with outside organizations. You might not know who in the other organization needs access to your organization's resources, and they won't know what applications, groups, or sites your organization is using.
 
-Entitlement management can help you more efficiently manage access to groups, applications, and SharePoint Online sites for internal identities, and also for identities outside your organization who need access to those resources. You can also use entitlement management in preview to assign groups, application permissions, and roles to agent IDs.
+Entitlement management can help you more efficiently manage access to groups, applications, and SharePoint Online sites for internal identities, and also for identities outside your organization who need access to those resources. You can also use entitlement management in preview to assign groups, API permissions, and roles to agent IDs.
 
 ## Why use entitlement management?
 
 Enterprise organizations often face challenges when managing workforce access to resources such as:
 
-- Identities might not know what access they should have, and even if they do, they could have difficulty locating the right individuals to approve their access
-- Once identities find and receive access to a resource, they could hold on to access longer than is required for business purposes
+- Identities might not know what access they, their direct reports, or the agents they sponsor should have, and even if they do, they could have difficulty locating the right individuals to approve their access
+- Once the access to resources is discovered and assigned, the identities could hold on to access longer than required for their business needs
 
 
 These problems are compounded for identities who need access from another organization, such as external identities that are from supply chain organizations or other business partners. For example:
