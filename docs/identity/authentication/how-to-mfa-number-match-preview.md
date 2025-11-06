@@ -1,6 +1,6 @@
 ---
 title: Authenticator App same-device number matching improvements 
-description: Learn about improvemenst to number matching in for Microsoft Authenticator.
+description: Learn about improvements to number matching for Microsoft Authenticator.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
@@ -12,7 +12,11 @@ author: justinha
 
 # Authenticator App same-device number matching improvements 
 
-When a user signs in for MFA or phone sign-in with number match to Microsoft mobile apps like Teams and Outlook on the same device as their Authenticator app, they can reply Yes/No when prompted rather than enter the number. Users who sign in with Microsoft Edge, Chrome, or Safari web browsers continue to see today’s number matching experience. Platform-specific scenario details are provided in this topic.
+When a user signs in for MFA or phone sign-in with number match to Microsoft mobile apps like Teams and Outlook on the same device as their Authenticator app, they can reply Yes/No when prompted rather than enter the number. Users who sign in with Microsoft Edge, Chrome, or Safari web browsers continue to enter the number to sign in. 
+
+This greatly improves the experience for users who sign in with number matching on the same device where they run Authenticator. There's no increased risk for users by switching to Yes/No because the prompt only shows on the device that initiated the sign in. 
+
+Platform-specific scenario details are provided in this topic.
 
 >[!Note] 
 >In the following scenarios, the user signs in on the same device as Authenticator. There's no experience change when users complete number matching on a different device.
@@ -27,10 +31,10 @@ Administrators don't need to configure anything to prepare. Users only need to r
 
 Scenario | Experience change?
 ---------|--------------------------
-User signs in to Authenticator to upgrade the account they use for multifactor authentication (MFA). | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like Authenticator, they can tap the notification and reply Yes/No to complete the sign-in.
-User signs in to a Microsoft app like Outlook or Teams without a single sign-on (SSO) extension. | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like like Outlook or Teams, they can tap the notification and reply Yes/No to complete the sign-in.
+User signs in to Authenticator to upgrade the account they use for multifactor authentication (MFA). | Yes. The user sees a notification with the number match request on the sign-in screen. In Microsoft mobile apps like Authenticator, they can tap the notification and reply Yes/No to complete the sign-in.
+User signs in to a Microsoft app like Outlook or Teams without a single sign-on (SSO) extension. | Yes. The user sees a notification with the number match request on the sign-in screen. In Microsoft mobile apps like Outlook or Teams, they can tap the notification and reply Yes/No to complete the sign-in.
 User signs in to a Microsoft app like Outlook or Teams with an SSO extension. | Yes. The user sees the Yes/No prompt but they need to open the Authenticator app to complete the sign-in.
-User signs in to a browser like Edge or Chrome. | No. The user sees a notification with the number match request on the sign-in in screen. In a browser, they need to tap the notification to enter the number and approve the sign-in.
+User signs in to a browser like Edge or Chrome. | No. The user sees a notification with the number match request on the sign-in screen. In a browser, they need to tap the notification to enter the number and approve the sign-in.
 
 ## [**Android**](#tab/Android)
 
@@ -38,9 +42,9 @@ User signs in to a browser like Edge or Chrome. | No. The user sees a notificati
 
 Scenario | Experience change?
 ---------|--------------------------
-User signs in to Authenticator to upgrade the account they use for multifactor authentication (MFA). | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like Authenticator, they can tap the notification and reply Yes/No to complete the sign-in.
-User signs in to a Microsoft app like Outlook or Teams. | Yes. The user sees a notification with the number match request on the sign-in in screen. In Microsoft mobile apps like Outlook or Teams, they can tap the notification and reply Yes/No to complete the sign-in.
-User signs in to a browser like Edge or Chrome. | No. The user sees a notification with the number match request on the sign-in in screen. In a browser, they need to tap the notification to enter the number and approve the sign-in. 
+User signs in to Authenticator to upgrade the account they use for multifactor authentication (MFA). | Yes. The user sees a notification with the number match request on the sign-in screen. In Microsoft mobile apps like Authenticator, they can tap the notification and reply Yes/No to complete the sign-in.
+User signs in to a Microsoft app like Outlook or Teams. | Yes. The user sees a notification with the number match request on the sign-in screen. In Microsoft mobile apps like Outlook or Teams, they can tap the notification and reply Yes/No to complete the sign-in.
+User signs in to a browser like Edge or Chrome. | No. The user sees a notification with the number match request on the sign-in screen. In a browser, they need to tap the notification to enter the number and approve the sign-in. 
 
 ---
 
