@@ -1,6 +1,6 @@
 ---
 title: Integrate Verified ID APIs
-description: Learn how you cna implement Microsoft Entra Verfiied ID in your solutions.
+description: Learn how you can implement Microsoft Entra Verified ID in your solutions.
 ms.service: entra-verified-id
 author: barclayn
 manager: pmwongera
@@ -11,7 +11,7 @@ ms.author: barclayn
 
 # Integrate Verified ID APIs
 
-Integrating with Microsoft Entra Verified ID APIs enables organisations to deliver secure, privacy-respecting identity verification experiences at scale. This technical integration pattern provides a clear blueprint for partners and developers to connect their identity verification workflows with Verified ID, ensuring interoperability, compliance, and a seamless user journey.
+Integrating with Microsoft Entra Verified ID APIs enables organizations to deliver secure, privacy-respecting identity verification experiences at scale. This technical integration pattern provides a clear blueprint for partners and developers to connect their identity verification workflows with Verified ID, ensuring interoperability, compliance, and a seamless user journey.
 This document walks you through the essential steps, architectural considerations, and best practices for implementing Verified ID in your solutions—helping you build integrations that are robust, scalable, and future-ready.
 
 The diagram shows a low-level workflow of how all parties interact with each other in a remote onboarding scenario. This integration pattern could be used as a reference. 
