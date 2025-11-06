@@ -14,52 +14,76 @@ ms.date: 11/5/2025
 
 The following sections summarize the new and updated Microsoft Entra documentation content published for the Ignite 2025 release. Each item includes a brief description and a link to the relevant documentation.
 
-
-
 ## Microsoft Entra Suite
 
 ### Microsoft Entra ID Governance
 
-Accelerated entitlement management with newly released capabilities that reduce friction and improve compliance at scale—introducing dynamic approvals, expanded PIM-based assignment for access packages, and Lifecycle Workflows enhancements that target high‑impact scenarios.
+Empowering organizations to automate and streamline identity lifecycle management, entitlement management, and access reviews, with new capabilities for dynamic approvals and lifecycle workflows.
 
-- [Dynamic approvals for access packages](https://learn.microsoft.com/entra/id-governance/entitlement-management/dynamic-approvals) (new) — Policy-driven, conditional approvals that adapt to request context.
-- [Assign eligible access packages with PIM](https://learn.microsoft.com/entra/id-governance/entitlement-management/pim-assign-eligible-access-packages) (new) — Use Privileged Identity Management to assign eligible-to-activate access packages.
-- [Lifecycle Workflows: Reprocess workflows](https://learn.microsoft.com/entra/id-governance/lifecycle-workflows/reprocess-workflows) (new) — Restart failed or out‑of‑sequence workflow runs to recover at scale.
-- [Lifecycle Workflows: Inactive users](https://learn.microsoft.com/entra/id-governance/lifecycle-workflows/inactive-users) (new) — Automate detection and remediation for inactive accounts across the joiner/mover/leaver cycle.
+- [Dynamic Approvals for Access Packages](https://learn.microsoft.com/entra/identity/governance/entitlement-management-dynamic-approvals) (new) — Introduces dynamic approval workflows for access packages, enabling more flexible and automated access governance.
+- [Lifecycle Workflows Overview](https://learn.microsoft.com/entra/identity/governance/lifecycle-workflows-overview) (updated) — Lifecycle workflows are now generally available, supporting automated user onboarding, offboarding, and transitions.
+- [Privileged Identity Management for Access Packages](https://learn.microsoft.com/entra/identity/governance/entitlement-management-pim) (updated) — Streamlines privileged identity management for access packages, now generally available.
+- [Lifecycle Workflows for Inactive Users](https://learn.microsoft.com/entra/identity/governance/lifecycle-workflows-inactive-users) (new) — Automates handling of inactive users in lifecycle workflows.
+
+### Microsoft Entra ID Protection
+
+Enhancing risk analysis and remediation guidance to help organizations detect and respond to identity-based threats more effectively.
+
+- [Risk Analysis Guide](https://learn.microsoft.com/entra/identity-protection/risk-analysis) (updated) — Clarifies risk analysis concepts and remediation steps for identity protection.
 
 ### Microsoft Entra ID External ID
 
-Brought billing clarity for B2C/B2B customers by introducing a dedicated guest‑meter billing reference to help admins forecast and reconcile costs.
+Expanding support for external identities, including new billing and metering capabilities for guest users.
 
-- [Guest meter billing](https://learn.microsoft.com/entra/external-id/customers/guest-meter-billing) (new) — Explains billing model, meters, and example calculations.
+- [Guest User Billing and Metering](https://learn.microsoft.com/entra/external-id/billing) (new) — Details on guest user billing and metering for external identities.
 
+---
 
 ## Microsoft Entra Agent ID
 
-Established the foundation for Agent ID with initial docs that define platform roles and provide authoritative references for agent inventory—enabling secure, least‑privilege operations and operational visibility.
+Delivering foundational documentation and role-based access control for the new Agent ID platform, supporting secure, managed agent identities for automation and workloads.
 
-- [Agent ID platform roles](https://learn.microsoft.com/entra/identity/agent-id/roles) (new) — Role definitions and permissions to administer Agent ID safely.
-- [Agent reference tables](https://learn.microsoft.com/entra/identity/agent-id/reference-agent-tables) (new) — Normalized tables for agent objects, properties, and relationships.
+- [Agent ID Overview](https://learn.microsoft.com/entra/agent-id/overview) (new) — Core concepts and scenarios for Agent ID.
+- [Agent ID Role-Based Access Control](https://learn.microsoft.com/entra/agent-id/rbac) (new) — Role-based access control for Agent ID platform roles.
+- [Batch Operations with Agent ID](https://learn.microsoft.com/entra/agent-id/batch-operations) (new) — Documentation for batch operations with Agent ID.
 
+---
 
 ## Microsoft Entra ID
 
 ### Authentication
 
-Delivered a cohesive account recovery experience across overview, configuration, end‑user enablement, and FAQ—paired with significant expansion of passkey (FIDO2) resources, including passkey profiles and synced passkeys, to accelerate passwordless adoption.
+Delivered a cohesive Account Recovery experience across overview, configuration, end-user enablement, and FAQ—paired with significant expansion of passkey (FIDO2) resources, including passkey profiles and synced passkeys, to accelerate passwordless adoption.
 
-- [Account recovery overview / concepts](https://learn.microsoft.com/entra/identity/authentication/concept-self-service-account-recovery) (new) — Phases, flows, and terminology for Microsoft Entra account recovery.
-- [Account recovery configuration](https://learn.microsoft.com/entra/identity/authentication/how-to-account-recovery-configure) (updated) — Admin setup, preview controls, and troubleshooting guidance.
-- [Account recovery: end‑user setup](https://learn.microsoft.com/entra/identity/authentication/how-to-account-recovery-user-setup) (updated) — Step‑by‑step end‑user enablement with refreshed screenshots.
-- [Account recovery FAQ](https://learn.microsoft.com/entra/identity/authentication/faq-account-recovery) (new) — Answers to common deployment and usage questions.
-- [Passkeys (FIDO2) concepts](https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passkeys-fido2) (updated) — Consolidated guidance and terminology for passkeys.
-- [Configure passkey profiles](https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles) (new) — Create, scope, and govern passkey usage via profiles.
-- [Enable synced passkeys](https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys) (new) — Admin steps to turn on synced passkeys for users.
-- [Synced passkeys FAQ](https://learn.microsoft.com/entra/identity/authentication/faq-synced-passkeys) (new) — Deployment prerequisites, limits, and support details.
+- [Account Recovery overview/concepts](https://learn.microsoft.com/entra/identity/authentication/concept-self-service-account-recovery) (new) — Core concepts, phases, and terminology for Microsoft Entra account recovery.
+- [Account Recovery configuration guide](https://learn.microsoft.com/entra/identity/authentication/how-to-account-recovery-configure) (updated) — Step-by-step guide for configuring account recovery, with new preview steps and images.
+- [Account Recovery end-user setup](https://learn.microsoft.com/entra/identity/authentication/how-to-account-recovery-user-setup) (updated) — End-user instructions for setting up account recovery, with new screenshots and troubleshooting info.
+- [Account Recovery FAQ](https://learn.microsoft.com/entra/identity/authentication/faq-self-service-account-recovery) (new) — Frequently asked questions about account recovery.
+- [Authentication Methods overview](https://learn.microsoft.com/entra/identity/authentication/concept-authentication-methods) (updated) — Expanded overview of authentication methods, including passkey adoption and recovery.
+- [Passkeys and FIDO2 concepts](https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passkeys-fido2) (updated) — Updated concepts and terminology for passkeys and FIDO2.
+- [Passkey Profiles](https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles) (new) — Introduction to passkey profiles, including setup and management.
+- [Synced Passkeys](https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys) (new) — Guide for enabling and managing synced passkeys in Entra ID.
+- [Synced Passkeys FAQ](https://learn.microsoft.com/entra/identity/authentication/faq-synced-passkeys) (new) — Frequently asked questions about synced passkeys.
+- [Persona-based Passwordless Planning](https://learn.microsoft.com/entra/identity/authentication/how-to-plan-persona-phishing-resistant-passwordless-authentication) (updated) — Refined persona-based guidance for deploying passwordless authentication.
+- [Phishing-resistant Passwordless Deployment](https://learn.microsoft.com/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication) (updated) — Updated deployment steps and guidance for phishing-resistant authentication.
 
 ### Conditional Access
 
-Introduced Conditional Access Agents to extend policy enforcement to new surfaces and scenarios, improving coverage and control.
+Introducing Agent-based Conditional Access, with comprehensive documentation and release notes for Ignite.
 
-- [Conditional Access agents](https://learn.microsoft.com/entra/identity/conditional-access/conditional-access-agents) (new) — Deploy, manage, and monitor agents as CA policy enforcement points.
+- [Conditional Access Agents Ignite Release](https://learn.microsoft.com/entra/identity/conditional-access/agents-ignite-release) (new) — Documentation for the Ignite release of Conditional Access Agents, including new features and scenarios.
 
+### Hybrid identity
+
+Improving deployment and installation guidance for health agents, and refining hybrid join documentation.
+
+- [Health Agent Installation Guide](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-health-agent-install) (updated) — Updated installation requirements and troubleshooting for health agents.
+- [Kerberos Authentication and Hybrid Join](https://learn.microsoft.com/entra/identity/hybrid/connect/kerberos) (updated) — Refined documentation for Kerberos authentication and hybrid join.
+
+---
+
+## Microsoft Identity Platform
+
+Enhancing developer guidance for configurable token lifetimes and related platform features.
+
+- [Configurable Token Lifetimes](https://learn.microsoft.com/entra/identity-platform/configurable-token-lifetimes) (updated) — Updated guidance for configuring token lifetimes in the Microsoft Identity Platform.
