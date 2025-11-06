@@ -23,9 +23,6 @@ Making sure risky users dont gain access to sensitive resources is an important 
 
 To use Insider Risk Management approvals with Entitlement management, you must first [Create an Insider Risk Management policy](/purview/insider-risk-management-policies).
 
-> [!NOTE]
-> If you also plan on [configuring Identity protection based protection for access package approvals](entitlement-management-configure-id-protection-approvals.md), you should configure it before configuring Insider risk management. After Configuring Insider Risk Management, you should apply Access Package policies.
-
 ## How risk-based approvals work
 
 When a user requests access to an access package through the **My Access** portal:
@@ -82,4 +79,4 @@ A user set as an approver, or fallback approver, for risky users can view the re
 ## Next step
 
 
-- [Change approval and requestor information settings for an access package in entitlement management](entitlement-management-access-package-approval-policy.md)
+- [Change approval and requestor information settings for an access package in entitlement management](entitlement-management-configure-id-protection-approvals.md) Should be configured first if you plan to use it. Followed by Insider Risk Management, then finally Access Package policies should be configured.

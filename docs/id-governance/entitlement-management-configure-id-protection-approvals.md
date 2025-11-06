@@ -73,7 +73,7 @@ When a risky user submits a request for an access package, administrators are ab
 :::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-pending-request.png" alt-text="Screenshot of a pending request for an access package by a risky user.":::
 
 A user set as an approver, or fallback approver, for risky users can view the request to approve or deny via the my access portal:
-:::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png" alt-text="Screenshot of the approvals page in my access showing the risky user.":::
+:::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png" alt-text="Screenshot of the approvals page in my access showing the risky user." lightbox="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png":::
 
 > [!NOTE]
 > Approvers have a maximum of 14 days to take action. If they dont take action within that time frame, requests are automatically denied.
@@ -82,8 +82,7 @@ A user set as an approver, or fallback approver, for risky users can view the re
 
 ## Next step
 
-
-- [Change approval and requestor information settings for an access package in entitlement management](entitlement-management-access-package-approval-policy.md)
+- [Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)](entitlement-management-configure-insider-risk-management-approvals.md) Should be configured next if you plan to use it. Then Access Package policies should be configured.
 
 
 
