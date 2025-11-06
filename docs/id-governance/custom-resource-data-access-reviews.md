@@ -48,9 +48,9 @@ With a catalog created, you can add custom resource access data to it by doing t
 
 1. Select **Add resources**.
 
-1. Select the resource type:  **custom resource access data**.
-
-1. On the resource page enter:Enter:
+1. Select the resource type:  **Custom resource access data**.
+    :::image type="content" source="media/custom-resource-data-access-reviews/custom-resource-access-data-information.png" alt-text="Screenshot of adding custom access resource data extension information.":::
+1. On the resource page enter:
    - **Resource name** – Example: *FinanceApp_CSV*.  
    - **Description** – Example: *Custom BYOD application data provided via CSV upload.*  
 1. Select **Save**.
@@ -83,8 +83,14 @@ With a catalog created, you can add custom resource access data to it by doing t
 
 When the review is created, its **status** shows as **Initializing**.
 
-1. While the review status is **Initializing**, call the **Upload API** to upload your BYOD data (CSV file).  
+1. On the resource screen for the catalog, select the custom data access resource you created and select **Upload custom access data**.
+    :::image type="content" source="media/custom-resource-data-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
 
+1. On the Upload access data for custom resource screen under **Basics** enter in both the access review object ID, and the Access review instance object ID. Both of these can be found under the essentials section when selecting either an access review, or access review instance.
+
+1. Under **Upload files** select up to 10 CSVs to include in the access data and select **Save**. 
+    > [!NOTE]
+    > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload. After two hours, the system transitions the review status to **Active**.
 
 At the **Active** stage:
