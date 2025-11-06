@@ -1,18 +1,20 @@
 ---
 title: Configure Cloudflare Web Application Firewall with Microsoft Entra External ID
 description: Learn how to configure Cloudflare Web Application Firewall (WAF) to protect against attacks.
-author: gargi-sinha
-manager: martinco
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.author: gasinh
+ms.author: cmulligan
 ms.custom: it-pro
 
 #CustomerIntent: As an IT administrator, I want to learn how to enable the Cloudflare Web Application Firewall (WAF) service for a Microsoft Entra External ID tenant with a Cloudflare WAF so that I can protect web applications from common exploits and vulnerabilities.
 ---
 # Configure Cloudflare Web Application Firewall with Microsoft Entra External ID
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 In this article, you learn how to configure Cloudflare Web Application Firewall ([Cloudflare WAF](https://www.cloudflare.com/application-services/products/waf/)) to protect your organization from attacks, such as distributed denial of service (DDoS), malicious bots, Open Worldwide Application Security Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks, and others. 
 
@@ -20,9 +22,10 @@ In this article, you learn how to configure Cloudflare Web Application Firewall 
 
 To get started, you need:
 
-* Microsoft Entra External ID tenant
-* Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview)
-* Cloudflare account with WAF
+- An [external tenant](how-to-create-external-tenant-portal.md).
+- A Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview) configuration. Traffic from the Akamai WAF routes to Azure Front Door, which then routes to the external tenant.
+- An [Cloudflare Web Application Firewall (WAF)](https://www.cloudflare.com/application-services/products/waf/) that manages traffic sent to the authorization server.
+- A [custom domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant that’s enabled with Azure Front Door (AFD).
 
 Learn about tenants and securing apps for consumers and customers with [Microsoft Entra External ID](../external-identities-overview.md).
 
@@ -32,7 +35,9 @@ Learn about tenants and securing apps for consumers and customers with [Microsof
 * **Azure Front Door** – Enables custom URL domains for Microsoft Entra External ID. Traffic to custom URL domains goes through Cloudflare WAF, it then goes to AFD, and then to the Microsoft Entra External ID tenant. 
 * **Cloudflare WAF** – Security controls to protect traffic to the authorization server. 
 
-## Setup steps
+## Cloudflare setup steps
+
+First you need to set up Cloudflare WAF to protect your custom URL domains for Microsoft Entra External ID. Follow these steps to configure Cloudflare WAF.
 
 ### Enable custom URL domains
 
@@ -49,12 +54,12 @@ Enable WAF for a domain.
 
 1. In the DNS console, for CNAME, enable the proxy setting.
 
-   [![Screenshot of CNAME options.](media/how-to-configure-cloudflare-integration./proxy-settings.png)](media/how-to-configure-cloudflare-integration./proxy-settings-expanded.png#lightbox)
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/proxy-settings.png" alt-text="Screenshot of CNAME options." lightbox="media/how-to-configure-cloudflare-integration/proxy-settings-expanded.png":::
 
 2. Under DNS, for **Proxy status**, select **Proxied**.
 3. The status turns orange.
 
-   [![Screenshot of proxied status.](media/how-to-configure-cloudflare-integration./proxied-status.png)](media/how-to-configure-cloudflare-integration./proxied-status-expanded.png#lightbox)
+   :::image type="content" source="media/how-to-configure-cloudflare-integration/proxied-status.png" alt-text="Screenshot of proxied status." lightbox="media/how-to-configure-cloudflare-integration/proxied-status-expanded.png":::
 
 > [!NOTE]
 > Azure Front Door-managed certificates aren't automatically renewed if your custom domain’s CNAME record points to a DNS record other than the Azure Front Door endpoint’s domain (for example, when using a third-party DNS service like Cloudflare). To renew the certificate in such cases, follow the instructions in the [Renew Azure Front Door-managed certificates](/azure/frontdoor/domain#renew-azure-front-door-managed-certificates) article.
@@ -70,7 +75,7 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 3. Select **DDoS**.
 4. A message appears. 
 
-    [![Screenshot of DDoS protection message.](media/how-to-configure-cloudflare-integration./ddos-message.png)](media/how-to-configure-cloudflare-integration./ddos-message-expanded.png#lightbox)
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/bot-protection.png" alt-text="Screenshot of bot protection options.":
 
 ### Bot protection
 
@@ -80,7 +85,7 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 4. For **Likely automated**, select **Managed Challenge**.
 5. For **Verified bots**, select **Allow**.
 
-   ![Screenshot of bot protection options.](media/how-to-configure-cloudflare-integration./bot-protection.png)
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/bot-protection.png" alt-text="Screenshot of bot protection options.":::
 
 ### Firewall rules: Traffic from the Tor network
 
@@ -103,17 +108,17 @@ We recommend you block traffic that originates from the Tor proxy network, unles
 10. For **Place at**, select **First**.
 11. Select **Deploy**.
 
-    ![Screenshot of the create rule dialog.](media/how-to-configure-cloudflare-integration./create-rule.png)
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/create-rule.png" alt-text="Screenshot of the create rule dialog.":::
 
-   > [!NOTE]
-   > You can add custom HTML pages for visitors.
+  > [!NOTE]
+  > You can add custom HTML pages for visitors.
 
 ### Firewall rules: Traffic from countries or regions
 
 We recommended strict security controls on traffic from countries or regions where business is unlikely to occur, unless your organization has a business reason to support traffic from all countries or regions.  
 
-   > [!NOTE]
-   > If you can't block traffic from a country or region, select **Interactive Challenge**, not **Block**.
+  > [!NOTE]
+  > If you can't block traffic from a country or region, select **Interactive Challenge**, not **Block**.
 
 ### Block traffic from countries or regions
 
@@ -131,7 +136,7 @@ For the following instructions, you can add custom HTML pages for visitors.
 1. For **Place at**, select **Last**.
 1. Select **Deploy**.
 
-   ![Screenshot of the name field on the create rule dialog.](media/how-to-configure-cloudflare-integration./create-rule-name.png)
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/create-rule-name.png" alt-text="Screenshot of the name field on the create rule dialog."::
 
 ### OWASP and managed rulesets
 
@@ -139,96 +144,185 @@ For the following instructions, you can add custom HTML pages for visitors.
 2. For **Cloudflare Managed Ruleset**, select **Enabled**.
 3. For **Cloudflare OWASP Core Ruleset**, select **Enabled**.
 
-   [![Screenshot of rule sets.](media/how-to-configure-cloudflare-integration./rulesets.png)](media/how-to-configure-cloudflare-integration./ruleset-expanded.png#lightbox)
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/rulesets.png" alt-text="Screenshot of rule sets." lightbox="media/how-to-configure-cloudflare-integration/ruleset-expanded.png":::
 
-## Verification steps
+## Set up a web application firewall (WAF) in External ID
 
-Connect Cloudflare's [API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) and [Zone ID](https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/#copy-your-zone-id) to Microsoft Entra External ID to verify WAF configuration via Microsoft Graph API, using Graph Explorer or any REST client for endpoint calls.
+After you set up your Cloudflare account, connect it to Microsoft Entra External ID. Use your Cloudflare [API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) and [Zone ID](https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/#copy-your-zone-id) to complete the connection. You can do this in the admin center or by using Microsoft Graph API.
 
-### Connect the API token and Zone ID
+# [Microsoft Entra admin center](#tab/admin-center)
 
-You can connect the API token and Zone ID to Microsoft Entra External ID to pull and verify the WAF configuration for your domain. Use the Microsoft Graph API to interact with the Cloudflare API. To do this, you need to include the API token and Zone ID in your requests.
+## WAF provider configuration
 
-For WAF verification, use the Microsoft Graph API endpoint. You can call this endpoint through [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) or any REST client.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
+1. Browse to **Entra ID** > **Security Store**.
+1. Select the **Protect apps from DDoS with WAF** tile by selecting **Get started**.
+1. Under **Choose a WAF Provider** select **Cloudflare** and then select **Next**.
 
-- Make sure the caller has the [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) role and has consented to the [RiskPreventionProviders.Read.All](/graph/permissions-reference#riskpreventionprovidersreadall) permission. See more details about the RiskPreventionProviders.Read.All permission in the [next section](/entra/external-id/customers/how-to-configure-cloudflare-integration#risk-prevention-provider-permission-details).
+  :::image type="content" source="media/how-to-configure-cloudflare-integration/choose-waf.png" alt-text="Screenshot of the choose WAF provider page.":::
+
+6. Under **WAF provider configuration**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
+    - **Configuration name**: A name for the WAF configuration.
+    - **API token**: The API token from your Cloudflare dashboard.
+    - **Zone ID**: The Zone ID for your domain, from your Cloudflare dashboard.
+
+  :::image type="content" source=" media/how-to-configure-cloudflare-integration/configure-waf-provider.png" alt-text="Screenshot of the configure WAF provider page.":::
+
+7. Select **Next** to save your changes.
+
+## Custom URL domains verification
+
+Select the custom URL domains that are enabled through Azure Front Door (AFD) to verify and connect them to your Cloudflare WAF configuration. This step ensures that the selected domains are protected with advanced security features.
+
+1. Select **Verify domain** to start the verification process.
+1. Select the custom URL domains you want to protect with Cloudflare WAF and then select **Verify**.
+
+  :::image type="content" source=" media/how-to-configure-cloudflare-integration/verify-domain.png" alt-text="Screenshot of the verify domain page.":::
+
+1. After verification, select **Done**.
+
+# [Microsoft Graph API](#tab/graph-api)
+
+You can use the Microsoft Graph API through [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) to configure the Cloudflare WAF integration.
+
+Make sure the caller has the [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) role and has consented to the [RiskPreventionProviders.Read.All](/graph/permissions-reference#riskpreventionprovidersreadall) permission. 
 
   :::image type="content" source="media\how-to-configure-akamai-integration\consent-to-permissions.png" alt-text="Screenshot showing consent to permissions." :::
 
   :::image type="content" source="media\how-to-configure-akamai-integration\consent-button.png" alt-text="Screenshot showing the consent button." :::
 
-- Provide the **API token** you created in the previous step and the **Zone ID** for your domain. This information is required so the backend can call Cloudflare on your behalf to pull and verify the WAF configuration.  
-  - The token is treated like any client secret and is never stored or logged in plain text or without encryption.
-- The verification process checks that a DNS record is properly configured and validates whether recommended managed rulesets are enabled. It also reports all enabled managed rulesets and custom rules in the specified Cloudflare zone.
-- The API returns detailed error codes to help you identify configuration issues and provides actionable recommendations.
-
-### Risk prevention provider permission details
-
-The following permission allows the app to read your organization's risk prevention providers without a signed-in user.
-
 | **Permission**  | **Description**  | **Endpoint**  |
 |----|----|----|
 | RiskPreventionProviders.Read.All  | Allows reading  Web Application Firewall information.  | POST /riskPrevention/webApplicationFirewalls/Verify  |
 
-### Sample request and response
+## Step 1: Create Cloudflare WAF provider with the API
 
-To connect Cloudflare WAF with Microsoft Entra External ID, use the following example request and response.
+Make sure that you have the **API token** you created in Cloudflare and the **Zone ID** for your domain. This information is required so the backend can call Cloudflare on your behalf to pull and verify the WAF configuration.
 
-Sample request:
+### Request
 
-```http
-POST https://graph.microsoft.com/v1.0/directory/customSecurityAttributeDefinitions
+The following example shows a request to create a new Cloudflare WAF object.
+<!-- {
+  "blockType": "request",
+  "name": "create_webapplicationfirewallprovider_from_cloudflare"
+}
+-->
+``` http
+POST https://graph.microsoft.com/beta/identity/riskPrevention/webApplicationFirewallProviders
+Content-Type: application/json
 {
-  "hostName": "yourdomain.com",
-  "connection": {
-    "@odata.type": "#microsoft.graph.cloudFlareConnection",
-    "apiToken": "{CloudFlare API Token}",
-    "zoneId": "{CloudFlare Zone Id}"
-  }
+    "@odata.type": "#microsoft.graph.cloudFlareWebApplicationFirewallProvider",
+    "displayName": "Cloudflare Provider Example",
+    "zoneId": "11111111111111111111111111111111",
+    "apiToken": "cf_example_token_123"
 }
 ```
 
-Sample response:
+### Response
 
+The following example shows the response with Cloudflare WAF object.
+>**Note:** The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.cloudFlareWebApplicationFirewallProvider"
+}
+-->
+``` http
+HTTP/1.1 201 Created
+Content-Type: application/json
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#identity/riskPrevention/webApplicationFirewallProviders/$entity",
+    "@odata.type": "#microsoft.graph.cloudFlareWebApplicationFirewallProvider",
+    "id": "00000000-0000-0000-0000-000000000001",
+    "displayName": "Cloudflare Provider Example",
+    "zoneId": "11111111111111111111111111111111"
+}
+```
+
+## Step 2: Verify Cloudflare WAF provider with the API
+
+The following example shows how to verify a webApplicationFirewallProvider using the hostName.
+
+#### Request
+
+The following example shows a request.
+<!-- {
+  "blockType": "request",
+  "name": "webapplicationfirewallproviderthis.verify"
+}
+-->
+``` http
+POST https://graph.microsoft.com/v1.0/identity/riskPrevention/webApplicationFirewallProviders/{webApplicationFirewallProviderId}/verify
+Content-Type: application/json
+{
+  "hostName": "www.contoso.com"
+}
+```
+
+#### Response
+
+The following example shows the response.
+>**Note:** The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.webApplicationFirewallVerificationModel"
+}
+-->
 ```http
 HTTP/1.1 200 OK
-Content-type: application/json
+Content-Type: application/json
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#microsoft.graph.webApplicationFirewallVerificationModel",
-  "verificationResult": {
-    "status": "success",
-    "verifiedOnDateTime": "2025-02-19T22:15:09.7116872Z",
-    "errors": [],
-    "warnings": []
-  },
-  "verifiedDetails": {
-    "@odata.type": "#microsoft.graph.cloudFlareVerifiedDetailsModel",
-    "zoneId": "{CloudFlare Zone Id}",
-    "dnsConfiguration": {
-      "name": "yourdomain.com",
-      "isProxied": true,
-      "recordType": "cname",
-      "value": "google.com"
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.webApplicationFirewallVerificationModel",
+    "id": "00000000-0000-0000-0000-000000000000",
+    "verifiedHost": "www.contoso.com",
+    "providerType": "cloudflare",
+    "verificationResult": {
+        "status": "success",
+        "verifiedOnDateTime": "2025-10-04T00:50:26.4909654Z",
+        "errors": [],
+        "warnings": []
     },
-    "enabledRecommendedRulesets": [
-      {
-        "rulesetId": "12345ab6c78d9012e3456f7ghi890jk",
-        "name": "CloudFlare Free Managed Ruleset",
-        "phaseName": "http_request_firewall_managed"
-      }
-    ],
-    "enabledCustomRules": [
-      {
-        "ruleId": "1234567890a12b3cd4",
-        "name": "Block when the IP address is not 1.1.1.1",
-        "action": "block",
-        "phaseName": "http_request_firewall_custom"
-      }
-    ]
-  }
+    "verifiedDetails": {
+        "@odata.type": "#microsoft.graph.cloudFlareVerifiedDetailsModel",
+        "zoneId": "11111111111111111111111111111111",
+        "dnsConfiguration": {
+            "name": "www.contoso.com",
+            "isProxied": true,
+            "recordType": "cname",
+            "value": "contoso.azurefd.net",
+            "isDomainVerified": true
+        },
+        "enabledRecommendedRulesets": [
+            {
+                "rulesetId": "22222222222222222222222222222222",
+                "name": "CloudFlare Managed Ruleset",
+                "phaseName": "http_request_firewall_managed"
+            }
+        ],
+        "enabledCustomRules": [
+            {
+                "ruleId": "33333333333333333333333333333333",
+                "name": "Block SQL Injection",
+                "action": "block"
+            },
+            {
+                "ruleId": "44444444444444444444444444444444",
+                "name": "Block XSS",
+                "action": "block"
+            }
+        ]
+    }
 }
-
 ```
+
+
+
+---
+
+
 
 ### Test the configuration
 
