@@ -188,10 +188,3 @@ OData-Version: 4.0
 ```http
 HTTP/1.1 204 No Content
 ```
-
-
-## Related content
-
-- [Create an Agent Identity from your blueprint](create-agent-identity.md)
-- [Microsoft Entra roles and permissions for Agent IDs](agent-roles-permissions.md)
-- [OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform](~/identity-platform/v2-protocols.md)

@@ -22,8 +22,6 @@ Identity and Access Management (IAM) and security administrators need clear visi
 - Built‑in Microsoft Entra roles and tenant settings that enable or restrict each action
 - Monitoring, auditing, and control strategies
 
-For foundational concepts, see [What is Microsoft Entra Agent ID?](./what-is-agent-id.md).
-
 ## Overview of creation channels
 
 **Agent identity blueprints** can enter your directory through multiple channels. Each channel implies different monitoring and control points:
@@ -83,7 +81,7 @@ Creating agent users via these tools requires one of the following permissions:
 | Client creates identity via Microsoft Graph, using delegated permissions | User must have the directory roles in the previous row. Client must be granted **AgentIdUser.ReadWrite.All** delegated permission. |
 | Client creates agent ID blueprint via Microsoft Graph, using application permissions | Client must be granted **AgentIdUser.ReadWrite.All** application permission. |
 
-Administrators can control agent ID creation via these channels by constraining which users and clients are assigned the permissions in the previous table. For more information, see [Agent ID permissions reference](./todo.md).
+Administrators can control agent ID creation via these channels by constraining which users and clients are assigned the permissions in the previous table.
 
 ## Microsoft product integrations
 
@@ -91,16 +89,16 @@ Employees can create agents via many Microsoft products. These products are inte
 
 | Product | Documentation |
 | ------- | ---- |
-| Microsoft Copilot Studio | [Link to Copilot Studio documentation](https://todo) |
-| Microsoft Security Copilot | [Link to Security Copilot documentation](https://todo) |
-| Azure AI Foundry | [Link to AI Foundry documentation](https://todo) |
-| Microsoft Teams | [Link to Teams documentation](https://todo) |
+| Microsoft Copilot Studio | Link to Copilot Studio documentation |
+| Microsoft Security Copilot | Link to Security Copilot documentation |
+| Azure AI Foundry | Link to AI Foundry documentation |
+| Microsoft Teams | Link to Teams documentation |
 
 Administrators can control agent ID creation via these channels by using the administrative tools for each respective product.
 
 ## Microsoft Entra ID consent experience
 
-When users sign in for the first time to third-party agents, the Microsoft Entra ID sign-in experience displays a "consent" page to the user. The consent page allows the employee to add the agent to their tenant, which results in the creation of an agent identity blueprint principal. For more information on the consent experience and controls for limiting user ability to consent, see [Consent for agent IDs](agent-id-consent.md).
+When users sign in for the first time to third-party agents, the Microsoft Entra ID sign-in experience displays a "consent" page to the user. The consent page allows the employee to add the agent to their tenant, which results in the creation of an agent identity blueprint principal.
 
 ## Agent identity blueprint principals
 
@@ -111,7 +109,7 @@ Once an agent identity blueprint principal is created in your tenant, the princi
 | Agent identity | `AgentIdentity.CreateAsManager` (application permission) | This permission is automatically granted to any agent identity blueprint principal in the tenant. It allows the principal to create agent identities, and update and delete the agent identities it creates. This permission can't be revoked. To prevent a principal from creating agent identities, you must disable it or remove the principal from the tenant. At the time of this writing, principals are limited to a maximum of 250 agent identity creations. |
 | Agent user | `AgentIdUser.ReadWrite.IdentityParentedBy` (application permission) | A Microsoft Entra ID administrator must grant this permission to an agent identity blueprint principal. Once granted, the principal can create agent users, and update and delete any users it creates. The permission can be revoked. |
 
-Administrators can control agent ID creation via this channel by limiting which agent identity blueprints are added to their tenant as agent identity blueprint principals. For more information on these permissions, see [Agent ID permissions reference](./todo.md).
+Administrators can control agent ID creation via this channel by limiting which agent identity blueprints are added to their tenant as agent identity blueprint principals.
 
 ## Auditing and monitoring agent ID creation
 
@@ -119,10 +117,5 @@ All agent ID creations are recorded in Microsoft Entra audit logs. Using audit l
 
 | Objective | How to Implement | Tooling / Source |
 |-----------|------------------|------------------|
-| Detect new agent identity creations | Subscribe to directory audit events filtering on agent identity object type / creation operations | [Microsoft Entra audit logs](https://todo) |
-| Inventory all agent IDs | Use Microsoft Graph APIs to query all agent ID objects by object type. | [Microsoft Graph docs](https://todo) |
-
-## Related content
-
-- [Create and delete agent IDs](create-delete-agent-identities.md)
-- [Create Agent ID blueprints](create-blueprint.md)
+| Detect new agent identity creations | Subscribe to directory audit events filtering on agent identity object type / creation operations | Microsoft Entra audit logs |
+| Inventory all agent IDs | Use Microsoft Graph APIs to query all agent ID objects by object type. | Microsoft Graph docs |

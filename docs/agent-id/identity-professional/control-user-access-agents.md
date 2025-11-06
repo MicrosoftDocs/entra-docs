@@ -93,7 +93,7 @@ You can also configure the `assignmentRequired` property for an agent identity i
 
 ---
 
-The `assignmentRequired` property ensures that only principals explicitly assigned an app role can access the agent application, enforcing least privilege and preventing accidental access. For enhanced security, consider combining this access control with []() that can provide more layers of protection based on user location, device compliance, and risk assessment.
+The `assignmentRequired` property ensures that only principals explicitly assigned an app role can access the agent application, enforcing least privilege and preventing accidental access. For enhanced security, consider combining this access control that can provide more layers of protection based on user location, device compliance, and risk assessment.
 
 ## Assign app roles to control access
 
@@ -139,9 +139,3 @@ To verify your role assignment, be sure to take the following actions:
 - Check the roles claim in the token after sign-in.
 
 If roles claims are missing from tokens, verify that the assignment exists with the correct appRoleId, then request a new token. Regularly audit these assignments using Microsoft Graph or the Microsoft Entra admin center to ensure they remain appropriate and remove any unnecessary access.
-
-## Related content
-
-- [Update your agent app manifest to include app roles](update-agent-app-manifest.md)
-- [Microsoft Entra roles and permissions for Agent IDs](agent-roles-permissions.md)
-- [Conditional Access for enhanced security controls](~/identity/conditional-access/overview.md)

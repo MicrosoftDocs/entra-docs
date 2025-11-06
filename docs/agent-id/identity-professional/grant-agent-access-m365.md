@@ -104,7 +104,7 @@ Agents can be authorized in several ways beyond app-role assignments and OAuth2 
 
 ### Azure role-based access control (Azure RBAC)
 
-Assign Azure roles to the agent identity at the narrowest scope (resource, resource group, subscription). For example, you can grant the Key Vault Reader role on a single vault so the agent can read secrets without needing broad directory or tenant permissions. For more information and step-by-step guidance, see Azure RBAC documentation[]().
+Assign Azure roles to the agent identity at the narrowest scope (resource, resource group, subscription). For example, you can grant the Key Vault Reader role on a single vault so the agent can read secrets without needing broad directory or tenant permissions.
 
 ### Microsoft Entra roles
 
@@ -121,8 +121,3 @@ Teams Resource-Specific Consent (RSC) enables granular permission assignments fo
 ### Custom (third‑party) APIs
 
 Agents can call other OAuth‑protected APIs. Ensure the resource application and its service principal exist in the tenant, define required scopes/app roles, and follow the same delegated or app‑permission flows. For more information, see Microsoft's guide to permissions and consent in the Microsoft identity platform.
-
-## Related content
-
-- [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)
-- [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md)

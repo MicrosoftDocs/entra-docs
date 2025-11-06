@@ -23,7 +23,7 @@ To use access packages, IT admin configures an access package with the required 
 - The agent's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process.
 - An administrator can assign the agent ID or agent user to the access package.
 
-After submission, the access request is routed to designated approvers based on the access package configuration. For more information on how to request an access package, see []().
+After submission, the access request is routed to designated approvers based on the access package configuration.
 
 ## Access assignment lifecycle
 
@@ -35,9 +35,4 @@ If the sponsor requests an extension, this request can trigger a new approval cy
 
 ## Licensing requirements
 
-For licensing information, see [Microsoft Entra ID Governance licensing fundamentals](../id-governance/licensing-fundamentals.md).
-
-## Related content
-
-- [Create an access package](../id-governance/entitlement-management-access-package-create.md)
-- [View, add, and remove assignments for an access package in entitlement management](../id-governance/entitlement-management-access-package-assignments.md)
+For licensing information, see Microsoft Entra ID Governance licensing fundamentals documentation.

@@ -120,7 +120,3 @@ The agent ID platform consists of several integrated components that work togeth
     - Global Secure Access for Agent IDs: Network-level security and zero-trust access for agent communications
     - Conditional Access for Agent IDs: Policy-based access controls and risk-based authentication for agents
     - Identity Protection for Agent IDs: Real-time risk detection and automated response for agent activities
-
-## Next steps
-
-[Microsoft Entra security capabilities for AI Agents](./microsoft-entra-agent-identities-for-ai-agents.md)
