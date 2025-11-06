@@ -21,9 +21,6 @@ Making sure risky users don’t gain access to sensitive resources is an importa
 
 ## Prerequisites
 
-> [!NOTE]
-> If you also plan on [configuring Insider risk management for access package approvals](entitlement-management-configure-insider-risk-management-approvals.md), you should configure it After configuring ID Protection based approvals. Then you should configure Insider Risk Management approvals, followed by Access Package policies.
-
 To use ID-protection with Entitlement management, you must first [deploy ID protection](../id-protection/how-to-deploy-identity-protection.md).
 
 ## How risk-based approvals work
