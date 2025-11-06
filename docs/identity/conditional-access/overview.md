@@ -93,7 +93,6 @@ Admins with at least the [Security Reader](~/identity/role-based-access-control/
 
 - The **Overview** page shows a summary of policy state, agents, users, devices, and applications, along with general and security alerts with suggestions.
 - The **Coverage** page shows a summary of applications with and without Conditional Access policy coverage over the past seven days.
-- The **Monitoring** page lets admins see a graph of sign-ins that can be filtered to see potential gaps in policy coverage.
 
 On the **Policies** page, admins can filter Conditional Access policies based on items like the actor, target resource, condition, control applied, state, or date. This filtering lets admins quickly find specific policies based on their configuration.
 
