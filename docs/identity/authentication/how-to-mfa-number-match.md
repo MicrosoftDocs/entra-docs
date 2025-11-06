@@ -155,9 +155,9 @@ Users who are enabled for MFA push notifications in the legacy MFA policy also s
 
 :::image type="content" border="true" source="./media/how-to-mfa-number-match/notifications-through-mobile-app.png" alt-text="Screenshot that shows the setting Notification through mobile app.":::
 
-### Is number matching supported with Azure Multi-Factor Authentication Server?
+### Is number matching supported with Azure Multifactor Authentication Server?
 
-No, number matching isn't enforced because it's not a supported feature for Azure Multi-Factor Authentication Server, which is [deprecated](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-september-2022-train/ba-p/2967454).
+No, number matching isn't enforced because it's not a supported feature for Azure Multifactor Authentication Server, which is [deprecated](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-september-2022-train/ba-p/2967454).
 
 ### What happens if a user runs an older version of Authenticator?
 
