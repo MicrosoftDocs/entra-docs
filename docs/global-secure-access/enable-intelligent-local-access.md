@@ -23,7 +23,7 @@ To configure a Global Secure Access Private Networks, you must have:
 
 - [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator) role or the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role.
 
-- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- Product licensing. For details, see the licensing section of [What is Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Private Access overview
 
