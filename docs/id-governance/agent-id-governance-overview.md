@@ -18,8 +18,7 @@ This allows agent IDs to be governed with Microsoft Entra features in the same s
 
 ## License requirements
 
-[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
-[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Agent ID basics
 

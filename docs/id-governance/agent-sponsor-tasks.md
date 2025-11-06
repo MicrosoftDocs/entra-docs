@@ -24,10 +24,11 @@ Lifecycle Workflows currently contain the following two tasks that involve the g
 
 This article explains how to configure Lifecycle Workflows to streamline agent ID sponsor governance.
 
-## Prerequisites
+## License Requirements
 
-[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
+
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Create a sponsor workflow using the Microsoft Entra Admin Center
 

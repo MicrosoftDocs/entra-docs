@@ -21,7 +21,7 @@ The Manage agents feature in Microsoft Entra lets you view, and control, [agent 
 
 ## License requirements
 
-[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Manage agents as an agent identity owner or sponsor
 

@@ -18,6 +18,7 @@ The My Access portal is used by users to review or request access to resources w
 
 
 [!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+
 [!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 
