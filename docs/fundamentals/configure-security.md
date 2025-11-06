@@ -21,6 +21,10 @@ In Microsoft Entra, we group our security recommendations into several main area
 
 We recommend that all of the following controls be implemented where licenses are available. These patterns and practices help to provide a foundation for other resources built on top of this solution. More controls will be added to this document over time.
 
+## Automated assessment
+
+Manually checking this guidance against a tenant's configuration can be time-consuming and error-prone. The Zero Trust Assessment transforms this process with automation to test for these security configuration items and more. Learn more in [What is the Zero Trust Assessment?](/zero-trust/assessment/overview)
+
 ## Protect identities and secrets
 
 Reduce credential-related risk by implementing modern identity standards.
