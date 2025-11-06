@@ -41,9 +41,9 @@ To get started, you need:
 - An [Akamai Web Application Firewall (WAF)](https://www.akamai.com/glossary/what-is-a-waf) that manages traffic sent to the authorization server.
 - A [custom domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant that’s enabled with Azure Front Door (AFD).
 
-## Setup steps
+## Akamai setup steps
 
-To configure Akamai WAF with Microsoft Entra External ID, complete the following steps:
+First you need to set up Akamai WAF to protect your custom URL domains for Microsoft Entra External ID. Follow these steps to configure Akamai WAF.
 
 ### Configure Akamai WAF
 
@@ -120,80 +120,158 @@ Additionally, update the **API restrictions** for the actions to the appropriate
 | [Microsoft Edge Diagnostics](https://developer.akamai.com/) | Microsoft Edge Diagnostics | READ-WRITE |
 | [Property Manager (PAPI)](https://developer.akamai.com/api/luna/papi/overview.html) | Property Manager (PAPI). PAPI requires access to Microsoft Edge Hostnames. Edit your authorizations to add HAPI to your API Client. | READ-ONLY |
 
-## Verification steps
+## Set up an Akamai WAF in External ID
 
 After completing the configuration steps, verify that Akamai WAF is protecting your external tenant by connecting the authentication credentials to the WAF configuration.
 
-### Connect authentication credentials to the WAF configuration
 
-You can connect the AuthCredentials to pull and verify the WAF configuration for your domain. For WAF verification, use the Microsoft Graph API endpoint. You can call this endpoint through [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) or any REST client.
 
-- Make sure the caller has the [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) role and has consented to the [RiskPreventionProviders.Read.All](/graph/permissions-reference#riskpreventionprovidersreadall) permission. See more details about the RiskPreventionProviders.Read.All permission in the [next section](/entra/external-id/customers/how-to-configure-akamai-integration#risk-prevention-provider-permission-details).
+
+
+
+
+# [Microsoft Entra admin center](#tab/admin-center)
+
+## WAF provider configuration
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
+1. Browse to **Entra ID** > **Security Store**.
+1. Select the **Protect apps from DDoS with WAF** tile by selecting **Get started**.
+1. Under **Choose a WAF Provider** select **Akamai** and then select **Next**.
+
+  :::image type="content" source="media\how-to-configure-akamai-integration\choose-waf-provider.png" alt-text="Screenshot of the choose WAF provider page.":::
+
+6. Under **WAF provider configuration**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
+    - **Configuration name**: A name for the WAF configuration.
+    - **Host prefix**: The host prefix from your Akamai EdgeGrid API credentials.
+    - **Client secret**: The client secret from your Akamai EdgeGrid API credentials.
+    - **Access token**: The access token from your Akamai EdgeGrid API credentials.
+    - **Client token**: The client token from your Akamai EdgeGrid API credentials.
+
+  :::image type="content" source=" media\how-to-configure-akamai-integration\configure-akamai-provider.png" alt-text="Screenshot of the configure WAF provider page.":::
+
+7. Select **Next** to go to the next step.
+
+## Domain verification
+
+Select the custom URL domains that are enabled through Azure Front Door (AFD) to verify and connect them to your Akamai WAF configuration. This step ensures that the selected domains are protected with advanced security features.
+
+1. Select **Verify domain** to start the verification process.
+1. Select the custom URL domains you want to protect with Akamai WAF and then select **Verify**.
+
+  :::image type="content" source="media\how-to-configure-akamai-integration\verify-domain.png" alt-text="Screenshot of the verify domain page.":::
+
+3. After verification, select **Done** to complete the process.
+
+# [Microsoft Graph API](#tab/graph-api)
+
+You can use the Microsoft Graph API through [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) to configure the Akamai WAF integration.
+
+Make sure the caller has the [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) role and has consented to the [RiskPreventionProviders.Read.All](/graph/permissions-reference#riskpreventionprovidersreadall) permission. 
 
   :::image type="content" source="media\how-to-configure-akamai-integration\consent-to-permissions.png" alt-text="Screenshot showing consent to permissions." :::
 
   :::image type="content" source="media\how-to-configure-akamai-integration\consent-button.png" alt-text="Screenshot showing the consent button." :::
 
-- The verification Graph API endpoint requires the **API token** that you created in the previous step. The backend uses this token to call Akamai on your behalf to retrieve and verify the WAF configuration.
-  - The token is treated like any client secret and is never stored or logged in plain text or without encryption.
-- The verification process checks that a DNS record is correctly configured and validates whether the recommended managed rulesets are enabled.
-- The API returns detailed error codes to help you identify configuration issues and provides actionable recommendations.
-
-#### Risk prevention provider permission details
-
-The following permission allows the app to read your organization's risk prevention providers without a signed-in user.
-
 | **Permission**  | **Description**  | **Endpoint**  |
 |----|----|----|
 | RiskPreventionProviders.Read.All  | Allows reading  Web Application Firewall information.  | POST /riskPrevention/webApplicationFirewalls/Verify  |
 
-#### Sample request and response
+## Step 1: Create Akamai WAF provider with the API
 
-To connect Akamai WAF with Microsoft Entra External ID, use the following example request and response.
+Make sure that you have the API client you created in Akamai. This information is required so the backend can call Akamai on your behalf to pull and verify the WAF configuration.
 
-Sample request:
+### Request
 
-```http
-POST https://graph.microsoft.com/v1.0/directory/customSecurityAttributeDefinitions
-{
-    "hostName": "contoso.marketing.com"
-   	"connection": {
-        "@odata.type": "#microsoft.graph.akamaiConnection",
-        "HostPrefix": "hostprefixvalue",
-        "ClientSecret": "clientsecretvalue",
-        "ClientToken": "clienttokenvalue",
-        "AccessToken": "accesstokenvalue"
-    }
+The following example shows a request.
+<!-- {
+  "blockType": "request",
+  "name": "create_webapplicationfirewallprovider_from_akamai"
 }
-
+-->
+``` http
+POST https://graph.microsoft.com/beta/identity/riskPrevention/webApplicationFirewallProviders
+Content-Type: application/json
+{
+    "@odata.type": "#microsoft.graph.akamaiWebApplicationFirewallProvider",
+    "displayName": "Akamai Provider Example",
+    "hostPrefix": "akab-exampleprefix",
+    "clientSecret": "akamai_example_secret_123",
+    "clientToken": "akamai_example_token_456",
+    "accessToken": "akamai_example_token_789"
+}
 ```
 
-Sample response:
+### Response
 
+The following example shows the response. The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.webApplicationFirewallProvider"
+}
+-->
+``` http
+HTTP/1.1 201 Created
+Content-Type: application/json
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#identity/riskPrevention/webApplicationFirewallProviders/$entity",
+    "@odata.type": "#microsoft.graph.akamaiWebApplicationFirewallProvider",
+    "id": "00000000-0000-0000-0000-000000000002",
+    "displayName": "Akamai Provider Example",
+    "hostPrefix": "akab-exampleprefix"
+}
+```
+
+## Step 2: Verify Akamai WAF provider with the API
+
+The following example shows how to verify a webApplicationFirewallProvider using the hostName.
+
+#### Request
+
+The following example shows a request.
+<!-- {
+  "blockType": "request",
+  "name": "webapplicationfirewallproviderthis.verify"
+}
+-->
+``` http
+POST https://graph.microsoft.com/v1.0/identity/riskPrevention/webApplicationFirewallProviders/{webApplicationFirewallProviderId}/verify
+Content-Type: application/json
+{
+  "hostName": "www.contoso.com"
+}
+```
+
+#### Response
+
+The following example shows the response. The response object shown here might be shortened for readability.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.webApplicationFirewallVerificationModel"
+}
+-->
 ```http
 HTTP/1.1 200 OK
-Content-type: application/json
+Content-Type: application/json
 {
-
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#microsoft.graph.webApplicationFirewallVerificationModel",
-  "verificationResult": {
-    "status": "Success",
-    "verifiedOnDateTime": "2024-11-09 06:00:00Z",
-    "errors": [],
-    "warnings": []
-  },
-  "verifiedDetails": {
-    "odata.type": "#microsoft.graph.akamaiVerifiedDetailsModel",
-    "dnsConfiguration": {
-      "name": "contoso.marketing.com",
-      "isProxied": true,
-      "recordType": "CNAME",
-      "value": "login-abc1defghijkl2mn.o01.azurefd.net",
-      "isDomainVerified": true
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#microsoft.graph.webApplicationFirewallVerificationModel",
+    "id": "00000000-0000-0000-0000-000000000000",
+    "verifiedHost": "www.contoso.com",
+    "providerType": "akamai",
+    "verificationResult": {
+        "status": "success",
+        "verifiedOnDateTime": "2025-10-04T00:50:26.4909654Z",
+        "errors": [],
+        "warnings": []
     }
-  }
 }
 ```
+<!--- Shortened for readability. -->
+
+---
 
 ## Troubleshooting
 
