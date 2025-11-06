@@ -30,8 +30,8 @@ The following table lists phishing-resistant and phishable authentication method
 
 Strength | Methods
 ---------|--------
-Phishing-resistant | Windows Hello for Business, Platform Credential for macOS, synced passkeys (FIDO2), FIDO2 security keys, passkey in Microsoft Authenticator, certificate-based authentication (CBA)
-Phishable | Password, SMS/Voice call, Authenticator push notifications, Authenticator passwordless sign-in, Temporary Access Pass (TAP), software-based and hardware-based OATH tokens
+Phishing-resistant | Windows Hello for Business, Platform Credential for macOS, synced passkeys (FIDO2) (preview), FIDO2 security keys, passkey in Microsoft Authenticator, certificate-based authentication (CBA)
+Phishable | Password, SMS/Voice call, Authenticator push notifications, Authenticator passwordless sign-in, Temporary Access Pass (TAP), software-based and hardware-based OATH tokens (preview)
 
 ## Using multifactor authentication
 
