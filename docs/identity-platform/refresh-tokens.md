@@ -4,7 +4,6 @@ description: Learn about refresh tokens that are used in the Microsoft identity 
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
 ms.date: 11/05/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
