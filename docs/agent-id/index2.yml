@@ -20,7 +20,7 @@ highlightedContent:
     - title: What is the Microsoft agent identity platform?
       itemType: overview
       url: ./identity-platform/what-is-agent-id-platform.md 
-    - title: What is an agent ID?
+    - title: What is an agent identity?
       url: ./identity-platform/what-is-agent-id.md
       itemType: overview
     - title: Set up your development environment
@@ -49,9 +49,17 @@ additionalContent:
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
             - text: Agent identity lifecycle management
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-lifecycle-management.md
+
+        ## CARD 3 ######################
+        - title: Protect agent access to resources
+          links:
+            - text: Conditional Access for agents
+              url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
+            - text: Microsoft Entra ID Protection for agents
+              url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
+            - text: Network controls for agents
+              url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
             
-
-
     ## Section 2: Microsoft agent identity platform ######################
     - title: Microsoft agent identity platform
       summary: The platform that enables you to create, register, and manage agent identities. Includes the agent registry for discovering and organizing agents across your organization.
@@ -109,7 +117,7 @@ additionalContent:
               url: /graph/api/overview
             - text: Code samples and tutorials
               url: ./identity-platform/what-is-agent-registry.md           ###./set-up-environment.md 
-            - text: OAuth protocols for Agent IDs
+            - text: OAuth protocols for Agent identities
               url: ./identity-platform/agent-oauth-protocols.md
         ## CARD 2 ######################
         - title: Related content
