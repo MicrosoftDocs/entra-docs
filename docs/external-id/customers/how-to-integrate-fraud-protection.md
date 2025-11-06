@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 09/24/2025
 #Customer intent: As an IT admin, I want to integrate Arkose Labs and Human with Microsoft Entra External ID to prevent fake account sign-ups and bot attacks using the Microsoft Entra admin center.
 ---
-# Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection (preview)
+# Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection 
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -43,13 +43,13 @@ You can complete the integration in both the Microsoft Entra admin center and th
 
 ## Configure Arkose Labs in the Microsoft Entra admin center
 
-To integrate Arkose Labs with Microsoft Entra External ID, you can use the Service Integration wizard in Microsoft Entra admin center to create a fraud protection provider policy.  
+To integrate Arkose Labs with Microsoft Entra External ID, you can use the Security Store wizard in Microsoft Entra admin center to create a fraud protection provider policy.  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Extensibility Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-extensibility-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Security Store** > **Sign-up protection (Preview)** to start the wizard.
+1. Browse to **Home** > **Security Store** > **Sign-up protection** to start the wizard.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection (Preview) page.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection page." lightbox="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png":::
 
 1. Enter a name for the policy, such as *ArkosePolicy*.
 1. Select the scenarios to apply the fraud protection policy to and select **Next**.
@@ -84,7 +84,7 @@ Once the policy is created, it's applied to the selected applications. When a us
 
 ## Edit the Arkose Labs configuration in the Microsoft Entra admin center  
 
-1. Browse to **Home** > **Security Store** > **Sign-up protection (Preview)** to view the list of configurations.
+1. Browse to **Home** > **Security Store** > **Sign-up protection** to view the list of configurations.
 1. Select the **Edit provider configurations** option to edit the Arkose Labs policy. If you want to edit the fraud protection policy, select the pencil icon.
 1. In the **Configure Arkose Labs for sign-up protection** step, select the configuration you want to edit and select **Next**.
 1. Select the app you want to protect with Arkose Labs fraud protection or remove the existing ones. You can select one or more applications that you have registered in your external tenant. Once you selected the app, select **Next**.
@@ -203,13 +203,13 @@ You can find these values in the HUMAN Security admin console in the [applicatio
 
 ## Configure HUMAN Security in the Microsoft Entra admin center
 
-To integrate HUMAN Security with Microsoft Entra External ID, you can use the Service Integration wizard in Microsoft Entra admin center to create a fraud protection provider policy.  
+To integrate HUMAN Security with Microsoft Entra External ID, you can use the Security Store wizard in Microsoft Entra admin center to create a fraud protection provider policy.  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Extensibility Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-extensibility-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Security Store** > **Sign-up protection (Preview)** to start the wizard.
+1. Browse to **Home** > **Security Store** > **Sign-up protection** to start the wizard.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection (Preview) page.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png" alt-text="Screenshot showing the Sign-up protection page." lightbox="media/how-to-integrate-fraud-protection/configure-sign-up-protection.png":::
 
 1. Enter a name for the policy, such as *HUMANPolicy*.
 1. Select the scenarios to apply the fraud protection policy to and select **Next**.
@@ -236,7 +236,7 @@ Once the policy is created, it's applied to the selected applications. When a us
 
 ## Edit the HUMAN Security configuration in the Microsoft Entra admin center  
 
-1. Browse to **Home** > **Security Store** > **Sign-up protection (Preview)** to view the list of configurations.
+1. Browse to **Home** > **Security Store** > **Sign-up protection** to view the list of configurations.
 1. Select the **Edit provider configurations** option to edit the HUMAN Security policy. If you want to edit the fraud protection policy, select the pencil icon.
 1. In the **Configure HUMAN Security for sign-up protection** step, select the configuration you want to edit and select **Next**.
 1. Select the app you want to protect with HUMAN Security fraud protection or remove the existing ones. You can select one or more applications that you have registered in your external tenant. Once you selected the app, select **Next**.

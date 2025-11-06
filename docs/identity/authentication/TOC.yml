@@ -81,7 +81,7 @@
       href: concept-sspr-licensing.md
     - name: Deployment guide
       href: concept-sspr-deploy.md
-  - name: Microsoft Entra account recovery
+  - name: Account recovery
     items:
     - name: Overview
       href: concept-self-service-account-recovery.md
