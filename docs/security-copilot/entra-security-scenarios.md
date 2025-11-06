@@ -29,7 +29,6 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 Microsoft Security Copilot supports data exploration when prompts return datasets with more than 10 items. This feature is in preview and available for select Microsoft Entra scenarios. From the Copilot chat response, select **Open list** to access a comprehensive data grid. This allows you to explore large datasets with complete and accurate results, enabling more efficient decision-making. Each data grid displays the underlying Microsoft Graph URL, helping you verify query accuracy and build confidence in the results.
 
 > [!NOTE]
->
 > This functionality is currently in preview and limited to simple prompts only. Complex prompts that require multi-step queries are not currently supported by this feature. Copilot will still provide chat-based summaries for all prompts.
 
 :::image type="content" source="./media/copilot-security-entra/data-explorer.png" alt-text="Screenshot that shows Data Exploration in Security Copilot for Microsoft Entra.":::
