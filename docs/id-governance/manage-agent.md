@@ -46,4 +46,4 @@ The Manage agents feature in Microsoft Entra lets you view, and control, [agent 
 
 ## Next Steps
 
-- If an agent needs other access packages, [Request an access package on behalf of an agent ID (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview)
+- If an agent needs other access packages, [Request an access package on behalf of an agent identity (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview)
