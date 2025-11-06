@@ -70,8 +70,7 @@ In the risky agent report, select an entry to view the full details including th
 
 You can also navigate to the **Risk Detections** report and select the **Agent detections** tab to view a full list of the detection risk events from up to the past 90 days. 
 
-:::image type="content" source="media/concept-risky-agents/risky-agent-details.png" alt-text="Screenshot showing the Risky agents report." lightbox="media/concept-risky-agents/risky-agent-details.png":::
-
+:::image type="content" source="media/concept-risky-agents/risky-agent-details.png" alt-text="Screenshot showing the Risky agent details." lightbox="media/concept-risky-agents/risky-agent-details.png":::
 
 ## Risk-based Conditional Access for agents
 
