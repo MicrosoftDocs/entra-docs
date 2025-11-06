@@ -54,7 +54,7 @@ Use `MicrosoftIdentityMessageHandler` when you need the following listed items:
 
 ## [Use IAuthorizationHeaderProvider](#tab/authheaderprovider)
 
-`IAuthorizationHeaderProvider` from *Microsoft.Identity.Web* gives you direct access to authorization headers for complete control over HTTP requests. This means you can customize the authentication process to fit your needs, including adding or modifying headers as necessary. This method also allows you to use custom HTTP libraries to make api calls.
+`IAuthorizationHeaderProvider` from *Microsoft.Identity.Web* gives you direct access to authorization headers for complete control over HTTP requests. This means you can customize the authentication process to fit your needs, including adding or modifying headers as necessary. This method also allows you to use custom HTTP libraries to make API calls.
 
 Use `IAuthorizationHeaderProvider` when you need the following listed items:
 

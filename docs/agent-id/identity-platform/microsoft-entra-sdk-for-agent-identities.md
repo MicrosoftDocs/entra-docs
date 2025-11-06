@@ -26,11 +26,11 @@ Before you begin, ensure you have:
 - An agent identity blueprint client ID.
 - Necessary permissions configured in Microsoft Entra ID
 
-## Deploy your containerised service
+## Deploy your containerized service
 
 Deploy the Microsoft Entra SDK for Agent ID as a containerized service in your environment.
 
-If you are using .NET, you can use the *Microsoft.Identity.Web* SDK.
+If you're using .NET, you can use the *Microsoft.Identity.Web* SDK.
 
 ## Configure your Microsoft Entra SDK for Agent ID settings
 
@@ -40,9 +40,9 @@ Follow these steps to configure your Microsoft Entra SDK for Agent ID settings:
 
 1. Set up the necessary components in Microsoft Entra ID. Ensure you have registered your application in the Microsoft Entra ID tenant. 
 
-1. Configure your client credentials. This could be your client secret, a certificate or a managed identity that you are using as a federated identity credential. 
+1. Configure your client credentials. This could be your client secret, a certificate, or a managed identity that you're using as a federated identity credential. 
 
-1. If you are calling a downstream API, ensure that the necessary permissions are granted. Calling a custom web API will require you to provide the API registration details in the SDK configuration.
+1. If you're calling a downstream API, ensure that the necessary permissions are granted. Calling a custom web API requires you to provide the API registration details in the SDK configuration.
 
 ## Acquire tokens using the Microsoft Entra SDK for Agent ID
 
@@ -56,14 +56,14 @@ These are the steps to acquire tokens using the Microsoft Entra SDK for Agent ID
 
     Specify the downstream API by including its name in the request URL based on your agent ID SDK configuration. The authorization header endpoint takes the format `/AuthorizationHeader/{serviceName}` where `serviceName` is the name of the downstream API configured in the SDK settings.
 
-1. To acquire an app only token for an autonomous agent, you'll provide the agent identity client ID in the request.
+1. To acquire an app only token for an autonomous agent, you provide the agent identity client ID in the request.
 
     ```bash
     GET /AuthorizationHeader/Graph?AgentIdentity=<agent-id-client-ID>
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
     ```
 
-1. To acquire token for an autonomous agent user, provide either the user object ID or UPN but not both. This means providing either `AgentUsername` or `AgentUserId`. Providing both will cause a validation error. You must also provide the `AgentIdentity` to specify which agent identity to use for token acquisition. If the agent identity parameter is missing, the request will fail with a validation error.
+1. To acquire token for an autonomous agent user, provide either the user object ID or UPN but not both. This means providing either `AgentUsername` or `AgentUserId`. Providing both will cause a validation error. You must also provide the `AgentIdentity` to specify which agent identity to use for token acquisition. If the agent identity parameter is missing, the request fails with a validation error.
 
     ```bash
     GET /AuthorizationHeader/Graph?AgentIdentity=<agent-id-client-id>&AgentUserId=<agent-user-object-id>

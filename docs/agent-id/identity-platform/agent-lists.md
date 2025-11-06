@@ -33,8 +33,6 @@ To view agent identities in your tenant:
 
 1. Browse to **Entra ID** > **Agent identities** > **Agent with identities**.
 
-    <!-- :::image type="content" source="" alt-text="View the agent identities in your Microsoft Entra tenant." lightbox=""::: -->
-
     You see a table containing a list of agent identities in your tenant. Not all columns are visible. To see all available columns, select the **Edit column** button. The table columns are as follows:
 
     | Column Name | Description | Sortable | Filterable | Special Features | Availability |

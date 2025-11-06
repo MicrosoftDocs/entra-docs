@@ -80,9 +80,9 @@ This article explains how to call a Microsoft Graph API from an agent using agen
 
 1. You can now get the `GraphServiceClient` injecting it in your service or from the service provider and call Microsoft Graph.
 
-    1. For agent identities, you can acquire either an app only token (autonomous agents) or an on-behalf of user token (interactive agents) by using the `WithAgentIdentity` method. For app only tokens, set the `RequestAppToken` property to `true`. For delegated on-behalf of user tokens, don't set the `RequestAppToken` property or explicitly set it to `false`.
+  - For agent identities, you can acquire either an app only token (autonomous agents) or an on-behalf of user token (interactive agents) by using the `WithAgentIdentity` method. For app only tokens, set the `RequestAppToken` property to `true`. For delegated on-behalf of user tokens, don't set the `RequestAppToken` property or explicitly set it to `false`.
 
-        ```csharp
+      ```csharp
         // Get the GraphServiceClient
         GraphServiceClient graphServiceClient = serviceProvider.GetRequiredService<GraphServiceClient>();
         
@@ -103,9 +103,9 @@ This article explains how to call a Microsoft Graph API from an agent using agen
                 options.WithAgentIdentity(agentIdentity);
                 options.RequestAppToken = false; // False to show it's on-behalf of user
             }));
-        ```
+      ```
 
-    1. For agent user identities, you can specify either UPN or OID to identify the agent user by using the `WithAgentUserIdentity` method.
+    - For agent user identities, you can specify either UPN or OID to identify the agent user by using the `WithAgentUserIdentity` method.
 
         ```csharp
         // Get the GraphServiceClient

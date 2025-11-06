@@ -1,5 +1,6 @@
 ---
 title: Publish agents to registry
+titleSuffix: Microsoft Entra Agent ID
 description: Learn how to publish agents to Microsoft Entra Agent Registry through automatic registration or manual API calls for agent discovery and management.
 author: omondiatieno
 manager: mwongerapk
@@ -36,7 +37,7 @@ When creating the agent instance, you don't need to create an agent card at the 
 
 ## Automatic registration for Microsoft agent builder platforms
 
-Agents created on Microsoft platforms such as Microsoft Copilot Studio, Foundry and Agent 365 (A365) receive automatic registration without requiring manual API calls. When you create an agent on this platform, the system automatically provisions an agent identity (agent ID) and registers both the agent instance and agent card in the registry. This process includes assigning the agent to appropriate security collection based on the agent's metadata and intended use.
+Agents created on Microsoft platforms such as Microsoft Copilot Studio, Foundry, and Agent 365 (A365) receive automatic registration without requiring manual API calls. When you create an agent on this platform, the system automatically provisions an agent identity (agent ID) and registers both the agent instance and agent card in the registry. This process includes assigning the agent to appropriate security collection based on the agent's metadata and intended use.
 
 ## Manual registration for third-party agent builder platforms
 
@@ -59,15 +60,15 @@ After acquiring your auth token, you have the following options to publish your 
 
 #### Create an agent instance with an agent card in a single call
 
-1. Ensure you have the necessary permissions. 
-    1. For delegated flows, `AgentInstance.ReadWrite.All` and `AgentCardManifest.ReadWrite.All`
-    1. For app-only flows, (`AgentInstance.ReadWrite.All` or `AgentInstance.ReadWrite.ManagedBy`) and (`AgentCardManifest.ReadWrite.All` or `AgentCardManifest.ReadWrite.ManagedBy`).
+- Ensure you have the necessary permissions. 
+    - For delegated flows, `AgentInstance.ReadWrite.All` and `AgentCardManifest.ReadWrite.All`
+    - For app-only flows, (`AgentInstance.ReadWrite.All` or `AgentInstance.ReadWrite.ManagedBy`) and (`AgentCardManifest.ReadWrite.All` or `AgentCardManifest.ReadWrite.ManagedBy`).
 
-1. Do a POST call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances*. Attach your access token as a bearer token in the authorization header.
+- Do a POST call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances*. Attach your access token as a bearer token in the authorization header.
 
-1. Provide the agent instance and agent card details in your payload. You have the option of either creating a new agent card manifest in the process, or using an existing one.
+- Provide the agent instance and agent card details in your payload. You have the option of either creating a new agent card manifest in the process, or using an existing one.
 
-    To create a new agent card manifest in the process, your payload will look something like the below
+    To create a new agent card manifest in the process, your payload looks something like the below
     
     ```http
     POST /beta/agentRegistry/agentInstances
@@ -111,7 +112,7 @@ After acquiring your auth token, you have the following options to publish your 
     }
     ```
 
-    To use an existing agent card manifest, your payload will look something like the below
+    To use an existing agent card manifest, your payload looks something like the following example
 
     ```http
     POST /beta/agentRegistry/agentInstances
@@ -134,17 +135,17 @@ After acquiring your auth token, you have the following options to publish your 
     }
     ```
     
-1. If successful, you'll get a 201 response from the registry API.
+- If successful, you get a 201 response from the registry API.
 
 #### Create an agent instance first then update it to include the agent card
 
-1. Ensure you have the necessary permissions. 
-    1. For delegated flows, `AgentInstance.ReadWrite.All`
-    1. For app-only flows, `AgentInstance.ReadWrite.All` and `AgentInstance.ReadWrite.ManagedBy`.
+- Ensure you have the necessary permissions. 
+    - For delegated flows, `AgentInstance.ReadWrite.All`
+    - For app-only flows, `AgentInstance.ReadWrite.All` and `AgentInstance.ReadWrite.ManagedBy`.
 
-1. Do a POST call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances*. Attach your access token as a bearer token in the authorization header.
+- Do a POST call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances*. Attach your access token as a bearer token in the authorization header.
 
-1. Provide the agent instance and agent card details in your payload.
+- Provide the agent instance and agent card details in your payload.
 
     ```http
     POST /beta/agentRegistry/agentInstances
@@ -166,14 +167,14 @@ After acquiring your auth token, you have the following options to publish your 
     }
     ```
 
-1. If successful, the API will return http status 201 after creating the agent instance only.
+- If successful, the API will return http status 201 after creating the agent instance only.
 
-1. Ensure you have the following permissions:
+- Ensure you have the following permissions:
 
-    1. For delegated flows, `AgentInstance.ReadWrite.All` and `AgentCardManifest.Read.All`.
-    1. For app-only flows, (`AgentInstance.ReadWrite.All` or `AgentInstance.ReadWrite.ManagedBy`) and `AgentCardManifest.Read.All`.
+    - For delegated flows `AgentInstance.ReadWrite.All` and `AgentCardManifest.Read.All`.
+    - For app-only flows (`AgentInstance.ReadWrite.All` or `AgentInstance.ReadWrite.ManagedBy`) and `AgentCardManifest.Read.All`.
 
-1. Update the agent instance to include the agent card manifest. Do a PATCH call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances/{agent-id}*. Attach your access token as a bearer token in the authorization header.
+- Update the agent instance to include the agent card manifest. Do a PATCH call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances/{agent-id}*. Attach your access token as a bearer token in the authorization header.
 
     ```http
     PATCH /beta/agentRegistry/agentInstances/00000000-0000-0000-0000-000000000000
@@ -185,7 +186,7 @@ After acquiring your auth token, you have the following options to publish your 
     }
     ```
 
-1. If successful, the API will return http status 204 after updating the agent instance to include the agent card manifest.    
+- If successful, the API will return http status 204 after updating the agent instance to include the agent card manifest.
 
 ### Handle registration responses
 
@@ -206,7 +207,7 @@ After registration, confirm your agent appears correctly in the registry.
 You can verify registration through the Microsoft Entra Admin Center. 
 
 1. Navigate to **Agent identities**
-1. Select **Agent Registry**. If your agent was created manually, it won't have an agent ID if you created it manually. If the agent was created via Microsoft platforms, it will have an agent ID.
+1. Select **Agent Registry**. If your agent was created manually, it won't have an agent ID if you created it manually. If the agent was created via Microsoft platforms, it has an agent ID.
 
 ### Verify using the registry API
 
@@ -253,4 +254,4 @@ Content-Type: application/json
 
 ### Test agent discovery
 
-You can test whether you agent's discovery status.
+You can test whether your agent's discovery status.
