@@ -189,7 +189,7 @@ The enhanced object picker replaces the previous flat list experience in both th
 
 ---
 
-## Block high-risk agent identities from accessing my organization’s resources
+### Block high-risk agent identities from accessing my organization’s resources
 
 Organizations can create a Conditional Access policy to block high-risk agent identities based on signals from Microsoft Entra ID Protection.
 
