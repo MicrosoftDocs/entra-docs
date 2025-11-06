@@ -16,8 +16,6 @@ ms.reviewer: kvenkit
 
 This Conditional Access policy template blocks all agent users from accessing any resources in your organization, preventing AI agents acting as users from obtaining access tokens.
 
-[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
-
 [!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 
 ## Create a Conditional Access policy
