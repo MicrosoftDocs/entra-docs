@@ -1,5 +1,6 @@
 ---
-title: What are agent identities (Agent IDs)?
+title: 'What are agent identities (Agent IDs)?'
+titleSuffix: Microsoft Entra Agent ID
 description: Learn about agent IDs, specialized identity constructs that enable secure authentication and authorization for AI agents in enterprise environments.
 author: omondiatieno
 ms.author: jomondi
@@ -11,38 +12,36 @@ ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent IDs are and how they provide first-class identity constructs that differ from traditional identities, so that I can build customer trust and drive adoption through secure identity solutions for AI agents in my organization.
 ---
 
-# What are agent identities?
+# What are agent identities (Agent IDs)?
 
-Agent identities (agent IDs) are identities within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. Agent IDs enable scalable deployment of autonomous AI systems that function securely in your enterprise. They help to address certain security challenges posed by AI agents, such as:
+Agent IDs are first-class identity accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. As organizations increasingly deploy autonomous AI systems, identity models designed for human users and applications prove insufficient. Agent IDs address this gap by providing a specialized identity construct built specifically for the unique requirements of AI agents operating at enterprise scale.
+
+## Why agent IDs exist
+
+The emergence of AI agents as autonomous enterprise systems introduces security and operational challenges that existing identity models cannot adequately address.  Agent IDs help to address certain security challenges posed by AI agents, such as:
 
 - The need to distinguish operations performed by AI agents from operations performed by workforce, customer, or workload identities.
 - Enabling AI agents to gain right-sized access across systems.
 - Preventing AI agents from gaining access to the most critical security roles and systems.
 - Scaling identity management to large numbers of AI agents that might be quickly created and destroyed.
 
-This article provides a basic overview of this new identity, and introduces key concepts necessary for deploying and securing AI agents.
+## Agent IDs versus application identities
 
-## Anatomy of an agent ID
+Application identities, typically represented as service principals in Microsoft Entra ID, were designed for services built and maintained by organizations. These identities carry the expectation of long-term stability, known ownership, and managed lifecycle.
 
-An account used by an AI agent is referred to as an **agent identity**. Much like your typical user account, an agent identity has a few key components:
+Agents are often created dynamically through automation, user actions in tools like Copilot Studio, or API orchestration. An agent might exist for minutes during a specific task, or might be created and destroyed thousands of times per day as part of an automated workflow. Managing this level of dynamism with existing application identities creates operational complexity and security challenges.
 
-- **Identifier**. Microsoft Entra generates an `id` (also known as object ID) for each agent identity, such as `aaaaaaaa-1111-2222-3333-bbbbbbbbbb`. This `id` uniquely identifies the account within a Microsoft Entra tenant.
+Agent IDs embrace this dynamic nature while providing appropriate security controls. Organizations can create agent identities in bulk, apply consistent policies to all agents, and retire agents without leaving orphaned credentials or permission assignments behind. The identity model is designed for scale and ephemerality rather than permanence.
 
-- **Credentials**. Agent identities don't have passwords, but have other forms of credentials they can use to authenticate.
+## Agent IDs versus human user identities
 
-- **Display name**. An agent identity's display name is surfaced in many experiences such as the Microsoft Entra admin center, Azure portal, Teams, Outlook, and more. It's the human-friendly name of an agent and can be changed.
+Human user identities are tied to authentication mechanisms humans use daily, such as passwords, multi-factor authentication, and passkeys. Human users have data associated with them like mailboxes, teams, and organizational hierarchy.
 
-- **Sponsor**. Agent identities can have a sponsor, which records the human user or group that's accountable for an agent. This sponsor is used for various purposes, such as contacting a human in case a security incident happens.
+Agent IDs represent software systems, not human beings. They don't use human authentication mechanisms. However, certain scenarios require agents to appear and operate as if they were human users. For these scenarios, agent identities can be paired with agent users - special Microsoft Entra user accounts that maintain a one-to-one relationship with their paired agent identity. This distinction allows organizations to provide agents with a user identity when necessary for system compatibility, while still maintaining clear separation and appropriate security policies for AI-driven operations.
 
-- **Blueprint**. All agent identities are created from a reusable template called an agent identity blueprint. The agent identity blueprint establishes the kind of agent and records metadata shared across all agent identities of a common kind.
+## What agent IDs enable
 
-- **Agent user (optional)**. Some agents need access to systems that strictly require a Microsoft Entra user account be used for authentication. In these cases, an agent can be given a second account, called an **agent user**. This second account is a user account in the Microsoft Entra tenant that is decorated as an AI agent. It has a different `id` than the agent identity, but a 1:1 relationship is always established between an agent identity and its agent user.
-
-These components of an agent identity enable secure authentication and authorization. The full object schema of an agent identity is available in Microsoft Graph reference documentation.
-
-## Features: What can agent IDs do?
-
-Like other accounts, agent IDs are primarily a means to access apps, web services, and other systems in your organization. An AI agent can use agent IDs to:
+Agent IDs provide the foundation for secure, scalable AI agent deployment by enabling several key capabilities. Like other accounts, agent IDs are primarily a means to access apps, web services, and other systems in your organization. An AI agent can use agent IDs to:
 
 - **Access web services**. Agents can request access tokens from Microsoft Entra, and use those tokens to access web services. Services can include Microsoft services such as Microsoft Graph, services built by your organization, and services purchased from third-party vendors.
 
@@ -52,44 +51,10 @@ Like other accounts, agent IDs are primarily a means to access apps, web service
 
 - **Authenticate incoming messages**: Agents can accept requests from other clients, users, and agents. Those requests can be secured using access tokens issued by Microsoft Entra ID, allowing the agent to reliably identify the caller and make authorization decisions.
 
-## Examples: Agent identities in use today
+## Agent IDs in practice
 
 Several Microsoft products already use agent IDs for authenticating AI agents. Two examples include:
 
-- [**Entra Conditional Access optimization agent**](/entra/security-copilot/conditional-access-agent-optimization): When this agent is enabled in your tenant, it's given an agent identity. The Microsoft Entra Conditional Access optimization agent then uses its agent identity to query Microsoft Entra systems and inspect the tenant's configuration. All queries made by the agent are recorded as having been performed by an AI agent. The agent's activity is subject to any security policies enforced for agent identities. You can view the agent's identity in the Microsoft Entra admin center in the **Agent identities** tab.
+- [**Entra Conditional Access optimization agent**](~/identity/conditional-access/agent-optimization.md): When this agent is enabled in your tenant, it's given an agent identity. The Microsoft Entra Conditional Access optimization agent then uses its agent identity to query Microsoft Entra systems and inspect the tenant's configuration. All queries made by the agent are recorded as having been performed by an AI agent. The agent's activity is subject to any security policies enforced for agent identities. You can view the agent's identity in the Microsoft Entra admin center in the **Agent identities** tab.
 
-- [**Agents built in Copilot Studio**](/microsoft-copilot-studio/authoring-first-bot): In organizations that use Copilot Studio, users can quickly create AI agents using Copilot Studio's low-code tools. Each time an AI agent is created, the agent gets an agent identity in the Microsoft Entra tenant. The user who created the agent is recorded as its sponsor. The agent can then use its agent identity to send/receive chat messages to users, and connect to various systems like SharePoint or Dataverse. Any authentication performed by these agents is logged in Microsoft Entra ID as AI agents and viewable through the Microsoft Entra admin center.
-
-## Blueprints: Consistent security for agent identities
-
-A key characteristic of agent IDs is that all agent identities are created from a reusable template called an agent identity blueprint. The blueprint establishes the "kind" of agent and records metadata shared across all agent identities of a common kind.
-
-Imagine that an organization uses an AI agent called a "Sales Assistant Agent." Whether the agent is purchased or built in-house, an agent identity blueprint would be added to the organization's Microsoft Entra tenant. The blueprint captures the following information:
-
-- The name of the blueprint, such as "Sales Assistant Agent"
-- The organization who published the blueprint, such as "Contoso"
-- Any roles the agent might offer, such as "sales manager" or "sales rep"
-- Any Microsoft Graph permissions that its agents are granted, such as "read the signed in user's calendar"
-
-Many sales teams within the organization deploy the AI agent. An agent is deployed for North America sales. Another is deployed for South America sales. One for enterprise sales, one for small/medium businesses, and another for startups. Upon creation, each of these agents is given an agent identity. Each agent begins running and performing tasks using its agent identity for authentication.
-
-Because each agent identity is created using the same agent ID blueprint, all agents appear as "Sales Assistant Agents" in the Microsoft Entra admin center. This feature allows the Microsoft Entra administrator to take actions like:
-
-- Apply a conditional access policy to all Sales Assistant Agents.
-- Disable all Sales Assistant agents.
-- Revoke a permission grant for all Sales Assistant agents.
-
-Agent ID blueprints give the Microsoft Entra administrator the ability to secure agent identities at scale by setting rules and performing operations based on the kind of agent. This feature ensures consistent security for each AI agent that is deployed in the organization.
-
-## Credentials for agent identities
-
-Unlike human users, AI agents don't use passwords, SMS, passkeys, or authenticator apps for authentication. Instead, agent identities use credentials types that are usable by software systems. These credential types include:
-
-- managed identities, for AI agents that run on Azure (most secure).
-- federated identity credentials, for AI agents that run on Kubernetes or other cloud providers.
-- certificates / cryptographic keys.
-- client secrets.
-
-The kinds of credentials allowed for use by agent IDs in a tenant can be controlled via app management policies.
-
-In Microsoft Entra agent ID, each agent identity doesn't have its own credentials. Instead, all credentials are configured on the agent identity blueprint. All agent identities created using the agent ID blueprint share its credentials. This relationship prevents implementers from needing to store and protect hundreds to thousands of credentials (one for each agent identity). For details, refer to the agent ID authentication protocol reference.
+- **Agents built in Copilot Studio**: In organizations that use Copilot Studio, users can quickly create AI agents using Copilot Studio's low-code tools. Each time an AI agent is created, the agent gets an agent identity in the Microsoft Entra tenant. The user who created the agent is recorded as its sponsor. The agent can then use its agent identity to send/receive chat messages to users, and connect to various systems like SharePoint or Dataverse. Any authentication performed by these agents is logged in Microsoft Entra ID as AI agents and viewable through the Microsoft Entra admin center.
