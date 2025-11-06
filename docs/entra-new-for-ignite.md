@@ -14,124 +14,52 @@ ms.date: 11/5/2025
 
 The following sections summarize the new and updated Microsoft Entra documentation content published for the Ignite 2025 release. Each item includes a brief description and a link to the relevant documentation.
 
+
+
 ## Microsoft Entra Suite
 
 ### Microsoft Entra ID Governance
 
-We expanded Lifecycle Workflows and Access Packages to help organizations automate user lifecycle operations and deliver least‑privilege access with modern approval patterns. Several items reached General Availability (GA), making them ready for production-scale deployments.
+Accelerated entitlement management with newly released capabilities that reduce friction and improve compliance at scale—introducing dynamic approvals, expanded PIM-based assignment for access packages, and Lifecycle Workflows enhancements that target high‑impact scenarios.
 
-- **Lifecycle Workflows: Reprocess workflows (GA)** — Re-run workflow steps for selected users to remediate failures or missed actions without rebuilding automations.  
-  <https://learn.microsoft.com/entra/id-governance/lifecycle-workflows-overview>
-
-- **Lifecycle Workflows: Inactive users (GA)** — Detect inactivity and take scoped actions (disable, deprovision, remove access) at scale.  
-  <https://learn.microsoft.com/entra/id-governance/lifecycle-workflows-overview>
-
-- **Access Packages: Dynamic approvals (GA)** — Context-aware approvals driven by request attributes and resource sensitivity to speed access while maintaining control.  
-  <https://learn.microsoft.com/entra/id-governance/entitlement-management-approvals>
-
-- **Access Packages: Eligible assignment with PIM (GA)** — Time‑bound, just‑in‑time activation for package access to enforce least privilege.  
-  <https://learn.microsoft.com/entra/id-governance/entitlement-management-overview>
+- [Dynamic approvals for access packages](https://learn.microsoft.com/entra/id-governance/entitlement-management/dynamic-approvals) (new) — Policy-driven, conditional approvals that adapt to request context.
+- [Assign eligible access packages with PIM](https://learn.microsoft.com/entra/id-governance/entitlement-management/pim-assign-eligible-access-packages) (new) — Use Privileged Identity Management to assign eligible-to-activate access packages.
+- [Lifecycle Workflows: Reprocess workflows](https://learn.microsoft.com/entra/id-governance/lifecycle-workflows/reprocess-workflows) (new) — Restart failed or out‑of‑sequence workflow runs to recover at scale.
+- [Lifecycle Workflows: Inactive users](https://learn.microsoft.com/entra/id-governance/lifecycle-workflows/inactive-users) (new) — Automate detection and remediation for inactive accounts across the joiner/mover/leaver cycle.
 
 ### Microsoft Entra ID External ID
 
-We added new customer-focused guidance to unblock common External ID (CIAM) scenarios and accelerate deployments.
+Brought billing clarity for B2C/B2B customers by introducing a dedicated guest‑meter billing reference to help admins forecast and reconcile costs.
 
-- **Customers FAQ (new/expanded)** — Consolidated answers for setup, management, and user experience topics in customer identity.  
-  <https://learn.microsoft.com/entra/external-id/customers/faq-customers>
+- [Guest meter billing](https://learn.microsoft.com/entra/external-id/customers/guest-meter-billing) (new) — Explains billing model, meters, and example calculations.
 
-
-
----
 
 ## Microsoft Entra Agent ID
 
-Introduces the foundational Agent ID information architecture for Conditional Access Agents, including core concepts, platform roles/RBAC, and reference material to plan and operate deployments.
+Established the foundation for Agent ID with initial docs that define platform roles and provide authoritative references for agent inventory—enabling secure, least‑privilege operations and operational visibility.
 
-- **Agent ID — core docs (new)** — Overview, concepts, and setup guidance for Agent ID.  
-  <https://learn.microsoft.com/entra/identity/conditional-access/>
+- [Agent ID platform roles](https://learn.microsoft.com/entra/identity/agent-id/roles) (new) — Role definitions and permissions to administer Agent ID safely.
+- [Agent reference tables](https://learn.microsoft.com/entra/identity/agent-id/reference-agent-tables) (new) — Normalized tables for agent objects, properties, and relationships.
 
-- **Agent ID platform roles & RBAC (new)** — Dedicated platform roles for least‑privilege operations and separation of duties.  
-  <https://learn.microsoft.com/entra/identity/conditional-access/>
-
-- **Agent reference tables & artifacts (new)** — Supporting tables/metadata to aid planning and administration.  
-  <https://learn.microsoft.com/entra/identity/conditional-access/>
-
-- **Ignite wave for Conditional Access Agents (new)** — End‑to‑end content set aligned to the Ignite release.  
-  <https://learn.microsoft.com/entra/identity/conditional-access/>
-
----
-
-## Security Copilot + Microsoft Entra
-
-_No new items identified in the log._
-
----
 
 ## Microsoft Entra ID
 
 ### Authentication
 
-A cohesive Account Recovery experience lands across overview, configuration, end‑user enablement, and FAQ—paired with significant expansion of passkey (FIDO2) resources, including passkey profiles and synced passkeys, to accelerate passwordless adoption.
+Delivered a cohesive account recovery experience across overview, configuration, end‑user enablement, and FAQ—paired with significant expansion of passkey (FIDO2) resources, including passkey profiles and synced passkeys, to accelerate passwordless adoption.
 
-- **Account Recovery — overview/concepts (new)** — Core concepts, phases, and terminology for Microsoft Entra account recovery.  
-  <https://learn.microsoft.com/entra/identity/authentication/concept-self-service-account-recovery>
-
-- **Account Recovery — admin configuration (new)** — Configure policies, verification partners, and controls for resilient recovery.  
-  <https://learn.microsoft.com/entra/identity/authentication/how-to-account-recovery-configure>
-
-- **Account Recovery — end‑user setup (new)** — Guided enrollment to help users successfully set up recovery.  
-  <https://learn.microsoft.com/entra/identity/authentication/how-to-account-recovery-user-setup>
-
-- **Account Recovery — FAQ (new)** — Answers to common admin and user questions about recovery experiences.  
-  <https://learn.microsoft.com/entra/identity/authentication/account-recovery-faq>
-
-- **Passkeys (FIDO2) — concept & adoption (new/expanded)** — Updated core passkey concepts and guidance to accelerate deployment.  
-  <https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passkeys>
-
-- **Passkey Profiles — how‑to (new)** — Govern which authenticators users can register and use via profile policies.  
-  <https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles>
-
-- **Synced Passkeys — enablement & FAQ (new)** — Enable synced passkeys and address common deployment questions.  
-  <https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys>  
-  <https://learn.microsoft.com/entra/identity/authentication/faq-authentication-synced-passkeys>
+- [Account recovery overview / concepts](https://learn.microsoft.com/entra/identity/authentication/concept-self-service-account-recovery) (new) — Phases, flows, and terminology for Microsoft Entra account recovery.
+- [Account recovery configuration](https://learn.microsoft.com/entra/identity/authentication/how-to-account-recovery-configure) (updated) — Admin setup, preview controls, and troubleshooting guidance.
+- [Account recovery: end‑user setup](https://learn.microsoft.com/entra/identity/authentication/how-to-account-recovery-user-setup) (updated) — Step‑by‑step end‑user enablement with refreshed screenshots.
+- [Account recovery FAQ](https://learn.microsoft.com/entra/identity/authentication/faq-account-recovery) (new) — Answers to common deployment and usage questions.
+- [Passkeys (FIDO2) concepts](https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passkeys-fido2) (updated) — Consolidated guidance and terminology for passkeys.
+- [Configure passkey profiles](https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles) (new) — Create, scope, and govern passkey usage via profiles.
+- [Enable synced passkeys](https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys) (new) — Admin steps to turn on synced passkeys for users.
+- [Synced passkeys FAQ](https://learn.microsoft.com/entra/identity/authentication/faq-synced-passkeys) (new) — Deployment prerequisites, limits, and support details.
 
 ### Conditional Access
 
-New Conditional Access content in this wave centers on Agent ID (see “Microsoft Entra Agent ID”). No additional net-new CA policy features surfaced in the log.
+Introduced Conditional Access Agents to extend policy enforcement to new surfaces and scenarios, improving coverage and control.
 
-- **Agent ID content set (new)** — Overview, roles, reference, and deployment guidance for Conditional Access Agents.  
-  <https://learn.microsoft.com/entra/identity/conditional-access/>
+- [Conditional Access agents](https://learn.microsoft.com/entra/identity/conditional-access/conditional-access-agents) (new) — Deploy, manage, and monitor agents as CA policy enforcement points.
 
-### Hybrid identity
-
-_No net-new features in the log (changes to Connect Health/Kerberos were editorial)._
-
-### Role-based access control
-
-_No standalone RBAC additions beyond **Agent ID platform roles** (covered under Microsoft Entra Agent ID)._
-
-### Device identity
-
-_No net-new device identity items identified._
-
-### Provisioning
-
-_No net-new provisioning items identified._
-
----
-
-## Microsoft Graph API
-
-_No net-new Graph API features in the log (PIM API description/status edits were not feature additions)._
-
----
-
-## Microsoft Identity Platform
-
-_No net-new developer platform features in the log (token lifetime doc change was editorial)._
-
----
-
-## Other
-
-_No additional new content outside the buckets above was identified._
