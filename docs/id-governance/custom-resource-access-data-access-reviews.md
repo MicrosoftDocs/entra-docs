@@ -17,21 +17,6 @@ This article describes how to include  custom resource access data in a catalog 
 
 Including these custom resource access data in UAR reviews allow organizations to govern access to disconnected applications by providing custom application data through an upload process. Reviewers (currently managers) can then attest access decisions through the My Access portal.
 
-
-<!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
-
--->
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Required: Make Prerequisites the first H2 after the H1. 
-
-* Provide a bulleted list of items that the user needs.
-* Omit any preliminary text to the list.
-* If there aren't any prerequisites, list "None" in plain text, not as a bulleted item.
-
--->
-
 ## License requirements
 
 [!INCLUDE [active-directory-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
