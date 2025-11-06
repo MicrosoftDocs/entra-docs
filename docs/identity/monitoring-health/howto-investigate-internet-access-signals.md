@@ -41,7 +41,7 @@ There are different roles, permissions, and license requirements to view health 
 
 - A tenant with a [Microsoft Entra P1 or P2 license](/entra/fundamentals/get-started-premium) is required to *view* the Microsoft Entra health scenario monitoring signals.
 
-- A tenant with Microsoft Entra Internet Access license is required. For details, see the licensing section of [What is Global Secure Access?](/entra/global-secure-access/overview-what-is-global-secure-access).
+- A tenant with Microsoft Entra Internet Access license is required. For details, see the licensing section of [What is Global Secure Access?](/entra/global-secure-access/overview-what-is-global-secure-access)
 
 - The [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader) role is the least privileged role required to *view scenario monitoring signals.*
 
@@ -73,27 +73,15 @@ Investigating an signal starts with gathering data.
 
 **<u>\<\<TODO\>\> Show the sample health image</u>**
 
-3.  Review your Microsoft Entra Internet Access content filtering policies.
+3.  Review your Microsoft Entra Internet Access content filtering policies. For more information, see [How to configure Global Secure Access web content filtering - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-configure-web-content-filtering).
 
-    - [How to configure Global Secure Access web content filtering - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-configure-web-content-filtering)
+4.  Review Microsoft Entra Internet Access forwarding profile for access policies and user assignments. For more information, see [How to manage the Internet Access profile - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-manage-internet-access-profile).
 
-4.  Review Microsoft Entra Internet Access forwarding profile for access policies and user assignments
+5.  Review sign-in logs. For more information, see [Learn about the sign-in log activity details](/entra/identity/monitoring-health/concept-sign-in-log-activity-details). Look for users being blocked from signing in and have a Use Global Secure Access security profile.
 
-    - [How to manage the Internet Access profile - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-manage-internet-access-profile)
+6.  Review traffic logs. For more information, see [Global Secure Access network traffic logs - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-view-traffic-logs).
 
-5.  Review sign-in logs.
-
-    - </entra/identity/monitoring-health/concept-sign-in-log-activity-details>
-
-    - Look for users being blocked from signing in *and* have a Use Global Secure Access security profile
-
-6.  Review traffic logs.
-
-    - [Global Secure Access network traffic logs - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-view-traffic-logs)
-
-7.  Review audit logs.
-
-    - [How to access Global Secure Access audit logs (preview) - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-access-audit-logs)
+7.  Review audit logs. For more information, see [How to access Global Secure Access audit logs (preview) - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-access-audit-logs).
 
 ## Related content
 

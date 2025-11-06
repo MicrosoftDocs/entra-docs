@@ -75,7 +75,7 @@ Investigating an signal starts with gathering data.
 
 3.  Review your Microsoft Entra Private Access connector status
 
-    - </entra/global-secure-access/concept-connectors#maintenance>
+    - See [Microsoft Entra private network connectors maintenance](/entra/global-secure-access/concept-connectors#maintenance)
 
 4.  Review Microsoft Entra Private Access connector groups and its assignments to the applications
 
@@ -83,7 +83,7 @@ Investigating an signal starts with gathering data.
 
 5.  Review sign-in logs.
 
-    - </entra/identity/monitoring-health/concept-sign-in-log-activity-details>
+    - [Learn about the sign-in log activity details](/entra/identity/monitoring-health/concept-sign-in-log-activity-details)
 
     - Look for users being blocked from signing in to the application
 

@@ -81,11 +81,11 @@ Investigating a signal starts with gathering data.
 
 3.  Configure diagnostic settings to export logs
 
-    - </entra/global-secure-access/how-to-remote-network-health-logs?tabs=microsoft-entra-admin-center#configure-diagnostic-settings-to-export-logs>
+    - [What are remote network health logs](/entra/global-secure-access/how-to-remote-network-health-logs?#configure-diagnostic-settings-to-export-logs)
 
 4.  Analyze logs with a workbook
 
-    - </entra/global-secure-access/how-to-remote-network-health-logs?tabs=microsoft-entra-admin-center#analyze-logs-with-a-workbook>
+    - [What are remote network health logs?](/entra/global-secure-access/how-to-remote-network-health-logs#analyze-logs-with-a-workbook)
 
 5.  Review audit logs.
 
