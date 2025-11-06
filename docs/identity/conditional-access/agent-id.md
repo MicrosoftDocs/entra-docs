@@ -53,7 +53,7 @@ Conditional Access doesn't apply when:
 - An agent identity blueprint or agent identity performs an intermediate token exchange at the `AAD Token Exchange Endpoint: Public endpoint (Resource ID: fb60f99c-7a34-4190-8149-302f77469936)`.
 
    > [!NOTE]
-   > Tokens scoped to the `AAD Token Exchange Endpoint: Public` can't call Microsoft Graph. Agentic flows are protected because we Conditional Access protects token acquisition from agent identity or agent user.
+   > Tokens scoped to the `AAD Token Exchange Endpoint: Public` can't call Microsoft Graph. Agentic flows are protected because Conditional Access protects token acquisition from agent identity or agent user.
 
 - The Conditional Access policy is scoped to users or workload identities, **not** to agents.
 - [Security defaults](../../fundamentals/security-defaults.md) are enabled.
@@ -99,13 +99,15 @@ The first scenario is your organization is testing agents and you want to config
 
 The second scenario uses signals from Microsoft Entra ID Protection to block agents performing risky behaviors.
 
-### [Using custom security attributes](#tab/custom-security-attributes)
+### Scenario 1: Allow only specific agents to access resources
 
-##### Create Conditional Access policy using custom security attributes
+#### [Using custom security attributes](#tab/custom-security-attributes)
+
+###### Create Conditional Access policy using custom security attributes
 
 The recommended approach for the first scenario is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
-###### Create and assign custom attributes
+####### Create and assign custom attributes
 
 1. Create the custom security attributes:
    1. Create an **Attribute set** named *AgentAttributes*.
@@ -117,7 +119,7 @@ The recommended approach for the first scenario is to create and assign custom s
       1. Add the following predefined values: **Finance**, **HR**, **IT**, **Marketing**, **Sales**.
 1. Assign the appropriate value to resources that your agent is allowed to access. For example, you may want only agents that are **HR_Approved** to be able to access resources that are tagged **HR**.
 
-###### Create Conditional Access policy
+####### Create Conditional Access policy
 
 After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agent identities except those reviewed and approved by your organization. 
 
@@ -152,9 +154,9 @@ After you complete the previous steps, create a Conditional Access policy using 
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
-### [Using the enhanced object picker](#tab/enhanced-object-picker)
+#### [Using the enhanced object picker](#tab/enhanced-object-picker)
 
-##### Create Conditional Access policy using the enhanced object picker
+###### Create Conditional Access policy using the enhanced object picker
 
 Alternatively, organizations can create a Conditional Access policy using the enhanced object picker to block all agent identities except those reviewed and approved by your organization. 
 
@@ -189,7 +191,7 @@ The enhanced object picker replaces the previous flat list experience in both th
 
 ---
 
-### Block high-risk agent identities from accessing my organization’s resources
+### Scenario 2: Block high-risk agent identities from accessing my organization’s resource
 
 Organizations can create a Conditional Access policy to block high-risk agent identities based on signals from Microsoft Entra ID Protection.
 
