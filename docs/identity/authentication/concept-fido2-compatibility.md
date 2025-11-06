@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 09/24/2025
+ms.date: 11/06/2025
 
 author: justinha
 ms.author: justinha
@@ -68,13 +68,6 @@ The following section covers support for passkey (FIDO2) authentication in web b
 - BLE and NFC security keys aren't supported on Android by Google.
 - Sign-in with passkey isn't supported in Firefox on Android.
 
-## Known issues
-
-### Sign in when more than three passkeys are registered
-
-If you registered more than three passkeys, sign in with a passkey might not work on iOS or Safari on macOS. If you have more than three passkeys, as a workaround, click **Sign-in options** and sign in without entering a username.
-
-:::image type="content" border="true" source="media/fido2-compatibility/sign-in-options.png" alt-text="Screenshot of sign-in options.":::
 
 ## [**Native apps**](#tab/native)
 
