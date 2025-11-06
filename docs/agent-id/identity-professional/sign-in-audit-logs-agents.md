@@ -40,6 +40,5 @@ Both sign-in and audit logs for agents are available through standard Microsoft 
 
 - Microsoft Entra admin center with specialized filtering for agent activities
 - Microsoft Graph API with enhanced resource types and filtering capabilities
-- Export logs to storage or a Security Incident and Event Management service through [Diagnostic Settings](~/identity/monitoring-health/howto-configure-diagnostic-settings)
-
+- Export logs to storage or a Security Incident and Event Management service through diagnostic settings
 Agent activities might appear across different log types depending on the operation and permission model used, so check multiple log sources for comprehensive visibility.

@@ -11,7 +11,7 @@ items:
   - name: Access management
     items:
       - name: Grant agent access to Microsoft 365
-        href: grant-agent-access-m365.md
+        href: grant-agent-access-microsoft-365.md
       - name: Configure inheritable permissions for blueprints
         href: configure-inheritable-permissions-blueprints.md
       - name: Control user access to agents
