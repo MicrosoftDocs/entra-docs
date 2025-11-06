@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 08/25/2024
+ms.date: 11/06/2025
 ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: "it-pro"

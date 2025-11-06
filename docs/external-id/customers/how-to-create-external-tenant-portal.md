@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 05/21/2025
+ms.date: 11/06/2025
 ms.author: cmulligan
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to create an external tenant in the  Microsoft Entra admin center. 
