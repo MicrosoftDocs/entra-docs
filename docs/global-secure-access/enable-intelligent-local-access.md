@@ -27,7 +27,7 @@ To configure a Global Secure Access Private Networks, you must have:
 
 ## Private Access overview
 
-Today, Entra Private Access (PA) sends all traffic, both application and authentication, over the SSE / Private Access service, regardless of the user's location. This process , represented by the green workflow in the diagram, results in network backhauling, which negatively impacts user experience by adding latency and slowing down the network significantly. With the Intelligent Local Access (ILA) feature, we aim to address this issue by enabling intelligent network routing. The Global Secure Access (GSA) client determines how traffic should be routed to private applications, ensuring a consistent security posture for employees, whether they are working remotely or on-premises. This adaptive local access significantly improves user experience by reducing latency and avoiding network hair pinning, represented by the blow workflow in the diagram.
+Today, Entra Private Access (PA) sends all traffic, both application and authentication, over the SSE / Private Access service, regardless of the user's location. This process, represented by the green workflow in the diagram, results in network backhauling, which negatively impacts user experience by adding latency and slowing down the network significantly. With the Intelligent Local Access (ILA) feature, we aim to address this issue by enabling intelligent network routing. The Global Secure Access (GSA) client determines how traffic is routed to private applications. This feature ensures a consistent security posture for employees, whether they work remote or on-premises. This adaptive local access significantly improves user experience by reducing latency and avoiding network hair pinning, represented by the blow workflow in the diagram.
 
 :::image type="content" source="media/enable-intelligent-local-access/microsoft-entra-private-access-intelligent-local-access-workflow.png" alt-text="A diagram showing the workflow between Microsoft Entra Private Access and Intelligent Local Access." lightbox="media/enable-intelligent-local-access/microsoft-entra-private-access-intelligent-local-access-workflow.png":::
 
@@ -47,7 +47,7 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 
     1.  Name - The friendly name of the network. 
 
-    2.  DNS Servers - Server address(es) used for DNS resolution.
+    2.  DNS Servers - Server address used for DNS resolution.
 
         1.  Internet Protocol version 4 (IPv4) address, such as 192.168.2.1, that identifies a DNS server on the network.
 
@@ -73,7 +73,7 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 
 ## Key Capabilities
 
-- Enables seamless Zero Trust Network Access (ZTNA) for users anywhere with consistent policy enforcement, when they are local within the corporate network or when they are connecting remotely.
+- Enables seamless Zero Trust Network Access (ZTNA) for users anywhere with consistent policy enforcement, when they're local within the corporate network or when they're connecting remotely.
 
 - Performance Optimization 
   - Reduces latency for on-prem users by avoiding unnecessary cloud routing.
@@ -82,7 +82,7 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 
   - Can be enabled per application.
 
-  - Explicit local network detection can be configured with DNS server(s), FQDN to resolve, Resolved to IP Address(es).
+  - Explicit local network detection can be configured with DNS servers, FQDN to resolve, Resolved to IP Address(es).
 
 - Traffic logs indicate whether traffic was tunneled or locally bypassed.
 
