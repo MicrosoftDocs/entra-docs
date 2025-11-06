@@ -18,7 +18,7 @@ ai-usage: ai-assisted
 
 ## IP addresses advertised over BGP by remote network connectivity for M365 traffic profile
 
-See a list of IPv4 IPs advertised for m365 traffic profile at [Microsoft 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-ip-address-ranges?view=o365-worldwide)
+See a list of IPv4 IPs advertised for m365 traffic profile at [Microsoft 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-ip-address-ranges?view=o365-worldwide).
 
 ## IP addresses bypassed by GSA for internet traffic profile
 
