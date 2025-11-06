@@ -14,7 +14,7 @@ ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for increased security (Preview)
 
-In Microsoft Entra, we group our security recommendations into several main areas. This structure allows organizations to logically break up projects into related consumable chunks.
+In Microsoft Entra, we group our security recommendations into multiple themes based on the Secure Future Initiative (SFI). This structure allows organizations to logically break up projects into related consumable chunks.
 
 > [!TIP]
 > Some organizations might take these recommendations exactly as written, while others might choose to make modifications based on their own business needs. In our initial release of this guidance, we focus on traditional [workforce tenants](/entra/external-id/tenant-configurations#workforce-tenants). These workforce tenants are for your employees, internal business apps, and other organizational resources. 
