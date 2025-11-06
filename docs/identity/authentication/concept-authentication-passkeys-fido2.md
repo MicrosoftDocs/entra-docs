@@ -21,7 +21,7 @@ Passkeys help prevent remote phishing by replacing phishable methods like passwo
 
 Passkeys (FIDO2) can also be used to sign in to Microsoft Entra ID or Microsoft Entra hybrid joined Windows 11 devices and get single-sign on to cloud and on-premises resources.
 
-## What Are Passkeys?
+## What are passkeys?
 Passkeys are phishing-resistant credentials that provide **strong authentication** and can serve as a **multifactor authentication (MFA)** method when combined with device biometrics or PIN. They also provide verifier impersonation resistance, which ensures an authenticator only releases secrets to the Relying Party (RP) the passkey was registered with and not an attacker pretending to be that RP. Passkeys (FIDO2) follow FIDO2 standards, using WebAuthn for browsers and CTAP for authenticator communication.
 
 The following process is used when a user signs in to Microsoft Entra ID with a passkey (FIDO2):
