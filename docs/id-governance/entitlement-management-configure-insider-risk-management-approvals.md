@@ -13,7 +13,7 @@ ms.date: 11/04/2025
 
 # Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)
 
-Making sure risky users dont gain access to sensitive resources is an important part of securing your environment. You can further secure the entitlement management request process by integrating [Microsoft Purview Insider Risk Management (IRM)](/purview/insider-risk-management-configure) signals into the access package approval workflow in Microsoft Entra ID Governance’s Entitlement Management. With risk management-based approvals, Entitlement Management automatically adds a new first approval stage when a user flagged as risky requests access to an access package. This ensures that users identified as potentially compromised or at-risk are reviewed by authorized security or compliance approvers before access requests are routed for standard approval routing. This article describes how to further secure your entitlement request process with these features.
+Making sure risky users don't gain access to sensitive resources is an important part of securing your environment. You can further secure the entitlement management request process by integrating [Microsoft Purview Insider Risk Management (IRM)](/purview/insider-risk-management-configure) signals into the access package approval workflow in Microsoft Entra ID Governance’s Entitlement Management. With risk management-based approvals, Entitlement Management automatically adds a new first approval stage when a user flagged as risky requests access to an access package. This ensures that users identified as potentially compromised or at-risk are reviewed by authorized security or compliance approvers before access requests are routed for standard approval routing. This article describes how to further secure your entitlement request process with these features.
 
 ## License requirements
 
@@ -73,7 +73,7 @@ A user set as an approver, or fallback approver, for risky users can view the re
 
 
 > [!NOTE]
-> Approvers have a maximum of 14 days to take action. If they dont take action within that time frame, requests are automatically denied.
+> Approvers have a maximum of 14 days to take action. If they don't take action within that time frame, requests are automatically denied.
 
 
 ## Next step

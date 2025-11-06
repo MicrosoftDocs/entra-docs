@@ -73,7 +73,7 @@ A user set as an approver, or fallback approver, for risky users can view the re
 :::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png" alt-text="Screenshot of the approvals page in my access showing the risky user." lightbox="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png":::
 
 > [!NOTE]
-> Approvers have a maximum of 14 days to take action. If they dont take action within that time frame, requests are automatically denied.
+> Approvers have a maximum of 14 days to take action. If they don't take action within that time frame, requests are automatically denied.
 
 
 
