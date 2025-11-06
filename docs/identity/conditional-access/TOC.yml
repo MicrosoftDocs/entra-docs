@@ -104,10 +104,8 @@
       href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
-    - name: Agents
-      items:
-      - name: Block high-risk agents
-        href: policy-agent-block-high-risk.md
+    - name: Block high-risk agents
+      href: policy-agent-block-high-risk.md
     - name: Applications
       items:
       - name: Require approved app or app protection policy
