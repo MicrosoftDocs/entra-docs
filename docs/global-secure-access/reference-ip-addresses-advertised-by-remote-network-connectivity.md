@@ -5,18 +5,22 @@ author: jenniferf-skc
 ms.author: jfields
 manager: dougeby
 ms.topic: reference
-ms.date: 11/05/2025
+ms.date: 11/18/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 
 # Customer Intent: As a Global Secure Access Administrator, I need to know critical IP address ranges to consider when configuring and troubleshooting internet over remote network connectivity.
 ---
 
-# IP addresses advertised over BGP by remote network connectivity
+# IP addresses advertised over BGP by remote network connectivity 
 
-[Remote network connectivity](concept-remote-network-connectivity.md) enables you to send Microsoft 365 or internet traffic from your branch offices to the Global Secure Access (GSA) service through IPsec tunnels. Installing the GSA client is not required when using this connectivity method. This document provides critical IP address ranges that must be considered when configuring and troubleshooting remote connectivity.
+[Remote network connectivity](concept-remote-network-connectivity.md) enables you to send Microsoft 365 or internet traffic from your branch offices to the Global Secure Access (GSA) service through IPsec tunnels. Installing the GSA client isn't required when using this connectivity method. This document provides critical IP address ranges that must be considered when configuring and troubleshooting remote connectivity.
 
-## IP addresses bypassed by GSA for internet
+## IP addresses advertised over BGP by remote network connectivity for M365 traffic profile
+
+See a list of IPv4 IPs advertised for m365 traffic profile at [Microsoft 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-ip-address-ranges?view=o365-worldwide)
+
+## IP addresses bypassed by GSA for internet traffic profile
 
 ### **Anycast IP ranges for accessing the Global Secure Access service edge:**
 
@@ -54,7 +58,7 @@ ai-usage: ai-assisted
 - 25.0.0.0/8
 - 224.0.0.0/4
 
-## IP addresses acquired by GSA for internet
+## IP addresses acquired by GSA for internet traffic profile
 
 ### **1.0.0.0 - 9.255.255.255**
 
