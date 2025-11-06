@@ -32,8 +32,10 @@ The Manage agents feature in Microsoft Entra lets you view, and control, [agent 
     > This will only appear if you're an owner or sponsor of at least one agent identity.
 
 1.	Choose either the **Agents you sponsor** or **Agents you own tab** to view your agents.
+    :::image type="content" source="media/manage-agent/manage-agents-list.png" alt-text="Screenshot of the managed agents page in the My Account portal.":::
 
 1.	Select an agent to view details about it.
+    :::image type="content" source="media/manage-agent/manage-agent-view.png" alt-text="Screenshot of the manage agent view.":::
 
 ## Enable or Disable an agent
 
