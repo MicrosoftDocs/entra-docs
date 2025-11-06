@@ -14,9 +14,9 @@ ms.date: 10/25/2025
 # Agent ID sponsor tasks in Lifecycle Workflows (Preview)
 
 
-Governing agent identities (ID) sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent ID sponsors are responsible for overseeing the lifecycle and access decisions of agent IDs. Keeping sponsor information up to date helps with effective governance and compliance. 
+Governing agent identities (ID) sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent ID sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. 
 
-Lifecycle Workflows currently contain the following two tasks that involve the governing of sponsors of agent IDs:
+Lifecycle Workflows currently contain the following two tasks that involve the governing of sponsors of agent identities:
 
 - [Send email to manager about sponsorship transfer](lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-transfer)
 - [Send email to cosponsors about sponsor changes](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes)
