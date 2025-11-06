@@ -13,22 +13,7 @@ ms.date: 11/05/2025
 
 # Include custom resource access data in the catalog for catalog User Access Reviews
 
-
-<!-- 2. Introductory paragraph ----------------------------------------------------------
-
-Required: Lead with a light intro that describes, in customer-friendly language, what the customer will do. Answer the fundamental “why would I want to do this?” question. Keep it short.
-
-Readers should have a clear idea of what they will do in this article after reading the introduction.
-
-* Introduction immediately follows the H1 text.
-* Introduction section should be between 1-3 paragraphs.
-* Don't use a bulleted list of article H2 sections.
-
-Example: In this article, you will migrate your user databases from IBM Db2 to SQL Server by using SQL Server Migration Assistant (SSMA) for Db2.
-
--->
-
-This article describes how to include  custom resource access data in a catalog and use it to create catalog User Access Reviews (UAR) applications which are not yet integrated with Microsoft Entra
+This article describes how to include  custom resource access data in a catalog and use it to create catalog User Access Reviews (UAR) applications which are not yet integrated with Microsoft Entra.
 
 Including these custom resource access data in UAR reviews allow organizations to govern access to disconnected applications by providing custom application data through an upload process. Reviewers (currently managers) can then attest access decisions through the My Access portal.
 
