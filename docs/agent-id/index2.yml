@@ -53,8 +53,8 @@ additionalContent:
         ## CARD 3 ######################
         - title: Protect agent access to resources
           links:
-            - text: Conditional Access for agents (LINK)
-              url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
+            - text: Conditional Access for agents
+              url: ./identity/conditional-access/agent-id.md         
             - text: Microsoft Entra ID Protection for agents (LINK)
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
             - text: Network controls for agents (LINK)
