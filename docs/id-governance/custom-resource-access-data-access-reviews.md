@@ -139,7 +139,7 @@ When the review is created, its **status** will show as **Initializing**.
 
 1. While the review status is **Initializing**, call the **Upload API** to upload your BYOD data ( CSV file).  
 
-1. You have **up to 2 hours** from the time the review enters the *Initializing* state to complete the upload. After 2 hours, the system transitions the review status to **Active**.
+1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload. After two hours, the system transitions the review status to **Active**.
 
 At the **Active** stage:
 - Reviewers receive an email notification.
@@ -163,13 +163,15 @@ When the review status changes to **Applying**:
 
 
 
-<!-- 5. Next step/Related content------------------------------------------------------------------------
+## Timeframes summary
 
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
+| Action | When | Time limit |
+|-------------|-----------|----------------|
+| Upload custom data (via Upload API) | During *Initializing* | Within two hours. |
+| Review decisions | During *Active* | Until review end date. |
+| Apply decisions | During *Applying* | 30 days and review will remain in applying status till all decisions are marked as applied.|
 
--->
+
 
 ## Next step
 
