@@ -97,7 +97,7 @@ To notify owners about unused applications:
    1. Select **Send** to deliver notifications
 
 > [!NOTE]
-> Allow up to 15 minutes for email delivery. Teams notifications are typically delivered immediately. If emails aren't received, check spam filters for messages from `AppLifecycleManagementAgent-noreply@microsoft.com`.
+> Allow up to 15 minutes for email delivery. Teams notifications are typically delivered immediately. If emails aren't received, check spam filters.
 
 The agent currently supports notifying owners of up to 20 unused applications per notification cycle. For larger sets of applications, consider multiple notification cycles.
 
@@ -123,7 +123,7 @@ Owner decisions are automatically incorporated into remediation planning workflo
 
 ## Handle applications without owners
 
-When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator. It then reviews suggested owners in the agent interface based on those factors
+When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator. It then reviews suggested owners in the agent interface based on those factors.
 
 :::image type="content" source="media/agent-contact-app-owners/suggested-app-owners.png" alt-text="Screenshot showing suggested owner identification interface." lightbox="media/agent-contact-app-owners/suggested-app-owners.png":::
 
