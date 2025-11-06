@@ -33,19 +33,13 @@ Strength | Methods
 Phishing-resistant | Windows Hello for Business, Platform Credential for macOS, synced passkeys (FIDO2) (preview), FIDO2 security keys, passkey in Microsoft Authenticator, certificate-based authentication (CBA)
 Phishable | Password, SMS/Voice call, Authenticator push notifications, Authenticator passwordless sign-in, Temporary Access Pass (TAP), software-based and hardware-based OATH tokens (preview)
 
-## Using multifactor authentication
+## Available authentication methods
 
-You should register users for both MFA and self service password reset (SSPR). To simplify this, we recommend you [enable combined security information registration](howto-registration-mfa-sspr-combined.md). 
+In Microsoft Entra ID, administrators can configure authentication methods available for their users to prove their identity when they access an application, device, or service. 
 
-For resiliency, we recommend that you require users to register multiple authentication methods, and prioritize phishing-resistant credentials. When one method isn't available for a user during sign-in or SSPR, they can choose another method.
+Some authentication methods can be used as the primary factor when you sign in to an application or device, such as using Windows Hello for Business or a FIDO2 security key. Other authentication methods are only available as a secondary factor when you use Microsoft Entra multifactor authentication (MFA) or self service password reset (SSPR). 
 
-When you deploy phishing-resistant methods, plan how to onboard new user accounts and how to bootstrap current users. For more information, see [plan and deploy phishing-resistant MFA](how-to-deploy-phishing-resistant-passwordless-authentication.md).
-
-## Primary and secondary factors for sign-in
-
-In Microsoft Entra ID, administrators can configure authentication methods available for their users to prove their identity when they access an application, device, or service. Each method offers a different level of security and user experience. Organizations can require one or more authentication methods to ensure only authorized users gain access.
-
-Some authentication methods can be used as the primary factor when you sign in to an application or device, such as using a FIDO2 security key or a password. Other authentication methods are only available as a secondary factor when you use Microsoft Entra multifactor authentication or SSPR.
+You should register users for both MFA and SSPR. To simplify this, we recommend you enable [combined security information registration](concept-registration-mfa-sspr-combined.md). 
 
 The following table outlines when an authentication method can be used during a sign-in event.
 
