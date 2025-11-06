@@ -26,7 +26,7 @@ The Manage agents feature in Microsoft Entra lets you view, and control, [agent 
 
 ## Manage agents as an agent identity owner or sponsor
 
-1.	Sign in to the [end user portal](https://myaccount.microsoft.com/) as either an owner or sponsor of at least one agent ID.
+1.	Sign in to the [My Account end user portal](https://myaccount.microsoft.com/) as either an owner or sponsor of at least one agent ID.
 
 1.	In the left menu, select **Manage agents (Preview)**.
     > [!NOTE]

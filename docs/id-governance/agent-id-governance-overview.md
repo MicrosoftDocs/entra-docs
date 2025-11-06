@@ -39,13 +39,13 @@ For a guide on creating an access package, see: [Create an access package in ent
 
 ## Management of agents
 
-When agent identities are created, Owners and sponsors of the agent can manually make decisions for the agent ID via both the My Account portal, and the My Access Portal.
+When agent identities are created, Owners and sponsors of the agent can manually make decisions for the agent ientity via both the My Account portal, and the My Access Portal.
 
-From the [My Account portal], Sponsors and Owners are able to manage the identity lifecycle of agents such as enabling and disabling the agent. You are also able to see information about its access, activity, and lifecycle. For more information about Managing agents, see: [Manage Agents in Microsoft Entra ID (Preview)](manage-agent.md)
+From the [My Account portal](https://myaccount.microsoft.com/), Sponsors and Owners are able to manage the identity lifecycle of agents such as enabling and disabling the agent. You are also able to see information about its access, activity, and lifecycle. For more information about Managing agents, see: [Manage Agents in Microsoft Entra ID (Preview)](manage-agent.md).
 
 
 
-From the [My Access portal], Sponsors and Owners of agent identities are able to request access packages on behalf of their agent identities. For a guide on requesting access packages , see: [Request an access package on behalf of an agent identity (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview).
+From the [My Access portal](http://myaccess.microsoft.com/), Sponsors and Owners of agent identities are able to request access packages on behalf of their agent identities. For a guide on requesting access packages , see: [Request an access package on behalf of an agent identity (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview).
 
 
 ## Agent ID sponsor administration
