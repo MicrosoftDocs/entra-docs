@@ -14,7 +14,7 @@ ms.date: 10/25/2025
 
 Microsoft Entra allows you to ensure that the right people have the right access to the right apps and services at the right time. With the addition of the Microsoft agent identity platform, managing agents in the same way is just as important in the governance lifecycle of your organization. The Microsoft agent identity platform introduces the concept of Agent Identities (IDs). Agent IDs are accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents.
 
-This allows agent IDs to be governed with Microsoft Entra features in the same style as you would govern human users. With Agent IDs, you can govern and manage the identity and access lifecycle of agents, ensuring the agents have a responsible person providing oversight throughout the agent lifecycle and agent's access does not persist longer than it is needed. This article provides an overview of how Microsoft Entra can be utilized to manage agent IDs.
+This allows agent IDs to be governed with Microsoft Entra features in the same style as you would govern human users. With Agent IDs, you can govern and manage the identity and access lifecycle of agents, ensuring the agents have a responsible person providing oversight throughout the agent lifecycle and agent's access does not persist longer than it is needed. This article provides an overview of how Microsoft Entra can be utilized to govern agent IDs.
 
 ## License requirements
 
