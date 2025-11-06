@@ -22,7 +22,7 @@ This allows agent IDs to be governed with Microsoft Entra features in the same s
 
 ## Agent ID basics
 
-[Agent IDs](/agentic-identity-platform/what-is-agent-id) allows AI agents to take on digital identities within Microsoft Entra. Once a digital identity is established, these agent IDs are able to be governed using lifecycle and access features. Sponsors can be assigned to agent IDs after creation. Sponsors of agent IDs are human users accountable for making decisions about its lifecycle and access. For more information about the role of a sponsor of agent IDs, see: [Administrative relationships for agent IDs](/agentic-identity-platform/agentic-governance-roles).
+[Agent IDs](../agent-id/identity-platform/what-is-agent-id.md) allows AI agents to take on digital identities within Microsoft Entra. Once a digital identity is established, these agent IDs are able to be governed using lifecycle and access features. Sponsors can be assigned to agent IDs after creation. Sponsors of agent IDs are human users accountable for making decisions about its lifecycle and access. For more information about the role of a sponsor of agent IDs, see: [Administrative relationships for agent IDs](../agent-id/agentic-governance-roles.md).
 
 ## Assigning access to agent IDs
 
