@@ -1,21 +1,20 @@
 ---
 title: Include custom resource access data in the catalog for catalog User Access Reviews
-description: #Required; Keep the description within 100- and 165-characters including spaces.
+ms.reviewer: jgangadhar
+description: Learn how to include custom resource access data in Microsoft Entra catalogs to create User Access Reviews for disconnected applications.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: access-reviews
-ms.topic: how-to #Required; leave this attribute/value as-is
+ms.topic: "how-to" # Required; leave this attribute/value as-is
 ms.date: 11/05/2025
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+#CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom resource access data for User Access Reviews..
 ---
 
 # Include custom resource access data in the catalog for catalog User Access Reviews
 
-This article describes how to include  custom resource access data in a catalog and use it to create catalog User Access Reviews (UAR) applications which are not yet integrated with Microsoft Entra.
-
-Including these custom resource access data in UAR reviews allow organizations to govern access to disconnected applications by providing custom application data through an upload process. Reviewers (currently managers) can then attest access decisions through the My Access portal.
+Learn how to manage access to disconnected applications by including custom resource access data in Microsoft Entra catalogs. This guide walks you through creating a catalog, adding custom resource access data, and setting up User Access Reviews (UARs) for applications not integrated with Microsoft Entra. By leveraging this process, organizations can ensure governance over access to custom applications, enabling managers to make informed access decisions through the My Access portal.
 
 ## License requirements
 
@@ -25,7 +24,7 @@ Including these custom resource access data in UAR reviews allow organizations t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
-    > Other least privilege roles that can complete this task include the Catalog creator. Users who were assigned the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance Administrator role.
+    > Other least privilege roles that can complete this task include the Catalog creator. Users who were assigned to the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned to the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance Administrator role.
 1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 
 1. Select **New catalog**.
@@ -34,10 +33,6 @@ Including these custom resource access data in UAR reviews allow organizations t
 
     Users see this information in an access package's details.
 1. Select **Create** to create the catalog.
-
-
-
-
 
 ## Add a custom resource access data to a catalog
 
@@ -86,9 +81,9 @@ With a catalog created, you can add custom resource access data to it by doing t
 
 ## Upload custom data
 
-When the review is created, its **status** will show as **Initializing**.
+When the review is created, its **status** shows as **Initializing**.
 
-1. While the review status is **Initializing**, call the **Upload API** to upload your BYOD data ( CSV file).  
+1. While the review status is **Initializing**, call the **Upload API** to upload your BYOD data (CSV file).  
 
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload. After two hours, the system transitions the review status to **Active**.
 
@@ -120,26 +115,14 @@ When the review status changes to **Applying**:
 |-------------|-----------|----------------|
 | Upload custom data (via Upload API) | During *Initializing* | Within two hours. |
 | Review decisions | During *Active* | Until review end date. |
-| Apply decisions | During *Applying* | 30 days and review will remain in applying status till all decisions are marked as applied.|
+| Apply decisions | During *Applying* | 30 days and review remain in applying status until all decisions are marked as applied.|
 
 
-
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
 
 ## Related content
 
-TODO: Add your next step link(s)
 
-- [Write concepts](article-concept.md)
 
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
+- [Catalog Access Reviews (Preview)](catalog-access-reviews.md)
+- [Create and manage a catalog of resources in entitlement management](entitlement-management-catalog-create.md)
 
