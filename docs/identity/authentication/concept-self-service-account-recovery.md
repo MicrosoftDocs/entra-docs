@@ -25,8 +25,6 @@ Account recovery represents a paradigm shift from simple credential reset to com
 
 Microsoft Entra ID Account Recovery is an advanced authentication recovery mechanism that enables users to regain access to their organizational accounts when they've lost access to all registered authentication methods. Unlike traditional password reset capabilities, account recovery focuses on identity verification and trust re-establishment prior to replacement of authentication methods rather than simple credential recovery.
 
-Account recovery is secure by default with evaluation mode for user verification, and only takes 5 to 10 minutes to set up. [Try the preview](how-to-account-recovery-configure.md) and we appreciate your feedback!
-
 ### Key characteristics of account recovery
 
 **Identity-centric approach**: Account recovery shifts the focus from *what you know* (passwords) and *what you have* (passkeys, SMS/Voice, Software OTP, and so on) to *who you are* by using comprehensive identity verification. This approach acknowledges that in total lockout scenarios, traditional authentication factors might be compromised or unavailable.
@@ -110,9 +108,13 @@ The account recovery process follows a structured workflow designed to balance s
 1. **Temporary access provision**: Users receive temporary access credentials (such as Temporary Access Pass) with limited validity.
 2. **Guided re-enrollment**: Users are directed through the process of registering new authentication methods.
 
+## Try account recovery
+
+Account recovery is secure by default with evaluation mode for user verification, and only takes 5 to 10 minutes to set up. [Try the preview](how-to-account-recovery-configure.md) and we appreciate your feedback!
 
 ## Related content
 
+- [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-user-setup.md)
 - [How it works: Microsoft Entra self-service password reset](concept-sspr-howitworks.md) - Learn about traditional password reset capabilities and when to use SSPR versus account recovery
 - [What is Microsoft Entra Verified ID?](/entra/verified-id/decentralized-identifier-overview) - Understand the decentralized identity technology that powers SSAR's verification process  
 - [Plan your Microsoft Entra Verified ID verification solution](/entra/verified-id/plan-verification-solution) - Design guidance for implementing identity verification scenarios

@@ -1127,23 +1127,23 @@ Example of usage within the workflow:
 }
 ```
 
-### Send email about user inactivity (Preview)
+### Send email about user inactivity
 
 Allows an email containing information about an inactive user to be sent to the user's manager after a specified number of days as their last sign-in. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/send-email-user-inactivity-task.png" alt-text="Screenshot of Workflows task: send inactivity email.":::
 
-The Microsoft Entra prerequisites to run the **Send email about user inactivity (Preview)** task are:
+The Microsoft Entra prerequisites to run the **Send email about user inactivity** task are:
 
 - A populated manager attribute for the user.
 - A populated manager's mail attribute for the user.
 
 
-For Microsoft Graph, the parameters for the **Send email about user inactivity (Preview)** task are as follows:
+For Microsoft Graph, the parameters for the **Send email about user inactivity** task are as follows:
 
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver      |
-|displayName     | Send email about user inactivity (Preview)     |
+|displayName     | Send email about user inactivity    |
 |description     |  Notify manager that user has been inactive (Customizable by user)        |
 |taskDefinitionId     |   92f74cb4-f1b6-4ec0-b766-96210f56edc2      |
 |arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
@@ -1155,7 +1155,7 @@ Example of usage within the workflow:
     "category": "leaver",
     "continueOnError": false,
     "description": " Notify manager that user has been inactive",
-    "displayName": "Send email about user inactivity (Preview)",
+    "displayName": "Send email about user inactivity",
     "isEnabled": true,
     "taskDefinitionId": "92f74cb4-f1b6-4ec0-b766-96210f56edc2",
     "arguments": [

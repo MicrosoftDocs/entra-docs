@@ -1,5 +1,5 @@
 ---
-title: Manage inactive users using Lifecycle Workflows (Preview)
+title: Manage inactive users using Lifecycle Workflows
 description: This article walks you through managing inactive users with Lifecycle Workflows.
 author: owinfreyATL
 ms.author: owinfrey
@@ -12,7 +12,7 @@ ms.date: 08/28/2025
 #CustomerIntent: As an IT administrator, I want to automate managing users with Lifecycle Workflows so that management and security is streamlined.
 ---
 
-# Manage inactive users using Lifecycle Workflows (Preview)
+# Manage inactive users using Lifecycle Workflows
 
 As part of supporting users no matter where they fall in the Joiner-Mover-Leaver (JML)  model of their lifecycle within your organization, Lifecycle Workflows support automating the disabling and deleting of users once they are inactive for a set period of time. This [sign-in inactivity](lifecycle-workflow-execution-conditions.md#sign-in-inactivity-trigger) allows you to set a workflow to run when a user is inactive for a set number of days. This feature allows you to seamlessly maintain a secure environment by automating the removal of inactive based on criteria you set for your organization.
 
@@ -40,7 +40,7 @@ As part of supporting users no matter where they fall in the Joiner-Mover-Leaver
 
 1. On the **Review Tasks** page, select the task you want to run for the users who you consider to be inactive and select **Review + Create**.
     > [!NOTE]
-    > Lifecycle Workflows comes with a built-in task, [Send email about user inactivity (Preview)](lifecycle-workflow-tasks.md#send-email-about-user-inactivity-preview), that is directly related to helping manage inactive users.
+    > Lifecycle Workflows comes with a built-in task, [Send email about user inactivity](lifecycle-workflow-tasks.md#send-email-about-user-inactivity), that is directly related to helping manage inactive users.
 
 
 ## Next step
