@@ -16,10 +16,16 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra Agent ID?
       itemType: overview
-      url: ./identity-professional/index.yml
+      url: ./what-is-agent-id-platform.md
     - title: What is the Microsoft agent identity platform?
       itemType: overview
-      url: ./identity-platform/index.yml
+      url: ./what-is-agent-id-platform.md
+    - title: What is the agent registry?
+      url: ./what-is-agent-registry.md
+      itemType: overview
+    - title: Set up your development environment
+      url: ./set-up-environment.md
+      itemType: quickstart
 
 additionalContent:
   # Supports up to 4 subsections
@@ -36,6 +42,30 @@ additionalContent:
             - text: Microsoft Entra agent ID features
               url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
 
+        ## CARD 2 ######################
+        - title: Register and manage agents
+          links:
+            - text: What is the agent registry?
+              url: ./what-is-agent-registry.md
+            - text: Organize agents with collections
+              url: ./agent-registry-collections.md
+
+        ## CARD 3 ######################
+        - title: Govern agents and agent lifecycles
+          links:
+            - text: Microsoft Entra ID Governance for agents
+              url: ./identity-governance-for-agent-ids.md
+
+        ## CARD 4 ######################
+        - title: Protect agent access to resources
+          links:
+            - text: Conditional Access for agents
+              url: ./conditional-access-for-agent-ids.md
+            - text: Microsoft Entra ID Protection for agents
+              url: ./id-protection-for-agent-ids.md
+            - text: Network controls for agents
+              url: ./network-controls-for-agent-ids.md
+
     ## Section 2: Microsoft agent identity platform ######################
     - title: Microsoft agent identity platform
       summary: The platform that enables you to create, register, and manage agent identities. Includes the agent registry for discovering and organizing agents across your organization.
@@ -49,3 +79,65 @@ additionalContent:
               url: ./identity-platform/what-is-agent-id.md
             - text: What is the agent registry?
               url: ./identity-platform/what-is-agent-registry.md
+        ## CARD 1 ######################
+        - title: Agent Identity Platform
+          links:
+            - text: Set up your development environment
+              url: ./set-up-environment.md
+            - text: Create an agent identity blueprint
+              url: ./create-agent-identity-blueprint.md
+            - text: Create an agent identity
+              url: ./create-agent-identity.md
+            - text: Create an agent user
+              url: ./create-agent-user.md
+            - text: Agent-to-agent communication
+              url: ./agent-to-agent-communication.md
+        ## CARD 2 ######################
+        - title: Agent Identity Platform for Identity and Network Access Professionals
+          links:
+            - text: Learn about agent users
+              url: ./agent-users.md
+            - text: Agent ownership and sponsorship
+              url: ./agent-ownership-and-sponsorship.md
+            - text: Permissions and scopes
+              url: ./agent-identity-access-control-overview.md
+            - text: Sign-in logs  
+              url: ./sign-in-logs-for-agent-ids.md
+            - text: Audit logs
+              url: ./audit-logs-for-agent-ids.md
+        ## CARD 3 ######################
+        - title: Agent Registry
+          links:
+            - text: What is the agent registry?
+              url: ./what-is-agent-registry.md
+            - text: Publishing agent identities
+              url: ./create-blueprint.md
+            - text: Agent certification process
+              url: ./navigate-agent-registry.md
+            - text: Agent collections overview
+              url: ./what-is-agent-registry.md
+            - text: Registry navigation and filtering
+              url: ./navigate-agent-registry.md
+    
+    ## Section 3: Learn more ######################
+    - title: Learn more
+      summary: Explore SDK references, API documentation, and code samples to build and manage agent identities.
+      items:
+        ## CARD 1 ######################
+        - title: Technical references
+          links:
+            - text: SDK Reference
+              url: ./sdk-reference.md
+            - text: Microsoft Graph API reference
+              url: /graph/api/overview
+            - text: Code samples and tutorials
+              url: ./set-up-environment.md
+            - text: OAuth protocols for Agent IDs
+              url: ./oauth-protocols-for-agent-ids.md
+        ## CARD 2 ######################
+        - title: Related content
+          links:
+            - text: Security for AI
+              url: /security/security-for-ai/
+            - text: Security Copilot + Microsoft Entra
+              url: /entra/security-copilot/security-copilot-in-entra            
