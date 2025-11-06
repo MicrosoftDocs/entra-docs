@@ -7,7 +7,7 @@ ms.author: jomondi
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: concept-article
-ms.date: 10/07/2025
+ms.date: 11/06/2025
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent IDs are and how they provide first-class identity constructs that differ from traditional identities, so that I can build customer trust and drive adoption through secure identity solutions for AI agents in my organization.
 ---
@@ -18,7 +18,7 @@ Agent IDs are first-class identity accounts within Microsoft Entra ID that provi
 
 ## Why agent IDs exist
 
-The emergence of AI agents as autonomous enterprise systems introduces security and operational challenges that existing identity models cannot adequately address.  Agent IDs help to address certain security challenges posed by AI agents, such as:
+The emergence of AI agents as autonomous enterprise systems introduces security and operational challenges that existing identity models can't adequately address. Agent IDs help to address certain security challenges posed by AI agents, such as:
 
 - The need to distinguish operations performed by AI agents from operations performed by workforce, customer, or workload identities.
 - Enabling AI agents to gain right-sized access across systems.
@@ -35,7 +35,7 @@ Agent IDs embrace this dynamic nature while providing appropriate security contr
 
 ## Agent IDs versus human user identities
 
-Human user identities are tied to authentication mechanisms humans use daily, such as passwords, multi-factor authentication, and passkeys. Human users have data associated with them like mailboxes, teams, and organizational hierarchy.
+Human user identities are tied to authentication mechanisms humans use daily, such as passwords, multifactor authentication, and passkeys. Human users have data associated with them like mailboxes, teams, and organizational hierarchy.
 
 Agent IDs represent software systems, not human beings. They don't use human authentication mechanisms. However, certain scenarios require agents to appear and operate as if they were human users. For these scenarios, agent identities can be paired with agent users - special Microsoft Entra user accounts that maintain a one-to-one relationship with their paired agent identity. This distinction allows organizations to provide agents with a user identity when necessary for system compatibility, while still maintaining clear separation and appropriate security policies for AI-driven operations.
 

@@ -22,7 +22,7 @@ The agent registry serves three main functions:
 
 - **Inventory for all agents**: The registry maintains a comprehensive inventory of all registered agents. This inventory is crucial for effective agent management and orchestration. It provides visibility into the agents deployed within an organization, their capabilities, and their operational status enabling organizations to manage agent sprawl.
 
-- **Metadata(security and partner integrations)**: The registry enables secure agent discovery, coordinates Agent-to-Agent (A2A) workflows, and provides the metadata layer necessary for implementing advanced AI protocols including Agent-to-Agent Protocol and Model Context Protocol (MCP). The registry system integrates with Microsoft Entra ID and extends across platforms like Copilot Studio, Foundry and Agent 365 (A365). For third-party agent builders, the registry API enables integration to maintain consistent metadata and discovery experiences without requiring native platform support. Agent metadata includes agent information like skills, version, and the originating publisher.
+- **Metadata(security and partner integrations)**: The registry enables secure agent discovery, coordinates Agent-to-Agent (A2A) workflows, and provides the metadata layer necessary for implementing advanced AI protocols including Agent-to-Agent Protocol and Model Context Protocol (MCP). The registry system integrates with Microsoft Entra ID and extends across platforms like Copilot Studio, Foundry, and Agent 365 (A365). For third-party agent builders, the registry API enables integration to maintain consistent metadata and discovery experiences without requiring native platform support. Agent metadata includes agent information like skills, version, and the originating publisher.
 
 - **Agent collaboration(collections/policies)**: The registry facilitates collaboration between agents by enabling the creation and management of collections and policies that govern agent interactions. This enables admins to organize agents by trust level, function, or policy requirements, making controls over agent discovery easier. Collections also have secure-by-default policies applied to them.
 
@@ -39,7 +39,7 @@ The agent registry system consists of several integrated components that work to
 
 ## How agent registry enables security for AI
 
-The agent registry provides security for AI through secure-by-default discovery controls that follow zero trust principles. The two main features that enable security for AI are:
+The agent registry provides security for AI through secure-by-default discovery controls that follow Zero Trust principles. The two main features that enable security for AI are:
 
 - **ABAC framework with collection-based authorization**: Built on Attribute-Based Access Control (ABAC) with an innovative collection-based security model that automatically categorizes agents into secure collections with predefined policies, ensuring immediate protection from day one.
 
@@ -47,7 +47,7 @@ The agent registry provides security for AI through secure-by-default discovery 
 
 ## Agent ID relationship with the agent registry
 
-For agents to be discoverable in the agent registry, they must have an associated agent ID. The agent ID serves as the identity provider for the agent and enables secure authentication and authorization. Agents without an agent ID can still be registered in the registry but they can't discover other agents. Agents need to have an agent ID to query the registry. Publishing an agent to the registry doesn't automatically grant them an agent ID. However, agents created from Microsoft owned platforms like Copilot studio, foundry, and A365 automatically get an agent ID when they are created.
+For agents to be discoverable in the agent registry, they must have an associated agent ID. The agent ID serves as the identity provider for the agent and enables secure authentication and authorization. Agents without an agent ID can still be registered in the registry but they can't discover other agents. Agents need to have an agent ID to query the registry. Publishing an agent to the registry doesn't automatically grant them an agent ID. However, agents created from Microsoft owned platforms like Copilot Studio, foundry, and A365 automatically get an agent ID when they're created.
 
 ## Related content
 
