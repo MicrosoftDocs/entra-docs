@@ -91,12 +91,12 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Download the Private Access Sensor for DC from Microsoft Entra admin center at **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** > **Download private access sensor**.
 1. Install by clicking the Private Access Sensor Installer and follow the steps.
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
-1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**.
+1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**. The IP address shown below is for illustration purposes only. You will see the actual IP address in a live environment.
 
 ![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/connectors-and-sensors.png)
 
-> [!NOTE]
-> The IP address shown is for illustration purposes only. You will see the actual IP address in a live environment.
+> [!IMPORTANT]
+> To upgrade to the Private Access Sensor version 2.1.31, we recommend uninstalling the previous sensor and then installing the new sensor. This new sensor is installed in `Audit` mode by default and you will need to change it to `enforce` mode from Microsoft Entra Admin Center.
 
 ### 7. Configure Private Access Sensor policy files
 
@@ -107,7 +107,7 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 1. If you add or update SPNs and/or Connector IPs, it can take a few minutes for changes to take effect. You don't need to restart the sensors.
 
 > [!IMPORTANT]
-> The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `SensorMode` for `PrivateAccessSensor` to `EnforceMode` in Global Secure Access > Connect > Connectors and sensors > Private access sensors. It may take a few minutes to update the sensor mode. For sensor versions 2.1.31 and higher, you can only update this mode from Microsoft Entra Admin Center and not the registry key from the Private Access Sensor.
+> The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `SensorMode` for `PrivateAccessSensor` to `EnforceMode` in Global Secure Access > Connect > Connectors and sensors > Private access sensors. It may take a few minutes to update the sensor mode. For Private Access Sensor versions 2.1.31 and higher, you can only update this mode from Microsoft Entra Admin Center and not the registry key from the Private Access Sensor.
 
 
 ## Exclusions and inclusions for SPNs
@@ -152,9 +152,8 @@ Example of how to configure SPN username exclusions and inclusions from Microsof
 #### Break glass mode
 
 - Private Access Sensor supports a break glass mode to allow all traffic in emergencies.
-- Enable break glass mode from Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** then select the Private Access Sensor name, From the Settings, select Enable break glass mode.
-- You can also enable break glass mode by changing the `TmpBreakglass` registry key from `0` to `1` on the domain controller where the Private Access Sensor is installed.
-- Changes can take a few minutes to propagate. Restarting the sensors is required if updates made to the registry key. 
+- Enable break glass mode from Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** then select the Private Access Sensor name, From the Settings, select Enable break glass mode. Changes can take a few minutes to propagate.
+- You can also enable break glass mode by changing the `TmpBreakglass` registry key from `0` to `1` on the domain controller where the Private Access Sensor is installed. Restarting the sensors is required if updates made to the registry key. 
 
 ### 8. Test Microsoft Entra Private Access for domain controllers
 
@@ -163,7 +162,7 @@ Example of how to configure SPN username exclusions and inclusions from Microsof
 1. (Optional) Run `nltest` from your client machine to list domain controllers.
 1. Run `klist purge` to clear all Kerberos tickets.
 1. Use `klist tgt get cifs/SPN` or access the Server Message Block (SMB) share to verify access to the target resource.
-1. Turn on both Private Access Sensor services (keep the Global Secure Access client off).
+1. Turn on the Private Access Sensor service (keep the Global Secure Access client off).
 1. Attempt to access the SMB file share; the sensor should block the request.
 1. Turn on the Global Secure Access client and try to access the SPN again. You should receive Kerberos tickets, and MFA might be required if your Conditional Access policy enforces it.
 1. To verify Kerberos traffic is tunneled through Global Secure Access, use Advanced Diagnostics in the Global Secure Access client.
