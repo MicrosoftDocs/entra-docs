@@ -13,11 +13,11 @@ ms.date: 11/04/2025
 
 # Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)
 
-Making sure risky users don't gain access to sensitive resources is an important part of securing your environment. You can further secure the entitlement management request process by integrating [Microsoft Purview Insider Risk Management (IRM)](/purview/insider-risk-management-configure) signals into the access package approval workflow in Microsoft Entra ID Governance’s Entitlement Management. With risk management-based approvals, Entitlement Management automatically adds a new first approval stage when a user flagged as risky requests access to an access package. This ensures that users identified as potentially compromised or at-risk are reviewed by authorized security or compliance approvers before access requests are routed for standard approval routing. This article describes how to further secure your entitlement request process with these features.
+Making sure risky users don't gain access to sensitive resources is an important part of securing your environment. You can further secure the entitlement management request process by integrating [Microsoft Purview Insider Risk Management (IRM)](/purview/insider-risk-management-configure) signals into the access package approval workflow in Microsoft Entra ID Governance’s Entitlement Management. With risk management-based approvals, Entitlement Management automatically adds a new first approval stage when a user flagged as risky requests access to an access package. This ensures that users identified as potentially compromised or at-risk are reviewed by authorized security or compliance approvers before access requests are routed for standard approval routing. This article describes how to further secure your entitlement request process with Insider risk management.
 
 ## License requirements
 
-[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
+[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)] You must also have [appropriate licensing for Microsoft Purview](../purview/insider-risk-management-configure.md#subscriptions-and-licensing).
 
 ## Prerequisites
 
@@ -31,9 +31,9 @@ When a user requests access to an access package through the **My Access** porta
 1.	**Configuration check**: If the user’s risk level matches one of the administrator-selected thresholds (for example, Moderate or Elevated), Entitlement Management automatically adds an additional risk-based approval stage before the standard approval process.
 
 1.	**Automatic approver assignment**:
-    - If the risk source is Insider Risk Management, the request is routed to users assigned the Compliance Administrator role.
+    - The request is routed to users assigned the Compliance Administrator role in Microsoft Entra ID.
 
-1.	**Security or compliance review**: The assigned approvers review the user’s risk details and decide whether to approve or deny this stage of the request approval routing.
+1.	**Compliance review**: The assigned approvers review the user’s risk details and decide whether to approve or deny this stage of the request approval routing.
     - If approved, the request continues through the rest of the regular access package approval steps.
     - If denied, the request is closed, recorded in the audit logs, and no further approval routing takes place.
 
@@ -53,17 +53,17 @@ To configure Insider Risk Management-based approvals for an access package in th
 
 1. On the card **Risk-based approval (Preview)**, select **View settings**.
 
-1. On the risk-based approval page, next to **Require approval for users with insider risk level (Preview)**, select **Customize**.
+1. On the risk-based approval page, next to **Require approval for users with insider risk level (Preview)**, select **Customize**. (See the separate article to configure [ID Protection-based approvals](../id-governance/entitlement-management-configure-id-protection-approvals.md).)
     :::image type="content" source="media/entitlement-management-configure-risk-approvals/risk-based-approval-overview.png" alt-text="Screenshot of the risk-based approval overview screen."::: 
 
 1. You can set the insider risk level and then select **Save**.  
     :::image type="content" source="media/entitlement-management-configure-risk-approvals/insider-risk-levels-settings.png" alt-text="Screenshot of the insider risk level settings in entitlement management.":::
 
 
-## Approving a risky user
+## Reviewing a risky user's request
 
 
-To Approve a risky user, approvers must have the [Compliance Administrator](../identity/role-based-access-control/permissions-reference.md#compliance-administrator) role at the time of approval.
+To review the pending request from a risky user, the approver must have the [Compliance Administrator](../identity/role-based-access-control/permissions-reference.md#compliance-administrator) role.
 
 When a risky user submits a request for an access package, administrators are able to see their pending status via the requests page within the access package:
 
