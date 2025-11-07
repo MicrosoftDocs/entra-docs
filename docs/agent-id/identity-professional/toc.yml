@@ -30,3 +30,7 @@ items:
     href: sign-in-audit-logs-agents.md
   - name: Access packages
     href: agent-access-packages.md
+- name: Reference
+  items:
+  - name: Disable agent identities
+    href: disable-agent-identities.md
