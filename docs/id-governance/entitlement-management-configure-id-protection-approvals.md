@@ -25,6 +25,9 @@ To use ID-protection with Entitlement management, you must first [deploy ID prot
 
 ## How risk-based approvals work
 
+> [!NOTE]
+> If the customer has enabled both the IDP and IRM options, the access package request will first route to the IDP approver, then to the IRM approver, and finally to the access package policy approvers.
+
 When a user requests access to an access package through the **My Access** portal:
 1.	**Risk evaluation**: Entitlement Management queries Microsoft Entra ID Protection for the user’s current userRiskLevel 
 
@@ -80,7 +83,7 @@ A user set as an approver, or fallback approver, for risky users can view the re
 
 ## Next step
 
-- [Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)](entitlement-management-configure-insider-risk-management-approvals.md) Should be configured next if you plan to use it. Then Access Package policies should be configured.
+- [Configure Insider risk management-based approvals for access package requests in Entitlement Management (Preview)](entitlement-management-configure-insider-risk-management-approvals.md)
 
 
 

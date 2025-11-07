@@ -21,7 +21,7 @@ Making sure risky users don't gain access to sensitive resources is an important
 
 ## Prerequisites
 
-To use Insider Risk Management approvals with Entitlement management, you must first [Create an Insider Risk Management policy](/purview/insider-risk-management-policies).
+To use Insider Risk Management approvals with Entitlement management, you must first [Create an Insider Risk Management policy](/purview/insider-risk-management-plan).
 
 ## How risk-based approvals work
 
@@ -63,14 +63,14 @@ To configure Insider Risk Management-based approvals for an access package in th
 ## Approving a risky user
 
 
-To Approve a risky user, approvers must have the [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) role at the time of approval.
+To Approve a risky user, approvers must have the [Compliance Administrator](../identity/role-based-access-control/permissions-reference.md#compliance-administrator) role at the time of approval.
 
 When a risky user submits a request for an access package, administrators are able to see their pending status via the requests page within the access package:
 
 :::image type="content" source="media/entitlement-management-configure-risk-approvals/insider-risky-user-pending-request.png" alt-text="Screenshot of a pending request for an access package by a risky user.":::
 
 A user set as an approver, or fallback approver, for risky users can view the request to approve or deny via the my access portal:
-:::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png" alt-text="Screenshot of the approvals page in my access showing the risky user." lightbox="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png":::
+:::image type="content" source="media/entitlement-management-configure-risk-approvals/insider-risky-user-approvals.png" alt-text="Screenshot of approving a risky user from insider risk management." lightbox="media/entitlement-management-configure-risk-approvals/insider-risky-user-approvals.png":::
 
 
 > [!NOTE]
@@ -79,4 +79,4 @@ A user set as an approver, or fallback approver, for risky users can view the re
 
 ## Next step
 
-- [Change approval and requestor information settings for an access package in entitlement management](entitlement-management-configure-id-protection-approvals.md) Should be configured first if you plan to use it. Followed by Insider Risk Management, then finally Access Package policies should be configured.
+- [Change approval and requestor information settings for an access package in entitlement management](entitlement-management-configure-id-protection-approvals.md)
