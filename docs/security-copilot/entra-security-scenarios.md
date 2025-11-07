@@ -31,7 +31,7 @@ Microsoft Security Copilot supports data exploration when prompts return dataset
 > [!NOTE]
 > This functionality is currently in preview and limited to simple, single-step prompts (for example *"Provide a list of users in the Sales department"*). Tasks that require multi-step prompting and cross scenario functionality (for example *"Which risky apps have high privileged permissions?"*) are not currently supported by this feature. Copilot will still provide chat-based summaries for all prompts.
 
-:::image type="content" source="./media/copilot-security-entra/data-explorer.png" alt-text="Screenshot that shows Data Exploration in Security Copilot for Microsoft Entra.":::
+:::image type="content" source="./media/copilot-security-entra/data-explorer.png" alt-text="Screenshot that shows Data Exploration in Security Copilot for Microsoft Entra." lightbox="./media/copilot-security-entra/data-explorer.png":::
 
 ## Security Copilot scenarios in Microsoft Entra
 
