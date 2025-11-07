@@ -16,7 +16,7 @@ ms.collection: msec-ai-copilot
 
 # Microsoft Security Copilot scenarios in Microsoft Entra overview
 
-Microsoft Security Copilot is a powerful tool that can help you manage and secure your Microsoft Entra identity environment. This articles outlines the different capabilities in Microsoft Entra that you can investigate using natural language queries. These capabilities are available across different Microsoft Entra products to enhance your identity protection efforts. To use Security Copilot in Entra, ensure that you have a tenant with Security Copilot enabled.
+Microsoft Security Copilot is a powerful tool that can help you manage and secure your Microsoft Entra identity environment. This article outlines the different capabilities in Microsoft Entra that you can investigate using natural language queries. These capabilities are available across different Microsoft Entra products to enhance your identity protection efforts. To use Security Copilot in Microsoft Entra, ensure that you have a tenant with Security Copilot enabled.
 
 ## Microsoft Security Copilot integration with Microsoft Entra
 
