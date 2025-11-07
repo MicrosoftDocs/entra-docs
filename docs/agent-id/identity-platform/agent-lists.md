@@ -18,7 +18,7 @@ ms.reviewer: alamaral
 
 View all agent identities in your tenant and perform various actions like searching, filtering, sorting, and selecting multiple agent identities to disable. 
 
-To view and manage your **agent identity blueprint principals**, see [View and manage agent identity blueprints using Microsoft Entra admin center](manage-agent-blueprint.md). To view and manage agents registered in the **Agent Registry** without an identity, see [manage agent identity blueprints with no identities](manage-agents-without-identity.md).
+To view and manage your **agent identity blueprint principals**, see [View and manage agent identity blueprints using Microsoft Entra admin center](manage-agent-blueprint.md). To view and manage agents registered in the **Agent Registry** without an identity, see [manage agent identity blueprints with no identities](../identity-professional/manage-agents-without-identity.md).
 
 ## Prerequisites
 
