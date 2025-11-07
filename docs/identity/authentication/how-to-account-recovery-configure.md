@@ -1,4 +1,4 @@
-get----
+---
 title: How to Enable and Test Account Recovery (Preview) in the Microsoft Entra Admin Center
 description: How to enable Account Recovery (Preview) in the Microsoft Entra admin center.
 ms.service: entra-id
