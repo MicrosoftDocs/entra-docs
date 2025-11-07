@@ -106,9 +106,8 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 1. If you add or update SPNs and/or Connector IPs, it can take a few minutes for changes to take effect. You don't need to restart the sensors.
 
 > [!IMPORTANT]
-> The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `AuditMode` registry key for `PrivateAccessSensor` from `1` to `0`. You will need to restart the sensors after updating the registry key.
->
-> ![Screenshot showing the Private Access Sensor settings in the Windows Registry.](media/how-to-configure-domain-controllers/private-access-sensor-windows-registry.png)
+> The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `SensorMode` for `PrivateAccessSensor` to `EnforceMode` in Global Secure Access > Connect > Connectors and sensors > Private access sensors. It may take a few minutes to update the sensor mode. For sensor versions 2.0.31 and higher, you can only update this mode from Microsoft Entra Admin Center and not the registry key from the Private Access Sensor.
+
 
 ## Exclusions and inclusions for SPNs
 
