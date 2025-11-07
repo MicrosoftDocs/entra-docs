@@ -23,7 +23,8 @@ View all agent identity blueprint principals in your tenant and perform various 
 To view your agent identity blueprint principals, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. In the left-hand navigation pane, select **Entra ID** > **Agent identities** > **All agent identities**. Then select **View agent blueprint** in the upper right of the command bar.
+1. In the left-hand navigation pane, select **Entra ID** > **Agent identities** > **All agent identities**. 
+1. Select **View agent blueprint** in the upper right of the command bar.
 1. Select any agent identity blueprint principal you want to manage.
 
 ## Search for an agent identity blueprint principal

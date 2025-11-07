@@ -16,7 +16,9 @@ ms.reviewer: alamaral
 
 # View and manage agent identities in your tenant
 
-View all agent identities in your tenant and perform various actions like searching, filtering, sorting, and selecting multiple agent identities to disable. 
+As organizations increasingly adopt AI agents to automate business processes and enhance productivity, maintaining visibility and control over these agent identities becomes crucial for security and governance. The Microsoft Entra admin center provides management capabilities for all agent identities in your tenant, allowing you to monitor, configure, and control access for both agent identity objects and agents using service principals.
+
+This article guides you through viewing, searching, filtering, and managing agent identities in your tenant. You learn how to customize your view, disable agents when necessary, and access detailed information about permissions, ownership, and activity logs. Whether you're conducting security audits, managing compliance requirements, or simply maintaining operational oversight, these tools help ensure your agent ecosystem remains secure and well-governed.
 
 To view and manage your **agent identity blueprint principals**, see [View and manage agent identity blueprints using Microsoft Entra admin center](manage-agent-blueprint.md). To view and manage agents registered in the **Agent Registry** without an identity, see [manage agent identity blueprints with no identities](../identity-professional/manage-agents-without-identity.md).
 
@@ -41,8 +43,7 @@ This page contains a list of all agent identities in your organization. This inc
 
 ## Search for an agent identity
 
-1. Enter either the **name** or **object ID** of the agent identity you want to find. Note, to look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter.
-1. You can further refine the list using filters based on various criteria.
+Enter either the **name** or **object ID** of the agent identity you want to find. To look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter. You can further refine the list using filters based on various criteria.
 
 ## Select viewing options
 To customize your view of agent identities, you can change filters or select which columns are shown for each agent identity.
