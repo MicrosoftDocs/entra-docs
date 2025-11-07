@@ -30,7 +30,7 @@ The following table lists phishing-resistant and phishable authentication method
 
 Strength | Methods
 ---------|--------
-Phishing-resistant | Windows Hello for Business, Platform Credential for macOS, synced passkeys (FIDO2) (preview), FIDO2 security keys, passkey in Microsoft Authenticator, certificate-based authentication (CBA)
+Phishing-resistant | Windows Hello for Business, Platform Credential for macOS, synced passkeys (FIDO2) (preview), FIDO2 security keys, passkeys in Microsoft Authenticator, certificate-based authentication (CBA)
 Phishable | Password, SMS/Voice call, Authenticator push notifications, Authenticator passwordless sign-in, Temporary Access Pass (TAP), software-based and hardware-based OATH tokens (preview)
 
 ## Available authentication methods
@@ -48,7 +48,7 @@ The following table outlines when an authentication method can be used during a 
 |--------------------------------|:----------------------:|:-------------------------:|
 | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes   | MFA<sup>1</sup>  |
 | Platform Credential for macOS   | Yes               | MFA |
-| [FIDO2 security key](concept-authentication-passkeys-fido2.md)  | Yes                    | MFA             |
+| [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md)  | Yes                    | MFA             |
 | [Microsoft Authenticator passkey](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
 | [Synced passkey (preview)](concept-authentication-passkeys-fido2.md)| Yes                 | MFA           |
 | [Certificate-based authentication](concept-certificate-based-authentication.md)| Yes            | MFA                       |
@@ -64,7 +64,7 @@ The following table outlines when an authentication method can be used during a 
 | [QR code (preview)](concept-authentication-qr-code.md)                       | Yes                    | No                    |
 | Password                       | Yes                    | No                        |
 
-<sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if it's used in FIDO2 authentication. Users need to be registered for passkey (FIDO2).
+<sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
 
 <sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-cba).
 
