@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 09/23/2025
+ms.date: 10/28/2025
 ms.service: global-secure-access
 
 
@@ -259,6 +259,7 @@ Known limitations for Private Access include:
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   
+- Admins can currently configure rules based on up to 1,000 total URLs.
 - Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
 - The platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
 - The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To make sure that all traffic is routed to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
