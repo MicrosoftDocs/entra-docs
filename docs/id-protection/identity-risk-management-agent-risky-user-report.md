@@ -46,11 +46,11 @@ The **agent view** incorporates a detailed summary of the user's risk, drawing f
 :::row:::
    :::column span="":::
       **Standard view**
-:::image type="content" source="media/risk-management-agent-risky-user-report/risky-user-details-standard-view.png" alt-text="Screenshot of the standard view of the risky user details." lightbox="media/risk-management-agent-risky-user-report/risky-user-details-standard-view-expanded.png":::
+:::image type="content" source="media/identity-risk-management-agent-risky-user-report/risky-user-details-standard-view.png" alt-text="Screenshot of the standard view of the risky user details." lightbox="media/identity-risk-management-agent-risky-user-report/risky-user-details-standard-view-expanded.png":::
    :::column-end:::
    :::column span="":::
       **Agent view**
-:::image type="content" source="media/risk-management-agent-risky-user-report/risky-user-details-agent-view.png" alt-text="Screenshot of the agent view of the risky user details." lightbox="media/risk-management-agent-risky-user-report/risky-user-details-agent-view-expanded.png":::
+:::image type="content" source="media/identity-risk-management-agent-risky-user-report/risky-user-details-agent-view.png" alt-text="Screenshot of the agent view of the risky user details." lightbox="media/identity-risk-management-agent-risky-user-report/risky-user-details-agent-view-expanded.png":::
    :::column-end:::
 :::row-end:::
 
