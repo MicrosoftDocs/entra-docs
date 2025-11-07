@@ -43,7 +43,7 @@ For scenarios where agents need to interact with systems that specifically requi
 
 ## Agent registry
 
-The agent registry is a centralized repository that maintains metadata about all registered agents within an organization. It serves as a discovery mechanism, allowing systems and services to locate and interact with agents based on their capabilities, roles, and other attributes. For more information, see [agent registry](agent-registry.md)
+The agent registry is a centralized repository that maintains metadata about all registered agents within an organization. It serves as a discovery mechanism, allowing systems and services to locate and interact with agents based on their capabilities, roles, and other attributes. For more information, see [agent registry](what-is-agent-registry.md)
 
 ## Agent operation patterns
 
@@ -61,7 +61,7 @@ The agent identity platform introduces an administrative model that separates te
 - Sponsors provide business accountability for agentic applications, making lifecycle decisions without technical administrative access.
 - A manager is a human user who is designated as the hiring manager or operational owner for an agent user.
 
-For more information, see [Administrative relationships for agent identities (Owners, sponsors, and managers)](agentic-governance-roles.md)
+For more information, see [Administrative relationships for agent identities (Owners, sponsors, and managers)](agent-owners-sponsors-managers.md)
 
 ## Microsoft Entra SDK for agent IDs
 
@@ -71,6 +71,6 @@ The Microsoft Entra SDK for AgentID is a containerized web service that handles 
 
 - [What is an agent ID?](what-is-agent-id.md)
 - [What is the agent identity platform?](what-is-agent-id-platform.md)
-- [OAuth protocol for agent IDs](agentic-oauth-protocols.md)
+- [OAuth protocol for agent IDs](agent-oauth-protocols.md)
 - [Create an agent ID blueprint](create-blueprint.md)
 - [Create and delete agent identities](create-delete-agent-identities.md)
