@@ -79,5 +79,5 @@ Agent ID blueprints give the Microsoft Entra administrator the ability to secure
 
 ## Related content
 
-- [Learn how agent IDs are created](agent-identity-creation.md)
+- [Learn how agent IDs are created](../identity-professional/agent-id-creation-channels.md)
 - [agent ID authentication protocol reference](agent-oauth-protocols.md)
