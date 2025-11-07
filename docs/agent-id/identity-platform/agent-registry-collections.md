@@ -7,7 +7,8 @@ ms.author: sarahlipsey
 manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
-ms.date: 11/07/2025
+ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: jadedsouza
 
 #customer-intent: As an IT administrator or security manager, I want to understand how Agent Registry collections work and how to organize agents into secure groupings, so that I can effectively govern agent discovery, access control, and security policies in my organization.

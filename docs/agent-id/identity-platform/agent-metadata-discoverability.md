@@ -7,6 +7,7 @@ ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/07/2025
 ms.author: sarahlipsey
+ms.custom: agent-id-ignite
 
 #Customer intent: As a developer creating agents, I want to understand how to structure agent metadata for optimal discoverability and how the collections model affects agent visibility, so that my agents can be found by the right users and applications.
 ---

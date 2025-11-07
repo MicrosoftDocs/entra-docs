@@ -8,6 +8,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: egreenberg
 
 #customer-intent: As an IT administrator, I want to understand the enhanced logging capabilities available for agent identities and know where to find comprehensive documentation for sign-in and audit logs.

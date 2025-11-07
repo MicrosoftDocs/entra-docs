@@ -7,6 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer building AI agents, I want to call Microsoft Graph API from my agent using agent identities so that the agent can access organizational data and resources securely.

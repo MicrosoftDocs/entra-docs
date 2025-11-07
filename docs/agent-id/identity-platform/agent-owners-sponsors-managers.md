@@ -8,6 +8,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: jawoods
 
 #customer-intent: As an IT administrator or business stakeholder, I want to understand the administrative model for agentic applications, so that I can properly assign owners, sponsors, and managers to ensure secure operations, business accountability, and compliance oversight.

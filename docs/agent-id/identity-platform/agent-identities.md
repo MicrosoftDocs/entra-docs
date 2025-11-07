@@ -7,6 +7,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent IDs are in Microsoft Entra ID, how they differ from application and human identities, and why my organization needs them so that I can deploy AI agents securely in our Microsoft Entra environment.
 ---

@@ -8,6 +8,7 @@ manager: pmwongera
 ms.date: 10/24/2025
 ms.service: entra-id
 ms.topic: concept-article
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer or architect, I want to understand the Agent ID Platform and its core components including identity constructs, authentication mechanisms, and token systems, so that I can build and manage AI agents with enterprise-grade identity and authorization.

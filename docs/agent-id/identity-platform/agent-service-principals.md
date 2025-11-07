@@ -7,6 +7,7 @@ ms.author: shermanouko
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer or IT administrator, I want to understand how agentic service principals work and how they differ from traditional service principals, so that I can effectively implement authentication, permissions, and lifecycle management for agentic applications in my organization.

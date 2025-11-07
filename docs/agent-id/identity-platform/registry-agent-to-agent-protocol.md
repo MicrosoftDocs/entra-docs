@@ -7,6 +7,7 @@ ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/07/2025
 ms.author: sarahlipsey
+ms.custom: agent-id-ignite
 ms.reviewer: jadedsouza
 #Customer intent: As a developer building interconnected AI agents, I want to understand the Agent-to-Agent protocol so that I can enable secure communication and collaboration between agents.
 ---

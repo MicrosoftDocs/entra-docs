@@ -5,6 +5,7 @@ author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
 ms.date: 11/07/2025
+ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.topic: how-to
 

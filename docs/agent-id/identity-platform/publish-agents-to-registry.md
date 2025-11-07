@@ -7,6 +7,7 @@ ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/07/2025
 ms.author: sarahlipsey
+ms.custom: agent-id-ignite
 ms.reviewer: jadedsouza
 
 #customer intent: As a developer creating agents on non-Microsoft platforms like OpenAI, Google Vertex, or Amazon Bedrock, I want to understand how to register my agents to Microsoft Entra Agent Registry through API calls, so that my agents can be discovered and managed within the Microsoft Entra ecosystem.

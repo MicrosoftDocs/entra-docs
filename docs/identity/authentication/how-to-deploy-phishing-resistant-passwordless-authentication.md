@@ -5,7 +5,7 @@ description: Detailed guidance to deploy passwordless and phishing-resistant aut
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/05/2025
+ms.date: 11/07/2025
 
 ms.author: justinha
 author: sipower
@@ -18,33 +18,26 @@ ms.collection: M365-identity-device-management
 ---
 # Plan a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 
-When you deploy and operationalize phishing-resistant passwordless authentication in your environment, we recommend a user persona-based approach. Different phishing-resistant passwordless methods are more effective than others for certain user personas. This deployment guide helps you see which types of methods and rollout plans make sense for user personas in your environment. The phishing-resistant passwordless deployment approach commonly has 6 steps, which roughly flow in order, but don't have to be 100% completed before moving on to other steps:     
+When you deploy and operationalize phishing-resistant passwordless authentication in your environment, we recommend a user persona based approach but this may vary depending on other aspects like the industry you are in and the budget that you may have.  This deployment guide helps you see which types of methods and rollout plans make sense for users in your organization. The phishing-resistant passwordless deployment approach has multiple steps, but don't have to be 100% completed before moving on to other steps.    
 
 ## Determine your user personas
-Determine the user personas relevant for your organization. This step is critical to your project because different personas have different needs. Microsoft recommends you consider and evaluate the following user personas in your organization.
+Determine the user personas relevant for your organization. This step is critical to your project because different personas have different needs. Microsoft recommends you consider and evaluate the below user persona's in your organisation.
 
 User persona | Description
 -----|------------
-Admins and highly regulated users  | <li>Admins with directory roles or can perform highly privileged actions </li><li>Users who have access to sensitive data, critical information or computing systems </li><li> Users who work in highly regulated organizations</li><li> DevOps workers or DevSecOps workers who manage and deploy automations.</li>
-Any other users| <li>Any other user in the organization, such as Information workers, Frontline workers.</li>
+Admins and highly regulated users  | <li>Admins with directory roles or can perform highly privledged actions. </li><li>Users who have access to sensitive data, critical information or computing systems. </li><li> Users who work in highly regulated organizations.</li><li> DevOps workers or DevSecOps workers who manage and deploy automations.</li>
+Non-admins| <li>Users in the organization that do not have access to customer data, critical information, or computing systems.</li>
 
+Microsoft recommends that you broadly deploy phishing-resistant passwordless authentication across your organization. We recomend you start your deployment with one of the user persona's first. 
 
+Microsoft recommends that you categories your users based on these personas, and then place users into a Microsoft Entra ID groups specifically for that user persona. These groups are used in later steps to [roll out credentials](~/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md#drive-usage-of-phishing-resistant-credentials) 
+to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
 
-Microsoft recommends that you broadly deploy phishing-resistant passwordless authentication across your organization. We recommend you start your deployment with one of the user persona's first. 
-
-
-Microsoft recommends that you categories your users based on these personas, and then place users into a Microsoft Entra ID group specifically for that user persona. These groups are used in later steps to [roll out credentials](#drive-usage-of-phishing-resistant-credentials) 
-to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](#enforce-phishing-resistant-methods-for-sign-in).
-
-Using groups you can continue to onboard new parts of the organization simultaneously. Take the approach of "*don't let perfect be the enemy of good*" and deploy secure credentials as much as possible. As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
-
-
+Using groups you can continue to onboard new parts of the organisation simultaneously. Take the approach of "*don’t let perfect be the enemy of good*" and deploy secure credentials as much as possible. As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
 
 ## Plan device readiness
 
-Devices are an essential aspect of any successful phishing-resistant passwordless deployment, since one of the goals of phishing-resistant passwordless credentials is to protect credentials with the hardware of modern devices. First, become familiar with [FIDO2 supportability for Microsoft Entra ID](concept-fido2-compatibility.md).
-
-Ensure that your devices are prepared for phishing-resistant passwordless by patching to the latest supported versions of each operating system. Microsoft recommends your devices are running these versions at a minimum:
+Devices are an essential aspect of any successful phishing-resistant passwordless deployment. To ensure that your devices are prepared for phishing-resistant passwordless, patch to the latest supported versions of each operating system. In order for use phishing-resistant credentials your devices must be running these versions at a minimum:
 
 - Windows 10 22H2 (for Windows Hello for Business)
 - Windows 11 22H2 (for the best user experience when using passkeys)
@@ -52,11 +45,15 @@ Ensure that your devices are prepared for phishing-resistant passwordless by pat
 - iOS 17
 - Android 14
 
-These versions provide the best support for natively integrated features like passkeys, Windows Hello for Business, and macOS Platform Credential. Older operating systems may require external authenticators, like FIDO2 security keys, to support phishing-resistant passwordless authentication.
+These versions natively integrate with features like passkeys, Windows Hello for Business, and macOS Platform Credential. Older operating systems may require external authenticators, like FIDO2 security keys, to support phishing-resistant paswordless authentication.
 
-## Phishing-resistant journey
+For more details, become familiar with [FIDO2 supportability for Microsoft Entra ID](/entra/identity/authentication/concept-fido2-compatibility).
+You can you the [phishing-resistent paswordless workbook (Preview)](how-to-deploy-phishing-resistant-passwordless-authentication.md#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to understand the device readiness within your tenant.
 
-As part of your phishing resistant credential deployment, you need to consider how users are onboarded, how they obtain their portable and local credentials, and how phishing resistant credentials are enforced across your organization.
+
+## Phishing Resistent Journey
+
+As part of your phishing resistent credential deployment, you will need to consider how users are onboarded, how they obtain their portable and local credentials, and how phishing resistent credentials are enforced across your organisation.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/planning-phases.png" alt-text="Diagram that shows the first three phases of the planning process." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/planning-phases.png":::
 
@@ -66,16 +63,16 @@ As part of your phishing resistant credential deployment, you need to consider h
 
 Credential registration and bootstrapping are the first major end-user facing activities in your phishing-resistant passwordless deployment project. This section covers the rollout of **portable** and **local** credentials. 
 
-The following table lists the different types of credentials and the associated authentication methods that can be configured in Microsoft Entra ID.
+In the table below you will find the different types of credentials and the associated authentication methods that can be configured in Entra ID.
 
 Credentials | Description | Benefits | Authentication Methods|
 ------------|-------------|----------|---------|
 **Portable** | Can be used [across devices](how-to-sign-in-passkey-authenticator.md). You can use **portable** credentials to sign in to another device, or to register credentials on other devices. | The most important type of credential to register for most users, as they can be used across devices, and provide phishing-resistant authentication in many scenarios.| <li>Synced Passkeys</li><li>Passkey in Authenticator App</li><li> FIDO 2 Security Keys</li> <li> Certificate based authentication (Smart Card)</li>
-**Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate.|<li>Windows Hello For Business</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
+**Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate using the device’s own unlock gesture like Face ID or Windows Hello for Business face/fingerprint/PIN..|<li>Windows Hello For Business</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
 
 
-- For *new users*, registration and bootstrapping takes a user with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may enforce phishing-resistant authentication for users in Microsoft Entra ID.
-- For *existing users*, they must register for phishing-resistant passwordless on their existing devices directly, or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. 
+- For *new users*, the registration and bootstrapping process takes a user with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
+- For *existing users*, they must register for phishing-resistant passwordless on their existing devices , or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. 
 
 The end goal is the same for both types of users - most users should have at least one **portable** credential, and then **local** credentials on each computing device. 
 
@@ -86,9 +83,9 @@ The end goal is the same for both types of users - most users should have at lea
 
 ### Step 1: Identity verification
 
-For remote users who haven't proven their identity, enterprise onboarding is a significant challenge. Without proper identity verification, an organization can't be completely certain that they are onboarding the person that they intend to. Microsoft Entra Verified ID can provide high assurance identity verification. Organizations can work with an identity verification partner (IDV) to verify the identities of new remote users in the onboarding process. After it processes a user's government-issued ID, the IDV can provide a Verified ID that affirms the user's identity. The new user presents this identity-affirming Verified ID to the hiring organization to establish trust and confirm that the organization is onboarding the right person. Organizations can add Face Check with Microsoft Entra Verified ID which adds a facial matching layer to the verification, ensuring that the trusted user is presenting the identity-affirming Verified ID in that moment.
+For remote users who haven't proven their identity for example new hires, enterprise onboarding is a significant challenge. Without proper identity verification, an organization cannot be completely certain that they are onboarding the person that they intend to. Microsoft Entra Verified ID can provide high assurance identity verification. Organizations can work with an identity verification partner (IDV) to verify the identities of new remote users in the onboarding process. After processing a user’s government-issued ID, the IDV can provide a Verified ID that affirms the user's identity. The new user presents this identity-affirming Verified ID to the hiring organization to establish trust and confirm that the organization is onboarding the right person. Organizations can add Face Check with Microsoft Entra Verified ID which adds a facial matching layer to the verification, ensuring that the trusted user is presenting the identity-affirming Verified ID in that moment.
 
-After they verify their identity through the proofing process, new hires get a Temporary Access Pass (TAP) that they can use to bootstrap their first portable credential.
+After verifying their identity through the proofing process, new hires are given a Temporary Access Pass (TAP) that they can use to bootstrap their first portable credential.
 
 Refer to the following guides to enable Microsoft Entra Verified ID onboarding and TAP issuance:
 
@@ -105,60 +102,65 @@ Some organizations might choose other methods than Microsoft Entra Verified ID t
 
 ### Step 2: Bootstrap a portable credential
 
-To bootstrap existing users to phishing-resistant passwordless credentials, first determine if your users are registered for traditional MFA already. Users with traditional MFA methods registered can be targeted with phishing-resistant passwordless registration policies. They can use their traditional MFA to register for their first portable phishing-resistant credential, and then move on to register for local credentials as needed. It is best practice to use the Microsoft Entra Verified ID integration in order to register a phishing-resistant authentication method using a Temporary Access Pass (TAP).
+To bootstrap existing users to phishing-resistant passwordless credentials, first determine if your users are registered for traditional MFA already. Users with traditional MFA methods registered can be targeted with phishing-resistant passwordless registration policies. They can use their traditional MFA to register for their first portable phishing-resistant credential, and then move on to register for local credentials as needed. It is best practise to use the Microsoft Entra Verified ID integration in order to register a phishsing-resistent authentication method using a Temporary Access Pass (TAP).
 
 For new users or users without MFA, go through a process to issue users a TAP. You can issue a TAP the same way you give new users their first credential, or by using Microsoft Entra Verified ID integrations. Once users have a TAP, they're ready to bootstrap their first phishing-resistant credential.
 
-It's important for the user's first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC by using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using a device joined to Microsoft Entra ID and [Web sign-in for Windows](/windows/security/identity-protection/web-sign-in).
+It's important for the user’s first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using an Entra joined device and [Web sign-in for Windows](/windows/security/identity-protection/web-sign-in).
+
 
 
 The following table lists recommendation portable credentials for different personas:
 
 User Persona | Recommended portable credential | Alternative portable credentials
 -------------|---------------------------------|---------------------------------
-Admins and highly regulated users| FIDO2 Security Keys | Passkey for Microsoft Authenticator App, Certificate Based Authentication (CBA)|
+Admins and highly regulated users| FIDO2 Security Keys | Passkey for Microsoft Authenticator App, Certificate Based Authentication (Smart Card)|
 Any other user | Synced Passkey | FIDO2 Security Key, Passkeys for Microsoft Authenticator App|
 
-The passkey authentication credential can be scoped using passkey profiles. A passkey profile should be set up for each persona with the recommended portable credential selected.
+The passkey authentication credential can be scoped to specific user groups using [Passkey profiles](insert Doc link). A Passkey Profile should be setup for each persona with the reccomended portable credential selected.
+
+
 
 Use the following guidance to enable recommended and alternative portable credentials for the relevant user personas for your organization:
 
 Method | Guidance
 -------|---------
-FIDO2 security keys | <li>FIDO2 Security keys are turned off by default in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md).<li>Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
-Synced passkey| <li>Users can use synced passkeys managed by Apple Keychain and Google cloud or other password managers.</li><li>Use a [passkey profile](how-to-authentication-passkey-profiles.md) to scope which users are eligible for a synced passkey.</li> |
-Passkey in Microsoft Authenticator | <li>Users sign in to Microsoft Authenticator App directly to bootstrap a passkey in the app.<li>Users can use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<li>Passkeys are disabled by default in Microsoft Entra ID. You can [enable passkeys in Authentication methods policy](how-to-enable-authenticator-passkey.md).<li>[Register passkeys in Authenticator on Android or iOS devices](how-to-register-passkey-authenticator.md).
+FIDO2 Security keys | <li>FIDO2 Security keys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md).<li>Consider registering keys on behalf of your users with the Microsoft Entra ID provisioning APIs. For more information, see [Provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
+Synced Passkey| <li>Synced passkeys must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md)</li><li>Users can use synced passkeys managed by Apple Keychain and Google cloud or 3rd party passkey managers</li>|
+Passkey in Microsoft Authenticator App | <li>Passkey ib Microsoft Authenticator App must be turned on in Microsoft Entra ID. You can [enable FIDO2 security keys in the Authentication methods policy](how-to-enable-passkey-fido2.md)</li><li>Users sign in to Microsoft Authenticator App directly to bootstrap a passkey in the app.<li>Users can use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device. [Register passkeys in Authenticator on Android or iOS devices](how-to-register-passkey-authenticator.md).
 Smart card/certificate-based authentication (CBA) | <li>Certificate-based authentication is more complicated to configure than passkeys or other methods. Consider only using it if necessary.<li>[How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).<li>Make sure to configure your on-premises PKI and Microsoft Entra ID CBA policies so that users truly complete multifactor authentication to sign in. The configuration generally requires the smart card Policy Object Identifier (OID) and the necessary affinity binding settings. For more advanced CBA configurations, see [Understanding the authentication binding policy](concept-certificate-based-authentication-technical-deep-dive.md#authentication-binding-policy).
 
 
 ### Step 3: Bootstrap local credentials
 
-It is recommended that each device that the user regularly works on has a locally available credential, to give the user the smoothest user experience possible. Locally available credentials reduce the time needed to authenticate because users don't need to use multiple devices, and there are fewer steps.
+It is recommended that each device that the user regularly works on has a locally available credential, to give the user the smoothest user experience possible. Locally available credentials reduce the time needed to authenticate because users don't need to use multiple devices, and  users use the device unlock gesture to authenticate. 
 
-Once the user has obtained their protable credential, it can be used to bootstrap their local credential which enables the user to use phishing-resistant credentials natively across other devices they may own.
+Once the user has obtained their portable credential, it can be used to bootstrap their local credential which enables the user to use phishing-resistant credentials natively across other devices they may own.
+
 > [!Note]
 > Users who  share devices should only use portable credentials.
 
-Your organization needs to determine which type of credential is preferred for each user persona at this stage. Microsoft recommends:
+Use the below table to determine which type of local credential is preferred for each user persona:
 
 User persona | Recommended local credential - Windows | Recommended local credential - macOS | Recommended local credential - iOS | Recommended local credential - Android | Recommended Local Credential - Linux
 -------------|----------------------------------|-----------------------------|--------------------------------|--------------------------------|----------------------
-Admins and Highly Regulated workers | Windows Hello for Business or CBA | Platform SSO Secure Enclave Key or CBA | Passkey in Microsoft Authenticator app or CBA | Passkey in Microsoft Authenticator app or CBA | N/A (use smart card instead) 
-Any other users | Windows Hello for Business | Platform Single Sign-on (SSO) Secure Enclave Key | Passkey in Microsoft Authenticator app | Passkey in Microsoft Authenticator app | N/A (use portable credential instead)
+Admins and Highly Regulated workers | Windows Hello for Business or CBA | Platform SSO Secure Enclave Key or CBA | Passkey in Microsoft Authenticator app or CBA | Passkey in Microsoft Authenticator app  or CBA | N/A (use smart card instead) 
+Non-admins | Windows Hello for Business | Platform Single Sign-on (SSO) Secure Enclave Key | Synced Passkey | Synced Passkey | N/A (use portable credential instead)
+
 
 
 Use the following guidance to enable the recommended local credentials in your environment for the relevant user personas for your organization:
 
 Method | Guidance
 -------|---------
-Windows Hello for Business | <li>Use the Cloud Kerberos Trust method to deploy Windows Hello for Business. For more information, see the [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune). The Cloud Kerberos Trust method applies to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It helps synced users on PCs that are either Microsoft Entra joined or Microsoft Entra hybrid joined.<li>Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves. It shouldn't be used on kiosk devices that use a shared user account.<li>Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users, then use a portable credential instead, such as security keys.<li>Biometric is optional, but recommended. For more information, see [Prepare users to provision and use Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/prepare-users).
-Platform SSO Secure Enclave Key | <li>Platform SSO supports 3 different user authentication methods (Secure Enclave key, smart card, and password). Deploy the Secure Enclave key method to mirror your Windows Hello for Business on your Macs.<li>Platform SSO requires that Macs are enrolled in Mobile Device Management (MDM). For specific instructions for Intune, see [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos).<li>Refer to your MDM vendor’s documentation if you use another MDM service on your Macs.
-Passkey in Microsoft Authenticator App | <li>Use same device registration option to bootstrap passkeys in Microsoft Authenticator (rather than the cross-device registration option). <li>Users should use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<li>Passkeys are disabled by default in Microsoft Entra ID, enable them in the Authentication methods policy. For more information, see [Enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md). <li>Register passkeys in Microsoft Authenticator App on Android or iOS devices.
+Windows Hello for Business | <li>Use the Cloud Kerberos Trust method to deploy Windows Hello for Business. For more information, see the [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune). The Cloud Kerberos Trust method applies to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It helps synced users on PCs that are either Microsoft Entra joined or Microsoft Entra hybrid joined.<li>Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves. It shouldn't be used on kiosk devices that use a shared user account.<li>Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users, then use a portable credential instead, such as security keys.<li>Biometrics are optional, but recommended. For more information, see [Prepare users to provision and use Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/prepare-users).
+Platform Credential for macOS | <li>Platform Credential for macOS supports 3 different user authentication methods (Secure Enclave key, smart card, and password). Deploy the Secure Enclave key method to mirror your Windows Hello for Business on your Macs.<li>Platform Credential for macOS requires that Macs are enrolled in Mobile Device Management (MDM). For specific instructions for Intune, see [Configure Platform Credential for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos).<li>Refer to your MDM vendor’s documentation if you use another MDM service on your Macs.
+Passkey in Microsoft Authenticator App | <li>Use same device registration option to bootstrap passkeys in Microsoft Authenticator. <li>Users should use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<li>Passkeys need to be enabled in Microsoft Entra ID, in the Authentication methods policy. For more information, see [Enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md). <li>Register passkeys in Microsoft Authenticator App on Android or iOS devices.
 
 
 ### Persona-specific considerations
 
-Within each persona there may be specific role functions, which have their own challenges and considerations. You can consider the following table, which contains specific guidance for particular roles within your organization.
+Within each persona there may be specific role functions, which will have their own challenges and considerations. You can consider the table below, which contains specific guidance for particular roles within your organisation.
 
 
 Persona | Example roles
@@ -178,7 +180,7 @@ This step covers how to make it easier for users to adopt phishing-resistant cre
 
 Microsoft recommends that you test the deployment strategy created in the previous step with a set of test and pilot users. This phase should include the following steps:
 
-- Create a list of test users and early adopters. These users should represent your different user personas, and not just Admins.
+- Create a list of test users and early adopters. These users should represent your different user personas, and not just Admins, and using supported device types.
 - Create a Microsoft Entra ID group, and add your test users to the group.
 - Enable your [Authentication methods policies](~/identity/authentication/concept-authentication-methods-manage.md) in Microsoft Entra ID, and scope the test group to the methods that you enable.
 - Measure the registration rollout for your pilot users by using the [Authentication Methods Activity](~/identity/authentication/howto-authentication-methods-activity.md) report.
@@ -190,7 +192,7 @@ Microsoft recommends that you test the deployment strategy created in the previo
 
 Microsoft recommends driving usage based on which user personas are most ready for deployment. Typically, this means piloting with Admins first, then deploying widely to non admin user groups, but this may change depending on your organizations needs.
 
-Use the following sections to create end user communications for each persona group, scope and roll out the passkeys registration feature, and user reporting and monitoring to track rollout progress.
+Use the following sections to create end user communications for each persona group, scope and rollout the passkeys registration feature, and user reporting and monitoring to track rollout progress.
 
 ### Driving readiness with the Phishing-Resistant Passwordless Workbook (Preview)
 
@@ -209,34 +211,36 @@ Use the Enrollment Readiness Phase tab to analyze sign-in logs in your tenant, d
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png" alt-text="Screenshot of the Enrollment phase of the Phishing-Resistant Passwordless workbook." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png":::
 
-The Enrollment Readiness Phase tab of the workbook can help you evaluate readiness for the following operating systems and credentials:
+The Enrollment Readiness Phase tab of the workbook can help you evaluate readiness for the following OSes and credentials:
 
 - Windows
     - Windows Hello for Business
     - FIDO2 Security Key
-    - Passkey on Microsoft Authenticator App
     - Certificate-Based Authentication / Smart Card
 - macOS
     - Platform SSO Secure Enclave Key
     - FIDO2 Security Key
-    - Authenticator App Passkey
     - Certificate-Based Authentication / Smart Card
 - iOS
+    - Synced Passkey
     - FIDO2 Security Key
     - Passkey on Microsoft Authenticator App
     - Certificate-Based Authentication / Smart Card
 - Android
+    - Synced Passkey
     - FIDO2 Security Key
     - Passkey on Microsoft Authenticator App
     - Certificate-Based Authentication / Smart Card
 
-Use each exported list to triage users who may have registration issues. Responses to registration issues should include assisting users in upgrading device OS versions, replacing aging devices, and choosing alternative credentials where the preferred option is not viable. For example, your organization may choose to provide physical FIDO2 security keys to Android 13 users who can't use Synced Passkeys.
+Use each exported list to triage users who may have registration issues. Responses to registration issues should include assisting users in upgrading device OS versions, replacing aging devices, and choosing alternative credentials where the preferred option is not viable. For example, your organization may choose to provide physical FIDO2 security keys to Android 13 users who cannot use Synced Passkeys.
 
 Similarly, use the enrollment readiness report to assist you in building out lists of users who are ready to begin enrollment communications and campaigns, in alignment with your overall [rollout strategy](#plan-rollout-strategy).
 
 #### Enforcement readiness phase
 
-The first step of the enforcement readiness phase is creating a Conditional Access policy in Report-Only mode. This policy populates your sign-in logs with data regarding whether or not access would have been blocked if you were to put users/devices in scope for phishing-resistant enforcement. Create a new Conditional Access policy in your tenant with these settings:
+Once your users are ready for phishing-resistant-only authentication, you can enforce phishing-resistant authentication, which means they will need to perform MFA with phishing-resistant credentials to access resources in your policy.
+
+The first step of the enforcement readiness phase is creating a Conditional Access policy in Report-Only mode. This policy will populate your sign-in logs with data regarding whether or not access would have been blocked if you were to put users/devices in scope for phishing-resistant enforcement. Create a new Conditional Access policy in your tenant with these settings:
 
 Setting | Value
 ------- | -----
@@ -245,13 +249,13 @@ App Assignment | All resources
 Grant Controls | Require Authentication Strength - Phishing-resistant MFA
 Enable policy | Report-only
 
-Create this policy as early as possible in your rollout, preferably before even beginning your enrollment campaigns. An early policy ensures that you have a good historical dataset of which users and sign-ins would have been blocked by the policy if it was enforced.
+Create this policy as early as possible in your rollout, preferably before even beginning your enrollment campaigns. This will ensure that you have a good historical dataset of which users and sign-ins would have been blocked by the policy if it was enforced.
 
 Next, use the workbook to analyze where user/device pairs are ready for enforcement. Download lists of users who are ready for enforcement and add them to groups created in alignment with your [enforcement policies](#recommended-enforcement-conditional-access-policies). Begin by selecting the read-only Conditional Access policy in the policy filter:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook with a report-only Conditional Access policy selected." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png":::
 
-The report provides you with a list of users who would have been able to successfully pass the phishing-resistant passwordless requirement on each device platform. Download each list and put the appropriate users in enforcement group that aligns to the device platform.
+The report will provide you with a list of users who would have been able to successfully pass the phishing-resistant passwordless requirement on each device platform. Download each list and put the appropriate users in enforcement group that aligns to the device platform.
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-user-lists-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's list of users ready for enforcement." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-user-lists-1.png":::
 
@@ -263,7 +267,7 @@ Use the ***Further Data Analysis*** tab to investigate why certain users are not
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's further data analysis tab." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png":::
 
-Use the data provided by this report to determine which users would have been blocked, which device operating systems they were on, what type of client apps they were using, and what resources they were trying to access. This data should help you target those users for various remediation or enrollment actions, so that they can be effectively moved into scope for enforcement.
+Use the data provided by this report to determine which users would have been blocked, which device OSes they were on, what type of client apps they were using, and what resources they were trying to access. This data should help you target those users for various remediation or enrollment actions, so that they can be effectively moved into scope for enforcement.
 
 ### Plan end user communications
 
@@ -278,16 +282,16 @@ Communications should be repeated multiple times to help catch as many users as 
 
 1. 60 days out from enforcement: message the value of phishing-resistant authentication methods and encourage users to proactively enroll
 1. 45 days out from enforcement: repeat message
-1. 30 days out from enforcement: message that in 30 days phishing-resistant enforcement begins, encourage users to proactively enroll
+1. 30 days out from enforcement: message that in 30 days phishing-resistant enforcement will begin, encourage users to proactively enroll
 1. 15 days out from enforcement: repeat message, inform them of how to contact the help desk
 1. 7 days out from enforcement: repeat message, inform them of how to contact the help desk
-1. 1 day out from enforcement: inform them enforcement occurs in 24 hours, inform them of how to contact the help desk
+1. 1 day out from enforcement: inform them enforcement will occur in 24 hours, inform them of how to contact the help desk
 
 Microsoft recommends communicating to users through other channels beyond just email. Other options may include Microsoft Teams messages, break room posters, and champion programs where select employees are trained to advocate for the program to their peers.
 
 ### Reporting and monitoring
 
-Use the previously covered [Phishing-Resistant Passwordless Workbook](#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to assist with monitoring and reporting on your rollout. Additionally use the following reports, or rely on them if you can't use the Phishing-Resistant Passwordless Workbook.
+Use the previously covered [Phishing-Resistant Passwordless Workbook](#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to assist with monitoring and reporting on your rollout. Additionally use the reports discussed below, or rely on them if you cannot use the Phishing-Resistant Passwordless Workbook.
 
 Microsoft Entra ID reports (such as [Authentication Methods Activity](howto-authentication-methods-activity.md) and [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md)) provide technical and business insights that can help you measure and drive adoption.
 
@@ -328,7 +332,9 @@ For example, you could execute your deployments and then enforcements in waves t
 
 As you execute these different phases, you may need to slow down depending on the volume of help desk tickets opened and then resume when the volume has subsided. To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each wave, and add each group to your policies one at a time. This approach helps to avoid overwhelming your support teams.
 
-## Enforce phishing-resistant methods for sign-in
+## Step 4: Enforce phishing-resistant methods for sign-in
+
+
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png":::
 
