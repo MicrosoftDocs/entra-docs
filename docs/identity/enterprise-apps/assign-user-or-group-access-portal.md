@@ -139,8 +139,6 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
 
 To assign a group to an enterprise app, replace `Get-EntraUser` with `Get-EntraGroup` and replace `New-EntraUserAppRoleAssignment` with `New-EntraGroupAppRoleAssignment`.
 
-For more information on how to assign a group to an application role, see the documentation for [New-EntraGroupAppRoleAssignment](/powershell/module/microsoft.entra/new-entragroupapproleassignment).
-
 ## Unassign users and groups from an application using Microsoft Entra PowerShell
 
 1. Open an elevated Windows PowerShell command prompt.

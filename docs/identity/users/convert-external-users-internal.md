@@ -39,19 +39,13 @@ When a cloud user is converted from external to internal, administrators must sp
 
 ### Synced user conversion
 
-Synced user conversion allows you to convert a user from external to internal in Microsoft Entra ID. This feature is useful when you want to move a user from a federated identity provider to Microsoft Entra ID or when you want to convert a user from a cloud-only identity to a synced identity.
-
-You can use [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) to synchronize your on-premises identities. When you convert a user from an external user to an internal user, Microsoft Entra Connect synchronizes the user's attributes to Microsoft Entra ID, so the user is managed as an internal user going forward.
+Synced user conversion allows you to convert a user from external to internal in Microsoft Entra ID. You can use [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) to synchronize your on-premises identities. When you convert a user from an external user to an internal user, the source of authority for the user continues to be on-premises, but the user will authenticate as an internal user.
 
  *Synced user* are users synced from on-premises. As these accounts are managed at the source, administrators are unable to specify the UPN for these users.
 
-- Synced users where the tenant uses federated authentication:
-  - If Password Hash Sync (PHS) is enabled, administrators are blocked from setting a new password during conversion. 
-  - If the federated tenant doesn't have PHS enabled, administrators can set a user password.
-- In cases where the tenant is managed, meaning it uses cloud authentication, administrators are required to specify a password during conversion.
-
-> [!NOTE]
->To unsync a user, you must disable directory synchronization for the user in [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). Once directory sync is disabled for the user, any changes made to the user's attributes in Microsoft Entra ID can no longer be synced to your on-premises directory.
+- Synced users where the tenant has Password Hash Sync (PHS) enabled, administrators are blocked from setting a new password during conversion.
+- If the tenant uses federated authentication, administrators are blocked from setting a new password for synced users during conversion
+- In cases where the tenant is managed, meaning it uses cloud authentication, and the tenant doesn't have PHS enabled, administrators are required to specify a password during conversion.
 
 ## Testing external user conversions
 

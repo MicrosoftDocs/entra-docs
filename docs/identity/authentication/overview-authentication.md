@@ -5,100 +5,99 @@ description: Learn about the authentication methods and security features for us
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 03/04/2025
+ms.date: 10/30/2025
 
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: sahenry, michmcla
+ms.reviewer: sranjit
 
-# Customer intent: As a Microsoft Entra administrator, I want to understand which Microsoft Entra features I can use to help secure sign-in and make the user authentication process safe and easy.
+# Customer intent: As a Microsoft Entra administrator, I want to understand how Microsoft Entra ID makes it convenient to improve user sign-in security.
 ---
 # What is Microsoft Entra authentication?
 
-One of the main features of an identity platform is to verify, or *authenticate*, credentials when a user signs in to a device, application, or service. In Microsoft Entra ID, authentication involves more than just the verification of a username and password. To improve security and reduce the need for help-desk assistance, Microsoft Entra authentication includes the following components:
+Authentication is the process of verifying a person's identity before granting access to a resource, application, service, device, or network. It's how a system makes sure **users are who they say they are** when they try to sign in.
 
-* Self-service password reset (SSPR)
-* Multifactor authentication (MFA)
-* Hybrid integration to write password changes back to an on-premises environment
-* Hybrid integration to enforce password protection policies for an on-premises environment
-* Passwordless authentication
+Microsoft Entra ID supports different [authentication methods](concept-authentication-methods.md), including options for [multifactor authentication (MFA)](tutorial-enable-azure-mfa.md) and enhanced security policies that enable customers to meet their business requirements for usability and security posture. 
 
-To learn more about these authentication components, watch our short video.
+While traditional MFA with SMS, email, OTP, or authenticator apps significantly improve security over password-only systems, these options introduce friction—requiring more steps for users, like entering codes, approving push notifications, or using authenticator apps, and remain vulnerable to remote phishing attacks. Despite these obstacles, MFA remains a critical security control, but its user experience and administrative overhead can hinder adoption and effectiveness. 
 
-> [!VIDEO https://learn-video.azurefd.net/vod/player?id=5ee3cad5-3360-48da-b520-1a0d96710a38]
+This article describes best practices for achieving convenient and usable authentication and recovery experiences while improving your organization's security posture. 
 
-## Improvements to the user experience
+## Passkeys (FIDO2)
 
-Microsoft Entra ID helps protect users' identities and simplify their sign-in experience. Features like SSPR let users update or change their passwords by using a web browser from any device. This feature is especially useful when users forget their passwords or their accounts are locked. Without waiting for a helpdesk or administrator to provide support, users can unblock themselves and continue to work.
+Passkeys (FIDO2) are modern user credentials based on FIDO standards that are both easy to use and more secure than traditional MFA options. Passkeys are built on origin-bound public cryptography thus preventing a user from inadvertently presenting their authentication credentials to a malicious actor or being intercepted by an attacker.
 
-MFA lets users choose an additional form of authentication during sign-in, such as a phone call or a mobile app notification. This ability reduces the requirement for a single, fixed form of secondary authentication, like a hardware token. If users don't currently have one form of additional authentication, they can choose a different method and continue to work.
+There are two types of passkeys – device-bound and synced passkeys. 
 
-![Screenshot that shows authentication methods in use at the sign-in screen.](media/concept-authentication-methods/overview-login.png)
+- **Device-bound passkeys** are those where the private key never leaves the device. Microsoft Entra ID already supports device-bound passkeys like FIDO2 security keys and passkeys in Microsoft Authenticator.  
+- **Synced passkeys** sync through the provider's cloud (such as Apple iCloud Keychain, Google Password Manager). They can be used from multiple devices that belong to the same trust group and are signed in to the same sync service. Microsoft Entra ID supports synced passkeys (preview), and admins can select groups that can sign in with device-bound and synced passkeys.
 
-Passwordless authentication removes the need for users to create and remember secure passwords. Capabilities like Windows Hello for Business or FIDO2 security keys let users sign in to devices or applications without a password. This ability can reduce the complexity of managing passwords across environments.
+Synced passkeys offer a seamless and convenient user experience where users can use device's native device unlock mechanism like face, fingerprint, or PIN to authenticate. The following observations are based on the learnings from hundreds of millions of consumer users of Microsoft accounts that have registered and are using synced passkeys:
 
-## Self-service password reset
+- 99% of users successfully register synced passkeys 
+- Synced passkeys are 14 times faster compared to password and a traditional MFA combination: 3 seconds instead of 69 seconds 
+- Users are 3 times more successful at signing-in with passkey than legacy authentication methods (95% versus 30%)
 
-SSPR gives users the ability to change or reset their passwords with no administrator or help-desk involvement. If users' accounts are locked or they forget their passwords, they can follow prompts to unblock themselves and get back to work. This ability reduces help-desk calls and loss of productivity when users can't sign in to their devices or applications.
+Synced passkeys in Microsoft Entra ID bring MFA simplicity at scale for all enterprise users. They're a convenient and low-cost alternative to traditional MFA options like SMS and authenticator apps. Learn [how to deploy passkeys](how-to-authentication-passkey-profiles.md) in your organization.
 
-SSPR works in the following scenarios:
+It's recommended to use FIDO2 security keys in highly regulated industries or for users with high privilege. Note that however, these can incur higher equipment, training, and helpdesk costs due to lost productivity when users need to recover access to their account when they lose their physical key, and the cost of replacing lost physical keys is high. Passkeys in the Authenticator app are also an option for this user group.
 
-* **Password change**: When a user knows the password but wants to change it to something new.
-* **Password reset**: When a user can't sign in (for example, after forgetting the password) and wants to reset the password.
-* **Account unlock**: When a user can't sign in because the account is locked, and the user wants to unlock the account.
+For most users in your organization, outside of the regulated industries or for privileged users with access to customer data, critical information, or computing systems, synced passkeys should be considered as convenient and low-cost alternatives to traditional MFA. 
 
-When a user updates or resets a password by using SSPR, that password can also be written back to an on-premises Active Directory environment. Password writeback makes sure that a user can immediately use the updated credentials with on-premises devices and applications.
+In general, any type of passkey, whether device-bound or synced, is a huge upgrade over MFA options that are vulnerable to phishing. 
 
-<a name='azure-ad-multi-factor-authentication'></a>
+For more information, see [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md). 
 
-## Multifactor authentication
+Next, we review how passkeys can be used in different scenarios where users need to authenticate. 
 
-Multifactor authentication is a process in which a user is prompted for an additional form of identification during sign-in. For example, the user is prompted to enter a code on a phone or to provide a fingerprint scan.
+## Authenticating while bootstrapping new devices
 
-If you use only a password to authenticate a user, it leaves a nonsecure vector for attack. If the password is weak or is exposed elsewhere, is it really the user who's signing in with the username and password, or is it an attacker? Requiring a second form of authentication increases security because this additional factor isn't easy for an attacker to obtain or duplicate.
+This is the scenario where existing users are asked to perform some interactive authentication step on a device where the user has never authenticated before. For example, when users get a new physical device. Note that on a “new” physical device that doesn't yet have the user's account, the local lock screen (Face ID, Windows Hello for Business, etc.) inherently can't be used as a credential to bootstrap the device. In this scenario, our recommendation is to follow the same general recommendation for using FIDO2 security keys, Authenticator app passkey and synced passkey.
 
-![Conceptual diagram of the various forms of multifactor authentication.](./media/concept-mfa-howitworks/methods.png)
+## Lock screens for primary re-authentication
+After a user has bootstrapped a device with their account, there's some ongoing need to verify that the session is still controlled by the original user. Generally, the standard device-unlock gesture used to unlock a device is the primary form of interactive reauthentication used for that verification. 
 
-Microsoft Entra MFA works by requiring two or more of the following authentication methods:
+For users who access high-risk applications, we more specifically recommend using full mobile device management (MDM) to:
 
-* Something the user knows, typically a password
-* Something the user has, such as a trusted device or a hardware key that isn't easily duplicated
-* Something the user is; that is, biometrics like a fingerprint or face scan
+- Enforce a lock screen
+- Enforce operating system updates
+- Integrate with Mobile Threat Defense (MTDs), including Mobile Defender for Endpoint, for antimalware
+- Apply app protection policies
 
-Users can register themselves for both SSPR and MFA in one step to simplify the onboarding experience. Administrators can define what forms of secondary authentication to use. Administrators can also require MFA when users perform a self-service password reset, to further secure that process.
+For users who access medium-risk applications, we recommend using mobile application management (MAM) where feasible, and rely on the aggressive efforts operating system vendors have to:
 
-## Password protection
+- Promote a lock screen
+- Promote OS updates
+- Help users avoid installing apps that might contain malware
 
-By default, Microsoft Entra ID blocks weak passwords such as *Password1*. Microsoft Entra ID automatically updates and enforces a list of banned passwords that are known to be weak. A Microsoft Entra user who tries to set a password to one of these weak passwords receives a notification to choose a password that's more secure.
+For users who access low-risk applications, we recommend relying on the aggressive efforts operating system vendors have. Also rely on the efforts by browser vendors to promote incognito browsing.
 
-To increase security, you can define custom policies for password protection. These policies can use filters to block any variation of a password that contains a name such as *Contoso* or a location like *London*, for example.
+## Single sign-on (SSO) after device bootstrap
 
-For hybrid security, you can integrate Microsoft Entra password protection with an on-premises Active Directory environment. A component installed in the on-premises environment receives the list of banned passwords and the custom policies for password protection from Microsoft Entra ID. Domain controllers then use that information to process password changes. This hybrid approach makes sure that no matter how or where users change their credentials, you enforce the use of strong passwords.
+For accounts and devices that follow the preceding guidance, once a user has bootstrapped their account, we don't recommend any interactive re-authentication when users try to access applications beyond the standard user gesture to unlock the device. Traditional SSO technology should be used instead (such as SAML, OpenID, and so on). This includes applications on remote virtual devices if SSO can be used to bootstrap a session for the same user account on that device. The Microsoft Entra ID default configuration comes down to "don't ask users to provide their credentials if the security posture of their sessions didn't change."
 
-## Passwordless authentication
+## Secondary re-authentication 
 
-The goal for many environments is to remove the use of passwords as part of sign-in events. Features like Azure password protection or Microsoft Entra MFA help improve security, but a username/password combination remains a weak form of authentication that can be exposed or brute-force attacked.
+There's a limited set of scenarios where the standard device unlock gesture isn't the recommended approach for interactive re-authentication, and the user faces more UX friction with re-authentication. For accounts and devices that follow the preceding guidance, the recommended guidance for each scenario is: 
 
-![Diagram that illustrates security versus convenience with the authentication process that leads to passwordless sign-in.](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
+- **Step-up authentication**: Admins/power users might use a synced passkey, as described earlier, to bootstrap a new device if they initially access only low-risk or medium-risk applications. If they later want to access high-risk applications, they need to perform an interactive re-authentication flow with one of the other credential types suggested earlier.
+- **Compromised account**: If an admin believes a user's account is compromised, then any sessions that belong to the account should be invalidated, and potentially compromised credentials should be removed from the account. The user then need to re-authenticate with a credential of a type listed earlier that is still valid, or was issued to the correct user as a new credential.
+- **Adding new credentials**: If a user tries to add a new credential that can be used to bootstrap other devices, then Microsoft Entra ID risk engine may ask them to perform another interactive re-authentication step.
+- **Extended inactivity**: If a session is completely unused for an extended period, then the user needs to re-authenticate with a credential listed above.  However, this would primarily be to prevent against local attacks by (1) someone who knew the user's lock screen PIN, and (2) had access to a device the good user had not used for an extended period of time, and (3) didn't have access to a device the good user more frequently used, which wouldn't have this other check. Given that low likelihood, this extended period defaults to 90 days in Microsoft Entra ID.
+- **Transaction approval for specific high-risk actions**: If an admin/power-user is performing a high-risk action (such as large monetary transfer, or major software update to critical systems), then another interactive re-authentication may be used via authentication context as an added layer of protection against local malware. In such situations, we suggest forcibly invoking the lock screen as the lowest friction form of re-authentication. Note that malware could still trick users into performing re-authentication step no matter what credential type is used. In such cases we recommend also requiring a second employee, and on a different device, to review and approve the high-risk action.
+- **Policy exception**: The section on lock screens gives guidance for high/medium/low risk application types.  If your organization wants to give access to high-risk applications without MDM to some users, then the time period of access could be limited to a few hours (or at most days) using the Conditional Access sign-frequency feature that enforces interactive reauthentication to happen again after that time period.  However, we still advise avoiding that configuration for high-risk applications and instead rely on MDM.  One way to do that is to allow employees to use a physical device for low-medium risk applications that do not have MDM and then require them to SSO into a virtual device that does have MDM to access high-risk applications.  
+- **Other regulatory requirements**: Your organization may have regulatory requirements beyond the list above where SSO cannot be used, even after the user has performed the standard device unlock step.  Most such regulatory requirements take a while to be updated based on latest industry techniques such as the recommendations above. Until the requirements are updated, you can work with your compliance review process to accept the risk of instead following the guidance listed here. However, if you can't do that, you can use the features of Microsoft Entra ID Conditional Access to enforce another interactive re-authentication. In such situations, we suggest forcibly invoking the lock screen as the lowest friction form of re-authentication if that is an option in the regulations. If the regulation applies to an application that the employee is accessing on a virtual desktop, then Microsoft Entra ID has support for forcibly invoking the lock screen on the user's local device. If the regulatory requirement can't be met by forcibly invoking the lock screen, then you likely need to require interactive re-authentication using one of the credentials listed earlier.
 
-When users sign in without a password, they provide credentials by using methods like:
+## High assurance account recovery
 
-* Biometrics with Windows Hello for Business.
-* A FIDO2 security key.
+Account recovery is a critical component of your organization's security posture. The recovery process should be as strong as user authentication to prevent unauthorized access and preserve trust. For users protected by phishing-resistant authentication, such as passkeys (FIDO2) or certificate-based authentication, account recovery should be as robust as the initial onboarding process. This means you should perform strong identity verification and validation of account ownership as part of the recovery process.
 
-An attacker can't easily duplicate these authentication methods.
+In Microsoft Entra ID, we offer an integrated and seamless process for identity verification. Organizations can configure trusted partners to verify a user's identity, typically by presenting government-issued identification. After other validation steps, users can securely replace lost credentials, such as by registering a new passkey, to maintain account security throughout the recovery process. For more information, see [Overview of Microsoft Entra ID Account Recovery](concept-self-service-account-recovery.md).
 
-Microsoft Entra ID provides ways to natively authenticate by using passwordless methods to simplify the sign-in experience for users and reduce the risk of attacks.  
+For users who rely on passwords and don't have access to phishing-resistant methods, [self-service password reset (SSPR)](concept-sspr-deploy.md) remains available. To enhance security for these users, especially users with multifactor authentication (MFA) capability, we recommend requiring at least two distinct authentication methods to complete password reset. This layered approach reduces the risk of account compromise during recovery.
 
 ## Related content
 
-* To get started, see the [tutorial for Microsoft Entra SSPR][tutorial-sspr] and the [tutorial for Microsoft Entra MFA][tutorial-azure-mfa].
-* To learn more about SSPR concepts, see [How it works: Microsoft Entra self-service password reset][concept-sspr].
-* To learn more about MFA concepts, see [How it works: Microsoft Entra multifactor authentication][concept-mfa].
-
-<!-- INTERNAL LINKS -->
-[tutorial-sspr]: tutorial-enable-sspr.md
-[tutorial-azure-mfa]: tutorial-enable-azure-mfa.md
-[concept-sspr]: concept-sspr-howitworks.md
-[concept-mfa]: concept-mfa-howitworks.md
+* [Passkeys (FIDO2)](concept-authentication-passkeys-fido2.md)
+* [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md)

@@ -1,12 +1,12 @@
 ---
-title: Microsoft Entra ID Protection Proof-of-Concept Guidance
+title: Introduction to Microsoft Entra ID Protection proof-of-concept guidance
 description: Learn, deploy, and test Microsoft Entra ID Protection so that you can detect, investigate, and remediate identity-based risks.
 author: gargi-sinha
 manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/22/2025
+ms.date: 10/31/2025
 
 #CustomerIntent: As an IT admin, I want to learn, deploy, and test Microsoft Entra ID Protection so that I can detect, investigate, and remediate identity-based risks.
 ---
@@ -14,9 +14,10 @@ ms.date: 08/22/2025
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks. Detailed guidance for specific scenarios continues in these articles:
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
 This guide assumes you're running a PoC in a production environment. Running a PoC in a test environment might give you more flexibility. Follow the guidance in these articles to ensure a successful Microsoft Entra ID Protection PoC launch.
 
@@ -68,7 +69,7 @@ To kick off a Microsoft Entra ID Protection PoC, you need these prerequisites.
 
   - A test user who isn't an administrator to verify that policies work as expected before you deploy real users. To create a user, follow the steps in [How to create, invite, and delete users](../fundamentals/how-to-create-delete-users.yml).
 
-- A group of which the user is a member. To create a group, see [Create a group and add members in Microsoft Entra ID](../fundamentals/how-to-manage-groups.yml).
+- A group, and the user is a member. To create a group, see [Create a group and add members in Microsoft Entra ID](../fundamentals/how-to-manage-groups.yml).
 
 ## Identify use cases and plan configuration and testing
 
@@ -129,6 +130,8 @@ Microsoft 365 E5 covers these signals:
 
 ## Next steps
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* Introduction to Microsoft Entra ID Protection proof-of-concept guidance
+* [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
