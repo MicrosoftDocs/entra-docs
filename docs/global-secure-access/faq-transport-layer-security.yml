@@ -70,6 +70,8 @@ sections:
           } else {
           Write-Host "Git CA bundle path not found. Is Git installed and configured?"
           }
+          
+
           ```
       - question: What is certificate pinning, and how does it affect TLS inspection? 
         answer: |

@@ -68,7 +68,8 @@ TLS inspection has the following known limitations:
 - You can use only one active certificate at a time.
 - TLS inspection doesn't support Application-Layer Protocol Negotiation (ALPN) version 2. If a destination site requires HTTP/2, the upstream TLS handshake fails, and the site isn't accessible when TLS inspection is enabled.
 - TLS inspection doesn't follow Authority Information Access (AIA) and Online Certificate Status Protocol (OCSP) links when validating destination certificates.
-- Many mobile applications implement certificate pinning, which prevents successful TLS inspection and can lead to app failures. As a result, there is limited support for TLS inspection on mobile platforms. At this time, we recommend enabling TLS inspection for the Windows platform only."
+## Mobile platform
+- Many mobile applications implement certificate pinning, which prevents successful TLS inspection and can lead to app failures. As a result, there is limited support for TLS inspection on mobile platforms. At this time, we recommend enabling TLS inspection for the Windows platform only
 
 ## Related content
 
