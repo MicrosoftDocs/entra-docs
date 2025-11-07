@@ -261,12 +261,12 @@ Known limitations for Private Access include:
 Known limitations for Internet Access include:   
 - Admins can currently configure rules based on up to 1,000 total URLs.
 - Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
+- TLS inspection supports up to 100 TLS inspection policies, 1000 rules, and 8000 destinations.
 - The platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
 - The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To make sure that all traffic is routed to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
 - UDP isn't supported on this platform yet.
 - User-friendly end-user notifications are in development.
 - Remote network connectivity for Internet Access is in development.
-- Transport Layer Security (TLS) inspection is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
 
