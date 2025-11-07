@@ -77,10 +77,10 @@ To complete a catalog access review, you'd do the following steps:
 
 1. Select **Submit** to record your decisions.
 
-On the review end date, all decisions, excluding custom disconncetd resources, are automatically applied. 
+On the review end date, all decisions, excluding custom disconnected resources, are automatically applied. 
 
 ## Related content
 
-- [Create an access review of groups and applications in Microsoft Entra ID ](create-access-review.md)
+- [Create an access review of groups and applications in Microsoft Entra ID](create-access-review.md)
 
 
