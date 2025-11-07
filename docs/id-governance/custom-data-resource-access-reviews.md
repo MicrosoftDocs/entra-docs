@@ -1,7 +1,7 @@
 ---
-title: Include custom resource access data in the catalog for catalog User Access Reviews
+title: Include custom data provided resource in the catalog for catalog User Access Reviews
 ms.reviewer: jgangadhar
-description: Learn how to include custom resource access data in Microsoft Entra catalogs to create User Access Reviews for disconnected applications.
+description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create User Access Reviews for disconnected applications.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -9,12 +9,12 @@ ms.subservice: access-reviews
 ms.topic: "how-to" # Required; leave this attribute/value as-is
 ms.date: 11/05/2025
 
-#CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom resource access data for User Access Reviews..
+#CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews..
 ---
 
-# Include custom resource access data in the catalog for catalog User Access Reviews
+# Include custom data provided resource in the catalog for catalog User Access Reviews
 
-Learn how to manage access to disconnected applications by including custom resource access data in Microsoft Entra catalogs. This guide walks you through creating a catalog, adding custom resource access data, and setting up User Access Reviews (UARs) for applications not integrated with Microsoft Entra. By using this process, organizations can ensure governance over access to custom applications, enabling managers to make informed access decisions through the My Access portal.
+Learn how to manage access to disconnected applications by including the custom data provided resource in Microsoft Entra catalogs. This guide walks you through creating a catalog, adding custom data provided resource, and setting up User Access Reviews (UARs) for applications not integrated with Microsoft Entra. By using this process, organizations can ensure governance over access to custom applications, enabling managers to make informed access decisions through the My Access portal.
 
 ## License requirements
 
@@ -34,9 +34,9 @@ Learn how to manage access to disconnected applications by including custom reso
     Users see this information in an access package's details.
 1. Select **Create** to create the catalog.
 
-## Add a custom resource access data to a catalog
+## Add a custom data provided resource to a catalog
 
-With a catalog created, you can add custom resource access data to it by doing the following steps:
+With a catalog created, you can add custom data provided resource to it by doing the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -48,8 +48,8 @@ With a catalog created, you can add custom resource access data to it by doing t
 
 1. Select **Add resources**.
 
-1. Select the resource type:  **Custom resource access data**.
-    :::image type="content" source="media/custom-resource-data-access-reviews/custom-resource-access-data-information.png" alt-text="Screenshot of adding custom access resource data extension information.":::
+1. Select the resource type:  **custom data provided resource**.
+    :::image type="content" source="media/custom-data-resource-access-reviews/custom-data-provided-information.png" alt-text="Screenshot of adding custom access resource data extension information.":::
 1. On the resource page, enter:
    - **Resource name** – A name for the resource. 
    - **Description** – A description for the resource.  
@@ -85,29 +85,29 @@ After creating the catalog access review, but before uploading your custom data,
 1. Select the catalog access review you created.
 
 1. On the Access Review overview screen, copy the **Object ID**.
-    :::image type="content" source="media/custom-resource-data-access-reviews/access-review-object-id.png" alt-text="Screenshot of finding the access review object ID.":::
+    :::image type="content" source="media/custom-data-resource-access-reviews/access-review-object-id.png" alt-text="Screenshot of finding the access review object ID.":::
 1. Select the current instance of the access review on the access review overview screen.
 
 1. On the access review instance screen, save the instance **Object ID**.
-    :::image type="content" source="media/custom-resource-data-access-reviews/access-review-instance-object-id.png" alt-text="Screenshot of finding the access review instance object ID.":::
+    :::image type="content" source="media/custom-data-resource-access-reviews/access-review-instance-object-id.png" alt-text="Screenshot of finding the access review instance object ID.":::
 
 
 
 ## Upload custom data
 
 After copying both the Access review object, and access review instance object, IDs note that the status of the access review shows as **Initializing**.
-    :::image type="content" source="media/custom-resource-data-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
+    :::image type="content" source="media/custom-data-resource-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
 
 
 1. Return to the catalog you created and select **Resources**.
 
 1. On the resource screen for the catalog, select the custom data access resource you created, and select **Upload custom access data**.
-    :::image type="content" source="media/custom-resource-data-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
+    :::image type="content" source="media/custom-data-resource-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
 
-1. On the Upload access data for custom resource screen under **Basics**, enter in both the access review object ID, and the Access review instance object ID found in the section [Get Access Review Object and Instance ID](custom-resource-data-access-reviews.md#get-access-review-object-and-instance-id).
-    :::image type="content" source="media/custom-resource-data-access-reviews/upload-access-data-basics.png" alt-text="Screenshot of basic information for custom data access.":::
+1. On the Upload access data for custom resource screen under **Basics**, enter in both the access review object ID, and the Access review instance object ID found in the section [Get Access Review Object and Instance ID](custom-data-resource-access-reviews.md#get-access-review-object-and-instance-id).
+    :::image type="content" source="media/custom-data-resource-access-reviews/upload-access-data-basics.png" alt-text="Screenshot of basic information for custom data access.":::
 1. Under **Upload files** select up to 10 CSVs to include in the access data and select **Save**. 
-    :::image type="content" source="media/custom-resource-data-access-reviews/upload-access-data-files.png" alt-text="Screenshot of uploading files to custom access data.":::
+    :::image type="content" source="media/custom-data-resource-access-reviews/upload-access-data-files.png" alt-text="Screenshot of uploading files to custom access data.":::
     > [!NOTE]
     > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload. After two hours, the system transitions the review status to **Active**.
