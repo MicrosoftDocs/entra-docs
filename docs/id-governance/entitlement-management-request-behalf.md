@@ -31,7 +31,7 @@ Now, managers are empowered to request access on behalf of new hires who haven't
 
 ## Scenarios for requesting on behalf of agent identities (Preview)
 
-The ability for administrators to request on behalf of agent identities (IDs) they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent ID, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](manage-agent.md).
+The ability for administrators to request on behalf of agent identities (IDs) they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent ID, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](../agent-id/identity-platform/manage-agent.md).
 
 ## Prerequisites
 
