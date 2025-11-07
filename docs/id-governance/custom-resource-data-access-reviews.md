@@ -149,10 +149,6 @@ As reviewers take actions, the review progresses through several states:
 | Applying | Review decisions are being remediated. |
 | Applied | All decisions are marked as applied. |
 
-When the review status changes to **Applying**:
-- Customers can mark **individual decisions** as *Applied*, or mark the **entire review** as *Applied*, to indicate all access decisions are remediated.  
-- Once all decisions are applied, the review automatically updates to **Applied**, completing the review lifecycle.
-
 
 
 ## Timeframes summary
