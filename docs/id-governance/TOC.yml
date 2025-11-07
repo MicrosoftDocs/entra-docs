@@ -255,8 +255,6 @@
       items:
       - name: Delegate to catalog creators
         href: entitlement-management-delegate-catalog.md
-      - name: Manage Agents (Preview)
-        href: manage-agent.md
       - name: Add a connected organization
         href: entitlement-management-organization.md
       - name: Govern access for external users
@@ -330,7 +328,9 @@
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
-        href: entitlement-management-access-reviews-self-review.md  
+        href: entitlement-management-access-reviews-self-review.md
+      - name: Manage Agents (Preview)
+        href: manage-agent.md    
     - name: Requestors
       items:
       - name: Request access
