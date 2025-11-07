@@ -6,7 +6,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 10/22/2025
+ms.date: 11/06/2025
 ms.service: global-secure-access
 
 
@@ -225,6 +225,7 @@ Known limitations for remote networks include:
 - Universal Conditional Access lets you apply identity controls like requiring multifactor authentication, requiring a compliant device, or defining an acceptable sign-in risk to network traffic—not just cloud apps. These identity controls apply to devices with the Global Secure Access client installed. Remote network connectivity is a clientless approach where customers create an IPsec tunnel from their on-premises equipment to the Global Secure Access edge service. Network traffic from all devices at that remote network (or branch office) is sent to Global Secure Access through the IPsec tunnel. In other words, Conditional Access policies for Microsoft or Internet traffic are only enforced when a user has the Global Secure Access client.
 - Use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity supports only Microsoft Entra Internet Access.
 - Internet over remote network connectivity is supported only in the specific regions listed in the **Region** drop-down when you create a remote network.
+- The [Custom Bypass](how-to-manage-internet-access-profile.md#internet-access-traffic-forwarding-profile-policies) feature in the Internet traffic forwarding profile doesn't work with remote network connectivity. You must manually bypass specific URLs from your Customer Premises Equipment (CPE).
 
 ## Access controls limitations
 Known limitations for access controls include:   
@@ -267,7 +268,6 @@ Known limitations for Internet Access include:
 - Transport Layer Security (TLS) inspection is in development.
 - URL path-based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
-- The [Custom Bypass](how-to-manage-internet-access-profile.md#internet-access-traffic-forwarding-profile-policies) feature in the Internet traffic forwarding profile doesn't work with remote network connectivity. You must manually bypass specific URLs from your Customer Premises Equipment (CPE).
 
 ## B2B guest access (preview) limitations
 <a name="b2b-guest-access-limitations"></a>
