@@ -16,6 +16,9 @@ ms.custom: it-pro, sfi-image-nochange
 
 Microsoft Entra External ID offers solutions that let you quickly add intuitive, user-friendly sign-up and sign-up experiences for your consumer and business customer apps. The Woodgrove Groceries demo environment illustrates several of the most common authentication experiences that can be configured for your apps.
 
+> [!NOTE]
+> The Woodgrove demo is currently unavailable and may work intermittently. This is a temporary issue while we implement a permanent fix. We apologize for the inconvenience.
+
 ## Use cases
 
 ### Sign-up with an email and password

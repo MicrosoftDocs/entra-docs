@@ -6,20 +6,20 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 10/28/2025
 
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: calui
+ms.reviewer: kimhana
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand... 
 
 ---
-# Register a passkey (FIDO2)
+# Register a passkey (FIDO2) with a FIDO2 security key
 
-This article shows how to register a passkey as an authentication method. 
+This article shows how to register a passkey as an authentication method by using a FIDO2 security key. 
 
 ## First-time registration
 

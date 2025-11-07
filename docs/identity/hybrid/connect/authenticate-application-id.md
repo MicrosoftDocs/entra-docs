@@ -49,7 +49,7 @@ In the Bring Your Own Application (BYOA) setup, administrator manages the applic
 
 The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics). The application needs the required permissions configured. To configure the required permissions on the application, you can use Microsoft Graph API or PowerShell. In this section, we'll use Microsoft Graph API.
 
- - `ConnectSyncAppId` refers to the application (client) ID of the application for which we want to configure permissions.
+- `ConnectSyncAppId` refers to the application (client) ID of the application for which we want to configure permissions.
  - `SynchronizationServiceAppId` refers to the application (client) ID for **Microsoft Entra AD Synchronization Service**. The value is `6bf85cfa-ac8a-4be5-b5de-425a0d0dc016` for all clouds.
  - `PasswordResetServiceAppId` refers to the application (client) ID for **Microsoft password reset service**. The value is `93625bc8-bfe2-437a-97e0-3d0060024faa` for all clouds except Arlington where it's `2e5ecfc8-ea79-48bd-8140-c19324acb278`.
 
@@ -372,7 +372,7 @@ If you want to configure application-based authentication using the default opti
 
 Microsoft Entra Connect warns if the certificate rotation is due. That is, if expiration is less than or equal to 150 days. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
 
-This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if the scheduler is suspended.
+This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncScheduler` to see if the scheduler is suspended.
 
 ### Automatic
 

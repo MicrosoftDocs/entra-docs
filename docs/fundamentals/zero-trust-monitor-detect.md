@@ -36,6 +36,9 @@ The first step to aligning with this pillar is to configure diagnostic settings 
 ### All high-risk sign-ins are triaged
 [!INCLUDE [21863](../includes/secure-recommendations/21863.md)]
 
+### All risky workload identities are triaged
+[!INCLUDE [21862](../includes/secure-recommendations/21862.md)]
+
 ### All user sign-in activity uses strong authentication methods
 [!INCLUDE [21800](../includes/secure-recommendations/21800.md)]
 

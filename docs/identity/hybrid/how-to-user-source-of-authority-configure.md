@@ -23,7 +23,7 @@ This article explains the prerequisites, and steps, to configure User Source of 
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of users.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
 | **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to consent to this permission](how-to-user-source-of-authority-configure.md#consent-permission-to-apps) using the Microsoft Entra Admin Center. |
 | **License needed** | Microsoft Entra Free license. |
-| **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760) |
+| **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). To use Contact SOA, version [2.5.79.0](../../identity/hybrid/connect/reference-connect-version-history.md#25790).  |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
 
 
@@ -56,6 +56,9 @@ You can consent permission in the Microsoft Entra admin center. This highly priv
 
 Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permission to the corresponding app. For more information about how to add new permissions to your app registration and grant consent, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions). 
 
+> [!NOTE]
+> To transfer SOA of a Contact, the required permission is `Contacts-OnPremisesSyncBehavior.ReadWrite.All`.
+
 ### Use Microsoft Entra admin center to consent permission to apps 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
@@ -83,6 +86,9 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 
 
 ## Transfer SOA for a test user
+
+> [!NOTE]
+> You're also able to transfer contact SOA using the `https://graph.microsoft.com/v1.0/contacts` API endpoint.
 
 Follow these steps to transfer the SOA for a test user:
 
@@ -194,56 +200,6 @@ Follow these steps to transfer the SOA for a test user:
 1. Open Event viewer and filter the Application log for event ID 6956. This event ID is reserved to inform the customers that the object isn't synced to the cloud because the SOA of the object is in the cloud.
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
-
-
-## Bulk updates for user SOA
-
-You can use the following PowerShell script to automate User SOA updates by using app-based authentication.
-
-```powershell
-# Define your Microsoft Entra ID app details and tenant information
-$tenantId = ""
-$clientId = ""
-$certThumbprint = ""
-
-# Connect to Microsoft Graph as App-Only using a certificate. The app registration must have the User.Read.All User-OnPremisesSyncBehavior.ReadWrite.All permissions granted.
-Connect-MgGraph -ClientId $clientId -TenantId $tenantId -CertificateThumbprint $certThumbprint
-
-#Connect to Microsoft Graph using delegated permissions
-#Connect-MgGraph -Scopes "User.Read.All User-OnPremisesSyncBehavior.ReadWrite.All" -TenantId $tenantId
-
-# Define the user name you want to query
-$userName = "Ken Roy"
-
-# Retrieve the user using user name
-$user = Get-MgBetaUser -Filter "displayName eq '$userName'"
-
-# Ensure user is found
-if ($null -ne $user)
-{
-    $userObjectID = $($user.Id)
-    # Define the Microsoft Graph API endpoint for the user
-    $url = "https://graph.microsoft.com/beta/users/$userObjectID/onPremisesSyncBehavior"
-
-    # Define the JSON payload for the PATCH request
-    $jsonPayload = @{
-        isCloudManaged = "true"
-    } | ConvertTo-Json
-
-    # Make the PATCH request to update the JSON payload
-    Invoke-MgGraphRequest -Uri $url -Method Patch -ContentType "application/json" -Body $jsonPayload
-
-    $result = Invoke-MgGraphRequest -Method Get -Uri "https://graph.microsoft.com/beta/users/$userObjectID/onPremisesSyncBehavior?`$select=id,isCloudManaged"
-
-    Write-Host "User Name: $($user.DisplayName)"
-    Write-Host "User ID: $($result.id)"
-    Write-Host "SOA Converted: $($result.isCloudManaged)"
-}
-else 
-{
-    Write-Warning "User '$userName' not found."
-}
-```
 
 
 ### Status of attributes after you transfer SOA
