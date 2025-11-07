@@ -112,7 +112,7 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 
 ## Exclusions and inclusions for SPNs
 
-When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN from the Microsoft Entra Admin Center or in the `localpolicy` file. Any exlcusions or inclusions configured from the Admin Center will be present in the the `cloudpolicy` file.
+When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN from Microsoft Entra Admin Center or in the `localpolicy` file. Any exlcusions or inclusions configured from the Admin Center will be present in the `cloudpolicy` file.
 
 > [!NOTE]
 > Both `cloudpolicy` and `localpolicy` are evaluated for access.
@@ -125,13 +125,13 @@ Exclusions allow specific users or machines to access configured SPNs without re
 
 - Client IP address
 - IP address ranges
-- On-premises User Principal Name (UPN) such as `username@domain`. UPN is supported with Private Access Sensor version 2.1.31 or higher and is case insensitive. Username, which is the first part of the UPN, is supported with the previous sensor versions and can be added in the `localpolicy`file only. We highly recommend using the UPNs instead of userrnames. 
+- On-premises User Principal Name (UPN) such as `username@domain`. UPN is supported with Private Access Sensor version 2.1.31 or higher and is case insensitive. Username, which is the first part of the UPN, is supported with the earlier sensor versions and can be added in the `localpolicy`file only. We highly recommend using the UPNs instead of usernames. UPNs for on-premise users that are synced to Entra can be added from Microsoft Entra Admin Center. UPNs for on-premise users that are not synced can only be added to the `localpolicy` file.
 
 You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple usernames for an SPN.
 
 ### Inclusions
 
-If you need to allow access for many users, you can instead specify an inclusion list for each SPN. When you configure included users for an SPN, only those users are required to have the Global Secure Access client. Users not included in the list can access the SPN without the client.
+If you need to allow access for many users, you can instead specify an inclusion list of UPNs for each SPN. When you configure included users for an SPN, only those users are required to have the Global Secure Access client. Users not included in the list can access the SPN without the client.
 
 > [!IMPORTANT]
 > An SPN can have either an inclusion list of UPNs or an exclusion list of UPNs, but not both.
