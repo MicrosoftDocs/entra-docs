@@ -70,7 +70,7 @@ If the user sees a red error message on the TAP screen and doesn't get a TAP iss
 
 ### User might not see the Recover your account option when they choose other ways to sign in 
 
-Account recovery is designed for actively used accounts that have prior authentication events. Upon enabling or changing the scope of account recovery, users may need to complete an initial authentication before the recovery option is made available. If evaluating recovery with a test account, ensure the user authenticates first before attempting account recovery. 
+Account recovery is designed for actively used accounts that have prior authentication events. After you enable or change the scope of account recovery, users might need to complete an initial authentication before the recovery option is made available. If evaluating recovery with a test account, ensure the user authenticates first before attempting account recovery. 
 
 If you still don't see the **Recover your account** when you sign in later, make sure that the group you include in the account recovery profile (for example, Engineering) has all the users you want to allow for self-service recovery in it. If they aren't part of the selected group, then they won't be offered the recovery task during login.
 
@@ -105,7 +105,7 @@ As part of account recovery, the photo in the presented Verified ID is matched a
 
 ### Temporary Access Pass code issues following Identity Verification document validation
 
-After the user has shared their Verified ID with Microsoft Entra, we attempt an account validation and match against the verified claims in the ID issued by your Identity Verification Provider. This error may be present when account ownership could not be confirmed—often due to mismatches between the first and last names in the user's profile and those on the ID. Differences such as "John" versus "Jonathan", or complex surnames, might cause these issues. Admins can resolve this during the preview by updating profile information. Another possible cause is improper Temporary Access Pass issuance group configuration for users in recovery. Check the Authentication methods policy and confirm that users in scope for recovery are also enabled for the Temporary Access Pass method. 
+After the user has shared their Verified ID with Microsoft Entra, we attempt an account validation and match against the verified claims in the ID issued by your Identity Verification Provider. This error may be present when account ownership couldn't be confirmed—often due to mismatches between the first and last names in the user's profile and those on the ID. Differences such as "John" versus "Jonathan", or complex surnames, might cause these issues. Admins can resolve this during the preview by updating profile information. Another possible cause is improper Temporary Access Pass issuance group configuration for users in recovery. Check the Authentication methods policy and confirm that users in scope for recovery are also enabled for the Temporary Access Pass method. 
 
 :::image type="content" border="true" source="media/how-to-account-recovery-for-users/copy-code.png" alt-text="Screenshot that shows an error when trying to copy the TAP code." lightbox="media/how-to-account-recovery-for-users/copy-code.png":::   
  
