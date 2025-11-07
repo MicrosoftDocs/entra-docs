@@ -51,8 +51,8 @@ With a catalog created, you can add custom resource access data to it by doing t
 1. Select the resource type:  **Custom resource access data**.
     :::image type="content" source="media/custom-resource-data-access-reviews/custom-resource-access-data-information.png" alt-text="Screenshot of adding custom access resource data extension information.":::
 1. On the resource page, enter:
-   - **Resource name** – Example: *FinanceApp_CSV*.  
-   - **Description** – Example: *Custom BYOD application data provided via CSV upload.*  
+   - **Resource name** – A name for the resource. 
+   - **Description** – A description for the resource.  
 1. Select **Save**.
 
 ## Create a User Access Review
@@ -76,21 +76,64 @@ With a catalog created, you can add custom resource access data to it by doing t
 1. Select **Create**. 
 
 
+## Get Access Review Object and Instance ID
+
+After creating the catalog access review, but before uploading your custom data, you must get both the Access Review object ID, and the Access Review instance object ID. To get this information, you'd do the following:
+
+1. Browse to **ID Governance** > **Access Reviews**.
+
+1. Select the catalog access review you created.
+
+1. On the Access Review overview screen, copy the **Object ID**.
+    :::image type="content" source="media/custom-resource-data-access-reviews/access-review-object-id.png" alt-text="Screenshot of finding the access review object ID.":::
+1. Select the current instance of the access review on the access review overview screen.
+
+1. On the access review instance screen, save the instance **Object ID**.
+    :::image type="content" source="media/custom-resource-data-access-reviews/access-review-instance-object-id.png" alt-text="Screenshot of finding the access review instance object ID.":::
+
+
+
 ## Upload custom data
 
-When the review is created, its **status** shows as **Initializing**.
+After copying both the Access review object, and access review instance object, IDs note that the status of the access review shows as **Initializing**.
     :::image type="content" source="media/custom-resource-data-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
-1. On the resource screen for the catalog, select the custom data access resource you created and select **Upload custom access data**.
+
+
+1. Return to the catalog you created and select **Resources**.
+
+1. On the resource screen for the catalog, select the custom data access resource you created, and select **Upload custom access data**.
     :::image type="content" source="media/custom-resource-data-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
 
-1. On the Upload access data for custom resource screen under **Basics**, enter in both the access review object ID, and the Access review instance object ID. Both of these can be found under the essentials section when selecting either an access review, or access review instance.
-
+1. On the Upload access data for custom resource screen under **Basics**, enter in both the access review object ID, and the Access review instance object ID found in the section [Get Access Review Object and Instance ID](custom-resource-data-access-reviews.md#get-access-review-object-and-instance-id).
+    :::image type="content" source="media/custom-resource-data-access-reviews/upload-access-data-basics.png" alt-text="Screenshot of basic information for custom data access.":::
 1. Under **Upload files** select up to 10 CSVs to include in the access data and select **Save**. 
+    :::image type="content" source="media/custom-resource-data-access-reviews/upload-access-data-files.png" alt-text="Screenshot of uploading files to custom access data.":::
     > [!NOTE]
     > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload. After two hours, the system transitions the review status to **Active**.
 
-At the **Active** stage:
+
+If the review has data uploaded it enters the **Applying** state. In the **Applying** state, you manually get a list of denied users by making the following API call:
+
+``` http
+GET /identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions?$filter=(decision eq ‘Deny’ and resourceId eq ‘<custom data provided resource ID>’)
+```
+
+For each decision item: 
+
+Remove access from your own system and Patch each decision item to indicate success or failure for removal by making the following API call:
+
+``` http
+PATCH /identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions/{decision ID}
+{ “applyResult” : “Success/Failure/PartialSuccess/NotSupported”, “applyDescription”: “ServiceNow ticket created” }
+```
+
+The review transition to the **Applied** state once all the custom data provided decisions have been applied. For example, if you have five decisions that must be made from the data, you must apply(PATCH) five decisions before the review will transition to **Applied**.
+
+
+## Active review state
+
+After the **Applied** stage, the access review enters the **Active** stage. At the **Active** stage:
 - Reviewers receive an email notification.
 - They can sign in to the [My Access portal](https://myaccess.microsoft.com) to view and complete their review decisions.
 
