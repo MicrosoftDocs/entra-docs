@@ -4,7 +4,7 @@ description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/06/2025
 ms.author: justinha
 author: hanki71
 manager: dougeby
@@ -32,7 +32,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 - Users must complete multifactor authentication (MFA) within the past five minutes before they can register a passkey (FIDO2).
 - Users need an authenticator that supports Microsoft Entra ID's attestation requirements. For more information, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
-- Passkey profiles require Microsoft Authenticator iOS version 6.8.37 to be installed by end user client devices.
+- If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
 - Policy size limit:
   - The Authentication methods policy supports a size limit of 20KB. You can't save more passkey profiles after the size limit is reached. To check the size, use the [Get authenticationMethodsPolicy Microsoft Graph API](/graph/api/authenticationmethodspolicy-get) to retrieve the JSON for the Authentication methods policy. Save the output as a .txt file, then right-click and select **Properties** to view the file size.
   - Reference sizes:
@@ -124,7 +124,7 @@ For more information about how to use Graph Explorer to apply a passkey profile 
 ## Examples of use cases for passkey profiles
 
 >[!NOTE] 
->At least Microsoft Authenticator iOS v6.8.37 or Android v. 6.2507.4749 are needed to work with passkey profiles.
+>If a passkey profile for both device-bound and synced passkeys targets Microsoft Authenticator, users need to run Microsoft Authenticator iOS version 6.8.37 or Android version 6.2507.4749.
 
 ###  Special consideration for high-privileged accounts
 
