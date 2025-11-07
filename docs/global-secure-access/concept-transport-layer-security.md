@@ -75,7 +75,7 @@ TLS inspection has the following known limitations:
 
 * [Configure Transport Layer Security Policies](how-to-transport-layer-security.md)
 
-* [Configure TLS settings](how-to-configure-tls-settings.md)
+* [Configure Transport Layer Security Settings](how-to-configure-tls-settings.md)
 
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
 
