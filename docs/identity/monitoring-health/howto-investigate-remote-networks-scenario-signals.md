@@ -71,8 +71,6 @@ To investigate a signal, gather the following data:
 
     - Select the **Global Secure Access remote network connectivity** scenario.
 
-**<u>\<\<TODO\>\> Show the sample health image</u>**
-
 2.  Review your Remote network health logs.
 
     - [How to use the remote network health logs - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-remote-network-health-logs?tabs=microsoft-entra-admin-center)

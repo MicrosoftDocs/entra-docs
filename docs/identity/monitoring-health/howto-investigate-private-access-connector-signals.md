@@ -71,8 +71,6 @@ To investigate a signal, gather the following data:
 
     - Select the **Private application access requiring Microsoft Entra Private Access connector** scenario.
 
-**<u>\<\<TODO\>\> Show the sample health image</u>**
-
 3.  Review your Microsoft Entra Private Access connector status.
     - See [Microsoft Entra private network connectors maintenance](/entra/global-secure-access/concept-connectors#maintenance)
 

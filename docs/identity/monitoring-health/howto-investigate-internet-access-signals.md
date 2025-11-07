@@ -71,8 +71,6 @@ To investigate a signal, gather the following data:
 
     - Select the **Internet applications blocked by Entra Internet Access Policy** scenario.
 
-**<u>\<\<TODO\>\> Show the sample health image</u>**
-
 3.  Review your Microsoft Entra Internet Access content filtering policies. For more information, see [How to configure Global Secure Access web content filtering - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-configure-web-content-filtering).
 
 4.  Review Microsoft Entra Internet Access forwarding profile for access policies and user assignments. For more information, see [How to manage the Internet Access profile - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-manage-internet-access-profile).
