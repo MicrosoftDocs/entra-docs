@@ -59,8 +59,8 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 Create a new Enterprise Application or use Quick Access to publish the domain controllers using their IP addresses or Fully Qualified Domain Name (FQDN). Publishing the DCs lets the Global Secure Access clients obtain Kerberos tickets. In addition, use Quick Access to configure SPNs. In this example, Quick Access is used to configure both.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Go to **Global Secure Access** > **Applications** > **Quick Access** and then select **Add Quick Access application segment**. Use port `88` and select **TCP**.
-1. Add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
+1. Go to **Global Secure Access** > **Applications** > **Quick Access** > and **Application segment** then select **Add Quick Access application segment**. Use port `88` and select **TCP**.
+1. Go to **Service principal name** and then select **Add Service principal name** to add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
 
 ![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers.](media/how-to-configure-domain-controllers/quick-access-settings.png)
 
