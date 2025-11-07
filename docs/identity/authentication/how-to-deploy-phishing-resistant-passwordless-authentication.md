@@ -28,17 +28,12 @@ User persona | Description
 Admins and highly regulated users  | <li>Admins with directory roles or can perform highly privledged actions. </li><li>Users who have access to sensitive data, critical information or computing systems. </li><li> Users who work in highly regulated organizations.</li><li> DevOps workers or DevSecOps workers who manage and deploy automations.</li>
 Non-admins| <li>Users in the organization that do not have access to customer data, critical information, or computing systems.</li>
 
-
-
 Microsoft recommends that you broadly deploy phishing-resistant passwordless authentication across your organization. We recomend you start your deployment with one of the user persona's first. 
 
-
 Microsoft recommends that you categories your users based on these personas, and then place users into a Microsoft Entra ID groups specifically for that user persona. These groups are used in later steps to [roll out credentials](~/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md#drive-usage-of-phishing-resistant-credentials) 
-to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](~/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md#enforce-phishing-resistant-methods-for-sign-in).
+to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
 
 Using groups you can continue to onboard new parts of the organisation simultaneously. Take the approach of "*don’t let perfect be the enemy of good*" and deploy secure credentials as much as possible. As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
-
-
 
 ## Plan device readiness
 
@@ -53,7 +48,7 @@ Devices are an essential aspect of any successful phishing-resistant passwordles
 These versions natively integrate with features like passkeys, Windows Hello for Business, and macOS Platform Credential. Older operating systems may require external authenticators, like FIDO2 security keys, to support phishing-resistant paswordless authentication.
 
 For more details, become familiar with [FIDO2 supportability for Microsoft Entra ID](/entra/identity/authentication/concept-fido2-compatibility).
-You can you the [phishing-resistent paswordless workbook (Preview)](/authentication/how-to-deploy-phishing-resistant-passwordless-authentication#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to understand the device readiness within your tenant.
+You can you the [phishing-resistent paswordless workbook (Preview)](how-to-deploy-phishing-resistant-passwordless-authentication.md#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to understand the device readiness within your tenant.
 
 
 ## Phishing Resistent Journey
@@ -76,14 +71,14 @@ Credentials | Description | Benefits | Authentication Methods|
 **Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate using the device’s own unlock gesture like Face ID or Windows Hello for Business face/fingerprint/PIN..|<li>Windows Hello For Business</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
 
 
-- For *new users*, the registration and bootstrapping process takes a user with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#enforce-phishing-resistant-methods-for-sign-in).
+- For *new users*, the registration and bootstrapping process takes a user with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
 - For *existing users*, they must register for phishing-resistant passwordless on their existing devices , or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. 
 
 The end goal is the same for both types of users - most users should have at least one **portable** credential, and then **local** credentials on each computing device. 
 
 
 > [!Note]
-> It is always recommended that users have at least two authentication methods registered. This ensures the user has a backup method available if something happens to their primary method, such as in cases of device loss or theft. For example, it is a good practice for users to have a passkey registered and a local credential such as Windows Hello for Business on their workstation 
+> It's always recommended that users have at least two authentication methods registered. This ensures the user has a backup method available if something happens to their primary method, such as in cases of device loss or theft. For example, it is a good practice for users to have a passkey registered and a local credential such as Windows Hello for Business on their workstation 
 
 
 ### Step 1: Identity verification
