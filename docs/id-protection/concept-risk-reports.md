@@ -69,8 +69,6 @@ To learn more about when to take each of these actions, see [How does Microsoft 
 
 ID Protection can help you identify risky agents in your organization. This report includes all identities within the [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) platform. The **Risky Agents** report provides an overview of the risk detections for each agent, with tools to help you take action directly from the report.
 
-[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
-
 **Risky agent details** include:
 - Agent display name
 - Risk state and risk level
@@ -111,7 +109,8 @@ With the information provided by the Risk detections report, administrators can 
 - Attack type based on MITRE ATT&CK framework
 - Other risks triggered at the same time
 - Sign-in attempt location
-- Link out to more detail from Microsoft Defender for Cloud Apps.
+- Link to more detail from Microsoft Defender for Cloud Apps
+- [Agent detections](concept-risky-agents.md) (Preview)
 
 Administrators can then choose to return to the user's risk or sign-ins report to take actions based on information gathered.
 

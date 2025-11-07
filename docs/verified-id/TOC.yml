@@ -80,10 +80,14 @@
     href: using-wallet-library.md
   - name: Using the Request Service REST API
     href: get-started-request-api.md
-  - name: IDV partners
-    href: idv-partners.md
-  - name: Services partners
-    href: services-partners.md
+  - name: Verified ID partner ecosystem
+    items:
+    - name: IDV partners
+      href: idv-partners.md
+    - name: Services partners
+      href: services-partners.md
+    - name: Integration guidance
+      href: integration-guidance.md
 - name: Samples
   expanded: true
   items:

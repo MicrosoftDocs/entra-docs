@@ -14,9 +14,7 @@ ms.reviewer: kvenkit
 --- 
 # Block access by high-risk agent identities
 
-This Conditional Access policy template blocks agent identities that are detected as high risk by Microsoft Entra ID Protection, helping prevent potentially compromised AI agents from accessing your organization's resources.
-
-[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
+This Conditional Access policy template blocks agent identities that are detected as high risk by [Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents), helping prevent potentially compromised AI agents from accessing your organization's resources.
 
 [!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
 
