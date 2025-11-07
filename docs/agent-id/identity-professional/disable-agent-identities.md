@@ -297,7 +297,7 @@ To disable use of Copilot Studio and creation of Agent IDs, you can restrict age
     - Prevent users from signing up for free trials, which prevents creation of trial environments.
     - Creation of Copilot Studio environments requires the Power Platform Administrator role. Remove access to environments and ability to create new environments.
 - Data policies:
-    - Apply policies that prevent agents from being published, so nobody can chat with an agent. Note: This does **not** block agent creation.
+    - Apply policies that prevent agents from being published, so nobody can chat with an agent. This does **not** block agent creation.
 
 See Copilot Studio documentation for details, which [recommends using data policies](/microsoft-copilot-studio/security-faq#can-i-disable-microsoft-copilot-studio-agent-creation-in-my-organization).
 
