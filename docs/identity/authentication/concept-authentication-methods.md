@@ -80,7 +80,6 @@ These other verification methods can be used in certain scenarios:
 
 - [Plan a phishing-resistant MFA deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 - [How Microsoft Entra multifactor authentication works](concept-mfa-howitworks.md)
-- [How Microsoft Entra self-service password reset works](concept-sspr-howitworks.md)
 - [Microsoft Graph REST API authentication methods](/graph/api/resources/authenticationmethods-overview)
 
 
