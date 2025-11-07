@@ -6,17 +6,17 @@ manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 08/18/2025
+ms.date: 11/06/2025
 ms.author: barclayn
 ms.custom: it-pro
 ---
 
 # Bulk operations in Microsoft Entra ID (Preview)
 
-The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups** and **Devices**. This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
+The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups**, **Devices, Administrative Unit and Role assignments.** This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 
 > [!NOTE] 
-> The new bulk operations service currently only supports **Groups**, **Devices**, and **Users** export. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is not supported.
+> The new bulk operations service currently only supports **Groups**, **Devices**, **Users** export, **Administrative Unit and Role assignment**. Support for additional entities like **Enterprise applications** will be added in a future update. Localization for templates is partially supported(exported csv will not have localization template but import and remove is supported). Additionally, guest users cannot initiate bulk operations.
 
 For information about limitations and to learn more about the previous Bulk Operations experience, see [Bulk operations service limitations](bulk-operations-service-limitations.md).
 
@@ -163,6 +163,81 @@ To delete completed or failed bulk operations:
 
 You can bulk export users following the steps in [Download a list of users in Microsoft Entra admin center](~/identity/users/users-bulk-download.md).
 
+## Add users to an administrative unit in a bulk operation
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+
+2. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
+
+3. Select the administrative unit you want to add users to.
+
+4. Select **Users** > **Bulk operations** > **Bulk add members**.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-bulk-add-members.png" alt-text="Screenshot of the Users page for assigning users to an administrative unit as a bulk operation.":::
+
+5. In the **Bulk add members** pane, download the comma-separated values (CSV) template. Update and format the CSV as follows:
+
+    Entries: Object Ids or UPN of members to add to the Admin Unit. Rename the file if desired, then select and upload the edited file.
+
+6. Click **Submit** after successful upload.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-submit-upload.png" alt-text="Screenshot of the bulk add members submission screen.":::
+
+7. Verify the notification message and ensure the job was submitted successfully.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-success-notification.png" alt-text="Screenshot of success notification for bulk add members operation.":::
+
+8. Click on 'Success' to navigate to Bulk Jobs List to view bulk job status and find the submitted job (could do this by sort by creation time), click to download.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-bulk-jobs-list.png" alt-text="Screenshot of the bulk jobs list showing the completed operation.":::
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-download-results.png" alt-text="Screenshot of downloading the bulk operation results.":::
+
+> [!NOTE]
+> Verify if the correct object ids were added to the admin unit successfully. Refresh the UX if needed to see the updated state; it takes some time to reflect especially when adding groups to Admin Unit.
+>
+> If the input includes an invalid Object ID or one already assigned to this admin unit, the bulk operation status will show "Failed" instead of "Success" due to not all rows successfully processed. In the results csv, you will see the failure reason as 'The request was malformed or contains invalid parameters'. This is most likely due to the object being already assigned to this admin unit pre-operation. Other valid rows should still be processed successfully, please verify accordingly.
+
+## Remove users from an administrative unit in a bulk operation
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+
+2. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
+
+3. Select the administrative unit that you want to remove users from.
+
+4. Select **Users** > **Bulk operations** > **Bulk remove members**.
+
+    :::image type="content" source="Media/bulk-operations/admin-unit-bulk-remove-members.png" alt-text="Screenshot of Users page that shows the Bulk remove members link.":::
+
+5. In the **Bulk remove members** pane, download the comma-separated values (CSV) template.
+
+6. Do not change the first row of the template, and for each row fill in objectID or UPN of the users/devices/groups that you want to remove.
+
+7. Save your changes and upload the CSV file.
+
+8. Select **Submit**.
+
+## Download Role Assignment
+
+To download all active role assignments across all roles, including built-in and custom roles, follow these steps.
+
+1. On the **Roles and administrators** page, select **All roles**.
+
+2. Select **the Download assignments**.
+
+3. Click on 'Success' to navigate to Bulk Jobs List to view bulk job status and find the submitted job (could do this by sort by creation time), click to download.
+
+    :::image type="content" source="Media/bulk-operations/role-assignment-bulk-jobs-list.png" alt-text="Screenshot of bulk jobs list for role assignment download.":::
+
+    :::image type="content" source="Media/bulk-operations/role-assignment-download-results.png" alt-text="Screenshot of downloading role assignment results.":::
+
+4. Sample output:
+
+    :::image type="content" source="Media/bulk-operations/role-assignment-sample-output.png" alt-text="Screenshot of sample role assignment CSV output.":::
+
+> [!NOTE]
+> Filters and sorting are **not** supported for this bulk job type; this downloads all role assignments.
 
 ## Related content
 

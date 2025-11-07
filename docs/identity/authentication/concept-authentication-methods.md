@@ -4,7 +4,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 11/07/2025
 ms.author: justinha
 author: sipower
 ms.reviewer: jupetter
@@ -30,22 +30,16 @@ The following table lists phishing-resistant and phishable authentication method
 
 Strength | Methods
 ---------|--------
-Phishing-resistant | Windows Hello for Business, Platform Credential for macOS, synced passkeys (FIDO2), FIDO2 security keys, passkey in Microsoft Authenticator, certificate-based authentication (CBA)
-Phishable | Password, SMS/Voice call, Authenticator push notifications, Authenticator passwordless sign-in, Temporary Access Pass (TAP), software-based and hardware-based OATH tokens
+Phishing-resistant | Windows Hello for Business, Platform Credential for macOS, synced passkeys (FIDO2) (preview), FIDO2 security keys, passkeys in Microsoft Authenticator, certificate-based authentication (CBA)
+Phishable | Password, SMS/Voice call, Authenticator push notifications, Authenticator passwordless sign-in, Temporary Access Pass (TAP), software-based and hardware-based OATH tokens (preview)
 
-## Using multifactor authentication
+## Available authentication methods
 
-You should register users for both MFA and self service password reset (SSPR). To simplify this, we recommend you [enable combined security information registration](howto-registration-mfa-sspr-combined.md). 
+In Microsoft Entra ID, administrators can configure authentication methods available for their users to prove their identity when they access an application, device, or service. 
 
-For resiliency, we recommend that you require users to register multiple authentication methods, and prioritize phishing-resistant credentials. When one method isn't available for a user during sign-in or SSPR, they can choose another method.
+Some authentication methods can be used as the primary factor when you sign in to an application or device, such as using Windows Hello for Business or a FIDO2 security key. Other authentication methods are only available as a secondary factor when you use Microsoft Entra multifactor authentication (MFA) or self service password reset (SSPR). 
 
-When you deploy phishing-resistant methods, plan how to onboard new user accounts and how to bootstrap current users. For more information, see [plan and deploy phishing-resistant MFA](how-to-deploy-phishing-resistant-passwordless-authentication.md).
-
-## Primary and secondary factors for sign-in
-
-In Microsoft Entra ID, administrators can configure authentication methods available for their users to prove their identity when they access an application, device, or service. Each method offers a different level of security and user experience. Organizations can require one or more authentication methods to ensure only authorized users gain access.
-
-Some authentication methods can be used as the primary factor when you sign in to an application or device, such as using a FIDO2 security key or a password. Other authentication methods are only available as a secondary factor when you use Microsoft Entra multifactor authentication or SSPR.
+You should register users for both MFA and SSPR. To simplify this, we recommend you enable [combined security information registration](concept-registration-mfa-sspr-combined.md). 
 
 The following table outlines when an authentication method can be used during a sign-in event.
 
@@ -54,8 +48,8 @@ The following table outlines when an authentication method can be used during a 
 |--------------------------------|:----------------------:|:-------------------------:|
 | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes   | MFA<sup>1</sup>  |
 | Platform Credential for macOS   | Yes               | MFA |
-| [FIDO2 security key](concept-authentication-passkeys-fido2.md)  | Yes                    | MFA             |
-| [Microsoft Authenticator passkey](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
+| [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md)  | Yes                    | MFA             |
+| [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
 | [Synced passkey (preview)](concept-authentication-passkeys-fido2.md)| Yes                 | MFA           |
 | [Certificate-based authentication](concept-certificate-based-authentication.md)| Yes            | MFA                       |
 | [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md#passwordless-sign-in-via-notifications)| Yes | No<sup>2</sup>|
@@ -67,10 +61,10 @@ The following table outlines when an authentication method can be used during a 
 | [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md)    | Yes                    | MFA                       |
 | [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)         | Yes              | MFA and SSPR   |
 | [Voice call](concept-authentication-phone-options.md)<sup>3</sup>                    | No                     | MFA and SSPR              |
-| [QR code (preview)](concept-authentication-qr-code.md)                       | Yes                    | No                    |
+| [QR code](concept-authentication-qr-code.md)                       | Yes                    | No                    |
 | Password                       | Yes                    | No                        |
 
-<sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if it's used in FIDO2 authentication. Users need to be registered for passkey (FIDO2).
+<sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
 
 <sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-cba).
 

@@ -10,7 +10,7 @@ manager: pmwongera
 ms.reviewer: etbasser
 ---
 
-# ID Protection for agents
+# ID Protection for agents (Preview)
 
 As organizations adopt, build, and deploy autonomous AI agents, the need to monitor and protect those agents becomes critical. Microsoft Entra ID Protection helps protect your organization by automatically detecting and responding to identity-based risks on agents that use the [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) platform.
 
@@ -27,7 +27,7 @@ To configure policies that use Agent Risk as a condition, you must have the [Con
 
 ### Licensing
 
-- The [Microsoft Entra Agent ID](https://aka.ms/EntraAgentID) license is required to use Microsoft Entra ID Protection for Agents.
+- ID Protection for agents is included with the Microsoft Entra P2 license.
 
 ## How it works
 
@@ -48,7 +48,11 @@ The following table provides the anomalous activities that can contribute to the
 
 The **Risky Agents** report provides a list of all agents that were flagged for risky behavior. A summary of risky agents appears on the [ID Protection Dashboard](id-protection-dashboard.md). This snapshot view provides an overview of the number of agents flagged for risk by risk level. Select **View risky agents** to open the full report.
 
-You can also navigate directly to the **Risky Agents** report from the ID Protection navigation menu. Filter and sort to find specific agents, risk states, or risk levels. You can also take action on agents directly from the report, including:
+You can also navigate directly to the **Risky Agents** report from the ID Protection navigation menu. Filter and sort to find specific agents, risk states, or risk levels.
+
+:::image type="content" source="media/concept-risky-agents/risky-agents-report.png" alt-text="Screenshot showing the Risky agents report." lightbox="media/concept-risky-agents/risky-agents-report.png":::
+
+You can take action on agents directly from the report, including:
 - **Confirm compromise**: Select after manual investigation or automated detection confirms the account is compromised. This step is useful as part of incident response to prevent further damage. Confirm compromise automatically sets the risk level to High and creates an event in the agent's **Risk detections**. This action triggers risk-based Conditional Access policies that are configured to block access on High Agent Risk. 
 - **Confirm safe**: Marks the user as safe after investigation and clears any active risk state for that user by setting risk level to None. Use this option when you want to mark a false positive and for the system to avoid flagging similar activity.
 - **Dismiss risk**: Tells the system that the detected risk for an agent is no longer relevant after investigation, or is a benign true positive where you want the system to continue to flag similar activity.  
@@ -66,9 +70,11 @@ In the risky agent report, select an entry to view the full details including th
 
 You can also navigate to the **Risk Detections** report and select the **Agent detections** tab to view a full list of the detection risk events from up to the past 90 days. 
 
+:::image type="content" source="media/concept-risky-agents/risky-agent-details.png" alt-text="Screenshot showing the Risky agent details." lightbox="media/concept-risky-agents/risky-agent-details.png":::
+
 ## Risk-based Conditional Access for agents
 
-You can use Conditional Access for agents to set risk policies that block risky agents from accessing resources or other agents. Use this [Conditional Access template](https://aka.ms/CreateAgentRiskPolicy) to help administrators deploy this policy in their organization.
+You can use [Conditional Access for agents](../identity/conditional-access/agent-id.md) to set risk policies that block risky agents from accessing resources or other agents. Use this [Conditional Access template](https://aka.ms/CreateAgentRiskPolicy) to help administrators deploy this policy in their organization.
 
 ## Microsoft Graph
 

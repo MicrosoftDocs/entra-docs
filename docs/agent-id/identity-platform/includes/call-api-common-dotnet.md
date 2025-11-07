@@ -13,5 +13,5 @@ To call an API from an agent, you need to obtain an access token that the agent 
 
 ## Prerequisites
 
-- [An agent identity](./create-delete-agent-identities.md) with appropriate permissions to call the target API. You need a user for the on-behalf-of flow.
-- [An agent user]() with appropriate permissions to call the target API.
+- An agent identity with appropriate permissions to call the target API. You need a user for the on-behalf-of flow.
+- An agent user with appropriate permissions to call the target API.

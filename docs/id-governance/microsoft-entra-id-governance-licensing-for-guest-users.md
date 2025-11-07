@@ -162,9 +162,8 @@ To use Microsoft Entra ID Governance features for guest users, your tenant must 
 
 - You won't be able to create new access reviews scoped to guest users if any of the following features are selected: 
     - Inactive user access review
-- User-to-group affiliation recommendation helper
-    - You won't be able to update existing reviews that add these features.
-
+    - User-to-group affiliation recommendation helper
+    
 ### Entitlement Management
 
 - You won't be able to create policies with guests in scope (“*For all users in your directory including guests*” or “*For users not in your directory*”) and the Microsoft Entra ID Governance features listed in this documentation (For example, sponsor approvers, custom extensions, and Verified ID).
