@@ -54,6 +54,8 @@ items:
           href: manage-agent-blueprint.md
         - name: Register agents with Agent Registry
           href: publish-agents-to-registry.md
+        - name: Manage agent collections
+          href: agent-registry-manage-collections.md
         - name: Agent communication
           href: registry-agent-to-agent-protocol.md
   - name: Concepts

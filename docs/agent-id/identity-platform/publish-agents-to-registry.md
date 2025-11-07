@@ -17,8 +17,8 @@ ms.reviewer: jadedsouza
 Registering agents in Microsoft Entra Agent Registry enables centralized visibility and management across your organization. It provides a unified view of all agents, including those from non-Microsoft builder platforms and identity providers. The registration process varies based on how the agent is created.
 
 The registry stores two key types of information for each agent:
-- Agent Instance: Operational details for execution and management.
-- Agent Card Manifest: Discovery metadata for collaboration.
+- **Agent Instance**: Operational details for execution and management.
+- **Agent Card Manifest**: Discovery metadata for collaboration.
 
 Understanding this distinction ensures accurate registration.
 
@@ -157,7 +157,6 @@ The agent card manifest provides discovery metadata that enables other agents an
     }
 ```
 
-
 The skills array defines specific capabilities your agent provides, enabling precise discovery based on required functionality. The capabilities object specifies technical features your agent supports for integration protocols.
 
 ### Handle registration responses
@@ -174,21 +173,19 @@ Common validation errors include missing required fields like `id` and `isBlocke
 
 ## Verify agent registration
 
-After registration, confirm your agent appears correctly in the registry.
+After registration, confirm your agent appears correctly in the registry. You can verify registration through the Microsoft Entra Admin Center or using the Microsoft Graph API.
 
-### Verify in the Microsoft Entra admin center
-
-You can verify registration through the Microsoft Entra Admin Center. 
+### [Microsoft Entra admin center](#tab/Microsoft-Entra-admin-center)
 
 1. Navigate to **Agent identities**
 1. Select **Agent Registry**. Your agent won't have an agent ID but you're able to view its associated metadata if you provided the information during registration.
 
-### Verify using the registry API
+### [Microsoft Graph API](#tab/Microsoft-Graph-API)
 
 Query the registry to verify your agent registration: Send an API call to retrieve a specific agent instance by its unique identifier.
 
 ```http
-GET https://graph.microsoft.com/v1.0/agentRegistry/agentInstances/{agent-instance-id}
+GET https://graph.microsoft.com/beta/agentRegistry/agentInstances/{agent-instance-id}
 Authorization: Bearer {token}
 ```
 

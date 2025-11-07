@@ -17,6 +17,12 @@ ms.reviewer: jadedsouza
 
 Collections in the Microsoft Entra Agent Registry define how agents are logically organized and discovered during agent-to-agent collaboration. When an agent queries the registry, the system evaluates its metadata and returns only agents permitted for discovery based on their collection membership. Collections help organizations establish clear boundaries for discoverability and collaboration, defining how agents can be discovered within the Agent Registry.
 
+Agents with or without an agent identity can be assigned as members of a collection.
+- Agents *with* an agent identity can query the registry and discover other agents.
+- Agents *without* an agent identity can be part of a collection and be discovered by other agents, but they can't perform discovery themselves.
+
+In other words, agents without an agent identity can act only as target agents in collaboration scenarios. To function as a client agent and query the registry, an agent identity is required.
+
 ## Collections types
 
 To help administrators manage agent discoverability, Microsoft Entra Agent Registry offers predefined and custom collections.
@@ -25,14 +31,6 @@ To help administrators manage agent discoverability, Microsoft Entra Agent Regis
     - For example, an agent responsible for travel booking within the Global Collection can be discovered and invoked by other agents that have an agent identity and the appropriate [Agent Registry role](../identity-professional/reference-registry-roles.md).
 - **Custom collection**: Created by administrators to apply discovery boundaries that align with business or policy needs.
     - For example, if human resources agents should only interact with payroll agents, an admin can create a "human resources department" collection so that only agents within that collection can discover and collaborate with each other.
-
-## How does it work?
-
-Agents with or without an agent identity can be assigned as members of a collection.
-- Agents *with* an agent identity can query the registry and discover other agents.
-- Agents *without* an agent identity can be part of a collection and be discovered by other agents, but they can't perform discovery themselves.
-
-In other words, agents without an agent identity can act only as target agents in collaboration scenarios. To function as a client agent and query the registry, an agent identity is required.
 
 ## Agent collaboration policies
 
