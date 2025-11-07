@@ -112,7 +112,7 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 
 ## Exclusions and inclusions for SPNs
 
-When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN from Microsoft Entra Admin Center or in the `localpolicy` file. Any exlcusions or inclusions configured from the Admin Center will be present in the `cloudpolicy` file.
+When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN from Microsoft Entra Admin Center or in the `localpolicy` file. Any exlcusions or inclusions configured from Microsoft Entra Admin Center will be present in the `cloudpolicy` file.
 
 > [!NOTE]
 > Both `cloudpolicy` and `localpolicy` are evaluated for access.
