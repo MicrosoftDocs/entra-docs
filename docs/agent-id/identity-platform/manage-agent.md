@@ -12,15 +12,10 @@ ms.date: 11/05/2025
 
 # Manage Agents in Microsoft Entra (Preview)
 
-The Manage agents feature in Microsoft Entra lets you view, and control, [agent identities you own or sponsor](../agent-id/identity-platform/agent-owners-sponsors-managers.md). [Agents identities](../agent-id/identity-platform/what-is-agent-id.md) are special identities, such as bots or automated processes, that act on behalf of users or teams. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
+The Manage agents feature in Microsoft Entra lets you view, and control, [agent identities you own or sponsor](agent-owners-sponsors-managers.md). [Agents identities](what-is-agent-id.md) are special identities, such as bots or automated processes, that act on behalf of users or teams. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
 
 > [!NOTE]
 > This feature is in public preview. Functionality might change before general availability.
-
-
-## License requirements
-
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Manage agents as an agent identity owner or sponsor
 
@@ -44,4 +39,4 @@ The Manage agents feature in Microsoft Entra lets you view, and control, [agent 
 
 ## Next Steps
 
-- If an agent needs other access packages, [Request an access package on behalf of an agent identity (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview)
+- If an agent needs other access packages, [Request an access package on behalf of an agent identity (Preview)](../../id-governance/entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview)
