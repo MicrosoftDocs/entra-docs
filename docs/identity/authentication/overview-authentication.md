@@ -20,7 +20,7 @@ Authentication is the process of verifying a person’s identity before granting
 
 Microsoft Entra ID supports different [authentication methods](concept-authentication-methods.md), including options for [multifactor authentication (MFA)](tutorial-enable-azure-mfa.md) and enhanced security policies that enable customers to meet their business requirements for usability and security posture. 
 
-While traditional MFA with SMS, email, OTP, or authenticator apps significantly improves security over password-only systems, these options introduce friction—requiring additional steps for users, like entering codes, approving push notifications, or using authenticator apps. Despite these obstacles, MFA remains a critical security control, but its user experience and administrative overhead can hinder adoption and effectiveness. 
+While traditional MFA with SMS, email, OTP, or authenticator apps significantly improves security over password-only systems, these options introduce friction—requiring additional steps for users, like entering codes, approving push notifications, or using authenticator apps, and remain vulnerable to remote phishing attacks. Despite these obstacles, MFA remains a critical security control, but its user experience and administrative overhead can hinder adoption and effectiveness. 
 
 This article describes best practices for achieving convenient and usable authentication and recovery experiences while improving your organization’s security posture. 
 
@@ -30,10 +30,10 @@ Passkeys (FIDO2) are modern user credentials based on FIDO standards that are bo
 
 There are two types of passkeys – device-bound and synced passkeys. 
 
-- Device-bound passkeys are those where the private key never leaves the device. Microsoft Entra ID already supports device-bound passkeys like FIDO2 security keys and passkeys in Microsoft Authenticator.  
-- Synced passkeys sync through the provider’s cloud (such as Apple iCloud Keychain, Google Password Manager). They can be used from multiple devices signed into the same sync service. Microsoft Entra ID supports synced passkeys (preview), and admins can select groups that can sign in with device-bound and synced passkeys.
+- **Device-bound passkeys** are those where the private key never leaves the device. Microsoft Entra ID already supports device-bound passkeys like FIDO2 security keys and passkeys in Microsoft Authenticator.  
+- **Synced passkeys** sync through the provider’s cloud (such as Apple iCloud Keychain, Google Password Manager). They can be used from multiple devices that belong to the same trust group and are signed in to the same sync service. Microsoft Entra ID supports synced passkeys (preview), and admins can select groups that can sign in with device-bound and synced passkeys.
 
-Synced passkeys offer a seamless and convenient user experience where users can use device’s native device unlock mechanism like face, fingerprint or PIN to authenticate. Based on the learnings from hundreds of millions of consumer users of Microsoft accounts that have registered and are using synced passkeys, we have learnt:
+Synced passkeys offer a seamless and convenient user experience where users can use device’s native device unlock mechanism like face, fingerprint, or PIN to authenticate. Based on the learnings from hundreds of millions of consumer users of Microsoft accounts that have registered and are using synced passkeys, we have learnt:
 
 - 99% of users successfully register synced passkeys 
 - Synced passkeys are 14x faster compared to password and a traditional MFA combination: 3 seconds instead of 69 seconds 
@@ -43,7 +43,7 @@ Synced passkeys in Microsoft Entra ID bring MFA simplicity at scale for all ente
 
 It is recommended to use FIDO2 security keys in highly regulated industries or for users with high privilege. Note that however, these can incur higher equipment, training and helpdesk costs due to lost productivity when users need to recover access to their account when they lose their physical key, and cost of replacing lost physical keys being high. Passkeys in Authenticator app are also  option for this user group.
 
-For most users in your organization, outside of the regulated industries or for high privileged users in your organization, synced passkeys should be considered for as convenient and low-cost alternative to traditional MFA. 
+For most users in your organization, outside of the regulated industries or for privileged users with access to customer data, critical information, or computing systems, synced passkeys should be considered for as convenient and low-cost alternative to traditional MFA. 
 
 In general, any type of passkey, whether device-bound or synced, is a huge upgrade over the phishable MFA options in use today. 
 
