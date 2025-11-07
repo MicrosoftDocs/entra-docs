@@ -6,7 +6,7 @@ ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: troubleshooting-known-issue
 ms.reviewer: teresayao
-ms.date: 11/05/2025
+ms.date: 11/06/2025
 ai-usage: ai-assisted
 
 #customer intent: As an IT admin, I want to troubleshoot Transport Layer Security (TLS) inspection errors.
@@ -89,8 +89,7 @@ For preview customers with a legacy TLS configuration, when creating a Certifica
 
 ### Troubleshooting steps
 To resolve this issue: 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Go to https://aka.ms/tlspreview-portal<!-- Teresa, I don't think we should include this Private Preview link. Is there an equivalent for the Public Preview, or even the Prod environment? -->
+1. Sign in to the Microsoft Entra admin center with [custom TLS inspection settings](https://aka.ms/tlspreview-portal) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Settings** > **Session management**.
 1. Select the **TLS Inspection** tab. 
 1. Select and delete the Certificate URL.
