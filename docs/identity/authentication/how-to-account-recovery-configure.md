@@ -29,9 +29,6 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Go to **Identity** > **Account recovery (Preview)**.
 1. Under **Set up account recovery**, select **Get started**.
-
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/get-started.png" alt-text="Screenshot that shows how to get started with account recovery."lightbox="media/how-to-account-recovery-configure/get-started.png":::
-
 1. Under **Choose a recovery mode**, select **Evaluation**. 
 
    >[!NOTE]
@@ -86,7 +83,7 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
 
 1. After setup is finalized, the Account Recovery **Home** page opens in the Microsoft Entra admin center. 
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/account-recovery-home.png" alt-text="Screenshot that shows account recovery home page."lightbox="media/how-to-account-recovery-configure/account-recovery-home.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-configure/home.png" alt-text="Screenshot that shows account recovery home page."lightbox="media/how-to-account-recovery-configure/home.png":::
 
 Once setup is complete, any users scoped to account recovery can try recovery and complete Identity Verification. But they can't recover their accounts because recovery is set in evaluation mode. 
 
@@ -97,6 +94,9 @@ After testing account recovery in evaluation mode and confirming that the identi
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Go to **Protection** > **Account Recovery**.
 1. On the Account Recovery **Home** page, select **Manage**.
+
+   :::image type="content" border="true" source="media/how-to-account-recovery-configure/manage.png" alt-text="Screenshot that shows how to select Manage on the account recovery home page."lightbox="media/how-to-account-recovery-configure/manage.png":::
+
 1. Under **Choose a recovery mode**, select **Production** to enable full account recovery capabilities.
 
    >[!NOTE]

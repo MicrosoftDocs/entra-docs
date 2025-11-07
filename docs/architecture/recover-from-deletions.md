@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: article
-ms.date: 10/06/2025
+ms.date: 11/03/2025
 ms.author: jricketts
 ms.reviewer: jricketts
 ms.custom: sfi-image-nochange
@@ -27,7 +27,7 @@ The Audit log always records a "Delete \<object\>" event when an object in the t
 
 [![Screenshot that shows an Audit log with deletions.](./media/recoverability/delete-audit-log.png)](./media/recoverability/delete-audit-log.png#lightbox)
 
-A delete event for applications, users, and Microsoft 365 Groups is a soft delete. For any other object type, it's a hard delete. Track the occurrence of hard-delete events by comparing "Delete \<object\>" events with the type of object that was deleted. Note the events that don't support soft delete. Also note "Hard Delete \<object\>" events.
+A delete event for applications, users, Microsoft 365 Groups, and cloud security groups is a soft delete. For any other object type, it's a hard delete. Track the occurrence of hard-delete events by comparing "Delete \<object\>" events with the type of object that was deleted. Note the events that don't support soft delete. Also note "Hard Delete \<object\>" events.
 
 | Object type | Activity in log| Result |
 | - | - | - |
@@ -37,10 +37,12 @@ A delete event for applications, users, and Microsoft 365 Groups is a soft delet
 | User| Hard delete user| Hard deleted |
 | Microsoft 365 Group| Delete group| Soft deleted |
 | Microsoft 365 Group| Hard delete group| Hard deleted |
+| Cloud security group| Delete group| Soft deleted |
+| Cloud security group| Hard delete group| Hard deleted |
 | All other objects| Delete "objectType"| Hard deleted |
 
 > [!NOTE]
-> The audit log doesn't distinguish the group type of a deleted group. Only Microsoft 365 Groups are soft deleted. If you see a Delete group entry, it might be the soft delete of a Microsoft 365 Group or the hard delete of another type of group.
+> The audit log doesn't distinguish the group type of a deleted group. Microsoft 365 Groups and cloud security groups are soft deleted. If you see a Delete group entry, it might be the soft delete of a Microsoft 365 Group or cloud security group, or the hard delete of another type of group.
 >
 >*It's important that your documentation of your known good state includes the group type for each group in your organization*. To learn more about documenting your known good state, see [Recoverability best practices](recoverability-overview.md).
 
@@ -50,7 +52,7 @@ A sudden increase in support tickets about access to a specific object might ind
 
 ## Soft deletions
 
-When objects such as users, Microsoft 365 Groups, or application registrations are soft deleted, they enter a suspended state in which they aren't available for use by other services. In this state, items keep their properties and can be restored for 30 days. After 30 days, objects in the soft-deleted state are permanently deleted or hard deleted.
+When objects such as users, Microsoft 365 Groups, cloud security groups, or application registrations are soft deleted, they enter a suspended state in which they aren't available for use by other services. In this state, items keep their properties and can be restored for 30 days. After 30 days, objects in the soft-deleted state are permanently deleted or hard deleted.
 
 > [!NOTE]
 > Objects can't be restored from a hard-deleted state. Re-create and reconfigure them.
@@ -71,9 +73,9 @@ Common scenarios for deleting users include:
 * A user moves out of scope for synchronization with Microsoft Entra Connect.
 * A user retires, is removed from an HR system, and is deprovisioned via an automated workflow.
 
-### Microsoft 365 Groups
+### Groups
 
-The most frequent scenarios for deleting Microsoft 365 Groups are:
+The most frequent scenarios for deleting groups are:
 
 * An administrator intentionally deletes the group, for example, in response to a support request.
 * An automation script in Microsoft Graph or PowerShell triggers the deletion. For example, you might have a script that deletes groups that aren't accessed or attested to by the group owner for a specified time.
@@ -102,6 +104,7 @@ Not all object classes manage soft-delete capabilities in the Microsoft Entra ad
 |---|---|
 |Users (including external users)|All properties maintained, including ObjectID, group memberships, roles, licenses, and application assignments|
 |Microsoft 365 Groups|All properties maintained, including ObjectID, group memberships, licenses, and application assignments|
+|Cloud security groups|All properties maintained, including ObjectID, group memberships, and application assignments|
 |Application registration | All properties maintained. See more information after this table.|
 |Service principal|All properties maintained|
 |Administrative unit|All properties maintained|
@@ -119,11 +122,11 @@ For more information on how to restore users, see the following documentation:
 
 ### Groups
 
-You can see soft-deleted Microsoft 365 Groups in the Azure portal on the **Groups | Deleted groups** page.
+You can see soft-deleted Microsoft 365 Groups and cloud security groups in the Azure portal on the **Groups | Deleted groups** page.
 
 ![Screenshot that shows restoring groups in the Azure portal.](media/recoverability/deletion-restore-groups.png)
 
-For more information on how to restore soft-deleted Microsoft 365 Groups, see the following documentation:
+For more information on how to restore soft-deleted Microsoft 365 Groups and cloud security groups, see the following documentation:
 
 * To restore from the Azure portal, see [Restore a deleted Microsoft 365 Group](~/identity/users/groups-restore-deleted.md).
 * To restore by using Microsoft Graph, see [Restore deleted item – Microsoft Graph v1.0](/graph/api/directory-deleteditems-restore?tabs=http).
@@ -173,6 +176,7 @@ A hard deletion permanently removes an object from your Microsoft Entra tenant. 
 
 * Users
 * Microsoft 365 Groups
+* Cloud security groups
 * Application registration
 * Service principal
 * Administrative unit
