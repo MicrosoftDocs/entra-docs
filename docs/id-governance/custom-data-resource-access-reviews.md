@@ -14,7 +14,9 @@ ms.date: 11/05/2025
 
 # Include custom data provided resource in the catalog for catalog User Access Reviews
 
-Learn how to manage access to disconnected applications by including the custom data provided resource in Microsoft Entra catalogs. This guide walks you through creating a catalog, adding custom data provided resource, and setting up User Access Reviews (UARs) for applications not integrated with Microsoft Entra. By using this process, organizations can ensure governance over access to custom applications, enabling managers to make informed access decisions through the My Access portal.
+Organizations often have applications that aren’t yet integrated with Microsoft Entra but still need to be governed. Using custom data provided resources, you can include these disconnected applications in Microsoft Entra ID access reviews by uploading their access data directly into a catalog.
+
+This capability enables you to run User Access Reviews (UARs) across both Microsoft Entra-connected, and custom, resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources. whether or not they’re connected to Microsoft Entra.
 
 ## License requirements
 
