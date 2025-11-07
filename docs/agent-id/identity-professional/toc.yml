@@ -26,10 +26,17 @@ items:
               href: manage-agents-without-identity.md
   - name: Concepts
     items:
-    - name: Agent ID creation channels
-      href: agent-id-creation-channels.md
-    - name: Sign-in and audit logs for agents
-      href: sign-in-audit-logs-agents.md
-    - name: Access packages
-      href: agent-access-packages.md
-      
+      - name: Manage registry only agents
+        href: manage-agents-without-identity.md
+- name: Concepts
+  items:
+  - name: Agent ID creation channels
+    href: agent-id-creation-channels.md
+  - name: Sign-in and audit logs for agents
+    href: sign-in-audit-logs-agents.md
+  - name: Access packages
+    href: agent-access-packages.md
+- name: Reference
+  items:
+  - name: Disable agent identities
+    href: disable-agent-identities.md
