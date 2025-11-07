@@ -51,7 +51,7 @@ The Conditional Access optimization agent evaluates policies such as requiring m
 
 ## How it works
 
-The Conditional Access optimization agent scans your tenant for new users and applications from the last 24 hours and determines if Conditional Access policies are applicable. If the agent finds users or applications that aren't protected by Conditional Access policies, it provides suggested next steps, such as turning on or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
+The Conditional Access optimization agent scans your tenant for new users, applications, and agent identities from the last 24 hours and determines if Conditional Access policies are applicable. If the agent finds users, applications, or agent identities that aren't protected by Conditional Access policies, it provides suggested next steps, such as turning on or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
 
 Each time the agent runs, it takes the following steps. **These initial scanning steps do not consume any SCUs.**
 
@@ -65,8 +65,8 @@ If the agent identifies something that wasn't previously suggested, it takes the
 1. The agent evaluates any custom instructions you provided.
 1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
 
-> [!TIP]
-> Two policies can be consolidated if they differ by no more than two conditions or controls.
+> [!NOTE]
+> Security Copilot requires at least one SCU is provisioned in your tenant, but that SCU is billed each month even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
 
 The policy suggestions identified by the agent include:
 
@@ -76,8 +76,9 @@ The policy suggestions identified by the agent include:
 - **Block device code flow**: The agent looks for a policy blocking device code flow authentication.
 - **Risky users**: The agent suggests a policy to require secure password change for high risk users. Requires Microsoft Entra ID P2 license.
 - **Risky sign-ins**: The agent suggests a policy to require multifactor authentication for high risk sign-ins. Requires Microsoft Entra ID P2 license.
+- **Risky agents**: The agent suggests a policy to block authentication for high risk sign-ins. Requires Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
-- **Deep analysis**: The agent looks at policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout). 
+- **Deep analysis**: The agent looks at policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout).
 
 > [!IMPORTANT]
 > The agent doesn't make any changes to existing policies unless an administrator explicitly approves the suggestion.
