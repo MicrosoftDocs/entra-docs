@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/06/2025
+ms.date: 11/18/2025
 ms.author: jfields
 ms.reviewer: gauthamca
 
@@ -28,8 +28,6 @@ This article describes the health metrics related to Remote Networks connectivit
 This scenario:
 
 - Aggregate the \# of tunnels that are connected.
-
-- Aggregate the \# of tunnels with BGP connected.
 
 - Aggregate the \# of tunnels that are disconnected.
 
@@ -53,7 +51,7 @@ There are different roles, permissions, and license requirements to view health 
 
 ## Investigate the signals
 
-Investigating a signal starts with gathering data.
+To investigate a signal, gather the following data:
 
 1.  View the details of the alert.
 
@@ -75,18 +73,22 @@ Investigating a signal starts with gathering data.
 
 **<u>\<\<TODO\>\> Show the sample health image</u>**
 
-2.  Review your Remote network health logs
+2.  Review your Remote network health logs.
 
     - [How to use the remote network health logs - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-remote-network-health-logs?tabs=microsoft-entra-admin-center)
 
-3.  Configure diagnostic settings to export logs
+3.  Configure diagnostic settings to export logs.
 
     - [What are remote network health logs](/entra/global-secure-access/how-to-remote-network-health-logs?#configure-diagnostic-settings-to-export-logs)
 
-4.  Analyze logs with a workbook
+4.  Analyze logs with a workbook.
 
     - [What are remote network health logs?](/entra/global-secure-access/how-to-remote-network-health-logs#analyze-logs-with-a-workbook)
 
 5.  Review audit logs.
 
     - [How to access Global Secure Access audit logs (preview) - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-access-audit-logs)
+
+Related content
+
+- [Understand remote network connectivity](/entra/global-secure-access/concept-remote-network-connectivity)

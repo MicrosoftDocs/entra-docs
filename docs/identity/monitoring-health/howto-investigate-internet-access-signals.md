@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/06/2025
+ms.date: 11/18/2025
 ms.author: jfields
 ms.reviewer: gauthamca
 
@@ -25,7 +25,7 @@ To learn more about how Microsoft Entra Health works, see:
 
 This article describes the health metrics related to internet applications blocked by Microsoft Entra Internet Access policies and how to troubleshoot a potential issue when you receive an alert.
 
-This scenarios:
+This scenario:
 
 - Aggregates the number of unique users accessing internet applications successfully
 
@@ -53,7 +53,7 @@ There are different roles, permissions, and license requirements to view health 
 
 ## Investigate the signal
 
-Investigating an signal starts with gathering data.
+To investigate a signal, gather the following data:
 
 1.  View the details of the alert.
 

@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/06/2025
+ms.date: 11/18/2025
 ms.author: jfields
 ms.reviewer: gauthamca
 
@@ -27,15 +27,15 @@ This article describes the health metrics related to private application access 
 
 This scenario:
 
-- Aggregates the number of unique users accessing private applications successfully
+- Aggregates the number of unique users accessing private applications successfully.
 
-- Aggregates the number of unique users who failed to access private applications.
+- Aggregates the number of unique users who failed to access private applications due to connector availability.
 
-- Aggregates the number of unique private applications accessed successfully
+- Aggregates the number of unique private applications accessed successfully.
 
-- Aggregates the number of failed accesses to unique private applications.
+- Aggregates the number of failed accesses to unique private applications due to connector availability.
 
-Prerequisites
+## Prerequisites
 
 There are different roles, permissions, and license requirements to view health monitoring signals and configure and receive alerts. We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
 
@@ -53,7 +53,7 @@ There are different roles, permissions, and license requirements to view health 
 
 ## Investigate the signals
 
-Investigating an signal starts with gathering data.
+To investigate a signal, gather the following data:
 
 1.  View the details of the alert.
 
@@ -73,11 +73,10 @@ Investigating an signal starts with gathering data.
 
 **<u>\<\<TODO\>\> Show the sample health image</u>**
 
-3.  Review your Microsoft Entra Private Access connector status
-
+3.  Review your Microsoft Entra Private Access connector status.
     - See [Microsoft Entra private network connectors maintenance](/entra/global-secure-access/concept-connectors#maintenance)
 
-4.  Review Microsoft Entra Private Access connector groups and its assignments to the applications
+4.  Review Microsoft Entra Private Access connector groups and its assignments to the applications.
 
     - [Microsoft Entra Private Network Connector Groups - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/concept-connector-groups)
 
@@ -85,13 +84,13 @@ Investigating an signal starts with gathering data.
 
     - [Learn about the sign-in log activity details](/entra/identity/monitoring-health/concept-sign-in-log-activity-details)
 
-    - Look for users being blocked from signing in to the application
+    - Look for users being blocked from signing in to the application.
 
 6.  Review traffic logs.
 
     - [Global Secure Access network traffic logs - Global Secure Access \| Microsoft Learn](/entra/global-secure-access/how-to-view-traffic-logs)
 
-    - Look for private application traffic transaction failures
+    - Look for private application traffic transaction failures.
 
 7.  Review audit logs.
 
