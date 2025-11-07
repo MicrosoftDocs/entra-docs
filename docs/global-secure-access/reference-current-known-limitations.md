@@ -6,9 +6,9 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 11/06/2025
+ms.date: 11/07/2025
 ms.service: global-secure-access
-
+ms.custom: agent-id-ignite
 
 
 # Customer intent: As an administrator, I want to access the known limitations for Global Secure Access in one place. This article gathers all known issues and limitations into a single reference point. Global Secure Access articles with a "known limitations" section point to this article. 
