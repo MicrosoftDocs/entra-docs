@@ -3,7 +3,7 @@ title: Enable Intelligent Local Network
 description: Learn how to enable the Intelligent Local Access (ILA) capability for Microsoft Entra Private Access, which optimizes traffic flow for clients accessing Entra apps via private networks.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/18/2025
+ms.date: 11/07/2025
 ms.author: jfields
 author: jenniferf-skc
 manager: dougeby
@@ -15,11 +15,11 @@ ai-usage: ai-assisted
 
 # Enable Intelligent Local Access (preview)
 
-Intelligent Local Access capability can help optimize the traffic flow from Microsoft Entra clients to Microsoft Entra apps through private access when the client is on corporate/private network. This article explains how to enable the Intelligent Private Network for Microsoft Entra Private Access.
+Intelligent Local Access capability can help optimize the traffic flow from Microsoft Entra clients to Microsoft Entra Private Access apps when the client is on a corporate/private network. This article explains how to enable the Intelligent Private Network for Microsoft Entra Private Access.
 
 ## Prerequisites
 
-To configure a Global Secure Access Private Networks, you must have:
+To configure a Global Secure Access (GSA) Private Networks, you must have:
 
 - [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator) role or the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role.
 
@@ -27,7 +27,7 @@ To configure a Global Secure Access Private Networks, you must have:
 
 ## Private Access overview
 
-Today, Entra Private Access (PA) sends all traffic, both application and authentication, over the SSE / Private Access service, regardless of the user's location. This process, represented by the green workflow in the diagram, results in network backhauling, which negatively impacts user experience by adding latency and slowing down the network significantly. With the Intelligent Local Access (ILA) feature, we aim to address this issue by enabling intelligent network routing. The Global Secure Access (GSA) client determines how traffic is routed to private applications. This feature ensures a consistent security posture for employees, whether they work remote or on-premises. This adaptive local access significantly improves user experience by reducing latency and avoiding network hair pinning, represented by the blow workflow in the diagram.
+Today, Entra Private Access (PA) sends all traffic, both application and authentication, over the SSE / Private Access service, regardless of the user's location. This process, represented by the green workflow in the following diagram, results in network backhauling, which negatively impacts user experience by adding latency and slowing down the network significantly. With the Intelligent Local Access (ILA) feature, we aim to address this issue by enabling intelligent network routing. The GSA client determines how traffic is routed to private applications. This feature ensures a consistent security posture for employees, whether they work remote or on-premises. This adaptive local access significantly improves user experience by reducing latency and avoiding network hair pinning, represented by the blue workflow in the following diagram.
 
 :::image type="content" source="media/enable-intelligent-local-access/microsoft-entra-private-access-intelligent-local-access-workflow.png" alt-text="A diagram showing the workflow between Microsoft Entra Private Access and Intelligent Local Access." lightbox="media/enable-intelligent-local-access/microsoft-entra-private-access-intelligent-local-access-workflow.png":::
 
