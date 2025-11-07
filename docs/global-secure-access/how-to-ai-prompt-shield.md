@@ -1,22 +1,26 @@
 ---
-title: AI Gateway - Prompt Shield (preview)
+title: Configure the AI Gateway Prompt Shield (preview)
 description: Secure your Enterprise generative AI apps from prompt injection attacks with Microsoft's AI Gateway Prompt Shield.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/06/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
 ms.reviewer: KaTabish
 ms.custom: sfi-image-nochange
 
-#customer intent: As a security administrator, I want to configure Prompt Shield content policies so that I can safeguard AI applications against malicious inputs.
+#customer intent: As a security administrator, I want to configure the AI Gateway Prompt Shield content policies so that I can safeguard AI applications against malicious inputs.
 
 ---
 
-# Protect AI applications with the AI gateway Prompt Shield (preview)
+# Protect AI applications with the AI Gateway Prompt Shield (preview)
 
-Prompt injection attacks pose a significant risk for generative AI apps. As the frontier solution for securing AI and users' access to AI, Microsoft's Secure Web Gateway (SWG) is now the Secure Web and AI Gateway. This change adds Prompt Shield to protect Enterprise Gen AI apps from prompt injection attacks.
+Prompt injection attacks pose a significant risk for generative AI apps. As the frontier solution for securing AI and users' access to AI, Microsoft's Secure Web Gateway (SWG) is now the Secure Web and AI Gateway. This change adds Prompt Shield to protect Enterprise generative AI apps from prompt injection attacks.
+
+Prompt injection attacks are a serious threat to generative AI applications. Attackers craft malicious input to make a large language model (LLM) ignore instructions, expose sensitive data, perform unintended actions, or generate harmful content. It works like code injection for LLMs: instead of exploiting a SQL interpreter, attackers exploit the LLM's tendency to follow textual commands.
+
+To protect enterprise AI, Microsoft's Secure Web Gateway (SWG) is now the Secure Web and AI Gateway. This update introduces Prompt Shield, which defends against prompt injection attacks and safeguards Global Secure Access. Without protection, prompt injection can lead to leaked credentials or personal data, disallowed content, unwanted actions in connected systems, and bypassed policy controls.
 
 > [!IMPORTANT]
 > The Prompt Shield feature is currently in PREVIEW.   
