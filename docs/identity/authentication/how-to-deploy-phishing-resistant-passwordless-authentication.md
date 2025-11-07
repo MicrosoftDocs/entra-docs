@@ -52,8 +52,8 @@ Devices are an essential aspect of any successful phishing-resistant passwordles
 
 These versions natively integrate with features like passkeys, Windows Hello for Business, and macOS Platform Credential. Older operating systems may require external authenticators, like FIDO2 security keys, to support phishing-resistant paswordless authentication.
 
-For more details, become familiar with [FIDO2 supportability for Microsoft Entra ID](https://review.learn.microsoft.com/en-us/entra/identity/authentication/concept-fido2-compatibility).
-You can you the [phishing-resistent paswordless workbook (Preview)](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to understand the device readiness within your tenant.
+For more details, become familiar with [FIDO2 supportability for Microsoft Entra ID](/entra/identity/authentication/concept-fido2-compatibility).
+You can you the [phishing-resistent paswordless workbook (Preview)](/authentication/how-to-deploy-phishing-resistant-passwordless-authentication#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to understand the device readiness within your tenant.
 
 
 ## Phishing Resistent Journey
@@ -76,7 +76,7 @@ Credentials | Description | Benefits | Authentication Methods|
 **Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate using the device’s own unlock gesture like Face ID or Windows Hello for Business face/fingerprint/PIN..|<li>Windows Hello For Business</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
 
 
-- For *new users*, the registration and bootstrapping process takes a user with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication#enforce-phishing-resistant-methods-for-sign-in).
+- For *new users*, the registration and bootstrapping process takes a user with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#enforce-phishing-resistant-methods-for-sign-in).
 - For *existing users*, they must register for phishing-resistant passwordless on their existing devices , or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. 
 
 The end goal is the same for both types of users - most users should have at least one **portable** credential, and then **local** credentials on each computing device. 
@@ -111,7 +111,7 @@ To bootstrap existing users to phishing-resistant passwordless credentials, firs
 
 For new users or users without MFA, go through a process to issue users a TAP. You can issue a TAP the same way you give new users their first credential, or by using Microsoft Entra Verified ID integrations. Once users have a TAP, they're ready to bootstrap their first phishing-resistant credential.
 
-It's important for the user’s first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using an Entra joined device and [Web sign-in for Windows](https://learn.microsoft.com/windows/security/identity-protection/web-sign-in).
+It's important for the user’s first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using an Entra joined device and [Web sign-in for Windows](/windows/security/identity-protection/web-sign-in).
 
 
 
@@ -343,7 +343,7 @@ As you execute these different phases, you may need to slow down depending on th
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png":::
 
-The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is [Conditional Access authentication strengths](concept-authentication-strengths.md#authentication-strengths). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
+The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is [Conditional Access authentication strengths](concept-authentication-strengths.md). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
 
 1. Admins on Windows and iOS
 1. Admins on macOS and Android
