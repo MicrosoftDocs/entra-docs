@@ -65,11 +65,11 @@ To enable the Intelligent local access for Microsoft Entra Private Access, compl
 | **IP address range (CIDR)** | Classless Inter-Domain Routing (CIDR) represents a range of IP addresses where an IP address is followed by a suffix that indicates the number of network bits in the subnet mask.<br><br>For example, 10.10.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.<br><br>Provide the starting address and network mask. |
 | **IP address range (IP to IP)** | Range of IP addresses from start IP (such as 10.10.2.1) to end IP (such as 10.10.2.10).<br><br>Provide the IP address start and end. |
 
-1.  Select **Target Resource**.
+5.  Select **Target Resource**.
 
-    1.  Select Quick Access or PA enterprise app which will be locally bypassed when this private network is detected.
+    1.  Select Quick Access or PA enterprise app which is locally bypassed when this private network is detected.
 
-2.  Select **Create**.
+6.  Select **Create**.
 
 :::image type="content" source="media/enable-intelligent-local-access/create-private-network.png" alt-text="A screenshot of the page where you create a private network." lightbox="media/enable-intelligent-local-access/create-private-network.png":::
 
