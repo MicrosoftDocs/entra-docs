@@ -40,6 +40,7 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 1. Review how to take a clear document photo, and select **Continue** after you read each step.
 1. After you take the photo, select **Submit photos**.
 1. Review how to take a clear photo of your face, and select **Continue** after you read each step.
+1. After you take the photo, the identity proofing application or page verifies your identity, and will issue a Verifiable Credential into your Microsoft Authenticator app.
 
     >[!Note]
     > This may be presented by the provider as an option such as **Add a Verified ID** or **Open in Authenticator**.
@@ -47,7 +48,7 @@ Users can recover their accounts in just a few simple steps. In this topic, we'l
 1. When you're prompted, select **Open** and unlock Microsoft Authenticator.
 1. You're asked to complete a quick Face Check before your account ownership can be validated. 
 1. Once completed, you get a Temporary Access Pass. Copy this code and click **Sign in**. 
-17. Finally, you're redirected to [Security info](https://mysignins.microsoft.com/security-info), where you can register a new authentication method and fully regain access. 
+1. Finally, you're redirected to [Security info](https://mysignins.microsoft.com/security-info), where you can register a new authentication method and fully regain access. 
 
     :::image type="content" border="true" source="media/how-to-account-recovery-for-users/create-passkey.png" alt-text="Screenshot that shows how to create a passkey for account recovery."lightbox="media/how-to-account-recovery-for-users/create-passkey.png":::   
 
@@ -84,7 +85,7 @@ This happens when the identity verification provider set up in account recovery 
 ### Identity verification provider errors
 During the document verification, IDV might have trouble reading the photo image of a government document or driver's license upload or selfie. Overhead lights or glare from a window can make it difficult to photograph plastic cards and still see all the data for the IDV to process.
 
-The identity verification provider commonly does their own facial biometric check against the photo in the ID you uploaded.
+The identity verification provider commonly does their own facial biometric checks against the photo in the ID you uploaded.
 
 Sometimes changing the lighting environment or using a different available government document can help.
 
