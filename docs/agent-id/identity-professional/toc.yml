@@ -1,12 +1,12 @@
 items:
-- name: Microsoft Entra agent ID for identity professionals
+- name: Microsoft Entra Agent ID for identity professionals
   href: index.yml
 - name: Overview
   expanded: true
   items:
   - name: Security for AI
     href: security-for-ai.md
-  - name: Microsoft Entra agent ID features
+  - name: Microsoft Entra Agent ID features
     href: microsoft-entra-agent-identities-for-ai-agents.md
   - name: How to guides
     items:
@@ -22,12 +22,8 @@ items:
           href: control-user-access-agents.md
         - name: Agent ID administration
           items:
-            - name: Manage registry only agents
+            - name: Manage Agent Registry-only agents
               href: manage-agents-without-identity.md
-  - name: Concepts
-    items:
-      - name: Manage registry only agents
-        href: manage-agents-without-identity.md
 - name: Concepts
   items:
   - name: Agent ID creation channels

@@ -46,7 +46,7 @@ The Agent Registry serves several key capabilities:
    - Version and publisher details
    - Communication endpoints and protocols
 
-- **Agent discovery and interaction**: Enables [agent collaboration](agent-registry-agent-communication.md) and secure interaction through collections, which control discoverability and enforce security policies. These capabilities allow agents to collaborate and complete tasks across workloads.
+- **Agent discovery and interaction**: Enables [agent collaboration](registry-agent-to-agent-protocol.md) and secure interaction through collections, which control discoverability and enforce security policies. These capabilities allow agents to collaborate and complete tasks across workloads.
 
 - **Security & Compliance Integration**: Works seamlessly across Agent 365, Purview, and other Microsoft platforms for end-to-end visibility on your tenant, including limiting discoverability and implementing secure by default design.
 

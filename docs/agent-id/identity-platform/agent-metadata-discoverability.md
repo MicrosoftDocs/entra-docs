@@ -68,6 +68,6 @@ For comprehensive information about collection types, assignment rules, and disc
 
 ## Related content
 
-- [Publish agents to registry](agent-registry-register-agents.md)
+- [Publish agents to registry](publish-agents-to-registry.md)
 - [Agent registry collections](agent-registry-collections.md)
 - [What is the agent registry?](what-is-agent-registry.md)
