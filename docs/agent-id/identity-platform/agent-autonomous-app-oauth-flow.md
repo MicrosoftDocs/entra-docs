@@ -26,6 +26,8 @@ Agent ID blueprints can only impersonate their child agent identities. Agent IDs
 
 The following are the protocol steps.
 
+:::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow.png" alt-text="Diagram showing the illustration of autonomous app token acquisition flow for agents.":::
+
 1. Agent ID blueprint requests an exchange token T1. The agent ID blueprint presents its credentials which could be a secret, a certificate or a managed identity token. Entra ID returns the T1 to the agent ID blueprint. In this example we use a managed identity as FIC.
     
     [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
@@ -58,3 +60,9 @@ The following are the protocol steps.
     ```
 
 1. Entra ID issues an app-only resource access token (TR) to the Agent Identity after validating T1. Entra ID validates that T1 (aud) == Agent ID parent app == Agent ID blueprint
+
+## Sequence diagram
+
+The following is a sequence diagram for the app-only flow:
+
+:::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow-token-sequence.png" alt-text="Diagram showing the token sequence of autonomous app token acquisition flow for agents.":::
