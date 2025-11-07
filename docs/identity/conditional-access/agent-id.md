@@ -105,7 +105,7 @@ In the second scenario, Conditional Access uses [signals from Microsoft Entra ID
 
 The recommended approach for the first scenario is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
-####### Create and assign custom attributes
+###### Create and assign custom attributes
 
 1. Create the custom security attributes:
    1. Create an **Attribute set** named *AgentAttributes*.
@@ -117,7 +117,7 @@ The recommended approach for the first scenario is to create and assign custom s
       1. Add the following predefined values: **Finance**, **HR**, **IT**, **Marketing**, **Sales**.
 1. Assign the appropriate value to resources that your agent is allowed to access. For example, you may want only agents that are **HR_Approved** to be able to access resources that are tagged **HR**.
 
-####### Create Conditional Access policy
+###### Create Conditional Access policy
 
 After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agent identities except those reviewed and approved by your organization. 
 
