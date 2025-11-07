@@ -84,7 +84,7 @@
   - name: Account recovery
     items:
     - name: Overview
-      href: concept-self-service-account-recovery.md
+      href: concept-account-recovery-overview.md
     - name: FAQ
       href: self-service-account-recovery.yml
   - name: Multifactor authentication
@@ -265,9 +265,11 @@
   - name: Account recovery
     items:
     - name: Admin guide
-      href: how-to-account-recovery-configure.md
+      href: how-to-account-recovery-enable.md
+    - name: Cost savings estimator
+      href: how-to-account-recovery-cost-savings-estimator.md
     - name: User guide
-      href: how-to-account-recovery-user-setup.md
+      href: how-to-account-recovery-for-users.md
   - name: Microsoft Entra multifactor authentication
     items:
     - name: Deployment guide

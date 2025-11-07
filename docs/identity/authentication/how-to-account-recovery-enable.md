@@ -34,11 +34,11 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
    >[!NOTE]
    >In **Evaluation** mode, users can only test the identity verification process without actually recovering their accounts.
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/recovery-mode.png" alt-text="Screenshot that shows how to choose an account recovery mode."lightbox="media/how-to-account-recovery-configure/recovery-mode.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/recovery-mode.png" alt-text="Screenshot that shows how to choose an account recovery mode."lightbox="media/how-to-account-recovery-enable/recovery-mode.png":::
 
 1. Under **User group selection**, click **Select groups**, choose any groups you want to include for account recovery, and select **Save**.
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/group-selection.png" alt-text="Screenshot that shows how to select a group for account recovery."lightbox="media/how-to-account-recovery-configure/group-selection.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/group-selection.png" alt-text="Screenshot that shows how to select a group for account recovery."lightbox="media/how-to-account-recovery-enable/group-selection.png":::
 
 1. After you choose groups you want to include for account recovery, select **Next**.
 
@@ -48,14 +48,14 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
    >[!NOTE]
    >If you already subscribed to an Identity verification provider, proceed to step 15.
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/get-solution.png" alt-text="Screenshot that shows how to get a solution for account recovery."lightbox="media/how-to-account-recovery-configure/get-solution.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/get-solution.png" alt-text="Screenshot that shows how to get a solution for account recovery."lightbox="media/how-to-account-recovery-enable/get-solution.png":::
 
 1. Select **Marketplace** and sign in to the [**Microsoft Security Store**](https://securitystore.microsoft.com/) as an Azure subscription owner or contributor.
 
    >[!NOTE]
    >For this step, you need to begin to purchase a Software-as-a-Service (SaaS) offer from an IDV partner, which requires an Azure subscription. Make sure your signed-in account has the owner or contributor role of the Azure subscription linked to the tenant. To check role assignments, see [List Azure role assignments using the Azure portal](/azure/role-based-access-control/role-assignments-list-portal). To assign a role, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/security-store.png" alt-text="Screenshot that shows how to sign in to Microsoft Security Store."lightbox="media/how-to-account-recovery-configure/security-store.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/security-store.png" alt-text="Screenshot that shows how to sign in to Microsoft Security Store."lightbox="media/how-to-account-recovery-enable/security-store.png":::
 
 1. On the **Overview** page for your Identity verification provider, select **Get solution**.
 1. On the **Get solution** page:
@@ -75,17 +75,29 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
 1. Return to the Identity verification provider menu within the Account Recovery setup process, and choose **Select**.
 1. In **Update account recovery setup (Preview)**, select **Next**.
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/update-account-recovery-setup.png" alt-text="Screenshot that shows how to update account recovery setup."lightbox="media/how-to-account-recovery-configure/update-account-recovery-setup.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/update-account-recovery-setup.png" alt-text="Screenshot that shows how to update account recovery setup."lightbox="media/how-to-account-recovery-enable/update-account-recovery-setup.png":::
 
 1. On the **Review and finalize** page, review the details for account recovery configuration, and select **Done**.
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/finalize.png" alt-text="Screenshot that shows how to finalize account recovery setup."lightbox="media/how-to-account-recovery-configure/finalize.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/finalize.png" alt-text="Screenshot that shows how to finalize account recovery setup."lightbox="media/how-to-account-recovery-enable/finalize.png":::
 
 1. After setup is finalized, the Account Recovery **Home** page opens in the Microsoft Entra admin center. 
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/home.png" alt-text="Screenshot that shows account recovery home page."lightbox="media/how-to-account-recovery-configure/home.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/home.png" alt-text="Screenshot that shows account recovery home page."lightbox="media/how-to-account-recovery-enable/home.png":::
 
 Once setup is complete, any users scoped to account recovery can try recovery and complete Identity Verification. But they can't recover their accounts because recovery is set in evaluation mode. 
+
+## Ensure user profiles are ready for account recovery
+
+Make sure the **User Properties** are correct for all users assigned to the group that's allowed to try the recovery flow.
+
+1. Open the Users app and look at the properties for a user.
+ 
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/user-properties.png" alt-text="Screenshot that shows how to check user properties."lightbox="media/how-to-account-recovery-enable/user-properties.png":::
+
+2. Make sure the First Name property and the Last Name Property are filled in. If they are left blank, then there is no way for recovery to match the ID claims values returned from the Identity Verification Provider.
+Also, many times the real name a user has on their real government ID might not be the same as the "work" version of the name in the user properties for the account. The display name is not used in the account recovery process, only the First and Last name property fields.
+More information on this topic can be found in the FAQ section about the Preview capabilities and future plans.
 
 ## How to update and fully enable Account Recovery in the Microsoft Entra admin center
 
@@ -95,7 +107,7 @@ After testing account recovery in evaluation mode and confirming that the identi
 1. Go to **Protection** > **Account Recovery**.
 1. On the Account Recovery **Home** page, select **Manage**.
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-configure/manage.png" alt-text="Screenshot that shows how to select Manage on the account recovery home page."lightbox="media/how-to-account-recovery-configure/manage.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/manage.png" alt-text="Screenshot that shows how to select Manage on the account recovery home page."lightbox="media/how-to-account-recovery-enable/manage.png":::
 
 1. Under **Choose a recovery mode**, select **Production** to enable full account recovery capabilities.
 
@@ -107,7 +119,7 @@ After testing account recovery in evaluation mode and confirming that the identi
    - To remove groups, select the group and click **Remove**.
    
    >[!IMPORTANT]
-   >Carefully review which users are in scope for account recovery before enabling RProductionecovery mode. Ensure that only appropriate user populations have access to this capability based on your organization's security requirements.
+   >Carefully review which users are in scope for account recovery before enabling Recovery mode. Ensure that only appropriate user populations have access to this capability based on your organization's security requirements.
 
 1. Under **Identity verification providers**, review your selected provider. If needed, you can change to a different provider that has been subscribed to in the Microsoft Security Store.
 1. Select **Next** to proceed to the review page.
@@ -123,4 +135,4 @@ Once these steps are complete, users in the scoped groups can use account recove
 
 ## Related content
 
-[How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-user-setup.md)
+[How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-for-users-setup.md)
