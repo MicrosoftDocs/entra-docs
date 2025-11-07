@@ -17,7 +17,8 @@ Catalog access reviews in Microsoft Entra ID let organizations review users acce
 
 ## License requirements
 
-[!INCLUDE [active-directory-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite subscriptions, for your organization's users. For more information, see the articles of each capability for more details. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md).
+
 
 
 ## Add resources to catalog
@@ -72,9 +73,9 @@ To complete a catalog access review, you'd do the following steps:
 
 1. In the left menu, select **Access reviews** to see a list of access reviews pending approval. 
 
-1. Select an access review, choose whether to approve or deny access, and give a justification for your selection.
+1. For each access item, choose **Approve** or **Deny**, and provide a justification if required
 
-1. Select **Submit**. 
+1. Select **Submit** to record your decisions.
 
 On the review end date, all decisions are automatically applied.
 
