@@ -68,7 +68,7 @@ When a profile is in the default Evaluation mode, the user sees the following sc
 
 ### User not issued a TAP
 
-f the user sees a red error message on the TAP screen and doesn't get a TAP issued, confirm that the claims ID info and Microsoft Graph match the real name. 
+If the user sees a red error message on the TAP screen and doesn't get a TAP issued, confirm that the claims ID info and Microsoft Graph match the real name. 
 
 :::image type="content" border="true" source="media/how-to-account-recovery-user-setup/mismatch.png" alt-text="Screenshot that shows a red error message on the TAP screen."lightbox="media/how-to-account-recovery-user-setup/mismatch.png":::   
 
