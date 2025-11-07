@@ -17,7 +17,7 @@ Making sure risky users don't gain access to sensitive resources is an important
 
 ## License requirements
 
-[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)] You must also have [appropriate licensing for Microsoft Purview](/purview/insider-risk-management-configure.md#subscriptions-and-licensing).
+[!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)] You must also have [appropriate licensing for Microsoft Purview](/purview/insider-risk-management-configure#subscriptions-and-licensing).
 
 ## Prerequisites
 
