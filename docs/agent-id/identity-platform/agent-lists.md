@@ -8,6 +8,7 @@ ms.service: entra-id
 ms.subservice: 
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.author: shermanouko
 ms.reviewer: alamaral
 

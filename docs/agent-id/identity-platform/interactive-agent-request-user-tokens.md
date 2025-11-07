@@ -7,6 +7,7 @@ ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer, I want to implement the On-Behalf-Of flow for my interactive agent, so that my agent can obtain access tokens to call APIs on behalf of users who have granted delegated permissions.

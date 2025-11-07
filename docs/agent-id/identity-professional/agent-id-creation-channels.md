@@ -5,6 +5,7 @@ description: Learn the channels and roles involved in creating Microsoft Entra A
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 author: omondiatieno
 ms.author: jomondi
 manager: pmwongera

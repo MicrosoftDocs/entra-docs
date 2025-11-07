@@ -7,6 +7,7 @@ ms.author: shermanouko
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
  
 #customer-intent: As a developer or identity architect, I want to understand the OAuth 2.0 authentication protocols and token flows for agentic applications, so that I can implement secure authentication patterns for Agent identity blueprints and Agent Identities in my applications.
