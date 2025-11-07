@@ -18,7 +18,7 @@ There are multiple ways to call custom APIs from an agent. Depending on your sce
 
 [!INCLUDE [Common call API content](./includes/call-api-common-dotnet.md)]
 
-## Decide which approach to use based on your scenario:
+## Decide which approach to use based on your scenario
 
 The following table helps you decide which approach to use. For most scenarios, we recommend using `IDownstreamApi`. 
 
@@ -137,7 +137,7 @@ After determining what works for you, proceed to call your custom web API.
 
 1. Call your protected API using `IDownstreamApi`. When calling the API, you can specify the agent identity or agent user identity using the `WithAgentIdentity` or `WithAgentUserIdentity` methods. `IDownstreamApi` automatically handles token acquisition and attaches the access token to the request.
 
-    1. For `WithAgentIdentity`, you'll either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
+    - For `WithAgentIdentity`, you'll either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
         
         ```csharp
         using Microsoft.Identity.Abstractions;
@@ -182,7 +182,7 @@ After determining what works for you, proceed to call your custom web API.
         }
         ```
 
-    1. For `WithAgentUserIdentity`, you can specify either UPN or OID to identify the agent user.
+    - For `WithAgentUserIdentity`, you can specify either UPN or OID to identify the agent user.
 
         ```csharp
         using Microsoft.Identity.Abstractions;
@@ -285,7 +285,7 @@ After determining what works for you, proceed to call your custom web API.
 
 1. Acquire token and call your protected API using the configured HttpClient. You can specify the agent identity or agent user using the `WithAgentIdentity` or `WithAgentUserIdentity` methods.
 
-    1. For `WithAgentIdentity`, you either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
+    - For `WithAgentIdentity`, you either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
 
         To call the API using an app only token for the agent identity, set `RequestAppToken` to `true`.
     
@@ -347,7 +347,7 @@ After determining what works for you, proceed to call your custom web API.
         }
         ```
 
-    1. To use `WithAgentUserIdentity`, you can specify either UPN or OID to identify the agent user.
+    - To use `WithAgentUserIdentity`, you can specify either UPN or OID to identify the agent user.
     
         ```csharp
         // Create request with agent user identity authentication with UPN
@@ -418,7 +418,7 @@ After determining what works for you, proceed to call your custom web API.
     app.Run();
     ```
     
-    1. Configure auth credentials in appsettings.json
+    - Configure auth credentials in appsettings.json
     
     ```json
     {
@@ -438,7 +438,7 @@ After determining what works for you, proceed to call your custom web API.
 
 1. Acquire and extract access token then call the web API.
 
-    1. For `WithAgentIdentity`, you either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
+    - For `WithAgentIdentity`, you either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
     
         - For app only token scenario, use `CreateAuthorizationHeaderForAppAsync` method.
         - For OBO token scenario, use `CreateAuthorizationHeaderForUserAsync` method 
@@ -503,7 +503,7 @@ After determining what works for you, proceed to call your custom web API.
         }
         ```
 
-        For `WithAgentUserIdentity`, you call the API on behalf of a user using their UPN or OID.
+    - For `WithAgentUserIdentity`, you call the API on behalf of a user using their UPN or OID.
 
         ```csharp
         using Microsoft.Identity.Abstractions;

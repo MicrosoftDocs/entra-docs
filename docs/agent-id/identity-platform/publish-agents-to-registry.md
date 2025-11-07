@@ -251,7 +251,3 @@ Content-Type: application/json
   "version": "2.0.0"
 }
 ```
-
-### Test agent discovery
-
-You can test whether your agent's discovery status.

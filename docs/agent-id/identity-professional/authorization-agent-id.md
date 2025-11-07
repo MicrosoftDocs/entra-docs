@@ -51,13 +51,13 @@ The following is the list of Microsoft Entra roles that can be assigned to agent
 - Cloud App Security Administrator
 - Compliance Administrator
 - Compliance Data Administrator
-- Customer LockBox Access Approver
+- Customer Lockbox Access Approver
 - Desktop Analytics Administrator
 - Directory Readers
 - Directory Synchronization Accounts
 - Dynamics 365 Administrator
 - Dynamics 365 Business Central Administrator
-- Edge Administrator
+- Microsoft Edge Administrator
 - Exchange Administrator
 - Exchange Recipient Administrator
 - Extended Directory User Administrator
@@ -122,20 +122,20 @@ The following is the list of Microsoft Entra roles that can be assigned to agent
 
 For OAuth2 permissions, agent IDs (specifically, agent identity blueprints and agent identity blueprint principals) can use the same Microsoft Graph permission model as other apps. Agents can request delegated permissions (acting on behalf of a user via consent) or application permissions (app-only privileges granted by an administrator).
 
-However, a set of particularly high-risk Microsoft Graph API permissions are explicitly blocked for agents. For example, an agent can't be granted the following permissions:
+However, a set of high-risk Microsoft Graph API permissions are explicitly blocked for agents. For example, an agent can't be granted the following permissions:
 
 | Blocked permission | Notes |
 | --- | --- |
 | `Application.ReadWrite.All` | Allows managing all applications. |
 | `RoleManagement.ReadWrite.All` | Includes full control over users, groups, roles, directory settings, and other critical operations. |
 | `User.ReadWrite.All` | Grants full control of all user accounts. |
-| `Directory.AccessAsUser.All` | Grants access to information in the directory as the signed-in user. Ensures that an agent can't circumvent security by simply asking for sweeping Microsoft Graph access – even an administrator can't consent to give an agent those permissions. |
+| `Directory.AccessAsUser.All` | Grants access to information in the directory as the signed-in user. Ensures that an agent can't circumvent security by asking for sweeping Microsoft Graph access – even an administrator can't consent to give an agent those permissions. |
 
 Agent IDs can still be granted lower-privilege permissions as appropriate. For example, if an agent needs to read a user's mailbox or OneDrive file on that user's behalf, it can request a delegated permission like `Mail.Read` or `Files.Read` and the user (or administrator) can consent. Those aren't considered high-privilege in the tenant-wide sense; they're bounded to that user's data.
 
 What's blocked are the tenant-scoped privileges that go beyond a single user or involve administrative control. Agents operate under a principle of limited scope. Agents can only do what a regular user could consent to, or what an administrator explicitly grants in a controlled, scoped manner.
 
-## When to Use Azure roles, Microsoft Entra roles, or Microsoft Graph permissions
+## When to use Azure roles, Microsoft Entra roles, or Microsoft Graph permissions
 
 Depending on what an agent needs to do, administrators can grant access in different ways to keep the scope appropriate.
 
@@ -155,4 +155,4 @@ Depending on what an agent needs to do, administrators can grant access in diffe
 
 **If an agent runs autonomously across the tenant (service scenarios)**: Use Microsoft Graph application permissions sparingly. Grant only the specific app permissions needed, and only if they aren't high-privilege. For example, an agent that generates organizational org-charts might need User.Read.All app permission to read all profiles – that could be acceptable (and isn't on the blocked list), whereas User.ReadWrite.All would be rejected.
 
-Always review the permission's scope: tenant-wide read access might be fine for certain data, but tenant-wide write or control is usually not allowed for agents. Administrators must explicitly consent to any app permission an agent gets, so there's an opportunity to review these requests carefully. For more information, see [Overview of permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md).
+Always review the permission's scope: tenant-wide read access might be fine for certain data, but tenant-wide write or control isn't allowed for agents. Administrators must explicitly consent to any app permission an agent gets, so there's an opportunity to review these requests carefully. For more information, see [Overview of permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md).
