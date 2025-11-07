@@ -14,7 +14,7 @@ ms.reviewer: chuqiaoshi
 ---
 # Identity Risk Management Agent
 
-IT administrators and security analysts face mounting pressure to identify and respond to threats quickly while managing increasingly complex environments. They're often overwhelmed by the sheer volume of alerts, struggle to prioritize which risks need immediate attention, and find it difficult to connect scattered data points across their organization's systems. The Identity Risk Management Agent with Security Copilot in Microsoft Entra helps these professionals investigate potential risks, understand their impact, and take decisive action to protect their organization's critical assets.
+IT administrators and security analysts face mounting pressure to identify and respond to threats quickly while managing increasingly complex environments. They're often overwhelmed by the sheer volume of alerts, struggle to prioritize which risks need immediate attention, and find it difficult to connect scattered data points across their organization's systems. The Identity Risk Management Agent with Security Copilot in Microsoft Entra helps these professionals investigate potential risks, understand their affect, and take decisive action to protect their organization's critical assets.
 
 ## Prerequisites
 
@@ -32,8 +32,8 @@ IT administrators and security analysts face mounting pressure to identify and r
 
 - Each agent run currently investigates up to 100 risky users. To customize the scope within this limitation, use the Agent Scope Setting. 
 - Once an agent run starts, it can't be stopped or paused. It can take 10-15 minutes to finish the run on 100 users.  
-- The agent currently analyzes user identity only. At this time, agent analysis on Workload Identities is not supported. 
-- Agent suggestions require manual admin approval. At this time, automatic remediation is not supported.
+- The agent currently analyzes user identity only. At this time, agent analysis on Workload Identities isn't supported. 
+- Agent suggestions require manual admin approval. At this time, automatic remediation isn't supported.
 - The agent reasons over Microsoft Entra data, such as sign-in logs, risk detections, risky users, and audit logs.
 - Investigation summaries and recommendations are AI-generated and might be incomplete or incorrect. Review before enforcement and use human judgment when applying changes. 
 
@@ -42,7 +42,7 @@ IT administrators and security analysts face mounting pressure to identify and r
 Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
 
 1. The agent checks for new risky users in your tenant who currently have a risk state of "At risk".
-1. The agent identifies users that apply to your defined [scope settings](#scope).
+1. The agent identifies users that apply to your defined [scope settings](identity-risk-management-agent-settings.md#scope).
 
 If the agent identifies something that wasn't previously suggested, it takes the following steps. **These agent action steps consume SCUs.**
 

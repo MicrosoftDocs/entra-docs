@@ -55,7 +55,7 @@ By default, the agent investigates the most recent 100 risky users within the la
 
 ### Communications
 
-The Identity Risk Management Agent can send email notifications to selected recipients. The user who turned on the agent is set to receive notifications, but the notifications themselves are not turned on by default. 
+The Identity Risk Management Agent can send email notifications to selected recipients. The user who turned on the agent is set to receive notifications, but the notifications themselves aren't turned on by default. 
 
 1. Set the **Email notifications** toggle to **On**.
 1. Select the **No users selected** link under the **Additional recipients** heading to search for and add more recipients.

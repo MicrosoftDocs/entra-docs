@@ -11,7 +11,7 @@ ms.reviewer: chuqiaoshi
 ---
 # Risk Management Agent and the risky user report
 
-The Risk Management Agent in Microsoft Entra ID Protection provides proactive risk management capabilities by analyzing user behavior and suggesting actions to mitigate potential identity risks. By leveraging machine learning and behavioral analytics, the agent helps security administrators identify and respond to risky activities before they lead to security incidents.
+The Risk Management Agent in Microsoft Entra ID Protection provides proactive risk management capabilities by analyzing user behavior and suggesting actions to mitigate potential identity risks. By using machine learning and behavioral analytics, the agent helps security administrators identify and respond to risky activities before they lead to security incidents.
 
 ## Prerequisites
 
@@ -27,13 +27,13 @@ The Risk Management Agent in Microsoft Entra ID Protection provides proactive ri
 
 ## How to view the Risk Management Agent in the risky user report
 
-The Risk Management Agent is integrated directly into the risky user report in Microsoft Entra ID Protection. Agent settings and risky activity are found in the Security Copilot in Microsoft Entra view, but the agent suggestions and insights are available directly in the risky user report.
+The Risk Management Agent is integrated directly into the risky user report in Microsoft Entra ID Protection. Agent settings and risky activity can be found in the agent library, but the agent suggestions and insights are available directly in the risky user report.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **ID Protection** > **Risky users**.
 1. Select the **Agent view** option at the top of the report.
 
-The top half of the agent view of the risky user report contains a summary of recent agent activity. This tile provides quick access to the **Chat with agent** feature, an option to tigger a one-time run, and a link to the agent settings. The lower half of the report contains the full list of risky users. Select a user from the list to view agent insights and suggestions specific to that user.
+The top half of the agent view of the risky user report contains a summary of recent agent activity. This tile provides quick access to the **Chat with agent** feature, an option to trigger a one-time run, and a link to the agent settings. The lower half of the report contains the full list of risky users. Select a user from the list to view agent insights and suggestions specific to that user.
 
 ## Risky user details
 
