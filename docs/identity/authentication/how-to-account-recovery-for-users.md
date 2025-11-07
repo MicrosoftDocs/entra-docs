@@ -106,8 +106,6 @@ As part of account recovery, the photo in the presented Verified ID is matched a
 ### Temporary Access Pass code issues following Identity Verification document validation
 
 After the user has shared their Verified ID with Microsoft Entra, we attempt an account validation and match against the verified claims in the ID issued by your Identity Verification Provider. This error may be present when account ownership couldn't be confirmed—often due to mismatches between the first and last names in the user's profile and those on the ID. Differences such as "John" versus "Jonathan", or complex surnames, might cause these issues. Admins can resolve this during the preview by updating profile information. Another possible cause is improper Temporary Access Pass issuance group configuration for users in recovery. Check the Authentication methods policy and confirm that users in scope for recovery are also enabled for the Temporary Access Pass method. 
-
-:::image type="content" border="true" source="media/how-to-account-recovery-for-users/copy-code.png" alt-text="Screenshot that shows an error when trying to copy the TAP code." lightbox="media/how-to-account-recovery-for-users/copy-code.png":::   
  
 ### Passkey not issued
      
