@@ -16,7 +16,7 @@ ms.custom: sfi-image-nochange
 
 # Protect AI applications with the AI Gateway Prompt Shield (preview)
 
-Prompt injection attacks pose a significant risk for generative AI apps. As the frontier solution for securing AI and users' access to AI, Microsoft's Secure Web Gateway (SWG) is now the Secure Web and AI Gateway. This change adds Prompt Shield to protect Enterprise generative AI apps from prompt injection attacks.
+Prompt injection attacks pose a significant risk for generative AI apps. As the frontier solution for securing AI and users' access to AI, Microsoft's Secure Web Gateway (SWG) is now the Secure Web and AI Gateway. This change adds Prompt Shield to protect enterprise generative AI apps from prompt injection attacks.
 
 Prompt injection attacks are a serious threat to generative AI applications. Attackers craft malicious input to make a large language model (LLM) ignore instructions, expose sensitive data, perform unintended actions, or generate harmful content. It works like code injection for LLMs: instead of exploiting a SQL interpreter, attackers exploit the LLM's tendency to follow textual commands.
 
@@ -47,15 +47,23 @@ To configure Prompt Shield for your organization, complete the following steps:
 
 To create new content policies for Prompt Shield protection:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
-1. Create a new content policy:
-1. Browse to **Global Secure Access** > **Secure** > **Content policies**.
+1. Browse to **Global Secure Access** > **Secure** > **Prompt policies**.
 1. Select **Create policy**.
-1. Complete the **Basics** and **Settings** tabs as needed.
+1. On the **Basics** tab, enter a **Name** and **Description** for the policy.
+1. Complete the **Settings** tab as needed.
 1. Select **Next**.
-1. On the **Rules** tab, select **Add rule** > **Prompt shield scan rule**.
-1. On the **Add Prompt shield scan rule** page, configure the appropriate settings for your organization.
-1. Select **Add destination** and specify the fully qualified domain name (FQDN) of your Enterprise Gen AI apps.
-1. Select **Add** and then select **Next**.
+1. On the **Rules** tab, select **Add rule**.
+1. On the **Prompt rule** page:
+    1. Enter or select a **Rule Name**, **Description**, **Priority**, and **Status**.
+    1. Set **Action** to **Block** to block malicious prompts.
+    :::image type="content" source="media/how-to-ai-prompt-shield/prompt-rule.png" alt-text="Screen shot of the Prompt Rule screen with example values in the form fields." lightbox="media/how-to-ai-prompt-shield/prompt-rule.png":::
+1. Select **+ Conversation scheme** to choose the target LLMs for your Enterprise Gen AI.
+1. From the **Type** menu, select the language model that matches your app. If the appropriate Gen AI model isn't on the list:
+    1. Select **Custom**.
+    1. Specify the **URL** of the service endpoint where the prompts are sent.
+    1. Provide the **JSON path** for the prompt location in the request body.
+1. Select **Add** to add the Conversation scheme. You can add multiple schemes.
+1. Select **Next**.
 1. To create the content policy, select **Create**.
 
 ## Link the content policy to your security profile
@@ -83,16 +91,28 @@ To create a Conditional Access policy:
 
 For more information, see [Create a Conditional Access policy targeting Global Secure Access internet traffic](how-to-target-resource-microsoft-profile.md#create-a-conditional-access-policy-targeting-global-secure-access-internet-traffic).
 
+## Generative AI models
+The following sections list more details about the AI models that work with Prompt Shield.
+
+### Top supported generative AI models
+Prompt Shield is preconfigured with the following models, with custom extractors on the backend: Copilot, ChatGPT, Claude, Grok, Llama Mistral, Cohere, Pi, and Qwen.
+
+### Custom model support
+You can protect any custom JSON-based LLM or GenAI app by configuring a custom type model with a URL and JSON path.
+
+### Unsupported models
+Prompt Shield doesn't support Gemini.
+
+### Rate limits
+- When the system reaches the rate limit, it blocks subsequent requests.
+- To optimize the performance for custom LLMs, specify the exact URL and JSON path for each.
+- The rate limit for Prompt Shield is []. <!--need rate limit info-->
+
 ## Known limitations
 
 - Prompt Shield currently supports only text prompts. It doesn't support files.
 - Prompt Shield supports only JSON-based GenAI apps. It doesn't support URL-based encoding.
 - Prompt Shield supports only exact URL matching for the URL used to send prompt to the app.
-- Apps might use multiple URLs and FQDNs under the hood when you interact with them, which might prevent the policy from being applied.
-- WebCAT-based matching requires a WebCAT policy.
-- The file policy doesn't support applications that use multipart encoding.
-- The file policy can't decompress content. It detects compressed content as a zip file.
-- Accuracy of true file type detection isn't 100%. 
 
 ## Related content
 
