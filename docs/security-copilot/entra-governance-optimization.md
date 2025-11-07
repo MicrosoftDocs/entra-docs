@@ -99,6 +99,12 @@ Examine current and eligible privileged role assignments to understand PIM confi
 - *Who has PIM eligible assignment of {Specific Role}?*
 - *Who has PIM active assignment of a {Specific role}?*
 
+## Deactivate your role
+
+After completing your tasks with Microsoft Security Copilot, ensure that you deactivate any elevated roles you activated during your session to maintain security best practices. Use the following prompt to deactivate your role:
+
+- *I am done with my investigation or {desired task}, deactivate my access.*
+
 ## See also
 
 - Learn more about [access reviews in Microsoft Entra ID](/entra/id-governance/access-reviews-overview)
