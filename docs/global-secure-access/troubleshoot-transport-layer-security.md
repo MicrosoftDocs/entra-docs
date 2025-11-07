@@ -6,7 +6,7 @@ ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: troubleshooting-known-issue
 ms.reviewer: teresayao
-ms.date: 11/06/2025
+ms.date: 11/07/2025
 ai-usage: ai-assisted
 
 #customer intent: As an IT admin, I want to troubleshoot Transport Layer Security (TLS) inspection errors.
