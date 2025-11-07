@@ -102,7 +102,7 @@ Screenshot of the **KQL mode** option.
 
 ## Identify risky users
 
-This section and the following sections illustrate how to analyze risk with Azure Monitor. Risky users have one or more risky sign-ins, or other risky actions
+This section and the following sections illustrate how to analyze risk with Azure Monitor. Risky users have one or more risky sign-ins, or other risky actions.
 
 1. Run the query to summarize the count by **UserDisplayName**.
 2. Add a time range in **DetectedDateTime < ago()**.  
@@ -119,13 +119,13 @@ AADUserRiskEvents
 | summarize count()by UserDisplayName 
 ```
 
-Use the previous query to identify common user patterns, such as service accounts, or small user subsets generating large amounts of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user, or require a secure password change. 
+Use the previous query to identify common user patterns, such as service accounts, or small user subsets generating large amounts of risk. In the example screenshot, one user accounts for significantly more risk events than others. If a single user is responsible for a disproportionate amount of risk in your tenant, we recommend requiring a secure password change.
 
    ![Screenshot of risky user data from the query.](./media/id-protection-guide-analyze/risky-users.png)
 
 ## Discern risk event types
 
-Risk even types include unfamiliar sign-in, unusual tokens, and unlikely travel are examples. After you determine user patterns, review detections and summarize them by the risk event type.  
+Risk event types include unfamiliar sign-in, unusual tokens, and unlikely travel are examples. After you determine user patterns, review detections and summarize them by the risk event type.  
 
 1. Use the **AADUserRiskEvents** table.
 2. Summarize with **RiskEventType**. 
@@ -150,13 +150,13 @@ While reviewing risk types, pay attention to large volumes. In the following exa
 * **UnlikelyTravel** - Add named locations as trusted IPs
   * Enable trusted locations for users that travel frequently
 
-See the following screenshot of results from the active-user risk events query.
+See the following screenshot of results from the active user risk events query.
 
    ![Screenshot of the results from the active-user risk events query.](./media/id-protection-guide-analyze/risk-events.png)
 
 ## Examine risk levels
 
-Risk-level totals enable effective decision making. Examine the **AADUserRiskEvents** table to review low-, medium-, and high-risk levels. Summarize risk events by level and analyze risk level totals. 
+Risk-level totals enable effective decision making. Examine the **AADUserRiskEvents** table to review low-, medium-, and high risk levels. Summarize risk events by level and analyze risk level totals. 
 
 **Example query**
 ```kusto
@@ -169,7 +169,7 @@ AADUserRiskEvents
 | summarize count()by RiskLevel  
 ```
 
-In the following screenshot, there are many total detections, but only three detections are high-risk. Filtering by sensitivity—such as low, medium, or high risk—is an effective way to isolate the most critical issues. By focusing on high-risk detections first, you can reduce noise and address the most important threats. For these cases, we recommend implementing at least a baseline Conditional Access policy that enforces a secure password change for high-risk users.
+In the following screenshot, there are many total detections, but only three are classified as high risk. Filtering by sensitivity—such as low, medium, or high risk—is an effective way to isolate the most critical issues. Filtering by sensitivity—low, medium, or high—helps isolate the most critical issues. Prioritizing high-risk detections first reduces noise and ensures you address the most significant threats. For these cases, we recommend implementing a baseline Conditional Access policy that enforces a secure password change for high-risk users.
 
    ![Screenshot of query results that show three high-risk users.](./media/id-protection-guide-analyze/three-high.png)
 
@@ -191,6 +191,7 @@ To get started, explore the Azure Monitor log reference tables for Microsoft Ent
 * Master risk analysis for effective remediation
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
+
 
 
 
