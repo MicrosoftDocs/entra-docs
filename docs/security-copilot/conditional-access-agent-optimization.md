@@ -83,7 +83,9 @@ The policy suggestions identified by the agent include:
 > [!IMPORTANT]
 > The agent doesn't make any changes to existing policies unless an administrator explicitly approves the suggestion.
 >
-> All *new* policies suggested by the agent are created in report-only mode. 
+> All *new* policies suggested by the agent are created in report-only mode.
+>
+> Two policies can be consolidated if they differ by no more than two conditions or controls.
 
 ## Getting started
 
