@@ -7,9 +7,9 @@ manager: pmwongera
 ms.date: 11/07/2025
 ms.service: entra-id
 ms.topic: how-to
-
-#customer intent: As an IT administrator, I want to create and manage agent collections so that I can organize my agents into logical groups and apply consistent policies across them.
 ms.reviewer: jadedsouza
+#customer intent: As an IT administrator, I want to create and manage agent collections so that I can organize my agents into logical groups and apply consistent policies across them.
+
 ---
 
 # Manage collections in Microsoft Entra Agent Registry
