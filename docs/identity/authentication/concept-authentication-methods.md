@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 ---
 # Authentication and verification methods in Microsoft Entra ID
 
-In today’s threat landscape, a user's sign-in methods are as critical as the systems they access. Credential-based attacks, especially remote phishing attacks, continue to target password-based accounts. Microsoft Entra ID multifactor authentication (MFA) adds another layer of security for password-based accounts. Sign-in methods that can perform MFA have varying degrees of security. Some methods are phishable, and others are remote phishing resistant.
+In today's threat landscape, a user's sign-in methods are as critical as the systems they access. Credential-based attacks, especially remote phishing attacks, continue to target password-based accounts. Microsoft Entra ID multifactor authentication (MFA) adds another layer of security for password-based accounts. Sign-in methods that can perform MFA have varying degrees of security. Some methods are phishable, and others are remote phishing resistant.
 
 This article explains the difference between phishing-resistant credentials and phishable credentials, and how authentication methods can better protect Microsoft Entra ID accounts.
 
@@ -22,9 +22,9 @@ This article explains the difference between phishing-resistant credentials and 
 
 Remote phishing attacks remain one of the most common types of attacks. Remote phishing is where attackers use social engineering and AI-driven tools to steal identity credentials—like passwords or one-time codes—without physical access to a user's device. 
 
-To better protect users from these attacks, it's recommended to use phishing-resistant authentication methods. Unlike traditional methods—such as passwords or one-time codes—that can be intercepted or socially engineered out of users, phishing-resistant authentication uses cryptographic credentials alongside a face, fingerprint, or PIN. These credentials can’t be reused, replayed, or stolen through deceptive means.
+To better protect users from these attacks, it's recommended to use phishing-resistant authentication methods. Unlike traditional methods—such as passwords or one-time codes—that can be intercepted or socially engineered out of users, phishing-resistant authentication uses cryptographic credentials alongside a face, fingerprint, or PIN. These credentials can't be reused, replayed, or stolen through deceptive means.
 
-Microsoft recommends using phishing-resistant authentication methods such as Windows Hello for Business, passkeys (FIDO2) and FIDO2 security keys, or certificate-based authentication (CBA) because they provide the most secure sign-in experience. Although a user can sign-in by using other common methods such as a password, voice call, SMS, these methods should be replaced with more secure authentication methods.
+Microsoft recommends using phishing-resistant authentication methods such as Windows Hello for Business, passkeys (FIDO2) and FIDO2 security keys, or certificate-based authentication (CBA) because they provide the most secure sign-in experience. Although a user can sign in by using other common methods such as a password, voice call, or SMS, these methods should be replaced with more secure authentication methods.
 
 The following table lists phishing-resistant and phishable authentication methods in Microsoft Entra ID.
 
@@ -37,7 +37,7 @@ Phishable | Password, SMS/Voice call, Authenticator push notifications, Authenti
 
 In Microsoft Entra ID, administrators can configure authentication methods available for their users to prove their identity when they access an application, device, or service. 
 
-Some authentication methods can be used as the primary factor when you sign in to an application or device, such as using Windows Hello for Business or a FIDO2 security key. Other authentication methods are only available as a secondary factor when you use Microsoft Entra multifactor authentication (MFA) or self service password reset (SSPR). 
+Some authentication methods can be used as the primary factor when you sign in to an application or device, such as using Windows Hello for Business or a FIDO2 security key. Other authentication methods are only available as a secondary factor when you use Microsoft Entra multifactor authentication (MFA) or self-service password reset (SSPR). 
 
 You should register users for both MFA and SSPR. To simplify this, we recommend you enable [combined security information registration](concept-registration-mfa-sspr-combined.md). 
 
@@ -80,7 +80,6 @@ These other verification methods can be used in certain scenarios:
 
 - [Plan a phishing-resistant MFA deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 - [How Microsoft Entra multifactor authentication works](concept-mfa-howitworks.md)
-- [How Microsoft Entra self-service password reset works](concept-sspr-howitworks.md)
 - [Microsoft Graph REST API authentication methods](/graph/api/resources/authenticationmethods-overview)
 
 
