@@ -46,7 +46,7 @@ additionalContent:
         - title: Agent governance and lifecycles
           links:
             - text: Microsoft Entra ID Governance for agents (LINK)
-              url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
+              url: ./identity-platform/what-is-agent-registry.md      ###../ide-governance/agent-id-governance-overview.md
             - text: Agent identity lifecycle management (LINK)
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-lifecycle-management.md
 
@@ -54,9 +54,9 @@ additionalContent:
         - title: Protect agent access to resources
           links:
             - text: Conditional Access for agents
-              url: ./identity/conditional-access/agent-id.md         
-            - text: Microsoft Entra ID Protection for agents (LINK)
-              url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
+              url: ../identity/conditional-access/agent-id.md         
+            - text: Microsoft Entra ID Protection for agents
+              url: ../id-protection/concept-risky-users.md
             - text: Network controls for agents (LINK)
               url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
             
