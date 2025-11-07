@@ -8,17 +8,23 @@ items:
     href: security-for-ai.md
   - name: Microsoft Entra agent ID features
     href: microsoft-entra-agent-identities-for-ai-agents.md
-- name: How to guides
-  items:
-  - name: Access management
+  - name: How to guides
     items:
-      - name: Grant agent access to Microsoft 365
-        href: grant-agent-access-microsoft-365.md
-      - name: Configure inheritable permissions for blueprints
-        href: configure-inheritable-permissions-blueprints.md
-      - name: Control user access to agents
-        href: control-user-access-agents.md
-  - name: Agent ID administration
+    - name: Access management
+      items:
+        - name: Authorization in Microsoft Entra Agent ID
+          href: authorization-agent-id.md
+        - name: Grant agent access to Microsoft 365
+          href: grant-agent-access-microsoft-365.md
+        - name: Configure inheritable permissions for blueprints
+          href: configure-inheritable-permissions-blueprints.md
+        - name: Control user access to agents
+          href: control-user-access-agents.md
+        - name: Agent ID administration
+          items:
+            - name: Manage registry only agents
+              href: manage-agents-without-identity.md
+  - name: Concepts
     items:
       - name: Manage registry only agents
         href: manage-agents-without-identity.md
