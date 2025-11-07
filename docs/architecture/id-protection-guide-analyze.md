@@ -77,7 +77,7 @@ To use Azure Monitor, ensure the following prerequisites are met.
 A Log Analytics workspace is a data store to collect log data types from Azure and non-Azure resources and applications. We recommend you send all log data to one Log Analytics workspace.
 
 1. [Create a Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace).
-2. To incorporate the data you want to analyze, add diagnostics settings. See the following list.
+2. To incorporate the data you want to analyze, add diagnostics settings. See the following list:
 
 * AuditLogs
 * SignInLogs
@@ -125,7 +125,7 @@ Use the previous query to identify common user patterns, such as service account
 
 ## Discern risk event types
 
-Risk even types include unfamiliar sign-in, unusual tokens, and unlikely travel are examples. After you determine user patterns, review detections and summarize them by the risk event type.  
+After we've looked at patterns from specific users, we recommend reviewing the detections themselves and summarizing them by detection type.
 
 1. Use the **AADUserRiskEvents** table.
 2. Summarize with **RiskEventType**. 
@@ -191,6 +191,7 @@ To get started, explore the Azure Monitor log reference tables for Microsoft Ent
 * Master risk analysis for effective remediation
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
+
 
 
 
