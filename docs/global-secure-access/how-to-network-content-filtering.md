@@ -9,7 +9,7 @@ author: HULKsmashGithub
 manager: dougeby
 ms.reviewer: sumeetmittal
 ms.custom: sfi-image-nochange
-ms.custom: agent-id-ignite
+
 #customer intent: As an IT admin, I want to configure Global Secure Access settings so that I can enforce network content filtering policies.
 
 ---
