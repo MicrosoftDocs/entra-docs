@@ -328,9 +328,7 @@
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
-        href: entitlement-management-access-reviews-self-review.md
-      - name: Manage Agents (Preview)
-        href: manage-agent.md    
+        href: entitlement-management-access-reviews-self-review.md   
     - name: Requestors
       items:
       - name: Request access
@@ -421,13 +419,8 @@
           href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
           href: manage-workflow-insights.md
-<<<<<<< HEAD
-        - name: Agent ID sponsor tasks (Preview)
-          href: agent-sponsor-tasks.md                
-=======
         - name: Sensitivity Labels in Lifecycle Workflows
           href: workflow-sensitivity-labels.md                
->>>>>>> 27177e0a5afccfde2d7575ddb0699e22fbd27fe4
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow

@@ -52,6 +52,8 @@ items:
           href: agent-lists.md
         - name: Manage agent blueprint
           href: manage-agent-blueprint.md
+        - name: Manage Agents in end user experience
+          href: manage-agent.md   
         - name: Publish agents to registry
           href: publish-agents-to-registry.md
     - name: Registry agent to agent protocol
