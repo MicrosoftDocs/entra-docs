@@ -113,7 +113,17 @@ After copying both the Access review object, and access review instance object, 
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload. After two hours, the system transitions the review status to **Active**.
 
 
-If the review has data uploaded it enters the **Applying** state. In the **Applying** state, you manually get a list of denied users by making the following API call:
+## Active review state
+
+At the **Active** stage:
+- Reviewers receive an email notification.
+- They can sign in to the [My Access portal](https://myaccess.microsoft.com) to view and complete their review decisions.
+
+
+## Applying stage
+
+
+In the **Applying** stage, you manually get a list of denied users by making the following API call:
 
 ``` http
 GET /identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions?$filter=(decision eq ‘Deny’ and resourceId eq ‘<custom data provided resource ID>’)
@@ -131,11 +141,6 @@ PATCH /identityGovernance/accessReviews/definitions/{access review object ID}/in
 The review transition to the **Applied** state once all the custom data provided decisions have been applied. For example, if you have five decisions that must be made from the data, you must apply(PATCH) five decisions before the review will transition to **Applied**.
 
 
-## Active review state
-
-After the **Applied** stage, the access review enters the **Active** stage. At the **Active** stage:
-- Reviewers receive an email notification.
-- They can sign in to the [My Access portal](https://myaccess.microsoft.com) to view and complete their review decisions.
 
 
 ## Complete and apply review decisions

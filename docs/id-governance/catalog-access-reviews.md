@@ -13,7 +13,7 @@ ms.date: 10/30/2025
 
 # Catalog Access Reviews (Preview)
 
-Microsoft Entra ID Access reviews help organizations efficiently manage group memberships, enterprise application access, and role assignments. These reviews ensure that only the right people retain access over time. Historically, access reviews  were conducted on individual resources such as groups, applications, roles, and access packages. With catalog access reviews, access reviews can review multiple resource types such as apps and groups on a catalog level by the manager of users who are having their access reviewed. Currently, Multi-stage reviews are supported with catalog access reviews. The first stage is the manager of the user having their access reviews. The second stage is resource owners for the resources being reviewed for the user. For example, group resource owners are the group owners, and application resource owners are the application owners defined on the application object. Catalog access reviews allow you to quickly approve, or deny, access to many different resources within a catalog for users at once. This article walks you through completing a catalog access review.
+Catalog access reviews in Microsoft Entra ID let organizations review users access to multiple resource types such as groups, applications and custom disconnected resource within a catalog at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
 
 ## License requirements
 
@@ -34,7 +34,8 @@ To complete access reviews at the catalog level, you must first add resources to
 1. On the catalog overview page, select **Resources** > **Add resource**.
 
 1. Choose the groups and applications you want to include in the catalog.
-
+    > [!NOTE]
+    > In catalog access reviews, only groups, applications, and [custom disconnected resources](custom-resource-data-access-reviews.md) are supported.
 1. With the resources selected, select **Add** to save them in the catalog.
 
 
@@ -52,11 +53,13 @@ Once you add resources to a catalog, it's time to create a catalog access review
 
 1. On the **resources** tab, select the catalog where you added the resources on and select **Next**.
 
-1. On the **Reviewers and schedule** tab, select reviewers you want to conduct access reviews. Currently only managers of the users who the access reviews are for can be set as reviewers. Multi-stage reviews are possible with managers of the users as primary approvers, and resource owners(Group owners for groups and Application owners for Applications) as fallback approvers.
+1. On the **Reviewers and schedule** tab, Choose reviewers. Currently, managers of the users are the primary reviewers.
 
-1. Enter information about reviewer experience and upon completion settings and select **Next**.
+1. Optionally, you can configure [multi-stage reviews](using-multi-stage-reviews.md), where the resource owners (group or application owners) serve as secondary reviewers.
 
-1. Select **Create**. 
+1. Configure **reviewer experience** options (email notifications, reminders, justification requirements) and **completion settings**.
+
+1. Select **Create** to finalize the access review. 
 
 
 ## Completing a catalog access review
