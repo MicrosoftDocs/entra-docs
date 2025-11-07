@@ -135,4 +135,4 @@ Once these steps are complete, users in the scoped groups can use account recove
 
 ## Related content
 
-[How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-for-users-setup.md)
+[How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-for-users.md)
