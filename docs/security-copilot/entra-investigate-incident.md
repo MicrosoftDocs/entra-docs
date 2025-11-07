@@ -80,6 +80,12 @@ She uses the following prompts to get the information she needs:
 - *Who are the owners of the Finance Department group?*
 - *What roles does this group have?*
 
+## Deactivate your role
+
+After completing her tasks with Microsoft Security Copilot, Natasha needs to deactivate any elevated roles activated during her session to maintain security best practices. She uses the following prompt to deactivate her role:
+
+- *I am done with my investigation or {desired task}, deactivate my access.*
+
 ## Remediate
 
 By using Security Copilot, Natasha is able to gather comprehensive information about the user, sign-in activities, audit logs, risky user detections, group memberships, and system diagnostics. After completing her investigation, Natasha needs to take action to remediate the risky user or unblock them.
