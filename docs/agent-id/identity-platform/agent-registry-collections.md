@@ -1,40 +1,93 @@
 ---
-title: Agent registry collections
-description: Learn about agent registry collections in Microsoft Entra ID, which provide secure logical groupings for organizing and managing enterprise AI agents.
+title: Agent Registry collections
+description: Learn about Agent Registry collections in Microsoft Entra ID, which provide secure logical groupings for organizing and managing enterprise AI agents.
 titleSuffix: Microsoft Entra Agent ID
-author: SHERMANOUKO
-ms.author: shermanouko
+author: shlipsey3
+ms.author: sarahlipsey
 manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 11/07/2025
 ms.reviewer: jadedsouza
 
-#customer-intent: As an IT administrator or security manager, I want to understand how agent registry collections work and how to organize agents into secure groupings, so that I can effectively govern agent discovery, access control, and security policies in my organization.
+#customer-intent: As an IT administrator or security manager, I want to understand how Agent Registry collections work and how to organize agents into secure groupings, so that I can effectively govern agent discovery, access control, and security policies in my organization.
 ---
 
-# Agent registry collections
+# Agent Registry collections
 
-The Microsoft Entra agent registry is the central metadata and management platform for enterprise AI agents within the Microsoft Entra ecosystem. Registry collections serve as logical groupings, or collections, designed to secure, categorize, and manage agents based on their attributes, operational status, and organizational context.
+Collections in the Microsoft Entra Agent Registry define how agents are logically organized and discovered during agent-to-agent collaboration. When an agent queries the registry, the system evaluates its metadata and returns only agents permitted for discovery based on their collection membership. This discoverability is governed by the collections the agents belong to. Collections were introduced to give organizations precise, dynamic, and secure control over which agents can be discovered and can collaborate with, supporting advanced security, compliance, and interoperability needs that traditional group-based access controls cannot address.
 
-Collections are the fundamental organizing principle of the Microsoft Entra agent registry. They function as secure groupings that group agents and determine how they can discover and interact with each other. These groupings are based on trust, visibility, and security posture. The underlying framework uses Attribute-Based Access Control (ABAC) and an advanced container-based authorization model to enforce secure-by-default policies across all registry interactions.
+## How does it work?
 
-## Collection types and assignment
+Collections were introduced to manage agent discoverability and collaboration, which are governed by Attribute-Based Access Control (ABAC) and Role-Based Access Control (RBAC):
+- **Control plane**: Admins configure which agents belong to which collections, set discovery boundaries, and assign roles and attributes using Role Assignment.
+- **Data plane**: At runtime, the registry enforces these policies—evaluating agent metadata, collection membership, and ABAC attributes to determine which agents are discoverable and can interact.
 
-Agents are categorized into collections based on secure-by-default policies that control their scopes, discoverability, and how they interact with each other. You can manually reassign an agent into one of the predefined collections. You can also create custom collections based on your needs. Agent ID registry has one predefined collection called **Global collection**. This collection contains all trusted agents with full discoverability across the tenant. Admins need to add agents to this collection in order for other users and agents to discover it globally.
+This separation ensures that policy changes (control plane) are immediately reflected in agent discovery and collaboration (data plane), supporting dynamic collaboration and discovery. In simple terms, collections control *who can be discovered and collaborated with*.
 
-## Agent registry policy enforcement
+> [!TIP]
+> Groups manage access controls.
+> Collections manage discovery and collaboration visibility.
 
-The ABAC model governs each registry collection, enabling fine-grained, attribute-driven access policies for agent interaction and discovery. Security controls are collection-centric; agents inherit permissions, access boundaries, and nondiscoverability by default, based on their collection assignment. The design ensures Zero Trust and defense-in-depth principles are intrinsically embedded from initial agent registration and detection.
+### Agent collaboration
 
-## Baseline policy enforcement
+The Microsoft Entra Agent Registry follows the same [Zero Trust principles](/security/zero-trust/zero-trust-overview) as the rest of Microsoft Entra: verify explicitly, use least privilege access, and assume breach. Every agent interaction is governed by multiple policy enforcement layers to ensure secure and compliant communication.
 
-A critical set of predefined baseline security policies are applied to agents based on their collection assignment. These policies are foundational and ensure immediate risk mitigation. Policies are applied at the collection level and inherited by all agents within that collection. It ensures consistent enforcement of security standards across the entire agent ecosystem. Collection policies limit what agents are able to discover based on their collection assignment.
+- **Access policies**: Determine whether an agent can access Microsoft Entra-protected resources, such as authentication endpoints or APIs protected by Conditional Access.
+- **Discovery policies**: Define which agents can be discovered through the registry.
 
-### Discovery control policies
+These policies work together to:
 
-Discovery control type policies limit how agents can discover each other and resources based on their collection assignment. As an admin, you can control which agents are in a global or custom collection. Microsoft Entra works to block discoverability to risky agents through secure by default policies. By default, Microsoft Entra doesn't assign any agent to collections.
+- **Layered Security (Zero Trust)**: Discovery policies add a critical security layer by reducing the attack surface. If an agent isn’t discoverable, it can’t be targeted, even if access policies are misconfigured.
+- **Privacy and Segmentation**: Sensitive or high-value agents can be hidden from discovery, ensuring only authorized agents or teams are aware of their existence.
+- **Operational Simplicity**: By separating discovery from access, organizations can manage visibility and collaboration boundaries independently from resource permissions. This concept prevents policy sprawl and tangled configurations.
+- **Compliance**: Discovery policies help enforce compliance requirements by ensuring only appropriate agents are visible to specific groups, departments, or external partners.
 
-### Custom policies
+### Agent discoverability
 
-The ability to define and apply custom policies tailored precisely to the unique security and compliance requirements of agents within custom collections. It moves beyond generic security to context-aware, adaptable policies enterprises demand. It also helps you to get your own custom policies in addition to the Registry's secure by default policies.
+Administrators can manage which agents are discoverable using predefined and custom collections.
+
+- **Global collection**: Makes agents discoverable across the entire organization. 
+- **Custom collection**: Allow admins to define discovery boundaries aligned with business or policy needs.
+
+For example, if human resources agents should only interact with payroll agents, an admin can create an HR Department collection so that only agents within that collection can discover and collaborate with each other.
+
+| Collection Type     | Discoverability                     |
+|---------------------|------------------------------------|
+| Global collection   | Discoverable by all agents         |
+| Custom collection   | Discoverable by a defined subset of agents |
+
+## Why do I need groups and collections?
+
+While both collections and Microsoft Entra Groups help manage organizational boundaries, they serve different purposes.
+For example:
+- A finance agent calls the payroll agent to generate salaries (payroll agent is the server).
+- The payroll agent then calls the tax agent for calculations (payroll agent is the client).
+
+If you rely only on groups to organize these types of boundaries, access rights and discovery rules could quickly get tangled.
+
+- **Microsoft Entra Groups**: Used for managing access for people and devices across Microsoft 365 and Microsoft Entra services.
+- **Microsoft 365 Groups**: Used primarily for collaboration within applications such as Teams, Outlook, and SharePoint.
+- **Security Groups**: Used to assign permissions and control access to applications, files, and other organizational resources.
+- **Collections**: Used for managing agent discoverability and collaboration within the Agent Registry.
+
+| Aspect | Groups | Collections |
+| --- | --- | --- |
+| Purpose | Manage access control | Manage discovery and collaboration |
+| Used for | People, devices, agents | Agents |
+| Scope | Applies across all Microsoft 365 and Microsoft Entra services | Applies within the Agent Registry and can be used by builder platforms (i.e, Copilot Studio, Azure AI Foundry) |
+| Analogy | *Who can enter the house* | *Who can I discover within the house or split into different rooms* |
+
+Collections exist to separate these concerns:
+- **Microsoft Entra Groups**: Manage access
+- **Collections**: Manage discovery and collaboration
+
+| If you want to control… | Use… |
+| --- | --- |
+| Who can sign in or access data | Groups |
+| Which agents can be discovered for collaboration | Collections |
+
+## Related content
+
+- [What is the Microsoft Entra Agent Registry?](what-is-agent-registry.md)
+- [Manage agent collections](agent-registry-manage-collections.md)
