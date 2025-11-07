@@ -28,7 +28,7 @@ To view agent identities in your Microsoft Entra tenant, you need:
 
 To manage agent identities in your Microsoft Entra tenant, you need: 
 - One of the following roles: Agent ID Administrator, Cloud Application Administrator, Application Administrator, Global Administrator
-- You can also manage your agent identity if you are the owner of that agent identity, with or without the above roles.
+- You can also manage your agent identity if you're the owner of that agent identity, with or without the above roles.
 
 ## View a list of agent identities
 To view agent identities in your tenant:
@@ -37,11 +37,11 @@ To view agent identities in your tenant:
 1. Browse to **Entra ID** > **Agent ID** > **All agent identities**.
 1. Select any agent identity you'd like to manage.
 
-On this page is a list of all agent identities in your organization. This includes both [agent identity objects](agent-identities.md) and [agents using a service principal](agentic-service-principals.md).
+This page contains a list of all agent identities in your organization. This includes both [agent identity objects](agent-identities.md) and [agents using a service principal](agent-service-principals.md).
 
 ## Search for an agent identity
 
-1. Enter either the **name** or **object ID** of the agent identity you want to find. Note, to look up an agent identity by its **Agent Blueprint ID**, please add the **Agent Blueprint ID** filter.
+1. Enter either the **name** or **object ID** of the agent identity you want to find. Note, to look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter.
 1. You can further refine the list using filters based on various criteria.
 
 ## Select viewing options
@@ -56,9 +56,9 @@ Not all columns are shown by default. To see all available columns and edit show
 | **Status** | Current operational state (Active, or Disabled) | ✓ | ✓ |  | 
 | **Object ID** | Unique identifier for agent identity | ✗ | ✓ | | 
 | **View Access** | Direct link to agent identity's permissions | ✗ | ✗ | Navigates to the Agent's Access pane, on Permissions tab | 
-| **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity | ✗ | ✓ | Will be blank for [agents using service princpals](agentic-service-principals.md) | 
+| **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity | ✗ | ✓ | Will be blank for [agents using service principals](agent-service-principals.md) | 
 | **Owners** | Direct link to the owners and sponsors for a given agent identity | ✗ | ✗ | | 
-| **Uses agent identity** | Represents whether or not this agent has an agent identity object, or utilizes a service principal | ✗ | ✗ | If "yes", then it uses an agent identity object. If "no" this agent utilizes a service principal.
+| **Uses agent identity** | Represents whether or not this agent has an agent identity object, or utilizes a service principal | ✗ | ✗ | If the answer is "yes," then it uses an agent identity object. If "no" this agent utilizes a service principal
 
 ## Disable an agent identity
 
@@ -67,7 +67,7 @@ To disable an agent identity while in this page:
 1. Select one or more agents from the list by checking the box next to their logo.
 1. Select the **Disable** button in the toolbar.
 
-You may also navigate into a single agent identity, and disable it specifically there.
+You might also navigate into a single agent identity, and disable it there.
 
 ## View details about an agent identity
 
@@ -77,5 +77,5 @@ You can select an agent identity from this list to see information like:
   - The status of that agent identity, and the ability to enable/disable a given agent identity
   - The link to the parent agent identity blueprint
 - The list of **Owners and Sponsors** for that agent identity
-- The **Agent's access** via this agent identity's granted permissions and Entra roles 
+- The **Agent's access** via this agent identity's granted permissions and Microsoft Entra roles 
 -**Audit logs** and **sign-in logs** for that agent identity
