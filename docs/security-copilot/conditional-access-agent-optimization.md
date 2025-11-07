@@ -6,13 +6,13 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 10/14/2025
+ms.date: 11/07/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.custom: security-copilot
+ms.custom: security-copilot, sfi-ga-nochange
 ms.collection: msec-ai-copilot
 ---
 # Microsoft Entra Conditional Access optimization agent
@@ -165,11 +165,16 @@ You can change the number of days between each phase by either dragging the slid
 
 There are several key points to consider regarding the identity and permissions of the agent:
 
-- The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*.
-- Avoid using an account that requires elevation through PIM for just-in-time elevation. If that user hasn't elevated to the appropriate role when the agent runs, the run fails.
+- The Conditional Access Optimization Agent now supports Microsoft Entra Agent ID, allowing the agent to run under its own identity rather than a specific user’s identity. This improves security, simplifies management, and provides greater flexibility. 
+   - New installations default to run under an agent identity. 
+   - Existing installations can switch from running in a specific user context to run under an agent identity at any time. 
+      - This change does not impact reporting or analytics.
+      - Existing policies and recommendations remain unaffected.
+      - Customers cannot switch back to user-context. 
+   - Admiins with the Security Administrator or Global Administrator roles can navigate to **Agent settings**, then select **Create agent identity** to make the switch.
 - Security Administrator has access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - The user who approves a suggestion to add users to a policy becomes an owner of a new group that adds the users to a policy. 
-- The audit logs for actions taken by the agent are associated with the user who enabled the agent. You can find the name of the account that started the agent in the **Identity and permissions** section of the settings.
+- The audit logs for actions taken by the agent are associated with the user or agent identity who enabled the agent. You can find the name of the account in the **Identity and permissions** section of the settings.
 
    :::image type="content" source="media/conditional-access-agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization/identity-permissions.png":::
 
