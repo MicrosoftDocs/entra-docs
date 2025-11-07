@@ -125,7 +125,7 @@ Use the previous query to identify common user patterns, such as service account
 
 ## Discern risk event types
 
-After we've looked at patterns from specific users, we recommend reviewing the detections themselves and summarize them by detection type.
+After we've looked at patterns from specific users, we recommend reviewing the detections themselves and summarizing them by detection type.
 
 1. Use the **AADUserRiskEvents** table.
 2. Summarize with **RiskEventType**. 
@@ -191,6 +191,7 @@ To get started, explore the Azure Monitor log reference tables for Microsoft Ent
 * Master risk analysis for effective remediation
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
+
 
 
 
