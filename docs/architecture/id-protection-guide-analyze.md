@@ -119,7 +119,7 @@ AADUserRiskEvents
 | summarize count()by UserDisplayName 
 ```
 
-Use the previous query to identify common user patterns, such as service accounts, or small user subsets generating large amounts of risk. In the following screenshot, there are risky users. One generates more risk events than the others. For this scenario, you can block the user, or require a secure password change. 
+Use the previous query to identify common user patterns, such as service accounts, or small user subsets generating large amounts of risk. In the example screenshot, one user accounts for significantly more risk events than others. If a single user is responsible for a disproportionate amount of risk in your tenant, we recommend requiring a secure password change.
 
    ![Screenshot of risky user data from the query.](./media/id-protection-guide-analyze/risky-users.png)
 
@@ -191,6 +191,7 @@ To get started, explore the Azure Monitor log reference tables for Microsoft Ent
 * Master risk analysis for effective remediation
 * [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 * [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)  
+
 
 
 
