@@ -219,7 +219,7 @@ Organizations can create a Conditional Access policy to block high-risk agent id
 
 Admins can use the Sign-in logs to investigate why a Conditional Access policy did or didn't apply as explained in [Microsoft Entra sign-in events](troubleshoot-conditional-access.md#microsoft-entra-sign-in-events). For agent-specific entries, filter for **agentType** of **agent user** or **agent identity**. Some of these events appear in the **User sign-ins (non-interactive)** while others appear under **Service principal sign-ins**.
 
-- Agent identities (actor) accessing any resources → Service principal sign-in logs → agentType: agent identity
+- Agent identities (actor) accessing any resources → Service principal sign-in logs → agent type: agent ID user
 - Agent users accessing any resources → Non-interactive user sign-ins → agentType: agent user
 - Users accessing agents → User sign-ins
 
