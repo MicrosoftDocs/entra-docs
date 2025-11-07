@@ -123,4 +123,7 @@ The requestor steps are as follows:
 
 ## Next steps
 
-[Delegate access governance to access package managers](entitlement-management-delegate-managers.md)
+- [Delegate access governance to access package managers](entitlement-management-delegate-managers.md)
+- [What's new in Microsoft Entra Verified ID](../verified-id/whats-new.md)
+- [What is Microsoft Security Store?](/security/store/what-is-security-store)
+- [Microsoft Entra Verified ID Identity Verification partners](../verified-id/idv-partners.md)
