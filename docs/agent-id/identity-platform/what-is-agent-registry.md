@@ -7,6 +7,7 @@ ms.author: jomondi
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: jadedsouza
 
 #customer-intent: As a developer or IT administrator, I want to understand what the agent registry is and how it provides a centralized identity directory that enables secure agent discovery, so that I can build customer trust and drive adoption through effective agent ecosystem management in my organization.

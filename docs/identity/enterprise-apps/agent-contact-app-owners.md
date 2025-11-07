@@ -5,6 +5,7 @@ ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to

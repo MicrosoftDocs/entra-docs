@@ -8,6 +8,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/06/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent IDs are and how they provide first-class identity constructs that differ from traditional identities, so that I can build customer trust and drive adoption through secure identity solutions for AI agents in my organization.
 ---

@@ -6,6 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.reviewer: dastrock
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.topic: concept-article
 ms.service: entra-id
 

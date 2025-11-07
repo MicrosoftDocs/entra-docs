@@ -6,6 +6,7 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 11/05/2025
+ms.custom: agent-id-ignite
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

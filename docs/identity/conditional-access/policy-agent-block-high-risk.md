@@ -6,6 +6,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 
 ms.service: entra-id
 ms.subservice: conditional-access
