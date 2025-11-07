@@ -60,15 +60,13 @@ The following table outlines when an authentication method can be used during a 
 | [External authentication methods (preview)](/entra/identity/authentication/how-to-authentication-external-method-manage)| No    | MFA  |
 | [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md)    | Yes                    | MFA                       |
 | [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)         | Yes              | MFA and SSPR   |
-| [Voice call](concept-authentication-phone-options.md)<sup>3</sup>                    | No                     | MFA and SSPR              |
+| [Voice call](concept-authentication-phone-options.md)                   | No                     | MFA and SSPR              |
 | [QR code](concept-authentication-qr-code.md)                       | Yes                    | No                    |
 | Password                       | Yes                    | No                        |
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
 
 <sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-cba).
-
-<sup>3</sup>Alternate phone methods can only be used for MFA.
 
 These other verification methods can be used in certain scenarios:
 
