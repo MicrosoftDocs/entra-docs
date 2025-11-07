@@ -34,9 +34,9 @@ When a user requests access to an access package through the **My Access** porta
 1.	**Configuration check**: If the user’s risk level matches one of the administrator-selected thresholds (for example, Medium or High), Entitlement Management automatically adds an additional risk-based approval stage before the standard approval process.
 
 1.	**Automatic approver assignment**:
-    - If the risk source is Identity Protection, the request is routed to users assigned the Security Administrator role in Microsoft Entra ID.
+    - The request is routed to users assigned the Security Administrator role in Microsoft Entra ID.
 
-1.	**Security or compliance review**: The assigned approvers review the user’s risk details and decide whether to approve or deny this stage of the request approval routing.
+1.	**Security  review**: The assigned approvers review the user’s risk details and decide whether to approve or deny this stage of the request approval routing.
     - If approved, the request continues through the rest of the regular access package approval steps.
     - If denied, the request is closed, recorded in the audit logs, and no further approval routing takes place.
 
@@ -56,7 +56,7 @@ To configure ID protection-based approvals for an access package in the Microsof
 
 1. On the card **Risk-based approval (Preview)**, select **View settings**.
 
-1. On the risk-based approval page, next to **Require approval for users with ID protection risk (Preview)**, select **Customize**.
+1. On the risk-based approval page, next to **Require approval for users with ID protection risk (Preview)**, select **Customize**. (See the separate article if you also want to configure [insider risk management-based approvals](../id-governance/entitlement-management-configure-insider-risk-management-approvals.md).)
     :::image type="content" source="media/entitlement-management-configure-risk-approvals/risk-based-approval-overview.png" alt-text="Screenshot of the risk-based approval overview screen."::: 
 
 1. You can set the ID protection user risk level and then select **Save**.  
@@ -65,15 +65,15 @@ To configure ID protection-based approvals for an access package in the Microsof
 
 
 
-## Approving a risky user
+## Reviewing a risky user's request
 
-To Approve a risky user, approvers must have the [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) role at the time of approval.
+To review the pending request from a risky user, the approver must have the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role.
 
 When a risky user submits a request for an access package, administrators are able to see their pending status via the requests page within the access package:
 
 :::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-pending-request.png" alt-text="Screenshot of a pending request for an access package by a risky user.":::
 
-A user set as an approver, or fallback approver, for risky users can view the request to approve or deny via the my access portal:
+A user set as an approver, or fallback approver, for risky users can view the request and approve or deny via the my access portal:
 :::image type="content" source="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png" alt-text="Screenshot of the approvals page in my access showing the risky user." lightbox="media/entitlement-management-configure-risk-approvals/risky-user-approvals.png":::
 
 > [!NOTE]
