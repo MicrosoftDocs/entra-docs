@@ -16,7 +16,7 @@ ms.date: 11/05/2025
 
 Organizations often have applications that aren’t yet integrated with Microsoft Entra but still need to be governed. Using custom data provided resources, you can include these disconnected applications in Microsoft Entra ID access reviews by uploading their access data directly into a catalog.
 
-This capability enables you to run User Access Reviews (UARs) across both Microsoft Entra-connected, and custom, resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources. whether or not they’re connected to Microsoft Entra.
+This capability enables you to run User Access Reviews (UARs) across both Microsoft Entra-connected, and custom, resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources whether or not they’re connected to Microsoft Entra.
 
 ## License requirements
 
@@ -60,7 +60,7 @@ With a catalog created, you can add custom data provided resource to it by doing
 ## Create a User Access Review
 
 > [!IMPORTANT]
-> BYOD reviews currently support **single-stage reviews** where **managers** are the only available reviewers.
+> Custom data resource reviews currently support **single-stage reviews** where **managers** are the only available reviewers.
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
@@ -101,7 +101,7 @@ After copying both the Access review object, and access review instance object, 
     :::image type="content" source="media/custom-data-resource-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
 
 
-1. Return to the catalog you created and select **Resources**.
+1. Return to the catalog you created, and select **Resources**.
 
 1. On the resource screen for the catalog, select the custom data access resource you created, and select **Upload custom access data**.
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
@@ -140,7 +140,7 @@ PATCH /identityGovernance/accessReviews/definitions/{access review object ID}/in
 { “applyResult” : “Success/Failure/PartialSuccess/NotSupported”, “applyDescription”: “ServiceNow ticket created” }
 ```
 
-The review transition to the **Applied** state once all the custom data provided decisions have been applied. For example, if you have five decisions that must be made from the data, you must apply(PATCH) five decisions before the review will transition to **Applied**.
+The review transition to the **Applied** state once all the custom data provided decisions have been applied. For example, if you have five decisions that must be made from the data, you must apply(PATCH) five decisions before the review transitions to **Applied**.
 
 
 
