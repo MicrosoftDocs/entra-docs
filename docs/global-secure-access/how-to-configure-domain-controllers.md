@@ -28,7 +28,8 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 - Identify the Service Principal Names (SPNs) of the private apps you want to protect. You add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
 > The SPNs are *case insensitive* and should be an *exact match* or a wildcard in the format `<serviceclass>/*` such as `cifs/*`.
-- Install the latest Private Access Sensor on the DC. Understand that one Private Access Sensor can be installed on a DC. To test this functionality, you can install sensors on a few DCs in a site that issue Kerberos tickets for the SPNs you want to protect. A sensor is installed in `Audit` mode by default and you will need to change it to `enforce` mode.
+- Install the latest Private Access Sensor on the DC. Understand that one Private Access Sensor can be installed on a DC.
+- To test this functionality, you can install sensors on a few DCs in a site that issue Kerberos tickets for the SPNs you want to protect. A sensor is installed in `Audit` mode by default and you will need to change it to `enforce` mode.
 - As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.
 - If you use NT LAN Manager (NTLM) v1/v2 in your environment, you might need to restrict NTLM and use Kerberos auth in the domain.
 
@@ -106,7 +107,7 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 1. If you add or update SPNs and/or Connector IPs, it can take a few minutes for changes to take effect. You don't need to restart the sensors.
 
 > [!IMPORTANT]
-> The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `SensorMode` for `PrivateAccessSensor` to `EnforceMode` in Global Secure Access > Connect > Connectors and sensors > Private access sensors. It may take a few minutes to update the sensor mode. For sensor versions 2.0.31 and higher, you can only update this mode from Microsoft Entra Admin Center and not the registry key from the Private Access Sensor.
+> The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `SensorMode` for `PrivateAccessSensor` to `EnforceMode` in Global Secure Access > Connect > Connectors and sensors > Private access sensors. It may take a few minutes to update the sensor mode. For sensor versions 2.1.31 and higher, you can only update this mode from Microsoft Entra Admin Center and not the registry key from the Private Access Sensor.
 
 
 ## Exclusions and inclusions for SPNs
