@@ -4,7 +4,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 11/04/2025
+ms.date: 11/07/2025
 ms.author: justinha
 author: sipower
 ms.reviewer: jupetter
@@ -49,7 +49,7 @@ The following table outlines when an authentication method can be used during a 
 | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes   | MFA<sup>1</sup>  |
 | Platform Credential for macOS   | Yes               | MFA |
 | [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md)  | Yes                    | MFA             |
-| [Microsoft Authenticator passkey](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
+| [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
 | [Synced passkey (preview)](concept-authentication-passkeys-fido2.md)| Yes                 | MFA           |
 | [Certificate-based authentication](concept-certificate-based-authentication.md)| Yes            | MFA                       |
 | [Microsoft Authenticator passwordless](concept-authentication-authenticator-app.md#passwordless-sign-in-via-notifications)| Yes | No<sup>2</sup>|
@@ -61,7 +61,7 @@ The following table outlines when an authentication method can be used during a 
 | [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md)    | Yes                    | MFA                       |
 | [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)         | Yes              | MFA and SSPR   |
 | [Voice call](concept-authentication-phone-options.md)<sup>3</sup>                    | No                     | MFA and SSPR              |
-| [QR code (preview)](concept-authentication-qr-code.md)                       | Yes                    | No                    |
+| [QR code](concept-authentication-qr-code.md)                       | Yes                    | No                    |
 | Password                       | Yes                    | No                        |
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
