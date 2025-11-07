@@ -1,0 +1,52 @@
+### YamlMime:Hub
+title: Microsoft Entra Agent ID documentation
+summary: Secure and govern AI agents at enterprise scale with Microsoft Entra Agent ID and the Microsoft agent identity platform. Create agent identities, apply Zero Trust controls, and manage agent access to your organization's resources.
+brand: azure
+
+metadata:
+  title: Microsoft Entra Agent ID documentation
+  description: Build, secure, and manage agent identities with Microsoft Entra Agent ID. Integrate AI agents with enterprise workflows, apply Zero Trust principles, and govern agent access at scale.
+  ms.service: identity-platform
+  ms.topic: hub-page
+  ms.custom: agent-id-ignite
+  author: shlipsey3
+  ms.author: sarahlipsey
+  ms.date: 10/24/2025
+
+highlightedContent:
+  items:
+    - title: What is Microsoft Entra Agent ID?
+      itemType: overview
+      url: ./identity-professional/index.yml
+    - title: What is the Microsoft agent identity platform?
+      itemType: overview
+      url: ./identity-platform/index.yml
+
+additionalContent:
+  # Supports up to 4 subsections
+  sections:
+    ## Section 1: Microsoft Entra Agent ID ######################
+    - title: Microsoft Entra Agent ID
+      summary: The comprehensive solution for protecting and governing AI agents in enterprise environments. Includes advanced security controls, governance policies, and Zero Trust protections for agent identities and access management.
+      items:
+        ## CARD 1 ######################
+        - title: What is Microsoft Entra Agent ID?
+          links:
+            - text: Security for AI with Microsoft Entra Agent ID
+              url: ./identity-professional/security-for-ai.md
+            - text: Microsoft Entra agent ID features
+              url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
+
+    ## Section 2: Microsoft agent identity platform ######################
+    - title: Microsoft agent identity platform
+      summary: The platform that enables you to create, register, and manage agent identities. Includes the agent registry for discovering and organizing agents across your organization.
+      items:
+        ## CARD 1 ######################
+        - title: Agent Identity Platform
+          links:
+            - text: What is the Microsoft agent identity platform?
+              url: ./identity-platform/what-is-agent-id-platform.md
+            - text: What is an agent ID?
+              url: ./identity-platform/what-is-agent-id.md
+            - text: What is the agent registry?
+              url: ./identity-platform/what-is-agent-registry.md

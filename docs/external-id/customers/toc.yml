@@ -300,6 +300,8 @@ items:
       href: concept-planning-your-solution.md
     - name: Woodgrove demo overview
       href: overview-solutions-customers.md
+    - name: Data residency
+      href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Security settings
       href: concept-security-customers.md
     - name: User profile attributes
@@ -426,10 +428,14 @@ items:
       items:
         - name: Customize branding
           items:
+          - name: Default branding
+            items:
             - name: Default branding
               href: how-to-customize-branding-customers.md
             - name: Language-specific branding
               href: how-to-customize-languages-customers.md
+          - name: Branding themes
+            href: how-to-customize-branding-themes-apps.md
         - name: Customize attribute collection
           items:
             - name: Collect custom user attributes during sign-up

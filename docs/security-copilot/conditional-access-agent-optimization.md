@@ -6,18 +6,18 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 
-ms.date: 10/14/2025
+ms.date: 11/07/2025
 
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.custom: security-copilot
+ms.custom: security-copilot, sfi-ga-nochange
 ms.collection: msec-ai-copilot
 ---
 # Microsoft Entra Conditional Access optimization agent
 
-The Conditional Access optimization agent helps you ensure all users and applications are protected by Conditional Access policies. The agent can recommend new policies and update existing policies, based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. The agent also creates policy review reports (Preview), which provide insights into spikes or dips that might indicate a policy misconfiguration.
+The Conditional Access optimization agent helps you ensure all users, applications, and agent identities are protected by Conditional Access policies. The agent can recommend new policies and update existing policies, based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. The agent also creates policy review reports (Preview), which provide insights into spikes or dips that might indicate a policy misconfiguration.
 
 The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
@@ -51,7 +51,7 @@ The Conditional Access optimization agent evaluates policies such as requiring m
 
 ## How it works
 
-The Conditional Access optimization agent scans your tenant for new users and applications from the last 24 hours and determines if Conditional Access policies are applicable. If the agent finds users or applications that aren't protected by Conditional Access policies, it provides suggested next steps, such as turning on or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
+The Conditional Access optimization agent scans your tenant for new users, applications, and agent identities from the last 24 hours and determines if Conditional Access policies are applicable. If the agent finds users, applications, or agent identities that aren't protected by Conditional Access policies, it provides suggested next steps, such as turning on or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
 
 Each time the agent runs, it takes the following steps. **These initial scanning steps do not consume any SCUs.**
 
@@ -65,8 +65,8 @@ If the agent identifies something that wasn't previously suggested, it takes the
 1. The agent evaluates any custom instructions you provided.
 1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
 
-> [!TIP]
-> Two policies can be consolidated if they differ by no more than two conditions or controls.
+> [!NOTE]
+> Security Copilot requires at least one SCU is provisioned in your tenant, but that SCU is billed each month even if you don't consume any SCUs. Turning off the agent doesn't stop the monthly billing for the SCU.
 
 The policy suggestions identified by the agent include:
 
@@ -76,13 +76,16 @@ The policy suggestions identified by the agent include:
 - **Block device code flow**: The agent looks for a policy blocking device code flow authentication.
 - **Risky users**: The agent suggests a policy to require secure password change for high risk users. Requires Microsoft Entra ID P2 license.
 - **Risky sign-ins**: The agent suggests a policy to require multifactor authentication for high risk sign-ins. Requires Microsoft Entra ID P2 license.
+- **Risky agents**: The agent suggests a policy to block authentication for high risk sign-ins. Requires Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
-- **Deep analysis**: The agent looks at policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout). 
+- **Deep analysis**: The agent looks at policies that correspond to key scenarios to identify outlier policies that have more than a recommended number of exceptions (leading to unexpected gaps in coverage) or no exceptions (leading to possible lockout).
 
 > [!IMPORTANT]
 > The agent doesn't make any changes to existing policies unless an administrator explicitly approves the suggestion.
 >
-> All *new* policies suggested by the agent are created in report-only mode. 
+> All *new* policies suggested by the agent are created in report-only mode.
+>
+> Two policies can be consolidated if they differ by no more than two conditions or controls.
 
 ## Getting started
 
@@ -165,11 +168,16 @@ You can change the number of days between each phase by either dragging the slid
 
 There are several key points to consider regarding the identity and permissions of the agent:
 
-- The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*.
-- Avoid using an account that requires elevation through PIM for just-in-time elevation. If that user hasn't elevated to the appropriate role when the agent runs, the run fails.
+- The Conditional Access Optimization Agent now supports Microsoft Entra Agent ID, allowing the agent to run under its own identity rather than a specific user’s identity. This improves security, simplifies management, and provides greater flexibility. 
+   - New installations default to run under an agent identity. 
+   - Existing installations can switch from running in a specific user context to run under an agent identity at any time. 
+      - This change does not impact reporting or analytics.
+      - Existing policies and recommendations remain unaffected.
+      - Customers cannot switch back to user-context. 
+   - Admiins with the Security Administrator or Global Administrator roles can navigate to **Agent settings**, then select **Create agent identity** to make the switch.
 - Security Administrator has access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - The user who approves a suggestion to add users to a policy becomes an owner of a new group that adds the users to a policy. 
-- The audit logs for actions taken by the agent are associated with the user who enabled the agent. You can find the name of the account that started the agent in the **Identity and permissions** section of the settings.
+- The audit logs for actions taken by the agent are associated with the user or agent identity who enabled the agent. You can find the name of the account in the **Identity and permissions** section of the settings.
 
    :::image type="content" source="media/conditional-access-agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization/identity-permissions.png":::
 
@@ -218,6 +226,12 @@ The Conditional Access Optimization Agent integrates with Microsoft Intune to mo
 Agent suggestions for Intune scenarios cover specific user groups and platforms (iOS or Android). For example, the agent identifies an active Intune app protection policy that targets the "Finance" group, but determines there isn't a sufficient Conditional Access policy that enforces app protection. The agent creates a report-only policy that requires users to access resources only through compliant applications on iOS devices.
 
 To identify Intune device compliance and app protection policies, the agent must be running as a Global Administrator or Conditional Access Administrator AND Global Reader. Conditional Access Administrator isn't sufficient on its own for the agent to produce Intune suggestions.
+
+## Global Secure Access integration
+
+Microsoft Entra Internet Access and Microsoft Entra Private Access (collectively known as Global Secure Access) integrate with the Conditional Access Optimization Agent to provide suggestions specific to your organization's network access policies. The suggestion, **Turn on new policy to enforce Global Secure Access network access requirements**, helps you to align your Global Secure Access policies that include network locations and protected applications.
+
+With this integration, the agent identifies users or groups that aren't covered by a Conditional Access policy to require access to corporate resources only through approved Global Secure Access channels. This policy requires users to connect to corporate resources using the organization's secure Global Secure Access network before accessing corporate apps and data. Users connecting from unmanaged or untrusted networks are prompted to use the Global Secure Access client or web gateway. You can review sign-in logs to verify compliant connections.
 
 ## Remove agent
 

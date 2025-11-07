@@ -160,6 +160,12 @@ Use the following prompts to analyze your license allocation, usage patterns, an
 - *Show me P1/P2 feature utilization.*
 - *Provide Microsoft Entra P1/P2 license usage details.*
 
+## Deactivate your role
+
+After completing your tasks with Microsoft Security Copilot, ensure that you deactivate any elevated roles you activated during your session to maintain security best practices. Use the following prompt to deactivate your role:
+
+- *I am done with my investigation or {desired task}, deactivate my access.*
+
 ## Related content
 
 - Learn more about [user management in Microsoft Entra ID](/entra/fundamentals/how-to-manage-user-profile-info)

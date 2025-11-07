@@ -271,7 +271,7 @@
         href: entitlement-management-catalog-create.md
       - name: Create a custom extension (logic apps) for catalogs
         href: entitlement-management-logic-apps-integration.md
-      - name: Determine access package approvers externally (Preview)
+      - name: Determine access package approvers externally
         href: entitlement-management-dynamic-approval.md  
       - name: Delegate to access package managers
         href: entitlement-management-delegate-managers.md
@@ -315,7 +315,7 @@
         href: entitlement-management-roles.md
       - name: Suggested access packages in MyAccess
         href: entitlement-management-suggested-access-packages.md 
-      - name: Assign eligible group membership and ownership in access packages using PIM managed groups (Preview)
+      - name: Assign eligible group membership and ownership in access packages using PIM managed groups
         href: entitlement-management-access-package-eligible.md   
     - name: Approvers
       items:
@@ -391,28 +391,34 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
-        - name: Using custom security attributes
-          href: manage-workflow-custom-security-attribute.md  
+        - name: Using custom trigger attributes (Preview)
+          href: workflow-custom-triggers.md    
+        - name: Using custom security attributes scope
+          href: manage-workflow-custom-security-attribute.md    
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
         - name: Customize emails
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
-        - name: Reprocess workflows (Preview)
+        - name: Reprocess workflows
           href: reprocess-workflow.md    
         - name: Download workflow history reports
           href: download-workflow-history.md
-        - name: Manage inactive users (Preview)
+        - name: Manage inactive users
           href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
-          href: check-workflow-execution-scope.md  
+          href: check-workflow-execution-scope.md
+        - name: Delegated Workflow Management (Preview)
+          href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
         - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
-          href: manage-workflow-insights.md             
+          href: manage-workflow-insights.md
+        - name: Sensitivity Labels in Lifecycle Workflows
+          href: workflow-sensitivity-labels.md                
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
