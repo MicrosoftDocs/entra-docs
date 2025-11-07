@@ -1,11 +1,12 @@
 ---
 title: What is the Microsoft Entra Agent Registry?
 description: Learn about the Agent Registry, a centralized metadata repository that enables agent discovery, and secure communication in enterprise environments.
-author: omondiatieno
-ms.author: jomondi
+author: shlipsey3
+ms.author: sarahlipsey
+manager: pmwongera
 ms.service: entra
 ms.topic: concept-article
-ms.date: 11/06/2025
+ms.date: 11/07/2025
 ms.reviewer: jadedsouza
 ms.custom: agent-id
 
@@ -33,7 +34,7 @@ AI agents are becoming core to enterprise workflows, performing tasks such as da
 - Acting as an authoritative source of critical [metadata](../identity-platform/agent-metadata-discoverability.md) for each agent to enable security controls and collaboration.
 - Enforcing [discovery policies](#registry-architecture-and-components) that support Zero Trust principles for agent-to-agent and agent-to-service interactions.
 
-Agent Registry also plays a role with agent identities, storing information such as agent user identities, agent blueprint identities and more. Agent Registry also enables 1:M relationships between agent cards and agents, similar to agent identity blueprints.
+Agent Registry also plays a role with agent identities, storing information such as agent user identities, [agent blueprint identities](agent-blueprint.md) and more. Agent Registry also enables 1:M relationships between agent cards and agents, similar to agent identity blueprints.
 
 ## Core functions
 
@@ -46,7 +47,7 @@ The Agent Registry serves several key capabilities:
    - Version and publisher details
    - Communication endpoints and protocols
 
-- **Agent discovery and interaction**: Enables [agent collaboration](registry-agent-to-agent-protocol.md) and secure interaction through collections, which control discoverability and enforce security policies. These capabilities allow agents to collaborate and complete tasks across workloads.
+- **Agent discovery and interaction**: Enables [agent collaboration](registry-agent-to-agent-protocol.md) and secure interaction through [collections](agent-registry-collections.md), which control discoverability and enforce security policies. These capabilities allow agents to collaborate and complete tasks across workloads.
 
 - **Security & Compliance Integration**: Works seamlessly across Agent 365, Purview, and other Microsoft platforms for end-to-end visibility on your tenant, including limiting discoverability and implementing secure by default design.
 
@@ -73,3 +74,10 @@ Security is embedded at every layer of the Agent Registry:
 
 - **Identity Assurance**: Microsoft platforms fully integrated with the Microsoft Entra Agent ID Platform automatically receive an agent identity and are enrolled in the registry.
 - **Runtime Enforcement**: Discovery policies are enforced dynamically when agents attempt discovery, preventing unauthorized actions. This enforcement works together with Microsoft Entra Agent ID, which controls authentication as well as discovery of agents within the registry. Only agents with agent identity are allowed to discover other agents in the registry, but they can find other agents without agent ID.
+
+## Related content
+
+- [Publish agents to registry](publish-agents-to-registry.md)
+- [Agent Registry metadata and discoverability](agent-metadata-discoverability.md)
+- [Agent Registry collections](agent-registry-collections.md)
+- [What is an agent ID?](what-is-agent-id.md)

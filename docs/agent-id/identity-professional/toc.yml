@@ -36,3 +36,5 @@ items:
   items:
   - name: Disable agent identities
     href: disable-agent-identities.md
+  - name: Agent Registry roles
+    href: reference-registry-roles.md
