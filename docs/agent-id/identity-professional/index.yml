@@ -20,5 +20,5 @@ landingContent:
         links:
           - text: Security for AI with Microsoft Entra agent ID
             url: ./security-for-ai.md
-          - text: Microsoft Entra agent ID security capabilities
+          - text: Microsoft Entra agent ID features
             url: ./microsoft-entra-agent-identities-for-ai-agents.md
