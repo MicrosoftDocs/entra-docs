@@ -79,7 +79,7 @@ With a catalog created, you can add custom resource access data to it by doing t
 ## Upload custom data
 
 When the review is created, its **status** shows as **Initializing**.
-
+    :::image type="content" source="media/custom-resource-data-access-reviews/initializing-access-review-status.png" alt-text="Initializing access review status.":::
 1. On the resource screen for the catalog, select the custom data access resource you created and select **Upload custom access data**.
     :::image type="content" source="media/custom-resource-data-access-reviews/upload-custom-access-data.png" alt-text="Screenshot of the upload custom access data option.":::
 
