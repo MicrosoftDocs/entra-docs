@@ -21,10 +21,10 @@ Agent collections provide a way to organize your agent identities. Collections a
 To get to your agent ID blueprint page, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator).
-1. Browse to **Entra ID** > **Agent identities** > **Agent Collections**.
+1. Browse to **Entra ID** > **Agent ID** > **Agent Collections (Preview)**.
 1. In the **Agent collections** view, you see a tabbed section containing two options:
-    1. Select **Predefined** tab to view agents added to the predefined collection. There are two options to choose from: **Global** and **Quarantined**. Selecting either option displays the agents included in that specific collection.
-    1. Select **Custom** tab to view agents added to custom collections. This tab displays any custom collections that you created in your tenant. Selecting a custom collection shows the agents that are part of that collection.
+    - Select **Predefined** tab to view agents added to the **Global** collection.
+    - Select **Custom** tab to view agents added to custom collections. This tab displays any custom collections that you created in your tenant. Selecting a custom collection shows the agents that are part of that collection.
 
 ## Create a custom collection
 
@@ -32,12 +32,7 @@ To create a custom collection, follow these steps:
 
 1. In the **Agent collections** view, select the **Custom** tab.
 1. Select **+ Create collection**.
-1. Fill the multi-stage form that appears. The form is divided into three sections:
-    1. In the **Basic** stage, provide **Name** and **Description** of the collection. Use a meaningful name and description.
-    1. In the **Agents** stage, select the agents you want to add to the collection. Select the **Add** button. 
-    1. After you select the **Add** button, a list of the selected agents will appear. Select the delete (bin) icon if you want to remove an agent.
-    1. In the **Review and create** stage, review the information you provided. If everything looks good, select **Create collection**. 
-    1. Select the **Edit** link if you realize you want to update something.
+1. Provide a descriptive and meaningful **Name** and **Description** of the collection.
 
 ## Add an agent to predefined collections
 
@@ -45,12 +40,24 @@ Use the following steps to add an agent to a predefined collection.
 
 1. Select the **Predefined** tab to view the predefined collections.
 1. Select the predefined collection you want to add the agent to. It opens a view listing all the agents in that collection and their source (builder platform).
-1. To add an agent to the collection, select **+ Add**.
+1. To add an agent to the collection, select **+ Add**, then choose the agents you want to add.
 
 ## Add an agent to custom collections
 
 Use the following steps to add an agent to a custom collection.
 
 1. Select the **Custom** tab to view the custom collections.
-1. Select the custom collection you want to add the agent to. It opens a view listing all the agents in that collection and their source (builder platform).
-1. To add an agent to the collection, select **+ Add**.
+1. Select the custom collection you want to add the agent to. A list of all agents and their source (builder platform) appears.
+1. To add an agent to the collection, select **+ Add**, then choose the agents you want to add.
+
+## Configure Zero Trust Policies for agents
+
+The Microsoft Entra Agent Registry follows [Zero Trust principles](/security/zero-trust/zero-trust-overview). For collections, Zero Trust principles are applied by configuring access and discovery policies.
+
+**Access policies** determine whether an agent can access Microsoft Entra-protected resources, such as other agents, authentication endpoints, or APIs protected by Conditional Access.
+
+1. Ensure the agent can obtain a [Microsoft Entra access token](../../identity-platform/access-tokens.md) and complies with all access policy requirements.
+1. Apply [Conditional Access policies for agents](../../identity/conditional-access/agent-id.md) to enforce access controls based on the agent's context.
+1. Use [ID Protection for agents](../../id-protection/concept-risky-agents.md) to monitor and respond to risky agent behaviors.
+
+**Discovery policies** define which agents can be discovered through the registry. You can use system-defined policies provided by Microsoft or create admin-defined policies to suit your organization's needs.
