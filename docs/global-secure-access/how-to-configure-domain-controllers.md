@@ -146,13 +146,14 @@ If you need to allow access for many users, you can instead specify an inclusion
 > [!TIP]
 > Use exclusions and inclusions to fine-tune access for users and devices that do not have the Global Secure Access client, ensuring business continuity while maintaining security controls.
 
-Example of how to configure `localpolicy` file for SPN username exclusions and inclusions:
+Example of how to configure SPN username exclusions and inclusions from Microsoft Entra Admin Center:
 > ![Screenshot of the localpolicy file showing how to configure the file for SPN username exclusions and inclusions.](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)
 
 #### Break glass mode
 
 - Private Access Sensor supports a break glass mode to allow all traffic in emergencies.
-- Enable break glass mode by changing the `TmpBreakglass` registry key from `0` to `1`.
+- Enable break glass mode from Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** then select the Private Access Sensor name, From the Settings, select Enable break glass mode.
+- You can also enable break glass mode by changing the `TmpBreakglass` registry key from `0` to `1` on the domain controller where the Private Access Sensor is installed.
 - Changes can take a few minutes to propagate. Restarting the sensors is required if updates made to the registry key. 
 
 ### 8. Test Microsoft Entra Private Access for domain controllers
