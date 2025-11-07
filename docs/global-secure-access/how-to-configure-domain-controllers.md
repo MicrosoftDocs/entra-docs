@@ -61,7 +61,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Go to **Global Secure Access** > **Applications** > **Quick Access** > and **Application segment** then select **Add Quick Access application segment**. Use port `88` and select **TCP**.
-1. Go to **Service principal name** and then select **Add Service principal name** to add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
+1. Next go to **Service principal name** and then select **Add Service principal name** to add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
 
 ![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers.](media/how-to-configure-domain-controllers/quick-access-settings.png)
 
@@ -100,7 +100,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 ### 7. Configure Private Access Sensor policy files
 
-Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path.
+Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path. Do not modify the `cloudpolicy` file.
 
 1. Confirm that the SPNs configured earlier are present in the `cloudpolicy` file.
 1. In the `localpolicy` file, add the private connector IPs to the `SourceIPAllowList` and save. Only Kerberos requests from these connector IPs are allowed; others are blocked.
@@ -112,10 +112,10 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 
 ## Exclusions and inclusions for SPNs
 
-When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN in the `localpolicy` file.
+When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN from the Microsoft Entra Admin Center or in the `localpolicy` file. Any exlcusions or inclusions configured from the Admin Center will be present in the the `cloudpolicy` file.
 
 > [!NOTE]
-> Both `cloudpolicy` and `localpolicy` are evaluated for access. Only `localpolicy` can be used to configure exclusions or inclusions.
+> Both `cloudpolicy` and `localpolicy` are evaluated for access.
 
 If no exclusion is defined for a given SPN, the default behavior is to block all direct access to that SPN unless it is accessed from a device with the Global Secure Access client installed.
 
@@ -125,7 +125,7 @@ Exclusions allow specific users or machines to access configured SPNs without re
 
 - Client IP address
 - IP address ranges
-- On-premises username, which is the first part of a User Principal Name (UPN) such as `username@domain`.
+- On-premises User Principal Name (UPN) such as `username@domain`. UPN is supported with Private Access Sensor version 2.1.31 or higher and is case insensitive. Username, which is the first part of the UPN, is supported with the previous sensor versions and can be added in the `localpolicy`file only. We highly recommend using the UPNs instead of userrnames. 
 
 You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple usernames for an SPN.
 
@@ -134,13 +134,13 @@ You can configure multiple IP addresses, multiple IP ranges, or both for a singl
 If you need to allow access for many users, you can instead specify an inclusion list for each SPN. When you configure included users for an SPN, only those users are required to have the Global Secure Access client. Users not included in the list can access the SPN without the client.
 
 > [!IMPORTANT]
-> An SPN can have either an inclusion list of UPN usernames or an exclusion list of UPN usernames, but not both.
+> An SPN can have either an inclusion list of UPNs or an exclusion list of UPNs, but not both.
 
 ### Combining exclusions and inclusions
 
-- You can configure both UPN username inclusion and IP exclusion for a given SPN.
-- You can configure both UPN username exclusion and IP exclusion for a given SPN.
-- If a policy match occurs for both UPN username inclusion and IP exclusion, access to the SPN is allowed.
+- You can configure both UPN inclusion and IP exclusion for a given SPN.
+- You can configure both UPN exclusion and IP exclusion for a given SPN.
+- If a policy match occurs for both UPN inclusion and IP exclusion, access to the SPN is allowed.
 - If a policy matches more than one rule (for example, a wildcard), access to the SPN is allowed if it matches at least one exclusion rule.
 
 > [!TIP]
