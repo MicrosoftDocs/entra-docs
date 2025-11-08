@@ -1,6 +1,6 @@
 ---
-title: Risk Management Agent and the risky user report
-description: Learn about how the Risk Management Agent works with the Risky user report in Microsoft Entra ID Protection
+title: Review agent findings in the Risky user report
+description: Learn about how the IdentityRisk Management Agent works with the Risky user report in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 ms.topic: how-to
 ms.date: 10/07/2025
@@ -9,14 +9,14 @@ ms.author: sarahlipsey
 manager: pmwongera
 ms.reviewer: chuqiaoshi
 ---
-# Risk Management Agent and the risky user report
+# Review agent findings
 
-The Risk Management Agent in Microsoft Entra ID Protection provides proactive risk management capabilities by analyzing user behavior and suggesting actions to mitigate potential identity risks. By using machine learning and behavioral analytics, the agent helps security administrators identify and respond to risky activities before they lead to security incidents.
+The Identity Risk Management Agent in Microsoft Entra ID Protection provides proactive risk management capabilities by analyzing the risky identities and suggesting actions to remediate them. By using a Large Language Model, the agent helps security administrators review and respond to risky activities before they lead to security incidents.
 
 ## Prerequisites
 
 - You must have at least the [Microsoft Entra ID P2](overview-identity-protection.md#license-requirements) license.
-- You must have the [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) license to use the Risk Management Agent.
+- You must have the [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) license to use the Identity Risk Management Agent.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
@@ -25,9 +25,9 @@ The Risk Management Agent in Microsoft Entra ID Protection provides proactive ri
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
-## How to view the Risk Management Agent in the risky user report
+## Review agent findings in the risky users report
 
-The Risk Management Agent is integrated directly into the risky user report in Microsoft Entra ID Protection. Agent settings and risky activity can be found in the agent library, but the agent suggestions and insights are available directly in the risky user report.
+The Identity Risk Management Agent is integrated directly into the Risky users report in Microsoft Entra ID Protection to support your existing workflow. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **ID Protection** > **Risky users**.
@@ -35,13 +35,32 @@ The Risk Management Agent is integrated directly into the risky user report in M
 
 The top half of the agent view of the risky user report contains a summary of recent agent activity. This tile provides quick access to the **Chat with agent** feature, an option to trigger a one-time run, and a link to the agent settings. The lower half of the report contains the full list of risky users. Select a user from the list to view agent insights and suggestions specific to that user.
 
+## Agent summary 
+
+An agent summary appears at the top of the Agent view, showing recent agent activities. This tile provides quick access to the **Chat with agent** feature and a **Manage agent** button, which lets you trigger a one-time run or open agent settings. 
+
+## Agent suggestions 
+
+Agent suggestions are displayed below the agent summary. Hover over a suggestion to highlight impacted users in the table. Selecting a suggestion filters the table to show only those users for review. Each suggestion includes a bulk action button, so you can apply the action with one click. 
+
+Currently, the following remediation actions are available in agent suggestions: 
+
+- Dismiss risk 
+- Reset password 
+
+## Risky users table with agent suggestions
+
+The lower half of the report lists all risky users. Select a user to view agent findings, risk factors, and suggestions specific to that user. The **Agent** suggestion column also shows recommended remediation actions directly in the table. Select the action button to apply a remediation to individual users. 
+
 ## Risky user details
 
-The Risky User Details page provides a standard view and agent view. Both views provide useful information, so we recommend using the information provided in both views to investigate and remediate risky users.
+The **Risky user details** page provides a new **Agent view**, which presents agent findings specific to a risky user. This view includes the following information: 
 
-The **standard view** provides basic information about the user, their current risk level, and their last sign-in information. The timeline shows recent risk signals associated with the user.
-
-The **agent view** incorporates a detailed summary of the user's risk, drawing from sign-in details and user behavior. A call-to-action button provides a quick way to start remediating the risk. As with all Microsoft Entra ID Protection reports, you can take action directly on the user from the report using the options at the top of the page. Below the risk summary and risk factors, you can also see recent risk and sign-in information.
+- **Basic user information**: Username, current risk level, and UPN
+- **Agent findings**: The agent provides a verdict of *Compromised* or *Not compromised* based on its investigation. 
+- **Risk summary**: A detailed explanation of the agent's findings, based on analysis of the user's sign-ins and behaviors. 
+- **Risk factors**: Key risk indicators summarized for easy review. 
+- **Suggested remediation action**: A call-to-action button that allows you to quickly start remediating the risk. 
 
 :::row:::
    :::column span="":::
@@ -54,25 +73,10 @@ The **agent view** incorporates a detailed summary of the user's risk, drawing f
    :::column-end:::
 :::row-end:::
 
-The agent view is dynamically generated. Some of the language you see from one run to the next might change, but the core verdict generated by the agent remains consistent.
+The agent findings, summary, and risk factors are AI-generated and therefore dynamic. Language might vary between runs. 
 
-### Verdict
+The bottom half of the agent view of the risky user details provides a visual of recent activity. This section includes the following visualizations:
 
-The verdict illustrates the level of detail researched by the agent to provide context around the risk and suggested remediation. For example, the following suggestions might be surfaced:
-
-- The Browser ID is present, but the Device ID is missing, reducing confidence in device fingerprinting and making the session harder to attribute to a known device. 
-- The Device Platform is 'Windows', which is generally trusted, but this is not enough to offset other risk factors. 
-- The IP address is flagged as anonymous, which is a strong indicator of an attempt to hide the true origin of the sign-in and is commonly associated with attacker behavior. 
-
-The details of the verdict help security administrators understand the reasoning behind the agent's suggestions.
-
-### Risk factors
-
-The risk factors section provides a summary of the risk detections present. In addition to listing the risk detections, the agent provides user-specific context around each detection. For example:
-
-- **Invalid or Expired Password Error**: The error indicates that the password used was either incorrect or expired, which is often seen in brute-force or credential stuffing attempts.
-- **Unfamiliar IP and Location**: There is no established history of this user signing in from this IP address or location, and both IP and location patterns are not set, indicating novelty.
-
-### Recent activity
-
-The bottom half of the agent view of the risky user details provides a visual of recent activity. Here you'll find risk level over the last 7 days, all sign-ins from the last 7 days, and sign-ins by location from the last 7 days.
+- **User's risk level graph**: A historical trend of the user's risk level over the past 7 days to help you understand changes. 
+- **User's past sign-in counts**: The number of sign-ins for this user in the past 7 days. 
+- **Risky sign-in map**: A map showing the locations of risky sign-ins for this user. 
