@@ -14,7 +14,7 @@ ms.custom: agent-id-ignite
 ---
 # Microsoft Entra Agent ID logs
 
-As the usage, capabilities, and scope of AI agents grow, it's important to understand how activities associated with agent identities are logged in Microsoft Entra ID. As an IT admin, you need to know what information is available in the audit and sign-in logs and how to use that information to monitor agent activity. Agent activity in Microsoft Entra activity logs include operations performed *on* agents and operations performed *by* agents. 
+As the usage, capabilities, and scope of AI agents grow, it's important to understand how activities associated with agent identities are logged in Microsoft Entra ID. As an IT admin, you need to know what information is available in the audit and sign-in logs and how to use that information to monitor agent activity.
 
 This article describes how agent identity activities are logged in Microsoft Entra ID and how to access those logs using the Microsoft Entra admin center and Microsoft Graph.
 
