@@ -59,7 +59,7 @@ This preview supports these scenarios:
 1. Under **Policy settings**, make sure the Default Action is set to **Allow**, then click **Next >**.
 1. Under **Review and create**, review the information you've provided, then click **Create**.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/create-cloud-firewall-policy.png" alt-text="Screenshot showing the Create firewall policy page in the Entra admin center" lightbox="media/how-to-configure-cloud-firewall/create-cloud-firewall-policy.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/create-cloud-firewall-policy.png" alt-text="Screenshot showing the Create firewall policy page in the Entra admin center." lightbox="media/how-to-configure-cloud-firewall/create-cloud-firewall-policy.png":::
 
 ### Add or update a cloud firewall rule, assign priority and enable or disable
 
@@ -67,7 +67,7 @@ This preview supports these scenarios:
 
 1. Under **Rules**, select **+ Add rule**.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/edit-rules.png" alt-text="Screenshot showing the Add rule option in the cloud firewall policy" lightbox="media/how-to-configure-cloud-firewall/edit-rules.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/edit-rules.png" alt-text="Screenshot showing the Add rule option in the cloud firewall policy." lightbox="media/how-to-configure-cloud-firewall/edit-rules.png":::
 
 3. Configure the 5-tuple rule:
 
@@ -85,7 +85,7 @@ This preview supports these scenarios:
 
    1. Set the **Action** to **Allow** or **Block**.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/select-action.png" alt-text="Screenshot showing the cloud firewall rule configuration page" lightbox="media/how-to-configure-cloud-firewall/select-action.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/select-action.png" alt-text="Screenshot showing the cloud firewall rule configuration page." lightbox="media/how-to-configure-cloud-firewall/select-action.png":::
 
    > [!NOTE]
    > In the rule, source IP, source port, destination IP, destination port, and protocol are logically AND.
@@ -106,7 +106,7 @@ This preview supports these scenarios:
 
 1. Use the trash bin icon under the **Actions** column to permanently delete any rule.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/edit-rules-2.png" alt-text="Screenshot showing the delete option for cloud firewall rules" lightbox="media/how-to-configure-cloud-firewall/edit-rules-2.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/edit-rules-2.png" alt-text="Screenshot showing the delete option for cloud firewall rules." lightbox="media/how-to-configure-cloud-firewall/edit-rules-2.png":::
 
    > [!TIP]
    > You can also disable the rule if you intend to use the rule in the future rather than deleting it.
@@ -118,11 +118,11 @@ This preview supports these scenarios:
 
 1. In your [Entra admin center](https://entra.microsoft.com/?Microsoft_Azure_Network_Access_isCloudFirewallPolicyEnabled=true&exp.isCloudFirewallPolicyEnabled=true#view/Microsoft_Azure_Network_Access/CloudFirewallPolicy.ReactView), browse to **Global Secure Access > Secure > Security Profiles > Baseline Profile**.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles" lightbox="media/how-to-configure-cloud-firewall/security-baseline-profile.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/security-baseline-profile.png" alt-text="Screenshot showing the navigation to Security Profiles." lightbox="media/how-to-configure-cloud-firewall/security-baseline-profile.png":::
 
 2. Click on **Edit profile**, then select **Link policies > + Link a policy** to link an existing cloud firewall policy.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option" lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png" alt-text="Screenshot showing the Link policy option." lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy-link-policies.png":::
 
 Only one cloud firewall policy can be linked to a baseline profile. Linking a cloud firewall policy to a security profile other than the baseline profile won’t have any effect.
 
@@ -130,7 +130,7 @@ Only one cloud firewall policy can be linked to a baseline profile. Linking a cl
 
 1. Use the pencil icon to change the State of a linked firewall policy from **enabled** to **disabled** or vice versa.
 
-:::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy" lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy.png":::
+:::image type="content" source="media/how-to-configure-cloud-firewall/edit-baseline-policy.png" alt-text="Screenshot showing the enable/disable option for linked firewall policy." lightbox="media/how-to-configure-cloud-firewall/edit-baseline-policy.png":::
 
 ### Delete the linked firewall policy and link to another one
 
