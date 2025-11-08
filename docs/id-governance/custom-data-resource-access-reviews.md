@@ -20,7 +20,8 @@ This capability enables you to run User Access Reviews (UARs) across both Micros
 
 ## License requirements
 
-[!INCLUDE [active-directory-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite subscriptions, for your organization's users. For more information, see the articles of each capability for more details. To find the right license for your requirements, see [Microsoft Entra ID Governance licensing fundamentals](~/id-governance/licensing-fundamentals.md).
+
 
 ## Create a catalog
 
