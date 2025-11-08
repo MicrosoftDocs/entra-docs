@@ -36,7 +36,7 @@ To complete access reviews at the catalog level, you must first add resources to
 
 1. Choose the groups and applications you want to include in the catalog.
     > [!NOTE]
-    > In catalog access reviews, only groups, applications, and [custom disconnected resources](custom-resource-data-access-reviews.md) are supported.
+    > In catalog access reviews, only groups, applications, and [custom data provided resources](custom-data-resource-access-reviews.md) are supported.
 1. With the resources selected, select **Add** to save them in the catalog.
 
 
