@@ -7,9 +7,10 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.subservice: monitoring-health
-ms.date: 05/27/2025
+ms.date: 11/07/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
+ms.custom: agent-id-ignite
 
 # Customer intent: As an IT admin, I want to understand the features and capabilities of Microsoft Entra monitoring and health so I can monitor and troubleshoot user activity in my organization.
 ---
@@ -44,8 +45,8 @@ The activity logs can be viewed in the Azure portal or using the Microsoft Graph
 Audit logs provide you with records of system activities for compliance. This data enables you to address common scenarios such as:
 
 - Someone in my tenant got access to an admin group. Who gave them access? 
-- I want to know the list of users signing into a specific app because I recently onboarded the app and want to know if it’s doing well.
-- I want to know how many password resets are happening in my tenant.
+- An app I recently onboarded is not working as expected. What changes were made to the app?
+- What operations were performed by a specific agent?
 
 ### Sign-in logs
 
@@ -53,7 +54,7 @@ The sign-in logs enable you to find answers to questions such as:
 
 - What is the sign-in pattern of a user?
 - How many users have users signed in over a week?
-- What’s the status of these sign-ins?
+- What agents are authenticating to my apps?
 
 ### Provisioning logs
 
