@@ -339,8 +339,8 @@ Agent IDs are logged under the base identity types they originate from. This mea
 
 To monitor for Agent ID creation, you must detect these creation events, and look up the object ID of the created object via Microsoft Graph to determine if the object created is an Agent ID.
 
-For more information, see [agent audit logs](./sign-in-audit-logs-agents.md#audit-logs-for-agents)
+For more information, see [agent audit logs](sign-in-audit-logs-agents.md)
 
 ### Review Agent ID authentication attempts in sign-in log
 
-The agentSignIn resource type provides descriptive information that identifies and classifies sign-in events as agentic. This allows customers to determine when an agent identity was the subtype of the identity involved in an authentication event. For more information, see [agent sign-in logs](./sign-in-audit-logs-agents.md#sign-in-logs-for-agents)
+The agentSignIn resource type provides descriptive information that identifies and classifies sign-in events as agentic. This allows customers to determine when an agent identity was the subtype of the identity involved in an authentication event. For more information, see [agent sign-in logs](sign-in-audit-logs-agents.md)
