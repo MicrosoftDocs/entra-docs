@@ -14,7 +14,7 @@ ms.reviewer: chuqiaoshi
 ---
 # Identity Risk Management Agent
 
-IT administrators and security analysts face mounting pressure to identify and respond to threats quickly while managing increasingly complex environments. They're often overwhelmed by the sheer volume of alerts, struggle to prioritize which risks need immediate attention, and find it difficult to connect scattered data points across their organization's systems. The Identity Risk Management Agent with Security Copilot in Microsoft Entra helps these professionals investigate potential risks, understand their affect, and take decisive action to protect their organization's critical assets.
+IT administrators and security analysts face mounting pressure to identify and respond to threats quickly while managing increasingly complex environments. They're often overwhelmed by the sheer volume of alerts, struggle to prioritize which risks need immediate attention, and find it difficult to connect scattered data points across their organization's systems. The Identity Risk Management Agent with Security Copilot in Microsoft Entra helps these professionals investigate potential risks, understand their effect, and take decisive action to protect their organization's critical assets.
 
 ## Prerequisites
 
