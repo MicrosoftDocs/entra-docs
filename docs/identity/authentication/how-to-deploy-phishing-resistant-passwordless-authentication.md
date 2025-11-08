@@ -69,8 +69,8 @@ Credentials | Description | Benefits | Authentication Methods|
 **Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate using the device’s own unlock gesture like Face ID or Windows Hello for Business face/fingerprint/PIN.|<li>Windows Hello For Business</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
 
 
-- For *new users*, the registration and bootstrapping process takes a user with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
-- For *existing users*, they must register for phishing-resistant passwordless on their existing devices , or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. 
+- For *new users*, the registration and bootstrapping process takes them with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
+- For *existing users*, they must register for phishing-resistant passwordless on their existing devices, or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. 
 
 The end goal is the same for both types of users - most users should have at least one **portable** credential, and then **local** credentials on each computing device. 
 
@@ -145,7 +145,7 @@ Use the following guidance to enable the recommended local credentials in your e
 
 Method | Guidance
 -------|---------
-Windows Hello for Business | <li>Use the Cloud Kerberos Trust method to deploy Windows Hello for Business. For more information, see the [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune). The Cloud Kerberos Trust method applies to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It helps synced users on PCs that are either Microsoft Entra joined or Microsoft Entra hybrid joined.<li>Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves. It shouldn't be used on kiosk devices that use a shared user account.<li>Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users, then use a portable credential instead, such as security keys.<li>Biometrics are optional, but recommended. For more information, see [Prepare users to provision and use Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/prepare-users).
+Windows Hello for Business | <li>Use the Cloud Kerberos Trust method to deploy Windows Hello for Business. For more information, see the [Cloud Kerberos trust deployment guide](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust?tabs=intune). The Cloud Kerberos Trust method applies to any environment where users are synced from on-premises Active Directory to Microsoft Entra ID. It helps synced users on PCs that are either Microsoft Entra joined or Microsoft Entra hybrid joined.<li>Windows Hello for Business should only be used when each user on a PC is signing into that PC as themselves. It shouldn't be used on kiosk devices that use a shared user account.<li>Windows Hello for Business supports up to 10 users per device. If your shared devices need to support more users, then use a portable credential instead, such as security keys.<li>Biometric is optional, but recommended. For more information, see [Prepare users to provision and use Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/prepare-users).
 Platform Credential for macOS | <li>Platform Credential for macOS supports 3 different user authentication methods (Secure Enclave key, smart card, and password). Deploy the Secure Enclave key method to mirror your Windows Hello for Business on your Macs.<li>Platform Credential for macOS requires that Macs are enrolled in Mobile Device Management (MDM). For specific instructions for Intune, see [Configure Platform Credential for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos).<li>Refer to your MDM vendor’s documentation if you use another MDM service on your Macs.
 Passkey in Microsoft Authenticator | <li>Use same device registration option to bootstrap passkeys in Microsoft Authenticator. <li>Users should use their TAP to sign into Microsoft Authenticator directly on their iOS or Android device.<li>Passkeys need to be enabled in Microsoft Entra ID, in the Authentication methods policy. For more information, see [Enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md). <li>Register passkeys in Microsoft Authenticator App on Android or iOS devices.
 
@@ -180,7 +180,7 @@ Microsoft recommends that you test the deployment strategy created in the previo
 
 Microsoft recommends driving usage based on which user personas are most ready for deployment. Typically, this means piloting with Admins first, then deploying widely to non admin user groups, but this may change depending on your organization's needs.
 
-Use the following sections to create end user communications for each persona group, scope and rollout the passkeys registration feature, and user reporting and monitoring to track rollout progress.
+Use the following sections to create end user communications for each persona group, scope and roll out the passkey registration feature, and user reporting and monitoring to track rollout progress.
 
 ### Driving readiness with the Phishing-Resistant Passwordless Workbook (Preview)
 
@@ -199,7 +199,7 @@ Use the Enrollment Readiness Phase tab to analyze sign-in logs in your tenant, d
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png" alt-text="Screenshot of the Enrollment phase of the Phishing-Resistant Passwordless workbook." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png":::
 
-The Enrollment Readiness Phase tab of the workbook can help you evaluate readiness for the following OSes and credentials:
+The Enrollment Readiness Phase tab of the workbook can help you evaluate readiness for the following operating systems and credentials:
 
 - Windows
     - Windows Hello for Business
@@ -255,7 +255,7 @@ Use the ***Further Data Analysis*** tab to investigate why certain users are not
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's further data analysis tab." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png":::
 
-Use the data provided by this report to determine which users would have been blocked, which device OSes they were on, what type of client apps they were using, and what resources they were trying to access. This data should help you target those users for various remediation or enrollment actions, so that they can be effectively moved into scope for enforcement.
+Use the data provided by this report to determine which users would have been blocked, which device operating system they were on, what type of client apps they were using, and what resources they were trying to access. This data should help you target those users for various remediation or enrollment actions, so that they can be effectively moved into scope for enforcement.
 
 ### Plan end user communications
 
