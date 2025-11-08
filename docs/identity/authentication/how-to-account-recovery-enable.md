@@ -4,7 +4,7 @@ description: How to enable Account Recovery (Preview) in the Microsoft Entra adm
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/31/2025
+ms.date: 11/08/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -69,9 +69,9 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
    >[!NOTE]
    >After you select **Configure account now**, you're redirected to the SaaS provider admin portal to complete the purchase.
 
-1.  Sign in to the SaaS subscription as an Azure subscription owner or contributor.
+1. Sign in to the SaaS subscription as an Azure subscription owner or contributor.
 1. On the **General** page of the SaaS subscription, provide the required details requested by the SaaS provider (like contact name, email, and phone number), and select **Activate**.
-1. once you see **Success**, return to the Account Recovery setup process in the [Microsoft Entra admin center](https://entra.microsoft.com) to complete the remaining steps.
+1. After you see **Success**, return to the Account Recovery setup process in the [Microsoft Entra admin center](https://entra.microsoft.com) to complete the remaining steps.
 1. Return to the Identity verification provider menu within the Account Recovery setup process, and choose **Select**.
 1. In **Update account recovery setup (Preview)**, select **Next**.
 
@@ -91,13 +91,14 @@ Once setup is complete, any users scoped to account recovery can try recovery an
 
 Make sure the **User Properties** are correct for all users assigned to the group that's allowed to try the recovery flow.
 
-1. Open the Users app and look at the properties for a user.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)  as at least a User Administrator, go to **Identity** > **Users** > **All Users** and select the user you want to modify properties for.
+1. Select **Edit properties**.
  
    :::image type="content" border="true" source="media/how-to-account-recovery-enable/user-properties.png" alt-text="Screenshot that shows how to check user properties."lightbox="media/how-to-account-recovery-enable/user-properties.png":::
 
-2. Make sure the First Name property and the Last Name Property are filled in. If they are left blank, then there is no way for recovery to match the ID claims values returned from the Identity Verification Provider.
-Also, many times the real name a user has on their real government ID might not be the same as the "work" version of the name in the user properties for the account. The display name is not used in the account recovery process, only the First and Last name property fields.
-More information on this topic can be found in the FAQ section about the Preview capabilities and future plans.
+1. Make sure the **First Name** property and the **Last Name** property are filled in. If they are left blank, there's no way for Microsoft Entra ID Account Recovery to match the ID claims values returned from the Identity Verification Provider.
+Often, the real name of a user on their government ID doesn't match what's listed for their user account in Microsoft Entra ID. The display name isn't used in the account recovery process; only the **First name** and **Last name** properties are used.
+More information on this topic can be found in the [FAQ](self-service-account-recovery.yml) for account recovery. 
 
 ## How to update and fully enable Account Recovery in the Microsoft Entra admin center
 
