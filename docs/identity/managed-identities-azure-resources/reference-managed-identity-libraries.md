@@ -8,7 +8,6 @@ ms.subservice: managed-identities
 ms.topic: reference
 ms.date: 11/11/2024
 ms.author: shermanouko
-ms.reviewer: rwike77
 
 #Customer intent: As a developer, I'd like to know the available libraries that I can use when authenticating my apps using managed identities.
 ---

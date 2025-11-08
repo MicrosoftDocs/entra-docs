@@ -38,8 +38,6 @@ For example, when a Microsoft Entra ID-joined Windows client accesses a file sha
 
 **Enhanced security with modern credentials support**: Users can sign in by using passwordless methods such as Windows Hello for Business or FIDO2 security keys, yet still access on-premises resources that have Kerberos protections. This ability enables multifactor authentication (MFA) and passwordless authentication to reduce the risks associated with password theft and phishing attacks.
 
-**Simplified hybrid join**: Microsoft Entra Kerberos supports hybrid join scenarios without requiring Active Directory Federation Services (AD FS) or Microsoft Entra Connect Sync. This support is ideal for nonpersistent virtual desktop infrastructure, disconnected forests, and Azure Virtual Desktop.
-
 **Secure ticket exchange**: Microsoft Entra Kerberos uses a Ticket Granting Ticket (TGT) exchange model for enhanced security.
 
 **Scalable group memberships**: Microsoft Entra Kerberos addresses traditional Kerberos limitations with large or dynamic group memberships to improve reliability and user experience. In scenarios that involve large groups of users, performance is optimized through automatic load distribution across all domain controllers (DCs) within a site. For deployments in Azure Virtual Desktop environments, we recommend ensuring that sufficient DCs are available and geographically close to the environment, to maintain responsiveness.
@@ -104,13 +102,13 @@ The partial TGT that Microsoft Entra ID issues:
 
 Possessing a Microsoft Entra Kerberos TGT for a user's on-premises Active Directory domain does not automatically grant access to a full Active Directory TGT.
 
-Microsoft Entra Kerberos uses the Read-Only Domain Controller (RODC) object's allow list and block list to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access. This mechanism is critical for limiting exposure and enforcing security boundaries. This mechanism is especially critical in hybrid environments where Microsoft Entra ID issues partial TGTs that must be redeemed with on-premises Active Directory domain controllers for a full TGT.
+Microsoft Entra Kerberos uses the Read-Only Domain Controller (RODC) object's allowlist and blocklist to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access. This mechanism is critical for limiting exposure and enforcing security boundaries. This mechanism is especially critical in hybrid environments where Microsoft Entra ID issues partial TGTs that must be redeemed with on-premises Active Directory domain controllers for a full TGT.
 
-To complete the exchange, the user must be listed in the allow list on the RODC object and not in the block list.
+To complete the exchange, the user must be listed in the allowlist on the RODC object and not in the blocklist.
 
 :::image type="content" source="media/kerberos/kerberos-account.png" alt-text="Screenshot of user account properties in Active Directory." lightbox="media/kerberos/kerberos-account.png":::
 
-During the exchange process, a partial Microsoft Entra Kerberos TGT is converted into a full Active Directory TGT. Microsoft Entra ID evaluates the lists to determine access eligibility. If the user is in the allow list, Microsoft Entra ID issues the full TGT. If the user is in the block list, Microsoft Entra ID rejects the request and authentication fails.
+During the exchange process, a partial Microsoft Entra Kerberos TGT is converted into a full Active Directory TGT. Microsoft Entra ID evaluates the lists to determine access eligibility. If the user is in the allowlist, Microsoft Entra ID issues the full TGT. If the user is in the blocklist, Microsoft Entra ID rejects the request and authentication fails.
 
 As a best practice, set the default configuration to **Deny**. Grant explicit **Allow** permissions only to groups that are authorized to use Microsoft Entra Kerberos.
 
@@ -207,7 +205,7 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 - Microsoft Entra Kerberos uses a secure TGT exchange model via KDC Proxy. This model minimizes exposure to domain controllers and reduces the attack surface.
 - Admins can configure group resolution policies to limit which groups are included in Kerberos tickets. These controls are essential for managing ticket size and reducing exposure to unnecessary group data.
 - We advise you to maintain clear separation between cloud and on-premises environments. We discourage synchronizing sensitive accounts like `krbtgt_AzureAD` to on-premises Active Directory due to privilege escalation risks.
-- Use the RODC object's allow list and block list to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access.
+- Use the RODC object's allowlist and blocklist to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access.
 
 ## Limitations and other considerations
 

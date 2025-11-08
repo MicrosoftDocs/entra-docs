@@ -59,14 +59,7 @@ Every tenant comes with a set of app consent policies that are the same across a
 
 ## Microsoft recommended current settings
 
-The setting labeled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT: Files.Read.All, Files.ReadWrite.All, Sites.Read.All, Sites.ReadWrite.All.
-
-Updates to this consent policy will have at least 30 days of given notice.
-
-> [!NOTE]
-> Starting at the end of October 2025, the Microsoft managed policy will be updated to require admin consent for the following MS Graph permissions: Mail.Read, Mail.ReadWrite, Mail.ReadBasic, Mail.Read.Shared, Mail.ReadBasic.Shared, Mail.ReadWrite.Shared, MailboxItem.Read, Calendars.Read, Calendars.ReadBasic, Calendars.ReadWrite, Calendars.Read.Shared, Calendars.ReadBasic.Shared, Calendars.ReadWrite.Shared, Chat.Read, Chat.ReadWrite, ChannelMessage.Read.All,OnlineMeetings.Read, OnlineMeetings.ReadWrite, OnlineMeetingTranscript.Read.All, OnlineMeetingsRecording.Read.All. At the end of November 2025, this will expand to include EAS.AccessAsUser.All, EWS.AccessAsUser.All, IMAP.AcessAsUser.All, POP.AccessAsUser.All
-
-
+The setting labeled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT: `Files.Read.All`, `Files.ReadWrite.All`, `Sites.Read.All`, `Sites.ReadWrite.All`. Updates to this consent policy will have at least 30 days of given notice.
 
 ## Multiple policies
 

@@ -4,18 +4,18 @@
   items:
   - name: What is Conditional Access?
     href: overview.md
-- name: Conditional Access optimization agent
+- name: Security Copilot + Microsoft Entra
   items:
   - name: Get started with the Conditional Access optimization agent
-    href: ~/security-copilot/conditional-access-agent-optimization.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    href: agent-optimization.md
   - name: Review and approve suggestions
-    href: ~/security-copilot/conditional-access-agent-optimization-review-suggestions.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    href: agent-optimization-review-suggestions.md
   - name: Chat with the optimization agent
-    href: ~/security-copilot/conditional-access-agent-optimization-chat.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    href: agent-optimization-chat.md
   - name: Optimization agent logs and metrics
-    href: ~/security-copilot/conditional-access-agent-optimization-logs-metrics.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    href: agent-optimization-logs-metrics.md
   - name: Phased rollout
-    href: ~/security-copilot/conditional-access-agent-optimization-phased-rollout.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    href: agent-optimization-phased-rollout.md
 - name: Tutorials
   items:
   - name: Require multifactor authentication
@@ -43,6 +43,8 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
+  - name: Protecting agent identities
+    href: agent-id.md
   - name: Analyze impact
     href: concept-conditional-access-report-only.md
   - name: Service dependencies
@@ -92,7 +94,7 @@
       href: policy-all-users-security-info-registration.md
     - name: Require MFA for risky sign-in
       href: policy-risk-based-sign-in.md
-    - name: Require password change for risky users
+    - name: Require remediation for risky users
       href: policy-risk-based-user.md
     - name: Require authentication strength for device registration
       href: policy-all-users-device-registration.md
@@ -102,6 +104,8 @@
       href: policy-block-authentication-flows.md
   - name: Other policy examples
     items: 
+    - name: Block high-risk agents
+      href: policy-agent-block-high-risk.md
     - name: Applications
       items:
       - name: Require approved app or app protection policy
