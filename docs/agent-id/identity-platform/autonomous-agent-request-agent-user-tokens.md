@@ -7,6 +7,7 @@ ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrcok
 
 #customer-intent: As a developer, I want to create Agent ID users for my autonomous agents and authenticate as those users, so that my agents can connect to systems that require user account representation while maintaining proper security controls.

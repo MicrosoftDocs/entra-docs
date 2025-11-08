@@ -8,6 +8,7 @@ metadata:
    description: Learn how to build agents that can authenticate users, request permissions, and access resources securely with the Microsoft agent identity platform.
    ms.service: entra-id
    ms.topic: landing-page
+   ms.custom: agent-id-ignite
    ms.date: 10/07/2025
    author: shlipsey3
    ms.author: sarahlipsey

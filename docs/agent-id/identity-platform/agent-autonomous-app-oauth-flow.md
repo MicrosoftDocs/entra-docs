@@ -7,6 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing autonomous agent scenarios, I want to understand the app-only protocol so that I can enable agents to act independently using client credentials flows.
