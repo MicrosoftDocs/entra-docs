@@ -7,6 +7,7 @@ ms.author: shermanouko
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer or IT administrator, I want to understand how agentic service principals work and how they differ from traditional service principals, so that I can effectively implement authentication, permissions, and lifecycle management for agentic applications in my organization.
@@ -14,23 +15,31 @@ ms.reviewer: dastrock
 
 # Agent service principals
 
-The agentic model introduces specific service principal types with distinct roles and characteristics compared to nonagentic application service principals. This article explains service principals in the agentic application model, how they relate to agent identity blueprint and differ from nonagentic application service principals.
+The Agent ID platform model introduces specific service principal types with distinct roles and characteristics compared to application service principals that aren't agent identities. This article focuses on how application service principals differ from those used by the Agent ID platform model for agent identities and agent identity blueprint principals.
 
 ## Agent ID blueprint principal
 
-Agent ID blueprint principals are created automatically when an agent ID blueprint is instantiated in a tenant. These service principals provide the runtime representation of the agent ID blueprint within the tenant's directory and enable the agent ID blueprint to perform operations like creating instances and managing lifecycle operations.
+Agent ID blueprint principals are created automatically when an agent identity blueprint is instantiated in a tenant. These are a type of service principals that provide the runtime representation of the agent identity blueprint within the tenant's directory and enable the agent identity blueprint to perform operations like creating instances and managing lifecycle operations.
 
-The creation process involves consent operations that require permissions like `AgentIdentity.Create` and `ServicePrincipal.Manage.OwnedBy`. The agent ID blueprint principal enables the agent ID blueprint to obtain app-only tokens for Microsoft Graph calls necessary to create and manage agent identity (agent ID). This process is essential because agentic applications themselves can't directly obtain tokens for MS Graph operations.
+The creation process involves consent operations that require permissions like `AgentIdentity.Create` and `ServicePrincipal.Manage.OwnedBy`. The agent identity blueprint principal enables the agent identity blueprint to obtain app-only tokens for Microsoft Graph calls necessary to create and manage agent identities. This process is essential because agentic applications themselves can't directly obtain tokens for MS Graph operations.
 
 ## Agent identity as service principal
 
-Agent IDs are modeled as single-tenant service principals with a new subtype classification of "agentic." This design uses existing Microsoft Entra ID service principal infrastructure while adding agentic-specific behaviors and constraints.
+Agent identities are modeled as single-tenant service principals with a new subtype classification of "agent identity." This design uses existing Microsoft Entra ID service principal infrastructure while adding agentic-specific behaviors and constraints.
 
-Agent IDs inherit their protocol properties from their parent agent ID blueprint through the ParentID relationship. Unlike traditional service principals that operate independently, Agent IDs require their parent agent ID blueprint for impersonation and token exchange operations.
+Agent identities inherit their protocol properties from their parent agent identity blueprint through the ParentID relationship. Unlike traditional service principals that operate independently, agent identities require their parent agent identity blueprint for impersonation and token exchange operations.
 
-Agent IDs can be granted permissions directly and appear in sign-in logs when tokens are issued for agent operations. They serve as the primary identity that customers reason about when managing agent permissions and access.
+Agent identities can be granted permissions directly and appear in sign-in logs when tokens are issued for agent operations. They serve as the primary identity that customers reason about when managing agent permissions and access.
 
-Agent Identity (Agent ID) service principals are created by their parent agent ID blueprint using Microsoft Graph calls with app-only tokens and appropriate roles. The creation process establishes the parent-child relationship and configures the necessary FIC relationships for impersonation.
+Agent identity service principals are created by their parent agent identity blueprint principal using Microsoft Graph calls with app-only tokens and appropriate roles. The creation process establishes the parent-child relationship and configures the necessary FIC relationships for impersonation.
+
+## Agents built using application service principals
+
+Before the introduction of the Agent ID platform, some Microsoft applications such as Microsoft Copilot Studio and Azure AI Foundry used application agent service principals to ensure their agents were secured with identities. These are shown alongside agent identity objects in your tenant in the [**All agent identities** list](agent-lists.md). 
+
+They can be differentiated in this list using the "Uses agent identity" column and filter. With the "Uses agent identity" filter, you can show either or both of agent identity objects and agents using application service principals. See the list of columns in the [**All agent identities** list](agent-lists.md#select-viewing-options).
+
+These agents using service principal behaves the same as application service principals, and don't have the same differences from application service principals as agent identities or agent identity blueprint principals.
 
 ## Key Differences from nonagentic service principals
 
@@ -70,4 +79,4 @@ Agentic service principals support both application permissions (for app-only op
 
 Agentic service principals maintain distinct identities in audit logs and sign-in reports. When an agent ID performs operations, the logs show the agent ID as the acting client while indicating the relationship to the parent AB.
 
-Sign-in logs differentiate between agent ID blueprints, agent identities, agent users, and agent builder entities. This differentiation enables clear role identification (client, credential, subject) depending on the specific operation being performed. This enables audit trails for agentic operations.
+Sign-in logs differentiate between agent ID blueprints, agent identities, and agent users. This differentiation enables clear role identification (client, credential, subject) depending on the specific operation being performed. This enables audit trails for agentic operations.

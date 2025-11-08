@@ -187,6 +187,8 @@ items:
         href: how-to-configure-threat-intelligence.md
       - name: Customize the block page
         href: how-to-customize-block-page.md
+      - name: Network content filtering
+        href: how-to-network-content-filtering.md
   - name: Logs and monitoring
     expanded: false
     items:
@@ -240,6 +242,8 @@ items:
         href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"
         href: troubleshoot-distributed-file-system.md
+      - name: Troubleshoot Transport Layer Security (TLS) inspection issues
+        href: troubleshoot-transport-layer-security.md
   - name: Partner ecosystem
     expanded: true
     items:

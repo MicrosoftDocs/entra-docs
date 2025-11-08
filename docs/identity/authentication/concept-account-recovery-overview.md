@@ -4,7 +4,7 @@ description: Learn about Microsoft Entra ID Account Recovery, which enables user
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 11/03/2025
+ms.date: 11/07/2025
 ms.author: justinha
 author: BullittRacer
 manager: dougeby
@@ -81,7 +81,7 @@ Microsoft Entra ID Account Recovery operates through a comprehensive identity ve
 
 The account recovery process follows a structured workflow designed to balance security with user experience.
 
-:::image type="content" border="true" source="media/concept-self-service-account-recovery/recovery-steps-overview.png" alt-text="Conceptual diagram of the account recovery process.":::
+:::image type="content" border="true" source="media/concept-account-recovery-overview/recovery-steps-overview.png" alt-text="Conceptual diagram of the account recovery process.":::
 
 #### Step 1: Discover Account Recovery entry
 
@@ -110,11 +110,11 @@ The account recovery process follows a structured workflow designed to balance s
 
 ## Try account recovery
 
-Account recovery is secure by default with evaluation mode for user verification, and only takes 5 to 10 minutes to set up. [Try the preview](how-to-account-recovery-configure.md) and we appreciate your feedback!
+Account recovery is secure by default with evaluation mode for user verification, and only takes 5 to 10 minutes to set up. [Try the preview](how-to-account-recovery-enable.md) and we appreciate your feedback!
 
 ## Related content
 
-- [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-user-setup.md)
+- [How end users can perform account recovery in Microsoft Entra ID](how-to-account-recovery-for-users.md)
 - [How it works: Microsoft Entra self-service password reset](concept-sspr-howitworks.md) - Learn about traditional password reset capabilities and when to use SSPR versus account recovery
 - [What is Microsoft Entra Verified ID?](/entra/verified-id/decentralized-identifier-overview) - Understand the decentralized identity technology that powers SSAR's verification process  
 - [Plan your Microsoft Entra Verified ID verification solution](/entra/verified-id/plan-verification-solution) - Design guidance for implementing identity verification scenarios

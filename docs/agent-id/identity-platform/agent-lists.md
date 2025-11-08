@@ -1,5 +1,5 @@
 ---
-title: View agent IDs in your tenant
+title: View and manage agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
 description: Access Microsoft Entra admin center to effortlessly view and filter agent IDs. Streamline tenant oversight and take charge now.
 author: SHERMANOUKO
@@ -8,62 +8,76 @@ ms.service: entra-id
 ms.subservice: 
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.author: shermanouko
 ms.reviewer: alamaral
 
 #Customer intent: As an administrator, I want to view and search for agent identity blueprints / applications in the Microsoft Entra admin center, so that I can manage and configure the applications in my tenant effectively.
 ---
 
-# View agent IDs in your tenant
+# View and manage agent identities in your tenant
 
-The **Agent identities** pane allows admins to view all agent identities in their tenant and perform various actions like searching, filtering, sorting, selecting multiple agents for bulk operations, and disabling agents. All core information for each agent identity is displayed in a table that supports management capabilities.
+As organizations increasingly adopt AI agents to automate business processes and enhance productivity, maintaining visibility and control over these agent identities becomes crucial for security and governance. The Microsoft Entra admin center provides management capabilities for all agent identities in your tenant, allowing you to monitor, configure, and control access for both agent identity objects and agents using service principals.
+
+This article guides you through viewing, searching, filtering, and managing agent identities in your tenant. You learn how to customize your view, disable agents when necessary, and access detailed information about permissions, ownership, and activity logs. Whether you're conducting security audits, managing compliance requirements, or simply maintaining operational oversight, these tools help ensure your agent ecosystem remains secure and well-governed.
+
+To view and manage your **agent identity blueprint principals**, see [View and manage agent identity blueprints using Microsoft Entra admin center](manage-agent-blueprint.md). To view and manage agents registered in the **Agent Registry** without an identity, see [manage agent identity blueprints with no identities](../identity-professional/manage-agents-without-identity.md).
 
 ## Prerequisites
 
 To view agent identities in your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator, or Global Administrator.
 
-## Access the agent identities pane
+To manage agent identities in your Microsoft Entra tenant, you need: 
+- One of the following roles: Agent ID Administrator, Cloud Application Administrator, Application Administrator, Global Administrator
+- You can also manage your agent identity if you're the owner of that agent identity, with or without the above roles.
 
+## View a list of agent identities
 To view agent identities in your tenant:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)
+1. Browse to **Entra ID** > **Agent ID** > **All agent identities**.
+1. Select any agent identity you'd like to manage.
 
-1. Browse to **Entra ID** > **Agent identities** > **Agent with identities**.
+This page contains a list of all agent identities in your organization. This includes both [agent identity objects](agent-identities.md) and [agents using a service principal](agent-service-principals.md).
 
-    You see a table containing a list of agent identities in your tenant. Not all columns are visible. To see all available columns, select the **Edit column** button. The table columns are as follows:
+## Search for an agent identity
 
-    | Column Name | Description | Sortable | Filterable | Special Features | Availability |
-    |-------------|-------------|:--------:|:----------:|------------------|-------------|
-    | **Name** | Display name of the agent identity | ✓ | ✓ | Primary search field; clickable to view details | All agents |
-    | **Status** | Current operational state (Active, Disabled, or Inactive) | ✓ | ✓ | Disabled status always takes precedence over the Inactive status | Agent ID only |
-    | **Sponsors** | Sponsors assigned to the agent | ✗ | ✓ | | All agents |
-    | **Object ID** | Unique identifier for agent identity blueprint or identity | ✓ | ✓ | Copy button available | All agents |
-    | **Last Used** | Date when agent ID was last active | ✓ | ✗ | | Agent ID only |
-    | **Created On** | Date when the agent was created | ✓ | ✓ | Filter by "Last N days" | All agents |
-    | **View Access** | Direct link to agent's permissions | ✗ | ✗ | Navigates to the agent's Access pane on Permissions tab | Agent ID only |
-    | **Agent Blueprint ID** | Unique identifier (AgentAppId) for the agent | ✓ | ✓ | Copy button available | Agent ID only |
-    | **Owners** | Administrators with ownership rights over the agent | ✗ | ✓ | | Agent ID only |
-    | **Has Agent User** | Indicates whether agent has an associated agent user | ✓ | ✓ | | Agent ID only |
-    | **Platform** | Identifies agent's creation platform (planned feature) | ✓ | ✓ | | Agent ID only |
+Enter either the **name** or **object ID** of the agent identity you want to find. To look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter. You can further refine the list using filters based on various criteria.
 
-1. To view more agent identities, select **Load more** at the bottom of the list.
+## Select viewing options
+To customize your view of agent identities, you can change filters or select which columns are shown for each agent identity.
 
-1. Use the **Download** button in the toolbar to export the list of agents to a CSV file.
+Not all columns are shown by default. To see all available columns and edit shown columns, select the **Choose columns** button. The table columns and their filter options are as follows:
 
-## Disable an agent ID
+| Column Name | Description | Sortable | Filterable | Special notes
+|-------------|-------------|:--------:|:----------:|------------------|
+| **Name** | Display name of the agent identity | ✓ | ✓ | Primary search field; clickable to view details of the agent identity |
+| **Created On** | Date when the agent was created | ✓ | ✓ | Filter by "Last N days" | 
+| **Status** | Current operational state (Active, or Disabled) | ✓ | ✓ |  | 
+| **Object ID** | Unique identifier for agent identity | ✗ | ✓ | | 
+| **View Access** | Direct link to agent identity's permissions | ✗ | ✗ | Navigates to the Agent's Access pane, on Permissions tab | 
+| **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity | ✗ | ✓ | Will be blank for [agents using service principals](agent-service-principals.md) | 
+| **Owners** | Direct link to the owners and sponsors for a given agent identity | ✗ | ✗ | | 
+| **Uses agent identity** | Represents whether or not this agent has an agent identity object, or utilizes a service principal | ✗ | ✗ | If the answer is "yes," then it uses an agent identity object. If "no" this agent utilizes a service principal
 
-To disable an agent ID while in this page:
+## Disable an agent identity
+
+To disable an agent identity while in this page:
 
 1. Select one or more agents from the list by checking the box next to their logo.
 1. Select the **Disable** button in the toolbar.
 
-## Search for an agent identity
+You might also navigate into a single agent identity, and disable it there.
 
-The search bar enables you to find specific agents by their **display name** or **object ID**. You can further refine the list using filters based on various criteria.
+## View details about an agent identity
 
-## Manage agents
-
-Use the **View agent blueprints** tab to switch to the agent identity blueprints view, which displays all agent identity blueprints in your tenant. Agents without an identity (registry-only agents) are accessible through the **View agents without an identity** tab.
+You can select an agent identity from this list to see information like:
+- An **Overview** of the agent identity, including:
+  - The name, description, and logo for your agent identity
+  - The status of that agent identity, and the ability to enable/disable a given agent identity
+  - The link to the parent agent identity blueprint
+- The list of **Owners and Sponsors** for that agent identity
+- The **Agent's access** via this agent identity's granted permissions and Microsoft Entra roles 
+-**Audit logs** and **sign-in logs** for that agent identity
