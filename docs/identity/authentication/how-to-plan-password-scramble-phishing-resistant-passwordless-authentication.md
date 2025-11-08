@@ -1,28 +1,29 @@
 ---
 title: Remove Passwords from Microsoft Entra ID
-description: Password scrambling guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
+description: Removing password usage from Entra through Password scrambling to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
 
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/03/2025
+ms.date: 10/24/2025
 
 ms.author: justinha
-author: mepples21
+author: sipower
 manager: dougeby
-ms.reviewer: miepping
+ms.reviewer: sipower
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID
 
 ---
 
-# Plan to remove passwords from Microsoft Entra ID
+# Remove password usage from Microsoft Entra ID
 
 Passwords are one of the least secure authentication methods available. They are vulnerable to a wide range of threats—including phishing, credential stuffing, brute-force attacks, and social engineering. To realize the benefits of passwordless authentication in Microsoft Entra ID, you must ensure passwords are no longer available as a sign-in option in your tenant.
 
-Password scrambling ensures that users can't authenticate using passwords. It forces them to use more secure passwordless credentials like Windows Hello for Business, FIDO2 security keys, or Microsoft Authenticator. This article provides guidance about how to scramble passwords for both hybrid users who are synced from on-premises Active Directory Domain Services (AD DS) and cloud-only users in Microsoft Entra ID.
- 
+Password scrambling ensures that users can't authenticate by using passwords. It forces them to use more secure phishing-resistant passwordless credentials, like Windows Hello for Business, FIDO2 security keys, or passkey in Microsoft Authenticator. Because there's no known reference of the password after scrambling, it reduces the attack surface for bad actors.
+
+This article provides guidance about how to scramble passwords for both hybrid users who are synced from on-premises Active Directory Domain Services (AD DS) and cloud-only users in Microsoft Entra ID.
 
 ## Prerequisites
 
@@ -32,24 +33,18 @@ Password scrambling ensures that users can't authenticate using passwords. It fo
 
 Organizations with users synced from on-premises AD DS to Microsoft Entra ID should scramble user passwords in the on-premises environment, as on-premises is the source of authority for synced user accounts and their passwords. If your organization uses [cloud authentication](~/identity/hybrid/connect/choose-ad-authn.md) and syncs password hashes to Microsoft Entra ID, then these scrambled passwords are also synced to the cloud. The sync process ensures that users aren't aware of their passwords in either on-premises or the cloud, preventing their use and driving users towards using more secure phishing-resistant passwordless credentials.
 
-### Option 1: Scramble on-premises user passwords with Smart Card Required for Interactive Logon (SCRIL)
+## Scramble on-premises user passwords with a scripted random value
 
-Scrambling user passwords with the Smart Card Required for Interactive Logon (SCRIL) setting is the recommended method for scrambling user passwords on-premises because it's a natively available option in AD DS. When SCRIL is enabled on a user object, the user’s AD DS password is randomized by the domain controller to a value no one knows. The user has to enroll and then must authenticate to the AD DS domain by using a smart card or Windows Hello for Business. With password hash synchronization enabled, this AD DS password hash is also synced with Microsoft Entra ID.
+In Active Directory, it is not possible to remove a password attribute from a user account. Therefore to prevent usage of the password you can scramble the password periodically.
 
-The Smart Card Required for Interactive Logon setting can be configured using the Active Directory Users and Computers tool. The following sample PowerShell script can be used to enable the setting programmatically, including for many users at once. Modify the **samAccountName** variable of the script to match your environment, and then run it in a PowerShell session. Use the credentials of an admin account with appropriate permissions in on-premises AD.
+If you have legacy applications that still require a password for authentication, users can continue to use self-service password reset (SSPR) to set their password to a known state to access these apps for a period of time, until their password is scrambled again.
 
-```PowerShell
-$samAccountName = <sAMAccountName of the user>
+You can use the following script to routinely scramble any passwords that users reset back to a known state.
 
-Import-Module ActiveDirectory
-Set-ADUser -Identity $samAccountName -SmartcardLogonRequired $true
-```
+The script allows you to scramble a user's password in your AD DS domain. It generates a random password of 64 characters and sets it for the user specified in the variable name $samAccountName. You must modify the $samAccountName variable in the script to target the appropriate user. Use the credentials of an admin account with appropriate permissions in on-premises AD DS.
 
-### Option 2: Scramble on-premises user passwords with a scripted random value
-
-If you don't want to use Smart Card Required for Interactive Logon (SCRIL), another approach can be to scramble the password with a script. If users need to recover their passwords to access legacy apps, use a script to scramble the password. Run the script routinely to scramble any passwords that users reset back to a known state.
-
-The following sample PowerShell script generates a random password of 64 characters and sets it for the user specified in the variable name **$samAccountName** against on-premises AD DS domain. Modify the **$samAccountName** variable of the script to match your environment, and then run it in a PowerShell session. Use the credentials of an admin account with appropriate permissions in on-premises AD DS.
+> [!CAUTION]
+> Execute the script only from a secure and trusted environment, and ensure that the script isn't logged. Treat the host where the script is executed as a privileged host, with the same level of security as a domain controller.
 
 ```PowerShell
 $samAccountName = <sAMAccountName of the user>
@@ -78,8 +73,8 @@ $NewPassword = ConvertTo-SecureString -String (Generate-RandomPassword) -AsPlain
 Set-ADAccountPassword -Identity $samAccountName -NewPassword $NewPassword -Reset
 ```
 
-> [!CAUTION]
-> Execute the script only from a secure and trusted environment, and ensure that the script isn't logged. Treat the host where the script is executed as a privileged host, with the same level of security as a domain controller.
+> [!Note]
+> If your password scrambling script runs less frequently than your current password age policy, then you should consider increasing password age to be greater than this frequency, or setting password age to 0, which disables password expiration.
 
 ## Randomize passwords for cloud user accounts in Microsoft Entra ID
 
