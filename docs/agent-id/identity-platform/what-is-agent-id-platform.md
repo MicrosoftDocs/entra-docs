@@ -1,5 +1,6 @@
 ---
-title: Agent Identity Platform Overview
+title: What is Microsoft agent identity platform
+titleSuffix: Microsoft Entra Agent ID
 description: Learn about the Microsoft Entra Agent ID Platform, a comprehensive identity, and authorization framework designed specifically for AI agents. Key concepts include agent registry, authentication protocols, tokens, claims, and agent discovery capabilities.
 author: SHERMANOUKO
 ms.author: shermanouko
@@ -7,6 +8,7 @@ manager: pmwongera
 ms.date: 10/24/2025
 ms.service: entra-id
 ms.topic: concept-article
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer or architect, I want to understand the Agent ID Platform and its core components including identity constructs, authentication mechanisms, and token systems, so that I can build and manage AI agents with enterprise-grade identity and authorization.
@@ -26,7 +28,7 @@ The Microsoft agent identity platform is built on several foundational technical
 
 - **Authentication service**: An OAuth 2.0 and OpenID Connect (OIDC) standard-compliant authentication service that enables secure, standards-based authentication for agents. This service issues tokens that agents use to authenticate to resources and APIs, supporting both application-only and delegated access scenarios.
 
-- **SDKs**: Software development kits that enable developers and builder platforms to integrate with the Microsoft agent identity platform. SDKs abstract the complexity of token acquisition and protocol handling, making it straightforward for agent builders to incorporate agentic identity into their applications.
+- **SDKs**: Software development kits that enable developers and builder platforms to integrate with the Microsoft agent identity platform. SDKs abstract the complexity of token acquisition and protocol handling, making it straightforward for agent builders to incorporate agentic identity into their applications. Microsoft agent identity platform includes two SDKs: Microsoft Identity Web (.NET) and the Microsoft Entra SDK for agent IDs.
 
 - **Agent management**: A comprehensive agent metadata store and administrative interface within the Microsoft Entra admin center that enables administrators to discover, view, configure, and manage agents. 
 
@@ -36,25 +38,12 @@ These technical components work together with the identity constructs described 
 
 The Microsoft agent ID platform consists of four primary components that work together to provide comprehensive identity management for AI agents. Each component serves a distinct but complementary purpose in the overall system.
 
-### Agent identity blueprint
+- Agent identity blueprint
+- Agent identity
+- Agent user
+- Agent registry
 
-An agent identity blueprint has a special application registration in Microsoft Entra ID that has permissions to act on behalf of Agent identities or Agent users. The application ID (Agent identity blueprint Client ID) represents the Agent ID Blueprint. The agent identity blueprint is configured with credentials (typically FIC+MSI or client certificates) and permissions to acquire tokens for itself to call graph. It's the app that you develop. It's a confidential client application.
-
-### Agent identity
-
-An agent identity is a special service principal in Microsoft Entra ID. It represents an identity that the agent identity blueprint created and is authorized to impersonate. It doesn't have credentials on its own. The agent identity blueprint can acquire tokens on behalf of the agent identity provided the user or tenant admin consented for the agent identity to the corresponding scopes. Autonomous agents acquire app tokens on behalf of the agent identity. Interactive agents called with a user token acquire user tokens on behalf of the agent identity.
-
-### Agent user
-
-An agent user is an agent identity that can also act as a user. For example, an agent identity that would have its own mailbox, or would report to you in the directory. An agent application can acquire a token on behalf of an agent user. Agent users are optional and created only when an agent requires the ability to function as a user would in organizational systems.
-
-### Agent registry
-
-Agent registry enables organizations to build, manage, and oversee intelligent agents at scale. The registry enables agents to discover each other, administrators to find and manage agents, and security systems to apply policies based on agent metadata and collection membership. Registry enables secure agent discovery, coordinates Agent-to-Agent (A2A) workflows, and provides the metadata layer necessary for implementing AI protocols including Agent-to-Agent Protocol and Model Context Protocol.
-
-Every agent in the registry has an associated agent card—a standardized metadata structure that describes the agent's characteristics, capabilities, and operational parameters. The agent card follows the AgentCard schema, an open standard that promotes interoperability across platforms and ecosystems.
-
-## Authentication and authorization protocols
+## Authentication and authorization
 
 The Microsoft agent ID platform uses OAuth for authorization and OpenID Connect (OIDC) for authentication.
 
@@ -62,13 +51,9 @@ The Microsoft agent ID platform uses OAuth for authorization and OpenID Connect 
 
 - **OAuth 2.0** allows agents to request access tokens that authorize them to access resources on behalf of themselves or users, supporting both application-only and delegated access scenarios.
 
-### Tokens and token claims
+For more information, see [Oauth protocols](./agent-oauth-protocols.md)
 
-Tokens are the fundamental security mechanism enabling secure communication and authorization in the Microsoft agent ID platform. Agentic tokens contain specialized claims that support the unique requirements of AI agents. The platform supports multiple token flow patterns designed for specific operational scenarios.
-
-### Federated identity credentials (FIC)
-
-FIC is a trust mechanism in Microsoft Entra ID that enables applications to trust each other using OpenID Connect (OIDC) tokens. In the context of agent identities, FICs are used to establish trust between the agent identity blueprints and agent identities, and agent identities and agent users.
+Tokens are the fundamental security mechanism enabling secure communication and authorization in the Microsoft agent ID platform. The platform supports multiple token flow patterns designed for specific operational scenarios.
 
 ## Integration and interoperability
 

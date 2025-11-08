@@ -1,33 +1,19 @@
 ---
-title: Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)
+title: Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups
 description: This how-to article describes how to assign eligible membership and ownership to a group via Privileged Identity Management in an access package.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 05/21/2025
+ms.date: 11/04/2025
 
 #CustomerIntent: As an IT Administrator I want to assign eligible roles for a group within an access package.
 ---
 
-# Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)
+# Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups
 
 As an access package manager, you can assign which role you want to provide a user for a group within an access package. By [managing groups with Privileged Identity Management(PIM)](../id-governance/privileged-identity-management/groups-discover-groups.md), you're able to enhance security by designating that group access happens just-in-time. This article describes how to enable PIM for a group, adding the group to an access package, and verifying eligible assignments are available.
-
-<!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
-
--->
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Required: Make Prerequisites the first H2 after the H1. 
-
-* Provide a bulleted list of items that the user needs.
-* Omit any preliminary text to the list.
-* If there aren't any prerequisites, list "None" in plain text, not as a bulleted item.
-
--->
 
 ## Prerequisites
 

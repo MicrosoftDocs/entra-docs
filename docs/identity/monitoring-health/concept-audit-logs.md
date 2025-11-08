@@ -4,12 +4,12 @@ description: Learn about the types of activities and events that are captured in
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: troubleshooting-general
+ms.topic: concept-article
 ms.subservice: monitoring-health
-ms.date: 06/30/2025
+ms.date: 11/07/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange,agent-id-ignite
 # Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra audit logs so I know what to look for when I need to troubleshoot an issue.
 ---
 
@@ -52,6 +52,12 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 - What changes were made to [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) definitions or assignments?
 - What updates were made to attribute sets?
 - What custom attribute values were assigned to a user?
+
+**Agents:**
+
+- What operations were performed by a specific agent?
+- What changes were made to an agent service principal?
+- What details of an agent ID were changed?
 
 > [!NOTE]
 > Entries in the audit logs are system generated and can't be changed or deleted.

@@ -81,10 +81,10 @@
       href: concept-sspr-licensing.md
     - name: Deployment guide
       href: concept-sspr-deploy.md
-  - name: Microsoft Entra account recovery
+  - name: Account recovery
     items:
     - name: Overview
-      href: concept-self-service-account-recovery.md
+      href: concept-account-recovery-overview.md
     - name: FAQ
       href: self-service-account-recovery.yml
   - name: Multifactor authentication
@@ -164,6 +164,8 @@
         href: how-to-register-passkey-mobile.md
       - name: Sign in with passkey
         href: how-to-sign-in-passkey.md
+      - name: Synced passkeys FAQ
+        href: synced-passkey-faq.yml
       - name: Passkey (FIDO2) compatibility matrix
         href: concept-fido2-compatibility.md
       - name: Become a FIDO2 security key vendor
@@ -178,7 +180,7 @@
         href: how-to-register-passkey-authenticator.md
       - name: Sign in with passkeys in Authenticator
         href: how-to-sign-in-passkey-authenticator.md
-      - name: Passkeys in Authenticator FAQs
+      - name: Passkeys in Authenticator FAQ
         href: passkey-authenticator-faq.yml
       - name: Enable Authenticator authentication method
         href: howto-authentication-passwordless-phone.md
@@ -263,9 +265,11 @@
   - name: Account recovery
     items:
     - name: Admin guide
-      href: how-to-account-recovery-configure.md
+      href: how-to-account-recovery-enable.md
+    - name: Cost savings estimator
+      href: how-to-account-recovery-cost-savings-estimator.md
     - name: User guide
-      href: how-to-account-recovery-user-setup.md
+      href: how-to-account-recovery-for-users.md
   - name: Microsoft Entra multifactor authentication
     items:
     - name: Deployment guide
