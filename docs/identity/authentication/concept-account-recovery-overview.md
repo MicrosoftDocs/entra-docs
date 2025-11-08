@@ -108,6 +108,10 @@ The account recovery process follows a structured workflow designed to balance s
 1. **Temporary access provision**: Users receive temporary access credentials (such as Temporary Access Pass) with limited validity.
 2. **Guided re-enrollment**: Users are directed through the process of registering new authentication methods.
 
+## Evaluation and production modes
+
+Admins can deploy account recovery in Evaluation mode to see how the change will imapct users. But users can't recover their accounts in evaluation mode. 
+
 ## Try account recovery
 
 Account recovery is secure by default with evaluation mode for user verification, and only takes 5 to 10 minutes to set up. [Try the preview](how-to-account-recovery-enable.md) and we appreciate your feedback!

@@ -5,7 +5,7 @@ description: Detailed guidance to deploy passwordless and phishing-resistant aut
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/07/2025
+ms.date: 11/08/2025
 
 ms.author: justinha
 author: sipower
@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 ---
 # Plan a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 
-When you deploy and operationalize phishing-resistant passwordless authentication in your environment, we recommend a user persona based approach but this may vary depending on other aspects like the industry you are in and the budget that you may have.  This deployment guide helps you see which types of methods and rollout plans make sense for users in your organization. The phishing-resistant passwordless deployment approach has multiple steps, but don't have to be 100% completed before moving on to other steps.    
+When you deploy and operationalize phishing-resistant passwordless authentication in your environment, we recommend a user persona based approach but this may vary depending on other aspects like the industry you are in and the budget that you may have. This deployment guide helps you see which types of methods and rollout plans make sense for users in your organization. The phishing-resistant passwordless deployment approach has multiple steps, but don't have to be 100% completed before moving on to other steps.    
 
 ## Determine your user personas
 Determine the user personas relevant for your organization. This step is critical to your project because different personas have different needs. Microsoft recommends you consider and evaluate the following user personas in your organization.
