@@ -254,6 +254,8 @@ items:
          items:
             - name: Integration with Netskope
               href: concept-netskope-integration.md
+            - name: Create a custom Data Loss Prevention (DLP) profile
+              href: how-to-full-data-loss-protection.md
        - name: Coexistence with partners
          expanded: false
          items:

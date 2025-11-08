@@ -68,11 +68,11 @@ To create a DLP policy with a custom DLP profile, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **Data Loss Prevention policies**. 
-1. Select **+ Create policy** and select a DLP profile. <!-- Which DLP profiles should be visible? Which one should we select for this example? -->
-1. Select the link to open the Netskope admin center. <!-- Where is this link to the Netskope admin center? Should it be visible in the Entra admin center? -->
+1. Select **+ Create policy** and select a DLP profile.
+1. Select the link to open the Netskope admin center.
 1. In the Netskope admin center, [create a custom DLP profile](https://docs.netskope.com/en/create-a-custom-dlp-profile).
 1. After creating the profile, return to the Microsoft Entra admin center.
-1. The custom DLP profile automatically syncs and appears in the DLP profiles list. <!-- What is the name of the custom DLP profile? Is it always the same? If so, we should call it out specifically. -->
+1. The custom DLP profile automatically syncs and appears in the DLP profiles list.
 1. Select the custom DLP profile and complete the policy creation workflow.
 
 ## Activate a Netskope offer
