@@ -98,7 +98,7 @@ Make sure the **User Properties** are correct for all users assigned to the grou
 
 1. Make sure the **First Name** property and the **Last Name** property are filled in. If they are left blank, there's no way for Microsoft Entra ID Account Recovery to match the ID claims values returned from the Identity Verification Provider.
 Often, the real name of a user on their government ID doesn't match what's listed for their user account in Microsoft Entra ID. The display name isn't used in the account recovery process; only the **First name** and **Last name** properties are used.
-More information on this topic can be found in the [FAQ](self-service-account-recovery.yml) for account recovery. 
+For more information about how the Verified ID issued from a provider is matched against Microsoft Entra ID account, see the [FAQ for account recovery](self-service-account-recovery.yml#how-is-the-verified-id-issued-from-a-provider-matched-against-microsoft-entra-id-account-details-). 
 
 ## How to update and fully enable Account Recovery in the Microsoft Entra admin center
 
