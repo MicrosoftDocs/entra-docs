@@ -39,17 +39,18 @@ IT administrators and security analysts face mounting pressure to identify and r
 
 ## How it works
 
-Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
+If the agent identifies new risky identities that weren't previously identified, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
 
 1. The agent checks for new risky users in your tenant who currently have a risk state of "At risk".
-1. The agent identifies users that apply to your defined [scope settings](identity-risk-management-agent-settings.md#scope).
+1. The agent identifies risky users that are within your defined [scope settings](identity-risk-management-agent-settings.md#scope).
 
 If the agent identifies something that wasn't previously suggested, it takes the following steps. **These agent action steps consume SCUs.**
 
 1. **Investigate the risky user**: The agent checks the user's risky sign-ins and risk detections to analyze what's risky about this user.
-1. **Generate a verdict and a risk summary:**: The agent generates a verdict based on the investigation, which includes a thorough risk summary explaining the suggestion and defining the key risk factors.
+1. **Generate findings and a risk summary:** The agent generates findings based on the investigation, which includes a thorough risk summary explaining the suggestion and defining the key risk factors.
 1. **Generate a recommended remediation action**: The agent suggests a remediation action, using the information gathered during the investigation.
 1. **Answer questions through chat**: IT administrators ask the agent questions related to the risky users and the risk summary.
+1. **Store custom instructions in agent memory**: Customers can give the agent custom instructions through agent chat, which the agent stores in its memory and applies for future runs. Currently, agent memory can store preferred remediation actions.
 
 ## Getting started
 

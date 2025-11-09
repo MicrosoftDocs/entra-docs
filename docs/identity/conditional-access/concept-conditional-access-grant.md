@@ -214,7 +214,7 @@ When you select **Require risk remediation** as a grant control, the following s
 - **Require authentication strength**
 - **Sign-in frequency - Every time**
 
-When a user is required to remediate risk with this control selected, users must sign in immediately after their sessions are revoked. Selecting this grant control means if the user just signed in but they're at risk, they'll be prompted to sign in again. The risk is remediated after the user successfully signs in the second time.
+When a user is required to remediate risk with this control selected, users are prompted to sign in immediately after their sessions are revoked. Selecting this grant control means if the user just signed in but they're at risk, they'll be prompted to sign in again. The risk is remediated after the user successfully signs in the second time.
 
 ### Terms of use
 
