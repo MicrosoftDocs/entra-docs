@@ -54,7 +54,7 @@ Account Recovery (Preview) is a Microsoft Entra ID feature that helps users rega
    >[!NOTE]
    >For this step, you need to begin to purchase a Software-as-a-Service (SaaS) offer from an IDV partner, which requires an Azure subscription. Make sure your signed-in account has the owner or contributor role of the Azure subscription linked to the tenant. To check role assignments, see [List Azure role assignments using the Azure portal](/azure/role-based-access-control/role-assignments-list-portal). To assign a role, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
 
-   :::image type="content" border="true" source="media/how-to-account-recovery-enable/security-store.png" alt-text="Screenshot that shows how to sign in to Microsoft Security Store."lightbox="media/how-to-account-recovery-enable/security-store-vendor.png":::
+   :::image type="content" border="true" source="media/how-to-account-recovery-enable/security-store-vendor.png" alt-text="Screenshot that shows how to sign in to Microsoft Security Store."lightbox="media/how-to-account-recovery-enable/security-store-vendor.png":::
 
 1. On the **Overview** page for your Identity verification provider, select **Get solution**.
 1. On the **Get solution** page:
