@@ -4,7 +4,7 @@ description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 11/09/2025
 ms.author: justinha
 author: hanki71
 manager: dougeby
@@ -45,7 +45,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
 ## Enable passkey profiles (preview)
 
 >[!NOTE]
->Upon opting-in to passkey profiles (preview), your global passkey (FIDO2) policy settings will be automatically transferred to a "Default passkey profile". A maximum of 3 passkey profiles, including the Default passkey profile are supported. Support for additional passkey profiles will come soon.
+>Upon opting-in to passkey profiles (preview), your global passkey (FIDO2) policy settings will be automatically transferred to a **Default passkey profile**. A maximum of 3 passkey profiles, including the **Default passkey profile** are supported. Support for more passkey profiles is in development.
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
