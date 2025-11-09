@@ -6,6 +6,7 @@ author: SHERMANOUKO
 ms.author: shermanouko
 manager: pmwongera
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.topic: how-to
 
@@ -14,47 +15,52 @@ ms.reviewer: alamaral
 
 ---
 
-# Manage an agent identity blueprint using Microsoft Entra admin center
+# View and manage agent identity blueprints in your tenant
 
-As an admin, you want to have a 360-degree view of your agent for both security and operational efficiency. Microsoft Entra admin center provides an interface to manage your agents. Through the portal, you get access to the relevant information about your agent including its linked identities, access management, and logs.
+View all agent identity blueprint principals in your tenant and perform various actions like searching, filtering, sorting, and selecting multiple agent identity blueprint principals to disable. 
 
-## Navigate to your agent identity blueprint
+## Navigate to your agent identity blueprint principal list
 
-To get to your agent identity blueprint's page, follow these steps:
+To view your agent identity blueprint principals, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. In the left-hand navigation pane, select **Entra ID** > **Agent identities** > **All agent identities**.
-1. Select the agents you want to manage.
+1. In the left-hand navigation pane, select **Entra ID** > **Agent identities** > **All agent identities**. 
+1. Select **View agent blueprint** in the upper right of the command bar.
+1. Select any agent identity blueprint principal you want to manage.
 
-## Manage agent identity blueprints
+## Search for an agent identity blueprint principal
 
-Use the following steps to manage your agent identity blueprints:
+1. Enter either the **name** or **object ID** of the agent identity blueprint principal you want to find. Note, to look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter.
+1. You can further refine the list using filters based on various criteria.
 
-1. After selecting the **View agent blueprints** tab, you'll see a list of all the agent blueprints in your tenant. This table contains the following columns:
+## Select viewing options
+To customize your view of agent identity blueprint principals, you can change filters or select which columns are shown for each agent identity.
 
-    - **Name**: The display name of the agent blueprint.
-    - **Agent identities**: The number of Agent IDs associated with the agent blueprint.
-    - **Status**: The current status of the agent blueprint. It can be active, disabled, or inactive.
-    - **Blueprint ID**: The unique identifier for the agent blueprint.
+To see all available columns and edit shown columns, select the **Choose columns** button. The table columns and their filter options are as follows:
 
-1. Select the agent ID blueprint you want to manage. It opens the agent ID blueprint's management page.
+| Column Name | Description | Sortable | Filterable | Special notes
+|-------------|-------------|:--------:|:----------:|------------------|
+| **Name** | Display name of the agent identity blueprint principal | ✓ | ✓ | Primary search field; clickable to view details of the agent identity blueprint principal |
+| **Agent identities** | The number of child agent identities the agent blueprint principal has created| ✗ | ✗ | Select this to see a list of linked child agent identities for that agent identity blueprint principal| 
+| **Status** | Current operational state (Active, or Disabled) | ✓ | ✓ |  | 
+| **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity blueprint principal | ✗ | ✓ | | 
+| **Object ID** | Unique identifier for agent identity | ✗ | ✓ | | 
 
-1. View your agent ID blueprint details. The page provides you with information about your app pulled from the agent registry. This information includes:
 
-    - Your agent ID blueprint name and logo
+## Manage agent identity blueprint principals
+
+Use the following steps to manage an agent identity blueprint principal in your tenant:
+
+1. Select the agent identity blueprint principal you want to manage. It opens the agent identity blueprint principal's management page.
+1. View your agent identity blueprint principal details. The page provides you with information about your app pulled from the agent registry. This information includes:
+    - Your agent identity blueprint principal name and logo
     - Your agent description
-    - Your agent status. It indicates whether your agent is active, inactive, or disabled
-    - Your agent ID blueprint's agent identity usage over the last seven days
-    - The platform that created your agent such as Microsoft 365 Copilot or Azure Foundry.
+    - Your agent status. It indicates whether your agent is active or disabled
     - Your agent blueprint ID and object ID
-
-1. Manage your agent ID blueprint. Additionally, this page provides you with several tabs to manage different aspects of your agent ID blueprint. These tabs include:
-
-    - **Linked agent identities**: View and manage the agent IDs associated with the agent ID blueprint.
-    - **Blueprint's access**: View and manage the permissions assigned to the agent ID blueprint. In this page you can configure permissions, roles, and resources that are available to the agent ID blueprint. As an admin, you can grant permissions on behalf of all users (delegated) or directly to the agent (app roles) via this tab.
-    - **Who can access**: View and manage entities that have access to the agent ID blueprint. It could be users, groups, or other apps / agents.
-    - **Owners and sponsors**: View and manage the owners and sponsors of the agent ID blueprint. Owners are technical administrators responsible for operational management, while sponsors are business owners accountable for the agent's purpose and lifecycle decisions.
-    - **Audit logs**: View the audit logs related to the agent ID blueprint. It includes actions taken on the agent, such as changes to permissions, access reviews, and other administrative activities. It helps you monitor and track changes for security and compliance purposes. For more information, see [view audit logs for agents](https://entra.microsoft.com).
-    - **Sign-in logs**. View the sign-in logs for the agent ID blueprint. Agent ID blueprints themselves don't sign in, but you can see sign-in activity for the Agent IDs associated with the agent ID blueprint. For more information, see [view sign-in logs for agents](https://entra.microsoft.com).
-
-1. To disable an agent ID blueprint, select the **Disable** button in the top right.
+1. To manage this agent identity blueprint principal, this page provides you with several tabs to manage different aspects of your agent identity blueprint principal. These tabs include:
+    - **Linked agent identities**: View and manage the agent identities associated with the agent identity blueprint principal. 
+    - **Blueprint's access**: View, manage, and revoke the permissions assigned to the agent identity blueprint principal.
+    - **Owners and sponsors**: View and manage the owners and sponsors of the agent identity blueprint principal. Owners are technical administrators responsible for operational management, while sponsors are business owners accountable for the agent's purpose and lifecycle decisions. For more information, see [owners, sponsors, and managers](agent-owners-sponsors-managers.md).
+    - **Audit logs**: View the audit logs related to the agent identity blueprint principal. It includes actions taken on the agent, such as changes to permissions, access reviews, and other administrative activities. It helps you monitor and track changes for security and compliance purposes. For more information, see [view audit logs for agents](../identity-professional/sign-in-audit-logs-agents.md).
+    - **Sign-in logs**. View the sign-in logs for the agent identity blueprint principal. For more information, see [view sign-in logs for agents](../identity-professional/sign-in-audit-logs-agents.md).
+1. To disable an agent identity blueprint principal, select the **Disable** button in the top command bar.

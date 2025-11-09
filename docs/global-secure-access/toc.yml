@@ -185,8 +185,14 @@ items:
         href: how-to-check-web-content-filtering-categories.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
+      - name: Configure cloud firewall
+        href: how-to-configure-cloud-firewall.md
       - name: Customize the block page
         href: how-to-customize-block-page.md
+      - name: Network content filtering
+        href: how-to-network-content-filtering.md
+      - name: Configure the AI Gateway Prompt Shield
+        href: how-to-ai-prompt-shield.md  
   - name: Logs and monitoring
     expanded: false
     items:
@@ -240,6 +246,8 @@ items:
         href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"
         href: troubleshoot-distributed-file-system.md
+      - name: Troubleshoot Transport Layer Security (TLS) inspection issues
+        href: troubleshoot-transport-layer-security.md
   - name: Partner ecosystem
     expanded: true
     items:
@@ -250,6 +258,8 @@ items:
          items:
             - name: Integration with Netskope
               href: concept-netskope-integration.md
+            - name: Create a custom Data Loss Prevention (DLP) profile
+              href: how-to-full-data-loss-protection.md
        - name: Coexistence with partners
          expanded: false
          items:
@@ -275,6 +285,8 @@ items:
   items:
   - name: Remote network valid configurations
     href: reference-remote-network-configurations.md
+  - name: IP addresses advertised over BGP by remote network connectivity
+    href: reference-ip-addresses-advertised-by-remote-network-connectivity.md
   - name: Known limitations for Global Secure Access
     href: reference-current-known-limitations.md
   - name: Points of presence and service addresses

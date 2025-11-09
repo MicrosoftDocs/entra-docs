@@ -60,15 +60,15 @@ landingContent:
       - linkListType: concept
         links:
           - text: What is Microsoft Entra account recovery?
-            url: concept-self-service-account-recovery.md
+            url: concept-account-recovery-overview.md
           - text: FAQs about Microsoft Entra account recovery
             url: self-service-account-recovery.yml
       - linkListType: how-to-guide
         links:
           - text: Configure Microsoft Entra account recovery
-            url: how-to-account-recovery-configure.md
+            url: how-to-account-recovery-enable.md
           - text: How users can recover their accounts
-            url: how-to-account-recovery-user-setup.md
+            url: how-to-account-recovery-for-users.md
 
   # Card
   - title: Enable Microsoft Entra multifactor authentication

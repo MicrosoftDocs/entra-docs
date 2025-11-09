@@ -1,18 +1,19 @@
 items:
-  - name: Microsoft agent identity platform documentation
+  - name: Microsoft Entra agent identity platform for developers
     href: index.yml
   - name: Overview
     expanded: true
     items:
-    - name: What is the Microsoft agent identity platform?
+    - name: What is the Microsoft Entra agent identity platform?
       href: what-is-agent-id-platform.md
-    - name: What is an agent ID?
+    - name: What is an agent identity?
       href: what-is-agent-id.md
     - name: What is the agent registry?
       href: what-is-agent-registry.md
   - name: How to guides
+    expanded: true
     items:
-    - name: (Pro-code) Integrate an agent with Entra.
+    - name: (Pro-code) Integrate an agent with Microsoft Entra
       items:
       - name: Create an agent blueprint
         href: create-blueprint.md
@@ -48,23 +49,27 @@ items:
         href: microsoft-entra-sdk-for-agent-identities.md
     - name: Agent ID administration
       items:
-        - name: View agent IDs
+        - name: View agent identities
           href: agent-lists.md
-        - name: Manage agent blueprint
+        - name: Manage agent blueprints
           href: manage-agent-blueprint.md
         - name: Manage Agents in end user experience
           href: manage-agent.md   
         - name: Publish agents to registry
+        - name: Register agents with Agent Registry
           href: publish-agents-to-registry.md
-    - name: Registry agent to agent protocol
-      href: registry-agent-to-agent-protocol.md
+        - name: Manage agent collections
+          href: agent-registry-manage-collections.md
+        - name: Agent communication
+          href: registry-agent-to-agent-protocol.md
   - name: Concepts
+    expanded: true
     items:
     - name: Fundamentals
       items:
         - name: Key concepts
           href: key-concepts.md
-        - name: Agent ID blueprints
+        - name: Agent identity blueprints
           href: agent-blueprint.md
         - name: Agent identities
           href: agent-identities.md
@@ -72,9 +77,9 @@ items:
           href: agent-users.md
         - name: Agent service principals
           href: agent-service-principals.md
-    - name: Registry
+    - name: Agent Registry
       items:
-        - name: Agent registry collections
+        - name: Agent Registry collections
           href: agent-registry-collections.md
         - name: Agent metadata and discoverability
           href: agent-metadata-discoverability.md

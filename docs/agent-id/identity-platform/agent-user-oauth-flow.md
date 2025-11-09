@@ -7,6 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 10/30/2025
+ms.custom: agent-id-ignite
 ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing agent user scenarios, I want to understand the agent user impersonation protocol so that I can enable agents to operate with user context and delegated permissions.

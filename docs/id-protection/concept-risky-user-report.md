@@ -29,7 +29,7 @@ To access this report, you need:
 
 ## Risky user report
 
-The standard view of the Risky user report contains three main sections: The summary chart of risky users at each level, new risky users per day, and the full list of risky users.
+The standard view of the Risky user report contains three main sections: The summary chart of risky users at each level, new risky users per day, and the full list of risky users. If you have the [Identity Risk Management Agent](identity-risk-management-agent-risky-user-report.md) turned on, you can use the **Agent view** to see agent suggestions and insights.
 
 The **Percentage of risky users at each risk level** chart shows a visual representation of your user and their risk levels. This visual summary allows you to quickly see the state of things in your organization. Hover over each segment of the chart to see the percentage of users at each risk level.
 
