@@ -29,7 +29,7 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 > [!NOTE]
 > The SPNs are *case insensitive* and should be an *exact match* or a wildcard in the format `<serviceclass>/*` such as `cifs/*`.
 - Install the latest Private Access Sensor on the DC. Understand that one Private Access Sensor can be installed on a DC.
-- To test this functionality, you can install sensors on a few DCs in a site that issue Kerberos tickets for the SPNs you want to protect. A sensor is installed in `Audit` mode by default and you will need to change it to `enforce` mode.
+- To test this functionality, you can install sensors on a few DCs in a site that issue Kerberos tickets for the SPNs you want to protect. A sensor is installed in `Audit` mode by default and you need to change it to `enforce` mode.
 - As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.
 - If you use NT LAN Manager (NTLM) v1/v2 in your environment, you might need to restrict NTLM and use Kerberos auth in the domain.
 
@@ -91,16 +91,16 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Download the Private Access Sensor for DC from Microsoft Entra admin center at **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** > **Download private access sensor**.
 1. Install by clicking the Private Access Sensor Installer and follow the steps.
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
-1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**. The IP address shown below is for illustration purposes only. You will see the actual IP address in a live environment.
+1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**.
 
 ![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/connectors-and-sensors.png)
 
 > [!IMPORTANT]
-> To upgrade to the Private Access Sensor version 2.1.31, we recommend uninstalling the previous sensor and then installing the new sensor. This new sensor is installed in `Audit` mode by default and you will need to change it to `enforce` mode from Microsoft Entra Admin Center.
+> To upgrade to the Private Access Sensor version 2.1.31, we recommend uninstalling the previous sensor and then installing the new sensor. This new sensor is installed in `Audit` mode by default and you need to change it to `enforce` mode from Microsoft Entra Admin Center.
 
 ### 7. Configure Private Access Sensor policy files
 
-Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path. Do not modify the `cloudpolicy` file.
+Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path. Don't modify the `cloudpolicy` file.
 
 1. Confirm that the SPNs configured earlier are present in the `cloudpolicy` file.
 1. In the `localpolicy` file, add the private connector IPs to the `SourceIPAllowList` and save. Only Kerberos requests from these connector IPs are allowed; others are blocked.
@@ -112,12 +112,12 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 
 ## Exclusions and inclusions for SPNs
 
-When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN from Microsoft Entra Admin Center or in the `localpolicy` file. Any exclusions or inclusions configured from Microsoft Entra Admin Center will be present in the `cloudpolicy` file.
+When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that don't have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN from Microsoft Entra Admin Center or in the `localpolicy` file. Any exclusions or inclusions configured from Microsoft Entra Admin Center will be present in the `cloudpolicy` file.
 
 > [!NOTE]
 > Both `cloudpolicy` and `localpolicy` are evaluated for access.
 
-If no exclusion is defined for a given SPN, the default behavior is to block all direct access to that SPN unless it is accessed from a device with the Global Secure Access client installed.
+If no exclusion is defined for a given SPN, the default behavior is to block all direct access to that SPN unless it's accessed from a device with the Global Secure Access client installed.
 
 ### Exclusions
 
@@ -125,7 +125,7 @@ Exclusions allow specific users or machines to access configured SPNs without re
 
 - Client IP address
 - IP address ranges
-- On-premises User Principal Name (UPN) such as `username@domain`. UPN is supported with Private Access Sensor version 2.1.31 or higher and is case insensitive. Username, which is the first part of the UPN, is supported with the earlier sensor versions and can be added in the `localpolicy`file only. We highly recommend using the UPNs instead of usernames. UPNs for on-premise users that are synced to Entra can be added from Microsoft Entra Admin Center. UPNs for on-premise users that are not synced can only be added to the `localpolicy` file.
+- On-premises User Principal Name (UPN) such as `username@domain`. UPN is supported with Private Access Sensor version 2.1.31 or higher and is case insensitive. Username, which is the first part of the UPN, is supported with the earlier sensor versions and can be added in the `localpolicy`file only. We highly recommend using the UPNs instead of usernames. UPNs for on-premise users that are synced to Entra can be added from Microsoft Entra Admin Center. UPNs for on-premise users that aren't synced can only be added to the `localpolicy` file.
 
 You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple usernames for an SPN.
 
@@ -144,7 +144,7 @@ If you need to allow access for many users, you can instead specify an inclusion
 - If a policy matches more than one rule (for example, a wildcard), access to the SPN is allowed if it matches at least one exclusion rule.
 
 > [!TIP]
-> Use exclusions and inclusions to fine-tune access for users and devices that do not have the Global Secure Access client, ensuring business continuity while maintaining security controls.
+> Use exclusions and inclusions to fine-tune access for users and devices that don't have the Global Secure Access client, ensuring business continuity while maintaining security controls.
 
 Example of how to configure SPN username exclusions and inclusions from Microsoft Entra Admin Center:
 > ![Screenshot of the localpolicy file showing how to configure the file for SPN username exclusions and inclusions.](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)
@@ -169,7 +169,7 @@ Example of how to configure SPN username exclusions and inclusions from Microsof
 
 ### 9. Investigation and troubleshooting
 
-- Use **Event Viewer** to review Private Access Sensor logs.
+- Use **Event Viewer** from **Application and Service Logs** > **Microsoft** > **Windows** > **Private Access Sensor** to review Private Access Sensor logs.
 - To collect Private Access Sensor logs, run `PrivateAccessSensorLogsCollector` from the sensor installation path and share the generated zip file with Microsoft support.
 - For Global Secure Access client logs:
     1. Right-click the Global Secure Access tray icon.
