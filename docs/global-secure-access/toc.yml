@@ -191,6 +191,8 @@ items:
         href: how-to-customize-block-page.md
       - name: Network content filtering
         href: how-to-network-content-filtering.md
+      - name: Configure the AI Gateway Prompt Shield
+        href: how-to-ai-prompt-shield.md  
   - name: Logs and monitoring
     expanded: false
     items:
