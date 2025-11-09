@@ -1,58 +1,65 @@
 ---
-title: What is the Microsoft Entra agent registry?
-titleSuffix: Microsoft Entra Agent ID
-description: Learn about the agent registry, a centralized metadata repository that enables agent discovery, and secure communication in enterprise environments.
-author: omondiatieno
-ms.author: jomondi
-ms.service: entra-id
+title: What is the Microsoft Entra Agent Registry?
+description: Learn about the Agent Registry, a centralized metadata repository that enables agent discovery, and secure communication in enterprise environments.
+author: shlipsey3
+ms.author: sarahlipsey
+manager: pmwongera
+ms.service: entra
 ms.topic: concept-article
-ms.date: 11/04/2025
-ms.custom: agent-id-ignite
+ms.date: 11/07/2025
 ms.reviewer: jadedsouza
+ms.custom: agent-id-ignite
 
-#customer-intent: As a developer or IT administrator, I want to understand what the agent registry is and how it provides a centralized identity directory that enables secure agent discovery, so that I can build customer trust and drive adoption through effective agent ecosystem management in my organization.
+#customer-intent: As a developer or IT administrator, I want to understand what the Agent Registry is and how it provides a centralized identity directory that enables secure agent discovery, so that I can build customer trust and drive adoption through effective agent ecosystem management in my organization.
 ---
 
-# What is the Microsoft Entra agent registry?
+# What is the Microsoft Entra Agent Registry?
 
-Microsoft Entra agent registry is a centralized identity directory within Microsoft agent ID platform that provides discovery, and coordination capabilities for AI agent ecosystems. The agent registry is built on an Attribute-Based Access Control (ABAC) framework and a collection-based authorization model. It enforces secure-by-default discovery controls for enterprise AI deployments that build customer trust and drive adoption.
+AI agents are rapidly becoming part of enterprise workflows, such as handling data retrieval, orchestration, and autonomous decisions. For this reason, organizations face growing security and compliance risks without centralized visibility and control over these agents. The Agent Registry, as part of the [Microsoft Entra Agent ID](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) system, solves this challenge by providing an extensible metadata repository that delivers a unified view of all deployed agents across Microsoft platforms and non-Microsoft ecosystems.
 
-## Core functions
+To learn more about Agent Registry, review the following articles:
 
-The agent registry serves three main functions:
+- [Register agents with the registry](publish-agents-to-registry.md)
+- [Agent Registry collections](agent-registry-collections.md)
+- [Manage collections](agent-registry-manage-collections.md)
+- [Agent Registry metadata and discoverability](agent-metadata-discoverability.md)
+- [Agent communication](registry-agent-to-agent-protocol.md)
 
-- **Inventory for all agents**: The registry maintains a comprehensive inventory of all registered agents. This inventory is crucial for effective agent management and orchestration. It provides visibility into the agents deployed within an organization, their capabilities, and their operational status enabling organizations to manage agent sprawl.
+Agent Registry integrates with Microsoft Entra Agent ID and Core Directory to enforce identity and discovery policies, supports flexible mappings between agent cards and multiple agent instances, and acts as the single source of truth for agent-related data. By combining comprehensive visibility, rich metadata management, and collection-based policies, the registry helps organizations secure agent discovery, apply Zero Trust principles, and maintain governance across diverse environments. The Agent Registry delivers following critical capabilities and benefits to customers: 
 
-- **Metadata(security and partner integrations)**: The registry enables secure agent discovery, coordinates Agent-to-Agent (A2A) workflows, and provides the metadata layer necessary for implementing advanced AI protocols including Agent-to-Agent Protocol and Model Context Protocol (MCP). The registry system integrates with Microsoft Entra ID and extends across platforms like Copilot Studio, Foundry, and Agent 365 (A365). For third-party agent builders, the registry API enables integration to maintain consistent metadata and discovery experiences without requiring native platform support. Agent metadata includes agent information like skills, version, and the originating publisher.
+- **Comprehensive inventory and visibility**: Maintains an inventory of all deployed agents running in your environment, whether or not they have an agent identity and supporting external agents and providers.
+- **Discovery before access and policy enforcement**: Introduces built-in and custom controls with [agent collections](agent-registry-collections.md) and policies to reduce exposure and align with Zero Trust principles.
+- **Rich metadata for governance across ecosystems**: Captures detailed [metadata](agent-metadata-discoverability.md) for each agent, using open standards for [collaboration](registry-agent-to-agent-protocol.md) and a flexible schema, enabling customers to apply policies that limit discoverability and enforce security.
 
-- **Agent collaboration(collections/policies)**: The registry facilitates collaboration between agents by enabling the creation and management of collections and policies that govern agent interactions. This enables admins to organize agents by trust level, function, or policy requirements, making controls over agent discovery easier. Collections also have secure-by-default policies applied to them.
+## Registry Architecture & Components
 
-## Registry architecture and components
+The Agent Registry acts as the central store for agent-related data, including [agent identities](agent-identities.md), [agent users](agent-users.md), [agent identity blueprints](agent-blueprint.md), and other identity attributes. Each agent instance from an authoritative agent store, such as Copilot Studio, is registered in the Registry and linked to an agent card manifest, which can represent multiple agents (1:N relationship). These components are the manifests that provide the agent's metadata. 
 
-The agent registry system consists of several integrated components that work together to provide comprehensive metadata management and discovery capabilities.
+The registry then connects to the Microsoft Entra Core Directory, which enforces identity and entitlement policies. The agent identity blueprints define reusable identity templates that can map to multiple agent instances, enabling flexible identity governance. Each agent instance also has a direct 1:1 relationship with an agent identity and optionally an agent user, ensuring policy enforcement and lifecycle management. This capability mirrors human identity principles in Microsoft Entra, providing a single source of truth for agent identity, metadata, and governance while supporting one-to-many mappings for scalability.
+
+The registry enables organizations to map diverse agent data sources, identify systems of authority, and route users to the correct endpoints. The following diagram explains the relationship between various key attributes.
+
+:::image type="content" source="media/what-is-agent-registry/agent-registry-diagram.png" alt-text="Diagram depicting the relationship between Agent Registry and Microsoft Entra Agent ID." lightbox="media/what-is-agent-registry/agent-registry-diagram.png":::
+
+The following table summarizes the core components of the Agent Registry:
 
 | Component | Purpose | Key Features | Benefits |
 |-----------|---------|--------------|----------|
-| **Metadata store** | Centralized agent metadata repository | NoSQL-based, Agent Card support, real-time updates | Scalable storage for rich agent information and A2A protocol compliance. For more information, see [Agent registry metadata](agent-metadata-discoverability.md). |
-| **Collection system** | Secure agent categorization and discovery control enforcement | baseline discovery controls, custom collections | Secure-by-default organization. For more information, see [agent registry collections](agent-registry-collections.md). |
+| **Metadata store** | Centralized agent metadata repository | NoSQL-based, agent card manifest support, real-time updates | Scalable storage for rich agent information and agent communication compliance |
+| **Collections** | Secure agent categorization and discovery control enforcement | Baseline discovery controls, custom collections | Secure-by-default discovery boundaries and clearer governance |
 | **Discovery service** | Agent and capability discovery APIs | Multi-dimensional search, collection-aware filtering, skill-based discovery | Enables secure, intelligent agent-to-agent coordination |
-| **Integration layer** | Cross-platform and security system coordination | Microsoft Security Copilot, Defender, Purview integration | Enables ecosystem-wide security operations and custom workflows |
+| **Integration layer** | Coordinates with Microsoft and non-Microsoft ecosystems | Ecosystem-wide security operations and custom workflows | Registry acts as a central store to map your data across different stores |
 
-## How agent registry enables security for AI
+## How Agent Registry enables security for AI
 
-The agent registry provides security for AI through secure-by-default discovery controls that follow Zero Trust principles. The two main features that enable security for AI are:
+Security is embedded at every layer of the Agent Registry:
 
-- **ABAC framework with collection-based authorization**: Built on Attribute-Based Access Control (ABAC) with an innovative collection-based security model that automatically categorizes agents into secure collections with predefined policies, ensuring immediate protection from day one.
-
-- **Secure-by-default discovery controls**: Baseline agent discovery controls are automatically applied to all agents based on their collection assignment. This feature provides visibility into how agents discover one another including discovery restrictions for sensitive agents and high-risk agents. At run-time, the registry applies security policies onto agents.
-
-## Agent ID relationship with the agent registry
-
-For agents to be discoverable in the agent registry, they must have an associated agent ID. The agent ID serves as the identity provider for the agent and enables secure authentication and authorization. Agents without an agent ID can still be registered in the registry but they can't discover other agents. Agents need to have an agent ID to query the registry. Publishing an agent to the registry doesn't automatically grant them an agent ID. However, agents created from Microsoft owned platforms like Copilot Studio, foundry, and A365 automatically get an agent ID when they're created.
+- **Identity Assurance**: Microsoft platforms fully integrated with the Microsoft Entra Agent ID Platform automatically receive an agent identity and are enrolled in the registry.
+- **Runtime Enforcement**: Discovery policies are enforced dynamically when agents attempt discovery, preventing unauthorized actions. This enforcement works together with Microsoft Entra Agent ID, which controls authentication as well as discovery of agents within the registry. Only agents with agent identity are allowed to discover other agents in the registry, but they can find other agents without agent ID.
 
 ## Related content
 
 - [Publish agents to registry](publish-agents-to-registry.md)
-- [Agent registry schema and metadata](agent-metadata-discoverability.md)
-- [Collection-based models](agent-registry-collections.md)
-- [What is an agent ID](what-is-agent-id.md)
+- [Agent Registry metadata and discoverability](agent-metadata-discoverability.md)
+- [Agent Registry collections](agent-registry-collections.md)
+- [What is an agent ID?](what-is-agent-id.md)

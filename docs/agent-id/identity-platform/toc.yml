@@ -52,10 +52,12 @@ items:
           href: agent-lists.md
         - name: Manage agent blueprint
           href: manage-agent-blueprint.md
-        - name: Publish agents to registry
+        - name: Register agents with Agent Registry
           href: publish-agents-to-registry.md
-    - name: Registry agent to agent protocol
-      href: registry-agent-to-agent-protocol.md
+        - name: Manage agent collections
+          href: agent-registry-manage-collections.md
+        - name: Agent communication
+          href: registry-agent-to-agent-protocol.md
   - name: Concepts
     items:
     - name: Fundamentals
