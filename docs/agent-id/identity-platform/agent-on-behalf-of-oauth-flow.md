@@ -87,3 +87,9 @@ client_id=AgentIdentity
 ### Permission inheritance
 
 Agent IDs can inherit delegated permissions from their parent agent identity blueprint when the `InheritDelegatedPermissions` property is enabled. This inheritance mechanism reduces consent complexity for multi-instance scenarios by allowing agent IDs to use permissions already granted to their parent application. The inheritance functionality applies specifically when FIC impersonation is used and enables efficient permission management across multiple instances. However, inheritance works only within tenant boundaries, ensuring that permission scope remains contained within appropriate organizational limits.
+
+## Related content
+
+- [Oauth2.0 flows for agents](./agent-oauth-protocols.md)
+- [Autonomous app flow in agents](./agent-autonomous-app-oauth-flow.md)
+- [Agent user flow in agents](./agent-user-oauth-flow.md)

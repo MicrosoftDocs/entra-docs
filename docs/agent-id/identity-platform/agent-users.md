@@ -18,6 +18,16 @@ ms.reviewer: yukarppa
 
 Agent users are a specialized identity type designed to bridge the gap between agents and human user capabilities. Agent users enable AI-powered applications to interact with systems and services that require user identities, while maintaining appropriate security boundaries and management controls. It allows organizations to manage those agent's access using similar capabilities as they do for human users.
 
+## Example of agent user scenarios
+
+Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate as an autonomous application. In certain scenarios, an agent needs to act as a user, functioning essentially as a digital worker. The following are example scenarios where the agent user would be applicable:
+
+-  The organization needs long-term digital employees that function as team members with mailboxes, chat access, and inclusion in HR systems.
+- The agent needs to access APIs or resources that are only available to user identities
+- The agent needs to participate in collaborative workflows as a team member
+
+For these reasons, agent users are created. Agent users are optional and should only be created for interactions where the agent needs to act as a user or access resources restricted to user accounts.
+
 ## Agent users
 
 Agent users represent a subtype of user identity within Microsoft Entra. These identities are designed to enable agent applications to perform actions in contexts where a user identity is required. Unlike nonagentic service principals or application identities, agent users receive tokens with claim `idtyp=user`, allowing them to access APIs and services that specifically require user identities. It also maintains security constraints necessary for nonhuman identities.
@@ -30,16 +40,6 @@ Agent users:
 - Are always associated to a specific agent identity, specified upon creation.
 - Have distinct unique identifiers, separate from the agent identity.
 - Can only authenticate by presenting a token issued to the associated agent identity.
-
-## Example of agent user scenarios
-
-Sometimes it's not enough for an agent to perform tasks on behalf of a user or operate as an autonomous application. In certain scenarios, an agent needs to act as a user, functioning essentially as a digital worker. The following are example scenarios where the agent user would be applicable:
-
--  The organization needs long-term digital employees that function as team members with mailboxes, chat access, and inclusion in HR systems.
-- The agent needs to access APIs or resources that are only available to user identities
-- The agent needs to participate in collaborative workflows as a team member
-
-For these reasons, agent users are created. Agent users are optional and should only be created for interactions where the agent needs to act as a user or access resources restricted to user accounts.
 
 ## Agent user and agent ID relationship
 
@@ -79,4 +79,4 @@ Agent users operate under specific security constraints to ensure appropriate us
 
 - Administrative role restrictions: Agent users can't be assigned privileged administrator roles. This limitation provides an important security boundary, preventing potential elevation of privileges.
 
-- Permission model: Agent users typically have permissions similar to guest users, with more capabilities for enumerating users and groups. Agent users can’t be assigned privileged admin roles. Custom role assignment and role-assignable groups aren't available to agent users.
+- Permission model: Agent users typically have permissions similar to guest users, with more capabilities for enumerating users and groups. Agent users can’t be assigned privileged admin roles. Custom role assignment and role-assignable groups aren't available to agent users. For more information, see [Microsoft Graph permissions reference](/graph/permissions-reference)

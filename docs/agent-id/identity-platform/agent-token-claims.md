@@ -111,8 +111,6 @@ Here are the relevant values for these claims. These claims are multivalued, mea
 | ----------- | --------------------------------------- |
 | `11`        | AgentIdentity                           |
 | `13`        | AgentIDUser                             |
-| `15`        | AgenticAppBuilder                       |
-| `17`        | ServicePrincipalRequiredByAppOnlyClient |
 
 You should ignore any values that aren't relevant to your scenario or validation logic. Ignore the values that aren't relevant to your application. Don't assume any order of the values in these claims.
 

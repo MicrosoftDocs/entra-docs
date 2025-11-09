@@ -17,11 +17,10 @@ ms.reviewer: alamaral
 
 # View and manage agent identities in your tenant
 
-As organizations increasingly adopt AI agents to automate business processes and enhance productivity, maintaining visibility and control over these agent identities becomes crucial for security and governance. The Microsoft Entra admin center provides management capabilities for all agent identities in your tenant, allowing you to monitor, configure, and control access for both agent identity objects and agents using service principals.
+Microsoft Entra admin center provides you with a centralized interface to view and manage your agent identities. This comes with the ability to perform various actions like searching, filtering, sorting, and selecting multiple agent identities to disable.
 
-This article guides you through viewing, searching, filtering, and managing agent identities in your tenant. You learn how to customize your view, disable agents when necessary, and access detailed information about permissions, ownership, and activity logs. Whether you're conducting security audits, managing compliance requirements, or simply maintaining operational oversight, these tools help ensure your agent ecosystem remains secure and well-governed.
-
-To view and manage your **agent identity blueprint principals**, see [View and manage agent identity blueprints using Microsoft Entra admin center](manage-agent-blueprint.md). To view and manage agents registered in the **Agent Registry** without an identity, see [manage agent identity blueprints with no identities](../identity-professional/manage-agents-without-identity.md).
+- To view and manage your agent identity blueprint principals, see [View and manage agent identity blueprints using Microsoft Entra admin center](manage-agent-blueprint.md).
+- To view and manage agents registered in the Agent Registry without an identity, see [manage agent identity blueprints with no identities](../identity-professional/manage-agents-without-identity.md).
 
 ## Prerequisites
 
@@ -29,27 +28,39 @@ To view agent identities in your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-To manage agent identities in your Microsoft Entra tenant, you need: 
-- One of the following roles: Agent ID Administrator, Cloud Application Administrator, Application Administrator, Global Administrator
+To manage agent identities in your Microsoft Entra tenant, you need:
+
+- Agent ID Administrator or Cloud Application Administrator role
 - You can also manage your agent identity if you're the owner of that agent identity, with or without the above roles.
 
 ## View a list of agent identities
+
 To view agent identities in your tenant:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com)
 1. Browse to **Entra ID** > **Agent ID** > **All agent identities**.
 1. Select any agent identity you'd like to manage.
 
-This page contains a list of all agent identities in your organization. This includes both [agent identity objects](agent-identities.md) and [agents using a service principal](agent-service-principals.md).
+  This page contains a list of all agent identities in your organization. This includes both [agent identity objects](agent-identities.md) and [agents using a service principal](agent-service-principals.md).
 
 ## Search for an agent identity
 
-Enter either the **name** or **object ID** of the agent identity you want to find. To look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter. You can further refine the list using filters based on various criteria.
+- To search for an agent identity, enter either the **name** or **object ID** of the agent identity you want to find in the search box.
+- To look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter. You can further refine the list using filters based on various criteria.
+
+You can select an agent identity from this list to see information like:
+
+- An overview of the agent identity, including:
+  - The name, description, and logo for your agent identity
+  - The status of that agent identity, and the ability to enable/disable a given agent identity
+  - The link to the parent agent identity blueprint
+- The list of owners and sponsors for that agent identity
+- The agent's access via this agent identity's granted permissions and Microsoft Entra roles 
+- Audit logs and sign-in logs for that agent identity
 
 ## Select viewing options
-To customize your view of agent identities, you can change filters or select which columns are shown for each agent identity.
 
-Not all columns are shown by default. To see all available columns and edit shown columns, select the **Choose columns** button. The table columns and their filter options are as follows:
+To customize your view of agent identities, you can change filters or select which columns are shown for each agent identity. Not all columns are shown by default. To see all available columns and edit shown columns, select the **Choose columns** button. The table columns and their filter options are as follows:
 
 | Column Name | Description | Sortable | Filterable | Special notes
 |-------------|-------------|:--------:|:----------:|------------------|
@@ -70,14 +81,3 @@ To disable an agent identity while in this page:
 1. Select the **Disable** button in the toolbar.
 
 You might also navigate into a single agent identity, and disable it there.
-
-## View details about an agent identity
-
-You can select an agent identity from this list to see information like:
-- An **Overview** of the agent identity, including:
-  - The name, description, and logo for your agent identity
-  - The status of that agent identity, and the ability to enable/disable a given agent identity
-  - The link to the parent agent identity blueprint
-- The list of **Owners and Sponsors** for that agent identity
-- The **Agent's access** via this agent identity's granted permissions and Microsoft Entra roles 
--**Audit logs** and **sign-in logs** for that agent identity
