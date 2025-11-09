@@ -5,11 +5,7 @@ ms.service: entra-verified-id
 author: barclayn
 manager: pmwongera
 ms.topic: how-to
-<<<<<<< HEAD
-ms.date: 11/05/2025
-=======
 ms.date: 11/07/2025
->>>>>>> 3fd52672122cc33a18244a96bb8c266824bc79f2
 ms.author: barclayn
 ---
 
