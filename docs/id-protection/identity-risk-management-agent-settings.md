@@ -34,7 +34,13 @@ The **Controls** section provides the roles and permissions required for the age
 
 #### Trigger
 
-The agent is configured to run every 24 hours based on when it's initially configured. Select **No trigger enabled** to change the agent to run manually.
+By default, the agent continuously monitors your tenant, but you can also change the frequency or set to manual run only. When the agent is set to run daily or manually, the agent can send [email notifications](#communications) to selected recipients after each run.
+
+The following options are available:
+
+- **Continuous monitoring**: The agent checks for new risky users every 5 minutes and automatically investigates them.
+- **Daily trigger**: The agent runs automatically every 24 hours.
+- **Manual run**: The agent runs only when started manually.
 
 #### Permissions and role-based access
 
@@ -45,7 +51,7 @@ The agent requires specific permissions to read risk detections, risk history, s
 By default, the agent investigates the most recent 100 risky users within the last 90 days. You can control the scope of for agent scan by adjusting several options. 
 
 - Select the **Select users and groups** option to search for and select the users and groups you want the agent to scan.
-- Set the maximum recent risky users to scan.
+- Set the maximum recent risky users to scan within 1-100.
 - Select which risk levels to include in the scan. All risk levels are selected by default.
 - Set a specific time frame for the scope:
    - Last 7 days
@@ -55,7 +61,7 @@ By default, the agent investigates the most recent 100 risky users within the la
 
 ### Communications
 
-The Identity Risk Management Agent can send email notifications to selected recipients. The user who turned on the agent is set to receive notifications, but the notifications themselves aren't turned on by default. 
+The Identity Risk Management Agent can send email notifications to selected recipients. Notifications aren't turned on by default. 
 
 1. Set the **Email notifications** toggle to **On**.
 1. Select the **No users selected** link under the **Additional recipients** heading to search for and add more recipients.
