@@ -24,7 +24,7 @@ Agent sign-in activities are captured within existing sign-in event types but wi
 
 Access agent sign-in logs through the Microsoft Entra admin center using the `isAgent` (agent as actor) and `IsAgentSubject` (agent as subject) filters in sign-in logs, or programmatically through the [Microsoft Graph API](/graph/api/resources/agentic-agentsignin?view=graph-rest-beta) using the enhanced `agentSignIn` resource type. The system provides visibility, capturing agent activities across Microsoft platforms such as Microsoft Copilot Studio and Azure AI Foundry, and third-party platforms. For more information about actors and subjects in authentication flows, see the [ID token claims reference](/entra/identity-platform/id-token-claims-reference).
 
-For comprehensive information about sign-in logs capabilities, filtering options, and detailed analysis, see [Sign-in logs in Microsoft Entra ID](../identity/monitoring-health/concept-sign-ins.md).
+For comprehensive information about sign-in logs capabilities, filtering options, and detailed analysis, see [Sign-in logs in Microsoft Entra ID](entra/identity/monitoring-health/concept-sign-ins).
 
 ## Audit logs for agents
 
@@ -32,7 +32,7 @@ Agent audit logging provides comprehensive tracking capabilities. This includes 
 
 Access agent audit logs through the Microsoft Entra admin center or programmatically through the Microsoft Graph API using the standard directoryAudits endpoint with agent-specific filtering.
 
-For comprehensive information about audit logs structure, querying capabilities, and detailed operational tracking, see [audit logs in Microsoft Entra ID](../identity/monitoring-health/concept-audit-logs.md).
+For comprehensive information about audit logs structure, querying capabilities, and detailed operational tracking, see [audit logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-audit-logs).
 
 ## Accessing agent logs
 
@@ -40,12 +40,12 @@ Both sign-in and audit logs for agents are available through standard Microsoft 
 
 - Microsoft Entra admin center with specialized filtering for agent activities
 - Microsoft Graph API with enhanced resource types and filtering capabilities
-- Export logs to storage or a Security Incident and Event Management service through [Diagnostic Settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md)
+- Export logs to storage or a Security Incident and Event Management service through [Diagnostic Settings](/entra/identity/monitoring-health/howto-configure-diagnostic-settings)
 
 Agent activities might appear across different log types depending on the operation and permission model used, so check multiple log sources for comprehensive visibility.
 
 ## Related content
 
-- [Sign-in logs in Microsoft Entra ID](../identity/monitoring-health/concept-sign-ins.md)
-- [Learn about the audit logs in Microsoft Entra ID](../identity/monitoring-health/concept-audit-logs.md)
+- [Sign-in logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-sign-ins)
+- [Learn about the audit logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-audit-logs)
 - [agentSignIn resource type](/graph/api/resources/agentic-agentsignin?view=graph-rest-beta&preserve-view=true)

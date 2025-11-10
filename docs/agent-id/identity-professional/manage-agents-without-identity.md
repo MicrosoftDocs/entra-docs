@@ -18,7 +18,7 @@ As an admin, you want to have a 360-degree view of your agent for both security 
 
 ## Prerequisite
 
-Agents only appear in the registry after you [publish your agent to the agent registry](publish-agents-to-registry.md).
+Agents only appear in the registry after you [publish your agent to the agent registry](../identity-platform/publish-agents-to-registry.md).
 
 ## Navigate to your agent without an agent identity
 

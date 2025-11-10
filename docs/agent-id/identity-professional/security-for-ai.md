@@ -105,7 +105,7 @@ Agent security challenges manifest in different ways depending on the agent's pu
 
 Microsoft Entra agent ID provides an identity and security framework designed to address the unique challenges of AI agents. The Microsoft Entra agent identity platform consists of several integrated components that work together to provide identity management for AI agents. Microsoft Entra agent ID enables you to: 
 
-:::image type="content" source="media/security-for-ai/entra-agent-ID-Infographic.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra agent ID.":::
+:::image type="content" source="media/security-for-ai/microsoft-entra-agent-identities-diagram.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra agent ID.":::
 
 - Discover and manage agents
     - Agent identities: Creates and manages agent identity blueprints as templates and agent identities as individual instances with parent-child relationships
