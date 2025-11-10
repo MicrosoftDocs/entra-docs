@@ -224,7 +224,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 **Comprehensive AI agent administration.** New specialized roles for Agent ID management deliver granular administrative control over AI agent identities, blueprints, and registry operations.
 
-- [Agent ID Administrator role](../identity/role-based-access-control/includes/agent-id-administrator.md) (New)
+- [Agent ID Administrator role](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) (New)
 - [Agent ID Developer role](../identity/role-based-access-control/includes/agent-id-developer.md) (New)
 - [Agent Registry Administrator role](../identity/role-based-access-control/includes/agent-registry-administrator.md) (New)
 - [Manage roles in portal](../identity/role-based-access-control/manage-roles-portal.md) (Updated)
