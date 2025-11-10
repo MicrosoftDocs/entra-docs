@@ -416,7 +416,9 @@
         - name: Manage synced AD DS users
           href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
-          href: manage-workflow-insights.md             
+          href: manage-workflow-insights.md
+        - name: Workflow Sensitivity Labels
+          href: workflow-sensitivity-labels.md               
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
