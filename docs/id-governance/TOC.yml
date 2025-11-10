@@ -401,7 +401,7 @@
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
-        - name: Reprocess workflows (Preview)
+        - name: Reprocess workflows
           href: reprocess-workflow.md    
         - name: Download workflow history reports
           href: download-workflow-history.md
