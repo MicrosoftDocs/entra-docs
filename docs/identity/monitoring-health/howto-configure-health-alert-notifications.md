@@ -40,8 +40,8 @@ There are different roles, permissions, and license requirements to view health 
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 > [!NOTE]
-> Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
-> If you see error due to missing required Microsoft Graph permissions, to get more information about Micorosft Graph permisisons, see [Microsoft graph permissions](/graph/permissions-overview).
+> * Newly onboarded tenants might not have enough data to generate alerts for about 30 days. <br>
+> * If you see error due to missing required Microsoft Graph permissions, to get more information about Micorosft Graph permisisons, see [Microsoft graph permissions](/graph/permissions-overview).
 
 ## Determine email notification recipients
 
