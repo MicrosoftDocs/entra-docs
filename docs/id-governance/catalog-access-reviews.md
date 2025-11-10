@@ -65,7 +65,7 @@ Once you add resources to a catalog, it's time to create a catalog access review
 
 ## Completing a catalog access review
 
-When the catalog access review is created, Managers receive an email notification that directs them to the myaccess portal. They can also directly navigate to the myaccess portal where they can view their direct report's access to all resources in the catalog.
+When the catalog access review is created, managers receive an email notification that directs them to the myaccess portal. They can also directly navigate to the My Access portal where they can view their direct report's access to all resources in the catalog.
 
 To complete a catalog access review, you'd do the following steps:
 
@@ -73,7 +73,9 @@ To complete a catalog access review, you'd do the following steps:
 
 1. In the left menu, select **Access reviews** to see a list of access reviews pending approval. 
 
-1. For each access item, choose **Approve** or **Deny**, and provide a justification if required
+1. Select the **"Multi-resource** tab to see a list of pending catalog access reviews. 
+
+1. For each access item, choose **Approve** or **Deny**, and provide a justification if required.
 
 1. Select **Submit** to record your decisions.
 
