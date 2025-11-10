@@ -32,7 +32,7 @@ additionalContent:
   sections:
     ## Section 1: Microsoft Entra Agent ID ######################
     - title: Microsoft Entra Agent ID
-      summary: The comprehensive solution for protecting and governing AI agents in enterprise environments. Includes advanced security controls, governance policies, and Zero Trust protections for agent identities and access management.
+      summary: The comprehensive solution for protecting and governing AI agents in enterprise environments. Includes advanced security controls, and governance policies for agent identities and access management.
       items:
         ## CARD 1 ######################
         - title: Register and manage agents
@@ -64,15 +64,17 @@ additionalContent:
       items:
         ## CARD 1 ######################
         - title: Microsoft Entra agent identity platform for developers
-          links:
-            - text: Configure Microsoft Entra SDK for agent identities
-              url: ./identity-platform/microsoft-entra-sdk-for-agent-identities.md          
+          links:        
+            - text: What is an agent identity blueprint?
+              url: ./identity-platform/agent-blueprint.md
             - text: Create an agent identity blueprint
               url: ./identity-platform/create-blueprint.md
+            - text: What is an agent identity?
+              url: ./identity-platform/agent-identities.md
             - text: Create an agent identity
-              url: ./identity-platform/create-delete-agent-identities.md                
-            - text: Learn about agent users
-              url: ./identity-platform/agent-users.md           
+              url: ./identity-platform/create-delete-agent-identities.md                           
+            - text: Configure Microsoft Entra SDK for agent identities
+              url: ./identity-platform/microsoft-entra-sdk-for-agent-identities.md  
 
         ## CARD 2 ######################
         - title: Agent Registry
