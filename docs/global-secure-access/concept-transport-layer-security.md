@@ -63,14 +63,18 @@ To get started with TLS inspection, see [Configure Transport Layer Security](how
 |AES256-SHA |
 ## Known limitations
 TLS inspection has the following known limitations:
-- When a TLS inspection rule is enabled, all categories except Education, Government, Finance, and Health and Medicine are decrypted by default. Additionally, Global Secure Access manages a system bypass list that includes common destinations known to be incompatible with TLS inspection. If a request matches the system bypass, the TLS action is logged as Bypassed. Work is underway to support custom TLS rules for intercepting or bypassing specific destinations or categories. In the meantime, use the custom bypass feature in the Internet Access forwarding profile to exclude destinations that TLS inspection affects. 
-- Make sure each certificate signing request (CSR) you generate has a unique certificate name and isn't reused. The signed certificate must stay valid for at least one year.
+- TLS inspection supports up to 100 policies, 1000 rules, and 8000 destinations.
+- Make sure each certificate signing request (CSR) you generate has a unique certificate name and isn't reused. The signed certificate must stay valid for at least 6 months.
 - You can use only one active certificate at a time.
 - TLS inspection doesn't support Application-Layer Protocol Negotiation (ALPN) version 2. If a destination site requires HTTP/2, the upstream TLS handshake fails, and the site isn't accessible when TLS inspection is enabled.
 - TLS inspection doesn't follow Authority Information Access (AIA) and Online Certificate Status Protocol (OCSP) links when validating destination certificates.
-- Many mobile applications implement certificate pinning, which prevents successful TLS inspection and can lead to app failures. As a result, there is limited support for TLS inspection on mobile platforms. At this time, we recommend enabling TLS inspection for the Windows platform only."
+## Mobile platform
+- Many mobile applications implement certificate pinning, which prevents successful TLS inspection, resulting in handshake failures or loss of functionality. To reduce risk, enable TLS inspection in a test environment first and validate that critical applications are compatible. For apps that rely on certificate pinning, configure TLS inspection custom rules to bypass these destinations using domain-based or category-based rules.
 
 ## Related content
 
-* [Configure Transport Layer Security](how-to-transport-layer-security.md)
+* [Configure Transport Layer Security Policies](how-to-transport-layer-security.md)
+
+* [Configure Transport Layer Security Settings](how-to-transport-layer-security-settings.md)
+
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)

@@ -29,7 +29,7 @@ Use the prompts and examples in this article to compile your findings into actio
 ## Prerequisites
 
 - A tenant with Security Copilot enabled. Refer to [Get started with Microsoft Security Copilot](/copilot/security/get-started-security-copilot#option-2-provision-capacity-in-azure) for more information.
-- The following roles and licenses are required for different governance and optimization use cases:
+- The following roles and licenses are required for different governance and optimization use cases. 
 
     | Use case | Role(s) | License | Tenant |
     |----------|---------|---------|--------|
@@ -40,6 +40,11 @@ Use the prompts and examples in this article to compile your findings into actio
 ## Launch Security Copilot in Microsoft Entra
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
+
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.*
 
 ## Validate access through access reviews
 
