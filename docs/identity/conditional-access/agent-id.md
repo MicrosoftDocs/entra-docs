@@ -6,19 +6,18 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 11/05/2025
+ms.custom: agent-id-ignite
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: kvenkit
 ---
-# Conditional Access and agent identities (Preview)
+# Conditional Access for Agent ID (Preview)
 
 Conditional Access for Agent ID is a new capability in Microsoft Entra ID that brings Conditional Access evaluation and enforcement to AI agents. This capability extends the same Zero Trust controls that already protect human users and apps to your agents. Conditional Access treats agents as first-class identities and evaluates their access requests the same way it evaluates requests for human users or workload identities, but with agent-specific logic.
 
 For more information about the types of agents and the identity and access management challenges they present, see [Security for AI with Microsoft Entra agent identity](../../agent-id/identity-professional/security-for-ai.md).
-
-Admins can use new Conditional Access policies to govern agent identities and users. During public preview, blocking access to all resources is the only policy configuration allowed for agent users. 
 
 ## Agent identity architecture in Microsoft Entra
 
@@ -34,7 +33,7 @@ To understand how Conditional Access works with agent identities, it's important
 
 For more information, see [Microsoft Entra agent ID security capabilities for AI Agents](../../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md).
 
-## Conditional Access capabilities for agent apps and agent users
+## Conditional Access capabilities for agent identities and agent users
 
 Conditional Access enforces Zero Trust principles across all token acquisition flows initiated by agent identities and agent users.
 
@@ -93,11 +92,11 @@ Creating a Conditional Access policy for agents involves these four key componen
 
 ## Common business scenarios
 
-There are two key business scenarios that we envision Conditional Access policies taking care of when it comes to agents. 
+There are two key business scenarios where Conditional Access policies can help you manage agents effectively.
 
-The first scenario is your organization is testing agents and you want to configure a Conditional Access policy to allow only approved agents to access specific resources. You can accomplish this either by tagging all agents and resources with custom security attributes you target in policy, or by manually picking the agents and resources using the enhanced object picker.
+In the first scenario, you may want to ensure that only approved agents can access specific resources. You can do this by tagging agents and resources with custom security attributes targeted in your policy, or by manually selecting them using the enhanced object picker.
 
-The second scenario uses signals from Microsoft Entra ID Protection to block agents performing risky behaviors.
+In the second scenario, Conditional Access uses [signals from Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents) to detect and block agents exhibiting risky behavior from accessing resources.
 
 ### Scenario 1: Allow only specific agents to access resources
 
@@ -107,7 +106,7 @@ The second scenario uses signals from Microsoft Entra ID Protection to block age
 
 The recommended approach for the first scenario is to create and assign custom security attributes to each agent or agent blueprint, then target those attributes with a Conditional Access policy. This approach uses steps similar to those documented in [Filter for applications in Conditional Access policy](concept-filter-for-applications.md). You can assign attributes across multiple attribute sets to an agent or cloud application.
 
-####### Create and assign custom attributes
+###### Create and assign custom attributes
 
 1. Create the custom security attributes:
    1. Create an **Attribute set** named *AgentAttributes*.
@@ -119,11 +118,11 @@ The recommended approach for the first scenario is to create and assign custom s
       1. Add the following predefined values: **Finance**, **HR**, **IT**, **Marketing**, **Sales**.
 1. Assign the appropriate value to resources that your agent is allowed to access. For example, you may want only agents that are **HR_Approved** to be able to access resources that are tagged **HR**.
 
-####### Create Conditional Access policy
+###### Create Conditional Access policy
 
 After you complete the previous steps, create a Conditional Access policy using custom security attributes to block all agent identities except those reviewed and approved by your organization. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Assignment Reader](../role-based-access-control/permissions-reference.md#attribute-assignment-reader).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
@@ -162,7 +161,7 @@ Alternatively, organizations can create a Conditional Access policy using the en
 
 The enhanced object picker replaces the previous flat list experience in both the assignment and target resources sections of policy configuration. The new experience is meant to simplify the selection of items you want to scope in the policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
@@ -191,9 +190,9 @@ The enhanced object picker replaces the previous flat list experience in both th
 
 ---
 
-### Scenario 2: Block high-risk agent identities from accessing my organization’s resource
+### Scenario 2: Block high-risk agent identities from accessing my organization’s resources
 
-Organizations can create a Conditional Access policy to block high-risk agent identities based on signals from Microsoft Entra ID Protection.
+Organizations can create a Conditional Access policy to block high-risk agent identities based on [signals from Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -219,7 +218,7 @@ Organizations can create a Conditional Access policy to block high-risk agent id
 
 Admins can use the Sign-in logs to investigate why a Conditional Access policy did or didn't apply as explained in [Microsoft Entra sign-in events](troubleshoot-conditional-access.md#microsoft-entra-sign-in-events). For agent-specific entries, filter for **agentType** of **agent user** or **agent identity**. Some of these events appear in the **User sign-ins (non-interactive)** while others appear under **Service principal sign-ins**.
 
-- Agent identities (actor) accessing any resources → Service principal sign-in logs → agentType: agent identity
+- Agent identities (actor) accessing any resources → Service principal sign-in logs → agent type: agent ID user
 - Agent users accessing any resources → Non-interactive user sign-ins → agentType: agent user
 - Users accessing agents → User sign-ins
 
@@ -231,3 +230,4 @@ Admins can use the Sign-in logs to investigate why a Conditional Access policy d
 - [Conditional Access: Conditions](concept-conditional-access-conditions.md)
 - [Conditional Access: Grant](concept-conditional-access-grant.md)
 - [Security for AI with Microsoft Entra agent identity](../../agent-id/identity-professional/security-for-ai.md)
+- [Microsoft Entra ID Protection and agents](/entra/id-protection/concept-risky-agents)

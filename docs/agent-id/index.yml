@@ -8,6 +8,7 @@ metadata:
   description: Build, secure, and manage agent identities with Microsoft Entra Agent ID. Integrate AI agents with enterprise workflows, apply Zero Trust principles, and govern agent access at scale.
   ms.service: identity-platform
   ms.topic: hub-page
+  ms.custom: agent-id-ignite
   author: shlipsey3
   ms.author: sarahlipsey
   ms.date: 10/24/2025

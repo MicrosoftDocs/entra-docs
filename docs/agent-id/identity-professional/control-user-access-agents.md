@@ -7,6 +7,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.author: jomondi
 ms.reviewer: ergreenl
 

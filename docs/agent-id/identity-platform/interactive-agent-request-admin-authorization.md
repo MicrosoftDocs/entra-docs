@@ -7,6 +7,7 @@ ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer, I want to configure my interactive agent to request application permissions that require admin consent, so that my agent can access resources with elevated privileges when approved by an administrator.

@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 10/28/2025
+ms.date: 11/07/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -104,3 +104,4 @@ To disable TLS inspection:
 * [Create a TLS certificate using OpenSSL](scripts/powershell-open-secure-sockets-layer.md) 
 * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
+* [Troubleshoot Transport Layer Security inspection issues](troubleshoot-transport-layer-security.md)

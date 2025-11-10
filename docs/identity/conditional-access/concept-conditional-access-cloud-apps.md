@@ -185,7 +185,7 @@ For more information about these profiles, see the article [Global Secure Access
 
 #### All agent resources
 
-Applying a Conditional Access policy to All agent resources enforces the policy for all token requests from agent identity blueprint principals and agent identities.
+Applying a Conditional Access policy to All agent resources enforces the policy for all token requests to agent identity blueprint principals and agent identities.
 
 ## User actions
 

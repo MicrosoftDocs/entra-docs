@@ -5,7 +5,7 @@ ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
 ms.date: 11/04/2025
-ms.custom: include file
+ms.custom: include file, agent-id-ignite
 ---
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)

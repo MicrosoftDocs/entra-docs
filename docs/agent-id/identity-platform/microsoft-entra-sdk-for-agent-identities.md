@@ -7,6 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/05/2025
+ms.custom: agent-id-ignite
 ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer building autonomous agents, I want to acquire tokens using the Microsoft Entra SDK for Agent ID so that my agents can independently call downstream APIs with proper authentication.

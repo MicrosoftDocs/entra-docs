@@ -1,13 +1,13 @@
 ---
 title: Agent metadata and discoverability patterns
 description: Learn how to structure agent metadata for optimal discoverability in Microsoft Entra Agent Registry and understand how the collections model affects agent visibility.
-titleSuffix: Microsoft Entra Agent ID
-author: omondiatieno
-manager: mwongerapk
+author: shlipsey3
+manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
-ms.date: 11/04/2025
-ms.author: jomondi
+ms.date: 11/07/2025
+ms.author: sarahlipsey
+ms.custom: agent-id-ignite
 
 #Customer intent: As a developer creating agents, I want to understand how to structure agent metadata for optimal discoverability and how the collections model affects agent visibility, so that my agents can be found by the right users and applications.
 ---
@@ -16,11 +16,9 @@ ms.author: jomondi
 
 Agent metadata serves as the foundation for agent discoverability within Microsoft Entra Agent Registry. The metadata you provide determines how other agents, applications, and users can find and interact with your agent. Understanding the metadata schema and its relationship to the collections model ensures your agents are discoverable by the intended audience while maintaining appropriate security boundaries.
 
-Proper metadata structure directly influences how your agent gets assigned to collections, which controls visibility and access patterns. The registry uses this metadata to enforce discovery policies. The metadata ensures agents appear in search results only for authorized users and applications based on their collection membership and associated policies.
-
 ## Agent metadata schema
 
-The agent metadata schema defines the information structure required for agent discoverability and interaction. This schema allows for Agent-to-Agent (A2A) communication through standard protocols while extending it with Microsoft Entra-specific capabilities for enhanced security.
+The agent metadata schema defines the information structure required for agent discoverability and interaction. This schema allows for agent collaboration through standard protocols while extending it with Microsoft Entra-specific capabilities for enhanced security.
 
 ### Basic agent information
 
@@ -28,7 +26,7 @@ The foundational metadata includes essential identification and contact informat
 
 | Field | Description |
 |-------|-------------|
-| `id` | Unique identifier for the agent card manifest. Required for all agent registrations. |
+| `id` | Unique identifier for the agent manifest. Required for all agent registrations. |
 | `displayName` | Human-readable identifier that appears in discovery results. Should clearly indicate the agent's purpose, such as "Customer Support Assistant" or "Invoice Processing Agent." |
 | `description` | Comprehensive details about the agent's purpose and capabilities. Include relevant keywords that your target audience would naturally use when searching for this type of agent, directly impacting discoverability. |
 | `iconUrl` | URL to the agent's icon image, providing visual identification in discovery results and user interfaces. |
@@ -53,7 +51,7 @@ The core functionality and interaction capabilities your agent provides.
 
 ### Security and provider information
 
-Security and authentication requirements that impact discoverability, trust, and access policies. Security and provider information directly impact how Microsoft Entra Agent Registry applies collection assignment and discovery policies to your agent, making these fields critical for proper management and compliance.
+Security and authentication requirements that affect discoverability, trust, and access policies. Security and provider information directly affect how Microsoft Entra Agent Registry applies collection assignment and discovery policies to your agent, making these fields critical for proper management and compliance.
 
 | Field | Description |
 |-------|-------------|
@@ -65,6 +63,12 @@ Security and authentication requirements that impact discoverability, trust, and
 
 ## Collections and discoverability
 
-Collections determine which agents can discover each other and establish communication channels. Agents must be explicitly assigned to collections by administrators or through defined organizational policies - there is no automatic assignment based on metadata tags or agent characteristics.
+Collections determine which agents can discover each other and establish communication channels. Agents must be explicitly assigned to collections by administrators or through defined organizational policies. There are no automatic assignments based on metadata tags or agent characteristics. This explicit assignment model ensures proper governance and security controls over agent discoverability and interaction patterns.
 
-The collection assignment process considers your agent's metadata when administrators make placement decisions, but the metadata itself does not trigger automatic collection membership. This explicit assignment model ensures proper governance and security controls over agent discoverability and interaction patterns.
+For comprehensive information about collection types, assignment rules, and discovery policies, see [Agent registry collections](agent-registry-collections.md).
+
+## Related content
+
+- [Publish agents to registry](publish-agents-to-registry.md)
+- [Agent registry collections](agent-registry-collections.md)
+- [What is the agent registry?](what-is-agent-registry.md)
