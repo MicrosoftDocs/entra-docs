@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/27/2025
+ms.date: 11/10/2025
 
 ms.author: justinha
 author: justinha
@@ -41,7 +41,6 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
    > [!NOTE]
    > Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys, you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.
 
-      :::image type="content" border="true" source="media/how-to-register-passkey-android-or-ios/choose-where-store-passkey.png" alt-text="Screenshot of the dialog where to save your passkey on your iOS or Android device.":::
 
 1. If your organization allows saving a passkey to a security key:
    1. Choose **Security Key**.

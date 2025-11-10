@@ -4,7 +4,7 @@ description: Learn about using passkey (FIDO2) authentication in Microsoft Entra
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 11/05/2025
+ms.date: 11/10/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: kimhana
@@ -45,6 +45,15 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
   - Apple iCloud Keychain 
   - Google Password Manager 
 
+Synced passkeys offer a seamless and convenient user experience where users can use a device’s native unlock mechanism like face, fingerprint or PIN to authenticate. Based on the learnings from hundreds of millions of consumer users of Microsoft accounts that have registered and are using synced passkeys, we have learned: 
+
+- **99% of users successfully register synced passkeys** 
+- Synced passkeys are **14x faster compared to password and a traditional MFA combination: 3 seconds instead of 69 seconds** 
+- Users are **3x more successful signing-in with synced passkey than legacy authentication methods (95% vs 30%)** 
+- Synced passkeys in Microsoft Entra ID bring MFA simplicity at scale for all enterprise users. They're a convenient and low-cost alternative to traditional MFA options like SMS and authenticator apps. 
+
+For more information about how to deploy passkeys in your organization, see [How to enable synced passkeys](how-to-authentication-synced-passkeys.md). 
+
 **Attestation** verifies the authenticity of the passkey provider or device during registration. When enforced:
 
 - It provides cryptographically verifiable device identity through FIDO Metadata Service (MDS). When attestation is enforced, relying parties can validate the authenticator model and apply policy decisions for certified devices.
@@ -53,6 +62,16 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
 In Microsoft Entra ID:
 - Attestation can be enforced at the **passkey profile** level.
 - If attestation is enabled, only device-bound passkeys are allowed; synced passkeys are excluded.
+
+## Choose the right passkey option 
+
+FIDO2 security keys are recommended for highly regulated industries or users with elevated privileges. They provide strong security, but can increase costs for equipment, training, and helpdesk support—especially when users lose their physical keys and need account recovery. Passkeys in the Microsoft Authenticator app are another option for these user groups. 
+
+For most users—those outside highly regulated environments or without access to sensitive systems—**synced passkeys** offer a convenient, low-cost alternative to traditional MFA. Apple and Google have implemented advanced protections for passkeys stored in their clouds. 
+
+Regardless of type—device-bound or synced—passkeys represent a significant security upgrade over phishable MFA methods. 
+
+For more details, see [Get started with phishing-resistant MFA deployment in Microsoft Entra ID](how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md). 
 
 ## Related content
 
