@@ -41,6 +41,8 @@ Agent users:
 - Have distinct unique identifiers, separate from the agent identity.
 - Can only authenticate by presenting a token issued to the associated agent identity.
 
+:::image type="content" source="media/agent-users/agent-user.png" alt-text="Diagram showing the relationship between an agent user and agent identity.":::
+
 ## Agent user and agent ID relationship
 
 The agent identity blueprint doesn't have the permission by default to create agent users because this capability is optional and not always needed. It's a permission that must be explicitly granted to the agent identity blueprint.

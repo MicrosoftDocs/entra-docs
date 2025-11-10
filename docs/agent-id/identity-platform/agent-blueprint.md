@@ -19,6 +19,8 @@ An agent identity blueprint is an object in Microsoft Entra ID that serves as a 
 
 ## Defining an agent identity blueprint
 
+:::image type="content" source="media/agent-blueprint/agent-blueprint.png" alt-text="Diagram showing relationship between agent identity and agent identity blueprint.":::
+
 All agent identities in a Microsoft Entra ID tenant are created from an agent identity blueprint. The agent identity blueprint is a key component of the Microsoft agent identity platform that enables secure development and administration of AI agents at scale. An agent identity blueprint serves four purposes.
 
 - **Blueprints are a template for agent identities.**
@@ -67,6 +69,8 @@ All agent identities in a Microsoft Entra ID tenant are created from an agent id
 ## Agent identity blueprint principals
 
 An agent identity blueprint principal is an object in Microsoft Entra agent ID that represents the presence of an agent identity blueprint within a specific tenant. When an agent identity blueprint application is added to a tenant, Microsoft Entra creates a corresponding principal object, which is the agent identity blueprint principal.
+
+:::image type="content" source="media/agent-blueprint/agent-blueprint-principal.png" alt-text="Diagram showing illustration of an agent blueprint principal.":::
 
 This principal serves several important roles:
 
