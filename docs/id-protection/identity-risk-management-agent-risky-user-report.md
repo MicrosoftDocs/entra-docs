@@ -1,9 +1,9 @@
 ---
 title: Review agent findings in the Risky user report
-description: Learn about how the IdentityRisk Management Agent works with the Risky user report in Microsoft Entra ID Protection
+description: Learn about how the Identity Risk Management Agent works with the Risky user report in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 10/07/2025
+ms.date: 11/08/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
@@ -25,7 +25,7 @@ The Identity Risk Management Agent in Microsoft Entra ID Protection provides pro
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
-## Review agent findings in the risky users report
+## Review agent findings in the Risky users report
 
 The Identity Risk Management Agent is integrated directly into the Risky users report in Microsoft Entra ID Protection to support your existing workflow. 
 

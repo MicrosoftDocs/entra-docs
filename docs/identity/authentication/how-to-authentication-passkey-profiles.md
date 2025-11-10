@@ -4,7 +4,7 @@ description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 11/09/2025
 ms.author: justinha
 author: hanki71
 manager: dougeby
@@ -45,24 +45,24 @@ A passkey profile is a named set of policy rules that governs how users in targe
 ## Enable passkey profiles (preview)
 
 >[!NOTE]
->Upon opting-in to passkey profiles (preview), your global passkey (FIDO2) policy settings will be automatically transferred to a "Default passkey profile". A maximum of 3 passkey profiles, including the Default passkey profile are supported. Support for additional passkey profiles will come soon.
+>Upon opting-in to passkey profiles (preview), your global passkey (FIDO2) policy settings will be automatically transferred to a **Default passkey profile**. A maximum of 3 passkey profiles, including the **Default passkey profile** are supported. Support for more passkey profiles is in development.
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
-1. Under the method Passkey (FIDO2), click **Opt-in to public preview** on the public preview banner to see the passkey profiles (preview) admin UX
+1. Select **Passkey (FIDO2)**, and select **Opt-in to public preview** on the public preview banner to see the passkey profiles (preview).
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/passkey-settings.png" alt-text="Screenshot that shows how to opt in to preview."lightbox="media/how-to-authentication-passkey-profiles/passkey-settings.png":::
 
    >[!NOTE]
-   >If you had Passkey (FIDO2) policy settings, they're automatically transferred to a Default passkey profile. Previous user targets are also automatically transferred to the new **Enable and target** tab.
+   >Previous **Passkey (FIDO2)** policy settings are automatically transferred to the **Default passkey profile**. Previous user targets are also automatically transferred to **Enable and target**.
 
-1. To complete opting-in, click on the Default passkey profile and save your selections for Target Types. Your selection allows device-bound passkeys, synced passkeys, or both. 
+1. To complete opting-in, select the **Default passkey profile**. 
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/default-passkey-profile.png" alt-text="Screenshot that shows the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/default-passkey-profile.png":::
+   
+   For **Target Types**, select **Device-bound**, **Synced (preview)**, or both, and select **Save**.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
-
-For more information about how to use Graph Explorer to enable passkey profiles, see API docs.
 
 ## Create a new passkey profile
 
@@ -93,7 +93,6 @@ For more information about how to use Graph Explorer to enable passkey profiles,
 
 1.	After you finish the configuration, select **Save**.
 
-For more information about how to use Graph Explorer to create a new passkey profile, see API docs.
 
 ## Apply a passkey profile to a targeted group
 
@@ -109,15 +108,13 @@ For more information about how to use Graph Explorer to create a new passkey pro
    >[!NOTE]
    >A target group (for example, Engineering) can be scoped for multiple passkey profiles. When a user is scoped for multiple passkey profiles, registration and authentication with a passkey is allowed if it fully satisfies the requirement of one of the scoped passkey profiles. There's no particular order to the check. If a user is a member of an excluded group in the **Passkeys (FIDO2)** authentication method policy, they're blocked from FIDO2 passkey registration or sign-in. **Excluded** groups take precedence over **Included** groups.
 
-For more information about how to use Graph Explorer to apply a passkey profile to a targeted group, see API docs.
-
 ## Delete a passkey profile
 
 1. Select **Configure**.
-1. Select the trash can to the right of the passkey profile you want to delete.
+1. Select the trash can to the right of the passkey profile you want to delete, and select **Save**.
 
    >[!Note] 
-   >You can only delete a profile if it's not assigned to a group of users in **Enable and target**. If the trash can is gray, first remove any targets that are assigned that profile.
+   >You can delete a profile only if it's not assigned to a group of users in **Enable and target**. If the trash can is gray, first remove any targets that are assigned that profile.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png" alt-text="Screenshot that shows how to delete a passkey profile."lightbox="media/how-to-authentication-passkey-profiles/delete-passkey-profile.png":::
 

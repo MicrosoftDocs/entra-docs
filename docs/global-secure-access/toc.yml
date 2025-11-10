@@ -193,6 +193,8 @@ items:
         href: how-to-customize-block-page.md
       - name: Network content filtering
         href: how-to-network-content-filtering.md
+      - name: Configure the AI Gateway Prompt Shield
+        href: how-to-ai-prompt-shield.md  
   - name: Logs and monitoring
     expanded: false
     items:
@@ -258,6 +260,8 @@ items:
          items:
             - name: Integration with Netskope
               href: concept-netskope-integration.md
+            - name: Create a custom Data Loss Prevention (DLP) profile
+              href: how-to-full-data-loss-protection.md
        - name: Coexistence with partners
          expanded: false
          items:
