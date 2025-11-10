@@ -16,7 +16,7 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra Agent ID?
       itemType: overview
-      url: ./identity-professional/security-for-ai.md
+      url: ./identity-platform/microsoft-entra-agent-identities-for-ai-agents.md
     - title: Microsoft Entra agent identity platform for developers
       itemType: overview
       url: ./identity-platform/what-is-agent-id-platform.md 
