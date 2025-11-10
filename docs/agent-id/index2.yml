@@ -16,16 +16,16 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra Agent ID?
       itemType: overview
-      url: ./identity-platform/what-is-agent-id-platform.md
-    - title: What is the Microsoft agent identity platform?
+      url: ./identity-professional/security-for-ai.md
+    - title: Microsoft Entra agent identity platform for developers
       itemType: overview
       url: ./identity-platform/what-is-agent-id-platform.md 
     - title: What is an agent identity?
       url: ./identity-platform/what-is-agent-id.md
       itemType: overview
-    - title: Set up your development environment (LINK)
-      url: ./identity-platform/what-is-agent-registry.md           ###./set-up-environment.md
-      itemType: quickstart
+    - title: Create an agent identity
+      url: ./identity-platform/create-delete-agent-identities.md
+      itemType: how-to
 
 additionalContent:
   # Supports up to 4 subsections
