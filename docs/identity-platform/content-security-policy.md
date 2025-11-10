@@ -17,7 +17,7 @@ Content Security Policy (CSP) is a browser security header that allows only trus
 
 > [!IMPORTANT]
 > **CSP enforcement begins globally mid-to-late October 2026.**  
-> Applies only to browser-based sign-in at `login.microsoftonline.com`. External ID customers using custom domains and MSAL/API flows are **not affected**.
+> Applies only to browser-based sign-in at `login.microsoftonline.com`. Microsoft Entra External ID customers using custom domains and MSAL/API flows are **not affected**.
 
 ## Risk of script or code injection
 
