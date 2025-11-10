@@ -34,7 +34,7 @@ CSP further helps shield against these attacks by restricting which scripts can 
 
 ## Threat analysis
 
-CSP adds an important layer of defense against script injection attacks like cross-site scripting (XSS). The primary defense is to prevent malicious scripts from being injected into a website in the first place. Microsoft Entra and modern browsers already implement mechanisms to achieve this. However, if a script bypasses those protections—such as through a malicious browser extension or a zero-day vulnerability—CSP blocks it from executing. CSP achieves this by allow-listing only trusted script nonces and origins and blocking everything else by default. This defense-in-depth approach strengthens existing security measures.
+CSP adds an important layer of defense against script injection attacks like XSS. The primary defense is to prevent malicious scripts from being injected into a website in the first place. Microsoft Entra and modern browsers already implement mechanisms to achieve this. However, if a script bypasses those protections—such as through a malicious browser extension or a zero-day vulnerability—CSP blocks it from executing. CSP achieves this by allow-listing only trusted script nonces and origins and blocking everything else by default. This defense-in-depth approach strengthens existing security measures.
 
 
 ## CSP enforcement scope and key details
