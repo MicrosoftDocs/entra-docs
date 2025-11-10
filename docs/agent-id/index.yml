@@ -107,6 +107,6 @@ additionalContent:
         - title: Related content
           links:
             - text: Security for AI
-              url: /security/security-for-ai/
+              url: https://aka.ms/agentidsdk
             - text: Security Copilot + Microsoft Entra
               url: /entra/security-copilot/security-copilot-in-entra        
