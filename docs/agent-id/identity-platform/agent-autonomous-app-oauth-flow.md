@@ -29,7 +29,7 @@ The following are the protocol steps.
 
 1. Agent identity blueprint requests an exchange token T1. The agent identity blueprint presents its credentials that could be a secret, a certificate, or a federated identity credential. Microsoft Entra ID returns the T1 to the agent identity blueprint. In this example, we use a managed identity as Federated Identity Credential (FIC).
     
-    [!INCLUDE [Dont use secrets](./includes/dont-use-secrets.md)]
+    [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
     ```
     POST /oauth2/v2.0/token
