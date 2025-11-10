@@ -124,6 +124,6 @@ If roles claims are missing from tokens, verify that the assignment exists with 
 
 ## Related content
 
-- [Application manifest reference](../identity-platform/reference-app-manifest.md)
+- [Application manifest reference](../../identity-platform/reference-app-manifest.md)
 - [Microsoft Entra roles and permissions for agent identities](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents)
-- [Conditional Access for enhanced security controls](../identity/conditional-access/overview.md)
+- [Conditional Access for enhanced security controls](../../identity/conditional-access/overview.md)

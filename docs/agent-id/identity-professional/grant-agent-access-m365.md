@@ -33,11 +33,11 @@ Use delegated permissions when your interactive agent needs to act on behalf of 
 
 Use application permissions when your autonomous agent runs without a user present and requires app-only access. For example, to read all users' profiles. App permissions appear in the token's roles claim.
 
-For more information, see [permissions and consent overview](../identity-platform/permissions-consent-overview.md)
+For more information, see [permissions and consent overview](../../identity-platform/permissions-consent-overview.md)
 
 ### How consent works
 
-For delegated permissions, when you redirect the user to the Microsoft identity platform `/authorize` endpoint, they review scopes such as `User.Read` and `Mail.Read`. If consent is granted, Microsoft Entra ID records an OAuth2PermissionGrant from your agent (client) to the resource such as Microsoft Graph. Future delegated tokens for that resource include the approved scopes in `scp` without reprompting unless consent changes. If your app requests consent for admin restricted permissions, your users get an error. An admin requests these permissions directly. For more information, see [admin-restricted permissions](../identity-platform/scopes-oidc#admin-restricted-permissions.md).
+For delegated permissions, when you redirect the user to the Microsoft identity platform `/authorize` endpoint, they review scopes such as `User.Read` and `Mail.Read`. If consent is granted, Microsoft Entra ID records an OAuth2PermissionGrant from your agent (client) to the resource such as Microsoft Graph. Future delegated tokens for that resource include the approved scopes in `scp` without reprompting unless consent changes. If your app requests consent for admin restricted permissions, your users get an error. An admin requests these permissions directly. For more information, see [admin-restricted permissions](../../identity-platform/scopes-oidc#admin-restricted-permissions.md).
 
 ### Building the consent URL
 
