@@ -44,15 +44,6 @@ Before using the App Lifecycle Management Agent, ensure you meet the following r
 - Due to scale constraints, the agent currently limits unused application recommendations to 10,000, displaying up to all unused app recommendations that meet filtering criteria.
 - Only the user who runs the agent can see the agent session in **My Sessions** in Security Copilot.
 
-- We recommend running the agent from the Microsoft Entra admin center instead of Microsoft Security Copilot.
--  Scanning is only triggered on 24-hour period and isn't customizable.
--  Suggestions from the agent can't all be customized or overridden. The [Review disablement plan for unused apps](agent-app-lifecycle-remediation-plans.md) feature allows for customization with AI.
-- Avoid using an account that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
-- Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- Agent doesn't support private app discovery or onboarding suggestions for tenants in Africa and Australia.
-- Due to scale constraints, the agent currently limits unused application recommendations to 10,000, displaying up to all unused app recommendations that meet filtering criteria.
-- Only the user who runs the agent can see the agent session in **My Sessions** in Security Copilot.
-
 ## How it works
 
 The App Lifecycle Management Agent scans your tenant for unmanaged applications and application risks from the last 24 hours and determines appropriate recommendations. The agent provides intelligent suggestions for application discovery, onboarding, and risk remediation based on Microsoft's security best practices and your organizational patterns.

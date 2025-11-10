@@ -29,10 +29,9 @@ Before using the risk remediation features, ensure you have:
 
 ### Limitations
 
-- Due to scale constraints, the agent currently limits unused application recommendations to 1000, displaying up to 20 unused app recommendations that meet filtering criteria
+- Due to scale constraints, the agent currently limits unused application recommendations to 10,000, displaying up to all unused app recommendations that meet filtering criteria.
 - Agent can only notify app owners from the latest report generated
 - Agent doesn't support notifying unknown app owners not assigned in Microsoft Entra
-- Total notifications limited to 20 unused applications per run
 
 ## How it works
 
