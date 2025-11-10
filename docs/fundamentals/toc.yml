@@ -109,7 +109,7 @@ items:
     expanded: false
     items:
     - name: What's new at Microsoft Ignite
-      href: whats-new-ignite-2025.md‎
+      href: whats-new-ignite-2025.md
     - name: What's new in Microsoft Entra
       href: whats-new-overview.md    
     - name: Releases and announcements
