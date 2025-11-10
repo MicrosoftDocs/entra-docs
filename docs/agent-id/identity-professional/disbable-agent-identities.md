@@ -1,11 +1,13 @@
 ---
 title: Disable agent identities in your tenant
+titleSuffix: Microsoft Entra Agent ID
 description: Learn how to disable agent identities in your Microsoft Entra ID tenant using conditional access policies and creation restrictions.
 author: SHERMANOUKO
 manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2025
+ms.custom: agent-id-ignite
 ms.author: shermanouko
 ms.reviewer: dastrock
 #Customer intent: As a security administrator managing agent identities in my tenant, I want to disable agent identities to prevent their use in my organization so that I can maintain strict control over identity types and reduce potential security risks from AI agents.
@@ -21,9 +23,11 @@ Your Microsoft Entra tenant might contain two kinds of identities used by AI age
 
 - **Agents using applications / service principals**: Agents created using systems like Copilot Studio and Azure AI Foundry might be created as classic applications / service principals in your tenant. These applications / service principals have tag values that denote them as AI agents.
 
-    While these identities appear in the Microsoft Entra admin center's agent identity management experience, they aren't agent identities. They're classic applications / service principals. This means that they're subject to the same policies, governance, and processes as all other applications / service principals in your tenant. 
+    While these identities appear in the Microsoft Entra admin center's agent identity management experience, they aren't agent identities. They're classic applications / service principals. This means that they're subject to the same policies, governance, and processes as all other applications / service principals in your tenant.
 
-- **Agents using agent IDs**: Agents created using systems like Microsoft Copilot Studio, Azure AI Foundry, and Security Copilot might also be created as proper agent identities in your tenant. These agent identities are a new kind of identity with clear classification, richer metadata, and features designed to address the unique security challenges of AI agents.
+    This article doesn't discuss methods for disabling the use of applications / service principals in your tenant.
+
+- **Agents using Agent IDs**: Agents created using systems like Microsoft Copilot Studio, Azure AI Foundry, and Security Copilot might also be created as proper agent identities in your tenant. These agent identities are a new identity with clear classification, richer metadata, and feature designed to address the unique security challenges of AI agents.
 
 The remainder of this article discusses methods for disabling the use of these agent identities in your tenant.
 
@@ -47,18 +51,18 @@ Globally disabling agent identities in your tenant has broader consequences than
 - Support or troubleshooting: Helpdesk and SOC teams might receive increased tickets when first-party features fail quietly due to missing agent identities.
 - Blocking agent identities might push teams to build agents using generic application or service principal identities, reducing visibility and making it harder to distinguish agents from other software projects.
 
-If full disable proves too disruptive, consider a partial approach by implementing certain steps below while allowing some usage of agent identities in your tenant.
+If full disable proves too disruptive, consider a partial approach by implementing certain steps below while allowing some usage of Agent IDs in your tenant.
 
 To disable agent identities in your tenant, follow these steps:
 
 1. Apply conditional access policies to prevent agent identities from authenticating.
 1. (Optional) Block creation of agent identities in your tenant via various channels.
 
-## 1. Block token issuance to agent identities using conditional access
+## 1. Block token issuance to Agent IDs using conditional access
 
-Conditional access policies can be used to block authentication and token issuance of agent identities. Applying the policies below will prevent existing and new agent identities from authenticating. It will not prevent the creation of agent identities in your tenant. Applying these policies in your tenant requires the Microsoft Entra agent ID license. To acquire this license, go to [this page](https://aka.ms/agentidsku).
+Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant. Applying these policies in your tenant requires the Microsoft Entra Agent ID license. To acquire this license, go to [this page](https://aka.ms/agentidsku).
 
-To block authentication and token issuance of agent identities, create the following conditional access block policies. It's recommended to run these policies in [report-only mode](../../identity/conditional-access/concept-conditional-access-report-only.md) and understand their impact before enforcing them.
+To block authentication and token issuance of Agent IDs, create the following conditional access block policies. It's recommended to run these policies in [report-only mode](/entra/identity/conditional-access/concept-conditional-access-report-only) and understand their impact before enforcing them.
 
 ### Policy 1: Block agent identity authentication
 
@@ -211,22 +215,22 @@ Content-type: application/json
 }
 ```
 
-## 2. (Optional) Block creation of agent identities
+## 2. (Optional) Block creation of Agent IDs
 
-The Conditional Access policies applied in step 1 are sufficient to prevent all usage of agent identities in your tenant, including newly created agent identities. Should you wish to additionally prevent creation of agent identities in your tenant, take the following steps.
+The Conditional Access policies applied in step 1 are sufficient to prevent all usage of Agent IDs in your tenant, including newly created Agent IDs. Should you wish to additionally prevent creation of Agent IDs in your tenant, follow the steps below.
 
-Agent identities can enter your tenant through various channels. See [this article for details](agent-id-creation-channels.md). You can block creation of agent identities through the following methods.
+Agent IDs can enter your tenant through various channels. See [this article for details](agent-id-creation-channels.md). You can block creation of Agent IDs through the following methods.
 
-- Block creation of agent identities via Microsoft Entra admin center and other Microsoft Entra experiences.
-- Block acquisition of agent identities from ISVs.
-- Block creation of agent identities by Microsoft products and services.
+- Block creation of Agent IDs via Microsoft Entra admin center and other Microsoft Entra experiences.
+- Block acquisition of Agent IDs from ISVs.
+- Block creation of Agent IDs by Microsoft products and services.
 
-### Block creation of agent identities via Microsoft Entra
+### Block creation of Agent IDs via Microsoft Entra ID
 
-To prevent users from creating agent identities via the Microsoft Entra admin center and other Microsoft Entra experiences:
+To prevent users from creating Agent IDs via the Microsoft Entra admin center and other Microsoft Entra experiences:
 
 1. Remove any assignments to the **Agent ID Administrator** or **Agent ID Developer** built-in roles.
-1. Remove any *oauth2PermissionGrants* or *appRoleAssignments* to Microsoft Graph that allow creation of agent identities. See table below.
+1. Remove any *oauth2PermissionGrants* or *appRoleAssignments* to Microsoft Graph that allow creation of Agent IDs. See table below.
 
 | Permission | Type |
 | ---------- | ------ |
@@ -239,28 +243,28 @@ To prevent users from creating agent identities via the Microsoft Entra admin ce
 | `AgentIdUser.ReadWrite.All` | Delegated and application permission |
 | `User.ReadWrite.All` | Delegated and application permission |
 
-See the [Microsoft Graph permissions reference](authorization-agent-id.md#microsoft-graph-permissions-for-agent-ids) for full details of these permissions.
+See the [Microsoft Graph permissions reference](/graph/permissions-reference) for full details of these permissions.
 
-### Block acquisition of agent identities from ISVs
+### Block acquisition of Agent IDs from ISVs
 
-To prevent users from creating agent identities by granting consent to an ISV's agent identity blueprint, use Microsoft Entra [settings to disable user ability to consent to applications ](../../identity/enterprise-apps/configure-user-consent.md).
+To prevent users from creating Agent IDs by granting consent to an ISV's agent identity blueprint, use Microsoft Entra [settings to disable user ability to consent to applications ](/entra/identity/enterprise-apps/configure-user-consent).
 
-There's no method to prevent users from granting consent to agent identities without also affecting ability to grant consent to applications.
+There's no method to prevent users from granting consent to Agent IDs without also affecting ability to grant consent to applications.
 
 Disabling user consent is broad and also blocks:
 
 - Onboarding of legitimate nonagent SaaS apps that depend on user consent flows.
 - Granting permissions to existing nonagent apps.
 
-If this impact is too high, keep user consent enabled and instead rely on the conditional Access block policies to prevent tokens for unapproved ISV agent identities.
+If this impact is too high, keep user consent enabled and instead rely on the [Conditional Access block policies](#1-block-token-issuance-to-agent-ids-using-conditional-access) to prevent tokens for unapproved ISV Agent IDs.
 
-### Block creation of agent identities by Microsoft products and services
+### Block creation of Agent IDs by Microsoft products and services
 
-To block Microsoft products and services from creating agent identities in your tenant, you must use the settings available in each Microsoft product:
+To block Microsoft products and services from creating Agent IDs in your tenant, you must use the settings available in each Microsoft product:
 
 #### Security Copilot
 
-- To disable agent identity creation by Security Copilot, shut off Security Copilot by deleting all SCU capacity. This blocks both agents and Security Copilot itself. Users with the following roles can turn Security Copilot back on by creating SCU capacity:
+- To disable Agent ID creation by Security Copilot, shut off Security Copilot by deleting all SCU capacity. This blocks both agents and Security Copilot itself. Users with the following roles can turn Security Copilot back on by creating SCU capacity:
 
     - Billing Administrator
     - Microsoft Entra Compliance Administrator
@@ -285,7 +289,7 @@ See [Security Copilot documentation for more details](/copilot/security/).
 
 #### Copilot Studio
 
-To disable use of Copilot Studio and creation of agent identities, you can restrict agent creation via licensing, RBAC, or data policies.
+To disable use of Copilot Studio and creation of Agent IDs, you can restrict agent creation via licensing, RBAC, or data policies.
 
 - Licensing:
     - Prevent users from signing up for free trials of Copilot Studio.
@@ -294,13 +298,13 @@ To disable use of Copilot Studio and creation of agent identities, you can restr
     - Prevent users from signing up for free trials, which prevents creation of trial environments.
     - Creation of Copilot Studio environments requires the Power Platform Administrator role. Remove access to environments and ability to create new environments.
 - Data policies:
-    - Apply policies that prevent agents from being published, so nobody can chat with an agent. Note: This does **not** block agent creation.
+    - Apply policies that prevent agents from being published, so nobody can chat with an agent. This does **not** block agent creation.
 
 See Copilot Studio documentation for details, which [recommends using data policies](/microsoft-copilot-studio/security-faq#can-i-disable-microsoft-copilot-studio-agent-creation-in-my-organization).
 
 #### Azure AI Foundry
 
-To disable creation of agent identities, prevent users from creating projects and agents in Azure AI Foundry:
+To disable creation of Agent IDs, prevent users from creating projects and agents in Azure AI Foundry:
 
 Turn off user ability to create Azure subscriptions via free trials or pay-as-you-go. This enforces the following:
 
@@ -308,13 +312,13 @@ Turn off user ability to create Azure subscriptions via free trials or pay-as-yo
 - Within a subscription, only the Azure AI Account Owner role can create Foundry projects.
 - Within a project, users must have the Azure AI User role to create agents.
 
-By not assigning these roles to users, users can't create agents and agent identities.
+By not assigning these roles to users, users can't create agents and Agent IDs.
 
 For more information, see [Azure AI Foundry documentation here](/azure/ai-foundry/concepts/rbac-azure-ai-foundry).
 
 #### Microsoft Teams
 
-To disable creation of agent identities via Microsoft Teams, utilize settings in the Teams Admin Center. Using Teams Admin Center, you can:
+To disable creation of Agent IDs via Microsoft Teams, utilize settings in the Teams Admin Center. Using Teams Admin Center, you can:
 
 - Prevent users from adding apps/agents to Teams.
 - Pivot by Microsoft apps, third-party apps, or custom apps.
@@ -322,21 +326,21 @@ To disable creation of agent identities via Microsoft Teams, utilize settings in
 
 For more information, see [Teams admin center documentation](/microsoftteams/manage-apps).
 
-## Monitor for agent identities creations and activity
+## Monitor for Agent ID creations and activity
 
-To ensure disable controls remain effective and detect drift (new agent identities or attempted usage), implement lightweight monitoring.
+To ensure disable controls remain effective and detect drift (new Agent IDs or attempted usage), implement lightweight monitoring.
 
-### Review agent identity creation in audit logs
+### Review Agent ID creation in audit logs
 
-Agent identities are logged under the base identity types they originate from. This means that:
+Agent IDs are logged under the base identity types they originate from. This means that:
 
 - The creation of an agent user appears as a *Create user* audit activity.
 - The creation of an agent identity appears as a *Create service principal* audit event.
 
-To monitor for agent identity creation, you must detect these creation events, and look up the object ID of the created object via Microsoft Graph to determine if the object created is an agent identity.
+To monitor for Agent ID creation, you must detect these creation events, and look up the object ID of the created object via Microsoft Graph to determine if the object created is an Agent ID.
 
-For more information, see [agent audit logs](./sign-in-audit-logs-agents.md)
+For more information, see [agent audit logs](sign-in-audit-logs-agents.md)
 
-### Review agent identity authentication attempts in sign-in log
+### Review Agent ID authentication attempts in sign-in log
 
-The `agentSignIn` resource type provides descriptive information that identifies and classifies sign-in events as agent identities sign-in. This allows customers to determine when an agent identity was the subtype of the identity involved in an authentication event. For more information, see [agent sign-in logs](./sign-in-audit-logs-agents.md)
+The agentSignIn resource type provides descriptive information that identifies and classifies sign-in events as agentic. This allows customers to determine when an agent identity was the subtype of the identity involved in an authentication event. For more information, see [agent sign-in logs](sign-in-audit-logs-agents.md)

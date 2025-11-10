@@ -16,6 +16,8 @@ ms.reviewer: kylemar
 
 # What is Microsoft Entra Agent ID?
 
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
+
 As assistive and autonomous agents become more prevalent in organizations, new security, governance, and compliance challenges must be addressed. Microsoft Entra Agent ID extends the comprehensive security capabilities of Microsoft Entra to agents, enabling organizations to build, discover, govern, and protect agent identities. [Security for AI](security-for-ai.md) spans multiple Microsoft Entra features and is integrated through Microsoft Entra Agent ID and the [Microsoft Entra agent identity platform for developers](../identity-platform/what-is-agent-id-platform.md).
 
 This article explains how Microsoft Entra Agent ID extends security capabilities to agents through Conditional Access policies, Identity Protection, ID Governance, network-level controls, and the agent identity platform.
@@ -25,7 +27,7 @@ This article explains how Microsoft Entra Agent ID extends security capabilities
 > [!IMPORTANT]
 > The capabilities described in this article are included in the [Microsoft Entra Agent ID](https://aka.ms/EntraAgentID) license.
 
-## Conditional access for agents
+## Conditional Access for agents
 
 Conditional Access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources. It's achieved by:
 
@@ -45,9 +47,9 @@ Microsoft Entra Agent ID brings agent IDs into similar identity governance proce
 
 For more information, see [identity governance for agents](/entra/id-governance/agent-id-governance-overview)
 
-## Identity protection for agents
+## ID Protection for agents
 
-Identity Protection detects and blocks threats by flagging anomalous activities involving agents. Risk signals are used to enforce risk-based access policies and inform agent discoverability.
+ID Protection detects and blocks threats by flagging anomalous activities involving agents. Risk signals are used to enforce risk-based access policies and inform agent discoverability.
 
 - Detect agent identity risk derived from user risk and based on agents' own actions, including unusual or unauthorized activities.
 - Provide risk signals to Conditional Access to enforce risk-based policies and session management controls.
