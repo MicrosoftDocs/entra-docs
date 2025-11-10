@@ -45,7 +45,7 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
   - Apple iCloud Keychain 
   - Google Password Manager 
 
-Synced passkeys offer a seamless and convenient user experience where users can use a device’s native unlock mechanism like face, fingerprint or PIN to authenticate. Based on the learnings from hundreds of millions of consumer users of Microsoft accounts that have registered and are using synced passkeys, we have learnt: 
+Synced passkeys offer a seamless and convenient user experience where users can use a device’s native unlock mechanism like face, fingerprint or PIN to authenticate. Based on the learnings from hundreds of millions of consumer users of Microsoft accounts that have registered and are using synced passkeys, we have learned: 
 
 - **99% of users successfully register synced passkeys** 
 - Synced passkeys are **14x faster compared to password and a traditional MFA combination: 3 seconds instead of 69 seconds** 
