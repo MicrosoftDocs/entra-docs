@@ -1,11 +1,11 @@
 ---
-title: Reading the ID Protection Risk Reports
+title: ID Protection Risk Reports
 description: Learn how to access, filter, and use the Microsoft Entra ID Protection risk reports to mark users and sign-ins as risky or confirmed compromised.
 
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 10/06/2025
+ms.date: 11/05/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -31,31 +31,20 @@ Each report launches with a list of all detections for the period shown at the t
 
 ## View details and take action
 
-Select an entry in a report to view more details, which differ based on the report you're viewing. From the details pane you can also take action on the selected user or sign-in. You can select one or multiple entries and either confirm the risk or dismiss it. You can also start a password reset flow from the user. These capabilities have different role requirements, so if an option is greyed out, you need a higher privileged role. For more information, see [ID Protection required roles](overview-identity-protection.md#required-roles).
+Select an entry in a report to view more details, which differ based on the report you're viewing. From the details pane, you can also take action on the selected user or sign-in. You can select one or multiple entries and either confirm the risk or dismiss it. You can also start a password reset flow from the user. These capabilities have different role requirements, so if an option is greyed out, you need a higher privileged role. For more information, see [ID Protection required roles](overview-identity-protection.md#required-roles).
 
 ### Risky users
 
-The details of a selected risky user provide information on the risk that was remediated, dismissed, or is still currently at risk and needs investigation. You're also provided details about the associated risk detections.
+The details of a selected risky user provide information on the risk that was remediated, dismissed, or is still currently at risk and needs investigation. You're also provided details about the associated risk detections. For a detailed overview, see [Risky user report](concept-risky-user-report.md).
 
 A user becomes a risky user when:
 
 - They have one or more risky sign-ins.
 - They have one or more [risks](concept-identity-protection-risks.md) detected on their account, like leaked credentials.
 
-> [!TIP]
-> If you have Security Copilot, you have access to a **[summary in natural language](../security-copilot/entra-risky-user-summarization.md)** including: why the user risk level was elevated, guidance on how to mitigate and respond, and links to other helpful items or documentation.
+#### Security Copilot
 
-From the **Risky users report**, select a user to view more details about their risk events and even take action on that user.
-
-**Risky users details** include:
-- User ID
-- Recent risky sign-ins
-- Detections not linked to a sign-in
-- Risk history
-
-The **Risk history tab** shows the events that led to a user risk change in the last 90 days. This list includes risk detections that increased the user's risk. It can also include user or admin remediation actions that lowered the user's risk; for example, a user resetting their password or an admin dismissing the risk.
-
-[!INCLUDE [id-protection-admin-action-user](../includes/id-protection-admin-action-user.md)]
+If you also have Security Copilot, you have access to a [summary in natural language](../security-copilot/entra-risky-user-summarization.md) for scenarios such as why the user risk level was elevated and guidance on how to mitigate and respond.
 
 ### Risky sign-ins
 
@@ -68,7 +57,7 @@ The Risky sign-ins report lists sign-ins that are at risk, confirmed compromised
 - Device, application, and location information
 - Risk state, risk level, and the source of the risk detection (ID Protection or Microsoft Defender for Endpoint)
 
-The **Risky sign-ins report** contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
+The **Risky sign-ins** report contains filterable data for up to the past 30 days (one month). ID Protection evaluates risk for all authentication flows, whether it's interactive or non-interactive. The Risky sign-ins report shows both interactive and non-interactive sign-ins. To modify this view, use the "sign-in type" filter.
 
 :::image type="content" source="media/concept-risk-reports/risky-sign-ins-report.png" alt-text="Screenshot showing the Risky sign-ins report." lightbox="media/concept-risk-reports/risky-sign-ins-report.png":::
 
@@ -76,9 +65,21 @@ The **Risky sign-ins report** contains filterable data for up to the past 30 day
 
 To learn more about when to take each of these actions, see [How does Microsoft use my risk feedback](howto-identity-protection-risk-feedback.md#how-does-microsoft-use-my-risk-feedback)
 
+### Risky agents
+
+ID Protection can help you identify risky agents in your organization. This report includes all identities within the [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) platform. The **Risky Agents** report provides an overview of the risk detections for each agent, with tools to help you take action directly from the report.
+
+**Risky agent details** include:
+- Agent display name
+- Risk state and risk level
+- Agent type
+- Agent sponsors
+
+An agent becomes a risky agent when it has one or more risk events detected on its account. For more information, see [ID Protection for agents](concept-risky-agents.md).
+
 ### Risky Workload IDs
 
-A [workload identity](../workload-id/workload-identities-overview.md) is an identity that allows an application access to resources, sometimes in the context of a user. From the Risky Workload ID details page you can access service principal sign-in and audit logs for further analysis.
+A [workload identity](../workload-id/workload-identities-overview.md) is an identity that allows an application access to resources, sometimes in the context of a user. From the Risky Workload ID details page, you can access service principal sign-in and audit logs for further analysis.
 
 > [!IMPORTANT]
 > Full risk details and risk-based access controls are available to Workload Identities Premium customers; however, customers without a **[Workload Identities Premium](../workload-id/workload-identities-faqs.md)** license still receive all detections with limited reporting details.
@@ -90,7 +91,7 @@ A [workload identity](../workload-id/workload-identities-overview.md) is an iden
 
 ### Risk detections
 
-The Risk detections report provides insights into the various risk detections associated with users and sign-ins. The details include information about the type of risk detected, the user, or sign-in it pertains to, and the current status of the risk. From the details pane you can also access the associated user risk report, the user's sign-ins, and risk detections.
+The Risk detections report provides insights into the various risk detections associated with users and sign-ins. The details include information about the type of risk detected, the user, or sign-in it pertains to, and the current status of the risk. From the details pane, you can also access the associated user risk report, the user's sign-ins, and risk detections.
 
 **Risk detections details** include:
 - Detection type
@@ -108,13 +109,14 @@ With the information provided by the Risk detections report, administrators can 
 - Attack type based on MITRE ATT&CK framework
 - Other risks triggered at the same time
 - Sign-in attempt location
-- Link out to more detail from Microsoft Defender for Cloud Apps.
+- Link to more detail from Microsoft Defender for Cloud Apps
+- [Agent detections](concept-risky-agents.md) (Preview)
 
 Administrators can then choose to return to the user's risk or sign-ins report to take actions based on information gathered.
 
 > [!NOTE]
 > Our system might detect that:
-> - the risk event that contributed to the user risk score was a false positive; or
-> - the user risk was remediated with policy enforcement, such as completing an MFA prompt or secure password change.
+> - the risk event that contributed to the risk score was a false positive; or
+> - the risk was remediated with policy enforcement, such as completing an MFA prompt or secure password change.
 >
 > Therefore, our system dismisses the risk state and a risk detail of "AI confirmed sign-in safe" surfaces and no longer contributes to the user's risk.

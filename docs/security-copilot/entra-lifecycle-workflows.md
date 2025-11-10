@@ -36,6 +36,11 @@ This article describes how to work with lifecycle workflows using Security Copil
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
 
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.* 
+
 ## Create step-by-step guidance for a new lifecycle workflow
 
 Security Copilot can give you the steps to guide you in creating a new lifecycle workflow. Provide a prompt with actions to take when the workflow is triggered and conditions that define which users (scope) this workflow should run against, and when (trigger) the workflow should run. For example:

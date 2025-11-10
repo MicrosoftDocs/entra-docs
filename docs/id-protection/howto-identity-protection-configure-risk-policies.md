@@ -19,7 +19,7 @@ There are two types of [risk policies](concept-identity-protection-policies.md) 
 - [User risk policy](#user-risk-policy-in-conditional-access)
 - [Sign-in risk policy](#sign-in-risk-policy-in-conditional-access)
 
-> [!TIP]
+> [!WARNING]
 > Don't combine sign-in risk and user risk conditions in the same Conditional Access policy. Create separate policies for each risk condition.
 
 ![Screenshot of a Conditional Access policy showing risk as conditions.](./media/howto-identity-protection-configure-risk-policies/sign-in-risk-conditions.png)
@@ -32,7 +32,7 @@ There are two types of [risk policies](concept-identity-protection-policies.md) 
 
 ## Choosing acceptable risk levels
 
-Organizations must decide the level of risk they want to require access control on, while balancing user experience and security posture. 
+Organizations must decide the level of risk they want to require access control on, while balancing security posture and user productivity.
 
 Choosing to apply access control on a **High** risk level reduces the number of times a policy is triggered and minimizes friction for users. However, it excludes **Low** and **Medium** risks from the policy, which might not block an attacker from exploiting a compromised identity. Selecting **Medium** and/or **Low** risk levels usually introduces more user interrupts.
 

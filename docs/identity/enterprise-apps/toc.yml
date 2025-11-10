@@ -8,6 +8,19 @@ items:
       href: what-is-application-management.md
     - name: What's new in docs?
       href: whats-new-docs.md
+  - name: App lifecycle management Agent
+    expanded: true
+    items:
+    - name: Get started with App lifecycle management agent
+      href: agent-app-lifecycle-management.md
+    - name: Discover and onboard apps
+      href: agent-app-lifecycle-discovery-onboard.md
+    - name: Monitor and remediate risky apps
+      href: agent-identify-prioritize-risky-apps.md
+    - name: Contact application owners of unused apps
+      href: agent-contact-app-owners.md
+    - name: Create remediation plans for risky apps
+      href: agent-app-lifecycle-remediation-plans.md
   - name: Quickstarts
     expanded: true
     items:

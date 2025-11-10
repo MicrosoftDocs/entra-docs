@@ -5,108 +5,51 @@ ms.service: entra-verified-id
 author: barclayn
 manager: pmwongera
 ms.topic: how-to
-ms.date: 10/14/2025
+ms.date: 11/07/2025
 ms.author: barclayn
 ---
 
 # Microsoft Entra Verified ID Identity Verification partners
 
-Our Identity Verification (IDV) partner network extends Microsoft Entra Verified ID capabilities to help you build seamless end-user experiences. With Verified ID, you can integrate with IDV partners to enable scenarios like remote onboarding with government ID checks using identity verification and proofing services.
-The diagram shows a low-level workflow of how all parties interact with each other in a remote onboarding scenario. This integration pattern could be used as a reference. 
+Our Identity Verification (IDV) partner network extends Microsoft Entra Verified ID capabilities to help you build seamless end-user experiences. With Verified ID, you can integrate with IDV partners to enable scenarios like remote onboarding, secure access to resources and Account recovery with Government ID checks using identity verification and proofing services.
 
-:::image type="content" source="media/partner-gallery/identity-verification-integration.png" alt-text="Screenshot of the IDV integration pattern." lightbox="media/partner-gallery/identity-verification-integration.png":::
+## IDV integrations
 
-The following section covers a set of steps that IDVs can use for setting up issuance flows and by customers for verifying IDV Verified IDs.
+Verified ID supports two types of IDV integrations:
 
-## Issuer flow
-Identity Verification (IDV) partners are Independent Software vendors (ISVs) who can use Verified ID Request Service REST API to issue Verified IDs. The steps required by an IDV to function as an issuer are as follows:
+- **Security store based integration**: simple click to configure offers that can be purchased, subscribed and transacted via Security Store in Microsoft Entra ID Account Recovery and Microsoft Entra ID Governance Access Packages in-product experience. This pattern of integration doesn't require any custom billing contracts and customers can select the partner offers from the respective Microsoft Entra in-product feature page for Government ID checks with IDV partners. 
+- **Verified ID API based integration**:  Microsoft Entra Verified ID offers REST APIs that customers and partners can use for using identity verification and proofing services integration from IDV Partners. This pattern requires customer to set up billing contracts directly with the IDV partner and the use of REST APIs for integration. The integration guidance page covers step by step process and flows for issuer and verifier integrations. 
 
-1.	Set up Microsoft Entra Verified ID Service: using [Quick setup](verifiable-credentials-configure-tenant-quick.md) or [Advanced setup instructions](verifiable-credentials-configure-tenant.md).
-    >[!Note]
-    >For a multi-tenant model, IDV should explore setting up dedicated authorities if there is a 1:1 relationship required with the customer. Refer to the [Admin API](admin-api.md) section of the docs for creating authorities. 
 
-2.	Set up a credential definition that defines what type of credentials you'll issue from the service – [Custom Credential](credential-design.md). Based on the scenario, select between ID token (for Open ID connect attestations from providers) or ID token hint (ISVs to use REST APIs to get the required attestations), self issued (user provided input), presentation or multiple attestations.
+## Partners
 
-3.	Make sure to publish the credential in the Verified ID network if this credential is for general purpose consumption. If this credential was created for a specific customer, then skip this step. To publish the credential in the Verified ID network, select **Issue a credential** option under Manage and then select **Publish credential to Verified ID network** checkbox. You could also use [Admin APIs](admin-api.md) to set **“availableInVcDirectory"** to true for the credential.
+The following table showcases the list of Verified ID IDV partners. If you're an IDV partner seeking to get listed in this gallery, submit your solution details using the self-submission form: [https://aka.ms/VIDCertifiedPartnerForm](https://aka.ms/VIDCertifiedPartnerForm).
 
-4.	IDV must configure an offer or customer jumpstart URL for the user journey and integrates it in  customer’s relying party application. Refer *step5* in the diagram as an example.
 
-5.	The end user starts the journey on the relying party application – in the example above, Contoso’s onboarding portal asks the user to prove their identity. If the user already has the required Verified ID for onboarding, they'll follow steps 1 through 4 in the diagram. If the user doesn’t have the required Verified ID, user has to launch the IDV offer URL from onboarding application to initiate the identity verification process. 
-    The IDV and customer relying party need to build this redirection model. The IDV needs to identify that the user is coming to the IDV portal from a registered organization and isn't a SPAM request. The relying party needs to generate a “one-time” use url with a JWT token, for example: ```https://idvpartner.com/contoso/?token=jwt_token```
-
-    Note that the JWT token is signed with customer's relying party private key and the public key is shared with the IDV via an endpoint or via a scheduled process. The IDV needs to ensure that for the kickstart journey, it uses attributes from the JWT like org ID, request ID, mscv ID, and expiry. Note that [mscv](https://github.com/microsoft/CorrelationVector) is preferred for end-to-end troubleshooting. An example of the JWT could be as follows:
-
-    Header: Algorithm and Token type 
-    ```json
-    { 
-        "alg": "RS256", 
-        "typ": "JWT" 
-    } 
-    ```
-    PAYLOAD: DATA 
-    ```json
-    { 
-        "OrgId": "", 
-        "RequestId": "", 
-        "exp": 1684986555,
-        "redirectUrl": "https://customerRPurl"
-    }
-    ```
-
-6.	Upon successful completion, IDV kicks off Verified ID issuance flow and issues a Verified ID. At this point, user is presented with a deep link or QR code to **Add Card** in Microsoft Authenticator application. The IDV website receives a successful issuance callback from Verified ID service.
-    >[!Note]
-    > IDV partner must provide or build the required web experience where the identity of the user can be proofed in any way necessary as agreed between the relying party application and IDV partner. When the process is completed a list of values are collected according to the Verified ID Credential Type. These values (as “claims” parameter) are passed as part of the Verified ID issuance request API call. If the IDV is building this journey on a webapp, IDV needs to render it as a QR code or deep link.  For further details, refer to [Specify the Request Service REST API issuance request](issuance-request-api.md).
-
-7.	IDV redirects the user back to the customer’s relying party application. 
-
-8.	For the remainder of the steps in the diagram (that is, from steps 14 to 16), user is asked to present  Verified ID with FaceCheck. On successful presentation, user is onboarded to the system.
-
->[!Note]
-> Customer must work with IDV partner to setup the required IDV onboarding steps that include organization onboarding, billing contracts and other required pre-requisites.  
-
-## Verifier flow
-
-Application developers can use Verified ID issued by IDVs for the verification flows in their applications. Refer [planning a verification solution](plan-verification-solution.md) document for planning details. The steps required to setup verification are as follows:
-1.	Set up Microsoft Entra Verified ID Service: using [Quick setup](verifiable-credentials-configure-tenant-quick.md) or [Advanced setup instructions](verifiable-credentials-configure-tenant.md).
-2.	If you have details like **VCType** and **did** from the IDV partner, then you can use the payload reference from [Presentation Request API](presentation-request-api.md) section to verify Verified IDs issued by Identity verification partners (IDVs). 
-3. Customers can also generate the presentation request API payload using the following steps:
-	1. Go to **Microsoft Entra admin center** -> **Verified ID**.
-	2. Select **Create Verification Request** tab
-
-    :::image type="content" source="media/partner-gallery/vc-network-verifier.png" alt-text="Screenshot of create a verification request":::
-
-    3.	Choose **Select first user**.
-    4.	Look for the respective **IDV** in the Search/select issuers drop-down menu by typing their name for example *woodgrove.com*.
-    5.	Select the credential type that your application requires from the IDV for verification. This is also referred as *VCType* in Presentation Request API payload.
-    6.	Select **Add** and then select **Review**.
-    7.	Download the request body and Copy/paste POST API request URL.
-    8.	Developers now have the request URL and body from their tenant admin and can follow these steps to update your application or website. To request Verified IDs from your users, include the request URL and body in your application or website.
-    >[!Note]
-    >Refer Microsoft Entra Verified ID GitHub repository for sample applications [https://aka.ms/vcsample](https://aka.ms/vcsample)
-
-    9.	Be sure to replace the values for the URL, state, and api-key with your respective values.
-    10.	[Grant permissions](verifiable-credentials-configure-tenant.md#grant-permissions-to-get-access-tokens) to your app to obtain access token for the Verified ID service request service principal.
-
-To test the user flow, you could always deploy one of the sample applications in your Azure App service environment, using [sample apps](https://aka.ms/vcsample) documentation.
-
-## Partner list
-
-The following table showcases the list of Verified ID  IDV partners. If you're an IDV partner seeking to get listed in this gallery, submit your solution details using the self-submission form: [https://aka.ms/VIDCertifiedPartnerForm](https://aka.ms/VIDCertifiedPartnerForm).
+### Security store integration partners
 
 | Partner | Partner documentation | Description |
 |---------|----------------------|-------------|
-| 1Kosmos | [1Kosmos deployment guide](https://aka.ms/1kosmosvidguide) | 1Kosmos and Microsoft Entra Verified ID unite to deliver trusted, privacy-preserving identity verification that empowers secure, passwordless access across ecosystems. |
+| Au10tix | [Au10tix documentation](https://www.au10tix.com/solutions/verifiable-credentials/) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
+| Idemia | [Idemia documentation](https://na.idemia.com/identity/verifiable-credentials/) | Idemia Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
+| TrueCredential (LexisNexis) | [TrueCredential documentation](https://whoiam.ai/product/truecredential/) | TrueCredential is a secure identity verification solution powered by LexisNexis Risk Solutions, leveraging Microsoft Entra Verified ID to deliver trusted, decentralized credentials. |
+
+
+### Verified ID API based integration partners
+
+| Partner | Partner documentation | Description |
+|---------|----------------------|-------------|
+| 1Kosmos | [1Kosmos deployment guide](https://docs.1kosmos.com/productdocs/docs/verifiable-credentials/1Kosmos-entra-verified-id/) | 1Kosmos and Microsoft Entra Verified ID unite to deliver trusted, privacy-preserving identity verification that empowers secure, passwordless access across ecosystems. |
 | Au10tix | [Au10tix documentation](https://www.au10tix.com/solutions/verifiable-credentials/) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
 | Clear | [Clear documentation](https://ir.clearme.com/news-events/press-releases/detail/25/clear-collaborates-with-microsoft-to-create-more-secure) | Clear Collaborates with Microsoft to Create More Secure Digital Experience Through Verification Credential. |
-| ID Dataweb | [ID Dataweb deployment guide](https://aka.ms/iddatawebguide) | ID Dataweb offers secure and low friction identity verification processes to ensure the validity of your Microsoft Entra Verified ID credential. Easy to integrate, easy for your users, secure for your enterprise. |
+| ID Dataweb | [ID Dataweb deployment guide](https://docs.iddataweb.com/docs/microsoft) | ID Dataweb offers secure and low friction identity verification processes to ensure the validity of your Microsoft Entra Verified ID credential. Easy to integrate, easy for your users, secure for your enterprise. |
 | Idemia | [Idemia documentation](https://na.idemia.com/identity/verifiable-credentials/) | Idemia Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
 | Jumio | [Jumio deployment guide](https://www.jumio.com/microsoft-verifiable-credentials/) | Jumio is helping to support a new form of digital identity by Microsoft based on verifiable credentials and decentralized identifiers standards to let consumers verify once and use everywhere. |
 | LexisNexis | [LexisNexis documentation](https://solutions.risk.lexisnexis.com/did-microsoft) | LexisNexis risk solutions Verifiable credentials enable faster onboarding for employees, students, citizens, or others to access services. |
-| Persona | [Persona deployment guide](https://aka.ms/personaguide) | Persona integrates with Microsoft Entra Verified ID to unlock identity verification processes, enabling trusted user-owned credentials and frictionless onboarding. |
-| Transmit Security | [Transmit Security deployment guide](https://aka.ms/transmitsecurityguide) | Mosaic by Transmit Security integrates with Microsoft Entra Verified ID to deliver seamless, secure, and accurate identity verification through verifiable credentials. |
+| Persona | [Persona deployment guide](https://help.withpersona.com/articles/2sjBNj9gDT6ea7kShXVb5q/) | Persona integrates with Microsoft Entra Verified ID to unlock identity verification processes, enabling trusted user-owned credentials and frictionless onboarding. |
+| Transmit Security | [Transmit Security deployment guide](https://developer.transmitsecurity.com/guides/verify/integrate_idv_with_endtraid/) | Mosaic by Transmit Security integrates with Microsoft Entra Verified ID to deliver seamless, secure, and accurate identity verification through verifiable credentials. |
 | Vu | [Vu documentation](https://www.vusecurity.com/es/products/digital-identity) | Vu verifiable credentials with just a selfie and your ID. |
 | ZealID | [ZealID deployment guide](https://developer.zealid.com/docs/zealid-vc) | ZealID Verified Credential Wallet powered by Microsoft Entra Verified ID completes the full cycle of identification and signing for various workflows. |
-
 
 
 ## Next steps

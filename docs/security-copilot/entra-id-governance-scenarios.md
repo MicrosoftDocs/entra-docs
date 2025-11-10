@@ -29,6 +29,7 @@ Security Copilot is integrated into the Microsoft Entra admin center and works s
 | [Access reviews](#access-reviews) | [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator) | [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements) | Any with access reviews configured |
 | [Entitlement management](#entitlement-management) | [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator) | [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements) | Any with entitlement management configured |
 | [Privileged Identity Management (PIM)](#privileged-identity-management-pim) | [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) <br> [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader) <br> [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) | [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements) | Any with PIM configured |
+| [Privileged Identity Management (PIM) write actions](#privileged-identity-management-pim-write-actions) | None | [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements), Microsoft Entra ID Governance SKUs, Entra Suite | Any with PIM configured |
 | [Lifecycle workflows](#lifecycle-workflows) | [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator) | Microsoft Entra ID Governance license | Any with lifecycle workflows configured |
 
 ### Access reviews
@@ -71,6 +72,26 @@ Refer to the prompts and examples in [Governance and optimization with Microsoft
 - [PIM role assignment queries](./entra-governance-optimization.md#pim-role-assignment-queries)
 
 For more information about Privileged Identity Management, see [What is Microsoft Entra Privileged Identity Management?](/entra/id-governance/privileged-identity-management/pim-configure)
+
+## Privileged Identity Management (PIM) write actions
+
+Users often encounter access denied errors in the Microsoft Entra admin center when attempting actions that require elevated privileges, such as viewing sign-in logs or listing admin role assignments. Identifying the correct role and ensuring it’s the least-privileged option can be complex and time-consuming. This combined with finding the right avenue to get that assignment can be overwhelming.  
+
+By using best practices from our least privileged access framework, Microsoft Security Copilot intelligently determines the least privileged role based on the desired task, checks for the eligible assignments, and enables the user through Just-in-Time (JIT) activation using PIM. This provides a seamless experience, reducing the burden for users who had to leave their Copilot chat, navigate to, and activate the role manually, and return to retry the query. This feature keeps everything in one continuous conversation, resulting in reduced friction, improved productivity, and secure access management.
+
+Use the following prompts to get started with PIM write actions;
+
+- *I want to perform {the desired task}, help me activate a role so that I can perform the desired action.*
+- *I am done with my investigation or {desired task}, deactivate my access.*
+- *I accidentally activated a role, roll back my changes.*
+
+You can use these prompts in any of the following articles to get started with your investigations and then deactivate your access when you are done.
+
+- [Enterprise user management with Microsoft Security Copilot](./entra-enterprise-user-management.md)
+- [Identity Governance and optimization with Microsoft Security Copilot](./entra-governance-optimization.md)
+- [Investigate security incidents using Microsoft Security Copilot](./entra-investigate-incident.md)
+- [Assess application risks using Microsoft Security Copilot in Microsoft Entra](./entra-investigate-risky-apps.md)
+- [Manage employee lifecycle using Microsoft Security Copilot](./entra-lifecycle-workflows.md)
 
 ## Lifecycle workflows
 

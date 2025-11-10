@@ -29,7 +29,7 @@ Use the prompts and examples in this article to compile your findings into actio
 ## Prerequisites
 
 - A tenant with Security Copilot enabled. Refer to [Get started with Microsoft Security Copilot](/copilot/security/get-started-security-copilot#option-2-provision-capacity-in-azure) for more information.
-- The following roles and licenses are required for different governance and optimization use cases:
+- The following roles and licenses are required for different governance and optimization use cases. 
 
     | Use case | Role(s) | License | Tenant |
     |----------|---------|---------|--------|
@@ -40,6 +40,11 @@ Use the prompts and examples in this article to compile your findings into actio
 ## Launch Security Copilot in Microsoft Entra
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
+
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.*
 
 ## Validate access through access reviews
 
@@ -98,6 +103,12 @@ Examine current and eligible privileged role assignments to understand PIM confi
 - *Which PIM active roles are assigned to "User"?*
 - *Who has PIM eligible assignment of {Specific Role}?*
 - *Who has PIM active assignment of a {Specific role}?*
+
+## Deactivate your role
+
+After completing your tasks with Microsoft Security Copilot, ensure that you deactivate any elevated roles you activated during your session to maintain security best practices. Use the following prompt to deactivate your role:
+
+- *I am done with my investigation or {desired task}, deactivate my access.*
 
 ## See also
 
