@@ -73,7 +73,7 @@ To complete a catalog access review, you'd do the following steps:
 
 1. In the left menu, select **Access reviews** to see a list of access reviews pending approval. 
 
-1. Select the **"Multi-resource** tab to see a list of pending catalog access reviews. 
+1. Select the **Multi-resource** tab to see a list of pending catalog access reviews. 
 
 1. For each access item, choose **Approve** or **Deny**, and provide a justification if required.
 
