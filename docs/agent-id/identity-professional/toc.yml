@@ -38,6 +38,8 @@ items:
     href: /entra/id-governance/agent-id-governance-overview?toc=/entra/agent-id/identity-professional/toc.json
   - name: Conditional access for agents
     href: /entra/identity/conditional-access/agent-id?toc=/entra/agent-id/identity-professional/toc.json
+  - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+    href: /entra/global-secure-access/concept-secure-web-ai-gateway-agents?toc=/entra/agent-id/identity-professional/toc.json
 - name: Reference
   items:
   - name: Disable agent identities
