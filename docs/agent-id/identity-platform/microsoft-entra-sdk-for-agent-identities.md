@@ -13,7 +13,7 @@ ms.reviewer: jmprieur
 #Customer intent: As a developer building autonomous agents, I want to acquire tokens using the Microsoft Entra SDK for Agent ID so that my agents can independently call downstream APIs with proper authentication.
 ---
 
-# Acquire tokens and call downstream APIs with Microasoft Entra SDK for Agent ID
+# Acquire tokens and call downstream APIs with Microsoft Entra SDK for Agent ID
 
 The Microsoft Entra SDK for Agent ID is a containerized web service that handles token acquisition, validation, and downstream API calls for agents. This SDK communicates with your application through HTTP APIs, providing consistent integration patterns regardless of your technology stack. Instead of embedding identity logic directly in your application code, the Microsoft Entra SDK for Agent ID manages token acquisition, validation, and API calls through standard HTTP requests.
 
@@ -28,7 +28,7 @@ Before you begin, ensure you have:
 
 ## Deploy your containerized service
 
-Deploy the Microsoft Entra SDK for Agent ID as a containerized service in your environment.  Follow the instructions in the [Set up the Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/installation) guide to configure the service with your agent identity details.
+Deploy the Microsoft Entra SDK for Agent ID as a containerized service in your environment. Follow the instructions in the [Set up the Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/installation) guide to configure the service with your agent identity details.
 
 ## Configure your Microsoft Entra SDK for Agent ID settings
 
@@ -36,9 +36,9 @@ Follow these steps to configure your Microsoft Entra SDK for Agent ID settings:
 
 [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
-1. Set up the necessary components in Microsoft Entra ID. Ensure you have registered your application in the Microsoft Entra ID tenant.
+1. Set up the necessary components in Microsoft Entra ID. Ensure you register your application in the Microsoft Entra ID tenant.
 
-1. Configure your client credentials. This could be your client secret, a certificate, or a managed identity that you're using as a federated identity credential. 
+1. Configure your client credentials. This credential can be a client secret, a certificate, or a managed identity that you're using as a federated identity credential. 
 
 1. If you're calling a downstream API, ensure that the necessary permissions are granted. Calling a custom web API requires you to provide the API registration details in the SDK configuration.
 
@@ -63,7 +63,7 @@ These are the steps to acquire tokens using the Microsoft Entra SDK for Agent ID
     Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGc...
     ```
 
-1. To acquire token for an autonomous agent user, provide either the user object ID or UPN but not both. This means providing either `AgentUsername` or `AgentUserId`. Providing both will cause a validation error. You must also provide the `AgentIdentity` to specify which agent identity to use for token acquisition. If the agent identity parameter is missing, the request fails with a validation error.
+1. To acquire token for an autonomous agent user, provide either the user object ID or User Principal Name but not both. This means providing either `AgentUsername` or `AgentUserId`. Providing both causes a validation error. You must also provide the `AgentIdentity` to specify which agent identity to use for token acquisition. If the agent identity parameter is missing, the request fails with a validation error.
 
     ```bash
     GET /AuthorizationHeader/Graph?AgentIdentity=<agent-id-client-id>&AgentUserId=<agent-user-object-id>
@@ -94,10 +94,10 @@ These are the steps to acquire tokens using the Microsoft Entra SDK for Agent ID
 
 When obtaining the authorization header for calling a downstream API, the Microsoft Entra SDK for Agent ID returns the `Authorization` header value that can be used directly in your API calls. 
 
-You can use this header to call the downstream API. The web API should validate the token by calling the `/Validate` endpoint of the Microsoft Entra SDK for Agent ID. This endpoint will also return token claims for further authorization decisions.
+You can use this header to call the downstream API. The web API should validate the token by calling the `/Validate` endpoint of the Microsoft Entra SDK for Agent ID. This endpoint returns token claims for further authorization decisions.
 
 ## Related content
 
 - [Python implementation of Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/scenarios/using-from-python)
-- [Typescript implementation of Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/scenarios/using-from-typescript)
+- [TypeScript implementation of Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/scenarios/using-from-typescript)
 - [Call a downstream API - Microsoft Entra SDK for agent ID docs](/entra/msidweb/sidecar/scenarios/call-downstream-api)

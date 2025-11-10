@@ -41,7 +41,7 @@ To customize your view of agent identity blueprint principals, you can change fi
 | Column Name | Description | Sortable | Filterable | Special notes
 |-------------|-------------|:--------:|:----------:|------------------|
 | **Name** | Display name of the agent identity blueprint principal | ✓ | ✓ | Primary search field; clickable to view details of the agent identity blueprint principal |
-| **Agent identities** | The number of child agent identities the agent blueprint principal has created| ✗ | ✗ | Select this to see a list of linked child agent identities for that agent identity blueprint principal| 
+| **Agent identities** | The number of child agent identities created by the agent blueprint principal| ✗ | ✗ | Select this to see a list of linked child agent identities for that agent identity blueprint principal| 
 | **Status** | Current operational state (Active, or Disabled) | ✓ | ✓ |  | 
 | **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity blueprint principal | ✗ | ✓ | | 
 | **Object ID** | Unique identifier for agent identity | ✗ | ✓ | | 
