@@ -11,7 +11,7 @@ ms.date: 10/30/2025
 #CustomerIntent: As an ID administrator, I want to create catalog access reviews so that set up access reviews for multiple resources within a catalog at once.
 ---
 
-# Catalog Access Reviews (Preview)
+# Catalog Access Reviews (preview)
 
 Catalog access reviews in Microsoft Entra ID let organizations review users access to multiple resource types such as groups, applications and custom disconnected resource within a catalog at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
 
