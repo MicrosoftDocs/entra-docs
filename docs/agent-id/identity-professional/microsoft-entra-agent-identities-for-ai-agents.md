@@ -1,7 +1,7 @@
 ---
 title: What is Microsoft Entra Agent ID?
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how Microsoft Entra Agent ID extends comprehensive security capabilities to AI agents with Conditional Access, Identity Protection, ID Governance, and network security controls designed specifically for agent scenarios.
+description: Learn how Microsoft Entra Agent ID extends comprehensive security capabilities to agents with Conditional Access, Identity Protection, ID Governance, and network security controls designed specifically for agent scenarios.
 author: SHERMANOUKO
 ms.author: shermanouko
 manager: pmwongera
@@ -11,21 +11,21 @@ ms.service: entra-id
 ms.topic: concept-article
 ms.reviewer: kylemar
 
-#customer-intent: As an IT administrator or security professional, I want to understand how Microsoft Entra ID provides integrated security capabilities for AI agents, so that I can implement comprehensive protection across Conditional Access, Identity Protection, governance, and network controls.
+#customer-intent: As an IT administrator or security professional, I want to understand how Microsoft Entra ID provides integrated security capabilities for agents, so that I can implement comprehensive protection across Conditional Access, Identity Protection, governance, and network controls.
 ---
 
 # What is Microsoft Entra Agent ID?
 
-As assistive and autonomous AI agents become more prevalent in organizations, new security, governance, and compliance challenges must be addressed. Microsoft Entra Agent ID extends the comprehensive security capabilities of Microsoft Entra to AI agents, enabling organizations to build, discover, govern, and protect agent identities. [Security for AI](security-for-ai.md) spans multiple Microsoft Entra features and is integrated through Microsoft Entra Agent ID and the [Microsoft Entra agent identity platform for developers](../identity-platform/what-is-agent-id-platform.md).
+As assistive and autonomous agents become more prevalent in organizations, new security, governance, and compliance challenges must be addressed. Microsoft Entra Agent ID extends the comprehensive security capabilities of Microsoft Entra to agents, enabling organizations to build, discover, govern, and protect agent identities. [Security for AI](security-for-ai.md) spans multiple Microsoft Entra features and is integrated through Microsoft Entra Agent ID and the [Microsoft Entra agent identity platform for developers](../identity-platform/what-is-agent-id-platform.md).
 
-This article explains how Microsoft Entra Agent ID extends security capabilities to AI agents through Conditional Access policies, Identity Protection, ID Governance, network-level controls, and the agent identity platform.
+This article explains how Microsoft Entra Agent ID extends security capabilities to agents through Conditional Access policies, Identity Protection, ID Governance, network-level controls, and the agent identity platform.
 
 :::image type="content" source="media/microsoft-entra-agent-identities-for-ai-agents/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram agent security capabilities offered by Microsoft Entra Agent ID.":::
 
 > [!IMPORTANT]
 > The capabilities described in this article are included in the [Microsoft Entra Agent ID](https://aka.ms/EntraAgentID) license.
 
-## Conditional access for AI agents
+## Conditional access for agents
 
 Conditional Access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources. It's achieved by:
 
@@ -65,12 +65,12 @@ Network controls enforce consistent network security policies across users and a
 
 For more information, see [Network controls for agents](/entra/id-governance/agent-sponsor-tasks)
 
-## Microsoft Entra Agent identity platform
+## Microsoft Entra Agent identity platform for developers
 
-The Microsoft Entra Agent identity platform enables you to assign identities to AI agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols.
+The Microsoft Entra Agent identity platform enables you to assign identities to agents, autodiscover them across your organization, and manage all agent metadata in one place including capabilities, tasks, and protocols.
 
 - Provides visibility into all organization agents with agent-to-agent discovery and authorization based on standard protocols such as MCP and A2A.
-- Assign secure, scalable identities to every AI agent.​ Authenticates and authorizes agents based on standard protocols.
+- Assign secure, scalable identities to every agent.​ Authenticates and authorizes agents based on standard protocols.
 - Log and monitor agent activity for compliance.​
 
 For more information, see [Microsoft Entra Agent Identity Platform](../identity-platform/what-is-agent-id-platform.md)

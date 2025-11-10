@@ -215,7 +215,7 @@ Content-type: application/json
 
 The Conditional Access policies applied in step 1 are sufficient to prevent all usage of agent identities in your tenant, including newly created agent identities. Should you wish to additionally prevent creation of agent identities in your tenant, take the following steps.
 
-Agent identities can enter your tenant through various channels. See [this article for details](agent-id-identity-creation.md). You can block creation of agent identities through the following methods.
+Agent identities can enter your tenant through various channels. See [this article for details](agent-id-creation-channels.md). You can block creation of agent identities through the following methods.
 
 - Block creation of agent identities via Microsoft Entra admin center and other Microsoft Entra experiences.
 - Block acquisition of agent identities from ISVs.
