@@ -361,6 +361,10 @@
         href: access-reviews-application-preparation.md
       - name: Create an access review
         href: create-access-review.md
+      - name: Catalog access reviews (Preview)
+        href: catalog-access-reviews.md
+      - name: Custom data provided resources
+        href: custom-data-resource-access-reviews.md      
       - name: Review access
         href: perform-access-review.md
       - name: Review access for yourself
