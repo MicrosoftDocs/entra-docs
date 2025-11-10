@@ -45,6 +45,12 @@ Use the prompts and examples in this article to compile your findings into actio
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
 
+>[!NOTE]
+>
+> If you are blocked due to a lack of permissions to perform certain actions, you will see a role recommendation. You can use the following prompt to activate the required roles the Security Copilot chat directly if you have the eligible role assignment providing that access.
+>
+> - *I want you to activate the {required role} so that I can perform {the desired task}.*
+
 ## Understand tenant configuration
 
 Begin your assessment by gathering essential tenant information to understand your overall Microsoft Entra configuration. This foundational knowledge helps you establish context for further analysis.

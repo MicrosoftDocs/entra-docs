@@ -26,7 +26,9 @@ This article describes how a SOC analyst or IT admin could use the Microsoft Ent
 
 ## Scenario and investigation
 
-Natasha, a security operations center (SOC) analyst at Woodgrove Bank, receives an alert about a potential identity-based security incident. The alert indicates suspicious activity from a user account that has been flagged as a risky user. She starts her investigation and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
+Natasha, a security operations center (SOC) analyst at Woodgrove Bank, receives an alert about a potential identity-based security incident. The alert indicates suspicious activity from a user account that has been flagged as a risky user. She starts her investigation and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader). She can use Microsoft Security Copilot to activate this role if he is blocked due to a lack of permissions to perform certain actions:
+
+- *Activate the {required role} so that I can perform {desired task}.*
 
 ### Get user details
 
