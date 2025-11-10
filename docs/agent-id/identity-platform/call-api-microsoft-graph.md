@@ -84,26 +84,26 @@ This article explains how to call a Microsoft Graph API from an agent using agen
   - For agent identities, you can acquire either an app only token (autonomous agents) or an on-behalf of user token (interactive agents) by using the `WithAgentIdentity` method. For app only tokens, set the `RequestAppToken` property to `true`. For delegated on-behalf of user tokens, don't set the `RequestAppToken` property or explicitly set it to `false`.
 
       ```csharp
-        // Get the GraphServiceClient
-        GraphServiceClient graphServiceClient = serviceProvider.GetRequiredService<GraphServiceClient>();
+      // Get the GraphServiceClient
+      GraphServiceClient graphServiceClient = serviceProvider.GetRequiredService<GraphServiceClient>();
         
-        string agentIdentity = "agent-identity-guid";
+      string agentIdentity = "agent-identity-guid";
         
-        // Call Microsoft Graph APIs with the agent identity for app only scenario
-        var applications = await graphServiceClient.Applications
-            .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
-            {
-                options.WithAgentIdentity(agentIdentity);
-                options.RequestAppToken = true; // Set to true for app only
-            }));
+      // Call Microsoft Graph APIs with the agent identity for app only scenario
+      var applications = await graphServiceClient.Applications
+          .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
+          {
+              options.WithAgentIdentity(agentIdentity);
+              options.RequestAppToken = true; // Set to true for app only
+          }));
 
-        // Call Microsoft Graph APIs with the agent identity for on-behalf of user scenario
-        var applications = await graphServiceClient.Applications
-            .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
-            {
-                options.WithAgentIdentity(agentIdentity);
-                options.RequestAppToken = false; // False to show it's on-behalf of user
-            }));
+      // Call Microsoft Graph APIs with the agent identity for on-behalf of user scenario
+      var applications = await graphServiceClient.Applications
+          .GetAsync(r => r.Options.WithAuthenticationOptions(options =>
+          {
+              options.WithAgentIdentity(agentIdentity);
+              options.RequestAppToken = false; // False to show it's on-behalf of user
+          }));
       ```
 
     - For agent user identities, you can specify either UPN or OID to identify the agent user by using the `WithAgentUserIdentity` method.
@@ -111,7 +111,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
         ```csharp
         // Get the GraphServiceClient
         GraphServiceClient graphServiceClient = serviceProvider.GetRequiredService<GraphServiceClient>();
-
+        
         string agentIdentity = "agent-identity-guid";
         
         // Call Microsoft Graph APIs with the agent user identity using UPN
@@ -127,5 +127,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
                 options.WithAgentUserIdentity(agentIdentity, userOid)));
         ```
 
+## Related content
 
-[!INCLUDE [Validate tokens](./includes/validate-tokens.md)]
+- [Call custom APIs](./call-an-api-custom.md)
+- [Call Azure SDKs](./call-an-api-azure-sdk.md)

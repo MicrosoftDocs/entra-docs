@@ -15,14 +15,18 @@ ms.reviewer: dastrock
 
 # Create agent identities in agent identity platform
 
-After you create an agent identity blueprint (agent ID blueprint), the next step is to create one or more agent identities (agent IDs) that represent AI agents in your test tenant. Agent identity creation should be performed when provisioning a new agent.
+After you create an agent identity blueprint (agent ID blueprint), the next step is to create one or more agent identities (agent IDs) that represent AI agents in your test tenant. Agent identity creation is typically performed when provisioning a new AI agent.
+	
+This article guides you through the process of building a simple web service that creates agent identities via Microsoft Graph APIs.
+	
+If you want to quickly create agent identities for testing purposes, consider using [this PowerShell module for creating and using Agent IDs](https://aka.ms/agentidpowershell), which implements the steps below for you. 
 
 ## Prerequisites
 
 Before creating agent identities, ensure you have:
 
-- A configured agent ID blueprint (see [Create an agent blueprint](create-blueprint.md))
-- The agent ID blueprint app ID from the creation process
+- [Understand agent identities](./agent-identities.md)
+- A configured agent ID blueprint (see [Create an agent blueprint](create-blueprint.md)). Record the agent ID blueprint app ID from the creation process
 - A web service or application (running locally or deployed to Azure) that host the agent identity creation logic
 
 ## Get an access token using agent ID blueprint
@@ -45,7 +49,7 @@ POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=<agent-blueprint-id>
-scope=00000003-0000-0000-c000-000000000000/.default
+scope=https://graph.microsoft.com/.default
 client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
 client_assertion=<msi-token>
 grant_type=client_credentials
@@ -84,24 +88,18 @@ Authorization: Bearer <token>
 {
     "displayName": "My Agent Identity",
     "agentIdentityBlueprintId": "<my-agent-blueprint-id>",
-    "sponsors@odata.bind": [                                // Not yet implemented, see below.
+    "sponsors@odata.bind": [
         "https://graph.microsoft.com/v1.0/users/<id>",
         "https://graph.microsoft.com/v1.0/groups/<id>"
     ],
-    "lifecycle": {                                          // Not yet implemented, see below.
-        "expirationDateTime": "2024-12-31T23:59:59Z"
-    }
 }
 ```
-
->[!TIP]
-> Always include the `OData-Version` header when using `@odata.type`.
 
 ## [Microsoft.Identity.Web](#tab/microsoft-identity-web)
 
 To use *Microsoft.Identity.Web* to execute the Microsoft Graph API request to create an agent identity, add the following MISE configuration file:
 
-[!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
+[!INCLUDE [Dont use secrets](./includes/dont-use-secrets.md)]
 
 ```json
 {
@@ -184,8 +182,7 @@ app.MapGet("/create-agent-identity", async (HttpContext httpContext) =>
 			new AgentIdentity {
 			    displayName = "My agent identity",
 			    agentIdentityBlueprintId = "<my-agent-blueprint-id>",
-			    // Note: Passing sponsors before the API supports it will fail the request
-          // sponsorsOdataBind = new [] { "https://graph.microsoft.com/v1.0/users/<id>" }
+          sponsorsOdataBind = new [] { "https://graph.microsoft.com/v1.0/users/<id>" }
 			}
 		  );
 		return jsonResult?.id;
@@ -235,6 +232,3 @@ app.MapGet("/delete-agent-identity", async (HttpContext httpContext, string id) 
 	return jsonResult;
 })
 ```
-
-
----

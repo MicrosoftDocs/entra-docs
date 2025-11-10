@@ -26,12 +26,12 @@ The following table helps you decide which approach to use. For most scenarios, 
 | Approach | Complexity | Flexibility | Use Case |
 |----------|------------|-------------|----------|
 | `IDownstreamApi` | Low | Medium | Standard REST APIs with configuration |
-| `MicrosoftIdentityMessageHandler` | Medium | High | HttpClient with DI and composable pipeline |
+| `MicrosoftIdentityMessageHandler` | Medium | High | HttpClient with Direct Injection (DI) and composable pipeline |
 | `IAuthorizationHeaderProvider` | High | Very High | Complete control over HTTP requests |
 
 ## [Use IDownstreamApi](#tab/idownstream)
 
-`IDownstreamApi` is the simplest way to call a protected API among the three options. It's highly configurable and requires minimal code changes. It also offers automatic token acquisition.
+`IDownstreamApi` is the preferred way to call a protected API among the three options. It's highly configurable and requires minimal code changes. It also offers automatic token acquisition.
 
 Use `IDownstreamApi` when you need the following listed items:
 
@@ -158,7 +158,7 @@ After determining what works for you, proceed to call your custom web API.
             // GET request for app only token scenario for agent identity
             public async Task<IActionResult> Index()
             {
-    
+        
                 string agentIdentity = "<your-agent-identity>";
                 var products = await _api.GetForAppAsync<List<Product>>(
                     "MyApi",
@@ -167,11 +167,11 @@ After determining what works for you, proceed to call your custom web API.
                 
                 return View(products);
             }
-    
+        
             // GET request for on-behalf of user token scenario for agent identity
             public async Task<IActionResult> UserProducts()
             {
-    
+        
                 string agentIdentity = "<your-agent-identity>";
                 var products = await _api.GetForUserAsync<List<Product>>(
                     "MyApi",
@@ -189,21 +189,21 @@ After determining what works for you, proceed to call your custom web API.
         using Microsoft.Identity.Abstractions;
         using Microsoft.AspNetCore.Authorization;
         using Microsoft.AspNetCore.Mvc;
-    
+        
         [Authorize]
         public class ProductsController : Controller
         {
             private readonly IDownstreamApi _api;
-    
+        
             public ProductsController(IDownstreamApi api)
             {
                 _api = api;
             }
-    
+        
             // GET request for agent user identity using UPN
             public async Task<IActionResult> Index()
             {
-    
+        
                 string agentIdentity = "<your-agent-identity>";
                 string userUpn = "user@contoso.com";
                 
@@ -217,18 +217,18 @@ After determining what works for you, proceed to call your custom web API.
             // GET request for agent user identity using OID
             public async Task<IActionResult> UserProducts()
             {
-    
+        
                 string agentIdentity = "<your-agent-identity>";
                 string userOid = "user-object-id";
-    
+        
                 var products = await _api.GetForUserAsync<List<Product>>(
                     "MyApi",
                     "products",
                     options => options.WithAgentUserIdentity(agentIdentity, userOid));
-    
+        
                 return View(products);
             }
-    
+        
         }
         ```
 
@@ -324,12 +324,12 @@ After determining what works for you, proceed to call your custom web API.
         public class MyService
         {
             private readonly HttpClient _httpClient;
-    
+        
             public MyService(IHttpClientFactory httpClientFactory)
             {
                 _httpClient = httpClientFactory.CreateClient("MyApiClient");
             }
-    
+        
             public async Task<string> CallApiWithAgentIdentity(string agentIdentity)
             {
                 // Create request with agent identity authentication
@@ -340,7 +340,7 @@ After determining what works for you, proceed to call your custom web API.
                         options.WithAgentIdentity(agentIdentity);
                         options.RequestAppToken = false;
                     });
-    
+        
                 var response = await _httpClient.SendAsync(request);
                 response.EnsureSuccessStatusCode();
                 return await response.Content.ReadAsStringAsync();
@@ -356,7 +356,7 @@ After determining what works for you, proceed to call your custom web API.
         {
             string agentIdentity = "<your-agent-identity>";
             string userUpn = "<your-user-upn>";
-    
+        
             var request = new HttpRequestMessage(HttpMethod.Get, "/api/userdata")
                 .WithAuthenticationOptions(options => 
                 {
@@ -368,13 +368,13 @@ After determining what works for you, proceed to call your custom web API.
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
-    
+        
         // Create request with agent user identity authentication with OID
         public async Task<string> CallApiWithAgentUserIdentity(string agentIdentity, string userUpn)
         {
             string agentIdentity = "<your-agent-identity>";
             string userOid = "<your-user-oid>";
-    
+        
             var request = new HttpRequestMessage(HttpMethod.Get, "/api/userdata")
                 .WithAuthenticationOptions(options => 
                 {
@@ -419,7 +419,7 @@ After determining what works for you, proceed to call your custom web API.
     app.Run();
     ```
     
-    - Configure auth credentials in appsettings.json
+    - Configure auth credentials in *appsettings.json*
     
     ```json
     {
@@ -446,7 +446,7 @@ After determining what works for you, proceed to call your custom web API.
     
         ```csharp
         using Microsoft.Identity.Abstractions;
-    
+
         [Authorize]
         public class CustomApiController : Controller
         {
@@ -465,7 +465,7 @@ After determining what works for you, proceed to call your custom web API.
                 string agentIdentity = "agent-identity-guid";
                 var options = new AuthorizationHeaderProviderOptions()
                     .WithAgentIdentity(agentIdentity);
-    
+        
                 // Acquire an access token for the agent identity
                 var authHeader = await _headerProvider.CreateAuthorizationHeaderForAppAsync(
                     scopes: new[] { "api://my-api/.default" }, options: options);
@@ -479,7 +479,7 @@ After determining what works for you, proceed to call your custom web API.
                 
                 return Ok(data);
             }
-    
+        
             // On-behalf of user token scenario for agent identity
             public async Task<IActionResult> GetBackgroundData()
             {
@@ -487,7 +487,7 @@ After determining what works for you, proceed to call your custom web API.
                 string agentIdentity = "agent-identity-guid";
                 var options = new AuthorizationHeaderProviderOptions()
                     .WithAgentIdentity(agentIdentity);
-    
+        
                 // Acquire an access token for the agent identity
                 var authHeader = await _headerProvider.CreateAuthorizationHeaderForUserAsync(
                     scopes: new[] { "api://my-api/.default" }, options: options);
@@ -508,7 +508,7 @@ After determining what works for you, proceed to call your custom web API.
 
         ```csharp
         using Microsoft.Identity.Abstractions;
-    
+
         [Authorize]
         public class CustomApiController : Controller
         {
@@ -525,13 +525,13 @@ After determining what works for you, proceed to call your custom web API.
                 // Configure options for the agent identity
                 string agentIdentity = "agent-identity-guid";
                 string userUpn = "user@contoso.com";
-    
+        
                 var options = new AuthorizationHeaderProviderOptions()
                     .WithAgentUserIdentity(agentIdentity, userUpn);
-    
+        
                 // Create a ClaimsPrincipal to enable token caching
                 ClaimsPrincipal user = new ClaimsPrincipal();
-    
+        
                 // Acquire an access token for the agent identity
                 var authHeader = await _headerProvider.CreateAuthorizationHeaderForAppAsync(
                     scopes: new[] { "api://my-api/.default" }, options: options, user: user);
@@ -545,20 +545,20 @@ After determining what works for you, proceed to call your custom web API.
                 
                 return Ok(data);
             }
-    
+        
             // On-behalf of user token scenario for agent identity
             public async Task<IActionResult> GetBackgroundData()
             {
                 // Configure options for the agent identity
                 string agentIdentity = "agent-identity-guid";
                 string userUpn = "user@contoso.com";
-    
+        
                 var options = new AuthorizationHeaderProviderOptions()
                     .WithAgentUserIdentity(agentIdentity, userUpn);
-    
+        
                 // Create a ClaimsPrincipal to enable token caching
                 ClaimsPrincipal user = new ClaimsPrincipal();
-    
+        
                 // Acquire an access token for the agent identity
                 var authHeader = await _headerProvider.CreateAuthorizationHeaderForAppAsync(
                     scopes: new[] { "api://my-api/.default" }, options: options, user: user);
@@ -566,16 +566,19 @@ After determining what works for you, proceed to call your custom web API.
                 // Call the protected API
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Authorization", authHeader);
-                
+            
                 var response = await client.GetAsync("https://api.example.com/background");
                 var data = await response.Content.ReadFromJsonAsync<BackgroundData>();
-                
+            
                 return Ok(data);
             }
-        }
+        }       
         ```
 
 ---
 
+## Related content
 
-[!INCLUDE [Validate tokens](./includes/validate-tokens.md)]
+- [Microsoft identity web](/entra/msal/dotnet/microsoft-identity-web/)
+- [Call Microsoft Graph APIs](./call-an-api-custom.md)
+- [Call Azure SDKs](./call-an-api-azure-sdk.md)

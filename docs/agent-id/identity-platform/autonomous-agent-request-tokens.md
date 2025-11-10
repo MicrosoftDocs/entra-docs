@@ -14,9 +14,8 @@ ms.reviewer: dastrock
 
 # Request agent tokens for autonomous agents
 
-When agents perform operations using their own identity, rather than acting as a delegate of a user, they're called *autonomous agents*. To perform operations, agents must first authenticate with Microsoft Entra ID and obtain an access token using their agent identity (agent ID). This article walks you through the process of requesting an access token for an agent identity in Microsoft Entra ID using a three-step process. You'll:
+When agents perform operations using their own identity, rather than acting as a delegate of a user, they're called *autonomous agents*. To perform operations, agents must first authenticate with Microsoft Entra ID and obtain an access token using their agent identity (agent ID). This article walks you through the process of requesting an access token for an agent identity in Microsoft Entra ID using a two-step process. You'll:
 
-- Obtain a token for a managed identity, if applicable.
 - Obtain a token for an agent identity blueprint.
 - Exchange the agent ID blueprint token for an agent ID token.
 
@@ -24,16 +23,15 @@ When agents perform operations using their own identity, rather than acting as a
 
 Before implementing agent token authentication, ensure you have:
 
-- A created agent identity. See [Create and delete agent identities](create-delete-agent-identities.md)
-- Understand oauth protocols in Microsoft Entra agent ID
-- The agent identity client ID from the creation process
-- An agent ID blueprint.
+- [An agent identity](create-delete-agent-identities.md). You'll need the agent identity client ID.
+- Understand [oauth protocols in Microsoft Entra agent ID](./agent-oauth-protocols.md)
+- [An agent ID blueprint](./create-blueprint.md).
 
 ## Configure your client credentials
 
 Get your client credential details. This could be your client secret, a certificate or a managed identity that you are using as a federated identity credential.
 
-[!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
+[!INCLUDE [Dont use secrets](./includes/dont-use-secrets.md)]
 
 ## [Microsoft Graph API](#tab/Microsoft-graph-api)
 
@@ -49,9 +47,9 @@ Proceed to the next step
     "ClientId": "<agent-blueprint-clientid>",
     "ClientCredentials": [
       {
-        "SourceType": "SignedAssertionFromManagedIdentity",
-        "ManagedIdentityClientId": "managed-identity-client-id"  // Omit for system-assigned
-      }
+        "SourceType": "ClientSecret",
+        "ClientSecret": "your-client-secret"
+        }
     ]
   }
 }
@@ -140,3 +138,9 @@ string authorizationHeaderWithAppTokens = await authorizationHeaderProvider.Crea
 ```
 
 ---
+
+## Related content
+
+- [Managed Identity in Azure](../identity/managed-identities-azure-resources/overview.md)
+- [Agent ID access token claims](./agent-token-claims.md)
+- [Acquire token using Microsoft Entra SDK for agent ID](./microsoft-entra-sdk-for-agent-identities.md)
