@@ -37,7 +37,7 @@ For more information, see [permissions and consent overview](../../identity-plat
 
 ### How consent works
 
-For delegated permissions, when you redirect the user to the Microsoft identity platform `/authorize` endpoint, they review scopes such as `User.Read` and `Mail.Read`. If consent is granted, Microsoft Entra ID records an OAuth2PermissionGrant from your agent (client) to the resource such as Microsoft Graph. Future delegated tokens for that resource include the approved scopes in `scp` without reprompting unless consent changes. If your app requests consent for admin restricted permissions, your users get an error. An admin requests these permissions directly. For more information, see [admin-restricted permissions](entra/identity-platform/scopes-oidc#admin-restricted-permissions).
+For delegated permissions, when you redirect the user to the Microsoft identity platform `/authorize` endpoint, they review scopes such as `User.Read` and `Mail.Read`. If consent is granted, Microsoft Entra ID records an OAuth2PermissionGrant from your agent (client) to the resource such as Microsoft Graph. Future delegated tokens for that resource include the approved scopes in `scp` without reprompting unless consent changes. If your app requests consent for admin restricted permissions, your users get an error. An admin requests these permissions directly. For more information, see [admin-restricted permissions](/entra/identity-platform/scopes-oidc#admin-restricted-permissions).
 
 ### Building the consent URL
 
@@ -62,7 +62,7 @@ Assign Azure roles to the agent identity at the narrowest scope (resource, resou
 
 ### Microsoft Entra roles
 
-Some low-privilege directory roles might be assignable to agents for metadata or read scenarios. High-privilege roles are blocked for agents by platform policy. To learn more about Microsoft Entra roles and PIM, see [Microsoft Entra roles](entra/identity/role-based-access-control/permissions-reference).
+Some low-privilege directory roles might be assignable to agents for metadata or read scenarios. High-privilege roles are blocked for agents by platform policy. To learn more about Microsoft Entra roles and PIM, see [Microsoft Entra roles](/entra/identity/role-based-access-control/permissions-reference).
 
 ### Exchange RBAC
 

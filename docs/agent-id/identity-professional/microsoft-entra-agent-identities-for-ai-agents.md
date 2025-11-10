@@ -29,7 +29,7 @@ Conditional Access enables organizations to define and enforce adaptive policies
 - Using real-time signals such as agent identities risk controlling agent access to resources, with Microsoft Managed Policies providing a secure baseline by blocking high-risk agents.
 - Deploying Conditional Access policies at scale using custom security attributes, while still supporting fine-grained controls for individual agents.
 
-For more information, see [Conditional Access](../../identity/conditional-access/overview.md).
+For more information, see [Conditional Access](/entra/identity/conditional-access/overview).
 
 ## Identity governance for agents
 
@@ -39,7 +39,7 @@ Microsoft Entra Agent ID brings agent IDs into similar identity governance proce
 - Ensure sponsors and owners are assigned and maintained for each agent ID, preventing orphaned agent IDs.
 - Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
 
-For more information, see [identity governance for agents](../../id-governance/agent-id-governance-overview.md)
+For more information, see [identity governance for agents](/entra/id-governance/agent-id-governance-overview)
 
 ## Identity protection for agents
 
@@ -49,7 +49,7 @@ Identity Protection detects and blocks threats by flagging anomalous activities 
 - Provide risk signals to Conditional Access to enforce risk-based policies and session management controls.
 - Provide risk signals to the Agent Registry to inform agent discoverability and access, with automatic remediation of compromised agents using preconfigured policies.
 
-For more information, see [identity protection for agents](../../id-protection/concept-risky-agents.md)
+For more information, see [identity protection for agents](/entra/id-protection/concept-risky-agents)
 
 ## Network controls for agents
 
@@ -59,7 +59,7 @@ Network controls enforce consistent network security policies across users and a
 - Restrict file uploads and downloads using file-type policies to minimize risk, and automatically block and alert on malicious destinations using threat intelligence-based filtering.
 - Detect and block prompt injection attacks that attempt to manipulate agent behavior through malicious instructions.
 
-For more information, see [Network controls for agents](../../id-governance/agent-sponsor-tasks.md)
+For more information, see [Network controls for agents](/entra/id-governance/agent-sponsor-tasks)
 
 ## Microsoft Entra Agent identity platform
 

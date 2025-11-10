@@ -24,7 +24,7 @@ Agent sign-in activities are captured within existing sign-in event types but wi
 
 Access agent sign-in logs through the Microsoft Entra admin center using the `isAgent` (agent as actor) and `IsAgentSubject` (agent as subject) filters in sign-in logs, or programmatically through the [Microsoft Graph API](/graph/api/resources/agentic-agentsignin?view=graph-rest-beta) using the enhanced `agentSignIn` resource type. The system provides visibility, capturing agent activities across Microsoft platforms such as Microsoft Copilot Studio and Azure AI Foundry, and third-party platforms. For more information about actors and subjects in authentication flows, see the [ID token claims reference](/entra/identity-platform/id-token-claims-reference).
 
-For comprehensive information about sign-in logs capabilities, filtering options, and detailed analysis, see [Sign-in logs in Microsoft Entra ID](entra/identity/monitoring-health/concept-sign-ins).
+For comprehensive information about sign-in logs capabilities, filtering options, and detailed analysis, see [Sign-in logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-sign-ins).
 
 ## Audit logs for agents
 
