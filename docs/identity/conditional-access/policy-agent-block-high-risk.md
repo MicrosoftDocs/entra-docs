@@ -13,7 +13,7 @@ ms.subservice: conditional-access
 ms.topic: how-to
 ms.reviewer: kvenkit
 --- 
-# Block access by high-risk agent identities
+# Block access by high-risk agent identities (Preview)
 
 This Conditional Access policy template blocks agent identities that are detected as high risk by [Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents), helping prevent potentially compromised AI agents from accessing your organization's resources.
 

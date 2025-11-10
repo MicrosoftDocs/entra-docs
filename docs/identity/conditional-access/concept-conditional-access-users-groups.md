@@ -94,7 +94,7 @@ If you find yourself locked out, see [What to do if you're locked out?](troubles
 
 Conditional Access policies that target external users might interfere with service provider access, such as granular delegated admin privileges. Learn more in [Introduction to granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction). For policies that are intended to target service provider tenants, use the **Service provider user** external user type available in the **Guest or external users** selection options.
 
-## Agents
+## Agents (Preview)
 
 Agents are first-class accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. Conditional Access policies targeting these objects have specific recommendations addressed in the article [Conditional Access and agent identities](agent-id.md)
 
