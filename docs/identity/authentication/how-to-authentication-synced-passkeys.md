@@ -30,8 +30,6 @@ Passkeys are FIDO2-based credentials that provide strong, phishing-resistant aut
   - Google Password Manager
 
 >[!NOTE]
->- Attested passkeys provide cryptographically verifiable device identity through FIDO Metadata Service (MDS). When attestation is enforced, relying parties can validate the authenticator model and apply policy decisions for certified devices.
->- Unattested passkeys, including synced passkeys and unattested device-bound passkeys, don't provide device provenance. AAGUID values can be spoofed unless attestation is enforced.
 >- Treat synced passkeys as phishing resistant credentials but with the same security posture as other unattested authenticators. For high assurance scenarios, enforce attestation and restrict registration to approved device-bound authenticators.
 
 ## When to use each type
@@ -56,13 +54,10 @@ For more information about how other providers protect passkeys stored in their 
 
   Passkey provider | Windows | macOS | iOS | Android
   -----------------|---------|-------|-----|--------
-  Apple Passwords (also called iCloud Keychain) | N/A<sup>1</sup> | Natively built in. macOS 13+<sup>2</sup> | Natively built in. iOS 16+<sup>2</sup> | N/A<sup>1</sup> 
-  Google Password Manager | Built in to Chrome<sup>2</sup> | Built in to Chrome<sup>2</sup> | Built in to Chrome. iOS 17+<sup>2</sup> | Natively built in (excluding Samsung devices). Android 9+<sup>2</sup>
-  Other passkey providers (such as 1Password, Bitwarden) | Check for browser extension<sup>2</sup> | Check for browser extension<sup>2</sup> | Check for app. iOS 17+<sup>2</sup> | Check for app. Android 14+<sup>2</sup> 
+  Apple Passwords (also called iCloud Keychain) | N/A | Natively built in. macOS 13+| Natively built in. iOS 16+| N/A 
+  Google Password Manager | Built in to Chrome | Built in to Chrome | Built in to Chrome. iOS 17+ | Natively built in (excluding Samsung devices). Android 9+
+  Other passkey providers (such as 1Password, Bitwarden) | Check for browser extension | Check for browser extension | Check for app. iOS 17+ | Check for app. Android 14+ 
 
-  <sup>1</sup>Passkey provider is available on-device for same-device flows. 
-
-  <sup>2</sup>Passkey provider is only available in cross-device flows. 
 
 ## Enable synced passkeys (preview)
 

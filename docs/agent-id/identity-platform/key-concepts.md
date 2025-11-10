@@ -66,7 +66,7 @@ For more information, see [Administrative relationships for agent identities (Ow
 
 ## Microsoft Entra SDK for agent ID
 
-The Microsoft Entra SDK for AgentID is a containerized web service that handles token acquisition, validation, and secure downstream API calls for agents registered in the Microsoft identity platform. It runs as a companion container alongside your application, allowing you to offload identity logic to a dedicated service. For more information, see [Microsoft Entra SDK for agent ID](https://aka.ms/agentidsdk)
+The Microsoft Entra SDK for AgentID is a containerized web service that handles token acquisition, validation, and secure downstream API calls for agents registered in the Microsoft identity platform. It runs as a companion container alongside your application, allowing you to offload identity logic to a dedicated service. For more information, see [Microsoft Entra SDK for agent ID](/entra/msidweb/agent-id-sdk/overview)
 
 ## Related content
 

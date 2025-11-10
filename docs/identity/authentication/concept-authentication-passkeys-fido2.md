@@ -56,8 +56,8 @@ For more information about how to deploy passkeys in your organization, see [How
 
 **Attestation** verifies the authenticity of the passkey provider or device during registration. When enforced:
 
-- It provides cryptographically verifiable device identity through FIDO Metadata Service (MDS). When attestation is enforced, relying parties can validate the authenticator model and apply policy decisions for certified devices. 
-- Unattested passkeys, including synced passkeys and unattested device-bound passkeys, don’t provide device provenance. 
+- It provides cryptographically verifiable device identity through FIDO Metadata Service (MDS). When attestation is enforced, relying parties can validate the authenticator model and apply policy decisions for certified devices.
+- Unattested passkeys, including synced passkeys and unattested device-bound passkeys, don't provide device provenance.
 
 In Microsoft Entra ID:
 - Attestation can be enforced at the **passkey profile** level.

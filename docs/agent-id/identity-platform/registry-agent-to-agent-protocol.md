@@ -29,7 +29,7 @@ There are three major components in agent communication:
 To test agent communication using Agent Registry, you need to validate that your client agent has an agent ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator).
-1. Browse to **Agent ID** > **Agent Registry** > **Agent identities** and validate that your client agent has an agent ID.
+1. Browse to **Agent ID** > **Agent Registry** and validate that your client agent has an agent ID.
     - Only agents with an agent ID can query the Agent Registry.
     - In the returned payload, check whether the `agentIdentityId` field has a value.
     - You can also use the following API call:
@@ -38,7 +38,7 @@ To test agent communication using Agent Registry, you need to validate that your
     GET https://graph.microsoft.com/beta/agentRegistry/agentInstances/{agentInstance-id}
     ```
 
-1. Validate that your remote (target) agent, exists in the Agent Registry. Check both the **Agents with IDs** and **Agents without IDs** tabs.
+1. Validate that your remote (target) agent, exists in the Agent Registry.
     - Agent discovery isn't possible if the agent doesn't exist in the registry. In several scenarios, you might be able to skip to the following step if you're looking for agents with a specific attribute but you need the registry ID.
     - You can also use the following API call:
 

@@ -23,15 +23,14 @@ This article walks through the process of requesting consent from an administrat
 
 Before requesting admin authorization, ensure you have:
 
-- A created agent identity as described in [Create and delete agent identities](create-delete-agent-identities.md)
+- [An agent identity](create-delete-agent-identities.md)
 - An agent application configured for your agent identity
-- Access token with `Application.ReadWrite.OwnedBy` delegated permission
-- Understanding of the difference between delegated and application permissions
-- Administrator access to grant consent for application permissions
+- Access token with `Application.ReadWrite.OwnedBy` delegated permission. Understand the difference between [delegated and application permissions](/entra/identity-platform/permissions-consent-overview)
+- [Administrator access to grant consent](../identity-professional/grant-agent-access-microsoft-365.md) for application permissions
 
 ## Construct the authorization request URL
 
-Construct the authorization URL that is used to prompt the administrator to grant delegated permissions. Be sure to use the agent identity ID in the following request.
+To grant delegated permissions, construct the authorization URL that is used to prompt the administrator. Be sure to use the agent identity ID in the following request.
 
 ```http
 https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/adminconsent
