@@ -32,9 +32,9 @@ XSS is one of the most common injection attacks. It enables attackers to run mal
 
 CSP further helps shield against these attacks by restricting which scripts can execute in the browser. By enforcing CSP, Microsoft Entra ID ensures only trusted Microsoft code runs during sign-in.
 
-## Threat Analysis
+## Threat analysis
 
-CSP adds an important layer of defense against script injection attacks like cross-site scripting (XSS). The primary defense is to prevent malicious scripts from being injected into a website in the first place; Entra and modern browsers already implement mechanisms to achieve this. However, if a script bypasses those protections—such as through a malicious browser extension or a zero-day vulnerability—CSP blocks it from executing. CSP achieves this by allow-listing only trusted script nonces and origins and blocking everything else by default. This defense-in-depth approach strengthens existing security measures.
+CSP adds an important layer of defense against script injection attacks like cross-site scripting (XSS). The primary defense is to prevent malicious scripts from being injected into a website in the first place. Microsoft Entra and modern browsers already implement mechanisms to achieve this. However, if a script bypasses those protections—such as through a malicious browser extension or a zero-day vulnerability—CSP blocks it from executing. CSP achieves this by allow-listing only trusted script nonces and origins and blocking everything else by default. This defense-in-depth approach strengthens existing security measures.
 
 
 ## CSP enforcement scope and key details
@@ -71,5 +71,5 @@ Follow these steps to prepare for CSP enforcement and minimize disruption:
 
        [![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
 
-This update to our CSP adds an additional layer of protection by blocking unauthorized scripts, further helping safeguard your organization against evolving security threats. To ensure a smooth rollout, test your sign-in flow thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless. 
+This update to our CSP adds an extra layer of protection by blocking unauthorized scripts, further helping safeguard your organization against evolving security threats. To ensure a smooth rollout, test your sign-in flow thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless. 
 
