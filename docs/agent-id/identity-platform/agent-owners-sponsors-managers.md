@@ -24,7 +24,7 @@ The administrative relationships available in Agent ID include:
 - **Sponsors**: Business representatives accountable for the agent's purpose and lifecycle decisions, including access reviews and incident response, without technical administrative access.
 - **Managers**: User responsible for the agent within the organization's hierarchy, able to request access packages for their reporting agents.
 
-These administrative relationships must be configured for each Agent ID object and are separate from the administrative rights granted by Microsoft Entra (Role Based Access Control (RBAC) roles, like Agent Admin.
+These administrative relationships must be configured for each Agent ID object and are separate from the administrative rights granted by Microsoft Entra Role Based Access Control (RBAC) roles, like Agent Admin.
 
 ## Owners
 
