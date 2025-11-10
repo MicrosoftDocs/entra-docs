@@ -17,6 +17,8 @@ ms.reviewer: dastrock
 
 Agent IDs are first-class identity accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. As organizations increasingly deploy autonomous AI systems, identity models designed for human users and applications prove insufficient. Agent IDs address this gap by providing a specialized identity construct built specifically for the unique requirements of AI agents operating at enterprise scale.
 
+[!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
+
 ## Why agent IDs exist
 
 The emergence of AI agents as autonomous enterprise systems introduces security and operational challenges that existing identity models can't adequately address. Agent IDs help to address certain security challenges posed by AI agents, such as:
