@@ -63,7 +63,7 @@ To get started with TLS inspection, see [Configure Transport Layer Security](how
 |AES256-SHA |
 ## Known limitations
 TLS inspection has the following known limitations:
-- TLS inspection supports up to 100 policies, 1000 rules and 8000 destinations
+- TLS inspection supports up to 100 policies, 1000 rules, and 8000 destinations.
 - Make sure each certificate signing request (CSR) you generate has a unique certificate name and isn't reused. The signed certificate must stay valid for at least 6 months.
 - You can use only one active certificate at a time.
 - TLS inspection doesn't support Application-Layer Protocol Negotiation (ALPN) version 2. If a destination site requires HTTP/2, the upstream TLS handshake fails, and the site isn't accessible when TLS inspection is enabled.
