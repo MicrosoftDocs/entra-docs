@@ -183,7 +183,7 @@ These profiles in Global Secure Access enable admins to define and control how t
 
 For more information about these profiles, see the article [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding).
 
-#### All agent resources
+#### All agent resources (Preview)
 
 Applying a Conditional Access policy to All agent resources enforces the policy for all token requests to agent identity blueprint principals and agent identities.
 

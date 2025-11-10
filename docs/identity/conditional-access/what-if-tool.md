@@ -21,7 +21,7 @@ The **What If** tool and [APIs](/graph/api/conditionalaccessroot-evaluate) let y
 
 The Conditional Access What If tool is powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate). To use the tool, start by configuring the conditions of the sign-in scenario you want to simulate. The configuration should include:
 
-- The user, agent identity, or single tenant service principal you want to test.
+- The user, agent identity (Preview), or single tenant service principal you want to test.
 - The cloud apps, user action they would attempt to perform, or sensitive data protected by authentication context they would attempt to access.
 - The sign-in conditions under which access would be attempted.
 

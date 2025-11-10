@@ -44,7 +44,7 @@ These Microsoft-managed policies allow administrators to make simple modificatio
 
 As threats evolve, Microsoft might update these policies to use new features, functionality, or improve their effectiveness
 
-- [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources)
+- [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources) (Preview)
 - [Block legacy authentication](#block-legacy-authentication)
 - [Block device code flow](#block-device-code-flow)
 - [Multifactor authentication for admins accessing Microsoft Admin portals](#multifactor-authentication-for-admins-accessing-microsoft-admin-portals)
@@ -52,7 +52,7 @@ As threats evolve, Microsoft might update these policies to use new features, fu
 - [Multifactor authentication for per-user multifactor authentication users](#multifactor-authentication-for-per-user-multifactor-authentication-users)
 - [Multifactor authentication and reauthentication for risky sign-ins](#multifactor-authentication-and-reauthentication-for-risky-sign-ins)
 
-### Block all high risk agents from accessing all resources
+### Block all high risk agents from accessing all resources (Preview)
 
 This policy blocks agent identities that are determined as 'high risk' from accessing resources in your tenant. The agent risk level is based on detections from [Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents).
 

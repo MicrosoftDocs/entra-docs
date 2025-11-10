@@ -26,7 +26,7 @@ When users access a sensitive application, admins might consider multiple condit
 - Network location
 - Device information
 
-## Agent risk
+## Agent risk (Preview)
 
 Admins with access to [ID Protection](~/id-protection/overview-identity-protection.md) can evaluate agent risk as part of a Conditional Access policy. Agent risk shows the likelihood that an agent is compromised.
 
