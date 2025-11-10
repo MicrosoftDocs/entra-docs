@@ -45,7 +45,7 @@ additionalContent:
         ## CARD 2 ######################
         - title: Agent governance and lifecycles
           links:
-            - text: Microsoft Entra Identity governance for agents
+            - text: Identity governance for agents
               url: ../id-governance/agent-id-governance-overview.md
             - text: Agent identity lifecycle management
               url: ../id-governance/agent-sponsor-tasks.md
@@ -87,7 +87,7 @@ additionalContent:
               url: ./identity-platform/agent-registry-collections.md
             - text: Agent Registry metadata and discoverability
               url: ./identity-platform/agent-metadata-discoverability.md
-            - text: Agent to agent protocols
+            - text: Agent communications
               url: ./identity-platform/registry-agent-to-agent-protocol.md
     
     ## Section 3: Learn more ######################
