@@ -127,14 +127,14 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Full data loss protection](../global-secure-access/how-to-full-data-loss-protection.md) (New)
 - [Network content filtering](../global-secure-access/how-to-network-content-filtering.md) (New)
 - [IP addresses advertised by remote network connectivity](../global-secure-access/reference-ip-addresses-advertised-by-remote-network-connectivity.md) (New)
-- [Troubleshoot transport layer security](../global-secure-access/troubleshoot-transport-layer-security.md) (New)
+- [Troubleshoot Transport Layer Security inspection errors](../global-secure-access/troubleshoot-transport-layer-security.md) (New)
 - [Netskope integration concept](../global-secure-access/concept-netskope-integration.md) (Updated)
-- [Transport layer security concept](../global-secure-access/concept-transport-layer-security.md) (Updated)
+- [What is Transport Layer Security inspection?](../global-secure-access/concept-transport-layer-security.md) (Updated)
 - [Assign traffic profile to remote network](../global-secure-access/how-to-assign-traffic-profile-to-remote-network.md) (Updated)
 - [Create remote networks](../global-secure-access/how-to-create-remote-networks.md) (Updated)
 - [Manage remote networks](../global-secure-access/how-to-manage-remote-networks.md) (Updated)
-- [Transport layer security settings](../global-secure-access/how-to-transport-layer-security-settings.md) (Updated)
-- [Transport layer security](../global-secure-access/how-to-transport-layer-security.md) (Updated)
+- [Configure Transport Layer Security inspection settings](../global-secure-access/how-to-transport-layer-security-settings.md) (Updated)
+- [Configure Transport Layer Security inspection policies](../global-secure-access/how-to-transport-layer-security.md) (Updated)
 - [Current known limitations](../global-secure-access/reference-current-known-limitations.md) (Updated)
 
 ### Microsoft Entra Private Access
