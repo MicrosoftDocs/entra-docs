@@ -65,9 +65,7 @@ In Microsoft Entra ID:
 
 ## Choose the right passkey option 
 
-FIDO2 security keys are recommended for highly regulated industries or users with elevated privileges. They provide strong security, but can increase costs for equipment, training, and helpdesk support—especially when users lose their physical keys and need account recovery. 
-
-Passkeys in the Microsoft Authenticator app are another option for these user groups. However, current iOS and Android platform limitations may create usability challenges, leading to additional training and support costs. 
+FIDO2 security keys are recommended for highly regulated industries or users with elevated privileges. They provide strong security, but can increase costs for equipment, training, and helpdesk support—especially when users lose their physical keys and need account recovery. Passkeys in the Microsoft Authenticator app are another option for these user groups. 
 
 For most users—those outside highly regulated environments or without access to sensitive systems—**synced passkeys** offer a convenient, low-cost alternative to traditional MFA. Apple and Google have implemented advanced protections for passkeys stored in their clouds. 
 
