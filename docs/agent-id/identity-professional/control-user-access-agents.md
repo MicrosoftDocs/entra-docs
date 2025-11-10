@@ -1,13 +1,11 @@
 ---
 title: Control user access to agents
-titleSuffix: Microsoft Entra Agent ID
 description: Learn how to control user and agent access to applications using app roles and the assignmentRequired property for secure access management.
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.author: jomondi
 ms.reviewer: ergreenl
 
@@ -21,13 +19,13 @@ This article describes how to control user and agent access to applications usin
 ## Prerequisites
 
 - An existing agent identity blueprint already created and configured
-- Agent ID Administrator role for managing agent identities (agent IDs) and assignments
+- Agent ID Administrator role for managing agent identities and assignments
 - Application Administrator or Cloud Application Administrator role for managing app roles and assignmentRequired properties
 - *AppRoleAssignment.ReadWrite.All* permission for Microsoft Graph API operations if using programmatic approach.
 
 ## What are app roles?
 
-App roles define logical permissions or access levels for an application. They're declared in the agent identity blueprint and can be assigned to users, groups, service principals, or agent IDs. The following section shows an example app role definition:
+App roles define logical permissions or access levels for an application. They're declared in the agent identity blueprint and can be assigned to users, groups, service principals, or agent identities. The following section shows an example app role definition:
 
 ```json
 {
@@ -65,10 +63,6 @@ Enable `assignmentRequired` for sensitive agent applications to enforce explicit
 
 ## Configure assignmentRequired
 
-You can configure the assignmentRequired property using Microsoft Graph or the Microsoft Entra admin center.
-
-## [Microsoft Graph](#tab/ms-graph)
-
 The following example uses the Update application API to set the `assignmentRequired` property.
 
 ```http
@@ -81,21 +75,7 @@ Authorization: Bearer <token>
 }
 ```
 
-## [Microsoft Entra admin center](#tab/admin-center)
-
-You can also configure the `assignmentRequired` property for an agent identity in the Microsoft Entra admin center:
-
-1. Sign in to the Microsoft Entra admin center as at least an Agent ID Administrator.
-1. Browse to **Entra ID** > **Enterprise applications**.
-1. Find and select the agent application (service principal) you want to configure.
-1. In the left menu, select **Properties**.
-1. Locate the **User assignment required?** setting.
-1. Set this option to **Yes** to require explicit assignment, or **No** to allow any authenticated principal.
-1. Select **Save** to apply your changes.
-
----
-
-The `assignmentRequired` property ensures that only principals explicitly assigned an app role can access the agent application, enforcing least privilege and preventing accidental access. For enhanced security, consider combining this access control that can provide more layers of protection based on user location, device compliance, and risk assessment.
+The `assignmentRequired` property ensures that only principals explicitly assigned an app role can access the agent application, enforcing least privilege and preventing accidental access.
 
 ## Assign app roles to control access
 
@@ -141,3 +121,9 @@ To verify your role assignment, be sure to take the following actions:
 - Check the roles claim in the token after sign-in.
 
 If roles claims are missing from tokens, verify that the assignment exists with the correct appRoleId, then request a new token. Regularly audit these assignments using Microsoft Graph or the Microsoft Entra admin center to ensure they remain appropriate and remove any unnecessary access.
+
+## Related content
+
+- [Application manifest reference](../identity-platform/reference-app-manifest.md)
+- [Microsoft Entra roles and permissions for agent identities](authorization-agent-id.md#microsoft-entra-roles-allowed-for-agents)
+- [Conditional Access for enhanced security controls](../identity/conditional-access/overview.md)
