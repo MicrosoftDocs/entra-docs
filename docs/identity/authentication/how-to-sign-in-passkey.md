@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/27/2025
+ms.date: 11/10/2025
 
 ms.author: justinha
 author: justinha
@@ -56,13 +56,9 @@ For more information about the availability of Microsoft Entra ID passkey (FIDO2
 ## Sign in with a passkey (FIDO2) saved on another device  
 
 1. Open your browser and go to the resource you're trying to access, such as [Office](https://www.office.com).
-1. You can enter your username to sign in:
- 
-   If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, select Other ways to sign in, and then select Face, fingerprint, PIN, or security key.
+1. You can enter your username to sign in. If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN, or security key**.
 
-   Alternatively, click Sign-in options to sign in more conveniently without having to enter a username.
- 
-   If you chose Sign-in options, select Face, fingerprint, PIN, or security key. Otherwise, skip to next step.
+   Alternatively, select **Sign-in options** to sign in more conveniently without having to enter a username. If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to the next step.
 
 1. Your device opens a security window. To begin cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select iPhone, iPad, or Android device.
 1. A QR code should appear on the screen. Now, on your mobile device, open the camera app and scan the QR code.
@@ -75,18 +71,14 @@ For more information about the availability of Microsoft Entra ID passkey (FIDO2
 ## Sign in with a passkey (FIDO2) saved on a security key
 
 1. Open your browser and go to the resource you're trying to access, such as [Office](https://www.office.com).
-1. You can enter your username to sign in:
- 
-   If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, select Other ways to sign in, and then select Face, fingerprint, PIN, or security key.
+1. You can enter your username to sign in. If you most recently used a passkey to sign in, you're automatically prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN, or security key**.
 
-   Alternatively, click Sign-in options to sign in more conveniently without having to enter a username.
- 
-   If you chose Sign-in options, select Face, fingerprint, PIN, or security key. Otherwise, skip to next step.
+   Alternatively, select **Sign-in options** to sign in more conveniently without having to enter a username. If you chose **Sign-in options**, select **Face, fingerprint, PIN, or security key**. Otherwise, skip to the next step.
 
 1. Your device opens a security window. To use your security key, follow the steps in the operating system or browser dialog. Scan your fingerprint or enter your PIN to verify that it's you.
 1. Once you're signed in, your device displays a screen similar to this one:
 
-    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/welcome.png" alt-text="Screenshot of Microsoft Welcome page.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/welcome.png" alt-text="Screenshot of Microsoft Welcome page.":::
 
 ## Known issues
 
