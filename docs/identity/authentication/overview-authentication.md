@@ -51,7 +51,7 @@ While traditional MFA with SMS, email OTP or authenticator apps significantly im
 
 Microsoft recommends using phishing-resistant authentication methods such as Windows Hello for Business, passkeys (FIDO2) and FIDO2 security keys, or certificate-based authentication (CBA) because they provide the most secure sign-in experience.  
 
-The following phishing-resistant authentication methods are availble in Microsoft Entra ID.  
+The following phishing-resistant authentication methods are available in Microsoft Entra ID.  
 
 - Windows Hello for Business
 - Platform Credential for macOS
