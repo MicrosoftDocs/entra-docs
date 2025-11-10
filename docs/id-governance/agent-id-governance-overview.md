@@ -1,5 +1,5 @@
 ---
-title: Governing Agent ID (Preview)
+title: Governing Agent Identities (Preview)
 description: This article describes governing agent identities.
 author: owinfreyATL
 ms.author: owinfrey
@@ -10,7 +10,7 @@ ms.date: 10/25/2025
 #CustomerIntent: As an Identity Governance administrator, I want to learn how to use Microsoft Entra to manage lifecycle and access to resources for agent identities within my organization.
 ---
 
-# Governing Agent ID (Preview)
+# Governing Agent Identities (Preview)
 
 Microsoft Entra allows you to ensure that the right people have the right access to the right apps and services at the right time. With the addition of the Microsoft agent identity platform, managing agents in the same way is just as important in the governance lifecycle of your organization. The Microsoft agent identity platform introduces the concept of Agent Identities (IDs). Agent identities are accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents.
 
@@ -46,9 +46,9 @@ From the [My Account portal](https://myaccount.microsoft.com/), Sponsors and Own
 From the [My Access portal](https://myaccess.microsoft.com/), Sponsors and Owners of agent identities are able to request access packages on behalf of their agent identities. For a guide on requesting access packages, see: [Request an access package on behalf of an agent identity (Preview)](entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview).
 
 
-## Agent ID sponsor administration
+## Agent identities sponsor administration
 
-One of the most important parts of governing agent identities is making sure that a delegated human user is always assigned to make sure the agent ID's access to resources are current. If the sponsor is leaving the organization, sponsorship of the agent ID is automatically transferred to their manager. With sponsorship transferred, there's always a human user accountable for managing the access and lifecycle of the agent identities. Microsoft Entra ID Governance features can help streamline this process within your organization. Lifecycle workflows include multiple tasks around notifying cosponsors, and managers of sponsors, of impending sponsorship changes. For a guide on setting up a workflow for agent ID sponsors, see: [Agent ID sponsor tasks in Lifecycle Workflows (Preview)](agent-sponsor-tasks.md).
+One of the most important parts of governing agent identities is making sure that a delegated human user is always assigned to make sure the agent identity's access to resources are current. If the sponsor is leaving the organization, sponsorship of the agent identities are automatically transferred to their manager. With sponsorship transferred, there's always a human user accountable for managing the access and lifecycle of the agent identities. Microsoft Entra ID Governance features can help streamline this process within your organization. Lifecycle workflows include multiple tasks around notifying cosponsors, and managers of sponsors, of impending sponsorship changes. For a guide on setting up a workflow for agent identities sponsors, see: [Agent identity sponsor tasks in Lifecycle Workflows (Preview)](agent-sponsor-tasks.md).
 
 
 ## Related content

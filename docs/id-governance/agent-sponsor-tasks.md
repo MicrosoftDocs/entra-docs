@@ -1,6 +1,6 @@
 ---
 title: Agent identity sponsor tasks in Lifecycle Workflows (Preview)
-description: This article describes workflow tasks that involve sponsors of agent identities (IDs).
+description: This article describes workflow tasks that involve sponsors of agent identities.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -8,13 +8,13 @@ ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 10/25/2025
 
-#CustomerIntent: As a lifecycle workflows administrator, I want to create workflows that target agent ID sponsors so that agent ID sponsor management can be streamlined.
+#CustomerIntent: As a lifecycle workflows administrator, I want to create workflows that target agent identity sponsors so that agent identity sponsor management can be streamlined.
 ---
 
 # Agent identity sponsor tasks in Lifecycle Workflows (Preview)
 
 
-Governing agent identities (ID) sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent ID sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. 
+Governing agent identities sponsors is a critical aspect of maintaining lifecycle governance and access control in your organization. Agent identity sponsors are responsible for overseeing the lifecycle and access decisions of agent identities. Keeping sponsor information up to date helps with effective governance and compliance. 
 
 Lifecycle Workflows currently contain the following two tasks that involve the governing of sponsors of agent identities:
 
@@ -22,7 +22,7 @@ Lifecycle Workflows currently contain the following two tasks that involve the g
 - [Send email to cosponsors about sponsor changes](lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes)
 
 
-This article explains how to configure Lifecycle Workflows to streamline agent ID sponsor governance.
+This article explains how to configure Lifecycle Workflows to streamline agent identity sponsor governance.
 
 ## License Requirements
 
@@ -32,7 +32,7 @@ This article explains how to configure Lifecycle Workflows to streamline agent I
 
 ## Create a sponsor workflow using the Microsoft Entra Admin Center
 
-To create a workflow that notifies the manager or cosponsors of an existing agent ID sponsor's move, follow these steps:
+To create a workflow that notifies the manager or cosponsors of an existing agent identity sponsor's move, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
