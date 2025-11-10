@@ -75,7 +75,7 @@ With customized emails, you're able to include dynamic attributes within the sub
 |---------|---------|
 |userDisplayName     | The user’s display name.        |
 |userEmployeeHireDate     | The user’s employee hire date.        |
-|userEmployeeLeaveDateTime     | The user’s employee leave date time.        |
+|userEmployeeLeaveDateTime     | The user’s employee leave date and time.        |
 |managerDisplayName     |  The display name of the user’s manager.        |
 |temporaryAccessPass     |  The generated Temporary Access Pass. Only available with the **Generate TAP And Send Email** task.       |
 |userPrincipalName     |  The user’s userPrincipalName.       |
@@ -766,7 +766,7 @@ For Microsoft Graph, the parameters for the **Remove access package assignment f
 
 Allows you to remove all access package assignments for users. For more information on access packages, see [What are access packages and what resources can I manage with them?](entitlement-management-overview.md#what-are-access-packages-and-what-resources-can-i-manage-with-them).
 
-You're able to customize the task name, description, and whether or not access package assignments are removed immediately, or after a certain amount of days  for this task in the Microsoft Entra admin center.
+You're able to customize the task name, description, and whether or not access package assignments are removed immediately, or after a certain number of days  for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/remove-all-access-package-assignment-user-task.png" alt-text="Screenshot of the remove all user access package assignment task.":::
 
 For Microsoft Graph, the parameters for the **Remove all access package assignments for user** task are as follows:

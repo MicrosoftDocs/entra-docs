@@ -98,7 +98,7 @@ If you're not sure which resource roles to include, you can skip adding them whi
     :::image type="content" source="media/entitlement-management-access-package-create/pim-for-groups-roles.png" alt-text="Screenshot of available roles to be assigned to PIM for groups resource in an access package.":::
 1. For [assigning Microsoft Entra roles](entitlement-management-roles.md), both active and eligible member assignments are available as options.
 1. For assigning API permissions, select one of more API permission from the list.
-    :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding api permissions as resource roles to an access package.":::
+    :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
 
 1. Select **Next: Requests**.
 
