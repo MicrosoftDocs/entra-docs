@@ -41,6 +41,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Agent access packages](../agent-id/identity-professional/agent-access-packages.md) (New)
 - [Configure inheritable permissions blueprints](../agent-id/identity-professional/configure-inheritable-permissions-blueprints.md) (New)
 - [Disable agent identities](../agent-id/identity-professional/disable-agent-identities.md) (New)
+- [Manage agent in end user experience](../agent-id/identity-platform/manage-agent.md) (New)
 - [Manage agents without identity](../agent-id/identity-professional/manage-agents-without-identity.md) (New)
 - [Authorization for Agent ID](../agent-id/identity-professional/authorization-agent-id.md) (New)
 - [Reference registry roles](../agent-id/identity-professional/reference-registry-roles.md) (New)
