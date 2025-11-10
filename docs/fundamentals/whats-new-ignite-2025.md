@@ -15,17 +15,17 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 ## Release Highlights
 
-🤖 **Microsoft Entra Agent ID**: Revolutionary AI agent identity and access management with 50+ new articles and comprehensive platform support
+**Microsoft Entra Agent ID**: Revolutionary AI agent identity and access management with 50+ new articles and comprehensive platform support
 
-🔐 **Advanced Authentication**: Next-generation passwordless capabilities including self-service account recovery and advanced passkey support
+**Advanced Authentication**: Next-generation passwordless capabilities including self-service account recovery and advanced passkey support
 
-🛡️ **Enhanced Security**: AI-powered protection with Security Copilot integration and comprehensive risk management
+**Enhanced Security**: AI-powered protection with Security Copilot integration and comprehensive risk management
 
-🏛️ **Intelligent Governance**: Advanced lifecycle workflows, risk-based approvals, and automated compliance capabilities
+**Intelligent Governance**: Advanced lifecycle workflows, risk-based approvals, and automated compliance capabilities
 
-🌐 **Cloud Security**: Comprehensive Internet and Private Access enhancements with AI Prompt Shield and advanced filtering
+**Cloud Security**: Comprehensive Internet and Private Access enhancements with AI Prompt Shield and advanced filtering
 
-📊 **Enterprise Scale**: Enhanced application lifecycle management, device identity, and comprehensive monitoring capabilities
+**Enterprise Scale**: Enhanced application lifecycle management, device identity, and comprehensive monitoring capabilities
 
 ## Microsoft Entra Agent ID
 
