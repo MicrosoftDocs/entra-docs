@@ -20,16 +20,14 @@ Agents often need to take actions on behalf of users that use the agent. To do s
 - Updating the agent identity blueprint with a redirect URI.
 - Constructing an authorization request and redirecting the user to Microsoft Entra ID.
 
-
 ## Prerequisites
 
 Before requesting user authorization, ensure you have:
 
-- A created agent identity as described in [Create and delete agent identities](create-delete-agent-identities.md)
-- Understanding of OAuth 2.0 authorization code flow
+- [An agent identity](create-delete-agent-identities.md)(create-delete-agent-identities.md)
+- [OAuth 2.0 authorization code flow](/entra/identity-platform/v2-oauth2-auth-code-flow)
 
 ## Register a redirect URI
-
 
 In order to support delegated permissions, your agent identity blueprint must be configured with a valid redirect URI. This URI is where Microsoft Entra ID sends users after they grant or deny consent to your agent.
 
@@ -80,7 +78,7 @@ Invoke-MgGraphRequest -Method PATCH `
 
 Now that your agent identity blueprint has a valid redirect URI, you can construct the authorization URL that is used to prompt the user to grant delegated permissions. The authorization URL follows the OAuth 2.0 authorization code flow standard.
 
-Be sure to use the agent identity client ID in the following request, not the ID of the agent identity blueprint you used in the previous example. Agent implementations might redirect the user to this URL in various ways, such as including it in a message sent to the user in a chat window.
+Be sure to use the agent identity client ID in the following request, not the ID of the agent identity blueprint. Agent implementations might redirect the user to this URL in various ways, such as including it in a message sent to the user in a chat window.
 
 ```http
 https://login.microsoftonline.com/contoso.onmicrosoft.com/oauth2/v2.0/authorize?
