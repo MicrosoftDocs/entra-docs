@@ -47,8 +47,8 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
 
 **Attestation** verifies the authenticity of the passkey provider or device during registration. When enforced:
 
-- It confirms the credential originates from a trusted authenticator.
-- Helps prevent spoofed AAGUIDs (Authenticator Attestation GUIDs) that could misrepresent device type.
+- It provides cryptographically verifiable device identity through FIDO Metadata Service (MDS). When attestation is enforced, relying parties can validate the authenticator model and apply policy decisions for certified devices.
+- Unattested passkeys, including synced passkeys and unattested device-bound passkeys, don't provide device provenance.
 
 In Microsoft Entra ID:
 - Attestation can be enforced at the **passkey profile** level.
