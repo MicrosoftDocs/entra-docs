@@ -75,7 +75,7 @@ To view detailed unused app information:
    - Number of apps with assigned owners
    - Total unused applications (accessible via **View full list**)
 
-      :::image type="content" source="media/agent-identify-prioritize-risky-apps/unused-high-privileged-apps-report.png" alt-text="Screenshot showing the summary report of unused high-privileged applications with metrics and details" lightbox="media/agent-identify-prioritize-risky-apps/unused-high-privileged-apps-report.png":::
+      :::image type="content" source="media/agent-identify-prioritize-risky-apps/unused-high-privileged-apps-report.png" alt-text="Screenshot showing the summary report of unused high-privileged applications with metrics and details." lightbox="media/agent-identify-prioritize-risky-apps/unused-high-privileged-apps-report.png":::
 
 ### View agent's full activity
 

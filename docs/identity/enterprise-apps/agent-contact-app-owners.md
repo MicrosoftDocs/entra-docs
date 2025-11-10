@@ -77,7 +77,7 @@ To notify owners about unused applications:
 
 1. Review the list of applications and their owners. Select the checkbox next to each application you want to include in notifications.
    
-   :::image type="content" source="media/agent-contact-app-owners/contact-app-owners.png" alt-text="Screenshot showing the contact app owners suggestion interface with options to review and contact application owners" lightbox="media/agent-contact-app-owners/contact-app-owners.png":::
+   :::image type="content" source="media/agent-contact-app-owners/contact-app-owners.png" alt-text="Screenshot showing the contact app owners suggestion interface with options to review and contact application owners." lightbox="media/agent-contact-app-owners/contact-app-owners.png":::
 
    > [!TIP]
    > Select the **+** symbol next to an owner name to view all owners for applications with multiple assigned owners. All listed owners receive notifications.

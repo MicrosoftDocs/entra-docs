@@ -91,7 +91,7 @@ To onboard discovered applications:
    - Network segments
    - User assignments
 
-:::image type="content" source="media/agent-app-lifecycle-discovery-onboard/onboard-new-app.png" alt-text="Screenshot showing the application onboarding interface with prefilled data and configuration options":::
+      :::image type="content" source="media/agent-app-lifecycle-discovery-onboard/onboard-new-app.png" alt-text="Screenshot showing the application onboarding interface with prefilled data and configuration options.":::
    
 1. Modify the application configuration as needed:
    - Adjust the application name

@@ -70,7 +70,7 @@ To create a batch removal plan for unused applications:
 
 You can modify the default batch criteria using natural language instructions. This allows the agent to adapt the batching logic to your organization's specific needs and risk preferences. This step consumes SCUs because it uses AI capabilities to interpret and apply your custom instructions.
 
-:::image type="content" source="media/agent-app-lifecycle-remediation-plans/customize-disablement-plan.png" alt-text="Screenshot showing the interface for customizing batch disablement criteria using natural language instructions" lightbox="media/agent-app-lifecycle-remediation-plans/customize-disablement-plan.png":::
+:::image type="content" source="media/agent-app-lifecycle-remediation-plans/customize-disablement-plan.png" alt-text="Screenshot showing the interface for customizing batch disablement criteria using natural language instructions." lightbox="media/agent-app-lifecycle-remediation-plans/customize-disablement-plan.png":::
 
 To customize batch criteria:
 
@@ -99,7 +99,7 @@ Before any applications are disabled, the agent requires explicit administrative
 1. Decide which apps you would like to disable in the batch and which apps you might want to move to another batch or dismiss altogether
 1. Select **Disable apps** to authorize the removal process
 
-    :::image type="content" source="media/agent-app-lifecycle-remediation-plans/disablement-plan-show-batch.png" alt-text="Screenshot showing the batch disablement plan interface with batch details and approval options" lightbox="media/agent-app-lifecycle-remediation-plans/disablement-plan-show-batch.png":::
+    :::image type="content" source="media/agent-app-lifecycle-remediation-plans/disablement-plan-show-batch.png" alt-text="Screenshot showing the batch disablement plan interface with batch details and approval options." lightbox="media/agent-app-lifecycle-remediation-plans/disablement-plan-show-batch.png":::
 
 The agent maintains detailed audit trails for all approval decisions and batch modifications.
 
