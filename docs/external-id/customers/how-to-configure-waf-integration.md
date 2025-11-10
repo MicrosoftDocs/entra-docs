@@ -328,7 +328,7 @@ Content-Type: application/json
 
 Once you’ve connected Cloudflare WAF with Microsoft Entra External ID, it’s important to test the configuration to ensure everything is working as expected.
 
-:::image type="content" source="media\how-to-configure-cloudflare-integration\configuration-test.png" alt-text="Screenshot showing configuration test results":::
+:::image type="content" source="media\how-to-configure-cloudflare-integration\configuration-test.png" alt-text="Screenshot showing configuration test results.":::
 
 ## Troubleshooting
 
