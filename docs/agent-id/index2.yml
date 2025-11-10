@@ -25,7 +25,7 @@ highlightedContent:
       itemType: overview
     - title: Create an agent identity
       url: ./identity-platform/create-delete-agent-identities.md
-      itemType: how-to
+      itemType: how-to-guide
 
 additionalContent:
   # Supports up to 4 subsections
@@ -46,9 +46,9 @@ additionalContent:
         - title: Agent governance and lifecycles
           links:
             - text: Microsoft Entra ID Governance for agents (LINK)
-              url: ./identity-platform/what-is-agent-registry.md      ###../ide-governance/agent-id-governance-overview.md
+              url: ../id-governance/agent-id-governance-overview.md  ### EDIT ME ###
             - text: Agent identity lifecycle management (LINK)
-              url: ./identity-platform/what-is-agent-registry.md      ###./agent-lifecycle-management.md
+              url: ../id-governance/agent-sponsor-tasks.md      ### EDIT ME ###
 
         ## CARD 3 ######################
         - title: Protect agent access to resources
@@ -56,9 +56,7 @@ additionalContent:
             - text: Conditional Access for agents
               url: ../identity/conditional-access/agent-id.md         
             - text: Microsoft Entra ID Protection for agents
-              url: ../id-protection/concept-risky-users.md
-            - text: Network controls for agents (LINK)
-              url: ./identity-platform/what-is-agent-registry.md      ###./agent-governance.md
+              url: ../id-protection/concept-risky-agents.md
             
     ## Section 2: Microsoft agent identity platform ######################
     - title: Microsoft agent identity platform
