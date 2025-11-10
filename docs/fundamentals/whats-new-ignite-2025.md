@@ -111,6 +111,8 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Entitlement management: Configure ID Protection approvals](../id-governance/entitlement-management-configure-id-protection-approvals.md) (New)
 - [Entitlement management: Configure Insider Risk Management approvals](../id-governance/entitlement-management-configure-insider-risk-management-approvals.md) (New)
 - [Workflow sensitivity labels](../id-governance/workflow-sensitivity-labels.md) (New)
+- [Catalog Access Reviews](../id-governance/catalog-access-reviews.md) (New)
+- [Custom data as a provided resource in catalog Access Reviews](../id-governance/custom-data-resource-access-reviews.md)
 - [Entitlement management: Access package eligible assignment](../id-governance/entitlement-management-access-package-eligible.md) (Updated)
 - [Entitlement management: Dynamic approval](../id-governance/entitlement-management-dynamic-approval.md) (Updated)
 - [Entitlement management: Verified ID settings](../id-governance/entitlement-management-verified-id-settings.md) (Updated)
