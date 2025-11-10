@@ -424,7 +424,9 @@
         - name: Check Workflow Insights
           href: manage-workflow-insights.md
         - name: Sensitivity Labels in Lifecycle Workflows
-          href: workflow-sensitivity-labels.md                
+          href: workflow-sensitivity-labels.md 
+        - name: Agent Identity Sponsor Tasks (Preview)
+          href: agent-sponsor-tasks.md       
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
