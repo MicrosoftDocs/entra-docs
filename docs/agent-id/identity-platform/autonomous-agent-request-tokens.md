@@ -17,7 +17,7 @@ ms.reviewer: dastrock
 When agents perform operations using their own identity, rather than acting as a delegate of a user, they're called *autonomous agents*. To perform operations, agents must first authenticate with Microsoft Entra ID and obtain an access token using their agent identity (agent ID). This article walks you through the process of requesting an access token for an agent identity in Microsoft Entra ID using a two-step process. You'll:
 
 - Obtain a token for an agent identity blueprint.
-- Exchange the agent ID blueprint token for an agent ID token.
+- Exchange the agent identity blueprint token for an agent ID token.
 
 ## Prerequisites
 
@@ -25,13 +25,13 @@ Before implementing agent token authentication, ensure you have:
 
 - [An agent identity](create-delete-agent-identities.md). You'll need the agent identity client ID.
 - Understand [oauth protocols in Microsoft Entra agent ID](./agent-oauth-protocols.md)
-- [An agent ID blueprint](./create-blueprint.md).
+- [An agent identity blueprint](./create-blueprint.md).
 
 ## Configure your client credentials
 
 Get your client credential details. This could be your client secret, a certificate or a managed identity that you are using as a federated identity credential.
 
-[!INCLUDE [Dont use secrets](./includes/dont-use-secrets.md)]
+[!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
 ## [Microsoft Graph API](#tab/Microsoft-graph-api)
 
@@ -57,9 +57,9 @@ Proceed to the next step
 
 ---
 
-## Request a token for the agent ID blueprint
+## Request a token for the agent identity blueprint
 
-When requesting the token for the agent ID blueprint, provide the agent ID's client ID in the `fmi_path` parameter. Provide the `client_secret` parameter instead of `client_assertion` and `client_assertion_type` when using a client secret as a credential during local development. For certificates and managed identities, use  `client_assertion` and `client_assertion_type`.
+When requesting the token for the agent identity blueprint, provide the agent ID's client ID in the `fmi_path` parameter. Provide the `client_secret` parameter instead of `client_assertion` and `client_assertion_type` when using a client secret as a credential during local development. For certificates and managed identities, use  `client_assertion` and `client_assertion_type`.
 
 ## [Microsoft Graph API](#tab/Microsoft-graph-api)
 
@@ -76,7 +76,7 @@ client_id=<agent-blueprint-client-id>
 
 ## [Microsoft.Identity.Web](#tab/microsoft-identity-web)
 
-With *Microsoft.Identity.Web*, you don't need to request explicitly a token for the agent ID blueprint. *Microsoft.Identity.Web* does it for you.
+With *Microsoft.Identity.Web*, you don't need to request explicitly a token for the agent identity blueprint. *Microsoft.Identity.Web* does it for you.
 
 ```bash
 dotnet add package Microsoft.Identity.Web
@@ -89,7 +89,7 @@ dotnet add package Microsoft.Identity.Web.AgentIdentities
 
 ## [Microsoft Graph API](#tab/Microsoft-graph-api)
 
-Once you have the agent ID blueprint token (T1), use it to request for the agent ID token.
+Once you have the agent identity blueprint token (T1), use it to request for the agent identity token.
 
 ```http
 POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
@@ -130,7 +130,7 @@ Use the `.WithAgentIdentity()` pattern to request access tokens:
 IAuthorizationHeaderProvider authorizationHeaderProvider = serviceProvider.GetService<IAuthorizationHeaderProvider>();
 AuthorizationHeaderProviderOptions options = new AuthorizationHeaderProviderOptions().WithAgentIdentity("<agent-identity-client-id>");
 
-// Request agent ID tokens
+// Request agent identity tokens
 string authorizationHeaderWithAppTokens = await authorizationHeaderProvider.CreateAuthorizationHeaderForAppAsync("https://resource/.default", options);
 
 // The authHeader contains "Bearer " + the access token (or another protocol
@@ -141,6 +141,5 @@ string authorizationHeaderWithAppTokens = await authorizationHeaderProvider.Crea
 
 ## Related content
 
-- [Managed Identity in Azure](../identity/managed-identities-azure-resources/overview.md)
-- [Agent ID access token claims](./agent-token-claims.md)
+- [Agent identity access token claims](./agent-token-claims.md)
 - [Acquire token using Microsoft Entra SDK for agent ID](./microsoft-entra-sdk-for-agent-identities.md)

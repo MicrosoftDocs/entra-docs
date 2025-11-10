@@ -17,17 +17,16 @@ ms.reviewer: dastrock
 
 Agents often need take actions on behalf of users that use the agent. The first step to building an interactive agent is to authenticate the user. This article walks through the process of building a simple web service that authenticates a user. The agent identity blueprint is used to secure the web service. Steps include:
 
-1. A client obtains an access token scoped for the agent identity blueprint (agent ID blueprint).
+1. A client obtains an access token scoped for the agent identity blueprint.
 1. Validate that token in the agent's API.
 1. Extract claims about the user that can be used for authorization.
 
-## Prerewuisites
+## Prerequisites
 
-[Agent identity blueprints](./agent-blueprint.md). Record the agent ID blueprint app ID (client ID).
+[Agent identity blueprints](./agent-blueprint.md). Record the agent identity blueprint app ID (client ID).
 
-## Request a token for the agent ID blueprint
-
-To authenticate a user, the client app (such as a frontend or mobile app) should initiate an OAuth 2.0 authorization request to obtain a token where the audience is the agent ID blueprint.
+## Request a token for the agent identity blueprint
+To authenticate a user, the client app (such as a frontend or mobile app) should initiate an OAuth 2.0 authorization request to obtain a token where the audience is the agent identity blueprint.
 
 1. Redirect the user to the Microsoft Entra ID authorization endpoint with the following parameters:
 
@@ -124,4 +123,4 @@ app.MapGet("/hello-agent", (HttpContext httpContext) =>
 
 ## Related content
 
-- [Token claims in Agent ID](./agent-token-claims.md)
+[Token claims](./agent-token-claims.md)

@@ -21,7 +21,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
 
 ## Call a Microsoft Graph API
 
-1. Install the *Microsoft.Identity.Web.GraphServiceClient* which handles authentication for the Graph SDK and the *Microsoft.Identity.Web.AgentIdentities* package to add support for agent identities.
+1. Install the *Microsoft.Identity.Web.GraphServiceClient that handles authentication for the Graph SDK and the *Microsoft.Identity.Web.AgentIdentities* package to add support for agent identities.
 
     ```bash
     dotnet add package Microsoft.Identity.Web.GraphServiceClient
@@ -106,7 +106,7 @@ This article explains how to call a Microsoft Graph API from an agent using agen
           }));
       ```
 
-    - For agent user identities, you can specify either UPN or OID to identify the agent user by using the `WithAgentUserIdentity` method.
+    - For agent user identities, you can specify either User Principal Name (UPN) or Object Identity (OID) to identify the agent user by using the `WithAgentUserIdentity` method.
 
         ```csharp
         // Get the GraphServiceClient
@@ -129,5 +129,5 @@ This article explains how to call a Microsoft Graph API from an agent using agen
 
 ## Related content
 
-- [Call custom APIs](./call-an-api-custom.md)
-- [Call Azure SDKs](./call-an-api-azure-sdk.md)
+- [Call custom APIs](./call-api-custom.md)
+- [Call Azure SDKs](./call-api-azure-services.md)

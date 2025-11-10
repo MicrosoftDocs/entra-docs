@@ -35,7 +35,7 @@ The following table helps you decide which approach to use. For most scenarios, 
 
 Use `IDownstreamApi` when you need the following listed items:
 
-- You are calling standard REST APIs
+- You're calling standard REST APIs
 - You want a configuration-driven approach
 - You need automatic serialization/deserialization
 - You want to write minimal code
@@ -138,7 +138,7 @@ After determining what works for you, proceed to call your custom web API.
 
 1. Call your protected API using `IDownstreamApi`. When calling the API, you can specify the agent identity or agent user identity using the `WithAgentIdentity` or `WithAgentUserIdentity` methods. `IDownstreamApi` automatically handles token acquisition and attaches the access token to the request.
 
-    - For `WithAgentIdentity`, you'll either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
+    - For `WithAgentIdentity`, you either call the API using an app only token (autonomous agent) or on-behalf of a user (interactive agent).
         
         ```csharp
         using Microsoft.Identity.Abstractions;
@@ -183,7 +183,7 @@ After determining what works for you, proceed to call your custom web API.
         }
         ```
 
-    - For `WithAgentUserIdentity`, you can specify either UPN or OID to identify the agent user.
+    - For `WithAgentUserIdentity`, you can specify either User Principal Name (UPN) or Object Identity (OID) to identify the agent user.
 
         ```csharp
         using Microsoft.Identity.Abstractions;
@@ -580,5 +580,5 @@ After determining what works for you, proceed to call your custom web API.
 ## Related content
 
 - [Microsoft identity web](/entra/msal/dotnet/microsoft-identity-web/)
-- [Call Microsoft Graph APIs](./call-an-api-custom.md)
-- [Call Azure SDKs](./call-an-api-azure-sdk.md)
+- [Call Microsoft Graph APIs](./call-api-custom.md)
+- [Call Azure SDKs](./call-api-azure-services.md)

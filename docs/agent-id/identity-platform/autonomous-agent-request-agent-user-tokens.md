@@ -1,16 +1,16 @@
 ---
 title: Request agent user tokens for autonomous agents
-description: Learn how to create Agent ID users and authenticate using agent identities to obtain delegated access tokens for systems that require user accounts.
+description: Learn how to create agent users and authenticate using agent identities to obtain delegated access tokens for systems that require user accounts.
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/10/2025
 ms.custom: agent-id-ignite
 ms.reviewer: dastrcok
 
-#customer-intent: As a developer, I want to create Agent ID users for my autonomous agents and authenticate as those users, so that my agents can connect to systems that require user account representation while maintaining proper security controls.
+#customer-intent: As a developer, I want to create agent users for my autonomous agents and authenticate as those users, so that my agents can connect to systems that require user account representation while maintaining proper security controls.
 ---
 
 # Request agent user tokens for autonomous agents
@@ -24,18 +24,18 @@ This guide walks you through creating an agent user in a tenant and requesting t
 - [Understand agent users in Microsoft Entra agent ID](agent-users.md)
 - A created agent identity blueprint and at least one agent identity as described in [Create and delete agent identities](create-delete-agent-identities.md)
 
-## Get authorization to create agent users
+## Get authorization
 
 To create agent users, your agent identity blueprint must be granted the application permission `AgentIdUser.ReadWrite.IdentityParentedBy` in the tenant. You can obtain authorization in one of two ways:
 
-- [Request agent authorization](./autonomous-agent-request-authorization-entra-admin.md#request-authorization-from-a-tenant-administrator). Be sure to use your agent ID blueprint as the `client_id`, not the agent identity.
-- [Manually create an appRoleAssignment](./autonomous-agent-request-authorization-entra-admin.md#create-an-app-role-assignment-via-apis) in the tenant. Be sure to use the object ID of the agent identity blueprint principal as the `principalId` value. Don't the ID of your agent ID blueprint.
+- [Request agent authorization](./autonomous-agent-request-authorization-entra-admin.md#request-authorization-from-a-tenant-administrator). Be sure to use your agent identity blueprint as the `client_id`, not the agent identity.
+- [Manually create an appRoleAssignment](./autonomous-agent-request-authorization-entra-admin.md#create-an-app-role-assignment-via-apis) in the tenant. Be sure to use the object ID of the agent identity blueprint principal as the `principalId` value. Don't the ID of your agent identity blueprint.
 
-If you wish to use a different client, not the agent ID blueprint, to create agent users, that client will need to obtain the `AgentIdUser.ReadWrite.All` delegated or application permission instead.
+If you wish to use a different client, not the agent identity blueprint, to create agent users, that client needs to obtain the `AgentIdUser.ReadWrite.All` delegated or application permission instead.
 
 ## Create an agent user
 
-This section covers creating an agent user using your agent ID blueprint or other approved client. The recommended way to create an agent user is using your agent ID blueprint. You'll [require an access token](./create-delete-agent-identities.md#get-an-access-token-using-agent-id-blueprint) to create an agent user.
+This section covers creating an agent user using your agent identity blueprint or other approved client. The recommended way to create an agent user is using your agent identity blueprint. You [require an access token](./create-delete-agent-identities.md#get-an-access-token-using-agent-id-blueprint) to create an agent user.
 
 ## [REST](#tab/rest)
 
@@ -137,7 +137,7 @@ To use `Microsoft.Identity.Web` to create an agent user, follow these steps:
                 identityParentId = "<associated-agent-identity-id>"
             };
     
-            // Call the downstream API (Graph) with a POST request to create an Agent Id User
+            // Call the downstream API (Graph) with a POST request to create an Agent User
             var jsonResult = await downstreamApi.PostForAppAsync<AgentIdUser, AgentIdUser>(
                 "agent-identity",
                 requestBody
@@ -160,7 +160,7 @@ Once you have your agent user created, you don't need to configure anything else
 
 Agent users behave like any other user account. Before you can request tokens using your agent user, you need to authorize the agent identity to act on its behalf. You can authorize the agent identity using admin authorization as described in [Request authorization from Microsoft Entra admin](autonomous-agent-request-authorization-entra-admin.md) or manually create an `oAuth2PermissionGrant` using Microsoft Graph or Microsoft Graph PowerShell.
 
-For Microsoft Graph, your request will be as shown in the following snippet:
+For Microsoft Graph, your request is as shown in the following snippet:
 
 ```http
 POST https://graph.microsoft.com/v1.0/oauth2PermissionGrants
@@ -201,13 +201,13 @@ New-MgOauth2PermissionGrant -BodyParameter @{
 
 To authenticate an agent user, you need to follow a three-step process:
 
-- Get a token as the agent ID blueprint
+- Get a token as the agent identity blueprint
 - Use that token to get another token as the agent identity
 - Use both previous tokens to get another token as the agent user.
 
 ## [REST](#tab/rest)
 
-First, request a token as the agent ID blueprint, as described in [Request agent tokens](autonomous-agent-request-tokens.md). Once you have your agent app token, use it to request a FIC for your agent identity:
+First, request a token as the agent identity blueprint, as described in [Request agent tokens](autonomous-agent-request-tokens.md). Once you have your agent app token, use it to request a Federated Identity Credential (FIC) for your agent identity:
 
 ```http
 POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
@@ -239,7 +239,7 @@ This gives you a delegated access token you can use to call Microsoft Graph as y
 
 ## [Microsoft.Identity.Web](#tab/msidweb)
 
-*Microsoft.Identity.Web* will handle the token acquisition for you. Use the `.WithAgentUserIdentity()` pattern to request access tokens.
+*Microsoft.Identity.Web* handles the token acquisition for you. Use the `.WithAgentUserIdentity()` pattern to request access tokens.
 
 ```csharp
 // Get the service to call the downstream API (preconfigured in the appsettings.json file)

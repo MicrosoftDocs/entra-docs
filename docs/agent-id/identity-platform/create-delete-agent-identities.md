@@ -1,5 +1,5 @@
 ---
-title: Create agent identities in agentic identity platform
+title: Create Agent Identities in Microsoft Agent Identity Platform
 description: Learn how to create agent identities that represent AI agents in your test tenant using Microsoft Graph APIs and various authentication libraries.
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
@@ -15,23 +15,23 @@ ms.reviewer: dastrock
 
 # Create agent identities in agent identity platform
 
-After you create an agent identity blueprint (agent ID blueprint), the next step is to create one or more agent identities (agent IDs) that represent AI agents in your test tenant. Agent identity creation is typically performed when provisioning a new AI agent.
+After you create an agent identity blueprint, the next step is to create one or more agent identities that represent AI agents in your test tenant. Agent identity creation is typically performed when provisioning a new AI agent.
 	
 This article guides you through the process of building a simple web service that creates agent identities via Microsoft Graph APIs.
 	
-If you want to quickly create agent identities for testing purposes, consider using [this PowerShell module for creating and using Agent IDs](https://aka.ms/agentidpowershell), which implements the steps below for you. 
+If you want to quickly create agent identities for testing purposes, consider using [this PowerShell module for creating and using agent identities](https://aka.ms/agentidpowershell). 
 
 ## Prerequisites
 
 Before creating agent identities, ensure you have:
 
 - [Understand agent identities](./agent-identities.md)
-- A configured agent ID blueprint (see [Create an agent blueprint](create-blueprint.md)). Record the agent ID blueprint app ID from the creation process
+- A configured agent identity blueprint (see [Create an agent blueprint](create-blueprint.md)). Record the agent identity blueprint app ID from the creation process
 - A web service or application (running locally or deployed to Azure) that host the agent identity creation logic
 
-## Get an access token using agent ID blueprint
+## Get an access token using agent identity blueprint
 
-You use the agent ID blueprint to create each agent identity. Request an access token from Microsoft Entra using your agent ID blueprint:
+You use the agent identity blueprint to create each agent identity. Request an access token from Microsoft Entra using your agent identity blueprint:
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -42,7 +42,7 @@ GET http://169.254.169.254/metadata/identity/oauth2/token?api-version=2019-08-01
 Metadata: True
 ```
 
-After you obtain a token for the managed identity, request a token for the agent ID blueprint:
+After you obtain a token for the managed identity, request a token for the agent identity blueprint:
 
 ```
 POST https://login.microsoftonline.com/<my-test-tenant>/oauth2/v2.0/token
@@ -99,7 +99,7 @@ Authorization: Bearer <token>
 
 To use *Microsoft.Identity.Web* to execute the Microsoft Graph API request to create an agent identity, add the following MISE configuration file:
 
-[!INCLUDE [Dont use secrets](./includes/dont-use-secrets.md)]
+[!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
 ```json
 {
