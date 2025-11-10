@@ -46,6 +46,11 @@ The following roles and licenses are required for different monitoring and opera
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
 
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.* 
+
 ## Analyze sign-in activities
 
 You can begin your assessment by analyzing sign-in activities across your organization. Understanding authentication patterns and identifying potential issues is crucial for maintaining security and user experience in your organization.
