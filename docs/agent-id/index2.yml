@@ -45,9 +45,9 @@ additionalContent:
         ## CARD 2 ######################
         - title: Agent governance and lifecycles
           links:
-            - text: Microsoft Entra ID Governance for agents (LINK)
+            - text: Microsoft Entra ID Governance for agents
               url: ../id-governance/agent-id-governance-overview.md  ### EDIT ME ###
-            - text: Agent identity lifecycle management (LINK)
+            - text: Agent identity lifecycle management
               url: ../id-governance/agent-sponsor-tasks.md      ### EDIT ME ###
 
         ## CARD 3 ######################
@@ -95,8 +95,8 @@ additionalContent:
         ## CARD 1 ######################
         - title: Technical references
           links:
-            - text: SDK Reference (LINK)
-              url:  ./identity-platform/what-is-agent-registry.md          ###./sdk-reference.md
+            - text: SDK Reference
+              url:  ./identity-platform/what-is-agent-registry.md   ### EDIT ME ###
             - text: Microsoft Graph API reference
               url: /graph/api/overview 
             - text: OAuth protocols for Agent identities

@@ -8,7 +8,6 @@ metadata:
   description: Build, secure, and manage agent identities with Microsoft Entra Agent ID. Integrate AI agents with enterprise workflows, apply Zero Trust principles, and govern agent access at scale.
   ms.service: identity-platform
   ms.topic: hub-page
-  ms.custom: agent-id-ignite
   author: shlipsey3
   ms.author: sarahlipsey
   ms.date: 10/24/2025
@@ -17,10 +16,16 @@ highlightedContent:
   items:
     - title: What is Microsoft Entra Agent ID?
       itemType: overview
-      url: ./identity-professional/index.yml
-    - title: What is the Microsoft agent identity platform?
+      url: ./identity-professional/security-for-ai.md
+    - title: Microsoft Entra agent identity platform for developers
       itemType: overview
-      url: ./identity-platform/index.yml
+      url: ./identity-platform/what-is-agent-id-platform.md 
+    - title: What is an agent identity?
+      url: ./identity-platform/what-is-agent-id.md
+      itemType: overview
+    - title: Create an agent identity
+      url: ./identity-platform/create-delete-agent-identities.md
+      itemType: how-to-guide
 
 additionalContent:
   # Supports up to 4 subsections
@@ -30,23 +35,76 @@ additionalContent:
       summary: The comprehensive solution for protecting and governing AI agents in enterprise environments. Includes advanced security controls, governance policies, and Zero Trust protections for agent identities and access management.
       items:
         ## CARD 1 ######################
-        - title: What is Microsoft Entra Agent ID?
+        - title: Register and manage agents
           links:
-            - text: Security for AI with Microsoft Entra Agent ID
-              url: ./identity-professional/security-for-ai.md
-            - text: Microsoft Entra agent ID features
-              url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
+            - text: What is the agent registry?
+              url: ./identity-platform/what-is-agent-registry.md
+            - text: Organize agents with collections
+              url: ./identity-platform/agent-registry-collections.md
+        
+        ## CARD 2 ######################
+        - title: Agent governance and lifecycles
+          links:
+            - text: Microsoft Entra ID Governance for agents
+              url: ../id-governance/agent-id-governance-overview.md  ### EDIT ME ###
+            - text: Agent identity lifecycle management
+              url: ../id-governance/agent-sponsor-tasks.md      ### EDIT ME ###
 
+        ## CARD 3 ######################
+        - title: Protect agent access to resources
+          links:
+            - text: Conditional Access for agents
+              url: ../identity/conditional-access/agent-id.md         
+            - text: Microsoft Entra ID Protection for agents
+              url: ../id-protection/concept-risky-agents.md
+            
     ## Section 2: Microsoft agent identity platform ######################
-    - title: Microsoft agent identity platform
+    - title: Microsoft Entra agent identity platform for developers
       summary: The platform that enables you to create, register, and manage agent identities. Includes the agent registry for discovering and organizing agents across your organization.
       items:
         ## CARD 1 ######################
-        - title: Agent Identity Platform
+        - title: Microsoft Entra agent identity platform for developers
           links:
-            - text: What is the Microsoft agent identity platform?
-              url: ./identity-platform/what-is-agent-id-platform.md
-            - text: What is an agent ID?
-              url: ./identity-platform/what-is-agent-id.md
+            - text: Configure Microsoft Entra SDK for agent identities
+              url: ./identity-platform/microsoft-entra-sdk-for-agent-identities.md          
+            - text: Create an agent identity blueprint
+              url: ./identity-platform/create-blueprint.md
+            - text: Create an agent identity
+              url: ./identity-platform/create-delete-agent-identities.md                
+            - text: Learn about agent users
+              url: ./identity-platform/agent-users.md           
+
+        ## CARD 2 ######################
+        - title: Agent Registry
+          links:
             - text: What is the agent registry?
-              url: ./identity-platform/what-is-agent-registry.md       
+              url: ./identity-platform/what-is-agent-registry.md
+            - text: Register agents with the agent registry
+              url: ./identity-platform/publish-agents-to-registry.md   
+            - text: Agent Registry collections
+              url: ./identity-platform/agent-registry-collections.md
+            - text: Agent Registry metadata and discoverability
+              url: ./identity-platform/agent-metadata-discoverability.md
+            - text: Agent to agent protocols
+              url: ./identity-platform/registry-agent-to-agent-protocol.md
+    
+    ## Section 3: Learn more ######################
+    - title: Learn more
+      summary: Explore SDK references, API documentation, and code samples to build and manage agent identities.
+      items:
+        ## CARD 1 ######################
+        - title: Technical references
+          links:
+            - text: SDK Reference
+              url:  ./identity-platform/what-is-agent-registry.md   ### EDIT ME ###
+            - text: Microsoft Graph API reference
+              url: /graph/api/overview 
+            - text: OAuth protocols for Agent identities
+              url: ./identity-platform/agent-oauth-protocols.md
+        ## CARD 2 ######################
+        - title: Related content
+          links:
+            - text: Security for AI
+              url: /security/security-for-ai/
+            - text: Security Copilot + Microsoft Entra
+              url: /entra/security-copilot/security-copilot-in-entra        
