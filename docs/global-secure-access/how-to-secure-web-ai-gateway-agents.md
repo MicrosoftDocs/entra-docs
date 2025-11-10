@@ -34,6 +34,11 @@ To enable network controls for Copilot Studio agents, you must first enable traf
 1. Select the appropriate environment or environment group and select **Set up**.
 1. Enable **Global Secure Access for Agents** for the selection.
 
+:::image type="content" source="media/how-to-secure-web-ai-gateway-agents/screenshot-power-platform-gsa-agents-ui.png" alt-text="Screenshot of Power Platform Admin Center showing Global Secure Access for Agents setup page with environment selection and toggle enabled." lightbox="media/how-to-secure-web-ai-gateway-agents/screenshot-power-platform-gsa-agents-ui.png":::
+
+
+> [!NOTE]
+> After enabling GSA for Agents in a given environment or environment group, you need to create or update any existing custom connectors for them to route traffic through Global Secure Access.
 
 ## Create security policies for Copilot Studio agents
 
@@ -53,9 +58,6 @@ After enabling network controls, you can enforce Global Secure Access security p
 
 Group your security policies by linking them to the baseline profile to apply them to Copilot Studio agent traffic. Security profiles linked to Conditional Access policies aren't currently supported for Copilot Studio agents.
 
-> [!NOTE]
-> To learn more about Microsoft Entra Conditional Access policies, see [Building a Conditional Access policy](../identity/conditional-access/concept-conditional-access-policies.md).
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles**.
 1. Select the **Baseline profile** tab.
@@ -68,9 +70,8 @@ Group your security policies by linking them to the baseline profile to apply th
 
 Regular monitoring and maintenance ensure your security configuration remains effective:
 
-1. **Review traffic logs** regularly for unusual patterns or blocked legitimate traffic.
+1. **Review traffic logs** regularly for unusual patterns or blocked legitimate traffic. For more information, see [Global Secure Access network traffic logs](how-to-view-traffic-logs.md).
 1. **Update filtering policies** as new services or requirements emerge.
-1. **Monitor agent performance** to ensure network controls don't negatively impact functionality.
 1. **Test policy changes** in a development environment before applying to production.
 
 > [!NOTE]
@@ -82,6 +83,9 @@ Regular monitoring and maintenance ensure your security configuration remains ef
 - Integration with third-party DLP and ATP services, such as Netskope, isn't supported.
 - Copilot Studio Bing search network transactions aren't supported.
 - Only specific Copilot Studio connectors are supported with network security controls. Refer to the Copilot Studio documentation for the list of supported connectors.
+- Currently the Agent Name returned in the Global Secure Access traffic logs is the agent's unique *schema name*.
+- Currently the block experience for Copilot Studio agents blocked by GSA shows a *502 Bad Gateway* for HTTP Actions or a *403 Forbidden* for connectors. This is a known issue, and improvements are coming soon.
+- Currently only the baseline profile is supported for enforcement, so network security policies are per-tenant.
 
 ## Next steps
 
