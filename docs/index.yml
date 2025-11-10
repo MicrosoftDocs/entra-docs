@@ -39,7 +39,7 @@ productDirectory:
       url: /entra/identity/
     - title: Microsoft Entra Agent ID
       imageSrc: ./media/index/microsoft-entra-agent-id.png
-      summary: "build, discover, govern, and protect agent identities."
+      summary: "Build, discover, govern, and protect agent identities."
       url: /entra/agent-id/
     - title: Microsoft Entra ID Protection
       imageSrc: ./media/index/id-protection-color.png
