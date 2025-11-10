@@ -1,7 +1,7 @@
 ---
-title: Include custom data provided resource in the catalog for catalog User Access Reviews
+title: Include custom data provided resource in the catalog for catalog user Access Reviews
 ms.reviewer: jgangadhar
-description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create User Access Reviews for disconnected applications.
+description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create user Access Reviews for disconnected applications.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -12,11 +12,11 @@ ms.date: 11/05/2025
 #CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews..
 ---
 
-# Include custom data provided resource in the catalog for catalog User Access Reviews
+# Include custom data provided resource in the catalog for catalog user Access Reviews
 
 Organizations often have applications that aren’t yet integrated with Microsoft Entra but still need to be governed. Using custom data provided resources, you can include these disconnected applications in Microsoft Entra ID access reviews by uploading their access data directly into a catalog.
 
-This capability enables you to run User Access Reviews (UARs) across both Microsoft Entra-connected, and custom, resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources whether or not they’re connected to Microsoft Entra.
+This capability enables you to run user Access Reviews (UARs) across both Microsoft Entra-connected, and custom, resources within the same catalog. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources whether or not they’re connected to Microsoft Entra.
 
 ## License requirements
 
