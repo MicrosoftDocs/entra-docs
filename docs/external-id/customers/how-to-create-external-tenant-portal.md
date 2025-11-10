@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 05/21/2025
+ms.date: 11/06/2025
 ms.author: cmulligan
 ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to create an external tenant in the  Microsoft Entra admin center. 
@@ -53,7 +53,11 @@ In this article, you learn how to:
 
     - Type your desired **Domain Name** (for example *Contosocustomers*).
 
-    - Select your desired **Location**. This selection can't be changed later.
+1. Select your desired **Country/Region**. This selection can't be changed later.
+
+    If you select a country/region that supports the Go-Local add-on, such as Australia or Japan, a **Go-Local data residency** option appears. You can elect to have your Microsoft Entra ID Core Store data and Microsoft Entra ID components and service data stored in the selected location. For more information, see [Go-Local add-on](../../fundamentals/data-residency.md#go-local-add-on).
+
+    :::image type="content" source="media/how-to-create-external-tenant-portal/go-local-add-on-option.png" alt-text="Screenshot of the Basics tab and the Go-Local data residency option.":::
 
 1. Select **Next: Add a subscription**.  
 
