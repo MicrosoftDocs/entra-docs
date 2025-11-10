@@ -7,6 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 10/30/2025
+ms.custom: agent-id-ignite
 ms.author: shermanouko
 ms.reviewer: jmprieur
 #Customer intent: As a developer implementing agent user scenarios, I want to understand the agent user impersonation protocol so that I can enable agents to operate with user context and delegated permissions.
@@ -22,7 +23,11 @@ Agent user impersonation enables Agent IDs to operate with user context through 
 
 ## Protocol steps
 
-1. The agent ID blueprint requests an exchange token (T1) that it will use for agent ID impersonation. The agent ID blueprint presents client credentials that could be a secret, a certificate or a managed identity token used as an FIC.
+Then following are the protocol steps.
+
+:::image type="content" source="media/agent-user-oauth-flow/agent-user-flow.png" alt-text="Diagram showing the illustration of agent user token acquisition flow for agents.":::
+
+1. The agent ID blueprint requests an exchange token (T1) that it uses for agent ID impersonation. The agent ID blueprint presents client credentials that could be a secret, a certificate, or a managed identity token used as an FIC.
 
     [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
@@ -40,7 +45,7 @@ Agent user impersonation enables Agent IDs to operate with user context through 
 
     Where TUAMI is the MSI token for user assigned managed identity (UAMI). This returns token T1.
 
-1. The agent identity requests a token (T2) that it will use for agent user impersonation. The agent identity presents T1 as its client assertion. Entra ID returns T2 to the agent ID after validating that T1 (aud) == Agent ID parent app == Agent ID blueprint.​
+1. The agent identity requests a token (T2) that it uses for agent user impersonation. The agent identity presents T1 as its client assertion. Microsoft Entra ID returns T2 to the agent ID after validating that T1 (aud) == Agent ID parent app == Agent ID blueprint.​
 
     ```
     POST /oauth2/v2.0/token
@@ -55,7 +60,7 @@ Agent user impersonation enables Agent IDs to operate with user context through 
 
     This returns token T2.    
 
-1. The agent ID then sends an OBO token exchange request to Entra ID, including both T1 and T2. Entra ID validates that T2 (aud) == agent identity.
+1. The agent ID then sends an OBO token exchange request to Microsoft Entra ID, including both T1 and T2. Microsoft Entra ID validates that T2 (aud) == agent identity.
 
     ```
     POST /oauth2/v2.0/token
@@ -71,6 +76,12 @@ Agent user impersonation enables Agent IDs to operate with user context through 
     &requested_token_use=on_behalf_of
     ```
 
-1. Entra ID then issues the resource token.
+1. Microsoft Entra ID then issues the resource token.
+
+### Sequence diagram
+
+The following sequence diagram shows the agent user impersonation flow
+
+:::image type="content" source="media/agent-user-oauth-flow/agent-user-flow-token-sequence.png" alt-text="Diagram showing the token sequence of agent user token acquisition flow for agents.":::
 
 Agent user impersonation requires credential chaining that follows the pattern agent ID blueprint → Agent ID → Agent User. Each step in this chain uses the token from the previous step as a credential, creating a secure delegation pathway. The same client ID must be used for both phases to prevent privilege escalation attacks.

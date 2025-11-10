@@ -1,11 +1,11 @@
 ---
 title: Manage Agents with No Agent Identities
-titleSuffix: Microsoft Entra Agent ID
 description: This article explains how to manage registry-only agents that don't have associated agent identities in Microsoft Entra ID.
-author: SHERMANOUKO
-ms.author: shermanouko
+author: shlipsey3
+ms.author: sarahlipsey
 manager: pmwongera
-ms.date: 11/04/2025
+ms.date: 11/07/2025
+ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.topic: how-to
 
@@ -13,20 +13,20 @@ ms.topic: how-to
 ms.reviewer: jadedsouza
 ---
 
-# Manage agents in the registry
+# Use Agent Registry to manage agents without agent identities
 
-As an admin, you want to have a 360-degree view of your agent for both security and operational efficiency. It isn't uncommon to have agents that are registered in the agent registry but don't have an associated agent identity (agent ID). These agents are referred to as registry-only agents. They might be in the process of being onboarded or maybe you registered them in the registry without needing to use Microsoft Entra ID as your agent's identity provider.
+As an admin, you want to have a 360-degree view of your agent for security and operational efficiency. It isn't uncommon to have agents that are registered in the Agent Registry but don't have an associated agent identity (agent ID). These agents are referred to as registry-only agents. They might be in the process of being onboarded or maybe you registered them in the registry without needing to use Microsoft Entra ID as your agent's identity provider.
 
 ## Prerequisite
 
-Agents only appear in the registry after you publish your agent to the agent registry.
+Agents only appear in the registry after you [register your agent to the agent registry](../identity-platform/publish-agents-to-registry.md).
 
-## Navigate to your agent without an agent ID
+## Locate agents without an agent ID
 
 To get to your agent without an agent identity's page, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. In the left-hand navigation pane, select **Entra ID** > **Agent identities** > **Agent Registry**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator).
+1. Browse to **Entra ID** > **Agent identities** > **Agent Registry**.
 1. To view the agent card details of a specific agent, select the **View more** link. It reveals the agent's card details that include:
 
     - **Name**: The name of the agent.

@@ -6,6 +6,7 @@ author: SHERMANOUKO
 ms.author: shermanouko
 manager: pmwongera
 ms.date: 10/24/2025
+ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.topic: concept-article
 ms.reviewer: dastrock

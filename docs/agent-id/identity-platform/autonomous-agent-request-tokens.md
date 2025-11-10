@@ -7,6 +7,7 @@ ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer, I want to implement secure token authentication for my autonomous agents, so that my agents can authenticate independently and access Microsoft Graph and other resources without user delegation.
 ---

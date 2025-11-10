@@ -54,7 +54,7 @@ As threats evolve, Microsoft might update these policies to use new features, fu
 
 ### Block all high risk agents from accessing all resources
 
-This policy blocks agent identities that are determined as 'high risk' from accessing resources in your tenant. The agent risk level is based on detections from Microsoft Entra ID Protection.
+This policy blocks agent identities that are determined as 'high risk' from accessing resources in your tenant. The agent risk level is based on detections from [Microsoft Entra ID Protection](/entra/id-protection/concept-risky-agents).
 
 ### Block legacy authentication
 

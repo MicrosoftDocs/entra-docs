@@ -8,6 +8,7 @@ ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a Microsoft Microsoft Entra ID administrator or developer, I want to grant application permissions to my agent identities, so that my autonomous agents can access Microsoft Graph and other web services with the necessary permissions for their operations.
 ---

@@ -7,6 +7,7 @@ ms.author: shermanouko
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
+ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 
 #customer-intent: As a developer building interactive agents, I want to learn how to authenticate users and validate access tokens for Agent Identity, so that I can enable secure user interactions and implement proper authorization in my agent applications.

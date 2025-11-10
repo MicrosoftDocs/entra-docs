@@ -5,6 +5,8 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
+  - name: Governing Agent IDs (Preview)
+    href: agent-ID-governance-overview.md    
 
 
 - name: Scenarios
@@ -261,6 +263,10 @@
         href: my-access-approver-details.md  
       - name: View reports and logs
         href: entitlement-management-reports.md
+      - name: Configure ID Protection-based approvals (Preview)
+        href: entitlement-management-configure-id-protection-approvals.md
+      - name: Configure Insider risk management-based approvals (Preview)
+        href: entitlement-management-configure-insider-risk-management-approvals.md    
       - name: Archive logs and reporting
         href: entitlement-management-logs-and-reporting.md
       - name: Troubleshoot
@@ -326,7 +332,7 @@
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
-        href: entitlement-management-access-reviews-self-review.md  
+        href: entitlement-management-access-reviews-self-review.md   
     - name: Requestors
       items:
       - name: Request access
