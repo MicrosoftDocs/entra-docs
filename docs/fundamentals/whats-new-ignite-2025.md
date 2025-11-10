@@ -229,7 +229,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 
 - [Agent ID Administrator role](../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) (New)
 - [Agent ID Developer role](..../identity/role-based-access-control/permissions-reference.md#agent-id-developer) (New)
-- [Agent Registry Administrator role](../identity/role-based-access-control/permissions-reference#agent-registry-administrator.md) (New)
+- [Agent Registry Administrator role](../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator) (New)
 - [Manage roles in portal](../identity/role-based-access-control/manage-roles-portal.md) (Updated)
 - [Permissions reference](../identity/role-based-access-control/permissions-reference.md) (Updated)
 
