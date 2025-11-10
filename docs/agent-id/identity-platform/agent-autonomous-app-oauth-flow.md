@@ -27,7 +27,9 @@ Agent identity blueprints can only impersonate their child agent identities. Onl
 
 The following are the protocol steps.
 
-1. Agent identity blueprint requests an exchange token T1. The agent identity blueprint presents its credentials that could be a secret, a certificate, or a federated identity credential. Microsoft Entra ID returns the T1 to the agent identity blueprint. In this example, we use a managed identity as Federated Identity Credential (FIC).
+:::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow.png" alt-text="Diagram showing the illustration of autonomous app token acquisition flow for agents.":::
+
+1. Agent identity blueprint requests an exchange token T1. The agent identity blueprint presents its credentials that could be a secret, a certificate, or a managed identity token. Microsoft Entra ID returns the T1 to the agent identity blueprint. In this example we use a managed identity as Federated Identity Credential (FIC).
     
     [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
@@ -58,7 +60,13 @@ The following are the protocol steps.
     &grant_type=client_credentials
     ```
 
-1. Microsoft Entra ID issues an app-only resource access token (TR) to the Agent Identity after validating T1. Microsoft Entra ID validates that T1 (aud) == Agent ID parent app == Agent identity blueprint
+1. Microsoft Entra ID issues an app-only resource access token (TR) to the agent identity after validating T1. Microsoft Entra ID validates that T1 (aud) == Agent identity parent app == Agent identity blueprint
+
+## Sequence diagram
+
+The following is a sequence diagram for the app-only flow:
+
+:::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow-token-sequence.png" alt-text="Diagram showing the token sequence of autonomous app token acquisition flow for agents.":::
 
 ## Related content
 

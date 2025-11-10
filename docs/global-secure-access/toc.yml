@@ -59,10 +59,12 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
-  - name: Continuous Access Evaluation for Application Proxy (preview)
+  - name: Continuous Access Evaluation for Application Proxy
     href: concept-continuous-access-evaluation.md
-  - name: B2B Guest Access (preview)
+  - name: B2B Guest Access
     href: concept-b2b-guest-access.md
+  - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+    href: concept-secure-web-ai-gateway-agents.md
 - name: How-to guides
   expanded: true
   items:
@@ -142,6 +144,8 @@ items:
     items:
       - name: Understand Private Access
         href: concept-private-access.md
+      - name: Enable Intelligent Local Access (preview)
+        href: enable-intelligent-local-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
       - name: Enable Multi-Geo Capability
@@ -192,7 +196,9 @@ items:
       - name: Network content filtering
         href: how-to-network-content-filtering.md
       - name: Configure the AI Gateway Prompt Shield
-        href: how-to-ai-prompt-shield.md  
+        href: how-to-ai-prompt-shield.md
+      - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+        href: how-to-secure-web-ai-gateway-agents.md
   - name: Logs and monitoring
     expanded: false
     items:

@@ -5,6 +5,8 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
+  - name: Governing Agent IDs (Preview)
+    href: agent-ID-governance-overview.md    
 
 
 - name: Scenarios
@@ -330,7 +332,7 @@
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
-        href: entitlement-management-access-reviews-self-review.md  
+        href: entitlement-management-access-reviews-self-review.md   
     - name: Requestors
       items:
       - name: Request access
