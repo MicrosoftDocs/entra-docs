@@ -21,14 +21,14 @@ The Microsoft Entra SDK for Agent ID is a containerized web service that handles
 
 Before you begin, ensure you have:
 
-- [Set up the Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/installation)
+- [Set up the Microsoft Entra SDK for Agent ID](https://aka.ms/agentidsdkinstallation)
 - [An agent identity](./create-delete-agent-identities.md). Record the agent identity client ID.
 - [An agent identity blueprint](./create-blueprint.md). Record the agent identity blueprint client ID.
 - Necessary [permissions configured in Microsoft Entra ID](../identity-professional/grant-agent-access-microsoft-365.md)
 
 ## Deploy your containerized service
 
-Deploy the Microsoft Entra SDK for Agent ID as a containerized service in your environment. Follow the instructions in the [Set up the Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/installation) guide to configure the service with your agent identity details.
+Deploy the Microsoft Entra SDK for Agent ID as a containerized service in your environment. Follow the instructions in the [Set up the Microsoft Entra SDK for Agent ID](https://aka.ms/agentidsdkinstallation) guide to configure the service with your agent identity details.
 
 ## Configure your Microsoft Entra SDK for Agent ID settings
 
@@ -42,7 +42,7 @@ Follow these steps to configure your Microsoft Entra SDK for Agent ID settings:
 
 1. If you're calling a downstream API, ensure that the necessary permissions are granted. Calling a custom web API requires you to provide the API registration details in the SDK configuration.
 
-For more information, see [Configure your Microsoft Entra SDK for AgentID settings](/entra/msidweb/sidecar/configuration)
+For more information, see [Configure your Microsoft Entra SDK for AgentID settings](https://aka.ms/agentidsdkconfiguration)
 
 ## Acquire tokens using the Microsoft Entra SDK for Agent ID
 
@@ -98,6 +98,6 @@ You can use this header to call the downstream API. The web API should validate 
 
 ## Related content
 
-- [Python implementation of Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/scenarios/using-from-python)
-- [TypeScript implementation of Microsoft Entra SDK for Agent ID](/entra/msidweb/sidecar/scenarios/using-from-typescript)
-- [Call a downstream API - Microsoft Entra SDK for agent ID docs](/entra/msidweb/sidecar/scenarios/call-downstream-api)
+- [Python implementation of Microsoft Entra SDK for Agent ID](https://aka.ms/agentidsdkpython)
+- [TypeScript implementation of Microsoft Entra SDK for Agent ID](https://aka.ms/agentidsdktypescript)
+- [Call a downstream API - Microsoft Entra SDK for agent ID docs](https://aka.ms/agentidsdkdownstream)
