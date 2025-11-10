@@ -13,6 +13,20 @@ ms.author: joflore
 
 Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft Entra portfolio, with the flagship introduction of Microsoft Entra Agent ID bringing first-class identity and access management to AI agents. This release represents the largest expansion of Microsoft Entra capabilities to date, extending Zero Trust principles to AI workloads while delivering major enhancements across authentication, governance, security, and access management.
 
+## Release Highlights
+
+🤖 **Microsoft Entra Agent ID**: Revolutionary AI agent identity and access management with 50+ new articles and comprehensive platform support
+
+🔐 **Advanced Authentication**: Next-generation passwordless capabilities including self-service account recovery and advanced passkey support
+
+🛡️ **Enhanced Security**: AI-powered protection with Security Copilot integration and comprehensive risk management
+
+🏛️ **Intelligent Governance**: Advanced lifecycle workflows, risk-based approvals, and automated compliance capabilities
+
+🌐 **Cloud Security**: Comprehensive Internet and Private Access enhancements with AI Prompt Shield and advanced filtering
+
+📊 **Enterprise Scale**: Enhanced application lifecycle management, device identity, and comprehensive monitoring capabilities
+
 ## Microsoft Entra Agent ID
 
 **The future of AI security is here.** Microsoft Entra Agent ID introduces revolutionary identity and access management capabilities specifically designed for AI agents. This groundbreaking service provides first-class identity constructs for AI agents, bringing the same Zero Trust principles that protect human users to autonomous AI systems.
@@ -240,23 +254,3 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Plan application integration](../identity/enterprise-apps/plan-an-application-integration.md) (Updated)
 - [Govern and monitor tutorial](../identity/enterprise-apps/tutorial-govern-monitor.md) (Updated)
 - [Application management overview](../identity/enterprise-apps/what-is-application-management.md) (Updated)
-
-
-
----
-
-## Release Highlights
-
-🤖 **Microsoft Entra Agent ID**: Revolutionary AI agent identity and access management with 50+ new articles and comprehensive platform support
-
-🔐 **Advanced Authentication**: Next-generation passwordless capabilities including self-service account recovery and advanced passkey support
-
-🛡️ **Enhanced Security**: AI-powered protection with Security Copilot integration and comprehensive risk management
-
-🏛️ **Intelligent Governance**: Advanced lifecycle workflows, risk-based approvals, and automated compliance capabilities
-
-🌐 **Cloud Security**: Comprehensive Internet and Private Access enhancements with AI Prompt Shield and advanced filtering
-
-📊 **Enterprise Scale**: Enhanced application lifecycle management, device identity, and comprehensive monitoring capabilities
-
-This release represents Microsoft's commitment to delivering AI-first security while maintaining the highest standards of enterprise identity protection and governance. Microsoft Entra continues to lead the industry in Zero Trust implementation and comprehensive identity platform capabilities.
