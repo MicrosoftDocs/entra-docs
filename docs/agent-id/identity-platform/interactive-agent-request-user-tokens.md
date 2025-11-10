@@ -1,5 +1,5 @@
 ---
-title: Implement user token requests for interactive agents
+title: Acquire user tokens for interactive agents
 description: Learn how to implement the On-Behalf-Of flow for interactive agents to obtain access tokens on behalf of users who grant consent.
 titleSuffix: Microsoft Entra Agent ID
 author: omondiatieno
@@ -13,11 +13,9 @@ ms.reviewer: dastrock
 #customer-intent: As a developer, I want to implement the On-Behalf-Of flow for my interactive agent, so that my agent can obtain access tokens to call APIs on behalf of users who have granted delegated permissions.
 ---
 
-# Implement user token requests for interactive agents
+# Acquire user tokens for interactive agents
 
 After an interactive agent obtains user authorization, it needs to request access tokens that can be used to call APIs on behalf of the user. This article walks you through implementing the On-Behalf-Of (OBO) flow to obtain delegated access tokens for your interactive agent.
-
-Agents often need take actions on behalf of users that use the agent. Interactive agents can request delegated access tokens on behalf of the signed-in user that can be used to perform operations in various systems. In this article, you learn how to exchange an incoming access token for a new token that can be used to call downstream APIs, such as Microsoft Graph. This flow is the On-Behalf-Of (OBO) flow.
 
 The OBO flow allows a web API to:
 
@@ -25,18 +23,17 @@ The OBO flow allows a web API to:
 - Exchange it for a new access token for a downstream API like Microsoft Graph.
 - Use that new token to access protected resources on behalf of the original user.
 
-
 ## Prerequisites
 
 Before requesting user tokens, ensure you have:
 
-- A created agent identity as described in [Create and delete agent identities](create-delete-agent-identities.md)
+- [An agent identity](create-delete-agent-identities.md)
 - Completed user authorization as described in [Configure user authorization](interactive-agent-request-user-authorization.md)
 - Access token with appropriate permissions for your agent identity
 
 ## Request user tokens
 
-Whereas you could implement the OBO flow manually by following the protocol, we recommend using the `Microsoft.Identity.Web` library, which simplifies the implementation significantly.
+Whereas you could implement the OBO flow manually by following the protocol, we recommend using the `Microsoft.Identity.Web` library, which simplifies the implementation.
 
 1. Install the required NuGet package:
 

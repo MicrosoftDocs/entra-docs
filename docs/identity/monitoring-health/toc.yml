@@ -101,6 +101,12 @@ items:
       href: howto-configure-health-alert-notifications.md
     - name: How to investigate Microsoft Entra Health alerts
       href: howto-investigate-health-scenario-alerts.md
+    - name: Investigate Internet Access signals
+      href: howto-investigate-internet-access-signals.md
+    - name: Investigate Private Access Connector signals
+      href: howto-investigate-private-access-connector-signals.md
+    - name: Investigate remote networks signals
+      href: howto-investigate-remote-networks-scenario-signals.md
     - name: Conditional Access block policy
       href: scenario-health-conditional-access-block-policy.md
     - name: Sign-ins requiring a compliant or managed device

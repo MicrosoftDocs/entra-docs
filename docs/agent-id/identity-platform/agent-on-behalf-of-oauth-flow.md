@@ -25,13 +25,15 @@ Agentic applications have the capabilities of Microsoft Entra ID resource (API) 
 
 ## Protocol steps
 
-Agentic applications aren't supported for OBO (`/authorize`) flows. Supported grant types are `client_credential`, `jwt_bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate or a managed identity used as Federated Identity Credential (FIC).
+Agentic applications aren't supported for OBO (`/authorize`) flows. Supported grant types are `client_credential`, `jwt_bearer`, and `refresh_token`. The flow involves the agent identity blueprint, agent identity, and a client credential. The client credential can be a client secret, a client certificate, or a managed identity used as Federated Identity Credential (FIC).
+
+:::image type="content" source="media/agent-on-behalf-of-oauth-flow/on-behalf-of-flow.png" alt-text="Diagram showing the illustration of on-behalf-of token acquisition flow for agents.":::
 
 1. The user authenticates with the client and obtains a user access token (client token, Tc).
 
 1. Client sends the user access token (Tc) to the agent identity blueprint to act on behalf of the user. It's the token that is used for the OBO exchange for the agentic app instance.
 
-1. The agent ID blueprint requests an exchange token by presenting its client credential (secret, certificate or manged identity token (TUAMI)). In this example, we use a managed identity as FIC. Entra ID returns token T1 to the agent.
+1. The agent ID blueprint requests an exchange token by presenting its client credential (secret, certificate, or manged identity token (TUAMI)). In this example, we use a managed identity as FIC. Microsoft Entra ID returns token T1 to the agent.
 
     [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
@@ -63,10 +65,16 @@ Agentic applications aren't supported for OBO (`/authorize`) flows. Supported gr
     &requested_token_use=on_behalf_of
     ```
 
-1. Entra ID returns the resource token after validating both the T1 and Tc. The OBO protocol requires token audience to match the client ID, that is:
+1. Microsoft Entra ID returns the resource token after validating both the T1 and Tc. The OBO protocol requires token audience to match the client ID, that is:
 
     - T1 (aud) == Agent ID ParenT app == Agent ID blueprint client ID
     - Tc (aud) == Agent ID blueprint client ID
+
+### Sequence diagram
+
+The following sequence diagram shows the OBO flow
+
+:::image type="content" source="media/agent-on-behalf-of-oauth-flow/on-behalf-of-flow-token-sequence.png" alt-text="Diagram showing the token sequence of on-behalf-of token acquisition flow for agents.":::
 
 ### Refresh token support
 

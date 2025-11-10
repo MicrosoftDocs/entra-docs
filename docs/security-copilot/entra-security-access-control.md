@@ -41,6 +41,11 @@ This article describes how to use Microsoft Security Copilot to undertake a secu
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
 
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.* 
+
 ## Investigate and manage role assignments
 
 Begin your assessment by examining role-based access control (RBAC) to ensure that privileged roles are properly assigned and that the principle of least privilege is being followed across your organization's Microsoft Entra setup.
