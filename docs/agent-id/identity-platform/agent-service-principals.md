@@ -37,7 +37,7 @@ Agent identity blueprint principal creates agent identity service principals usi
 
 Before the introduction of the Microsoft agent identity platform, some Microsoft applications such as Microsoft Copilot Studio and Azure AI Foundry used application agent service principals to ensure their agents were secured with identities. These are shown alongside agent identity objects in your tenant in the [**All agent identities** list](agent-lists.md). 
 
-They can be differentiated in this list using the "Uses agent identity" column and filter. With the "Uses agent identity" filter, you can show either or both of agent identity objects and agents using application service principals. See the list of columns in the [**All agent identities** list](agent-lists.md#select-viewing-options).
+They can be differentiated in this list by filtering to get those that use agent identities. With the filter, you can show either or both of agent identity objects and agents using application service principals. See the list of columns in the [**All agent identities** list](agent-lists.md#select-viewing-options).
 
 These agents using service principal behaves the same as application service principals, and don't have the same differences from application service principals as agent identities or agent identity blueprint principals.
 
@@ -53,13 +53,13 @@ This impersonation model enables the agent identity blueprint to obtain tokens w
 
 ### Multi-instance relationship
 
-Nonagentic applications typically have a one-to-one relationship between application and service principal. The agent app model introduces a one-to-many relationship where a single agent identity blueprint can have multiple agent ID service principals across tenants and within tenants.
+Nonagentic applications typically have a one-to-one relationship between application and service principal. The agent app model introduces a one-to-many relationship where a single agent identity blueprint can have multiple agent identity service principals across tenants and within tenants.
 
-This multi-instance model enables scenarios like creating multiple agent IDs per Teams channel, per project, or per organizational unit, all sourcing their protocol properties from the same parent agent identity blueprint.
+This multi-instance model enables scenarios like creating multiple agent identities per Teams channel, per project, or per organizational unit, all sourcing their protocol properties from the same parent agent identity blueprint.
 
 ### Runtime credential management
 
-Nonagentic service principals manage their own credentials (certificates, secrets, and managed identities). The service principal presents these credentials to obtain tokens for itself or to perform On-Behalf-Of operations for users. Agent identities rely on credentials from the parent agent identity blueprint and can't manage credentials independently. Agent ID service principals don't perform direct authentication.
+Nonagentic service principals manage their own credentials (certificates, secrets, and managed identities). The service principal presents these credentials to obtain tokens for itself or to perform On-Behalf-Of operations for users. Agent identities rely on credentials from the parent agent identity blueprint and can't manage credentials independently. Agent identity service principals don't perform direct authentication.
 
 ### Consent and permission model
 
@@ -73,12 +73,12 @@ Agent service principals support both application permissions (for app-only oper
 
 **Direct assignment**: Permissions can be assigned directly to an agent identity for instance-specific access requirements.
 
-**Inherited assignment**: When `InheritDelegatedPermissions` is enabled on the service principal, agent IDs inherit delegated permissions from their parent agent identity blueprint, simplifying permission management in multi-instance scenarios.
+**Inherited assignment**: When `InheritDelegatedPermissions` is enabled on the service principal, agent identities inherit delegated permissions from their parent agent identity blueprint, simplifying permission management in multi-instance scenarios.
 
-**Role assignment**: Agent IDs can be assigned Azure RBAC roles and directory roles like nonagentic service principals, enabling resource access and administrative operations. Agent identity blueprints can't be assigned Azure RBAC roles
+**Role assignment**: Agent identities can be assigned Azure Role Based Access Control (RBAC) roles and directory roles like nonagentic service principals, enabling resource access and administrative operations. Agent identity blueprints can't be assigned Azure RBAC roles
 
 ## Audit and logging
 
-Agent service principals maintain distinct identities in audit logs and sign-in reports. When an agent identity performs operations, the logs show the agent identity as the acting client while indicating the relationship to the parent AB.
+Agent service principals maintain distinct identities in audit logs and sign-in reports. When an agent identity performs operations, the logs show the agent identity as the acting client while indicating the relationship to the parent agent identity blueprint.
 
 Sign-in logs differentiate between agent identity blueprints, agent identities, and agent users. This differentiation enables clear role identification (client, credential, subject) depending on the specific operation being performed. This enables audit trails for agent operations.
