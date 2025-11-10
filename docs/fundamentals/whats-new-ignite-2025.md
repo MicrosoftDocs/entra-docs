@@ -146,6 +146,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Assign traffic profile to remote network](../global-secure-access/how-to-assign-traffic-profile-to-remote-network.md) (Updated)
 - [Create remote networks](../global-secure-access/how-to-create-remote-networks.md) (Updated)
 - [Manage remote networks](../global-secure-access/how-to-manage-remote-networks.md) (Updated)
+- [Enable Intelligent Local Access](/entra/global-secure-access/enable-intelligent-local-access)
 
 ### Microsoft Entra Verified ID
 
