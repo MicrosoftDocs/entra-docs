@@ -44,7 +44,7 @@ This article describes how to use Microsoft Security Copilot to undertake a secu
 >[!NOTE]
 > If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
 >
-> - *I want you to activate the {required role} so that I can perform {the desired task}.* 
+> - *Activate the {required role} so that I can perform {the desired task}.* 
 
 ## Investigate and manage role assignments
 
