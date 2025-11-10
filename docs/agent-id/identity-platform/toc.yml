@@ -104,4 +104,10 @@ items:
     - name: Token claims reference
       href: agent-token-claims.md
     - name: Microsoft Graph Permissions reference
-      href: /graph/permissions-reference
+      href: /graph/permissions-reference?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Agent identity blueprint API reference
+      href: /graph/api/resources/agentidentityblueprint?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Agent identity blueprint principal API reference
+      href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Agent identity API reference
+      href: /graph/api/resources/agentidentity?toc=/entra/agent-id/identity-platform/toc.json
