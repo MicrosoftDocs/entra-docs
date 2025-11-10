@@ -45,6 +45,11 @@ Use the prompts and examples in this article to compile your findings into actio
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
 
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.*
+
 ## Understand tenant configuration
 
 Begin your assessment by gathering essential tenant information to understand your overall Microsoft Entra configuration. This foundational knowledge helps you establish context for further analysis.
