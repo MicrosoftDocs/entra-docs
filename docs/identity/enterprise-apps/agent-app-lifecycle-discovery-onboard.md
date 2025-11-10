@@ -1,11 +1,10 @@
 ---
 title: Discover and onboard apps
-description: Learn how to use the App lifecycle management agent to discover unmanaged private applications and onboard them into Microsoft Entra for centralized management.
+description: Learn how to use the App Lifecycle Management Agent to discover unmanaged private applications and onboard them into Microsoft Entra for centralized management.
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
 ms.date: 10/01/2025
-ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -15,7 +14,7 @@ ms.reviewer: ariels
 
 # Discover and onboard apps
 
-The App lifecycle management agent discovers unmanaged private applications through Global Secure Access telemetry and provides suggestions to onboard them into Microsoft Entra for centralized management.
+The App Lifecycle Management Agent discovers unmanaged private applications through Global Secure Access telemetry and provides suggestions to onboard them into Microsoft Entra for centralized management.
 
 ## Prerequisites
 
@@ -52,7 +51,7 @@ To review suggestions:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)
 1. Browse to **Agents** in the left menu.
-1. Select the **App Lifecycle Management agent** card
+1. Select the **App Lifecycle Management Agent** card
 1. Select **View details** to open the agent dashboard
 
 ### View discovery suggestions
@@ -92,6 +91,8 @@ To onboard discovered applications:
    - Network segments
    - User assignments
 
+:::image type="content" source="media/agent-app-lifecycle-discovery-onboard/onboard-new-app.png" alt-text="Screenshot showing the application onboarding interface with prefilled data and configuration options":::
+   
 1. Modify the application configuration as needed:
    - Adjust the application name
    - Update user assignments
@@ -109,6 +110,6 @@ After onboarding:
 
 ## Related content
 
-- [Monitor and remediate risky apps with the App lifecycle management agent](agent-identify-prioritize-risky-apps.md)
-- [Create remediation plans for unused applications with the App lifecycle management agent](agent-app-lifecycle-remediation-plans.md)
+- [Monitor and remediate risky apps with the App Lifecycle Management Agent](agent-identify-prioritize-risky-apps.md)
+- [Create remediation plans for unused applications with the App Lifecycle Management Agent](agent-app-lifecycle-remediation-plans.md)
 - [Plan a Microsoft Entra application management deployment](plan-an-application-integration.md)

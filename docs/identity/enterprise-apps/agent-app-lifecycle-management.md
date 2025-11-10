@@ -1,11 +1,10 @@
 ---
-title: Get started with the Microsoft Entra App lifecycle management agent
-description: Learn how the Microsoft Entra App lifecycle management agent with Microsoft Security Copilot helps streamline application discovery, onboarding, and risk remediation.
+title: Get started with the Microsoft Entra App Lifecycle Management Agent
+description: Learn how the Microsoft Entra App Lifecycle Management Agent with Microsoft Security Copilot helps streamline application discovery, onboarding, and risk remediation.
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -13,15 +12,15 @@ ms.reviewer: ariels
 #customer intent: As an IT administrator, I want to implement automated application lifecycle management so that I can reduce security risks and streamline governance across my entire application portfolio.
 ---
 
-# Get started with the Microsoft Entra App lifecycle management agent
+# Get started with the Microsoft Entra App Lifecycle Management Agent
 
-The App lifecycle management agent helps identity and network administrators manage the entire lifecycle of applications within Microsoft Entra, from discovery to onboarding, ongoing monitoring, and risk remediation. The agent automates detection of unmanaged applications, assists with onboarding them into Microsoft Entra for centralized management, and continuously monitors app health and usage to proactively identify risks such as excessive privileges or unused high-risk applications.
+The App Lifecycle Management Agent helps identity and network administrators manage the entire lifecycle of applications within Microsoft Entra, from discovery to onboarding, ongoing monitoring, and risk remediation. The agent automates detection of unmanaged applications, assists with onboarding them into Microsoft Entra for centralized management, and continuously monitors app health and usage to proactively identify risks such as excessive privileges or unused high-risk applications.
 
 By unifying application discovery and risk management capabilities into one intelligent agent embedded in the Microsoft Entra admin center, it delivers a seamless, end-to-end experience that saves time, reduces risk, and adapts to diverse organizational needs.
 
 ## Prerequisites
 
-Before using the App lifecycle management agent, ensure you meet the following requirements:
+Before using the App Lifecycle Management Agent, ensure you meet the following requirements:
 
 - You must have at least the [Microsoft Entra ID P2 or Workload Identity Premium P2](/entra/fundamentals/licensing) for **App Risk Monitoring & Remediation** suggestions and/or Microsoft Entra Suite or [Microsoft Entra Private Access](../../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) licenses for **Application Discovery & Onboarding** suggestions.
 
@@ -37,7 +36,7 @@ Before using the App lifecycle management agent, ensure you meet the following r
 ### Limitations
 
 - We recommend running the agent from the Microsoft Entra admin center instead of Microsoft Security Copilot.
-- Scanning is only triggered on 24-hour period and isn't customizable.
+- Scanning is only triggered on a 24-hour period and isn't customizable.
 - Suggestions from the agent can't all be customized or overridden. The [Review disablement plan for unused apps](agent-app-lifecycle-remediation-plans.md) feature allows for customization with AI.
 - Avoid using an account that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
@@ -56,7 +55,7 @@ Before using the App lifecycle management agent, ensure you meet the following r
 
 ## How it works
 
-The App lifecycle management agent scans your tenant for unmanaged applications and application risks from the last 24 hours and determines appropriate recommendations. The agent provides intelligent suggestions for application discovery, onboarding, and risk remediation based on Microsoft's security best practices and your organizational patterns.
+The App Lifecycle Management Agent scans your tenant for unmanaged applications and application risks from the last 24 hours and determines appropriate recommendations. The agent provides intelligent suggestions for application discovery, onboarding, and risk remediation based on Microsoft's security best practices and your organizational patterns.
 
 Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
 
@@ -70,9 +69,9 @@ If the agent identifies something that wasn't previously suggested, it takes the
 
 **App risk remediation**: The agent detects unused applications with high-privilege permissions, identifies applications without assigned owners, suggests owners for unowned apps, and facilitates communication with application owners for remediation decisions. It provides recommendations for safely disabling unnecessary applications in batches to reduce your organization's attack surface.
 
-- The agent creates detailed recommendations with context and suggested actions.
+1. The agent creates detailed recommendations with context and suggested actions.
 
-- The agent provides onboarding suggestions with appropriate user scoping or risk remediation plans including communication with application owners.
+1. The agent provides onboarding suggestions with appropriate user scoping or risk remediation plans including communication with application owners.
 
 The agent provides two main categories of suggestions to help you maintain a secure and well-managed application environment:
 
@@ -94,7 +93,7 @@ Apps are *disabled*, not deleted, by the agent after administrator approval. You
 
    - You can also select **Agents** from the left navigation menu.
 
-1. Select **View details** on the App lifecycle management agent tile.
+1. Select **View details** on the App Lifecycle Management Agent tile.
 
 1. Select **Start agent** to begin your first run. 
 
@@ -110,7 +109,7 @@ The agent operates automatically on a daily schedule (triggers every 24 hours), 
 
 ### Working with discovery suggestions
 
-When the agent identifies unmanaged applications, it provides onboarding suggestions that include recommended application names, user scoping based on access patterns, and security configurations aligned with your organizational policies. You can review these suggestions and use the one-click onboarding feature to bring applications under Microsoft Entra management with appropriate security controls. For more information, see [Discovery and onboard apps with the App lifecycle management agent](agent-app-lifecycle-discovery-onboard.md).
+When the agent identifies unmanaged applications, it provides onboarding suggestions that include recommended application names, user scoping based on access patterns, and security configurations aligned with your organizational policies. You can review these suggestions and use the one-click onboarding feature to bring applications under Microsoft Entra management with appropriate security controls. For more information, see [Discovery and onboard apps with the App Lifecycle Management Agent](agent-app-lifecycle-discovery-onboard.md).
 
 ### Working with risk suggestions
 
@@ -122,7 +121,7 @@ For risk remediation, the agent provides detailed reports of unused applications
 
 ## Settings
 
-Once the agent is enabled, you can adjust settings to customize its behavior and operation. You can access the settings from the Microsoft Entra admin center by navigating to **Agents** > **App lifecycle management agent** > **Settings**.
+Once the agent is enabled, you can adjust settings to customize its behavior and operation. You can access the settings from the Microsoft Entra admin center by navigating to **Agents** > **App Lifecycle Management Agent** > **Settings**.
 
 ### Trigger
 
@@ -140,7 +139,7 @@ There are several key points to consider regarding the identity and permissions 
 
 ## Remove agent
 
-If you no longer wish to use the App lifecycle management agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any applications onboarded or policies created based on the agent suggestions remain intact. Previously applied suggestions remain unchanged so you can continue to use the applications and configurations created or modified by the agent.
+If you no longer wish to use the App Lifecycle Management Agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any applications onboarded or policies created based on the agent suggestions remain intact. Previously applied suggestions remain unchanged so you can continue to use the applications and configurations created or modified by the agent.
 
 ### Providing feedback
 
@@ -148,6 +147,6 @@ Use the **Give Microsoft feedback** button at the top of the agent window to pro
 
 ## Related content
 
-- [Discovery and onboard apps with the App lifecycle management agent](agent-app-lifecycle-discovery-onboard.md)
+- [Discovery and onboard apps with the App Lifecycle Management Agent](agent-app-lifecycle-discovery-onboard.md)
 - [Create remediation plan for risky apps](agent-app-lifecycle-remediation-plans.md)
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)

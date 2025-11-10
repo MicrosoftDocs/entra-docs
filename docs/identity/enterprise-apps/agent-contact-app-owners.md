@@ -1,11 +1,10 @@
 ---
 title: Contact application owners for unused app remediation
-description: Learn how to use the Microsoft Entra App Lifecycle Management agent to notify application owners about unused applications and collect their feedback for remediation decisions.
+description: Learn how to use the Microsoft Entra App Lifecycle Management Agent to notify application owners about unused applications and collect their feedback for remediation decisions.
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -15,7 +14,7 @@ ms.reviewer: ariels
 
 # Contact application owners for unused app remediation
 
-The Microsoft Entra App Lifecycle Management agent can automatically notify application owners about unused applications in your environment. This capability streamlines the remediation process by collecting owner feedback before making decisions about application removal or retention.
+The Microsoft Entra App Lifecycle Management Agent can automatically notify application owners about unused applications in your environment. This capability streamlines the remediation process by collecting owner feedback before making decisions about application removal or retention.
 
 The contact owners feature enables you to:
 
@@ -40,7 +39,7 @@ To contact application owners, you need:
    - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
    - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role in Security Copilot.
 - For app owners to use the Microsoft Teams bot to respond to notifications from the App Lifecycle Management Agent, they must have access to Microsoft Teams and must have an active access review assigned to them. They must also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role assigned to them.
-- The App Lifecycle Management agent configured and running
+- The App Lifecycle Management Agent configured and running
 - Security Copilot with provisioned SCUs
 - Applications with owners assigned in Microsoft Entra ID
 
@@ -56,7 +55,7 @@ The agent identifies unused applications with assigned owners and facilitates co
 
 - **Owner identification:** The agent scans applications for owners assigned in the Microsoft Entra application registration or service principal owner properties.
 
-- **Communication workflow:** Notifications are sent via email or through Microsoft Teams bot messages, depending on your configuration.
+- **Communication workflow:** Notifications are sent via email from `AppRiskAgent-noreply@microsoft.com` or through Microsoft Teams bot messages, depending on your configuration.
 
 - **Response tracking:** The agent monitors owner responses and integrates feedback into remediation planning. Owners can indicate whether applications should be retained, removed, or if they're not the correct contact.
 
@@ -73,10 +72,12 @@ To notify owners about unused applications:
 1. Select the **App Lifecycle Management** agent.
 
 1. From the **Suggestions** tab, locate the **Contact known app owners for remediation** suggestion.
-
+  
 1. Select **Review** to view applications with assigned owners.
 
 1. Review the list of applications and their owners. Select the checkbox next to each application you want to include in notifications.
+   
+   :::image type="content" source="media/agent-contact-app-owners/contact-app-owners.png" alt-text="Screenshot showing the contact app owners suggestion interface with options to review and contact application owners" lightbox="media/agent-contact-app-owners/contact-app-owners.png":::
 
    > [!TIP]
    > Select the **+** symbol next to an owner name to view all owners for applications with multiple assigned owners. All listed owners receive notifications.
@@ -100,7 +101,7 @@ To notify owners about unused applications:
 > [!NOTE]
 > Allow up to 15 minutes for email delivery. Teams notifications are typically delivered immediately. If emails aren't received, check spam filters.
 
-The agent currently supports notifying owners of up to 20 unused applications per notification cycle. For larger sets of applications, consider multiple notification cycles.
+The agent currently supports notifying owners of up to 20 unused applications per notification cycle during private preview.
 
 ## Monitor owner responses
 
@@ -124,7 +125,7 @@ Owner decisions are automatically incorporated into remediation planning workflo
 
 ## Handle applications without owners
 
-When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator. It then reviews suggested owners in the agent interface based on those factors.
+When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator (and other factors in the future). It then reviews suggested owners in the agent interface based on those factors
 
 :::image type="content" source="media/agent-contact-app-owners/suggested-app-owners.png" alt-text="Screenshot showing suggested owner identification interface." lightbox="media/agent-contact-app-owners/suggested-app-owners.png":::
 
