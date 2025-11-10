@@ -29,7 +29,7 @@ The specific requirements vary based on how an administrator configures the **Pa
 
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
-|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide one of the following valid attestation statements:<br>- "none"<br>- "tpm"<br>- "packed (AttCA)"<br>- Custom attestation formats <= 32 characters  |
+|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide one of the following valid attestation statements:<br>- "none"<br>- "tpm"<br>- "packed" (AttCA)<br>- Custom attestation formats <= 32 characters  |
 
 >[!NOTE]
 >Vendors are responsible to publish all root attestation certificates to the FIDO Alliance MDS; otherwise, attestation verification can fail.
