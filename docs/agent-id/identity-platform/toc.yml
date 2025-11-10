@@ -102,9 +102,3 @@ items:
       href: agent-token-claims.md
     - name: Microsoft Graph Permissions reference
       href: /graph/permissions-reference
-    # - name: Agent identity blueprint API reference
-    #   href: /graph/api/resources/agentidentityblueprint
-    # - name: Agent identity blueprint principal API reference
-    #   href: /graph/api/resources/agentidentityblueprintprincipal
-    # - name: Agent identity API reference
-    #   href: /graph/api/resources/agentidentity
