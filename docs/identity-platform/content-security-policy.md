@@ -57,7 +57,7 @@ Customers using tools that rely on injected scripts should work directly with th
 
 Review your sign-in experience early. Remove browser extensions or tools that inject scripts into the Microsoft Entra sign-in page. If your organization relies on such tools, work with vendors to adopt compliant alternatives before rollout. Test sign-in flows ahead of time to identify and resolve violations, and keep your users’ experience seamless.
 
-For detailed steps, see [Customer guidance](#customer-guidance).
+For detailed steps to test the sign-in experience, see [Customer guidance](#customer-guidance).
 
 ## Customer guidance
 
