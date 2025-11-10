@@ -35,7 +35,7 @@ If you wish to use a different client, not the agent identity blueprint, to crea
 
 ## Create an agent user
 
-This section covers creating an agent user using your agent identity blueprint or other approved client. The recommended way to create an agent user is using your agent identity blueprint. You [require an access token](./create-delete-agent-identities.md#get-an-access-token-using-agent-id-blueprint) to create an agent user.
+This section covers creating an agent user using your agent identity blueprint or other approved client. The recommended way to create an agent user is using your agent identity blueprint. You [require an access token](./create-delete-agent-identities.md#get-an-access-token-using-agent-identity-blueprint) to create an agent user.
 
 ## [REST](#tab/rest)
 
