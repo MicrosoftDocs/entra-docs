@@ -1,6 +1,6 @@
 ---
 title: Token claims reference for agent IDs
-description: Learn about specialized token claims used by agentic applications in Microsoft Entra to identify entity types, relationships, and roles during authentication and authorization flows.
+description: Learn about specialized token claims used by agent applications in Microsoft Entra to identify entity types, relationships, and roles during authentication and authorization flows.
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
@@ -10,18 +10,18 @@ ms.date: 11/04/2025
 ms.custom: agent-id-ignite
 ms.reviewer: jmprieur
 
-#customer-intent: As a developer or security engineer, I want to understand the token claims structure for Agent Identity tokens, so that I can properly validate and authorize agentic applications in my resource servers and implement secure authentication flows.
+#customer-intent: As a developer or security engineer, I want to understand the token claims structure for Agent Identity tokens, so that I can properly validate and authorize agent applications in my resource servers and implement secure authentication flows.
 ---
 
-# Token claims reference for agent IDs
+# Token claims reference for agents
 
-Agentic applications use specialized token claims to identify different entity types and their relationships during authentication and authorization flows. These claims enable proper attribution, policy evaluation, and audit trails for agentic operations. This article outlines the token claims for agentic applications, detailing how tokens identify agentic entities and their roles in authentication flows.
+Agents use specialized token claims to identify different entity types and their relationships during authentication and authorization flows. These claims enable proper attribution, policy evaluation, and audit trails for agent operations. This article outlines the token claims for agent applications, detailing how tokens identify agent entities and their roles in authentication flows.
 
-Clients using Agent ID are expected to treat the access tokens issued to them to use at resource servers as opaque, and not try to parse them. However, resource servers that receive access tokens issued to agents need to parse the tokens to validate them and extract claims for authorization purposes.
+Clients using agent identities are expected to treat the access tokens issued to them to use at resource servers as opaque, and not try to parse them. However, resource servers that receive access tokens issued to agents need to parse the tokens to validate them and extract claims for authorization purposes.
 
 ## Core token claim types
 
-Tokens issued for Agent Identity (Agent ID) used for resource access include claims that you'd normally expect to see in access tokens that Microsoft Entra issues. For more information, see [access token claim reference](/entra/identity-platform/access-token-claims-reference). The following example shows a sample access token issued to an Agent Identity (Agent ID) acting autonomously. 
+Tokens issued for identities used for resource access include claims that you'd normally expect to see in access tokens that Microsoft Entra issues. For more information, see [access token claim reference](/entra/identity-platform/access-token-claims-reference). The following example shows a sample access token issued to an agent acting autonomously. 
 
 ```json
 {
@@ -50,9 +50,9 @@ Tokens issued for Agent Identity (Agent ID) used for resource access include cla
 }
 ```
 
-In v2 tokens, you see `azp` instead of `appid`. They both refer to the application ID of the Agent Identity (Agent ID).
+In v2 tokens, you see `azp` instead of `appid`. They both refer to the application ID of the agent identity.
 
-You'd notice that the token includes a few claims that aren't previously seen in access tokens issued to applications. The following optional claims are also supported to identify that the tokens are for Agent Identity (Agent ID). They also provide more context in which the Agent Identity (Agent ID) is acting. 
+You'd notice that the token includes a few claims that aren't previously seen in access tokens issued to applications. The following optional claims are also supported to identify that the tokens are for agent identities. They also provide more context in which the agent identity is acting. 
 
 - `xms_tnt_fct`
 - `xms_sub_fct`
@@ -61,14 +61,14 @@ You'd notice that the token includes a few claims that aren't previously seen in
 
 | Claim Name        | Description                                                                           |
 | ----------------- | ------------------------------------------------------------------------------------- |
-| `tid`             | Tenant ID of the customer tenant where the Agent Identity (Agent ID) is registered. It's the tenant where the token is valid.            |
-| `sub`             | Subject (the user, service principal, or Agent Identity (Agent ID) being authenticated)         |
+| `tid`             | Tenant ID of the customer tenant where the agent identity is registered. It's the tenant where the token is valid.            |
+| `sub`             | Subject (the user, service principal, or agent identity being authenticated)         |
 | `oid`             | Object ID of the subject. User object ID for user delegation scenarios. Agent ID service principal OID for app-only scenarios. Agent user OID for user impersonation scenarios.          |
 | `idtyp`           | Type of entity the subject is. Values are `user`, `app`.                               |
-| `tid`             | Tenant ID of the customer tenant where the Agent Identity (Agent ID) is registered.              |
+| `tid`             | Tenant ID of the customer tenant where the agent identity is registered.              |
 | `xms_idrel`       | Relationship between the subject and the resource tenant. Learn [more](#xms_idrel).   |
 | `aud`             | Audience (the API that the agent is trying to access)                                 |
-| `azp` or `appid`  | Authorized party / actor. The application ID of the Agent Identity (Agent ID). Enables proper client attribution in audit logs.     |
+| `azp` or `appid`  | Authorized party / actor. The application ID of the agent identity. Enables proper client attribution in audit logs.     |
 | `scp`             | Scope. Delegated permissions for user-context tokens. Only present in user delegation and agent user scenarios. Empty or `/` for app-only scenarios                                            |
 | `xms_act_fct`     | Actor facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims).    |
 | `xms_sub_fct`     | Subject facets claim. Learn [more](#xms_tnt_fct-xms_sub_fct-and-xms_act_fct-claims) . |
@@ -124,49 +124,49 @@ Log the parent application ID for auditing purposes. Microsoft Entra ID sign-in 
 
 The following section outlines some auth scenarios and the relevant claims for each one of them.
 
-### Agent identity (agent ID) acting on behalf of a human user
+### Agent identity acting on behalf of a human user
 
-In this scenario, the Agent Identity (agent ID) is acting on behalf of a human user. The access token includes the following claims:
+In this scenario, the agent identity is acting on behalf of a human user. The access token includes the following claims:
 
 | Claim Name  | Description                                             |
 | ----------- | ------------------------------------------------------- |
 | `tid `       | Tenant ID of the customer tenant                       |
 | `idtyp `     | `user` (indicating the subject is a user)              |
 | `xms_idrel`  | `1` (indicating a member user; others possible too)    |
-| `azp` / `appid` | Application ID of the Agent Identity (Agent ID)                |
-| `scp`         | Delegated permissions granted to the Agent Identity (Agent ID)   |
+| `azp` / `appid` | Application ID of the agent identity                |
+| `scp`         | Delegated permissions granted to the agent identity   |
 | `oid`         | Object ID of the user                                 |
 | `aud`        | Resource audience for the token                        |
 | `xms_act_fct` | `11` (AgentIdentity)                                  |
 
-### Agent identity (agent ID) acting autonomously
+### Agent identity acting autonomously
 
-In this scenario, the Agent Identity (agent ID) acts using its own identity. The access token includes the following claims:
+In this scenario, the agent identity acts using its own identity. The access token includes the following claims:
 
 | Claim Name  | Description                                             |
 | ----------- | ------------------------------------------------------- |
 | `tid`         | Tenant ID of the customer tenant                        |
 | `idtyp`       | `app` (indicating the subject is an application)        |
 | `xms_idrel`   | `7` (indicating a service principal)                    |
-| `azp` / `appid` | Application ID of the Agent Identity (Agent ID)       |
-| `roles`       | Permissions granted to the Agent Identity (Agent ID)          |
-| `oid`         | Object ID of the Agent Identity (Agent ID) |
+| `azp` / `appid` | Application ID of the agent identity       |
+| `roles`       | Permissions granted to the agent identity          |
+| `oid`         | Object ID of the agent identity |
 | `xms_act_fct` | `11` (AgentIdentity)                               |
 | `xms_sub_fct` | `11` (AgentIdentity)                               |
 | `aud`         | Resource audience for the token                          |
 | `scp`         | Empty or `/` (unscoped).                          |
 
-### Agent identity (agent ID) acts autonomously via agent user
+### Agent identity acts autonomously via agent user
 
-In this scenario, the agent obtains a token using the agent user associated with its Agent Identity (Agent ID). The access token includes the following claims:
+In this scenario, the agent obtains a token using the agent user associated with its agent identity. The access token includes the following claims:
 
 | Claim Name  | Description                                         |
 | ------------- | --------------------------------------------------- |
 | `tid`         | Tenant ID of the customer tenant                    |
 | `idtyp`       | `user` (indicating the subject is a user)           |
 | `xms_idrel`   | `1` (indicating a member user; others possible too) |
-| `azp` / `appid` | Application ID of the Agent Identity (Agent ID)   |
-| `scp`         | Delegated permissions granted to the Agent Identity (Agent ID)      |
+| `azp` / `appid` | Application ID of the agent identity   |
+| `scp`         | Delegated permissions granted to the agent identity      |
 | `oid`         | Object ID of the agent user                       |
 | `xms_act_fct` | `11` (Agent identity)                           |
 | `xms_sub_fct` | `13` (Agent user)                                  |

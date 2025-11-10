@@ -1,6 +1,6 @@
 ---
 title: Administrative relationships in Microsoft Entra Agent ID (Owners, sponsors, and managers) 
-description: Learn about the administrative model for agentic applications in Microsoft Entra, including the roles of owners, sponsors, and managers in maintaining secure operations, business accountability, and compliance oversight.
+description: Learn about the administrative model for agents in Microsoft Entra, including the roles of owners, sponsors, and managers in maintaining secure operations, business accountability, and compliance oversight.
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
@@ -11,20 +11,20 @@ ms.date: 11/04/2025
 ms.custom: agent-id-ignite
 ms.reviewer: jawoods
 
-#customer-intent: As an IT administrator or business stakeholder, I want to understand the administrative model for agentic applications, so that I can properly assign owners, sponsors, and managers to ensure secure operations, business accountability, and compliance oversight.
+#customer-intent: As an IT administrator or business stakeholder, I want to understand the administrative model for agents, so that I can properly assign owners, sponsors, and managers to ensure secure operations, business accountability, and compliance oversight.
 ---
 
 # Administrative relationships in Microsoft Entra Agent ID (Owners, sponsors, and managers) 
 
-The Entra Agent ID platform introduces an administrative model that separates technical administration from business accountability, ensuring operational control and compliance oversight without excessive permissions. This document explains the administrative relationships for Microsoft Entra Agent ID identity types. This guidance applies to agent identities, agent blueprints, agent blueprint principals, and agent users. The article covers owners, sponsors, and managers and their importance in maintaining secure operations.
+The Microsoft agent identity platform introduces an administrative model that separates technical administration from business accountability, ensuring operational control and compliance oversight without excessive permissions. This document explains the administrative relationships for Microsoft Entra Agent ID identity types. This guidance applies to agent identities, agent identity blueprints, agent blueprint principals, and agent users. The article covers owners, sponsors, and managers and their importance in maintaining secure operations.
 
 The administrative relationships available in Agent ID include:
 
-- **Owners**: Technical administrators responsible for operational management of agent blueprints and agent IDs, including setup, configuration, and credential management.
+- **Owners**: Technical administrators responsible for operational management of agent blueprints and agent identities, including setup, configuration, and credential management.
 - **Sponsors**: Business representatives accountable for the agent's purpose and lifecycle decisions, including access reviews and incident response, without technical administrative access.
 - **Managers**: User responsible for the agent within the organization's hierarchy, able to request access packages for their reporting agents.
 
-These administrative relationships must be configured for each Agent ID object and are separate from the administrative rights granted by Microsoft Entra RBAC roles, like Agent Admin.
+These administrative relationships must be configured for each Agent ID object and are separate from the administrative rights granted by Microsoft Entra (Role Based Access Control (RBAC) roles, like Agent Admin.
 
 ## Owners
 
@@ -46,9 +46,9 @@ Service principals can also be set as owners when some other managing service ne
 
 ## Sponsors
 
-Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent(s), and they can determine whether an agent is still needed or requires access.
+Sponsors provide business accountability for agents, making lifecycle decisions without technical administrative access. They understand the business purpose of the agent, and they can determine whether an agent is still needed or requires access.
 
-Sponsorship should be maintained ensuring succession when an employee who's a sponsor moves or leaves. Both users and groups can be assigned as sponsors. When a group is assigned, all users who are direct members of the group will have sponsor rights over the Agent ID object.
+Sponsorship should be maintained ensuring succession when an employee who's a sponsor moves or leaves. Both users and groups can be assigned as sponsors. When a group is assigned, all users who are direct members of the group have sponsor rights over the Agent ID object.
 
 ### Sponsor responsibilities
 
@@ -64,7 +64,7 @@ Sponsors are usually business owners, product managers, team leads, or stakehold
 
 ## Manager
 
-Managers are individual users responsible for an agent within the organizational hierarchy. For agents that are active in user scenarios, consider setting a manager. Managers can request access packages and will see agents designated as reporting to them in the Entra portal. Managers do not have authorization to modify or delete agents. Owners, sponsors, or administrators are required to take those actions.
+Managers are individual users responsible for an agent within the organizational hierarchy. For agents that are active in user scenarios, consider setting a manager. Managers can request access packages and will see agents designated as reporting to them in the Microsoft Entra admin center. Managers don't have authorization to modify or delete agents. Owners, sponsors, or administrators are required to take those actions.
 
 ## Requirements and constraints
 
