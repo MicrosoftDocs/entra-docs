@@ -29,7 +29,7 @@ This guide walks you through creating an agent user in a tenant and requesting t
 To create agent users, your agent identity blueprint must be granted the application permission `AgentIdUser.ReadWrite.IdentityParentedBy` in the tenant. You can obtain authorization in one of two ways:
 
 - [Request agent authorization](./autonomous-agent-request-authorization-entra-admin.md#request-authorization-from-a-tenant-administrator). Be sure to use your agent identity blueprint as the `client_id`, not the agent identity.
-- [Manually create an appRoleAssignment](./autonomous-agent-request-authorization-entra-admin.md#create-an-app-role-assignment-via-apis) in the tenant. Be sure to use the object ID of the agent identity blueprint principal as the `principalId` value. Don't the ID of your agent identity blueprint.
+- [Manually create an appRoleAssignment](./autonomous-agent-request-authorization-entra-admin.md#create-an-app-role-assignment-via-apis) in the tenant. Be sure to use the object ID of the agent identity blueprint principal as the `principalId` value. Don't use the ID of your agent identity blueprint.
 
 If you wish to use a different client, not the agent identity blueprint, to create agent users, that client needs to obtain the `AgentIdUser.ReadWrite.All` delegated or application permission instead.
 
@@ -115,7 +115,7 @@ To use `Microsoft.Identity.Web` to create an agent user, follow these steps:
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
-    app.run()
+    app.Run()
     ```
     
 1. Create the agent user creation endpoint

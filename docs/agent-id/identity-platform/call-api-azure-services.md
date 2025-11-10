@@ -21,7 +21,7 @@ This article guides you on how to call Azure services from your agent. To authen
 
 ## Implementation steps
 
-1. Install the Azure integration package and the Microsoft.Identity.Web.AgentIdentities package to add support for agent identities.
+1. Install the Azure integration package and the *Microsoft.Identity.Web.AgentIdentities* package to add support for agent identities.
 
     ```bash
     dotnet add package Microsoft.Identity.Web.Azure
@@ -40,18 +40,17 @@ This article guides you on how to call Azure services from your agent. To authen
     using Microsoft.Identity.Web;
 
     var builder = WebApplication.CreateBuilder(args);
-    
+
     // Add authentication
     builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
         .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"))
         .EnableTokenAcquisitionToCallDownstreamApi()
         .AddInMemoryTokenCaches();
-    
+
     // Add Azure token credential support
     builder.Services.AddMicrosoftIdentityAzureTokenCredential();
-    
+
     builder.Services.AddControllersWithViews();
-    
     var app = builder.Build();
     app.UseAuthentication();
     app.UseAuthorization();
