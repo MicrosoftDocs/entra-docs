@@ -30,6 +30,8 @@ Agent identities can be used to:
 
 An account used by an AI agent is referred to as an **agent identity**. Much like your typical user account, an agent identity has a few key components:
 
+:::image type="content" source="media/agent-identities/agent-identity.png" alt-text="Diagram showing an agent identity illustration.":::
+
 - **Identifier**. Each agent identity has an `id` (also known as object ID), such as `aaaaaaaa-1111-2222-3333-bbbbbbbbbb`. Microsoft Entra generates the `id` and uniquely identifies the account within a Microsoft Entra tenant.
 
 - **Credentials**. Agent identities don't have passwords, but have other forms of credentials they can use to authenticate.
@@ -60,6 +62,8 @@ Agent identities can only be issued tokens in the Microsoft Entra tenant where t
 ## Blueprints: Consistent security for agent identities
 
 A key characteristic of agent identities is that all agent identities are created from a reusable template called an agent identity blueprint. The blueprint establishes the "kind" of agent and records metadata shared across all agent identities of a common kind.
+
+:::image type="content" source="media/agent-identities/agent-blueprint.png" alt-text="Diagram showing relationship between agent identity and agent identity blueprint.":::
 
 Imagine that an organization uses an AI agent called a "Sales Assistant Agent." Whether the agent is purchased or built in-house, an agent identity blueprint would be added to the organization's Microsoft Entra tenant. The blueprint captures the following information:
 
