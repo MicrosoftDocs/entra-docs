@@ -5,7 +5,6 @@ ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -55,6 +54,7 @@ The maximum batch size is 15 applications, with highest privilege apps and those
 ## Create remediation plans
 
 To create a batch removal plan for unused applications:
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)
 1. Browse to **Agents** in the left menu
 1. Navigate to the unused app suggestions in the agent dashboard
@@ -65,9 +65,12 @@ To create a batch removal plan for unused applications:
    - Number of applications included
    - Justification for batch selection
 
+     
 ### Customize batch criteria
 
 You can modify the default batch criteria using natural language instructions. This allows the agent to adapt the batching logic to your organization's specific needs and risk preferences. This step consumes SCUs because it uses AI capabilities to interpret and apply your custom instructions.
+
+:::image type="content" source="media/agent-app-lifecycle-remediation-plans/customize-disablement-plan.png" alt-text="Screenshot showing the interface for customizing batch disablement criteria using natural language instructions." lightbox="media/agent-app-lifecycle-remediation-plans/customize-disablement-plan.png":::
 
 To customize batch criteria:
 
@@ -94,7 +97,9 @@ Before any applications are disabled, the agent requires explicit administrative
 1. Review the complete batch disablement plan
 1. Verify the applications included in each batch by selecting **Edit** next to a batch
 1. Decide which apps you would like to disable in the batch and which apps you might want to move to another batch or dismiss altogether
-1. Select **Approve batch plan** to authorize the removal process
+1. Select **Disable apps** to authorize the removal process
+
+    :::image type="content" source="media/agent-app-lifecycle-remediation-plans/disablement-plan-show-batch.png" alt-text="Screenshot showing the batch disablement plan interface with batch details and approval options." lightbox="media/agent-app-lifecycle-remediation-plans/disablement-plan-show-batch.png":::
 
 The agent maintains detailed audit trails for all approval decisions and batch modifications.
 
@@ -106,7 +111,7 @@ Throughout the process, the agent provides progress visibility by showing metric
 
 ### Monitor and control execution
 
-App disablement and re-enablement via the agent is executed by the Microsoft Graph API to the `isDisabled` property on the application object.
+App disablement and re-enablement via the agent is executed by the Microsoft Graph API to the `isDisabled` property on the application object. For information about the API, see [application resource type](/graph/api/resources/application).
 
 Throughout the batch removal process, you have several control and monitoring options available. After disablement has taken place, you can view all disabled applications at the top of the batch disablement plan and re-enable applications, as needed. This is useful if you detect unexpected business impact or need to reassess the disablement strategy, coordinating with app owners and business users.
 
@@ -115,6 +120,8 @@ You can also edit batch contents by moving applications between batches or remov
 ### Reversibility and rollback
 
 We support individual app re-enablement. Navigate to the **View disabled apps** button at top of the plan for a list of disabled applications and select **Re-enable** to restore specific apps.
+
+:::image type="content" source="media/agent-app-lifecycle-remediation-plans/view-disabled-enable-apps.png" alt-text="Screenshot showing the interface for viewing disabled applications and re-enabling them." lightbox="media/agent-app-lifecycle-remediation-plans/view-disabled-enable-apps.png":::
 
 ## Related content
 
