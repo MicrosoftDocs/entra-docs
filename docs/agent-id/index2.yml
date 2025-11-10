@@ -98,9 +98,7 @@ additionalContent:
             - text: SDK Reference (LINK)
               url:  ./identity-platform/what-is-agent-registry.md          ###./sdk-reference.md
             - text: Microsoft Graph API reference
-              url: /graph/api/overview
-            - text: Code samples and tutorials (LINK)
-              url: ./identity-platform/what-is-agent-registry.md           ###./set-up-environment.md 
+              url: /graph/api/overview 
             - text: OAuth protocols for Agent identities
               url: ./identity-platform/agent-oauth-protocols.md
         ## CARD 2 ######################
