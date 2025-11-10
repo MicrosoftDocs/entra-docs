@@ -486,7 +486,7 @@ items:
         - name: Azure Web Application Firewall
           href: tutorial-configure-external-id-web-app-firewall.md
         - name: Cloudflare
-          href: tutorial-configure-cloudflare-integration.md
+          href: how-to-configure-waf-integration.md
         - name: Akamai
           href: how-to-configure-akamai-integration.md
       - name: Fraud protection integration
