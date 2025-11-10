@@ -35,10 +35,13 @@ There are different roles, permissions, and license requirements to view health 
 - The `Group.Read.All` permission is the least privileged permission required to *view groups*.
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
+- The `HealthMonitoringAlertConfig.Read.All` permission is required to *view the configured email notification using Microsoft Graph /reports/healthmonitoring/alertConfigurations/{alertType} API* or to *view the configured webhook notification using Microsoft Graph /subscriptions API*.
+- The `HealthMonitoringAlertConfig.ReadWrite.All` permission is required to *view and modify email notification using Microsoft Graph /reports/healthmonitoring/alertConfigurations/{alertType} API* or to *view and modify the configured webhook notification using Microsoft Graph /subscriptions API*.
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 > [!NOTE]
-> Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
+> * Newly onboarded tenants might not have enough data to generate alerts for about 30 days. <br>
+> * If you see error due to missing required Microsoft Graph permissions, to get more information about Micorosft Graph permisisons, see [Microsoft graph permissions](/graph/permissions-overview).
 
 ## Determine email notification recipients
 
@@ -144,6 +147,9 @@ Content-Type: application/json
 Microsoft Graph change notifications allow your application to receive real-time alerts whenever a resource is created, updated, or deleted. Unlike email notifications, these alerts are delivered directly to a secure HTTPS endpoint that you specify, making them ideal for automated workflows and integrations. Currently, change notifications for health monitoring alert *creations* are supported through webhooks. Microsoft Graph supports notifications for create, update, and delete operations, but at this time only alert creation notifications are available for health monitoring alerts.
  
 To start receiving notifications, your application sends a `POST` request to the /`subscriptions` endpoint to subscribe to a specific resource, in this case, health monitoring alerts. Microsoft Graph then validates the request and confirms the subscription. Once the subscription is active, Microsoft Graph sends a notification to your designated endpoint whenever the subscribed resource is created. For more information, see [Microsoft Graph change notifications](/graph/change-notifications-overview).
+
+> [!NOTE]
+> If you see error due to missing required Microsoft Graph permissions, to get more information about Micorosft Graph permisisons, see [Microsoft graph permissions](/graph/permissions-overview).
 
 After receiving a notification, you should investigate the alert either through the Microsoft Entra admin center or through the Microsoft Graph API. If you need to assess the alert's impact, we recommend either polling or introducing a short delay before calling the health monitoring alert API for impact assessment data to be available. For more information, see [How to investigate health scenario alerts](howto-investigate-health-scenario-alerts.md).
 
