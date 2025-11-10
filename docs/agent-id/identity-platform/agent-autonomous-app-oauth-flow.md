@@ -15,7 +15,7 @@ ms.reviewer: jmprieur
 
 # Agent autonomous app OAuth flow - App-only protocol
 
-App-only operations enable agent IDs to act autonomously without user context, using client credentials flows. The agentic application instance (actor) is used to obtain a token for itself (subject). To obtain this token, the agent ID blueprint impersonates the agent identity using the implicitly assign. Subjects use app-only access but are supposed to be only assigned the permissions necessary. Tenant administrators grant all permissions.
+App-only operations enable agent IDs to act autonomously without user context, using client credentials flows. The agentic application instance (actor) is used to obtain a token for itself (subject). To obtain this token, the agent ID blueprint impersonates the agent identity using the implicit assignment. Subjects use app-only access but are supposed to be only assigned the permissions necessary. Tenant administrators grant all permissions.
 
 Agent ID blueprints can only impersonate their child agent identities. Agent IDs can only be impersonated by a single agent ID blueprint. Agent ID blueprints can impersonate many agent IDs. No agent ID can be owned by multiple agents. Agent identities are always single-tenant regardless of their parent Agent identity blueprint's tenancy model. Each agent ID operates within one tenant's security and policy boundaries.
 
@@ -27,7 +27,9 @@ Agent ID blueprints can only impersonate their child agent identities. Agent IDs
 
 The following are the protocol steps.
 
-1. Agent ID blueprint requests an exchange token T1. The agent ID blueprint presents its credentials which could be a secret, a certificate or a managed identity token. Entra ID returns the T1 to the agent ID blueprint. In this example we use a managed identity as FIC.
+:::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow.png" alt-text="Diagram showing the illustration of autonomous app token acquisition flow for agents.":::
+
+1. Agent ID blueprint requests an exchange token T1. The agent ID blueprint presents its credentials that could be a secret, a certificate, or a managed identity token. Microsoft Entra ID returns the T1 to the agent ID blueprint. In this example we use a managed identity as Federated Identity Credential (FIC).
     
     [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
@@ -43,9 +45,9 @@ The following are the protocol steps.
     &grant_type=client_credentials
     ```
 
-    Where TUAMI is the MSI token for user assigned managed identity (UAMI). This step returns T1. Where T1 is the token-exchange token for FIC. 
+    Where TUAMI is the managed identity token for user assigned managed identity (UAMI). This step returns T1. Where T1 is the token-exchange token for FIC. 
 
-1. Agent identity sends a token exchange request to Entra ID. The request includes the token T1.
+1. Agent identity sends a token exchange request to Microsoft Entra ID. The request includes the token T1.
 
     ```
     POST /oauth2/v2.0/token
@@ -58,4 +60,10 @@ The following are the protocol steps.
     &grant_type=client_credentials
     ```
 
-1. Entra ID issues an app-only resource access token (TR) to the Agent Identity after validating T1. Entra ID validates that T1 (aud) == Agent ID parent app == Agent ID blueprint
+1. Microsoft Entra ID issues an app-only resource access token (TR) to the Agent Identity after validating T1. Entra ID validates that T1 (aud) == Agent ID parent app == Agent ID blueprint
+
+## Sequence diagram
+
+The following is a sequence diagram for the app-only flow:
+
+:::image type="content" source="media/agent-autonomous-app-oauth-flow/autonomous-app-flow-token-sequence.png" alt-text="Diagram showing the token sequence of autonomous app token acquisition flow for agents.":::
