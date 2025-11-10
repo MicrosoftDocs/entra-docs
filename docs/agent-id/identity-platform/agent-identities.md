@@ -30,7 +30,7 @@ Agent identities can be used to:
 
 An account used by an AI agent is referred to as an **agent identity**. Much like your typical user account, an agent identity has a few key components:
 
-- **Identifier**. Each agent identity has an `id` (also known as object ID), such as `aaaaaaaa-1111-2222-3333-bbbbbbbbbb`. Microsoft Entra generates the `id` is and uniquely identifies the account within a Microsoft Entra tenant.
+- **Identifier**. Each agent identity has an `id` (also known as object ID), such as `aaaaaaaa-1111-2222-3333-bbbbbbbbbb`. Microsoft Entra generates the `id` and uniquely identifies the account within a Microsoft Entra tenant.
 
 - **Credentials**. Agent identities don't have passwords, but have other forms of credentials they can use to authenticate.
 
