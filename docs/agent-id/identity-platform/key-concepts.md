@@ -26,7 +26,7 @@ The following concepts form the foundation of the agent identity system in Micro
 
 ### Agent identity
 
-Agent identity is the primary account used by an AI agent to authenticate to various systems. It has unique identifiers - the object ID and the app ID, which always have the same value - which can be reliably used for authentication and authorization decisions. Agent identities don't have a password or any other credential. Instead, agent identities can only authenticate by presenting an access token issued to the service / platform on which the agent runs. For more information, see [what is an agent ID](./what-is-agent-id.md)
+Agent identity is the primary account used by an AI agent to authenticate to various systems. It has unique identifiers - the object ID and the app ID, which always have the same value - which can be reliably used for authentication and authorization decisions. Agent identities don't have a password or any other credential. Instead, agent identities can only authenticate by presenting an access token issued to the service or platform on which the agent runs. For more information, see [what is an agent ID](./what-is-agent-id.md)
 
 ### Agent identity blueprint
 
@@ -66,7 +66,7 @@ For more information, see [Administrative relationships for agent identities (Ow
 
 ## Microsoft Entra SDK for agent IDs
 
-The Microsoft Entra SDK for AgentID is a containerized web service that handles token acquisition, validation, and secure downstream API calls for agents registered in the Microsoft identity platform. It runs as a companion container alongside your application, allowing you to offload identity logic to a dedicated service. For more information, see Microsoft Entra SDK for agent IDs.
+The Microsoft Entra SDK for AgentID is a containerized web service that handles token acquisition, validation, and secure downstream API calls for agents registered in the Microsoft identity platform. It runs as a companion container alongside your application, allowing you to offload identity logic to a dedicated service. For more information, see [Microsoft Entra SDK for agent IDs](/entra/msidweb/sidecar/overview)
 
 ## Related content
 

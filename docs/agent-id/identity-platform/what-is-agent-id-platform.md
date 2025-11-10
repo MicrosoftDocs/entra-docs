@@ -26,22 +26,13 @@ This overview introduces the core components of the Microsoft agent ID platform.
 
 The Microsoft agent identity platform is built on several foundational technical components that work together to provide a complete identity and authorization solution for AI agents:
 
-- **Authentication service**: An OAuth 2.0 and OpenID Connect (OIDC) standard-compliant authentication service that enables secure, standards-based authentication for agents. This service issues tokens that agents use to authenticate to resources and APIs, supporting both application-only and delegated access scenarios.
+- **Authentication service**: An OAuth 2.0 and OpenID Connect (OIDC) standard-compliant authentication service that enables secure, standards-based authentication for agents. This service issues tokens that agents use to authenticate to resources and APIs, supporting both application-only and delegated access scenarios. There are three objects that form the core identity constructs in the platform: agent identity blueprint, agent identity, and agent user.
 
-- **SDKs**: Software development kits that enable developers and builder platforms to integrate with the Microsoft agent identity platform. SDKs abstract the complexity of token acquisition and protocol handling, making it straightforward for agent builders to incorporate agentic identity into their applications. Microsoft agent identity platform includes two SDKs: Microsoft Identity Web (.NET) and the Microsoft Entra SDK for agent IDs.
+- **SDKs**: Software development kits that enable developers to integrate with the Microsoft agent identity platform. SDKs abstract the complexity of token acquisition and protocol handling, making it straightforward for platforms that build agents to incorporate agentic identity into their applications. Microsoft agent identity platform includes two SDKs: Microsoft Identity Web (.NET) and the Microsoft Entra SDK for agent IDs.
 
-- **Agent management**: A comprehensive agent metadata store and administrative interface within the Microsoft Entra admin center that enables administrators to discover, view, configure, and manage agents. 
+- **Agent management**: A comprehensive agent metadata store and administrative interface within the Microsoft Entra admin center that enables administrators to discover, view, configure, and manage agents. The platform provides the agent registry which is a centralized repository for registering and managing agents across an organization.
 
 These technical components work together with the identity constructs described in the following section to provide complete platform functionality.
-
-## Core components of the Microsoft agent ID platform
-
-The Microsoft agent ID platform consists of four primary components that work together to provide comprehensive identity management for AI agents. Each component serves a distinct but complementary purpose in the overall system.
-
-- Agent identity blueprint
-- Agent identity
-- Agent user
-- Agent registry
 
 ## Authentication and authorization
 
@@ -51,16 +42,16 @@ The Microsoft agent ID platform uses OAuth for authorization and OpenID Connect 
 
 - **OAuth 2.0** allows agents to request access tokens that authorize them to access resources on behalf of themselves or users, supporting both application-only and delegated access scenarios.
 
-For more information, see [Oauth protocols](./agent-oauth-protocols.md)
+For more information, see [Oauth protocols](./agentic-oauth-protocols.md)
 
-Tokens are the fundamental security mechanism enabling secure communication and authorization in the Microsoft agent ID platform. The platform supports multiple token flow patterns designed for specific operational scenarios.
+Tokens are the fundamental security mechanism enabling secure communication and authorization in the Microsoft agent ID platform. The platform supports multiple token flow patterns designed for specific operational scenarios. For more information, see [tokens in agent ID platform](./agentic-tokens.md)
 
 ## Integration and interoperability
 
 The Microsoft agent ID platform is designed to work seamlessly across the Microsoft ecosystem and beyond. It integrates with:
 
 - **Microsoft Entra ID**: The platform extends Microsoft Entra ID capabilities to support agentic scenarios, using existing identity infrastructure and policies
-- **Agent builder platforms**: Platforms that create and manage agents can integrate with the Microsoft agent ID platform to secure agents. This includes both Microsoft-owned platforms like Copilot Studio and third-party agent builders. It enables builders to use the platform for authentication and authorization.
+- **Platforms / services that create agents**: Platforms that create and manage agents can integrate with the Microsoft agent ID platform to secure agents. This includes both Microsoft-owned platforms like Copilot Studio and third-party platforms.
 - **Extended Microsoft identity and security products**: Integration with Conditional Access, Identity Protection, identity governance, global secure access, and other security services enables comprehensive agent security
 
 This interoperability ensures that organizations can build, deploy, and manage agent identities consistently regardless of where agents are created or deployed.

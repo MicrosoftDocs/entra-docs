@@ -17,7 +17,7 @@ ms.reviewer: alamaral
 
 # View and manage agent identity blueprints in your tenant
 
-View all agent identity blueprint principals in your tenant and perform various actions like searching, filtering, sorting, and selecting multiple agent identity blueprint principals to disable. 
+Microsoft Entra Admin Center allows you to view all agent identity blueprint principals in your tenant. You can perform various actions like searching, filtering, sorting, and selecting multiple agent identity blueprint principals to disable. 
 
 ## Navigate to your agent identity blueprint principal list
 
@@ -30,13 +30,13 @@ To view your agent identity blueprint principals, follow these steps:
 
 ## Search for an agent identity blueprint principal
 
-1. Enter either the **name** or **object ID** of the agent identity blueprint principal you want to find. Note, to look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter.
+1. Enter either the **name** or **object ID** of the agent identity blueprint principal you want to find in the search box.
+1. To look up an agent identity by its **Agent Blueprint ID**, add the **Agent Blueprint ID** filter.
 1. You can further refine the list using filters based on various criteria.
 
 ## Select viewing options
-To customize your view of agent identity blueprint principals, you can change filters or select which columns are shown for each agent identity.
 
-To see all available columns and edit shown columns, select the **Choose columns** button. The table columns and their filter options are as follows:
+To customize your view of agent identity blueprint principals, you can change filters or select which columns are shown for each agent identity. To see all available columns and edit shown columns, select the **Choose columns** button. The table columns and their filter options are as follows:
 
 | Column Name | Description | Sortable | Filterable | Special notes
 |-------------|-------------|:--------:|:----------:|------------------|
@@ -45,7 +45,6 @@ To see all available columns and edit shown columns, select the **Choose columns
 | **Status** | Current operational state (Active, or Disabled) | ✓ | ✓ |  | 
 | **Agent Blueprint ID** | Unique identifier for the agent identity blueprint of this agent identity blueprint principal | ✗ | ✓ | | 
 | **Object ID** | Unique identifier for agent identity | ✗ | ✓ | | 
-
 
 ## Manage agent identity blueprint principals
 
