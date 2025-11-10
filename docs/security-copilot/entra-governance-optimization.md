@@ -42,8 +42,7 @@ Use the prompts and examples in this article to compile your findings into actio
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
 
 >[!NOTE]
->
-> If you are blocked due to a lack of permissions to perform certain actions, you will see a role recommendation. You can use the following prompt to activate the required roles the Security Copilot chat directly if you have the eligible role assignment providing that access.
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
 >
 > - *I want you to activate the {required role} so that I can perform {the desired task}.*
 
