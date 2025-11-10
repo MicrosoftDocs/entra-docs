@@ -98,7 +98,7 @@ additionalContent:
         - title: Technical references
           links:
             - text: SDK Reference
-              url:  ./identity-platform/what-is-agent-registry.md   ### EDIT ME ###
+              url:  https://aka.ms/agentidsdk
             - text: Microsoft Graph API reference
               url: /graph/api/overview 
             - text: OAuth protocols for Agent identities
@@ -107,6 +107,6 @@ additionalContent:
         - title: Related content
           links:
             - text: Security for AI
-              url: https://aka.ms/agentidsdk
+              url: /security/security-for-ai/
             - text: Security Copilot + Microsoft Entra
               url: /entra/security-copilot/security-copilot-in-entra        
