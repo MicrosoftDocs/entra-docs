@@ -100,4 +100,5 @@ items:
     items:
     - name: Token claims reference
       href: agent-token-claims.md
-        
+    - name: Microsoft Graph Permissions reference
+      href: /graph/permissions-reference
