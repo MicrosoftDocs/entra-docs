@@ -45,10 +45,10 @@ additionalContent:
         ## CARD 2 ######################
         - title: Agent governance and lifecycles
           links:
-            - text: Microsoft Entra ID Governance for agents
-              url: ../id-governance/agent-id-governance-overview.md  ### EDIT ME ###
+            - text: Microsoft Entra Identity governance for agents
+              url: ../id-governance/agent-id-governance-overview.md
             - text: Agent identity lifecycle management
-              url: ../id-governance/agent-sponsor-tasks.md      ### EDIT ME ###
+              url: ../id-governance/agent-sponsor-tasks.md
 
         ## CARD 3 ######################
         - title: Protect agent access to resources
