@@ -31,7 +31,7 @@ Agent applications aren't supported for OBO (`/authorize`) flows. Supported gran
 
 1. Client sends the user access token (Tc) to the agent identity blueprint to act on behalf of the user. It's the token that is used for the OBO exchange for the agent identity blueprint.
 
-1. The agent identity blueprint requests an exchange token by presenting its client credential (secret, certificate, or manged identity token (TUAMI)). In this example, we use a managed identity as FIC. Microsoft Entra ID returns token T1 to the agent.
+1. The agent identity blueprint requests an exchange token by presenting its client credential (secret, certificate, or managed identity token (TUAMI)). In this example, we use a managed identity as FIC. Microsoft Entra ID returns token T1 to the agent.
 
     [!INCLUDE [Dont use secrets](./includes/do-not-use-secrets.md)]
 
