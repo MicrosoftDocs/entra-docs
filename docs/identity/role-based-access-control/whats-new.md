@@ -20,6 +20,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+|Nov 2025 | Roles | Updated [Exchange Backup Administrator](permissions-reference.md#exchange-backup-administrator) role. |
 |Nov 2025 | Roles | Updated [SharePoint Backup Administrator](permissions-reference.md#sharepoint-backup-administrator) role. |
 | Oct 2025 | Roles | Added [Dragon Administrator](permissions-reference.md#dragon-administrator) role. |
 | August 2025 | Roles | Added [Teams Reader](permissions-reference.md#teams-reader) role. |
