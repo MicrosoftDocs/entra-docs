@@ -125,9 +125,7 @@ Owner decisions are automatically incorporated into remediation planning workflo
 
 ## Handle applications without owners
 
-When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator (and other factors in the future). It then reviews suggested owners in the agent interface based on those factors
-
-:::image type="content" source="media/agent-contact-app-owners/suggested-app-owners.png" alt-text="Screenshot showing suggested owner identification interface." lightbox="media/agent-contact-app-owners/suggested-app-owners.png":::
+When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator. It then reviews suggested owners in the agent interface based on those factors.
 
 To assign owners manually, follow the guidance provided in the [Assign app owners](assign-app-owners.md) guide.
 
