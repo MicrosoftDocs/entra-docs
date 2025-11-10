@@ -4,10 +4,10 @@ items:
 - name: Overview
   expanded: true
   items:
+  - name: What is Microsoft Entra Agent ID ?
+    href: microsoft-entra-agent-identities-for-ai-agents.md
   - name: Security for AI
     href: security-for-ai.md
-  - name: Microsoft Entra Agent ID features
-    href: microsoft-entra-agent-identities-for-ai-agents.md
   - name: How to guides
     items:
     - name: Access management
@@ -44,3 +44,5 @@ items:
     href: disable-agent-identities.md
   - name: Agent Registry roles
     href: reference-registry-roles.md
+  - name: Microsoft Graph Permissions reference
+    href: /graph/permissions-reference?toc=/entra/agent-id/identity-professional/toc.json
