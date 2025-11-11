@@ -125,7 +125,7 @@ Using the Azure Identity client library is the recommended way to use managed id
     KeyVaultSecret secret = await client.GetSecretAsync("MySecret");
     ```
 
-For more information, see [Use a user-assigned managed identity](https://learn.microsoft.com/dotnet/azure/sdk/authentication/user-assigned-managed-identity) and [Use a system-assigned managed identity](https://learn.microsoft.com/dotnet/azure/sdk/authentication/system-assigned-managed-identity).
+For more information, see [Use a user-assigned managed identity](/dotnet/azure/sdk/authentication/user-assigned-managed-identity) and [Use a system-assigned managed identity](/dotnet/azure/sdk/authentication/system-assigned-managed-identity).
 
 ## Get a token using C#
 
