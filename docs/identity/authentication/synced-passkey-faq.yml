@@ -40,7 +40,7 @@ sections:
           As an admin, can I revoke the use of a passkey?  
         answer: |
           Yes. Admins can leverage the per-user authentication methods UX or API to delete the passkey from a user's Microsoft Entra ID account. 
-          If an employee reports that their passkey provider account (such as Apple ID, or Google account) was compromised, then this capability can be used to protect the user's Microsoft Entra ID account.
+          If an employee reports that their passkey provider account was compromised, then this capability can be used to protect the user's Microsoft Entra ID account.
 
 additionalContent: |
   ## Related content

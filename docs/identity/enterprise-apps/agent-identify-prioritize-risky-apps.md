@@ -1,11 +1,10 @@
 ---
 title: Remediate risky apps
-description: Learn how to use the App lifecycle management agent to identify unused high-privileged applications and safely remediate risks through batch removal plans.
+description: Learn how to use the App Lifecycle Management Agent to identify unused high-privileged applications and safely remediate risks through batch removal plans.
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
 ms.date: 10/01/2025
-ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -15,7 +14,7 @@ ms.reviewer: ariels
 
 # Remediate risky apps
 
-The App lifecycle management agent identifies unused applications with high-privilege permissions and provides safe remediation workflows to reduce your organization's attack surface while maintaining operational continuity.
+The App Lifecycle Management Agent identifies unused applications with high-privilege permissions and provides safe remediation workflows to reduce your organization's attack surface while maintaining operational continuity.
 
 ## Prerequisites
 
@@ -30,10 +29,9 @@ Before using the risk remediation features, ensure you have:
 
 ### Limitations
 
-- Due to scale constraints, the agent currently limits unused application recommendations to 1000, displaying up to 20 unused app recommendations that meet filtering criteria
+- Due to scale constraints, the agent currently limits unused application recommendations to 10,000, displaying up to all unused app recommendations that meet filtering criteria.
 - Agent can only notify app owners from the latest report generated
 - Agent doesn't support notifying unknown app owners not assigned in Microsoft Entra
-- Total notifications limited to 20 unused applications per run
 
 ## How it works
 
@@ -53,7 +51,7 @@ To review risk suggestions:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)
 1. Browse to **Agents** in the left menu
-1. Select the **App Lifecycle Management agent** card
+1. Select the **App Lifecycle Management Agent** card
 1. Select **View details** to open the agent dashboard
 
 ### View risk suggestions
@@ -76,6 +74,8 @@ To view detailed unused app information:
    - Number of apps with assigned owners
    - Total unused applications (accessible via **View full list**)
 
+      :::image type="content" source="media/agent-identify-prioritize-risky-apps/unused-high-privileged-apps-report.png" alt-text="Screenshot showing the summary report of unused high-privileged applications with metrics and details." lightbox="media/agent-identify-prioritize-risky-apps/unused-high-privileged-apps-report.png":::
+
 ### View agent's full activity
 
 To understand the risk assessment process:
@@ -86,10 +86,10 @@ To understand the risk assessment process:
 
 ### Create remediation plans
 
-For detailed guidance on creating safe batch removal plans for unused applications, including customization options and execution workflows, see [Create remediation plans for unused applications with the App lifecycle management agent](agent-app-lifecycle-remediation-plans.md).
+For detailed guidance on creating safe batch removal plans for unused applications, including customization options and execution workflows, see [Create remediation plans for unused applications with the App Lifecycle Management Agent](agent-app-lifecycle-remediation-plans.md).
 
 ## Related content
 
-- [Discover and onboard apps with the App lifecycle management agent](agent-app-lifecycle-discovery-onboard.md)
-- [Microsoft Entra App lifecycle management agent](agent-app-lifecycle-management.md)
+- [Discover and onboard apps with the App Lifecycle Management Agent](agent-app-lifecycle-discovery-onboard.md)
+- [Microsoft Entra App Lifecycle Management Agent](agent-app-lifecycle-management.md)
 - [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)

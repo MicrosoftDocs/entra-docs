@@ -39,7 +39,7 @@ Conditional Access uses signals from various sources to make access decisions.
 Some of these signals include:
 
 - **User, group, or agent**
-   - Policies can be targeted to specific users, groups, and agents giving admins fine-grained control over access.
+   - Policies can be targeted to specific users, groups, and agents (Preview) giving admins fine-grained control over access.
    - Support for agent identities and agent users extends Zero Trust principles to AI workloads.
 - **IP location information**
    - Organizations can create IP address ranges that can be used when making policy decisions.

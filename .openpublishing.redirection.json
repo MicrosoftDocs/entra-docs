@@ -3011,6 +3011,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-configure-cloudflare-integration.md",
+      "redirect_url": "/entra/external-id/customers/how-to-configure-waf-integration",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/pksha-chatbot-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/pksha-chatagent-tutorial",
       "redirect_document_id": false
@@ -3018,6 +3023,11 @@
     {
       "source_path_from_root": "/docs/identity/authentication/concept-authentication-passwordless.md",
       "redirect_url": "/entra/identity/authentication/concept-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-methods.md",
+      "redirect_url": "/entra/identity/authentication/overview-authentication",
       "redirect_document_id": false
     }
   ]

@@ -1,12 +1,10 @@
 ---
 title: Manage Agents with No Agent Identities
-titleSuffix: Microsoft Entra Agent ID
 description: This article explains how to manage registry-only agents that don't have associated agent identities in Microsoft Entra ID.
 author: SHERMANOUKO
 ms.author: shermanouko
 manager: pmwongera
 ms.date: 11/04/2025
-ms.custom: agent-id-ignite
 ms.service: entra-id
 ms.topic: how-to
 
@@ -14,15 +12,15 @@ ms.topic: how-to
 ms.reviewer: jadedsouza
 ---
 
-# Manage agents in the registry
+# Manage agents with no agent identities
 
-As an admin, you want to have a 360-degree view of your agent for both security and operational efficiency. It isn't uncommon to have agents that are registered in the agent registry but don't have an associated agent identity (agent ID). These agents are referred to as registry-only agents. They might be in the process of being onboarded or maybe you registered them in the registry without needing to use Microsoft Entra ID as your agent's identity provider.
+As an admin, you want to have a 360-degree view of your agent for both security and operational efficiency. It isn't uncommon to have agents that are registered in the agent registry but don't have an associated agent identity. These agents are referred to as registry-only agents. They might be in the process of being onboarded or maybe you registered them in the registry without needing to use Microsoft Entra ID as your agent's identity provider.
 
 ## Prerequisite
 
-Agents only appear in the registry after you publish your agent to the agent registry.
+Agents only appear in the registry after you [publish your agent to the agent registry](../identity-platform/publish-agents-to-registry.md).
 
-## Navigate to your agent without an agent ID
+## Navigate to your agent without an agent identity
 
 To get to your agent without an agent identity's page, follow these steps:
 

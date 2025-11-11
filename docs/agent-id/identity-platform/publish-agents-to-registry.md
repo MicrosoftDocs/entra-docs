@@ -1,77 +1,122 @@
 ---
-title: Publish agents to registry
-titleSuffix: Microsoft Entra Agent ID
-description: Learn how to publish agents to Microsoft Entra Agent Registry through automatic registration or manual API calls for agent discovery and management.
-author: omondiatieno
-manager: mwongerapk
+title: Register Agents to the Agent Registry
+description: Learn how to register agents to the Agent Registry in Microsoft Entra Agent ID through automatic registration or manual API calls for agent discovery and management.
+author: shlipsey3
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/07/2025
+ms.author: sarahlipsey
 ms.custom: agent-id-ignite
-ms.author: jomondi
 ms.reviewer: jadedsouza
 
-#customer intent: As a developer creating agents on third-party platforms like OpenAI, Google Vertex, or Amazon Bedrock, I want to understand how to publish my agents to Microsoft Entra Agent Registry through API calls, so that my agents can be discovered and managed within the Microsoft Entra ecosystem.
+#customer intent: As a developer creating agents on non-Microsoft platforms like OpenAI, Google Vertex, or Amazon Bedrock, I want to understand how to register my agents to Microsoft Entra Agent Registry through API calls, so that my agents can be discovered and managed within the Microsoft Entra ecosystem.
 ---
 
-# Publish agents to registry
+# Register agents to the Agent Registry
 
-Publishing agents to Microsoft Entra agent registry enables agent discovery and centralized management within your organization. It allows you to have a view of all your agents including the ones from third-party agent sources. The registration process differs depending on how you create your agents. Agents created through Microsoft platforms are automatically registered, while agents created on third-party platforms require manual registration through API calls.
+Registering agents in Microsoft Entra Agent Registry enables centralized visibility and management across your organization. It provides a unified view of all agents, including those from non-Microsoft builder platforms and identity providers. The registration process varies based on how the agent is created.
 
-The agent registry stores two types of information for each agent: the agent instance (operational details) and the agent card (discovery metadata). Understanding this distinction helps you provide the right information during registration.
+The registry stores two key types of information for each agent:
+- **Agent Instance**: Operational details for execution and management.
+- **Agent Card Manifest**: Discovery metadata for collaboration.
+
+Understanding this distinction ensures accurate registration.
+
+## Microsoft product integrations
+
+If your agent was built on one of the following Microsoft products, you don't need to register your agent with Agent Registry. Agents built on these products are automatically integrated for both agent instances and agent card manifests and contain information on the agent ID. Currently, Microsoft products integrated with Microsoft Entra Agent Registry include:
+
+- [Microsoft Copilot Studio](https://aka.ms/CopilotStudio)
+- [Microsoft Agent 365](https://aka.ms/Agent365)
+- [Azure AI Foundry](/azure/ai-foundry/what-is-azure-ai-foundry)
 
 ## Prerequisites
 
-Before publishing agents to the registry, ensure you have the following requirements:
+Before registering agents with the registry, ensure you have the following requirements:
 
-- Understanding of Microsoft Entra agent registry
-- Understanding of Microsoft Graph registry API permissions reference
+- The [Microsoft Entra Agent ID](https://aka.ms/EntraAgentID) license
+- The [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator) role
+- A valid Microsoft Entra access token with the https://graph.microsoft.com/.default scope
+- Either app-only permissions or delegated permissions
+- For non-Microsoft agents, you need your agent's operational endpoint and metadata information
 
 ## Agent instance and agent cards
 
-Publishing an agent to the registry involves the creation of an agent instance and an agent card.
+Registering an agent in the registry involves the creation of an agent instance and an agent card.
 
-- The agent instance is the registration of your agent in the registry that contains operational details such as the agent's endpoint URL, agent identity ID, originating store, owner information and so on.
+- The agent instance is the registration of your agent in the registry that contains operational details such as the agent's endpoint URL, agent identity, originating store, and owner information.
 - The agent card contains metadata that describes the agent's capabilities, skills, and other discovery-related information. Without the agent card, your agent isn't discoverable.
 
 When creating the agent instance, you don't need to create an agent card at the same time. You can create the agent card later using the agent instance ID. Agent cards can only be created via agent instances. Agent instances can share an agent card.
 
-## Automatic registration for Microsoft agent builder platforms
+## Self-serve registration
 
-Agents created on Microsoft platforms such as Microsoft Copilot Studio, Foundry, and Agent 365 (A365) receive automatic registration without requiring manual API calls. When you create an agent on this platform, the system automatically provisions an agent identity (agent ID) and registers both the agent instance and agent card in the registry. This process includes assigning the agent to appropriate security collection based on the agent's metadata and intended use.
+Agents created on Microsoft platforms not listed above and non-Microsoft platforms require self-serve registration using the Microsoft Graph API. This process involves:
 
-## Manual registration for third-party agent builder platforms
+- Registering the agent instance for inventory and operational management.
+- Registering the agent card manifest for discovery and collaboration.
 
-Agents created on third-party platforms require manual registration through Microsoft Graph API calls. This process involves registering both the agent instance and the agent card to enable full functionality.
+### Register an agent instance
 
-### Acquire authentication token
+The agent instance contains operational information needed for agent execution and management.
 
-Microsoft Graph agent registry APIs accept Microsoft Entra access tokens. The tokens can be app only tokens or app + user / delegated tokens. This requires you to have the appropriate permissions configured to be authorized for the specific API calls. How these tokens are retrieved from Microsoft Entra depends on the nature of your application.
+1. Ensure you have the necessary permissions:
+   - For delegated flows: `AgentInstance.ReadWrite.All`
+   - For app-only flows: `AgentInstance.ReadWrite.All`, `AgentInstance.ReadWrite.ManagedBy`
 
-You require the `https://graph.microsoft.com/.default` scope to call registry APIs.
+1. Make a POST request to register the agent.
 
-### Publish agent to registry
+```http
+POST /beta/agentRegistry/agentInstances
+Authorization: Bearer {token}
+Content-Type: application/json
 
-Publishing an agent to registry is only supported via an API call. Agent card manifests can only be created through deep insert when creating / updating an agent instance. Direct POST to the agentCardManifests collection isn't supported.
+{
+    "displayName": "My Agent Instance",
+    "ownerIds": [
+        "11112222-bbbb-3333-cccc-4444dddd5555"
+    ],
+    "sourceAgentId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+    "originatingStore": "Copilot Studio",
+    "agentIdentityBlueprintId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
+    "agentIdentityId": "aaaabbbb-6666-cccc-7777-dddd8888eeee",
+    "agentUserId": "22cc22cc-dd33-ee44-ff55-66aa66aa66aa",
+    "url": "https://conditional-access-agent.example.com/a2a/v1",
+    "preferredTransport": "JSONRPC",
+    "additionalInterfaces": [
+        {
+            "url": "https://conditional-access-agent.example.com/a2a/v1",
+            "transport": "JSONRPC"
+        },
+        {
+            "url": "https://conditional-access-agent.example.com/a2a/grpc",
+            "transport": "GRPC"
+        },
+        {
+            "url": "https://conditional-access-agent.example.com/a2a/json",
+            "transport": "HTTP+JSON"
+        }
+    ],
+    "signatures": [
+        {
+            "protected": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+            "signature": "BB88CC99DD00EE11FF22AA33BB44CC55DD66EE77",
+            "header": {
+                "kidHint": "contoso-key-1",
+                "nonce": "mN7oP8qR9sT0uV1wX2-yZ3aB4dE="
+            }
+        }
+    ]
+}
+```
+The response includes the created agent instance with timestamps and confirms successful registration. The `sourceAgentId` links your agent to its original platform identifier, while `originatingStore` indicates the platform where the agent was created.
 
-After acquiring your auth token, you have the following options to publish your agent to the registry.
+### Register agent card
 
-- Create an agent instance with the agent card in a single call
-- Create an agent instance first then update it to include the agent card
+The agent card manifest provides discovery metadata that enables other agents and applications to find and interact with your agent. Using the same authentication token, register the agent card using the following API call:
 
-#### Create an agent instance with an agent card in a single call
-
-- Ensure you have the necessary permissions. 
-    - For delegated flows, `AgentInstance.ReadWrite.All` and `AgentCardManifest.ReadWrite.All`
-    - For app-only flows, (`AgentInstance.ReadWrite.All` or `AgentInstance.ReadWrite.ManagedBy`) and (`AgentCardManifest.ReadWrite.All` or `AgentCardManifest.ReadWrite.ManagedBy`).
-
-- Do a POST call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances*. Attach your access token as a bearer token in the authorization header.
-
-- Provide the agent instance and agent card details in your payload. You have the option of either creating a new agent card manifest in the process, or using an existing one.
-
-    To create a new agent card manifest in the process, your payload looks something like the below
-    
-    ```http
+```http
     POST /beta/agentRegistry/agentInstances
     Authorization: Bearer {token}
     Content-Type: application/json
@@ -111,87 +156,13 @@ After acquiring your auth token, you have the following options to publish your 
         "skills": []
       }
     }
-    ```
+```
 
-    To use an existing agent card manifest, your payload looks something like the following example
-
-    ```http
-    POST /beta/agentRegistry/agentInstances
-    Authorization: Bearer {token}
-    Content-Type: application/json
-    
-    {
-      "displayName": "",
-      "ownerIds": [],
-      "sourceAgentId": "",
-      "originatingStore": "",
-      "agentIdentityBlueprintId": "",
-      "agentIdentityId": "",
-      "agentUserId": "",
-      "url": "",
-      "preferredTransport": "",
-      "additionalInterfaces": [],
-      "signatures": [],
-      "agentCardManifest@odata.bind": ""
-    }
-    ```
-    
-- If successful, you get a 201 response from the registry API.
-
-#### Create an agent instance first then update it to include the agent card
-
-- Ensure you have the necessary permissions. 
-    - For delegated flows, `AgentInstance.ReadWrite.All`
-    - For app-only flows, `AgentInstance.ReadWrite.All` and `AgentInstance.ReadWrite.ManagedBy`.
-
-- Do a POST call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances*. Attach your access token as a bearer token in the authorization header.
-
-- Provide the agent instance and agent card details in your payload.
-
-    ```http
-    POST /beta/agentRegistry/agentInstances
-    Authorization: Bearer {token}
-    Content-Type: application/json
-    
-    {
-      "displayName": "",
-      "ownerIds": [],
-      "sourceAgentId": "",
-      "originatingStore": "",
-      "agentIdentityBlueprintId": "",
-      "agentIdentityId": "",
-      "agentUserId": "",
-      "url": "",
-      "preferredTransport": "",
-      "additionalInterfaces": [],
-      "signatures": []
-    }
-    ```
-
-- If successful, the API will return http status 201 after creating the agent instance only.
-
-- Ensure you have the following permissions:
-
-    - For delegated flows `AgentInstance.ReadWrite.All` and `AgentCardManifest.Read.All`.
-    - For app-only flows (`AgentInstance.ReadWrite.All` or `AgentInstance.ReadWrite.ManagedBy`) and `AgentCardManifest.Read.All`.
-
-- Update the agent instance to include the agent card manifest. Do a PATCH call to the Microsoft Graph API endpoint *https://graph.microsoft.com/v1.0/agentRegistry/agentInstances/{agent-id}*. Attach your access token as a bearer token in the authorization header.
-
-    ```http
-    PATCH /beta/agentRegistry/agentInstances/00000000-0000-0000-0000-000000000000
-    Authorization: Bearer {token}
-    Content-Type: application/json
-
-    {
-      "agentCardManifest@odata.bind": "https://canary.graph.microsoft.com/beta/agentRegistry/agentCardManifests('8d4c5a5c-7c6e-4b1d-8e3b-3f2c1a9d1234')"
-    }
-    ```
-
-- If successful, the API will return http status 204 after updating the agent instance to include the agent card manifest.
+The skills array defines specific capabilities your agent provides, enabling precise discovery based on required functionality. The capabilities object specifies technical features your agent supports for integration protocols.
 
 ### Handle registration responses
 
-Successful registration returns HTTP 201 Created with the complete agent information including system-generated timestamps. If registration fails, the response includes error details to help resolve issues:
+Successful registration returns `HTTP 201`, created with the complete agent information including system-generated timestamps. If registration fails, the response includes error details to help resolve issues:
 
 | Error Code | Description | Resolution |
 |------------|-------------|------------|
@@ -199,42 +170,50 @@ Successful registration returns HTTP 201 Created with the complete agent informa
 | `Unauthorized` | Authentication token invalid | Refresh token and retry request |
 | `AgentAlreadyExists` | Agent ID already registered | Use different ID or update existing agent |
 
+Common validation errors include missing required fields like `id` and `isBlocked` for agent instances, or `name` and `skills` for agent cards.
+
 ## Verify agent registration
 
-After registration, confirm your agent appears correctly in the registry.
+After registration, confirm your agent appears correctly in the registry. You can verify registration through the Microsoft Entra Admin Center or using the Microsoft Graph API.
 
-### Verify in Microsoft Entra admin center
-
-You can verify registration through the Microsoft Entra Admin Center. 
+### [Microsoft Entra admin center](#tab/Microsoft-Entra-admin-center)
 
 1. Navigate to **Agent identities**
-1. Select **Agent Registry**. If your agent was created manually, it won't have an agent ID if you created it manually. If the agent was created via Microsoft platforms, it has an agent ID.
+1. Select **Agent Registry**. Your agent won't have an agent ID but you're able to view its associated metadata if you provided the information during registration.
 
-### Verify using the registry API
+### [Microsoft Graph API](#tab/Microsoft-Graph-API)
 
 Query the registry to verify your agent registration: Send an API call to retrieve a specific agent instance by its unique identifier.
 
 ```http
-GET https://graph.microsoft.com/v1.0/agentRegistry/agentInstances/{agent-instance-id}
+GET https://graph.microsoft.com/beta/agentRegistry/agentInstances/{agent-instance-id}
 Authorization: Bearer {token}
+```
+
+## Test agent discovery
+
+The response should return your agent's complete information including creation timestamps and current status. For agent cards, use the corresponding endpoint:
+
+```HTTP
+GET /beta/agentRegistry/agentInstances/{id}/agentCardManifest
+Verify that other applications can discover your agent by testing discovery queries based on skills or capabilities. Agents with properly configured metadata should appear in relevant search results based on their registered skills and attributes.
 ```
 
 ## Update registered agents
 
-Registered agents can be updated to reflect changes in capabilities, endpoints, or metadata without requiring complete re-registration. Updates to agent cards immediately affect discovery results, while agent instance updates impact operational routing and access controls.
+Registered agents can be updated to reflect changes in capabilities, endpoints, or metadata without requiring complete re-registration.
 
 ### Update agent instance
 
 Modify operational details using PATCH requests:
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/agentRegistry/agentInstances/{agent-id}
+PATCH /beta/agentRegistry/agentInstances/693cc239-6811-49ed-8e64-fa8fad5aaa20
 Authorization: Bearer {token}
 Content-Type: application/json
-
 {
-  "endpointUrl": "https://new-agent-endpoint.com",
-  "isBlocked": false
+  "displayName": "Updated Agent Display Name",
+  "url": "https://new-endpoint.example.com/a2a/v1"
 }
 ```
 
@@ -243,12 +222,25 @@ Content-Type: application/json
 Send a PATCH request to update discovery metadata:
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/agentRegistry/agentCardManifests/{card-id}
-Authorization: Bearer {token}
+PATCH /beta/agentRegistry/agentCardManifests/8d4c5a5c-7c6e-4b1d-8e3b-3f2c1a9d1234
 Content-Type: application/json
-
 {
-  "description": "Updated AI assistant with enhanced capabilities",
-  "version": "2.0.0"
+  "securitySchemes": {
+    "openIdConnectAuth": {
+      "@odata.type": "#microsoft.graph.openIdConnectSecurityScheme",
+      "type": "openIdConnect",
+      "description": "OIDC identity",
+      "openIdConnectUrl": "https://login.microsoftonline.com/{tenantId}/v2.0/.well-known/openid-configuration"
+    }
+  },
+  "security": [
+    { "apiKeyAuth": [] },
+    { "openIdConnectAuth": [] }
+  ]
 }
 ```
+
+## Related content
+
+- [What are agent IDs?](what-is-agent-id.md)
+- [Agent Registry collections](agent-registry-collections.md)

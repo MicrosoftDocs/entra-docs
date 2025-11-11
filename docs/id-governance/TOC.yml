@@ -5,6 +5,8 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
+  - name: Governing Agent IDs (Preview)
+    href: agent-ID-governance-overview.md    
 
 
 - name: Scenarios
@@ -330,7 +332,7 @@
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
-        href: entitlement-management-access-reviews-self-review.md  
+        href: entitlement-management-access-reviews-self-review.md   
     - name: Requestors
       items:
       - name: Request access
@@ -359,6 +361,10 @@
         href: access-reviews-application-preparation.md
       - name: Create an access review
         href: create-access-review.md
+      - name: Catalog access reviews (Preview)
+        href: catalog-access-reviews.md
+      - name: Custom data provided resources
+        href: custom-data-resource-access-reviews.md      
       - name: Review access
         href: perform-access-review.md
       - name: Review access for yourself
@@ -422,7 +428,9 @@
         - name: Check Workflow Insights
           href: manage-workflow-insights.md
         - name: Sensitivity Labels in Lifecycle Workflows
-          href: workflow-sensitivity-labels.md                
+          href: workflow-sensitivity-labels.md 
+        - name: Agent Identity Sponsor Tasks (Preview)
+          href: agent-sponsor-tasks.md       
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow

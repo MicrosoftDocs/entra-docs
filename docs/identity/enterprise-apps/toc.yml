@@ -11,7 +11,7 @@ items:
   - name: App lifecycle management Agent
     expanded: true
     items:
-    - name: Get started with App lifecycle management agent
+    - name: Get started with App lifecycle Management Agent
       href: agent-app-lifecycle-management.md
     - name: Discover and onboard apps
       href: agent-app-lifecycle-discovery-onboard.md
@@ -302,6 +302,8 @@ items:
         href: application-sign-in-problem-first-party-microsoft.md
     - name: Delete and restore apps
       items:
+      - name: Deactivate an enterprise application
+        href: deactivate-application-portal.md
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application

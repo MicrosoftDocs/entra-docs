@@ -1,60 +1,61 @@
 ---
-title: Enable secure Agent-to-Agent collaboration through the Microsoft Entra agent registry API
-titleSuffix: Microsoft Entra Agent ID
-description: Learn how to enable secure Agent-to-Agent (A2A) collaboration through the Microsoft Entra Agent Registry API using the A2A protocol.
-author: SHERMANOUKO
+title: Enable secure agent communication through the Agent Registry API
+description: Learn how to enable secure agent communication through the Microsoft Entra Agent Registry API.
+author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/04/2025
+ms.date: 11/07/2025
+ms.author: sarahlipsey
 ms.custom: agent-id-ignite
-ms.author: shermanouko
 ms.reviewer: jadedsouza
 #Customer intent: As a developer building interconnected AI agents, I want to understand the Agent-to-Agent protocol so that I can enable secure communication and collaboration between agents.
 ---
 
-# Enable secure Agent-to-Agent collaboration through the Microsoft Entra agent registry API
+# Enable secure agent communication with the Agent Registry API
 
-Agent-to-Agent (A2A) collaboration enables secure interactions between AI agents through the Microsoft Entra Agent Registry API. The A2A protocol provides a common language and standardized approach for agent communication to boost interoperability and break organizational silos. This enables agents from different developers, built on different frameworks, and owned by different owners to work together.
+Agent Communication enables secure interactions between AI agents through the Microsoft Entra Agent Registry API. Agent communication through Agent Registry provides a common language and standardized approach for agent communication to boost interoperability and break organizational silos. This capability enables agents from different developers, built on different frameworks, and owned by different owners to work together.
 
-## Understanding A2A interactions
+## Understanding agent communication
 
-There are three major components in agent to agent collaboration:
+There are three major components in agent communication:
 
-- The agent card is a JSON document that serves as a business card for the agents. Each Agent Card contains essential metadata about an agent's identity, capabilities, endpoint, skills, and authentication requirements. The Registry parses this information to determine if an agent is suitable for a given task, how to structure requests, and how to communicate securely. You can't do A2A discovery without an Agent Card.
-- The A2A client, also referred to as the Client Agent, initiates communication using the A2A protocol and orchestrates interactions with other agents to accomplish tasks. Clients parse the information contained in an Agent Card to determine if an agent is suitable for a given task, how to structure requests, and how to communicate securely.
-- The A2A server, also known as the Remote agent, is an AI agent or agentic system that exposes an HTTP endpoint implementing the A2A protocol. It receives requests and processes tasks to accomplish the requests. The inner workings of the remote agent aren't exposed to the client agent.
+- **Agent manifest**: The agent manifest is a JSON document that serves as a business card for the agents. Each agent manifest contains essential metadata about an agent's identity, capabilities, endpoint, skills, and authentication requirements. The Registry parses this information to determine if an agent is suitable for a given task, how to structure requests, and how to communicate securely. You can't use agent communication without an agent manifest.
+- **Client agent**: The client agent initiates communication and orchestrates interactions with other agents to accomplish tasks. Clients parse the information contained in an agent manifest to determine if an agent is suitable for a given task, how to structure requests, and how to communicate securely.
+- **Remote agent**: The remote agent is an autonomous agent or system that exposes an HTTP endpoint, implementing the agent communication. The remote agent receives requests and processes tasks to accomplish the requests. The inner workings of the remote agent aren't exposed to the client agent.
 
-## Test A2A collaboration
+## Test agent communication
 
-To test A2A discovery or communication using agent registry, follow these steps:  
+To test agent communication using Agent Registry, you need to validate that your client agent has an agent ID.
 
-1. Validate that your client agent has an agent ID. Do this by checking the agents with agent identities tab in the Microsoft Entra admin center. You can also do so by doing an API call.
-
-    ```http
-    GET https://graph.microsoft.com/beta/agentRegistry/agentInstances/{agentInstance-id}
-    ```
-
-    In the returned payload, check whether the `agentIdentityId` field has a value.
-
-1. Validate that your remote (target) agent, exists in the agent registry. You can do this by checking both the agent with IDs and agents without IDs tabs in the Microsoft Entra admin center. You can also do so by doing an API call.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator).
+1. Browse to **Agent ID** > **Agent Registry** and validate that your client agent has an agent ID.
+    - Only agents with an agent ID can query the Agent Registry.
+    - In the returned payload, check whether the `agentIdentityId` field has a value.
+    - You can also use the following API call:
 
     ```http
     GET https://graph.microsoft.com/beta/agentRegistry/agentInstances/{agentInstance-id}
     ```
 
-    The A2A communication isn't possible if the agent doesn't exist in the registry. In several scenarios, you might go direct to step 3 since you're looking for agents with a specific attribute and you might not know the agent app registry ID.
+1. Validate that your remote (target) agent, exists in the Agent Registry.
+    - Agent discovery isn't possible if the agent doesn't exist in the registry. In several scenarios, you might be able to skip to the following step if you're looking for agents with a specific attribute but you need the registry ID.
+    - You can also use the following API call:
 
-1. Query the Agent Registry using attributes like *agentName*, *capabilities*, *collection*, *id, and so on. This retrieves all the agent cards for all the agents that match the query. In the following example, we query by *displayName* property and only retrieves specific agent card attributes.
+    ```http
+    GET https://graph.microsoft.com/beta/agentRegistry/agentInstances/{agentInstance-id}
+    ```
+
+1. Query the Agent Registry using attributes like `skills`, `agentName`, `capabilities`, `collection`, `id`, and so on. This step retrieves all the agent cards for all the agents that match the query.
+    - In the following example, we query by the `displayName` property and only retrieve specific agent manifest attributes.
+    - The response from this call contains the agent cards and baseUrl for the agent communication endpoint of the matching agents. It's important to retrieve the agent manifest, because it's a JSON document that serves as a digital business card for initial discovery and interaction setup.
 
     ```http
     GET https://graph.microsoft.com/beta/agentRegistry/agentCardManifests?$filter=displayName eq 'Sample Agent Card'&$select=id,displayName,skills
     Authorization: Bearer {token}
     ```
 
-    The response from this call contains the agent cards and baseUrl for the A2A endpoint of the matching agents. It’s important to retrieve the Agent Card as it is a JSON document that serves as a digital business card for initial discovery and interaction setup.
-
-1. Registry validates policies and scopes by confirming from the agent card JSON document that the remote (target) agent is in the approved collection and that communication is allowed based on the set policies. If validation fails, registry denies the call with one of the following error codes
+1. Agent Registry validates discovery policies (secure by default and custom, if applicable) by confirming from the agent manifest JSON document that the remote (target) agent is in the global or custom collection and that communication is allowed based on the set policies. If validation fails, the registry denies the call with one of the following error codes:
 
     | HTTP Status | Error Code         | Description                 |
     |-------------|--------------------|-----------------------------|
@@ -66,7 +67,7 @@ To test A2A discovery or communication using agent registry, follow these step
     | 500         | InternalServerError| Server error                |
 
 
-1. Send the collaboration message to the remote (target) agent using JSON-RPC specification from client (source) agent to remote (target) agent. The payload should include the following:
+1. Send the collaboration message to the remote (target) agent using [JSON-RPC specification](https://www.jsonrpc.org/specification) from the client (source) agent to the remote (target) agent. The payload should include the following:
 
     - `method`: Action to invoke  
     - `params`: Input data  

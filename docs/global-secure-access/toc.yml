@@ -59,10 +59,12 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
-  - name: Continuous Access Evaluation for Application Proxy (preview)
+  - name: Continuous Access Evaluation for Application Proxy
     href: concept-continuous-access-evaluation.md
-  - name: B2B Guest Access (preview)
+  - name: B2B Guest Access
     href: concept-b2b-guest-access.md
+  - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+    href: concept-secure-web-ai-gateway-agents.md
 - name: How-to guides
   expanded: true
   items:
@@ -193,6 +195,10 @@ items:
         href: how-to-customize-block-page.md
       - name: Network content filtering
         href: how-to-network-content-filtering.md
+      - name: Configure the AI Gateway Prompt Shield
+        href: how-to-ai-prompt-shield.md
+      - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+        href: how-to-secure-web-ai-gateway-agents.md
   - name: Logs and monitoring
     expanded: false
     items:
@@ -258,6 +264,8 @@ items:
          items:
             - name: Integration with Netskope
               href: concept-netskope-integration.md
+            - name: Create a custom Data Loss Prevention (DLP) profile
+              href: how-to-full-data-loss-protection.md
        - name: Coexistence with partners
          expanded: false
          items:
