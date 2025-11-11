@@ -12,6 +12,7 @@ You can allow users who sign in with an email address and password to also sign 
 
 You can assign usernames to the user account manually via the Microsoft Entra admin center or automate it in your app via the Microsoft Graph API.    
 
-Use the following steps to enable sign-in using a username:
+Use the following steps to enable sign-in using a username in your application:
 
-1. 
+1. [Enable username in sign-in](../../../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
+1. [Create users with username in the admin center](../../../external-id/customers/how-to-sign-in-alias.md#create-users-with-username-in-the-admin-center) or [Update existing users to add a username](../../../external-id/customers/how-to-sign-in-alias.md#update-existing-users-to-add-a-username-in-the-admin-center). You can also [automate user creation and updating in your app by using the Microsoft Graph API](../../../external-id/customers/how-to-sign-in-alias.md#add-a-username-to-existing-users-with-the-microsoft-graph-api).
