@@ -34,7 +34,7 @@ You can complete the integration in both the Microsoft Entra admin center and th
 - An [external tenant](how-to-create-external-tenant-portal.md).
 - A [registered application](/entra/identity-platform/quickstart-register-app) in the tenant.
 - An account with at least an [Authentication Extensibility Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-extensibility-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role in the external tenant.
-- An Arkose Labs account. Go to arkoselabs.com to [request a demo](https://www.arkoselabs.com/bot-management-demo/)
+- An Arkose Labs account. If you don’t have one, go to the [Security Store](https://securitystore.microsoft.com/solutions/arkoselabs1589934191756.arkose_securitystore) to create and purchase your account.
 - The following configuration values from Arkose:
     - Public key (GUID format).
     - Private key (GUID format).
@@ -60,6 +60,7 @@ To integrate Arkose Labs with Microsoft Entra External ID, you can use the Secur
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/choose-fraud-protection-provider.png" alt-text="Screenshot showing selecting the Arkose Labs fraud protection provider.":::
 
+1. Create an Arkose Account. If you don’t have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/arkoselabs1589934191756.arkose_securitystore). Then return here to complete the setup.
 1. In the **Configure Arkose Labs for sign-up protection** step, select the **Create new** configuration, and enter the configuration values you received from Arkose Labs:
     - **Public key**: Enter the public key (GUID format).
     - **Private key**: Enter the private key (GUID format).
@@ -68,7 +69,7 @@ To integrate Arkose Labs with Microsoft Entra External ID, you can use the Secur
 
 1. Or select an existing configuration if you have already set one up and select **Next**.
 
-   :::image type="content" source="media/how-to-integrate-fraud-protection/provider-configuration.png" alt-text="Screenshot showing configuring the Arkose Labs provider.":::
+   :::image type="content" source="media/how-to-integrate-fraud-protection/provider-configuration.png" alt-text="Screenshot showing configuring the Arkose Labs provider." lightbox="media/how-to-integrate-fraud-protection/provider-configuration.png.png":::
 
 1. Select the app you want to protect with Arkose Labs fraud protection. You can select one or more applications that you have registered in your external tenant.
 
@@ -194,7 +195,7 @@ When a user initiates the sign-up process, it is critical to prevent automated b
 - An [external tenant](how-to-create-external-tenant-portal.md).
 - A [registered application](/entra/identity-platform/quickstart-register-app) in the tenant.
 - An account with at least an [Authentication Extensibility Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-extensibility-administrator) or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role in the external tenant.
-- Create a HUMAN Security account: Contact Human Security (entra@humansecurity.com) to create and set up a free HUMAN Security account. 
+- A HUMAN Security account. If you don’t have one, go to the [Security Store](https://securitystore.microsoft.com/solutions/human_security.human_sightline_fake_account_defense) to create and purchase your account.
 - The following configuration values from HUMAN Security:
   - Application ID
   - Server token
@@ -219,6 +220,10 @@ To integrate HUMAN Security with Microsoft Entra External ID, you can use the Se
 1. In the **Choose a fraud protection provider for sign-up** step, select **HUMAN Security** as the provider and select **Next**.
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/choose-fraud-protection-provider-human.png" alt-text="Screenshot showing selecting the HUMAN Security fraud protection provider.":::
+
+1. Create a HUMAN Security account. If you don’t have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/human_security.human_sightline_fake_account_defense). Then return here to complete the setup.
+
+   :::image type="content" source="media\how-to-integrate-fraud-protection\provider-configuration-human.png" alt-text="Screenshot showing configuring the HUMAN Security fraud protection provider." lightbox="media\how-to-integrate-fraud-protection\provider-configuration-human.png":::
 
 1. In the **Configure HUMAN Security for sign-up protection** step, select the **Create new** configuration, and enter the configuration values you received from HUMAN Security:
     - **App Id**: Enter the Application ID from HUMAN Security.
