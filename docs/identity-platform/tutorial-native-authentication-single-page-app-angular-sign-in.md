@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 07/30/2025
+ms.date: 11/17/2025
 #Customer intent: As a developer, I want to build an Angular single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
 ---
 
@@ -105,6 +105,11 @@ export const routes: Routes = [
 1. Open a web browser and navigate to `http://localhost:4200/sign-in`. A sign-in form appears.
 
 1. To sign in into an existing account, input your details, select the Sign In button, then follow the prompts.
+
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Next step
 

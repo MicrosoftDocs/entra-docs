@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
-ms.date: 09/05/2025
+ms.date: 11/17/2025
 ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
@@ -42,9 +42,13 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the API signIn. Alternatively, you can get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the sign-in API. Alternatively, you can get this test user after you run the sign-up flow.
 
-1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method.  
+1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method. 
+
+1. If you want to allow users who sign in with an email address and password to also sign in with a username and password, use the steps in [Sign in with an alias or username](../external-id/customers/how-to-sign-in-alias.md) article:
+    1. [Enable username in sign-in](../external-id/customers/how-to-sign-in-alias.md#enable-username-in-sign-in-identifier-policy).
+    2. [Create users with username in the admin center](../external-id/customers/how-to-sign-in-alias.md#create-users-with-username-in-the-admin-center) or [update existing users to by adding a username](../external-id/customers/how-to-sign-in-alias.md#update-existing-users-to-add-a-username-in-the-admin-center). Alternatively, you can also [automate user creation and updating in your app by using the Microsoft Graph API](../external-id/customers/how-to-sign-in-alias.md#add-a-username-to-existing-users-with-the-microsoft-graph-api). 
 
 ## Continuation token
 
@@ -860,13 +864,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/user-attribute-format.md)]
 
-## API signIn reference
+## Sign-in API reference
 
 Users need to sign in with the authentication method that they use to sign up. For example, users who sign up using email with password authentication method must sign in email and password.
 
 To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
-### API signIn endpoints
+### Sign-in API endpoints
 
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
