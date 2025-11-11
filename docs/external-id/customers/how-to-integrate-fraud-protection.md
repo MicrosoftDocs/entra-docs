@@ -61,16 +61,16 @@ To integrate Arkose Labs with Microsoft Entra External ID, you can use the Secur
    :::image type="content" source="media/how-to-integrate-fraud-protection/choose-fraud-protection-provider.png" alt-text="Screenshot showing selecting the Arkose Labs fraud protection provider.":::
 
 1. Create an Arkose Account. If you don’t have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/arkoselabs1589934191756.arkose_securitystore). Then return here to complete the setup.
-1. In the **Configure Arkose Labs for sign-up protection** step, select the **Create new** configuration, and enter the configuration values you received from Arkose Labs:
+
+   :::image type="content" source="media/how-to-integrate-fraud-protection/provider-configuration.png" alt-text="Screenshot showing configuring the Arkose Labs provider." lightbox="media/how-to-integrate-fraud-protection/provider-configuration.png":::
+
+1. In the **Configure Arkose Labs for sign-up protection** step, either select an existing configuration or select the **Create new** configuration, and enter the configuration values you received from Arkose Labs:
     - **Public key**: Enter the public key (GUID format).
     - **Private key**: Enter the private key (GUID format).
     - **Client subdomain**: Enter only the subdomain prefix (for example, "client-api"), not the full domain.
     - **Verify subdomain**: Enter only the subdomain prefix (for example, "verify-api"), not the full domain.
 
-1. Or select an existing configuration if you have already set one up and select **Next**.
-
-   :::image type="content" source="media/how-to-integrate-fraud-protection/provider-configuration.png" alt-text="Screenshot showing configuring the Arkose Labs provider." lightbox="media/how-to-integrate-fraud-protection/provider-configuration.png.png":::
-
+1. Select **Next** to go to the next step.
 1. Select the app you want to protect with Arkose Labs fraud protection. You can select one or more applications that you have registered in your external tenant.
 
    :::image type="content" source="media/how-to-integrate-fraud-protection/select-apps-to-protect.png" alt-text="Screenshot showing selecting an application to protect.":::
