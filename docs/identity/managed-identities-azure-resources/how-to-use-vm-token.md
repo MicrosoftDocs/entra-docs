@@ -10,7 +10,7 @@ ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.custom: devx-track-dotnet, devx-track-extended-java
-ms.date: 02/27/2025
+ms.date: 11/11/2025
 ms.author: shermanouko
 
 ---
@@ -99,9 +99,9 @@ Content-Type: application/json
 | `resource` | The resource the access token was requested for, which matches the `resource` query string parameter of the request. |
 | `token_type` | The type of token, which is a "Bearer" access token, which means the resource can give access to the bearer of this token. |
 
-## Get a token using the Azure identity client library
+## Get a token using the Azure Identity client library
 
-Using the Azure identity client library is the recommended way to use managed identities. All Azure SDKs are integrated with the ```Azure.Identity``` library that provides support for DefaultAzureCredential. This class makes it easy to use Managed Identities with Azure SDKs.[Learn more](/dotnet/api/overview/azure/identity-readme)
+Using the Azure Identity client library is the recommended way to use managed identities. Complete the following steps:
 
 1. Install the [Azure.Identity](https://www.nuget.org/packages/Azure.Identity) package and other required [Azure SDK library packages](https://aka.ms/azsdk), such as [Azure.Security.KeyVault.Secrets](https://www.nuget.org/packages/Azure.Security.KeyVault.Secrets/).
 2. Use the sample code below. You don't need to worry about getting tokens. You can directly use the Azure SDK clients. The code is for demonstrating how to get the token, if you need to.
@@ -109,16 +109,23 @@ Using the Azure identity client library is the recommended way to use managed id
     ```csharp
     using Azure.Core;
     using Azure.Identity;
+    using Azure.Security.KeyVault.Secrets;
     
-    string managedIdentityClientId = "<your managed identity client Id>";
-    var credential = new ManagedIdentityCredential(managedIdentityClientId);
-    var accessToken = await credential.GetTokenAsync(new TokenRequestContext(["https://vault.azure.net"]));
-    // To print the token, you can convert it to string 
-    var accessTokenString = accessToken.Token;
+    ManagedIdentityCredential credential = new(
+        ManagedIdentityId.FromUserAssignedClientId("<managed_identity_client_ID>"));
     
-    // You can use the credential object directly with Key Vault client.     
-    var client = new SecretClient(new Uri("https://myvault.vault.azure.net/"), credential);
+    // Option 1: Explicit token acquisition. Manually fetch the token and convert to a string, if necessary.
+    AccessToken accessToken = await credential.GetTokenAsync(
+        new TokenRequestContext(["https://vault.azure.net"]));
+    string accessTokenString = accessToken.Token;
+    
+    // Option 2: Implicit token acquisition. Pass the credential object to the Azure service client constructor.
+    // Token acquisition is triggered on the GetSecretAsync method call.
+    SecretClient client = new(new Uri("https://myvault.vault.azure.net/"), credential);
+    KeyVaultSecret secret = await client.GetSecretAsync("MySecret");
     ```
+
+For more information, see [Use a user-assigned managed identity](https://learn.microsoft.com/dotnet/azure/sdk/authentication/user-assigned-managed-identity) and [Use a system-assigned managed identity](https://learn.microsoft.com/dotnet/azure/sdk/authentication/system-assigned-managed-identity).
 
 ## Get a token using C#
 
