@@ -138,7 +138,7 @@ After completing the configuration steps, verify that Akamai WAF is protecting y
   :::image type="content" source="media\how-to-configure-akamai-integration\choose-waf-provider.png" alt-text="Screenshot of the choose WAF provider page.":::
 
 6. Create an Akamai account. If you don’t have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public). Then return here to complete the setup.
-7. Under **WAF provider configuration**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
+7. Under **Configure Akamai WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
     - **Configuration name**: A name for the WAF configuration.
     - **Host prefix**: The host prefix from your Akamai EdgeGrid API credentials.
     - **Client secret**: The client secret from your Akamai EdgeGrid API credentials.
