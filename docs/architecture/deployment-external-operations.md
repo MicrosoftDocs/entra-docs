@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 11/10/2025
+ms.date: 11/11/2025
 ms.author: gasinh
 
 #customer intent: I need to understand subscriptions and billing, consumer app security, and how to prevent fraud tactics in Microsoft Entra External ID. 
@@ -64,7 +64,7 @@ Use the following table to learn about security controls and their descriptions.
 |IP and ASN throttling|Similar to geo-fencing, you can restrict or rate-limit traffic based on IP address or Autonomous System Number (ASN). While customer identities typically originate from diverse but low-volume IPs, review exceptions such as kiosks or high-throughput systems for instance, insurance agents. Unusually, high request volumes from a single IP or ASN trigger scrutiny.|
 |Block traffic to default domain|When using WAF protection, block access to the default **ciamlogin.com** domain name. Otherwise, attackers use the domain name and bypass WAF protections.|
 
-Microsoft Entra External ID enables you to integrate with leading Web Application Firewall (WAF) providers, such as [Cloudflare](../external-id/customers/how-to-configure-cloudflare-integration.md) and [Akamai](../external-id/customers/how-to-configure-akamai-integration.md), to deliver edge-level protection against DDoS attacks, OWASP Top 10 vulnerabilities, and malicious bots. This integration ensures filtering of harmful traffic before it reaches your tenant. We strongly recommend customers use these WAF solutions to enhance and enforce the security controls in the previous table.
+Microsoft Entra External ID enables you to integrate with leading Web Application Firewall (WAF) providers, such as [Cloudflare](../external-id/customers/how-to-configure-waf-integration.md) and [Akamai](../external-id/customers/how-to-configure-akamai-integration.md), to deliver edge-level protection against DDoS attacks, OWASP Top 10 vulnerabilities, and malicious bots. This integration ensures filtering of harmful traffic before it reaches your tenant. We strongly recommend customers use these WAF solutions to enhance and enforce the security controls in the previous table.
 
 ## Application security: Credential and secret management
 
@@ -241,5 +241,6 @@ In the [Microsoft Entra admin center](https://entra.microsoft.com), under Monito
 * [Customer authentication experience](deployment-external-customer-authentication.md)
 * [Authentication and access control architecture](deployment-external-authentication-access-control.md)
 * [Security fundamentals for external tenants](../external-id/customers/concept-security-customers.md)
+
 
 
