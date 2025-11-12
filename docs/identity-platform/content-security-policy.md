@@ -32,14 +32,13 @@ XSS is one of the most common injection attacks. It enables attackers to run mal
 
 CSP further helps shield against these attacks by restricting which scripts can execute in the browser. By enforcing CSP, Microsoft Entra ID ensures only trusted Microsoft code runs during sign-in.
 
-## Threat analysis
+## CSP is a defense in depth
 
-CSP adds an important layer of defense against script injection attacks like XSS. The primary defense is to prevent malicious scripts from being injected into a website in the first place. Microsoft Entra and modern browsers already implement mechanisms to achieve this. However, if a script bypasses those protections—such as through a malicious browser extension or a zero-day vulnerability—CSP blocks it from executing. CSP achieves this by allow-listing only trusted script nonces and origins and blocking everything else by default. This defense-in-depth approach strengthens existing security measures.
-
+CSP adds an important layer of defense against script injection attacks like XSS. Today, Microsoft Entra, and modern browsers already implement mechanisms to prevent malicious scripts from being injected into a website as a first and primary layer of defense. However, n cases where a script can be injected despite those mechanisms—such as through a user-installed malicious browser extension or a zero-day vulnerability—CSP prevents that script from executing. CSP achieves this by allow-listing only trusted script nonces and origins and blocking everything else by default. This defense-in-depth approach strengthens existing security measures.
 
 ## CSP enforcement scope and key details
 
-CSP enforcement focuses on the Microsoft Entra sign-in experience by allowing scripts only from trusted Microsoft domains. This minimizes opportunities for unauthorized external script injection. Our analysis shows most violations come from external browser extensions or injected scripts linked to non-Microsoft tools.
+CSP enforcement further hardens the security of the Microsoft Entra sign-in experience by only allowing scripts to run from trusted Microsoft domains. This minimizes opportunities for unauthorized external script injection. Our analysis shows most violations come from external browser extensions or injected scripts linked to third-party tools.
 
 Here’s what you need to know about the scope and key details of CSP enforcement:
 
@@ -55,21 +54,14 @@ Customers using tools that rely on injected scripts should work directly with th
 
 ## How to prepare for CSP enforcement
 
-Review your sign-in experience early. Remove browser extensions or tools that inject scripts into the Microsoft Entra sign-in page. If your organization relies on such tools, work with vendors to adopt compliant alternatives before rollout. Test sign-in flows ahead of time to identify and resolve violations, and keep your users’ experience seamless.
+Review your sign-in experience early. Remove or migrate browser extensions and tools that inject scripts into the Microsoft Entra sign-in page. If your organization relies on such tools, work with vendors to adopt compliant alternatives before rollout. 
 
-For detailed steps to test the sign-in experience, see [Customer guidance](#customer-guidance).
+Test sign-in flows ahead of time to identify and resolve violations, minimize disruption, and keep your users’ experience seamless. Use the instructions below to identify the exact effect in your tenant.
 
-## Customer guidance
+- **Step 1**: Go through a sign-in flow with the dev console open to identify any violations.
+- **Step 2**: Review the information about the violation displayed in red. If a specific team or person caused the violation, it appears only in their flows. To ensure accuracy, thoroughly assess different sign-in scenarios within your organization. Here's an example of a violation:
 
-Follow these steps to prepare for CSP enforcement and minimize disruption:
-
-- **Coordinate with vendors**: If violations involve non-Microsoft tools, contact vendors early to ensure compatibility with CSP enforcement. 
-- **Test various sign in flows in your tenant for violations**: Use the instructions below to identify the exact effect in your tenant. 
-
-    - **Step 1**: Go through a sign-in flow with the dev console open to identify any violations.
-    - **Step 2**: Review the information about the violation displayed in red. If a specific team or person caused the violation, it appears only in their flows. To ensure accuracy, thoroughly assess different sign-in scenarios within your organization. Here's an example of a violation:
-
-       [![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
+[![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
 
 This update to our CSP adds an extra layer of protection by blocking unauthorized scripts, further helping safeguard your organization against evolving security threats. To ensure a smooth rollout, test your sign-in flow thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless. 
 
