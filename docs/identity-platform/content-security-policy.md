@@ -34,7 +34,7 @@ CSP further helps shield against these attacks by restricting which scripts can 
 
 ## CSP is a defense in depth
 
-CSP adds an important layer of defense against script injection attacks like XSS. Today, Microsoft Entra, and modern browsers already implement mechanisms to prevent malicious scripts from being injected into a website as a first and primary layer of defense. However, n cases where a script can be injected despite those mechanisms—such as through a user-installed malicious browser extension or a zero-day vulnerability—CSP prevents that script from executing. CSP achieves this by allow-listing only trusted script nonces and origins and blocking everything else by default. This defense-in-depth approach strengthens existing security measures.
+CSP adds an important layer of defense against script injection attacks like XSS. Today, Microsoft Entra, and modern browsers already implement mechanisms to prevent malicious scripts from being injected into a website as a first and primary layer of defense. However, in cases where a script can be injected despite those mechanisms—such as through a user-installed malicious browser extension or a zero-day vulnerability—CSP prevents that script from executing. CSP achieves this by allow-listing only trusted script nonces and origins and blocking everything else by default. This defense-in-depth approach strengthens existing security measures.
 
 ## CSP enforcement scope and key details
 
@@ -61,7 +61,7 @@ Test sign-in flows ahead of time to identify and resolve violations, minimize di
 - **Step 1**: Go through a sign-in flow with the dev console open to identify any violations.
 - **Step 2**: Review the information about the violation displayed in red. If a specific team or person caused the violation, it appears only in their flows. To ensure accuracy, thoroughly assess different sign-in scenarios within your organization. Here's an example of a violation:
 
-[![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
+    [![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
 
 This update to our CSP adds an extra layer of protection by blocking unauthorized scripts, further helping safeguard your organization against evolving security threats. To ensure a smooth rollout, test your sign-in flow thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless. 
 
