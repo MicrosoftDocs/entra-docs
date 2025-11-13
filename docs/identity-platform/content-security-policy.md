@@ -23,7 +23,7 @@ Microsoft recommends not using browser extensions or tools that inject code into
 
 If you use tools or browser extensions that inject code into the Microsoft Entra sign-in page, switch to alternative tools that don’t inject code before this change is released.
 
-For more information on how to prepare for CSP enforcement, see [How to prepare for CSP enforcement](#how-to-prepare-for-csp-enforcement).
+For details on preparing for CSP enforcement, see [How to prepare for CSP enforcement](#how-to-prepare-for-csp-enforcement).
 
 
 ## Risk of script or code injection
