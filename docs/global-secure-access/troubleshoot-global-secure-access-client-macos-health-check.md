@@ -37,14 +37,12 @@ Most of the Health check tests depend on one another. If tests fail:
 ## Health check tests
 The following checks verify the health of the Global Secure Access client.
 
-### Notifications enabled
-Notifications for macOS client are enabled. If disabled, enable the notifications from System Settings.
+### Notifications Enabled
+The **Notifications Enabled** test checks if the macOS Global Secure Access client notifications are enabled. If not enabled, open System Settings and allow the notifications.
+:::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/allow-notifications.png" alt-text="Screen shot of the Global Secure Access notifications settings, with all notfications enabled.":::
 
-<img src="./attachments/img03.png" alt="Left Aligned Image" width="40%">
-
-
-### System extension
-Indicates whether the client's System Extension is installed and active. If this test fails, do the following:
+### System Extension
+This test indicates whether the client's **System Extension** is installed and active. If this test fails:
 1. Check if there is an option to "Allow System Extension" visible in the client menu bar options. If this option is visible, use it to enable the system extension.
 
  <img src="./attachments/img04.png" alt="Left Aligned Image" width="20%">
