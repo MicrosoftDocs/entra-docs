@@ -91,10 +91,10 @@ namespace cust_auth_functions
     {
         #region Configuration Constants
         
-        /// <summary>
         /// Private key for decrypting the encrypted password context
         /// This should be the private part of the key configured in your External ID tenant
-        /// </summary>
+        /// The key here is in a PEM‑encoded PKCS#8 format
+        ///
         private const string DECRYPTION_PRIVATE_KEY = @"-----BEGIN PRIVATE KEY-----
 -----END PRIVATE KEY-----";
 
@@ -454,20 +454,19 @@ namespace cust_auth_functions
 ```
 Each of the response actions corresponds to a specific scenario during the authentication process. This table describes the possible response actions and when to use them.
 
-| Action odataType  | When to Use  | Notes |
+| Response Action  | Scenario  | Entra Behavior |
 |---|---|---|
-| microsoft.graph.passwordSubmit.MigratePassword  | When password validation is successful.   | Upon receiving this action, Entra will continue with the authentication process.  Note that when the submitted password is considered weak by Entra standards, then an UpdatePassword flow is triggered.  |
-| microsoft.graph.passwordSubmit.UpdatePassword  | When the password is correct, but the user needs to update the password (e.g., it is weak or expired.)  | Entra will route the user through a reset password flow.  |
-| microsoft.graph.passwordSubmit.Retry  | When the password is incorrect.  | Let the user retry the authentication process, if allowed.  |
-| microsoft.graph.passwordSubmit.Block  | When to block the authentication and return a custom error to the user.  | Shows a block screen to the user with the custom message provided.  |
+| microsoft.graph.passwordSubmit.MigratePassword  | Password validation succeeds; Entra continues authentication. If password is weak, triggers UpdatePassword flow. | Use when password meets basic validation but fails strength requirements.|
+| microsoft.graph.passwordSubmit.UpdatePassword  | Password is correct but weak or expired. | Routes user through password reset flow. |
+| microsoft.graph.passwordSubmit.Retry  | Password is incorrect. | Allows user to retry authentication if permitted.|
+| microsoft.graph.passwordSubmit.Block  | Authentication must be blocked. | Displays block screen with custom message provided by the app.|
 
 When sending a request to your custom authentication extension, Entra will include a payload with the following schema. This sample payload includes dummy data for illustration purposes only.
 
 ```json
 {  
   "type": "microsoft.graph.authenticationEvent.passwordSubmit",  
-  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/00001111-aaaa-2222-bbbb-3333cccc4444",  
-  "data": {  
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/    00001111-aaaa-2222-bbbb-3333cccc4444",  "data": {  
     "@odata.type": "microsoft.graph.onPasswordSubmitCalloutData",  
     "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",  
     "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",  
@@ -512,6 +511,7 @@ When sending a request to your custom authentication extension, Entra will inclu
     }  
   }  
 } 
+
 ```
 Response schema:  
 
@@ -553,7 +553,7 @@ You also need to configure the application's manifest to define the necessary pr
 
 Your *Function_URL_Hostname* is the host name for the custom extension. For example if the full URL is `https://contoso.onmicrosoft.com/api/JitMigrationEndpoint`,the hostname would be `contoso.onmicrosoft.com`. Your *App_ID* is the application ID from the application you just registered. You can find the application ID on the application's **Overview** page.
 
-Next you need to update the value for *requiredResourceAccess* to include the permissions your application requires. In this case you will be adding the *CustomAuthenticationExtension.Receive.Payload* permission which allows the extension to receive HTTP requests triggered by authentication events. You can find more information on these permissions in the [Microsoft Graph permissions reference](/graph/permissions-reference).
+Next you will be adding the *CustomAuthenticationExtension.Receive.Payload* permission which allows the extension to receive HTTP requests triggered by authentication events. You can find more information on these permissions in the [Microsoft Graph permissions reference](/graph/permissions-reference).
 
 1. Within the application registration you just created select **API Permissions**. 
 1. Click **Add a permission** and choose **Microsoft Graph** then **Application permissions**
