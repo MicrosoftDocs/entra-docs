@@ -3,7 +3,7 @@ title: "Troubleshoot the macOS Global Secure Access client: Health check"
 description: Troubleshoot the macOS Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 11/12/2025
+ms.date: 11/13/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -42,38 +42,41 @@ The **Notifications Enabled** test checks if the macOS Global Secure Access clie
 :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/allow-notifications.png" alt-text="Screen shot of the Global Secure Access notifications settings, with all notfications enabled.":::
 
 ### System Extension
-This test indicates whether the client's **System Extension** is installed and active. If this test fails:
-1. Check if there is an option to "Allow System Extension" visible in the client menu bar options. If this option is visible, use it to enable the system extension.
+This test indicates whether the client's system extension is installed and active. If this test fails, do one of the following:
+- Check if there is an option to **Allow Network Extension**:
+    1. Select **Global Secure Access** in the menu bar.
+    1. If the option is available, select **Allow Network Extension** to enable the system extension.   
+    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/allow-network-extension.png" alt-text="Screenshot of the system tray menu with the Allow Network Extension option highligted.":::
+- Allow the system extension in **Privacy & Security** settings:
+    1. Open **System Settings**.
+    1. Select **Privacy & Security**.
+    1. Scroll down to the **Security** section.
+    1. If there is a message about the Global Secure Access system extension being blocked, select **Allow** to enable the system extension.   
+    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/privacy-and-security.png" alt-text="Screenshot of the Privacy & Security settings with the Allow button highlighted.":::
+- Use a Terminal command to check if the system extension is running and enabled:
+    1. Open **Terminal**.
+    1. Run the following command:
+    `systemextensionsctl list | grep -E '.*com.microsoft.naas.globalsecure.tunnel-df.*Global Secure Access'`
+    1. The Terminal command enables the system extension, with the output:
+ 
+    ```bash
+    Virtual-Machine ~ % systemextensionsctl list | grep -E '.*com.microsoft.naas.*Global.*Secure.*Access.*Network.*Extension.*activated.*enabled'
+    UBF8T346G9    com.microsoft.naas.globalsecure.tunnel-df (1.1.432/1.1.432)    Global Secure Access Network Extension    [activated enabled]
+    ```
 
- <img src="./attachments/img04.png" alt="Left Aligned Image" width="20%">
-
-
-2. Check if there is a request to allow the system extension visible in Privacy and Security settings.
-
-<img src="./attachments/img05.png" alt="Left Aligned Image" width="45%">
-
-
-3. Use the following command to check if the system extension is running and enabled:
-```
-     systemextensionsctl list | grep -E '.*com.microsoft.naas.globalsecure.tunnel-df.*Global Secure Access'
-```
-<img src="./attachments/img06.png" alt="Left Aligned Image" width="90%">
-
-### Transparent proxy service
-Indicates whether the Transparent Proxy Service is running. If the test fail, try to enable the Transparent Proxy: 
-1. Open System Settings
-2. Select Network
-3. Select Filters
-4. Verify that the Global Secure Access Transparent Proxy is enabled. If it's disabled, enable it. 
-5. If enabling the Transparent Proxy fails, check in the log file.
-
-<img src="./attachments/img07.png" alt="Left Aligned Image" width="45%">
+### Transparent Proxy Service
+This test indicates whether the Transparent Proxy service is running. If the test fails, enable the Transparent Proxy service: 
+1. Open **System Settings**.
+1. Select **Network**.
+1. Select **Filters & Proxies**.
+1. Verify that the Global Secure Access Transparent Proxy **Status** is **Enabled**. If not, switch it to **Enabled**.   
+    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/filters-and-proxies.png" alt-text="Screen shot of the Filters & Proxies settings with the Transparent Proxy status set to Enabled."::: 
+1. If you can't enable the Transparent Proxy through **System Settings**, check the log file.
 
 ### UI - System Extension Bridge (IPC)
-Indicates whether System Extension Bridge is active.
-If the test fails, disable and re-enable the client. 
+This test indicates if the System Extension Bridge is active. If the test fails, disable and re-enable the Global Secure Access client. 
 
-### Connected Active Interface
+### Connected Active Interface<!--stopping point-->
 Shows the active interface being used for traffic. Run `ifconfig` to see all the active interfaces. We get this info from this path State:/Network/Global/IPv4
 ``` 
   scutil <<< "show State:/Network/Global/IPv4"
