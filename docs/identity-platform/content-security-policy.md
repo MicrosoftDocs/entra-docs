@@ -6,7 +6,7 @@ manager: pmwongera
 ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: concept-article
-ms.date: 10/15/2025
+ms.date: 11/13/2025
 
 #customer intent: As a security administrator, I want to understand CSP enforcement in Entra ID so that I can prepare my organization for rollout and mitigate impact.
 ---
@@ -37,7 +37,7 @@ Script or code injection occurs when malicious scripts run in a user’s browser
 
 XSS is one of the most common injection attacks. It enables attackers to run malicious scripts in a user’s browser, which can steal credentials, hijack sessions, and compromise sensitive data.
 
-CSP further helps shield against these attacks by restricting which scripts can execute in the browser. By enforcing CSP, Microsoft Entra ID ensures only trusted Microsoft code runs during sign-in.
+CSP further helps shield against these attacks by restricting which scripts can execute in the browser. By enforcing CSP, Microsoft Entra ID allows only scripts from trusted Microsoft domains to run during authentication. 
 
 ## CSP is a defense in depth
 
