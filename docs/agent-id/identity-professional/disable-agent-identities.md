@@ -1,7 +1,7 @@
 ---
 title: Disable agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how to disable agent identities in your Microsoft Entra ID tenant using conditional access policies and creation restrictions.
+description: Learn how to disable agent identities in your Microsoft Entra ID tenant using Conditional Access policies and creation restrictions.
 author: SHERMANOUKO
 manager: pmwongera
 ms.service: entra-id
@@ -55,14 +55,14 @@ If full disable proves too disruptive, consider a partial approach by implementi
 
 To disable agent identities in your tenant, follow these steps:
 
-1. Apply conditional access policies to prevent agent identities from authenticating.
+1. Apply Conditional Access policies to prevent agent identities from authenticating.
 1. (Optional) Block creation of agent identities in your tenant via various channels.
 
-## 1. Block token issuance to Agent IDs using conditional access
+## 1. Block token issuance to Agent IDs using Conditional Access
 
-Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant. Applying these policies in your tenant requires the Microsoft Entra Agent ID license. To acquire this license, go to [this page](https://aka.ms/agentidsku).
+Conditional Access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant.
 
-To block authentication and token issuance of Agent IDs, create the following conditional access block policies. It's recommended to run these policies in [report-only mode](/entra/identity/conditional-access/concept-conditional-access-report-only) and understand their impact before enforcing them.
+To block authentication and token issuance of Agent IDs, create the following Conditional Access block policies. It's recommended to run these policies in [report-only mode](/entra/identity/conditional-access/concept-conditional-access-report-only) and understand their impact before enforcing them.
 
 ### Policy 1: Block agent identity authentication
 
