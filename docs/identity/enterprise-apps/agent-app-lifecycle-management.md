@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra App Lifecycle Management Agent with M
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
-ms.date: 11/04/2025
+ms.date: 11/14/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -27,8 +27,7 @@ Before using the App Lifecycle Management Agent, ensure you meet the following r
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
 - You must have one of the following Microsoft Entra roles:
-- [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator), [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator), or [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)
-- [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader), [Global Secure Access Administrator](../role-based-access-control/permissions-reference.md#global-secure-access-administrator), [Security Reader](../role-based-access-control/permissions-reference.md#security-reader), and [Global Reader](../role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
+- [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator), [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator), or [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
 - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role in Security Copilot.
 - For app owners to use the Microsoft Teams bot to respond to notifications from the App Lifecycle Management Agent, they must have access to Microsoft Teams and must have an active access review assigned to them. They must also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role assigned to them.
 - **Application Discovery & Onboarding suggestions only:** Microsoft Entra Internet Access and Microsoft Entra Private Access configured with Quick Access: [How to Configure Quick Access for Global Secure Access](/entra/global-secure-access/how-to-configure-quick-access)

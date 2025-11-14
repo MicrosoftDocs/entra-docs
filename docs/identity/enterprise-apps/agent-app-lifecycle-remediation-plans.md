@@ -4,7 +4,7 @@ description: Learn how to create safe batch removal plans for unused high-privil
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
-ms.date: 11/04/2025
+ms.date: 11/14/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -14,14 +14,13 @@ ms.reviewer: ariels
 
 # Create remediation plans for risky apps
 
-The App lifecycle management agent creates safe batch displacement plans for unused applications with high-privilege permissions. These plans use staged processes with owner engagement, admin approval, and impact monitoring to reduce your organization's attack surface while maintaining operational stability.
+The App Lifecycle Management Agent creates safe batch displacement plans for unused applications with high-privilege permissions. These plans use staged processes with owner engagement, admin approval, and impact monitoring to reduce your organization's attack surface while maintaining operational stability.
 
 ## Prerequisites
 
 Before creating remediation plans, ensure you have:
 
 - At least one of the following Microsoft Entra roles:
-  - [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
   - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
   - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
 - Microsoft Entra ID P2 or Workload Identity Premium P2 license

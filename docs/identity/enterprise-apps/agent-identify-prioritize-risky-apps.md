@@ -4,7 +4,7 @@ description: Learn how to use the App Lifecycle Management Agent to identify unu
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
-ms.date: 10/01/2025
+ms.date: 11/14/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -21,7 +21,6 @@ The App Lifecycle Management Agent identifies unused applications with high-priv
 Before using the risk remediation features, ensure you have:
 
 - At least one of the following Microsoft Entra roles:
-  - [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
   - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
   - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
 - [Microsoft Entra ID P2 or Workload Identity Premium P2 license](/entra/fundamentals/licensing)
@@ -51,7 +50,7 @@ To review risk suggestions:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)
 1. Browse to **Agents** in the left menu
-1. Select the **App Lifecycle Management Agent** card
+1. Select the **App Lifecycle Management agent** card
 1. Select **View details** to open the agent dashboard
 
 ### View risk suggestions

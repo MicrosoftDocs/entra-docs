@@ -1,10 +1,10 @@
 ---
 title: Contact application owners for unused app remediation
-description: Learn how to use the Microsoft Entra App Lifecycle Management Agent to notify application owners about unused applications and collect their feedback for remediation decisions.
+description: Learn how to use the Microsoft Entra App Lifecycle Management agent to notify application owners about unused applications and collect their feedback for remediation decisions.
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
-ms.date: 11/04/2025
+ms.date: 11/14/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -14,7 +14,7 @@ ms.reviewer: ariels
 
 # Contact application owners for unused app remediation
 
-The Microsoft Entra App Lifecycle Management Agent can automatically notify application owners about unused applications in your environment. This capability streamlines the remediation process by collecting owner feedback before making decisions about application removal or retention.
+The Microsoft Entra App Lifecycle Management agent can automatically notify application owners about unused applications in your environment. This capability streamlines the remediation process by collecting owner feedback before making decisions about application removal or retention.
 
 The contact owners feature enables you to:
 
@@ -33,13 +33,11 @@ To contact application owners, you need:
 
 - A Microsoft Entra ID P2 or Workload Identity Premium P2
 - One of the following Microsoft Entra ID roles:
-   - [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator)
-   - [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
    - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
    - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
    - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role in Security Copilot.
 - For app owners to use the Microsoft Teams bot to respond to notifications from the App Lifecycle Management Agent, they must have access to Microsoft Teams and must have an active access review assigned to them. They must also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role assigned to them.
-- The App Lifecycle Management Agent configured and running
+- The App Lifecycle Management agent configured and running
 - Security Copilot with provisioned SCUs
 - Applications with owners assigned in Microsoft Entra ID
 
@@ -125,7 +123,9 @@ Owner decisions are automatically incorporated into remediation planning workflo
 
 ## Handle applications without owners
 
-When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator. It then reviews suggested owners in the agent interface based on those factors.
+When the agent identifies unused applications without assigned owners, it attempts to suggest potential owners based on the application creator (and other factors in the future). It then reviews suggested owners in the agent interface based on those factors
+
+:::image type="content" source="media/agent-contact-app-owners/suggested-app-owners.png" alt-text="Screenshot showing suggested owner identification interface." lightbox="media/agent-contact-app-owners/suggested-app-owners.png":::
 
 To assign owners manually, follow the guidance provided in the [Assign app owners](assign-app-owners.md) guide.
 
