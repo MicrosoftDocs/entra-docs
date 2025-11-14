@@ -102,12 +102,6 @@ To deactivate an application using Microsoft Graph API, you need at least **[Clo
     GET https://graph.microsoft.com/v1.0/applications/{application-id}?$select=displayName,isDisabled,appId
     ```
 
-1. List deactivated applications in Enterprise apps (service principals)
-
-    ```http
-    GET https://graph.microsoft.com/v1.0/servicePrincipals?$filter=accountEnabled eq false and isDisabled eq true
-    ```
-
 ## Investigate deactivated applications
 
 When handling deactivated applications, conduct a thorough investigation by examining the application's configuration, including API permissions, authentication settings, certificates, and sign-in logs. Document your findings carefully, noting the reason for deactivation, any suspicious activity or security concerns, affected users, and dependencies that might impact your organization.
