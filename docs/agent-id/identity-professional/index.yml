@@ -36,7 +36,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Conditional Access for agents
+          - text: Conditional access for agents
             url: ../../identity/conditional-access/agent-id.md
           - text: Microsoft Entra identity protection for agents
             url: ../../id-protection/concept-risky-agents.md

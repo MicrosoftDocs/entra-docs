@@ -27,15 +27,15 @@ This article explains how Microsoft Entra Agent ID extends security capabilities
 > [!IMPORTANT]
 > The capabilities described in this article are included in the [Microsoft Entra Agent ID](https://aka.ms/EntraAgentID) license.
 
-## Conditional Access for agents
+## Conditional access for agents
 
-Conditional Access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources. It's achieved by:
+Conditional access enables organizations to define and enforce adaptive policies that evaluate agent context and risk before granting access to resources. It's achieved by:
 
 - Enforcing adaptive access control policies for all agent patterns across assistive, autonomous, and agent user types.
 - Using real-time signals such as agent identities risk controlling agent access to resources, with Microsoft Managed Policies providing a secure baseline by blocking high-risk agents.
-- Deploying Conditional Access policies at scale using custom security attributes, while still supporting fine-grained controls for individual agents.
+- Deploying conditional access policies at scale using custom security attributes, while still supporting fine-grained controls for individual agents.
 
-For more information, see [Conditional Access](/entra/identity/conditional-access/overview).
+For more information, see [Conditional access](/entra/identity/conditional-access/overview).
 
 ## Identity governance for agents
 
@@ -52,7 +52,7 @@ For more information, see [identity governance for agents](/entra/id-governance/
 Identity protection detects and blocks threats by flagging anomalous activities involving agents. Risk signals are used to enforce risk-based access policies and inform agent discoverability.
 
 - Detect agent identity risk derived from user risk and based on agents' own actions, including unusual or unauthorized activities.
-- Provide risk signals to Conditional Access to enforce risk-based policies and session management controls.
+- Provide risk signals to conditional access to enforce risk-based policies and session management controls.
 - Provide risk signals to the Agent Registry to inform agent discoverability and access, with automatic remediation of compromised agents using preconfigured policies.
 
 For more information, see [identity protection for agents](/entra/id-protection/concept-risky-agents)

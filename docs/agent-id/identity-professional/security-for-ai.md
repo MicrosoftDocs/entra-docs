@@ -116,7 +116,7 @@ Microsoft Entra Agent ID provides an identity and security framework designed to
 
 - Protect agent access to resources 
     - Global Secure Access for agent identities: Network-level security and zero-trust access for agent communications
-    - Conditional Access for agent identities: Policy-based access controls and risk-based authentication for agents
+    - Conditional access for agent identities: Policy-based access controls and risk-based authentication for agents
     - Identity protection for agent identities: Real-time risk detection and automated response for agent activities
 
 ## Next steps
