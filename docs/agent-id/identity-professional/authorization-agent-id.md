@@ -1,6 +1,6 @@
 ---
-title: Authorization in Microsoft Entra agent ID
-description: Learn about how authorization in Microsoft Entra agent ID works for AI agents.
+title: Authorization in Microsoft Entra Agent ID
+description: Learn about how authorization in Microsoft Entra Agent ID works for AI agents.
 author: rolyon
 ms.author: rolyon
 manager: pmwongera
@@ -10,13 +10,13 @@ ms.topic: concept-article
 #customer intent: As a developer or IT administrator, I want to understand authorization controls for agent IDs so that I can properly configure roles and permissions while maintaining security boundaries for AI agents in my organization.
 ---
 
-# Authorization in Microsoft Entra agent ID
+# Authorization in Microsoft Entra Agent ID
 
 The introduction of agent identities is driven by the rise of AI-powered agents in organizations. Traditional identity types (like standard app registrations or user accounts) aren't ideal for autonomous agents. AI agents have unique security concerns because their autonomous decision-making, dynamic learning capabilities, and potentially access to sensitive data can introduce unpredictable behaviors.
 
-Microsoft Entra agent ID was created to fill this gap. Built on the Microsoft Entra ID platform, it provides a dedicated authentication and authorization framework for AI agents that enables them to safely access services and APIs while giving administrators a central way to monitor and control their actions. In short, agent identities let organizations discover, manage, and secure AI agents operating in a tenant, with proper policy enforcement, instead of treating agents as either full users or generic apps.
+Microsoft Entra Agent ID was created to fill this gap. Built on the Microsoft Entra ID platform, it provides a dedicated authentication and authorization framework for AI agents that enables them to safely access services and APIs while giving administrators a central way to monitor and control their actions. In short, agent identities let organizations discover, manage, and secure AI agents operating in a tenant, with proper policy enforcement, instead of treating agents as either full users or generic apps.
 
-This article explains how authorization in Microsoft Entra agent ID works for AI agents by providing information about roles, permission controls, and best practices for managing agent access.
+This article explains how authorization in Microsoft Entra Agent ID works for AI agents by providing information about roles, permission controls, and best practices for managing agent access.
 
 ## Why agent identity authorization is important
 

@@ -1,5 +1,5 @@
 ---
-title: Administrative relationships in Microsoft Entra agent ID (Owners, sponsors, and managers) 
+title: Administrative relationships in Microsoft Entra Agent ID (Owners, sponsors, and managers) 
 description: Learn about the administrative model for agents in Microsoft Entra, including the roles of owners, sponsors, and managers in maintaining secure operations, business accountability, and compliance oversight.
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
@@ -14,9 +14,9 @@ ms.reviewer: jawoods
 #customer-intent: As an IT administrator or business stakeholder, I want to understand the administrative model for agents, so that I can properly assign owners, sponsors, and managers to ensure secure operations, business accountability, and compliance oversight.
 ---
 
-# Administrative relationships in Microsoft Entra agent ID (Owners, sponsors, and managers) 
+# Administrative relationships in Microsoft Entra Agent ID (Owners, sponsors, and managers) 
 
-The Microsoft agent identity platform introduces an administrative model that separates technical administration from business accountability, ensuring operational control and compliance oversight without excessive permissions. This document explains the administrative relationships for Microsoft Entra agent ID identity types. This guidance applies to agent identities, agent identity blueprints, agent blueprint principals, and agent users. The article covers owners, sponsors, and managers and their importance in maintaining secure operations.
+The Microsoft agent identity platform introduces an administrative model that separates technical administration from business accountability, ensuring operational control and compliance oversight without excessive permissions. This document explains the administrative relationships for Microsoft Entra Agent ID identity types. This guidance applies to agent identities, agent identity blueprints, agent blueprint principals, and agent users. The article covers owners, sponsors, and managers and their importance in maintaining secure operations.
 
 The administrative relationships available in Agent ID include:
 

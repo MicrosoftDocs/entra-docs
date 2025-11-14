@@ -1,11 +1,11 @@
 ### YamlMime:Hub
-title: Microsoft Entra agent ID documentation
-summary: Secure and govern AI agents at enterprise scale with Microsoft Entra agent ID and the Microsoft agent identity platform. Create agent identities, apply Zero Trust controls, and manage agent access to your organization's resources.
+title: Microsoft Entra Agent ID documentation
+summary: Secure and govern AI agents at enterprise scale with Microsoft Entra Agent ID and the Microsoft agent identity platform. Create agent identities, apply Zero Trust controls, and manage agent access to your organization's resources.
 brand: azure
 
 metadata:
-  title: Microsoft Entra agent ID documentation
-  description: Build, secure, and manage agent identities with Microsoft Entra agent ID. Integrate AI agents with enterprise workflows, apply Zero Trust principles, and govern agent access at scale.
+  title: Microsoft Entra Agent ID documentation
+  description: Build, secure, and manage agent identities with Microsoft Entra Agent ID. Integrate AI agents with enterprise workflows, apply Zero Trust principles, and govern agent access at scale.
   ms.service: identity-platform
   ms.topic: hub-page
   author: shlipsey3
@@ -14,7 +14,7 @@ metadata:
 
 highlightedContent:
   items:
-    - title: What is Microsoft Entra agent ID?
+    - title: What is Microsoft Entra Agent ID?
       itemType: overview
       url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
     - title: Microsoft agent identity platform for developers
@@ -30,8 +30,8 @@ highlightedContent:
 additionalContent:
   # Supports up to 4 subsections
   sections:
-    ## Section 1: Microsoft Entra agent ID ######################
-    - title: Microsoft Entra agent ID
+    ## Section 1: Microsoft Entra Agent ID ######################
+    - title: Microsoft Entra Agent ID
       summary: The comprehensive solution for protecting and governing AI agents in enterprise environments. Includes advanced security controls, and governance policies for agent identities and access management.
       items:
         ## CARD 1 ######################

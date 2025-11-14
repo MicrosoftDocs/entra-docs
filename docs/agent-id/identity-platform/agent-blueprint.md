@@ -1,5 +1,5 @@
 ---
-title: Agent identity blueprints in Microsoft Entra agent ID
+title: Agent identity blueprints in Microsoft Entra Agent ID
 description: Understand agent identity blueprints, how agents are defined, and how authentication works within the Agent ID platform.
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
@@ -13,7 +13,7 @@ ms.topic: concept-article
 #customer intent: As a developer or IT administrator building AI agents, I want to understand agent identity blueprints so that I can properly create, authenticate, and manage agent identities within my organization's Microsoft Entra environment.
 ---
 
-# Agent identity blueprints in Microsoft Entra agent ID
+# Agent identity blueprints in Microsoft Entra Agent ID
 
 An agent identity blueprint is an object in Microsoft Entra ID that serves as a template for creating agent identities. It establishes the foundation for how agents are created, authenticated, and managed within an organization.
 
@@ -68,7 +68,7 @@ All agent identities in a Microsoft Entra ID tenant are created from an agent id
 
 ## Agent identity blueprint principals
 
-An agent identity blueprint principal is an object in Microsoft Entra agent ID that represents the presence of an agent identity blueprint within a specific tenant. When an agent identity blueprint application is added to a tenant, Microsoft Entra creates a corresponding principal object, which is the agent identity blueprint principal.
+An agent identity blueprint principal is an object in Microsoft Entra Agent ID that represents the presence of an agent identity blueprint within a specific tenant. When an agent identity blueprint application is added to a tenant, Microsoft Entra creates a corresponding principal object, which is the agent identity blueprint principal.
 
 :::image type="content" source="media/agent-blueprint/agent-blueprint-principal.png" alt-text="Diagram showing illustration of an agent blueprint principal.":::
 
@@ -84,7 +84,7 @@ In either case, an agent identity blueprint principal is always created when a b
 
 ## Create an agent identity blueprint
 
-There are multiple ways to create an agent identity blueprint in Microsoft Entra agent ID. For more information, see [agent identity blueprint](./create-blueprint.md).
+There are multiple ways to create an agent identity blueprint in Microsoft Entra Agent ID. For more information, see [agent identity blueprint](./create-blueprint.md).
 
 ## Credentials for agent identities
 

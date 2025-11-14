@@ -1,7 +1,7 @@
 ---
-title: What is Microsoft Entra agent ID?
+title: What is Microsoft Entra Agent ID?
 titleSuffix: Microsoft Entra Agent ID
-description: Learn how Microsoft Entra agent ID extends comprehensive security capabilities to agents with conditional access, identity protection, identity governance, and network security controls designed specifically for agent scenarios.
+description: Learn how Microsoft Entra Agent ID extends comprehensive security capabilities to agents with conditional access, identity protection, identity governance, and network security controls designed specifically for agent scenarios.
 author: SHERMANOUKO
 ms.author: shermanouko
 manager: pmwongera
@@ -14,18 +14,18 @@ ms.reviewer: kylemar
 #customer-intent: As an IT administrator or security professional, I want to understand how Microsoft Entra ID provides integrated security capabilities for agents, so that I can implement comprehensive protection across conditional access, identity protection, identity governance, and network controls.
 ---
 
-# What is Microsoft Entra agent ID?
+# What is Microsoft Entra Agent ID?
 
 [!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
-As assistive and autonomous agents become more prevalent in organizations, new security, governance, and compliance challenges must be addressed. Microsoft Entra agent ID extends the comprehensive security capabilities of Microsoft Entra to agents, enabling organizations to build, discover, govern, and protect agent identities. [Security for AI](security-for-ai.md) spans multiple Microsoft Entra features and is integrated through Microsoft Entra agent ID and the [Microsoft agent identity platform for developers](../identity-platform/what-is-agent-id-platform.md).
+As assistive and autonomous agents become more prevalent in organizations, new security, governance, and compliance challenges must be addressed. Microsoft Entra Agent ID extends the comprehensive security capabilities of Microsoft Entra to agents, enabling organizations to build, discover, govern, and protect agent identities. [Security for AI](security-for-ai.md) spans multiple Microsoft Entra features and is integrated through Microsoft Entra Agent ID and the [Microsoft agent identity platform for developers](../identity-platform/what-is-agent-id-platform.md).
 
-This article explains how Microsoft Entra agent ID extends security capabilities to agents through conditional access policies, identity protection, identity governance, network-level controls, and the agent identity platform.
+This article explains how Microsoft Entra Agent ID extends security capabilities to agents through conditional access policies, identity protection, identity governance, network-level controls, and the agent identity platform.
 
-:::image type="content" source="media/microsoft-entra-agent-identities-for-ai-agents/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra agent ID.":::
+:::image type="content" source="media/microsoft-entra-agent-identities-for-ai-agents/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra Agent ID.":::
 
 > [!IMPORTANT]
-> The capabilities described in this article are included in the [Microsoft Entra agent ID](https://aka.ms/EntraAgentID) license.
+> The capabilities described in this article are included in the [Microsoft Entra Agent ID](https://aka.ms/EntraAgentID) license.
 
 ## Conditional Access for agents
 
@@ -39,7 +39,7 @@ For more information, see [Conditional Access](/entra/identity/conditional-acces
 
 ## Identity governance for agents
 
-Microsoft Entra agent ID brings agent IDs into similar identity governance processes as users, enabling them to be managed at scale. You can establish controls for agent access lifecycle using features such as entitlement management access packages.
+Microsoft Entra Agent ID brings agent IDs into similar identity governance processes as users, enabling them to be managed at scale. You can establish controls for agent access lifecycle using features such as entitlement management access packages.
 
 - Govern agent IDs at scale, from deployment to expiration.
 - Ensure sponsors and owners are assigned and maintained for each agent ID, preventing orphaned agent IDs.
