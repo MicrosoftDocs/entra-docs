@@ -60,7 +60,7 @@ To disable agent identities in your tenant, follow these steps:
 
 ## 1. Block token issuance to Agent IDs using conditional access
 
-Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant. Applying these policies in your tenant requires the Microsoft Entra Agent ID license. To acquire this license, go to [this page](https://aka.ms/agentidsku).
+Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant. Applying these policies in your tenant requires the Microsoft Entra agent ID license. To acquire this license, go to [this page](https://aka.ms/agentidsku).
 
 To block authentication and token issuance of Agent IDs, create the following conditional access block policies. It's recommended to run these policies in [report-only mode](/entra/identity/conditional-access/concept-conditional-access-report-only) and understand their impact before enforcing them.
 

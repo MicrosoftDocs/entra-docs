@@ -22,7 +22,7 @@ Identity and Access Management (IAM) and security administrators need clear visi
 - Built‑in Microsoft Entra roles and tenant settings that enable or restrict each action
 - Monitoring, auditing, and control strategies
 
-For foundational concepts, see [What is Microsoft Entra Agent ID?](../identity-platform/what-is-agent-id.md).
+For foundational concepts, see [What is Microsoft Entra agent ID?](../identity-platform/what-is-agent-id.md).
 
 ## Overview of creation channels
 
@@ -87,7 +87,7 @@ Administrators can control agent identity creation via these channels by constra
 
 ## Microsoft product integrations
 
-Employees can create agents via many Microsoft products. These products are integrated with Microsoft Entra Agent identity platform and can create agent identity blueprints, agent identities, and agent users in tenants. Microsoft products integrated with Microsoft Entra Agent ID include:
+Employees can create agents via many Microsoft products. These products are integrated with Microsoft Entra Agent identity platform and can create agent identity blueprints, agent identities, and agent users in tenants. Microsoft products integrated with Microsoft Entra agent ID include:
 
 | Product | Documentation |
 | ------- | ---- |

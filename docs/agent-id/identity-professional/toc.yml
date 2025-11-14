@@ -1,10 +1,10 @@
 items:
-- name: Microsoft Entra Agent ID for identity professionals
+- name: Microsoft Entra agent ID for identity professionals
   href: index.yml
 - name: Overview
   expanded: true
   items:
-  - name: What is Microsoft Entra Agent ID?
+  - name: What is Microsoft Entra agent ID?
     href: microsoft-entra-agent-identities-for-ai-agents.md
   - name: Security for AI
     href: security-for-ai.md
@@ -12,7 +12,7 @@ items:
     items:
     - name: Access management
       items:
-        - name: Authorization in Microsoft Entra Agent ID
+        - name: Authorization in Microsoft Entra agent ID
           href: authorization-agent-id.md
         - name: Grant agent access to Microsoft 365
           href: grant-agent-access-microsoft-365.md

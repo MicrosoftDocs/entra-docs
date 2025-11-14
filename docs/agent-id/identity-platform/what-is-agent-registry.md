@@ -17,7 +17,7 @@ ms.custom: agent-id-ignite
 
 [!INCLUDE [entra-agent-id-preview-note](../../includes/entra-agent-id-preview-note.md)]
 
-AI agents are rapidly becoming part of enterprise workflows, such as handling data retrieval, orchestration, and autonomous decisions. For this reason, organizations face growing security and compliance risks without centralized visibility and control over these agents. The Agent Registry, as part of the [Microsoft Entra Agent ID](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) system, solves this challenge by providing an extensible metadata repository that delivers a unified view of all deployed agents across Microsoft platforms and non-Microsoft ecosystems.
+AI agents are rapidly becoming part of enterprise workflows, such as handling data retrieval, orchestration, and autonomous decisions. For this reason, organizations face growing security and compliance risks without centralized visibility and control over these agents. The Agent Registry, as part of the [Microsoft Entra agent ID](../identity-professional/microsoft-entra-agent-identities-for-ai-agents.md) system, solves this challenge by providing an extensible metadata repository that delivers a unified view of all deployed agents across Microsoft platforms and non-Microsoft ecosystems.
 
 To learn more about Agent Registry, review the following articles:
 
@@ -27,7 +27,7 @@ To learn more about Agent Registry, review the following articles:
 - [Agent Registry metadata and discoverability](agent-metadata-discoverability.md)
 - [Agent communication](registry-agent-to-agent-protocol.md)
 
-Agent Registry integrates with Microsoft Entra Agent ID and Core Directory to enforce identity and discovery policies, supports flexible mappings between agent cards and multiple agent instances, and acts as the single source of truth for agent-related data. By combining comprehensive visibility, rich metadata management, and collection-based policies, the registry helps organizations secure agent discovery, apply Zero Trust principles, and maintain governance across diverse environments. The Agent Registry delivers following critical capabilities and benefits to customers: 
+Agent Registry integrates with Microsoft Entra agent ID and Core Directory to enforce identity and discovery policies, supports flexible mappings between agent cards and multiple agent instances, and acts as the single source of truth for agent-related data. By combining comprehensive visibility, rich metadata management, and collection-based policies, the registry helps organizations secure agent discovery, apply Zero Trust principles, and maintain governance across diverse environments. The Agent Registry delivers following critical capabilities and benefits to customers: 
 
 - **Comprehensive inventory and visibility**: Maintains an inventory of all deployed agents running in your environment, whether or not they have an agent identity and supporting external agents and providers.
 - **Discovery before access and policy enforcement**: Introduces built-in and custom controls with [agent collections](agent-registry-collections.md) and policies to reduce exposure and align with Zero Trust principles.
@@ -41,7 +41,7 @@ The registry then connects to the Microsoft Entra Core Directory, which enforces
 
 The registry enables organizations to map diverse agent data sources, identify systems of authority, and route users to the correct endpoints. The following diagram explains the relationship between various key attributes.
 
-:::image type="content" source="media/what-is-agent-registry/agent-registry-diagram.png" alt-text="Diagram depicting the relationship between Agent Registry and Microsoft Entra Agent ID." lightbox="media/what-is-agent-registry/agent-registry-diagram.png":::
+:::image type="content" source="media/what-is-agent-registry/agent-registry-diagram.png" alt-text="Diagram depicting the relationship between Agent Registry and Microsoft Entra agent ID." lightbox="media/what-is-agent-registry/agent-registry-diagram.png":::
 
 The following table summarizes the core components of the Agent Registry:
 
@@ -56,8 +56,8 @@ The following table summarizes the core components of the Agent Registry:
 
 Security is embedded at every layer of the Agent Registry:
 
-- **Identity Assurance**: Microsoft platforms fully integrated with the Microsoft Entra Agent ID Platform automatically receive an agent identity and are enrolled in the registry.
-- **Runtime Enforcement**: Discovery policies are enforced dynamically when agents attempt discovery, preventing unauthorized actions. This enforcement works together with Microsoft Entra Agent ID, which controls authentication as well as discovery of agents within the registry. Only agents with agent identity are allowed to discover other agents in the registry, but they can find other agents without agent ID.
+- **Identity Assurance**: Microsoft platforms fully integrated with the Microsoft Entra agent ID Platform automatically receive an agent identity and are enrolled in the registry.
+- **Runtime Enforcement**: Discovery policies are enforced dynamically when agents attempt discovery, preventing unauthorized actions. This enforcement works together with Microsoft Entra agent ID, which controls authentication as well as discovery of agents within the registry. Only agents with agent identity are allowed to discover other agents in the registry, but they can find other agents without agent ID.
 
 ## Related content
 

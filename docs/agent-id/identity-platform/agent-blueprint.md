@@ -1,5 +1,5 @@
 ---
-title: Agent identity blueprints in Microsoft Entra Agent ID
+title: Agent identity blueprints in Microsoft Entra agent ID
 description: Understand agent identity blueprints, how agents are defined, and how authentication works within the Agent ID platform.
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
@@ -13,7 +13,7 @@ ms.topic: concept-article
 #customer intent: As a developer or IT administrator building AI agents, I want to understand agent identity blueprints so that I can properly create, authenticate, and manage agent identities within my organization's Microsoft Entra environment.
 ---
 
-# Agent identity blueprints in Microsoft Entra Agent ID
+# Agent identity blueprints in Microsoft Entra agent ID
 
 An agent identity blueprint is an object in Microsoft Entra ID that serves as a template for creating agent identities. It establishes the foundation for how agents are created, authenticated, and managed within an organization.
 

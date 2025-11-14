@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Microsoft Entra Agent ID for identity professionals
-summary: Learn how to secure and manage agent identities with Microsoft Entra Agent ID.
+title: Microsoft Entra agent ID for identity professionals
+summary: Learn how to secure and manage agent identities with Microsoft Entra agent ID.
 
 metadata: 
-   title: Microsoft Entra Agent ID for Identity Professionals
-   description: Learn how to secure and manage agent identities with Microsoft Entra Agent ID and the Microsoft agent identity platform.
+   title: Microsoft Entra agent ID for Identity Professionals
+   description: Learn how to secure and manage agent identities with Microsoft Entra agent ID and the Microsoft agent identity platform.
    ms.service: entra-id
    ms.topic: landing-page
    ms.custom: agent-id-ignite
@@ -14,13 +14,13 @@ metadata:
    ms.author: sarahlipsey
 
 landingContent:
-  - title: What is Microsoft Entra Agent ID?
+  - title: What is Microsoft Entra agent ID?
     linkLists:
       - linkListType: overview
         links:
-          - text: Security for AI with Microsoft Entra Agent ID
+          - text: Security for AI with Microsoft Entra agent ID
             url: security-for-ai.md
-          - text: Microsoft Entra Agent ID features
+          - text: Microsoft Entra agent ID features
             url: microsoft-entra-agent-identities-for-ai-agents.md
 
   - title: Register and manage agents

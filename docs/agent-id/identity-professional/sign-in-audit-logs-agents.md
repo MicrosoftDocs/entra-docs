@@ -1,5 +1,5 @@
 ---
-title: Microsoft Entra Agent ID Logs
+title: Microsoft Entra agent ID Logs
 description: Learn how audit and sign-in activities associated with agent identities are logged in Microsoft Entra ID.
 author: shlipsey3
 manager: pmwongera
@@ -12,7 +12,7 @@ ms.custom: agent-id-ignite
 
 # Customer intent: As an IT admin, I need to know what information is available in the sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
 ---
-# Microsoft Entra Agent ID logs
+# Microsoft Entra agent ID logs
 
 As the usage, capabilities, and scope of AI agents grow, it's important to understand how activities associated with agent identities are logged in Microsoft Entra ID. As an IT admin, you need to know what information is available in the audit and sign-in logs and how to use that information to monitor agent activity.
 
@@ -40,7 +40,7 @@ A new complex sign-in log resource type, `agentSignIn`, now appears in the Micro
 
 ## Agent identity logs with Microsoft Graph
 
-Microsoft Entra Agent ID logs can be viewed and managed using Microsoft Graph on the `/beta` endpoint.
+Microsoft Entra agent ID logs can be viewed and managed using Microsoft Graph on the `/beta` endpoint.
 
 To get started, follow these instructions to work with recommendations using Microsoft Graph in Graph Explorer.
 
@@ -50,7 +50,7 @@ To get started, follow these instructions to work with recommendations using Mic
 
 ### Retrieve agent identity sign-in events
 
-To retrieve only sign-in events where Microsoft Entra Agent ID was involved, you need to find events initiated by a service principal where the agent type is `AgentIdentity`. Use the following Microsoft Graph request:
+To retrieve only sign-in events where Microsoft Entra agent ID was involved, you need to find events initiated by a service principal where the agent type is `AgentIdentity`. Use the following Microsoft Graph request:
 
 ```http
 GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=signInEventTypes/any(t: t eq 'servicePrincipal') and agent/agentType eq 'AgentIdentity'

@@ -1,6 +1,6 @@
 ---
 title: Register Agents to the Agent Registry
-description: Learn how to register agents to the Agent Registry in Microsoft Entra Agent ID through automatic registration or manual API calls for agent discovery and management.
+description: Learn how to register agents to the Agent Registry in Microsoft Entra agent ID through automatic registration or manual API calls for agent discovery and management.
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
@@ -35,7 +35,7 @@ If your agent was built on one of the following Microsoft products, you don't ne
 
 Before registering agents with the registry, ensure you have the following requirements:
 
-- The [Microsoft Entra Agent ID](https://aka.ms/EntraAgentID) license
+- The [Microsoft Entra agent ID](https://aka.ms/EntraAgentID) license
 - The [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator) role
 - A valid Microsoft Entra access token with the https://graph.microsoft.com/.default scope
 - Either app-only permissions or delegated permissions
