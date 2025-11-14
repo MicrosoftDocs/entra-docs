@@ -107,7 +107,7 @@ Microsoft Entra Agent ID provides an identity and security framework designed to
 
 :::image type="content" source="media/security-for-ai/microsoft-entra-agent-identities-diagram.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra Agent ID.":::
 
-- Discover and manage agents
+- Register and manage agents
     - Agent identities: Creates and manages agent identity blueprints as templates and agent identities as individual instances with parent-child relationships
     - Agent registry: Provides centralized metadata management, secure agent discovery, and automatic organization into security collections
 

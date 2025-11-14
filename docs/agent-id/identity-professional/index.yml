@@ -38,7 +38,7 @@ landingContent:
         links:
           - text: Conditional access for agents
             url: ../../identity/conditional-access/agent-id.md
-          - text: Microsoft Entra identity protection for agents
+          - text: Microsoft identity protection for agents
             url: ../../id-protection/concept-risky-agents.md
           - text: Network controls for agents
             url: ../../global-secure-access/concept-secure-web-ai-gateway-agents.md
