@@ -24,7 +24,7 @@ Inheritable permissions let agent identities automatically inherit OAuth 2.0 del
 
 ## How inheritable permissions work
 
-This section explains the technical process of how inheritable permissions function in the Microsoft Entra agent identity platform. You configure inheritable permissions for one or more resources on the client agent identity blueprint.
+This section explains the technical process of how inheritable permissions function in the Microsoft agent identity platform. You configure inheritable permissions for one or more resources on the client agent identity blueprint.
 
 During token issuance for an agent identity, the platform merges any eligible inherited scopes with the agent's requested delegated scopes. The inherited scopes appear in the access token's **scp** claim.
 
