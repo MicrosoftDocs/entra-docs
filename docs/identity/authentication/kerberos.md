@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/04/2025
+ms.date: 11/18/2025
 ms.author: barclayn
 ms.reviewer: Vimala
 ---
@@ -245,7 +245,7 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 
 ### Support cloud-only user identities for member type only (Preview)
 
-Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication for the member user types. External identities support is not available yet.
+Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication for the member user types.
 
 ### Operating system and device restrictions
 
@@ -297,7 +297,7 @@ Kerberos ticket encryption with Microsoft Entra Kerberos uses AES-256 exclusivel
 
 5. Use [Microsoft Entra ID reports and monitoring tools](../monitoring-health/overview-monitoring-health.md) to keep track of authentication events.
 
-## Group SID limit in Entra Kerberos
+## Group SID limit in Entra Kerberos (Preview)
 
 Kerberos tickets can include a maximum of 1,010 Security Identifiers (SIDs) for groups. This is a Windows specification limit. With Entra Kerberos now supporting cloud-only identities (in addition to hybrid), tickets must include both on-premises group SIDs and cloud group SIDs. Large enterprises often have users in hundreds or thousands of groups, including nested and dynamic memberships. If the combined group SIDs exceed 1,010, the Kerberos ticket cannot be issued and authentication fails. This is especially problematic for SMB access scenarios like Azure Files, where NTFS ACL checks depend on complete group membership in the ticket.
 
@@ -318,6 +318,7 @@ As a short-term solution,  apps using Entra Kerberos for cloud-only identities c
 ### How to update Tags attribute in application manifest file?
 
 **Option 1: Update Tags in the Entra Admin Portal**
+
     1.	Sign in to Microsoft Entra admin center or Cloud Application Administrator role.
     2.	Navigate to:
     	-    Entra ID → App registrations → Select your application.
