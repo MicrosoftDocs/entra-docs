@@ -319,12 +319,12 @@ As a short-term solution,  apps using Entra Kerberos for cloud-only identities c
 
 **Option 1: Update Tags in the Entra Admin Portal**
 
-    1.	Sign in to Microsoft Entra admin center or Cloud Application Administrator role.
-    2.	Navigate to:
-    	-    Entra ID → App registrations → Select your application.
-    3.	Under Manage, click Manifest.
-    	-    In the JSON editor, locate the tags property and add "kdc_enable_cloud_group_sids".
-    4.	Click Save to apply changes.
+1. Sign in to Microsoft Entra admin center or Cloud Application Administrator role.
+2. Navigate to:
+   - Entra ID → App registrations → Select your application.
+3. Under Manage, click Manifest.
+   - In the JSON editor, locate the tags property and add "kdc_enable_cloud_group_sids".
+4. Click Save to apply changes.
  
 **Option 2: Update Tags Using Microsoft Graph API (Permissions: Application.ReadWrite.All)**
 
