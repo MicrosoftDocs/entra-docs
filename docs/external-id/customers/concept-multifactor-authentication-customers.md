@@ -37,7 +37,7 @@ For details, see [how to create a Conditional Access policy in an external tenan
 
 ### Step-up MFA with Conditional Access authentication context
 
-Multi-Factor Authentication (MFA) with authentication context lets you apply stronger security only when users access sensitive data or perform critical actions. You don’t need to enforce MFA for the entire app.
+Multifactor authentication (MFA) with authentication context lets you apply stronger security only when users access sensitive data or perform critical actions. You don’t need to enforce MFA for the entire app.
 With Microsoft Entra [Conditional Access authentication context](/entra/identity-platform/developer-guide-conditional-access-authentication-context), developers can add step-up authentication, such as MFA, inside their apps. Use this for scenarios like high-value transactions or viewing personal information.
 This approach supports Zero Trust principles. It ensures least privilege access and reduces user friction. Users get a secure and seamless experience.
 
@@ -75,7 +75,7 @@ External ID mitigates fraudulent sign-ups and sign-ins via SMS by enforcing the 
 
 The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions. For pricing details, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
 
-SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is cancelled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
+SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is canceled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|
