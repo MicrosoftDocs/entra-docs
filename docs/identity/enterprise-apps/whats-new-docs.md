@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra application management
 description: This article shows the new and updated documentation for the Microsoft Entra application management.
-ms.date: 09/03/2025
+ms.date: 11/17/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
@@ -16,26 +16,27 @@ manager: mwongerapk
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
+## October 2025
+
+### Updated articles
+
+- [Integrating Microsoft Entra ID with applications getting started guide](plan-an-application-integration.md) - Revised for technical accuracy
+
+
+## September 2025
+
+### New articles
+
+- [Configure restrictions on how applications can be configured](configure-app-management-policies.md)
+
+### Updated articles
+
+- [Troubleshoot password-based single sign-on](troubleshoot-password-based-sso.md) - Remove automatic sign-in field capture option
+
+
 ## August 2025
 
 
 ### Updated articles
 
 - [Manage app consent policies](manage-app-consent-policies.md) - Revised for technical accuracy
-
-
-## July 2025
-
-### Updated articles
-
-- [Configure OIDC SSO for gallery and custom applications](add-application-portal-setup-oidc-sso.md) - Updates to add guidance for configuring OIDC SSO for a custom application
-
-
-## June 2025
-
-### Updated articles
-
-- [AD FS application migration to move AD FS apps to Microsoft Entra ID](migrate-ad-fs-application-howto.md) - Revised for clarity and conciseness
-- [Configure how users consent to applications](configure-user-consent.md) - Added clarity on authorization policies and app consent policies
-
-
