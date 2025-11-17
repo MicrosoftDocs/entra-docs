@@ -42,7 +42,7 @@ Follow these steps to configure your Microsoft Entra SDK for Agent ID settings:
 
 1. If you're calling a downstream API, ensure that the necessary permissions are granted. Calling a custom web API requires you to provide the API registration details in the SDK configuration.
 
-For more information, see [Configure your Microsoft Entra SDK for AgentID settings](/entra/msidweb/agent-id-sdkconfiguration)
+For more information, see [Configure your Microsoft Entra SDK for AgentID settings](/entra/msidweb/agent-id-sdk/configuration)
 
 ## Acquire tokens using the Microsoft Entra SDK for Agent ID
 
