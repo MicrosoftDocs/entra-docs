@@ -36,7 +36,7 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Switch to the **TLS inspection settings** tab.
 1. Select **+ Create certificate**. This step starts with generating a Certificate Sign Request (CSR). 
 1. In the **Create certificate** pane, fill in the following fields:
-   - **Certificate name**: This name appears in the certificate hierarchy when viewed in a browser. It must be unique, contain no spaces, and be no more than 12 characters long. You can't reuse previous names.
+   - **Certificate name**: This name appears in the certificate hierarchy when viewed in a browser. It must be unique, contain no spaces, and be no more than 12 characters long. **Important**: You can't reuse previously used certificate names, even after deletion.
    - **Common name** (CN): Common name, for example, Contoso TLS ICA, that identifies the intermediate certificate.
    - **Organizational Unit** (OU): Organization name, for example, Contoso IT.
 1. Select **Create CSR**. This step creates a .csr file and saves it to your default download folder.
@@ -49,8 +49,8 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Select **Upload signed certificate**.
 :::image type="content" source="media/how-to-transport-layer-security-settings/upload-certificate.png" alt-text="Screenshot of Upload certificate form with example certificate and chain certificate files in the upload fields."::: 
 
-1. After the certificate uploads, the status changes to **Active**.  We support **one** Active certificate currently.
-:::image type="content" source="media/how-to-transport-layer-security-settings/status-active.png" alt-text="Screenshot of the TLS inspection settings tab with the certificate status set to Active.":::   
+1. After the certificate uploads, the status is in **Disabled**, select **Enable** action, after **Enrolling** completes, the status changes to **Enabled**. We support **one** enabled certificate currently.
+:::image type="content" source="media/how-to-transport-layer-security-settings/status-active.png" alt-text="Screenshot of the TLS inspection settings tab showing certificate status workflow from Disabled to Enabled.":::   
 
 
 ### Test with a self-signed root certificate authority using OpenSSL
