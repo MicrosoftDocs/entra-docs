@@ -35,6 +35,12 @@ In the policy, you define the applications that require MFA. You can apply the p
 
 For details, see [how to create a Conditional Access policy in an external tenant](how-to-multifactor-authentication-customers.md#create-a-conditional-access-policy).
 
+### Step-up MFA with Conditional Access authentication context
+
+Multi-Factor Authentication (MFA) with authentication context lets you apply stronger security only when users access sensitive data or perform critical actions. You don’t need to enforce MFA for the entire app.
+With Microsoft Entra [Conditional Access authentication context](/entra/identity-platform/developer-guide-conditional-access-authentication-context), developers can add step-up authentication, such as MFA, inside their apps. Use this for scenarios like high-value transactions or viewing personal information.
+This approach supports Zero Trust principles. It ensures least privilege access and reduces user friction. Users get a secure and seamless experience.
+
 ## Enabling MFA methods
 
 When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in the Microsoft Entra admin center under **Entra ID** > **Authentication methods**.
