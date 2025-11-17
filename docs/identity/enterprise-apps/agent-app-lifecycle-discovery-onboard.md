@@ -20,7 +20,7 @@ The App Lifecycle Management Agent discovers unmanaged private applications thro
 
 Before using the discovery and onboarding features, ensure you have:
 
-- [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator) or [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) in Microsoft Entra ID
+- The [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator)
 - Microsoft Entra Suite or Microsoft Entra Private Access licenses
 - Microsoft Entra Private Access configured
 - Global Secure Access (GSA) Quick access is configured: Follow the guidance on [How to Configure Quick Access for Global Secure Access](/entra/global-secure-access/how-to-configure-quick-access)
@@ -50,7 +50,7 @@ To review suggestions:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)
 1. Browse to **Agents** in the left menu.
-1. Select the **App Lifecycle Management agent** card
+1. Select the **App Lifecycle Management Agent (Preview)** card
 1. Select **View details** to open the agent dashboard
 
 ### View discovery suggestions

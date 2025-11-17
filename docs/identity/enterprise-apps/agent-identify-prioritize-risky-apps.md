@@ -50,7 +50,7 @@ To review risk suggestions:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)
 1. Browse to **Agents** in the left menu
-1. Select the **App Lifecycle Management agent** card
+1. Select the **App Lifecycle Management Agent (Preview)** card
 1. Select **View details** to open the agent dashboard
 
 ### View risk suggestions

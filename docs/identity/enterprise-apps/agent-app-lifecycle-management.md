@@ -1,5 +1,5 @@
 ---
-title: Get started with the Microsoft Entra App Lifecycle Management Agent
+title: Get started with the Microsoft Entra App Lifecycle Management Agent (Preview)
 description: Learn how the Microsoft Entra App Lifecycle Management Agent with Microsoft Security Copilot helps streamline application discovery, onboarding, and risk remediation.
 ms.author: jomondi
 author: omondiatieno
@@ -12,7 +12,7 @@ ms.reviewer: ariels
 #customer intent: As an IT administrator, I want to implement automated application lifecycle management so that I can reduce security risks and streamline governance across my entire application portfolio.
 ---
 
-# Get started with the Microsoft Entra App Lifecycle Management Agent
+# Get started with the Microsoft Entra App Lifecycle Management Agent (Preview)
 
 The App Lifecycle Management Agent helps identity and network administrators manage the entire lifecycle of applications within Microsoft Entra, from discovery to onboarding, ongoing monitoring, and risk remediation. The agent automates detection of unmanaged applications, assists with onboarding them into Microsoft Entra for centralized management, and continuously monitors app health and usage to proactively identify risks such as excessive privileges or unused high-risk applications.
 
@@ -83,7 +83,7 @@ Apps are *disabled*, not deleted, by the agent after administrator approval. You
 
    - You can also select **Agents** from the left navigation menu.
 
-1. Select **View details** on the App Lifecycle Management Agent tile.
+1. Select **View details** on the **App Lifecycle Management Agent (Preview)** tile.
 
 1. Select **Start agent** to begin your first run. 
 
@@ -111,7 +111,7 @@ For risk remediation, the agent provides detailed reports of unused applications
 
 ## Settings
 
-Once the agent is enabled, you can adjust settings to customize its behavior and operation. You can access the settings from the Microsoft Entra admin center by navigating to **Agents** > **App Lifecycle Management Agent** > **Settings**.
+Once the agent is enabled, you can adjust settings to customize its behavior and operation. You can access the settings from the Microsoft Entra admin center by navigating to **Agents** > **App Lifecycle Management Agent (Preview)** > **Settings**.
 
 ### Trigger
 

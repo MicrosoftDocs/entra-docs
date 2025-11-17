@@ -1,6 +1,6 @@
 ---
 title: Contact application owners for unused app remediation
-description: Learn how to use the Microsoft Entra App Lifecycle Management agent to notify application owners about unused applications and collect their feedback for remediation decisions.
+description: Learn how to use the Microsoft Entra App Lifecycle Management Agent to notify application owners about unused applications and collect their feedback for remediation decisions.
 ms.author: jomondi
 author: omondiatieno
 manager: mwongerapk
@@ -14,7 +14,7 @@ ms.reviewer: ariels
 
 # Contact application owners for unused app remediation
 
-The Microsoft Entra App Lifecycle Management agent can automatically notify application owners about unused applications in your environment. This capability streamlines the remediation process by collecting owner feedback before making decisions about application removal or retention.
+The Microsoft Entra App Lifecycle Management Agent can automatically notify application owners about unused applications in your environment. This capability streamlines the remediation process by collecting owner feedback before making decisions about application removal or retention.
 
 The contact owners feature enables you to:
 
@@ -37,7 +37,7 @@ To contact application owners, you need:
    - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator)
    - [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role in Security Copilot.
 - For app owners to use the Microsoft Teams bot to respond to notifications from the App Lifecycle Management Agent, they must have access to Microsoft Teams and must have an active access review assigned to them. They must also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role assigned to them.
-- The App Lifecycle Management agent configured and running
+- The App Lifecycle Management Agent configured and running
 - Security Copilot with provisioned SCUs
 - Applications with owners assigned in Microsoft Entra ID
 
