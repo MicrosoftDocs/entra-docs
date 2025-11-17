@@ -44,7 +44,7 @@ sections:
       
       - question: What is certificate pinning, and how does it affect TLS inspection? 
         answer: |
-          Certificate pinning is a security mechanism that restricts an application's TLS connections to a specific set of trusted certificates or public keys. Certificate pining ensures that the application only communicates with servers presenting those exact credentials, even if other certificates are valid and trusted by the system.
+          Certificate pinning is a security mechanism that restricts an application's TLS connections to a specific set of trusted certificates or public keys. Certificate pinning ensures that the application only communicates with servers presenting those exact credentials, even if other certificates are valid and trusted by the system.
           This technique helps defend against man-in-the-middle (MITM) attacks by preventing unauthorized interception of encrypted traffic. However, it also interferes with network security tools that rely on TLS inspection, which works by decrypting and re-encrypting traffic using an intermediary certificate.
           
       - question: How should I handle applications that use certificate pinning? 
