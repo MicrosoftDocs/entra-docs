@@ -640,14 +640,264 @@ Content-type: application/json 
             "id": "{customExtensionObjectId}"  
         }  
     }  
-}  
+}  
 ```
 
 ### Set up encryption for password handling
 
+To secure the decryption private key and other sensitive configuration values used in your Azure Function, you should store them in Azure Key Vault instead of hardcoding them in your application. This section describes how to set up Azure Key Vault integration with your Azure Function to securely manage the RSA private key used for decrypting password contexts and other sensitive credentials.
 
+#### Prerequisites for Azure Key Vault integration
+
+Before you begin, ensure you have:
+- An Azure Key Vault instance in your Azure subscription
+- Your Azure Function deployed to Azure (Key Vault references work with Azure-hosted functions)
+- The RSA private key that matches the public key configured in your External ID tenant
+
+#### Create an Azure Key Vault
+
+If you don't already have a Key Vault, create one using the Azure portal, Azure CLI, or Azure PowerShell. Follow best practices by creating a separate Key Vault per application per environment.
+
+**Using Azure CLI:**
+
+```azurecli
+az keyvault create --name <your-key-vault-name> --resource-group <your-resource-group> --location <your-location>
+```
+
+**Using Azure PowerShell:**
+
+```azurepowershell
+New-AzKeyVault -Name <your-key-vault-name> -ResourceGroupName <your-resource-group> -Location <your-location>
+```
+
+> [!TIP]
+> Use a naming convention that includes your application name and environment, such as `kv-jitmigration-prod`.
+
+#### Store sensitive values in Key Vault
+
+Store the following sensitive values as secrets in your Key Vault:
+
+1. **Decryption Private Key** - The RSA private key used to decrypt the password context
+2. **Legacy Authentication Credentials** - Connection strings, API keys, or credentials needed to validate passwords against your legacy identity provider
+3. **Extension Client Secret** (if applicable) - Credentials for authentication between your Azure Function and External ID
+
+**Store the RSA private key:**
+
+```azurecli
+az keyvault secret set --vault-name <your-key-vault-name> --name "DecryptionPrivateKey" --value "-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC...
+-----END PRIVATE KEY-----"
+```
+
+**Store legacy API credentials (example):**
+
+```azurecli
+az keyvault secret set --vault-name <your-key-vault-name> --name "LegacyApiConnectionString" --value "Server=myserver;Database=mydb;User Id=myuser;Password=mypassword;"
+```
+
+> [!IMPORTANT]
+> When storing multi-line values like private keys, ensure the entire PEM-encoded key is stored as a single secret value, including the BEGIN and END markers.
+
+#### Enable Managed Identity for your Azure Function
+
+To allow your Azure Function to securely access Key Vault without storing credentials, enable a system-assigned managed identity.
+
+**Using Azure CLI:**
+
+```azurecli
+az functionapp identity assign --name <your-function-app-name> --resource-group <your-resource-group>
+```
+
+**Using Azure PowerShell:**
+
+```azurepowershell
+Update-AzFunctionApp -Name <your-function-app-name> -ResourceGroupName <your-resource-group> -IdentityType SystemAssigned
+```
+
+The output will include a `principalId` (Object ID) that represents your function's managed identity. Save this value for the next step.
+
+#### Grant Key Vault access to your Azure Function
+
+Assign the **Key Vault Secrets User** role to your Azure Function's managed identity using Azure RBAC (recommended) or access policies.
+
+**Using Azure CLI (RBAC - Recommended):**
+
+```azurecli
+az role assignment create --role "Key Vault Secrets User" \
+  --assignee <principal-id-from-previous-step> \
+  --scope /subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.KeyVault/vaults/<key-vault-name>
+```
+
+**Using Azure PowerShell (RBAC - Recommended):**
+
+```azurepowershell
+New-AzRoleAssignment -ObjectId <principal-id-from-previous-step> `
+  -RoleDefinitionName "Key Vault Secrets User" `
+  -Scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.KeyVault/vaults/<key-vault-name>"
+```
+
+> [!NOTE]
+> If your Key Vault uses the legacy Access Policies permission model, you'll need to grant "Get" and "List" permissions for secrets. However, RBAC is the recommended approach for new implementations.
+
+#### Configure Key Vault references in Azure Function
+
+Add Key Vault references to your Azure Function's application settings. Azure Functions will automatically retrieve these values from Key Vault at runtime.
+
+Key Vault references use the following syntax:
+```
+@Microsoft.KeyVault(SecretUri=https://<key-vault-name>.vault.azure.net/secrets/<secret-name>/<version>)
+```
+
+You can omit the version to always use the latest version of the secret.
+
+**Using Azure CLI:**
+
+```azurecli
+az functionapp config appsettings set --name <your-function-app-name> \
+  --resource-group <your-resource-group> \
+  --settings "DecryptionPrivateKey=@Microsoft.KeyVault(SecretUri=https://<your-key-vault-name>.vault.azure.net/secrets/DecryptionPrivateKey/)"
+```
+
+**Using Azure PowerShell:**
+
+```azurepowershell
+Update-AzFunctionAppSetting -Name <your-function-app-name> `
+  -ResourceGroupName <your-resource-group> `
+  -AppSetting @{
+    "DecryptionPrivateKey" = "@Microsoft.KeyVault(SecretUri=https://<your-key-vault-name>.vault.azure.net/secrets/DecryptionPrivateKey/)"
+  }
+```
+
+**Using Azure Portal:**
+
+1. Navigate to your Azure Function in the [Azure portal](https://portal.azure.com/).
+2. Under **Settings**, select **Configuration**.
+3. Under **Application settings**, click **+ New application setting**.
+4. Enter the name (e.g., `DecryptionPrivateKey`) and the Key Vault reference as the value.
+5. Click **OK** and then **Save**.
+
+#### Update your Azure Function code to use Key Vault references
+
+Modify your Azure Function code to read the decryption private key and other sensitive values from environment variables instead of hardcoding them as constants.
+
+Replace the hardcoded constant in your function:
+
+```csharp
+// OLD - Hardcoded (INSECURE)
+private const string DECRYPTION_PRIVATE_KEY = @"-----BEGIN PRIVATE KEY-----
+-----END PRIVATE KEY-----";
+```
+
+With code that reads from environment variables:
+
+```csharp
+// NEW - Read from environment variable (secured by Key Vault)
+private static readonly string DECRYPTION_PRIVATE_KEY = Environment.GetEnvironmentVariable("DecryptionPrivateKey");
+```
+
+Similarly, update any other sensitive configuration values:
+
+```csharp
+// Read legacy API credentials from Key Vault
+private static readonly string LEGACY_API_CONNECTION_STRING = Environment.GetEnvironmentVariable("LegacyApiConnectionString");
+```
+
+#### Verify Key Vault integration
+
+After deploying your updated function code:
+
+1. Navigate to your Azure Function in the Azure portal.
+2. Go to **Configuration** > **Application settings**.
+3. Verify that your Key Vault references show a green checkmark (✓) indicating successful resolution.
+4. Test your JIT migration flow by signing in with a test user to ensure the function can decrypt passwords correctly.
+
+#### Best practices for Key Vault with Azure Functions
+
+- **Use separate Key Vaults per environment**: Create dedicated Key Vaults for development, staging, and production environments.
+- **Enable purge protection**: Turn on purge protection to prevent accidental deletion of secrets.
+- **Configure network restrictions**: Limit Key Vault access to specific virtual networks or IP addresses when possible.
+- **Enable Key Vault logging**: Monitor access to your secrets using Azure Monitor or Azure Event Grid.
+- **Cache secrets appropriately**: Key Vault references are cached by Azure Functions, reducing latency and throttling concerns.
+- **Rotate secrets regularly**: Implement a rotation strategy for your private keys and credentials, updating them at least every 60-90 days.
+- **Use Key Vault as Event Grid source**: Monitor secret lifecycle events by integrating with Azure Event Grid and Azure Functions.
+
+For more information about securing Azure Functions with Key Vault, see:
+- [Use Key Vault references for Azure Functions](/azure/app-service/app-service-key-vault-references)
+- [Best practices for secrets management in Key Vault](/azure/key-vault/secrets/secrets-best-practices)
+- [Authentication in Azure Key Vault](/azure/key-vault/general/authentication)
+
+## Outstanding configuration requirements
+
+After setting up Key Vault integration, ensure the following items are completed for your JIT migration implementation:
+
+### Required: Generate and configure RSA key pair
+
+You need to generate an RSA key pair and configure it in your External ID tenant for password encryption:
+
+1. **Generate the RSA key pair** using OpenSSL or a similar tool:
+   ```bash
+   openssl genrsa -out private-key.pem 2048
+   openssl rsa -in private-key.pem -pubout -out public-key.pem
+   ```
+
+2. **Store the private key in Key Vault** as described in the previous section.
+
+3. **Configure the public key in your External ID tenant** using Microsoft Graph API:
+   ```http
+   POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions/{customExtensionId}/validateAuthenticationConfiguration
+   
+   {
+     "@odata.type": "#microsoft.graph.customExtensionEncryptionConfiguration",
+     "encryptionType": "asymmetric",
+     "certificate": "-----BEGIN PUBLIC KEY-----\nYOUR_PUBLIC_KEY_HERE\n-----END PUBLIC KEY-----"
+   }
+   ```
+
+### Required: Implement legacy authentication provider integration
+
+The sample Azure Function code includes a placeholder for legacy authentication. You must implement the actual integration with your legacy identity provider:
+
+1. **Update the `ProcessResponse` method** to call your legacy authentication API or database.
+2. **Handle different authentication outcomes**:
+   - If authentication succeeds and password is strong: Return `MigratePassword` response
+   - If authentication succeeds but password is weak: Return `UpdatePassword` response
+   - If authentication fails: Return `Retry` response
+   - If there's a system error: Return `Block` response
+3. **Store legacy API credentials in Key Vault** and reference them in your function code.
+
+### Required: Mark users for migration
+
+Before enabling JIT migration, mark the users that need to be migrated by setting the custom extension property:
+
+```http
+PATCH https://graph.microsoft.com/v1.0/users/{userId}
+{
+  "extension_00001111aaaa2222bbbb3333cccc4444_toBeMigrated": true
+}
+```
+
+You can also set this property during user provisioning if you're migrating users from your legacy system.
+
+### Recommended: Configure network security
+
+For production deployments:
+
+1. **Enable Azure Function network restrictions** to limit inbound traffic to trusted sources.
+2. **Configure Key Vault firewall** to allow access only from your Azure Function's virtual network or specific IP addresses.
+3. **Enable Azure Function managed identity** for all Azure service connections.
+4. **Configure Private Link** for Key Vault to keep all traffic within the Azure network.
+
+### Recommended: Set up monitoring and alerting
+
+Monitor your JIT migration process:
+
+1. **Enable Application Insights** for your Azure Function to track execution metrics and errors.
+2. **Configure Key Vault logging** to audit secret access.
+3. **Set up alerts** for:
+   - Failed authentication attempts
+   - Key Vault access failures
+   - Function execution errors or timeouts
+4. **Create a dashboard** to track migration progress (number of users migrated, failure rates, etc.).
 
 ## Next steps
-
-
 
