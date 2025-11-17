@@ -4,7 +4,7 @@ description: Developer guidance and scenarios for Microsoft Entra Conditional Ac
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.date: 11/15/2022
+ms.date: 09/11/2025
 ms.service: identity-platform
 ms.subservice: workforce
 ms.topic: concept-article
@@ -13,7 +13,7 @@ ms.topic: concept-article
 
 # Developer guide to Conditional Access authentication context
 
-[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 [Conditional Access](~/identity/conditional-access/overview.md) is the Zero Trust control plane that allows you to target policies for access to all your apps – old or new, private, or public, on-premises, or multicloud. With [Conditional Access authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context), you can apply different policies within those apps.
 

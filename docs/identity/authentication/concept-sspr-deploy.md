@@ -63,7 +63,7 @@ For more information about pricing, see [Microsoft Entra pricing](https://www.mi
 
 ### Prerequisites
 
-* A working Microsoft Entra tenant with at least a trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* A working Microsoft Entra tenant with at least a trial license enabled. If needed, [create one for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 * You must be assigned at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 

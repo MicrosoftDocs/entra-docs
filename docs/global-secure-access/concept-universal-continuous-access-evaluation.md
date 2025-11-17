@@ -9,7 +9,7 @@ author: idmdev
 manager: sineado
 ms.reviewer: dhruvinshah
 ---
-# Universal Continuous Access Evaluation (Preview)
+# Universal Continuous Access Evaluation
 
 Universal Continuous Access Evaluation (CAE) is a platform feature of Global Secure Access (GSA) that works together with Microsoft Entra ID to ensure that access to the GSA edge is validated every time a connection to a new application resource is established. Universal CAE protects the GSA access tokens from theft and replay. Universal CAE revokes and revalidates network access in near real-time whenever Entra ID detects changes to the identity. Traditional Entra ID CAE requires each workload to adopt special libraries and is limited to first-party applications only. Universal CAE extends benefits of CAE to any application accessed with Global Secure Access, without requiring the application to be CAE aware.
 

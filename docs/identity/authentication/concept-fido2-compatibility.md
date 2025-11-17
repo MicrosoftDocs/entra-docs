@@ -5,12 +5,12 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 06/09/2025
+ms.date: 11/06/2025
 
 author: justinha
 ms.author: justinha
 manager: dougeby
-ms.reviewer: calui
+ms.reviewer: kimhana
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 
@@ -47,7 +47,6 @@ The following section covers support for passkey (FIDO2) authentication in web b
 - Sign-in with passkey requires macOS Catalina 11.1 or later with Safari 14 or later because Microsoft Entra ID requires user verification for multifactor authentication.
 - Near-field communication (NFC) and Bluetooth Low Energy (BLE) security keys aren't supported on macOS by Apple.
 - New security key registration doesn't work on these macOS browsers because they don't prompt to set up biometrics or PIN.
-- See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered) for Safari on macOS.
 
 ### ChromeOS
 - NFC and BLE security keys aren't supported on ChromeOS by Google.
@@ -61,21 +60,12 @@ The following section covers support for passkey (FIDO2) authentication in web b
 - BLE security keys aren't supported on iOS by Apple.
 - NFC with FIPS 140-3 certified security keys isn't supported on iOS by Apple.
 - New security key registration doesn't work on iOS browsers because they don't prompt to set up biometrics or PIN.
-- See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
 ### Android
 - Sign-in with passkey requires Google Play Services 21 or later because Microsoft Entra ID requires user verification for multifactor authentication.
-- BLE security keys aren't supported on Android by Google.
-- Security key registration with Microsoft Entra ID isn't yet supported on Android.
+- BLE and NFC security keys aren't supported on Android by Google.
 - Sign-in with passkey isn't supported in Firefox on Android.
 
-## Known issues
-
-### Sign in when more than three passkeys are registered
-
-If you registered more than three passkeys, sign in with a passkey might not work on iOS or Safari on macOS. If you have more than three passkeys, as a workaround, click **Sign-in options** and sign in without entering a username.
-
-:::image type="content" border="true" source="media/fido2-compatibility/sign-in-options.png" alt-text="Screenshot of sign-in options.":::
 
 ## [**Native apps**](#tab/native)
 

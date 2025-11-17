@@ -59,6 +59,10 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
+  - name: Continuous Access Evaluation for Application Proxy (preview)
+    href: concept-continuous-access-evaluation.md
+  - name: B2B Guest Access (preview)
+    href: concept-b2b-guest-access.md
 - name: How-to guides
   expanded: true
   items:
@@ -138,6 +142,8 @@ items:
     items:
       - name: Understand Private Access
         href: concept-private-access.md
+      - name: Enable Intelligent Local Access (preview)
+        href: enable-intelligent-local-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
       - name: Enable Multi-Geo Capability
@@ -169,18 +175,20 @@ items:
     items:
       - name: Understand Internet Access
         href: concept-internet-access.md
+      - name: What is Transport Layer Security inspection? 
+        href: concept-transport-layer-security.md 
+      - name: Configure Transport Layer Security inspection settings
+        href: how-to-transport-layer-security-settings.md
+      - name: Configure Transport Layer Security inspection policies
+        href: how-to-transport-layer-security.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
       - name: Check URL category
         href: how-to-check-web-content-filtering-categories.md
-      - name: What is Transport Layer Security inspection? 
-        href: concept-transport-layer-security.md 
-      - name: Configure Transport Layer Security inspection 
-        href: how-to-transport-layer-security.md 
-      - name: Configure web content filtering
-        href: how-to-configure-web-content-filtering.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
+      - name: Customize the block page
+        href: how-to-customize-block-page.md
   - name: Logs and monitoring
     expanded: false
     items:
@@ -248,7 +256,14 @@ items:
          expanded: false
          items:
            - name: Coexistence with Cisco
-             href: concept-cisco-coexistence.md
+             expanded: false
+             items:
+               - name: Coexistence with Cisco Umbrella
+                 href: how-to-cisco-coexistence.md
+               - name: Coexistence with Cisco Secure Access
+                 href: how-to-cisco-secure-access-coexistence.md
+               - name: Coexistence with Cisco VPNs
+                 href: how-to-cisco-vpn-coexistence.md
            - name: Coexistence with Palo Alto Networks
              href: how-to-palo-alto-coexistence.md
            - name: Coexistence with Zscaler

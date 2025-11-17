@@ -18,7 +18,7 @@ In this article, using PowerShell, you learn how to perform the managed identiti
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md). **Be sure to review the [difference between a system-assigned and user managed assigned identity](~/identity/managed-identities-azure-resources/overview.md#managed-identity-types)**.
 
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 - To perform the management operations in this article, your account needs the following Azure role-based access control assignments:
 

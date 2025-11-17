@@ -25,11 +25,17 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Applications don't have client secrets configured 
 [!INCLUDE [21772](../includes/secure-recommendations/21772.md)]
 
+### Service principals don't have certificates or credentials associated with them 
+[!INCLUDE [21896](../includes/secure-recommendations/21896.md)]
+
 ### Applications don't have certificates with expiration longer than 180 days 
 [!INCLUDE [21773](../includes/secure-recommendations/21773.md)]
 
 ### Application Certificates need to be rotated on a regular basis
 [!INCLUDE [21992](../includes/secure-recommendations/21992.md)]
+
+### Enforce standards for app secrets and certificates
+[!INCLUDE [21775](../includes/secure-recommendations/21775.md)]
 
 ### Microsoft services applications don't have credentials configured
 [!INCLUDE [21774](../includes/secure-recommendations/21774.md)]
@@ -40,14 +46,23 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Admin consent workflow is enabled
 [!INCLUDE [21809](../includes/secure-recommendations/21809.md)]
 
+### High Global Administrator to privileged user ratio
+[!INCLUDE [21813](../includes/secure-recommendations/21813.md)]
+
 ### Privileged accounts are cloud native identities
 [!INCLUDE [21814](../includes/secure-recommendations/21814.md)]
 
 ### All privileged role assignments are activated just in time and not permanently active
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
 
+### Passkey authentication method enabled
+[!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
+
+### Security key attestation is enforced
+[!INCLUDE [21840](../includes/secure-recommendations/21840.md)]
+
 ### Privileged accounts have phishing-resistant methods registered
-[!INCLUDE [21782](../includes/secure-recommendations/21782.md)]
+[!INCLUDE [21839](../includes/secure-recommendations/21839.md)]
 
 ### Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
 [!INCLUDE [21783](../includes/secure-recommendations/21783.md)]
@@ -58,8 +73,20 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Block legacy authentication
 [!INCLUDE [21796](../includes/secure-recommendations/21796.md)]
 
+### Temporary access pass is enabled
+[!INCLUDE [21845](../includes/secure-recommendations/21845.md)]
+
+### Restrict Temporary Access Pass to Single Use
+[!INCLUDE [21846](../includes/secure-recommendations/21846.md)]
+
 ### Migrate from legacy MFA and SSPR policies
-[!INCLUDE [21803](../includes/secure-recommendations/21803.md)]
+[!INCLUDE [21845](../includes/secure-recommendations/21845.md)]
+
+### Block administrators from using SSPR  
+[!INCLUDE [21842](../includes/secure-recommendations/21842.md)]
+
+### Self-service password reset doesn't use security questions
+[!INCLUDE [22072](../includes/secure-recommendations/22072.md)]
 
 ### SMS and Voice Call authentication methods are disabled
 [!INCLUDE [21804](../includes/secure-recommendations/21804.md)]
@@ -73,6 +100,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Use cloud authentication
 [!INCLUDE [21829](../includes/secure-recommendations/21829.md)]
 
+### All users are required to register for MFA
+[!INCLUDE [21893](../includes/secure-recommendations/21893.md)]
+
 ### Users have strong authentication methods configured
 [!INCLUDE [21801](../includes/secure-recommendations/21801.md)]
 
@@ -85,14 +115,38 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### Authentication transfer is blocked
 [!INCLUDE [21828](../includes/secure-recommendations/21828.md)]
 
-### Authenticator app shows sign-in context
+### Microsoft Authenticator app shows sign-in context
 [!INCLUDE [21802](../includes/secure-recommendations/21802.md)]
+
+### Microsoft Authenticator app report suspicious activity setting is enabled
+[!INCLUDE [21841](../includes/secure-recommendations/21841.md)]
 
 ### Password expiration is disabled
 [!INCLUDE [21811](../includes/secure-recommendations/21811.md)]
 
+### Smart lockout threshold set to 10 or less
+[!INCLUDE [21850](../includes/secure-recommendations/21850.md)]
+
+### Smart lockout duration is set to a minimum of 60
+[!INCLUDE [21849](../includes/secure-recommendations/21849.md)]
+
+### Add organizational terms to the banned password list
+[!INCLUDE [21848](../includes/secure-recommendations/21848.md)]
+
 ### Require multifactor authentication for device join and device registration using user action
 [!INCLUDE [21872](../includes/secure-recommendations/21872.md)]
+
+### Local Admin Password Solution is deployed
+[!INCLUDE [21953](../includes/secure-recommendations/21953.md)]
+
+### Entra Connect Sync is configured with Service Principal Credentials
+[!INCLUDE [24570](../includes/secure-recommendations/24570.md)]
+
+### No usage of ADAL in the tenant
+[!INCLUDE [21780](../includes/secure-recommendations/21780.md)]
+
+### Block legacy Azure AD PowerShell module
+[!INCLUDE [21844](../includes/secure-recommendations/21844.md)]
 
 ### Enable Microsoft Entra ID security defaults
 [!INCLUDE [21871](../includes/secure-recommendations/21871.md)]

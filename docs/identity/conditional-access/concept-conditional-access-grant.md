@@ -1,10 +1,12 @@
 ---
 title: How to Configure Grant Controls in Microsoft Entra
 description: Learn how to configure grant controls in Microsoft Entra Conditional Access policies to secure access to your organization's resources effectively.
+
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: article
-ms.date: 08/28/2025
+ms.topic: concept-article
+ms.date: 09/22/2025
+
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
@@ -30,7 +32,7 @@ The control for blocking access evaluates assignments and prevents access based 
 
 ## Grant access
 
-Administrators can choose to enforce one or more controls when granting access. These controls include the following options:
+Admins can choose to enforce one or more controls when granting access. These controls include the following options:
 
 - [Require multifactor authentication (Microsoft Entra multifactor authentication)](~/identity/authentication/concept-mfa-howitworks.md)
 - [Require authentication strength](#require-authentication-strength)
@@ -40,7 +42,7 @@ Administrators can choose to enforce one or more controls when granting access. 
 - [Require app protection policy](./policy-all-users-device-compliance.md)
 - [Require password change](#require-password-change)
 
-When administrators choose to combine these options, they can use the following methods:
+When admins choose to combine these options, they can use the following methods:
 
 - Require all the selected controls (control *and* control)
 - Require one of the selected controls (control *or* control)
@@ -55,7 +57,7 @@ Selecting this checkbox requires users to perform Microsoft Entra multifactor au
 
 ### Require authentication strength
 
-Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Entra ID** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
+Admins can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Entra ID** > **Authentication methods** > **Authentication strengths**. Admins can choose to create their own or use the built-in versions.
 
 ### Require device to be marked as compliant
 
@@ -191,7 +193,7 @@ See [Require app protection policy and an approved client app for cloud app acce
 
 ### Require password change
 
-When user risk is detected, administrators can employ the user risk policy conditions to have the user securely change a password by using Microsoft Entra self-service password reset. Users can perform a self-service password reset to self-remediate. This process closes the user risk event to prevent unnecessary alerts for administrators.
+When user risk is detected, admins can employ the user risk policy conditions to have the user securely change a password by using Microsoft Entra self-service password reset. Users can perform a self-service password reset to self-remediate. This process closes the user risk event to prevent unnecessary alerts for admins.
 
 When a user is prompted to change a password, they're first required to complete multifactor authentication. Make sure all users register for multifactor authentication, so they're prepared in case risk is detected for their account.  
 
@@ -206,7 +208,7 @@ The following restrictions apply when you configure a policy by using the passwo
 
 ### Terms of use
 
-If your organization created terms of use, other options might be visible under grant controls. These options allow administrators to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
+If your organization created terms of use, other options might be visible under grant controls. These options allow admins to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
 
 ## Multiple grant controls
 
