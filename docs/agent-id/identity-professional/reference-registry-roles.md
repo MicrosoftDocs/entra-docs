@@ -58,7 +58,7 @@ Can view the properties of agent card manifest objects.
 
 ## Agent Card Manifest Creator
 
-Can  create agent card manifests as specified in the request body.
+Can create agent card manifests as specified in the request body.
 
 | Resource type | Action | Description |
 | --- |--- | --- |

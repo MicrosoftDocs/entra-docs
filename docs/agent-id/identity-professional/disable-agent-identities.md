@@ -51,13 +51,12 @@ Globally disabling agent identities in your tenant has broader consequences than
 - Support or troubleshooting: Helpdesk and SOC teams might receive increased tickets when first-party features fail quietly due to missing agent identities.
 - Blocking agent identities might push teams to build agents using generic application or service principal identities, reducing visibility and making it harder to distinguish agents from other software projects.
 
-If full disable proves too disruptive, consider a partial approach by implementing certain steps below while allowing some usage of Agent IDs in your tenant.
+If full disable proves too disruptive, consider a partial approach while allowing some usage of Agent IDs in your tenant.
 
 To disable agent identities in your tenant, follow these steps:
 
 1. Apply Conditional Access policies to prevent agent identities from authenticating.
 1. (Optional) Block creation of agent identities in your tenant via various channels.
-
 
 ## Monitor for Agent ID creations and activity
 
@@ -78,13 +77,13 @@ For more information, see [agent audit logs](sign-in-audit-logs-agents.md)
 
 The agentSignIn resource type provides descriptive information that identifies and classifies sign-in events as agentic. This allows customers to determine when an agent identity was the subtype of the identity involved in an authentication event. For more information, see [agent sign-in logs](sign-in-audit-logs-agents.md)
 
-## Block token issuance to Agent IDs using conditional access
+## Block token issuance to Agent IDs using Conditional Access
 
-Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant. 
+Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies prevent existing and new Agent IDs from authenticating. It doesn't prevent the creation of Agent IDs in your tenant. 
 
 Applying these policies in your tenant requires the Microsoft Entra ID P1 license. Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) can also use Conditional Access features. To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-To block authentication and token issuance of Agent IDs, create the following Conditional Access block policies. It's recommended to run these policies in [report-only mode](/entra/identity/conditional-access/concept-conditional-access-report-only) and understand their impact before enforcing them.
+To block authentication and token issuance of Agent IDs, create the following Conditional Access block policies. We recommend running these policies in [report-only mode](/entra/identity/conditional-access/concept-conditional-access-report-only) and understand their impact before enforcing them.
 
 ### Policy 1: Block agent identity authentication
 
@@ -239,12 +238,12 @@ Content-type: application/json
 
 ## (Optional) Block creation of Agent IDs
 
-The Conditional Access policies applied above are sufficient to prevent all usage of Agent IDs in your tenant, including newly created Agent IDs. Should you wish to additionally prevent creation of Agent IDs in your tenant, follow the steps below.
+The Conditional Access policies are sufficient to prevent all usage of Agent IDs in your tenant, including newly created Agent IDs. Should you wish to prevent creation of Agent IDs in your tenant, follow the steps in this section.
 
 Agent IDs can enter your tenant through various channels. See [this article for details](agent-id-creation-channels.md). You can block creation of Agent IDs through the following methods.
 
 - Block creation of Agent IDs via Microsoft Entra admin center and other Microsoft Entra experiences.
-- Block acquisition of Agent IDs from ISVs.
+- Block acquisition of Agent IDs from Independent Software Vendors (ISVs).
 - Block creation of Agent IDs by Microsoft products and services.
 
 ### Block creation of Agent IDs via Microsoft Entra ID
@@ -263,7 +262,7 @@ To prevent users from creating Agent IDs via the Microsoft Entra admin center an
 | `AgentIdentityBlueprintPrincipal.ReadWrite.All` | Delegated and application permission |
 | `AgentIdUser.ReadWrite.IdentityParentedBy` | Delegated and application permission |
 | `AgentIdUser.ReadWrite.All` | Delegated and application permission |
-| `User.ReadWrite.All` | Delegated and application permission <br> Note: These permissions may also be used to manage human user accounts. Removing this permission will cause systems to lose access to manage  human users. |
+| `User.ReadWrite.All` | Delegated and application permission. These permissions can also be used to manage human user accounts. Removing this permission causes systems to lose access to manage human users. |
 
 See the [Microsoft Graph permissions reference](/graph/permissions-reference) for full details of these permissions.
 
@@ -286,7 +285,7 @@ To block Microsoft products and services from creating Agent IDs in your tenant,
 
 #### Security Copilot
 
-- To disable Agent ID creation by Security Copilot, shut off Security Copilot by deleting all SCU capacity. This blocks both agents and Security Copilot itself. Users with the following roles can turn Security Copilot back on by creating SCU capacity:
+- To disable Agent ID creation by Security Copilot, shut off Security Copilot by deleting all Security Compute Unit (SCU) capacity. This blocks both agents and Security Copilot itself. Users with the following roles can turn Security Copilot back on by creating SCU capacity:
 
     - Billing Administrator
     - Microsoft Entra Compliance Administrator
@@ -307,7 +306,7 @@ To block Microsoft products and services from creating Agent IDs in your tenant,
 
     - To block third-party agents (agents not owned by Microsoft), remove all users from the Owner / Contributor role in any Security Copilot workspaces.
 
-See [Security Copilot documentation for more details](/copilot/security/).
+For more information, see [Security Copilot documentation](/copilot/security/).
 
 #### Copilot Studio
 
