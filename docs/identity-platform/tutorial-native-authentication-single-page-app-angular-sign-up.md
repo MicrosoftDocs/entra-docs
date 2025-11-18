@@ -216,7 +216,7 @@ In this section, you define a configuration for native authentication public cli
         </div>
         ```
 
-5. Open the *sign-up/sign-up.component.scss* file, then add the following [styles file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.scss).
+5. Open the *src/app/app.component.scss* file, then add the following [styles file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/app.component.scss).
 
 
 ### Automatically sign-in after sign-up (optional)

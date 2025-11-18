@@ -92,8 +92,8 @@ In this tutorial, you:
             <p>The password has been reset, please click <a href="/sign-in">here</a> to sign in.</p>
         </div>
         ```
+        ```
 
-1. Open the *reset-password/reset-password.component.scss* file, then add the contents from [reset-password.component.scss](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.scss).
 
 ### Automatically sign-in after reset password (optional)
 

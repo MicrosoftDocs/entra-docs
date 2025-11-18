@@ -73,7 +73,7 @@ In this tutorial, you:
         </form>
         ```
 
-4. Open the *sign-in/sign-in.component.scss* file and add the content from [sign-in.component.scss](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.scss).
+
 
 ## Update the routing module
 
