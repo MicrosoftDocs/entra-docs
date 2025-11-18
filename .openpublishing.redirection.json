@@ -3029,6 +3029,11 @@
       "source_path_from_root": "/docs/identity/authentication/concept-authentication-methods.md",
       "redirect_url": "/entra/identity/authentication/overview-authentication",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/deactivate-application-portal.md",
+      "redirect_url": "/entra/identity/enterprise-apps/delete-application-portal",
+      "redirect_document_id": false
     }
   ]
 }
