@@ -38,6 +38,7 @@ To get started, you need:
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
 - A Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview) configuration. Traffic from the Akamai WAF routes to Azure Front Door, which then routes to the external tenant.
+- An Akamai account. If you don’t have one, go to the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public) to create and purchase your account.
 - An [Akamai Web Application Firewall (WAF)](https://www.akamai.com/glossary/what-is-a-waf) that manages traffic sent to the authorization server.
 - A [custom domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant that’s enabled with Azure Front Door (AFD).
 
@@ -125,11 +126,6 @@ Additionally, update the **API restrictions** for the actions to the appropriate
 After completing the configuration steps, verify that Akamai WAF is protecting your external tenant by connecting the authentication credentials to the WAF configuration.
 
 
-
-
-
-
-
 # [Microsoft Entra admin center](#tab/admin-center)
 
 ## WAF provider configuration
@@ -142,7 +138,8 @@ After completing the configuration steps, verify that Akamai WAF is protecting y
 
   :::image type="content" source="media\how-to-configure-akamai-integration\choose-waf-provider.png" alt-text="Screenshot of the choose WAF provider page.":::
 
-6. Under **WAF provider configuration**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
+6. Create an Akamai account. If you don’t have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public). Then return here to complete the setup.
+7. Under **Configure Akamai WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
     - **Configuration name**: A name for the WAF configuration.
     - **Host prefix**: The host prefix from your Akamai EdgeGrid API credentials.
     - **Client secret**: The client secret from your Akamai EdgeGrid API credentials.
@@ -151,7 +148,7 @@ After completing the configuration steps, verify that Akamai WAF is protecting y
 
   :::image type="content" source=" media\how-to-configure-akamai-integration\configure-akamai-provider.png" alt-text="Screenshot of the configure WAF provider page.":::
 
-7. Select **Next** to go to the next step.
+8. Select **Next** to go to the next step.
 
 ## Domain verification
 
