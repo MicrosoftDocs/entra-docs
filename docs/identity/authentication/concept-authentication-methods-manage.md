@@ -37,7 +37,7 @@ Only the [converged registration experience](concept-registration-mfa-sspr-combi
 Two other policies, located in **Multifactor authentication** settings and **Password reset** settings, provide a legacy way to manage some authentication methods for all users in the tenant. You can't control who uses an enabled authentication method, or how the method can be used. 
 
 >[!Important]
->In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
+>In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date. Note: This change does not mean that any authentication methods, such as SMS, are being deprecated. SMS and other supported methods will continue to work when managed through the Authentication methods policy.
 
 To manage the legacy MFA policy, Browse to **Entra ID** > **Multifactor authentication** > **Getting started** > **Configure** > **Additional cloud-based multifactor authentication settings**.
 
