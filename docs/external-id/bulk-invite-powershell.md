@@ -90,6 +90,8 @@ When prompted, enter your credentials.
 To send the invitations, run the following PowerShell script (where * * *c:\bulkinvite\invitations.csv* is the path of the CSV file):
 
 ```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+
 $invitations = import-csv c:\bulkinvite\invitations.csv
 
 $messageInfo = New-Object Microsoft.Graph.PowerShell.Models.MicrosoftGraphInvitedUserMessageInfo
