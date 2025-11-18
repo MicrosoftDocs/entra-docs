@@ -15,6 +15,10 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## October 2025
+
+We did not publish any updates this month.
+
 ## September 2025
 
 ### Updated articles
@@ -28,11 +32,5 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 ### Updated articles
 
 - [Microsoft Enterprise SSO plug-in for Apple devices](apple-sso-plugin.md) - We adjusted Apple SSO, updated the token protection image, and troubleshot secure enclave issues.
-
-## July 2025
-
-### Updated articles
-
-- [What is the Microsoft identity platform?](v2-overview.md) - The update improved content clarity.
 
 

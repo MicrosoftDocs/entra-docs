@@ -5,7 +5,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 11/02/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -40,14 +40,12 @@ Methods include:
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
 - [FIDO2 security key](concept-authentication-passwordless.md)
+- [Microsoft Authenticator passkey](concept-authentication-authenticator-app.md)
+- Synced passkey (preview)
 - [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview)
 - [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
 - [Voice call verification](concept-authentication-phone-options.md)
-
-When choosing authenticating methods that will be used in your tenant consider the security and usability of these methods:
-
-![Choose the right authentication method](media/concept-authentication-methods/authentication-methods.png)
 
 To learn more about the strength and security of these methods and how they work, see the following resources:
 
@@ -153,7 +151,7 @@ If you have users registered for MFA using SMS or voice calls, you may want to m
 As mentioned before, ensure users are registered for more than one MFA method, so that if one is unavailable, they have a backup. 
 If the user doesn't have a backup method available, you can: 
 
-- Provide them a Temporary Access Pass so that they can manage their own authentication methods. You can also provide a Temporary Access Pass to enable temporary access to resources. 
+- Provide them with a Temporary Access Pass so that they can manage their own authentication methods. You can also provide a Temporary Access Pass to enable temporary access to resources. 
 - Update their methods as an administrator. To do so, select the user in the Microsoft Entra admin center, then select **Entra ID** > **Authentication methods** and update their methods.
 
 

@@ -5,6 +5,8 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
+  - name: Governing Agent IDs (Preview)
+    href: agent-ID-governance-overview.md    
 
 
 - name: Scenarios
@@ -261,6 +263,10 @@
         href: my-access-approver-details.md  
       - name: View reports and logs
         href: entitlement-management-reports.md
+      - name: Configure ID Protection-based approvals (Preview)
+        href: entitlement-management-configure-id-protection-approvals.md
+      - name: Configure Insider risk management-based approvals (Preview)
+        href: entitlement-management-configure-insider-risk-management-approvals.md    
       - name: Archive logs and reporting
         href: entitlement-management-logs-and-reporting.md
       - name: Troubleshoot
@@ -271,7 +277,7 @@
         href: entitlement-management-catalog-create.md
       - name: Create a custom extension (logic apps) for catalogs
         href: entitlement-management-logic-apps-integration.md
-      - name: Determine access package approvers externally (Preview)
+      - name: Determine access package approvers externally
         href: entitlement-management-dynamic-approval.md  
       - name: Delegate to access package managers
         href: entitlement-management-delegate-managers.md
@@ -315,7 +321,7 @@
         href: entitlement-management-roles.md
       - name: Suggested access packages in MyAccess
         href: entitlement-management-suggested-access-packages.md 
-      - name: Assign eligible group membership and ownership in access packages using PIM managed groups (Preview)
+      - name: Assign eligible group membership and ownership in access packages using PIM managed groups
         href: entitlement-management-access-package-eligible.md   
     - name: Approvers
       items:
@@ -326,7 +332,7 @@
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
-        href: entitlement-management-access-reviews-self-review.md  
+        href: entitlement-management-access-reviews-self-review.md   
     - name: Requestors
       items:
       - name: Request access
@@ -355,6 +361,10 @@
         href: access-reviews-application-preparation.md
       - name: Create an access review
         href: create-access-review.md
+      - name: Catalog access reviews (Preview)
+        href: catalog-access-reviews.md
+      - name: Custom data provided resources
+        href: custom-data-resource-access-reviews.md      
       - name: Review access
         href: perform-access-review.md
       - name: Review access for yourself
@@ -405,7 +415,7 @@
           href: reprocess-workflow.md    
         - name: Download workflow history reports
           href: download-workflow-history.md
-        - name: Manage inactive users (Preview)
+        - name: Manage inactive users
           href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
           href: check-workflow-execution-scope.md
@@ -417,8 +427,10 @@
           href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
           href: manage-workflow-insights.md
-        - name: Workflow Sensitivity Labels
-          href: workflow-sensitivity-labels.md               
+        - name: Sensitivity Labels in Lifecycle Workflows
+          href: workflow-sensitivity-labels.md 
+        - name: Agent Identity Sponsor Tasks (Preview)
+          href: agent-sponsor-tasks.md       
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
