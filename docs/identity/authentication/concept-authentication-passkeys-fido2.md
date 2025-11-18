@@ -28,7 +28,7 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
 
 1. The user initiates sign-in to Microsoft Entra ID.
 1. The user selects a passkey:
-   - Device-bound (stored on the device) 
+   - Same device (stored on the device) 
    - Cross-device (via QR code) or a FIDO2 security key 
 1. Microsoft Entra ID sends a challenge (nonce) to the authenticator. 
 1. The authenticator locates the key pair using the hashed RP ID and credential ID. 
