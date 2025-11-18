@@ -34,7 +34,7 @@ Conditional access enables organizations to define and enforce adaptive policies
 - Using real-time signals such as agent identities risk controlling agent access to resources, with Microsoft Managed Policies providing a secure baseline by blocking high-risk agents.
 - Deploying conditional access policies at scale using custom security attributes, while still supporting fine-grained controls for individual agents.
 
-For more information, see [Conditional access](/entra/identity/conditional-access/overview).
+For more information, see [Conditional Access](/entra/identity/conditional-access/agent-id).
 
 ## Identity governance for agents
 

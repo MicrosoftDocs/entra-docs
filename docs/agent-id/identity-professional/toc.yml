@@ -32,6 +32,8 @@ items:
     href: sign-in-audit-logs-agents.md
   - name: Access packages
     href: agent-access-packages.md
+  - name: Consent and sign-in
+    href: sign-in-process.md
   - name: Identity protection for agents
     href: /entra/id-protection/concept-risky-agents?toc=/entra/agent-id/identity-professional/toc.json
   - name: Identity governance for agents
@@ -46,3 +48,5 @@ items:
     href: reference-registry-roles.md
   - name: Microsoft Graph Permissions reference
     href: /graph/permissions-reference?toc=/entra/agent-id/identity-professional/toc.json
+  - name: Known issues
+    href: /entra/agent-id/identity-platform/preview-known-issues?toc=/entra/agent-id/identity-professional/toc.json

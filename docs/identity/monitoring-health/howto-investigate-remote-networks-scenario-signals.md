@@ -23,31 +23,32 @@ To learn more about how Microsoft Entra Health works, see:
 
 - [How to use Microsoft Entra health monitoring signals and alerts](/entra/identity/monitoring-health/howto-use-health-scenario-alerts)
 
-This article describes the health metrics related to Remote Networks connectivity and troubleshoot potential problems.
+This article describes the health metrics related to remote network connectivity and provides steps to troubleshoot potential problems.
+ 
+This article covers two scenarios:
 
-This scenario:
-
-- Aggregate the \# of tunnels that are connected.
-
-- Aggregate the \# of tunnels that are disconnected.
-
-- Aggregate the \# of tunnels with BGP disconnected.
+- Global Secure Access requiring remote network tunnel connectivity
+    - Presents data showing the number of remote network tunnels that are connected.
+    - Presents data showing the number of remote network tunnels that are disconnected.
+- Global Secure Access requiring remote network BGP connectivity
+    - Presents data showing the number of remote networks with BGP connected.
+    - Presents data showing the number of remote networks with BGP disconnected.
 
 ## Prerequisites
 
-There are different roles, permissions, and license requirements to view health monitoring signals and configure and receive alerts. We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
+There are different roles, permissions, and license requirements to view health monitoring signals and to configure and receive alerts. We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
 
-- A tenant with a [Microsoft Entra P1 or P2 license](/entra/fundamentals/get-started-premium) is required to *view* the Microsoft Entra health scenario monitoring signals.
+- A tenant with a [Microsoft Entra P1 or P2 license](/entra/fundamentals/get-started-premium) is required to *view* the Microsoft Entra health scenario monitoring signals
 
-- A tenant with Microsoft Entra Global Secure Access license is required. For details, see the licensing section of [What is Global Secure Access?](/entra/global-secure-access/overview-what-is-global-secure-access).
-
+- A tenant with Microsoft Entra Global Secure Access license is required. For details, see the licensing section of [What is Global Secure Access?](/entra/global-secure-access/overview-what-is-global-secure-access)
+    
 - The [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader) role is the least privileged role required to *view scenario monitoring signals.*
 
 - The HealthMonitoringAlert.Read.All permission is required to *view the alerts using the Microsoft Graph API*.
 
 - For a full list of roles, see [Least privileged role by task](/entra/identity/role-based-access-control/delegate-by-task#monitoring-and-health---audit-and-sign-in-logs).
 
-- The [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator), or [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) role to access remote network logs.
+- You must be assigned the [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator), or [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) role to access remote network logs.
 
 ## Investigate the signals
 
@@ -55,7 +56,7 @@ To investigate a signal, gather the following data:
 
 1.  View the details of the alert.
 
-    - In the Microsoft Entra admin center, review the metrics and details of the affected entities. For more information, see [Investigate the alert and signals](/entra/identity/monitoring-health/howto-use-health-scenario-alerts#investigate-the-alert-and-signals).
+    - In the [Microsoft Entra admin center](https://entra.microsoft.com/), review the metrics and details of the affected entities. For more information, see [Investigate the alert and signals](/entra/identity/monitoring-health/howto-use-health-scenario-alerts#investigate-the-alert-and-signals).
 
     <!-- -->
 
