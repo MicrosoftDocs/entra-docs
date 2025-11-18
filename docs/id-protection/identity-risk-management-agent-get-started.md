@@ -19,7 +19,6 @@ IT administrators and security analysts face mounting pressure to identify and r
 ## Prerequisites
 
 - You must have at least the [Microsoft Entra ID P2](overview-identity-protection.md#license-requirements) license.
-- You must have the [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) license to use the Identity Risk Management Agent.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
 - You must have the appropriate Microsoft Entra role.
@@ -27,6 +26,8 @@ IT administrators and security analysts face mounting pressure to identify and r
    - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
+
+[!INCLUDE [entra-agent-id-license-note](../includes/entra-agent-id-license-note.md)]
 
 ### Known limitations
 
