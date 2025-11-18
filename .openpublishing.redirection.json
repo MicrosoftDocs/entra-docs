@@ -3031,7 +3031,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/authentication/deactivate-application-portal.md",
+      "source_path_from_root": "/docs/identity/enterprise-apps/deactivate-application-portal.md",
       "redirect_url": "/entra/identity/enterprise-apps/delete-application-portal",
       "redirect_document_id": false
     }
