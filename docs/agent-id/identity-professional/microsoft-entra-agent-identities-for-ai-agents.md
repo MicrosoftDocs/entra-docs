@@ -24,8 +24,7 @@ This article explains how Microsoft Entra Agent ID extends security capabilities
 
 :::image type="content" source="media/microsoft-entra-agent-identities-for-ai-agents/microsoft-entra-agent-identity-capabilities.png" alt-text="Diagram showing agent security capabilities offered by Microsoft Entra Agent ID.":::
 
-> [!IMPORTANT]
-> The capabilities described in this article are included in the [Microsoft Entra Agent ID](https://aka.ms/EntraAgentID) license.
+[!INCLUDE [entra-agent-id-license-note](../../includes/entra-agent-id-license-note.md)]
 
 ## Conditional Access for agents
 

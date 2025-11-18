@@ -35,8 +35,6 @@ The ability for administrators to request on behalf of agent identities they own
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
-
 [!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Configure an access package policy allowing on behalf of requests
