@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Microsoft Entra agent identity platform for developers
+title: Microsoft agent identity platform for developers
 summary: Learn how to build agents that can authenticate users, request permissions, and access resources securely with Microsoft agent identity platform.
 
 metadata: 
    title: Microsoft Entra Agent Identity Platform for Developers
-   description: Learn how to build agents that can authenticate users, request permissions, and access resources securely with the Microsoft Entra agent identity platform.
+   description: Learn how to build agents that can authenticate users, request permissions, and access resources securely with the Microsoft agent identity platform.
    ms.service: entra-id
    ms.topic: landing-page
    ms.custom: agent-id-ignite
@@ -14,11 +14,11 @@ metadata:
    ms.author: sarahlipsey
 
 landingContent:
-  - title: Microsoft Entra agent identity platform for developers
+  - title: Microsoft agent identity platform for developers
     linkLists:
       - linkListType: overview
         links:
-          - text: What is the Microsoft Entra agent identity platform?
+          - text: What is the Microsoft agent identity platform?
             url: ./what-is-agent-id-platform.md
           - text: What is an agent identity?
             url: ./what-is-agent-id.md

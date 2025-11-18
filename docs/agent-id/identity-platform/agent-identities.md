@@ -12,7 +12,7 @@ ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to understand what agent identities are in Microsoft Entra ID, how they differ from application and human identities, and why my organization needs them so that I can deploy AI agents securely in our Microsoft Entra environment.
 ---
 
-# Agent identities in Microsoft Entra agent ID
+# Agent identities in Microsoft Entra Agent ID
 
 An agent identity is a special service principal in Microsoft Entra ID. It represents an identity that the agent identity blueprint created and is authorized to impersonate. It doesn't have credentials on its own. The agent identity blueprint can acquire tokens on behalf of the agent identity provided the user or tenant admin consented for the agent identity to the corresponding scopes. Autonomous agents acquire app tokens on behalf of the agent identity. Interactive agents called with a user token acquire user tokens on behalf of the agent identity.
 
@@ -85,4 +85,4 @@ Agent identity blueprints give the Microsoft Entra administrator the ability to 
 ## Related content
 
 - [Create an agent identity](./create-delete-agent-identities.md)
-- [Microsoft Entra agent ID authentication protocol](agent-oauth-protocols.md)
+- [Microsoft Entra Agent ID authentication protocol](agent-oauth-protocols.md)
