@@ -30,7 +30,7 @@ This article lists the Agent Registry roles you can assign to manage Agent Regis
 | --- | --- |
 | [Agent Card Manifest Administrator](#agent-card-manifest-administrator) | Can create agent card manifests, view and update the properties of agent card manifest objects. |
 | [Agent Card Manifest Reader](#agent-card-manifest-reader) | Can view the properties of agent card manifest objects. |
-| [Agent Card Manifest Creator](#agent-card-manifest-creator) | Can  create agent card manifests as specified in the request body. |
+| [Agent Card Manifest Creator](#agent-card-manifest-creator) | Can create agent card manifests as specified in the request body. |
 | [Agent Instance Administrator](#agent-instance-administrator) | Can create agent instances, view and update instance properties, permanently delete agent instances, and list all collections associated with an agent instance. |
 | [Agent Instance Reader](#agent-instance-reader) | Can view agent instance properties and list all collections associated with an agent instance. |
 | [Agent Instance Creator](#agent-instance-creator) | Can create agent instances as specified in the request body. |
