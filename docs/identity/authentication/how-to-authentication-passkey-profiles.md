@@ -120,12 +120,12 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
 ## Disable passkey profiles (preview)
 
->[!NOTE]
->Opting out of passkey profiles (preview) will:
->*Remove all passkey profiles and their associated targets
->*Revert your passkey policy to the configuration of your default passkey profile, including its user targets
->*Disable support for synced passkeys
->Ensure taht no administrators will be locked out of their accounts due to these changes.
+> [!NOTE]
+> Opting out of passkey profiles (preview) will:
+> * Remove all passkey profiles and their associated targets
+> * Revert your passkey policy to the configuration of your default passkey profile, including its user targets
+> * Disable support for synced passkeys
+> * Ensure that no administrators will be locked out of their accounts due to these changes.
 
 1. Sign in to the Microsoft Entra admin center as at least an [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Security** > **Authentication methods** > **Policies**.
