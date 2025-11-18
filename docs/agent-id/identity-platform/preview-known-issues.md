@@ -64,7 +64,7 @@ The *Agent ID Administrator* role can't update photos for agent users. Use the *
 
 The following known issues and gaps relate to the Microsoft Entra admin center.
 
-### *No agent identity blueprint management
+### No agent identity blueprint management
 
 You can't create or edit agent identity blueprints through the Microsoft Entra admin center or the Azure portal. To create agent identity blueprints, follow the [documentation to create and edit blueprint configuration](./create-blueprint.md) using Microsoft Graph APIs and PowerShell.
 

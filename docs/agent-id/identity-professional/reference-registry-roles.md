@@ -12,7 +12,7 @@ ms.reviewer: paparth
 ---
 # Microsoft Entra Agent Registry roles
 
-In the Microsoft Entra Agent Registry, you can assign roles to administrators or other security principals to manage agent instances, agent card manifests, and agent collections. These roles provide the permissions required to perform specific actions, such as creating or updating agent instances, create agent card manifests, or managing collection membership.
+In the Microsoft Entra Agent Registry, you can assign roles to administrators or other security principals to manage agent instances, agent card manifests, and agent collections. These roles provide the permissions required to perform specific actions, such as creating or updating agent instances, creating agent card manifests, or managing collection membership.
 
 This article lists the Agent Registry roles you can assign to manage Agent Registry resources. Agent Registry also allows the [Agent Registry Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-registry-administrator) built-in Microsoft Entra role.
 
