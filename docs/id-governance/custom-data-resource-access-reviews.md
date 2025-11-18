@@ -113,7 +113,7 @@ After copying both the Access review object, and access review instance object, 
     :::image type="content" source="media/custom-data-resource-access-reviews/upload-access-data-files.png" alt-text="Screenshot of uploading files to custom access data.":::
     > [!NOTE]
     > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
-1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload. After two hours, the system transitions the review status to **Active**.
+1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload.
 
 
 ## Active review state
