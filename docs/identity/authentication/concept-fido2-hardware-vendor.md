@@ -6,30 +6,30 @@ ms.service: entra-id
 ms.subservice: authentication
 author: justinha
 ms.author: justinha
-ms.reviewer: padvasu
+ms.reviewer: kimhana
 ms.topic: article
 ---
 
-# Microsoft Entra ID attestation for FIDO2 security key vendors
+# Microsoft Entra ID attestation for passkey (FIDO2) vendors
 
-FIDO2 security keys enable phishing-resistant authentication. They can replace weak credentials with strong hardware-backed public/private-key credentials that can't be reused, replayed, or shared across services. Security keys support shared device scenarios, allowing you to carry your credential with you and safely authenticate on any supported device.
+Passkeys (FIDO2) enable phishing-resistant authentication. They can replace weak credentials with strong phishing-resistant public/private-key credentials that can't be reused, replayed, or shared across services. They can be stored securely on a device or synced across trusted devices through an encrypted cloud service.
 
-In Microsoft Entra ID Authentication methods policy, administrators can enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires extra metadata from FIDO2 security keys that are registered with the tenant. As a vendor, your FIDO2 security key is usable when attestation is enforced, if the following requirements are met.
+In Microsoft Entra ID Authentication methods policy, administrators can enforce attestation for FIDO2 security keys. When **Enforce attestation** is set to **Yes**, Microsoft requires extra metadata from passkeys (FIDO2) that are registered with the tenant. As a vendor, your passkey (FIDO2) is usable when attestation is enforced, if the following requirements are met.
 
 >[!NOTE]
->Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We're investing in both synced and device-bound passkeys for work accounts.
+>Microsoft Entra ID supports device-bound passkeys (FIDO2), and synced passkeys (FIDO2) are in preview. For more information about how to enable passkeys (FIDO2), see [Enable passkeys (FIDO2) for your organization](how-to-enable-passkey-fido2.md).
 
 ## Attestation requirements
 
-Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoalliance.org/metadata/) to determine security key compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Vendors report data to the FIDO MDS.
+Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoalliance.org/metadata/) to determine passkey authenticator compatibility with Windows, Microsoft Edge browser, and online Microsoft accounts. Vendors report data to the FIDO MDS.
 
-During FIDO2 registration, Microsoft Entra ID requires security keys to provide an attestation statement. For vendors, the expected attestation format is *packed*, as defined by [the FIDO standard](https://www.w3.org/TR/webauthn-2/#sctn-packed-attestation).
+FIDO2 standards (WebAuthN and CTAP) require providers return a valid attestation statement. 
 
-The specific requirements vary based on how an administrator configures the FIDO2 authentication methods policy.
+The specific requirements vary based on how an administrator configures the **Passkeys (FIDO2)** Authentication methods policy.
 
 | Enforce attestation set to Yes | Enforce attestation set to No |
 |--------------------------------|-------------------------------|
-|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide a valid *packed* attestation statement (but Microsoft will ignore attestation verification results) and a complete certificate (which doesn't need to be associated with a particular certificate chain). |
+|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide one of the following valid attestation statements:<br>- "none"<br>- "tpm"<br>- "packed" (AttCA)<br>- Custom attestation formats <= 32 characters  |
 
 >[!NOTE]
 >Vendors are responsible to publish all root attestation certificates to the FIDO Alliance MDS; otherwise, attestation verification can fail.

@@ -5,7 +5,7 @@ description: Enable and configure risk policies in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 08/06/2025
+ms.date: 10/30/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -16,8 +16,11 @@ ms.reviewer: cokoopma
 
 There are two types of [risk policies](concept-identity-protection-policies.md) in Microsoft Entra Conditional Access you can set up. You can use these policies to automate the response to risks allowing users to self-remediate when risk is detected:
 
-- [Sign-in risk policy](#sign-in-risk-policy-in-conditional-access)
 - [User risk policy](#user-risk-policy-in-conditional-access)
+- [Sign-in risk policy](#sign-in-risk-policy-in-conditional-access)
+
+> [!WARNING]
+> Don't combine sign-in risk and user risk conditions in the same Conditional Access policy. Create separate policies for each risk condition.
 
 ![Screenshot of a Conditional Access policy showing risk as conditions.](./media/howto-identity-protection-configure-risk-policies/sign-in-risk-conditions.png)
 
@@ -29,26 +32,11 @@ There are two types of [risk policies](concept-identity-protection-policies.md) 
 
 ## Choosing acceptable risk levels
 
-Organizations must decide the level of risk they want to require access control on balancing user experience and security posture. 
+Organizations must decide the level of risk they want to require access control on, while balancing security posture and user productivity.
 
-Choosing to apply access control on a **High** risk level reduces the number of times a policy is triggered and minimizes friction for users. However, it excludes **Low** and **Medium** risks from the policy, which might not block an attacker from exploiting a compromised identity. Selecting a **Low** risk level to require access control introduces more user interrupts.
+Choosing to apply access control on a **High** risk level reduces the number of times a policy is triggered and minimizes friction for users. However, it excludes **Low** and **Medium** risks from the policy, which might not block an attacker from exploiting a compromised identity. Selecting **Medium** and/or **Low** risk levels usually introduces more user interrupts.
 
 Configured trusted [network locations](../identity/conditional-access/concept-assignment-network.md#trusted-locations) are used by Microsoft Entra ID Protection in some risk detections to reduce false positives.
-
-The policy configurations that follow include the [sign-in frequency session control](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time) requiring a reauthentication for risky users and sign-ins.
-
-### Microsoft's recommendation
-
-Microsoft recommends the following risk policy configurations to protect your organization:
-
-- User risk policy
-   - Require a secure password change when user risk level is **High**. Microsoft Entra multifactor authentication is required before the user can create a new password with password writeback to remediate their risk.
-   - A secure password change using self-service password reset is the only way to self-remediate user risk, regardless of the risk level. 
-- Sign-in risk policy
-   - Require Microsoft Entra multifactor authentication when sign-in risk level is **Medium** or **High**, allowing users to prove it's them by using one of their registered authentication methods, remediating the sign-in risk.
-   - A successful multifactor authentication is the only way to self-remediate the sign-in risk, regardless of the risk level.
-
-Requiring access control when risk level is low introduces more friction and user interrupts than medium or high. Choosing to block access rather than allowing self-remediation options, like secure password change and multifactor authentication, affect your users and administrators even more. Weigh these choices when configuring your policies.
 
 ### Risk remediation
 
@@ -58,6 +46,24 @@ Organizations can choose to block access when risk is detected. Blocking sometim
 > Users must register for Microsoft Entra multifactor authentication before they face a situation requiring remediation. For hybrid users that are synced from on-premises, password writeback must be enabled. Users not registered are blocked and require administrator intervention.
 > 
 > Password change (I know my password and want to change it to something new) outside of the risky user policy remediation flow doesn't meet the requirement for secure password change.
+
+### Microsoft recommendations
+
+Microsoft recommends the following risk policy configurations to protect your organization:
+
+### User risk policy
+
+Organizations should select **Require risk remediation** when user risk level is **High**. For passwordless users, Microsoft Entra revokes the user's sessions so they must reauthenticate. For users with passwords, they're prompted to complete a secure password change after a successful Microsoft Entra multifactor authentication.
+
+When **Require risk remediation** is selected, two settings are automatically applied:
+- **Require authentication strength** is automatically selected as a grant control.
+- **Sign-in frequency - Every time** is automatically applied as a session control.
+
+### Sign-in risk policy
+
+Require Microsoft Entra multifactor authentication when sign-in risk level is **Medium** or **High**. This configuration allows users to prove it's them by using one of their registered authentication methods, remediating the sign-in risk.
+
+We also recommend including the [sign-in frequency session control](../identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time) to require reauthentication for risky sign-ins. A successful "strong authentication" usually via multifactor authentication or passwordless authentication, is the only way to self-remediate sign-in risk, regardless of the risk level.
 
 ## Enable policies
 

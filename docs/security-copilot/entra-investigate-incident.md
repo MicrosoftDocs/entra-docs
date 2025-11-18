@@ -26,7 +26,9 @@ This article describes how a SOC analyst or IT admin could use the Microsoft Ent
 
 ## Scenario and investigation
 
-Natasha, a security operations center (SOC) analyst at Woodgrove Bank, receives an alert about a potential identity-based security incident. The alert indicates suspicious activity from a user account that has been flagged as a risky user. She starts her investigation and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader).
+Natasha, a security operations center (SOC) analyst at Woodgrove Bank, receives an alert about a potential identity-based security incident. The alert indicates suspicious activity from a user account that has been flagged as a risky user. She starts her investigation and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). In order to view user, group, risky user, sign-in logs, audit-logs, and diagnostic logs details, she signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader). She can use Microsoft Security Copilot to activate this role if she is blocked due to a lack of permissions to perform certain actions:
+
+- *Activate the {required role} so that I can perform {desired task}.*
 
 ### Get user details
 
@@ -79,6 +81,12 @@ She uses the following prompts to get the information she needs:
 - *Tell me more about the Finance Department group.*
 - *Who are the owners of the Finance Department group?*
 - *What roles does this group have?*
+
+## Deactivate your role
+
+After completing her tasks with Microsoft Security Copilot, Natasha needs to deactivate any elevated roles activated during her session to maintain security best practices. She uses the following prompt to deactivate her role:
+
+- *I am done with my investigation or {desired task}, deactivate my access.*
 
 ## Remediate
 
