@@ -3,7 +3,7 @@ title: "Troubleshoot the macOS Global Secure Access client: Health check"
 description: Troubleshoot the macOS Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 11/13/2025
+ms.date: 11/17/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -13,11 +13,11 @@ ms.custom: sfi-image-nochange
 # Customer intent: I want to troubleshoot the macOS Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 
 ---
-# Troubleshoot the macOS Global Secure Access client: Health check tab
-This document provides troubleshooting guidance for the macOS Global Secure Access client using the **Health check** tab in the Advanced diagnostics utility.
+# Troubleshoot the Global Secure Access client for macOS: Health check tab
+This article provides troubleshooting guidance for the macOS Global Secure Access client using the **Health check** tab in the Advanced diagnostics utility.
 
 ## Introduction
-The Advanced diagnostics Health check runs tests to verify that the macOS Global Secure Access client is working correctly and that its components are running.
+The Advanced diagnostics Health check runs tests to verify that the macOS Global Secure Access client works correctly and that its components are running.
 
 ## Run the health check
 To run a health check for the macOS Global Secure Access client:
@@ -32,27 +32,27 @@ Most of the Health check tests depend on one another. If tests fail:
 1. Resolve the first failed test in the list.
 1. Select **Refresh** to view the updated test status.
 1. Repeat until you resolve all failed tests.   
-    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/macos-health-check-results.png" alt-text="Screen shot of the macOS Global Secure Access client, open to the Health check tab, with example health check results listed.":::
+    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/macos-health-check-results.png" alt-text="Screen shot of the macOS Global Secure Access client, open to the Health check tab, with example health check results listed." lightbox="media/troubleshoot-global-secure-access-client-macos-health-check/macos-health-check-results.png":::
 
 ## Health check tests
 The following checks verify the health of the Global Secure Access client.
 
 ### Notifications Enabled
 The **Notifications Enabled** test checks if the macOS Global Secure Access client notifications are enabled. If not enabled, open System Settings and allow the notifications.
-:::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/allow-notifications.png" alt-text="Screen shot of the Global Secure Access notifications settings, with all notfications enabled.":::
+:::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/allow-notifications.png" alt-text="Screen shot of the Global Secure Access notifications settings, with all notifications enabled." lightbox="media/troubleshoot-global-secure-access-client-macos-health-check/allow-notifications.png":::
 
 ### System Extension
-This test indicates whether the client's system extension is installed and active. If this test fails, do one of the following:
-- Check if there is an option to **Allow Network Extension**:
+This test checks if the client's system extension is installed and active. If this test fails, try one of the following solutions:
+- Check for the option to **Allow Network Extension**:
     1. Select **Global Secure Access** in the menu bar.
     1. If the option is available, select **Allow Network Extension** to enable the system extension.   
-    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/allow-network-extension.png" alt-text="Screenshot of the system tray menu with the Allow Network Extension option highligted.":::
+    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/allow-network-extension.png" alt-text="Screenshot of the system tray menu with the Allow Network Extension option highlighted.":::
 - Allow the system extension in **Privacy & Security** settings:
     1. Open **System Settings**.
     1. Select **Privacy & Security**.
     1. Scroll down to the **Security** section.
-    1. If there is a message about the Global Secure Access system extension being blocked, select **Allow** to enable the system extension.   
-    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/privacy-and-security.png" alt-text="Screenshot of the Privacy & Security settings with the Allow button highlighted.":::
+    1. If there's a message about the Global Secure Access system extension being blocked, select **Allow** to enable the system extension.   
+    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/privacy-security.png" alt-text="Screenshot of the Privacy & Security settings with the Allow button highlighted." lightbox="media/troubleshoot-global-secure-access-client-macos-health-check/privacy-security.png":::
 - Use a Terminal command to check if the system extension is running and enabled:
     1. Open **Terminal**.
     1. Run the following command:
@@ -65,95 +65,102 @@ This test indicates whether the client's system extension is installed and activ
     ```
 
 ### Transparent Proxy Service
-This test indicates whether the Transparent Proxy service is running. If the test fails, enable the Transparent Proxy service: 
+This test checks if the Transparent Proxy service is running. If the test fails, enable the Transparent Proxy service: 
 1. Open **System Settings**.
 1. Select **Network**.
 1. Select **Filters & Proxies**.
 1. Verify that the Global Secure Access Transparent Proxy **Status** is **Enabled**. If not, switch it to **Enabled**.   
-    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/filters-and-proxies.png" alt-text="Screen shot of the Filters & Proxies settings with the Transparent Proxy status set to Enabled."::: 
+    :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/filters-proxies.png" alt-text="Screen shot of the Filters & Proxies settings with the Transparent Proxy status set to Enabled." lightbox="media/troubleshoot-global-secure-access-client-macos-health-check/filters-proxies.png":::
 1. If you can't enable the Transparent Proxy through **System Settings**, check the log file.
 
 ### UI - System Extension Bridge (IPC)
-This test indicates if the System Extension Bridge is active. If the test fails, disable and re-enable the Global Secure Access client. 
+This test checks if the System Extension Bridge is active. If the test fails, disable and re-enable the Global Secure Access client. 
 
-### Connected Active Interface<!--stopping point-->
-Shows the active interface being used for traffic. Run `ifconfig` to see all the active interfaces. We get this info from this path State:/Network/Global/IPv4
-``` 
+### Connected Active Interface
+This test shows the active interface used for traffic. To see all the active interfaces, enter the following command in Terminal: `ifconfig`. 
+
+This info comes from the path `State:/Network/Global/IPv4`.
+
+```bash
   scutil <<< "show State:/Network/Global/IPv4"
 ```
 
 ### Tunnel interface (L3)
-This test shows the name of the tunnel interface used by the client. If the test fails, the tunnel interface was not created successfully. To fix the issue: 
-1. Disable and re-enable client from the system tray
-2. Look for errors in the logs file (Amit, which log file?) (tunnel log file)
+This test shows the name of the tunnel interface the client uses. A failed test indicates that the tunnel interface wasn't created successfully. To fix the issue: 
+1. Disable and re-enable client from the system tray.
+1. Look for errors in the tunnel log file.<!--correct?-->
 
 ### DNS Server IP
-This test shows the IP of the preferred DNS server configured at the OS level. A DNS server that can resolve internet hostnames must be set for the client to work. An empty value means that no DNS server is configured. 
-
-<img src="./attachments/img08.png" alt="Left Aligned Image" width="50%">
+This test shows the IP of the preferred DNS server configured at the operating system level. You must configure a DNS server that can resolve internet hostnames. An empty value means that no DNS server is configured. 
 
 ### Is Non-Encrypted DNS
-For the client to acquire network traffic by FQDN destination (as opposed to IP destination), the client needs to read the DNS requests sent by the device to the DNS server. Hence, DNS over HTTPS needs to be disabled, if the forwarding profile contains FQDNs rules.
-<!-->we need a better way to detect Encrypted DNS then a fixed number of IP adresses.-->
-For system user can run below command to check if using a secure DNS,some examples of secure DNS servers are:
-* Google DNS: 8.8.8.8, 8.8.4.4
-* Cloudflare DNS: 1.1.1.1, 1.0.0.1
-* OpenDNS: 208.67.222.222, 208.67.220.220
+To allow the macOS Global Secure Access client to capture network traffic by fully qualified domain name (FQDN) instead of IP address, the client must read DNS requests sent to the DNS server. 
 
+Examples of secure DNS servers:
+- Google DNS: 8.8.8.8, 8.8.4.4
+- Cloudflare DNS: 1.1.1.1, 1.0.0.1
+- OpenDNS: 208.67.222.222, 208.67.220.220
+
+If the forwarding profile includes FQDN rules, disable DNS over HTTPS. To check whether secure DNS is enabled, run the following command:
+
+```bash
+    scutil --dns | grep 'nameserver\[[0-9]*\]'
 ```
- scutil --dns | grep 'nameserver\[[0-9]*\'
+
+For example:  
+```bash
+$ scutil --dns | grep 'nameserver\[[0-9]*\]'   
+  nameserver[0] : 10.50.50.50   
+  nameserver[1] : 10.50.10.50   
+  nameserver[0] : 10.50.50.50   
+  nameserver[1] : 10.50.10.50   
 ```
 
-<img src="./attachments/img09.png" alt="Left Aligned Image" width="30%">
+To check if a specific port is closed, use the `nc` (netcat) command:
 
-If you want to know if a specific port is closed, use the `nc` command (Netcat).
+```bash
+$ nc -zv 10.50.50.50 853
+nc: connectx to 10.50.50.50 port 853 (tcp) failed: Connection refused
+```
 
-<img src="./attachments/img13.png" alt="Left Aligned Image" width="55%">
+If the connection is closed, the DNS isn't encrypted. If any connection succeeds, the DNS server uses encryption.
 
-if is closed then it is not encrypted dns. If any one of the connections succeeds then it encrypted DNS server.
-
-### Authentication succeeded
-Authentication to Global Secure Access succeeded. If the test fails:
-1. Look for an interactive sign in window. It might require interactive sign in or present an error for a failed authentication that need be fixed. 
-2. Open Company Portal and verify that the device is registered to your Entra tenant and that user is signed-in
-3. look at the logs: **com.microsoft.naas.globalsecure-df xx.xx.xx.xx.log**
+### Authentication Succeeded
+This test checks for a successful Global Secure Access authentication. A failed authentication results in an error or a prompt for an interactive sign-in. If the test fails:
+1. Open the company portal <!--what is the "company portal?-->and verify that the device is registered and that you're signed in to the Microsoft Entra tenant.
+1. Check the logs: **com.microsoft.naas.globalsecure-df xx.xx.xx.xx.log**<!--how? where are these logs located?-->
 
 
 ### Forwarding profile cached in a file
-This test checks that a forwarding profile exists in the file system. If the test fails, do the following: 
-1. Click on the system tray icon -> choose **Settings** -> On the Troubleshooting tab press clear cache. 
-2. The user will be prompted to sign in again to the client.
-3. An updated forwarding profile will be retrieved from the Global Secure Access service. 
-4. Run the test again. 
-5. If the test fails, look for an error in the log file. The tunnel log file for errors and this plist file for checking if policy is stored in the path:
-
-```
- /private/var/root/Library/Preferences/com.microsoft.naas.globalsecure.tunnel-df.plist
-```
+This test checks that a forwarding profile exists in the file system. If the test fails, complete the following steps: 
+1. Select the Global Secure Access system tray icon.
+1. Select **Settings**. 
+1. On the **Troubleshooting** tab, select **Clear cache**.  
+1. Sign in again. The client retrieves an updated forwarding profile from the Global Secure Access service. 
+1. Run the test again. If the test fails:
+    1. Check the tunnel log file for errors. 
+    1. Check the following path for the policy .plist file: `/private/var/root/Library/Preferences/com.microsoft.naas.globalsecure.tunnel-df.plist`
 
 ### Breakglass mode disabled
-Break-glass mode allows the IT admin to stop the client from tunneling any network traffic to the Global Secure Access cloud service. This is done by unchecking all the traffic profiles in Global Secure Access portal, which results in a forwarding profile that does not contain rules to tunnel any traffic. 
+Break-glass mode prevents the Global Secure Access client from tunneling network traffic to the Global Secure Access cloud service. In break-glass mode, all traffic profiles in the Global Secure Access portal are unchecked and the Global Secure Access client isn't expected to tunnel any traffic.
 
-If break-glass mode is enabled, the client is not expected to tunnel any traffic.
+If you want the client to acquire traffic and send it to the Global Secure Access service:
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
+1. Navigate to Global Secure **Access** > **Connect** > **Traffic forwarding**.
+1. Enable at least one of the traffic profiles that match your organization's needs.
 
-If you would like the client to acquire traffic and send it to Global Secure Access service, enable at least one of the traffic profile according to your organization's needs.
-This setting can be modified by the tenant admin in the Entra portal, under Global Secure Access, Connect, [Traffic forwarding](https://entra.microsoft.com/#view/Microsoft_Azure_Network_Access/ForwardingProfile.ReactView).
+The Global Secure Access client typically receives the updated forwarding profile within one hour after making changes in the portal.
 
-After the change in the portal, the updated forwarding profile should be received by the clients within 1 hour. 
+### Proxy Configured
+This test checks whether the proxy is configured on the device. If a device uses a proxy for outgoing traffic to the internet, you must exclude the destination IPs and FQDNs acquired by the client with a Proxy Auto-Configuration (PAC) file or with the Web Proxy Auto-Discovery (WPAD) protocol. 
 
+#### Change the PAC file
+Add the IPs and FQDNs to tunnel to Global Secure Access edge as exclusions in the PAC file, so that HTTP requests for these destinations don't redirect to the proxy. These IPs and FQDNs are also set to tunnel to Global Secure Access in the forwarding profile.
+To show the client's health status properly, add the FQDN used for health probing to the exclusions list: `.edgediagnostic.globalsecureaccess.microsoft.com`.
 
+Example PAC file containing exclusions:
 
-### Proxy configured
-A test that checks whether proxy is configured on the device. If the end-user device is configured to use a proxy for outgoing traffic to the internet, the destination IPs/FQDNs acquired by the client need to be excluded by a PAC file (or WPAD). 
-
-### Changes to PAC file: 
-Add the FQDNs/IPs to be tunneled to Global Secure Access edge as exclusions in the PAC file, so that HTTP requests for these destinations won’t be redirected to the proxy. (These FQDNs/IPs are also set to be tunneled to Global Secure Access in the forwarding profile). 
-
-For the client's status health to be shown properly, add the FQDN used for health probing to the exclusions list: edgediagnostic.globalsecureaccess.microsoft.com
-
-Example for a PAC file containing exclusions:   
-
-```
+```javascript
 function FindProxyForURL(url, host) {  
         if (isPlainHostName(host) ||   
             dnsDomainIs(host, ".edgediagnostic.globalsecureaccess.microsoft.com") || //tunneled
@@ -163,84 +170,42 @@ function FindProxyForURL(url, host) {  
         else                                   // for all other destinations 
            return "PROXY 10.1.0.10:8080";  // route the traffic to the proxy.
 }
-
 ```
 
-<!--Amit, how do we make sure that the GRPC connection is forwarded to the proxy. (need to understand more)-->
 ### Internet Reachable
-Checks whether the internet is reachable or not when the client is running.
-Run the following command in terminal:
+This test checks whether the internet is reachable when the client is running. Run the following command in Terminal:
 
-```
+```bash
 curl https://internet.edgediagnostic.globalsecureaccess.microsoft.com:6543/connectivitytest/ping
 ```
 
-### Diagnostic URLs in forwarding profile
-This test is conducted for each channel activated in the forwarding profile, checking that the configuration contains a URI for probing the service's health. The health status can be viewed by double-clicking on the system tray icon. 
-If this test fails, it is usually an internal problem in Global Secure Access and macOS support team needs to be contacted. 
+### Diagnostic URLs Present
+For each channel activated in the forwarding profile, this test checks that the configuration contains a URL to probe the service's health. To view the health status, select the system tray icon. On the Connections tab, view the **Status**.
 
-###  Diagnostics URL's monitoring status
-This test verified whether the diagnostics URL's monitoring is working or not. If the test fails, disable and re-enable the client. 
+If this test fails, it's usually because of an internal problem with Global Secure Access. Contact Microsoft Support.
+
+###  Diagnostics URLs Monitoring Status
+This test verifies whether the diagnostics URLs monitoring is working. If the test fails, disable and re-enable the client. 
 
 ### Magic-IP received for EDS
-This test validates if magic IP is received for EDS URLs. If the test fails, do the following:
-1. Ensure that the DNS Server is responsive by running `nslookup microsoft.com` and verify that an answer was returned, for example:
-
-   <img src="./attachments/img14.png" alt="Left Aligned Image" width="20%">
-1. Ensure that the DNS server set on your macOS device doesn't support Secure DNS. 
+This test validates if magic IP is received for EDS URLs. If the test fails, complete the following steps:
+1. Verify that the DNS server is responsive. For example, try resolving "microsoft.com" using the `nslookup` tool.
+1. Make sure the DNS server set on the macOS device doesn't support Secure DNS. 
 
 ### Edges are reachable 
-
-```
+<!--please provide content here to explain this test-->
+```bash
 nc -vz 9d39e890-4c9e-433b-9b7a-625f7e26d855.m365.client.globalsecureaccess.microsoft.com 443
 ```
 
-<img src="./attachments/img15.png" alt="Left Aligned Image" width="85%">
-
 ### Tunneling succeeded
-This test validates if tunneling succeeded for all EDS URLs. if it fails, do the following:
-1. make sure that all other health check tests passed. 
-2. make sure that tunneling works on other devices 
-3. check logs 
-4. restart the client
-5. open a case in Microsoft
+This test validates if tunneling succeeded for all EDS URLs. If this test fails:
+1. Verify that all other health check tests passed. 
+1. Verify that tunneling works on other devices.
+1. Check logs.<!--what logs? how do you check them?-->
+1. Restart the client.
+1. If the test still fails, contact Microsoft Support.
 
-* * *
-
-## 📋 How to Use Diagnostic Scripts
-
-### 🔋 Battery Health Logs Collection
-
-One can collect battery health and usage data from your machine using the provided script.
-1.  **Download the script**:  
-    [collect_battery_diagnostics.zip](https://chatgpt.com/.attachments/collect_battery_diagnostics-0d142459-c9e0-4a40-a207-1425e090d550.zip)
-    
-2.  **Run the script**:
-    *   Unzip the downloaded file.
-        
-    *   Open Terminal and run:
-        
-            ./collect_battery_diagnostics.sh
-            
-        
-3.  **Wait for completion**:  
-    The script may take up to **15 minutes** to gather all battery stats and will generate a **ZIP file** containing the report.
-    
-
-* * *
-
-### 🗂️ Logs Collection via Terminal
-
-To collect client logs directly from the command line:
-1.  Open Terminal and run the following command:
-    
-        sudo /Applications/GlobalSecureAccessClient/Global\ Secure\ Access\ Client.app/Contents/Resources/install_scripts/collect_and_export_logs
-        
-    
-2.  Once completed:
-    *   A **Finder window** will open showing the logs directory.
-        
-    *   A **ZIP file** containing the collected logs will be saved in your **home directory**.
-        
-
-* * *
+## Related content
+- [Install the Global Secure Access client for macOS](how-to-install-macos-client.md)
+- [Troubleshoot the Global Secure Access client for Windows: Health check tab](troubleshoot-global-secure-access-client-diagnostics-health-check.md)
