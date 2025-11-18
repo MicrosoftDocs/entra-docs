@@ -32,7 +32,7 @@ This article covers two scenarios:
     - Presents data showing the number of remote network tunnels that are disconnected.
 - Global Secure Access requiring remote network BGP connectivity
     - Presents data showing the number of remote networks with BGP connected.
-    - Presents data showing the number of remote networks with BGP  disconnected.
+    - Presents data showing the number of remote networks with BGP disconnected.
 
 ## Prerequisites
 
