@@ -80,7 +80,7 @@ Agent IDs can't sign-in to Microsoft Entra ID's sign-in pages. This means they c
 
 The following known issues and gaps relate to consent and permissions.
 
-### Admin consent workflow (ACW)**
+### Admin consent workflow (ACW)
 
 The Microsoft Entra ID [admin consent workflow](/entra/identity/enterprise-apps/configure-admin-consent-workflow) doesn't work properly for permissions requested by Agent IDs. Users can contact their Microsoft Entra ID tenant admins to request permissions be granted to an Agent ID.
 
