@@ -149,7 +149,7 @@ Microsoft Graph change notifications allow your application to receive real-time
 To start receiving notifications, your application sends a `POST` request to the /`subscriptions` endpoint to subscribe to a specific resource, in this case, health monitoring alerts. Microsoft Graph then validates the request and confirms the subscription. Once the subscription is active, Microsoft Graph sends a notification to your designated endpoint whenever the subscribed resource is created. For more information, see [Microsoft Graph change notifications](/graph/change-notifications-overview).
 
 > [!NOTE]
-> If you see error due to missing required Microsoft Graph permissions, to get more information about Micorosft Graph permisisons, see [Microsoft graph permissions](/graph/permissions-overview).
+> If you see an error due to missing required Microsoft Graph permissions, see [Microsoft graph permissions](/graph/permissions-overview) to get more information about Micorosft Graph permisisons.
 
 After receiving a notification, you should investigate the alert either through the Microsoft Entra admin center or through the Microsoft Graph API. If you need to assess the alert's impact, we recommend either polling or introducing a short delay before calling the health monitoring alert API for impact assessment data to be available. For more information, see [How to investigate health scenario alerts](howto-investigate-health-scenario-alerts.md).
 
