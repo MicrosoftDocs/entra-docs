@@ -15,7 +15,7 @@ ms.reviewer: dastrock
 
 # Disable agent identities in your tenant
 
-Agent identities are enabled by default in all Microsoft Entra ID tenants. Customers concerned about security or reliability of agent identities can use the steps in this article to fully disable their use in your tenant. Microsoft Entra agent ID is subject to its [standard preview terms and conditions](/entra/fundamentals/licensing-preview-info).
+Agent identities are enabled by default in all Microsoft Entra ID tenants. Customers who want to control which Agent IDs are allowed in their tenant can follow the guidance in this article to configure their preferred settings. Microsoft Entra Agent ID is subject to its [standard preview terms and conditions](/entra/fundamentals/licensing-preview-info).
 
 ## Types of identities used by AI agents
 
@@ -29,7 +29,7 @@ Your Microsoft Entra tenant might contain two kinds of identities used by AI age
 
 - **Agents using Agent IDs**: Agents created using systems like Microsoft Copilot Studio, Azure AI Foundry, and Security Copilot might also be created as proper agent identities in your tenant. These agent identities are a new identity with clear classification, richer metadata, and feature designed to address the unique security challenges of AI agents.
 
-The remainder of this article discusses methods for disabling the use of these agent identities in your tenant.
+The remainder of this article discusses methods for disabling the use of Agent IDs in your tenant.
 
 ## Review existing agent identities in your tenant
 
@@ -58,9 +58,31 @@ To disable agent identities in your tenant, follow these steps:
 1. Apply Conditional Access policies to prevent agent identities from authenticating.
 1. (Optional) Block creation of agent identities in your tenant via various channels.
 
-## 1. Block token issuance to Agent IDs using Conditional Access
 
-Conditional Access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant.
+## Monitor for Agent ID creations and activity
+
+To ensure disable controls remain effective and detect drift (new Agent IDs or attempted usage), implement lightweight monitoring.
+
+### Review Agent ID creation in audit logs
+
+Agent IDs are logged under the base identity types they originate from. This means that:
+
+- The creation of an agent user appears as a *Create user* audit activity.
+- The creation of an agent identity appears as a *Create service principal* audit event.
+
+To monitor for Agent ID creation, you must detect these creation events, and look up the object ID of the created object via Microsoft Graph to determine if the object created is an Agent ID.
+
+For more information, see [agent audit logs](sign-in-audit-logs-agents.md)
+
+### Review Agent ID authentication attempts in sign-in log
+
+The agentSignIn resource type provides descriptive information that identifies and classifies sign-in events as agentic. This allows customers to determine when an agent identity was the subtype of the identity involved in an authentication event. For more information, see [agent sign-in logs](sign-in-audit-logs-agents.md)
+
+## Block token issuance to Agent IDs using conditional access
+
+Conditional access policies can be used to block authentication and token issuance of Agent IDs. Applying the policies below will prevent existing and new Agent IDs from authenticating. It will not prevent the creation of Agent IDs in your tenant. 
+
+Applying these policies in your tenant requires the Microsoft Entra ID P1 license. Customers with [Microsoft 365 Business Premium licenses](/office365/servicedescriptions/office-365-service-descriptions-technet-library) can also use Conditional Access features. To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 To block authentication and token issuance of Agent IDs, create the following Conditional Access block policies. It's recommended to run these policies in [report-only mode](/entra/identity/conditional-access/concept-conditional-access-report-only) and understand their impact before enforcing them.
 
@@ -215,9 +237,9 @@ Content-type: application/json
 }
 ```
 
-## 2. (Optional) Block creation of Agent IDs
+## (Optional) Block creation of Agent IDs
 
-The Conditional Access policies applied in step 1 are sufficient to prevent all usage of Agent IDs in your tenant, including newly created Agent IDs. Should you wish to additionally prevent creation of Agent IDs in your tenant, follow the steps below.
+The Conditional Access policies applied above are sufficient to prevent all usage of Agent IDs in your tenant, including newly created Agent IDs. Should you wish to additionally prevent creation of Agent IDs in your tenant, follow the steps below.
 
 Agent IDs can enter your tenant through various channels. See [this article for details](agent-id-creation-channels.md). You can block creation of Agent IDs through the following methods.
 
@@ -230,7 +252,7 @@ Agent IDs can enter your tenant through various channels. See [this article for 
 To prevent users from creating Agent IDs via the Microsoft Entra admin center and other Microsoft Entra experiences:
 
 1. Remove any assignments to the **Agent ID Administrator** or **Agent ID Developer** built-in roles.
-1. Remove any *oauth2PermissionGrants* or *appRoleAssignments* to Microsoft Graph that allow creation of Agent IDs. See table below.
+1. Remove any *oauth2PermissionGrants* or *appRoleAssignments* granted to service principals that allow creation of Agent IDs. See table below.
 
 | Permission | Type |
 | ---------- | ------ |
@@ -241,7 +263,7 @@ To prevent users from creating Agent IDs via the Microsoft Entra admin center an
 | `AgentIdentityBlueprintPrincipal.ReadWrite.All` | Delegated and application permission |
 | `AgentIdUser.ReadWrite.IdentityParentedBy` | Delegated and application permission |
 | `AgentIdUser.ReadWrite.All` | Delegated and application permission |
-| `User.ReadWrite.All` | Delegated and application permission |
+| `User.ReadWrite.All` | Delegated and application permission <br> Note: These permissions may also be used to manage human user accounts. Removing this permission will cause systems to lose access to manage  human users. |
 
 See the [Microsoft Graph permissions reference](/graph/permissions-reference) for full details of these permissions.
 
@@ -256,7 +278,7 @@ Disabling user consent is broad and also blocks:
 - Onboarding of legitimate nonagent SaaS apps that depend on user consent flows.
 - Granting permissions to existing nonagent apps.
 
-If this impact is too high, keep user consent enabled and instead rely on the [Conditional Access block policies](#1-block-token-issuance-to-agent-ids-using-conditional-access) to prevent tokens for unapproved ISV Agent IDs.
+If this impact is too high, keep user consent enabled and instead rely on the [Conditional Access block policies](#block-token-issuance-to-agent-ids-using-conditional-access) to prevent tokens for unapproved ISV Agent IDs.
 
 ### Block creation of Agent IDs by Microsoft products and services
 
@@ -325,22 +347,3 @@ To disable creation of Agent IDs via Microsoft Teams, utilize settings in the Te
 - Enable specific apps/agents for specific users/groups as needed.
 
 For more information, see [Teams admin center documentation](/microsoftteams/manage-apps).
-
-## Monitor for Agent ID creations and activity
-
-To ensure disable controls remain effective and detect drift (new Agent IDs or attempted usage), implement lightweight monitoring.
-
-### Review Agent ID creation in audit logs
-
-Agent IDs are logged under the base identity types they originate from. This means that:
-
-- The creation of an agent user appears as a *Create user* audit activity.
-- The creation of an agent identity appears as a *Create service principal* audit event.
-
-To monitor for Agent ID creation, you must detect these creation events, and look up the object ID of the created object via Microsoft Graph to determine if the object created is an Agent ID.
-
-For more information, see [agent audit logs](sign-in-audit-logs-agents.md)
-
-### Review Agent ID authentication attempts in sign-in log
-
-The agentSignIn resource type provides descriptive information that identifies and classifies sign-in events as agentic. This allows customers to determine when an agent identity was the subtype of the identity involved in an authentication event. For more information, see [agent sign-in logs](sign-in-audit-logs-agents.md)
