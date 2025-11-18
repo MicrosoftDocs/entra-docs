@@ -31,7 +31,9 @@ This article describes how a SOC analyst or IT admin could use the Microsoft Ent
 
 ## Scenario and investigation
 
-Jason, an IT admin at Woodgrove Bank, is proactively trying to identify and understand any risky apps in their tenant. He starts his assessment and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). To view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and a Microsoft Entra role assignment of [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. 
+Jason, an IT admin at Woodgrove Bank, is proactively trying to identify and understand any risky apps in their tenant. He starts his assessment and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the [Microsoft Entra admin center](https://entra.microsoft.com). To view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and a Microsoft Entra role assignment of [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. He can use Microsoft Security Copilot to activate this role if he is blocked due to a lack of permissions to perform certain actions:
+
+- *Activate the {required role} so that I can perform {desired task}.*
 
 Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](./entra-security-scenarios.md#microsoft-security-copilot-scenarios-in-microsoft-entra-overview) can choose from a set of app risk starter prompts that appear at the top of the Security Copilot window. Select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: **Enterprise apps**, **App Registrations**, and **Identity Protection Risky workload identities**.
 
@@ -39,7 +41,7 @@ Identity admins using [Security Copilot as a part of the Microsoft Entra admin c
 
 ### Explore Microsoft Entra risky service principals 
 
-Jason begins by asking natural language questions to get a better picture of the risk "hot spots". This uses [ID Protection risky workload identity](../id-protection/concept-workload-identity-risk.md) data as an initial filter on the scale of apps in their tenant based on our Microsoft detections. These service principals carry an elevated risk of compromise.  
+Jason starts his investigations by asking natural language questions to get a better picture of the risk "hot spots". This uses [ID Protection risky workload identity](../id-protection/concept-workload-identity-risk.md) data as an initial filter on the scale of apps in their tenant based on our Microsoft detections. These service principals carry an elevated risk of compromise.  
 
 He uses any of the following prompts to get the information he needs: 
 
