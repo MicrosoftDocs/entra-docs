@@ -24,7 +24,7 @@ When agents perform operations using their own identity, rather than acting as a
 Before implementing agent token authentication, ensure you have:
 
 - [An agent identity](create-delete-agent-identities.md). You'll need the agent identity client ID.
-- Understand [oauth protocols in Microsoft Entra agent ID](./agent-oauth-protocols.md)
+- Understand [oauth protocols in Microsoft Entra Agent ID](./agent-oauth-protocols.md)
 - [An agent identity blueprint](./create-blueprint.md).
 
 ## Configure your client credentials

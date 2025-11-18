@@ -83,7 +83,7 @@ Both agents and nonagentic OBO clients carry forward subject facets. It enables 
 
 ## Builder application claims
 
-Platforms that create agents and integrate with Microsoft Entra agent ID don't receive special token claims. These platforms use standard token claims appropriate for their authentication method and don't participate in the specialized agent claim structure.
+Platforms that create agents and integrate with Microsoft Entra Agent ID don't receive special token claims. These platforms use standard token claims appropriate for their authentication method and don't participate in the specialized agent claim structure.
 
 ## Tenancy models and token behavior
 

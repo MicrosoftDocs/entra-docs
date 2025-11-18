@@ -15,7 +15,7 @@ ms.reviewer: dastrock
 
 # Disable agent identities in your tenant
 
-Agent identities are enabled by default in all Microsoft Entra ID tenants. Customers concerned about security or reliability of agent identities can use the steps in this article to fully disable their use in your tenant. Microsoft Entra agent ID is subject to its [standard preview terms and conditions](/entra/fundamentals/licensing-preview-info).
+Agent identities are enabled by default in all Microsoft Entra ID tenants. Customers concerned about security or reliability of agent identities can use the steps in this article to fully disable their use in your tenant. Microsoft Entra Agent ID is subject to its [standard preview terms and conditions](/entra/fundamentals/licensing-preview-info).
 
 ## Types of identities used by AI agents
 
@@ -47,7 +47,7 @@ Agent identities might already exist in your tenant. Before making changes, take
 Globally disabling agent identities in your tenant has broader consequences than simply stopping new AI agents. Before you proceed, evaluate the following considerations:
 
 - Existing agents running in your organization might begin to fail.
-- Microsoft product experiences that assume agent identity availability (for example, Copilot Studio agents, Security Copilot scenario agents, Microsoft Entra Conditional Access agent) might fail or degrade to less transparent application or service principal patterns.
+- Microsoft product experiences that assume agent identity availability (for example, Copilot Studio agents, Security Copilot scenario agents, Microsoft Entra Conditional Access Optimization Agent) might fail or degrade to less transparent application or service principal patterns.
 - Support or troubleshooting: Helpdesk and SOC teams might receive increased tickets when first-party features fail quietly due to missing agent identities.
 - Blocking agent identities might push teams to build agents using generic application or service principal identities, reducing visibility and making it harder to distinguish agents from other software projects.
 
@@ -66,7 +66,7 @@ To block authentication and token issuance of Agent IDs, create the following Co
 
 ### Policy 1: Block agent identity authentication
 
-The following steps help create a Conditional Access policy to block issuance of access tokens requested using agent identities.
+The following steps help create a conditional access policy to block issuance of access tokens requested using agent identities.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -118,7 +118,7 @@ Content-type: application/json
 
 ### Policy 2: Block agent user authentication
 
-The following steps help create a Conditional Access policy to block issuance of access tokens requested using agent users.
+The following steps help create a conditional access policy to block issuance of access tokens requested using agent users.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -165,7 +165,7 @@ Content-type: application/json
 
 ### Policy 3: Block users signing into agents
 
-The following steps help create a Conditional Access policy to block issuance of access tokens to agent resources when requested by human users. This blocks human users from signing into agents and agents performing actions on their behalf.
+The following steps help create a conditional access policy to block issuance of access tokens to agent resources when requested by human users. This blocks human users from signing into agents and agents performing actions on their behalf.
 
 Purpose: Block users from signing into agents and agents performing actions on their behalf.
 
@@ -217,7 +217,7 @@ Content-type: application/json
 
 ## 2. (Optional) Block creation of Agent IDs
 
-The Conditional Access policies applied in step 1 are sufficient to prevent all usage of Agent IDs in your tenant, including newly created Agent IDs. Should you wish to additionally prevent creation of Agent IDs in your tenant, follow the steps below.
+The conditional access policies applied in step 1 are sufficient to prevent all usage of Agent IDs in your tenant, including newly created Agent IDs. Should you wish to additionally prevent creation of Agent IDs in your tenant, follow the steps below.
 
 Agent IDs can enter your tenant through various channels. See [this article for details](agent-id-creation-channels.md). You can block creation of Agent IDs through the following methods.
 
@@ -277,7 +277,7 @@ To block Microsoft products and services from creating Agent IDs in your tenant,
 
 - To enable use of Security Copilot but block agent creation, you can use the following methods depending on the type of agents you want to block:
 
-    - To block Microsoft agents (For example, Microsoft Entra Conditional Access Agent), request users with relevant roles not to enable each agent. Roles that can enable agent currently include:
+    - To block Microsoft agents (For example, Microsoft Entra conditional access Agent), request users with relevant roles not to enable each agent. Roles that can enable agent currently include:
         - Security Administrator
         - Identity Governance Administrator
         - Lifecycle Workflows Administrator

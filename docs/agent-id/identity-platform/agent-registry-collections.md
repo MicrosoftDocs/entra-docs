@@ -37,7 +37,7 @@ To help administrators manage agent discoverability, Microsoft Entra Agent Regis
 
 The Microsoft Entra Agent Registry follows the same [Zero Trust principles](/security/zero-trust/zero-trust-overview) as the rest of Microsoft Entra: verify explicitly, use least privilege access, and assume breach. Every agent interaction is governed by multiple policy enforcement layers to ensure secure and compliant communication. To learn how to apply these principles, see [Configure Zero Trust for agents](agent-registry-manage-collections.md).
 
-- **Access policies**: Determine whether an agent can access Microsoft Entra-protected resources, such as other agents, authentication endpoints, or APIs protected by Conditional Access.
+- **Access policies**: Determine whether an agent can access Microsoft Entra-protected resources, such as other agents, authentication endpoints, or APIs protected by conditional access.
 - **Discovery policies**: Define which agents can be discovered through the registry, using system and admin defined policies to determine how agents are discovered during collaboration.
 
 ### Agent discovery policies

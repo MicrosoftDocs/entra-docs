@@ -54,10 +54,10 @@ Use the following steps to add an agent to a custom collection.
 
 The Microsoft Entra Agent Registry follows [Zero Trust principles](/security/zero-trust/zero-trust-overview). For collections, Zero Trust principles are applied by configuring access and discovery policies.
 
-**Access policies** determine whether an agent can access Microsoft Entra-protected resources, such as other agents, authentication endpoints, or APIs protected by Conditional Access.
+**Access policies** determine whether an agent can access Microsoft Entra-protected resources, such as other agents, authentication endpoints, or APIs protected by conditional access.
 
 1. Ensure the agent can obtain a [Microsoft Entra access token](../../identity-platform/access-tokens.md) and complies with all access policy requirements.
-1. Apply [Conditional Access policies for agents](../../identity/conditional-access/agent-id.md) to enforce access controls based on the agent's context.
-1. Use [ID Protection for agents](../../id-protection/concept-risky-agents.md) to monitor and respond to risky agent behaviors.
+1. Apply [conditional access policies for agents](../../identity/conditional-access/agent-id.md) to enforce access controls based on the agent's context.
+1. Use [identity protection for agents](../../id-protection/concept-risky-agents.md) to monitor and respond to risky agent behaviors.
 
 **Discovery policies** define which agents can be discovered through the registry. You can use system-defined policies provided by Microsoft or create admin-defined policies to suit your organization's needs.

@@ -17,7 +17,7 @@ highlightedContent:
     - title: What is Microsoft Entra Agent ID?
       itemType: overview
       url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
-    - title: Microsoft Entra agent identity platform for developers
+    - title: Microsoft agent identity platform for developers
       itemType: overview
       url: ./identity-platform/what-is-agent-id-platform.md 
     - title: What is an agent identity?
@@ -53,19 +53,19 @@ additionalContent:
         ## CARD 3 ######################
         - title: Protect agent access to resources
           links:
-            - text: Conditional Access for agents
+            - text: Conditional access for agents
               url: ../identity/conditional-access/agent-id.md         
-            - text: Microsoft Entra ID Protection for agents
+            - text: Microsoft Entra identity protection for agents
               url: ../id-protection/concept-risky-agents.md
             - text: Network controls for agents
               url: ../global-secure-access/concept-secure-web-ai-gateway-agents.md
             
     ## Section 2: Microsoft agent identity platform ######################
-    - title: Microsoft Entra agent identity platform for developers
+    - title: Microsoft agent identity platform for developers
       summary: The platform that enables you to create, register, and manage agent identities. Includes the Agent Registry for discovering and organizing agents across your organization.
       items:
         ## CARD 1 ######################
-        - title: Microsoft Entra agent identity platform for developers
+        - title: Microsoft agent identity platform for developers
           links:        
             - text: What is an agent identity blueprint?
               url: ./identity-platform/agent-blueprint.md
