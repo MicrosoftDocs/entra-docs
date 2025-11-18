@@ -1,5 +1,5 @@
 ---
-title:  Agent users in Microsoft Entra agent ID
+title:  Agent users in Microsoft Entra Agent ID
 description: This article explains the concept of agent users, how they function within Microsoft Entra ID, and their relationship with agent identities.
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
@@ -14,7 +14,7 @@ ms.topic: concept-article
 ms.reviewer: yukarppa
 ---
 
-# Agent users in Microsoft Entra agent ID
+# Agent users in Microsoft Entra Agent ID
 
 Agent users are a specialized identity type designed to bridge the gap between agents and human user capabilities. Agent users enable AI-powered applications to interact with systems and services that require user identities, while maintaining appropriate security boundaries and management controls. It allows organizations to manage those agent's access using similar capabilities as they do for human users.
 

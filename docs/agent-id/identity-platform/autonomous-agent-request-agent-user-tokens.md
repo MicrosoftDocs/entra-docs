@@ -21,7 +21,7 @@ This guide walks you through creating an agent user in a tenant and requesting t
 
 ## Prerequisites
 
-- [Understand agent users in Microsoft Entra agent ID](agent-users.md)
+- [Understand agent users in Microsoft Entra Agent ID](agent-users.md)
 - A created agent identity blueprint and at least one agent identity as described in [Create and delete agent identities](create-delete-agent-identities.md)
 
 ## Get authorization
