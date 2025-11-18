@@ -267,7 +267,7 @@ If Admins want to access on-premises resources after transfer of SOA, you must [
 
 ## Scope a user for SOA operations within an Administrative Unit
 
-To scope a user for Source of Authority operations within an Administrative Unit(AU), you'd do the following steps:
+To scope a user for Source of Authority operations within an Administrative Unit(AU), do the following steps:
 
 1. Create an AU to use as the scope for the user. For steps on creating an AU, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
 

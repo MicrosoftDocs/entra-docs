@@ -556,7 +556,7 @@ This script is being provided as an example and should not be considered as offi
 
 ## Scope a group for SOA operations within an Administrative Unit
 
-To scope a group for Source of Authority operations within an Administrative Unit(AU), you'd do the following steps:
+To scope a group for Source of Authority operations within an Administrative Unit(AU), do the following steps:
 
 1. Create an AU to use as the scope for the group. For steps on creating an AU, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
 
