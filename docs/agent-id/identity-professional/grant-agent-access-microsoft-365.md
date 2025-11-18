@@ -29,7 +29,7 @@ Users or administrators can grant agents access to data by consenting to API per
 
 The type of permissions you request depends on how your agent operates and what resources it needs to access.
 
-Use delegated permissions when your interactive agent needs to act on behalf of a signed-in user. For example, read that user's mail, calendar, or files). Delegated access is carried in the token's scp claim.
+Use delegated permissions when your interactive agent needs to act on behalf of a signed-in user. For example, read that user's mail, calendar, or files. Delegated access is carried in the token's scp claim.
 
 Use application permissions when your autonomous agent runs without a user present and requires app-only access. For example, to read all users' profiles. App permissions appear in the token's roles claim.
 

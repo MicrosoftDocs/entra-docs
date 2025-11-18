@@ -1,6 +1,6 @@
 ---
 title: How are agent identities created?
-description: Learn the channels and roles involved in creating Microsoft Entra agent identity blueprints, agent identities, and agent. Monitor and control their introduction into your tenant.
+description: Learn the channels and roles involved in creating Microsoft Entra agent identity blueprints, agent identities, and agent users. Monitor and control their introduction into your tenant.
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
