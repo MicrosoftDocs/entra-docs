@@ -46,7 +46,7 @@ Every tenant comes with a set of app consent policies that are the same across a
 - **microsoft-user-default-recommended:** Permissions consentable based on Microsoft's current recommendations.
 - **microsoft-all-application-permissions:** Includes all application permissions (app roles), for all APIs, for any client application.
 - **microsoft-dynamically-managed-permissions-for-chat:** Includes dynamically managed permissions allowed for chat resource-specific consent.
-- **microsoft-all-application-permissions-for-chat:** Includes all chat resoruce-specific application permissions, for all APIs, for any client application.
+- **microsoft-all-application-permissions-for-chat:** Includes all chat resource-specific application permissions, for all APIs, for any client application.
 - **microsoft-dynamically-managed-permissions-for-team:** Includes dynamically managed permissions allowed for team resource-specific consent.
 - **microsoft-pre-approval-apps-for-chat:** Includes apps that preapproved by permission grant pre-approval policy for chat resource specific consent.
 - **microsoft-pre-approval-apps-for-team:** Includes apps that preapproved by the permission grant pre-approval policy for team resource specific consent.
