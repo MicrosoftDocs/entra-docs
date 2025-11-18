@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 08/30/2025
+ms.date: 11/18/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication's JavaScript SDK so that I can sign up users with email with password or email one-timepasscode authentication menthods
 ---
 

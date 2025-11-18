@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 07/30/2025
+ms.date: 11/18/2025
 #Customer intent: As a developer, I want to build Angular single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
 ---
 
