@@ -17,6 +17,17 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 # [External ID in external tenants](#tab/external-tenants)
 
+## October 2025
+
+### New article
+
+- [Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection](customers/how-to-integrate-fraud-protection.md)
+
+### Updated articles
+
+- [Overview of the Woodgrove Groceries demo](customers/overview-solutions-customers.md) - Added a note about the availability of the demo environment
+- [Identity providers for external tenants](customers/concept-authentication-methods-customers.md) - Added domain acceleration information
+
 ## September 2025
 
 ### Updated articles
@@ -28,17 +39,6 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 ### Updated articles
 
 - [Regional opt-in for MFA telephony verification with external tenants (preview)](customers/how-to-region-code-opt-in.md) - Rest API updates
-
-## July 2025
-
-### New article
-
-- [Supported features in workforce and external tenants](customers/how-to-add-enterprise-application.md)
-
-### Updated articles
-
-- [Register a SAML app in your external tenant](customers/how-to-register-saml-app.md) - Enterprise applications and SAML SSO are generally available
-- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added enterprise applications update
 
 # [External ID in workforce tenants](#tab/workforce-tenants)
 
