@@ -4,7 +4,7 @@ description: Give locally managed external partners access to both local and clo
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 09/24/2024
+ms.date: 11/17/2025
 
 ms.author: cmulligan
 author: csmulligan
@@ -14,16 +14,16 @@ ms.collection: M365-identity-device-management
 # Customer intent: As an IT admin managing partner accounts in a hybrid organization, I want to sync partner accounts from our on-premises directory to the cloud using Microsoft Entra Connect, so that our partners can access the resources they need with the same sign-in credentials for both on-premises and cloud resources.
 ---
 
-# Grant locally managed partner accounts access to cloud resources using Microsoft Entra B2B collaboration
+# Grant partner accounts access to cloud resources with Microsoft Entra B2B
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-Before Microsoft Entra ID, organizations with on-premises identity systems have traditionally managed partner accounts in their on-premises directory. In such an organization, when you start to move apps to Microsoft Entra ID, you want to make sure your partners can access the resources they need. It shouldn't matter whether the resources are on-premises or in the cloud. Also, you want your partner users to be able to use the same sign-in credentials for both on-premises and Microsoft Entra resources. 
+Before Microsoft Entra ID, organizations with on-premises identity systems have managed partner accounts in their on-premises directory. In such an organization, when you start to move apps to Microsoft Entra ID, you want to make sure your partners can access the resources they need. It shouldn't matter whether the resources are on-premises or in the cloud. Also, you want your partner users to be able to use the same sign-in credentials for both on-premises and Microsoft Entra resources. 
 
 If you create accounts for your external partners in your on-premises directory (for example, you create an account with a sign-in name of "msullivan" for an external user named Maria Sullivan in your partners.contoso.com domain), you can now sync these accounts to the cloud. Specifically, you can use [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md) to sync the partner accounts to the cloud, which creates a user account with UserType = Guest. This configuration enables your partner users to access cloud resources using the same credentials as their local accounts, without giving them more access than they need. For more information about converting local guest accounts, see [Convert local guest accounts to Microsoft Entra B2B guest accounts](~/architecture/10-secure-local-guest.md). 
 
 > [!NOTE]
-> See also how to [invite internal users to B2B collaboration](invite-internal-users.md). With this feature, you can invite internal guest users to use B2B collaboration, regardless of whether you've synced their accounts from your on-premises directory to the cloud. Once the user accepts the invitation to use B2B collaboration, they'll be able to use their own identities and credentials to sign in to the resources you want them to access. You won’t need to maintain passwords or manage account lifecycles. 
+> See also how to [invite internal users to B2B collaboration](invite-internal-users.md). With this feature, you can invite internal guest users to use B2B collaboration, regardless of whether you've synced their accounts from your on-premises directory to the cloud. Once the user accepts the invitation to use B2B collaboration, they'll be able to use their own identities and credentials to sign in to the resources you want them to access. You won’t need to maintain passwords or manage account lifecycles.
 
 ## Identify unique attributes for UserType
 

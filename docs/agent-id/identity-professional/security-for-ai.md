@@ -1,5 +1,5 @@
 ---
-title: Security for AI agents with Microsoft Entra agent ID
+title: Security for AI agents with Microsoft Entra Agent ID
 description: Understand why security is critical for AI agents. Learn about the challenges they introduce, the concept of agent sprawl, and how Microsoft is addressing AI security across the enterprise.
 author: SHERMANOUKO
 ms.author: shermanouko
@@ -12,7 +12,7 @@ ms.reviewer: kylemar
 #customer-intent: As an IT administrator or security professional, I want to understand the security challenges posed by AI agents and how Microsoft Entra ID addresses them, so that I can implement comprehensive security controls and governance for AI agents across my organization.
 ---
 
-# Security for AI agents with Microsoft Entra agent ID
+# Security for AI agents with Microsoft Entra Agent ID
 
 AI agents—autonomous software systems that perceive their environment, make decisions, and take actions—expand organizational capabilities but introduce security challenges that differ from traditional application security. This introduction explains why AI security matters, the challenges AI agents present, the concept of agent sprawl, and how Microsoft provides security mechanisms for AI agents in enterprise environments.
 
@@ -101,13 +101,13 @@ Agent security challenges manifest in different ways depending on the agent's pu
 | **Agent User**                | Agents function as human users with persistent identities, mailboxes, and access to collaborative systems. Example: An agent joins teams, accesses documents, and participates in meetings.  | Maintain appropriate permission scope; prevent compromised agents from using team access to spread malware or manipulate decisions.  | Compromised agents might access documents, participate in meetings under false pretenses, or send communications as trusted team members.  |
 | **Agent-to-Agent**            | Agents interact with other agents. Example: An orchestration agent delegates tasks to specialized agents, requiring authentication and verification of designated tasks.  | Establish authenticated agent communication; ensure agents interact only with legitimate agents; maintain audit trails of interactions.  | Unsecured communication allows adversaries to inject malicious agents or intercept/manipulate agent interactions.  |
 
-## Microsoft Entra agent ID
+## Microsoft Entra Agent ID
 
-Microsoft Entra agent ID provides an identity and security framework designed to address the unique challenges of AI agents. The Microsoft Entra agent identity platform consists of several integrated components that work together to provide identity management for AI agents. Microsoft Entra agent ID enables you to: 
+Microsoft Entra Agent ID provides an identity and security framework designed to address the unique challenges of AI agents. The Microsoft agent identity platform consists of several integrated components that work together to provide identity management for AI agents. Microsoft Entra Agent ID enables you to: 
 
-:::image type="content" source="media/security-for-ai/microsoft-entra-agent-identities-diagram.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra agent ID.":::
+:::image type="content" source="media/security-for-ai/microsoft-entra-agent-identities-diagram.png" alt-text="Diagram showing illustration of security for AI landscape with Microsoft Entra Agent ID.":::
 
-- Discover and manage agents
+- Register and manage agents
     - Agent identities: Creates and manages agent identity blueprints as templates and agent identities as individual instances with parent-child relationships
     - Agent registry: Provides centralized metadata management, secure agent discovery, and automatic organization into security collections
 
@@ -116,9 +116,9 @@ Microsoft Entra agent ID provides an identity and security framework designed to
 
 - Protect agent access to resources 
     - Global Secure Access for agent identities: Network-level security and zero-trust access for agent communications
-    - Conditional Access for agent identities: Policy-based access controls and risk-based authentication for agents
+    - Conditional access for agent identities: Policy-based access controls and risk-based authentication for agents
     - Identity protection for agent identities: Real-time risk detection and automated response for agent activities
 
 ## Next steps
 
-[Microsoft Entra agent ID security capabilities for AI Agents](microsoft-entra-agent-identities-for-ai-agents.md)
+[Microsoft Entra Agent ID security capabilities for AI Agents](microsoft-entra-agent-identities-for-ai-agents.md)

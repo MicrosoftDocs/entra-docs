@@ -53,6 +53,6 @@ Tokens are the fundamental security mechanism enabling secure communication and 
 The Microsoft agent identity platform is designed to work seamlessly across the Microsoft ecosystem and beyond. It integrates with:
 - **Microsoft Entra ID**: The platform extends Microsoft Entra ID capabilities to support agent scenarios, using existing identity infrastructure and policies
 - **Platforms / services that create agents**: Platforms that create and manage agents can integrate with the Microsoft agent identity platform to secure agents. This includes both Microsoft-owned platforms like Copilot Studio and third-party platforms.
-- **Extended Microsoft identity and security products**: Integration with Conditional Access, Identity Protection, identity governance, global secure access, and other security services enable comprehensive agent security
+- **Extended Microsoft identity and security products**: Integration with conditional access, identity protection, identity governance, global secure access, and other security services enable comprehensive agent security
 
 This interoperability ensures that organizations can build, deploy, and manage agent identities consistently regardless of where agents are created or deployed.

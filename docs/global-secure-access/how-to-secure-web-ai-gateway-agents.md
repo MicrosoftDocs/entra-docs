@@ -80,12 +80,11 @@ Regular monitoring and maintenance ensure your security configuration remains ef
 ## Known limitations
 
 - The enforcement feature supports only the baseline profile. Network security policies apply per tenant.
-- Integration with third-party DLP and ATP services, such as Netskope, isn't supported.
+- Global Secure Access partner ecosystem integrations, such as third-party Data Loss Prevention (DLP), aren't supported.
 - Copilot Studio Bing search network transactions aren't supported.
 - Only specific Copilot Studio connectors are supported with network security controls. Refer to the Copilot Studio documentation for the list of supported connectors.
 - Currently the Agent Name returned in the Global Secure Access traffic logs is the agent's unique *schema name*.
 - Currently the block experience for Copilot Studio agents blocked by GSA shows a *502 Bad Gateway* for HTTP Actions or a *403 Forbidden* for connectors. This is a known issue, and improvements are coming soon.
-- Currently only the baseline profile is supported for enforcement, so network security policies are per-tenant.
 
 ## Next steps
 
