@@ -3029,6 +3029,31 @@
       "source_path_from_root": "/docs/identity/authentication/concept-authentication-methods.md",
       "redirect_url": "/entra/identity/authentication/overview-authentication",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-discovery-onboard.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-management.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-remediation-plans.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-contact-app-owners.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
     }
   ]
 }
