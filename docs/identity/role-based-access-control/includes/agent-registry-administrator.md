@@ -20,3 +20,4 @@ Assign the Agent Registry Administrator role to users who need to do the followi
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.agentRegistry/allEntities/allProperties/allTasks | Manage all aspects of Agent Registry in Microsoft Entra ID |
+

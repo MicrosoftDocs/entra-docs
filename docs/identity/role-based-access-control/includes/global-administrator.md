@@ -20,6 +20,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.agentRegistry/allEntities/allProperties/allTasks | Manage all aspects of Agent Registry in Microsoft Entra ID |
 > | microsoft.azure.advancedThreatProtection/allEntities/allTasks | Manage all aspects of Azure Advanced Threat Protection |
 > | microsoft.azure.informationProtection/allEntities/allTasks | Manage all aspects of Azure Information Protection |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
@@ -214,6 +215,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.office365.securityComplianceCenter/allEntities/allTasks | Create and delete all resources, and read and update standard properties in the Microsoft 365 Security and Compliance Center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.sharePoint/allEntities/allTasks | Create and delete all resources, and read and update standard properties in SharePoint |
+> | microsoft.office365.sharePointAdvancedManagement/allEntities/allProperties/allTasks | Manage all aspects of SharePoint Advanced Management |
 > | microsoft.office365.skypeForBusiness/allEntities/allTasks | Manage all aspects of Skype for Business Online |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |

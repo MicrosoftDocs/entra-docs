@@ -18,3 +18,4 @@ Assign the Agent ID Developer role to users who need to do the following:
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/servicePrincipals/standard/read | Read basic properties of service principals |
+
