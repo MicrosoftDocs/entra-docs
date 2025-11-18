@@ -72,7 +72,7 @@ The following table lists Identity Runtime SDK versions currently supported and 
 #### Assets
 
 
-- Ubuntu-20.04 - [microsoft-identity-broker_1.6.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.6.0_amd64.deb)
+- Ubuntu-24.04 - [microsoft-identity-diagnostics_2.0.3_amd64.deb](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_2.0.3_amd64.deb)
 
 - Ubuntu-22.04 - [microsoft-identity-broker_1.6.0_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.6.0_amd64.deb)
 
