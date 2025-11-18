@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: mwongerapk
 ms.topic: reference
-ms.date: 09/17/2025
+ms.date: 11/18/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
@@ -68,8 +68,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
 |[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
-|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.183.0)|
-|[2.5.189.0](#251890)||
+|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
+|[2.5.190.0](#251900)||
 
 **All other versions are not supported**
 
@@ -92,21 +92,22 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
-## 2.5.189.0
+## 2.5.190.0
 
 ### Release status
 
-11/03/2025: Released for download via the Microsoft Entra admin center.
+11/18/2025: Released for download via the Microsoft Entra admin center.
 
 ### Added features
 
-- AAD Connector V2 API Enforcement – Switching to the AWS V1 Connector API is no longer supported; the default connector API version is now V2.
+- **AAD Connector V2 API Enforcement**: The default connector API version is now V2. Using the previous V1 connector API is no longer supported.
 
 ### Bug fixes
 
 - Fixed an issue where Application-Based Authentication failed with Trusted Platform Module (TPM) and Microsoft Authentication Library (MSAL). The fix ensures compatibility with MSAL's default signing method.
-- Fixed issue in the configuration wizard that resulted in **Directory synchronization for this directory currently has a mismatch in sync enabled and sync status** error when DirSync Status is in **Other**.
-- We updated the Last Exchange Server (LES) attribute in private preview, so Connect Sync now dynamically aligns with current cloud-managed exchange attributes at runtime, instead of relying on a static list from installation.
+- Fixed issue in the configuration wizard that resulted in "Directory synchronization for this directory currently has a mismatch in sync enabled and sync status" error when DirSync Status is in "Other".
+- The certificate renewal threshold for Application-based Authentication has been updated to 30 days. Entra-managed certificates will now automatically renew when their expiration date is 30 days or less.
+- Fixed issue with cloud management of Exchange attributes that raised export errors labelled `ExchangeManagedAttributesUpdateNotAllowed`.
 
 ## 2.5.79.0
 
