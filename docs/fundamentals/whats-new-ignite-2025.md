@@ -179,7 +179,7 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Akamai WAF integration](../external-id/customers/how-to-configure-akamai-integration.md) (New)
 - [Cloudflare WAF integration](../external-id/customers/how-to-configure-waf-integration.md) (Updated)
 - [Arkose Labs and HUMAN Security fraud protection](../external-id/customers/how-to-integrate-fraud-protection.md) (New)
-- [Azure Monitor and Microsoft Sentinel integration](../external-id/customers/how-to-azure-monitor) (Updated)
+- [Azure Monitor and Microsoft Sentinel integration](../external-id/customers/how-to-azure-monitor.md) (Updated)
 - [Sign in with an alias](../external-id/customers/how-to-sign-in-alias.md) (New)
 
 ## Microsoft Entra ID
