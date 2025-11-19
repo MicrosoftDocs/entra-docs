@@ -320,13 +320,14 @@ For example, you could execute your deployments and then enforcements in waves t
 
 As you execute these different phases, you may need to slow down depending on the volume of help desk tickets opened and then resume when the volume has subsided. To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each wave, and add each group to your policies one at a time. This approach helps to avoid overwhelming your support teams.
 
-## Step 4: Enforce phishing-resistant methods for sign-in
-
-
+## Enforce phishing-resistant methods for sign-in
+ The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. 
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png":::
 
-The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is [Conditional Access authentication strengths](concept-authentication-strengths.md). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
+ ### Step 4: Enforcement of phishing resistence on resources
+ 
+To enforce phishing-resistent crednetials in Microsfot Entra ID the primary mechanism is [Conditional Access authentication strengths](concept-authentication-strengths.md). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
 
 1. Admins on Windows and iOS
 1. Admins on macOS and Android
