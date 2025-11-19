@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/16/2025
+ms.date: 11/19/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -66,7 +66,7 @@ Package the installation script into a `.intunewin` file.
 > [!TIP]
 > Select to expand the PowerShell script.
 
-<details>
+<details open>
   <summary>PowerShell installation script</summary>
 
 ```powershell
