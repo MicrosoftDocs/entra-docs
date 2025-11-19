@@ -101,7 +101,7 @@ To do so, use the following steps:
 
 <!--We'll update these instructions once we author the Android tutorials for the browser-delegated authentication flow --> 
 
-1. To add a redirect URI to the app that you registered earlier, use the steps in [Add a platform redirect URL](../external-id/customers/sample-mobile-app-android-kotlin-sign-in.md#add-a-platform-redirect-url).
+1. To add a redirect URI to the app that you registered earlier, use the steps in [Add a platform redirect URL](quickstart-mobile-app-sign-in.md#add-a-redirect-uri).
 
 1. To update your client app's configuration file, use the steps in [Configure the redirect URI in SDK's configuration](../external-id/customers/sample-mobile-app-android-kotlin-sign-in.md#configure-the-sample-android-mobile-application).
   
