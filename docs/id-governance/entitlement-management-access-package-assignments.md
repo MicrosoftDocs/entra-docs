@@ -123,10 +123,10 @@ In some cases, you might want to directly assign specific identities to an acces
 
 1. Select **Add** to directly assign the selected identities to the access package.
 
-    After a few moments, select **Refresh** to see the users in the Assignments list.
+    After a few moments, select **Refresh** to see the identities in the Assignments list.
     
 > [!NOTE]
-> Access package assignment managers will no longer be able to bypass approval settings if the policy requires approval. This means users can't be directly assigned to the package without necessary approval(s) from the designated approver(s). In the case that you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.
+> Access package assignment managers will no longer be able to bypass approval settings if the policy requires approval. This means identities can't be directly assigned to the package without necessary approval(s) from the designated approver(s). In the case that you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to identities who need access.
 
 ## Directly assign any identity (Preview)
 
