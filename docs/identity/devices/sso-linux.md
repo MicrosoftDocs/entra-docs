@@ -1,6 +1,6 @@
 ---
-title: Microsoft single sign-on for Linux
-description: Overview of single sign-on for Linux that enables Microsoft Entra ID integration and seamless authentication.
+title: Microsoft Microsoft Single Sign-On for Linux
+description: Overview of Microsoft Single Sign-On for Linux that enables Microsoft Entra ID integration and seamless authentication.
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
 ms.service: entra-id
@@ -9,7 +9,7 @@ ms.date:     05/16/2025
 ms.subservice: devices
 ---
 
-# What is Microsoft single sign-on for Linux?
+# What is Microsoft Single Sign-On for Linux?
 
 Microsoft single sign-on (SSO) for Linux is powered by the Microsoft Identity Broker, a software component that integrates Linux devices with Microsoft Entra ID. This solution enables users to authenticate once with their Microsoft Entra ID credentials and access multiple applications and resources without repeated authentication prompts. The feature simplifies the sign-in process for users and reduces password management overhead for administrators. 
 

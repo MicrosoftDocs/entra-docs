@@ -19,7 +19,7 @@ Check this article regularly to learn about:
 - Protocol changes
 - Deprecated functionality
 
-This article provides information about the latest updates to Microsoft Single Sign-On for Linux. 
+This article provides information about the latest updates to Microsoft single sign-on for Linux. 
 
 ### Package Repositories
 Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported.
@@ -63,7 +63,7 @@ The following table lists Identity Runtime SDK versions currently supported and 
 > [!IMPORTANT]
 > Future release dates shown in this document are tentative and subject to change based on development progress.
 
-We have introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pre-release testing of packages newer than 2.0.1 (the latest production version). This channel is not intended for production use and may contain breaking changes or incomplete features.
+We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow prerelease testing of packages newer than 2.0.1 (the latest production version). This channel isn't intended for production use and may contain breaking changes or incomplete features.
 
 ### Important Notes for Version 2.0.2 and Later
 
@@ -80,13 +80,13 @@ We have introduced an "insiders-fast" channel in `packages.microsoft.com` to all
 - Device re-registration through Microsoft Entra ID and Intune required
 
 **Documentation:**
-For current production documentation, see: [Microsoft Single Sign-On for Linux](/entra/identity/devices/sso-linux)
+For current production documentation, see: [Microsoft single sign-on for Linux](/entra/identity/devices/sso-linux)
 
 ### 2.0.3 - Oct 21, 2025 - (Preview Release)
 
 - Added support for the microsoft-identity-broker-diagnostics package.
-- Rename linux_broker to microsoft-identity-broker
-- Rename linux_devicebroker to microsoft-identity-device-broker
+- Renamed a service component from `linux_broker` to `microsoft-identity-broker` for consistency.
+- Renamed a service component from `linux_devicebroker` to `microsoft-identity-device-broker` for consistency.
 - Update x-client-os to use distro name
 
 #### Assets
@@ -97,12 +97,12 @@ For current production documentation, see: [Microsoft Single Sign-On for Linux](
 ---
 
 ### 2.0.2 - Sept 19, 2025 - (Preview Release)
-Private Preview update to use a newly rewritten C++ broker instead of the previous Java-based broker.
+Preview update to use a newly rewritten C++ broker instead of the previous Java-based broker.
 
-- Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA) or FIDO2 key with a PIV profile (cert on a FIDO)
+- Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a PIV profile (cert on a FIDO)
 - Added Telemetry to the header of token requests so we can differentiate broker versions.
-- When onboarding a new device, the device will perform an Entra Join instead of an Entra Registration. This means it is a device trust, instead of a registration within the user profile. This is a prerequisite step to enable platformSSO in the future.
-- Renamed the device broker service from `microsoft-identity-device-broker` to `microsoft-identity-devicebroker`
+- When onboarding a new device, the device performs an Microsoft Entra Join instead of an Microsoft Entra Registration. This means it's a device trust, instead of a registration within the user profile. This is a prerequisite step to enable platformSSO in the future.
+- Renamed the device broker service from `microsoft-identity-device-broker` to `microsoft-identity-devicebroker`.
 - There no longer is a user broker service named `microsoft-identity-broker`. The user broker is now an executable that gets invoked via dbus connection
 - Device certs are moved from the Keychain to `/etc/ssl/private`. In that directory, there will be a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via msal/OneAuth.
 
@@ -114,11 +114,11 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ### Broker Support for MSAL Python and MSAL .NET on Linux - June 13, 2025
 
-- As of 2.0.1, the `microsoft.identity.broker` now supports using [Using MSAL Python with an Auth Broker on Linux](https://learn.microsoft.com/entra/msal/python/advanced/linux-broker-py) and [Using MSAL.NET with broker on Linux](https://learn.microsoft.com/entra/msal/dotnet/acquiring-tokens/desktop-mobile/linux-dotnet-sdk) to make token requests via broker.
+- As of 2.0.1, the `microsoft.identity.broker` now supports using [Using MSAL Python with an Auth Broker on Linux](entra/msal/python/advanced/linux-broker-py) and [Using MSAL.NET with broker on Linux](entra/msal/dotnet/acquiring-tokens/desktop-mobile/linux-dotnet-sdk) to make token requests via broker.
 
 ---
 
-### 2.0.1 - Nov 18, 2024 
+### 2.0.1 - November 18, 2024 
 
 - Releasing package support for ubuntu 24.04
 
@@ -130,7 +130,7 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ---
 
-### 2.0.0 - Mar 21, 2024
+### 2.0.0 - March 21, 2024
 
 - Bug fixes
 
@@ -142,7 +142,7 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ---
 
-### 1.7.0 - Jan 31, 2024
+### 1.7.0 - January 31, 2024
 
 - Addressing the 1001 on registration failure
 - Updating the install scripts for Red Hat Enterprise Linux Broker
@@ -150,7 +150,7 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ---
 
-### 1.6.1 - Aug 17, 2023
+### 1.6.1 - August 17, 2023
 - [PATCH] Perform safe deserialization for X509 Certificate in Linux Broker (#2483) 
 
 #### Assets
@@ -160,7 +160,7 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ---
 
-### 1.6.0 - Jun 29, 2023
+### 1.6.0 - June 29, 2023
 
 - Added support for Red Hat Enterprise Linux 8 and 9.
 
@@ -183,7 +183,7 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ---
 
-### 1.4.1 - Oct 22, 2022
+### 1.4.1 - October 22, 2022
 - Resource Owner Password Credential (ROPC) test hook.
 - added logging for keyring "1001" errors.
 
@@ -193,7 +193,7 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ---
 
-### 1.4.0 - Oct 26, 2022
+### 1.4.0 - October 26, 2022
 - Java 17 support
 - Ubuntu 22 support
 
@@ -203,14 +203,14 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ---
 
-### 1.3.0 - Oct 26, 2022
+### 1.3.0 - October 26, 2022
 
 #### Assets
 - Ubuntu-20.04 - [microsoft-identity-broker_1.3.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.3.0_amd64.deb)
 
 ---
 
-### 1.2.0 - Oct 26, 2022
+### 1.2.0 - October 26, 2022
 
 #### Assets
 - Ubuntu-20.04 - [microsoft-identity-broker_1.2.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_1.2.0_amd64.deb)
@@ -219,7 +219,7 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ## Microsoft-Identity-Diagnostics
 
-### 2.0.3 - Oct 21, 2025 - (Preview Release)
+### 2.0.3 - October 21, 2025 - (Preview Release)
 
 - Added support for the microsoft-identity-broker-diagnostics package.
 - Rename linux_broker to microsoft-identity-broker
@@ -230,14 +230,14 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 - Ubuntu-22.04 - [microsoft-identity-diagnostics_2.0.3_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_2.0.3_amd64.deb)
 
 
-#### 1.01 - Nov 29, 2022
+#### 1.01 - November 29, 2022
 
 #### Assets
 - Ubuntu 22.04 - [microsoft-identity-diagnostics_1.1.0_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-diagnostics/microsoft-identity-diagnostics_1.1.0_amd64.deb)
 
 ---
 
-#### 1.0.1 - Aug 07, 2022
+#### 1.0.1 - August 07, 2022
 
 #### Assets
 - Red Hat Enterprise Linux 8.0 - [microsoft-identity-diagnostics-1.0.1-1.x86_64.rpm](https://packages.microsoft.com/rhel/8/prod/Packages/m/microsoft-identity-diagnostics-1.0.1-1.x86_64.rpm)
