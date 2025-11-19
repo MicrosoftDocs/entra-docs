@@ -36,7 +36,7 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Switch to the **TLS inspection settings** tab.
 1. Select **+ Create certificate**. This step starts with generating a Certificate Sign Request (CSR). 
 1. In the **Create certificate** pane, fill in the following fields:
-   - **Certificate name**: This name appears in the certificate hierarchy when viewed in a browser. It must be unique, contain no spaces, and be no more than 12 characters long. **Important**: You can't reuse previously used certificate names, even after deletion.
+   - **Certificate name**: This name appears in the certificate hierarchy when viewed in a browser. It must be unique, contain no spaces, and be no more than 12 characters long. **Important**: You can't reuse previous certificate names, even after deletion.
    - **Common name** (CN): Common name, for example, Contoso TLS ICA, that identifies the intermediate certificate.
    - **Organizational Unit** (OU): Organization name, for example, Contoso IT.
 1. Select **Create CSR**. This step creates a .csr file and saves it to your default download folder.
