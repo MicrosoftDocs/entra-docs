@@ -65,7 +65,7 @@ In addition, applications can also rely upon security groups for expressing perm
 - a first access package that has two resource roles, the application's app role `User` and membership of the group `Ordinary Users`
 - a second access package that has two resource roles, the application's app role `User` and membership of the group `Administrative Access`
 
-## Check if users are already assigned to the resource role
+## Check if identities are already assigned to the resource role
 
 When a resource role is added to an access package by an admin, identities who are already in that resource role, but don't have assignments to the access package, will remain in the resource role, but won't be assigned to the access package. For example, if an identity is a member of a group and then an access package is created and that group's member role is added to an access package, the identity won't automatically receive an assignment to the access package.
 
