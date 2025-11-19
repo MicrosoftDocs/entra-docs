@@ -4,7 +4,7 @@ description: SharePoint Advanced Management Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 11/17/2025
+ms.date: 11/19/2025
 ms.custom: include file
 ---
 
@@ -31,7 +31,6 @@ Assign the SharePoint Advanced Management Administrator role to users who need t
 > | microsoft.backup/siteRestoreArtifacts/allProperties/allTasks | Manage sites added to restore session for SharePoint in Microsoft 365 Backup |
 > | microsoft.backup/userDriveProtectionUnits/allProperties/allTasks | Manage accounts added to OneDrive protection policy in Microsoft 365 Backup |
 > | microsoft.backup/userDriveRestoreArtifacts/allProperties/allTasks | Manage accounts added to restore session for OneDrive in Microsoft 365 Backup |
-> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups.unified/assignedLabels/update | Update the assigned labels property on Microsoft 365 groups of assigned membership type, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
@@ -39,11 +38,12 @@ Assign the SharePoint Advanced Management Administrator role to users who need t
 > | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
+> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.office365.migrations/allEntities/allProperties/allTasks | Manage all aspects of Microsoft 365 migrations |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
-> | microsoft.office365.sharePointAdvancedManagement/allEntities/allProperties/allTasks | Manage all aspects of SharePoint Advanced Management |
 > | microsoft.office365.sharePoint/allEntities/allTasks | Create and delete all resources, and read and update standard properties in SharePoint |
+> | microsoft.office365.sharePointAdvancedManagement/allEntities/allProperties/allTasks | Manage all aspects of SharePoint Advanced Management |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
