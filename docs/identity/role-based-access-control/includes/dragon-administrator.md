@@ -4,7 +4,7 @@ description: Dragon Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 10/02/2025
+ms.date: 11/19/2025
 ms.custom: include file
 ---
 

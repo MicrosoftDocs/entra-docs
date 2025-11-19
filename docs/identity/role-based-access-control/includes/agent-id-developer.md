@@ -4,7 +4,7 @@ description: Agent ID Developer
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 11/04/2025
+ms.date: 11/19/2025
 ms.custom: include file, agent-id-ignite
 ---
 
@@ -18,4 +18,3 @@ Assign the Agent ID Developer role to users who need to do the following:
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/servicePrincipals/standard/read | Read basic properties of service principals |
-
