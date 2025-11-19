@@ -37,6 +37,11 @@ Using Security Copilot, you can apply its capabilities with Global Secure Access
 
 For example, as a security analyst or network administrator, you can use Security Copilot to investigate and monitor network traffic usage and behavior using natural language queries. You can analyze user, device, and branch network usage, identify network issues, and detect threats or policy violations in real time. As a result, your investigation process is streamlined and more effective. 
 
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.*
+
 ### Monitor data consumption and bandwidth usage
 
 You can begin your investigation by analyzing overall network traffic patterns and identifying users with high data consumption. Understanding bandwidth usage and traffic distribution are crucial for capacity planning, identifying potential security issues, and detecting unusual usage patterns that might indicate compromised accounts or policy violations. Use the following example prompts to get the information you need:
