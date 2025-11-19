@@ -84,7 +84,7 @@ $sp | Export-Csv -Encoding UTF8 -NoTypeInformation -Path ".\assignments.csv"
 ```
 
 
-## Directly assign a user 
+## Directly assign an identity 
 
 In some cases, you might want to directly assign specific users to an access package so that users don't have to go through the process of requesting the access package. To directly assign users, the access package must have a policy that allows administrator direct assignments.
 
