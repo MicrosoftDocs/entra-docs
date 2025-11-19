@@ -28,7 +28,7 @@ This article outlines how to select across three options, based on the applicati
 |Application capabilities|Section|
 |--|--|
 | Application exposes APIs with OAuth2 permission scopes| [consent the agent identity or service principal to an application permission scope](#consenting-to-an-application-permission-scope)|
-| Application recognizes role claims for service principals| [assign an agent ID or service principal to an application role](#assigning-an-agent-id-to-an-application-role)|
+| Application recognizes role claims for service principals| [assign an agent identity or service principal to an application role](#assigning-an-agent-identity-to-an-application-role)|
 |Application only supports SAML for users | [assign an agent user to an application role for use with SCIM](#assigning-to-saml-based-applications)|
 
 ## Consenting to an application permission scope
@@ -47,11 +47,11 @@ For applications that recognize role claims on service principals, you can assig
 > Microsoft Entra SCIM outbound provisioning supports users and groups only; Service principals and agent identities assigned to app roles directly or as members of groups aren't provisioned to applications.
 
 First, confirm that app role in the application's manifest has an `allowedMemberTypes` of `Application`, indicating that the role is available for other applications. If the role only allows users, then agent identities and service principals aren't supported by the application for that role.
-Then, you can assign an app role to an agent ID or service principal, by using the Microsoft Entra admin center, Microsoft Graph or Microsoft Graph PowerShell.
+Then, you can assign an app role to an agent identity or service principal, by using the Microsoft Entra admin center, Microsoft Graph or Microsoft Graph PowerShell.
 
 * If you're using the Microsoft Entra admin center, follow the instructions in how to [assign to application app roles](../../identity-platform/howto-add-app-roles-in-apps.md#assign-app-roles-to-applications).
 
-* If you're using Microsoft Graph or Microsoft Graph PowerShell, then assigning an agent ID or service principal to an application role is similar to [assigning users and groups to an application](assign-user-or-group-access-portal.md#assign-users-and-groups-to-an-application-using-microsoft-graph-api). You can use [list app role assignment](/graph/api/serviceprincipal-list-approleassignedto) to check if the agent ID or service principal already has a role assignment, and use [add app role assignment](/graph/api/serviceprincipal-post-approleassignedto) to create a new app role assignment. For example, to create an application role assignment for an agent identity using PowerShell, set `$PrincipalId` to the `id` of the agent ID, `$ResourceId` to the `id` of the target application service principal, and `$AppRoleId` to the ID of the app role of the target application app role. Then, construct a payload for adding an application role assignment:
+* If you're using Microsoft Graph or Microsoft Graph PowerShell, then assigning an agent identity or service principal to an application role is similar to [assigning users and groups to an application](assign-user-or-group-access-portal.md#assign-users-and-groups-to-an-application-using-microsoft-graph-api). You can use [list app role assignment](/graph/api/serviceprincipal-list-approleassignedto) to check if the agent identity or service principal already has a role assignment, and use [add app role assignment](/graph/api/serviceprincipal-post-approleassignedto) to create a new app role assignment. For example, to create an application role assignment for an agent identity using PowerShell, set `$PrincipalId` to the `id` of the agent identity, `$ResourceId` to the `id` of the target application service principal, and `$AppRoleId` to the ID of the app role of the target application app role. Then, construct a payload for adding an application role assignment:
 
   ```powershell
 
@@ -66,7 +66,7 @@ Then, you can assign an app role to an agent ID or service principal, by using t
 
 ## Assigning to SAML-based applications
 
-If you have applications that only support SAML for a user to obtain a token, and you want your agent to be able to autonomously interact with its agent identity with that application, then you can augment the agent's agent identities with agent users. Then, once you add support for SAML and agent users to your agent, your agent can obtain a token for the application. Unlike agent identities, agent users can optionally also be provisioned into those applications via SCIM, if required by the application.
+If you have applications that only support SAML for a user to obtain a token, and you want your agent to be able to autonomously interact with its agent identity with that application, then you can augment the agent's identity with agent users. Then, once you add support for SAML and agent users to your agent, your agent can obtain a token for the application. Unlike agent identities, agent users can optionally also be provisioned into those applications via SCIM, if required by the application.
 
 > [!NOTE]
 > Confirm with the application developer whether the application supports the agent interaction pattern.
@@ -83,7 +83,7 @@ In the Microsoft Entra tenant, the following artifacts need to exist:
   * the enterprise application as the resource
   * the scope value of the concatenation of the enterprise application's entity ID with `/.default` appended
 
-Then, for each agent identity of the agent, you create
+Then, for each agent identity of the agent, you create:
 
 * an agent user
 * an application role assignment, for the agent user, to one of the roles of the enterprise application
