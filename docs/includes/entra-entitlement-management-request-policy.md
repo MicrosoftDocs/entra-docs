@@ -10,9 +10,9 @@ ms.author: owinfrey
 ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 ---
 
-## Allow users in your directory to request the access package
+## Allow users, service principals, and agent identities in your directory to request the access package
 
-Use the following steps if you want to allow users in your directory to be able to request this access package. When you're defining the request policy, you can specify individual users or (more commonly) groups of users. For example, your organization might already have a group such as **All employees**. If that group is added in the policy for users who can request access, any member of that group can then request access.
+Use the following steps if you want to allow identities in your directory to be able to request this access package. When you're defining the request policy, you can specify individual identities or (more commonly) groups of identities. For example, your organization might already have a group such as **All employees**. If that group is added in the policy for identities who can request access, any member of that group can then request access.
 
 1. In the **Users who can request access** section, select **For users in your directory**.
 

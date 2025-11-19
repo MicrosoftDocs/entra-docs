@@ -22,7 +22,7 @@ An access package can be used to assign access to roles of multiple resources th
 
 If you're an access package manager, you can't add resources that you own to a catalog. You're restricted to using the resources available in the catalog. If you need to add resources to a catalog, you can ask the catalog owner.
 
-All access packages must have at least one policy for identities to be assigned to them. Policies specify who can request the access package, along with approval and lifecycle settings, or how access is automatically assigned. When you create an access package, you can create an initial policy for identities in your directory, for users not in your directory, or for administrator direct assignments only.
+All access packages must have at least one policy for identities to be assigned to them. Policies specify who can request the access package, along with approval and lifecycle settings, or how access is automatically assigned. When you create an access package, you can create an initial policy for identities in your directory, for identities not in your directory, or for administrator direct assignments only.
 
 ![Diagram of an example marketing catalog, including its resources and its access package.](./media/entitlement-management-access-package-create/access-package-create.png)
 
@@ -34,7 +34,7 @@ Here are the high-level steps to create an access package with an initial policy
 
 1. Add resource roles from resources in the catalog to your access package.
 
-1. Specify an initial policy for users who can request access for themselves or [on-behalf-of other identities](entitlement-management-request-behalf.md).
+1. Specify an initial policy for identities who can request access for themselves or [on-behalf-of other identities](entitlement-management-request-behalf.md).
 
 1. Specify approval settings and lifecycle settings in that policy.
 
@@ -72,7 +72,7 @@ On the **Basics** tab, you give the access package a name and specify which cata
 
 ## Select resource roles
 
-On the **Resource roles** tab, you select the resources to include in the access package. Users who request and receive the access package receive all the resource roles, such as group membership in the access package.
+On the **Resource roles** tab, you select the resources to include in the access package. Identities who request and receive the access package receive all the resource roles, such as group membership in the access package.
 
 If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](entitlement-management-access-package-resources.md) later.
 
@@ -109,7 +109,7 @@ On the **Requests** tab, you create the first policy to specify who can request 
 
 ![Screenshot that shows the Requests tab for a new access package.](./media/entitlement-management-access-package-create/requests.png)
 
-Depending on which identities you want to be able to request this access package, perform the steps in one of the following sections [Allow users in your directory to request the access package](#allow-users-in-your-directory-to-request-the-access-package), [Allow users not in your directory to request the access package](#allow-users-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for identities who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
+Depending on which identities you want to be able to request this access package, perform the steps in one of the following sections [Allow users, service principals, and agent identities in your directory to request the access package](../includes/entra-entitlement-management-request-policy.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package), [Allow users not in your directory to request the access package](#allow-users-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for identities who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
 
 [!INCLUDE [Entitlement management request policy](../includes/entra-entitlement-management-request-policy.md)]
 
@@ -127,7 +127,7 @@ On the **Review + create** tab, you can review your settings and check for any v
 
     The new access package appears in the list of access packages.
 
-1. If the access package is intended to be visible to everyone in scope of the policies, then leave the **Hidden** setting of the access package at **No**. Optionally, if you intend to only allow users with the direct link to request the access package, [edit the access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) to change the **Hidden** setting to **Yes**. Then [copy the link to request the access package](entitlement-management-access-package-settings.md#share-link-to-request-an-access-package) and share it with users who need access.
+1. If the access package is intended to be visible to everyone in scope of the policies, then leave the **Hidden** setting of the access package at **No**. Optionally, if you intend to only allow identities with the direct link to request the access package, [edit the access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) to change the **Hidden** setting to **Yes**. Then [copy the link to request the access package](entitlement-management-access-package-settings.md#share-link-to-request-an-access-package) and share it with identities who need access.
 
 1. You can next [add more policies](entitlement-management-access-package-request-policy.md) to the access package, [configure separation of duties checks](entitlement-management-access-package-incompatible.md), or [directly assign a user](entitlement-management-access-package-assignments.md#directly-assign-a-user).
 
