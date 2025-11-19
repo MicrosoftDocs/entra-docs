@@ -27,8 +27,10 @@ Use the following steps if you want to allow identities in your directory to be 
     | **Specific users and groups** | Choose this option if you want only the users and groups in your directory that you specify to be able to request this access package. |
     | **All members (excluding guests)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
     | **All users (including guests)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
+    | **All Service principals (preview)** | Choose this option if you want all service principals in your directory to be able to request this access package. |
+    | **All agents (preview)** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
 
-    Guest users are external users who have been invited into your directory via [Microsoft Entra B2B](~/external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
+    Guest users are external identities who have been invited into your directory via [Microsoft Entra B2B](~/external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
 
 1. If you selected **Specific users and groups**, select **Add users and groups**.
 
@@ -40,15 +42,15 @@ Use the following steps if you want to allow identities in your directory to be 
 
 1. Skip down to the [Specify approval settings](#specify-approval-settings) section.
 
-## Allow users not in your directory to request the access package
+## Allow identities not in your directory to request the access package
 
-Users who are in another Microsoft Entra directory or domain might not have been invited into your directory yet. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md).
+Identities who are in another Microsoft Entra directory or domain might not have been invited into your directory yet. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md).
 
-A guest user account will be created for a user not yet in your directory whose request is approved or does not need approval. The guest will be invited but won't receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. Later, when that guest user no longer has any access package assignments because the last assignment expired or was canceled, the account will be blocked from sign-in and subsequently deleted. The blocking and deletion happen by default.
+A guest identity account will be created for an identity not yet in your directory whose request is approved or does not need approval. The guest will be invited but won't receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. Later, when that guest user no longer has any access package assignments because the last assignment expired or was canceled, the account will be blocked from sign-in and subsequently deleted. The blocking and deletion happen by default.
 
 If you want guest users to remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
-Follow these steps if you want to allow users not in your directory to request the access package:
+Follow these steps if you want to allow identities not in your directory to request the access package:
 
 1. In the **Users who can request access** section, select **For users not in your directory**.
 
@@ -98,7 +100,7 @@ Follow these steps if you want to bypass access requests and allow administrator
 
 ## Specify approval settings
 
-In the **Approval** section, you specify whether an approval is required when users request this access package. The approval settings work in the following way:
+In the **Approval** section, you specify whether an approval is required when identities request this access package. The approval settings work in the following way:
 
 - Only one of the selected approvers or fallback approvers needs to approve a request for single-stage approval.
 - Only one of the selected approvers from each stage needs to approve a request for two-stage approval.
@@ -116,9 +118,9 @@ For a demonstration of how to add a multiple-stage approval to a request policy,
 
 Follow these steps to specify the approval settings for requests for the access package:
 
-1. To require approval for requests from the selected users, set the **Require approval** toggle to **Yes**. Or, to have requests automatically approved, set the toggle to **No**.  If the policy allows external users from outside your organization to request access, you should require approval, so there is oversight on who is being added to your organization's directory.
+1. To require approval for requests from the selected identities, set the **Require approval** toggle to **Yes**. Or, to have requests automatically approved, set the toggle to **No**.  If the policy allows external identities from outside your organization to request access, you should require approval, so there is oversight on who is being added to your organization's directory.
 
-1. To require users to provide a justification to request the access package, set the **Require requestor justification** toggle to **Yes**.
+1. To require identities to provide a justification to request the access package, set the **Require requestor justification** toggle to **Yes**.
 
 1. Determine if requests require single-stage or two-stage approval. Set the **How many stages** toggle to **1** for single-stage approval, **2** for two-stage approval, or **3** for three-stage approval.
 
