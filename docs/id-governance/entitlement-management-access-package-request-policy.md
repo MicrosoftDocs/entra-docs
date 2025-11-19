@@ -99,7 +99,7 @@ Follow these steps if you want to allow identities in your directory to be able 
 
 1. If you want to require approval, use the steps in [Change approval settings for an access package in entitlement management](entitlement-management-access-package-approval-policy.md) to configure approval settings.
 
-1. Go to the [Enable requests](#enable-requests) section.
+1. Go to the [Who can request access](#who-can-request-access) section.
  
 ## For users not in your directory
 
@@ -140,7 +140,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
 1. Next, use the steps in [Change approval settings for an access package in entitlement management](entitlement-management-access-package-approval-policy.md) to configure approval settings to specify who should approve requests from users not in your organization.
  
-1. Go to the [Enable requests](#enable-requests) section.
+1. Go to the [Who can request access](#who-can-request-access) section.
 
 ## None (administrator direct assignments only)
 
@@ -152,7 +152,7 @@ Follow these steps if you want to bypass access requests and allow administrator
 
     After you create the access package, you can directly assign specific internal and external users to the access package. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md).
 
-1. Skip to the [Enable requests](#enable-requests) section.
+1. Skip to the [Who can request access](#who-can-request-access) section.
 
 > [!NOTE]
 > When assigning users to an access package, administrators will need to verify that the users are eligible for that access package based on the existing policy requirements. Otherwise, the users won't successfully be assigned to the access package. If the access package contains a policy that requires user requests to be approved, users can't be directly assigned to the package without necessary approval(s) from the designated approver(s).
@@ -183,15 +183,15 @@ To change the request and approval settings for an access package, you need to o
 
 1. Use the steps in the previous sections to change the request settings as needed.
 
-1. Go to the [Enable requests](#enable-requests) section.
+1. Go to the [Who can request access](#who-can-request-access) section.
 
-## Enable requests
+## Who can request access
 
-1. If you want the access package to be made immediately available for identities in the request policy to request, move the Enable toggle to **Yes**.
+1. After choosing who can get access and the schope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager  the ability to request access to the access package.
 
     You can always enable it in the future after you have finished creating the access package.
 
-    If you selected **None (administrator direct assignments only)** and you set enable to **No**, then administrators can't directly assign this access package.
+    If you selected **None (administrator direct assignments only)** then the who can request access section boxes are not selectable.
 
     ![Access package - Policy- Enable policy setting](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
