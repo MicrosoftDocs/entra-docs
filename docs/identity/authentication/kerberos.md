@@ -227,9 +227,9 @@ To host user profiles for virtual desktops, you can store profiles in an Azure f
 
 For detailed information, see [Store FSLogix profile containers on Azure Files using Microsoft Entra ID in a hybrid scenario](/fslogix/how-to-configure-profile-container-entra-id-hybrid).
 
-### Enable Microsoft Entra Kerberos authentication for hybrid identities on Azure Files
+### Enable Microsoft Entra Kerberos authentication on Azure Files
 
-Microsoft Entra Kerberos authentication enables hybrid users to access Azure file shares by using Kerberos authentication. This scenario uses Microsoft Entra ID to issue the necessary Kerberos tickets to access the file share through the SMB protocol.  
+Microsoft Entra Kerberos authentication enables hybrid identities as well as cloud only identities to access Azure file shares by using Kerberos authentication. This scenario uses Microsoft Entra ID to issue the necessary Kerberos tickets to access the file share through the SMB protocol.  
 
 For detailed information, see [Enable Microsoft Entra Kerberos authentication for hybrid identities on Azure Files](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune).
 
@@ -243,9 +243,9 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 
 ## Limitations and other considerations
 
-### Support cloud-only user identities for member type only (Preview)
+### Support for cloud-only user identities (Preview)
 
-Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication for the member user types.
+Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files and Azure Virtual Desktop.
 
 ### Operating system and device restrictions
 
