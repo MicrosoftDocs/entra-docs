@@ -49,7 +49,7 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Select **Upload signed certificate**.
 :::image type="content" source="media/how-to-transport-layer-security-settings/upload-certificate.png" alt-text="Screenshot of Upload certificate form with example certificate and chain certificate files in the upload fields."::: 
 
-1. After the certificate uploads, the status is in **Disabled**, select **Enable** action, after **Enrolling** completes, the status changes to **Enabled**. We support **one** enabled certificate currently.
+1. The certificate uploads defaults to **Disabled** status. Set the status to **Enabled**. You can have **one** enabled certificate.
 :::image type="content" source="media/how-to-transport-layer-security-settings/status-active.png" alt-text="Screenshot of the TLS inspection settings tab showing certificate status is Enabled.":::   
 
 
