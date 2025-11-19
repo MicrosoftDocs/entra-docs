@@ -13,38 +13,38 @@ ms.custom: sfi-image-nochange
 ---
 # Change request settings for an access package in entitlement management
 
-As an access package manager, you can change the users who can request an access package at any time by editing a policy for access package assignment requests, or adding a new policy to the access package. This article describes how to change the request settings for an existing access package assignment policy.
+As an access package manager, you can change the identities who can request an access package at any time by editing a policy for access package assignment requests, or adding a new policy to the access package. This article describes how to change the request settings for an existing access package assignment policy.
 
 ## Choose between one or multiple policies
 
 The way you specify who can request an access package is with a policy. Before creating a new policy or editing an existing policy in an access package, you need to determine how many policies the access package needs. 
 
-When you create an access package, you can specify the request, approval and lifecycle settings, which are stored on the first policy of the access package. Most access packages have a single policy for users to request access, but a single access package can have multiple policies. You would create multiple policies for an access package if you want to allow different sets of users to be granted assignments with different request and approval settings.
+When you create an access package, you can specify the request, approval and lifecycle settings, which are stored on the first policy of the access package. Most access packages have a single policy for identities to request access, but a single access package can have multiple policies. You would create multiple policies for an access package if you want to allow different sets of identities to be granted assignments with different request and approval settings.
 
-For example, a single policy can't be used to assign internal and external users to the same access package. However, you can create two policies in the same access package, one for internal users and one for external users. If there are multiple policies that apply to a user to request, they're prompted at the time of their request to select the policy they would like to be assigned to. The following diagram shows an access package with two policies.
+For example, a single policy can't be used to assign internal and external identities to the same access package. However, you can create two policies in the same access package, one for internal identities and one for external identities. If there are multiple policies that apply to a user to request, they're prompted at the time of their request to select the policy they would like to be assigned to. The following diagram shows an access package with two policies.
 
 ![Diagram that illustrates multiple policies, along with multiple resource roles, can be contained within an access package.](./media/entitlement-management-access-package-request-policy/access-package-policy.png)
 
-In addition to policies for users to request access, you can also have policies for [automatic assignment](entitlement-management-access-package-auto-assignment-policy.md), and policies for direct assignment by administrators or catalog owners.
+In addition to policies for identities to request access, you can also have policies for [automatic assignment](entitlement-management-access-package-auto-assignment-policy.md), and policies for direct assignment by administrators or catalog owners.
 
 ### How many policies will I need?
 
 | Scenario | Number of policies |
 | --- | --- |
-| I want all users in my directory to have the same request and approval settings for an access package | One |
-| I want all users in certain connected organizations to be able to request an access package | One |
-| I want to allow users in my directory and also users outside my directory to request an access package | Two |
-| I want to specify different approval settings for some users | One for each group of users |
-| I want some users access package assignments to expire while other users can extend their access | One for each group of users |
-| I want some users to request access and other users to be assigned access by an administrator | Two |
-| I want some users in my organization to receive access automatically, other users in my organization to be able to request, and other users to be assigned access by an administrator | Three |
+| I want all identities in my directory to have the same request and approval settings for an access package | One |
+| I want all identities in certain connected organizations to be able to request an access package | One |
+| I want to allow identities in my directory and also identities outside my directory to request an access package | Two |
+| I want to specify different approval settings for some identities | One for each group of identities |
+| I want some identities access package assignments to expire while other identities can extend their access | One for each group of identities |
+| I want some identities to request access and other identities to be assigned access by an administrator | Two |
+| I want some identities in my organization to receive access automatically, other identities in my organization to be able to request, and other identities to be assigned access by an administrator | Three |
 
 For information about the priority logic that is used when multiple policies apply, see [Multiple policies](entitlement-management-troubleshoot.md#multiple-policies).
 
 ## Open an existing access package and add a new policy with different request settings
 
 
-If you have a set of users that should have different request and approval settings, you'll likely need to create a new policy. Follow these steps to start adding a new policy to an existing access package:
+If you have a set of identities that should have different request and approval settings, you'll likely need to create a new policy. Follow these steps to start adding a new policy to an existing access package:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -62,15 +62,16 @@ If you have a set of users that should have different request and approval setti
 1. Select **Next** to open the **Requests** tab.
 
 1. Change the **Users who can request access** setting. Use the steps in the following sections to change the setting to one of the following options: 
-    - [For users in your directory](#for-users-in-your-directory) 
+    - [For users, service principals, and agent identities in your directory](#for-users-service-principals-and-agent-identities-in-your-directory) 
     - [For users not in your directory](#for-users-not-in-your-directory)
     - [None (administrator direct assignments only)](#none-administrator-direct-assignments-only)
+    - 
 
-## For users in your directory
+## For users, service principals, and agent identities in your directory
 
-Follow these steps if you want to allow users in your directory to be able to request this access package. When defining the request policy, you can specify individual users, or more commonly groups of users. For example, your organization could already have a group such as **All employees**. If that group is added in the policy for users who can request access, then any member of that group can then request access.
+Follow these steps if you want to allow identities in your directory to be able to request this access package. When defining the request policy, you can specify individual identities, or more commonly groups of identities. For example, your organization could already have a group such as **All employees**. If that group is added in the policy for identities who can request access, then any member of that group can then request access.
 
-1. In the **Users who can request access** section, select **For users in your directory**.
+1. In the **Users who can request access** section, select **For users, service principals, and agent identities in your directory**.
 
     When you select this option, new options appear to further refine who in your directory can request this access package.
 
@@ -83,6 +84,8 @@ Follow these steps if you want to allow users in your directory to be able to re
     | **Specific users and groups** | Choose this option if you want only the users and groups in your directory that you specify to be able to request this access package. |
     | **All members (excluding guests)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
     | **All users (including guests)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
+    | **All Service principals (preview)** | Choose this option if you want all service principals in your directory to be able to request this access package. |
+    | **All agents (preview)** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
 
     Guest users refer to external users that have been invited into your directory with [Microsoft Entra B2B](../external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](../fundamentals/users-default-permissions.md).
 
@@ -184,7 +187,7 @@ To change the request and approval settings for an access package, you need to o
 
 ## Enable requests
 
-1. If you want the access package to be made immediately available for users in the request policy to request, move the Enable toggle to **Yes**.
+1. If you want the access package to be made immediately available for identities in the request policy to request, move the Enable toggle to **Yes**.
 
     You can always enable it in the future after you have finished creating the access package.
 
