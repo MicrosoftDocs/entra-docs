@@ -17,7 +17,7 @@ As an access package manager, you can change the lifecycle settings for assignme
 This article describes how to change the lifecycle settings for an existing access package assignment policy.
 
 ## Open requestor information
-To ensure users have the right access to an access package, custom questions can be configured to ask users requesting access to certain access packages. Configuration options include: localization, required/optional, and text/multiple choice answer formats. Requestors  see the questions when they request the package and approvers see the answers to the questions to help them make their decision. Use the following steps to configure questions in an access package:
+To ensure identities have the right access to an access package, custom questions can be configured to ask identities requesting access to certain access packages. Configuration options include: localization, required/optional, and text/multiple choice answer formats. Requestors  see the questions when they request the package and approvers see the answers to the questions to help them make their decision. Use the following steps to configure questions in an access package:
 
 ## Open lifecycle settings
 
