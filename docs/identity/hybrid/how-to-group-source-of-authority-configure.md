@@ -556,15 +556,15 @@ This script is being provided as an example and should not be considered as offi
 
 ## Scope a group for SOA operations within an Administrative Unit
 
-To scope a group for Source of Authority operations within an Administrative Unit(AU), do the following steps:
+To scope a group for Source of Authority operations within an Administrative Unit, do the following steps:
 
-1. Create an AU to use as the scope for the group. For steps on creating an AU, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
+1. Create an unit to use as the scope for the group. For steps on creating an unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
 
 1. Add the group as a Hybrid Identity Administrator within the scope.
     :::image type="content" source="media/how-to-user-source-of-authority-configure/assign-scope-role.png" alt-text="Screenshot of assigning a hybrid admin role to an Administrative unit scope." lightbox="media/how-to-user-source-of-authority-configure/assign-scope-role.png":::
-1. Add the group to the AU. For information on this, see: [Add users, groups, or devices to an administrative unit](../../identity/role-based-access-control/admin-units-members-add.md).
+1. Add the group to the unit. For information on this, see: [Add users, groups, or devices to an administrative unit](../../identity/role-based-access-control/admin-units-members-add.md).
 
-1.Transfer the SOA of a group within the scope of the AU. For a guide on transferring the SOA of groups, see: [Convert SOA for a test group](how-to-group-source-of-authority-configure.md#convert-soa-for-a-test-group).
+1. Transfer the SOA of a group within the scope of the unit. For a guide on transferring the SOA of groups, see: [Convert SOA for a test group](how-to-group-source-of-authority-configure.md#convert-soa-for-a-test-group).
 
 ## Related content
 
