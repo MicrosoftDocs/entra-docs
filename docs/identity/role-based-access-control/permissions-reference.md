@@ -26,11 +26,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > [!div class="mx-tableFixed"]
 > | Role | Description | Template ID |
 > | --- | --- | --- |
-<<<<<<< HEAD
-> | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users. | db506228-d27e-4b7d-95e5-295956d6615f |
-=======
-> | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |db506228-d27e-4b7d-95e5-295956d6615f |
->>>>>>> 46a9d6bd9ffcf4fd53f67d3d651ee75c2b57ba50
+> | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | db506228-d27e-4b7d-95e5-295956d6615f |
 > | [Agent ID Developer](#agent-id-developer) | Create an agent blueprint and its service principal in a tenant. User will be added as an owner of the agent blueprint and its service principal. | adb2368d-a9be-41b5-8667-d96778e081b0 |
 > | [Agent Registry Administrator](#agent-registry-administrator) | Manage all aspects of the Agent Registry service in Microsoft Entra ID | 6b942400-691f-4bf0-9d12-d8a254a2baf5 |
 > | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365. | d2562ede-74db-457e-a7b6-544e236ebb61 |
@@ -130,7 +126,6 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Security Reader](#security-reader) | Can read security information and reports in Microsoft Entra ID and Office 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 5d6b6bb7-de71-4623-b4af-96380a352509 |
 > | [Service Support Administrator](#service-support-administrator) | Can read service health information and manage support tickets. | f023fd81-a637-4b56-95fd-791ac0226033 |
 > | [SharePoint Administrator](#sharepoint-administrator) | Can manage all aspects of the SharePoint service. | f28a1f50-f6e7-4571-818b-6a12f2af6b6c |
-> | [SharePoint Advanced Management Administrator](#sharepoint-advanced-management-administrator) | Manage all aspects of SharePoint Advanced Management. | 99009c4a-3b3f-4957-82a9-9d35e12db77e |
 > | [SharePoint Backup Administrator](#sharepoint-backup-administrator) | Back up and restore content (including granular restore) for SharePoint and OneDrive in Microsoft 365 Backup | 9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be |
 > | [SharePoint Embedded Administrator](#sharepoint-embedded-administrator) | Manage all aspects of SharePoint Embedded containers. | 1a7d78b6-429f-476b-b8eb-35fb715fffd4 |
 > | [Skype for Business Administrator](#skype-for-business-administrator) | Can manage all aspects of the Skype for Business product. | 75941009-915a-4869-abe7-691bff18279e |
@@ -152,7 +147,6 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Windows 365 Administrator](#windows-365-administrator) | Can provision and manage all aspects of Cloud PCs. | 11451d60-acb2-45eb-a7d6-43d0f0125c13 |
 > | [Windows Update Deployment Administrator](#windows-update-deployment-administrator) | Can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. | 32696413-001a-46ae-978c-ce0f6b3620d2 |
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
-
 
 ## Agent ID Administrator
 
@@ -553,10 +547,6 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## SharePoint Administrator
 
 [!INCLUDE [sharepoint-administrator](includes/sharepoint-administrator.md)]
-
-## SharePoint Advanced Management Administrator
-
-[!INCLUDE [sharepoint-advanced-management-administrator](includes/sharepoint-advanced-management-administrator.md)]
 
 ## SharePoint Backup Administrator
 
