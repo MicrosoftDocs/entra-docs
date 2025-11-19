@@ -11,18 +11,17 @@ ms.topic: how-to
 ms.date: 11/19/2025
 ms.author: jomondi
 ms.reviewer: mwahl
-ms.custom: enterprise-apps
 
 #customer intent: As an IT admin, I want to assign agent identities to enterprise applications so that agents can interact with those applications securely.
 ---
 
 # Manage assignment of agent identities to an application (Preview)
 
-This article shows you how to assign agent identities to an enterprise application in Microsoft Entra ID for agents that plan to interact with an application. The Microsoft Entra configuration steps depend upon the capabilities of the agent and the enterprise application.
+In this article, you learn how to assign agent identities to an enterprise application in Microsoft Entra ID for agents that plan to interact with an application. The Microsoft Entra configuration steps depend on the capabilities of the agent and the enterprise application.
 
-Organizations can control which of their employee and business guest users in their Microsoft Entra ID tenant can interact with the organization's enterprise applications, by configuring each application to rely upon Microsoft Entra for single-sign on or provisioning, and requiring those users to be assigned to the application. If an application exposes multiple app roles, you can also assign a specific app role to each user. For more information, see [Manage users and groups assignment to an application](assign-user-or-group-access-portal.md).
+Organizations can control which of their employee and business guest users in their Microsoft Entra tenant can interact with the organization's enterprise applications, by configuring each application to rely upon Microsoft Entra for single-sign on or provisioning, and requiring those users to be assigned to the application. If an application exposes multiple app roles, you can also assign a specific app role to each user. For more information, see [Manage users and groups assignment to an application](assign-user-or-group-access-portal.md).
 
-When an AI agent has a tool (or might be referred to in its platform as a skill or connector) to communicate with an enterprise application in your tenant, and that agent's tool uses a service principal, agent identity, or an agent user, then you can assign that service principal, agent identity, or agent user to the enterprise application's roles and permissions. This allows the applications that support agents to recognize the agent ID, and the agent ID can obtain a token from Microsoft Entra suitable for use with the application.
+When an AI agent has a tool (or might be referred to in its platform as a skill or connector) to communicate with an enterprise application in your tenant, you can assign that tool's identity to the application. The tool might use a service principal, agent identity, or an agent user for authentication. By assigning these identities to the enterprise application's roles and permissions, you allow agent-supporting applications to recognize the agent identity and enable the agent to obtain appropriate tokens from Microsoft Entra ID for application access.
 
 This article outlines how to select across three options, based on the application's capabilities.
 
@@ -38,16 +37,16 @@ Applications using the Microsoft Entra identity platform can [expose APIs for ot
 
 :::image type="content" source="../../identity-platform/media/quickstart-configure-app-access-web-apis/diagram-01-app-permission-to-api-scopes.svg" alt-text="Line diagram showing a web API with exposed scopes on the right and a client app on the left with those scopes selected as permissions" border="false":::
 
-For more information on consenting an agent identity or service principal, see [admin consent for application permissions](../../identity-platform/consent-types-developer.md#admin-consent-for-application-permissions).
+For more information on consenting an agent identity or service principal, see [admin consent for application permissions](grant-admin-consent.md#grant-admin-consent-for-application-permissions-using-microsoft-graph-api).
 
-## Assigning an agent ID to an application role
+## Assigning an agent identity to an application role
 
 For applications that recognize role claims on service principals, you can assign an agent's service principal or agent identity to an application's app role. When you assign to app roles, this results in application permissions. Application permissions are typically used by daemon apps, back-end services or autonomous agents, that need to authenticate and make authorized API call as themselves, without the interaction of a user. For more information, see [Add app roles to your application and receive them in the token](../../identity-platform/howto-add-app-roles-in-apps.md).
 
 > [!NOTE]
 > Microsoft Entra SCIM outbound provisioning supports users and groups only; Service principals and agent identities assigned to app roles directly or as members of groups aren't provisioned to applications.
 
-First, confirm that app role in the application's manifest has an `allowedMemberTypes` of `Application`, indicating that the role is available for other applications.  If the role only allows users, then agent identities and service principals aren't supported by the application for that role.
+First, confirm that app role in the application's manifest has an `allowedMemberTypes` of `Application`, indicating that the role is available for other applications. If the role only allows users, then agent identities and service principals aren't supported by the application for that role.
 Then, you can assign an app role to an agent ID or service principal, by using the Microsoft Entra admin center, Microsoft Graph or Microsoft Graph PowerShell.
 
 * If you're using the Microsoft Entra admin center, follow the instructions in how to [assign to application app roles](../../identity-platform/howto-add-app-roles-in-apps.md#assign-app-roles-to-applications).
@@ -84,7 +83,7 @@ In the Microsoft Entra tenant, the following artifacts need to exist:
   * the enterprise application as the resource
   * the scope value of the concatenation of the enterprise application's entity ID with `/.default` appended
 
-Then, for each agent identity of the agent, you'll create
+Then, for each agent identity of the agent, you create
 
 * an agent user
 * an application role assignment, for the agent user, to one of the roles of the enterprise application
@@ -93,16 +92,24 @@ Then, for each agent identity of the agent, you'll create
   * the SAML helper application registration as the resource
   * the scope value of the concatenation of `api://'`, the SAML helper application's application ID, and `/.default`
 
-:::image type="content" source="media/assign-agent-identities-to-applications/agent-saml.svg" alt-text="Diagram of relationships between Microsoft Entra artifacts needed for SAML token issuance.":::
+:::image type="content" source="media/assign-agent-identities-to-applications/agent-saml.png" alt-text="Diagram of relationships between Microsoft Entra artifacts needed for SAML token issuance.":::
 
-If the agent has multiple agent identities, then permission inheritance can be used to grant consent once at the agent blueprint and inherit it for the agent identities.
+If the agent has multiple agent identities, then permission inheritance can be used to grant consent once at the agent identity blueprint and inherit it for the agent identities.
 
 Once these applications, users, role assignments, and grants are in place in the tenant, then an agent that needs a SAML assertion for authenticating to the enterprise application can:
 
-1. Get a token as the agent blueprint.
-1. Use that token to make a token request to `https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token` get a federated identity credential (FIC) token as the agent identity. In that request, the `client_id` is the agent identity ID, the `scope` is `api://AzureADTokenExchange/.default`, the `grant_type` is `client_credentials`, the `client_assertion_type` is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, and the `client_assertion` is the agent blueprint token from step 1.
-1. Use those two tokens to make a token request for a token as the agent user with the scope of the helper application. In this request, the `client_id` is the agent identity ID, the `scope` is the concatenation of `api://'`, the SAML helper application's application ID, and `/.default`, the `grant_type` is `user_fic`, the `client_assertion_type` is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, the `client_assertion` is the agent blueprint token, the `user_id` is the agent user object ID, and the `user_federated_identity_credential` is the agent identity token.
-1. Make the on-behalf-of-call token request to `https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token` to [obtain a SAML token](../../identity-platform/v2-oauth2-on-behalf-of-flow.md#obtain-a-saml-token-by-using-an-obo-request-with-a-shared-secret). In this request, provide the credentials of the SAML helper application registration, the token returned by `user_fic` as the assertion, the grant type `urn:ietf:params:oauth:grant-type:jwt-bearer`, scope of the enterprise application's app ID with `/.default` appended, the `requested_token_use` of `on_behalf_of` and the `requested_token_type` of `urn:ietf:params:oauth:token-type:saml2`. The [response](../../identity-platform/v2-oauth2-on-behalf-of-flow.md#response-with-saml-assertion) contains a SAML assertion encoded in Base64URL.
+1. Get a token as the agent identity blueprint.
+1. Use that token to make a token request to `https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token` endpoint, and get a federated identity credential (FIC) token as the agent identity. 
+   
+   In that request, the `client_id` is the agent identity ID, the `scope` is `api://AzureADTokenExchange/.default`, the `grant_type` is `client_credentials`, the `client_assertion_type` is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, and the `client_assertion` is the agent identity blueprint token from step 1.
+
+1. Use those two tokens to make a token request for a token as the agent user with the scope of the helper application. 
+   
+   In this request, the `client_id` is the agent identity ID, the `scope` is the concatenation of `api://'`, the SAML helper application's application ID, and `/.default`, the `grant_type` is `user_fic`, the `client_assertion_type` is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, the `client_assertion` is the agent identity blueprint token, the `user_id` is the agent user object ID, and the `user_federated_identity_credential` is the agent identity token.
+
+1. Make the on-behalf-of-call token request to `https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token` to [obtain a SAML token](../../identity-platform/v2-oauth2-on-behalf-of-flow.md#obtain-a-saml-token-by-using-an-obo-request-with-a-shared-secret). 
+
+   In this request, provide the credentials of the SAML helper application registration, the token returned by `user_fic` as the assertion, the grant type `urn:ietf:params:oauth:grant-type:jwt-bearer`, scope of the enterprise application's app ID with `/.default` appended, the `requested_token_use` of `on_behalf_of` and the `requested_token_type` of `urn:ietf:params:oauth:token-type:saml2`. The [response](../../identity-platform/v2-oauth2-on-behalf-of-flow.md#response-with-saml-assertion) contains a SAML assertion encoded in Base64URL.
 
 
 ## Related content
