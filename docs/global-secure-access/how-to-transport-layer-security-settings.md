@@ -1,5 +1,5 @@
 ---
-title: Configure Transport Layer Security Inspection Settings (preview)
+title: Configure Transport Layer Security Inspection Settings
 description: Learn how to configure a Transport Layer Security inspection certificate authority
 author: HULKsmashGithub
 ms.author: jayrusso
@@ -13,15 +13,8 @@ ms.date: 10/28/2025
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
 ---
 
-# Configure Transport Layer Security inspection settings (preview)
+# Configure Transport Layer Security inspection settings
 Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access intermediate CA, including signing and uploading the certificate.
-
-> [!IMPORTANT]
-> The Transport Layer Security inspection feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.   
-> While in preview, don't use TLS inspection in production environments.    
- 
-
 
 ## Prerequisites   
 To complete the steps in this process, you must have the following prerequisites in place:      
