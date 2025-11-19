@@ -1,5 +1,5 @@
 ---
-title: Include custom data provided resource in the catalog for catalog user Access Reviews
+title: Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
 ms.reviewer: jgangadhar
 description: Learn how to include custom data provided resource in Microsoft Entra catalogs to create user Access Reviews for disconnected applications.
 author: owinfreyATL
@@ -12,7 +12,7 @@ ms.date: 11/05/2025
 #CustomerIntent: As an Identity Governance Administrator, I want to create a catalog in Microsoft Entra so that I can manage custom data provided resource for User Access Reviews..
 ---
 
-# Include custom data provided resource in the catalog for catalog user Access Reviews
+# Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)
 
 Organizations often have applications that aren’t yet integrated with Microsoft Entra but still need to be governed. Using custom data provided resources, you can include these disconnected applications in Microsoft Entra ID access reviews by uploading their access data directly into a catalog.
 
