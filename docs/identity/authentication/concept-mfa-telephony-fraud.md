@@ -35,7 +35,9 @@ To help fight telephony fraud, B2C customers can take steps to improve security 
 
 For more information, see [Securing phone-based MFA in B2C](/azure/active-directory-b2c/phone-based-mfa).
 
-In addition, you may sometimes encounter throttles because you're requesting traffic from a region that requires an opt-in. For more information, see [Regions that need to opt in for MFA telephony verification](concept-mfa-regional-opt-in.md). 
+In addition, you may sometimes encounter throttles because you're requesting traffic from a region that requires an opt-in. For more information, see [Regions that need to opt in for MFA telephony verification](concept-mfa-regional-opt-in.md).
+
+For Microsoft Entra External ID, the default SMS verification for external tenants is disabled. To enable telephony traffic for a specific country code in your application, see [Regional opt-in for MFA telephony verification with external tenants](/entra/external-id/customers/how-to-region-code-opt-in).
 
 ## Next steps
 
