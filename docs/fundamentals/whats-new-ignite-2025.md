@@ -172,7 +172,15 @@ Microsoft Ignite 2025 delivers groundbreaking innovations across the Microsoft E
 - [Configure risk policies](../id-protection/howto-identity-protection-configure-risk-policies.md) (Updated)
 - [Identity Protection overview](../id-protection/overview-identity-protection.md) (Updated)
 
+### Microsoft Entra External ID
 
+**Built-in protection with third-party partner solutions.** New partner integrations provide comprehensive protection across the identity lifecycle, including edge security, sign-up fraud prevention, and unified monitoring. Customers can configure sign-in using a unique username or alias.
+
+- [Akamai WAF integration](../external-id/customers/how-to-configure-akamai-integration.md) (New)
+- [Cloudflare WAF integration](../external-id/customers/how-to-configure-waf-integration.md) (Updated)
+- [Arkose Labs and HUMAN Security fraud protection](../external-id/customers/how-to-integrate-fraud-protection.md) (New)
+- [Azure Monitor and Microsoft Sentinel integration](../external-id/customers/how-to-azure-monitor.md) (Updated)
+- [Sign in with an alias](../external-id/customers/how-to-sign-in-alias.md) (New)
 
 ## Microsoft Entra ID
 

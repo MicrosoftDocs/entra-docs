@@ -1,10 +1,10 @@
 items:
-  - name: Microsoft Entra agent identity platform for developers
+  - name: Microsoft agent identity platform for developers
     href: index.yml
   - name: Overview
     expanded: true
     items:
-    - name: What is the Microsoft Entra agent identity platform?
+    - name: What is the Microsoft agent identity platform?
       href: what-is-agent-id-platform.md
     - name: What is an agent identity?
       href: what-is-agent-id.md
@@ -111,3 +111,5 @@ items:
       href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/identity-platform/toc.json
     - name: Agent identity API reference
       href: /graph/api/resources/agentidentity?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Known issues
+      href: preview-known-issues.md
