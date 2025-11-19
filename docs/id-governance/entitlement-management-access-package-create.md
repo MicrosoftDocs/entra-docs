@@ -76,7 +76,7 @@ On the **Resource roles** tab, you select the resources to include in the access
 
 If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](entitlement-management-access-package-resources.md) later.
 
-1. Select the resource type that you want to add (**Groups and Teams**, **Applications**, **SharePoint sites**, **Microsoft Entra role (Preview)**, or **API Permissions (Preview)**).
+1. Select the resource type that you want to add (**Groups and Teams**, **Applications**, **SharePoint sites**, **Microsoft Entra role (Preview)**, **API Permissions (Preview)**, or **Custom Data Provided Resource**).
 
 1. In the **Select applications** panel that appears, select one or more resources from the list.
 
@@ -91,7 +91,7 @@ If you're not sure which resource roles to include, you can skip adding them whi
 
     If you're at least an Identity Governance Administrator, or catalog owner, you have the additional option of selecting resources that you own or administer but that aren't yet in the catalog. If you select resources in the directory but not currently in the selected catalog, these resources are also added to the catalog for other catalog administrators to build access packages with. To see all the resources in the directory that can be added to the catalog, select the **See all** checkbox at the top of the panel. If you want to select only resources that are currently in the selected catalog, leave the **See all** checkbox cleared (the default state).
 
-1. In the **Role** list, select the role that you want users to be assigned for the resource. For more information on selecting the appropriate roles for a resource, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
+1. In the **Role** list, select the role that you want identities to be assigned for the resource. For more information on selecting the appropriate roles for a resource, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 
     ![Screenshot that shows resource role selection for a new access package.](./media/entitlement-management-access-package-create/resource-roles-role.png)
 1. For [groups managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), both active and eligible roles are available as options.
