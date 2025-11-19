@@ -86,10 +86,10 @@ $sp | Export-Csv -Encoding UTF8 -NoTypeInformation -Path ".\assignments.csv"
 
 ## Directly assign an identity 
 
-In some cases, you might want to directly assign specific users to an access package so that users don't have to go through the process of requesting the access package. To directly assign users, the access package must have a policy that allows administrator direct assignments.
+In some cases, you might want to directly assign specific identities to an access package so that identities don't have to go through the process of requesting the access package. To directly assign identities, the access package must have a policy that allows administrator direct assignments.
 
 > [!NOTE]
-> When assigning users to an access package, administrators will need to verify that the users are eligible for that access package based on the existing policy requirements. Otherwise, the users won't successfully be assigned to the access package.
+> When assigning identities to an access package, administrators will need to verify that the identities are eligible for that access package based on the existing policy requirements. Otherwise, the identities won't successfully be assigned to the access package.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -102,7 +102,7 @@ In some cases, you might want to directly assign specific users to an access pac
 
 1. Select **New assignment** to open Add user to access package.
 
-    ![Assignments - Add user to access package](./media/entitlement-management-access-package-assignments/assignments-add-user.png)
+    ![Assignments - Add identities to access package](./media/entitlement-management-access-package-assignments/assignments-add-user.png)
 
 1. In the **Select policy** list, select a policy that the users' future requests and lifecycle will be governed and tracked by. If you want the selected users to have different policy settings, you can select **Create new policy** to add a new policy.
 
