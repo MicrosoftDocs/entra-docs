@@ -558,7 +558,7 @@ This script is being provided as an example and should not be considered as offi
 
 To scope a group for Source of Authority operations within an Administrative Unit, do the following steps:
 
-1. Create an unit to use as the scope for the group. For steps on creating an unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
+1. Create a unit to use as the scope for the group. For steps on creating a unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
 
 1. Add the group as a Hybrid Identity Administrator within the scope.
     :::image type="content" source="media/how-to-user-source-of-authority-configure/assign-scope-role.png" alt-text="Screenshot of assigning a hybrid admin role to an Administrative unit scope." lightbox="media/how-to-user-source-of-authority-configure/assign-scope-role.png":::

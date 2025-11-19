@@ -269,7 +269,7 @@ If Admins want to access on-premises resources after transfer of SOA, you must [
 
 To scope a user for Source of Authority operations within an Administrative Unit, do the following steps:
 
-1. Create an unit to use as the scope for the user. For steps on creating an unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
+1. Create a unit to use as the scope for the user. For steps on creating a unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
 
 1. Add the user as a Hybrid Identity Administrator within the scope.
     :::image type="content" source="media/how-to-user-source-of-authority-configure/assign-scope-role.png" alt-text="Screenshot of assigning a hybrid admin role to an Administrative unit scope." lightbox="media/how-to-user-source-of-authority-configure/assign-scope-role.png":::
