@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: mwongerapk
 ms.topic: reference
-ms.date: 09/17/2025
+ms.date: 11/19/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
@@ -68,7 +68,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
 |[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
-|[2.5.79.0](#25790)||
+|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
+|[2.5.190.0](#251900)||
 
 **All other versions are not supported**
 
@@ -90,6 +91,23 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.5.190.0
+
+### Release status
+
+11/19/2025: Released for download via the Microsoft Entra admin center.
+
+### Added features
+
+- **AAD Connector V2 API Enforcement**: The default connector API version is now V2. Using the previous V1 connector API is no longer supported.
+
+### Bug fixes
+
+- Fixed an issue where Application-Based Authentication failed with Trusted Platform Module (TPM) and Microsoft Authentication Library (MSAL). The fix ensures compatibility with MSAL's default signing method.
+- Fixed issue in the configuration wizard that resulted in "Directory synchronization for this directory currently has a mismatch in sync enabled and sync status" error when DirSync Status is in "Other".
+- The certificate renewal threshold for Application-based Authentication has been updated to 30 days. Entra-managed certificates will now automatically renew when their expiration date is 30 days or less.
+- Fixed issue with cloud management of Exchange attributes that raised export errors labelled `ExchangeManagedAttributesUpdateNotAllowed`.
 
 ## 2.5.79.0
 
