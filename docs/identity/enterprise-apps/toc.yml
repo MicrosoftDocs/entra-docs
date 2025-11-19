@@ -8,19 +8,6 @@ items:
       href: what-is-application-management.md
     - name: What's new in docs?
       href: whats-new-docs.md
-  - name: App lifecycle management Agent
-    expanded: true
-    items:
-    - name: Get started with App lifecycle Management Agent
-      href: agent-app-lifecycle-management.md
-    - name: Discover and onboard apps
-      href: agent-app-lifecycle-discovery-onboard.md
-    - name: Monitor and remediate risky apps
-      href: agent-identify-prioritize-risky-apps.md
-    - name: Contact application owners of unused apps
-      href: agent-contact-app-owners.md
-    - name: Create remediation plans for risky apps
-      href: agent-app-lifecycle-remediation-plans.md
   - name: Quickstarts
     expanded: true
     items:
@@ -302,8 +289,6 @@ items:
         href: application-sign-in-problem-first-party-microsoft.md
     - name: Delete and restore apps
       items:
-      - name: Deactivate an enterprise application
-        href: deactivate-application-portal.md
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application

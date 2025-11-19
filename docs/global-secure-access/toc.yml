@@ -42,6 +42,8 @@ items:
     href: ./scripts/powershell-active-directory-certificate-service.md
   - name: Create a TLS certificate using OpenSSL
     href: ./scripts/powershell-open-secure-sockets-layer.md
+  - name: Install the Windows client as a proof of concept
+    href: ./scripts/powershell-windows-client-install-proof-of-concept.md
 - name: Concepts
   expanded: true
   items: 

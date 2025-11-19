@@ -245,7 +245,7 @@ For more information, see: [Learn about Global Secure Access B2B Guest Access (
 **Service category:** Internet Access    
 **Product capability:** Network Access    
 
-Kerberos SSO experience for users on mobile devices with Global Secure Access is now supported. On IOS, create and deploy profile for Single sign-on app extension, see: [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension). On Android. You need to install and configure a 3rd party SSO client.
+Kerberos SSO experience for users on mobile devices with Global Secure Access is now supported. On iOS, create and deploy profile for Single sign-on app extension, see: [Single sign-on app extension](/intune/intune-service/configuration/ios-device-features-settings#single-sign-on-app-extension). On Android. You need to install and configure a 3rd party SSO client.
 
 ---
 
