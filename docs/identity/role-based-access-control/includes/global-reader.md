@@ -33,6 +33,7 @@ Users with this role **cannot** do the following:
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.agentRegistry/allEntities/allProperties/read | Read all properties of Agent Registry in Microsoft Entra ID |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.backup/allEntities/allProperties/read | Read all aspects of Microsoft 365 Backup |
 > | microsoft.cloudPC/allEntities/allProperties/read | Read all aspects of Windows 365 |

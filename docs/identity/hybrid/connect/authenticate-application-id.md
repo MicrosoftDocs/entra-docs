@@ -370,7 +370,7 @@ If you want to configure application-based authentication using the default opti
 
 ## Certificate rotation
 
-Microsoft Entra Connect warns if the certificate rotation is due. That is, if expiration is less than or equal to 150 days. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
+Microsoft Entra Connect warns if the certificate rotation is due. That is, if expiration is less than or equal to 30 days. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
 
 This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncScheduler` to see if the scheduler is suspended.
 

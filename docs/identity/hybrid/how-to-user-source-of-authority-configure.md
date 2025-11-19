@@ -265,6 +265,19 @@ The following are the list of on-premises [properties](/graph/api/resources/user
 
 If Admins want to access on-premises resources after transfer of SOA, you must [manually maintain these attributes using Microsoft Graph](/graph/api/resources/user), and not delete, these attributes.
 
+## Scope a user for SOA operations within an Administrative Unit
+
+To scope a user for Source of Authority operations within an Administrative Unit, do the following steps:
+
+1. Create a unit to use as the scope for the user. For steps on creating a unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
+
+1. Add the user as a Hybrid Identity Administrator within the scope.
+    :::image type="content" source="media/how-to-user-source-of-authority-configure/assign-scope-role.png" alt-text="Screenshot of assigning a hybrid admin role to an Administrative unit scope." lightbox="media/how-to-user-source-of-authority-configure/assign-scope-role.png":::
+1. Add users to the unit. For information on this, see: [Add users, groups, or devices to an administrative unit](../../identity/role-based-access-control/admin-units-members-add.md).
+
+1. Transfer the SOA of users within the scope of the unit. For a guide on transferring the SOA of users, see: [Transfer SOA for a test user](how-to-user-source-of-authority-configure.md#transfer-soa-for-a-test-user).
+
+
 
 
 ## Related content
