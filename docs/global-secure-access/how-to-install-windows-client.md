@@ -63,12 +63,6 @@ Package the installation script into a `.intunewin` file.
 > [!NOTE]
 > The PowerShell installation script installs the Global Secure Access client, sets the `IPv4Preferred` registry key to prefer IPv4 over IPv6 traffic, and prompts for a reboot for the registry key change to take effect.
 
-> [!TIP]
-> Select to expand the PowerShell script.
-
-<details open>
-  <summary>PowerShell installation script</summary>
-
 ```powershell
 # Create log directory and log helper
 $logFile = "$env:ProgramData\GSAInstall\install.log"
@@ -162,8 +156,6 @@ catch {
     exit 1603
 }
 ```
-
-</details>
 
 2. Go to the [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
 
