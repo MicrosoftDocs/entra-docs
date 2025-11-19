@@ -96,7 +96,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-11/18/2025: Released for download via the Microsoft Entra admin center.
+11/19/2025: Released for download via the Microsoft Entra admin center.
 
 ### Added features
 
