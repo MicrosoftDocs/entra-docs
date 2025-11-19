@@ -31,7 +31,7 @@ Non-admins| <li>Users in the organization that do not have access to customer da
 Microsoft recommends that you broadly deploy phishing-resistant passwordless authentication across your organization. We recommend you start your deployment with one of the user personas first. 
 
 Microsoft recommends that you categorize your users based on these personas, and then place users into a Microsoft Entra ID group specifically for that user persona. These groups are used in later steps to [roll out credentials](~/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md#drive-usage-of-phishing-resistant-credentials) 
-to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
+to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforcement-of-phishing-resistence-on-resources).
 
 Using groups you can continue to onboard new parts of the organization simultaneously. Take the approach of "*don’t let perfect be the enemy of good*" and deploy secure credentials as much as possible. As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
 
