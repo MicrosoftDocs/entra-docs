@@ -917,7 +917,7 @@ For Microsoft Graph, the parameters for the **Send email to manager about sponso
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Send email to manager about sponsorship changes      |
+|displayName     |  Send email to manager about sponsorship changes (Preview)     |
 |description     |  Notify sponsor's manager about agent identity sponsorship transfer.        |
 |taskDefinitionId     |  b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f      |
 
@@ -965,7 +965,7 @@ For Microsoft Graph, the parameters for the **Send email to co-sponsors about sp
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver, mover      |
-|displayName     |  Send email to co-sponsors about sponsor changes   |
+|displayName     |  Send email to co-sponsors about sponsor changes (Preview)  |
 |description     |  Notify co-sponsors about agent identity sponsorship changes.       |
 |taskDefinitionId     |  ad3b85cd-75b1-43e7-b4b9-0e52faba3944      |
 
