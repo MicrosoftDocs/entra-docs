@@ -114,7 +114,7 @@ Private Preview update to use a newly rewritten C++ broker instead of the previo
 
 ### Broker Support for MSAL Python and MSAL .NET on Linux - June 13, 2025
 
-- As of 2.0.1, the `microsoft.identity.broker` now supports using [Using MSAL Python with an Auth Broker on Linux](https://learn.microsoft.com/en-us/entra/msal/python/advanced/linux-broker-py?tabs=ubuntudep) and [Using MSAL.NET with broker on Linux](https://learn.microsoft.com/en-us/entra/msal/dotnet/acquiring-tokens/desktop-mobile/linux-dotnet-sdk?tabs=ubuntudep) to make token requests via broker.
+- As of 2.0.1, the `microsoft.identity.broker` now supports using [Using MSAL Python with an Auth Broker on Linux](https://learn.microsoft.com/entra/msal/python/advanced/linux-broker-py) and [Using MSAL.NET with broker on Linux](https://learn.microsoft.com/entra/msal/dotnet/acquiring-tokens/desktop-mobile/linux-dotnet-sdk) to make token requests via broker.
 
 ---
 

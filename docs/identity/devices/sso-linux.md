@@ -1,6 +1,6 @@
 ---
-title: Microsoft Single Sign-On for Linux
-description: Overview of Single Sign-On for Linux that enables Microsoft Entra ID integration and seamless authentication.
+title: Microsoft single sign-on for Linux
+description: Overview of single sign-on for Linux that enables Microsoft Entra ID integration and seamless authentication.
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
 ms.service: entra-id
@@ -9,9 +9,9 @@ ms.date:     05/16/2025
 ms.subservice: devices
 ---
 
-# What is Microsoft Single Sign-On for Linux?
+# What is Microsoft single sign-on for Linux?
 
-Microsoft Single Sign-On (SSO) for Linux is powered by the Microsoft Identity Broker, a software component that integrates Linux devices with Microsoft Entra ID. This solution enables users to authenticate once with their Microsoft Entra ID credentials and access multiple applications and resources without repeated authentication prompts. The feature simplifies the sign-in process for users and reduces password management overhead for administrators. 
+Microsoft single sign-on (SSO) for Linux is powered by the Microsoft Identity Broker, a software component that integrates Linux devices with Microsoft Entra ID. This solution enables users to authenticate once with their Microsoft Entra ID credentials and access multiple applications and resources without repeated authentication prompts. The feature simplifies the sign-in process for users and reduces password management overhead for administrators. 
 
 ## Features
 
@@ -30,12 +30,12 @@ The Teams web application and a new PWA (Progressive Web App) for Linux uses the
 
 ### Supported Operating Systems
 
-Microsoft Single Sign-On for Linux is supported on the following operating systems (physical or Hyper-V machines with x86/64 CPUs):
+Microsoft single sign-on for Linux is supported on the following operating systems (physical or Hyper-V machines with x86/64 CPUs):
 
-- Ubuntu Desktop 24.04 LTS
-- Ubuntu Desktop 22.04 LTS  
-- Red Hat Enterprise Linux 8
-- Red Hat Enterprise Linux 9
+- Ubuntu Desktop 24.04 LTS (Long Term Support)
+- Ubuntu Desktop 22.04 LTS (Long Term Support) 
+- Red Hat Enterprise Linux 8 (Long Term Support)
+- Red Hat Enterprise Linux 9 (Long Term Support)
 
 ### System Requirements
 
@@ -58,7 +58,7 @@ This video demonstrates the sign-in experience on brokered flows on Linux
 ![Demo of the Linux Login component component](./media/sso-linux/linux-entra-login.gif)
 
 > [!NOTE]
-> The microsoft.identity.broker version 2.0.1 and earlier versions do not currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
+> The microsoft.identity.broker version 2.0.1 and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
 
 ## Deployment
 
@@ -195,10 +195,10 @@ Starting with version `2.0.2` of the microsoft-identity-broker, Phish-Resistant 
 - Certificate Based Authentication (CBA)
 - FIDO2 key with a PIV profile (certificate on a FIDO device)
 
-This feature is in private preview and requires additional configuration steps to enable support for SmartCard/CBA on Linux devices.
+This feature is in preview and requires additional configuration steps to enable support for SmartCard/CBA on Linux devices.
 
 > [!NOTE]
-> The insiders-fast channel is only available for `microsoft-identity-broker` version `2.0.2` and above. 
+> The insiders-fast channel is only available for `microsoft-identity-broker` version `2.0.2` and greater. 
 
 To install the insiders-fast channel of the microsoft-identity-broker:
 
@@ -273,7 +273,7 @@ The following steps configure YubiKey/Edge bridge integration:
 | **New Broker** | `journalctl --user -f -u microsoft-identity-broker.service`                                                                                |
 | **DBUS Logs**  | `busctl --user monitor com.microsoft.identity.broker1`                                                                                     |
 
-## Services
+### Services
 
 | Services:                    | Command                                                          |
 | ---------------------------- | ---------------------------------------------------------------- |
@@ -282,7 +282,7 @@ The following steps configure YubiKey/Edge bridge integration:
 | Get Identity Broker status:  | `systemctl --user status microsoft-identity-broker.service`     |
 
 
-# List installed versions
+### List installed versions
 
 To list the package versions currently installed, run: ([Reference](https://stackoverflow.microsoft.com/questions/289246))
 
