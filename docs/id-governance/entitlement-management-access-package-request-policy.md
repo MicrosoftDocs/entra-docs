@@ -258,11 +258,11 @@ $params = @{
 New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
 ```
 
-## Prevent requests from users with incompatible access
+## Prevent requests from identities with incompatible access
 
-In addition to the policy checks on who can request, you might wish to further restrict access, in order to avoid a user who already has some access - via a group or another access package - from obtaining excessive access.
+In addition to the policy checks on who can request, you might wish to further restrict access, in order to avoid an identity who already has some access - via a group or another access package - from obtaining excessive access.
 
-If you want to configure that a user can't request an access package, if they already have an assignment to another access package, or are a member of a group, use the steps at [Configure separation of duties checks for an access package](entitlement-management-access-package-incompatible.md).
+If you want to configure that an identity can't request an access package, if they already have an assignment to another access package, or are a member of a group, use the steps at [Configure separation of duties checks for an access package](entitlement-management-access-package-incompatible.md).
 
 ## Next steps
 
