@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/16/2025
+ms.date: 11/19/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -62,12 +62,6 @@ Package the installation script into a `.intunewin` file.
 
 > [!NOTE]
 > The PowerShell installation script installs the Global Secure Access client, sets the `IPv4Preferred` registry key to prefer IPv4 over IPv6 traffic, and prompts for a reboot for the registry key change to take effect.
-
-> [!TIP]
-> Select to expand the PowerShell script.
-
-<details>
-  <summary>PowerShell installation script</summary>
 
 ```powershell
 # Create log directory and log helper
@@ -162,8 +156,6 @@ catch {
     exit 1603
 }
 ```
-
-</details>
 
 2. Go to the [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
 
