@@ -35,8 +35,6 @@ This article outlines how to select across three options, based on the applicati
 
 Applications using the Microsoft Entra identity platform can [expose APIs for other client applications to call](../../identity-platform/quickstart-configure-app-expose-web-apis.md#register-the-web-api). The application with the API can expose OAuth scopes for those API calls. The tool's service principal can be consented permission to those scopes, allowing it to call the APIs.
 
-:::image type="content" source="../../identity-platform/media/quickstart-configure-app-access-web-apis/diagram-01-app-permission-to-api-scopes.svg" alt-text="Line diagram showing a web API with exposed scopes on the right and a client app on the left with those scopes selected as permissions" border="false":::
-
 For more information on consenting an agent identity or service principal, see [admin consent for application permissions](grant-admin-consent.md#grant-admin-consent-for-application-permissions-using-microsoft-graph-api).
 
 ## Assigning an agent identity to an application role
@@ -98,16 +96,16 @@ If the agent has multiple agent identities, then permission inheritance can be u
 
 Once these applications, users, role assignments, and grants are in place in the tenant, then an agent that needs a SAML assertion for authenticating to the enterprise application can:
 
-1. Get a token as the agent identity blueprint.
-1. Use that token to make a token request to `https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token` endpoint, and get a federated identity credential (FIC) token as the agent identity. 
+- Get a token as the agent identity blueprint.
+- Use that token to make a token request to `https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token` endpoint, and get a federated identity credential (FIC) token as the agent identity. 
    
    In that request, the `client_id` is the agent identity ID, the `scope` is `api://AzureADTokenExchange/.default`, the `grant_type` is `client_credentials`, the `client_assertion_type` is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, and the `client_assertion` is the agent identity blueprint token from step 1.
 
-1. Use those two tokens to make a token request for a token as the agent user with the scope of the helper application. 
+- Use those two tokens to make a token request for a token as the agent user with the scope of the helper application. 
    
    In this request, the `client_id` is the agent identity ID, the `scope` is the concatenation of `api://'`, the SAML helper application's application ID, and `/.default`, the `grant_type` is `user_fic`, the `client_assertion_type` is `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, the `client_assertion` is the agent identity blueprint token, the `user_id` is the agent user object ID, and the `user_federated_identity_credential` is the agent identity token.
 
-1. Make the on-behalf-of-call token request to `https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token` to [obtain a SAML token](../../identity-platform/v2-oauth2-on-behalf-of-flow.md#obtain-a-saml-token-by-using-an-obo-request-with-a-shared-secret). 
+- Make the on-behalf-of-call token request to `https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token` to [obtain a SAML token](../../identity-platform/v2-oauth2-on-behalf-of-flow.md#obtain-a-saml-token-by-using-an-obo-request-with-a-shared-secret). 
 
    In this request, provide the credentials of the SAML helper application registration, the token returned by `user_fic` as the assertion, the grant type `urn:ietf:params:oauth:grant-type:jwt-bearer`, scope of the enterprise application's app ID with `/.default` appended, the `requested_token_use` of `on_behalf_of` and the `requested_token_type` of `urn:ietf:params:oauth:token-type:saml2`. The [response](../../identity-platform/v2-oauth2-on-behalf-of-flow.md#response-with-saml-assertion) contains a SAML assertion encoded in Base64URL.
 
