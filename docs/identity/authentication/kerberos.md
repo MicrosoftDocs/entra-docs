@@ -40,7 +40,7 @@ A cloud-only identity refers to a user account that exists only in Microsoft Ent
 
 For example, when a Microsoft Entra ID-joined Windows client accesses a file share or application over the internet, Microsoft Entra ID can issue the necessary Kerberos tickets as a KDC associated with the resource.
 
-**Cloud-only identity support (Preview)**: Cloud-only identities can now use Kerberos authentication for workloads like Azure Files without requiring on-prem AD DS. This is enabled by Entra Kerberos, which acts as a cloud-based KDC.
+**Cloud-only identity support (Preview)**: Cloud-only identities can now use Kerberos authentication for workloads like Azure Files without requiring on-premises AD DS. This is enabled by Entra Kerberos, which acts as a cloud-based KDC.
 
 **Enhanced security with modern credentials support**: Users can sign in by using passwordless methods such as Windows Hello for Business or FIDO2 security keys, yet still access on-premises resources that have Kerberos protections. This ability enables multifactor authentication (MFA) and passwordless authentication to reduce the risks associated with password theft and phishing attacks.
 
@@ -77,11 +77,11 @@ The Local Security Authority (LSA) uses the Cloud Authentication Provider (Cloud
 
 Upon successful authentication, Microsoft Entra ID issues a PRT that contains user and device information. Alongside the PRT, Microsoft Entra ID issues a Cloud TGT for the realm `KERBEROS.MICROSOFTONLINE.COM`.
 
-Microsoft Entra ID also issues a OnPremTgt(partial TGT) that contains the user's security identifier (SID) but no group claims. This partial TGT is not sufficient for direct access to on-premises resources.
+Microsoft Entra ID also issues an OnPremTgt (partial TGT) that contains the user's security identifier (SID) but no group claims. This partial TGT is not sufficient for direct access to on-premises resources.
 
 #### Cloud TGT issuance
 
-Microsoft Entra ID acts as a KDC for cloud resources by issuing a Cloud TGT to the client when appropriate. The client recognizes the Microsoft Entra ID tenant as a separate Kerberos realm for cloud resources, and the TGT is stored in the client's Kerberos ticket cache. The Cloud TGT is cached locally and can be verified using PowerShell command 'klist cloud_debug'
+Microsoft Entra ID acts as a KDC for cloud resources by issuing a Cloud TGT to the client when appropriate. The client recognizes the Microsoft Entra ID tenant as a separate Kerberos realm for cloud resources, and the TGT is stored in the client's Kerberos ticket cache. The Cloud TGT is cached locally and can be verified using PowerShell command 'klist cloud_debug'.
 
 The Cloud TGT that Microsoft Entra ID issues:
 
@@ -106,16 +106,16 @@ These prerequisites apply:
 - On-premises domain controllers must be patched to support Kerberos Cloud Trust.
 - Ensure line of sight between client devices and domain controllers for ticket exchange.
 
-If the user signs in by using a passwordless method (such as FIDO2 or Windows Hello for Business) on devices with Windows 10 (2004 or later) or Windows 11, Microsoft Entra ID issues a OnPremTgt for the user's on-premises Active Directory domain. This OnPremTgt contains the user's SID but no authorization data.
+If the user signs in by using a passwordless method (such as FIDO2 or Windows Hello for Business) on devices with Windows 10 (2004 or later) or Windows 11, Microsoft Entra ID issues an OnPremTgt for the user's on-premises Active Directory domain. This OnPremTgt contains the user's SID but no authorization data.
 
 The OnPremTgt that Microsoft Entra ID issues:
 
 - Enables access to on-premises resources by acting as a bridge between Microsoft Entra ID and Active Directory.
 - Contains limited data (for example, the user's SID) and no group claims. It's not sufficient on its own to access on-premises resources.
 - Is issued only if the environment is configured to support it. For example, you have a hybrid identity setup and a Microsoft Entra Kerberos server object in Active Directory.
-- Must be exchanged with an on-premises Active Directory domain controller for a full TGT that includes on-prem SID User SID, full PAC (all group memberships), session key and other access control data. The full TGT  is then used to access resources like Server Message Block (SMB) shares or SQL servers.
+- Must be exchanged with an on-premises Active Directory domain controller for a full TGT that includes the user's SID, full PAC (all group memberships), session key and other access control data. The full TGT  is then used to access resources like Server Message Block (SMB) shares or SQL servers.
 
-dsregcmd /status  command will show the result for both Tgt. More info at [Troubleshoot devices by using the dsregcmd command](~/identity/devices/troubleshoot-device-dsregcmd.md#sso-state)
+The `dsregcmd /status` command will show the result for both TGT. More information at [Troubleshoot devices by using the dsregcmd command](~/identity/devices/troubleshoot-device-dsregcmd.md#sso-state).
 - OnPremTgt: Set the state to YES if a Cloud Kerberos ticket to access on-premises resources is present on the device for the logged-in user.
 - CloudTgt: Set the state to YES if a Cloud Kerberos ticket to access cloud resources is present on the device for the logged-in user.
 
@@ -182,10 +182,10 @@ For client access to cloud resources:
 1. The SMB client requests a Kerberos service ticket for the resource SPN (e.g., `cifs/<storageaccount>.file.core.windows.net`).
 1. Entra Kerberos issues the service ticket based on the Cloud TGT. The ticket includes the user's Entra ID identity and group claims.
 1. Azure Files validates the Kerberos ticket against Entra ID. Authorization is enforced using Azure RBAC roles (e.g., Storage File Data SMB Share Contributor).
-1. The user gains access to the resource if RBAC permissions are satisfied. No on-prem AD or NTFS ACLs are involved—authorization is fully cloud-based.
+1. The user gains access to the resource if RBAC permissions are satisfied. No on-premises AD or NTFS ACLs are involved—authorization is fully cloud-based.
 
 **Key Differences from Traditional Kerberos:**
-- No on-prem KDC or Active Directory DS.
+- No on-premises KDC or Active Directory DS.
 - No NTFS ACL enforcement; uses Azure RBAC.
 - Kerberos tickets issued by Entra Kerberos in the cloud.
 
@@ -315,7 +315,7 @@ As a short-term solution,  apps using Entra Kerberos for cloud-only identities c
 **Entra Sign-in log entry**
     - The error 140011 – KerberosUsersGroupNumberExceeded in the Entra sign-in log indicates that the Kerberos ticket issuance process failed because the user's effective group membership exceeded the maximum allowed number of Security Identifiers (SIDs) in a Kerberos ticket. Admin should reduce group memberships for affected users (especially nested/dynamic groups).
 
-### How to update Tags attribute in application manifest file?
+### How to update Tags attribute in application manifest file
 
 **Option 1: Update Tags in the Entra Admin Portal**
 
