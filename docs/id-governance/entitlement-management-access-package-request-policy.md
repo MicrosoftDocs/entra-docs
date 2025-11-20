@@ -113,7 +113,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
     When you select this option, new options appear.
 
-    ![Screenshot of access package selection for users not in your directory](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
+    ![Screenshot of access package selection for users not in your directory.](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
 
 1. Select whether the users who can request access are required to be affiliated with an existing connected organization, or can be anyone on the Internet. A connected organization is one that you have a preexisting relationship with, which might have an external Microsoft Entra directory or another identity provider. Select one of the following options:
 
@@ -147,7 +147,7 @@ Follow these steps if you want to bypass access requests and allow administrator
 
 1. In the **Users who can request access** section, select **None (administrator direct assignments only)**.
 
-    ![Screenshot of an access package for the selection "None administrator direct assignments only"](./media/entitlement-management-access-package-request-policy/none-admin-direct-assignments-only.png)
+    ![Screenshot of an access package for the selection "None administrator direct assignments only".](./media/entitlement-management-access-package-request-policy/none-admin-direct-assignments-only.png)
 
     After you create the access package, you can directly assign specific internal and external users to the access package. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md).
 
