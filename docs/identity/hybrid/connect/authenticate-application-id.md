@@ -657,11 +657,11 @@ When you get a warning from Microsoft Entra Connect Sync, we *highly recommend t
 
         **Option 2**: Use PowerShell to export the certificate:
 
-            ``` powershell
-            $cerFile  = "C:\Temp\MyBYOC.cer"
-            $cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
-            Export-Certificate -Cert $cert -FilePath $cerFile
-            ```
+        ``` powershell
+        $cerFile  = "C:\Temp\MyBYOC.cer"
+        $cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+        Export-Certificate -Cert $cert -FilePath $cerFile
+        ```
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com) navigate to **App Registration**, and select the application that was created during the installation, configuration or the upgrade of Connect Sync. To confirm which application used by Connect Sync, you can run the `Get-ADSyncEntraConnectorCredential` command to retrieve the application (client) ID. The username format is `{AppID}@tenantName.onmicrosoft.com`. Under **Certificate & secrets**, select **Upload certificate** and upload the exported .cer file and select **Add**:
 
