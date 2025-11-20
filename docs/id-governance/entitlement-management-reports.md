@@ -16,7 +16,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # View reports and logs in entitlement management
 
-The entitlement management reports and Microsoft Entra audit log provide more details about what resources identities have access to. As an administrator, you can view the access packages and resource assignments for an identity and view request logs for auditing purposes or determining the status of a identities request. This article describes how to use the entitlement management reports and Microsoft Entra audit logs.
+The entitlement management reports and Microsoft Entra audit log provide more details about what resources identities have access to. As an administrator, you can view the access packages and resource assignments for an identity and view request logs for auditing purposes or determining the status of an identities request. This article describes how to use the entitlement management reports and Microsoft Entra audit logs.
 
 This article outlines how to view reports on current objects in entitlement management. To retain and report on historical Microsoft Entra objects, such as identities or application role assignments, see [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md).
 
