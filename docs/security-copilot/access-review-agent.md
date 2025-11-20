@@ -221,6 +221,9 @@ Permissions
 Final decisions, submitted through the Microsoft Teams conversation, use the reviewer's identity.
 
 The agent settings page displays the identity currently assigned to the agent:
+:::image type="content" source="media/access-review-agent/access-review-agent-identity.png" alt-text="Screenshot of the access review agent identity page.":::
+
+If your agent was previously configured using an administrator's identity, you must migrate it to a dedicated agent identity. Complete this migration by selecting the "*Create agent identity*" option located on the blue banner of the agent overview page or the agent settings page.
 
 
 
