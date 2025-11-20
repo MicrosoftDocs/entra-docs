@@ -47,7 +47,7 @@ Before configuring and enabling the provisioning service, you need to decide whi
 
 ### Important tips for assigning users to Salesforce
 
-* It's recommended that a single Microsoft Entra user is assigned to Salesforce to test the provisioning configuration. More users and/or groups can assigned later, through the mechanisms described in [Assign users](#assign-users).
+* It's recommended that a single Microsoft Entra user is assigned to Salesforce to test the provisioning configuration. More users and/or groups can be assigned later, through the mechanisms described in [Assign users](#assign-users).
 
 * When assigning a user to Salesforce, you must select a valid user role. The "Default Access" role doesn't work for provisioning. Note that some roles may require licensing in Salesforce.
 
@@ -56,7 +56,7 @@ Before configuring and enabling the provisioning service, you need to decide whi
 
 ### Identifying existing users in Salesforce
 
-Prior to integration with Microsoft Entra, your Salesforce account may already have one or more users, created by a Salesforce administrator or other processes. You can determine which users are already present by using the Salesforce export data feature. For more information, see [Export Backup Data from Salesforce](https://help.salesforce.com/s/articleView?id=xcloud.admin_exportdata.htm). When exporting from Salesforce, ensure that `User` data is included in the exported data set, and select a export file encoding that allows for all names for users in the organization, such as `Unicode (UTF-8)`.
+Prior to integration with Microsoft Entra, your Salesforce account may already have one or more users, created by a Salesforce administrator or other processes. You can determine which users are already present by using the Salesforce export data feature. For more information, see [Export Backup Data from Salesforce](https://help.salesforce.com/s/articleView?id=xcloud.admin_exportdata.htm). When exporting from Salesforce, ensure that `User` data is included in the exported data set, and select an export file encoding that allows for all names for users in the organization, such as `Unicode (UTF-8)`.
 
 Once you have the exported data from Salesforce, then you can extract the `User.csv` file and open in Excel, or in PowerShell, to view the list of active users already in Salesforce.
 
