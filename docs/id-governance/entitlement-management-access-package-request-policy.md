@@ -186,7 +186,7 @@ To change the request and approval settings for an access package, you need to o
 
 ## Who can request access
 
-1. After choosing who can get access and the scope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager  the ability to request access to the access package.
+1. After choosing who can get access and the scope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager the ability to request access to the access package.
 
     You can always enable it in the future after you have finished creating the access package.
 
