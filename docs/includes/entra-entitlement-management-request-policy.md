@@ -14,7 +14,7 @@ ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 
 Use the following steps if you want to allow identities in your directory to be able to request this access package. When you're defining the request policy, you can specify individual identities or (more commonly) groups of identities. For example, your organization might already have a group such as **All employees**. If that group is added in the policy for identities who can request access, any member of that group can then request access.
 
-1. In the **Users who can request access** section, select **For users in your directory**.
+1. In the **Who can get access** section, select **For users, service principals, and agent identities in your directory**.
 
     When you select this option, new options appear so you can refine who in your directory can request this access package.
 
@@ -52,7 +52,7 @@ If you want guest users to remain in your directory indefinitely, even if they h
 
 Follow these steps if you want to allow identities not in your directory to request the access package:
 
-1. In the **Users who can request access** section, select **For users not in your directory**.
+1. In the **Who can get access** section, select **For users not in your directory**.
 
     When you select this option, new options appear.
 
@@ -90,13 +90,13 @@ Follow these steps if you want to allow identities not in your directory to requ
 
 Follow these steps if you want to bypass access requests and allow administrators to directly assign specific users and agents to this access package. Users won't have to request the access package. You can still set lifecycle settings, but there are no request settings.
 
-1. In the **Users who can request access** section, select **None (administrator direct assignments only)**.
+1. In the **Who can get access** section, select **None (administrator direct assignments only)**.
 
     ![Screenshot that shows the option for allowing only administrator direct assignments for an access package.](./media/entitlement-management-request-policy/none-admin-direct-assignments-only.png)
 
     After you create the access package, you can directly assign specific internal and external users to it. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](~/id-governance/entitlement-management-access-package-assignments.md).
 
-1. Skip down to the [Enable requests](#enable-requests) section.
+1. Skip down to the [Who can request access](#who-can-request-access) section.
 
 ## Specify approval settings
 
@@ -231,15 +231,19 @@ Also, requests can't be forwarded on the last day of the request duration. So in
 
 You can always either enable, or disable, email notifications in the future after you finish creating the access package.    
 
-## Enable requests
+## Who can request access
 
-1. If you want the access package to be made immediately available for users in the request policy to request, move the **Enable new requests and assignments** toggle to **Yes**.
+> [!NOTE]
+> Previously, a setting called "*Enable new requests and assignments*" controlled self-service access requests. This capability is now more accurately reflected by the "*Self*" option.
 
-    You can always enable it in the future, after you finish creating the access package.
+1. After deciding who the access package is for you can designate who can request access for the access package. You can choose Self, Admin, or Manager as those who can request access.
 
-    If you select **None (administrator direct assignments only)** and you set **Enable new requests and assignments** to **No**, administrators can't directly assign this access package.
+You can always enable it in the future, after you finish creating the access package.
 
-    ![Screenshot that shows the option for enabling new requests and assignments.](./media/entitlement-management-request-policy/enable-requests.png)
+If you selected **None (administrator direct assignments only)** and you set enable to **No**, then administrators can't directly assign this access package.
+
+
+![Screenshot that shows the option for enabling new requests and assignments.](./media/entitlement-management-request-policy/enable-requests.png)
 
 1. Go to the [next section](#add-a-verified-id-requirement) to learn how to add a verified ID requirement to your access package. Otherwise, select **Next**.
 
