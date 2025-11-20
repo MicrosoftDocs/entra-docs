@@ -53,7 +53,7 @@ If you don't have the email, you can find the access requests pending your appro
 
     ![My Access portal - Access request- Click request details](./media/entitlement-management-request-approve/requestor-information-request-details.png)
 
-1. On the **Request details** page, basic information about the request is present such as who made the request, and whether it was for themselves or for someone else. See [Request access package on-behalf-of other users(Preview)](entitlement-management-request-behalf.md) for more details on requesting access for other users.
+1. On the **Request details** page, basic information about the request is present such as who made the request, and whether it was for themselves or for someone else. See [Request access package on-behalf-of other identities (Preview)](entitlement-management-request-behalf.md) for more details on requesting access for other identities.
 
 1. The information provided by the requestor is at the bottom of the panel.
 
@@ -71,7 +71,7 @@ After you open an access request pending approval, you can see details that will
 
 1. Select **Details** to see details about the access request.
 
-    The details include the user's name, organization, access start and end date if provided, business justification, when the request was submitted, and when the request expires.
+    The details include the identity's name, organization, access start and end date if provided, business justification, when the request was submitted, and when the request expires.
 
 1. Select **Approve** or **Deny**.
 
@@ -95,7 +95,7 @@ Users with Microsoft Entra ID Governance can undo their approval for an access r
 
 2. Select an approved request that you'd like to revoke the decision for.
 
-3. Select **Remove** to remove the user's access to the access package. Include a reason for why you're revoking your decision.
+3. Select **Remove** to remove the identity's access to the access package. Include a reason for why you're revoking your decision.
 
 4. Select **Remove** to submit your decision. 
 
