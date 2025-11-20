@@ -134,7 +134,7 @@
     href: ~/security-copilot/access-review-agent.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Access Review Agent logs and metrics (Preview)
     href: ~/security-copilot/access-review-agent-logs-metrics.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
-- name: Security Copilot with Identity Governance
+- name: Security Copilot for Identity Governance
   items:
   - name: Identity Governance and optimization with Microsoft Security Copilot
     href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
