@@ -186,7 +186,7 @@ In order to make sure users are getting access to the right access packages, you
  
     ![Access package - Policy- Select Edit and localize multiple choice answer format](./media/entitlement-management-access-package-approval-policy/answer-format-view-edit.png)
  
-1. If selecting Multiple Choice, select on the **Edit and localize** button to configure the answer options.
+1. If selecting Multiple Choice, select the **Edit and localize** button to configure the answer options.
     1. After selecting Edit and localize the **View/edit question** pane opens.
     1. Type in the response options you wish to give the requestor when answering the question in the **Answer values** boxes.
     1. Type in as many responses as you need.
