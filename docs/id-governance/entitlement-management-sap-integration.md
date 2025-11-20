@@ -37,15 +37,15 @@ SAP Cloud Identity Services instance that is already integrated with Microsoft E
     :::image type="content" source="media/entitlement-management-sap-integration/attribute-mapping.png" alt-text="Screenshot of attribute mapping for SAP integration.":::
     - For a better user experience, also add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP cloud Identity Services.
     :::image type="content" source="media/entitlement-management-sap-integration/manager-attribute.png" alt-text="Screenshot of setting manager attribute for SAP integration.":::
-- User Single Sign-On (Optional): See, [Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
+- User single sign-on (Optional): See, [Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
 
 
 SAP Cloud Identity and Access Governance (IAG) tenant license:
 
-- You will need support from the SAP BTP administrator to complete the requirements
+- You'll need support from the SAP BTP administrator to complete the requirements
 - The Microsoft Entra User Account configuring the connector and Access Packages must be synced to SAP Cloud Identity Services (IAS) and SAP IAG, and must be a member of IAG_SUPER_ADMIN group and have CIAG_Super_Admin role in SAP BTP to add SAP IAG Access Rights as Resource in Microsoft Entra Entitlement Management
     - Make sure you run the “Repository Sync” and “SCI User Group Sync Job” on SAP IAG after you provision the Microsoft Entra users to SAP Cloud Identity Services.
--  SAP IAG with pre-requisites detailed in the instructions following instructions
+-  SAP IAG with prerequisites detailed in the instructions following instructions
 
 
 ## Prepare your SAP Identity Access Governance instance to connect with Microsoft Entra
@@ -70,7 +70,7 @@ https://<SCI_TENANT_ID>.accounts.ondemand.com, Proxy Type to Internet and
 Authentication to ClientCertificate.
 1. Configure Authentication using your Client ID/Secret or certificate you created and uploaded in 
 the first step. Set Store Source as ‘DestinationService’, Key Store location select the certificate 
-from the drop down list and should be same as uploaded in Destination Certificates
+from the drop-down list and should be same as uploaded in Destination Certificates
 1. Add the following properties:
     - Accept = application/scim+json
     - GROUPSURL = /Groups
@@ -80,7 +80,7 @@ from the drop down list and should be same as uploaded in Destination Certificat
 
 ### 3. Point IAG at the destination
 
-In IAG’s [Configuration app](https://help.sap.com/http.svc/login?time=1763658868990&url=%2Fdocs%2FSAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE%c%2F8c45d577632044e9b31f65faf4a7be7c.html%3Fversion%3DCLOUDFOUNDRY), select Application Parameters, locate **UserSource > SourceSystem**, select edit and enter *SAP_Identity_Services_Identity_Directory*.
+In IAG’s [Configuration app](https://help.sap.com/http.svc/login?time=1763658868990&url=%2Fdocs%2FSAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE%c%2F8c45d577632044e9b31f65faf4a7be7c.html%3Fversion%3DCLOUDFOUNDRY), select Application Parameters, locate **UserSource > SourceSystem**, select edit, and enter *SAP_Identity_Services_Identity_Directory*.
 
 ### 4. Execute the SCI User Group Sync job
 
@@ -129,9 +129,9 @@ scheduling options, see SAP documentation: [Syncing User Groups from SAP Identit
     :::image type="content" source="media/entitlement-management-sap-integration/external-connectors.png" alt-text="Screenshot of external connectors card in entitlement management.":::
 1. On the Connectors page, select **New connector**.
 
-1. In the New Connector context, select **SAP IAG** from the drop down list.
+1. In the New Connector context, select **SAP IAG** from the drop-down list.
     :::image type="content" source="media/entitlement-management-sap-integration/sap-connector.png" alt-text="Screenshot of the sap connector selection screen.":::
-1.  After you select SAP IAG, you will see the option to fill out the following fields: Name, Description, Subscription, Resource Group, Key Vault Name, Secret Key, Client ID, Access Token URL, Scope, Endpoint URL, and Domain.
+1.  After you select SAP IAG, you'll see the option to fill out the following fields: Name, Description, Subscription, Resource Group, Key Vault Name, Secret Key, Client ID, Access Token URL, Scope, Endpoint URL, and Domain.
 
 To fill out the fields for the SAP IAG connector, you must work with your SAP BTP Tenant administrator to get the following information:
 
@@ -143,10 +143,10 @@ To fill out the fields for the SAP IAG connector, you must work with your SAP BT
 |Description     |    Customer     |    Customer     |
 |SubscriptionID     |   Select your Azure Subscription ID where Azure Key Vault resource is located.|    Customer     |
 |Key Vault Name     |   Select your Azure Key Vault.      |    Customer. IT Admin must select the drop-box and select the correct Azure Key Vault Resource where IAG secret is stored.    |
-|Secret Name     |   Select your Secret      |    Customer. Copy the clientsecret parameter from you SAP IAG service credentials and add it to your Key Vault as a new secret. Then select the Secret Name value to this field. Customer needs to create a Key Vault unless they already have one, in which case they simply create a [new secret key](/azure/key-vault/secrets/quick-create-portal).  |
-|Client ID     |   Client identifier      | Customer obtains from SAP BTP. When SAP IAG service is subscribed, this will come with service Key and can be viewed by tenant admin only, using SAP BTP Cockpit.Go to BTP Cockpit, Instances and Subscriptions and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the ClientID value. |
-|SAP IAG Access token URL   |   Base url for generating an authentication token to call SAP IAG services.      | Customer obtains from SAP BTP. When service is subscribed, a service key is generated along with endpoint URL as well. This information can be found in BTP subaccount. It’s only visible by SAP BTP tenant admin. Go to BTP Cockpit, Instances and Subscriptions and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the URL value. Copy the URL paramater and add the suffix “/oauth/token” before adding it to the New Connector.|
-|IAG URL    |   Base URL of all services exposed by SAP IAG (for eg. To fetch roles or to check status of role assignments)| Customer obtains from SAP BTP. When service is subscribed, a service key is generated along with endpoint URL as well. This information can be found in BTP subaccount. It’s only visible by SAP BTP tenant admin. Go to BTP Cockpit, Instances and Subscriptions and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the ARQAPI value. |
+|Secret Name     |   Select your Secret      |    Customer. Copy the clientsecret parameter from your SAP IAG service credentials and add it to your Key Vault as a new secret. Then select the Secret Name value to this field. Customer needs to create a Key Vault unless they already have one, in which case they create a [new secret key](/azure/key-vault/secrets/quick-create-portal).  |
+|Client ID     |   Client identifier      | Customer obtains from SAP BTP. When SAP IAG service is subscribed, this comes with service Key and can be viewed by tenant admin only, using SAP BTP Cockpit. Go to BTP Cockpit, Instances and Subscriptions, and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the ClientID value. |
+|SAP IAG Access token URL   |   Base url for generating an authentication token to call SAP IAG services.      | Customer obtains from SAP BTP. When service is subscribed, a service key is generated along with endpoint URL as well. This information can be found in BTP subaccount. It’s only visible by SAP BTP tenant admin. Go to BTP Cockpit, Instances and Subscriptions and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the URL value. Copy the URL parameter and add the suffix “/oauth/token” before adding it to the New Connector.|
+|IAG URL    |   Base URL of all services exposed by SAP IAG (for for example, To fetch roles or to check status of role assignments)| Customer obtains from SAP BTP. When service is subscribed, a service key is generated along with endpoint URL as well. This information can be found in BTP subaccount. It’s only visible by SAP BTP tenant admin. Go to BTP Cockpit, Instances and Subscriptions, and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the ARQAPI value. |
 
 
 
@@ -164,13 +164,13 @@ After this information is entered, select **Create** to create the connector. Ca
 
 1.  Select the SAP IAG button to open a context pane where you can select the SAP IAG instance you want to include in this catalog as a resource. In the dropdown, select the SAP IAG instance you connected. 
     :::image type="content" source="media/entitlement-management-sap-integration/sap-resource.png" alt-text="Screenshot of adding SAP IAG as a resource to catalog.":::
-1. Once you’ve added the SAP IAG instance to your catalog, go to the Access packages tab within the catalog and select the New access package button. In the Resource roles tab, select on SAP IAG. Here, you are able to select the SAP IAG Access Rights
+1. Once you’ve added the SAP IAG instance to your catalog, go to the Access packages tab within the catalog and select the New access package button. In the Resource roles tab, select on SAP IAG. Here, you're able to select the SAP IAG Access Rights
 
 1. In the resources table, you can select the specific business roles you want to include in the access package and select **Next**. 
     :::image type="content" source="media/entitlement-management-sap-integration/sap-resource-roles.png" alt-text="Screenshot of setting role for an SAP IAG resource.":::
 1. On the Requests tab, you create the first policy to specify who can request the access package. You also configure approval settings for that policy.
     1. Select “**For Users, service principals, and agent identities in your Directory**”
-    1. Select “**Specific Users and Groups**” to limit the usage of this access package only to users participating in the Private Preview. We recommend you create a new Microsoft Entra Group for it.
+    1. Select “**Specific Users and Groups**” to limit the usage of this access package only to certain users. We recommend you create a new Microsoft Entra Group for it.
     1. Define Approval setting as desired
     1. Make sure “self” is selected within **Who can request access**.
     1. Select **Next: Requestor Information**
@@ -178,13 +178,16 @@ After this information is entered, select **Create** to create the connector. Ca
 
 1.  On Lifecycle Tab, enter the number of days you want to grant access, make sure **Require Access Review** is unselected, and select **Next: Rules**.
 
-1. Select **Create** to finish setting up the access package with your settings. For more details on creating an access package, see: [Create an access package in entitlement management](entitlement-management-access-package-create.md).
+1. Select **Create** to finish setting up the access package with your settings. For more information on creating an access package, see: [Create an access package in entitlement management](entitlement-management-access-package-create.md).
 
 
 ## Testing Integration
-Once configuring the new SAP IAG Connector, IT admins can follow these steps for an end-to-end test scenario:
+
+Once you've configured the new SAP IAG Connector, IT admins can follow these steps for an end-to-end test scenario:
 1. Create a new SAP IAG Business Role 
+
 1. Create a new Access Package to grant access to the new SAP IAG Business Role
+
 1. As a user, request the new access package
     1. For information on how to request an access package, see: [Request access to an access package in entitlement management](entitlement-management-request-access.md).    
 1. Verify the role has been assigned in SAP IAG, make the necessary approvals.
