@@ -41,7 +41,7 @@ The following devices and applications support accessing resources where a token
 - Windows Server 2019 or newer that are hybrid Microsoft Entra joined.
 
 > [!NOTE]  
-> For detailed steps on how to register your device, see [How it works: Device registration – Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/devices/device-registration-how-it-works).
+> For detailed steps on how to register your device, see [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
 
 ### Supported applications
 
