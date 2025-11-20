@@ -57,7 +57,7 @@ There are several ways that you can configure entitlement management for your or
 
 1. [Create a new access package](entitlement-management-access-package-create.md#start-the-creation-process)
 1. [Add groups, Teams, applications, or SharePoint sites to access package](entitlement-management-access-package-create.md#select-resource-roles)
-1. [Add a request policy to allow users in your directory to request access](entitlement-management-access-package-create.md#allow-users-in-your-directory-to-request-the-access-package)
+1. [Add a request policy to allow users, service principals, and agent identities in your directory to request access](entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package)
 1. [Specify expiration settings](entitlement-management-access-package-create.md#specify-a-lifecycle)
 
 ### Requestor: Request access to resources
@@ -139,12 +139,12 @@ There are several ways that you can configure entitlement management for your or
 1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. [Remove users that no longer need access](entitlement-management-access-package-assignments.md)
 1. [Open an existing policy's request settings](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings)
-1. [Add users that need access](entitlement-management-access-package-request-policy.md#for-users-in-your-directory)
+1. [Add identities that need access](entitlement-management-access-package-request-policy.md#for-users-service-principals-and-agent-identities-in-your-directory)
 
 ### Access package manager: Directly assign specific users to an access package
 
 1. [If users need different lifecycle settings, add a new policy to the access package](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings)
-1. [Directly assign specific users to the access package](entitlement-management-access-package-assignments.md#directly-assign-a-user)
+1. [Directly assign specific identities to the access package](entitlement-management-access-package-assignments.md#directly-assign-an-identity)
 
 ## Assignments and reports
 
