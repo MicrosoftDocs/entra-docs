@@ -14,6 +14,18 @@ ms.date: 11/20/2025
 # Microsoft Entra SAP IAG integration
 
 
+Microsoft Entra ID Governance integrates with SAP Identity Access Governance (IAG) to help you manage user access across both platforms. With this integration, you can include SAP business roles in Microsoft Entra access packages, streamlining the provisioning process and providing a unified access management experience.
+
+This integration enables you to:
+
+- mAdd SAP IAG business roles as resources in entitlement management catalogs
+- Grant users access to SAP applications through Microsoft Entra access packages
+- Automate role assignments in SAP IAG based on approvals in Microsoft Entra
+- Maintain consistent access governance policies across both Microsoft and SAP environments
+
+
+This article guides you through connecting your SAP IAG instance to Microsoft Entra, configuring the necessary prerequisites in both platforms, and creating access packages that include SAP business roles.
+
 ## License requirements
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
