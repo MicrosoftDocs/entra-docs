@@ -250,8 +250,8 @@ In the provisioning mapping, the attributes selected as **Matching** properties 
    foreach ($u in $existingSapUsers) {
     $id = $u.id
     if (($null -eq $id) -or ($id.length -eq 0)) {
-        write-error "Exported CSV file doesn't contain the id attribute of SAP Cloud Identity Services users."
-        throw "id attribute not available, re-export"
+        write-error "Exported CSV file doesn't contain the ID attribute of SAP Cloud Identity Services users."
+        throw "ID attribute not available, re-export"
         return
     }
     $count++
@@ -405,7 +405,7 @@ Completing the below steps will allow customers that were already previously usi
 GET https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/
 ```
 
-1. Taking the "id" value from the response body of the `GET` request from previous example, run the following command, replacing "[job-id]" with the id value from the `GET` request. The value should have the format of "sapcloudidentityservices.xxxxxxxxxxxxxxx.xxxxxxxxxxxxxxx":
+1. Taking the "ID" value from the response body of the `GET` request from previous example, run the following command, replacing "[job-id]" with the ID value from the `GET` request. The value should have the format of "sapcloudidentityservices.xxxxxxxxxxxxxxx.xxxxxxxxxxxxxxx":
 
 ```
 DELETE https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/[job-id]
