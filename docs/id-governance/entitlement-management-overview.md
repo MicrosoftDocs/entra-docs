@@ -42,7 +42,7 @@ Entitlement management can help address these challenges. To learn more about ho
 Here are some of capabilities of entitlement management:
 
 - Control who can get access to applications, groups, Teams and SharePoint sites, with multi-stage approval, and ensure identities don't retain access indefinitely through time-limited assignments and recurring access reviews.
-- Give identities access automatically to those resources, based on identity  properties like department or cost center, and remove an identities access when those properties change.
+- Give identities access automatically to those resources, based on identity  properties like department or cost center, and remove an identity's access when those properties change.
 - Give agent IDs access to resources needed and allow sponsors of the agent IDs to make sure access is maintained only while required.
 - Delegate to nonadministrators the ability to create access packages. These access packages contain resources that identities can request, and the delegated access package managers can define policies with rules for which identities can request, who must approve their access, and when access expires.
 - Select connected organizations whose identities can request access. When an identity who isn't yet in your directory requests access, and is approved, they're automatically invited into your directory and assigned access. When their access expires, if they have no other access package assignments, their B2B account in your directory can be automatically removed.
@@ -60,7 +60,7 @@ You can also read the [common scenarios](entitlement-management-scenarios.md), o
 
 Entitlement management introduces the concept of an *access package*. An access package is a bundle of all the resources with the access an identity needs to work on a project or perform their task. Access packages can be used to govern access for internal identities, and also for identities who originate outside your organization.
 
- Here are the types of resources you can manage identities access to, with entitlement management:
+ Here are the types of resources you can manage identities' access to, with entitlement management:
 
 - Membership of Microsoft Entra security groups
 - Membership of Microsoft 365 Groups and Teams
@@ -85,7 +85,7 @@ You can have policies for identities to request access. In these kinds of polici
 
 - Either the already-existing identities (typically employees or already-invited guests), or the partner organizations of external identities that are eligible to request access
 - The approval process and the identities that can approve or deny access
-- The duration of an identities access assignment, once approved, before the assignment expires
+- The duration of an identity's access assignment, once approved, before the assignment expires
 
 You can also have policies for identities to be assigned access, either [by an administrator](entitlement-management-access-package-assignments.md#directly-assign-an-identity), [automatically based on rules](entitlement-management-access-package-auto-assignment-policy.md), or through lifecycle workflows.
 
