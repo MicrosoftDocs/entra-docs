@@ -708,7 +708,7 @@ When you get a warning from Microsoft Entra Connect Sync, we *highly recommend t
     $path = "$env:ALLUSERSPROFILE\Microsoft\Crypto\Keys\$($rsaCert.key.UniqueName)"
     ```
 
-Run the following commands to grant the permission:
+1. Run the following commands to grant the permission:
 
     ``` powershell
     $permissions = Get-Acl -Path $path
