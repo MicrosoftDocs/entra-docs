@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SAP IAG integration
-description: #Required; Keep the description within 100- and 165-characters including spaces.
+description: Learn how to integrate SAP Identity Access Governance (IAG) with Microsoft Entra to streamline user provisioning and access management.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -98,8 +98,8 @@ In IAG’s [Configuration app](https://help.sap.com/http.svc/login?time=17636588
     - Password – User P/W of IAS administrator user
     - Description – IPS Destination
     - Proxy Type – Internet
-    - URL – Use the IPS URL - https://<YOUR_IPS_TENANT>>. 
-    <<DOMAIN>>.hana.ondemand.com
+    - URL – Use the IPS URL - https://{YOUR_IPS_TENANT}>. 
+    <{DOMAIN}>.hana.ondemand.com
     - Additional Properties: 
         1. Accept - application/scim+json
         1. ServiceURL - /ipsproxy/service/api/v1/scim/
