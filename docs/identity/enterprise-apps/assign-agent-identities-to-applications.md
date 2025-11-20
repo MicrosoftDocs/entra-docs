@@ -35,7 +35,7 @@ This article outlines how to select across three options, based on the applicati
 
 Applications using the Microsoft Entra identity platform can [expose APIs for other client applications to call](../../identity-platform/quickstart-configure-app-expose-web-apis.md#register-the-web-api). The application with the API can expose OAuth scopes for those API calls. The tool's service principal can be consented permission to those scopes, allowing it to call the APIs.
 
-:::image type="content" source="../../identity-platform/media/quickstart-configure-app-access-web-apis/diagram-01-app-permission-to-api-scopes.svg" alt-text="Line diagram showing a web API with exposed scopes on the right and a client app on the left with those scopes selected as permissions" border="false":::
+:::image type="content" source="../../identity-platform/media/quickstart-configure-app-access-web-apis/diagram-01-app-permission-to-api-scopes.svg" alt-text="Line diagram showing a web API with exposed scopes on the right and a client app on the left with those scopes selected as permissions." border="false":::
 
 For more information on consenting an agent identity or service principal, see [admin consent for application permissions](grant-admin-consent.md#grant-admin-consent-for-application-permissions-using-microsoft-graph-api).
 
