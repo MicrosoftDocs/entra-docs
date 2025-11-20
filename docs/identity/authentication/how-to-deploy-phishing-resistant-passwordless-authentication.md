@@ -31,7 +31,7 @@ Non-admins| <li>Users in the organization that do not have access to customer da
 Microsoft recommends that you broadly deploy phishing-resistant passwordless authentication across your organization. We recommend you start your deployment with one of the user personas first. 
 
 Microsoft recommends that you categorize your users based on these personas, and then place users into a Microsoft Entra ID group specifically for that user persona. These groups are used in later steps to [roll out credentials](~/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md#drive-usage-of-phishing-resistant-credentials) 
-to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
+to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforcement-of-phishing-resistence-on-resources).
 
 Using groups you can continue to onboard new parts of the organization simultaneously. Take the approach of "*don’t let perfect be the enemy of good*" and deploy secure credentials as much as possible. As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
 
@@ -69,7 +69,7 @@ Credentials | Description | Benefits | Authentication Methods|
 **Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate using the device’s own unlock gesture like Face ID or Windows Hello for Business face/fingerprint/PIN.|<li>Windows Hello For Business</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
 
 
-- For *new users*, the registration and bootstrapping process takes them with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforce-phishing-resistant-methods-for-sign-in).
+- For *new users*, the registration and bootstrapping process takes them with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforcement-of-phishing-resistence-on-resources).
 - For *existing users*, they must register for phishing-resistant passwordless on their existing devices, or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. 
 
 The end goal is the same for both types of users - most users should have at least one **portable** credential, and then **local** credentials on each computing device. 
@@ -320,13 +320,14 @@ For example, you could execute your deployments and then enforcements in waves t
 
 As you execute these different phases, you may need to slow down depending on the volume of help desk tickets opened and then resume when the volume has subsided. To execute on this strategy, Microsoft recommends that you create a Microsoft Entra ID security group for each wave, and add each group to your policies one at a time. This approach helps to avoid overwhelming your support teams.
 
-## Step 4: Enforce phishing-resistant methods for sign-in
-
-
+## Enforce phishing-resistant methods for sign-in
+ The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. 
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png":::
 
-The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is [Conditional Access authentication strengths](concept-authentication-strengths.md). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
+ ### Step 4: Enforcement of phishing resistence on resources
+ 
+To enforce phishing-resistent crednetials in Microsfot Entra ID the primary mechanism is [Conditional Access authentication strengths](concept-authentication-strengths.md). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
 
 1. Admins on Windows and iOS
 1. Admins on macOS and Android
