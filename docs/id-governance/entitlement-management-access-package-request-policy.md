@@ -186,13 +186,16 @@ To change the request and approval settings for an access package, you need to o
 
 ## Who can request access
 
+> [!NOTE]
+> Previously, a setting called "*Enable new requests and assignments*" controlled self-service access requests. This capability is now more accurately reflected by the "*Self*" option.
+
 1. After choosing who can get access and the scope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager the ability to request access to the access package.
 
     You can always enable it in the future after you have finished creating the access package.
 
     If you selected **None (administrator direct assignments only)** then the who can request access section boxes are not selectable.
 
-    ![Access package - Policy- Enable policy setting](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
+    ![Screenshot of access package policy who can request access.](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
 1. Select **Next**.
 

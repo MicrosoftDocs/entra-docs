@@ -96,7 +96,7 @@ Follow these steps if you want to bypass access requests and allow administrator
 
     After you create the access package, you can directly assign specific internal and external users to it. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](~/id-governance/entitlement-management-access-package-assignments.md).
 
-1. Skip down to the [Enable requests](#enable-requests) section.
+1. Skip down to the [Who can request access](#who-can-request-access) section.
 
 ## Specify approval settings
 
@@ -231,15 +231,16 @@ Also, requests can't be forwarded on the last day of the request duration. So in
 
 You can always either enable, or disable, email notifications in the future after you finish creating the access package.    
 
-## Enable requests
+## Who can request access
 
-1. If you want the access package to be made immediately available for users in the request policy to request, move the **Enable new requests and assignments** toggle to **Yes**.
+1. After deciding who the access package is for you can designate who can request access for the access package. You can choose Self, Admin, or Manager as those who can request access.
 
-    You can always enable it in the future, after you finish creating the access package.
+You can always enable it in the future, after you finish creating the access package.
 
-    If you select **None (administrator direct assignments only)** and you set **Enable new requests and assignments** to **No**, administrators can't directly assign this access package.
+If you selected **None (administrator direct assignments only)** and you set enable to **No**, then administrators can't directly assign this access package.
 
-    ![Screenshot that shows the option for enabling new requests and assignments.](./media/entitlement-management-request-policy/enable-requests.png)
+
+![Screenshot that shows the option for enabling new requests and assignments.](./media/entitlement-management-request-policy/enable-requests.png)
 
 1. Go to the [next section](#add-a-verified-id-requirement) to learn how to add a verified ID requirement to your access package. Otherwise, select **Next**.
 
