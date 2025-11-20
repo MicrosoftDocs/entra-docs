@@ -14,7 +14,7 @@ ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 
 Use the following steps if you want to allow identities in your directory to be able to request this access package. When you're defining the request policy, you can specify individual identities or (more commonly) groups of identities. For example, your organization might already have a group such as **All employees**. If that group is added in the policy for identities who can request access, any member of that group can then request access.
 
-1. In the **Users who can request access** section, select **For users in your directory**.
+1. In the **Who can get access** section, select **For users, service principals, and agent identities in your directory**.
 
     When you select this option, new options appear so you can refine who in your directory can request this access package.
 
