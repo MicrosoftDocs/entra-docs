@@ -35,6 +35,8 @@ This article outlines how to select across three options, based on the applicati
 
 Applications using the Microsoft Entra identity platform can [expose APIs for other client applications to call](../../identity-platform/quickstart-configure-app-expose-web-apis.md#register-the-web-api). The application with the API can expose OAuth scopes for those API calls. The tool's service principal can be consented permission to those scopes, allowing it to call the APIs.
 
+:::image type="content" source="../../identity-platform/media/quickstart-configure-app-access-web-apis/diagram-01-app-permission-to-api-scopes.svg" alt-text="Line diagram showing a web API with exposed scopes on the right and a client app on the left with those scopes selected as permissions" border="false":::
+
 For more information on consenting an agent identity or service principal, see [admin consent for application permissions](grant-admin-consent.md#grant-admin-consent-for-application-permissions-using-microsoft-graph-api).
 
 ## Assigning an agent identity to an application role
@@ -89,8 +91,6 @@ Then, for each agent identity of the agent, you create:
   * the agent identity as the client
   * the SAML helper application registration as the resource
   * the scope value of the concatenation of `api://'`, the SAML helper application's application ID, and `/.default`
-
-:::image type="content" source="media/assign-agent-identities-to-applications/agent-saml.png" alt-text="Diagram of relationships between Microsoft Entra artifacts needed for SAML token issuance.":::
 
 If the agent has multiple agent identities, then permission inheritance can be used to grant consent once at the agent identity blueprint and inherit it for the agent identities.
 
