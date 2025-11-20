@@ -65,7 +65,6 @@ If you have a set of identities that should have different request and approval 
     - [For users, service principals, and agent identities in your directory](#for-users-service-principals-and-agent-identities-in-your-directory) 
     - [For users not in your directory](#for-users-not-in-your-directory)
     - [None (administrator direct assignments only)](#none-administrator-direct-assignments-only)
-    - 
 
 ## For users, service principals, and agent identities in your directory
 
@@ -106,7 +105,7 @@ Follow these steps if you want to allow identities in your directory to be able 
  **Users not in your directory** refers to users who are in another Microsoft Entra directory or domain. These users might not have yet been invited into your directory. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](../external-id/external-collaboration-settings-configure.md).
 
 > [!NOTE]
-> A guest user account will be created for a user not yet in your directory whose request is approved or auto-approved. The guest will be invited, but will not receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. By default, later when that guest user no longer has any access package assignments, because their last assignment has expired or been cancelled, that guest user account will be blocked from sign in and subsequently deleted. If you want to have guest users remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](../external-id/user-properties.md).
+> A guest user account will be created for a user not yet in your directory whose request is approved or auto-approved. The guest will be invited, but will not receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. By default, later when that guest user no longer has any access package assignments, because their last assignment has expired or been canceled, that guest user account will be blocked from sign in and subsequently deleted. If you want to have guest users remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](../external-id/user-properties.md).
 
 Follow these steps if you want to allow users not in your directory to request this access package:
 
@@ -116,7 +115,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
     ![Access package - Requests - For users not in your directory](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
 
-1. Select whether the users who can request access are required to be affiliated with an existing connected organization, or can be anyone on the Internet. A connected organization is one that you have a pre-existing relationship with, which might have an external Microsoft Entra directory or another identity provider. Select one of the following options:
+1. Select whether the users who can request access are required to be affiliated with an existing connected organization, or can be anyone on the Internet. A connected organization is one that you have a preexisting relationship with, which might have an external Microsoft Entra directory or another identity provider. Select one of the following options:
 
     |  | Description |
     | --- | --- |
@@ -187,7 +186,7 @@ To change the request and approval settings for an access package, you need to o
 
 ## Who can request access
 
-1. After choosing who can get access and the schope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager  the ability to request access to the access package.
+1. After choosing who can get access and the scope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager  the ability to request access to the access package.
 
     You can always enable it in the future after you have finished creating the access package.
 
