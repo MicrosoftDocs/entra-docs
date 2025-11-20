@@ -113,7 +113,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
     When you select this option, new options appear.
 
-    ![Access package - Requests - For users not in your directory](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
+    ![Screenshot of access package selection for users not in your directory.](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
 
 1. Select whether the users who can request access are required to be affiliated with an existing connected organization, or can be anyone on the Internet. A connected organization is one that you have a preexisting relationship with, which might have an external Microsoft Entra directory or another identity provider. Select one of the following options:
 
@@ -147,7 +147,7 @@ Follow these steps if you want to bypass access requests and allow administrator
 
 1. In the **Users who can request access** section, select **None (administrator direct assignments only)**.
 
-    ![Access package - Requests - None administrator direct assignments only](./media/entitlement-management-access-package-request-policy/none-admin-direct-assignments-only.png)
+    ![Screenshot of an access package for the selection "None administrator direct assignments only".](./media/entitlement-management-access-package-request-policy/none-admin-direct-assignments-only.png)
 
     After you create the access package, you can directly assign specific internal and external users to the access package. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md).
 
@@ -186,13 +186,16 @@ To change the request and approval settings for an access package, you need to o
 
 ## Who can request access
 
-1. After choosing who can get access and the scope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager  the ability to request access to the access package.
+> [!NOTE]
+> Previously, a setting called "*Enable new requests and assignments*" controlled self-service access requests. This capability is now more accurately reflected by the "*Self*" option.
+
+1. After choosing who can get access and the scope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager the ability to request access to the access package.
 
     You can always enable it in the future after you have finished creating the access package.
 
     If you selected **None (administrator direct assignments only)** then the who can request access section boxes are not selectable.
 
-    ![Access package - Policy- Enable policy setting](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
+    ![Screenshot of access package policy who can request access.](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
 1. Select **Next**.
 
