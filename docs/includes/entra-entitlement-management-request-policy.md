@@ -233,6 +233,9 @@ You can always either enable, or disable, email notifications in the future afte
 
 ## Who can request access
 
+> [!NOTE]
+> Previously, a setting called "*Enable new requests and assignments*" controlled self-service access requests. This capability is now more accurately reflected by the "*Self*" option.
+
 1. After deciding who the access package is for you can designate who can request access for the access package. You can choose Self, Admin, or Manager as those who can request access.
 
 You can always enable it in the future, after you finish creating the access package.
