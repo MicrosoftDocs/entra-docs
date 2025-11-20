@@ -113,7 +113,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
     When you select this option, new options appear.
 
-    ![Access package - Requests - For users not in your directory](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
+    ![Screenshot of access package selection for users not in your directory](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
 
 1. Select whether the users who can request access are required to be affiliated with an existing connected organization, or can be anyone on the Internet. A connected organization is one that you have a preexisting relationship with, which might have an external Microsoft Entra directory or another identity provider. Select one of the following options:
 
