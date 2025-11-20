@@ -97,11 +97,7 @@ The Cloud TGT that Microsoft Entra ID issues:
 These prerequisites apply:
 
 - Users must be synchronized from on-premises Active Directory to Microsoft Entra ID via Microsoft Entra Connect.
-<<<<<<< HEAD
 - A Kerberos server object must exist in on-premises Active Directory and be synchronized to Microsoft Entra ID. This object allows Microsoft Entra ID to issue OnPremTgt that on-premises domain controllers can redeem.
-=======
-- For hybrid scenarios, a Kerberos server object must exist in on-premises Active Directory and be synchronized to Microsoft Entra ID. This object allows Microsoft Entra ID to issue partial TGTs that on-premises domain controllers can redeem.
->>>>>>> 5204f52f7a656f1cf8f46b823b95b351e7202592
 - Devices must be running Windows 10 (2004 or later) or Windows 11.
 - Devices should be Microsoft Entra joined or hybrid joined.
 - We recommend Windows Hello for Business or FIDO2 authentication methods for optimal integration.
@@ -231,11 +227,7 @@ For detailed information, see [Store FSLogix profile containers on Azure Files u
 
 ### Enable Microsoft Entra Kerberos authentication on Azure Files
 
-<<<<<<< HEAD
 Microsoft Entra Kerberos authentication enables hybrid identities as well as cloud only identities to access Azure file shares by using Kerberos authentication. This scenario uses Microsoft Entra ID to issue the necessary Kerberos tickets to access the file share through the SMB protocol.  
-=======
-Microsoft Entra Kerberos authentication enables users to access Azure file shares by using Kerberos authentication. This scenario uses Microsoft Entra ID to issue the necessary Kerberos tickets to access the file share through the SMB protocol.  
->>>>>>> 5204f52f7a656f1cf8f46b823b95b351e7202592
 
 For detailed information, see [Enable Microsoft Entra Kerberos authentication for hybrid identities on Azure Files](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune).
 
@@ -249,17 +241,9 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 
 ## Limitations and other considerations
 
-<<<<<<< HEAD
 ### Support for cloud-only user identities (Preview)
 
 Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files and Azure Virtual Desktop.
-=======
-### Support for cloud-only identities is currently in preview
-
-Microsoft Entra Kerberos supports hybrid user identities that are created in on-premises Active Directory and synchronized to Microsoft Entra ID via Microsoft Entra Connect.
-
-Cloud-only user accounts that are created and managed solely in Microsoft Entra ID are also supported (preview).
->>>>>>> 5204f52f7a656f1cf8f46b823b95b351e7202592
 
 ### Operating system and device restrictions
 
