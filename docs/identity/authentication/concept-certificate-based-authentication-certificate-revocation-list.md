@@ -67,7 +67,7 @@ Microsoft Entra ID supports only one CRL endpoint and supports only HTTP or HTTP
 
    `The Certificate Revocation List (CRL) downloaded from {uri} has exceeded the maximum allowed size ({size} bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators.`
 
-1. Microsoft Entra ID attempts to download the CRL subject to the service-side limits (45 MB in public Microsoft Entra ID and 150 MB in Azure for US Government).
+1. Microsoft Entra ID attempts to download the CRL subject to the service-side limits (65 MB in public Microsoft Entra ID and 150 MB in Azure for US Government).
 
 1. Users can retry the authentication after a few minutes. If the user's certificate is revoked and appears in the CRL, the authentication fails.
 
