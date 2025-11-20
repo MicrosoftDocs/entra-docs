@@ -44,15 +44,13 @@ For example, when a Microsoft Entra ID-joined Windows client accesses a file sha
 
 **Enhanced security with modern credentials support**: Users can sign in by using passwordless methods such as Windows Hello for Business or FIDO2 security keys, yet still access on-premises resources that have Kerberos protections. This ability enables multifactor authentication (MFA) and passwordless authentication to reduce the risks associated with password theft and phishing attacks.
 
-**Simplified hybrid join**: Microsoft Entra Kerberos supports hybrid join scenarios without requiring Active Directory Federation Services (AD FS) or Microsoft Entra Connect Sync. This support is ideal for nonpersistent virtual desktop infrastructure, disconnected forests, and Azure Virtual Desktop.
-
 **Secure ticket exchange**: Microsoft Entra Kerberos uses a Ticket Granting Ticket (TGT) exchange model for enhanced security.
 
 **Scalable group memberships**: Microsoft Entra Kerberos addresses traditional Kerberos limitations with large or dynamic group memberships to improve reliability and user experience. In scenarios that involve large groups of users, performance is optimized through automatic load distribution across all domain controllers (DCs) within a site. For deployments in Azure Virtual Desktop environments, we recommend ensuring that sufficient DCs are available and geographically close to the environment, to maintain responsiveness.
 
 ## How Microsoft Entra Kerberos works
 
-Microsoft Entra Kerberos allows your Microsoft Entra ID tenant to operate as a dedicated Kerberos realm alongside your existing on-premises Active Directory realm. When a user signs in to a Windows device that's either Microsoft Entra ID joined or hybrid joined, the device authenticates with Microsoft Entra ID and receives a [Primary Refresh Token (PRT)](../devices/concept-primary-refresh-token.md).
+In hybrid scenarios, Microsoft Entra Kerberos allows your Microsoft Entra ID tenant to operate as a dedicated Kerberos realm alongside your existing on-premises Active Directory realm. When a user signs in to a Windows device that's either Microsoft Entra ID joined or hybrid joined, the device authenticates with Microsoft Entra ID and receives a [Primary Refresh Token (PRT)](../devices/concept-primary-refresh-token.md).
 
 In addition to the PRT, Microsoft Entra ID issues a Cloud TGT for the realm `KERBEROS.MICROSOFTONLINE.COM`. This is a partial TGT to access on-premises resources. In this model, Microsoft Entra ID acts as the KDC to facilitate seamless authentication.
 
@@ -69,7 +67,7 @@ Currently the supported workloads are Azure Files and Azure Virtual Desktop.
 
 ### 1. User authentication
 
-The user signs in to a Windows 10 (2004 or later) or Windows 11 device that's either Microsoft Entra joined or hybrid joined.
+The user signs in to a Windows device that's either Microsoft Entra joined or hybrid joined.
 
 The Local Security Authority (LSA) uses the Cloud Authentication Provider (CloudAP) to authenticate via OAuth to Microsoft Entra ID.
 
@@ -99,7 +97,11 @@ The Cloud TGT that Microsoft Entra ID issues:
 These prerequisites apply:
 
 - Users must be synchronized from on-premises Active Directory to Microsoft Entra ID via Microsoft Entra Connect.
+<<<<<<< HEAD
 - A Kerberos server object must exist in on-premises Active Directory and be synchronized to Microsoft Entra ID. This object allows Microsoft Entra ID to issue OnPremTgt that on-premises domain controllers can redeem.
+=======
+- For hybrid scenarios, a Kerberos server object must exist in on-premises Active Directory and be synchronized to Microsoft Entra ID. This object allows Microsoft Entra ID to issue partial TGTs that on-premises domain controllers can redeem.
+>>>>>>> 5204f52f7a656f1cf8f46b823b95b351e7202592
 - Devices must be running Windows 10 (2004 or later) or Windows 11.
 - Devices should be Microsoft Entra joined or hybrid joined.
 - We recommend Windows Hello for Business or FIDO2 authentication methods for optimal integration.
@@ -123,13 +125,13 @@ The `dsregcmd /status` command will show the result for both TGT. More informati
 
 Possessing a Microsoft Entra Kerberos TGT for a user's on-premises Active Directory domain does not automatically grant access to a full Active Directory TGT.
 
-Microsoft Entra Kerberos uses the Read-Only Domain Controller (RODC) object's allow list and block list to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access. This mechanism is critical for limiting exposure and enforcing security boundaries. This mechanism is especially critical in hybrid environments where Microsoft Entra ID issues partial TGTs that must be redeemed with on-premises Active Directory domain controllers for a full TGT.
+Microsoft Entra Kerberos uses the Read-Only Domain Controller (RODC) object's allowlist and blocklist to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access. This mechanism is critical for limiting exposure and enforcing security boundaries. This mechanism is especially critical in hybrid environments where Microsoft Entra ID issues partial TGTs that must be redeemed with on-premises Active Directory domain controllers for a full TGT.
 
-To complete the exchange, the user must be listed in the allow list on the RODC object and not in the block list.
+To complete the exchange, the user must be listed in the allowlist on the RODC object and not in the blocklist.
 
 :::image type="content" source="media/kerberos/kerberos-account.png" alt-text="Screenshot of user account properties in Active Directory." lightbox="media/kerberos/kerberos-account.png":::
 
-During the exchange process, a partial Microsoft Entra Kerberos TGT is converted into a full Active Directory TGT. Microsoft Entra ID evaluates the lists to determine access eligibility. If the user is in the allow list, Microsoft Entra ID issues the full TGT. If the user is in the block list, Microsoft Entra ID rejects the request and authentication fails.
+During the exchange process, a partial Microsoft Entra Kerberos TGT is converted into a full Active Directory TGT. Microsoft Entra ID evaluates the lists to determine access eligibility. If the user is in the allowlist, Microsoft Entra ID issues the full TGT. If the user is in the blocklist, Microsoft Entra ID rejects the request and authentication fails.
 
 As a best practice, set the default configuration to **Deny**. Grant explicit **Allow** permissions only to groups that are authorized to use Microsoft Entra Kerberos.
 
@@ -159,7 +161,7 @@ Microsoft Entra ID acts as a KDC for cloud resources. It maintains tenant-specif
 
 ### 3. Service ticket request and issuance
 
-For client access to on-premises resources:
+For client access to on-premises resources (hybrid scenario):
 
 1. Microsoft Entra ID issues a partial TGT.
 1. The client contacts an on-premises Active Directory domain controller to exchange the partial TGT for a full TGT.
@@ -229,7 +231,11 @@ For detailed information, see [Store FSLogix profile containers on Azure Files u
 
 ### Enable Microsoft Entra Kerberos authentication on Azure Files
 
+<<<<<<< HEAD
 Microsoft Entra Kerberos authentication enables hybrid identities as well as cloud only identities to access Azure file shares by using Kerberos authentication. This scenario uses Microsoft Entra ID to issue the necessary Kerberos tickets to access the file share through the SMB protocol.  
+=======
+Microsoft Entra Kerberos authentication enables users to access Azure file shares by using Kerberos authentication. This scenario uses Microsoft Entra ID to issue the necessary Kerberos tickets to access the file share through the SMB protocol.  
+>>>>>>> 5204f52f7a656f1cf8f46b823b95b351e7202592
 
 For detailed information, see [Enable Microsoft Entra Kerberos authentication for hybrid identities on Azure Files](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune).
 
@@ -239,13 +245,21 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 - Microsoft Entra Kerberos uses a secure TGT exchange model via KDC Proxy. This model minimizes exposure to domain controllers and reduces the attack surface.
 - Admins can configure group resolution policies to limit which groups are included in Kerberos tickets. These controls are essential for managing ticket size and reducing exposure to unnecessary group data.
 - We advise you to maintain clear separation between cloud and on-premises environments. We discourage synchronizing sensitive accounts like `krbtgt_AzureAD` to on-premises Active Directory due to privilege escalation risks.
-- Use the RODC object's allow list and block list to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access.
+- Use the RODC object's allowlist and blocklist to control which users can receive partial TGTs from Microsoft Entra ID for on-premises resource access.
 
 ## Limitations and other considerations
 
+<<<<<<< HEAD
 ### Support for cloud-only user identities (Preview)
 
 Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files and Azure Virtual Desktop.
+=======
+### Support for cloud-only identities is currently in preview
+
+Microsoft Entra Kerberos supports hybrid user identities that are created in on-premises Active Directory and synchronized to Microsoft Entra ID via Microsoft Entra Connect.
+
+Cloud-only user accounts that are created and managed solely in Microsoft Entra ID are also supported (preview).
+>>>>>>> 5204f52f7a656f1cf8f46b823b95b351e7202592
 
 ### Operating system and device restrictions
 
@@ -253,7 +267,7 @@ Microsoft Entra Kerberos is supported on Microsoft Entra-joined or hybrid-joined
 
 ### Network connectivity requirements for ACL configuration
 
-Users can access Azure file shares over the internet without direct connectivity to domain controllers. However, configuring Windows access control lists (ACLs) or file-level permissions requires unimpeded network access to on-premises domain controllers.
+Users can access Azure file shares over the internet without direct connectivity to domain controllers. However, configuring Windows access control lists (ACLs) or file-level permissions for hybrid identities requires unimpeded network access to on-premises domain controllers.
 
 ### No cross-tenant or guest user support
 
@@ -287,7 +301,7 @@ Kerberos ticket encryption with Microsoft Entra Kerberos uses AES-256 exclusivel
 
 ## Getting started with Microsoft Entra Kerberos
 
-1. Set up Microsoft Entra Connect to synchronize on-premises AD DS users to Microsoft Entra ID. For details, see the [Microsoft Entra Connect installation guide](../hybrid/connect/how-to-connect-install-prerequisites.md).
+1. To authenticate hybrid identities, you must first set up Microsoft Entra Connect to synchronize on-premises AD DS users to Microsoft Entra ID. For details, see the [Microsoft Entra Connect installation guide](../hybrid/connect/how-to-connect-install-prerequisites.md).
 
 2. Configure Azure Files or other services to use Microsoft Entra Kerberos authentication. For instructions, see [Enable Microsoft Entra Kerberos authentication](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust#enable-microsoft-entra-kerberos-authentication?tabs=azure-portal).
 

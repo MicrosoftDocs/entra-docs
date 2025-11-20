@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 07/30/2025
+ms.date: 11/18/2025
 #Customer intent: As a developer, I want to build an Angular single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
 ---
 
@@ -73,7 +73,7 @@ In this tutorial, you:
         </form>
         ```
 
-4. Open the *sign-in/sign-in.component.scss* file and add the content from [sign-in.component.scss](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.scss).
+
 
 ## Update the routing module
 

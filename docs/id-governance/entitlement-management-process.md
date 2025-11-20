@@ -14,13 +14,13 @@ ms.reviewer: mamkumar
 ---
 # Request process and email notifications in entitlement management
 
-When a user submits a request to an access package, a process begins to deliver that access request. Entitlement management sends email notifications to approvers and requestors when key events occur during the process. This article describes the request process and the email notifications that are sent.
+When an identity submits a request to an access package, a process begins to deliver that access request. Entitlement management sends email notifications to approvers and requestors when key events occur during the process. This article describes the request process and the email notifications that are sent.
 
 ## Who can request an access package
 
-The catalog, access package, and policy settings control whether a user can request an access package.
+The catalog, access package, and policy settings control whether an identity can request an access package.
 
-* The catalog setting of **Enabled** determines whether users can request access packages in the catalog.
+* The catalog setting of **Enabled** determines whether identities can request access packages in the catalog.
 * The catalog setting of **Enabled for external users** determines whether users who are from external directories can request access packages in the catalog.
 * The access package setting of **Hidden** determines whether users can see the access package in My access. It doesn't limit whether a user who has a link to the access package can request it.
 * The access package list of incompatible access packages and groups determines whether users who already have other assignments can request.
@@ -28,7 +28,7 @@ The catalog, access package, and policy settings control whether a user can requ
 
 ## Request process
 
-A user that needs access to the resources in an access package can submit an access request. Depending on the configuration of the policy, the request might require an approval. When a request is approved, a process begins to assign the user access to each resource in the access package. The following diagram shows an overview of the process and the different states:
+An identity that needs access to the resources in an access package can submit an access request. Depending on the configuration of the policy, the request might require an approval. When a request is approved, a process begins to assign the user access to each resource in the access package. The following diagram shows an overview of the process and the different states:
 
 ![Approval process diagram](./media/entitlement-management-process/request-process.png)
 

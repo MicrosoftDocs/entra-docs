@@ -11,14 +11,8 @@ ms.date: 05/28/2025
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 
 ---
-# What is Transport Layer Security inspection? (Preview)
-The Transport Layer Security (TLS) protocol uses certificates at the transport layer to ensure the privacy, integrity, and authenticity of data exchanged between two communicating parties. While TLS secures legitimate traffic, malicious traffic like malware and data leakage attacks can still hide behind encryption. The Microsoft Entra Internet Access TLS inspection capability provides visibility into encrypted traffic by making content available for enhanced protection, such as malware detection, data loss prevention, prompt inspection, and other advanced security controls.
-
-> [!IMPORTANT]
-> The Transport Layer Security inspection feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. While in preview, use TLS inspection with care, especially in production environments, thoroughly evaluate before deployment.    
-
-This article gives an overview of the TLS inspection process.
+# What is Transport Layer Security inspection?
+The Transport Layer Security (TLS) protocol uses certificates at the transport layer to ensure the privacy, integrity, and authenticity of data exchanged between two communicating parties. While TLS secures legitimate traffic, malicious traffic like malware and data leakage attacks can still hide behind encryption. The Microsoft Entra Internet Access TLS inspection capability provides visibility into encrypted traffic by making content available for enhanced protection, such as malware detection, data loss prevention, prompt inspection, and other advanced security controls. This article gives an overview of the TLS inspection process.
 
 ## The TLS inspection process
 When you enable TLS inspection, Global Secure Access decrypts HTTPS requests at the service edge and applies security controls like full URL enhanced web content filtering policies. If no security control blocks the request, Global Secure Access encrypts and forwards the request to the destination.
@@ -63,14 +57,18 @@ To get started with TLS inspection, see [Configure Transport Layer Security](how
 |AES256-SHA |
 ## Known limitations
 TLS inspection has the following known limitations:
-- When a TLS inspection rule is enabled, all categories except Education, Government, Finance, and Health and Medicine are decrypted by default. Additionally, Global Secure Access manages a system bypass list that includes common destinations known to be incompatible with TLS inspection. If a request matches the system bypass, the TLS action is logged as Bypassed. Work is underway to support custom TLS rules for intercepting or bypassing specific destinations or categories. In the meantime, use the custom bypass feature in the Internet Access forwarding profile to exclude destinations that TLS inspection affects. 
-- Make sure each certificate signing request (CSR) you generate has a unique certificate name and isn't reused. The signed certificate must stay valid for at least one year.
+- TLS inspection supports up to 100 policies, 1000 rules, and 8000 destinations.
+- Make sure each certificate signing request (CSR) you generate has a unique certificate name and isn't reused. The signed certificate must stay valid for at least 6 months.
 - You can use only one active certificate at a time.
 - TLS inspection doesn't support Application-Layer Protocol Negotiation (ALPN) version 2. If a destination site requires HTTP/2, the upstream TLS handshake fails, and the site isn't accessible when TLS inspection is enabled.
 - TLS inspection doesn't follow Authority Information Access (AIA) and Online Certificate Status Protocol (OCSP) links when validating destination certificates.
-- Many mobile applications implement certificate pinning, which prevents successful TLS inspection and can lead to app failures. As a result, there is limited support for TLS inspection on mobile platforms. At this time, we recommend enabling TLS inspection for the Windows platform only."
+## Mobile platform
+- Many mobile applications implement certificate pinning, which prevents successful TLS inspection, resulting in handshake failures or loss of functionality. To reduce risk, enable TLS inspection in a test environment first and validate that critical applications are compatible. For apps that rely on certificate pinning, configure TLS inspection custom rules to bypass these destinations using domain-based or category-based rules.
 
 ## Related content
 
-* [Configure Transport Layer Security](how-to-transport-layer-security.md)
+* [Configure Transport Layer Security Policies](how-to-transport-layer-security.md)
+
+* [Configure Transport Layer Security Settings](how-to-transport-layer-security-settings.md)
+
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)

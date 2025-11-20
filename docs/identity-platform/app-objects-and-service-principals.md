@@ -8,7 +8,7 @@ ms.date: 10/01/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 ms.topic: concept-article
-ms.custom: sfi-image-nochange
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 # Customer intent: As an application developer, I want to understand the relationship between application objects and service principal objects in Microsoft Entra ID, so that I can properly register and manage my application's identity and access management functions.
 ---
 
@@ -102,7 +102,9 @@ az ad sp list --filter "appId eq '{AppId}'"
 
 ### Consequences of modifying and deleting applications
 
-Any changes that you make to your application object are also reflected in its service principal object in the application's home tenant only (the tenant where it was registered). This means that deleting an application object will also delete its home tenant service principal object. However, restoring that application object through the app registrations UI won't restore its corresponding service principal. For more information on deletion and recovery of applications and their service principal objects, see [delete and recover applications and service principal objects](~/identity/enterprise-apps/delete-recover-faq.yml).
+Any changes that you make to your application object are also reflected in its service principal object in the application's home tenant only (the tenant where it was registered). This means that deleting an application object will also delete its home tenant service principal object. However, restoring that application object through the app registrations UI won't restore its corresponding service principal. 
+
+For more information on deletion and recovery of applications and their service principal objects, see [delete and recover applications and service principal objects](~/identity/enterprise-apps/delete-recover-faq.yml).
 
 ## Example
 

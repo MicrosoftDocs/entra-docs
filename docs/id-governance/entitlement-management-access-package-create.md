@@ -18,11 +18,11 @@ An access package enables you to do a one-time setup of resources and policies t
 
 All access packages must be in a container called a catalog. A catalog defines what resources you can add to your access package. If you don't specify a catalog, your access package goes in the general catalog. Currently, you can't move an existing access package to a different catalog.
 
-An access package can be used to assign access to roles of multiple resources that are in the catalog. If you're an administrator or catalog owner, you can add resources to the catalog while you're creating an access package. You can also add resources after the access package is created, and users assigned to the access package will also receive the extra resources.
+An access package can be used to assign access to roles of multiple resources that are in the catalog. If you're an administrator or catalog owner, you can add resources to the catalog while you're creating an access package. You can also add resources after the access package is created, and identities assigned to the access package will also receive the extra resources.
 
 If you're an access package manager, you can't add resources that you own to a catalog. You're restricted to using the resources available in the catalog. If you need to add resources to a catalog, you can ask the catalog owner.
 
-All access packages must have at least one policy for users to be assigned to them. Policies specify who can request the access package, along with approval and lifecycle settings, or how access is automatically assigned. When you create an access package, you can create an initial policy for users in your directory, for users not in your directory, or for administrator direct assignments only.
+All access packages must have at least one policy for identities to be assigned to them. Policies specify who can request the access package, along with approval and lifecycle settings, or how access is automatically assigned. When you create an access package, you can create an initial policy for identities in your directory, for identities not in your directory, or for administrator direct assignments only.
 
 ![Diagram of an example marketing catalog, including its resources and its access package.](./media/entitlement-management-access-package-create/access-package-create.png)
 
@@ -34,7 +34,7 @@ Here are the high-level steps to create an access package with an initial policy
 
 1. Add resource roles from resources in the catalog to your access package.
 
-1. Specify an initial policy for users who can request access.
+1. Specify an initial policy for identities who can request access for themselves or [on-behalf-of other identities](entitlement-management-request-behalf.md).
 
 1. Specify approval settings and lifecycle settings in that policy.
 
@@ -72,11 +72,11 @@ On the **Basics** tab, you give the access package a name and specify which cata
 
 ## Select resource roles
 
-On the **Resource roles** tab, you select the resources to include in the access package. Users who request and receive the access package receive all the resource roles, such as group membership in the access package.
+On the **Resource roles** tab, you select the resources to include in the access package. Identities who request and receive the access package receive all the resource roles, such as group membership in the access package.
 
 If you're not sure which resource roles to include, you can skip adding them while creating the access package, and then [add them](entitlement-management-access-package-resources.md) later.
 
-1. Select the resource type that you want to add (**Groups and Teams**, **Applications**, or **SharePoint sites**).
+1. Select the resource type that you want to add (**Groups and Teams**, **Applications**, **SharePoint sites**, **Microsoft Entra role (Preview)**, **API Permissions (Preview)**, or **Custom Data Provided Resource**).
 
 1. In the **Select applications** panel that appears, select one or more resources from the list.
 
@@ -91,21 +91,25 @@ If you're not sure which resource roles to include, you can skip adding them whi
 
     If you're at least an Identity Governance Administrator, or catalog owner, you have the additional option of selecting resources that you own or administer but that aren't yet in the catalog. If you select resources in the directory but not currently in the selected catalog, these resources are also added to the catalog for other catalog administrators to build access packages with. To see all the resources in the directory that can be added to the catalog, select the **See all** checkbox at the top of the panel. If you want to select only resources that are currently in the selected catalog, leave the **See all** checkbox cleared (the default state).
 
-1. In the **Role** list, select the role that you want users to be assigned for the resource. For more information on selecting the appropriate roles for a resource, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
+1. In the **Role** list, select the role that you want identities to be assigned for the resource. For more information on selecting the appropriate roles for a resource, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 
     ![Screenshot that shows resource role selection for a new access package.](./media/entitlement-management-access-package-create/resource-roles-role.png)
 1. For [groups managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), both active and eligible roles are available as options.
     :::image type="content" source="media/entitlement-management-access-package-create/pim-for-groups-roles.png" alt-text="Screenshot of available roles to be assigned to PIM for groups resource in an access package.":::
+1. For [assigning Microsoft Entra roles](entitlement-management-roles.md), both active and eligible member assignments are available as options.
+1. For assigning API permissions, select one of more API permission from the list.
+    :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
+
 1. Select **Next: Requests**.
 
 
 ## Create the initial policy
 
-On the **Requests** tab, you create the first policy to specify who can request the access package. You also configure approval settings for that policy. Later, after creating the access package with this initial policy, you can [add more policies](entitlement-management-access-package-request-policy.md) to allow additional groups of users to request the access package with their own approval settings, or to assign access automatically.
+On the **Requests** tab, you create the first policy to specify who can request the access package. You also configure approval settings for that policy. Later, after creating the access package with this initial policy, you can [add more policies](entitlement-management-access-package-request-policy.md) to allow additional groups of identities to request the access package with their own approval settings, or to assign access automatically.
 
 ![Screenshot that shows the Requests tab for a new access package.](./media/entitlement-management-access-package-create/requests.png)
 
-Depending on which users you want to be able to request this access package, perform the steps in one of the following sections [Allow users in your directory to request the access package](#allow-users-in-your-directory-to-request-the-access-package), [Allow users not in your directory to request the access package](#allow-users-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for users who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
+Depending on which identities you want to be able to request this access package, perform the steps in one of the following sections [Allow users, service principals, and agent identities in your directory to request the access package](#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package), [Allow identities not in your directory to request the access package](#allow-identities-not-in-your-directory-to-request-the-access-package) or [Allow administrator direct assignments only](#allow-administrator-direct-assignments-only). If you're not sure which request or approval settings you'll need, you plan to create assignments for identities who already have access to the underlying resources, or you plan to use access package automatic assignment polices to automate access, then select the [direct assignment policy](#allow-administrator-direct-assignments-only) as the initial policy.
 
 [!INCLUDE [Entitlement management request policy](../includes/entra-entitlement-management-request-policy.md)]
 
@@ -123,9 +127,9 @@ On the **Review + create** tab, you can review your settings and check for any v
 
     The new access package appears in the list of access packages.
 
-1. If the access package is intended to be visible to everyone in scope of the policies, then leave the **Hidden** setting of the access package at **No**. Optionally, if you intend to only allow users with the direct link to request the access package, [edit the access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) to change the **Hidden** setting to **Yes**. Then [copy the link to request the access package](entitlement-management-access-package-settings.md#share-link-to-request-an-access-package) and share it with users who need access.
+1. If the access package is intended to be visible to everyone in scope of the policies, then leave the **Hidden** setting of the access package at **No**. Optionally, if you intend to only allow identities with the direct link to request the access package, [edit the access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) to change the **Hidden** setting to **Yes**. Then [copy the link to request the access package](entitlement-management-access-package-settings.md#share-link-to-request-an-access-package) and share it with identities who need access.
 
-1. You can next [add more policies](entitlement-management-access-package-request-policy.md) to the access package, [configure separation of duties checks](entitlement-management-access-package-incompatible.md), or [directly assign a user](entitlement-management-access-package-assignments.md#directly-assign-a-user).
+1. You can next [add more policies](entitlement-management-access-package-request-policy.md) to the access package, [configure separation of duties checks](entitlement-management-access-package-incompatible.md), or [directly assign an identity](entitlement-management-access-package-assignments.md#directly-assign-an-identity).
 
 ## Create an access package programmatically
 

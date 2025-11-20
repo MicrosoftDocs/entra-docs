@@ -78,11 +78,11 @@ Entitlement management has the following roles, with permissions for administeri
 | Catalog creator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage catalogs. Typically an IT administrator who isn't a Global Administrator, or a resource owner for a collection of resources. The person that creates a catalog automatically becomes the catalog's first catalog owner, and can add more catalog owners. A catalog creator can’t manage or see catalogs that they don’t own and can’t add resources they don’t own to a catalog. If the catalog creator needs to manage another catalog or add resources they don’t own, they can request to be a co-owner of that catalog or resource. |
 | Connected Organization Administrator | `e65cf63f-9cc2-4b48-8871-cb667e9d90f` | Create and manage connected organizations. |
 
-Entitlement management has the following roles that are defined for each particular catalog, for administering access packages and other configuration within a catalog. An administrator or a catalog owner can add users, groups of users, or service principals to these roles.
+Entitlement management has the following roles that are defined for each particular catalog, for administering access packages and other configuration within a catalog. An administrator or a catalog owner can add identities, groups of identities, or service principals to these roles.
 
 | Entitlement management role | Role definition ID | Description |
 | --- | --- | -- |
-| Catalog owner | `ae79f266-94d4-4dab-b730-feca7e132178` | Edit and manage access packages and other resources in a catalog. Typically an IT administrator or resource owners, or a user who the catalog owner chooses. |
+| Catalog owner | `ae79f266-94d4-4dab-b730-feca7e132178` | Edit and manage access packages and other resources in a catalog. Typically an IT administrator or resource owners, or an identity who the catalog owner chooses. |
 | Catalog reader | `44272f93-9762-48e8-af59-1b5351b1d6b3` | View existing access packages within a catalog. |
 | Access package manager | `7f480852-ebdc-47d4-87de-0d8498384a83` | Edit and manage all existing access packages within a catalog. |
 | Access package assignment manager | `e2182095-804a-4656-ae11-64734e9b7ae5` | Edit and manage all existing access packages' assignments. |
@@ -110,8 +110,8 @@ The following table lists the tasks that the entitlement management roles can do
 | [Create a new access package in a catalog](entitlement-management-access-package-create.md) | :heavy_check_mark: |  |  | :heavy_check_mark:  | :heavy_check_mark:  |  |
 | [Change resource roles in an access package](entitlement-management-access-package-resources.md) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Create and edit policies, including policies for external collaboration](entitlement-management-access-package-request-policy.md) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Directly assign a user to an access package](entitlement-management-access-package-assignments.md#directly-assign-a-user) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
-| [Directly remove a user from an access package](entitlement-management-access-package-assignments.md#remove-an-assignment) | :heavy_check_mark:  |  |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Directly assign an identity to an access package](entitlement-management-access-package-assignments.md#directly-assign-an-identity) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
+| [Directly remove an identity from an access package](entitlement-management-access-package-assignments.md#remove-an-assignment) | :heavy_check_mark:  |  |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [View who has an assignment to an access package](entitlement-management-access-package-assignments.md#view-who-has-an-assignment) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
 | [View an access package's requests](entitlement-management-access-package-requests.md#view-requests) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:  |
 | [View a request's delivery errors](entitlement-management-troubleshoot.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  |  | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
@@ -124,24 +124,24 @@ The following table lists the tasks that the entitlement management roles can do
 To determine the least privileged role for a task, you can also reference [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md#entitlement-management-least-privileged-roles).
 
 > [!NOTE]
-> Users that have been assigned the Access package assignment manager role will no longer be able to bypass approval settings when directly assigning a user if the access package policy requires approval. If you have a scenario in which you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.
+> Identities that have been assigned the Access package assignment manager role will no longer be able to bypass approval settings when directly assigning an identity if the access package policy requires approval. If you have a scenario in which you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to identities who need access.
 
 ## Required roles to add resources to a catalog
 
 A Global Administrator can add or remove any group (cloud-created security groups or cloud-created Microsoft 365 Groups), application, or SharePoint Online site in a catalog.
 
 > [!NOTE]
-> Users that have been assigned the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User Administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the **Identity Governance Administrator** role.
+> Identities that have been assigned the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they do not own.  A User Administrator who is a catalog owner can add or remove any group or application in the catalog they own, except for a group configured as assignable to a directory role.  For more information on role-assignable groups, reference [Create a role-assignable group in Microsoft Entra ID](~/identity/role-based-access-control/groups-create-eligible.md). If users in your organization have been assigned the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these identities the **Identity Governance Administrator** role.
 
-For a user who isn't a Global Administrator, to add groups, applications, or SharePoint Online sites to a catalog, that user must have *both* the ability to perform actions on that resource, and be a catalog owner role in entitlement management for the catalog. The most common way a user can have the ability to perform actions for a resource is by being in a Microsoft Entra directory role that allows them to administer the resource. Or for resources that have owners, the user can have the ability to perform actions by having been assigned as an owner of the resource.
+For an identity who isn't a Global Administrator, to add groups, applications, or SharePoint Online sites to a catalog, that identity must have *both* the ability to perform actions on that resource, and be a catalog owner role in entitlement management for the catalog. The most common way an identity can have the ability to perform actions for a resource is by being in a Microsoft Entra directory role that allows them to administer the resource. Or for resources that have owners, the identity can have the ability to perform actions by having been assigned as an owner of the resource.
 
-The actions that entitlement management checks when a user adds a resource to a catalog are:
+The actions that entitlement management checks when an identity adds a resource to a catalog are:
 
-* To add a security group or Microsoft 365 group: the user must be permitted to perform the `microsoft.directory/groups/members/update` and `microsoft.directory/groups/owners/update` actions
-* To add an application: the user must be permitted to perform the `microsoft.directory/servicePrincipals/appRoleAssignedTo/update` action
-* To add a SharePoint Online site: the user must be a SharePoint Administrator or the user must be SharePoint site administrator of the site.
+* To add a security group or Microsoft 365 group: the identity must be permitted to perform the `microsoft.directory/groups/members/update` and `microsoft.directory/groups/owners/update` actions
+* To add an application: the identity must be permitted to perform the `microsoft.directory/servicePrincipals/appRoleAssignedTo/update` action
+* To add a SharePoint Online site: the identity must be a SharePoint Administrator or the identity must be SharePoint site administrator of the site.
 
-The following table lists some of the role combinations that include the actions that allow users in those role combinations to add resources to a catalog. To remove resources from a catalog, you must also have a role or ownership with those same actions.
+The following table lists some of the role combinations that include the actions that allow identities in those role combinations to add resources to a catalog. To remove resources from a catalog, you must also have a role or ownership with those same actions.
 
 | Microsoft Entra directory role | Entitlement management role | Can add security group | Can add Microsoft 365 Group | Can add app | Can add SharePoint Online site |
 | --- | :---: | :---: | :---: | :---: | :---: |

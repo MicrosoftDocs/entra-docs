@@ -1,17 +1,19 @@
 ---
 title: Known Limitations for Global Secure Access
-description: This article details the known issues and limitations you might encounter when using Global Secure Access.
+ms.reviewer: teresayao
+description: Discover the known limitations of Global Secure Access, including platform-specific issues and mitigations, to ensure seamless deployment and management.
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 09/23/2025
+ms.date: 11/07/2025
 ms.service: global-secure-access
-
+ms.custom: agent-id-ignite
 
 
 # Customer intent: As an administrator, I want to access the known limitations for Global Secure Access in one place. This article gathers all known issues and limitations into a single reference point. Global Secure Access articles with a "known limitations" section point to this article. 
 ---
+
 # Known limitations for Global Secure Access
 
 Global Secure Access is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. 
@@ -27,14 +29,14 @@ Known limitations for the Global Secure Access client for Windows include:
 The Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS. To disable DNS in the browser, see [Secure DNS disabled in browsers](troubleshoot-global-secure-access-client-diagnostics-health-check.md#secure-dns-disabled-in-browsers-microsoft-edge-chrome-firefox). 
 
 #### DNS over TCP
-DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the Global Secure Access client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
+DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. The Global Secure Access client doesn't currently support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
 - Microsoft Edge   
 ``[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]   
 "BuiltInDnsClientEnabled"=dword:00000000``
 - Chrome   
 ``[HKEY_CURRENT_USER\Software\Policies\Google\Chrome]   
 "BuiltInDnsClientEnabled"=dword:00000000``   
-Also add browsing `chrome://flags` and disabling `Async DNS resolver`.
+Also, add browsing `chrome://flags` and disable `Async DNS resolver`.
 
 #### Name Resolution Policy Table rules in Group Policy not supported
 The Global Secure Access client for Windows doesn't support Name Resolution Policy Table (NRPT) rules in Group Policy. To support private DNS, the client configures local NRPT rules on the device. These rules redirect relevant DNS queries to the private DNS. If NRPT rules are configured in Group Policy, they override local NRPT rules configured by the client and private DNS doesn't work.   
@@ -169,7 +171,7 @@ Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 
 Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
 
 #### WSL 2 connectivity
-When the Global Secure Access client for Windows is enabled on the host machine, outgoing connections from the Windows Subsystem for Linux (WSL) 2 environment might be blocked. To mitigate this occurrence, create a `.wslconfig` file that sets dnsTunneling to **false**. This way, all traffic from the WSL bypasses Global Secure Access and goes directly to the network. For more information, see [Advanced settings configuration in WSL](/windows/wsl/wsl-config#wslconfig).
+When the Global Secure Access client for Windows is enabled on the host machine, outgoing connections from the Windows Subsystem for Linux (WSL) 2 environment might be blocked. To fix this issue, create a `.wslconfig` file that sets dnsTunneling to **false**. This way, all traffic from the WSL bypasses Global Secure Access and goes directly to the network. For more information, see [Advanced settings configuration in WSL](/windows/wsl/wsl-config#wslconfig).
 
 ### [macOS client](#tab/macos-client)
 Known limitations for the Global Secure Access client for macOS include:
@@ -205,50 +207,49 @@ Known limitations for the Global Secure Access client for Android include:
 - Private Domain Name System (DNS) must be disabled on the device. You can usually find this setting in System > Network and Internet.
 - Using non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance issues and unpredictable system errors.  
 - Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
-- Kerberos SSO isn't supported.
 
 ### [iOS client](#tab/ios-client)
 Known limitations for the Global Secure Access client for iOS include:
 - Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for Exchange Online) isn't supported.
 - Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
-- Kerberos SSO isn't supported.
 - Captive portal isn't supported.
 - Compliant network check enforcement isn't supported.
 - Memory leaks can result in the gradual increase of memory usage. This increased memory usage might lead to occasional VPN restarts, but the impact on user experience is minimal.
-- Streaming high quality video might cause pauses.
+- Streaming high-quality video might cause pauses.
 
 ---    
 
-## Remote networks limitations   
+## Remote network limitations   
 Known limitations for remote networks include:   
-- The maximum number of remote networks per tenant is 10. The maximum number of device links per remote network is four.
-- Microsoft traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access client.
-- You must use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity only supports Microsoft Entra Internet Access.
-- At this time, remote networks can only be assigned to the Microsoft traffic forwarding profile.
+- The maximum number of remote networks per tenant is 200, and the maximum number of device links per remote network is 25. To increase these limits further for your tenant, contact Microsoft Support.   
+- Universal Conditional Access lets you apply identity controls like requiring multifactor authentication, requiring a compliant device, or defining an acceptable sign-in risk to network traffic—not just cloud apps. These identity controls apply to devices with the Global Secure Access client installed. Remote network connectivity is a clientless approach where customers create an IPsec tunnel from their on-premises equipment to the Global Secure Access edge service. Network traffic from all devices at that remote network (or branch office) is sent to Global Secure Access through the IPsec tunnel. In other words, Conditional Access policies for Microsoft or Internet traffic are only enforced when a user has the Global Secure Access client.
+- Use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity supports only Microsoft Entra Internet Access.
+- Internet over remote network connectivity is supported only in the specific regions listed in the **Region** drop-down when you create a remote network.
+- The [Custom Bypass](how-to-manage-internet-access-profile.md#internet-access-traffic-forwarding-profile-policies) feature in the Internet traffic forwarding profile doesn't work with remote network connectivity. You must manually bypass specific URLs from your Customer Premises Equipment (CPE).
 
 ## Access controls limitations
 Known limitations for access controls include:   
-- Applying Conditional Access policies to Private Access traffic isn't currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
-- Microsoft traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access Client.
+- Applying Conditional Access policies to Private Access traffic isn't currently supported. To model this behavior, apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
+- Microsoft traffic is accessible through remote network connectivity without the Global Secure Access Client; however, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access Client.
 - Compliant network check is currently not supported for Private Access applications.
 - When source IP restoration is enabled, you can only see the original public egress (source) IP. The IP address of the Global Secure Access service isn't visible. If you want to see the Global Secure Access service IP address, disable source IP restoration.
 - Currently only [Microsoft resources](/microsoft-365/enterprise/urls-and-ip-address-ranges) evaluate IP location-based Conditional Access policies, as the original source IP address isn't known to non-Microsoft resources protected by continuous access evaluation (CAE).
-- If you're using CAE’s [strict location enforcement](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md), users are blocked despite being in a trusted IP range. To resolve this condition, do one of the following recommendations:
+- If you use CAE’s [strict location enforcement](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md), users are blocked despite being in a trusted IP range. To resolve this condition, follow one of these recommendations:
     - If you have IP location-based Conditional Access policies targeting non-Microsoft resources, don't enable strict location enforcement.  
     - Ensure that Source IP Restoration supports the traffic. If not, don't send the relevant traffic through Global Secure Access.
-- At this time, connecting through the Global Secure Access client is required to acquire Private Access traffic.
-- If you enabled Universal Tenant Restrictions and you access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
+- Currently, connecting through the Global Secure Access client is required to acquire Private Access traffic.
+- If you enable Universal Tenant Restrictions and access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
     - `?feature.msaljs=true&exp.msaljsexp=true`
     - For example, you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
         - If you received the "access denied" error message for the URL `https://entra.microsoft.com/`, then add the feature flag as follows:   `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
-- Only the Global Secure Access client for Windows, starting with version 1.8.239.0, is aware of Universal CAE. On other platforms, the Global Secure Access client uses regular access tokens.
-- Microsoft Entra ID issues short-lived tokens for Global Secure Access. The lifetime for a Universal CAE access token is between 60 and 90 minutes, with support for near real-time revocation.
+- Only the Global Secure Access client for Windows (version 1.8.239.0 or later) supports Universal CAE. On other platforms, the Global Secure Access client uses regular access tokens.
+- Microsoft Entra ID issues short-lived tokens for Global Secure Access. A Universal CAE access token lasts 60 to 90 minutes and supports near real-time revocation.
 - It takes approximately two to five minutes for the Microsoft Entra ID signal to reach the Global Secure Access client and prompt the user to reauthenticate.
-- The Global Secure Access client prompts the user three times to authenticate with a 2-minute grace period each time. This means that the entire CAE flow includes 4-5 minutes to signal the Global Secure Access client, then up to a 6-minute grace period, resulting in a disconnect after approximately 10 minutes.
+- The Global Secure Access client prompts the user three times to authenticate, with a 2-minute grace period each time. This means that the entire CAE flow includes 4-5 minutes to signal the Global Secure Access client, then up to a 6-minute grace period, resulting in a disconnect after approximately 10 minutes.
 ## Traffic forwarding profile limitations
 Known limitations for traffic forwarding profiles include:
-- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Private Access traffic can't be acquired from remote networks.
-- Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet. 
+- Currently, Private Access traffic can only be acquired with the Global Secure Access client. Private Access traffic can't be acquired from remote networks.
+- Tunneling traffic to Private Access destinations by IP address works only for IP ranges outside the end-user device's local subnet. 
 - You must disable DNS over HTTPS (Secure DNS) to tunnel network traffic based on the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile.
 
 ## Private Access limitations
@@ -259,16 +260,21 @@ Known limitations for Private Access include:
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   
+- An admin can create up to 100 web content filtering policies, up to 1,000 rules based on 8,000 total FQDNs, and up to 256 security profiles.
+- Admins can currently configure rules based on up to 1,000 total URLs.
 - Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
+- TLS inspection supports up to 100 TLS inspection policies, 1000 rules, and 8000 destinations.
 - The platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
-- The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To make sure that all traffic is routed to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
+- The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic and transfers IPv6 traffic directly to the network. To make sure that all traffic routes to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
 - UDP isn't supported on this platform yet.
+- End-user notifications are in development.
+- Transport Layer Security (TLS) inspection is in development.
+- URL path-based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - User-friendly end-user notifications are in development.
 - Remote network connectivity for Internet Access is in development.
-- Transport Layer Security (TLS) inspection is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
 - Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.
 
 ## B2B guest access (preview) limitations
 <a name="b2b-guest-access-limitations"></a>
-- Multi-session Azure Virtual Desktop is not supported by the Global Secure Access clients.
+- The Global Secure Access client doesn't support multi-session Azure Virtual Desktop.

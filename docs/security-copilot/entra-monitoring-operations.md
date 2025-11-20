@@ -1,6 +1,6 @@
 ---
 title: Understand monitoring with Microsoft Security Copilot
-description: Use Microsoft Security Copilot in the Microsoft Entra admin center to monitor sign-in activities, audit logs, health alerts, and service level agreements.
+description: Use Microsoft Security Copilot in the Microsoft Entra admin center to monitor sign-in activities, audit logs, provisioning logs, health alerts, and service level agreements.
 author: cilwerner
 ms.author: cwerner
 manager: pmwongera
@@ -22,6 +22,7 @@ This article describes how an IT administrator could use Microsoft Security Copi
 
 - [Analyze sign-in activities](#analyze-sign-in-activities)
 - [Investigate audit logs for administrative and user changes](#investigate-audit-logs-for-administrative-and-user-changes)
+- [Analyze provisioning activities](#analyze-provisioning-activities)
 - [Improve security posture through recommendations](#improve-security-posture-through-recommendations)
 - [Monitor system health and proactively address alerts](#monitor-system-health)
 - [Track service level agreement (SLA) performance](#track-service-level-agreement-performance)
@@ -36,6 +37,7 @@ The following roles and licenses are required for different monitoring and opera
 |---|---|---|---|
 | **Sign-in logs** | [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader), [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader), [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), or [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader) | [Microsoft Entra ID P1 or P2 license](/entra/id-protection/overview-identity-protection#license-requirements) | Any public cloud tenant with sign-in data |
 | **Audit logs** | [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader), [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader), [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), or [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) | Free license required | Any public cloud tenant with audit activity |
+| **Provisioning logs** | [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), or [Application Owner](/entra/identity/role-based-access-control/permissions-reference#application-owner) | Free for 7 days, then [Microsoft Entra ID P1](/entra/id-protection/overview-identity-protection#license-requirements) thereafter | Any tenant using the [Microsoft Entra provisioning service](../identity/hybrid/what-is-provisioning.md) |
 | **Recommendations** | [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator), [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator), [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator), [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator), [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator), [Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-administrator) | Free Microsoft Entra ID or [P1/P2](/entra/id-protection/overview-identity-protection#license-requirements) | Any tenant, also available in Workload ID |
 | **Health monitoring alerts** | [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader), [Helpdesk Administrator](/entra/identity/role-based-access-control/permissions-reference#helpdesk-administrator), [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader), [Security Operator](/entra/identity/role-based-access-control/permissions-reference#security-operator), [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), or [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader) | [Microsoft Entra ID P2 licenses](/entra/id-protection/overview-identity-protection#license-requirements) | Public cloud tenant |
 | **Service Level Agreement** | [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader) | Any Microsoft Entra ID license | Any tenant |
@@ -43,6 +45,11 @@ The following roles and licenses are required for different monitoring and opera
 ## Launch Security Copilot in Microsoft Entra
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
+
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.* 
 
 ## Analyze sign-in activities
 
@@ -95,20 +102,52 @@ You can continue your investigation by focusing on group management activities, 
 
 ### Security and authentication activities
 
-To identify potential security issues, focus on security and authentication-related activities in the audit logs. This helps ensure that security policies are being followed and that any suspicious activities are promptly investigated. Use the following prompts to get the information you need:
+To identify potential security issues, focus on security and authentication-related activities in the audit logs. This helps ensure that security policies are being followed and that any suspicious activities are promptly investigated. You can also investigate service principal activities to ensure these critical operations are functioning correctly. Use the following prompts to get the information you need:
 
 - *Show me risky sign-ins.*
 - *List suspicious logins.*
 - *Are there any risky authentications?*
+- *List jobs for this service principal.*
 
-### Provisioning and service activities
+## Analyze provisioning activities
 
-You can also investigate provisioning and service principal activities to ensure that these critical operations are functioning correctly and to identify any anomalies that may require attention. Use the following prompts to get the information you need.
+After investigating audit logs, you can focus specifically on provisioning activities within your Microsoft Entra environment. Provisioning logs provide valuable insights into user account lifecycle operations, helping administrators ensure that users are being created, updated, and deleted as intended across connected applications and systems. This analysis is crucial for maintaining the integrity of your identity infrastructure and ensuring smooth user management processes.
+
+### User provisioning monitoring
+
+Start by monitoring individual user provisioning activities to track account lifecycle events and ensure that provisioning operations are working correctly for specific users. Use the following prompts to get the information you need:
+
+- *Show provisioning logs for this user.*
+- *Get provisioning history for user.*
+- *Show user provisioning activity.*
+- *Show recent provisioning events for this user.*
+
+### Provisioning failure analysis
+
+When provisioning issues occur, it's important to quickly identify and resolve them to prevent user access problems. Focus on provisioning failures to understand what went wrong and take corrective action. Use the following prompts to get the information you need:
+
+- *Show provisioning failures.*
+- *List all failed provisioning attempts.*
+- *Show the provisioning error logs.*
+
+### Provisioning success tracking
+
+Monitor successful provisioning operations to ensure that your provisioning service is functioning optimally and to track completed lifecycle events. This helps verify that intended changes are being applied correctly. Use the following prompts to get the information you need:
+
+- *Show the successful provisioning deletions.*
+- *Were any users successfully deleted by the provisioning service?*
+- *Show successful provisioning disables.*
+- *Were any users successfully disabled by the provisioning service?*
+- *Show successful provisioning creates.*
+- *List successful object creations.*
+
+### Provisioning job status monitoring
+
+You can also monitor the status and performance of your provisioning jobs to ensure they are running correctly and identify any issues that may need attention. Use the following prompts to get the information you need:
 
 - *Check provisioning job status.*
 - *Is my provisioning job completed?*
 - *Show provisioning jobs for this service principal.*
-- *List jobs for this service principal.*
 
 ## Improve security posture through recommendations
 
@@ -195,3 +234,4 @@ Use the following prompts to monitor your SLA performance and identify any poten
 - Learn more about [SLA performance for Microsoft Entra ID](/entra/identity/monitoring-health/reference-sla-performance)
 - Learn more about [sign-in logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-sign-ins)
 - Learn more about [audit logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-audit-logs)
+- Learn more about [provisioning logs in Microsoft Entra ID](/entra/identity/monitoring-health/concept-provisioning-logs)

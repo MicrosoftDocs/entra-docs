@@ -3,7 +3,7 @@ title: Bulk invite B2B users
 description: Learn how to bulk invite B2B collaboration users in Microsoft Entra External ID. Follow the steps to prepare a CSV file, upload it, and verify guest users in the directory.
 ms.service: entra-external-id
 ms.topic: tutorial
-ms.date: 10/21/2024
+ms.date: 11/17/2025
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -11,7 +11,6 @@ ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra admin, I want to learn how to bulk invite external users to my organization using the Microsoft Entra admin center, so that I can efficiently manage user invitations and onboarding.
 ---
-
 # Tutorial: Bulk invite B2B collaboration users in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
@@ -30,13 +29,11 @@ If you use Microsoft Entra B2B collaboration to work with external partners, you
 
 ## Invite guest users in bulk
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Entra ID** > **Users**.
-4. Select **Bulk operations** > **Bulk invite**.
+1. Select **Bulk operations** > **Bulk invite**.
 
     :::image type="content" source="media/tutorial-bulk-invite/bulk-invite-button.png" alt-text="Screenshot of the bulk invite button.":::
-
 
 4. On the **Bulk invite users** page, select **Download** to get a [valid .csv template](tutorial-bulk-invite.md#understand-the-csv-template) with invitation properties.
 
@@ -61,15 +58,13 @@ If you use Microsoft Entra B2B collaboration to work with external partners, you
 
     :::image type="content" source="media/tutorial-bulk-invite/bulk-operation-results.png" alt-text="Screenshot of the bulk operation results." lightbox="media/tutorial-bulk-invite/bulk-operation-results.png":::
 
-
 11. When the job completes, a notification appears indicating that the bulk operation succeeded.
-
 
 ## Understand the CSV template
 
 A template is available to help you invite Microsoft Entra guest users in bulk. Download and fill in the bulk upload CSV template, which looks something like this example:
 
-![Spreadsheet for upload and call-outs explaining the purpose and values for each row and column](media/tutorial-bulk-invite/understand-template.png)
+:::image type="content" source="media/tutorial-bulk-invite/understand-template.png" alt-text="Screenshot of a spreadsheet with callouts explaining the purpose and values for each row and column.":::
 
 ### CSV template structure
 
@@ -100,6 +95,7 @@ Check to see that the guest users you added exist in the directory either in the
 ### View guest users with PowerShell
 
 To view guest users with PowerShell, you need the [`Microsoft.Graph.Users` PowerShell module](/powershell/module/microsoft.graph.users/?view=graph-powershell-1.0&viewFallbackFrom=graph-powershell-beta&preserve-view=true). Then sign in using the `Connect-MgGraph` command with an admin account to consent to the required scopes:
+
 ```powershell
 Connect-MgGraph -Scopes "User.Read.All"
 ```

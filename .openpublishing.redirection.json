@@ -3011,10 +3011,54 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-configure-cloudflare-integration.md",
+      "redirect_url": "/entra/external-id/customers/how-to-configure-waf-integration",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/pksha-chatbot-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/pksha-chatagent-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-passwordless.md",
+      "redirect_url": "/entra/identity/authentication/concept-authentication-passkeys-fido2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/authentication/concept-authentication-methods.md",
+      "redirect_url": "/entra/identity/authentication/overview-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/deactivate-application-portal.md",
+      "redirect_url": "/entra/identity/enterprise-apps/delete-application-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-discovery-onboard.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-management.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-remediation-plans.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-contact-app-owners.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
+      "redirect_url": "/entra/security-copilot/entra-agents",
       "redirect_document_id": false
     }
   ]
 }
-

@@ -1,5 +1,5 @@
 ---
-title: Configure Transport Layer Security Inspection Policies (preview)
+title: Configure Transport Layer Security Inspection Policies
 description: Learn how to configure a Transport Layer Security inspection policy and assign it to users in your organization.
 author: HULKsmashGithub
 ms.author: jayrusso
@@ -7,20 +7,14 @@ manager: dougeby
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 10/28/2025
+ms.date: 11/07/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context-aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
 ---
 
-# Configure Transport Layer Security inspection policies (preview)
+# Configure Transport Layer Security inspection policies
 Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access lets you decrypt and inspect encrypted traffic at service edge locations. This feature lets Global Secure Access apply advanced security controls like threat detection, content filtering, and granular access policies. These access policies help protect against threats that might be hidden in encrypted communications.
-
-> [!IMPORTANT]
-> The Transport Layer Security inspection feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.   
-> While in preview, don't use TLS inspection in production environments.    
- 
 This article explains how to create a context-aware Transport Layer Security inspection policy and assign it to users in your organization.
 
 ## Prerequisites   
@@ -104,3 +98,4 @@ To disable TLS inspection:
 * [Create a TLS certificate using OpenSSL](scripts/powershell-open-secure-sockets-layer.md) 
 * [What is Transport Layer Security inspection?](concept-transport-layer-security.md)
 * [Frequently asked questions for Transport Layer Security inspection](faq-transport-layer-security.yml)
+* [Troubleshoot Transport Layer Security inspection issues](troubleshoot-transport-layer-security.md)

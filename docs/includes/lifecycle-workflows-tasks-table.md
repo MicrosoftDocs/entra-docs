@@ -32,10 +32,12 @@ Lifecycle Workflows currently support the following tasks:
 | [Cancel all pending access package assignment requests for user](../id-governance/lifecycle-workflow-tasks.md#cancel-all-pending-access-package-assignment-requests-for-user)     |    498770d9-bab7-4e4c-b73d-5ded82a1d0b3    | Leaver        |
 | [Remove selected license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-selected-license-assignments-from-user)     | 5fc402a8-daaf-4b7b-9203-da868b05fc5f         | Leaver, Mover |
 | [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user)     | 509589a4-0466-4471-829e-49c5e502bdee         | Leaver, Mover |
+| [Send email to manager about sponsorship changes (Preview)](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-about-sponsorship-changes-preview)     | b8c4e1f9-3a7d-4b2e-9c5f-8d6a9b1c2e3f        | Leaver, Mover |
+| [Send email to co-sponsors about sponsor changes (Preview)](../id-governance/lifecycle-workflow-tasks.md#send-email-to-co-sponsors-about-sponsor-changes-preview)     | ad3b85cd-75b1-43e7-b4b9-0e52faba3944        | Leaver, Mover |
 | [Remove all license assignments from user](../id-governance/lifecycle-workflow-tasks.md#remove-all-license-assignments-from-user)     | 8fa97d28-3e52-4985-b3a9-a1126f9b8b4e         | Leaver |
 | [Delete user](../id-governance/lifecycle-workflow-tasks.md#delete-user)   |    8d18588d-9ad3-4c0f-99d0-ec215f0e3dff     | Leaver         |
 | [Send email to manager before user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-manager-before-users-last-day)    |    52853a3e-f4e5-4eb8-bb24-1ac09a1da935     | Leaver         |
 | [Send email on user's last day](../id-governance/lifecycle-workflow-tasks.md#send-email-on-users-last-day)    |    9c0a1eaf-5bda-4392-9d9e-6e155bb57411     | Leaver         | 
 | [Send email to user's manager after their last day](../id-governance/lifecycle-workflow-tasks.md#send-email-to-users-manager-after-their-last-day)    |    6f22ddd4-b3a5-47a4-a846-0d7c201a49ce     | Leaver         |
-| [Send email about user inactivity (Preview)](../id-governance/lifecycle-workflow-tasks.md#send-email-about-user-inactivity-preview)    |    92f74cb4-f1b6-4ec0-b766-96210f56edc2     | Leaver         |
+| [Send email about user inactivity](../id-governance/lifecycle-workflow-tasks.md#send-email-about-user-inactivity)    |    92f74cb4-f1b6-4ec0-b766-96210f56edc2     | Leaver         |
 

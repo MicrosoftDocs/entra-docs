@@ -300,6 +300,8 @@ items:
       href: concept-planning-your-solution.md
     - name: Woodgrove demo overview
       href: overview-solutions-customers.md
+    - name: Data residency
+      href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Security settings
       href: concept-security-customers.md
     - name: User profile attributes
@@ -484,7 +486,9 @@ items:
         - name: Azure Web Application Firewall
           href: tutorial-configure-external-id-web-app-firewall.md
         - name: Cloudflare
-          href: tutorial-configure-cloudflare-integration.md
+          href: how-to-configure-waf-integration.md
+        - name: Akamai
+          href: how-to-configure-akamai-integration.md
       - name: Fraud protection integration
         href: how-to-integrate-fraud-protection.md
     - name: Manage users

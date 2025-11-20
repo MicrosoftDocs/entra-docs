@@ -250,8 +250,8 @@ In the provisioning mapping, the attributes selected as **Matching** properties 
    foreach ($u in $existingSapUsers) {
     $id = $u.id
     if (($null -eq $id) -or ($id.length -eq 0)) {
-        write-error "Exported CSV file doesn't contain the id attribute of SAP Cloud Identity Services users."
-        throw "id attribute not available, re-export"
+        write-error "Exported CSV file doesn't contain the ID attribute of SAP Cloud Identity Services users."
+        throw "ID attribute not available, re-export"
         return
     }
     $count++
@@ -377,7 +377,7 @@ As users that are in assigned to the application are updated in Microsoft Entra 
 If you have Microsoft Entra ID Governance, you can automate changes to the application role assignments for SAP Cloud Identity Services in Microsoft Entra ID, to add or remove assignments as people join the organization, or leave or change roles.
 
 * You can [perform a one-time or recurring access review of the application role assignments](~/id-governance/access-reviews-application-preparation.md).
-* You can [create an entitlement management access package for this application](~/id-governance/entitlement-management-access-package-create-app.md). You can have policies for users to be assigned access, either when they request, [by an administrator](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-a-user), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or through [lifecycle workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
+* You can [create an entitlement management access package for this application](~/id-governance/entitlement-management-access-package-create-app.md). You can have policies for users to be assigned access, either when they request, [by an administrator](../../id-governance/entitlement-management-access-package-assignments.md#directly-assign-an-identity), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or through [lifecycle workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
 
 ## Update an SAP Cloud Identity Services application to use the SAP Cloud Identity Services SCIM 2.0 endpoint
 
@@ -405,7 +405,7 @@ Completing the below steps will allow customers that were already previously usi
 GET https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/
 ```
 
-1. Taking the "id" value from the response body of the `GET` request from previous example, run the following command, replacing "[job-id]" with the id value from the `GET` request. The value should have the format of "sapcloudidentityservices.xxxxxxxxxxxxxxx.xxxxxxxxxxxxxxx":
+1. Taking the "ID" value from the response body of the `GET` request from previous example, run the following command, replacing "[job-id]" with the ID value from the `GET` request. The value should have the format of "sapcloudidentityservices.xxxxxxxxxxxxxxx.xxxxxxxxxxxxxxx":
 
 ```
 DELETE https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/[job-id]
