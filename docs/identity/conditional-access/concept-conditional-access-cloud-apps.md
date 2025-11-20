@@ -67,8 +67,10 @@ Because the policy is applied to the Azure management portal and API, any servic
 - Classic deployment model APIs
 - Microsoft 365 admin center
 - Microsoft IoT Central
+- Microsoft Defender Multitenant management
 - SQL Managed Instance
 - Visual Studio subscriptions administrator portal
+  
 
 > [!CAUTION]
 > Conditional Access policies associated with the Windows Azure Service Management API [no longer cover Azure DevOps](/azure/devops/organizations/accounts/conditional-access-policies#azure-resource-manager-audience).
