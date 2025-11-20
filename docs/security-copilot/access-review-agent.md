@@ -225,6 +225,7 @@ The agent settings page displays the identity currently assigned to the agent:
 
 If your agent was previously configured using an administrator's identity, you must migrate it to a dedicated agent identity. Complete this migration by selecting the "*Create agent identity*" option located on the blue banner of the agent overview page or the agent settings page.
 :::image type="content" source="media/access-review-agent/access-review-agent-create-identity.png" alt-text="Screenshot of creating agent identity in access review agent portal.":::
+:::image type="content" source="media/access-review-agent/access-review-agent-identity-screen.png" alt-text="Screenshot of detailed access review agent identity screen.":::
 
 
 
