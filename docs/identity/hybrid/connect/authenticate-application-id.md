@@ -56,13 +56,13 @@ If you use Hyper-V virtual machines (VMs), you can enable the TPM by selecting *
 
 In the Bring Your Own Application (BYOA) setup, administrator manages the application that Microsoft Entra Connect Sync uses to authenticate to Microsoft Entra ID, the application permissions, and the certificate credential that the application uses.
 
-The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics). The application needs the required permissions configured. To configure Microsoft Graph PowerShell commands.
+The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics). The application needs the required permissions to configure Microsoft Graph PowerShell commands.
 
 > [!NOTE]
 > Microsoft Entra Connect Sync version 2.5.76.0 or later is required to proceed with the following steps to authenticate to Microsoft Entra ID by using application identity.
 
 > [!NOTE]
-> Using Bring Your Own Application requires having Your Own Certificate.
+> Using BYOA requires having your own certificate.
 
 ## Prerequisites
 
@@ -192,7 +192,7 @@ This command returns the `ConnectorIdentityType` value currently in use. The val
     Export-Certificate -Cert $cert -FilePath $cerFile
     ```
 
-1. In, the [Microsoft Entra Admin Center](https://entra.microsoft.com) navigate to **Entra ID** **App Registration**, and select the application that was created during the installation, configuration or the upgrade of Connect Sync. To confirm which application is used by Connect Sync, you can run the `Get-ADSyncEntraConnectorCredential` command to retrieve the application (client) ID. The username format is `{AppID}@tenantName.onmicrosoft.com`. Under **Certificate & secrets** select **Upload certificate** and upload the exported .cer file and select **Add**:
+1. In the [Microsoft Entra Admin Center](https://entra.microsoft.com), navigate to **Entra ID** **App Registrations**, and select the application that was created during the installation, configuration or the upgrade of Connect Sync. To confirm which application is used by Connect Sync, you can run the `Get-ADSyncEntraConnectorCredential` command to retrieve the application (client) ID. The username format is `{AppID}@tenantName.onmicrosoft.com`. Under **Certificate & secrets** select **Upload certificate** and upload the exported .cer file and select **Add**:
 
     :::image type="content" source="media/authenticate-application-id/app-registration-certificate.png" alt-text="Screenshot that shows uploading certificate to app registration." lightbox="media/authenticate-application-id/app-registration-certificate.png":::
 
@@ -288,7 +288,7 @@ This command returns the `ConnectorIdentityType` value currently in use. The val
 
 # [BYOA with BYOC](#tab/byoa-with-byoc)
 
-#### Create the application using PowerShell:
+#### Create the application using PowerShell
 
 1. Connect to your tenant
 
@@ -654,13 +654,14 @@ When you get a warning from Microsoft Entra Connect Sync, we *highly recommend t
     1.	For the file format, select **DER encoded binary X.509 (.CER)**, then select **Next**.
     1.	Enter or browse to the file path, then select **Next**.
     1.	Review the summary, then select **Finish**.
-    **Option 2**: Use PowerShell to export the certificate:
 
-        ``` powershell
-        $cerFile  = "C:\Temp\MyBYOC.cer"
-        $cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
-        Export-Certificate -Cert $cert -FilePath $cerFile
-        ```
+        **Option 2**: Use PowerShell to export the certificate:
+
+            ``` powershell
+            $cerFile  = "C:\Temp\MyBYOC.cer"
+            $cert = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=YOUR_CERTIFICATE_SUBJECT'}  
+            Export-Certificate -Cert $cert -FilePath $cerFile
+            ```
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com) navigate to **App Registration**, and select the application that was created during the installation, configuration or the upgrade of Connect Sync. To confirm which application used by Connect Sync, you can run the `Get-ADSyncEntraConnectorCredential` command to retrieve the application (client) ID. The username format is `{AppID}@tenantName.onmicrosoft.com`. Under **Certificate & secrets**, select **Upload certificate** and upload the exported .cer file and select **Add**:
 
