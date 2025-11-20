@@ -69,6 +69,7 @@ Because the policy is applied to the Azure management portal and API, any servic
 - Microsoft IoT Central
 - SQL Managed Instance
 - Visual Studio subscriptions administrator portal
+- Microsoft AppSource (Office Store)
 
 > [!CAUTION]
 > Conditional Access policies associated with the Windows Azure Service Management API [no longer cover Azure DevOps](/azure/devops/organizations/accounts/conditional-access-policies#azure-resource-manager-audience).
