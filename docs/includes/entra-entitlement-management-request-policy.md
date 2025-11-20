@@ -52,7 +52,7 @@ If you want guest users to remain in your directory indefinitely, even if they h
 
 Follow these steps if you want to allow identities not in your directory to request the access package:
 
-1. In the **Users who can request access** section, select **For users not in your directory**.
+1. In the **Who can get access** section, select **For users not in your directory**.
 
     When you select this option, new options appear.
 
@@ -90,7 +90,7 @@ Follow these steps if you want to allow identities not in your directory to requ
 
 Follow these steps if you want to bypass access requests and allow administrators to directly assign specific users and agents to this access package. Users won't have to request the access package. You can still set lifecycle settings, but there are no request settings.
 
-1. In the **Users who can request access** section, select **None (administrator direct assignments only)**.
+1. In the **Who can get access** section, select **None (administrator direct assignments only)**.
 
     ![Screenshot that shows the option for allowing only administrator direct assignments for an access package.](./media/entitlement-management-request-policy/none-admin-direct-assignments-only.png)
 
