@@ -69,9 +69,9 @@
       href: troubleshoot-authentication-strengths.md
   - name: Account recovery
     items:
-    - name: Overview
+    - name: Account recovery overview
       href: concept-account-recovery-overview.md
-    - name: FAQ
+    - name: Account recovery FAQ
       href: self-service-account-recovery.yml
   - name: Multifactor authentication
     items:
