@@ -44,9 +44,9 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 
 | Attribute           | Description |
 |---------------------|------------ |
-| Identity            | Runs with identity of the administrator who configured the agent. Final decisions as part of the Microsoft Teams conversation use the reviewer's identity. |
+| Identity            | A unique agent identity is created when the agent is turned on. Learn more about [agent identities]().<br><br>The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works).<br><br>Final decisions, submitted through the Microsoft Teams conversation, use the reviewer's identity.  |
 | Licenses            | [Microsoft Entra ID Governance or Microsoft Entra Suite](../id-governance/licensing-fundamentals.md) |
-| Permissions         | Get details for access reviews<br>Read details and lifecycle workflow history for users, groups, apps, and access packages<br>Save access review suggestions and justifications |
+| Permissions         | Get details for access reviews<br>Read details and lifecycle workflow history for users, groups, apps, and access packages. Save access review recommendations and justifications |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [ID Governance Access Reviews](../id-governance/access-reviews-overview.md) |
 | Role-based access   | Both [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) are required to configure and use the agent |
