@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
-ms.date: 11/17/2025
+ms.date: 11/21/2025
 ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
@@ -20,9 +20,10 @@ Microsoft Entra's [native authentication](../external-id/customers/concept-nativ
 
 [!INCLUDE [native-auth-api-common-description](./includes/native-auth-api/native-auth-api-common-description.md)]
 
-Microsoft Entra's native authentication API supports sign-up and sign-in for two authentication methods:
+Microsoft Entra's native authentication API supports sign-up and sign-in for two authentication flows:
 
 - Email with password, which supports sign-up and sign-in with an email and password, and self-service password reset (SSPR).
+    - Users who sign in with an email address and password to also [sign in with a username and password](../external-id/customers/how-to-sign-in-alias.md).
 
 - Email one-time passcode, which supports sign-up and sign-in with email one-time passcode.
 
