@@ -211,7 +211,7 @@ You might want to revoke the [Security Copilot Contributor](/copilot/security/au
 
 A unique agent identity is created when the agent is turned on. For more information, see: [manage agent identities](https://aka.ms/agent-id-learn-more).
 
-The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works.)
+The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works)
 
 Permissions	
 - Get details for access reviews
