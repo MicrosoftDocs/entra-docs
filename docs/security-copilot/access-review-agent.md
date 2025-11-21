@@ -30,9 +30,7 @@ Say goodbye to time-consuming research and the uncertainty of rushed decisions. 
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Limitations
-- Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions can cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- The agent runs using the identity of the administrator who activated it for the first time to gather insights and save recommendations. Final decisions, as part of the Microsoft Teams conversation, is written with the reviewer’s identity.
 - We recommend running the agent from the Microsoft Entra admin center.
 
 ## Supported Scenarios
@@ -210,7 +208,26 @@ If you no longer wish to use the Access Review Agent, select **Remove agent** fr
 You might want to revoke the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) access of reviewers if no other scenario requires them to access Security Copilot.
 
 ## Identity and permissions
-The agent runs with the identity of the administrator who configured the agent to gather insights and save recommendations. Final decisions as part of the Microsoft Teams conversation will be written with the reviewer’s identity.
+
+A unique agent identity is created when the agent is turned on. For more information, see: [manage agent identities](https://aka.ms/agent-id-learn-more).
+
+The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works)
+
+Permissions	
+- Get details for access reviews
+- Read details and lifecycle workflow history for users, groups, apps, and access packages
+- Save access review recommendations and justifications
+
+Final decisions, submitted through the Microsoft Teams conversation, use the reviewer's identity.
+
+The agent settings page displays the identity currently assigned to the agent:
+:::image type="content" source="media/access-review-agent/access-review-agent-identity.png" alt-text="Screenshot of the access review agent identity page.":::
+
+If your agent was previously configured using an administrator's identity, you must migrate it to a dedicated agent identity. Complete this migration by selecting the "*Create agent identity*" option located on the blue banner of the agent overview page or the agent settings page.
+:::image type="content" source="media/access-review-agent/access-review-agent-create-identity.png" alt-text="Screenshot of creating agent identity in access review agent portal.":::
+:::image type="content" source="media/access-review-agent/access-review-agent-identity-screen.png" alt-text="Screenshot of detailed access review agent identity screen.":::
+
+
 
 ### Providing feedback
 
