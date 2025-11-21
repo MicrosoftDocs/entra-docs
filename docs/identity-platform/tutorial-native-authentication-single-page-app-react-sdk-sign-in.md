@@ -273,6 +273,10 @@ One of the errors that can result from the `signIn()` method is `result.error?.i
 
 Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-your-app) to run your app, then test sign-in flow. 
 
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
+
 ## Related content
 
 - [Tutorial: Reset password in a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-reset-password.md)
