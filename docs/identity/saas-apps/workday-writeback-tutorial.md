@@ -54,7 +54,7 @@ Follow these instructions to configure writeback of user email addresses and use
 1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Search for **Workday Writeback**, and add that app from the gallery.
 1. After the app is added and the app details screen is shown, select **Provisioning**.
-1. Change the **Provisioning** **Mode** to **Automatic**.
+1. Click on **New configuration".
 1. Complete the **Admin Credentials** section as follows:
 
    * **Admin Username** – Enter the username of the Workday integration system account, with the tenant domain name appended. Should look something like: *username\@contoso4*
@@ -65,15 +65,15 @@ Follow these instructions to configure writeback of user email addresses and use
         `https://wd3-impl-services1.workday.com/ccx/service/contoso4/Human_Resources`,
         where *contoso4* is replaced with your correct tenant name and *wd3-impl* is replaced with the correct environment string (if necessary).
 
-   * **Notification Email –** Enter your email address, and check the  "send email if failure occurs" checkbox.
+   * Select the **Test Connection** button. If the connection test succeeds, select the **Create** button at the bottom. If it fails, double-check that the Workday URL and credentials are valid in Workday.
 
-   * Select the **Test Connection** button. If the connection test succeeds, select the **Save** button at the top. If it fails, double-check that the Workday URL and credentials are valid in Workday.
+1. Once the save operation is successful, you will see see a properties section in the Overview. Before proceeding to the next step, make sure you provide a valid notification email ID in the properties section and Save the configuration once more.
 
 ### Part 2: Configure writeback attribute mappings
 
 In this section, you configure how writeback attributes flow from Microsoft Entra ID to Workday. 
 
-1. On the Provisioning tab under **Mappings**, select the mapping name.
+1. On the Attribute mapping page, select the mapping name.
 
 2. In the **Source Object Scope** field, you can optionally filter, which sets of users in Microsoft Entra ID should be part of the writeback. The default scope is **all users in Microsoft Entra ID**.
 
