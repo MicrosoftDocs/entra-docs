@@ -10,7 +10,7 @@ ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 05/30/2024
+ms.date: 11/17/2025
 ms.custom:
 #Customer intent: As a dev, devops, I want to add sign-in and sign-out with email one-time passcode or username (email) and password in an Android mobile app by using native authentication
 ---
@@ -234,6 +234,11 @@ Make sure you include the import statements. Android Studio should include the i
 You have completed all the necessary steps to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
 [!INCLUDE [Custom claims provider](../external-id/customers/includes/native-auth/support-custom-claims-provider.md)]
+
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Related content
 

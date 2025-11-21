@@ -69,10 +69,10 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier** textbox, type a URL using the following pattern:
-    `https://CustomerName.gofluent.com/app/samlconnector?client=<CustomerName>`
+    `https://CustomerName.gofluent.com/login/samlconnector?client=<CustomerName>`
 
     b. In the **Reply URL** textbox, type a URL using the following pattern:
-    `https://<CustomerName>.gofluent.com/app/samlconnector?client=<CustomerName>`
+    `https://<CustomerName>.gofluent.com/login/samlconnector?client=<CustomerName>`
 
 	c. In the **Sign on URL** textbox, type a URL using the following pattern:
 	`https://<CustomerName>.gofluent.com`
