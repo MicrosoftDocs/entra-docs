@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 08/08/2025
+ms.date: 11/21/2025
 ms.author: cmulligan
 
 #Customer intent: As a developer, devops, I want to learn more how to host the user interface (UI) within the client app by using native authentication so that I can take greater control over the UI and experience of my customer apps.
@@ -61,7 +61,8 @@ The following table shows the availability of features for browser-delegated and
 | ---- | --- |  --- |
 | **Sign-up and sign-in with email one-time passcode (OTP)** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Sign-up and sign-in with email and password** | :heavy_check_mark:  | :heavy_check_mark:  |
-| **Self-service password reset (SSPR)** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Sign-in with email and password can use username and password** | :heavy_check_mark:  | :heavy_check_mark:  |
+| **Self-service password reset (SSPR)**  | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Custom claims provider** | :heavy_check_mark:  | :heavy_check_mark:  |
 | **Social identity provider sign-in** | :heavy_check_mark:  | :x: |
 | **Multifactor authentication with email one-time passcode (OTP)**| :heavy_check_mark:  | :x:  |
