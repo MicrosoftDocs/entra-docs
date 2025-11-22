@@ -180,7 +180,7 @@ CBA support for YubiKey is available in the latest Microsoft Authentication Libr
 |:-------------------|:------------------------------:|
 | YubiKey            |              &#x2705;          | 
 
-## Known issues on iOS for non-broker scenarios
+## Known issues
 
 There are some known issues when the iOS device does not have authenticator application or company portal.
 - Users with certificate-based authentication will see a "double prompt", where they must select the option to use certificate-based authentication twice.
