@@ -25,19 +25,19 @@ You can download the current version of the Global Secure Access client from the
 ## Version 2.24.117
 Released for download on November 26, 2025.
 ### Functional changes
-- Intelligent Local Access support
-- Guest users support
-- GSA tracert tool included in the package
-- ‘Disable Private Access’ button can be displayed when ‘Disable’ button is hidden, based on the registry keys (https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client#hide-or-unhide-system-tray-menu-buttons )
-- A link to the user’s account (My Account) in Entra ID is available in the UX
+- Support for [Intelligent Local Access](enable-intelligent-local-access.md).
+- Support for [B2B guest access](concept-b2b-guest-access.md).
+- The client package includes a tracert tool.
+- Registry key support to display the **Disable Private Access** button when the **Disable** button is hidden. For details, see [Hide or unhide system tray menu buttons](how-to-install-windows-client.md#hide-or-unhide-system-tray-menu-buttons).
+- The Global Secure Access interface includes a **View account** link to the user's Microsoft Entra ID account.
 ### Other changes
-- Improving error messages when installing client version intended for a different platform (x64 client on ARM device or ARM client on x64 device)
-Adding Kerberos registry keys to the collected logs
-Improved log writing to ETL files
-The health check test for NRPT rules supports also non-English Windows versions
-.NET Runtime is upgraded to version 8.0.21
-OneAuth is upgraded to version 6.5.0
-- New telemetries are now available.
+- Improved error messages when installing client version intended for a different platform (x64 client on an Arm device or Arm client on an x64 device).
+- Logs collect Kerberos registry keys.
+- Improved log writing to event trace log (ETL) files.
+- The health check test for NRPT rules supports non-English versions of Windows.
+- Support for .NET Runtime version 8.0.21.
+- Support for OneAuth version 6.5.0.
+- New telemetries are available.
 - Miscellaneous bug fixes and improvements.   
 
 ## Version 2.22.90
@@ -48,7 +48,7 @@ Released for download on November 5, 2025.
 - The **Get policy** button lets you poll the Global Secure Access cloud service for the latest forwarding profile.
 - Bug fix: the client uses Private DNS only when the Private Access channel is active.
 ### Other changes
-- New telemetries are now available.
+- New telemetries are available.
 - Miscellaneous bug fixes and improvements.
 
 ## Version 2.20.56
