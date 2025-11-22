@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 11/05/2025
+ms.date: 11/21/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -21,6 +21,24 @@ You can download the current version of the Global Secure Access client from the
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
+
+## Version 2.24.117
+Released for download on November 26, 2025.
+### Functional changes
+- Intelligent Local Access support
+- Guest users support
+- GSA tracert tool included in the package
+- ‘Disable Private Access’ button can be displayed when ‘Disable’ button is hidden, based on the registry keys (https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-install-windows-client#hide-or-unhide-system-tray-menu-buttons )
+- A link to the user’s account (My Account) in Entra ID is available in the UX
+### Other changes
+- Improving error messages when installing client version intended for a different platform (x64 client on ARM device or ARM client on x64 device)
+Adding Kerberos registry keys to the collected logs
+Improved log writing to ETL files
+The health check test for NRPT rules supports also non-English Windows versions
+.NET Runtime is upgraded to version 8.0.21
+OneAuth is upgraded to version 6.5.0
+- New telemetries are now available.
+- Miscellaneous bug fixes and improvements.   
 
 ## Version 2.22.90
 Released for download on November 5, 2025.
