@@ -100,10 +100,7 @@ Here are some supported combinations:
 - CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey.md) (second factor)
 - CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
 - CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md) (second factor)
-- Password (first factor) and CBA (second factor) (preview)
-
-> [!NOTE]
-> Currently, using CBA as a second factor on iOS has [known issues](./concept-certificate-based-authentication-mobile-ios.md#known-issues) and is blocked on iOS. We're working to resolve the issues.
+- Password (first factor) and CBA (second factor)
 
 Users must have a way to get MFA and register passwordless sign-in or FIDO2 in advance of signing in by using Microsoft Entra CBA.
 
