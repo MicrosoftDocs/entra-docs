@@ -210,9 +210,6 @@ To install the insiders-fast channel of the microsoft-identity-broker:
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod insiders-fast main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-insiders-fast.list'
 ```
 
-
-
-
 ### Smart Card Authentication
 Smart card authentication extends certificate-based methods by introducing a physical token that stores user certificates. When the card is inserted into a reader, the system retrieves the certificates and performs validation.
 
@@ -222,7 +219,6 @@ Configuring SmartCard support involves setting up the necessary libraries and mo
 - [YubiKey SmartCard configuration](https://developers.yubico.com/pam-u2f/)
 - [OpenSC SmartCard configuration](https://github.com/OpenSC/OpenSC/wiki)
 - [PKCS#11 configuration reference](https://p11-glue.github.io/p11-glue/p11-kit/manual/pkcs11-conf.html)
-- [PKCS#11 modules on Linux](https://docs.oracle.com/cd/E19253-01/819-5265/6n4u8o4s6/index.html)
 
 ### Example Smart Card configuration
 
