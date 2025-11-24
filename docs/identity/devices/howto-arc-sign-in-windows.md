@@ -1,10 +1,10 @@
 ---
-title: Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID
-description: Learn how to sign in to an Azure VM that's running Windows by using Microsoft Entra authentication.
+title: Sign in to an Azure Arc-enabled server using Microsoft Entra ID
+description: Learn how to sign in to an Azure arn enabled server running Windows by using Microsoft Entra authentication.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/27/2025
+ms.date: 11/24/2025
 ms.author: owinfrey
 author: owinfreyATL
 manager: dougeby
@@ -13,7 +13,7 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azur
 zone_pivot_groups: identity-extension-windows-environment
 ---
 
-# Sign in to Windows virtual machine in Azure or Arc-enabled Windows Server, using Microsoft Entra ID and Azure Roles Based Access Control
+# Sign in to an Azure Arc-enabled server using Microsoft Entra ID and Azure Roles Based Access Control
 
 Organizations can improve the security of Windows devices in Azure or connected using Azure Arc by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into supported versions of Windows. You can then centrally control and enforce Azure role-based access control (RBAC) and Conditional Access policies that allow or deny access to the devices.
 
@@ -34,7 +34,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
 MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!IMPORTANT]
-> After you enable this capability, your Azure virtual machine / Arc-enabled machine will be Microsoft Entra joined. You can't join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension.
+> After you enable this capability, your Arc-enabled machine will be Microsoft Entra joined. You can't join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension.
 
 ## Requirements
 
@@ -42,9 +42,16 @@ MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs d
 
 This feature currently supports the following Windows distributions:
 
+::: zone pivot="identity-extension-vm"
+- Windows 11 21H2 or later installed.
+- Windows 10, version 1809 or later installed.
+- Windows Server 1809 or later installed with Desktop Experience.
+::: zone-end
+
+::: zone pivot="identity-extension-hybrid"
 - Windows 11 24H2 or later installed.
 - Windows Server 2025 or later installed with Desktop Experience.
-
+::: zone-end
 
 This feature is now available in the following Azure clouds:
 
@@ -57,13 +64,12 @@ This feature is now available in the following Azure clouds:
 
 ### Network requirements
 
-To enable Microsoft Entra authentication to virtual machines in Azure or Arc-enabled Windows Servers, you need to ensure that your network configuration permits outbound access to the following endpoints over TCP port 443.
+To enable Microsoft Entra authentication for Arc-enabled Windows Servers, you need to ensure that your network configuration permits outbound access to the following endpoints over TCP port 443.
 
 Azure Global:
 - `https://enterpriseregistration.windows.net`: Device registration.
 
-- `http://169.254.169.254`: Azure Instance Metadata Service endpoint.
-
+- `http://localhost:40342`: Arc Instance Metadata Service endpoint.
 
 - `https://login.microsoftonline.com`: Authentication flows.
 
@@ -72,7 +78,7 @@ Azure Global:
 Azure Government:
 - `https://enterpriseregistration.microsoftonline.us`: Device registration.
 
-- `http://169.254.169.254`: Azure Instance Metadata Service endpoint.
+- `http://localhost:40342`: Arc Instance Metadata Service endpoint.
 
 - `https://login.microsoftonline.us`: Authentication flows.
 
@@ -81,38 +87,42 @@ Azure Government:
 Microsoft Azure operated by 21Vianet:
 - `https://enterpriseregistration.partner.microsoftonline.cn`: Device registration.
 
-- `http://169.254.169.254`: Azure Instance Metadata Service endpoint.
+- `http://localhost:40342`: Arc Instance Metadata Service endpoint.
 
 - `https://login.chinacloudapi.cn`: Authentication flows.
 
 - `https://pas.chinacloudapi.cn`: Azure role-based access control flows.
 
+More network requirements are provided in the [Arc-connected server documentation](/azure/azure-arc/servers/network-requirements).
+
+For Azure Arc-enabled Windows Servers, more network requirements are provided in the [Arc-connected server documentation](/azure/azure-arc/servers/network-requirements).
+
 ### Authentication requirements
 
-[Microsoft Entra Guest accounts](~/external-id/what-is-b2b.md) can't connect to Azure VMs, or Azure Bastion enabled VMs, via Microsoft Entra authentication.
+[Microsoft Entra Guest accounts](~/external-id/what-is-b2b.md) can't connect to Azure Arc-enabled Windows Servers via Microsoft Entra authentication.
 
 <a name='enable-azure-ad-login-for-a-windows-vm-in-azure'></a>
 
-## Enable Microsoft Entra sign in for a Windows virtual machine in Azure
+## Enable Microsoft Entra sign in for an Arc-enabled Windows Server
 
-To use Microsoft Entra sign in for a Windows virtual machine, you must:
+To use Microsoft Entra sign in for an Arc-enabled Windows Server, you must:
 
 1. Enable the Microsoft Entra sign in extension for the device.
 1. Configure Azure role assignments for users.
 
+
 ### Enable Microsoft Entra sign in extension
 
+For Arc-enabled windows servers how-to's and further examples, see: [Arc-enabled Windows Server](/azure/azure-arc/servers/manage-vm-extensions).
 
-- [Azure virtual machine running Windows](/azure/virtual-machines/extensions/features-windows#run-vm-extensions)
+You must enable a system-assigned managed identity on your Arc-enabled Windows Server before you install the Microsoft Entra sign in virtual machine extension. Managed Identities are stored in a single Microsoft Entra tenant, and currently don't support cross directory scenarios.
 
-You must enable system-assigned managed identity on your Azure virtual machine before you install the Microsoft Entra sign in virtual machine extension. Managed Identities are stored in a single Microsoft Entra tenant and currently don't support cross directory scenarios.
-
-The following sample demonstrates Azure templates for Azure Virtual Machine extensions.
+The following sample demonstrate an Azure template for Arc-enabled Windows Server extensions:
 
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vmName": {
@@ -125,19 +135,28 @@ The following sample demonstrates Azure templates for Azure Virtual Machine exte
   "resources": [
     {
       "name": "[concat(parameters('vmName'),'/AADLogin')]",
-      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "type": "Microsoft.HybridCompute/machines/extensions",
       "location": "[parameters('location')]",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2024-07-10",
       "properties": {
         "publisher": "Microsoft.Azure.ActiveDirectory",
         "type": "AADLoginForWindows",
-        "typeHandlerVersion": "1.0",
-        "autoUpgradeMinorVersion": true
+        "typeHandlerVersion": "2.1.0.0",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+            "mdmId": ""
+        }
       }
     }
   ]
 }
 ```
+
+> [!NOTE]
+> The Microsoft Entra sign in extension for Arc-enabled Windows Server requires the `mdmId` property nested within `settings`. The value of the property can be left as an empty string.
+
+
+After the extension is installed on the device, `provisioningState` shows `Succeeded`.
 
 ## Configure role assignments
 
@@ -225,7 +244,7 @@ You're now signed in to the Windows Server 2019 Azure virtual machine with the r
 
 ## Enforce Conditional Access policies
 
-You can enforce Conditional Access policies, such as "phishing resistant MFA" or user sign-in risk check, before users can access Windows devices in Azure or Arc-enabled Windows Server. To apply a Conditional Access policy, you must select the **Microsoft Azure Windows Virtual Machine Sign-in** app from the cloud apps or actions assignment option.
+You can enforce Conditional Access policies, such as "phishing resistant MFA" or user sign-in risk check, before users can access Windows devices in an Azure Arc-enabled Windows Server. To apply a Conditional Access policy, you must select the **Microsoft Azure Windows Virtual Machine Sign-in** app from the cloud apps or actions assignment option.
 
 Conditional Access policies that restrict sign in using device configuration rules aren't supported when connecting from a Windows Server device.
 
@@ -252,14 +271,6 @@ The AADLoginForWindows extension must be installed successfully for the device t
     If the extension restarts after the initial failure, the log with the deployment error will be saved as *CommandExecution_YYYYMMDDHHMMSSSSS.log*.
 
 1. Open a PowerShell window on the device. Verify that the following queries against the Azure Instance Metadata Service endpoint running on the host return the expected output:
-
-    For Azure virtual machines:
-    
-    | Command to run | Expected output |
-    | --- | --- |
-    | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/instance?api-version=2017-08-01"` | Correct information about the Azure virtual machine |
-    | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01"` | Valid tenant ID associated with the Azure subscription |
-    | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Valid access token issued by Microsoft Entra ID for the managed identity that is assigned to this virtual machine |
     
     For Arc-enabled Windows Servers:
     
@@ -382,6 +393,7 @@ The computer name entered in mstsc does not match with any one of the "hostnames
 Try these solutions:
 
 There are multiple ways to resolve the issue:
+
 1.	Modify the HOSTS entry on client machine, add an A DNS record that points the correct device name (confirm from AAD Device record) to the IP of target machine. Use that device name in mstsc.
 2.	Check if the target machine is managed and if the hostname is set through Group Policy or MDM via the DNS Client PrimaryDnsSuffix value [ADMX_DnsClient Policy CSP | Microsoft Learn](/windows/client-management/mdm/policy-csp-admx-dnsclient#dns_primarydnssuffix). If this is set and is incorrect, it needs to be removed or set correctly. 
 3.	When customer requires to use FQDN to connect but AAD Device name is a short name, login to the target machine via local admin, add a “**Primary DNS Suffix**” for their domain suffix. Detailed instructions:
