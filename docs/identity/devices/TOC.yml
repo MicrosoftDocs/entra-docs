@@ -113,6 +113,8 @@
     items:        
       - name: Azure Windows VMs and Microsoft Entra ID
         href: howto-vm-sign-in-azure-ad-windows.md
+      - name: Arc-enabled servers and Microsoft Entra ID
+        href: howto-arc-sign-in-windows.md  
       - name: Virtual desktop infrastructure
         href: howto-device-identity-virtual-desktop-infrastructure.md
   - name: Enterprise state roaming

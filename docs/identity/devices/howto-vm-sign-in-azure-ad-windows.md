@@ -10,7 +10,6 @@ author: owinfreyATL
 manager: dougeby
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
-zone_pivot_groups: identity-extension-windows-environment
 ---
 
 # Sign in to Windows virtual machine in Azure or Arc-enabled Windows Server, using Microsoft Entra ID and Azure Roles Based Access Control
