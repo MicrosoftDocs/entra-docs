@@ -1,12 +1,12 @@
 ---
-title: Learn how to migrate users to Microsoft Entra External ID using Just-In-Time (JIT) Migration
+title: Migrating users to Microsoft Entra External ID using Just-In-Time (JIT) Migration (Preview)
 description: Learn how to migrate users from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
 
 author: garrodonnell
 manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/01/2025
 ms.author: godonnell
 
@@ -14,12 +14,30 @@ ms.author: godonnell
 ---
 # Migrating users to Microsoft Entra External ID using Just-In-Time (JIT) Migration (Preview)
 
-This tutorial describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you are a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
+This guide describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you are a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
+
+The JIT migration process is illustrated in the following diagram:
+
+:::image type="content" source="media/how-to-migrate-users-jit/jit-migration-flow-diagram.png" alt-text="Diagram of the Just-In-Time password migration flow showing user authentication from a legacy identity provider to Microsoft Entra External ID." lightbox="media/how-to-migrate-users-jit/jit-migration-flow-diagram.png":::
 
 > [!Note]
-> If you have access to user passwords, either at REST or runtime, in your legacy system, you can also proactively populate these. For more information, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
+> If you have access to user passwords, either at rest or runtime, in your legacy system, you can also proactively populate these. For more information, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](../includes/active-directory-b2c-end-of-sale-notice.md)]
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- **Microsoft Entra External ID tenant**: An active External ID tenant. If you don't have one, see [Get started with Microsoft Entra External ID](/entra/external-id/customers/quickstart-tenant-setup).
+- **Azure subscription**: Required for deploying the Azure Function that validates passwords against your legacy identity provider.
+- **Legacy identity provider access**: Ability to validate user credentials against your existing identity provider.
+- **Understanding of the following concepts**:
+  - [User management in Microsoft Entra ID](/entra/fundamentals/how-to-create-delete-users): Creating and managing user accounts
+  - [App registrations](/entra/identity-platform/quickstart-register-app): Registering applications in Microsoft Entra ID
+  - [Microsoft Graph API](/graph/api/user-post-users): Programmatic user and directory management
+  - [Directory extensions](/graph/extensibility-overview): Adding custom properties to directory objects
+  - [Azure Functions](/azure/azure-functions/functions-overview): Serverless compute for hosting custom logic
 
 ## Overview of the JIT migration process
 
@@ -29,64 +47,17 @@ When a user enters a password during sign in and their account is marked as not 
 
 ## Create a user in your External ID tenant
 
-To test the JIT migration process, you need to create a user in your External ID tenant who will be migrated from the legacy identity provider. You can create users through the [Microsoft Entra admin center](https://entra.microsoft.com/) or programmatically using the [Microsoft Graph API](/graph/api/user-post-users).
+To test the JIT migration process, you need to create a test user in your External ID tenant. This user represents someone who will be migrated from your legacy identity provider. You can create users through the [Microsoft Entra admin center](https://entra.microsoft.com/) or programmatically using the [Microsoft Graph API](/graph/api/user-post-users). For detailed instructions on user creation, see [How to create, invite, and delete users](/entra/fundamentals/how-to-create-delete-users).
 
-### Create a user with Microsoft Graph API
-
-Use the following example to create a test user with the [Microsoft Graph API](/graph/api/user-post-users):
-
-```http
-POST https://graph.microsoft.com/v1.0/users
-Content-type: application/json
-
-{
-    "displayName": "Test User",
-    "identities": [
-        {
-            "signInType": "emailAddress",
-            "issuer": "contoso.onmicrosoft.com",
-            "issuerAssignedId": "testuser@example.com"
-        }
-    ],
-    "mail": "testuser@example.com",
-    "passwordProfile": {
-        "password": "TemporaryPassword123!",
-        "forceChangePasswordNextSignIn": false
-    },
-    "passwordPolicies": "DisablePasswordExpiration"
-}
-```
-
-Replace `contoso.onmicrosoft.com` with your External ID tenant domain and `testuser@example.com` with the email address you want to use for testing.
 
 > [!IMPORTANT]
-> Set a temporary password for the test user. During JIT migration, this password will be replaced with the user's actual password from the legacy identity provider when they sign in for the first time.
-
-### Create a user in the admin center
-
-Alternatively, you can create a user through the Microsoft Entra admin center:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Browse to **Entra ID** > **Users**.
-1. Select **New user** > **Create new user**.
-1. On the **Basics** tab, enter:
-   - **User principal name**: Enter a unique username and select a domain.
-   - **Display name**: Enter the user's display name.
-   - **Password**: Use the autogenerated password or enter a temporary password.
-1. Select **Review + create**.
-
-For more information about creating users, see [How to create, invite, and delete users](/entra/fundamentals/how-to-create-delete-users).
+> Set a temporary password for the test user. During JIT migration, this password will be replaced with the user's actual password from the legacy identity provider when they sign in for the first time. Ensure that the temporary passwords are unique and strong to maintain security during the migration process.
 
 ## Define an extension property for tracking migration status
 
-To implement JIT migration, you first need to define an extension property in your External ID tenant to track the migration status of each user. This property will indicate whether a user's credentials have been migrated from the legacy identity provider.
+To implement JIT migration, you need to define a directory extension property to track whether each user's credentials have been migrated from the legacy identity provider. Microsoft Graph supports adding custom properties to directory objects through [directory (Microsoft Entra ID) extensions](/graph/extensibility-overview). For detailed information about extension types and their usage, see [Add custom data to resources by using extensions](/graph/extensibility-overview).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Navigate to **External Identities**, then click on **Custom user attributes**.
-1. Enter a unique name for the property, such as `toBeMigrated`, and select the data type as **Boolean**.
-1. Click **Create** to add the property to your directory.
-
-You can also create a custom extension using Graph API. The below example demonstrates how to create an extension property using the Microsoft Graph API. To learn more, see [Add custom data to resources by using extensions](/graph/extensibility-overview).
+Create an extension property using the Microsoft Graph API as shown below:
 
 ``` http
 POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69e287e7b/extensionProperties 
@@ -100,19 +71,101 @@ POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69
 } 
 ```
 
+Replace `30a5435a-1871-485c-8c7b-65f69e287e7b` with the object ID of your application.
+
 ### Get the extension property ID for use in your custom authentication extension
 
-After creating the extension property, you need to retrieve its unique identifier to use it in your custom authentication extension. The extension property ID is required to read and update the migration status of users during the authentication process. It's a combination of an application id and the property name.
+After creating the extension property, you need to retrieve its unique identifier to use in your custom authentication extension. The extension property ID follows this naming convention: `extension_{applicationId-without-hyphens}_{attributeName}`.
 
-1. Navigate to **Entra ID** and then **App registrations** in the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Choose **All applications** from above the the application list.
-1. Select the application named `b2c-extensions-app` and copy the **Application (client) ID** value without hyphens. This is your application id.
-1. Your extension property id is in the format `extension_[application-id]_[attribute-name]`. For example, if your application id is `00001111-aaaa-2222-bbbb-3333cccc4444` and your attribute name is `toBeMigrated`, your extension property id would be `extension_00001111aaaa2222bbbb3333cccc4444_toBeMigrated`.
+To construct your extension property ID:
+
+1. Navigate to **Entra ID** > **App registrations** in the [Microsoft Entra admin center](https://entra.microsoft.com/).
+1. Select **All applications** from above the application list.
+1. Find the application named `b2c-extensions-app` and copy its **Application (client) ID** value.
+1. Remove the hyphens from the application ID and combine it with your attribute name.
+
+For example, if your application ID is `00001111-aaaa-2222-bbbb-3333cccc4444` and your attribute name is `toBeMigrated`, your extension property ID would be `extension_00001111aaaa2222bbbb3333cccc4444_toBeMigrated`.
 
 
 ## Create a custom authentication extension for password validation
 
 Next, create a custom authentication extension that will be invoked during the sign-in process to validate user credentials against the legacy identity provider. 
+
+When sending a request to your custom authentication extension, Entra will include a payload with the following schema. This sample payload includes dummy data for illustration purposes only.
+
+```json
+{  
+  "type": "microsoft.graph.authenticationEvent.passwordSubmit",  
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/    00001111-aaaa-2222-bbbb-3333cccc4444",  "data": {  
+    "@odata.type": "microsoft.graph.onPasswordSubmitCalloutData",  
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",  
+    "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",  
+    "customAuthenticationExtensionId": "22223333-cccc-4444-dddd-5555eeee6666", 
+      "encryptedPasswordContext": “{5-part-JWE}”, 
+    "authenticationContext": {  
+      "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",  
+      "client": {  
+        "ip": "127.0.0.1",  
+        "locale": "en-us",  
+        "market": "en-us"  
+      },  
+      "protocol": "OAUTH2.0",  
+      "clientServicePrincipal": {  
+        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
+        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
+        "appDisplayName": "My Test application",  
+        "displayName": "My Test application"  
+      },  
+      "resourceServicePrincipal": {  
+        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
+        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
+        "appDisplayName": "My Test application",  
+        "displayName": "My Test application"  
+      },  
+      "user": {  
+        "companyName": "Casey Jensen",  
+        "createdDateTime": "2023-08-16T00:00:00Z",  
+        "displayName": "Casey Jensen",  
+        "givenName": "Casey",  
+        "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",  
+        "mail": "casey@contoso.com",  
+        "onPremisesSamAccountName": "Casey Jensen",  
+        "onPremisesSecurityIdentifier": "<Enter Security Identifier>",  
+        "onPremisesUserPrincipalName": "Casey Jensen",  
+        "preferredLanguage": "en-us",  
+        "surname": "Jensen",  
+        "userPrincipalName": "casey@contoso.com",  
+        "userType": "Member"   
+      } 
+
+    }  
+  }  
+} 
+
+```
+Response schema:  
+
+```json
+{  
+  "data": {  
+    "@odata.type": "microsoft.graph.onPasswordSubmitResponseData",  
+    "actions": [  
+      {  
+        "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
+      } 
+    ]  
+  }  
+}  
+```
+
+Each of the available response actions corresponds to a specific scenario during the authentication process. This table describes the possible response actions and when to use them.
+
+| Response Action  | Scenario  | Entra Behavior |
+|---|---|---|
+| microsoft.graph.passwordSubmit.MigratePassword  | Password validation succeeds; Entra continues authentication. If password is weak, triggers UpdatePassword flow. | Use when password meets basic validation but fails strength requirements.|
+| microsoft.graph.passwordSubmit.UpdatePassword  | Password is correct but weak or expired. | Routes user through password reset flow. |
+| microsoft.graph.passwordSubmit.Retry  | Password is incorrect. | Allows user to retry authentication if permitted.|
+| microsoft.graph.passwordSubmit.Block  | Authentication must be blocked. | Displays block screen with custom message provided by the app.|
 
 You can use your own code or deploy the following sample Azure Function to your Azure environment. Make sure to replace the placeholders for *client ID*, *client secret*, *tenant ID*, and *extension attribute* with values from your tenants. This example function simulates the validation process and demonstrates how to handle different response actions, including migrating the password, blocking the sign-in, prompting for a password update, or retrying the authentication based on the outcome of the validation.
 
@@ -502,112 +555,43 @@ namespace cust_auth_functions
     }
 }
 ```
-Each of the response actions corresponds to a specific scenario during the authentication process. This table describes the possible response actions and when to use them.
-
-| Response Action  | Scenario  | Entra Behavior |
-|---|---|---|
-| microsoft.graph.passwordSubmit.MigratePassword  | Password validation succeeds; Entra continues authentication. If password is weak, triggers UpdatePassword flow. | Use when password meets basic validation but fails strength requirements.|
-| microsoft.graph.passwordSubmit.UpdatePassword  | Password is correct but weak or expired. | Routes user through password reset flow. |
-| microsoft.graph.passwordSubmit.Retry  | Password is incorrect. | Allows user to retry authentication if permitted.|
-| microsoft.graph.passwordSubmit.Block  | Authentication must be blocked. | Displays block screen with custom message provided by the app.|
-
-When sending a request to your custom authentication extension, Entra will include a payload with the following schema. This sample payload includes dummy data for illustration purposes only.
-
-```json
-{  
-  "type": "microsoft.graph.authenticationEvent.passwordSubmit",  
-  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/    00001111-aaaa-2222-bbbb-3333cccc4444",  "data": {  
-    "@odata.type": "microsoft.graph.onPasswordSubmitCalloutData",  
-    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",  
-    "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",  
-    "customAuthenticationExtensionId": "22223333-cccc-4444-dddd-5555eeee6666", 
-      "encryptedPasswordContext": “{5-part-JWE}”, 
-    "authenticationContext": {  
-      "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",  
-      "client": {  
-        "ip": "127.0.0.1",  
-        "locale": "en-us",  
-        "market": "en-us"  
-      },  
-      "protocol": "OAUTH2.0",  
-      "clientServicePrincipal": {  
-        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
-        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
-        "appDisplayName": "My Test application",  
-        "displayName": "My Test application"  
-      },  
-      "resourceServicePrincipal": {  
-        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
-        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
-        "appDisplayName": "My Test application",  
-        "displayName": "My Test application"  
-      },  
-      "user": {  
-        "companyName": "Casey Jensen",  
-        "createdDateTime": "2023-08-16T00:00:00Z",  
-        "displayName": "Casey Jensen",  
-        "givenName": "Casey",  
-        "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",  
-        "mail": "casey@contoso.com",  
-        "onPremisesSamAccountName": "Casey Jensen",  
-        "onPremisesSecurityIdentifier": "<Enter Security Identifier>",  
-        "onPremisesUserPrincipalName": "Casey Jensen",  
-        "preferredLanguage": "en-us",  
-        "surname": "Jensen",  
-        "userPrincipalName": "casey@contoso.com",  
-        "userType": "Member"   
-      } 
-
-    }  
-  }  
-} 
-
-```
-Response schema:  
-
-```json
-{  
-  "data": {  
-    "@odata.type": "microsoft.graph.onPasswordSubmitResponseData",  
-    "actions": [  
-      {  
-        "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
-      } 
-    ]  
-  }  
-}  
-```
 
 ### Create an app registration for the custom authentication extension 
 
-Next, create an application in your External ID tenant. This application registration will represent the custom authentication extension and will be used to configure the extension policy.
+Create an application registration to represent your custom authentication extension. This application will authenticate calls between Microsoft Entra External ID and your Azure Function. For general guidance on app registrations, see [Register an application](/entra/identity-platform/quickstart-register-app).
 
-1. Navigate to **Entra ID** and then **App registrations** in the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Click on **New registration**.
-1. Enter a unique name for your application.
-1. Under **Supported account types**, select **Accounts in this organizational directory only**.
-1. Click **Register** to create the application.
+Register a new application in the [Microsoft Entra admin center](https://entra.microsoft.com/) with the following settings:
+
+- **Name**: Enter a descriptive name for your JIT migration extension
+- **Supported account types**: Accounts in this organizational directory only
 
 ### Configure the application manifest
 
-You also need to configure the application's manifest to define the necessary properties for the custom authentication extension. Specifically, you need to add a value to identify your API endpoint and additional permissions required by the application.
+Configure your application's manifest with the JIT migration-specific settings:
 
-1. Under the **Manage** section, select **Manifest**.
-1. Search the **App Manifest** for *identifierURIs* add the value for your API endpoint as shown in the example below by replacing *Function_URL_Hostname* and *App_ID* with your own values.
+#### Set the identifier URI
+
+The identifier URI uniquely identifies your custom authentication extension API. Add the following to your application manifest, replacing the placeholders with your values:
 
 ```json
-"identifierUris": [  
-    "api://[Function_URL_Hostname]/[App_ID]"  
-], 
+"identifierUris": [  
+    "api://[Function_URL_Hostname]/[App_ID]"  
+], 
 ```
 
-Your *Function_URL_Hostname* is the host name for the custom extension. For example if the full URL is `https://contoso.onmicrosoft.com/api/JitMigrationEndpoint`,the hostname would be `contoso.onmicrosoft.com`. Your *App_ID* is the application ID from the application you just registered. You can find the application ID on the application's **Overview** page.
+- **Function_URL_Hostname**: The hostname of your Azure Function (e.g., `contoso.azurewebsites.net`)
+- **App_ID**: Your application (client) ID from the app registration **Overview** page
 
-Next you will be adding the *CustomAuthenticationExtension.Receive.Payload* permission which allows the extension to receive HTTP requests triggered by authentication events. You can find more information on these permissions in the [Microsoft Graph permissions reference](/graph/permissions-reference).
+For example: `"api://contoso.azurewebsites.net/12345678-1234-1234-1234-123456789012"`
 
-1. Within the application registration you just created select **API Permissions**. 
-1. Click **Add a permission** and choose **Microsoft Graph** then **Application permissions**
+#### Grant the required permission
+
+Your custom authentication extension requires the `CustomAuthenticationExtension.Receive.Payload` application permission to receive HTTP requests from authentication events. To set this permission follow these steps:
+
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Entra ID** > **App registrations** and select your custom authentication extension application.
+1. Go to **API permissions** > **Add a permission**.
 1. Search for **CustomAuthenticationExtension.Receive.Payload**, select it and click **Add permissions**.
+1. Finally, click **Grant admin consent for [Your Tenant]** to grant the permission.
 
 ## Create a custom extension policy
 
@@ -638,18 +622,16 @@ POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions
 
 ## Register a client application for testing
 
-To test the migration process you need to register a client web application. This application will simulate user sign-in and trigger the custom authentication extension. You can use an app registration or register a new one by following these steps:
+To test the JIT migration process, register a client web application that will trigger the custom authentication extension during sign-in. For detailed instructions on registering applications, see [Quickstart: Register an application](/entra/identity-platform/quickstart-register-app).
 
-1. Navigate to **Entra ID** and then **App registrations** in the [Microsoft Entra admin center](https://entra.microsoft.com/).
-1. Click on **New registration**.
-1. Enter a unique name for your application.
-1. Under **Supported account types**, select **Accounts in this organizational directory only**.
-1. In the **Redirect URI** section, select **Web** and then enter `https://jwt.ms` in the URL text box.
-1. Click **Register** to create the application.
-1. Under the **Manage** section, select **Authentication**.
-1. Under the **Implicit grant and hybrid flows** section, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
-1. Under **API Permissions**, grant admin consent for **User.Read** delegated MS Graph permissions.
-1. Select **Save** to save your changes.
+Register a new web application with these JIT migration-specific settings:
+
+- **Redirect URI**: Set to `https://jwt.ms` (Web platform) for testing
+- **Authentication**: Enable **ID tokens** under implicit grant and hybrid flows
+- **API Permissions**: Grant admin consent for **User.Read** (delegated Microsoft Graph permission)
+
+> [!TIP]
+> You can use an existing application registration if you have one configured for testing.
 
 ## Create a listener policy
 
@@ -661,7 +643,7 @@ Replace these placeholders with the following information from your configuratio
 
 - *App_ID*: The application ID from the client application you just registered. You can find the application ID on the application's **Overview** page.
 
-- *migrationAttributeID*: The extension attribute ID you created earlier in this tutorial to track the migration status of users.
+- *migrationPropertyId*: The extension attribute ID you created earlier in this tutorial to track the migration status of users.
 
 - *customExtensionObjectId*: The policy ID from the custom authentication extension you created earlier in this tutorial. 
 
@@ -685,7 +667,7 @@ Content-type: application/json 
     "priority": 500,  
     "handler": {  
         "@odata.type": "#microsoft.graph.onPasswordMigrationCustomExtensionHandler",  
-        "migrationAttributeId": "{migrationAttributeID}",  
+        "migrationPropertyId": "{migrationPropertyId}",  
         "customExtension": {  
             "id": "{customExtensionObjectId}"  
         }  
@@ -693,16 +675,11 @@ Content-type: application/json 
 }  
 ```
 
-### Set up encryption for password handling
+## Set up encryption for password handling
 
 The sample Azure Function includes hardcoded constants for the RSA decryption private key and other sensitive values. For production deployments, store these secrets in Azure Key Vault and reference them using Azure Function application settings.
 
-For detailed steps on creating a Key Vault, storing secrets, and configuring access, see:
-- [Quickstart: Create a Key Vault](/azure/key-vault/general/quick-create-portal)
-- [Best practices for secrets management](/azure/key-vault/secrets/secrets-best-practices)
-- [Azure Key Vault developer's guide](/azure/key-vault/general/developers-guide)
-
-#### Connect your Azure Function to Key Vault
+### Connect your Azure Function to Key Vault
 
 1. Enable a [system-assigned managed identity](/azure/app-service/overview-managed-identity#add-a-system-assigned-identity) for your Azure Function.
 2. Grant the managed identity access to Key Vault using the **Key Vault Secrets User** role. See [Provide access to Key Vault with Azure RBAC](/azure/key-vault/general/rbac-guide).
@@ -730,6 +707,7 @@ private static readonly string DECRYPTION_PRIVATE_KEY =
 - [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md)
 - [Custom authentication extensions overview](/graph/api/resources/customauthenticationextension)
 - [Secure Azure Functions](/azure/azure-functions/security-concepts)
+- [Azure Key Vault documentation](/azure/key-vault/)
 
 
 
