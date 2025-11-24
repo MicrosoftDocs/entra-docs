@@ -20,7 +20,7 @@ Check this article regularly to learn about:
 - Protocol changes
 - Deprecated functionality
 
-This article provides information about the latest updates to Microsoft single sign-on for Linux. 
+This article provides information about the latest updates to Microsoft Single Sign-On for Linux. 
 
 ### Package Repositories
 Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported.
@@ -77,7 +77,7 @@ We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pr
 - Device re-registration through Microsoft Entra ID and Intune required
 
 **Documentation:**
-For current production documentation, see: [Microsoft single sign-on for Linux](/entra/identity/devices/sso-linux)
+For current production documentation, see: [Microsoft Single Sign-On for Linux](/entra/identity/devices/sso-linux)
 
 ### 2.0.3 - Oct 21, 2025 - (Preview Release)
 

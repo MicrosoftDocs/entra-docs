@@ -10,9 +10,9 @@ ms.subservice: devices
 ms.custom: linux-related-content
 ---
 
-# What is Microsoft single sign-on for Linux?
+# What is Microsoft Single Sign-On for Linux?
 
-Microsoft single sign-on (SSO) for Linux is powered by the Microsoft Identity Broker, a software component that integrates Linux devices with Microsoft Entra ID. This solution enables users to authenticate once with their Microsoft Entra ID credentials and access multiple applications and resources without repeated authentication prompts. The feature simplifies the sign-in process for users and reduces password management overhead for administrators. 
+Microsoft Single Sign-On (SSO) for Linux is powered by the Microsoft Identity Broker, a software component that integrates Linux devices with Microsoft Entra ID. This solution enables users to authenticate once with their Microsoft Entra ID credentials and access multiple applications and resources without repeated authentication prompts. The feature simplifies the sign-in process for users and reduces password management overhead for administrators. 
 
 ## Features
 
@@ -31,7 +31,7 @@ The Teams web application and a new PWA (Progressive Web App) for Linux uses the
 
 ### Supported Operating Systems
 
-Microsoft single sign-on for Linux is supported on the following operating systems (physical or Hyper-V machines with x86/64 CPUs):
+Microsoft Single Sign-On for Linux is supported on the following operating systems (physical or Hyper-V machines with x86/64 CPUs):
 
 - Ubuntu Desktop 24.04 LTS (Long Term Support)
 - Ubuntu Desktop 22.04 LTS (Long Term Support) 
@@ -65,7 +65,7 @@ This video demonstrates the sign-in experience on brokered flows on Linux
 
 ## Installation
 
-Run the following commands in a command line to manually install the Microsoft single sign-on (microsoft-identity-broker) and its dependencies on your device.  
+Run the following commands in a command line to manually install the Microsoft Single Sign-On (microsoft-identity-broker) and its dependencies on your device.  
 
 ### [Ubuntu](#tab/debian-install)
 
@@ -90,7 +90,7 @@ Run the following commands in a command line to manually install the Microsoft s
     sudo apt update
     ```
 
-4. Install the Microsoft Single Sign-on (microsoft-identity-broker) app.
+4. Install the Microsoft Single Sign-On (microsoft-identity-broker) app.
 
     ```bash
     sudo apt install microsoft-identity-broker
@@ -107,7 +107,7 @@ Run the following commands in a command line to manually install the Microsoft s
    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel9.0-prod
    ```
 
-1. Install the Microsoft Single Sign-on (microsoft-identity-broker) app.  
+1. Install the Microsoft Single Sign-On (microsoft-identity-broker) app.  
 
    ```bash
    sudo dnf install microsoft-identity-broker
