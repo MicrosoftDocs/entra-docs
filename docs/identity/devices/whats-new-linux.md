@@ -7,6 +7,7 @@ ms.service: entra-id
 ms.topic: whats-new
 ms.date:     05/16/2025
 ms.subservice: devices
+ms.custom: linux-related-content
 ---
 
 # What's new in Microsoft Single Sign-On for Linux
@@ -56,14 +57,10 @@ The following table lists Identity Runtime SDK versions currently supported and 
 |stable|Production workloads|2.0.1|✅ Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
 |insiders-fast|Test upcoming releases|2.0.3|❌ No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)|
 
-
 > [!NOTE]
 > The current production version of the `microsoft-identity-broker` is `2.0.1`. Version `2.0.3` is available in the insiders-fast channel for testing purposes only.
 
-> [!IMPORTANT]
-> Future release dates shown in this document are tentative and subject to change based on development progress.
-
-We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow prerelease testing of packages newer than 2.0.1 (the latest production version). This channel isn't intended for production use and may contain breaking changes or incomplete features.
+We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow prerelease testing of packages newer than 2.0.1 (the latest production version). This channel isn't intended for production use and might contain breaking changes or incomplete features.
 
 ### Important Notes for Version 2.0.2 and Later
 
@@ -99,12 +96,12 @@ For current production documentation, see: [Microsoft single sign-on for Linux](
 ### 2.0.2 - Sept 19, 2025 - (Preview Release)
 Preview update to use a newly rewritten C++ broker instead of the previous Java-based broker.
 
-- Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a PIV profile (cert on a FIDO)
-- Added Telemetry to the header of token requests so we can differentiate broker versions.
-- When onboarding a new device, the device performs an Microsoft Entra Join instead of an Microsoft Entra Registration. This means it's a device trust, instead of a registration within the user profile. This is a prerequisite step to enable platformSSO in the future.
+- Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a Personal Identity Verification (PIV) profile.
+- Added a header of token requests, enabling differentiation between identity broker versions.
+- When a user configures single sign-on with a new Linux device, the device performs a [Microsoft Entra join](https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join) instead of a [Microsoft Entra registration](https://learn.microsoft.com/en-us/entra/identity/devices/concept-device-registration). A join results in creating a trust with the entire device, where a registration creates a trust only within the user profile. A join trust is a prerequisite step to enable platformSSO in the future.
 - Renamed the device broker service from `microsoft-identity-device-broker` to `microsoft-identity-devicebroker`.
 - There no longer is a user broker service named `microsoft-identity-broker`. The user broker is now an executable that gets invoked via dbus connection
-- Device certs are moved from the Keychain to `/etc/ssl/private`. In that directory, there will be a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via msal/OneAuth.
+- Device certs are moved from the Keychain to `/etc/ssl/private`. In the `private` directory, the broker will create a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via Microsoft Authentication Library (MSAL).
 
 #### Assets
 
@@ -247,9 +244,9 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 ### Version Compatibility
 
 **Before upgrading:**
-1. Check current version: `dpkg -l microsoft-identity-broker`
-2. Review breaking changes in the target version
-3. Plan for potential device re-registration
+- Check current version: `dpkg -l microsoft-identity-broker`
+- Review breaking changes in the target version
+- Plan for potential device re-registration
 
 ### Common Migration Issues
 
@@ -266,7 +263,7 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 ### Getting Help
 
 For version-specific issues:
-1. Check the release notes for known issues
-2. Verify system requirements are met
-3. Review logs using: `journalctl --user -u microsoft-identity-broker.service`
-4. Consider using the microsoft-identity-diagnostics package for detailed troubleshooting
+- Check the release notes for known issues
+- Verify system requirements are met
+- Review logs using: `journalctl --user -u microsoft-identity-broker.service`
+- Consider using the microsoft-identity-diagnostics package for detailed troubleshooting
