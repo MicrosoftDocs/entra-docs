@@ -25,7 +25,9 @@ To get to your agent ID blueprint page, follow these steps:
 1. In the **Agent collections** view, you see a tabbed section containing two options:
     - Select **Predefined** tab to view agents added to the **Global** collection.
     - Select **Custom** tab to view agents added to custom collections. This tab displays any custom collections that you created in your tenant. Selecting a custom collection shows the agents that are part of that collection.
-
+    
+    :::image type="content" source="media/agent-registry-manage-collections/agent-collections.png" alt-text="Screenshot of the Agent collections view showing predefined and custom tabs.":::
+    
 ## Create a custom collection
 
 To create a custom collection, follow these steps:
@@ -34,20 +36,24 @@ To create a custom collection, follow these steps:
 1. Select **+ Create collection**.
 1. Provide a descriptive and meaningful **Name** and **Description** of the collection.
 
+    :::image type="content" source="media/agent-registry-manage-collections/custom-collections.png" alt-text="Screenshot of the create custom collection dialog view.":::
+
 ## Add an agent to predefined collections
 
 Use the following steps to add an agent to a predefined collection.
 
 1. Select the **Predefined** tab to view the predefined collections.
-1. Select the predefined collection you want to add the agent to. It opens a view listing all the agents in that collection and their source (builder platform).
+1. Select the predefined collection you want to add the agent to. It opens a view listing all the agents in that collection and their publisher (builder platform).
 1. To add an agent to the collection, select **+ Add**, then choose the agents you want to add.
+
+    :::image type="content" source="media/agent-registry-manage-collections/predefined-add-agents.png" alt-text="Screenshot of view showing how to add agents to a predefined collection.":::
 
 ## Add an agent to custom collections
 
 Use the following steps to add an agent to a custom collection.
 
 1. Select the **Custom** tab to view the custom collections.
-1. Select the custom collection you want to add the agent to. A list of all agents and their source (builder platform) appears.
+1. Select the custom collection you want to add the agent to. A list of all agents and their publisher (builder platform) appears.
 1. To add an agent to the collection, select **+ Add**, then choose the agents you want to add.
 
 ## Configure Zero Trust Policies for agents
