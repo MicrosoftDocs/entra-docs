@@ -28,6 +28,7 @@ Before you begin, ensure you have:
 - **Microsoft Entra External ID tenant**: An active External ID tenant. If you don't have one, see [Get started with Microsoft Entra External ID](/entra/external-id/customers/quickstart-tenant-setup).
 - **Azure subscription**: Required for deploying the Azure Function that validates passwords against your legacy identity provider.
 - **Legacy identity provider access**: Ability to validate user credentials against your existing identity provider.
+- **Development environment**: To test your migration implementation before deploying to production.
 - **Understanding of the following concepts**:
   - [User management in Microsoft Entra ID](/entra/fundamentals/how-to-create-delete-users): Creating and managing user accounts
   - [App registrations](/entra/identity-platform/quickstart-register-app): Registering applications in Microsoft Entra ID
@@ -46,7 +47,6 @@ The JIT migration process is illustrated in the following diagram:
 ## Create a user in your External ID tenant
 
 To test the JIT migration process, you need to create a test user in your External ID tenant. This user represents someone who will be migrated from your legacy identity provider. You can create users through the [Microsoft Entra admin center](https://entra.microsoft.com/) or programmatically using the [Microsoft Graph API](/graph/api/user-post-users). For detailed instructions on user creation, see [How to create, invite, and delete users](/entra/fundamentals/how-to-create-delete-users).
-
 
 > [!IMPORTANT]
 > Set a temporary password for the test user. During JIT migration, this password will be replaced with the user's actual password from the legacy identity provider when they sign in for the first time. Ensure that the temporary passwords are unique and strong to maintain security during the migration process.
