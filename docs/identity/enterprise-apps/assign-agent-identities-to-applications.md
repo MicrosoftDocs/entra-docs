@@ -92,6 +92,8 @@ Then, for each agent identity of the agent, you create:
   * the SAML helper application registration as the resource
   * the scope value of the concatenation of `api://'`, the SAML helper application's application ID, and `/.default`
 
+:::image type="content" source="media/assign-agent-identities-to-applications/agent-saml.png" alt-text="Diagram of relationships between Microsoft Entra artifacts needed for SAML token issuance.":::
+
 If the agent has multiple agent identities, then permission inheritance can be used to grant consent once at the agent identity blueprint and inherit it for the agent identities.
 
 Once these applications, users, role assignments, and grants are in place in the tenant, then an agent that needs a SAML assertion for authenticating to the enterprise application can:
