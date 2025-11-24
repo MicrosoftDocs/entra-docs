@@ -99,7 +99,7 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 - Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a Personal Identity Verification (PIV) profile.
 - Added a header of token requests, enabling differentiation between identity broker versions.
 - When a user configures single sign-on with a new Linux device, the device performs a Microsoft Entra join instead of a Microsoft Entra registration. A join results in creating a trust with the entire device, where a registration creates a trust only within the user profile. A join trust is a prerequisite step to enable platformSSO in the future.
-- Renamed the device broker service from `microsoft-identity-device-broker` to `microsoft-identity-devicebroker`.
+- Renamed the device broker service to `microsoft-identity-devicebroker`.
 - There no longer is a user broker service named `microsoft-identity-broker`. The user broker is now an executable that gets invoked via dbus connection
 - Device certs are moved from the Keychain to `/etc/ssl/private`. In the `private` directory, the broker will create a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via Microsoft Authentication Library (MSAL).
 
