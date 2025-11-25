@@ -68,7 +68,7 @@ Test sign-in flows ahead of time to identify and resolve violations, minimize di
 - **Step 1**: Go through a sign-in flow with the dev console open to identify any violations.
 - **Step 2**: Review the information about the violation displayed in red. If a specific team or person caused the violation, it appears only in their flows. To ensure accuracy, thoroughly assess different sign-in scenarios within your organization. Here's an example of a violation:
 
-    [![Screenshot showing CSP violation example](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
+    [![Screenshot showing CSP violation example.](./media/content-security-policy/blocked-script-console-error.png)](./media/content-security-policy/blocked-script-console-error.png#lightbox)
 
 This update to our CSP adds an extra layer of protection by blocking unauthorized scripts, further helping safeguard your organization against evolving security threats. To ensure a smooth rollout, test your sign-in flow thoroughly ahead of time. This helps you catch and address any issues early, so your users stay protected, and your sign-in experience remains seamless. 
 
