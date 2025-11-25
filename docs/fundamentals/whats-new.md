@@ -270,11 +270,11 @@ The experience is now available in Preview within the Microsoft Entra Admin Cent
     
 
 To learn more, see: 
-- [Microsoft Entra documentation](https://learn.microsoft.com/en-us/entra/) 
+- [Microsoft Entra documentation](https://learn.microsoft.com/entra/) 
 
-- [Microsoft Entra Global Secure Access](https://learn.microsoft.com/en-us/entra/global-secure-access/) 
+- [Microsoft Entra Global Secure Access](https://learn.microsoft.com/entra/global-secure-access/) 
 
-- [Microsoft Defender for Cloud Apps overview](https://learn.microsoft.com/en-us/defender-cloud-apps/)
+- [Microsoft Defender for Cloud Apps overview](https://learn.microsoft.com/defender-cloud-apps/)
 
 ---
 
@@ -316,7 +316,7 @@ Remote Network Connectivity enables secure, _clientless_ access to Microsoft 365
 **Service category:** Internet Access  
 **Product capability:** Network Access  
 
-In today's evolving threat landscape, organizations face challenges protecting sensitive data and systems from cyber attacks. Global Secure Access combines Entra Internet Access protections with Netskope's Advanced Threat Protection (ATP) and Data Loss Prevention (DLP) capabilities to deliver real-time protection against malware, zero-day vulnerabilities, and data leaks, and simplifies management through a unified platform. Microsoft’s SSE solution adopts an open platform approach, enabling integration with third-party companies, with Netskope being the first. For more information, see: [Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention](..global-secure-access/concept-netskope-integration.md).
+In today's evolving threat landscape, organizations face challenges protecting sensitive data and systems from cyber attacks. Global Secure Access combines Entra Internet Access protections with Netskope's Advanced Threat Protection (ATP) and Data Loss Prevention (DLP) capabilities to deliver real-time protection against malware, zero-day vulnerabilities, and data leaks, and simplifies management through a unified platform. Microsoft’s SSE solution adopts an open platform approach, enabling integration with third-party companies, with Netskope being the first. For more information, see: [Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention](../global-secure-access/concept-netskope-integration.md).
 
 ---
 
@@ -344,7 +344,7 @@ Transport Layer Security (TLS) Inspection for Microsoft Entra Internet Access is
 
 TLS Inspection provides the foundation for user-friendly block messages, full URL filtering, file policy enforcement, and prompt inspection with AI Gateway.
 
-Organizations can define flexible TLS inspection policies to specify which traffic to inspect, and which users or devices policies apply to. Custom rules offer granular control to intercept or bypass traffic based on destination FQDNs or web categories, while traffic logs provide detailed insights into matched policies and rules. Learn more from [What is Transport Layer Security Inspection?](../global-secure-access/concept-transport-layer-security).
+Organizations can define flexible TLS inspection policies to specify which traffic to inspect, and which users or devices policies apply to. Custom rules offer granular control to intercept or bypass traffic based on destination FQDNs or web categories, while traffic logs provide detailed insights into matched policies and rules. Learn more from [What is Transport Layer Security Inspection?](../global-secure-access/concept-transport-layer-security.md).
 
 ---
 
