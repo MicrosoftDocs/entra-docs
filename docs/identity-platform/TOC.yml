@@ -115,6 +115,9 @@
           href: secure-least-privileged-access.md
         - name: Secure access control using groups
           href: secure-group-access-control.md
+        - name: Content Security Policy (CSP) overview
+          href: content-security-policy.md
+          displayName: CSP, security headers, XSS protection
         - name: Tokens and claims
           items:
             - name: Tokens and claims overview
