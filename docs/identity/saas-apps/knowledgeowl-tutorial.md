@@ -151,7 +151,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	c. In the **Service provider metadata** section, copy the **SP login URL** value and paste it into the **Sign-on URL and Reply URL** textboxes in the **Basic SAML Configuration** section on the Azure portal.
 
-	![Screenshot shows the Identity provider metadata section where you can complete the steps mentioned here.](./media/knowledgeowl-tutorial/idp-metadata.png)
+	![Screenshot shows the Identity provider metadata section where you can complete the steps mentioned here.](./media/knowledgeowl-tutorial/saml-identity-provider-metadata.png)
 
 	d. In the **Identity provider metadata** section, paste the **Microsoft Entra Identifier** value you previously copied into the **IdP entityID** textbox.
 
