@@ -3,7 +3,7 @@ title: Global Secure Access Client for macOS Release Notes
 description: Track the latest updates and bug fixes for the Global Secure Access client for macOS. Stay informed about version changes and download instructions.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 11/03/2025
+ms.date: 11/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -24,7 +24,7 @@ You can download the current version of the Global Secure Access client from the
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
 
 ## Version 1.1.25090800
-Released for download on November 04, 2025.
+Released for download on November 24, 2025.
 ### Other changes
 - Bug fix: Better recovery of the connection to the Global Secure Access cloud service when a device switches between networks.
 - Bug fix: Mutual Transport Layer Security (mTLS) connections to the Global Secure Access cloud service use the correct certificate after renewal.
