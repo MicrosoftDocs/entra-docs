@@ -25,7 +25,6 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 ### Updated articles
 
-- [Overview of the Woodgrove Groceries demo](customers/overview-solutions-customers.md) - Added a note about the availability of the demo environment
 - [Identity providers for external tenants](customers/concept-authentication-methods-customers.md) - Added domain acceleration information
 
 ## September 2025
