@@ -109,7 +109,7 @@ Web applications that sign in users by using the Microsoft identity platform are
     - https://login.microsoftonline.com/ for Azure public cloud
     - https://login.microsoftonline.us/ for Azure US government
     - https://login.microsoftonline.de/ for Microsoft Entra Germany
-    - https://login.partner.microsoftonline.cn/common for Microsoft Entra China operated by 21Vianet
+    - https://login.partner.microsoftonline.cn/ for Microsoft Entra China operated by 21Vianet
 - `TENANT_ID` - The identifier of the tenant where the app is registered. Although we recommend to use the tenant ID obtained from the application registration, you can also use one of the following values:
     - `organizations` to sign in users in any work or school account
     - `common` to sign in users with any work or school account or Microsoft personal account
