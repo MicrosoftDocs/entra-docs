@@ -42,16 +42,12 @@ MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs d
 
 This feature currently supports the following Windows distributions:
 
-::: zone pivot="identity-extension-vm"
-- Windows 11 21H2 or later installed.
-- Windows 10, version 1809 or later installed.
-- Windows Server 1809 or later installed with Desktop Experience.
-::: zone-end
 
-::: zone pivot="identity-extension-hybrid"
+
 - Windows 11 24H2 or later installed.
-- Windows Server 2025 or later installed with Desktop Experience.
-::: zone-end
+-
+ Windows Server 2025 or later installed with Desktop Experience.
+
 
 This feature is now available in the following Azure clouds:
 
