@@ -51,7 +51,7 @@ Microsoft Entra ID Account Recovery is an advanced authentication recovery mecha
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** B2B/B2C  
 
-We’re expanding Microsoft Entra External ID to **Australia** and **Japan** with **Go‑Local add‑on** that keeps External ID data **stored and processed in‑country**. This premium add‑on is selectable when you create a new External ID tenant and is designed for organizations with strict **data residency** requirements. A small set of centralized platform services remains global (e.g., some MFA/RBAC functions), with no change to security or compliance posture. **Get started:** Create a new tenant in **Australia** or **Japan** and opt in to the add‑on or contact your Microsoft representative to discuss options for your existing environment. For more information, see: [Microsoft Entra ID and data residency](data-residency.md)
+We’re expanding Microsoft Entra External ID to **Australia** and **Japan** with **Go‑Local add‑on** that keeps External ID data **stored and processed in location**. This premium add‑on is selectable when you create a new External ID tenant and is designed for organizations with strict **data residency** requirements. A small set of centralized platform services remains global (e.g., some MFA/RBAC functions), with no change to security or compliance posture. **Get started:** Create a new tenant in **Australia** or **Japan** and opt in to the add‑on or contact your Microsoft representative to discuss options for your existing environment. For more information, see: [Microsoft Entra ID and data residency](data-residency.md)
 
 ---
 
