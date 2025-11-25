@@ -19,16 +19,16 @@ Microsoft Entra entitlement management provides access packages as a governance 
 
 ## Access request and approval process
 
-To use access packages, IT admin configures an access package with the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension.  When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
+To use access packages, IT admin configures an access package with the required policy settings. These settings define who can get access, who can request access, approvals, access expiration, and extension. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
 
 > [!NOTE]
-> If your agents are not using Microsoft Entra agent IDs, then also create an access package assignment policy with the option **All Service principals (preview)** to allow service principals in your directory to be able to request this access package.
+> If your agents aren't using Microsoft Entra agent IDs, then also create an access package assignment policy with the option **All Service principals (preview)** to allow service principals in your directory to be able to request this access package.
 
 Agents can then be assigned access packages through three different request pathways.
 
 - The agent identity itself can programmatically request an access package when needed for its operations, by creating an [accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&tabs=http).
 - The agent's sponsor can request access on behalf of the agent ID, providing human oversight in the access request process. For more information, see [Request an access package on behalf of an agent identity (Preview)](/entra/id-governance/entitlement-management-request-behalf#request-an-access-package-on-behalf-of-an-agent-identity-preview).
-- An administrator can assign the agent identity or agent user to the access package.
+- An administrator can [directly assign the agent identity or agent user to the access package](/entra/id-governance/entitlement-management-access-package-assignments#directly-assign-an-identity).
 
 After submission, the access request is routed to designated approvers based on the access package configuration.
 
