@@ -115,16 +115,18 @@ Web applications that sign in users by using the Microsoft identity platform are
 
 ### [External tenant](#tab/external-tenant)
 
-- `AUTHORITY` - The URL of the external tenant where the application is registered. The format is `https://<tenant_subdomain>.ciamlogin.com/` (or `https://<tenant_subdomain>.onmicrosoft.com/`). To obtain your tenant subdomain details, refer to the steps in [Create an external tenant](/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details).
-- `CLIENT_ID` - Identifier of the application (also known as the client) as obtained from the application registration.
-- `CLIENT_SECRET` - The secret value of the secret as obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center.
-- `REDIRECT_URI` - The URI where the Microsoft identity platform sends security tokens after authentication.
+| Environment variable | Description |
+|---|---|
+| `AUTHORITY` | The URL of the external tenant where the application is registered. Format: `https://<tenant_subdomain>.ciamlogin.com/` (or `https://<tenant_subdomain>.onmicrosoft.com/`). See [Create an external tenant](/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details) to obtain your tenant subdomain. |
+| `CLIENT_ID` | Identifier of the application (client) from the app registration. |
+| `CLIENT_SECRET` | The client secret value obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center. |
+| `REDIRECT_URI` | The URI where the Microsoft identity platform sends security tokens after authentication. |
 
 ---
 
 ### Update the configuration file
 
-1. Create an .env* file in your root folder to safely store your app's configuration. Your *.env* file should contain the following environment variables:
+1. Create a *.env* file in your root folder to safely store your app's configuration. Your *.env* file should contain the following environment variables:
 
     #### [Workforce tenant](#tab/workforce-tenant)
 
