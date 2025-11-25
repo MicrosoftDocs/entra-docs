@@ -83,7 +83,31 @@ dotnet add package Microsoft.Identity.Web.UI
 
 ## Configure the application for authentication
 
-The values recorded in your application setup are used to configure the application for authentication. The configuration file, *appsettings.json*, is used to store application settings used during run-time.
+Web applications that sign in users by using the Microsoft identity platform are configured through a configuration file, *appsettings.json*. In ASP.NET Core, it must specify the following values:
+
+### [Workforce tenant](#tab/workforce-tenant)
+
+- `Instance` - The authentication endpoint to run your app in national clouds. Use one of the following options;
+    - https://login.microsoftonline.com/ for Azure public cloud
+    - https://login.microsoftonline.us/ for Azure US government
+    - https://login.microsoftonline.de/ for Microsoft Entra Germany
+    - https://login.partner.microsoftonline.cn/common for Microsoft Entra China operated by 21Vianet
+- `TenantId` - The identifier of the tenant where the app is registered. Although we recommend to use the tenant ID obtained from the application registration, you can also use one of the following values:
+    - `organizations` to sign in users in any work or school account
+    - `common` to sign in users with any work or school account or Microsoft personal account
+    - `consumers` to sign in users with a Microsoft personal account only
+- `ClientId` - Identifier of the application (also known as the client) as obtained from the application registration.
+- `CertificateThumbprint` - The thumbprint of the certificate as obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center.
+- `CallbackPath` - The identifier used to help the server redirect a response. This is set to `/signin-oidc` for this tutorial.
+- `DownstreamApi` - An identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the scope, `user.read`.
+
+### [External tenant](#tab/external-tenant)
+
+- `Authority` - This is the URL of the external tenant where the application is registered. The format is `https://<tenant_subdomain>.ciamlogin.com/`. To obtain your tenant subdomain details, refer to the steps in [Create an external tenant](/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details).
+- `ClientId` - Identifier of the application (also known as the client) as obtained from the application registration.
+- `CertificateThumbprint` - The thumbprint of the certificate as obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center.
+
+---
 
 ### Update the configuration file
 
@@ -157,13 +181,6 @@ In your IDE, open *appsettings.json* and replace the file contents with the foll
 }
 ```
 ---
-
-* `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
-* `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
-* `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
-* `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded. Do not use a self signed certificate for production apps. 
-* `CallbackPath` - Is an identifier to help the server redirect a response to the appropriate application.
-* `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
 
 ### Update the redirect URI
 
