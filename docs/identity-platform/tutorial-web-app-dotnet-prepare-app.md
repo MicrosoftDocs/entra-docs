@@ -85,36 +85,24 @@ dotnet add package Microsoft.Identity.Web.UI
 
 Web applications that sign in users by using the Microsoft identity platform are configured through a configuration file, *appsettings.json*. In ASP.NET Core, it must specify the following values:
 
+### [Workforce tenant](#tab/workforce-tenant)
+
 | Setting | Description |
 |---|---|
-| `Instance` | The authentication endpoint to run your app in national clouds. Use one of: <br>`https://login.microsoftonline.com/` (Azure public cloud) <br>`https://login.microsoftonline.us/` (Azure US government) <br> `https://login.microsoftonline.de/` (Microsoft Entra Germany) <br>`https://login.partner.microsoftonline.cn/` (Microsoft Entra China operated by 21Vianet) |
-| `TenantId` | The identifier of the tenant where the app is registered. **Recommended:** use the tenant ID from the app registration. **Alternatives:** <br>`organizations` (any work or school account) <br>`common` (work/school or Microsoft personal account) <br>`consumers` (Microsoft personal accounts only). |
+| `Instance` | The authentication endpoint to run your app in national clouds. Use one of: <br>- `https://login.microsoftonline.com/` (Azure public cloud) <br>- `https://login.microsoftonline.us/` (Azure US government) <br>- `https://login.microsoftonline.de/` (Microsoft Entra Germany) <br>- `https://login.partner.microsoftonline.cn/` (Microsoft Entra China operated by 21Vianet) |
+| `TenantId` | The identifier of the tenant where the app is registered. **Recommended:** use the tenant ID from the app registration. **Alternatives:** <br>- `organizations` (any work or school account) <br>- `common` (work/school or Microsoft personal account) <br>- `consumers` (Microsoft personal accounts only). |
 | `ClientId` | Identifier of the application (client) obtained from the application registration. |
 | `CertificateThumbprint` | Thumbprint of the certificate uploaded in the Microsoft Entra admin center (see [add credentials](./how-to-add-credentials.md)). |
 | `CallbackPath` | Path used to redirect responses; set to `/signin-oidc` for this tutorial. |
 | `DownstreamApi` | Identifier that defines an endpoint for accessing Microsoft Graph. Combine the application URI with the required scope (for example, `user.read`). |
 
-### [Workforce tenant](#tab/workforce-tenant)
-
-- `Instance` - The authentication endpoint to run your app in national clouds. Use one of the following options;
-    - `https://login.microsoftonline.com/` for Azure public cloud
-    - `https://login.microsoftonline.us/` for Azure US government
-    - `https://login.microsoftonline.de/ f`or Microsoft Entra Germany
-    - `https://login.partner.microsoftonline.cn/` for Microsoft Entra China operated by 21Vianet
-- `TenantId` - The identifier of the tenant where the app is registered. Although we recommend to use the tenant ID obtained from the application registration, you can also use one of the following values:
-    - `organizations` to sign in users in any work or school account
-    - `common` to sign in users with any work or school account or Microsoft personal account
-    - `consumers` to sign in users with a Microsoft personal account only
-- `ClientId` - Identifier of the application (also known as the client) as obtained from the application registration.
-- `CertificateThumbprint` - The thumbprint of the certificate as obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center.
-- `CallbackPath` - The identifier used to help the server redirect a response. This is set to `/signin-oidc` for this tutorial.
-- `DownstreamApi` - An identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the scope, `user.read`.
-
 ### [External tenant](#tab/external-tenant)
 
-- `Authority` - This is the URL of the external tenant where the application is registered. The format is `https://<tenant_subdomain>.ciamlogin.com/`. To obtain your tenant subdomain details, refer to the steps in [Create an external tenant](/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details).
-- `ClientId` - Identifier of the application (also known as the client) as obtained from the application registration.
-- `CertificateThumbprint` - The thumbprint of the certificate as obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center.
+| Setting | Description |
+|---|---|
+| `Authority` | URL of the external tenant where the application is registered. Format: `https://<tenant_subdomain>.ciamlogin.com/`. To obtain your tenant subdomain details, see [Create an external tenant](/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details). |
+| `ClientId` | Identifier of the application (client) obtained from the application registration. |
+| `CertificateThumbprint` | Thumbprint of the certificate obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center. |
 
 ---
 
