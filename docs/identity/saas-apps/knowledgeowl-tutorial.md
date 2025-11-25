@@ -137,7 +137,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Select **Security and access** and then select **Single sign-on**.
 
-	![Screenshot shows Single sign-on selected from the Security and access menu.](./media/knowledgeowl-tutorial/settings-sso-dropdown.png)
+    ![Screenshot shows Single sign-on selected from the Security and access menu.](./media/knowledgeowl-tutorial/security-sso-menu.png)
 
 1. In the **SAML Settings** tab, perform the following steps:
 
