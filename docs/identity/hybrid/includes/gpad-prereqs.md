@@ -71,7 +71,7 @@ Use **Selected security groups** scoping mode as recommended.
 
 ### Some group exceeds 50K members:
 
-**Split membership** across multiple groups or adopt staged groups (for examples, by region or business unit) to keep each group under the cap.
+**Split membership** across multiple groups or adopt staged groups (for example, by region or business unit) to keep each group under the cap.
 
 
 ### Expanded group scaling via API
