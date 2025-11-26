@@ -229,11 +229,13 @@ To add a Microsoft Entra role programmatically, see: [Add a Microsoft Entra role
 
 ## Add an API permission (Preview)
 
+This resource role is used for assigning API permissions to a service principal or agent ID, as part of Microsoft Entra Agent ID.
+
 [!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
-For assigning API permissions to an access package for service principals or agent IDs (preview), select one of more API permissions from the list.
+Prior to including API permissions in an access package, ensure that the access package policies are scoped to either all service principals or all agent IDs, as users cannot receive API permissions. Then, select one of more API permissions from the list.
 
-    :::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
+:::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
 
 ## Add resource roles programmatically
 
