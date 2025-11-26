@@ -76,7 +76,7 @@ Follow these steps to change the list of incompatible groups or other access pac
 You can add Microsoft Entra roles as resource roles in an access package using Microsoft Graph. If using delegated permissions, the user who wants to add the role to the catalog needs to be a Global Administrator or a Privileged Role Administrator with Catalog Owner permissions. Applications with the `Entitlement Management.ReadWrite.All` permissions cannot add Microsoft Entra roles to catalogs unless they also have Global Administrator or Privilege Role Administrator permissions.
 
 > [!NOTE]
-> The delegated `EntitlementManagement.ReadWrite.All' permission isn't sufficient to perform these operations.
+> The delegated `EntitlementManagement.ReadWrite.All` permission isn't sufficient to perform these operations.
 
 ### Add a Microsoft Entra role as a resource in an access package using Graph
 
