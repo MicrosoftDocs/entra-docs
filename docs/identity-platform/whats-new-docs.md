@@ -25,7 +25,6 @@ We did not publish any updates this month.
 
 - [Configure a mobile app that calls web APIs](scenario-mobile-app-configuration.md) - The update improved content clarity.
 - [Desktop app that calls web APIs: Code configuration](scenario-desktop-app-configuration.md) - The update improved content clarity.
-- [Web app that signs in users: Code configuration](scenario-web-app-sign-user-app-configuration.md) - The update improved content clarity.
 
 ## August 2025
 
