@@ -82,7 +82,7 @@ You can add Microsoft Entra roles as resource roles in an access package using M
 
 First, call [Create accessPackageResourceRequest](/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0&tabs=http) to add the Microsoft Entra role as a resource to the catalog.
 
-To add a Microsoft Entra role to an access package as a resource role, use the following payload for [Create resourceRoleScope](/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0&tabs=http):
+Then, to add that Microsoft Entra role to an access package as a resource role, use the following payload for [Create resourceRoleScope](/graph/api/accesspackage-post-resourcerolescopes?view=graph-rest-1.0&tabs=http):
 
 ```json
 {
