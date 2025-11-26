@@ -28,7 +28,7 @@ This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite su
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog creator. Users who were assigned to the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned to the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance Administrator role.
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. Select **New catalog**.
 
@@ -43,7 +43,7 @@ With a catalog created, you can add custom data provided resource to it by doing
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you created in the previous section.
 

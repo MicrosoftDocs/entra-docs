@@ -44,7 +44,7 @@ Microsoft Entra Agent ID brings agent IDs into similar identity governance proce
 - Ensure sponsors and owners are assigned and maintained for each agent ID, preventing orphaned agent IDs.
 - Enforce that agent access to resources is intentional, auditable, and time-bound through access packages.
 
-For more information, see [identity governance for agents](/entra/id-governance/agent-id-governance-overview)
+For more information, see [identity governance for agents](/entra/id-governance/agent-id-governance-overview).
 
 ## Identity protection for agents
 
