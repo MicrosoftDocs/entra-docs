@@ -50,6 +50,14 @@ Group Provision to AD feature's performance is impacted by the size of the tenan
 - Groups that are larger than 50K members aren't supported.
 - The use of "All security groups" scoping without applying attribute scope filtering is not supported.
 
+### Scale limits
+
+
+|Scoping Mode  |Number of in-scope groups | Number of membership links (Direct members only)  |Notes  |
+|---------|---------|---------|---------|
+|"Selected security groups" mode    |  Up to 10K groups. The CloudSync pane in Microsoft Entra portal only allows selecting up to 999 groups as well as displaying up to 999 groups. if you need to add more than 1000 groups into scope, see: [Expanded group scaling via API](#expanded-group-scaling-via-api).    |    Up to 250K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant exceeds ANY of these limits<br> 1. Tenant has more than 200k users<br>2. Tenant has more than 40K groups<br> 3. Tenant has more than 1M group memberships.|
+|“All Security groups” mode with at least one attribute scoping filter.     |   Up to 20K groups.      |   Up to 500K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant satisfies ALL the below limits:<br>1. Tenant has less than 200k users<br>2. Tenant has less than 40K groups<br>3. Tenant has more than 1M group memberships. |
+
 ### What to do if you exceed limits
 Exceeding the recommended limits will slow initial and delta sync, possibly causing sync errors. If this happens, follow these steps:
 
@@ -64,14 +72,6 @@ Use **Selected security groups** scoping mode as recommended.
 ### Some group exceeds 50K members:
 
 **Split membership** across multiple groups or adopt staged groups (for examples by region or business unit) to keep each group under the cap.
-
-### Scale limits
-
-
-|Scoping Mode  |Number of in-scope groups | Number of membership links (Direct members only)  |Notes  |
-|---------|---------|---------|---------|
-|"Selected security groups" mode    |  Up to 10K groups. The CloudSync pane in Microsoft Entra portal only allows selecting up to 999 groups as well as displaying up to 999 groups.     |    Up to 250K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant exceeds ANY of these limits<br> 1. Tenant has more than 200k users<br>2. Tenant has more than 40K groups<br> 3. Tenant has more than 1M group memberships.|
-|“All Security groups” mode with at least one attribute scoping filter.     |   Up to 20K groups.      |   Up to 500K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant satisfies ALL the below limits:<br>1. Tenant has less than 200k users<br>2. Tenant has less than 40K groups<br>3. Tenant has more than 1M group memberships. |
 
 
 ### Expanded group scaling via API
@@ -107,8 +107,6 @@ The following table is a list of App Role Ids for Clouds:
 |AzureUSGovernment     |  d8fa317e-0713-4930-91d8-1dbeb150978f       |
 |AzureUSNatCloud     |   50a55e47-aae2-425c-8dcb-ed711147a39f      |
 |AzureUSSecCloud     |   52e862b9-0b95-43fe-9340-54f51248314f     |
-
-
 
 
 
