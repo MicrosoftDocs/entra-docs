@@ -85,7 +85,7 @@ The following table is a list of App Role Ids for Clouds:
 |Cloud  |appRoleId  |
 |---------|---------|
 |Public     |   1a0abf4d-b9fa-4512-a3a2-51ee82c6fd9f      |
-|AzureUSGovenment     |  d8fa317e-0713-4930-91d8-1dbeb150978f       |
+|AzureUSGovernment     |  d8fa317e-0713-4930-91d8-1dbeb150978f       |
 |AzureUSNatCloud     |   50a55e47-aae2-425c-8dcb-ed711147a39f      |
 |AzureUSSecCloud     |   52e862b9-0b95-43fe-9340-54f51248314f     |
 
