@@ -83,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. In the **Tenant URL** field, input your ALVAO Tenant URL and Secret Token. Select **Test Connection** to ensure Microsoft Entra ID can connect to ALVAO. If the connection fails, ensure your ALVAO account has Admin permissions and try again.
 
-   ![Screenshot of Token.](common/provisioning-test-connection.png)
+   ![Screenshot of Provisioning test connection.](common/provisioning-test-connection.png)
 
 1. Select **Create** to create your configuration.	
 
@@ -91,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Apply** to save the changes.
 
-   ![Screenshot of Token.](common/provisioning-properties.png)
+   ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
 1. Select **Attribute Mappings** in the left panel and select users.
 
@@ -132,9 +132,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |externalId|String|||
    |members|Reference|||
    
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. Use [on-demand provisioning](~/identity/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
+1. Use [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) to validate sync with a small number of users before deploying more broadly in your organization.  
 
 1. When you're ready to provision, select **Start Provisioning** from the overview.
 
