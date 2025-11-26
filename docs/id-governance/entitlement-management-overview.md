@@ -133,6 +133,9 @@ To better understand entitlement management and its documentation, you can refer
 
 [!INCLUDE [active-directory-p2-governance-license.md](~/includes/entra-p2-governance-license.md)]
 
+### License requirements for assigning agents to access packages (preview)
+
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Next steps
 
