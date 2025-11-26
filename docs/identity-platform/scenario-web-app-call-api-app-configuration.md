@@ -376,7 +376,7 @@ The `getAuthResultByAuthCode` method is defined in [AuthHelper.java#L176](https:
 
 # [Python](#tab/python)
 
-See [Web app that signs in users: Code configuration](scenario-web-app-sign-user-app-configuration.md?tabs=python#initialization-code) to understand how the Python sample gets the authorization code. 
+Refer to [Tutorial: Sign-in users to a Python Flask web app by using Microsoft identity platform](./tutorial-web-app-python-flask-sign-in-out.md)
 
 The Microsoft sign-in screen sends the authorization code to the `/getAToken` URL that was specified in the app registration. The `auth_response` route handles that URL, calling `auth.complete_login` to process the authorization code, and then either returning an error or redirecting to the home page.
 
