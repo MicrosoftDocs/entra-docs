@@ -5,10 +5,10 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/22/2023
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Transition to governed collaboration with Microsoft Entra B2B collaboration

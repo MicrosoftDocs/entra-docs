@@ -1,16 +1,19 @@
 ---
-title: Microsoft Entra ID's backup authentication system
-description: Increasing the resilience of the authentication plane with the backup authentication system.
-
+title: Backup Authentication System for Microsoft Entra ID
+description: Explore the resilience features of Microsoft Entra ID's backup authentication system, designed to maintain authentication availability for users and services.
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 05/29/2024
-
+ms.topic: article
+ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
-ms.reviewer: joroja
+manager: dougeby
+ms.reviewer: ludwignick
+ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/22/2025
+  - ai-gen-description
 ---
 # Microsoft Entra ID's backup authentication system
 
@@ -26,7 +29,7 @@ In addition to Microsoft applications, we support:
 - Software as a service (SaaS) applications available in the app gallery, like ADP, Atlassian, AWS, GoToMeeting, Kronos, Marketo, SAP, Trello, Workday, and more.
 - Selected line of business applications, based on their authentication patterns.
 
-Service to service authentication that relies on managed identities for Azure resources or are built on Azure services, like virtual machines, cloud storage, Azure AI services, and App Service, receives increased resilience from the backup authentication system.
+Service to service authentication that relies on managed identities for Azure resources or are built on Azure services receive increased resilience from the backup authentication system.
 
 Microsoft is continuously expanding the number of supported scenarios.
 
@@ -57,7 +60,7 @@ During an outage, a user can authenticate using the backup authentication system
 
 ### How does interactive authentication and user activity affect resilience?
 
-The backup authentication system relies on metadata from a prior authentication to reauthenticate the user during an outage. For this reason, a user must have authenticated in the last three days using the same app on the same device for the backup service to be effective. Users who are inactive or haven't authenticated to a given app can't use the backup authentication system for that application.
+The backup authentication system relies on metadata from a prior authentication to reauthenticate the user during an outage. A user must have authenticated in the last three days using the same app on the same device for the backup service to be effective. Users who are inactive or haven't authenticated to a given app can't use the backup authentication system for that application.
 
 ### How do Conditional Access policies affect resilience?
 
@@ -68,6 +71,14 @@ Certain other types of policies don't support use of the backup authentication s
 - Use of the [sign-in frequency control](~/identity/conditional-access/concept-conditional-access-session.md#sign-in-frequency) as part of a Conditional Access policy.
 - Use of the [authentication methods policy](~/identity/conditional-access/concept-conditional-access-grant.md#require-authentication-strength).
 - Use of [classic Conditional Access policies](~/identity/conditional-access/policy-migration-mfa.md).
+
+#### Evaluation of report-only Conditional Access policies
+
+If a request is processed by the backup authentication system, report-only Conditional Access policies will appear under the **Conditional Access** tab in **Entra ID** > **Monitoring & health** > **Sign-in logs** for that sign-in event, rather than in the **Report-only** tab. Note that even in this view, policies configured in report-only mode are never enforced. To see if tokens were issued via backup authentication system within your tenant, you can use the sign-in logs. In **Entra ID** > **Monitoring & health** > **Sign-in Logs**, add the filter `Token issuer type == Microsoft Entra Backup Auth` to display the logs processed by the backup authentication system. 
+
+### Certificate revocation and the backup authentication system 
+
+To enhance its resilience posture, the backup authentication system can't perform fresh revocation checks. Instead, it relies on the state of the certificate revocation list (CRL) check that's performed when the session was last backed up. If you need to revoke before this backup expires, you should explicitly revoke the session instead of waiting for the CRL.  
 
 ## Workload identity resilience in the backup authentication system
 
@@ -81,15 +92,15 @@ In addition to user authentication, the backup authentication system provides re
 
 ## Cloud environments that support the backup authentication system
 
-The backup authentication system is supported in all cloud environments except Microsoft Azure operated by 21Vianet. The types of identities supported vary by cloud, as described in the following table.
+The backup authentication system is supported in all cloud environments except Microsoft Azure operated by 21Vianet. The types of identities supported vary by cloud and have separate authentication endpoints, as described in the following table.
 
-| Azure environment | Identities protected |
-| --- | --- |
-| Azure Commercial | Users and managed identities |
-| Azure Government | Users and managed identities |
-| Azure Government Secret | Managed identities |
-| Azure Government Top Secret | Managed identities |
-| Azure operated by 21Vianet | Not available |
+| Azure environment | Microsoft 365 environments | Identities protected | Microsoft Entra authentication endpoint |
+| --- | --- | --- | --- |
+| Azure Commercial | Commercial and M365 Government | Users and managed identities | ```https://login.microsoftonline.com``` |
+| Azure Government | M365 GCC High and DoD | Users and managed identities | ```https://login.microsoftonline.us``` |
+| Azure Government Secret | M365 Government Secret | Users and managed identities | Not available |
+| Azure Government Top Secret | M365 Government Top Secret | Users and managed identities | Not available |
+| Azure operated by 21Vianet | Not available | Managed identities | ```https://login.partner.microsoftonline.cn``` | 
 
 ## Appendix
 
@@ -108,7 +119,7 @@ The backup authentication system is supported in all cloud environments except M
 | Atlassian Cloud | Yes \* | Protected |
 | Blackboard Learn | No | SAML SP-initiated |
 | Box | No | SAML SP-initiated |
-| Brightspace by Desire2Leam | No | SAML SP-initiated |
+| Brightspace by Desire2Learn | No | SAML SP-initiated |
 | Canvas | No | SAML SP-initiated |
 | Ceridian Dayforce HCM | No | SAML SP-initiated |
 | Cisco AnyConnect | No | SAML SP-initiated |

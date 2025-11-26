@@ -1,13 +1,13 @@
 ---
 title: Tutorial - Use a Windows VM/VMSS to access Azure resources
 description: A tutorial that shows you how to use a Windows VM/VMSS to access Azure resources.
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: tutorial
 ms.date: 06/06/2024
-ms.author: ryanwi
+ms.author: shermanouko
 ms.custom: mode-api, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli
 
@@ -17,12 +17,10 @@ zone_pivot_groups: identity-windows-mi-vm-access
 
 # Tutorial: Use a Windows VM/VMSS to access Azure resources
 
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
 ## Prerequisites
 
 - An understanding of managed identities. If you're not familiar with the managed identities for Azure resources feature, see this [overview](~/identity/managed-identities-azure-resources/overview.md).
-- An Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
+- An Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - *Owner* permissions at the appropriate scope (your subscription or resource group) to perform required resource creation and role management steps. If you need assistance with role assignment, see [Assign Azure roles to manage access to your Azure subscription resources](/azure/role-based-access-control/role-assignments-portal).
 - A Windows virtual machine (VM) that has system assigned managed identities enabled.
   - If you need to create a VM for this tutorial, see [Create a virtual machine with system-assigned identity enabled](~/identity/managed-identities-azure-resources/how-to-configure-managed-identities.md).

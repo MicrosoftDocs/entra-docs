@@ -5,8 +5,7 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 09/25/2024
+ms.topic: article
 ms.author: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -37,7 +36,7 @@ Synchronization requirements are unique to your organization's specific needs. A
 | - | - | - |
 | User lifecycle management | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 | File sharing and app access | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
-| Support sync to/from sovereign clouds |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
+| Support sync to/from sovereign clouds | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 | Control sync from resource tenant |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 | Sync Group objects |  | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
 | Sync Manager links | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) | ![Check mark icon](media/multi-tenant-user-management-scenarios/checkmark.svg) |
@@ -187,11 +186,11 @@ AuditLogs
 
 ### Defense in Depth
 
-**Conditional access**.
+**Conditional Access**.
 
 - Define [access control policies](~/external-id/authentication-conditional-access.md) to control access to resources.
 - Design Conditional Access policies with external users in mind.
-- Check if a sign in frequency CA policy is applied to all guest sign ins. The sign in frequency should be limited to a maximum of 24 hours. Tokens of guests signing in from unmanaged devices are at a higher risk of token exfiltration and token replay attacks. Limiting the token lifetime reduces the exposure from this risk. This will ensure that even if a token is exfiltrated the threat actor has a limited window of usage. 
+- Check if a sign in frequency Conditional Accesspolicy is applied to all guest sign ins. The sign in frequency should be limited to a maximum of 24 hours. Tokens of guests signing in from unmanaged devices are at a higher risk of token exfiltration and token replay attacks. Limiting the token lifetime reduces the exposure from this risk. This will ensure that even if a token is exfiltrated the threat actor has a limited window of usage. 
 - Create dedicated Conditional Access policies for external accounts. If your organization is using the [**all users** dynamic membership group](~/external-id/use-dynamic-groups.md) condition in your existing Conditional Access policy, this policy affects external users because they are in scope of **all users**.
 
 <a name='monitoring-your-multi-tenant-environment'></a>
@@ -239,7 +238,7 @@ Where **ExternalUserUPN** is the calculated **UserPrincipalName.**
 
 For example:
 
-`Set-MailUser externaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false`
+`Set-MailUser externaluser1_contoso.com#EXT#@fabrikam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false`
 
 External users might be unhidden in the Microsoft 365 admin center.
 

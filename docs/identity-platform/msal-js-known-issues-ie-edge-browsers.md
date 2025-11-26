@@ -2,11 +2,11 @@
 title: Issues on Internet Explorer & Microsoft Edge (MSAL.js)
 description: Learn about know issues when using the Microsoft Authentication Library for JavaScript (MSAL.js) with Internet Explorer and Microsoft Edge browsers.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 05/18/2020
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: troubleshooting

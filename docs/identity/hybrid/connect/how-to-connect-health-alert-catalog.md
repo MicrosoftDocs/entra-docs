@@ -2,14 +2,14 @@
 title: Microsoft Entra Connect Health - Alert Catalog
 description: This document shows the catalog of all alerts in Microsoft Entra Connect Health.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/19/2024
-ms.author: billmath
+ms.date: 04/09/2025
+ms.author: jomondi
 
 ---
 

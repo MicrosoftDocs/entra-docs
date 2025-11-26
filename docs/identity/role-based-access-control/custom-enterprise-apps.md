@@ -1,17 +1,15 @@
 ---
 title: Create custom roles to manage enterprise apps in Microsoft Entra ID
 description: Create and assign custom Microsoft Entra roles for enterprise apps access in Microsoft Entra ID
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 01/03/2025
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Create custom roles to manage enterprise apps in Microsoft Entra ID
@@ -53,7 +51,7 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select **New custom role**.
 
@@ -75,7 +73,7 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select the **Manage user and group assignments** role.
 

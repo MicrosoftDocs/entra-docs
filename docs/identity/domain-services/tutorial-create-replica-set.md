@@ -2,13 +2,13 @@
 title: Tutorial - Create a replica set in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to create and use replica sets in the Microsoft Entra admin center for service resiliency with Microsoft Entra Domain Services
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create and use replica sets in Microsoft Entra Domain Services to provide resiliency or geographical distributed managed domain data.
 ---
 
@@ -25,14 +25,14 @@ In this tutorial, you learn how to:
 > * Create a replica set
 > * Delete a replica set
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 
 To complete this tutorial, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain created using the Azure Resource Manager deployment model and configured in your Microsoft Entra tenant.

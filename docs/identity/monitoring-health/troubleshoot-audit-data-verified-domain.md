@@ -3,11 +3,11 @@ title: Bulk changes to usernames during verified domain changes
 description: Learn how Microsoft Entra audit logs display UserManagement updates from Core Directory during verified domain changes.
 
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 03/04/2024
+ms.date: 02/25/2025
 ms.author: sarahlipsey
 
 ---
@@ -123,6 +123,6 @@ In this scenario, the backend operation sanitizes the inconsistent proxyAddresse
 > [!NOTE]
 > For synchronized objects, to avoid the backend operation logic from calculating unexpected results, it's best to set proxyAddresses to a Microsoft Entra verified domain on the on-premises object.  
 
-## Next Steps
+## Related content
 
 [Microsoft Entra Connect Sync service shadow attributes](../hybrid/connect/how-to-connect-syncservice-shadow-attributes.md)

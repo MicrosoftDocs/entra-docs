@@ -1,0 +1,56 @@
+### YamlMime:Landing
+
+title: Microsoft agent identity platform for developers
+summary: Learn how to build agents that can authenticate users, request permissions, and access resources securely with Microsoft agent identity platform.
+
+metadata: 
+   title: Microsoft Entra Agent Identity Platform for Developers
+   description: Learn how to build agents that can authenticate users, request permissions, and access resources securely with the Microsoft agent identity platform.
+   ms.service: entra-id
+   ms.topic: landing-page
+   ms.custom: agent-id-ignite
+   ms.date: 11/08/2025
+   author: shlipsey3
+   ms.author: sarahlipsey
+
+landingContent:
+  - title: Microsoft agent identity platform for developers
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the Microsoft agent identity platform?
+            url: ./what-is-agent-id-platform.md
+          - text: What is an agent identity?
+            url: ./what-is-agent-id.md
+          - text: What is the Agent Registry?
+            url: ./what-is-agent-registry.md
+
+  - title: Agent development
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Agent users
+            url: ./agent-users.md
+          - text: Agent identity blueprint
+            url: ./agent-blueprint.md
+          - text: Agent registry collections
+            url: ./agent-registry-collections.md
+          - text: Tokens in agent IDs
+            url: ./agent-token-claims.md
+          - text: Service principals and agents
+            url: ./agent-service-principals.md
+      - linkListType: how-to-guide
+        links:
+          - text: Request agent user tokens for autonomous agents
+            url: ./autonomous-agent-request-tokens.md
+          - text: Request agent tokens for autonomous agents
+            url: ./autonomous-agent-request-tokens.md
+
+  - title: Access management
+    linkLists: 
+      - linkListType: how-to-guide
+        links:
+          - text: Grant app permissions to an autonomous agent
+            url: ./autonomous-agent-request-authorization-entra-admin.md
+          - text: Request authorization from user
+            url: ./interactive-agent-request-user-authorization.md

@@ -5,11 +5,11 @@ description: Detailed guidance for planning the prerequisites to deploy password
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/14/2025
+ms.date: 11/07/2025
 
 ms.author: justinha
 author: mepples21
-manager: amycolannino
+manager: femila
 ms.reviewer: miepping
 
 ms.collection: M365-identity-device-management
@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 Passwords are the primary attack vector for modern adversaries, and a source of friction for users and administrators. As part of an overall [Zero Trust security strategy](https://www.microsoft.com/security/business/zero-trust), Microsoft recommends [moving to phishing-resistant passwordless](https://www.microsoft.com/security/business/solutions/passwordless-authentication) in your authentication solution. This guide helps you select, prepare, and deploy the right phishing-resistant passwordless credentials for your organization. Use this guide to plan and execute your phishing-resistant passwordless project.
 
-Features like multifactor authentication (MFA) are a great way to secure your organization. But users often get frustrated with the extra security layer on top of their need to remember passwords. Phishing-resistant passwordless authentication methods are more convenient. For example, an analysis of Microsoft consumer accounts shows that sign-in with a password can take up to 9 seconds on average, but passkeys only take around 3 seconds in most cases. The speed and ease of passkey sign-in is even greater when compared with traditional password and MFA sign in. Passkey users don’t need to remember their password, or wait around for SMS messages.
+Features like multifactor authentication (MFA) are a great way to secure your organization. But users often get frustrated with the extra security layer on top of their need to remember passwords. Phishing-resistant passwordless authentication methods are more convenient. For example, an analysis of Microsoft consumer accounts shows that sign-in with a password can take up to 24 seconds on average, but passkeys only take around 8 seconds in most cases, with synced passkeys only taking 3 seconds. The speed and ease of passkey sign-in is even greater when compared with traditional password and MFA sign in. Passkey users don't need to remember their password, or wait around for SMS messages.
 
 >[!NOTE]
 >This data is based on analysis of Microsoft consumer account sign-ins.
@@ -34,7 +34,7 @@ Microsoft Entra ID offers the following phishing-resistant passwordless authenti
   - Platform credential for macOS (preview)
   - Microsoft Authenticator app passkeys
   - FIDO2 security keys
-  - Other passkeys and providers, such as iCloud Keychain - [**_on roadmap_**](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-expanding-passkey-support-in-microsoft-entra-id/ba-p/4062702)
+  - Synced passkeys (synced via providers such as Google Password Manager or iCloud Keychain)
 - Certificate-based authentication/smart cards
 
 ## Prerequisites
@@ -84,3 +84,5 @@ End-User Communications	             | Messages changes to end users in preparat
 [Deploy a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 
 [Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-persona-phishing-resistant-passwordless-authentication.md)
+
+[Considerations for Remote Desktop Connections in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-rdp-phishing-resistant-passwordless-authentication.md)

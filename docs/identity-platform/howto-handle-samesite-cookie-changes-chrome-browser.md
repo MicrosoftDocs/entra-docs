@@ -2,7 +2,7 @@
 title: How to handle SameSite cookie changes in Chrome browser
 description: Learn how to handle SameSite cookie changes in Chrome browser.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom:
 ms.date: 02/09/2024
@@ -76,4 +76,4 @@ Learn more about SameSite and the Web app scenario:
 
 - [Google Chrome's FAQ on SameSite](https://www.chromium.org/updates/same-site/faq)
 - [Chromium SameSite page](https://www.chromium.org/updates/same-site)
-- [Tutorial: Web app that signs in users](tutorial-web-app-dotnet-register-app.md)
+- [Tutorial: Web app that signs in users](./tutorial-web-app-dotnet-prepare-app.md)

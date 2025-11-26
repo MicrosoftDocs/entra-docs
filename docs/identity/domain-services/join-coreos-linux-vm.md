@@ -2,7 +2,7 @@
 title: Join a CoreOS VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a CoreOS virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.assetid: 5db65f30-bf69-4ea3-9ea5-add1db83fdb8
 ms.service: entra-id
@@ -24,7 +24,7 @@ This article shows you how to join a CoreOS VM to a managed domain.
 To complete this tutorial, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.

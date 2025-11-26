@@ -2,15 +2,15 @@
 title: MFA in external tenants
 description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP) or SMS as a second verification method for sign-up and sign-in.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
 
 ms.subservice: external
 
 ms.topic: concept-article
 ms.date: 11/20/2024
-ms.author: mimart
 ms.custom: it-pro, references_regions
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about ways to secure apps in my external tenant by adding multifactor authentication and enabling SMS and email one-time passcodes.
@@ -35,9 +35,15 @@ In the policy, you define the applications that require MFA. You can apply the p
 
 For details, see [how to create a Conditional Access policy in an external tenant](how-to-multifactor-authentication-customers.md#create-a-conditional-access-policy).
 
+### Step-up MFA with Conditional Access authentication context
+
+Multifactor authentication (MFA) with authentication context lets you apply stronger security only when users access sensitive data or perform critical actions. You don’t need to enforce MFA for the entire app.
+With Microsoft Entra [Conditional Access authentication context](/entra/identity-platform/developer-guide-conditional-access-authentication-context), developers can add step-up authentication, such as MFA, inside their apps. Use this for scenarios like high-value transactions or viewing personal information.
+This approach supports Zero Trust principles. It ensures least privilege access and reduces user friction. Users get a secure and seamless experience.
+
 ## Enabling MFA methods
 
-When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in a separate section of the Microsoft Entra admin center, under **Authentication methods** in the **Protection** section.
+When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in the Microsoft Entra admin center under **Entra ID** > **Authentication methods**.
 
 Depending on which option you choose as the first factor, different second-factor verification methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md).
 
@@ -69,7 +75,7 @@ External ID mitigates fraudulent sign-ups and sign-ins via SMS by enforcing the 
 
 The following table provides details about the different pricing tiers for SMS based authentication services across various countries or regions. For pricing details, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
 
-SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is cancelled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
+SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is canceled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|

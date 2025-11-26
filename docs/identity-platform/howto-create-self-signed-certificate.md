@@ -2,11 +2,11 @@
 title: Create a self-signed public certificate to authenticate your application
 description: Create a self-signed public certificate to authenticate your application.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, 
+ms.custom:
 ms.date: 01/14/2025
-ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
+ms.reviewer: jmprieur, sureshja, ludwignick
 ms.service: identity-platform
 
 ms.topic: how-to

@@ -1,16 +1,14 @@
 ---
 title: Visual Studio Code extension for External ID
 description: Learn how to use the Microsoft Entra External ID extension for Visual Studio Code. Use the application samples provided to set up a customized, branded sign-in experience for external users of your application without leaving the development environment.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 09/16/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As a dev, devops, or it admin, I want to create an external tenant and configure a customized, branded sign-in experience for my apps from within Visual Studio Code.
 ---
 
@@ -123,14 +121,16 @@ The **Try out your sign-in experience** step in the walkthrough allows you to pr
 
    :::image type="content" source="media/visual-studio-code-extension/try-out.png" alt-text="Screenshot of option to try out your sign-in experience.":::
 
-
 1. Select the **Run it now** button. A new browser tab opens with the sign-up page for your tenant that can be used to create and sign in users.
 
 1. Select **No account? Create one** to create a new user in the tenant.
 
-1. Add your new user's email address and select **Next**. Don't use the same email you used to create your trial.
+1. Add your new user's email address and select **Next**.
 
-1. Complete the sign-up steps on the screen. Typically, once the user signs in, they're redirected back to your app. However, since you haven’t set up an app at this step, you're redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
+> [!NOTE]
+> Use a different email address than the one used to create your trial. If you use your tenant admin email to create a customer account through [self-service sign-up](/entra/external-id/self-service-sign-up-overview) or by [adding a new external user](/entra/external-id/customers/how-to-manage-customer-accounts#create-a-customer-account) in the Microsoft Entra admin center, the system creates a second account with the same email address. This new account has customer-level privileges, which can cause conflicts.
+
+4. Complete the sign-up steps on the screen. Typically, once the user signs in, they're redirected back to your app. However, since you haven’t set up an app at this step, you're redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
 
 To find the user you created during this step, you can go to the [Microsoft Entra admin center](https://entra.microsoft.com/) and look for the user in the users list.
 

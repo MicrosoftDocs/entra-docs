@@ -3,11 +3,11 @@ title: "Quickstart: Sign in users in JavaScript React single-page apps (SPA) wit
 description: In this quickstart, learn how a JavaScript React single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow and call Microsoft Graph.
 ROBOTS: NOINDEX
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom:
 ms.date: 02/27/2024
-ms.reviewer: jamesmantu
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: quickstart
@@ -30,7 +30,7 @@ ms.topic: quickstart
 > 
 > ## Prerequisites
 > 
-> * Azure subscription - [Create an Azure subscription for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+> * Azure subscription - [Create an Azure subscription for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 > * [Node.js](https://nodejs.org/en/download/)
 > * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 > 
@@ -93,4 +93,4 @@ ms.topic: quickstart
 > For a detailed step-by-step guide on building the auth code flow application using React, see the following tutorial:
 > 
 > > [!div class="nextstepaction"]
-> > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-register-app.md)
+> > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-prepare-app.md)

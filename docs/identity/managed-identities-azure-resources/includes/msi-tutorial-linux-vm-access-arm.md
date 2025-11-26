@@ -1,6 +1,6 @@
 ---
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 06/10/2024
 ms.topic: include
 ms.service: entra-id
@@ -35,7 +35,7 @@ The response contains details for the user-assigned managed identity created, si
 {
 "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
 "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>/credentials?tid=5678&oid=9012&aid=aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
-"id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>",
+"id": "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAMI NAME>",
 "location": "westcentralus",
 "name": "<UAMI NAME>",
 "principalId": "9012",

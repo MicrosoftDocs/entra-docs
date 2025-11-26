@@ -3,9 +3,9 @@ title: "Quickstart: Sign in users in JavaScript single-page apps (SPA) with auth
 description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
 ROBOTS: NOINDEX
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom:
 ms.date: 02/27/2024
 ms.service: identity-platform
 
@@ -18,7 +18,7 @@ ms.topic: quickstart
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Sign in users in single-page apps (SPA) via the authorization code flow with Proof Key for Code Exchange (PKCE) using JavaScript](quickstart-single-page-app-javascript-sign-in.md)
+> > [Quickstart: Sign in users in single-page apps (SPA) via the authorization code flow with Proof Key for Code Exchange (PKCE) using JavaScript](quickstart-single-page-app-sign-in.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -29,7 +29,7 @@ ms.topic: quickstart
 > 
 > ## Prerequisites
 > 
-> * Azure subscription - [Create an Azure subscription for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+> * Azure subscription - [Create an Azure subscription for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 > * [Node.js](https://nodejs.org/en/download/)
 > * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 > 
@@ -98,4 +98,4 @@ ms.topic: quickstart
 > For a detailed step-by-step guide on building the auth code flow application using React, see the following  tutorial:
 > 
 > > [!div class="nextstepaction"]
-> > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-register-app.md)
+> > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-prepare-app.md)

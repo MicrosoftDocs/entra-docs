@@ -2,14 +2,14 @@
 title: FortiGate deployment guide
 description: Set up and work with the Fortinet FortiGate next-generation firewall product.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 11/21/2022
 ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
 # FortiGate Azure Virtual Machine Deployment Guide
@@ -213,4 +213,4 @@ Multi-homed Azure VMs have all network interfaces on the same virtual network (b
 
 ## Configure FortiGate SSL VPN
 
-Follow the steps outlined in [Tutorial: Microsoft Entra single sign-on (SSO) integration with FortiGate SSL VPN](../../fortigate-ssl-vpn-tutorial.md)
+Follow the steps outlined in [Microsoft Entra single sign-on (SSO) integration with FortiGate SSL VPN](../../fortigate-ssl-vpn-tutorial.md)

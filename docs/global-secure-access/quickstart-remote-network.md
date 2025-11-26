@@ -3,10 +3,11 @@ title: "Quickstart: Create a remote network, apply Conditional Access, and revie
 description: Learn how to Create a remote network, apply Conditional Access, and review the logs in Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: quickstart
-ms.date: 07/22/2024
+ms.date: 02/21/2025
+ai-usage: ai-assisted
 
 #customer intent: As an administrator, I want learn how to create a remote network so that I can begin acquiring remote network traffic in Global Secure Access.
 

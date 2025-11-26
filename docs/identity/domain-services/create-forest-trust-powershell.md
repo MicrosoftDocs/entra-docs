@@ -1,20 +1,20 @@
 ---
-title: Create a Microsoft Entra Domain Services forest trust using Azure PowerShell (Preview) | Microsoft Learn
+title: Create a Microsoft Entra Domain Services forest trust using Azure PowerShell | Microsoft Learn
 description: In this article, learn how to create and configure a Microsoft Entra Domain Services forest trust to an on-premises Active Directory Domain Services environment using Azure PowerShell.
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
-ms.date: 01/26/2025
+ms.topic: how-to
+ms.date: 06/30/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services forest and one-way outbound trust from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest using Azure PowerShell to provide authentication and resource access between forests.
 ---
 
-# Create a Microsoft Entra Domain Services forest trust to an on-premises domain using Azure PowerShell (Preview)
+# Create a Microsoft Entra Domain Services forest trust to an on-premises domain using Azure PowerShell 
 
 Organizations often create a trust to improve user collaboration when they might manage identities in a hybrid environment, or they plan for a merger or acquisition. Microsoft Entra Domain Services always supported one-way, outbound trusts from a managed domain to another domain. Currently in preview, you can also create one-way inbound trusts or two-way trusts. 
 
@@ -31,7 +31,7 @@ In this article, you learn how to:
 > * Create a one-way inbound forest trust in an on-premises AD DS environment
 > * Test and validate the trust relationship for authentication and resource access
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 > [!IMPORTANT]
 > Managed domain forests don't currently support Azure HDInsight or Azure Files. The default managed domain forests do support both of these additional services.
@@ -41,7 +41,7 @@ If you don't have an Azure subscription, [create an account](https://azure.micro
 To complete this article, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 

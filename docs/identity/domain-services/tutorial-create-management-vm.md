@@ -2,12 +2,12 @@
 title: Tutorial - Create a management VM for Microsoft Entra Domain Services | Microsoft Docs
 description: In this tutorial, you learn how to create and configure a Windows virtual machine that you use to administer Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
 #Customer intent: As an identity administrator, I want to create a management VM and install the required tools to connect to and manage a Microsoft Entra Domain Services managed domain.
 ---
@@ -25,14 +25,14 @@ In this tutorial, you learn how to:
 > * Install the Active Directory administrative tools on a Windows Server VM
 > * Use the Active Directory Administrative Center to perform common tasks
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 
 To complete this tutorial, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.

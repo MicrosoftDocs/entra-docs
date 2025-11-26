@@ -3,7 +3,7 @@ title: Assign enterprise application owners
 description: Learn how to assign an owner to an enterprise application in Microsoft Entra ID, manage configurations, and streamline user access efficiently.
 
 author: omondiatieno
-manager: celesteDG
+manager: mwongerapk
 ms.service: entra-id
 
 ms.subservice: enterprise-apps
@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: jomondi
 ms.reviewer: saibandaru
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps
 
 #Customer intent: As an administrator, I want to assign an owner to an enterprise application in Microsoft Entra, so that the owner can manage the organization-specific configuration of the application and perform tasks such as single sign-on, provisioning, and user assignments.
@@ -25,7 +25,7 @@ An [owner of an enterprise application](overview-assign-app-owners.md) in Micros
 
 To add an enterprise application to your Microsoft Entra tenant, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, or Application Administrator.
 
 ## Assign an owner
@@ -35,7 +35,7 @@ To add an enterprise application to your Microsoft Entra tenant, you need:
 To assign an owner to an enterprise application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application that you want to add an owner to.
 1. Select **Owners**, and then select **Add** to get a list of user accounts that you can choose an owner from.
 1. Search for and select the user account that you want to be an owner of the application.

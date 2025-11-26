@@ -2,17 +2,17 @@
 title: Change approval settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change approval and requestor information settings for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 08/08/2024
+ms.date: 06/26/2025
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
 # Change approval and requestor information settings for an access package in entitlement management
 
-Each access package must have one or more access package assignment policies, before a user can be assigned access. When an access package is created in the Microsoft Entra admin center, the Microsoft Entra admin center automatically creates the first access package assignment policy for that access package. The policy determines who can request access, and who if anyone must approve access.
+Each access package must have one or more access package assignment policies, before an identity can be assigned access. When an access package is created in the Microsoft Entra admin center, the Microsoft Entra admin center automatically creates the first access package assignment policy for that access package. The policy determines who can request access, and who if anyone must approve access.
 
 As an access package manager, you can change the approval and requestor information settings for an access package at any time by editing an existing policy or adding a new extra policy for requesting access.
 
@@ -20,12 +20,12 @@ This article describes how to change the approval and requestor information sett
 
 ## Approval
 
-In the Approval section, you specify whether an approval is required when users request this access package. The approval settings work in the following way:
+In the Approval section, you specify whether an approval is required when identities request this access package. The approval settings work in the following way:
 
 - Only one of the selected approvers or fallback approvers needs to approve a request for single-stage approval. 
 - Only one of the selected approvers from each stage needs to approve a request for multi-stage approval for the request to progress to the next stage.
-- If one of the selected approved in a stage denies a request before another approver in that stage approves it, or if no one approves, the request terminates and the user doesn't receive access.
-- The approver can be a specified user or member of a group, the requestor's Manager, Internal sponsor, or External sponsor depending on who the policy is governing access.
+- If one of the selected approved in a stage denies a request before another approver in that stage approves it, or if no one approves, the request terminates and the identity doesn't receive access.
+- The approver can be a specified identity or member of a group, the requestor's Manager, Internal sponsor, or External sponsor depending on who the policy is governing access.
 
 For a demonstration of how to add approvers to a request policy, watch the following video:
 
@@ -36,7 +36,7 @@ For a demonstration of how to add a multi-stage approval to a request policy, wa
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=25c39e83-da3e-4f41-8d91-8b865b25b702]
 
 > [!NOTE]
-> Approvers are not able to approve their own access package requests.
+> Approvers aren't able to approve their own access package requests.
 
 ## Change approval settings of an existing access package assignment policy
 
@@ -46,7 +46,7 @@ Follow these steps to specify the approval settings for requests for the access 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access Package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. On the Access packages page, open an access package.
 
@@ -56,7 +56,7 @@ Follow these steps to specify the approval settings for requests for the access 
 
 1. Go to the **Request** tab.
 
-1. To require approval for requests from the selected users, set the **Require approval** toggle to **Yes**. Or, to have requests automatically approved, set the toggle to **No**. If the policy allows external users from outside your organization to request access, you should require approval, so there's oversight on who is being added to your organization's directory.
+1. To set who can request access for identities, choose either Self, Admin, or Manager.
 
 1. To require users to provide a justification to request the access package, set the **Require requestor justification** toggle to **Yes**.
     
@@ -81,7 +81,7 @@ Use the following steps to add approvers after selecting how many stages you req
     
 1. If you selected **Manager** as the first approver, select **Add fallback** to select one, or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the manager for the user requesting access.
 
-    The manager is found by entitlement management using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information using Microsoft Entra ID](~/fundamentals/how-to-manage-user-profile-info.yml).
+    The manager is found by entitlement management using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information using Microsoft Entra ID](~/fundamentals/how-to-manage-user-profile-info.md).
 
 1. If you selected **Choose specific approvers**, select **Add approvers** to choose one, or more, users or groups in your directory to be approvers.
 
@@ -120,7 +120,7 @@ If you selected a multi-stage approval, you need to add an approver for each ext
     If the users aren't in your directory, you also can select **Internal sponsor** or **External sponsor** as the third approver. After selecting the approver, add the fallback approvers.
 
     > [!NOTE]
-    > <ul>Like the second stage, if the users are in your directory and **Manager as approver** is selected in either the first or second stage of approval, you will only see an option to select specific approvers for the third stage of approval.</ul><ul>If you want to designate the manager as a third approver, you can adjust your selections in the previous approval stages to ensure that **Manager as approver** isn’t selected. Then, you should see **Manager as approver** as an option in the dropdown.</ul><ul>If the users aren’t in your directory and you have not selected **Internal sponsor** or **External sponsor** as approvers in previous stages, you will see them as options for **Third Approver**. Otherwise, you will only be able to select **Choose specific approvers**.</ul>
+    > <ul>Like the second stage, if the users are in your directory and **Manager as approver** is selected in either the first or second stage of approval, you'll only see an option to select specific approvers for the third stage of approval.</ul><ul>If you want to designate the manager as a third approver, you can adjust your selections in the previous approval stages to ensure that **Manager as approver** isn’t selected. Then, you should see **Manager as approver** as an option in the dropdown.</ul><ul>If the users aren’t in your directory and you haven't selected **Internal sponsor** or **External sponsor** as approvers in previous stages, you'll see them as options for **Third Approver**. Otherwise, you'll only be able to select **Choose specific approvers**.</ul>
 
 1. Specify the number of days the third approver has to approve the request in the box under **Decision must be made in how many days?**.
 
@@ -153,11 +153,9 @@ For example, if you listed Alice and Bob as the first stage approver(s), list Ca
 
     Requests can only be forwarded to alternate approvers a day after the request has been initiated. To use alternate approval, the request time-out needs to be at least four days.
 
-## Enable requests
+## Who can request access
 
-1. If you want the access package to be made immediately available for users in the request policy to request, move the Enable toggle to **Yes**.
-
-    You can always enable it in the future after you have finished creating the access package.
+1. After deciding who the access package is for you can designate who can request access for the access package. You can choose Self, Admin, or Manager as those who can request access.
 
     If you selected **None (administrator direct assignments only)** and you set enable to **No**, then administrators can't directly assign this access package.
 
@@ -188,7 +186,7 @@ In order to make sure users are getting access to the right access packages, you
  
     ![Access package - Policy- Select Edit and localize multiple choice answer format](./media/entitlement-management-access-package-approval-policy/answer-format-view-edit.png)
  
-1. If selecting Multiple Choice, select on the **Edit and localize** button to configure the answer options.
+1. If selecting Multiple Choice, select the **Edit and localize** button to configure the answer options.
     1. After selecting Edit and localize the **View/edit question** pane opens.
     1. Type in the response options you wish to give the requestor when answering the question in the **Answer values** boxes.
     1. Type in as many responses as you need.

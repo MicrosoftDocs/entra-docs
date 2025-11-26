@@ -1,16 +1,15 @@
 ---
 title: Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 description: Learn how to configure and enable users to register passwordless authentication methods by using a Temporary Access Pass (TAP).
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 01/08/2025
-
+ms.topic: how-to
+ms.date: 03/04/2025
 ms.author: justinha
-author: tilarso 
-manager: amycolannino
+author: tilarso
+manager: dougeby
 ms.reviewer: tilarso
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Configure Temporary Access Pass to register passwordless authentication methods
 
@@ -34,7 +33,7 @@ Although you can create a TAP for any user, only users included in the policy ca
 To configure TAP in the Authentication methods policy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** >  **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. From the list of available authentication methods, select **Temporary Access Pass**.
 
    :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/select-temporary-access-pass-policy.png" alt-text="Screenshot of how to manage Temporary Access Pass within the Authentication methods policy experience.":::
@@ -69,7 +68,7 @@ After you enable a TAP policy, you can create a TAP policy for users in Microsof
 - [Global Readers](~/identity/role-based-access-control/permissions-reference.md#global-reader) can view TAP details for the user (without reading the code itself).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Browse to **Identity** > **Users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select the user you would like to create a TAP for. 
 1. Select **Authentication methods** and select **Add authentication method**. 
 
@@ -149,6 +148,11 @@ For joined devices to Microsoft Entra ID:
 - If the [Web sign-in](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin) feature on Windows is also enabled, the user can use TAP to sign into the device. This is intended only for completing initial device setup, or recovery when the user doesn't know or have a password. 
 
 For hybrid-joined devices, users must first authenticate with another method such as a password, smartcard or FIDO2 key, before using TAP to set up Windows Hello for Business. 
+> [!NOTE]
+> For federated domains, the **FederatedIdpMfaBehavior** changes the behavior when MFA is required. If set to **enforceMfaByFederatedIdp** the user is redirected to the federated IDP and does not get the chance to use the TAP. However, if set to **acceptIfMfaDoneByFederatedIdp** then the user will see a TAP prompt in Entra ID during MFA for Windows Hello for Business provisioning.
+
+> [!NOTE]
+> For federated domains where federatedIdpMfaBehavior is set to enforceMfaByFederatedIdp, users will not be prompted for TAP to satisfy multifactor authentication (MFA) to set up Windows Hello for Business. Instead, they are redirected to the federated Identity Provider (IdP) for multifactor authentication (MFA).
 
 :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/windows-10-tap.png" alt-text="Screenshot of how to enter Temporary Access Pass when setting up Windows.":::
 
@@ -181,7 +185,7 @@ The token lifetime (session token, refresh token, access token, and so on) obtai
 Under the **Authentication methods** for a user, the **Detail** column shows when the TAP expired. You can delete an expired TAP using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Browse to **Identity** > **Users**, select a user, such as *Tap User*, then choose **Authentication methods**.
+1. Browse to **Entra ID** > **Users**, select a user, such as *Tap User*, then choose **Authentication methods**.
 1. On the right-hand side of the **Temporary Access Pass** authentication method shown in the list, select **Delete**.
 
 You can also use PowerShell:

@@ -3,9 +3,9 @@ title: Migrate to Microsoft Entra multifactor authentication with federations
 description: Step-by-step guidance to move from MFA Server on-premises to Microsoft Entra multifactor authentication with federation
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 03/04/2025
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -166,7 +166,7 @@ Value=="YourGroupSid"]) => issue(Type =
 
 ### Configure Microsoft Entra multifactor authentication as an authentication provider in AD FS
 
-To configure Microsoft Entra multifactor authentication for AD FS, you must configure each AD FS server. If you have multiple AD FS servers in your farm, you can configure them remotely using Azure AD PowerShell.
+To configure Microsoft Entra multifactor authentication for AD FS, you must configure each AD FS server. If you have multiple AD FS servers in your farm, you can configure them remotely using Microsoft Entra PowerShell.
 
 For step-by-step directions on this process, see [Configure the AD FS servers](/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa) in the article [Configure Microsoft Entra multifactor authentication as authentication provider with AD FS](/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa).
 
@@ -361,7 +361,7 @@ Possible considerations when decommissions the MFA Servers include:
 
 * Optionally clean up logs and data directories that are left behind after backing them up first. 
 
-* Uninstall the multifactor authentication Web Server SDK if applicable, including any files left over in etpub\wwwroot\MultiFactorAuthWebServiceSdk and or MultiFactorAuth directories
+* Uninstall the multifactor authentication Web Server SDK if applicable, including any files left over inetpub\wwwroot\MultiFactorAuthWebServiceSdk and or MultiFactorAuth directories
 
 * For MFA Server versions prior to 8.0, it may also be necessary to remove the multifactor authentication Phone App Web Service
 

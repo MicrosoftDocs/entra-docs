@@ -1,16 +1,15 @@
 ---
 title: Enable security notifications for audit log events
 description: Create an Azure Logic App that monitors Microsoft Entra audit logs and sends a security email notification to users based on different audit log events.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/16/2025
-
+ms.date: 03/04/2025
 author: camilasinelli
 ms.author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: jupetter
+ms.custom: sfi-image-nochange
 ---
 # Tutorial: Enable security notifications for audit log events
 
@@ -23,7 +22,7 @@ This tutorial focuses on security notifications that get emailed when there's a 
 ## Prerequisites
 To use this feature, you need:
 
-- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A Microsoft Entra tenant.
 - A user who's at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) for the Microsoft Entra tenant.
 - An Event Hubs namespace and an event hub in your Azure subscription. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).

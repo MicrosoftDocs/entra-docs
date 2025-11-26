@@ -1,20 +1,14 @@
 ---
 title: include file
 description: include file
-
 author: OwenRichards1
-manager: CelesteDG
-editor: ''
-
+manager: pmwongera
 ms.service: identity-platform
-
 ms.topic: include
-ms.tgt_pltfrm: na
-
 ms.date: 04/09/2024
 ms.author: owenrichards
 ms.reviewer: jmprieur
-ms.custom: include file
+ms.custom: include file, sfi-image-nochange
 ---
 
 ### AuthenticationResult properties in MSAL.NET

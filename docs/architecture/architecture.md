@@ -2,21 +2,21 @@
 title: Architecture overview
 description: Learn about the architecture of Microsoft Entra ID, including service design, scalability, availability, and data consistency.
 author: barclayn
-manager: amycolannino
+manager: femila
 
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 01/16/2025
+ms.topic: concept-article
+ms.date: 09/10/2025
 ms.author: barclayn
 ms.reviewer: jeffsta
 ---
 
 # What is the Microsoft Entra architecture?
 
-Microsoft Entra ID enables you to securely manage user access to Azure services and resources. Included with Microsoft Entra ID is a full suite of identity management capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md)
+Microsoft Entra enables you to securely manage user access to services and resources. Included with Microsoft Entra is a family of identity management and network access capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra?](~/fundamentals/what-is-entra.md)
 
-With Microsoft Entra ID, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see The [fundamentals of Azure identity management](~/fundamentals/whatis.md).
+With Microsoft Entra, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see the [fundamentals of identity management](~/fundamentals/identity-fundamental-concepts.md).
 
 <a name='azure-ad-architecture'></a>
 
@@ -98,7 +98,9 @@ Microsoft Entra ID provides read-write consistency for applications targeting a 
 Application writes using the Microsoft Graph API of Microsoft Entra ID are abstracted from maintaining affinity to a directory replica for read-write consistency. The Microsoft Graph API service maintains a logical session. The session has affinity to a secondary replica used for reads. Affinity is captured in a "replica token" that the service caches using a distributed cache in the secondary replica datacenter. This token is then used for subsequent operations in the same logical session. To continue using the same logical session, subsequent requests must be routed to the same Microsoft Entra datacenter. It isn't possible to continue a logical session if the directory client requests are being routed to multiple Microsoft Entra datacenters. If sessions are split, then the client has multiple logical sessions that have independent read-write consistencies.
 
 > [!NOTE]
- > Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
+> Writes are immediately replicated to the secondary replica to which the logical session's reads were issued.
+>
+> For [application-only requests](../identity-platform/app-only-access-primer.md), Microsoft Entra ID does not provide session consistency. Session consistency is only supported for [delegated requests](../identity-platform/delegated-access-primer.md) (application+user token flow). 
 
 #### Service-level backup
 

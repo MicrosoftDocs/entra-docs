@@ -2,7 +2,7 @@
 title: Check Workflow Insights
 description: Learn how to check workflow insights within your Microsoft Entra tenant.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
@@ -35,7 +35,7 @@ For more information, see: [Workflow Insights](lifecycle-workflow-insights.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Overview**. 
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Overview**. 
 
 1. On the overview page, select **Workflow Insights**.
 

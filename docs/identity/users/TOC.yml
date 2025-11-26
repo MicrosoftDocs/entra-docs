@@ -27,6 +27,8 @@
     href: ~/fundamentals/concept-group-based-licensing.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Manage access with groups    
     href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+  - name: Enterprise user management with Microsoft Security Copilot
+    href: ~/security-copilot/entra-enterprise-user-management.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
 - name: How-to guides
   expanded: true
   items:
@@ -39,7 +41,7 @@
     - name: Convert external users to internal
       href: convert-external-users-internal.md        
     - name: Manage user profiles
-      href: ~/fundamentals/how-to-manage-user-profile-info.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-manage-user-profile-info.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Add custom data using extensions - Microsoft Graph
       href: /graph/extensibility-overview?context=/entra/identity/users/context/ugr-context.json
     - name: Assign custom security attributes
@@ -55,7 +57,7 @@
     - name: Delete users in bulk
       href: users-bulk-delete.md
     - name: Restore a deleted user    
-      href: ~/fundamentals/users-restore.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/users-restore.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Restore users in bulk
       href: users-bulk-restore.md
     - name: Revoke a user's access
@@ -75,7 +77,7 @@
   - name: Organization (tenant)
     items:
     - name: Microsoft Entra tenant organizations    
-      href: ~/fundamentals/whatis.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/what-is-entra.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Delete a tenant    
       href: directory-delete-howto.md
     - name: Multiple tenants    
@@ -103,7 +105,9 @@
     - name: Search group and member lists   
       href: groups-members-owners-search.md
     - name: Dynamic groups    
-      items: 
+      items:
+      - name: Managing dynamic membership group processing    
+        href: manage-dynamic-group.md
       - name: Create a dynamic group    
         href: groups-create-rule.md
       - name: Dynamic group rule syntax
@@ -146,9 +150,7 @@
       href: licensing-admin-center.md
     - name: Additional scenarios    
       href: licensing-group-advanced.md
-    - name: Group licensing with PowerShell and Graph
-      href: licensing-ps-examples.md
-    - name: Group licensing examples Microsoft Graph PowerShell
+    - name: Group licensing examples using PowerShell
       href: licensing-powershell-graph-examples.md
     - name: Service plan IDs for licensing
       href: licensing-service-plan-reference.md

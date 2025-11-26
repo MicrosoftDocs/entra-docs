@@ -2,17 +2,18 @@
 title: Acquire a token to call a web API (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
-ms.custom: has-adal-ref 
 ms.date: 03/27/2023
 ms.service: identity-platform
-
+ms.subservice: workforce
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # Desktop app that calls web APIs: Acquire a token
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 After you've built an instance of the public client application, you'll use it to acquire a token that you'll then use to call a web API.
 

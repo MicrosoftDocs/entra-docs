@@ -1,17 +1,16 @@
 ---
 title: API concepts in Privileged Identity management
-description: Information for understanding the APIs in Microsoft Entra Privileged Identity Management (PIM).
-
+description: Information for understanding the APIs in Microsoft Entra Privileged
+  Identity Management (PIM).
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-
 ---
 # Privileged Identity Management APIs
 
@@ -36,15 +35,15 @@ Find more details about APIs that allow to manage assignments in the documentati
 
 There have been several iterations of the PIM APIs over the past few years. There are some overlaps in functionality, but they don't represent a linear progression of versions.
 
-### Iteration 1 – Deprecated
+### Iteration 1 – Retired
 
-Under the `/beta/privilegedRoles` endpoint, Microsoft had a classic version of the PIM API, which only supported Microsoft Entra roles and is no longer supported. Access to this API was deprecated in June 2021.
+Under the `/beta/privilegedRoles` endpoint, Microsoft had a classic version of the PIM API, which only supported Microsoft Entra roles. This API was retired in June 2021.
 
 <a name='iteration-2--supports-azure-ad-roles-and-azure-resource-roles'></a>
 
-### Iteration 2 – Supports Microsoft Entra roles and Azure resource roles
+### Iteration 2 – Deprecated
 
-Under the `/beta/privilegedAccess` endpoint, Microsoft supported both `/aadRoles` and `/azureResources`. This endpoint is still available in your tenant but Microsoft recommends against starting any new development with this API. This API will never be released to general availability and will eventually be deprecated.
+Under the `/beta/privilegedAccess` endpoint, Microsoft supported both `/aadRoles` and `/azureResources` segments for managing Microsoft Entra roles and Azure resource roles, respectively. This endpoint is deprecated and will stop returning data on October 28, 2026. Microsoft recommends against starting any new development with these APIs.
 
 <a name='iteration-3-current--pim-for-azure-ad-roles-groups-in-microsoft-graph-api-and-for-azure-resources-in-arm-api-'></a>
 
@@ -56,6 +55,9 @@ This is the final iteration of the PIM API. It includes:
   - PIM for groups in Microsoft Graph API - Generally available. 
   - PIM alerts for Microsoft Entra roles in Microsoft Graph API - Preview.
   - PIM alerts for Azure Resources in ARM API - Preview.
+
+> [!NOTE]
+> The roleAssignmentApprovals APIs are only available in /beta.
 
 Having PIM for Microsoft Entra roles in Microsoft Graph API and PIM for Azure Resources in ARM API provide a few benefits including:
   - Alignment of the PIM APIs for regular role assignment for both Microsoft Entra roles and Azure Resource roles. 

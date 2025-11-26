@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT administrator responsible for secure remote access to on-premises applications, I want to integrate F5 BIG-IP with Microsoft Entra ID for secure hybrid access, so that I can improve remote access and strengthen the security posture of legacy services.
 ---
 
@@ -121,7 +120,7 @@ Integrating an F5 BIG-IP with Microsoft Entra ID for SHA has the following prere
   - F5 BIG-IP Access Policy Manager&trade; (APM) add-on license on an existing BIG-IP F5 BIG-IP&reg; Local Traffic Manager&trade; (LTM)
   - A 90-day BIG-IP Access Policy Manager&trade; (APM) [trial license](https://www.f5.com/trial/big-ip-trial.php)
 - Microsoft Entra ID licensing:
-  - An [Azure free account](https://azure.microsoft.com/free/) has minimum core requirements for SHA with password-less authentication
+  - An [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) has minimum core requirements for SHA with password-less authentication
   - A [Premium subscription](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) has [Conditional Access](~/identity/conditional-access/overview.md), [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md), and [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md)
 
 ## Configuration scenarios
@@ -136,7 +135,6 @@ Advanced configuration tutorials:
 
 - [F5 BIG-IP in Azure deployment walk-through](f5-bigip-deployment-guide.md)
 - [F5 BIG-IP SSL-VPN with Microsoft Entra SHA](f5-passwordless-vpn.md)
-- [Azure AD B2C protects applications using F5 BIG-IP](/azure/active-directory-b2c/partner-f5)
 - [F5 BIG-IP APM and Microsoft Entra SSO to Kerberos applications](f5-big-ip-kerberos-advanced.md)
 - [F5 BIG-IP APM and Microsoft Entra SSO to header-based applications](f5-big-ip-header-advanced.md)
 - [F5 BIG-IP APM and Microsoft Entra SSO to forms-based applications](f5-big-ip-forms-advanced.md)

@@ -5,11 +5,11 @@ description: Learn about some frequently asked questions for passwordless hybrid
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: faq
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: aakapo
 ---
 # Deployment frequently asked questions (FAQs) for hybrid FIDO2 security keys in Microsoft Entra ID

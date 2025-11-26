@@ -2,9 +2,10 @@
 author: barclayn
 ms.author: barclayn
 ms.date: 01/31/2025
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: include
+ms.custom: sfi-ga-nochange
 ---
 
 
@@ -67,7 +68,7 @@ Microsoft Entra ID roles: Global Administrator, User Administrator, and License 
 
 ### How can I view license consumption and utilization now?
 
-License consumption and utilization can still be viewed in the Microsoft 365 Admin Center under **Billing -> Licenses**.
+License consumption and utilization can still be viewed in the Microsoft 365 Admin Center under **Billing** > **Licenses**.
 
 ### Who should I contact if I need help with these changes?
 

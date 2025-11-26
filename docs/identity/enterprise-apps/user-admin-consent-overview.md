@@ -3,12 +3,12 @@ title: Overview of user and admin consent
 description: Learn about the fundamental concepts of user and admin consent in Microsoft Entra ID.
 
 author: omondiatieno
-manager: celesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: overview
-ms.date: 05/30/2024
+ms.date: 03/18/2025
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
@@ -17,13 +17,13 @@ ms.custom: enterprise-apps
 #customer intent: As an IT admin managing user access to applications, I want to understand the concepts and scenarios around user and admin consent in Microsoft Entra ID, so that I can configure the appropriate settings and permissions for my organization's applications.
 ---
 
-# User and admin consent in Microsoft Entra ID
-
-In this article, you learn the foundational concepts and scenarios around user and admin consent in Microsoft Entra ID.
+# Overview of user and admin consent
 
 Consent is a process where users can grant permission for an application to access a protected resource. To indicate the level of access required, an application requests the API permissions it requires. For example, an application can request the permission to see a signed-in user's profile and read the contents of the user's mailbox.
 
 Consent can be initiated in various ways. For example, users can be prompted for consent when they attempt to sign in to an application for the first time. Depending on the permissions they require, some applications might require an administrator to be the one who grants consent.
+
+In this article, you learn the foundational concepts and scenarios around user and admin consent in Microsoft Entra ID.
 
 ## User consent
 
@@ -31,11 +31,11 @@ A user can authorize an application to access some data at the protected resourc
 
 User consent is initiated when a user signs in to an application. After the user provides sign-in credentials, they're checked to determine whether consent is already granted. If no previous record of user or admin consent for the required permissions exists, the user is directed to the consent prompt window to grant the application the requested permissions.
 
-User consent by nonadministrators is possible only in organizations where user consent is allowed for the application and for the set of permissions the application requires. If user consent is disabled, or if users aren't allowed to consent for the requested permissions, they aren't prompted for consent. If users are allowed to consent and they accept the requested permissions, the consent is recorded. The users usually don't have to consent again on future sign-ins to the same application.
+User consent by nonadministrators is possible only in organizations where user consent is allowed for the application and for the set of permissions the application requires. If user consent is disabled, or users aren't allowed to consent for the requested permissions, they aren't prompted for consent. If users are allowed to consent and they accept the requested permissions, the consent is recorded. The users usually don't have to consent again on future sign-ins to the same application.
 
 ### User consent settings
 
-Users are in control of their data. A Privileged Administrator can configure whether nonadministrator users are allowed to grant user consent to an application. This setting can take into account aspects of the application and the application's publisher, and the permissions being requested.
+Users are in control of their data. A Privileged Administrator can configure whether nonadministrator users are allowed to grant user consent to an application. This setting can take into account aspects of the application and the application's publisher, and the permissions being requested. For step by step instructions on how to configure user consent, see [Configure user consent settings](configure-user-consent.md).
 
 As an administrator, you can choose whether user consent is allowed. If you choose to allow user consent, you can also choose what conditions must be met before a user can consent to an application.
 
@@ -59,15 +59,15 @@ After an administrator grants admin consent on behalf of the organization, users
 
 Granting admin consent on behalf of an organization is a sensitive operation, potentially allowing the application's publisher access to significant portions of the organization's data, or the permission to do highly privileged operations. Examples of such operations might be role management, full access to all mailboxes or all sites, and full user impersonation. 
 
-Before you grant tenant-wide admin consent, ensure that you trust the application and the application publisher, for the level of access you're granting. If you aren't confident that you understand who controls the application and why the application is requesting the permissions, do *not* grant consent.
+Before you grant tenant-wide admin consent, ensure that you trust the application and the application publisher, for the level of access you're granting. If you aren't confident that you understand who controls the application and why the application is requesting the permissions, don't grant consent.
 
-For step-by-step guidance on whether to grant an application admin consent, see [Evaluating a request for tenant-wide admin consent](manage-consent-requests.md#evaluate-a-request-for-tenant-wide-admin-consent).
+For guidance on evaluating admin consent requests, see [Evaluating a request for tenant-wide admin consent](manage-consent-requests.md#evaluate-a-request-for-tenant-wide-admin-consent).
 
 For step-by-step instructions for granting tenant-wide admin consent from the Microsoft Entra admin center, see [Grant tenant-wide admin consent to an application](grant-admin-consent.md).
 
 ### Grant consent on behalf of a specific user
 
-Instead of granting consent for an entire organization, an admin can also use the [Microsoft Graph API](/graph/use-the-api) to grant consent to delegated permissions on behalf of a single user. For a detailed example that uses Microsoft Graph PowerShell, see [Grant consent on behalf of a single user by using PowerShell](manage-consent-requests.md).
+Instead of granting consent for an entire organization, an admin can also use the [Microsoft Graph API](/graph/use-the-api) to grant consent to delegated permissions on behalf of a single user. For a detailed example that uses Microsoft Graph PowerShell, see [Grant consent on behalf of a single user by using PowerShell](grant-consent-single-user.md).
 
 ### Limit user access to an application
 
@@ -85,12 +85,12 @@ After users submit the admin consent request, the admins who are designated as r
 
 After the admin consent workflow is enabled, users can request admin approval for an application that they're unauthorized to consent to. Here are the steps in the process:
 
-1. A user attempts to sign in to the application.
-1. An **Approval required** message appears. The user types a justification for needing access to the application and then selects "Request approval."
-1. A **Request sent** message confirms that the request was submitted to the admin. If the user sends several requests, only the first request is submitted to the admin.
-1. The user receives an email notification when the request is approved, denied, or blocked.
+- A user attempts to sign in to the application.
+- An **Approval required** message appears. The user types a justification for needing access to the application and then selects "Request approval."
+- A **Request sent** message confirms that the request was submitted to the admin. If the user sends several requests, only the first request is submitted to the admin.
+- The user receives an email notification when the request is approved, denied, or blocked.
 
-## Next steps
+## Related content
 
 - [Configure user consent settings](configure-user-consent.md)
 - [Configure the admin consent workflow](configure-admin-consent-workflow.md)

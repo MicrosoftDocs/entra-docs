@@ -2,12 +2,12 @@
 title: Troubleshoot insufficient access rights error
 description: Learn how to troubleshoot InsufficientAccessRights error when provisioning to on-premises Active Directory.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 02/27/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -33,10 +33,10 @@ The provisioning logs displays the error code: `HybridSynchronizationActiveDirec
 
 ## Cause
 
-The Provisioning Agent GMSA account ```provAgentgMSA$``` by default has read/write permission to all user objects in the domain. There are two possible causes that might lead to the above error.
+The Provisioning Agent GMSA account ```provAgentgMSA$``` by default has read/write permission to all user objects in the domain. There are two possible causes that might lead to the previously stated error.
 
 - Cause-1: The user object is part of an OU that doesn't inherit domain-level permissions.
-- Cause-2: The user object belongs to a [protected Active Directory group](https://go.microsoft.com/fwlink/?linkid=2240442). By design, user objects are governed by permissions that are associated with a special container called [```AdminSDHolder```](https://go.microsoft.com/fwlink/?linkid=2240377). This explains why the ```provAgentgMSA$``` account is unable to update these accounts belonging to protected Active Directory groups. You may try to override and explicitly provide the ```provAgentgMSA$``` account write access to user accounts, but that won't work. In order to secure privileged user accounts from a misuse of delegated permissions, there's a background process called [SDProp](https://go.microsoft.com/fwlink/?linkid=2240378)  that runs every 60 minutes and ensures that users belonging to a protected group are always managed by permissions defined on the ```AdminSDHolder``` container. Even the approach of adding the ```provAgentgMSA$``` account to the Domain Admin group won't work.
+- Cause-2: The user object belongs to a [protected Active Directory group](https://go.microsoft.com/fwlink/?linkid=2240442). By design, user objects are governed by permissions that are associated with a special container called [```AdminSDHolder```](https://go.microsoft.com/fwlink/?linkid=2240377). This explains why the ```provAgentgMSA$``` account is unable to update these accounts belonging to protected Active Directory groups. You might try to override and explicitly provide the ```provAgentgMSA$``` account write access to user accounts, but that won't work. In order to secure privileged user accounts from a misuse of delegated permissions, there's a background process called [SDProp](https://go.microsoft.com/fwlink/?linkid=2240378)  that runs every 60 minutes and ensures that users belonging to a protected group are always managed by permissions defined on the ```AdminSDHolder``` container. Even the approach of adding the ```provAgentgMSA$``` account to the Domain Admin group won't work.
 
 
 ## Resolution
@@ -47,11 +47,11 @@ To check if Cause-1 is the source of the problem:
 2. Select the OU associated with the user.
 3. Right click and navigate to **Properties -> Security -> Advanced**.
     If the **Enable Inheritance** button is shown, it confirms that Cause-1 is the source of the problem.  
-4. Click on **Enable Inheritance** so that domain level permissions are applicable to this OU.
+4. Select **Enable Inheritance** so that domain level permissions are applicable to this OU.
      >[!NOTE]
-     >Please remember to verify the whole hierarchy from domain level down to the OU holding the affected accounts. All Parent OUs/Containers must have inheritance enabled so the permissions applied at the domain level may cascade down to the final object.
+     >Remember to verify the whole hierarchy from domain level down to the OU holding the affected accounts. All Parent OUs/Containers must have inheritance enabled so the permissions applied at the domain level might cascade down to the final object.
 
-If Cause-1 is not the source of the problem, then potentially Cause-2 is the source of the problem. There are two possible resolution options.
+If Cause-1 isn't the source of the problem, then potentially Cause-2 is the source of the problem. There are two possible resolution options.
 
 **Option 1: Remove affected user from protected AD group**
 To find the list of users governed by this ```AdminSDHolder``` permission, Cx can invoke the following command:
@@ -64,7 +64,7 @@ Reference articles:
 
 *Option 1 might not always work*
 
-There's a process called The Security Descriptor Propagation (SDPROP) process that runs every hour on the domain controller holding the PDC emulator FSMO role. It's this process that sets the ```AdminCount``` attribute to 1. The main function of SDPROP is to protect highly privileged Active Directory accounts, ensuring that they can't be deleted or have rights modified, accidentally or intentionally, by users or processes with less privilege.
+There's a process called The Security Descriptor Propagation (SDPROP) process that runs every hour on the domain controller holding the PDC emulator FSMO role. It's this process that sets the ```AdminCount``` attribute to 1. The main function of SDPROP is to protect highly privileged Active Directory accounts. It ensures that these accounts can't be deleted or have their rights modified, either accidentally or intentionally, by users or processes with less privilege.
 There's a process called The Security Descriptor Propagation (SDPROP) process that runs every hour on the domain controller holding the PDC emulator FSMO role. It's this process that sets the ```AdminCount``` attribute to 1. The main function of SDPROP is to protect highly privileged Active Directory accounts. The SDPROP process ensures that accounts can't be deleted or have rights accidentally or intentionally modified by users or processes with less privilege.
 
 Reference articles that explain the reason in detail:
@@ -75,7 +75,7 @@ Reference articles that explain the reason in detail:
 
 **Option 2: Modify the default permissions of the AdminSDHolder container**
 
-If option 1 is not feasible and doesn't work as expected, then ask Cx to check with their AD admin and security administrators, if they are allowed to modify the default permissions of the ```AdminSDHolder``` container. This [article](https://go.microsoft.com/fwlink/?linkid=2240198) that explains the importance of the ```AdminSDHolder``` container. Once Cx gets internal approval to update the ```AdminSDHolder``` container permissions, there are two ways to update the permissions.
+If option 1 isn't feasible and doesn't work as expected, then ask Cx to check with their AD admin and security administrators, if they're allowed to modify the default permissions of the ```AdminSDHolder``` container. This [article](https://go.microsoft.com/fwlink/?linkid=2240198) that explains the importance of the ```AdminSDHolder``` container. Once Cx gets internal approval to update the ```AdminSDHolder``` container permissions, there are two ways to update the permissions.
 
 *    Using ```ADSIEdit``` as described in this [article](https://petri.com/active-directory-security-understanding-adminsdholder-object).
 *    Using ```DSACLS``` command-line script. Here's an example script that could be used as a starting point and Cx can tweak it as per their requirements.

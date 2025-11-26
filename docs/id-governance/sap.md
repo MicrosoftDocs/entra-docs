@@ -2,10 +2,10 @@
 title: Manage access to your SAP applications
 description: Learn how to bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP ERP Central Component (ECC), SAP S/4HANA, and other SAP applications.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/29/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
@@ -45,6 +45,9 @@ You can also [write back from Microsoft Entra ID to SAP SuccessFactors](../ident
 Customers who still use SAP Human Capital Management (HCM) can also bring identities into Microsoft Entra ID. By using SAP Integration Suite, you can synchronize lists of workers between SAP HCM and SAP SuccessFactors. From there, you can bring identities directly into Microsoft Entra ID or provision them into Active Directory Domain Services by using the native provisioning integrations mentioned earlier.
 
 ![Diagram of SAP HR integrations.](./media/sap/sap-hr-no-mim.png)
+
+Other integration options for organizations which have SAP HCM and don't have SuccessFactors are listed in [Provision users from SAP human capital management (HCM) to Microsoft Entra ID](../identity/saas-apps/sap-hcm-microsoft-entra-identity-provisioning.md).
+
 
 ## Provide access to SAP applications
 

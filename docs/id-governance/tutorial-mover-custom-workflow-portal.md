@@ -2,14 +2,13 @@
 title: 'Automate employee mover tasks when they change jobs using the Microsoft Entra admin center'
 description: Tutorial for moving users that change jobs using Lifecycle workflows with the Microsoft Entra admin center.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/13/2024
 ms.author: owinfrey
-ms.custom: template-tutorial
-
+ms.custom: template-tutorial, sfi-image-nochange
 #CustomerIntent: As an administrator, I want to automate group and team memberships when an employee changes jobs so that their access to resources are always valid for them .
 ---
 
@@ -58,11 +57,11 @@ Use the following steps to create a mover workflow for a user making a job chang
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Create workflow**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Create workflow**.
 
 1. From the templates, select **Employee job profile change**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template.png" alt-text="Screenshot of selecting the employee job profile change template.":::
-1. Next, you configure the basic information about the workflow. This information includes a name and description. You're also able to choose the **Trigger type** of the workflow, which in this case is the **Attribute changes** trigger. For **Trigger attribute** you're able to define what attribute being changed will trigger the workflow, which in this case is **department**. After the trigger is set, select **Configure scope**.
+1. Next, you configure the basic information about the workflow. This information includes a name, description, and [administrative scope](manage-delegate-workflow.md). You're also able to choose the **Trigger type** of the workflow, which in this case is the **Attribute changes** trigger. For **Trigger attribute** you're able to define what attribute being changed will trigger the workflow, which in this case is **department**. After the trigger is set, select **Configure scope**.
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/job-change-template-basics.png" alt-text="Screenshot of setting attribute change membership trigger in template.":::
 1. On the next screen you configure the scope. The scope determines which users this workflow runs against.  In this case, it is on all users added to the Sales department. On the configure scope screen, under **Rule** add the following settings, and then select **Review tasks**. For a full list of supported user properties, see [Supported user properties and query parameters](/graph/api/resources/identitygovernance-rulebasedsubjectset?view=graph-rest-beta&preserve-view=true#supported-user-properties-and-query-parameters).
     :::image type="content" source="media/tutorial-mover-custom-workflow-portal/group-scope.png" alt-text="Screenshot of setting attribute change scope.":::

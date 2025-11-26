@@ -2,13 +2,13 @@
 title: Tutorial - Configure virtual networking for Microsoft Entra Domain Services | Microsoft Docs
 description: In this tutorial, you learn how to create and configure an Azure virtual network subnet or network peering for a Microsoft Entra Domain Services managed domain using the Microsoft Entra admin center.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create and configure a virtual network subnet or network peering for application workloads in a Microsoft Entra Domain Services managed domain
 ---
 
@@ -27,14 +27,14 @@ In this tutorial, you learn how to:
 > * Create an IP address range and additional subnet in the Domain Services virtual network
 > * Configure virtual network peering to a network that's separate from Domain Services
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 
 To complete this tutorial, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * You need [Application Administrator](/azure/active-directory/roles/permissions-reference#application-administrator) and [Groups Administrator](/azure/active-directory/roles/permissions-reference#groups-administrator) Microsoft Entra roles in your tenant to enable Domain Services.

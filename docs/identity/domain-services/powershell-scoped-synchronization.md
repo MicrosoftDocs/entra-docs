@@ -2,12 +2,12 @@
 title: Scoped synchronization using PowerShell for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to use Microsoft Graph PowerShell to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 02/05/2025
+ms.date: 05/22/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell, azure-ad-ref-level-one-done
@@ -26,7 +26,7 @@ This article shows you how to create a managed domain that uses scoped synchroni
 To complete this article, you need the following resources and privileges:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.
@@ -116,7 +116,7 @@ foreach ($id in $newGroupIds)
         {
             Write-Output "Adding new group-assignment. Role-Id: $($role.Id), Group-Object-Id: $id, ResourceId: $($sp.Id)"
             $appRoleAssignment = @{
-                "principalId"= $group.Id
+                "principalId"= $Id
                 "resourceId"= $sp.Id
                 "appRoleId"= $role.Id
             }

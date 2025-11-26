@@ -2,14 +2,14 @@
 title: Create and use password policies in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how and why to use fine-grained password policies to secure and control account passwords in a Domain Services managed domain.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 02/05/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 ---
 # Password and account lockout policies on Microsoft Entra Domain Services managed domains
 
@@ -25,7 +25,7 @@ This article shows you how to create and configure a fine-grained password polic
 To complete this article, you need the following resources and privileges:
 
 * An active Azure subscription.
-  * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+  * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
   * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.

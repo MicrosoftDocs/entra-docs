@@ -2,13 +2,13 @@
 title: Enable password hash sync for Microsoft Entra Domain Services | Microsoft Docs
 description: In this tutorial, learn how to enable password hash synchronization using Microsoft Entra Connect to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 #Customer intent: As a server administrator, I want to learn how to enable password hash synchronization with Microsoft Entra Connect to create a hybrid environment using an on-premises AD DS domain.
 ---
 
@@ -26,14 +26,14 @@ In this tutorial, you learn:
 > * Why legacy NTLM and Kerberos password hashes are needed
 > * How to configure legacy password hash synchronization for Microsoft Entra Connect
 
-If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 
 To complete this tutorial, you need the following resources:
 
 * An active Azure subscription.
-    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A Microsoft Entra tenant associated with your subscription that's synchronized with an on-premises directory using Microsoft Entra Connect.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
     * If needed, [enable Microsoft Entra Connect for password hash synchronization][enable-azure-ad-connect].

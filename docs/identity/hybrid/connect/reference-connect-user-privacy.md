@@ -2,14 +2,14 @@
 title: 'Microsoft Entra Connect and user privacy'
 description: This document describes how to obtain GDPR compliancy with Microsoft Entra Connect.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -41,7 +41,7 @@ Data about a person is automatically removed from the Microsoft Entra Connect da
 <a name='delete-the-azure-ad-connect-installation-log-file-folder-contents'></a>
 
 ## Delete the Microsoft Entra Connect installation log file folder contents
-Regularly check and delete the contents of **c:\programdata\aadconnect** folder – except for the **PersistedState.Xml** file. This file maintains the state of the previous installation of Azure A Connect and is used when an upgrade installation is performed. This file doesn't contain any data about a person and shouldn't be deleted.
+Regularly check and delete the contents of **c:\programdata\aadconnect** folder – except for the **PersistedState.Xml** file. This file maintains the state of the previous installation of Microsoft Entra Connect and is used when an upgrade installation is performed. This file doesn't contain any data about a person and shouldn't be deleted.
 
 >[!IMPORTANT]
 >Do not delete the PersistedState.xml file.  This file contains no user information and maintains the state of the previous installation.
@@ -50,7 +50,7 @@ You can either review and delete these files using Windows Explorer or you can u
 
 
 ```
-$Files = ((Get-childitem -Path "$env:programdata\aadconnect" -Recurse).VersionInfo).FileName
+$Files = ((Get-ChildItem -Path "$env:programdata\aadconnect" -Recurse).VersionInfo).FileName
 Foreach ($file in $files) {
 If ($File.ToUpper() -ne "$env:programdata\aadconnect\PERSISTEDSTATE.XML".toupper()) # Do not delete this file
     {Remove-Item -Path $File -Force}

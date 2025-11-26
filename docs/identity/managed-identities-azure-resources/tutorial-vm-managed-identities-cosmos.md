@@ -1,16 +1,16 @@
 ---
 title: Use managed identities from a virtual machine to access Azure Cosmos DB
 description: Learn how to use managed identities with Windows VMs using the Azure portal, CLI, PowerShell, Azure Resource Manager template
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: tutorial
 ms.date: 03/31/2023
-ms.author: ryanwi
-ms.custom: ep-miar, devx-track-azurepowershell, devx-track-azurecli, devx-track-arm-template, devx-track-linux
+ms.author: shermanouko
 ms.tool: azure-cli, azure-powershell
 ms.devlang: azurecli
+ms.custom: ep-miar, devx-track-azurepowershell, devx-track-azurecli, devx-track-arm-template, devx-track-linux, sfi-image-nochange
 #Customer intent: As an administrator, I want to know how to access Azure Cosmos DB from a virtual machine using a managed identity
 ---
 
@@ -21,7 +21,7 @@ In this article, we set up a virtual machine to use managed identities to connec
 ## Prerequisites
 
 - A basic understanding of Managed identities. If you would like to learn more about managed identities for Azure resources before you continue, review the managed identities [overview](overview.md).
-- You must have an Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/).
+- You must have an Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - You may need either [PowerShell](/powershell/azure/new-azureps-module-az) or the [CLI](/cli/azure/install-azure-cli).
 - [Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/community/) or some other development environment of your choosing. 
 

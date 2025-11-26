@@ -2,14 +2,13 @@
 title: Customize app JSON Web Token (JWT) claims
 description: Learn how to customize the claims issued by Microsoft identity platform in the JSON web token (JWT) token for enterprise applications.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
-ms.date: 05/30/2024
-ms.reviewer: rahulnagraj, alamaral
+ms.date: 05/30/2025
+ms.reviewer: alamaral
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to customize the claims issued in the JSON web tokens so that I can tailor the information about the user that is included in the token for my enterprise application.
 ---
 
@@ -25,7 +24,7 @@ These JSON Web tokens (JWT) used by OIDC and OAuth applications contain pieces o
 Optional JWT claims can be configured in the the original application registration, however they can also be configured in the enterprise application. To view or edit the claims issued in the JWT to the application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application, select **Single sign-on** in the left-hand menu, and then select **Edit** in the **Attributes & Claims** section.
 
 An application may need claims customization for various reasons. For example, when an application requires a different set of claim URIs or claim values. Using the **Attributes & Claims** section, you can add or remove a claim for your application. You can also create a custom claim that is specific for an application based on the use case.
@@ -91,6 +90,8 @@ You can use the following functions to transform claims.
 If you need other transformations, submit your idea in the [feedback forum in Microsoft Entra ID](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789) under the *SaaS application* category.
 
 ## Regex-based claims transformation
+
+You can use regular expressions to transform claims. A maximum of 20 total regex replacements can be made when using regex-based claims transformations.
 
 The following image shows an example of the first level of transformation:
 
@@ -336,8 +337,8 @@ else
     $base64cer = [System.Convert]::ToBase64String($cer_cert)
  
     # getting id for the keyCredential object
-    $guid1 = New-Guid
-    $guid2 = New-Guid
+    [string]$guid1 = New-Guid
+    [string]$guid2 = New-Guid
  
     # get the custom key identifier from the certificate thumbprint:
     $hasher = [System.Security.Cryptography.HashAlgorithm]::Create('sha256')

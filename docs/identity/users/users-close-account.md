@@ -3,7 +3,7 @@ title: Close a work or school account in an unmanaged Microsoft Entra organizati
 description: How to close your work or school account in an unmanaged Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: users

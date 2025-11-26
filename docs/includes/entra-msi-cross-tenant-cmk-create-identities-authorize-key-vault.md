@@ -4,11 +4,10 @@ ms.author: vakarand
 ms.date: 10/28/2022
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.custom: devx-track-azurecli, devx-track-azurepowershell, sfi-image-nochange
 ms.topic: include
 title: Cross-tenant customer-managed key (CMK) configuration - Azure
 description: include file for cross-tenant customer-managed key (CMK) configuration
-
 ---
 
 ## Configure cross-tenant customer-managed keys
@@ -48,9 +47,9 @@ Create a user-assigned managed identity to be used as a federated identity crede
 1. Select **Review + create**.
 1. On successful deployment, note the **Azure ResourceId** of the user-assigned managed identity, which is available under **Properties**. For example:
 
-   `/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourcegroups/XTCMKDemo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ConsotoCMKDemoUA`
+   `/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourcegroups/XTCMKDemo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ContosoCMKDemoUA`
 
-    :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" alt-text="Screen shot showing how to create a resource group and a user-assigned managed identity." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" border="true":::
+    :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" alt-text="Screenshot showing how to create a resource group and a user-assigned managed identity." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" border="true":::
 
 #### The service provider configures the user-assigned managed identity as a federated credential on the application
 
@@ -60,7 +59,7 @@ Configure a user-assigned managed identity as a federated identity credential on
 2. Select **Certificates & secrets**.
 3. Select **Federated credentials**.
 
-   :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/certificates-secrets.png" alt-text="Screen shot showing how to navigate to Certificate and secrets." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/certificates-secrets.png" border="true":::
+   :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/certificates-secrets.png" alt-text="Screenshot showing how to navigate to Certificate and secrets." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/certificates-secrets.png" border="true":::
 
 4. Select **+ Add credential**.
 5. Under **Federated credential scenario**, select **Customer Managed Keys**.
@@ -254,7 +253,7 @@ To create the key vault, the user's account must be assigned the **Key Vault Con
 1. On the **Access policy** tab, select **Azure role-based access control** for **Permission model**.
 1. Select **Review + create** and then **Create**.
 
-    :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-key-vault.png" alt-text="Screen shot showing how to create a key vault." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-key-vault.png" border="true":::
+    :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-key-vault.png" alt-text="Screenshot showing how to create a key vault." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-key-vault.png" border="true":::
 
 Take note of the key vault name and URI Applications that access your key vault must use this URI.
 

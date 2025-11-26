@@ -2,14 +2,14 @@
 title: Stream Microsoft Entra logs to an event hub
 description: Learn how to stream Microsoft Entra activity logs to an event hub for SIEM tool integration and analysis.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 09/27/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to stream Microsoft Entra activity logs to an event hub for SIEM tool integration and analysis.
 ---
 # How to stream activity logs to an event hub
@@ -20,7 +20,7 @@ This article shows how you can stream your logs to an event hub, to integrate wi
 
 ## Prerequisites
 
-- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An **Azure event hub** that is already set up. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access to create general diagnostic settings for the Microsoft Entra tenant.
 - [Attribute Log Administrator](../role-based-access-control/permissions-reference.md#attribute-log-administrator) access to create diagnostic settings for [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) logs.

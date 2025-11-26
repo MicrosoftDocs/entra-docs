@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT administrator, I want to configure F5 BIG-IP Access Policy Manager for header-based single sign-on, so that I can implement secure hybrid access with single sign-on to header-based applications using F5 BIG-IP advanced configuration.
 ---
 
@@ -61,7 +60,7 @@ The following diagram illustrates the user flow with Microsoft Entra ID, BIG-IP,
 For the scenario you need:
 
 * An Azure subscription
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * One of the following roles: Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)
@@ -93,7 +92,7 @@ To implement SHA, the first step is to set up a SAML federation trust between BI
 Learn more: [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 3. On the top ribbon, select **+ New application**.
 4. In the gallery, search for **F5**.
 5. Select **F5 BIG-IP APM Microsoft Entra ID integration**.

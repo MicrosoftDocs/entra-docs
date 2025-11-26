@@ -3,10 +3,11 @@ title: Global Secure Access logs and monitoring
 description: Learn about the available Global Secure Access logs and monitoring options.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
-ms.topic: conceptual
-ms.date: 04/18/2024
+manager: dougeby
+ms.topic: article
+ms.date: 02/21/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 ---
 
 # Global Secure Access logs and monitoring

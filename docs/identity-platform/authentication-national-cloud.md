@@ -2,7 +2,7 @@
 title: Microsoft Entra authentication & national clouds
 description: Learn about app registration and authentication endpoints for national clouds.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom: references_regions
 ms.date: 01/15/2025
@@ -46,7 +46,7 @@ The following table lists the base URLs for the Microsoft Entra endpoints used t
 You can find the authentication endpoints for your application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **Endpoints** in the top menu.
 
    The **Endpoints** page is displayed showing the authentication endpoints for the application.

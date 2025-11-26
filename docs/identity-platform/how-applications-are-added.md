@@ -2,9 +2,9 @@
 title: How and why apps are added to Microsoft Entra ID
 description: What does it mean for an application to be added to Microsoft Entra ID and how do they get there?
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom:
 ms.date: 10/26/2022
 ms.reviewer: sureshja
 ms.service: identity-platform
@@ -136,7 +136,7 @@ If you still want to prevent users in your directory from registering applicatio
 - To change the user consent settings in your organization, see [Configure how users consent to applications](~/identity/enterprise-apps/configure-user-consent.md).
 
 - To prevent users from registering their own applications:
-  1. In the Microsoft Entra admin center, browse to **Identity** > **Users** > **User settings**.
+  1. In the Microsoft Entra admin center, browse to **Entra ID** > **Users** > **User settings**.
   2. Change **Users can register applications** to **No**.
 
 <!--Image references-->

@@ -5,11 +5,11 @@ description: Learn supported and unsupported scenarios for Microsoft Entra certi
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/03/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
@@ -79,6 +79,7 @@ The following scenarios aren't supported:
 - [Technical deep dive for Microsoft Entra CBA](concept-certificate-based-authentication-technical-deep-dive.md)   
 - [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
 - [Windows SmartCard logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
 - [Microsoft Entra CBA on mobile devices (Android and iOS)](./concept-certificate-based-authentication-mobile-ios.md)
 - [CertificateUserIDs](concept-certificate-based-authentication-certificateuserids.md)
 - [How to migrate federated users](concept-certificate-based-authentication-migration.md)

@@ -1,16 +1,15 @@
 ---
 title: View update and sign-in activities for Managed identities
 description: Step-by-step instructions for viewing the activities made to managed identities, and authentications carried out by managed identities
-
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.date: 06/05/2024
-ms.author: ryanwi
-
+ms.author: shermanouko
+ms.custom: sfi-image-nochange
 ---
 
 # View update and sign-in activities for Managed identities
@@ -20,7 +19,7 @@ This article explains how to view updates carried out to managed identities, and
 ## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/).
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 ## View updates made to user-assigned managed identities
 

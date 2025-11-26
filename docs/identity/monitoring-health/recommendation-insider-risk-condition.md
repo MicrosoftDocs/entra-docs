@@ -2,11 +2,11 @@
 title: Protect your tenant with Insider Risk in Conditional Access
 description: Learn how you can protect your tenant by enabling the Insider Risk condition in Conditional Access integrated with Microsoft Purview Adaptive Protection.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 07/12/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: poulomib
 
@@ -38,6 +38,10 @@ Implementing a Conditional Access policy that blocks access to resources for hig
 1. Create a [Conditional Access policy](https://entra.microsoft.com/#view/Microsoft_AAD_ConditionalAccess/CaTemplates.ReactView/templateIds~/%5B%2216aaa400-bfdf-4756-a420-ad2245d4cde8%22%5D) that includes the Insider Risk condition.
 	- You must be signed in as a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) to view this template.
 	- For more information, see [Conditional Access conditions: Insider Risk](../../identity/conditional-access/concept-conditional-access-conditions.md#insider-risk).
+
+## License requirements
+
+Using this feature requires Microsoft Entra ID P2 licenses.
 
 ## Next steps
 

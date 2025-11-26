@@ -3,12 +3,13 @@ title: How to configure Global Secure Access web content filtering
 description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
 author: kenwith    
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 10/28/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
+ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
@@ -17,7 +18,7 @@ Web content filtering empowers you to implement granular Internet access control
 
 Microsoft Entra Internet Access's first Secure Web Gateway (SWG) features include web content filtering based on domain names. Microsoft integrates granular filtering policies with Microsoft Entra ID and Microsoft Entra Conditional Access, which results in filtering policies that are user-aware, context-aware, and easy to manage. 
 
-The web filtering feature is currently limited to user- and context-aware Fully Qualified Domain Name (FQDN)-based web category filtering and FQDN filtering.
+The web filtering feature currently supports user- and context-aware Uniform Resource Locator (URL)-based web category filtering, URL filtering (Preview), and FQDN filtering.
 
 ## Prerequisites
 
@@ -53,11 +54,10 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Select **Create policy**.
 1. Enter a name and description for the policy and select **Next**.
 1. Select **Add rule**.
-1. Enter a name, select a [web category](reference-web-content-filtering-categories.md) or a valid FQDN, and then select **Add**.
-     - Valid FQDNs in this feature can also include wildcards using the asterisk symbol, *.
+1. Enter a name, select a [web category](reference-web-content-filtering-categories.md), a valid URL (Preview), or a valid FQDN, and then select **Add**.
+     - Valid URLs and FQDNs in this feature can also include wildcards using the asterisk symbol, *, and can be comma-separated lists.
+     - Note, the URL filtering Preview supports a maximum of 1,000 URLs per tenant.
 1. Select **Next** to review the policy and then select **Create policy**.
-> [!IMPORTANT]
-> Changes to web content filtering can take up to one hour to deploy.
 
 ## Create a security profile
 
@@ -81,7 +81,7 @@ In this step, you create a security profile to group filtering policies. Then yo
 
 Create a Conditional Access policy for end users or groups and deliver your security profile through Conditional Access Session controls. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about session controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session).
 
-1. Browse to **Identity** > **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
 1. Select **Target resources** and **All internet resources with Global Secure Access**.
@@ -102,7 +102,7 @@ The following flow diagram illustrates web content filtering policies blocking o
 |1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
 |2|The client redirects to Microsoft Entra ID for authentication and authorization.|
 |3|The user and device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
-|4|After the user and device authenticate, Conditional Access matches on Internet Access CA rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
+|4|After the user and device authenticate, Conditional Access matches on Internet Access Conditional Access rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
 |5|Microsoft Entra ID presents the token to Microsoft Security Service Edge for validation.|
 |6|The tunnel establishes between the Global Secure Access client and Microsoft Security Service Edge.|
 |7|Traffic starts being acquired and tunnels through the Internet Access tunnel.|
@@ -129,7 +129,7 @@ Use a Windows device with the Global Secure Access client installed. Sign in as 
 
 The current blocking experience for all browsers includes a plaintext browser error for HTTP traffic and a "Connection Reset" browser error for HTTPS traffic.
 
-![Screenshot showing a plaintext browser error for HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
+![Screenshot showing a plaintext browser error for unencrypted or TLS inspected HTTP traffic.](media/how-to-configure-web-content-filtering/http-block-xbox.png)
 
 ![Screenshot showing a "Connection Reset" browser error for HTTPS traffic.](media/how-to-configure-web-content-filtering/https-block-xbox.png)
 

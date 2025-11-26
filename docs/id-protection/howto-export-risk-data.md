@@ -1,17 +1,14 @@
 ---
 title: Export and use Microsoft Entra ID Protection data
 description: Learn about the many long-term data storage and monitoring options for exporting risk data from Microsoft Entra ID Protection.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
-ms.date: 11/18/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.date: 09/30/2025
+author: shlipsey3
+ms.author: sarahlipsey
+manager: pwongera
 ms.reviewer: cokoopma
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to know how to export and use Microsoft Entra ID Protection data so that I can investigate using long-term data in Microsoft Entra ID Protection.
 ---
 # How To: Export risk data
@@ -31,8 +28,8 @@ This article describes the available methods for exporting risk data from Micros
 
 To export risk data for storage and analysis, you need:
 
-- An Azure subscription to create a Log Analytics workspace, Azure event hub, or Azure storage account. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
-- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) access to create general diagnostic settings for the Microsoft Entra tenant.
+- An Azure subscription to create a Log Analytics workspace, Azure event hub, or Azure storage account. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **configure diagnostic settings for the Microsoft Entra tenant**.
 
 ## Diagnostic settings
 
@@ -42,7 +39,7 @@ The endpoint you select for exporting the logs must be set up before you can con
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Select **+ Add diagnostic setting**.
 
@@ -60,7 +57,7 @@ Integrating risk data with Log Analytics provides robust data analysis and visua
 1. [Configure Microsoft Entra diagnostic settings to export the data](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 1. [Query the data in Log Analytics](/azure/azure-monitor/logs/get-started-queries).
 
-You need to configure a Log Analytics workspace before you can export and then query the data. Once you configured a Log Analytics workspace and exported the data with diagnostic settings, go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Identity** > **Monitoring & health** > **Log Analytics**. Then, with Log Analytics, you can query data using built-in or custom Kusto queries.
+You need to configure a Log Analytics workspace before you can export and then query the data. Once you configured a Log Analytics workspace and exported the data with diagnostic settings, go to [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Monitoring & health** > **Log Analytics**. Then, with Log Analytics, you can query data using built-in or custom Kusto queries.
 
 The following tables are of most interest to Microsoft Entra ID Protection administrators:
 
@@ -70,7 +67,7 @@ The following tables are of most interest to Microsoft Entra ID Protection admin
 - ServicePrincipalRiskEvents - Provides data like the **Workload identity detections** report.
 
 > [!NOTE]
-> Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID do not appear.
+> Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID don't appear.
 
 ### Sample queries
 
@@ -111,6 +108,12 @@ AADUserRiskEvents
 ```
 
 Access more queries and visual insights based on AADUserRiskEvents and AADRisky Users logs in the [Impact analysis of risk-based access policies workbook](workbook-risk-based-policy-impact.md).
+
+### Risk analysis
+
+Organizations can reduce security operations center (SOC) workloads and support overhead with risk-based Conditional Access policies. Learn more in the following video, **Mastering risk analysis with Microsoft Entra ID Protection**.
+
+   > [!VIDEO abb7d7fe-4155-4ee1-bcce-afa027d22f8d]
 
 ## Storage account
 

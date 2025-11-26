@@ -1,25 +1,25 @@
 ---
-title: Regions requiring opt-in for SMS verification
+title: Regional opt-in for MFA telephony verification with external tenants (preview)
 description: To protect customers, some regions require you to enable the country codes to receive SMS telephony verification for Microsoft Entra External ID external tenants.
 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/12/2024
-ms.author: mimart
 ms.reviewer: aloom3
 ms.custom: it-pro, references_regions
 
 #Customer intent: As a dev, devops, or it admin, I want to prevent telephony fraud by choosing which countries and regions to accept telecom traffic from.
 ---
 
-# Regions requiring opt-in for SMS verification (preview)
+# Regional opt-in for MFA telephony verification with external tenants (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-To safeguard against telephony fraud, Microsoft disallows traffic from certain phone number country codes. Doing so helps prevent unauthorized access and protect customers from fraudulent activities such as International Revenue Share Fraud (IRSF). With IRSF, criminals gain unauthorized access to a network and divert traffic to premium rate numbers, resulting in exorbitant charges and making it harder for your customers to access your services. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md).
+To safeguard against telephony fraud, Microsoft disallows traffic from certain phone number country codes. Doing so helps prevent unauthorized access and protect customers from fraudulent activities such as International Revenue Share Fraud (IRSF). With IRSF, criminals gain unauthorized access to a network and divert traffic to premium-rate numbers. They generate profits through a technique called traffic pumping. This technique often targets multifactor authentication systems, causing inflated charges, service instability, and system errors, making it harder for your customers to access your services.
 
 When a country code is blocked, customers trying to set up SMS verification for multifactor authentication (MFA) for your application might encounter the message "Try another verification method." To resolve this issue, you can activate telephony traffic for the specific country code for your application.
 
@@ -180,13 +180,17 @@ POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners
         }  
     },  
     "priority": 500,  
-    "handler": {  
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler", 
-        /* An Admin can state the country codes they would like to opt in or opt out from. */ 
-        { 
-                "includeAdditionalRegions": [222, 998], 
-                 "excludeRegions": [] 
-      } 
+    "handler": {
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler",
+        "smsOptions": {
+            "includeAdditionalRegions": [222, 998],
+            "excludeRegions": []
+        },
+        "voiceOptions": {
+          "includeAdditionalRegions": [],
+          "excludeRegions": []
+        }
+    }
 } 
 
 HTTP/1.1 201 Created 
@@ -201,14 +205,17 @@ HTTP/1.1 201 Created
             ] 
         }   
     },   
-    "handler": 
-    {   
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler ",  
-        { 
-            "includeAdditionalRegions": [222, 998], 
-            "excludeRegions": [] 
-        }, 
-    } 
+    "handler": {
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler",
+        "smsOptions": {
+            "includeAdditionalRegions": [222, 998],
+            "excludeRegions": []
+        },
+        "voiceOptions": {
+            "includeAdditionalRegions": [],
+            "excludeRegions": []
+        }
+    }
 } 
 ```
 
@@ -231,14 +238,18 @@ POST https://graph.microsoft.com/v1.0/identity/authenticationEventListeners
             ]  
         }  
     },  
-    "priority": 500,  
-    "handler": {  
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler", 
-        /* An Admin can state the country codes they would like to opt in or opt out from. */ 
-        { 
-                "includeAdditionalRegions": [222, 998], 
-                 "excludeRegions": [1001, 99, 777] 
-      } 
+    "priority": 500,
+    "handler": {
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler",
+        "smsOptions": {
+            "includeAdditionalRegions": [222, 998],
+            "excludeRegions": [1001, 99, 777]
+        },
+        "voiceOptions": {
+            "includeAdditionalRegions": [],
+            "excludeRegions": []
+        }
+    }
 } 
 
 HTTP/1.1 201 Created 
@@ -252,20 +263,22 @@ HTTP/1.1 201 Created
                 "3dfff01b-0afb-4a07-967f-d1ccbd81102a"  
             ] 
         }   
-    },   
-    "handler": 
-    {   
-        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler ",  
-        { 
-            "includeAdditionalRegions": [222, 998], 
-            "excludeRegions": [] 
-        }, 
-    } 
+    },
+    "handler": {
+        "@odata.type": "#microsoft.graph.onPhoneMethodLoadStartExternalUsersAuthHandler",
+        "smsOptions": {
+            "includeAdditionalRegions": [222, 998],
+            "excludeRegions": [1001, 99, 777]
+        },
+        "voiceOptions": {
+            "includeAdditionalRegions": [],
+            "excludeRegions": []
+        }
+    }
 }  
 ```
 
-## Next steps
+## Related content
 
-- [Understanding telephony fraud](~/identity/authentication/concept-mfa-telephony-fraud.md)
 - [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md)
 - [Service limits and restrictions](reference-service-limits.md)

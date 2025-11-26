@@ -2,14 +2,14 @@
 title: What are protected actions in Microsoft Entra ID?
 description: Learn about protected actions in Microsoft Entra ID.
 
-author: rolyon
-manager: amycolannino
-ms.author: rolyon
+author: barclayn
+manager: pmwongera
+ms.author: barclayn
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.custom: has-azure-ad-ps-ref
-ms.topic: conceptual
-ms.date: 01/31/2025
+ms.custom: no-azure-ad-ps-ref
+ms.topic: article
+ms.date: 11/03/2025
 ---
 
 # What are protected actions in Microsoft Entra ID?
@@ -48,14 +48,14 @@ Here's the initial set of permissions:
 > | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
 > | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
 > | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for conditional access policies |
-> | microsoft.directory/conditionalAccessPolicies/create | Create conditional access policies |
-> | microsoft.directory/conditionalAccessPolicies/delete | Delete conditional access policies |
+> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
 > | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update | Update allowed cloud endpoints of the cross-tenant access policy|
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of the default cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy.
-> | microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update | Update tenant restrictions of the default cross-tenant access policy.
+> | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy. |
+> | microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update | Update tenant restrictions of the default cross-tenant access policy. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policy for partners. |
@@ -72,7 +72,7 @@ Here's the initial set of permissions:
 
 Microsoft Entra ID supports two types of deletion for most directory objects: soft deletion and hard deletion. When a directory object is soft deleted, the object, its property values and relationships are preserved in the recycle bin for 30 days. A soft-deleted object can be restored with the same ID and all the property values and relationships intact. When a soft-deleted object is hard deleted, the object is permanently deleted and it cannot be recreated with the same object ID.
 
-To help protect against accidental or malicious hard deletions of some soft-deleted directory objects from the recycle bin and permanent data loss, you can add a protected action for the following permission. This deletion applies to users, Microsoft 365 groups, and applications.
+To help protect against accidental or malicious hard deletions of some soft-deleted directory objects from the recycle bin and permanent data loss, you can add a protected action for the following permission. This deletion applies to users, Microsoft 365 groups, cloud security groups, and applications.
 
 - microsoft.directory/deletedItems/delete
 
@@ -112,7 +112,6 @@ If an application or service attempts to perform a protection action, it must be
 There are some known and expected limitations. The following applications will fail if they attempt to perform a protected action.
  
 - [Azure PowerShell](/powershell/azure/what-is-azure-powershell?branch=main) 
-- [Azure AD PowerShell](/powershell/azure/active-directory/overview?branch=main)
 - Creating a new [terms of use](~/identity/conditional-access/terms-of-use.md) page or [custom control](~/identity/conditional-access/controls.md) in the Microsoft Entra admin center. New terms of use pages or custom controls are registered with Conditional Access so are subject to Conditional Access create, update, and delete protected actions. Temporarily removing the policy requirement from the Conditional Access create, update, and delete actions will allow the creation of a new terms of use page or custom control.
 
 If your organization has developed an application that calls the Microsoft Graph API to perform a protected action, you should review the code sample for how to handle a claims challenge using step-up authentication. For more information, see [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md).
@@ -139,7 +138,7 @@ Here are some best practices for using protected actions.
 
 ## License requirements
 
-[!INCLUDE [Azure AD Premium P1 license](~/includes/entra-p1-license.md)]
+[!INCLUDE [Microsoft Entra ID Premium P1 license](~/includes/entra-p1-license.md)]
 
 ## Next steps
 

@@ -2,13 +2,13 @@
 title: 'What is identity provisioning with Microsoft Entra ID?'
 description: Describes overview of identity provisioning.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: overview
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

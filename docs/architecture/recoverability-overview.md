@@ -5,8 +5,8 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 08/26/2022
+ms.topic: best-practice
+ms.date: 11/03/2025
 ms.author: jricketts
 ms.reviewer: jricketts
 ---
@@ -29,9 +29,9 @@ Deletions and misconfigurations have different impacts on your tenant.
 
 The impact of deletions depends on the object type.
 
-Users, Microsoft 365 Groups, and applications can be soft deleted. Soft-deleted items are sent to the Microsoft Entra ID recycle bin. While in the recycle bin, items aren't available for use. However, they retain all their properties and can be restored via a Microsoft Graph API call or in the Azure portal. Items in the soft-delete state that aren't restored within 30 days are permanently, or hard, deleted.
+Users, Microsoft 365 Groups, cloud security groups, and applications can be soft deleted. Soft-deleted items are sent to the Microsoft Entra ID recycle bin. While in the recycle bin, items aren't available for use. However, they retain all their properties and can be restored via a Microsoft Graph API call or in the Azure portal. Items in the soft-delete state that aren't restored within 30 days are permanently, or hard, deleted.
 
-![Diagram that shows that users, Microsoft 365 Groups, and applications are soft deleted and then hard deleted after 30 days.](media/recoverability/overview-deletes.png)
+![Diagram that shows that users, Microsoft 365 Groups, cloud security groups, and applications are soft deleted and then hard deleted after 30 days.](media/recoverability/overview-deletes.png)
 
 > [!IMPORTANT]
 > All other object types are hard deleted immediately when they're selected for deletion. When an object is hard deleted, it can't be recovered. It must be re-created and reconfigured.
@@ -98,7 +98,7 @@ Document the state of your tenant and its objects regularly. Then if a hard dele
 - [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations.
 - [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings.
 - [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings.
-- [Conditional Access APIs](https://github.com/Azure-Samples/azure-ad-conditional-access-apis) can be used to manage your Conditional Access policies as code.
+- [Conditional Access APIs](/graph/api/resources/conditionalaccesspolicy) can be used to manage your Conditional Access policies as code.
 
 In the rare case that an API is not available for a certain configuration setting, screenshot(s) can be taken to enable manual recovery.
 
@@ -133,11 +133,11 @@ The [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) can p
 > Settings in the legacy multifactor authentication portal for Application Proxy and federation settings might not be exported with the Microsoft Entra Exporter, or with the Microsoft Graph API.
 The [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) module uses Microsoft Graph and PowerShell to retrieve the state of many of the configurations in Microsoft Entra ID. This information can be used as reference information or, by using PowerShell Desired State Configuration scripting, to reapply a known good state.
 
- Use [Conditional Access Graph APIs](https://github.com/Azure-Samples/azure-ad-conditional-access-apis) to manage policies like code. Automate approvals to promote policies from preproduction environments, backup and restore, monitor change, and plan ahead for emergencies.
-
+Use [Conditional Access Graph APIs](/graph/api/resources/conditionalaccesspolicy) to manage policies like code.
+ 
 ### Map the dependencies among objects
 
-The deletion of some objects can cause a ripple effect because of dependencies. For example, deletion of a security group used for application assignment would result in users who were members of that group being unable to access the applications to which the group was assigned.
+The deletion of some objects can cause a ripple effect because of dependencies. For example, deletion of a cloud security group used for application assignment would result in users who were members of that group being unable to access the applications to which the group was assigned.
 
 #### Common dependencies
 
@@ -146,7 +146,7 @@ The deletion of some objects can cause a ripple effect because of dependencies. 
 | Application object| Service principal (enterprise application).  <br>Groups assigned to the application. <br>Conditional Access policies affecting the application. |
 | Service principals| Application object. |
 | Conditional Access policies| Users assigned to the policy.<br>Groups assigned to the policy.<br>Service principal (enterprise application) targeted by the policy. |
-| Groups other than Microsoft 365 Groups| Users assigned to the group.<br>Conditional Access policies to which the group is assigned.<br>Applications to which the group is assigned access. |
+| Groups other than Microsoft 365 Groups and cloud security groups| Users assigned to the group.<br>Conditional Access policies to which the group is assigned.<br>Applications to which the group is assigned access. |
 
 ## Monitoring and data retention
 
@@ -158,7 +158,7 @@ The Audit log always records a "Delete \<object\>" event when an object in the t
 
 :::image type="content" source="media/recoverability/deletions-audit-log.png" alt-text="Screenshot that shows Audit log detail." lightbox="media/recoverability/deletions-audit-log.png":::
 
-A Delete event for applications, service principals, users, and Microsoft 365 Groups is a soft delete. For any other object type, it's a hard delete.
+A Delete event for applications, service principals, users, Microsoft 365 Groups, and cloud security groups is a soft delete. For any other object type, it's a hard delete.
 
 | Object type | Activity in log| Result |
 | - | - | - |
@@ -170,10 +170,12 @@ A Delete event for applications, service principals, users, and Microsoft 365 Gr
 | User| Hard delete user| Hard deleted |
 | Microsoft 365 Groups| Delete group| Soft deleted |
 | Microsoft 365 Groups| Hard delete group| Hard deleted |
-| All other objects| Delete “objectType”| Hard deleted |
+| Security groups| Delete group| Soft deleted |
+| Security groups| Hard delete group| Hard deleted |
+| All other objects| Delete "objectType"| Hard deleted |
 
 > [!NOTE]
-> The Audit log doesn't distinguish the group type of a deleted group. Only Microsoft 365 Groups are soft deleted. If you see a Delete group entry, it might be the soft delete of a Microsoft 365 Group or the hard delete of another type of group. Your documentation of your known good state should include the group type for each group in your organization.
+> The Audit log doesn't distinguish the group type of a deleted group. Microsoft 365 Groups and cloud security groups are soft deleted. If you see a Delete group entry, it might be the soft delete of a Microsoft 365 Group or cloud security group, or the hard delete of another type of group. Your documentation of your known good state should include the group type for each group in your organization.
 
 For information on monitoring configuration changes, see [Recover from misconfigurations](recover-from-misconfigurations.md).
 

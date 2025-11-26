@@ -6,20 +6,20 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/14/2025
+ms.date: 10/28/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
-ms.reviewer: calui
+manager: dougeby
+ms.reviewer: kimhana
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an identity administrator, I want to understand... 
 
 ---
-# Register a passkey (FIDO2)
+# Register a passkey (FIDO2) with a FIDO2 security key
 
-This article shows how to register a passkey as an authentication method. 
+This article shows how to register a passkey as an authentication method by using a FIDO2 security key. 
 
 ## First-time registration
 
@@ -49,7 +49,7 @@ This article shows how to register a passkey as an authentication method.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/inline-registration.png" alt-text="Screenshot of the Add a passkey (FIDO2) option for a more secure sign-in in My Security info.":::
 
-1. Tap **Next**, then you're directed to `login.microsoft.com`. 
+1. Tap **Next**, then you're directed to `login.microsoftonline.com`. 
 1. Select where you would like to save your passkey (FIDO2).
 
    > [!NOTE]

@@ -1,0 +1,114 @@
+items:
+  - name: Microsoft agent identity platform for developers
+    href: index.yml
+  - name: Overview
+    expanded: true
+    items:
+    - name: What is the Microsoft agent identity platform?
+      href: what-is-agent-id-platform.md
+    - name: What is an agent identity?
+      href: what-is-agent-id.md
+    - name: What is the agent registry?
+      href: what-is-agent-registry.md
+  - name: How to guides
+    expanded: true
+    items:
+    - name: (Pro-code) Integrate an agent with Microsoft Entra
+      items:
+      - name: Create an agent blueprint
+        href: create-blueprint.md
+      - name: Create and delete agent identities
+        href: create-delete-agent-identities.md
+      - name: Autonomous agents
+        items:
+          - name: Request agent tokens
+            href: autonomous-agent-request-tokens.md
+          - name: Request authorization from Entra admin
+            href: autonomous-agent-request-authorization-entra-admin.md
+          - name: Request agent user tokens
+            href: autonomous-agent-request-agent-user-tokens.md
+      - name: Interactive agents
+        items:
+        - name: Sign-in users
+          href: interactive-agent-authenticate-user.md
+        - name: Request authorization from user
+          href: interactive-agent-request-user-authorization.md
+        - name: Request authorization from Entra admin
+          href: interactive-agent-request-admin-authorization.md
+        - name: Request user tokens
+          href: interactive-agent-request-user-tokens.md
+      - name: Call an API (.NET)
+        items:
+          - name: Call Microsoft Graph API
+            href: call-api-microsoft-graph.md
+          - name: Call custom APIs
+            href: call-api-custom.md
+          - name: Call an Azure service
+            href: call-api-azure-services.md
+      - name: Call an API (Agent ID SDK)
+        href: microsoft-entra-sdk-for-agent-identities.md
+    - name: Agent ID administration
+      items:
+        - name: View agent identities
+          href: agent-lists.md
+        - name: Manage agent blueprints
+          href: manage-agent-blueprint.md
+        - name: Manage Agents in end user experience
+          href: manage-agent.md
+        - name: Register agents with Agent Registry
+          href: publish-agents-to-registry.md
+        - name: Manage agent collections
+          href: agent-registry-manage-collections.md
+        - name: Agent communication
+          href: registry-agent-to-agent-protocol.md
+  - name: Concepts
+    expanded: true
+    items:
+    - name: Fundamentals
+      items:
+        - name: Key concepts
+          href: key-concepts.md
+        - name: Agent identity blueprints
+          href: agent-blueprint.md
+        - name: Agent identities
+          href: agent-identities.md
+        - name: Agent users
+          href: agent-users.md
+        - name: Agent service principals
+          href: agent-service-principals.md
+    - name: Agent Registry
+      items:
+        - name: Agent Registry collections
+          href: agent-registry-collections.md
+        - name: Agent metadata and discoverability
+          href: agent-metadata-discoverability.md
+    - name: Management
+      items:
+        - name: Agent owners, sponsors, and managers
+          href: agent-owners-sponsors-managers.md
+    - name: Authentication and authorization
+      items:
+        - name: Tokens in agent IDs
+          href: agent-tokens.md
+        - name: Oauth protocol for agent IDs
+          href: agent-oauth-protocols.md
+        - name: Autonomous app flow in agents
+          href: agent-autonomous-app-oauth-flow.md
+        - name: On-behalf-of flow in agents
+          href: agent-on-behalf-of-oauth-flow.md
+        - name: Agent user flow in agents
+          href: agent-user-oauth-flow.md
+  - name: Reference
+    items:
+    - name: Token claims reference
+      href: agent-token-claims.md
+    - name: Microsoft Graph Permissions reference
+      href: /graph/permissions-reference?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Agent identity blueprint API reference
+      href: /graph/api/resources/agentidentityblueprint?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Agent identity blueprint principal API reference
+      href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Agent identity API reference
+      href: /graph/api/resources/agentidentity?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Known issues
+      href: preview-known-issues.md

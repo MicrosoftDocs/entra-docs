@@ -29,15 +29,15 @@ The following table has authenticator types permitted for AAL2:
 
 | Microsoft Entra authentication method| Phishing Resistant | NIST authenticator type |
 | - | - | - |
-| **Recommended methods** |   |
+| **Recommended methods** |   |   |
 | Multi-factor software certificate <br> Windows Hello for Business with software Trusted Platform Module (TPM)| Yes | Multi-factor crypto software |
 | Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator | Yes |  Multi-factor crypto hardware |
 | **Additional methods** |  
 | Microsoft Authenticator app (Phone Sign-in)  | No | Multi-factor out-of-band|
-| Password <br> **AND** <br>- Microsoft Authenticator app (Push Notification) <br>- **OR** <br>- Microsoft Authenticator Lite (Push Notification) <br>- **OR** <br>- Phone (SMS) | No | Memorized secret <br>**AND**<br> Single-factor out-of-band |
-| Password <br> **AND** <br>- OATH hardware tokens (preview) <br>- **OR**<br>- Microsoft Authenticator app (OTP)<br>- **OR**<br>- Microsoft Authenticator Lite (OTP)<br>- **OR** <br>- OATH software tokens | No | Memorized secret <br>**AND** <br>Single-factor OTP|
-| Password <br>**AND** <br>- Single-factor software certificate <br>- **OR**<br>- Microsoft Entra joined  with software TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with software TPM  <br>- **OR**<br>- Compliant mobile device | Yes<sup>1</sup> | Memorized secret <br>**AND**<br> Single-factor crypto software |
-| Password <br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM| Yes<sup>1</sup> |  Memorized secret <br>**AND**<br>Single-factor crypto hardware |
+| Password **OR** QR Code (PIN) <br> **AND** <br>- Microsoft Authenticator app (Push Notification) <br>- **OR** <br>- Microsoft Authenticator Lite (Push Notification) <br>- **OR** <br>- Phone (SMS) | No | Memorized secret <br>**AND**<br> Single-factor out-of-band |
+| Password **OR** QR Code (PIN) <br>**AND** <br>- OATH hardware tokens (preview) <br>- **OR**<br>- Microsoft Authenticator app (OTP)<br>- **OR**<br>- Microsoft Authenticator Lite (OTP)<br>- **OR** <br>- OATH software tokens | No | Memorized secret <br>**AND** <br>Single-factor OTP|
+| Password **OR** QR Code (PIN) <br>**AND** <br>- Single-factor software certificate <br>- **OR**<br>- Microsoft Entra joined  with software TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with software TPM  <br>- **OR**<br>- Compliant mobile device | Yes<sup>1</sup> | Memorized secret <br>**AND**<br> Single-factor crypto software |
+| Password **OR** QR Code (PIN) <br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM| Yes<sup>1</sup> |  Memorized secret <br>**AND**<br>Single-factor crypto hardware |
 
 <sup>1</sup> [Protection from external phishing](../standards/memo-22-09-multi-factor-authentication.md#protection-from-external-phishing)
 

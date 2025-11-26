@@ -1,15 +1,10 @@
 ---
 title: include file
 description: include file for confidential client scenario landing pages (daemon, web app, web API)
-
 author: OwenRichards1
-manager: CelesteDG
-
+manager: pmwongera
 ms.service: identity-platform
-
 ms.topic: include
-ms.tgt_pltfrm: na
-
 ms.date: 08/14/2020
 ms.author: owenrichards
 ms.reviewer: jmprieur

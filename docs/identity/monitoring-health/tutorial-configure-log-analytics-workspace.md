@@ -1,27 +1,26 @@
 ---
-title: Configure a Log Analytics workspace in Microsoft Entra ID
-description: Learn how to configure a Log Analytics workspace in Microsoft Entra ID and run Kusto queries on your identity data.
+title: Configure a Log Analytics workspace and a custom workbook
+description: Learn how to configure a Log Analytics workspace, create a workbook, and run Kusto queries in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: tutorial
-ms.date: 10/24/2024
+ms.date: 03/27/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.reviewer: sandeo
 
-#Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
+# Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
 
 ---
-# Tutorial: Configure a log analytics workspace
+# Tutorial: Create a Log Analytics workspace to analyze sign-in logs
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> * Configure a Log Analytics workspace for your audit and sign-in logs
+> * Create a Log Analytics workspace
+> * Configure diagnostic settings to integrate sign-in logs with the Log Analytics workspace
 > * Run queries using the Kusto Query Language (KQL)
-> * Create a custom workbook using the quickstart template
-> * Add a query to an existing workbook template
 
 ## Prerequisites
 
@@ -29,7 +28,7 @@ To analyze activity logs with Log Analytics, you need the following roles and re
 
 - [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health)
 
-- A Log Analytics workspace *and* [access to that workspace](/azure/azure-monitor/logs/manage-access)
+- [Access to create a Log Analytics workspace](/azure/azure-monitor/logs/manage-access)
 
 - The appropriate role for Azure Monitor:
   - Monitoring Reader
@@ -43,26 +42,11 @@ To analyze activity logs with Log Analytics, you need the following roles and re
   - Global Reader
   - Security Administrator
 
-Familiarize yourself with these articles:
+## Create a Log Analytics workspace
 
-- [Tutorial: Collect and analyze resource logs from an Azure resource](/azure/azure-monitor/essentials/tutorial-resource-logs)
+In this step, you create a Log Analytics workspace, which is where you eventually send your sign-in logs. Before you can create the workspace, you need an [Azure resource group](/azure//azure-resource-manager/management/overview#resource-groups).
 
-- [How to integrate activity logs with Log Analytics](./howto-integrate-activity-logs-with-azure-monitor-logs.yml)
-
-- [Manage emergency access account in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
-
-- [KQL quick reference](/azure/data-explorer/kusto/query/kql-quick-reference)
-
-- [Azure Monitor Workbooks](/azure/azure-monitor/visualize/workbooks-overview)
-
-## Configure Log Analytics
-
-This procedure outlines how to configure a Log Analytics workspace for your audit and sign-in logs.
-To configure a Log Analytics workspace, you need to **create the workspace** and then **configure diagnostic settings**.
-
-### Create the workspace
-
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) and [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor).
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) with [Log Analytics Contributor](/azure/azure-monitor/logs/manage-access#log-analytics-contributor) permissions.
 
 1. Browse to **Log Analytics workspaces**.
 
@@ -86,13 +70,13 @@ To configure a Log Analytics workspace, you need to **create the workspace** and
 
 1. Select **Create** and wait for the deployment. You might need to refresh the page to see the new workspace.
 
-### Configure diagnostic settings
+## Configure diagnostic settings
 
-To configure diagnostic settings, you need switch to the Microsoft Entra admin center to send your identity log information to your new workspace.
+To send your identity log information to your new workspace, you need to configure diagnostic settings. There are different diagnostic settings options for Azure and Microsoft Entra, so for the next set of steps let's switch to the Microsoft Entra admin center to make sure everything is identity related.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Select **Add diagnostic setting**.
 
@@ -110,22 +94,17 @@ To configure diagnostic settings, you need switch to the Microsoft Entra admin c
 
     ![Screenshot of the select diagnostics settings options.](./media/tutorial-configure-log-analytics-workspace/select-diagnostics-settings.png)
 
-Your logs can now be queried using the Kusto Query Language (KQL) in Log Analytics. You might need to wait around 15 minutes for the logs to populate.
+Your selected logs might take up to 15 minutes for the logs to populate in your Log Analytics workspace. 
 
 ## Run queries in Log Analytics
 
-This procedure shows how to run queries using the **Kusto Query Language (KQL)**.
+With your logs streaming to your Log Analytics workspace, you can run queries using the **Kusto Query Language (KQL)**. The least privileged role to run queries is the **Reports Reader** role
 
-### Run a query
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader). 
-
-1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Log Analytics**.
 
 1. In the **Search** textbox, type your query, and select **Run**. 
 
-
-### KQL query examples
+### Kusto query examples
 
 Take 10 random entries from the input data:
 
@@ -165,98 +144,17 @@ Count the sign ins by day:
 
 Take five random entries and project the columns you wish to see in the results:
 
-- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated `
+- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated`
 
 Take the top 5 in descending order and project the columns you wish to see:
 
-- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated `
+- `SigninLogs | take 5 | project ClientAppUsed, Identity, ConditionalAccessStatus, Status, TimeGenerated`
 
 Create a new column by combining the values to two other columns:
 
 - `SigninLogs | limit 10 | extend RiskUser = strcat(RiskDetail, "-", Identity) | project RiskUser, ClientAppUsed`
 
-## Create a custom workbook
-
-This procedure shows how to create a new workbook using the quickstart template.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
-
-1. In the **Quickstart** section, select **Empty**.
-
-    ![Screenshot of the blank workbook in the Quick start section.](./media/tutorial-configure-log-analytics-workspace/quick-start.png)
-
-1. From the **Add** menu, select **Add text**.
-
-    ![Screenshot of the Add text menu option.](./media/tutorial-configure-log-analytics-workspace/add-text.png)
-
-1. In the textbox, enter `# Client apps used in the past week` and select **Done Editing**.
-
-    ![Screenshot shows the text and the Done Editing button.](./media/tutorial-configure-log-analytics-workspace/workbook-text.png)
-
-
-1. Below the text window, open the **Add** menu and select **Add query**.
-
-    ![Screenshot of the Add query menu option.](./media/tutorial-configure-log-analytics-workspace/add-query.png)
-
-1. In the query textbox, enter: `SigninLogs | where TimeGenerated > ago(7d) | project TimeGenerated, UserDisplayName, ClientAppUsed | summarize count() by ClientAppUsed`
-
-1. Select **Run Query**.
-
-    ![Screenshot shows the Run Query button.](./media/tutorial-configure-log-analytics-workspace/run-workbook-query.png)
-
-1. In the toolbar, from the **Visualization** menu select **Pie chart**.
-
-    ![Screenshot showing the Pie chart menu option.](./media/tutorial-configure-log-analytics-workspace/pie-chart.png)
-
-1. Select **Done Editing** at the top of the page.
-
-1. Select the **Save** icon to save your workbook.
-
-1. In the dialog box that appears, enter a title, select a Resource group, and select **Apply**.
-
-## Add a query to a workbook template
-
-This procedure shows how to add a query to an existing workbook template. The example is based on a query that shows the distribution of conditional access success to failures.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader).
-
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**. 
-
-1. In the **Conditional Access** section, select **Conditional Access Insights and Reporting**.
-
-    ![Screenshot shows the Conditional Access Insights and Reporting option.](./media/tutorial-configure-log-analytics-workspace/conditional-access-template.png)
-
-1. In the toolbar, select **Edit**.
-
-    ![Screenshot shows the Edit button.](./media/tutorial-configure-log-analytics-workspace/edit-workbook-template.png)
-
-1. In the toolbar, select the three dots next to the Edit button, then **Add**, and then **Add query**.
-
-    ![Add workbook query](./media/tutorial-configure-log-analytics-workspace/add-custom-workbook-query.png)
-
-1. In the query textbox, enter: `SigninLogs | where TimeGenerated > ago(20d) | where ConditionalAccessPolicies != "[]" | summarize dcount(UserDisplayName) by bin(TimeGenerated, 1d), ConditionalAccessStatus`
-
-1. Select **Run Query**.
-
-    ![Screenshot shows the Run Query button to run this query.](./media/tutorial-configure-log-analytics-workspace/run-workbook-insights-query.png)
-
-1. From the **Time Range** menu, select **Set in query**.
-
-1. From the **Visualization** menu, select **Bar chart**. 
-
-1. Select **Advanced Settings**.
-
-    ![Screenshot of the time range, visualization, and advanced setting options.](./media/tutorial-configure-log-analytics-workspace/select-query-options.png)
-
-1.  In the **Chart title** field, enter `Conditional Access status over the last 20 days`  and select **Done Editing**. 
-
-    ![Set chart title](./media/tutorial-configure-log-analytics-workspace/set-chart-title.png)
-
-Your Conditional Access success and failure chart displays a color-coded snapshot of your tenant.
-
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Stream logs to an event hub](howto-stream-logs-to-event-hub.md)
+> [Create a custom workbook](tutorial-create-log-analytics-workbook.md)

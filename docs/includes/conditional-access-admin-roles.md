@@ -5,6 +5,7 @@ ms.subservice: conditional-access
 ms.topic: include
 ms.date: 05/02/2024
 ms.author: joflore
+ms.custom: sfi-ga-nochange
 ---
 
 - Global Administrator

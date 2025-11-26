@@ -14,7 +14,7 @@ metadata:
    manage their access through our quickstarts, tutorials, code samples, and API reference documentation.
 
   author: Dickson-Mwendia
-  manager: CelesteDG
+  manager: dougeby
   ms.author: dmwendia
   ms.date: 02/11/2025
   ms.service: identity-platform  
@@ -102,7 +102,7 @@ conceptualContent:
     - title: Sign in users
       links:
         - text: Single-page web app (SPA)
-          url: quickstart-single-page-app-react-sign-in.md
+          url: quickstart-single-page-app-sign-in.md
           itemType: quickstart
         - text: Web app
           url: quickstart-web-app-dotnet-core-sign-in.md

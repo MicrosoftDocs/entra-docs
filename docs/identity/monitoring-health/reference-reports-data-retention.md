@@ -2,7 +2,7 @@
 title: Microsoft Entra data retention
 description: Learn about the data retention policies for the Microsoft Entra audit, sign-in, and provisioning logs. 
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health

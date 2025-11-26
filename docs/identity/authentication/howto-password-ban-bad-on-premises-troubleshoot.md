@@ -5,11 +5,11 @@ description: Learn how to troubleshoot Microsoft Entra Password Protection for a
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 01/14/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: jsimmons
 ---
 # Troubleshoot: On-premises Microsoft Entra Password Protection

@@ -3,7 +3,7 @@ title: Troubleshoot SAML-based single sign-on
 description: Troubleshoot issues with a Microsoft Entra app configured for SAML-based single sign-on.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
@@ -37,7 +37,7 @@ If you’re not able to configure the Identifier or the Reply URL, confirm the I
 To know the patterns preconfigured for the application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). Go to step 4 if you're already in the application configuration pane in Microsoft Entra ID.
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application you want to configure single sign-on.
 1. Once the application loads, select the **Single sign-on** from the application’s left-hand navigation menu.
 1. Select **SAML-based Sign-on** from the **Mode** dropdown.
@@ -63,7 +63,7 @@ Microsoft Entra ID selects the format for the NameID attribute (User Identifier)
 To download the application metadata or certificate from Microsoft Entra ID, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application you configure for single sign-on.
 1. Once the application loads, select **Single sign-on** from the application’s left-hand navigation menu.
 1. Go to **SAML Signing Certificate** section, then select **Download** column value. Depending on what the application requires configuring single sign-on, you see either the option to download the Metadata XML or the Certificate.

@@ -3,14 +3,13 @@ title: How to Create Remote Networks
 description: Learn how to create remote networks, for remote locations such as branch offices, for Global Secure Access.
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 12/23/2024
+ms.date: 10/21/2025
 ms.service: global-secure-access
-ms.reviewer: absinh
-
+ms.reviewer: abhijeetsinha
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
-
 ---
 # How to create a remote network with Global Secure Access
 
@@ -82,7 +81,9 @@ You can assign the remote network to a traffic forwarding profile when you creat
 
 1. Either select the **Next** button or select the **Traffic profiles** tab.
 1. Select the appropriate traffic forwarding profile.
-1. Select the **Review + Create** button.
+1. Select the **Review + create** button.
+
+    :::image type="content" source="media/how-to-create-remote-networks/microsoft-traffic-profile-selected.png" alt-text="Screenshot of the Create a remote network page, open to the Traffic profiles tab, with Microsoft traffic profile selected.":::
 
 The final tab in the process is to review all of the settings that you provided. Review the details provided here and select the **Create remote network** button.
 
@@ -96,7 +97,10 @@ This process is covered in detail in the [How to configure your customer premise
 
 ### Set up your CPE
 
-This step is performed in management console your CPE, not in Microsoft Entra admin center. Until you complete this step, your IPsec *isn't* set up. IPsec is a bidirectional communication. IKE negotiations happen between two parties before the tunnel is successfully set up. So, don't miss this step.
+You perform this step in the management console of your CPE, not in Microsoft Entra admin center. Until you complete this step, your IPsec *isn't* set up. IPsec is a bidirectional communication. IKE negotiations occur between two parties before the tunnel is successfully set up. Don't skip this step.
+
+> [!TIP]
+> For guidance on enhancing the resilience of remote networks, see [Best practices for Global Secure Access remote network resilience](remote-network-resilience.md).
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 

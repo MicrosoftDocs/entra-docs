@@ -2,10 +2,9 @@
 title: "What's new in the Microsoft identity platform docs"
 description: "New and updated articles in the Microsoft identity platform documentation."
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
-ms.custom: has-adal-ref
-ms.date: 02/04/2025
+ms.date: 05/02/2025
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -16,26 +15,22 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## January 2025
+## October 2025
 
-- [Set up your application's Microsoft Entra test environment](test-setup-environment.md) - Added clarity to the content
+We did not publish any updates this month.
 
-## December 2024
-
-No updates available.
-
-## November 2024
-
-### New articles
-
-- [Configure a custom email provider for one time passcode send events (preview)](custom-extension-email-otp-get-started.md)
-- [Tutorial: Call an API from an Angular single-page app](tutorial-single-page-apps-angular-call-api.md)
-- [Tutorial: Create an Angular application and prepare it for authentication](tutorial-single-page-apps-angular-prepare-app.md)
-- [Tutorial: Register an Angular application in a Microsoft Entra ID tenant](tutorial-single-page-apps-angular-register-app.md)
-- [Tutorial: Add sign in and sign out in your Angular single-page application](tutorial-single-page-apps-angular-sign-in-users-app.md)
+## September 2025
 
 ### Updated articles
 
-- [How to use Continuous Access Evaluation enabled APIs in your applications](app-resilience-continuous-access-evaluation.md) - CAE page update with code snippets for MSAL libraries
-- [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Added clarity to the content
-- [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Added clarity to the content
+- [Configure a mobile app that calls web APIs](scenario-mobile-app-configuration.md) - The update improved content clarity.
+- [Desktop app that calls web APIs: Code configuration](scenario-desktop-app-configuration.md) - The update improved content clarity.
+- [Web app that signs in users: Code configuration](scenario-web-app-sign-user-app-configuration.md) - The update improved content clarity.
+
+## August 2025
+
+### Updated articles
+
+- [Microsoft Enterprise SSO plug-in for Apple devices](apple-sso-plugin.md) - We adjusted Apple SSO, updated the token protection image, and troubleshot secure enclave issues.
+
+

@@ -2,11 +2,11 @@
 title: Customize SAML token claims
 description: Learn how to customize the claims issued by Microsoft identity platform in the SAML token for enterprise applications.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
-ms.date: 05/30/2024
-ms.reviewer: rahulnagraj, alamaral, jeedes
+ms.custom:
+ms.date: 05/14/2025
+ms.reviewer: alamaral
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -25,7 +25,7 @@ By default, the Microsoft identity platform issues a SAML token to an applicatio
 
 To view or edit the claims issued in the SAML token to the application:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application, select **Single sign-on** in the left-hand menu, and then select **Edit** in the **Attributes & Claims** section.
 
 You might need to edit the claims issued in the SAML token for the following reasons:
@@ -155,6 +155,8 @@ You can use the following functions to transform claims.
 
 ## Regex-based claims transformation
 
+You can use regular expressions to transform claims. A maximum of 20 total regex replacements can be made when using regex-based claims transformations.
+
 The following image shows an example of the first level of transformation:
 
 :::image type="content" source="./media/saml-claims-customization/regexreplace-transform1.png" alt-text="Screenshot of the first level of transformation.":::
@@ -170,7 +172,7 @@ The actions listed in the following table provide information about the first le
 | `5` | `Add additional parameter` | More than one user attribute can be used for the transformation. The values of the attributes would then be merged with regex transformation output. Up to five more parameters are supported. |
 | `6` | `Replacement pattern` | The replacement pattern is the text template, which contains placeholders for regex outcome. All group names must be wrapped inside the curly braces such as `{group-name}`. Let's say the administration wants to use user alias with some other domain name, for example `xyz.com` and merge country name with it. In this case, the replacement pattern would be `{country}.{domain}@xyz.com`, where `{country}` is the value of input parameter and `{domain}` is the group output from the regular expression evaluation. In such a case, the expected outcome is `US.swmal@xyz.com`. |
 
-The following image shows an example of the second  level of transformation:
+The following image shows an example of the second level of transformation:
 
 :::image type="content" source="./media/saml-claims-customization/regexreplace-transform2.png" alt-text="Screenshot of second level of claims transformation.":::
 

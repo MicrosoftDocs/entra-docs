@@ -1,18 +1,14 @@
 ---
 title: Passwordless sign-in with Authenticator
 description: Learn how to enable passwordless sign-in to Microsoft Entra ID by using Microsoft Authenticator.
-
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 01/07/2025
-
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: jogro
 ---
 
@@ -58,7 +54,7 @@ After **Microsoft Authenticator** is enabled as an authentication method, users 
 To enable the authentication method for passwordless phone sign-in, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 
 Each group is enabled by default to use **Any** mode. **Any** mode allows group members to sign in with either a push notification or passwordless phone sign-in.
 
@@ -97,7 +93,7 @@ To register the Authenticator app, follow these steps:
 After users register for the Authenticator app, they need to enable phone sign-in:
 
 1. In **Microsoft Authenticator**, select the account registered.
-1. Select **Enable phone sign-in**.
+1. Select **Set up Passwordless sign-in requests**.
 1. Follow the instructions in the app to finish registering the account for passwordless phone sign-in.
 
 An organization can direct its users to sign in with their phones, without using a password. For further assistance configuring Authenticator and enabling phone sign-in, see [Sign in to your accounts by using the Authenticator app](https://support.microsoft.com/account-billing/sign-in-to-your-accounts-using-the-microsoft-authenticator-app-582bdc07-4566-4c97-a7aa-56058122714c).

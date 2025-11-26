@@ -5,11 +5,11 @@ description: Create a custom Conditional Access policy to require all users do m
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/03/2025
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require multifactor authentication for all users
@@ -40,15 +40,18 @@ For external user scenarios, the MFA authentication methods that a resource tena
 The following steps help create a Conditional Access policy to require all users do multifactor authentication, using the authentication strength policy, [without any app exclusions](concept-conditional-access-cloud-apps.md#conditional-access-behavior-when-an-all-resources-policy-has-an-app-exclusion).
 
 > [!WARNING]
-> If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatable with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
+> [External authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) are currently incompatible with authentication strength. You should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
-   1. Under **Exclude** select **Users and groups** and choose your organization's emergency access or break-glass accounts.
+   1. Under **Exclude**: 
+      1. Select **Users and groups** 
+         1. Choose your organization's emergency access or break-glass accounts.
+         1. If you use hybrid identity solutions like Microsoft Entra Connect or Microsoft Entra Connect Cloud Sync, select **Directory roles**, then select **Directory Synchronization Accounts**
       1. You might choose to exclude your guest users if you're targeting them with a [guest user specific policy](policy-guests-mfa-strength.md). 
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 
@@ -61,7 +64,7 @@ The following steps help create a Conditional Access policy to require all users
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ### Named locations
 
@@ -80,3 +83,4 @@ In the previous example policy, an organization might choose to not require mult
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
 - [Windows subscription activation](/windows/deployment/windows-subscription-activation#adding-conditional-access-policy)
+- [Configure cross-tenant access settings](/entra/external-id/cross-tenant-access-settings-b2b-collaboration#to-change-inbound-trust-settings-for-mfa-and-device-claims)

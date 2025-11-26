@@ -2,10 +2,10 @@
 title: PowerShell sample - Recover from Global Secure Access break glass scenario
 description: PowerShell examples that re-enable any Conditional Access policies that were disabled in a break glass scenario. 
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: sample
-ms.date: 06/27/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: frankgomulka
 ---
@@ -88,7 +88,7 @@ $policiesToRecover = $reportOnlyOutput[2..($reportOnlyOutput.Count - 2)]
 $result += "Total count of Compliant Network Conditional Access policies to recover: $($policiesToRecover.Count)"
 
 # Based on admin input, either view or recover the list of policies disabled in the breakglass scenario.
-$action = Read-Host "`nDo you want to recover all affected CA policies (type 'recover') or just view them (type 'view')?"
+$action = Read-Host "`nDo you want to recover all affected Conditional Access policies (type 'recover') or just view them (type 'view')?"
 if ($action -eq "view") {
     $result += "Total count of policies to revert: $($policiesToRecover.Count)"
     foreach ($policy in $policiesToRecover) 

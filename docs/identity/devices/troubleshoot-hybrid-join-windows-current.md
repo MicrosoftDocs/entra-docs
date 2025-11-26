@@ -1,18 +1,15 @@
 ---
 title: Troubleshoot Microsoft Entra hybrid joined devices
 description: This article helps you troubleshoot Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 11/25/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.date: 07/27/2025
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: mozmaili
-
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-ropc-nochange, sfi-image-nochange
 ---
 # Troubleshoot Microsoft Entra hybrid joined devices
 
@@ -338,10 +335,10 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 
 ### Step 5: Collect logs and contact Microsoft Support
 
-1. [Download the *Auth.zip* file](https://cesdiagtools.blob.core.windows.net/windows/Auth.zip).
+1. [Download the *Auth.zip* file](https://aka.ms/authscripts).
 
 1. Extract the files to a folder, such as *c:\temp*, and then go to the folder.
-1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -v -accepteula`.
+1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -vAuth -accepteula`.
 1. Select **Switch Account** to toggle to another session with the problem user.
 1. Reproduce the issue.
 1. Select **Switch Account** to toggle back to the admin session that's running the tracing.

@@ -3,12 +3,12 @@ title: Quickstart - Set up an external tenant free trial
 description: Use our quickstart to set up the external tenant free trial.
  
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 08/15/2024
+ms.date: 05/09/2025
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -17,6 +17,9 @@ ms.custom: it-pro
 # Quickstart: Get started with Microsoft Entra External ID free trial
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+> [!IMPORTANT]
+> The free trial feature described in this article is temporarily unavailable. Please check back for updates.
 
 Get started with Microsoft External ID for consumer and business customer apps, which lets you create secure, customized sign-in experiences for your apps and services. With these built-in external configuration features, Microsoft Entra External ID can serve as the identity provider and access management service for your customers.
 
@@ -27,7 +30,7 @@ Microsoft Entra External ID is now generally available. To get started, you have
 - **Free trial with no payment or subscription required:** Create a free trial tenant with an external configuration. This free trial provides you with the opportunity to try new features and build applications and processes during the 30-day trial period.  Each user account can only have one active free trial tenant at a time. Organization (tenant) admins can invite other users. If you're a developer using Visual Studio Code, you can also set up a free trial through the Microsoft Entra External ID extension ([learn more](visual-studio-code-extension.md)).  
 This free trial sign-up, where no payment information is required, is currently in preview and designed for testing and evaluation purposes only. The free trial isn't suitable for scale testing or production use.
 
-The trial tenant supports up to 10K objects, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/free/).
+The trial tenant supports up to 10K objects, learn more about Microsoft Entra service limits [here](~/identity/users/directory-service-limits-restrictions.md). During your free trial, you have the option to unlock the full set of features by upgrading to [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
    > [!NOTE]
    > At the end of the free trial period, your free trial tenant will be disabled and deleted. You can always come back and register for another trial using this link: https://aka.ms/ciam-free-trial. 
@@ -40,7 +43,6 @@ During the free trial period, you have access to all product features with few e
 | **MFA**  | :x: |  :heavy_check_mark:  |  
 | **Custom token augmentation** (From external sources.) |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Social identity providers**   |  :heavy_check_mark: |  :heavy_check_mark:  |
-| **ID Protection** (Adaptive risk-based Conditional Access policies.)  | :x: |  :heavy_check_mark:  |
 | Default, least-access privileges for CIAM end-users. |  :heavy_check_mark: |  :heavy_check_mark:  |
 | **Rich authorization** (Including group and role management.)  |  :heavy_check_mark: |  :heavy_check_mark:  | 
 | **Customizable** (Sign-in/sign-up experiences - background, logo, strings.) |  :heavy_check_mark: |  :heavy_check_mark:  |

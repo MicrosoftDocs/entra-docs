@@ -2,14 +2,14 @@
 title: 'Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center'
 description: Tutorial for onboarding users to an organization using Lifecycle workflows with the Microsoft Entra admin center.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 04/08/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial
+ms.custom: template-tutorial, sfi-image-nochange
 ---
 
 # Automate employee onboarding tasks before their first day of work with the Microsoft Entra admin center
@@ -58,7 +58,7 @@ The pre-hire scenario can be broken down into the following sections:
 Use the following steps to create a pre-hire workflow that generates a TAP and send it via email to the user's manager using the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
-1. Select **Identity Governance**.
+1. Select **ID Governance**.
 1. Select **Lifecycle workflows**.
 1. On the **Overview** page, select **New workflow**.
     :::image type="content" source="media/tutorial-lifecycle-workflows/new-workflow.png" alt-text="Screenshot of selecting a new workflow." lightbox="media/tutorial-lifecycle-workflows/new-workflow.png":::
