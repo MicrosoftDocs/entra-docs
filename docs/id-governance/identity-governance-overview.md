@@ -115,6 +115,9 @@ Once you've started using these identity governance features, you can easily aut
 | Provisioning users into on-premises and cloud applications that have their own directories or databases | [Configure automatic user provisioning](../identity/app-provisioning/user-provisioning.md) with user assignments or [scoping filters](../identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) |
 | Other scheduled tasks | [Automate identity governance tasks with Azure Automation](identity-governance-automation.md) and Microsoft Graph via the [Microsoft.Graph.Identity.Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) PowerShell module|
 
+## Identity governance for agents (preview)
+
+With the addition of the Microsoft agent identity platform, managing agent's identity and access in the same way as people is just as important in the governance lifecycle of your organization. For more information, see [governing agent identities (preview)](agent-id-governance-overview.md).
 
 ## Next steps
 

@@ -10,7 +10,9 @@ ms.author: owinfrey
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals
-This following document discusses Microsoft Entra ID Governance licensing. It's intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations. 
+This following document discusses Microsoft Entra ID Governance licensing for employees. It's intended for IT decision makers, IT administrators, and IT professionals who are considering Microsoft Entra ID Governance services for their organizations.
+
+For licensing governance for guest users, see [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md). For the preview for agents, see [governing agent identities (preview)](agent-id-governance-overview.md#license-requirements).
 
 ## Types of licenses
 
@@ -68,6 +70,8 @@ A Global Administrator in a commercial tenant that has an appropriate prerequisi
 1. Select **Details** below **Microsoft Entra ID Governance** to view the trial and purchase information for the product. If your tenant has Microsoft Entra ID P2, then select  **Details** below **Microsoft Entra ID Governance Step-Up for Microsoft Entra ID P2**.
 
 1. In the product details page, select **Start free trial**.
+
+## Microsoft Entra ID Governance features
 
 [!INCLUDE [licensing](../includes/licensing-governance.md)]
 

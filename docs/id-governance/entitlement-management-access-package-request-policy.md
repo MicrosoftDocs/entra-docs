@@ -88,6 +88,8 @@ Follow these steps if you want to allow identities in your directory to be able 
 
     Guest users refer to external users that have been invited into your directory with [Microsoft Entra B2B](../external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](../fundamentals/users-default-permissions.md).
 
+    The **All Service principals** and **All agents** preview require Microsoft Entra Agent ID. For more information, see [Governing agent identities (preview)](agent-id-governance-overview.md).
+
 1. If you selected **Specific users and groups**, select **Add users and groups**.
 
 1. In the Select users and groups pane, select the users and groups you want to add.
