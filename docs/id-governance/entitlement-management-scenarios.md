@@ -109,6 +109,14 @@ There are several ways that you can configure entitlement management for your or
 1. [Sign in to the My Access portal](entitlement-management-request-access.md#sign-in-to-the-my-access-portal)
 1. View active access packages
 
+## Govern access for agents (preview)
+
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+
+1. [Create a new access package](entitlement-management-access-package-create.md#start-the-creation-process)
+1. [Add groups or API permissions to access package](entitlement-management-access-package-create.md#select-resource-roles)
+1. [Add a request policy to allow service principals and agent identities in your directory to request access](entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package)
+
 ## Day-to-day management
 
 ### Administrator: View the connected organizations that are proposed and configured
