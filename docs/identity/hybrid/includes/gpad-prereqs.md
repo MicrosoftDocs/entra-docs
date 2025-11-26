@@ -94,9 +94,9 @@ Content-Type: application/json
 
 where:
 
-**principalId**: Group object ID.
-**resourceId**: Job's service principal ID.
-**appRoleId**: Identifier of app role exposed by the resource.
+- **principalId**: Group object ID.
+- **resourceId**: Job's service principal ID.
+- **appRoleId**: Identifier of app role exposed by the resource.
 
 The following table is a list of App Role Ids for Clouds:
 
