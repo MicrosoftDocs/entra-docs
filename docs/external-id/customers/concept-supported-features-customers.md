@@ -250,13 +250,13 @@ The following table compares the features available for token customization in e
 
 ## Integrated security solutions
 
-Microsoft Entra External ID supports integrated security features and partner solutions to help protect identities across the lifecycle. These capabilities include edge protection, sign-up fraud prevention, and unified monitoring. You can enable these solutions directly in External ID and access partner integrations through the [Microsoft Security Store](https://securitystore.microsoft.com/). This approach allows organizations to deploy trusted security tools quickly without complex setup.
+Microsoft Entra External ID supports integrated security features and partner solutions to help protect identities across the lifecycle. These capabilities include edge protection, sign-up fraud prevention, and unified monitoring. You can enable these solutions directly in External ID and access partner integrations through the [Microsoft Security Store](https://securitystore.microsoft.com/). This approach allows organizations to deploy trusted security tools quickly without complex setup. All these features are available in a wizard under the Security Store blade experience.
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **Sign-up fraud protection** | Not available | Use [Arkose Labs](/entra/external-id/customers/how-to-integrate-fraud-protection?pivots=arkose) and [HUMAN Security](/entra/external-id/customers/how-to-integrate-fraud-protection?pivots=human) to protect against sign-up fraud and block automated bot attacks. |
-| **DDoS and WAF protection** | Not available | Use [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration) and [Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) to defend at the edge with DDoS mitigation and web application firewall (WAF) features. |
-| **Security analytics** | Not available   | Use [Azure Monitor and Microsoft Sentinel](/entra/external-id/customers/how-to-azure-monitor) to enable one-click monitoring, log analytics, and advanced threat detection.  |
+| **Sign-up fraud protection** | The Security Store wizard experience is not available.  | Use [Arkose Labs](/entra/external-id/customers/how-to-integrate-fraud-protection?pivots=arkose) and [HUMAN Security](/entra/external-id/customers/how-to-integrate-fraud-protection?pivots=human) to protect against sign-up fraud and block automated bot attacks. |
+| **DDoS and WAF protection** | The Security Store wizard experience is not available. | Use [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration) and [Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) to defend at the edge with DDoS mitigation and web application firewall (WAF) features. |
+| **Security analytics** | The Security Store wizard experience is not available.   | Use [Azure Monitor and Microsoft Sentinel](/entra/external-id/customers/how-to-azure-monitor) to enable one-click monitoring, log analytics, and advanced threat detection.  |
 
 ## Activity logs and reports
 
