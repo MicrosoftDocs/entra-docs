@@ -66,6 +66,7 @@ Entitlement management introduces the concept of an *access package*. An access 
 - Membership of Microsoft 365 Groups and Teams
 - Assignment to Microsoft Entra enterprise applications, including SaaS applications and custom-integrated applications that support federation/single sign-on and/or provisioning
 - Membership of SharePoint Online sites
+- API permissions, for agents with agent IDs or service principals, in preview as part of Microsoft Entra Agent ID
 
 You can also control access to other resources that rely upon Microsoft Entra security groups or Microsoft 365 Groups. For example:
 
