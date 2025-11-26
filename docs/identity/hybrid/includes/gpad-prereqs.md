@@ -62,7 +62,7 @@ If you need to select more than 999 groups, you must use the [Grant an appRoleAs
 An example of the API calls is as follows:
 
 ```https
-POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrinicipalID}/appRoleAssignedTo
+POST https://graph.microsoft.com/v1.0/servicePrincipals/{servicePrincipalID}/appRoleAssignedTo
 Content-Type: application/json
 
 {
