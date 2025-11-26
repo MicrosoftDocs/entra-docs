@@ -57,7 +57,7 @@ Group Provision to AD feature's performance is impacted by the size of the tenan
 
 ### Expanded group scaling via API
 
-If you need select more than 999 groups, you must use the [Grant an appRoleAssignment for a service principal](/graph/api/serviceprincipal-post-approleassignedto) API call. 
+If you need to select more than 999 groups, you must use the [Grant an appRoleAssignment for a service principal](/graph/api/serviceprincipal-post-approleassignedto) API call. 
 
 An example of the API calls is as follows:
 
