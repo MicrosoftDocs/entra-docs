@@ -51,7 +51,7 @@ Another difference between the two token families: Sign-in session tokens are re
 
 | Token Type | Issued by | Purpose  | Scoped to Resource | Lifetime | Revocable | Renewable |
 |------|------|------|------|------|------|------|
-| Primary Refresh Token (PRT)| Entra ID | Request Access Tokens | No – Can request an access token for any resource | 14 days\*| Yes | Yes|
+| Primary Refresh Token (PRT)| Entra ID | Request Access Tokens | No – Can request an access token for any resource | 90 days\*| Yes | Yes|
 | Refresh Token| Entra ID| Request Access Tokens | Yes | 90 days\* | Yes | Yes |
 | Access Token | Entra ID | Access the resource | Yes | Variable 60-90 minutes| Yes, if CAE capable | No |
 | App auth cookie| Web app | Access the resource | Yes  | Determined by application| Depends on application | No |

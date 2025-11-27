@@ -23,7 +23,7 @@ If you use Microsoft Entra B2B collaboration to work with external partners, you
 > * Run a PowerShell script to send invitations
 > * Verify the users are added to the directory
 
-If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin. 
+If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin. 
 
 ## Prerequisites
 

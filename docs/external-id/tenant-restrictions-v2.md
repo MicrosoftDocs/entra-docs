@@ -61,12 +61,15 @@ You can scope tenant restrictions v2 to specific users, groups, organizations, o
 - All Office apps (all versions/release channels)
 - Universal Windows Platform (UWP) .NET applications
 - Authentication plane protection for all applications that authenticate with Microsoft Entra ID, including all Microsoft applications and any partner applications that use Microsoft Entra ID for authentication
-- Data plane protection for SharePoint Online, Exchange Online, and Microsoft Graph
+- Data plane protection for SharePoint Online, Exchange Online and Microsoft Graph
 - Anonymous access protection for Forms, SharePoint Online, OneDrive, and Teams (with federation controls configured)
 - Authentication and data plane protection for Microsoft tenant or consumer accounts
 - When you use universal tenant restrictions in Global Secure Access, all browsers and platforms
 - When you use Windows Group Policy, Microsoft Edge and all websites in Microsoft Edge
 - Scenarios with device-based authentication (including custom applications integrated with Microsoft Graph)
+- Tenant Restrictions v2 (TRv2) enforcement over Azure ExpressRoute when the TRv2 header to be present.
+  - TRv2 headers are automatically added when using Universal TRv2 via GSA or Windows Group Policy Objects (GPO) for client-side signaling. This approach supports        both authentication and data plane protection.
+  - For proxy-based signaling, headers are injected only at the authentication plane protection and do not apply to the data plane protection. ExpressRoute operates      at the network layer and does not terminate TLS or inspect HTTP traffic and the header injection requires TLS interception and application-layer processing,          which must occur on a proxy or firewall before traffic enters ExpressRoute. If Trv2 headers are not added on the request, TRv2 will not enforced.
   
 ### Unsupported scenarios
 
@@ -679,9 +682,14 @@ Use Microsoft Graph to get policy information.
 
 ## Known limitations
 
-Tenant restrictions v2 is supported on all clouds. However, tenant restrictions v2 is not enforced with cross-cloud requests.
+- Tenant restrictions v2 is supported on all clouds.
 
-Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers. An example of such a solution is a proxy that uses a certificate trust chain outside Apple system root certificates.
+- TRv2 does not enforce restrictions on cross-cloud requests at the authentication plane, so access is permitted during authentication. However, TRv2 does block cross-cloud requests at the data plane. As a result, when using Windows Group Policy (GPO), users will be unable to access TRv2-enlightened resources across cloud boundaries.
+
+- Tenant restrictions v2 doesn't work with the [macOS Platform SSO](~/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md) feature with client signaling via corporate proxy. Customers who use tenant restrictions v2 and Platform SSO should use universal tenant restrictions v2 with Global Secure Access client signaling. This is an Apple limitation in which Platform SSO is not compatible with tenant restrictions when an intermediary network solution injects headers. An example of such a solution is a proxy that uses a certificate trust chain outside Apple system root certificates.
+
+- When TRv2 is enabled, accessing the Microsoft Entra admin center may result in an "Access denied" error. To resolve this issue, append the following feature flags to the Microsoft Entra admin center URL: `?feature.msaljs=true&exp.msaljsexp=true`. If you're accessing the admin center for a partner tenant (e.g., Fabrikam) and encounter the error at `https://entra.microsoft.com/`, update the URL as follows: `https://entra.microsoft.com/?feature.msaljs=true&exp.msaljsexp=true#home`. This will enable the necessary flags and restore access.
+
 
 ## Related content
 

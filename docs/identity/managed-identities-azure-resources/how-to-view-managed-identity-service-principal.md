@@ -29,7 +29,7 @@ In this article, you'll learn how to view the service principal of a managed ide
 ## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, see [What are managed identities for Azure resources?](~/identity/managed-identities-azure-resources/overview.md).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 - Enable [system assigned identity on a virtual machine](~/identity/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#system-assigned-managed-identity) or [application](/azure/app-service/overview-managed-identity#add-a-system-assigned-identity).
 
 ::: zone pivot="identity-mi-service-principal-portal"

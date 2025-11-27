@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: overview
-ms.date: 06/11/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
@@ -101,10 +101,6 @@ Microsoft Entra Conditional Access brings signals together, to make decisions, a
 
 Conditional Access policies are enforced after the user has completed first-factor authentication. For example, if a user's sign-in risk level is high, they must perform MFA to gain access. Alternatively, the most restrictive approach is to block access to the application.
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and multifactor authentication” use case.
 ### Multifactor authentication (MFA)
 
 Microsoft Entra MFA helps safeguard access to data and applications while maintaining simplicity for your users. Microsoft Entra External ID integrates directly with Microsoft Entra MFA so you can add security to your sign-up and sign-in experiences by requiring a second form of authentication. You can fine-tune MFA depending on the extent of security you want to apply to your apps. Consider the following scenarios:

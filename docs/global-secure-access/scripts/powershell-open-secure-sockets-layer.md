@@ -63,7 +63,7 @@ try {
     $response = Get-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate
     if ($response.Count -gt 0) {
         Write-Host "A certificate for TLS inspection already exists."
-	exit 1
+	    exit 1
     } 
 }
 catch {
@@ -137,7 +137,7 @@ Write-Host "Generating Root CA key and certificate..."
 if (Test-Path $csrPath) {
     Write-Host "Signing CSR file $csrPath..."
     & $openSSLPath x509 -req -in $csrPath -CA $rootCert -CAkey $rootKey -CAcreateserial -out $signedCert -days 370 -sha256 -extfile $opensslCnfPath -extensions signedCA_ext
-    Write-Host "Signed certificate saved to $signedCert"
+    Write-Host "Successfully saved signed certificate to $signedCert"
 } else {
     Write-Host "CSR file '$csrPath' not found. Please generate it first."
 }
@@ -147,8 +147,6 @@ $paramsupload = @{
 certificate = Get-Content -Path $SignedCert -Raw
 chain       = Get-Content -Path $RootCert -Raw
 }
-# Upload using SDK cmdlet
-Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload
 
 # Upload the signed certificate and its chain to Microsoft Graph using the SDK cmdlet.
 # -ExternalCertificateAuthorityCertificateId: The unique ID of the certificate request previously created.
@@ -160,7 +158,7 @@ Write-Error "Failed to upload certificate and chain: $($_.Exception.Message)"
 exit 1
 }
 
-Write-Host "Upload complete via Microsoft Graph SDK."
+Write-Host "Certificate is uploaded successfully via Microsoft Graph SDK."
 ```
 
 ## Related content

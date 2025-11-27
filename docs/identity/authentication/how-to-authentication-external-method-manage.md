@@ -172,6 +172,16 @@ EAMs and custom controls can operate in parallel. Microsoft recommends that admi
 
 Include a test group of users for each policy, but not both. If a user is included in both policies, or any policy with both conditions, the user has to satisfy MFA during sign-in. They also have to satisfy the custom control, which makes them redirected to the external provider a second time.
 
+## FAQ
+### 1. Why doesn't External Authentication Methods (EAM) work on Windows 10 during device setup?
+**Answer:**  
+If you are setting up a device running **Windows 10** using an **EAM-only identity**, you may encounter an issue where the **Out-of-Box (OOB) setup experience** fails and prevents you from proceeding with sign-in.
+
+This behavior occurs because **Windows 10 does not natively support EAM during OOBE (Out-of-Box Experience)**.  
+Microsoft no longer supports Windows 10 (https://www.microsoft.com/en-us/windows/end-of-support?msockid=26a3312b6b246f501ec624846a4f6e11), and there are **no plans to extend EAM support** to it.
+
+To use External Authentication Methods for sign-in, **upgrade to Windows 11**
+
 ## Next steps
 
 For more information about how to manage authentication methods, see [Manage authentication methods for Microsoft Entra ID](/entra/identity/authentication/concept-authentication-methods-manage).

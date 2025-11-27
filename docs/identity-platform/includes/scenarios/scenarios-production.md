@@ -1,16 +1,10 @@
 ---
 title: include file
 description: include file
-
 author: OwenRichards1
-manager: CelesteDG
-editor: ''
-
+manager: pmwongera
 ms.service: identity-platform
-
 ms.topic: include
-ms.tgt_pltfrm: na
-
 ms.date: 05/07/2019
 ms.author: owenrichards
 ms.reviewer: jmprieur

@@ -67,7 +67,7 @@ The following scenarios are supported:
 
 The following scenarios aren't supported:
 
-- Certificate authority (CA) hints aren't supported. The list of certificates that appears for users in the certificate picker UI isn't scoped.
+- CBA is not supported in Web-sign in option at windows login (on the lock/sign-in screen).
 - Only one CRL distribution point (CDP) for a trusted CA is supported.
 - The CDP can be only HTTP URLs. We don't support Online Certificate Status Protocol (OCSP) or Lightweight Directory Access Protocol (LDAP) URLs.
 - Password as an authentication method can't be turned off. The option to sign in by using a password appears, even when the Microsoft Entra CBA method is available to the user.

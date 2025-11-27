@@ -72,8 +72,6 @@ productDirectory:
       links:
         - url: ./customers/overview-customers-ciam.md
           text: What is External ID in an external tenant?
-        - url: ./customers/overview-solutions-customers.md
-          text: How can I access the demo?
         - url: ~/identity-platform/quickstart-register-app.md
           text: How do I register an app?
         - url: ./customers/samples-ciam-all.md

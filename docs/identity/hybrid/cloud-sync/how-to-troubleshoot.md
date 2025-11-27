@@ -238,6 +238,27 @@ Use the following request:
  
   `POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart`
 
+## Directory service authorization failures
+
+If you encounter the **AzureDirectoryServiceAuthorizationFailed** quarantine error code, the most likely cause is that you don't have a service principal for the directory synchronization service application in your tenant. You can check this by querying Microsoft Graph API as in the following example:
+
+```http
+GET /servicePrincipals?$filter=displayName eq 'Microsoft Entra AD Synchronization Service'
+```
+
+If no matching service principal is found, you can trigger creation of a new service principal by enabling synchronization (even it it's already enabled) with the following Microsoft Graph API request:
+
+```http
+PATCH /organization/<your tenant ID>
+
+Request body:
+
+{ "onPremisesSyncEnabled": true }
+```
+
+If you run the first query again, you should see that the service principal has been restored in your tenant. After this, it may take up to 24 hours for the authorization errors to go away completely and for synchronization to resume as normal. If the errors persist beyond that point, reach out to support for further assistance.
+
+
 ## Repair the cloud sync service account
 
 If you need to repair the cloud sync service account, you can use the `Repair-AADCloudSyncToolsAccount` command.

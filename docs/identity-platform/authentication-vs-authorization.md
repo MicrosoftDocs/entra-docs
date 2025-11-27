@@ -4,7 +4,7 @@ description: Understand the fundamentals of authentication, authorization, and h
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom:  scenarios:getting-started
+ms.custom:
 ms.date: 03/21/2025
 ms.reviewer: jmprieur, sureshja, ludwignick
 ms.service: identity-platform

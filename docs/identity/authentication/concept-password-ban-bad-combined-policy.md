@@ -22,7 +22,7 @@ This article explains details about the password policy criteria checked by Micr
 
 A password policy is applied to all user and admin accounts that are created and managed directly in Microsoft Entra ID. You can [ban weak passwords](concept-password-ban-bad.md) and define parameters to [lock out an account](howto-password-smart-lockout.md) after repeated bad password attempts. Other password policy settings can't be modified.
 
-The Microsoft Entra password policy doesn't apply to user accounts synchronized from an on-premises AD DS environment using Microsoft Entra Connect unless you enable EnforceCloudPasswordPolicyForPasswordSyncedUsers. If EnforceCloudPasswordPolicyForPasswordSyncedUsers and password writeback are enabled, Microsoft Entra password expiration policy applies, but the on-premises password policy takes precedence for length, complexity, and so on.
+The Microsoft Entra password policy doesn't apply to user accounts synchronized from an on-premises AD DS environment using Microsoft Entra Connect unless you enable CloudPasswordPolicyForPasswordSyncedUsersEnabled. If CloudPasswordPolicyForPasswordSyncedUsersEnabled and password writeback are enabled, Microsoft Entra password expiration policy applies, but the on-premises password policy takes precedence for length, complexity, and so on.
 
 The following Microsoft Entra password policy requirements apply for all passwords that are created, changed, or reset in Microsoft Entra ID. Requirements are applied during user provisioning, password change, and password reset flows. You can't change these settings except as noted.
 

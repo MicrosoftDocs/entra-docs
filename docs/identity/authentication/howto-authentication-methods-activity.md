@@ -4,7 +4,7 @@ description: Overview of the authentication methods that users register to sign 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 10/22/2025
 ms.author: justinha
 author: sopand
 manager: dougeby
@@ -61,7 +61,7 @@ Click any of the following options to pre-filter a list of user registration det
   This number doesn't reflect users registered for MFA outside of Microsoft Entra ID. 
 - **Users capable of passwordless authentication** shows the breakdown of users who are registered to sign in without a password by using FIDO2, Windows Hello for Business, or passwordless Phone sign-in with the Microsoft Authenticator app. 
 - **Users capable of self-service password reset** shows the breakdown of users who can reset their passwords. Users can reset their password if they're both:
-- Registered for enough methods to satisfy their organization's policy for self-service password reset 
+  - Registered for enough methods to satisfy their organization's policy for self-service password reset 
   - Enabled to reset their password 
 
   ![Screenshot of users who can register](media/how-to-authentication-methods-usage-insights/users-capable.png)
@@ -98,7 +98,7 @@ The **Usage** report shows which authentication methods are used to sign-in and 
 
 ## User registration details 
 
-Using the controls at the top of the list, you can search for a user and filter the list of users based on the columns shown.
+Using the controls at the top of the list, you can search for a user and filter the list of users based on the columns shown. The report updates for most users in the tenant in 36 hours. It's possible for the reporting of a few users to fall out of that time range in rare cases. If that happens, please revisit the report after 24 hours.
 
 >[!NOTE]
 >User accounts that were recently deleted, also known as [soft-deleted users](~/fundamentals/users-restore.md), are not listed in user registration details. Same for disabled users.  
@@ -133,8 +133,7 @@ The registration details report shows the following information for each user:
   
 ## Limitations
 
-- The data in the report is not updated in real-time and may reflect a latency of up to 36 hours.
-
+- The data in the report is not updated in real-time and may reflect a latency of up to 36 hours. It's possible for the reporting of a few users to fall out of that time range in rare cases. In that case, recheck the report after 24 hours.
 - The **PhoneAppNotification** or **PhoneAppOTP** methods that a user might have configured are not displayed in the dashboard on **Microsoft Entra authentication methods - Policies**.
 - Bulk operations in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. For more information, see [Bulk operations](/entra/fundamentals/bulk-operations-service-limitations?WT.mc_id=Portal-Microsoft_AAD_IAM).
 

@@ -5,7 +5,7 @@ description: Learn how to acquire multiple access tokens and call an API in Andr
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 07/07/2024

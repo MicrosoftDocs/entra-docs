@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/22/2025
+ms.date: 10/31/2025
 
 #CustomerIntent: As an identity administrator, I want to use real-time risk detection features in Microsoft Entra ID Protection so that I can grant user access to protected resources.
 ---
@@ -18,8 +18,9 @@ An overview of the guidance begins with [Introduction to Microsoft Entra ID Prot
 
 Detailed guidance continues with these scenarios:
 
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
 This article helps identity administrators use real-time risk detection features in Microsoft Entra ID Protection to grant user access to protected resources. To set up your PoC for this scenario, begin with [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md). Then follow the detailed guidance in this article.
 
@@ -51,7 +52,7 @@ To [configure and enable risk policies](../id-protection/howto-identity-protecti
 
 To [investigate and remediate risks](../id-protection/howto-identity-protection-remediate-unblock.md), use the Microsoft Entra ID Protection dashboards and reports.
 
-1. Review reports for [risky users](../id-protection/howto-identity-protection-investigate-risk.md#risky-users-report), [risky sign-ins](../id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins-report), and [risk detections](../id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report).
+1. Review reports for [risky users](../id-protection/concept-risk-reports.md#risky-users), [risky sign-ins](../id-protection/concept-risk-reports.md#risky-sign-ins), and [risk detections](../id-protection/concept-risk-reports.md#risk-detections).
 1. To immediately view impact in sign-in logs, use the [Impact analysis of risk-based access policies workbook](../id-protection/workbook-risk-based-policy-impact.md). It helps you understand your environment before you enable policies that might block your users from signing in, require MFA, or perform a secure password change. It also provides you with a breakdown for the date range of the sign-ins that you select.
 1. Begin [initial triage](../id-protection/howto-identity-protection-investigate-risk.md#initial-triage) of your findings. Take manual actions such as dismissing false positives or confirming compromise.
 1. Make decisions based on the [investigation and risk remediation framework](../id-protection/howto-identity-protection-investigate-risk.md#investigation-and-risk-remediation-framework).
@@ -70,6 +71,8 @@ Monitor the impact of policies using these features:
 
 ## Next steps
 
-- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
+* [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
+* Use real-time risk detection to grant access to protected resources
+* [Master risk analysis for effective remediation](id-protection-guide-analyze.md)
+* [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+* [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)

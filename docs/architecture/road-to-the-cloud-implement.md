@@ -65,7 +65,7 @@ These links provide more information about groups:
 
 ## Users
 
-You and your team might feel compelled to change your current employee provisioning to use cloud-only accounts at this stage. The effort is nontrivial but doesn't provide enough business value. We recommend that you plan this transition at a different phase of your transformation.
+If there are users in your organization that do not have application dependencies to Active Directory, you can take a cloud-first approach by provisioning those users directly to Microsoft Entra ID. If there are users that do not require access to Active Directory, but have Active Directory accounts provisioned to them, their source of authority can be changed allowing you to clean their Active Directory account. 
 
 ## Devices
 

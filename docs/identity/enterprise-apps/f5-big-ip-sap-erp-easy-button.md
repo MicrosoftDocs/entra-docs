@@ -58,7 +58,7 @@ SHA supports SP and IdP initiated flows. The following image illustrates the SP-
 ## Prerequisites
 
 * A Microsoft Entra ID Free account, or higher
-  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+  * If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * A BIG-IP or a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition virtual machine (VM) in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP licenses:

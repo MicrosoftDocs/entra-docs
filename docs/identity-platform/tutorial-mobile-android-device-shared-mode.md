@@ -28,7 +28,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/).
+- An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An Android device running Android OS version 8.0 or later.  Ensure the device is wiped either by a factory reset or uninstalling all Microsoft and other SDM-enabled app. 
 - [Microsoft Authenticator app](https://play.google.com/store/apps/details/Microsoft_Authenticator?id=com.azure.authenticator&hl=en_NZ) latest version installed on the device.
 - For setup via MDM, the device should be managed by an MDM that supports shared device mode such as Microsoft Intune.  

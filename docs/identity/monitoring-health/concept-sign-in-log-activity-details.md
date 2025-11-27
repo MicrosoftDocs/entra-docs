@@ -149,6 +149,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - `b2bDirectConnect` - A cross tenant sign-in performed by a B2B.
   - `microsoftSupport`- A cross tenant sign-in performed by a Microsoft support agent in a Microsoft external tenant.
   - `serviceProvider` - A cross-tenant sign-in performed by a Cloud Service Provider (CSP) or similar admin on behalf of that CSP's customer in a tenant.
+  - `passthrough` - A cross-tenant sign-in where authentication is forwarded to the user’s home identity provider without requiring re-entry of credentials.
   - `unknownFutureValue` - A value used by MS Graph to help clients handle changes in enum lists. For more information, see [Best practices for working with Microsoft Graph](/graph/best-practices-concept).
 
 - **Tenant:** The sign-in log tracks two tenant identifiers that are relevant in cross-tenant scenarios:

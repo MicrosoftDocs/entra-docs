@@ -46,9 +46,13 @@ If you prefer, you can add your company logo, change the background color or adj
 1. The guide will configure your tenant with the options you have selected. Once the configuration is complete, the button will change its text from **Setting up...** to **Run it now**.
 1. Select  the **Run it now** button. A new browser tab will open with the sign-in page for your tenant that can be used to create and sign in users. 
 1. Select **No account? Create one** to create a new user in the tenant.
-1. Add your new user's email address and select **Next**. Don't use the same email you used to create your trial.
-1. Complete the sign-up steps on the screen. Typically, once the user has signed in, they're redirected back to your app. However, since you haven’t set up an app at this step, you'll be redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
-1. Go back to the guide tab. At this stage, you can either exit the guide and go to the admin center to explore the full range of configuration options for your tenant. Or you can **Continue** and set up a sample app. We recommend setting up the sample app, so that you can use it to test any further configuration changes you make
+1. Add your new user's email address and select **Next**. 
+
+> [!NOTE]
+> Use a different email address than the one used to create your trial. If you use your tenant admin email to create a customer account through [self-service sign-up](/entra/external-id/self-service-sign-up-overview) or by [adding a new external user](/entra/external-id/customers/how-to-manage-customer-accounts#create-a-customer-account) in the Microsoft Entra admin center, the system creates a second account with the same email address. This new account has customer-level privileges, which can cause conflicts.
+
+5. Complete the sign-up steps on the screen. Typically, once the user has signed in, they're redirected back to your app. However, since you haven’t set up an app at this step, you'll be redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
+6. Go back to the guide tab. At this stage, you can either exit the guide and go to the admin center to explore the full range of configuration options for your tenant. Or you can **Continue** and set up a sample app. We recommend setting up the sample app, so that you can use it to test any further configuration changes you make
 
     :::image type="content" source="media/quickstart-trial-setup/successful-trial-setup.png" alt-text="Screenshot that shows the successful creation of the sign-up experience.":::
 

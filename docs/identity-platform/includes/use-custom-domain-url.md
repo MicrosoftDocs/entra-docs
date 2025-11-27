@@ -1,11 +1,11 @@
 ---
 author: kengaderdus
-ms.service: entra-external-id
+ms.service: identity-platform
 ms.subservice: external
 ms.topic: include
 ms.date: 01/02/2025
 ms.author: kengaderdus
-ms.manager: dougeby
+manager: dougeby
 ---
 
 Use a custom domain to fully brand the authentication URL. From a user perspective, users remain on your domain during the authentication process, rather than being redirected to *ciamlogin.com* domain name.

@@ -4,12 +4,12 @@ description: Learn about the types of activities and events that are captured in
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: troubleshooting-general
+ms.topic: concept-article
 ms.subservice: monitoring-health
-ms.date: 06/30/2025
+ms.date: 11/07/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange,agent-id-ignite
 # Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra audit logs so I know what to look for when I need to troubleshoot an issue.
 ---
 
@@ -53,21 +53,38 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 - What updates were made to attribute sets?
 - What custom attribute values were assigned to a user?
 
+**Agents:**
+
+- What operations were performed by a specific agent?
+- What changes were made to an agent service principal?
+- What details of an agent ID were changed?
+
 > [!NOTE]
 > Entries in the audit logs are system generated and can't be changed or deleted.
 
 ## What do the logs show?
 
-Audit logs display several valuable details on the activities in your tenant. For a full list of the available audit activities, see [Audit activity reference](reference-audit-activities.md). The Microsoft Entra admin center defaults to the **Directory** tab, which displays the following information:
+Audit logs display several valuable details on the activities in your tenant. Key details are visible at-a-glance in the table, with more details available by selecting a specific log entry. The Microsoft Entra admin center defaults to the **Directory** tab, which displays the following information:
 
 - Date and time of the occurrence
 - Service that logged the occurrence
-- Category and name of the activity (*what*) 
-- Status of the activity (success or failure)
+- Category and name of the activity
+- Status of the activity
+
+By selecting a specific log entry, you get even more details, such as:
+
+- Correlation ID for troubleshooting
+- Details about the actor or target resource associated with the activity
+- Where applicable, old and new values for the changed properties
+
+> [!NOTE]
+> In the audit log details, the IP address reflects the OAuth client's IP address. The IP address is the TCP peer of the service's endpoint.
 
 A second tab for **Custom Security** displays audit logs for custom security attributes. To view data on this tab, you must have the [Attribute Log Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) or [Attribute Log Reader](../../identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role. This audit log shows all activities related to custom security attributes. For more information, see [What are custom security attributes](../../fundamentals/custom-security-attributes-overview.md).
 
 ![Screenshot of the audit logs, with the Directory and Custom Security tabs highlighted.](media/concept-audit-logs/audit-log-tabs.png)
+
+For a full list of the available audit activities, see [Audit activity reference](reference-audit-activities.md).
 
 ## Microsoft 365 activity logs
 

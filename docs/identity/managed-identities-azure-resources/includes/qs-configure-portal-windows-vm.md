@@ -11,7 +11,7 @@ In this article, you learn how to enable and disable system and user-assigned ma
 ## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](~/identity/managed-identities-azure-resources/overview.md).
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before continuing.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before continuing.
 
 ## System-assigned managed identity
 

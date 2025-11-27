@@ -171,6 +171,8 @@ items:
           href: app-perms-audit-logs.md
       - name: Manage user assignment
         href: assign-user-or-group-access-portal.md
+      - name: Assign agent identities to applications
+        href: assign-agent-identities-to-applications.md
       - name: Assign custom security attributes
         href: custom-security-attributes-apps.md
       - name: Disable user sign-in

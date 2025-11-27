@@ -2,7 +2,7 @@
 title: Find help and get support for Microsoft Entra
 description: Instructions about how to get help, find community support, and open a support request for Microsoft Entra.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
@@ -126,7 +126,7 @@ If you're not an Azure customer, you can open a support request with [Microsoft 
 
 ## Microsoft Security Copilot
 
-The Microsoft Security Copilot is a platform that brings together the power of AI and human expertise to help you and your teams respond to threats faster and more effectively. The capabilities of this powerful feature are under continuous development, with several features available today. These features can also be used for some troubleshooting and support scenarios. For more information, see [Copilot in Microsoft Entra](copilot-security-entra.md)
+The Microsoft Security Copilot is a platform that brings together the power of AI and human expertise to help you and your teams respond to threats faster and more effectively. The capabilities of this powerful feature are under continuous development, with several features available today. These features can also be used for some troubleshooting and support scenarios. For more information, see [Copilot in Microsoft Entra](../security-copilot/security-copilot-in-entra.md)
 
 ## Get Microsoft 365 admin center support
 

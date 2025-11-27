@@ -22,7 +22,7 @@ Integrating identity management solutions into your organizational and customer-
 - [**Visual Studio 2022**](https://visualstudio.microsoft.com/downloads/) with the ASP.NET and web development workload installed.
 - A **Microsoft Entra tenant** (workforce or external). If you don’t have one, choose from the following methods:
   - [Create a new tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-  - Use an Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/).
+  - Use an Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - The account you use must have permissions to manage applications in your tenant. Any of the following Microsoft Entra roles have the required permissions:
   - Application Administrator
   - Application Developer

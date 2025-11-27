@@ -19,7 +19,7 @@ In this article, you learn how to create, list, and delete a user-assigned manag
 ## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md). *Be sure to review the [difference between a system-assigned and user-assigned managed identity](overview.md#managed-identity-types)*.
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you continue.
 - You can run all the commands in this article either in the cloud or locally:
     - To run in the cloud, use [Azure Cloud Shell](/azure/cloud-shell/overview).
     - To run locally, install [curl](https://curl.se/download.html) and the [Azure CLI](/cli/azure/install-azure-cli).

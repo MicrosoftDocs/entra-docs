@@ -17,7 +17,7 @@ Microsoft Entra Connect cloud sync can synchronize Microsoft Entra password chan
 
 ## Prerequisites 
 
-- A Microsoft Entra tenant with at least a Microsoft Entra ID P1 or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). 
+- A Microsoft Entra tenant with at least a Microsoft Entra ID P1 or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn). 
 - A [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) account
 - Microsoft Entra ID configured for self-service password reset. If needed, complete this tutorial to enable Microsoft Entra SSPR. 
 - An on-premises AD DS environment configured with [Microsoft Entra Connect cloud sync version 1.1.977.0 or later](~/identity/app-provisioning/provisioning-agent-release-version-history.md). Learn how to [identify the agent's current version](~/identity/hybrid/cloud-sync/how-to-automatic-upgrade.md). If needed, configure Microsoft Entra Connect cloud sync using [this tutorial](tutorial-enable-sspr.md). 

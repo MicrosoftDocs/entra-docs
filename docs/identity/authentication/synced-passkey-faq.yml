@@ -1,0 +1,43 @@
+### YamlMime:FAQ
+metadata:
+  title: Synced passkeys FAQs
+  description: Frequently asked questions and answers related to synced passkeys. 
+  ms.service: entra-id
+  ms.subservice: authentication
+  ms.topic: faq
+  ms.date: 11/03/2025
+  ms.author: justinha
+  author: hanki71
+  manager: dougeby
+  ms.reviewer: kimhana
+title: Frequently asked questions about synced passkeys 
+summary: |
+  This article addresses frequently asked questions about synced passkeys. Keep checking back for updated content.
+
+
+sections:
+  - name: General
+    questions:
+      - question: |
+          What are the benefits of synced passkeys? 
+        answer: |
+          Synced passkeys stored in native and third-party passkey providers that already exist on users' devices solve many of the hard issuance and management problems associated with a separate authentication device. 
+          The fact that the passkey can sync between the user's client devices and the cloud massively reduces the recoverability and reissuance costs associated with device-bound passkeys. 
+          We expect this combination of benefits will make synced passkeys the best option for most users and organizations.
+      - question: |
+          How can I do a staged rollout of synced passkeys?
+        answer: |
+          You can leverage passkey profiles to scope the rollout of synced passkeys to select user groups. 
+          Microsoft recommends the use of device-bound passkeys for admins and highly privileged users, and the use of synced passkeys for all users with non-admin permissions in your organization. 
+      - question: |
+          As an admin, can I revoke the use of a passkey?  
+        answer: |
+          Yes. Admins can leverage the per-user authentication methods UX or API to delete the passkey from a user's Microsoft Entra ID account. 
+
+additionalContent: |
+  ## Related content
+    * [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md)
+
+
+
+

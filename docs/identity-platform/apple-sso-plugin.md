@@ -2,7 +2,7 @@
 title: Microsoft Enterprise SSO plug-in for Apple devices
 description: Learn about the Microsoft Entra SSO plug-in for Apple devices using iOS, iPadOS, and macOS devices.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom:
 ms.date: 01/28/2025
@@ -31,12 +31,6 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 - It extends SSO to applications that don't yet use the Microsoft Authentication Library (MSAL).
 - It extends SSO to applications that use OAuth 2, OpenID Connect, and SAML.
 - It's natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
-
->[!NOTE]
-> On May 2024, [Microsoft announced that Platform SSO for macOS devices is available in public preview for Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/platform-sso-for-macos-now-in-public-preview/ba-p/4051574).
->
-> For more information, see [macOS Platform Single Sign-on overview (preview)](/entra/identity/devices/macos-psso). 
-
 
 ## Requirements
 
@@ -426,7 +420,7 @@ You don't need to change the code in those apps as long as the following conditi
 
 In this case, SSO is provided when the application creates a network request and opens a web browser to sign the user in. When a user is redirected to a Microsoft Entra sign-in URL, the SSO plug-in validates the URL and checks for an SSO credential for that URL. If it finds the credential, the SSO plug-in passes it to Microsoft Entra ID, which authorizes the application to complete the network request without asking the user to enter credentials. Additionally, if the device is known to Microsoft Entra ID, the SSO plug-in passes the device certificate to satisfy the device-based Conditional Access check. 
 
-To support SSO for non-MSAL apps, the SSO plug-in implements a protocol similar to the Windows browser plug-in described in [What is a primary refresh token?](~/identity/devices/concept-primary-refresh-token.md#browser-sso-using-prt). 
+To support SSO for non-MSAL apps, the SSO plug-in implements a protocol similar to the Windows browser plug-in described in [What is a primary refresh token?](~/identity/devices/concept-primary-refresh-token.md#how-is-a-prt-used). 
 
 Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSAL apps. It integrates with the existing browser sign-in experience that apps provide. 
 
@@ -436,7 +430,7 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 
 ## Device Identity Key Storage
 
-In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning August 2025 as part of the Secure Enclave rollout, certain new device registrations will require Secure Enclave for key storage. Eventually, all new device registrations will require Secure Enclave.
+In March 2024, Microsoft announced that Microsoft Entra ID will transition from Apple's Keychain to Apple's Secure Enclave for storing device identity keys. Beginning August 2025, the Secure Storage rollout will make Secure Enclave the default key storage for all new device registrations. New device registrations will use the secure storage model by default. Existing devices that do not support Secure Enclave will have registration keys stored in the user's Keychain (but not in the legacy Login Keychain). Existing functionality for devices without Secure Storage remains the same.
 
 If your applications or MDM solutions depend on accessing Microsoft Entra device registration keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
@@ -504,7 +498,12 @@ If for any reason Secure Enclave needs to be disabled, follow these recommended 
 
 #### Opting out of Secure Storage
 
-To opt your tenant out of the secure storage rollout, contact Microsoft customer support to request exclusion from the secure storage deployment. Once processed, your tenant is permanently excluded from this rollout. Any devices in your tenant previously registered with secure storage must follow the previous guidance for removing and re-adding the device after the permanent opt-out is completed. To opt in for Secure storage at a future date, you must contact [Microsoft customer support](/services-hub/unified/support/open-support-requests).
+To opt your tenant out of the secure storage rollout, contact Microsoft customer support to request exclusion from the secure storage deployment. Once processed, your tenant is temporarily excluded from this rollout for up to 6 months. Any devices in your tenant previously registered with secure storage must follow the previous guidance for removing and re-adding the device after the temporary opt-out is completed.
+
+> [!IMPORTANT]
+> Temporary exclusions from secure storage are limited to 6 months and are discouraged, because they may prevent your organization from benefiting from this security enhancement and future security enhancements, and could limit support options when Microsoft eventually phases out legacy storage methods.
+
+To opt in for Secure storage at a future date, you must contact [Microsoft customer support](/services-hub/unified/support/open-support-requests).
 
 ### Scenarios impacted
 

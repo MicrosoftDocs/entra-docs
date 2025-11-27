@@ -7,7 +7,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.topic: install-set-up-deploy
 ms.tgt_pltfrm: na
-ms.date: 04/09/2025
+ms.date: 09/18/2025
 ms.subservice: hybrid
 ms.author: jomondi
 
@@ -18,18 +18,13 @@ The following document provides the steps to install either cloud sync or Micros
 <a name='install-the-azure-ad-connect-provisioning-agent-for-cloud-sync'></a>
 
 ## Install the Microsoft Entra provisioning agent for cloud sync
-Cloud sync uses the Microsoft Entra provisioning agent.  Use the steps below to install it.
+Cloud sync uses the Microsoft Entra provisioning agent. Use the steps below to install it.
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Select **cloud sync**
  4. On the left, select **Agent**.
  5. Select **Download on-premises agent**, and select **Accept terms & download**.
  6. Once the **Microsoft Entra provisioning agent package** has completed downloading, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
-   >[!NOTE]
-   >When installing for the US Government Cloud use:  
-   >*AADConnectProvisioningAgentSetup.exe ENVIRONMENTNAME=AzureUSGovernment*  
-   >See "[Install an agent in the US government cloud](cloud-sync/how-to-install.md#install-an-agent-in-the-us-government-cloud)" for more information.
-
  7. On the splash screen, select **I agree to the license and conditions**, and then select **Install**.
  8. Once the installation operation completes, the configuration wizard launches. Select **Next** to start the configuration.
  9. On the **Select Extension** screen, select **HR-driven provisioning (Workday and SuccessFactors) / Microsoft Entra Connect cloud sync** and select **Next**.

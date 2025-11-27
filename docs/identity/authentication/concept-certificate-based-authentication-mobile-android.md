@@ -99,6 +99,9 @@ Certain Exchange ActiveSync applications on Android 5.0 (Lollipop) or later are 
 |Edge browser with profile login	 |  &#x2705; |
 |Managed Home Screen	 |  &#x2705; |
 
+>[!NOTE]
+>When using Microsoft Entra certificate-based authentication on Android devices in kiosk mode (common in Shared Device Mode), customers should allow list com.android.systemui as a required package to ensure they are presented with the appropriate UI to complete their authentication. 
+
 ### Browsers
 
 |Operating system | Chrome certificate on-device | Chrome smart card/security key | Safari certificate on-device | Safari smart card/security key | Edge certificate on-device | Edge smart card/security key |
@@ -159,6 +162,7 @@ This issue happens because of certificate caching. As a workaround, clicking can
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)
 - [Technical deep dive for Microsoft Entra CBA](concept-certificate-based-authentication-technical-deep-dive.md)
 - [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
 - [Microsoft Entra CBA on iOS devices](concept-certificate-based-authentication-mobile-ios.md)
 - [Windows SmartCard logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
 - [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)

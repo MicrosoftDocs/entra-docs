@@ -5,30 +5,31 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/17/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ---
 
 # Security improvements to Microsoft Entra Connect Sync autoupgrade and Microsoft Entra Connect Health alerts 
 
-Since September 2023, we've been autoupgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who were autoupgraded won't be impacted by the service change, but if you opted out of autoupgrade or autoupgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 23, 2024**. 
+Since September 2023, we've been autoupgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. Customers who were autoupgraded won't be impacted by the service change, but if you opted out of autoupgrade or autoupgrade failed, we **strongly recommend** that you upgrade to the [latest versions](reference-connect-version-history.md) by **September 30, 2026**. 
 
 
 ## Expected impacts
+
 The following table provides information on the features and impact to services, you may encounter, if you aren't on the minimum recommended versions.
 
 |Service|Impact|
 |-----|-----|
-|Microsoft Entra Connect| Autoupgrade stops working. Synchronization isn't impacted|
+|Microsoft Entra Connect| All synchronization services will fail |
 |Microsoft Entra Connect Health Connect Sync agent|A subset of [alerts](how-to-connect-health-alert-catalog.md#alerts-for-microsoft-entra-connect-sync) are impacted: </br> - Connection to Microsoft Entra ID failed due to authentication failure </br> - High CPU usage detected</br> - High Memory Consumption Detected </br> - Password Hash Synchronization has stopped working </br> - Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached</br> - Password Hash Synchronization heartbeat was skipped in the last 120 minutes </br> - Microsoft Entra Sync service can't start due to invalid encryption keys </br> - Microsoft Entra Sync service not running: Windows Service account Creds Expired| 
 |Microsoft Entra Connect HealthAD DS agent|[All alerts](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-domain-services)|
 |Microsoft Entra Connect Health AD FS agent|[All alerts](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services)|
 
 ## Minimum versions
-To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 23, 2024**. To avoid any service impact, you should be using the following minimum versions:
+To take advantage of our latest security improvements, we strongly encourage customers to upgrade to the following builds by **September 30, 2026**. To avoid any service impact, you should be using the following minimum versions:
 
-- Microsoft Entra Connect: [version 2.3.2.0](reference-connect-version-history.md#2320) or higher
+- Microsoft Entra Connect: [2.5.79.0](reference-connect-version-history.md#25790) or higher
 - Microsoft Entra Connect Health 
      - Connect Sync agent: [4.5.2466.0](https://aka.ms/connecthealth-download) or higher 
      - AD DS agent: version: [4.5.2466.0](https://aka.ms/connecthealth-adds-download) or higher 
@@ -39,9 +40,9 @@ To upgrade to the latest version.
 > [Install Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 
 >[!IMPORTANT]
->The autoupgrade service of Microsoft Entra Connect Sync and some alerts of Microsoft Entra Connect Health will stop working on **September 23, 2024** if you're not on at least the minimum versions. If needed, upgrade before this deadline to avoid any impact.
+>**Mandatory Upgrade Required**: All synchronization services in Microsoft Entra Connect Sync will stop working on **September 30, 2026** if you're not on at least version 2.5.79.0. In May 2025, we released this version with a back-end service change that hardens our services. Upgrade before this deadline to avoid any service disruption.
 >
->If you're unable to upgrade before the deadline, you'll lose certain functionality. You can restore the impacted functionality by upgrading to the latest versions, even after the deadline.
+>If you're unable to upgrade before the deadline, all synchronization services will fail until you upgrade to the latest version. Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
 
 ## Consider moving to Microsoft Entra Cloud Sync
 

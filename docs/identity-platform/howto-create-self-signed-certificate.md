@@ -2,7 +2,7 @@
 title: Create a self-signed public certificate to authenticate your application
 description: Create a self-signed public certificate to authenticate your application.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.custom:
 ms.date: 01/14/2025

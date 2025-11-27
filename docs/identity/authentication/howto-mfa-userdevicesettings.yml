@@ -7,7 +7,7 @@ metadata:
   ms.author: justinha
   manager: dougeby
   ms.reviewer: jupetter
-  ms.date: 01/26/2025
+  ms.date: 10/09/2025
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: how-to
@@ -106,10 +106,14 @@ procedureSection:
         Choose the user you wish to perform an action on and select **Authentication methods**. At the top of the window, then choose one of the following options for the user:
           - **Reset password** resets the user's password and assigns a temporary password that must be changed on the next sign-in.
           - **Require re-register MFA** deactivates the user's hardware OATH tokens and deletes the following authentication methods from this user: phone numbers, Microsoft Authenticator apps and software OATH tokens. If needed, the user is requested to set up a new MFA authentication method the next time they sign in.
-          - **Revoke MFA sessions** clears the user's remembered MFA sessions and requires them to perform MFA the next time it's required by the policy on the device.
-              
-          :::image type="content" source="media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png" alt-text="Screenshot of manage authentication methods from the Microsoft Entra admin center.":::
-  
+          - **Revoke MFA sessions** forces users with enforced or enabled status in [per-user MFA](/entra/identity/authentication/howto-mfa-userstates) to complete MFA again by clearing their remembered sessions.  
+ 
+            :::image type="content" source="media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png" alt-text="Screenshot of manage authentication methods from the Microsoft Entra admin center." lightbox="media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png":::
+
+            Microsoft recommends using **Revoke sessions** instead because it signs out users from all active sessions. To revoke sessions for a user in the Microsoft Entra ID admin center, select **Users** > select a user > **Overview** > **Revoke sessions**.
+
+            :::image type="content" source="media/howto-mfa-userdevicesettings/revoke-sessions.png" alt-text="Screenshot of how to revoke sessions for a user in the Microsoft Entra admin center.":::
+
   - title: |
       Delete users' existing app passwords
     summary: |

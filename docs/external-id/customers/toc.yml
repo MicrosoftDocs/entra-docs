@@ -298,8 +298,8 @@ items:
   items: 
     - name: Planning guide
       href: concept-planning-your-solution.md
-    - name: Woodgrove demo overview
-      href: overview-solutions-customers.md
+    - name: Data residency
+      href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Security settings
       href: concept-security-customers.md
     - name: User profile attributes
@@ -358,6 +358,8 @@ items:
         href: how-to-test-user-flows.md
       - name: Enable password reset
         href: how-to-enable-password-reset-customers.md
+      - name: Sign-in with a username
+        href: how-to-sign-in-alias.md
       - name: Configure identity providers
         items:
           - name: Google federation
@@ -424,10 +426,14 @@ items:
       items:
         - name: Customize branding
           items:
+          - name: Default branding
+            items:
             - name: Default branding
               href: how-to-customize-branding-customers.md
             - name: Language-specific branding
               href: how-to-customize-languages-customers.md
+          - name: Branding themes
+            href: how-to-customize-branding-themes-apps.md
         - name: Customize attribute collection
           items:
             - name: Collect custom user attributes during sign-up
@@ -478,7 +484,11 @@ items:
         - name: Azure Web Application Firewall
           href: tutorial-configure-external-id-web-app-firewall.md
         - name: Cloudflare
-          href: tutorial-configure-cloudflare-integration.md
+          href: how-to-configure-waf-integration.md
+        - name: Akamai
+          href: how-to-configure-akamai-integration.md
+      - name: Fraud protection integration
+        href: how-to-integrate-fraud-protection.md
     - name: Manage users
       items:
         - name: Manage admin accounts

@@ -20,7 +20,7 @@ If you need to store Microsoft Entra activity logs for longer than the [default 
 
 To use this feature, you need:
 
-* An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+* An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * An Azure storage account you have `ListKeys` permissions for. Learn how to [create a storage account](/azure/storage/common/storage-account-create).
 * A user who's a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) for the Microsoft Entra tenant.
 

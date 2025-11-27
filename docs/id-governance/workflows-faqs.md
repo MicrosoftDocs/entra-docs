@@ -58,6 +58,23 @@ Lifecycle workflows checks that the user is assigned the custom security attribu
 
 If a user is assigned a custom security attribute that has multiple values, and one of the values matches the value in the specified in rule expressions, the user matches the scope.
 
+### Why can’t I see the custom attributes listed in the attributes change trigger?
+
+To see the expected attributes in the drop down list, you need to ensure the following:
+
+- The attributes must be configured and active
+- For custom security attributes, you have the appropriate permissions
+
+
+### Do workflows using custom attribute triggers always take 4 hours to process changes?
+
+No, the change processing time can vary depending on tenant change activity, timing and volume, with 4 hours expected to be the upper limit. We are working to optimize the timing as much as possible in hopes of reducing the time it takes.
+
+
+### What happens if I have multiple workflows using custom attributes as triggers?
+
+If multiple workflows are using the same custom attribute as trigger, when that change is processed, those workflows will be processed at the same time. If multiple workflows are using different custom attributes as trigger, but the custom attributes updates occurred at the same time, then those workflows will be processed at the same time. If the attribute updates occur at different times, then the workflows processing may be different.
+
 ## Next steps
 
 - [What are Lifecycle workflows?](what-are-lifecycle-workflows.md)

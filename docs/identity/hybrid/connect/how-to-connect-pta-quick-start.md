@@ -8,7 +8,7 @@ ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/09/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: sfi-image-nochange
@@ -45,13 +45,13 @@ Ensure that the following prerequisites are in place.
 
 ### In your on-premises environment
 
-1. Identify a server running Windows Server 2016 or later to run Microsoft Entra Connect. If not enabled already, [enable TLS 1.2 on the server](./how-to-connect-install-prerequisites.md#enable-tls-12-for-azure-ad-connect). Add the server to the same Active Directory forest as the users whose passwords you need to validate. It should be noted that installation of Pass-Through Authentication agent on Windows Server Core versions isn't supported. 
+1. Identify a server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016 to run Microsoft Entra Connect. If not enabled already, [enable TLS 1.2 on the server](./how-to-connect-install-prerequisites.md#enable-tls-12-for-azure-ad-connect). Add the server to the same Active Directory forest as the users whose passwords you need to validate. It should be noted that installation of Pass-Through Authentication agent on Windows Server Core versions isn't supported. 
 2. Install the [latest version of Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) on the server identified in the preceding step. If you already have Microsoft Entra Connect running, ensure that the version is supported.
 
     >[!NOTE]
     >Microsoft Entra Connect versions 1.1.557.0, 1.1.558.0, 1.1.561.0, and 1.1.614.0 have a problem related to password hash synchronization. If you *don't* intend to use password hash synchronization in conjunction with Pass-through Authentication, read the [Microsoft Entra Connect release notes](./reference-connect-version-history.md).
 
-3. Identify one or more additional servers (running Windows Server 2016 or later, with TLS 1.2 enabled) where you can run standalone Authentication Agents. These additional servers are needed to ensure the high availability of requests to sign in. Add the servers to the same Active Directory forest as the users whose passwords you need to validate.
+3. Identify another server that runs Windows Server 2022, Windows Server 2019, or Windows Server 2016 with TLS 1.2 enabled where you can run standalone Authentication Agents. These additional servers are needed to ensure the high availability of requests to sign in. Add the servers to the same Active Directory forest as the users whose passwords you need to validate.
 
     >[!IMPORTANT]
     >In production environments, we recommend that you have a minimum of 3 Authentication Agents running on your tenant. There's a system limit of 40 Authentication Agents per tenant. And as best practice, treat all servers running Authentication Agents as Tier 0 systems (see [reference](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)).

@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 05/23/2025
+ms.date: 10/07/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -21,19 +21,19 @@ Microsoft and Palo Alto Networks SSE solutions can be used together in a unified
 
 This document contains steps to deploy these solutions side by side across several different access scenarios.
 
-1.  [**Configuration 1: Microsoft Entra Private Access with Palo Alto Prisma Access for secure Internet Access**](#configuration-1-microsoft-entra-private-access-with-palo-alto-prisma-access-for-secure-internet-access)
+1.  [**Microsoft Entra Private Access with Palo Alto Prisma Access for secure Internet Access**](#microsoft-entra-private-access-with-palo-alto-prisma-access-for-secure-internet-access)
 
 In this scenario Global Secure Access will handle private application traffic. Prisma Access will only capture Internet traffic.
 
-2.  [**Configuration 2: Microsoft Entra Private Access with Palo Alto Prisma Access for Private Application and Internet Access**](#configuration-2-microsoft-entra-private-access-with-palo-alto-prisma-access-for-private-application-and-internet-access)
+2.  [**Microsoft Entra Private Access with Palo Alto Prisma Access for Private Application and Internet Access**](#microsoft-entra-private-access-with-palo-alto-prisma-access-for-private-application-and-internet-access)
 
 In this scenario both clients will handle traffic for separate private applications. Private applications in Microsoft Entra Private Access will be handled by Global Secure Access while private applications in Prisma Access service connections, or ZTNA connectors, will be accessed through GlobalProtect client. Internet traffic will be handled by Prisma Access.
 
-3.  [**Configuration 3: Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application and Internet Access**](#configuration-3-microsoft-entra-microsoft-access-with-palo-alto-prisma-access-for-private-application-and-internet-access)
+3.  [**Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application and Internet Access**](#microsoft-entra-microsoft-access-with-palo-alto-prisma-access-for-private-application-and-internet-access)
 
 In this scenario Global Secure Access will handle all Microsoft 365 traffic. Prisma Access will handle Private applications via service connection or ZTNA connectors. Internet traffic will be handled by Prisma Access.
 
-4.  [**Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application Access**](#configuration-4-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-palo-alto-prisma-access-for-private-application-access)
+4.  [**Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application Access**](#microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-palo-alto-prisma-access-for-private-application-access)
 
 In this scenario Global Secure Access will handle Internet and Microsoft 365 traffic. Prisma Access will only capture private application traffic via service connection or ZTNA connectors.
 
@@ -89,7 +89,7 @@ App Settings:
     > [!NOTE]
     > In Configuration 4, if you face issues connecting with GlobalProtect using local users, try setting up Microsoft Entra SSO.
 
-## Configuration 1: Microsoft Entra Private Access with Palo Alto Prisma Access for secure Internet Access
+## Microsoft Entra Private Access with Palo Alto Prisma Access for secure Internet Access
 
 In this scenario Global Secure Access will handle private application traffic. Prisma Access will only capture Internet traffic.
 
@@ -136,7 +136,7 @@ Verify configuration for Global Secure Access client.
 12. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the **Traffic** dialog box, select **Stop collecting**.
 13. Scroll to confirm the Global Secure Access client handled only private application traffic.
 
-## Configuration 2: Microsoft Entra Private Access with Palo Alto Prisma Access for Private Application and Internet Access
+## Microsoft Entra Private Access with Palo Alto Prisma Access for Private Application and Internet Access
 
 In this scenario both clients will handle traffic for separate private applications. Private applications in Microsoft Entra Private Access will be handled by Global Secure Access while private applications in Prisma Access service connections, or ZTNA connectors, will be accessed through GlobalProtect client. Internet traffic will be handled by Prisma Access.
 
@@ -184,7 +184,7 @@ Verify configuration for Global Secure Access client.
 13. In the system tray, right-click **Global Secure Access Client** and then select **Advanced Diagnostics**. In the network traffic dialog box, select **Stop collecting**.
 14. Scroll to confirm the Global Secure Access client handled private application traffic for the SMB file share and didn't handle the RDP session traffic.
 
-## Configuration 3: Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application and Internet Access
+## Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application and Internet Access
 
 In this scenario Global Secure Access will handle all Microsoft 365 traffic. Prisma Access will handle Private applications via service connection or ZTNA connectors and Internet traffic.
 
@@ -235,7 +235,7 @@ Verify configuration for Global Secure Access client.
 15. You can also validate that the traffic is captured in the Global Secure Access traffic logs. In the Microsoft Entra admin center, navigate to **Global Secure Access** \> **Monitor** \> **Traffic logs**.
 16. Validate traffic related to Outlook Online and SharePoint Online is missing from Prisma Access logs in Strata Cloud Manager **Incidents & Alerts** \> **Log Viewer**.
 
-## Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application Access
+## Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Palo Alto Prisma Access for Private Application Access
 
 In this scenario Global Secure Access will handle Internet and Microsoft traffic. Prisma Access will only capture private application traffic via service connection or ZTNA connectors.
 

@@ -204,7 +204,7 @@ Define a log storage and retention strategy, design, and implementation to facil
 
 - **Microsoft Entra logs**. Ingest generated logs and signals by consistently following best practices for settings such as diagnostics, log retention, and SIEM ingestion.
 
-- Microsoft Entra ID provides Azure Monitor integration for [multiple identity logs](../identity/monitoring-health/concept-diagnostic-settings-logs-options.md). For more information, see [Microsoft Entra activity logs in Azure Monitor](../identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md) and [Investigate risky users with Copilot](../fundamentals/copilot-entra-risky-user-summarization.md).
+- Microsoft Entra ID provides Azure Monitor integration for [multiple identity logs](../identity/monitoring-health/concept-diagnostic-settings-logs-options.md). For more information, see [Microsoft Entra activity logs in Azure Monitor](../identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md) and [Investigate risky users with Copilot](../security-copilot/entra-risky-user-summarization.md).
 
 - **Hybrid infrastructure operating system security logs**. Archive and carefully monitor all hybrid identity infrastructure operating system logs as a tier-0 system because of the surface area implications. Include the following elements:
 
@@ -215,7 +215,7 @@ Define a log storage and retention strategy, design, and implementation to facil
   - [Microsoft Entra Connect](../identity/hybrid/connect/whatis-azure-ad-connect.md).
   - You must deploy Microsoft Entra Connect Health to monitor identity synchronization.
 
-For comprehensive guidance on this topic, check [Incident response playbooks](/security/operations/incident-response-playbooks) and [Investigate risky users with Copilot](../fundamentals/copilot-entra-risky-user-summarization.md)
+For comprehensive guidance on this topic, check [Incident response playbooks](/security/operations/incident-response-playbooks) and [Investigate risky users with Copilot](../security-copilot/entra-risky-user-summarization.md)
 
 ## Next steps
 

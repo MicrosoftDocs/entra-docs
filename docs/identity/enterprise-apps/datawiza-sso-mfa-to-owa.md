@@ -78,7 +78,7 @@ The following diagram illustrates the user flow from user browser to OWA.
 You need the following components. Prior DAP experience isn't necessary.
 
 -   An Azure account
-    -   If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
+    -   If you don't have one, get an [Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 -   A Microsoft Entra tenant linked to the Azure account
     -   See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 -   Docker and Docker Compose are required to run DAP

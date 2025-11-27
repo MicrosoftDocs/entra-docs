@@ -36,7 +36,7 @@ In this tutorial you learn how to:
 To complete this tutorial, you need the following resources and privileges:
 
 * A working Microsoft Entra tenant with Microsoft Entra ID P1 or trial licenses enabled.
-    * If you need to, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If you need to, [create one for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 * An account with at least the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role. Some MFA settings can also be managed by an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 

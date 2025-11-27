@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: article
-ms.date: 07/15/2024
+ms.date: 10/07/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to simplify onboarding external users to resources using access governance features.
@@ -58,7 +58,7 @@ Configuring attributes is a similar experience as configuring custom questions, 
 When an access package includes a resource configured for attribute collection, the external user is automatically asked for those values in addition to any custom questions specified for the access package itself. The information supplied for these attributes is also presented to the approver, and is written into the requestor’s User object if the request is approved. If your external users are only collaborating with Teams or SharePoint Online, you probably don't need attributes.
 
 > [!NOTE]
-> The specify attributes feature is cloud only as you are unable to write attributes onto on-premises synched users.
+> The specify attributes feature is cloud only as you're unable to write attributes onto on-premises synched users.
 
 For a step by step guide on this process, see: [Add resource attributes in the catalog](entitlement-management-catalog-create.md#add-resource-attributes-in-the-catalog).
 

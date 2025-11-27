@@ -29,7 +29,7 @@ ms.topic: quickstart
 > 
 > ## Prerequisites
 > 
-> - Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> - Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 > - [Microsoft Entra tenant](quickstart-create-new-tenant.md)
 > - A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/)
 > - [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)

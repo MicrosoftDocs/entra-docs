@@ -7,7 +7,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 04/09/2025
+ms.date: 09/29/2025
 ms.subservice: hybrid
 ms.author: jomondi
 
@@ -22,7 +22,7 @@ The following document provides the prerequisites for integrating with Active Di
 
 |Requirement|Description and more requirements|
 |-----|-----|
-|Windows server 2016 or greater that is or has:|• 4-GB RAM or more</br>• .NET 4.7.1 runtime or greater</br>• domain-joined</br>• PowerShell execution policy set to **Undefined** or **RemoteSigned**</br>• TLS 1.2 enabled</br>|
+|Windows Server 2022, Windows Server 2019, or Windows Server 2016 |• 4-GB RAM or more</br>• .NET 4.7.1 runtime or greater</br>• domain-joined</br>• PowerShell execution policy set to **Undefined** or **RemoteSigned**</br>• TLS 1.2 enabled</br>|
 |Active Directory|• On-premises AD that has a forest functional level 2003 or higher|
 |Microsoft Entra tenant|• A tenant in Azure that's  used to synchronize from on-premises|
 
@@ -46,7 +46,7 @@ For more information on the cloud sync accounts, and how to set up a custom gMSA
 
 |Requirement|Description and more requirements|
 |-----|-----|
-|Windows server 2016 or greater that is or has:|• 4-GB RAM or more</br>• .NET 4.6.2 runtime or greater</br>• domain-joined</br>• PowerShell execution policy set to **RemoteSigned**</br>• TLS 1.2 enabled</br>• if federation is being used, the AD FS severs must be Windows Server 2012 R2 or higher and TLS/SSL certificates must be configured.|
+|Windows Server 2022, Windows Server 2019, and Windows Server 2016|• 4-GB RAM or more</br>• .NET 4.6.2 runtime or greater</br>• domain-joined</br>• PowerShell execution policy set to **RemoteSigned**</br>• TLS 1.2 enabled</br>• if federation is being used, the AD FS severs must be Windows Server 2012 R2 or higher and TLS/SSL certificates must be configured.|
 |Active Directory|• On-premises AD that has a forest functional level 2003 or higher</br>• a writeable domain controller|
 |Microsoft Entra tenant|• A tenant in Azure used to synchronize from on-premises|
 |SQL Server|Microsoft Entra Connect requires a SQL Server database to store identity data. By default, a SQL Server 2019 Express LocalDB (a light version of SQL Server Express) is installed. For more information on using a SQL server, see [Microsoft Entra Connect SQL server requirements](connect/how-to-connect-install-prerequisites.md#sql-server-used-by-azure-ad-connect)|

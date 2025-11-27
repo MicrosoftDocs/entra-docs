@@ -1,7 +1,7 @@
 ---
 title: "Include file - Add a platform and redirect URI for a single-page application"
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 12/13/2023

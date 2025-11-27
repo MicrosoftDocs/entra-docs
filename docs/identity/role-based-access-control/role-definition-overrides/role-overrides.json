@@ -29,7 +29,9 @@
         "Read all aspects of Entra Permissions Management": "Read all aspects of Microsoft Entra Permissions Management",
         "Manage all aspects of Power BI": "Manage all aspects of Fabric and Power BI",
         "Create and delete all resources, and read and update standard properties in Microsoft Cloud App Security": "Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps",
-        "Read and manage objects to enable on-premises directory synchronization": "Read standard on-premises directory synchronization information"
+        "Read and manage objects to enable on-premises directory synchronization": "Read standard on-premises directory synchronization information",
+        "Manage all restore points associated with selected SharePoint sites in M365 Backup": "Manage all restore points associated with selected SharePoint sites in Microsoft 365 Backup",
+        "Manage all restore points associated with selected OneDrive accounts in M365 Backup": "Manage all restore points associated with selected OneDrive accounts in Microsoft 365 Backup"
     },
     "excludedResourceActions": [
         {
@@ -38,6 +40,10 @@
         }
     ],
     "excludedRoles": [
+        {
+            "templateId": "7d12f82a-91cf-447e-8623-4a6ccb983f08",
+            "reason": "Agent User role. Implicitly assigned."
+        },
         {
             "templateId": "9c094953-4995-41c8-84c8-3ebb9b32c93f",
             "reason": "Deprecated - Do not use (Device Join)"

@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 04/14/2025
+ms.date: 09/16/2025
 ms.custom: it-pro, sfi-ga-nochange
 ---
 
@@ -25,21 +25,9 @@ Microsoft Entra External ID allows you to define application roles for your appl
 
 When Microsoft Entra External ID issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim. An application that receives that security token in a request can then make authorization decisions based on the values in the roles claim.
 
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=RBAC)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Role-based access control” use case.
-
 ## Groups
 
 Developers can also use security groups to implement RBAC in their applications, where the memberships of the user in specific groups are interpreted as their role memberships. When an organization uses security groups, a groups claim is included in the token. The groups claim specifies the identifiers of all of the groups to which the user is assigned within the current external tenant.
-
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=GBAC)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Group-based access control” use case.
 
 ## App roles vs. groups
 

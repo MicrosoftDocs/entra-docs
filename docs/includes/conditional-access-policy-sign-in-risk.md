@@ -3,7 +3,7 @@ author: joflore
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
-ms.date: 02/21/2025
+ms.date: 10/29/2025
 ms.author: joflore
 ---
 

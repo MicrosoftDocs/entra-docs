@@ -32,7 +32,7 @@ In this tutorial, an administrator of the application learns how to:
 
 ## Prerequisites
 
-- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
 - An enterprise application configured in your Microsoft Entra tenant.
 

@@ -2,10 +2,10 @@
 title: Set up QR Code and PIN Authentication in iOS/macOS App
 description: Learn how to configure your iOS app to use QR code and PIN authentication using the Microsoft Authentication Library for iOS and macOS.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
-ms.service: msal
-ms.subservice: msal-ios-mac
+ms.service: identity-platform
+ms.subservice:
 ms.topic: concept-article
 ms.date: 07/24/2025
 ms.reviewer: akgoel

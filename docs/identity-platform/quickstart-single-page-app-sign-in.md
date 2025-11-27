@@ -2,7 +2,7 @@
 title: "Quickstart - Sign in users in a single-page app (SPA) and call the Microsoft Graph API"
 description: Quickstart that shows how to configure a sample SPA that signs in employees or customers by using the Microsoft identity platform
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom:
 ms.date: 01/27/2025
@@ -23,7 +23,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
  
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
@@ -242,7 +242,7 @@ Run the project with a web server by using dotnet:
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer

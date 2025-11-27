@@ -2,7 +2,7 @@
 title: Developer’s Guide to Requesting Permissions and Consent in Microsoft Identity Platform
 description: Learn how developers can request for permissions through consent in the Microsoft identity platform endpoint.
 author: omondiatieno
-manager: celesteDG
+manager: pmwongera
 ms.author: jomondi
 ms.date: 05/21/2025
 ms.reviewer: jawoods, ludwignick, phsignor

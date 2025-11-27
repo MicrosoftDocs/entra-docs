@@ -35,7 +35,7 @@ In this tutorial, you learn how to:
 To complete this tutorial, you need the following resources and privileges:
 
 * A working Microsoft Entra tenant with at least a Microsoft Entra ID P2 or trial license enabled.
-   * If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+   * If needed, [create one for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * An account with Security Administrator privileges.
 * Microsoft Entra ID configured for self-service password reset and Microsoft Entra multifactor authentication
    * If needed, [complete the tutorial to enable Microsoft Entra SSPR](tutorial-enable-sspr.md).

@@ -6,10 +6,10 @@ manager: martinco
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 08/25/2024
+ms.date: 11/06/2025
 ms.author: jricketts
 ms.reviewer: jricketts
-ms.custom: "it-pro"
+ms.custom: it-pro, references_regions
 ms.collection:
 # Customer intent: As a cloud administrator, I want to understand how Microsoft Entra ID handles data residency, so that I can ensure compliance with data residency requirements and make informed decisions about storing and managing identity and access data in the cloud.
 ---
@@ -19,7 +19,7 @@ ms.collection:
 Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and manages identity and access data in the cloud. You can use the data to enable and manage access to cloud services, achieve mobility scenarios, and secure your organization. An instance of the Microsoft Entra ID service, called a [tenant](~/identity-platform/developer-glossary.md#tenant), is an isolated set of directory object data that the customer provisions and owns.
 
 > [!NOTE]
-> Microsoft Entra External ID is a customer identity and access management (CIAM) solution that stores and manages data in a separate tenant created for your customer-facing apps and customer directory data. This tenant is called the external tenant. When you create an external tenant, you have the option to select the geographic location (shown as "Country/Region" in the admin portal) for data storage. It’s important to note that the data locations and region availability may differ from those of Microsoft Entra ID, as indicated in this article.
+> Microsoft Entra External ID is a customer identity and access management (CIAM) solution with the option and flexibility to store and manage data in a separate tenant created for your customer-facing apps and customer directory data. This tenant is called an external tenant. When you create an external tenant, you have the option to select the geographic location (shown as "Country/Region" in the admin portal) for data storage. It’s important to note that the data locations and region availability may differ from those of Microsoft Entra ID, as indicated in this article.
 
 ## Core Store
 
@@ -30,25 +30,25 @@ For more information on the Core Store, see [Microsoft Entra Core Store Scale Un
 Microsoft Entra ID is available in the following clouds:
 
 - Public
-- China*
-- US government*
+- China (2)
+- US government (2)
 
-*\* Not currently available for external tenants.*
+*(2) Not currently available for external tenants.*
 
 In the public cloud, you're prompted to select a location (shown as "Country/Region" in the admin portal) at the time of tenant creation (for example, signing up for Office 365 or Azure, or creating more Microsoft Entra instances through the Azure portal). Microsoft Entra ID maps the selection to a geo-location and a single scale unit in it. Tenant location can't be changed after it's set.
 
 The location selected during tenant creation will map to one of the following geo-locations:
 
-- Australia*
+- Australia (1)
 - Asia/Pacific
 - Europe, Middle East, and Africa (EMEA)
-- Japan*
+- Japan (1)
 - North America
 - Worldwide
  
-*\* Not currently available for external tenants.*
+*(1) Available for external tenants with the [Go-Local add-on](#go-local-add-on).*
 
-Microsoft Entra ID handles Core Store data based on usability, performance, residency or other requirements based on geo-location. Microsoft Entra ID replicates each tenant through its scale unit, across datacenters, based on the following criteria:
+Microsoft Entra ID handles Core Store data based on usability, performance, residency, or other requirements based on geo-location. Microsoft Entra ID replicates each tenant through its scale unit, across datacenters, based on the following criteria:
 
 - Microsoft Entra Core Store data, stored in datacenters closest to the tenant-residency location, to reduce latency and provide fast user sign-in times
 - Microsoft Entra Core Store data stored in geographically isolated datacenters to assure availability during unforeseen single-datacenter, catastrophic events
@@ -64,12 +64,13 @@ Use the following table to see Microsoft Entra cloud solution models based on in
 |---|---|---|---|---|
 |Public geo located|Australia (1), North America, EMEA, Japan (1), Asia/Pacific|At rest, in the target location. Exceptions by component service or feature, listed in the next section|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Create the tenant in the sign-up experience. Choose the location for data residency.|
 |Public worldwide|Worldwide|All locations|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Tenant creation available via official support channel and subject to Microsoft discretion.|
-|Sovereign or national clouds|US government (1), China (1)|At rest, in the target location. No exceptions.|Operated by a data custodian (2). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
+|Sovereign or national clouds|US government (2), China (2)|At rest, in the target location. No exceptions.|Operated by a data custodian (3). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
 
 **Table references**:
 
-(1) These locations aren't currently available for external tenants.
-(2) **Data custodians**: datacenters in the US government cloud are operated by Microsoft. In China, Microsoft Entra ID is operated through a partnership with [21Vianet](/microsoft-365/admin/services-in-china/services-in-china?redirectSourcePath=%252fen-us%252farticle%252fLearn-about-Office-365-operated-by-21Vianet-a8ab5061-3346-4da0-bb7c-5260822b53ae&view=o365-21vianet&viewFallbackFrom=o365-worldwide&preserve-view=true).
+- (1) These locations are available for external tenants with the [Go-Local add-on](#go-local-add-on).
+- (2) These locations aren't currently available for external tenants.
+- (3) **Data custodians**: datacenters in the US government cloud are operated by Microsoft. In China, Microsoft Entra ID is operated through a partnership with [21Vianet](/microsoft-365/admin/services-in-china/services-in-china?redirectSourcePath=%252fen-us%252farticle%252fLearn-about-Office-365-operated-by-21Vianet-a8ab5061-3346-4da0-bb7c-5260822b53ae&view=o365-21vianet&viewFallbackFrom=o365-worldwide&preserve-view=true).
 
 Learn more:
 
@@ -107,6 +108,17 @@ Learn more: [Microsoft Entra product overview](https://www.microsoft.com/cloud-p
 |Microsoft Entra ID Protection|Microsoft Entra ID Protection uses real-time user log-in data, with multiple signals from company and industry sources, to feed its machine-learning systems that detect anomalous logins. Personal data is scrubbed from real-time log-in data before it's passed to the machine learning system. The remaining log-in data identifies potentially risky usernames and logins. After analysis, the data goes to Microsoft reporting systems. Risky logins and usernames appear in reporting for Administrators.|In geo location|
 |Managed identities for Azure resources| Managed identities for Azure resources with managed identities systems can authenticate to Azure services, without storing credentials. Rather than use username and password, managed identities authenticate to Azure services with certificates. The service writes certificates it issues in Azure Cosmos DB in the East US region, which fail over to another region, as needed. Azure Cosmos DB geo-redundancy occurs by global data replication. Database replication puts a read-only copy in each region that Microsoft Entra managed identities runs. To learn more, see [Azure services that can use managed identities to access other services](~/identity/managed-identities-azure-resources/managed-identities-status.md). Microsoft isolates each Azure Cosmos DB instance in a Microsoft Entra cloud solution model. </br> The resource provider, such as the virtual machine (VM) host, stores the certificate for authentication, and identity flows, with other Azure services. The service stores its master key to access Azure Cosmos DB in a datacenter secrets management service. Azure Key Vault stores the master encryption keys.|In geo location|
 
+## Go-Local add-on
+
+The Go-Local add-on is a feature in Microsoft Entra External ID that enables certain customers to configure some services to store their data at rest in a selected geographic location, such as a country or region. This capability is a way of fulfilling corporate policies and compliance requirements. You select the country or region for data storage when you [create an external tenant](../external-id/customers/how-to-create-external-tenant-portal.md).
+
+The Go-Local add-on is a paid add-on, but it's optional. If you choose to use it, you'll incur an extra charge in addition to your Microsoft Entra External ID Basic. For more information, see [Microsoft Entra External ID pricing](https://www.microsoft.com/en-us/security/pricing/microsoft-entra-external-id/).
+
+The following countries/regions currently have the local data residence option:
+
+- Australia
+- Japan
+
 ## Related resources
 
 For more information on data residency in Microsoft Cloud offerings, see the following articles:
@@ -118,6 +130,5 @@ For more information on data residency in Microsoft Cloud offerings, see the fol
 
 ## Next steps
 
-- [Microsoft Entra ID and data residency](data-residency.md) (You're here)
 - [Data operational considerations](data-operational-considerations.md)
 - [Data protection considerations](data-protection-considerations.md)

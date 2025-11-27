@@ -1,10 +1,10 @@
 ---
 title: Create a custom authentication extension for attribute collection start and submit events (preview)
 description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.
-author: msmimart
-manager: CelesteDG
-ms.author: mimart
-ms.date: 04/28/2025
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
+ms.date: 09/16/2025
 ms.service: identity-platform
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
@@ -19,18 +19,7 @@ ms.custom: sfi-image-nochange
 This article describes how to extend the user sign-up experience in Microsoft Entra External ID for customers. In customer sign-up user flows, event listeners can be used to extend the attribute collection process before attribute collection and at the time of attribute submission:
 
 - The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error.
-
-    > [!TIP]
-    > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
-    > 
-    > To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
-    
 - The **OnAttributeCollectionSubmit** event occurs after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries.
-
-    > [!TIP]
-    > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
-    > 
-    > To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
     
 In addition to creating a custom authentication extension for the attribute collection start and submit events, you need to create a REST API that defines the workflow actions to take for each event. You can use any programming language, framework, and hosting environment to create and host your REST API. This article demonstrates a quick way to get started using a C# Azure Function. With Azure Functions, you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 

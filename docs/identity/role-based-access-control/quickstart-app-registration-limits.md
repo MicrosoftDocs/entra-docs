@@ -15,7 +15,7 @@ ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done,
 
 In this quick start guide, you create a custom role with permission to create an unlimited number of app registrations, and then assign that role to a user. The assigned user can then use the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API to create application registrations. Unlike the built-in Application Developer role, this custom role grants the ability to create an unlimited number of application registrations. The Application Developer role grants the ability, but the total number of created objects is limited to 250 to prevent hitting [the directory-wide object quota](~/identity/users/directory-service-limits-restrictions.md). The least privileged role required to create and assign Microsoft Entra custom roles is the Privileged Role Administrator.
 
-If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 

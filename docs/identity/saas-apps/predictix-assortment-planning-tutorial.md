@@ -25,7 +25,7 @@ This integration provides these benefits:
 
 To learn more about SaaS app integration with Microsoft Entra ID, see [Single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
-If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you start.
+If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you start.
 
 ## Prerequisites
 

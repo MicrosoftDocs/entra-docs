@@ -8,7 +8,7 @@ ms.date: 05/30/2025
 ms.reviewer: alamaral
 ms.service: identity-platform
 ms.topic: how-to
-ms.custom: curation-claims, sfi-ropc-nochange
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to customize the claims issued in the JSON web tokens so that I can tailor the information about the user that is included in the token for my enterprise application.
 ---
 
@@ -90,6 +90,8 @@ You can use the following functions to transform claims.
 If you need other transformations, submit your idea in the [feedback forum in Microsoft Entra ID](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789) under the *SaaS application* category.
 
 ## Regex-based claims transformation
+
+You can use regular expressions to transform claims. A maximum of 20 total regex replacements can be made when using regex-based claims transformations.
 
 The following image shows an example of the first level of transformation:
 

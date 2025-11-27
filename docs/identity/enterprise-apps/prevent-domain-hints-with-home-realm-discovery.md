@@ -26,7 +26,7 @@ This policy is needed in situations where admins can't control or update domain 
 
 To disable auto-acceleration sign-in for an application in Microsoft Entra ID, you need:
 
-- An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 :::zone pivot="ms-powershell"

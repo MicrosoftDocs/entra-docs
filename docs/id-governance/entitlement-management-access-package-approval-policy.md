@@ -12,7 +12,7 @@ ms.author: owinfrey
 ---
 # Change approval and requestor information settings for an access package in entitlement management
 
-Each access package must have one or more access package assignment policies, before a user can be assigned access. When an access package is created in the Microsoft Entra admin center, the Microsoft Entra admin center automatically creates the first access package assignment policy for that access package. The policy determines who can request access, and who if anyone must approve access.
+Each access package must have one or more access package assignment policies, before an identity can be assigned access. When an access package is created in the Microsoft Entra admin center, the Microsoft Entra admin center automatically creates the first access package assignment policy for that access package. The policy determines who can request access, and who if anyone must approve access.
 
 As an access package manager, you can change the approval and requestor information settings for an access package at any time by editing an existing policy or adding a new extra policy for requesting access.
 
@@ -20,12 +20,12 @@ This article describes how to change the approval and requestor information sett
 
 ## Approval
 
-In the Approval section, you specify whether an approval is required when users request this access package. The approval settings work in the following way:
+In the Approval section, you specify whether an approval is required when identities request this access package. The approval settings work in the following way:
 
 - Only one of the selected approvers or fallback approvers needs to approve a request for single-stage approval. 
 - Only one of the selected approvers from each stage needs to approve a request for multi-stage approval for the request to progress to the next stage.
-- If one of the selected approved in a stage denies a request before another approver in that stage approves it, or if no one approves, the request terminates and the user doesn't receive access.
-- The approver can be a specified user or member of a group, the requestor's Manager, Internal sponsor, or External sponsor depending on who the policy is governing access.
+- If one of the selected approved in a stage denies a request before another approver in that stage approves it, or if no one approves, the request terminates and the identity doesn't receive access.
+- The approver can be a specified identity or member of a group, the requestor's Manager, Internal sponsor, or External sponsor depending on who the policy is governing access.
 
 For a demonstration of how to add approvers to a request policy, watch the following video:
 
@@ -56,7 +56,7 @@ Follow these steps to specify the approval settings for requests for the access 
 
 1. Go to the **Request** tab.
 
-1. To require approval for requests from the selected users, set the **Require approval** toggle to **Yes**. Or, to have requests automatically approved, set the toggle to **No**. If the policy allows external users from outside your organization to request access, you should require approval, so there's oversight on who is being added to your organization's directory.
+1. To set who can request access for identities, choose either Self, Admin, or Manager.
 
 1. To require users to provide a justification to request the access package, set the **Require requestor justification** toggle to **Yes**.
     
@@ -153,11 +153,9 @@ For example, if you listed Alice and Bob as the first stage approver(s), list Ca
 
     Requests can only be forwarded to alternate approvers a day after the request has been initiated. To use alternate approval, the request time-out needs to be at least four days.
 
-## Enable requests
+## Who can request access
 
-1. If you want the access package to be made immediately available for users in the request policy to request, move the Enable toggle to **Yes**.
-
-    You can always enable it in the future after you have finished creating the access package.
+1. After deciding who the access package is for you can designate who can request access for the access package. You can choose Self, Admin, or Manager as those who can request access.
 
     If you selected **None (administrator direct assignments only)** and you set enable to **No**, then administrators can't directly assign this access package.
 
@@ -188,7 +186,7 @@ In order to make sure users are getting access to the right access packages, you
  
     ![Access package - Policy- Select Edit and localize multiple choice answer format](./media/entitlement-management-access-package-approval-policy/answer-format-view-edit.png)
  
-1. If selecting Multiple Choice, select on the **Edit and localize** button to configure the answer options.
+1. If selecting Multiple Choice, select the **Edit and localize** button to configure the answer options.
     1. After selecting Edit and localize the **View/edit question** pane opens.
     1. Type in the response options you wish to give the requestor when answering the question in the **Answer values** boxes.
     1. Type in as many responses as you need.

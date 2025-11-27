@@ -1,6 +1,6 @@
 ---
 title: View reports & logs in entitlement management
-description: Learn how to view the user assignments report and audit logs in entitlement management.
+description: Learn how to view the identity assignments report and audit logs in entitlement management.
 author: owinfreyatl
 manager: dougeby
 editor: jocastel-MSFT
@@ -11,23 +11,23 @@ ms.date: 03/10/2025
 ms.author: owinfrey
 ms.reviewer: jocastel
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-#Customer intent: As an administrator, I want view resources a user has access to and view request logs for auditing purposes.
+#Customer intent: As an administrator, I want view resources an identity has access to and view request logs for auditing purposes.
 ---
 
 # View reports and logs in entitlement management
 
-The entitlement management reports and Microsoft Entra audit log provide more details about what resources users have access to. As an administrator, you can view the access packages and resource assignments for a user and view request logs for auditing purposes or  determining the status of a user's request. This article describes how to use the entitlement management reports and Microsoft Entra audit logs.
+The entitlement management reports and Microsoft Entra audit log provide more details about what resources identities have access to. As an administrator, you can view the access packages and resource assignments for an identity and view request logs for auditing purposes or determining the status of an identities request. This article describes how to use the entitlement management reports and Microsoft Entra audit logs.
 
-This article outlines how to view reports on current objects in entitlement management. To retain and report on historical Microsoft Entra objects, such as users or application role assignments, see [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md).
+This article outlines how to view reports on current objects in entitlement management. To retain and report on historical Microsoft Entra objects, such as identities or application role assignments, see [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md).
 
-Watch the following video to learn how to view what resources users have access to in entitlement management:
+Watch the following video to learn how to view what resources identities have access to in entitlement management:
 
 >[!VIDEO https://www.youtube.com/embed/omtNJ7ySjS0]
 
-## View users assigned to an access package
+## View identities assigned to an access package
 
 
-This report enables you to list all of the users who are assigned to an access package.
+This report enables you to list all of the identities who are assigned to an access package.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -53,7 +53,7 @@ This report enables you to list all of the access packages a user can request an
 
 1. Find the user in the list and then select **Select**.
 
-    The **Can request** tab displays a list of the access packages the user can request. This list is determined by the [request policies](entitlement-management-access-package-request-policy.md#for-users-in-your-directory) defined for the access packages. 
+    The **Can request** tab displays a list of the access packages the user can request. This list is determined by the [request policies](entitlement-management-access-package-request-policy.md#for-users-service-principals-and-agent-identities-in-your-directory) defined for the access packages. 
 
     ![Access packages for a user](./media/entitlement-management-reports/access-packages-report.png)
 

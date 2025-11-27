@@ -13,16 +13,18 @@ ms.custom: sfi-image-nochange
 ---
 # View, add, and remove assignments for an access package in entitlement management
 
-In entitlement management, you can see who is assigned to access packages, their policy, status, and user lifecycle (preview). If an access package has an appropriate policy, you can also directly assign user to an access package. This article describes how to view, add, and remove assignments for access packages.
+In entitlement management, you can see who is assigned to access packages, their policy, status, and identity lifecycle (preview). If an access package has an appropriate policy, you can also directly assign identities to an access package. This article describes how to view, add, and remove assignments for access packages.
 
 ## Prerequisites
 
-To use entitlement management and assign users to access packages, you must have one of the following licenses:
+To use entitlement management to assign identities to access packages, you must have one of the following licenses:
 
 
 - Microsoft Entra ID P2
 - Enterprise Mobility + Security (EMS) E5 license
 - Microsoft Entra ID Governance subscription
+
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## View who has an assignment
 
@@ -82,12 +84,12 @@ $sp | Export-Csv -Encoding UTF8 -NoTypeInformation -Path ".\assignments.csv"
 ```
 
 
-## Directly assign a user 
+## Directly assign an identity 
 
-In some cases, you might want to directly assign specific users to an access package so that users don't have to go through the process of requesting the access package. To directly assign users, the access package must have a policy that allows administrator direct assignments.
+In some cases, you might want to directly assign specific identities to an access package so that identities don't have to go through the process of requesting the access package. To directly assign identities, the access package must have a policy that allows administrator direct assignments.
 
 > [!NOTE]
-> When assigning users to an access package, administrators will need to verify that the users are eligible for that access package based on the existing policy requirements. Otherwise, the users won't successfully be assigned to the access package.
+> When assigning identities to an access package, administrators will need to verify that the identities are eligible for that access package based on the existing policy requirements. Otherwise, the identities won't successfully be assigned to the access package.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -100,7 +102,7 @@ In some cases, you might want to directly assign specific users to an access pac
 
 1. Select **New assignment** to open Add user to access package.
 
-    ![Assignments - Add user to access package](./media/entitlement-management-access-package-assignments/assignments-add-user.png)
+    ![Screenshot of adding identities to an access package.](./media/entitlement-management-access-package-assignments/assignments-add-user.png)
 
 1. In the **Select policy** list, select a policy that the users' future requests and lifecycle will be governed and tracked by. If you want the selected users to have different policy settings, you can select **Create new policy** to add a new policy.
 
@@ -119,16 +121,16 @@ In some cases, you might want to directly assign specific users to an access pac
 
     ![Assignments - questions pane](./media/entitlement-management-access-package-assignments/assignments-questions-pane.png)
 
-1. Select **Add** to directly assign the selected users to the access package.
+1. Select **Add** to directly assign the selected identities to the access package.
 
-    After a few moments, select **Refresh** to see the users in the Assignments list.
+    After a few moments, select **Refresh** to see the identities in the Assignments list.
     
 > [!NOTE]
-> Access package assignment managers will no longer be able to bypass approval settings if the policy requires approval. This means users can't be directly assigned to the package without necessary approval(s) from the designated approver(s). In the case that you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.
+> Access package assignment managers will no longer be able to bypass approval settings if the policy requires approval. This means identities can't be directly assigned to the package without necessary approval(s) from the designated approver(s). In the case that you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to identities who need access.
 
-## Directly assign any user (Preview)
+## Directly assign any identity (Preview)
 
-Entitlement management also allows you to directly assign external users to an access package to make collaborating with partners easier. To do this, the access package must have a policy that allows users not yet in your directory to request access.
+Entitlement management also allows you to directly assign external identities to an access package to make collaborating with partners easier. To do this, the access package must have a policy that allows identities not yet in your directory to request access.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -139,27 +141,30 @@ Entitlement management also allows you to directly assign external users to an a
 
 1. In the left menu, select **Assignments**.
 
-1. Select **New assignment** to open **Add user to access package**.
+1. Select **New assignment** to open **Assign access package to identities**.
 
 1. In the **Select policy** list, select a policy that allows that is set to **For users not in your directory**
 
-1. Select **Any user**. You're able to specify which users you want to assign to this access package.
+1. Select **External user (Preview)**. You're able to specify which users you want to assign to this access package.
     ![Assignments - Add any user to access package](./media/entitlement-management-access-package-assignments/assignments-add-any-user.png)
 
-1. Enter the user’s **Name** (optional) and the user’s **Email address** (required).
+1. Enter the identity **Name** (optional) and the identity **Email address** (required).
 
     > [!NOTE]
-    > - The user you want to add must be within the scope of the policy. For example, if your policy is set to **Specific connected organizations**, the user’s email address must be from the domain(s) of the selected organization(s). If the user you are trying to add has an email address of jen@*foo.com* but the selected organization’s domain is *bar.com*, you won't be able to add that user to the access package.
-    > - Similarly, if you set your policy to include **All configured connected organizations**, the user’s email address must be from one of your configured connected organizations. Otherwise, the user won't be added to the access package.
-    > - If you wish to add any user to the access package, you'll need to ensure that you select **All users (All connected organizations + any external user)** when configuring your policy.
+    > - The identity you want to add must be within the scope of the policy. For example, if your policy is set to **Specific connected organizations**, the identity email address must be from the domain(s) of the selected organization(s). If the identity you are trying to add has an email address of jen@*foo.com* but the selected organization’s domain is *bar.com*, you won't be able to add that identity to the access package.
+    > - Similarly, if you set your policy to include **All configured connected organizations**, the identity email address must be from one of your configured connected organizations. Otherwise, the identity won't be added to the access package.
+    > - If you wish to add any identity to the access package, you'll need to ensure that you select **All users (All connected organizations + any external user)** when configuring your policy.
 
-1. Set the date and time you want the selected users' assignment to start and end. If an end date isn't provided, the policy's lifecycle settings are used.
-1. Select **Add** to directly assign the selected users to the access package.
-1. After a few moments, select **Refresh** to see the users in the Assignments list.
+1. Set the date and time you want the selected identity's assignment to start and end. If an end date isn't provided, the policy's lifecycle settings are used.
+1. Select **Add** to directly assign the selected identities to the access package.
+1. After a few moments, select **Refresh** to see the identities in the Assignments list.
 
-## Directly assigning users programmatically
-### Assign a user to an access package with Microsoft Graph
-You can also directly assign a user to an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminAdd`, and the `assignment` property is a structure that contains the `targetId` of the user being assigned.
+
+
+## Directly assigning identities programmatically
+
+### Assign an identity to an access package with Microsoft Graph
+You can also directly assign identities to an access package using Microsoft Graph. An identity in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminAdd`, and the `assignment` property is a structure that contains the `targetId` of the user being assigned.
 
 ### Assign a user to an access package with PowerShell
 

@@ -4,7 +4,7 @@ description: Learn about the best practices and general guidance for protecting 
 author: Dickson-Mwendia
 manager: dougeby
 ms.author: dmwendia
-ms.custom: template-concept
+ms.custom:
 ms.date: 02/14/2025
 ms.reviewer: akgoel
 ms.service: identity-platform

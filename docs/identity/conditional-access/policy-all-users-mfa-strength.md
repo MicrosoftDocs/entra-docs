@@ -83,3 +83,4 @@ In the previous example policy, an organization might choose to not require mult
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
 - [Windows subscription activation](/windows/deployment/windows-subscription-activation#adding-conditional-access-policy)
+- [Configure cross-tenant access settings](/entra/external-id/cross-tenant-access-settings-b2b-collaboration#to-change-inbound-trust-settings-for-mfa-and-device-claims)

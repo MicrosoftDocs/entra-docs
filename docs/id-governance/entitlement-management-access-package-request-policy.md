@@ -13,38 +13,38 @@ ms.custom: sfi-image-nochange
 ---
 # Change request settings for an access package in entitlement management
 
-As an access package manager, you can change the users who can request an access package at any time by editing a policy for access package assignment requests, or adding a new policy to the access package. This article describes how to change the request settings for an existing access package assignment policy.
+As an access package manager, you can change the identities who can request an access package at any time by editing a policy for access package assignment requests, or adding a new policy to the access package. This article describes how to change the request settings for an existing access package assignment policy.
 
 ## Choose between one or multiple policies
 
 The way you specify who can request an access package is with a policy. Before creating a new policy or editing an existing policy in an access package, you need to determine how many policies the access package needs. 
 
-When you create an access package, you can specify the request, approval and lifecycle settings, which are stored on the first policy of the access package. Most access packages have a single policy for users to request access, but a single access package can have multiple policies. You would create multiple policies for an access package if you want to allow different sets of users to be granted assignments with different request and approval settings.
+When you create an access package, you can specify the request, approval and lifecycle settings, which are stored on the first policy of the access package. Most access packages have a single policy for identities to request access, but a single access package can have multiple policies. You would create multiple policies for an access package if you want to allow different sets of identities to be granted assignments with different request and approval settings.
 
-For example, a single policy can't be used to assign internal and external users to the same access package. However, you can create two policies in the same access package, one for internal users and one for external users. If there are multiple policies that apply to a user to request, they're prompted at the time of their request to select the policy they would like to be assigned to. The following diagram shows an access package with two policies.
+For example, a single policy can't be used to assign internal and external identities to the same access package. However, you can create two policies in the same access package, one for internal identities and one for external identities. If there are multiple policies that apply to a user to request, they're prompted at the time of their request to select the policy they would like to be assigned to. The following diagram shows an access package with two policies.
 
 ![Diagram that illustrates multiple policies, along with multiple resource roles, can be contained within an access package.](./media/entitlement-management-access-package-request-policy/access-package-policy.png)
 
-In addition to policies for users to request access, you can also have policies for [automatic assignment](entitlement-management-access-package-auto-assignment-policy.md), and policies for direct assignment by administrators or catalog owners.
+In addition to policies for identities to request access, you can also have policies for [automatic assignment](entitlement-management-access-package-auto-assignment-policy.md), and policies for direct assignment by administrators or catalog owners.
 
 ### How many policies will I need?
 
 | Scenario | Number of policies |
 | --- | --- |
-| I want all users in my directory to have the same request and approval settings for an access package | One |
-| I want all users in certain connected organizations to be able to request an access package | One |
-| I want to allow users in my directory and also users outside my directory to request an access package | Two |
-| I want to specify different approval settings for some users | One for each group of users |
-| I want some users access package assignments to expire while other users can extend their access | One for each group of users |
-| I want some users to request access and other users to be assigned access by an administrator | Two |
-| I want some users in my organization to receive access automatically, other users in my organization to be able to request, and other users to be assigned access by an administrator | Three |
+| I want all identities in my directory to have the same request and approval settings for an access package | One |
+| I want all identities in certain connected organizations to be able to request an access package | One |
+| I want to allow identities in my directory and also identities outside my directory to request an access package | Two |
+| I want to specify different approval settings for some identities | One for each group of identities |
+| I want some identities access package assignments to expire while other identities can extend their access | One for each group of identities |
+| I want some identities to request access and other identities to be assigned access by an administrator | Two |
+| I want some identities in my organization to receive access automatically, other identities in my organization to be able to request, and other identities to be assigned access by an administrator | Three |
 
 For information about the priority logic that is used when multiple policies apply, see [Multiple policies](entitlement-management-troubleshoot.md#multiple-policies).
 
 ## Open an existing access package and add a new policy with different request settings
 
 
-If you have a set of users that should have different request and approval settings, you'll likely need to create a new policy. Follow these steps to start adding a new policy to an existing access package:
+If you have a set of identities that should have different request and approval settings, you'll likely need to create a new policy. Follow these steps to start adding a new policy to an existing access package:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -62,15 +62,15 @@ If you have a set of users that should have different request and approval setti
 1. Select **Next** to open the **Requests** tab.
 
 1. Change the **Users who can request access** setting. Use the steps in the following sections to change the setting to one of the following options: 
-    - [For users in your directory](#for-users-in-your-directory) 
+    - [For users, service principals, and agent identities in your directory](#for-users-service-principals-and-agent-identities-in-your-directory) 
     - [For users not in your directory](#for-users-not-in-your-directory)
     - [None (administrator direct assignments only)](#none-administrator-direct-assignments-only)
 
-## For users in your directory
+## For users, service principals, and agent identities in your directory
 
-Follow these steps if you want to allow users in your directory to be able to request this access package. When defining the request policy, you can specify individual users, or more commonly groups of users. For example, your organization could already have a group such as **All employees**. If that group is added in the policy for users who can request access, then any member of that group can then request access.
+Follow these steps if you want to allow identities in your directory to be able to request this access package. When defining the request policy, you can specify individual identities, or more commonly groups of identities. For example, your organization could already have a group such as **All employees**. If that group is added in the policy for identities who can request access, then any member of that group can then request access.
 
-1. In the **Users who can request access** section, select **For users in your directory**.
+1. In the **Users who can request access** section, select **For users, service principals, and agent identities in your directory**.
 
     When you select this option, new options appear to further refine who in your directory can request this access package.
 
@@ -83,8 +83,12 @@ Follow these steps if you want to allow users in your directory to be able to re
     | **Specific users and groups** | Choose this option if you want only the users and groups in your directory that you specify to be able to request this access package. |
     | **All members (excluding guests)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
     | **All users (including guests)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
+    | **All Service principals (preview)** | Choose this option if you want all service principals in your directory to be able to request this access package. |
+    | **All agents (preview)** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
 
     Guest users refer to external users that have been invited into your directory with [Microsoft Entra B2B](../external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](../fundamentals/users-default-permissions.md).
+
+    The **All Service principals** and **All agents** preview require Microsoft Entra Agent ID. For more information, see [Governing agent identities (preview)](agent-id-governance-overview.md).
 
 1. If you selected **Specific users and groups**, select **Add users and groups**.
 
@@ -96,14 +100,14 @@ Follow these steps if you want to allow users in your directory to be able to re
 
 1. If you want to require approval, use the steps in [Change approval settings for an access package in entitlement management](entitlement-management-access-package-approval-policy.md) to configure approval settings.
 
-1. Go to the [Enable requests](#enable-requests) section.
+1. Go to the [Who can request access](#who-can-request-access) section.
  
 ## For users not in your directory
 
  **Users not in your directory** refers to users who are in another Microsoft Entra directory or domain. These users might not have yet been invited into your directory. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](../external-id/external-collaboration-settings-configure.md).
 
 > [!NOTE]
-> A guest user account will be created for a user not yet in your directory whose request is approved or auto-approved. The guest will be invited, but will not receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. By default, later when that guest user no longer has any access package assignments, because their last assignment has expired or been cancelled, that guest user account will be blocked from sign in and subsequently deleted. If you want to have guest users remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](../external-id/user-properties.md).
+> A guest user account will be created for a user not yet in your directory whose request is approved or auto-approved. The guest will be invited, but will not receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. By default, later when that guest user no longer has any access package assignments, because their last assignment has expired or been canceled, that guest user account will be blocked from sign in and subsequently deleted. If you want to have guest users remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](../external-id/user-properties.md).
 
 Follow these steps if you want to allow users not in your directory to request this access package:
 
@@ -111,9 +115,9 @@ Follow these steps if you want to allow users not in your directory to request t
 
     When you select this option, new options appear.
 
-    ![Access package - Requests - For users not in your directory](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
+    ![Screenshot of access package selection for users not in your directory.](./media/entitlement-management-access-package-request-policy/for-users-not-in-your-directory.png)
 
-1. Select whether the users who can request access are required to be affiliated with an existing connected organization, or can be anyone on the Internet. A connected organization is one that you have a pre-existing relationship with, which might have an external Microsoft Entra directory or another identity provider. Select one of the following options:
+1. Select whether the users who can request access are required to be affiliated with an existing connected organization, or can be anyone on the Internet. A connected organization is one that you have a preexisting relationship with, which might have an external Microsoft Entra directory or another identity provider. Select one of the following options:
 
     |  | Description |
     | --- | --- |
@@ -137,7 +141,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
 1. Next, use the steps in [Change approval settings for an access package in entitlement management](entitlement-management-access-package-approval-policy.md) to configure approval settings to specify who should approve requests from users not in your organization.
  
-1. Go to the [Enable requests](#enable-requests) section.
+1. Go to the [Who can request access](#who-can-request-access) section.
 
 ## None (administrator direct assignments only)
 
@@ -145,11 +149,11 @@ Follow these steps if you want to bypass access requests and allow administrator
 
 1. In the **Users who can request access** section, select **None (administrator direct assignments only)**.
 
-    ![Access package - Requests - None administrator direct assignments only](./media/entitlement-management-access-package-request-policy/none-admin-direct-assignments-only.png)
+    ![Screenshot of an access package for the selection "None administrator direct assignments only".](./media/entitlement-management-access-package-request-policy/none-admin-direct-assignments-only.png)
 
     After you create the access package, you can directly assign specific internal and external users to the access package. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md).
 
-1. Skip to the [Enable requests](#enable-requests) section.
+1. Skip to the [Who can request access](#who-can-request-access) section.
 
 > [!NOTE]
 > When assigning users to an access package, administrators will need to verify that the users are eligible for that access package based on the existing policy requirements. Otherwise, the users won't successfully be assigned to the access package. If the access package contains a policy that requires user requests to be approved, users can't be directly assigned to the package without necessary approval(s) from the designated approver(s).
@@ -180,17 +184,20 @@ To change the request and approval settings for an access package, you need to o
 
 1. Use the steps in the previous sections to change the request settings as needed.
 
-1. Go to the [Enable requests](#enable-requests) section.
+1. Go to the [Who can request access](#who-can-request-access) section.
 
-## Enable requests
+## Who can request access
 
-1. If you want the access package to be made immediately available for users in the request policy to request, move the Enable toggle to **Yes**.
+> [!NOTE]
+> Previously, a setting called "*Enable new requests and assignments*" controlled self-service access requests. This capability is now more accurately reflected by the "*Self*" option.
+
+1. After choosing who can get access and the scope you are able to specify who can request access to the access package. Here you can grant Self, Admin, or Manager the ability to request access to the access package.
 
     You can always enable it in the future after you have finished creating the access package.
 
-    If you selected **None (administrator direct assignments only)** and you set enable to **No**, then administrators can't directly assign this access package.
+    If you selected **None (administrator direct assignments only)** then the who can request access section boxes are not selectable.
 
-    ![Access package - Policy- Enable policy setting](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
+    ![Screenshot of access package policy who can request access.](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
 1. Select **Next**.
 
@@ -255,11 +262,11 @@ $params = @{
 New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
 ```
 
-## Prevent requests from users with incompatible access
+## Prevent requests from identities with incompatible access
 
-In addition to the policy checks on who can request, you might wish to further restrict access, in order to avoid a user who already has some access - via a group or another access package - from obtaining excessive access.
+In addition to the policy checks on who can request, you might wish to further restrict access, in order to avoid an identity who already has some access - via a group or another access package - from obtaining excessive access.
 
-If you want to configure that a user can't request an access package, if they already have an assignment to another access package, or are a member of a group, use the steps at [Configure separation of duties checks for an access package](entitlement-management-access-package-incompatible.md).
+If you want to configure that an identity can't request an access package, if they already have an assignment to another access package, or are a member of a group, use the steps at [Configure separation of duties checks for an access package](entitlement-management-access-package-incompatible.md).
 
 ## Next steps
 

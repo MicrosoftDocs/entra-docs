@@ -28,7 +28,7 @@ Currently, restoring permissions is only possible through Microsoft Graph PowerS
 
 To restore previously revoked permissions for an application, you need:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, Application Administrator.
 - A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
 

@@ -2,7 +2,7 @@
 title: Single-page app sign-in & sign-out code
 description: Learn how to build a single-page application (sign-in)
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.custom: 
 ms.date: 05/12/2025

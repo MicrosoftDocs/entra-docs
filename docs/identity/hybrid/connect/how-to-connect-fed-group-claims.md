@@ -162,8 +162,7 @@ Some applications require the group membership information to appear in the role
 Group filtering allows for fine control of the list of groups that's included as part of the group claim. When a filter is configured, only groups that match the filter will be included in the group's claim that's sent to that application. The filter will be applied against all groups regardless of the group hierarchy.
 
 > [!NOTE]
-> Group filtering applies to tokens emitted for apps where group claims and filtering was configured in the **Enterprise apps** blade in the portal.  
-> Group filtering does not apply to Microsoft Entra roles.
+> Group filtering applies to tokens emitted for apps where group claims and filtering was configured in the **Enterprise apps** blade in the portal. Group filtering does not apply to Microsoft Entra roles.
 
 You can configure filters to be applied to the group's display name or `SAMAccountName` attribute. The following filtering operations are supported: 
 
@@ -172,6 +171,8 @@ You can configure filters to be applied to the group's display name or `SAMAccou
  - **Contains**: Matches any location in the selected attribute. 
 
  ![Screenshot that shows filtering options.](media/how-to-connect-fed-group-claims/group-filter-1.png)
+
+**Group Filtering Limitations**: Microsoft Entra ID supports group filtering only if a user belongs to 1,000 or fewer groups (including direct and transitive memberships). If this limit is exceeded, filtering won’t apply and an overage claim is sent instead.
 
 #### Group transformation
 Some applications might require the groups in a different format from how they're represented in Microsoft Entra ID. To support this requirement, you can apply a transformation to each group that will be emitted in the group claim. You achieve it by allowing the configuration of a regular expression (regex) and a replacement value on custom group claims. 

@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 05/07/2025
+ms.date: 09/16/2025
 ms.author: cmulligan
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
@@ -18,11 +18,6 @@ ms.custom: it-pro, sfi-image-nochange
 
 After creating a new external tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
 You can also create user flows programmatically using the Company Branding Graph API.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CompanyBranding)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Company branding” use case.
 
 ## Prerequisites
 
@@ -189,5 +184,6 @@ You can use the Microsoft Graph API to customize a few items programmatically. F
 
 ## Related content
 
-In this article we learned how to customize the look and feel of the customer sign-in and sign-up experience. To learn more about customizing the language of the tenant, see the [Language customization](how-to-customize-languages-customers.md) article.
-For an understanding of the differences in workforce tenant branding, see the article [How to customize branding for your workforce](~/fundamentals/how-to-customize-branding.md).
+- To learn more about customizing the language of the tenant, see [Language customization](how-to-customize-languages-customers.md).
+- For an understanding of the differences in workforce tenant branding, see the [How to customize branding for your workforce](~/fundamentals/how-to-customize-branding.md).
+- For information about how create unique authentication experiences for applications in your tenant, see [Customize the sign-in experience for your application with branding themes in external tenants](how-to-customize-branding-themes-apps.md).

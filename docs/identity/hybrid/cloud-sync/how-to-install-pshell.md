@@ -6,7 +6,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/18/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 
@@ -29,6 +29,9 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 <a name='install-the-azure-ad-connect-provisioning-agent-by-using-powershell-cmdlets-'></a>
 
 ## Install the Microsoft Entra provisioning agent by using PowerShell cmdlets 
+
+>[!NOTE]
+>By default, the Microsoft Entra provisioning agent is installed in the default Azure environment.
 
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
@@ -89,15 +92,6 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 
 ## Provisioning agent gMSA PowerShell cmdlets
 After you install the agent, you can apply more granular permissions to the gMSA. For information and step-by-step instructions on how to configure the permissions, see [Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md).
-
-## Installing against US government cloud
-By default, the Microsoft Entra provisioning agent installs against the default Azure cloud environment. If you're installing the agent for use in the US government cloud, do the following:
-
-- In step #8, add **ENVIRONMENTNAME=AzureUSGovernment** to the command line like the example.
-    ```
-    $installerProcess = Start-Process -FilePath "c:\temp\AADConnectProvisioningAgent.Installer.exe" -ArgumentList "/quiet ENVIRONMENTNAME=AzureUSGovernment" -NoNewWindow -PassThru 
-    $installerProcess.WaitForExit()
-   ```
 
 ## Next steps 
 

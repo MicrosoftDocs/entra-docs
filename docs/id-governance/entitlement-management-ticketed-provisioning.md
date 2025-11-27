@@ -28,7 +28,7 @@ In this tutorial, you'll learn:
 
 ## Prerequisites
 
-- A Microsoft Entra user account with an active Azure subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account with an active Azure subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following least privileged roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - A [ServiceNow instance](https://www.servicenow.com/) of Rome or higher
 - SSO integration with ServiceNow. If this isn't already configured, see:[Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow](~/identity/saas-apps/servicenow-tutorial.md) before continuing.

@@ -13,25 +13,27 @@ ms.date: 12/10/2024
 
 # What is the My Access portal?
 
-My Access is a web-based portal used by users to review or request access resources within Microsoft Entra, and by Administrators to configure this access. Depending on who is using the My Access portal, a different set of actions can be taken.
+My Access is a web-based portal used by users to review or request access to resources within Microsoft Entra, and by Administrators to configure this access. Depending on who is using the My Access portal, a different set of actions can be taken.
 
 Users access the My Access portal to:
 
-- Request access
-- Approve or deny access
+- Request access for themselves
+- Approve or deny access for themselves or direct reports
 - Review access for themselves
-- Review access for others
+- Review access for users
+- Manage and review access for agents managed
 
 Administrators, via the Microsoft Entra admin center, can configure:
 
-- Access packages that users can request
+- Access packages that users can request, or that can be assigned to agents
 - Access reviews for access packages
 - Access reviews for groups and applications
-- An overview page
+- The overview page
 
 ## License requirements
 
 [!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Overview page
 
@@ -62,7 +64,13 @@ For more information about self-reviews, see: [Review your access to resources i
 
 For more information about reviews for others, see: [Review access to groups & applications in access reviews](perform-access-review.md).
 
+## Manage agents
+
+In the My Access portal, you can view a list of agent identities that you own and sponsor. For more about managing and sponsoring agent identities, see: [Administrative relationships for agent identities (Owners, sponsors, and managers)](../agent-id/identity-platform/agent-owners-sponsors-managers.md).
+
+
+You're able to manage, approve, review, and enable the agent identities. For all agent identities you own or sponsor you're also able to see general information such as level of access, and agent identities activity. For more information on managing agent identities using the My Access portal, see: [Manage Agent (Preview)](../agent-id/identity-platform/manage-agent.md).
+
 ## Next step
 
-> [!div class="nextstepaction"]
-> [What are access reviews? - Microsoft Entra](access-reviews-overview.md)
+- [What are access reviews? - Microsoft Entra](access-reviews-overview.md)

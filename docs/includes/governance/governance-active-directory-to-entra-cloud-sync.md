@@ -1,9 +1,11 @@
 ---
-author: billmath
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
-ms.author: billmath
+ms.subservice: hybrid-cloud-sync
+ms.author: jomondi
 ms.custom: sfi-ga-nochange
 # Used by articles entra governance
 ---
@@ -51,15 +53,13 @@ If you're using the  [Basic AD and Azure environment](~/identity/hybrid/cloud-sy
 
 ## Configure Microsoft Entra Cloud Sync
 
-
 Use the following steps to configure and start the provisioning:
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
- 3. Select **New Configuration**
- 4. On the configuration screen, enter a **Notification email**, move the selector to **Enable** and select **Save**.
- 5. The configuration status should now be **Healthy**.
+ 3. Select **New configuration** > **AD to Microsoft Entra ID sync**.
+ 4. Choose the domain that you want to sync, and select **Create**.
 
-For more information on configuring Microsoft Entra Cloud Sync, see [Provision Active Directory to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
+For more information about how to configure Microsoft Entra Cloud Sync, see [Provision Active Directory to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
 
 ## Verify users are created and synchronization is occurring
 
@@ -68,7 +68,7 @@ You'll now verify that the users that you had in your on-premises directory that
 
  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
  2. Browse to **Entra ID** > **Users**.
- 3. Verify that you see the new users in our tenant
+ 3. Verify that you see the new users in your tenant
 
 ## Test signing in with one of your users
 

@@ -12,7 +12,7 @@ ms.author: martinco
 # Microsoft Entra Suite workshop delivery guide
 
 ## Overview
-The [Microsoft Entra Suite workshop](https://aka.ms/EntraSuiteWorkshop) helps customers to develop an actionable and orderly strategy for implementing the Microsoft Entra Suite. The workshop consists of five stages to help streamline all products and features in the suite. The first two stages are required to establish the correct foundation for deploying the products in the suite and should be completed before moving to the last three stages of the workshop. The following stages are available in the workshop:
+The [Microsoft Entra Suite workshop](https://aka.ms/EntraSuiteWorkshopdoc) helps customers to develop an actionable and orderly strategy for implementing the Microsoft Entra Suite. The workshop consists of five stages to help streamline all products and features in the suite. The first two stages are required to establish the correct foundation for deploying the products in the suite and should be completed before moving to the last three stages of the workshop. The following stages are available in the workshop:
 
 - Establish a baseline
 - Getting started
@@ -95,5 +95,6 @@ Upon completing this workshop, customers will:
 - [Learn about the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access](../global-secure-access/concept-clients.md)
 - [Learn about Microsoft Entra Private Access](../global-secure-access/concept-private-access.md)
 - [Learn about Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md)
+
 
 

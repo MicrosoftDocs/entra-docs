@@ -93,7 +93,7 @@ The table lists the deployment status for the NA region.
 The Global Secure Access service is accessed from the Global Secure Access client and is used for Microsoft Entra Internet Access (including Microsoft 365) and Microsoft Entra Private Access traffic. The Internet Protocol (IP) addresses are listed.
 
 ### FQDN and IP addresses where the Global Secure Access service receives traffic
-Add Anycast IP ranges for accessing the Global Secure Access service edge to your enterprise Access Control Lists (ACLs) and firewalls. When operating in a side-by-side model with other Security Service Edge (SSE) clients, add the Anycast IP ranges to these other clients.
+Add Anycast IP ranges for accessing the Global Secure Access service edge to your enterprise Access Control Lists (ACLs) and firewalls. When operating in a side-by-side model with other Security Service Edge (SSE) clients, add the Anycast IP ranges to these other clients. If you are using TLS inspection on your egress firewalls, exclude GSA traffic from TLS inspection.
  
 The Global Secure Access service receives traffic on these FQDNs and IP addresses:
 - `*.globalsecureaccess.microsoft.com`

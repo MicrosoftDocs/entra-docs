@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Add shared-device mode support to your Android application"
 description: In this tutorial, you learn how to set up an Android application to run in shared device mode.
-manager: CelesteDG
+manager: pmwongera
 author: henrymbuguakiarie
 ms.author: henrymbugua
 ms.date: 08/19/2024
 ms.reviewer: akgoel
-ms.service: msal
-ms.subservice: msal-android
+ms.service: identity-platform
+ms.subservice:
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 #Customer intent: As an Android developer, I want to learn how to enable shared-device mode for an Android app, so that I can configure Android devices to be shared by multiple employees and provide Microsoft Identity backed management of the device.

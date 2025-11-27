@@ -21,7 +21,7 @@ In this article,  you configure a federated authentication between Microsoft Ent
 ## Prerequisites
 
 To perform the configuration, you need the following resources:
-[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]. If you don't have one, you can create a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]. If you don't have one, you can create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A SharePoint 2013 farm or newer.
 
 This article uses the following values:

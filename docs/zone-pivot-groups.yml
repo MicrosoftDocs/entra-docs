@@ -181,7 +181,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: msgraph-powershell
-    title: Microsoft graph PowerShell
+    title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
 ## revoke permissions
@@ -381,3 +381,12 @@ groups:
     title: Virtual Machine
   - id: identity-extension-hybrid
     title: Arc-enabled Server
+# Owner: cmulligan
+- id: fraud-protection-integration
+  title: Fraud protection integration in external tenants
+  prompt: Choose an option
+  pivots:
+  - id: arkose
+    title: Arkose
+  - id: human
+    title: HUMAN    

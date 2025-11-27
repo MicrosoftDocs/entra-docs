@@ -24,7 +24,7 @@ In this article,  you learn how to integrate Zoho with Microsoft Entra ID. When 
 
 To configure Microsoft Entra integration with Zoho One, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Zoho single sign-on enabled subscription.
 
 ## Scenario description

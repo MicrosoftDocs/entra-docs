@@ -4,11 +4,11 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/21/2025
+ms.date: 10/27/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: calui, tilarso
+ms.reviewer: kimhana
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
 ---
@@ -23,12 +23,12 @@ For more information about enabling passkeys in Microsoft Authenticator, see [Ho
 For more information about passkey authentication, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
 > [!NOTE]
-> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We're investing in both synced and device-bound passkeys for work accounts.
+> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Support for synced passkeys is currently in preview. For more information, see [Passkeys (FIDO2) authentication method in Microsoft Entra ID](concept-authentication-passkeys-fido2.md).
 
 ## Requirements
 
 - Users must complete multifactor authentication (MFA) within the past five minutes before they can register a passkey (FIDO2). 
-- Users need a [FIDO2 security key eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
+- Users need a [passkey (FIDO2) eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
 - Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 Passkeys (FIDO2) are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
@@ -48,6 +48,9 @@ You can work with your security key vendor to determine the AAGUID of the passke
 ![Screenshot of how to view the AAGUID for a passkey.](media/how-to-enable-passkey-fido2/security-key-aaguid-details.png)
 
 ## Enable passkey (FIDO2) authentication method 
+
+>[!NOTE]
+>If you would like to configure different passkey (FIDO2) settings for different groups of users, see [How to enable passkey profiles (preview) in Microsoft Entra ID](how-to-authentication-passkey-profiles.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Policies**.

@@ -16,15 +16,17 @@ ai-usage: ai-assisted
 
 # Provision users from SAP human capital management (HCM) to Microsoft Entra ID
 
-This article guides system integration partners planning to provision users from SAP HCM to Microsoft Entra ID. If SAP HCM is integrated with SAP Identity Management (SAP IDM) and you’re planning a migration to Microsoft Entra ID Governance, this document also discusses the important architectural considerations and how Azure Logic Apps are used. 
+This article helps with planning to provision users from SAP HCM to Microsoft Entra ID, including architectural considerations for organizations [migrating from SAP IDM to Microsoft Entra](../../id-governance/scenarios/migrate-from-sap-idm.md).
 
-At a high level, this document describes three integration options: 
+At a high level, this document describes three integration options for SAP HCM, including SAP HCM for SAP S/4HANA On-Premise:
 
 - Option 1: CSV-file based inbound provisioning from SAP HCM
 - Option 2: SAP BAPI-based inbound provisioning using the Azure Logic Apps SAP connector
 - Option 3: SAP IDocs-based inbound provisioning using the Azure Logic Apps SAP connector
 
-If you wish to extend your current investment in SAP Enterprise Resource Planning (ERP) HCM, the integration options in this document are also relevant to SAP HCM for the SAP S/4HANA On-Premise offering known as "H4S4". 
+There's also a fourth option,
+
+ - Option 4: Organizations that use both SAP SuccessFactors and SAP HCM can also bring identities into Microsoft Entra ID, by using SAP Integration Suite to synchronize lists of workers between SAP HCM and SAP SuccessFactors. From there, you can bring identities for employees [from SuccessFactors into Microsoft Entra ID](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) or provision them [from SuccessFactors into on-premises Active Directory](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), by using Microsoft Entra ID connectors.
 
 ## Terminology
 
@@ -36,17 +38,8 @@ If you wish to extend your current investment in SAP Enterprise Resource Plannin
 | IDocs        | Intermediate Documents; standardized SAP format for exchanging business data between systems, consisting of control and data records for batch processing. |
 | RFC          | Remote Function Calls; SAP protocol for communication between SAP and external systems, supporting inbound and outbound function calls via RFC ports.  |
 | FM           | Function Modules; BAPI function modules configured in SAP HCM.  |
-| H4S4         | SAP HCM for SAP S/4HANA On-Premise; optimized SAP ERP HCM version for native S/4HANA platform deployment.  |
 
-## Understand the existing SAP HCM to SAP IDM integration
-
-### Architecture overview
-
-The data transfer from the SAP HCM system to SAP Identity Management takes place using SAP IDM Virtual Directory Server. The Virtual Directory Server exposes a Lightweight Directory Access Protocol (LDAP) interface towards the identity store, allowing the SAP HCM system to write to the identity store using the LDAP capabilities of the Application Server ABAP.
-
-Reference: [Integration with SAP HCM | SAP Help Portal](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/d376345fb4e94928a70036ddf91d690b/490d22699aff42519eb6b328c7f44e24.html)
-
-To enable data flow from SAP HCM to SAP IDM, SAP administrators need to perform steps documented in [Setting Up an SAP HCM System | SAP Help Portal](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/4773a9ae1296411a9d5c24873a8d418c/0c0075a4a025422587257d16b22461ea.html). 
+## Architecture overview
 
 ### SAP HCM Tables and Infotypes
 
@@ -68,32 +61,6 @@ SELECT DISTINCT p0.PERNR username, CASE WHEN (p0.STAT2 = 3) THEN 1 END statuskey
 FROM SAP_PA0000 p0 left join SAP_PA0002 p2 on p0.PERNR = p2.PERNR
 WHERE p0.STAT2 = 3 and p0.ENDDA > SYSDATE()
 ```
-
-
-### Scenarios Supported by SAP IDM 
-
-SAP IDM typically ingests more than just basic worker records from SAP HCM. The integration supports a broad range of employee-related data, including:
-
-- **Core identity attributes**, name, employee ID, employment status.
-- **Organizational data**, including cost center, business unit, and reporting structure.
-- **Personal data**, such as date of birth, nationality, and contact information.
-- **Communication and external identifiers**, such as email addresses and external system IDs.
-
-This scenario is achieved by reading from multiple SAP HCM infotypes (Example: 0000, 0001, 0002, 0006, 0105), which are logical groupings of related employee data. These are accessed through SAP function modules (FMs) or BAPIs that abstract the underlying table structures.
-
-### Key Aspects of SAP IDM Integration
-
-A notable architectural feature of SAP IDM is its use of a staging area—a conceptually distinct layer between the source system (SAP HCM) and the productive identity store. This staging area offers several advantages:
-
-- **Data validation and transformation**: Data is reviewed, enriched, or transformed before being committed to the identity store.
-- **Workflow integration**: Approval workflows are triggered based on staged data, allowing for human-in-the-loop validation.
-- **Schema flexibility**: Changes in the SAP HCM schema are accommodated by adjusting mappings in the staging area without altering the identity store schema.
-
-The staging area is equivalent to a "connector space" — a buffer zone where data is inspected and controlled before it becomes authoritative. 
-
-### Contrast with Microsoft Entra Provisioning Flow
-
-Currently, Microsoft Entra’s inbound provisioning flow doesn't include a native equivalent of this staging area. Data transformations and validations must be handled externally; typically in middleware (Example: Azure Logic Apps or PowerShell scripts) before invoking the Entra provisioning API. This architectural difference is incorporated in the following solution options.
 
 ## SAP HCM and Entra Inbound Provisioning options
 
@@ -126,7 +93,7 @@ This diagram illustrates the high-level data flow and configuration steps.
     - References: 
         - [Replicating employee data from SAP ERP HCM](https://help.sap.com/doc/2eff62546be748739ca05477c2ab7ba7/2505/en-US/SF_ERP_EC_EE_Data_HCI_en-US.pdf)
         - [2214465 - Integration Add-On 3.0 for SAP ERP HCM - SAP for Me](https://me.sap.com/notes/0002214465) (requires SAP support login) 
-        - Slide deck explaining integration between [SAP ERP HCM and SuccessFactors](https://s3-eu-west-1.amazonaws.com/static.wm3.se/sites/572/media/339260_Integration_between_SAP_ERP_HCM_and_SuccessFactors_BizX.pdf?1572267595)
+        - Slide deck explaining the integration between **SAP ERP HCM and SuccessFactors**, presented at the [SBN Conference 2019](https://sbn.no/2019_sbnconference). To download the presentation from the conference site, go to **Day 1 > Wed 13:30-14:10 > Integration between SAP ERP HCM and SuccessFactors Trygve Berg, Capgemini**.
 	> [!NOTE]
     > CSV Files can have delta (or incremental) data. 
 - **Step 2**: In Microsoft Entra, configure the API-driven provisioning app to receive employee data from SAP HCM.
@@ -140,7 +107,7 @@ This diagram illustrates the high-level data flow and configuration steps.
 
 
 ### Deployment variations
-If you don't have access to the SAP provided add-on integration module or don't plan to use SuccessFactors, even in this scenario, it’s still possible to use the CSV approach if your on-premises SAP ERP team can build a custom automation in SAP HCM to export CSV files regularly for both full sync and incremental sync. 
+If you don't have access to the SAP provided add-on integration module or don't plan to use SuccessFactors, even in this scenario, it’s still possible to use the CSV approach as you can build a custom automation in SAP HCM to export CSV files regularly for both full sync and incremental sync.
 
 ## Option 2: SAP BAPI-based inbound provisioning
 
@@ -152,7 +119,7 @@ This integration uses the [Azure Logic Apps SAP connector](/azure/logic-apps/con
 - [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
 - [SAP managed connector](/azure/logic-apps/connectors/sap) that's hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
 
-The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented in this article. For example, With the SAP built-in connector, on-premises connections don't require the on-premises data gateway and dedicated actions provide better experience for stateful BAPIs and RFC transactions. 
+The SAP "built-in connector" has certain advantages over the managed connector” for the reasons documented in this article. For example, With the SAP built-in connector, on-premises connections don't require the on-premises data gateway and dedicated actions provide better experience for stateful BAPIs and RFC transactions. 
 
 ### High level data flow and configuration steps
 
@@ -168,7 +135,7 @@ This diagram illustrates the high-level data flow and configuration steps for SA
  
 :::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/diagram-prereqs-deployment-components-sap-azure-logic-apps-built-in-connector.png" alt-text="Diagram of high-level data flow of deployment components for SAP BAPI-based inbound provisioning.":::
 
-- **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The RPY* and SWO* function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
+- **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The `RPY*` and `SWO*` function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
  
     - `RFC_READ_DATA`
     - `RFC_READ_TABLE`
@@ -260,7 +227,7 @@ This integration uses the Azure Logic Apps SAP Connector. Azure Logic Apps ships
 - [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
 - [SAP managed connector](/azure/logic-apps/connectors/sap), which is hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
 
-The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented [in this article](/azure/logic-apps/connectors/sap#connector-differences). For example, with the SAP built-in connector, on-premises connections don't require the on-premises data gateway, it supports IDoc deduplication and has better support for handling IDoc file formats in the trigger [when a message is received](/azure/logic-apps/connectors/built-in/reference/sap#when-a-message-is-received). 
+The SAP built-in connector has certain advantages over the managed connector for the reasons documented [in this article](/azure/logic-apps/connectors/sap#connector-differences). For example, with the SAP built-in connector, on-premises connections don't require the on-premises data gateway, it supports IDoc deduplication and has better support for handling IDoc file formats in the trigger [when a message is received](/azure/logic-apps/connectors/built-in/reference/sap#when-a-message-is-received). 
 
 
 ### High level data flow and configuration steps
@@ -298,7 +265,8 @@ Follow these steps to configure writeback:
 3. In this Logic Apps extension, call the `BAPI_USER_CHANGE` function to update the user’s email address and username.
 
 
-## Acknowledgements
+## Acknowledgments
+
 We thank the following partners for their help reviewing and contributing to this article:
 - [Kocho](https://kocho.co.uk/)
 - [iC Consult](https://ic-consult.com/en/)

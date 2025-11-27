@@ -95,6 +95,7 @@ Windows OOBE should allow the user to login using an external smart card reader 
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)
 - [Technical deep dive for Microsoft Entra CBA](concept-certificate-based-authentication-technical-deep-dive.md)
 - [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
 - [Microsoft Entra CBA on iOS devices](concept-certificate-based-authentication-mobile-ios.md)
 - [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
 - [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)

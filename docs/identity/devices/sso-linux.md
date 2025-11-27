@@ -29,7 +29,7 @@ The Teams web application and a new PWA (Progressive Web App) for Linux uses the
 ## Requirements
 
 The Microsoft single sign-on for Linux is supported with the following operating systems (physical or Hyper-V machine with x86/64 CPUs):  
- - Ubuntu Desktop 24.04, 22.04 or 20.04 LTS  
+- Ubuntu Desktop 24.04, 22.04 or 20.04 LTS  
  - RedHat Enterprise Linux 8  
  - RedHat Enterprise Linux 9
 
@@ -40,6 +40,9 @@ The Microsoft single sign-on for Linux is supported with the following operating
 This video demonstrates the sign-in experience on brokered flows on Linux
 
 ![Demo of the Linux Login component component](./media/sso-linux/linux-entra-login.gif)
+
+> [!NOTE]
+> The microsoft.identity.broker version 2.0.1 and less does not currently support [FIPs compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips"https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips")."  
 
 ## Deployment
 

@@ -24,7 +24,7 @@ This article uses the application named **Microsoft Entra SAML Toolkit** as an e
 
 To add an enterprise application to your external tenant, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator).
 
 ## Add an enterprise application

@@ -2,7 +2,7 @@
 title: Create a free Microsoft Entra developer tenant
 description: This article shows you how to create a developer account.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/13/2024

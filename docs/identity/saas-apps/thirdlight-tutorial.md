@@ -24,7 +24,7 @@ In this article,  you learn how to integrate ThirdLight with Microsoft Entra ID.
 
 To configure Microsoft Entra integration with ThirdLight, you need to have:
 
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A ThirdLight subscription that has single sign-on enabled.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).

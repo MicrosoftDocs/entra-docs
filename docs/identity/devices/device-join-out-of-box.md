@@ -1,11 +1,11 @@
 ---
-title: Join a new Windows 11 device with Microsoft Entra ID during the out of box experience
-description: How users can set up Microsoft Entra join during OOBE.
+title: Join Windows 11 Devices to Microsoft Entra ID During OOBE
+description: Discover how to set up Microsoft Entra join on a Windows 11 device during OOBE, ensuring seamless integration with your organization's directory.
 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 06/27/2025
+ms.date: 11/24/2025
 
 ms.author: owinfrey
 author: owinfreyATL
@@ -14,7 +14,7 @@ ms.reviewer:
 ---
 # Microsoft Entra join a new Windows device during the out of box experience
 
-Windows 11 users can join new Windows devices to Microsoft Entra ID during the first-run out-of-box experience (OOBE). This functionality enables you to distribute shrink-wrapped devices to your employees or students.
+This tutorial shows you how to join a new Windows 11 device to Microsoft Entra ID during the out-of-box experience (OOBE). When you join a device during OOBE, the device becomes part of your organization's directory and can be managed according to their policies.
 
 This functionality pairs well with mobile device management platforms like [Microsoft Intune](/mem/intune/fundamentals/what-is-intune) and tools like [Windows Autopilot](/mem/autopilot/windows-autopilot) to ensure devices are configured according to your standards.
 
@@ -36,8 +36,7 @@ Your device might restart several times as part of the setup process. Your devic
 1. Turn on your new device and start the setup process. Follow the prompts to set up your device.
 1. When prompted **How would you like to set up this device?**, select **Set up for work or school**.
    :::image type="content" source="media/device-join-out-of-box/windows-11-first-run-experience-work-or-school.png" alt-text="Screenshot of Windows 11 out-of-box experience showing the option to set up for work or school.":::
-1. On the **Let's set things up for your work or school** page, provide the credentials that your organization provided.
-   1. Optionally you can choose to **Sign in with a security key** if one was provided to you.
+1. On the **Let's set things up for your work or school** page, provide the credentials that your organization provided. These credentials might include a username and password, or a method like a [passkey](/entra/identity/authentication/how-to-authentication-synced-passkeys).
    1. If your organization requires it, you might be prompted to perform multifactor authentication.
    :::image type="content" source="media/device-join-out-of-box/windows-11-first-run-experience-device-sign-in-info.png" alt-text="Screenshot of Windows 11 out-of-box experience showing the sign-in experience.":::
 1. Continue to follow the prompts to set up your device.
@@ -59,4 +58,4 @@ To verify whether a device is joined to your Microsoft Entra ID, review the **Ac
 - For more information about managing devices, see [Managing device identities](manage-device-identities.md).
 - [What is Microsoft Intune?](/mem/intune/fundamentals/what-is-intune)
 - [Overview of Windows Autopilot](/autopilot/windows-autopilot)
-- [Passwordless authentication options for Microsoft Entra ID](~/identity/authentication/concept-authentication-passwordless.md)
+- [Passwordless authentication options for Microsoft Entra ID](/entra/identity/authentication/concept-authentication-passkeys-fido2)

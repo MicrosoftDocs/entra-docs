@@ -27,7 +27,7 @@ Manage your accounts in one central location: the Azure portal.
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a Microsoft Entra subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * LifeBalance Program single sign-on (SSO) enabled subscription with a custom domain. If you don't have a LifeBalance Program subscription you can visit the [LifeBalance sales page](https://sales.lifebalanceprogram.com/).
 
 ## Add LifeBalance Program from the gallery

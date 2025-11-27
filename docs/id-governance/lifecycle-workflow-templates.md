@@ -17,7 +17,7 @@ Lifecycle Workflows allows you to automate the lifecycle management process for 
 
 ## Lifecycle Workflows built-in templates
 
-Lifecycle Workflows currently have eight built-in templates you can use or customize:
+Lifecycle Workflows currently have 12 built-in templates you can use or customize:
 
 :::image type="content" source="media/lifecycle-workflow-templates/templates-list.png" alt-text="Screenshot of a list of lifecycle workflow templates." lightbox="media/lifecycle-workflow-templates/templates-list.png":::
 
@@ -33,6 +33,8 @@ The list of templates are as follows:
 - [Post-Offboarding of an employee](lifecycle-workflow-templates.md#post-offboarding-of-an-employee)
 - [Employee group membership changes](lifecycle-workflow-templates.md#employee-group-membership-changes)
 - [Employee job profile change](lifecycle-workflow-templates.md#employee-job-profile-change)
+- [Pre-Offboard inactive users](lifecycle-workflow-templates.md#pre-offboard-inactive-users)
+- [Offboard inactive users](lifecycle-workflow-templates.md#offboard-inactive-users)
 
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
 
@@ -222,6 +224,46 @@ The default specific parameters for the **Employee job profile change** template
 |Tasks     | **Send email to notify manager of user move**, **Remove user from selected groups**, **Remove user from selected Teams**, **Request user access package assignment**    |  ✔️       |
 
 For a tutorial on setting up a workflow that uses the **Employer job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
+
+### Pre-Offboard inactive users
+
+The **Pre-Offboard inactive users** template is designed to configure tasks that must be completed before offboarding inactive users.
+
+
+:::image type="content" source="media/lifecycle-workflow-templates/begin-off-board-inactive-users-template.png" alt-text="Screenshot of the pre-offboard inactive users template.":::
+
+The default specific parameters for the **Pre-Offboard inactive users** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Leaver       |  ❌       |
+|Trigger Type     | Sign-in inactivity, Attribute changes, Group Membership change      |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Days of inactivity     | 90       | ✔️        |
+|Event timing     | Before        |  ❌       |
+|Event User attribute     | LastSignInDateTime        |   ❌      |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
+
+### Offboard inactive users
+
+The **Offboard inactive users** template is designed to configure tasks that must be completed to offboard inactive users.
+
+:::image type="content" source="media/lifecycle-workflow-templates/off-board-inactive-users-template.png" alt-text="Screenshot of the offboard inactive users template.":::
+
+The default specific parameters for the **Offboard inactive users** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Leaver       |  ❌       |
+|Trigger Type     | Sign-in inactivity, Attribute changes, Group Membership change         |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Days from event     | 120        | ✔️        |
+|Event timing     | After        |  ❌       |
+|Event User attribute     | LastSignInDateTime        |   ❌      |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
+
 
 ## Next steps
 

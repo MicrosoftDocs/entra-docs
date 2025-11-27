@@ -1,5 +1,5 @@
 ---
-title: How to use group Source of Authority (SOA) to manage Active Directory Domain Services (AD DS) groups in Microsoft Entra ID (Preview)
+title: How to use group Source of Authority (SOA) to manage Active Directory Domain Services (AD DS) groups in Microsoft Entra ID
 description: Learn how to convert group management from Active Directory Domain Services (AD DS) to Microsoft Entra ID using group source of authority (SOA).
 author: justinha
 manager: dougeby
@@ -10,7 +10,7 @@ ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
-# How group Source of Authority (SOA) works (Preview)
+# How group Source of Authority (SOA) works
 
 You can convert the Source of Authority (SOA) of a group from Active Directory Domain Services (AD DS) to Microsoft Entra ID. After you convert the SOA, the group becomes cloud-owned, and you can map it to a corresponding cloud group type in the cloud. For a list of supported groups types, see [How to manage cloud security groups](concept-group-source-of-authority-guidance.md#how-to-manage-cloud-security-groups).
 

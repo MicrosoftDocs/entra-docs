@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 11/17/2025
 ms.custom: developer
 
 #Customer intent: As a dev, devops, I want to learn how to use the Azure REST API to manage my external tenant.

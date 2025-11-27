@@ -1,27 +1,29 @@
 ---
-title: User risk-based password change
+title: Require remediation for risky users
 description: Create Conditional Access policies using Microsoft Entra ID Protection user risk.
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
-
+ms.date: 10/30/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth, cokoopma
 ---
-# Require a secure password change for elevated user risk
+# Require remediation for risky users
 
-Microsoft works with researchers, law enforcement, various security teams at Microsoft, and other trusted sources to find leaked username and password pairs. Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection user risk detections](~/id-protection/concept-identity-protection-risks.md). 
+Organizations with Microsoft Entra ID P2 licenses can create Conditional Access policies incorporating [Microsoft Entra ID Protection user risk detections](~/id-protection/concept-identity-protection-risks.md). This policy enables end users to self-remediate and unblock themselves, increasing their productivity while reducing incidents sent to your help desk or security operations teams.  
 
 ## User exclusions
-[!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
-[!INCLUDE [active-directory-policy-deploy-template](~/includes/entra-policy-deploy-template.md)]
+[!INCLUDE [entra-policy-exclude-user](../../includes/entra-policy-exclude-user.md)]
 
-## Enable with Conditional Access policy
+[!INCLUDE [entra-policy-deploy-template](../../includes/entra-policy-deploy-template.md)]
+
+## Require risk remediation
+
+This risk remediation policy covers both password-based and passwordless users.
 
 [!INCLUDE [conditional-access-policy-user-risk](../../includes/conditional-access-policy-user-risk.md)]
 

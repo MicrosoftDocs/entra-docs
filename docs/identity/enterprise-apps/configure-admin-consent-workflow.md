@@ -26,7 +26,7 @@ To approve requests, a reviewer must have the [permissions required](grant-admin
 
 To configure the admin consent workflow, you need:
 
-- An Azure account. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - You must be a Global Administrator to turn on the admin consent workflow.
 
 [!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]

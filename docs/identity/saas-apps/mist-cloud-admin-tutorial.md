@@ -25,7 +25,7 @@ In this article,  you learn how to integrate Mist Cloud Admin SSO with Microsoft
 
 To get started, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Mist Cloud account, you can create an account [here](https://manage.mist.com/).
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).

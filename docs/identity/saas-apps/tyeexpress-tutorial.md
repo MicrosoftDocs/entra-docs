@@ -24,7 +24,7 @@ Integrating T&E Express with Microsoft Entra ID provides you with the following 
 * You can manage your accounts in one central location.
 
 If you want to know more details about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
-If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:

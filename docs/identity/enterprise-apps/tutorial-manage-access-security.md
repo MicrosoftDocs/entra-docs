@@ -27,7 +27,7 @@ Using the information in this tutorial, an administrator learns how to:
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * One of the following roles: Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
 * An enterprise application that has been configured in your Microsoft Entra tenant.
 * At least one user account added and assigned to the application. For more information, see [Quickstart: Create and assign a user account](add-application-portal-assign-users.md).

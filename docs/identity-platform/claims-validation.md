@@ -4,7 +4,7 @@ description: Learn about securing the business logic of your applications and AP
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 03/21/2025
 ms.service: identity-platform
 

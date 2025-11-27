@@ -1,19 +1,19 @@
 ---
-title: Phone authentication methods
-description: Learn about using phone authentication methods in Microsoft Entra ID to help improve and secure sign-in events
+title: Voice call authentication method
+description: Learn about using the voice call authentication method in Microsoft Entra ID to help improve and secure sign-in events
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: concept-article
-ms.date: 03/04/2025
+ms.date: 10/26/2025
 ms.author: justinha
+ms.reviewer: jupetter
 author: justinha
 manager: dougeby
 ms.custom: sfi-image-nochange
-# Customer intent: As an identity administrator, I want to understand how to use phone authentication methods in Microsoft Entra ID to improve and secure user sign-in events.
+# Customer intent: As an identity administrator, I want to understand how to use voice call authentication method in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
-# Authentication methods in Microsoft Entra ID - phone options
-
+# Authentication methods in Microsoft Entra ID - Voice call
 Microsoft recommends users move away from using text messages or voice calls for multifactor authentication. Modern authentication methods like [Microsoft Authenticator](concept-authentication-authenticator-app.md) are a recommended alternative. For more information, see [It's Time to Hang Up on Phone Transports for Authentication](https://aka.ms/hangup). Users can still verify themselves using a mobile phone or office phone as secondary form of authentication used for multifactor authentication or self-service password reset (SSPR).
 
 You can [configure and enable users for SMS-based authentication](howto-authentication-sms-signin.md) for direct authentication using text message. Text messages are convenient for Frontline workers. With text messages, users don't need to know a username and password to access applications and services. The user instead enters their registered mobile phone number, receives a text message with a verification code, and enters that in the sign-in interface.

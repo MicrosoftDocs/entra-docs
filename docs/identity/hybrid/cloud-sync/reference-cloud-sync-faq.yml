@@ -6,7 +6,7 @@ metadata:
   manager: mwongerapk
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 12/17/2024
+  ms.date: 10/15/2025
   ms.subservice: hybrid-cloud-sync
   ms.author: jomondi
   
@@ -20,7 +20,11 @@ sections:
       - question: |
           How often does cloud sync run?
         answer: |
-          Cloud provisioning is scheduled to run every 2 mins. Every 2 mins, any user, group, and password hash changes are provisioned to Microsoft Entra ID.
+          Password hash synchronization is scheduled every 2-5 minutes. 
+          Cloud provisioning synchronization for users and groups is scheduled approximately every 10 to 20 minutes. 
+          However, the actual time it takes to provision objects in Microsoft Entra ID depends on the number of changes pending in each sync cycle. 
+          Larger volumes of changes may extend the provisioning time, while smaller sets may complete more quickly. 
+          Therefore, object sync latency is influenced by both the sync cycle interval and the volume of changes being processed.
 
       - question: |
           Seeing password hash sync failures on the first run. Why?
@@ -70,7 +74,7 @@ sections:
       - question: |
           I'm provisioning users using cloud sync. I deleted the configuration. Why do I still see the old synced objects in Microsoft Entra ID? 
         answer: |
-          When you delete the configuration, cloud sync doesn't automatically remove the synced objects in Microsoft Entra ID. To ensure you Don't have the old objects, change the scope of the configuration to an empty group or Organizational Units. Once the provisioning runs and cleans up the objects, disable and delete the  configuration. 
+          When you delete the configuration, cloud sync doesn't automatically remove the synced objects in Microsoft Entra ID. To ensure you don't have the old objects, change the scope of the configuration to an empty group or Organizational Units. Once the provisioning runs and cleans up the objects, disable and delete the configuration. 
 
       - question: |
           Does cloud sync support Exchange hybrid?
@@ -100,10 +104,10 @@ sections:
       - question: |
           If I move a user from an OU that is scoped for cloud sync to an OU that is scoped for Microsoft Entra Connect, what happens?
         answer: |
-          The user are deleted and recreated.  Moving a user from an OU that is scoped for cloud sync is viewed as a delete operation.  If the user is moved to an OU that is managed by Microsoft Entra Connect, it will be reprovisioned to Microsoft Entra ID and a new user created.
+          The user is deleted and recreated.  Moving a user from an OU that is scoped for cloud sync is viewed as a delete operation.  If the user is moved to an OU that is managed by Microsoft Entra Connect, it will be reprovisioned to Microsoft Entra ID and a new user created.
 
       - question: |
-          If I rename or move the OU that is in scope for the cloud sync filter, what happens to the user that were created in Microsoft Entra ID?
+          If I rename or move the OU that is in scope for the cloud sync filter, what happens to the users that were created in Microsoft Entra ID?
         answer: |
           Nothing.  The users aren't deleted if the OU is renamed or moved.
 

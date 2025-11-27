@@ -23,7 +23,7 @@ We recommend that you use a nonproduction environment to test the steps in this 
 
 To view applications registered in your Microsoft Entra tenant, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Cloud Application Administrator, or owner of the service principal.
 - Completion of the steps in [Quickstart: Add an enterprise application](add-application-portal.md).
 
@@ -54,7 +54,7 @@ Select options according to what you're looking for:
     - **Enterprise Applications** shows non-Microsoft applications.
     - **Microsoft Applications** shows Microsoft applications.
     - **Managed Identities** shows applications that are used to authenticate to services that support Microsoft Entra authentication.
-    - **Agent ID (Preview)** shows AI agent identities that are used by AI agents to to authenticate to services that support Microsoft Entra authentication.
+    - **Agent ID (Preview)** shows AI agent identities that are used by AI agents to authenticate to services that support Microsoft Entra authentication.
     - **All Applications** shows both non-Microsoft and Microsoft applications.
 1. Under **Application ID starts with**, enter the first few digits of the application ID if you know the application ID.
 1. After choosing the options you want, select **Apply**.

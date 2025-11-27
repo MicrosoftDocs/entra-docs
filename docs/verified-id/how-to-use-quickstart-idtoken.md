@@ -3,7 +3,7 @@ title: Create verifiable credentials for ID tokens
 description: Learn how to use a quickstart to create custom credentials for ID tokens
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/17/2025

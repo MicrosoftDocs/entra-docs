@@ -1,0 +1,52 @@
+items:
+- name: Microsoft Entra Agent ID for identity professionals
+  href: index.yml
+- name: Overview
+  expanded: true
+  items:
+  - name: What is Microsoft Entra Agent ID?
+    href: microsoft-entra-agent-identities-for-ai-agents.md
+  - name: Security for AI
+    href: security-for-ai.md
+  - name: How to guides
+    items:
+    - name: Access management
+      items:
+        - name: Authorization in Microsoft Entra Agent ID
+          href: authorization-agent-id.md
+        - name: Grant agent access to Microsoft 365
+          href: grant-agent-access-microsoft-365.md
+        - name: Configure inheritable permissions for blueprints
+          href: configure-inheritable-permissions-blueprints.md
+        - name: Control user access to agents
+          href: control-user-access-agents.md
+        - name: Agent ID administration
+          items:
+            - name: Manage Agent Registry-only agents
+              href: manage-agents-without-identity.md
+- name: Concepts
+  items:
+  - name: Agent ID creation channels
+    href: agent-id-creation-channels.md
+  - name: Sign-in and audit logs for agents
+    href: sign-in-audit-logs-agents.md
+  - name: Access packages
+    href: agent-access-packages.md
+  - name: Consent and sign-in
+    href: sign-in-process.md
+  - name: Identity protection for agents
+    href: /entra/id-protection/concept-risky-agents?toc=/entra/agent-id/identity-professional/toc.json
+  - name: Identity governance for agents
+    href: /entra/id-governance/agent-id-governance-overview?toc=/entra/agent-id/identity-professional/toc.json
+  - name: Conditional access for agents
+    href: /entra/identity/conditional-access/agent-id?toc=/entra/agent-id/identity-professional/toc.json
+  - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+    href: /entra/global-secure-access/concept-secure-web-ai-gateway-agents?toc=/entra/agent-id/identity-professional/toc.json
+- name: Reference
+  items:
+  - name: Agent Registry roles
+    href: reference-registry-roles.md
+  - name: Microsoft Graph Permissions reference
+    href: /graph/permissions-reference?toc=/entra/agent-id/identity-professional/toc.json
+  - name: Known issues
+    href: /entra/agent-id/identity-platform/preview-known-issues?toc=/entra/agent-id/identity-professional/toc.json

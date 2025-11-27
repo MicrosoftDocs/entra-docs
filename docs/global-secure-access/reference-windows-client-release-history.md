@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 06/24/2025
+ms.date: 11/05/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -15,17 +15,28 @@ ai-usage: ai-assisted
 This article lists the released versions of the Global Secure Access client for Windows and the changes in each version.   
 
 ## Download the latest version
-The current version of the Global Secure Access client is available to download from the Microsoft Entra admin center.
+You can download the current version of the Global Secure Access client from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
 
+## Version 2.22.90
+Released for download on November 5, 2025.
+### Functional changes
+- A new Windows service, **Global Secure Access Forwarding Profile Service**, replaces the previous **Global Secure Access Policy Retriever Service**.
+- Support for interactive sign-in to get the forwarding profile, for example, if MFA or Terms of Use are required.
+- The **Get policy** button lets you poll the Global Secure Access cloud service for the latest forwarding profile.
+- Bug fix: the client uses Private DNS only when the Private Access channel is active.
+### Other changes
+- New telemetries are now available.
+- Miscellaneous bug fixes and improvements.
+
 ## Version 2.20.56
 Released for download on June 24, 2025.
 ### Functional changes
-- New Global Secure Access client installer for Windows on Arm is available for download in the portal.
+- You can download a new Global Secure Access client installer for Windows on Arm in the portal.
 - A new client user interface with channel status, a troubleshooting section, and settings. To open the interface, double-click the Global Secure Access icon in the system tray.
 - Telemetry collection is enabled.
 - The new UI includes a link to Microsoft's privacy policy to comply with the telemetry collection policy.
@@ -45,7 +56,7 @@ Released for download on April 29, 2025.
 - Bug fix: Canonical name (CNAME) records resolve as A records to fix a Kerberos browser authentication issue.   
 - The default client authentication is Web Account Manager (WAM).   
 ### Other changes
-- Bug fix: the client retries connecting to traffic profiles after they're removed from the portal.   
+- Bug fix: the client retries connecting to traffic profiles after you remove them from the portal.   
 - Bug fix: adds support for operating system names with non-ASCII characters, relevant for some non-English Windows versions.   
 - Added and improved health check tests.   
 - Improvements and bug fixes for Advanced diagnostics.   
@@ -76,22 +87,22 @@ Released for download on November 26, 2024.
 > [!NOTE]
 > The mTLS connection rolls out gradually to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
 - Adds support for restricting nonprivileged users from disabling and enabling the Global Secure Access client on their device.
-- Show health check tests when loading a log zip file to Advanced diagnostics.
+- Shows health check tests when loading a log zip file to Advanced diagnostics.
 - Adds support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, the Global Secure Access client can be installed on the guest machine, on the host machine, or both. 
 > [!NOTE]
 > The Global Secure Access client doesn't support host machines with a Hyper-V external virtual switch.
-- The forwarding profile update is triggered when a user signs in to Windows.
-- Global Secure Access client's driver events are written to the Event Viewer under:    
+- Triggers the forwarding profile update when a user signs in to Windows.
+- Writes Global Secure Access client's driver events to the Event Viewer under:    
 `Applications and Services Logs > Microsoft > Windows > Global Secure Access > Kernel`
 - Performance improvements for tunneled network traffic.
 - Notifications for entering and exiting captive portals are off by default.
 - On the Advanced diagnostics **Traffic** tab, status information appears in two columns: **Connection status** and **Status Details**. If the Global Secure Access service stops a connection (for example, due to a filtering policy set to block), the **Connection status** column shows "Terminated" and the **Status Details** column shows the reason for the termination.  
-- To accommodate when sign-in is required, the sign-in window is shown even if Windows notifications are disabled.
+- Shows the sign-in window even if Windows notifications are disabled to accommodate when sign-in is required.
 ### Other changes
 - Renamed services:
     - "Global Secure Access Management Service" is now "Global Secure Access Engine Service."
     - "Global Secure Access Auto Upgrade Service" is now "Global Secure Access Client Manager Service."
-- The client's stale registry keys are deleted during uninstall.
+- Deletes the client's stale registry keys during uninstall.
 - Bug fix: the policy retriever service stops polling for new policies when it encounters an error.
 - The collected logs zip file name now contains the Global Secure Access client version number.
 - Recovery after failures of the tunneling service.
@@ -104,8 +115,8 @@ Released for download on November 26, 2024.
 Released for download on August 27, 2024.
 ### Functional changes
 - Adds support for coexistence with Azure VPN.
-- Loading the health check results in advanced diagnostics from a zip file (created by collect logs).
-- The **Pause** and **Resume** buttons are renamed to **Disable** and **Enable**.
+- Loads the health check results in advanced diagnostics from a zip file (created by collect logs).
+- Renames the **Pause** and **Resume** buttons to **Disable** and **Enable**.
 ### Other changes
 - Miscellaneous bug fixes and improvements.
 

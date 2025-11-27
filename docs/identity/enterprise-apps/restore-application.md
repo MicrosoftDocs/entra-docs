@@ -29,7 +29,7 @@ If you restore the deleted application registration through the Microsoft Entra 
 
 To restore an enterprise application, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles:
   - Cloud Application Administrator
   - Application Administrator

@@ -18,7 +18,7 @@ This article describes how to configure a Microsoft Entra application to trust a
 
 ## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - This Azure account must have permissions to [update application credentials](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate). Any of the following Microsoft Entra roles include the required permissions:
   - [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
   - [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer)

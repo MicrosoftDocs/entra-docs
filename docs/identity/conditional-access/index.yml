@@ -78,6 +78,6 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Get started with optimization agent
-            url: agent-optimization.md
+            url: ../../security-copilot/conditional-access-agent-optimization.md
           - text: Review optimization agent suggestions
-            url: agent-optimization-review-suggestions.md
+            url: ../../security-copilot/conditional-access-agent-optimization-review-suggestions.md

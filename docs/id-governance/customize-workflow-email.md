@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/25/2025
+ms.date: 09/22/2025
 ms.custom: template-how-to
 ---
 
@@ -24,7 +24,7 @@ Email tasks allow for the customization of:
 - Message body
 - Email language
 
-When you're customizing the subject or message body, we recommend that you also enable the custom sender domain and organizational branding. Otherwise, your email will contain an additional security disclaimer.
+When you're customizing the subject or message body, we recommend that you also enable the custom sender domain and organizational branding. Otherwise, your email contains an additional security disclaimer.
 
 For more information on these customizable parameters, see [Common email task parameters](lifecycle-workflow-tasks.md#common-email-task-parameters).
 
@@ -57,13 +57,26 @@ When you're customizing an email sent via lifecycle workflows, you can choose to
 
 1. Enter a custom subject, a message body, and the email language translation option that will be used to translate the message body of the email. 
 
-   If you stay with the default templates and don't customize the subject and body of the email, the text will be automatically translated into the recipient's preferred language. If you select an email language, the determination based on the recipient's preferred language will be overridden. If you specify a custom subject or body, it won't be translated.
+   If you stay with the default templates and don't customize the subject and body of the email, the text is automatically translated into the recipient's preferred language. If you select an email language, the determination based on the recipient's preferred language is overridden. If you specify a custom subject or body, it won't be translated.
 
    :::image type="content" source="media/customize-workflow-email/customize-workflow-email-example.png" alt-text="Screenshot of an example of a customized email from a workflow.":::
 
 1. Select **Save** to capture your changes in the customized email.
 
-## Format attributes within customized emails
+## Customize email text
+
+Emails sent by workflows can have their text customized to personalize, or stress specific points within, them. Workflow text can currently be customized in the following ways:
+
+- **Bold**: Text within emails can be bolded by placing the desired text within `<b></b>` brackets.
+- **Italics**: Text within emails can be italicized by placing the desired text within `<i></i>` brackets.
+- **Underlined**: Text within emails can be italicized by placing the desired text within `<u></u>` brackets.
+- **Links**: Hyperlinks can be added to text by placing the desired link within `<a href=> </a>` brackets.
+
+    > [!NOTE]
+    > Hyperlinks must start with either *http* or *https*.
+
+
+### Format attributes within customized emails
 
 To further personalize customized emails, you can take advantage of dynamic attributes. By placing dynamic attributes in specific attributes, you can specifically call out values such as a user's name, their generated Temporary Access Pass, or even their manager's email.
 
@@ -75,7 +88,7 @@ The following screenshot is an example of the proper format for dynamic attribut
 
 :::image type="content" source="media/customize-workflow-email/workflow-dynamic-attribute-example.png" alt-text="Screenshot of an example of dynamic attributes within a customized email.":::
 
-When you're typing a dynamic attribute, the email is written the following way:
+When you're typing a dynamic attribute, the email is written in the following way:
 
 ```html
 Welcome to the team, {{userGivenName}}

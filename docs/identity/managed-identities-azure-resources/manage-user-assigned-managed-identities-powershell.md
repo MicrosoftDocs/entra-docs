@@ -19,7 +19,7 @@ In this article, you learn how to create, list, delete, or assign a role to a us
 ## Prerequisites
 
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md). *Be sure to review the [difference between a system-assigned and user-assigned managed identity](overview.md#managed-identity-types)*.
-- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
+- If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you continue.
 - To run the example scripts, you have two options:
     - Use [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open by using the **Try It** button in the upper-right corner of code blocks.
     - Run scripts locally with Azure PowerShell, as described in the next section.

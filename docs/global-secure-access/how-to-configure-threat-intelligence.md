@@ -83,7 +83,7 @@ In this step, you create a security profile to group filtering policies like web
 Since threat intelligence is critical for users' basic security posture, you can alternatively link your threat intelligence policy to the baseline security profile, which applies policy to all users' traffic in your tenant.
 
 > [!NOTE]
-> You can only configure threat intelligence policy per security profile. Rule priorities within each security control handle exceptions, and security controls follow the ordering, (1) TLS inspection > (2) Web content filtering > (3) Threat intelligence > (4) File type > (6) Data loss prevention > (7) Third-party
+> You can only configure threat intelligence policy per security profile. Rule priorities within each security control handle exceptions, and security controls follow the ordering, (1) TLS inspection > (2) Web content filtering > (3) Threat intelligence > (4) File type > (5) Data loss prevention > (6) Third-party
 
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles**.
 2. Select **Create profile**.

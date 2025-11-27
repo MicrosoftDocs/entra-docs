@@ -2,7 +2,7 @@
 title: Frequently asked questions - Azure Verifiable Credentials
 description: Find answers to common questions about Verifiable Credentials.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: faq
 ms.date: 04/30/2025

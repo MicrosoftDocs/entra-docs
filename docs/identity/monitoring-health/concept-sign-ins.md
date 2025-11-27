@@ -4,12 +4,12 @@ description: Learn about the different types of sign-in logs that are available 
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: troubleshooting-general
+ms.topic: concept-article
 ms.subservice: monitoring-health
-ms.date: 06/30/2025
+ms.date: 11/07/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-ms.custom: sfi-image-nochange
+ms.custom: sfi-image-nochange,agent-id-ignite
 # Customer intent: As an IT admin, I need to know what information is available in the sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
 ---
 # What are Microsoft Entra sign-in logs?
@@ -62,21 +62,11 @@ There are four types of logs in the sign-in logs preview:
 - [Service principal sign-ins](concept-service-principal-sign-ins.md)
 - [Managed identity sign-ins](concept-managed-identity-sign-ins.md)
 
-The classic sign-in logs only include interactive user sign-ins.
+The legacy sign-in logs experience only includes interactive user sign-ins.
 
-### Microsoft Entra Agent ID
+### Agent logs
 
-The Microsoft Entra Agent ID was launched at Microsoft Build 2025 and provides a unified directory of all agent identities created across Microsoft Copilot Studio and Azure AI Foundry. With this initial release, IT administrators can view and manage agent identities directly in the Microsoft Entra admin center, including updated sign-in logs. Because agents can operate with user-delegated or app-only permissions, their sign-ins might appear across each of the four sign-in log types.
-
-A new complex sign-in log resource type, `agentSignIn`, was added to the Microsoft Entra sign-in logs. This resource type contains properties about the agent, such as if the agent is an app or an instance of an app. If the agent type is `agenticAppInstance`, the `parentID` property is included to provide traceability to the provisioning agent.
-
-The new sign-in log resource type is available in the Microsoft Entra admin center and the Microsoft Graph API.
-
-- Use the `isAgent` filter in the Microsoft Entra admin center sign-in logs to filter on only agentic sign-in events.
-- From **Enterprise applications**, set the **Application type** filter to **Agent ID (Preview)** to view all agent identities in your tenant. Then select **Sign-in logs** from the app details page to view the sign-in activity.
-- For information about the resource type in Microsoft Graph, see [agentSignIn](/graph/api/resources/agentic-agentsignin?view=graph-rest-beta&preserve-view=true) 
-
-For more information, see the [Microsoft Entra Blog](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/announcing-microsoft-entra-agent-id-secure-and-manage-your-ai-agents/3827392) announcement.
+Agent activity logs are a new log type in our audit and sign-in logs to help you monitor agent related activities. IT administrators can view and manage agent activity directly in the Microsoft Entra admin center and using the Microsoft Graph API. For more information, see [Microsoft Entra Agent ID logs](../../agent-id/identity-professional/sign-in-audit-logs-agents.md).
 
 ## Sign-in data used by other services
 

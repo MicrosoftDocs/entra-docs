@@ -16,7 +16,7 @@ ms.custom: template-how-to
 Lifecycle workflows allow for tasks associated with the lifecycle process to be run automatically for users as they move through their lifecycle in your organization. Workflows consist of:
 
 - **Tasks**: Actions taken when a workflow is triggered.
-- **Execution conditions**: The who and when of a workflow. These conditions define which users (scope) this workflow should run against, and when (trigger) the workflow should run.
+- **Execution conditions**: The who and when of a workflow. These conditions define which users this workflow should run against, and when (trigger) the workflow should run.
 
 You can create and customize workflows for common scenarios by using templates, or you can build a workflow from scratch without using a template. Currently, if you use the Microsoft Entra admin center, any workflow that you create must be based on a template. If you want to create a workflow without using a template, use Microsoft Graph.
 
@@ -39,7 +39,7 @@ To create a workflow based on a template:
 1. On the **Choose a workflow** page, select the workflow template that you want to use.
 
     :::image type="content" source="media/create-lifecycle-workflow/templates-list.png" alt-text="Screenshot of a list of lifecycle workflow templates." lightbox="media/create-lifecycle-workflow/templates-list.png":::
-1. On the **Basics** tab, enter a unique display name and description for the workflow, and then select **Next**.
+1. On the **Basics** tab, enter a unique display name, description, and [administrative scope](manage-delegate-workflow.md) for the workflow, and then select **Next**.
 
     :::image type="content" source="media/create-lifecycle-workflow/template-basics.png" alt-text="Screenshot of basic information about a workflow template.":::
 

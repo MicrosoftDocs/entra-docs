@@ -3,7 +3,7 @@ title: Face Check with Microsoft Entra Verified ID pricing
 description: Learn about Face Check with Microsoft Entra Verified ID billing model. Learn how to enable the Face Check add-on in your tenant by linking your Microsoft Azure subscription.
 ms.service: entra-verified-id
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.author: barclayn
 ms.topic: concept-article
 ms.date: 04/30/2025

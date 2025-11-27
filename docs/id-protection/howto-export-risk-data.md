@@ -3,7 +3,7 @@ title: Export and use Microsoft Entra ID Protection data
 description: Learn about the many long-term data storage and monitoring options for exporting risk data from Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 08/06/2025
+ms.date: 09/30/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pwongera
@@ -28,7 +28,7 @@ This article describes the available methods for exporting risk data from Micros
 
 To export risk data for storage and analysis, you need:
 
-- An Azure subscription to create a Log Analytics workspace, Azure event hub, or Azure storage account. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- An Azure subscription to create a Log Analytics workspace, Azure event hub, or Azure storage account. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **configure diagnostic settings for the Microsoft Entra tenant**.
 
 ## Diagnostic settings
@@ -67,7 +67,7 @@ The following tables are of most interest to Microsoft Entra ID Protection admin
 - ServicePrincipalRiskEvents - Provides data like the **Workload identity detections** report.
 
 > [!NOTE]
-> Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID do not appear.
+> Log Analytics only has visibility into data as it is streamed. Events prior to enabling the sending of events from Microsoft Entra ID don't appear.
 
 ### Sample queries
 
@@ -108,6 +108,12 @@ AADUserRiskEvents
 ```
 
 Access more queries and visual insights based on AADUserRiskEvents and AADRisky Users logs in the [Impact analysis of risk-based access policies workbook](workbook-risk-based-policy-impact.md).
+
+### Risk analysis
+
+Organizations can reduce security operations center (SOC) workloads and support overhead with risk-based Conditional Access policies. Learn more in the following video, **Mastering risk analysis with Microsoft Entra ID Protection**.
+
+   > [!VIDEO abb7d7fe-4155-4ee1-bcce-afa027d22f8d]
 
 ## Storage account
 

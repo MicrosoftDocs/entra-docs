@@ -27,6 +27,8 @@
     href: ~/fundamentals/concept-group-based-licensing.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Manage access with groups    
     href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+  - name: Enterprise user management with Microsoft Security Copilot
+    href: ~/security-copilot/entra-enterprise-user-management.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
 - name: How-to guides
   expanded: true
   items:

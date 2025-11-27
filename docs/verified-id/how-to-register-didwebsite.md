@@ -3,7 +3,7 @@ title: Register your website ID
 description: Learn how to register your website ID for did:web.
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/18/2024

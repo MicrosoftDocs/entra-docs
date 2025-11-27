@@ -8,7 +8,7 @@ manager: dougeby
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 05/15/2024
+ms.date: 11/17/2025
 
 ms.collection: M365-identity-device-management
 ms.custom:  
@@ -29,7 +29,6 @@ Language customization in Microsoft Entra External ID allows your user flow to a
 By default, language customization is enabled for users signing up to ensure a consistent sign-up experience. You can use languages to modify the strings displayed to users as part of the attribute collection process during sign-up. If you're using [custom user attributes](user-flow-add-custom-attributes.md), you need to provide your [own translations](#customize-your-strings).
 
 ## Customize your strings 
-
 
 Language customization enables you to customize any string in your user flow.
 

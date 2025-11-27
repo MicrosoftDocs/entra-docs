@@ -6,10 +6,10 @@ manager: pmwongera
 ms.author: cwerner
 ms.date: 02/17/2024
 ms.reviewer: stsoneff
-ms.service: azure-app-service
-ms.subservice: web-apps
+ms.service: identity-platform
+ms.subservice:
 ms.topic: tutorial
-ms.custom: azureday1, app-service-web, sfi-image-nochange
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, enable authentication and authorization for a web app running on Azure App Service.
 ---
 

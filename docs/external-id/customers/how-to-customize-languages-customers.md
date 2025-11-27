@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 05/14/2025
+ms.date: 09/16/2025
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to add customized browser languages to my app's authentication experience.
@@ -28,11 +28,6 @@ This article explains how to customize the browser language for your app's authe
 - [Register an application](/entra/identity-platform/quickstart-register-app).  
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - Review the file size requirements for each image you want to add. You might need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Language)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Language customization” use case.
 
 ## Add browser language under Company branding
 

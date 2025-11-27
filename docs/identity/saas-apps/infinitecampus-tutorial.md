@@ -26,7 +26,7 @@ In this article,  you learn how to integrate Infinite Campus with Microsoft Entr
 
 To configure Microsoft Entra integration with Infinite Campus, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * Infinite Campus single sign-on enabled subscription.
 * At minimum, you need to be a Microsoft Entra administrator, and have a Campus Product Security Role of "Student Information System (SIS)" to complete the configuration.
 

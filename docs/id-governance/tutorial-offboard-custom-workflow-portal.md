@@ -56,7 +56,7 @@ Use the following steps to create a leaver on-demand workflow that executes a re
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/select-template.png" alt-text="Screenshot of selecting a workflow template for real-time employee termination." lightbox="media/tutorial-lifecycle-workflows/select-template.png":::
 
-6. Configure basic information about the workflow, and then select **Next: Review tasks**.
+6. Configure basic information about the workflow like name, description, and [administrative scope](manage-delegate-workflow.md), then select **Next: Review tasks**.
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/real-time-leaver.png" alt-text="Screenshot of the tab for basic workflow information." lightbox="media/tutorial-lifecycle-workflows/real-time-leaver.png":::
 

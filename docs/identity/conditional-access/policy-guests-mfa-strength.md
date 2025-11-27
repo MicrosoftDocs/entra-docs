@@ -72,3 +72,4 @@ Use the following steps to create a Conditional Access policy that applies an au
 
 - [Conditional Access templates](concept-conditional-access-policy-common.md)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
+- [Configure cross-tenant access settings](/entra/external-id/cross-tenant-access-settings-b2b-collaboration#to-change-inbound-trust-settings-for-mfa-and-device-claims)

@@ -139,7 +139,7 @@ Within the same cloud, which clouds can cross-tenant synchronization be used in?
 
 Is [cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) supported?
 
-- Cross-cloud synchronization (such as public cloud to Azure Government) is currently in public preview.
+- Yes, cross-cloud synchronization (such as public cloud to Azure Government) is supported.
 - For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). 
 
 What cloud pairs are supported for cross-cloud synchronization?

@@ -29,7 +29,7 @@ To add or remove protected actions, you must have:
 
 Protected actions use a Conditional Access authentication context, so you must configure an authentication context and add it to a Conditional Access policy. If you already have a policy with an authentication context, you can skip to the next section.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
 1. Select **Entra ID** > **Conditional Access** > **Authentication context** > **Authentication context**.
 

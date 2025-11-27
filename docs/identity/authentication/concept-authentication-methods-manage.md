@@ -110,7 +110,15 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
   >[!NOTE]
   >You might not be able to save updates to the Authentication methods policy if it targets many groups and the policy size exceeds 20 KB. While we work to increase the policy size limit, consolidate targeted groups as much as possible. 
 
-## Next steps
+## Usable and non-usable methods for users
+
+Administrators can view user authentication methods in the Microsoft Entra admin center. Usable methods are listed first, followed by non-usable methods. 
+
+Each authentication method can become nonusable for different reasons. For example, a Temporary Access Pass might expire, or a FIDO2 security key might fail attestation. The portal gets updated to explain why the method isn't usable. 
+
+Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here.
+
+## Related content
 
 - [How to migrate MFA and SSPR policy settings to the Authentication methods policy](how-to-authentication-methods-manage.md)
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)

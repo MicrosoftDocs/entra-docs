@@ -3,12 +3,11 @@ title: Rotate signing keys
 description: Learn how to rotate Microsoft Entra Verified ID signing keys.
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
 ms.author: barclayn
-
 #Customer intent: As an administrator, I'm looking for information on how to rotate signing keys.
 ---
 
@@ -18,8 +17,6 @@ In this article, we review the steps to rotate your Microsoft Entra Verified ID 
 
 ## Prerequisites
 
-- Verified ID authority is [manually onboarded](verifiable-credentials-configure-tenant.md), and the signing keys are in your own Azure Key Vault instance. [Quick setup](verifiable-credentials-configure-tenant-quick.md) uses a shared signing key, managed by Microsoft, that you can't rotate yourself.
-- The admin user performing key rotation must have [permission to the keys](verifiable-credentials-configure-tenant.md) in Key Vault.
 
 ## Rotate the signing keys
 
@@ -69,5 +66,3 @@ For example, say you have 12 keys in Key Vault and you want Verified ID to not l
 You shouldn't use the rotate feature in Key Vault's admin portal. Verified ID performs more tasks when it calls the /signingKeys/rotate API than just rotating the key in Key Vault.
 
 ## Next steps
-
-- [Tutorial for issuing a verifiable credential](verifiable-credentials-configure-issuer.md)

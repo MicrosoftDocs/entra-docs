@@ -22,7 +22,7 @@ This tutorial focuses on security notifications that get emailed when there's a 
 ## Prerequisites
 To use this feature, you need:
 
-- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
+- An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A Microsoft Entra tenant.
 - A user who's at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) for the Microsoft Entra tenant.
 - An Event Hubs namespace and an event hub in your Azure subscription. Learn how to [create an event hub](/azure/event-hubs/event-hubs-create).

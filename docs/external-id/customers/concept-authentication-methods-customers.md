@@ -1,7 +1,6 @@
 ---
 title: Identity providers for external tenants
 description: Learn sign-in and MFA options for customer identity and access management (CIAM), including email, one-time passcodes, social providers, SAML/WS-Fed, and OIDC.
-
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -9,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/07/2025
+ms.date: 10/07/2025
 ms.custom: it-pro, seo-july-2024
 #customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
 ---
@@ -21,7 +20,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple, or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
@@ -39,6 +38,14 @@ Email sign-up is enabled by default in your local account identity provider sett
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email with password** is the default option.
 
+## Username or alias sign-in (preview)
+
+You can enable users who sign in with a local account (email and password) to sign in with an [alias or username](how-to-sign-in-alias.md) in addition to their email address. This allows users to authenticate using either their email address or an alternative identifier or both. The alternative identifier can be a customer ID, membership ID, insurance number, or frequent flyer number or anything similar that you want to use as a username.
+
+When you enable username sign-in, users can choose to sign in with either their email address or their username. If they choose to sign in with their username, they will be prompted to enter a password, similar to Email and password sign-in. If you [enable password reset](how-to-customize-branding-customers.md#to-customize-self-service-password-reset), users can reset their password by selecting the password reset link on the sign-in page.
+
+   :::image type="content" source="media/how-to-sign-in-alias/alias-sign-in.png" alt-text="Screenshot of the username sign-in option.":::
+
 ## Email with one-time passcode sign-in
 
 Email with one-time passcode is an option in your local account identity provider settings. With this option, the user signs in with a temporary passcode instead of a stored password each time they sign in.
@@ -53,7 +60,7 @@ You can also configure options for showing, hiding, or customizing the self-serv
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email one-time passcode** is one of the local account options.
 
-## Social identity providers: Facebook, Google and Apple
+## Social identity providers: Facebook, Google, and Apple
 
 For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your users a seamless sign-up and sign-in experience. In an external tenant, you can allow a user to sign up and sign in using their own Facebook, Google, or Apple account.
 
@@ -65,7 +72,7 @@ By setting up federation with Google, you can allow users to sign in to your app
 
 The following screenshots show the sign-in with Google experience. In the sign-in page, users select **Sign-in with Google**. At that point, the user is redirected to the Google identity provider to complete the sign-in.
 
-   :::image type="content" source="media/concept-authentication-methods-customers/google-sign-in.png" alt-text="Screenshots of google sign-in screens." border="false":::
+   :::image type="content" source="media/concept-authentication-methods-customers/google-sign-in.png" alt-text="Screenshots of Google sign-in screens." border="false":::
 
 Learn how to [add Google as an identity provider](how-to-google-federation-customers.md).
 
@@ -86,6 +93,12 @@ By setting up federation with Apple, you can allow users to sign in to your appl
 The following screenshots show the sign-in with Apple experience. In the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
 Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
 
+## Custom OIDC identity provider
+
+You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
+
+Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
+
 ## Custom SAML/WS-Fed identity providers
 
 You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As a result, updating the federation setup by adding, changing, or removing domains won't affect the experience for existing users.
@@ -94,17 +107,32 @@ A user who enters an email address on the sign-in page that matches a predefined
 
 For more information, see [SAML/WS-Fed identity providers](../direct-federation-overview.md). For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
 
-## Custom OIDC identity provider
+### Domain acceleration
 
-You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
+When you federate with custom SAML/WS-Fed IdPs, users usually see the Microsoft sign-in page first and then choose their identity provider. These IdPs can be associated with one or more domains. Including the `domain_hint` parameter in the sign-in URL allows users to go directly to the sign-in page for the identity provider associated with the specified domain.
 
-Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
+For a custom SAML identity provider, use the domain specified in the **Domain name of federating IdP** field in the `domain_hint` syntax: `domain_hint=<domain name of federating idp>`
+
+:::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-saml.png" alt-text="Screenshot showing the domain name of the federating IdP.":::
+
+## Issuer acceleration
+
+When you federate with other external identity providers—such as Facebook, Google, Apple, or a custom OpenID Connect IdP, users usually see the Microsoft sign-in page first and then choose their identity provider. Including the `domain_hint` parameter in the sign-in URL allows users to go directly to the sign-in page for the identity provider associated with the specified domain.
+
+You can use the following `domain_hint` values to go directly to the sign-in page for these identity providers:
+
+- **Facebook**: `domain_hint=facebook`.  
+- **Google**: `domain_hint=Google`.  
+- **Apple**: `domain_hint=apple`.
+- **Custom OIDC**: `domain_hint=<issuer URI>`. For a custom OIDC identity provider, use the domain part of the **Issuer URI** in the `domain_hint` syntax.
+
+   :::image type="content" source="media/concept-authentication-methods-customers/domain-issuer-open-id-connect.png" alt-text="Screenshot showing the domain part of the issuer URI.":::
 
 ## Updating sign-in methods
 
 At any time, you can update the sign-in options for an app. For example, you can add social identity providers or change the local account sign-in method.
 
-When you change sign-in methods, the change affects only new users. Existing users continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users sign in using a one-time passcode, but any users who already signed up with an email and password continue to be prompted for their email and password. 
+When you change sign-in methods, the change affects only new users. Existing users continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users sign in using a one-time passcode, but any users who already signed up with an email and password continue to be prompted for their email and password.
 
 ## Microsoft Graph APIs
 

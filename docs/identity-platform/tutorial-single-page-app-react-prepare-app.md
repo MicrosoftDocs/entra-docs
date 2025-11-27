@@ -2,7 +2,7 @@
 title: "Tutorial: Prepare a React single-page application for authentication"
 description: Learn how to prepare a React single-page app (SPA) for authentication using the Microsoft identity platform.
 author: OwenRichards1
-manager: CelesteDG
+manager: pmwongera
 ms.author: owenrichards
 ms.date: 05/25/2025
 ms.service: identity-platform

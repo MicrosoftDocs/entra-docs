@@ -29,7 +29,7 @@ For instance, if an application is found to be non-compliant with company polici
 
 To review and take action on admin consent requests, you need:
 
-- An Azure account. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An administrator role or a designated reviewer with the appropriate role to [review admin consent requests](grant-admin-consent.md#prerequisites).
 
 ## Review and take action on admin consent requests

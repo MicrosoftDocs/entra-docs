@@ -3,7 +3,7 @@ title: Create verifiable credentials with multiple attestations
 description: Learn how to use a quickstart to create custom credentials with multiple attestations.
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/17/2025

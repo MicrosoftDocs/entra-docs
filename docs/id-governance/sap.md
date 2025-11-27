@@ -46,6 +46,9 @@ Customers who still use SAP Human Capital Management (HCM) can also bring identi
 
 ![Diagram of SAP HR integrations.](./media/sap/sap-hr-no-mim.png)
 
+Other integration options for organizations which have SAP HCM and don't have SuccessFactors are listed in [Provision users from SAP human capital management (HCM) to Microsoft Entra ID](../identity/saas-apps/sap-hcm-microsoft-entra-identity-provisioning.md).
+
+
 ## Provide access to SAP applications
 
 In addition to the native provisioning integrations that allow you to manage access to your SAP applications, Microsoft Entra ID supports a rich set of integrations with those applications.

@@ -41,7 +41,7 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
    :::image type="content" border="true" source="media/reference-domain-services-tls-enforcement/enable.png" alt-text="Screenshot that shows how to enable TLS 1.2 Only Mode for Domain Services.":::
 
 >[!Note] 
->Until August 31, 2025, you can select **Disable** to temporarily allow legacy TLS traffic while you update or replace apps that might fail. Select **Enable** again to remain compliant. 
+>Until June 30, 2026, you can select **Disable** to temporarily allow legacy TLS traffic while you update or replace apps that might fail. Select **Enable** again to remain compliant. 
 
 ## [**PowerShell**](#tab/powershell)
 
@@ -70,11 +70,12 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
 
    This command may take about 10 minutes to complete as domain security updates are enforced.
 
+
 ## Troubleshooting
 
 - Some apps provide logs or error messages when TLS handshakes fail. Use application-level diagnostics to  look for errors related to unsupported protocols.
 
-- Until August 31, 2025, you can modify the following PowerShell example to temporarily allow legacy TLS traffic while you update or replace apps:
+- Until June 30, 2026, you can modify the following PowerShell example to temporarily allow legacy TLS traffic while you update or replace apps:
 
   ```powershell
   Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Enabled

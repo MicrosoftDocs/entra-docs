@@ -148,6 +148,8 @@ For joined devices to Microsoft Entra ID:
 - If the [Web sign-in](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin) feature on Windows is also enabled, the user can use TAP to sign into the device. This is intended only for completing initial device setup, or recovery when the user doesn't know or have a password. 
 
 For hybrid-joined devices, users must first authenticate with another method such as a password, smartcard or FIDO2 key, before using TAP to set up Windows Hello for Business. 
+> [!NOTE]
+> For federated domains, the **FederatedIdpMfaBehavior** changes the behavior when MFA is required. If set to **enforceMfaByFederatedIdp** the user is redirected to the federated IDP and does not get the chance to use the TAP. However, if set to **acceptIfMfaDoneByFederatedIdp** then the user will see a TAP prompt in Entra ID during MFA for Windows Hello for Business provisioning.
 
 > [!NOTE]
 > For federated domains where federatedIdpMfaBehavior is set to enforceMfaByFederatedIdp, users will not be prompted for TAP to satisfy multifactor authentication (MFA) to set up Windows Hello for Business. Instead, they are redirected to the federated Identity Provider (IdP) for multifactor authentication (MFA).

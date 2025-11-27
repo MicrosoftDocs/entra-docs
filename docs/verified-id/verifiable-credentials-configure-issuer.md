@@ -3,7 +3,7 @@ title: Tutorial - Issue Microsoft Entra Verified ID credentials from an applicat
 description: In this tutorial, you learn how to issue verifiable credentials by using a sample app.
 ms.service: entra-verified-id
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.author: barclayn
 ms.topic: tutorial
 ms.date: 04/30/2025

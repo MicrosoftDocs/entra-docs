@@ -31,7 +31,7 @@ In this article, you:
 
 To view Activity Logs for applications, you need:
 
-- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles: Reports Reader, Security Reader, Security Administrator, Global Reader
 
 ## How to view permission audit logs for all applications in your directory

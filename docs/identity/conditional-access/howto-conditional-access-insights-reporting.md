@@ -4,7 +4,7 @@ description: Using the Microsoft Entra Conditional Access insights and reporting
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 04/14/2025
+ms.date: 09/24/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
@@ -19,7 +19,7 @@ The Conditional Access insights and reporting workbook enables you to understand
 
 To enable the insights and reporting workbook, your tenant must have:
 
-- A Log Analytics workspace to retain sign-in logs data. 
+- A Log Analytics workspace to retain sign-in logs data and access to that workspace. 
 - Microsoft Entra ID P1 licenses to use Conditional Access.
 
 Users must have at least the Security Reader role assigned and Log Analytics workspace Contributor roles assigned.
@@ -28,16 +28,13 @@ Users must have at least the Security Reader role assigned and Log Analytics wor
 
 ### Stream sign-in logs from Microsoft Entra ID to Azure Monitor logs
 
-If you haven't integrated Microsoft Entra logs with Azure Monitor logs, you need to take the following steps before the workbook loads:
-
-1. [Create a Log Analytics workspace in Azure Monitor](/azure/azure-monitor/logs/quick-create-workspace).
-1. [Integrate Microsoft Entra logs with Azure Monitor logs](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
+If you haven't integrated Microsoft Entra logs with Azure Monitor logs, you must [Integrate Microsoft Entra logs with Azure Monitor logs](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 ## How it works
 
 To access the insights and reporting workbook:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader) and the [appropriate permissions to the Log Analytics workspace](/azure/azure-monitor/logs/manage-access#workspace-permissions).
 1. Browse to **Entra ID** > **Conditional Access** > **Insights and reporting**.
 
 ### Get started: Select parameters 

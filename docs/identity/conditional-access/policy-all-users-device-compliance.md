@@ -1,11 +1,11 @@
 ---
-title: Enforce device compliance with Conditional Access
-description: Require devices accessing resources be marked as compliant with your organization's configuration policies.
+title: How to Require Device Compliance with Conditional Access
+description: "Learn how to enforce device compliance with Conditional Access policies. Ensure secure access to resources by meeting your organization's configuration requirements."
 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 06/24/2025
+ms.date: 10/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,11 +14,11 @@ ms.reviewer: jodah
 ---
 # Require device compliance with Conditional Access
 
-Microsoft Intune and Microsoft Entra work together to secure your organization through [device compliance policies](/mem/intune/protect/device-compliance-get-started) and Conditional Access. Device compliance policies are a great way to ensure user devices meet minimum configuration requirements. The requirements can be enforced when users access services protected with Conditional Access policies.
+Microsoft Intune and Microsoft Entra work together to secure your organization through [device compliance policies](/mem/intune/protect/device-compliance-get-started) and Conditional Access. Device compliance policies ensure user devices meet minimum configuration requirements. The requirements can be enforced when users access services protected with Conditional Access policies.
 
 Some organizations might not be ready to require device compliance for all users. These organizations might instead choose to deploy the following policies: 
 
-- [Require compliant or Microsoft Entra hybrid joined device for their administrators](policy-alt-admin-device-compliand-hybrid.md)
+- [Require a compliant or Microsoft Entra hybrid joined device for administrators](policy-alt-admin-device-compliand-hybrid.md)
 - [Require a compliant device, Microsoft Entra hybrid joined device, **OR** multifactor authentication for all users](policy-alt-all-users-compliant-hybrid-or-mfa.md)
 - [Block unknown or unsupported device platforms](policy-all-users-device-unknown-unsupported.md)
 - [Disable browser persistence](policy-all-users-persistent-browser.md)
@@ -63,11 +63,16 @@ The following steps help create a Conditional Access policy to require devices a
 
 On iOS, Android, macOS, and some non-Microsoft web browsers, Microsoft Entra ID identifies the device using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser the user is prompted to select the certificate. The end user must select this certificate before they can continue to use the browser.
 
-#### Subscription activation
+### B2B scenarios
+
+For organizations you have a relationship with and trust, you might trust their device compliance claims. To configure this setting, see the article [Manage cross-tenant access settings for B2B collaboration](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims).
+
+### Subscription activation
 
 Organizations that use the [Subscription Activation](/windows/deployment/windows-10-subscription-activation) feature to enable users to "step-up" from one version of Windows to another, might want to exclude the Windows Store for Business, AppID 45a330b1-b1ec-4cc1-9161-9f03992aa49f from their device compliance policy.
 
 ## Related content
 
-- [Create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy)
-- [Conditional Access grant controls](/entra/identity/conditional-access/concept-conditional-access-grant#require-device-to-be-marked-as-compliant)
+- Learn how to [create a compliance policy in Microsoft Intune](/mem/intune/protect/create-compliance-policy).
+- Learn about [Conditional Access grant controls](/entra/identity/conditional-access/concept-conditional-access-grant#require-device-to-be-marked-as-compliant).
+- Learn how to [configure cross-tenant access settings](/entra/external-id/cross-tenant-access-settings-b2b-collaboration#to-change-inbound-trust-settings-for-mfa-and-device-claims).

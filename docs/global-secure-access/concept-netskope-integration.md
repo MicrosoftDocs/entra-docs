@@ -1,36 +1,32 @@
 ---
-title: "Global Secure Access: Advanced Threat Protection (Preview)"
+title: "Global Secure Access: Advanced Threat Protection"
 description: "Learn how to protect your organization with Global Secure Access Advanced Threat Protection (ATP) and Data Loss Prevention (DLP) policies powered by Netskope."
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to   
-ms.date: 07/08/2025
+ms.date: 11/07/2025
 manager: dougeby
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
 
 #customer intent: As an IT administrator, I want to configure Advanced Threat Protection and Data Loss Prevention policies so that I can protect my organization from malware and data leaks.
 ---
-# Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention (preview)
+# Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention
 
 In today's evolving threat landscape, organizations face challenges protecting sensitive data and systems from cyberattacks. Global Secure Access Advanced Threat Protection (ATP) combines Microsoft Security Service Edge (SSE) with Netskope's advanced threat detection and data loss prevention (DLP) capabilities to deliver a comprehensive security solution. This integration offers real-time protection against malware, zero-day vulnerabilities, and data leaks, and simplifies management through a unified platform.
 
 This guide provides step-by-step instructions for configuring ATP and DLP policies to safeguard your organization. By following these steps, IT administrators can apply the power of Microsoft SSE and Netskope to enhance their organization's security posture and streamline threat management.
-
-> [!IMPORTANT]
-> Global Secure Access Advanced Threat Protection is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before its release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. 
 
 **High-level architecture**
 :::image type="content" source="media/concept-netskope-integration/high-level-architecture.png" alt-text="Diagram that shows how data is routed and analyzed between Microsoft Entra, Global Secure Access, and Netskope.":::
 
 ## Prerequisites
 To complete these steps, make sure you have the following prerequisites:
-- A Global Secure Access Administrator role in Microsoft Entra ID to configure Global Secure Access settings.   
+- A Global Secure Access Administrator role in Microsoft Entra ID to configure Global Secure Access settings.
 - A tenant configured with a Transport Layer Security (TLS) inspection policy as described in [Configure Transport Layer Security Inspection](how-to-transport-layer-security.md). 
-- Test devices or virtual machines running Windows 10 or Windows 11 that are joined or hybrid joined to a Microsoft Entra ID.   
-- Test devices with the Global Secure Access client installed. See [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md) for requirements and installation instructions.   
+- Devices or virtual machines running Windows 10 or Windows 11 that are joined or hybrid joined to a Microsoft Entra ID.   
+- Devices with the Global Secure Access client installed. See [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md) for requirements and installation instructions.   
 - A Conditional Access Administrator role to configure Conditional Access policies.    
 - Trial Microsoft Entra Internet Access licenses. For licensing details, see the Global Secure Access [Licensing overview](overview-what-is-global-secure-access.md#licensing-overview). You can purchase licenses or get trial licenses. To activate an Internet Access trial, browse to [aka.ms/InternetAccessTrial](https://aka.ms/InternetAccessTrial).     
 
@@ -42,12 +38,12 @@ To complete these steps, make sure you have the following prerequisites:
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding** and enable the Internet access profile.  
 1. Under **Internet access profile** > **User and Group assignments**, select **View** to choose the participating users. 
 
-For more information, see [How to manage the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md). 
+    For more information, see [How to manage the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md). 
 
-> [!IMPORTANT]
-> Before continuing, check that your client's internet traffic is routed through the Global Secure Access service. 
+    > [!IMPORTANT]
+    > Before continuing, check that your client's internet traffic is routed through the Global Secure Access service. 
 
-4. On your test device, right-click the Global Secure Access icon in the system tray and select **Advanced diagnostics**. 
+1. On your test device, right-click the Global Secure Access icon in the system tray and select **Advanced diagnostics**. 
 1. On the **Forwarding Profile** tab, verify **Internet Access rules** are present in the **Rules** section. This configuration can take up to 15 minutes to apply to clients after you enable the Internet access traffic profile.
 
 :::image type="content" source="media/concept-netskope-integration/internet-access-rules.png" alt-text="Screenshot of the Forwarding Profile tab with the Internet access rules highlighted.":::
@@ -70,18 +66,42 @@ You can create ATP and DLP policies powered by Netskope engines directly from th
 1. [Test ATP policies](#test-atp-policies)   
 1. [Test DLP Policies](#test-dlp-policies)   
 
-### Activate a Netskope offer through the Global Secure Access marketplace 
-To activate the Netskope offer for your tenant:   
+### Activate a Netskope offer through the Global Secure Access marketplace
+You can activate a free trial or contact Netskope for a private offer. Select the tab to follow the steps for your preferred option.
+
+#### [Free trial](#tab/free-trial)
+To activate a free trial of Netskope through the Global Secure Access marketplace:
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
+1. Browse to **Global Secure Access** > **Third Party Security Solutions** > **Marketplace**.
+1. Select the Netskope **Get it Now** button.
+1. Select **Try free for 30 days**.    
+    :::image type="content" source="media/concept-netskope-integration/try-free-thirty.png" alt-text="Screenshot showing the Netskope One marketplace page with the Try free for 30 days button highlighted." lightbox="media/concept-netskope-integration/try-free-thirty.png":::
+1. Complete the form to request the trial.
+1. Netskope reaches out within two business days to alert you if they accepted or rejected the trial.
+1. If Netskope accepts your trial request, return to the Microsoft Entra admin center.
+1. Browse to **Global Secure Access** > **Third Party Security Solutions** > **Marketplace**. 
+1. Select the Netskope **Get it Now** button.
+1. Select **Validate Netskope license**. This step provisions Netskope for your tenant and begins the 30-day trial period.
+1. After 30 days, the free trial expires.   
+     :::image type="content" source="media/concept-netskope-integration/offer-expired.png" alt-text="Screenshot showing that the Netskope trial is expired." lightbox="media/concept-netskope-integration/offer-expired.png":::
+
+#### [Private offer](#tab/private-offer)
+To contact Netskope to request a private offer for your tenant:   
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator). 
 1. Browse to **Global Secure Access** > **Third Party Security Solutions** > **Marketplace**. 
-1. Select the Netskope **Get it Now** button and follow the steps to activate the offer.  
+1. Select the Netskope **Get it Now** button.
+1. Select **Contact Netskope for private plan**.   
+    :::image type="content" source="media/concept-netskope-integration/contact-private-plan.png" alt-text="Screenshot showing the Netskope One marketplace page with the Contact Netskope for private plan button highlighted." lightbox="media/concept-netskope-integration/contact-private-plan.png":::
+1. Complete the form to request the private offer.
+1. Netskope reaches out within two business days to discuss the private offer.
+1. After agreeing to the private offer terms with Netskope, return to the Microsoft Entra admin center.
+1. Browse to **Global Secure Access** > **Third Party Security Solutions** > **Marketplace**. 
+1. Select the Netskope **Get it Now** button.
+1. Select **Validate Netskope license**. This step provisions Netskope for your tenant.  
+1. Once the offer is provisioned, the **Offers** page lists the Netskope status as **Active**.   
+    :::image type="content" source="media/concept-netskope-integration/offers-active.png" alt-text="Screenshot of the Offers page with the Netskope status of Active highlighted.":::
 
-> [!NOTE]
-> While in preview, Netskope's functionality is provided at no cost.   
- 
-4. Once the offer is provisioned, the Offers page lists the Netskope status as **Active**.
-
-:::image type="content" source="media/concept-netskope-integration/offers-active.png" alt-text="Screenshot of the Offers page with the Netskope status of Active highlighted.":::
+---
 
 ### Create an ATP policy 
 1. Browse to **Global Secure Access** > **Secure** > **Threat Protection policies**. 
@@ -92,7 +112,7 @@ To activate the Netskope offer for your tenant:
     1. Select the policy **Position**. 
         - The position sets the policy priority when Netskope processes multiple ATP and DLP policies. 
         - Netskope's ATP and DLP policies share a common ordering list. The position you specify applies to both ATP and DLP policies in Netskope. For example, Netskope_ATP_Policy_1 might have a position of 1, followed by Netskope_DLP_Policy_1 with a position of 2, and Netskope_ATP_Policy_2 with a position of 3.
-        - If you assign a position that is already in use by another Netskope ATP or DLP policy, then the positions of the lower policies automatically shift down by one. 
+        - If you assign a position that another Netskope ATP or DLP policy already uses, the positions of the lower policies automatically shift down by one. 
     1. Set the **State** to **enabled**. 
     1. Select **Next**. 
 1. On the **Policy** tab:
@@ -106,7 +126,7 @@ To activate the Netskope offer for your tenant:
     1. The **Advanced settings** allow you to select the **Patient zero** option, which signals the threat engine to run more diagnostics on the threat and blocks the user from uploading or downloading until the threat engine reaches a verdict. These diagnostics can take up to 15 minutes.  
 
        > [!NOTE]
-       > Leave the **Patient zero** check box unchecked unless you explicitly understand and want to include the feature behavior. When Patient zero is enabled, the policy matches *only* binary and executable file types. The implications for Patient zero are:
+       > Don't check the **Patient zero** check box unless you explicitly understand and want to include the feature behavior. When Patient zero is enabled, the policy matches *only* binary and executable file types. The implications for Patient zero are:
           >- If the file type is binary and executable, and the Netskope threat engine has a verdict, the threat engine takes the action that matches the policy.
           >- If the file type is binary and executable, and the Netskope threat engine doesn't have a verdict, the threat engine blocks the activity.
           >- If the file type isn't binary and executable, the file doesn't match the policy. 
@@ -121,7 +141,7 @@ To activate the Netskope offer for your tenant:
 1. Select **+ Create policy** > **Netskope policies**.  
 1. On the **Basics** tab:   
     1. Enter a **Name** and **Description** (optional) for the policy.   
-    1. Select the policy **Position**. The position sets the policy priority when Netskope is processing multiple ATP and DLP policies.   
+    1. Select the policy **Position**. The position sets the policy priority when Netskope processes multiple ATP and DLP policies.   
     1. Set the **State** to **Enabled**. 
     1. Select **Next**. 
 1. On the **Policy** tab:   
@@ -129,19 +149,21 @@ To activate the Netskope offer for your tenant:
     1. For **Destination type**, select **Categories** or **Applications**. 
     1. Search for and select the desired categories or applications.
     1. Select **Apply**. 
-    1. Choose the type of **Activity** that should be subject to this policy. Select both **Upload** and **Download**. The activities available vary according to the categories and applications you select. In addition to **Upload** and **Download**, Netskope offers granular support for a wide range of activities for various applications and application categories. These categories allow customers to apply comprehensive data loss prevention policies to secure data in their business-critical applications and application categories.   
+    1. Choose the type of **Activity** that should be subject to this policy. Select both **Upload** and **Download**. The activities available vary according to the categories and applications you select. In addition to **Upload** and **Download**, Netskope offers granular support for a wide range of activities for various applications and application categories. These categories allow you to apply comprehensive data loss prevention policies to secure data in your business-critical applications and application categories.   
     1. To choose from and configure DLP profiles, select the **Select profiles** link. You can choose from DLP profiles that cover predefined data identifiers and personal identifiers such as financial data, medical data, biodata, inappropriate terms, and industry focused information. 
     1. Select the DLP profiles that match your required information types and select the action to enforce for each. (For initial testing purposes, select **DLP-PCI** and **DLP-PII**.)      
     1. Select **Apply**.   
     1. Optionally, select the **Select advanced settings** link and select **Continue policy evaluation**. The Continue Policy evaluation option ensures DLP policy evaluation doesn't stop after a DLP policy match. Every DLP match raises an alert and policy evaluation continues for each of the remaining DLP policies. Alternatively, if you prefer to stop policy evaluation after the first DLP match and *not* continue with the rest of the DLP policies, don't select the **Continue policy evaluation** option.   
     1. Select **Apply**.   
     1. Select **Next**.   
-1. Review the details and select **Submit**. 
+1. Review the details and select **Submit**.
+
+For instructions on how to create custom DLP profiles, see [Create a custom DLP profile](how-to-full-data-loss-protection.md).
 
 ### Link an ATP, DLP, or TLS inspection policy to the security profile 
 Use **Security profiles** and **Conditional Access** to assign ATP and DLP policies to users.   
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles**.   
-1. Select the security profile you wish to modify.
+1. Select the security profile you want to modify.
 1. Switch to the **Link policies** view.
 1. Link an ATP policy:    
     1. Select **+ Link a policy** > **Existing Threat Protection policy**. 
@@ -168,7 +190,7 @@ To prevent confusion between Microsoft and Netskope policies, Netskope policies 
 > Don't use the baseline security profile to enforce ATP and DLP policies, as the baseline security profile isn't supported during this preview.
 
 ### Create a conditional access policy to enforce ATP, DLP, and TLS inspection policies 
-To enforce the Global Secure Access security profile and TLS inspection policy, create a conditional access policy using the following details. For more information, see [Create and link Conditional Access policy](how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy).  
+To enforce the Global Secure Access security profile and TLS inspection policy, create a conditional access policy with the following details. For more information, see [Create and link Conditional Access policy](how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy).  
 
 |**Policy detail**   | **Description**   |
 |--------------------|-------------------|
@@ -177,9 +199,9 @@ To enforce the Global Secure Access security profile and TLS inspection policy, 
 |**Session**   | Use the Global Secure Access security profile you created.   |
 
 ### Validate your configuration 
-Due to token life validity on the Global Secure Access client, changes to the Security Profile policy or the ATP policy can take up to one hour to apply. 
+Because of token life validity on the Global Secure Access client, changes to the Security Profile policy or the ATP policy can take up to one hour to apply. 
 
-To ensure that TLS inspection works as expected, be sure to disable QUIC protocol support for your browsers. To disable QUIC, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access). For more detail, see the troubleshooting section [TLS inspection only works on some sites](#tls-inspection-only-works-on-some-sites).   
+To ensure that TLS inspection works as expected, disable QUIC protocol support for your browsers. To disable QUIC, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access). For more detail, see the troubleshooting section [TLS inspection only works on some sites](#tls-inspection-only-works-on-some-sites).   
 
 > [!IMPORTANT]
 > Before proceeding, validate your configuration settings.   
@@ -190,15 +212,15 @@ To validate your configuration settings:
 1. Browse to [netskope.com/url-lookup](https://www.netskope.com/url-lookup).   
 
 **Success**: If you see a search field and **Search** button, Netskope is analyzing your traffic and the policies are in effect.
-:::image type="content" source="media/concept-netskope-integration/lookup-success.png" alt-text="Netskope URL Lookup Success":::
+:::image type="content" source="media/concept-netskope-integration/lookup-success.png" alt-text="Screenshot of Netskope URL Lookup page showing a search field and Search button, indicating successful traffic analysis and active policies." lightbox="media/concept-netskope-integration/lookup-success.png":::
 
 **Failure**: If you see the message, "The URL Lookup is only available for Netskope customers. Use a Netskope steering method to access this service.", the test failed. Check the [Troubleshooting section](#troubleshooting) for guidance.   
-:::image type="content" source="media/concept-netskope-integration/lookup-fail.png" alt-text="Screenshot showing Netskope URL Lookup failure message"::: 
+:::image type="content" source="media/concept-netskope-integration/lookup-fail.png" alt-text="Screenshot of Netskope URL Lookup failure message indicating that the service is restricted to Netskope customers." lightbox="media/concept-netskope-integration/lookup-fail.png":::
 
 ### Test ATP policies   
-To test your ATP policies, we recommend using the European Institute for Computer Antivirus Research (EICAR) anti-malware test file. Feel free to engage your security or red teams for more advanced testing. For the EICAR test:
-1. Sign in to the test device using a test user targeted by the Conditional Access policy you created. 
-1. Download the [EICAR test file](http://secure.eicar.org/eicar_com.zip). If Microsoft Defender SmartScreen blocks the download, select **More actions**, and then select **Keep**.
+To test your ATP policies, use the European Institute for Computer Antivirus Research (EICAR) anti-malware test file. For more advanced testing, engage your security or red teams. For the EICAR test:
+1. Sign in to the test device by using a test user targeted by the Conditional Access policy you created. 
+1. Download the [EICAR test file](http://secure.eicar.org/eicar_com.zip). If Microsoft Defender SmartScreen blocks the download, select **More actions**, then select **Keep**.
 1. Disable QUIC protocol support for your browsers. To disable QUIC, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).    
    
 ### Test DLP policies 
@@ -214,14 +236,14 @@ Check alerts by going to **Global Secure Access** > **Dashboard**.
 
 ### Threat alerts   
 To view threat alerts, go to **Global Secure Access** > **Alerts**. 
-:::image type="content" source="media/concept-netskope-integration/threat-alerts-dashboard.png" alt-text="Screenshot of the Alerts dashboard showing a list of detected alerts.":::   
+:::image type="content" source="media/concept-netskope-integration/threat-alerts-dashboard.png" alt-text="Screenshot of the Alerts dashboard showing a list of detected alerts." lightbox="media/concept-netskope-integration/threat-alerts-dashboard.png":::
 
 More reporting might be available depending on the type of threat, such as **Malware detected** or **Data loss prevention**. Select the alert **Description** to inspect the alert type and view more details. 
 1. Expand the **Entities** section.
 1. Switch to the **File hash** tab.   
 1. To download the Structured Threat Information eXpression threat report, select **Download malware STIX report**.   
 1. To download detonation images, if available, select **Download additional malware details**.   
-:::image type="content" source="media/concept-netskope-integration/file-hash-links.png" alt-text="Screenshot of the Entities section with malware download links highlighted.":::   
+:::image type="content" source="media/concept-netskope-integration/file-hash-links.png" alt-text="Screenshot of the Entities section with malware download links highlighted." lightbox="media/concept-netskope-integration/file-hash-links.png":::
 1. To view the threat URL, switch to the **URL** tab.
 
 ### Traffic logs   
@@ -233,7 +255,7 @@ To show all traffic subject to Netskope inspection:
 1. Search for or scroll to find the **Vendor names** filter.
 1. Enter `Netskope` in the field to show only Netskope traffic.
 1. Select **Apply**.      
-:::image type="content" source="media/concept-netskope-integration/traffic-logs-filter.png" alt-text="Screenshot of the Traffic logs with the Vendor names contains Netskope filter highlighted.":::   
+:::image type="content" source="media/concept-netskope-integration/traffic-logs-filter.png" alt-text="Screenshot of the Traffic logs with the Vendor names contains Netskope filter highlighted." lightbox="media/concept-netskope-integration/traffic-logs-filter.png":::
 
 This sample shows an event triggered by an ATP policy with blocked content. Check the **filteringProfileName** and **policyName** to identify the policies responsible for the applied action.     
 
@@ -287,7 +309,7 @@ Check if you have an active Netskope offer.
 ### I can't purchase a Netskope offer, or the status shows as failed 
 
 > [!IMPORTANT]
-> You must set up TLS inspection before purchasing Netskope offer from the marketplace.
+> You must set up TLS inspection before purchasing a Netskope offer from the marketplace.
 
 To enable TLS inspection, follow the steps in [Configure Transport Layer Security Inspection](how-to-transport-layer-security.md).    
 
@@ -298,19 +320,19 @@ If you see errors like "Your connection isn't private" or other certificate erro
 
 ### Check that TLS inspection is working correctly 
 To check if TLS inspection is working correctly, go to the website you'd like to check, select the **View site information** icon, and then select **Connection is secure**. Select the **Show certificate** icon and validate the issuer of the certificate is **Microsoft Global Secure Access Intermediate**. The presence of this certificate issuer indicates Microsoft intercepted the TLS session.   
-:::image type="content" source="media/concept-netskope-integration/certificate-viewer.png" alt-text="Screenshot of the Certificate Viewer dialog showing the issuer of the certificate is Microsoft Global Secure Access Intermediate.":::      
+:::image type="content" source="media/concept-netskope-integration/certificate-viewer.png" alt-text="Screenshot of the Certificate Viewer dialog showing the issuer of the certificate is Microsoft Global Secure Access Intermediate." lightbox="media/concept-netskope-integration/certificate-viewer.png":::
  
 If you configured TLS inspection correctly, waited at least 10 minutes after configuring it, and still don't see TLS sessions issued by Microsoft Global Secure Access Intermediate, check the configuration of your host file. 
    
 ### TLS inspection only works on some sites 
-The Global Secure Access client doesn't currently intercept requests using the QUIC protocol. The Global Secure Access client has a check for QUIC status within **Advanced diagnostics** > **Health check**. To disable QUIC in your browser, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access). 
+The Global Secure Access client doesn't currently intercept requests that use the QUIC protocol. The Global Secure Access client has a check for QUIC status within **Advanced diagnostics** > **Health check**. To disable QUIC in your browser, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access). 
 
 ### Check which Netskope web category a URL maps to 
 To ensure Netskope policies are set to the correct web or application categories, refer to the Netskope URL categorization lookup: [www.netskope.com/url-lookup](https://www.netskope.com/url-lookup). To successfully access the lookup tool, the request must go through Netskope proxies, which requires at least one Netskope policy to be configured and linked to the security profile in use. **Note**: web categories Education, Government, Finance, and Health and Medicine aren't inspected by default. 
 
 ### Check if Netskope ATP is analyzing your traffic 
 To test if Netskope's ATP engine is analyzing traffic, check the test machine's egress IP address by going to [iplocation.net](https://iplocation.net). Check the ISP field to confirm whether traffic is routed through Netskope's ATP engine.   
-:::image type="content" source="media/concept-netskope-integration/ip-location.png" alt-text="Screenshot of the IP Location website with the ISP field showing that the traffic is routed through Netskope.":::    
+:::image type="content" source="media/concept-netskope-integration/ip-location.png" alt-text="Screenshot of the IP Location website with the ISP field showing that the traffic is routed through Netskope." lightbox="media/concept-netskope-integration/ip-location.png":::
  
 > [!NOTE]
 > If you can't access either of the lookup websites on the test machine with Netskope ATP policy active, and the policy has a **default** action set to block, the block might be due to policy rules.    
@@ -338,15 +360,15 @@ Yes, Netskope recommends creating these two category-based policies for threat p
 > For the Netskope advanced threat protection policy, the patient zero setting only applies to binary and executable files (for more detail, see [Supported File Types for Detection](https://docs.netskope.com/en/supported-file-types-for-detection/)). When the patient zero setting is enabled, only binary and executable files are sent for threat scanning. The threat engine blocks new files until it reaches a verdict. Because of the default blocking nature, it's a good practice to enable the threat protection policies in the preceding table.   
  
 ### What is the pricing of Microsoft products and Netskope functionality? 
-Microsoft Entra Internet Access and Microsoft Entra Private Access are part of the Microsoft Entra Suite. For details, see [Microsoft Entra plans and pricing](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing). You can purchase the Netskope offer through the Microsoft Entra in-product marketplace. The offer is free during preview and follows per-user pricing when the functionality is generally available. 
- 
+You can activate a free trial or contact Netskope for a private offer. For details, see [Activate a Netskope offer through the Global Secure Access marketplace](#activate-a-netskope-offer-through-the-global-secure-access-marketplace). 
+
 ### What activities do Netskope threat engines support? 
 Netskope threat engines support three activities: **Upload**, **Download**, and **Browse**.     
 
 By default, Netskope scans traffic categorized as 'Browse,' so you don't need to configure a policy. You can configure 'Upload' and 'Download' via policies that match your requirements. For more information on Netskope web activities and policy usage, see Netskope's documentation on [Real-time Protection Policies](https://docs.netskope.com/en/inline-policies/).  
 
 ### How can I customize or modify DLP profiles to suit organizational policies?  
-The current phase of this integration offers customers out-of-the-box DLP profiles. These profiles cover predefined data identifiers and personal identifiers, including financial data, medical data, biodata, inappropriate terms, and industry-specific information. These predefined profiles can't be customized. Customizable DLP entities like data identifiers and DLP profiles are planned for future versions of this integration.  
+For instructions on how to create custom DLP profiles, see [Create a custom DLP profile](how-to-full-data-loss-protection.md).  
 
 Learn more about Netskope Threat Protection in these articles:  
 - [Netskope Threat Protection overview](https://www.netskope.com/netskope-one/threat-protection)  
@@ -357,3 +379,4 @@ Learn more about Netskope Threat Protection in these articles:
 
 - [Learn about Security Service Edge (SSE) coexistence with Microsoft and Netskope](concept-netskope-coexistence.md)
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)   
+- [Create a custom Data Loss Prevention profile](how-to-full-data-loss-protection.md)

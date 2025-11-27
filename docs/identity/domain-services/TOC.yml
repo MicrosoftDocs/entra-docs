@@ -89,6 +89,8 @@
           href: change-sku.md
         - name: Retrieve data
           href: how-to-data-retrieval.md
+        - name: Restore group policy from backup
+          href: group-policy.md
     - name: Secure Domain Services
       items:
         - name: Secure your managed domain

@@ -5,6 +5,8 @@
   items:
   - name: What is Identity Governance?
     href: identity-governance-overview.md
+  - name: Governing Agent IDs (Preview)
+    href: agent-ID-governance-overview.md    
 
 
 - name: Scenarios
@@ -126,14 +128,20 @@
         href: scenarios/sap-template.md
       - name: Deploy SAP NetWeaver AS ABAP 7
         href: scenarios/deploy-sap-netweaver.md
-- name: Security Copilot + Microsoft Entra
+- name: Access Review Agent (Preview)
   items:
   - name: Get started with the Access Review Agent (Preview)
-    href: access-review-agent.md
-  - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
-    href: ~/fundamentals/copilot-entra-lifecycle-workflow.md 
+    href: ~/security-copilot/access-review-agent.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
   - name: Access Review Agent logs and metrics (Preview)
-    href: access-review-agent-logs-metrics.md
+    href: ~/security-copilot/access-review-agent-logs-metrics.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+- name: Security Copilot for Identity Governance
+  items:
+  - name: Identity Governance and optimization with Microsoft Security Copilot
+    href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+  - name: Manage lifecycle workflows using Microsoft Security Copilot
+    href: ~/security-copilot/entra-lifecycle-workflows.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
+  - name: Identity Governance and optimization with Microsoft Security Copilot
+    href: ~/security-copilot/entra-governance-optimization.md?toc=/entra/id-governance/toc.json&bc=/entra/id-governance/breadcrumb/toc.json
 - name: Tutorials
   expanded: true
   items:
@@ -257,6 +265,10 @@
         href: my-access-approver-details.md  
       - name: View reports and logs
         href: entitlement-management-reports.md
+      - name: Configure ID Protection-based approvals (Preview)
+        href: entitlement-management-configure-id-protection-approvals.md
+      - name: Configure Insider risk management-based approvals (Preview)
+        href: entitlement-management-configure-insider-risk-management-approvals.md    
       - name: Archive logs and reporting
         href: entitlement-management-logs-and-reporting.md
       - name: Troubleshoot
@@ -267,7 +279,7 @@
         href: entitlement-management-catalog-create.md
       - name: Create a custom extension (logic apps) for catalogs
         href: entitlement-management-logic-apps-integration.md
-      - name: Determine access package approvers externally (Preview)
+      - name: Determine access package approvers externally
         href: entitlement-management-dynamic-approval.md  
       - name: Delegate to access package managers
         href: entitlement-management-delegate-managers.md
@@ -309,9 +321,9 @@
         href: entitlement-management-access-package-edit.md
       - name: Assign Microsoft Entra Roles (Preview)
         href: entitlement-management-roles.md
-      - name: Suggested access packages in MyAccess (Preview)
+      - name: Suggested access packages in MyAccess
         href: entitlement-management-suggested-access-packages.md 
-      - name: Assign eligible group membership and ownership in access packages using PIM managed groups (Preview)
+      - name: Assign eligible group membership and ownership in access packages using PIM managed groups
         href: entitlement-management-access-package-eligible.md   
     - name: Approvers
       items:
@@ -322,7 +334,7 @@
       - name: Delegate approvers (Preview)
         href: delegate-approvals-my-access.md
       - name: Self-review of an access package
-        href: entitlement-management-access-reviews-self-review.md  
+        href: entitlement-management-access-reviews-self-review.md   
     - name: Requestors
       items:
       - name: Request access
@@ -351,6 +363,10 @@
         href: access-reviews-application-preparation.md
       - name: Create an access review
         href: create-access-review.md
+      - name: Catalog access reviews (Preview)
+        href: catalog-access-reviews.md
+      - name: Custom data provided resources (Preview)
+        href: custom-data-resource-access-reviews.md      
       - name: Review access
         href: perform-access-review.md
       - name: Review access for yourself
@@ -387,24 +403,36 @@
           href: manage-workflow-properties.md
         - name: Manage workflow versions
           href: manage-workflow-tasks.md
-        - name: Using custom security attributes
-          href: manage-workflow-custom-security-attribute.md  
+        - name: Using custom trigger attributes (Preview)
+          href: workflow-custom-triggers.md    
+        - name: Using custom security attributes scope
+          href: manage-workflow-custom-security-attribute.md    
         - name: Run a workflow on-demand
           href: on-demand-workflow.md
         - name: Customize emails
           href: customize-workflow-email.md
         - name: Check the status of a workflow
           href: check-status-workflow.md
+        - name: Reprocess workflows
+          href: reprocess-workflow.md    
         - name: Download workflow history reports
-          href: download-workflow-history.md  
+          href: download-workflow-history.md
+        - name: Manage inactive users
+          href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
-          href: check-workflow-execution-scope.md  
+          href: check-workflow-execution-scope.md
+        - name: Delegated Workflow Management (Preview)
+          href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
         - name: Manage synced AD DS users
-          href: manage-workflow-on-premises.md              
+          href: manage-workflow-on-premises.md                
         - name: Check Workflow Insights
-          href: manage-workflow-insights.md             
+          href: manage-workflow-insights.md
+        - name: Sensitivity Labels in Lifecycle Workflows
+          href: workflow-sensitivity-labels.md 
+        - name: Agent Identity Sponsor Tasks (Preview)
+          href: agent-sponsor-tasks.md       
       - name: Delete
         items: 
         - name: Delete a Lifecycle workflow
