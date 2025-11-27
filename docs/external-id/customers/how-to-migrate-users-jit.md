@@ -76,21 +76,22 @@ To test the JIT migration process, you need to create a test user in your Extern
 
 To implement JIT migration, you need to define a directory extension property to track whether each user's credentials have been migrated from the legacy identity provider. Microsoft Graph supports adding custom properties to directory objects through [directory (Microsoft Entra ID) extensions](/graph/extensibility-overview). For detailed information about extension types and their usage, see [Add custom data to resources by using extensions](/graph/extensibility-overview).
 
-Create an extension property using the Microsoft Graph API as shown below:
+Create an extension property using the Microsoft Graph API with a default value of `true`:
 
 ``` http
 POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69e287e7b/extensionProperties 
 
 { 
     "name": "toBeMigrated", 
-    "dataType": "Boolean", 
+    "dataType": "Boolean",
+    "defaultValue": true,
     "targetObjects":[ 
     "User" 
 ] 
 } 
 ```
 
-Replace `30a5435a-1871-485c-8c7b-65f69e287e7b` with the object ID of your application.
+Replace `30a5435a-1871-485c-8c7b-65f69e287e7b` with the object ID of your application. By setting `defaultValue` to `true`.
 
 ### Get the extension property ID for use in your custom authentication extension
 
