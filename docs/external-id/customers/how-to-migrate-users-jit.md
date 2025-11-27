@@ -40,9 +40,30 @@ Before you begin, ensure you have:
 
 JIT migration works by invoking a custom API during the sign-in process to validate user credentials against the legacy identity provider. Entra External ID supports this process by using [custom authentication extensions](/graph/api/resources/customauthenticationextension) to facilitate the integration. These extensions allow you to define custom logic that runs during the authentication process, enabling you to interact with external systems and perform additional processing as part of the sign-in flow.
 
+From the user's perspective, the migration is completely seamless. Users simply sign in with their existing credentials from the legacy system. If the credentials are correct, they're authenticated successfully and can access your application. Behind the scenes, their password is securely migrated to Microsoft Entra External ID, and subsequent sign-ins authenticate directly against Entra without invoking the legacy system. This approach minimizes disruption during migration and eliminates the need for users to reset their passwords or learn new credentials.
+
 The JIT migration process is illustrated in the following diagram:
 
 :::image type="content" source="media/how-to-migrate-users-jit/jit-migration-flow-diagram.png" alt-text="Diagram of the Just-In-Time password migration flow showing user authentication from a legacy identity provider to Microsoft Entra External ID." lightbox="media/how-to-migrate-users-jit/jit-migration-flow-diagram.png":::
+
+## How the JIT migration process works
+
+When a user with the migration flag set to `true` signs in, the following process occurs:
+
+1. **User signs in** - User enters credentials from the legacy identity provider.
+2. **Migration flag check** - Entra External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed.
+3. **Password encryption** - Entra encrypts the password using the public key (RSA JWE format) ensuring plaintext is never transmitted.
+4. **Custom extension invocation** - Entra calls your Azure Function with the encrypted payload, user information, and authentication context.
+5. **Decryption and validation** - Your function decrypts the password using the private key from Key Vault and validates credentials against your legacy identity provider.
+6. **Response action** - Your function returns one of four actions:
+   - **MigratePassword**: Password is valid; Entra stores it and sets migration flag to `false`
+   - **UpdatePassword**: Password is correct but weak; user must reset password
+   - **Retry**: Password is incorrect; user can try again
+   - **Block**: Authentication blocked (e.g., account locked in legacy system)
+7. **Authentication completion** - If successful, the user is authenticated and future sign-ins bypass the custom extension.
+
+> [!NOTE]
+> Passwords are encrypted end-to-end using asymmetric RSA encryption. The private key remains in Azure Key Vault and is never exposed in your function code.
 
 ## Create a user in your External ID tenant
 
@@ -554,6 +575,19 @@ namespace cust_auth_functions
 }
 ```
 
+## Generate and configure encryption keys
+
+Before creating your app registration, generate an RSA key pair (2048 or 4096 bits) in Azure Key Vault for encrypting the password payload. The public key will be configured in your Entra External ID app registration, while the private key remains in Key Vault and is accessed by your Azure Function using managed identity.
+
+To generate the key pair:
+
+1. [Create an Azure Key Vault](/azure/key-vault/general/quick-create-portal) if you don't already have one.
+2. [Generate an RSA key](/azure/key-vault/keys/quick-create-portal) with a descriptive name (e.g., `jit-migration-encryption-key`).
+3. Download the public key in PEM format to upload to your app registration in the next step.
+
+> [!TIP]
+> Generating keys directly in Azure Key Vault ensures the private key never leaves the secure environment and provides enterprise features like automatic key rotation, access auditing, and HSM protection.
+
 ### Create an app registration for the custom authentication extension 
 
 Create an application registration to represent your custom authentication extension. This application will authenticate calls between Microsoft Entra External ID and your Azure Function. For general guidance on app registrations, see [Register an application](/entra/identity-platform/quickstart-register-app).
@@ -562,6 +596,41 @@ Register a new application in the [Microsoft Entra admin center](https://entra.m
 
 - **Name**: Enter a descriptive name for your JIT migration extension
 - **Supported account types**: Accounts in this organizational directory only
+
+### Configure the public key for encryption
+
+After creating your app registration, you need to upload the public key so that Entra External ID can encrypt the password payload before sending it to your custom extension.
+
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to your custom authentication extension app registration.
+2. Under **Manage**, select **Certificates & secrets**.
+3. In the **Certificates** tab, select **Upload certificate**.
+4. Upload your `public-key.pem` file or the public key you exported from Key Vault.
+5. After uploading, note the **Thumbprint** value - this identifies your encryption key.
+
+Alternatively, you can configure the key through the application manifest:
+
+1. Under **Manage**, select **Manifest**.
+2. Locate the `keyCredentials` array and add your public key:
+
+```json
+"keyCredentials": [
+  {
+    "customKeyIdentifier": "Base64EncodedThumbprint",
+    "keyId": "unique-guid-for-this-key",
+    "type": "AsymmetricX509Cert",
+    "usage": "Encrypt",
+    "key": "Base64EncodedPublicKey"
+  }
+]
+```
+
+3. Set the `tokenEncryptionKeyId` property to the `keyId` you specified:
+
+```json
+"tokenEncryptionKeyId": "unique-guid-for-this-key"
+```
+
+This configuration tells Entra External ID to use this public key when encrypting the password context for your custom extension.
 
 ### Configure the application manifest
 
