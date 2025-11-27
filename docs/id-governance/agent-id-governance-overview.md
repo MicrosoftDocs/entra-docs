@@ -29,7 +29,7 @@ This allows agent identities to be governed with Microsoft Entra features in the
 Agent identities can have resources assigned to them directly via access packages. Resource assignments allow agent identities to request an access package for themselves, or have their owner or sponsor request one on their behalf. With Access packages, you're able to assign agent identities the following resources:
 
 - Security Groups
-- Application roles and API permissions(including Graph permissions)
+- Application roles and API permissions (including Graph permissions)
 - Microsoft Entra roles
 
 

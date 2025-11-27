@@ -21,7 +21,7 @@ This video provides an overview of how to change an access package.
 ## Check catalog for resources
 
 
-If you need to add resources to an access package, you should check whether the resources you need are available in the access package's catalog. If you're an access package manager, you can't add resources to a catalog, even if you own them. You're restricted to using the resources available in the catalog.
+If you need to add resources such as groups or apps to an access package, you should check whether the resources you need are available in the access package's catalog. If you're an access package manager, you can't add resources to a catalog, even if you own them. You're restricted to using the resources available in the catalog.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -53,7 +53,7 @@ When they lose an access package assignment, then they're removed from all the r
 > [!NOTE]
 > If identities were added to the resources outside of entitlement management, and they need to retain access even if they later receive access package assignments and their access package assignments expire, then don't add the resource roles to an access package.
 
-If you want some identities to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles. You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so identities can't request access to access packages that would give them excessive access.
+If you want some identities to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles. For example, if you wish to assign API permissions to an agent ID (preview), then you'll need this to be in a separate access package from member or guest users, since member or guest users can't have API permissions assigned to them. You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so identities can't request access to access packages that would give them excessive access.
 
 In particular, applications can have multiple app roles. When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those identities in the access package.
 
@@ -89,7 +89,7 @@ If you want the identity who had a resource role membership to also be assigned 
 
     ![Access package - Add resource roles](./media/entitlement-management-access-package-resources/resource-roles-add.png)
 
-1. Depending on whether you want to add a membership of a group or team, access to an application, SharePoint site, or Microsoft Entra role(Preview) perform the steps in one of the following resource role sections.
+1. Depending on whether you want to add a [membership of a group or team](#add-a-group-or-team-resource-role), [access to an application](#add-an-application-resource-role), [SharePoint site](#add-a-sharepoint-site-resource-role), [Microsoft Entra role (Preview)](#add-a-microsoft-entra-role-assignment) or [API permission (Preview)](#add-an-api-permission-preview), perform the steps in one of the following resource role sections.
 
 ## Add a group or team resource role
 
@@ -226,6 +226,19 @@ Follow these steps to include a Microsoft Entra role as a resource in an access 
 > If you select **Eligible**, identities will become eligible for that role and can activate their assignment using Privileged Identity Management in the Microsoft Entra admin center. If you select **Active**, identities will have an active role assignment until they no longer have access to the access package. For Entra roles that are tagged as *“privileged”*, you'll only be able to select **Eligible**. You can find a list of privileged roles here: [Microsoft Entra built-in roles](../identity/role-based-access-control/permissions-reference.md).
 
 To add a Microsoft Entra role programmatically, see: [Add a Microsoft Entra role as a resource in an access package programmatically](entitlement-management-roles.md#add-a-microsoft-entra-role-as-a-resource-in-an-access-package-programmatically).
+
+## Add an API permission (Preview)
+
+This resource role is used for assigning API permissions to a service principal or agent ID, as part of Microsoft Entra Agent ID.
+
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
+
+Prior to including API permissions in an access package, ensure that the access package policies are scoped to either all service principals or all agent IDs, as users cannot receive API permissions. Then, select **API Permissions (Preview)**. Choose the source application that provides the API: Microsoft Graph, another Microsoft feature, or an API your organization uses from one of your organization's own applications. If you choose Microsoft Graph, select whether your agent requires a delegated or an application permission. Then, select the checkboxes for the necessary permission, and select **Update permissions**.
+
+:::image type="content" source="media/entitlement-management-access-package-create/api-permissions-roles.png" alt-text="Screenshot of adding API permissions as resource roles to an access package.":::
+
+> [!NOTE]
+> Because of the autonomous nature of agents and the potential risks they pose, certain high-risk Microsoft Graph API permissions are explicitly blocked for agents to prevent misuse or unintended access to sensitive data. The permissions listed in [Microsoft Graph permissions blocked for agents](/graph/api/resources/agentid-platform-overview?view=graph-rest-beta#microsoft-graph-permissions-blocked-for-agents) can't be assigned to agent identities.
 
 ## Add resource roles programmatically
 
