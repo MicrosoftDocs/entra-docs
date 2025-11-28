@@ -1799,7 +1799,7 @@ Content-Type: application/json
 |`challenge_type`| Challenge type selected for the user to authenticate with.|
 |`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways to the user to enter the one-time passcode. Issued if `challenge_type` is *oob*  |
 |`challenge_channel`| The type of the channel through which the one-time passcode was sent. At the moment, we support email. |
-|`challenge_target_label` |An obfuscated email where the one-time passcode was sent. If MFA is enabled for the user, the email containing the one-time passcode is sent to the: <br> - email address used as the strong authentication method if the email address is different from the account email address. <br> - account email address if the strong authentication method is SMS.|
+|`challenge_target_label` |An obfuscated email where the one-time passcode was sent. If MFA is enabled for the user, the email containing the one-time passcode is sent to the: <br> - email address used as the strong authentication method when the email address is different from the account email address. <br> - account email address when the strong authentication method is SMS.|
 |`code_length`|The length of the one-time passcode that Microsoft Entra generates. |
 
 #### Redirect response
