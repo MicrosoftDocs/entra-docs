@@ -55,7 +55,7 @@ Group Provision to AD feature's performance is impacted by the size of the tenan
 
 |Scoping Mode  |Number of in-scope groups | Number of membership links (Direct members only)  |Notes  |
 |---------|---------|---------|---------|
-|"Selected security groups" mode    |  Up to 10K groups. The CloudSync pane in Microsoft Entra portal only allows selecting up to 999 groups as well as displaying up to 999 groups. If you need to add more than 1000 groups into scope, see: [Expanded group scaling via API](#expanded-group-scaling-via-api).    |    Up to 250K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant exceeds ANY of these limits<br> 1. Tenant has more than 200k users<br>2. Tenant has more than 40K groups<br> 3. Tenant has more than 1M group memberships.|
+|"Selected security groups" mode    |  Up to 10K groups. The CloudSync pane in Microsoft Entra portal only allows selecting up to 999 groups as well as displaying up to 999 groups. If you need to add more than 1000 groups into scope, see: [Expanded group selection via API](#expanded-group-selection-via-api).    |    Up to 250K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant exceeds ANY of these limits<br> 1. Tenant has more than 200k users<br>2. Tenant has more than 40K groups<br> 3. Tenant has more than 1M group memberships.|
 |“All Security groups” mode with at least one attribute scoping filter.     |   Up to 20K groups.      |   Up to 500K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant satisfies ALL the below limits:<br>1. Tenant has less than 200k users<br>2. Tenant has less than 40K groups<br>3. Tenant has more than 1M group memberships. |
 
 ### What to do if you exceed limits
@@ -74,7 +74,7 @@ Use **Selected security groups** scoping mode as recommended.
 **Split membership** across multiple groups or adopt staged groups (for example, by region or business unit) to keep each group under the cap.
 
 
-### Expanded group scaling via API
+### Expanded group selection via API
 
 If you need to select more than 999 groups, you must use the [Grant an appRoleAssignment for a service principal](/graph/api/serviceprincipal-post-approleassignedto) API call. 
 
@@ -96,7 +96,7 @@ where:
 
 - **principalId**: Group object ID.
 - **resourceId**: Job's service principal ID.
-- **appRoleId**: Identifier of app role exposed by the resource.
+- **appRoleId**: Identifier of app role exposed by the resource service principal.
 
 The following table is a list of App Role Ids for Clouds:
 
