@@ -617,10 +617,12 @@ Alternatively, you can configure the key through the application manifest:
 "keyCredentials": [
   {
     "customKeyIdentifier": "Base64EncodedThumbprint",
+    "displayName": "JIT PAYLOAD ENC 2",
+    "key": null
     "keyId": "unique-guid-for-this-key",
+    "startDateTime": "2025-11-25T17:44:47Z"
     "type": "AsymmetricX509Cert",
     "usage": "Encrypt",
-    "key": "Base64EncodedPublicKey"
   }
 ]
 ```
@@ -658,6 +660,7 @@ Your custom authentication extension requires the `CustomAuthenticationExtension
 
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Entra ID** > **App registrations** and select your custom authentication extension application.
 1. Go to **API permissions** > **Add a permission**.
+1. Select **Microsoft Graph** > **Application permissions**.
 1. Search for **CustomAuthenticationExtension.Receive.Payload**, select it and click **Add permissions**.
 1. Finally, click **Grant admin consent for [Your Tenant]** to grant the permission.
 
@@ -696,7 +699,7 @@ Register a new web application with these JIT migration-specific settings:
 
 - **Redirect URI**: Set to `https://jwt.ms` (Web platform) for testing
 - **Authentication**: Enable **ID tokens** under implicit grant and hybrid flows
-- **API Permissions**: Grant admin consent for **User.Read** (delegated Microsoft Graph permission)
+- **API Permissions**: Grant admin consent for **User.Read** (delegated Microsoft Graph permission). Even if the permission already exists, re-granting consent is necessary for proper configuration.
 
 > [!TIP]
 > You can use an existing application registration if you have one configured for testing.
