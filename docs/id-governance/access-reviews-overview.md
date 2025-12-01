@@ -63,6 +63,10 @@ Depending on what you want to review, you either create your access review in ac
 >[!NOTE]
 >Creating a review on inactive users and with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations requires a Microsoft Entra ID Governance license.
 
+## Access Review Agent (Preview)
+
+The Access Review Agent works for your reviewers by automatically gathering insights and generating recommendations. It then guides reviewers through the review process in Microsoft Teams with natural language, with simple summaries and proposed decisions, so they can make the final call with confidence and clarity. For more information, see [Access Review Agent](../security-copilot/access-review-agent.md).
+
 ## Next steps
 
 - [Prepare for an access review of users' access to an application](access-reviews-application-preparation.md)
