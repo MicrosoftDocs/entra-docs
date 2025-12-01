@@ -486,6 +486,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/concept-secure-remote-workers.md",
+      "redirect_url": "/entra/fundamentals/configure-security",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/whatis.md",
       "redirect_url": "/entra/fundamentals/what-is-entra",
       "redirect_document_id": true
@@ -1028,6 +1033,16 @@
     {
       "source_path_from_root": "/docs/identity/devices/enroll-macos-admin.md",
       "redirect_url": "/mem/intune/configuration/platform-sso-macos",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-app-configuration.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/scenario-web-app-sign-user-sign-in.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users",
       "redirect_document_id": false
     },
     {

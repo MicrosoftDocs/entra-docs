@@ -81,7 +81,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Improve your security posture
-            url: concept-secure-remote-workers.md
+            url: configure-security.md
           - text: Securing identity with Zero Trust
             url: /security/zero-trust/deploy/identity
           - text: Security defaults
