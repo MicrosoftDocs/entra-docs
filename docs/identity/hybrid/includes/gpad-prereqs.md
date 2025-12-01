@@ -43,7 +43,7 @@ The following prerequisites are required to implement provisioning groups to Act
 
 ## Scale limits for Provisioning groups to Active Directory
 
-Group Provision to AD feature's performance is impacted by the size of the tenant and the number of groups and memberships that are in scope for provisioning to AD. This section provides guidance on how to determine if GPAD supports your scale requirement and how to pick the right group scoping mode to achieve quicker initial and delta sync cycles. 
+Group Provision to Active Directory feature's performance is impacted by the size of the tenant and the number of groups and memberships that are in scope for provisioning to Active Directory. This section provides guidance on how to determine if GPAD supports your scale requirement and how to pick the right group scoping mode to achieve quicker initial and delta sync cycles. 
 
 
 ### What is not supported?
