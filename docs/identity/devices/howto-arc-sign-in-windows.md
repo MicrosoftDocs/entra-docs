@@ -17,9 +17,9 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azur
 
 Organizations can improve the security of Windows devices in Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into supported versions of Windows. You can then centrally control and enforce Azure role-based access control (RBAC) policies that allow or deny access to the devices.
 
-This article shows you how to create and configure a Windows machine and sign in by using Microsoft Entra ID-based authentication.
+This article shows you how to create and configure an Azure Arc-enabled Windows machine and sign in by using Microsoft Entra ID-based authentication.
 
-There are many security benefits of using Microsoft Entra ID-based authentication to sign in to Windows devices in Azure or connected using Azure Arc. They include:
+There are many security benefits of using Microsoft Entra ID-based authentication to sign in to Windows devices connected using Azure Arc. They include:
 
 - Use Microsoft Entra authentication including passwordless to sign in to Windows devices. Reduce reliance on local administrator accounts.
 - Use Password complexity and password lifetime policies that you configure for Microsoft Entra ID also help secure Windows devices.
@@ -27,7 +27,6 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
    - Specify who can sign in as a regular user or with administrator privileges.
    - When users join or leave your team, you can update Azure role-based access control policy to grant access as appropriate.
    - When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
-- Use Conditional Access policy "phishing resistant MFA" and other signals such as user sign-in risk.
 - Use Azure Policy to deploy and audit policies to require Microsoft Entra sign in for Windows devices and to flag the use of unapproved local accounts on the devices.
 - Use Intune to automate and scale Microsoft Entra join with mobile device management (MDM) autoenrollment of Azure Windows VMs that are part of your virtual desktop infrastructure (VDI) deployments. MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
@@ -42,11 +41,8 @@ MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs d
 
 This feature currently supports the following Windows distributions:
 
-
-
 - Windows 11 24H2 or later installed.
 - Windows Server 2025 or later installed with Desktop Experience.
-
 
 This feature is now available in the following Azure clouds:
 
@@ -192,7 +188,8 @@ To use passwordless authentication for your Windows VMs in Azure, you need the W
 - Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
 - Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
 
-> [!Note]
+
+> [!NOTE]
 > When using the **web account to sign in to the remote computer** option, there is no requirement for the local device to be joined to a domain or Microsoft Entra ID.
 
 To connect to the remote computer:
@@ -241,7 +238,7 @@ Use Azure Policy to:
 - Ensure that Microsoft Entra sign in is enabled for your new and existing Windows devices.
 - Assess compliance of your environment at scale on a compliance dashboard.
 
-With this capability, you can use many levels of enforcement. You can flag new and existing Windows devices within your environment that don't have Microsoft Entra sign in enabled. You can also use Azure Policy to deploy the Microsoft Entra extension to Windows virtual machines in Azure or Arc-enabled Windows Server.
+With this capability, you can use many levels of enforcement. You can flag new and existing Windows devices within your environment that don't have Microsoft Entra sign in enabled. You can also use Azure Policy to deploy the Microsoft Entra extension to the Arc-enabled Windows Server.
 
 In addition to these capabilities, you can use Azure Policy to detect and flag Windows machines that have unapproved local accounts created on their devices. To learn more, review [Azure Policy](/azure/governance/policy/overview).
 
