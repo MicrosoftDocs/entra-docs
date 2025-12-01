@@ -13,6 +13,8 @@ ms.author: barclayn
 # Microsoft Entra licensing
 
 This article discusses licensing options for the Microsoft Entra product family. It's intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
+>[!NOTE]
+>If you are troubleshooting licensing assignment issues, review [Identify and resolve license assignment problems for a group in the Microsoft 365 Admin Portal](licensing-groups-resolve-problems.md).
 
 
 ## Microsoft Entra licensing options
