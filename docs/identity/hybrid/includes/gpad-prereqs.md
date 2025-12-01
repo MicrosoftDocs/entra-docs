@@ -41,7 +41,7 @@ The following prerequisites are required to implement provisioning groups to Act
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect Sync
      - Required to synchronize `AD DS:user:objectGUID` to `AAD DS:user:onPremisesObjectIdentifier`
 
-## Scale limits for Provisioning groups to AD
+## Scale limits for Provisioning groups to Active Directory
 
 Group Provision to AD feature's performance is impacted by the size of the tenant and the number of groups and memberships that are in scope for provisioning to AD. This section provides guidance on how to determine if GPAD supports your scale requirement and how to pick the right group scoping mode to achieve quicker initial and delta sync cycles. 
 
@@ -98,7 +98,7 @@ where:
 - **resourceId**: Job's service principal ID.
 - **appRoleId**: Identifier of app role exposed by the resource service principal.
 
-The following table is a list of App Role Ids for Clouds:
+The following table is a list of App Role IDs for Clouds:
 
 
 |Cloud  |appRoleId  |
@@ -112,7 +112,8 @@ The following table is a list of App Role Ids for Clouds:
 
 
 ### More information
-Here's more points to consider when you provision groups to AD DS.
+
+Here are more points to consider when you provision groups to AD DS.
 
 - Groups provisioned to AD DS using Cloud Sync can only contain on-premises synchronized users or other cloud-created security groups.
 - These users must have the *onPremisesObjectIdentifier* attribute set on their account.
