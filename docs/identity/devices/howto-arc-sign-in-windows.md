@@ -15,7 +15,7 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azur
 
 # Sign in to an Azure Arc-enabled server using Microsoft Entra ID and Azure Roles Based Access Control
 
-Organizations can improve the security of Windows devices in Azure or connected using Azure Arc by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into supported versions of Windows. You can then centrally control and enforce Azure role-based access control (RBAC) and Conditional Access policies that allow or deny access to the devices.
+Organizations can improve the security of Windows devices in Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into supported versions of Windows. You can then centrally control and enforce Azure role-based access control (RBAC) policies that allow or deny access to the devices.
 
 This article shows you how to create and configure a Windows machine and sign in by using Microsoft Entra ID-based authentication.
 
@@ -208,9 +208,6 @@ To connect to the remote computer:
 - When prompted for credentials, specify your user name in `user@domain.com` format.
 - You're then prompted to allow the remote desktop connection when connecting to a new PC. Microsoft Entra remembers up to 15 hosts for 30 days before prompting again. If you see this dialogue, select **Yes** to connect.
 
-> [!IMPORTANT]
-> If your organization is using [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md), your device must satisfy the Conditional Access requirements to allow connection to the remote computer. Conditional Access policies might be applied to the application **Microsoft Remote Desktop (a4a365df-50f1-4397-bc59-1a1564b8bb9c)** for controlled access.
-
 > [!NOTE]
 > The Windows lock screen in the remote session doesn't support Microsoft Entra authentication tokens or passwordless authentication methods like FIDO keys. The lack of support for these authentication methods means that users can't unlock their screens in a remote session. When you try to lock a remote session, either through user action or system policy, the session is instead disconnected and the service sends a message to the user. Disconnecting the session also ensures that when the connection is relaunched after a period of inactivity, Microsoft Entra ID reevaluates the applicable Conditional Access policies.
 
@@ -236,15 +233,6 @@ You're now signed in to the Windows Server 2019 Azure virtual machine with the r
 
 > [!NOTE]
 > You can save the `.RDP` file locally on your computer to start future remote desktop connections to your virtual machine, instead of going to the virtual machine overview page in the Azure portal and using the connect option.
-
-## Enforce Conditional Access policies
-
-You can enforce Conditional Access policies, such as "phishing resistant MFA" or user sign-in risk check, before users can access Windows devices in an Azure Arc-enabled Windows Server. To apply a Conditional Access policy, you must select the **Microsoft Azure Windows Virtual Machine Sign-in** app from the cloud apps or actions assignment option.
-
-Conditional Access policies that restrict sign in using device configuration rules aren't supported when connecting from a Windows Server device.
-
-> [!NOTE]
-> If you require MFA as a control, then you must supply an MFA claim as part of the client that initiates the RDP session to the target Windows device. The Remote Desktop application in Windows supports Conditional Access policies, however if you're using web sign in, you must use a Windows Hello for Business PIN or biometric authentication. Support for biometric authentication was added to the RDP client in Windows 10 version 1809. Remote desktop using Windows Hello for Business authentication is available only for deployments that use a certificate trust model and isn't available for a key trust model.
 
 ## Use Azure Policy to meet standards and assess compliance
 
