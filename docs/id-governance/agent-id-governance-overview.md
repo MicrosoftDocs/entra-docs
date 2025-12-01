@@ -22,24 +22,26 @@ This allows agent identities to be governed with Microsoft Entra features in the
 
 ## Agent identities basics
 
-[Agent identities](../agent-id/identity-platform/what-is-agent-id.md) allows AI agents to take on digital identities within Microsoft Entra. Once a digital identity is established, these agent identities are able to be governed using lifecycle and access features. Sponsors can be assigned to agent identities after creation. Sponsors of agent identities are human users accountable for making decisions about its lifecycle and access. For more information about the role of a sponsor of agent identities, see: [Administrative relationships for agent IDs](../agent-id/identity-platform/agent-owners-sponsors-managers.md).
+[Microsoft Entra Agent ID](../agent-id/identity-platform/what-is-agent-id.md) includes four new types of object: agent identity blueprint, agent identity blueprint principal, agent identity, and agent user. The agent identity, and optionally the agent user, allows AI agents to take on digital identities within Microsoft Entra. Once a digital identity is established, these agent identities are able to be governed using lifecycle and access features. Sponsors can be assigned to agent identities after creation. Sponsors of agent identities are human users accountable for making decisions about its lifecycle and access. For more information about the role of a sponsor of agent identities, see: [Administrative relationships for agent IDs](../agent-id/identity-platform/agent-owners-sponsors-managers.md).
 
 ## Assigning access to agent identities
 
-Agent identities can have resources assigned to them directly via access packages. Resource assignments allow agent identities to request an access package for themselves, or have their owner or sponsor request one on their behalf. With Access packages, you're able to assign agent identities the following resources:
+Agent identities can have resources assigned to them directly via access packages. Resource assignments allow agent identities to request an access package for themselves, or have their owner or sponsor request one on their behalf. With access packages, you're able to assign agent identities the following resources:
 
 - Security Groups
-- Application roles and API permissions (including Graph permissions)
+- [Application roles and API permissions](../identity/enterprise-apps/assign-agent-identities-to-applications.md), including Graph permissions
 - Microsoft Entra roles
 
+To use access packages for agent identities, configure an access package with the required policy settings. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
 
+> [!NOTE]
+> If your agents aren't using Microsoft Entra agent IDs, then also create an access package assignment policy with the option **All Service principals (preview)** to allow service principals in your directory to be able to request this access package.
 
 For a guide on creating an access package, see: [Create an access package in entitlement management](entitlement-management-access-package-create.md). For a guide on assigning identities to an existing access package, see: [View, add, and remove assignments for an access package in entitlement management](entitlement-management-access-package-assignments.md).
 
-
 ## Management of agents
 
-When agent identities are created, Owners and sponsors of the agent can manually make decisions for the agent identity via both the My Account portal, and the My Access Portal.
+When agent identities are created, owners and sponsors of the agent can manually make decisions for the agent identity via both the My Account portal, and the My Access Portal.
 
 From the [My Account portal](https://myaccount.microsoft.com/), Sponsors and Owners are able to manage the identity lifecycle of agents such as enabling and disabling the agent. You are also able to see information about its access, activity, and lifecycle. For more information about Managing agents, see: [Manage Agents in Microsoft Entra ID (Preview)](../agent-id/identity-platform/manage-agent.md).
 

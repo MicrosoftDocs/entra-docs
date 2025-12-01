@@ -158,6 +158,7 @@ Here are some considerations when selecting an application:
 - Applications can also have groups assigned to their app roles as well. You can choose to add a group in place of an application and its role in an access package, however then the application won't be visible to the user as part of the access package in the My Access portal.
 - Microsoft Entra admin center can also show service principals for services that can't be selected as applications. In particular, **Exchange Online** and **SharePoint Online** are services, not applications that have resource roles in the directory, so they can't be included in an access package. Instead, use group-based licensing to establish an appropriate license for a user who needs access to those services.
 - Applications that only support Personal Microsoft Account users for authentication, and don't support organizational accounts in your directory, don't have application roles and can't be added to access package catalogs.
+- If your access package is for agent identities or agent users, then ensure that your application supports interactions from those identities. For more information, see [manage assignment of agent identities to an application (preview)](../identity/enterprise-apps/assign-agent-identities-to-applications.md).
 
 1. On the **Add resource roles to access package** page, select **Applications** to open the Select applications pane.
 
