@@ -83,6 +83,9 @@ A collection of featured applications is listed by default when you open the Mic
 - **Federated SSO** - When you set up [SSO](what-is-single-sign-on.md) to work between multiple identity providers, it results to federation. An SSO implementation based on federation protocols improves security, reliability, user experiences, and implementation. Some applications implement federated SSO as SAML-based or as OIDC-based. For SAML applications, when you select create, the application is added to your tenant. For OIDC applications, the administrator must first sign up or sign-in on the application's website to add the application to Microsoft Entra ID.
 - **Provisioning** - Microsoft Entra ID to SaaS [application provisioning](~/identity/app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the SaaS applications that users need access to.
 
+> [!NOTE]
+> Linked Sign-on gallery applications will have a greyed out 'Create' button. The Linked Sign-on URL is provided to be used in the create your own application option.
+
 ## Create your own application
 
 When you select the **Create your own application** link near the top of the pane, you see a new pane that lists the following choices:
