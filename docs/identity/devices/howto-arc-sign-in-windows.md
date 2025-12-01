@@ -1,6 +1,6 @@
 ---
 title: Sign in to an Azure Arc-enabled server using Microsoft Entra ID
-description: Learn how to sign in to an Azure arn enabled server running Windows by using Microsoft Entra authentication.
+description: Learn how to sign in to an Azure arc enabled server running Windows by using Microsoft Entra authentication.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
@@ -112,7 +112,7 @@ For Arc-enabled windows servers how-to's and further examples, see: [Arc-enabled
 
 You must enable a system-assigned managed identity on your Arc-enabled Windows Server before you install the Microsoft Entra sign in virtual machine extension. Managed Identities are stored in a single Microsoft Entra tenant, and currently don't support cross directory scenarios.
 
-The following sample demonstrate an Azure template for Arc-enabled Windows Server extensions:
+The following sample demonstrates an Azure template for Arc-enabled Windows Server extensions:
 
 
 ```json
@@ -396,7 +396,7 @@ There are multiple ways to resolve the issue:
 - Once it’s done, we can RDP with FQDN directly and no need to modify the HOSTS entry.
 
 > [!NOTE]
-> In such case, when Primary DNS Suffix is added, the Device-Sync scheduled task will be triggered which adding the FQDN into AAD device "hostnames" attributes. This is why it will resolve the issue.
+> In such case, when Primary DNS Suffix is added, the Device-Sync scheduled task is triggered which adding the FQDN into AAD device "hostnames" attributes. This is why it resolves the issue.
 
 
 ### MFA sign-in method required
