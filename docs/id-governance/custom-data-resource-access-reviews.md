@@ -79,6 +79,8 @@ With a catalog created, you can add custom data provided resource to it by doing
 1. Select **Create**. 
 
 
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http#example-6-create-a-single-stage-access-review-on-a-catalog).
+
 ## Get Access Review Object and Instance ID
 
 After creating the catalog access review, but before uploading your custom data, you must get both the Access Review object ID, and the Access Review instance object ID. To get this information, you'd do the following:
@@ -115,6 +117,7 @@ After copying both the Access review object, and access review instance object, 
     > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload.
 
+You can also upload custom data via Graph, by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta).
 
 ## Active review state
 
@@ -126,33 +129,38 @@ At the **Active** stage:
 ## Applying stage
 
 
-In the **Applying** stage, you manually get a list of denied users by making the following API call:
+In the **Applying** stage, you can get a list of denied users by making the [list decisions](/graph/api/accessreviewinstance-list-decisions?view=graph-rest-beta&tabs=http) API call:
 
 ``` http
-GET /identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions?$filter=(decision eq ‘Deny’ and resourceId eq ‘<custom data provided resource ID>’)
+GET https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions?$filter=(decision eq 'Deny' and resourceId eq '<custom data provided resource ID>')
 ```
 
 For each decision item: 
 
-Remove access from your own system and Patch each decision item to indicate success or failure for removal by making the following API call:
+Remove access from your own system and then patch each decision item to indicate success or failure for removal by making the [update accessReviewInstanceDecisionItem](/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-beta&tabs=http) API call:
 
 ``` http
-PATCH /identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions/{decision ID}
-{ “applyResult” : “Success/Failure/PartialSuccess/NotSupported”, “applyDescription”: “ServiceNow ticket created” }
+PATCH https://graph.microsoft.com/beta/identityGovernance/accessReviews/definitions/{access review object ID}/instances/{access review instance object ID}/decisions/{decision ID}
+Content-Type: application/json
+
+{
+ "applyResult": "AppliedSuccessfully",
+ "applyDescription": "ServiceNow ticket created"
+}
 ```
 
-The review transition to the **Applied** state once all the custom data provided decisions have been applied. For example, if you have five decisions that must be made from the data, you must apply(PATCH) five decisions before the review transitions to **Applied**.
+The review transition to the **Applied** state once all the custom data provided decisions have been applied. For example, if you have five decisions that must be made from the data, you must apply using PATCH each of five decision items before the review transitions to **Applied**.
 
 
 
 
-## Complete and apply review decisions
+## Review status
 
 As reviewers take actions, the review progresses through several states:
 
 | Review Status | Description |
 |--------------------|-----------------|
-| Initializing | Review created; waiting for custom data upload. |
+| Initializing | Review instance created; waiting for custom data upload. |
 | Active | Reviewers can take decisions in the My Access portal. |
 | Applying | Review decisions are being remediated. |
 | Applied | All decisions are marked as applied. |
