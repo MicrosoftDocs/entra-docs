@@ -13,8 +13,6 @@ ms.reviewer: chuqiaoshi
 
 Knowing which users are at risk and *why* they're at risk is a key responsibility of security and identity administrators. The Risky user report in Microsoft Entra ID Protection provides the full report, along with a risk data summary, and an activity timeline.
 
-The Risky user report is also integrated with the Identity Risk Management Agent for enhanced agent suggestions and insights. If you have the Identity Risk Management Agent enabled, you can switch between the standard view and the agent view of the report.
-
 This article provides an overview of the information and actions available in the Risky user report.
 
 ## Prerequisites
@@ -24,12 +22,11 @@ To access this report, you need:
 - Microsoft Entra ID Free, Microsoft Entra ID P1 for limited data on users.
 - Microsoft Entra ID P2 licenses for full access to the risky user data.
 - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) are the least privileged roles required to use the *standard view* of the report.
-- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#search-administrator) is required to use the *agent view* of the report and access the Risk Management Agent features.
 - [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) is required to reset passwords.
 
 ## Risky user report
 
-The standard view of the Risky user report contains three main sections: The summary chart of risky users at each level, new risky users per day, and the full list of risky users. If you have the [Identity Risk Management Agent](identity-risk-management-agent-risky-user-report.md) turned on, you can use the **Agent view** to see agent suggestions and insights.
+The standard view of the Risky user report contains three main sections: The summary chart of risky users at each level, new risky users per day, and the full list of risky users. 
 
 The **Percentage of risky users at each risk level** chart shows a visual representation of your user and their risk levels. This visual summary allows you to quickly see the state of things in your organization. Hover over each segment of the chart to see the percentage of users at each risk level.
 

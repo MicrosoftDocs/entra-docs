@@ -5,7 +5,7 @@ description: Learn how to access, filter, and use the Microsoft Entra ID Protect
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 11/05/2025
+ms.date: 12/01/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -25,7 +25,6 @@ The [ID Protection Dashboard](id-protection-dashboard.md) provides a summary of 
 1. Select a report from the ID Protection navigation menu.
 
 :::image type="content" source="media/concept-risk-reports/dashboard.png" alt-text="Screenshot showing the Microsoft Entra ID Protection dashboard." lightbox="media/concept-risk-reports/dashboard-expanded.png":::
-
 
 Each report launches with a list of all detections for the period shown at the top of the report. You can filter and add or remove columns based on your preference. Download the data in .CSV or .JSON format for further processing. To integrate the reports with Security Information and Event Management (SIEM) tools for further analysis, see [Configure diagnostic settings](../identity/monitoring-health/howto-configure-diagnostic-settings.md).
 
