@@ -278,3 +278,12 @@ Known limitations for Internet Access include:
 ## B2B guest access (preview) limitations
 <a name="b2b-guest-access-limitations"></a>
 - The Global Secure Access client doesn't support multi-session Azure Virtual Desktop.
+
+## Global Secure Access In Government Cloud limitations
+Global Secure Access is not available in the US Government community cloud High (GCC-H), Department of Defense cloud and other Govt/Sovereign cloud environments.
+
+For usage in US Government community (GCC) cloud, known limitations/disclaimers include:
+
+- Non Federal Information Processing Standard (FIPS) 140-2 certified: Note that while the GSA service is FedRAMP High accredited, it is not yet FIPS 140-2 certified. Microsoft is actively working toward achieving FIPS accreditation/certification, and this process is currently underway. Customers should consider this status when evaluating compliance requirements. FIPS 140-2 is a US government standard that defines FedRAMP minimum security requirements for cryptographic modules in products and systems. For more information, see [Federal Information Processisng Standard (FIPS) 140](https://learn.microsoft.com/azure/compliance/offerings/offering-fips-140-2).
+- Data Residency Requirements: Customers should carefully consider data residency requirements when evaluating the GSA solution for their needs. When using GSA, there is a possibility that your data (up to and including customer content) may be Transport Layer Security (TLS) terminated and processed outside the United States esp. in cases where the users access GSA while traveling outside of the USA and its territories. Additionally, data may also be TLS terminated and processed outside of the USA when GSA routes traffic through the nearest available edge location, which may be outside USA borders depending on several factors. Factors for TLS termination and processing outside the US may include but not limited to: user’s physical location, proximity to edge locations, network latency, service availability, performance considerations, customer configurations and so on. As an example, a user near a USA border with a non-USA region may connect to a non-USA edge, where data inspection and policy enforcement take place.    
+
