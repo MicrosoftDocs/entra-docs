@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 ---
 # Create and manage a catalog of resources in entitlement management
 
-This article shows you how to create and manage a catalog of resources and access packages in entitlement management.
+This article shows you how to create and manage a catalog of resources and access packages in entitlement management.  Catalogs are also used in [access reviews (preview)](catalog-access-reviews.md).
 
 ## Create a catalog
 
@@ -63,11 +63,11 @@ $catalog = New-MgEntitlementManagementCatalog -DisplayName "Marketing"
 
 ## Add resources to a catalog
 
-To include resources in an access package, the resources must exist in a catalog. The types of resources you can add to a catalog are groups, applications, and SharePoint Online sites.
+To include resources in an access package, the resources must exist in a catalog. The types of resources you can add to a catalog include groups, applications, and SharePoint Online sites.
 
 * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups.
 
-  * Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give a user access to an application that uses AD security group memberships, create a new security group in Microsoft Entra ID, configure [group writeback to AD](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md), so that the cloud-created group can be used by an AD-based application.
+  * Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner or member attributes can't be changed in Microsoft Entra ID. To give a user access to an application that uses AD security group memberships, you can either change the source of authority of an existing group configure it for group writeback, or create a new security group in Microsoft Entra ID, configure [group writeback to AD](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md), so that the cloud-created group can be used by an AD-based application.
 
   * Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either, so they can't be added to catalogs.
 
@@ -79,6 +79,8 @@ To include resources in an access package, the resources must exist in a catalog
 * Sites can be SharePoint Online sites or SharePoint Online site collections.
 > [!NOTE]
 > Search SharePoint Site by site name or an exact URL as the search box is case sensitive.
+
+* [Catalog access reviews (preview)](catalog-access-reviews.md) also allow [custom data provided resources](custom-data-resource-access-reviews.md) to be included in a catalog.
 
 **Prerequisite roles:** See [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
