@@ -34,6 +34,12 @@ Each agent works a little differently, but at their core, they first analyze you
 
 Administrators can configure the agent to run automatically or trigger the agent to run manually. 
 
+Because each of the agents perform a specific set of tasks, they need a specific set of configurations to operate within the boundaries of that task. The administrator also needs certain Microsoft Entra roles to set up and manage the agent.
+
+- **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-is-agent-id).
+- **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks.
+- **Role-based access**: The administrator needs specific roles to set up, manage, and use the agent.
+
 ## Available Microsoft Entra agents
 
 The following agents are currently available for Microsoft Entra. Due to the fast pace at which these agents are released and updated, each agent might have features at various stages of availability. Preview features are added frequently.
@@ -44,7 +50,7 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 
 | Attribute           | Description |
 |---------------------|------------ |
-| Identity            | Uses [Microsoft Entra Agent ID](../agent-id/identity-professional/authorization-agent-id.md) for authorization. A unique agent identity is created when the agent is turned on. Learn more about [agent identities]().<br><br>The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works).<br><br>Final decisions, submitted through the Microsoft Teams conversation, use the reviewer's identity.  |
+| Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works).<br><br>Final decisions, submitted through the Microsoft Teams conversation, use the reviewer's identity.  |
 | Licenses            | [Microsoft Entra ID Governance or Microsoft Entra Suite](../id-governance/licensing-fundamentals.md) |
 | Permissions         | Get details for access reviews<br>Read details and lifecycle workflow history for users, groups, apps, and access packages. Save access review recommendations and justifications |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
@@ -54,16 +60,16 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 
 ### Application Lifecycle Management Agent (Preview)
 
-Identify, onboard, and monitor applications in your environment with the Application Lifecycle Management Agent. This agent uses application discovery capabilities of Microsoft Entra Internet Access and Microsoft Entra Private Access to find unmanaged applications, recommend onboarding actions, and monitor application security posture over time. This agent is currently being deployed and might not be available in all tenants.
+The App Lifecycle Management Agent (Preview) helps you manage the full lifecycle of apps in Microsoft Entra, from discovery and onboarding to risk remediation and decommissioning. It correlates identity and network signals from Global Secure Access telemetry data to surface unmanaged private apps and Microsoft Entra application data. It provides clear, AI-driven recommendations to reduce app sprawl and enforce governance at scale. This agent is currently being deployed and might not be available in all tenants.
 
 | Attribute           | Description |
 |---------------------|------------ |
-| Identity            | Uses [Microsoft Entra Agent ID](../agent-id/identity-professional/authorization-agent-id.md) for authorization. A unique agent identity is created when the agent is turned on that provides read-only permissions. Agent authentication will expire according to your policies and need to be renewed. |
-| Licenses            |  [Microsoft Entra ID P2 or Workload Identity Premium P2](/entra/fundamentals/licensing) for **App Risk Remediation** suggestions and/or Microsoft Entra Suite or [Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) licenses for **Application Discovery & Onboarding** suggestions |
+| Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant with specific **permissions** to review network logs and application data to provide insights and suggestions for application management. The agent identity includes **role-based access** used for any write actions, such as creating and disabling applications, dismissing suggestions, and sending emails or Teams notifications. |
+| Licenses            | [Microsoft Entra ID P2 or Workload Identity Premium P2](/entra/fundamentals/licensing) for **App Risk Remediation** suggestions and/or Microsoft Entra Suite or [Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) licenses for **Application Discovery & Onboarding** suggestions |
 | Permissions         | Read access for Global Secure Access network logs.<br>Read access for users, applications, and service principals.<br>Read access for Microsoft Entra recommendations. |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)<br>[Microsoft Entra recommendations](../identity/monitoring-health/overview-recommendations.md)<br>[Enterprise Applications](/entra/identity/enterprise-apps/)<br>[App Management](/entra/identity/enterprise-apps/) |
-| Role requirements   | Use any of the following:<br>[Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)<br>[Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)<br>[Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) |
+| Role-based access   | Set up the agent and manage the agent:<br>[Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)<br>[Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)<br>[Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)<br> View the output suggestions from the agent:<br>[Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Globl Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) |
 
 ### Conditional Access Optimization Agent
 
@@ -71,7 +77,7 @@ The [Conditional Access Optimization Agent](./conditional-access-agent-optimizat
 
 | Attribute           | Description |
 |---------------------|------------ |
-| Identity            | Uses [Microsoft Entra Agent ID](../agent-id/identity-professional/authorization-agent-id.md) for authorization |
+| Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant's Conditional Access policies and configurations for gaps, overlap, and misconfigurations. |
 | Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
 | Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
