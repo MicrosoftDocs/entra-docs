@@ -28,6 +28,7 @@ This article describes how to create one or more access reviews for group member
 - To review access package assignments, see [configure an access review in entitlement management](entitlement-management-access-reviews-create.md).
 - To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
+- For reviews across multiple groups, applications and custom data providers, see [catalog access reviews (preview)](catalog-access-reviews.md).
 
 
 
@@ -43,7 +44,7 @@ If you're reviewing access to an application, then before you create the review,
 > [!NOTE]
 > In a group review, nested groups are automatically flattened, so users from nested groups appear as individual users. If a user is flagged for removal due to their membership in a nested group, they won't be automatically removed from the nested group, but only from direct group membership.
 
-## Create a single-stage access review
+## Create a single-stage access review for individual groups and applications
 
 ### Scope
 
@@ -54,6 +55,8 @@ If you're reviewing access to an application, then before you create the review,
 3. Select **New access review** to create a new access review.
 
     ![Screenshot that shows the Access reviews pane in Identity Governance.](./media/create-access-review/access-reviews.png)
+
+1. On the Access reviews template screen, select **Review access to a resource type**.
 
 4. In the **Select what to review** box, select which resource you want to review.
 
@@ -270,7 +273,7 @@ Use the following instructions to create an access review on a team with shared 
     > - If you set **Select reviewers** to **Users review their own access** or **Managers of users**, B2B direct connect users and Teams won't be able to review their own access in your tenant. The owner of the Team under review gets an email that asks the owner to review the B2B direct connect user and Teams.
     > - If you select **Managers of users**, a selected fallback reviewer reviews any user without a manager in the home tenant. This includes B2B direct connect users and Teams without a manager.
 
-1. Go on to the **Settings** tab and configure additional settings. Then go to the **Review and Create** tab to start your access review. For more detailed information about creating a review and configuration settings, see our [Create a single-stage access review](#create-a-single-stage-access-review).
+1. Go on to the **Settings** tab and configure additional settings. Then go to the **Review and Create** tab to start your access review. For more detailed information about creating a review and configuration settings, see our [Create a single-stage access review](#create-a-single-stage-access-review-for-individual-groups-and-applications).
 
 ## Allow group owners to create and manage access reviews of their groups
 

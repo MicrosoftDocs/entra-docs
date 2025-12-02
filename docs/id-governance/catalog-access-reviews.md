@@ -48,9 +48,9 @@ Once you add resources to a catalog, you can then create a catalog access review
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Access Reviews** > **new access review**.
+1. Browse to **ID Governance** > **Access Reviews** > **New access review**.
 
-1. On the Access reviews template screen, select **Review users access across multiple resource types within a catalog**, and select **catalog review template**.
+1. On the Access reviews template screen, select **Review users access across multiple resource types within a catalog** to select the **catalog review template**.
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
 1. Enter in [basic information](create-access-review.md) about the workflow and select **Next**. 
 
