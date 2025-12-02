@@ -112,7 +112,7 @@ Microsoft Entra Agent ID provides an identity and security framework designed to
     - Agent registry: Provides centralized metadata management, secure agent discovery, and automatic organization into security collections
 
 - Govern agent identities and lifecycle
-    - Identity governance for agent identities: Lifecycle management, access assignment, and compliance reporting for agent identities
+    - [Identity governance for agent identities](/entra/id-governance/agent-id-governance-overview): Lifecycle management, access assignment, and compliance reporting for agent identities
 
 - Protect agent access to resources 
     - Global Secure Access for agent identities: Network-level security and zero-trust access for agent communications
