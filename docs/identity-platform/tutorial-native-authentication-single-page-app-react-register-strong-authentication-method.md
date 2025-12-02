@@ -373,7 +373,7 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 ### Test authentication method registration after sign-up 
 
-1. Navigate to http://localhost:3000/sign-up[http://localhost:3000/sign-up] to display the **Sign-Up** form.
+1. Navigate to [http://localhost:3000/sign-up](http://localhost:3000/sign-up) to display the **Sign-Up** form.
 
 1. Enter the required details, then sign-up by following prompts. After you successfully sign-up, the app automatically continues to sign-in flow by displaying the strong authentication method registration form.
 
