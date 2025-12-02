@@ -25,7 +25,7 @@ The strong authentication method registration flow occurs in three scenarios:
 - **After sign-up**: The user successfully signs up and automatically proceeds to sign in.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in.
 
-When strong authentication method registration is required, the user selects a method of choice ffrom a list of supported methods. The available methods are **email** and **SMS** one-time passcode.
+When strong authentication method registration is required, the user selects a method of choice from a list of supported methods. The available methods are **email** and **SMS** one-time passcode.
 
 The flow diagram below illustrates the three scenarios:
 
