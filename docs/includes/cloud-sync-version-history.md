@@ -19,7 +19,7 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 ## 1.1.2106.0
 
-December 1, 2025: released for download only
+December 2, 2025: released for download only
 
 ### Fixed Issues
 
