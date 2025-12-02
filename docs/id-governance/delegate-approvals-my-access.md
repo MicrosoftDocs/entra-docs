@@ -54,7 +54,6 @@ When an approver sets a delegate, the following happens:
 - Delegation applies only to approvals assigned after the delegation is configured.
 
 
-
 ## Enable Delegate Approvals preview
 
 To enable approvers to delegate in My Access, you'd do the following steps:
