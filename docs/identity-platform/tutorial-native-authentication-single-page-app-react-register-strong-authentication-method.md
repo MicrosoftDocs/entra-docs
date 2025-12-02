@@ -403,7 +403,6 @@ To test strong authentication method registration after SSPR, make sure you've a
 
 1. Follow the app prompts to complete strong authentication method registration.
 
-
 ## Next step
 
 > [!div class="nextstepaction"]
