@@ -373,7 +373,7 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 ### Test authentication method registration after sign-up 
 
-1. Navigate to http://localhost:3000/sign-up[http://localhost:3000/sign-up] to display the Sign-Up form.
+1. Navigate to http://localhost:3000/sign-up[http://localhost:3000/sign-up] to display the **Sign-Up** form.
 
 1. Enter the required details, then sign-up by following prompts. After you successfully sign-up, the app automatically continues to sign-in flow by displaying the strong authentication method registration form.
 
@@ -387,7 +387,7 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 To test strong authentication method registration during sign-in, make sure you've a user account that doesn't have a strong authentication method registered.
 
-1. Navigate to [http://localhost:3000/sign-in](http://localhost:3000/sign-in) to display the Sign In form.
+1. Navigate to [http://localhost:3000/sign-in](http://localhost:3000/sign-in) to display the **Sign In** form.
 
 1. Input your details, select the **Continue** button, then follow the prompts. The app enters strong authentication method registration flow. 
 
@@ -397,7 +397,7 @@ To test strong authentication method registration during sign-in, make sure you'
 
 To test strong authentication method registration after SSPR, make sure you've a user account that doesn't have a strong authentication method registered.
 
-1. Navigate to [http://localhost:3000/reset-password](http://localhost:3000/reset-password) to display the Password Reset form.
+1. Navigate to [http://localhost:3000/reset-password](http://localhost:3000/reset-password) to display the **Password Reset** form.
 
 1. Input your details, select the **Continue**, then follow app prompts to complete the password reset flow. After you successfully resets your password, the app continues to sign-in flow by displaying the strong authentication method registration form.
 
