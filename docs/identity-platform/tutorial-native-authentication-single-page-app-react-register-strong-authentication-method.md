@@ -306,6 +306,67 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle strong a
 
 Strong authentication method registration flow after sign-up and password reset works similar to the sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states. 
 
+### Register strong authentication method after sign-up
+
+For strong authentication method registration after sign-up flow, you need you update the */src/app/sign-up/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
+ 
+1. Make sure you import the required types and components.
+1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After sign-up completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+
+    ```typescript
+    // In your sign-up completion handler
+    if (signUpState instanceof SignUpCompletedState) {
+        // Continue with sign-in using the continuation token
+        const result = await signUpState.signIn();
+    
+        ...
+    
+        // Check for auth method registration requirement
+        if (result.isAuthMethodRegistrationRequired()) {
+            setAuthMethodsForRegistration(result.state.getAuthMethods());
+            const methods = result.state.getAuthMethods();
+            setSelectedAuthMethodForRegistration(methods.length > 0 ? methods[0] : undefined);
+            setSignUpState(result.state);
+        }
+    
+        ...
+    }
+    
+    // Then use the same renderForm logic to display AuthMethodRegistrationForm
+    // and AuthMethodRegistrationChallengeForm components
+    ```
+
+### Register strong authentication method after password reset 
+
+For strong authentication method registration after SSPR, you need to update the */src/app/reset-password/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/page.tsx):
+
+1. Make sure you import the required types and components.
+1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+
+    ```typescript
+    // In your password reset completion handler
+    if (resetPasswordState instanceof ResetPasswordCompletedState) {
+        // Continue with sign-in using the continuation token
+        const result = await signUpState.signIn();
+    
+        ...
+    
+        // Check for auth method registration requirement
+        if (result.isAuthMethodRegistrationRequired()) {
+            setAuthMethodsForRegistration(result.state.getAuthMethods());
+            const methods = result.state.getAuthMethods();
+            setSelectedAuthMethodForRegistration(methods.length > 0 ? methods[0] : undefined);
+            setSignUpState(result.state);
+        }
+    
+        ...
+    }
+    
+    // Then use the same renderForm logic to display AuthMethodRegistrationForm
+    // and AuthMethodRegistrationChallengeForm components
+    ```
+
+
 ## Run and test your app
 
 [test during sign-in, sign-up and SSPR]
