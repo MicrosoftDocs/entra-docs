@@ -576,20 +576,31 @@ namespace cust_auth_functions
 }
 ```
 
-## Generate and configure encryption keys
+## Generate certificate in Azure Key Vault
 
-Before creating your app registration, generate an RSA key pair (2048 or 4096 bits) in Azure Key Vault for encrypting the password payload. The public key will be configured in your Entra External ID app registration, while the private key remains in Key Vault and is accessed by your Azure Function using managed identity.
+Before creating your app registration, generate an encryption certificate in Azure Key Vault. The public key is configured in your Entra External ID app registration, while the private key remains in Key Vault and is accessed by your Azure Function using managed identity.
 
-To generate the key pair:
-
-1. [Create an Azure Key Vault](/azure/key-vault/general/quick-create-portal) if you don't already have one.
-2. [Generate an RSA key](/azure/key-vault/keys/quick-create-portal) with a descriptive name (e.g., `jit-migration-encryption-key`).
-3. Download the public key in PEM format to upload to your app registration in the next step.
+1. Sign in to the [Azure portal](https://portal.azure.com) and browse to **Key vaults**.
+1. Select your existing Key Vault or [create a new one](/azure/key-vault/general/quick-create-portal).
+1. In the left menu, under **Objects**, select **Certificates**.
+1. Select **Generate/Import**.
+1. On the **Create a certificate** page, enter the following values:
+   - **Method of Certificate Creation**: Select **Generate**.
+   - **Certificate Name**: Enter **JitMigrationEncryptionCert**.
+   - **Type of Certificate Authority (CA)**: Select **Self-signed certificate**.
+   - **Subject**: Enter **CN=JitMigration**.
+   - **Content Type**: Select **PKCS #12**.
+1. Expand **Advanced Policy Configuration** and enter the following values:
+   - **Key Type**: Select **RSA**.
+   - **Key Size**: Select **2048** or **4096** for enhanced security.
+   - **Reuse Key**: Leave unchecked.
+   - **Exportable Private Key**: Select this option (required for function access).
+1. Select **Create**.
 
 > [!TIP]
-> Generating keys directly in Azure Key Vault ensures the private key never leaves the secure environment and provides enterprise features like automatic key rotation, access auditing, and HSM protection.
+> Generating certificates directly in Azure Key Vault ensures the private key never leaves the secure environment and provides enterprise features like automatic key rotation, access auditing, and HSM protection.
 
-### Create an app registration for the custom authentication extension 
+## Create an app registration for the custom authentication extension 
 
 Create an application registration to represent your custom authentication extension. This application will authenticate calls between Microsoft Entra External ID and your Azure Function. For general guidance on app registrations, see [Register an application](/entra/identity-platform/quickstart-register-app).
 
@@ -598,42 +609,63 @@ Register a new application in the [Microsoft Entra admin center](https://entra.m
 - **Name**: Enter a descriptive name for your JIT migration extension
 - **Supported account types**: Accounts in this organizational directory only
 
-### Configure the public key for encryption
+## Configure encryption key on the custom extension app
 
-After creating your app registration, you need to upload the public key so that Entra External ID can encrypt the password payload before sending it to your custom extension.
+After you create your app registration, configure the certificate's public key so that Entra External ID can encrypt the password payload before sending it to your custom extension.
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to your custom authentication extension app registration.
-2. Under **Manage**, select **Certificates & secrets**.
-3. In the **Certificates** tab, select **Upload certificate**.
-4. Upload your `public-key.pem` file or the public key you exported from Key Vault.
-5. After uploading, note the **Thumbprint** value - this identifies your encryption key.
+### Download the certificate
 
-Alternatively, you can configure the key through the application manifest:
+1. In your Key Vault, under **Certificates**, select **JitMigrationEncryptionCert**.
+1. Select the current version (shown as a GUID).
+1. Select **Download in CER format**.
+1. Save the file (for example, `jitmigrationencryptioncert.cer`).
 
-1. Under **Manage**, select **Manifest**.
-2. Locate the `keyCredentials` array and add your public key:
+### Extract the public key using PowerShell
 
-```json
-"keyCredentials": [
-  {
-    "customKeyIdentifier": "Base64EncodedThumbprint",
-    "displayName": "JIT PAYLOAD ENC 2",
-    "key": null
-    "keyId": "unique-guid-for-this-key",
-    "startDateTime": "2025-11-25T17:44:47Z"
-    "type": "AsymmetricX509Cert",
-    "usage": "Encrypt",
-  }
-]
+1. Open PowerShell.
+1. Run the following commands, replacing the file path with your certificate location:
+
+   ```powershell
+   $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("C:\Users\YourUsername\Downloads\jitmigrationencryptioncert.cer")
+   $certBase64 = [Convert]::ToBase64String($cert.RawData)
+   $certBase64
+   ```
+
+1. Copy the base64-encoded public key from the output.
+
+### Configure the certificate using Microsoft Graph API
+
+Use Microsoft Graph API to configure the certificate on your custom authentication extension app registration. Make a PATCH request with the following information:
+
+Replace the placeholders with your values:
+- `{object-id}`: Your custom authentication extension app's object ID (not the application ID).
+- `{end-date}`: Certificate expiration date (for example, `2026-11-25T17:44:47Z`).
+- `{unique-guid}`: A new GUID. You can generate one using PowerShell: `[guid]::NewGuid()`.
+- `{start-date}`: Certificate start date (for example, `2025-11-25T17:44:47Z`).
+- `{base64-encoded-public-key}`: The base64 string from the previous step.
+
+```http
+PATCH https://graph.microsoft.com/v1.0/applications/{object-id}
+Content-Type: application/json
+Authorization: Bearer {access-token}
+
+{
+  "keyCredentials": [
+    {
+      "endDateTime": "{end-date}",
+      "keyId": "{unique-guid}",
+      "startDateTime": "{start-date}",
+      "type": "AsymmetricX509Cert",
+      "usage": "Encrypt",
+      "key": "{base64-encoded-public-key}",
+      "displayName": "CN=JitMigration"
+    }
+  ],
+  "tokenEncryptionKeyId": "{unique-guid}"
+}
 ```
 
-3. Set the `tokenEncryptionKeyId` property to the `keyId` you specified:
-
-```json
-"tokenEncryptionKeyId": "unique-guid-for-this-key"
-```
-
-This configuration tells Entra External ID to use this public key when encrypting the password context for your custom extension.
+This configuration tells Entra External ID to use the public key when encrypting the password context for your custom extension.
 
 ### Configure the application manifest
 
@@ -746,32 +778,112 @@ Content-type: application/json 
 }  
 ```
 
-## Set up encryption for password handling
+## Configure Azure Function for Key Vault access
 
-The sample Azure Function includes hardcoded constants for the RSA decryption private key and other sensitive values. For production deployments, store these secrets in Azure Key Vault and reference them using Azure Function application settings.
+Your Azure Function needs to access the private key stored in Key Vault to decrypt the password payload. This section shows you how to enable managed identity, grant Key Vault access, install required packages, and configure the function code.
 
-### Connect your Azure Function to Key Vault
+### Enable managed identity on the Azure Function app
 
-1. Enable a [system-assigned managed identity](/azure/app-service/overview-managed-identity#add-a-system-assigned-identity) for your Azure Function.
-2. Grant the managed identity access to Key Vault using the **Key Vault Secrets User** role. See [Provide access to Key Vault with Azure RBAC](/azure/key-vault/general/rbac-guide).
-3. Add Key Vault references to your function's application settings using the syntax: `@Microsoft.KeyVault(SecretUri=https://<vault-name>.vault.azure.net/secrets/<secret-name>/)`. See [Use Key Vault references for Azure Functions](/azure/app-service/app-service-key-vault-references).
+1. Sign in to the [Azure portal](https://portal.azure.com) and browse to **Function App**.
+1. Select your function app.
+1. In the left menu, under **Settings**, select **Identity**.
+1. Under the **System assigned** tab, set **Status** to **On**.
+1. Select **Save**.
+1. After the identity is created, copy the **Object (principal) ID** value. You'll need it in the next step.
 
-#### Update your function code
+### Grant Key Vault access to the managed identity
 
-Replace hardcoded constants with [environment variable](/azure/azure-functions/functions-how-to-use-azure-function-app-settings#use-application-settings) references:
+1. In the Azure portal, go to your Key Vault.
+1. In the left menu, under **Settings**, select **Access policies**.
+1. Select **Create**.
+1. Under **Secret permissions**, select **Get**, and then select **Next**.
+1. On the **Principal** page, paste the object ID you copied in the previous step.
+1. Select your function app's managed identity from the search results.
+1. Select **Next**, and then select **Next** again.
+1. Select **Create** to create the access policy with the following permissions:
+   - **Secret permissions**: Get
+   - **Principal**: Your function app name
+
+### Install required NuGet packages
+
+Your function project requires the following NuGet packages to access Key Vault:
+
+1. Open your function project in Visual Studio or Visual Studio Code.
+1. Right-click the project and select **Manage NuGet Packages**.
+1. Search for and install the following packages:
+   - **Azure.Identity** (version 1.12.0 or later)
+   - **Azure.Security.KeyVault.Secrets** (version 4.6.0 or later)
+
+### Configure application settings
+
+Add the following settings to your function configuration.
+
+For local development, add these values to your `local.settings.json` file:
+
+```json
+{
+  "Values": {
+    "KeyVaultUrl": "https://your-keyvault-name.vault.azure.net/",
+    "CiamJitMigrationEncryptionCertName": "JitMigrationEncryptionCert"
+  }
+}
+```
+
+For Azure deployment:
+
+1. In the Azure portal, go to your function app.
+1. In the left menu, under **Settings**, select **Configuration**.
+1. Under **Application settings**, select **New application setting** and add the following settings:
+   - **Name**: `KeyVaultUrl`, **Value**: `https://your-keyvault-name.vault.azure.net/`
+   - **Name**: `CiamJitMigrationEncryptionCertName`, **Value**: `JitMigrationEncryptionCert`
+1. Select **Save** to save the settings and restart the function app.
+
+### Update your function code
+
+Update your function code to retrieve the certificate from Key Vault using managed identity instead of using a hardcoded private key. Add the following code to your function:
 
 ```csharp
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using System.Security.Cryptography.X509Certificates;
+
 // Remove the hardcoded constant:
 // private const string DECRYPTION_PRIVATE_KEY = @"-----BEGIN PRIVATE KEY-----...";
 
-// Replace with environment variable access:
-private static readonly string DECRYPTION_PRIVATE_KEY = 
-    Environment.GetEnvironmentVariable("DecryptionPrivateKey") 
-    ?? throw new InvalidOperationException("DecryptionPrivateKey not configured");
+// Add method to retrieve certificate from Key Vault:
+private static X509Certificate2 GetCertificateFromKeyVault()
+{
+    var keyVaultUrl = Environment.GetEnvironmentVariable("KeyVaultUrl") 
+        ?? throw new InvalidOperationException("KeyVaultUrl not configured");
+    var certName = Environment.GetEnvironmentVariable("CiamJitMigrationEncryptionCertName") 
+        ?? throw new InvalidOperationException("CiamJitMigrationEncryptionCertName not configured");
+
+    var client = new SecretClient(new Uri(keyVaultUrl), new DefaultAzureCredential());
+    KeyVaultSecret secret = client.GetSecret(certName);
+    
+    byte[] certBytes = Convert.FromBase64String(secret.Value);
+    return new X509Certificate2(certBytes, (string)null, X509KeyStorageFlags.MachineKeySet);
+}
 ```
 
-> [!NOTE]
-> Changing from `const` to `static readonly` is necessary because `const` values must be compile-time constants, while environment variables are resolved at runtime.
+Update your decryption code to use the certificate from Key Vault instead of the hardcoded private key.
+
+## Deploy the Azure Function
+
+After you configure your function code, deploy it to Azure.
+
+### Deploy using Visual Studio 2022
+
+1. In Solution Explorer, right-click your function project.
+1. Select **Publish**.
+1. If you haven't set up a publish profile:
+   1. Select **Azure**, and then select **Next**.
+   1. Select **Azure Function App (Windows)**, and then select **Next**.
+   1. Sign in to your Azure account if prompted.
+   1. Select your subscription and function app.
+   1. Select **Finish**.
+1. On the **Publish** page, select **Publish**.
+1. Wait for the deployment to complete. A "Publish succeeded" message appears when the deployment is finished.
 
 ## Next steps
 
