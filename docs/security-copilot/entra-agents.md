@@ -34,6 +34,12 @@ Each agent works a little differently, but at their core, they first analyze you
 
 Administrators can configure the agent to run automatically or trigger the agent to run manually. 
 
+Because each of the agents perform a specific set of tasks, they need a specific set of configurations to operate within the boundaries of that task. The administrator also needs certain Microsoft Entra roles to set up and manage the agent.
+
+- **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-is-agent-id).
+- **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks.
+- **Role-based access**: These roles are required to set up, manage, and use the agent.
+
 ## Available Microsoft Entra agents
 
 The following agents are currently available for Microsoft Entra. Due to the fast pace at which these agents are released and updated, each agent might have features at various stages of availability. Preview features are added frequently.
@@ -71,7 +77,7 @@ The [Conditional Access Optimization Agent](./conditional-access-agent-optimizat
 
 | Attribute           | Description |
 |---------------------|------------ |
-| Identity            | Uses [Microsoft Entra Agent ID](../agent-id/identity-professional/authorization-agent-id.md) for authorization |
+| Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant's Conditional Access policies and configurations for gaps, overlap, and misconfigurations. |
 | Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
 | Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
