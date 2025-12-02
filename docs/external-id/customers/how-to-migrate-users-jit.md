@@ -173,7 +173,8 @@ Response schema:
       {  
         "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
       } 
-    ]  
+    ]
+    "nonce": // This should be the nonce value acquired after decrypting the password context from the request payload.
   }  
 }  
 ```
