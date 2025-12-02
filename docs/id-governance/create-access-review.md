@@ -330,6 +330,7 @@ After one or more access reviews have started, you might want to modify or updat
 ## Next steps
 
 - [Complete an access review of groups or applications](complete-access-review.md)
+- [Access Review Agent (preview)](../security-copilot/access-review-agent.md)
 - [Create an access review of PIM for Groups (preview)](create-access-review-pim-for-groups.md)
 - [Review access to groups or applications](perform-access-review.md)
 - [Review access for yourself to groups or applications](review-your-access.md)
