@@ -55,13 +55,14 @@ Depending on what you want to review, you either create your access review in ac
 | Microsoft Entra role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra admin center |
 | Azure resource role | Specified reviewers</br>Self-review | [PIM](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json) | Microsoft Entra admin center |
 | Access package assignments | Specified reviewers</br>Group members</br>Self-review | entitlement management | Access panel |
+| Access rights from custom data resources (preview) | Managers  | access reviews | Access panel |
 
 ## License requirements
 
 [!INCLUDE [active-directory-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
 
 >[!NOTE]
->Creating a review on inactive users and with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations requires a Microsoft Entra ID Governance license.
+>Creating a review on inactive users and with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, or an [access review of multiple resources together (preview)](catalog-access-reviews.md), requires a Microsoft Entra ID Governance license.
 
 ## Access Review Agent (Preview)
 
@@ -72,5 +73,6 @@ The Access Review Agent works for your reviewers by automatically gathering insi
 - [Prepare for an access review of users' access to an application](access-reviews-application-preparation.md)
 - [Create an access review of groups or applications](create-access-review.md)
 - [Create an access review of users in a Microsoft Entra administrative role](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/azure/active-directory/governance/toc.json)
+- [Create an access review to multiple resources in a catalog (preview)](catalog-access-reviews.md)
 - [Review access to groups or applications](perform-access-review.md)
 - [Complete an access review of groups or applications](complete-access-review.md)
