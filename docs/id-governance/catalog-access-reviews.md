@@ -38,7 +38,7 @@ To enable access reviews across multiple resources in a single reviewer experien
     > [!NOTE]
     > In catalog access reviews, only groups, applications, and [custom data provided resources](custom-data-resource-access-reviews.md) are supported.
 1. With the resources selected, select **Add** to save them in the catalog.
-1. To enable the review to also include data from custom data providers, select **Custom Data Provided Resource (Preview)**, and provide the name and description of the resource.
+1. To enable the review to also include data from custom data providers, select **Custom Data Provided Resource (Preview)**, and provide the name and description of the resource. For more information, see [custom data provided resource](custom-data-resource-access-reviews.md).
 
 For more information on creating a catalog and adding resources, see [Create and manage a catalog of resources](entitlement-management-catalog-create.md).
 
@@ -64,6 +64,11 @@ Once you add resources to a catalog, you can then create a catalog access review
 
 1. Select **Create** to finalize the access review. 
 
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http#example-6-create-a-single-stage-access-review-on-a-catalog).
+
+## Upload data from custom data resources
+
+If you have added custom data provided resources to the catalog, then you must upload the data while the review instance is initializing. For more information, see [get access review object and instance ID](custom-data-resource-access-reviews.md#get-access-review-object-and-instance-id).
 
 ## Completing a catalog access review
 
