@@ -38,7 +38,7 @@ Because each of the agents perform a specific set of tasks, they need a specific
 
 - **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-is-agent-id).
 - **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks.
-- **Role-based access**: These roles are required to set up, manage, and use the agent.
+- **Role-based access**: The administrator needs specific roles to set up, manage, and use the agent.
 
 ## Available Microsoft Entra agents
 
