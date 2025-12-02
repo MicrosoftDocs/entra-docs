@@ -25,7 +25,7 @@ The strong authentication method registration flow occurs in three scenarios:
 - **After sign-up**: The user successfully signs up and automatically proceeds to sign in.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in.
 
-The available strong authentication methods is **email** and **SMS** one-time passcode.
+When strong authentication method registration is required, the user selects a method of choice ffrom a list of supported methods. The available methods are **email** and **SMS** one-time passcode.
 
 The flow diagram below illustrates the three scenarios:
 
@@ -56,7 +56,7 @@ To enable the strong authentication method registration in your React app, updat
     };
     ```
 
-The capability value `registration_required` informs Microsoft Entra that your app can handle strong authentication method registration flow. [Learn more about native authentication challenge types and capabilities](concept-native-authentication-challenge-types.md). 
+The capability value `registration_required` informs Microsoft Entra that your app can handle strong authentication method registration flow. Learn more about [native authentication challenge types and capabilities](concept-native-authentication-challenge-types.md). 
 
 ## Create UI components
 
@@ -71,15 +71,240 @@ When needed, you can import then use reusable components in your sign-in, sign-i
 
 ## Register strong authentication method during sign-in
 
-TODO
+Update the *src/app/sign-in/page.tsx* file to enable your app to handle strong authentication method registration flow during sign-in. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/page.tsx):
 
-## Register strong authentication method after sign-up
+1. Import the required types and components as shown in the following code snippet:
 
-TODO
+    ```typescript
+    import {
+        CustomAuthPublicClientApplication,
+        ICustomAuthPublicClientApplication,
+        SignInCodeRequiredState,
+        SignInCompletedState,
+        AuthFlowStateBase,
+        SignInAuthMethodRegistrationRequiredState,
+        SignInAuthMethodRegistrationChallengeRequiredState,
+    } from "@azure/msal-browser/custom-auth";
+    import { AuthMethodRegistrationForm } from "../components/shared/AuthMethodRegistrationForm";
+    import { AuthMethodRegistrationChallengeForm } from "../components/shared/AuthMethodRegistrationChallengeForm";
+    ...
+    ```
 
-## Register strong authentication method after password reset
+1. Add new state variables for strong authentication method registration:
 
-TODO
+    ```typescript
+    export default function SignIn() {
+        ...
+        // Authentication method registration states
+        const [authMethodsForRegistration, setAuthMethodsForRegistration] = useState<AuthenticationMethod[]>([]);
+        const [selectedAuthMethodForRegistration, setSelectedAuthMethodForRegistration] = useState<AuthenticationMethod | undefined>(undefined);
+        const [verificationContactForRegistration, setVerificationContactForRegistration] = useState("");
+        const [challengeForRegistration, setChallengeForRegistration] = useState("");
+    
+        // ... initialization code
+    }
+    ```
+
+1. Update the `startSignIn`, `handlePasswordSubmit` and `handleCodeSubmit` functions to check if strong authentication method registration is required:
+
+    ```typescript
+    const startSignIn = async (e: React.FormEvent) => {
+        // Start the sign-in flow
+        const result = await authClient.signIn({
+            username,
+        });
+    
+        ...
+    
+        // Check for auth method registration requirement
+        if (result.isAuthMethodRegistrationRequired()) {
+            setAuthMethodsForRegistration(result.state.getAuthMethods());
+            // Set default selection to the first auth method
+            const methods = result.state.getAuthMethods();
+            setSelectedAuthMethodForRegistration(methods.length > 0 ? methods[0] : undefined);
+        }
+    
+        ...
+    };
+    
+    const handlePasswordSubmit = async (e: React.FormEvent) => {
+        if (signInState instanceof SignInPasswordRequiredState) {
+            const result = await signInState.submitPassword(password);
+    
+            ...
+    
+            // Check for auth method registration requirement
+            if (result.isAuthMethodRegistrationRequired()) {
+                const methods = result.state.getAuthMethods();
+                setAuthMethodsForRegistration(methods);
+                setSelectedAuthMethodForRegistration(methods.length > 0 ? methods[0] : undefined);
+                setSignInState(result.state);
+            }
+            
+            ...
+        }
+    };
+    
+    const handleCodeSubmit = async (e: React.FormEvent) => {
+        if (signInState instanceof SignInCodeRequiredState) {
+            const result = await signInState.submitCode(code);
+    
+            ...
+            
+            // Check for auth method registration requirement
+            if (result.isAuthMethodRegistrationRequired()) {
+                const methods = result.state.getAuthMethods();
+                setAuthMethodsForRegistration(methods);
+                setSelectedAuthMethodForRegistration(methods.length > 0 ? methods[0] : undefined);
+                setSignInState(result.state);
+            }
+    
+            ...
+        }
+    };
+    ```
+
+    In each of the function, notice that we if strong authentication method registration is required by using the following code snippet:
+
+    ```typescript
+    if (result.isAuthMethodRegistrationRequired()) {...}
+    ```
+
+1. Add the handler for strong authentication method selection:
+
+    ```typescript
+    const handleAuthMethodRegistrationSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError("");
+        setLoading(true);
+    
+        if (!selectedAuthMethodForRegistration || !verificationContactForRegistration) {
+            setError("Please select an authentication method and enter a verification contact.");
+            setLoading(false);
+            return;
+        }
+    
+        if (signInState instanceof AuthMethodRegistrationRequiredState) {
+            const result = await signInState.challengeAuthMethod({
+                authMethodType: selectedAuthMethodForRegistration,
+                verificationContact: verificationContactForRegistration,
+            });
+    
+            if (result.isFailed()) {
+                if (result.error?.isInvalidInput()) {
+                    setError("Incorrect verification contact.");
+                } else if (result.error?.isVerificationContactBlocked()) {
+                    setError(
+                        "The verification contact is blocked. Consider using a different contact or a different authentication method"
+                    );
+                } else {
+                    setError(
+                        result.error?.errorData?.errorDescription ||
+                            "An error occurred while verifying the authentication method"
+                    );
+                }
+            }
+    
+            if (result.isCompleted()) {
+                setData(result.data);
+                setCurrentSignInStatus(true);
+                setSignInState(result.state);
+            }
+    
+            if (result.isVerificationRequired()) {
+                setSignInState(result.state);
+            }
+        }
+    
+        setLoading(false);
+    };
+    ```
+
+1. Add the handler for strong authentication method verification:
+
+    ```typescript
+    const handleAuthMethodRegistrationChallengeSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError("");
+        setLoading(true);
+    
+        if (!challengeForRegistration) {
+            setError("Please enter a code.");
+            setLoading(false);
+            return;
+        }
+    
+        if (signInState instanceof AuthMethodVerificationRequiredState) {
+            const result = await signInState.submitChallenge(challengeForRegistration);
+    
+            if (result.isFailed()) {
+                if (result.error?.isIncorrectChallenge()) {
+                    setError("Incorrect code.");
+                } else {
+                    setError(
+                        result.error?.errorData?.errorDescription ||
+                            "An error occurred while verifying the challenge response"
+                    );
+                }
+            }
+    
+            if (result.isCompleted()) {
+                setData(result.data);
+                setCurrentSignInStatus(true);
+                setSignInState(result.state);
+            }
+        }
+    
+        setLoading(false);
+    };
+    ```
+
+1. Update the `renderForm()` function to display the correct strong authentication method registration forms, that's, method selection or verification:
+
+    ```typescript
+    const renderForm = () => {
+        if (loadingAccountStatus) {
+            return;
+        }
+    
+        ...
+    
+        // Display AuthMethodRegistrationForm if the current state is authentication method registration required state
+        if (signInState instanceof AuthMethodRegistrationRequiredState) {
+            return (
+                <AuthMethodRegistrationForm
+                    onSubmit={handleAuthMethodRegistrationSubmit}
+                    authMethods={authMethodsForRegistration}
+                    selectedAuthMethod={selectedAuthMethodForRegistration}
+                    setSelectedAuthMethod={setSelectedAuthMethodForRegistration}
+                    verificationContact={verificationContactForRegistration}
+                    setVerificationContact={setVerificationContactForRegistration}
+                    loading={loading}
+                    styles={styles}
+                />
+            );
+        }
+    
+        // Display AuthMethodRegistrationChallengeForm if the current state is authentication method verification required state
+        if (signInState instanceof AuthMethodVerificationRequiredState) {
+            return (
+                <AuthMethodRegistrationChallengeForm
+                    onSubmit={handleAuthMethodRegistrationChallengeSubmit}
+                    challenge={challengeForRegistration}
+                    setChallenge={setChallengeForRegistration}
+                    loading={loading}
+                    styles={styles}
+                />
+            );
+        }
+    
+        ...
+    };
+    ```
+
+## Register strong authentication method after sign-up or password reset 
+
+Strong authentication method registration flow after sign-up and password reset works similar to the sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states. 
 
 ## Run and test your app
 
