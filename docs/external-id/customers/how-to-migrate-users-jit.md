@@ -51,7 +51,7 @@ The JIT migration process is illustrated in the following diagram:
 When a user with the migration flag set to `true` signs in, the following process occurs:
 
 1. **User signs in** - User enters credentials from the legacy identity provider.
-2. **Migration flag check** - Entra External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed.
+2. **Migration flag check** - If the password entered does not match the dummy password on record for the user, Entra External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed.
 3. **Password encryption** - Entra encrypts the password using the public key (RSA JWE format) ensuring plaintext is never transmitted.
 4. **Custom extension invocation** - Entra calls your Azure Function with the encrypted payload, user information, and authentication context.
 5. **Decryption and validation** - Your function decrypts the password using the private key from Key Vault and validates credentials against your legacy identity provider.
