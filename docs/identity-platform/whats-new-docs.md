@@ -15,6 +15,12 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## November 2025
+
+### New articles
+
+- [Content Security Policy overview for Microsoft Entra ID](content-security-policy.md)
+
 ## October 2025
 
 We did not publish any updates this month.
@@ -26,10 +32,5 @@ We did not publish any updates this month.
 - [Configure a mobile app that calls web APIs](scenario-mobile-app-configuration.md) - The update improved content clarity.
 - [Desktop app that calls web APIs: Code configuration](scenario-desktop-app-configuration.md) - The update improved content clarity.
 
-## August 2025
-
-### Updated articles
-
-- [Microsoft Enterprise SSO plug-in for Apple devices](apple-sso-plugin.md) - We adjusted Apple SSO, updated the token protection image, and troubleshot secure enclave issues.
 
 
