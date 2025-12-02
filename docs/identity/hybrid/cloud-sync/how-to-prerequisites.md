@@ -29,8 +29,8 @@ You need the following to use Microsoft Entra Cloud Sync:
 
   > [!IMPORTANT]
   > **Windows Server 2025 is NOT supported.** 
-  > There is a known issue on Windows Server 2025 that can cause Microsoft Entra Connect Sync to encounter synchronization problems. If you upgraded to Windows Server 2025, make sure you have installed [October 20, 2025 - KB5070773](https://support.microsoft.com/topic/october-20-2025-kb5070773-os-build-26100-6901-out-of-band-f8effaa1-1c73-41e5-bcb3-e58a46c7601e) update, or later. After installing this update, restart the server for the changes to take effect. 
-  > Windows Server 2025 support for Microsoft Entra Connect Sync is planned for a future release.
+  > There is a known issue on Windows Server 2025 that can cause Microsoft Entra Cloud Sync to encounter synchronization problems. If you upgraded to Windows Server 2025, make sure you have installed [October 20, 2025 - KB5070773](https://support.microsoft.com/topic/october-20-2025-kb5070773-os-build-26100-6901-out-of-band-f8effaa1-1c73-41e5-bcb3-e58a46c7601e) update, or later. After installing this update, restart the server for the changes to take effect. 
+  > Windows Server 2025 support for Microsoft Entra Cloud Sync is planned for a future release.
   
 
 - This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
