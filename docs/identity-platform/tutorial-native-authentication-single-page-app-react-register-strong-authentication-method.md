@@ -29,20 +29,7 @@ The flow diagram below illustrates the three scenarios
 
 :::image type="content" source="media/tutorial-native-authentication-single-page-app-react-register-strong-authentication-method/register-strong-authentication-method.png" alt-text="Register strong authentication method."::: 
 
- 
-
-
-
-
-[when do we need to register a strong auth method] - get the intro here - 
-[strong auth method registrations scenarios]
-[flow diagram]
-
 ## Prerequisites
-
-TODO
-
-## Enable strong authentication method registration
 
 TODO
 
