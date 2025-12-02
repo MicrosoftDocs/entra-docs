@@ -25,9 +25,11 @@ This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite su
 
 ## Create a catalog
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+If you do not yet have a catalog, then create a new catalog. If you have a catalog already, then continue at the [next section](#add-a-custom-data-provided-resource-to-a-catalog).
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) or catalog creator.
     > [!TIP]
-    > Other least privilege roles that can complete this task include the Catalog creator. Users who were assigned to the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned to the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance Administrator role.
+    > Users who were assigned to the User Administrator role will no longer be able to create catalogs or manage access packages in a catalog they don't own. If users in your organization were assigned to the User Administrator role to configure catalogs, access packages, or policies in entitlement management, you should instead assign these users the Identity Governance Administrator role.
 1. Browse to **ID Governance** > **Catalogs**.
 
 1. Select **New catalog**.
@@ -37,9 +39,11 @@ This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite su
     Users see this information in an access package's details.
 1. Select **Create** to create the catalog.
 
+For more information on creating a catalog and adding resources, see [Create and manage a catalog of resources](entitlement-management-catalog-create.md).
+
 ## Add a custom data provided resource to a catalog
 
-With a catalog created, you can add custom data provided resource to it by doing the following steps:
+With a catalog created, you can add custom data provided resources to it by doing the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 

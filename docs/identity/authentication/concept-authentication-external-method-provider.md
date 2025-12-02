@@ -126,10 +126,9 @@ The next sections explain provider requirements and include examples for Microso
 
 ### Discovery of provider metadata 
 
-An external identity provider needs to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint is used to get more configuration data. The *full* URL, including .*well-known*/*oidc-configuration*, must be included in the Discovery URL configured when the EAM is created. 
+An external identity provider needs to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint is used to get more configuration data. The Discovery URL **MUST** use the `https` scheme and **MUST** end with `/.well-known/openid-configuration`. No additional path segments, query strings, or fragments are permitted after this segment. The full Discovery URL must be included in the Discovery URL configured when the EAM is created.
 
-The endpoint returns a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return the valid content-length header.
-
+The endpoint returns a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return the valid content-length header. The metadata document **MUST** comply with [OpenID Connect Discovery 1.0](http://openid.net/specs/openid-connect-discovery-1_0.html) (incorporating errata set 2) and include all required OIDC metadata fields.
 The following table lists the data that should be present in the metadata of the provider. These values are required for this extensibility scenario. The JSON metadata document may contain more information. 
 
 For the OIDC document with the values for Provider Metadata, see [Provider Metadata](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
@@ -137,9 +136,10 @@ For the OIDC document with the values for Provider Metadata, see [Provider Metad
 
 | Metadata value        | Value  | Comments |
 |-----------------------|--------|----------|
-| Issuer                |        | This URL must match both the host URL used for discovery and the iss claim in the tokens issued by the provider’s service. |
+| Issuer                |        | Must be an HTTPS URL.<br>The issuer value **MUST** match character-for-character between the configured issuer, the issuer value in the discovery document, and the `iss` claim in the tokens issued by the provider’s service.<br>The issuer MAY include a port and/or path segment, but MUST NOT contain query parameters or fragment identifiers. |
+
 | authorization_endpoint |        | The endpoint that Microsoft Entra ID communicates with for authorization. This endpoint must be present as one of the reply URLs for the allowed applications. |
-| jwks_uri               |        | Where Microsoft Entra ID can find the public keys needed to verify the signatures issued by the provider. <br>[!NOTE]<br>The JSON Web Key (JWK) **x5c** parameter must be present to provide X.509 representations of keys provided. |
+| jwks_uri               |        | Where Microsoft Entra ID can find the public keys needed to verify the signatures issued by the provider. The `jwks_uri` **MUST** be an HTTPS endpoint and **MUST NOT** include query parameters or fragment identifiers.<br>[!NOTE]<br>The JSON Web Key (JWK) **x5c** parameter must be present to provide X.509 representations of keys provided. |
 | scopes_supported       | openid | Other values may also be included but aren't required. |
 | response_types_supported | id_token | Other values may also be included but aren't required. |
 | subject_types_supported | | |
@@ -161,7 +161,7 @@ https://customcaserver.azurewebsites.net/v2.0/.well-known/openid-configuration
     "RS256"
   ],
   "issuer": "https://customcaserver.azurewebsites.net/v2.0",
-  "jwks_uri": "http://customcaserver.azurewebsites.net/.well-known/jwks",
+  "jwks_uri": "https://customcaserver.azurewebsites.net/.well-known/jwks",
   "response_modes_supported": [
     "form_post"
   ],
@@ -177,7 +177,7 @@ https://customcaserver.azurewebsites.net/v2.0/.well-known/openid-configuration
   ]
 }
 
-http://customcaserver.azurewebsites.net/.well-known/jwks
+https://customcaserver.azurewebsites.net/.well-known/jwks
 {
   "keys": [
     {
@@ -195,8 +195,25 @@ http://customcaserver.azurewebsites.net/.well-known/jwks
 }
 ```
 
->[!NOTE]
->The JWK **x5c** parameter must be present to provide X.509 representations of keys provided.
+> [!NOTE]
+> The JWK **x5c** parameter must be present to provide X.509 representations of keys provided.
+
+#### Discovery URL and issuer examples
+
+The following examples illustrate valid and invalid Discovery URL and issuer combinations for this integration.
+
+**Valid Discovery URL and issuer pairs**
+
+- Discovery URL: `https://example.com/.well-known/openid-configuration`<br>Issuer: `https://example.com`
+- Discovery URL: `https://example.com:8443/.well-known/openid-configuration`<br>Issuer: `https://example.com:8443`
+- Discovery URL: `https://example.com/tenant1/.well-known/openid-configuration`<br>Issuer: `https://example.com/tenant1`
+
+**Invalid Discovery URL and issuer examples**
+
+- Discovery URL: `https://example.com/.well-known/openid-configuration`<br>Issuer: `https://example.com:443/` (default HTTPS port explicitly added in issuer)
+- Discovery URL: `https://example.com:443/.well-known/openid-configuration`<br>Issuer: `https://example.com/` (port mismatch)
+- Discovery URL: `https://example.com/.well-known/openid-configuration?client_id=0oasxuxkghOniBjlQ697`<br>Issuer: `https://example.com` (query string in Discovery URL is not allowed)
+
 
 #### Provider metadata caching
 
@@ -373,10 +390,12 @@ Here's an example of the id_token hint for a guest user in the tenant:
 We suggest that external identity providers complete these steps. The list isn't exhaustive, and providers should complete other validation steps as they see fit. 
 
 1. From the request:
-   - Ensure that the redirect_uri is published provided in [Microsoft Entra ID call to the external identity provider](#microsoft-entra-id-call-to-the-external-identity-provider).
-   - Ensure that the client_id has a value assigned to Microsoft Entra ID, such as *ABCD*.
-   - The provider should first [validate](/entra/identity-platform/id-tokens#validating-an-id_token) the id_token_hint that is presented to it by Microsoft Entra ID.
-1. From the claims in the id_token_hint:
+   - Ensure that the `redirect_uri` is published as described in [Microsoft Entra ID call to the external identity provider](#microsoft-entra-id-call-to-the-external-identity-provider).
+   - Ensure that the configured Discovery URL uses HTTPS, ends with `/.well-known/openid-configuration`, and doesn't include query parameters or fragment identifiers, and that the issuer value matches the discovery document exactly.
+   - Ensure that the `client_id` has a value assigned to Microsoft Entra ID, such as *ABCD*.
+   - The provider should first [validate](/entra/identity-platform/id-tokens#validating-an-id_token) the `id_token_hint` that is presented to it by Microsoft Entra ID.
+
+**1. From the claims in the id_token_hint:
    - They can optionally make a call to [Microsoft Graph](https://graph.microsoft.com/) to fetch other details about this user. The **oid** and **tid** claims in the id_token_hint is useful in this regard. For details about the claims provided in the id_token_hint, see [Default id_token_hint claims](#default-id_token_hint-claims).
 1. Then carry out any other authentication activity that the provider’s product is built to do.
 1. Depending upon the result of user’s actions and other factors, the provider would then construct and send a response back to Microsoft Entra ID, as explained in the next section.
