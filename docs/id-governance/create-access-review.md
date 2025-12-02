@@ -45,6 +45,7 @@ If you're reviewing access to an application, then before you create the review,
 > In a group review, nested groups are automatically flattened, so users from nested groups appear as individual users. If a user is flagged for removal due to their membership in a nested group, they won't be automatically removed from the nested group, but only from direct group membership.
 
 ## Create a single-stage access review
+
 ### Scope
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
