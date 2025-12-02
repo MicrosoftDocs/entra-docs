@@ -369,8 +369,42 @@ For strong authentication method registration after SSPR, you need to update the
 
 ## Run and test your app
 
-[test during sign-in, sign-up and SSPR]
+Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-your-app) to run your app, but this time, test the strong authentication method registration flow. 
 
-## Related content
+### Test authentication method registration after sign-up 
 
-TODO
+1. Navigate to http://localhost:3000/sign-up to display the Sign-Up form.
+
+1. Enter the required details, then sign-up by following prompts. After you successfully sign-up, the app automatically continues to sign-in flow by displaying the strong authentication method registration form.
+
+1. Select the strong authentication method of choice, such as **Emails OTP**, then enter an email address.
+
+1. Select **Continue** to submit the form details. You should receive a verification code to your email address.
+
+1. Enter the verification code in the challenge form textbox, then seletc **Continue**. After the code is verified, your strong authentication method is registered and you're signed in. 
+
+### Test strong authentication method registration during sign-in
+
+To test strong authentication method registration during sign-in, make sure you've a user account that doesn't have a strong authentication method registered.
+
+1. Navigate to http://localhost:3000/sign-in to display the Sign In form.
+
+1. Input your details, select the **Continue** button, then follow the prompts. The app enters strong authentication method registration flow. 
+
+1. Follow the app prompts to complete strong authentication method registration.
+
+### Test authentication method registration after password reset 
+
+To test strong authentication method registration after SSPR, make sure you've a user account that doesn't have a strong authentication method registered.
+
+1. Navigate to http://localhost:3000/reset-password to display the Password Reset form.
+
+1. Input your details, select the **Continue**, then follow app prompts to complete the password reset flow. After you successfully resets your password, the app continues to sign-in flow by displaying the strong authentication method registration form.
+
+1. Follow the app prompts to complete strong authentication method registration.
+
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Enable multifactor authentication in a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-enable-mfa.md)
