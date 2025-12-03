@@ -80,14 +80,13 @@ POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69
 { 
     "name": "toBeMigrated", 
     "dataType": "Boolean",
-    "defaultValue": true,
     "targetObjects":[ 
     "User" 
 ] 
 } 
 ```
 
-Replace `30a5435a-1871-485c-8c7b-65f69e287e7b` with the object ID of your application. By setting `defaultValue` to `true`, all new users will automatically be flagged for migration.
+Replace `30a5435a-1871-485c-8c7b-65f69e287e7b` with the object ID `b2c-extensions-app` of your application. The value of this extensions should be set to true for all users who will require migration.
 
 #### 1.1.1 Get the extension property ID for use in your custom authentication extension
 
