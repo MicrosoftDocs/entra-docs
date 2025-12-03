@@ -113,40 +113,19 @@ This section lists the custom authentication extensions events available in Micr
 
 The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a [custom claims provider](custom-claims-provider-overview.md). The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
-
 ### Attribute collection start 
 
 [Attribute collection start](./custom-extension-attribute-collection.md) events can be used with custom authentication extensions to add logic before attributes are collected from a user. The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. 
 
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
-
 ### Attribute collection submit
 
 [Attribute collection submit](./custom-extension-attribute-collection.md) events can be used with custom authentication extensions to add logic after attributes are collected from a user. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
-
-> [!TIP]
-> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
-> 
-> To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
 
 ### One time passcode send
  
 The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up with email address, sign in with email one-time passcode (Email OTP), reset their password using Email OTP, or use Email OTP for multifactor authentication (MFA).
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
-
-> [!TIP]
-> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmail)
->
-> To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
-
 
 ## Related content
 
