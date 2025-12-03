@@ -175,9 +175,20 @@ Update-MgDirectoryOnPremiseSynchronization `
 ```
 
 > [!NOTE]
-> A new user created in Active Directory with "User must change password at next logon" flag will always be provisioned in Microsoft Entra ID with a password policy to "Force change password on next sign-in", irrespective of the *ForcePasswordChangeOnLogOn* feature being true or false. This is a Microsoft Entra internal logic since the new user is provisioned without a password, whereas *ForcePasswordChangeOnLogOn* feature only affects admin password reset scenarios.
->
-> If a user was created in Active Directory with "User must change password at next logon" before the feature was enabled, the user will receive an error while signing in. To remediate this issue, un-check and re-check the field "User must change password at next logon" in Active Directory Users and Computers. After synchronizing the user object changes, the user will receive the expected prompt in Microsoft Entra ID to update their password. 
+> When you create a new user in Active Directory with the **User must change password at next logon** option selected, Microsoft Entra ID always configures that user’s cloud account to **force a password change at the first sign-in**. This happens **whether *ForcePasswordChangeOnLogOn* feature is enabled or not**, because initially new synced user objects have no password in Microsoft Entra ID, hence must be forced to set one before sign-in. The *ForcePasswordChangeOnLogOn* feature itself only affects admin-initiated password reset scenarios from on-premises, not the initial user object synchronization.
+> If a user account was created in Active Directory with **“User must change password at next logon”** while both, the *ForcePasswordChangeOnLogOn* and PasswordHashSync features were disabled, that user receives an error "*Your account or password is incorrect*" when signing in (instead of a password-change prompt). To fix this issue, clear the **“User must change password at next logon”** checkbox for the user in Active Directory, then **select it again**. After the next synchronization, Microsoft Entra ID will prompt the user to update their password at sign-in as expected.
+When **Password Hash Synchronization (PHS)** is enabled, each new account is still provisioned in Microsoft Entra ID without a password (because the initial object synchronization doesn’t include the user's password). However, the PHS process runs *frequently* (every 2 minutes) to sync password hashes from on-premises AD to the cloud. The moment a user’s password is synced to Microsoft Entra ID, the service will apply or skip the “*force password change on next sign-in*” flag based on whether the **UserForcePasswordChangeOnLogonEnabled** feature is turned on or off. In other words, *UserForcePasswordChangeOnLogonEnabled* only takes effect when PHS actually synchronizes the password to the cloud. However, when *UserForcePasswordChangeOnLogonEnabled* feature is not enabled, the sync client won't even attempt to sync any temporary passwords. Also, if PHS is not running, enabling or disabling this feature has no impact on user sign-in behavior. 
+
+The following table illustrates the feature combinations and expected behaviors:
+
+|**Sync Client PasswordHashSync**|**AD “User must change password at next logon”**|**Entra UserForcePasswordChangeOnLogonEnabled**|**Resulting Sign-In Behavior in Entra ID**|
+| -------- | -------- | -------- | -------- |
+|False (Disabled)|N/A (no effect in the cloud when PHS is disabled)|N/A (no effect in the cloud when PHS is disabled)|Error: "Your account or password is incorrect" since the account has no password. The cloud admin must set a password for the account.|
+|True (Enabled)|Enabled|True (Enabled)|User is prompted to change password at first sign-in (temporary password was synced to Entra ID).|
+|True (Enabled)|Disabled|True (Enabled)|User signs in normally with the synced password (no prompt to change password).|
+|True (Enabled)|Enabled|False (Disabled)|Temporary password isn’t synced; user can’t sign in to Entra until password is changed on-premises and synced.|
+|True (Enabled)|Disabled|False (Disabled)|User signs in normally with the synced password (no prompt to change password).|
+
 
 > [!CAUTION]
 > You should only use this feature when Self-Service Password Reset and Password Writeback are enabled on the tenant. This is so that if a user changes their password via SSPR, it will be synchronized to Active Directory.
