@@ -16,15 +16,13 @@ From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micros
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
-
-
 ## 1.1.2106.0
  
 December 3, 2025: released for download only
  
 ### Fixed Issues
  
-Fixed an issue with OnPremises Self-Service Password Reset integration using provisioning agent in AzureUSGovernment cloud.
+Fixed the known issue that causes failure when writing back passwords using Microsoft Entra provisioning agent in AzureUSGovernment cloud with version 1.1.2102.0.
 
 
 
@@ -47,8 +45,8 @@ Sept 22, 2025: released for download only
   `HKLM\Software\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent\UserPasswordLength`
 
 ### Known issues
-
-- OnPremises Self-Service Password Reset integration using provisioning agent in AzureUSGovernment cloud.
+ 
+- If you are an AzueUSGovernment customer and have enabled writing back passwords with Microsoft Entra provisioning agent, the operation may fail. Please upgrade the agent to version 1.1.2106.0 to address this issue.
 
 
 
