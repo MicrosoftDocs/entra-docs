@@ -16,15 +16,6 @@ From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micros
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
-
-## 1.1.2106.0
-
-December 2, 2025: released for download only
-
-### Fixed Issues
-
-Fixed an issue with OnPremises Self-Service Password Reset integration using provisioning agent in AzureUSGovernment cloud.
-
 ## 1.1.2102.0
 
 Sept 22, 2025: released for download only
