@@ -114,6 +114,9 @@ To configure a file policy in Global Secure Access, complete the following steps
 1. On the **Review** tab, review your settings.
 1. Select **Create** to create the policy.
 
+> [!Note]
+> If you choose "Scan with Purview" action, please ensure you have configured corresponding data policy through Microsoft Purview.
+
 ### Link the file policy to a security profile
 
 1. Browse to **Global Secure Access** > **Secure** > **Security profiles**.
@@ -178,6 +181,7 @@ To show all traffic subject to Netskope inspection:
 
 ## Related content
 
+- [Learn about Microsoft Purview Network Data Security](https://learn.microsoft.com/purview/dlp-network-data-security-learn)
 - [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md)
 - [Enable the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md) 
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)
