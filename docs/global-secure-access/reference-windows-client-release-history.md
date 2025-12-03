@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 11/05/2025
+ms.date: 12/03/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -22,6 +22,24 @@ You can download the current version of the Global Secure Access client from the
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
 
+## Version 2.24.117
+Released for download on December 3, 2025.
+### Functional changes
+- Support for [Intelligent Local Access](enable-intelligent-local-access.md).
+- Support for [B2B guest access](concept-b2b-guest-access.md).
+- The client package includes a tracert tool.
+- Support to display the **Disable Private Access** button when the **Disable** button is hidden. For details, see [Hide or unhide system tray menu buttons](how-to-install-windows-client.md#hide-or-unhide-system-tray-menu-buttons).
+- The Global Secure Access interface includes a **View account** link to the user's Microsoft Entra **My Account** homepage.
+### Other changes
+- Improved error messages when installing client version intended for a different platform (x64 client on an Arm device or Arm client on an x64 device).
+- Logs collect Kerberos registry keys.
+- Improved log writing to event trace log (ETL) files.
+- The health check test for NRPT rules supports non-English versions of Windows.
+- The client installer includes .NET Runtime version 8.0.21.
+- The client installer includes OneAuth version 6.5.0.
+- New telemetries are available.
+- Miscellaneous bug fixes and improvements.   
+
 ## Version 2.22.90
 Released for download on November 5, 2025.
 ### Functional changes
@@ -30,7 +48,7 @@ Released for download on November 5, 2025.
 - The **Get policy** button lets you poll the Global Secure Access cloud service for the latest forwarding profile.
 - Bug fix: the client uses Private DNS only when the Private Access channel is active.
 ### Other changes
-- New telemetries are now available.
+- New telemetries are available.
 - Miscellaneous bug fixes and improvements.
 
 ## Version 2.20.56
