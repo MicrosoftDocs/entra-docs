@@ -48,7 +48,7 @@ Sensitivity labels of groups can be viewed when adding tasks such as "**Add user
 
 ## View assigned groups sensitivity labels on existing workflow tasks
 
-Sensitivity labels of groups used within tasks of a workflow can be viewed by doing the following steps:
+Sensitivity labels of groups used within existing tasks of a workflow can be viewed by doing the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
@@ -62,7 +62,7 @@ Sensitivity labels of groups used within tasks of a workflow can be viewed by do
 
 1. On the group task overview screen, select the group selection option.
 
-1. On the list of groups screen, you're able to see a list of groups that can be added to the task, and also their sensitivity labels.
+1. On the list of groups screen, you're able to see the group currently assigned to the task, a list of groups that can be added to the task, and also their sensitivity labels.
     :::image type="content" source="media/workflow-sensitivity-labels/sensitivity-label-existing-workflow.png" alt-text="Screenshot of groups and sensitivity labels within a task for an existing workflow.":::
 
 
