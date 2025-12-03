@@ -67,7 +67,7 @@ You require form components to handle strong authentication method registration.
 1. In the new folder, create a file, `AuthMethodRegistrationForm.tsx`, to display a form that allows users to select and register a strong authentication method. Add the code in [AuthMethodRegistrationForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/AuthMethodRegistrationForm.tsx) into the file.
 1. In the new folder, create another file, `AuthMethodRegistrationChallengeForm.tsx`, to display a form for verifying the strong authentication method by using the one-time passcode that the user receives. Add the code in [AuthMethodRegistrationChallengeForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/AuthMethodRegistrationChallengeForm.tsx) into the file.
 
-When needed, you can import then use reusable components in your sign-in, sign-in after sign-up, and sign-in after SSPR flows. 
+When needed, you can import and use reusable components in your sign-in, sign-in after sign-up, and sign-in after SSPR flows. 
  
 
 ## Register strong authentication method during sign-in
@@ -305,7 +305,7 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle strong a
 
 ## Register strong authentication method after sign-up or password reset 
 
-Strong authentication method registration flow after sign-up and password reset works similar to the sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states. 
+Strong authentication method registration flow after sign-up and password reset works similar to the method registration during sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states. 
 
 ### Register strong authentication method after sign-up
 
@@ -366,7 +366,6 @@ For strong authentication method registration after SSPR, you need to update the
     // Then use the same renderForm logic to display AuthMethodRegistrationForm
     // and AuthMethodRegistrationChallengeForm components
     ```
-
 
 ## Run and test your app
 
