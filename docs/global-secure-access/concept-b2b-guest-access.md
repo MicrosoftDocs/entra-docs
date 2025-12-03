@@ -34,7 +34,7 @@ To enable B2B guest access with the Global Secure Access client, you must have:
 - Guest users configured in the resource tenant. For more information, see the following articles:
     - [Quickstart: Add a guest user and send an invitation](../external-id/b2b-quickstart-add-guest-users-portal.md)
     - [Understand and manage the properties of B2B guest users](../external-id/user-properties.md)
-- The Global Secure Access client, version [0.0.0<!--insert min. version number-->] or later, installed and running on the device connected to the home tenant. To install the Global Secure Access client, download either the [x86](https://aka.ms/GSAClientDownloadPreFlight) or [Arm](https://gsaclientdownloader.azurewebsites.net/DownloadWindowsAgentArmPreFlight) version to match your device architecture.<!--validate download links-->   
+- The Global Secure Access client, version 2.24.117 or later, installed and running on the device connected to the home tenant. To install the Global Secure Access client, see [Install the Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md).   
     > [!TIP]
     > The home tenant doesn't need to have a Global Secure Access license.
 - Global Secure Access Private Access enabled on the resource tenant. Configure the Private Access traffic forwarding profile on the resource tenant and assign the profile to guest accounts.
@@ -89,15 +89,15 @@ A: Yes, you can configure MFA on the user and on the applications.
 
 ## Known limitations
 - B2B guest access doesn't support keeping the Internet Access, Microsoft 365, and Microsoft Entra tunnels to the home tenant.
-- Switching an account to the resource tenant fails when the resource tenant is configured for required MFA in the cross-tenant configuration and the home tenant is configured with passwordless sign-in (PSI on the authenticator app).
+- Switching an account to the resource tenant fails when the resource tenant is configured for required MFA in the cross-tenant configuration and the home tenant is configured with passwordless sign-in (PSI) on the authenticator app.
 - When Access Control is allowed on cross tenant settings for Global Secure Access, access isn't allowed because Global Secure Access controls these applications.
-- If the home tenant doesn't have Global Secure Access enabled, the user switches back to the home tenant when the resource tenant fails.
 - When a user switches tenants, existing active application connections like Remote Desktop Protocol (RDP) remain connected to the previous tenant. 
 
 ## Enable B2B guest access for Azure Virtual Desktop and Windows 365
 You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop instances that support external identities to provide B2B guest access. With this capability, external users—such as guests, partners, and contractors—from other organizations can securely access resources in your tenant (the resource tenant). As a resource tenant administrator, you can configure Private Access, Internet Access, and Microsoft 365 traffic policies for these third-party users, helping ensure secure and controlled access to your organization's resources.
 
-[![Diagram showing an overview of B2B guest access in Global Secure Access.](media/concept-b2b-guest-access/guest-access-overview.png)](media/concept-b2b-guest-access/guest-access-overview.png#lightbox)
+:::image type="content" source="media/concept-b2b-guest-access/guest-access-overview.png" alt-text="Diagram showing an overview of B2B guest access in Global Secure Access." lightbox="media/concept-b2b-guest-access/guest-access-overview.png":::
+
 
 To enable B2B guest access for Windows 365 or Azure Virtual Desktop (AVD) virtual machines (VM) with Global Secure Access, follow these steps:
 
