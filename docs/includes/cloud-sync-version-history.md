@@ -18,12 +18,13 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 
 ## 1.1.2106.0
-
-December 2, 2025: released for download only
-
+ 
+December 3, 2025: released for download only
+ 
 ### Fixed Issues
-
+ 
 Fixed an issue with OnPremises Self-Service Password Reset integration using provisioning agent in AzureUSGovernment cloud.
+
 
 ## 1.1.2102.0
 
@@ -42,6 +43,12 @@ Sept 22, 2025: released for download only
 - Added a configurable password length for newly created users. The default password length for newly created users is 256. Admins can set an integer value between 127 and 256 for newly created users by creating a registry entry with REG_DWORD data type at:
 
   `HKLM\Software\Microsoft\Azure AD Connect Agents\Azure AD Connect Provisioning Agent\UserPasswordLength`
+
+### Known issues
+
+- OnPremises Self-Service Password Reset integration using provisioning agent in AzureUSGovernment cloud.
+
+
 
 ## 1.1.1586.0
 
