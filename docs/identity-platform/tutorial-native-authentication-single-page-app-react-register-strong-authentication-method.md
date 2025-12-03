@@ -9,7 +9,8 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 11/18/2025
-#Customer intent: As a developer, I want enable multifactor authentication in a React single-page application that uses native authentication's JavaScript SDK so that users can complete an MFA challenge during sign in and password reset.
+
+#Customer intent: As a developer, I want to enable strong authentication method registration flow in a React single-page application that uses native authentication's JavaScript SDK so that users can register a strong method registration during sign-in or after password reset or after sign-up.
 ---
 
 # Tutorial: Register strong authentication method in a React single-page app by using native authentication JavaScript SDK
@@ -43,7 +44,7 @@ The flow diagram below illustrates the three scenarios:
 To enable the strong authentication method registration in your React app, update the app configuration by adding the required capability.
 
 1. Locate the *src/config/auth-config.ts* file.
-1. In the `customAuth` object, add `capabilities` property with the `registration_required` value in the array as shown in the following coe snippet:
+1. In the `customAuth` object, add or update the `capabilities` property to include the `registration_required` value in the array as shown in the following coe snippet:
 
     ```typescript
     const customAuthConfig: CustomAuthConfiguration = {
