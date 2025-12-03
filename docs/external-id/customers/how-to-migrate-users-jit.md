@@ -227,39 +227,140 @@ Each of the available response actions corresponds to a specific scenario during
 You can use your own code or deploy the following sample Azure Function to your Azure environment. Make sure to replace the placeholders for *client ID*, *client secret*, *tenant ID*, and *extension attribute* with values from your tenants. This example function simulates the validation process and demonstrates how to handle different response actions, including migrating the password, blocking the sign-in, prompting for a password update, or retrying the authentication based on the outcome of the validation.
 
 ``` csharp
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+using Jose;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
-using Jose;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
 
-namespace cust_auth_functions
+namespace dev_functions
 {
-    /// <summary>
-    /// Azure Function for Just-In-Time (JIT) user migration in Entra External ID.
-    /// This function handles authentication events and migrates users from legacy systems.
-    /// </summary>
-    public static class JitMigrationTemplate
+    public static class JitMigrationEndpoint
     {
         #region Configuration Constants
-        
-        /// Private key for decrypting the encrypted password context
-        /// This should be the private part of the key configured in your External ID tenant
-        /// The key here is in a PEM‑encoded PKCS#8 format
-        ///
-        private const string DECRYPTION_PRIVATE_KEY = @"-----BEGIN PRIVATE KEY-----
------END PRIVATE KEY-----";
+
+        /// <summary>
+        /// Static cache for RSA private key retrieved from Key Vault
+        /// </summary>
+        private static RSA _cachedRsa = null;
+        private static readonly object _lockObject = new object();
+
+        /// <summary>
+        /// Key Vault URL from environment configuration (fetches the environment variable from local.settings.json)
+        /// </summary>
+        private static readonly string KeyVaultUrl =
+            Environment.GetEnvironmentVariable("KeyVaultUrl");
+
+        /// <summary>
+        /// Certificate name in Key Vault (fetches the environment variable from local.settings.json)
+        /// </summary>
+        private static readonly string CertificateName =
+            Environment.GetEnvironmentVariable("CiamJitMigrationEncryptionCertName");
 
         #endregion
 
+        /// <summary>
+        /// Retrieves RSA private key from Key Vault certificate stored as secret with caching
+        /// </summary>
+        private static async Task<RSA> GetRsaFromKeyVaultAsync(ILogger log)
+        {
+            // Return cached RSA if available
+            if (_cachedRsa != null)
+            {
+                log.LogDebug("Using cached RSA private key");
+                return _cachedRsa;
+            }
+
+            // Thread-safe retrieval
+            lock (_lockObject)
+            {
+                // Double-check after acquiring lock
+                if (_cachedRsa != null)
+                    return _cachedRsa;
+
+                try
+                {
+                    log.LogInformation($"Retrieving certificate '{CertificateName}' from Key Vault");
+
+                    // Validate configuration
+                    if (string.IsNullOrEmpty(KeyVaultUrl))
+                    {
+                        throw new InvalidOperationException(
+                            "KeyVaultUrl environment variable is not configured"
+                        );
+                    }
+
+                    if (string.IsNullOrEmpty(CertificateName))
+                    {
+                        throw new InvalidOperationException(
+                            "CiamJitMigrationEncryptionCertName environment variable is not configured"
+                        );
+                    }
+
+                    // Use DefaultAzureCredential for authentication
+                    var credential = new DefaultAzureCredential();
+                    var secretClient = new SecretClient(new Uri(KeyVaultUrl), credential);
+
+                    // Retrieve the certificate stored as a secret (synchronous for thread safety in lock)
+                    KeyVaultSecret secret = secretClient.GetSecret(CertificateName);
+
+                    if (string.IsNullOrEmpty(secret.Value))
+                    {
+                        throw new InvalidOperationException("Secret value is empty");
+                    }
+
+                    // Secret value is base64-encoded certificate (PFX/PKCS12)
+                    byte[] certBytes = Convert.FromBase64String(secret.Value);
+
+                    // Load certificate with private key
+                    X509Certificate2 certificate = new X509Certificate2(
+                        certBytes,
+                        (string)null, // No password
+                        X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable
+                    );
+
+                    if (!certificate.HasPrivateKey)
+                    {
+                        throw new InvalidOperationException(
+                            "Certificate does not contain a private key"
+                        );
+                    }
+
+                    // Extract RSA private key
+                    _cachedRsa = certificate.GetRSAPrivateKey();
+
+                    if (_cachedRsa == null)
+                    {
+                        throw new InvalidOperationException(
+                            "Failed to extract RSA private key from certificate"
+                        );
+                    }
+
+                    log.LogInformation("RSA private key retrieved and cached successfully");
+                    return _cachedRsa;
+                }
+                catch (Exception ex)
+                {
+                    log.LogError($"Failed to retrieve certificate from Key Vault: {ex.Message}");
+                    log.LogError($"Stack trace: {ex.StackTrace}");
+                    throw;
+                }
+            }
+        }
 
         /// <summary>
         /// Main Azure Function entry point for handling JIT migration requests
@@ -267,7 +368,7 @@ namespace cust_auth_functions
         /// <param name="req">The HTTP request from Entra External ID</param>
         /// <param name="log">Logger instance for tracking execution</param>
         /// <returns>Action result containing the migration response</returns>
-        [FunctionName("JitMigrationTemplate")]
+        [FunctionName("JitMigrationEndpoint")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]
             HttpRequest req,
@@ -292,23 +393,29 @@ namespace cust_auth_functions
             try
             {
                 // Parse the incoming request to extract user information
-                var (userId, userPassword, nonce) = await ParseRequestAsync(req, log);
-                
-                if (string.IsNullOrEmpty(userId))
+                var userInfo = await ParseRequestAsync(req, log);
+
+                if (userInfo == null)
+                {
+                    log.LogError("Failed to parse user information from request.");
+                    return new BadRequestObjectResult("Failed to parse request body.");
+                }
+
+                if (string.IsNullOrEmpty(userInfo.UserId))
                 {
                     log.LogError("User ID is missing from the request.");
                     return new BadRequestObjectResult("User ID is required in the authentication context.");
                 }
 
-                if (string.IsNullOrEmpty(userPassword))
+                if (string.IsNullOrEmpty(userInfo.Password))
                 {
                     log.LogError("User password is missing from the request.");
                     return new BadRequestObjectResult("User password is required for migration.");
                 }
 
                 // Process the response based on legacy system validation
-                ResponseContent response = await ProcessResponse(req, userId, userPassword, nonce, log);
-                
+                ResponseContent response = await ProcessResponse(req, userInfo.UserId, userInfo.Password, userInfo.Nonce, log);
+
                 log.LogInformation($"Returning response action: {response.Data.Actions[0].OdataType}.");
 
                 return new OkObjectResult(response);
@@ -317,7 +424,7 @@ namespace cust_auth_functions
             {
                 log.LogError($"Unexpected error during JIT migration processing: {ex.Message}");
                 log.LogError($"Stack trace: {ex.StackTrace}");
-                
+
                 // Return a generic error response to avoid exposing internal details
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
@@ -349,8 +456,8 @@ namespace cust_auth_functions
 
             // PLACEHOLDER: Always return Retry for now
             log.LogInformation("Using placeholder implementation - returning Retry action");
-            
-            return CreateResponse(ResponseActionType.Retry, nonce, "Authentication Pending", 
+
+            return CreateResponse(ResponseActionType.Retry, nonce, "Authentication Pending",
                 "Please implement legacy authentication integration.");
         }
 
@@ -365,21 +472,20 @@ namespace cust_auth_functions
         private static ResponseContent CreateResponse(ResponseActionType actionType, string nonce, string title = null, string message = null)
         {
             var response = new ResponseContent(actionType, nonce);
-            
+
             if (!string.IsNullOrEmpty(title))
                 response.Data.Actions[0].Title = title;
-                
+
             if (!string.IsNullOrEmpty(message))
                 response.Data.Actions[0].Message = message;
-                
+
             return response;
         }
 
-
         /// <summary>
-        /// Parses the incoming request to extract user ID, password, and nonce
+        /// Parses the incoming request to extract user information including ID, email, password, and nonce
         /// </summary>
-        private static async Task<(string userId, string userPassword, string nonce)> ParseRequestAsync(HttpRequest req, ILogger log)
+        private static async Task<PasswordSubmitUserInfo> ParseRequestAsync(HttpRequest req, ILogger log)
         {
             log.LogInformation($"Parsing request from URL: {req.Path}{req.QueryString}");
 
@@ -387,7 +493,7 @@ namespace cust_auth_functions
             if (string.IsNullOrWhiteSpace(requestBody))
             {
                 log.LogError("Request body is empty or whitespace.");
-                return (null, null, null);
+                return null;
             }
 
             try
@@ -395,27 +501,41 @@ namespace cust_auth_functions
                 JObject jObject = JObject.Parse(requestBody);
                 log.LogDebug($"Parsed request body: {jObject}");
 
-                // Extract user ID from authentication context
+                // Extract user information from authentication context
                 string userId = jObject["data"]?["authenticationContext"]?["user"]?["id"]?.ToString();
-                
+                string email = jObject["data"]?["authenticationContext"]?["user"]?["mail"]?.ToString();
+                string userPrincipalName = jObject["data"]?["authenticationContext"]?["user"]?["userPrincipalName"]?.ToString();
+
                 // Handle both encrypted and plain text password contexts
                 string encryptedPasswordContext = jObject["data"]?["encryptedPasswordContext"]?.ToString();
 
-                (string userPassword, string nonce) = ExtractPasswordAndNonce(encryptedPasswordContext, log);
+                (string userPassword, string nonce) = await ExtractPasswordAndNonce(encryptedPasswordContext, log);
 
-                return (userId, userPassword, nonce);
+                log.LogInformation($"Extracted User Info - UserId: {userId}, Email: {email}, UPN: {userPrincipalName}");
+
+                return new PasswordSubmitUserInfo
+                {
+                    UserId = userId,
+                    Email = email,
+                    UserPrincipalName = userPrincipalName,
+                    Password = userPassword,
+                    Nonce = nonce
+                };
             }
             catch (JsonReaderException ex)
             {
                 log.LogError($"Failed to parse request body as JSON: {ex.Message}");
-                return (null, null, null);
+                return null;
             }
         }
 
         /// <summary>
-        /// Extracts password and nonce from encrypted password context using RSA decryption
+        /// Extracts password and nonce from encrypted password context using Key Vault certificate
         /// </summary>
-        private static (string password, string nonce) ExtractPasswordAndNonce(string encryptedContext, ILogger log)
+        private static async Task<(string password, string nonce)> ExtractPasswordAndNonce(
+            string encryptedContext,
+            ILogger log
+        )
         {
             try
             {
@@ -431,17 +551,13 @@ namespace cust_auth_functions
                 RSA rsa = null;
                 try
                 {
-                    // Create and configure RSA instance
-                    rsa = RSA.Create();
-                    log.LogDebug("RSA instance created successfully");
-
-                    // Import the private key
-                    rsa.ImportFromPem(DECRYPTION_PRIVATE_KEY);
-                    log.LogDebug("Private key imported successfully");
+                    // Get RSA private key from Key Vault (cached after first call)
+                    rsa = await GetRsaFromKeyVaultAsync(log);
+                    log.LogDebug("RSA private key obtained from Key Vault successfully");
                 }
-                catch (CryptographicException ex)
+                catch (Exception ex)
                 {
-                    log.LogError($"Failed to initialize RSA or import private key: {ex.Message}");
+                    log.LogError($"Failed to retrieve RSA key from Key Vault: {ex.Message}");
                     return (string.Empty, string.Empty);
                 }
 
@@ -452,7 +568,7 @@ namespace cust_auth_functions
                     log.LogDebug("Attempting JWT decryption");
                     decryptedPayload = JWT.Decode(encryptedContext, rsa);
                     log.LogDebug($"JWT decrypted successfully, payload length: {decryptedPayload?.Length ?? 0}");
-                    
+
                     if (string.IsNullOrEmpty(decryptedPayload))
                     {
                         log.LogError("JWT decryption resulted in empty payload");
@@ -464,12 +580,6 @@ namespace cust_auth_functions
                     log.LogError($"Jose JWT library error during decryption: {ex.Message}");
                     return (string.Empty, string.Empty);
                 }
-                finally
-                {
-                    // Dispose of RSA instance
-                    rsa?.Dispose();
-                    log.LogDebug("RSA instance disposed");
-                }
 
                 JObject payloadObj;
                 try
@@ -479,9 +589,6 @@ namespace cust_auth_functions
                     string jsonPayload = Jose.JWT.Decode(decryptedPayload, null, JwsAlgorithm.none);
                     payloadObj = JObject.Parse(jsonPayload);
                     log.LogDebug("JSON payload parsed successfully");
-                    
-                    // Log the parsed JSON token structure (for debugging - remove in production)
-                    log.LogDebug($"Decrypted payload structure: {payloadObj.ToString(Formatting.Indented)}");
                 }
                 catch (JsonReaderException ex)
                 {
@@ -502,7 +609,7 @@ namespace cust_auth_functions
             {
                 log.LogError($"Critical error in ExtractPasswordAndNonce: {ex.Message}");
                 log.LogError($"Stack trace: {ex.StackTrace}");
-                
+
                 // Return empty values to allow the function to continue with fallback behavior
                 return (string.Empty, string.Empty);
             }
@@ -591,21 +698,52 @@ namespace cust_auth_functions
             /// Migrate the user's password to Azure AD
             /// </summary>
             MigratePassword,
-            
+
             /// <summary>
             /// Update the user's existing password
             /// </summary>
             UpdatePassword,
-            
+
             /// <summary>
             /// Block the user's sign-in attempt
             /// </summary>
             Block,
-            
+
             /// <summary>
             /// Retry the authentication process
             /// </summary>
             Retry
+        }
+
+        /// <summary>
+        /// Data Transfer Object containing user information extracted from password submit request
+        /// </summary>
+        public class PasswordSubmitUserInfo
+        {
+            /// <summary>
+            /// The user's unique identifier from the authentication context
+            /// </summary>
+            public string UserId { get; set; }
+
+            /// <summary>
+            /// The user's email address from the authentication context
+            /// </summary>
+            public string Email { get; set; }
+
+            /// <summary>
+            /// The user's User Principal Name from the authentication context
+            /// </summary>
+            public string UserPrincipalName { get; set; }
+
+            /// <summary>
+            /// The user's password extracted from the encrypted context
+            /// </summary>
+            public string Password { get; set; }
+
+            /// <summary>
+            /// The nonce value from the encrypted context
+            /// </summary>
+            public string Nonce { get; set; }
         }
 
         #endregion
