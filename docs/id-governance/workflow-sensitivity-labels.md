@@ -13,7 +13,7 @@ ms.date: 11/04/2025
 
 # Sensitivity labels in Lifecycle Workflows
 
-Maintaining and classifying secure data within your environment is an important part in maintaining a secure environment. Sensitivity labels from Microsoft Purview Information Protection let you classify and protect your organization's data, while making sure that user productivity and their ability to collaborate isn't hindered. With sensitivity labels in Lifecycle Workflows, administrators are able to quickly view the sensitivity labels of groups during creation, and editing, of workflow tasks. 
+Maintaining and classifying data within your environment is an important part in maintaining a secure environment. Sensitivity labels from Microsoft Purview Information Protection lets you classify and protect your organization's data, while making sure that user productivity and their ability to collaborate isn't hindered. With sensitivity labels in Lifecycle Workflows, administrators are able to quickly view the sensitivity labels of groups during workflow creation, and editing. 
 
 ## License requirements
 
@@ -26,7 +26,7 @@ Along with Microsoft Entra licenses required for Lifecycle workflows, you must a
 - [A created sensitivity label](/purview/create-sensitivity-labels?tabs=classic-label-scheme#create-and-configure-sensitivity-labels)
 - [A sensitivity label applied to the group you want to use with a Lifecycle workflow](/purview/sensitivity-labels-teams-groups-sites#using-sensitivity-labels-for-microsoft-teams-microsoft-365-groups-and-sharepoint-sites)
 
-## View the sensitivity label of a group used as a scope in a workflow
+## View the sensitivity label of a group used as a scope in a new workflow
 
 Sensitivity labels of groups can be viewed when using groups as the scope for workflows. To view the sensitivity labels of groups using Lifecycle workflows, do the following steps:
 
@@ -41,7 +41,7 @@ Sensitivity labels of groups can be viewed when using groups as the scope for wo
 1. On the configure scope page, select **+Select group**  to see the list of groups you can use as the scope and their sensitivity labels.
     :::image type="content" source="media/workflow-sensitivity-labels/group-sensitivity-labels.png" alt-text="Screenshot of workflow sensitivity label." lightbox="media/workflow-sensitivity-labels/group-sensitivity-labels.png":::
 
-## View the sensitivity label of a group within a task for a workflow
+## View the sensitivity label of a group within a task for an existing workflow
 
 Sensitivity labels of groups used within tasks of a workflow can be viewed by doing the following steps:
 
