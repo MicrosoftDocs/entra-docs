@@ -30,7 +30,7 @@ When created, agent identities have limited permissions, such as OAuth 2 delegat
 
 - Security Groups
 - [Application roles and API permissions](../identity/enterprise-apps/assign-agent-identities-to-applications.md), including Graph permissions
-- [Microsoft Entra roles](../agent-id/identity-professional/authorization-agent-id.md#role-assignments-for-agent-identities)
+- [Microsoft Entra roles](../agent-id/identity-professional/authorization-agent-id.md#microsoft-entra-role-assignments-for-agent-identities)
 
 To use access packages for agent identities, configure an access package with the required policy settings. When creating an access package assignment policy, in the **Who can get access** section, select **For users, service principals, and agent identities in your directory**, and then select the option of **All agents (preview)**.
 
