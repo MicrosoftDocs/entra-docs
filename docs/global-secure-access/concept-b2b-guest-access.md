@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: concept-article
-ms.date: 09/30/2025
+ms.date: 12/02/2025
 ms.service: global-secure-access
 ms.reviewer: cagautham
 ai-usage: ai-assisted
