@@ -1,6 +1,6 @@
 ---
-title: Migrating users to Microsoft Entra External ID using Just-In-Time (JIT) Migration (Preview)
-description: Learn how to migrate users from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
+title: Migrating passwords to Microsoft Entra External ID using Just-In-Time (JIT) Migration (Preview)
+description: Learn how to migrate passwords from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
 
 author: garrodonnell
 manager: dougeby
@@ -12,7 +12,7 @@ ms.author: godonnell
 
 ## Customer intent: As a developer or administrator responsible for managing user identities, I want to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID, so that users can continue using their existing passwords without requiring an immediate password reset or bulk migration of password hashes.
 ---
-# Migrating users to Microsoft Entra External ID using Just-In-Time (JIT) Migration (Preview)
+# Migrating passwords to Microsoft Entra External ID using Just-In-Time (JIT) Migration (Preview)
 
 This guide describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you are a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
 
