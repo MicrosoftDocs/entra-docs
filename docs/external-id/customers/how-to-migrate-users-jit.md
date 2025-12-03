@@ -90,7 +90,7 @@ Replace `30a5435a-1871-485c-8c7b-65f69e287e7b` with the object ID `b2c-extension
 
 #### 1.1.1 Get the extension property ID for use in your custom authentication extension
 
-After creating the extension property, you need to retrieve its unique identifier to use in your custom authentication extension. The extension property ID follows this naming convention: `extension_{applicationId-without-hyphens}_{attributeName}`.
+After creating the extension property, you need to retrieve its unique identifier to use in your custom authentication extension. The extension property ID follows this naming convention: `extension_{applicationId-without-hyphens}_{propertyName}`.
 
 To construct your extension property ID:
 
@@ -198,6 +198,8 @@ Create an Azure Function that validates user credentials against your legacy ide
 } 
 
 ```
+Entra expects the response from your custom extension in the below format. 
+
 Response schema:  
 
 ```json
@@ -209,10 +211,12 @@ Response schema:
         "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
       } 
     ]
-    "nonce": // This should be the nonce value acquired after decrypting the password context from the request payload.
+    "nonce": 
   }  
 }  
 ```
+> [!NOTE]
+> Entra External ID sends the nonce as a claim in the encryptedPasswordContext from the request payload and expects it in the response from the extension for verification purposes.
 
 Each of the available response actions corresponds to a specific scenario during the authentication process. This table describes the possible response actions and when to use them.
 
@@ -223,7 +227,7 @@ Each of the available response actions corresponds to a specific scenario during
 | microsoft.graph.passwordSubmit.Retry  | Password is incorrect. | Allows user to retry authentication if permitted.|
 | microsoft.graph.passwordSubmit.Block  | Authentication must be blocked. | Displays block screen with custom message provided by the app.|
 
-You can use your own code or deploy the following sample Azure Function to your Azure environment. Make sure to replace the placeholders for *client ID*, *client secret*, *tenant ID*, and *extension attribute* with values from your tenants. This example function simulates the validation process and demonstrates how to handle different response actions, including migrating the password, blocking the sign-in, prompting for a password update, or retrying the authentication based on the outcome of the validation.
+You can use your own code or deploy the following sample Azure Function to your Azure environment. Make sure to replace the placeholders for *client ID*, *client secret*, *tenant ID*, and *extension attribute* with values from your tenants. Also, Make sure to replace the placeholders for *DECRYPTION_PRIVATE_KEY* with the key that will be used to decrypt the password context. This example function simulates the validation process and demonstrates how to handle different response actions, including migrating the password, blocking the sign-in, prompting for a password update, or retrying the authentication based on the outcome of the validation.
 
 ``` csharp
 using Jose;
