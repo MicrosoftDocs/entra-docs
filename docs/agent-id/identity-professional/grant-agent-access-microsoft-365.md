@@ -23,7 +23,7 @@ This article provides guidance on how to grant access to agents through consent,
 
 ## How to request consent (delegated or application permissions)
 
-Users or administrators can grant agents access to data by consenting to API permissions during the oauth flow. This section explains how to request consent for delegated and application permissions for your agents.
+Users or administrators can grant agents access to data by consenting to API permissions during the OAuth flow. This section explains how to request consent for delegated and application permissions for your agents.
 
 ### When to use delegated or application permissions
 
@@ -52,9 +52,13 @@ You can create the underlying authorization objects directly. It's useful for si
 - [Manually grant delegated permissions](/graph/api/oauth2permissiongrant-post). Set your client ID as the agent identity ID.
 - [Manually grant application permissions (app role assignment)](/graph/api/serviceprincipal-post-approleassignments). Set your principal ID as the agent identity ID.
 
+## How to manage access through access packages
+
+Using access packages, you can enable standardized access for many AI Agents with the same access needs. The access package can include Entra roles, OAuth2 delegated and application permission grants and security group memberships. Agents can then request an access package, or a sponsor or admin can request for them, and once approved, the agent identity or agent user receives the access rights until the assignment is revoked or expires. For more information, see [access packages for agent identities](agent-access-packages.md).
+
 ## Other authorization systems
 
-Agents can be authorized in several ways beyond app-role assignments and OAuth2 permission grants. These alternative systems offer flexibility for assigning access tailored to different platforms, services, and security requirements. The following sections summarize some of the many methods for agent authorization.
+Agents can be authorized in several ways beyond app-role assignments, group memberships and OAuth2 permission grants. These alternative systems offer flexibility for assigning access tailored to different platforms, services, and security requirements. The following sections summarize some of the many methods for agent authorization.
 
 ### Azure role-based access control (Azure RBAC)
 

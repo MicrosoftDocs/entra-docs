@@ -20,8 +20,8 @@ The following table outlines some of the standard notifications that Microsoft E
 
 | Persona | Alert method | Timeliness | Example alert |
 | --- | --- | --- | --- |
-| End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested is approved, go use your new app.<br><br>[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
-| End user | Teams | Days | The access you requested is going to expire next week, please renew.[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
+| End user | Email | Minutes | You need to approve or deny this request for access;  <br>The access you requested is approved, go use your new app.<br><br>[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
+| End user | Email | Days | The access you requested is going to expire next week, please renew.[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
 | Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](entitlement-management-ticketed-provisioning.md) |
 | IT operations | Email | Hours | Newly hired employees aren't being imported from Workday. [Learn more](/entra/identity/app-provisioning/application-provisioning-quarantine-status) |
