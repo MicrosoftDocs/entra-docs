@@ -6,7 +6,7 @@ manager: martinco
 ms.author: jricketts
 ms.service: global-secure-access
 ms.topic: troubleshooting-general
-ms.date: 03/05/2025
+ms.date: 12/03/2025
 ms.reviewer: andresc
 
 #CustomerIntent: As an IT admin, I want troubleshoot application access for the Global Secure Access Windows client so that I can ensure its proper operation.
@@ -121,3 +121,15 @@ Accessing resources through Private Access might fail for other reasons. Traffic
 - Capture traffic with the **Advanced Diagnostics** tool. Ensure that it acquires and tunnels the flows.
 Get and use the **Correlation vector ID** to look up Global Secure Access traffic logs on the Microsoft Entra admin center. Traffic logs show what connector handled the traffic and if errors occurred.
 - If there are no errors on traffic logs pointing at problems communicating with private network connectors, obtain and analyze a network capture to see the actual conversations going through the tunnel.
+
+## Apps that don't support concurrent sign-ins from multiple IPs
+
+Some web apps initiate new network connections during the sign-in process. When multiple connectors exist in a connector group, these new sessions might be routed through a different connector than the one that handled the initial sign-in request. If the app doesn't support this behavior, the session breaks, resulting in a failed sign-in. These session disruptions can leave you unable to access certain web applications after signing in, or you might be unexpectedly signed out from a newly added application.
+
+To prevent session disruption:
+
+- Option 1: Pin the app to a connector group that contains only a single connector.
+- Option 2: If feasible, temporarily stop the Microsoft Entra Private Access connector service on other connectors in the group during testing.
+
+> [!NOTE]
+> After creating a new app definition, allow approximately 5–10 minutes for the configuration to propagate and appear on the client.
