@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 11/24/2025
+ms.date: 12/03/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -23,7 +23,7 @@ You can download the current version of the Global Secure Access client from the
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
 
 ## Version 2.24.117
-Released for download on November 26, 2025.
+Released for download on December 3, 2025.
 ### Functional changes
 - Support for [Intelligent Local Access](enable-intelligent-local-access.md).
 - Support for [B2B guest access](concept-b2b-guest-access.md).
