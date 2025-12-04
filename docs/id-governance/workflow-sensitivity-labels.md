@@ -15,7 +15,7 @@ ms.date: 11/04/2025
 
 Maintaining and classifying data within your environment is an important part in maintaining a secure environment. Sensitivity labels from Microsoft Purview Information Protection let you classify and protect your organization's data, while making sure that user productivity and their ability to collaborate isn't hindered. With sensitivity labels in Lifecycle Workflows, administrators are able to quickly view the sensitivity labels of groups and teams during workflow creation, and editing. 
 
-The following tasks support sensitivity labels:
+The following tasks support viewing sensitivity labels:
 
 - [Add user to groups](lifecycle-workflow-tasks.md#add-user-to-groups)
 - [Add user to teams](lifecycle-workflow-tasks.md#add-user-to-teams)
@@ -70,7 +70,7 @@ Sensitivity labels of groups and teams used within existing tasks of a workflow 
 1. On the task overview screen, select the group or teams selection option.
 
 1. On the list screen, you're able to see the group currently assigned to the task, a list of groups or teams that can be added to the task, and also their sensitivity labels.
-    :::image type="content" source="media/workflow-sensitivity-labels/sensitivity-label-existing-workflow.png" alt-text="Screenshot of groups and sensitivity labels within a task for an existing workflow.":::
+    :::image type="content" source="media/workflow-sensitivity-labels/sensitivity-label-existing-workflow.png" alt-text="Screenshot of teams and sensitivity labels within a task for an existing workflow.":::
 
 
 ## Related content
