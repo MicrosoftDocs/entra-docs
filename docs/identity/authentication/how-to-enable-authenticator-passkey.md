@@ -23,16 +23,14 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 - For cross-device registration and authentication:
   - Make sure that Bluetooth and an active internet connection are enabled on both devices. 
     If your organization restricts Bluetooth usage, you can [permit Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments) to allow cross-device passkey sign-in and registration.
-    Allow connectivity to these endpoints in your organization to enable cross-device registration and authentication. 
+    Your organization needs to allow connectivity to endpoints in the following table to enable cross-device registration and authentication. 
     Devices must be allowed to reach these URLs without interception. 
     They need to be excluded from network proxies, interception, and other enterprise systems.
 
     Platform | URL
     ---------|----
     Android | `https://cable.ua5v.com`
-    iOS | `https://cable.auth.com`
-    iOS | `app-site-association.cdn-apple.com`
-    iOS | `app-site-association.networking.apple`
+    iOS | `https://cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
   > [!NOTE]
   > Users can't use cross-device registration or authentication if you enable attestation. 
