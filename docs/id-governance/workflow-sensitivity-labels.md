@@ -19,7 +19,7 @@ The following tasks support viewing sensitivity labels:
 
 - [Add user to groups](lifecycle-workflow-tasks.md#add-user-to-groups)
 - [Add user to teams](lifecycle-workflow-tasks.md#add-user-to-teams)
-- [Remover user from selected groups](lifecycle-workflow-tasks.md#remove-user-from-selected-groups)
+- [Remove user from selected groups](lifecycle-workflow-tasks.md#remove-user-from-selected-groups)
 - [Remove user from selected teams](lifecycle-workflow-tasks.md#remove-user-from-selected-teams)
 
 ## License requirements
