@@ -69,22 +69,6 @@ To configure file policies, complete the following initial setup steps:
         :::image type="content" source="media/how-to-network-content-filtering/internet-access-rules.png" alt-text="Screenshot of the Global Secure Access Advanced Diagnostics window on the Forwarding Profile tab, showing Internet Access rules in the Rules section." lightbox="media/how-to-network-content-filtering/internet-access-rules.png":::
 1. Confirm access to web applications you plan for file policies.
 
-## Provision a service principal on your tenant
-To enable the integration between Global Secure Access and Microsoft Purview for file scanning, you need to manually provision a service principal on your tenant. You need at least Cloud Application Administrator permission for this configuration setup. 
-
-You can manually trigger service principal creation through PowerShell, Azure CLI, or Microsoft Graph directly. To provision using Microsoft Graph:
-1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as a [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Run the following POST request to create the service principal:
-
-    ```http
-    POST https://graph.microsoft.com/v1.0/servicePrincipals
-    Content-Type: application/json
-
-    {
-      "appId": "2eba9957-8c82-4bfd-8025-e4a4a97a9110"
-    }
-    ```
-
 ## Configure a file policy
 
 To configure a file policy in Global Secure Access, complete the following steps:
@@ -160,7 +144,6 @@ Test the configuration by attempting to upload or download files that match the 
 - Compressed content is detected in zip format (the content isn't decompressed).
 - Accuracy of true file type detection might not be 100%.
 - Destination applications using WebSocket (such as Copilot) aren't supported.
-- You must manually provision a service principal on your tenant.
 - Top level and second level domains don't support wildcards (like *, *.com, *contoso.com) while configuring FQDNs.
 
 > [!NOTE]
