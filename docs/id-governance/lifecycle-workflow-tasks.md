@@ -664,7 +664,7 @@ For Microsoft Graph, the parameters for the **Remove users from all groups** tas
 
 ```
 
-### Remove User from Teams
+### Remove User from selected Teams
 
 Allows a user to be removed from one or multiple static teams. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
 :::image type="content" source="media/lifecycle-workflow-task/remove-user-team-task.png" alt-text="Screenshot of Workflows task: remove user from teams.":::
