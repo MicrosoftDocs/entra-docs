@@ -30,8 +30,7 @@ The rows in a downloaded CSV template are:
 - **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. An example is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Some older versions of the template might have slight variations. For group membership changes, you can use either the member object ID or the user principal name (UPN).
 - **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
 
-> [!NOTE]
-> CSV template formats vary by operation. Some templates (like bulk create or delete users) include a `version:v1.0` row as the first row, while others (like group member operations) start directly with the column headers. Always use the template downloaded directly from the portal for your specific operation, and don't modify the first row(s).
+[!INCLUDE [bulk-operations-csv-template-note](~/includes/bulk-operations-csv-template-note.md)]
 
 ### More guidance
 

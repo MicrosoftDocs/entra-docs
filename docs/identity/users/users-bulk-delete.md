@@ -44,8 +44,7 @@ The rows in the example downloaded CSV template below are as follows:
 
 :::image type="content" source="./media/users-bulk-delete/delete-csv-file.png" alt-text="Screenshot of the CSV file contains names and IDs of the users to delete.":::
 
-> [!NOTE]
-> CSV template formats vary by operation. Some templates (like bulk create or delete users) include a `version:v1.0` row as the first row, while others (like group member operations) start directly with the column headers. Always use the template downloaded directly from the portal for your specific operation, and don't modify the first row(s).
+[!INCLUDE [bulk-operations-csv-template-note](~/includes/bulk-operations-csv-template-note.md)]
 
 ### Example CSV file
 
