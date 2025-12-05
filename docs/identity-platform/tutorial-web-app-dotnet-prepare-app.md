@@ -83,7 +83,28 @@ dotnet add package Microsoft.Identity.Web.UI
 
 ## Configure the application for authentication
 
-The values recorded in your application setup are used to configure the application for authentication. The configuration file, *appsettings.json*, is used to store application settings used during run-time.
+Web applications that sign in users by using the Microsoft identity platform are configured through a configuration file, *appsettings.json*. In ASP.NET Core, it must specify the following values:
+
+### [Workforce tenant](#tab/workforce-tenant)
+
+| Setting | Description |
+|---|---|
+| `Instance` | The authentication endpoint to run your app in national clouds. Use one of: <br>- `https://login.microsoftonline.com/` (Azure public cloud) <br>- `https://login.microsoftonline.us/` (Azure US government) <br>- `https://login.microsoftonline.de/` (Microsoft Entra Germany) <br>- `https://login.partner.microsoftonline.cn/` (Microsoft Entra China operated by 21Vianet) |
+| `TenantId` | The identifier of the tenant where the app is registered. **Recommended:** use the tenant ID from the app registration. **Alternatives:** <br>- `organizations` (any work or school account) <br>- `common` (work/school or Microsoft personal account) <br>- `consumers` (Microsoft personal accounts only). |
+| `ClientId` | Identifier of the application (client) obtained from the application registration. |
+| `CertificateThumbprint` | Thumbprint of the certificate uploaded in the Microsoft Entra admin center (see [add credentials](./how-to-add-credentials.md)). |
+| `CallbackPath` | Path used to redirect responses; set to `/signin-oidc` for this tutorial. |
+| `DownstreamApi` | Identifier that defines an endpoint for accessing Microsoft Graph. Combine the application URI with the required scope (for example, `user.read`). |
+
+### [External tenant](#tab/external-tenant)
+
+| Setting | Description |
+|---|---|
+| `Authority` | URL of the external tenant where the application is registered. Format: `https://<tenant_subdomain>.ciamlogin.com/`. To obtain your tenant subdomain details, see [Create an external tenant](/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details). |
+| `ClientId` | Identifier of the application (client) obtained from the application registration. |
+| `CertificateThumbprint` | Thumbprint of the certificate obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center. |
+
+---
 
 ### Update the configuration file
 
@@ -157,13 +178,6 @@ In your IDE, open *appsettings.json* and replace the file contents with the foll
 }
 ```
 ---
-
-* `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
-* `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
-* `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
-* `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded. Do not use a self signed certificate for production apps. 
-* `CallbackPath` - Is an identifier to help the server redirect a response to the appropriate application.
-* `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
 
 ### Update the redirect URI
 

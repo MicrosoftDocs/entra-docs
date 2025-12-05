@@ -34,7 +34,7 @@ You can have one or more users as reviewers in an access review.
 
 1. Select a group in Microsoft Entra ID that has one or more members. Or select an application connected to Microsoft Entra ID that has one or more users assigned to it. 
 
-2. Decide whether to have each user review their own access or to have one or more users review everyone's access.
+2. Decide whether to have each user review their own access or to have one or more users review everyone's access in that group or application.
 
 3. As at least a User Administrator, or (Preview) an owner of a Microsoft 365 group or Microsoft Entra security group to be reviewed, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
 

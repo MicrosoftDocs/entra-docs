@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 10/01/2025
+ms.date: 12/03/2025
 ms.service: entra-external-id
 ms.topic: whats-new
 ms.author: cmulligan
@@ -16,6 +16,19 @@ manager: dougeby
 Welcome to what's new in documentation for Microsoft Entra External ID. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
 # [External ID in external tenants](#tab/external-tenants)
+
+## November 2025
+
+### New article
+
+- [Configure Akamai WAF with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md)
+
+### Updated articles
+
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added Security Store features
+- [Configure Cloudflare Web Application Firewall with Microsoft Entra External ID](customers/how-to-configure-waf-integration.md) - Updated Cloudflare integration steps
+- [Set up Azure Monitor in external tenants](customers/how-to-azure-monitor.md) - Updated Azure Monitor setup steps
+- [Multifactor authentication in external tenants](customers/concept-multifactor-authentication-customers.md) - Added MFA with Conditional Access authentication context
 
 ## October 2025
 
@@ -32,12 +45,6 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 ### Updated articles
 
 - [Add OpenID Connect as an external identity provider](customers/how-to-custom-oidc-federation-customers.md) - Multiple editorial updates
-
-## August 2025
-
-### Updated articles
-
-- [Regional opt-in for MFA telephony verification with external tenants (preview)](customers/how-to-region-code-opt-in.md) - Rest API updates
 
 # [External ID in workforce tenants](#tab/workforce-tenants)
 
