@@ -33,9 +33,11 @@ To download all members of a specific group:
 
 4. Enter a filename and select **Start bulk operation**.
 
-5. A notification appears when the job is submitted. You can select **Click here to view the status of each operation** to navigate to the **Bulk operation results** page, or wait for the success notification.
+5. A **Success!** notification appears when the job is submitted. The notification says "Bulk operation download group members submission successful. Click on the title for more information."
 
-6. When the notification shows **Success!**, select the notification title to view details and download your CSV file. Alternatively, check the **Bulk operation results** page for completed downloads.
+6. Select the **Success!** notification title to open the job details. Select the filename to start downloading the CSV file.
+
+7. A **Download successful** notification confirms when the file has been downloaded. You can also select **More activity in the audit log** at the top of the Notifications panel to view all bulk operation activity.
 
 ### Downloaded CSV file format
 
