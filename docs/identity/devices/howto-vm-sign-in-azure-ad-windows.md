@@ -87,7 +87,7 @@ Microsoft Azure operated by 21Vianet:
 
 ### Authentication requirements
 
-- **User account type**: Only standard Microsoft Entra user accounts from the same tenant as the Azure Arc-enabled server are supported. [Guest accounts (B2B users)]((~/external-id/what-is-b2b.md)) cannot be used for authentication.
+- **User account type**: Only standard Microsoft Entra user accounts from the same tenant as the Azure Arc-enabled server are supported. [Guest accounts (B2B users)](../../external-id/what-is-b2b.md) cannot be used for authentication.
 
 - **Managed identities**: You must enable system-assigned managed identity on your Azure virtual machine before installing the Microsoft Entra sign in virtual machine extension. Managed Identities are stored in a single Microsoft Entra tenant and currently don't support cross directory scenarios.
 

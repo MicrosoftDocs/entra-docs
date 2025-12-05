@@ -91,7 +91,7 @@ For Azure Arc-enabled Windows Servers, more network requirements are provided in
 
 To successfully authenticate and sign in to an Azure Arc-enabled Windows Server using Microsoft Entra ID, the following requirements must be met:
 
-- **User account type**: Only standard Microsoft Entra user accounts from the same tenant as the Azure Arc-enabled server are supported. [Guest accounts (B2B users)]((~/external-id/what-is-b2b.md)) cannot be used for authentication.
+- **User account type**: Only standard Microsoft Entra user accounts from the same tenant as the Azure Arc-enabled server are supported. [Guest accounts (B2B users)](../../external-id/what-is-b2b.md) cannot be used for authentication.
 
 - **Role assignments**: Users must be assigned one of the following Azure roles:
   - **Virtual Machine Administrator Login**: Grants administrator privileges on the server.
