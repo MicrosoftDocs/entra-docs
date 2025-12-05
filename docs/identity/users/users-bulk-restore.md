@@ -4,7 +4,7 @@ description: Restore deleted users in bulk in the Azure portal in Microsoft Entr
 author: barclayn
 ms.author: barclayn
 manager: pmwongera
-ms.date: 12/19/2024
+ms.date: 12/05/2025
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -26,13 +26,28 @@ Download and fill in the CSV template to help you successfully restore Microsoft
 
 The rows in a downloaded CSV template are as follows:
 
-- **Version number**: The first row containing the version number must be included in the upload CSV.
+- **Version number**: The first row containing the version number (for example, `version:v1.0`) must be included in the upload CSV. If your downloaded template includes this row, don't remove or modify it.
 - **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. For example, `Object ID [objectId] Required`. Some older versions of the template might have slight variations.
-- **Examples row**: We have included in the template a row of examples of acceptable values for each column. You must remove the examples row and replace it with your own entries.
+- **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
+
+> [!NOTE]
+> The CSV template format may vary depending on when you download it. Always use the template downloaded directly from the portal for your specific operation.
+
+### Example CSV file
+
+Here's an example of a completed CSV file ready for upload:
+
+```csv
+version:v1.0
+Object ID [objectId] Required
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff
+22cc22cc-dd33-ee44-ff55-66aa66aa66aa
+```
 
 ### Additional guidance
 
-- The first two rows of the upload template must not be removed or modified, or the upload can't be processed.
+- The first row(s) of the upload template (version number if present, and column headers) must not be removed or modified, or the upload can't be processed.
 - The required columns are listed first.
 - We don't recommend adding new columns to the template. Any additional columns you add are ignored and not processed.
 - We recommend that you download the latest version of the CSV template as often as possible.

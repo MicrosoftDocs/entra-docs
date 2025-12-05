@@ -4,7 +4,7 @@ description: Add group members in bulk by using a comma-separated values (CSV) f
 author: barclayn
 ms.author: barclayn
 manager: pmwongera
-ms.date: 12/19/2024
+ms.date: 12/05/2025
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -26,17 +26,47 @@ Download and fill in the bulk upload CSV template to successfully add Microsoft 
 
 The rows in a downloaded CSV template are:
 
-- **Version number**: The first row that contains the version number must be included in the upload CSV.
-- **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. An example is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Some older versions of the template might have slight variations. For group membership changes, you can choose the member object ID or the user principal name.
-- **Examples row**: The template includes a row of examples of acceptable values for each column. You must remove the examples row and replace it with your own entries.
+- **Version number**: The first row containing the version number (for example, `version:v1.0`) must be included in the upload CSV. If your downloaded template includes this row, don't remove or modify it.
+- **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. An example is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Some older versions of the template might have slight variations. For group membership changes, you can use either the member object ID or the user principal name (UPN).
+- **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
+
+> [!NOTE]
+> The CSV template format may vary depending on when you download it. Always use the template downloaded directly from the portal for your specific operation. If your template doesn't include a version number row, you can still proceed—just ensure the column header row remains as the first row.
 
 ### More guidance
 
-- The first two rows of the upload template must not be removed or modified or the upload can't be processed.
+- The first row(s) of the upload template (version number if present, and column headers) must not be removed or modified, or the upload can't be processed.
 - The required columns are listed first.
 - We don't recommend adding new columns to the template. Any other columns you add are ignored and not processed.
 - We recommend that you download the latest version of the CSV template as often as possible.
 - Add at least two users' UPNs or object IDs to successfully upload the file.
+- Enter one member per row. Don't use semicolons or other delimiters to separate multiple members in a single row.
+
+### Example CSV file
+
+Here's an example of a completed CSV file ready for upload. This example uses user principal names (UPNs), but you can also use object IDs:
+
+```csv
+version:v1.0
+Member object ID or user principal name [memberObjectIdOrUpn] Required
+alain@contoso.com
+isabella@contoso.com
+joseph@contoso.com
+chaya@contoso.com
+```
+
+Alternatively, if you prefer to use object IDs:
+
+```csv
+version:v1.0
+Member object ID or user principal name [memberObjectIdOrUpn] Required
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+11bb11bb-cc22-dd33-ee44-55ff55ff55ff
+22cc22cc-dd33-ee44-ff55-66aa66aa66aa
+```
+
+> [!TIP]
+> To find a user's object ID, go to **Identity** > **Users** > **All users**, select the user, and copy the **Object ID** from the user's profile page.
 
 ## Bulk import group members
 
@@ -52,7 +82,7 @@ The rows in a downloaded CSV template are:
 
     :::image type="content" source="./media/groups-bulk-import-members/import-panel.png" alt-text="Screenshot that shows the Import Members command is on the profile page for the group.":::
 
-1. Open the CSV file and add a line for each group member you want to import into the group. Required values are either **Member object ID** or **User principal name**. Then save the file.
+1. Open the CSV file and add a line for each group member you want to import into the group. For each member, enter either their **User principal name** (UPN, such as `user@contoso.com`) or their **Object ID** (a GUID like `00aa00aa-bb11-cc22-dd33-44ee44ee44ee`). Enter one member per row. Then save the file.
 
     :::image type="content" source="./media/groups-bulk-import-members/csv-file.png" alt-text="Screenshot that shows the CSV file contains names and IDs of the members to import.":::
 
@@ -67,9 +97,25 @@ If you experience errors, you can download and view the results file on the **Bu
 
 You can see the status of all your pending bulk requests on the **Bulk operation results** page.
 
+1. Navigate to **Identity** > **Users** > **Bulk operation results**.
+1. Find your bulk operation in the list. The **Status** column shows whether the operation is **In Progress**, **Succeeded**, or **Failed**.
+
 :::image type="content" source="./media/groups-bulk-import-members/bulk-center.png" alt-text="Screenshot that shows the Check status option on the Bulk operation results page.":::
 
 For details about each line item within the bulk operation, select the values under the **# Success**, **# Failure**, or **Total Requests** columns. If failures occurred, the reasons for failure are listed.
+
+### Download the results file
+
+To download detailed results:
+
+1. On the **Bulk operation results** page, select the operation you want to review.
+1. Select **Download** to get a CSV file containing the status of each row from your original upload.
+1. Open the CSV file to see which members were added successfully and which failed, along with specific error messages.
+
+Common errors include:
+- **Member not found**: The UPN or object ID doesn't exist in your directory.
+- **Member already exists**: The user is already a member of the group.
+- **Invalid format**: The UPN or object ID format is incorrect.
 
 ## Bulk import service limits
 

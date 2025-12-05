@@ -4,7 +4,7 @@ description: Delete users in bulk in Microsoft Entra ID
 author: barclayn
 ms.author: barclayn
 manager: pmwongera
-ms.date: 12/19/2024
+ms.date: 12/05/2025
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -14,7 +14,7 @@ ms.reviewer: jeffsta
 
 # Bulk delete users in Microsoft Entra ID
 
-Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can remove a large number of members to a group by using a comma-separated values (CSV) file to bulk delete users.
+Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can remove a large number of users by using a comma-separated values (CSV) file to bulk delete users.
 
 ## To bulk delete users
 
@@ -38,18 +38,35 @@ If you experience errors, you can download and view the results file on the **Bu
 
 The rows in the example downloaded CSV template below are as follows:
 
-- **Version number**: The first row containing the version number must be included in the upload CSV.
+- **Version number**: The first row containing the version number (for example, `version:v1.0`) must be included in the upload CSV. If your downloaded template includes this row, don't remove or modify it.
 - **Column headings**: `User name [userPrincipalName] Required`. Older versions of the template might vary.
-- **Examples row**: We have included in the template an example of an acceptable value. `Example: chris@contoso.com` You must remove the example row and replace it with your own entries.
+- **Examples row**: The template might include a row of example values. `Example: chris@contoso.com` You must remove the example row and replace it with your own entries.
 
 :::image type="content" source="./media/users-bulk-delete/delete-csv-file.png" alt-text="Screenshot of the CSV file contains names and IDs of the users to delete.":::
 
+> [!NOTE]
+> The CSV template format may vary depending on when you download it. Always use the template downloaded directly from the portal for your specific operation.
+
+### Example CSV file
+
+Here's an example of a completed CSV file ready for upload:
+
+```csv
+version:v1.0
+User name [userPrincipalName] Required
+alain@contoso.com
+isabella@contoso.com
+joseph@contoso.com
+chaya@contoso.com
+```
+
 ### Additional guidance for the CSV template
 
-- The first two rows of the template must not be removed or modified, or the template can't be processed.
+- The first row(s) of the template (version number if present, and column headers) must not be removed or modified, or the template can't be processed.
 - The required columns are listed first.
 - Don't add new columns to the template. Any other columns you add are ignored and not processed.
 - Download the latest version of the CSV template before making new changes.
+- Enter one user per row.
 
 ## Check status
 

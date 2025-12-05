@@ -1,10 +1,10 @@
 ---
-title: Download a list of groups in the Azure portal
-description: Download group properties in bulk in the Azure admin center in Microsoft Entra ID.
+title: Download a list of groups
+description: Download group properties in bulk in the Microsoft Entra admin center.
 author: barclayn
 ms.author: barclayn
 manager: pmwongera
-ms.date: 12/19/2024
+ms.date: 12/05/2025
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -37,6 +37,21 @@ To download all groups in your organization:
     :::image type="content" source="media/bulk-operations/success-notification.png" alt-text="Screenshot of a success notification confirming the bulk groups download was submitted with a link to view status.":::
 
 5. Select the filename to download the CSV file containing all groups with the specified columns.
+
+### Downloaded CSV file format
+
+The downloaded CSV file contains information about each group, including:
+
+| Column | Description |
+|--------|-------------|
+| Object ID | The unique identifier (GUID) of the group |
+| Display name | The display name of the group |
+| Mail | The email address associated with the group (if applicable) |
+| Group type | Security or Microsoft 365 |
+| Membership type | Assigned or Dynamic |
+
+> [!TIP]
+> You can use the downloaded CSV file to get object IDs that you need for other bulk operations, such as adding members to groups.
 
 ## Download filtered groups
 
