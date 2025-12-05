@@ -70,16 +70,13 @@ A template is available to help you invite Microsoft Entra guest users in bulk. 
 
 The rows in a downloaded CSV template are as follows:
 
-- **Version number**: The first row containing the version number (for example, `version:v1.0`) must be included in the upload CSV. If your downloaded template includes this row, don't remove or modify it.
+- **Version number**: The first row containing the version number must be included in the upload CSV.
 - **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. For example, `Email address to invite [inviteeEmail] Required`. Some older versions of the template might have slight variations.
-- **Examples row**: The template might include a row of sample values for each column. Remove the examples row and replace it with your own entries.
-
-> [!NOTE]
-> The CSV template format may vary depending on when you download it. Always use the template downloaded directly from the portal for your specific operation.
+- **Examples row**: The template includes a row of sample values for each column. Remove the examples row and replace it with your own entries.
 
 ### Further guidance
 
-- The first row(s) of the upload template (version number if present, and column headers) must not be removed or modified, or the upload can't be processed.
+- The first two rows of the upload template must not be removed or modified, or the upload can't be processed.
 - The required columns are listed first.
 - We don't recommend adding new columns to the template. Any columns you add are ignored and not processed.
 - We recommend that you download the latest version of the CSV template as often as possible.
