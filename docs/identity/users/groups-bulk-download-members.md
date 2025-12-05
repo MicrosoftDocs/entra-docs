@@ -39,6 +39,9 @@ To download all members of a specific group:
 
 7. A **Download successful** notification confirms when the file has been downloaded. You can also select **More activity in the audit log** at the top of the Notifications panel to view all bulk operation activity.
 
+> [!TIP]
+> You can also select **Click here to view the status of each operation** in the download dialog to navigate directly to the **Bulk operation results** page, where you can monitor all pending and completed bulk operations.
+
 ### Downloaded CSV file format
 
 The downloaded CSV file contains the following information for each group member:

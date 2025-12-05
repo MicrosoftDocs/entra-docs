@@ -36,6 +36,9 @@ To download all groups in your organization:
 
 5. Select the **Success!** notification title to open the job details, then select the filename to download the CSV file. A **Download successful** notification confirms when the file has been downloaded.
 
+> [!TIP]
+> You can also select **Click here to view the status of each operation** in the download dialog to navigate directly to the **Bulk operation results** page, where you can monitor all pending and completed bulk operations.
+
 ### Downloaded CSV file format
 
 The downloaded CSV file contains information about each group, including:
