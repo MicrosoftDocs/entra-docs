@@ -113,8 +113,6 @@ To successfully authenticate and sign in to an Azure Arc-enabled Windows Server 
 
 - **Password restrictions**: Temporary passwords cannot be used for remote desktop connections. Users with temporary passwords must change their password through another method (such as the Azure portal) before attempting to connect.
 
-<a name='enable-azure-ad-login-for-a-windows-vm-in-azure'></a>
-
 ## Enable Microsoft Entra sign in for an Arc-enabled Windows Server
 
 To use Microsoft Entra sign in for an Arc-enabled Windows Server, you must:
@@ -186,9 +184,7 @@ The following documentation provides step-by-step details to add user accounts t
 You can sign in over RDP using one of two methods:
 
 - Passwordless using any of the supported Microsoft Entra credentials (recommended)
-- Password/limited passwordless using Windows Hello for Business deployed using certificate trust model
-
-<a name='log-in-using-passwordless-authentication-with-azure-ad'></a>
+- Password/passwordless using Windows Hello for Business deployed using certificate trust model
 
 ### Sign in using passwordless authentication with Microsoft Entra ID
 
@@ -218,9 +214,10 @@ To connect to the remote computer:
 > [!NOTE]
 > The Windows lock screen in the remote session doesn't support Microsoft Entra authentication tokens or passwordless authentication methods like FIDO keys. The lack of support for these authentication methods means that users can't unlock their screens in a remote session. When you try to lock a remote session, either through user action or system policy, the session is instead disconnected and the service sends a message to the user. Disconnecting the session also ensures that when the connection is relaunched after a period of inactivity, Microsoft Entra ID reevaluates the applicable Conditional Access policies.
 
-<a name='log-in-using-passwordlimited-passwordless-authentication-with-azure-ad'></a>
 
-### Sign in using password/limited passwordless authentication with Microsoft Entra ID
+### Sign in using password/passwordless authentication with Microsoft Entra ID
+
+Both [Password-based authentication](../../architecture/auth-password-based-sso.md), and [Passwordless authentication](../../identity/authentication/concept-authentication-passkeys-fido2.md) are supported to sign in to Windows virtual machines.
 
 > [!IMPORTANT]
 > Remote connection to VMs that are joined to Microsoft Entra ID is allowed only from Windows 10 or later PCs that are either Microsoft Entra registered (minimum required build is 20H1) or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login, or Virtual Machine User Login.

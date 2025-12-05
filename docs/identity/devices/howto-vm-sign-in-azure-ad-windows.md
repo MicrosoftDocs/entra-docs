@@ -92,13 +92,14 @@ Microsoft Azure operated by 21Vianet:
 - **Managed identities**: You must enable system-assigned managed identity on your Azure virtual machine before installing the Microsoft Entra sign in virtual machine extension. Managed Identities are stored in a single Microsoft Entra tenant and currently don't support cross directory scenarios.
 
 - **Role assignments**: Users must be assigned either the **Virtual Machine Administrator Login** or **Virtual Machine User Login** role to sign in to the VM. Having the Owner or Contributor role alone doesn't grant sign-in privileges.
+ - **Virtual Machine Administrator Login:** Users who have this role assigned can sign in to an Azure virtual machine with administrator privileges.
+ - **Virtual Machine User Login:** Users who have this role assigned can sign in to an Azure virtual machine with regular user privileges.
 - **Authentication methods**: 
-  - Passwordless authentication is recommended and supported via Microsoft Entra credentials
-  - Password-based authentication is supported with proper role assignments
-  - Windows Hello for Business is supported using the certificate trust model only (not key trust model)
+  - [Passwordless authentication](../../identity/authentication/concept-authentication-passkeys-fido2.md) is recommended and supported via Microsoft Entra credentials
+  - [Password-based authentication](../../architecture/auth-password-based-sso.md) is supported with proper role assignments
+  - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) is supported using the certificate trust model only (not key trust model)
   - Local administrator accounts created manually by adding users to local groups aren't supported
 
-<a name='enable-azure-ad-login-for-a-windows-vm-in-azure'></a>
 
 ## Enable Microsoft Entra sign in for a Windows virtual machine in Azure
 
@@ -173,8 +174,6 @@ You can sign in over RDP using one of two methods:
 - Passwordless using any of the supported Microsoft Entra credentials (recommended)
 - Password/passwordless using Windows Hello for Business deployed using certificate trust model
 
-<a name='log-in-using-passwordless-authentication-with-azure-ad'></a>
-
 ### Sign in using passwordless authentication with Microsoft Entra ID
 
 To use passwordless authentication for your Windows VMs in Azure, you need the Windows client machine and the session host (VM) on the following operating systems:
@@ -205,9 +204,11 @@ To connect to the remote computer:
 > [!NOTE]
 > The Windows lock screen in the remote session doesn't support Microsoft Entra authentication tokens or passwordless authentication methods like FIDO keys. The lack of support for these authentication methods means that users can't unlock their screens in a remote session. When you try to lock a remote session, either through user action or system policy, the session is instead disconnected and the service sends a message to the user. Disconnecting the session also ensures that when the connection is relaunched after a period of inactivity, Microsoft Entra ID reevaluates the applicable Conditional Access policies.
 
-<a name='log-in-using-passwordlimited-passwordless-authentication-with-azure-ad'></a>
 
-### Sign in using password/limited passwordless authentication with Microsoft Entra ID
+
+### Sign in using password/passwordless authentication with Microsoft Entra ID
+
+Both [Password-based authentication](../../architecture/auth-password-based-sso.md), and [Passwordless authentication](../../identity/authentication/concept-authentication-passkeys-fido2.md) are supported to sign in to Windows virtual machines.
 
 > [!IMPORTANT]
 > Remote connection to VMs that are joined to Microsoft Entra ID is allowed only from Windows 10 or later PCs that are either Microsoft Entra registered (minimum required build is 20H1) or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login or Virtual Machine User Login.
@@ -232,7 +233,7 @@ You're now signed in to the Windows Server 2019 Azure virtual machine with the r
 
 You can enforce Conditional Access policies, such as "[phishing resistant MFA](../conditional-access/policy-admin-phish-resistant-mfa.md)" or [user sign-in risk check](../conditional-access/policy-all-users-mfa-strength.md), before users can access Windows devices in Azure. To apply a Conditional Access policy, you must select the **Microsoft Azure Windows Virtual Machine Sign-in** app from the cloud apps or actions assignment option.
 
-Conditional Access policies that restrict sign in using device configuration rules aren't supported when connecting from a Windows Server device.
+Conditional Access policies that restrict sign in using device configuration rules aren't supported when connecting from a Windows Server device. For a guide on setting conditional access policies, see: [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md).
 
 > [!NOTE]
 > If you require MFA as a control, then you must supply an MFA claim as part of the client that initiates the RDP session to the target Windows device. The Remote Desktop application in Windows supports Conditional Access policies, however if you're using web sign in, you must use a Windows Hello for Business PIN or biometric authentication. Support for biometric authentication was added to the RDP client in Windows 10 version 1809. Remote desktop using Windows Hello for Business authentication is available only for deployments that use a certificate trust model and isn't available for a key trust model.
