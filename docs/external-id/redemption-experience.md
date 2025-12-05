@@ -2,7 +2,7 @@
 title: B2B Invitation Redemption
 description: Learn how Microsoft Entra B2B invitation redemption works, including guest sign-in, consent process, and privacy terms. Ensure secure access for your organization’s resources.
 ms.topic: concept-article
-ms.date: 05/14/2025
+ms.date: 12/05/2025
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -53,7 +53,7 @@ Here are some things to note about using a direct link versus an invitation emai
 
 When you add a guest user to your directory by [using the Microsoft Entra admin center](./b2b-quickstart-add-guest-users-portal.md), an invitation email is sent to the guest. You can also choose to send invitation emails when you’re [using PowerShell](./b2b-quickstart-invite-powershell.md) to add guest users to your directory. Here’s a description of the guest’s experience when they redeem the link in the email.
 
-1. The guest receives an [invitation email](./invitation-email-elements.md) that's sent from **Microsoft Invitations**.
+1. The guest receives an [invitation email](./invitation-email-elements.md) that’s from Microsoft Invitations on behalf of <primary domain>. For example: `<invites@<primary domain>.onmicrosoft.com>`. 
 2. The guest selects **Accept invitation** in the email.
 3. The guest uses their own credentials to sign in to your directory. If the guest doesn't have an account that can be federated to your directory and the [email one-time passcode (OTP)](./one-time-passcode.md) feature isn't enabled, the guest is prompted to create a personal [Microsoft account (MSA)](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create). Refer to the [invitation redemption flow](#invitation-redemption-flow) for details.
 4. The guest is guided through the [consent experience](#consent-experience-for-the-guest) described below.
