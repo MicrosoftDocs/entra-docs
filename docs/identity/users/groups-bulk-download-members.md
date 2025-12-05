@@ -31,11 +31,11 @@ To download all members of a specific group:
 
     :::image type="content" source="media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
 
-4. Enter a filename and select **Start download**.
+4. Enter a filename and select **Start bulk operation**.
 
-5. A notification appears when the job is submitted. Select **Click here to view the status of each operation** to navigate to the **Bulk operations** page.
+5. A notification appears when the job is submitted. You can select **Click here to view the status of each operation** to navigate to the **Bulk operation results** page, or wait for the success notification.
 
-6. When the status shows **Completed**, select the filename to download your CSV file.
+6. When the notification shows **Success!**, select the notification title to view details and download your CSV file. Alternatively, check the **Bulk operation results** page for completed downloads.
 
 ### Downloaded CSV file format
 

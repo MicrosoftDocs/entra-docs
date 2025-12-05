@@ -70,7 +70,7 @@ To download all members of a specific group:
 
     :::image type="content" source="Media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Download members selected.":::
 
-4. Enter a filename and select **Start download**.
+4. Enter a filename and select **Start bulk operation**.
 
 5. Follow the download process as described in [Bulk download groups](#bulk-download-groups).
 
@@ -152,7 +152,7 @@ To delete completed or failed bulk operations:
 
     :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations.png" alt-text="Screenshot of the All devices page with Bulk operations open and the Download devices option selected.":::
 
-3. Enter a filename that matches your naming convention and select **Start download**.
+3. Enter a filename that matches your naming convention and select **Start bulk operation**.
     :::image type="content" source="Media/bulk-operations/all-devices-success.png" alt-text="Screenshot of a success notification after starting the Download devices job.":::
 
 4. Verify the notification message and, if the job was submitted successfully, select the **Success!** or **File is ready! Click here to download** link.
