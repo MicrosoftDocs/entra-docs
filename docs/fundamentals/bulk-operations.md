@@ -111,9 +111,9 @@ To remove multiple members from a group:
 
     :::image type="content" source="Media/bulk-operations/members-bulk-operations-remove.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Remove members selected.":::
 
-3. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
-
-
+3. Select **Download csv template** to get a template file with the correct column header. The template contains one column: `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Delete the example row and add the Object IDs or UPNs for the members you want to remove, one per row. You can use either:
+   - **Object ID**: The GUID of the user (for example, `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`)
+   - **User principal name**: The UPN of the user (for example, `user@contoso.com`)
 
 4. Upload the completed CSV file and select **Submit**.
 
