@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	b. Copy the link from Post-back/ACS URL field in Samsara into the **Reply URL** text box in Entra ID.
 
 	> [!NOTE]
-	> Update these values with the actual Reply URL, and Identifier. Contact the [Samsara Client support team](mailto:support@samsara.com) to get these values, or in Samsara, go to **Settings** > **Single-Sign-On** and select the connection you want to create in order to obtain the right ACS and Identifier URLs.
+	> Update these values with the actual Reply URL and Identifier. Contact the [Samsara Client support team](mailto:support@samsara.com) to get these values, or in Samsara, go to **Settings** > **Single-Sign-On** and select the connection you want to create in order to obtain the right ACS and Identifier URLs.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find and copy the **App Federation Metadata URL** or download the **Federation Metadata XML**. In the Samsara dashboard in Settings > Single Sign-on in the relevant SSO configuration (user or driver), paste the metadata URL or upload the file. Click Save to apply the changes.
 
