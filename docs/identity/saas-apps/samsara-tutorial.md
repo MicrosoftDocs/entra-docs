@@ -73,7 +73,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Browse to **Entra ID** > **Enterprise apps** > **Samsara** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set-up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
-1. Open your Samsara dashboard and navigate to Settings > Single Sign-On tab. If you want to create a user SSO connection, click "Add" in the user SSO box. If you want to create a driver SSO connection, click "Add" in the driver SSO box. You will need to copy over values from Samsara into Entra ID SAML Configuration.
+1. Open your Samsara dashboard and navigate to Settings > Single Sign-On tab. If you want to create a user SSO connection, click **Add** in the user SSO box. If you want to create a driver SSO connection, click **Add** in the driver SSO box. You will need to copy over values from Samsara into Entra ID SAML Configuration.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
