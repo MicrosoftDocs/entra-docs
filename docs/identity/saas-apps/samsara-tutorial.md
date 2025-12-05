@@ -60,7 +60,7 @@ To configure and test Microsoft Entra SSO with Samsara, perform the following st
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
-    1. **[Create Samsara test user](#create-samsara-test-user)** - to have a counterpart of B.Simon in Samsara that's linked to the Microsoft Entra representation of user.
+1. **[Create Samsara test user](#create-samsara-test-user)** - to have a counterpart of B.Simon in Samsara that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
