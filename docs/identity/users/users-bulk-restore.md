@@ -46,10 +46,7 @@ Object ID [objectId] Required
 
 ### Additional guidance
 
-- The first row(s) of the upload template (version number if present, and column headers) must not be removed or modified, or the upload can't be processed.
-- The required columns are listed first.
-- We don't recommend adding new columns to the template. Any additional columns you add are ignored and not processed.
-- We recommend that you download the latest version of the CSV template as often as possible.
+[!INCLUDE [bulk-operations-csv-guidance](~/includes/bulk-operations-csv-guidance.md)]
 
 ## To bulk restore users
 
@@ -70,11 +67,13 @@ Object ID [objectId] Required
 1. When your file passes validation, select **Submit** to start the bulk operation that restores the users.
 1. When the restore operation completes, you see a notification that the bulk operation succeeded.
 
-If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk restore service limits](#bulk-restore-service-limits).
+[!INCLUDE [bulk-operations-error-results](~/includes/bulk-operations-error-results.md)]
+
+For more information about bulk operations limitations, see [Bulk restore service limits](#bulk-restore-service-limits).
 
 ## Check status
 
-You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
 :::image type="content" source="./media/users-bulk-restore/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page.." lightbox="./media/users-bulk-restore/bulk-center.png":::
 

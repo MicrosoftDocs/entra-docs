@@ -60,7 +60,7 @@ If you experience errors, you can download and view the results file on the **Bu
 
 ## Check download status
 
-You can see the status of all of your pending bulk requests on the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
 1. Navigate to **Identity** > **Users** > **Bulk operation results**.
 2. Find your download operation in the list.

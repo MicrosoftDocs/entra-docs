@@ -33,10 +33,8 @@ The rows in a downloaded CSV template are:
 
 ### More guidance
 
-- The first row of the upload template (the column header) must not be removed or modified, or the upload can't be processed.
-- The required columns are listed first.
-- We don't recommend adding new columns to the template. Any other columns you add are ignored and not processed.
-- We recommend that you download the latest version of the CSV template as often as possible.
+[!INCLUDE [bulk-operations-csv-guidance](~/includes/bulk-operations-csv-guidance.md)]
+
 - Add at least two users' UPNs or object IDs to successfully upload the file.
 - Enter one member per row. Don't use semicolons or other delimiters to separate multiple members in a single row.
 
@@ -87,11 +85,13 @@ Member object ID or user principal name [memberObjectIdOrUpn] Required
 1. When your file passes validation, select **Submit** to start the bulk operation that imports the group members to the group.
 1. When the import operation finishes, a notification states that the bulk operation succeeded.
 
-If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk import service limits](#bulk-import-service-limits).
+[!INCLUDE [bulk-operations-error-results](~/includes/bulk-operations-error-results.md)]
+
+For more information about bulk operations limitations, see [Bulk import service limits](#bulk-import-service-limits).
 
 ## Check import status
 
-You can see the status of all your pending bulk requests on the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
 1. Navigate to **Identity** > **Users** > **Bulk operation results**.
 1. Find your bulk operation in the list. The **Status** column shows whether the operation is **In Progress**, **Succeeded**, or **Failed**.

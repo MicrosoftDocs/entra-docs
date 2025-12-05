@@ -32,7 +32,9 @@ Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can r
 1. When your file passes validation, select **Submit** to start the bulk operation that deletes the users.
 1. When the deletion operation completes, you see a notification that the bulk operation succeeded.
 
-If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk delete service limits](#bulk-delete-service-limits).
+[!INCLUDE [bulk-operations-error-results](~/includes/bulk-operations-error-results.md)]
+
+For more information about bulk operations limitations, see [Bulk delete service limits](#bulk-delete-service-limits).
 
 ## CSV template structure
 
@@ -61,15 +63,13 @@ chaya@contoso.com
 
 ### Additional guidance for the CSV template
 
-- The first row(s) of the template (version number if present, and column headers) must not be removed or modified, or the template can't be processed.
-- The required columns are listed first.
-- Don't add new columns to the template. Any other columns you add are ignored and not processed.
-- Download the latest version of the CSV template before making new changes.
+[!INCLUDE [bulk-operations-csv-guidance](~/includes/bulk-operations-csv-guidance.md)]
+
 - Enter one user per row.
 
 ## Check status
 
-You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
+[!INCLUDE [bulk-operations-check-status](~/includes/bulk-operations-check-status.md)]
 
    :::image type="content" source="./media/users-bulk-delete/bulk-center.png" alt-text="Screenshot of checking delete status in the Bulk Operations Results page." lightbox="./media/users-bulk-delete/bulk-center.png":::
 
