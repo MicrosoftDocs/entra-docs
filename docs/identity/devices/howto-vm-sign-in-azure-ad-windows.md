@@ -87,7 +87,16 @@ Microsoft Azure operated by 21Vianet:
 
 ### Authentication requirements
 
-[Microsoft Entra Guest accounts](~/external-id/what-is-b2b.md) can't connect to Azure VMs, or Azure Bastion enabled VMs, via Microsoft Entra authentication.
+- **User account type**: Only standard Microsoft Entra user accounts from the same tenant as the Azure Arc-enabled server are supported. [Guest accounts (B2B users)]((~/external-id/what-is-b2b.md)) cannot be used for authentication.
+
+- **Managed identities**: You must enable system-assigned managed identity on your Azure virtual machine before installing the Microsoft Entra sign in virtual machine extension. Managed Identities are stored in a single Microsoft Entra tenant and currently don't support cross directory scenarios.
+
+- **Role assignments**: Users must be assigned either the **Virtual Machine Administrator Login** or **Virtual Machine User Login** role to sign in to the VM. Having the Owner or Contributor role alone doesn't grant sign-in privileges.
+- **Authentication methods**: 
+  - Passwordless authentication is recommended and supported via Microsoft Entra credentials
+  - Password-based authentication is supported with proper role assignments
+  - Windows Hello for Business is supported using the certificate trust model only (not key trust model)
+  - Local administrator accounts created manually by adding users to local groups aren't supported
 
 <a name='enable-azure-ad-login-for-a-windows-vm-in-azure'></a>
 
@@ -162,7 +171,7 @@ The following documentation provides step-by-step details to add user accounts t
 You can sign in over RDP using one of two methods:
 
 - Passwordless using any of the supported Microsoft Entra credentials (recommended)
-- Password/limited passwordless using Windows Hello for Business deployed using certificate trust model
+- Password/passwordless using Windows Hello for Business deployed using certificate trust model
 
 <a name='log-in-using-passwordless-authentication-with-azure-ad'></a>
 
@@ -172,7 +181,7 @@ To use passwordless authentication for your Windows VMs in Azure, you need the W
 
 - Windows 11 with [2022-10 Cumulative Updates for Windows 11 (KB5018418)](https://support.microsoft.com/kb/KB5018418) or later installed.
 - Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
-- Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
+- Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed allows for Microsoft Entra logins over RDP.
 
 > [!NOTE]
 > When using the **web account to sign in to the remote computer** option, there's no requirement for the local device to be joined to a domain or Microsoft Entra ID.

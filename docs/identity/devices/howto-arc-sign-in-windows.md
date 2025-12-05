@@ -15,7 +15,7 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azur
 
 # Sign in to an Azure Arc-enabled server using Microsoft Entra ID and Azure Roles Based Access Control
 
-Organizations can improve the security of Windows devices in Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into Windows Server 2025 or later and Windows 11 24H2 or later. You can then centrally control and enforce Azure role-based access control (RBAC) policies that allow or deny access to the devices.
+Organizations can improve the security of Windows devices in on-premises Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into Windows Server 2025 or later and Windows 11 24H2 or later. You can then centrally control and enforce Azure role-based access control policies that allow or deny access to the devices.
 
 This article shows you how to create and configure an Azure Arc-enabled Windows machine and sign in by using Microsoft Entra ID-based authentication.
 
@@ -89,7 +89,29 @@ For Azure Arc-enabled Windows Servers, more network requirements are provided in
 
 ### Authentication requirements
 
-[Microsoft Entra Guest accounts](~/external-id/what-is-b2b.md) can't connect to Azure Arc-enabled Windows Servers via Microsoft Entra authentication.
+To successfully authenticate and sign in to an Azure Arc-enabled Windows Server using Microsoft Entra ID, the following requirements must be met:
+
+- **User account type**: Only standard Microsoft Entra user accounts from the same tenant as the Azure Arc-enabled server are supported. [Guest accounts (B2B users)]((~/external-id/what-is-b2b.md)) cannot be used for authentication.
+
+- **Role assignments**: Users must be assigned one of the following Azure roles:
+  - **Virtual Machine Administrator Login**: Grants administrator privileges on the server.
+  - **Virtual Machine User Login**: Grants standard user privileges on the server.
+> [!NOTE]
+> Manually elevating a user to become a local administrator on the device by adding the user to a member of the local administrators' group or by running `net localgroup administrators /add "AzureAD\UserUpn"` command isn't supported. You need to use roles in Azure to authorize sign in.
+
+> [!NOTE]
+>An Azure user who has the Owner or Contributor role assigned doesn't automatically have privileges to sign in to devices. The reason is to provide audited separation between the set of people who control virtual machines and the set of people who can access virtual machines.
+
+- **Authentication methods**: Depending on your configuration and Windows version, the following authentication methods are supported:
+  - **Passwordless authentication**: Requires Windows 11 with KB5018418 or later, Windows 10 20H2 with KB5018410 or later, or Windows Server 2022 with KB5018421 or later. Supports web account sign-in using Microsoft Entra credentials including passkeys, FIDO2 security keys, and other passwordless methods.
+  - **Password-based authentication**: Supported on all compatible Windows versions. Users on Microsoft Entra registered devices must use the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`).
+
+- **Client device requirements**: The device initiating the RDP connection must be:
+  - Microsoft Entra joined to the same directory as the Arc-enabled server, or
+  - Microsoft Entra hybrid joined to the same directory, or
+  - Microsoft Entra registered (Windows 10 20H1 or later) to the same directory.
+
+- **Password restrictions**: Temporary passwords cannot be used for remote desktop connections. Users with temporary passwords must change their password through another method (such as the Azure portal) before attempting to connect.
 
 <a name='enable-azure-ad-login-for-a-windows-vm-in-azure'></a>
 
@@ -152,17 +174,6 @@ After the extension is installed on the device, `provisioningState` shows `Succe
 
 A User account in Microsoft Entra must be added to a role assignment in Azure before the user is allowed to sign in to an Arc-connected Windows Server. 
 
-To assign user roles, you must have the [Virtual Machine Data Access Administrator](/azure/role-based-access-control/built-in-roles#virtual-machine-data-access-administrator-preview) role, or any role that includes the `Microsoft.Authorization/roleAssignments/write` action such as the [Role Based Access Control Administrator](/azure/role-based-access-control/built-in-roles#role-based-access-control-administrator-preview) role. However, if you use a different role than Virtual Machine Data Access Administrator, we recommend you [add a condition to reduce the permission to create role assignments](/azure/role-based-access-control/delegate-role-assignments-overview).
-
-- **Virtual Machine Administrator Login:** Users who have this role assigned can sign in to an Azure virtual machine with administrator privileges.
-- **Virtual Machine User Login:** Users who have this role assigned can sign in to an Azure virtual machine with regular user privileges.
-
-> [!NOTE]
-> Manually elevating a user to become a local administrator on the device by adding the user to a member of the local administrators' group or by running `net localgroup administrators /add "AzureAD\UserUpn"` command isn't supported. You need to use roles in Azure to authorize sign in.
-
-> [!NOTE]
->An Azure user who has the Owner or Contributor role assigned doesn't automatically have privileges to sign in to devices. The reason is to provide audited separation between the set of people who control virtual machines and the set of people who can access virtual machines.
-
 The following documentation provides step-by-step details to add user accounts to role assignments in Azure:
 
 - [Assign Azure roles by using the Azure portal](/azure/role-based-access-control/role-assignments-portal)
@@ -185,7 +196,7 @@ To use passwordless authentication for your Windows VMs in Azure, you need the W
 
 - Windows 11 with [2022-10 Cumulative Updates for Windows 11 (KB5018418)](https://support.microsoft.com/kb/KB5018418) or later installed.
 - Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
-- Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
+- Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed allows for Microsoft Entra logins over RDP.
 
 
 > [!NOTE]
@@ -212,7 +223,7 @@ To connect to the remote computer:
 ### Sign in using password/limited passwordless authentication with Microsoft Entra ID
 
 > [!IMPORTANT]
-> Remote connection to VMs that are joined to Microsoft Entra ID is allowed only from Windows 10 or later PCs that are either Microsoft Entra registered (minimum required build is 20H1) or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login or Virtual Machine User Login.
+> Remote connection to VMs that are joined to Microsoft Entra ID is allowed only from Windows 10 or later PCs that are either Microsoft Entra registered (minimum required build is 20H1) or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login, or Virtual Machine User Login.
 >
 > If you're using a Microsoft Entra registered Windows 10 or later PC, you must enter credentials in the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`). At this time, you can use Azure Bastion to sign in with Microsoft Entra authentication [via the Azure CLI and the native RDP client mstsc](/azure/bastion/native-client).
 
@@ -358,25 +369,6 @@ Try these solutions:
 - Verify that the user doesn't have a temporary password. Temporary passwords can't be used to sign in to a remote desktop connection.
 
   Sign in with the user account in a web browser. For instance, sign in to the [Azure portal](https://portal.azure.com) in a private browsing window. If you're prompted to change the password, set a new password. Then try connecting again.
-
-### AADSTS293004: The target-device identifier in the request xxx was not found in the tenant xxx
-
-Cause:
-
-The computer name entered in mstsc does not match with any one of the "hostnames" attributes for target AADJ device. For example, AADJ device host name is the short name like device_1, but the computer name entered in mstsc is the FQDN like device_1.contoso.com.
-
-Try these solutions:
-
-There are multiple ways to resolve the issue:
-
-1.	Modify the HOSTS entry on client machine, add an A DNS record that points the correct device name (confirm from AAD Device record) to the IP of target machine. Use that device name in mstsc.
-2.	Check if the target machine is managed and if the hostname is set through Group Policy via the DNS Client PrimaryDnsSuffix value [ADMX_DnsClient Policy CSP | Microsoft Learn](/windows/client-management/mdm/policy-csp-admx-dnsclient#dns_primarydnssuffix). If this is set and is incorrect, it needs to be removed or set correctly. 
-3.	When customer requires to use FQDN to connect but AAD Device name is a short name, login to the target machine via local admin, add a “**Primary DNS Suffix**” for their domain suffix. Detailed instructions:
-- Navigate to **Advanced System Settings/System Properties** ->** Computer Name** tab -> select the "**Change**" button to rename the computer -> select "**More**..." under the existing computer name -> Type in your domain name and select **OK** -> Save and reboot.
-- Once it’s done, we can RDP with FQDN directly and no need to modify the HOSTS entry.
-
-> [!NOTE]
-> In such case, when Primary DNS Suffix is added, the Device-Sync scheduled task is triggered which adding the FQDN into AAD device "hostnames" attributes. This is why it resolves the issue.
 
 
 ### MFA sign-in method required
