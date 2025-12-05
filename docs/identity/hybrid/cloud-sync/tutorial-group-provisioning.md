@@ -20,6 +20,26 @@ This tutorial walks you through how to configure Cloud Sync to sync groups to on
 
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
 
+## Group and User SOA Scenarios
+
+Use case | Parent group type | User member group type | Sync Direction | How sync works 
+----------|--------------------|-------------------------|----------------|----------------
+A security group whose SOA is in **cloud** and **all user members** have SOA **on-premises** | Security group whose SOA is in cloud | Users whose SOA is on-premises | **Entra to AD (AAD2ADGroup provisioning)** | The job provisions the parent group with all its member references (member users). 
+A security group whose SOA is in **cloud** and **all user members** have SOA **in cloud** | Security group whose SOA is in cloud | Users whose SOA is in cloud | **Entra to AD (AAD2ADGroup provisioning)** | The job provisions the security group but does not provision any member references. 
+A security group whose SOA is in **cloud** and **some user members** have SOA **in cloud** while others have SOA **on-premises** | Security group whose SOA is in cloud | Some users have SOA in cloud while some have SOA on-premises | **Entra to AD (AAD2ADGroup provisioning)** | The job provisions the security group and includes only member references whose SOA is on-premises. It skips member references whose SOA is in cloud. 
+A security group whose SOA is in **cloud** and has **no user members** | Security group whose SOA is in cloud | No user members | **Entra to AD (AAD2ADGroup provisioning)** | The job provisions the security group (empty membership). 
+A security group whose SOA is in **on-premises** and **all user members** have SOA **on-premises** | Security group whose SOA is on-premises | Users whose SOA is on-premises | **Entra to AD (AAD2ADGroup provisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **on-premises** and **all user members** have SOA in **cloud** | Security group whose SOA is on-premises | Users whose SOA is in cloud | **Entra to AD (AAD2ADGroup provisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **on-premises** and some **user members** have SOA in **cloud** while others have SOA **on-premises** | Security group whose SOA is on-premises | Some users have SOA in cloud while some have SOA on-premises | **Entra to AD (AAD2ADGroup provisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **on-premises** and **all user members** have SOA **on-premises** | Security group whose SOA is on-premises | Users whose SOA is on-premises | **AD to Entra (AD2AADprovisioning)** | The job provisions the security group with all its member references (member users). 
+A security group whose SOA is in **on-premises** and **all user members** have SOA in **cloud** | Security group whose SOA is on-premises | Users whose SOA is in cloud | **AD to Entra (AD2AADprovisioning)** | The job provisions the security group with all its member references (member users). So member references whose SOA is converted to cloud for these on-prem groups will also be synced. 
+A security group whose SOA is in **on-premises** and **some user members** have SOA in **cloud** while others have SOA **on-premises** | Security group whose SOA is on-premises | Some users have SOA in cloud while some have SOA on-premises | **AD to Entra (AD2AADprovisioning)** | The job provisions the parent group with all its member references (member users). So member references whose SOA is converted to cloud for these on-prem groups will also be synced.
+A security group whose SOA is in **on-premises** and has **no user members** | Security group whose SOA is on-premises | No user members | **AD to Entra (AD2AADprovisioning)** | The job provisions the security group (empty membership). 
+A security group whose SOA is in **cloud** and **all user members** have SOA **on-premises** | Security group whose SOA is cloud | Users whose SOA is on-premises | **AD to Entra (AD2AADprovisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **cloud** and **all user members** have SOA in **cloud** | Security group whose SOA is cloud | Users whose SOA is in cloud | **AD to Entra (AD2AADprovisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **cloud** and **some user members** have SOA in **cloud** while others have SOA **on-premises** | Security group whose SOA is cloud | Some users have SOA in cloud while some have SOA on-premises | **AD to Entra (AD2AADprovisioning)** | The job does **not** provision the security group. 
+
+
 ## Assumptions
 This tutorial assumes:
 - You have an AD DS on-premises environment
@@ -218,6 +238,7 @@ The details explain that the object isn't synced because its SOA is converted to
 
 :::image type="content" border="true" source="media/tutorial-group-provision/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
+
 ### Nested groups and membership references handling
 
 The following table explains how the provisioning handles membership references after you convert SOA in different use cases.
@@ -243,7 +264,9 @@ If you have SOA converted groups in scope and you roll back the SOA converted gr
 
   :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
 
+
+
 ## Next steps 
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Govern on-premises AD DS based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
