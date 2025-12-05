@@ -4,7 +4,7 @@ description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/09/2025
+ms.date: 12/05/2025
 ms.author: justinha
 author: hanki71
 manager: dougeby
@@ -26,6 +26,11 @@ A passkey profile is a named set of policy rules that governs how users in targe
 - Enforce attestation: Enabled, Disabled
 - Target types: Device-bound, Synced
 - Target specific authenticators: Allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](how-to-enable-passkey-fido2.md#passkey-fido2-authenticator-attestation-guid-aaguid).
+
+>[!WARNING]
+>- If you set **Enforce attestation** to **No**, users can register any type of passkey. Set **Enforce attestation** to **Yes** to ensure that users can only register device-bound passkeys.
+>
+>- Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
 
 ## Before you begin
 
