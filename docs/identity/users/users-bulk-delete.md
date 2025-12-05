@@ -45,22 +45,20 @@ The rows in the example downloaded CSV template below are as follows:
 :::image type="content" source="./media/users-bulk-delete/delete-csv-file.png" alt-text="Screenshot of the CSV file contains names and IDs of the users to delete.":::
 
 > [!NOTE]
-> The CSV template format may vary depending on when you download it. Always use the template downloaded directly from the portal for your specific operation.
+> CSV template formats vary by operation. Some templates (like bulk create or delete users) include a `version:v1.0` row as the first row, while others (like group member operations) start directly with the column headers. Always use the template downloaded directly from the portal for your specific operation, and don't modify the first row(s).
 
 ### Example CSV file
 
 Here's an example of a completed CSV file ready for upload:
 
 ```csv
+version:v1.0
 User name [userPrincipalName] Required
 alain@contoso.com
 isabella@contoso.com
 joseph@contoso.com
 chaya@contoso.com
 ```
-
-> [!NOTE]
-> If your downloaded template includes a version number row (for example, `version:v1.0`) as the first row, keep it in place when uploading.
 
 ### Additional guidance for the CSV template
 

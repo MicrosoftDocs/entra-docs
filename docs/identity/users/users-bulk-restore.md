@@ -31,21 +31,19 @@ The rows in a downloaded CSV template are as follows:
 - **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
 
 > [!NOTE]
-> The CSV template format may vary depending on when you download it. Always use the template downloaded directly from the portal for your specific operation.
+> CSV template formats vary by operation. Some templates (like bulk create or delete users) include a `version:v1.0` row as the first row, while others (like group member operations) start directly with the column headers. Always use the template downloaded directly from the portal for your specific operation, and don't modify the first row(s).
 
 ### Example CSV file
 
 Here's an example of a completed CSV file ready for upload:
 
 ```csv
+version:v1.0
 Object ID [objectId] Required
 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 11bb11bb-cc22-dd33-ee44-55ff55ff55ff
 22cc22cc-dd33-ee44-ff55-66aa66aa66aa
 ```
-
-> [!NOTE]
-> If your downloaded template includes a version number row (for example, `version:v1.0`) as the first row, keep it in place when uploading.
 
 ### Additional guidance
 

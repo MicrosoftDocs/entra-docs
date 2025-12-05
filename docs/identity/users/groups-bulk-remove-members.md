@@ -31,7 +31,7 @@ The rows in a downloaded CSV template are:
 - **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
 
 > [!NOTE]
-> The CSV template format may vary depending on when you download it. Always use the template downloaded directly from the portal for your specific operation.
+> CSV template formats vary by operation. Some templates (like bulk create or delete users) include a `version:v1.0` row as the first row, while others (like group member operations) start directly with the column headers. Always use the template downloaded directly from the portal for your specific operation, and don't modify the first row(s).
 
 ### More guidance
 
@@ -51,9 +51,6 @@ alain@contoso.com
 isabella@contoso.com
 joseph@contoso.com
 ```
-
-> [!NOTE]
-> If your downloaded template includes a version number row (for example, `version:v1.0`) as the first row, keep it in place when uploading.
 
 > [!TIP]
 > To get a list of current group members that you can edit, use the **Download members** bulk operation first. This gives you a CSV file with all current members that you can modify to include only the members you want to remove.

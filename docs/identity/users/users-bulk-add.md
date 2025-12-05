@@ -40,7 +40,7 @@ The rows in a downloaded CSV template are as follows:
 - **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
 
 > [!NOTE]
-> The CSV template format may vary depending on when you download it. Always use the template downloaded directly from the portal for your specific operation. If your template doesn't include a version number row, you can still proceed—just ensure the column header row remains as the first row.
+> CSV template formats vary by operation. Some templates (like bulk create or delete users) include a `version:v1.0` row as the first row, while others (like group member operations) start directly with the column headers. Always use the template downloaded directly from the portal for your specific operation, and don't modify the first row(s).
 
 ### Additional guidance
 
@@ -57,14 +57,12 @@ The rows in a downloaded CSV template are as follows:
 Here's an example of a completed CSV file ready for upload:
 
 ```csv
+version:v1.0
 Name [displayName] Required,User name [userPrincipalName] Required,Initial password [passwordProfile] Required,Block sign in (Yes/No) [accountEnabled] Required,First name [givenName],Last name [surname],Job title [jobTitle],Department [department],Usage location [usageLocation],Street address [streetAddress],State or province [state],Country or region [country],Office [physicalDeliveryOfficeName],City [city],ZIP or postal code [postalCode],Office phone [telephoneNumber],Mobile phone [mobile]
 Alain Charon,alain@contoso.com,Password1!,No,Alain,Charon,Software Engineer,Engineering,US,,,,,,,
 Isabella Simonsen,isabella@contoso.com,Password1!,No,Isabella,Simonsen,Product Manager,Product,US,,,,,,,
 Joseph Price,joseph@contoso.com,Password1!,No,Joseph,Price,Sales Representative,Sales,US,,,,,,,
 ```
-
-> [!NOTE]
-> If your downloaded template includes a version number row (for example, `version:v1.0`) as the first row, keep it in place when uploading.
 
 > [!IMPORTANT]
 > Only the first four columns are required: **Name**, **User name**, **Initial password**, and **Block sign in**. All other columns are optional and can be left empty.
