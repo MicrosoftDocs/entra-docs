@@ -26,15 +26,14 @@ Download and fill in the bulk upload CSV template to successfully remove Microso
 
 The rows in a downloaded CSV template are:
 
-- **Version number**: The first row containing the version number (for example, `version:v1.0`) must be included in the upload CSV. If your downloaded template includes this row, don't remove or modify it.
 - **Column headings**: The format of the column headings is &lt;*Item name*&gt; [PropertyName] &lt;*Required or blank*&gt;. An example is `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Some older versions of the template might have slight variations. For group membership changes, you can use either the member object ID or the user principal name (UPN).
-- **Examples row**: The template might include a row of example values for each column. You must remove the examples row and replace it with your own entries.
+- **Examples row**: The template includes a row of example values (for example, `Example: 9832aad8-e4fe-496b-a604-95c6eF01ae75`). You must remove the examples row and replace it with your own entries.
 
 [!INCLUDE [bulk-operations-csv-template-note](~/includes/bulk-operations-csv-template-note.md)]
 
 ### More guidance
 
-- The first row(s) of the upload template (version number if present, and column headers) must not be removed or modified, or the upload can't be processed.
+- The first row of the upload template (the column header) must not be removed or modified, or the upload can't be processed.
 - The required columns are listed first.
 - We don't recommend adding new columns to the template. Any other columns you add are ignored and not processed.
 - We recommend that you download the latest version of the CSV template as often as possible.
