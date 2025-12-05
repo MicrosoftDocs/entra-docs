@@ -41,7 +41,7 @@ There are different roles, permissions, and license requirements to view health 
 
 > [!NOTE]
 > * Newly onboarded tenants might not have enough data to generate alerts for about 30 days. <br>
-> * If you see error due to missing required Microsoft Graph permissions, see [Microsoft Graph permissions](/graph/permissions-overview) to get more information about Micorosft Graph permisisons.
+> * If you see error due to missing required Microsoft Graph permissions, see [Microsoft Graph permissions](/graph/permissions-overview) to get more information about Microsoft Graph permissions.
 
 ## Determine email notification recipients
 
