@@ -15,7 +15,7 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azur
 
 # Sign in to an Azure Arc-enabled server using Microsoft Entra ID and Azure Roles Based Access Control
 
-Organizations can improve the security of Windows devices in Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into supported versions of Windows. You can then centrally control and enforce Azure role-based access control (RBAC) policies that allow or deny access to the devices.
+Organizations can improve the security of Windows devices in Azure Arc enabled servers by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into Windows Server 2025 or later and Windows 11 24H2 or later. You can then centrally control and enforce Azure role-based access control (RBAC) policies that allow or deny access to the devices.
 
 This article shows you how to create and configure an Azure Arc-enabled Windows machine and sign in by using Microsoft Entra ID-based authentication.
 
@@ -24,16 +24,15 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
 - Use Microsoft Entra authentication including passwordless to sign in to Windows devices. Reduce reliance on local administrator accounts.
 - Use Password complexity and password lifetime policies that you configure for Microsoft Entra ID also help secure Windows devices.
 - Use Azure role-based access control:
-   - Specify who can sign in as a regular user or with administrator privileges.
-   - When users join or leave your team, you can update Azure role-based access control policy to grant access as appropriate.
-   - When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
+  - Specify who can sign in as a regular user or with administrator privileges through the Virtual Machine Administrator Login and Virtual Machine User Login roles.
+  - When users join or leave your team, you can update Azure role-based access control policy to grant access as appropriate.
+  - When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
 - Use Azure Policy to deploy and audit policies to require Microsoft Entra sign in for Windows devices and to flag the use of unapproved local accounts on the devices.
-- Use Intune to automate and scale Microsoft Entra join with mobile device management (MDM) autoenrollment of Azure Windows VMs that are part of your virtual desktop infrastructure (VDI) deployments. MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
+- Support for passwordless authentication methods and password-based authentication depending on your security requirements and Windows client version.
 
-MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!IMPORTANT]
-> After you enable this capability, your Arc-enabled machine will be Microsoft Entra joined. You can't join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension. Conditional Access is not supported with Windows Server with Microsoft Entra join extension in Azure Arc-enabled servers.
+> After you enable this capability, your Arc-enabled machine will be Microsoft Entra joined. You can't join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension. Conditional Access isn't supported with Windows Server with Microsoft Entra join extension in Azure Arc-enabled servers.
 
 ## Requirements
 
@@ -159,7 +158,7 @@ To assign user roles, you must have the [Virtual Machine Data Access Administrat
 - **Virtual Machine User Login:** Users who have this role assigned can sign in to an Azure virtual machine with regular user privileges.
 
 > [!NOTE]
-> Manually elevating a user to become a local administrator on the device by adding the user to a member of the local administrators group or by running `net localgroup administrators /add "AzureAD\UserUpn"` command isn't supported. You need to use roles in Azure to authorize sign in.
+> Manually elevating a user to become a local administrator on the device by adding the user to a member of the local administrators' group or by running `net localgroup administrators /add "AzureAD\UserUpn"` command isn't supported. You need to use roles in Azure to authorize sign in.
 
 > [!NOTE]
 >An Azure user who has the Owner or Contributor role assigned doesn't automatically have privileges to sign in to devices. The reason is to provide audited separation between the set of people who control virtual machines and the set of people who can access virtual machines.
@@ -342,7 +341,7 @@ If you're having problems with Azure role assignments, see [Troubleshoot Azure r
 
 ### Unauthorized client or password change required
 
-You might get the following error message when you initiate a remote desktop connection to your device: "Your credentials didn't work."
+You might get the following error message when you initiate a remote desktop connection to your device: "*Your credentials didn't work.*"
 
 ![Screenshot of the message that says your credentials did not work.](./media/howto-vm-sign-in-azure-ad-windows/your-credentials-did-not-work.png)
 
@@ -371,7 +370,7 @@ Try these solutions:
 There are multiple ways to resolve the issue:
 
 1.	Modify the HOSTS entry on client machine, add an A DNS record that points the correct device name (confirm from AAD Device record) to the IP of target machine. Use that device name in mstsc.
-2.	Check if the target machine is managed and if the hostname is set through Group Policy or MDM via the DNS Client PrimaryDnsSuffix value [ADMX_DnsClient Policy CSP | Microsoft Learn](/windows/client-management/mdm/policy-csp-admx-dnsclient#dns_primarydnssuffix). If this is set and is incorrect, it needs to be removed or set correctly. 
+2.	Check if the target machine is managed and if the hostname is set through Group Policy via the DNS Client PrimaryDnsSuffix value [ADMX_DnsClient Policy CSP | Microsoft Learn](/windows/client-management/mdm/policy-csp-admx-dnsclient#dns_primarydnssuffix). If this is set and is incorrect, it needs to be removed or set correctly. 
 3.	When customer requires to use FQDN to connect but AAD Device name is a short name, login to the target machine via local admin, add a “**Primary DNS Suffix**” for their domain suffix. Detailed instructions:
 - Navigate to **Advanced System Settings/System Properties** ->** Computer Name** tab -> select the "**Change**" button to rename the computer -> select "**More**..." under the existing computer name -> Type in your domain name and select **OK** -> Save and reboot.
 - Once it’s done, we can RDP with FQDN directly and no need to modify the HOSTS entry.
@@ -400,33 +399,6 @@ Support for biometric authentication with RDP was added in Windows 10 version 18
 
 Share your feedback about this feature or report problems with using it on the [Microsoft Entra feedback forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
 
-### Missing application
-
-If the Microsoft Azure Windows Virtual Machine Sign-in application is missing from Conditional Access, make sure that the application is in the tenant:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**.
-1. Remove the filters to see all applications, and search for **VM**. If you don't see **Microsoft Azure Windows Virtual Machine Sign-in** as a result, the service principal is missing from the tenant.
-
-
-Another way to verify it is via Graph PowerShell:
-
-1. [Install the Graph PowerShell SDK](/powershell/microsoftgraph/installation).
-1. Run `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All"`, followed by `"Application.ReadWrite.All"`.
-1. Sign in with a Global Administrator account.
-1. Consent to the permission prompt.
-1. Run `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Azure Windows VM Sign-In"'`.
-   - If this command results in no output and returns you to the PowerShell prompt, you can create the service principal with the following Graph PowerShell command:
-
-      `New-MgServicePrincipal -AppId 372140e0-b3b7-4226-8ef9-d57986796201`
-   - Successful output shows that the Microsoft Azure Windows Virtual Machine Sign-in app and its ID were created.
-1. Sign out of Graph PowerShell by using the `Disconnect-MgGraph` command.
-
-Some tenants might see the application named Azure Windows VM Sign-in instead of Microsoft Azure Windows Virtual Machine Sign-in. The application has the same Application ID of 372140e0-b3b7-4226-8ef9-d57986796201.
-
-### Unable to use this capability when require compliant device Conditional Access policy is enforced on Azure Windows VM Sign-in resource and you are connecting from a Windows Server device
-
-Windows Server device compliance configuration in Conditional Access policy isn't supported.
 
 ## Next steps
 

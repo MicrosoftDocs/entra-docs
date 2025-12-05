@@ -28,12 +28,12 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
    - When employees leave your organization and their user accounts are disabled or removed from Microsoft Entra ID, they no longer have access to your resources.
 - Use Conditional Access policy "phishing resistant MFA" and other signals such as user sign-in risk.
 - Use Azure Policy to deploy and audit policies to require Microsoft Entra sign in for Windows devices and to flag the use of unapproved local accounts on the devices.
-- Use Intune to automate and scale Microsoft Entra join with mobile device management (MDM) autoenrollment of Azure Windows VMs that are part of your virtual desktop infrastructure (VDI) deployments. MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
+- Use Intune to automate and scale Microsoft Entra join with mobile device management (MDM) autoenrollment of Azure Windows VMs that are part of your virtual desktop infrastructure (VDI) deployments. MDM autoenrollment requires Microsoft Entra ID P1 licenses.
 
 MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!IMPORTANT]
-> After you enable this capability, your Azure virtual machine will be Microsoft Entra joined. You can't join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension. Conditional Access is not supported with Windows Server with Microsoft Entra join extension in Azure Windows virtual machines.
+> After you enable this capability, your Azure virtual machine will be Microsoft Entra joined. You can't join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension. Conditional Access isn't supported with Windows Server with Microsoft Entra join extension in Azure Windows virtual machines.
 
 ## Requirements
 
@@ -145,7 +145,7 @@ To assign user roles, you must have the [Virtual Machine Data Access Administrat
 - **Virtual Machine User Login:** Users who have this role assigned can sign in to an Azure virtual machine with regular user privileges.
 
 > [!NOTE]
-> Manually elevating a user to become a local administrator on the device by adding the user to a member of the local administrators group or by running `net localgroup administrators /add "AzureAD\UserUpn"` command isn't supported. You need to use roles in Azure to authorize sign in.
+> Manually elevating a user to become a local administrator on the device by adding the user to a member of the local administrators' group or by running `net localgroup administrators /add "AzureAD\UserUpn"` command isn't supported. You need to use roles in Azure to authorize sign in.
 
 > [!NOTE]
 >An Azure user who has the Owner or Contributor role assigned doesn't automatically have privileges to sign in to devices. The reason is to provide audited separation between the set of people who control virtual machines and the set of people who can access virtual machines.
@@ -174,8 +174,8 @@ To use passwordless authentication for your Windows VMs in Azure, you need the W
 - Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
 - Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
 
-> [!Note]
-> When using the **web account to sign in to the remote computer** option, there is no requirement for the local device to be joined to a domain or Microsoft Entra ID.
+> [!NOTE]
+> When using the **web account to sign in to the remote computer** option, there's no requirement for the local device to be joined to a domain or Microsoft Entra ID.
 
 To connect to the remote computer:
 
@@ -360,11 +360,11 @@ Try these solutions:
 
   Sign in with the user account in a web browser. For instance, sign in to the [Azure portal](https://portal.azure.com) in a private browsing window. If you're prompted to change the password, set a new password. Then try connecting again.
 
-### AADSTS293004: The target-device identifier in the request xxx was not found in the tenant xxx
+### AADSTS293004: The target-device identifier in the request xxx wasn't found in the tenant xxx
 
 Cause:
 
-The computer name entered in mstsc does not match with any one of the "hostnames" attributes for target AADJ device. For example, AADJ device host name is the short name like device_1, but the computer name entered in mstsc is the FQDN like device_1.contoso.com.
+The computer name entered in mstsc doesn't match with any one of the "hostnames" attributes for target AADJ device. For example, AADJ device host name is the short name like device_1, but the computer name entered in mstsc is the FQDN like device_1.contoso.com.
 
 Try these solutions:
 
@@ -376,7 +376,7 @@ There are multiple ways to resolve the issue:
 - Once it’s done, we can RDP with FQDN directly and no need to modify the HOSTS entry.
 
 > [!NOTE]
-> In such case, when Primary DNS Suffix is added, the Device-Sync scheduled task will be triggered which adding the FQDN into AAD device "hostnames" attributes. This is why it will resolve the issue.
+> In such case, when Primary DNS Suffix is added, the Device-Sync scheduled task is triggered which adding the FQDN into AAD device "hostnames" attributes. This is why it resolves the issue.
 
 
 ### MFA sign-in method required
@@ -423,7 +423,7 @@ Another way to verify it is via Graph PowerShell:
 
 Some tenants might see the application named Azure Windows VM Sign-in instead of Microsoft Azure Windows Virtual Machine Sign-in. The application has the same Application ID of 372140e0-b3b7-4226-8ef9-d57986796201.
 
-### Unable to use this capability when require compliant device Conditional Access policy is enforced on Azure Windows VM Sign-in resource and you are connecting from a Windows Server device
+### Unable to use this capability when require compliant device Conditional Access policy is enforced on Azure Windows VM Sign-in resource and you're connecting from a Windows Server device
 
 Windows Server device compliance configuration in Conditional Access policy isn't supported.
 
