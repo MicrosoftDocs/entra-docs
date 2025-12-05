@@ -26,25 +26,19 @@ Let's review a few elements of the email so you understand how to use their capa
 
 ### Subject
 
-The subject line of the email follows this pattern:
-
-<username> invited you to collaborate with <primary domain> 
-
-For example, if Megan Bowen invited you from the domain Contoso, the subject would be: “Megan Bowen invited you to collaborate with Contoso”.
+The subject line of the email follows this pattern: `username` invited you to collaborate with `primary domain`.
+For example, if Megan Bowen invites you from the domain Contoso, the subject is: “Megan Bowen invited you to collaborate with Contoso”.
 
 ### From address
 
-The From address will follow this pattern:
+The From address follows this pattern: Microsoft Invitations on behalf of `primary domain` `<invites@<primary domain>.onmicrosoft.com>`.
+For example, if Megan Bowen invites you from Contoso, the From address is: "Microsoft Invitations on behalf of Contoso <invites@Contoso.onmicrosoft.com>."
 
-Microsoft Invitations on behalf of <primary domain> `<invites@<primary domain>.onmicrosoft.com>`
-
-For example, if Megan Bowen invited you from Contoso, the From address would be: "Microsoft Invitations on behalf of Contoso <invites@Contoso.onmicrosoft.com>."
-
-Prior to December 2025, invitations originated from Microsoft Invitations invites@microsoft. 
+Before December 2025, invitations originate from Microsoft Invitations invites@microsoft.
 
 > [!NOTE]
-> For the Azure service operated by [21Vianet in China](/azure/china/), the sender address is <primary domain>.partner.onmschina.cn.  
-> For [Microsoft Entra ID for government](/azure/azure-government/), the sender address is <primary domain>.onmicrosoft.us.
+> For the Azure service operated by [21Vianet in China](/azure/china/), the sender address is `<primary domain>.partner.onmschina.cn`.  
+> For [Microsoft Entra ID for government](/azure/azure-government/), the sender address is `<primary domain>.onmicrosoft.us`.
 
 ### Reply To
 
@@ -52,7 +46,7 @@ The reply-to email is set to the inviter's email when available, so that replyin
 
 ### Phishing warning
 
-The email starts with a brief phishing warning, advising users to accept only expected invitations. It’s good practice to let partners know in advance to expect your invitation.
+The email starts with a brief phishing warning, advising users to accept only expected invitations. It's good practice to let partners know in advance to expect your invitation.
 
 :::image type="content" source="media/invitation-email-elements/phishing-warning.png" alt-text="Screenshot of the phishing warning in the email.":::
 
@@ -76,14 +70,14 @@ The footer provides additional details about the invitation. If the organization
 
 ## How the language is determined
 
-The following settings determine the language presented to the guest user in the invitation email. The settings are listed in order of precedence. If a setting isn't configured, the next one in the list determines the language.
+The following settings determine the language presented to the guest user in the invitation email. The settings are listed in order of precedence. If you don't configure a setting, the next one in the list determines the language.
 
-- The **messageLanguage** property of the [invitedUserMessageInfo](/graph/api/resources/invitedusermessageinfo) object of the [Create invitation API](/graph/api/invitation-post) is used
+- The **messageLanguage** property of the [invitedUserMessageInfo](/graph/api/resources/invitedusermessageinfo) object of the [Create invitation API](/graph/api/invitation-post)
 -	The **preferredLanguage** property specified in the guest's [user object](/graph/api/resources/user)
 -	The **Notification language** set in the properties of the guest user's home tenant (for Microsoft Entra tenants only)
 -	The **Notification language** set in the properties of the resource tenant
 
-If none of these settings are configured, the language defaults to English (US).
+If you don't configure any of these settings, the language defaults to English (US).
 
 ## Next steps
 
