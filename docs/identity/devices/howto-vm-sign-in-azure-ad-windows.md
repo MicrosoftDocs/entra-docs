@@ -386,7 +386,7 @@ There are multiple ways to resolve the issue:
 - Once it’s done, we can RDP with FQDN directly and no need to modify the HOSTS entry.
 
 > [!NOTE]
-> In such case, when Primary DNS Suffix is added, the Device-Sync scheduled task is triggered which adding the FQDN into AAD device "hostnames" attributes. This is why it resolves the issue.
+> In such case, when Primary DNS Suffix is added, the Device-Sync scheduled task is triggered when adding the FQDN into AAD device "hostnames" attributes. This is why it resolves the issue.
 
 
 ### MFA sign-in method required
