@@ -88,7 +88,7 @@ To add multiple members to a group:
     :::image type="content" source="Media/bulk-operations/members-bulk-operations-import.png" alt-text="Screenshot of the Bulk operations menu on the Members tab with Import members selected.":::
 
 4. Select **Download csv template** to get a template file with the correct column header. The template contains one column: `Member object ID or user principal name [memberObjectIdOrUpn] Required`. Delete the example row and add the Object IDs or UPNs for the members you want to import, one per row. You can use either:
-   - **Object ID**: The GUID of the user (for example, `9832aad8-e4fe-496b-a604-95c6eF01ae75`)
+   - **Object ID**: The GUID of the user (for example, `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`)
    - **User principal name**: The UPN of the user (for example, `user@contoso.com`)
 
     :::image type="content" source="Media/bulk-operations/template-download-object-ids.png" alt-text="Screenshot of the CSV template for importing members showing the ObjectId column for pasting member IDs.":::
