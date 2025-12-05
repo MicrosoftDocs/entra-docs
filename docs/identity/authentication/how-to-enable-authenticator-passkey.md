@@ -29,8 +29,8 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 
     Platform | URL
     ---------|----
-    Android | `https://cable.ua5v.com`
-    iOS | `https://cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
+    Android | `cable.ua5v.com`
+    iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
   > [!NOTE]
   > Users can't use cross-device registration or authentication if you enable attestation. 

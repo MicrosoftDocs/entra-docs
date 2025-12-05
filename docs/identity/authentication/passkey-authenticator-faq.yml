@@ -50,8 +50,8 @@ sections:
 
           Platform | URL
           ---------|----
-          Android | `https://cable.ua5v.com`
-          iOS | `https://cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
+          Android | `cable.ua5v.com`
+          iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
           If your organization restricts Bluetooth usage, you can [permit Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments) to allow cross-device sign-in and registration of passkeys.
 

@@ -164,8 +164,8 @@ They need to be excluded from network proxies, interception, and other enterpris
 
 Platform | URL
 ---------|----
-Android | `https://cable.ua5v.com`
-iOS | `https://cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
+Android | `cable.ua5v.com`
+iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
 1. On **Security info**, when you add a passkey in Authenticator, tap **Having trouble**.
 
@@ -333,8 +333,8 @@ If you can't sign in to the Authenticator to register a passkey, you can registe
 
 If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
 
-- `https://cable.ua5v.com`
-- `https://cable.auth.com`
+- `cable.ua5v.com`
+- `cable.auth.com`
 
 If your organization restricts Bluetooth usage, you can permit Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators to allow cross-device registration of passkeys. For more information, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
