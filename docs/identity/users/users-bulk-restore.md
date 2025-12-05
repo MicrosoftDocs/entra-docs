@@ -38,12 +38,14 @@ The rows in a downloaded CSV template are as follows:
 Here's an example of a completed CSV file ready for upload:
 
 ```csv
-version:v1.0
 Object ID [objectId] Required
 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 11bb11bb-cc22-dd33-ee44-55ff55ff55ff
 22cc22cc-dd33-ee44-ff55-66aa66aa66aa
 ```
+
+> [!NOTE]
+> If your downloaded template includes a version number row (for example, `version:v1.0`) as the first row, keep it in place when uploading.
 
 ### Additional guidance
 

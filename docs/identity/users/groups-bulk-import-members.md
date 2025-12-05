@@ -44,10 +44,9 @@ The rows in a downloaded CSV template are:
 
 ### Example CSV file
 
-Here's an example of a completed CSV file ready for upload. This example uses user principal names (UPNs), but you can also use object IDs:
+Here's an example of a completed CSV file ready for upload, matching the current template format. This example uses user principal names (UPNs):
 
 ```csv
-version:v1.0
 Member object ID or user principal name [memberObjectIdOrUpn] Required
 alain@contoso.com
 isabella@contoso.com
@@ -55,15 +54,17 @@ joseph@contoso.com
 chaya@contoso.com
 ```
 
-Alternatively, if you prefer to use object IDs:
+Alternatively, you can use object IDs instead of UPNs:
 
 ```csv
-version:v1.0
 Member object ID or user principal name [memberObjectIdOrUpn] Required
 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 11bb11bb-cc22-dd33-ee44-55ff55ff55ff
 22cc22cc-dd33-ee44-ff55-66aa66aa66aa
 ```
+
+> [!NOTE]
+> If your downloaded template includes a version number row (for example, `version:v1.0`) as the first row, keep it in place when uploading.
 
 > [!TIP]
 > To find a user's object ID, go to **Identity** > **Users** > **All users**, select the user, and copy the **Object ID** from the user's profile page.

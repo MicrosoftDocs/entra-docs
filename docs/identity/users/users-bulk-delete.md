@@ -52,13 +52,15 @@ The rows in the example downloaded CSV template below are as follows:
 Here's an example of a completed CSV file ready for upload:
 
 ```csv
-version:v1.0
 User name [userPrincipalName] Required
 alain@contoso.com
 isabella@contoso.com
 joseph@contoso.com
 chaya@contoso.com
 ```
+
+> [!NOTE]
+> If your downloaded template includes a version number row (for example, `version:v1.0`) as the first row, keep it in place when uploading.
 
 ### Additional guidance for the CSV template
 

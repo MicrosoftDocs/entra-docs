@@ -46,12 +46,14 @@ The rows in a downloaded CSV template are:
 Here's an example of a completed CSV file ready for upload:
 
 ```csv
-version:v1.0
 Member object ID or user principal name [memberObjectIdOrUpn] Required
 alain@contoso.com
 isabella@contoso.com
 joseph@contoso.com
 ```
+
+> [!NOTE]
+> If your downloaded template includes a version number row (for example, `version:v1.0`) as the first row, keep it in place when uploading.
 
 > [!TIP]
 > To get a list of current group members that you can edit, use the **Download members** bulk operation first. This gives you a CSV file with all current members that you can modify to include only the members you want to remove.
