@@ -32,11 +32,9 @@ To download all groups in your organization:
 
     :::image type="content" source="media/bulk-operations/download-filename-dialog.png" alt-text="Screenshot of the Download groups dialog prompting for a filename before starting the bulk operation.":::
 
-4. Select the **Click here to view the status of each operation** link to navigate to the **Bulk operations** blade.
+4. A **Success!** notification appears when the job is submitted. The notification says "Bulk operation download groups submission successful. Click on the title for more information."
 
-    :::image type="content" source="media/bulk-operations/success-notification.png" alt-text="Screenshot of a success notification confirming the bulk groups download was submitted with a link to view status.":::
-
-5. Select the filename to download the CSV file containing all groups with the specified columns.
+5. Select the **Success!** notification title to open the job details, then select the filename to download the CSV file. A **Download successful** notification confirms when the file has been downloaded.
 
 ### Downloaded CSV file format
 
