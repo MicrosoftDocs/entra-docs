@@ -11,14 +11,8 @@ ms.date: 05/28/2025
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 
 ---
-# What is Transport Layer Security inspection? (Preview)
-The Transport Layer Security (TLS) protocol uses certificates at the transport layer to ensure the privacy, integrity, and authenticity of data exchanged between two communicating parties. While TLS secures legitimate traffic, malicious traffic like malware and data leakage attacks can still hide behind encryption. The Microsoft Entra Internet Access TLS inspection capability provides visibility into encrypted traffic by making content available for enhanced protection, such as malware detection, data loss prevention, prompt inspection, and other advanced security controls.
-
-> [!IMPORTANT]
-> The Transport Layer Security inspection feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. While in preview, use TLS inspection with care, especially in production environments, thoroughly evaluate before deployment.    
-
-This article gives an overview of the TLS inspection process.
+# What is Transport Layer Security inspection?
+The Transport Layer Security (TLS) protocol uses certificates at the transport layer to ensure the privacy, integrity, and authenticity of data exchanged between two communicating parties. While TLS secures legitimate traffic, malicious traffic like malware and data leakage attacks can still hide behind encryption. The Microsoft Entra Internet Access TLS inspection capability provides visibility into encrypted traffic by making content available for enhanced protection, such as malware detection, data loss prevention, prompt inspection, and other advanced security controls. This article gives an overview of the TLS inspection process.
 
 ## The TLS inspection process
 When you enable TLS inspection, Global Secure Access decrypts HTTPS requests at the service edge and applies security controls like full URL enhanced web content filtering policies. If no security control blocks the request, Global Secure Access encrypts and forwards the request to the destination.
@@ -63,7 +57,7 @@ To get started with TLS inspection, see [Configure Transport Layer Security](how
 |AES256-SHA |
 ## Known limitations
 TLS inspection has the following known limitations:
-- TLS inspection supports up to 100 policies, 1000 rules and 8000 destinations
+- TLS inspection supports up to 100 policies, 1000 rules, and 8000 destinations.
 - Make sure each certificate signing request (CSR) you generate has a unique certificate name and isn't reused. The signed certificate must stay valid for at least 6 months.
 - You can use only one active certificate at a time.
 - TLS inspection doesn't support Application-Layer Protocol Negotiation (ALPN) version 2. If a destination site requires HTTP/2, the upstream TLS handshake fails, and the site isn't accessible when TLS inspection is enabled.

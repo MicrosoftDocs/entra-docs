@@ -6,18 +6,18 @@
     href: overview-authentication.md
 - name: Tutorials
   items:
-  - name: Enable self-service password reset
-    href: tutorial-enable-sspr.md
   - name: Enable Microsoft Entra multifactor authentication
     href: tutorial-enable-azure-mfa.md
+  - name: Enable risk-based sign-in protection
+    href: tutorial-risk-based-sspr-mfa.md
+  - name: Enable self-service password reset
+    href: tutorial-enable-sspr.md
   - name: Enable cloud sync password writeback
     href: tutorial-enable-cloud-sync-sspr-writeback.md
   - name: Enable password writeback to on-premises
     href: tutorial-enable-sspr-writeback.md
   - name: Configure custom banned password lists
     href: tutorial-configure-custom-password-protection.md
-  - name: Enable risk-based sign-in protection
-    href: tutorial-risk-based-sspr-mfa.md
   - name: Enable security notifications
     href: tutorial-enable-security-notifications-for-audit-logs.md
   expanded: true
@@ -25,28 +25,27 @@
   items:
   - name: Authentication methods
     items:
-    - name: Accessibility
-      displayName: Accessibility, Special People, MFA Accessibility
-      href: ./accessibility/authentication-methods-accessibility.md
-    - name: Overview
-      href: concept-authentication-methods.md
-    - name: Manage
+    - name: Manage authentication methods
       href: concept-authentication-methods-manage.md
     - name: Temporary Access Pass
       href: howto-authentication-temporary-access-pass.md
-    - name: Passwordless
-      href: concept-authentication-passwordless.md
+    - name: Passkeys (FIDO2)
+      href: concept-authentication-passkeys-fido2.md
+    - name: Windows Hello for Business
+      href: concept-authentication-windows-hello.md
     - name: Microsoft Authenticator
       href: concept-authentication-authenticator-app.md
     - name: Certificates
       href: concept-certificate-based-authentication.md
+    - name: Platform Credential for macOS
+      href: concept-authentication-platform-credential-for-macos.md
     - name: OATH tokens
       href: concept-authentication-oath-tokens.md
-    - name: Phone options
+    - name: Voice call
       href: concept-authentication-phone-options.md
     - name: QR code
       href: concept-authentication-qr-code.md
-    - name: Text
+    - name: SMS
       href: howto-authentication-sms-signin.md
     - name: Email
       href: howto-authentication-use-email-signin.md
@@ -68,18 +67,12 @@
       href: concept-authentication-strength-external-users.md
     - name: Troubleshoot
       href: troubleshoot-authentication-strengths.md
-  - name: Self-service password reset
+  - name: Account recovery
     items:
-    - name: How password reset works
-      href: concept-sspr-howitworks.md
-    - name: On-premises integration
-      href: concept-sspr-writeback.md
-    - name: Policies
-      href: concept-sspr-policy.md
-    - name: Licenses
-      href: concept-sspr-licensing.md
-    - name: Deployment guide
-      href: concept-sspr-deploy.md
+    - name: Account recovery overview
+      href: concept-account-recovery-overview.md
+    - name: Account recovery FAQ
+      href: self-service-account-recovery.yml
   - name: Multifactor authentication
     items:
     - name: How MFA works
@@ -106,8 +99,24 @@
       href: /microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication
     - name: FAQ
       href: multi-factor-authentication-faq.yml
-  - name: Introduction to Microsoft Entra Kerberos
-    href: kerberos.md
+  - name: Microsoft Entra Kerberos
+    items:
+    - name: Introduction to Microsoft Entra Kerberos
+      href: kerberos.md
+    - name: FAQ
+      href: kerberos-faq.yml
+  - name: Self-service password reset
+    items:
+    - name: How password reset works
+      href: concept-sspr-howitworks.md
+    - name: On-premises integration
+      href: concept-sspr-writeback.md
+    - name: Policies
+      href: concept-sspr-policy.md
+    - name: Licenses
+      href: concept-sspr-licensing.md
+    - name: Deployment guide
+      href: concept-sspr-deploy.md
   - name: Password protection
     items:
     - name: Combined password policy check
@@ -129,9 +138,7 @@
     href: how-to-authentication-methods-manage.md
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
-  - name: Enable QR code auth method
-    href: how-to-authentication-qr-code.md
-  - name: Passwordless
+  - name: Plan phishing-resistant MFA
     items:
     - name: Plan phishing-resistant passwordless authentication
       items:
@@ -145,17 +152,23 @@
         href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
     - name: Passkey (FIDO2) authentication
       items:
-      - name: Enable passkeys for an organization
+      - name: Enable passkey profiles
+        href: how-to-authentication-passkey-profiles.md
+      - name: Enable device-bound passkeys 
         href: how-to-enable-passkey-fido2.md
+      - name: Enable synced passkeys
+        href: how-to-authentication-synced-passkeys.md
       - name: Register passkey
         href: how-to-register-passkey.md
       - name: Register passkey with a mobile device
         href: how-to-register-passkey-mobile.md
       - name: Sign in with passkey
         href: how-to-sign-in-passkey.md
+      - name: Synced passkeys FAQ
+        href: synced-passkey-faq.yml
       - name: Passkey (FIDO2) compatibility matrix
         href: concept-fido2-compatibility.md
-      - name: Become a FIDO2 security key vendor
+      - name: Become a passkey (FIDO2) vendor
         href: concept-fido2-hardware-vendor.md
     - name: Microsoft Authenticator
       items:
@@ -167,7 +180,7 @@
         href: how-to-register-passkey-authenticator.md
       - name: Sign in with passkeys in Authenticator
         href: how-to-sign-in-passkey-authenticator.md
-      - name: Passkeys in Authenticator FAQs
+      - name: Passkeys in Authenticator FAQ
         href: passkey-authenticator-faq.yml
       - name: Enable Authenticator authentication method
         href: howto-authentication-passwordless-phone.md
@@ -191,30 +204,28 @@
         href: howto-authentication-passwordless-troubleshoot.md
     - name: Certificate-based authentication
       items:
-      - name: Microsoft Entra CBA
-        items:
-        - name: Overview
-          href: concept-certificate-based-authentication.md
-        - name: How Microsoft Entra CBA works
-          href: concept-certificate-based-authentication-technical-deep-dive.md
-        - name: Configure Microsoft Entra CBA
-          href: how-to-certificate-based-authentication.md
-        - name: Configure certificate authorities
-          href: how-to-configure-certificate-authorities.md
-        - name: Certificate revocation list 
-          href: concept-certificate-based-authentication-certificate-revocation-list.md
-        - name: Windows smart card sign-in
-          href: concept-certificate-based-authentication-smartcard.md
-        - name: Apple devices
-          href: concept-certificate-based-authentication-mobile-ios.md
-        - name: Android devices
-          href: concept-certificate-based-authentication-mobile-android.md
-        - name: Certificate user IDs
-          href: concept-certificate-based-authentication-certificateuserids.md
-        - name: Migrate federated users
-          href: concept-certificate-based-authentication-migration.md
-        - name: FAQ
-          href: certificate-based-authentication-faq.yml
+      - name: What is Microsoft Entra CBA?
+        href: concept-certificate-based-authentication.md
+      - name: How Microsoft Entra CBA works
+        href: concept-certificate-based-authentication-technical-deep-dive.md
+      - name: Configure Microsoft Entra CBA
+        href: how-to-certificate-based-authentication.md
+      - name: Configure certificate authorities
+        href: how-to-configure-certificate-authorities.md
+      - name: Certificate revocation list 
+        href: concept-certificate-based-authentication-certificate-revocation-list.md
+      - name: Windows smart card sign-in
+        href: concept-certificate-based-authentication-smartcard.md
+      - name: Apple devices
+        href: concept-certificate-based-authentication-mobile-ios.md
+      - name: Android devices
+        href: concept-certificate-based-authentication-mobile-android.md
+      - name: Certificate user IDs
+        href: concept-certificate-based-authentication-certificateuserids.md
+      - name: Migrate federated users
+        href: concept-certificate-based-authentication-migration.md
+      - name: FAQ
+        href: certificate-based-authentication-faq.yml
       - name: Federated CBA with Microsoft Entra ID
         items:
         - name: Configure CBA with federation
@@ -223,34 +234,14 @@
           href: certificate-based-authentication-federation-android.md
         - name: Use on iOS Devices
           href: certificate-based-authentication-federation-ios.md
-  - name: Use SMS-based authentication
+  - name: Account recovery
     items:
-    - name: Manage
-      href: howto-authentication-sms-signin.md
-    - name: Supported apps for SMS-based authentication
-      href: how-to-authentication-sms-supported-apps.md
-    - name: Two-way SMS unsupported
-      href: how-to-authentication-two-way-sms-unsupported.md
-  - name: Use email address sign-in
-    href: howto-authentication-use-email-signin.md
-  - name: Use Microsoft managed settings
-    href: concept-authentication-default-enablement.md
-  - name: Security info registration
-    items:
-    - name: Combined MFA and SSPR registration
-      href: howto-registration-mfa-sspr-combined.md
-    - name: Troubleshoot combined registration
-      href: howto-registration-mfa-sspr-combined-troubleshoot.md
-    - name: Run a registration campaign
-      href: how-to-mfa-registration-campaign.md
-  - name: Self-service password reset
-    items:
-    - name: User customization options
-      href: howto-sspr-customization.md
-    - name: Preregister authentication data
-      href: howto-sspr-authenticationdata.md
-    - name: SSPR for Windows clients
-      href: howto-sspr-windows.md
+    - name: Admin guide
+      href: how-to-account-recovery-enable.md
+    - name: Cost savings estimator
+      href: how-to-account-recovery-cost-savings-estimator.md
+    - name: User guide
+      href: how-to-account-recovery-for-users.md
   - name: Microsoft Entra multifactor authentication
     items:
     - name: Deployment guide
@@ -299,6 +290,36 @@
         href: howto-mfa-nps-extension-rdg.md
       - name: VPN
         href: howto-mfa-nps-extension-vpn.md
+  - name: Enable QR code auth method
+    href: how-to-authentication-qr-code.md
+  - name: Use SMS-based authentication
+    items:
+    - name: Manage
+      href: howto-authentication-sms-signin.md
+    - name: Supported apps for SMS-based authentication
+      href: how-to-authentication-sms-supported-apps.md
+    - name: Two-way SMS unsupported
+      href: how-to-authentication-two-way-sms-unsupported.md
+  - name: Use email address sign-in
+    href: howto-authentication-use-email-signin.md
+  - name: Use Microsoft managed settings
+    href: concept-authentication-default-enablement.md
+  - name: Security info registration
+    items:
+    - name: Combined MFA and SSPR registration
+      href: howto-registration-mfa-sspr-combined.md
+    - name: Troubleshoot combined registration
+      href: howto-registration-mfa-sspr-combined-troubleshoot.md
+    - name: Run a registration campaign
+      href: how-to-mfa-registration-campaign.md
+  - name: Self-service password reset
+    items:
+    - name: User customization options
+      href: howto-sspr-customization.md
+    - name: Preregister authentication data
+      href: howto-sspr-authenticationdata.md
+    - name: SSPR for Windows clients
+      href: howto-sspr-windows.md
   - name: On-premises password protection
     items:
     - name: Plan and deploy
@@ -351,6 +372,9 @@
       href: multi-factor-authentication-faq.yml
 - name: Reference
   items:
+  - name: Accessibility
+    displayName: Accessibility, Special People, MFA Accessibility
+    href: ./accessibility/authentication-methods-accessibility.md
   - name: MFA user guide
     href: https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc
   - name: Code samples

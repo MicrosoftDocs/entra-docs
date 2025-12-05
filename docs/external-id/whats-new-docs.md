@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 10/01/2025
+ms.date: 12/03/2025
 ms.service: entra-external-id
 ms.topic: whats-new
 ms.author: cmulligan
@@ -17,28 +17,34 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 # [External ID in external tenants](#tab/external-tenants)
 
+## November 2025
+
+### New article
+
+- [Configure Akamai WAF with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md)
+
+### Updated articles
+
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added Security Store features
+- [Configure Cloudflare Web Application Firewall with Microsoft Entra External ID](customers/how-to-configure-waf-integration.md) - Updated Cloudflare integration steps
+- [Set up Azure Monitor in external tenants](customers/how-to-azure-monitor.md) - Updated Azure Monitor setup steps
+- [Multifactor authentication in external tenants](customers/concept-multifactor-authentication-customers.md) - Added MFA with Conditional Access authentication context
+
+## October 2025
+
+### New article
+
+- [Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection](customers/how-to-integrate-fraud-protection.md)
+
+### Updated articles
+
+- [Identity providers for external tenants](customers/concept-authentication-methods-customers.md) - Added domain acceleration information
+
 ## September 2025
 
 ### Updated articles
 
 - [Add OpenID Connect as an external identity provider](customers/how-to-custom-oidc-federation-customers.md) - Multiple editorial updates
-
-## August 2025
-
-### Updated articles
-
-- [Regional opt-in for MFA telephony verification with external tenants (preview)](customers/how-to-region-code-opt-in.md) - Rest API updates
-
-## July 2025
-
-### New article
-
-- [Supported features in workforce and external tenants](customers/how-to-add-enterprise-application.md)
-
-### Updated articles
-
-- [Register a SAML app in your external tenant](customers/how-to-register-saml-app.md) - Enterprise applications and SAML SSO are generally available
-- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added enterprise applications update
 
 # [External ID in workforce tenants](#tab/workforce-tenants)
 

@@ -162,7 +162,7 @@ After you set up your Cloudflare account, connect it to Microsoft Entra External
 
   :::image type="content" source="media/how-to-configure-cloudflare-integration/choose-waf.png" alt-text="Screenshot of the choose WAF provider page.":::
 
-6. Under **WAF provider configuration**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
+6. Under **Configure Cloudflare WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
     - **Configuration name**: A name for the WAF configuration.
     - **API token**: The API token from your Cloudflare dashboard.
     - **Zone ID**: The Zone ID for your domain, from your Cloudflare dashboard.

@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: justinha
   ms.author: justinha
-  ms.date: 01/29/2023
+  ms.date: 11/05/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -25,34 +25,50 @@ landingContent:
         links:
           - text: What is authentication?
             url: overview-authentication.md
-          - text: What are authentication methods?
+          - text: Authentication methods in Microsoft Entra ID
             url: concept-authentication-methods.md
-          - text: Security information registration
-            url: concept-registration-mfa-sspr-combined.md
-          - text: What is passwordless?
-            url: concept-authentication-passwordless.md
 
   # Card
-  - title: Deploy self-service password reset
+  - title: Deploy phishing-resistant authentication
     linkLists:
       - linkListType: concept
         links:
-          - text: How self-service password reset works
-            url: concept-sspr-howitworks.md
-          - text: How password writeback works
-            url: concept-sspr-writeback.md
-      - linkListType: tutorial
-        links:
-          - text: Enable self-service password reset
-            url: tutorial-enable-sspr.md
-          - text: Enable password writeback to on-premises
-            url: tutorial-enable-sspr-writeback.md
+          - text: Passkeys (FIDO2)
+            url: concept-authentication-passkeys-fido2.md
+          - text: Passkeys in Microsoft Authenticator
+            url: concept-authentication-authenticator-app.md
+          - text: Windows Hello for Business
+            url: concept-authentication-windows-hello.md
+          - text: Certificate-based authentication
+            url: concept-certificate-based-authentication.md
+          - text: Platform SSO 
+            url: /intune/intune-service/configuration/platform-sso-macos
       - linkListType: deploy
         links:
-          - text: Deployment guide for self-service password reset
-            url: howto-sspr-deployment.md
-          - text: Enable password reset from the Windows login screen
-            url: howto-sspr-windows.md
+          - text: Get started with phishing-resistant MFA
+            url: how-to-plan-prerequisites-phishing-resistant-passwordless-authentication.md
+      - linkListType: how-to-guide
+        links:
+          - text: Enable passkeys (FIDO2) for your organization
+            url: how-to-enable-passkey-fido2.md
+          - text: Enable certificate-based authentication
+            url: how-to-certificate-based-authentication.md
+
+  # Card
+  - title: Microsoft Entra account recovery
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: What is Microsoft Entra account recovery?
+            url: concept-account-recovery-overview.md
+          - text: FAQs about Microsoft Entra account recovery
+            url: self-service-account-recovery.yml
+      - linkListType: how-to-guide
+        links:
+          - text: Configure Microsoft Entra account recovery
+            url: how-to-account-recovery-enable.md
+          - text: How users can recover their accounts
+            url: how-to-account-recovery-for-users.md
 
   # Card
   - title: Enable Microsoft Entra multifactor authentication
@@ -71,23 +87,5 @@ landingContent:
         links:
           - text: Deployment guide for Microsoft Entra multifactor authentication
             url: howto-mfa-getstarted.md
-          - text: Use NPS extension to integrate on-premises applications
-            url: howto-mfa-nps-extension.md
 
-  # Card
-  - title: Deploy Microsoft Entra password protection
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Eliminate weak passwords in the cloud
-            url: concept-password-ban-bad.md
-          - text: Eliminate weak passwords on-premises
-            url: concept-password-ban-bad-on-premises.md
-      - linkListType: get-started
-        links:
-          - text: Configure the banned password list
-            url: ./tutorial-configure-custom-password-protection.md
-      - linkListType: how-to-guide
-        links:
-          - text: Deploy Microsoft Entra password protection
-            url: howto-password-ban-bad-on-premises-deploy.md
+

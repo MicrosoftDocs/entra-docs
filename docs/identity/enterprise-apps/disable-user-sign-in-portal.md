@@ -19,7 +19,7 @@ zone_pivot_groups: enterprise-apps-all
 ---
 # Disable user sign-in for an application
 
-There might be situations while configuring or managing an application where you don't want tokens to be issued for an application. Or, you might want to block an application that you don't want your employees to try to access, like the deprecated Azure AD PowerShell modules (AppID 1b730954-1685-4b74-9bfd-dac224a7b894). To block user access to an application, you can disable user sign-in for the application, which prevents all tokens from being issued for that application.
+There might be situations while configuring or managing an application where you don't want tokens to be issued for an application. Or, you might want to block an application that you don't want your employees to try to access. To block user access to an application, you can disable user sign-in for the application, which prevents all tokens from being issued for that application.
 
 In this article, you learn how to prevent users from signing in to an application in Microsoft Entra ID through both the Microsoft Entra admin center and PowerShell. If you're looking for how to block specific users from accessing an application, use [user or group assignment](./assign-user-or-group-access-portal.md).
 
@@ -27,7 +27,7 @@ In this article, you learn how to prevent users from signing in to an applicatio
 
 To disable user sign-in, you need:
 
-- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: 
   - Cloud Application Administrator
   - Application Administrator

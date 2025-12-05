@@ -1,6 +1,6 @@
 ---
-title: Request access packages on-behalf-of other users
-description: This article describes how to set up an access package so that managers can approve, or deny, requests for users reporting to them.
+title: Request access packages on-behalf-of other identities
+description: This article describes how to set up an access package so that managers can approve, or deny, requests for identities they own, sponsor, or are reporting to them.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -12,13 +12,11 @@ ms.date: 06/18/2025
 ---
 
 
-# Request access package on-behalf-of other users
+# Request access package on-behalf-of other identities
 
-Entitlement Management enables admins to create access packages to manage their organization’s resources. Admins can either directly assign users to an access package, or configure an access package policy that allows users and group members to request access. This option to create self-service processes is useful, especially as organizations scale and hire more employees. However, new employees joining an organization might not always know what they need access to, or how they can request access. In this case, a new employee would likely rely on their manager to guide them through the access request process.
+Entitlement Management enables admins to create access packages to manage their organization’s resources. Admins can either directly assign identities to an access package, or configure an access package policy that allows users and group members to request access. The option to create self-service processes is useful, especially as organizations scale and hire more employees. However, new employees joining an organization might not always know what they need access to, or how they can request access. In this case, a new employee would likely rely on their manager to guide them through the access request process. Instead of having new employees navigate the request process, managers can request access packages for their employees, making onboarding faster and more seamless. To enable this functionality for managers, admins can select an option when setting up an access package policy that allows managers to request access on their employees' behalf.
 
-Instead of having new employees navigate the request process, managers can request access packages for their employees, making onboarding faster and more seamless. To enable this functionality for managers, admins can select an option when setting up an access package policy that allows managers to request access on their employees' behalf.
-
-Expanding self-service request flows to allow requests on behalf of employees ensures that users have timely access to necessary resources, and increases productivity.
+Expanding self-service request flows to allow requests on behalf of identities ensures that identities have timely access to necessary resources, and increases productivity.
 
 
 ## Scenarios for managers requesting on behalf of employees
@@ -31,9 +29,13 @@ Instead of conducting numerous ad-hoc training sessions to ensure new hires know
 
 Now, managers are empowered to request access on behalf of new hires who haven't gone through the IT training. This ensures that employees have the tools and resources necessary to start on day one, and increases new hire satisfaction as they don’t need to wait for access or navigate the request process on their own.
 
+## Scenarios for requesting on behalf of agent identities (Preview)
+
+The ability for administrators to request on behalf of agent identities they own or sponsor is also another key scenario for requesting access packages on behalf of other identities. With the ability to request an access package for an agent identity, You're able to ensure that agents working on behalf of you in your environment has the access to what they need to do their job, but nothing further. For more information on managing agents, see: [Manage Agents in Microsoft Entra (Preview)](../agent-id/identity-platform/manage-agent.md).
+
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
+[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
 
 ## Configure an access package policy allowing on behalf of requests
 
@@ -110,6 +112,19 @@ With the setting enabled, do the following steps to manage your team assignments
 
 1. On the assignments page, you can see a list of their current access package assignments. You can also select **Remove access** to end that specific access package assignment for the user.
     :::image type="content" source="media/entitlement-management-request-behalf/manage-team-reviews.png" alt-text="Screenshot of managing team in the my access portal." lightbox="media/entitlement-management-request-behalf/manage-team-reviews.png":::
+
+
+## Request an access package on behalf of an agent identity (Preview)
+
+As the owner or sponsor of an agent identity, you can request an access package for a direct report by doing the following steps:
+
+1. Sign in to the My Access portal at [https://myaccess.microsoft.com](https://myaccess.microsoft.com).
+
+1. On the My Access Portal page, select **Access packages**.
+
+1. On the Access packages page, locate the access package you want to request for an agent identity and select **Request**.
+    
+1. On the Request pane under **Request details**, select requesting for **Sponsored agent**.
 
 ## Next steps
 

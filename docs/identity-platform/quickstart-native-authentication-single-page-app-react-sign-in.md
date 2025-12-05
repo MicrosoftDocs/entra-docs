@@ -7,11 +7,11 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 09/05/2025
+ms.date: 11/17/2025
 #Customer intent: As a developer, I want to configure a sample React single-page application using native authentication so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
 ---
 
-# Quickstart: Sign in users in a React single-page app by using native authentication (preview)
+# Quickstart: Sign in users in a React single-page app by using native authentication
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -19,7 +19,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 
 ## Prerequisites
 
-** An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
@@ -106,6 +106,10 @@ You've now configured the sample app and it's ready to run.
 1. To sign up for an account, select **Sign Up**, then follow the prompts.
 
 1. After you sign up, test sign-in and password reset by selecting **Sign In** and **Reset Password** respectively.
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Related content
 

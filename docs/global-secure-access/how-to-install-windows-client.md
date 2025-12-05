@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/16/2025
+ms.date: 11/19/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -58,16 +58,13 @@ This section explains how to use Intune to install the Global Secure Access clie
 
 Package the installation script into a `.intunewin` file.
 
-1. Save the following PowerShell script to your device. Put the PowerShell script and the Global Secure Access `.exe` installer into a folder.  
+1. Save the following PowerShell script to your device. Put the PowerShell script and the Global Secure Access `.exe` installer into a folder.
+
+> [!NOTE]
+> The name of the `.exe` file must be `GlobalSecureAccessClient.exe` for the PowerShell installation script to work properly. If you modify the name of the `.exe` file to something else, you must also modify the $installerPath in the PowerShell script.
 
 > [!NOTE]
 > The PowerShell installation script installs the Global Secure Access client, sets the `IPv4Preferred` registry key to prefer IPv4 over IPv6 traffic, and prompts for a reboot for the registry key change to take effect.
-
-> [!TIP]
-> Select to expand the PowerShell script.
-
-<details>
-  <summary>PowerShell installation script</summary>
 
 ```powershell
 # Create log directory and log helper
@@ -163,8 +160,6 @@ catch {
 }
 ```
 
-</details>
-
 2. Go to the [Microsoft Win32 Content Prep Tool](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool). Select **IntuneWinAppUtil.exe**.
 
    :::image type="content" source="media/how-to-install-windows-client/install-content-prep-tool.png" alt-text="Screenshot of prep tool install file selection.":::
@@ -212,7 +207,7 @@ Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/
 1. On the **Program** tab, configure these fields:
 
    - **Install command**: Use the original name of the `.ps1` file for `powershell.exe -ExecutionPolicy Bypass -File OriginalNameOfFile.ps1`.
-   - **Uninstall command**: Use the original name of the `.exe` file for `"OriginalNameOfFile.exe" /uninstall /quiet /norestart`.
+   - **Uninstall command**: `"GlobalSecureAccessClient.exe" /uninstall /quiet /norestart`.
    - **Allow available uninstall**: Select **No**.
    - **Install behavior**: Select **System**.
    - **Device restart behavior**: Select **Determine behavior based on return codes**.

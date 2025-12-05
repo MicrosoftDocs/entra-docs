@@ -60,7 +60,7 @@ items:
       href: ./conditional-access-agent-optimization-logs-metrics.md
     - name: Phased rollout
       href: ./conditional-access-agent-optimization-phased-rollout.md
-  - name: Access Review Assistant (Preview)
+  - name: Access Review Agent (Preview)
     items: 
     - name: Get started (Preview)
       href: access-review-agent.md

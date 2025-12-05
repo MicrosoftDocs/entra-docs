@@ -51,6 +51,46 @@ sections:
         answer: |
           The connection fails if TLS inspection terminates traffic from applications that use certificate pinning. To ensure your applications work as expected, create a custom bypass rule in the traffic forwarding profile to exclude traffic from these applications from Global Secure Access. You can perform this operation as part of custom bypass in the [Internet access forwarding profile](/mem/intune/protect/compliance-custom-script). We're working on custom TLS rules to let you acquire traffic and bypass TLS inspection only.      
 
+      - question: What destinations are included in the system bypass?
+        answer: |
+          System bypass list includes known destinations that use certificate pinning or have other incompatibilities with TLS inspection. 
+          These destinations are automatically excluded from TLS inspection to ensure proper functionality. The system bypass list is regularly updated to include new destinations as they are identified. A few examples of destinations in the system bypass list include:
+          - Adobe CRS
+          - AplusPC UCC Regions
+          - App Center
+          - Apple ESS Push Services
+          - Azure Diagnostics
+          - Azure IoT Hub
+          - Azure Management
+          - Azure WAN Listener
+          - Centanet
+          - Central Plaza e-Order
+          - Cisco Umbrella Proxy
+          - DocuSign
+          - Dropbox
+          - e-Szigno
+          - Global Secure Access Diagnostics
+          - Guardz Device Agent
+          - iCloud
+          - Likr Load Balancer
+          - MediaTek
+          - Microsigner
+          - Microsoft Graph
+          - Microsoft Login Services
+          - O2 Moje Login
+          - OpenSpace Solutions
+          - Power BI External
+          - Signal
+          - TeamViewer
+          - Visual Studio Telemetry
+          - Webex
+          - WhatsApp
+          - Windows Update
+          - ZDX Cloud
+          - Zscaler Beta
+          - Zscaler Two
+          - Zoom
+
       - question: Is TLS 1.3 supported? 
         answer: Microsoft Entra TLS inspection enables TLS 1.2 and TLS 1.3 by default. The highest mutually supported version is selected for the session, from the client to Global Secure Access and from Global Secure Access to the destinations. Microsoft Entra doesn't support TLS 1.3 with Encrypted Client Hello (ECH) because the Server Name Indication (SNI) is encrypted, which prevents Global Secure Access from creating the corresponding leaf certificates for TLS termination.
 

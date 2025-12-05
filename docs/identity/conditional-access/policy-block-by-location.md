@@ -45,7 +45,7 @@ More information about the location condition in Conditional Access can be found
    1. Under **Include**, select **Selected networks and locations**
       1. Select the blocked location you created for your organization.
       1. Click **Select**.
-1. Under **Access controls** > select **Block Access**, and click **Select**.
+1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 

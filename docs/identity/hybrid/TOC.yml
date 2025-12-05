@@ -423,6 +423,8 @@
               href: connect/how-to-connect-sync-recycle-bin.md
             - name: Configure the AD DS Connector account
               href: connect/how-to-connect-configure-ad-ds-connector-account.md
+            - name: Authenticate to Microsoft Entra ID using application identity
+              href: connect/authenticate-application-id.md
             - name: Change the Azure ADSync service account password
               href: connect/how-to-connect-sync-change-serviceacct-pass.md
             - name: Change the Microsoft Entra Connector account password

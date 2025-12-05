@@ -4,7 +4,7 @@ description: SharePoint Backup Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 10/16/2025
+ms.date: 11/19/2025
 ms.custom: include file
 ---
 
@@ -22,8 +22,8 @@ Assign the SharePoint Backup Administrator role to users who need to do the foll
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.backup/oneDriveForBusinessProtectionPolicies/allProperties/allTasks | Create and manage OneDrive protection policy in Microsoft 365 Backup |
 > | microsoft.backup/oneDriveForBusinessRestoreSessions/allProperties/allTasks | Read and configure restore session for OneDrive in Microsoft 365 Backup |
-> | microsoft.backup/restorePoints/sites/allProperties/allTasks | Manage all restore points associated with selected SharePoint sites in M365 Backup |
-> | microsoft.backup/restorePoints/userDrives/allProperties/allTasks | Manage all restore points associated with selected OneDrive accounts in M365 Backup |
+> | microsoft.backup/restorePoints/sites/allProperties/allTasks | Manage all restore points associated with selected SharePoint sites in Microsoft 365 Backup |
+> | microsoft.backup/restorePoints/userDrives/allProperties/allTasks | Manage all restore points associated with selected OneDrive accounts in Microsoft 365 Backup |
 > | microsoft.backup/sharePointProtectionPolicies/allProperties/allTasks | Create and manage SharePoint protection policy in Microsoft 365 Backup |
 > | microsoft.backup/sharePointRestoreSessions/allProperties/allTasks | Read and configure restore session for SharePoint in Microsoft 365 Backup |
 > | microsoft.backup/siteProtectionUnits/allProperties/allTasks | Manage sites added to SharePoint protection policy in Microsoft 365 Backup |

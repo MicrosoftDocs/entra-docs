@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following step:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://www.bistrainer.com/sso/biscr.cfm`
+    `https://www.bissafety.app/sso/biscr.cfm`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -99,7 +99,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure BIS SSO
 
-To configure single sign-on on **BIS** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [BIS support team](mailto:help@bistrainer.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **BIS** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [BIS support team](mailto:help@bissafety.app). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create BIS test user
 

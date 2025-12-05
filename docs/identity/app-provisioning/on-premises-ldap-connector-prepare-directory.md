@@ -56,7 +56,7 @@ On the Windows Server virtual machine, you're using to test the LDAP connector r
 ### Grant the NETWORK SERVICE read permissions to the SSL certificate
 In order to enable SSL to work, you need to grant the NETWORK SERVICE read permissions to our newly created certificate. To grant permissions, use the following steps.
 
- 1. Navigate to **C:\Program Data\Microsoft\Crypto\Keys**.
+ 1. Navigate to **C:\ProgramData\Microsoft\Crypto\Keys**.
  2. Right-select on the system file located here. It will be a guid. This container is storing our certificate.
  3. Select properties.
  4. At the top, select the **Security** tab.
@@ -66,6 +66,8 @@ In order to enable SSL to work, you need to grant the NETWORK SERVICE read permi
  8. Select **NETWORK SERVICE** from the list and select **OK**.
  9. Select **Ok**.
  10. Ensure the Network service account has read and read & execute permissions and select **Apply** and **OK**.
+
+For more information, see [Configuring LDAP over SSL Requirements for AD LDS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc725767(v=ws.10)).
 
 ### Verify SSL connectivity with AD LDS
 Now that we have configured the certificate and granted the network service account permissions, test the connectivity to verify that it's working.
