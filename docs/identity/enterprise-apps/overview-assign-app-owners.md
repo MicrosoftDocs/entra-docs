@@ -25,6 +25,9 @@ As an owner of an enterprise application in Microsoft Entra ID, a user can manag
 > [!NOTE]
 > The application may have more permissions than the owner, and thus would be an elevation of privilege over what the owner has access to as a user. An application owner can create or update users or other objects while impersonating the application. The elevation of privilege to owners can raise a security concern in some cases depending on the application's permissions.
 
+> [!NOTE]
+> Currently due to background applications and service principals objects settings dependencies, the application owners added by other than Entra admin center means (Graph API, PowerShell), will not be able to manage some enterprise applications settings like attributes and claims, modify configured SAML certificates properties or token encryption settings, etc. 
+
 ## FAQ
 
 **What do you do with applications where the owner is no longer with the organization?**
