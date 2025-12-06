@@ -150,6 +150,9 @@ To grant an app an exception to the restriction blocking custom identifier URIs 
     POST https://graph.microsoft.com/beta/policies/appManagementPolicies
 
     {
+        "displayName": "Identifier URI exemption policy",
+        "description": "Policy granting an exemption to the nonDefaultUriAddition restriction",
+        "isEnabled": true,
         "restrictions": {
             "applicationRestrictions": {
                 "identifierUris": {
@@ -355,6 +358,9 @@ Sometimes, you aren't ready to apply a restriction to your entire tenant, but st
     POST https://graph.microsoft.com/beta/policies/appManagementPolicies
 
     {
+        "displayName": "Custom password policy",
+        "description": "Policy that enforces the custom password restriction",
+        "isEnabled": true,
         "restrictions": {
             "passwordCredentials": [
                 {
@@ -450,8 +456,8 @@ This means the properties of all four restrictions should match. Or, all four re
 
 The **Restrict max certificate lifetime** restriction expects all both of the following restrictions to be in the same state:
 
-- The `asymmetricKeyLifetime` restriction in the `applicationRestrictions.passwordCredentials` collection
-- The `asymmetricKeyLifetime` restriction in the `servicePrincipalRestrictions.passwordCredentials` collection
+- The `asymmetricKeyLifetime` restriction in the `applicationRestrictions.keyCredentials` collection
+- The `asymmetricKeyLifetime` restriction in the `servicePrincipalRestrictions.keyCredentials` collection
 
 This means the properties of both restrictions should match. Or, both restrictions shouldn't be present in the policy.
 
