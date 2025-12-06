@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 10/07/2025
+ms.date: 12/05/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -45,17 +45,17 @@ To access the dashboard:
 
 ## Global Secure Access snapshot
 
-This widget provides a summary of how many users and devices are using the service and how many applications were secured through the service. 
+This widget provides a summary of how many users and devices use the service and how many applications the service secured. 
 
 - **Users**: The number of distinct users seen in the last 24 hours. The data uses the *user principal name (UPN)*.
 - **Devices**: The number of distinct devices seen in the last 24 hours. The data uses the *device ID*.
 - **Workloads**: The number of distinct destinations seen in the last 24 hours. The data uses fully qualified domain names (FQDNs) and IP addresses.
 
-![Screenshot of the Global Secure Access snapshot widget.](media/concept-traffic-dashboard/snapshot.png)
+:::image type="content" source="media/concept-traffic-dashboard/snapshot-widget.png" alt-text="Screenshot of the Global Secure Access snapshot widget.":::
 
 The **Global Secure Access snapshot** defaults to showing all types of traffic, but you can change the filter to show Internet Access, Private Access, or Microsoft traffic.
 
-![Screenshot of the Global Secure Access snapshot widget with the filter open.](media/concept-traffic-dashboard/snapshot-filter.png)
+:::image type="content" source="media/concept-traffic-dashboard/snapshot-filter.png" alt-text="Screenshot of the Global Secure Access snapshot widget with the filter open.":::
 
 ## Alerts and notifications (preview)
 
@@ -68,13 +68,13 @@ This widget provides the following alerts:
 - **Token and device inconsistency**: The original token is used on a different device.
 - **Web content blocked**: Access to the website is blocked.
 
-![Screenshot of the alerts and notifications widget showing two alert types.](media/concept-traffic-dashboard/dashboard-alerts-notifications.png)
+:::image type="content" source="media/concept-traffic-dashboard/dashboard-alerts-notifications.png" alt-text="Screenshot of the alerts and notifications widget showing two alert types.":::
 
-Select the link next to the alert name to navigate to a related page with additional information.
+Select the link next to the alert name to go to a related page with more information.
 
 ## Usage profiling (preview)
 
-The **Usage profiling** widget displays usage patterns over a selected period of time.
+The **Usage profiling** widget shows usage patterns over a selected period of time.
 
 Select the **Display by** filter to view the following usage categories:
 
@@ -86,7 +86,7 @@ Select the **Display by** filter to view the following usage categories:
 
 The time period defaults to the previous month, but you can change the time period to the last 24 hours or last week.
 
-![Screenshot of the usage profiling widget.](media/concept-traffic-dashboard/dashboard-usage-profiling.png)
+:::image type="content" source="media/concept-traffic-dashboard/dashboard-usage-profiling.png" alt-text="Screenshot of the usage profiling widget.":::
 
 Select the **View details** button or select a particular point on the graph to view the usage profile details on the selected data set. Select a date on the usage profile details to view the traffic logs for that date.
 
@@ -100,7 +100,7 @@ The top-visited destinations defaults to all types of traffic and sorts by the n
 - **Bytes sent**: The destinations (IP address) with the highest number of bytes sent, showing the total number of bytes sent in the last 24 hours.
 - **Bytes received**: The destinations (IP address) with the highest number of bytes received, showing the total number of bytes received in the last 24 hours.
 
-![Screenshot of the top destinations widget with the number of transactions field highlighted.](media/concept-traffic-dashboard/top-destinations.png)
+:::image type="content" source="media/concept-traffic-dashboard/top-destinations.png" alt-text="Screenshot of the top destinations widget with the number of transactions field highlighted.":::
 
 Change the results to show all traffic or filter by Internet Access, Private Access, or Microsoft traffic.
 
@@ -116,13 +116,13 @@ Global Secure Access provides visibility into the number of users and devices th
 - **Users**: The number of distinct user sign-ins to other tenants in the last 24 hours. 
 - **Devices**: The number of distinct devices that signed in to other tenants in the last 24 hours.
 
-![Screenshot of the cross-tenant access widget.](media/concept-traffic-dashboard/cross-tenant-access.png)
+:::image type="content" source="media/concept-traffic-dashboard/cross-tenant-access.png" alt-text="Screenshot of the cross-tenant access widget.":::
 
-Select the **Configure tenant restrictions** button to navigate to the **Session management** are of Global Secure Access, where you can check the settings of your tenant restrictions.
+Select the **Configure tenant restrictions** button to go to the **Session management** area of Global Secure Access, where you can check the settings of your tenant restrictions.
 
 ## Web category filtering
 
-The **Web category filtering** widget displays the top categories of web content that were blocked or allowed by the service. These categories can be used to determine what sites or categories of sites you might want to block.
+The **Web category filtering** widget displays the top categories of web content that the service blocks or allows. Use these categories to determine what sites or categories of sites you might want to block.
 
 The widget defaults to showing blocked and allowed traffic, but you can use the **Blocked** or **Allowed** filter options to view one or the other. Sort the results using the following categories:
 
@@ -132,16 +132,16 @@ The widget defaults to showing blocked and allowed traffic, but you can use the 
 
 Select **View all web categories** to view more details about your network traffic.
 
-![Screenshot of the traffic categories accessed by users and devices.](media/concept-traffic-dashboard/web-content-filtering.png)
+:::image type="content" source="media/concept-traffic-dashboard/web-content-filtering.png" alt-text="Screenshot of the traffic categories accessed by users and devices.":::
 
 ## Device status
 
 The **Device status** widgets display the active and inactive devices that you deployed.
 
 - **Active devices**: The number of distinct device IDs seen in the last 24 hours and the % change during that time.
-- **Inactive devices**: The number of distinct device IDs that were seen in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
+- **Inactive devices**: The number of distinct device IDs that the service saw in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
 
-![Screenshot of the device status widgets.](media/concept-traffic-dashboard/device-status.png)
+:::image type="content" source="media/concept-traffic-dashboard/device-status.png" alt-text="Screenshot of the device status widgets.":::
 
 ## Top used cloud applications
 
@@ -162,11 +162,17 @@ The **Network activity by location** widget is an interactive map that shows con
 
 :::image type="content" source="media/concept-traffic-dashboard/network-activity-by-location.png" alt-text="Screenshot of the Network activity by location widget. One location is expanded to show more details." lightbox="media/concept-traffic-dashboard/network-activity-by-location-expanded.png":::
 
+## Alerts
+
+The **Alerts** widget shows a chart of alert counts by type and severity.
+
+:::image type="content" source="media/concept-traffic-dashboard/alerts-widget.png" alt-text="Screenshot of the Alerts widget showing alerts from the last month.":::
+
 ## No data available
 
 If your dashboard contains the **No data available** message, you need to onboard your tenant or configure the required settings to get data to appear on the dashboard. If you see this message, review the [Get started](how-to-get-started-with-global-secure-access.md) guide to onboard your tenant.
 
-![Screenshot of a widget with no data available.](media/concept-traffic-dashboard/no-data-available.png)
+:::image type="content" source="media/concept-traffic-dashboard/no-data-available.png" alt-text="Screenshot of a widget with no data available.":::
 
 ## Next steps
 

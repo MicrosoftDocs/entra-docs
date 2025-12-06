@@ -1,15 +1,16 @@
 ---
 title: Learn about Global Secure Access Alerts
-description: "Learn how "
+description: "Learn how Global Secure Access alerts notify you about security issues and operational concerns, helping to strengthen your organization's security posture."
 author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: overview
-ms.date: 12/04/2025
+ms.date: 12/05/2025
 manager: dougeby
 ms.reviewer: kerenSemel
+ai-usage: ai-assisted
 
-#customer intent: As an IT admin, I want to 
+#customer intent: As an IT admin, I want to understand the types of Global Secure Access alerts so that I can identify and respond to potential security issues effectively.
 
 ---
 
@@ -22,37 +23,40 @@ The Global Secure Access alert structure aligns with the [Microsoft Sentinel sec
 
 With alerts, Global Secure Access admins can:
 - View statistics on alert types and severity.
-- Investigate alerts and related data using filters and linked information.
+- Investigate alerts and related data by using filters and linked information.
 - Export alerts for use with security information and event management (SIEM) tools or other solutions.
 
 ## Types of alerts
-Global Secure Access includes the following types of alerts:
+Global Secure Access includes the following alert types:
 
-### Token/Device Inconsistency Alert
-Checks if the same access token is used on more than one device.
+### Token/Device Inconsistency alert
+You see this alert when the same access token is used on more than one device.
 
-### Increased External Tenant Activity
-Checks for an unusual rise in activity with external tenants. This alert looks at a 14-day sliding window, with access to tenants other  than the home tenant. 
+### Increased External Tenant Activity alert
+You see this alert when there's an unusual rise in activity with external tenants. This alert looks at a 14-day sliding window, with access to tenants other than the home tenant.
 
-###	Unhealthy Remote Networks
-Alerts on deficiencies in remote network availability - checks hourly if there were remote network health events with operation BGPDisconnect or TunnelDisconnect
+###	Unhealthy Remote Network alert
+You see this alert when there are deficiencies in remote network availability. This alert checks hourly for remote network health events like BGPDisconnect or TunnelDisconnect.
 
 ### Netskope alerts
-These alerts require the Netskope ATP & DLP module in Global Secure Access. They include:
-- Threat Protection: raised when malware or suspicious content is detected.
-- Data Loss Prevention: triggered when sensitive data matches a DLP profile 
-- Fallback Alerts: Occur when Netskope cannot process traffic due to conditions like file size limits, timeouts, or unsupported file types.
+The Netskope alerts include:
+- **Threat Protection**: You see this alert when Netskope detects malware or suspicious content in traffic.
+- **Data Loss Prevention** (DLP): You see this alert when sensitive data matches a DLP profile during inspection.
+- **Fallback**: You see this alert when Netskope can't fully process traffic due to technical limitations like file size limits, scan timeouts, or unsupported file types.
+
+> [!IMPORTANT]
+> Netskope alerts require the Netskope Advanced Threat Protection (ATP) and DLP modules in Global Secure Access. For more information, see [Netskope's Advanced Threat Protection and Data Loss Prevention](concept-netskope-integration.md).
 
 ## View alerts
 To view Global Secure Access alerts: 
-1. Navigate to 
-1. Select **Alerts**. 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Browse to **Global Secure Access** > **Monitor** > **Alerts**.
+
+:::image type="content" source="media/concept-alerts/alerts-view.png" alt-text="Screen shot of the Global Secure Access Alerts view." lightbox="media/concept-alerts/alerts-view.png":::
 
 You can filter and sort alerts based on severity, date, and type to quickly identify and respond to potential security issues.
 
-
-
-
+You can also view the **Alerts** widget in the [Global Secure Access dashboard](concept-traffic-dashboard.md) for a summary of recent alerts.
 
 ## Related content
-- 
+- [Global Secure Access dashboard](concept-traffic-dashboard.md)
