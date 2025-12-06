@@ -75,12 +75,12 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
 
-1. Complete the key restrictions. The following table explains the impact of various selections. 
+1. Fill out the profile details. The following table explains the impact if you enforce attestation. 
 
    Enforce attestation | No | Yes
    --------------------|-----|----
    Supported passkey types | Synced and device-bound | Device-bound only
-   Passkey reuired to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestaion assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
+   Passkey required to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestaion assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
 
    For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
@@ -89,7 +89,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
    **Target specific AAGUIDs** allows or blocks certain security key models or passkey providers, identified by their AAGUID. You can control which authenticators users can use to register and sign in with paskeys. Be careful if you change key restrictions and remove an AAGUID that you previously allowed because users who previously registered that passkey as an allowed method can no longer use it for sign-in.
 
    >[!Note] 
-   >If attestation isn’t enforced, AAGUID information is based on what the authenticator reports and can’t be fully guaranteed. Use AAGUID lists as a policy guide rather than a strict security control when attestation is off.  
+   >If attestation isn’t enforced, AAGUID information is based on what the authenticator reports and can’t be fully guaranteed. Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**.  
 
 1.	After you finish the configuration, select **Save**.
 
