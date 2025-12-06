@@ -27,11 +27,6 @@ A passkey profile is a named set of policy rules that governs how users in targe
 - Target types: Device-bound, Synced
 - Target specific authenticators: Allow or block specific authenticators by their AAGUID. For more information, see [Authenticator Attestation GUID](how-to-enable-passkey-fido2.md#passkey-fido2-authenticator-attestation-guid-aaguid).
 
->[!WARNING]
->- If you set **Enforce attestation** to **No**, users can register any type of passkey. Set **Enforce attestation** to **Yes** to ensure that users can only register device-bound passkeys.
->
->- Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
-
 ## Before you begin
 
 - Users must complete multifactor authentication (MFA) within the past five minutes before they can register a passkey (FIDO2).
@@ -80,16 +75,15 @@ A passkey profile is a named set of policy rules that governs how users in targe
    Enforce attestation | No | Yes
    --------------------|-----|----
    Supported passkey types | Synced and device-bound | Device-bound only
-   Passkey required to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestaion assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
+   Passkey required to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestaion assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
 
    For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
    **Target Types** can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.  
 
-   **Target specific AAGUIDs** allows or blocks certain security key models or passkey providers, identified by their AAGUID. You can control which authenticators users can use to register and sign in with paskeys. Be careful if you change key restrictions and remove an AAGUID that you previously allowed because users who previously registered that passkey as an allowed method can no longer use it for sign-in.
-
-   >[!Note] 
-   >If attestation isn’t enforced, AAGUID information is based on what the authenticator reports and can’t be fully guaranteed. Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**.  
+   **Target specific AAGUIDs** allows or blocks certain security key models or passkey providers, identified by their AAGUID. You can control which authenticators users can use to register and sign in with paskeys. 
+   
+   Be careful if you change key restrictions and remove an AAGUID that you previously allowed because users who previously registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
 
 1.	After you finish the configuration, select **Save**.
 
