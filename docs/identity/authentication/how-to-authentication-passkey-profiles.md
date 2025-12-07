@@ -77,14 +77,14 @@ A passkey profile is a named set of policy rules that governs how users in targe
    Enforce attestation | No (default) | Yes
    --------------------|-----|----
    Supported passkey types | Synced and device-bound | Device-bound only
-   Passkey required to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestaion assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
+   Passkey required to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestation assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
 
    The next table describes profile target options. 
 
    Target | Description
    --------|------------
    Target types | You can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.
-   Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with paskeys. If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
+   Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with passkeys. If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
 
 1.	Select **Save**.
 
