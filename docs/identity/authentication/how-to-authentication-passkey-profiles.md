@@ -84,7 +84,7 @@ A passkey profile is a named set of policy rules that governs how users in targe
    Target | Description
    --------|------------
    Target types | You can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.
-   Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with passkeys. If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
+   Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with passkeys.<br>If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
 
 1.	Select **Save**.
 
