@@ -26,7 +26,7 @@ The following table outlines when an authentication method can be used for prima
 | Method                         | Primary authentication | Secondary authentication  |
 |--------------------------------|:----------------------:|:-------------------------:|
 | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes   | MFA<sup>1</sup>  |
-| Platform Credential for macOS   | Yes               | MFA |
+| [Platform Credential for macOS](/entra/identity/authentication/concept-authentication-platform-credential-for-macos) | Yes               | MFA |
 | [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md)  | Yes                    | MFA             |
 | [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
 | [Synced passkey (preview)](concept-authentication-passkeys-fido2.md)| Yes                 | MFA           |
