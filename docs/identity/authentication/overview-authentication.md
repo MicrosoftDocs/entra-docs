@@ -66,7 +66,7 @@ Account recovery is the process where users have lost all their credentials and 
 
 Organizations can choose amongst the leading identity verification providers (IDV) via [Microsoft Security Store](https://securitystore.microsoft.com/): Idemia, Lexis Nexis, and Au10tix. These partners offer coverage across 192 countries/regions and remote verification for most government issued identity (Gov ID) documents, including driver's licenses and passports. Entra Verified ID Face Check, powered by Azure AI services, adds a critical layer of trust by matching a user’s real-time selfie and the photo from their identity document. By sharing only the match results and not any sensitive identity data, Face Check improves user privacy while allowing enterprises to be sure the person claiming an identity is really them. 
 
-Once enabled, this capability enables a natively integrated end-to-end flow for users to easily and securely regain access to their accounts. For more information, see [Overview of Microsoft Entra ID Account Recovery](concept-account-recovery-overview.md). 
+Once enabled, this capability enables a natively integrated end-to-end flow for users to easily and securely regain access to their accounts. For more information, see [Overview of Microsoft Entra ID Account Recovery](concept-account-recovery-overview.md).
 
 ## Related content
 
