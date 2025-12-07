@@ -17,9 +17,11 @@ ms.custom: sfi-image-nochange
 Security questions aren't used as an authentication method during a sign-in event. Instead, security questions can be used during the self-service password reset (SSPR) process to confirm who you are. Administrator accounts can't use security questions as verification method with SSPR.
 
 > [!IMPORTANT]
-> Allowing security questions as a self-service password reset (SSPR) method weakens the password reset process because answers are frequently guessable, reused across sites, or discoverable through open-source intelligence (OSINT). Threat actors enumerate or phish users, derive likely responses (family names, schools, and locations), and then trigger password reset flows to bypass stronger methods by exploiting the weaker knowledge-based gate. After they successfully reset a password on an account that isn't protected by multifactor authentication they can: gain valid primary credentials, establish session tokens, and laterally expand by registering more durable authentication methods, add forwarding rules, or exfiltrate sensitive data.
+> **Legacy policy deprecation:** On September 30, 2025, legacy multifactor authentication and self-service password reset policies will be deprecated. Settings will transition to the [modern authentication methods policy](how-to-authentication-methods-manage.md), which **does not support security questions**. Organizations still using security questions in the legacy portal are strongly encouraged to migrate to stronger authentication methods in order to transition to the modern authentication portal and avoid operating in a deprecated and unsupported state.
+>
+> Security questions should be eliminated from your authentication strategy because they introduce significant security vulnerabilities. Answers are frequently guessable, reused across sites, or discoverable through open-source intelligence (OSINT). Threat actors can enumerate or phish users to derive likely responses (family names, schools, locations), then trigger password reset flows to bypass stronger authentication methods. Once threat actors successfully reset a password—especially on accounts without multifactor authentication—they gain valid credentials, establish persistent sessions, register additional authentication methods, add forwarding rules, and exfiltrate sensitive data.
 > 
-> Eliminating this method removes a weak link in the password reset process. Some organizations might have specific business reasons for leaving security questions enabled, but this isn't recommended.
+> While some organizations may have business reasons for continuing to use security questions, this practice is strongly discouraged due to the inherent security weaknesses of knowledge-based authentication.
 
 When users register for SSPR, they're prompted to choose the authentication methods to use. If they choose to use security questions, they pick from a set of questions to prompt for and then provide their own answers.
 
@@ -74,7 +76,7 @@ The following predefined security questions are available for use as a verificat
 
 For additional flexibility, you can define your own custom security questions. The maximum length of a custom security question is 200 characters.
 
-Custom security questions aren't automatically localized like with the default security questions. All custom questions are displayed in the same language as they're entered in the administrative user interface, even if the user's browser locale is different. If you need localized questions, you should use the predefined questions.
+Custom security questions aren't automatically localized like with the default security questions. All custom questions are displayed in the same language as they're entered in the administrative user interface, even if the user's browser locale is different. If you need localized questions, you should use the predefined questions. 
 
 ## Security question requirements
 

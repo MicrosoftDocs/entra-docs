@@ -26,7 +26,7 @@ The following table outlines when an authentication method can be used for prima
 | Method                         | Primary authentication | Secondary authentication  |
 |--------------------------------|:----------------------:|:-------------------------:|
 | [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview) | Yes   | MFA<sup>1</sup>  |
-| Platform Credential for macOS   | Yes               | MFA |
+| [Platform Credential for macOS](/entra/identity/authentication/concept-authentication-platform-credential-for-macos) | Yes               | MFA |
 | [Passkey (FIDO2)](concept-authentication-passkeys-fido2.md)  | Yes                    | MFA             |
 | [Passkey in Microsoft Authenticator](concept-authentication-authenticator-app.md)| Yes                 | MFA           |
 | [Synced passkey (preview)](concept-authentication-passkeys-fido2.md)| Yes                 | MFA           |
@@ -41,9 +41,12 @@ The following table outlines when an authentication method can be used for prima
 | [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)         | Yes              | MFA and SSPR   |
 | [Voice call](concept-authentication-phone-options.md)                   | No                     | MFA and SSPR              |
 | [QR code](concept-authentication-qr-code.md)                       | Yes                    | No                    |
+| [Email OTP](concept-sspr-howitworks.md#authentication-methods)  | No              | SSPR and sign-in<sup>2</sup>           |
 | Password                       | Yes                    | No                        |
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
+
+<sup>2</sup>Email OTP is available for tenant members for [Self-Service Password Recovery (SSPR)](concept-sspr-howitworks.md#authentication-methods). It may also be configured to be used for [sign-in by guest users](/entra/external-id/one-time-passcode).
 
 ## Phishing-resistant authentication methods   
 
