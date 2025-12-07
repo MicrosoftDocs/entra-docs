@@ -74,7 +74,7 @@ The following predefined security questions are available for use as a verificat
 
 For additional flexibility, you can define your own custom security questions. The maximum length of a custom security question is 200 characters.
 
-Custom security questions aren't automatically localized like with the default security questions. All custom questions are displayed in the same language as they're entered in the administrative user interface, even if the user's browser locale is different. If you need localized questions, you should use the predefined questions.
+Custom security questions aren't automatically localized like with the default security questions. All custom questions are displayed in the same language as they're entered in the administrative user interface, even if the user's browser locale is different. If you need localized questions, you should use the predefined questions. 
 
 ## Security question requirements
 
