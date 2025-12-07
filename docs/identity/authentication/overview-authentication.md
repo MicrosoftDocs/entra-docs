@@ -41,9 +41,12 @@ The following table outlines when an authentication method can be used for prima
 | [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)         | Yes              | MFA and SSPR   |
 | [Voice call](concept-authentication-phone-options.md)                   | No                     | MFA and SSPR              |
 | [QR code](concept-authentication-qr-code.md)                       | Yes                    | No                    |
+| [Email OTP](howto-authentication-use-email-signin.md)  | No              | SSPR and sign-in<sup>2</sup>           |
 | Password                       | Yes                    | No                        |
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
+
+<sup>2</sup>Email OTP is available for tenant members for Self-Service Password Recovery (SSPR). It may also be configured to be used for sign-in by guest users.
 
 ## Phishing-resistant authentication methods   
 
