@@ -41,9 +41,12 @@ The following table outlines when an authentication method can be used for prima
 | [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)         | Yes              | MFA and SSPR   |
 | [Voice call](concept-authentication-phone-options.md)                   | No                     | MFA and SSPR              |
 | [QR code](concept-authentication-qr-code.md)                       | Yes                    | No                    |
+| [Email OTP](concept-sspr-howitworks.md#authentication-methods)  | No              | SSPR and sign-in<sup>2</sup>           |
 | Password                       | Yes                    | No                        |
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if a user is enabled for passkey (FIDO2) and has a passkey registered.
+
+<sup>2</sup>Email OTP is available for tenant members for [Self-Service Password Recovery (SSPR)](concept-sspr-howitworks.md#authentication-methods). It may also be configured to be used for [sign-in by guest users](/entra/external-id/one-time-passcode).
 
 ## Phishing-resistant authentication methods   
 
@@ -66,7 +69,7 @@ Account recovery is the process where users have lost all their credentials and 
 
 Organizations can choose amongst the leading identity verification providers (IDV) via [Microsoft Security Store](https://securitystore.microsoft.com/): Idemia, Lexis Nexis, and Au10tix. These partners offer coverage across 192 countries/regions and remote verification for most government issued identity (Gov ID) documents, including driver's licenses and passports. Entra Verified ID Face Check, powered by Azure AI services, adds a critical layer of trust by matching a user’s real-time selfie and the photo from their identity document. By sharing only the match results and not any sensitive identity data, Face Check improves user privacy while allowing enterprises to be sure the person claiming an identity is really them. 
 
-Once enabled, this capability enables a natively integrated end-to-end flow for users to easily and securely regain access to their accounts. For more information, see [Overview of Microsoft Entra ID Account Recovery](concept-account-recovery-overview.md). 
+Once enabled, this capability enables a natively integrated end-to-end flow for users to easily and securely regain access to their accounts. For more information, see [Overview of Microsoft Entra ID Account Recovery](concept-account-recovery-overview.md).
 
 ## Related content
 
