@@ -60,9 +60,11 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/default-passkey-profile.png" alt-text="Screenshot that shows the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/default-passkey-profile.png":::
    
-   For **Target Types**, select **Device-bound**, **Synced (preview)**, or both, and select **Save**.
+   For **Target Types**, select the types of passkeys that you want to allow.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
+
+1. Select **Save**.
 
 ## Create a new passkey profile
 
@@ -70,22 +72,21 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
 
-1. Fill out the profile details. The following table explains the impact if you enforce attestation. 
+1. Fill out the profile details. The following table explains the impact if you enforce attestation. For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
-   Enforce attestation | No | Yes
+   Enforce attestation | No (default) | Yes
    --------------------|-----|----
    Supported passkey types | Synced and device-bound | Device-bound only
    Passkey required to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestaion assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
 
-   For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
+   The next table describes profile target options. 
 
-   **Target Types** can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.  
+   Target | Description
+   --------|------------
+   Target types | You can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.
+   Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with paskeys. If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
 
-   **Target specific AAGUIDs** allows or blocks certain security key models or passkey providers, identified by their AAGUID. You can control which authenticators users can use to register and sign in with paskeys. 
-   
-   Be careful if you change key restrictions and remove an AAGUID that you previously allowed because users who previously registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
-
-1.	After you finish the configuration, select **Save**.
+1.	Select **Save**.
 
 
 ## Apply a passkey profile to a targeted group
