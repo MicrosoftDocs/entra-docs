@@ -34,6 +34,7 @@ Before you begin, ensure you have:
   - [Microsoft Graph API](/graph/api/user-post-users): Programmatic user and directory management
   - [Directory extensions](/graph/extensibility-overview): Adding custom properties to directory objects
   - [Azure Functions](/azure/azure-functions/functions-overview): Serverless compute for hosting custom logic
+- An account with the following role definition ID assigned: `0b00bede-4072-4d22-b441-e7df02a1ef63`. This role will give you the necessary permissions to create and manage custom authentication extensions in your Microsoft Entra External ID tenant. You can find more information about role assignments in the [Microsoft Entra ID roles documentation](/entra/identity/role-based-access-control/manage-roles-portal?tabs=ms-graph).  
 
 ## Overview of the JIT migration process
 
@@ -47,13 +48,13 @@ The JIT migration process is illustrated in the following diagram:
 
 ### How the JIT migration process works
 
-When a user with the migration flag set to `true` signs in, the following process occurs:
+When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
-- **User signs in** - User enters credentials from the legacy identity provider.
+- **Consumer user signs in** - User enters credentials from the legacy identity provider.
 - **Migration flag check** - If the password entered does not match the dummy password on record for the user, Entra External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed.    
 - **Password encryption** - Entra encrypts the password using the public key (RSA JWE format) ensuring plaintext is never transmitted.
-- **Custom extension invocation** - Entra calls your Azure Function with the encrypted payload, user information, and authentication context.
-- **Decryption and validation** - Your function decrypts the password using the private key from Key Vault and validates credentials against your legacy identity provider.
+- **Custom extension invocation** - Entra calls your code with the encrypted payload, user information, and authentication context.
+- **Decryption and validation** - Your function decrypts the password using a private key and validates credentials against your legacy identity provider.
 - **Response action** - Your function returns one of four actions:
    - **MigratePassword**: Password is valid; Entra stores it and sets migration flag to `false`
    - **UpdatePassword**: Password is correct but weak; user must reset password
@@ -70,9 +71,9 @@ Before implementing JIT migration, you need to prepare your users in Microsoft E
 
 ### 1.1 Define an extension property for tracking migration status
 
-To implement JIT migration, you need to define a directory extension property to track whether each user's credentials have been migrated from the legacy identity provider. Microsoft Graph supports adding custom properties to directory objects through [directory (Microsoft Entra ID) extensions](/graph/extensibility-overview). For detailed information about extension types and their usage, see [Add custom data to resources by using extensions](/graph/extensibility-overview).
+To implement JIT migration, you need to define a directory extension property to track whether each user's credentials have been migrated from the legacy identity provider. Microsoft Graph supports adding custom properties to directory objects through [directory (Microsoft Entra ID) extensions](/graph/extensibility-overview#directory-microsoft-entra-id-extensions). 
 
-Create an extension property using the Microsoft Graph API with a default value of `true`:
+Create an extension property using the Microsoft Graph API:
 
 ``` http
 POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69e287e7b/extensionProperties 
@@ -82,7 +83,7 @@ POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69
     "dataType": "Boolean",
     "targetObjects":[ 
     "User" 
-] 
+    ] 
 } 
 ```
 
@@ -112,20 +113,58 @@ Before creating users, generate unique, strong temporary passwords for each user
 
 Create user accounts in your External ID tenant. You can create users through the [Microsoft Entra admin center](https://entra.microsoft.com/) or programmatically using the [Microsoft Graph API](/graph/api/user-post-users). For detailed instructions on user creation, see [How to create, invite, and delete users](/entra/fundamentals/how-to-create-delete-users).
 
+The following example demonstrates how to create a user with the migration extension property set to `true` using the Microsoft Graph API. Replace `{extension-attribute-id}` with the actual extension property ID you constructed in the previous step.
+
+``` http
+POST https://graph.microsoft.com/v1.0/users
+
+{
+"accountEnabled": true,
+"passwordProfile": {
+"forceChangePasswordNextSignIn": false,
+"password": ""
+},
+"{extension-attribute-id}": true
+}
+```
+
 ## 2. Configure the custom authentication extension
 
-After preparing your users, configure the components that enable JIT migration during the authentication process. This includes registering your legacy API with Azure resources, configuring the External ID authentication extension app with encryption settings, and creating the custom extension policy.
+After preparing your users, configure the components that enable JIT migration during the authentication process. This includes securely storing certificates, hosting your custom extension, and configuring the authentication extension application.
 
-### 2.1 Register your legacy API
+### 2.1 Store the certificate securely
 
-Create the encryption certificate and deploy an Azure Function that validates user credentials against your legacy identity provider.
+Create the encryption certificate in Azure Key Vault and configure secure access for your Azure Function.
 
-#### 2.1.1 Generate certificate in Azure Key Vault
+#### 2.1.1 Enable managed identity
 
-Before creating your app registration, generate an encryption certificate in Azure Key Vault. The public key is configured in your Entra External ID app registration, while the private key remains in Key Vault and is accessed by your Azure Function using managed identity.
+Your Azure Function needs to access the private key stored in Key Vault to decrypt the password payload. Before generating the certificate, set up managed identity for your Azure Function.
 
-1. Sign in to the [Azure portal](https://portal.azure.com) and browse to **Key vaults**.
-1. Select your existing Key Vault or [create a new one](/azure/key-vault/general/quick-create-portal).
+1. Sign in to the [Azure portal](https://portal.azure.com) and browse to **Function App**.
+1. Select your function app.
+1. In the left menu, under **Settings**, select **Identity**.
+1. Under the **System assigned** tab, set **Status** to **On**.
+1. Select **Save**.
+1. After the identity is created, copy the **Object (principal) ID** value. You'll need it in the next step.
+
+#### 2.1.2 Grant Key Vault access
+
+1. In the Azure portal, go to your Key Vault (or [create a new one](/azure/key-vault/general/quick-create-portal) if needed).
+1. In the left menu, under **Settings**, select **Access policies**.
+1. Select **Create**.
+1. Under **Secret permissions**, select **Get**, and then select **Next**.
+1. On the **Principal** page, paste the object ID you copied in the previous step.
+1. Select your function app's managed identity from the search results.
+1. Select **Next**, and then select **Next** again.
+1. Select **Create** to create the access policy with the following permissions:
+   - **Secret permissions**: Get
+   - **Principal**: Your function app name
+
+#### 2.1.3 Generate certificate in Azure Key Vault
+
+Generate an encryption certificate in Azure Key Vault. The public key is configured in your Entra External ID app registration, while the private key remains in Key Vault and is accessed by your Azure Function using managed identity.
+
+1. In the Azure portal, go to your Key Vault.
 1. In the left menu, under **Objects**, select **Certificates**.
 1. Select **Generate/Import**.
 1. On the **Create a certificate** page, enter the following values:
@@ -144,9 +183,13 @@ Before creating your app registration, generate an encryption certificate in Azu
 > [!TIP]
 > Generating certificates directly in Azure Key Vault ensures the private key never leaves the secure environment and provides enterprise features like automatic key rotation, access auditing, and HSM protection.
 
-#### 2.1.2 Create custom authentication extension
+### 2.2 Host your custom extension
 
-Create an Azure Function that validates user credentials against your legacy identity provider. When sending a request to your custom authentication extension, Entra will include a payload with the following schema. This sample payload includes dummy data for illustration purposes only.
+Create an Azure Function that validates user credentials against your legacy identity provider.
+
+#### 2.2.1 Request schema
+
+When sending a request to your custom authentication extension, Entra will include a payload with the following schema. This sample payload includes dummy data for illustration purposes only.
 
 ```json
 {  
@@ -198,9 +241,10 @@ Create an Azure Function that validates user credentials against your legacy ide
 } 
 
 ```
-Entra expects the response from your custom extension in the below format. 
 
-Response schema:  
+#### 2.2.2 Response schema
+
+Entra expects the response from your custom extension in the below format.  
 
 ```json
 {  
@@ -227,7 +271,24 @@ Each of the available response actions corresponds to a specific scenario during
 | microsoft.graph.passwordSubmit.Retry  | Password is incorrect. | Allows user to retry authentication if permitted.|
 | microsoft.graph.passwordSubmit.Block  | Authentication must be blocked. | Displays block screen with custom message provided by the app.|
 
-You can use your own code or deploy the following sample Azure Function to your Azure environment. Make sure to replace the placeholders for *client ID*, *client secret*, *tenant ID*, and *extension attribute* with values from your tenants. Also, Make sure to replace the placeholders for *DECRYPTION_PRIVATE_KEY* with the key that will be used to decrypt the password context. This example function simulates the validation process and demonstrates how to handle different response actions, including migrating the password, blocking the sign-in, prompting for a password update, or retrying the authentication based on the outcome of the validation.
+#### 2.2.3 Template code
+
+You can use your own code or deploy the following sample Azure Function to your Azure environment. This example function demonstrates how to:
+- Retrieve the encryption certificate from Key Vault using managed identity
+- Decrypt the password payload
+- Validate credentials against your legacy identity provider
+- Return appropriate response actions
+
+> [!NOTE]
+> **Required packages**: This function requires the following NuGet packages:
+> - **Azure.Identity** (version 1.12.0 or later)
+> - **Azure.Security.KeyVault.Secrets** (version 4.6.0 or later)
+> - **Jose-jwt** (for JWT decryption)
+> - **Newtonsoft.Json** (for JSON parsing)
+>
+> **Required application settings**:
+> - **KeyVaultUrl**: Your Key Vault URL (e.g., `https://your-keyvault-name.vault.azure.net/`)
+> - **CiamJitMigrationEncryptionCertName**: The name of your certificate in Key Vault (e.g., `JitMigrationEncryptionCert`)
 
 ``` csharp
 using Jose;
@@ -754,97 +815,7 @@ namespace dev_functions
 }
 ```
 
-### 2.2 Configure Azure Function for Key Vault access
-
-Your Azure Function needs to access the private key stored in Key Vault to decrypt the password payload.
-
-#### 2.2.1 Enable managed identity
-
-1. Sign in to the [Azure portal](https://portal.azure.com) and browse to **Function App**.
-1. Select your function app.
-1. In the left menu, under **Settings**, select **Identity**.
-1. Under the **System assigned** tab, set **Status** to **On**.
-1. Select **Save**.
-1. After the identity is created, copy the **Object (principal) ID** value. You'll need it in the next step.
-
-#### 2.2.2 Grant Key Vault access
-
-1. In the Azure portal, go to your Key Vault.
-1. In the left menu, under **Settings**, select **Access policies**.
-1. Select **Create**.
-1. Under **Secret permissions**, select **Get**, and then select **Next**.
-1. On the **Principal** page, paste the object ID you copied in the previous step.
-1. Select your function app's managed identity from the search results.
-1. Select **Next**, and then select **Next** again.
-1. Select **Create** to create the access policy with the following permissions:
-   - **Secret permissions**: Get
-   - **Principal**: Your function app name
-
-#### 2.2.3 Install required packages
-
-Your function project requires the following NuGet packages to access Key Vault:
-
-1. Open your function project in Visual Studio or Visual Studio Code.
-1. Right-click the project and select **Manage NuGet Packages**.
-1. Search for and install the following packages:
-   - **Azure.Identity** (version 1.12.0 or later)
-   - **Azure.Security.KeyVault.Secrets** (version 4.6.0 or later)
-
-#### 2.2.4 Configure application settings
-
-Add the following settings to your function configuration.
-
-For local development, add these values to your `local.settings.json` file:
-
-```json
-{
-  "Values": {
-    "KeyVaultUrl": "https://your-keyvault-name.vault.azure.net/",
-    "CiamJitMigrationEncryptionCertName": "JitMigrationEncryptionCert"
-  }
-}
-```
-
-For Azure deployment:
-
-1. In the Azure portal, go to your function app.
-1. In the left menu, under **Settings**, select **Configuration**.
-1. Under **Application settings**, select **New application setting** and add the following settings:
-   - **Name**: `KeyVaultUrl`, **Value**: `https://your-keyvault-name.vault.azure.net/`
-   - **Name**: `CiamJitMigrationEncryptionCertName`, **Value**: `JitMigrationEncryptionCert`
-1. Select **Save** to save the settings and restart the function app.
-
-#### 2.2.5 Update your function code
-
-Update your function code to retrieve the certificate from Key Vault using managed identity instead of using a hardcoded private key. Add the following code to your function:
-
-```csharp
-using Azure.Identity;
-using Azure.Security.KeyVault.Secrets;
-using System.Security.Cryptography.X509Certificates;
-
-// Remove the hardcoded constant:
-// private const string DECRYPTION_PRIVATE_KEY = @"-----BEGIN PRIVATE KEY-----...";
-
-// Add method to retrieve certificate from Key Vault:
-private static X509Certificate2 GetCertificateFromKeyVault()
-{
-    var keyVaultUrl = Environment.GetEnvironmentVariable("KeyVaultUrl") 
-        ?? throw new InvalidOperationException("KeyVaultUrl not configured");
-    var certName = Environment.GetEnvironmentVariable("CiamJitMigrationEncryptionCertName") 
-        ?? throw new InvalidOperationException("CiamJitMigrationEncryptionCertName not configured");
-
-    var client = new SecretClient(new Uri(keyVaultUrl), new DefaultAzureCredential());
-    KeyVaultSecret secret = client.GetSecret(certName);
-    
-    byte[] certBytes = Convert.FromBase64String(secret.Value);
-    return new X509Certificate2(certBytes, (string)null, X509KeyStorageFlags.MachineKeySet);
-}
-```
-
-Update your decryption code to use the certificate from Key Vault instead of the hardcoded private key.
-
-#### 2.2.6 Deploy the Azure Function
+#### 2.2.4 Deploy your function
 
 After you configure your function code, deploy it to Azure using Visual Studio 2022:
 
@@ -859,7 +830,11 @@ After you configure your function code, deploy it to Azure using Visual Studio 2
 1. On the **Publish** page, select **Publish**.
 1. Wait for the deployment to complete. A "Publish succeeded" message appears when the deployment is finished.
 
-### 2.3 Create app registration for the custom authentication extension
+## 3. Configure custom extension application
+
+Create an application registration to represent your custom authentication extension and configure it with the encryption certificate.
+
+### 3.1 Create EEID Auth extension application
 
 Create an application registration to represent your custom authentication extension. This application will authenticate calls between Microsoft Entra External ID and your Azure Function. For general guidance on app registrations, see [Register an application](/entra/identity-platform/quickstart-register-app).
 
@@ -868,19 +843,41 @@ Register a new application in the [Microsoft Entra admin center](https://entra.m
 - **Name**: Enter a descriptive name for your JIT migration extension
 - **Supported account types**: Accounts in this organizational directory only
 
-### 2.4 Configure encryption key
+#### 3.1.1 Create identifier URI
 
-After you create your app registration, configure the certificate's public key so that Entra External ID can encrypt the password payload before sending it to your custom extension.
+The identifier URI uniquely identifies your custom authentication extension API. Add the following to your application manifest, replacing the placeholders with your values:
 
-#### 2.4.1 Download the certificate
+```json
+"identifierUris": [  
+    "api://[Function_URL_Hostname]/[App_ID]"  
+], 
+```
+
+- **Function_URL_Hostname**: The hostname of your Azure Function (e.g., `contoso.azurewebsites.net`)
+- **App_ID**: Your application (client) ID from the app registration **Overview** page
+
+For example: `"api://contoso.azurewebsites.net/12345678-1234-1234-1234-123456789012"`
+
+#### 3.1.2 API permissions
+
+Your custom authentication extension requires the `CustomAuthenticationExtension.Receive.Payload` application permission to receive HTTP requests from authentication events. To set this permission follow these steps:
+
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Entra ID** > **App registrations** and select your custom authentication extension application.
+1. Go to **API permissions** > **Add a permission**.
+1. Select **Microsoft Graph** > **Application permissions**.
+1. Search for **CustomAuthenticationExtension.Receive.Payload**, select it and click **Add permissions**.
+1. Finally, click **Grant admin consent for [Your Tenant]** to grant the permission.
+
+### 3.2 Configure encryption key
+
+Configure the certificate's public key so that Entra External ID can encrypt the password payload before sending it to your custom extension.
+
+#### 3.2.1 Export the public key
 
 1. In your Key Vault, under **Certificates**, select **JitMigrationEncryptionCert**.
 1. Select the current version (shown as a GUID).
 1. Select **Download in CER format**.
 1. Save the file (for example, `jitmigrationencryptioncert.cer`).
-
-#### 2.4.2 Extract the public key
-
 1. Open PowerShell.
 1. Run the following commands, replacing the file path with your certificate location:
 
@@ -892,7 +889,7 @@ After you create your app registration, configure the certificate's public key s
 
 1. Copy the base64-encoded public key from the output.
 
-#### 2.4.3 Configure the certificate via Graph API
+#### 3.2.2 Add the key to the application
 
 Use Microsoft Graph API to configure the certificate on your custom authentication extension app registration. Make a PATCH request with the following information:
 
@@ -926,36 +923,11 @@ Authorization: Bearer {access-token}
 
 This configuration tells Entra External ID to use the public key when encrypting the password context for your custom extension.
 
-#### 2.4.4 Set the identifier URI
+### 3.3 Custom Extension policy
 
-The identifier URI uniquely identifies your custom authentication extension API. Add the following to your application manifest, replacing the placeholders with your values:
+Create a custom extension policy that defines how the JIT migration process will be executed during user sign-in. This policy will invoke your custom authentication application during the sign-in process.
 
-```json
-"identifierUris": [  
-    "api://[Function_URL_Hostname]/[App_ID]"  
-], 
-```
-
-- **Function_URL_Hostname**: The hostname of your Azure Function (e.g., `contoso.azurewebsites.net`)
-- **App_ID**: Your application (client) ID from the app registration **Overview** page
-
-For example: `"api://contoso.azurewebsites.net/12345678-1234-1234-1234-123456789012"`
-
-#### 2.4.5 Grant required permission
-
-Your custom authentication extension requires the `CustomAuthenticationExtension.Receive.Payload` application permission to receive HTTP requests from authentication events. To set this permission follow these steps:
-
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Entra ID** > **App registrations** and select your custom authentication extension application.
-1. Go to **API permissions** > **Add a permission**.
-1. Select **Microsoft Graph** > **Application permissions**.
-1. Search for **CustomAuthenticationExtension.Receive.Payload**, select it and click **Add permissions**.
-1. Finally, click **Grant admin consent for [Your Tenant]** to grant the permission.
-
-### 2.5 Create custom extension policy
-
-After creating the custom authentication application, create a custom extension policy that defines how the JIT migration process will be executed during user sign-in.
-
-Use the following example to create a custom extension policy using Microsoft Graph API. This policy will invoke your custom authentication application during the sign-in process.
+Use the following example to create a custom extension policy using Microsoft Graph API:
 
 ```http
 POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions 
@@ -978,11 +950,11 @@ POST https://graph.microsoft.com/beta/identity/customAuthenticationExtensions
 }  
 ```
 
-## 3. Cutover the legacy app to External ID
+## 4. Cutover the legacy app to External ID
 
 After configuring your custom authentication extension, prepare for production cutover by registering your client application and creating the listener policy that activates JIT migration.
 
-### 3.1 Register client application
+### 4.1 Create the app
 
 Register a client application for testing the JIT migration process. This application will trigger the custom authentication extension during sign-in. For detailed instructions on registering applications, see [Quickstart: Register an application](/entra/identity-platform/quickstart-register-app).
 
@@ -995,7 +967,7 @@ Register a new web application with these JIT migration-specific settings:
 > [!TIP]
 > You can use an existing application registration if you have one configured for testing.
 
-### 3.2 Create listener policy
+### 4.2 Create the listener policy
 
 Create a listener policy that links the custom extension policy to the client application. This policy ensures that the custom authentication extension is invoked during user sign-in.
 
@@ -1037,7 +1009,7 @@ Content-type: application/json
 }  
 ```
 
-## 4. Test and validate before deploying to production
+## 5. Test and validate before deploying to production
 
 Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely.
 
