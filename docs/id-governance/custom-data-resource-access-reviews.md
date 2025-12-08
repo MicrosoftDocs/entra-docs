@@ -121,7 +121,22 @@ After copying both the Access review object, and access review instance object, 
     > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload.
 
-You can also upload custom data via Graph, by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta).
+## Custom data for access CSV fields
+
+When uploading CSVs to be included in the access data, the following parameters are included in the template:
+
+
+|Parameter  |Description  |
+|---------|---------|
+|PrincipalId     |    The unique identifier for the data being uploaded.     |
+|PrincipalType     |   The type of data being uploaded. Default is **EntraIdUser**.      |
+|PermissionId     |   The unique permission identifier for the data being uploaded.      |
+|PermissionName     |   The name of the permission being used for the data uploaded. Default is **execute**.      |
+|PermissionDescription     |   The description of the permission for the data being uploaded.      |
+|PermissionType     |   The type of permission for the data being uploaded. Default is **user**.      |
+
+
+You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta).
 
 ## Active review state
 
