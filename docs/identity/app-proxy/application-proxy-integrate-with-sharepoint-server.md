@@ -194,14 +194,8 @@ If sign-in to the site isn't working, you can get more information about the iss
  
 If you see the **BadGateway Incorrect Kerberos** error, run the following commands in Windows PowerShell in the domain controller, as an admin. Replace `[servername]` and `[serviceaccount]` with the actual values from your environment.
 
-1. 
-    ```powershell
-    $connector = Get-ADComputer -Identity "[servername]$"
-    ```
-1.	
-    ```powershell
-    Set-ADUser -Identity "[serviceaccount]" -PrincipalsAllowedToDelegateToAccount $connector
-    ```
+1. `$connector = Get-ADComputer -Identity "[servername]$"`
+1. `Set-ADUser -Identity "[serviceaccount]" -PrincipalsAllowedToDelegateToAccount $connector`
 
 :::image type="content" source="media/application-proxy-integrate-with-sharepoint-server/bad-gateway-kerberos-error.png" alt-text="Screenshot of error message stating 'BadGateway: The corporate app can't be accessed' due to incorrect Kerberos constrained delegation configuration." lightbox="media/application-proxy-integrate-with-sharepoint-server/bad-gateway-kerberos-error.png":::
 
