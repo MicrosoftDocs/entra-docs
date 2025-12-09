@@ -128,12 +128,12 @@ When uploading CSVs to be included in the access data, the following parameters 
 
 |Parameter  |Description  |
 |---------|---------|
-|PrincipalId     |    The unique identifier for the data being uploaded.     |
-|PrincipalType     |   The type of data being uploaded. Default is **EntraIdUser**.      |
-|PermissionId     |   The unique permission identifier for the data being uploaded.      |
-|PermissionName     |   The name of the permission being used for the data uploaded. Default is **execute**.      |
-|PermissionDescription     |   The description of the permission for the data being uploaded.      |
-|PermissionType     |   The type of permission for the data being uploaded. Default is **user**.      |
+|PrincipalId     |    The **Microsoft Entra ID User ID** of the user whose access needs to be reviewed. This value must match a valid Microsoft Entra user.     |
+|PrincipalType     |   Specifies the type of principal. For access reviews this will always be **EntraIdUser**.      |
+|PermissionId     |   A unique identifier for the permission in the application that will be reviewed. This helps distinguish between different permissions within the same app.      |
+|PermissionName     |   The display name of the permission that the user has in the application. Example: Read, Write, and Admin.     |
+|PermissionDescription     |   A brief explanation of what this permission allows within the application. This provides reviewers with context when deciding whether access should be continued.     |
+|PermissionType     |   Indicates the category of permission.      |
 
 
 You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta).
