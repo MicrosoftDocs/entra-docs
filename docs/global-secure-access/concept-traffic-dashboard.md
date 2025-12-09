@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 12/05/2025
+ms.date: 12/08/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -64,7 +64,7 @@ This widget shows network activity and helps you spot suspicious activities or t
 This widget provides the following alerts:
 
 - **Unhealthy remote network**: An unhealthy remote network has one or more device links disconnected.
-- **Increased external tenants activity**: The number of users accessing external tenants has increased.
+- **Increased external tenants activity**: There has been an increase in the number of users accessing external tenants.
 - **Token and device inconsistency**: The original token is used on a different device.
 - **Web content blocked**: Access to the website is blocked.
 
@@ -108,7 +108,7 @@ Select the **View all destinations** button to see more details about the destin
 
 ## Cross-tenant access
 
-Global Secure Access provides visibility into the number of users and devices that are accessing other tenants. This widget displays the following information:
+Global Secure Access provides visibility into the number of users and devices that access other tenants. This widget displays the following information:
 
 - **Sign-ins**: The number of sign-ins through Microsoft Entra ID to Microsoft services in the last 24 hours. This widget provides you with information about the activity in your tenant. 
 - **Total distinct tenants**: The number of distinct tenant IDs seen in the last 24 hours.
@@ -122,7 +122,7 @@ Select the **Configure tenant restrictions** button to go to the **Session manag
 
 ## Web category filtering
 
-The **Web category filtering** widget displays the top categories of web content that the service blocks or allows. Use these categories to determine what sites or categories of sites you might want to block.
+The **Web category filtering** widget displays the top categories of web content that the service blocks or allows. Use these categories to determine what sites or categories of sites you want to block.
 
 The widget defaults to showing blocked and allowed traffic, but you can use the **Blocked** or **Allowed** filter options to view one or the other. Sort the results using the following categories:
 
@@ -152,7 +152,7 @@ The **Top used cloud applications** widget shows the most used cloud application
 
 The **Cloud applications status** widget displays the total number of cloud applications accessed by users and devices. The widget also shows the number of Generative AI applications, and the total number of high-risk applications accessed.
 :::image type="content" source="media/concept-traffic-dashboard/total-cloud-widget.png" alt-text="Screenshot of the Cloud applications status widget showing the total cloud applications, the total Generative AI applications, and the total at-risk applications.":::   
-
+<!--converting the "Network activity by location" section to a comment until the feature is in Public Preview.
 ## Network activity by location (preview)
 
 The **Network activity by location** widget is an interactive map that shows connection, transaction, user, device, and remote network activity by location. Admins can visualize and analyze network activity based on the origin of source IP addresses. These geographic insights help with:
@@ -161,7 +161,7 @@ The **Network activity by location** widget is an interactive map that shows con
 - Compliance support: Meet location-based regulatory requirements, such as regional data protection or data residency policies.
 
 :::image type="content" source="media/concept-traffic-dashboard/network-activity-by-location.png" alt-text="Screenshot of the Network activity by location widget. One location is expanded to show more details." lightbox="media/concept-traffic-dashboard/network-activity-by-location-expanded.png":::
-
+-->
 ## Alerts
 
 The **Alerts** widget shows a chart of alert counts by type and severity.
