@@ -56,7 +56,7 @@ Group Provision to Active Directory feature's performance is impacted by the siz
 |Scoping Mode  |Number of in-scope groups | Number of membership links (Direct members only)  |Notes  |
 |---------|---------|---------|---------|
 |"Selected security groups" mode    |  Up to 10K groups. The CloudSync pane in Microsoft Entra portal only allows selecting up to 999 groups as well as displaying up to 999 groups. If you need to add more than 1000 groups into scope, see: [Expanded group selection via API](#expanded-group-selection-via-api).    |    Up to 250K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant exceeds ANY of these limits<br> 1. Tenant has more than 200k users<br>2. Tenant has more than 40K groups<br> 3. Tenant has more than 1M group memberships.|
-|“All Security groups” mode with at least one attribute scoping filter.     |   Up to 20K groups.      |   Up to 500K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant satisfies ALL the below limits:<br>1. Tenant has less than 200k users<br>2. Tenant has less than 40K groups<br>3. Tenant has more than 1M group memberships. |
+|“All Security groups” mode with at least one attribute scoping filter.     |   Up to 20K groups.      |   Up to 500K total members across all the groups **in scope**.     |  Use this scoping mode if your tenant satisfies ALL the below limits:<br>1. Tenant has less than 200k users<br>2. Tenant has less than 40K groups<br>3. Tenant has less than 1M group memberships. |
 
 ### What to do if you exceed limits
 Exceeding the recommended limits will slow initial and delta sync, possibly causing sync errors. If this happens, follow these steps:
