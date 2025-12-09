@@ -60,12 +60,12 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |88          |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
 |123         |UDP        |Network Time Protocol (NTP)  |
 |135         |UDP/TCP    |Domain controller to domain controller and client to domain controller operations  |
-|389         |UDP/TCP    |DC locator  |
+|389         |UDP/TCP    |LDAP Server  |
 |445         |UDP/TCP    |Replication, User and Computer Authentication, Group Policy  |
 |464         |UDP/TCP    |Password Change Request  |
 |636         |TCP        |LDAP SSL  |
 |3268        |TCP        |Global Catalog  |
-|3269        |TCP        |Global Catalog  |
+|3269        |TCP        |Secure Global Catalog  |
 |49152-65535  |UDP/TCP   |Ephemeral ports  |
 
 > [!NOTE]
