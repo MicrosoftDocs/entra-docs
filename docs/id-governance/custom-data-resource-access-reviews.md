@@ -125,6 +125,8 @@ After copying both the Access review object, and access review instance object, 
 
 When uploading CSVs to be included in the access data, the following parameters are included in the template:
 
+> [!NOTE]
+> All columns are mandatory.
 
 |Parameter  |Description  |
 |---------|---------|
