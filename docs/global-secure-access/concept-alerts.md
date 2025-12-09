@@ -52,7 +52,7 @@ To view Global Secure Access alerts:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Monitor** > **Alerts**.
 
-:::image type="content" source="media/concept-alerts/alerts-view.png" alt-text="Screen shot of the Global Secure Access Alerts view." lightbox="media/concept-alerts/alerts-view.png":::
+:::image type="content" source="media/concept-alerts/alerts-view.png" alt-text="Screenshot of the Global Secure Access Alerts view." lightbox="media/concept-alerts/alerts-view.png":::
 
 You can filter and sort alerts based on severity, date, and type to quickly identify and respond to potential security issues.
 
