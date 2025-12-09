@@ -146,13 +146,15 @@ The **Device status** widgets display the active and inactive devices that you d
 ## Top used cloud applications
 
 The **Top used cloud applications** widget shows the most used cloud applications. By default, the widget shows **All** cloud applications, but you can filter to show only the top used **Generative AI** applications.
+
 :::image type="content" source="media/concept-traffic-dashboard/top-used-cloud-applications.png" alt-text="Screenshot of the Top used cloud applications widget. The All tab and the Generative AI tab are both sorted by the number of transactions.":::   
 
 ## Cloud applications status
 
 The **Cloud applications status** widget displays the total number of cloud applications accessed by users and devices. The widget also shows the number of Generative AI applications, and the total number of high-risk applications accessed.
+
 :::image type="content" source="media/concept-traffic-dashboard/total-cloud-widget.png" alt-text="Screenshot of the Cloud applications status widget showing the total cloud applications, the total Generative AI applications, and the total at-risk applications.":::   
-<!--converting the "Network activity by location" section to a comment until the feature is in Public Preview.
+<!--Temporarily converting the "Network activity by location" section to a comment until the feature is in Public Preview.
 ## Network activity by location (preview)
 
 The **Network activity by location** widget is an interactive map that shows connection, transaction, user, device, and remote network activity by location. Admins can visualize and analyze network activity based on the origin of source IP addresses. These geographic insights help with:
