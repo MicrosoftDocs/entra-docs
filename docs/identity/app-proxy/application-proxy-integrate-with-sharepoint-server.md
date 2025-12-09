@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 12/09/2025
+ms.date: 12/08/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
