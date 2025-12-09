@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 08/04/2025
+ms.date: 11/26/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
@@ -19,6 +19,26 @@ This tutorial walks you through how to configure Cloud Sync to sync groups to on
 > We recommend using **Selected security groups** as the default scoping filter when you configure group provisioning to AD DS. This default scoping filter helps prevent any performance issues when you provision groups.  
 
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
+
+## Group and User SOA Scenarios
+
+Use case | Parent group type | User member group type | Sync Direction | How sync works 
+----------|--------------------|-------------------------|----------------|----------------
+A security group whose SOA is in **cloud** and **all user members** have SOA **on-premises** | Security group whose SOA is in cloud | Users whose SOA is on-premises | **Entra to AD (AAD2ADGroup provisioning)** | The job provisions the parent group with all its member references (member users). 
+A security group whose SOA is in **cloud** and **all user members** have SOA **in cloud** | Security group whose SOA is in cloud | Users whose SOA is in cloud | **Entra to AD (AAD2ADGroup provisioning)** | The job provisions the security group but does not provision any member references. 
+A security group whose SOA is in **cloud** and **some user members** have SOA **in cloud** while others have SOA **on-premises** | Security group whose SOA is in cloud | Some users have SOA in cloud while some have SOA on-premises | **Entra to AD (AAD2ADGroup provisioning)** | The job provisions the security group and includes only member references whose SOA is on-premises. It skips member references whose SOA is in cloud. 
+A security group whose SOA is in **cloud** and has **no user members** | Security group whose SOA is in cloud | No user members | **Entra to AD (AAD2ADGroup provisioning)** | The job provisions the security group (empty membership). 
+A security group whose SOA is in **on-premises** and **all user members** have SOA **on-premises** | Security group whose SOA is on-premises | Users whose SOA is on-premises | **Entra to AD (AAD2ADGroup provisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **on-premises** and **all user members** have SOA in **cloud** | Security group whose SOA is on-premises | Users whose SOA is in cloud | **Entra to AD (AAD2ADGroup provisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **on-premises** and some **user members** have SOA in **cloud** while others have SOA **on-premises** | Security group whose SOA is on-premises | Some users have SOA in cloud while some have SOA on-premises | **Entra to AD (AAD2ADGroup provisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **on-premises** and **all user members** have SOA **on-premises** | Security group whose SOA is on-premises | Users whose SOA is on-premises | **AD to Entra (AD2AADprovisioning)** | The job provisions the security group with all its member references (member users). 
+A security group whose SOA is in **on-premises** and **all user members** have SOA in **cloud** | Security group whose SOA is on-premises | Users whose SOA is in cloud | **AD to Entra (AD2AADprovisioning)** | The job provisions the security group with all its member references (member users). So member references whose SOA is converted to cloud for these on-prem groups will also be synced. 
+A security group whose SOA is in **on-premises** and **some user members** have SOA in **cloud** while others have SOA **on-premises** | Security group whose SOA is on-premises | Some users have SOA in cloud while some have SOA on-premises | **AD to Entra (AD2AADprovisioning)** | The job provisions the parent group with all its member references (member users). So member references whose SOA is converted to cloud for these on-prem groups will also be synced.
+A security group whose SOA is in **on-premises** and has **no user members** | Security group whose SOA is on-premises | No user members | **AD to Entra (AD2AADprovisioning)** | The job provisions the security group (empty membership). 
+A security group whose SOA is in **cloud** and **all user members** have SOA **on-premises** | Security group whose SOA is cloud | Users whose SOA is on-premises | **AD to Entra (AD2AADprovisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **cloud** and **all user members** have SOA in **cloud** | Security group whose SOA is cloud | Users whose SOA is in cloud | **AD to Entra (AD2AADprovisioning)** | The job does **not** provision the security group. 
+A security group whose SOA is in **cloud** and **some user members** have SOA in **cloud** while others have SOA **on-premises** | Security group whose SOA is cloud | Some users have SOA in cloud while some have SOA on-premises | **AD to Entra (AD2AADprovisioning)** | The job does **not** provision the security group. 
+
 
 ## Assumptions
 This tutorial assumes:
@@ -52,6 +72,8 @@ To add synced users, follow these steps:
 9. It should successfully add the user to the group.
 10. On the far left, select **All groups**. Repeat this process by using the **Sales** group, and add **Lola Jacobson** to that group.
 
+[!INCLUDE [pre-requisites](../includes/prepare-converted-groups.md)]
+
 ## Configure provisioning
 
 To configure provisioning, follow these steps:
@@ -74,26 +96,73 @@ To configure provisioning, follow these steps:
 
    9. There are two possible approaches to set the OU:
 
-      - You can preserve the original OU path from on-premises. With this approach, you need to set the attribute mapping based on an extensionAttribute value. For more information, see [Preserve the original OU path](how-to-preserve-original-organizational-unit.md).
-   
-      Or
+      - You can use custom expressions ensure the group is re-created with the same OU. Use the following expression for ParentDistinguishedName value:
 
-      - Under **Target container** select **Edit attribute mapping**.
+        ```https
+        IIF(
+            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+            Replace(
+                Mid(
+                    Mid(
+                        Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ),
+                        Instr(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), ",", , ),
+                        9999
+                    ),
+                    2,
+                    9999
+                ),
+                "\2C", , , ",", ,
+            ),
+        "<Existing ParentDistinguishedName>",
+        )
+        ```
 
-   10. Change **Mapping type** to **Expression**.
-   11. In the expression box, enter:
+        This expression:
+        - Uses a default OU if the extension is empty.
+        - Otherwise strips the CN portion and preserves the parentDN path, again handling escaped commas.
 
-       ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+        This changes causes a full sync and doesn't affect existing groups. Test setting the GroupDN attribute for an existing group using Microsoft Graph and ensure that it moves back to original OU.
 
-   12. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+      - If you don't want to preserve the original OU path and CN information from on-premises, under **Target container** select **Edit attribute mapping**.
 
-       :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
+        1. Change **Mapping type** to **Expression**.
+        1. In the expression box, enter:
 
-   13. Select **Apply** - This changes the target container depending on the group displayName attribute.
-   14. Select **Save**.
-   15. On the left, select **Overview**.
-   16. At the top, select **Review and enable**.
-   17. On the right, select **Enable configuration**.
+           ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+
+        1. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+
+           :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
+
+        1. Select **Apply**. The target container changes depending on the group displayName attribute.
+
+   10. You can use custom expressions to ensure the group is re-created with the same CN. Use the following expression for CN value:
+
+        ```https
+        IIF(
+            IsPresent([extension_<AppIdWithoutHyphens>_GroupDistinguishedName]),
+            Replace(
+                Replace(
+                    Replace(
+                        Word(Replace([extension_<AppIdWithoutHyphens> _GroupDistinguishedName], "\,", , , "\2C", , ), 1, ","),
+                        "CN=", , , "", ,
+                    ),
+                    "cn=", , , "", ,
+                ),
+                "\2C", , , ",", ,
+            ),
+        Append(Append(Left(Trim([displayName]), 51), "_"), Mid([objectId], 25, 12)),
+        )
+        ```
+
+        This expression:
+        - If the extension is empty, generates a fallback CN from DisplayName + ObjectId.
+        - Otherwise extracts the CN, handling escaped commas by temporarily replacing them with hex values.
+
+   11. Select **Save**.
+   12. On the left, select **Overview**.
+   13. At the top, select **Review and enable**.
+   14. On the right, select **Enable configuration**.
 
 
 ## Test configuration 
@@ -169,6 +238,7 @@ The details explain that the object isn't synced because its SOA is converted to
 
 :::image type="content" border="true" source="media/tutorial-group-provision/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
+
 ### Nested groups and membership references handling
 
 The following table explains how the provisioning handles membership references after you convert SOA in different use cases.
@@ -194,7 +264,9 @@ If you have SOA converted groups in scope and you roll back the SOA converted gr
 
   :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
 
+
+
 ## Next steps 
-- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync](../group-writeback-cloud-sync.md)
 - [Govern on-premises AD DS based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)

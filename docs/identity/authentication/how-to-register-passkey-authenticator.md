@@ -4,11 +4,11 @@ description: Registration and management of passkeys with Microsoft Authenticato
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 12/04/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: calui, tilarso
+ms.reviewer: hanki77, tilarso
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how users can register passkeys in Microsoft Authenticator.
@@ -152,14 +152,20 @@ By default, **Security info** prompts users to sign in to the Authenticator app 
 If you can't sign in to Authenticator to register a passkey, you can register directly from **Security info** with WebAuthn. 
 
 > [!NOTE]
-> You can't register a passkey in Authenticator this way if attestation is enabled by you administrator. 
+> You can't register a passkey in Authenticator this way if attestation is enabled by your administrator. 
 
-If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
+If you sign in to **Security info** on a different device, make sure both devices have internet access and Bluetooth enabled. 
 
-- `https://cable.ua5v.com`
-- `https://cable.auth.com`
+If your organization restricts Bluetooth usage, you can [permit Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments) to allow cross-device passkey sign-in and registration.
 
-If your organization restricts Bluetooth usage, you can permit Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators to allow cross-device registration of passkeys. For more information, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
+Your organization needs to allow connectivity to endpoints in the following table to enable cross-device registration and authentication. 
+Devices must be allowed to reach these URLs without interception. 
+They need to be excluded from network proxies, interception, and other enterprise systems.
+
+Platform | URL
+---------|----
+Android | `cable.ua5v.com`
+iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
 1. On **Security info**, when you add a passkey in Authenticator, tap **Having trouble**.
 
@@ -327,8 +333,8 @@ If you can't sign in to the Authenticator to register a passkey, you can registe
 
 If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
 
-- `https://cable.ua5v.com`
-- `https://cable.auth.com`
+- `cable.ua5v.com`
+- `cable.auth.com`
 
 If your organization restricts Bluetooth usage, you can permit Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators to allow cross-device registration of passkeys. For more information, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 

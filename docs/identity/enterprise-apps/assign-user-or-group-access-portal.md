@@ -34,7 +34,7 @@ For greater control, certain types of enterprise applications can be configured 
 
 To assign users to an enterprise application, you need:
 
-- A Microsoft Entra account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - One of the following roles:
   - Cloud Application Administrator
   - Application Administrator
@@ -138,8 +138,6 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
     ```
 
 To assign a group to an enterprise app, replace `Get-EntraUser` with `Get-EntraGroup` and replace `New-EntraUserAppRoleAssignment` with `New-EntraGroupAppRoleAssignment`.
-
-For more information on how to assign a group to an application role, see the documentation for [New-EntraGroupAppRoleAssignment](/powershell/module/microsoft.entra/new-entragroupapproleassignment).
 
 ## Unassign users and groups from an application using Microsoft Entra PowerShell
 

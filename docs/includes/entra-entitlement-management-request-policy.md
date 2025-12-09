@@ -10,11 +10,11 @@ ms.author: owinfrey
 ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 ---
 
-## Allow users in your directory to request the access package
+## Allow users, service principals, and agent identities in your directory to request the access package
 
-Use the following steps if you want to allow users in your directory to be able to request this access package. When you're defining the request policy, you can specify individual users or (more commonly) groups of users. For example, your organization might already have a group such as **All employees**. If that group is added in the policy for users who can request access, any member of that group can then request access.
+Use the following steps if you want to allow identities in your directory to be able to request this access package. When you're defining the request policy, you can specify individual identities or (more commonly) groups of identities. For example, your organization might already have a group such as **All employees**. If that group is added in the policy for identities who can request access, any member of that group can then request access.
 
-1. In the **Users who can request access** section, select **For users in your directory**.
+1. In the **Who can get access** section, select **For users, service principals, and agent identities in your directory**.
 
     When you select this option, new options appear so you can refine who in your directory can request this access package.
 
@@ -27,8 +27,12 @@ Use the following steps if you want to allow users in your directory to be able 
     | **Specific users and groups** | Choose this option if you want only the users and groups in your directory that you specify to be able to request this access package. |
     | **All members (excluding guests)** | Choose this option if you want all member users in your directory to be able to request this access package. This option doesn't include any guest users you might have invited into your directory. |
     | **All users (including guests)** | Choose this option if you want all member users and guest users in your directory to be able to request this access package. |
+    | **All Service principals (preview)** | Choose this option if you want all service principals in your directory to be able to request this access package. |
+    | **All agents (preview)** | Choose this option if you want all agents in your directory to be able to have access assigned to them. |
 
-    Guest users are external users who have been invited into your directory via [Microsoft Entra B2B](~/external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
+    Guest users are external identities who have been invited into your directory via [Microsoft Entra B2B](~/external-id/what-is-b2b.md). For more information about the differences between member users and guest users, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
+
+    The **All Service principals** and **All agents** preview require Microsoft Entra Agent ID. For more information, see [Governing agent identities (preview)](~/id-governance/agent-id-governance-overview.md).
 
 1. If you selected **Specific users and groups**, select **Add users and groups**.
 
@@ -40,17 +44,17 @@ Use the following steps if you want to allow users in your directory to be able 
 
 1. Skip down to the [Specify approval settings](#specify-approval-settings) section.
 
-## Allow users not in your directory to request the access package
+## Allow identities not in your directory to request the access package
 
-Users who are in another Microsoft Entra directory or domain might not have been invited into your directory yet. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md).
+Identities who are in another Microsoft Entra directory or domain might not have been invited into your directory yet. Microsoft Entra directories must be configured to allow invitations in **Collaboration restrictions**. For more information, see [Configure external collaboration settings](~/external-id/external-collaboration-settings-configure.md).
 
-A guest user account will be created for a user not yet in your directory whose request is approved or does not need approval. The guest will be invited but won't receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. Later, when that guest user no longer has any access package assignments because the last assignment expired or was canceled, the account will be blocked from sign-in and subsequently deleted. The blocking and deletion happen by default.
+A guest identity account will be created for an identity not yet in your directory whose request is approved or does not need approval. The guest will be invited but won't receive an invite email. Instead, they'll receive an email when their access package assignment is delivered. Later, when that guest user no longer has any access package assignments because the last assignment expired or was canceled, the account will be blocked from sign-in and subsequently deleted. The blocking and deletion happen by default.
 
 If you want guest users to remain in your directory indefinitely, even if they have no access package assignments, you can change the settings for your entitlement management configuration. For more information about the guest user object, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
-Follow these steps if you want to allow users not in your directory to request the access package:
+Follow these steps if you want to allow identities not in your directory to request the access package:
 
-1. In the **Users who can request access** section, select **For users not in your directory**.
+1. In the **Who can get access** section, select **For users not in your directory**.
 
     When you select this option, new options appear.
 
@@ -86,19 +90,19 @@ Follow these steps if you want to allow users not in your directory to request t
 
 ## Allow administrator direct assignments only
 
-Follow these steps if you want to bypass access requests and allow administrators to directly assign specific users to this access package. Users won't have to request the access package. You can still set lifecycle settings, but there are no request settings.
+Follow these steps if you want to bypass access requests and allow administrators to directly assign specific users and agents to this access package. Users won't have to request the access package. You can still set lifecycle settings, but there are no request settings.
 
-1. In the **Users who can request access** section, select **None (administrator direct assignments only)**.
+1. In the **Who can get access** section, select **None (administrator direct assignments only)**.
 
     ![Screenshot that shows the option for allowing only administrator direct assignments for an access package.](./media/entitlement-management-request-policy/none-admin-direct-assignments-only.png)
 
     After you create the access package, you can directly assign specific internal and external users to it. If you specify an external user, a guest user account is created in your directory. For information about directly assigning a user, see [View, add, and remove assignments for an access package](~/id-governance/entitlement-management-access-package-assignments.md).
 
-1. Skip down to the [Enable requests](#enable-requests) section.
+1. Skip down to the [Who can request access](#who-can-request-access) section.
 
 ## Specify approval settings
 
-In the **Approval** section, you specify whether an approval is required when users request this access package. The approval settings work in the following way:
+In the **Approval** section, you specify whether an approval is required when identities request this access package. The approval settings work in the following way:
 
 - Only one of the selected approvers or fallback approvers needs to approve a request for single-stage approval.
 - Only one of the selected approvers from each stage needs to approve a request for two-stage approval.
@@ -116,9 +120,9 @@ For a demonstration of how to add a multiple-stage approval to a request policy,
 
 Follow these steps to specify the approval settings for requests for the access package:
 
-1. To require approval for requests from the selected users, set the **Require approval** toggle to **Yes**. Or, to have requests automatically approved, set the toggle to **No**.  If the policy allows external users from outside your organization to request access, you should require approval, so there is oversight on who is being added to your organization's directory.
+1. To require approval for requests from the selected identities, set the **Require approval** toggle to **Yes**. Or, to have requests automatically approved, set the toggle to **No**.  If the policy allows external identities from outside your organization to request access, you should require approval, so there is oversight on who is being added to your organization's directory.
 
-1. To require users to provide a justification to request the access package, set the **Require requestor justification** toggle to **Yes**.
+1. To require identities to provide a justification to request the access package, set the **Require requestor justification** toggle to **Yes**.
 
 1. Determine if requests require single-stage or two-stage approval. Set the **How many stages** toggle to **1** for single-stage approval, **2** for two-stage approval, or **3** for three-stage approval.
 
@@ -229,15 +233,19 @@ Also, requests can't be forwarded on the last day of the request duration. So in
 
 You can always either enable, or disable, email notifications in the future after you finish creating the access package.    
 
-## Enable requests
+## Who can request access
 
-1. If you want the access package to be made immediately available for users in the request policy to request, move the **Enable new requests and assignments** toggle to **Yes**.
+> [!NOTE]
+> Previously, a setting called "*Enable new requests and assignments*" controlled self-service access requests. This capability is now more accurately reflected by the "*Self*" option.
 
-    You can always enable it in the future, after you finish creating the access package.
+1. After deciding who the access package is for you can designate who can request access for the access package. You can choose Self, Admin, or Manager as those who can request access.
 
-    If you select **None (administrator direct assignments only)** and you set **Enable new requests and assignments** to **No**, administrators can't directly assign this access package.
+You can always enable it in the future, after you finish creating the access package.
 
-    ![Screenshot that shows the option for enabling new requests and assignments.](./media/entitlement-management-request-policy/enable-requests.png)
+If you selected **None (administrator direct assignments only)** and you set enable to **No**, then administrators can't directly assign this access package.
+
+
+![Screenshot that shows the option for enabling new requests and assignments.](./media/entitlement-management-request-policy/enable-requests.png)
 
 1. Go to the [next section](#add-a-verified-id-requirement) to learn how to add a verified ID requirement to your access package. Otherwise, select **Next**.
 

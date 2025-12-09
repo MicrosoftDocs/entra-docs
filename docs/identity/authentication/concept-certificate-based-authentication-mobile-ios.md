@@ -48,7 +48,7 @@ Microsoft Entra CBA is supported for certificates on-device on native browsers a
 ### Prerequisites
 
 - iOS version must be iOS 9 or later.
-- Microsoft Authenticator is required for Office applications and Outlook on iOS.
+- Microsoft Authenticator or Company portal is required for first party applications.
 
 ### Support for on-device certificates and external storage
 
@@ -182,15 +182,17 @@ CBA support for YubiKey is available in the latest Microsoft Authentication Libr
 
 ## Known issues
 
-- On iOS, users with certificate-based authentication will see a "double prompt", where they must select the option to use certificate-based authentication twice.
-- On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor.
-- On iOS, an auth strength policy requiring CBA and an MAM app protection policy will end up in a loop between device registration and MFA satisfaction. Due to the bug on iOS, when a user uses CBA to satisfy MFA requirement, the MAM policy is not satisfied with error being thrown by server saying device registration is required, even though the device is registered. This incorrect error causes re-registration and the request is stuck in loop of using CBA to sign in and device need registration. Due to the above issues, CBA as a second factor is blocked on iOS and will be unblocked as soon as the fixes are fixed. 
+There are some known issues when the iOS device does not have authenticator application or company portal.
+- Users with certificate-based authentication will see a "double prompt", where they must select the option to use certificate-based authentication twice.
+- Users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor.
+- An auth strength policy requiring CBA and an MAM app protection policy will end up in a loop between device registration and MFA satisfaction. Also when a user uses CBA to satisfy MFA requirement, the MAM policy is not satisfied with error being thrown by server saying device registration is required, even though the device is registered. This incorrect error causes re-registration and the request is stuck in loop of using CBA to sign in and device need registration. 
 
 ## Next steps
 
 - [Overview of Microsoft Entra CBA](concept-certificate-based-authentication.md)
 - [Technical deep dive for Microsoft Entra CBA](concept-certificate-based-authentication-technical-deep-dive.md)
 - [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
+- [Microsoft Entra CBA Certificate Revocation List](concept-certificate-based-authentication-certificate-revocation-list.md)
 - [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
 - [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
 - [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)

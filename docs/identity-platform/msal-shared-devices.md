@@ -2,7 +2,7 @@
 title: Shared device mode overview
 description: Learn how Microsoft Entra ID's shared device mode feature enables device sharing for your frontline workers.
 author: henrymbuguakiarie
-manager: CelesteDG
+manager: pmwongera
 ms.author: henrymbugua
 ms.date: 05/09/2025
 ms.reviewer: akgoel

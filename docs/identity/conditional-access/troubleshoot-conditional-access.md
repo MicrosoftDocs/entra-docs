@@ -120,7 +120,7 @@ Admins use the audience report to learn why a CA policy applies or doesn't apply
 If you're locked out because of an incorrect setting in a Conditional Access policy:
 
 - Check if there are other admins in your organization who aren't blocked yet. An admin with access can disable the policy that's affecting your sign-in.
-- If no admin in your organization can update the policy, submit a support request. Microsoft support reviews and, after confirming, updates the Conditional Access policies that prevent access.
+- If no admin in your organization can update the policy, [submit a support request](../../fundamentals/how-to-get-support.md#open-a-support-request). Microsoft support reviews and, after confirming, updates the Conditional Access policies that prevent access.
 
 ## Next steps
 

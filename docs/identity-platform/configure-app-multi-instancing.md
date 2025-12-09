@@ -4,7 +4,7 @@ description: Learn about multi-instancing, which is needed for configuring multi
 author: cilwerner
 manager: pmwongera
 ms.author: cwerner
-ms.custom: curation-claims
+ms.custom:
 ms.date: 06/09/2023
 ms.reviewer: alamaral
 ms.service: identity-platform

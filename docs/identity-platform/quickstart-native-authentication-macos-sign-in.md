@@ -3,14 +3,14 @@ title: Sign in users in sample macOS (Swift) app by using native authentication
 description: Learn how to configure macOS (Swift) sample app to sign up and sign in using Microsoft Entra External ID.
 
 author: henrymbuguakiarie
-manager: mwongerapk
+manager: pmwongera
 
 ms.author: henrymbugua
-ms.service: entra-external-id
+ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/23/2024
+ms.date: 11/17/2025
 ms.custom:
 #Customer intent: As a dev, devops, I want to learn about how to configure native authentication macOS sample app to sign up and sign in scenarios using Microsoft Entra External ID.
 ---
@@ -29,7 +29,7 @@ In this article, you learn how to:
 
 ## Prerequisites 
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
@@ -85,6 +85,11 @@ This guide tests **Email and password** usage. Enter a valid email address and p
 :::image type="content" source="media/native-authentication/macos/enter-one-time-pass-code-macos.png" alt-text="Screenshot of user prompt to enter one-time passcode (OTP) in macOS app." lightbox="media/native-authentication/macos/enter-one-time-pass-code-expanded-macos.png"::: 
  
 After you enter your email address on the previous screen, the application will send a verification code to it. Once you submit the received code, the application takes you back to the previous screen and automatically signs you in.  
+
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Next steps 
 

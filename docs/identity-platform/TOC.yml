@@ -115,6 +115,9 @@
           href: secure-least-privileged-access.md
         - name: Secure access control using groups
           href: secure-group-access-control.md
+        - name: Content Security Policy (CSP) overview
+          href: content-security-policy.md
+          displayName: CSP, security headers, XSS protection
         - name: Tokens and claims
           items:
             - name: Tokens and claims overview
@@ -302,20 +305,9 @@
       href: sample-v2-code.md#web-applications
     - name: How-to
       items:
-        - name: Web app that signs in users
-          expanded: false
-          items:
-            - name: App registration
-              href: scenario-web-app-sign-user-app-registration.md
-            - name: Code configuration
-              href: scenario-web-app-sign-user-app-configuration.md
-            - name: Sign-in and sign-out
-              href: scenario-web-app-sign-user-sign-in.md
         - name: Web app that calls an API
           expanded: false
           items:
-            - name: App registration
-              href: scenario-web-app-call-api-app-registration.md
             - name: Code configuration
               href: scenario-web-app-call-api-app-configuration.md
             - name: Global sign-out
@@ -378,16 +370,14 @@
           href: howto-call-a-web-api-with-rest-client.md
         - name: Protected web API
           items:
-            - name: App registration
-              href: scenario-protected-web-api-app-registration.md
+            - name: Expose scopes
+              href: scenario-protected-web-api-expose-scopes.md
             - name: Code configuration
               href: scenario-protected-web-api-app-configuration.md
             - name: Verification of scopes or app roles
               href: scenario-protected-web-api-verification-scope-app-roles.md
         - name: Web API that calls an API
           items:
-            - name: App registration
-              href: scenario-web-api-call-api-app-registration.md
             - name: Code configuration
               href: scenario-web-api-call-api-app-configuration.md
             - name: Acquire a token
@@ -429,8 +419,6 @@
       items:
         - name: Desktop app that calls an API
           items:
-            - name: App registration
-              href: scenario-desktop-app-registration.md
             - name: Code configuration
               href: scenario-desktop-app-configuration.md
             - name: Acquire token
@@ -555,8 +543,6 @@
       items:
         - name: Mobile app that calls an API
           items:
-            - name: App registration
-              href: scenario-mobile-app-registration.md
             - name: Code configuration
               href: scenario-mobile-app-configuration.md
             - name: "Code configuration: Android and iOS"
@@ -608,8 +594,6 @@
       items:
         - name: Non-interactive app that calls a web API
           items:
-            - name: App registration
-              href: scenario-daemon-app-registration.md
             - name: Code configuration
               href: scenario-daemon-app-configuration.md
             - name: Acquire token

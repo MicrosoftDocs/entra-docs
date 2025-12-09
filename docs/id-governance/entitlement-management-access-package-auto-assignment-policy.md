@@ -13,7 +13,7 @@ ms.reviewer: mwahl
 ---
 # Configure an automatic assignment policy for an access package in entitlement management
 
-You can use rules to determine access package assignment based on user properties in Microsoft Entra ID, part of Microsoft Entra. In Entitlement Management, an access package can have multiple policies, and each policy establishes how users get an assignment to the access package, and for how long. As an administrator, you can establish a policy for automatic assignments by supplying a membership rule, that Entitlement Management follows to create and remove assignments automatically. Similar to a [dynamic group](../identity/users/groups-create-rule.md), when an automatic assignment policy is created, user attributes are evaluated for matches with the policy's membership rule. When an attribute changes for a user, these automatic assignment policy rules in the access packages are processed for membership changes. Assignments to users are then added or removed depending on whether they meet the rule criteria.
+You can use rules to determine access package assignment based on identity properties in Microsoft Entra ID, part of Microsoft Entra. In Entitlement Management, an access package can have multiple policies, and each policy establishes how identities get an assignment to the access package, and for how long. As an administrator, you can establish a policy for automatic assignments by supplying a membership rule, that Entitlement Management follows to create and remove assignments automatically. Similar to a [dynamic group](../identity/users/groups-create-rule.md), when an automatic assignment policy is created, identity attributes are evaluated for matches with the policy's membership rule. When an attribute changes for an identity, these automatic assignment policy rules in the access packages are processed for membership changes. Assignments to identities are then added or removed depending on whether they meet the rule criteria.
 
    > [!NOTE]
    > Only one automatic assignment policy is allowed per access package. Configuring more than one will lead to processing issues and subsequent problems with the access of assigned individuals. 
@@ -22,7 +22,7 @@ This article describes how to create an access package automatic assignment poli
 
 ## Before you begin
 
-You need to have attributes populated on the users who will be in scope for being assigned access. The attributes you can use in the rules criteria of an access package assignment policy are those attributes listed in [supported properties](../identity/users/groups-dynamic-membership.md#supported-properties), along with [extension attributes and custom extension properties](../identity/users/groups-dynamic-membership.md#extension-attributes-and-custom-extension-properties). These attributes can be brought into Microsoft Entra ID by [patching](../identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-for-cloud-only-users-using-microsoft-graph) the [user](/graph/api/resources/user), an HR system such as [SuccessFactors](../identity/app-provisioning/sap-successfactors-integration-reference.md), [Microsoft Entra Connect cloud sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) or [Microsoft Entra Connect Sync](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). The rules can include up to 15,000 users per policy.
+You need to have attributes populated on the identities who will be in scope for being assigned access. The attributes you can use in the rules criteria of an access package assignment policy are those attributes listed in [supported properties](../identity/users/groups-dynamic-membership.md#supported-properties), along with [extension attributes and custom extension properties](../identity/users/groups-dynamic-membership.md#extension-attributes-and-custom-extension-properties). These attributes can be brought into Microsoft Entra ID by [patching](../identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md#create-an-extension-attribute-for-cloud-only-users-using-microsoft-graph) the [user](/graph/api/resources/user), an HR system such as [SuccessFactors](../identity/app-provisioning/sap-successfactors-integration-reference.md), [Microsoft Entra Connect cloud sync](../identity/hybrid/cloud-sync/how-to-attribute-mapping.md) or [Microsoft Entra Connect Sync](../identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md). The rules can include up to 15,000 users per policy.
 
 ## License requirements
 
@@ -54,7 +54,7 @@ To create a policy for an access package, you need to start from the access pack
 
 1. Select **Save** to close the rule editor for dynamic membership groups.
 1. By default, the checkboxes to automatically create and remove assignments should remain checked.
-1. If you wish users to retain access for a limited time after they go out of scope, you can specify a duration in hours or days. For example, when an employee leaves the sales department, you could wish to allow them to continue to retain access for seven days to allow them to use sales apps and transfer ownership of their resources in those apps to another employee.
+1. If you wish identities to retain access for a limited time after they go out of scope, you can specify a duration in hours or days. For example, when an employee leaves the sales department, you could wish to allow them to continue to retain access for seven days to allow them to use sales apps and transfer ownership of their resources in those apps to another employee.
 1. Select **Next** to open the **Custom Extensions** tab.
 
 1. If you have [custom extensions](entitlement-management-logic-apps-integration.md) in your catalog you wish to have run when the policy assigns or removes access, you can add them to this policy.  Then select next to open the **Review** tab.
@@ -66,9 +66,9 @@ To create a policy for an access package, you need to start from the access pack
 1. Select **Create** to save the policy.
 
    > [!NOTE]
-   > At this time, Entitlement management will automatically create a dynamic security group corresponding to each policy, in order to evaluate the users in scope. This group should not be modified except by Entitlement Management itself.  This group can also be modified or deleted automatically by Entitlement Management, so don't use this group for other applications or scenarios.
+   > At this time, Entitlement management will automatically create a dynamic security group corresponding to each policy, in order to evaluate the identities in scope. This group should not be modified except by Entitlement Management itself.  This group can also be modified or deleted automatically by Entitlement Management, so don't use this group for other applications or scenarios.
 
-1. Microsoft Entra ID evaluates the users in the organization that are in scope of this rule, and create assignments for those users who don't already have assignments to the access package. A policy can include at most 15,000 users in its rule. It can take several minutes for the evaluation to occur, or for subsequent updates to user's attributes to be reflected in the access package assignments.
+1. Microsoft Entra ID evaluates the identities in the organization that are in scope of this rule, and creates assignments for those identities who don't already have assignments to the access package. A policy can include at most 15,000 identities in its rule. It can take several minutes for the evaluation to occur, or for subsequent updates to identities' attributes to be reflected in the access package assignments.
 
 ## Create an automatic assignment policy programmatically
 
@@ -76,7 +76,7 @@ There are two ways to create an access package assignment policy for automatic a
 
 ### Create an access package assignment policy through Graph
 
-You can create a policy using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application in a catalog role or with the `EntitlementManagement.ReadWrite.All` permission, can call the [create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) API. In your [request payload](/graph/api/resources/accesspackageassignmentpolicy?view=graph-rest-1.0&preserve-view=true), include the `displayName`, `description`, `specificAllowedTargets`, [`automaticRequestSettings`](/graph/api/resources/accesspackageautomaticrequestsettings?view=graph-rest-1.0&preserve-view=true) and `accessPackage` properties of the policy.
+You can create a policy using Microsoft Graph. An identity in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application in a catalog role or with the `EntitlementManagement.ReadWrite.All` permission, can call the [create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true) API. In your [request payload](/graph/api/resources/accesspackageassignmentpolicy?view=graph-rest-1.0&preserve-view=true), include the `displayName`, `description`, `specificAllowedTargets`, [`automaticRequestSettings`](/graph/api/resources/accesspackageautomaticrequestsettings?view=graph-rest-1.0&preserve-view=true) and `accessPackage` properties of the policy.
 
 ### Create an access package assignment policy through PowerShell
 

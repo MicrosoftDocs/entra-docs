@@ -1,10 +1,9 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 09/03/2025
+ms.date: 12/03/2025
 ms.service: entra-external-id
 ms.topic: whats-new
-
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -18,32 +17,42 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 # [External ID in external tenants](#tab/external-tenants)
 
-## August 2025
-
-### Updated articles
-
-- [Regional opt-in for MFA telephony verification with external tenants (preview)](customers/how-to-region-code-opt-in.md) - Rest API updates
-
-## July 2025
+## November 2025
 
 ### New article
 
-- [Supported features in workforce and external tenants](customers/how-to-add-enterprise-application.md)
+- [Configure Akamai WAF with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md)
 
 ### Updated articles
 
-- [Register a SAML app in your external tenant](customers/how-to-register-saml-app.md) - Enterprise applications and SAML SSO are generally available
-- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added enterprise applications update
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added Security Store features
+- [Configure Cloudflare Web Application Firewall with Microsoft Entra External ID](customers/how-to-configure-waf-integration.md) - Updated Cloudflare integration steps
+- [Set up Azure Monitor in external tenants](customers/how-to-azure-monitor.md) - Updated Azure Monitor setup steps
+- [Multifactor authentication in external tenants](customers/concept-multifactor-authentication-customers.md) - Added MFA with Conditional Access authentication context
 
-## June 2025
+## October 2025
+
+### New article
+
+- [Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection](customers/how-to-integrate-fraud-protection.md)
 
 ### Updated articles
 
-- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added activity logs and reports
-- [Microsoft Entra External ID training, live demo, and videos](customers/reference-training-videos.md) - Added video on configuring OpenID Connect identity providers
+- [Identity providers for external tenants](customers/concept-authentication-methods-customers.md) - Added domain acceleration information
 
+## September 2025
+
+### Updated articles
+
+- [Add OpenID Connect as an external identity provider](customers/how-to-custom-oidc-federation-customers.md) - Multiple editorial updates
 
 # [External ID in workforce tenants](#tab/workforce-tenants)
+
+## September 2025
+
+### Updated articles
+
+- [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Added cross-cloud limitations and tenant restrictions
 
 ## August 2025
 
@@ -57,15 +66,5 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 ### Updated articles
 
 - [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Updated authentication experience for guest users
-
-## March 2025
-
-### Updated articles
-
-- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated important considerations
-- [Authentication flow for non-Microsoft Entra ID external users](authentication-conditional-access.md) - Replaced retired MSOnline references 
-- [Tutorial: Use PowerShell to bulk invite Microsoft Entra B2B collaboration users](bulk-invite-powershell.md) - Editorial updates
-- [B2B collaboration invitation redemption](redemption-experience.md) - Editorial updates
-
 
 ---

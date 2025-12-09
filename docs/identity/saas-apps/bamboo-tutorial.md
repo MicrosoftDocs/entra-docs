@@ -26,7 +26,7 @@ In this article,  you learn how to integrate SAML SSO for Bamboo by resolution G
 
 To configure Microsoft Entra integration with SAML SSO for Bamboo by resolution GmbH, you need the following items:
 
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * SAML SSO for Bamboo by resolution GmbH single sign-on enabled subscription.
 
 ## Scenario description

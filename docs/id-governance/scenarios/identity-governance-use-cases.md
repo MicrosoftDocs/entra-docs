@@ -2,13 +2,13 @@
 title: 'Microsoft Entra ID Governance use cases'
 description: This article describes use cases Microsoft Entra ID Governance.
 ms.service: entra-id-governance
-author: billmath
+author: owinfreyATL
 manager: dougeby
 
 
 ms.topic: article
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: owinfrey
 ---
 
 # Microsoft Entra ID Governance use cases
@@ -32,3 +32,4 @@ These use cases demonstrate the breadth and importance of identity governance in
 - [Understanding least privileged](least-privileged.md)
 - [Govern the employee and guest lifecycle](govern-the-employee-lifecycle.md)
 - [Govern access for applications in your environment](../identity-governance-applications-prepare.md)
+- [Governing agent identities in Microsoft Entra Agent ID (preview)](../agent-id-governance-overview.md)

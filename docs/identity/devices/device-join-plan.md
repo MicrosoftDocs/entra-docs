@@ -37,7 +37,7 @@ To plan your Microsoft Entra join implementation, you should familiarize yoursel
 
 ## Review your scenarios
 
-Microsoft Entra join enables you to transition toward a cloud-first model with Windows. If you're planning to modernize your devices management and reduce device-related IT costs, Microsoft Entra join provides a great foundation toward achieving those goals.
+Microsoft Entra join enables you to transition toward a cloud-first model with Windows. If you're planning to modernize your device management and reduce device-related IT costs, Microsoft Entra join provides a great foundation toward achieving those goals.
 
 Consider Microsoft Entra join if your goals align with the following criteria:
 
@@ -100,12 +100,12 @@ Microsoft Entra join:
 Device management for Microsoft Entra joined devices is based on a mobile device management (MDM) platform such as Intune, and MDM CSPs. Starting in Windows 10 there's a built-in MDM agent that works with all compatible MDM solutions.
 
 > [!NOTE]
-> Group policies are not supported in Microsoft Entra joined devices as they are not connected to on-premises Active Directory. Management of Microsoft Entra joined devices is only possible through MDM
+> Group policies are not supported in Microsoft Entra joined devices as they are not connected to on-premises Active Directory. Management of Microsoft Entra joined devices is only possible through MDM.
 
 There are two approaches for managing Microsoft Entra joined devices:
 
 - **MDM-only** - A device is exclusively managed by an MDM provider like Intune. All policies are delivered as part of the MDM enrollment process. For Microsoft Entra ID P1 or P2 or EMS customers, MDM enrollment is an automated step that is part of a Microsoft Entra join.
-- **Co-management** -  A device is managed by an MDM provider and Microsoft Configuration Manager. In this approach, the Microsoft Configuration Manager agent is installed on an MDM-managed device to administer certain aspects.
+- **Co-management** - A device is managed by an MDM provider and Microsoft Configuration Manager. In this approach, the Microsoft Configuration Manager agent is installed on an MDM-managed device to administer certain aspects.
 
 If you're using Group Policies, evaluate your Group Policy Object (GPO) and MDM policy parity by using [Group Policy analytics](/mem/intune/configuration/group-policy-analytics) in Microsoft Intune.
 
@@ -122,13 +122,13 @@ Through co-management, you can use Microsoft Configuration Manager to manage cer
 
 ## Understand considerations for applications and resources
 
-We recommend migrating applications from on-premises to cloud for a better user experience and access control. Microsoft Entra joined devices can seamlessly provide access to both, on-premises and cloud applications. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
+We recommend migrating applications from on-premises to cloud for a better user experience and access control. Microsoft Entra joined devices can seamlessly provide access to both on-premises and cloud applications. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
 
 The following sections list considerations for different types of applications and resources.
 
 ### Cloud-based applications
 
-If an application is added to Microsoft Entra app gallery, users get SSO through Microsoft Entra joined devices. No other configuration is required. Users get SSO on both, Microsoft Edge and Chrome browsers. For Chrome, you need to deploy the [Windows 10 Accounts extension](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji).
+If an application is added to Microsoft Entra app gallery, users get SSO through Microsoft Entra joined devices. No other configuration is required. Users get SSO on both Microsoft Edge and Chrome browsers. For Chrome, you need to deploy the [Windows 10 Accounts extension](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji).
 
 All Win32 applications that:
 
@@ -151,7 +151,7 @@ If you use AD FS, see [Verify and manage single sign-on with AD FS](/previous-ve
 Users get SSO from Microsoft Entra joined devices if the device has access to a domain controller.
 
 > [!NOTE]
-> Microsoft Entra joined devices can seamlessly provide access to both, on-premises and cloud applications. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
+> Microsoft Entra joined devices can seamlessly provide access to both on-premises and cloud applications. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
 
 **Recommendation:** Deploy [Microsoft Entra application proxy](/entra/identity/app-proxy) to enable secure access for these applications.
 
@@ -163,7 +163,7 @@ Your users have SSO from Microsoft Entra joined devices when a device has access
 
 We recommend deploying [Universal Print](/universal-print/fundamentals/universal-print-whatis) to have a cloud-based print management solution without any on-premises dependencies.
 
-###	On-premises applications relying on machine authentication
+### On-premises applications relying on machine authentication
 
 Microsoft Entra joined devices don't support on-premises applications relying on machine authentication.
 
@@ -190,7 +190,7 @@ You can provision Microsoft Entra joined devices using the following approaches:
 - **Windows Autopilot** - Windows Autopilot enables preconfiguration of devices for a smoother Microsoft Entra join experience in OOBE. For more information, see the [Overview of Windows Autopilot](/windows/deployment/windows-autopilot/windows-10-autopilot).
 - **Bulk enrollment** - Bulk enrollment enables an administrator driven Microsoft Entra join by using a bulk provisioning tool to configure devices. For more information, see [Bulk enrollment for Windows devices](/mem/intune/enrollment/windows-bulk-enroll).
 
-Here's a comparison of these three approaches
+Here's a comparison of these three approaches.
 
 | Element | Self-service setup | Windows Autopilot | Bulk enrollment |
 | --- | --- | --- | --- |
@@ -236,7 +236,7 @@ Choose **Selected** and selects the users you want to add to the local administr
 
 ### Require multifactor authentication (MFA) to join devices
 
-Select **"Yes** if you require users to do MFA while joining devices to Microsoft Entra ID.
+Select **Yes** if you require users to do MFA while joining devices to Microsoft Entra ID.
 
 ![Require multifactor Auth to join devices](./media/device-join-plan/03.png)
 

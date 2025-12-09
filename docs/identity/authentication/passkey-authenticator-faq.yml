@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 04/23/2025
+  ms.date: 12/04/2025
   ms.author: justinha
   author: justinha
   manager: dougeby
@@ -41,7 +41,20 @@ sections:
       - question: |
           Do I need to enable Bluetooth to perform cross-device authentication?
         answer: |
-          To complete cross-device authentication by using passkeys in Authenticator, you must enable Bluetooth on both the laptop and the mobile device. Both devices need internet access. 
+          To use cross-device authentication with passkeys in Authenticator, you must enable Bluetooth and have internet access on both devices. 
+      - question: |
+          Why do cross-device sign-in and registration fail with "Device couldn't connect"?
+        answer: |
+          Make sure both devices have internet access and Bluetooth enabled. 
+          For cross-device registration and authentication, users can't use cross-device registration or authentication if you enable attestation.
+
+          Platform | URL
+          ---------|----
+          Android | `cable.ua5v.com`
+          iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
+
+          If your organization restricts Bluetooth usage, you can [permit Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments) to allow cross-device sign-in and registration of passkeys.
+
       - question: |
           Can I have multiple passkeys in Authenticator?
         answer: |        
@@ -56,14 +69,7 @@ sections:
           You can't use passkeys without an internet connection. 
           For same-device scenarios, the mobile device that contains the passkey needs internet access. 
           For cross-device scenarios, both the device with the passkey and the secondary device where you want to sign in need internet access.
-      - question: |
-          Why is cross-device registration failing with "Device couldn't connect"?
-        answer: |
-          Make sure that Bluetooth and an active internet connection are enabled on both devices. 
-          Also, allow connectivity to these two endpoints in your organization to enable cross-device registration and authentication:
-          
-          - `https://cable.ua5v.com`
-          - `https://cable.auth.com`
+
       - question: |
           I'm on an Android 14 device, and I followed all the steps. Why can't I register passkeys in the Authenticator app?
         answer: |

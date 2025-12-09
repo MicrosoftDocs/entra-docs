@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: mwongerapk
 ms.topic: reference
-ms.date: 09/01/2025
+ms.date: 11/19/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
@@ -20,11 +20,10 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have released and the changes in those versions.
 
-### Breaking Change on Entra Connect Sync
-
-> [!IMPORTANT]
-> New Microsoft Entra Connect Sync Versions are only available via the Microsoft Entra admin center 
-> > Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer being released to the Microsoft Download Center.
+>[!IMPORTANT]
+>**Mandatory Upgrade Required**: All synchronization services in Microsoft Entra Connect Sync will stop working on **September 30, 2026** if you're not on at least version 2.5.79.0. In May 2025, we released this version with a back-end service change that hardens our services. Upgrade before this deadline to avoid any service disruption.
+>
+>If you're unable to upgrade before the deadline, all synchronization services will fail until you upgrade to the latest version. The Microsoft Entra Connect Sync .msi installation file is exclusively available on [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted). Make sure you meet the minimum requirements including .NET Framework 4.7.2 and TLS 1.2.
 
 ## Looking for the latest versions?
 
@@ -69,7 +68,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
 |[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
-|[2.5.79.0](#25790)||
+|[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
+|[2.5.190.0](#251900)||
 
 **All other versions are not supported**
 
@@ -91,6 +91,23 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.5.190.0
+
+### Release status
+
+11/19/2025: Released for download via the Microsoft Entra admin center.
+
+### Added features
+
+- **AAD Connector V2 API Enforcement**: The default connector API version is now V2. Using the previous V1 connector API is no longer supported.
+
+### Bug fixes
+
+- Fixed an issue where Application-Based Authentication failed with Trusted Platform Module (TPM) and Microsoft Authentication Library (MSAL). The fix ensures compatibility with MSAL's default signing method.
+- Fixed issue in the configuration wizard that resulted in "Directory synchronization for this directory currently has a mismatch in sync enabled and sync status" error when DirSync Status is in "Other".
+- The certificate renewal threshold for Application-based Authentication has been updated to 30 days. Entra-managed certificates will now automatically renew when their expiration date is 30 days or less.
+- Fixed issue with cloud management of Exchange attributes that raised export errors labelled `ExchangeManagedAttributesUpdateNotAllowed`.
 
 ## 2.5.79.0
 

@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 09/18/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: sfi-ga-nochange
@@ -33,6 +33,9 @@ A group Managed Service Account (gMSA) is a managed domain account that provides
 To update an existing agent to use the Group Managed Service Account created during installation, upgrade the agent service to the latest version by running *AADConnectProvisioningAgent.msi*. Now run through the installation wizard again and provide the credentials to create the account when you're prompted to do so.
 
 ## Install the agent
+
+>[!NOTE]
+>By default, the Microsoft Entra provisioning agent is installed in the default Azure environment.
 
 [!INCLUDE [active-directory-cloud-sync-how-to-install](~/includes/entra-cloud-sync-how-to-install.md)]
 
@@ -69,14 +72,6 @@ To use *password writeback* and enable the self-service password reset (SSPR) se
   ```
 
 For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment ](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
-
-## Install an agent in the US government cloud
-
-By default, the Microsoft Entra provisioning agent is installed in the default Azure environment. If you're installing the agent for US government use, make this change in step 7 of the preceding installation procedure:
-
-- Instead of selecting **Open file**, select **Start** > **Run**, and then go to the *AADConnectProvisioningAgentSetup.exe* file.  In the **Run** box, after the executable, enter **ENVIRONMENTNAME=AzureUSGovernment**, and then select **OK**.
-
-    [![Screenshot that shows how to install an agent in the US government cloud.](media/how-to-install/new-install-12.png)](media/how-to-install/new-install-12.png#lightbox)
 
 ## Password hash synchronization and FIPS with cloud sync
 

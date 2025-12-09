@@ -6,7 +6,7 @@ metadata:
   author: csmulligan
   ms.author: cmulligan
   manager: dougeby
-  ms.date: 10/21/2024
+  ms.date: 11/17/2025
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -68,7 +68,7 @@ procedureSection:
 
       There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Entra ID** > **Users** and select a user to update.
 
-      - **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest. For more information about the difference between external guests and members, see [B2B collaboration user properties](user-properties.md)
+      - **Identity:** Enter the user's first and family name. Set the User type as either Member or Guest. For more information about the difference between external guests and members, see [B2B collaboration user properties](user-properties.md)
 
       - **Job information:** Add any job-related information, such as the user's job title, department, or manager.
 
