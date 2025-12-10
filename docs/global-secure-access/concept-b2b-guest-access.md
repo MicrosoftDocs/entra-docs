@@ -87,6 +87,10 @@ A: No, device registration isn't required on the resource tenant for guest acces
 **Q: Can I configure MFA on the resource tenant?**   
 A: Yes, you can configure MFA on the user and on the applications.
 
+**Q: How does a home tenant (external tenant) user access an on-premises resource in the resource tenant when the resource uses AD DS and Kerberos (such as a file share or a Kerberos-integrated application)?**  
+A: This scenario isn't supported. Microsoft Entra B2B doesn't provide Kerberos tickets, and Global Secure Access Private Access doesn't proxy Kerberos or support Kerberos Constrained Delegation (KCD). As a result, guest users can't directly access on-premises resources requiring Kerberos (for example, SMB file shares or applications using Integrated Windows Authentication).  
+For web applications, the only supported method for B2B users to access Kerberos-backed on-premises apps is by publishing the app through **Application Proxy with KCD**. For more information, see [Configure single sign-on with Kerberos constrained delegation](../identity/app-proxy/how-to-configure-sso-with-kcd.md).
+
 ## Known limitations
 - B2B guest access doesn't support keeping the Internet Access, Microsoft 365, and Microsoft Entra tunnels to the home tenant.
 - Switching an account to the resource tenant fails when the resource tenant is configured for required MFA in the cross-tenant configuration and the home tenant is configured with passwordless sign-in (PSI) on the authenticator app.
