@@ -219,6 +219,8 @@ Password reset and change are fully supported on all business-to-business (B2B) 
 
 To test this scenario, go to `https://passwordreset.microsoftonline.com` with one of these partner users. If the user defined an alternate email or authentication email, password reset works as expected.
 
+ 
+
 > [!NOTE]
 > Microsoft accounts that are granted guest access to your Microsoft Entra tenant, such as those from Hotmail.com, Outlook.com, or other personal email addresses, can't use Microsoft Entra SSPR. For more information, see [When you can't sign in to your Microsoft account](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).
 
