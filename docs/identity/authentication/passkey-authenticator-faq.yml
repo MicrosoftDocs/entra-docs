@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 12/04/2025
+  ms.date: 12/10/2025
   ms.author: justinha
   author: justinha
   manager: dougeby
@@ -92,5 +92,8 @@ sections:
       - question: |
           Can I sign in with a passkey in Authenticator in China?
         answer: |        
-          No. Only limited authentication methods are available for Authenticator in China. For more information, see [Download Microsoft Authenticator in China](https://support.microsoft.com/account-billing/download-microsoft-authenticator-in-china-ebbef05c-a429-4236-8570-1bb1900fec35).
+          In China, some authentication methods aren't available for Microsoft Azure operated by 21Vianet. 
+          Sign in with a passkey in Authenticator to organizations that run on Microsoft Azure operated by 21Vianet isn't available. 
+          You can sign in with a passkey in Authenticator to other global organizations, such as while traveling. 
+          For more information, see [Download Microsoft Authenticator in China](https://support.microsoft.com/account-billing/download-microsoft-authenticator-in-china-ebbef05c-a429-4236-8570-1bb1900fec35).
 
