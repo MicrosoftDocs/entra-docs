@@ -96,14 +96,12 @@ When a user is enabled for SSPR, they must register at least one authentication 
 
 The following authentication methods are available for SSPR:
 
-* Mobile app notification
-* Mobile app code
-* Hardware OATH token
-* Software OATH token
-* Email
-* Mobile phone
-* Office phone (available only for tenants with paid subscriptions)
-* Security questions
+* [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md)
+* [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens)
+* [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
+* [Short Message Service (SMS) sign-in](concept-authentication-phone-options.md#sms-sign-in)
+* [Voice call](concept-authentication-phone-options.md#voice-call)
+* [Email OTP](concept-authentication-email-otp.md)
 
 Users can only reset their password if they register an authentication method that the administrator has enabled.
 
