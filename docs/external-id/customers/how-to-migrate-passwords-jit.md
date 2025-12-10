@@ -44,7 +44,7 @@ From the user's perspective, the migration is completely seamless. Users simply 
 
 The JIT migration process is illustrated in the following diagram:
 
-:::image type="content" source="media/how-to-migrate-users-jit/jit-migration-flow-diagram.png" alt-text="Diagram of the Just-In-Time password migration flow showing user authentication from a legacy identity provider to Microsoft Entra External ID." lightbox="media/how-to-migrate-users-jit/jit-migration-flow-diagram.png":::
+:::image type="content" source="media/how-to-migrate-passwords-jit/jit-migration-flow-diagram.png" alt-text="Diagram of the Just-In-Time password migration flow showing user authentication from a legacy identity provider to Microsoft Entra External ID." lightbox="media/how-to-migrate-passwords-jit/jit-migration-flow-diagram.png":::
 
 ### How the JIT migration process works
 
