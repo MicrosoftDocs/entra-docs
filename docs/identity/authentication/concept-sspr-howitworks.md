@@ -96,12 +96,12 @@ When a user is enabled for SSPR, they must register at least one authentication 
 
 The following authentication methods are available for SSPR:
 
-* [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md)
-* [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens)
+* [Microsoft Authenticator push notifications](concept-authentication-authenticator-app.md#mfa-via-notifications-through-mobile-app)
+* [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview)
 * [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
-* [Short Message Service (SMS) sign-in](concept-authentication-phone-options.md#sms-sign-in)
-* [Voice call](concept-authentication-phone-options.md#voice-call)
-* [Email OTP](concept-authentication-email-otp.md)
+* [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)
+* [Voice call](concept-authentication-phone-options.md)
+* [Email OTP](concept-sspr-howitworks.md#authentication-methods)
 
 Users can only reset their password if they register an authentication method that the administrator has enabled.
 
