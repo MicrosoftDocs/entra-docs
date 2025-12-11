@@ -83,10 +83,13 @@ Before implementing JIT migration, you need to prepare your users in Microsoft E
 
 To implement JIT migration, you need to define a directory extension property to track whether each user's credentials have been migrated from the legacy identity provider. Microsoft Graph supports adding custom properties to directory objects through [directory (Microsoft Entra ID) extensions](/graph/extensibility-overview#directory-microsoft-entra-id-extensions). 
 
+
+#### [Graph](#tab/graph)
+
 Create an extension property using the Microsoft Graph API:
 
 ``` http
-POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69e287e7b/extensionProperties 
+POST https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444/extensionProperties 
 
 { 
     "name": "toBeMigrated", 
@@ -96,8 +99,22 @@ POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69
     ] 
 } 
 ```
+Replace `00001111-aaaa-2222-bbbb-3333cccc4444` with the object ID `b2c-extensions-app` of your application. The value of this extensions should be set to true for all users who will require migration.
 
-Replace `30a5435a-1871-485c-8c7b-65f69e287e7b` with the object ID `b2c-extensions-app` of your application. The value of this extensions should be set to true for all users who will require migration.
+#### [Entra Admin Center](#tab/admin-center)
+
+To create an extension property using the Microsoft Entra admin center:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
+1. Navigate to **Identity** > **External Identities** > **Custom user attributes**.
+1. Select **Add**.
+1. Enter the following values:
+   - **Name**: Enter a name for the property (for example, `toBeMigrated`).
+   - **Data Type**: Select **Boolean**.
+   - **Description**: Enter a meaningful description (for example, "Tracks whether user password has been migrated from legacy system").
+1. Select **Create**.
+
+---
 
 #### 1.1.1 Get the extension property ID for use in your custom authentication extension
 
@@ -131,6 +148,8 @@ This request includes user details and other values that will be shared with the
 POST https://graph.microsoft.com/v1.0/users
 
 {
+    "userType": "Member",
+    "creationType": "LocalAccount",
     "accountEnabled": true,
     "passwordProfile": {
         "forceChangePasswordNextSignIn": false,
