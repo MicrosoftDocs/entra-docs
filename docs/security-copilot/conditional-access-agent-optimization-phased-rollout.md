@@ -1,12 +1,12 @@
 ---
-title: Conditional Access optimization agent phased rollout
+title: Conditional Access Optimization Agent phased rollout
 description: Learn about the phased rollout capability for the Security Copilot for Microsoft Entra optimization agent.
 ms.author: sarahlipsey
 author: shlipsey3
 manager: pmwongera
 
-ms.reviewer: lhuangnorth
-ms.date: 08/28/2025
+ms.reviewer: jodah
+ms.date: 12/11/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -14,9 +14,9 @@ ms.topic: concept-article
 ms.custom: security-copilot
 ms.collection: msec-ai-copilot
 ---
-# Conditional Access optimization agent phased rollout
+# Conditional Access Optimization Agent phased rollout
 
-The Conditional Access optimization agent for Microsoft Entra includes a phased rollout capability that helps organizations deploy new Conditional Access policies safely and efficiently. This Microsoft Security Copilot feature in Microsoft Entra enables administrators to introduce policies gradually, monitor their impact, and minimize disruptions. This phased rollout capability provides gradual deployment of new policies to minimize the chance of widespread disruption to end users and reduce the need for manual analysis and planning, saving weeks of effort. As with all aspects of the Conditional Access Optimization Agent, administrators retain full control of the policy changes, such as group selection and rollout pacing. Clear reasoning for the rollout plan is also provided to maintain transparency.
+The Conditional Access Optimization Agent for Microsoft Entra includes a phased rollout capability that helps organizations deploy new Conditional Access policies safely and efficiently. This Microsoft Security Copilot feature in Microsoft Entra enables administrators to introduce policies gradually, monitor their impact, and minimize disruptions. This phased rollout capability provides gradual deployment of new policies to minimize the chance of widespread disruption to end users and reduce the need for manual analysis and planning, saving weeks of effort. As with all aspects of the Conditional Access Optimization Agent, administrators retain full control of the policy changes, such as group selection and rollout pacing. Clear reasoning for the rollout plan is also provided to maintain transparency.
 
 This article explains how the phased rollout process works, outlines prerequisites, and describes the built-in safeguards that help ensure a smooth deployment.
 
@@ -30,7 +30,7 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 ## How it works
 
-When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan.
+When the Conditional Access Optimization Agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan.
 
 Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply. To determine which groups to use, the agent looks at groups that were previously or are currently used in Conditional Access policies. The agent looks at those groups to see how other Conditional Access policies affected them, to gauge potential impact. The agent looks at the size of the groups and then uses all these factors to assign the groups to the phases starting with the low impact groups and ending with the higher-impact groups.
 
@@ -124,4 +124,4 @@ The phased rollout capability is turned on by default. To turn it off, go to the
 ## Related content
 
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)
-- [Conditional Access optimization agent overview](./conditional-access-agent-optimization.md)
+- [Conditional Access Optimization Agent overview](./conditional-access-agent-optimization.md)

@@ -52,6 +52,8 @@ items:
     items: 
     - name: Get started
       href: ./conditional-access-agent-optimization.md
+    - name: Settings
+      href: ./conditional-access-agent-optimization-settings.md
     - name: Review and approve suggestions
       href: ./conditional-access-agent-optimization-review-suggestions.md
     - name: Chat with the optimization agent

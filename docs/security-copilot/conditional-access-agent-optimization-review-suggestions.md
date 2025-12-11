@@ -1,11 +1,11 @@
 ---
-title: Review suggestions from the Conditional Access optimization agent
+title: Review suggestions from the Conditional Access Optimization Agent
 description: Learn how to review and apply suggestions provided by the Security Copilot for Microsoft Entra optimization agent.
 ms.author: sarahlipsey
 author: shlipsey3
-ms.reviewer: lhuangnorth
+ms.reviewer: jodah
 manager: pmwongera
-ms.date: 10/09/2025
+ms.date: 12/11/2025
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -14,14 +14,14 @@ ms.custom: security-copilot
 ms.collection: msec-ai-copilot
 ---
 
-# How to review and apply suggestions from the Conditional Access optimization agent
+# How to review and apply suggestions from the Conditional Access Optimization Agent
 
-The Microsoft Entra Conditional Access optimization agent provides suggestions to create or update Conditional Access policies and creates reports for activity related to those policies. The suggestions vary based on what the agent finds. As the administrator, you need to review the suggestions and decide what to do.
+The Microsoft Entra Conditional Access Optimization Agent provides suggestions to create or update Conditional Access policies and creates reports for activity related to those policies. The suggestions vary based on what the agent finds. As the administrator, you need to review the suggestions and decide what to do.
 
 This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
 > [!IMPORTANT]
-> The Microsoft Teams integrations in the Conditional Access optimization agent is currently in PREVIEW.
+> The Microsoft Teams integrations in the Conditional Access Optimization Agent is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -38,10 +38,8 @@ This article provides an overview of the logic behind the suggestions and report
 
 ### Limitations
 
-- Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - For policy consolidation, each agent run only looks at four similar policy pairs.
-- The agent currently runs as the user who enables it.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
@@ -152,13 +150,13 @@ When the agent suggests a new policy, it creates the policy in report-only mode.
 
 ## Microsoft Teams agent suggestion notifications (Preview)
 
-Microsoft Teams can be used to receive notifications from the Conditional Access optimization agent when new suggestions are available. This preview feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
+Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This preview feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
 
 For more information, see the **Notifications** section of [Conditional Access Optimization Agent](conditional-access-agent-optimization.md).
 
 ## Review policy reports
 
-The Conditional Access optimization agent also detects spikes and dips in activity related to existing policies. These anomalies often indicate a misconfiguration of a policy that needs to be investigated. If the agent identifies a significant change in activity, a report appears in the list of suggestions. The reports apply to both active and report-only policies that the agent suggests turning on. In the **Actions taken by agent** column, you'll see **Suggested policy review** as the value.
+The Conditional Access Optimization Agent also detects spikes and dips in activity related to existing policies. These anomalies often indicate a misconfiguration of a policy that needs to be investigated. If the agent identifies a significant change in activity, a report appears in the list of suggestions. The reports apply to both active and report-only policies that the agent suggests turning on. In the **Actions taken by agent** column, you'll see **Suggested policy review** as the value.
 
 To view a policy review report:
 
