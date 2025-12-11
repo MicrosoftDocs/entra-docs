@@ -20,7 +20,7 @@ ms.custom: sfi-ga-nochange
 Hardware OATH tokens typically come with a secret key, or seed, preprogrammed in the token. 
 Before a user can sign in to their work or school account in Microsoft Entra ID by using a hardware OATH token, an administrator needs to add the token to the tenant. 
 
-The recommended way to add the token is by using Microsoft Graph with a least privileged administrator role. An updated process that uses a least priviliged role is in preview. For more information, see [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview).
+The recommended way to add the token is by using Microsoft Graph with a least privileged administrator role. An updated process that uses a least privileged role is in preview. For more information, see [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview).
 
 As an alternative to using Microsoft Graph APIs, tenants with a Microsoft Entra ID Premium license can have a Global Administrator input these keys into Microsoft Entra ID. 
 If you upload tokens in CSV format, they aren't compatible with the new features in preview.  
@@ -58,22 +58,22 @@ Users can have a combination of up to five OATH hardware tokens or authenticator
 
 ## Troubleshooting a failure during upload processing
 
-At times, there may be conflicts or issues that occur with the processing of an upload of the CSV file. If any conflict or issue occurs, you'll receive a notification similar to the following:  
+At times, there may be conflicts or issues that occur with the processing of an upload of the CSV file. If any conflict or issue occurs, you get notified like this:  
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/upload-error-example.png" alt-text="Screenshot of upload error example.":::
   
-To determine the error message, be sure and select **View Details**. The **Hardware token status** blade opens and provides the summary of the status of the upload. It shows that there's been a failure, or multiple failures, as in the following example:
+To determine the error message, be sure and select **View Details**. The **Hardware token status** blade opens and provides the summary of the status of the upload. It shows if there's a failure, or multiple failures, as in the following example:
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/hardware-token-status.png" alt-text="Screenshot of hardware token status example.":::
 
-To determine the cause of the failure listed, make sure to click the checkbox next to the status you want to view, which activates the **Download** option. This downloads a CSV file that contains the error identified. 
+To determine the cause of the failure listed, make sure to select the checkbox next to the status you want to view, which activates the **Download** option. This option downloads a CSV file that contains the error identified. 
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/download-status-example.png" alt-text="Screenshot of download status example.":::
 
-The downloaded file is named **Failures_filename.csv** where *filename* is the name of the file uploaded. It's saved to your default downloads directory for your browser. 
+The downloaded file is named **Failures_filename.csv**, where *filename* is the name of the file uploaded. The file is saved to your default downloads directory for your browser. 
 
 This example shows the error identified as a user who doesn't currently exist in the tenant directory:  
 
 :::image type="content" border="true" source="./media/concept-authentication-methods/error-reason-example.png" alt-text="Screenshot of error reason example.":::
 
-Once you've addressed the errors listed, upload the CSV again until it processes successfully. The status information for each attempt remains for 30 days. The CSV can be manually removed by clicking the checkbox next to the status, then selecting **Delete status** if so desired. 
+After you fix the errors listed, upload the CSV again until it processes successfully. The status information for each attempt remains for 30 days. To remove the CSV, select the checkbox next to the status, then select **Delete status**. 
