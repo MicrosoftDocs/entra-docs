@@ -22,7 +22,19 @@ This allows agent identities to be governed with Microsoft Entra features in the
 
 ## Agent identities basics
 
-[Microsoft Entra Agent ID](../agent-id/identity-platform/what-is-agent-id.md) includes four new types of object: agent identity blueprint, agent identity blueprint principal, agent identity, and agent user. These can be created in [Microsoft Foundry](/azure/ai-foundry/agents/concepts/agent-identity), [Microsoft Copilot Studio](/microsoft-copilot-studio/admin-use-entra-agent-identities), or other platforms. The agent identity, and optionally the agent user, allows AI agents to take on digital identities within Microsoft Entra. Once a digital identity is established, these agent identities are able to be governed using lifecycle and access features. Sponsors can be assigned to agent identities after creation. Sponsors of agent identities are human users accountable for making decisions about its lifecycle and access. For more information about the role of a sponsor of agent identities, see: [Administrative relationships for agent IDs](../agent-id/identity-platform/agent-owners-sponsors-managers.md).
+Historically, AI agents would rely upon tools to interact with various applications and systems, and each of those tools would have their own identities in those applications and systems. [Microsoft Entra Agent ID](../agent-id/identity-platform/what-is-agent-id.md) introduces identities for the agents themselves, with four new types of object: agent identity blueprint, agent identity blueprint principal, agent identity, and agent user.  Through the [agent identity blueprint](../agent-id/identity-platform/agent-blueprint), the agent can create one or more agent identities, and optionally an agent user for each agent identity.
+
+![Diagram of the relationship of Microsoft Entra Agent ID objects in a single tenant](./media/agent-id-governance-overview/agent-identity-objects-single-tenant.png)
+
+For a multi-tenant agent, an agent identity blueprint principal can be brought into the tenant with resources so it can create agent identities in that tenant.
+
+![Diagram of the relationship of Microsoft Entra Agent ID objects in multiple tenants](./media/agent-id-governance-overview/agent-identity-objects-multiple-tenant.png)
+
+The agent identity and the agent user allows AI agents to take on digital identities within Microsoft Entra. Once agent identities are created, these agent identities are able to be governed using lifecycle and access features. Sponsors can be assigned to agent identities after creation. Sponsors of agent identities are human users accountable for making decisions about its lifecycle and access. For more information about the role of a sponsor of agent identities, see: [Administrative relationships for agent IDs](../agent-id/identity-platform/agent-owners-sponsors-managers.md).
+
+## Agent identities in other Microsoft products
+
+These can be created in [Microsoft Foundry](/azure/ai-foundry/agents/concepts/agent-identity), [Microsoft Copilot Studio](/microsoft-copilot-studio/admin-use-entra-agent-identities), or other platforms.
 
 ## Assigning access to agent identities
 
