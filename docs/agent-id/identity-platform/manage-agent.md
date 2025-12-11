@@ -25,6 +25,10 @@ The Manage agents feature in Microsoft Entra lets you view, and control, [agent 
 
 1.	Sign in to the [My Account end user portal](https://myaccount.microsoft.com/) as either an owner or sponsor of at least one agent identity.
 
+1.	If you haven’t opted in to the new homepage yet, select **Use new version** in the banner.
+    > [!NOTE]
+    > If you’re already using the new homepage, the banner will still appear with the message “You’re using the new version of the account homepage” and a **Use previous version** button.
+   
 1.	In the left menu, select **Manage agents (Preview)**.
     > [!NOTE]
     > This will only appear if you're an owner or sponsor of at least one agent identity.
