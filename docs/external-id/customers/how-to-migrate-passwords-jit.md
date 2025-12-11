@@ -898,7 +898,7 @@ Configure the certificate's public key so that Entra External ID can encrypt the
 1. Run the following commands, replacing the file path with your certificate location:
 
    ```powershell
-   $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("C:\Users\YourUsername\Downloads\jitmigrationencryptioncert.cer")
+   $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("{path-to-your-cer-file}\jitmigrationencryptioncert.cer")
    $certBase64 = [Convert]::ToBase64String($cert.RawData)
    $certBase64
    ```
@@ -925,7 +925,7 @@ Authorization: Bearer {access-token}
   "keyCredentials": [
     {
       "endDateTime": "{end-date}",
-      "keyId": "{unique-guid}",
+      "keyId": "{key-guid}",
       "startDateTime": "{start-date}",
       "type": "AsymmetricX509Cert",
       "usage": "Encrypt",
