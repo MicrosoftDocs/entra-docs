@@ -123,7 +123,9 @@ Before creating users, generate unique, strong temporary passwords for each user
 
 Create user accounts in your External ID tenant. You can create users through the [Microsoft Entra admin center](https://entra.microsoft.com/) or programmatically using the [Microsoft Graph API](/graph/api/user-post-users). For detailed instructions on user creation, see [How to create, invite, and delete users](/entra/fundamentals/how-to-create-delete-users).
 
-The following example demonstrates how to create a user with the migration extension property set to `true` using the Microsoft Graph API. Replace `{extension-attribute-id}` with the actual extension property ID you constructed in the previous step.
+The following example demonstrates how to create a user with the migration extension property set to `true` using the Microsoft Graph API. Replace `{extension-attribute-id}` with the actual extension property ID you constructed in the previous step. These properties must be present on the user object to trigger the migration event.
+
+This request includes user details and other values that will be shared with the external API. You can set the required primary properties on the user that can be used during the custom extension execution.
 
 ``` http
 POST https://graph.microsoft.com/v1.0/users
@@ -138,6 +140,8 @@ POST https://graph.microsoft.com/v1.0/users
 }
 ```
 You can find sample code to support your user migration in our [B2C to MEEID migration tool](https://github.com/microsoft/b2c-to-meeid-migration-tool/).
+
+For more information on bulk migrating users, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
 
 ## 2. Configure the custom authentication extension
 
