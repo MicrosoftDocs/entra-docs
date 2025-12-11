@@ -12,7 +12,7 @@ ms.date: 11/05/2025
 
 # Manage Agents in end user experience (Preview)
 
-The Manage agents feature in Microsoft Entra lets you view, and control, [agent identities you own or sponsor](agent-owners-sponsors-managers.md). [Agents identities](what-is-agent-id.md) are special identities, such as bots or automated processes, that act on behalf of users or teams. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
+The Manage Agents feature in Microsoft Entra lets you view, and control, [agent identities you own or sponsor](agent-owners-sponsors-managers.md). [Agents identities](what-is-agent-id.md) are special identities, such as bots or automated processes, that act on behalf of users or teams. With the manage agents feature, you can easily see which agents you’re responsible for, review their details, and take action to enable, disable, or request access for them.
 
 > [!NOTE]
 > This feature is in public preview. Functionality might change before general availability.
@@ -25,9 +25,13 @@ The Manage agents feature in Microsoft Entra lets you view, and control, [agent 
 
 1.	Sign in to the [My Account end user portal](https://myaccount.microsoft.com/) as either an owner or sponsor of at least one agent identity.
 
+1.	If you haven’t opted in to the new homepage yet, select **Use new version** in the banner.
+    > [!NOTE]
+    > If you’re already using the new homepage, the banner still appears with the message "You’re using the new version of the account homepage" and a **Use previous version** button.
+   
 1.	In the left menu, select **Manage agents (Preview)**.
     > [!NOTE]
-    > This will only appear if you're an owner or sponsor of at least one agent identity.
+    > This menu item will only appear if you're an owner or sponsor of at least one agent identity.
 
 1.	Choose either the **Agents you sponsor** or **Agents you own tab** to view your agents.
     :::image type="content" source="media/manage-agent/manage-agents-list.png" alt-text="Screenshot of the managed agents page in the My Account portal.":::
