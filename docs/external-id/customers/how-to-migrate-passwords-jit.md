@@ -34,7 +34,12 @@ Before you begin, ensure you have:
   - [Microsoft Graph API](/graph/api/user-post-users): Programmatic user and directory management
   - [Directory extensions](/graph/extensibility-overview): Adding custom properties to directory objects
   - [Azure Functions](/azure/azure-functions/functions-overview): Serverless compute for hosting custom logic
-- An account with the following role definition ID assigned: `0b00bede-4072-4d22-b441-e7df02a1ef63`. This role will give you the necessary permissions to create and manage custom authentication extensions in your Microsoft Entra External ID tenant. You can find more information about role assignments in the [Microsoft Entra ID roles documentation](/entra/identity/role-based-access-control/manage-roles-portal?tabs=ms-graph).  
+- An account with the following roles assigned:
+    - [Application Administrator](../../identity/role-based-access-control/permissions-reference#application-administrator) 
+    - [User Administrator](../../identity/role-based-access-control/roles/user-administrator)
+    - Authentication Extensibility Password Administrator. This role will give you the necessary permissions to create and manage custom authentication extensions for password migration. The role definition ID is `0b00bede-4072-4d22-b441-e7df02a1ef63`. 
+    You can find more information about role assignments in the [Microsoft Entra ID roles documentation](/entra/identity/role-based-access-control/manage-roles-portal?tabs=ms-graph). 
+
 
 ## Overview of the JIT migration process
 
@@ -42,16 +47,21 @@ JIT migration works by invoking a custom API during the sign-in process to valid
 
 From the user's perspective, the migration is completely seamless. Users simply sign in with their existing credentials from the legacy system. If the credentials are correct, they're authenticated successfully and can access your application. Behind the scenes, their password is securely migrated to Microsoft Entra External ID, and subsequent sign-ins authenticate directly against Entra without invoking the legacy system. This approach minimizes disruption during migration and eliminates the need for users to reset their passwords or learn new credentials.
 
+>[!NOTE]
+> This process is for password migration and not password validation. The legacy system is only used to validate the password during the first sign-in. After that, the password is stored and validated directly in Microsoft Entra External ID.
+
 The JIT migration process is illustrated in the following diagram:
 
-:::image type="content" source="media/how-to-migrate-passwords-jit/jit-migration-flow-diagram.png" alt-text="Diagram of the Just-In-Time password migration flow showing user authentication from a legacy identity provider to Microsoft Entra External ID." lightbox="media/how-to-migrate-passwords-jit/jit-migration-flow-diagram.png":::
+:::image type="content" source="media/how-to-migrate-passwords-jit/jit-migration-process-diagram.png" alt-text="Diagram of the JIT migration process showing user sign-in with legacy credentials, migration flag check, and password validation via a custom API." lightbox="media/how-to-migrate-passwords-jit/jit-migration-process-diagram.png":::
 
 ### How the JIT migration process works
 
 When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
 - **Consumer user signs in** - User enters credentials from the legacy identity provider.
-- **Migration flag check** - If the password entered does not match the dummy password on record for the user, Entra External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed.    
+- **Migration flag check** - Depending on the password entered there are two possible outcomes:
+    - If the password entered does not match the password on record for the user, Entra External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
+    - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
 - **Password encryption** - Entra encrypts the password using the public key (RSA JWE format) ensuring plaintext is never transmitted.
 - **Custom extension invocation** - Entra calls your code with the encrypted payload, user information, and authentication context.
 - **Decryption and validation** - Your function decrypts the password using a private key and validates credentials against your legacy identity provider.
@@ -82,7 +92,7 @@ POST https://graph.microsoft.com/v1.0/applications/30a5435a-1871-485c-8c7b-65f69
     "name": "toBeMigrated", 
     "dataType": "Boolean",
     "targetObjects":[ 
-    "User" 
+        "User" 
     ] 
 } 
 ```
@@ -119,12 +129,12 @@ The following example demonstrates how to create a user with the migration exten
 POST https://graph.microsoft.com/v1.0/users
 
 {
-"accountEnabled": true,
-"passwordProfile": {
-"forceChangePasswordNextSignIn": false,
-"password": ""
-},
-"{extension-attribute-id}": true
+    "accountEnabled": true,
+    "passwordProfile": {
+        "forceChangePasswordNextSignIn": false,
+        "password": ""
+    },
+    "{extension-attribute-id}": true
 }
 ```
 
@@ -199,7 +209,7 @@ When sending a request to your custom authentication extension, Entra will inclu
     "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",  
     "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",  
     "customAuthenticationExtensionId": "22223333-cccc-4444-dddd-5555eeee6666", 
-      "encryptedPasswordContext": "{5-part-JWE}", 
+    "encryptedPasswordContext": "{5-part-JWE}", 
     "authenticationContext": {  
       "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",  
       "client": {  
@@ -235,7 +245,6 @@ When sending a request to your custom authentication extension, Entra will inclu
         "userPrincipalName": "casey@contoso.com",  
         "userType": "Member"   
       } 
-
     }  
   }  
 } 
