@@ -137,6 +137,7 @@ POST https://graph.microsoft.com/v1.0/users
     "{extension-attribute-id}": true
 }
 ```
+You can find sample code to support your user migration in our [B2C to MEEID migration tool](https://github.com/microsoft/b2c-to-meeid-migration-tool/).
 
 ## 2. Configure the custom authentication extension
 
@@ -169,6 +170,8 @@ Your Azure Function needs to access the private key stored in Key Vault to decry
 1. Select **Create** to create the access policy with the following permissions:
    - **Secret permissions**: Get
    - **Principal**: Your function app name
+   
+These permissions can also be granted using role based access controls.
 
 #### 2.1.3 Generate certificate in Azure Key Vault
 
@@ -264,7 +267,7 @@ Entra expects the response from your custom extension in the below format.
         "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
       } 
     ]
-    "nonce": 
+    "nonce": "{nonce-value-from-external-id}"
   }  
 }  
 ```
