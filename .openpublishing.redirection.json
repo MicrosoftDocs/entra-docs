@@ -3046,11 +3046,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/enterprise-apps/deactivate-application-portal.md",
-      "redirect_url": "/entra/identity/enterprise-apps/delete-application-portal",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "docs/identity/enterprise-apps/agent-app-lifecycle-discovery-onboard.md",
       "redirect_url": "/entra/security-copilot/entra-agents",
       "redirect_document_id": false
