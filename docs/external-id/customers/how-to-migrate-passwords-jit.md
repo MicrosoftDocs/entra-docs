@@ -14,10 +14,10 @@ ms.author: godonnell
 ---
 # Migrating passwords to Microsoft Entra External ID using Just-In-Time (JIT) Migration (Preview)
 
-This guide describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you are a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
+This guide describes how to implement Just-In-Time (JIT) password migration to migrate user credentials from a legacy identity provider to Microsoft Entra External ID. If you're a developer or administrator responsible for managing user identities, this guide will help you understand the steps involved in the migration process.
 
 > [!NOTE]
-> If you have access to user passwords, either at rest or runtime, in your legacy system, you can also proactively populate these. For more information, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
+> If you have access to user passwords, either at rest or runtime, in your legacy system, you can also proactively populate them. For more information, see [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md).
 
 [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](../includes/active-directory-b2c-end-of-sale-notice.md)]
 
@@ -35,17 +35,17 @@ Before you begin, ensure you have:
   - [Directory extensions](/graph/extensibility-overview): Adding custom properties to directory objects
   - [Azure Functions](/azure/azure-functions/functions-overview): Serverless compute for hosting custom logic
 - An account with the following roles assigned:
-    - [Application Administrator](../../identity/role-based-access-control/permissions-reference#application-administrator) 
-    - [User Administrator](../../identity/role-based-access-control/roles/user-administrator)
-    - Authentication Extensibility Password Administrator. This role will give you the necessary permissions to create and manage custom authentication extensions for password migration. The role definition ID is `0b00bede-4072-4d22-b441-e7df02a1ef63`. 
+    - [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) 
+    - [User Administrator](../../identity/role-based-access-control/permissions-reference.md#user-administrator)
+    - Authentication Extensibility Password Administrator. This role gives you the necessary permissions to create and manage custom authentication extensions for password migration. The role definition ID is `0b00bede-4072-4d22-b441-e7df02a1ef63`. 
     You can find more information about role assignments in the [Microsoft Entra ID roles documentation](/entra/identity/role-based-access-control/manage-roles-portal?tabs=ms-graph). 
 
 
 ## Overview of the JIT migration process
 
-JIT migration works by invoking a custom API during the sign-in process to validate user credentials against the legacy identity provider. Entra External ID supports this process by using [custom authentication extensions](/graph/api/resources/customauthenticationextension) to facilitate the integration. These extensions allow you to define custom logic that runs during the authentication process, enabling you to interact with external systems and perform additional processing as part of the sign-in flow.
+JIT migration works by invoking a custom API during the sign-in process to validate user credentials against the legacy identity provider. Microsoft Entra External ID supports this process by using [custom authentication extensions](/graph/api/resources/customauthenticationextension) to facilitate the integration. These extensions allow you to define custom logic that runs during the authentication process, enabling you to interact with external systems and perform more processing as part of the sign-in flow.
 
-From the user's perspective, the migration is completely seamless. Users simply sign in with their existing credentials from the legacy system. If the credentials are correct, they're authenticated successfully and can access your application. Behind the scenes, their password is securely migrated to Microsoft Entra External ID, and subsequent sign-ins authenticate directly against Entra without invoking the legacy system. This approach minimizes disruption during migration and eliminates the need for users to reset their passwords or learn new credentials.
+From the user's perspective, the migration is completely seamless. Users  sign in with their existing credentials from the legacy system. If the credentials are correct, they're authenticated successfully and can access your application. Behind the scenes, their password is securely migrated to Microsoft Entra External ID, and subsequent sign-ins authenticate directly against Entra without invoking the legacy system. This approach minimizes disruption during migration and eliminates the need for users to reset their passwords or learn new credentials.
 
 >[!NOTE]
 > This process is for password migration and not password validation. The legacy system is only used to validate the password during the first sign-in. After that, the password is stored and validated directly in Microsoft Entra External ID.
@@ -60,7 +60,7 @@ When a consumer user account with the migration flag set to `true` signs in, the
 
 - **Consumer user signs in** - User enters credentials from the legacy identity provider.
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
-    - If the password entered does not match the password on record for the user, Entra External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
+    - If the password entered does not match the password on record for the user, External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
     - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
 - **Password encryption** - Entra encrypts the password using the public key (RSA JWE format) ensuring plaintext is never transmitted.
 - **Custom extension invocation** - Entra calls your code with the encrypted payload, user information, and authentication context.
@@ -99,9 +99,9 @@ POST https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333c
     ] 
 } 
 ```
-Replace `00001111-aaaa-2222-bbbb-3333cccc4444` with the object ID `b2c-extensions-app` of your application. The value of this extensions should be set to true for all users who will require migration.
+Replace `00001111-aaaa-2222-bbbb-3333cccc4444` with the object ID `b2c-extensions-app` of your application. The value of this extension should be set to true for all users who will require migration.
 
-#### [Entra Admin Center](#tab/admin-center)
+#### [Admin Center](#tab/admin-center)
 
 To create an extension property using the Microsoft Entra admin center:
 
@@ -111,7 +111,7 @@ To create an extension property using the Microsoft Entra admin center:
 1. Enter the following values:
    - **Name**: Enter a name for the property (for example, `toBeMigrated`).
    - **Data Type**: Select **Boolean**.
-   - **Description**: Enter a meaningful description (for example, "Tracks whether user password has been migrated from legacy system").
+   - **Description**: Enter a meaningful description (for example, "Tracks user password has migration from legacy system").
 1. Select **Create**.
 
 ---
@@ -131,7 +131,7 @@ For example, if your application ID is `00001111-aaaa-2222-bbbb-3333cccc4444` an
 
 ### 1.2 Generate random strong password
 
-Before creating users, generate unique, strong temporary passwords for each user account. These passwords will be replaced with the user's actual password from the legacy identity provider during their first sign-in through the JIT migration process.
+Before creating users, generate unique, strong temporary passwords for each user account. These will be replaced with the user's actual password from the legacy identity provider during their first sign-in through the JIT migration process.
 
 > [!IMPORTANT]
 > Ensure that the temporary passwords are unique and strong to maintain security during the migration process. Consider using a password generation library or service that meets your organization's security requirements.
@@ -198,7 +198,7 @@ These permissions can also be granted using role based access controls.
 
 #### 2.1.3 Generate certificate in Azure Key Vault
 
-Generate an encryption certificate in Azure Key Vault. The public key is configured in your Entra External ID app registration, while the private key remains in Key Vault and is accessed by your Azure Function using managed identity.
+Generate an encryption certificate in Azure Key Vault. The public key is configured in your External ID app registration, while the private key remains in Key Vault and is accessed by your Azure Function using managed identity.
 
 1. In the Azure portal, go to your Key Vault.
 1. In the left menu, under **Objects**, select **Certificates**.
@@ -295,7 +295,7 @@ Entra expects the response from your custom extension in the below format.
 }  
 ```
 > [!NOTE]
-> Entra External ID sends the nonce as a claim in the encryptedPasswordContext from the request payload and expects it in the response from the extension for verification purposes.
+> External ID sends the nonce as a claim in the encryptedPasswordContext from the request payload and expects it in the response from the extension for verification purposes.
 
 Each of the available response actions corresponds to a specific scenario during the authentication process. This table describes the possible response actions and when to use them.
 
@@ -905,7 +905,7 @@ Your custom authentication extension requires the `CustomAuthenticationExtension
 
 ### 3.2 Configure encryption key
 
-Configure the certificate's public key so that Entra External ID can encrypt the password payload before sending it to your custom extension.
+Configure the certificate's public key so that External ID can encrypt the password payload before sending it to your custom extension.
 
 #### 3.2.1 Export the public key
 
@@ -956,7 +956,7 @@ Authorization: Bearer {access-token}
 }
 ```
 
-This configuration tells Entra External ID to use the public key when encrypting the password context for your custom extension.
+This configuration tells External ID to use the public key when encrypting the password context for your custom extension.
 
 ### 3.3 Custom Extension policy
 
