@@ -116,7 +116,7 @@ Administrators can view user authentication methods in the Microsoft Entra admin
 
 Each authentication method can become nonusable for different reasons. For example, a Temporary Access Pass might expire, or a FIDO2 security key might fail attestation. The portal gets updated to explain why the method isn't usable. 
 
-Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here.
+Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here. 
 
 ## Related content
 
