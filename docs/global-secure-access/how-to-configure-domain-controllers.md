@@ -107,7 +107,7 @@ For enterprise environments deploying sensors across multiple domain controllers
 ```cmd
 .\PrivateAccessSensor.exe /quiet SKIPREGISTRATION="true"
 ```
-1. Register Sensor</br>
+2. Register Sensor</br>
     a. Generate offline token using this PowerShell script. This script should open an interactive browser pop-up to authenticate with your credentials, so we recommend you to do this on a machine with a GUI, internet access, and a browser. 
 ```PowerShell
 # Microsoft Private Access / Global Secure Access – Token acquisition script
