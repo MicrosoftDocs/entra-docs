@@ -45,6 +45,10 @@ The Manage Agents feature in Microsoft Entra lets you view, and control, [agent 
 
 1. To re-enable, select the agent that is disabled and choose **Enable agent**. This allows users to access it, and allows it to be issued tokens.
 
+
+
+[!INCLUDE [entitlement-management-request-behalf-agent](../../includes/governance/entitlement-management-request-behalf-agent.md)]
+
 ## Next Steps
 
 - If an agent needs other access packages, [Request an access package on behalf of an agent identity (Preview)](../../id-governance/entitlement-management-request-behalf.md#request-an-access-package-on-behalf-of-an-agent-identity-preview)
