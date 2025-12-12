@@ -62,18 +62,22 @@ When a consumer user account with the migration flag set to `true` signs in, the
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
     - If the password entered does not match the password on record for the user, External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
     - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
-- **Password encryption** - Entra encrypts the password using the public key (RSA JWE format) ensuring plaintext is never transmitted.
-- **Custom extension invocation** - Entra calls your code with the encrypted payload, user information, and authentication context.
+- **Password encryption** - External ID encrypts the password using the public key (RSA JWE format) ensuring plaintext is never transmitted. The private key remains in Azure Key Vault and is never exposed in your function code.
+- **Custom extension invocation** - External ID calls your code with the encrypted payload, user information, and authentication context.
 - **Decryption and validation** - Your function decrypts the password using a private key and validates credentials against your legacy identity provider.
 - **Response action** - Your function returns one of four actions:
-   - **MigratePassword**: Password is valid; Entra stores it and sets migration flag to `false`
+   - **MigratePassword**: Password is valid; External ID stores it and sets migration flag to `false`
    - **UpdatePassword**: Password is correct but weak; user must reset password
    - **Retry**: Password is incorrect; user can try again
    - **Block**: Authentication blocked (e.g., account locked in legacy system)
 - **Authentication completion** - If successful, the user is authenticated and future sign-ins bypass the custom extension.
 
 > [!NOTE]
-> Passwords are encrypted end-to-end using asymmetric RSA encryption. The private key remains in Azure Key Vault and is never exposed in your function code.
+> Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use these workarounds:
+> * Fetch the user from a Graph API call to get the username for legacy IDP validation.
+> * Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation.
+>   * Legacy UPN: `1234@legacyidp.com`
+>   * Entra UPN: `1234@entratenant.onmicrosoft.com`
 
 ## 1. Bulk migrate users
 
