@@ -4,7 +4,7 @@ description: Learn how to move your organization away from less secure authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/19/2025
+ms.date: 12/12/2025
 ms.author: justinha
 author: mjsantani
 manager: dougeby
@@ -23,11 +23,10 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ## Prerequisites 
 
-- Your organization must have enabled Microsoft Entra multifactor authentication. Every edition of Microsoft Entra ID includes Microsoft Entra multifactor authentication. No other license is needed for a registration campaign.
+- If you want to know the number of users who registered each authentication method, see [the Authentication methods activity report](howto-authentication-methods-.md#registration-details) before you configure the registration campaign.
+- Your organization must enable Microsoft Entra multifactor authentication. All Microsoft Entra licence types support the registration campaign.
 - Users can't have already set up the Authenticator app for push notifications on their account. 
-- Admins need to enable users for the Authenticator app using one of these policies:  
-  - MFA Registration Policy: Users will need to be enabled for **Notification through mobile app**. See [Configure the MFA registration policy](/entra/id-protection/howto-identity-protection-configure-mfa-policy).
-  - Authentication Methods Policy: Users will need to be enabled for the Authenticator app and the Authentication mode set to **Any** or **Push**. If the policy is set to **Passwordless**, the user won't be eligible for the nudge. For more information about how to set the Authentication mode, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
+- Admins need to enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the **Authentication mode** is set to **Passwordless**, users aren't eligible for the nudge. For more information about how to set the **Authentication mode**, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
 
 ## User experience
 
