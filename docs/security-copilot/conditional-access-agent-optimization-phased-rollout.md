@@ -24,8 +24,7 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 - You must have at least the [Microsoft Entra ID P1](../identity/conditional-access/overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-- [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can view the agent and any suggestions, but can't take any actions.
-- [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can view the agent and take action on the suggestions.
+- [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can modify phased rollout settings.
 - Tenants must have at least five defined groups that are currently used in Conditional Access policies for the agent to generate a phased rollout plan.
 
 ## How it works

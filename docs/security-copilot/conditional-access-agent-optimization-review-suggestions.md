@@ -21,7 +21,7 @@ The Microsoft Entra Conditional Access Optimization Agent provides suggestions t
 This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
 > [!IMPORTANT]
-> The Microsoft Teams integrations in the Conditional Access Optimization Agent is currently in PREVIEW.
+> The Microsoft Teams and ServiceNow integrations in the Conditional Access Optimization Agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -33,8 +33,6 @@ This article provides an overview of the logic behind the suggestions and report
    - [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
    - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) and [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles can *view the agent and take action on the suggestions*.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
-- Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
-- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
 ### Limitations
 
@@ -71,7 +69,7 @@ From the policy details, you can take action on the suggestion using several opt
 
 :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/policy-details-buttons.png" alt-text="Screenshot of the policy details with the buttons highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/policy-details-buttons.png":::
 
-Below the policy suggestion summary, you can take several actions:
+Below the policy suggestion summary, you can take several actions. The options change based on the type of suggestion. For example, suggestions to turn on a new policy have different options than a suggestion to update the settings of an existing policy.
 
 - **Review policy changes**: View a summary or JSON details of the suggestion.Further details described in the [Review policy changes](#review-policy-changes) section.
 - **Turn on policy**: Turn on new policies that were created in report-only mode by the agent.
@@ -80,8 +78,7 @@ Below the policy suggestion summary, you can take several actions:
 - **View agent's full activity**: View the full activity and decisions. Further details described in the [View agent's full activity](#view-agents-full-activity) section.
 - **Add notes**: Select the pen and paper icon to add notes about the suggestion for other admins to review
 
-The policy suggestions detail page is detailed and provides every option needed to make an informed decision about the suggestion. But if you need more information, you can also view the policy impact and see details about the agent's activity. 
-Ask Copilot about this file-diff
+The policy suggestions detail page is detailed and provides every option needed to make an informed decision about the suggestion. But if you need more information, you can also view the policy impact and see details about the agent's activity.
 
 ### Policy impact
 
@@ -114,6 +111,12 @@ Deep analysis performs an in-depth review of Conditional Access policies for sce
 
 Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and the "notes" option to provide context and rationale for your decision-making process.
 
+### Microsoft Teams agent suggestion notifications (Preview)
+
+Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This preview feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
+
+For more information, see the **Notifications** section of [Conditional Access Optimization Agent Settings](conditional-access-agent-optimization-settings.md#notifications).
+
 ## Apply suggestions
 
 The experience for applying the suggestion depends on whether the agent created a new policy in report-only mode or suggests modifying an existing policy.
@@ -124,11 +127,14 @@ The agent could suggest modifying an existing policy or consolidating overlappin
 
 - From the **Policy details** page, select **Apply suggestion** to apply the changes to the policy.
 
-:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/policy-update-details.png" alt-text="Screenshot of a modify policy details page with the apply suggestion button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/policy-update-details.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/policy-update-details.png" alt-text="Screenshot of a modify policy details page with the apply suggestion button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/policy-update-details.png":::
 
 - From the **Review policy changes** page, you can also select **Approve suggested changes** from the bottom of the page.
 
-:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/approve-suggested-changes.png" alt-text="Screenshot of the review policy page with the approve suggested changes button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/approve-suggested-changes.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/approve-suggested-changes.png" alt-text="Screenshot of the review policy page with the approve suggested changes button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/approve-suggested-changes.png":::
+
+> [!TIP]
+> The user who approves a suggestion to add users to a policy becomes the owner of a new group that adds the users to a policy. 
 
 ### Turn on a new policy
 
@@ -136,23 +142,17 @@ When the agent suggests a new policy, it creates the policy in report-only mode.
 
 - Select **Turn on policy** to have the agent apply the changes to the policy *in report-only mode*.
 
-:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/turn-on-policy.png" alt-text="Screenshot of the policy details with the turn on policy button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/turn-on-policy.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/turn-on-policy.png" alt-text="Screenshot of the policy details with the turn on policy button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/turn-on-policy.png":::
 
 - From Conditional Access, select the policy and then change the **Enable policy** toggle from **Report-only** to **On**.
 
-:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/report-only-mode-toggle.png" alt-text="Screenshot of the report-only mode toggle in Conditional Access." lightbox="media/conditional-access-agent-optimization-review-suggestions/report-only-mode-toggle.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/report-only-mode-toggle.png" alt-text="Screenshot of the report-only mode toggle in Conditional Access." lightbox="media/conditional-access-agent-optimization-review-suggestions/report-only-mode-toggle.png":::
 
 > [!TIP]
 > As a best practice, organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
 
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
-
-## Microsoft Teams agent suggestion notifications (Preview)
-
-Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This preview feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
-
-For more information, see the **Notifications** section of [Conditional Access Optimization Agent](conditional-access-agent-optimization.md).
 
 ## Review policy reports
 

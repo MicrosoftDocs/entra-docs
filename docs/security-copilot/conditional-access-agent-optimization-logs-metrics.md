@@ -53,5 +53,3 @@ The Microsoft Entra audit logs include changes made by an agent to Microsoft Ent
 In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent. To quickly see agent activity, filter to **Service: Conditional Access**. 
 
 :::image type="content" source="media/conditional-access-agent-optimization-logs-metrics/audit-logs.png" alt-text="Screenshot of audit logs filtered to Conditional Access." lightbox="media/conditional-access-agent-optimization-logs-metrics/audit-logs.png":::
-
-The user who approves a suggestion to add users to a policy becomes an owner of a new group that adds the users to a policy. 

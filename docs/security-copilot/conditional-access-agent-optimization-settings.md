@@ -21,6 +21,10 @@ The Conditional Access Optimization Agent helps organizations improve their secu
 
 The agent settings described in this article cover standard options like triggers, notifications, and scope. But the settings also include advanced options like custom instructions, Intune integrations, and permissions.
 
+> [!IMPORTANT]
+> The Microsoft Teams and ServiceNow integrations in the Conditional Access Optimization Agent are currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 ## How to configure agent settings
 
 You can access the settings from two places in the Microsoft Entra admin center:
@@ -68,13 +72,13 @@ To configure notifications in the Conditional Access optimization agent settings
 
 You can select up to 10 recipients to receive notifications. You can select a group to receive the notifications, but the membership of that group can't exceed 10 users. If you select a group that has fewer than 10 users but more are added later, the group no longer receives notifications. Similarly, the notifications can only be sent to five objects, such as a combination of individual users or groups. To stop receiving notifications, remove your user object or the group you're included in from the recipient's list. 
 
-At this time, the agent's communication is one direction, so you can receive notifications but can't respond to them in Microsoft Teams. To take action on a suggestion, select **Review suggestion** from the chat to open the Conditional Access optimization agent in the Microsoft Entra admin center.
+At this time, the agent's communication is one direction, so you can receive notifications but can't respond to them in Microsoft Teams. To take action on a suggestion, select **Review suggestion** from the chat to open the Conditional Access Optimization Agent in the Microsoft Entra admin center.
 
-   :::image type="content" source="media/conditional-access-agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/conditional-access-agent-optimization/agent-teams-suggestion-message.png":::
+:::image type="content" source="media/conditional-access-agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/conditional-access-agent-optimization/agent-teams-suggestion-message.png":::
 
 ## Phased rollout
 
-When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default.
+When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default. For more information , see [Conditional Access Optimization Agent Phased Rollout](conditional-access-agent-optimization-phased-rollout.md).
 
 You can change the number of days between each phase by either dragging the slider or entering a number in the text box. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
 
@@ -82,7 +86,7 @@ You can change the number of days between each phase by either dragging the slid
 
 ## Identity and permissions
 
-This section of the agent settings describes the identity under which the agent runs and the permissions it requires to operate effectively. 
+This section of the agent settings describes the identity under which the agent runs and the permissions it uses to operate. 
 
 ### Identity
 
@@ -103,17 +107,17 @@ Turning on and using the Conditional Access Optimization Agent also requires Sec
 
 The agent identity uses the following permissions to perform its tasks. These permissions are assigned automatically when you create the agent identity.
 
-`AuditLog.Read.All`
-`CustomSecAttributeAssignment.Read.All`
-`DeviceManagementApps.Read.All`
-`DeviceManagementConfiguration.Read.All`
-`GroupMember.Read.All`
-`LicenseAssignment.Read.All`
-`NetworkAccess.Read.All`
-`Policy.Create.ConditionalAccessRO`
-`Policy.Read.All`
-`RoleManagement.Read.Directory`
-`User.Read.All`
+- `AuditLog.Read.All`
+- `CustomSecAttributeAssignment.Read.All`
+- `DeviceManagementApps.Read.All`
+- `DeviceManagementConfiguration.Read.All`
+- `GroupMember.Read.All`
+- `LicenseAssignment.Read.All`
+- `NetworkAccess.Read.All`
+- `Policy.Create.ConditionalAccessRO`
+- `Policy.Read.All`
+- `RoleManagement.Read.Directory`
+- `User.Read.All`
 
 ### ServiceNow integration (Preview)
 
