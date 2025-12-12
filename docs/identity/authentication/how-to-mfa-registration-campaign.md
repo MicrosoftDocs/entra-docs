@@ -332,7 +332,7 @@ Yes. If they have been scoped for the nudge using the policy.
 
 **What if the user closes the browser?** 
 
-It's the same as snoozing. If setup is required for a user after they snoozed three times, the user is nudged the next time they sign in.
+It's the same as snoozing. If setup is required for a user after they snoozed three times, the user is nudged when they next sign in.
 
 **Why don't some users see a nudge when there is a Conditional Access policy for "Register security information"?**
 
