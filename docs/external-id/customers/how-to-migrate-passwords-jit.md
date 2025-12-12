@@ -152,7 +152,6 @@ This request includes user details and other values that will be shared with the
 POST https://graph.microsoft.com/v1.0/users
 
 {
-    "userType": "Member",
     "creationType": "LocalAccount",
     "accountEnabled": true,
     "passwordProfile": {
