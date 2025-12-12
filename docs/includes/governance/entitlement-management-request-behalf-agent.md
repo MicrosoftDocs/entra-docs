@@ -17,6 +17,8 @@ As the owner or sponsor of an agent identity, you can request an access package 
 
 1. On the My Access Portal page, select **Access packages**.
 
-1. On the Access packages page, locate the access package you want to request for an agent identity and select **Request**.
-    
-1. On the Request pane under **Request details**, select requesting for **Sponsored agent**.
+1. On the Access packages page, locate the access package you want to request for an agent identity to have, and select **Request**.
+
+1. On the Request pane under **Request details**, select **Requesting for Sponsored agent** or **Requesting for Owned agent**.
+
+1. Select the agent identity and then select **Continue**.
