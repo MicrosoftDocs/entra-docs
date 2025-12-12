@@ -497,6 +497,8 @@ items:
           href: how-to-manage-customer-accounts.md
         - name: Migrate users to External ID
           href: how-to-migrate-users.md
+        - name: How to migrate passwords
+          href: how-to-migrate-passwords-just-in-time.md
     - name: Monitor and troubleshoot
       items:
         - name: User activity insights
