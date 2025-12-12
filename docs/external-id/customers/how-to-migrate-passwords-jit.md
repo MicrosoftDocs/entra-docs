@@ -79,16 +79,6 @@ When a consumer user account with the migration flag set to `true` signs in, the
    - **Block**: Authentication blocked (e.g., account locked in legacy system)
 - **Authentication completion** - If successful, the user is authenticated and future sign-ins bypass the custom extension.
 
-> [!NOTE]
-Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use one of these workarounds:
-* Fetch the user from a Graph API call to get the username for legacy IDP validation.
-
-**OR**
-
-* Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation.
-    * Legacy UPN: `1234@legacyidp.com`
-    * Entra UPN: `1234@entratenant.onmicrosoft.com`
-
 ## 1. Bulk migrate users
 
 Before implementing JIT migration, you need to prepare your users in Microsoft Entra External ID. This involves defining a custom extension property to track migration status, generating temporary passwords, and creating user accounts.
