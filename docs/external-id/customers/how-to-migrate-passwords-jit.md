@@ -59,11 +59,11 @@ The JIT migration process is illustrated in the following diagram:
 When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
 - **Consumer user signs in** - User enters credentials from the legacy identity provider. Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use either one one of these workarounds:
-    - **In your authentication extension or external api:** Fetch the user from a Graph API call to get the username for legacy IDP validation.
+    - **In your custom authentication extension:** Fetch the user from a Graph API call to get the username for legacy IDP validation.
     
     **OR**    
 
-    - **During import:** Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation. When your custom authentication extension or external api receives the payload it transforms this UPN back to the legacy format for validation.
+    - **During import:** Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation. When your custom authentication extension receives the payload it transforms this UPN back to the legacy format for validation.
         - Legacy UPN: `1234@legacyidp.com`
         - Entra UPN: `1234@entratenant.onmicrosoft.com`
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
