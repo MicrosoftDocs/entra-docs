@@ -25,7 +25,7 @@ This article shows you how to deactivate an enterprise application, view deactiv
 
 Before you can deactivate an application, ensure you meet the following requirements:
 
-- On of the following Microsoft Entra roles:
+- One of the following Microsoft Entra roles:
     - [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)  
     - [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator)
 - The following API permissions if using Microsoft Graph:
