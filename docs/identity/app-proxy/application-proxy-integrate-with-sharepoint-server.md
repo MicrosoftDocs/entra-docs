@@ -115,7 +115,7 @@ You must configure the SharePoint web application with Kerberos and the appropri
        New-SPAlternateURL -Url $internalUrl -WebApplication $wa -Zone Extranet -Internal
        ```
 
-    `. Open the **SharePoint Central Administration** site.
+    Open the **SharePoint Central Administration** site.
     1. Under **System Settings**, select **Configure Alternate Access Mappings**. The **Alternate Access Mapping Collection** box opens.
     1. Filter the display with the web application that you extended.
 
