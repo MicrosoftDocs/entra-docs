@@ -101,7 +101,7 @@ The following authentication methods are available for SSPR:
 * [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
 * [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md)
 * [Voice call](concept-authentication-phone-options.md)
-* [Email OTP](concept-sspr-howitworks.md#authentication-methods)
+* Email OTP
 
 Users can only reset their password if they register an authentication method that the administrator has enabled.
 
