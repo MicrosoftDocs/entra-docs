@@ -64,9 +64,9 @@ When a consumer user account with the migration flag set to `true` signs in, the
     **OR**    
 
     - **During import:** Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation.
-    - When JIT function receives the payload it transforms this UPN back to the legacy format for validation.
-        - Legacy UPN: `1234@legacyidp.com`
-        - Entra UPN: `1234@entratenant.onmicrosoft.com`
+        - When JIT function receives the payload it transforms this UPN back to the legacy format for validation.
+            - Legacy UPN: `1234@legacyidp.com`
+            - Entra UPN: `1234@entratenant.onmicrosoft.com`
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
     - If the password entered does not match the password on record for the user, External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
     - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
