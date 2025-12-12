@@ -14,7 +14,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # How to run a registration campaign to set up Microsoft Authenticator
 
-You can nudge users to set up Microsoft Authenticator during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up Microsoft Authenticator. You can include or exclude users or groups to control who gets nudged to set up the app. This allows targeted campaigns to move users from less secure authentication methods to Authenticator.  
+You can nudge users to set up Microsoft Authenticator during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up Microsoft Authenticator. You can include or exclude users or groups to control who gets nudged to set up the app, and create targeted campaigns to move users from less secure authentication methods to Authenticator.  
 
 You can also define how many days a user can postpone, or "snooze," the nudge. If a user taps **Skip for now** to postpone the app setup, they get nudged again on the next MFA attempt after the snooze duration has elapsed. You can decide whether the user can snooze indefinitely or up to three times (after which registration is required).
 
@@ -23,8 +23,8 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ## Prerequisites 
 
-- If you want to know the number of users who registered each authentication method, see [the Authentication methods activity report](howto-authentication-methods-.md#registration-details) before you configure the registration campaign.
-- Your organization must enable Microsoft Entra multifactor authentication. All Microsoft Entra licence types support the registration campaign.
+- If you want to know the number of users who registered each authentication before you configure the registration campaign, see [the Authentication methods activity report](howto-authentication-methods-.md#registration-details).
+- Your organization must enable Microsoft Entra multifactor authentication. The registration campaign has no license requirements.
 - Users can't have already set up the Authenticator app for push notifications on their account. 
 - Admins need to enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the **Authentication mode** is set to **Passwordless**, users aren't eligible for the nudge. For more information about how to set the **Authentication mode**, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
 
