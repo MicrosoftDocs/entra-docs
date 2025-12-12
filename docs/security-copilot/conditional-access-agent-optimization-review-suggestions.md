@@ -21,7 +21,7 @@ The Microsoft Entra Conditional Access Optimization Agent provides suggestions t
 This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
 > [!IMPORTANT]
-> The Microsoft Teams and ServiceNow integrations in the Conditional Access Optimization Agent are currently in PREVIEW.
+> The ServiceNow integrations in the Conditional Access Optimization Agent is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -111,7 +111,7 @@ Deep analysis performs an in-depth review of Conditional Access policies for sce
 
 Because the policy suggestions that come through deep analysis might have a significant impact on your environment, consider using the "snooze" option to give you time to investigate the suggestion and the "notes" option to provide context and rationale for your decision-making process.
 
-### Microsoft Teams agent suggestion notifications (Preview)
+### Microsoft Teams agent suggestion notifications
 
 Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This preview feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
 

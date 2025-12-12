@@ -22,7 +22,7 @@ The Conditional Access optimization agent helps you ensure all users, applicatio
 The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
 > [!IMPORTANT]
-> The ServiceNow and Microsoft Teams integrations in the Conditional Access optimization agent are currently in PREVIEW.
+> The ServiceNow integrations in the Conditional Access optimization agent is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -116,7 +116,7 @@ Use the **Give Microsoft feedback** button at the top of the agent window to pro
 
 ## FAQs
 
-### When should I use the Conditional Access optimization agent vs Copilot Chat?
+### When should I use the Conditional Access Optimization Agent vs Copilot Chat?
 
 Both features provide different insights into your Conditional Access policies. The following table provides a comparison of the two features:
 
@@ -140,9 +140,9 @@ Both features provide different insights into your Conditional Access policies. 
 
 ### I activated the agent but see "Fail" in the activity status. What's happening?
 
-It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. You're prompted to reauthenticate if PIM permission expired.
+It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time.
           
-You can resolve this issue by removing the agent, then enabling the agent again with a user account that has standing permissions for Security Copilot access. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+You can resolve this issue by migrating to use [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md). Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
 
 ## Related content
 

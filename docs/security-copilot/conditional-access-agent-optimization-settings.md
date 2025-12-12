@@ -22,7 +22,7 @@ The Conditional Access Optimization Agent helps organizations improve their secu
 The agent settings described in this article cover standard options like triggers, notifications, and scope. But the settings also include advanced options like custom instructions, Intune integrations, and permissions.
 
 > [!IMPORTANT]
-> The Microsoft Teams and ServiceNow integrations in the Conditional Access Optimization Agent are currently in PREVIEW.
+> The ServiceNow integrations in the Conditional Access Optimization Agent is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## How to configure agent settings
@@ -50,7 +50,7 @@ By default, the Conditional Access optimization agent can create new policies *i
 
 ## Notifications
 
-As part of a preview capability, the Conditional Access optimization agent can send notifications through Microsoft Teams to a select set of recipients. With the **Conditional Access agent** app in Microsoft Teams, recipients receive notifications directly in their Teams chat when the agent surfaces a new suggestion.
+The Conditional Access optimization agent can send notifications through Microsoft Teams to a select set of recipients. With the **Conditional Access agent** app in Microsoft Teams, recipients receive notifications directly in their Teams chat when the agent surfaces a new suggestion.
 
 To add the agent app to Microsoft Teams:
 
