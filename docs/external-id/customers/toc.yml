@@ -358,7 +358,7 @@ items:
         href: how-to-test-user-flows.md
       - name: Enable password reset
         href: how-to-enable-password-reset-customers.md
-      - name: Sign-in with a username
+      - name: Sign in with a username
         href: how-to-sign-in-alias.md
       - name: Configure identity providers
         items:
