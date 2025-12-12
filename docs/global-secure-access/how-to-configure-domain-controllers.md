@@ -169,14 +169,15 @@ Copy the value of these as plain text and set it manually as `$token` and `$tena
 
     b. On the server machine, convert your `$token` that you copied over to a secure string.
 
-```PowerShell
-$SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
-```
+    ```PowerShell
+    $SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
+    ```
+
     c. Register sensor using the `$SecureToken` created in the last step and the `$tenantId`. The `RegisterConnector.ps1` script should be in `C:\Program Files\Private Access Sensor\bin`.
 
-```PowerShell
-.\RegisterConnector.ps1 -modulePath "C:\Program Files\Private Access Sensor\bin" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId $tenantId -Feature PrivateAccess
-```
+    ```PowerShell
+    .\RegisterConnector.ps1 -modulePath "C:\Program Files\Private Access Sensor\bin" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId $tenantId -Feature PrivateAccess
+    ```
 If you already have another sensor registered, you may need to run `.\CleanRegistrationCmd.bat` first.
 
 ### 8. Configure Private Access Sensor policy files
