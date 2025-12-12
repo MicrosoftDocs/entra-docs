@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 ---
 # Manage authentication methods for Microsoft Entra ID
 
-Microsoft Entra ID allows the use of a range of authentication methods to support a wide variety of sign-in scenarios. Administrators can specifically configure each method to meet their goals for user experience and security. This topic explains how to manage authentication methods for Microsoft Entra ID, and how configuration options affect user sign-in and password reset scenarios. 
+Microsoft Entra ID allows the use of a range of authentication methods to support a wide variety of sign-in scenarios. For an overview of the available options, see [Authentication methods in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication). Administrators can specifically configure each method to meet their goals for user experience and security. This topic explains how to manage authentication methods for Microsoft Entra ID, and how configuration options affect user sign-in and password reset scenarios. 
 
 ## Authentication methods policy
 
