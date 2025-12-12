@@ -59,6 +59,7 @@ The JIT migration process is illustrated in the following diagram:
 When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
 - **Consumer user signs in** - User enters credentials from the legacy identity provider. 
+    
     Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use either one one of these workarounds:
     - **In your custom authentication extension:** Fetch the user from a Graph API call to get the username for legacy IDP validation.
     
