@@ -108,6 +108,7 @@ For enterprise environments deploying sensors across multiple domain controllers
 .\PrivateAccessSensor.exe /quiet SKIPREGISTRATION="true"
 ```
 2. Register Sensor</br>
+   
     a. Generate offline token using this PowerShell script. This script should open an interactive browser pop-up to authenticate with your credentials, so we recommend you to do this on a machine with a GUI, internet access, and a browser. 
 ```PowerShell
 # Microsoft Private Access / Global Secure Access – Token acquisition script
@@ -166,12 +167,12 @@ else {
 You can access the value by typing `$token` and `$tenantId` respectively in your PowerShell.
 Copy the value of these as plain text and set it manually as `$token` and `$tenantId` respectively in your DC server machine.</br>
 
-b. On the server machine, convert your `$token` that you copied over to a secure string.
+    b. On the server machine, convert your `$token` that you copied over to a secure string.
 
 ```PowerShell
 $SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
 ```
-c. Register sensor using the `$SecureToken` created in the last step and the `$tenantId`. The `RegisterConnector.ps1` script should be in `C:\Program Files\Private Access Sensor\bin`.
+    c. Register sensor using the `$SecureToken` created in the last step and the `$tenantId`. The `RegisterConnector.ps1` script should be in `C:\Program Files\Private Access Sensor\bin`.
 
 ```PowerShell
 .\RegisterConnector.ps1 -modulePath "C:\Program Files\Private Access Sensor\bin" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId $tenantId -Feature PrivateAccess
