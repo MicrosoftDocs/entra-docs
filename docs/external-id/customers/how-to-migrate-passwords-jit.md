@@ -58,7 +58,14 @@ The JIT migration process is illustrated in the following diagram:
 
 When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
-- **Consumer user signs in** - User enters credentials from the legacy identity provider.
+- **Consumer user signs in** - User enters credentials from the legacy identity provider. Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use either one one of these workarounds:
+    - Fetch the user from a Graph API call to get the username for legacy IDP validation.
+    
+    **OR**    
+
+    - Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation.
+        - Legacy UPN: `1234@legacyidp.com`
+        - Entra UPN: `1234@entratenant.onmicrosoft.com`
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
     - If the password entered does not match the password on record for the user, External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
     - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
@@ -73,14 +80,14 @@ When a consumer user account with the migration flag set to `true` signs in, the
 - **Authentication completion** - If successful, the user is authenticated and future sign-ins bypass the custom extension.
 
 > [!NOTE]
-> Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use one of these workarounds:
-> * Fetch the user from a Graph API call to get the username for legacy IDP validation.
->
-> **OR**
->
-> * Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation.
->   * Legacy UPN: `1234@legacyidp.com`
->   * Entra UPN: `1234@entratenant.onmicrosoft.com`
+Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use one of these workarounds:
+* Fetch the user from a Graph API call to get the username for legacy IDP validation.
+
+**OR**
+
+* Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation.
+    * Legacy UPN: `1234@legacyidp.com`
+    * Entra UPN: `1234@entratenant.onmicrosoft.com`
 
 ## 1. Bulk migrate users
 
