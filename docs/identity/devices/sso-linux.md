@@ -19,13 +19,13 @@ Microsoft Single Sign-On (SSO) for Linux is powered by the Microsoft Identity Br
 This feature empowers users on Linux desktop clients to register their devices with Microsoft Entra ID, enroll into Intune management, and satisfy device-based Conditional Access policies when accessing their corporate resources.
 
 - Provides Microsoft Entra ID registration & enrollment of Linux desktops
-- Provides SSO capabilities for native & web applications (ex: Azure CLI, Microsoft Edge Browser, Teams PWA, etc.) to access M365/Azure protected resources
-- Provides SSO for Microsoft Entra accounts across all applications that utilize MSAL.NET or MSAL.python - enabling customers to use Microsoft Authentication Library (MSAL) to integrate SSO into custom apps.
+- Provides SSO capabilities for native and web applications (for example, Azure CLI, Microsoft Edge, Teams PWA) to access Microsoft 365 and Azure protected resources
+- Provides SSO for Microsoft Entra accounts across applications that use MSAL for .NET or MSAL for Python, enabling customers to use Microsoft Authentication Library (MSAL) to integrate SSO into custom apps
 - Enables Conditional Access policies protecting web applications via Microsoft Edge
-- Enables Standard compliance policies
+- Enables standard Intune compliance policies
 - Enables support for Bash scripts for custom compliance policies
 
-The Teams web application and a new PWA (Progressive Web App) for Linux uses the Conditional Access configuration, applied through Microsoft Intune Manager, to enable Linux users to access the Teams web application using Microsoft Edge in a secure way.
+The Teams web application and a Progressive Web App (PWA) for Linux use Conditional Access configuration applied through Microsoft Intune to enable Linux users to access Teams using Microsoft Edge.
 
 ## Prerequisites
 
@@ -54,12 +54,12 @@ Microsoft Single Sign-On for Linux is supported on the following operating syste
 
 ## SSO experience
 
-This video demonstrates the sign-in experience on brokered flows on Linux
+The following animation shows the sign-in experience for brokered flows on Linux.
 
-![Demo of the Linux Login component component](./media/sso-linux/linux-entra-login.gif)
+![Demo of the Linux sign-in experience](./media/sso-linux/linux-entra-login.gif)
 
 > [!NOTE]
-> The microsoft.identity.broker version 2.0.1 and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
+> microsoft-identity-broker version 2.0.1 and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
 
 
 
@@ -104,7 +104,8 @@ Run the following commands in a command line to manually install the Microsoft S
 
    ```bash
    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel9.0-prod
+    sudo dnf install -y dnf-plugins-core
+    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
    ```
 
 1. Install the Microsoft Single Sign-On (microsoft-identity-broker) app.  
@@ -206,8 +207,13 @@ This feature is in preview and requires additional configuration steps to enable
 To install the insiders-fast channel of the microsoft-identity-broker:
 
 ```bash
-# Install the insiders-fast package
+# Enable the insiders-fast repo
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod insiders-fast main" >> /etc/apt/sources.list.d/microsoft-ubuntu-$(lsb_release -cs)-insiders-fast.list'
+
+sudo apt update
+
+# Install or upgrade microsoft-identity-broker from the enabled repo
+sudo apt install microsoft-identity-broker
 ```
 
 ### Smart Card Authentication
@@ -267,48 +273,64 @@ The easiest way to configure Certificate-Based Authentication (CBA) is to use a 
 
 ### Logging
 
+Reference useful commands to collect logs for troubleshooting.
+
 | Item           | Command|
 | -------------- | --------------- |
 | **All Logs**   | `journalctl --since "10 minutes ago" > logs_last_10_min.txt`                                                                               |
 | **Identity Broker** | `journalctl --user -f -u microsoft-identity-broker.service`                                    |
 | **JavaBroker** | `journalctl --user -f -u microsoft-identity-broker.service`  <br>`sudo journalctl --system -f -u microsoft-identity-device-broker.service` |
 | **New Broker** | `journalctl --user -f -u microsoft-identity-broker.service`                                                                                |
-| **DBUS Logs**  | `busctl --user monitor com.microsoft.identity.broker1`                                                                                     |
+| **DBUS Logs**  | `busctl --user monitor com.microsoft.identity.broker1` |
 
 ### Services
+
+To manage the Identity Broker service, use the following commands:
 
 | Services:                    | Command                                                          |
 | ---------------------------- | ---------------------------------------------------------------- |
 | List all running services:   | `systemctl --type=service --state=running`                      |
-| Restart Identity Broker:     | `sudo systemctl --user restart microsoft-identity-broker.service` |
+| Restart Identity Broker:     | `systemctl --user restart microsoft-identity-broker.service` |
 | Get Identity Broker status:  | `systemctl --user status microsoft-identity-broker.service`     |
 
 
 ### List installed versions
 
-To list the package versions currently installed, run: ([Reference](https://stackoverflow.microsoft.com/questions/289246))
+To list the package versions currently installed:
 
-```
+
+### [Ubuntu](#tab/debian-listinstalls)
+
+```bash
 apt list -a intune-portal microsoft-edge-dev microsoft-identity-broker azure-cli
-#or
-sudo dpkg -l microsoft-identity-broker intune-portal microsoft-edge-stable
 ```
+
+### [Red Hat Enterprise Linux](#tab/redhat-listinstalls)
+
+```bash
+rpm -q microsoft-identity-broker intune-portal microsoft-edge-stable azure-cli
+```
+
+---
 
 ### Configuration Verification
 
 To verify your installation and configuration:
 
 1. Check if the identity broker is running:
+
 ```bash
 systemctl --user is-active microsoft-identity-broker.service
 ```
 
 2. Test authentication with Azure CLI (requires Azure CLI to be installed)  (note you could use any other brokered application)
+
 ```bash
 az login
 ```
 
 3. Verify device registration status:
+
 ```bash
 /opt/microsoft/identity-broker/bin/identity-broker status
 ```

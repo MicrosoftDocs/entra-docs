@@ -65,7 +65,7 @@ We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pr
 ### Important Notes for Version 2.0.2 and Later
 
 > [!WARNING]
-> Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation.
+> Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation. If you're upgrading rom a previous version (2.0.1 or earlier), users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
 
 **Platform Support:**
 - Preview support for Ubuntu 22.04 and 24.04
@@ -79,7 +79,7 @@ We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pr
 **Documentation:**
 For current production documentation, see: [Microsoft Single Sign-On for Linux](/entra/identity/devices/sso-linux)
 
-### 2.0.3 - Oct 21, 2025 - (Preview Release)
+### 2.0.3 - Oct 21, 2025 - (Preview Release in fast Insiders channel)
 
 - Added support for the microsoft-identity-broker-diagnostics package.
 - Renamed a service component from `linux_broker` to `microsoft-identity-broker` for consistency.
@@ -93,7 +93,7 @@ For current production documentation, see: [Microsoft Single Sign-On for Linux](
 
 ---
 
-### 2.0.2 - Sept 19, 2025 - (Preview Release)
+### 2.0.2 - Sept 19, 2025 - (Preview Release in fast Insiders channel)
 Preview update to use a newly rewritten C++ broker instead of the previous Java-based broker.
 
 - Introduces support for Phish Resistant MFA (PRMFA) on Linux devices using a SmartCard, Certificate Based Authentication (CBA), or FIDO2 key with a Personal Identity Verification (PIV) profile.
@@ -135,7 +135,6 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 
 - Ubuntu-22.04 - [microsoft-identity-broker_2.0.0_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.0_amd64.deb)
 - Ubuntu-20.04 - [microsoft-identity-broker_2.0.0_amd64.deb](https://packages.microsoft.com/ubuntu/20.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.0_amd64.deb)
-
 
 ---
 
