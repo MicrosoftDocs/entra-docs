@@ -107,74 +107,78 @@ For enterprise environments deploying sensors across multiple domain controllers
 ```cmd
 .\PrivateAccessSensor.exe /quiet SKIPREGISTRATION="true"
 ```
-2. Register Sensor</br>
-   
-    a. Generate offline token using this PowerShell script. This script should open an interactive browser pop-up to authenticate with your credentials, so we recommend you to do this on a machine with a GUI, internet access, and a browser. 
-```PowerShell
-# Microsoft Private Access / Global Secure Access – Token acquisition script
-# Works silently on any Windows machine with PowerShell 7.x or 5.1 (GUI + browser required)
+2. Register Sensor
 
-if (-not (Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue)) { Register-PSRepository -Default }
-Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+    a. Generate offline token using this PowerShell script. This script should open an interactive browser pop-up to authenticate with your credentials, so we recommend you to do this on a machine with a GUI, internet access, and a browser.
 
-if (-not (Get-PackageProvider -Name NuGet -ErrorAction SilentlyContinue)) {
-    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
-}
+    ```PowerShell
+    # Microsoft Private Access / Global Secure Access – Token acquisition script
+    # Works silently on any Windows machine with PowerShell 7.x or 5.1 (GUI + browser required)
 
-if (-not (Get-PackageSource -Name "nuget.org" -ProviderName NuGet -ErrorAction SilentlyContinue)) {
-    Register-PackageSource -Name "nuget.org" -Location "https://www.nuget.org/api/v2" -ProviderName NuGet -Trusted -Force
-}
+    if (-not (Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue)) { Register-PSRepository -Default }
+    Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
-$abstractionsVersion = "6.22.0"
-if (-not (Get-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion -ErrorAction SilentlyContinue)) {
-    Install-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion -Force -Scope CurrentUser
-}
+    if (-not (Get-PackageProvider -Name NuGet -ErrorAction SilentlyContinue)) {
+         Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
+    }
 
-$msalVersion = "4.53.0"
-if (-not (Get-Module -ListAvailable Microsoft.Identity.Client | Where-Object Version -eq $msalVersion)) {
-    Install-Module Microsoft.Identity.Client -RequiredVersion $msalVersion -Force -Scope CurrentUser -AllowClobber
-}
+    if (-not (Get-PackageSource -Name "nuget.org" -ProviderName NuGet -ErrorAction SilentlyContinue)) {
+         Register-PackageSource -Name "nuget.org" -Location "https://www.nuget.org/api/v2" -ProviderName NuGet -Trusted -Force
+    }
 
-# Load Abstractions DLL (handles PS7 .nupkg quirk)
-$pkg = Get-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion
-$folder = if ($pkg.Source -like "*.nupkg") { Split-Path $pkg.Source -Parent } else { $pkg.Source }
-Add-Type -Path (Join-Path $folder "lib\net461\Microsoft.IdentityModel.Abstractions.dll")
+    $abstractionsVersion = "6.22.0"
+    if (-not (Get-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion -ErrorAction SilentlyContinue)) {
+         Install-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion -Force -Scope CurrentUser
+    }
 
-# Load MSAL DLL
-$msal = Get-Module -ListAvailable Microsoft.Identity.Client | Where-Object Version -eq $msalVersion | Select-Object -First 1
-Add-Type -Path (Join-Path $msal.ModuleBase "Microsoft.Identity.Client.dll")
+    $msalVersion = "4.53.0"
+    if (-not (Get-Module -ListAvailable Microsoft.Identity.Client | Where-Object Version -eq $msalVersion)) {
+         Install-Module Microsoft.Identity.Client -RequiredVersion $msalVersion -Force -Scope CurrentUser -AllowClobber
+    }
 
-# -------------------------- Authentication --------------------------
-$connectorAppId             = "55747057-9b5d-4bd4-b387-abf52a8bd489" # This is the standard Application (Principal) ID for Azure AD Application Proxy in Microsoft Entra ID
-$registrationServiceAppIdUri = "https://proxy.cloudwebappproxy.net/registerapp/user_impersonation"
+    # Load Abstractions DLL (handles PS7 .nupkg quirk)
+    $pkg = Get-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion
+    $folder = if ($pkg.Source -like "*.nupkg") { Split-Path $pkg.Source -Parent } else { $pkg.Source }
+    Add-Type -Path (Join-Path $folder "lib\net461\Microsoft.IdentityModel.Abstractions.dll")
 
-$scopes = [System.Collections.ObjectModel.Collection[string]]::new()
-$scopes.Add($registrationServiceAppIdUri)
+    # Load MSAL DLL
+    $msal = Get-Module -ListAvailable Microsoft.Identity.Client | Where-Object Version -eq $msalVersion | Select-Object -First 1
+    Add-Type -Path (Join-Path $msal.ModuleBase "Microsoft.Identity.Client.dll")
 
-$app = [Microsoft.Identity.Client.PublicClientApplicationBuilder]::Create($connectorAppId).WithAuthority("https://login.microsoftonline.com/common/oauth2/v2.0/authorize").WithDefaultRedirectUri().Build()
+    # -------------------------- Authentication --------------------------
+    $connectorAppId             = "55747057-9b5d-4bd4-b387-abf52a8bd489" # This is the standard Application (Principal) ID for Azure AD Application Proxy in Microsoft Entra ID
+    $registrationServiceAppIdUri = "https://proxy.cloudwebappproxy.net/registerapp/user_impersonation"
 
-$authResult = $app.AcquireTokenInteractive($scopes).ExecuteAsync().GetAwaiter().GetResult()
+    $scopes = [System.Collections.ObjectModel.Collection[string]]::new()
+    $scopes.Add($registrationServiceAppIdUri)
 
-if ($authResult.AccessToken) {
-    $token    = $authResult.AccessToken        # ← back, exactly like before
-    $tenantId = $authResult.TenantId           # ← back, exactly like before
-    Write-Host "`nSuccess: Token acquired successfully. You can access the value by typing $token in your PowerShell" -ForegroundColor Green
-}
-else {
-    Write-Warning "Authentication failed or no token was returned"
-}
-```
-You can access the value by typing `$token` and `$tenantId` respectively in your PowerShell.
-Copy the value of these as plain text and set it manually as `$token` and `$tenantId` respectively in your DC server machine.
+    $app = [Microsoft.Identity.Client.PublicClientApplicationBuilder]::Create($connectorAppId).WithAuthority("https://login.microsoftonline.com/common/oauth2/v2.0/authorize").WithDefaultRedirectUri().Build()
+
+    $authResult = $app.AcquireTokenInteractive($scopes).ExecuteAsync().GetAwaiter().GetResult()
+
+    if ($authResult.AccessToken) {
+         $token    = $authResult.AccessToken        # ← back, exactly like before
+         $tenantId = $authResult.TenantId           # ← back, exactly like before
+         Write-Host "`nSuccess: Token acquired successfully. You can access the value by typing $token in your PowerShell" -ForegroundColor Green
+    }
+    else {
+         Write-Warning "Authentication failed or no token was returned"
+    }
+    ```
+
+    You can access the value by typing `$token` and `$tenantId` respectively in your PowerShell. Copy the value of these as plain text and set it manually as `$token` and `$tenantId` respectively in your DC server machine.
 
     b. On the server machine, convert your `$token` that you copied over to a secure string.
-```PowerShell
+
+    ```PowerShell
     $SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
-```
+    ```
+
     c. Register sensor using the `$SecureToken` created in the last step and the `$tenantId`. The `RegisterConnector.ps1` script should be in `C:\Program Files\Private Access Sensor\bin`.
-```PowerShell
+
+    ```PowerShell
     .\RegisterConnector.ps1 -modulePath "C:\Program Files\Private Access Sensor\bin" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId $tenantId -Feature PrivateAccess
-```
+    ```
 If you already have another sensor registered, you may need to run `.\CleanRegistrationCmd.bat` first.
 
 ### 8. Configure Private Access Sensor policy files
