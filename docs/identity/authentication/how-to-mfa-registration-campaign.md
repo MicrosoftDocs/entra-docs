@@ -23,7 +23,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 ## Prerequisites 
 
-- If you want to know the number of users who registered each authentication before you configure the registration campaign, see [the Authentication methods activity report](howto-authentication-methods-.md#registration-details).
+- If you want to know the number of users who registered each authentication before you configure the registration campaign, see [the Authentication methods activity report](howto-authentication-methods-activity.md#registration-details).
 - Your organization must enable Microsoft Entra multifactor authentication. The registration campaign has no license requirements.
 - Users can't have already set up the Authenticator app for push notifications on their account. 
 - Admins need to enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the **Authentication mode** is set to **Passwordless**, users aren't eligible for the nudge. For more information about how to set the **Authentication mode**, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
