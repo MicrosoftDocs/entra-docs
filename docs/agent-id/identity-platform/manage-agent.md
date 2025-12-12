@@ -47,7 +47,7 @@ The Manage Agents feature in Microsoft Entra lets you view, and control, [agent 
 
 
 
-[!INCLUDE [entitlement-management-request-behalf-agent](../includes/governance/entitlement-management-request-behalf-agent.md)]
+[!INCLUDE [entitlement-management-request-behalf-agent](../../includes/governance/entitlement-management-request-behalf-agent.md)]
 
 ## Next Steps
 
