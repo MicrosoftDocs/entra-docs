@@ -52,7 +52,7 @@ From the user's perspective, the migration is completely seamless. Users  sign i
 
 The JIT migration process is illustrated in the following diagram:
 
-:::image type="content" source="media/how-to-migrate-passwords-jit/jit-migration-process-diagram.png" alt-text="Diagram of the JIT migration process showing user sign-in with legacy credentials, migration flag check, and password validation via a custom API." lightbox="media/how-to-migrate-passwords-jit/jit-migration-process-diagram.png":::
+:::image type="content" source="media/how-to-migrate-passwords-just-in-time/jit-migration-process-diagram.png" alt-text="Diagram of the JIT migration process showing user sign-in with legacy credentials, migration flag check, and password validation via a custom API." lightbox="media/how-to-migrate-passwords-just-in-time/jit-migration-process-diagram.png":::
 
 ### How the JIT migration process works
 
@@ -60,7 +60,7 @@ When a consumer user account with the migration flag set to `true` signs in, the
 
 - **Consumer user signs in** - User enters credentials from the legacy identity provider. 
     
-    Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use either one one of these workarounds:
+    Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use either one of these workarounds:
     - **In your custom authentication extension:** Fetch the user from a Graph API call to get the username for legacy IDP validation.
     
     **OR**    
@@ -1055,12 +1055,12 @@ Before deploying JIT migration to production, thoroughly test the implementation
 
 Consider the following testing checklist:
 
-1. **Test with a subset of users**: Start with a small group of test users before migrating your entire user base.
-1. **Verify credential validation**: Ensure your Azure Function correctly validates credentials against your legacy identity provider.
-1. **Check migration flag updates**: Confirm that the migration flag is set to `false` after successful migration.
-1. **Test different response actions**: Verify that all response actions (MigratePassword, UpdatePassword, Retry, Block) work as expected.
-1. **Monitor Azure Function logs**: Review logs to identify any errors or issues during the authentication process.
-1. **Validate encryption**: Ensure that passwords are encrypted end-to-end and never exposed in logs or error messages.
+- **Test with a subset of users**: Start with a small group of test users before migrating your entire user base.
+- **Verify credential validation**: Ensure your Azure Function correctly validates credentials against your legacy identity provider.
+- **Check migration flag updates**: Confirm that the migration flag is set to `false` after successful migration.
+- **Test different response actions**: Verify that all response actions (MigratePassword, UpdatePassword, Retry, Block) work as expected.
+- **Monitor Azure Function logs**: Review logs to identify any errors or issues during the authentication process.
+- **Validate encryption**: Ensure that passwords are encrypted end-to-end and never exposed in logs or error messages.
 
 ## Next steps
 
