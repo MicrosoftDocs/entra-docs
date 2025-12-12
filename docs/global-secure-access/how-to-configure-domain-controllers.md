@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 11/19/2025
+ms.date: 12/31/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
@@ -98,7 +98,82 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 > [!IMPORTANT]
 > To upgrade to the Private Access Sensor version 2.1.31, we recommend uninstalling the previous sensor and then installing the new sensor. This new sensor is installed in `Audit` mode by default and you need to change it to `enforce` mode from Microsoft Entra Admin Center.
 
-### 7. Configure Private Access Sensor policy files
+### 7. Install sensor silently (no interactive authentication)
+
+1. Download sensor to Domain Controller (DC) server and run this cmd in a powershell or command window with admin privileges to install quietly.
+
+```cmd
+.\PrivateAccessSensor.exe /quiet SKIPREGISTRATION="true"
+```
+1. Register Sensor
+a. Generate offline token using this powershell script. This script should open an interactive browser pop-up to authenticate with your credentials, so we recommend you to do this on a machine with a GUI, internet access, and a browser. 
+```powershell
+# Microsoft Private Access / Global Secure Access – Token acquisition script
+# Works silently on any Windows machine with PowerShell 7.x or 5.1 (GUI + browser required)
+
+if (-not (Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue)) { Register-PSRepository -Default }
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+
+if (-not (Get-PackageProvider -Name NuGet -ErrorAction SilentlyContinue)) {
+    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser
+}
+
+if (-not (Get-PackageSource -Name "nuget.org" -ProviderName NuGet -ErrorAction SilentlyContinue)) {
+    Register-PackageSource -Name "nuget.org" -Location "https://www.nuget.org/api/v2" -ProviderName NuGet -Trusted -Force
+}
+
+$abstractionsVersion = "6.22.0"
+if (-not (Get-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion -ErrorAction SilentlyContinue)) {
+    Install-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion -Force -Scope CurrentUser
+}
+
+$msalVersion = "4.53.0"
+if (-not (Get-Module -ListAvailable Microsoft.Identity.Client | Where-Object Version -eq $msalVersion)) {
+    Install-Module Microsoft.Identity.Client -RequiredVersion $msalVersion -Force -Scope CurrentUser -AllowClobber
+}
+
+# Load Abstractions DLL (handles PS7 .nupkg quirk)
+$pkg = Get-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion
+$folder = if ($pkg.Source -like "*.nupkg") { Split-Path $pkg.Source -Parent } else { $pkg.Source }
+Add-Type -Path (Join-Path $folder "lib\net461\Microsoft.IdentityModel.Abstractions.dll")
+
+# Load MSAL DLL
+$msal = Get-Module -ListAvailable Microsoft.Identity.Client | Where-Object Version -eq $msalVersion | Select-Object -First 1
+Add-Type -Path (Join-Path $msal.ModuleBase "Microsoft.Identity.Client.dll")
+
+# -------------------------- Authentication --------------------------
+$connectorAppId             = "55747057-9b5d-4bd4-b387-abf52a8bd489" # This is the standard Application (Principal) ID for Azure AD Application Proxy in Microsoft Entra ID
+$registrationServiceAppIdUri = "https://proxy.cloudwebappproxy.net/registerapp/user_impersonation"
+
+$scopes = [System.Collections.ObjectModel.Collection[string]]::new()
+$scopes.Add($registrationServiceAppIdUri)
+
+$app = [Microsoft.Identity.Client.PublicClientApplicationBuilder]::Create($connectorAppId).WithAuthority("https://login.microsoftonline.com/common/oauth2/v2.0/authorize").WithDefaultRedirectUri().Build()
+
+$authResult = $app.AcquireTokenInteractive($scopes).ExecuteAsync().GetAwaiter().GetResult()
+
+if ($authResult.AccessToken) {
+    $token    = $authResult.AccessToken        # ← back, exactly like before
+    $tenantId = $authResult.TenantId           # ← back, exactly like before
+    Write-Host "`nSuccess: Token acquired successfully. You can access the value by typing $token in your powershell" -ForegroundColor Green
+}
+else {
+    Write-Warning "Authentication failed or no token was returned"
+}
+```
+You can access the value by typing `$token` and `$tenantId` respectively in your powershell.
+Copy the value of these as plain text and set it manually as `$token` and `$tenantId` respectively in your DC server machine.
+b. On the server machine, convert your `$token` that you copied over to a secure string
+```powershell
+$SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
+```
+c. Register sensor using the `$SecureToken` created in the last step and the `$tenantId`. The `ReigsterConnector.ps1` script should be in `C:\Program Files\Private Access Sensor\bin`.
+```powershell
+.\RegisterConnector.ps1 -modulePath "C:\Program Files\Private Access Sensor\bin" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId $tenantId -Feature PrivateAccess
+```
+If you already have another sensor registered, you may need to run `.\CleanRegistrationCmd.bat` first.
+
+### 8. Configure Private Access Sensor policy files
 
 Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path. Don't modify the `cloudpolicy` file.
 
@@ -159,7 +234,7 @@ Example of how to configure SPN username exclusions and inclusions from Microsof
     1. From the **Settings**, select **Enable break glass mode**. Changes can take a few minutes to propagate.
 - You can also enable break glass mode by changing the `TmpBreakglass` (DWORD) registry key under `HKLM\SOFTWARE\Microsoft\PrivateAccessSensor` from `0` to `1` on the domain controller where the Private Access Sensor is installed. You must restart the sensors to apply updates to the registry key.
 
-### 8. Test Microsoft Entra Private Access for domain controllers
+### 9. Test Microsoft Entra Private Access for domain controllers
 
 1. Keep both the Global Secure Access client and Private Access Sensors turned off.
 1. Confirm that the DC FQDNs/IPs configured in the Quick Access app are present in the Global Secure Access client policy. Check via the Global Secure Access system tray icon: **Advanced Diagnostics** > **Traffic Forwarding Profile**.
@@ -171,9 +246,10 @@ Example of how to configure SPN username exclusions and inclusions from Microsof
 1. Turn on the Global Secure Access client and try to access the SPN again. You should receive Kerberos tickets, and MFA might be required if your Conditional Access policy enforces it.
 1. To verify Kerberos traffic is tunneled through Global Secure Access, use Advanced Diagnostics in the Global Secure Access client.
 
-### 9. Investigation and troubleshooting
+### 10. Investigation and troubleshooting
 
 - Use **Event Viewer** from **Application and Service Logs** > **Microsoft** > **Windows** > **Private Access Sensor** to review Private Access Sensor logs.
+- ![Screenshot Event Viewer page.](media/how-to-configure-domain-controllers/event-viewer.png)
 - To collect Private Access Sensor logs, run `PrivateAccessSensorLogsCollector` from the sensor installation path and share the generated zip file with Microsoft support.
 - For Global Secure Access client logs:
     1. Right-click the Global Secure Access tray icon.
