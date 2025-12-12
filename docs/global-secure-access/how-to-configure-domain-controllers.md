@@ -168,13 +168,11 @@ You can access the value by typing `$token` and `$tenantId` respectively in your
 Copy the value of these as plain text and set it manually as `$token` and `$tenantId` respectively in your DC server machine.
 
     b. On the server machine, convert your `$token` that you copied over to a secure string.
-
     ```PowerShell
     $SecureToken = $Token | ConvertTo-SecureString -AsPlainText -Force
     ```
 
     c. Register sensor using the `$SecureToken` created in the last step and the `$tenantId`. The `RegisterConnector.ps1` script should be in `C:\Program Files\Private Access Sensor\bin`.
-
     ```PowerShell
     .\RegisterConnector.ps1 -modulePath "C:\Program Files\Private Access Sensor\bin" -moduleName "MicrosoftEntraPrivateNetworkConnectorPSModule" -Authenticationmode Token -Token $SecureToken -TenantId $tenantId -Feature PrivateAccess
     ```
