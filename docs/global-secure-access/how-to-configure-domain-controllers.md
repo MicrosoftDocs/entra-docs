@@ -165,7 +165,7 @@ else {
 }
 ```
 You can access the value by typing `$token` and `$tenantId` respectively in your PowerShell.
-Copy the value of these as plain text and set it manually as `$token` and `$tenantId` respectively in your DC server machine.</br>
+Copy the value of these as plain text and set it manually as `$token` and `$tenantId` respectively in your DC server machine.
 
     b. On the server machine, convert your `$token` that you copied over to a secure string.
 
