@@ -19,7 +19,7 @@ You can nudge users to set up Microsoft Authenticator during sign-in. Users go t
 You can also define how many days a user can postpone, or "snooze," the nudge. If a user taps **Skip for now** to postpone the app setup, they get nudged again on the next MFA attempt after the snooze duration has elapsed. You can decide whether the user can snooze indefinitely or up to three times (after which registration is required).
 
 >[!NOTE]
->As users go through their regular sign-in, Conditional Access policies that govern security info registration apply before the user is prompted to set up Authenticator. For example, if a Conditional Access policy requires security info updates can only occur on an internal network, then users won't be prompted to set up Authenticator unless they are on the internal network. 
+>As users go through their regular sign-in, Conditional Access policies that govern security info registration apply before the user is nudged to set up Authenticator. For example, if a Conditional Access policy requires security info updates can only occur on an internal network, then users won't be prompted to set up Authenticator unless they are on the internal network. 
 
 ## Prerequisites 
 
@@ -134,7 +134,7 @@ The following table lists **includeTargets** properties.
 |------|-----------------|-------------|
 | targetType| "user"<br>"group" | The kind of entity targeted. |
 | ID | A guid identifier | The ID of the user or group targeted. |
-| targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method user is prompted to register. The only permissible value is "microsoftAuthenticator". |
+| targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method that the user is nudged to register. The only permissible value is "microsoftAuthenticator". |
 
 The following table lists **excludeTargets** properties.
 
@@ -332,7 +332,7 @@ Yes. If they have been scoped for the nudge using the policy.
 
 **What if the user closes the browser?** 
 
-It's the same as snoozing. If setup is required for a user after they snoozed three times, the user is prompted the next time they sign in.
+It's the same as snoozing. If setup is required for a user after they snoozed three times, the user is nudged the next time they sign in.
 
 **Why don't some users see a nudge when there is a Conditional Access policy for "Register security information"?**
 
