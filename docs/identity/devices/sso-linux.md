@@ -1,6 +1,6 @@
 ---
-title: Microsoft Single Sign-On for Linux
-description: Overview of Microsoft Single Sign-On for Linux that enables Microsoft Entra ID integration and seamless authentication.
+title: Microsoft single sign-on for Linux
+description: Overview of Microsoft single sign-on for Linux that enables Microsoft Entra ID integration and seamless authentication.
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
 ms.service: entra-id
@@ -10,9 +10,9 @@ ms.subservice: devices
 ms.custom: linux-related-content
 ---
 
-# What is Microsoft Single Sign-On for Linux?
+# What is Microsoft single sign-on for Linux?
 
-Microsoft Single Sign-On (SSO) for Linux is powered by the Microsoft Identity Broker, a software component that integrates Linux devices with Microsoft Entra ID. This solution enables users to authenticate once with their Microsoft Entra ID credentials and access multiple applications and resources without repeated authentication prompts. The feature simplifies the sign-in process for users and reduces password management overhead for administrators. 
+Microsoft single sign-on (SSO) for Linux is powered by the Microsoft Identity Broker, a software component that integrates Linux devices with Microsoft Entra ID. This solution enables users to authenticate once with their Microsoft Entra ID credentials and access multiple applications and resources without repeated authentication prompts. The feature simplifies the sign-in process for users and reduces password management overhead for administrators. 
 
 ## Features
 
@@ -31,7 +31,7 @@ The Teams web application and a Progressive Web App (PWA) for Linux use Conditio
 
 ### Supported Operating Systems
 
-Microsoft Single Sign-On for Linux is supported on the following operating systems (physical or Hyper-V machines with x86/64 CPUs):
+Microsoft single sign-on for Linux is supported on the following operating systems (physical or Hyper-V machines with x86/64 CPUs):
 
 - Ubuntu Desktop 24.04 LTS (Long Term Support)
 - Ubuntu Desktop 22.04 LTS (Long Term Support) 
@@ -50,8 +50,6 @@ Microsoft Single Sign-On for Linux is supported on the following operating syste
 - User accounts synchronized with or created in Microsoft Entra ID
 - Appropriate licensing for conditional access policies (if applicable)
 
-
-
 ## SSO experience
 
 The following animation shows the sign-in experience for brokered flows on Linux.
@@ -62,10 +60,9 @@ The following animation shows the sign-in experience for brokered flows on Linux
 > microsoft-identity-broker version 2.0.1 and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
 
 
-
 ## Installation
 
-Run the following commands in a command line to manually install the Microsoft Single Sign-On (microsoft-identity-broker) and its dependencies on your device.  
+Run the following commands in a command line to manually install the Microsoft single sign-on (microsoft-identity-broker) and its dependencies on your device.  
 
 ### [Ubuntu](#tab/debian-install)
 
@@ -90,7 +87,7 @@ Run the following commands in a command line to manually install the Microsoft S
     sudo apt update
     ```
 
-4. Install the Microsoft Single Sign-On (microsoft-identity-broker) app.
+4. Install the Microsoft single sign-on (microsoft-identity-broker) app.
 
     ```bash
     sudo apt install microsoft-identity-broker
@@ -108,7 +105,7 @@ Run the following commands in a command line to manually install the Microsoft S
     sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
    ```
 
-1. Install the Microsoft Single Sign-On (microsoft-identity-broker) app.  
+1. Install the Microsoft single sign-on (microsoft-identity-broker) app.  
 
    ```bash
    sudo dnf install microsoft-identity-broker
@@ -199,7 +196,7 @@ Beginning with version `2.0.2` of the microsoft-identity-broker, Phish-Resistant
 - Certificate Based Authentication (CBA)
 - FIDO2 key with a PIV (Personal Identity Verification) profile (certificate on a FIDO device)
 
-This feature is in preview and requires additional configuration steps to enable support for SmartCard/CBA on Linux devices.
+This feature is in preview and requires extra configuration steps to enable support for SmartCard/CBA on Linux devices.
 
 > [!NOTE]
 > The insiders-fast channel is only available for `microsoft-identity-broker` version `2.0.2` and greater. 

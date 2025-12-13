@@ -1,6 +1,6 @@
 ---
-title:       What's new in Microsoft Single Sign-On for Linux
-description: Discusses new feature releases of Microsoft Single Sign-On for Linux
+title:       What's new in Microsoft single sign-on for Linux
+description: Discusses new feature releases of Microsoft single sign-on for Linux
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: devices
 ms.custom: linux-related-content
 ---
 
-# What's new in Microsoft Single Sign-On for Linux
+# What's new in Microsoft single sign-on for Linux
 Microsoft periodically adds and modifies the features and functionality of the Microsoft identity platform to improve its security, usability, and standards compliance.
 
 Unless otherwise noted, the changes described here apply only to applications registered after the stated effective date of the change.
@@ -20,7 +20,7 @@ Check this article regularly to learn about:
 - Protocol changes
 - Deprecated functionality
 
-This article provides information about the latest updates to Microsoft Single Sign-On for Linux. 
+This article provides information about the latest updates to Microsoft single sign-on for Linux. 
 
 ### Package Repositories
 Microsoft uses the following package repositories to distribute the Microsoft Identity Broker and Microsoft Identity Diagnostics for Linux. Packages are available in either `.deb` or `.rpm` format, however only Ubuntu Long-Term Support (LTS) & Red Hat Enterprise Linux (LTS) are supported.
@@ -48,8 +48,6 @@ Microsoft uses the following package repositories to distribute the Microsoft Id
 
 ## Microsoft-Identity-Broker - Version Lifecycle and Support Matrix
 
-Details about the Long Term Support policy will be provided here in future updates.
-
 The following table lists Identity Runtime SDK versions currently supported and receiving security fixes.
 
 |Major Version |Primary Purpose|Latest Version| Supported| Source|
@@ -65,7 +63,7 @@ We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pr
 ### Important Notes for Version 2.0.2 and Later
 
 > [!WARNING]
-> Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation. If you're upgrading rom a previous version (2.0.1 or earlier), users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
+> Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation. If you're upgrading from a previous version (2.0.1 or earlier), users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
 
 **Platform Support:**
 - Preview support for Ubuntu 22.04 and 24.04
@@ -77,7 +75,7 @@ We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pr
 - Device re-registration through Microsoft Entra ID and Intune required
 
 **Documentation:**
-For current production documentation, see: [Microsoft Single Sign-On for Linux](/entra/identity/devices/sso-linux)
+For current production documentation, see: [Microsoft single sign-on for Linux](/entra/identity/devices/sso-linux)
 
 ### 2.0.3 - Oct 21, 2025 - (Preview Release in fast Insiders channel)
 
@@ -101,7 +99,7 @@ Preview update to use a newly rewritten C++ broker instead of the previous Java-
 - When a user configures single sign-on with a new Linux device, the device performs a Microsoft Entra join instead of a Microsoft Entra registration. A join results in creating a trust with the entire device, where a registration creates a trust only within the user profile. A join trust is a prerequisite step to enable platformSSO in the future.
 - Renamed the device broker service to `microsoft-identity-devicebroker`.
 - There no longer is a user broker service named `microsoft-identity-broker`. The user broker is now an executable that gets invoked via dbus connection
-- Device certs are moved from the Keychain to `/etc/ssl/private`. In the `private` directory, the broker will create a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via Microsoft Authentication Library (MSAL).
+- Device certs are moved from the Keychain to `/etc/ssl/private`. In the `private` directory, the broker creates a device cert per tenant, a session transport key per tenant, and a deviceless key that is stored in that directory. All other user data such as AT/RT are stored in the KeyChain and accessed via Microsoft Authentication Library (MSAL).
 
 #### Assets
 
