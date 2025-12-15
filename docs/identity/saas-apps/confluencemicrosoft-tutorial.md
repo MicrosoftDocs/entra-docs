@@ -62,7 +62,8 @@ As of now, following versions of Confluence are supported:
 - Confluence: 6.0.1 to 6.15.9
 - Confluence: 7.0.1 to 7.20.3
 - Confluence: 8.0.0 to 8.9.8
-- Confluence: 9.0.1 to 9.5.1
+- Confluence: 9.0.1 to 9.5.4
+- Confluence: 10.0.2 to 10.2.1
 
 > [!NOTE]
 > Please note that our Confluence Plugin was last supported on **Ubuntu 16.04**, which is no longer supported. The plugin now supports **only Windows**.
