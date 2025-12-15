@@ -92,10 +92,10 @@ To recreate the Microsoft Entra application used for credential synchronization,
 2. Now delete the old application and object using the following PowerShell cmdlets:
 
     ```powershell
-    $app = Get-MgApplication | Where-Object { $_.IdentifierUris -eq 'https://sync.aaddc.activedirectory.windowsazure.com' }
-    Remove-MgApplication -ApplicationId $app.Id
-    $sp = Get-MgServicePrincipal -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
-    Remove-MgServicePrincipal -ServicePrincipalId $sp.Id
+    Install-Module Microsoft.Graph -Scope CurrentUser
+    Connect-MgGraph -Scopes "Application.ReadWrite.All"
+    $app = Get-MgApplication -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
+    Remove-MgApplication -ApplicationId $app.Id   
     ```
 
 After you delete both applications, the Azure platform automatically recreates them and tries to resume password synchronization. The managed domain's health automatically updates itself within two hours and removes the alert.
