@@ -22,6 +22,15 @@ This article lists the latest features, improvements, and changes in the Microso
 
 Partner Gallery Update: Reorganized content and removed deprecated individual partner pages.
 
+## November 2025
+
+- **New integration guidance documentation**: Added comprehensive [integration guidance](integration-guidance.md) for IDV partners integrating with Microsoft Entra Verified ID, covering step-by-step flows for issuer and verifier integrations.
+
+- **IDV Partner Gallery updates**: 
+  - Updated partner documentation links for improved accessibility
+  - Clarified integration descriptions and fixed documentation typos
+  - Updated Persona deployment guide link
+
 ## September 2025
 
 - Entra Verified ID is supported on Microsoft GCC environments. 

@@ -5,7 +5,7 @@ ms.service: entra-verified-id
 author: barclayn
 manager: pmwongera
 ms.topic: how-to
-ms.date: 12/03/2025
+ms.date: 12/16/2025
 ms.author: barclayn
 ---
 
@@ -30,9 +30,9 @@ The following table showcases the list of Verified ID IDV partners. If you're an
 
 | Partner | Partner offers | Description |
 |---------|----------------------|-------------|
-| Au10tix | [Au10tix documentation](https://securitystore.microsoft.com/solutions/au10tix.au10tix-id-one-trust-vc) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
-| Idemia | [Idemia documentation](https://securitystore.microsoft.com/solutions/idemia.idemia-id-one-trust-vc) | Idemia Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
-| TrueCredential (LexisNexis) | [TrueCredential documentation](https://securitystore.microsoft.com/solutions/truecredential.truecredential-oneid-verifed-id) | TrueCredential is a secure identity verification solution powered by LexisNexis Risk Solutions, leveraging Microsoft Entra Verified ID to deliver trusted, decentralized credentials. |
+| AU10TIX | [AU10TIX documentation](https://securitystore.microsoft.com/solutions/au10tix1662380672540.verifiedid) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
+| IDEMIA | [IDEMIA documentation](https://securitystore.microsoft.com/solutions/idemia.idemia-id-one-trust-vc) | IDEMIA Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
+| TrueCredential (LexisNexis) | [TrueCredential documentation](https://securitystore.microsoft.com/solutions/whoiamai1647469237981.truecredential) | TrueCredential is a secure identity verification solution powered by LexisNexis Risk Solutions, leveraging Microsoft Entra Verified ID to deliver trusted, decentralized credentials. |
 
 
 ### Verified ID API based integration partners
@@ -40,10 +40,11 @@ The following table showcases the list of Verified ID IDV partners. If you're an
 | Partner | Partner offers | Description |
 |---------|----------------------|-------------|
 | 1Kosmos | [1Kosmos deployment guide](https://docs.1kosmos.com/productdocs/docs/verifiable-credentials/1Kosmos-entra-verified-id/) | 1Kosmos and Microsoft Entra Verified ID unite to deliver trusted, privacy-preserving identity verification that empowers secure, passwordless access across ecosystems. |
-| Au10tix | [Au10tix documentation](https://info.au10tix.com/hubfs/PDFs/AU10TIX-Verified-ID-Deployment-Guide.pdf) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
-| Clear | [Clear documentation](https://ir.clearme.com/news-events/press-releases/detail/25/clear-collaborates-with-microsoft-to-create-more-secure) | Clear Collaborates with Microsoft to Create More Secure Digital Experience Through Verification Credential. |
+| AU10TIX | [AU10TIX documentation](https://info.au10tix.com/hubfs/PDFs/AU10TIX-Verified-ID-Deployment-Guide.pdf) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
+| CLEAR | [CLEAR documentation](https://ir.clearme.com/news-events/press-releases/detail/25/clear-collaborates-with-microsoft-to-create-more-secure) | CLEAR Collaborates with Microsoft to Create More Secure Digital Experience Through Verification Credential. |
+| Entrust (formerly Onfido) | [Entrust documentation](https://www.entrust.com/blog/2025/11/verify-every-user-and-empower-your-workforce-with-entrust-and-microsoft-entra-verified-id) | Entrust integrates high-assurance, phishing-resistant identity verification with Microsoft Entra Verified ID to unlock trusted user-owned credentials, enabling advanced security and a seamless, frictionless user experience. |
 | ID Dataweb | [ID Dataweb deployment guide](https://docs.iddataweb.com/docs/microsoft) | ID Dataweb offers secure and low friction identity verification processes to ensure the validity of your Microsoft Entra Verified ID credential. Easy to integrate, easy for your users, secure for your enterprise. |
-| Idemia | [Idemia documentation](https://na.idemia.com/identity/verifiable-credentials/) | Idemia Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
+| IDEMIA | [IDEMIA documentation](https://na.idemia.com/identity/verifiable-credentials/) | IDEMIA Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
 | Jumio | [Jumio deployment guide](https://www.jumio.com/microsoft-verifiable-credentials/) | Jumio is helping to support a new form of digital identity by Microsoft based on verifiable credentials and decentralized identifiers standards to let consumers verify once and use everywhere. |
 | LexisNexis | [LexisNexis documentation](https://solutions.risk.lexisnexis.com/did-microsoft) | LexisNexis risk solutions Verifiable credentials enable faster onboarding for employees, students, citizens, or others to access services. |
 | Persona | [Persona deployment guide](https://help.withpersona.com/articles/2sjBNj9gDT6ea7kShXVb5q/) | Persona integrates with Microsoft Entra Verified ID to unlock identity verification processes, enabling trusted user-owned credentials and frictionless onboarding. |
