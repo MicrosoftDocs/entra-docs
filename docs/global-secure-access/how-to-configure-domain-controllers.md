@@ -64,7 +64,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Go to **Global Secure Access** > **Applications** > **Quick Access** > **Application segment** then select **Add Quick Access application segment**. Use port `88` and select **TCP**.
 1. Next go to **Service principal name** and then select **Add Service principal name** to add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
 
-![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers.](media/how-to-configure-domain-controllers/quick-access-settings.png)
+[![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers.](media/how-to-configure-domain-controllers/quick-access-settings.png)](media/how-to-configure-domain-controllers/quick-access-settings.png#lightbox)
 
 ### 3. Assign users and configure Conditional Access
 
@@ -78,7 +78,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
 1. Enable the Private Access profile.
 
-![Screenshot showing the Private Access traffic forwarding profile activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png)
+[![Screenshot showing the Private Access traffic forwarding profile activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png)](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png#lightbox)
 
 ### 5. Install the Global Secure Access client
 
@@ -232,7 +232,7 @@ If you need to allow access for many users, you can instead specify an inclusion
 
 Example of how to configure SPN username exclusions and inclusions from Microsoft Entra Admin Center:
 >
-![Screenshot of the localpolicy file showing how to configure the file for SPN username exclusions and inclusions.](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)
+[![Screenshot of the localpolicy file showing how to configure the file for SPN username exclusions and inclusions.](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png#lightbox)
 
 #### Break glass mode
 
@@ -259,6 +259,7 @@ Example of how to configure SPN username exclusions and inclusions from Microsof
 
 - Use **Event Viewer** from **Application and Service Logs** > **Microsoft** > **Windows** > **Private Access Sensor** to review Private Access Sensor logs.
 - ![Screenshot Event Viewer page.](media/how-to-configure-domain-controllers/event-viewer.png)
+[![Screenshot Event Viewer page.](media/how-to-configure-domain-controllers/event-viewer.png)](media/how-to-configure-domain-controllers/event-viewer.png#lightbox)
 - To collect Private Access Sensor logs, run `PrivateAccessSensorLogsCollector` from the sensor installation path and share the generated zip file with Microsoft support.
 - For Global Secure Access client logs:
     1. Right-click the Global Secure Access tray icon.
