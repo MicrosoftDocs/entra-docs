@@ -17,11 +17,6 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
-
-## October 2025
-
-Partner Gallery Update: Reorganized content and removed deprecated individual partner pages.
-
 ## November 2025
 
 - **New integration guidance documentation**: Added comprehensive [integration guidance](integration-guidance.md) for IDV partners integrating with Microsoft Entra Verified ID, covering step-by-step flows for issuer and verifier integrations.
@@ -30,6 +25,12 @@ Partner Gallery Update: Reorganized content and removed deprecated individual pa
   - Updated partner documentation links for improved accessibility
   - Clarified integration descriptions and fixed documentation typos
   - Updated Persona deployment guide link
+
+
+## October 2025
+
+Partner Gallery Update: Reorganized content and removed deprecated individual partner pages.
+
 
 ## September 2025
 
