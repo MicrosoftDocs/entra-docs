@@ -258,12 +258,12 @@ Example of how to configure SPN username exclusions and inclusions from Microsof
 ### 10. Investigation and troubleshooting
 
 - Use **Event Viewer** from **Application and Service Logs** > **Microsoft** > **Windows** > **Private Access Sensor** to review Private Access Sensor logs.
-- [![Screenshot Event Viewer page.](media/how-to-configure-domain-controllers/event-viewer.png)](media/how-to-configure-domain-controllers/event-viewer.png#lightbox)
+[![Screenshot Event Viewer page.](media/how-to-configure-domain-controllers/event-viewer.png)](media/how-to-configure-domain-controllers/event-viewer.png#lightbox)
 - To collect Private Access Sensor logs, run `PrivateAccessSensorLogsCollector` from the sensor installation path and share the generated zip file with Microsoft support.
 - For Global Secure Access client logs:
     1. Right-click the Global Secure Access tray icon.
-    1. Select **Advanced Diagnostics** > **Advanced log collection** > **Collect advanced logs**.
-    1. Reproduce your issue, then stop log collection and submit the logs to Microsoft support.
+    2. Select **Advanced Diagnostics** > **Advanced log collection** > **Collect advanced logs**.
+    3. Reproduce your issue, then stop log collection and submit the logs to Microsoft support.
 
 > [!TIP]
 > If you encounter issues, provide screenshots, command outputs, and collected logs to Microsoft support for further assistance.
