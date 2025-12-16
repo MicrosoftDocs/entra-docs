@@ -106,7 +106,7 @@ The sign-in experience process is grouped into sections. At the end of each sect
     - View the [CSS template reference guide](reference-company-branding-css-template.md).
     
     > [!IMPORTANT]
-    > Beginning January 5, 2026, custom CSS files will no longer be supported for company branding in Microsoft Entra ID. Existing custom CSS will continue to function.
+    > Tenants created after January 5, 2026, will not have custom CSS available for company branding in Microsoft Entra ID. Tenants. Tenants created before January 5 can continue to use custom CSS.
 
 
 ### Header
