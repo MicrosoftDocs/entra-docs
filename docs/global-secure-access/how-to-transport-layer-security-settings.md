@@ -14,7 +14,9 @@ ms.date: 12/16/2025
 ---
 
 # Configure Transport Layer Security inspection settings
-Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access intermediate CA, including signing and uploading the certificate. See the following video to learn more.
+Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access intermediate CA, including signing and uploading the certificate. 
+
+In the following video, you can learn to configure TLS inspection in Microsoft Entra Internet Access using a self-signed certificate created with OpenSSL.
 
  > [!VIDEO 2f8c4249-79c5-4832-bd94-de4f4f647e8c]
 
