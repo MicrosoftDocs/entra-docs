@@ -101,7 +101,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 ### 7. Install sensor silently (no interactive authentication)
 
-For enterprise environments deploying sensors across multiple domain controllers, silent installation enables automated deployment without requiring interactive sign-in on each DC. This approach is useful when deploying to servers that don't have a GUI, are in remote locations, or when using deployment automation tools like Group Policy, Microsoft Endpoint Configuration Manager, or scripts. By generating an offline token on a workstation with browser access, you can then register sensors on multiple DCs without needing to authenticate interactively on each server.
+For enterprise environments deploying sensors across multiple domain controllers, silent installation enables automated deployment without requiring interactive sign-in on each DC. This approach is useful when deploying to servers that don't have a GUI, are in remote locations, or when using deployment automation tools like Group Policy, Microsoft Endpoint Configuration Manager, or scripts. By generating an offline token on a workstation with browser access, you can then register sensors on multiple DCs without needing to authenticate interactively on each server. Silent installation is supported with Private Access Sensor version 2.2.0 or higher, and PowerShell version 5.x.
 
 1. Download sensor to Domain Controller (DC) server and run this cmd in a PowerShell or command window with admin privileges to install quietly.
 
@@ -114,7 +114,7 @@ For enterprise environments deploying sensors across multiple domain controllers
 
     ```PowerShell
     # Microsoft Private Access / Global Secure Access – Token acquisition script
-    # Works silently on any Windows machine with PowerShell 7.x or 5.1 (GUI + browser required)
+    # Works silently on any Windows machine with PowerShell 5.x (GUI + browser required)
 
     if (-not (Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue)) { Register-PSRepository -Default }
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
@@ -137,7 +137,7 @@ For enterprise environments deploying sensors across multiple domain controllers
          Install-Module Microsoft.Identity.Client -RequiredVersion $msalVersion -Force -Scope CurrentUser -AllowClobber
     }
 
-    # Load Abstractions DLL (handles PS7 .nupkg quirk)
+    # Load Abstractions DLL
     $pkg = Get-Package Microsoft.IdentityModel.Abstractions -ProviderName NuGet -RequiredVersion $abstractionsVersion
     $folder = if ($pkg.Source -like "*.nupkg") { Split-Path $pkg.Source -Parent } else { $pkg.Source }
     Add-Type -Path (Join-Path $folder "lib\net461\Microsoft.IdentityModel.Abstractions.dll")
@@ -158,8 +158,8 @@ For enterprise environments deploying sensors across multiple domain controllers
     $authResult = $app.AcquireTokenInteractive($scopes).ExecuteAsync().GetAwaiter().GetResult()
 
     if ($authResult.AccessToken) {
-         $token    = $authResult.AccessToken        # ← back, exactly like before
-         $tenantId = $authResult.TenantId           # ← back, exactly like before
+         $token    = $authResult.AccessToken   
+         $tenantId = $authResult.TenantId   
          Write-Host "`nSuccess: Token acquired successfully. You can access the value by typing $token in your PowerShell" -ForegroundColor Green
     }
     else {
