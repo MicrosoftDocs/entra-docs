@@ -54,7 +54,7 @@ Active Directory minimization includes the following benefits:
 - Streamlined device lifecycle management across the organization
 - Enhanced security posture while simplifying IT operations
 
-**Link:** [Microsoft Customer Story - NTT Communications](https://www.microsoft.com/ja-jp/customers/story/18871-ntt-communications-corporation-microsoft-intune)
+**Link:** [Microsoft Customer Story - NTT Communications](https://www.microsoft.com/en/customers/story/24348-ntt-communications-corporation-microsoft-intune)
 
 ### 3. Decommissioning on-premises Active Directory: Lessons learned from We Are Era's successful migration
 
