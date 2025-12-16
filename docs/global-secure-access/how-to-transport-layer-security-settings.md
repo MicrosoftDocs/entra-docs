@@ -16,10 +16,6 @@ ms.date: 12/16/2025
 # Configure Transport Layer Security inspection settings
 Transport Layer Security (TLS) inspection in Microsoft Entra Internet Access uses a two-tier Intermediate certificate model to issue dynamically generated leaf certificates for decrypting traffic. This article explains how to configure the Certificate Authority (CA) that serves as the Global Secure Access intermediate CA, including signing and uploading the certificate. 
 
-In the following video, you can learn to configure TLS inspection in Microsoft Entra Internet Access using a self-signed certificate created with OpenSSL.
-
- > [!VIDEO 2f8c4249-79c5-4832-bd94-de4f4f647e8c]
-
 ## Prerequisites   
 To complete the steps in this process, you must have the following prerequisites in place:      
 - A Public Key Infrastructure (PKI) service to sign the Certificate Signing Request (CSR) and generate an intermediate certificate for TLS inspection. For testing scenarios, you can also use a self-signed root certificate created with OpenSSL.   
@@ -84,6 +80,13 @@ extendedKeyUsage = serverAuth
 1. Sign the CSR using the following command:
  ```openssl x509 -req -in <CSR file> -CA rootCAchain.pem -CAkey rootCAchain.key -CAcreateserial -out signedcertificate.pem -days 370 -sha256 -extfile openssl.cnf -extensions signedCA_ext```
 1. Upload the signed certificates (```signedcertificate.pem```and ```rootCAchain.pem```) according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
+
+**Configure TLS inspection in Microsoft Entra Internet Access**
+
+In the following example video, you can learn to configure TLS inspection in Microsoft Entra Internet Access using a self-signed certificate created with OpenSSL. Learn to build TLS inspection policies, configure security profiles, apply web content filtering, and enforce Conditional Access policies. Create custom block pages and implement threat intelligence policies.
+
+ > [!VIDEO 2f8c4249-79c5-4832-bd94-de4f4f647e8c]
+
 
 ### PowerShell examples to configure certificate authority for TLS inspection
 Examples of configuring TLS certificate using ADCS and OpenSSL can be found in below links: 
