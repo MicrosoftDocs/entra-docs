@@ -5,13 +5,13 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 12/31/2025
+ms.date: 01/06/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
-# Configure Microsoft Entra Private Access for Active Directory domain controllers (preview)
+# Configure Microsoft Entra Private Access for Active Directory domain controllers
 
 This guide describes how to configure Microsoft Entra Private Access for Active Directory Domain Controllers (DCs). This capability helps strengthen secure access for on-premises users by enforcing conditional access/MFA to on-premises applications that use Kerberos authentication with the DCs.
 
@@ -28,10 +28,11 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 - The Service Principal Names (SPNs) of the private apps you want to protect. You add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
 > The SPNs are *case insensitive* and should be an *exact match* or a wildcard in the format `<serviceclass>/*` such as `cifs/*`.
-- Install the latest Private Access Sensor on the DC. Understand that one Private Access Sensor can be installed on a DC.
+- Install the latest Private Access Sensor on the DC. Understand that one Private Access Sensor can be installed on a DC. Silent installation is supported with Private Access Sensor version 2.2.0 or higher, and PowerShell version 5.x.
 - To test this functionality, you can install sensors on a few DCs in a site that issue Kerberos tickets for the SPNs you want to protect. A sensor is installed in `Audit` mode by default and you need to change it to `enforce` mode.
 - As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.
 - If you use NT LAN Manager (NTLM) v1/v2 in your environment, you might need to restrict NTLM and use Kerberos auth in the domain.
+- 
 
 > [!Note]
 > Setting the policy Restrict NTLM: NTLM authentication in this domain without performing an impact assessment first might cause service outage for those applications and users still using NTLM authentication.
