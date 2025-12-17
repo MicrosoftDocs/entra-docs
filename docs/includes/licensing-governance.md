@@ -17,7 +17,6 @@ The following table shows what features associated with identity governance are 
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance| Microsoft Entra Suite |
 |-----|:-----:|:-----:|:-----:|:-----:|:-----:|
-|[Access Review Agent (Preview)](~/id-governance/access-review-agent.md)|| | | :white_check_mark: | :white_check_mark: |
 |[API-driven provisioning](~/identity/app-provisioning/inbound-provisioning-api-concepts.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -31,11 +30,13 @@ The following table shows what features associated with identity governance are 
 |[Entitlement management with Verified ID](~/id-governance/entitlement-management-verified-id-settings.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Custom Extensions (Logic Apps)](~/id-governance/entitlement-management-logic-apps-integration.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Auto Assignment Policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: | :white_check_mark: |
-|[Entitlement management - Directly Assign Any Identity (Preview)](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-an-identity)|||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Directly assign any identity (Preview) - via email address for identities not yet in your directory](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-identity-preview)|||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Directly assign an identity - selecting existing identities in your directory (including guests)](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-an-identity)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Mark guest as governed](~/id-governance/entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Manage the lifecycle of external users](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[My Access portal](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management - PIM for Groups](~/id-governance/entitlement-management-access-package-eligible.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Request access packages on-behalf-of](~/id-governance/entitlement-management-request-behalf.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Sponsors Policy](~/id-governance/entitlement-management-access-package-create.md)|||| :white_check_mark: | :white_check_mark: |
 |[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -46,8 +47,9 @@ The following table shows what features associated with identity governance are 
 |[Access reviews - Inactive Users reviews](~/id-governance/create-access-review.md)|||| :white_check_mark: | :white_check_mark: |
 |[Access Reviews - Inactive Users recommendations](~/id-governance/review-recommendations-access-reviews.md#inactive-user-recommendations)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Access reviews - Machine learning assisted access certifications and reviews](~/id-governance/review-recommendations-access-reviews.md#user-to-group-affiliation)|||| :white_check_mark: | :white_check_mark: |
-|[Lifecycle Workflows (LCW)](~/id-governance/what-are-lifecycle-workflows.md)|||| :white_check_mark: | :white_check_mark: |
-|[LCW + Custom Extensions (Logic Apps)](~/id-governance/lifecycle-workflow-extensibility.md)|||| :white_check_mark: | :white_check_mark: |
+|[Access Review Agent (Preview)](~/id-governance/access-review-agent.md)|| | | :white_check_mark: | :white_check_mark: |
+|[Lifecycle Workflows](~/id-governance/what-are-lifecycle-workflows.md)|||| :white_check_mark: | :white_check_mark: |
+|[Lifecycle Workflows + Custom Extensions (Logic Apps)](~/id-governance/lifecycle-workflow-extensibility.md)|||| :white_check_mark: | :white_check_mark: |
 |[Identity governance dashboard](~/id-governance/governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: | :white_check_mark: |
 |[Cross-tenant user synchronization (same cloud)](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
