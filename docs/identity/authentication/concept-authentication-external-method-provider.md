@@ -19,24 +19,25 @@ This article describes how an external authentication provider connects to Micro
 
 > [!IMPORTANT]
 > The use of an external authentication provider is currently in preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
-> By using this preview, you have the ability to use an external authentication provider to integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An external authentication methodcan satisfy the second factor of an MFA requirement for access to a resource or application. To use an EAM, you need at least a Microsoft Entra ID P1 license.
+>
+> When you use this preview, you can use an external authentication provider to integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An external authentication method can satisfy the second factor of an MFA requirement for access to a resource or application. To use an EAM, you need at least a Microsoft Entra ID P1 license.
 
 When a user signs in, the tenant policies are evaluated. The authentication requirements are determined based on the resource that the user tries to access.
 
 Multiple policies might apply to the sign-in, depending on their parameters. Those parameters include users and groups, applications, the platform, the sign-in risk level, and more.
 
-Based on the authentication requirements, the user might need to sign in with another factor to meet the MFA requirement. The second factor needs to complement the type of first factor.
+Based on the authentication requirements, the user might need to sign in with another factor to meet the MFA requirement. The type of the second factor needs to complement the type of first factor.
 
-The tenant admin adds EAMs to Microsoft Entra ID. If a tenant requires an external authentication methodfor MFA, the sign-in is considered to meet the MFA requirement after Microsoft Entra ID validates both:
+The tenant admin adds EAMs to Microsoft Entra ID. If a tenant requires an external authentication method for MFA, the sign-in is considered to meet the MFA requirement after Microsoft Entra ID validates both:
 
 - The first factor completed with Microsoft Entra ID.
 - The second factor completed with the EAM.
 
-That validation meets the MFA requirement for two or more types of methods from:
+That validation meets the MFA requirement for two or more types of methods from the following list:
 
-- Something you know (knowledge).
-- Something you have (possession).
-- Something you are (inherence).
+- Something you know (knowledge)
+- Something you have (possession)
+- Something you are (inherence)
 
 EAMs are implemented on top of OIDC. You need at least three publicly facing endpoints to implement an EAM, including:
 
@@ -44,7 +45,7 @@ EAMs are implemented on top of OIDC. You need at least three publicly facing end
 - A valid OIDC authentication endpoint.
 - A URL where the public certificates of the provider are published.
 
-Let's look closer at how sign-in works with an EAM:
+This is how sign-in works with an EAM:
 
 1. A user tries to sign in with a first factor, like a password, to an application protected by Microsoft Entra ID.
 
@@ -52,29 +53,31 @@ Let's look closer at how sign-in works with an EAM:
 
 1. The user chooses the external authentication method as a second factor.
 
-1. Microsoft Entra ID redirects the user's browser session to the URL of the external authentication method:
-   - This URL is discovered from the discovery URL provisioned by an admin when they created the external authentication method.
-   - The application provides an expired or nearly expired token that contains information to identify the user and tenant.
+1. Microsoft Entra ID redirects the user's browser session to the URL of the external authentication method.
+   
+   This URL is discovered from the discovery URL that an admin provisioned when they created the external authentication method.
+   
+   The application provides an expired or nearly expired token that contains information to identify the user and tenant.
 
 1. The external authentication provider validates that the token came from Microsoft Entra ID, and checks the contents of the token.
 
 1. The external authentication provider might make a call to Microsoft Graph to fetch additional information about the user.
 
-1. The external authentication provider performs any actions it deems necessary, such as authenticating the user with some credential.
+1. The external authentication provider performs any actions it deems necessary, such as authenticating the user with a credential.
 
-1. The external authentication provider redirects the user back to Microsoft Entra ID with a valid token, including all required claims.
+1. The external authentication provider redirects the user back to Microsoft Entra ID with a valid token, including all the required claims.
 
 1. Microsoft Entra ID validates that the token's signature came from the configured external authentication provider, and then checks the contents of the token.
 
 1. Microsoft Entra ID validates the token against the requirements.
 
-1. If the validation succeeds, that means the user satisfied the MFA requirement. The user might also have to meet other policy requirements.
+1. If the validation succeeds, that means that the user satisfied the MFA requirement. The user might also have to meet other policy requirements.
 
-:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how external method authentication works.":::
+:::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how an external authentication method works.":::
 
 ## Configure a new external authentication provider with Microsoft Entra ID
 
-To to issue the `id_token_hint`, external authentication methods need an application that represents the integration. You can create the application in two ways:
+To issue `id_token_hint`, external authentication methods need an application that represents the integration. You can create the application in two ways:
 
 - In each tenant that uses the external provider.
 - As one multitenant application. To enable the integration for their tenant, privileged role administrators need to grant consent.
@@ -85,10 +88,10 @@ To configure a multitenant application, the provider admin must first:
 
 1. Create a Microsoft Entra ID tenant (if they don't already have one).
 1. Register an application in their tenant.
-1. In the application, under **Supported Account types** of the application, select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)**.
-1. Add the delegated permission `openid` and `profile` for Microsoft Graph to the application.
+1. In the application, under **Supported Account types**, select **Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)**.
+1. Add the delegated permission `openid` and `profile` values for Microsoft Graph.
 1. Don't publish any scopes in this application.
-1. Add the external identity provider's valid `authorization_endpoint` URLs to that application as Reply URLs.
+1. Add the external identity provider's valid `authorization_endpoint` URLs to that application as reply URLs.
 
    > [!NOTE]
    > In the application registration, add the `authorization_endpoint` provided in the provider's discovery document as a redirect url.
@@ -100,11 +103,11 @@ The application registration process creates an application with several propert
 | Property | Description |
 |----------|-------------|
 | Object ID | The provider can use the object ID with Microsoft Graph to query the application information. <br>The provider can use the object ID to programmatically retrieve and edit the application information. |
-| Application ID | The provider can use the application ID as the ClientId of their application. |
+| Application ID | The provider can use the application ID as the client ID of their application. |
 | Home page URL | The provider home page URL isn't used for anything, but you need it to register the application. |
 | Reply URLs | Valid redirect URLs for the provider. One should match the provider host URL that was set for the provider's tenant. One of the registered reply URLs must match the prefix of the `authorization_endpoint` that Microsoft Entra ID retrieves through OIDC discovery for the host url. |
 
-An application for each tenant is also a valid model to support the integration. If you use a single-tenant registration, the tenant admin needs to create an application registration with the properties in the preceding table for a single-tenant application.
+Using an application for each tenant is an example of another valid model you can use to support integration. If you use a single-tenant registration, the tenant admin needs to create an application registration with the properties in the preceding table for a single-tenant application.
 
 > [!NOTE]
 > You need admin consent for the application in the tenant that uses the external authentication method. If you don't grant consent, the following error appears when an admin tries to use the external authentication method:
@@ -117,7 +120,7 @@ A provider can configure more claims by using [optional claims for `id_token`](/
 > [!NOTE]
 > Regardless of how the application is created, the provider needs to configure optional claims for each cloud environment. If a multitenant application is used for global Azure and Azure for US Government, each cloud environment requires a different application and application ID.
 
-## Add an external authentication method to Microsoft Entra ID
+## <a name = "add-an-eam-to-microsoft-entra-id"></a> Add an external authentication method to Microsoft Entra ID
 
 External identity provider information is stored in the Authentication methods policy of each tenant. The provider information is stored as an authentication method of `externalAuthenticationMethodConfiguration` type.
 
@@ -127,7 +130,7 @@ Each provider has one entry in the list object of the policy. Each entry needs t
 - The included groups that can use the method.
 - The excluded groups that can't use the method.
 
-To set the MFA requirement for user sign-in, Conditional Access administrators can create a policy with the Require MFA Grant. External authentication methods aren't currently supported with authentication strengths.
+To set the MFA requirement for user sign-in, users with the Conditional Access Administrator role can create a policy with the Require MFA grant. External authentication methods aren't currently supported with authentication strengths.
 
 Learn more about [how to add an external authentication method](how-to-authentication-external-method-manage.md) in the Microsoft Entra admin center.
 
@@ -141,10 +144,11 @@ An external identity provider needs to provide an [OIDC Discovery endpoint](http
 
 The Discovery URL *must* use the `https` scheme and *must* end with `/.well-known/openid-configuration`. You can't include any additional path segments, query strings, or fragments after this segment. The full Discovery URL must be included in the Discovery URL that you configure when you create the external authentication method.
 
-The endpoint returns a Provider Metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return a valid content-length header. The metadata document *must* comply with [OpenID Connect Discovery 1.0](http://openid.net/specs/openid-connect-discovery-1_0.html) (incorporating errata set 2) and include all required OIDC metadata fields.
-The metadata of the provider needs to have the data listed in the following table. These values are required for this extensibility scenario. The JSON metadata document might contain more information.
+The endpoint returns a provider metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return a valid content-length header. The metadata document *must* comply with [OpenID Connect Discovery 1.0](http://openid.net/specs/openid-connect-discovery-1_0.html) (incorporating errata set 2) and include all required OIDC metadata fields.
 
-For the OIDC document that has the values for Provider Metadata, see [Provider metadata](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+The provider's metadata needs to include the data listed in the following table. These values are required for this extensibility scenario. The JSON metadata document might contain more information.
+
+For the OIDC document that has the values for provider metadata, see [Provider metadata](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
 
 | Metadata value        | Value  | Comments |
 |-----------------------|--------|----------|
@@ -222,7 +226,7 @@ The following examples illustrate valid and invalid Discovery URL and issuer com
 
 - Discovery URL: `https://example.com/.well-known/openid-configuration`<br>Issuer: `https://example.com:443/` (Default HTTPS port explicitly added in issuer.)
 - Discovery URL: `https://example.com:443/.well-known/openid-configuration`<br>Issuer: `https://example.com/` (Port mismatch.)
-- Discovery URL: `https://example.com/.well-known/openid-configuration?client_id=0oasxuxkghOniBjlQ697`<br>Issuer: `https://example.com` (Query string in Discovery URL isn't allowed.)
+- Discovery URL: `https://example.com/.well-known/openid-configuration?client_id=0oasxuxkghOniBjlQ697`<br>Issuer: `https://example.com` (You can't include a query string in a Discovery URL.)
 
 #### Provider metadata caching
 
@@ -283,7 +287,7 @@ The authentication request parameters are listed in the following table.
 | `claims`        |        | A JSON blob that contains the claims requested. For details about the format of this parameter, see [claims request parameter](http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter) from the OIDC documentation, and an [example](#example-of-an-eam-that-satisfies-mfa) after this table. |
 | `client-request-id` |  A GUID value | A provider can log this value to help troubleshoot problems. |
 
-#### Example of a redirect URI
+#### <a name = "example-of-a-redirection-uri"></a> Example of a redirect URI
 
 <input type="hidden" name="redirect_uri" 
 value="https://login.microsoftonline.com/common/federation/externalauthprovider" />
@@ -294,7 +298,7 @@ The redirect URIs should be registered with the provider off-band. The redirect 
 - Azure for US Government: `https://login.microsoftonline.us/common/federation/externalauthprovider`
 - Microsoft Azure operated by 21Vianet: `https://login.partner.microsoftonline.cn/common/federation/externalauthprovider`
 
-#### Example of an external authentication method that satisfies MFA
+#### <a name = "example-of-an-eam-that-satisfies-mfa"></a> Example of an external authentication method that satisfies MFA
 
 Here's an example of an authentication where an external authentication method satisfies MFA requirements. This example helps a provider know what claims Microsoft Entra ID expects.  
 
@@ -331,7 +335,7 @@ This section describes the required content of the token that's passed as `id_to
 | `tid`   |        | The tenant ID is for advertising the tenant to the provider. It represents the Microsoft Entra ID tenant that the user is from. |
 | `oid`   |        | The immutable identifier for an object in the Microsoft identity platform. In this case, it's a user account. It can also be used to perform authorization checks safely, and as a key in database tables. This ID uniquely identifies the user across applications. Two different applications that sign in the same user receive the same value in the oid claim. Thus, the `oid` claim can be used in queries to Microsoft online services, such as Microsoft Graph. |
 |`preferred_username` |        | Provides a human-readable value that identifies the subject of the token. This value isn't guaranteed to be unique within a tenant, and is meant only for display purposes. |
-| `sub`   |            | Subject identifier for the end user at the Issuer. The principal about which the token asserts information, such as the user of an application. This value is immutable and can't be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource. It can be used as a key in database tables. Because the subject is always present in the tokens that Microsoft Entra ID issues, we recommend using this value in a general-purpose authorization system. The subject is, however, a pairwise identifier; it's unique to a particular application ID. *Therefore, if a single user signs in to two different applications using two different client IDs, those applications receive two different values for the subject claim*. You might or might not want this result, depending on your architecture and privacy requirements. See also the `oid` claim (which does remain the same across apps within a tenant). |
+| `sub`   |            | Subject identifier for the end user at the issuer. The principal about which the token asserts information, such as the user of an application. This value is immutable and can't be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource. It can be used as a key in database tables. Because the subject is always present in the tokens that Microsoft Entra ID issues, we recommend using this value in a general-purpose authorization system. The subject is, however, a pairwise identifier; it's unique to a particular application ID. *Therefore, if a single user signs in to two different applications using two different client IDs, those applications receive two different values for the subject claim*. You might or might not want this result, depending on your architecture and privacy requirements. See also the `oid` claim (which does remain the same across apps within a tenant). |
 
 To prevent the token from being used for anything other than a hint, it's issued as expired. The token is signed, and can be verified by using the published Microsoft Entra ID discovery metadata.
 
@@ -488,7 +492,7 @@ Failure is indicated by issuing error response parameters.
 |-----------|-------|-------------|
 | Error     |       | An ASCII error code, such as `access_denied` or `temporarily_unavailable`. |
 
-Microsoft Entra ID considers the request successful if `id_token parameter` is present in the response, and if the token is valid. Otherwise, the request is considered unsuccessful. Microsoft Entra ID fails the original authentication attempt due to requirement of the Conditional Access policy.
+Microsoft Entra ID considers the request successful if `id_token parameter` is present in the response, and if the token is valid. Otherwise, the request is considered unsuccessful. Microsoft Entra ID fails the original authentication attempt due to the requirement of the conditional access policy.
 
 Microsoft Entra ID abandons the state of the authentication attempt on its end about 5 minutes after the redirection to the provider.
 
@@ -507,9 +511,9 @@ Timestamp: 2023-07-24 16:51:34Z`
 
 ## Custom controls and external authentication methods
 
-In Microsoft Entra ID, external authentication methods and Conditional Access custom controls can operate in parallel while customers prepare for and migrate to external authentication methods.
+In Microsoft Entra ID, external authentication methods and conditional access custom controls can operate in parallel while customers prepare for and migrate to external authentication methods.
 
-Customers who currently use an integration with an external provider by using custom controls can continue to use them, and any Conditional Access policies they configured to manage access. We recommend that admins create a parallel set of Conditional Access policies during the migration period:
+Customers who currently use an integration with an external provider by using custom controls can continue to use them, and any conditional access policies they configured to manage access. We recommend that admins create a parallel set of conditional access policies during the migration period:
 
 - The policies should use the **Require multifactor authentication** grant control instead of the custom control grant.  
 
@@ -537,4 +541,4 @@ If you have any issues when you build external authentication method integration
 
 ## Next steps
 
-For more information about how to configure an external authentication methodin the [Microsoft Entra admin center](https://entra.microsoft.com), see [Manage an external authentication method in Microsoft (Preview)](how-to-authentication-external-method-manage.md).
+For more information about how to configure an external authentication method in the [Microsoft Entra admin center](https://entra.microsoft.com), see [Manage an external authentication method in Microsoft (Preview)](how-to-authentication-external-method-manage.md).
