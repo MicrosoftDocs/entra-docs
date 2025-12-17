@@ -101,7 +101,7 @@ sections:
         answer: We use software-protected keys. Global Secure Access intermediate certificate keys are stored in memory to dynamically generate leaf certificates for websites. While these keys aren't protected by an HSM, access to our servers is highly restricted, and we use strict security controls to safeguard key access and system integrity.
 
       - question: What other Global Secure Access features have dependencies on TLS inspection?
-        answer: Content-based security controls have dependencies on TLS inspection, including URL-enhanced web category filtering, anti-malware, DLP, ATP, and others. Additionally, Global Secure Access block notifications require you to enable TLS inspection.
+        answer: Content-based security controls have dependencies on TLS inspection, including URL filtering, File policies, Prompt policies, and enabling partner security solutions.
 
 additionalContent: |
     ## Related content
