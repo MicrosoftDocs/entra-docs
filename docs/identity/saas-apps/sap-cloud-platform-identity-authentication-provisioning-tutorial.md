@@ -26,6 +26,11 @@ This article demonstrates the steps for configuring provisioning from Microsoft 
 > * Support for custom extension attributes
 > * Support for the [OAuth 2.0 Client Credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md)
 
+> [!IMPORTANT]
+> If [integrating with SAP IAG](../../id-governance/entitlement-management-sap-integration.md), map Microsoft Entra ObjectId to username by selecting *EDIT* in the username line and set the Source and Target attribute as:
+> - Source Attribute: objectId
+> - Target Attribute: userName
+
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:

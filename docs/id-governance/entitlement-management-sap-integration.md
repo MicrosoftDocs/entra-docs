@@ -34,61 +34,59 @@ This article guides you through connecting your SAP IAG instance to Microsoft En
 
 To utilize the Microsoft Entra Entitlement Management integration with SAP IAG, your organization's Microsoft Entra tenant and SAP deployments must meet the following prerequisites:
 
-Microsoft Azure Subscription with a Microsoft Azure Key Vault instance: 
-- User account with at least **Key Vault Data Access Administrator** and **Key Vault Secrets Officer** to the appropriate Key Vault resource
+To [connect your SAP IAG instance in Microsoft Entra](#connect-your-sap-iag-instance-in-microsoft-entra), the following is required in your Microsoft Azure Subscription with a Microsoft Azure Key Vault instance: 
+- The user configuring the integration must have at least **Key Vault Data Access Administrator** and **Key Vault Secrets Officer** roles to the appropriate Key Vault resource.
 - If you need to create a Key Vault Instance, see: [Quickstart: Create a key vault using the Azure portal](/azure/key-vault/general/quick-create-portal)
 - To create a secret to store your SAP IAG Client Secret, see: [Quickstart: Set and retrieve a secret from Azure Key Vault using the Azure portal](/azure/key-vault/secrets/quick-create-portal). You need a user with Key Vault Secrets Officer role or appropriate Key Vault policy.
 
 
 SAP Cloud Identity Services instance that is already integrated with Microsoft Entra for:
 - User Provisioning: See, [Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
-- In your attribute mapping, make sure Microsoft Entra ObjectId is mapped for username as follows:
-    - Select *EDIT* in the username line and make sure the Source and Target attribute as defined:
+- In your attribute mapping, set Microsoft Entra ObjectId as mapped to the username by selecting *EDIT* in the username line and set the Source and Target attribute as:
     - Source Attribute: objectId
     - Target Attribute: userName
     :::image type="content" source="media/entitlement-management-sap-integration/attribute-mapping.png" alt-text="Screenshot of attribute mapping for SAP integration.":::
-    - For a better user experience, also add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP cloud Identity Services.
+    - For a better user experience, also add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP Cloud Identity Services.
     :::image type="content" source="media/entitlement-management-sap-integration/manager-attribute.png" alt-text="Screenshot of setting manager attribute for SAP integration.":::
 - User single sign-on (Optional): See, [Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
 
 
 SAP Cloud Identity and Access Governance (IAG) tenant license:
 
-- You'll need support from the SAP BTP administrator to complete the requirements
-- The Microsoft Entra User Account configuring the connector and Access Packages must be synced to SAP Cloud Identity Services (IAS) and SAP IAG, and must be a member of IAG_SUPER_ADMIN group and have CIAG_Super_Admin role in SAP BTP to add SAP IAG Access Rights as Resource in Microsoft Entra Entitlement Management
-    - Make sure you run the “Repository Sync” and “SCI User Group Sync Job” on SAP IAG after you provision the Microsoft Entra users to SAP Cloud Identity Services.
--  SAP IAG with prerequisites detailed in the instructions following instructions
+- You'll need the SAP BTP administrator to add the Microsoft Entra User Account to the `IAG_SUPER_ADMIN` group, and have the `CIAG_Super_Admin` role in SAP BTP to add SAP IAG Access Rights as Resource in Entitlement Management.
+- The Microsoft Entra User Account configuring the connector and Access Packages must be synced to SAP Cloud Identity Services (IAS) and SAP IAG.
+    - Make sure you run the “*Repository Sync*” and “*SCI User Group Sync Job*” on SAP IAG after you provision the Microsoft Entra users to SAP Cloud Identity Services.
 
 
 ## Prepare your SAP Identity Access Governance instance to connect with Microsoft Entra
 
-To synchronize user-group and attribute data from your SAP Cloud Identity tenant into the [SAP Cloud Identity Access Governance (IAG)](https://help.sap.com/docs/SAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE?state=DRAFT), complete these steps:
+To synchronize user-group and attribute data from SAP Cloud Identity Services to [SAP Cloud Identity Access Governance (IAG)](https://help.sap.com/docs/SAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE?state=DRAFT), complete these steps:
 
 ### 1. Register IAG Sync system administrator
 
-1. In your SAP Cloud Identity tenant, open **Administrators > + Add > Add System**.
-1.  Name it **IAG Sync** and assign the provisioning roles (Manage Users, Manage Groups, Proxy System API, Real-Time Provisioning API, Identity Provisioning Tenant Admin API)
-:::image type="content" source="media/entitlement-management-sap-integration/sync-tool.png" alt-text="Screenshot of the SAP Cloud IAG sync tool.":::
+1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial. Navigate to **Users & Authorizations > Administrators**.
+
+1. Press the **+Add** button on the left hand panel in order to add a new administrator to the list. Choose **Add System** and enter the name of the system.   
+
+1.  Give it a name, such as **IAG Sync**, and assign the provisioning roles (Manage Users, Manage Groups, Proxy System API, Real-Time Provisioning API, Identity Provisioning Tenant Admin API)
+
 1. Under **Configure System Authentication > Certificate**, generate a certificate and save it. You can either keep the downloaded certificate p12 file and the password for the certificate, or  you can upload a .p12 certificate.
 :::image type="content" source="media/entitlement-management-sap-integration/generate-sap-certificate.png" alt-text="Screenshot of uploading a p12 certificate in SAP.":::
 
 
 ### 2. Create the BTP HTTP destination
 
-1. In your SAP BTP subaccount, navigate to Connectivity > Destination Certificates > Create and use Generation method ‘Import’. Upload the p12 certificate file from the previous step
+1. In your SAP BTP subaccount, navigate to Connectivity > Destination Certificates > Create and use Generation method ‘Import’. Upload the p12 certificate file generated in the [Register IAG Sync system administrator](#1-register-iag-sync-system-administrator) step.
 1. In your SAP BTP subaccount, navigate to Connectivity > Destinations > New Destination > From Scratch.
 1. Set Name to SAP_Identity_Services_Identity_Directory, Type to HTTP, URL to 
 https://<SCI_TENANT_ID>.accounts.ondemand.com, Proxy Type to Internet and 
 Authentication to ClientCertificate.
-1. Configure Authentication using your Client ID/Secret or certificate you created and uploaded in 
-the first step. Set Store Source as ‘DestinationService’, Key Store location select the certificate 
-from the drop-down list and should be same as uploaded in Destination Certificates
+1. Configure Authentication using your Client ID/Secret or certificate you created and uploaded in the first step. Set Store Source as ‘DestinationService’, Key Store location select the certificate from the drop-down list and should be same as uploaded in Destination Certificates
 1. Add the following properties:
     - Accept = application/scim+json
     - GROUPSURL = /Groups
     - USERSURL = /Users
     - serviceURL = /scim
-    :::image type="content" source="media/entitlement-management-sap-integration/sap-destination.png" alt-text="Screenshot of setting SAP HTTP destination.":::
 
 ### 3. Point IAG at the destination
 
