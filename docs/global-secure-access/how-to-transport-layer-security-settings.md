@@ -35,7 +35,7 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Select **Create CSR**. This step creates a .csr file and saves it to your default download folder.
 :::image type="content" source="media/how-to-transport-layer-security-settings/create-certificate.png" alt-text="Screenshot of the Create certificate pane with fields filled and the Create CSR button highlighted.":::   
 
-1. Sign the CSR using your PKI service. Make sure **Server Auth** is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certificate in .pem format. If you're testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
+1. Sign the CSR using your PKI service. Make sure **Server Auth** is in Extended Key Usage and `certificate authority (CA)=true`, `keyCertSign,cRLSign`, `basicConstraints=critical,CA:TRUE`, and `pathLenConstraint = 1` in Basic Extension. Save the signed certificate in .pem format. If you're testing with a self-signed certificate, follow the instructions to [use OpenSSL to sign the CSR](#test-with-a-self-signed-root-certificate-authority-using-openssl). 
    
 1. Select **+ Upload certificate**.
 1. In the Upload certificate form, upload the certificate.pem and chain.pem files.
