@@ -374,7 +374,7 @@ Here's an example of an `id_token_hint` for a directory member:
 
 ```
 
-Here's an example of the `id_token hint` for a guest user in the tenant:
+Here's an example of the `id_token_hint` for a guest user in the tenant:
 
 ```json
 {
