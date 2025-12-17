@@ -93,8 +93,8 @@ Depending on how you created your external tenant, it might already be linked to
    
        :::image type="content" source="media/external-identities-pricing/billing-section-subscription.png" alt-text="Screenshot of how to link an external tenant to a subscription.":::
 
-   - If your tenant isn't yet linked to a subscription, in the **Billing** section, select the **Click here to upgrade** link, and then select the **Add Subscription** button. Follow the steps in [Upgrade your free trial by adding an Azure subscription](customers/quickstart-trial-setup.md#upgrade-your-free-trial-by-adding-an-azure-subscription).
-
+   - If your tenant isn't yet linked to a subscription, in the **Billing** section, select the **Click here to upgrade** link, and then select the **Add Subscription** button. 
+   
        :::image type="content" source="media/external-identities-pricing/billing-section-no-subscription.png" alt-text="Screenshot of how to upgrade and link a subscription.":::
 
 ## Change the subscription your external tenant is linked to
