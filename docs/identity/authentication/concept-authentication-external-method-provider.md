@@ -75,7 +75,7 @@ How sign-in works with an external authentication method:
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how an external authentication method works.":::
 
-## <a name = "Configure-a-new-external-authentication-provider-with-microsoft-entra-id"></a> Configuring a new external authentication provider with Microsoft Entra ID
+## <a name = "configure-a-new-external-authentication-provider-with-microsoft-entra-id"></a> Configuring a new external authentication provider with Microsoft Entra ID
 
 To issue `id_token_hint`, external authentication methods need an application that represents the integration. You can create the application in two ways:
 
@@ -523,7 +523,7 @@ Customers who currently use an integration with an external provider by using cu
 - The policies should use the **Require multifactor authentication** grant control instead of the custom control grant.  
 
   > [!NOTE]
-  > Grant controls based on authentication strengths, including the built-in MFA strength, aren't satisfied by the external authentication method. Policies should only be configured with **Require multifactor authentication**. Support for external authentication methods with authentication strengths will come later.
+  > Grant controls based on authentication strengths, including the built-in MFA strength, aren't satisfied by the external authentication method. Policies should only be configured with **Require multifactor authentication**.
 
 - The new policy can be tested first with a subset of users. The test group is excluded from the policy that requires custom controls, and included in the policy that requires MFA. When the admin is comfortable that the policy that requires MFA is satisfied by the external authentication method, the admin can include all required users in the policy with the MFA grant. The policy configured for custom controls can be moved to the **Off** setting.
 
