@@ -45,7 +45,7 @@ External authentication methods are implemented on top of OIDC. You need at leas
 - A valid OIDC authentication endpoint.
 - A URL where the public certificates of the provider are published.
 
-This is how sign-in works with an external authentication method:
+How sign-in works with an external authentication method:
 
 1. A user tries to sign in with a first factor, like a password, to an application protected by Microsoft Entra ID.
 
@@ -400,7 +400,7 @@ Here's an example of the `id_token hint` for a guest user in the tenant:
 
 #### Suggested actions for external identity providers
 
-We suggest that external identity providers complete the items below. The list isn't exhaustive, and providers should complete other validation steps as they see fit.
+We suggest that external identity providers complete the following items. The list isn't exhaustive, and providers should complete other validation steps as they see fit.
 
 - From the request:
 
