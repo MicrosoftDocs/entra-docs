@@ -98,7 +98,6 @@ The following table lists the service limits we implement to prevent outages and
 |Limits based on phone number |15 texts              |20 texts              |30 texts                                             |50 texts           |
 |Limits based on tenant       |500 texts             |1500 texts            |5,000 texts                                          |No limit           |
 
-## Next steps
+## Related content
 
-- [Start a free trial without an Azure subscription](quickstart-trial-setup.md)
 - [Create a tenant with an Azure subscription](quickstart-tenant-setup.md)

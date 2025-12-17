@@ -3071,6 +3071,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs/external-id/customers/quickstart-trial-setup.md",
+      "redirect_url": "/entra/external-id/external-identities-overview",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/identity/enterprise-apps/agent-identify-prioritize-risky-apps.md",
       "redirect_url": "/entra/security-copilot/entra-agents",
       "redirect_document_id": false
