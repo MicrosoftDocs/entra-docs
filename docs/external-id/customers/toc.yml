@@ -558,5 +558,3 @@ items:
             href: /javascript/api/@azure/msal-react/
           - name: MSAL-node
             href: /javascript/api/@azure/msal-node/
-    - name: Start a free trial without an Azure subscription
-      href: quickstart-trial-setup.md

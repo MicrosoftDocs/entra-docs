@@ -171,6 +171,9 @@ Credentials, including the secret token, notification email, and SSO certificate
 ## On-premises application provisioning
 This is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
 
+### SQL Connector connectivity
+The SQL Connector expects the DSN file to be encoded in UTF-8. Other encodings might not be read correctly and result in the error "Data source name not found and no default driver specified."
+
 ### Application and directories
 The following applications and directories aren't yet supported.
 
