@@ -32,11 +32,11 @@ The following sections contain examples of API requests and responses currently 
 
 # Invoking the SCIM APIs
 
-To invoke the SCIM APIs listed in this document, the SCIM client app must obtain an access token from the Microsoft identity platform. This access token includes information about whether the app is authorized to access the SCIM APIs with its own identity using a flow called the [OAuth 2.0 client credentials grant flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-client-creds-grant-flow). 
+To invoke the SCIM APIs listed in this document, the SCIM client app must obtain an access token from the Microsoft identity platform. This access token includes information about whether the app is authorized to access the SCIM APIs with its own identity using a flow called the [OAuth 2.0 client credentials grant flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow). 
 
 Use the steps below to register your SCIM client app in your Microsoft Entra ID tenant and granting the app appropriate permissions for invoking the APIs.
 
-1)  Register the app with Microsoft Entra ID. For more information, see [Register an application with the Microsoft identity platform](https://learn.microsoft.com/en-us/graph/auth-register-app-v2). Save the following values from the app registration:
+1)  Register the app with Microsoft Entra ID. For more information, see [Register an application with the Microsoft identity platform](/graph/auth-register-app-v2). Save the following values from the app registration:
 
     1.  The application ID (referred to as Object ID on the Microsoft Entra admin center).
 
@@ -108,7 +108,7 @@ Content-Type: application/x-www-form-urlencoded </td>
 </tbody>
 </table>
 
-Reference: <https://learn.microsoft.com/en-us/graph/auth-v2-service?tabs=http#token-request>
+Reference: </graph/auth-v2-service?tabs=http#token-request>
 
 You can now use the access token in the HTTP Authorization header (Bearer authentication scheme) to invoke the SCIM API.
 
@@ -138,11 +138,11 @@ You can use the /ServiceProviderConfig endpoint to view additional information
 
 **API endpoint:** <https://graph.microsoft.com/rp/scim/serviceproviderconfig>
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -169,7 +169,7 @@ Response is truncated for readability.
 
 "schemas": \["urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"\],
 
-"documentationUri": "https://learn.microsoft.com/en-us/graph/overview",
+"documentationUri": "/graph/overview",
 
 "pagination": {
 
@@ -219,11 +219,11 @@ Information about supported resource types can be retrieved by making a request 
 
 [https://graph.microsoft.com/rp/scim/resourcetypes/{identifier}](https://graph.microsoft.com/rp/scim/resourcetypes/%7bidentifier%7d)
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -354,11 +354,11 @@ Information about supported SCIM schemas can be retrieved by making a request to
 
 [https://graph.microsoft.com/rp/scim/schemas/{identifier}](https://graph.microsoft.com/rp/scim/schemas/%7bidentifier%7d)
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes is returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -453,7 +453,7 @@ Use the /users endpoint to perform the following operations:
 
 <https://graph.microsoft.com/rp/scim/users>
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 If the response contains multiple pages, use [cursor-based pagination](https://datatracker.ietf.org/doc/draft-ietf-scim-cursor-pagination/) to retrieve all pages in the result.
 
@@ -505,7 +505,7 @@ GET https://graph.microsoft.com/rp/scim/users?filter=externalId eq '12345' and u
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -620,7 +620,7 @@ Existing users can be retrieved by making a GET request to the /users endpoin
 
 [https://graph.microsoft.com/rp/scim/users/{id}](https://graph.microsoft.com/rp/scim/users/%7bid%7d)
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 ## Query parameters
 
@@ -632,7 +632,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -679,7 +679,7 @@ POST <https://graph.microsoft.com/rp/scim/users>
 
 Set HTTP header Content-Type: application/scim+json
 
-Upon success, the API will return HTTP Status 201.
+Upon success, the API returns HTTP Status 201.
 
 ## Required attributes
 
@@ -701,7 +701,7 @@ The following attributes are required for successful user creation:
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -763,7 +763,7 @@ PATCH [https://graph.microsoft.com/rp/scim/users/{id}](https://graph.microsoft.c
 
 Set HTTP header Content-Type: application/scim+json
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 ## Constraints
 
@@ -773,7 +773,7 @@ Upon success, the API will return HTTP Status 200.
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -1007,11 +1007,11 @@ DELETE [https://graph.microsoft.com/rp/scim/users/{id}](https://graph.microsoft.
 
 Set HTTP header Content-Type: application/scim+json
 
-Upon success, the API will return HTTP Status 204.
+Upon success, the API returns HTTP Status 204.
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -1048,7 +1048,7 @@ Use the /groups endpoint to perform the following operations:
 
 <https://graph.microsoft.com/rp/scim/groups>
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 If the response contains multiple pages, use [cursor-based pagination](https://datatracker.ietf.org/doc/draft-ietf-scim-cursor-pagination/) to retrieve all pages in the result.
 
@@ -1088,7 +1088,7 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -1195,7 +1195,7 @@ Existing groups can be retrieved by making a GET request to the /groups endpo
 
 [https://graph.microsoft.com/rp/scim/groups/{id}](https://graph.microsoft.com/rp/scim/groups/%7bid%7d)
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 ## Constraints
 
@@ -1211,7 +1211,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -1256,7 +1256,7 @@ POST <https://graph.microsoft.com/rp/scim/groups>
 
 Set HTTP header Content-Type: application/scim+json
 
-Upon success, the API will return HTTP Status 201.
+Upon success, the API returns HTTP Status 201.
 
 ## Required attributes
 
@@ -1266,7 +1266,7 @@ The following attributes are required for successful user creation:
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -1322,7 +1322,7 @@ PATCH [https://graph.microsoft.com/rp/scim/groups/{id}](https://graph.microsoft.
 
 Set HTTP header Content-Type: application/scim+json
 
-Upon success, the API will return HTTP Status 200.
+Upon success, the API returns HTTP Status 200.
 
 ## Constraints
 
@@ -1342,7 +1342,7 @@ Upon success, the API will return HTTP Status 200.
 
  Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
@@ -1538,11 +1538,11 @@ DELETE [https://graph.microsoft.com/rp/scim/groups/{id}](https://graph.microsoft
 
 Set HTTP header Content-Type: application/scim+json
 
-Upon success, the API will return HTTP Status 204.
+Upon success, the API returns HTTP Status 204.
 
 ## Errors
 
-If there is an error, then one of the following error codes will be returned.
+If there is an error, then one of the following error codes are returned.
 
 | Error | Condition | HTTP Status Code |
 |----|----|----|
