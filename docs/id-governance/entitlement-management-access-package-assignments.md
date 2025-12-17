@@ -15,17 +15,6 @@ ms.custom: sfi-image-nochange
 
 In entitlement management, you can see who is assigned to access packages, their policy, status, and identity lifecycle (preview). If an access package has an appropriate policy, you can also directly assign identities to an access package. This article describes how to view, add, and remove assignments for access packages.
 
-## Prerequisites
-
-To use entitlement management to assign identities to access packages, you must have one of the following licenses:
-
-
-- Microsoft Entra ID P2
-- Enterprise Mobility + Security (EMS) E5 license
-- Microsoft Entra ID Governance subscription
-
-[!INCLUDE [entra-agent-id-license](../includes/entra-agent-id-license-note.md)]
-
 ## View who has an assignment
 
 
