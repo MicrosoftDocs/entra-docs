@@ -13,7 +13,7 @@ ms.custom: sfi-ropc-blocked
 # Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external authentication method for tenants.
 ---
 
-# Microsoft Entra multifactor authentication external method provider reference (Preview)
+# How to use Microsoft Entra MFA with an external provider (preview)
 
 This article describes how an external authentication provider connects to Microsoft Entra multifactor authentication (MFA).
 
@@ -39,7 +39,7 @@ That validation meets the MFA requirement for two or more types of methods from 
 - Something you have (possession)
 - Something you are (inherence)
 
-External authentication methods are implemented on top of OIDC. You need at least three publicly facing endpoints to implement an external authentication method, including:
+External authentication methods are implemented on top of OpenID Connect (OIDC). You need at least three publicly facing endpoints to implement an external authentication method, including:
 
 - An OIDC Discovery endpoint, as described in [Discovery of provider metadata](#discovery-of-provider-metadata).
 - A valid OIDC authentication endpoint.
@@ -54,9 +54,9 @@ How sign-in works with an external authentication method:
 1. The user chooses the external authentication method as a second factor.
 
 1. Microsoft Entra ID redirects the user's browser session to the URL of the external authentication method.
-   
+
    This URL is discovered from the discovery URL that an admin provisioned when they created the external authentication method.
-   
+
    The application provides an expired or nearly expired token that contains information to identify the user and tenant.
 
 1. The external authentication provider validates that the token came from Microsoft Entra ID, and checks the contents of the token.
@@ -82,7 +82,7 @@ To issue `id_token_hint`, external authentication methods need an application th
 - In each tenant that uses the external provider.
 - As one multitenant application. To enable the integration for their tenant, privileged role administrators need to grant consent.
 
-Using a multitenant application reduces the chance of misconfiguration in each tenant. It also lets providers make changes to metadata (for example, reply URLs in one place), rather than require each tenant to make the changes.
+Using a multitenant application can reduce the change of misconfiguration in each tenant. Providers can also make changes to metadata (for example, reply URLs in one place), rather than require each tenant to make the changes.
 
 To configure a multitenant application, the provider admin must first:
 
@@ -94,7 +94,7 @@ To configure a multitenant application, the provider admin must first:
 1. Add the external identity provider's valid `authorization_endpoint` URLs to that application as reply URLs.
 
    > [!NOTE]
-   > In the application registration, add the `authorization_endpoint` provided in the provider's discovery document as a redirect url.
+   > In the application registration, add the `authorization_endpoint` value provided in the provider's discovery document as a redirect URL.
    > Otherwise, you get the following error:
    > "ENTRA IDSTS50161: Failed to validate authorization url of external claims provider!"
 
@@ -105,7 +105,7 @@ The application registration process creates an application with several propert
 | Object ID | The provider can use the object ID with Microsoft Graph to query the application information. <br>The provider can use the object ID to programmatically retrieve and edit the application information. |
 | Application ID | The provider can use the application ID as the client ID of their application. |
 | Home page URL | The provider home page URL isn't used for anything, but you need it to register the application. |
-| Reply URLs | Valid redirect URLs for the provider. One should match the provider host URL that was set for the provider's tenant. One of the registered reply URLs must match the prefix of the `authorization_endpoint` that Microsoft Entra ID retrieves through OIDC discovery for the host url. |
+| Reply URLs | Valid redirect URLs for the provider. One should match the provider host URL that was set for the provider's tenant. One of the registered reply URLs must match the prefix of the `authorization_endpoint` value that Microsoft Entra ID retrieves for the host URL via OIDC Discovery. |
 
 Another valid model for supporting integration is to use an application for each tenant. If you use a single-tenant registration, the tenant admin needs to create an application registration with the properties in the preceding table for a single-tenant application.
 
@@ -142,7 +142,7 @@ The next sections explain provider requirements and include examples for how Mic
 
 An external identity provider needs to provide an [OIDC Discovery endpoint](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig). This endpoint is used to get more configuration data.
 
-The Discovery URL *must* use the `https` scheme and *must* end with `/.well-known/openid-configuration`. You can't include any additional path segments, query strings, or fragments after this segment. The full Discovery URL must be included in the Discovery URL that you configure when you create the external authentication method.
+The discovery URL *must* use the `https` scheme and *must* end with `/.well-known/openid-configuration`. You can't include any additional path segments, query strings, or fragments after this segment. The full discovery URL must be included in the discovery URL that you configure when you create the external authentication method.
 
 The endpoint returns a provider metadata [JSON document](http://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) hosted there. The endpoint must also return a valid content-length header. The metadata document *must* comply with [OpenID Connect Discovery 1.0](http://openid.net/specs/openid-connect-discovery-1_0.html) (incorporating errata set 2) and include all required OIDC metadata fields.
 
@@ -214,19 +214,19 @@ https://customcaserver.azurewebsites.net/.well-known/jwks
 
 #### Discovery URL and issuer examples
 
-The following examples illustrate valid and invalid Discovery URL and issuer combinations for this integration.
+The following examples illustrate valid and invalid discovery URL and issuer combinations for this integration.
 
-**Valid Discovery URL and issuer pairs**
+##### Valid discovery URL and issuer pairs
 
 - Discovery URL: `https://example.com/.well-known/openid-configuration`<br>Issuer: `https://example.com`
 - Discovery URL: `https://example.com:8443/.well-known/openid-configuration`<br>Issuer: `https://example.com:8443`
 - Discovery URL: `https://example.com/tenant1/.well-known/openid-configuration`<br>Issuer: `https://example.com/tenant1`
 
-**Invalid Discovery URL and issuer examples**
+##### Invalid discovery URL and issuer examples
 
 - Discovery URL: `https://example.com/.well-known/openid-configuration`<br>Issuer: `https://example.com:443/` (Default HTTPS port explicitly added in issuer.)
 - Discovery URL: `https://example.com:443/.well-known/openid-configuration`<br>Issuer: `https://example.com/` (Port mismatch.)
-- Discovery URL: `https://example.com/.well-known/openid-configuration?client_id=0oasxuxkghOniBjlQ697`<br>Issuer: `https://example.com` (You can't include a query string in a Discovery URL.)
+- Discovery URL: `https://example.com/.well-known/openid-configuration?client_id=0oasxuxkghOniBjlQ697`<br>Issuer: `https://example.com` (You can't include a query string in a discovery URL.)
 
 #### Provider metadata caching
 
@@ -291,7 +291,7 @@ The authentication request parameters are listed in the following table.
 
 #### <a name = "example-of-a-redirection-uri"></a> Example of a redirect URI
 
-<input type="hidden" name="redirect_uri" 
+<input type="hidden" name="redirect_uri"
 value="https://login.microsoftonline.com/common/federation/externalauthprovider" />
 
 The redirect URIs should be registered with the provider off-band. The redirect URIs that you can send are:
@@ -330,16 +330,16 @@ This section describes the required content of the token that's passed as `id_to
 
 | Claim |Value | Description |
 |-------|------|-------------|
-| `iss`   |      | Identifies the security token service (STS) that constructs and returns the token, and the Microsoft Entra ID tenant in which the user authenticated. Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable. The issuer should match the issuer URL from the OIDC discovery JSON metadata for the tenant where the user signed in. |
+| `iss`   |      | Identifies the security token service (STS) that constructs and returns the token, and the Microsoft Entra ID tenant in which the user authenticated.<br>Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable.<br>The issuer should match the issuer URL from the OIDC discovery JSON metadata for the tenant where the user signed in. |
 | `aud`   |        | The audience should be set to the external identity provider's client ID for Microsoft Entra ID. |
 | `exp`   |        | The expiration time is set to expire a short time after the issuing time, sufficient to avoid time skew issues. Because this token isn't meant for authentication, there's no reason for its validity to outlast the request by much. |
 | `iat`   |        | Set issuing time as usual. |
 | `tid`   |        | The tenant ID is for advertising the tenant to the provider. It represents the Microsoft Entra ID tenant that the user is from. |
-| `oid`   |        | The immutable identifier for an object in the Microsoft identity platform. In this case, it's a user account. It can also be used to perform authorization checks safely, and as a key in database tables. This ID uniquely identifies the user across applications. Two different applications that sign in the same user receive the same value in the `oid` claim. Thus, the `oid` claim can be used in queries to Microsoft online services, such as Microsoft Graph. |
+| `oid`   |        | The immutable identifier for an object in the Microsoft identity platform. In this case, it's a user account. It can also be used to perform authorization checks safely, and as a key in database tables.<br>This ID uniquely identifies the user across applications. Two different applications that sign in the same user receive the same value in the `oid` claim. Thus, the `oid` claim can be used in queries to Microsoft online services, such as Microsoft Graph. |
 |`preferred_username` |        | Provides a human-readable value that identifies the subject of the token. This value isn't guaranteed to be unique within a tenant, and is meant only for display purposes. |
-| `sub`   |            | Subject identifier for the end user at the issuer. The principal about which the token asserts information, such as the user of an application. This value is immutable and can't be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource. It can be used as a key in database tables. Because the subject is always present in the tokens that Microsoft Entra ID issues, we recommend using this value in a general-purpose authorization system. The subject is, however, a pairwise identifier, and it's unique to a particular application ID. *Therefore, if a single user signs in to two different applications by using two different client IDs, those applications receive two different values for the subject claim*. You might or might not want this result, depending on your architecture and privacy requirements. See also the `oid` claim (which does remain the same across apps within a tenant). |
+| `sub`   |            | Subject identifier for the end user at the issuer. The principal about which the token asserts information, such as the user of an application.<br>This value is immutable and can't be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource. It can be used as a key in database tables.<br>Because the subject is always present in the tokens that Microsoft Entra ID issues, we recommend using this value in a general-purpose authorization system. The subject is, however, a pairwise identifier, and it's unique to a particular application ID.<br>*Therefore, if a single user signs in to two different applications by using two different client IDs, those applications receive two different values for the subject claim*.<br>You might or might not want this result, depending on your architecture and privacy requirements.<br>See also the `oid` claim (which does remain the same across apps within a tenant). |
 
-To prevent the token from being used for anything other than a hint, it's issued as expired. The token is signed, and can be verified by using the published Microsoft Entra ID discovery metadata.
+To prevent the token from being used for anything other than a hint, it's issued in the expired state. The token is signed, and can be verified by using the published Microsoft Entra ID discovery metadata.
 
 #### Optional claims from Microsoft Entra ID
 
@@ -349,9 +349,9 @@ If a provider needs optional claims from Microsoft Entra ID, you can configure t
 
 Microsoft recommends that you associate accounts on the provider side with the account in Azure by using the `oid` and `tid` claims. These two claims are guaranteed to be unique for the account in the tenant.
 
-#### Example of an id_token_hint
+#### Example of id_token_hint
 
-Here's an example of an `id_token_hint` for a directory member:
+Here's an example of `id_token_hint` for a directory member:
 
 ```json
 {
@@ -374,7 +374,7 @@ Here's an example of an `id_token_hint` for a directory member:
 
 ```
 
-Here's an example of the `id_token_hint` for a guest user in the tenant:
+Here's an example of `id_token_hint` for a guest user in the tenant:
 
 ```json
 {
@@ -405,7 +405,7 @@ We suggest that external identity providers complete the following items. The li
 - From the request:
 
   - Ensure that the `redirect_uri` is published as described in [Microsoft Entra ID call to the external identity provider](#microsoft-entra-id-call-to-the-external-identity-provider).
-  - Ensure that the configured Discovery URL uses HTTPS and ends with `/.well-known/openid-configuration`. Also ensure that it doesn't include query parameters or fragment identifiers. Make sure that the issuer value matches the discovery document exactly.
+  - Ensure that the configured discovery URL uses HTTPS and ends with `/.well-known/openid-configuration`. Also ensure that it doesn't include query parameters or fragment identifiers. Make sure that the issuer value matches the discovery document exactly.
   - Ensure that the `client_id` has a value assigned to Microsoft Entra ID, such as `ABCD`.
   - The provider should first [validate](/entra/identity-platform/id-tokens#validating-an-id_token) the `id_token_hint` that Microsoft Entra ID presents to it.
 
@@ -437,7 +437,7 @@ On success, the provider would then issue an `id_token` value for the user. Micr
 | `sub`   |       | Subject: must match the sub from the id_token_hint sent to initiate this request. |
 | `nonce` |       | The same `nonce` value that was passed in the request. |
 | `acr`   |       | The `acr` claims for the authentication request. This value should match one of the values from the request sent to initiate this request. Only one `acr` claim should be returned. For the list of claims, see [Supported `acr` claims](#supported-acr-claims). |
-| `amr`   |       | The `amr` claims for the authentication method used. This value should be returned as an array, and only one method claim should be returned.	For the list of claims, see [Supported `amr` claims](#supported-amr-claims). |
+| `amr`   |       | The `amr` claims for the authentication method used. This value should be returned as an array, and only one method claim should be returned. For the list of claims, see [Supported `amr` claims](#supported-amr-claims). |
 
 ##### Supported acr claims
 
@@ -475,19 +475,19 @@ Microsoft Entra ID validates the type-mapping based on the following table.
 
 | Claim method | Type | Notes |
 |--------------|------|-------|
-| `face` | Inherence | Biometric with facial recognition |
+| `face` | Inherence | Biometric with facial recognition. |
 | `fido` | Possession | FIDO2 used. Some implementations might also require biometric, but possession method type is mapped because it's the primary security attribute. |
-| `fpt` | Inherence | Biometric with fingerprint |
-| `hwk` | Possession | Proof of possession of a hardware-secured key |
-| `iris` | Inherence | Biometric with iris scan |
-| `otp` | Possession | One-time password |
-| `pop` | Possession | Proof of possession |
-| `retina` | Inherence | Biometric of retina scan |
-| `sc` | Possession | Smart card |
-| `sms` | Possession | Confirmation by text to a registered number |
-| `swk` | Possession | Proof of presence of a software-secured key |
-| `tel` | Possession | Confirmation by telephone |
-| `vbm` | Inherence | Biometric with voiceprint |
+| `fpt` | Inherence | Biometric with fingerprint. |
+| `hwk` | Possession | Proof of possession of a hardware-secured key. |
+| `iris` | Inherence | Biometric with iris scan. |
+| `otp` | Possession | One-time password. |
+| `pop` | Possession | Proof of possession. |
+| `retina` | Inherence | Biometric of retina scan. |
+| `sc` | Possession | Smart card. |
+| `sms` | Possession | Confirmation by text to a registered number. |
+| `swk` | Possession | Proof of presence of a software-secured key. |
+| `tel` | Possession | Confirmation by telephone. |
+| `vbm` | Inherence | Biometric with voiceprint. |
 
 If no issues are found with the token, Microsoft Entra ID considers MFA to be satisfied, and issues a token to the end user. Otherwise, the end user's request fails.
 
