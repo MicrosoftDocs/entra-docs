@@ -75,7 +75,7 @@ This is how sign-in works with an external authentication method:
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram that shows how an external authentication method works.":::
 
-## Configuring a new external authentication provider with Microsoft Entra ID
+## <a name = "Configure-a-new-external-authentication-provider-with-microsoft-entra-id"></a> Configuring a new external authentication provider with Microsoft Entra ID
 
 To issue `id_token_hint`, external authentication methods need an application that represents the integration. You can create the application in two ways:
 
@@ -400,22 +400,22 @@ Here's an example of the `id_token hint` for a guest user in the tenant:
 
 #### Suggested actions for external identity providers
 
-We suggest that external identity providers complete these steps. The list isn't exhaustive, and providers should complete other validation steps as they see fit.
+We suggest that external identity providers complete the items below. The list isn't exhaustive, and providers should complete other validation steps as they see fit.
 
-1. From the request:
+- From the request:
 
- - Ensure that the `redirect_uri` is published as described in [Microsoft Entra ID call to the external identity provider](#microsoft-entra-id-call-to-the-external-identity-provider).
- - Ensure that the configured Discovery URL uses HTTPS and ends with `/.well-known/openid-configuration`. Also ensure that it doesn't include query parameters or fragment identifiers. Make sure that the issuer value matches the discovery document exactly.
- - Ensure that the `client_id` has a value assigned to Microsoft Entra ID, such as `ABCD`.
- - The provider should first [validate](/entra/identity-platform/id-tokens#validating-an-id_token) the `id_token_hint` that Microsoft Entra ID presents to it.
+  - Ensure that the `redirect_uri` is published as described in [Microsoft Entra ID call to the external identity provider](#microsoft-entra-id-call-to-the-external-identity-provider).
+  - Ensure that the configured Discovery URL uses HTTPS and ends with `/.well-known/openid-configuration`. Also ensure that it doesn't include query parameters or fragment identifiers. Make sure that the issuer value matches the discovery document exactly.
+  - Ensure that the `client_id` has a value assigned to Microsoft Entra ID, such as `ABCD`.
+  - The provider should first [validate](/entra/identity-platform/id-tokens#validating-an-id_token) the `id_token_hint` that Microsoft Entra ID presents to it.
 
-1. From the claims in the `id_token_hint`:
+- From the claims in the `id_token_hint`:
 
- - They can optionally make a call to [Microsoft Graph](https://graph.microsoft.com/) to fetch other details about this user. The `oid` and `tid` claims in `id_token_hint` are useful in this regard. For details about the claims provided in `id_token_hint`, see [Default `id_token_hint` claims](#default-id_token_hint-claims).
+  - (Optional) Make a call to [Microsoft Graph](https://graph.microsoft.com/) to fetch other details about this user. The `oid` and `tid` claims in `id_token_hint` are useful in this regard. For details about the claims provided in `id_token_hint`, see [Default `id_token_hint` claims](#default-id_token_hint-claims).
 
-1. Carry out any other authentication activity for the provider's product.
+- Carry out any other authentication activity for the provider's product.
 
-1. Depending upon the result of the user's actions and other factors, the provider would then construct and send a response back to Microsoft Entra ID, as explained in the next section.
+- Depending upon the result of the user's actions and other factors, the provider would then construct and send a response back to Microsoft Entra ID, as explained in the next section.
 
 #### Microsoft Entra ID processing of the provider response
 
