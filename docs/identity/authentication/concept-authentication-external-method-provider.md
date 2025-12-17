@@ -82,7 +82,7 @@ To issue `id_token_hint`, external authentication methods need an application th
 - In each tenant that uses the external provider.
 - As one multitenant application. To enable the integration for their tenant, privileged role administrators need to grant consent.
 
-Using a multitenant application can reduce the change of misconfiguration in each tenant. Providers can also make changes to metadata (for example, reply URLs in one place), rather than require each tenant to make the changes.
+Using a multitenant application can reduce the chance of misconfiguration in each tenant. Providers can also make changes to metadata (for example, reply URLs in one place), rather than require each tenant to make the changes.
 
 To configure a multitenant application, the provider admin must first:
 
