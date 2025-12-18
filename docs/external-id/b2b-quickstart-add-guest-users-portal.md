@@ -4,7 +4,7 @@ description: Use this quickstart to learn how Microsoft Entra admins can add B2B
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
-ms.date: 01/07/2025
+ms.date: 12/05/2025
 ms.topic: quickstart
 ms.service: entra-external-id
 ms.collection: M365-identity-device-management
