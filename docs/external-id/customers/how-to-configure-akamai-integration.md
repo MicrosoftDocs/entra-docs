@@ -111,7 +111,7 @@ Create a Canonical Name (CNAME) record in your DNS, such as `login.domain.com`, 
 
 ### Grant access to the Akamai API to perform actions
 
-Create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`). You reuse these values in **Step 3**.
+Create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`). You reuse these values later in the setup.
 
 Additionally, update the **API restrictions** for the actions to the appropriate access level shown in the following table:
 
