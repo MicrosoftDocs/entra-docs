@@ -40,12 +40,12 @@ The following table shows what features associated with identity governance are 
 |**Entitlement management (EM)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[EM - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Users assigned to access packages](~/id-governance/entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[EM - Agents and service principals assigned to access packages (Preview)](~/id-governance/entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package)||||||
+|[EM - Agents and service principals assigned to access packages](~/id-governance/entitlement-management-access-package-create.md#allow-users-service-principals-and-agent-identities-in-your-directory-to-request-the-access-package) - in [preview](~/id-governance/agent-id-governance-overview.md#license-requirements) as part of Microsoft Agent 365||||||
 |[EM - Users request access for themselves](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Admins directly assign a user - selecting existing users in your directory (including guests)](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-an-identity)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Admins directly assign any user (Preview) - via email address for users not yet in your directory](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-identity-preview)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Managers requesting on behalf of employees](~/id-governance/entitlement-management-request-behalf.md)|||| :white_check_mark: | :white_check_mark: |
-|[EM - Owners and sponsors request access on behalf of their agent identities or service principals (Preview)](~/id-governance/entitlement-management-request-behalf.md#scenarios-for-requesting-on-behalf-of-agent-identities-preview)||||||
+|[EM - Owners and sponsors request access on behalf of their agent identities or service principals](~/id-governance/entitlement-management-request-behalf.md#scenarios-for-requesting-on-behalf-of-agent-identities-preview)  - in [preview](~/id-governance/agent-id-governance-overview.md#license-requirements) as part of Microsoft Agent 365||||||
 |**EM - Supported resources**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[EM - Groups and teams in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-a-group-or-team-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Eligible group ownerships and memberships in access packages (PIM for Groups)](~/id-governance/entitlement-management-access-package-eligible.md)|||| :white_check_mark: | :white_check_mark: |
@@ -53,7 +53,7 @@ The following table shows what features associated with identity governance are 
 |[EM - SharePoint sites in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-a-sharepoint-site-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - SAP Identity Access Governance (IAG) business roles (Preview)](~/id-governance/entitlement-management-access-package-resources.md)|||| :white_check_mark: | :white_check_mark: |
-|[EM - API permissions in access packages (Preview)](~/id-governance/entitlement-management-access-package-resources.md#add-an-api-permission-preview)||||||
+|[EM - API permissions in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-an-api-permission-preview)  - in [preview](~/id-governance/agent-id-governance-overview.md#license-requirements) as part of Microsoft Agent 365||||||
 |**EM - Approval options**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[EM - Multi-stage approvals with alternate approvers if no action is taken](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Specific approvers](~/id-governance/entitlement-management-access-package-approval-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -89,8 +89,6 @@ The following table shows what features associated with identity governance are 
 |[Identity governance dashboard](~/id-governance/governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: | :white_check_mark: |
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-
-*Identity governance for agents, now in [preview](~/id-governance/agent-id-governance-overview.md#license-requirements), is part of Microsoft Agent 365, the control plane for agents. Get early access to Agent 365 via the Frontier program.
 
 ### Entitlement Management
 
