@@ -5,16 +5,16 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: overview
-ms.date: 12/15/2025
+ms.date: 12/18/2025
 manager: dougeby
 ms.reviewer: kerenSemel
 
 #customer intent: As an IT admin, I want to analyze and visualize application use to better understand organizational usage patterns.
 ---
-<!-- The images in this article have been modified to use approved, fictitious company names from https://microsoft.sharepoint.com/:b:/r/sites/CELAWeb-Copyrights-Trademarks-And-Patents/Shared%20Documents/Approved%20Fictitious%20Company%20Names%20and%20Domain%20Names%20-%20Oct%202024.pdf?csf=1&web=1&e=2JKgvG. -->
+<!-- The images in this article use approved, fictitious company names from https://microsoft.sharepoint.com/:b:/r/sites/CELAWeb-Copyrights-Trademarks-And-Patents/Shared%20Documents/Approved%20Fictitious%20Company%20Names%20and%20Domain%20Names%20-%20Oct%202024.pdf?csf=1&web=1&e=2JKgvG. -->
 
 # What is application usage analytics? (preview)
-Application usage analytics gives IT admins actionable insights into their organization's app use by analyzing traffic patterns, data usage, and which users access the app. By using these analytics, admins can identify shadow IT, generative AI apps, and potential security or compliance risks. Usage analytics helps organizations increase visibility, improve their security posture, and optimize app use across their environment.
+Application usage analytics gives IT admins actionable insights into their organization's app use by analyzing traffic patterns, data usage, and which users access the app. Admins can use these analytics to identify shadow IT, generative AI apps, and potential security or compliance risks. Usage analytics helps organizations increase visibility, improve their security posture, and optimize app use across their environment.
 
 > [!IMPORTANT]
 > The application usage analytics feature is currently in PREVIEW.
@@ -22,7 +22,7 @@ Application usage analytics gives IT admins actionable insights into their organ
 
 ## Insights and Analytics dashboard
 To access the **Insights and Analytics** dashboard:
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Log Reader](/azure/active-directory/roles/permissions-reference#global-secure-access-log-reader).
 1. Browse to **Global Secure Access** > **Applications** > **Insights and Analytics**.
 
 The **Insights and Analytics** dashboard has three widgets:
@@ -71,12 +71,12 @@ By using Cloud application analytics, you can:
 
 The links on each cloud application row open to reveal specific details about that application.
 
-#### App profile and risk factors
-To view an app profile and risk factors, select the application's **Name** link.
+#### App details and risk factors
+To view app details and risk factors, select the application's **Name** link.
 :::image type="content" source="media/overview-application-usage-analytics/cloud-name-link.png" alt-text="Screenshot of the Cloud Apps list with an example Name link highlighted." lightbox="media/overview-application-usage-analytics/cloud-name-link.png":::
 
-The **Microsoft Entra App Gallery** opens, showing the selected application's app profile. The app profile lists the **Overall Risk Score** You can view further risk-factor details by selecting each of the **General**, **Security**, **Compliance**, or **Legal** tabs.
-:::image type="content" source="media/overview-application-usage-analytics/risk-factor-application-profile.png" alt-text="Screenshot of the app profile for Microsoft OneDrive for Business, showing example risk factor scores." lightbox="media/overview-application-usage-analytics/risk-factor-application-profile.png":::
+The **Microsoft Entra App Gallery** opens, showing the selected application's app details. The app details list the **Overall Risk Score**. You can view further risk-factor details by selecting each of the **General**, **Security**, **Compliance**, or **Legal** tabs.
+:::image type="content" source="media/overview-application-usage-analytics/risk-factor-application-details.png" alt-text="Screenshot of the app details view, showing example risk factor scores." lightbox="media/overview-application-usage-analytics/risk-factor-application-details.png":::
 
 #### App user data
 To view user data, select the application's **Users** link.
