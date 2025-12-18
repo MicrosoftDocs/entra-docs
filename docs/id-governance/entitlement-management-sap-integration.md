@@ -49,6 +49,7 @@ SAP Cloud Identity Services instance that is already integrated with Microsoft E
     - For a better user experience, also add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP Cloud Identity Services.
     :::image type="content" source="media/entitlement-management-sap-integration/manager-attribute.png" alt-text="Screenshot of setting manager attribute for SAP integration.":::
 - User single sign-on (Optional): See, [Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
+- An existing SAP IAG Business Role.
 
 
 SAP Cloud Identity and Access Governance (IAG) tenant license:
@@ -193,10 +194,10 @@ The SAP IAG instance secret created in [Register IAG Sync system administrator](
     
     1. **IAG URL**: Enter the base URL of all services exposed by SAP IAG.
         - To obtain this value: In SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `ARQAPI` value.
+1. Select **Create** to create the connector.
 
 
-
-After this information is entered, select **Create** to create the connector. Catalog Administrators are now able to add SAP business roles from your SAP IAG instance to Entitlement Management catalogs and access packages.
+Catalog Administrators within Microsoft Entra are now able to add SAP business roles from your SAP IAG instance to Entitlement Management catalogs and access packages.
 
 ## Set up catalog and access package with SAP business role
 
@@ -204,13 +205,14 @@ After this information is entered, select **Create** to create the connector. Ca
 
 1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**. 
 
-1. [Create a new catalog](entitlement-management-catalog-create.md)
+1. [Create a new catalog](entitlement-management-catalog-create.md), or select an existing catalog where you will want to add the SAP business role.
 
-1. Once the catalog is created, go to its **Resource** section and select **Add resources**
+1. Once the catalog is created or chosen, go to its **Resource** section and select **Add resources**.
 
 1.  Select the SAP IAG button to open a context pane where you can select the SAP IAG instance you want to include in this catalog as a resource. In the dropdown, select the SAP IAG instance you connected. 
     :::image type="content" source="media/entitlement-management-sap-integration/sap-resource.png" alt-text="Screenshot of adding SAP IAG as a resource to catalog.":::
-1. Once you’ve added the SAP IAG instance to your catalog, go to the Access packages tab within the catalog and select the New access package button. In the Resource roles tab, select on SAP IAG. Here, you're able to select the SAP IAG Access Rights
+1. Once you’ve added the SAP IAG instance to your catalog, go to the Access packages tab within the catalog and select the New access package button. Enter in [basic information](entitlement-management-access-package-create.md#configure-basics) and select **Next** see Resource roles that can be added to the access package. 
+1. In the Resource roles tab, select SAP IAG. Here, you're able to select the SAP IAG Access Rights.
 
 1. In the resources table, you can select the specific business roles you want to include in the access package and select **Next**. 
     :::image type="content" source="media/entitlement-management-sap-integration/sap-resource-roles.png" alt-text="Screenshot of setting role for an SAP IAG resource.":::
@@ -229,13 +231,10 @@ After this information is entered, select **Create** to create the connector. Ca
 
 ## Testing Integration
 
-Once you've configured the new SAP IAG Connector, IT admins can follow these steps for an end-to-end test scenario:
-1. Create a new SAP IAG Business Role 
+Once you've configured the new SAP IAG Connector, You can follow these steps for an end-to-end test scenario:
 
-1. Create a new Access Package to grant access to the new SAP IAG Business Role
-
-1. As a user, request the new access package
-    1. For information on how to request an access package, see: [Request access to an access package in entitlement management](entitlement-management-request-access.md).    
+- As an Identity Governance Administrator, you can [directly assign an identity](entitlement-management-access-package-assignments.md#directly-assign-an-identity) to the access package.
+- As a user, request the access package created in the [Set up catalog and access package with SAP business role](#set-up-catalog-and-access-package-with-sap-business-role) step. For information on how to request an access package, see: [Request access to an access package in entitlement management](entitlement-management-request-access.md).    
 1. Verify the role has been assigned in SAP IAG, make the necessary approvals.
 
 ## Next steps
