@@ -39,9 +39,9 @@ SAP Cloud Identity Services instance that is already integrated with Microsoft E
 - In your attribute mapping, set Microsoft Entra ObjectId as mapped to the username by selecting *EDIT* in the username line and set the Source and Target attribute as:
     - Source Attribute: objectId
     - Target Attribute: userName
-    :::image type="content" source="media/entitlement-management-sap-integration/attribute-mapping.png" alt-text="Screenshot of attribute mapping for SAP integration.":::
+    :::image type="content" source="media/entitlement-management-sap-integration/attribute-mapping.png" alt-text="Screenshot of attribute mapping for SAP integration." lightbox="media/entitlement-management-sap-integration/attribute-mapping.png":::
     - For a better user experience, also add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP Cloud Identity Services.
-    :::image type="content" source="media/entitlement-management-sap-integration/manager-attribute.png" alt-text="Screenshot of setting manager attribute for SAP integration.":::
+    :::image type="content" source="media/entitlement-management-sap-integration/manager-attribute.png" alt-text="Screenshot of setting manager attribute for SAP integration." lightbox="media/entitlement-management-sap-integration/manager-attribute.png":::
 - User single sign-on (Optional): See, [Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
 - An existing SAP IAG Business Role.
 
@@ -103,7 +103,7 @@ To create the IPS_Proxy destination in the BTP subaccount within the portal Navi
 | Name | IPS_PROXY |
 | Authentication | BasicAuthentication |
 | Type | HTTP |
-| User | Client ID of the administrator user in IAS (user IAG Sync created in Step 1) |
+| User | Client ID of the administrator user in IAS (user IAG Sync created in the [Register IAG Sync system administrator](#1-register-iag-sync-system-administrator) step) |
 | Password | User P/W of IAS administrator user |
 | Description | IPS Destination |
 | Proxy Type | Internet |
