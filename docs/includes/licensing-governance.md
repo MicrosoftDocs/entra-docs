@@ -90,7 +90,7 @@ The following table shows what features associated with identity governance are 
 |[Insights and reporting - Inactive guest accounts](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: | :white_check_mark: |
 |[Conditional Access - Terms of use attestation](~/identity/conditional-access/terms-of-use.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
-*Identity governance for agents, now in preview, is part of Microsoft Agent 365, the control plane for agents. Get early access to Agent 365 via the Frontier program.
+*Identity governance for agents, now in [preview](~/id-governance/agent-id-governance-overview.md), is part of Microsoft Agent 365, the control plane for agents. Get early access to Agent 365 via the Frontier program.
 
 ### Entitlement Management
 
