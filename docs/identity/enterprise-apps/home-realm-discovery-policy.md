@@ -139,6 +139,9 @@ HRD policies can be assigned to organizations and service principals, allowing m
 - If no domain hint or service principal policy exists, a policy assigned to the parent organization is enforced.  
 - If no domain hint or policies are assigned, default HRD behavior applies.  
 
+> [!NOTE]  
+> HRD policies do not work when using brokered authentication on mobile platforms and MacOS. This includes using the Microsoft Authenticator app on mobile platforms or the Company Portal app on Mac. If auto-acceleration is needed in these cases, a domain hint must be passed in the authentication request of the calling app.
+
 ## Next Steps
 
 - [Configure sign-in behavior for an application using a Home Realm Discovery policy](configure-authentication-for-federated-users-portal.md)
