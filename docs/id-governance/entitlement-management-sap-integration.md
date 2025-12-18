@@ -81,7 +81,7 @@ To synchronize user-group and attribute data from SAP Cloud Identity Services to
 1. Set Name to SAP_Identity_Services_Identity_Directory, Type to HTTP, URL to 
 https://<SCI_TENANT_ID>.accounts.ondemand.com, Proxy Type to Internet and 
 Authentication to ClientCertificate.
-1. Configure Authentication using your Client ID/Secret or certificate you created and uploaded in the first step. Set Store Source as ‘DestinationService’, Key Store location select the certificate from the drop-down list and should be same as uploaded in Destination Certificates
+1. Configure Authentication using the certificate that was created and uploaded in the [Register IAG Sync system administrator](#1-register-iag-sync-system-administrator) step. Set Store Source as ‘DestinationService’, Key Store location select the certificate from the drop-down list and should be same as uploaded in Destination Certificates
 1. Add the following properties:
     - Accept = application/scim+json
     - GROUPSURL = /Groups
@@ -90,7 +90,7 @@ Authentication to ClientCertificate.
 
 ### 3. Point IAG at the destination
 
-In IAG’s [Configuration app](https://help.sap.com/http.svc/login?time=1763658868990&url=%2Fdocs%2FSAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE%c%2F8c45d577632044e9b31f65faf4a7be7c.html%3Fversion%3DCLOUDFOUNDRY), select Application Parameters, locate **UserSource > SourceSystem**, select edit, and enter *SAP_Identity_Services_Identity_Directory*.
+In IAG’s [Configuration app](https://help.sap.com/http.svc/login?time=1763658868990&url=%2Fdocs%2FSAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE%c%2F8c45d577632044e9b31f65faf4a7be7c.html%3Fversion%3DCLOUDFOUNDRY), select Application Parameters, locate **UserSource > SourceSystem > edit**. On the edit page, enter **SAP_Identity_Services_Identity_Directory**.
 
 ### 4. Execute the SCI User Group Sync job
 
@@ -99,28 +99,27 @@ In IAG’s [Configuration app](https://help.sap.com/http.svc/login?time=17636588
 
 ### 5. Create IPS_PROXY destination in BTP subaccount
 
-**Prerequisite**: Administrator user is created in IAS and user and P/W are available. 
-1. Create IPS_Proxy destination in BTP subaccount. Navigate to Destination -> Create -> From Scratch and add the following details:
-    - Name – IPS_PROXY
-    - Authentication – BasicAuthentication
-    - Type – HTTP
-    - User – Client ID of the administrator user in IAS (user IAG Sync created in Step 1)
-    - Password – User P/W of IAS administrator user
-    - Description – IPS Destination
-    - Proxy Type – Internet
-    - URL – Use the IPS URL - https://{YOUR_IPS_TENANT}>. 
-    <{DOMAIN}>.hana.ondemand.com
-    - Additional Properties: 
-        1. Accept - application/scim+json
-        1. ServiceURL - /ipsproxy/service/api/v1/scim/
-        1. USERSURL - /Users
-        1. GROUPSURL - /Groups
+**Prerequisite**: The Administrator user is created in IAS. 
+
+To create the IPS_Proxy destination in the BTP subaccount within the portal Navigate to **Destination > Create > From Scratch**, and add the following details:
+
+| Name | Properties |
+|------|------------|
+| Name | IPS_PROXY |
+| Authentication | BasicAuthentication |
+| Type | HTTP |
+| User | Client ID of the administrator user in IAS (user IAG Sync created in Step 1) |
+| Password | User P/W of IAS administrator user |
+| Description | IPS Destination |
+| Proxy Type | Internet |
+| URL | Use the IPS URL - https://{YOUR_IPS_TENANT}>.{DOMAIN}>.hana.ondemand.com |
+| Additional Properties | Accept = application/scim+json<br>ServiceURL = /ipsproxy/service/api/v1/scim/<br>USERSURL = /Users<br>GROUPSURL = /Groups |
 
 ### 6. Create application in IAG
 
 **Prerequisite**: IPS Proxy systems are created in Cloud Identity Services.
 
-Go to IAG -> Application -> + to create -> Add description.
+To create an application in IAG, within the portal go to **Application > + to create > Add description**.
 
 For more comprehensive instructions, including detailed role assignments, destination configurations, and 
 scheduling options, see SAP documentation: [Syncing User Groups from SAP Identity Services into IAG](https://help.sap.com/docs/SAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE/e12d8683adfa4471ac4edd40809b9038/de385218e7f94ce9ad62b1c3488413dd.html?version=CLOUDFOUNDRY).
@@ -129,7 +128,7 @@ scheduling options, see SAP documentation: [Syncing User Groups from SAP Identit
 
 ## Connect your SAP IAG instance in Microsoft Entra
 
-**Prerequisite: You will need an Azure Subscription and an Azure Key Vault to store your SAP IAG information.**
+**Prerequisite: You will need an Azure subscription containing an Azure Key Vault to store your credentials for Microsoft Entra to interact with SAP IAG**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -146,17 +145,27 @@ scheduling options, see SAP documentation: [Syncing User Groups from SAP Identit
 To fill out the fields for the SAP IAG connector, you must work with your SAP BTP Tenant administrator to get the following information:
 
 
-|Field  |Description  |Provided by  |
-|---------|---------|---------|
-|Type     |   Default: IAG      |   Microsoft Entra      |
-|Name     |   Custom      |   Customer      |
-|Description     |    Customer     |    Customer     |
-|SubscriptionID     |   Select your Azure Subscription ID where Azure Key Vault resource is located.|    Customer     |
-|Key Vault Name     |   Select your Azure Key Vault.      |    Customer. IT Admin must select the drop-box and select the correct Azure Key Vault Resource where IAG secret is stored.    |
-|Secret Name     |   Select your Secret      |    Customer. Copy the clientsecret parameter from your SAP IAG service credentials and add it to your Key Vault as a new secret. Then select the Secret Name value to this field. Customer needs to create a Key Vault unless they already have one, in which case they create a [new secret key](/azure/key-vault/secrets/quick-create-portal).  |
-|Client ID     |   Client identifier      | Customer obtains from SAP BTP. When SAP IAG service is subscribed, this comes with service Key and can be viewed by tenant admin only, using SAP BTP Cockpit. Go to BTP Cockpit, Instances and Subscriptions, and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the ClientID value. |
-|SAP IAG Access token URL   |   Base url for generating an authentication token to call SAP IAG services.      | Customer obtains from SAP BTP. When service is subscribed, a service key is generated along with endpoint URL as well. This information can be found in BTP subaccount. It’s only visible by SAP BTP tenant admin. Go to BTP Cockpit, Instances and Subscriptions and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the URL value. Copy the URL parameter and add the suffix “/oauth/token” before adding it to the New Connector.|
-|IAG URL    |   Base URL of all services exposed by SAP IAG (for for example, To fetch roles or to check status of role assignments)| Customer obtains from SAP BTP. When service is subscribed, a service key is generated along with endpoint URL as well. This information can be found in BTP subaccount. It’s only visible by SAP BTP tenant admin. Go to BTP Cockpit, Instances and Subscriptions, and locate your SAP IAG Service instance (Service Technical Name: grc-iag-api), then select View Credentials, and copy the ARQAPI value. |
+1. **Type**: This field is set to **IAG** by default.
+
+1. **Name**: Enter a custom name for your connector.
+
+1. **Description**: Provide a description for the connector.
+
+1. **Subscription ID**: Select your Azure Subscription ID where your Azure Key Vault resource is located.
+
+1. **Key Vault Name**: From the dropdown, select the Azure Key Vault resource where your IAG secret is stored.
+
+1. **Secret Name**: Select the secret that contains your SAP IAG client secret.
+    - To create the secret: Copy the `clientsecret` parameter from your SAP IAG service credentials and add it to your Key Vault as a new secret. For instructions, see [Set and retrieve a secret from Azure Key Vault using the Azure portal](/azure/key-vault/secrets/quick-create-portal).
+
+1. **Client ID**: Enter the client identifier from your SAP BTP credentials.
+    - To obtain this value: Sign in to SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `clientID` value.
+
+1. **SAP IAG Access token URL**: Enter the base URL for generating an authentication token to call SAP IAG services.
+    - To obtain this value: In SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, copy the `url` parameter, and add the suffix `/oauth/token` before entering it in this field.
+
+1. **IAG URL**: Enter the base URL of all services exposed by SAP IAG.
+    - To obtain this value: In SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `ARQAPI` value.
 
 
 
