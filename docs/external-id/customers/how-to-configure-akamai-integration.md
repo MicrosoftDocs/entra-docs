@@ -259,10 +259,39 @@ Content-Type: application/json
         "verifiedOnDateTime": "2025-10-04T00:50:26.4909654Z",
         "errors": [],
         "warnings": []
+    },
+    "verifiedDetails": {
+        "@odata.type": "#microsoft.graph.akamaiVerifiedDetailsModel",
+        "zoneId": "11111111111111111111111111111111",
+        "dnsConfiguration": {
+            "name": "www.contoso.com",
+            "isProxied": true,
+            "recordType": "cname",
+            "value": "contoso.azurefd.net",
+            "isDomainVerified": true
+        },
+        "enabledRecommendedRulesets": [
+            {
+                "rulesetId": "22222222222222222222222222222222",
+                "name": "akamai Managed Ruleset",
+                "phaseName": "http_request_firewall_managed"
+            }
+        ],
+        "enabledCustomRules": [
+            {
+                "ruleId": "33333333333333333333333333333333",
+                "name": "Block SQL Injection",
+                "action": "block"
+            },
+            {
+                "ruleId": "44444444444444444444444444444444",
+                "name": "Block XSS",
+                "action": "block"
+            }
+        ]
     }
 }
 ```
-<!--- Shortened for readability. -->
 
 ---
 
