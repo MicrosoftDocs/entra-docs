@@ -45,7 +45,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Managers requesting on behalf of employees](~/id-governance/entitlement-management-request-behalf.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Owners and sponsors request access on behalf of their agent identities or service principals (Preview)](~/id-governance/entitlement-management-request-behalf.md#scenarios-for-requesting-on-behalf-of-agent-identities-preview)||||*See note below table|*See note below table|
 |**EM - Supported resources**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
-|[EM - Groups and teams in access packages](~/id-governance/eentitlement-management-access-package-resources.md#add-a-group-or-team-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[EM - Groups and teams in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-a-group-or-team-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Eligible group ownerships and memberships in access packages (PIM for Groups)](~/id-governance/entitlement-management-access-package-eligible.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Applications in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-an-application-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - SharePoint sites in access packages](~/id-governance/entitlement-management-access-package-resources.md#add-a-sharepoint-site-resource-role)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -65,7 +65,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Expiration of access package assignments](~/id-governance/entitlement-management-access-package-lifecycle-policy.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Manage the lifecycle of external users](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Mark guest as governed](~/id-governance/entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: | :white_check_mark: |
-|**EM - Other**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
+|**EM - Additional capabilities**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[EM - Separation of duties](~/id-governance/entitlement-management-access-package-incompatible.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Custom Extensions (Logic Apps)](~/id-governance/entitlement-management-logic-apps-integration.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Auto Assignment Policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: | :white_check_mark: |
