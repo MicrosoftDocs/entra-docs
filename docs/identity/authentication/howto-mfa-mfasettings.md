@@ -8,7 +8,7 @@ ms.date: 12/18/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: jupetter
+ms.reviewer: lhuangnorth
 ms.custom: sfi-image-nochange
 ---
 # Configure Microsoft Entra multifactor authentication settings
