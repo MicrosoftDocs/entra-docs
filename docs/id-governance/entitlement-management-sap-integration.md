@@ -235,7 +235,6 @@ Once you've configured the new SAP IAG Connector, You can follow these steps for
 
 - As an Identity Governance Administrator, you can [directly assign an identity](entitlement-management-access-package-assignments.md#directly-assign-an-identity) to the access package.
 - As a user, request the access package created in the [Set up catalog and access package with SAP business role](#set-up-catalog-and-access-package-with-sap-business-role) step. For information on how to request an access package, see: [Request access to an access package in entitlement management](entitlement-management-request-access.md).    
-1. Verify the role has been assigned in SAP IAG, make the necessary approvals.
 
 ## Next steps
 
