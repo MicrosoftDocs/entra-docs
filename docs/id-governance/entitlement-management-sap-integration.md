@@ -126,6 +126,37 @@ scheduling options, see SAP documentation: [Syncing User Groups from SAP Identit
 
 
 
+### 7. Create an Azure Key Vault
+
+To connect your SAP IAG instance in Microsoft Entra your Aazure subscriptions requires using a Key Vault to store credentials for Microsoft Entra. To create an Azure Key Vault, do the following steps:
+
+1. From the Azure portal menu, or from the **Home** page, select **Create a resource**.
+1. In the Search box, enter **Key Vault**.
+1. From the results list, choose **Key Vault**.
+1. On the Key Vault section, choose **Create**.
+1. On the **Create key vault** section provide the following information:
+    - **Name**: A unique name is required.
+    - **Subscription**: Choose a subscription.
+    - Under **Resource Group**, choose **Create new** and enter a resource group name.
+    - In the **Location** pull-down menu, choose a location.
+    - Leave the other options to their defaults.
+1. Select **Create**.
+
+### 8. Set the secret within Azure Key Vault
+
+The SAP IAG instance secret created in [Register IAG Sync system administrator](#1-register-iag-sync-system-administrator) must be added to the Azure Key Vault. To add a secret to an Azkure Key Vault, do the following steps:
+
+1. Navigate to the key vault you created in the [Create an Azure Key Vault](#7-create-an-azure-key-vault) in the Azure portal.
+1. On the Key Vault left-hand sidebar, select **Objects** then select **Secrets**.
+1. Select **+ Generate/Import**.
+1. On the **Create a secret** screen choose the following values:
+    - **Upload options**: Manual.
+    - **Name**: Create a unique name for the SAP IAG secret
+    - **Value**: Enter the client identifier from your SAP BTP credentials.
+        - To obtain this value: Sign in to SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `clientID` value.
+    - Leave the other values to their defaults. Select **Create**.
+
+
 ## Connect your SAP IAG instance in Microsoft Entra
 
 **Prerequisite: You will need an Azure subscription containing an Azure Key Vault to store your credentials for Microsoft Entra to interact with SAP IAG**
@@ -135,37 +166,33 @@ scheduling options, see SAP documentation: [Syncing User Groups from SAP Identit
 1. Browse to **ID Governance** > **Entitlement management** > **Control configurations**. 
 
 1.  On the Control Configurations page, there will be a Manage External Connectors card. Select **View Connectors**.
-    :::image type="content" source="media/entitlement-management-sap-integration/external-connectors.png" alt-text="Screenshot of external connectors card in entitlement management.":::
+    :::image type="content" source="media/entitlement-management-sap-integration/external-connectors.png" alt-text="Screenshot of control configurations connectors screen.":::
 1. On the Connectors page, select **New connector**.
 
 1. In the New Connector context, select **SAP IAG** from the drop-down list.
-    :::image type="content" source="media/entitlement-management-sap-integration/sap-connector.png" alt-text="Screenshot of the sap connector selection screen.":::
-1.  After you select SAP IAG, you'll see the option to fill out the following fields: Name, Description, Subscription, Resource Group, Key Vault Name, Secret Key, Client ID, Access Token URL, Scope, Endpoint URL, and Domain.
 
-To fill out the fields for the SAP IAG connector, you must work with your SAP BTP Tenant administrator to get the following information:
+1.  After you select SAP IAG, you'll see the option to fill out the following fields: 
 
-
-1. **Type**: This field is set to **IAG** by default.
-
-1. **Name**: Enter a custom name for your connector.
-
-1. **Description**: Provide a description for the connector.
-
-1. **Subscription ID**: Select your Azure Subscription ID where your Azure Key Vault resource is located.
-
-1. **Key Vault Name**: From the dropdown, select the Azure Key Vault resource where your IAG secret is stored.
-
-1. **Secret Name**: Select the secret that contains your SAP IAG client secret.
-    - To create the secret: Copy the `clientsecret` parameter from your SAP IAG service credentials and add it to your Key Vault as a new secret. For instructions, see [Set and retrieve a secret from Azure Key Vault using the Azure portal](/azure/key-vault/secrets/quick-create-portal).
-
-1. **Client ID**: Enter the client identifier from your SAP BTP credentials.
-    - To obtain this value: Sign in to SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `clientID` value.
-
-1. **SAP IAG Access token URL**: Enter the base URL for generating an authentication token to call SAP IAG services.
-    - To obtain this value: In SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, copy the `url` parameter, and add the suffix `/oauth/token` before entering it in this field.
-
-1. **IAG URL**: Enter the base URL of all services exposed by SAP IAG.
-    - To obtain this value: In SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `ARQAPI` value.
+    1. **Type**: This field is set to **IAG** by default.
+    
+    1. **Name**: Enter a custom name for your connector.
+    
+    1. **Description**: Provide a description for the connector.
+    
+    1. **Subscription ID**: Select your Azure Subscription ID where your Azure Key Vault resource is located.
+    
+    1. **Key Vault Name**: From the dropdown, select the Azure Key Vault resource where your IAG secret is stored.
+    
+    1. **Secret Name**: Select the secret that contains your SAP IAG client secret.
+        - To create the secret: Copy the `clientsecret` parameter from your SAP IAG service credentials and add it to your Key Vault as a new secret. For instructions, see [Set and retrieve a secret from Azure Key Vault using the Azure portal](/azure/key-vault/secrets/quick-create-portal).
+    
+    1. **Client ID**: Enter the client identifier from your SAP BTP credentials. This was added to the key vault in the step [Set the secret within Azure Key Vault](#8-set-the-secret-within-azure-key-vault).
+    
+    1. **SAP IAG Access token URL**: Enter the base URL for generating an authentication token to call SAP IAG services.
+        - To obtain this value: In SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, copy the `url` parameter, and add the suffix `/oauth/token` before entering it in this field.
+    
+    1. **IAG URL**: Enter the base URL of all services exposed by SAP IAG.
+        - To obtain this value: In SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `ARQAPI` value.
 
 
 
