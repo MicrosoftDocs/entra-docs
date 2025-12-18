@@ -31,8 +31,8 @@ The following table shows what features associated with identity governance are 
 |**Access reviews (AR)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[AR - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/access-reviews-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[AR - PIM For Groups (Preview)](~/id-governance/create-access-review-pim-for-groups.md)|||| :white_check_mark: | :white_check_mark: |
-|[AR - Inactive Users reviews](~/id-governance/create-access-review.md)|||| :white_check_mark: | :white_check_mark: |
-|[AR - Inactive Users recommendations](~/id-governance/review-recommendations-access-reviews.md#inactive-user-recommendations)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[AR - Reviews scoped to inactive users without active users in the review](~/id-governance/create-access-review.md#scope)|||| :white_check_mark: | :white_check_mark: |
+|[AR - Reviews scoped to active and inactive users with review decision helpers for inactive users for the reviewer](~/id-governance/review-recommendations-access-reviews.md#inactive-user-recommendations)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[AR - Machine learning assisted access certifications and reviews](~/id-governance/review-recommendations-access-reviews.md#user-to-group-affiliation)|||| :white_check_mark: | :white_check_mark: |
 |[AR - Catalog Access Reviews (Preview)](~/id-governance/catalog-access-reviews.md)|||| :white_check_mark: | :white_check_mark: |
 |[AR - Custom data provided resource (Preview)](~/id-governance/custom-data-resource-access-reviews.md)|||| :white_check_mark: | :white_check_mark: |
