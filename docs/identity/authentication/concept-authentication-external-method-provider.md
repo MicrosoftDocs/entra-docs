@@ -510,8 +510,11 @@ When you reach out to Microsoft support or a similar service, provide the **Corr
 For example:
 
 `ENTRA IDSTS70002: Error validating credentials. ENTRA IDSTS50012: External ID token from issuer 'https://sts.XXXXXXXXX.com/auth/realms/XXXXXXXXXmfa' failed signature verification. KeyID of token is 'A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u'`
+
 `Trace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333`
+
 `Correlation ID: aaaa0000-bb11-2222-33cc-444444dddddd`
+
 `Timestamp: 2023-07-24 16:51:34Z`
 
 ## Custom controls and external authentication methods
