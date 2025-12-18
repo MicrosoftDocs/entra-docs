@@ -37,7 +37,7 @@ The following table shows what features associated with identity governance are 
 |[AR Agent (Preview)](~/id-governance/access-review-agent.md)|| | | :white_check_mark: | :white_check_mark: |
 |**Entitlement management (EM)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |**In preview, is part of Microsoft Agent 365, early access via the Frontier program**|
 |[EM - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|Requests and assignment|
+|**EM - Requests and assignment**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |**In preview, is part of Microsoft Agent 365, early access via the Frontier program**|
 |[EM - Users assigned to access packages](~/id-governance/tbd.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Agents and service principals assigned to access packages (Preview)](~/id-governance/tbd.md)|||||| :white_check_mark: |
 |[EM - Users request access for themselves](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -45,7 +45,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Admins directly assign any user (Preview) - via email address for users not yet in your directory](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-any-identity-preview)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Managers requesting on behalf of employees](~/id-governance/entitlement-management-request-behalf.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Owners and sponsors request access on behalf of their agent identities or service principals (Preview)](~/id-governance/entitlement-management-request-behalf#scenarios-for-requesting-on-behalf-of-agent-identities-preview.md)|||||| :white_check_mark: |
-|Supported resources|
+|**EM - Supported resources**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |**In preview, is part of Microsoft Agent 365, early access via the Frontier program**|
 |[EM - Groups and teams in access packages](~/id-governance/entitlement-management-roles.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Eligible group ownerships and memberships in access packages (PIM for Groups)](~/id-governance/entitlement-management-access-package-eligible.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Applications in access packages](~/id-governance/tbd.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -53,7 +53,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - SAP Identity Access Governance (IAG) business roles (Preview)](~/id-governance/tbd.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - API permissions in access packages (Preview)](~/id-governance/tbd.md)|||||| :white_check_mark: |
-|Approval options|
+|**EM - Approval options**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |**In preview, is part of Microsoft Agent 365, early access via the Frontier program**|
 |[EM - Specific approvers](~/id-governance/tbd.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Managers approvers](~/id-governance/tbd.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Internal sponsors as approvers (from assignees' connected organizations)](~/id-governance/tbd.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
@@ -61,11 +61,11 @@ The following table shows what features associated with identity governance are 
 |[EM - Sponsors as approvers (from assignees' user profile)](~/id-governance/entitlement-management-access-package-create.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Externally determine approval requirements using custom extensions](~/id-governance/tbd.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Collect additional requestor information for approval](~/id-governance/tbd.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|Lifecycle|
+|**EM - Lifecycle**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |**In preview, is part of Microsoft Agent 365, early access via the Frontier program**|
 |[EM - Expiration of access package assignments](~/id-governance/tbd.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Manage the lifecycle of external users](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Mark guest as governed](~/id-governance/entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: | :white_check_mark: |
-|Other|
+|**EM - Other**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |**In preview, is part of Microsoft Agent 365, early access via the Frontier program**|
 |[EM - Separation of duties](~/id-governance/tbd.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Custom Extensions (Logic Apps)](~/id-governance/entitlement-management-logic-apps-integration.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Auto Assignment Policies](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md)|||| :white_check_mark: | :white_check_mark: |
@@ -73,7 +73,7 @@ The following table shows what features associated with identity governance are 
 |[EM - Microsoft Entra ID Protection integration](~/id-governance/tbd.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Microsoft Purview Insider Risk Management integration](~/id-governance/tbd.md)|||| :white_check_mark: | :white_check_mark: |
 |[EM - Conditional Access Scoping](~/id-governance/entitlement-management-external-users.md#review-your-conditional-access-policies)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|My Access|
+|**My Access**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |**In preview, is part of Microsoft Agent 365, early access via the Frontier program**|
 |[My Access portal](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - My Access Search](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[EM - Suggested access packages in My Access](~/id-governance/tbd.md)||| | :white_check_mark: | :white_check_mark: |
