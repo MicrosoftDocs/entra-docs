@@ -152,7 +152,7 @@ For the OIDC document that has the values for provider metadata, see [Provider m
 
 | Metadata value        | Value  | Comments |
 |-----------------------|--------|----------|
-| Issuer                |        | Must be an HTTPS URL.<br><br>The issuer value *must* match character-for-character for the configured issuer, the issuer value in the discovery document, and the `iss` claim in the tokens issued by the provider's service.<br><br>The issuer *might* include a port or path segment, but *must not* contain query parameters or fragment identifiers. |
+| `Issuer`                |        | Must be an HTTPS URL.<br><br>The issuer value *must* match character-for-character for the configured issuer, the issuer value in the discovery document, and the `iss` claim in the tokens issued by the provider's service.<br><br>The issuer *might* include a port or path segment, but *must not* contain query parameters or fragment identifiers. |
 | `authorization_endpoint` |        | The endpoint that Microsoft Entra ID communicates with for authorization. This endpoint must be present as one of the reply URLs for the allowed applications. |
 | `jwks_uri`               |        | The location where Microsoft Entra ID can find the public keys it needs to verify the signatures issued by the provider. The `jwks_uri` *must* be an HTTPS endpoint and *must not* include query parameters or fragment identifiers.<br><br>The JSON Web Key (JWK) `x5c` parameter must be present to provide X.509 representations of provided keys. |
 | `scopes_supported`       | `openid` | Other values might also be included but aren't required. |
@@ -230,11 +230,11 @@ The following examples illustrate valid and invalid discovery URL and issuer com
 
 #### Provider metadata caching
 
-To improve performance, Microsoft Entra ID caches metadata that the provider returns, including the keys. Provider metadata caching prevents a discovery call each time Microsoft Entra ID talks to an external identity provider.
+To improve performance, Microsoft Entra ID caches metadata that the provider returns, including the keys. Provider metadata caching prevents a discovery call each time Microsoft Entra ID communicates with an external identity provider.
 
 This cache is refreshed every 24 hours. We recommend that providers follow these steps to roll over their keys:
 
-1. Publish the **Existing Cert** and **New Cert** in the `jwks_uri`.
+1. Publish the **Existing Cert** and **New Cert** in `jwks_uri`.
 1. Keep signing in with **Existing Cert** until the Microsoft Entra ID cache is refreshed, expired, or updated (every 2 days).
 1. Switch to signing in with **New Cert**.
 
@@ -261,13 +261,13 @@ You can find all the details on token validation in Microsoft's [token validatio
 After validation succeeds, you can work with the claims payload to get details about the user and their tenant.
 
 > [!NOTE]
-> It's important to validate the `id_token_hint` value to ensure it's from a Microsoft tenant and represents your integration. The `id_token_hint` value should be fully validated, particularly the signature, issuer, audience, and other claim values.
+> It's important to validate the `id_token_hint` value to ensure that it's from a Microsoft tenant and represents your integration. The `id_token_hint` value should be fully validated, particularly the signature, issuer, audience, and other claim values.
 
 ### Microsoft Entra ID call to the external identity provider
 
 Microsoft Entra ID uses the [OIDC implicit flow](http://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth) to communicate with the external identity provider. When you use this flow, communication with the provider occurs by using only the provider's authorization endpoint.
 
-To tell the provider the user for whom Microsoft Entra ID is making the request, Microsoft Entra ID passes a token in through the [`id_token_hint`](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) parameter.
+To inform the provider about the user for whom Microsoft Entra ID is making the request, Microsoft Entra ID passes a token in through the [`id_token_hint`](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) parameter.
 
 This call is made through a `POST` request because a large list of parameters gets passed to the provider. A large list prevents the use of browsers that limit the length of a `GET` request.
 
@@ -330,7 +330,7 @@ This section describes the required content of the token that's passed as `id_to
 
 | Claim |Value | Description |
 |-------|------|-------------|
-| `iss`   |      | Identifies the security token service (STS) that constructs and returns the token, and the Microsoft Entra ID tenant in which the user authenticated.<br><br>Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable.<br><br>The issuer should match the issuer URL from the OIDC discovery JSON metadata for the tenant where the user signed in. |
+| `iss`   |      | Identifies the security token service (STS) that constructs and returns the token, and the Microsoft Entra ID tenant in which the user authenticated.<br><br>Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable.<br><br>The issuer should match the issuer URL from the OIDC Discovery JSON metadata for the tenant where the user signed in. |
 | `aud`   |        | The audience should be set to the external identity provider's client ID for Microsoft Entra ID. |
 | `exp`   |        | The expiration time is set to expire a short time after the issuing time, sufficient to avoid time skew issues. Because this token isn't meant for authentication, there's no reason for its validity to outlast the request by much. |
 | `iat`   |        | Set issuing time as usual. |
@@ -347,7 +347,7 @@ If a provider needs optional claims from Microsoft Entra ID, you can configure t
 
 #### Recommended use of claims
 
-Microsoft recommends that you associate accounts on the provider side with the account in Azure by using the `oid` and `tid` claims. These two claims are guaranteed to be unique for the account in the tenant.
+We recommend that you associate accounts on the provider side with the account in Azure by using the `oid` and `tid` claims. These two claims are guaranteed to be unique for the account in the tenant.
 
 #### Example of id_token_hint
 
