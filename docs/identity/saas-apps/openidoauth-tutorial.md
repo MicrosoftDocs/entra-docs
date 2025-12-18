@@ -14,6 +14,8 @@ ms.custom: sfi-image-nochange
 ---
 # Configure an OpenID Connect OAuth application from Microsoft Entra app gallery
 
+This article focuses on applications in the application gallery which support OpenID Connect. For more information on enabling OpenID Connect for other applications, including in-house developed applications, see [OpenID Connect on the Microsoft identity platform](identity-platform/v2-protocols-oidc.md).
+
 ## Process of adding an OpenID application from the gallery
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
