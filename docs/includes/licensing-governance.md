@@ -34,8 +34,8 @@ The following table shows what features associated with identity governance are 
 |[AR - Inactive Users reviews](~/id-governance/create-access-review.md)|||| :white_check_mark: | :white_check_mark: |
 |[AR - Inactive Users recommendations](~/id-governance/review-recommendations-access-reviews.md#inactive-user-recommendations)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[AR - Machine learning assisted access certifications and reviews](~/id-governance/review-recommendations-access-reviews.md#user-to-group-affiliation)|||| :white_check_mark: | :white_check_mark: |
-|[AR - Catalog Access Reviews (Preview)](~/id-governance/catalog-access-reviews)|||| :white_check_mark: | :white_check_mark: |
-|[AR - Custom data provided resource (Preview)](~/id-governance/custom-data-resource-access-reviews)|||| :white_check_mark: | :white_check_mark: |
+|[AR - Catalog Access Reviews (Preview)](~/id-governance/catalog-access-reviews.md)|||| :white_check_mark: | :white_check_mark: |
+|[AR - Custom data provided resource (Preview)](~/id-governance/custom-data-resource-access-reviews.md)|||| :white_check_mark: | :white_check_mark: |
 |[AR Agent (Preview)](~/id-governance/access-review-agent.md)|| | | :white_check_mark: | :white_check_mark: |
 |**Entitlement management (EM)**|**Free**|**Microsoft Entra ID P1**|**Microsoft Entra ID P2**|**Microsoft Entra ID Governance**| **Microsoft Entra Suite** |
 |[EM - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/entitlement-management-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
