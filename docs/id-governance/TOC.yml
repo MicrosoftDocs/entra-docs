@@ -18,6 +18,8 @@
     href: scenarios/least-privileged.md
   - name: Microsoft Entra ID Governance Deployment Introduction
     href: ~/architecture/governance-deployment-intro.md
+  - name: Microsoft Entra SAP IAG integration (Preview)
+    href: entitlement-management-sap-integration.md
   - name: Govern the employee and guest lifecycle
     items:
     - name: Govern the employee lifecycle
