@@ -60,7 +60,7 @@ Enable WAF for a domain.
 
 1. In the DNS console, for CNAME, enable the proxy setting.
 
-  :::image type="content" source="media/how-to-configure-cloudflare-integration/proxy-settings.png" alt-text="Screenshot of CNAME options." lightbox="media/how-to-configure-cloudflare-integration/proxy-settings-expanded.png":::
+   :::image type="content" source="media/how-to-configure-cloudflare-integration/proxy-settings.png" alt-text="Screenshot of CNAME options." lightbox="media/how-to-configure-cloudflare-integration/proxy-settings-expanded.png":::
 
 1. Under DNS, for **Proxy status**, select **Proxied**.
 1. The status turns orange.
@@ -166,14 +166,14 @@ After you set up your Cloudflare account, connect it to Microsoft Entra External
 1. Select the **Protect apps from DDoS with WAF** tile by selecting **Get started**.
 1. Under **Choose a WAF Provider** select **Cloudflare** and then select **Next**.
 
-  :::image type="content" source="media/how-to-configure-cloudflare-integration/choose-waf.png" alt-text="Screenshot of the choose WAF provider page.":::
+   :::image type="content" source="media/how-to-configure-cloudflare-integration/choose-waf.png" alt-text="Screenshot of the choose WAF provider page.":::
 
 1. Under **Configure Cloudflare WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration, add the following information:
     - **Configuration name**: A name for the WAF configuration.
     - **API token**: The API token from your Cloudflare dashboard.
     - **Zone ID**: The Zone ID for your domain, from your Cloudflare dashboard.
 
-  :::image type="content" source=" media/how-to-configure-cloudflare-integration/configure-waf-provider.png" alt-text="Screenshot of the configure WAF provider page.":::
+   :::image type="content" source=" media/how-to-configure-cloudflare-integration/configure-waf-provider.png" alt-text="Screenshot of the configure WAF provider page.":::
 
 1. Select **Next** to save your changes.
 
@@ -184,7 +184,7 @@ Select the custom URL domains that Azure Front Door (AFD) enables to verify and 
 1. Select **Verify domain** to start the verification process.
 1. Select the custom URL domains you want to protect with Cloudflare WAF and then select **Verify**.
 
-  :::image type="content" source=" media/how-to-configure-cloudflare-integration/verify-domain.png" alt-text="Screenshot of the verify domain page.":::
+   :::image type="content" source=" media/how-to-configure-cloudflare-integration/verify-domain.png" alt-text="Screenshot of the verify domain page.":::
 
 1. After verification, select **Done**.
 
@@ -226,13 +226,7 @@ Content-Type: application/json
 ### Response
 
 The following example shows the response with Cloudflare WAF object.
->**Note:** The response object shown here might be shortened for readability.
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.cloudFlareWebApplicationFirewallProvider"
-}
--->
+
 ``` http
 HTTP/1.1 201 Created
 Content-Type: application/json
@@ -268,13 +262,7 @@ Content-Type: application/json
 #### Response
 
 The following example shows the response.
->**Note:** The response object shown here might be shortened for readability.
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.webApplicationFirewallVerificationModel"
-}
--->
+
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
