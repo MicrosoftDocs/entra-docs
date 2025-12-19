@@ -39,7 +39,6 @@ SAP Cloud Identity Services instance that is already integrated with Microsoft E
 - In your attribute mapping, set Microsoft Entra ObjectId as mapped to the username by selecting *EDIT* in the username line and set the Source and Target attribute as:
     - Source Attribute: objectId
     - Target Attribute: userName
-    :::image type="content" source="media/entitlement-management-sap-integration/attribute-mapping.png" alt-text="Screenshot of attribute mapping for SAP integration." lightbox="media/entitlement-management-sap-integration/attribute-mapping.png":::
     - For a better user experience, also add a mapping for the manager attribute. This allows manager information to be synchronized from Microsoft Entra to SAP Cloud Identity Services.
     :::image type="content" source="media/entitlement-management-sap-integration/manager-attribute.png" alt-text="Screenshot of setting manager attribute for SAP integration." lightbox="media/entitlement-management-sap-integration/manager-attribute.png":::
 - User single sign-on (Optional): See, [Configure SAP Cloud Identity Services for Single sign-on with Microsoft Entra ID](../identity/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md)
@@ -161,7 +160,7 @@ The SAP IAG instance secret created in [Register IAG Sync system administrator](
 1. Browse to **ID Governance** > **Entitlement management** > **Control configurations**. 
 
 1.  On the Control Configurations page, there is a Manage External Connectors card. Select **View Connectors**.
-    :::image type="content" source="media/entitlement-management-sap-integration/external-connectors.png" alt-text="Screenshot of control configurations connectors screen.":::
+    :::image type="content" source="media/entitlement-management-sap-integration/external-connectors.png" alt-text="Screenshot of control configurations connectors screen." lightbox="media/entitlement-management-sap-integration/external-connectors.png":::
 1. On the Connectors page, select **New connector**.
 
 1. In the New Connector context, select **SAP IAG** from the drop-down list.
@@ -209,7 +208,7 @@ Catalog Administrators within Microsoft Entra are now able to add SAP business r
 1. In the Resource roles tab, select SAP IAG. Here, you're able to select the SAP IAG Access Rights.
 
 1. In the resources table, you can select the specific business roles you want to include in the access package and select **Next**. 
-    :::image type="content" source="media/entitlement-management-sap-integration/sap-resource-roles.png" alt-text="Screenshot of setting role for an SAP IAG resource.":::
+    :::image type="content" source="media/entitlement-management-sap-integration/sap-resource-roles.png" alt-text="Screenshot of setting role for an SAP IAG resource." lightbox="media/entitlement-management-sap-integration/sap-resource-roles.png":::
 1. On the Requests tab, you create the first policy to specify who can request the access package. You also configure approval settings for that policy.
     1. Select “**For Users, service principals, and agent identities in your Directory**”
     1. Select “**Specific Users and Groups**” to limit the usage of this access package only to certain users. We recommend you create a new Microsoft Entra Group for it.
