@@ -30,7 +30,7 @@ The Microsoft Entra ID SCIM implementation is based on the following IETF drafts
 
 The following sections contain examples of API requests and responses currently supported in the Microsoft Entra ID SCIM implementation, along with important notes and constraints to consider in your design.
 
-# Invoking the SCIM APIs
+## Invoking the SCIM APIs
 
 To invoke the SCIM APIs listed in this document, the SCIM client app must obtain an access token from the Microsoft identity platform. This access token includes information about whether the app is authorized to access the SCIM APIs with its own identity using a flow called the [OAuth 2.0 client credentials grant flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow). 
 
