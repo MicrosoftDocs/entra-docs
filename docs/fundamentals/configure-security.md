@@ -42,6 +42,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [High Global Administrator to privileged user ratio](zero-trust-protect-identities.md#high-global-administrator-to-privileged-user-ratio) | None (included with Microsoft Entra ID) |
 | [Privileged accounts are cloud native identities](zero-trust-protect-identities.md#privileged-accounts-are-cloud-native-identities) | None (included with Microsoft Entra ID) |
 | [All privileged role assignments are activated just in time and not permanently active](zero-trust-protect-identities.md#all-privileged-role-assignments-are-activated-just-in-time-and-not-permanently-active) | Microsoft Entra ID P2 |
+| [All Microsoft Entra privileged role assignments are managed with PIM](zero-trust-protect-identities.md#all-microsoft-entra-privileged-role-assignments-are-managed-with-pim) | Microsoft Entra ID P2 |
 | [Passkey authentication method enabled](zero-trust-protect-identities.md#passkey-authentication-method-enabled) | None (included with Microsoft Entra ID) |
 | [Security key attestation is enforced](zero-trust-protect-identities.md#security-key-attestation-is-enforced) | None (included with Microsoft Entra ID) |
 | [Privileged accounts have phishing-resistant methods registered](zero-trust-protect-identities.md#privileged-accounts-have-phishing-resistant-methods-registered) | Microsoft Entra ID P1 |
@@ -77,6 +78,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | Check | Minimum required license |
 |---|---|
 | [Permissions to create new tenants are limited to the Tenant Creator role](zero-trust-protect-tenants.md#permissions-to-create-new-tenants-are-limited-to-the-tenant-creator-role) | None (included with Microsoft Entra ID) |
+| [Enable protected actions to secure Conditional Access policy creation and changes](zero-trust-protect-tenants.md#enable-protected-actions-to-secure-conditional-access-policy-creation-and-changes) | Microsoft Entra ID P1 |
 | [Guest access is limited to approved tenants](zero-trust-protect-tenants.md#guest-access-is-limited-to-approved-tenants) | Microsoft Entra ID Free |
 | [Guests are not assigned high privileged directory roles](zero-trust-protect-tenants.md#guests-are-not-assigned-high-privileged-directory-roles) | Microsoft Entra ID Free<br>Microsoft Entra ID P2 or Microsoft ID Governance for PIM |
 | [Guests can't invite other guests](zero-trust-protect-tenants.md#guests-cant-invite-other-guests) | Microsoft Entra ID Free |
@@ -93,6 +95,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [All entitlement management assignment policies that apply to external users require connected organizations](zero-trust-protect-tenants.md#all-entitlement-management-assignment-policies-that-apply-to-external-users-require-connected-organizations) | Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
 | [All entitlement management packages that apply to guests have expirations or access reviews configured in their assignment policies](zero-trust-protect-tenants.md#all-entitlement-management-packages-that-apply-to-guests-have-expirations-or-access-reviews-configured-in-their-assignment-policies) | Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
 | [Manage the local administrators on Microsoft Entra joined devices](zero-trust-protect-tenants.md#manage-the-local-administrators-on-microsoft-entra-joined-devices) | None (included with Microsoft Entra ID) |
+| [Restrict nonadministrator users from recovering the BitLocker keys for their owned devices](zero-trust-protect-tenants.md#restrict-nonadministrator-users-from-recovering-the-bitlocker-keys-for-their-owned-devices) | None (included with Microsoft Entra ID) |
 
 ## Protect networks
 
@@ -121,6 +124,7 @@ Protect software assets and improve code security.
 | [Resource-specific consent to application is restricted](zero-trust-protect-engineering-systems.md#resource-specific-consent-to-application-is-restricted) | Microsoft Entra ID P1 |
 | [Workload Identities are not assigned privileged roles](zero-trust-protect-engineering-systems.md#workload-identities-are-not-assigned-privileged-roles) | Microsoft Entra ID P1 |
 | [Enterprise applications must require explicit assignment or scoped provisioning](zero-trust-protect-engineering-systems.md#enterprise-applications-must-require-explicit-assignment-or-scoped-provisioning) | Microsoft Entra ID P1 |
+| [Enterprise applications have owners](zero-trust-protect-engineering-systems.md#enterprise-applications-have-owners) | None (included with Microsoft Entra ID) |
 | [Limit the maximum number of devices per user to 10](zero-trust-protect-engineering-systems.md#limit-the-maximum-number-of-devices-per-user-to-10) | None (included with Microsoft Entra ID) |
 | [Conditional Access policies for Privileged Access Workstations are configured](zero-trust-protect-engineering-systems.md#conditional-access-policies-for-privileged-access-workstations-are-configured) | Microsoft Entra ID P1 |
 
@@ -132,6 +136,8 @@ Collect and analyze security logs and triage alerts.
 |--- | --- |
 | [Diagnostic settings are configured for all Microsoft Entra logs](zero-trust-monitor-detect.md#diagnostic-settings-are-configured-for-all-microsoft-entra-logs) | Microsoft Entra ID P1 |
 | [Privileged role activations have monitoring and alerting configured](zero-trust-monitor-detect.md#privileged-role-activations-have-monitoring-and-alerting-configured) | Microsoft Entra ID P2 |
+| [Activation alert for Global Administrator role assignments](zero-trust-monitor-detect.md#activation-alert-for-global-administrator-role-assignments) | Microsoft Entra ID P2 |
+| [Activation alert for all privileged role assignments](zero-trust-monitor-detect.md#activation-alert-for-all-privileged-role-assignments) | Microsoft Entra ID P2 |
 | [Privileged users sign in with phishing-resistant methods](zero-trust-monitor-detect.md#privileged-users-sign-in-with-phishing-resistant-methods) | Microsoft Entra ID P1 |
 | [All high-risk users are triaged](zero-trust-monitor-detect.md#all-high-risk-users-are-triaged) | Microsoft Entra ID P2 |
 | [All high-risk sign-ins are triaged](zero-trust-monitor-detect.md#all-high-risk-sign-ins-are-triaged) | Microsoft Entra ID P2  |
