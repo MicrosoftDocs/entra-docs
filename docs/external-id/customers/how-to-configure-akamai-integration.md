@@ -134,7 +134,7 @@ After completing the configuration steps, verify that Akamai WAF is protecting y
 1. Select the **Protect apps from DDoS with WAF** tile by selecting **Get started**.
 1. Under **Choose a WAF Provider** select **Akamai** and then select **Next**.
 
-  :::image type="content" source="media\how-to-configure-akamai-integration\choose-waf-provider.png" alt-text="Screenshot of the choose WAF provider page.":::
+   :::image type="content" source="media\how-to-configure-akamai-integration\choose-waf-provider.png" alt-text="Screenshot of the choose WAF provider page.":::
 
 1. Create an Akamai account. If you don't have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public). Then return here to complete the setup.
 1. Under **Configure Akamai WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration, add the following information:
@@ -155,7 +155,7 @@ Select the custom URL domains that Azure Front Door (AFD) enables to verify and 
 1. Select **Verify domain** to start the verification process.
 1. Select the custom URL domains you want to protect with Akamai WAF and then select **Verify**.
 
-  :::image type="content" source="media\how-to-configure-akamai-integration\verify-domain.png" alt-text="Screenshot of the verify domain page.":::
+ :::image type="content" source="media\how-to-configure-akamai-integration\verify-domain.png" alt-text="Screenshot of the verify domain page.":::
 
 3. After verification, select **Done** to complete the process.
 
