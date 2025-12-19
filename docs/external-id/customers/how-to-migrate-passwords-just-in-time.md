@@ -931,7 +931,8 @@ Configure the certificate's public key so that External ID can encrypt the passw
 
 #### 3.2.2 Add the key to the application
 
-Use Microsoft Graph API to configure the certificate on your custom authentication extension app registration. Make a PATCH request with the following information:
+Use Microsoft Graph API to configure the certificate on your custom authentication extension app registration. Make sure that you use the same GUID for both `keyId` and `tokenEncryptionKeyId`.
+Make a PATCH request with the following information:
 
 Replace the placeholders with your values:
 - `{object-id}`: Your custom authentication extension app's object ID (not the application ID).
