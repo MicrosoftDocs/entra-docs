@@ -22,8 +22,120 @@ This article provides information about the latest releases and change announcem
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
-## November 2025
 
+## December 2025
+
+
+### General Availability - Modernizing Microsoft Entra ID auth flows with WebView2 in Windows 11
+
+**Type:** New feature  
+**Service category:** Authentications (Logins)  
+**Product capability:** SSO  
+
+Windows has many user experiences that uses webview’s to gather web information to present web information to users that looks like native content. One of the common scenarios for this is for authentication flows, where a user is prompted for their username and provides credentials. 
+
+Microsoft Entra ID app sign-in through Web Account Manager (WAM) now has the option to be powered by WebView2, the Chromium-based web control, starting with [KB5072033 (OS Builds 26200.7462 and 26100.7462) or later](https://support.microsoft.com/topic/december-9-2025-kb5072033-os-builds-26200-7462-and-26100-7462-0c1a4334-19ba-406d-bb1e-88fcffc87b79). This release marks a significant step forward in delivering a secure, modern, and consistent sign-in experience across apps and services.  
+
+WebView2 will become the default framework for WAM authentication in an expected future Windows release, with the EdgeHTML WebView being deprecated. Therefore, we encourage users to deploy now and participate in the opt-in process, enable this experience in their environments, and make any necessary adjustments — such as updating proxy rules or modifying code in services involved in the logon process. Contact Customer Support Services if you'd like to provide feedback.
+
+Moving to WebView2 is more than a technical upgrade — it’s a strategic investment in secure, user-friendly identity experiences. We’re committed to evolving Entra ID to meet the needs of modern organizations and developers.  
+  
+For more information, see:  
+
+[Now generally available: Modernizing Microsoft Entra ID auth flows with WebView2 in Windows 11 - Windows IT Pro Blog](https://techcommunity.microsoft.com/blog/windows-itpro-blog/now-generally-available-modernizing-microsoft-entra-id-auth-flows-with-webview2-/4476166)
+
+---
+
+### General Availability - Microsoft Entra Connect security hardening to prevent user account takeover
+
+**Type:** Fixed  
+**Service category:** Entra Connect  
+**Product capability:** Access Control  
+
+As part of ongoing security hardening, Microsoft has implemented new safeguards to block account takeover attempts via hard match abuse in Microsoft Entra Connect (known as SyncJacking). Enforcement of this change will begin in March 2026. 
+
+What’s Changing: 
+
+- Enforcement logic now checks OnPremisesObjectIdentifier to detect and block remapping attempts. 
+    
+- Audit logs have been enhanced to capture changes to OnPremisesObjectIdentifier and DirSyncEnabled. 
+    
+- Admin capability added to clear OnPremisesObjectIdentifier for legitimate recovery scenarios. 
+
+Customer Action Required: 
+
+- Upgrade to the latest Microsoft Entra Connect version. 
+    
+- Review updated hardening guidance and enable recommended flags:  
+    
+- Disable [hard match takeover](https://learn.microsoft.com/powershell/module/microsoft.entra.directorymanagement/set-entradirsyncfeature?view=entra-powershell) 
+    
+
+Additional Guidance: 
+
+- If enforcement blocks an operation, you will see the following error message: “Hard match operation blocked due to security hardening. Review OnPremisesObjectIdentifier mapping.” 
+    
+- Use audit logs to identify which objects are currently impacted. Specifically, look for audit events where OnPremisesObjectIdentifier or DirSyncEnabledwas modified. 
+    
+- For legitimate recovery, you can clear and reset OnPremisesObjectIdentifier using the following Microsoft Graph API: 
+    
+
+https://graph.microsoft.com/beta/users/<UserId>?$select=onPremisesObjectIdentifier 
+
+{ 
+onPremisesObjectIdentifier: null 
+} 
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). 
+
+Check our [version history page](https://learn.microsoft.com/entra/identity/hybrid/connect/reference-connect-version-history) for more details on available versions.
+
+---
+
+### Public Preview of Just-in-time password migration to Microsoft Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+The Just-in-Time (JIT) Password Migration feature is designed to provide a seamless and secure experience for customers transitioning to Microsoft Entra External ID. This capability enables external identity providers to migrate user credentials during sign-in, eliminating the need for bulk password resets and minimizing disruption for end users. When a user meets the migration conditions at sign-in, their credentials are securely transferred as part of the process, ensuring continuity and reducing friction.
+
+By integrating migration into the authentication flow, organizations can simplify administrative tasks while maintaining security standards. This approach not only enhances user experience but also accelerates adoption of Entra External ID without compromising operational efficiency.
+
+---
+
+### Public preview - Protect enterprise generative AI applications with Prompt Shield
+
+**Type:** New feature  
+**Service category:** Internet Access  
+**Product capability:** Network Access  
+
+Block prompt injection attacks to enterprise GenAI apps in real-time with universal policy controls, extending Azure AI Prompt Shield to all network traffic. For more information, see: [Protect Enterprise Generative AI apps with Prompt Shield (preview)](../global-secure-access/how-to-ai-prompt-shield.md).
+
+---
+
+### Public Preview - B2B guest access support in Global Secure Access
+
+**Type:** New feature  
+**Service category:** B2B  
+**Product capability:** Network Access  
+
+You can now enable the B2B guest access feature for your guest users with the Global Secure Access client, signed in to their home organization's Microsoft Entra ID account. The Global Secure Access client automatically discovers partner tenants where the user is a guest and offers the option to switch into the customer's tenant context. The client routes only private traffic through the customer's Global Secure Access service. For more information, see: [Learn about Global Secure Access B2B Guest Access (Preview)](../global-secure-access/concept-b2b-guest-access.md).
+
+---
+
+### Public Preview - Data exploration using Microsoft Security Copilot in Entra
+
+**Type:** New feature  
+**Service category:** N/A  
+**Product capability:** Identity Security & Protection  
+
+Microsoft Security Copilot in Entra now supports data exploration when prompts return datasets with more than 10 items. This feature is in preview and available for select Microsoft Entra scenarios. From the Copilot chat response, select **Open list** to access a comprehensive data grid. This allows you to explore large datasets with complete and accurate results, enabling more efficient decision-making. Each data grid displays the underlying Microsoft Graph URL, helping you verify query accuracy and build confidence in the results. For more information, see: [Microsoft Security Copilot scenarios in Microsoft Entra overview](../security-copilot/entra-security-scenarios.md).
+
+---
+
+
+## November 2025
 
 ### Public Preview - Entra ID Account Recovery
 
