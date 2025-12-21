@@ -146,7 +146,7 @@ By concluding the analysis phase, you should have a clear mapping of which appli
 
 ### Step 6. Migrate groups to the cloud
 
-In an app-centric approach, it's best to migrate security groups and app access controls to the cloud first. This enables centralized access management, and ensures group memberships remain intact before moving users. Microsoft recommends transferring group's SOA ahead of users to maintain membership integrity and allow testing. You can also adjust the sequence for each app, such as piloting an application with its groups, and test users end-to-end. When shifting to the cloud, we have outlined specific guidance on how you can map them to cloud groups as outlined in [Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID (Preview)](../../identity/hybrid/concept-group-source-of-authority-guidance.md) or watch the following video:
+In an app-centric approach, it's best to migrate security groups and app access controls to the cloud first. This enables centralized access management, and ensures group memberships remain intact before moving users. Microsoft recommends transferring group's SOA ahead of users to maintain membership integrity and allow testing. You can also adjust the sequence for each app, such as piloting an application with its groups, and test users end-to-end. When shifting to the cloud, we have outlined specific guidance on how you can map them to cloud groups as outlined in [Guidance for using Group Source of Authority (SOA) in Microsoft Entra ID](../../identity/hybrid/concept-group-source-of-authority-guidance.md) or watch the following video:
 
 > [!VIDEO https://www.youtube.com/embed/VpRDtulXcUw]
 
@@ -282,5 +282,5 @@ The following table is a summary of the options for handling on-premises apps in
 ## Next step
 
 
-- [Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)](concept-source-of-authority-overview.md)
-- [Embrace cloud-first posture: Transfer User Source of Authority (SOA) to the cloud (Preview)](user-source-of-authority-overview.md)
+- [Embrace cloud-first posture: Convert Group Source of Authority to the cloud](concept-source-of-authority-overview.md)
+- [Embrace cloud-first posture: Transfer User Source of Authority (SOA) to the cloud](user-source-of-authority-overview.md)
