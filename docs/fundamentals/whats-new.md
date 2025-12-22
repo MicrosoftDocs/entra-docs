@@ -80,10 +80,10 @@ Additional Guidance: 
 - For legitimate recovery, you can clear and reset OnPremisesObjectIdentifier using the following Microsoft Graph API: 
     
 
-https://graph.microsoft.com/beta/users/<UserId>?$select=onPremisesObjectIdentifier 
+POST https://graph.microsoft.com/beta/users/<UserId>?$select=onPremisesObjectIdentifier 
 
-{ 
-onPremisesObjectIdentifier: null 
+{<br>
+onPremisesObjectIdentifier: null <br>
 } 
 
 The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). 
