@@ -137,6 +137,9 @@ The current blocking experience for all browsers includes a plaintext browser er
 > [!NOTE]
 > Configuration changes in the Global Secure Access experience related to web content filtering typically take effect in less than 5 minutes. Configuration changes in Conditional Access related to web content filtering take effect in approximately one hour.
 
+> [!NOTE]
+> To expedite Conditional Access configuration changes, revoke user sessions in the Entra Admin Center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
+
 ## Next steps
 
 - [Learn about the traffic dashboard](concept-traffic-dashboard.md)
