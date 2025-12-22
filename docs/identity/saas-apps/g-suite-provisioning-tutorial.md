@@ -1,6 +1,6 @@
 ---
-title: Configure G Suite for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to G Suite.
+title: Configure Google Cloud / Google Workspace for automatic user provisioning with Microsoft Entra ID
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Google Cloud or Google Workspace.
 author: jeevansd
 manager: mwongerapk
 ms.service: entra-id
@@ -12,17 +12,17 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Google Cloud / G Suite Connector by Microsoft so that I can streamline the user management process and ensure that users have the appropriate access to Google Cloud / G Suite Connector by Microsoft.
 ---
 
-# Configure G Suite for automatic user provisioning with Microsoft Entra ID
+# Configure Google Cloud / Google Workspace for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both G Suite and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [G Suite](https://gsuite.google.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Google (Google Cloud or Google Workspace) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Google Workspace](https://workspace.google.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 > [!NOTE]
-> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service for Google G Suite, the former name of Google Workspace. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in G Suite
-> * Remove users in G Suite when they don't require access anymore (note: removing a user from the sync scope doesn't result in deletion of the object in GSuite)
+> * Remove users in G Suite when they don't require access anymore (note: removing a user from the sync scope doesn't result in deletion of the object in G Suite)
 > * Keep user attributes synchronized between Microsoft Entra ID and G Suite
 > * Provision groups and group memberships in G Suite
 > * [Single sign-on](./google-apps-tutorial.md) to G Suite (recommended)
@@ -146,7 +146,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Review the user attributes that are synchronized from Microsoft Entra ID to G Suite in the **Attribute-Mapping** section. Select the **Save** button to commit any changes.
 
 > [!NOTE]
-> GSuite Provisioning currently only supports the use of primaryEmail as the matching attribute. 
+> G Suite Provisioning currently only supports the use of primaryEmail as the matching attribute. 
 
 
    |Attribute|Type|
@@ -251,7 +251,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
 > [!NOTE]
-> If the users already have an existing personal/consumer account using the email address of the Microsoft Entra user, then it might cause some issue which could be resolved by using the Google Transfer Tool prior to performing the directory sync.
+> If the users already have an existing personal/consumer account using the email address of the Microsoft Entra user, then it might cause some issue, which could be resolved by using the Google Transfer Tool prior to performing the directory sync.
 
 ## Step 6: Monitor your deployment
 
@@ -268,7 +268,7 @@ With PIM for Groups, you can provide just-in-time access to groups in Google Clo
 1. Configure [single sign-on](google-apps-tutorial.md) for Google Cloud / Google Workspace.
 1. Create a [group](/azure/active-directory/fundamentals/how-to-manage-groups) that provides all users access to the application.
 1. Assign the group to the Google Cloud / Google Workspace application.
-1. Assign your test user as a direct member of the group created in the previous step, or provide them access to the group through an access package. This group can be used for persistent, nonadmin access in Google Cloud / Google Workspace.
+1. Assign your test user as a direct member of the group created in the previous step, or provide them with access to the group through an access package. This group can be used for persistent, nonadmin access in Google Cloud / Google Workspace.
 
 **Enable PIM for groups**
 1. Create a second group in Microsoft Entra ID. This group provides access to admin permissions in Google Cloud / Google Workspace. 
