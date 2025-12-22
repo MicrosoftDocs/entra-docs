@@ -1,6 +1,6 @@
 ---
-title: Configure G Suite for automatic user provisioning with Microsoft Entra ID
-description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to G Suite.
+title: Configure Google Cloud / Google Workplace for automatic user provisioning with Microsoft Entra ID
+description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Google Cloud or Google Workplace.
 author: jeevansd
 manager: mwongerapk
 ms.service: entra-id
@@ -12,12 +12,12 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Google Cloud / G Suite Connector by Microsoft so that I can streamline the user management process and ensure that users have the appropriate access to Google Cloud / G Suite Connector by Microsoft.
 ---
 
-# Configure G Suite for automatic user provisioning with Microsoft Entra ID
+# Configure Google Cloud / Google Workplace for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both G Suite and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [G Suite](https://gsuite.google.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Google (Google Cloud or Google Workplace) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Google Workplace](https://workplace.google.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 > [!NOTE]
-> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service for Google G Suite, the former name of Google Workplace. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities supported
 > [!div class="checklist"]
