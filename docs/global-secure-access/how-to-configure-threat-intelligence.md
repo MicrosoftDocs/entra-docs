@@ -111,7 +111,7 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 > Applying a new security profile can take up to 60-90 minutes because security profiles are enforced via access tokens.
 
 > [!NOTE]
-> To expedite Conditional Access configuration changes, revoke user sessions in the Entra Admin Center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
+> To expedite Conditional Access configuration changes *for testing*, revoke user sessions in the Entra Admin Center (select **Revoke sessions** on the user's overview page). This forces users to obtain new tokens with updated policies. Learn more about [Continuous Access Evaluation](concept-universal-continuous-access-evaluation.md).
 
 
 ## Verify end user policy enforcement
