@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: whats-new
-ms.date: 10/02/2025
+ms.date: 12/23/2025
 ms.author: rolyon
 
 ---
@@ -20,6 +20,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| December 2025 | Roles | Added [Microsoft 365 Support Engineer](permissions-reference.md#microsoft-365-support-engineer) role. |
 | November 2025 | Roles | Added [SharePoint Advanced Management Administrator](permissions-reference.md#sharepoint-advanced-management-administrator) role. |
 | November 2025 | Roles | Updated [Exchange Backup Administrator](permissions-reference.md#exchange-backup-administrator) role. |
 | November 2025 | Roles | Updated [SharePoint Backup Administrator](permissions-reference.md#sharepoint-backup-administrator) role. |
