@@ -65,7 +65,7 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
 
 1. Next, a system account must be created for Microsoft Entra ID. Use the instructions below to request a System Account for your sandbox and production environments.
 
-   * Instructions:  https://wiki.ucern.com/display/CernerCentral/Requesting+A+System+Account
+   * Instructions: https://wiki.cerner.com/display/public/CernerCentral/Requesting+a+System+Account+in+System+Account+Management
 
    * Sandbox: https://sandboxcernercentral.com/system-accounts/
 

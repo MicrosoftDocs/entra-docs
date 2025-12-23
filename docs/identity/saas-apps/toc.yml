@@ -3480,7 +3480,7 @@
         href: funnel-leasing-provisioning-tutorial.md
     - name: G - M
       items:        
-      - name: Google Cloud / G Suite Connector by Microsoft
+      - name: Google Cloud / Google Workspace
         href: g-suite-provisioning-tutorial.md
       - name: Genesys Cloud for Azure
         href: purecloud-by-genesys-provisioning-tutorial.md
@@ -3602,6 +3602,8 @@
         href: linkedinelevate-provisioning-tutorial.md
       - name: LinkedIn Sales Navigator
         href: linkedinsalesnavigator-provisioning-tutorial.md
+      - name: Linux
+        href: ~/identity/app-provisioning/on-premises-ldap-connector-linux.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Litmos
         href: litmos-provisioning-tutorial.md
       - name: Lucid (All Products)
@@ -3630,6 +3632,10 @@
         href: merchlogix-provisioning-tutorial.md
       - name: Meta Networks Connector
         href: meta-networks-connector-provisioning-tutorial.md
+      - name: Microsoft Active Directory Lightweight Directory Services
+        href: ~/identity/app-provisioning/on-premises-ldap-connector-prepare-directory.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
+      - name: Microsoft Active Directory Domain Services
+        href: ~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Mixpanel
         href: mixpanel-provisioning-tutorial.md
       - name: Mindtickle
@@ -3762,6 +3768,8 @@
         href: sap-ariba-spend-management-solutions-provisioning-tutorial.md
       - name: SAP BTP
         href: sap-btp-provisioning-tutorial.md
+      - name: SAP Cloud Identity Access Governance
+        href: ~/id-governance/entitlement-management-sap-integration.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SAP Cloud Identity Services
         href: sap-cloud-platform-identity-authentication-provisioning-tutorial.md
       - name: SAP Concur
@@ -3822,7 +3830,7 @@
         href: smallstep-ssh-provisioning-tutorial.md
       - name: Snowflake
         href: snowflake-provisioning-tutorial.md
-      - name: SOAP and REST
+      - name: SOAP and REST web services
         href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Soloinsight-CloudGate SSO
         href: soloinsight-cloudgate-sso-provisioning-tutorial.md
