@@ -85,6 +85,14 @@ Both of these messages are displayed when Microsoft determines that the consent 
 
 End-users aren't able to grant consent to apps that are detected as risky. Admins are able to, but should evaluate the app carefully and proceed with caution. If the app seems suspicious upon further review, it can be reported to Microsoft from the consent screen.
 
+## User declined to consent to access the app
+
+- **AADSTS65004:** User declined to consent to access the app
+
+This error occurs during the Admin consent workflow. After a user submits an admin consent approval for an application, they are displayed another dialog box with a button "Back to app". When the user clicks the "Back to app" button, Entra ID sends an AADSTS65004 error to the redirect URI specified in the original authentication request. This is expected part of the flow for the admin consent workflow. 
+
+After the administrator review and if they approve the admin consent that was submitted, the user will need to begin a new authentication process with the application. 
+
 ## Next steps
 
 
