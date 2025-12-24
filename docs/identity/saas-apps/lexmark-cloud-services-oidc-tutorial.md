@@ -111,8 +111,6 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
  
 ## Configure Lexmark Cloud Services (OIDC) SSO
 
-## Prerequisites
-
 To complete the steps in this section, ensure you have the Organization Administrator role for your organization in Lexmark Cloud Services. Also review the [Lexmark documentation](https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/configuring-azure-ad-federation-for-oidc-overview-.html) on Configuring Microsoft Entra ID with OIDC Federation
 
 ## Configure your organization for SSO with OIDC
@@ -129,9 +127,9 @@ To complete the steps in this section, ensure you have the Organization Administ
 6. From the **Authentication Provider Type** menu, select **OIDC**.
 7. Enter the required information copied from Microsoft Entra ID:
 
-    Client ID (Application client ID)
-    Client Secret (Client secret value)
-    Well-known URL (OpenID Connect metadata document URL)
+    * Client ID (Application client ID)
+    * Client Secret (Client secret value)
+    * Well-known URL (OpenID Connect metadata document URL)
 
 > [!NOTE]
 > The Domains field allows Lexmark Cloud Services to automatically establish a new user account after the user logs in. Listing each organization's domain is not required. If no domain is set, then the new users must be manually added to the organization before they log in.
@@ -141,10 +139,7 @@ To complete the steps in this section, ensure you have the Organization Administ
 > [!NOTE]
 > Once authentication configuration is completed, you will receive an email on configuration status. In case of configuration failure, contact your Lexmark representative.
 
-9. The relying party redirect URIs for US and EU regions are as follows: (To be used in the Microsoft Entra Authentication Configuration)
-
-    US — https://lexmarkb2c.b2clogin.com/lexmarkb2c.onmicrosoft.com/oauth2/authresp
-    EU — https://lexmarkb2ceu.b2clogin.com/lexmarkb2ceu.onmicrosoft.com/oauth2/authresp
+9. The relying party redirect URIs for US and EU regions. (To be used in the Microsoft Entra Authentication Configuration)
 
 > [!NOTE] 
 > Select ID Tokens in Implicit grant and hybrid flows under Entra Authentication Configuration
