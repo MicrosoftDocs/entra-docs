@@ -26,6 +26,7 @@ This article describes how to download and install the Global Secure Access clie
 - A Microsoft Entra tenant onboarded to Global Secure Access.
 - A managed device joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
    - Microsoft Entra registered devices aren't supported.
+   - Ealier versions of windows 10 LTSC 2019 is not supported.
 - The Global Secure Access client requires a 64-bit version of Windows 10 or Windows 11, or an Arm64 version of Windows 11.
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
