@@ -113,16 +113,6 @@ sections:
               No, this is currently not supported.
 
       - question: |
-         What happens if I delete CWAP_AuthSecret (the client secret) in the app registration?
-        answer: |
-              The client secret, also called *CWAP_AuthSecret*, is automatically added to the application object (app registration) when the Microsoft Entra application proxy app is created.
-          
-              The client secret is valid for one year. A new one-year client secret is automatically created before the current valid client secret expires. Three CWAP_AuthSecret client secrets are kept in the application object always. 
-          
-              > [!IMPORTANT]
-              > Deleting CWAP_AuthSecret breaks preauthentication for Microsoft Entra application proxy. Don't delete CWAP_AuthSecret.
-
-      - question: |
          I'm using or want to use Microsoft Entra application proxy. Can I replace the "onmicrosoft.com" fallback domain of my tenant in Microsoft 365 as suggested in the article "Add and replace your onmicrosoft.com fallback domain in Microsoft 365"? 
         answer: |
               No, you must use the original fallback domain.
