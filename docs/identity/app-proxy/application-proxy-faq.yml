@@ -33,7 +33,7 @@ sections:
               Application Proxy apps no longer rely on CWAP secrets. For apps using Entra ID pre-authentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, do not expire, and require significantly less maintenance.
               Applications configured with Passthrough pre-authentication or those using Access Tokens do not require Federated Identity Credentials — even if an FIC was previously created.
            
-           You can safely ignore any existing CWAP secrets in the app registration of your Application Proxy app and/or clean-up old or expired secrets.
+              You can safely ignore any existing CWAP secrets in the app registration of your Application Proxy app and/or clean-up old or expired secrets.
            Learn more about Federated Identity Credentials here: https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview?view=graph-rest-1.0
 
       - question: |
