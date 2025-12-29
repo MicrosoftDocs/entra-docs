@@ -171,6 +171,8 @@ items:
           href: app-perms-audit-logs.md
       - name: Manage user assignment
         href: assign-user-or-group-access-portal.md
+      - name: Assign agent identities to applications
+        href: assign-agent-identities-to-applications.md
       - name: Assign custom security attributes
         href: custom-security-attributes-apps.md
       - name: Disable user sign-in
@@ -289,6 +291,8 @@ items:
         href: application-sign-in-problem-first-party-microsoft.md
     - name: Delete and restore apps
       items:
+      - name: Deactivate an enterprise application
+        href: deactivate-application-portal.md
       - name: Delete an enterprise application
         href: delete-application-portal.md
       - name: Restore an enterprise application

@@ -24,7 +24,7 @@ In this tutorial, you learn how to:
 > * Assign licenses to the group for the partner-specific features for guest users to access
 > * Bonus: secure the **All users** group by removing guest users so that, for example, you can give your member users access to internal-only sites
 
-If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 

@@ -1,5 +1,5 @@
 ---
-title: Configure user Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: Configure user Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to transfer user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
 author: owinfreyATL
 ms.author: owinfrey
@@ -12,9 +12,9 @@ ms.reviewer: dhanyak
 #CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.
 ---
 
-# Configure user Source of Authority (SOA) (Preview)
+# Configure user Source of Authority (SOA)
 
-This article explains the prerequisites, and steps, to configure User Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Transfer User Source of Authority to the cloud (Preview)](user-source-of-authority-overview.md).
+This article explains the prerequisites, and steps, to configure User Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Transfer User Source of Authority to the cloud](user-source-of-authority-overview.md).
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This article explains the prerequisites, and steps, to configure User Source of 
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of users.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
 | **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to consent to this permission](how-to-user-source-of-authority-configure.md#consent-permission-to-apps) using the Microsoft Entra Admin Center. |
 | **License needed** | Microsoft Entra Free license. |
-| **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760) |
+| **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). To use Contact SOA, version [2.5.79.0](../../identity/hybrid/connect/reference-connect-version-history.md#25790).  |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
 
 
@@ -56,6 +56,9 @@ You can consent permission in the Microsoft Entra admin center. This highly priv
 
 Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permission to the corresponding app. For more information about how to add new permissions to your app registration and grant consent, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions). 
 
+> [!NOTE]
+> To transfer SOA of a Contact, the required permission is `Contacts-OnPremisesSyncBehavior.ReadWrite.All`.
+
 ### Use Microsoft Entra admin center to consent permission to apps 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
@@ -84,6 +87,9 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 
 ## Transfer SOA for a test user
 
+> [!NOTE]
+> You're also able to transfer contact SOA using the `https://graph.microsoft.com/v1.0/contacts` API endpoint.
+
 Follow these steps to transfer the SOA for a test user:
 
 1. Create a user within AD. You can also use an existing user that is synced to Microsoft Entra ID by using Connect Sync.
@@ -99,7 +105,7 @@ Follow these steps to transfer the SOA for a test user:
 /graph/api/onpremisessyncbehavior-update
 
    ```https
-   GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify user properties.":::
@@ -123,7 +129,7 @@ Follow these steps to transfer the SOA for a test user:
 1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the user object you want to transfer to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
-   PATCH https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": true
       }   
@@ -134,7 +140,7 @@ Follow these steps to transfer the SOA for a test user:
 1. To validate the change, call GET to verify *isCloudManaged* is true.
 
    ```https
-   GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a user.":::
@@ -196,56 +202,6 @@ Follow these steps to transfer the SOA for a test user:
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
 
 
-## Bulk updates for user SOA
-
-You can use the following PowerShell script to automate User SOA updates by using app-based authentication.
-
-```powershell
-# Define your Microsoft Entra ID app details and tenant information
-$tenantId = ""
-$clientId = ""
-$certThumbprint = ""
-
-# Connect to Microsoft Graph as App-Only using a certificate. The app registration must have the User.Read.All User-OnPremisesSyncBehavior.ReadWrite.All permissions granted.
-Connect-MgGraph -ClientId $clientId -TenantId $tenantId -CertificateThumbprint $certThumbprint
-
-#Connect to Microsoft Graph using delegated permissions
-#Connect-MgGraph -Scopes "User.Read.All User-OnPremisesSyncBehavior.ReadWrite.All" -TenantId $tenantId
-
-# Define the user name you want to query
-$userName = "Ken Roy"
-
-# Retrieve the user using user name
-$user = Get-MgBetaUser -Filter "displayName eq '$userName'"
-
-# Ensure user is found
-if ($null -ne $user)
-{
-    $userObjectID = $($user.Id)
-    # Define the Microsoft Graph API endpoint for the user
-    $url = "https://graph.microsoft.com/beta/users/$userObjectID/onPremisesSyncBehavior"
-
-    # Define the JSON payload for the PATCH request
-    $jsonPayload = @{
-        isCloudManaged = "true"
-    } | ConvertTo-Json
-
-    # Make the PATCH request to update the JSON payload
-    Invoke-MgGraphRequest -Uri $url -Method Patch -ContentType "application/json" -Body $jsonPayload
-
-    $result = Invoke-MgGraphRequest -Method Get -Uri "https://graph.microsoft.com/beta/users/$userObjectID/onPremisesSyncBehavior?`$select=id,isCloudManaged"
-
-    Write-Host "User Name: $($user.DisplayName)"
-    Write-Host "User ID: $($result.id)"
-    Write-Host "SOA Converted: $($result.isCloudManaged)"
-}
-else 
-{
-    Write-Warning "User '$userName' not found."
-}
-```
-
-
 ### Status of attributes after you transfer SOA
 
 The following table explains the status for *isCloudManaged* and *onPremisesSyncEnabled* attributes after you transfer the SOA of an object.
@@ -267,7 +223,7 @@ Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | I
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
    ```https
-   PATCH https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": false
       }   
@@ -309,11 +265,24 @@ The following are the list of on-premises [properties](/graph/api/resources/user
 
 If Admins want to access on-premises resources after transfer of SOA, you must [manually maintain these attributes using Microsoft Graph](/graph/api/resources/user), and not delete, these attributes.
 
+## Scope a user for SOA operations within an Administrative Unit
+
+To scope a user for Source of Authority operations within an Administrative Unit, do the following steps:
+
+1. Create a unit to use as the scope for the user. For steps on creating a unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
+
+1. Add the user as a Hybrid Identity Administrator within the scope.
+    :::image type="content" source="media/how-to-user-source-of-authority-configure/assign-scope-role.png" alt-text="Screenshot of assigning a hybrid admin role to an Administrative unit scope." lightbox="media/how-to-user-source-of-authority-configure/assign-scope-role.png":::
+1. Add users to the unit. For information on this, see: [Add users, groups, or devices to an administrative unit](../../identity/role-based-access-control/admin-units-members-add.md).
+
+1. Transfer the SOA of users within the scope of the unit. For a guide on transferring the SOA of users, see: [Transfer SOA for a test user](how-to-user-source-of-authority-configure.md#transfer-soa-for-a-test-user).
+
+
 
 
 ## Related content
 
-- [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)](user-source-of-authority-audit-monitor.md)
-- [Configure Group Source of Authority (SOA) (Preview)](how-to-group-source-of-authority-configure.md)
+- [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID](user-source-of-authority-audit-monitor.md)
+- [Configure Group Source of Authority (SOA)](how-to-group-source-of-authority-configure.md)
 
 

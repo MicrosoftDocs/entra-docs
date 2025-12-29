@@ -100,19 +100,16 @@ Here are some supported combinations:
 - CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey.md) (second factor)
 - CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
 - CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md) (second factor)
-- Password (first factor) and CBA (second factor) (preview)
-
-> [!NOTE]
-> Currently, using CBA as a second factor on iOS has [known issues](./concept-certificate-based-authentication-mobile-ios.md#known-issues) and is blocked on iOS. We're working to resolve the issues.
+- Password (first factor) and CBA (second factor)
 
 Users must have a way to get MFA and register passwordless sign-in or FIDO2 in advance of signing in by using Microsoft Entra CBA.
 
 > [!IMPORTANT]
 > A user is considered MFA capable if their username appears in the CBA method settings. In this scenario, the user can't use their identity as part of their authentication to register other available methods. Make sure that users without a valid certificate aren't included in the CBA method settings. For more information about how authentication works, see [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
 
-## Options to get MFA capability with single-factor certificates
+## Options to get MFA capability with CBA enabled
 
-Microsoft Entra CBA can be either single-factor or multifactor depending on the tenant configuration. Turning on CBA makes a user potentially capable of completing MFA. A user that has a single-factor certificate must use another factor to complete MFA.
+Microsoft Entra CBA can be either single-factor or multifactor depending on the tenant configuration. Turning on CBA makes a user potentially capable of completing MFA. A user that has a single-factor certificate or password must use another factor to complete MFA. 
 
 We don't allow registration of other methods without first satisfying MFA. If the user doesn't have any other MFA method registered and is in scope for CBA, the user can't use identity proof to register other authentication methods and get MFA.
 

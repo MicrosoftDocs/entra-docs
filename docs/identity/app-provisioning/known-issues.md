@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/25/2025
+ms.date: 10/04/2025
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -25,7 +25,6 @@ This article discusses known issues to be aware of when you work with app provis
 ### Unsupported synchronization scenarios
 
 - Synchronizing groups, devices, and contacts into another tenant
-- Synchronizing users across clouds
 - Synchronizing photos across tenants
 - Synchronizing contacts and converting contacts to B2B users
 - Synchronizing meeting rooms across tenants
@@ -171,6 +170,9 @@ Credentials, including the secret token, notification email, and SSO certificate
 ::: zone pivot="app-provisioning"
 ## On-premises application provisioning
 This is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
+
+### SQL Connector connectivity
+The SQL Connector expects the DSN file to be encoded in UTF-8. Other encodings might not be read correctly and result in the error "Data source name not found and no default driver specified."
 
 ### Application and directories
 The following applications and directories aren't yet supported.

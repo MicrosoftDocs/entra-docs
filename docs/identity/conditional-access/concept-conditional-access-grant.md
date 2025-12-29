@@ -5,7 +5,7 @@ description: Learn how to configure grant controls in Microsoft Entra Conditiona
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/22/2025
+ms.date: 10/30/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -205,6 +205,16 @@ The following restrictions apply when you configure a policy by using the passwo
 - The policy must be assigned to **All resources**. This requirement prevents an attacker from using a different app to change the user's password and resetting their account risk by signing in to a different app.
 - **Require password change** can't be used with other controls, such as requiring a compliant device.  
 - The password change control can only be used with the user and group assignment condition, cloud app assignment condition (which must be set to "all"), and user risk conditions.
+
+### Require risk remediation
+
+When user risk is detected, users can self-remediate by completing the appropriate remediation flow, regardless of their authentication method. The Microsoft-managed remediation policy in Conditional Access accommodates all authentication methods, including password-based and passwordless. For more information, see [Require risk remediation with Microsoft-managed remediation (preview)](../../id-protection/concept-identity-protection-policies.md#require-risk-remediation-with-microsoft-managed-remediation-preview).
+
+When you select **Require risk remediation** as a grant control, the following settings are automatically applied to the policy:
+- **Require authentication strength**
+- **Sign-in frequency - Every time**
+
+When a user is required to remediate risk with this control selected, users are prompted to sign in immediately after their sessions are revoked. Selecting this grant control means if the user just signed in but they're at risk, they'll be prompted to sign in again. The risk is remediated after the user successfully signs in the second time.
 
 ### Terms of use
 

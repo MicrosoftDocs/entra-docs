@@ -36,7 +36,7 @@ In this tutorial, you learn how to:
 To complete this tutorial, you need the following resources and privileges:
 
 * A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 or trial license enabled.
-    * If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * If needed, [create one for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
     * For more information, see [Licensing requirements for Microsoft Entra SSPR](concept-sspr-licensing.md).
 * An account with [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).  
 * Microsoft Entra ID configured for self-service password reset.

@@ -1,9 +1,9 @@
 ---
 title: Global Secure Access Client for macOS Release Notes
-description: This article tracks the changes in each released version of the Global Secure Access client for macOS.
+description: Track the latest updates and bug fixes for the Global Secure Access client for macOS. Stay informed about version changes and download instructions.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 08/19/2025
+ms.date: 11/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -15,13 +15,23 @@ ms.reviewer: lirazbarak
 This article lists the released versions of the Global Secure Access client for macOS and describes the changes in each version.   
 
 ## Download the latest version
-The current version of the Global Secure Access client is available to download from the Microsoft Entra admin center.
+You can download the current version of the Global Secure Access client from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select the **macOS** tab.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+
+## Version 1.1.25090800
+Released for download on November 24, 2025.
+### Other changes
+- Bug fix: Better recovery of the connection to the Global Secure Access cloud service when a device switches between networks.
+- Bug fix: Mutual Transport Layer Security (mTLS) connections to the Global Secure Access cloud service use the correct certificate after renewal.
+- Bug fix: Web page translation in Microsoft Edge browser is fully functional.
+- Bug fix: DNS queries for service (SRV) records in public DNS servers are supported.
+- Enhanced telemetry for better supportability and monitoring.
+- Miscellaneous bug fixes and improvements.
 
 ## Version 1.1.25070402
 Released for download on August 19, 2025.
@@ -39,7 +49,7 @@ Released for download on July 29, 2025.
 - Supports log collection with a script.
 - Increases client's log file size to allow for more comprehensive logging.
 ### Other changes
-- Bug fix: Implements a workaround for Dynamic Host Configuration Protocol (DHCP) failures seen in macOS 15.4 and above because of a change in macOS.
+- Bug fix: Implements a workaround for Dynamic Host Configuration Protocol (DHCP) failures seen in macOS 15.4 and later because of a change in macOS.
 - Bug fix: Avoids repeated, unnecessary certificate signing requests.
 - Enhanced telemetry for better supportability and monitoring.
 - Miscellaneous bug fixes and improvements.
@@ -63,7 +73,7 @@ Released for download on June 24, 2025.
 - Future versions keep the new distribution profile identifiers unless otherwise noted.
 - You don't need the special upgrade procedure when upgrading from a version newer than **1.1.584.1** because those versions already use the new identifiers.
 ### Functional changes
-- Support for mutual Transport Layer Security (mTLS) connections to Global Secure Access. 
+- Support for mTLS connections to Global Secure Access. 
 > [!NOTE]
 > The mTLS connection rolls out gradually to customers through the cloud service. Customers continue to use the Transport Layer Security (TLS) connection until they get mTLS.
 - Telemetry collection is enabled.
@@ -76,7 +86,7 @@ Released for download on June 24, 2025.
 - Bug fix: Canonical name (CNAME) records now resolve correctly (previously resolved as A records).
 - Bug fix: Resolved connectivity issues when resuming from sleep.
 ### Other changes
-- The client version format is now based on the build date. Older versions might have higher numerical values than newer ones, but future versions increment numerically.
+- The client version format now uses the build date. Older versions might have higher numerical values than newer ones, but future versions increment numerically.
 - Bug fix: Logging network trace is now disabled by default to optimize performance.
 - Improvements and bug fixes for Advanced diagnostics.
 - Miscellaneous bug fixes and improvements.

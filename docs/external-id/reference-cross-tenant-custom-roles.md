@@ -51,7 +51,7 @@ The following actions are recommended for this role.
 
 | Actions |
 | ------- |
-| microsoft.directory.tenantRelationships/standard/read |
+| microsoft.directory/tenantRelationships/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/default/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read |
@@ -65,7 +65,7 @@ The following actions are recommended for this role.
 
 | Actions |
 | ------- |
-| microsoft.directory.tenantRelationships/standard/read |
+| microsoft.directory/tenantRelationships/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/basic/update |
 | microsoft.directory/crossTenantAccessPolicy/default/standard/read |

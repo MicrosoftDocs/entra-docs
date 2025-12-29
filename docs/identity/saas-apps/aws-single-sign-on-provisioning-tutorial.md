@@ -19,7 +19,7 @@ ms.author: jeedes
 
 # Configure AWS IAM Identity Center(successor to AWS single sign-On) for automatic user provisioning with Microsoft Entra ID
 
-This article describes the steps you need to perform in both AWS IAM Identity Center(successor to AWS single sign-On) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [AWS IAM Identity Center](https://console.aws.amazon.com/singlesignon) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both AWS IAM Identity Center(successor to AWS single sign-On) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [AWS IAM Identity Center](https://console.aws.amazon.com/singlesignon) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). You can then use those users and groups in AWS IAM Admin Center for user access to other Amazon Web Services (AWS) applications or accounts.
 
 
 ## Capabilities Supported
@@ -28,19 +28,21 @@ This article describes the steps you need to perform in both AWS IAM Identity Ce
 > * Remove users in AWS IAM Identity Center when they no longer require access
 > * Keep user attributes synchronized between Microsoft Entra ID and AWS IAM Identity Center
 > * Provision groups and group memberships in AWS IAM Identity Center
-> * [IAM Identity Center](aws-single-sign-on-tutorial.md) to AWS IAM Identity Center
+> * [Single sign on through AWS IAM Identity Center](aws-single-sign-on-tutorial.md) to AWS
 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* A SAML connection from your Microsoft Entra account to AWS IAM Identity Center, as described in Tutorial
+* An AWS IAM Identity Center-enabled account
+* A SAML connection from your Microsoft Entra account to AWS IAM Identity Center, as described in the [Configure AWS IAM Identity Center for Single sign-on with Microsoft Entra ID tutorial](aws-single-sign-on-tutorial.md)
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 2. Determine who is in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and AWS IAM Identity Center](~/identity/app-provisioning/customize-application-attributes.md). 
+4. Review the [considerations for provisioning into AWS IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/idp-microsoft-entra.html#entra-scim-considerations).
 
 <a name='step-2-configure-aws-iam-identity-center-to-support-provisioning-with-azure-ad'></a>
 
@@ -232,12 +234,13 @@ There are two ways to resolve this
 ### Invalid characters
 Currently AWS IAM Identity Center isn't allowing some other characters that Microsoft Entra ID supports like tab (\t), new line (\n), return carriage (\r), and characters such as " <|>|;|:% ".
 
-You can also check the AWS IAM Identity Center  troubleshooting tips [here](https://docs.aws.amazon.com/singlesignon/latest/userguide/azure-ad-idp.html#azure-ad-troubleshooting) for more troubleshooting tips
+You can also check the [AWS IAM Identity Center with Microsoft Entra troubleshooting tips](https://docs.aws.amazon.com/singlesignon/latest/userguide/idp-microsoft-entra.html#idp-microsoft-entra-troubleshooting) for more troubleshooting tips
 
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and IAM Identity Center with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
+* [Configure SAML and SCIM with Microsoft Entra ID and AWS IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/idp-microsoft-entra.html)
 
 ## Related content
 

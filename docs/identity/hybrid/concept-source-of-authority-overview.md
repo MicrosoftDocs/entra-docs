@@ -1,5 +1,5 @@
 ---
-title: Embrace cloud-first posture and convert Group Source of Authority (SOA) to the cloud (Preview)
+title: Embrace cloud-first posture and convert Group Source of Authority (SOA) to the cloud
 description: Learn about Source of Authority (SOA), including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
 author: justinha
 ms.date: 08/19/2025
@@ -8,7 +8,7 @@ ms.reviewer: dhanyahk
 ms.service: entra-id
 ms.topic: article
 ---
-# Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)
+# Embrace cloud-first posture: Convert Group Source of Authority to the cloud
 
 Modernization requirements have many organizations shifting Identity and Access Management (IAM) solutions from on-premises to the cloud. For the road to the cloud initiative, Microsoft has [modeled five states of transformation](/entra/architecture/road-to-the-cloud-posture#five-states-of-transformation) to align with customer business goals.
 

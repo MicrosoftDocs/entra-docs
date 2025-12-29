@@ -4,11 +4,11 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/23/2025
+ms.date: 12/18/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
-ms.reviewer: jupetter
+ms.reviewer: lhuangnorth
 ms.custom: sfi-image-nochange
 ---
 # Configure Microsoft Entra multifactor authentication settings
@@ -170,6 +170,9 @@ To configure your own caller ID number, complete the following steps:
 > When Microsoft Entra multifactor authentication calls are placed through the public telephone network, sometimes the calls are routed through a carrier that doesn't support caller ID. Because of this, caller ID isn't guaranteed, even though Microsoft Entra multifactor authentication always sends it. This applies both to phone calls and text messages provided by Microsoft Entra multifactor authentication. If you need to validate that a text message is from Microsoft Entra multifactor authentication, see [What short codes are used for sending messages?](multi-factor-authentication-faq.yml#what-short-codes-are-used-for-sending-text-messages-to-my-users-).
 
 ### Custom voice messages
+
+> [!NOTE]
+> Custom voice messages in Microsoft Entra voice call authentication will be retired on February 28, 2026. After retirement, all voice call greetings will use standard recordings from Microsoft by default.
 
 You can use your own recordings or greetings for Microsoft Entra multifactor authentication. These messages can be used in addition to the default Microsoft recordings or to replace them.
 

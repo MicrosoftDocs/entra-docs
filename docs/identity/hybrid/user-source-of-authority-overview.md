@@ -1,8 +1,8 @@
 ---
-title: Embrace cloud-first posture and transfer user Source of Authority (SOA) to the cloud (Preview)
+title: Embrace cloud-first posture and transfer user Source of Authority (SOA) to the cloud
 description: Learn about Source of Authority (SOA) for users, including prerequisites and supported scenarios.
 author: owinfreyATL
-ms.topic: conceptual
+ms.topic: article
 ms.service: entra-id
 ms.subservice: hybrid
 ms.date: 08/13/2025
@@ -12,12 +12,20 @@ ms.reviewer: dhanyak
 #CustomerIntent: As an IT administrator, I want to learn about user Source of Authority (SOA) so that I can minimize my on-premises footprint.
 ---
 
-# Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud (Preview)
+# Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud
 
 Organizations are increasingly adopting a cloud-first approach to modernize their Identity and Access Management (IAM) solutions. For the road to the cloud initiative, Microsoft has [modeled five states of transformation](/entra/architecture/road-to-the-cloud-posture#five-states-of-transformation) to align with customer business goals. Transitioning the Source of Authority (SOA) for users from on-premises Active Directory Domain Services (AD DS) to the cloud is a key step in this journey. This process, known as AD DS minimization, reduces the complexity of on-premises infrastructure by managing users directly in the cloud.
 
 This article introduces the concept of user SOA, its benefits, and the scenario it supports. It also outlines key considerations and prerequisites for IT administrators planning to shift user management to the cloud using Microsoft Entra ID. By using user SOA, organizations can streamline user lifecycle management, enable advanced governance capabilities, and fully embrace a cloud-first posture. For a guide on using user SOA for IT architects, see: [Cloud-First identity management: Guidance for IT architects](guidance-it-architects-source-of-authority.md).
 
+
+
+## Video: Microsoft Entra User Source of Authority
+
+
+Check out this video for an introduction to SOA and how it can help you shift to the cloud:
+
+> [!VIDEO https://www.youtube.com/embed/QnY-D5bdh4Y]
 
 ## User SOA scenario
  
@@ -41,7 +49,7 @@ Before you begin transferring the SOA for users in your organization, your envir
 
 - The Cloud HR system has been configured and successfully integrated with Microsoft Entra ID. Changes to users provisioned from the HR system should go directly Microsoft Entra ID. For more information, see: [Shift the configuration of users in provisioning from the HR system](prepare-user-source-of-authority-environment.md#shift-the-configuration-of-users-in-provisioning-from-the-hr-system).
 - No on-premises Exchange workloads. If you're currently using on-premises Exchange server, shift the users and mailboxes to the cloud and then remove on-prem-exchange. For more information, see: [Prepare your Microsoft Exchange setup](prepare-user-source-of-authority-environment.md#prepare-your-microsoft-exchange-setup).
-- Password-less authentication utilizing [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/configure) or [FIDO2 security keys](../../identity/authentication/how-to-enable-passkey-fido2.md) is required.
+- Any authentication method works for cloud users, but if using Kerberos-based applications, passwordless authentication is required.
 - The [Cloud Kerberos Trust type](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) must be utilized.
 - The users intended for SOA transfer aren't associated with any applications that require password-based authentication. If any of the users you want to transfer SOA for have any password dependencies, then transferring SOA isn't supported. If users are using federated authentication using [Active Directory Federation Service](/windows-server/identity/ad-fs/ad-fs-overview), then transferring SOA isn't supported. If your organization uses a third-party federation authentication identity provider, and plan to transfer the SOA of users, you must manage the Active Directory account manually. With this process, you must maintain the password using the third-party sync tool.
 
@@ -49,5 +57,5 @@ Before you begin transferring the SOA for users in your organization, your envir
 
 ## Related content
 
-- [Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)](how-to-user-source-of-authority-configure.md)
-- [Prepare Your Environment for User SOA (Preview)](prepare-user-source-of-authority-environment.md)
+- [Configure User Source of Authority (SOA) in Microsoft Entra ID](how-to-user-source-of-authority-configure.md)
+- [Prepare Your Environment for User SOA](prepare-user-source-of-authority-environment.md)

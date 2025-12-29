@@ -72,6 +72,8 @@ landingContent:
             url: notifications.md
           - text: Enable security audits
             url: security-audit-events.md
+          - text: Restore group policy from backup
+            url: group-policy.md
   - title: Domain-join VMs
     linkLists:
       - linkListType: tutorial

@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 ---
 # Manage authentication methods for Microsoft Entra ID
 
-Microsoft Entra ID allows the use of a range of authentication methods to support a wide variety of sign-in scenarios. Administrators can specifically configure each method to meet their goals for user experience and security. This topic explains how to manage authentication methods for Microsoft Entra ID, and how configuration options affect user sign-in and password reset scenarios. 
+Microsoft Entra ID allows the use of a range of authentication methods to support a wide variety of sign-in scenarios. For an overview of the available options, see [Authentication methods in Microsoft Entra ID](overview-authentication.md). Administrators can specifically configure each method to meet their goals for user experience and security. This topic explains how to manage authentication methods for Microsoft Entra ID, and how configuration options affect user sign-in and password reset scenarios. 
 
 ## Authentication methods policy
 
@@ -110,7 +110,15 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
   >[!NOTE]
   >You might not be able to save updates to the Authentication methods policy if it targets many groups and the policy size exceeds 20 KB. While we work to increase the policy size limit, consolidate targeted groups as much as possible. 
 
-## Next steps
+## Usable and non-usable methods for users
+
+Administrators can view user authentication methods in the Microsoft Entra admin center. Usable methods are listed first, followed by non-usable methods. 
+
+Each authentication method can become nonusable for different reasons. For example, a Temporary Access Pass might expire, or a FIDO2 security key might fail attestation. The portal gets updated to explain why the method isn't usable. 
+
+Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here. 
+
+## Related content
 
 - [How to migrate MFA and SSPR policy settings to the Authentication methods policy](how-to-authentication-methods-manage.md)
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
