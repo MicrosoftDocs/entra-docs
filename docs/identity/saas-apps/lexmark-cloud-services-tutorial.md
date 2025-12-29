@@ -69,7 +69,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | `https://lexmarkb2ceu.b2clogin.com/LexmarkB2CEU.onmicrosoft.com/B2C_1A_TrustFrameworkBase_ciam/samlp/sso/assertionconsumer` |
 
     > [!Note]
-    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Lexmark SSO Client support team](mailto:cloudsetup@Lexmark.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact Lexmark SSO Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Certificates** section, select the copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -78,11 +78,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Lexmark Cloud Services (SAML) SSO
 
-To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need to send the **App Federation Metadata Url** to [Lexmark Cloud Services (SAML) support team](mailto:brandon.edgington@lexmark.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Lexmark Cloud Services (SAML)** side, you need to send the **App Federation Metadata Url** to Lexmark Cloud Services (SAML) support team. They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Lexmark Cloud Services (SAML) test user
 
-In this section, you create a user called B.Simon in Lexmark Cloud Services (SAML). Work with [Lexmark Cloud Services (SAML) support team](mailto:brandon.edgington@lexmark.com) to add the users in the Lexmark Cloud Services (SAML) platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in Lexmark Cloud Services (SAML). Work with Lexmark Cloud Services (SAML) support team to add the users in the Lexmark Cloud Services (SAML) platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
