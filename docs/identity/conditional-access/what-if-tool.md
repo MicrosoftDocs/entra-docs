@@ -4,7 +4,7 @@ description: Simulate Conditional Access policy results with the What If tool to
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting-general
-ms.date: 04/28/2025
+ms.date: 11/06/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
@@ -13,15 +13,15 @@ ms.custom: sfi-image-nochange
 ---
 # Troubleshoot Conditional Access Policies with the What If Tool
 
-The **Conditional Access What If policy tool** helps you understand the result of [Conditional Access](overview.md) policies in your environment. It can be useful when simulating uncommon scenarios, enabling you to design more comprehensive security policies. Instead of manually testing your policies with multiple sign-ins, this tool helps you simulate a sign-in for a user or service principal. The simulation estimates how your policies affect this sign-in and generates a report.
+The **Conditional Access What If policy tool** helps you understand the result of [Conditional Access](overview.md) policies in your environment. It can be useful when simulating uncommon scenarios, enabling you to design more comprehensive security policies. Instead of manually testing your policies with multiple sign-ins, this tool helps you simulate a sign-in for a user, agent identity, or single tenant service principal. The simulation estimates how your policies affect this sign-in and generates a report.
 
-The **What If** tool and [APIs](/graph/api/conditionalaccessroot-evaluate) let you quickly determine the policies that apply to a specific user or single-tenant service principal. Use this information to troubleshoot issues, understand which policies apply to specific sign-in conditions, and test complex sign-in scenarios.
+The **What If** tool and [APIs](/graph/api/conditionalaccessroot-evaluate) let you quickly determine the policies that apply to a specific user, agent identity, or single tenant service principal. Use this information to troubleshoot issues, understand which policies apply to specific sign-in conditions, and test complex sign-in scenarios.
 
 ## How it works
 
 The Conditional Access What If tool is powered by the [What If Evaluation API](/graph/api/conditionalaccessroot-evaluate). To use the tool, start by configuring the conditions of the sign-in scenario you want to simulate. The configuration should include:
 
-- The user or single tenant service principal you want to test.
+- The user, agent identity (Preview), or single tenant service principal you want to test.
 - The cloud apps, user action they would attempt to perform, or sensitive data protected by authentication context they would attempt to access.
 - The sign-in conditions under which access would be attempted.
 
@@ -51,7 +51,7 @@ The following conditions are required: identity, target resource, device platfor
 Start an evaluation by clicking **What If**. The evaluation result provides you with a report that consists of:
 
 - An indicator showing whether classic policies exist in your environment.
-- Policies that apply to your user or workload identity.
+- Policies that apply to your user, agent, or workload identity.
 - Policies that don't apply to your user or workload identity.
 
 :::image type="content" source="media/what-if-tool/conditional-access-what-if-evaluation-result-example.png" alt-text="Screenshot of an example of the policy evaluation in the What If tool showing policies that would apply." lightbox="media/what-if-tool/conditional-access-what-if-evaluation-result-example.png":::

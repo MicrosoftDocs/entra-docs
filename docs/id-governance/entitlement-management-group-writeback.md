@@ -37,9 +37,9 @@ Using group writeback, you can now sync security groups that are part of access 
 
 1. Configure the application to use the new group, either by updating the application or adding the group as a member of an existing group, as described in [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](../identity/hybrid/cloud-sync/govern-on-premises-groups.md).
 
-1. Assign the user to the access package. See [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md#directly-assign-a-user) for instructions to directly assign a user. 
+1. Assign the identities to the access package. See [View, add, and remove assignments for an access package](entitlement-management-access-package-assignments.md#directly-assign-an-identity) for instructions to directly assign a user. 
 
-1. After you've assigned a user to the access package, confirm that the user is now a member of the on-premises group once Microsoft Entra Cloud Sync cycle completes:
+1. After you've assigned an identity to the access package, confirm that the user is now a member of the on-premises group once Microsoft Entra Cloud Sync cycle completes:
     1. View the member property of the group in the on-premises OU OR 
     1. Review the member Of on the user object. 
 

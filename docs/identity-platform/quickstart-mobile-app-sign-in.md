@@ -36,7 +36,7 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
@@ -266,7 +266,7 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer

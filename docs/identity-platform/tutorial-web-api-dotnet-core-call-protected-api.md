@@ -67,7 +67,7 @@ Applications that authenticate by themselves without a user require app permissi
 
     HttpClient client = new HttpClient();
 
-    var response = await client.GetAsync("http://localhost:<your-api-port>/api/todolist);
+    var response = await client.GetAsync("http://localhost:<your-api-port>/api/todolist");
     Console.WriteLine("Your response is: " + response.StatusCode);
     ```
 

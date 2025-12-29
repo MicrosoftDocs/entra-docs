@@ -30,7 +30,7 @@ When you set up an external tenant free trial, the guide will start automaticall
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Home** > **Tenant overview**.
+1. Browse to **Entra ID** > **Overview**.
 1. On the **Get started** tab, select **Start the guide**.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
@@ -39,18 +39,22 @@ You can customize your customer's sign-in and sign-up experience in the external
 
 If you prefer, you can add your company logo, change the background color or adjust the sign-in layout. These optional changes will apply to the look and feel of all your apps in this tenant with external configurations. After you have the created tenant, other branding options are available. You can [customize the default branding](how-to-customize-branding-customers.md) and [add languages](how-to-customize-languages-customers.md). Once you're finished with the customization, select **Continue**.
 
-:::image type="content" source="media/quickstart-trial-setup/customize-branding-in-trial-wizard.png" alt-text="Screenshot of customizing the sign-in experience in the guide.":::
+:::image type="content" source="media/quickstart-get-started-guide/customize-branding-in-trial-wizard.png" alt-text="Screenshot of customizing the sign-in experience in the guide.":::
 
 ## Try out the sign-up experience and create your first user
 
 1. The guide will configure your tenant with the options you have selected. Once the configuration is complete, the button will change its text from **Setting up...** to **Run it now**.
 1. Select  the **Run it now** button. A new browser tab will open with the sign-in page for your tenant that can be used to create and sign in users. 
 1. Select **No account? Create one** to create a new user in the tenant.
-1. Add your new user's email address and select **Next**. Don't use the same email you used to create your trial.
-1. Complete the sign-up steps on the screen. Typically, once the user has signed in, they're redirected back to your app. However, since you haven’t set up an app at this step, you'll be redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
-1. Go back to the guide tab. At this stage, you can either exit the guide and go to the admin center to explore the full range of configuration options for your tenant. Or you can **Continue** and set up a sample app. We recommend setting up the sample app, so that you can use it to test any further configuration changes you make
+1. Add your new user's email address and select **Next**. 
 
-    :::image type="content" source="media/quickstart-trial-setup/successful-trial-setup.png" alt-text="Screenshot that shows the successful creation of the sign-up experience.":::
+> [!NOTE]
+> Use a different email address than the one used to create your trial. If you use your tenant admin email to create a customer account through [self-service sign-up](/entra/external-id/self-service-sign-up-overview) or by [adding a new external user](/entra/external-id/customers/how-to-manage-customer-accounts#create-a-customer-account) in the Microsoft Entra admin center, the system creates a second account with the same email address. This new account has customer-level privileges, which can cause conflicts.
+
+5. Complete the sign-up steps on the screen. Typically, once the user has signed in, they're redirected back to your app. However, since you haven’t set up an app at this step, you'll be redirected to JWT.ms instead, where you can view the contents of the token issued during the sign-in process.
+6. Go back to the guide tab. At this stage, you can either exit the guide and go to the admin center to explore the full range of configuration options for your tenant. Or you can **Continue** and set up a sample app. We recommend setting up the sample app, so that you can use it to test any further configuration changes you make
+
+    :::image type="content" source="media/quickstart-get-started-guide/successful-trial-setup.png" alt-text="Screenshot that shows the successful creation of the sign-up experience.":::
 
 ## Set up a sample app
 
@@ -67,7 +71,7 @@ Follow the next steps, to download and run the sample app.
 1. Select your language and **Download sample app** on your machine.
 1. Follow the instructions to install and run the app. Sign into the sample app.
 
-    :::image type="content" source="media/quickstart-trial-setup/sample-app-setup.png" alt-text="Screenshot of the sample app setup.":::
+    :::image type="content" source="media/quickstart-get-started-guide/sample-app-setup.png" alt-text="Screenshot of the sample app setup.":::
 
 1. You've completed the process of creating a trial tenant, configuring the sign-in experience, creating your first user, and setting up a sample app. Select **Continue** to go to the summary page, where you can either go to the admin center or you can restart the guide to choose different options.
 

@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 To test the steps in this article,  you should follow these recommendations:
 
 * Don't use your production environment, unless it's necessary.
-* If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 
 ## Recent Changes
 Recent updates from Google now allow the addition of user groups to Third-Party SSO profiles. This enables more granular control over the assignment of SSO settings. You can now create SSO Profile Assignments, allowing you to migrate users in stages rather than moving the entire company at once. In this area, you're given SP details with an Entity ID and ACS URL, which you now need to add into Azure Apps for reply and Entity.

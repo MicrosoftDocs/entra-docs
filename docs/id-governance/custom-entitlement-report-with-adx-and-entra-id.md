@@ -1,12 +1,12 @@
 ---
 title: Create Custom Reports Using Microsoft Entra and Application Data
 description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from Microsoft Entra.
-author: billmath
+author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
 ms.topic: tutorial
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: owinfrey
 ms.custom: sfi-ga-nochange
 ---
 

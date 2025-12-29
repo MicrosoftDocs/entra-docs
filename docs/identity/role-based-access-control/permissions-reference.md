@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 09/11/2025
+ms.date: 12/23/2025
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
@@ -26,6 +26,9 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > [!div class="mx-tableFixed"]
 > | Role | Description | Template ID |
 > | --- | --- | --- |
+> | [Agent ID Administrator](#agent-id-administrator) | Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | db506228-d27e-4b7d-95e5-295956d6615f |
+> | [Agent ID Developer](#agent-id-developer) | Create an agent blueprint and its service principal in a tenant. User will be added as an owner of the agent blueprint and its service principal. | adb2368d-a9be-41b5-8667-d96778e081b0 |
+> | [Agent Registry Administrator](#agent-registry-administrator) | Manage all aspects of the Agent Registry service in Microsoft Entra ID | 6b942400-691f-4bf0-9d12-d8a254a2baf5 |
 > | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365. | d2562ede-74db-457e-a7b6-544e236ebb61 |
 > | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
 > | [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | cf1c38e5-3621-4004-a7cb-879624dced7c |
@@ -64,6 +67,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Access and perform all administrative tasks on Dynamics 365 Business Central environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
+> | [Exchange Backup Administrator](#exchange-backup-administrator) | Back up and restore content (including granular restore) for Exchange in Microsoft 365 Backup | 49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31 |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
 > | [Extended Directory User Administrator](#extended-directory-user-administrator) | Manage all aspects of external user profiles in the extended directory for Teams. | dd13091a-6207-4fc0-82ba-3641e056ab95 |
 > | [External ID User Flow Administrator](#external-id-user-flow-administrator) | Can create and manage all aspects of user flows. | 6e591065-9bad-43ed-90f3-e9424366d2f0 |
@@ -93,6 +97,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Message Center Reader](#message-center-reader) | Can read messages and updates for their organization in Office 365 Message Center only. | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b |
 > | [Microsoft 365 Backup Administrator](#microsoft-365-backup-administrator) | Back up and restore content across supported services (SharePoint, OneDrive, and Exchange Online) in Microsoft 365 Backup | 1707125e-0aa2-4d4d-8655-a7c786c76a25 |
 > | [Microsoft 365 Migration Administrator](#microsoft-365-migration-administrator) | Perform all migration functionality to migrate content to Microsoft 365 using Migration Manager. | 8c8b803f-96e1-4129-9349-20738d9f9652 |
+> | [Microsoft 365 Support Engineer](#microsoft-365-support-engineer) | Do not use - not intended for general use. | 00cf5c54-4693-4f59-a0ac-ab79ef0a974d |
 > | [Microsoft Entra Joined Device Local Administrator](#microsoft-entra-joined-device-local-administrator) | Users assigned to this role are added to the local administrators group on Microsoft Entra joined devices. | 9f06204d-73c1-4d4c-880a-6edb90606fd8 |
 > | [Microsoft Graph Data Connect Administrator](#microsoft-graph-data-connect-administrator) | Manage aspects of Microsoft Graph Data Connect service in a tenant. | ee67aa9c-e510-4759-b906-227085a7fd4d |
 > | [Microsoft Hardware Warranty Administrator](#microsoft-hardware-warranty-administrator) | Create and manage all aspects warranty claims and entitlements for Microsoft manufactured hardware, like Surface and HoloLens. | 1501b917-7653-4ff9-a4b5-203eaf33784f |
@@ -122,6 +127,8 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Security Reader](#security-reader) | Can read security information and reports in Microsoft Entra ID and Office 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 5d6b6bb7-de71-4623-b4af-96380a352509 |
 > | [Service Support Administrator](#service-support-administrator) | Can read service health information and manage support tickets. | f023fd81-a637-4b56-95fd-791ac0226033 |
 > | [SharePoint Administrator](#sharepoint-administrator) | Can manage all aspects of the SharePoint service. | f28a1f50-f6e7-4571-818b-6a12f2af6b6c |
+> | [SharePoint Advanced Management Administrator](#sharepoint-advanced-management-administrator) | Manage all aspects of SharePoint Advanced Management. | 99009c4a-3b3f-4957-82a9-9d35e12db77e |
+> | [SharePoint Backup Administrator](#sharepoint-backup-administrator) | Back up and restore content (including granular restore) for SharePoint and OneDrive in Microsoft 365 Backup | 9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be |
 > | [SharePoint Embedded Administrator](#sharepoint-embedded-administrator) | Manage all aspects of SharePoint Embedded containers. | 1a7d78b6-429f-476b-b8eb-35fb715fffd4 |
 > | [Skype for Business Administrator](#skype-for-business-administrator) | Can manage all aspects of the Skype for Business product. | 75941009-915a-4869-abe7-691bff18279e |
 > | [Teams Administrator](#teams-administrator) | Can manage the Microsoft Teams service. | 69091246-20e8-4a56-aa4d-066075b2a7a8 |
@@ -143,6 +150,17 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Windows Update Deployment Administrator](#windows-update-deployment-administrator) | Can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. | 32696413-001a-46ae-978c-ce0f6b3620d2 |
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
 
+## Agent ID Administrator
+
+[!INCLUDE [agent-id-administrator](includes/agent-id-administrator.md)]
+
+## Agent ID Developer
+
+[!INCLUDE [agent-id-developer](includes/agent-id-developer.md)]
+
+## Agent Registry Administrator
+
+[!INCLUDE [agent-registry-administrator](includes/agent-registry-administrator.md)]
 
 ## AI Administrator
 
@@ -296,6 +314,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [exchange-administrator](includes/exchange-administrator.md)]
 
+## Exchange Backup Administrator
+
+[!INCLUDE [exchange-backup-administrator](includes/exchange-backup-administrator.md)]
+
 ## Exchange Recipient Administrator
 
 [!INCLUDE [exchange-recipient-administrator](includes/exchange-recipient-administrator.md)]
@@ -411,6 +433,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Microsoft 365 Migration Administrator
 
 [!INCLUDE [microsoft-365-migration-administrator](includes/microsoft-365-migration-administrator.md)]
+
+## Microsoft 365 Support Engineer
+
+[!INCLUDE [microsoft-365-support-engineer](includes/microsoft-365-support-engineer.md)]
 
 ## Microsoft Entra Joined Device Local Administrator
 
@@ -528,6 +554,14 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [sharepoint-administrator](includes/sharepoint-administrator.md)]
 
+## SharePoint Advanced Management Administrator
+
+[!INCLUDE [sharepoint-advanced-management-administrator](includes/sharepoint-advanced-management-administrator.md)]
+
+## SharePoint Backup Administrator
+
+[!INCLUDE [sharepoint-backup-administrator](includes/sharepoint-backup-administrator.md)]
+
 ## SharePoint Embedded Administrator
 
 [!INCLUDE [sharepoint-embedded-administrator](includes/sharepoint-embedded-administrator.md)]
@@ -624,15 +658,17 @@ The following roles should not be used. They have been deprecated and will be re
 
 ## Roles not shown in the portal
 
-Not every role returned by PowerShell or Microsoft Graph API is visible in Azure portal. The following table organizes those differences.
+Not every role returned by PowerShell or Microsoft Graph API is visible in Microsoft Entra roles interface. The following table organizes those differences.
 
 | API name | Microsoft Entra admin center portal name | Notes |
 | --- | --- | --- |
+| Agent User | Not shown because it's implicitly assigned to users of agents | NA |
 | Device Join | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Device Managers | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Device Users | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Directory Synchronization Accounts | Not shown because it shouldn't be used | [Directory Synchronization Accounts documentation](#directory-synchronization-accounts) |
-| Guest User | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
+| Guest User | Not shown because it can't be used | NA |
+| Microsoft 365 Support Engineer | Not shown because it shouldn't be used | [Microsoft 365 Support Engineer documentation](#microsoft-365-support-engineer) |
 | Modern Commerce Administrator | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
 | Partner Tier 1 Support | Not shown because it shouldn't be used | [Partner Tier1 Support documentation](#partner-tier1-support) |
 | Partner Tier 2 Support | Not shown because it shouldn't be used | [Partner Tier2 Support documentation](#partner-tier2-support) |

@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 10/02/2025
+ms.date: 11/19/2025
 ms.custom: it-pro
 ---
 
@@ -25,19 +25,19 @@ In newly created external tenants, the following core security features are enab
 
 |Feature Name  |Description  |
 |--------------|-------------|
-|Brute force protection            | Mitigates brute force attacks by limiting the number of sign-in attempts to prevent unauthorized access through repeated password guessing. |
-|Common networking HTTP Protection | Provides protection against common network-layer attacks and timing-based attacks, protecting against attempts to overwhelm your service with excessive requests.|
-|Account Protection                | Guards against unauthorized account access to protect user data and prevent account breaches.   |
-|Access Control                    | Controls access to applications and resources so that only authorized users can access sensitive information.  |
+|[Brute force protection](/entra/identity/authentication/howto-password-smart-lockout)            | Mitigates brute force attacks by limiting the number of sign-in attempts to prevent unauthorized access through repeated password guessing. |
+|[Common networking HTTP Protection](/entra/external-id/customers/reference-service-limits) | Provides protection against common network-layer attacks and timing-based attacks, protecting against attempts to overwhelm your service with excessive requests.|
+|Account Protection    | Helps safeguard against unauthorized access to protect user data and prevent account breaches. Relying solely on risk-based multifactor authentication (MFA) isn't a complete security strategy for account protection. MFA is just one control and isn't sufficient for comprehensive identity protection. We offer partner solutions account protection ([Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration) and [Akamai](/entra/external-id/customers/how-to-configure-akamai-integration)) and continue to develop additional options. |
+|[Access Control](/entra/external-id/customers/how-to-use-app-roles-customers) | Controls access to applications and resources so that only authorized users can access sensitive information.  |
  
 ## Conditional Access and multifactor authentication (MFA)
 
 Customizable policies and MFA enhance security by reducing unauthorized access to applications and resources.
 
-|Feature Name	|Description |
-|---------------|------------| 
-|Conditional Access policies	    |Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. See [What is Conditional Access?](~/identity/conditional-access/overview.md) and [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md) for more information about Conditional Access.   |
-|Multifactor authentication (MFA)	|MFA methods configured to ensure only legitimate users can access applications, significantly reducing the risk of unauthorized access. [Learn more](concept-multifactor-authentication-customers.md)     |
+|Feature Name |Description |
+|---------------|------------|
+|[Conditional Access policies](/entra/external-id/customers/concept-supported-features-customers#conditional-access) |Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. See [What is Conditional Access?](~/identity/conditional-access/overview.md) and [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md) for more information about Conditional Access.   |
+|Multifactor authentication (MFA) |MFA methods configured to ensure only legitimate users can access applications, significantly reducing the risk of unauthorized access. [Learn more](concept-multifactor-authentication-customers.md)     |
 
 ## Related content
 

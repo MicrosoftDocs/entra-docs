@@ -55,6 +55,5 @@ The custom block page empowers you to customize the default body of the page fro
 
 ## Next steps
 
-- If you need features beyond the preview's capabilities (richer templates, localization, or analytics), collect feedback and request expanded preview access from the product team.
 - For guidance on configuring web content filtering, see [Configure web content filtering](./how-to-configure-web-content-filtering.md).
 - For guidance on configuring threat intelligence, see [Configure threat intelligence](./how-to-configure-threat-intelligence.md).

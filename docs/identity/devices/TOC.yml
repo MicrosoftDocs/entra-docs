@@ -4,7 +4,7 @@
   items:
   - name: What is a device identity?
     href: overview.md
-  - name: Whats new in Linux for devices
+  - name: What's new in Linux for devices
     href: whats-new-linux.md
 - name: Tutorials
   expanded: false
@@ -38,12 +38,18 @@
     href: concept-tokens-microsoft-entra-id.md
   - name: Protecting tokens in Microsoft Entra ID
     href: protecting-tokens-microsoft-entra-id.md 
-  - name: macOS Platform Single Sign-on overview 
-    href: macos-psso.md
-  - name: Integrate macOS Platform Single Sign-On (PSSO) into your MDM solution
-    href: macos-psso-integration-guide.md
-  - name: Microsoft Single Sign-on to Linux
-    href: sso-linux.md
+  - name: Apple Devices
+    expanded: false
+    items:
+      - name: macOS Platform Single Sign-on overview 
+        href: macos-psso.md
+      - name: Integrate macOS Platform single sign-on (PSSO) into your MDM solution
+        href: macos-psso-integration-guide.md
+  - name: Linux Devices
+    expanded: false
+    items:
+      - name: Microsoft Single Sign-on to Linux
+        href: sso-linux.md
 - name: How-to guides
   expanded: false
   items:
@@ -78,29 +84,37 @@
         href: troubleshoot-device-dsregcmd.md
       - name: Troubleshoot Microsoft Entra hybrid joined down level Windows devices
         href: troubleshoot-hybrid-join-windows-legacy.md
-  - name: Local Administrator Password Solution
-    href: howto-manage-local-admin-passwords.md
-  - name: Manage device identities
-    href: manage-device-identities.md
-  - name: Troubleshoot Windows devices
-    href: troubleshoot-device-windows-joined.md
-  - name: Troubleshoot primary refresh tokens on Windows devices
-    displayName: PRT
-    href: troubleshoot-primary-refresh-token.md
-  - name: Manage stale devices
-    href: manage-stale-devices.md
-  - name: Azure Linux VMs and Microsoft Entra ID
-    href: howto-vm-sign-in-azure-ad-linux.md
-  - name: Azure Windows VMs and Microsoft Entra ID
-    href: howto-vm-sign-in-azure-ad-windows.md
-  - name: Virtual desktop infrastructure
-    href: howto-device-identity-virtual-desktop-infrastructure.md
-  - name: Frequently asked questions
-    href: faq.yml
-  - name: Troubleshoot SSO on Apple devices
-    href: troubleshoot-mac-sso-extension-plugin.md
-  - name: Troubleshoot macOS PSSO on Mac
-    href: troubleshoot-macos-platform-single-sign-on-extension.md
+  - name: Windows Devices
+    expanded: false
+    items:
+      - name: Troubleshoot Windows devices
+        href: troubleshoot-device-windows-joined.md
+      - name: Troubleshoot primary refresh tokens on Windows devices
+        displayName: PRT
+        href: troubleshoot-primary-refresh-token.md
+      - name: Local Administrator Password Solution
+        href: howto-manage-local-admin-passwords.md
+  - name: Apple Devices
+    expanded: false
+    items:
+      - name: Troubleshoot SSO on Apple devices
+        href: troubleshoot-mac-sso-extension-plugin.md
+      - name: Troubleshoot macOS PSSO on Mac
+        href: troubleshoot-macos-platform-single-sign-on-extension.md
+      - name: Configure macOS PSSO to meet NIST and EO requirements
+        href: macos-psso-deployment-eocustomers.md
+  - name: Linux Devices
+    expanded: false
+    items:
+      - name: Azure Linux VMs and Microsoft Entra ID
+        href: howto-vm-sign-in-azure-ad-linux.md
+  - name: Virtual Devices
+    expanded: false
+    items:        
+      - name: Azure Windows VMs and Microsoft Entra ID
+        href: howto-vm-sign-in-azure-ad-windows.md
+      - name: Virtual desktop infrastructure
+        href: howto-device-identity-virtual-desktop-infrastructure.md
   - name: Enterprise state roaming
     expanded: false
     items:
@@ -114,8 +128,12 @@
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Enterprise state roaming Windows settings
       href: /windows/configuration/windows-backup/catalog-esr
-  - name: KDFv1 removal
-    href: deprecation-key-derivation-function-version-1.md
+  - name: Manage device identities
+    href: manage-device-identities.md
+  - name: Manage stale devices
+    href: manage-stale-devices.md
+  - name: Frequently asked questions
+    href: faq.yml
 - name: Reference
   items:
   - name: Microsoft Entra hybrid join reference
@@ -123,10 +141,17 @@
     items:
     - name: Configure Microsoft Entra hybrid join manually
       href: hybrid-join-manual.md
+  - name: Third-Party device management
+    expanded: false
+    items:
+    - name: Browser access guidance for third party mobile device management providers
+      href: browser-access-guidance-third-party-devices.md    
   - name: Enforce TLS 1.2
     href: reference-device-registration-tls-1-2.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/device
+  - name: KDFv1 removal
+    href: deprecation-key-derivation-function-version-1.md
 - name: Resources
   items:
   - name: Azure feedback forum

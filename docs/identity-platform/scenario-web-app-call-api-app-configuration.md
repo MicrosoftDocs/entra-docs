@@ -24,7 +24,7 @@ This article will show you how to configure the application code, and modify you
 
 ## Prerequisites
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
   * Application Administrator
   * Application Developer
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
@@ -307,7 +307,7 @@ The *handleRedirect* method in **AuthProvider** class processes the authorizatio
 
 # [Java](#tab/java)
 
-See [Web app that signs in users: Code configuration](scenario-web-app-sign-user-app-configuration.md?tabs=java#initialization-code) to understand how the Java sample gets the authorization code. After the app receives the code, the [AuthFilter.java#L51-L56](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java#L51-L56):
+After the app receives the authorization code, the [AuthFilter.java#L51-L56](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java#L51-L56):
 
 1. Delegates to the `AuthHelper.processAuthenticationCodeRedirect` method in [AuthHelper.java#L67-L97](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthHelper.java#L67-L97).
 1. Calls `getAuthResultByAuthCode`.
@@ -376,7 +376,7 @@ The `getAuthResultByAuthCode` method is defined in [AuthHelper.java#L176](https:
 
 # [Python](#tab/python)
 
-See [Web app that signs in users: Code configuration](scenario-web-app-sign-user-app-configuration.md?tabs=python#initialization-code) to understand how the Python sample gets the authorization code. 
+Refer to [Tutorial: Sign-in users to a Python Flask web app by using Microsoft identity platform](./tutorial-web-app-python-flask-sign-in-out.md)
 
 The Microsoft sign-in screen sends the authorization code to the `/getAToken` URL that was specified in the app registration. The `auth_response` route handles that URL, calling `auth.complete_login` to process the authorization code, and then either returning an error or redirecting to the home page.
 

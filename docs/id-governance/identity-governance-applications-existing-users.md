@@ -14,7 +14,7 @@ ms.custom: sfi-ga-blocked, sfi-ropc-nochange
 
 # Govern an application's existing users - Microsoft PowerShell
 
-There are three common scenarios in which it's necessary to populate Microsoft Entra ID with existing users of an application before you use the application with a Microsoft Entra ID Governance feature such as [access reviews](access-reviews-application-preparation.md).
+There are four common scenarios in which it's necessary to populate Microsoft Entra ID with existing access rights and users of an application before you use the application with a Microsoft Entra ID Governance feature such as [access reviews](access-reviews-application-preparation.md).
 
 ## License requirements
 [!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
@@ -56,6 +56,15 @@ If the user is updated in Microsoft Entra ID, no changes will be sent to the app
 For some legacy applications, it might not be feasible to remove other identity providers or local credential authentication from the application, or enable support for provisioning protocols for those applications.
 
 That scenario of an application which does not support provisioning protocols, is covered in a separate article, [Govern the existing users of an application that does not support provisioning](identity-governance-applications-not-provisioned-users.md).
+
+### Application uses Microsoft Entra ID as its identity provider and has additional access rights for users
+
+Using custom data provided resources, you can include access rights from applications in Microsoft Entra ID access reviews by uploading their access data directly into a catalog.
+
+You can then run user Access Reviews (UARs) across both Microsoft Entra-connected resources and those access rights. Reviewers can easily review and certify users’ access in the My Access portal, helping ensure consistent governance, improved visibility, and compliance across all resources whether or not they’re connected to Microsoft Entra.
+
+This scenario is covered in a separate article, [include custom data provided resource in the catalog for catalog user Access Reviews (Preview)](custom-data-resource-access-reviews.md).
+
 
 ## Terminology
 

@@ -23,6 +23,9 @@ There might be situations while configuring or managing an application where you
 
 In this article, you learn how to prevent users from signing in to an application in Microsoft Entra ID through both the Microsoft Entra admin center and PowerShell. If you're looking for how to block specific users from accessing an application, use [user or group assignment](./assign-user-or-group-access-portal.md).
 
+> [!NOTE]
+> The steps in this article disable user sign-in for a single tenant. If you need to globally disable an application across all tenants (for multitenant apps), consider [deactivating the application](deactivate-application-portal.md) instead, which prevents all token issuance globally.
+
 ## Prerequisites
 
 To disable user sign-in, you need:

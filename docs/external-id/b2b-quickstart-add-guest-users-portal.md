@@ -4,7 +4,7 @@ description: Use this quickstart to learn how Microsoft Entra admins can add B2B
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
-ms.date: 01/07/2025
+ms.date: 12/05/2025
 ms.topic: quickstart
 ms.service: entra-external-id
 ms.collection: M365-identity-device-management
@@ -22,7 +22,7 @@ In this quickstart, you'll learn how to add a new guest user to your Microsoft E
 
 This guide provides the basic steps to invite an external user. To learn about all of the properties and settings that you can include when you invite an external user, see [How to create and delete a user](~/fundamentals/how-to-create-delete-users.yml).
 
-If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
+If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
 ## Prerequisites
 

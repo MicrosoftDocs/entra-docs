@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 07/30/2025
+ms.date: 12/12/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
@@ -34,7 +34,7 @@ Configuring SharePoint with application proxy requires two URLs:
 > To make sure the links are mapped correctly, follow these recommendations for the internal URL:
 > - Use HTTPS.
 > - Don't use custom ports.
-> - Create a host (`A` record) in the corporate Domain Name System (DNS) that point to the SharePoint Web Front End (WFE) (or load balancer), and not an alias (`CName` record).
+> - Create a host (`A` record) in the corporate Domain Name System (DNS) that points to the SharePoint Web Front End (WFE) (or load balancer), and not an alias (`CName` record).
 
 This article uses the following values:
 - Internal URL: `https://sharepoint`.
@@ -45,38 +45,38 @@ This article uses the following values:
 
 In this step, you create an application in your Microsoft Entra tenant that uses application proxy. You set the external URL and specify the internal URL, both of which are used later in SharePoint.
 
-1. Create the app as described with the following settings. For step-by-step instructions, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
-   * **Internal URL**: SharePoint internal URL that is set later in SharePoint, such as `https://sharepoint`.
+1. Create the app with the following settings. For step-by-step instructions, see [Publishing applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md).
+   * **Internal URL**: SharePoint internal URL that you set later in SharePoint, such as `https://sharepoint`.
    * **Pre-Authentication**: `Microsoft Entra ID`.
    * **Translate URLs in Headers**: `No`.
    * **Translate URLs in Application Body**: `No`.
 
-   ![Publish SharePoint as application](./media/application-proxy-integrate-with-sharepoint-server/publish-app.png)
+   :::image type="content" source="./media/application-proxy-integrate-with-sharepoint-server/publish-app.png" alt-text="Screenshot of Microsoft Entra application proxy settings showing fields for Name, Internal URL, External URL, and Pre-Authentication set to Microsoft Entra ID.":::
 
-1. After your app is published, follow these steps to configure the single sign-on settings.
+1. After you publish your app, follow these steps to configure the single sign-on settings.
 
    1. On the application page in the portal, select **Single sign-on**.
    1. For **Single Sign-on Mode**, select **Integrated Windows Authentication**.
    1. Set **Internal Application Service Principal Name (SPN)** to the value you set earlier. For this example, the value is `HTTP/sharepoint`.
-   1. Under **Delegated Login Identity**, select the most suitable option for your Active Directory forest configuration. For example if you have a single Active Directory domain in your forest, select **On-premises SAM account name** (as shown in the following screenshot). But if your users aren't in the same domain as SharePoint and the private network connector servers, select **On-premises user principal name** (not shown in the screenshot).
+   1. Under **Delegated Login Identity**, select the most suitable option for your Active Directory forest configuration. For example, if you have a single Active Directory domain in your forest, select **On-premises SAM account name** (as shown in the following screenshot). But if your users aren't in the same domain as SharePoint and the private network connector servers, select **On-premises user principal name** (not shown in the screenshot).
 
-   ![Configure integrated Windows authentication for SSO](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
+   :::image type="content" source="./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png" alt-text="Screenshot of the Configure Integrated Windows Authentication dialog showing SPN set to HTTP/SharePoint and Delegated Login Identity set to On-premises SAM account name.":::
 
-1. Finish setting up your application, go to the **Users and groups** section and assign users to access this application. 
+1. Finish setting up your application, go to the **Users and groups** section, and assign users to access this application. 
 
 ## Step 2: Configure the SharePoint web application
 
-The SharePoint web application must be configured with Kerberos and the appropriate alternate access mappings to work correctly with Microsoft Entra application proxy. There are two possible options:
+You must configure the SharePoint web application with Kerberos and the appropriate alternate access mappings to work correctly with Microsoft Entra application proxy. You have two options:
 
-- Create a new web application and use only the **default** zone. Using the default zone is the preferred option, it offers the best experience with SharePoint. For example, the links in email alerts that SharePoint generates point to the **default** zone.
+- Create a new web application and use only the **default** zone. Use the default zone for the best experience with SharePoint. For example, the links in email alerts that SharePoint generates point to the **default** zone.
 - Extend an existing web application to configure Kerberos in a nondefault zone.
 
 > [!IMPORTANT]
-> Regardless of the zone used, the application pool account of the SharePoint web application must be a domain account for Kerberos to work correctly.
+> Regardless of the zone you use, the application pool account of the SharePoint web application must be a domain account for Kerberos to work correctly.
 
 ### Create the SharePoint web application
 
-- The script shows an example of creating a new web application using the **default** zone. using the default zone is the preferred option.
+- The script shows an example of creating a new web application using the **default** zone. We recommend that you use the default zone.
 
     1. Start the **SharePoint Management Shell** and run the script.
 
@@ -96,7 +96,7 @@ The SharePoint web application must be configured with Kerberos and the appropri
     1. Under **System Settings**, select **Configure Alternate Access Mappings**. The **Alternate Access Mapping Collection** box opens.
     1. Filter the display with the new web application.
 
-       ![Alternate Access Mappings of web application](./media/application-proxy-integrate-with-sharepoint-server/new-webapp-aam.png)
+       :::image type="content" source="./media/application-proxy-integrate-with-sharepoint-server/new-webapp-aam.png" alt-text="Screenshot of Alternate Access Mappings page showing internal and public URLs for the SharePoint web application in the Default zone.":::
 
 - If you extend an existing web application to a new zone.
 
@@ -115,11 +115,11 @@ The SharePoint web application must be configured with Kerberos and the appropri
        New-SPAlternateURL -Url $internalUrl -WebApplication $wa -Zone Extranet -Internal
        ```
 
-    `. Open the **SharePoint Central Administration** site.
+    Open the **SharePoint Central Administration** site.
     1. Under **System Settings**, select **Configure Alternate Access Mappings**. The **Alternate Access Mapping Collection** box opens.
-    1. Filter the display with the web application that was extended.
+    1. Filter the display with the web application that you extended.
 
-        ![Alternate Access Mappings of extended application](./media/application-proxy-integrate-with-sharepoint-server/extend-webapp-aam.png)
+        :::image type="content" source="./media/application-proxy-integrate-with-sharepoint-server/extend-webapp-aam.png" alt-text="Screenshot of Alternate Access Mappings page showing internal and public URLs for Default and Extranet zones with SharePoint web application selected.":::
 
 ### Make sure the SharePoint web application is running under a domain account
 
@@ -129,13 +129,13 @@ To identify the account running the application pool of the SharePoint web appli
 1. Go to **Security** and select **Configure service accounts**.
 1. Select **Web Application Pool - YourWebApplicationName**.
 
-   ![Choices for configuring a service account](./media/application-proxy-integrate-with-sharepoint-server/service-web-application.png)
+   :::image type="content" source="./media/application-proxy-integrate-with-sharepoint-server/service-web-application.png" alt-text="Screenshot of service account selection dialog with Web Application Pool - SharePoint 80 and domain account dropdown.":::
 
 1. Confirm that **Select an account for this component** returns a domain account, and remember it, since you use it in the next step.
 
 ### Make sure that an HTTPS certificate is configured for the IIS site of the extranet zone
 
-Because the Internal URL uses HTTPS protocol (`https://SharePoint/`), a certificate must be set on the Internet Information Services (IIS) site.
+Because the Internal URL uses HTTPS protocol (`https://SharePoint/`), you must set a certificate on the Internet Information Services (IIS) site.
 
 1. Open the Windows PowerShell console.
 1. Run the following script to generate a self-signed certificate and add it to the computer's `MY store`.
@@ -146,7 +146,7 @@ Because the Internal URL uses HTTPS protocol (`https://SharePoint/`), a certific
    ```
 
    > [!IMPORTANT]
-   > Self-signed certificates are suitable only for test purposes. In production environments, we strongly recommend that you use certificates issued by a certificate authority instead.
+   > Self-signed certificates are suitable only for test purposes. In production environments, use certificates issued by a certificate authority instead.
 
 1. Open the Internet Information Services Manager console.
 1. Expand the server in the tree view, expand **Sites**, select the **SharePoint - Microsoft Entra ID Proxy** site, and select **Bindings**.
@@ -157,18 +157,18 @@ You can now access the SharePoint site externally through Microsoft Entra applic
 
 ## Step 3: Configure Kerberos Constrained Delegation
 
-Users initially authenticate in Microsoft Entra ID and then to SharePoint by using Kerberos through the Microsoft Entra private network connector. To allow the connector to obtain a Kerberos token on behalf of the Microsoft Entra user, you must configure Kerberos Constrained Delegation (KCD) with protocol transition. To learn more about KCD, see [Kerberos Constrained Delegation overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)).
+Users initially authenticate in Microsoft Entra ID and then to SharePoint by using Kerberos through the Microsoft Entra private network connector. To allow the connector to obtain a Kerberos token on behalf of the Microsoft Entra user, you must configure Kerberos Constrained Delegation (KCD) with protocol transition. For more information about KCD, see [Kerberos Constrained Delegation overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj553400(v=ws.11)).
 
 ### Set the Service Principal Name (SPN) for the SharePoint service account
 
-In this article, the internal URL is `https://sharepoint`, and so the service principal name (SPN) is `HTTP/sharepoint`. You must replace those values with the values that correspond to your environment.
+In this article, the internal URL is `https://sharepoint`, and so the service principal name (SPN) is `HTTP/sharepoint`. Replace those values with the values that correspond to your environment.
 To register SPN `HTTP/sharepoint` for the SharePoint application pool account `Contoso\spapppool`, run the following command from a command prompt, as an administrator of the domain:
 
 `setspn -S HTTP/sharepoint Contoso\spapppool`
 
-The `Setspn` command searches for the SPN before it adds it. If the SPN already exists, you see a **Duplicate SPN Value** error. Remove the existing SPN. Verify that the SPN was added successfully by running the `Setspn` command with the `-L` option. To learn more about the command, see [Setspn](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)).
+The `Setspn` command searches for the SPN before it adds it. If the SPN already exists, you see a **Duplicate SPN Value** error. Remove the existing SPN. Verify that the SPN was added successfully by running the `Setspn` command with the `-L` option. For more information about the command, see [Setspn](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)).
 
-### Make sure the connector is trusted for delegation to the SPN that was added to the SharePoint application pool account
+### Make sure the connector is trusted for delegation to the SPN that you added to the SharePoint application pool account
 
 Configure the KCD so that the Microsoft Entra application proxy service can delegate user identities to the SharePoint application pool account. Configure KCD by enabling the private network connector to retrieve Kerberos tickets for your users who are authenticated in Microsoft Entra ID. Then, that server passes the context to the target application (SharePoint in this case).
 
@@ -182,13 +182,22 @@ To configure the KCD, follow these steps for each connector machine:
 1. In the SPN list, select the one that you created earlier for the service account.
 1. Select **OK** and then select **OK** again to save your changes.
   
-   ![Delegation settings](./media/application-proxy-integrate-with-sharepoint-server/delegation-box2.png)
+   :::image type="content" source="./media/application-proxy-integrate-with-sharepoint-server/delegation-box2.png" alt-text="Screenshot of Delegation tab showing 'Trust this computer for delegation to specified services only' and 'Use any authentication protocol' selected.":::
 
 You're now ready to sign in to SharePoint by using the external URL and to authenticate with Azure.
 
 ## Troubleshoot sign-in errors
 
-If sign-in to the site isn't working, you can get more information about the issue in the Connector logs: From the machine running the connector, open the event viewer, go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector**, and inspect the **Admin** log.
+If sign-in to the site isn't working, you can get more information about the issue in the Connector logs. From the machine running the connector, open the event viewer, go to **Applications and Services Logs** > **Microsoft** > **Microsoft Entra private network** > **Connector**, and inspect the **Admin** log.
+
+## Troubleshoot BadGateway Kerberos error
+ 
+If you see the **BadGateway Incorrect Kerberos** error, run the following commands in Windows PowerShell in the domain controller, as an admin. Replace `[servername]` and `[serviceaccount]` with the actual values from your environment.
+
+1. `$connector = Get-ADComputer -Identity "[servername]$"`
+1. `Set-ADUser -Identity "[serviceaccount]" -PrincipalsAllowedToDelegateToAccount $connector`
+
+:::image type="content" source="media/application-proxy-integrate-with-sharepoint-server/bad-gateway-kerberos-error.png" alt-text="Screenshot of error message stating 'BadGateway: The corporate app can't be accessed' due to incorrect Kerberos constrained delegation configuration." lightbox="media/application-proxy-integrate-with-sharepoint-server/bad-gateway-kerberos-error.png":::
 
 ## Next steps
 

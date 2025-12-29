@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 07/30/2025
+ms.date: 11/18/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
 ---
 
@@ -38,7 +38,7 @@ In this section, you create the form that collects the user's sign-in informatio
 
 1. Create *sign-in/components/InitialForm.tsx* file, then paste the code from [sign-in/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/InitialForm.tsx). This component displays a form that collects a user's username (email). 
 
-1. If your choice of authentication method is email and one-time passcode, create a *sign-in/components/CodeForm.tsx* file, then paste the code from [sign-in/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/CodeForm.tsx). If the administrator sets email one-time passcode as the sign-in flow in the Microsoft Entra admin center, this component displays a form to collect the one-time passcode from the user. 
+1. If your choice of authentication method is email and one-time passcode, create a *sign-in/components/CodeForm.tsx* file, then paste the code from [sign-in/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/CodeForm.tsx). If the administrator sets email one-time passcode as the sign-in flow in the Microsoft Entra admin center, this component displays a form to collect the one-time passcode from the user. 
 
 1. If your choice of authentication method is email and password, create a *sign-in/components/PasswordForm.tsx* file, then paste the code from [sign-in/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/CodeForm.tsx). This component displays a form that collects a user's password.
 
@@ -272,6 +272,10 @@ One of the errors that can result from the `signIn()` method is `result.error?.i
 ## Run and test your app
 
 Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-your-app) to run your app, then test sign-in flow. 
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Related content
 

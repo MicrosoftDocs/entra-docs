@@ -206,6 +206,8 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50161 | Failed to validate authorization url of external claims provider. |
 | AADSTS50162 | Claims transformation has timed out. This indicates too many or too complex transformations may have been configured for this application. A retry of the request may succeed. Otherwise, please contact your admin to fix the configuration. |
 | AADSTS50163 | Regular expression replacement for claims transformation has resulted in a claim which exceeds the size limit. Please contact your admin to fix the configuration.|
+| AADSTS501631 | Regular expression replacement for claims transformation results in too many replacements in the input sourceClaim. Please contact your admin to fix the configuration. |
+| AADSTS501632 | Regular expression replacement for claims transformation has too many substitution parameters in the replacement input parameter. Please contact your admin to fix the configuration. |
 | AADSTS50164 | The supplied access token was not issued for the purpose for which it is being used. Expected a token with purpose '{name}'. |
 | AADSTS50165 | The token encrypting algorithm '{algorithm}' requested by the application isn't supported for this type of token. This indicates the application is misconfigured. |
 | AADSTS50166 | Request to External OIDC endpoint failed. |

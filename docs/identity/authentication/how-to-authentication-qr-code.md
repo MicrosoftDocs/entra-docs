@@ -26,7 +26,7 @@ Before you enable QR code authentication method, review the best practices for u
 
 
 - An active Azure subscription.
-  - If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+  - If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A Microsoft Entra tenant associated with your subscription.
   - If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
 - You need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role in your Microsoft Entra tenant to enable the QR code authentication method.

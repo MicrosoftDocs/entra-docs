@@ -9,7 +9,7 @@ ms.author: henrymbugua
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/29/2024
+ms.date: 11/17/2025
 ms.custom:
 #Customer intent: As a dev, devops, I want to configure native authentication Android Kotlin sample app enable customer users to sign up, sign in, sign out and reset password by using Microsoft Entra's native authentication.
 ---
@@ -22,7 +22,7 @@ In this quickstart you learn how to run an Android sample application that demon
  
 ## Prerequisites  
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
@@ -109,6 +109,9 @@ In this section, you test email with password flow, with its variants such as, e
 
 Use the steps in [Call a protected web API in a sample Android mobile app by using native authentication](quickstart-native-authentication-android-call-api.md) to call a protected web API from a sample Android mobile app.
  
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Next steps
 

@@ -26,7 +26,7 @@ You'll learn how to:
 
 ## Prerequisites
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - An Azure DevOps organization. [Create one for free](/azure/devops/pipelines/get-started/pipelines-sign-up).
     - To use Microsoft-hosted agents, your Azure DevOps organization must have access to Microsoft-hosted parallel jobs. [Check your parallel jobs and request a free grant](/azure/devops/pipelines/troubleshooting/troubleshooting#check-for-available-parallel-jobs).
 - A Microsoft Entra [tenant](./quickstart-create-new-tenant.md).

@@ -67,8 +67,10 @@ Because the policy is applied to the Azure management portal and API, any servic
 - Classic deployment model APIs
 - Microsoft 365 admin center
 - Microsoft IoT Central
+- Microsoft Defender Multitenant management
 - SQL Managed Instance
 - Visual Studio subscriptions administrator portal
+  
 
 > [!CAUTION]
 > Conditional Access policies associated with the Windows Azure Service Management API [no longer cover Azure DevOps](/azure/devops/organizations/accounts/conditional-access-policies#azure-resource-manager-audience).
@@ -168,7 +170,9 @@ If the [recommended baseline MFA policy without app exclusions](policy-all-users
 1. Create or modify an existing policy.
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select > **Select resources** > **Edit filter**.  
 1. Adjust the filter to include your attribute set and definition from earlier.
-1. Save the policy
+1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, then select **Select**.
+1. Confirm your settings and set **Enable policy** to **Report-only**.
+1. Select **Create** to create to enable your policy.
 
 > [!NOTE]
 > Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining app exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.
@@ -182,6 +186,10 @@ The **All internet resources with Global Secure Access** option allows admins to
 These profiles in Global Secure Access enable admins to define and control how traffic is routed through Microsoft Entra Internet Access and Microsoft Entra Private Access. Traffic forwarding profiles can be assigned to devices and remote networks. For an example of how to apply a Conditional Access policy to these traffic profiles, see the article [How to apply Conditional Access policies to the Microsoft 365 traffic profile](/entra/global-secure-access/how-to-target-resource-microsoft-365-profile).
 
 For more information about these profiles, see the article [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding).
+
+#### All agent resources (Preview)
+
+Applying a Conditional Access policy to All agent resources enforces the policy for all token requests to agent identity blueprint principals and agent identities.
 
 ## User actions
 
@@ -202,9 +210,9 @@ User actions are tasks that a user performs. Conditional Access supports two use
 
 ## Authentication context
 
-Authentication context secures data and actions in applications, including custom applications, line-of-business (LOB) applications, SharePoint, and applications protected by Microsoft Defender for Cloud Apps.
+Authentication context secures data and actions in applications. These applications include custom applications, line-of-business (LOB) applications, SharePoint, or applications protected by Microsoft Defender for Cloud Apps. It can also be used with Microsoft Entra Privileged Identity Management (PIM) to enforce Conditional Access policies during role activation.
 
-For example, an organization might store files in SharePoint sites, such as a lunch menu or a secret BBQ sauce recipe. Everyone can access the lunch menu site, but users accessing the secret BBQ sauce recipe site might need to use a managed device and agree to specific terms of use.
+For example, an organization might store files in SharePoint sites like a lunch menu or a secret BBQ sauce recipe. Everyone might access the lunch menu site, but users accessing the secret BBQ sauce recipe site might need to use a managed device and agree to specific terms of use. Similarly, an administrator activating a privileged role through PIM might be required to perform multifactor authentication or use a compliant device.
 
 Authentication context works with users or [workload identities](workload-identity.md), but not in the same Conditional Access policy.
 
@@ -235,11 +243,12 @@ To delete an authentication context, ensure it has no assigned Conditional Acces
 
 ### Tag resources with authentication contexts
 
-Learn more about using authentication contexts in applications in these articles.
+To learn more about using authentication contexts, see the following articles.
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Microsoft Defender for Cloud Apps](/defender-cloud-apps/session-policy-aad?branch=pr-en-us-2082#require-step-up-authentication-authentication-context)
 - [Custom applications](~/identity-platform/developer-guide-conditional-access-authentication-context.md)
+- [Privileged Identity Management - On activation, require Microsoft Entra Conditional Access authentication context](/entra/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings#on-activation-require-microsoft-entra-conditional-access-authentication-context)
 
 ## Related content
 

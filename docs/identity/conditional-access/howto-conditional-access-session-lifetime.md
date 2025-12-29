@@ -65,6 +65,9 @@ To ensure your policy works as expected, test it before rolling it out into prod
    1. Select a value from dropdown.
 1. Save your policy.
 
+> [!NOTE]
+> Session lifetime settings, including sign-in frequency and persistent browser sessions, determine how often users must reauthenticate and whether sessions persist across browser restarts. Shorter lifetimes enhance security for high-risk apps, while longer ones improve convenience for trusted or managed devices.
+
 ### Policy 3: Sign-in frequency control every time risky user
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
