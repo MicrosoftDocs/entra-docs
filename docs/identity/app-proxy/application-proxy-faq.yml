@@ -30,7 +30,7 @@ sections:
       - question: |
          An application proxy app's client secret (CWAP_AuthSecret) is nearing expiry or has already expired. What should I do?
         answer: |
-           Application Proxy apps no longer rely on CWAP secrets. For apps using Entra ID pre‑authentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, do not expire, and require significantly less maintenance.
+              Application Proxy apps no longer rely on CWAP secrets. For apps using Entra ID pre-authentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, do not expire, and require significantly less maintenance.
            Applications configured with Passthrough pre‑authentication or those using Access Tokens do not require Federated Identity Credentials — even if an FIC was previously created.
            
            You can safely ignore any existing CWAP secrets in the app registration of your Application Proxy app and/or clean-up old or expired secrets.
