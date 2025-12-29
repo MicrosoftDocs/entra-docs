@@ -34,7 +34,7 @@ sections:
               Applications configured with Passthrough pre-authentication or those using Access Tokens do not require Federated Identity Credentials — even if an FIC was previously created.
            
               You can safely ignore any existing CWAP secrets in the app registration of your Application Proxy app and/or clean-up old or expired secrets.
-           Learn more about Federated Identity Credentials here: https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview?view=graph-rest-1.0
+              For more information about Federated Identity Credentials, see [Overview of federated identity credentials in Microsoft Entra ID](/graph/api/resources/federatedidentitycredentials-overview).
 
       - question: |
          Can I delete an application proxy app from the App registrations page in the Microsoft Entra admin center? 
