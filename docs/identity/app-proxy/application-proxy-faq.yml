@@ -23,9 +23,18 @@ sections:
         answer: |
             No, the following configuration items are being used by app proxy and shouldn't be altered or deleted:
             - Enable/Disable “Allow public clients flows”.
-            - CWAP_AuthSecret (Client secrets).
+            - Federated credentials.
             - API Permissions.
             Modifying any of the above configuration items on the App registration page breaks preauthentication for Microsoft Entra application proxy.
+
+      - question: |
+         An application proxy app's client secret (CWAP_AuthSecret) is nearing expiry or has already expired. What should I do?
+        answer: |
+           Application Proxy apps no longer rely on CWAP secrets. For apps using Entra ID pre‑authentication, Federated Identity Credentials (FIC) are now used instead. FIC is more secure, do not expire, and require significantly less maintenance.
+           Applications configured with Passthrough pre‑authentication or those using Access Tokens do not require Federated Identity Credentials — even if an FIC was previously created.
+           
+           You can safely ignore any existing CWAP secrets in the app registration of your Application Proxy app and/or clean-up old or expired secrets.
+           Learn more about Federated Identity Credentials here: https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview?view=graph-rest-1.0
 
       - question: |
          Can I delete an application proxy app from the App registrations page in the Microsoft Entra admin center? 
