@@ -146,4 +146,4 @@ To complete the steps in this section, ensure you have the Organization Administ
     
 ### Test the SSO configuration
 
-Refer to [Testing a federation] (https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/testing-a-federation-v58742261.html?toc=2.5.4.10) on how to test that your SSO is setup successfully.
+Refer to [Testing a federation] (https://support.lexmark.com/en_us/manuals-guides/online/Lexmark-Cloud-Platform/testing-a-federation-v58742261.html?toc=2.5.4.10) on how to test that your SSO is set up successfully.
