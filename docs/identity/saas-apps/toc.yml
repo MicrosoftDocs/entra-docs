@@ -1724,7 +1724,9 @@
       - name: Lyve Cloud
         href: lyve-cloud-tutorial.md
       - name: Lexmark cloud services
-        href: lexmark-cloud-services-oidc-tutorial.md
+        href: lexmark-cloud-services-tutorial.md
+      - name: Lexmark cloud services oidc
+        href: lexmark-cloud-services-oidc-tutorial.md      
       - name: M-Files
         href: m-files-tutorial.md
       - name: Mail Luck!
