@@ -1,8 +1,8 @@
 ---
-title: Embrace cloud-first posture and transfer user Source of Authority (SOA) to the cloud (Preview)
+title: Embrace cloud-first posture and transfer user Source of Authority (SOA) to the cloud
 description: Learn about Source of Authority (SOA) for users, including prerequisites and supported scenarios.
 author: owinfreyATL
-ms.topic: conceptual
+ms.topic: article
 ms.service: entra-id
 ms.subservice: hybrid
 ms.date: 08/13/2025
@@ -12,7 +12,7 @@ ms.reviewer: dhanyak
 #CustomerIntent: As an IT administrator, I want to learn about user Source of Authority (SOA) so that I can minimize my on-premises footprint.
 ---
 
-# Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud (Preview)
+# Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud
 
 Organizations are increasingly adopting a cloud-first approach to modernize their Identity and Access Management (IAM) solutions. For the road to the cloud initiative, Microsoft has [modeled five states of transformation](/entra/architecture/road-to-the-cloud-posture#five-states-of-transformation) to align with customer business goals. Transitioning the Source of Authority (SOA) for users from on-premises Active Directory Domain Services (AD DS) to the cloud is a key step in this journey. This process, known as AD DS minimization, reduces the complexity of on-premises infrastructure by managing users directly in the cloud.
 
@@ -57,5 +57,5 @@ Before you begin transferring the SOA for users in your organization, your envir
 
 ## Related content
 
-- [Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)](how-to-user-source-of-authority-configure.md)
-- [Prepare Your Environment for User SOA (Preview)](prepare-user-source-of-authority-environment.md)
+- [Configure User Source of Authority (SOA) in Microsoft Entra ID](how-to-user-source-of-authority-configure.md)
+- [Prepare Your Environment for User SOA](prepare-user-source-of-authority-environment.md)
