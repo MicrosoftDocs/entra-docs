@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 12/15/2025
+ms.date: 01/04/2026
 ms.author: rolyon
 ms.custom: references_regions
 ---
