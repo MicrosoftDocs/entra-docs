@@ -105,7 +105,7 @@ This risk assessment capability helps IT administrators identify potential secur
 
 Application owners can request updates to risk scores by navigating to the gallery -> Selecting the app that needs updating -> Scrolling to the specific risk factor that needs updating -> Selecting the feedback symbol on the right side of the risk factor name -> Completing the **Give feedback to Microsoft** form with options like score update request, outdated app data, or suggesting new risk factors -> providing detailed information about the requested changes and submitting the request.
 
- [!NOTE]
+> [!NOTE]
 > Feedback submitted through this process is sent to Microsoft Defender for Cloud Apps, which reviews and makes any necessary updates to application risk scores and data.
 
 :::image type="content" source="media/overview-application-gallery/app-risk-score-details.png" alt-text="Screenshot showing application risk score details with feedback options for individual risk factors.":::
