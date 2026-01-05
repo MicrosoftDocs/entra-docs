@@ -931,12 +931,13 @@ Configure the certificate's public key so that External ID can encrypt the passw
 
 #### 3.2.2 Add the key to the application
 
-Use Microsoft Graph API to configure the certificate on your custom authentication extension app registration. Make a PATCH request with the following information:
+Use Microsoft Graph API to configure the certificate on your custom authentication extension app registration. Make sure that you use the same GUID for both `keyId` and `tokenEncryptionKeyId`.
+Make a PATCH request with the following information:
 
 Replace the placeholders with your values:
 - `{object-id}`: Your custom authentication extension app's object ID (not the application ID).
 - `{end-date}`: Certificate expiration date (for example, `2026-11-25T17:44:47Z`).
-- `{unique-guid}`: A new GUID. You can generate one using PowerShell: `[guid]::NewGuid()`.
+- `{key-guid}`: A new GUID. You can generate one using PowerShell: `[guid]::NewGuid()`.
 - `{start-date}`: Certificate start date (for example, `2025-11-25T17:44:47Z`).
 - `{base64-encoded-public-key}`: The base64 string from the previous step.
 
@@ -957,7 +958,7 @@ Authorization: Bearer {access-token}
       "displayName": "CN=JitMigration"
     }
   ],
-  "tokenEncryptionKeyId": "{unique-guid}"
+  "tokenEncryptionKeyId": "{key-guid}"
 }
 ```
 
