@@ -48,7 +48,7 @@ items:
   items:
   - name: Overview of Microsoft Entra agents
     href: entra-agents.md
-  - name: Conditional Access optimization agent
+  - name: Conditional Access Optimization Agent
     items: 
     - name: Get started
       href: ./conditional-access-agent-optimization.md
@@ -56,9 +56,9 @@ items:
       href: ./conditional-access-agent-optimization-settings.md
     - name: Review and approve suggestions
       href: ./conditional-access-agent-optimization-review-suggestions.md
-    - name: Chat with the optimization agent
+    - name: Chat with the agent
       href: ./conditional-access-agent-optimization-chat.md
-    - name: Optimization agent logs and metrics
+    - name: Agent logs and metrics
       href: ./conditional-access-agent-optimization-logs-metrics.md
     - name: Phased rollout
       href: ./conditional-access-agent-optimization-phased-rollout.md

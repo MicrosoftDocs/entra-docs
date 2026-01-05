@@ -14,7 +14,7 @@ ms.custom: security-copilot
 ms.collection: msec-ai-copilot
 ---
 
-# How to review and apply suggestions from the Conditional Access Optimization Agent
+# Review and apply suggestions from the Conditional Access Optimization Agent
 
 The Microsoft Entra Conditional Access Optimization Agent provides suggestions to create or update Conditional Access policies and creates reports for activity related to those policies. The suggestions vary based on what the agent finds. As the administrator, you need to review the suggestions and decide what to do.
 
