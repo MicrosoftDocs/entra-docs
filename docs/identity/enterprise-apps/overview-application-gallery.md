@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: overview
-ms.date: 12/06/2024
+ms.date: 01/05/2026
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, sfi-image-nochange
@@ -28,6 +28,7 @@ The following are benefits of using applications available in the gallery:
 - A quick search finds the needed application.
 - Free, Basic, and Premium Microsoft Entra users can all use the application.
 - Users can easily find [step-by-step configuration tutorials](~/identity/saas-apps/tutorial-list.md) that are available for onboarding gallery applications.
+- Organizations can assess application security through calculated risk scores that evaluate over 90 risk factors across security, compliance, legal, and general categories.
 
 ## Applications in the gallery
 
@@ -43,6 +44,10 @@ When searching for an application, you can also specify specific filters, such a
 
 - **Single sign-on options** – You can search for applications that support these SSO options: SAML, OpenID Connect (OIDC), Password, or Linked. For more information about these options, see [Plan a single sign-on deployment in Microsoft Entra ID](plan-sso-deployment.md).
 - **User account management** – The only option available is [automated provisioning](~/identity/app-provisioning/user-provisioning.md).
+- **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
+- **Risk Score** – View applications by their calculated security risk score from 1 (highest risk) to 10 (lowest risk). This score helps identify applications that meet your organization's security requirements.
+- **Security Risk Factors** – Search for applications that meet specific security measures such as encryption at rest, multifactor authentication, admin audit trails, user audit trails, and other security standards that protect data used by the application.
+- **Compliance Risk Factors** – Narrow results to applications with compliance standards and certifications such as SOC 2, ISO 27001, HIPAA, PCI-DSS, and other regulatory requirements that ensure the application meets industry best practices.
 - **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
 
  > [!NOTE]
@@ -64,7 +69,7 @@ There are five ways on-premises applications can be connected to Microsoft Entra
 
 :::image type="content" source="media/overview-application-gallery/on-premises-applications.png" alt-text="Screenshot showing the on-premises application options on the Microsoft Entra application gallery pane in the Microsoft Entra admin center.":::
 
-If your application uses Kerberos and also requires group memberships, then you can populate Windows Server AD groups from corresponding groups in Microsoft Entra. For more information, see [group writeback with Microsoft Entra Cloud Sync](~/identity/hybrid/group-writeback-cloud-sync.md).
+If your application uses Kerberos and also requires group memberships, then you can populate Windows Server AD groups from corresponding groups in Microsoft Entra ID. For more information, see [Group writeback with Microsoft Entra Cloud Sync](~/identity/hybrid/group-writeback-cloud-sync.md).
 
 The second is using the provisioning agent to provision to an on-premises application that has its own user store and doesn't rely upon Windows Server AD. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use [SQL databases](../app-provisioning/on-premises-sql-connector-configure.md), that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
 
@@ -80,33 +85,34 @@ A collection of featured applications is listed by default when you open the Mic
 
 :::image type="content" source="media/overview-application-gallery/featured-applications.png" alt-text="Screenshot showing the featured applications on the Microsoft Entra application gallery pane in the Microsoft Entra admin center.":::
 
-- **Federated SSO** - When you set up [SSO](what-is-single-sign-on.md) to work between multiple identity providers, it results to federation. An SSO implementation based on federation protocols improves security, reliability, user experiences, and implementation. Some applications implement federated SSO as SAML-based or as OIDC-based. For SAML applications, when you select create, the application is added to your tenant. For OIDC applications, the administrator must first sign up or sign-in on the application's website to add the application to Microsoft Entra ID.
+- **Federated SSO** - When you set up [SSO](what-is-single-sign-on.md) to work between multiple identity providers, it results to federation. An SSO implementation based on federation protocols improves security, reliability, user experiences, and implementation. Some applications implement federated SSO as SAML-based or as OIDC-based. For SAML applications, when you select create, the application is added to your tenant. For OIDC applications, the administrator must first sign up or sign-in to the application's website to add the application to Microsoft Entra ID.
 - **Provisioning** - Microsoft Entra ID to SaaS [application provisioning](~/identity/app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the SaaS applications that users need access to.
 
 ## Understanding application risk scores
 
-Microsoft Defender for Cloud Apps provides risk scores for SaaS applications in the gallery to help organizations assess security posture and make informed decisions about application adoption. These risk scores are calculated using a weighted average of sub-scores across four main categories: general, security, compliance, and legal factors.
-
-Each application receives a score from 1 to 10, where 1 represents the highest risk and 10 represents the lowest risk. The scoring is based on over 90 risk factors, including regulatory certifications, industry standards, and security best practices such as:
+Microsoft Defender for Cloud Apps assigns risk scores to SaaS applications in the gallery to help organizations evaluate security posture and make informed adoption decisions.
+ 
+Each application is scored from 1 to 10, where 1 indicates highest risk and 10 indicates lowest risk. Scores are calculated using a weighted average across four risk categories:
 
 - **General factors**: Company stability, domain age, and popularity
 - **Security factors**: Encryption methods, multifactor authentication, and audit trails  
 - **Compliance factors**: Standards like SOC 2, ISO 27001, HIPAA, and PCI-DSS
 - **Legal factors**: Data protection policies and regulatory compliance
 
+The scoring model evaluates more than 90 risk indicators derived from publicly available data, vendor disclosures, and observed security practices.
+
 Organizations can customize the weighting of these categories to align with their specific business requirements and can manually override scores when needed. This risk assessment capability helps IT administrators identify potential security vulnerabilities and make data-driven decisions when selecting applications for their organization.
 
-For detailed information about risk scoring methodology, customization options, and how to request score updates, see [Find your cloud app and calculate risk scores](/defender-cloud-apps/risk-score).
+For detailed information about risk scoring methodology, customization options, and how to request score updates, see [Find your cloud app and calculate risk scores](/defender-cloud-apps/risk-score). You can also programmatically access application templates and their risk scores using the [List applicationTemplates API](https://learn.microsoft.com/en-us/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http).
 
 ## Create your own application
 
 When you select the **Create your own application** link near the top of the pane, you see a new pane that lists the following choices:
 
-- **Register an application to integrate with Microsoft Entra ID (App you’re developing)** – This choice is meant for developers who want to work on the integration of their application that uses OpenID Connect with Microsoft Entra ID. This choice doesn’t provide an opportunity to publish your application to the gallery. It’s only for development purposes to work on integration.
-- **Integrate any other application you don’t find in the gallery (Non-gallery)** – This choice is meant for an administrator to make a SAML-based application that isn't in the gallery available to users in their organization. By integrating the application, the administrator can configure, secure, and monitor its use. This choice doesn’t provide a way to publish the application to the gallery. It does provide secure access to the application for users in your tenant.
-- **Configure Application Proxy for secure remote access to an on-premises application** – This choice is meant for an administrator to enable SSO and secure remote access for web applications hosted on-premises by connecting with Application Proxy.
+- **Register an application to integrate with Microsoft Entra ID (App you're developing)** – This choice is meant for developers who want to work on the integration of their application that uses OpenID Connect with Microsoft Entra ID. This choice doesn't provide an opportunity to publish your application to the gallery. It's only for development purposes to work on integration. For more information, see [Set up OIDC-based single sign-on for an application](add-application-portal-setup-oidc-sso.md).
+- **Configure Application Proxy for secure remote access to an on-premises application** – This choice is meant for an administrator to enable SSO and secure remote access for web applications hosted on-premises by connecting with Application Proxy. For more information, see [What is Microsoft Entra Application Proxy?](~/identity/app-proxy/overview-what-is-app-proxy.md).
 
-## Request new gallery application
+## Request an app to be added to the gallery
 
 After you successfully integrate an application with Microsoft Entra ID and thoroughly tested it, you file a request for it to be added to the gallery. Publishing an application to the gallery from the portal isn't supported but there's a process that you can follow to request it to be added. For more information about publishing to the gallery, select [Request new gallery application](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).
 
