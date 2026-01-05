@@ -309,6 +309,8 @@ items:
       href: ways-users-get-assigned-to-applications.md
     - name: Methods of removing user access to an app
       href: methods-for-removing-user-access.md
+    - name: Restrict password addition to apps
+      href: block-password-addition.md
   - name: Resources
     items:
         - name: Migration resources
