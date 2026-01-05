@@ -16,7 +16,7 @@ ms.reviewer: cokoopma
 
 # Risk detection types and levels
 
-Microsoft Entra ID Protection provides organizations with information about suspicious activity in their tenant and allows you to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to user accounts and service principals in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
+Microsoft Entra ID Protection provides organizations with information about suspicious activity in their tenant and allows you to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to user accounts and service principals in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky users report](concept-risk-reports.md). 
 
 User risk detections might flag a legitimate user account as at risk, when a potential threat actor gains access to an account by compromising their credentials or when anomalous user activity is detected. Sign-in risk detections represent the probability that a given authentication request isn't the authorized owner of the account. Having the ability to identify risk at the user and sign-in level is critical for customers to be empowered to secure their tenant.
 
@@ -75,6 +75,12 @@ Location in risk detections is determined using IP address lookup. Sign-ins from
 
 > [!NOTE]
 > Looking for the **Risk detections mapped to riskEventType** table? It moved to the new [**Risk detection and event types**](concept-identity-protection-risks.md) article.
+
+## Agent detections (Preview)
+
+The **Risk detections** report includes a dedicated tab for **Agent detections** that displays risk detections specifically for autonomous AI agents using [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md). These detections help identify suspicious activities associated with agents, allowing administrators to monitor and respond to potential threats effectively. For a list of the risk detections associated with agents, see [ID Protection for agents](concept-risky-agents.md#activities-contributing-to-risk).
+
+:::image type="content" source="media/concept-risk-detection-types/risk-detections-report.png" alt-text="Screenshot showing the Agent detections column on the risk detections report." lightbox="media/concept-risk-detection-types/risk-detections-report.png":::
 
 ## Related content
 

@@ -1,12 +1,12 @@
 ---
 title: Microsoft Entra ID Governance integrations
 description: This page provides an overview of the Microsoft Entra ID Governance integrations available to automate provisioning and governance controls.
-author: billmath
+author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 07/18/2025
-ms.author: billmath
+ms.date: 12/03/2025
+ms.author: owinfrey
 ms.reviewer: amycolannino
 ---
 
@@ -25,6 +25,7 @@ ms.reviewer: amycolannino
 | [SQL database](../identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x|
 | Cloud platform| [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
 | Cloud platform| [Google Cloud Platform - User Provisioning](../identity/saas-apps/g-suite-provisioning-tutorial.md) |
+| Business applications| Multiple. With Microsoft Entra integrations to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance. |
 | Business applications|SAP applications integrated with [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
 | Business applications|Applications on SAP BTP [using role collections](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276) |
 | CRM| [Salesforce - User Provisioning](../identity/saas-apps/salesforce-provisioning-tutorial.md) |
@@ -34,9 +35,9 @@ ms.reviewer: amycolannino
 <a name='entra-identity-governance-integrations'></a>
 
 ## Microsoft Entra ID Governance integrations
-The list below provides key integrations between Microsoft Entra ID Governance and various applications, including both provisioning and SSO integrations. For a full list of applications that Microsoft Entra ID integrates with specifically for SSO, see [here](../identity/saas-apps/tutorial-list.md). 
+The following list provides key integrations between Microsoft Entra ID Governance and various applications, including both provisioning and SSO integrations. For a full list of applications that Microsoft Entra ID integrates with specifically for SSO, see: [SaaS App configuration guides for Microsoft Entra ID](../identity/saas-apps/tutorial-list.md). 
 
-Microsoft Entra ID Governance can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL and LDAP. If you're using a SaaS application which isn't listed, then [ask the SaaS vendor to onboard](../identity/enterprise-apps/v2-howto-app-gallery-listing.md).  For integration with other applications, see [integrating applications with Microsoft Entra ID](identity-governance-applications-integrate.md).
+Microsoft Entra ID Governance can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an SaaS application that isn't listed, then [ask the SaaS vendor to onboard](../identity/enterprise-apps/v2-howto-app-gallery-listing.md). For integration with other applications, see [integrating applications with Microsoft Entra ID](identity-governance-applications-integrate.md).
 
 | Application | Automated provisioning | Single Sign On (SSO)|
 | :--- | :-:  | :-: |
@@ -336,11 +337,10 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Genesys Cloud for Azure](../identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
 | [getAbstract](../identity/saas-apps/getabstract-provisioning-tutorial.md) | ● | ● |
 | [Getty Images](../identity/saas-apps/getty-images-tutorial.md) |  | ● |
-| [GitHub AE](../identity/saas-apps/github-ae-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Cloud - Enterprise Account](../identity/saas-apps/github-enterprise-cloud-enterprise-account-tutorial.md) |  | ● |
 | [GitHub Enterprise Managed User (OIDC)](../identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Managed User](../identity/saas-apps/github-enterprise-managed-user-provisioning-tutorial.md) | ● | ● |
-| [GitHub Enterprise Server](../identity/saas-apps/github-ae-tutorial.md) |  | ● |
+| [GitHub Enterprise Server](../identity/saas-apps/github-enterprise-server-provisioning-tutorial.md) | ● | ● |
 | [GitHub](../identity/saas-apps/github-provisioning-tutorial.md) | ● | ● |
 | [Global Relay Identity Sync](../identity/saas-apps/global-relay-identity-sync-provisioning-tutorial.md) | ● |  |
 | [GlobalOne](../identity/saas-apps/globalone-tutorial.md) |  | ● |
@@ -348,7 +348,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [goFLUENT](../identity/saas-apps/gofluent-tutorial.md) |  | ● |
 | [GoLinks](../identity/saas-apps/golinks-provisioning-tutorial.md) | ● | ● |
 | [Gong](../identity/saas-apps/gong-provisioning-tutorial.md) | ● |  |
-| [Google Cloud Platform](../identity/saas-apps/g-suite-provisioning-tutorial.md) | ● | ● |
 | [GoProfiles](../identity/saas-apps/goprofiles-tutorial.md) |  | ● |
 | [GoSearch](../identity/saas-apps/gosearch-tutorial.md) |  | ● |
 | [GoTo](../identity/saas-apps/goto-provisioning-tutorial.md) | ● | ● |
@@ -501,7 +500,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [MIC SAAS Portal](../identity/saas-apps/mic-saas-portal-tutorial.md) |  | ● |
 | [MicroFocus Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Microsoft 365](../fundamentals/concept-group-based-licensing.md) | ● | ● |
-| [Microsoft Active Directory Domain Services](../identity/domain-services/scoped-synchronization.md) | ● | ● |
 | [Microsoft Azure SQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Microsoft Azure](/azure/role-based-access-control/role-assignments-portal) | ● | ● |
 | [Microsoft Entra Domain Services](../identity/domain-services/synchronization.md) | ● | ● |
@@ -910,7 +908,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Zylo](../identity/saas-apps/zylo-tutorial.md) |  | ● |
 
 ## Partner driven integrations
-There is also a healthy partner ecosystem, further expanding the breadth and depth of integrations available with Microsoft Entra ID Governance. Explore the [partner integrations](../identity/app-provisioning/partner-driven-integrations.md) available, including connectors for:
+There's also a healthy partner ecosystem, further expanding the breadth and depth of integrations available with Microsoft Entra ID Governance. Explore the [partner integrations](../identity/app-provisioning/partner-driven-integrations.md) available, including connectors for:
 * Epic
 * Cerner
 * IBM RACF

@@ -2,7 +2,7 @@
 
 metadata:
   title: Create and manage group policy in Microsoft Entra Domain Services
-  description: Learn how to edit the built-in group policy objects (GPOs) and create your own custom policies in a Microsoft Entra Domain Services managed domain.
+  description: Learn how to edit the built-in Group Policy Objects (GPOs) and create your own custom policies in a Microsoft Entra Domain Services managed domain.
   author: justinha
   ms.author: justinha
   manager: dougeby
@@ -33,7 +33,7 @@ prerequisites:
     To complete this article, you need the following resources and privileges:
 
     * An active Azure subscription.
-        * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+        * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
     * A Microsoft Entra tenant associated with your subscription, either synchronized with an on-premises directory or a cloud-only directory.
         * If needed, [create a Microsoft Entra tenant](/azure/active-directory/fundamentals/sign-up-organization) or [associate an Azure subscription with your account](/azure/active-directory/fundamentals/how-subscriptions-associated-directory).
     * A Microsoft Entra Domain Services managed domain enabled and configured in your Microsoft Entra tenant.
@@ -78,7 +78,7 @@ procedureSection:
   - title: |
       Open the Group Policy Management Console and edit an object
     summary: |
-      Default group policy objects (GPOs) exist for users and computers in a managed domain. With the Group Policy Management feature installed from the previous section, let's view and edit an existing GPO. In the next section, you create a custom GPO.
+      Default Group Policy Objects (GPOs) exist for users and computers in a managed domain. With the Group Policy Management feature installed from the previous section, let's view and edit an existing GPO. In the next section, you create a custom GPO.
 
       > [!NOTE]
       > To administer Group Policy in a managed domain, you must be signed in to a user account that's a member of the *AAD DC Administrators* group.
@@ -109,7 +109,7 @@ procedureSection:
   - title: |
       Create a custom Group Policy Object
     summary: |
-      To group similar policy settings, you often create additional GPOs instead of applying all of the required settings in the single, default GPO. With Domain Services, you can create or import your own custom group policy objects and link them to a custom OU. If you need to first create a custom OU, see [create a custom OU in a managed domain](create-ou.md).
+      To group similar policy settings, you often create additional GPOs instead of applying all of the required settings in the single, default GPO. With Domain Services, you can create or import your own custom Group Policy Objects and link them to a custom OU. If you need to first create a custom OU, see [create a custom OU in a managed domain](create-ou.md).
     steps:
       - |
         In the **Group Policy Management** console, select your custom organizational unit (OU), such as *MyCustomOU*. Right-select the OU and choose **Create a GPO in this domain, and Link it here...**:

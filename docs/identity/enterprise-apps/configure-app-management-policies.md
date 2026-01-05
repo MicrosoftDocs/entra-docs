@@ -44,7 +44,7 @@ To learn more about how the app management policy API works, visit the [API docu
 
 To configure app management policies, you need:
 
-- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - The [Security Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#security-administrator) role, AND the [Cloud App Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference?#cloud-application-administrator) or [Application Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#application-administrator) role. OR, just the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 
 ## Configure a restriction
@@ -150,6 +150,9 @@ To grant an app an exception to the restriction blocking custom identifier URIs 
     POST https://graph.microsoft.com/beta/policies/appManagementPolicies
 
     {
+        "displayName": "Identifier URI exemption policy",
+        "description": "Policy granting an exemption to the nonDefaultUriAddition restriction",
+        "isEnabled": true,
         "restrictions": {
             "applicationRestrictions": {
                 "identifierUris": {
@@ -355,6 +358,9 @@ Sometimes, you aren't ready to apply a restriction to your entire tenant, but st
     POST https://graph.microsoft.com/beta/policies/appManagementPolicies
 
     {
+        "displayName": "Custom password policy",
+        "description": "Policy that enforces the custom password restriction",
+        "isEnabled": true,
         "restrictions": {
             "passwordCredentials": [
                 {
@@ -450,8 +456,8 @@ This means the properties of all four restrictions should match. Or, all four re
 
 The **Restrict max certificate lifetime** restriction expects all both of the following restrictions to be in the same state:
 
-- The `asymmetricKeyLifetime` restriction in the `applicationRestrictions.passwordCredentials` collection
-- The `asymmetricKeyLifetime` restriction in the `servicePrincipalRestrictions.passwordCredentials` collection
+- The `asymmetricKeyLifetime` restriction in the `applicationRestrictions.keyCredentials` collection
+- The `asymmetricKeyLifetime` restriction in the `servicePrincipalRestrictions.keyCredentials` collection
 
 This means the properties of both restrictions should match. Or, both restrictions shouldn't be present in the policy.
 

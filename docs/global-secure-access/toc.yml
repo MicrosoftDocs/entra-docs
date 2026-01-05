@@ -42,6 +42,8 @@ items:
     href: ./scripts/powershell-active-directory-certificate-service.md
   - name: Create a TLS certificate using OpenSSL
     href: ./scripts/powershell-open-secure-sockets-layer.md
+  - name: Install the Windows client as a proof of concept
+    href: ./scripts/powershell-windows-client-install-proof-of-concept.md
 - name: Concepts
   expanded: true
   items: 
@@ -59,8 +61,12 @@ items:
     href: concept-universal-continuous-access-evaluation.md
   - name: Application Usage Analytics
     href: overview-application-usage-analytics.md
-  - name: B2B Guest Access (preview)
+  - name: Continuous Access Evaluation for Application Proxy
+    href: concept-continuous-access-evaluation.md
+  - name: B2B Guest Access
     href: concept-b2b-guest-access.md
+  - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+    href: concept-secure-web-ai-gateway-agents.md
 - name: How-to guides
   expanded: true
   items:
@@ -75,7 +81,7 @@ items:
         href: how-to-install-android-client.md
       - name: Install the iOS client
         href: how-to-install-ios-client.md
-      - name: EDR/antivirus coexistence with Global Secure Access client
+      - name: Configure antivirus-client coexistence
         href: concept-edr-antivirus-coexistence.md
   - name: Remote networks
     expanded: false
@@ -140,6 +146,8 @@ items:
     items:
       - name: Understand Private Access
         href: concept-private-access.md
+      - name: Enable Intelligent Local Access (preview)
+        href: enable-intelligent-local-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
       - name: Enable Multi-Geo Capability
@@ -171,20 +179,28 @@ items:
     items:
       - name: Understand Internet Access
         href: concept-internet-access.md
+      - name: What is Transport Layer Security inspection? 
+        href: concept-transport-layer-security.md 
+      - name: Configure Transport Layer Security inspection settings
+        href: how-to-transport-layer-security-settings.md
+      - name: Configure Transport Layer Security inspection policies
+        href: how-to-transport-layer-security.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
       - name: Check URL category
         href: how-to-check-web-content-filtering-categories.md
-      - name: What is Transport Layer Security inspection? 
-        href: concept-transport-layer-security.md 
-      - name: Configure Transport Layer Security inspection 
-        href: how-to-transport-layer-security.md 
-      - name: Configure web content filtering
-        href: how-to-configure-web-content-filtering.md
       - name: Configure threat intelligence
         href: how-to-configure-threat-intelligence.md
+      - name: Configure cloud firewall
+        href: how-to-configure-cloud-firewall.md
       - name: Customize the block page
         href: how-to-customize-block-page.md
+      - name: Network content filtering
+        href: how-to-network-content-filtering.md
+      - name: Configure the AI Gateway Prompt Shield
+        href: how-to-ai-prompt-shield.md
+      - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
+        href: how-to-secure-web-ai-gateway-agents.md
   - name: Logs and monitoring
     expanded: false
     items:
@@ -208,6 +224,8 @@ items:
         href: how-to-export-connector-logs.md
       - name: Microsoft Sentinel integration
         href: how-to-sentinel-integration.md  
+      - name: Global Secure Access alerts
+        href: concept-alerts.md
   - name: Microsoft Global Secure Access deployment guides
     expanded: false
     items:
@@ -238,6 +256,8 @@ items:
         href: troubleshoot-app-access.md
       - name: "Troubleshoot Distributed File System (DFS) issues"
         href: troubleshoot-distributed-file-system.md
+      - name: Troubleshoot Transport Layer Security (TLS) inspection issues
+        href: troubleshoot-transport-layer-security.md
   - name: Partner ecosystem
     expanded: true
     items:
@@ -248,11 +268,20 @@ items:
          items:
             - name: Integration with Netskope
               href: concept-netskope-integration.md
+            - name: Create a custom Data Loss Prevention (DLP) profile
+              href: how-to-full-data-loss-protection.md
        - name: Coexistence with partners
          expanded: false
          items:
            - name: Coexistence with Cisco
-             href: concept-cisco-coexistence.md
+             expanded: false
+             items:
+               - name: Coexistence with Cisco Umbrella
+                 href: how-to-cisco-coexistence.md
+               - name: Coexistence with Cisco Secure Access
+                 href: how-to-cisco-secure-access-coexistence.md
+               - name: Coexistence with Cisco VPNs
+                 href: how-to-cisco-vpn-coexistence.md
            - name: Coexistence with Palo Alto Networks
              href: how-to-palo-alto-coexistence.md
            - name: Coexistence with Zscaler
@@ -266,6 +295,8 @@ items:
   items:
   - name: Remote network valid configurations
     href: reference-remote-network-configurations.md
+  - name: IP addresses advertised over BGP by remote network connectivity
+    href: reference-ip-addresses-advertised-by-remote-network-connectivity.md
   - name: Known limitations for Global Secure Access
     href: reference-current-known-limitations.md
   - name: Points of presence and service addresses

@@ -21,6 +21,8 @@ items:
         href: road-to-the-cloud-implement.md
       - name: Transition to the cloud
         href: road-to-the-cloud-migrate.md
+      - name: AD minimization case studies
+        href: road-to-the-cloud-ad-minimization.md
     - name: Parallel identity options
       href: parallel-identity-options.md
     - name: Automate identity provisioning to applications
@@ -241,6 +243,8 @@ items:
         href: id-protection-guide-introduction.md
       - name: Scenario - Detect protected resource risk
         href: id-protection-guide-detect.md
+      - name: Scenario - Analyze risk for effective remediation
+        href: id-protection-guide-analyze.md
       - name: Scenario - Investigate identity risk-related telemetry
         href: id-protection-guide-investigate.md
       - name: Scenario - Self-remediate resource risk

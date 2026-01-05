@@ -40,6 +40,9 @@ The following devices and applications support accessing resources where a token
 - Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the [known limitations section](#known-limitations) for unsupported device types.  
 - Windows Server 2019 or newer that are hybrid Microsoft Entra joined.
 
+> [!NOTE]  
+> For detailed steps on how to register your device, see [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
+
 ### Supported applications
 
 - OneDrive sync client version 22.217 or newer 
@@ -143,7 +146,7 @@ The following steps help you create a Conditional Access policy to require token
        1. Select **Done**.
 1. Under **Access controls** > **Session**, select **Require token protection for sign-in sessions** and select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
-1. Select **Create** to create to enable your policy.
+1. Select create to enable your policy.
 
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 

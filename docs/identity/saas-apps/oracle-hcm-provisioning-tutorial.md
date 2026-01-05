@@ -1,6 +1,6 @@
 ---
 title: Configure Oracle Human Capital Management (HCM) for automatic user provisioning
-description: Integrating Oracle Human Capital Management (HCM) with Microsoft Entra ID and on-premises Active Directory using the Inbound Provisioning API.
+description: Integrating Oracle Fusion Cloud Human Capital Management (HCM) with Microsoft Entra ID and on-premises Active Directory using the Inbound Provisioning API.
 author: jenniferf-skc
 manager: femila
 ms.reviewer: rahuln3223
@@ -14,7 +14,7 @@ ms.author: jfields
 
 # Configure Oracle Human Capital Management (HCM) for automatic user provisioning
 
-The Inbound Provisioning API is a capability that allows you to create, update, and delete users in Microsoft Entra ID and on-premises Active Directory from an external source, such as Oracle Human Capital Management (HCM). This capability enables organizations to improve productivity, strengthen security and more easily meet compliance and regulatory requirements.
+The Inbound Provisioning API is a capability that allows you to create, update, and delete users in Microsoft Entra ID and on-premises Active Directory from an external source, such as Oracle Fusion Cloud Human Capital Management (HCM). This capability enables organizations to improve productivity, strengthen security and more easily meet compliance and regulatory requirements.
 
 You can use [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) to automatically ensure that the right people have the right access to the right resources. This access includes identity and access process automation, delegation to business groups, and increased visibility.
 
@@ -28,15 +28,7 @@ In this article,  we guide you through the steps and best practices for integrat
 
 ## Terminology
 
-- [Oracle HCM Fusion Cloud (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this article.
-
-- Licensing:
-
-  - [Microsoft Entra ID P1](https://www.microsoft.com/security/business/microsoft-entra-pricing) / [EMS E3](https://www.microsoft.com/licensing/product-licensing/enterprise-mobility-security) / [Microsoft 365 E3](https://www.microsoft.com/microsoft-365/enterprise/e3): These licenses allow you to use our new API-driven provisioning feature.
-
-  - [Microsoft Entra ID Governance license](~/id-governance/licensing-fundamentals.md): This add-on license is required to configure lifecycle workflows.
-
-  - [Azure subscription](https://azure.microsoft.com): This subscription is required if you plan to use Azure Logic Apps.
+- [Oracle Cloud HCM (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle Fusion Cloud HCM to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this article.
 
 ## Prerequisites
 
@@ -48,11 +40,16 @@ Before you start integrating Oracle HCM with Microsoft Entra ID using the Inboun
   - Access the Oracle HCM REST APIs. For this article,  we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
         and [Applications Common 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/rest-endpoints.html).
 
-- A Microsoft Entra ID tenant with a minimum P1 license (or EMS E3 / Microsoft 365 E3):
+- A Microsoft Entra ID tenant with a minimum [Microsoft Entra ID P1](https://www.microsoft.com/security/business/microsoft-entra-pricing) / [EMS E3](https://www.microsoft.com/licensing/product-licensing/enterprise-mobility-security) / [Microsoft 365 E3](https://www.microsoft.com/microsoft-365/enterprise/e3). These licenses allow you to use our new API-driven provisioning feature.
 
   - To install the provisioning agent (hybrid users only), you need access to the Microsoft Windows server connected to your AD Domain.
 
   - To create a gallery app and provisioning job, you need Microsoft Entra with [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) roles.
+
+  - [Microsoft Entra ID Governance license](~/id-governance/licensing-fundamentals.md): This add-on license is required to configure lifecycle workflows.
+
+  - [Azure subscription](https://azure.microsoft.com): A subscription is required if you plan to use Azure Logic Apps.
+
 
 ## Integration overview
 

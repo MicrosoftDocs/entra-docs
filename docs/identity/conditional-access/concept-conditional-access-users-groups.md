@@ -1,5 +1,5 @@
 ---
-title: "Conditional Access Setup: Users, Groups, and Workload Identities"
+title: "Conditional Access Setup: Users, Groups, Agents, and Workload Identities"
 description: Learn how to include or exclude users, groups, and workload identities in Conditional Access policies for secure and flexible access management.
 
 ms.service: entra-id
@@ -12,9 +12,9 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 ---
-# Conditional Access: Users, groups, and workload identities
+# Conditional Access: Users, groups, agents, and workload identities
 
-A Conditional Access policy includes a user, group, or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access. 
+A Conditional Access policy includes a user, group, agent, or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures all requirements are met before granting access. 
 
 ## Include users
 
@@ -93,6 +93,17 @@ If you find yourself locked out, see [What to do if you're locked out?](troubles
 ### External partner access
 
 Conditional Access policies that target external users might interfere with service provider access, such as granular delegated admin privileges. Learn more in [Introduction to granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction). For policies that are intended to target service provider tenants, use the **Service provider user** external user type available in the **Guest or external users** selection options.
+
+## Agents (Preview)
+
+Agents are first-class accounts within Microsoft Entra ID that provide unique identification and authentication capabilities for AI agents. Conditional Access policies targeting these objects have specific recommendations addressed in the article [Conditional Access and agent identities](agent-id.md)
+
+Policy can be scoped to:
+
+- All agent identities
+- Select agents acting as users
+- Select agent identities based on [attributes](../../fundamentals/custom-security-attributes-overview.md)
+- Select individual agent identities
 
 ## Workload identities 
 

@@ -23,7 +23,7 @@ sections:
       - question: |
           Why do I get "No subscriptions found" when I try to access the Microsoft Entra admin center or the Azure portal?
         answer: |
-          To access the Microsoft Entra admin center or the Azure portal, each user needs permissions with a valid subscription. If you don't have a paid Microsoft 365 or Microsoft Entra subscription, you need to activate a free [Microsoft Entra Account](https://azure.microsoft.com/free/) or establish a paid subscription. All Azure subscriptions, whether paid or free, have a trust relationship with a Microsoft Entra tenant. All subscriptions rely on the Microsoft Entra tenant (directory) to authenticate and authorize security principals and devices. 
+          To access the Microsoft Entra admin center or the Azure portal, each user needs permissions with a valid subscription. If you don't have a paid Microsoft 365 or Microsoft Entra subscription, you need to activate a free [Microsoft Entra Account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) or establish a paid subscription. All Azure subscriptions, whether paid or free, have a trust relationship with a Microsoft Entra tenant. All subscriptions rely on the Microsoft Entra tenant (directory) to authenticate and authorize security principals and devices. 
           
           For more information, see [How Azure subscriptions are associated with Microsoft Entra ID](./how-subscriptions-associated-directory.md).
           
