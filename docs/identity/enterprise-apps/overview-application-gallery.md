@@ -90,7 +90,7 @@ A collection of featured applications is listed by default when you open the Mic
 
 ## Understanding application risk scores
 
-Microsoft Defender for Cloud Apps assigns risk scores to SaaS applications in the gallery to help organizations evaluate security posture and make informed adoption decisions.
+Microsoft Defender for Cloud Apps assigns risk scores to SaaS applications in the gallery to help organizations evaluate security posture and make informed adoption decisions. Access to risk score information requires either [Microsoft Entra Suite](/entra/fundamentals/licensing) or [Microsoft Entra Internet Access](/entra/global-secure-access/concept-internet-access) licenses.
  
 Each application is scored from 1 to 10, where 1 indicates highest risk and 10 indicates lowest risk. Scores are calculated using a weighted average across four risk categories:
 
@@ -101,9 +101,16 @@ Each application is scored from 1 to 10, where 1 indicates highest risk and 10 i
 
 The scoring model evaluates more than 90 risk indicators derived from publicly available data, vendor disclosures, and observed security practices.
 
-Organizations can customize the weighting of these categories to align with their specific business requirements and can manually override scores when needed. This risk assessment capability helps IT administrators identify potential security vulnerabilities and make data-driven decisions when selecting applications for their organization.
+This risk assessment capability helps IT administrators identify potential security vulnerabilities and make data-driven decisions when selecting applications for their organization.
 
-For detailed information about risk scoring methodology, customization options, and how to request score updates, see [Find your cloud app and calculate risk scores](/defender-cloud-apps/risk-score). You can also programmatically access application templates and their risk scores using the [List applicationTemplates API](/graph/api/applicationtemplate-list).
+Application owners can request updates to risk scores by navigating to the gallery -> Selecting the app that needs updating -> Scrolling to the specific risk factor that needs updating -> Selecting the feedback symbol on the right side of the risk factor name -> Completing the **Give feedback to Microsoft** form with options like score update request, outdated app data, or suggesting new risk factors -> providing detailed information about the requested changes and submitting the request.
+
+ [!NOTE]
+> Feedback submitted through this process is sent to Microsoft Defender for Cloud Apps, which reviews and makes any necessary updates to application risk scores and data.
+
+:::image type="content" source="media/overview-application-gallery/app-risk-score-details.png" alt-text="Screenshot showing application risk score details with feedback options for individual risk factors.":::
+
+For detailed information about risk scoring methodology, customization options, and how to request score updates on Microsoft Defender for Cloud Apps, see [Find your cloud app and calculate risk scores](/defender-cloud-apps/risk-score). You can also programmatically access application templates and their risk scores using the [List applicationTemplates API](/graph/api/applicationtemplate-list).
 
 ## Create your own application
 
