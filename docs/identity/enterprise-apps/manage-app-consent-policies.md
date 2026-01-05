@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 10/15/2025
+ms.date: 01/05/2026
 ms.author: jomondi
 ms.reviewer: ergreenl, phsignor
 ms.custom: enterprise-apps
@@ -44,6 +44,7 @@ Condition sets include one or more properties used to define characteristics of 
 Every tenant comes with a set of app consent policies that are the same across all tenants. Some of these built-in policies are used in existing built-in directory roles. For example, the `microsoft-application-admin` app consent policy describes the conditions under which the Application Administrator and Cloud Application Administrator roles are allowed to grant tenant-wide admin consent. Built-in policies can be used in custom directory roles or to configure an organization's default consent policy. These policies can't be edited. A list of the built-in policies are:
 - **microsoft-user-default-low:** All low risk permissions consentable by member type users by default.
 - **microsoft-user-default-recommended:** Permissions consentable based on Microsoft's current recommendations.
+- **microsoft-user-default-consent-apps:** Popular mail clients consentable for users
 - **microsoft-all-application-permissions:** Includes all application permissions (app roles), for all APIs, for any client application.
 - **microsoft-dynamically-managed-permissions-for-chat:** Includes dynamically managed permissions allowed for chat resource-specific consent.
 - **microsoft-all-application-permissions-for-chat:** Includes all chat resource-specific application permissions, for all APIs, for any client application.
@@ -55,11 +56,21 @@ Every tenant comes with a set of app consent policies that are the same across a
 - **microsoft-company-admin:** Permissions consentable by Company Administrators.
 
 > [!WARNING]
-> Microsoft-user-default-recommended is a Microsoft managed policy. The conditions included in the policy are automatically updated based on Microsoft's latest security recommendations for end-user consent.
+> Microsoft-user-default-recommended and microsoft-user-default-consent-apps are a Microsoft managed policies. The conditions included in the policies are automatically updated based on Microsoft's latest security recommendations for end-user consent.
 
 ## Microsoft recommended current settings
 
-The setting labeled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT: `Files.Read.All`, `Files.ReadWrite.All`, `Sites.Read.All`, `Sites.ReadWrite.All`, `Mail.Read`, `Mail.ReadWrite`, `Mail.ReadBasic`, `Mail.Read.Shared`, `Mail.ReadBasic.Shared`, `Mail.ReadWrite.Shared`, `MailboxItem.Read`, `Calendars.Read`, `Calendars.ReadBasic`, `Calendars.ReadWrite`, `Calendars.Read.Shared`, `Calendars.ReadBasic.Shared`, `Calendars.ReadWrite.Shared`, `Chat.Read`, `Chat.ReadWrite`, `ChannelMessage.Read.All`, `OnlineMeetings.Read`, `OnlineMeetings.ReadWrite`, `OnlineMeetingTranscript.Read.All`, `OnlineMeetingsRecording.Read.All`. Updates to this consent policy will have at least 30 days of given notice.
+### Microsoft recommended user consent policy
+The setting labeled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT: `Files.Read.All`, `Files.ReadWrite.All`, `Sites.Read.All`, `Sites.ReadWrite.All`, `Mail.Read`, `Mail.ReadWrite`, `Mail.ReadBasic`, `Mail.Read.Shared`, `Mail.ReadBasic.Shared`, `Mail.ReadWrite.Shared`, `MailboxItem.Read`, `Calendars.Read`, `Calendars.ReadBasic`, `Calendars.ReadWrite`, `Calendars.Read.Shared`,  `Calendars.ReadWrite.Shared`, `Chat.Read`, `Chat.ReadWrite`, `OnlineMeetings.Read`, `OnlineMeetings.ReadWrite`, `MailBoxFolder.Read`, `MailBoxFolder.ReadWrite`, `MailBoxSettings.Read`, `MailBoxSettings.ReadWrite`.
+
+### Mail client policy
+An additional policy is enabled by default is the **microsoft-user-default-consent-apps** policy. This policy allows end-users in your organization to consent for popular mail applications for mail permissions. When this policy is enabled, end users will be able to consent for specific delegated mail permissions (Microsoft Graph and AAD graph permissions: EAS.AccessAsUser.All, EWS.AccessAsUser.All, IMAP.AccessAsUser.All, POP.AccessAsUser.All) for the following applications:
+- Apple Mail (application ID: f8d98a96-0999-43f5-8af3-69971c7bb423)
+- Spark Email (application ID:b50c1dbd-1855-4e54-b07c-d3c3029e93d3)
+- eM Client (application ID:e9a7fea1-1cc0-4cd9-a31b-9137ca5deedd)
+- Android-Samsung (application ID:8acd33ea-7197-4a96-bc33-d7cc7101262f)
+- Android-Mail (application ID:2cee05de-2b8f-45a2-8289-2a06ca32c4c8)
+- Thunderbird (application ID:9e5f94bc-e8a4-4e73-b8be-63364c29d753)
 
 ## Multiple policies
 
