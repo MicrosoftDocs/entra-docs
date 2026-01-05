@@ -113,7 +113,7 @@ Because the policy suggestions that come through deep analysis might have a sign
 
 ### Microsoft Teams agent suggestion notifications
 
-Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This preview feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
+Microsoft Teams can be used to receive notifications from the Conditional Access Optimization Agent when new suggestions are available. This feature allows you to configure who you want to receive notifications when new suggestions are identified by the agent. At this time, the Teams integration provides one-way communication with the agent and a direct link to the policy suggestion in the Microsoft Entra admin center.
 
 For more information, see the **Notifications** section of [Conditional Access Optimization Agent Settings](conditional-access-agent-optimization-settings.md#notifications).
 

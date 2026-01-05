@@ -17,7 +17,7 @@ ms.collection: msec-ai-copilot
 ---
 # Conditional Access Optimization Agent Settings
 
-The Conditional Access Optimization Agent helps organizations improve their security posture by analyzing Conditional Access policies for gaps, overlap, and exceptions. As Conditional Access becomes a central component of an organization's Zero Trust strategy, the capabilities of the agent must be configurable to meet the unique needs of each organization.
+The Conditional Access Optimization Agent helps organizations improve their security posture by analyzing Conditional Access policies for gaps, overlap, and exceptions. As Conditional Access becomes a central component of an organization's Zero Trust strategy, the capabilities of the agent must be configurable to meet your organization's unique needs.
 
 The agent settings described in this article cover standard options like triggers, notifications, and scope. But the settings also include advanced options like custom instructions, Intune integrations, and permissions.
 
@@ -32,13 +32,13 @@ You can access the settings from two places in the Microsoft Entra admin center:
 - From **Agents** > **Conditional Access optimization agent** > **Settings**.
 - From **Conditional Access** > select the **Conditional Access optimization agent** card under **Policy summary** > **Settings**.
 
-:::image type="content" source="media/conditional-access-agent-optimization/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization/agent-settings.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-settings.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization-settings/agent-settings.png":::
 
 After making any changes, select the **Save** button at the bottom of the page. 
 
 ## Trigger
 
-The agent is configured to run every 24 hours based on when it's initially configured. You can change when the agent runs by toggling the **Trigger** setting off and then back on when you want it to run.
+The agent is configured to run every 24 hours, based on when it's initially configured. You can manually run the agent at any time.
 
 ## Microsoft Entra objects to monitor
 
@@ -56,7 +56,7 @@ To add the agent app to Microsoft Teams:
 
 1. In Microsoft Teams, select **Apps** from the left navigation menu and search for and select the **Conditional Access agent**.
 
-   :::image type="content" source="media/conditional-access-agent-optimization/agent-teams-app.png" alt-text="Screenshot of the Conditional Access app button in Teams." lightbox="media/conditional-access-agent-optimization/agent-teams-app.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-teams-app.png" alt-text="Screenshot of the Conditional Access app button in Teams." lightbox="media/conditional-access-agent-optimization-settings/agent-teams-app.png":::
 
 1. Select the **Add** button, then select the **Open** button to open the app.
 1. To make accessing the app easier, right-click the app icon in the left navigation menu and select **Pin**.
@@ -66,7 +66,7 @@ To configure notifications in the Conditional Access optimization agent settings
 1. In the Conditional Access optimization agent settings, select the **Select users and groups** link.
 1. Select the users or groups you want to receive notifications, then select the **Select** button.
  
-   :::image type="content" source="media/conditional-access-agent-optimization/agent-teams-people-picker.png" alt-text="Screenshot of the Conditional Access agent setting to pick the users and groups for notifications." lightbox="media/conditional-access-agent-optimization/agent-teams-people-picker.png":::
+   :::image type="content" source="media/conditional-access-agent-optimization-settings/agent-teams-people-picker.png" alt-text="Screenshot of the Conditional Access agent setting to pick the users and groups for notifications." lightbox="media/conditional-access-agent-optimization-settings/agent-teams-people-picker.png":::
 
 1. At the bottom of the main **Settings** page, select the **Save** button.
 
@@ -74,15 +74,13 @@ You can select up to 10 recipients to receive notifications. You can select a gr
 
 At this time, the agent's communication is one direction, so you can receive notifications but can't respond to them in Microsoft Teams. To take action on a suggestion, select **Review suggestion** from the chat to open the Conditional Access Optimization Agent in the Microsoft Entra admin center.
 
-:::image type="content" source="media/conditional-access-agent-optimization/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/conditional-access-agent-optimization/agent-teams-suggestion-message.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-teams-suggestion-message.png" alt-text="Screenshot of the Conditional Access agent notification message in Teams." lightbox="media/conditional-access-agent-optimization-settings/agent-teams-suggestion-message.png":::
 
 ## Phased rollout
 
-When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default. For more information , see [Conditional Access Optimization Agent Phased Rollout](conditional-access-agent-optimization-phased-rollout.md).
+When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can monitor the effect of the new policy. Phased rollout is on by default. For more information, see [Conditional Access Optimization Agent Phased Rollout](conditional-access-agent-optimization-phased-rollout.md).
 
-You can change the number of days between each phase by either dragging the slider or entering a number in the text box. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
-
-:::image type="content" source="media/conditional-access-agent-optimization/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization/phased-rollout-settings.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-settings/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/conditional-access-agent-optimization-settings/phased-rollout-settings.png":::
 
 ## Identity and permissions
 
@@ -99,7 +97,7 @@ The Conditional Access Optimization Agent now supports [Microsoft Entra Agent ID
   - Customers can't switch back to user context.
   - Admins with the Security Administrator or Global Administrator roles can make this change. Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
 
-:::image type="content" source="media/conditional-access-agent-optimization/identity-permissions.png" alt-text="Screenshot conditional-access-agent-optimization/identity-permissions.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-settings/identity-permissions.png" alt-text="Screenshot conditional-access-agent-optimization-settings/identity-permissions.png":::
 
 Turning on and using the Conditional Access Optimization Agent also requires Security Copilot roles. Security Administrator has access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 
@@ -125,11 +123,11 @@ Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/sec
 
 To use the ServiceNow integration, your organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
 
-:::image type="content" source="media/conditional-access-agent-optimization/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/conditional-access-agent-optimization/agent-service-now-integration-setting.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-service-now-integration-setting.png" alt-text="Screenshot of the ServiceNow integration settings." lightbox="media/conditional-access-agent-optimization-settings/agent-service-now-integration-setting.png":::
 
 When the ServiceNow plugin is turned on in the Conditional Access optimization agent settings, each new suggestion from the agent creates a ServiceNow change request. The change request includes details about the suggestion, such as the type of policy, the users or groups affected, and the rationale behind the recommendation. The integration also provides a feedback loop: The agent monitors the state of the ServiceNow change request and can automatically implement the change when the change request is approved.
 
-:::image type="content" source="media/conditional-access-agent-optimization/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/conditional-access-agent-optimization/agent-service-now-integration-ticket.png":::
+:::image type="content" source="media/conditional-access-agent-optimization-settings/agent-service-now-integration-ticket.png" alt-text="Screenshot of the ServiceNow integration within an agent suggestion." lightbox="media/conditional-access-agent-optimization-settings/agent-service-now-integration-ticket.png":::
 
 ### Custom instructions
 

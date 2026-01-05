@@ -39,7 +39,7 @@ There are three steps in the phased rollout process:
 1. [Administrator reviews, edits, and accepts the rollout plan](#administrator-reviews-edits-and-accepts-the-rollout-plan)
 1. [Agent or Administrator executes the approved rollout plan](#agent-or-administrator-executes-the-approved-rollout-plan)
 
-You can review the groups included in each phase and the number of days between each phase and make changes before and during the phased rollout. At any time during the rollout, you can choose to have the plan executed by the agent or you can manually execute each phase of the plan.
+You can review the groups included in each phase and make changes before and during the phased rollout. At any time during the rollout, you can choose to have the plan executed by the agent or you can manually execute each phase of the plan.
 
 Regardless of how the plan is executed or if you made changes to the plan, when the first phase starts, a *new* policy is created and turned on for the groups included in the first phase. The original report-only mode policy remains intact.
 
@@ -75,14 +75,6 @@ Administrators need to review the details of the plan, including the groups incl
 
 > [!TIP]
 > You can intervene at any time with automatic and manual rollout plans. You can also change execution modes at any time during rollout.
-
-To adjust the time between phases:
-
-1. Browse to the **Settings** tab from the Conditional Access Optimization Agent.
-1. Adjust the days between phases in the **Phased rollout** section.
-1. Select the **Save** button to apply the changes.
-
-For more information, review the [Phased rollout settings](./conditional-access-agent-optimization-settings.md#phased-rollout).
 
 ## Agent or administrator executes the approved rollout plan
 

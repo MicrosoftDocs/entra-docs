@@ -3,9 +3,9 @@ title: Conditional Access optimization agent chat
 description: Learn about the chat feature for the Security Copilot for Microsoft Entra optimization agent.
 ms.author: sarahlipsey
 author: shlipsey3
-ms.reviewer: lhuangnorth
+ms.reviewer: jodah
 manager: pmwongera
-ms.date: 08/25/2025
+ms.date: 01/05/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -133,23 +133,17 @@ After getting more details and any necessary clarifications on the policy sugges
 
 ### Update an existing policy
 
-To illustrate what happens when you confirm a change to an existing policy, let's take a closer look at the suggestion to add 21 users to an existing policy.
+To illustrate what happens when you confirm a change to an existing policy, let's take a closer look at the suggestion to add 21 users to an existing policy. In the chat, the agent was asked to exclude any breakglass accounts and it identified a breakglass account that matches.
 
-In the chat, the agent was asked to exclude any breakglass accounts and it identified five accounts that match.
+:::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons.png" alt-text="Screenshot of the chat with the confirm changes button highlighted." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons.png":::
 
-:::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-confirm-closeup.png" alt-text="Screenshot of the Conditional Access optimization agent chat focused on the suggested changes." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-confirm-closeup.png":::
-
-When you select **Confirm**, the agent makes changes *directly to the policy*. The original suggestion, however, was to add 21 users to the policy. Because we excluded 5 users from the policy update, this suggestion will continue to appear in the recent suggestions lists. Any future agent runs will likely identify the users that we excluded. If you don't want to make any changes to the policy, select **Cancel**.
+When you select **Confirm**, the agent makes changes *directly to the policy*. The original suggestion, however, was to add 21 users to the policy. Because we excluded an account from the policy update, this suggestion will continue to appear in the recent suggestions lists. Any future agent runs will likely identify any users that you exclude. If you don't want to make any changes to the policy, select **Cancel**.
 
 ### Create a new policy
 
 When the agent creates a new policy *in report-only mode* you can use the chat make adjustments to the policy and even turn on the policy. In the following example to create a new policy, the agent was asked to include a specific user. When you're using chat for new policies, the first **Confirm** button updates the policy in report-only mode.
 
-:::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons.png" alt-text="Screenshot of the chat with the confirm changes button highlighted." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons.png":::
-
 You're prompted a second time to turn on the policy. If you select **Confirm** at this step, the policy is turned on. Select **Cancel** to save the report-only changes without turning on the policy. 
-
-:::image type="content" source="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons-second-set.png" alt-text="Screenshot of the chat with the second set of confirm changes buttons highlighted." lightbox="media/conditional-access-agent-optimization-chat/agent-chat-confirm-buttons-second-set.png":::
 
 ## Related content
 
