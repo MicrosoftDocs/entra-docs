@@ -103,7 +103,7 @@ The scoring model evaluates more than 90 risk indicators derived from publicly a
 
 Organizations can customize the weighting of these categories to align with their specific business requirements and can manually override scores when needed. This risk assessment capability helps IT administrators identify potential security vulnerabilities and make data-driven decisions when selecting applications for their organization.
 
-For detailed information about risk scoring methodology, customization options, and how to request score updates, see [Find your cloud app and calculate risk scores](/defender-cloud-apps/risk-score). You can also programmatically access application templates and their risk scores using the [List applicationTemplates API](https://learn.microsoft.com/en-us/graph/api/applicationtemplate-list?view=graph-rest-beta&tabs=http).
+For detailed information about risk scoring methodology, customization options, and how to request score updates, see [Find your cloud app and calculate risk scores](/defender-cloud-apps/risk-score). You can also programmatically access application templates and their risk scores using the [List applicationTemplates API](/graph/api/applicationtemplate-list).
 
 ## Create your own application
 
