@@ -6,7 +6,7 @@ author: shlipsey3
 manager: pmwongera
 
 ms.reviewer: jodah
-ms.date: 12/11/2025
+ms.date: 01/05/2026
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -82,7 +82,7 @@ To adjust the time between phases:
 1. Adjust the days between phases in the **Phased rollout** section.
 1. Select the **Save** button to apply the changes.
 
-For more information, review the [Phased rollout settings](./conditional-access-agent-optimization.md#phased-rollout).
+For more information, review the [Phased rollout settings](./conditional-access-agent-optimization-settings.md#phased-rollout).
 
 ## Agent or administrator executes the approved rollout plan
 
