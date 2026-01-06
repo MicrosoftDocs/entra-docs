@@ -105,6 +105,8 @@ If the agent suggests modifying an existing policy, select **Review policy chang
 - Policy details are provided as both a list of all the details that are changing and a JSON view of the entire policy, with the changes highlighted.
 - For policy changes that affect users or applications, you can download a JSON file of the users and applications affected by the policy change.
 
+:::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/review-policy-changes.png" alt-text="Screenshot of the policy details with the review policy changes button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/review-policy-changes.png":::
+
 ### Deep analysis
 
 Deep analysis performs an in-depth review of Conditional Access policies for scenarios such as blocking legacy authentication, blocking device control flow, and policies that require device or MFA controls. It evaluates the targeted users, groups, and roles to identify coverage gaps, overlapping or redundant policies, and consolidation opportunities. It also analyzes exclusions—flagging policies that exclude a large portion of users and recommending explicit exclusion of break‑glass accounts to reduce the risk of accidental lockout.
@@ -141,8 +143,6 @@ The agent could suggest modifying an existing policy or consolidating overlappin
 When the agent suggests a new policy, it creates the policy in report-only mode. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from the Conditional Access policies list.
 
 - Select **Turn on policy** to have the agent apply the changes to the policy *in report-only mode*.
-
-   :::image type="content" source="media/conditional-access-agent-optimization-review-suggestions/turn-on-policy.png" alt-text="Screenshot of the policy details with the turn on policy button highlighted." lightbox="media/conditional-access-agent-optimization-review-suggestions/turn-on-policy.png":::
 
 - From Conditional Access, select the policy and then change the **Enable policy** toggle from **Report-only** to **On**.
 
