@@ -17,6 +17,15 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 # [External ID in external tenants](#tab/external-tenants)
 
+## December 2025
+
+### Updated articles
+
+- [Configure a new OpenID connect identity provider in the admin center](customers/how-to-custom-oidc-federation-customers.md) - Client secret updates
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added Akamai and Cloudflare WAF information
+- [Configure Akamai with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md) - Editorial updates
+- [Configure Cloudflare with Microsoft Entra External ID](customers/how-to-configure-waf-integration.md) - Editorial updates
+
 ## November 2025
 
 ### New article
@@ -40,13 +49,14 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 - [Identity providers for external tenants](customers/concept-authentication-methods-customers.md) - Added domain acceleration information
 
-## September 2025
+# [External ID in workforce tenants](#tab/workforce-tenants)
+
+## December 2025
 
 ### Updated articles
 
-- [Add OpenID Connect as an external identity provider](customers/how-to-custom-oidc-federation-customers.md) - Multiple editorial updates
-
-# [External ID in workforce tenants](#tab/workforce-tenants)
+- [B2B invitation email layout and language settings](invitation-email-elements.md) - Invitation email updates
+- [B2B collaboration invitation redemption](redemption-experience.md) - Invitation email updates
 
 ## September 2025
 
@@ -60,11 +70,5 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 - [Microsoft Entra B2B in government and national clouds](b2b-government-national-clouds.md) - Cross-cloud synchronization update
 - [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Cross-cloud synchronization update
-
-## July 2025
-
-### Updated articles
-
-- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Updated authentication experience for guest users
 
 ---
