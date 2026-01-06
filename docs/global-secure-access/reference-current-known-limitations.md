@@ -260,7 +260,8 @@ Known limitations for Private Access include:
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   
-- An admin can create up to 1,000 policies, up to 1,000 rules based on 8,000 total FQDNs, and up to 256 security profiles.
+- An admin can create up to 1,000 policies, up to 1,000 rules, and up to 256 security profiles within each tenant.
+- An admin can configure 8,000 total destinations in each tenant. For example, within a single tenant can create up to 2 policies targeting 4,000 domains each *or* up to 1,000 policies with 8 domains each.
 - Admins can currently configure rules based on up to 1,000 total URLs.
 - TLS inspection supports up to 100 TLS inspection policies, 1000 rules, and 8000 destinations.
 - The platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
