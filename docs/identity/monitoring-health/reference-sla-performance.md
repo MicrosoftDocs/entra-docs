@@ -6,14 +6,14 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 05/02/2025
+ms.date: 01/06/2026
 ms.author: sarahlipsey
-ms.reviewer: egreenberg14
+ms.reviewer: sarbar
 ---
 
 # SLA performance for Microsoft Entra ID
 
-As an identity admin, you might need to track the Microsoft Entra service-level agreement (SLA) performance to make sure Microsoft Entra ID can support your vital apps. This article shows how the Microsoft Entra service has performed according to the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
+As an identity admin, you might need to track the Microsoft Entra service-level agreement (SLA) performance to make sure Microsoft Entra ID can support your vital apps. This article shows how the Microsoft Entra service performed according to the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
 
 You can use this article in discussions with app or business owners to help them understand the performance they can expect from Microsoft Entra ID.
 
@@ -29,6 +29,8 @@ Performance is measured in a way that reflects customer authentication experienc
 - Users can authenticate
 - Microsoft Entra ID successfully issues tokens for target apps after authentication
 
+In other words, the number of unique users who both successfully sign in each minute and are issued a token or an error response are tracked as successful user minutes. If a user's sign-in attempt isn't successfully completed within the minute, it's counted as a failed user minute and contributes to a lower availability percentage. After each month is complete, the availability rate is calculated by dividing the number of successful user minutes by the total of successful plus failed user minutes. This rate is published in the following SLA attainment table.
+
 ## No planned downtime
 
 You rely on Microsoft Entra ID to provide identity and access management for your vital systems. To ensure Microsoft Entra ID is available when business operations require it, Microsoft doesn't plan downtime for Microsoft Entra system maintenance. Instead, maintenance is performed as the service runs, without customer impact.
@@ -37,7 +39,7 @@ You rely on Microsoft Entra ID to provide identity and access management for you
 
 To help you plan for moving workloads to Microsoft Entra ID, we publish past SLA performance. These numbers show the level at which Microsoft Entra ID met the requirements in the [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/), for all tenants.
 
-The numbers in the table are a global total of Microsoft Entra authentications across all customers and geographies. The number is truncated at three places after the decimal. Numbers aren't rounded up, so actual SLA attainment is higher than indicated.
+The numbers in the table are a global total of Microsoft Entra authentications across all customers and geographies. The number is truncated at three places after the decimal. Numbers aren't rounded up, so actual SLA attainment is higher than indicated. We publish the previous month's availability during the first half of the current month.
 
 | Month     | 2021    | 2022    | 2023    | 2024    | 2025    |
 | ---       | ---     | ---     | ---     | ---     | ---     |
@@ -56,7 +58,7 @@ The numbers in the table are a global total of Microsoft Entra authentications a
 
 <a name='how-is-azure-ad-sla-measured-'></a>
 
-*Starting in April 2025, we updated our SLA performance calculations to provide a more complete view of the user experience with authentication availability. The new calculation includes authentication successes from Microsoft Entra's resilient infrastructure, such as when the [backup authentication system](../../architecture/backup-authentication-system.md) succeeds on retry. Prior to April 2025, these successful sign-ins were not included in the SLA calculation. With the addition of this new calculation, the SLA performance percentages will increase. For example, the April 2025 number using the previous calculation logic would have been 99.998%. With new logic, it's 99.999%.
+*Starting in April 2025, we updated our SLA performance calculations to provide a more complete view of the user experience with authentication availability. The new calculation includes authentication successes from Microsoft Entra's resilient infrastructure, such as when the [backup authentication system](../../architecture/backup-authentication-system.md) succeeds on retry. Before April 2025, these successful sign-ins weren't included in the SLA calculation. With the addition of this new calculation, the SLA performance percentages will increase. For example, the April 2025 number using the previous calculation logic would have been 99.998%. With new logic, it's 99.999%.
 
 ## Incident history
 
