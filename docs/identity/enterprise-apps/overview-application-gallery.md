@@ -46,8 +46,8 @@ When searching for an application, you can also specify specific filters, such a
 - **User account management** – The only option available is [automated provisioning](~/identity/app-provisioning/user-provisioning.md).
 - **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
 - **Risk Score** – View applications by their calculated security risk score from 1 (highest risk) to 10 (lowest risk). This score helps identify applications that meet your organization's security requirements.
-- **Security Risk Factors** – Search for applications that meet specific security measures such as encryption at rest, multifactor authentication, admin audit trails, user audit trails, and other security standards that protect data used by the application.
-- **Compliance Risk Factors** – Narrow results to applications with compliance standards and certifications such as SOC 2, ISO 27001, HIPAA, PCI-DSS, and other regulatory requirements that ensure the application meets industry best practices.
+- **Security Risk Factors** – Search for applications that meet specific security measures such as multifactor authentication, admin audit trail, user audit trail, and other security standards that protect data used by the application.
+- **Compliance Risk Factors** – Narrow results to applications with compliance standards and certifications such as SOC 2, ISO 27001, HIPAA, and other regulatory requirements that ensure the application meets industry best practices.
 - **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
 
  > [!NOTE]
@@ -94,10 +94,10 @@ Microsoft Defender for Cloud Apps assigns risk scores to SaaS applications in th
  
 Each application is scored from 1 to 10, where 1 indicates highest risk and 10 indicates lowest risk. Scores are calculated using a weighted average across four risk categories:
 
-- **General factors**: Company stability, domain age, and popularity
-- **Security factors**: Encryption methods, multifactor authentication, and audit trails  
-- **Compliance factors**: Standards like SOC 2, ISO 27001, HIPAA, and PCI-DSS
-- **Legal factors**: Data protection policies and regulatory compliance
+- **General**: Company stability, domain age, and popularity
+- **Security**: Encryption methods, multifactor authentication, and audit trails  
+- **Compliance**: Standards like SOC 2, ISO 27001, HIPAA, and PCI-DSS
+- **Legal**: Data protection policies and regulatory compliance
 
 The scoring model evaluates more than 90 risk indicators derived from publicly available data, vendor disclosures, and observed security practices.
 
