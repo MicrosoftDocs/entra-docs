@@ -51,7 +51,7 @@ When searching for an application, you can also specify specific filters, such a
 - **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
 
  > [!NOTE]
- > In an [external tenant](/entra/external-id/customers/overview-customers-ciam), enterprise applications are supported, but the application gallery catalog is not available. To find and add enterprise applications in the external tenant, select **New application** > **Create your own application**, then type the name of the app in the search bar and select it from the list once it appears.
+ > In an [external tenant](/entra/external-id/customers/overview-customers-ciam), enterprise applications are supported, but the application gallery catalog isn't available. To find and add enterprise applications in the external tenant, select **New application** > **Create your own application**, then type the name of the app in the search bar and select it from the list once it appears.
 
 ### Cloud platforms
 
@@ -69,9 +69,9 @@ There are five ways on-premises applications can be connected to Microsoft Entra
 
 :::image type="content" source="media/overview-application-gallery/on-premises-applications.png" alt-text="Screenshot showing the on-premises application options on the Microsoft Entra application gallery pane in the Microsoft Entra admin center.":::
 
-If your application uses Kerberos and also requires group memberships, then you can populate Windows Server AD groups from corresponding groups in Microsoft Entra ID. For more information, see [Group writeback with Microsoft Entra Cloud Sync](~/identity/hybrid/group-writeback-cloud-sync.md).
+If your application uses Kerberos and also requires group memberships, you can populate Windows Server AD groups from corresponding groups in Microsoft Entra ID. For more information, see [Group writeback with Microsoft Entra Cloud Sync](~/identity/hybrid/group-writeback-cloud-sync.md).
 
-The second is using the provisioning agent to provision to an on-premises application that has its own user store and doesn't rely upon Windows Server AD. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use [SQL databases](../app-provisioning/on-premises-sql-connector-configure.md), that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
+The second is using the provisioning agent to provision to an on-premises application that has its own user store and doesn't rely upon Windows Server AD. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use [SQL databases](../app-provisioning/on-premises-sql-connector-configure.md) that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
 
 The third is using Microsoft Entra Private Access, by configuring a Global Secure Access app for per-app connections. For more information, see [Learn about Microsoft Entra Private Access](/entra/global-secure-access/concept-private-access).
 
@@ -96,21 +96,21 @@ Each application is scored from 1 to 10, where 1 indicates highest risk and 10 i
 
 - **General**: Company stability, domain age, and popularity
 - **Security**: Encryption methods, multifactor authentication, and audit trails  
-- **Compliance**: Standards like SOC 2, ISO 27001, HIPAA, and PCI-DSS
+- **Compliance**: Standards like SOC 2, ISO 27001, HIPAA, and PCI
 - **Legal**: Data protection policies and regulatory compliance
 
-The scoring model evaluates more than 90 risk indicators derived from publicly available data, vendor disclosures, and observed security practices.
+The scoring model evaluates more than 90 risk factors derived from publicly available data, vendor disclosures, and observed security practices.
 
 This risk assessment capability helps IT administrators identify potential security vulnerabilities and make data-driven decisions when selecting applications for their organization.
 
-Application owners can request updates to risk scores by navigating to the gallery -> Selecting the app that needs updating -> Scrolling to the specific risk factor that needs updating -> Selecting the feedback symbol on the right side of the risk factor name -> Completing the **Give feedback to Microsoft** form with options like score update request, outdated app data, or suggesting new risk factors -> providing detailed information about the requested changes and submitting the request.
+Application owners can request updates to risk scores by navigating to the gallery -> Selecting the app that needs an update -> Scrolling to the specific risk factor that needs an update -> Selecting the feedback symbol on the right side of the risk factor name -> Completing the **Give feedback to Microsoft** form with options like score update request, outdated app data, or suggesting new risk factors -> providing detailed information about the requested changes and submitting the request.
 
 > [!NOTE]
 > Feedback submitted through this process is sent to Microsoft Defender for Cloud Apps, which reviews and makes any necessary updates to application risk scores and data.
 
 :::image type="content" source="media/overview-application-gallery/app-risk-score-details.png" alt-text="Screenshot showing application risk score details with feedback options for individual risk factors.":::
 
-For detailed information about risk scoring methodology, customization options, and how to request score updates on Microsoft Defender for Cloud Apps, see [Find your cloud app and calculate risk scores](/defender-cloud-apps/risk-score). You can also programmatically access application templates and their risk scores using the [List applicationTemplates API](/graph/api/applicationtemplate-list).
+For detailed information about risk scoring methodology and how to request score updates on Microsoft Defender for Cloud Apps, see [Find your cloud app and calculate risk scores](/defender-cloud-apps/risk-score). You can also programmatically access application templates and their risk scores using the [List applicationTemplates API](/graph/api/applicationtemplate-list).
 
 ## Create your own application
 
