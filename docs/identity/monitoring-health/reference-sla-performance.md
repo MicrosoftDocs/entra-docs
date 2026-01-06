@@ -6,9 +6,9 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 11/13/2025
+ms.date: 01/06/2026
 ms.author: sarahlipsey
-ms.reviewer: egreenberg14
+ms.reviewer: sarbar
 ---
 
 # SLA performance for Microsoft Entra ID
@@ -29,7 +29,7 @@ Performance is measured in a way that reflects customer authentication experienc
 - Users can authenticate
 - Microsoft Entra ID successfully issues tokens for target apps after authentication
 
-In other words, *user minutes* are the number of unique users who sign in each minute *and* are issued a token or an error response. If a user's sign-in attempt isn't successfully completed within the minute, it's counted as a failed user minute. A user who doesn't complete the sign-in contributes to a lower uptime result.
+In other words, the number of unique users who both successfully sign in each minute and are issued a token or an error response are tracked as successful user minutes. If a user's sign-in attempt isn't successfully completed within the minute, it's counted as a failed user minute and contributes to a lower availability percentage. After each month is complete, the availability rate is calculated by dividing the number of successful user minutes by the total of successful plus failed user minutes. This rate is published in the following SLA attainment table.
 
 ## No planned downtime
 
