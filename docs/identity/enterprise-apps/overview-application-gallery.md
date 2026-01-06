@@ -95,7 +95,7 @@ Microsoft Defender for Cloud Apps assigns risk scores to SaaS applications in th
 Each application is scored from 1 to 10, where 1 indicates highest risk and 10 indicates lowest risk. Scores are calculated using a weighted average across four risk categories:
 
 - **General**: Company stability, domain age, and popularity
-- **Security**: Encryption methods, multifactor authentication, and audit trails  
+- **Security**: Encryption methods, multi-factor authentication, and audit trails  
 - **Compliance**: Standards like SOC 2, ISO 27001, HIPAA, and PCI
 - **Legal**: Data protection policies and regulatory compliance
 
