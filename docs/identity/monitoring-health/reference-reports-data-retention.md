@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 12/01/2023
+ms.date: 01/06/2026
 ms.author: sarahlipsey
 ms.reviewer: dhanyahk
 ---
@@ -34,6 +34,8 @@ If you already have activities data with your free license, then you can see it 
 ## How long does Microsoft Entra ID store the data?
 
 Log storage within Microsoft Entra varies by report type and license type. You can retain the audit and sign-in activity data for longer than the default retention period outlined in the previous table by routing it to an Azure storage account using Azure Monitor. For more information, see [Archive Microsoft Entra logs to an Azure storage account](./howto-archive-logs-to-storage-account.md).
+
+In the [Microsoft Entra External ID Basic plan](https://azure-int.microsoft.com/pricing/details/microsoft-entra-external-id/), logs are retained for 7 days. For more information, see [Supported features in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers#activity-logs-and-reports). To retain logs for longer periods, use [Azure Monitor](/entra/external-id/customers/how-to-azure-monitor) in your external tenant.
 
 ### Activity reports
 
