@@ -21,7 +21,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 ### Updated articles
 
-- [Configure a new OpenID connect identity provider in the admin center](customers/how-to-custom-oidc-federation-customers.md) - Client secret updates
+- [Configure a new OpenID Connect identity provider in the admin center](customers/how-to-custom-oidc-federation-customers.md) - Client secret updates
 - [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added Akamai and Cloudflare WAF information
 - [Configure Akamai with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md) - Editorial updates
 - [Configure Cloudflare with Microsoft Entra External ID](customers/how-to-configure-waf-integration.md) - Editorial updates
