@@ -6,7 +6,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 11/07/2025
+ms.date: 01/07/2026
 ms.service: global-secure-access
 ms.custom: agent-id-ignite
 
@@ -21,7 +21,7 @@ Global Secure Access is the unifying term used for both Microsoft Entra Internet
 This article details the known issues and limitations you might encounter when using Global Secure Access.
 
 ## Global Secure Access client limitations
-The Global Secure Access client is available on multiple platforms. Select each tab for details about the known limitations for each platform.    
+The Global Secure Access client is available on multiple platforms. Select each tab for details about the known limitations for each platform.
 
 ### [Windows client](#tab/windows-client)
 Known limitations for the Global Secure Access client for Windows include:

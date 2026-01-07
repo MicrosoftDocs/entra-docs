@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/19/2025
+ms.date: 01/07/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -24,8 +24,11 @@ This article describes how to download and install the Global Secure Access clie
 ## Prerequisites
 
 - A Microsoft Entra tenant onboarded to Global Secure Access.
-- A managed device joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
-   - Microsoft Entra registered devices aren't supported.
+- A device joined to or registered in the onboarded tenant:
+    - The device must be Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered.
+    - If the device isn't joined or registered, the Global Secure Access client registers it to the tenant when the user signs in.
+    - If the device isn't joined and has multiple registrations, at sign-in enter the email address of the tenant that Global Secure Access should connect to.
+    - On Microsoft Entra registered devices, only Private Access traffic is supported.
 - The Global Secure Access client requires a 64-bit version of Windows 10 (LTSC 2021 or newer), Windows 11, or an Arm64 version of Windows 11.
    - Azure Virtual Desktop single-session is supported.
    - Azure Virtual Desktop multi-session isn't supported.
