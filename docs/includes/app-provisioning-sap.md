@@ -1,4 +1,4 @@
-The following video provides an overview of on-premises provisioning.
+The following video provides an overview of on-premises provisioning using the provisioning agent.
 
 > [!VIDEO https://www.youtube.com/embed/QdfdpaFolys]
 
@@ -10,8 +10,8 @@ The following video provides an overview of on-premises provisioning.
 > - Keep user attributes synchronized between Microsoft Entra ID and SAP ECC.
 
 ## Out of scope
-* Other object types including local activity groups, roles, and profiles are not supported. Use the Microsoft Identity Manager if these objects are required. 
-* Password operations are not supported. Use the Microsoft Identity Manager if password management is required.
+* Provisioning other object types including local activity groups, roles, and profiles are not supported. Group membership provisioning can be done by [provisioning users and groups through SAP Cloud Identity Services](~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) instead of the provisioning agent.
+* Password operations are not supported. Use the Microsoft Identity Manager to synchronize passwords from AD to SAP ECC if password management is required.
 
 ## Prerequisites for provisioning to SAP ECC with NetWeaver AS ABAP 7.51
 
