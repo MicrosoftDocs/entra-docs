@@ -70,15 +70,17 @@ Administrators need to review the details of the plan, including the groups incl
 1. Select the **Start phased rollout** button from either the policy details panel or the phased rollout details page. The agent creates the new policy in report-only mode.
 
 > [!TIP]
-> You can intervene at any time with automatic and manual rollout plans. You can also change execution modes at any time during rollout.
+> You can pause, rollout, or mark the rollout complete at any time.
 
 ## Administrator executes the approved rollout plan
 
-You're provided several options to manage the phased rollout.
+You're provided several options to manage the phased rollout during deployment. During each phase, the agent monitors activity related to the policy to make sure there's no errors or issues. You can adjust the groups for phases that haven't started yet. Moving between phases or completing the deployment is done using the buttons at the top of the page.
+
+- Select **Move to next phase** to advance each phase of the rollout.
+- Select **Roll back to previous phase** to cancel the current phase and return to the previous phase.
+- Select **Mark rollout as complete** to apply the new policy to all groups and complete the deployment.
 
 :::image type="content" source="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-manual-details.png" alt-text="Screenshot of a phased rollout plan in manual execution mode." lightbox="media/conditional-access-agent-optimization-phased-rollout/phased-rollout-manual-details.png":::
-
-You must select the **Move to next phase** to advance each phase of the rollout. At any phase, you can revert to the previous phase or opt to have the agent automatically roll out the remaining phases.
 
 ## Built-in safeguards
 
