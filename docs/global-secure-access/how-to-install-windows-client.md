@@ -25,7 +25,7 @@ This article describes how to download and install the Global Secure Access clie
 
 - A Microsoft Entra tenant onboarded to Global Secure Access.
 - A device joined to or registered in the onboarded tenant:
-    - The device must be Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered.
+    - The device must be Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. To learn more, see [Global Secure Access client overview](concept-clients.md).
     - If the device isn't joined or registered, the Global Secure Access client registers it to the tenant when the user signs in.
     - If the device isn't joined and has multiple registrations, at sign-in enter the email address of the tenant that Global Secure Access should connect to.
     - On Microsoft Entra registered devices, only Private Access traffic is supported.
