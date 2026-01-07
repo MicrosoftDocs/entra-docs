@@ -97,7 +97,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 [![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/connectors-and-sensors.png)](media/how-to-configure-domain-controllers/connectors-and-sensors.png#lightbox)
 
 > [!IMPORTANT]
-> To upgrade to the Private Access Sensor version 2.1.31, we recommend uninstalling the previous sensor and then installing the new sensor. This new sensor is installed in `Audit` mode by default and you need to change it to `enforce` mode from Microsoft Entra Admin Center.
+> To upgrade to the Private Access Sensor version 2.1.31, we recommend uninstalling the previous sensor and then installing the new sensor. You can in-place upgrade from the sensor versions 2.1.31 and later.
 
 ### 7. Install sensor silently (no interactive authentication)
 
