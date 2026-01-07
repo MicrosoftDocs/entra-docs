@@ -5,7 +5,7 @@ description: Explore the full list of risk detections and their corresponding ri
 ms.service: entra-id-protection
 
 ms.topic: article
-ms.date: 09/11/2025
+ms.date: 01/07/2026
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -261,7 +261,6 @@ Also referred to as Adversary in the Middle, this high precision detection is tr
 
 - Calculated offline
 - License requirement:
-    - Microsoft Entra ID P2 and a standalone license for Microsoft Defender for Cloud Apps
     - Microsoft 365 E5 with Enterprise Mobility + Security E5
 
 ### Leaked credentials 
@@ -307,7 +306,7 @@ This risk detection type is discovered using information provided by [Microsof
 
 ### User reported suspicious activity 
 
-This risk detection is reported when a user denies a multifactor authentication (MFA) prompt and reports it as suspicious activity. An MFA prompt not initiated by a user might mean their credentials are compromised. 
+This risk detection is reported when a user denies a multifactor authentication (MFA) prompt and reports it as suspicious activity. An MFA prompt not initiated by a user might mean their credentials are compromised. For this detection to work, you must have the **Report suspicious activity** feature turned on. For more information, see [Configure Microsoft Entra MFA settings](../identity/authentication/howto-mfa-mfasettings.md#report-suspicious-activity).
 
 - Calculated offline
 - License requirement: Microsoft Entra ID P2
