@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 12/08/2025
+ms.date: 01/07/2026
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -120,8 +120,8 @@ HID Crescendo Key|692db549-7ae5-44d5-a1e5-dd20a493b723|&#10060;|&#x2705;|&#x2705
 HID Crescendo Key V2|2d3bec26-15ee-4f5d-88b2-53622490270b|&#10060;|&#x2705;|&#x2705;|&#10060;
 HID Crescendo Key V3|7991798a-a7f3-487f-98c0-3faf7a458a04|&#10060;|&#x2705;|&#x2705;|&#10060;
 Hideez Key 4 FIDO2 SDK|4e768f2c-5fab-48b3-b300-220eb487752b|&#10060;|&#x2705;|&#x2705;|&#x2705;
-Hyper FIDO Bio Security Key|d821a7d4-e97c-4cb6-bd82-4237731fd4be|&#x2705;|&#10060;|&#10060;|&#10060;
-Hyper FIDO Pro|9f77e279-a6e2-4d58-b700-31e5943c6a98|&#10060;|&#10060;|&#10060;|&#10060;
+Hyper FIDO Bio Security Key|d821a7d4-e97c-4cb6-bd82-4237731fd4be|&#x2705;|&#x2705;|&#10060;|&#10060;
+Hyper FIDO Pro|9f77e279-a6e2-4d58-b700-31e5943c6a98|&#10060;|&#x2705;|&#10060;|&#10060;
 Hyper FIDO Pro (CTAP2.1, CTAP2.0, U2F)|6999180d-630c-442d-b8f7-424b90a43fae|&#10060;|&#x2705;|&#10060;|&#10060;
 Hyper FIDO Pro NFC|23195a52-62d9-40fa-8ee5-23b173f4fb52|&#10060;|&#x2705;|&#x2705;|&#10060;
 HYPR FIDO2 Authenticator|0076631b-d4a0-427f-5773-0ec71c9e0279|&#x2705;|&#10060;|&#10060;|&#10060;
