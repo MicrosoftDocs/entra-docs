@@ -88,6 +88,9 @@ A collection of featured applications is listed by default when you open the Mic
 - **Federated SSO** - When you set up [SSO](what-is-single-sign-on.md) to work between multiple identity providers, it results to federation. An SSO implementation based on federation protocols improves security, reliability, user experiences, and implementation. Some applications implement federated SSO as SAML-based or as OIDC-based. For SAML applications, when you select create, the application is added to your tenant. For OIDC applications, the administrator must first sign up or sign-in to the application's website to add the application to Microsoft Entra ID.
 - **Provisioning** - Microsoft Entra ID to SaaS [application provisioning](~/identity/app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the SaaS applications that users need access to.
 
+> [!NOTE]
+> Some applications in the gallery that use linked-based SSO may have a disabled **Create** button. Linked-based SSO applications only route users to a target URL managed elsewhere and don't create new applications or service principals in Microsoft Entra ID. You can only set up where the app should send users when they click on it.
+
 ## Understanding application risk scores
 
 Microsoft Defender for Cloud Apps assigns risk scores to SaaS applications in the gallery to help organizations evaluate security posture and make informed adoption decisions. Access to risk score information requires either [Microsoft Entra Suite](/entra/fundamentals/licensing) or [Microsoft Entra Internet Access](/entra/global-secure-access/concept-internet-access) licenses.
