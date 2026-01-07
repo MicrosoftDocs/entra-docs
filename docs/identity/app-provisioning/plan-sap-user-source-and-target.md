@@ -163,9 +163,9 @@ Each attribute required by your applications needs to originate from some source
 
 ### Confirm that necessary BAPIs for SAP ECC are ready for use by Microsoft Entra
 
-The Microsoft Entra provisioning agent and generic web services connector provides connectivity to on-premises SOAP endpoints, including SAP BAPIs.
+The Microsoft Entra provisioning agent and generic web services connector provides connectivity to on-premises SAP ECC SOAP endpoints, including SAP BAPIs.
 
-If you aren't using SAP ECC and are only provisioning to SAP cloud services, skip to the next section.
+If you aren't using SAP ECC and are only provisioning to SAP cloud services or SAP S/4HANA On-Premise, skip to the next section.
 
 1. **Confirm that the BAPIs needed for provisioning are published.** Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) file named `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
 
@@ -396,7 +396,7 @@ If you aren't using SAP Cloud Identity Services, skip to the next section.
 
 ### Provision users to SAP ECC
 
-Now that you have the users in Microsoft Entra ID, you can provision them into SAP on-premises.
+Now that you have the users in Microsoft Entra ID, you can provision them into SAP ECC on-premises.
 
 If you aren't using SAP ECC, skip to the next section.
 
