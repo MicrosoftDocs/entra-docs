@@ -3,7 +3,7 @@ title: Microsoft Entra ID Protection risk-based access policies
 description: Identifying risk-based Conditional Access policies
 ms.service: entra-id-protection
 ms.topic: conceptual
-ms.date: 10/30/2025
+ms.date: 01/07/2026
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pwongera
@@ -49,7 +49,7 @@ The Microsoft-managed remediation risk-based Conditional Access policy lets you 
 
 - [Microsoft Entra ID P2](https://www.microsoft.com/security/business/microsoft-entra-pricing) is required to use the Microsoft-managed remediation policy.
 - The **Require Risk Remediation** setting remediates user risk, not sign-in risk.
-- If a user is assigned to both a policy with **Require Risk Remediation** and another policy with **Require Password Change** or **Block** a conflict will occur, causing the user to be forced through all policies or blocked. Ensure each user is assigned to only one such policy at a time. 
+- If a user is assigned to both a policy with **Require Risk Remediation** and another policy with **Require Password Change** or **Block**, a conflict will occur, causing the user to be forced through all policies or blocked. Ensure each user is assigned to only one such policy at a time. 
 - **Require authentication strength** and **Sign-in frequency - Every time** are automatically applied to the policy for two reasons:
    - Users need to be prompted to reauthenticate after their sessions are revoked.
    - Requiring auth strength ensures that password-based and passwordless users are covered by the policy.
