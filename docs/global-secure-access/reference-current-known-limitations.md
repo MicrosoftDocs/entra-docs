@@ -260,7 +260,7 @@ Known limitations for Private Access include:
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   
-- An admin can create up to 1,000 policies per tenant, up to 1,000 rules per tenant, and up to 256 security profiles per tenant.
+- An admin can create up to up to 256 security profiles per tenant, up to 1,000 policies per tenant, and up to 1,000 rules per tenant.
 - An admin can configure 8,000 total destinations (which can be any combination of IP, FQDN, URL, or web category) in each tenant. For example, within a single tenant can create up to 2 policies targeting 4,000 domains each *or* up to 1,000 policies with 8 domains each.
 - Admins can currently configure rules based on up to 1,000 total URLs.
 - TLS inspection supports up to 100 TLS inspection policies, 1000 rules, and 8000 destinations.
