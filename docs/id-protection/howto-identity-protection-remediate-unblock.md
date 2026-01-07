@@ -54,7 +54,7 @@ Sign-in risks that aren't remediated impact the user risk, so having risk-based 
 
 ### Self-remediation of user risk
 
-If a user is prompted to use self-service password reset (SSPR) to remediate user risk, they are prompted to update their password as shown in the [Microsoft Entra ID Protection user experience](concept-identity-protection-user-experience.md) article. Once they update their password, the user risk is remediated. The user can then proceed to sign in with their new password. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
+If a user is prompted to use self-service password reset (SSPR) to remediate user risk, they are prompted to update their password as shown in the [Microsoft Entra ID Protection user experience](concept-identity-protection-user-experience.md) article. Once they update their password, the user risk is remediated. A secure password change (MFA and password change) can also remediate user risk. The user can then proceed to sign in with their new password. The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
 
 - Risk state: "At risk" -> "Remediated"
 - Risk detail: "-" -> "User performed secured password reset"
