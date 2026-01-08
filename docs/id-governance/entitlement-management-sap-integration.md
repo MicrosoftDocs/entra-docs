@@ -51,13 +51,13 @@ SAP Cloud Identity and Access Governance (IAG) tenant license:
 - The Microsoft Entra User Account configuring the connector and Access Packages must be synced to SAP Cloud Identity Services (IAS) and SAP IAG.
     - Make sure you run the “*Repository Sync*” and “*SCI User Group Sync Job*” on SAP IAG after you provision the Microsoft Entra users to SAP Cloud Identity Services.
 
-You will also need an Azure subscription, containing an Azure Key Vault, to store your credentials for Microsoft Entra to interact with SAP IAG.
+You also need an Azure subscription, containing an Azure Key Vault, to store your credentials for Microsoft Entra to interact with SAP IAG.
 
 ## Prepare your SAP Identity Access Governance instance to connect with Microsoft Entra
 
-Prior to integrating Microsoft Entra entitlement management with SAP Cloud Identity Access Governance (IAG), ensure that Microsoft Entra and SAP IAG have the same lists of the user identities, so that entitlement management can refer to a user in an access request and SAP IAG can recognize that user. You can do this by connecting Microsoft Entra to provision users into SAP Cloud Identity Services, and then connecting SAP Cloud Identity Services to SAP IAG.
+Before integrating Microsoft Entra entitlement management with SAP Cloud Identity Access Governance (IAG), ensure that Microsoft Entra and SAP IAG have the same lists of the user identities. When entitlement management then refer to a user in an access request it sends to SAP IAG, SAP IAG can recognize that user. You can synchronize the user lists by connecting Microsoft Entra to provision users into SAP Cloud Identity Services, and then connecting SAP Cloud Identity Services to SAP IAG.
 
-:::image type="content" source="media/entitlement-management-sap-integration/microsoft-entra-and-sap-integration-architecture.png" alt-text="Diagram of the relationship of Microsoft Entra, Azure Key Vault and SAP Cloud Identity Services and SAP IAG in the integration described in this article.":::
+:::image type="content" source="media/entitlement-management-sap-integration/microsoft-entra-and-sap-integration-architecture.png" alt-text="Diagram of the relationship of Microsoft Entra, Azure Key Vault, and SAP Cloud Identity Services and SAP IAG in the integration described in this article.":::
 
 Once you have [provisioned the users from Microsoft Entra into SAP Cloud Identity Services](#prerequisites), then to synchronize user-group and attribute data from SAP Cloud Identity Services to [SAP Cloud Identity Access Governance (IAG)](https://help.sap.com/docs/SAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE?state=DRAFT), complete these steps:
 
