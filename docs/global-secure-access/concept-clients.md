@@ -43,7 +43,7 @@ Global Secure Access client supports bring your own device (BYOD) scenarios so u
     1. Install Microsoft Authenticator from Google Play and register the device to the tenant.
     2. Install the Microsoft Defender app from Google Play and complete sign-in.
 - Enable Private Access traffic profiles for these users.
-- A device-wide VPN profile is created. The Global Secure Access Quick Settings tile is off by default; the user must turn it on to send Private Access traffic.
+- A device-wide VPN profile is created. The Global Secure Access tile is off by default; the user must turn it on to send Private Access traffic.
 
 ### iOS/iPadOS
 
@@ -53,6 +53,10 @@ Global Secure Access client supports bring your own device (BYOD) scenarios so u
     2. Install the Microsoft Defender app from the App Store and complete sign-in.
 - Enable Private Access traffic profiles for these users.
 - A device-wide VPN profile is created. The Global Secure Access toggle is off by default; the user must turn it on to send Private Access traffic.
+
+### macOS
+
+- BYOD does not support macOS.
 
 ## Tenant selection and switching (preview)
 
@@ -79,7 +83,7 @@ How the Global Secure Access client selects a tenant depends on platform and Mic
 - ✅ Initiated from the client UI.
 - ✅ Establishes a Private Access tunnel only to the resource tenant.
 - ✅ Doesn't change device ownership, join state, or registrations.
-- ✅ After sign-out or switching back, reconnects to the home tenant.
+- ✅ After switching back, reconnects to the home tenant.
 
 Profile state during guest switch:
 - Microsoft traffic: ❌ Disconnected
@@ -92,7 +96,6 @@ Profile state during guest switch:
 ### Summary
 - ✅ Device join takes precedence on Windows; no tenant switching.
 - ✅ Registered devices choose a tenant once at initial sign-in.
-- ✅ Guest access switching is temporary and applies to Private Access only.
 
 ## Related content
 
