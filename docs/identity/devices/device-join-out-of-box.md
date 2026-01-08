@@ -36,10 +36,9 @@ Your device might restart several times as part of the setup process. Your devic
 1. Turn on your new device and start the setup process. Follow the prompts to set up your device.
 1. When prompted **How would you like to set up this device?**, select **Set up for work or school**.
    :::image type="content" source="media/device-join-out-of-box/windows-11-first-run-experience-work-or-school.png" alt-text="Screenshot of Windows 11 out-of-box experience showing the option to set up for work or school.":::
-1. On the **Let's set things up for your work or school** page, provide the credentials that your organization provided. These credentials might include a username and password, or a method like a [passkey](/entra/identity/authentication/how-to-authentication-synced-passkeys). Your users should be able to use the credential that they have to sign in to Microsoft Entra ID, including [passkeys](/entra/identity/authentication/how-to-authentication-synced-passkeys).
-   1. If your organization requires it, you might be prompted to perform multifactor authentication. 
+1. On the **Let's set things up for your work or school** page, provide the credentials that your organization provided. These credentials might include a username and password, or a method like a [passkey](/entra/identity/authentication/how-to-authentication-synced-passkeys). Your users should be able to use the credential that they have to sign in to Microsoft Entra ID, including [passkeys](/entra/identity/authentication/how-to-authentication-synced-passkeys), as shown in the following animation. 
 
-      :::image type="content" source="media/device-join-out-of-box/passkey-sign-in.gif" alt-text="Animation of how to sign in to Windows 11 out of box by using a passkey.":::
+   :::image type="content" source="media/device-join-out-of-box/passkey-sign-in.gif" alt-text="Animation of how to sign in to Windows 11 out of box by using a passkey.":::
 
 1. Continue to follow the prompts to set up your device.
 1. Microsoft Entra ID checks if an enrollment in mobile device management is required and starts the process.
