@@ -63,7 +63,7 @@ $catalog = New-MgEntitlementManagementCatalog -DisplayName "Marketing"
 
 ## Add resources to a catalog
 
-To include resources in an access package, the resources must exist in a catalog. The types of resources you can add to a catalog include groups, applications, and SharePoint Online sites.
+To include resources in an access package, the resources must exist in a catalog. The types of resources you can add to a catalog for use in access packages include groups, applications, SharePoint Online sites, and (in preview) SAP IAG resources.
 
 * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups.
 
