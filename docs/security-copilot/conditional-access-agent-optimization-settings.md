@@ -95,7 +95,7 @@ The Conditional Access Optimization Agent now supports [Microsoft Entra Agent ID
   - This change doesn't impact reporting or analytics.
   - Existing policies and recommendations remain unaffected.
   - Customers can't switch back to user context.
-  - Admins with the Security Administrator or Global Administrator roles can make this change. Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
+  - Admins with the Security Administrator role can make this change. Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
 
 :::image type="content" source="media/conditional-access-agent-optimization-settings/identity-permissions.png" alt-text="Screenshot conditional-access-agent-optimization-settings/identity-permissions.png":::
 
