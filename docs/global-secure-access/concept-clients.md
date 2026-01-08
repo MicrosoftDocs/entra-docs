@@ -65,13 +65,15 @@ How the Global Secure Access client selects a tenant depends on platform and Mic
 
 ### Platform behavior
 
-| Platform/device state | Connection target | Device tenant switching | B2B guest switch (Private Access) | Notes |
+
+
+| Platform/device state | Connection target | BYOD support (Private Access) | B2B guest switch (Private Access) | Notes |
 |---|---|---:|---:|---|
-| Windows (Microsoft Entra joined or hybrid joined) | Always connects to the joined tenant | ❌ | ✅ | Joined tenant is authoritative for device identity, compliance, and policy. |
-| Windows (registered only) | User selects a tenant at first sign-in; remains connected to that tenant | ❌ | ✅ | Multiple registrations allowed; no switching between registered tenants. |
-| macOS (registered) | User selects a tenant at first sign-in; remains connected to that tenant | ❌ | ✅ | Applies to BYOD/unmanaged. |
-| Android (registered) | User selects a tenant at first sign-in; remains connected to that tenant | ❌ | ✅ | Applies to BYOD/unmanaged. |
-| iOS/iPadOS (registered) | User selects a tenant at first sign-in; remains connected to that tenant | ❌ | ✅ | Applies to BYOD/unmanaged. |
+| Windows (Microsoft Entra joined or hybrid joined) | Always connects to the joined tenant | ❌ | ✅ | Joined tenant is authoritative for device identity, compliance, and policy. Allows user to switch to a resource tenant using B2B collaboration. |
+| Windows (registered only) | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ✅ | Multiple registrations allowed; no switching between registered tenants. Allows user to switch to a resource tenant using B2B collaboration. |
+| macOS (registered) | User selects a tenant at first sign-in; remains connected to that tenant | ❌ | ❌ | Applies to managed with Company Portal. |
+| Android (registered) | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ❌ | Applies to managed with Company Portal and BYOD/unmanaged. |
+| iOS/iPadOS (registered) | User selects a tenant at first sign-in; remains connected to that tenant | ✅ | ❌ | Applies to managed with Company Portal and BYOD/unmanaged. |
 
 ### B2B guest access tenant switching
 - ✅ Initiated from the client UI.
