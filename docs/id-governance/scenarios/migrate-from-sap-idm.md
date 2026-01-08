@@ -176,7 +176,7 @@ For step-by-step guidance on the identity lifecycle with SAP applications as the
 
 * If you are using SAP NetWeaver AS for Java with another LDAP directory as its data source, then you can configure [Microsoft Entra ID to provision users into LDAP directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
 
-After you configure provisioning for users into your SAP applications, you should enable Single sign-on for them. Microsoft Entra ID can serve as the identity provider and authentication authority for your SAP applications. Microsoft Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](~/identity/saas-apps/sap-netweaver-tutorial.md). For more information on how to configure single sign-on to SAP SaaS and modern apps, see [enable SSO](~/id-governance/sap.md#enable-sso).
+After you configure provisioning for users into your SAP applications, you should enable Single sign-on for them. Microsoft Entra ID can serve as the identity provider and authentication authority for your SAP applications. Microsoft Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](~/identity/saas-apps/sap-netweaver-tutorial.md). For more information on how to configure single sign-on to SAP SaaS and modern apps, see [enable SSO](~/id-governance/sap.md#enable-sso). You can also migrate the [access lifecycle management scenarios](#migrate-access-lifecycle-management-scenarios) from SAP IDM to Microsoft Entra.
 
 ### Provision to non-SAP systems
 
@@ -214,7 +214,7 @@ Microsoft Entra also supports end user self-service for [group management](~/ide
 
 ### Migrate access lifecycle management scenarios
 
-Organizations may have integrated SAP IDM with SAP AC, formerly SAP GRC, or SAP IAG for access approvals, risk assessments, separation of duties checks and other operations.
+Organizations may have integrated SAP IDM with SAP access governance for access approvals, risk assessments, separation of duties checks and other operations.
 
 Microsoft Entra includes multiple access lifecycle management technologies to enable organizations to bring their identity and access management scenarios to the cloud. The choice of technologies depends upon your organization's application requirements and Microsoft Entra licenses.
 
