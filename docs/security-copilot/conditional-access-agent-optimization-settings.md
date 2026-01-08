@@ -6,7 +6,7 @@ author: shlipsey3
 manager: pmwongera
 ms.reviewer: jodah
 
-ms.date: 01/05/2026
+ms.date: 01/08/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -22,7 +22,7 @@ The Conditional Access Optimization Agent helps organizations improve their secu
 The agent settings described in this article cover standard options like triggers, notifications, and scope. But the settings also include advanced options like custom instructions, Intune integrations, and permissions.
 
 > [!IMPORTANT]
-> The ServiceNow integrations in the Conditional Access Optimization Agent is currently in PREVIEW.
+> The ServiceNow integration in the Conditional Access Optimization Agent is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## How to configure agent settings
@@ -38,7 +38,7 @@ After making any changes, select the **Save** button at the bottom of the page.
 
 ## Trigger
 
-The agent is configured to run every 24 hours, based on when it's initially configured. You can manually run the agent at any time.
+The agent is configured to run every 24 hours, based on when it was initially configured. You can manually run the agent at any time.
 
 ## Microsoft Entra objects to monitor
 
@@ -92,7 +92,7 @@ The Conditional Access Optimization Agent now supports [Microsoft Entra Agent ID
 
 - New installations of the agent default to use an [agent identity](../agent-id/identity-platform/what-is-agent-id.md).
 - Existing installations can switch from the user context to run under an agent identity at any time. 
-  - This change does not impact reporting or analytics.
+  - This change doesn't impact reporting or analytics.
   - Existing policies and recommendations remain unaffected.
   - Customers can't switch back to user context.
   - Admins with the Security Administrator or Global Administrator roles can make this change. Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
@@ -119,7 +119,7 @@ The agent identity uses the following permissions to perform its tasks. These pe
 
 ### ServiceNow integration (Preview)
 
-Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/security/plugin-servicenow) can now have the Conditional Access optimization agent create ServiceNow change requests for each new suggestion the agent generates. This allows IT and security teams to track, review, and approve or reject agent suggestions within existing ServiceNow workflows. At this time, only change requests (CHG) are supported.
+Organizations that use the [ServiceNow plugin for Security Copilot](/copilot/security/plugin-servicenow) can now have the Conditional Access optimization agent create ServiceNow change requests for each new suggestion the agent generates. This feature allows IT and security teams to track, review, and approve or reject agent suggestions within existing ServiceNow workflows. At this time, only change requests (CHG) are supported.
 
 To use the ServiceNow integration, your organization must have the [ServiceNow plugin](/copilot/security/plugin-servicenow) configured.
 
@@ -153,7 +153,7 @@ For more information about how to use custom instructions, check out the followi
 
 > [!VIDEO 5879a0f7-3644-4e34-a8ce-b186b8e5f128]
 
-Please note that some of the content in the video, such as the user interface elements, is subject to change as the agent is updated frequently.
+Some of the content in the video, such as the user interface elements, is subject to change as the agent is updated frequently.
 
 ## Intune integration
 

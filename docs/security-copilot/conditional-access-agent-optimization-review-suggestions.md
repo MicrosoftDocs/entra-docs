@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
 manager: pmwongera
-ms.date: 12/11/2025
+ms.date: 01/08/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -21,7 +21,7 @@ The Microsoft Entra Conditional Access Optimization Agent provides suggestions t
 This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
 > [!IMPORTANT]
-> The ServiceNow integrations in the Conditional Access Optimization Agent is currently in PREVIEW.
+> The ServiceNow integration in the Conditional Access Optimization Agent is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -72,8 +72,8 @@ From the policy details, you can take action on the suggestion using several opt
 Below the policy suggestion summary, you can take several actions. The options change based on the type of suggestion. For example, suggestions to turn on a new policy have different options than a suggestion to update the settings of an existing policy.
 
 - **Review policy changes**: View a summary or JSON details of the suggestion.Further details described in the [Review policy changes](#review-policy-changes) section.
-- **Turn on policy**: Turn on new policies that were created in report-only mode by the agent.
-- **Mark suggestion as reviewed**: Select from the down arrow on the **Turn on policy** button to indicate that you've reviewed the suggestion without applying it.
+- **Turn on policy**: Turn on new policies created in report-only mode by the agent.
+- **Mark suggestion as reviewed**: Select from the down arrow on the **Turn on policy** button to indicate that you reviewed the suggestion without applying it.
 - **Snooze for 14 days**: Select from the down arrow on the **Turn on policy** button to temporarily hide the suggestion. The suggestion reappears in the list after 14 days.
 - **View agent's full activity**: View the full activity and decisions. Further details described in the [View agent's full activity](#view-agents-full-activity) section.
 - **Add notes**: Select the pen and paper icon to add notes about the suggestion for other admins to review

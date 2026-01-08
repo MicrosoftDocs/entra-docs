@@ -6,7 +6,7 @@ author: shlipsey3
 manager: pmwongera
 ms.reviewer: jodah
 
-ms.date: 12/11/2025
+ms.date: 01/08/2026
 
 ms.update-cycle: 180-days
 ms.service: entra-id
@@ -22,7 +22,7 @@ The Conditional Access optimization agent helps you ensure all users, applicatio
 The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
 > [!IMPORTANT]
-> The ServiceNow integrations in the Conditional Access optimization agent is currently in PREVIEW.
+> The ServiceNow integration in the Conditional Access optimization agent is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites

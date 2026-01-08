@@ -6,7 +6,7 @@ author: shlipsey3
 manager: pmwongera
 
 ms.reviewer: jodah
-ms.date: 01/05/2026
+ms.date: 01/08/2026
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -16,7 +16,7 @@ ms.collection: msec-ai-copilot
 ---
 # Conditional Access Optimization Agent phased rollout
 
-The Conditional Access Optimization Agent for Microsoft Entra includes a phased rollout capability that helps organizations deploy new Conditional Access policies safely and efficiently. This Microsoft Security Copilot feature in Microsoft Entra enables administrators to introduce policies gradually, monitor their impact, and minimize disruptions. This phased rollout capability provides gradual deployment of new policies to minimize the chance of widespread disruption to end users and reduce the need for manual analysis and planning, saving weeks of effort. As with all aspects of the Conditional Access Optimization Agent, administrators retain full control of the policy changes, such as group selection and rollout pacing. Clear reasoning for the rollout plan is also provided to maintain transparency.
+The Conditional Access Optimization Agent for Microsoft Entra includes a phased rollout capability that helps organizations deploy new Conditional Access policies safely and efficiently. This Microsoft Security Copilot feature in Microsoft Entra enables administrators to introduce policies gradually, monitor their impact, and minimize disruptions. This phased rollout capability provides gradual deployment of new policies to minimize the chance of widespread disruption to end users and reduce the need for manual analysis and planning, saving weeks of effort. As with all aspects of the Conditional Access Optimization Agent, administrators retain full control of the policy changes, such as group selection, rollout pacing, and deployment. Clear reasoning for the rollout plan is also provided to maintain transparency.
 
 This article explains how the phased rollout process works, outlines prerequisites, and describes the built-in safeguards that help ensure a smooth deployment.
 
@@ -31,17 +31,15 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 When the Conditional Access Optimization Agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan.
 
-Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply. To determine which groups to use, the agent looks at groups that were previously or are currently used in Conditional Access policies. The agent looks at those groups to see how other Conditional Access policies affected them, to gauge potential impact. The agent looks at the size of the groups and then uses all these factors to assign the groups to the phases starting with the low impact groups and ending with the higher-impact groups.
+Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply. To determine which groups to use, the agent looks at groups that were previously or are currently used in Conditional Access policies. The agent looks at those groups to see how other Conditional Access policies affected them, to gauge potential impact. The agent looks at the size of the groups and then uses all these factors to assign the groups to the phases starting with the low impact groups and ending with the higher impact groups.
 
 There are three steps in the phased rollout process:
 
 1. [Agent creates a report-only policy with a phased rollout](#agent-creates-a-report-only-policy-with-a-phased-rollout)
 1. [Administrator reviews, edits, and accepts the rollout plan](#administrator-reviews-edits-and-accepts-the-rollout-plan)
-1. [Agent or Administrator executes the approved rollout plan](#agent-or-administrator-executes-the-approved-rollout-plan)
+1. [Agent or Administrator executes the approved rollout plan](#administrator-executes-the-approved-rollout-plan)
 
-You can review the groups included in each phase and make changes before and during the phased rollout. At any time during the rollout, you can choose to have the plan executed by the agent or you can manually execute each phase of the plan.
-
-Regardless of how the plan is executed or if you made changes to the plan, when the first phase starts, a *new* policy is created and turned on for the groups included in the first phase. The original report-only mode policy remains intact.
+You can review the groups included in each phase and make changes before and during the phased rollout. When the first phase starts, a *new* policy is created and turned on for the groups included in the first phase. The original report-only mode policy remains intact.
 
 ## Agent creates a report-only policy with a phased rollout
 
@@ -53,7 +51,7 @@ In the list of suggestions from the agent, look for **Suggested phased rollout**
 
 ### Administrator reviews, edits, and accepts the rollout plan
 
-Administrators need to review the details of the plan, including the groups included in each phase, the timing of each phase, and how the plan will be executed.
+Administrators need to review the details of the plan, including the groups included in each phase, the timing of each phase, and how the plan is executed.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 
@@ -70,7 +68,7 @@ Administrators need to review the details of the plan, including the groups incl
 1. Select the **Start phased rollout** button from either the policy details panel or the phased rollout details page. The agent creates the new policy in report-only mode.
 
 > [!TIP]
-> You can pause, rollout, or mark the rollout complete at any time.
+> You can pause rollout, or mark the rollout complete at any time.
 
 ## Administrator executes the approved rollout plan
 

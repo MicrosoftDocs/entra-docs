@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: jodah
 manager: pmwongera
-ms.date: 01/05/2026
+ms.date: 01/08/2026
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -43,13 +43,13 @@ Sample prompts:
 
 ### Prioritize suggestions
 
-With the chat capability you can ask the agent to help you prioritize the suggestions. The agent compares the potential impact of the policy changes and provides a ranked list of suggestions based on [Zero Trust principles](/security/zero-trust/zero-trust-overview), so you don't have to review the full list and make that decision yourself.
+With the chat capability, you can ask the agent to help you prioritize the suggestions. The agent compares the potential impact of the policy changes and provides a ranked list of suggestions based on [Zero Trust principles](/security/zero-trust/zero-trust-overview), so you don't have to review the full list and make that decision yourself.
 
 Sample prompts:
 - *Which suggestion should I implement first?*
 - *Prioritize the suggestions.*
 
-If you ask the agent to prioritize the list of suggestions then ask it for more details on a specific suggestion, the agent uses the order of the prioritized list.
+If you ask the agent to prioritize the list of suggestions, then ask it for more details on a specific suggestion, the agent uses the order of the prioritized list.
 
 ### Request more detail
 
@@ -63,7 +63,7 @@ If you didn't ask the agent to prioritize the order of the suggestions and you a
 
 ### Explain agent findings
 
-Ask the agent to to describe the details about the findings included in a policy suggestion. The agent will clarify the logic behind the suggestion and its impact on security and user experience.
+Ask the agent to describe the details about the findings included in a policy suggestion. The agent clarifies the logic behind the suggestion and its impact on security and user experience.
 
 Sample prompts:
 - *Who are the 12 users included in this suggestion?*
@@ -99,7 +99,7 @@ Sample prompts:
 > [!NOTE]
 > The Conditional Access optimization agent can identify users and groups that are likely to be emergency ("breakglass") accounts and proactively suggest excluding them from a policy.
 >
-> At this time, editing included or excluded applications is not supported.
+> At this time, editing included or excluded applications isn't supported.
 
 ## How to use chat
 
@@ -141,7 +141,7 @@ When you select **Confirm**, the agent makes changes *directly to the policy*. T
 
 ### Create a new policy
 
-When the agent creates a new policy *in report-only mode* you can use the chat make adjustments to the policy and even turn on the policy. When you're using chat for new policies, the first **Confirm** button updates the policy in report-only mode.
+When the agent creates a new policy *in report-only mode*, you can use the chat make adjustments to the policy and even turn on the policy. When you're using chat for new policies, the first **Confirm** button updates the policy in report-only mode.
 
 You're prompted a second time to turn on the policy. If you select **Confirm** at this step, the policy is turned on. Select **Cancel** to save the report-only changes without turning on the policy. 
 
