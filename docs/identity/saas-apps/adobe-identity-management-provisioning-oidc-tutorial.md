@@ -35,7 +35,7 @@ The scenario outlined in this article assumes that you already have the followin
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A federated directory in the [Adobe Admin Console](https://adminconsole.adobe.com/) with verified domains.
-* Review the [adobe documentation](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/add-azure-sync.ug.html) on user provisioning 
+* Review the [Adobe documentation](https://helpx.adobe.com/enterprise/using/add-azure-sync.html) on user provisioning
 
 > [!NOTE]
 > If your organization uses the User Sync Tool or a UMAPI integration, you must first pause the integration. Then, add Microsoft Entra automatic provisioning to automate user management. Once Microsoft Entra automatic provisioning is configured and running, you can completely remove the User Sync Tool or UMAPI integration.

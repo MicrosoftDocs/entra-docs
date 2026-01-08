@@ -24,7 +24,7 @@ AI agents can execute tasks quickly and at scale. Many high-privilege capabiliti
 
 For this reason, Microsoft Entra ID limits what agent identities can do. For example, Microsoft Entra blocks agents from being granted many high privilege roles or permissions. Users and administrators aren't allowed to consent to those powerful permissions for an agent. This design recognizes that agents should operate with least privilege. By preventing agents from receiving sensitive privileges, the system minimizes the risk that an AI agent could escalate access. The list of allowed roles and permissions will evolve over time.
 
-## Role assignments for agent identities
+## Microsoft Entra role assignments for agent identities
 
 From an authorization standpoint, an agent identity behaves somewhat like an application or a user with extra safeguards. Each agent identity has a service principal or a user in Microsoft Entra ID, and it can be assigned certain Microsoft Entra roles.
 
@@ -136,7 +136,7 @@ What's blocked are the tenant-scoped privileges that go beyond a single user or 
 
 ## When to Use Azure roles, Microsoft Entra roles, or Microsoft Graph permissions
 
-Depending on what an agent needs to do, administrators can grant access in different ways to keep the scope appropriate.
+Depending on what an agent needs to do, administrators can grant access in different ways to keep the scope appropriate. This includes assigning Azure roles, Microsoft Entra roles, OAuth permission grants including Graph permissions, application role assignments, [access package assignments](agent-access-packages.md), and group memberships.
 
 ### Azure roles
 

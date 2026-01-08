@@ -80,7 +80,7 @@ The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is inc
 
 ### [.NET](#tab/dotnet)
 
-Changes are required if you use the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) package and one of the following APIs in your application. The public client API is **deprecated** [as of the 4.73.1 release](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/blob/main/CHANGELOG.md):
+Changes are required if you use the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) package and one of the following APIs in your application. The public client API is **deprecated** [as of the 4.74.0 release](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/blob/main/CHANGELOG.md):
 
 - [IByUsernameAndPassword.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.ibyusernameandpassword.acquiretokenbyusernamepassword) (confidential client API)
 - [PublicClientApplication.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.publicclientapplication.acquiretokenbyusernamepassword) (public client API) [deprecated]
@@ -90,13 +90,13 @@ Changes are required if you use the [Microsoft.Identity.Client](https://www.nuge
 Changes are required if you use the [microsoft-authentication-library-for-go](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go) module and one of the following APIs in your application:
 
 - [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/confidential#Client.AcquireTokenByUsernamePassword) (confidential client API)
-- [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/public#Client.AcquireTokenByUsernamePassword) (public client API)
+- [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/public#Client.AcquireTokenByUsernamePassword) (public client API) [**deprecated** as of the `1.6.0` release]
 
 ### [Java](#tab/java)
 
 Changes are required if you use the [msal4j](https://central.sonatype.com/artifact/com.microsoft.azure/msal4j) package and the following API in your application:
 
-[PublicClientApplication.acquireToken(UserNamePasswordParameters parameters)](/java/api/com.microsoft.aad.msal4j.publicclientapplication#com-microsoft-aad-msal4j-publicclientapplication-acquiretoken(com-microsoft-aad-msal4j-usernamepasswordparameters))
+[PublicClientApplication.acquireToken(UserNamePasswordParameters parameters)](/java/api/com.microsoft.aad.msal4j.publicclientapplication#com-microsoft-aad-msal4j-publicclientapplication-acquiretoken(com-microsoft-aad-msal4j-usernamepasswordparameters)) [**deprecated** as of the `1.24.0` release]
 
 ### [Node.js](#tab/js)
 
@@ -110,7 +110,7 @@ Changes are required if you use the [@azure/msal-node](https://www.npmjs.com/pac
 
 Changes are required if you use the [msal](https://pypi.org/project/msal/) package and the following API in your application:
 
-[ClientApplication.acquire_token_by_username_password](/python/api/msal/msal.application.clientapplication#msal-application-clientapplication-acquire-token-by-username-password)
+[ClientApplication.acquire_token_by_username_password](/python/api/msal/msal.application.clientapplication#msal-application-clientapplication-acquire-token-by-username-password) [**deprecated** for the public client flow as of `1.35.0` release]
 
 ---
 

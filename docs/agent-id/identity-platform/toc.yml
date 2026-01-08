@@ -110,5 +110,7 @@ items:
       href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/identity-platform/toc.json
     - name: Agent identity API reference
       href: /graph/api/resources/agentidentity?toc=/entra/agent-id/identity-platform/toc.json
+    - name: Error codes
+      href: error-codes.md
     - name: Known issues
       href: preview-known-issues.md

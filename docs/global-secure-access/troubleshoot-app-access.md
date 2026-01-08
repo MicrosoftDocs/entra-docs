@@ -6,7 +6,7 @@ manager: martinco
 ms.author: jricketts
 ms.service: global-secure-access
 ms.topic: troubleshooting-general
-ms.date: 03/05/2025
+ms.date: 12/03/2025
 ms.reviewer: andresc
 
 #CustomerIntent: As an IT admin, I want troubleshoot application access for the Global Secure Access Windows client so that I can ensure its proper operation.
@@ -14,7 +14,7 @@ ms.reviewer: andresc
 ---
 # Troubleshoot application access
 
-This article helps you to identify and resolve application access problems with the Global Secure Access Windows client.
+This article helps you identify and resolve application access problems with the Global Secure Access Windows client.
 
 ## Troubleshoot client connection
 
@@ -24,20 +24,20 @@ Review Global Secure Access Windows client [known limitations](how-to-install-wi
 
 ## Does Global Secure Access acquire application traffic?
 
-This section helps you to understand whether Global Secure Access acquires the traffic that the application generates.
+This section helps you understand whether Global Secure Access acquires the traffic that the application generates.
 
 1. To troubleshoot client traffic, go to **Advanced diagnostics** > **Traffic**.
 1. Start the traffic collection. 
-1. Reproduce what you are trying to do.
+1. Reproduce what you're trying to do.
 1. Observe **Traffic** activity.
-1. If you know to which target IPs and ports your app should connect, filter by them and remove unrelated traffic, which makes troubleshooting easier. In the following example screenshot, filter `Destination Port == 3389` helps to troubleshoot Remote Desktop Protocol (RDP) connections.
+1. If you know the target IPs and ports your app should connect to, filter by them and remove unrelated traffic, which makes troubleshooting easier. In the following example screenshot, filter `Destination Port == 3389` helps to troubleshoot Remote Desktop Protocol (RDP) connections.
 
    :::image type="content" source="media/troubleshoot-app-access/network-traffic-destination-port.png" alt-text="Screenshot of Network traffic Destination port filter." lightbox="media/troubleshoot-app-access/network-traffic-destination-port-expanded.png":::
 
 In the previous example screenshot, the default filter `Action==Tunnel` results with a line (or flow) that indicates the Global Secure Access client is:
 
 - Seeing the traffic.
-- Evaluating the protocol and destination IP/FQDN and port against the traffic forwarding rules.
+- Evaluating the protocol, destination IP or FQDN, and port against the traffic forwarding rules.
 - Determining that the traffic should tunnel to the Global Secure Access service. Otherwise, the **Connection Status** would say **Bypassed**.
 
 If you don't know the destination IPs or ports, you can try filtering by process name. In the previous example, you can filter by process name `mstsc.exe`.
@@ -50,13 +50,13 @@ In **Traffic forwarding** > **Microsoft traffic profile** and **Internet access 
 
 ## App connectivity requirements
 
-This section helps you to understand how apps might require connectivity to destinations not included in existing app segments.
+This section helps you understand how apps might require connectivity to destinations not included in existing app segments.
 
 Applications might require connectivity to different services with multiple destination IPs or ports or that use User Datagram Protocol (UDP) or Transmission Control Protocol (TCP).
 
 It's common to have applications that require connectivity to destinations not included in existing app segments. Follow these steps to determine if this scenario applies to you.
 
-In the following example, the client successfully created and tunneled an RDP connection. However, the user reported performance problems. To understand if traffic is being bypassed, you can remove the default `Action==Tunnel` filter, add a process name filter, and reproduce the problem. Then you can observe that `mstsc.exe` is trying to send traffic to the RDP server on 3389/UDP. The Global Secure Access client bypassed the traffic because it doesn't match a forwarding profile rule.
+In the following example, the client successfully creates and tunnels an RDP connection. However, the user reports performance problems. To understand if traffic is being bypassed, you can remove the default `Action==Tunnel` filter, add a process name filter, and reproduce the problem. Then you can observe that `mstsc.exe` is trying to send traffic to the RDP server on 3389/UDP. The Global Secure Access client bypasses the traffic because it doesn't match a forwarding profile rule.
 
 :::image type="content" source="media/troubleshoot-app-access/network-traffic-process-name.png" alt-text="Screenshot of Network traffic Process name filter." lightbox="media/troubleshoot-app-access/network-traffic-process-name-expanded.png":::
 
@@ -68,30 +68,30 @@ For example, a user accesses a file share from a Windows 11 device. Observe the 
 
 - Windows tries Server Message Block (SMB) over QUIC, which uses 443/UDP.
 - `lsass.exe` (Local Security Authority process) initiates connections to domain controllers on port 88/TCP (Kerberos).
-- In this case, the authentication traffic is being tunneled because the corresponding rules are created. If this case isn't true, Windows generally falls back to NTLM which doesn't require other ports but, depending on configuration, this case might not true.
+- In this case, the authentication traffic is being tunneled because the corresponding rules are created. If this case isn't true, Windows generally falls back to NTLM which doesn't require other ports but, depending on configuration, this case might not be true.
 - We see a connection on 445/TCP, which is the SMB protocol used for file share access.
 
 :::image type="content" source="media/troubleshoot-app-access/network-traffic-filter-kerberos.png" alt-text="Screenshot of Network traffic filter for Kerberos." lightbox="media/troubleshoot-app-access/network-traffic-filter-kerberos-expanded.png":::
 
-## Flows with 0 sent or received bytes
+## Flows with zero sent or received bytes
 
-Flows showing some sent bytes and 0 received bytes might indicate a server or Private Connector problem. Use the Correlation Vector ID to investigate with [Traffic logs](how-to-view-traffic-logs.md). Correlation Vector ID is called **Connection ID** in Traffic logs.
+Flows that show some sent bytes but zero received bytes might indicate a server or Private Connector problem. Use the Correlation Vector ID to investigate with [Traffic logs](how-to-view-traffic-logs.md). In Traffic logs, the Correlation Vector ID is called **Connection ID**.
 
-In some cases, you might see traffic that the Global Secure Access client acquired but see no outbound packets. In the example, **Bytes sent** is 0. This behavior might occur when a Windows Firewall rule drops or blocks specific traffic. In the previous example, a Windows Firewall rule was blocking RDP.
+In some cases, you might see traffic that the Global Secure Access client acquires but see no outbound packets. In the following example, **Bytes sent** is 0. This behavior might occur when a Windows Firewall rule drops or blocks specific traffic. In the previous example, a Windows Firewall rule was blocking RDP.
 
 :::image type="content" source="media/troubleshoot-app-access/network-traffic-bytes-sent.png" alt-text="Screenshot of Network traffic Bytes sent." lightbox="media/troubleshoot-app-access/network-traffic-bytes-sent-expanded.png":::
 
 ## How does DNS work with Global Secure Access?
 
-The Global Secure Access client has generally two ways to work with fully qualified domain names (FQDN).
+The Global Secure Access client works with fully qualified domain names (FQDN) in two ways.
 
-If you created rules (app segments) with FQDNs, then the client intercepts DNS query responses sent to the DNS server defined on the device, usually with Dynamic Host Configuration Protocol (DHCP). If the query (for example, `fs.contoso.local`) matches a rule, irrespective of the result (for example, a user at home isn't typically able to resolve corporate network names), the Global Secure Access rewrites the query response to a dynamic synthetic IP. Then, if the destination protocol and port matches a rule, the Global Secure Access cloud service for Internet traffic, or a private network connector for Microsoft Entra Private Access, resolves the name.
+If you create rules (app segments) with FQDNs, the client intercepts DNS query responses sent to the DNS server defined on the device, usually with Dynamic Host Configuration Protocol (DHCP). If the query (for example, `fs.contoso.local`) matches a rule, irrespective of the result (for example, a user at home typically can't resolve corporate network names), Global Secure Access rewrites the query response to a dynamic synthetic IP. Then, if the destination protocol and port match a rule, the Global Secure Access cloud service for Internet traffic, or a private network connector for Microsoft Entra Private Access, resolves the name.
 
 If you use private DNS, things get more interesting. For each configured private DNS suffix, the Global Secure Access client adds a Name Resolution Policy Table (NRPT) rule to direct those queries to a synthetic IP (usually `6.6.255.254`). The NRPT allows you to configure name resolution request routing to specified DNS servers for specified namespaces. It overrides the default behavior of sending these requests to the DNS server configured on your computer's network adapter.
 
 Global Secure Access uses NRPT policies to direct all name resolution for private DNS suffixes to a specific server. A private network connector uses the DNS server configured on the server to tunnel and resolve these queries.
 
-To check NRPT rules, run `Get-DnsClientNrptPolicy`. In the following example, we see that Global Secure Access created two NRPT policies:
+To check NRPT rules, run `Get-DnsClientNrptPolicy`. In the following example, Global Secure Access created two NRPT policies:
 
 - One for a suffix configured on private DNS.
 - One to send unqualified names (also known as *single label*) through the tunnel. The Global Secure Access client adds a DNS search suffix for `AppId.globalsecureaccess.local`.
@@ -105,10 +105,10 @@ To troubleshoot DNS resolution, use these options:
 - The `Resolve-DnsName` PowerShell command follows NRPT rules.
 - `NSLOOKUP` doesn't follow NRPT rules. To force queries with the tunnel, use `nslookup fs.contoso.local 6.6.255.254`.
 
-For more advanced troubleshooting, use the DNS Client log provider. This method helps you to understand the DNS servers used, queries sent while certain activity generates (for example, trying to open a file share), and responses.
+For more advanced troubleshooting, use the DNS Client log provider. This method helps you understand the DNS servers used, queries sent while certain activity generates (for example, trying to open a file share), and responses.
 
 - To enable the DNS Client log provider, run `wevtutil sl Microsoft-Windows-DNS-Client/Operational /enabled:true`. Remember to disable it after you finish troubleshooting.
-- After you reproduce your problem, use PowerShell to filter and display the relevant logs. In the following example, we get logs from the last three minutes, filtered by queries that contain `contoso.local`.
+- After you reproduce your problem, use PowerShell to filter and display the relevant logs. In the following example, logs are from the last three minutes, filtered by queries that contain `contoso.local`.
 
 ```powershell
     $StartDate = (Get-Date).AddMinutes(-3) ; Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-DNS-Client/Operational';StartTime=$Startdate} | where Message -Match contoso.local | Out-GridView
@@ -116,8 +116,20 @@ For more advanced troubleshooting, use the DNS Client log provider. This method 
 
 ## Microsoft Entra Private Access resource access failure
 
-Accessing resources through Private Access might fail for other reasons. Traffic logs can help you to troubleshoot issues that might be unrelated to client-side problems. Here are some troubleshooting steps you can follow. Reference [Troubleshoot Global Secure Access client: Advanced Diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md).
+Accessing resources through Private Access might fail for other reasons. Traffic logs can help you troubleshoot issues that might be unrelated to client-side problems. Here are some troubleshooting steps you can follow. Reference [Troubleshoot Global Secure Access client: Advanced Diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md).
 
 - Capture traffic with the **Advanced Diagnostics** tool. Ensure that it acquires and tunnels the flows.
 Get and use the **Correlation vector ID** to look up Global Secure Access traffic logs on the Microsoft Entra admin center. Traffic logs show what connector handled the traffic and if errors occurred.
 - If there are no errors on traffic logs pointing at problems communicating with private network connectors, obtain and analyze a network capture to see the actual conversations going through the tunnel.
+
+## Apps that don't support concurrent sign-ins from multiple IPs
+
+Some web apps initiate new network connections during the sign-in process. When multiple connectors exist in a connector group, these new sessions might be routed through a different connector than the one that handled the initial sign-in request. If the app doesn't support this behavior, the session breaks, resulting in a failed sign-in. These session disruptions can leave you unable to access certain web applications after signing in, or you might be unexpectedly signed out from a newly added application.
+
+To prevent session disruption:
+
+- Option 1: Pin the app to a connector group that contains only a single connector.
+- Option 2: If feasible, temporarily stop the Microsoft Entra Private Access connector service on other connectors in the group during testing.
+
+> [!NOTE]
+> After creating a new app definition, allow approximately 5–10 minutes for the configuration to propagate and appear on the client.

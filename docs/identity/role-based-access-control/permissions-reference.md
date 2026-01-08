@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 11/19/2025
+ms.date: 12/23/2025
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
@@ -97,6 +97,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Message Center Reader](#message-center-reader) | Can read messages and updates for their organization in Office 365 Message Center only. | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b |
 > | [Microsoft 365 Backup Administrator](#microsoft-365-backup-administrator) | Back up and restore content across supported services (SharePoint, OneDrive, and Exchange Online) in Microsoft 365 Backup | 1707125e-0aa2-4d4d-8655-a7c786c76a25 |
 > | [Microsoft 365 Migration Administrator](#microsoft-365-migration-administrator) | Perform all migration functionality to migrate content to Microsoft 365 using Migration Manager. | 8c8b803f-96e1-4129-9349-20738d9f9652 |
+> | [Microsoft 365 Support Engineer](#microsoft-365-support-engineer) | Do not use - not intended for general use. | 00cf5c54-4693-4f59-a0ac-ab79ef0a974d |
 > | [Microsoft Entra Joined Device Local Administrator](#microsoft-entra-joined-device-local-administrator) | Users assigned to this role are added to the local administrators group on Microsoft Entra joined devices. | 9f06204d-73c1-4d4c-880a-6edb90606fd8 |
 > | [Microsoft Graph Data Connect Administrator](#microsoft-graph-data-connect-administrator) | Manage aspects of Microsoft Graph Data Connect service in a tenant. | ee67aa9c-e510-4759-b906-227085a7fd4d |
 > | [Microsoft Hardware Warranty Administrator](#microsoft-hardware-warranty-administrator) | Create and manage all aspects warranty claims and entitlements for Microsoft manufactured hardware, like Surface and HoloLens. | 1501b917-7653-4ff9-a4b5-203eaf33784f |
@@ -433,6 +434,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [microsoft-365-migration-administrator](includes/microsoft-365-migration-administrator.md)]
 
+## Microsoft 365 Support Engineer
+
+[!INCLUDE [microsoft-365-support-engineer](includes/microsoft-365-support-engineer.md)]
+
 ## Microsoft Entra Joined Device Local Administrator
 
 [!INCLUDE [microsoft-entra-joined-device-local-administrator](includes/microsoft-entra-joined-device-local-administrator.md)]
@@ -663,6 +668,7 @@ Not every role returned by PowerShell or Microsoft Graph API is visible in Micro
 | Device Users | Deprecated | [Deprecated roles documentation](#deprecated-roles) |
 | Directory Synchronization Accounts | Not shown because it shouldn't be used | [Directory Synchronization Accounts documentation](#directory-synchronization-accounts) |
 | Guest User | Not shown because it can't be used | NA |
+| Microsoft 365 Support Engineer | Not shown because it shouldn't be used | [Microsoft 365 Support Engineer documentation](#microsoft-365-support-engineer) |
 | Modern Commerce Administrator | Not shown because it can't be used | [Modern Commerce Administrator](#modern-commerce-administrator) |
 | Partner Tier 1 Support | Not shown because it shouldn't be used | [Partner Tier1 Support documentation](#partner-tier1-support) |
 | Partner Tier 2 Support | Not shown because it shouldn't be used | [Partner Tier2 Support documentation](#partner-tier2-support) |

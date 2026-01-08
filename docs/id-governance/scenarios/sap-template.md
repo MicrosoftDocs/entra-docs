@@ -4,12 +4,12 @@ description: This article describes how to create a template for the Web Service
 ms.service: entra-id-governance
 ms.subservice: 
 documentationcenter: ''
-author: billmath
+author: owinfreyATL
 manager: femila
 editor: ''
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: owinfrey
 ms.custom: sfi-image-nochange
 ---
 

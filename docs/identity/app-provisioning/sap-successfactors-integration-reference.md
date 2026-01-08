@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 03/04/2025
+ms.date: 12/15/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -173,16 +173,29 @@ JSONPath is a query language for JSON that is similar to XPath for XML. Like XPa
 By using JSONPath transformation, you can customize the behavior of the Microsoft Entra provisioning app to retrieve custom attributes and handle scenarios such as rehiring, worker conversion and global assignment. 
 
 This section covers how you can customize the provisioning app for the following HR scenarios: 
-* [Retrieving more attributes](#retrieving-more-attributes)
-* [Retrieving custom attributes](#retrieving-custom-attributes)
-* [Mapping employment status to account status](#mapping-employment-status-to-account-status)
-* [Handling worker conversion and rehiring scenarios](#handling-worker-conversion-and-rehiring-scenarios)
-* [Retrieving current active employment record](#retrieving-current-active-employment-record)
-* [Handling global assignment scenario](#handling-global-assignment-scenario)
-* [Handling concurrent jobs scenario](#handling-concurrent-jobs-scenario)
-* [Retrieving position details](#retrieving-position-details)
-* [Provisioning users in the Onboarding module](#provisioning-users-in-the-onboarding-module)
-* [Enabling OData API Audit logs in SuccessFactors](#enabling-odata-api-audit-logs-in-successfactors)
+- [How Microsoft Entra provisioning integrates with SAP SuccessFactors](#how-microsoft-entra-provisioning-integrates-with-sap-successfactors)
+  - [Establishing connectivity](#establishing-connectivity)
+  - [Supported entities](#supported-entities)
+  - [How full sync works](#how-full-sync-works)
+  - [How incremental sync works](#how-incremental-sync-works)
+  - [How pre-hire processing works](#how-pre-hire-processing-works)
+  - [Reading attribute data](#reading-attribute-data)
+  - [Handling different HR scenarios](#handling-different-hr-scenarios)
+    - [Retrieving more attributes](#retrieving-more-attributes)
+    - [Retrieving custom attributes](#retrieving-custom-attributes)
+    - [Mapping employment status to account status](#mapping-employment-status-to-account-status)
+    - [Handling worker conversion and rehiring scenarios](#handling-worker-conversion-and-rehiring-scenarios)
+    - [Retrieving current active employment record](#retrieving-current-active-employment-record)
+    - [Handling global assignment scenario](#handling-global-assignment-scenario)
+    - [Handling concurrent jobs scenario](#handling-concurrent-jobs-scenario)
+    - [Retrieving position details](#retrieving-position-details)
+    - [Provisioning users in the Onboarding module](#provisioning-users-in-the-onboarding-module)
+    - [Enabling OData API Audit logs in SuccessFactors](#enabling-odata-api-audit-logs-in-successfactors)
+  - [Writeback scenarios](#writeback-scenarios)
+    - [Supported scenarios for phone and email write-back](#supported-scenarios-for-phone-and-email-write-back)
+    - [Enabling writeback with UserID](#enabling-writeback-with-userid)
+    - [Unsupported scenarios for phone and email write-back](#unsupported-scenarios-for-phone-and-email-write-back)
+  - [Next steps](#next-steps)
 
 ### Retrieving more attributes
 
@@ -411,6 +424,9 @@ If you want to exclude processing of prehires in the Onboarding module, update y
 1. Edit the Source Object scope to apply a scoping filter `userStatus NOT EQUALS`
 1. Save the mapping and validate that the scoping filter works using provisioning on demand. 
 
+> [!NOTE]
+> The connector currently doesn't support retrieving Onboarding users who are in an inactive_external_suite state. These user states occur when new hires initially begin onboarding but later rescind their offer, requiring the cancellation of the onboarding process. There is no workaround for this scenario; it requires out-of-band handling to deactivate users whose onboarding is cancelled.
+
 ### Enabling OData API Audit logs in SuccessFactors
 The Microsoft Entra SuccessFactors connector uses SuccessFactors OData API to retrieve changes and provision users. If you observe issues with the provisioning service and want to confirm what data was retrieved from SuccessFactors, you can enable OData API Audit logs in SuccessFactors. Retrieve the request payload sent by Microsoft Entra ID from the audit logs. To troubleshoot, you can copy this request payload in a tool like cURL or Graph Explorer, set it up to use the same API user that is used by the connector and see if it returns the desired changes from SuccessFactors. 
 
@@ -421,11 +437,11 @@ This section covers different write-back scenarios. It recommends configuration 
 
 | \# | Scenario requirement | Email primary <br> flag value | Business phone <br> primary flag value | Cell phone <br> primary flag value | Business phone <br> mapping | Cell phone <br> mapping |
 |--|--|--|--|--|--|--|
-| 1 | * Only set business email as primary. <br> * Don't set phone numbers. | true | true | false | \[Not Set\] | \[Not Set\] | 
+| 1 | * Only set business email as primary. <br> * Don't set phone numbers. | true | true | false | [Not Set] | [Not Set] | 
 | 2 | * In SuccessFactors, business email and business phone is primary <br> * Always flow Microsoft Entra telephone number to business phone and mobile to cell phone. | true | true | false | telephoneNumber | mobile | 
 | 3 | * In SuccessFactors, business email and cell phone is primary <br> * Always flow Microsoft Entra telephone number to business phone and mobile to cell phone | true | false | true |  telephoneNumber | mobile | 
 | 4 | * In SuccessFactors business email is primary. <br> * In Microsoft Entra ID, check if work telephone number is present, if present, then check if mobile number is also present. Mark work telephone number as primary only if mobile number isn't present. | true | Use expression mapping: `IIF(IsPresent([telephoneNumber]), IIF(IsPresent([mobile]),"false", "true"), "false")` | Use expression mapping: `IIF(IsPresent([mobile]),"false", "true")` | telephoneNumber | mobile | 
-| 5 | * In SuccessFactors business email and business phone is primary. <br> * In Microsoft Entra ID, if mobile is available, then set it as the business phone, else use telephoneNumber. | true | true | false | `IIF(IsPresent([mobile]), [mobile], [telephoneNumber])` | \[Not Set\] | 
+| 5 | * In SuccessFactors business email and business phone is primary. <br> * In Microsoft Entra ID, if mobile is available, then set it as the business phone, else use telephoneNumber. | true | true | false | `IIF(IsPresent([mobile]), [mobile], [telephoneNumber])` | [Not Set] | 
 
 * If there's no mapping for phone number in the write-back attribute-mapping, then only email is included in the write-back.
 * During new hire onboarding in Employee Central, business email and phone number may not be available. If setting business email and business phone as primary is mandatory during onboarding, you can set a dummy value for business phone and email during new hire creation. After some time, the write-back app updates the value.

@@ -24,7 +24,7 @@ This article describes how to review your own access to a group or an applicatio
 The first step to perform an access review is to find and open the access review.
 
 >[!IMPORTANT]
-> There could be delays in receiving email and it some cases it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
+> There could be delays in receiving email and in some cases it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft that asks you to review access. Here's an example email to review your access to a group.
 

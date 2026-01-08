@@ -2,7 +2,8 @@
 title: B2B Invitation Redemption
 description: Learn how Microsoft Entra B2B invitation redemption works, including guest sign-in, consent process, and privacy terms. Ensure secure access for your organization’s resources.
 ms.topic: concept-article
-ms.date: 05/14/2025
+ms.date: 12/05/2025
+ms.service: entra-external-id
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -17,12 +18,12 @@ ms.custom: seo-july-2024, sfi-image-nochange
 
 This article explains the Microsoft Entra B2B invitation redemption process for guest users, including how they access your resources and complete the required consent steps. Whether you send an invitation email or provide a direct link, guests are guided through a secure sign-in and consent process to ensure compliance with your organization’s privacy terms and [terms of use](~/identity/conditional-access/terms-of-use.md).
 
-When you add a guest user to your directory, the guest user account has a consent status (viewable in PowerShell) that’s initially set to **PendingAcceptance**. This setting remains until the guest accepts your invitation and agrees to your privacy policy and terms of use. After that, the consent status changes to **Accepted**, and the consent pages are no longer presented to the guest.
+When you add a guest user to your directory, the guest user account has a consent status (viewable in PowerShell) that's initially set to **PendingAcceptance**. This setting remains until the guest accepts your invitation and agrees to your privacy policy and terms of use. After that, the consent status changes to **Accepted**, and the consent pages are no longer presented to the guest.
 
 > [!IMPORTANT]
-> - **Starting July 12, 2021**,  if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
+> - **Starting July 12, 2021**,  if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won't work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
 > - **Starting September 30, 2021**, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-> - The [email one-time passcode feature](one-time-passcode.md) is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
+> - The [email one-time passcode feature](one-time-passcode.md) is now turned on by default for all new tenants and for any existing tenants where you didn't explicitly turn it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
 
 ## Redemption process and sign-in through a common endpoint
 
@@ -30,11 +31,11 @@ Guest users can now sign in to your multitenant or Microsoft first-party apps th
 
 ![Screenshot of the Microsoft Entra B2B invitation redemption flow diagram.](media/redemption-experience/common-endpoint-flow-small.png)
 
-The user is then redirected to your tenant-specific endpoint, where they can either sign in with their email address or select an identity provider you've configured.
+The user is then redirected to your tenant-specific endpoint, where they can either sign in with their email address or select an identity provider you configured.
 
 ## Redemption process through a direct link
 
-As an alternative to the invitation email or an application's common URL, give a guest a direct link to your app or portal. First, add the guest user to your directory via the [Microsoft Entra admin center](./b2b-quickstart-add-guest-users-portal.md) or [PowerShell](./b2b-quickstart-invite-powershell.md). Then use any of the [customizable ways to deploy applications to users](~/identity/enterprise-apps/end-user-experiences.md), including direct sign-on links. When a guest uses a direct link instead of the invitation email, they’re still guided through the first-time consent experience.
+As an alternative to the invitation email or an application's common URL, give a guest a direct link to your app or portal. First, add the guest user to your directory via the [Microsoft Entra admin center](./b2b-quickstart-add-guest-users-portal.md) or [PowerShell](./b2b-quickstart-invite-powershell.md). Then use any of the [customizable ways to deploy applications to users](~/identity/enterprise-apps/end-user-experiences.md), including direct sign-on links. When a guest uses a direct link instead of the invitation email, the link still guides them through the first-time consent experience.
 
 > [!NOTE]
 > A direct link is tenant-specific. In other words, it includes a tenant ID or verified domain so the guest can be authenticated in your tenant, where the shared app is located. Here are some examples of direct links with tenant context:
@@ -47,16 +48,16 @@ Here are some things to note about using a direct link versus an invitation emai
 
 - **Email aliases:** Guests who use an alias of the email address that was invited need an email invitation. (An alias is another email address associated with an email account.) The user must select the redemption URL in the invitation email.
 
-- **Conflicting contact objects:** The redemption process has been updated to prevent sign-in issues when a guest user object conflicts with a contact object in the directory. Whenever you add or invite a guest with an email that matches an existing contact, the proxyAddresses property on the guest user object is left empty. Previously, External ID searched only the proxyAddresses property, so direct link redemption failed when it couldn’t find a match. Now, External ID searches both the proxyAddresses and invited email properties.
+- **Conflicting contact objects:** The redemption process prevents sign-in issues when a guest user object conflicts with a contact object in the directory. Whenever you add or invite a guest with an email that matches an existing contact, the proxyAddresses property on the guest user object is left empty. Previously, External ID searched only the proxyAddresses property, so direct link redemption failed when it couldn't find a match. Now, External ID searches both the proxyAddresses and invited email properties.
 
 ## Redemption process through the invitation email
 
-When you add a guest user to your directory by [using the Microsoft Entra admin center](./b2b-quickstart-add-guest-users-portal.md), an invitation email is sent to the guest. You can also choose to send invitation emails when you’re [using PowerShell](./b2b-quickstart-invite-powershell.md) to add guest users to your directory. Here’s a description of the guest’s experience when they redeem the link in the email.
+When you add a guest user to your directory by [using the Microsoft Entra admin center](./b2b-quickstart-add-guest-users-portal.md), an invitation email is sent to the guest. You can also choose to send invitation emails when you're [using PowerShell](./b2b-quickstart-invite-powershell.md) to add guest users to your directory. Here's a description of the guest's experience when they redeem the link in the email.
 
-1. The guest receives an [invitation email](./invitation-email-elements.md) that's sent from **Microsoft Invitations**.
-2. The guest selects **Accept invitation** in the email.
-3. The guest uses their own credentials to sign in to your directory. If the guest doesn't have an account that can be federated to your directory and the [email one-time passcode (OTP)](./one-time-passcode.md) feature isn't enabled, the guest is prompted to create a personal [Microsoft account (MSA)](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create). Refer to the [invitation redemption flow](#invitation-redemption-flow) for details.
-4. The guest is guided through the [consent experience](#consent-experience-for-the-guest) described below.
+1. The guest receives an [invitation email](./invitation-email-elements.md) that's from Microsoft Invitations on behalf of `<primary domain> <invites@<primary domain>.onmicrosoft.com>`.
+1. The guest selects **Accept invitation** in the email.
+1. The guest uses their own credentials to sign in to your directory. If the guest doesn't have an account that can be federated to your directory and the [email one-time passcode (OTP)](./one-time-passcode.md) feature isn't enabled, the guest is prompted to create a personal [Microsoft account (MSA)](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create). Refer to the [invitation redemption flow](#invitation-redemption-flow) for details.
+1. The guest is guided through the [consent experience](#consent-experience-for-the-guest) described in the following section.
 
 ## Invitation redemption flow
 
@@ -64,46 +65,46 @@ When a user selects the **Accept invitation** link in an [invitation email](invi
 
 :::image type="content" source="media/redemption-experience/invitation-redemption.png" alt-text="Screenshot showing the redemption flow diagram." lightbox="media/redemption-experience/invitation-redemption.png":::
 
-1. Microsoft Entra ID performs user-based discovery to determine if the user already exists in a managed Microsoft Entra tenant. (Unmanaged Microsoft Entra accounts can no longer be used for the redemption flow.) If the user’s user principal name ([UPN](~/identity/hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname)) matches both an existing Microsoft Entra account and a personal MSA, the user is prompted to choose which account they want to redeem with.
+1. Microsoft Entra ID performs user-based discovery to determine if the user already exists in a managed Microsoft Entra tenant. (Unmanaged Microsoft Entra accounts can't be used for the redemption flow.) If the user’s user principal name ([UPN](~/identity/hybrid/connect/plan-connect-userprincipalname.md#what-is-userprincipalname)) matches both an existing Microsoft Entra account and a personal MSA, the user is prompted to choose which account they want to redeem with.
 
-2. If an admin has enabled [SAML/WS-Fed IdP federation](direct-federation.md), Microsoft Entra ID checks if the user’s domain suffix matches the domain of a configured SAML/WS-Fed identity provider and redirects the user to the preconfigured identity provider.
+1. If an admin enables [SAML/WS-Fed IdP federation](direct-federation.md), Microsoft Entra ID checks if the user’s domain suffix matches the domain of a configured SAML/WS-Fed identity provider and redirects the user to the preconfigured identity provider.
 
-3. If an admin has enabled [Google federation](google-federation.md), Microsoft Entra ID checks if the user’s domain suffix is gmail.com, or googlemail.com and redirects the user to Google.
+1. If an admin enables [Google federation](google-federation.md), Microsoft Entra ID checks if the user’s domain suffix is gmail.com or googlemail.com and redirects the user to Google.
 
-4. The redemption process checks if the user has an existing personal [MSA](microsoft-account.md). If the user already has an existing MSA, they sign in with their existing MSA.
+1. The redemption process checks if the user has an existing personal [MSA](microsoft-account.md). If the user already has an existing MSA, they sign in with their existing MSA.
 
-5. Once the user’s **home directory** is identified, the user is sent to the corresponding identity provider to sign in.  
+1. Once the user’s **home directory** is identified, the user is sent to the corresponding identity provider to sign in.  
 
-6. If no home directory is found and the email one-time passcode feature is *enabled* for guests, a [passcode is sent](./one-time-passcode.md#when-does-a-guest-user-get-a-one-time-passcode) to the user through the invited email. The user retrieves and enters this passcode in the Microsoft Entra sign-in page.
+1. If no home directory is found and the email one-time passcode feature is *enabled* for guests, a [passcode is sent](./one-time-passcode.md#when-does-a-guest-user-get-a-one-time-passcode) to the user through the invited email. The user retrieves and enters this passcode in the Microsoft Entra sign-in page.
 
-7. If no home directory is found and email one-time passcode for guests is *disabled*, the user is prompted to create a consumer MSA with the invited email. We support creating an MSA with work emails in domains that aren't verified in Microsoft Entra ID.
+1. If no home directory is found and email one-time passcode for guests is *disabled*, the user is prompted to create a consumer MSA with the invited email. We support creating an MSA with work emails in domains that aren't verified in Microsoft Entra ID.
 
-8. After authenticating to the right identity provider, the user is redirected to Microsoft Entra ID to complete the [consent experience](#consent-experience-for-the-guest).  
+1. After authenticating to the right identity provider, the user is redirected to Microsoft Entra ID to complete the [consent experience](#consent-experience-for-the-guest).  
 
 ## Configurable redemption
 
-[Configurable redemption](cross-tenant-access-overview.md) lets you customize the order of identity providers presented to guests when they redeem your invitations. When a guest selects the **Accept invitation** link, Microsoft Entra ID automatically redeems the invitation based on the [default order](#invitation-redemption-flow). Override this by changing the identity provider redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml).
+[Configurable redemption](cross-tenant-access-overview.md) lets you customize the order of identity providers presented to guests when they redeem your invitations. When a guest selects the **Accept invitation** link, Microsoft Entra ID automatically redeems the invitation based on the [default order](#invitation-redemption-flow). Override this order by changing the identity provider redemption order in your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml).
 
 ## Consent experience for the guest
 
-When a guest signs in to a resource in a partner organization for the first time, they're presented with the following consent experience. These consent pages are shown to the guest only after sign-in, and they aren't displayed at all if the user has already accepted them.
+When a guest signs in to a resource in a partner organization for the first time, they see the following consent experience. The guest sees these consent pages only after sign-in, and they're not displayed at all if the user already accepted them.
 
-1. The guest reviews the **Review permissions** page describing the inviting organization's [privacy statement](/entra/fundamentals/properties-area). A user must **Accept** the use of their information in accordance with the inviting organization's privacy policies to continue.
+1. The guest reviews the **Review permissions** page that describes the inviting organization's [privacy statement](/entra/fundamentals/properties-area). To continue, the user must **Accept** the use of their information in accordance with the inviting organization's privacy policies.
 
-    By agreeing to this consent prompt, you acknowledge that certain elements of your account will be shared. These include your name, photo, and email address, as well as directory identifiers which might be used by the other organization to better manage your account and improve your cross-organization experience. 
+    By agreeing to this consent prompt, you acknowledge that certain elements of your account are shared. These elements include your name, photo, and email address, as well as directory identifiers that the other organization might use to better manage your account and improve your cross-organization experience. 
 
    :::image type="content" source="media/redemption-experience/new-review-permissions.png" alt-text="Screenshot showing the Review permissions page.":::
 
    > [!NOTE]
    > For information about how you as a tenant administrator can link to your organization's privacy statement, see [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.md).
 
-2. If terms of use are configured, the guest opens and reviews the terms of use, and then selects **Accept**. 
+1. If terms of use are configured, the guest opens and reviews the terms of use, then selects **Accept**. 
 
    :::image type="content" source="media/redemption-experience/terms-of-use-accept.png" alt-text="Screenshot showing new terms of use."::: 
 
    You can configure [terms of use](~/identity/conditional-access/terms-of-use.md) in **External Identities** > **Terms of use**.
 
-3. Unless otherwise specified, the guest is redirected to the Apps access panel, which lists the applications the guest can access.
+1. Unless otherwise specified, the guest is redirected to the Apps access panel, which lists the applications the guest can access.
 
    :::image type="content" source="media/redemption-experience/myapps.png" alt-text="Screenshot showing the Apps access panel." lightbox="media/redemption-experience/myapps.png":::
 
@@ -112,7 +113,7 @@ If you see an error that requires admin consent while accessing an application, 
 
 ### Automatic redemption process setting
 
-You might want to automatically redeem invitations so users don't have to accept the consent prompt when they're added to another tenant for B2B collaboration. When configured, a notification email is sent to the B2B collaboration user that requires no action from the user. Users are sent the notification email directly and they don't need to access the tenant first before they receive the email.
+You might want to automatically redeem invitations so users don't have to accept the consent prompt when you add them to another tenant for B2B collaboration. When you configure this setting, the B2B collaboration user receives a notification email that requires no action from them. Users receive the notification email directly and don't need to access the tenant first before they get the email.
 
 For information about how to automatically redeem invitations, see [cross-tenant access overview](cross-tenant-access-overview.md#automatic-redemption-setting) and [Configure cross-tenant access settings for B2B collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml).
 

@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
-ms.date: 07/05/2024
+ms.date: 11/21/2025
 ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -25,7 +25,7 @@ The limitations described in this article have the following scope.
 | In scope | - Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in new Microsoft Teams, with reciprocally provisioned B2B members<br/>- Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in Microsoft Viva Engage, with centrally provisioned B2B members |
 | Related scope | - Microsoft 365 admin center limitations related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences<br/>- Cross-tenant synchronization limitations related to Microsoft 365 |
 | Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in Viva Engage<br/>- Tenant migration or consolidation |
-| Unsupported scenarios | - Multitenant organizations across education tenants involving student scenarios<br/>- Multitenant organizations in Microsoft 365 Government<br/>- Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
+| Unsupported scenarios | - Multitenant organizations across education tenants involving student scenarios<br/>- Multitenant organizations in Microsoft 365 Government<br/>- Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Multitenant organizations is available within GCC, GCC-H, and DOD clouds. However, the multitenant organizations tenants can ONLY have tenants which are within the same cloud. Cross-cloud multitenant organizations isn't supported. |
 
 ## Create or join a multitenant organization using the Microsoft 365 admin center
 
@@ -113,7 +113,7 @@ The limitations described in this article have the following scope.
 
 - In Microsoft 365 admin center, [Microsoft Forms](/office365/servicedescriptions/microsoft-forms-service-description), Microsoft OneNote, and Microsoft Planner, B2B member users might not be supported.
 
-- In [Microsoft Power BI](/power-bi/enterprise/service-admin-azure-ad-b2b#who-can-you-invite), B2B member support is currently in preview. B2B guest users can continue to access Power BI dashboards.
+- In [Microsoft Power BI](/fabric/enterprise/powerbi/service-admin-entra-b2b#who-can-you-invite), B2B member support is currently in preview. B2B guest users can continue to access Power BI dashboards.
 
 - In [Microsoft Power Apps](/power-platform/), [Microsoft Dynamics 365](/dynamics365/), and related workloads, B2B member users might have restricted functionality. For more information, see [Invite users with Microsoft Entra B2B collaboration](/power-platform/admin/invite-users-azure-active-directory-b2b-collaboration).
 
@@ -137,6 +137,7 @@ The limitations described in this article have the following scope.
 
 - Currently, [SkipOutOfScopeDeletions](../app-provisioning/skip-out-of-scope-deletions.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization) works for application provisioning jobs, but not for cross-tenant synchronization. To avoid soft deletion of users taken out of scope of cross-tenant synchronization, set [Target Object Actions for Delete](cross-tenant-synchronization-configure.md#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters) to disabled.
 
-## Next steps
+## Related content
 
 - [Known issues for provisioning in Microsoft Entra ID](../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization)
+- [Multitenant org FAQ](/microsoft-365/enterprise/multitenant-org-faq)

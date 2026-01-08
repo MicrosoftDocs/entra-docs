@@ -99,9 +99,34 @@ After installing the required libraries, update your requirements file by runnin
 pip freeze > requirements.txt
 ```
 
-## Add your configurations
+## Configure the application for authentication
 
-1. Create an .env* file in your root folder to safely store your app's configuration. Your *.env* file should contain the following environment variables:
+Web applications that sign in users by using the Microsoft identity platform are configured through a configuration file, *.env*. In Python Flask, it must specify the following values:
+
+### [Workforce tenant](#tab/workforce-tenant)
+
+| Environment variable | Description |
+|---|---|
+| `AUTHORITY` | The URL of the cloud instance where the application is registered. Format: `https://{Instance}/{TenantId}`. Use one of the following Instance values:<br>- `https://login.microsoftonline.com/`  (Azure public cloud)<br>- `https://login.microsoftonline.us/` (Azure US government)<br>- `https://login.microsoftonline.de/`  (Microsoft Entra Germany)<br>- `https://login.partner.microsoftonline.cn/` (Microsoft Entra China, operated by 21Vianet) |
+| `TENANT_ID` | The identifier of the tenant where the app is registered. Prefer the tenant ID from the app registration, or use one of:<br>- `organizations`: sign in users in any work or school account<br>- `common`: sign in users with any work or school account or Microsoft personal account<br>- `consumers`: sign in users with a Microsoft personal account only |
+| `CLIENT_ID` | Identifier of the application (client) as obtained from the app registration. |
+| `CLIENT_SECRET` | The secret value obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center. |
+| `REDIRECT_URI` | The URI where the Microsoft identity platform sends security tokens after authentication. |
+
+### [External tenant](#tab/external-tenant)
+
+| Environment variable | Description |
+|---|---|
+| `AUTHORITY` | The URL of the external tenant where the application is registered. Format: `https://<tenant_subdomain>.ciamlogin.com/` (or `https://<tenant_subdomain>.onmicrosoft.com/`). See [Create an external tenant](/entra/external-id/customers/how-to-create-external-tenant-portal#get-the-external-tenant-details) to obtain your tenant subdomain. |
+| `CLIENT_ID` | Identifier of the application (client) from the app registration. |
+| `CLIENT_SECRET` | The client secret value obtained from [add credentials](./how-to-add-credentials.md) in the Microsoft Entra admin center. |
+| `REDIRECT_URI` | The URI where the Microsoft identity platform sends security tokens after authentication. |
+
+---
+
+### Update the configuration file
+
+1. Create a *.env* file in your root folder to safely store your app's configuration. Your *.env* file should contain the following environment variables:
 
     #### [Workforce tenant](#tab/workforce-tenant)
 

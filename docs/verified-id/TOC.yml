@@ -29,6 +29,8 @@
     href: verified-id-pricing.md
   - name: OpenID Connect protocol details
     href: issuer-openid.md
+  - name: Account recovery
+    href: ~/identity/authentication/concept-account-recovery-overview.md
   - name: Plan and design 
     items:
     - name: Architecture planning overview

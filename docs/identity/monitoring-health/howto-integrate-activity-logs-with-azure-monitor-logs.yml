@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: pmwongera
   ms.reviewer: egreenberg
-  ms.date: 05/27/2025
+  ms.date: 01/06/2026
   ms.service: entra-id
   ms.subservice: monitoring-health
   ms.topic: how-to
@@ -39,8 +39,6 @@ prerequisites:
   dependencies:
     - |
       An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
-    - |
-      A Microsoft Entra ID P1 or P2 tenant.
     - |
       At least the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role in the Microsoft Entra tenant.
     - |

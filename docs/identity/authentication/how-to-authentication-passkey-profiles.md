@@ -4,7 +4,7 @@ description: Learn how to enable passkey (FIDO2) profiles in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/09/2025
+ms.date: 12/05/2025
 ms.author: justinha
 author: hanki71
 manager: dougeby
@@ -60,9 +60,11 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/default-passkey-profile.png" alt-text="Screenshot that shows the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/default-passkey-profile.png":::
    
-   For **Target Types**, select **Device-bound**, **Synced (preview)**, or both, and select **Save**.
+   For **Target Types**, select the types of passkeys that you want to allow.
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
+
+1. Select **Save**.
 
 ## Create a new passkey profile
 
@@ -70,28 +72,21 @@ A passkey profile is a named set of policy rules that governs how users in targe
 
    :::image type="content" border="true" source="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png" alt-text="Screenshot that shows how to edit the default passkey profile."lightbox="media/how-to-authentication-passkey-profiles/edit-passkey-profile.png":::
 
-1. Fill out the profile details. The following table explains the impact of various selections. 
+1. Fill out the profile details. The following table explains the impact if you enforce attestation. For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
 
-   - **Enforce attestation** 
+   Enforce attestation | No (default) | Yes
+   --------------------|-----|----
+   Supported passkey types | Synced and device-bound | Device-bound only
+   Passkey required to present valid attestation statement | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if you select **Target specific AAGUIDs**. Use AAGUID lists as a policy guide rather than a strict security control when **Enforce attestation** is set to **No**. | Required at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. Attestation assures your organization that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; passkeys that you previously added without attestation aren’t blocked from sign-in if you enable attestation later. 
 
-     Enforce attestation set to Yes | Enforce attestation to No 
-     -------------------------------|--------------------------
-     Requires a passkey to present a valid attestation statement at registration time so Microsoft Entra ID can verify the authenticator’s make and model against trusted metadata. This gives your organization assurance that the passkey is genuine and comes from the stated vendor.<br>Attestation is checked only during registration; existing passkeys that were added without attestation aren’t blocked from signing in if you enable attestation later.<br>Synced passkeys don't support attestation. If you set **Enforce attestation** to **Yes**, synced passkeys aren't an option in **Target Types**.<br>For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md). | Doesn't require a passkey to present a valid attestation statement at registration time.<br>Microsoft Entra ID can't guarantee any attribute about a passkey, including if it's synced or device-bound, or the specific make, model, or provider, even if **Target specific AAGUIDs** is applied.<br>Synced passkeys are only supported if **Enforce attestation** is set to **No**.<br>For other vendor attestation requirements, see [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md).
+   The next table describes profile target options. 
 
-   - **Target Types** can allow either device-bound passkeys, synced passkeys, or both.  
+   Target | Description
+   --------|------------
+   Target types | You can allow device-bound passkeys, and synced passkeys if **Enforce attestation** is set to **No**.
+   Target specific AAGUIDs | You can allow or block certain security key models or passkey providers, identified by their AAGUID, to control which authenticators users can use to register and sign in with passkeys.<br>If you remove an AAGUID that you previously allowed, users who registered that passkey (FIDO2) as an allowed method can no longer use it for sign-in.
 
-     >[!Note] 
-     >Synced passkeys don't show as an option if attestation is enforced. 
-
-   - **Target specific AAGUIDs** Enable this setting if you want to allow or block certain security key models or passkey providers, identified by their AAGUID. This helps you control which authenticators you allow users in your organization to register and authenticate passkeys with. 
-
-     >[!Note] 
-     >If attestation isn’t enforced, AAGUID information is based on what the authenticator reports and can’t be fully guaranteed. Use AAGUID lists as a policy guide rather than a strict security control when attestation is off.  
-       
-   >[!Warning] 
-   >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.
-
-1.	After you finish the configuration, select **Save**.
+1.	Select **Save**.
 
 
 ## Apply a passkey profile to a targeted group

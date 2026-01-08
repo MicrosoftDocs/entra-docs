@@ -21,6 +21,8 @@ items:
         href: road-to-the-cloud-implement.md
       - name: Transition to the cloud
         href: road-to-the-cloud-migrate.md
+      - name: AD minimization case studies
+        href: road-to-the-cloud-ad-minimization.md
     - name: Parallel identity options
       href: parallel-identity-options.md
     - name: Automate identity provisioning to applications

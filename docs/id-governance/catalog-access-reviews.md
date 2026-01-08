@@ -13,7 +13,7 @@ ms.date: 10/30/2025
 
 # Catalog Access Reviews (preview)
 
-Catalog access reviews in Microsoft Entra ID let organizations review users access to multiple resource types such as groups, applications and custom disconnected resource within a catalog at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
+Catalog access reviews in Microsoft Entra ID Governance enables organizations to simplify how managers can review users access to multiple resource types, such as groups, applications and custom disconnected resource at once. This helps ensure only the right people retain access, while enabling managers and resource owners to review access efficiently through a multi-stage process.
 
 ## License requirements
 
@@ -23,32 +23,34 @@ This feature requires Microsoft Entra ID Governance or Microsoft Entra Suite su
 
 ## Add resources to catalog
 
-To complete access reviews at the catalog level, you must first add resources to a catalog. Groups and Applications are currently the two resources that can be reviewed by catalog. To add resources to a catalog, you'd do the following steps:
+To enable access reviews across multiple resources in a single reviewer experience, you must first add those resources to a catalog. Groups, Applications and custom data provided resources are currently the three resources that can be reviewed by catalog. To add resources to a catalog:
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) or catalog creator, and as the owner or administrator of the resources.
 
 1. Browse to **Entitlement management** > **Catalogs**.
 
 1. On the catalogs screen, select an existing catalog or select **New Catalog** to create a new one.
 
-1. On the catalog overview page, select **Resources** > **Add resource**.
+1. On the catalog overview page, select **Resources** > **Add resources**.
 
-1. Choose the groups and applications you want to include in the catalog.
+1. To review memberships of groups or teams, select **Groups and Teams** and choose the groups you want to include in the catalog. To review app role assignments, select **Applications** and choose the applications you want to include in the catalog.
     > [!NOTE]
     > In catalog access reviews, only groups, applications, and [custom data provided resources](custom-data-resource-access-reviews.md) are supported.
 1. With the resources selected, select **Add** to save them in the catalog.
+1. To enable the review to also include data from custom data providers, select **Custom Data Provided Resource (Preview)**, and provide the name and description of the resource. For more information, see [custom data provided resource](custom-data-resource-access-reviews.md).
 
+For more information on creating a catalog and adding resources, see [Create and manage a catalog of resources](entitlement-management-catalog-create.md).
 
 ## Create a catalog access review
 
-Once you add resources to a catalog, it's time to create a catalog access review so that you can review all of these resources at once for a user you manage. To create a catalog access review, do the following steps:
+Once you add resources to a catalog, you can then create a catalog access review so that managers can then review access across all of these resources at once for the users they manage. To create a catalog access review, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **ID Governance** > **Access Reviews** > **new access review**.
+1. Browse to **ID Governance** > **Access Reviews** > **New access review**.
 
-1. On the Access reviews template screen, select **Review users access across multiple resource types within a catalog**, and select **catalog review template**.
+1. On the Access reviews template screen, select **Review users access across multiple resource types within a catalog** to select the **catalog review template**.
     :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
 1. Enter in [basic information](create-access-review.md) about the workflow and select **Next**. 
 
@@ -62,6 +64,11 @@ Once you add resources to a catalog, it's time to create a catalog access review
 
 1. Select **Create** to finalize the access review. 
 
+You can also create an access review programmatically using Microsoft Graph. For more information, see [Create a single stage access review on a catalog](/graph/api/accessreviewset-post-definitions?view=graph-rest-beta&tabs=http#example-6-create-a-single-stage-access-review-on-a-catalog).
+
+## Upload data from custom data resources
+
+If you have added custom data provided resources to the catalog, then you must upload the data while the review instance is initializing. For more information, see [get access review object and instance ID](custom-data-resource-access-reviews.md#get-access-review-object-and-instance-id).
 
 ## Completing a catalog access review
 

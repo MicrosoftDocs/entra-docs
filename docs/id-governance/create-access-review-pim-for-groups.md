@@ -33,6 +33,9 @@ This article describes how to create one or more access reviews for PIM for Grou
 
     ![Screenshot that shows the Access reviews pane in Identity Governance.](./media/create-access-review/access-reviews.png)
 
+1. On the Access reviews template screen, select **Review access to a resource type**.
+    :::image type="content" source="media/catalog-access-reviews/access-review-templates.png" alt-text="Screenshot of the access review templates page.":::
+
 1. In the **Select what to review** box, select **Teams + Groups**.
 
     ![Screenshot that shows creating an access review.](./media/create-access-review/select-what-review.png)

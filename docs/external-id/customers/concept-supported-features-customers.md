@@ -258,6 +258,10 @@ Microsoft Entra External ID supports integrated security features and partner so
 | **DDoS and WAF protection** | The Security Store wizard experience is not available. | Use [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration) and [Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) to protect against DDoS attacks and secure apps with web application firewall (WAF). |
 | **Security analytics** | The Security Store wizard experience is not available.   | Use [Azure Monitor and Microsoft Sentinel](/entra/external-id/customers/how-to-azure-monitor) to enable one-click monitoring, log analytics, and advanced threat detection.  |
 
+### Akamai and Cloudflare
+
+[Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) and [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration) provide industry-leading DDoS protection, bot mitigation, and web application firewall (WAF) capabilities that help defend applications against malicious traffic, abusive automation, and common web vulnerabilities such as SQL injection, cross‑site scripting (XSS), and API‑based attacks. Integrating either service with Microsoft Entra External ID lets you apply these security controls in front of your customer-facing identity flows, improving resilience and reducing exposure to credential‑stuffing and other identity‑targeted threats.
+
 ## Activity logs and reports
 
 The table below compares the features available for activity logs and reports across different types of tenants.

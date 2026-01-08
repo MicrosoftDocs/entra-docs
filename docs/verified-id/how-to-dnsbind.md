@@ -24,7 +24,7 @@ To verify domain ownership to your DID, you need to:
 
 ## Verify domain ownership and distribute the did-configuration.json file
 
-The domain you verify ownership of to your DID is defined in the [overview section](verifiable-credentials-configure-tenant.md#set-up-verified-id). The domain needs to be a domain under your control and it should be in the format `https://www.example.com/`.
+The domain you verify ownership of to your DID is defined in the [overview section](verifiable-credentials-configure-tenant.md#set-up-verified-id). The domain needs to be a domain under your control and it should be in the format `https://www.contoso.com/`.
 
 1. From the **Microsoft Entra admin center**, choose **Verified ID** page.
 
@@ -35,7 +35,7 @@ The domain you verify ownership of to your DID is defined in the [overview secti
 
    :::image type="content" source="media/how-to-dnsbind/verify-download.png" alt-text="Screenshot that shows downloading the well-known configuration.":::
 
-1. Host the `did-configuration.json` file at the location specified. For example, if you specified domain `https://www.example.com`, the file needs to be hosted at `https://www.example.com/.well-known/did-configuration.json`. There can be no other path in the URL except the `.well-known path` name.
+1. Host the `did-configuration.json` file at the location specified. For example, if you specified domain `https://www.contoso.com`, the file needs to be hosted at `https://www.contoso.com/.well-known/did-configuration.json`. There can be no other path in the URL except the `.well-known path` name.
 
 1. When `did-configuration.json` is publicly available at the `.well-known/did-configuration.json` URL, verify it by selecting **Refresh verification status**.
 
@@ -48,7 +48,7 @@ The domain you verify ownership of to your DID is defined in the [overview secti
 The portal verifies that `did-configuration.json` is reachable over the internet and valid when you select **Refresh verification status**. Authenticator doesn't honor HTTP redirects. You should also consider verifying that you can request that URL in a browser to avoid errors like not using HTTPS, a bad TLS/SSL certificate, or the URL not being public. If the `did-configuration.json` file can't be requested anonymously in a browser or via tools such as `curl`, without warnings or errors, the portal can't complete the **Refresh verification status** step either.
 
 >[!NOTE]
-> If you're experiencing problems refreshing your verification status, you can troubleshoot it by running `curl -Iv https://yourdomain.com/.well-known/did-configuration.json` on a machine with Ubuntu OS. Windows Subsystem for Linux with Ubuntu also works. If curl fails, refreshing the verification status won't work.
+> If you're experiencing problems refreshing your verification status, you can troubleshoot it by running `curl -Iv https://contoso.com/.well-known/did-configuration.json` on a machine with Ubuntu OS. Windows Subsystem for Linux with Ubuntu also works. If curl fails, refreshing the verification status won't work.
 
 ## Why do I need to verify domain ownership of our DID?
 

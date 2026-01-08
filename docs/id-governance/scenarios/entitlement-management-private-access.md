@@ -3,13 +3,13 @@ title: 'Entra Suite Scenario: Using Entra Private Access with Entitlement Manage
 description: Describes how to use Entitlement Management with Private Access
 ms.service: entra-id-governance
 ms.subservice:
-author: billmath
+author: owinfreyATL
 manager: dougeby
 
 ms.workload: identity
 ms.topic: overview
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: owinfrey
 ---
 
 # Entra Suite Scenario: Using Entra Private Access with Entitlement Management  

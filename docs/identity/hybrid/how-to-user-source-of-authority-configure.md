@@ -1,5 +1,5 @@
 ---
-title: Configure user Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: Configure user Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to transfer user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
 author: owinfreyATL
 ms.author: owinfrey
@@ -12,9 +12,9 @@ ms.reviewer: dhanyak
 #CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.
 ---
 
-# Configure user Source of Authority (SOA) (Preview)
+# Configure user Source of Authority (SOA)
 
-This article explains the prerequisites, and steps, to configure User Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Transfer User Source of Authority to the cloud (Preview)](user-source-of-authority-overview.md).
+This article explains the prerequisites, and steps, to configure User Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Transfer User Source of Authority to the cloud](user-source-of-authority-overview.md).
 
 ## Prerequisites
 
@@ -105,7 +105,7 @@ Follow these steps to transfer the SOA for a test user:
 /graph/api/onpremisessyncbehavior-update
 
    ```https
-   GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify user properties.":::
@@ -129,7 +129,7 @@ Follow these steps to transfer the SOA for a test user:
 1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the user object you want to transfer to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
-   PATCH https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": true
       }   
@@ -140,7 +140,7 @@ Follow these steps to transfer the SOA for a test user:
 1. To validate the change, call GET to verify *isCloudManaged* is true.
 
    ```https
-   GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a user.":::
@@ -223,7 +223,7 @@ Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | I
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
    ```https
-   PATCH https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": false
       }   
@@ -282,7 +282,7 @@ To scope a user for Source of Authority operations within an Administrative Unit
 
 ## Related content
 
-- [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)](user-source-of-authority-audit-monitor.md)
-- [Configure Group Source of Authority (SOA) (Preview)](how-to-group-source-of-authority-configure.md)
+- [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID](user-source-of-authority-audit-monitor.md)
+- [Configure Group Source of Authority (SOA)](how-to-group-source-of-authority-configure.md)
 
 

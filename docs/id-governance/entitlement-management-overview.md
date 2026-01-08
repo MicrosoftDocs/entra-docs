@@ -41,7 +41,7 @@ Entitlement management can help address these challenges. To learn more about ho
 
 Here are some of capabilities of entitlement management:
 
-- Control who can get access to applications, groups, Teams and SharePoint sites, with multi-stage approval, and ensure identities don't retain access indefinitely through time-limited assignments and recurring access reviews.
+- Control who can get access to applications, groups, Teams, SharePoint sites, SAP IAG access rights and other resources, with multi-stage approval, and ensure identities don't retain access indefinitely through time-limited assignments and recurring access reviews.
 - Give identities access automatically to those resources, based on identity  properties like department or cost center, and remove an identity's access when those properties change.
 - Give agent IDs access to resources needed and allow sponsors of the agent IDs to make sure access is maintained only while required.
 - Delegate to nonadministrators the ability to create access packages. These access packages contain resources that identities can request, and the delegated access package managers can define policies with rules for which identities can request, who must approve their access, and when access expires.
@@ -67,6 +67,7 @@ Entitlement management introduces the concept of an *access package*. An access 
 - Assignment to Microsoft Entra enterprise applications, including SaaS applications and custom-integrated applications that support federation/single sign-on and/or provisioning
 - Membership of SharePoint Online sites
 - API permissions, for agents with agent IDs or service principals, in preview as part of Microsoft Entra Agent ID
+- SAP IAG business roles and other access rights, in preview
 
 You can also control access to other resources that rely upon Microsoft Entra security groups or Microsoft 365 Groups. For example:
 

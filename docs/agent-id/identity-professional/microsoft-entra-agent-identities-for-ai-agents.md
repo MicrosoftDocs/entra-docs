@@ -64,7 +64,7 @@ Network controls enforce consistent network security policies across users and a
 - Restrict file uploads and downloads using file-type policies to minimize risk, and automatically block and alert on malicious destinations using threat intelligence-based filtering.
 - Detect and block prompt injection attacks that attempt to manipulate agent behavior through malicious instructions.
 
-For more information, see [Network controls for agents](/entra/id-governance/agent-sponsor-tasks)
+For more information, see [Network controls for agents](/entra/global-secure-access/concept-secure-web-ai-gateway-agents).
 
 ## Microsoft Entra Agent identity platform for developers
 

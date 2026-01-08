@@ -83,8 +83,6 @@ items:
       href: zero-trust-response-remediation.md
   - name: Identity secure score
     href: ~/identity/monitoring-health/concept-identity-secure-score.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
-  - name: Improve your security posture
-    href: concept-secure-remote-workers.md
   - name: Integrate your apps with Microsoft Entra ID
     href: five-steps-to-full-application-integration.md
   - name: Security defaults

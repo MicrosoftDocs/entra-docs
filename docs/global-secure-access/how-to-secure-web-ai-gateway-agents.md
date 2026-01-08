@@ -47,12 +47,13 @@ After enabling network controls, you can enforce Global Secure Access security p
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Secure** > **Web content filtering policies**.
 1. Select **Create policy**.
-1. Enter a descriptive name such as *Copilot Studio Agent web repositories* and a description for the policy, then select **Next**.
+1. Enter a descriptive name and a description for the policy, then select **Next**.
 1. Select **Add rule**.
-1. Configure rules specific to Copilot Studio agent requirements:
-   - **Block web repositories**: Add destinations to block web repositories and related domains.
+1. Configure rules based on your security to Copilot Studio agent requirements. For example, block access to `Web respositories`, `Illegal software`, not safe for work (NSFW) sites, and more.
 1. Select **Next** to review the policy.
 1. Select **Create policy**.
+
+Next, you can create policies like [threat intelligence](how-to-configure-threat-intelligence.md) to protect agents against malicious destinations or [file policy](how-to-network-content-filtering.md) to safeguard against unintended data exposure and prevent inline data leaks.
 
 ## Link policies to the baseline profile
 

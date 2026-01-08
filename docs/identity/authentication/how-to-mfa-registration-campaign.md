@@ -4,7 +4,7 @@ description: Learn how to move your organization away from less secure authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/19/2025
+ms.date: 12/12/2025
 ms.author: justinha
 author: mjsantani
 manager: dougeby
@@ -14,20 +14,19 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # How to run a registration campaign to set up Microsoft Authenticator
 
-You can nudge users to set up Microsoft Authenticator during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up Microsoft Authenticator. You can include or exclude users or groups to control who gets nudged to set up the app. This allows targeted campaigns to move users from less secure authentication methods to Authenticator.  
+You can nudge users to set up Microsoft Authenticator during sign-in. Users go through their regular sign-in, perform multifactor authentication as usual, and then get prompted to set up Microsoft Authenticator. You can include or exclude users or groups to control who gets nudged to set up the app, and create targeted campaigns to move users from less secure authentication methods to Authenticator.  
 
 You can also define how many days a user can postpone, or "snooze," the nudge. If a user taps **Skip for now** to postpone the app setup, they get nudged again on the next MFA attempt after the snooze duration has elapsed. You can decide whether the user can snooze indefinitely or up to three times (after which registration is required).
 
 >[!NOTE]
->As users go through their regular sign-in, Conditional Access policies that govern security info registration apply before the user is prompted to set up Authenticator. For example, if a Conditional Access policy requires security info updates can only occur on an internal network, then users won't be prompted to set up Authenticator unless they are on the internal network. 
+>As users go through their regular sign-in, Conditional Access policies that govern security info registration apply before the user is nudged to set up Authenticator. For example, if a Conditional Access policy requires security info updates can only occur on an internal network, then users won't be prompted to set up Authenticator unless they are on the internal network. 
 
 ## Prerequisites 
 
-- Your organization must have enabled Microsoft Entra multifactor authentication. Every edition of Microsoft Entra ID includes Microsoft Entra multifactor authentication. No other license is needed for a registration campaign.
+- If you want to know the number of users who registered each authentication before you configure the registration campaign, see [the Authentication methods activity report](howto-authentication-methods-activity.md#registration-details).
+- Your organization must enable Microsoft Entra multifactor authentication. The registration campaign has no license requirements.
 - Users can't have already set up the Authenticator app for push notifications on their account. 
-- Admins need to enable users for the Authenticator app using one of these policies:  
-  - MFA Registration Policy: Users will need to be enabled for **Notification through mobile app**. See [Configure the MFA registration policy](/entra/id-protection/howto-identity-protection-configure-mfa-policy).
-  - Authentication Methods Policy: Users will need to be enabled for the Authenticator app and the Authentication mode set to **Any** or **Push**. If the policy is set to **Passwordless**, the user won't be eligible for the nudge. For more information about how to set the Authentication mode, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
+- Admins need to enable users for the Authenticator app in the Authentication methods policy. The **Authentication mode** must be set to **Any** or **Push**. If the **Authentication mode** is set to **Passwordless**, users aren't eligible for the nudge. For more information about how to set the **Authentication mode**, see [Enable passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md). 
 
 ## User experience
 
@@ -135,7 +134,7 @@ The following table lists **includeTargets** properties.
 |------|-----------------|-------------|
 | targetType| "user"<br>"group" | The kind of entity targeted. |
 | ID | A guid identifier | The ID of the user or group targeted. |
-| targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method user is prompted to register. The only permissible value is "microsoftAuthenticator". |
+| targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method that the user is nudged to register. The only permissible value is "microsoftAuthenticator". |
 
 The following table lists **excludeTargets** properties.
 
@@ -333,7 +332,7 @@ Yes. If they have been scoped for the nudge using the policy.
 
 **What if the user closes the browser?** 
 
-It's the same as snoozing. If setup is required for a user after they snoozed three times, the user is prompted the next time they sign in.
+It's the same as snoozing. If setup is required for a user after they snoozed three times, the user is nudged when they next sign in.
 
 **Why don't some users see a nudge when there is a Conditional Access policy for "Register security information"?**
 

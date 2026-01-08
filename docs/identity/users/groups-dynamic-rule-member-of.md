@@ -1,21 +1,23 @@
 ---
-title: Configure dynamic membership groups with the memberOf attribute in the Azure portal
+title: Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
 description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID.
-
-author: billmath
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 12/30/2024
-ms.author: billmath
+ms.date: 11/18/2025
+ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
 
-# Configure dynamic membership groups with the memberOf attribute in the Azure portal
+# Configure dynamic membership groups with the memberOf attribute in the Azure portal (preview)
 
 This feature preview in Microsoft Entra ID enables admins to create dynamic membership groups and administrative units that populate by adding members of other groups using the `memberOf` attribute. Apps that couldn't read group-based membership previously in Microsoft Entra ID can now read the entire membership of these new `memberOf` groups. Not only can these groups be used for apps but they can also be used for licensing assignments.
+
+>[!WARNING]
+>This is a preview feature and isn't intended for production use. The use of this feature comes with limitations that can affect dynamic group processing in the tenant. We recommend you review the [Preview limitations](#preview-limitations) section before using this feature.
 
 The following diagram illustrates how you could create Dynamic-Group-A with members of Security-Group-X and Security-Group-Y. Members of the groups inside Security-Group-X and Security-Group-Y don't become members of Dynamic-Group-A.
 
@@ -30,6 +32,7 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 ## Preview limitations
 
 
+- This preview should only be used in test environments as it can affect dynamic group processing in the tenant. We are working on addressing these limitations and will provide updates when they are available.
 - Each Microsoft Entra tenant is limited to 500 dynamic groups using the `memberOf` attribute. The `memberOf` groups count toward the total dynamic group quota of 15,000.
 - Each dynamic group can have up to 50 member groups.
 - When you add members of security groups to `memberOf` dynamic membership groups, only direct members of the security group become members of the dynamic group.

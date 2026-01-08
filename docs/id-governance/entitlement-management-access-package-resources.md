@@ -89,7 +89,7 @@ If you want the identity who had a resource role membership to also be assigned 
 
     ![Access package - Add resource roles](./media/entitlement-management-access-package-resources/resource-roles-add.png)
 
-1. Depending on whether you want to add a [membership of a group or team](#add-a-group-or-team-resource-role), [access to an application](#add-an-application-resource-role), [SharePoint site](#add-a-sharepoint-site-resource-role), [Microsoft Entra role (Preview)](#add-a-microsoft-entra-role-assignment) or [API permission (Preview)](#add-an-api-permission-preview), perform the steps in one of the following resource role sections.
+1. Depending on whether you want to add a [membership of a group or team](#add-a-group-or-team-resource-role), [access to an application](#add-an-application-resource-role), [SharePoint site](#add-a-sharepoint-site-resource-role), [Microsoft Entra role (Preview)](#add-a-microsoft-entra-role-assignment), [API permission (Preview)](#add-an-api-permission-preview), or [SAP IAG access right (Preview)](#add-a-sap-iag-access-right-preview), perform the steps in one of the following resource role sections.
 
 ## Add a group or team resource role
 
@@ -158,6 +158,7 @@ Here are some considerations when selecting an application:
 - Applications can also have groups assigned to their app roles as well. You can choose to add a group in place of an application and its role in an access package, however then the application won't be visible to the user as part of the access package in the My Access portal.
 - Microsoft Entra admin center can also show service principals for services that can't be selected as applications. In particular, **Exchange Online** and **SharePoint Online** are services, not applications that have resource roles in the directory, so they can't be included in an access package. Instead, use group-based licensing to establish an appropriate license for a user who needs access to those services.
 - Applications that only support Personal Microsoft Account users for authentication, and don't support organizational accounts in your directory, don't have application roles and can't be added to access package catalogs.
+- If your access package is for agent identities or agent users, then ensure that your application supports interactions from those identities. For more information, see [manage assignment of agent identities to an application (preview)](../identity/enterprise-apps/assign-agent-identities-to-applications.md).
 
 1. On the **Add resource roles to access package** page, select **Applications** to open the Select applications pane.
 
@@ -239,6 +240,16 @@ Prior to including API permissions in an access package, ensure that the access 
 
 > [!NOTE]
 > Because of the autonomous nature of agents and the potential risks they pose, certain high-risk Microsoft Graph API permissions are explicitly blocked for agents to prevent misuse or unintended access to sensitive data. The permissions listed in [Microsoft Graph permissions blocked for agents](/graph/api/resources/agentid-platform-overview?view=graph-rest-beta#microsoft-graph-permissions-blocked-for-agents) can't be assigned to agent identities.
+
+## Add a SAP IAG access right (Preview)
+
+Once you have [integrated with SAP IAG](entitlement-management-sap-integration.md) and added SAP IAG as a resource to a catalog, then you can select the SAP IAG access rights to include in an access package.
+
+1. In the Resource roles tab, select SAP IAG.
+
+1. In the resources table, you can select the specific business roles you want to include in the access package and select **Next**.
+    :::image type="content" source="media/entitlement-management-sap-integration/sap-resource-roles.png" alt-text="Screenshot of setting role for an SAP IAG resource." lightbox="media/entitlement-management-sap-integration/sap-resource-roles.png":::
+
 
 ## Add resource roles programmatically
 

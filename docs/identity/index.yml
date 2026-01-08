@@ -97,4 +97,4 @@ additionalContent:
           url: ../fundamentals/new-name.md
         - title: "Secure your organization's identities"
           summary: "Security recommendation to protect your identities."
-          url: ../fundamentals/concept-secure-remote-workers.md
+          url: ../fundamentals/configure-security.md

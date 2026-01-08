@@ -14,15 +14,18 @@ ms.custom: sfi-ga-nochange
 
 # Govern the users of an application that does not support provisioning - Microsoft PowerShell
 
-There are three common scenarios in which it's necessary to populate Microsoft Entra ID with existing users of an application before you use the application with a Microsoft Entra ID Governance feature such as [access reviews](access-reviews-application-preparation.md).
+There are four common scenarios in which it's necessary to populate Microsoft Entra ID with existing users and their access rights of an application before you use the application with a Microsoft Entra ID Governance feature such as [access reviews](access-reviews-application-preparation.md).
 
  - Application migrated to Microsoft Entra ID after using its own identity provider
  - Application that doesn't use Microsoft Entra ID as its only identity provider
  - Application does not use Microsoft Entra ID as its identity provider nor does it support provisioning
+ - Application uses Microsoft Entra ID as its identity provider and has additional access rights for users
 
 For more information on those first two scenarios, where the application supports provisioning, or uses an LDAP directory, SQL database, has a SOAP or REST API or relies upon Microsoft Entra ID as its identity provider, see the article [govern an application's existing users](identity-governance-applications-existing-users.md). That article covers how to use identity governance features for existing users of those categories of applications.
 
-This article covers the third scenario. For some legacy applications it might not be feasible to remove other identity providers or local credential authentication from the application, or enable support for provisioning protocols for those applications. For those applications, if you want to use Microsoft Entra ID to review who has access to that application, or remove someone's access from that application, you'll need to create assignments in Microsoft Entra ID that represent application users.  This article covers that scenario of an application that does not use Microsoft Entra ID as its identity provider and does not support provisioning.
+This article covers the third scenario. For some legacy applications, it might not be feasible to remove other identity providers or local credential authentication from the application, or enable support for provisioning protocols for those applications. For those applications, if you want to use Microsoft Entra ID to review who has access to that application, or remove someone's access from that application, you'll need to create assignments in Microsoft Entra ID that represent application users. This article covers that scenario of an application that does not use Microsoft Entra ID as its identity provider and does not support provisioning.
+
+For more information on the fourth scenario, see [include custom data provided resource in the catalog for catalog user Access Reviews (Preview)](custom-data-resource-access-reviews.md).
 
 ## License requirements
 [!INCLUDE [active-directory-entra-governance-license.md](~/includes/entra-entra-governance-license.md)]
@@ -59,7 +62,7 @@ In some environments, the application might be located on a network segment or s
 
 If your application has an LDAP directory or SQL database, then see [Collect existing users from an application](identity-governance-applications-existing-users.md#collect-existing-users-from-an-application) for recommendations on how to extract the user collection.
 
-Otherwise, if the application does not have a directory or database, you will need to contact the owner of the application and have them supply a list of users.  This could be in a format such as a CSV file, with one line per user.  Ensure that one field of each user in the file contains a unique identifier, such as an email address, that is also present on users in Microsoft Entra ID.
+Otherwise, if the application does not have a directory or database, you will need to contact the owner of the application and have them supply a list of users. This could be in a format such as a CSV file, with one line per user. Ensure that one field of each user in the file contains a unique identifier, such as an email address, that is also present on users in Microsoft Entra ID.
 
 If this system doesn't have the Microsoft Graph PowerShell cmdlets installed or doesn't have connectivity to Microsoft Entra ID, transfer the CSV file that contains the list of users to a system that has the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
 
@@ -239,7 +242,7 @@ Follow the instructions in the [guide for creating an access review of groups or
 
 ## Configure entitlement management integration with ServiceNow for ticketing (optional)
 
-If you have ServiceNow then you can optionally configure automated ServiceNow ticket creation, using the [entitlement management integration](entitlement-management-ticketed-provisioning.md) via Logic Apps.  In that scenario, entitlement management can automatically create ServiceNow tickets for manual provisioning of users who have received access package assignments.
+If you have ServiceNow, then you can optionally configure automated ServiceNow ticket creation, using the [entitlement management integration](entitlement-management-ticketed-provisioning.md) via Logic Apps. In that scenario, entitlement management can automatically create ServiceNow tickets for manual provisioning of users who have received access package assignments.
 
 ## Next steps
 

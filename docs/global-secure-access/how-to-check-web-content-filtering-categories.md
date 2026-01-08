@@ -21,13 +21,13 @@ The article shows how to use the web category checker tool to determine which co
 3. Use the following request format, replacing example.com with the host/path you want to check (for example, `msn.com/en-us/sports`):
 
 ```http
-GET https://graph.microsoft.com/beta/networkaccess/connectivity/microsoft.graph.networkaccess.getWebCategoryByUrl(url='@url')?@url=example.com
+GET https://graph.microsoft.com/beta/networkaccess/connectivity/microsoft.graph.networkaccess.getWebCategoriesByUrl(url='@url')?@url=example.com
 ```
 
 Example:
 
 ```http
-GET https://graph.microsoft.com/beta/networkaccess/connectivity/microsoft.graph.networkaccess.getWebCategoryByUrl(url='@url')?@url=msn.com/en-us/sports
+GET https://graph.microsoft.com/beta/networkaccess/connectivity/microsoft.graph.networkaccess.getWebCategoriesByUrl(url='@url')?@url=msn.com/en-us/sports
 ```
 
 > [!NOTE]

@@ -81,7 +81,7 @@ items:
         href: how-to-install-android-client.md
       - name: Install the iOS client
         href: how-to-install-ios-client.md
-      - name: EDR/antivirus coexistence with Global Secure Access client
+      - name: Configure antivirus-client coexistence
         href: concept-edr-antivirus-coexistence.md
   - name: Remote networks
     expanded: false
@@ -224,6 +224,8 @@ items:
         href: how-to-export-connector-logs.md
       - name: Microsoft Sentinel integration
         href: how-to-sentinel-integration.md  
+      - name: Global Secure Access alerts
+        href: concept-alerts.md
   - name: Microsoft Global Secure Access deployment guides
     expanded: false
     items:

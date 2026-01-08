@@ -13,7 +13,7 @@ ms.custom: it-pro
 #CustomerIntent: As an IT administrator, I want to learn how to enable the Akamai Web Application Firewall (WAF) service for an external tenant with a Akamai WAF so that I can protect web applications from common exploits and vulnerabilities.
 
 ---
-# Configure Akamai WAF with Microsoft Entra External ID
+# Configure Akamai with Microsoft Entra External ID
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -21,7 +21,7 @@ You can integrate third-party Web Application Firewall (WAF) solutions with Micr
 
 Akamai Web Application Firewall ([Akamai WAF](https://www.akamai.com/glossary/what-is-a-waf)) protects your web apps from common exploits and vulnerabilities. By integrating Akamai WAF with Microsoft Entra External ID, you add an extra layer of security for your applications.
 
-This article provides step-by-step guidance for configuring your external tenant with Akamai for Web Application Firewall (WAF) settings.
+This article provides step-by-step guidance to configure your external tenant with Akamai WAF.
 
 ## Solution overview
 
@@ -29,7 +29,6 @@ The solution uses three main components:
 
 - **External tenant** – Acts as the identity provider (IdP) and authorization server, enforcing custom policies for authentication.
 - **Azure Front Door (AFD)** – Handles custom domain routing and forwards traffic to Microsoft Entra External ID.
-- **Akamai account** – The account used to manage Akamai services. You can create an [Akamai account](https://akamai.com/) on the Cloud Computing Services page.
 - **Akamai WAF** – The [Web Application Protector](https://www.akamai.com/us/en/resources/waf.jsp) firewall that manages traffic sent to the authorization server.
 
 ## Prerequisites
@@ -38,13 +37,13 @@ To get started, you need:
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
 - A Microsoft [Azure Front Door (AFD)](/azure/frontdoor/front-door-overview) configuration. Traffic from the Akamai WAF routes to Azure Front Door, which then routes to the external tenant.
-- An Akamai account. If you don’t have one, go to the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public) to create and purchase your account.
-- An [Akamai Web Application Firewall (WAF)](https://www.akamai.com/glossary/what-is-a-waf) that manages traffic sent to the authorization server.
-- A [custom domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant that’s enabled with Azure Front Door (AFD).
+- An Akamai account. If you don't have one, go to the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public) to create and purchase your account.
+- An [Akamai WAF](https://www.akamai.com/glossary/what-is-a-waf) that manages traffic sent to the authorization server.
+- A [custom domain](/entra/external-id/customers/how-to-custom-url-domain) in your external tenant that's enabled with Azure Front Door (AFD).
 
 ## Akamai setup steps
 
-First you need to set up Akamai WAF to protect your custom URL domains for Microsoft Entra External ID. Follow these steps to configure Akamai WAF.
+First, set up Akamai WAF to protect your custom URL domains for Microsoft Entra External ID. Follow these steps to configure Akamai WAF.
 
 ### Configure Akamai WAF
 
@@ -67,16 +66,16 @@ For more information, see the steps in **Configure Akamai WAF** in the [Akamai d
 
 # [Advanced mode](#tab/advanced-mode)
 
-If you prefer an advanced approach, first create and configure a property in [Property Manager](https://control.akamai.com/apps/property-manager/). A property is a configuration file that tells our edge servers how to handle and respond to incoming requests from your end users.
+If you prefer an advanced approach, first create and configure a property in [Property Manager](https://control.akamai.com/apps/property-manager/). A property is a configuration file that tells Akamai edge servers how to handle and respond to incoming requests from your end users.
 
 To learn more, see [What is a Property?](https://techdocs.akamai.com/start/docs/prop). To create and configure a property, follow these steps:
 
 ## Create and configure a property
 
 1. Go to [Akamai Control Center](https://control.akamai.com/) to sign in.
-2. Navigate to **Property Manager**.
-3. For **Property version**, select **Standard** or **Enhanced TLS** (recommended).
-4. For **Property hostnames**, add a property hostname for your custom domain.  
+1. Navigate to **Property Manager**.
+1. For **Property version**, select **Standard** or **Enhanced TLS** (recommended).
+1. For **Property hostnames**, add a property hostname for your custom domain.  
    Example: `login.domain.com`
 
 > [!IMPORTANT]  
@@ -88,23 +87,23 @@ To learn more, see [What is a Property?](https://techdocs.akamai.com/start/docs/
 Use these settings for the origin server:
 
 1. For **Origin type**, enter your origin type.
-2. For **Origin server hostname**, enter your hostname.  
+1. For **Origin server hostname**, enter your hostname.  
    Example: `yourafddomain.azurefd.net`
-3. For **Forward host header**, select **Incoming Host Header**.
-4. For **Cache key hostname**, select **Incoming Host Header**.
+1. For **Forward host header**, select **Incoming Host Header**.
+1. For **Cache key hostname**, select **Incoming Host Header**.
 
 ## Configure DNS
 
 Create a Canonical Name (CNAME) record in your DNS, such as `login.domain.com`, that points to the Microsoft Edge hostname in the **Property hostname** field.
 
-## Configure Akamai Web Application Firewall
+## Configure Akamai WAF
 
 1. Go to [Akamai Control Center](https://control.akamai.com/) to sign in.
-2. Navigate to **Security Configurations**.
-3. To create a new security configuration, select **Protect existing property**.
-4. Enter a configuration name in **Configuration Details**, then select **Create and activate the configuration on Production network**.
-5. To get started with the security configuration, see https://techdocs.akamai.com/cloud-security/docs/app-api-protector.
-6. In a subsequent security configuration version, change the action under **Web Application Firewall** for **Attack Group**, and set **Group Action** to **Deny**.
+1. Navigate to **Security Configurations**.
+1. To create a new security configuration, select **Protect existing property**.
+1. Enter a configuration name in **Configuration Details**, then select **Create and activate the configuration on Production network**.
+1. To get started with the security configuration, see https://techdocs.akamai.com/cloud-security/docs/app-api-protector.
+1. In a subsequent security configuration version, change the action under **Web Application Firewall** for **Attack Group**, and set **Group Action** to **Deny**.
 
   :::image type="content" source="media\how-to-configure-akamai-integration\denied-attack-groups.png" alt-text=" 	Screenshot of denied attack groups, in the Group action column." :::
 
@@ -112,7 +111,7 @@ Create a Canonical Name (CNAME) record in your DNS, such as `login.domain.com`, 
 
 ### Grant access to the Akamai API to perform actions
 
-Create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`). You reuse these values in **Step 3**.
+Create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`). You reuse these values later in the setup.
 
 Additionally, update the **API restrictions** for the actions to the appropriate access level shown in the following table:
 
@@ -121,10 +120,9 @@ Additionally, update the **API restrictions** for the actions to the appropriate
 | [Microsoft Edge Diagnostics](https://developer.akamai.com/) | Microsoft Edge Diagnostics | READ-WRITE |
 | [Property Manager (PAPI)](https://developer.akamai.com/api/luna/papi/overview.html) | Property Manager (PAPI). PAPI requires access to Microsoft Edge Hostnames. Edit your authorizations to add HAPI to your API Client. | READ-ONLY |
 
-## Set up an Akamai WAF in External ID
+## Verify Akamai WAF in External ID
 
 After completing the configuration steps, verify that Akamai WAF is protecting your external tenant by connecting the authentication credentials to the WAF configuration.
-
 
 # [Microsoft Entra admin center](#tab/admin-center)
 
@@ -136,10 +134,10 @@ After completing the configuration steps, verify that Akamai WAF is protecting y
 1. Select the **Protect apps from DDoS with WAF** tile by selecting **Get started**.
 1. Under **Choose a WAF Provider** select **Akamai** and then select **Next**.
 
-  :::image type="content" source="media\how-to-configure-akamai-integration\choose-waf-provider.png" alt-text="Screenshot of the choose WAF provider page.":::
+   :::image type="content" source="media\how-to-configure-akamai-integration\choose-waf-provider.png" alt-text="Screenshot of the choose WAF provider page.":::
 
-6. Create an Akamai account. If you don’t have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public). Then return here to complete the setup.
-7. Under **Configure Akamai WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration add the following information:
+1. Create an Akamai account. If you don't have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public). Then return here to complete the setup.
+1. Under **Configure Akamai WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration, add the following information:
     - **Configuration name**: A name for the WAF configuration.
     - **Host prefix**: The host prefix from your Akamai EdgeGrid API credentials.
     - **Client secret**: The client secret from your Akamai EdgeGrid API credentials.
@@ -152,12 +150,12 @@ After completing the configuration steps, verify that Akamai WAF is protecting y
 
 ## Domain verification
 
-Select the custom URL domains that are enabled through Azure Front Door (AFD) to verify and connect them to your Akamai WAF configuration. This step ensures that the selected domains are protected with advanced security features.
+Select the custom URL domains that Azure Front Door (AFD) enables to verify and connect them to your Akamai WAF configuration. This step ensures that the selected domains are protected with advanced security features.
 
 1. Select **Verify domain** to start the verification process.
 1. Select the custom URL domains you want to protect with Akamai WAF and then select **Verify**.
 
-  :::image type="content" source="media\how-to-configure-akamai-integration\verify-domain.png" alt-text="Screenshot of the verify domain page.":::
+ :::image type="content" source="media\how-to-configure-akamai-integration\verify-domain.png" alt-text="Screenshot of the verify domain page.":::
 
 3. After verification, select **Done** to complete the process.
 
@@ -171,9 +169,7 @@ Make sure the caller has the [Security Reader](/entra/identity/role-based-access
 
   :::image type="content" source="media\how-to-configure-akamai-integration\consent-button.png" alt-text="Screenshot showing the consent button." :::
 
-| **Permission**  | **Description**  | **Endpoint**  |
-|----|----|----|
-| RiskPreventionProviders.Read.All  | Allows reading  Web Application Firewall information.  | POST /riskPrevention/webApplicationFirewalls/Verify  |
+This permission allows you to call `POST .../riskPrevention/webApplicationFirewallProviders` to create provider and then call `POST .../riskPrevention/webApplicationFirewallProviders/{webApplicationFirewallProviderId}/verify` to verify.
 
 ## Step 1: Create Akamai WAF provider with the API
 
@@ -223,7 +219,7 @@ Content-Type: application/json
 
 ## Step 2: Verify Akamai WAF provider with the API
 
-The following example shows how to verify a webApplicationFirewallProvider using the hostName.
+The following example shows how to verify a domain via `webApplicationFirewallProvider` using the `hostName`.
 
 #### Request
 
@@ -238,7 +234,7 @@ POST https://graph.microsoft.com/v1.0/identity/riskPrevention/webApplicationFire
 Content-Type: application/json
 {
   "hostName": "www.contoso.com"
-}
+}identity\authentication\tutorial-enable-cloud-sync-sspr-writeback
 ```
 
 #### Response
@@ -263,12 +259,44 @@ Content-Type: application/json
         "verifiedOnDateTime": "2025-10-04T00:50:26.4909654Z",
         "errors": [],
         "warnings": []
+    },
+    "verifiedDetails": {
+        "@odata.type": "#microsoft.graph.akamaiVerifiedDetailsModel",
+        "zoneId": "11111111111111111111111111111111",
+        "dnsConfiguration": {
+            "name": "www.contoso.com",
+            "isProxied": true,
+            "recordType": "cname",
+            "value": "contoso.azurefd.net",
+            "isDomainVerified": true
+        },
+        "enabledRecommendedRulesets": [
+            {
+                "rulesetId": "22222222222222222222222222222222",
+                "name": "akamai Managed Ruleset",
+                "phaseName": "http_request_firewall_managed"
+            }
+        ],
+        "enabledCustomRules": [
+            {
+                "ruleId": "33333333333333333333333333333333",
+                "name": "Block SQL Injection",
+                "action": "block"
+            },
+            {
+                "ruleId": "44444444444444444444444444444444",
+                "name": "Block XSS",
+                "action": "block"
+            }
+        ]
     }
 }
 ```
-<!--- Shortened for readability. -->
 
 ---
+
+> [!NOTE]
+> CRUD (Create, Read, Update, Delete) operations on providers’ verification details may experience delays of up to 15 minutes. If you delete a domain, verification might take up to 15 minutes before you can add it back.
 
 ## Troubleshooting
 

@@ -2,11 +2,11 @@
 title: CSS reference guide for customizing company branding
 description: Reference guide for the CSS template selectors for customizing Microsoft Entra sign-in page company branding.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 12/01/2023
+ms.date: 12/16/2025
 ms.author: sarahlipsey
 ms.reviewer: almars
 ms.custom: sfi-image-nochange
@@ -16,6 +16,8 @@ ms.custom: sfi-image-nochange
 
 Configuring your company branding for the user sign-in process provides a seamless experience in your applications that use Microsoft Entra ID as the identity and access management service. Use this CSS reference guide if you're using the [CSS template](https://download.microsoft.com/download/7/2/7/727f287a-125d-4368-a673-a785907ac5ab/custom-styles-template-013023.css) as part of the [customize company branding](reference-company-branding-css-template.md) process.
 
+> [!IMPORTANT]
+> Tenants created after January 5, 2026, will not have custom CSS available for company branding in Microsoft Entra ID. Tenants. Tenants created before January 5 can continue to use custom CSS.
 
 ## HTML selectors
 

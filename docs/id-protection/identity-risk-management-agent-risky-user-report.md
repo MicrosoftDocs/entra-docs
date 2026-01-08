@@ -11,7 +11,10 @@ ms.reviewer: chuqiaoshi
 ---
 # Review agent findings
 
-The Identity Risk Management Agent in Microsoft Entra ID Protection provides proactive risk management capabilities by analyzing the risky identities and suggesting actions to remediate them. By using a Large Language Model, the agent helps security administrators review and respond to risky activities before they lead to security incidents.
+The Identity Risk Management Agent (Preview) in Microsoft Entra ID Protection provides proactive risk management capabilities by analyzing the risky identities and suggesting actions to remediate them. By using a Large Language Model, the agent helps security administrators review and respond to risky activities before they lead to security incidents.
+
+> [!NOTE]
+> The Identity Risk Management Agent is currently being deployed and in preview. This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

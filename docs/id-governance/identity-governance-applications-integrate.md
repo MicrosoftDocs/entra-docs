@@ -114,6 +114,8 @@ However, if the application was already in your environment, users may have gain
 1. If the application was using AD security groups, and those groups were created in AD, then once the review is complete, you need to manually update the AD groups to remove memberships of those users who were denied.  Subsequently, to have denied access rights removed automatically, you can either update the application to use an AD group that was created in Microsoft Entra ID and [written back to Microsoft Entra ID](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), or move the membership from the AD group to the Microsoft Entra group, and [nest the written back group as the only member of the AD group](~/identity/hybrid/cloud-sync/govern-on-premises-groups.md).
 1. Once the review has been completed and the application access updated, or if no users have access, then continue on to the next steps to deploy Conditional Access and entitlement management policies for the application.
 
+Using custom data provided resources (preview), you can include access rights from applications in Microsoft Entra ID access reviews by uploading their access data directly prior to an access review. For more information, see [Include custom data provided resource in the catalog for catalog user Access Reviews (Preview)](custom-data-resource-access-reviews.md).
+
 Now that you have a baseline that ensures existing access has been reviewed, then you can [deploy the organization's policies](identity-governance-applications-deploy.md) for ongoing access and any new access requests.
 
 ## Next steps

@@ -13,7 +13,7 @@ ms.reviewer: markwahl-msft
 
 # Manage access to your SAP applications
 
-SAP software and services likely runs critical functions, such as HR and ERP, for your organization. At the same time, your organization relies on Microsoft for various Azure services, Microsoft 365, and Microsoft Entra ID Governance for managing access to applications. This article describes how you can use Identity Governance to manage identities across your SAP applications.
+SAP software and services likely run critical functions, such as HR and ERP, for your organization. At the same time, your organization relies on Microsoft for various Azure services, Microsoft 365, and Microsoft Entra ID Governance for managing access to applications. This article describes how you can use Identity Governance to manage identities across your SAP applications.
 
 ![Diagram of SAP integrations.](./media/sap/sap-integrations.png)
 
@@ -80,21 +80,29 @@ Also see the following blog posts and SAP resources:
 
 ### Provision identities into modern SAP applications
 
-After your users are in Microsoft Entra ID, you can provision accounts into the various SaaS and on-premises SAP applications that they need access to. You have two ways to accomplish this:
+After your users are in Microsoft Entra ID, you can provision accounts into the various SaaS and on-premises SAP applications that they need access to. For SAP applications which SAP Cloud Identity Services supports, you can use the [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) enterprise application in Microsoft Entra ID to provision users and groups from Microsoft Entra into SAP Cloud Identity Services. After you bring all the identities into SAP Cloud Identity Services, you can use SAP Cloud Identity Services - Identity Provisioning to provision the accounts from there into your SAP applications when required.
 
-- Use the [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) enterprise application in Microsoft Entra ID to provision identities into SAP Cloud Identity Services. After you bring all the identities into SAP Cloud Identity Services, you can use SAP Cloud Identity Services - Identity Provisioning to provision the accounts from there into your applications when required.
-- Use the [SAP Cloud Identity Services - Identity Provisioning](https://help.sap.com/docs/IDENTITY_PROVISIONING/f48e822d6d484fa5ade7dda78b64d9f5/f2b2df8a273642a1bf801e99ecc4a043.html) integration to directly export identities from Microsoft Entra ID into [SAP Cloud Identity Services integrated applications](https://help.sap.com/docs/IDENTITY_PROVISIONING/f48e822d6d484fa5ade7dda78b64d9f5/ab3f641552464c79b94d10b9205fd721.html). When you're using SAP Cloud Identity Services - Identity Provisioning to bring users into those applications, all provisioning configuration for those applications is managed in SAP directly. You can still use the enterprise application in Microsoft Entra ID to manage SSO and use [Microsoft Entra ID as the corporate identity provider](https://help.sap.com/docs/IDENTITY_AUTHENTICATION/6d6d63354d1242d185ab4830fc04feb1/058c7b14209f4f2d8de039da4330a1c1.html).
+:::image type="content" source="../identity/saas-apps/media/sap-cloud-platform-identity-authentication-provisioning-tutorial/architecture.png" alt-text="Diagram of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra.":::
+
+As another option, you can use the [SAP Cloud Identity Services - Identity Provisioning](https://help.sap.com/docs/IDENTITY_PROVISIONING/f48e822d6d484fa5ade7dda78b64d9f5/f2b2df8a273642a1bf801e99ecc4a043.html) integration to directly export identities from Microsoft Entra ID into [SAP Cloud Identity Services integrated applications](https://help.sap.com/docs/IDENTITY_PROVISIONING/f48e822d6d484fa5ade7dda78b64d9f5/ab3f641552464c79b94d10b9205fd721.html). When you're using SAP Cloud Identity Services - Identity Provisioning to bring users into those applications, all provisioning configuration for those applications is managed in SAP directly. You can still use the enterprise application in Microsoft Entra ID to manage SSO and use [Microsoft Entra ID as the corporate identity provider](https://help.sap.com/docs/IDENTITY_AUTHENTICATION/6d6d63354d1242d185ab4830fc04feb1/058c7b14209f4f2d8de039da4330a1c1.html).
 
 ### Provision identities into on-premises SAP systems
 
-Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services or SAP ECC, to enable them to sign in to SAP applications. If you have [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise), then provision users from Microsoft Entra ID to SAP Cloud Identity Directory. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications to SAP S/4HANA On-Premise through the SAP cloud connector.
+Once you have users in Microsoft Entra ID, you can provision those users from Microsoft Entra ID to SAP Cloud Identity Services or SAP ECC, to enable them to sign in to SAP applications. If you have [`SAP S/4HANA On-Premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise), then provision users from Microsoft Entra ID to SAP Cloud Identity Directory. SAP Cloud Identity Services then provisions the users originating from Microsoft Entra ID that are in the SAP Cloud Identity Directory into the downstream SAP applications to SAP S/4HANA On-Premise through the SAP cloud connector.
 
-Customers who have yet to transition from applications such as  SAP R/3 and SAP ERP Central Component (SAP ECC) to SAP S/4HANA can still rely on the Microsoft Entra provisioning service to provision user accounts. Within SAP R/3 and SAP ECC, you expose the necessary Business Application Programming Interfaces (BAPIs) for creating, updating, and deleting users. Within Microsoft Entra ID, you have two options:
+Customers who have yet to transition from applications such as  SAP R/3 and SAP ERP Central Component (SAP ECC) to SAP S/4HANA can still rely on the Microsoft Entra provisioning service to provision user accounts. Within SAP R/3 and SAP ECC, you expose the necessary Business Application Programming Interfaces (BAPIs) for creating, updating, and deleting users. Then you can use the lightweight Microsoft Entra provisioning agent and [web services connector](../identity/app-provisioning/on-premises-web-services-connector.md) to [provision users into apps such as SAP ECC](../identity/app-provisioning/on-premises-sap-connector-configure.md).
 
-* Use the lightweight Microsoft Entra provisioning agent and [web services connector](../identity/app-provisioning/on-premises-web-services-connector.md) to [provision users into apps such as SAP ECC](../identity/app-provisioning/on-premises-sap-connector-configure.md).
-* In scenarios where you need to do more complex group and role management, use [Microsoft Identity Manager](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) to manage access to your legacy SAP applications.
+:::image type="content" source="../identity/app-provisioning/media/on-premises-sap-connector-configure/provisioning-to-sap-on-premises-apps.png" alt-text="Diagram of provisioning to SAP ECC and SAP S/4HANA On-Premise.":::
+
 
 You can also use Microsoft Entra ID to provision workers into Active Directory, as well as other on-premises systems that SAP Cloud Identity Services doesn't support for provisioning.
+
+### Assign access via SAP IAG
+
+In addition to assigning users to roles via group memberships provisioned through SAP Cloud Identity Services, you can also integrate Microsoft Entra entitlement management with SAP Cloud Identity Access Governance (IAG). This integration enables you to add SAP IAG business roles as resources in entitlement management catalogs, so you can grant users access to SAP applications through Microsoft Entra access packages. You can then automate role assignments in SAP IAG and downstream SAP applications, based on approvals in Microsoft Entra.
+
+For more information, see [Microsoft Entra SAP IAG integration (Preview)](entitlement-management-sap-integration.md).
+
 
 ## Trigger custom workflows
 
@@ -106,7 +114,7 @@ With separation-of-duties checks in Microsoft Entra [entitlement management](htt
 
 * Admins and access managers can prevent users from requesting extra access packages if they're already assigned to other access packages or are a member of other groups that are incompatible with the requested access.
 * Enterprises with critical regulatory requirements for SAP apps have a single consistent view of access controls. They can then enforce separation-of-duties checks across their financial and other business-critical applications, along with Microsoft Entra integrated applications.
-* With Microsoft Entra integrations to [SAP access governance](https://learning.sap.com/learning-journeys/exploring-the-fundamentals-of-sap-system-security/discussing-access-governance-integration-scenarios-ac-iag-), to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance.
+* With Microsoft Entra integrations to [SAP access governance](entitlement-management-sap-integration.md), to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance.
 
 ## Additional guidance
 
