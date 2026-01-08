@@ -345,8 +345,8 @@ DEBUG=1 ./identity-broker
 
 For more information, see the following Intune documentation:
 
-- [What's new in Microsoft single sign-on for Linux](single-sign-on-linux-whats-new.md)
-- [Troubleshoot device registration on Linux using dsregcmd](troubleshoot-device-dsregcmd-linux.md)
+- [What's new in Microsoft single sign-on for Linux](~/identity/devices/single-sign-on-linux-whats-new.md)
+- [Troubleshoot device registration on Linux using dsregcmd](~/identity/devices/troubleshoot-device-dsregcmd-linux.md)
 - [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
 
 - [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
