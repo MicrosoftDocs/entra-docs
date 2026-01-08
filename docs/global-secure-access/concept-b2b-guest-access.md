@@ -95,7 +95,8 @@ For web applications, the only supported method for B2B users to access Kerberos
 - B2B guest access doesn't support keeping the Internet Access, Microsoft 365, and Microsoft Entra tunnels to the home tenant.
 - Switching an account to the resource tenant fails when the resource tenant is configured for required MFA in the cross-tenant configuration and the home tenant is configured with passwordless sign-in (PSI) on the authenticator app.
 - When Access Control is allowed on cross tenant settings for Global Secure Access, access isn't allowed because Global Secure Access controls these applications.
-- When a user switches tenants, existing active application connections like Remote Desktop Protocol (RDP) remain connected to the previous tenant. 
+- When a user switches tenants, existing active application connections like Remote Desktop Protocol (RDP) remain connected to the previous tenant.
+- B2B access at the resource tenant will not work if you have compliant network policies enabled for the PA apps. Guest users should be excluded from such policies.
 
 ## Enable B2B guest access for Azure Virtual Desktop and Windows 365
 You can enable Global Secure Access on Windows 365 and Azure Virtual Desktop instances that support external identities to provide B2B guest access. With this capability, external users—such as guests, partners, and contractors—from other organizations can securely access resources in your tenant (the resource tenant). As a resource tenant administrator, you can configure Private Access, Internet Access, and Microsoft 365 traffic policies for these third-party users, helping ensure secure and controlled access to your organization's resources.
