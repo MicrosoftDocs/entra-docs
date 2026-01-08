@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot using dsregcmd on Linux
-description: This article covers how to use the output from the dsregcmd command to understand the state of devices in Microsoft Entra ID.
+description: This article covers how to use the output from the dsregcmd command on Linux to understand the state of devices in Microsoft Entra ID.
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
 ms.service: entra-id
@@ -272,7 +272,7 @@ It shares the same components as the broker, ensuring consistent results.
 
 For more information, see the following Intune documentation:
 
-- [What's new in Microsoft single sign-on for Linux](~/identity/devices/single-sign-on-linux-whats-new)
-- [Microsoft Identity Broker for Linux overview](~/identity/devices/microsoft-identity-broker-linux-overview)
+- [What's new in Microsoft single sign-on for Linux](whats-new-linux.md)
+- [Microsoft Identity Broker for Linux overview](sso-linux.md)
 - [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
 - [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
