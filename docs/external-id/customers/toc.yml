@@ -170,6 +170,8 @@ items:
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant 
                 - name: Support web fallback
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Register strong authentication method
+                  href: /entra/identity-platform/identity-platform/tutorial-native-authentication-single-page-app-angular-register-strong-authentication-method?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Enable MFA
                   href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-enable-mfa?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app
