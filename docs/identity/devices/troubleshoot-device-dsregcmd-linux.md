@@ -272,7 +272,7 @@ It shares the same components as the broker, ensuring consistent results.
 
 For more information, see the following Intune documentation:
 
-- [What's new in Microsoft single sign-on for Linux](~/identity/devices/single-sign-on-linux-whats-new.md)
-- [Microsoft Identity Broker for Linux overview](~/identity/devices/microsoft-identity-broker-linux-overview.md)
+- [What's new in Microsoft single sign-on for Linux](~/identity/devices/single-sign-on-linux-whats-new)
+- [Microsoft Identity Broker for Linux overview](~/identity/devices/microsoft-identity-broker-linux-overview)
 - [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
 - [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
