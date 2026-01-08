@@ -219,6 +219,11 @@ Known limitations for the Global Secure Access client for iOS include:
 
 ---    
 
+## Tenant switching support
+If a device is joined to a tenant, the Global Secure Access client always connects to that joined tenant, even if the device is also registered with or joined to other tenants. The client can't switch between tenants.
+
+If a device isn't joined to any tenant, the client connects to the tenant the device is registered with at first sign-in and stays connected to that tenant.
+
 ## Remote network limitations   
 Known limitations for remote networks include:   
 - The maximum number of remote networks per tenant is 200, and the maximum number of device links per remote network is 25. To increase these limits further for your tenant, contact Microsoft Support.   
