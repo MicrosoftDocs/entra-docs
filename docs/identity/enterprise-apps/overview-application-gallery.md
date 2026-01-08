@@ -89,9 +89,6 @@ A collection of featured applications is listed by default when you open the Mic
 - **Provisioning** - Microsoft Entra ID to SaaS [application provisioning](~/identity/app-provisioning/user-provisioning.md) refers to automatically creating user identities and roles in the SaaS applications that users need access to.
 
 > [!NOTE]
-> Some applications in the gallery that use linked-based SSO may have a disabled **Create** button. Linked-based SSO applications only route users to a target URL managed elsewhere and don't create new applications or service principals in Microsoft Entra ID. You can only set up where the app should send users when they click on it.
-
-> [!NOTE]
 > The **Create** button might appear disabled for certain gallery apps by design. This occurs in two scenarios: First, for linked-based SSO applications. These templates are link-only and don't support creating a new app or service principal in Microsoft Entra ID. They redirect users to an external URL managed by the service provider. Because no Microsoft Entra object is created, the button is intentionally unavailable. 
 
 Second, when the app already exists in your tenant, as gallery applications are limited to one instance per tenant. In both cases, a disabled **Create** button is expected behavior.
