@@ -56,7 +56,7 @@ SAP Cloud Identity and Access Governance (IAG) tenant license:
 
 Prior to integrating Microsoft Entra entitlement management with SAP Cloud Identity Access Governance (IAG), ensure that Microsoft Entra and SAP IAG have the same lists of the user identities, so that entitlement management can refer to a user in an access request and SAP IAG can recognize that user. You can do this by connecting Microsoft Entra to provision users into SAP Cloud Identity Services, and then connecting SAP Cloud Identity Services to SAP IAG.
 
-:::image type="content" source="media/entitlement-management-sap-integration/microsoft-entra-and-sap-integration-architecture.png" alt-text="Diagram of the relationship of  Microsoft Entra, Azure Key Vault and SAP Cloud Identity Services and SAP IAG in the integration described in this article.":::
+:::image type="content" source="media/entitlement-management-sap-integration/microsoft-entra-and-sap-integration-architecture.png" alt-text="Diagram of the relationship of Microsoft Entra, Azure Key Vault and SAP Cloud Identity Services and SAP IAG in the integration described in this article.":::
 
 Once you have [provisioned the users from Microsoft Entra into SAP Cloud Identity Services](#prerequisites), then to synchronize user-group and attribute data from SAP Cloud Identity Services to [SAP Cloud Identity Access Governance (IAG)](https://help.sap.com/docs/SAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE?state=DRAFT), complete these steps:
 
@@ -197,6 +197,10 @@ The SAP IAG instance secret created in [Register IAG Sync system administrator](
 Catalog Administrators within Microsoft Entra are now able to add SAP business roles from your SAP IAG instance to Entitlement Management catalogs and access packages.
 
 ## Set up catalog and access package with SAP business role
+
+Now that you have the external connector to SAP IAG configured, you can then add a business role from that SAP IAG as a resource role in an access package.
+
+:::image type="content" source="media/entitlement-management-sap-integration/data-model-relationships.png" alt-text="Diagram of the relationship of the external connector, the catalog, and the access package resource role.":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
