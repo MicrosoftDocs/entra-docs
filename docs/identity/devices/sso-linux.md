@@ -101,8 +101,8 @@ Run the following commands in a command line to manually install the Microsoft s
 
    ```bash
    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-    sudo dnf install -y dnf-plugins-core
-    sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
+   sudo dnf install -y dnf-plugins-core
+   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-prod
    ```
 
 1. Install the Microsoft single sign-on (microsoft-identity-broker) app.  
@@ -254,7 +254,7 @@ Certificate-based client authentication is implemented through the Secure Socket
 
 The easiest way to configure Certificate-Based Authentication (CBA) is to use a Private Key Infrastructure (PKI) solution that issues user certificates to Linux devices. These certificates can then be used for authentication against Microsoft Entra ID. To configure Linux to accept these certificates for authentication, you typically need to set up the appropriate certificate stores and ensure that the system's authentication mechanisms are configured to use these certificates. 
 
-## Troubleshooting & Reporting Issues
+## Troubleshooting
 
 ### Common Issues
 
@@ -345,6 +345,9 @@ DEBUG=1 ./identity-broker
 
 For more information, see the following Intune documentation:
 
+- [What's new in Microsoft single sign-on for Linux](single-sign-on-linux-whats-new.md)
+- [Troubleshoot device registration on Linux using dsregcmd](troubleshoot-device-dsregcmd-linux.md)
 - [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
 
 - [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
+

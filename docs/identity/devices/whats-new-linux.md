@@ -56,7 +56,7 @@ The following table lists Identity Runtime SDK versions currently supported and 
 |insiders-fast|Test upcoming releases|2.0.3|❌ No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)|
 
 > [!NOTE]
-> The current production version of the `microsoft-identity-broker` is `2.0.1`. Version `2.0.3` is available in the insiders-fast channel for testing purposes only.
+> The current production version of the `microsoft-identity-broker` is `2.0.1`. 
 
 We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow prerelease testing of packages newer than 2.0.1 (the latest production version). This channel isn't intended for production use and might contain breaking changes or incomplete features.
 
@@ -72,10 +72,25 @@ We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pr
 **Migration Requirements:**
 - No automatic migration script available from version 2.0.1 (Java broker) to 2.0.2+ (C++ broker)
 - Manual migration required: uninstall 2.0.1, remove all state, reinstall 2.0.2+
-- Device re-registration through Microsoft Entra ID and Intune required
+- Device re-registration through Microsoft Entra ID and Intune required. Device Ids and keys will not be retained between pre 2.0.1 and 2.0.2+ versions.
 
 **Documentation:**
-For current production documentation, see: [Microsoft single sign-on for Linux](/entra/identity/devices/sso-linux)
+- For current production documentation, see: [Microsoft single sign-on for Linux](/entra/identity/devices/sso-linux)
+
+### 2.0.4 - Dec 29, 2025 - (Preview Release in fast Insiders channel)
+- (Linux) Include a LICENSE file and a broker-specific CHANGELOG.md in the Linux broker package.
+- (Linux) Update embedded authentication window defaults (title/size) and improve centering behavior.
+- (Linux) Add support for RHEL 10
+- (Linux) Add dsreg command-line tool for device registration management and diagnostics
+- (Linux) Update certificates/keys location used by Linux device broker
+- (Linux) Include broker version in broker-produced telemetry
+- (xplat) Add DUNA xplat and DUNA iOS CBA
+
+#### Assets
+
+- Ubuntu-24.04 - [microsoft-identity-broker_2.0.4_amd64.deb](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.4_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.0.4_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.0.4_amd64.deb)
+
 
 ### 2.0.3 - Oct 21, 2025 - (Preview Release in fast Insiders channel)
 
