@@ -99,6 +99,7 @@ sudo dsreg --cleanup
 ## Output Information
 
 ### Device State
+
 | Field | Description |
 | --- | --- |
 | **Device registration status** | (Registered | Not Registered) |
@@ -108,6 +109,7 @@ sudo dsreg --cleanup
 | **Certificate thumbprint** | The thumbprint of the device certificate. |
 
 ### Primary Refresh Token (PRT)
+
 | Field | Description |
 | --- | --- |
 | **PRT present** | (Yes\|No) *YES* if a Primary Refresh Token (PRT) is present on the device for the logged-in user. |
@@ -118,6 +120,7 @@ sudo dsreg --cleanup
 | **Session key protocol version** | The protocol version used for the session key associated with the PRT. |
 
 ### Broker Information
+
 | Field | Description |
 | --- | --- |
 | **Broker version** | The version of the current `microsoft-identity-broker` installed on the device. |
