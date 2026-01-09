@@ -36,9 +36,11 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Conditional access for agents
+          - text: Conditional Access for agents
             url: ../../identity/conditional-access/agent-id.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
-          - text: Microsoft identity protection for agents
+          - text: Identity Governance for agents
+            url: ../../id-governance/agent-id-governance-overview.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+          - text: Identity Protection for agents
             url: ../../id-protection/concept-risky-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
           - text: Network controls for agents
             url: ../../global-secure-access/concept-secure-web-ai-gateway-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json

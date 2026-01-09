@@ -47,7 +47,7 @@ additionalContent:
         ## CARD 2 ######################
         - title: Agent governance and lifecycles
           links:
-            - text: Identity governance for agents
+            - text: Identity Governance for agents
               url: ../id-governance/agent-id-governance-overview.md
             - text: Agent identity lifecycle management
               url: ../id-governance/agent-sponsor-tasks.md
@@ -55,9 +55,9 @@ additionalContent:
         ## CARD 3 ######################
         - title: Protect agent access to resources
           links:
-            - text: Conditional access for agents
+            - text: Conditional Access for agents
               url: ../identity/conditional-access/agent-id.md         
-            - text: Microsoft Entra identity protection for agents
+            - text: Identity Protection for agents
               url: ../id-protection/concept-risky-agents.md
             - text: Network controls for agents
               url: ../global-secure-access/concept-secure-web-ai-gateway-agents.md

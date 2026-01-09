@@ -1,6 +1,4 @@
 items:
-  - name: Agent ID for identity professionals
-    href: /entra/agent-id/identity-professional/toc.yml
   - name: Agent identity platform for developers
     href: index.yml
   - name: Overview
