@@ -36,7 +36,7 @@ The flow diagram below illustrates the three scenarios:
 
 - Complete the steps in [sign up](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md) and [password reset](tutorial-native-authentication-single-page-app-react-sdk-reset-password.md) tutorials.
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
-- [Node.js](https://nodejs.org/en/download/).
+- [Node.js 20.x or later](https://nodejs.org/en/download/).
 - [Enable multifactor authentication (MFA) for your app](../external-id/customers/how-to-multifactor-authentication-customers.md).
 
 ## Enable app to handle strong authentication method registration 

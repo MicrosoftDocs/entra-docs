@@ -33,3 +33,49 @@ The flow diagram below illustrates the three scenarios:
 :::image type="content" source="media/tutorial-native-authentication-single-page-app-react-register-strong-authentication-method/register-strong-authentication-method.png" alt-text="Register strong authentication method."::: 
 
 ## Prerequisites
+
+- Complete the steps in [sign up](tutorial-native-authentication-single-page-app-angular-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-angular-sign-in.md) and [password reset](tutorial-native-authentication-single-page-app-angular-reset-password.md) tutorials.
+- [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
+- [Node.js 20.x or later](https://nodejs.org/en/download/).
+- [Angular CLI](https://angular.dev/tools/cli/setup-local) installed globally. This example uses version 19.2.1.
+- [Enable multifactor authentication (MFA) for your app](../external-id/customers/how-to-multifactor-authentication-customers.md).
+
+
+## Enable app to handle strong authentication method registration
+
+To enable the strong authentication method registration in your React app, update the app configuration by adding the required capability:
+
+1. Locate the *src/app/config/auth-config.ts* file.
+1. In the `customAuth` object, add or update the `capabilities` property to include the `registration_required` value in the array as shown in the following coe snippet:
+
+    ```typescript
+    const customAuthConfig: CustomAuthConfiguration = {
+        customAuth: {
+            ...
+            capabilities: ["registration_required"],
+            ...
+        },
+        ...
+    };
+    ```
+
+The capability value `registration_required` informs Microsoft Entra that your app can handle strong authentication method registration flow. Learn more about [native authentication challenge types and capabilities](concept-native-authentication-challenge-types.md). 
+
+
+## Create UI components
+
+You require form components to handle strong authentication method registration.
+
+### Create strong authentication method selection form 
+
+1. In in your console, navigate to the *src/app/components/shared* folder, the create a component, such as *auth-method-selection-form* by running the following command:
+    ```console
+    ng generate component auth-method-selection-form
+    ```
+
+    This command generates *src/app/components/shared/auth-method-selection-form/auth-method-selection-form.component.html* and *src/app/components/shared/auth-method-selection-form/auth-method-selection-form.component.ts* files.
+1. Open the *auth-method-selection-form.component.ts* file, then replace its contents with the content in [auth-method-selection-form.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/auth-method-selection-form/auth-method-selection-form.component.ts).
+1. Open the *auth-method-selection-form.component.html* file, then add the contents in [auth-method-selection-form.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/auth-method-selection-form/auth-method-selection-form.component.html)
+
+
+### Create strong authentication method challenge form 
