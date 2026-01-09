@@ -1,0 +1,12 @@
+items:
+- name: Microsoft Entra
+  tocHref: /entra/
+  topicHref: /entra/index
+  items:
+  - name: Agent ID
+    tocHref: /entra/agent-id/
+    topicHref: /entra/agent-id/identity-platform/index
+    items:
+    - name: Agent ID for identity professionals
+      tocHref: /entra/agent-id/identity-professional/
+      topicHref: /entra/agent-id/identity-professional/index
