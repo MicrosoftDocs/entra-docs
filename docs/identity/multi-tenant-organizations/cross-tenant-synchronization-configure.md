@@ -16,7 +16,7 @@ zone_pivot_groups: same-cloud-cross-cloud-synchronization
 # Configure cross-tenant synchronization
 
 ::: zone pivot="same-cloud-synchronization"
-This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant.
+This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users or security groups in your target tenant.
 
 For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
 
@@ -50,8 +50,8 @@ Cross-cloud synchronization supports these cloud pairs:
 
 By the end of this article, you'll be able to:
 
-- Create B2B users in your target tenant
-- Remove B2B users in your target tenant
+- Create B2B users or security groups in your target tenant
+- Remove B2B users or security groups in your target tenant
 - Keep user attributes synchronized between your source and target tenants
 
 ## Prerequisites
@@ -106,11 +106,11 @@ By the end of this article, you'll be able to:
 
 1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
-1. On the **Microsoft cloud settings** tab, select the check box of the cloud you want to collaborate with, such as **Microsoft Azure Government**.
+1. On the **Microsoft cloud settings** tab, select the checkbox of the cloud you want to collaborate with, such as **Microsoft Azure Government**.
 
     The list of clouds will vary based on the cloud you are in. For more information, see [Microsoft cloud settings](../../external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-cloud-settings.png" alt-text="Screenshot of Microsoft cloud settings that shows check boxes for different Microsoft clouds to collaborate with." lightbox="./media/cross-tenant-synchronization-configure/access-settings-cloud-settings.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-cloud-settings.png" alt-text="Screenshot of Microsoft cloud settings that shows checkboxes for different Microsoft clouds to collaborate with." lightbox="./media/cross-tenant-synchronization-configure/access-settings-cloud-settings.png":::
 
 1. Select **Save**.
 
@@ -120,11 +120,11 @@ By the end of this article, you'll be able to:
 
 1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
-1. On the **Microsoft cloud settings** tab, select the cross-cloud synchronization check box for the source tenant, such as **Microsoft Azure Commercial**.
+1. On the **Microsoft cloud settings** tab, select the cross-cloud synchronization checkbox for the source tenant, such as **Microsoft Azure Commercial**.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-cross-cloud-sync.png" alt-text="Screenshot of Microsoft cloud settings that shows check box to enable cross-cloud synchronization." lightbox="./media/cross-tenant-synchronization-configure/access-settings-cross-cloud-sync.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-cross-cloud-sync.png" alt-text="Screenshot of Microsoft cloud settings that shows checkbox to enable cross-cloud synchronization." lightbox="./media/cross-tenant-synchronization-configure/access-settings-cross-cloud-sync.png":::
 
-    When you select this check box, it creates a service principal with the following permissions:
+    When you select this checkbox, it creates a service principal with the following permissions:
 
     - User.ReadWrite.CrossCloud
     - User.Invite.All
@@ -135,7 +135,7 @@ By the end of this article, you'll be able to:
 
 ::: zone-end
 
-## Step 2: Enable user synchronization in the target tenant
+## Step 2: Enable user or groupsynchronization in the target tenant
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
@@ -154,6 +154,8 @@ By the end of this article, you'll be able to:
 1. Select  the **Cross-tenant sync** tab.
 
 1. Select the **Allow users sync into this tenant** checkbox.
+
+1. Optionally, select the **Allow group sync into this tenant** checkbox.
 
     :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow users sync into this tenant checkbox." lightbox="../../media/external-identities/access-settings-users-sync.png":::
 
@@ -239,9 +241,9 @@ In this step, you automatically redeem invitations in the source tenant.
 
 4. Provide a name for the configuration. 
 
-5. Select the **Setup cross-tenant synchronization across Microsoft clouds** check box.
+5. Select the **Setup cross-tenant synchronization across Microsoft clouds** checkbox.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-cloud synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-cloud synchronization checkbox." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png":::
 
 6. Select **Create**.
 
@@ -298,7 +300,7 @@ Start small. Test with a small set of users before rolling out to everyone. When
 
 1. In the **Scope** list, select whether to synchronize all users in the source tenant or only users assigned to the configuration.
 
-    It's recommended that you select **Sync only assigned users and groups** instead of **Sync all users and groups**. Reducing the number of users in scope improves performance.
+    It's recommended that you select **Sync only assigned users and groups** instead of **Sync all users and groups**. Reducing the number of users in scope improves performance. If you want to synchronize groups, you must select **Sync only assigned users and groups**.
 
 1. If you made any changes, select **Save**.
 
@@ -557,13 +559,13 @@ Details: This tenant was not found by the authentication authority of the curren
 
 **Cause**
 
-This error indicates the **Setup cross-tenant synchronization across Microsoft clouds** check box is not checked. 
+This error indicates the **Setup cross-tenant synchronization across Microsoft clouds** checkbox is not checked. 
 
 **Solution**
 
 1. In the source tenant, delete the configuration you created that fails to connect.
 
-1. In the target tenant, create a new configuration and be sure to check the **Setup cross-tenant synchronization across Microsoft clouds** check box as described in [Step 5: Create a configuration in the source tenant](#step-5-create-a-configuration-in-the-source-tenant).
+1. In the target tenant, create a new configuration and be sure to check the **Setup cross-tenant synchronization across Microsoft clouds** checkbox as described in [Step 5: Create a configuration in the source tenant](#step-5-create-a-configuration-in-the-source-tenant).
 
 #### Symptom - Test connection fails with AzureActiveDirectoryTokenExpired
 
@@ -581,7 +583,7 @@ This error indicates the cross-cloud setting for synchronization has not been en
 
 **Solution**
 
-In the target tenant, on the **Microsoft cloud settings** tab, select the cross-cloud synchronization check box for the source tenant. Follow the steps in [Step 1: Enable cross-cloud settings in both tenants](#step-1-enable-cross-cloud-settings-in-both-tenants).
+In the target tenant, on the **Microsoft cloud settings** tab, select the cross-cloud synchronization checkbox for the source tenant. Follow the steps in [Step 1: Enable cross-cloud settings in both tenants](#step-1-enable-cross-cloud-settings-in-both-tenants).
 
 ::: zone-end
 
