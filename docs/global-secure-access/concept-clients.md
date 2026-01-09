@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: concept-article
-ms.date: 01/07/2026
+ms.date: 01/09/2026
 ms.service: global-secure-access
 ms.reviewer: frankgomulka
 ai-usage: ai-assisted
@@ -24,7 +24,7 @@ You install the client on a device, such as computer or phone, and then use Glob
 
 ## BYOD support (preview)
 
-Global Secure Access client supports bring your own device (BYOD) scenarios so users can access resources without mobile device management (MDM) enrollment. As a tenant administrator, enable Microsoft Entra Private Access traffic profiles for members, including internal guests. The client supports automatic Microsoft Entra device registration.
+Global Secure Access client supports bring your own device (BYOD) scenarios so users can access company resources. As a tenant administrator, enable Microsoft Entra Private Access traffic profiles for members, including internal guests. The client supports automatic Microsoft Entra device registration.
 
 ### Windows
 
@@ -56,7 +56,7 @@ Global Secure Access client supports bring your own device (BYOD) scenarios so u
 
 ### macOS
 
-- BYOD does not support macOS.
+- BYOD scenarios are supported by macOS.
 
 ## Tenant selection and switching (preview)
 
