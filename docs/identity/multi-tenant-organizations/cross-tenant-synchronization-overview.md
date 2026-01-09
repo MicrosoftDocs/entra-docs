@@ -244,7 +244,7 @@ What are the restrictions for synchronizing groups?
 
 - Nested groups are not supported.
 - Cross-tenant synchronization will not create Microsoft 365 groups, distribution groups, mail-enabled security groups, or distribution lists.
-- The synchronization scope must be set to **Sync only assigned users and groups**. The **Sync all users and groups** option is not supported when group synchronization is enabled. 
+- The synchronization scope must be set to **Sync only assigned users and groups**. The **Sync all users** option is not supported when group synchronization is enabled. 
 - Synchronizing groups across cloud environments such as Azure commercial, Azure Government, and Azure operated by 21Vianet (Azure in China) isn't supported. 
 - Changes to the group in the target tenant will not be overridden automatically. They will only be overridden if there is a change to the group in the source tenant. 
 - If a group was created outside of cross-tenant synchronization, it will not be included in cross-tenant synchronization.  
@@ -340,7 +340,7 @@ Does cross-tenant synchronization support restoring users?
 
 How can I deprovision all the users that are currently in scope of cross-tenant synchronization?
 
-- Unassign all users or groups from the cross-tenant synchronization configuration. This will trigger all the users that were unassigned, either directly or through group membership, to be deprovisioned in subsequent sync cycles. Note that the target tenant will need to keep the inbound policy for sync enabled until deprovisioning is complete. If the scope is set to **Sync all users and groups**, you will also need to change it to **Sync only assigned users and groups**. The users will be automatically soft deleted by cross-tenant synchronization. The users will be automatically hard deleted after 30 days or you can choose to hard delete the users directly from the target tenant. You can choose to hard delete the users directly in the target tenant or wait 30 days for the users to be automatically hard deleted.
+- Unassign all users or groups from the cross-tenant synchronization configuration. This will trigger all the users that were unassigned, either directly or through group membership, to be deprovisioned in subsequent sync cycles. Note that the target tenant will need to keep the inbound policy for sync enabled until deprovisioning is complete. If the scope is set to **Sync all users**, you will also need to change it to **Sync only assigned users and groups**. The users will be automatically soft deleted by cross-tenant synchronization. The users will be automatically hard deleted after 30 days or you can choose to hard delete the users directly from the target tenant. You can choose to hard delete the users directly in the target tenant or wait 30 days for the users to be automatically hard deleted.
 
 If the sync relationship is severed, are external users previously managed by cross-tenant synchronization deleted in the target tenant?
 

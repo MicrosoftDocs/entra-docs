@@ -135,7 +135,7 @@ By the end of this article, you'll be able to:
 
 ::: zone-end
 
-## Step 2: Enable user or groupsynchronization in the target tenant
+## Step 2: Enable user or group synchronization in the target tenant
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
@@ -153,11 +153,11 @@ By the end of this article, you'll be able to:
 
 1. Select  the **Cross-tenant sync** tab.
 
-1. Select the **Allow users sync into this tenant** checkbox.
+1. Select the **Allow user synchronization into this tenant** checkbox.
 
-1. Optionally, select the **Allow group sync into this tenant** checkbox.
+1. Optionally, select the **Allow group synchronization into this tenant** checkbox.
 
-    :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow users sync into this tenant checkbox." lightbox="../../media/external-identities/access-settings-users-sync.png":::
+    :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow user synchronization and group synchronization into this tenant checkboxes." lightbox="../../media/external-identities/access-settings-users-sync.png":::
 
 1. Select **Save**.
 
@@ -300,7 +300,7 @@ Start small. Test with a small set of users before rolling out to everyone. When
 
 1. In the **Scope** list, select whether to synchronize all users in the source tenant or only users assigned to the configuration.
 
-    It's recommended that you select **Sync only assigned users and groups** instead of **Sync all users and groups**. Reducing the number of users in scope improves performance. If you want to synchronize groups, you must select **Sync only assigned users and groups**.
+    It's recommended that you select **Sync only assigned users and groups** instead of **Sync all users**. Reducing the number of users in scope improves performance. If you want to synchronize groups, you must select **Sync only assigned users and groups**.
 
 1. If you made any changes, select **Save**.
 
@@ -354,6 +354,10 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 1. Select **Yes** and close the **Attribute Mapping** page.
 
+1. If you want to synchronize groups, on the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page.
+
+1. Follow similar steps as above to add scoping filters for groups.
+
 ## Step 9: Review attribute mappings
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
@@ -402,6 +406,10 @@ Attribute mappings allow you to define how data should flow between the source t
     For examples, see [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../app-provisioning/functions-for-customizing-application-data.md?toc=/entra/identity/multi-tenant-organizations/toc.json#examples).
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png" alt-text="Screenshot of the Edit Attribute page that shows the displayName attribute with the Expression box." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png":::
+
+1. If you want to synchronize groups, on the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page.
+
+1. Follow similar steps as above to modify attribute mappings for groups.
 
 > [!TIP]
 > You can map directory extensions by updating the schema of the cross-tenant synchronization. For more information, see [Map directory extensions in cross-tenant synchronization](cross-tenant-synchronization-directory-extensions.md).
