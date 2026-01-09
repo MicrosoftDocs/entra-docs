@@ -128,6 +128,7 @@ The supported scheduled triggers are:
 - Attribute Changes
 - Group Membership change
 - Time based
+- Sign-in inactivity
 
 Depending on which type of workflow you choose will determine which trigger you use for it.
 
@@ -139,7 +140,8 @@ The scope depends on the trigger that you use.
 
 - For **Attribute changes**, the trigger is rule based and triggered when the attribute you defined is changed for a user.
 - For **Group membership change**, the trigger is group-based and triggered if a user is added or removed from a specific group.
-- For Time based attribute, the trigger is rule based and triggered when the time value you defined is met by a user.
+- For **Time based attribute**, the trigger is rule based and triggered when the time value you defined is met by a user.
+- For **sign-in inactivity**, the trigger is ruled-based and triggered when a user has not signed in over a specific time period.
 
 For a detailed guide on setting the execution conditions for a workflow, see: [Create a lifecycle workflow.](create-lifecycle-workflow.md)
 
