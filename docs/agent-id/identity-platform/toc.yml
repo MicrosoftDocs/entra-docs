@@ -1,8 +1,8 @@
 items:
+  - name: Agent ID for identity professionals
+    href: /entra/agent-id/identity-professional/toc.yml
   - name: Agent identity platform for developers
     href: index.yml
-  - name: Agent ID for identity professionals
-    href: ./agent-id/identity-professional/toc.yml
   - name: Overview
     expanded: true
     items:
@@ -55,7 +55,7 @@ items:
           href: agent-lists.md
         - name: Manage agent blueprints
           href: manage-agent-blueprint.md
-        - name: Manage Agents in end user experience
+        - name: Manage agents in end user experience
           href: manage-agent.md
         - name: Register agents with Agent Registry
           href: publish-agents-to-registry.md
