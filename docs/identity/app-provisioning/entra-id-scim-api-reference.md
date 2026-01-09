@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/15/2026
+ms.date: 2/15/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -56,81 +56,34 @@ Use the steps below to register your SCIM client app in your Microsoft Entra ID 
 
 Once the client registration is successful, use the following HTTP call to get a valid access token, replacing the highlighted variables to match your environment settings.
 
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 94%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="2" style="text-align: center;"><strong>Example Request 1 </strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Request </strong></td>
-<td>POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token <br />
- <br />
-HTTP/1.1 <br />
-Host: login.microsoftonline.com <br />
-Content-Type: application/x-www-form-urlencoded </td>
-</tr>
-<tr>
-<td><strong>Body </strong></td>
-<td>client_id={{client_id}}&amp;scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&amp;client_secret={{client_secret}}&amp;grant_type=client_credentials </td>
-</tr>
-</tbody>
-</table>
+| **Example Request 1** | |
+|------------------------------|-----------------------------------|
+| **Request** | POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token HTTP/1.1 Host: login.microsoftonline.com Content-Type: application/x-www-form-urlencoded |
+| **Body** | client_id={{client_id}}&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret={{client_secret}}&grant_type=client_credentials |
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><strong>Example of Successful Response with valid access token</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p><strong>HTTP 200/OK </strong></p>
-<p><strong> </strong></p>
-<p>{<strong> </strong></p>
-<p>  "token_type": "Bearer",<strong> </strong></p>
-<p>  "expires_in": 3599,<strong> </strong></p>
-<p>  "ext_expires_in": 3599,<strong> </strong></p>
-<p>  "access_token": "eyJhbGciOiJIUzI1NiJ9…"<strong> </strong></p>
-<p>}<strong> </strong></p>
-<p><strong> </strong></p>
-<p><u>(Note: Actual JWT access value will be much larger)</u><strong> </strong></p>
-<p><strong> </strong></p></td>
-</tr>
-</tbody>
-</table>
+
+| Example of Successful Response with valid access token |
+| ----------------------------------------------------- |
+| **HTTP 200/OK** |
+| `{` |
+|   `"token_type": "Bearer",` |
+|   `"expires_in": 3599,` |
+|   `"ext_expires_in": 3599,` |
+|   `"access_token": "eyJhbGciOiJIUzI1NiJ9…"` |
+| `}` |
+| _(Note: Actual JWT access value will be much larger)_ |
+
 
 Reference: </graph/auth-v2-service?tabs=http#token-request>
 
 You can now use the access token in the HTTP Authorization header (Bearer authentication scheme) to invoke the SCIM API.
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 88%" />
-</colgroup>
-<thead>
-<tr>
-<th colspan="2" style="text-align: center;"><strong>Example Authorization Request with valid access token</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Request </strong></td>
-<td><p>HTTP GET <a href="https://graph.microsoft.com/rp/scim/users?filter=displayName%20eq%20%22John%20Doe%22">https://graph.microsoft.com/rp/scim/users?filter=displayName eq "John Doe"</a></p>
-<p>Authorization: Bearer <mark>eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw</mark></p>
-<p>Host: graph.microsoft.com</p></td>
-</tr>
-</tbody>
-</table>
+| Example Authorization Request with valid access token |
+|-----------------------------------------------------|
+| **Request** | HTTP GET https://graph.microsoft.com/rp/scim/users?filter=displayName%20eq%20%22John%20Doe%22"https://graph.microsoft.com/rp/scim/users?filter=displayName' eq "John Doe"
+Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
+Host: graph.microsoft.com|
+
 
 # Get Service Provider Config
 
