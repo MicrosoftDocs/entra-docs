@@ -2,7 +2,7 @@ items:
 - name: Agent ID for identity professionals
   href: index.yml
 - name: Agent identity platform for developers
-  href: /entra/agent-id/identity-platform/toc.yml
+  href: ./identity-platform/toc.yml
 - name: Overview
   expanded: true
   items:
@@ -37,18 +37,18 @@ items:
   - name: Consent and sign-in
     href: sign-in-process.md
   - name: Identity protection for agents
-    href: /entra/id-protection/concept-risky-agents?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+    href: /entra/id-protection/concept-risky-agents?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
   - name: Identity governance for agents
-    href: /entra/id-governance/agent-id-governance-overview?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+    href: /entra/id-governance/agent-id-governance-overview?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
   - name: Conditional access for agents
-    href: /entra/identity/conditional-access/agent-id?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+    href: /entra/identity/conditional-access/agent-id?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
   - name: Secure Web and AI Gateway for Microsoft Copilot Studio agents
-    href: /entra/global-secure-access/concept-secure-web-ai-gateway-agents?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+    href: /entra/global-secure-access/concept-secure-web-ai-gateway-agents?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
 - name: Reference
   items:
   - name: Agent Registry roles
     href: reference-registry-roles.md
   - name: Microsoft Graph Permissions reference
-    href: /graph/permissions-reference?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+    href: /graph/permissions-reference?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
   - name: Known issues
-    href: /entra/agent-id/identity-platform/preview-known-issues?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+    href: /entra/agent-id/identity-platform/preview-known-issues?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json

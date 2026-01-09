@@ -7,6 +7,18 @@ items:
     tocHref: /entra/agent-id/
     topicHref: /entra/agent-id/identity-professional/index
     items:
-    - name: Developers
+    - name: Identity professionals
       tocHref: /entra/agent-id/identity-platform/
+      topicHref: /entra/agent-id/identity-professional/index
+    - name: Identity professionals
+      tocHref: /entra/id-governance/
+      topicHref: /entra/agent-id/identity-professional/index
+    - name: Identity professionals
+      tocHref: /entra/identity/conditional-access/
+      topicHref: /entra/agent-id/identity-professional/index
+    - name: Identity professionals
+      tocHref: /entra/id-protection/
+      topicHref: /entra/agent-id/identity-professional/index
+    - name: Identity professionals
+      tocHref: /entra/global-secure-access/
       topicHref: /entra/agent-id/identity-professional/index

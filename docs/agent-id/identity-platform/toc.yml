@@ -2,7 +2,7 @@ items:
   - name: Agent identity platform for developers
     href: index.yml
   - name: Agent ID for identity professionals
-    href: /entra/agent-id/identity-professional/toc.yml
+    href: ./agent-id/identity-professional/toc.yml
   - name: Overview
     expanded: true
     items:
@@ -105,13 +105,13 @@ items:
     - name: Token claims reference
       href: agent-token-claims.md
     - name: Microsoft Graph Permissions reference
-      href: /graph/permissions-reference?toc=/entra/agent-id/identity-platform/toc.json
+      href: /graph/permissions-reference?toc=/entra/agent-id/identity-platform/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
     - name: Agent identity blueprint API reference
-      href: /graph/api/resources/agentidentityblueprint?toc=/entra/agent-id/identity-platform/toc.json
+      href: /graph/api/resources/agentidentityblueprint?toc=/entra/agent-id/identity-platform/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
     - name: Agent identity blueprint principal API reference
-      href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/identity-platform/toc.json
+      href: /graph/api/resources/agentidentityblueprintprincipal?toc=/entra/agent-id/identity-platform/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
     - name: Agent identity API reference
-      href: /graph/api/resources/agentidentity?toc=/entra/agent-id/identity-platform/toc.json
+      href: /graph/api/resources/agentidentity?toc=/entra/agent-id/identity-platform/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
     - name: Error codes
       href: error-codes.md
     - name: Known issues
