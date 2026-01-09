@@ -1,7 +1,7 @@
 items:
-  - name: Microsoft agent identity platform for developers
+  - name: Agent identity platform for developers
     href: index.yml
-  - name: Microsoft Entra Agent ID for identity professionals
+  - name: Agent ID for identity professionals
     href: /entra/agent-id/identity-professional/toc.yml
   - name: Overview
     expanded: true

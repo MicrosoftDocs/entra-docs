@@ -11,10 +11,10 @@ items:
       tocHref: /entra/agent-id/
       topicHref: /entra/agent-id/
       items:
-      - name: Microsoft Entra Agent ID for identity professionals
+      - name: Identity professionals
         tocHref: /entra/agent-id/identity-professional/
         topicHref: /entra/agent-id/identity-professional/
-      - name: Microsoft Entra Agent ID for developers
+      - name: Developers
         tocHref: /entra/agent-id/identity-platform/
         topicHref: /entra/agent-id/identity-platform/
     - name: Architecture

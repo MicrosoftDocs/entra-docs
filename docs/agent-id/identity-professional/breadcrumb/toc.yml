@@ -7,6 +7,6 @@ items:
     tocHref: /entra/agent-id/
     topicHref: /entra/agent-id/identity-professional/index
     items:
-    - name: Agent ID for developers
+    - name: Developers
       tocHref: /entra/agent-id/identity-platform/
-      topicHref: /entra/agent-id/identity-platform/index
+      topicHref: /entra/agent-id/identity-professional/index
