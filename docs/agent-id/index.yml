@@ -38,7 +38,7 @@ additionalContent:
         - title: Register and manage agents
           links:
             - text: What is Microsoft Entra Agent ID?
-              url: ./microsoft-entra-agent-identities-for-ai-agents.md
+              url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
             - text: What is the Agent Registry?
               url: ./identity-platform/what-is-agent-registry.md
             - text: Organize agents with collections
