@@ -90,8 +90,6 @@ To check or modify the smart lockout values for your organization, complete the 
 
    :::image type="content" border="true" source="media/howto-password-smart-lockout/custom-smart-lockout-policy.png" alt-text="Screenshot that shows how to customize the Microsoft Entra smart lockout policy in the Microsoft Entra admin center."lightbox="media/howto-password-smart-lockout/custom-smart-lockout-policy.png":::
 
-![]()
-
 ## Testing Smart lockout
 
 When the smart lockout threshold is triggered, you'll get the following message while the account is locked:
