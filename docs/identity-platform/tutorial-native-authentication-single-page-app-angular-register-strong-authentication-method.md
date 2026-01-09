@@ -64,18 +64,300 @@ The capability value `registration_required` informs Microsoft Entra that your a
 
 ## Create UI components
 
-You require form components to handle strong authentication method registration.
+You require form components for strong authentication method registration, that's a UI where the user selects the strong authentication method they want to use and another to 
 
 ### Create strong authentication method selection form 
 
-1. In in your console, navigate to the *src/app/components/shared* folder, the create a component, such as *auth-method-selection-form* by running the following command:
+1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component, such as *auth-method-selection-form* by using the following command:
+
     ```console
     ng generate component auth-method-selection-form
     ```
 
-    This command generates *src/app/components/shared/auth-method-selection-form/auth-method-selection-form.component.html* and *src/app/components/shared/auth-method-selection-form/auth-method-selection-form.component.ts* files.
+    This command generates *auth-method-selection-form.component.html* and *auth-method-selection-form.component.ts* files in the folder *src/app/components/shared/auth-method-selection-form/*.
 1. Open the *auth-method-selection-form.component.ts* file, then replace its contents with the content in [auth-method-selection-form.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/auth-method-selection-form/auth-method-selection-form.component.ts).
 1. Open the *auth-method-selection-form.component.html* file, then add the contents in [auth-method-selection-form.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/auth-method-selection-form/auth-method-selection-form.component.html)
 
 
 ### Create strong authentication method challenge form 
+
+1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component, such as *auth-method-challenge-form* by using the following command:
+    ```console
+    ng generate component auth-method-challenge-form
+    ```
+    
+    This command generates *auth-method-challenge-form.component.ts* and *auth-method-challenge-form.component.html* files in the folder *src/app/components/shared/auth-method-challenge-form/*.
+
+1. Open the *auth-method-challenge-form.component.ts* file, then replace its contents with the content in [auth-method-challenge-form.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/auth-method-challenge-form/auth-method-challenge-form.component.ts).
+1. Open the *auth-method-challenge-form.component.html* file, then add the contents in [auth-method-challenge-form.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/auth-method-challenge-form/auth-method-challenge-form.component.html)
+
+
+## Register strong authentication method during sign-in
+
+Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your app to handle strong authentication method registration flow during sign-in. See the complete code in [sign-in.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.ts):
+
+1. Import the necessary types and components:
+    
+    ```typescript
+    import {
+        AuthMethodRegistrationRequiredState,
+        AuthenticationMethod,
+        AuthMethodVerificationRequiredState,
+    } from "@azure/msal-browser/custom-auth";
+    import { AuthMethodSelectionFormComponent } from "../shared/auth-method-selection-form/auth-method-selection-form.component";
+    import { AuthMethodChallengeFormComponent } from "../shared/auth-method-challenge-form/auth-method-challenge-form.component";
+    
+    @Component({
+        selector: "app-sign-in",
+        templateUrl: "./sign-in.component.html",
+        standalone: true,
+        imports: [
+            ...
+            AuthMethodSelectionFormComponent,
+            AuthMethodChallengeFormComponent,
+            ...
+        ],
+    })
+    ```
+
+1. Add new variables for strong authentication method registration:
+
+    ```typescript
+    showAuthMethodsForRegistration = false;
+    showChallengeForRegistration = false;
+    authMethodsForRegistration: AuthenticationMethod[] = [];
+    selectedAuthMethodForRegistration: AuthenticationMethod | undefined = undefined;
+    verificationContactForRegistration: string | undefined = undefined;
+    challengeForRegistration: string | undefined = undefined;
+    ```
+
+1. Update the `startSignIn`, `handlePasswordSubmit` and `handleCodeSubmit` functions to check if strong authentication method registration is required:
+
+    ```typescript
+    async startSignIn() {
+        const client = await this.auth.getClient();
+        const result: SignInResult = await client.signIn({ username: this.username });
+        
+        ...
+        
+        if (result.isAuthMethodRegistrationRequired()) {
+            this.showAuthMethodsForRegistration = true;
+            this.showPassword = false;
+            this.showCode = false;
+            this.showChallengeForRegistration = false;
+            this.showMfaAuthMethods = false;
+            this.showMfaChallenge = false;
+            this.authMethodsForRegistration = result.state.getAuthMethods();
+            // Set default selection to the first auth method
+            this.selectedAuthMethodForRegistration =
+                this.authMethodsForRegistration.length > 0 ? this.authMethodsForRegistration[0] : undefined;
+            this.signInState = result.state;
+        }
+    
+        ...
+    }
+    
+    async submitPassword() {
+        if (this.signInState instanceof SignInPasswordRequiredState) {
+            const result = await this.signInState.submitPassword(this.password);
+            
+            ...
+            
+            if (result.isAuthMethodRegistrationRequired()) {
+                this.showAuthMethodsForRegistration = true;
+                this.showPassword = false;
+                this.showCode = false;
+                this.showChallengeForRegistration = false;
+                this.showMfaAuthMethods = false;
+                this.showMfaChallenge = false;
+                this.authMethodsForRegistration = result.state.getAuthMethods();
+                // Set default selection to the first auth method
+                this.selectedAuthMethodForRegistration =
+                    this.authMethodsForRegistration.length > 0 ? this.authMethodsForRegistration[0] : undefined;
+                this.signInState = result.state;
+            }
+    
+            ...
+        }
+    }
+    
+    async submitCode() {
+        if (this.signInState instanceof SignInCodeRequiredState) {
+            const result = await this.signInState.submitCode(this.code);
+    
+            ...
+    
+            if (result.isAuthMethodRegistrationRequired()) {
+                this.showAuthMethodsForRegistration = true;
+                this.showPassword = false;
+                this.showCode = false;
+                this.showChallengeForRegistration = false;
+                this.showMfaAuthMethods = false;
+                this.showMfaChallenge = false;
+                this.authMethodsForRegistration = result.state.getAuthMethods();
+                // Set default selection to the first auth method
+                this.selectedAuthMethodForRegistration =
+                    this.authMethodsForRegistration.length > 0 ? this.authMethodsForRegistration[0] : undefined;
+                this.signInState = result.state;
+            }
+        }
+    }
+    ```
+
+    In each of the function, notice that we check if strong authentication method registration is required by using the following code snippet:
+
+    ```typescript
+    if (result.isAuthMethodRegistrationRequired()) {...}
+    ```
+
+1. Add the handler for strong authentication method selection:
+
+    ```typescript
+    async submitAuthMethodForRegistration() {
+        this.error = "";
+        this.loading = true;
+    
+        if (!this.selectedAuthMethodForRegistration || !this.verificationContactForRegistration) {
+            this.error = "Please select an authentication method and enter a verification contact.";
+            this.loading = false;
+            return;
+        }
+    
+        if (this.signInState instanceof AuthMethodRegistrationRequiredState) {
+            const result = await this.signInState.challengeAuthMethod({
+                authMethodType: this.selectedAuthMethodForRegistration,
+                verificationContact: this.verificationContactForRegistration,
+            });
+    
+            if (result.isFailed()) {
+                if (result.error?.isInvalidInput()) {
+                    this.error = "Incorrect verification contact.";
+                } else if (result.error?.isVerificationContactBlocked()) {
+                    this.error =
+                        "The verification contact is blocked. Consider using a different contact or a different authentication method.";
+                } else {
+                    this.error =
+                        result.error?.errorData?.errorDescription ||
+                        "An error occurred while verifying the authentication method.";
+                }
+            }
+    
+            if (result.isCompleted()) {
+                this.isSignedIn = true;
+                this.userData = result.data;
+                this.showAuthMethodsForRegistration = false;
+                this.signInState = result.state;
+            }
+    
+            if (result.isVerificationRequired()) {
+                this.showAuthMethodsForRegistration = false;
+                this.showChallengeForRegistration = true;
+                this.signInState = result.state;
+            }
+        }
+        this.loading = false;
+    }
+    ```
+1. Add the handler for strong authentication method verification:
+
+    ```typescript
+    async submitChallengeForRegistration() {
+        this.error = "";
+        this.loading = true;
+    
+        if (!this.challengeForRegistration) {
+            this.error = "Please enter a code.";
+            this.loading = false;
+            return;
+        }
+    
+        if (this.signInState instanceof AuthMethodVerificationRequiredState) {
+            const result = await this.signInState.submitChallenge(this.challengeForRegistration);
+    
+            if (result.isFailed()) {
+                if (result.error?.isIncorrectChallenge()) {
+                    this.error = "Incorrect code.";
+                } else {
+                    this.error =
+                        result.error?.errorData?.errorDescription ||
+                        "An error occurred while verifying the challenge response.";
+                }
+            }
+    
+            if (result.isCompleted()) {
+                this.isSignedIn = true;
+                this.userData = result.data;
+                this.showChallengeForRegistration = false;
+                this.signInState = result.state;
+            }
+        }
+        this.loading = false;
+    }
+    ```
+
+1. Update the *sign-in.component.html* file to include the authentication method registration forms. See a complete example in [sign-in.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.html):
+
+    ```typescript
+    <!-- Use shared auth method selection form -->
+    <app-auth-method-selection-form *ngIf="showAuthMethodsForRegistration" [authMethods]="authMethodsForRegistration"
+        [selectedAuthMethod]="selectedAuthMethodForRegistration"
+        [verificationContact]="verificationContactForRegistration" [loading]="loading"
+        [getPlaceholderText]="getPlaceholderTextForVerificationContact.bind(this)"
+        (selectedAuthMethodChange)="selectedAuthMethodForRegistration = $event"
+        (verificationContactChange)="verificationContactForRegistration = $event"
+        (submitForm)="submitAuthMethodForRegistration()">
+    </app-auth-method-selection-form>
+    
+    <!-- Use shared challenge form -->
+    <app-auth-method-challenge-form *ngIf="showChallengeForRegistration" [challenge]="challengeForRegistration"
+        [loading]="loading" (challengeChange)="challengeForRegistration = $event"
+        (submitForm)="submitChallengeForRegistration()">
+    </app-auth-method-challenge-form>
+    ```
+
+## Register strong authentication method after sign-up or password reset
+
+Strong authentication method registration flow after sign-up and password reset works similar to the method registration during sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states.
+
+### Register strong authentication method after sign-up
+
+For strong authentication method registration after sign-up flow, you need you update the *src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
+
+1. Make sure you import the required types and components.
+
+1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After sign-up completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+
+    ```typescript
+    // In your sign-up completion handler
+    if (this.signUpState instanceof SignUpCompletedState) {
+        const result = await this.signUpState.signIn();
+    
+        ...
+    
+        if (result.isAuthMethodRegistrationRequired()) {
+            this.showAuthMethodsForRegistration = true;
+            this.showPassword = false;
+            this.showCode = false;
+            this.showChallengeForRegistration = false;
+            this.showMfaAuthMethods = false;
+            this.showMfaChallenge = false;
+            this.authMethodsForRegistration = result.state.getAuthMethods();
+            // Set default selection to the first auth method
+            this.selectedAuthMethodForRegistration =
+                this.authMethodsForRegistration.length > 0 ? this.authMethodsForRegistration[0] : undefined;
+            this.signUpState = result.state;
+        } 
+    
+        ...
+    }
+    ```
+
+1. Update the *sign-up.component.html* file to add the authentication method registration forms, that's, *auth-method-selection-form* and *auth-method-challenge-form* in a similar manner as shown in the sign-in flow. See a complete example in [sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
+
+
+### Register strong authentication method after password reset
+
+
+
+
+

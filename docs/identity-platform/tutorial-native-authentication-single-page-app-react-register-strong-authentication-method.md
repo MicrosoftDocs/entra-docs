@@ -165,7 +165,7 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle strong a
     };
     ```
 
-    In each of the function, notice that we if strong authentication method registration is required by using the following code snippet:
+    In each of the function, notice that we check if strong authentication method registration is required by using the following code snippet:
 
     ```typescript
     if (result.isAuthMethodRegistrationRequired()) {...}
