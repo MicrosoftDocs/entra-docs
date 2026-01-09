@@ -6,7 +6,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 01/07/2026
+ms.date: 01/09/2026
 ms.service: global-secure-access
 ms.custom: agent-id-ignite
 
