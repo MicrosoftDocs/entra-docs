@@ -102,7 +102,7 @@ sudo dsreg --cleanup
 
 | Field | Description |
 | --- | --- |
-| **Device registration status** | (Registered | Not Registered) |
+| **Device registration status** | (Registered/Not Registered) |
 | **Device ID** | The unique ID of the device in the Microsoft Entra tenant. |
 | **Tenant ID** | Tenant details that are displayed when a device is joined to Microsoft Entra ID. |
 | **Tenant name/domain** | Tenant details that are displayed when a device is joined to Microsoft Entra ID. |
