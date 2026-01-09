@@ -48,7 +48,7 @@ When searching for an application, you can also specify specific filters, such a
 - **Risk Score** – View applications by their calculated security risk score from 1 (highest risk) to 10 (lowest risk). This score helps identify applications that meet your organization's security requirements.
 - **Security Risk Factors** – Search for applications that meet specific security measures such as multifactor authentication, admin audit trail, user audit trail, and other security standards that protect data used by the application.
 - **Compliance Risk Factors** – Narrow results to applications with compliance standards and certifications such as SOC 2, ISO 27001, HIPAA, and other regulatory requirements that ensure the application meets industry best practices.
-- **Categories** – When an application is added to the gallery it can be classified in a specific category. Many categories are available such as **Business management**, **Collaboration**, or **Education**.
+
 
  > [!NOTE]
  > In an [external tenant](/entra/external-id/customers/overview-customers-ciam), enterprise applications are supported, but the application gallery catalog isn't available. To find and add enterprise applications in the external tenant, select **New application** > **Create your own application**, then type the name of the app in the search bar and select it from the list once it appears.
@@ -71,7 +71,7 @@ There are five ways on-premises applications can be connected to Microsoft Entra
 
 If your application uses Kerberos and also requires group memberships, you can populate Windows Server AD groups from corresponding groups in Microsoft Entra ID. For more information, see [Group writeback with Microsoft Entra Cloud Sync](~/identity/hybrid/group-writeback-cloud-sync.md).
 
-The second is using the provisioning agent to provision to an on-premises application that has its own user store and doesn't rely upon Windows Server AD. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use [SQL databases](../app-provisioning/on-premises-sql-connector-configure.md) that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
+The second is using the provisioning agent to provision to an on-premises application that has its own user store and doesn't rely upon Windows Server AD. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use [SQL databases](../app-provisioning/on-premises-sql-connector-configure.md), that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
 
 The third is using Microsoft Entra Private Access, by configuring a Global Secure Access app for per-app connections. For more information, see [Learn about Microsoft Entra Private Access](/entra/global-secure-access/concept-private-access).
 
@@ -90,8 +90,8 @@ A collection of featured applications is listed by default when you open the Mic
 
 > [!NOTE]
 > The **Create** button might appear disabled for certain gallery apps by design. This occurs in two scenarios: First, for linked-based SSO applications. These templates are link-only and don't support creating a new app or service principal in Microsoft Entra ID. They redirect users to an external URL managed by the service provider. Because no Microsoft Entra object is created, the button is intentionally unavailable. 
-
-Second, when the app already exists in your tenant, as gallery applications are limited to one instance per tenant. In both cases, a disabled **Create** button is expected behavior.
+>
+> Second, when the app already exists in your tenant, as gallery applications are limited to one instance per tenant. In both cases, a disabled **Create** button is expected behavior.
 
 ## Understanding application risk scores
 
