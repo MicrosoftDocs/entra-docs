@@ -354,9 +354,13 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 1. Select **Yes** and close the **Attribute Mapping** page.
 
-1. If you want to synchronize groups, on the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page.
+1. On the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page.
 
-1. Follow similar steps as above to add scoping filters for groups.
+1. If you want to synchronize groups, set the **Enabled** toggle to **Yes**.
+
+    By default, this toggle is set to **No**.
+
+1. If you want to scoping filters for groups, follow similar previous steps as users.
 
 ## Step 9: Review attribute mappings
 
@@ -407,9 +411,9 @@ Attribute mappings allow you to define how data should flow between the source t
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png" alt-text="Screenshot of the Edit Attribute page that shows the displayName attribute with the Expression box." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-displayname-expression.png":::
 
-1. If you want to synchronize groups, on the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page.
+1. On the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page.
 
-1. Follow similar steps as above to modify attribute mappings for groups.
+1. If you want to modify attribute mappings for groups, follow similar previous steps as users.
 
 > [!TIP]
 > You can map directory extensions by updating the schema of the cross-tenant synchronization. For more information, see [Map directory extensions in cross-tenant synchronization](cross-tenant-synchronization-directory-extensions.md).
