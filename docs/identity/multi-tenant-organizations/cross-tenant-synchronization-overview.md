@@ -68,11 +68,11 @@ The following table shows the parts of cross-tenant synchronization and which te
 | ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>Source tenant |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>Target tenant | :heavy_check_mark: | :heavy_check_mark: |  |  |
 
-## Cross-tenant synchronization setting
+## Cross-tenant synchronization settings
 
 [!INCLUDE [cross-tenant-synchronization-include](~/includes/cross-tenant-synchronization-include.md)]
 
-To configure this setting using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](/graph/api/crosstenantidentitysyncpolicypartner-update?branch=main) API. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
+To configure these settings using Microsoft Graph, see the [Update crossTenantIdentitySyncPolicyPartner](/graph/api/crosstenantidentitysyncpolicypartner-update?branch=main) API. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md).
 
 ## Automatic redemption setting
 
