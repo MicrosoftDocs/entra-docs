@@ -16,6 +16,12 @@ ms.custom: it-pro
 
 This article provides information about new features and documentation improvements in multitenant organizations for Microsoft Entra ID.
 
+## 2026
+
+| Date | Area | Description |
+| --- | --- | --- |
+| January 2026 | Cross-tenant synchronization | Added support for security group synchronization (same cloud). See [Group synchronization](cross-tenant-synchronization-overview.md#group-synchronization) and [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md?pivots=same-cloud-synchronization). |
+
 ## 2025
 
 | Date | Area | Description |

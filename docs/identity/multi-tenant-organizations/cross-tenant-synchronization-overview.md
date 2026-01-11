@@ -230,7 +230,7 @@ Can the target tenant manually block sign-in for a specific home/source tenant u
 
 - If no changes are made to the synced user in the source tenant, then the block sign-in setting in the target tenant will persist. If a change is detected for the user in the source tenant, cross-tenant synchronization will reenable that user blocked from sign-in in the target tenant.
 
-#### Groups
+#### Group synchronization
 
 Is synchronization of groups supported?
 
