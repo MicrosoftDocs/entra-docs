@@ -108,6 +108,9 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a fed
 1. On the **Ready to configure** page, select **Configure**.
 1. On the **Configuration complete** page, select **Exit**.
 
+> [!WARNING]
+> The Enterprise Admin Account must be a direct member of the Enterprise Administrators in the on-premises Active Directory. Once the credential is provided, a process will begin to verify if the SID of the given user is a direct member of the Enterprise Administrators group. Indirect membership will trigger the error message: "The user provided is not a member of the Enterprise Administrators group."
+
 ### Federation caveats
 
 With Windows 10 1803 or newer, if instantaneous Microsoft Entra hybrid join for a federated environment using federation service fails, we rely on Microsoft Entra Connect to sync the computer object in Microsoft Entra ID to complete the device registration for Microsoft Entra hybrid join.
