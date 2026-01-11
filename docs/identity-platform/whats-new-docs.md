@@ -4,7 +4,7 @@ description: "New and updated articles in the Microsoft identity platform docume
 author: henrymbuguakiarie
 manager: pmwongera
 ms.author: henrymbugua
-ms.date: 05/02/2025
+ms.date: 01/10/2026
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -15,6 +15,13 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## December 2025
+
+### Updated articles
+
+- [Tutorial: Set up an ASP.NET Core web app that authenticates users](tutorial-web-app-dotnet-prepare-app.md) - The update improved content clarity.
+- [Tutorial: Sign-in users to a Python Flask web app by using Microsoft identity platform](tutorial-web-app-python-flask-sign-in-out.md) - The update improved content clarity.
+
 ## November 2025
 
 ### New articles
@@ -24,13 +31,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 ## October 2025
 
 We did not publish any updates this month.
-
-## September 2025
-
-### Updated articles
-
-- [Configure a mobile app that calls web APIs](scenario-mobile-app-configuration.md) - The update improved content clarity.
-- [Desktop app that calls web APIs: Code configuration](scenario-desktop-app-configuration.md) - The update improved content clarity.
-
-
-
