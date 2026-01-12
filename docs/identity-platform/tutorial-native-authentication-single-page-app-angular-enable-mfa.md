@@ -28,3 +28,69 @@ When MFA is required, the user chooses a MFA challenge method from a list of reg
 The flow diagram below illustrates the three scenarios:
 
 :::image type="content" source="media/tutorial-native-authentication-single-page-app-react-register-strong-authentication-method/register-strong-authentication-method.png" alt-text="Complete multifactor authentication challenge.":::
+
+## Prerequisites
+
+- Complete the steps in [sign up](tutorial-native-authentication-single-page-app-angular-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-angular-sign-in.md), [password reset](tutorial-native-authentication-single-page-app-angular-reset-password.md) and [register strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-authentication-method.md) tutorials.
+- [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
+- [Node.js](https://nodejs.org/en/download/).
+- [Enable multifactor authentication (MFA) for your app](../external-id/customers/how-to-multifactor-authentication-customers.md).
+
+
+## Enable app to handle multifactor authentication
+
+To enable MFA in your Angular app, update the app configuration by adding the required capability:
+
+1. Locate the *src/app/config/auth-config.ts* file.
+
+1. In the `customAuth` object, add or update `capabilities` property to include the `mfa_required` value in the array as shown in the following coe snippet:
+
+    ```typescript
+    const customAuthConfig: CustomAuthConfiguration = {
+        customAuth: {
+            ...
+            capabilities: ["mfa_required"],
+            ...
+        },
+        ...
+    };
+    ```
+
+The capability value `mfa_required` informs Microsoft Entra that your app can handle an MFA flow. Learn more about [native authentication challenge types and capabilities](concept-native-authentication-challenge-types.md).
+
+## Create UI components
+
+You require form components in your app to support MFA flow, such as to select MFA challenge method and submit MFA challenge. 
+
+### Create multifactor authentication method selection form
+
+1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component, such as *mfa-auth-method-selection-form* by using the following command:
+
+    ```console
+    ng generate component mfa-auth-method-selection-form
+    ```
+
+    This command generates *mfa-auth-method-selection-form.component.html* and *mfa-auth-method-selection-form.component.ts* files in the folder *src/app/components/shared/mfa-auth-method-selection-form/*.
+
+1. Open the *mfa-auth-method-selection-form.component.ts* file, then replace its contents with the content in [mfa-auth-method-selection-form.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/mfa-auth-method-selection-form/mfa-auth-method-selection-form.component.ts).
+1. Open the *mfa-auth-method-selection-form.component.html* file, then add the contents in [mfa-auth-method-selection-form.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/mfa-auth-method-selection-form/mfa-auth-method-selection-form.component.html). 
+
+### Create multifactor authentication challenge form
+
+1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component, such as *mfa-challenge-form* by using the following command:
+
+    ```console
+    ng generate component mfa-challenge-form
+    ```
+    
+    This command generates *mfa-challenge-form.component.ts* and *mfa-challenge-form.component.html* files in the folder *src/app/components/shared/mfa-challenge-form/*.
+
+1. Open the *mfa-challenge-form.component.ts* file, then replace its contents with the content in [mfa-challenge-form.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/mfa-challenge-form/mfa-challenge-form.component.ts).
+1. Open the *mfa-challenge-form.component.html* file, then add the contents in [mfa-challenge-form.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/mfa-challenge-form/mfa-challenge-form.component.html).
+
+
+## Handle multifactor authentication during sign-in
+
+Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your app to handle MFA flow during sign-in. See the complete code in [sign-in.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.ts):
+
+1. 

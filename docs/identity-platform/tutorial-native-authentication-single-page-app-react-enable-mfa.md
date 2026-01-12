@@ -31,14 +31,14 @@ The flow diagram below illustrates the three scenarios:
 
 ## Prerequisites
 
-- Complete the steps in [sign up](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md), and [register strong authentication method](tutorial-native-authentication-single-page-app-react-register-strong-authentication-method.md) tutorials.
+- Complete the steps in [sign up](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md), [password reset](tutorial-native-authentication-single-page-app-react-sdk-reset-password.md) and [register strong authentication method](tutorial-native-authentication-single-page-app-react-register-strong-authentication-method.md) tutorials.
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
 - [Enable multifactor authentication (MFA) for your app](../external-id/customers/how-to-multifactor-authentication-customers.md).
 
 ## Enable app to handle multifactor authentication 
 
-To enable MFA in your React app, update the app configuration by adding the required capability.
+To enable MFA in your React app, update the app configuration by adding the required capability:
 
 1. Locate the *src/config/auth-config.ts* file.
 1. In the `customAuth` object, add or update `capabilities` property to include the `mfa_required` value in the array as shown in the following coe snippet:
@@ -54,7 +54,7 @@ To enable MFA in your React app, update the app configuration by adding the requ
     };
     ```
 
-The capability value `mfa_required` informs Microsoft Entra that your app can handle MFA flow. Learn more about [native authentication challenge types and capabilities](concept-native-authentication-challenge-types.md).
+The capability value `mfa_required` informs Microsoft Entra that your app can handle an MFA flow. Learn more about [native authentication challenge types and capabilities](concept-native-authentication-challenge-types.md).
 
 ## Create UI components
 
