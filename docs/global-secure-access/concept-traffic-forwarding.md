@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: article
-ms.date: 02/21/2025
+ms.date: 01/12/2025
 ms.service: global-secure-access
 ms.reviewer: katabish
 ai-usage: ai-assisted
@@ -31,7 +31,7 @@ For each traffic forwarding profile, you can configure:
 
 ## Microsoft traffic
 
-The Microsoft traffic forwarding profile includes Microsoft Entra ID/ Microsoft Graph, SharePoint Online, Exchange Online, and other Microsoft apps. Traffic forwarding policies are grouped based on the workload - for example, Exchange Online. You can choose to either forward the traffic from each group to Global Secure Access, or to bypass it.
+The Microsoft traffic forwarding profile includes Microsoft Teams, SharePoint Online, Exchange Online, and other Microsoft apps. Traffic forwarding policies are grouped based on the workload - for example, Exchange Online. You can choose to either forward the traffic from each group to Global Secure Access, or to bypass it.
 
 Microsoft traffic is forwarded to the service through either [remote network connectivity](concept-remote-network-connectivity.md), such as branch office location, or through the [Global Secure Access client](how-to-install-windows-client.md).
 
@@ -65,12 +65,19 @@ With the internet access profile, you can route traffic to the public internet, 
 
 Internet access traffic can be forwarded to the service by connecting through the [Global Secure Access desktop client](how-to-install-windows-client.md).
 
-### Licensing
+## Entra traffic
 
-Internet access profile requires the following licenses:
+The Entra traffic is a dedicated system profile within Global Secure Access that handles all authentication and identity-related traffic for Microsoft Entra services. This profile is designed to operate independently of other traffic profiles (such as Private or Internet Access), ensuring that identity traffic is always acquired and protected, regardless of SKU or license assignment. Being a system managed profile, it is not exposed to admins in the portal.
 
-- Microsoft Entra ID P1 or P2 (prerequisite).
-- Microsoft Entra Internet Access or Microsoft Entra Suite.
+Key Characteristics:
+
+- Always On with Any Profile: Entra traffic is automatically enabled whenever any other traffic forwarding profile is active. It cannot be enabled or disabled independently.
+- Highest Policy Priority: Entra traffic is prioritized in the client policy to ensure it is always processed first, leveraging mTLS/certificate-based authentication for secure tunneling.
+- No Explicit Assignment Needed: There is no need for explicit user or branch assignment; Entra traffic is included automatically with any active profile.
+- Comprehensive Coverage: The profile covers a defined set of FQDNs and IP ranges associated with Microsoft Entra authentication endpoints, including login, Graph API, and certificate validation services.
+
+> [!NOTE]
+> If you use Network conditions in Conditional Access policies, ensure CA signaling for Entra ID in enabled in Global Secure Access. See [Enable Global Secure Access signaling for Conditional Access](how-to-source-ip-restoration.md).
 
 ## Next steps
 
