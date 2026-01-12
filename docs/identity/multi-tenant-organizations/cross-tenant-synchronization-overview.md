@@ -232,9 +232,13 @@ Can the target tenant manually block sign-in for a specific home/source tenant u
 
 #### Group synchronization
 
+> [!IMPORTANT]
+> Group synchronization is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 Is synchronization of groups supported?
 
-- Yes, cross-tenant synchronization can create security groups in the target tenant. When a group is synchronized, all members of the group that are in scope for synchronization will be synchronized.
+- Yes, cross-tenant synchronization can create security groups in the target tenant and is currrently in preview. When a group is synchronized, all members of the group that are in scope for synchronization will be synchronized.
 
 What happens if a group already exists in the target tenant?
 

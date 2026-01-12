@@ -137,6 +137,10 @@ By the end of this article, you'll be able to:
 
 ## Step 2: Enable user or group synchronization in the target tenant
 
+> [!IMPORTANT]
+> Group synchronization is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the target tenant.
