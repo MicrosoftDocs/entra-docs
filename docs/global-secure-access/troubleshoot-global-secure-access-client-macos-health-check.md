@@ -3,7 +3,7 @@ title: "Troubleshoot the macOS Global Secure Access client: Health check"
 description: Troubleshoot the macOS Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 11/21/2025
+ms.date: 01/12/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -37,11 +37,11 @@ Most of the Health check tests depend on one another. If tests fail:
 ## Health check tests
 The following checks verify the health of the Global Secure Access client.
 
-### Notifications Enabled
-The **Notifications Enabled** test checks if the macOS Global Secure Access client notifications are enabled. If not enabled, open System Settings and allow the notifications.
+### Notifications enabled
+The **Notifications enabled** test checks if the macOS Global Secure Access client notifications are enabled. If the test isn't enabled, open System Settings and allow the notifications.
 :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/allow-notifications.png" alt-text="Screen shot of the Global Secure Access notifications settings, with all notifications enabled." lightbox="media/troubleshoot-global-secure-access-client-macos-health-check/allow-notifications.png":::
 
-### System Extension
+### System extension
 This test checks if the client's system extension is installed and active. If this test fails, try one of the following solutions:
 - Check for the option to **Allow Network Extension**:
     1. Select **Global Secure Access** in the menu bar.
@@ -64,7 +64,7 @@ This test checks if the client's system extension is installed and active. If th
     UBF8T346G9    com.microsoft.naas.globalsecure.tunnel-df (1.1.432/1.1.432)    Global Secure Access Network Extension    [activated enabled]
     ```
 
-### Transparent Proxy Service
+### Transparent proxy service
 This test checks if the Transparent Proxy service is running. If the test fails, enable the Transparent Proxy service: 
 1. Open **System Settings**.
 1. Select **Network**.
@@ -73,10 +73,10 @@ This test checks if the Transparent Proxy service is running. If the test fails,
     :::image type="content" source="media/troubleshoot-global-secure-access-client-macos-health-check/filters-proxies.png" alt-text="Screen shot of the Filters & Proxies settings with the Transparent Proxy status set to Enabled." lightbox="media/troubleshoot-global-secure-access-client-macos-health-check/filters-proxies.png":::
 1. If you can't enable the Transparent Proxy through **System Settings**, check the log file.
 
-### UI - System Extension Bridge (IPC)
+### UI - System extension bridge (IPC)
 This test checks if the System Extension Bridge is active. If the test fails, disable and re-enable the Global Secure Access client. 
 
-### Connected Active Interface
+### Connected active interface
 This test shows the active interface used for traffic. To see all the active interfaces, enter the following command in Terminal: `ifconfig`. 
 
 This info comes from the path `State:/Network/Global/IPv4`.
@@ -88,12 +88,19 @@ This info comes from the path `State:/Network/Global/IPv4`.
 ### Tunnel interface (L3)
 This test shows the name of the tunnel interface the client uses. A failed test indicates that the tunnel interface wasn't created successfully. To fix the issue: 
 1. Disable and re-enable client from the system tray.
-1. Look for errors in the tunnel log file.<!--correct?-->
+1. Verify the following output in the tunnel log file:
 
-### DNS Server IP
+```bash
+"l3Interface" : {
+"name" : "_interface-name",
+"status" : "Yes"
+},
+```
+
+### DNS server IP
 This test shows the IP of the preferred DNS server configured at the operating system level. You must configure a DNS server that can resolve internet hostnames. An empty value means that no DNS server is configured. 
 
-### Is Non-Encrypted DNS
+### Is DNS encrypted
 To allow the macOS Global Secure Access client to capture network traffic by fully qualified domain name (FQDN) instead of IP address, the client must read DNS requests sent to the DNS server. 
 
 Examples of secure DNS servers:
@@ -125,11 +132,13 @@ nc: connectx to 10.50.50.50 port 853 (tcp) failed: Connection refused
 
 If the connection is closed, the DNS isn't encrypted. If any connection succeeds, the DNS server uses encryption.
 
-### Authentication Succeeded
+### Authentication succeeded
 This test checks for a successful Global Secure Access authentication. A failed authentication results in an error or a prompt for an interactive sign-in. If the test fails:
-1. Open the company portal <!--what is the "company portal?-->and verify that the device is registered and that you're signed in to the Microsoft Entra tenant.
-1. Check the logs: **com.microsoft.naas.globalsecure-df xx.xx.xx.xx.log**<!--how? where are these logs located?-->
-
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
+1. Go to **Entra ID** > **Devices** > **Overview**.
+1. Verify that the device is registered and that you're signed in to the Microsoft Entra tenant. For more information, see [Manage device identities using the Microsoft Entra admin center](../identity/devices/manage-device-identities.md).
+1. Select **Audit logs**.
+1. Check the log file: **com.microsoft.naas.globalsecure-df xx.xx.xx.xx.log**
 
 ### Forwarding profile cached in a file
 This test checks that a forwarding profile exists in the file system. If the test fails, complete the following steps: 
@@ -141,7 +150,7 @@ This test checks that a forwarding profile exists in the file system. If the tes
     1. Check the tunnel log file for errors. 
     1. Check the following path for the policy .plist file: `/private/var/root/Library/Preferences/com.microsoft.naas.globalsecure.tunnel-df.plist`
 
-### Breakglass mode disabled
+### Break-glass mode disabled
 Break-glass mode prevents the Global Secure Access client from tunneling network traffic to the Global Secure Access cloud service. In break-glass mode, all traffic profiles in the Global Secure Access portal are unchecked and the Global Secure Access client isn't expected to tunnel any traffic.
 
 If you want the client to acquire traffic and send it to the Global Secure Access service:
@@ -152,7 +161,7 @@ If you want the client to acquire traffic and send it to the Global Secure Acces
 The Global Secure Access client typically receives the updated forwarding profile within one hour after making changes in the portal.
 
 ### Proxy Configured
-This test checks whether the proxy is configured on the device. If a device uses a proxy for outgoing traffic to the internet, you must exclude the destination IPs and FQDNs acquired by the client with a Proxy Auto-Configuration (PAC) file or with the Web Proxy Auto-Discovery (WPAD) protocol. 
+This test checks whether the proxy is configured on the device. If a device uses a proxy for outgoing traffic to the internet, you must exclude the destination IPs and FQDNs that the client acquires by using a Proxy Auto-Configuration (PAC) file or by using the Web Proxy Auto-Discovery (WPAD) protocol. 
 
 #### Change the PAC file
 Add the IPs and FQDNs to tunnel to Global Secure Access edge as exclusions in the PAC file, so that HTTP requests for these destinations don't redirect to the proxy. These IPs and FQDNs are also set to tunnel to Global Secure Access in the forwarding profile.
@@ -172,19 +181,19 @@ function FindProxyForURL(url, host) {  
 }
 ```
 
-### Internet Reachable
+### Internet reachable
 This test checks whether the internet is reachable when the client is running. Run the following command in Terminal:
 
 ```bash
 curl https://internet.edgediagnostic.globalsecureaccess.microsoft.com:6543/connectivitytest/ping
 ```
 
-### Diagnostic URLs Present
-For each channel activated in the forwarding profile, this test checks that the configuration contains a URL to probe the service's health. To view the health status, select the system tray icon. On the Connections tab, view the **Status**.
+### Diagnostic URLs present
+For each channel activated in the forwarding profile, this test checks that the configuration contains a URL to probe the service's health. To view the health status, select the system tray icon. On the **Connections** tab, view the **Status**.
 
 If this test fails, it's usually because of an internal problem with Global Secure Access. Contact Microsoft Support.
 
-###  Diagnostics URLs Monitoring Status
+###  Diagnostics URLs monitoring status
 This test verifies whether the diagnostics URLs monitoring is working. If the test fails, disable and re-enable the client. 
 
 ### Magic-IP received for EDS
@@ -201,8 +210,8 @@ nc -vz 9d39e890-4c9e-433b-9b7a-625f7e26d855.m365.client.globalsecureaccess.micro
 ### Tunneling succeeded
 This test validates if tunneling succeeded for all EDS URLs. If this test fails:
 1. Verify that all other health check tests passed. 
-1. Verify that tunneling works on other devices.
-1. Check logs.<!--what logs? how do you check them?-->
+1. Verify that tunneling is working on other devices.
+1. Check the log file.
 1. Restart the client.
 1. If the test still fails, contact Microsoft Support.
 
