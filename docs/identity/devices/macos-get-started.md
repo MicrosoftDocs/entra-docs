@@ -1,6 +1,6 @@
 ---
 title: Add Your Work or School Account to a macOS Device
-description: #Required; Keep the description within 100- and 165-characters including spaces.
+description: Learn how to add your work or school account to a macOS device for seamless access to organizational resources, enhanced security, and device management.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id
@@ -8,7 +8,7 @@ ms.subservice: devices
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 01/12/2026
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+
 ---
 
 
