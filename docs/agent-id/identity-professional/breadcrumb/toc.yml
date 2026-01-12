@@ -4,8 +4,8 @@ items:
   topicHref: /entra/index
   items:
   - name: Agent ID
-    tocHref: /entra/agent-id/
-    topicHref: /entra/agent-id/identity-professional/index
+    tocHref: /entra/agent-id
+    topicHref: /entra/agent-id/index
     items:
     - name: Identity professionals
       tocHref: /entra/agent-id/identity-platform/

@@ -48,19 +48,19 @@ additionalContent:
         - title: Agent governance and lifecycles
           links:
             - text: Identity Governance for agents
-              url: ../id-governance/agent-id-governance-overview.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+              url: ../id-governance/agent-id-governance-overview.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
             - text: Agent identity lifecycle management
-              url: ../id-governance/agent-sponsor-tasks.md
+              url: ../id-governance/agent-sponsor-tasks.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
 
         ## CARD 3 ######################
         - title: Protect agent access to resources
           links:
             - text: Conditional Access for agents
-              url: ../identity/conditional-access/agent-id.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json         
+              url: ../identity/conditional-access/agent-id.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json         
             - text: Identity Protection for agents
-              url: ../id-protection/concept-risky-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+              url: ../id-protection/concept-risky-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
             - text: Network controls for agents
-              url: ../global-secure-access/concept-secure-web-ai-gateway-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-platform/breadcrumb/toc.json
+              url: ../global-secure-access/concept-secure-web-ai-gateway-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
             
     ## Section 2: Microsoft agent identity platform ######################
     - title: Microsoft agent identity platform for developers
