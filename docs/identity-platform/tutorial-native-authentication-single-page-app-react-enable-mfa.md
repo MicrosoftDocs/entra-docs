@@ -20,7 +20,7 @@ In this tutorial, you learn how to add multifactor authentication (MFA) in your 
 
 Just like in [strong authentication method registration](tutorial-native-authentication-single-page-app-react-register-strong-authentication-method.md), MFA flow occurs in three scenarios:
 - **During sign-in**: The user signs in and has a strong authentication method registered.
-- **After sign-up**: After the user completes sign-up, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-react-register-strong-authentication-method.md) before any MFA challenge. Because the method is verified during registration, they might not be prompted for an additional MFA challenge.
+- **After sign-up**: After the user completes sign-up, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-react-register-strong-authentication-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in. If the user has a strong authentication method registered, they're prompted to complete MFA challenge.
 
 When MFA is required, the user chooses a MFA challenge method from a list of registered methods. Available options are **email** one-time passcode, **SMS** one-time passcode, or both, depending on what the user previously registered.
