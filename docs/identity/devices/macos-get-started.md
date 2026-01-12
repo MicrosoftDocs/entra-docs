@@ -21,7 +21,7 @@ Adding a work or school account to macOS is a straightforward process that enhan
 
 ## Overview
 
-When you add a work or school account to your PC through an application, you're prompted with a page, called the Microsoft Entra account registration page. The content of the page depends on whether your organization implemented a device management solution:
+When you add a work or school account to your device through an application, you're prompted with a page, called the Microsoft Entra account registration page. The content of the page depends on whether your organization implemented a device management solution:
 
 - In the standard flow, you add your work or school account through an application like Microsoft Edge. This process involves entering your organization account's credentials and possibly completing multifactor authentication
     :::image type="content" source="media/macos-get-started/macos-sign-in.png" alt-text="Screenshot of signing in on macOS device.":::
@@ -42,7 +42,7 @@ Your account becomes accessible to all desktop and web applications that use you
 This device is also registered in your organization's directory. Once this device is registered, basic information about the device is exposed to other users in your organization.
 
 > [!NOTE]
-> Background activity that utilizes your work or school account often occurs on your device to provide various services. This activity can originate from applications, Windows services, and scheduled tasks.
+> Background activity that utilizes your work or school account often occurs on your device to provide various services. This activity can originate from applications, services, and scheduled tasks.
 
 ### What information can my organization see when I add my account to the device?
 The following information about your device is exposed in your organization's directory. Other users in your organization might be able to see:
