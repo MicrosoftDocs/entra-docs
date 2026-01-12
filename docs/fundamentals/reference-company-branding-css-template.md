@@ -17,7 +17,9 @@ ms.custom: sfi-image-nochange
 Configuring your company branding for the user sign-in process provides a seamless experience in your applications that use Microsoft Entra ID as the identity and access management service. Use this CSS reference guide if you're using the [CSS template](https://download.microsoft.com/download/7/2/7/727f287a-125d-4368-a673-a785907ac5ab/custom-styles-template-013023.css) as part of the [customize company branding](reference-company-branding-css-template.md) process.
 
 > [!IMPORTANT]
-> Tenants created after January 5, 2026, will not have custom CSS available for company branding in Microsoft Entra ID. Tenants. Tenants created before January 5 can continue to use custom CSS.
+> Tenants created after January 5, 2026, will not have custom CSS available for company branding in Microsoft Entra ID tenants. Tenants created before January 5 can continue to use custom CSS.
+> 
+> Microsoft Entra External ID tenants are not affected.
 
 ## HTML selectors
 
