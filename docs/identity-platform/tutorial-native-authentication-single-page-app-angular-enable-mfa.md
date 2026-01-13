@@ -18,9 +18,9 @@ ms.date: 01/18/2026
 
 In this tutorial, you learn how to add multifactor authentication (MFA) in your Angular single-page application (SPA) by using native authentication's JavaScript SDK.
 
-Just like in [strong authentication method registration](tutorial-native-authentication-single-page-app-angular-register-strong-authentication-method.md), MFA flow occurs in three scenarios:
+Just like in [strong authentication method registration](tutorial-native-authentication-single-page-app-angular-register-strong-method.md), MFA flow occurs in three scenarios:
 - **During sign-in**: The user signs in and has a strong authentication method registered.
-- **After sign-up**: After the user completes sign-up, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-authentication-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
+- **After sign-up**: After the user completes sign-up, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in. If the user has a strong authentication method registered, they're prompted to complete MFA challenge.
 
 When MFA is required, the user chooses a MFA challenge method from a list of registered methods. Available options are **email** one-time passcode, **SMS** one-time passcode, or both, depending on what the user previously registered.
@@ -31,7 +31,7 @@ The flow diagram below illustrates the three scenarios:
 
 ## Prerequisites
 
-- Complete the steps in [sign up](tutorial-native-authentication-single-page-app-angular-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-angular-sign-in.md), [password reset](tutorial-native-authentication-single-page-app-angular-reset-password.md) and [register strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-authentication-method.md) tutorials.
+- Complete the steps in [sign up](tutorial-native-authentication-single-page-app-angular-sign-up.md), [sign in](tutorial-native-authentication-single-page-app-angular-sign-in.md), [password reset](tutorial-native-authentication-single-page-app-angular-reset-password.md) and [register strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-method.md) tutorials.
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
 - [Enable multifactor authentication (MFA) for your app](../external-id/customers/how-to-multifactor-authentication-customers.md).
@@ -370,7 +370,7 @@ For MFA flow after SSPR, you need you update the */src/app/components/reset-pass
 
 ## Run and test your app
 
-Before you test your app, make sure you've a user account that has a registered strong authentication method. Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-register-strong-authentication-method.md#run-and-test-your-app) to run your app, but this time, test the MFA flow.
+Before you test your app, make sure you've a user account that has a registered strong authentication method. Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-register-strong-method.md#run-and-test-your-app) to run your app, but this time, test the MFA flow.
 
 ## Related content
 
