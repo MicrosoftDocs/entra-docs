@@ -392,7 +392,7 @@ For strong authentication method registration after SSPR, you need to update the
 
 ## Run and test your app
 
-Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-sign-up#test-the-sign-up-flow) to run your app, but this time, test the strong authentication method registration flow. 
+Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-sign-up.md#test-the-sign-up-flow) to run your app, but this time, test the strong authentication method registration flow. 
 
 ### Test authentication method registration after sign-up 
 
