@@ -86,7 +86,7 @@ Regular monitoring and maintenance ensure your security configuration remains ef
 - Network requests to Dataverse and Azure SQL knowledge sources aren't supported. 
 - Network requests to the following custom tools aren't supported: prompt, agent flow, Computer Use, and child agents.
 - Network requests to Large Language Model (LLM), either for orchestration or results enhancement, aren't supported.
-- Only specific Copilot Studio connectors are supported with network security controls. Refer to the [Copilot Studio documentation](/power-platform/admin/security/secure-web-ai-gateway-agents.md) for the list of supported connectors.
+- Only specific Copilot Studio connectors are supported with network security controls. Refer to the [Copilot Studio documentation](/power-platform/admin/security/secure-web-ai-gateway-agents) for the list of supported connectors.
 - Currently the Agent Name returned in the Global Secure Access traffic logs is the agent's unique *schema name*.
 
 
