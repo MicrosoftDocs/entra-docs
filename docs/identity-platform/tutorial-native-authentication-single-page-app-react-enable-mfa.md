@@ -289,7 +289,7 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle MFA flow
 For MFA flow after sign-up, you need you update the */src/app/sign-up/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
  
 1. Make sure you import the required types and components.
-1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow. After sign-up completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow, that's, after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler

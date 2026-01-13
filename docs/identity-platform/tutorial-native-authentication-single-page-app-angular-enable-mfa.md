@@ -93,4 +93,287 @@ You require form components in your app to support MFA flow, such as to select M
 
 Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your app to handle MFA flow during sign-in. See the complete code in [sign-in.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.ts):
 
-1. 
+1. Import the required types and components as shown in the following code snippet:
+
+    ```typescript
+    import {
+        AuthenticationMethod,
+        MfaAwaitingState,
+        MfaVerificationRequiredState,
+    } from "@azure/msal-browser/custom-auth";
+    import { MfaAuthMethodSelectionFormComponent } from "../shared/mfa-auth-method-selection-form/mfa-auth-method-selection-form.component";
+    import { MfaChallengeFormComponent } from "../shared/mfa-challenge-form/mfa-challenge-form.component";
+    
+    @Component({
+        selector: "app-sign-in",
+        templateUrl: "./sign-in.component.html",
+        standalone: true,
+        imports: [
+            ...
+            MfaAuthMethodSelectionFormComponent,
+            MfaChallengeFormComponent,
+            ...
+        ],
+    })
+    ```
+
+1. Add new state variables for MFA:
+
+    ```typescript
+    export default function SignIn() {
+        ...
+        // MFA states
+    const [mfaAuthMethods, setMfaAuthMethods] = useState<AuthenticationMethod[]>([]);
+    const [selectedMfaAuthMethod, setSelectedMfaAuthMethod] = useState<AuthenticationMethod | undefined>(undefined);
+    const [mfaChallenge, setMfaChallenge] = useState("");
+    
+        // ... initialization code
+    }
+    ```
+
+1. Update the `startSignIn`, `handlePasswordSubmit` and `handleCodeSubmit` functions to check if MFA is required:
+
+    ```typescript
+    async startSignIn() {
+        const client = await this.auth.getClient();
+        const result: SignInResult = await client.signIn({ username: this.username });
+        
+        ...
+        
+        if (result.isMfaRequired()) {
+            this.showMfaAuthMethods = true;
+            this.showPassword = false;
+            this.showCode = false;
+            this.showAuthMethodsForRegistration = false;
+            this.showChallengeForRegistration = false;
+            this.showMfaChallenge = false;
+            this.mfaAuthMethods = result.state.getAuthMethods();
+            // Set default selection to the first MFA auth method
+            this.selectedMfaAuthMethod = this.mfaAuthMethods.length > 0 ? this.mfaAuthMethods[0] : undefined;
+            this.signInState = result.state;
+        }
+    
+        ...
+    }
+    
+    async submitPassword() {
+        if (this.signInState instanceof SignInPasswordRequiredState) {
+            const result = await this.signInState.submitPassword(this.password);
+            
+            ...
+            
+            if (result.isMfaRequired()) {
+                this.showMfaAuthMethods = true;
+                this.showPassword = false;
+                this.showCode = false;
+                this.showAuthMethodsForRegistration = false;
+                this.showChallengeForRegistration = false;
+                this.showMfaChallenge = false;
+                this.mfaAuthMethods = result.state.getAuthMethods();
+                // Set default selection to the first MFA auth method
+                this.selectedMfaAuthMethod = this.mfaAuthMethods.length > 0 ? this.mfaAuthMethods[0] : undefined;
+                this.signInState = result.state;
+            }
+    
+            ...
+        }
+    }
+    
+    async submitCode() {
+        if (this.signInState instanceof SignInCodeRequiredState) {
+            const result = await this.signInState.submitCode(this.code);
+    
+            ...
+    
+            if (result.isMfaRequired()) {
+                this.showMfaAuthMethods = true;
+                this.showPassword = false;
+                this.showCode = false;
+                this.showAuthMethodsForRegistration = false;
+                this.showChallengeForRegistration = false;
+                this.showMfaChallenge = false;
+                this.mfaAuthMethods = result.state.getAuthMethods();
+                // Set default selection to the first MFA auth method
+                this.selectedMfaAuthMethod = this.mfaAuthMethods.length > 0 ? this.mfaAuthMethods[0] : undefined;
+                this.signInState = result.state;
+            }
+        }
+    }
+    ```
+
+    In each of the function, notice that we if MFA is required by using the following code snippet:
+
+    ```typescript
+    if (result.isMfaRequired()) {...}
+    ```
+ 
+1. Add the handler for MFA challenge selection:
+
+    ```typescript
+    async submitMfaAuthMethod() {
+        this.error = "";
+        this.loading = true;
+    
+        if (!this.selectedMfaAuthMethod) {
+            this.error = "Please select an authentication method.";
+            this.loading = false;
+            return;
+        }
+    
+        if (this.signInState instanceof MfaAwaitingState) {
+            const result = await this.signInState.requestChallenge(this.selectedMfaAuthMethod.id);
+    
+            if (result.isFailed()) {
+                if (result.error?.isInvalidInput()) {
+                    this.error = "Incorrect verification contact.";
+                } else {
+                    this.error =
+                        result.error?.errorData?.errorDescription ||
+                        "An error occurred while verifying the authentication method.";
+                }
+            }
+    
+            if (result.isVerificationRequired()) {
+                this.showMfaAuthMethods = false;
+                this.showMfaChallenge = true;
+                this.signInState = result.state;
+            }
+        }
+        this.loading = false;
+    }
+    ```
+
+1. Add the handler for MFA challenge verification:
+
+    ```typescript
+    async submitMfaChallenge() {
+        this.error = "";
+        this.loading = true;
+    
+        if (!this.mfaChallenge) {
+            this.error = "Please enter a code.";
+            this.loading = false;
+            return;
+        }
+    
+        if (this.signInState instanceof MfaVerificationRequiredState) {
+            const result = await this.signInState.submitChallenge(this.mfaChallenge);
+    
+            if (result.isFailed()) {
+                if (result.error?.isIncorrectChallenge()) {
+                    this.error = "Incorrect code.";
+                } else {
+                    this.error =
+                        result.error?.errorData?.errorDescription ||
+                        "An error occurred while verifying the challenge response.";
+                }
+            }
+    
+            if (result.isCompleted()) {
+                this.isSignedIn = true;
+                this.userData = result.data;
+                this.showMfaChallenge = false;
+                this.signInState = result.state;
+            }
+        }
+        this.loading = false;
+    }
+    ```
+
+1. Update the */src/app/components/sign-in/sign-in.component.html* files to display the correct MFA challenge forms, that's, MFA challenge method selection or MFA challenge method verification:
+
+    ```typescript
+    <!-- Use shared MFA auth method selection form -->
+    <app-mfa-auth-method-selection-form *ngIf="showMfaAuthMethods" [authMethods]="mfaAuthMethods"
+        [selectedAuthMethod]="selectedMfaAuthMethod" [loading]="loading"
+        (selectedAuthMethodChange)="selectedMfaAuthMethod = $event" (submitForm)="submitMfaAuthMethod()">
+    </app-mfa-auth-method-selection-form>
+    
+    <!-- Use shared MFA challenge form -->
+    <app-mfa-challenge-form *ngIf="showMfaChallenge" [challenge]="mfaChallenge" [loading]="loading"
+        (challengeChange)="mfaChallenge = $event" (submitForm)="submitMfaChallenge()">
+    </app-mfa-challenge-form>
+    ```
+
+## Handle multifactor authentication after sign-up or password reset
+
+MFA flow after sign-up and password reset works similar to the MFA in the sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in flow. If the user has a strong authentication method registered, the flow transitions to MFA challenge verification.
+
+### Handle multifactor authentication after sign-up
+
+For MFA flow after sign-up, you need you update the */src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
+
+1. Make sure you import the required types and components.
+
+1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow, that's, after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
+
+    ```typescript
+    // In your sign-up completion handler
+    if (this.signUpState instanceof SignUpCompletedState) {
+        const result = await this.signUpState.signIn();
+    
+        ...
+    
+        if (result.isMfaRequired()) {
+            this.showMfaAuthMethods = true;
+            this.showPassword = false;
+            this.showCode = false;
+            this.showAuthMethodsForRegistration = false;
+            this.showChallengeForRegistration = false;
+            this.showMfaChallenge = false;
+            this.mfaAuthMethods = result.state.getAuthMethods();
+            // Set default selection to the first MFA auth method
+            this.selectedMfaAuthMethod = this.mfaAuthMethods.length > 0 ? this.mfaAuthMethods[0] : undefined;
+            this.signUpState = result.state;
+        }
+    
+        ...
+    }
+    ```
+
+1. Update your */src/app/components/sign-up/sign-up.component.html* file to add the MFA forms, that's, MFA method selection form and MFA challenge verification form. See a complete example in [sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
+
+
+### Handle multifactor authentication after password reset
+
+For MFA flow after SSPR, you need you update the */src/app/components/reset-password/reset-password.component.ts* file. See the complete code in [reset-password.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.ts):
+
+1. Make sure you import the required types and components.
+
+1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow, that's, after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
+
+    ```typescript
+    if (this.resetState instanceof ResetPasswordCompletedState) {
+        const result = await this.resetState.signIn();
+    
+        ...
+    
+        if (result.isMfaRequired()) {
+            this.showMfaAuthMethods = true;
+            this.showCode = false;
+            this.showNewPassword = false;
+            this.showAuthMethodsForRegistration = false;
+            this.showChallengeForRegistration = false;
+            this.showMfaChallenge = false;
+            this.isReset = false;
+            this.mfaAuthMethods = result.state.getAuthMethods();
+            // Set default selection to the first MFA auth method
+            this.selectedMfaAuthMethod = this.mfaAuthMethods.length > 0 ? this.mfaAuthMethods[0] : undefined;
+            this.resetState = result.state;
+        }
+    
+        ...
+    }
+    ```
+
+1. Update your */src/app/components/reset-password/reset-password.component.html* file to add the MFA forms, that's, MFA method selection form and MFA challenge verification form. See a complete example in [reset-password.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.html).
+
+## Run and test your app
+
+Before you test your app, make sure you've a user account that has a registered strong authentication method. Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-register-strong-authentication-method.md#run-and-test-your-app) to run your app, but this time, test the MFA flow.
+
+## Related content
+
+- [Native authentication in Microsoft Entra External ID](concept-native-authentication.md)
+- [Native authentication capabilities and challenge types](concept-native-authentication-challenge-types.md)
+- [Native authentication web fallback](concept-native-authentication-web-fallback.md)
