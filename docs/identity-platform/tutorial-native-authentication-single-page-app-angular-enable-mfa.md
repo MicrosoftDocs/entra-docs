@@ -27,7 +27,7 @@ When MFA is required, the user chooses a MFA challenge method from a list of reg
 
 The flow diagram below illustrates the three scenarios:
 
-:::image type="content" source="media/tutorial-native-authentication-single-page-app-react-register-strong-authentication-method/register-strong-authentication-method.png" alt-text="Complete multifactor authentication challenge.":::
+:::image type="content" source="media/native-authentication-single-page-app-react-register-authentication-method/register-strong-authentication-method.png" alt-text="Complete multifactor authentication challenge.":::
 
 ## Prerequisites
 

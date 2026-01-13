@@ -30,7 +30,7 @@ When strong authentication method registration is required, the user selects a m
 
 The flow diagram below illustrates the three scenarios:
 
-:::image type="content" source="media/tutorial-native-authentication-single-page-app-react-register-strong-authentication-method/register-strong-authentication-method.png" alt-text="Register strong authentication method."::: 
+:::image type="content" source="media/native-authentication-single-page-app-react-register-authentication-method/register-strong-authentication-method.png" alt-text="Register strong authentication method."::: 
 
 ## Prerequisites
 
@@ -407,3 +407,5 @@ To test strong authentication method registration after SSPR, make sure you've a
 
 > [!div class="nextstepaction"]
 > [Tutorial: Enable multifactor authentication in a React SPA by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-enable-mfa.md)
+
+tutorial-native-authentication-single-page-app-react-register-authentication-method
