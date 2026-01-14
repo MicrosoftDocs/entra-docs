@@ -557,6 +557,8 @@
           href: connect/tshoot-connect-tshoot-sql-connectivity.md
         - name: Attribute synchronization
           href: connect/tshoot-connect-attribute-not-syncing.md
+        - name: Application-based authentication
+          href: troubleshoot-connect-sync-application-authentication.md
         - name: Installation issues
           href: connect/tshoot-connect-install-issues.md
         - name: UPN changes
