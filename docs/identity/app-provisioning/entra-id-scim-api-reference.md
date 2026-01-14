@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 2/15/2026
+ms.date: 1/14/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -85,7 +85,7 @@ Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
 Host: graph.microsoft.com|
 
 
-# Get Service Provider Config
+## Get Service Provider Config
 
 Use the ```/ServiceProviderConfig``` endpoint to view additional information about Microsoft Entra ID SCIM implementation. The ```/ServiceProviderConfig``` endpoint is read only.
 
@@ -93,7 +93,7 @@ Use the ```/ServiceProviderConfig``` endpoint to view additional information a
 
 Upon success, the API returns HTTP Status 200.
 
-## Errors
+### Errors for Get Service Provide Config
 
 If there is an error, then one of the following error codes are returned.
 
@@ -103,8 +103,6 @@ If there is an error, then one of the following error codes are returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Requesting service provider config
 
@@ -144,7 +142,7 @@ Response is truncated for readability.
 }
 ```
 
-# List Resource Types
+## List Resource Types
 
 Information about supported resource types can be retrieved by making a request to the /resourcetypes endpoint.
 
@@ -156,7 +154,7 @@ Information about supported resource types can be retrieved by making a request 
 
 Upon success, the API returns HTTP Status 200.
 
-## Errors
+### Errors for List Resource Types
 
 If there is an error, then one of the following error codes are returned.
 
@@ -166,8 +164,6 @@ If there is an error, then one of the following error codes are returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Requesting all resource types
 
@@ -266,7 +262,7 @@ Response is truncated for readability.
 }
 ```
 
-# Get Schema
+## Get Schema
 
 Information about supported SCIM schemas can be retrieved by making a request to the /schemas endpoint. 
 
@@ -278,7 +274,7 @@ Information about supported SCIM schemas can be retrieved by making a request to
 
 Upon success, the API returns HTTP Status 200.
 
-## Errors
+### Errors for Get Schema
 
 If there is an error, then one of the following error codes is returned.
 
@@ -288,8 +284,6 @@ If there is an error, then one of the following error codes is returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Requesting all schemas
 
@@ -345,7 +339,7 @@ Response is truncated for readability.
 }
 ```
 
-# List Users 
+## List users 
 
 Use the ```/users``` endpoint to perform the following operations:
 
@@ -375,7 +369,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 - **cursor** – to advance to the next result page
 
-## Constraints
+## Constraints for List users
 
 The Microsoft Entra ID SCIM implementation has the following constraints:
 
@@ -407,7 +401,7 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 GET https://graph.microsoft.com/rp/scim/users?filter=externalId eq '12345' and userName eq 'user@contoso.com'
 
-## Errors
+## Errors for List Users
 
 If there is an error, then one of the following error codes are returned.
 
@@ -418,7 +412,6 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-## Examples
 
 The following examples only include the request details. The response isn't included for brevity. It conforms to the standard SCIM response payload.
 
@@ -506,7 +499,7 @@ GET <https://graph.microsoft.com/rp/scim/users?count=15>
 
 Authorization: Bearer \<bearer_token\>
 
-# Get User by ID
+## Get User by ID
 
 Existing users can be retrieved by making a GET request to the /users endpoint with a user ID.
 
@@ -516,7 +509,7 @@ Existing users can be retrieved by making a GET request to the /users endpoin
 
 Upon success, the API returns HTTP Status 200.
 
-## Query parameters
+### Query parameters
 
 The following SCIM query parameters can be used with this API endpoint:
 
@@ -524,7 +517,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 - excludedAttributes – to specify which user attributes should be excluded by the server.
 
-## Errors
+### Errors Get user by ID
 
 If there is an error, then one of the following error codes are returned.
 
@@ -534,8 +527,6 @@ If there is an error, then one of the following error codes are returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Get user by ID with specific attributes
 
@@ -560,7 +551,7 @@ Response is truncated for readability.
 }
 ```
 
-# Create a user
+## Create a user
 
 You can create a new user in Microsoft Entra ID by sending a POST request to the /users endpoint.
 
@@ -572,7 +563,7 @@ Set HTTP header Content-Type: application/scim+json
 
 Upon success, the API returns HTTP Status 201.
 
-## Required attributes
+### Required attributes for Create a user
 
 The following attributes are required for successful user creation:
 
@@ -590,7 +581,7 @@ The following attributes are required for successful user creation:
 
 - urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname
 
-## Errors
+## Errors for Create a user
 
 If there is an error, then one of the following error codes are returned.
 
@@ -602,7 +593,6 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-## Examples
 
 ### Example 1 – Create a new user
 
@@ -640,7 +630,7 @@ Content-Type: application/scim+json
 
 Returns the SCIM representation of the user created.
 
-# Update a user
+## Update a user
 
 The /users endpoint allows a PATCH request to be made for updating an existing user profile.
 
@@ -652,13 +642,13 @@ Set HTTP header Content-Type: application/scim+json
 
 Upon success, the API returns HTTP Status 200.
 
-## Constraints
+### Constraints for Update a user
 
 - For PATCH operations, while updating complex multi-valued attributes like addresses, the path property only supports “[type eq \" work\"]" filter.
 
 - Mandatory attribute ```mailNickname``` can't be removed using PATCH operation.
 
-## Errors
+### Errors for Update a user
 
 If there is an error, then one of the following error codes are returned.
 
@@ -669,8 +659,6 @@ If there is an error, then one of the following error codes are returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Update an attribute value
 
@@ -833,7 +821,7 @@ Content-Type: ```application/scim+json```
 
 The response conforms to SCIM specification.
 
-# Delete a user
+## Delete a user
 
 A user can be deleted by making a DELETE request to the /users endpoint with an existing user ID.
 
@@ -845,7 +833,7 @@ Set HTTP header Content-Type: ```application/scim+json```
 
 Upon success, the API returns HTTP Status 204.
 
-## Errors
+### Errors for Delete a user
 
 If there is an error, then one of the following error codes are returned.
 
@@ -855,8 +843,6 @@ If there is an error, then one of the following error codes are returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Delete a user
 
@@ -872,7 +858,7 @@ Authorization: Bearer \<bearer_token\>
 
 The response conforms to SCIM specification.
 
-# List Groups
+## List groups
 
 Use the ```/groups``` endpoint to perform the following operations:
 
@@ -902,7 +888,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 - ```cursor``` – to advance to the next result page
 
-## Constraints
+## Constraints for List groups
 
 The Microsoft Entra ID SCIM implementation has the following constraints:
 
@@ -922,7 +908,7 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - Nested group membership is not evaluated when using the member.value filter. Only direct memberships are evaluated.
 
-## Errors
+## Errors for List groups
 
 If there is an error, then one of the following error codes are returned.
 
@@ -1013,7 +999,7 @@ GET [https://graph.microsoft.com/rp/scim/groups?count=15](https://graph.microsof
 
 Authorization: Bearer \<bearer_token\>
 
-# Get Group by ID
+## Get Group by ID
 
 Existing groups are retrieved by making a GET request to the /groups endpoint with a group ID.
 
@@ -1023,7 +1009,7 @@ Existing groups are retrieved by making a GET request to the /groups endpoint
 
 Upon success, the API returns HTTP Status 200.
 
-## Constraints
+## Constraints for Get group by ID
 
 - Group members are not returned by this API call. Use GET ```/groups``` with members.value filter to retrieve groups where user is a member.
 
@@ -1035,7 +1021,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 - ```excludedAttributes``` – to specify which group attributes should be excluded by the server.
 
-## Errors
+## Errors for Get group by ID
 
 If there is an error, then one of the following error codes are returned.
 
@@ -1045,8 +1031,6 @@ If there is an error, then one of the following error codes are returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Get group by ID 
 
@@ -1070,7 +1054,7 @@ Response is truncated for readability.
 }
 ```
 
-# Create a group
+## Create a group
 
 You can create a new group in Microsoft Entra ID by sending a POST request to the /groups endpoint.
 
@@ -1082,13 +1066,13 @@ Set HTTP header Content-Type: ```application/scim+json```
 
 Upon success, the API returns HTTP Status 201.
 
-## Required attributes
+### Required attributes for Create a group
 
 The following attributes are required for successful user creation:
 
 - ```displayName```
 
-## Errors
+### Errors for Create a group
 
 If there is an error, then one of the following error codes are returned.
 
@@ -1099,8 +1083,6 @@ If there is an error, then one of the following error codes are returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Create a new group
 
@@ -1130,7 +1112,7 @@ Content-Type: ```application/scim+json```
 
 Returns the SCIM representation of the user created.
 
-# Update a group
+## Update a group
 
 The ```/users``` endpoint allows a PATCH request to be made for updating an existing group.
 
@@ -1142,7 +1124,7 @@ Set HTTP header Content-Type: application/scim+json
 
 Upon success, the API returns HTTP Status 200.
 
-## Constraints
+### Constraints for Update a group
 
 - Adding members to groups must be done in a single PATCH **Operation** object.  
 
@@ -1158,7 +1140,7 @@ Upon success, the API returns HTTP Status 200.
 
 - If a **memberId** passed either in group membership add or remove operation is invalid, then the entire operation fails with the error message ```“Resource '00000000-0000-0000-0000-000000000000'``` does not exist or one of its queried reference-property objects are not present.”
 
-## Errors
+### Errors for Update a group
 
 If there is an error, then one of the following error codes are returned.
 
@@ -1170,7 +1152,6 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-## Examples
 
 ### Example 1 – Update Group display name
 
@@ -1303,7 +1284,7 @@ Content-Type: ```application/scim+json```
 
 The response conforms to SCIM specification.
 
-# Delete a group
+## Delete a group
 
 A user can be deleted by making a DELETE request to the /groups endpoint with an existing group ID.
 
@@ -1315,7 +1296,7 @@ Set HTTP header Content-Type: ```application/scim+json```
 
 Upon success, the API returns HTTP Status 204.
 
-## Errors
+### Errors for Delete a group
 
 If there is an error, then one of the following error codes are returned.
 
@@ -1325,8 +1306,6 @@ If there is an error, then one of the following error codes are returned.
 | InsufficientPrivileges | Insufficient permission to complete the operation | 403 |
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
-
-## Examples
 
 ### Example 1 – Delete a group
 
