@@ -22,6 +22,7 @@ In this tutorial, you will register strong authentication method for a user in y
 If you enable multifactor authentication (MFA), but the user has no registered strong authentication method, you need to enable the user register one before tokens can be issued.
 
 The strong authentication method registration flow occurs in three scenarios:
+
 - **During sign-in**: The user signs in but does not have a strong authentication method registered.
 - **After sign-up**: The user successfully signs up and automatically proceeds to sign in.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in.
@@ -90,7 +91,6 @@ You require form components for strong authentication method registration, that'
 
 1. Open the *auth-method-challenge-form.component.ts* file, then replace its contents with the content in [auth-method-challenge-form.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/auth-method-challenge-form/auth-method-challenge-form.component.ts).
 1. Open the *auth-method-challenge-form.component.html* file, then add the contents in [auth-method-challenge-form.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/shared/auth-method-challenge-form/auth-method-challenge-form.component.html)
-
 
 ## Register strong authentication method during sign-in
 
