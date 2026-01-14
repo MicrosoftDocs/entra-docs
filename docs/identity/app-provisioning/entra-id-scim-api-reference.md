@@ -56,10 +56,10 @@ Use these steps to register your SCIM client app in your Microsoft Entra ID tena
 
 Once the client registration is successful, use the following HTTP call to get a valid access token, replacing the highlighted variables to match your environment settings.
 
-| **Example Request 1** |
-|------------------------------|-----------------------------------|
-| **Request** | POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token HTTP/1.1 Host: login.microsoftonline.com Content-Type: application/x-www-form-urlencoded |
-| **Body** | client_id={{client_id}}&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret={{client_secret}}&grant_type=client_credentials |
+| Example Request | |
+|-------------------|---------|
+| **Request** | `POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token HTTP/1.1` <br> `Host: login.microsoftonline.com` <br> `Content-Type: application/x-www-form-urlencoded` |
+| **Body** | `client_id={{client_id}}&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret={{client_secret}}&grant_type=client_credentials` |
 
 
 | Example of Successful Response with valid access token |
@@ -79,10 +79,11 @@ Reference: </graph/auth-v2-service?tabs=http#token-request>
 You can use the access token in the HTTP Authorization header (Bearer authentication scheme) to invoke the SCIM API.
 
 | Example Authorization Request with valid access token |
-|----------------------|-------------------------------|
-| **Request** | HTTP GET https://graph.microsoft.com/rp/scim/users?filter=displayName%20eq%20%22John%20Doe%22"https://graph.microsoft.com/rp/scim/users?filter=displayName' eq "John Doe"
-Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
-Host: graph.microsoft.com|
+|----------------------|
+| **Request** |
+| GET https://graph.microsoft.com/rp/scim/users?filter=displayName%20eq%20%22John%20Doe%22 |
+| Authorization: Bearer eyJ0eXAiO...0X2tnSQLEANnSPHY0gKcgw |
+| Host: graph.microsoft.com |
 
 
 ## Get Service Provider Config
@@ -177,55 +178,52 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
-{
-
-"schemas": \["urn:ietf:params:scim:api:messages:2.0:ListResponse"\],
-
-"totalResults": 2,
-
-"Resources": \[
-
 ```json
 {
-  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
-  "id": "User",
-  "name": "User",
-  "endpoint": "/Users",
-  "description": "User Account",
-  "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
-  "schemaExtensions": [
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:ListResponse"],
+  "totalResults": 2,
+  "Resources": [
     {
-      "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
-      "required": true
+      "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+      "id": "User",
+      "name": "User",
+      "endpoint": "/Users",
+      "description": "User Account",
+      "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
+      "schemaExtensions": [
+        {
+          "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+          "required": true
+        },
+        {
+          "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User",
+          "required": true
+        }
+      ],
+      "meta": {
+        "location": "/resourcetypes/user",
+        "resourceType": "resourceType"
+      }
     },
     {
-      "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User",
-      "required": true
+      "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+      "id": "Group",
+      "name": "Group",
+      "endpoint": "/Groups",
+      "description": "Group",
+      "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
+      "schemaExtensions": [
+        {
+          "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group",
+          "required": true
+        }
+      ],
+      "meta": {
+        "location": "/resourcetypes/group",
+        "resourceType": "resourceType"
+      }
     }
-  ],
-  "meta": {
-    "location": "/resourcetypes/user",
-    "resourceType": "resourceType"
-  }
-},
-
-{
-  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
-  "id": "Group",
-  "name": "Group",
-  "endpoint": "/Groups",
-  "description": "Group",
-  "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
-  "schemaExtensions": [
-    {
-      "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group",
-      "required": true
-    }
-  ],
-  "meta": {
-    "location": "/resourcetypes/group",
-    "resourceType": "resourceType"
-  }
+  ]
 }
 ```
 
