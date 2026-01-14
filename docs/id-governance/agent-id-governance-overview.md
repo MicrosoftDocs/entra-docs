@@ -46,7 +46,7 @@ The agent identity and the agent user allow AI agents to take on digital identit
 
 ## Assigning access to agent identities
 
-When created, agent identities have limited permissions, such as OAuth 2 delegated permission scopes [inherited from their parent agent identity blueprint](../agent-id/identity-professional/configure-inheritable-permissions-blueprints.md). In addition, agent identities can have resource access assigned to them directly via access packages. Agent identities can request an access package for themselves, or have their owner or sponsor request one on their behalf. With access packages, you're able to assign agent identities access to the following resources:
+When created, agent identities have limited permissions, such as OAuth 2 delegated permission scopes [inherited from their parent agent identity blueprint](../agent-id/identity-professional/configure-inheritable-permissions-blueprints.md). In addition, agent identities can have resource access assigned to them directly via access packages. Agents can request an access package for own agent IDs, or have their owner or sponsor request one on their behalf. With access packages, you're able to assign agent identities access to the following resources:
 
 - Security Group memberships
 - [Application roles and API permissions](../identity/enterprise-apps/assign-agent-identities-to-applications.md), including Graph application permissions
