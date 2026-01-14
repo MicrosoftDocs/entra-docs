@@ -27,6 +27,12 @@ The first step to aligning with this pillar is to configure diagnostic settings 
 ### Privileged role activations have monitoring and alerting configured
 [!INCLUDE [21818](../includes/secure-recommendations/21818.md)]
 
+### Activation alert for Global Administrator role assignments
+[!INCLUDE [21819](../includes/secure-recommendations/21819.md)]
+
+### Activation alert for all privileged role assignments
+[!INCLUDE [21820](../includes/secure-recommendations/21820.md)]
+
 ### Privileged users sign in with phishing-resistant methods
 [!INCLUDE [21781](../includes/secure-recommendations/21781.md)]
 
