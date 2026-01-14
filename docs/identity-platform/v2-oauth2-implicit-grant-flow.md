@@ -27,31 +27,13 @@ The following diagram shows what the entire implicit sign-in flow looks like and
 
 ![Diagram showing the implicit sign-in flow.](./media/v2-oauth2-implicit-grant-flow/convergence-scenarios-implicit.svg)
 
-## Suitable scenarios for the OAuth2 implicit grant
-
-The implicit grant is only reliable for the initial, interactive portion of your sign-in flow, where the lack of [third party cookies](reference-third-party-cookies-spas.md) doesn't impact your application. This limitation means you should use it exclusively as part of the hybrid flow, where your application requests a code and a token from the authorization endpoint. In a hybrid flow, your application receives a code that can be redeemed for a refresh token, thus ensuring your app's login session remains valid over time.
-
 ### Prefer the auth code flow
 
 With some browsers [removing support for third party cookies](reference-third-party-cookies-spas.md), the **implicit grant flow is no longer a suitable authentication method**. The [silent single sign-on (SSO) features](#acquire-access-tokens-silently) of the implicit flow don't work without third party cookies, causing applications to break when they attempt to get a new token. We strongly recommend that all new applications use the [authorization code flow](v2-oauth2-auth-code-flow.md) that now supports single-page apps in place of the implicit flow. Existing single-page apps should also [migrate to the authorization code flow](migrate-spa-implicit-to-auth-code.md).
 
 ### Security concerns with implicit grant flow
 
-The implicit grant flow is intended for traditional web applications where the server has control over processing POST data securely. There are two main ways to deliver tokens with the implicit grant flow: where `response_mode` is returned as a URL fragment or as a query parameter (using `form POST` and `GET` ). In the implicit flow where `response_mode=form_post`, the token is delivered securely through an HTML form POST to the client's redirect URI. This method ensures that the token isn't exposed in the URL fragment, which in turn avoids the risks of token leakage through browser history or referrer headers. 
-
-The security concerns with the implicit flow arise when tokens are delivered using `response_mode=fragment`. The URL fragment is the part of the URL that comes after the `#` symbol and is not sent to the server when the browser requests a new page, but is available to JavaScript running in the browser. This means that the token is exposed to any JavaScript running on the page, which could be a security risk if the page includes third-party scripts. This security concerns for tokens in SPAs also don't apply to the implicit flow with `form POST`.
-
-### When should you allow an access token or ID token to be issued when requested using implicit grant or hybrid flow?
-
-The implicit grant and hybrid flow aren't as secure as other OAuth flows. Unless absolutely required, you shouldn’t allow an access or ID token to be issued when requested using implicit grant or hybrid flow in your app registration. If you (or your developers) are using the MSAL in your application to implement authentication and authorization, then neither field needs to be enabled.
-
-However, if you (or your developers) aren't using MSAL in your application, the following table outlines when access tokens or ID token should be enabled.
-
-| Type of application you're building | Tokens you should enable in App Registration |
-| ------------------------------------ | -------------------------------------------- |
-| A SPA (single-page application) that doesn't use the authorization code flow with PKCE | Access tokens & ID tokens |
-| A web or SPA application that calls a web API via JavaScript using implicit flow | Access tokens & ID tokens |
-| An ASP.NET Core web app and other web apps that use hybrid authentication | ID tokens |
+[RFC 9700 Best Current Practice for OAuth 2.0 Security, section 2.1.2](https://datatracker.ietf.org/doc/html/rfc9700#name-implicit-grant) explains why implicit tokens are discouraged. The authorization code flow should be used.
 
 ## Send the sign-in request
 
