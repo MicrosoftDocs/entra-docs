@@ -34,7 +34,7 @@ The following sections contain examples of API requests and responses currently 
 
 To invoke the SCIM APIs listed in this document, the SCIM client app must obtain an access token from the Microsoft identity platform. This access token includes information about whether the app is authorized to access the SCIM APIs with its own identity using a flow called the [OAuth 2.0 client credentials grant flow](/entra/identity-platform/v2-oauth2-client-creds-grant-flow). 
 
-Use the steps below to register your SCIM client app in your Microsoft Entra ID tenant and granting the app appropriate permissions for invoking the APIs.
+Use these steps to register your SCIM client app in your Microsoft Entra ID tenant and grant the app appropriate permissions for invoking the APIs.
 
 1)  Register the app with Microsoft Entra ID. For more information, see [Register an application with the Microsoft identity platform](/graph/auth-register-app-v2). Save the following values from the app registration:
 
@@ -42,17 +42,17 @@ Use the steps below to register your SCIM client app in your Microsoft Entra ID 
 
     2.  A client secret (application password), a certificate, or a federated identity credential.
 
-2)  Under “API permissions” -\> select Microsoft Graph “Application permissions” and grant one or more of the following permissions:
+2)  Under **API permissions** -\> select Microsoft Graph “Application permissions” and grant one or more of the following permissions:
 
-    1.  User.Read.All -\> To only provide “user” read access to your SCIM client.
+    1.  ```User.Read.All``` -\> To only provide “user” read access to your SCIM client.
 
-    2.  User.ReadWrite.All -\> To provide both “user” read and write access to your SCIM client.
+    2.  ```User.ReadWrite.All``` -\> To provide both “user” read and write access to your SCIM client.
 
-    3.  Group.Read.All -\> To only provide “group” read access to your SCIM client.
+    3.  ```Group.Read.All``` -\> To only provide “group” read access to your SCIM client.
 
-    4.  Group.ReadWrite.All -\> To provide both “group” read and write access to your SCIM client.
+    4.  ```Group.ReadWrite.All``` -\> To provide both “group” read and write access to your SCIM client.
 
-3)  Grant “Admin consent” to the permissions.
+3)  Grant **Admin consent** to the permissions.
 
 Once the client registration is successful, use the following HTTP call to get a valid access token, replacing the highlighted variables to match your environment settings.
 
@@ -76,7 +76,7 @@ Once the client registration is successful, use the following HTTP call to get a
 
 Reference: </graph/auth-v2-service?tabs=http#token-request>
 
-You can now use the access token in the HTTP Authorization header (Bearer authentication scheme) to invoke the SCIM API.
+You can use the access token in the HTTP Authorization header (Bearer authentication scheme) to invoke the SCIM API.
 
 | Example Authorization Request with valid access token |
 |-----------------------------------------------------|
@@ -87,7 +87,7 @@ Host: graph.microsoft.com|
 
 # Get Service Provider Config
 
-You can use the /ServiceProviderConfig endpoint to view additional information about Microsoft Entra ID SCIM implementation. The /ServiceProviderConfig endpoint is read only.
+Use the ```/ServiceProviderConfig``` endpoint to view additional information about Microsoft Entra ID SCIM implementation. The ```/ServiceProviderConfig``` endpoint is read only.
 
 **API endpoint:** <https://graph.microsoft.com/rp/scim/serviceproviderconfig>
 
@@ -118,49 +118,31 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
+```json
 {
-
-"schemas": \["urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"\],
-
-"documentationUri": "/graph/overview",
-
-"pagination": {
-
-"cursor": true,
-
-"index": false,
-
-"defaultPaginationMethod": "cursor",
-
-"defaultPageSize": 100,
-
-"maxPageSize": 1000
-
-},
-
-"patch": {
-
-"supported": true
-
-},
-
-"bulk": {
-
-"supported": false,
-
-"maxOperations": 0,
-
-"maxPayloadSize": 0
-
-},
-
-"filter": {
-
-"supported": true,
-
-"maxResults": 200
-
-}….
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"],
+  "documentationUri": "/graph/overview",
+  "pagination": {
+    "cursor": true,
+    "index": false,
+    "defaultPaginationMethod": "cursor",
+    "defaultPageSize": 100,
+    "maxPageSize": 1000
+  },
+  "patch": {
+    "supported": true
+  },
+  "bulk": {
+    "supported": false,
+    "maxOperations": 0,
+    "maxPayloadSize": 0
+  },
+  "filter": {
+    "supported": true,
+    "maxResults": 200
+  }
+}
+```
 
 # List Resource Types
 
@@ -168,7 +150,7 @@ Information about supported resource types can be retrieved by making a request 
 
 **API endpoints:**
 
-<https://graph.microsoft.com/rp/scim/resourcetypes>
+[https://graph.microsoft.com/rp/scim/resourcetypes](https://graph.microsoft.com/rp/scim/resourcetypes)
 
 [https://graph.microsoft.com/rp/scim/resourcetypes/{identifier}](https://graph.microsoft.com/rp/scim/resourcetypes/%7bidentifier%7d)
 
@@ -191,7 +173,7 @@ If there is an error, then one of the following error codes are returned.
 
 **Request:**
 
-GET <https://graph.microsoft.com/rp/scim/resourcetypes>
+GET [https://graph.microsoft.com/rp/scim/resourcetypes](https://graph.microsoft.com/rp/scim/resourcetypes)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -207,65 +189,55 @@ Response is truncated for readability.
 
 "Resources": \[
 
+```json
 {
-
-"schemas": \["urn:ietf:params:scim:schemas:core:2.0:ResourceType"\],
-
-"id": "User",
-
-"name": "User",
-
-"endpoint": "/Users",
-
-"description": "User Account",
-
-"schema": "urn:ietf:params:scim:schemas:core:2.0:User",
-
-"schemaExtensions": \[
-
-{ "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", "required": true },
-
-{ "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User", "required": true }
-
-\],
-
-"meta": { "location": "/resourcetypes/user", "resourceType": "resourceType" }
-
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "id": "User",
+  "name": "User",
+  "endpoint": "/Users",
+  "description": "User Account",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
+  "schemaExtensions": [
+    {
+      "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+      "required": true
+    },
+    {
+      "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User",
+      "required": true
+    }
+  ],
+  "meta": {
+    "location": "/resourcetypes/user",
+    "resourceType": "resourceType"
+  }
 },
 
 {
-
-"schemas": \["urn:ietf:params:scim:schemas:core:2.0:ResourceType"\],
-
-"id": "Group",
-
-"name": "Group",
-
-"endpoint": "/Groups",
-
-"description": "Group",
-
-"schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
-
-"schemaExtensions": \[
-
-{ "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group", "required": true }
-
-\],
-
-"meta": { "location": "/resourcetypes/group", "resourceType": "resourceType" }
-
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "id": "Group",
+  "name": "Group",
+  "endpoint": "/Groups",
+  "description": "Group",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
+  "schemaExtensions": [
+    {
+      "schema": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group",
+      "required": true
+    }
+  ],
+  "meta": {
+    "location": "/resourcetypes/group",
+    "resourceType": "resourceType"
+  }
 }
-
-\]
-
-}
+```
 
 ### Example 2 – Requesting user resource type
 
 **Request:**
 
-GET <https://graph.microsoft.com/rp/scim/resourcetype/User>
+GET [https://graph.microsoft.com/rp/scim/resourcetype/User](https://graph.microsoft.com/rp/scim/resourcetype/User)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -273,29 +245,26 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
+```json
 {
-
-"schemas": \["urn:ietf:params:scim:schemas:core:2.0:ResourceType"\],
-
-"id": "User",
-
-"name": "User",
-
-"endpoint": "/Users",
-
-"description": "User Account",
-
-"schema": "urn:ietf:params:scim:schemas:core:2.0:User",
-
-"schemaExtensions": \[
-
-{ "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User", "required": true }
-
-\],
-
-"meta": { "location": "/resourcetypes/user", "resourceType": "resourceType" }
-
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "id": "User",
+  "name": "User",
+  "endpoint": "/Users",
+  "description": "User Account",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
+  "schemaExtensions": [
+    {
+      "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+      "required": true
+    }
+  ],
+  "meta": {
+    "location": "/resourcetypes/user",
+    "resourceType": "resourceType"
+  }
 }
+```
 
 # Get Schema
 
@@ -303,7 +272,7 @@ Information about supported SCIM schemas can be retrieved by making a request to
 
 **API endpoints:**
 
-<https://graph.microsoft.com/rp/scim/schemas>
+[https://graph.microsoft.com/rp/scim/schemas](https://graph.microsoft.com/rp/scim/schemas)
 
 [https://graph.microsoft.com/rp/scim/schemas/{identifier}](https://graph.microsoft.com/rp/scim/schemas/%7bidentifier%7d)
 
@@ -326,7 +295,7 @@ If there is an error, then one of the following error codes is returned.
 
 **Request:**
 
-GET <https://graph.microsoft.com/rp/scim/schemas>
+GET [https://graph.microsoft.com/rp/scim/schemas](https://graph.microsoft.com/rp/scim/schemas)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -334,47 +303,32 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
+```json
 {
-
-"schemas": \["urn:ietf:params:scim:api:messages:2.0:ListResponse"\],
-
-"totalResults": 5,
-
-"Resources": \[
-
-{
-
-"id": "urn:ietf:params:scim:schemas:core:2.0:User",
-
-"name": "User",
-
-"description": "User Account",
-
-"attributes": \[...\]
-
-},
-
-{
-
-"id": "urn:ietf:params:scim:schemas:core:2.0:Group",
-
-"name": "Group",
-
-"description": "Group",
-
-"attributes": \[...\]
-
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:ListResponse"],
+  "totalResults": 5,
+  "Resources": [
+    {
+      "id": "urn:ietf:params:scim:schemas:core:2.0:User",
+      "name": "User",
+      "description": "User Account",
+      "attributes": [...]
+    },
+    {
+      "id": "urn:ietf:params:scim:schemas:core:2.0:Group",
+      "name": "Group",
+      "description": "Group",
+      "attributes": [...]
+    }
+  ]
 }
-
-\]
-
-}
+```
 
 ### Example 2 – Requesting user schema
 
 **Request:**
 
-GET <https://graph.microsoft.com/rp/scim/schemas/urn:ietf:params:scim:schemas:core:2.0:User>
+GET [https://graph.microsoft.com/rp/scim/schemas/urn:ietf:params:scim:schemas:core:2.0:User](https://graph.microsoft.com/rp/scim/schemas/urn:ietf:params:scim:schemas:core:2.0:User)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -382,29 +336,26 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
+```json
 {
-
-"id": "urn:ietf:params:scim:schemas:core:2.0:User",
-
-"name": "User",
-
-"description": "User Account",
-
-"attributes": \[...\]
-
+  "id": "urn:ietf:params:scim:schemas:core:2.0:User",
+  "name": "User",
+  "description": "User Account",
+  "attributes": [...]
 }
+```
 
 # List Users 
 
-Use the /users endpoint to perform the following operations:
+Use the ```/users``` endpoint to perform the following operations:
 
-- Get all users in the tenant (with pagination)
+- Get all users in the tenant (with pagination).
 
 - Get users that match specific filter criteria.
 
 **API endpoints:**
 
-<https://graph.microsoft.com/rp/scim/users>
+[https://graph.microsoft.com/rp/scim/users](https://graph.microsoft.com/rp/scim/users)
 
 Upon success, the API returns HTTP Status 200.
 
@@ -414,15 +365,15 @@ If the response contains multiple pages, use [cursor-based pagination](https://d
 
 The following SCIM query parameters can be used with this API endpoint:
 
-- filter – to specify filter criteria to apply
+- **filter** – to specify filter criteria to apply
 
-- attributes – to specify which user attributes should be returned by the server.
+- **attributes** – to specify which user attributes should be returned by the server.
 
-- excludedAttributes – to specify which user attributes should be excluded by the server.
+- **excludedAttributes** – to specify which user attributes should be excluded by the server.
 
-- count – to specify number of results to retrieve
+- **count** – to specify number of results to retrieve
 
-- cursor – to advance to the next result page
+- **cursor** – to advance to the next result page
 
 ## Constraints
 
@@ -436,23 +387,23 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - In the “filter” query parameter, only the “eq” operator is supported for the following user attributes
 
-  - displayName
+  - ```displayName```
 
-  - username
+  - ```username```
 
-  - externalId
+  - ```externalId```
 
-  - id
+  - ```id```
 
-  - groups.value
+  - ```groups.value```
 
   - urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:**mailNickname**
 
-- In the “filter” query parameter, only the “and” logical operator is supported for combining filters.
+- In the ```filter``` query parameter, only the *and* logical operator is supported for combining filters.
 
-- Any whitespaces encoded or unencoded in the query string around the "=" will lead to rejecting the request with a “BadRequest” error. This applies to all query params - filter, attributes, excludedAttributes, count and cursor.
+- Any whitespaces encoded or unencoded in the query string around the "=" leads to rejecting the request with a “BadRequest” error. This applies to all query params - filter, attributes, excludedAttributes, count and cursor.
 
-- Combination filter is not supported for use with “externalId” attribute. Example the following combination filter cannot be used:
+- Combination filter is not supported for use with ```externalId``` attribute. Example the following combination filter cannot be used:
 
 GET https://graph.microsoft.com/rp/scim/users?filter=externalId eq '12345' and userName eq 'user@contoso.com'
 
@@ -469,13 +420,13 @@ If there is an error, then one of the following error codes are returned.
 
 ## Examples
 
-The following examples only include the request details. The response is not included for brevity. It conforms to the standard SCIM response payload.
+The following examples only include the request details. The response isn't included for brevity. It conforms to the standard SCIM response payload.
 
 ### Example 1 – Get all users
 
 **Request:**
 
-GET <https://graph.microsoft.com/rp/scim/users>
+GET [https://graph.microsoft.com/rp/scim/users](https://graph.microsoft.com/rp/scim/users)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -507,31 +458,21 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
+```json
 {
-
-"totalResults": 1,
-
-"itemsPerPage": 10,
-
-"startIndex": 1,
-
-"Resources": \[
-
-{
-
-"id": "123",
-
-"userName": "johndoe@remarks.com",
-
-"displayName": "John Doe",
-
-"schemas": \["urn:ietf:params:scim:schemas:core:2.0:User"\]
-
+  "totalResults": 1,
+  "itemsPerPage": 10,
+  "startIndex": 1,
+  "Resources": [
+    {
+      "id": "123",
+      "userName": "johndoe@remarks.com",
+      "displayName": "John Doe",
+      "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"]
+    }
+  ]
 }
-
-\]
-
-}
+```
 
 ### Example 5 – Get user by userName
 
@@ -602,7 +543,7 @@ If there is an error, then one of the following error codes are returned.
 
 GET
 
-<https://graph.microsoft.com/rp/scim/users/123?attributes=displayName,userName>
+[https://graph.microsoft.com/rp/scim/users/123?attributes=displayName,userName](https://graph.microsoft.com/rp/scim/users/123?attributes=displayName,userName)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -610,17 +551,14 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
+```json
 {
-
-"id": "123",
-
-"userName": "johndoe@example.com",
-
-"displayName": "John Doe",
-
-"schemas": \["urn:ietf:params:scim:schemas:core:2.0:User"\]
-
+  "id": "123",
+  "userName": "johndoe@example.com",
+  "displayName": "John Doe",
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"]
 }
+```
 
 # Create a user
 
@@ -628,7 +566,7 @@ You can create a new user in Microsoft Entra ID by sending a POST request to the
 
 **API endpoints:**
 
-POST <https://graph.microsoft.com/rp/scim/users>
+POST [https://graph.microsoft.com/rp/scim/users](https://graph.microsoft.com/rp/scim/users)
 
 Set HTTP header Content-Type: application/scim+json
 
@@ -638,17 +576,17 @@ Upon success, the API returns HTTP Status 201.
 
 The following attributes are required for successful user creation:
 
-- userName
+- ```userName```
 
-- password
+- ```password```
 
-- name.familyName
+- ```name.familyName```
 
-- name.givenName
+- ```name.givenName```
 
-- active
+- ```active```
 
-- displayName
+- ```displayName```
 
 - urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname
 
@@ -672,35 +610,31 @@ If there is an error, then one of the following error codes are returned.
 
 POST
 
-<https://graph.microsoft.com/rp/scim/users>
+[https://graph.microsoft.com/rp/scim/users](https://graph.microsoft.com/rp/scim/users)
 
 Authorization: Bearer \<bearer_token\>
 
 Content-Type: application/scim+json
 
+```json
 {
-
-"active": true,
-
-"displayName": "Example User",
-
-"userName": "abc123@msfttenant.com",
-
-"password": "password",
-
-"name": {
-
-"familyName": "Example familyName",
-
-"givenName": "Example givenName"
-
-},
-
-"urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User": {
-
-"mailNickname": "abc123"
-
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User",
+    "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User"
+  ],
+  "active": true,
+  "displayName": "Example User",
+  "userName": "abc123@msfttenant.com",
+  "password": "password",
+  "name": {
+    "familyName": "Example familyName",
+    "givenName": "Example givenName"
+  },
+  "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User": {
+    "mailNickname": "abc123"
+  }
 }
+```
 
 **Response (201 OK):**
 
@@ -720,9 +654,9 @@ Upon success, the API returns HTTP Status 200.
 
 ## Constraints
 
-- For PATCH operations, while updating complex multi-valued attributes like addresses, the path property only supports “\[type eq \\work\\\]” filter.
+- For PATCH operations, while updating complex multi-valued attributes like addresses, the path property only supports “[type eq \" work\"]" filter.
 
-- Mandatory attribute mailNickname cannot be removed using PATCH operation.
+- Mandatory attribute ```mailNickname``` can't be removed using PATCH operation.
 
 ## Errors
 
@@ -744,31 +678,24 @@ If there is an error, then one of the following error codes are returned.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/users/123>
+[https://graph.microsoft.com/rp/scim/users/123](https://graph.microsoft.com/rp/scim/users/123)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"schemas": \["urn:ietf:params:scim:api:messages:2.0:PatchOp"\],
-
-"Operations": \[
-
-{
-
-"op": "replace",
-
-"path": "displayName",
-
-"value": "Johnathan Doe"
-
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "Operations": [
+    {
+      "op": "replace",
+      "path": "displayName",
+      "value": "Johnathan Doe"
+    }
+  ]
 }
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -780,37 +707,27 @@ The response conforms to SCIM specification.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/users/123>
+[https://graph.microsoft.com/rp/scim/users/123](https://graph.microsoft.com/rp/scim/users/123)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"schemas": \[ "urn:ietf:params:scim:api:messages:2.0:PatchOp" \],
-
-"operations": \[
-
-{
-
-"op": "replace",
-
-"path": "urn:ietf:params:scim:schemas:core:2.0:User:name",
-
-"value": {
-
-"familyName": "Jane",
-
-"givenName": "Doe"
-
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "operations": [
+    {
+      "op": "replace",
+      "path": "urn:ietf:params:scim:schemas:core:2.0:User:name",
+      "value": {
+        "familyName": "Jane",
+        "givenName": "Doe"
+      }
+    }
+  ]
 }
-
-}
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -822,49 +739,33 @@ The response conforms to SCIM specification.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/users/123>
+[https://graph.microsoft.com/rp/scim/users/123](https://graph.microsoft.com/rp/scim/users/123)
 
 Authorization: Bearer \<bearer_token\>
 
 Content-Type: application/scim+json
 
+```json
 {
-
-"schemas": \[ "urn:ietf:params:scim:api:messages:2.0:PatchOp" \],
-
-"operations": \[
-
-{
-
-"op": "replace",
-
-"path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses",
-
-"value": \[
-
-{
-
-"type": "work",
-
-"streetAddress": "2 Microsoft Way",
-
-"locality": "Redmond",
-
-"region": "King County",
-
-"postalCode": "98052",
-
-"country": "United States"
-
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "operations": [
+    {
+      "op": "replace",
+      "path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses",
+      "value": [
+        {
+          "type": "work",
+          "streetAddress": "2 Microsoft Way",
+          "locality": "Redmond",
+          "region": "King County",
+          "postalCode": "98052",
+          "country": "United States"
+        }
+      ]
+    }
+  ]
 }
-
-\]
-
-}
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -876,35 +777,26 @@ The response conforms to SCIM specification.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/users/123>
+[https://graph.microsoft.com/rp/scim/users/123](https://graph.microsoft.com/rp/scim/users/123)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"schemas": \[ "urn:ietf:params:scim:api:messages:2.0:PatchOp" \],
-
-"operations": \[
-
-{
-
-"op": "replace",
-
-"path": "emails\[type eq \\work\\ and primary eq true\]",
-
-"value": {
-
-"value": "\<edited username\>@{{tenant_domain}}",
-
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "operations": [
+    {
+      "op": "replace",
+      "path": "emails[type eq \"work\" and primary eq true]",
+      "value": {
+        "value": "<edited username>@{{tenant_domain}}"
+      }
+    }
+  ]
 }
-
-}
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -916,35 +808,26 @@ The response conforms to SCIM specification.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/users/123>
+[https://graph.microsoft.com/rp/scim/users/123](https://graph.microsoft.com/rp/scim/users/123)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"schemas": \[ "urn:ietf:params:scim:api:messages:2.0:PatchOp" \],
-
-"operations": \[
-
-{
-
-"op": "replace",
-
-"path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager",
-
-"value": {
-
-"value": "915f96af-ea85-4687-b972-b26f69d719f9"
-
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "operations": [
+    {
+      "op": "replace",
+      "path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager",
+      "value": {
+        "value": "915f96af-ea85-4687-b972-b26f69d719f9"
+      }
+    }
+  ]
 }
-
-}
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -958,7 +841,7 @@ A user can be deleted by making a DELETE request to the /users endpoint with
 
 DELETE [https://graph.microsoft.com/rp/scim/users/{id}](https://graph.microsoft.com/rp/scim/users/%7bid%7d)
 
-Set HTTP header Content-Type: application/scim+json
+Set HTTP header Content-Type: ```application/scim+json```
 
 Upon success, the API returns HTTP Status 204.
 
@@ -991,15 +874,15 @@ The response conforms to SCIM specification.
 
 # List Groups
 
-Use the /groups endpoint to perform the following operations:
+Use the ```/groups``` endpoint to perform the following operations:
 
-- Get all groups in the tenant (with pagination)
+- Get all groups in the tenant (with pagination).
 
 - Get groups that match specific filter criteria.
 
 **API endpoints:**
 
-<https://graph.microsoft.com/rp/scim/groups>
+[https://graph.microsoft.com/rp/scim/groups](https://graph.microsoft.com/rp/scim/groups)
 
 Upon success, the API returns HTTP Status 200.
 
@@ -1009,15 +892,15 @@ If the response contains multiple pages, use [cursor-based pagination](https://d
 
 The following SCIM query parameters can be used with this API endpoint:
 
-- filter – to specify filter criteria to apply
+- ```filter``` – to specify filter criteria to apply
 
-- attributes – to specify which group attributes should be returned by the server.
+- ```attributes``` – to specify which group attributes should be returned by the server
 
-- excludedAttributes – to specify which group attributes should be excluded by the server.
+- ```excludedAttributes``` – to specify which group attributes should be excluded by the server
 
-- count – to specify number of results to retrieve
+- ```count``` – to specify number of results to retrieve
 
-- cursor – to advance to the next result page
+- ```cursor``` – to advance to the next result page
 
 ## Constraints
 
@@ -1029,13 +912,13 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
   - The max page size is 100 entries per page.
 
-- In the “filter” query parameter, only the “eq” operator is supported for the following group attributes
+- In the ```filter``` query parameter, only the eq operator is supported for the following group attributes
 
-  - displayName
+  - ```displayName```
 
-  - id
+  - ```id```
 
-  - members.value
+  - ```members.value```
 
 - Nested group membership is not evaluated when using the member.value filter. Only direct memberships are evaluated.
 
@@ -1058,7 +941,7 @@ The following examples only include the request details. The response is not inc
 
 **Request:**
 
-GET <https://graph.microsoft.com/rp/scim/groups>
+GET [https://graph.microsoft.com/rp/scim/groups](https://graph.microsoft.com/rp/scim/groups)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -1090,31 +973,21 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
+```json
 {
-
-"totalResults": 1,
-
-"itemsPerPage": 10,
-
-"startIndex": 1,
-
-"Resources": \[
-
-{
-
-"id": "123",
-
-"userName": "johndoe@remarks.com",
-
-"displayName": "John Doe",
-
-"schemas": \["urn:ietf:params:scim:schemas:core:2.0:User"\]
-
+  "totalResults": 1,
+  "itemsPerPage": 10,
+  "startIndex": 1,
+  "Resources": [
+    {
+      "id": "123",
+      "userName": "johndoe@remarks.com",
+      "displayName": "John Doe",
+      "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"]
+    }
+  ]
 }
-
-\]
-
-}
+```
 
 ### Example 5 – Get group by member
 
@@ -1136,13 +1009,13 @@ Authorization: Bearer \<bearer_token\>
 
 **Request:**
 
-GET <https://graph.microsoft.com/rp/scim/groups?count=15>
+GET [https://graph.microsoft.com/rp/scim/groups?count=15](https://graph.microsoft.com/rp/scim/groups?count=15)
 
 Authorization: Bearer \<bearer_token\>
 
 # Get Group by ID
 
-Existing groups can be retrieved by making a GET request to the /groups endpoint with a group ID.
+Existing groups are retrieved by making a GET request to the /groups endpoint with a group ID.
 
 **API endpoints:**
 
@@ -1152,15 +1025,15 @@ Upon success, the API returns HTTP Status 200.
 
 ## Constraints
 
-- Group members are not returned by this API call. Use GET /groups with members.value filter to retrieve groups where user is a member.
+- Group members are not returned by this API call. Use GET ```/groups``` with members.value filter to retrieve groups where user is a member.
 
 ## Query parameters
 
 The following SCIM query parameters can be used with this API endpoint:
 
-- attributes – to specify which group attributes should be returned by the server.
+- ```attributes``` – to specify which group attributes should be returned by the server.
 
-- excludedAttributes – to specify which group attributes should be excluded by the server.
+- ```excludedAttributes``` – to specify which group attributes should be excluded by the server.
 
 ## Errors
 
@@ -1181,7 +1054,7 @@ If there is an error, then one of the following error codes are returned.
 
 GET
 
-<https://graph.microsoft.com/rp/scim/groups/456>
+[https://graph.microsoft.com/rp/scim/groups/456](https://graph.microsoft.com/rp/scim/groups/456)
 
 Authorization: Bearer \<bearer_token\>
 
@@ -1189,15 +1062,13 @@ Authorization: Bearer \<bearer_token\>
 
 Response is truncated for readability.
 
+```json
 {
-
-"id": "456",
-
-"displayName": "Admin Group",
-
-"schemas": \["urn:ietf:params:scim:schemas:core:2.0:Group"\]
-
+  "id": "456",
+  "displayName": "Admin Group",
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"]
 }
+```
 
 # Create a group
 
@@ -1205,9 +1076,9 @@ You can create a new group in Microsoft Entra ID by sending a POST request to th
 
 **API endpoints:**
 
-POST <https://graph.microsoft.com/rp/scim/groups>
+POST [https://graph.microsoft.com/rp/scim/groups](https://graph.microsoft.com/rp/scim/groups)
 
-Set HTTP header Content-Type: application/scim+json
+Set HTTP header Content-Type: ```application/scim+json```
 
 Upon success, the API returns HTTP Status 201.
 
@@ -1215,7 +1086,7 @@ Upon success, the API returns HTTP Status 201.
 
 The following attributes are required for successful user creation:
 
-- displayName
+- ```displayName```
 
 ## Errors
 
@@ -1237,29 +1108,23 @@ If there is an error, then one of the following error codes are returned.
 
 POST
 
-<https://graph.microsoft.com/rp/scim/group>
+[https://graph.microsoft.com/rp/scim/group](https://graph.microsoft.com/rp/scim/group)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"displayName": "Example Group",
-
-"members": \[
-
-{
-
-"value": "user-123",
-
-"\$ref": "https://graph.microsoft.com/v1.0/users/user-123"
-
+  "displayName": "Example Group",
+  "members": [
+    {
+      "value": "user-123",
+      "$ref": "https://graph.microsoft.com/v1.0/users/user-123"
+    }
+  ]
 }
-
-\]
-
-}
+```
 
 **Response (201 OK):**
 
@@ -1267,7 +1132,7 @@ Returns the SCIM representation of the user created.
 
 # Update a group
 
-The /users endpoint allows a PATCH request to be made for updating an existing group.
+The ```/users``` endpoint allows a PATCH request to be made for updating an existing group.
 
 **API endpoints:**
 
@@ -1279,7 +1144,7 @@ Upon success, the API returns HTTP Status 200.
 
 ## Constraints
 
-- Adding members to groups must be done in a single PATCH “Operation” object.  
+- Adding members to groups must be done in a single PATCH **Operation** object.  
 
 - When using the API to add multiple members in one request, you can add up to only 20 members. 
 
@@ -1289,11 +1154,11 @@ Upon success, the API returns HTTP Status 200.
 
 - Adding members to groups must be done without any other attribute changes (including removing members).  
 
-- Add group members is treated as an “idempotent” operation. If a specific member is already present in the group, then no error is returned, and the operation succeeds as long as all group “memberIds” point to valid user objects.
+- Add group members is treated as an **idempotent** operation. If a specific member is already present in the group, then no error is returned, and the operation succeeds as long as all group **memberIds** point to valid user objects.
 
-- If a “memberId” passed either in group membership add or remove operation is invalid, then the entire operation fails with the error message “Resource '00000000-0000-0000-0000-000000000000' does not exist or one of its queried reference-property objects are not present.”
+- If a **memberId** passed either in group membership add or remove operation is invalid, then the entire operation fails with the error message ```“Resource '00000000-0000-0000-0000-000000000000'``` does not exist or one of its queried reference-property objects are not present.”
 
- Errors
+## Errors
 
 If there is an error, then one of the following error codes are returned.
 
@@ -1313,31 +1178,24 @@ If there is an error, then one of the following error codes are returned.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/groups/123>
+[https://graph.microsoft.com/rp/scim/groups/123](https://graph.microsoft.com/rp/scim/groups/123)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"schemas": \[ "urn:ietf:params:scim:api:messages:2.0:PatchOp" \],
-
-"operations": \[
-
-{
-
-"op": "replace",
-
-"path": "displayName",
-
-"value": "SCIM Testing Group Edited"
-
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "operations": [
+    {
+      "op": "replace",
+      "path": "displayName",
+      "value": "SCIM Testing Group Edited"
+    }
+  ]
 }
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -1349,31 +1207,24 @@ The response conforms to SCIM specification.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/groups/123>
+[https://graph.microsoft.com/rp/scim/groups/123](https://graph.microsoft.com/rp/scim/groups/123)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"schemas": \[ "urn:ietf:params:scim:api:messages:2.0:PatchOp" \],
-
-"operations": \[
-
-{
-
-"op": "replace",
-
-"path": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:description",
-
-"value": "Finance group"
-
+  "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+  "operations": [
+    {
+      "op": "replace",
+      "path": "urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:Group:description",
+      "value": "Finance group"
+    }
+  ]
 }
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -1385,49 +1236,33 @@ The response conforms to SCIM specification.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/groups/123>
+[https://graph.microsoft.com/rp/scim/groups/123](https://graph.microsoft.com/rp/scim/groups/123)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"schemas": \[
-
-"urn:ietf:params:scim:api:messages:2.0:PatchOp"
-
-\],
-
-"Operations": \[
-
-{
-
-"op": "add",
-
-"path": "members",
-
-"value":\[
-
-{
-
-"value": "756b18d2-023a-4fa8-845e-9ac8b524100f"
-
-},
-
-{
-
-"value": "0e4c70dd-c015-48db-bb5a-6264d215ca8e"
-
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+  ],
+  "Operations": [
+    {
+      "op": "add",
+      "path": "members",
+      "value": [
+        {
+          "value": "756b18d2-023a-4fa8-845e-9ac8b524100f"
+        },
+        {
+          "value": "0e4c70dd-c015-48db-bb5a-6264d215ca8e"
+        }
+      ]
+    }
+  ]
 }
-
-\]
-
-}
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -1439,43 +1274,30 @@ The response conforms to SCIM specification.
 
 PATCH
 
-<https://graph.microsoft.com/rp/scim/groups/123>
+[https://graph.microsoft.com/rp/scim/groups/123](https://graph.microsoft.com/rp/scim/groups/123)
 
 Authorization: Bearer \<bearer_token\>
 
-Content-Type: application/scim+json
+Content-Type: ```application/scim+json```
 
+```json
 {
-
-"schemas": \[
-
-"urn:ietf:params:scim:api:messages:2.0:PatchOp"
-
-\],
-
-"Operations": \[
-
-{
-
-"op": "remove",
-
-"path": "members",
-
-"value":\[
-
-{
-
-"value": "756b18d2-023a-4fa8-845e-9ac8b524100f"
-
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+  ],
+  "Operations": [
+    {
+      "op": "remove",
+      "path": "members",
+      "value": [
+        {
+          "value": "756b18d2-023a-4fa8-845e-9ac8b524100f"
+        }
+      ]
+    }
+  ]
 }
-
-\]
-
-}
-
-\]
-
-}
+```
 
 **Response (200 OK):**
 
@@ -1489,7 +1311,7 @@ A user can be deleted by making a DELETE request to the /groups endpoint wit
 
 DELETE [https://graph.microsoft.com/rp/scim/groups/{id}](https://graph.microsoft.com/rp/scim/groups/%7bid%7d)
 
-Set HTTP header Content-Type: application/scim+json
+Set HTTP header Content-Type: ```application/scim+json```
 
 Upon success, the API returns HTTP Status 204.
 
@@ -1512,7 +1334,7 @@ If there is an error, then one of the following error codes are returned.
 
 DELETE
 
-<https://graph.microsoft.com/rp/scim/groups/123>
+[https://graph.microsoft.com/rp/scim/groups/123](https://graph.microsoft.com/rp/scim/groups/123)
 
 Authorization: Bearer \<bearer_token\>
 
