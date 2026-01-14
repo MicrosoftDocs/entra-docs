@@ -65,6 +65,13 @@ With the internet access profile, you can route traffic to the public internet, 
 
 Internet access traffic can be forwarded to the service by connecting through the [Global Secure Access desktop client](how-to-install-windows-client.md).
 
+### Licensing
+
+Internet Access profile requires the following licenses:
+
+- Microsoft Entra ID P1 or P2 (prerequisite).
+- Microsoft Entra Internet Access or Microsoft Entra Suite.
+
 ## Entra traffic
 
 The Microsoft Entra traffic profile is a dedicated system profile within Global Secure Access that handles all authentication and identity-related traffic for Microsoft Entra services. This profile operates independently of other traffic profiles (such as Private or Internet Access), ensuring that identity traffic is always acquired and protected, regardless of SKU or license assignment. As a system managed profile, admins don't see it in the portal.
