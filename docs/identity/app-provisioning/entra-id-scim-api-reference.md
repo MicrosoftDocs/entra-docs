@@ -56,7 +56,7 @@ Use these steps to register your SCIM client app in your Microsoft Entra ID tena
 
 Once the client registration is successful, use the following HTTP call to get a valid access token, replacing the highlighted variables to match your environment settings.
 
-| Example Request | |
+| Example Request |
 |-------------------|---------|
 | **Request** | `POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token HTTP/1.1` <br> `Host: login.microsoftonline.com` <br> `Content-Type: application/x-www-form-urlencoded` |
 | **Body** | `client_id={{client_id}}&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret={{client_secret}}&grant_type=client_credentials` |
