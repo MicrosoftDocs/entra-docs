@@ -355,7 +355,7 @@ Upon success, the API returns HTTP Status 200.
 
 If the response contains multiple pages, use [cursor-based pagination](https://datatracker.ietf.org/doc/draft-ietf-scim-cursor-pagination/) to retrieve all pages in the result.
 
-## Query parameters
+## Query parameters for List users
 
 The following SCIM query parameters can be used with this API endpoint:
 
@@ -499,7 +499,7 @@ GET <https://graph.microsoft.com/rp/scim/users?count=15>
 
 Authorization: Bearer \<bearer_token\>
 
-## Get User by ID
+## Get user by ID
 
 Existing users can be retrieved by making a GET request to the /users endpoint with a user ID.
 
@@ -509,7 +509,7 @@ Existing users can be retrieved by making a GET request to the /users endpoin
 
 Upon success, the API returns HTTP Status 200.
 
-### Query parameters
+### Query parameters for Get user by ID
 
 The following SCIM query parameters can be used with this API endpoint:
 
@@ -874,7 +874,7 @@ Upon success, the API returns HTTP Status 200.
 
 If the response contains multiple pages, use [cursor-based pagination](https://datatracker.ietf.org/doc/draft-ietf-scim-cursor-pagination/) to retrieve all pages in the result.
 
-## Query parameters
+## Query parameters for List groups
 
 The following SCIM query parameters can be used with this API endpoint:
 
@@ -999,7 +999,7 @@ GET [https://graph.microsoft.com/rp/scim/groups?count=15](https://graph.microsof
 
 Authorization: Bearer \<bearer_token\>
 
-## Get Group by ID
+## Get group by ID
 
 Existing groups are retrieved by making a GET request to the /groups endpoint with a group ID.
 
@@ -1013,7 +1013,7 @@ Upon success, the API returns HTTP Status 200.
 
 - Group members are not returned by this API call. Use GET ```/groups``` with members.value filter to retrieve groups where user is a member.
 
-## Query parameters
+## Query parameters for Get group by ID
 
 The following SCIM query parameters can be used with this API endpoint:
 
