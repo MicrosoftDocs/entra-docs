@@ -40,7 +40,8 @@ This following tables list Microsoft Entra feature availability in Azure for US 
 || Application Proxy for on-premises, header-based, and Integrated Windows Authentication | &#x2705; | 
 || Secure hybrid access partnerships (Kerberos, NTLM, LDAP, RDP, and SSH authentication) | &#x2705; | 
 |**Authorization and Conditional Access**|Role-based access control (RBAC) | &#x2705; | 
-|| Conditional Access  | &#x2705; | 
+|| Conditional Access  | &#x2705; |
+|| Require risk remediation for password and passwordless scenarios | &#x2705; |
 || SharePoint limited access | &#x2705; | 
 || Session lifetime management | &#x2705; | 
 || ID Protection (vulnerabilities and risky accounts) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
