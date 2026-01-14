@@ -747,7 +747,7 @@ Content-Type: application/scim+json
           "locality": "Redmond",
           "region": "King County",
           "postalCode": "98052",
-          "country": "United States"
+          "country/region": "United States"
         }
       ]
     }
