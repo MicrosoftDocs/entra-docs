@@ -55,6 +55,9 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### All privileged role assignments are activated just in time and not permanently active
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
 
+### All Microsoft Entra privileged role assignments are managed with PIM
+[!INCLUDE [21816](../includes/secure-recommendations/21816.md)]
+
 ### Passkey authentication method enabled
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
 
