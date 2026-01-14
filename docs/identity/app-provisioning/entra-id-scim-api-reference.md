@@ -56,16 +56,16 @@ Use these steps to register your SCIM client app in your Microsoft Entra ID tena
 
 Once the client registration is successful, use the following HTTP call to get a valid access token, replacing the highlighted variables to match your environment settings.
 
-| Example Request |
-|-------------------|---------|
+| Example request |
+| -------------------------|---------------------------- |
 | **Request** | `POST https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token HTTP/1.1` <br> `Host: login.microsoftonline.com` <br> `Content-Type: application/x-www-form-urlencoded` |
 | **Body** | `client_id={{client_id}}&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret={{client_secret}}&grant_type=client_credentials` |
 
 
 | Example of Successful Response with valid access token |
 | -------------------------|---------------------------- |
-| **HTTP 200/OK** |
-| `{` |
+| **HTTP 200/OK** | | 
+|`{` |
 |   `"token_type": "Bearer",` |
 |   `"expires_in": 3599,` |
 |   `"ext_expires_in": 3599,` |
@@ -80,8 +80,7 @@ You can use the access token in the HTTP Authorization header (Bearer authentica
 
 | Example Authorization Request with valid access token |
 |----------------------|
-| **Request** |
-| GET https://graph.microsoft.com/rp/scim/users?filter=displayName%20eq%20%22John%20Doe%22 |
+| **Request** | 'GET https://graph.microsoft.com/rp/scim/users?filter=displayName%20eq%20%22John%20Doe%22 |
 | Authorization: Bearer eyJ0eXAiO...0X2tnSQLEANnSPHY0gKcgw |
 | Host: graph.microsoft.com |
 
