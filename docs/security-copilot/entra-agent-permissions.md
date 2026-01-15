@@ -44,3 +44,12 @@ The [Conditional Access Optimization Agent](conditional-access-agent-optimizatio
 
 The [Identity Risk Management Agent](../id-protection/identity-risk-management-agent-get-started.md) can read Microsoft Entra ID Protection risk detections and risk history, read sign-in and audit logs, and read user information.
 
+`Application.Read.All`
+`Policy.Read.All`
+`Group.ReadWrite.All` 
+`GroupMember.Read.All` 
+`User.Read.All` 
+`Policy.ReadWrite.ConditionalAccess` 
+`CustomSecAttributeAssignment.Read.All`
+`IdentityRiskyUser.Read.All`
+`AuditLog.Read.All`

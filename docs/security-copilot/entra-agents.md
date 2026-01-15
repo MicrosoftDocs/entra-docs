@@ -75,11 +75,25 @@ The App Lifecycle Management Agent (Preview) helps you manage the full lifecycle
 
 The [Conditional Access Optimization Agent](./conditional-access-agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
 
+### Option 1
+
 | Attribute           | Description |
 |---------------------|------------ |
 | Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant's Conditional Access policies and configurations for gaps, overlap, and misconfigurations. |
 | Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
 | Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
+| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
+| Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
+| Role-based access   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to configure the agent<br>[Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to use the agent |
+| Trigger             | Runs every 24 hours or triggered manually |
+
+### Option 2
+
+| Attribute           | Description |
+|---------------------|------------ |
+| Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant's Conditional Access policies and configurations for gaps, overlap, and misconfigurations. |
+| Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
+| Permissions         | AuditLog.Read.All<br>CustomSecAttributeAssignment.Read.All<br>DeviceManagementApps.Read.All<br>DeviceManagementConfiguration.Read.All<br>GroupMember.Read.All<br>LicenseAssignment.Read.All<br>NetworkAccess.Read.All<br>Policy.Create.ConditionalAccessRO<br>Policy.Read.All<br>RoleManagement.Read.Directory<br>User.Read.All |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
 | Role-based access   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to configure the agent<br>[Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to use the agent |
