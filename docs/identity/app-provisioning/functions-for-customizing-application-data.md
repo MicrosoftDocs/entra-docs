@@ -672,7 +672,7 @@ The Len function returns length of the input string. If the string is null or em
 `Len(42568)`, returns 5.
 `Len(42568.75)`, returns 8.
 
-**Example 2** 
+**Example 2** <br>
 Let’s say you have a requirement to generate an account alias using the following rules.  
 
 - The generated alias should be no longer than 10 characters.  
