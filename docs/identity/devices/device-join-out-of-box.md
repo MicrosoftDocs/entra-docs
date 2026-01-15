@@ -25,7 +25,7 @@ To Microsoft Entra join a Windows device, the device registration service must b
 > [!TIP]
 > Windows Home Editions do not support Microsoft Entra join. These editions can still access many of the benefits by using [Microsoft Entra registration](concept-device-registration.md).
 >
-> For information about how complete Microsoft Entra registration on a Windows device see the support article [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
+> For information about how to complete Microsoft Entra registration on a Windows device, see the support article [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
 
 <a name='join-a-new-windows-11-device-to-azure-ad'></a>
 
