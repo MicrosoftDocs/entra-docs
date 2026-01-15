@@ -1,12 +1,12 @@
 ---
-title: Microsoft Entra feature availability in Azure Government
-description: Learn which Microsoft Entra features are available in Azure Government. 
+title: Microsoft Entra feature availability in Azure for US Government
+description: Learn which Microsoft Entra features are available in Azure for US Government. 
 
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 10/31/2025
+ms.date: 01/15/2026
 
 
 ms.author: justinha
@@ -43,8 +43,9 @@ This following tables list Microsoft Entra feature availability in Azure for US 
 || Conditional Access  | &#x2705; | 
 || SharePoint limited access | &#x2705; | 
 || Session lifetime management | &#x2705; | 
-|| ID Protection (vulnerabilities and risky accounts) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
-|| ID Protection (risk events investigation, SIEM connectivity) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection) below. | 
+|| ID Protection (vulnerabilities and risky accounts) | See [Microsoft Entra Identity Protection](#microsoft-entra-identity-protection). | 
+|| ID Protection (risk events investigation, SIEM connectivity) | See [Microsoft Entra Identity Protection](#microsoft-entra-identity-protection). | 
+|**Conditional Access and Identity Protection**|Microsoft Managed Remediation | &#x2705; | 
 |**Administration and hybrid identity**|User and group management | &#x2705; | 
 || Group Source of Authority (SOA) | &#x2705; | 
 || Advanced group management (Dynamic groups, naming policies, expiration, default classification) | &#x2705; | 
@@ -79,7 +80,7 @@ This following tables list Microsoft Entra feature availability in Azure for US 
 || Delegated user management portal (My Staff) | &#10060; |
 
 
-## Microsoft Entra ID Protection
+## Microsoft Entra Identity Protection
 
 | Risk Detection | Availability |
 |----------------|:--------------------:|
@@ -112,7 +113,7 @@ This following tables list Microsoft Entra feature availability in Azure for US 
 |SuccessFactors to Microsoft Entra user provisioning | &#x2705; | 
 |SuccessFactors to Writeback | &#x2705; |
 |API-driven inbound provisioning | &#x2705; |
-|Provisioning agent configuration and registration with Gov cloud tenant| Works with special undocumented command-line invocation:<br> `AADConnectProvisioningAgent.Installer.exe ENVIRONMENTNAME=AzureUSGovernment` |
+|Provisioning agent configuration and registration with Azure for US Government tenant| &#x2705; |
 
 ## Other Microsoft Entra products
 
