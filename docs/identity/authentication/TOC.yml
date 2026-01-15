@@ -25,7 +25,7 @@
   items:
   - name: Authentication methods
     items:
-    - name: Manage authentication methods
+    - name: Authentication methods policy migration
       href: concept-authentication-methods-manage.md
     - name: Temporary Access Pass
       href: howto-authentication-temporary-access-pass.md
