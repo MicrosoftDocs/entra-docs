@@ -24,21 +24,28 @@ This article provides a list of all the permissions each agent uses. In many cas
 
 The [Access Review Agent](access-review-agent.md) can get details for access reviews, read details and lifecycle workflow history for users, groups, apps, and access packages, and save access review recommendations and justifications.
 
+- AccessReview.Read.All 
+- EntitlementManagement.Read.All 
+- LifecycleWorkflows-Reports.Read.All 
+- LifecycleWorkflows-Workflow.ReadBasic.All 
+- User.Read.All 
+- User-LifeCycleInfo.Read.All
+
 ## Conditional Access Optimization Agent
 
 The [Conditional Access Optimization Agent](conditional-access-agent-optimization.md) can review policy configurations, create new policies in report-only mode, and suggest policy changes requiring approval.
 
-- `AuditLog.Read.All`
-- `CustomSecAttributeAssignment.Read.All`
-- `DeviceManagementApps.Read.All`
-- `DeviceManagementConfiguration.Read.All`
-- `GroupMember.Read.All`
-- `LicenseAssignment.Read.All`
-- `NetworkAccess.Read.All`
-- `Policy.Create.ConditionalAccessRO`
-- `Policy.Read.All`
-- `RoleManagement.Read.Directory`
-- `User.Read.All`
+- AuditLog.Read.All
+- CustomSecAttributeAssignment.Read.All
+- DeviceManagementApps.Read.All
+- DeviceManagementConfiguration.Read.All
+- GroupMember.Read.All
+- LicenseAssignment.Read.All
+- NetworkAccess.Read.All
+- Policy.Create.ConditionalAccessRO
+- Policy.Read.All
+- RoleManagement.Read.Directory
+- User.Read.All
 
 ## Identity Risky Management Agent (Preview)
 

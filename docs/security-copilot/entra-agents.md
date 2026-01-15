@@ -37,7 +37,8 @@ Administrators can configure the agent to run automatically or trigger the agent
 Because each of the agents perform a specific set of tasks, they need a specific set of configurations to operate within the boundaries of that task. The administrator also needs certain Microsoft Entra roles to set up and manage the agent.
 
 - **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-is-agent-id).
-- **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks.
+- **Roles**: Specific Microsoft Entra built-in roles are needed to turn on, view, and interact with the agent. Not all roles can perform the same tasks with an agent.
+- **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks. These permissions can't be changed or removed.
 - **Role-based access**: The administrator needs specific roles to set up, manage, and use the agent.
 
 ## Available Microsoft Entra agents
@@ -52,7 +53,7 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 |---------------------|------------ |
 | Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works).<br><br>Final decisions, submitted through the Microsoft Teams conversation, use the reviewer's identity.  |
 | Licenses            | [Microsoft Entra ID Governance or Microsoft Entra Suite](../id-governance/licensing-fundamentals.md) |
-| Permissions         | Get details for access reviews<br>Read details and lifecycle workflow history for users, groups, apps, and access packages. Save access review recommendations and justifications |
+| Permissions         | AccessReview.Read.All</br>EntitlementManagement.Read.All</br>LifecycleWorkflows-Reports.Read.All</br>LifecycleWorkflows-Workflow.ReadBasic.All</br>User.Read.All</br>User-LifeCycleInfo.Read.All |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [ID Governance Access Reviews](../id-governance/access-reviews-overview.md) |
 | Role-based access   | Both [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) are required to configure and use the agent |
@@ -74,20 +75,6 @@ The App Lifecycle Management Agent (Preview) helps you manage the full lifecycle
 ### Conditional Access Optimization Agent
 
 The [Conditional Access Optimization Agent](./conditional-access-agent-optimization.md) ensures comprehensive user protection by analyzing your Conditional Access policies and recommending improvements. The agent evaluates your current policy configuration against Microsoft best practices and Zero Trust principles.
-
-### Option 1
-
-| Attribute           | Description |
-|---------------------|------------ |
-| Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant's Conditional Access policies and configurations for gaps, overlap, and misconfigurations. |
-| Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
-| Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
-| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
-| Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
-| Role-based access   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to configure the agent<br>[Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to use the agent |
-| Trigger             | Runs every 24 hours or triggered manually |
-
-### Option 2
 
 | Attribute           | Description |
 |---------------------|------------ |
