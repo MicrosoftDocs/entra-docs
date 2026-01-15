@@ -28,28 +28,28 @@ The [Access Review Agent](access-review-agent.md) can get details for access rev
 
 The [Conditional Access Optimization Agent](conditional-access-agent-optimization.md) can review policy configurations, create new policies in report-only mode, and suggest policy changes requiring approval.
 
-`AuditLog.Read.All`
-`CustomSecAttributeAssignment.Read.All`
-`DeviceManagementApps.Read.All`
-`DeviceManagementConfiguration.Read.All`
-`GroupMember.Read.All`
-`LicenseAssignment.Read.All`
-`NetworkAccess.Read.All`
-`Policy.Create.ConditionalAccessRO`
-`Policy.Read.All`
-`RoleManagement.Read.Directory`
-`User.Read.All`
+- `AuditLog.Read.All`
+- `CustomSecAttributeAssignment.Read.All`
+- `DeviceManagementApps.Read.All`
+- `DeviceManagementConfiguration.Read.All`
+- `GroupMember.Read.All`
+- `LicenseAssignment.Read.All`
+- `NetworkAccess.Read.All`
+- `Policy.Create.ConditionalAccessRO`
+- `Policy.Read.All`
+- `RoleManagement.Read.Directory`
+- `User.Read.All`
 
 ## Identity Risky Management Agent (Preview)
 
 The [Identity Risk Management Agent](../id-protection/identity-risk-management-agent-get-started.md) can read Microsoft Entra ID Protection risk detections and risk history, read sign-in and audit logs, and read user information.
 
-`Application.Read.All`
-`Policy.Read.All`
-`Group.ReadWrite.All` 
-`GroupMember.Read.All` 
-`User.Read.All` 
-`Policy.ReadWrite.ConditionalAccess` 
-`CustomSecAttributeAssignment.Read.All`
-`IdentityRiskyUser.Read.All`
-`AuditLog.Read.All`
+- Application.Read.All
+- Policy.Read.All
+- Group.ReadWrite.All
+- GroupMember.Read.All
+- User.Read.All
+- Policy.ReadWrite.ConditionalAccess
+- CustomSecAttributeAssignment.Read.All
+- IdentityRiskyUser.Read.All
+- AuditLog.Read.All
