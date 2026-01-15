@@ -5,7 +5,7 @@ description: Discover how to set up Microsoft Entra join on a Windows 11 device 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 11/24/2025
+ms.date: 01/08/2026
 
 ms.author: owinfrey
 author: owinfreyATL
@@ -25,7 +25,7 @@ To Microsoft Entra join a Windows device, the device registration service must b
 > [!TIP]
 > Windows Home Editions do not support Microsoft Entra join. These editions can still access many of the benefits by using [Microsoft Entra registration](concept-device-registration.md).
 >
-> For information about how complete Microsoft Entra registration on a Windows device see the support article [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
+> For information about how to complete Microsoft Entra registration on a Windows device, see the support article [Register your personal device on your work or school network](https://support.microsoft.com/account-billing/register-your-personal-device-on-your-work-or-school-network-8803dd61-a613-45e3-ae6c-bd1ab25bf8a8).
 
 <a name='join-a-new-windows-11-device-to-azure-ad'></a>
 
@@ -36,9 +36,10 @@ Your device might restart several times as part of the setup process. Your devic
 1. Turn on your new device and start the setup process. Follow the prompts to set up your device.
 1. When prompted **How would you like to set up this device?**, select **Set up for work or school**.
    :::image type="content" source="media/device-join-out-of-box/windows-11-first-run-experience-work-or-school.png" alt-text="Screenshot of Windows 11 out-of-box experience showing the option to set up for work or school.":::
-1. On the **Let's set things up for your work or school** page, provide the credentials that your organization provided. These credentials might include a username and password, or a method like a [passkey](/entra/identity/authentication/how-to-authentication-synced-passkeys).
-   1. If your organization requires it, you might be prompted to perform multifactor authentication.
-   :::image type="content" source="media/device-join-out-of-box/windows-11-first-run-experience-device-sign-in-info.png" alt-text="Screenshot of Windows 11 out-of-box experience showing the sign-in experience.":::
+1. On the **Let's set things up for your work or school** page, provide the credentials that your organization provided. These credentials might include a username and password, or a method like a [passkey](/entra/identity/authentication/how-to-authentication-synced-passkeys). Your users should be able to use the credential that they have to sign in to Microsoft Entra ID, including [passkeys](/entra/identity/authentication/how-to-authentication-synced-passkeys), as shown in the following animation. 
+
+   :::image type="content" source="media/device-join-out-of-box/passkey-sign-in.gif" alt-text="Animation of how to sign in to Windows 11 out of box by using a passkey.":::
+
 1. Continue to follow the prompts to set up your device.
 1. Microsoft Entra ID checks if an enrollment in mobile device management is required and starts the process.
    1. Windows registers the device in the organization's directory and enrolls it in mobile device management, if applicable.
