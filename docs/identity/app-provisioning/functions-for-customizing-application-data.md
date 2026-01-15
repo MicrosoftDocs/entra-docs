@@ -652,7 +652,7 @@ The Len function returns length of the input string. If the string is null or em
 
 **Example 1**
 
-`Len("John Doe")`, returns "8"<br>
+`Len("John Doe")`, returns 8<br>
 `Len(42568)`, returns 5<br>
 `Len(42568.75)`, returns 8 <br>
 
