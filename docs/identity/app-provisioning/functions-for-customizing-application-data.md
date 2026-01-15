@@ -637,22 +637,6 @@ If string contains fewer characters than the number specified in numChars, a str
 Returns "Joh".
 
 ---
-### Mid
-**Function:** 
-Mid(source, start, length)
-
-**Description:** 
-Returns a substring of the source value. A substring is a string that contains only some of the characters from the source string.
-
-**Parameters:** 
-
-| Name | Required/ Repeating | Type | Notes |
-| --- | --- | --- | --- |
-| **source** |Required |String |Usually name of the attribute. |
-| **start** |Required |Integer |Index in the **source** string where substring should start. First character in the string has an index of 1, second character has an index 2, and so on. |
-| **length** |Required |Integer |Length of the substring. If length ends outside the **source** string, function returns substring from **start** index until end of **source** string. |
-
----
 ### Len 
 **Function:** 
 Len(String) 
@@ -668,9 +652,9 @@ The Len function returns length of the input string. If the string is null or em
 
 **Example 1**
 
-`Len("John Doe")`, returns "8".<br>
-`Len(42568)`, returns 5. <br>
-`Len(42568.75)`, returns 8. <br>
+`Len("John Doe")`, returns "8"<br>
+`Len(42568)`, returns 5<br>
+`Len(42568.75)`, returns 8 <br>
 
 **Example 2** <br>
 Let’s say you have a requirement to generate an account alias using the following rules.  
@@ -694,6 +678,23 @@ IIF(Len([LastName]) <= 5,
 
 - **INPUT** (FirstName): "John", (LastName): "Smith", then OUTPUT = "SmithJohn" 
 - **INPUT** (FirstName): "John", (LastName): "Parker", then OUTPUT = "ParkerJ" 
+
+---
+
+### Mid
+**Function:** 
+Mid(source, start, length)
+
+**Description:** 
+Returns a substring of the source value. A substring is a string that contains only some of the characters from the source string.
+
+**Parameters:** 
+
+| Name | Required/ Repeating | Type | Notes |
+| --- | --- | --- | --- |
+| **source** |Required |String |Usually name of the attribute. |
+| **start** |Required |Integer |Index in the **source** string where substring should start. First character in the string has an index of 1, second character has an index 2, and so on. |
+| **length** |Required |Integer |Length of the substring. If length ends outside the **source** string, function returns substring from **start** index until end of **source** string. |
 
 ---
 ### NormalizeDiacritics
