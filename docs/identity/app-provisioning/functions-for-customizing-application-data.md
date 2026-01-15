@@ -693,6 +693,7 @@ IIF(Len([LastName]) <= 5,
 - **INPUT** (FirstName): "John", (LastName): "Smith", then OUTPUT = "SmithJohn" 
 - **INPUT** (FirstName): "John", (LastName): "Parker", then OUTPUT = "ParkerJ" 
 
+---
 ### NormalizeDiacritics
 **Function:** 
 NormalizeDiacritics(source)
