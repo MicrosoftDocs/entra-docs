@@ -128,7 +128,7 @@ To use **Determine location by GPS coordinates**, users need the Microsoft Authe
 - The country code returned depends on the device platform API: For example one platform might report US for Puerto Rico, while another reports PR.
 
 > [!NOTE]
-> A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, even though they aren't blocked from signing in.
+> A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, not sharing this information may result in a block.
 
 GPS location can be used with [passwordless phone sign-in](~/identity/authentication/concept-authentication-authenticator-app.md) only if MFA push notifications are also enabled. Users can use Microsoft Authenticator to sign in, but they also need to approve subsequent MFA push notifications to share their GPS location.
 
