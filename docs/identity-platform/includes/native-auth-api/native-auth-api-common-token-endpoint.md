@@ -31,6 +31,8 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 | `oob` | No | The one-time passcode the user receives by email. Required if: </br> - The primary authentication method is email one-time passcode. </br> - The app is submitting the email one-time passcode to satisfy an MFA challenge when the primary authentication method is email with password. </br> To resend a one-time passcode, call the `/challenge` endpoint again. |
 | `username` | No | Email of the user that they want to sign up with, such as contoso-consumer@contoso.com. This parameter is **required** in a sign-up flow. |
 
+> [!NOTE]  
+> For SMS OTP MFA, when verifying the one-time passcode for strong authentication method, use `https://{tenant_subdomain}.ciamlogin.com/{tenant_ID}/oauth2/v2.0/token` token endpoint instead of `https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com/oauth2/v2.0/token`.
 
 #### Successful response
 
@@ -110,7 +112,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
 |`invalid_oob_value`| The value of one-time passcode that the app submits is invalid. |
-| `mfa_required` | The user must complete an MFA challenge. The response includes a [continuation token](../../reference-native-authentication-api.md#continuation-token). The app should call the `oauth2/v2.0/introspect` endpoint to retrieve the user's registered strong authentication methods. **This suberror occurs when the user's primary authentication method is email with password.** See how to [get a user's registered strong authentication methods](../../reference-native-authentication-api.md#get-user-registered-strong-authentication-methods). |
+| `mfa_required` | MFA is required. The response includes a [continuation token](../../reference-native-authentication-api.md#continuation-token). Call the `oauth2/v2.0/introspect` endpoint to get the user's registered strong authentication methods. **This suberror only occurs when the user's primary authentication method is email with password.** See how to [get a user's registered strong authentication methods](../../reference-native-authentication-api.md#get-user-registered-strong-authentication-methods). <br><br>**Note**: In some cases MFA is required but native authentication doesn't return `mfa_required`. For example, if a [strong authentication method registration](../../reference-native-authentication-api.md#register-a-strong-authentication-method-api-reference) flow precedes a call to the `/oauth2/v2.0/token` and the only available method (email) was already verified during that flow.|
 | `registration_required` | The user must complete an MFA challenge but has no registered strong authentication method. Prompt the user to register one. **This error occurs when the user's primary authentication method is email with password.** Learn how to [register a strong authentication method](../../reference-native-authentication-api.md#register-a-strong-authentication-method-api-reference). |
 
 <!--| `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered MFA method invalid.| -->

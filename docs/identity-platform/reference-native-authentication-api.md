@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: reference
-ms.date: 11/21/2025
+ms.date: 02/06/2026
 ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
@@ -1440,9 +1440,9 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`|The continuation token included in the request is expired. |
 
 
-### Step 2: Select strong authentication method 
+### Step 2: Select strong authentication method
 
-In this step, submit the strong authentication methods that the user wishes to register. Microsoft Entra then sends a challenge, such as email one-time passcode, to the user.
+In this step, submit the strong authentication method that the user wishes to register. Microsoft Entra then sends a challenge, such as email one-time passcode, to the user.
 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
@@ -1469,7 +1469,9 @@ POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com
 
 #### Success response
 
-Here's an example of a successful response:
+Here's an example of a successful response.
+
+Example 1:
 
 ```http
 HTTP/1.1 200 OK
@@ -1478,7 +1480,7 @@ Content-Type: application/json
 
 ```json
 { 
-  "continuation_token": "...", 
+  "continuation_token": "uY29tL2F1dGhlbnRpY...", 
   "challenge_type": "oob", 
   "binding_method": "prompt", 
   "challenge_target": "contoso-consumer@contoso.com", 
@@ -1487,23 +1489,38 @@ Content-Type: application/json
 } 
 ```
 
+Example 2:
+
+If the sign-up flow precedes the strong authentication method registration flow and the email submitted to the `/register/v1.0/challenge` endpoint matches the one verified in the sign-up flow, the native authentication API registers the method without sending a challenge to the user. In this case, the response will look similar to the following snippet:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+{ 
+  "continuation_token": "uY29tL2F1dGhlbnRpY...",
+  "challenge_type": "preverified" 
+}
+```
 
 |    Property     | Description        |
 |----------------------|------------------------|
 | `continuation_token`  | [Continuation token](#continuation-token) that Microsoft Entra returns. |
-|`challenge_type`| Challenge type selected for the user to authenticate with.|
-|`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways to the user to enter the one-time passcode. Issued if `challenge_type` is *oob*  |
-|`challenge_channel`| The type of the channel through which the one-time passcode was sent. Supported values *email, sms*. |
-|`code_length`|The length of the one-time passcode if `binding_method` is prompt.|
-|`challenge_target` |The target the challenge was sent to. This is the same as the input provided in the request. |
-|`interval` |The interval (in seconds) the client should wait between polling of /register/continue. Only returned when `prompt=none`. Clients should double the interval every time they receive a `HTTP 429` from the native authentication API. |
+|`challenge_type`| Challenge type selected for the user to authenticate with, such as *oob*, or *preverified* if the strong authentication method gets preverified.|
+|`binding_method`|The only valid value is *prompt*. This parameter can be used in the future to offer more ways to the user to enter the one-time passcode. Issued if `challenge_type` is *oob* and the strong authentication method is not preverified.  |
+|`challenge_channel`| The type of the channel through which the one-time passcode was sent. Supported values *email, sms*. Returned if strong authentication method is not preverified.|
+|`code_length`|The length of the one-time passcode if `binding_method` is prompt. Returned if strong authentication method is not preverified.|
+|`challenge_target` |The target the challenge was sent to. This is the same as the input provided in the request. Returned if strong authentication method is not preverified.|
+|`interval` |The interval (in seconds) the client should wait between polling of /register/continue. Only Returned if `prompt=none` and the strong authentication method is not preverified. Clients should double the interval every time they receive a `HTTP 429` from the native authentication API. |
 
 
 #### Error response
 
-The errors here are similar to those you can experience when you call the `/register/v1.0/introspect` endpoint. However, when enrolling phone number, if the phone number is considered high risk, the request may be blocked. 
+The errors here are similar to those you can experience when you call the `/register/v1.0/introspect` endpoint. However, when enrolling phone number, if the phone number is considered high risk, the request may be blocked.
 
-Here are the possible errors you can encounter if the request is blocked: 
+Here are the possible errors you can encounter if the request is blocked:
 
 |    Error value     | Description        |
 |----------------------|------------------------|
@@ -1520,7 +1537,7 @@ If the error parameter has a value of *access_denied*, Microsoft Entra includes 
 
 ### Step 3: Submit challenge
 
-In this step, make a call to the `/register/v1.0/continue` endpoint to submit the one-time passcode the app collects from the user. After the API verifies the code, the endpoint registers the new strong authentication method for the user.
+In this step, make a call to the `/register/v1.0/continue` endpoint to complete registration of the strong authentication method.
 
 
 Here's an example of the request(we present the example request in multiple lines for readability):
@@ -1539,8 +1556,8 @@ POST https://{tenant_subdomain}.ciamlogin.com/{tenant_subdomain}.onmicrosoft.com
 | `tenant_subdomain`  |   Yes |  The subdomain of the external tenant that you created. In the URL, replace `{tenant_subdomain}` with the Directory (tenant) subdomain. For example, if your tenant's primary domain is *contoso.onmicrosoft.com*, use *contoso*. If you don't have your tenant subdomain, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).|
 | `continuation_token`  | Yes |[Continuation token](#continuation-token) that Microsoft Entra returned in the previous request.|
 |`client_id`| Yes | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
-|`grant_type` | Yes |The grant type. Current supported value is *oob*.|
-|`oob`| Yes | The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode values that the customer user received in their email. To **resend a one-time passcode**, the app needs to make a request to the `/register/v1.0/challenge` endpoint again.|
+|`grant_type` | Yes |The grant type. Current supported value is *oob*, or *continuation_token* if the strong authentication method gets preverified in the `/register/v1.0/challenge` endpoint.|
+|`oob`| No | The one-time passcode that the customer user received in their email. Replace `{otp_code}` with the one-time passcode values that the customer user received in their email. To **resend a one-time passcode**, the app needs to make a request to the `/register/v1.0/challenge` endpoint again. Required if strong authentication method is not preverified in the `/register/v1.0/challenge` endpoint.|
 
 #### Success response
 
