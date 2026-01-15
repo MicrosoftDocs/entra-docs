@@ -668,9 +668,9 @@ The Len function returns length of the input string. If the string is null or em
 
 **Example 1**
 
-`Len("John Doe")`, returns "8".
-`Len(42568)`, returns 5.
-`Len(42568.75)`, returns 8.
+`Len("John Doe")`, returns "8".<br>
+`Len(42568)`, returns 5. <br>
+`Len(42568.75)`, returns 8. <br>
 
 **Example 2** <br>
 Let’s say you have a requirement to generate an account alias using the following rules.  
@@ -681,12 +681,14 @@ Let’s say you have a requirement to generate an account alias using the follow
 
 With the Len function, you can construct an expression mapping as shown below.  
 
+```
 IIF(Len([LastName]) <= 5,  
 
   Left(Join ("",[LastName],[FirstName]),10),  
   Join("", Mid([LastName],1,9), Mid([FirstName],1,1)) 
 
-) 
+)
+```
 
 **Sample input/output**
 
