@@ -34,11 +34,13 @@ Some of the popular integrations include the applications in the following table
 | ![logo-ServiceNow](./media/tutorial-list/entra-saas-servicenow-tutorial.png)| [ServiceNow](servicenow-tutorial.md)|[ServiceNow - User Provisioning](servicenow-provisioning-tutorial.md)|
 | ![logo-Slack](./media/tutorial-list/entra-saas-slack-tutorial.png)| [Slack](slack-tutorial.md)|[Slack - User Provisioning](slack-provisioning-tutorial.md)|
 | ![logo-SuccessFactors](./media/tutorial-list/entra-saas-successfactors-tutorial.png)| [SuccessFactors](successfactors-tutorial.md)| [SuccessFactors - User Provisioning](./sap-successfactors-inbound-provisioning-tutorial.md) |
-| ![logo-Workday](./media/tutorial-list/entra-saas-workday-tutorial.png)| [Workday](workday-tutorial.md)| [Workday - User Provisioning](workday-inbound-tutorial.md)|
+| ![logo-Workday](./media/tutorial-list/entra-saas-workday-tutorial.png)| [Workday](workday-tutorial.md)| [Workday - inbound provisioning](workday-inbound-tutorial.md)|
 
 To find more articles for SaaS apps, use the table of contents on the left. The list is divided into single sign on and provisioning articles.
 
-## Cloud Integrations
+## Cloud provider integrations
+
+Some of the popular integrations with infrastructure providers include those in the following table.
 
 | Logo | Application article for single sign-on | Application article for user provisioning |
 | :--- | :--- | :--- |
@@ -47,6 +49,18 @@ To find more articles for SaaS apps, use the table of contents on the left. The 
 | ![logo-Google Cloud Platform](./media/tutorial-list/entra-saas-google-apps-tutorial.png)| [Google Cloud Platform](google-apps-tutorial.md)| [Google Cloud Platform - User Provisioning](g-suite-provisioning-tutorial.md) |
 | ![logo-Salesforce](./media/tutorial-list/entra-saas-salesforce-tutorial.png)| [Salesforce](salesforce-tutorial.md)| [Salesforce - User Provisioning](salesforce-provisioning-tutorial.md) |
 | ![logo-SAP Cloud Identity Services](./media/tutorial-list/entra-saas-sapboc-tutorial.png)| [SAP Cloud Identity Services](sap-hana-cloud-platform-identity-authentication-tutorial.md)|[SAP Cloud Identity Services - Provisioning](./sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
+
+## HR integrations
+
+| Application article for provisioning to Active Directory (AD) and Microsoft Entra | Application article for provisioning to Microsoft Entra | Write back |
+ | :--- | :--- | :--- |
+| [Provision worker data from SuccessFactors Employee Central into AD](sap-successfactors-inbound-provisioning-tutorial.md) | [Provision worker data from SuccessFactors Employee Central into Microsoft Entra ID](sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) | [Write back attributes from Microsoft Entra ID to SAP SuccessFactors Employee Central](sap-successfactors-writeback-tutorial.md) |
+| [Provision worker profiles from Workday into AD](workday-inbound-tutorial.md) | [Provision worker profiles from Workday into Microsoft Entra ID](workday-inbound-cloud-only-tutorial.md)| [Write back attributes from Microsoft Entra ID to Workday](workday-writeback-tutorial.md) |
+|[Rippling HCM integration with Microsoft Entra ID/Active Directory](rippling-hcm-microsoft-entra-id-integration-tutorial.md) | [Rippling HCM integration with Microsoft Entra ID/Active Directory](rippling-hcm-microsoft-entra-id-integration-tutorial.md) | |
+| [Oracle HCM](oracle-hcm-provisioning-tutorial.md) | [Oracle HCM](oracle-hcm-provisioning-tutorial.md) | [Write back attributes from Microsoft Entra ID to Oracle HCM](oracle-hcm-provisioning-tutorial.md#writeback-from-microsoft-entra-id-to-oracle-hcm) |
+| | [SAP HCM to Microsoft Entra ID](sap-hcm-microsoft-entra-identity-provisioning.md) | [Write back to SAP HCM](sap-hcm-microsoft-entra-identity-provisioning.md#configure-writeback-to-sap-hcm) |
+| | [Darwinbox to Microsoft Entra ID](darwinbox-entra-integration-tutorial.md) | |
+| [API-driven connector from any HR source](../app-provisioning/inbound-provisioning-api-concepts.md) | [API-driven connector from any HR source](../app-provisioning/inbound-provisioning-api-concepts.md) | |
 
 ## Related content
 
