@@ -23,6 +23,21 @@ This article provides information about the latest releases and change announcem
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
 
+## January 2026
+
+### General Availability - Ability to convert Source of Authority of synced on-prem AD users to cloud users is now available 
+
+**Type:** New feature  
+**Service category:** User Management  
+**Product capability:** Microsoft Entra Cloud Sync
+
+We’re pleased to announce the general availability of object-level Source of Authority (SOA) switching for Microsoft Entra ID. With this feature, administrators can transition individual users from being synced with Active Directory (AD) to becoming cloud-managed accounts within Microsoft Entra ID. These users are no longer tied to AD sync and behave like native cloud users, giving you greater flexibility and control. This capability enables organizations to gradually reduce dependence on AD and simplify migration to the cloud, all while minimizing disruption for users and daily operations. Both Microsoft Entra Connect Sync and Cloud Sync fully support this SOA switch, ensuring a smooth transition process.
+
+For more information, see: For more information, see: [Embrace cloud-first posture: Transfer user Source of Authority (SOA) to the cloud](../identity/hybrid/user-source-of-authority-overview.md).
+
+---
+
+
 ## December 2025
 
 
