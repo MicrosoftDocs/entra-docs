@@ -55,7 +55,7 @@ The Microsoft-managed remediation risk-based Conditional Access policy lets you 
    - Requiring auth strength ensures that password-based and passwordless users are covered by the policy.
 - Risky Workload ID isn't supported.
 - External and guest users must continue to self-remediate through secure password reset, as Microsoft Entra ID doesn't support session revocation for external and guest users.
-- The "Require risk remediation" grant control is now available in USGOV clouds.
+- The "Require risk remediation" grant control is now available in Azure for US Government.
 
 ## Sign-in risk-based Conditional Access policy
 
