@@ -43,9 +43,7 @@ This following tables list Microsoft Entra feature availability in Azure for US 
 || Conditional Access  | &#x2705; | 
 || SharePoint limited access | &#x2705; | 
 || Session lifetime management | &#x2705; | 
-|| ID Protection (vulnerabilities and risky accounts) | See [Microsoft Entra Identity Protection](#microsoft-entra-identity-protection). | 
-|| ID Protection (risk events investigation, SIEM connectivity) | See [Microsoft Entra Identity Protection](#microsoft-entra-identity-protection). | 
-|**Conditional Access and Identity Protection**|Microsoft Managed Remediation | &#x2705; | 
+|| ID Protection (vulnerabilities, risky accounts, risk event investigation, SIEM connectivity) | See [Microsoft Entra ID Protection](#microsoft-entra-id-protection). | 
 |**Administration and hybrid identity**|User and group management | &#x2705; | 
 || Group Source of Authority (SOA) | &#x2705; | 
 || Advanced group management (Dynamic groups, naming policies, expiration, default classification) | &#x2705; | 
@@ -80,7 +78,7 @@ This following tables list Microsoft Entra feature availability in Azure for US 
 || Delegated user management portal (My Staff) | &#10060; |
 
 
-## Microsoft Entra Identity Protection
+## Microsoft Entra ID Protection
 
 | Risk Detection | Availability |
 |----------------|:--------------------:|
@@ -117,4 +115,4 @@ This following tables list Microsoft Entra feature availability in Azure for US 
 
 ## Other Microsoft Entra products
 
-[Microsoft Entra ID Governance](~/id-governance/licensing-fundamentals.md) is available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments. [Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-id-premium-plan-available-on-azure-government-clouds) is available in the US government clouds.
+[Microsoft Entra ID Governance](~/id-governance/licensing-fundamentals.md) is available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments. [Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-id-premium-plan-available-on-azure-government-clouds) is available in Azure for US government.
