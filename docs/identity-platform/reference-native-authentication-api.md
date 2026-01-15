@@ -1150,7 +1150,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 The app makes a POST request to the `oauth2/v2.0/token` endpoint and provides the user’s credentials chosen in the previous step to acquire security tokens.  
 
-[!INCLUDE [request-security-tokens](./includes/native-auth-api/native-auth-api-common-token-endpoint.md)]
+[!INCLUDE [request-security-tokens](./includes/native-auth-api/native-authentication-common-token-endpoint.md)]
 
 ### Get user registered strong authentication methods
 
@@ -1438,7 +1438,6 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |----------------------|------------------------|
 |`invalid_request`  | Request parameter validation failed such as a validation of *continuation token* failed or the request didn't include `client_id` parameter the client ID value is empty or invalid or the external tenant administrator hasn't enabled email OTP for all tenant users.   |  
 |`expired_token`|The continuation token included in the request is expired. |
-
 
 ### Step 2: Select strong authentication method
 
