@@ -22,7 +22,7 @@ After that 30-day window passes, the permanent deletion process is automatically
 You can view your restorable users, restore a deleted user, or permanently delete a user using the Microsoft Entra admin center.
 
 > [!IMPORTANT]
-> Neither you nor Microsoft customer support can restore a permanently deleted user.
+> You can delete users synced from your on-premises environment in Microsoft Entra ID for security purposes. However, Microsoft Entra ID isn't the source of authority for synced users. If the user still exists in your on-premises directory, the sync engine may restore the user during the next synchronization cycle. After a user is permanently deleted, neither you nor Microsoft Support can restore them.
 
 ## Prerequisites
 
