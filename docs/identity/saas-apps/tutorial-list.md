@@ -19,7 +19,7 @@ ms.reviewer: celested
 
 To help integrate your cloud-enabled [software as a service (SaaS)](https://azure.microsoft.com/overview/what-is-saas/) and on-premises applications with Microsoft Entra ID, we have developed a collection of articles that walk you through configuration.
 
-For a list of all SaaS apps that have been preintegrated into Microsoft Entra ID, see the [Microsoft Entra Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps). For a list of applications that can be integrated with Microsoft Entra ID Governance, see [Microsoft Entra ID Governance integrations](~/id-governance/apps.md).
+For a list of all SaaS apps that have been preintegrated into Microsoft Entra ID, see the [Microsoft Entra Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=entra-id-apps). For a list of applications that can be integrated with Microsoft Entra ID Governance, see [Microsoft Entra ID Governance integrations](~/id-governance/apps.md).
 
 Microsoft Entra can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an application that isn't listed, and it's a SaaS, then use the [application network portal](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md) to request a [SCIM](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md) enabled application to be added to the gallery for automatic provisioning or a SAML / OIDC enabled application to be added to the gallery for SSO. For integration with other applications, see [integrating applications with Microsoft Entra ID](~/id-governance/identity-governance-applications-integrate.md).
 
