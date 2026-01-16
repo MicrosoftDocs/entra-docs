@@ -106,5 +106,5 @@ You can use this value to distinguish between:
 This reduces the need to call Microsoft Graph separately to retrieve `appOwnerOrganizationId` for every new service principal creation event.
 
 ## Next steps
-[View service principal details in audit log properties](how-to-view-service-principal-details-in-audit-log-properties.md)
+[View service principal details in audit log properties](howto-view-service-principal-details-in-audit-log-properties.md)
 
