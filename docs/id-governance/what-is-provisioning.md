@@ -42,7 +42,7 @@ There are three deployment options for HR-driven provisioning with Microsoft Ent
 
 1. For organizations with a single subscription to Workday or SuccessFactors, and don't use Active Directory
 1. For organizations with a single subscription to Workday or SuccessFactors, and have both Active Directory and Microsoft Entra ID
-1. For organizations with multiple HR systems, or an on-premises HR system such as SAP, Oracle eBusiness or PeopleSoft
+1. For organizations with multiple HR systems, or an on-premises HR system such as SAP HCM, Oracle E-Business Suite or PeopleSoft
 
 For more information, see [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
 
