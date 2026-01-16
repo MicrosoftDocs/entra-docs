@@ -262,6 +262,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Directory Services](../identity/saas-apps/directory-services-tutorial.md) |  | ● |
 | [directprint.io Cloud Print Administration](../identity/saas-apps/directprint-io-cloud-print-administration-tutorial.md) |  | ● |
 | [Directprint.io](../identity/saas-apps/directprint-io-provisioning-tutorial.md) | ● | ● |
+| [Displayr](~/identity/saas-apps/displayr-tutorial.md) |  | ● |
 | [Docker Business](../identity/saas-apps/docker-tutorial.md) |  | ● |
 | [Documo](../identity/saas-apps/documo-provisioning-tutorial.md) | ● | ● |
 | [DocuSign](../identity/saas-apps/docusign-provisioning-tutorial.md) | ● | ● |
@@ -322,6 +323,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Forcepoint Cloud Security Gateway - User Authentication](../identity/saas-apps/forcepoint-cloud-security-gateway-provisioning-tutorial.md) | ● | ● |
 | [ForeSee CX Suite](../identity/saas-apps/foreseecxsuite-tutorial.md) |  | ● |
 | [Fortes Change Cloud](../identity/saas-apps/fortes-change-cloud-provisioning-tutorial.md) | ● | ● |
+| [FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md) |  | ● |
 | [FortiSASE](../identity/saas-apps/fortisase-sia-tutorial.md) |  | ● |
 | [Fountain](../identity/saas-apps/fountain-tutorial.md) |  | ● |
 | [FourKites SAML2.0 SSO for Tracking](../identity/saas-apps/fourkites-tutorial.md) |  | ● |
