@@ -160,7 +160,7 @@ Give each Microsoft Entra Connect server its own application identity. To do thi
    Start-Service ADSync
    ```
 
-1. **Revert ServerB to legacy authentication**: In the PowerShell window, run the following commands to assign a service account back to the Microsoft Entra (Azure AD) connector. You're prompted to enter credentials. Provide the username and password of a Global Administrator or Hybrid Identity Administrator in Microsoft Entra ID. The following cmdlet configures the Microsoft Entra (Azure AD) connector to use an account for sync called "Sync_<Servername>_<SyncMachineIdentifier>" (replacing the application identity).
+1. **Revert ServerB to legacy authentication**: In the PowerShell window, run the following commands to assign a service account back to the Microsoft Entra (Azure AD) connector. You're prompted to enter credentials. Provide the username and password of a Global Administrator or Hybrid Identity Administrator in Microsoft Entra ID. The following cmdlet configures the Microsoft Entra (Azure AD) connector to use an account for sync called `Sync_<Servername>_<SyncMachineIdentifier>` (replacing the application identity).
 
    ```powershell
    $cred = Get-Credential
@@ -179,7 +179,7 @@ Give each Microsoft Entra Connect server its own application identity. To do thi
 
 1. **Switch to ServerA**: Repeat steps 11 and 12 on ServerA.
 
-After completing these steps, each Microsoft Entra Connect server is linked to its own application identity in Microsoft Entra ID. They'll no longer conflict with each other. Both servers should be able to run synchronization concurrently without authentication errors. You can verify in the Microsoft Entra admin center under **App registrations** that there are now two distinct app entries (one for each server) with a name **ConnectSyncProvisioning_<Servername>_<SyncMachineIdentifier>**.
+After completing these steps, each Microsoft Entra Connect server is linked to its own application identity in Microsoft Entra ID. They'll no longer conflict with each other. Both servers should be able to run synchronization concurrently without authentication errors. You can verify in the Microsoft Entra admin center under **App registrations** that there are now two distinct app entries (one for each server) with a name `ConnectSyncProvisioning_<Servername>_<SyncMachineIdentifier>`.
 
 By addressing the issues discussed in this guide, restoring missing connectivity parameters after an upgrade, and separating application identities for multiple servers, you can maintain a healthy and more secure Microsoft Entra Connect environment using application-based authentication. 
 
