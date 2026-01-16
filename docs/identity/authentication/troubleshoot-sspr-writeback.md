@@ -141,7 +141,7 @@ Reinstalling Microsoft Entra Connect can resolve configuration and connectivity 
 > [!WARNING]
 > If you customized the out-of-the-box sync rules, *back them up before you proceed with the upgrade, then manually redeploy them after you're finished.*
 
-1. Download the latest version of Microsoft Entra Connect from the [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=615771).
+1. Download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under the **Manage** tab of the **Microsoft Entra Connect | Get started** page.
 1. As you already installed Microsoft Entra Connect, perform an in-place upgrade to update your Microsoft Entra Connect installation to the latest version.
 
     Run the downloaded package and follow the on-screen instructions to update Microsoft Entra Connect.
