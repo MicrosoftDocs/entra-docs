@@ -21,7 +21,7 @@ Application-based authentication (ABA) for Microsoft Entra Connect Sync uses an 
 
 **Multiple servers using the same connector account** – ABA is designed to work with one set of service principal or certificate per server. If two Microsoft Entra Connect Sync servers share the same custom Microsoft Entra (Azure AD) connector account (on-premises service account in Microsoft Entra ID), the automatic ABA setup gives them one shared application registration, causing the servers to use the same Microsoft Entra ID app or service principal. 
 
-When one server updates the certificate for that app, the other server's authentication breaks, leading to sync errors on the second server. This issue can also occur with the default Microsoft Entra (Azure AD) connector account (that is, "Sync_SERVERNAME_############@contoso.onmicrosoft.com") if the server was cloned after installing the Microsoft Entra Connect Sync service.
+When one server updates the certificate for that app, the other server's authentication breaks, leading to sync errors on the second server. This issue can also occur with the default Microsoft Entra (Azure AD) connector account (that is, `Sync_SERVERNAME_############@contoso.onmicrosoft.com`) if the server was cloned after installing the Microsoft Entra Connect Sync service.
 
 ## Microsoft Entra Connector's Connectivity Parameters missing after upgrade
 
@@ -101,7 +101,7 @@ The same issue occurs when a server with Microsoft Entra Connect installed is cl
 > To prevent this issue, ensure that each Microsoft Entra Connect instance uses a unique connector account. If you have multiple sync servers (for example, in staging mode) using the same Microsoft Entra (Azure AD) Connector account, run the application-based authentication configuration on each server separately via the wizard, so that each one gets its own application registration.
 
 > [!WARNING]
-> Don't use a **Global Administrator** account as the Microsoft Entra (Azure AD) Connector account. The Microsoft Entra service account that is configured by default has more restricted permissions for what's needed during synchronization whereas an administrator account has unlimited privileges in the cloud. If an on-premises Microsoft Entra Connect server configured with a Global Administrator account gets compromised, it puts your entire Microsoft Entra ID tenant at risk.
+> Don't use a **Global Administrator** account as the Microsoft Entra (Azure AD) Connector account. The Microsoft Entra service account that is configured by default has more restricted permissions for what's needed during synchronization whereas an administrator account has unlimited privileges in the cloud. If an on-premises Microsoft Entra Connect server configured with a Global Administrator account gets compromised, it puts your entire Microsoft Entra tenant at risk.
 
 ### Resolution
 
