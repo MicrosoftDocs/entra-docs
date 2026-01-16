@@ -19,8 +19,17 @@ ai-usage: ai-assisted
 
 When a new service principal appears in your tenant, you might want to understand why it was created and who or what initiated the process. The [new audit log properties](understand-service-principal-creation-with-new-audit-log-properties.md) `ServicePrincipalProvisioningType`, `SubscribedSkus`, and `AppOwnerOrganizationId` help you quickly determine whether the service principal was provisioned by Microsoft, created by a user, or added by an external application. The following steps show you how to access these properties in the Microsoft Entra admin center to use them in your investigations.
 
-## View service principal details
-To view these fields in the Microsoft Entra admin center:
+## Prerequisites
+
+To view and use these properties in Microsoft Entra audit logs, you need:
+
+- Access to the Microsoft Entra admin center.
+- One of the following roles (or a role with equivalent permissions): [Security Administrator](/entra/docs/identity/role-based-access-control/permissions-reference.md#security-administrator), [Security Reader](/entra/docs/identity/role-based-access-control/permissions-reference.md#security-reader), or [Reports Reader]((/entra/docs/identity/role-based-access-control/permissions-reference.md#reports-reader)).
+- Audit logging enabled for your tenant. For more information, see the Microsoft Entra audit logs overview.
+
+## View audit log properties to understand service principal details
+
+To view audit log properties in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 1. Browse to **Monitoring & health** > **Audit logs**.
