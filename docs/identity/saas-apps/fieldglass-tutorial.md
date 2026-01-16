@@ -27,7 +27,7 @@ In this article,  you learn how to integrate SAP Fieldglass with Microsoft Entra
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* Your SAP Fieldglass is ready to implement single sign-on (SSO). For more information, see [SAP Fieldglass Single-Sign on (SSO) Configuration Guide](https://help.sap.com/doc/eb7e719be14d4e3c9a4802a73f9b2f52/cloud/en-US/SAPFieldglassSSOConfigurationGuide.pdf).
+* Your Fieldglass implementation is ready to be configured for single sign-on (SSO). For more information, see [SAP Fieldglass Single-Sign on (SSO) Configuration Guide](https://help.sap.com/doc/eb7e719be14d4e3c9a4802a73f9b2f52/cloud/en-US/SAPFieldglassSSOConfigurationGuide.pdf).
 
 ## Scenario description
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Fieldglass, perform the following
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Fieldglass SSO](#configure-fieldglass-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Fieldglass test user](#create-fieldglass-test-user)** - to have a counterpart of B.Simon in Fieldglass that's linked to the Microsoft Entra representation of user.
+    1. **[Create Fieldglass test user](#create-fieldglass-test-user)** - to have a counterpart of B.Simon in Fieldglass that's linked to the Microsoft Entra representation of that user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -107,7 +107,7 @@ To configure single sign-on on **Fieldglass** side, you need to send the downloa
 
 ### Create Fieldglass test user
 
-In this section, you create a user called Britta Simon in Fieldglass. If necessary, work with your [Fieldglass support team](https://www.fieldglass.com/customer-support) to generate a unique identifier for the user so you can create the user in the Fieldglass platform. Users must be created in SAP Fieldglass before you use single sign-on.
+In this section, you create a user called Britta Simon in Fieldglass. If necessary, work with your [Fieldglass support team](https://www.fieldglass.com/customer-support) to generate a unique identifier for the user so you can create the user in the Fieldglass platform. Users must be created in Fieldglass before you use single sign-on.
 
 > [!NOTE]
 > Fieldglass may require the user identifier sent to Fieldglass in the SAML assertion be different from the typical user account name in Microsoft Entra, in order to ensure uniqueness of user identifiers in Fieldglass.
