@@ -293,7 +293,7 @@ For more information about Microsoft Entra Connect, see these articles:
 
 |Topic |Link|  
 | --- | --- |
-|Download Microsoft Entra Connect | [Download Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771)|
+|Download Microsoft Entra Connect | [Download Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted)|
 |Install by using express settings | [Express installation of Microsoft Entra Connect](how-to-connect-install-express.md)|
 |Install by using customized settings | [Custom installation of Microsoft Entra Connect](./how-to-connect-install-custom.md)|
 |Upgrade from DirSync | [Upgrade from Azure AD Sync tool (DirSync)](how-to-dirsync-upgrade-get-started.md)|
