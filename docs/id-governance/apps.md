@@ -78,7 +78,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Alchemer](../identity/saas-apps/alchemer-tutorial.md) |  | ● |
 | [AlertMedia](../identity/saas-apps/alertmedia-provisioning-tutorial.md) | ● | ● |
 | [AlexisHR](../identity/saas-apps/alexishr-provisioning-tutorial.md) | ● | ● |
-| [Alinto Protect (renamed Cleanmail)](../identity/saas-apps/alinto-protect-provisioning-tutorial.md) | ● | |
 | [Allbound SSO](../identity/saas-apps/allbound-sso-tutorial.md) |  | ● |
 | [Allocadia](../identity/saas-apps/allocadia-tutorial.md) |  | ● |
 | [Ally.io](../identity/saas-apps/ally-tutorial.md) |  | ● |
@@ -205,6 +204,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [ClarivateWOS](../identity/saas-apps/clarivatewos-tutorial.md) |  | ● |
 | [Clarizen One](../identity/saas-apps/clarizen-one-provisioning-tutorial.md) | ● | ● |
 | [Claromentis](../identity/saas-apps/claromentis-tutorial.md) |  | ● |
+| [Cleanmail](../identity/saas-apps/alinto-protect-provisioning-tutorial.md) | ● | |
 | [Cleanmail Swiss](../identity/saas-apps/cleanmail-swiss-provisioning-tutorial.md) | ● |  |
 | [Clebex](../identity/saas-apps/clebex-provisioning-tutorial.md) | ● | ● |
 | [Cloud Service PICCO](../identity/saas-apps/cloud-service-picco-tutorial.md) |  | ● |
