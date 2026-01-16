@@ -24,7 +24,7 @@ When a new service principal appears in your tenant, you might want to understan
 To view and use these properties in Microsoft Entra audit logs, you need:
 
 - Access to the Microsoft Entra admin center.
-- One of the following roles (or a role with equivalent permissions): [Security Administrator](/entra/docs/identity/role-based-access-control/permissions-reference.md#security-administrator), [Security Reader](/entra/docs/identity/role-based-access-control/permissions-reference.md#security-reader), or [Reports Reader]((/entra/docs/identity/role-based-access-control/permissions-reference.md#reports-reader)).
+- One of the following roles (or a role with equivalent permissions): [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator), [Security Reader](../role-based-access-control/permissions-reference.md#security-reader), or [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 - Audit logging enabled for your tenant. For more information, see the [Microsoft Entra audit logs overview](concept-audit-logs.md).
 
 ## View audit log properties to understand service principal details
