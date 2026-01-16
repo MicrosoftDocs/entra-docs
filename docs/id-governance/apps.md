@@ -16,6 +16,8 @@ ms.reviewer: amycolannino
 
 ## Featured integrations
 
+Some of the popular integrations include the applications in the following table. For more integrations, see [Microsoft Entra ID Governance](#microsoft-entra-id-governance-integrations).
+
 | Category | Application |
 | :--- | :--- |
 | HR | [SuccessFactors - User Provisioning](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
@@ -26,7 +28,7 @@ ms.reviewer: amycolannino
 | Cloud platform| [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
 | Cloud platform| [Google Cloud Platform - User Provisioning](../identity/saas-apps/g-suite-provisioning-tutorial.md) |
 | Business applications| Multiple. With Microsoft Entra integrations to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance. |
-| Business applications|SAP applications integrated with [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
+| Business applications|SAP applications integrated with [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md), including SAP Ariba Applications, SAP Concur, SAP S/4HANA Cloud, SAP S/4HANA On-Premise, among others |
 | Business applications|Applications on SAP BTP [using role collections](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276) |
 | CRM| [Salesforce - User Provisioning](../identity/saas-apps/salesforce-provisioning-tutorial.md) |
 | ITSM| [ServiceNow](../identity/saas-apps/servicenow-provisioning-tutorial.md)|
@@ -34,10 +36,11 @@ ms.reviewer: amycolannino
 
 <a name='entra-identity-governance-integrations'></a>
 
-## Microsoft Entra ID Governance integrations
-The following list provides key integrations between Microsoft Entra ID Governance and various applications, including both provisioning and SSO integrations. For a full list of applications that Microsoft Entra ID integrates with specifically for SSO, see: [SaaS App configuration guides for Microsoft Entra ID](../identity/saas-apps/tutorial-list.md). 
+## Microsoft Entra ID Governance application integrations
 
-Microsoft Entra ID Governance can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an SaaS application that isn't listed, then [ask the SaaS vendor to onboard](../identity/enterprise-apps/v2-howto-app-gallery-listing.md). For integration with other applications, see [integrating applications with Microsoft Entra ID](identity-governance-applications-integrate.md).
+The following list provides key integrations between Microsoft Entra ID Governance and various applications, including both automated provisioning and SSO just-in-time provisioning integrations. For a full list of applications that Microsoft Entra ID integrates with specifically for SSO, see: [SaaS App configuration guides for Microsoft Entra ID](../identity/saas-apps/tutorial-list.md).
+
+Microsoft Entra ID Governance can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an application that isn't listed, and it's a SaaS, then [ask the SaaS vendor to onboard](../identity/enterprise-apps/v2-howto-app-gallery-listing.md). For integration with other applications, see [integrating applications with Microsoft Entra ID](identity-governance-applications-integrate.md).
 
 | Application | Automated provisioning | Single Sign On (SSO)|
 | :--- | :-:  | :-: |
