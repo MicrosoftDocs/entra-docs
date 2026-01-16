@@ -109,8 +109,8 @@ To configure single sign-on on **Fieldglass** side, you need to send the downloa
 
 In this section, you create a user called Britta Simon in Fieldglass. If necessary, work with your [Fieldglass support team](https://www.fieldglass.com/customer-support) to generate a unique identifier for the user so you can create the user in the Fieldglass platform. Users must be created in SAP Fieldglass before you use single sign-on.
 
-	> [!NOTE]
-	> Fieldglass may require the user identifier sent to Fieldglass in the SAML assertion be different from the typical user account name in Microsoft Entra, in order to ensure uniqueness of user identifiers in Fieldglass.
+> [!NOTE]
+> Fieldglass may require the user identifier sent to Fieldglass in the SAML assertion be different from the typical user account name in Microsoft Entra, in order to ensure uniqueness of user identifiers in Fieldglass.
 
 ## Test SSO
 
