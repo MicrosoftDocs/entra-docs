@@ -23,7 +23,7 @@ Some of the popular integrations include the applications in the following table
 | HR | [SuccessFactors - User Provisioning](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
 | HR | [Workday - User Provisioning](../identity/saas-apps/workday-inbound-cloud-only-tutorial.md)|
 | HR | [API-driven connector from any HR source](../identity/app-provisioning/inbound-provisioning-api-concepts.md)<br>[Rippling HCM integration with Microsoft Entra ID/Active Directory](../identity/saas-apps/rippling-hcm-microsoft-entra-id-integration-tutorial.md)<br>[Oracle HCM API-driven connector](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)<br>[Darwinbox to Microsoft Entra ID](../identity/saas-apps/darwinbox-entra-integration-tutorial.md)<br>[SAP HCM to Microsoft Entra ID](../identity/saas-apps/sap-hcm-microsoft-entra-identity-provisioning.md) |
-| HR | Student information systems via [School Data Sync](/schooldatasync/school-data-sync-overview) }
+| HR | Student information systems via [School Data Sync](/schooldatasync/school-data-sync-overview) |
 |[LDAP directory](../identity/app-provisioning/on-premises-ldap-connector-configure.md)| OpenLDAP<br>Microsoft Active Directory Lightweight Directory Services<br>389 Directory Server<br>Apache Directory Server<br>IBM Tivoli DS<br>Isode Directory<br>NetIQ eDirectory<br>Novell eDirectory<br>Open DJ<br>Open DS<br>Oracle (previously Sun ONE) Directory Server Enterprise Edition<br>RadiantOne Virtual Directory Server (VDS) |
 | [SQL database](../identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x|
 | Cloud platform| [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
@@ -306,7 +306,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Federated Directory](../identity/saas-apps/federated-directory-provisioning-tutorial.md) | ● |  |
 | [Fexa](../identity/saas-apps/fexa-tutorial.md) |  | ● |
 | [Fidelity NetBenefits](../identity/saas-apps/fidelitynetbenefits-tutorial.md) |  | ● |
-| [Fieldglass](../identity/saas-apps/fieldglass-tutorial.md) |  | ● |
 | [Figma](../identity/saas-apps/figma-provisioning-tutorial.md) | ● | ● |
 | [FileCloud](../identity/saas-apps/filecloud-tutorial.md) |  | ● |
 | [FileOrbis](../identity/saas-apps/fileorbis-tutorial.md) |  | ● |
