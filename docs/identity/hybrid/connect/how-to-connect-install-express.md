@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 
 If you have a single-forest topology and use [password hash sync](how-to-connect-password-hash-synchronization.md) for authentication, express settings are a good option to use when you install Microsoft Entra Connect Sync. Express settings  the default option to install Microsoft Entra Connect Sync, and it's used for the most commonly deployed scenario. It's only a few short steps to extend your on-premises directory to the cloud.
 
-Before you start installing Microsoft Entra Connect Sync, [download Microsoft Entra Connect Sync](https://go.microsoft.com/fwlink/?LinkId=615771), and be sure to complete the prerequisite steps in [Microsoft Entra Connect: Hardware and prerequisites](how-to-connect-install-prerequisites.md).
+Before you start installing Microsoft Entra Connect Sync, [download Microsoft Entra Connect Sync](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), and be sure to complete the prerequisite steps in [Microsoft Entra Connect: Hardware and prerequisites](how-to-connect-install-prerequisites.md).
 
 If the express settings installation doesn't match your topology, see [Related articles](#related-articles) for information about other scenarios.
 
