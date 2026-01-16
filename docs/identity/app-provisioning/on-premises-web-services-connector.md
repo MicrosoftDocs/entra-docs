@@ -14,7 +14,7 @@ ms.reviewer: arvinh
 
 
 # Provisioning with the web services connector
-The following documentation provides information about the generic web services connector. Microsoft Entra ID Governance supports provisioning accounts into various applications such as [SAP ECC](on-premises-sap-connector-configure.md), Oracle eBusiness Suite, and line of business applications that expose REST or SOAP APIs. Customers that have previously deployed MIM to connect to these applications can easily switch to using the lightweight Microsoft Entra provisioning agent, while reusing the same web services connector built for MIM.  
+The following documentation provides information about the generic web services connector. Microsoft Entra ID Governance supports provisioning accounts into various applications such as [SAP ECC](on-premises-sap-connector-configure.md), Oracle E-Business Suite, and line of business applications that expose REST or SOAP APIs. Customers that have previously deployed MIM to connect to these applications can easily switch to using the lightweight Microsoft Entra provisioning agent, while reusing the same web services connector built for MIM.
 
 ## Capabilities supported
 
@@ -101,7 +101,7 @@ Before configuring provisioning, ensure that you:
 
 Before creating the web services connector configuration, you need to create a web services connector template and customize the template to meet the needs of your specific environment. Make sure that the ServiceName, EndpointName, and the OperationName are correct.
 
-You can find example templates and guidance on how to integrate with popular applications such as [SAP ECC 7.0](on-premises-sap-connector-configure.md) and Oracle eBusiness Suite in the [connectors download package](https://www.microsoft.com/download/details.aspx?id=51495).  You can learn how to create a new project for your data source in the Web Service Configuration Tool using the [workflow guide for SOAP](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws-soap).
+You can find example templates and guidance on how to integrate with popular applications such as [SAP ECC 7.0](on-premises-sap-connector-configure.md) and Oracle E-Business Suite in the [connectors download package](https://www.microsoft.com/download/details.aspx?id=51495). You can learn how to create a new project for your data source in the Web Service Configuration Tool using the [workflow guide for SOAP](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws-soap).
 
 For more information on how to configure a template to connect to your own application's REST or SOAP API, see [the Overview of the generic Web Service connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) in the MIM documentation library.
 
