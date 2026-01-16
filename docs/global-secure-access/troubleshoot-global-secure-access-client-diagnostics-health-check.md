@@ -3,7 +3,7 @@ title: "Troubleshoot the Windows Global Secure Access client: Health check"
 description: Troubleshoot the Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 11/17/2025
+ms.date: 01/16/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -163,7 +163,7 @@ If this test fails, enroll in a new certificate by completing the following step
 1. Run the Health check tests again.
 
 ### DNS over HTTPS not supported
-For the Global Secure Access client to acquire network traffic by a fully qualified domain name (FQDN) destination (as opposed to an IP destination), the client needs to read the DNS requests sent by the device to the DNS server. This requirement means that if the forwarding profile contains FQDN rules, you must disable DNS over HTTPS.
+For the Global Secure Access client to acquire network traffic by a fully qualified domain name (FQDN) destination (instead of an IP destination), the client needs to read the DNS requests the device sends to the DNS server. This requirement means that if the forwarding profile contains FQDN rules, you must disable DNS over HTTPS.
 
 #### Secure DNS disabled in OS
 To disable DNS over HTTPS in Windows, see [Secure DNS Client over HTTPS (DoH)](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh.md).
@@ -186,7 +186,7 @@ To disable DNS over HTTPS in Google Chrome:
 1. Select **Customize and control Google Chrome** and then select **Settings**.
 1. Select **Privacy and security**.
 1. Select **Security**.
-1. In the **Advanced** section, set the **Use secure DNS** toggle to off.
+1. In the **Advanced** section, set the **Use secure DNS** toggle to **off**.
 
 ##### Secure DNS disabled in Firefox
 To disable DNS over HTTPS in Mozilla Firefox:
@@ -195,12 +195,12 @@ To disable DNS over HTTPS in Mozilla Firefox:
 1. Select **Privacy & Security**.
 1. In the **DNS over HTTPS** section, select **Off**.
 
-### DNS Responsive
+### DNS responsive
 This test checks whether the DNS server configured in Windows returns a DNS response.
 
 If this test fails:
 1. Pause the Global Secure Access client.
-1. Check if the DNS server configured in Windows is reachable. For example, try resolving "microsoft.com" by using the `nslookup` tool.
+1. Check if the DNS server configured in Windows is reachable. For example, try resolving `microsoft.com` by using the `nslookup` tool.
 1. Verify that no firewalls block traffic to the DNS server.
 1. Configure an alternate DNS server and test again.
 1. Resume the Global Secure Access client.
@@ -222,7 +222,7 @@ If the cached token test fails:
 1. If the sign-in notification doesn't appear, check if it's in the Notification Center and select **Sign in**.
 1. Sign in with a user that is a member of the same Microsoft Entra tenant that the device is joined to.
 1. Verify the network connection.
-1. Hover over the system tray icon and verify that the client **isn't** disabled by your organization.
+1. Hover over the system tray icon and verify that the client *isn't* disabled by your organization.
 1. Restart the client and wait for a few seconds.
 1. Look for errors in the Event Viewer.
 
@@ -333,19 +333,19 @@ Administrators can disable QUIC protocol triggering clients to fall back to HTTP
 ### Disable QUIC in Microsoft Edge
 To disable QUIC in Microsoft Edge:
 1. Open Microsoft Edge.
-1. Paste `edge://flags/#enable-quic` in the Address bar.
+1. Paste `edge://flags/#enable-quic` in the address bar.
 1. Set the **Experimental QUIC protocol** drop-down to **Disabled**.
 
 ### Disable QUIC in Chrome
 To disable QUIC in Google Chrome:
 1. Open Google Chrome.
-1. Paste `chrome://flags/#enable-quic` in the Address bar.
+1. Paste `chrome://flags/#enable-quic` in the address bar.
 1. Set the **Experimental QUIC protocol** drop-down to **Disabled**.
 
 ### Disable QUIC in Mozilla Firefox
 To disable QUIC in Mozilla Firefox:
 1. Open Firefox.
-1. Paste `about:config` in the Address bar.
+1. Paste `about:config` in the address bar.
 1. In the **Search preference name field**, paste `network.http.http3.enable`.
 1. Toggle the **network.http.http3.enable** option to **false**.
 

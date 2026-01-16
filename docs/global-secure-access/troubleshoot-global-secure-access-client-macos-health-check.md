@@ -3,7 +3,7 @@ title: "Troubleshoot the macOS Global Secure Access client: Health check"
 description: Troubleshoot the macOS Global Secure Access client using the Health check tab in the Advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 01/12/2026
+ms.date: 01/16/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -202,7 +202,8 @@ This test validates if magic IP is received for EDS URLs. If the test fails, com
 1. Make sure the DNS server set on the macOS device doesn't support Secure DNS. 
 
 ### Edges are reachable 
-<!--please provide content here to explain this test-->
+This test verifies whether the device is connected to the internet:
+
 ```bash
 nc -vz 9d39e890-4c9e-433b-9b7a-625f7e26d855.m365.client.globalsecureaccess.microsoft.com 443
 ```
