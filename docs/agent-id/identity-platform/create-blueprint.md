@@ -105,7 +105,7 @@ After you create an agent identity blueprint, record its `appId` for upcoming st
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
-To create the service principal, you first need to obtain an access token with the permission `AgentIdentityBlueprint.Create`. Once you have an access token, make the following request:
+To create the service principal, you first need to obtain an access token with the permission `AgentIdentityBlueprintPrincipal.Create`. Once you have an access token, make the following request:
 
 > [!TIP]
 > Always include the OData-Version header when using @odata.type.
