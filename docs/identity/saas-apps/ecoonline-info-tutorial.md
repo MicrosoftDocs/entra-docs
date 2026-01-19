@@ -33,7 +33,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
-* EcoOnline Info Exchange supports **IDP** initiated SSO.
+EcoOnline Info Exchange supports **IDP** initiated SSO.
 
 ## Add EcoOnline Info Exchange from the gallery
 
@@ -72,14 +72,14 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   :::image type="content" source="common/edit-urls.png" alt-text="Screenshot of the Edit Basic SAML Configuration page.":::
 
 1. On the **Set up Single Sign-On with SAML** page, perform the following steps:
 
-    a. In the **Identifier** text box, type a URL using the following pattern:
+   1. In the **Identifier** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.info-exchange.com`
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
+   1. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.info-exchange.com/Auth/`
 
     > [!NOTE]
@@ -87,12 +87,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
-    ![The Certificate download link](common/metadataxml.png)
+    :::image type="content" source="common/metadataxml.png" alt-text="Screenshot of the Certificate download link.":::
 
 1. On the **Set up EcoOnline Info Exchange** section, copy one or more appropriate URLs as per your requirement.
 
-    ![Copy configuration URLs](common/copy-configuration-urls.png)
-
+    :::image type="content" source="common/copy-configuration-urls.png" alt-text="Screenshot of the Copy configuration URLs.":::
 <a name='create-an-azure-ad-test-user'></a>
 
 [!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
