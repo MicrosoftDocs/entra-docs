@@ -24,7 +24,7 @@ This article describes how to download and install the Global Secure Access clie
 ## Prerequisites
 
 - A Microsoft Entra tenant onboarded to Global Secure Access.
-- A device joined to or registered (Preview) in the onboarded tenant:
+- A device joined to or registered (preview) in the onboarded tenant:
     - Registered device support is available with minimum client version `2_26.103`.
     - The device must be Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. To learn more, see [Global Secure Access client overview](concept-clients.md).
     - If the device isn't joined or registered, the Global Secure Access client registers it to the tenant when the user signs in.
