@@ -25,11 +25,12 @@ Microsoft relies on the [FIDO Alliance Metadata Service (MDS)](https://fidoallia
 
 FIDO2 standards (WebAuthN and CTAP) require providers return a valid attestation statement. 
 
-The specific requirements vary based on how an administrator configures the **Passkeys (FIDO2)** Authentication methods policy.
+The specific requirements vary based on how an administrator configures attestation requirements in the **Passkeys (FIDO2)** Authentication methods policy.
 
-| Enforce attestation set to Yes | Enforce attestation set to No |
-|--------------------------------|-------------------------------|
-|It must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.|It must provide one of the following valid attestation statements:<br>- "none"<br>- "tpm"<br>- "packed" (AttCA)<br>- Custom attestation formats <= 32 characters  |
+Attestation | Description
+--------------------|------------
+Enforced | The vendor must provide a valid *packed* attestation statement and a complete certificate that chains back to the attestation roots extracted from the FIDO Alliance MDS, so that Microsoft can validate the key's metadata.
+Not enforced | The vendor must provide one of the following valid attestation statements:<br>- "none"<br>- "tpm"<br>- "packed" (AttCA)<br>- Custom attestation formats <= 32 characters
 
 >[!NOTE]
 >Vendors are responsible to publish all root attestation certificates to the FIDO Alliance MDS; otherwise, attestation verification can fail.
