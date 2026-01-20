@@ -98,7 +98,7 @@ The policy suggestions identified by the agent include:
 
    :::image type="content" source="media/conditional-access-agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the view details button highlighted." lightbox="media/conditional-access-agent-optimization/view-details.png":::
 
-1. Select **Start agent** to begin your first run. Avoid using an account with a role activated through PIM.
+1. Select **Start agent** to begin your first run.
 
    :::image type="content" source="media/conditional-access-agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization start agent page." lightbox="media/conditional-access-agent-optimization/start-agent.png":::
 
