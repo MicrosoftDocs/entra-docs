@@ -73,8 +73,7 @@ How the Global Secure Access client selects a tenant depends on platform and Mic
 
 | Platform/device state | Connection target | All Traffic support | Private Access only support | Notes |
 |---|---|---:|---:|---|
-| Windows | Always connects to the joined tenant. For non-joined tenants, user selects a tenant at first sign-in; remains connected to that tenant | From Entra Joined and Hybrid joined device | From Entra Registered device | For non-joined devices, multiple registrations allowed, no switching between registered tenants for now.
-Allows user to switch to a resource tenant using B2B collaboration. |
+| Windows | Always connects to the joined tenant. For non-joined tenants, user selects a tenant at first sign-in; remains connected to that tenant | From Entra Joined and Hybrid joined device | From Entra Registered device | For non-joined devices, multiple registrations allowed, no switching between registered tenants for now. Allows user to switch to a resource tenant using B2B collaboration. |
 | macOS | User selects a tenant at first sign-in; remains connected to that tenant | Entra Registered with and without device enrolment | ❌ | Applies to enrolled and unmanaged devices with Company Portal. |
 | Android | User selects a tenant at first sign-in; remains connected to that tenant | Entra Registered with and without device enrolment | ❌ | Applies to enrolled devices with Company Portal and unmanaged devices with Company portal and Authenticator app. |
 | iOS/iPadOS | User selects a tenant at first sign-in; remains connected to that tenant | Entra Registered with and without device enrolment | ❌ | Applies to enrolled devices with Company Portal and unmanaged devices with Authenticator app. |
