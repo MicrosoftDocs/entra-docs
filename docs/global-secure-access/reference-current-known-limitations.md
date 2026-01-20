@@ -6,7 +6,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: dougeby
-ms.date: 01/09/2026
+ms.date: 01/20/2026
 ms.service: global-secure-access
 ms.custom: agent-id-ignite
 
@@ -25,11 +25,6 @@ The Global Secure Access client is available on multiple platforms. Select each 
 
 ### [Windows client](#tab/windows-client)
 Known limitations for the Global Secure Access client for Windows include:
-
-#### Tenant switching support
-If a device is joined to a tenant, the Global Secure Access client always connects to that joined tenant, even if the device is also registered with or joined to other tenants. The client can't switch between tenants.
-
-If a device isn't joined to any tenant, the client connects to the tenant the device is registered with at first sign-in and stays connected to that tenant.
 
 #### Secure Domain Name System (DNS)
 The Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS. To disable DNS in the browser, see [Secure DNS disabled in browsers](troubleshoot-global-secure-access-client-diagnostics-health-check.md#secure-dns-disabled-in-browsers-microsoft-edge-chrome-firefox). 
