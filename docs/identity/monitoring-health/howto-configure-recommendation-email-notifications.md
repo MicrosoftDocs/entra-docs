@@ -45,6 +45,6 @@ Tenants are opted in to receive Microsoft Entra recommendation emails by default
 
 1. In the **Recommendation email settings** panel that opens, uncheck the **Send email notifications for new recommendations** box and select the **Submit** button.
 
-   :::image type="content" source="media/howto-configure-recommendation-email-notifications/recommendation-email-settings-checkbox.png" alt-text="Screenshot of the email notficiations checkbox." lightbox="media/howto-configure-recommendation-email-notifications/recommendation-email-settings-checkbox.png":::
+   :::image type="content" source="media/howto-configure-recommendation-email-notifications/recommendation-email-settings-checkbox.png" alt-text="Screenshot of the email notifications checkbox." lightbox="media/howto-configure-recommendation-email-notifications/recommendation-email-settings-checkbox.png":::
 
 All email notifications for all Microsoft Entra recommendations are now blocked for the entire tenant and are no longer sent to the tenant's administrative roles.
