@@ -26,6 +26,11 @@ User | Can restore any deleted Microsoft 365 group that they own
 >[!NOTE]
 > Soft delete is available for Microsoft 365 groups with assigned membership, Microsoft 365 groups with dynamic membership, and cloud security groups.
 
+> [!IMPORTANT]
+> Soft delete for security groups isn't supported in the following scenarios:
+> - EDU tenants using OneDrive for Business (OBD) storage
+> - Audience targeting with classic web parts (all tenancies)
+
 ## View and manage the deleted Microsoft 365 groups and cloud security groups that are available to restore
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
