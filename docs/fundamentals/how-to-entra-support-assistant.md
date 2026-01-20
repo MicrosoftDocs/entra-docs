@@ -26,22 +26,9 @@ If issues remain unresolved, you can seamlessly escalate them to Microsoft suppo
 
 ## Prerequisites
 
-The following roles can create and manage support tickets and have access to use the Support Assistant:
+The Support Assistant is available to users with permissions to create and manage support tickets, such as [Helpdesk Administrator](../identity/role-based-access-control/permissions-reference.md#helpdesk-administrator) and [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader).
 
-- [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)
-- [Billing Administrator](../identity/role-based-access-control/permissions-reference.md#billing-administrator)
-- [Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
-- [Cloud Device Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-device-administrator)
-- [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
-- [Customer Lockbox Access Approver](../identity/role-based-access-control/permissions-reference.md#customer-lockbox-access-approver)
-- [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader)
-- [Groups Administrator](../identity/role-based-access-control/permissions-reference.md#groups-administrator)
-- [Helpdesk Administrator](../identity/role-based-access-control/permissions-reference.md#helpdesk-administrator)
-- [License Administrator](../identity/role-based-access-control/permissions-reference.md#license-administrator)
-- [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator)
-- [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)
-- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)
-- [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator)
+For a full list of roles, see [Lease privileged role by task](../identity/role-based-access-control/delegate-by-task.md).
 
 ## How to work with the Microsoft Entra Support Assistant
 
@@ -49,19 +36,19 @@ The following roles can create and manage support tickets and have access to use
 1. Go to **Diagnose and solve problems**.
 1. Select **Support Assistant**.
 
-    :::image type="content" source="media/how-to-entra-support-assistant/support-assistant-button.png" alt-text="Screenshot of the Microsoft Entra Support Assistant interface." lightboc="media/how-to-entra-support-assistant/support-assistant-button.png":::
+    :::image type="content" source="media/how-to-entra-support-assistant/support-assistant-button.png" alt-text="Screenshot of the Microsoft Entra Support Assistant interface." lightbox="media/how-to-entra-support-assistant/support-assistant-button.png":::
 
 1. Either select one of the prebuilt prompts or enter a natural language question in the text box.
 
 1. Some responses provide the option to answer more questions or select a specific event to troubleshoot. Select an option to troubleshoot further.
 
-    :::image type="content" source="media/how-to-entra-support-assistant/support-assistant-event-options.png" alt-text="Screenshot of the Microsoft Entra Support Assistant with event option buttons highlighted." lightboc="media/how-to-entra-support-assistant/support-assistant-event-options.png":::
+    :::image type="content" source="media/how-to-entra-support-assistant/support-assistant-event-options.png" alt-text="Screenshot of the Microsoft Entra Support Assistant with event option buttons highlighted." lightbox="media/how-to-entra-support-assistant/support-assistant-event-options.png":::
 
 1. As you continue to provide further clarification or select specific events to troubleshoot, the Support Assistant uses Microsoft public documentation to provide context, explanations, and guidance. Select the appropriate option or enter more natural language prompts to continue.
 
-1. If the options provided don't match your scenario or don't resolve the issue, the Support Assistant provides an option at the top of the window to create a support request.
+1. After your initial question, you can ask follow-up questions to refine the troubleshooting process. On the third response (after two follow-up questions), the option to create a support request appears at the top of the window.
 
-    :::image type="content" source="media/how-to-entra-support-assistant/support-assistant-support-request.png" alt-text="Screenshot of the Microsoft Entra Support Assistant with event option buttons highlighted." lightboc="media/how-to-entra-support-assistant/support-assistant-request-option.png":::
+    :::image type="content" source="media/how-to-entra-support-assistant/support-assistant-support-request.png" alt-text="Screenshot of the Microsoft Entra Support Assistant with event option buttons highlighted." lightbox="media/how-to-entra-support-assistant/support-assistant-request-option.png":::
 
 ### Special considerations
 
