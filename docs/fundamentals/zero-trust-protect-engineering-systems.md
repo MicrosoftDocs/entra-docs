@@ -56,6 +56,9 @@ These recommendations focus on ensuring least privilege access to your organizat
 ### Enterprise applications must require explicit assignment or scoped provisioning
 [!INCLUDE [21869](../includes/secure-recommendations/21869.md)]
 
+### Enterprise applications have owners
+[!INCLUDE [24518](../includes/secure-recommendations/24518.md)]
+
 ### Limit the maximum number of devices per user to 10
 [!INCLUDE [21837](../includes/secure-recommendations/21837.md)]
 

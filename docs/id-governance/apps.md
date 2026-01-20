@@ -16,17 +16,20 @@ ms.reviewer: amycolannino
 
 ## Featured integrations
 
+Some of the popular integrations include the applications in the following table. For more integrations, see [Microsoft Entra ID Governance](#microsoft-entra-id-governance-integrations).
+
 | Category | Application |
 | :--- | :--- |
 | HR | [SuccessFactors - User Provisioning](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
 | HR | [Workday - User Provisioning](../identity/saas-apps/workday-inbound-cloud-only-tutorial.md)|
 | HR | [API-driven connector from any HR source](../identity/app-provisioning/inbound-provisioning-api-concepts.md)<br>[Rippling HCM integration with Microsoft Entra ID/Active Directory](../identity/saas-apps/rippling-hcm-microsoft-entra-id-integration-tutorial.md)<br>[Oracle HCM API-driven connector](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)<br>[Darwinbox to Microsoft Entra ID](../identity/saas-apps/darwinbox-entra-integration-tutorial.md)<br>[SAP HCM to Microsoft Entra ID](../identity/saas-apps/sap-hcm-microsoft-entra-identity-provisioning.md) |
+| HR | Student information systems via [School Data Sync](/schooldatasync/school-data-sync-overview) |
 |[LDAP directory](../identity/app-provisioning/on-premises-ldap-connector-configure.md)| OpenLDAP<br>Microsoft Active Directory Lightweight Directory Services<br>389 Directory Server<br>Apache Directory Server<br>IBM Tivoli DS<br>Isode Directory<br>NetIQ eDirectory<br>Novell eDirectory<br>Open DJ<br>Open DS<br>Oracle (previously Sun ONE) Directory Server Enterprise Edition<br>RadiantOne Virtual Directory Server (VDS) |
-| [SQL database](../identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x|
+| [SQL database](../identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x<br>MySQL 8.x<br>Postgres|
 | Cloud platform| [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
 | Cloud platform| [Google Cloud Platform - User Provisioning](../identity/saas-apps/g-suite-provisioning-tutorial.md) |
 | Business applications| Multiple. With Microsoft Entra integrations to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance. |
-| Business applications|SAP applications integrated with [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
+| Business applications|SAP applications integrated with [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md), including SAP Ariba Applications, SAP Concur, SAP S/4HANA Cloud, SAP S/4HANA On-Premise, among others |
 | Business applications|Applications on SAP BTP [using role collections](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276) |
 | CRM| [Salesforce - User Provisioning](../identity/saas-apps/salesforce-provisioning-tutorial.md) |
 | ITSM| [ServiceNow](../identity/saas-apps/servicenow-provisioning-tutorial.md)|
@@ -34,10 +37,11 @@ ms.reviewer: amycolannino
 
 <a name='entra-identity-governance-integrations'></a>
 
-## Microsoft Entra ID Governance integrations
-The following list provides key integrations between Microsoft Entra ID Governance and various applications, including both provisioning and SSO integrations. For a full list of applications that Microsoft Entra ID integrates with specifically for SSO, see: [SaaS App configuration guides for Microsoft Entra ID](../identity/saas-apps/tutorial-list.md). 
+## Microsoft Entra ID Governance application integrations
 
-Microsoft Entra ID Governance can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an SaaS application that isn't listed, then [ask the SaaS vendor to onboard](../identity/enterprise-apps/v2-howto-app-gallery-listing.md). For integration with other applications, see [integrating applications with Microsoft Entra ID](identity-governance-applications-integrate.md).
+The following list provides key integrations between Microsoft Entra ID Governance and various applications, including both automated provisioning and SSO just-in-time provisioning integrations. For a full list of applications that Microsoft Entra ID integrates with specifically for SSO, see: [SaaS App configuration guides for Microsoft Entra ID](../identity/saas-apps/tutorial-list.md).
+
+Microsoft Entra ID Governance can be integrated with many other applications, using standards such as OpenID Connect, SAML, SCIM, SQL, and LDAP. If you're using an application that isn't listed, and it's a SaaS, then [ask the SaaS vendor to onboard](../identity/enterprise-apps/v2-howto-app-gallery-listing.md). For integration with other applications, see [integrating applications with Microsoft Entra ID](identity-governance-applications-integrate.md).
 
 | Application | Automated provisioning | Single Sign On (SSO)|
 | :--- | :-:  | :-: |
@@ -57,7 +61,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Acunetix 360](../identity/saas-apps/acunetix-360-provisioning-tutorial.md) | ● | ● |
 | [Adaptive Shield](../identity/saas-apps/adaptive-shield-tutorial.md) |  | ● |
 | [Adobe Captivate Prime](../identity/saas-apps/adobecaptivateprime-tutorial.md) |  | ● |
-| [Adobe Creative Cloud](../identity/saas-apps/adobe-creative-cloud-tutorial.md) |  | ● |
+| [Adobe Creative Cloud](../identity/saas-apps/adobe-identity-management-tutorial.md) |  | ● |
 | [Adobe Experience Manager](../identity/saas-apps/adobeexperiencemanager-tutorial.md) |  | ● |
 | [Adobe Identity Management (OIDC)](../identity/saas-apps/adobe-identity-management-provisioning-oidc-tutorial.md) | ● | ● |
 | [Adobe Identity Management (SAML)](../identity/saas-apps/adobe-identity-management-provisioning-saml-tutorial.md) | ● | ● |
@@ -74,7 +78,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Alchemer](../identity/saas-apps/alchemer-tutorial.md) |  | ● |
 | [AlertMedia](../identity/saas-apps/alertmedia-provisioning-tutorial.md) | ● | ● |
 | [AlexisHR](../identity/saas-apps/alexishr-provisioning-tutorial.md) | ● | ● |
-| [Alinto Protect (renamed Cleanmail)](../identity/saas-apps/alinto-protect-provisioning-tutorial.md) | ● | |
 | [Allbound SSO](../identity/saas-apps/allbound-sso-tutorial.md) |  | ● |
 | [Allocadia](../identity/saas-apps/allocadia-tutorial.md) |  | ● |
 | [Ally.io](../identity/saas-apps/ally-tutorial.md) |  | ● |
@@ -94,8 +97,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [AppDynamics](../identity/saas-apps/appdynamics-tutorial.md) |  | ● |
 | [Appian](../identity/saas-apps/appian-tutorial.md) |  | ● |
 | [Appinux](../identity/saas-apps/appinux-tutorial.md) |  | ● |
-| [Apple Business Manager](../identity/saas-apps/apple-business-manager-provision-tutorial.md) | ● |  |
-| [Apple School Manager](../identity/saas-apps/apple-school-manager-provision-tutorial.md) | ● |  |
 | [Applitools Eyes](../identity/saas-apps/applitools-eyes-tutorial.md) |  | ● |
 | [AppNeta Performance Monitor](../identity/saas-apps/appneta-tutorial.md) |  | ● |
 | [ARC Facilities](../identity/saas-apps/arc-facilities-tutorial.md) |  | ● |
@@ -203,6 +204,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [ClarivateWOS](../identity/saas-apps/clarivatewos-tutorial.md) |  | ● |
 | [Clarizen One](../identity/saas-apps/clarizen-one-provisioning-tutorial.md) | ● | ● |
 | [Claromentis](../identity/saas-apps/claromentis-tutorial.md) |  | ● |
+| [Cleanmail](../identity/saas-apps/alinto-protect-provisioning-tutorial.md) | ● | |
 | [Cleanmail Swiss](../identity/saas-apps/cleanmail-swiss-provisioning-tutorial.md) | ● |  |
 | [Clebex](../identity/saas-apps/clebex-provisioning-tutorial.md) | ● | ● |
 | [Cloud Service PICCO](../identity/saas-apps/cloud-service-picco-tutorial.md) |  | ● |
@@ -228,6 +230,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Contentkalender](../identity/saas-apps/contentkalender-tutorial.md) |  | ● |
 | [Contentsquare SSO](../identity/saas-apps/contentsquare-sso-tutorial.md) |  | ● |
 | [Contentstack](../identity/saas-apps/contentstack-provisioning-tutorial.md) | ●  | ● |
+| [ContractS CLM](../identity/saas-apps/holmes-cloud-provisioning-tutorial.md) | ● |  |
 | [Contrast Security](../identity/saas-apps/contrast-security-tutorial.md) |  | ● |
 | [Convene](../identity/saas-apps/convene-tutorial.md) |  | ● |
 | [Couchbase Capella - SSO](../identity/saas-apps/couchbase-capella-sso-tutorial.md) |  | ● |
@@ -258,6 +261,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Directory Services](../identity/saas-apps/directory-services-tutorial.md) |  | ● |
 | [directprint.io Cloud Print Administration](../identity/saas-apps/directprint-io-cloud-print-administration-tutorial.md) |  | ● |
 | [Directprint.io](../identity/saas-apps/directprint-io-provisioning-tutorial.md) | ● | ● |
+| [Displayr](~/identity/saas-apps/displayr-tutorial.md) |  | ● |
 | [Docker Business](../identity/saas-apps/docker-tutorial.md) |  | ● |
 | [Documo](../identity/saas-apps/documo-provisioning-tutorial.md) | ● | ● |
 | [DocuSign](../identity/saas-apps/docusign-provisioning-tutorial.md) | ● | ● |
@@ -301,8 +305,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [FAX.PLUS](../identity/saas-apps/fax-plus-tutorial.md) |  | ● |
 | [Federated Directory](../identity/saas-apps/federated-directory-provisioning-tutorial.md) | ● |  |
 | [Fexa](../identity/saas-apps/fexa-tutorial.md) |  | ● |
-| [Fidelity NetBenefits](../identity/saas-apps/fidelitynetbenefits-tutorial.md) |  | ● |
-| [Fieldglass](../identity/saas-apps/fieldglass-tutorial.md) |  | ● |
 | [Figma](../identity/saas-apps/figma-provisioning-tutorial.md) | ● | ● |
 | [FileCloud](../identity/saas-apps/filecloud-tutorial.md) |  | ● |
 | [FileOrbis](../identity/saas-apps/fileorbis-tutorial.md) |  | ● |
@@ -319,6 +321,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Forcepoint Cloud Security Gateway - User Authentication](../identity/saas-apps/forcepoint-cloud-security-gateway-provisioning-tutorial.md) | ● | ● |
 | [ForeSee CX Suite](../identity/saas-apps/foreseecxsuite-tutorial.md) |  | ● |
 | [Fortes Change Cloud](../identity/saas-apps/fortes-change-cloud-provisioning-tutorial.md) | ● | ● |
+| [FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md) |  | ● |
 | [FortiSASE](../identity/saas-apps/fortisase-sia-tutorial.md) |  | ● |
 | [Fountain](../identity/saas-apps/fountain-tutorial.md) |  | ● |
 | [FourKites SAML2.0 SSO for Tracking](../identity/saas-apps/fourkites-tutorial.md) |  | ● |
@@ -332,7 +335,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Fullstory SAML](../identity/saas-apps/fullstory-saml-tutorial.md) |  | ● |
 | [Funnel Leasing](../identity/saas-apps/funnel-leasing-provisioning-tutorial.md) | ● | ● |
 | [Fuze](../identity/saas-apps/fuze-provisioning-tutorial.md) | ● | ● |
-| [G Suite](../identity/saas-apps/g-suite-provisioning-tutorial.md) | ● |  |
 | [GaggleAMP](../identity/saas-apps/gaggleamp-tutorial.md) |  | ● |
 | [Genesys Cloud for Azure](../identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
 | [getAbstract](../identity/saas-apps/getabstract-provisioning-tutorial.md) | ● | ● |
@@ -348,6 +350,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [goFLUENT](../identity/saas-apps/gofluent-tutorial.md) |  | ● |
 | [GoLinks](../identity/saas-apps/golinks-provisioning-tutorial.md) | ● | ● |
 | [Gong](../identity/saas-apps/gong-provisioning-tutorial.md) | ● |  |
+| [Google G Suite](../identity/saas-apps/g-suite-provisioning-tutorial.md) | ● | ● |
 | [GoProfiles](../identity/saas-apps/goprofiles-tutorial.md) |  | ● |
 | [GoSearch](../identity/saas-apps/gosearch-tutorial.md) |  | ● |
 | [GoTo](../identity/saas-apps/goto-provisioning-tutorial.md) | ● | ● |
@@ -356,7 +359,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Granite](../identity/saas-apps/granite-tutorial.md) |  | ● |
 | [GreenOrbit](../identity/saas-apps/greenorbit-tutorial.md) |  | ● |
 | [Grok Learning](../identity/saas-apps/grok-learning-tutorial.md) |  | ● |
-| [Group Talk](../identity/saas-apps/grouptalk-provisioning-tutorial.md) | ● |  |
+| [GroupTalk](../identity/saas-apps/grouptalk-provisioning-tutorial.md) | ● |  |
 | [Grovo](../identity/saas-apps/grovo-tutorial.md) |  | ● |
 | [Gtmhub](../identity/saas-apps/gtmhub-provisioning-tutorial.md) | ● |  |
 | [Guru](../identity/saas-apps/guru-tutorial.md) |  | ● |
@@ -374,7 +377,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Hightail](../identity/saas-apps/hightail-tutorial.md) |  | ● |
 | [Hive Learning](../identity/saas-apps/hive-learning-tutorial.md) |  | ● |
 | [Hive](../identity/saas-apps/hive-tutorial.md) |  | ● |
-| [Holmes Cloud](../identity/saas-apps/holmes-cloud-provisioning-tutorial.md) | ● |  |
 | [Hootsuite](../identity/saas-apps/hootsuite-provisioning-tutorial.md) | ● | ● |
 | [Hopsworks.ai](../identity/saas-apps/hopsworks-ai-tutorial.md) |  | ● |
 | [Hornbill](../identity/saas-apps/hornbill-tutorial.md) |  | ● |
@@ -500,12 +502,18 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [MIC SAAS Portal](../identity/saas-apps/mic-saas-portal-tutorial.md) |  | ● |
 | [MicroFocus Novell eDirectory (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Microsoft 365](../fundamentals/concept-group-based-licensing.md) | ● | ● |
+| [Microsoft Active Directory Lightweight Directory Server (ADAM) (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Microsoft Azure SQL (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Microsoft Azure](/azure/role-based-access-control/role-assignments-portal) | ● | ● |
+| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins)| ● | ● |
+| [Microsoft Dynamics 365 Commerce](/dynamics365/commerce/dev-itpro/arch-auth-flow)| | ●  |
+| [Microsoft Dynamics 365 finance and operations](/dynamics365/guidance/implementation-guide/security-strategy-product-oa)| | ●  |
 | [Microsoft Entra Domain Services](../identity/domain-services/synchronization.md) | ● | ● |
-| [Microsoft Lightweight Directory Server (ADAM) (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [Microsoft Intune](/intune/intune-service/fundamentals/role-based-access-control#microsoft-entra-roles-with-intune-access) | ● | ● |
 | [Microsoft SharePoint Server on-premises](../identity/saas-apps/sharepoint-on-premises-tutorial.md) | | ●  |
 | [Microsoft SQL Server (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
+| [Microsoft Viva Engage](/viva/engage/manage-viva-engage-groups/create-a-dynamic-group) | ● | ● |
+| [Microsoft Windows Server Active Directory](../identity/hybrid/cloud-sync/govern-on-premises-groups.md) | ● | ● |
 | [Mindtickle](../identity/saas-apps/mindtickle-provisioning-tutorial.md) | ● | ● |
 | [Miro](../identity/saas-apps/miro-provisioning-tutorial.md) | ● | ● |
 | [Mixpanel](../identity/saas-apps/mixpanel-provisioning-tutorial.md) | ● | ● |
@@ -533,7 +541,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [New Relic by Organization](../identity/saas-apps/new-relic-by-organization-provisioning-tutorial.md) | ● | ● |
 | [Nimblex](../identity/saas-apps/nimblex-tutorial.md) |  | ● |
 | [Nimbus](../identity/saas-apps/nimbus-tutorial.md) |  | ● |
-| [Nintex Promapp](../identity/saas-apps/promapp-tutorial.md) |  | ● |
 | [Nitro Productivity Suite](../identity/saas-apps/nitro-productivity-suite-tutorial.md) |  | ● |
 | [Nomadesk](../identity/saas-apps/nomadesk-tutorial.md) |  | ● |
 | [NordPass](../identity/saas-apps/nordpass-provisioning-tutorial.md) | ● | ● |
@@ -567,7 +574,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Oracle IDCS for JD Edwards](../identity/saas-apps/oracle-idcs-for-jd-edwards-tutorial.md) |  | ● |
 | [Oracle IDCS for PeopleSoft](../identity/saas-apps/oracle-idcs-for-peoplesoft-tutorial.md) |  | ● |
 | [Oracle PeopleSoft ERP](../identity/app-provisioning/on-premises-web-services-connector.md) | ● | ● |
-| [Oracle SunONE Directory Server (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
+| [Oracle SunONE Directory Server Enerprise Edition (LDAP connector)](../identity/app-provisioning/on-premises-ldap-connector-configure.md) | ● |  |
 | [Othership Workplace Scheduler](../identity/saas-apps/othership-workplace-scheduler-tutorial.md) |  | ● |
 | [OutSystems](../identity/saas-apps/outsystems-tutorial.md) |  | ● |
 | [Overdrive](../identity/saas-apps/overdrive-books-tutorial.md) |  | ● |
@@ -599,6 +606,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Podbean](../identity/saas-apps/podbean-tutorial.md) |  | ● |
 | [PolicyStat](../identity/saas-apps/policystat-tutorial.md) |  | ● |
 | [PoliteMail - SSO](../identity/saas-apps/politemail-sso-tutorial.md) |  | ● |
+| [Postgres (SQL connector)](../identity/app-provisioning/tutorial-ecma-sql-connector.md) | ● |  |
 | [Postman](../identity/saas-apps/postman-provisioning-tutorial.md) | ● | ● |
 | [Preciate](../identity/saas-apps/preciate-provisioning-tutorial.md) | ● |  |
 | [PressReader](../identity/saas-apps/pressreader-tutorial.md) |  | ● |
@@ -668,9 +676,9 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [SAML-based apps](../identity/enterprise-apps/add-application-portal-setup-sso.md) | | ●  |
 | [Samsara](../identity/saas-apps/samsara-tutorial.md) |  | ● |
 | [SAP Analytics Cloud](../identity/saas-apps/sap-analytics-cloud-provisioning-tutorial.md) | ● | ● |
-| [SAP Ariba](../identity/saas-apps/ariba-tutorial.md) |  | ● |
+| [SAP Ariba Spend Management solutions](../identity/saas-apps/sap-ariba-spend-management-solutions-provisioning-tutorial.md) | ● | ● |
 | [SAP Business ByDesign](../identity/saas-apps/sapbusinessbydesign-tutorial.md) |  | ● |
-| [SAP Business Technology Platform](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md) |  | ● |
+| [SAP Business Technology Platform (BTP)](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md) |  | ● |
 | [SAP Cloud for Customer](../identity/saas-apps/sap-customer-cloud-tutorial.md) |  | ● |
 | [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) | ● | ● |
 | [SAP Concur](../identity/saas-apps/sap-concur-provisioning-tutorial.md) | ● | ● |
@@ -679,7 +687,8 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [SAP HANA](../identity/saas-apps/sap-hana-provisioning-tutorial.md) | | ● |
 | [SAP Litmos](../identity/saas-apps/litmos-tutorial.md) |  | ● |
 | [SAP NetWeaver](../identity/app-provisioning/on-premises-sap-connector-configure.md) | ● |  ● |
-| [SAP R/3 and ERP](../identity/app-provisioning/on-premises-sap-connector-configure.md) | ● | ●  |
+| [SAP R/3 and ERP Central Component (ECC)](../identity/app-provisioning/on-premises-sap-connector-configure.md) | ● | ●  |
+| [SAP S/4HANA](../identity/saas-apps/sap-s4hana-provisioning-tutorial.md)| ● | ●  |
 | [SAP SuccessFactors to Active Directory](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) | ● | ● |
 | [SAP SuccessFactors to Microsoft Entra ID](../identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) | ● | ● |
 | [SAP SuccessFactors Writeback](../identity/saas-apps/sap-successfactors-writeback-tutorial.md) | ● | ● |
@@ -811,7 +820,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Torii](../identity/saas-apps/torii-provisioning-tutorial.md) | ● | ● |
 | [Tracker Software Technologies](../identity/saas-apps/tracker-software-technologies-tutorial.md) |  | ● |
 | [TrackVia](../identity/saas-apps/trackvia-tutorial.md) |  | ● |
-| [Traction Guest](../identity/saas-apps/traction-guest-tutorial.md) |  | ● |
 | [Training Platform](../identity/saas-apps/training-platform-tutorial.md) |  | ● |
 | [TransPerfect GlobalLink Dashboard](../identity/saas-apps/transperfect-globallink-dashboard-tutorial.md) |  | ● |
 | [Tranxfer](../identity/saas-apps/tranxfer-tutorial.md) |  | ● |
@@ -859,7 +867,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [WEDO](../identity/saas-apps/wedo-provisioning-tutorial.md) | ● | ● |
 | [Weekdone](../identity/saas-apps/weekdone-tutorial.md) |  | ● |
 | [Whimsical](../identity/saas-apps/whimsical-provisioning-tutorial.md) | ● | ● |
-| [Whitesource](../identity/saas-apps/whitesource-tutorial.md) |  | ● |
 | [WiggleDesk](../identity/saas-apps/wiggledesk-provisioning-tutorial.md) | ● | ● |
 | [WireWheel](../identity/saas-apps/wirewheel-tutorial.md) |  | ● |
 | [Wistia](../identity/saas-apps/wistia-tutorial.md) |  | ● |

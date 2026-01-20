@@ -17,7 +17,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 Use *custom settings* in Microsoft Entra Connect when you want more options for the installation. Use these settings, for example, if you have multiple forests or if you want to configure optional features. Use custom settings in all cases where [express installation](how-to-connect-install-express.md) doesn't satisfy your deployment or topology needs.
 
 Prerequisites:
-- [Download Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771).
+- [Download Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
 - Complete the prerequisite steps in [Microsoft Entra Connect: Hardware and prerequisites](how-to-connect-install-prerequisites.md). 
 - Make sure you have the accounts described in [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md).
 

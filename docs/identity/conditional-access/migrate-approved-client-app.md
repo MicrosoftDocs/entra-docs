@@ -5,7 +5,7 @@ description: The approved client app control is going away. Migrate to App prote
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 07/21/2025
+ms.date: 01/12/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,11 +14,11 @@ ms.reviewer: jogro
 ---
 # Migrate approved client app to application protection policy in Conditional Access
 
-In this article, you learn how to migrate from the approved client app Conditional Access grant to the application protection policy grant. App protection policies provide the same data loss and protection as approved client app policies, but with other benefits. For more information about the benefits of using app protection policies, see the article [App protection policies overview](/mem/intune/apps/app-protection-policy). 
+In this article, you learn how to migrate from the "Require approved client app" Conditional Access grant control to the "Require app protection policy" grant control. App protection policies provide the same data loss and protection as approved client app policies, but with other benefits. For more information about the benefits of using app protection policies, see the article [App protection policies overview](/mem/intune/apps/app-protection-policy). 
 
-The approved client app grant is retiring in early March 2026. Organizations must transition all current Conditional Access policies that use **only** the Require Approved Client App grant control to Require Approved Client App **or** Application Protection Policy by March 2026. Additionally, for any new Conditional Access policy, only apply the Require application protection policy grant. 
-
-**After March 2026, Microsoft will stop enforcing require approved client app control, and it will be as if this grant isn't selected. Use the following steps before March 2026 to protect your organization’s data.**
+The "Require approved client app" grant retirement date has been extended from March 2026 to June 30th, 2026. Organizations must transition all current Conditional Access policies that use **only** the "Require approved client app" grant to "Require approved client app" **or** "Require app protection policy" by June 2026. Additionally, for any new Conditional Access policy, **only** apply the "Require app protection policy" grant.
+ 
+**After June 30th 2026, Microsoft will stop enforcing the "Require approved client app" grant control, and it will be as if this grant isn't selected. Use the following steps before June 2026 to protect your organization’s data.**
 
 ## Edit an existing Conditional Access policy
 

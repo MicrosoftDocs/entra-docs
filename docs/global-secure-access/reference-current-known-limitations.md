@@ -266,9 +266,10 @@ Known limitations for Private Access include:
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   
-- An admin can create up to 1,000 policies, up to 1,000 rules based on 8,000 total FQDNs, and up to 256 security profiles.
+- An admin can create up to up to 256 security profiles per tenant, up to 1,000 policies per tenant, and up to 1,000 rules per tenant.
+- An admin can configure 8,000 total destinations (which can be any combination of IP, FQDN, URL, or web category) in each tenant. For example, within a single tenant can create up to two policies targeting 4,000 domains each *or* up to 1,000 policies with eight domains each.
 - Admins can currently configure rules based on up to 1,000 total URLs.
-- TLS inspection supports up to 100 TLS inspection policies, 1000 rules, and 8000 destinations.
+- TLS inspection supports up to 100 TLS inspection policies, 1,000 rules, and 8,000 destinations.
 - The platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
 - The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic and transfers IPv6 traffic directly to the network. To make sure that all traffic routes to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
 - UDP isn't supported on this platform yet.

@@ -3,7 +3,7 @@ title: Investigate risk with Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 10/06/2025
+ms.date: 01/07/2026
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pwongera
@@ -61,10 +61,8 @@ Once the risk is contained, more investigation might be required to mark the ris
 
 1. Investigate using other security tools, where available.
    - If you have [Microsoft Sentinel](/azure/sentinel/overview), check for corresponding alerts that might indicate a larger issue.
-   - If you have [Microsoft Defender XDR](/defender-for-identity/understanding-security-alerts), you can follow a user risk event through other related alerts, incidents, and the **MITRE ATT&CK chain.**
-      - To navigate from the **Risky users report**, select a user > select the ellipsis (...) > select **Investigate with Microsoft 365 Defender**.
-      
-      :::image type="content" source="media/howto-identity-protection-investigate-risk/investigate-with-microsoft-365-defender.png" alt-text="Risky user details pane with the ellipsis and investigate in Microsoft Defender XDR option highlighted." lightbox="media/howto-identity-protection-investigate-risk/investigate-with-microsoft-365-defender.png":::
+   - If you have [Microsoft Defender XDR](/defender-for-identity/understanding-security-alerts), you can follow a user risk event through other related alerts and incidents.
+   - The MITRE ATT&CK chain through Microsoft Sentinel in Microsoft Defender XDR might also provide insights. In the [Microsoft Defender portal](https://security.microsoft.com), browse to **Incidents & alerts** > **Alerts** > and set the **Product name** filter to **AAD Identity Protection** to find alerts from Microsoft Entra ID Protection.
  
 1. Contact the user to confirm if they recognize the sign-in; however, keep in mind that email or Teams might be compromised.
    1. Confirm the information you have such as:

@@ -152,10 +152,11 @@ chain       = Get-Content -Path $RootCert -Raw
 # -ExternalCertificateAuthorityCertificateId: The unique ID of the certificate request previously created.
 # -BodyParameter: A hashtable containing the PEM-encoded certificate and chain as required by the API.
 
-try {Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload
--ErrorAction Stop} catch {
-Write-Error "Failed to upload certificate and chain: $($_.Exception.Message)"
-exit 1
+try {
+    Update-MgBetaNetworkAccessTlExternalCertificateAuthorityCertificate -ExternalCertificateAuthorityCertificateId $externalCertificateAuthorityCertificateId -BodyParameter $paramsupload -ErrorAction Stop
+} catch {
+    Write-Error "Failed to upload certificate and chain: $($_.Exception.Message)"
+    exit 1
 }
 
 Write-Host "Certificate is uploaded successfully via Microsoft Graph SDK."
