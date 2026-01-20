@@ -57,7 +57,7 @@ Global Secure Access client supports bring your own device (BYOD) scenarios so u
 
 ### macOS
 
-BYOD support without device enrollment is available through Entra device registration.
+BYOD support without device enrollment is available through Microsoft Entra device registration.
 - Install and register the device using the Company Portal (no device enrollment required).
 - Enable required traffic profiles for these users.
 
