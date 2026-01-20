@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.date: 05/23/2025
+ms.date: 01/20/2026
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 ---
@@ -60,7 +60,9 @@ Search for or select **Diagnose and solve problems** from the navigation menu.
 
 Some of the diagnostic tools require specific roles to use the tool. For example, you need to be at least a **Billing administrator** to use the sign-in diagnostic tool. Contact your local administrator for assistance or to get the necessary permissions.
 
-## Open a support request
+### Use the Support Assistant
+
+### Open a support request
 
 If you're unable to find answers by using the previously mentioned resources, you can open an online support request.
 
@@ -78,7 +80,7 @@ Online support requests can be created from several places in the admin center:
 
     ![Screenshot of the new support request button in the help icon.](media/how-to-get-support/help-icon-support-request.png)
 
-### Tips for creating online support requests
+#### Tips for creating online support requests
 
 - **Open a support request for only a single problem**
     - We try to connect you to the support engineers who are subject matter experts for your problem.
