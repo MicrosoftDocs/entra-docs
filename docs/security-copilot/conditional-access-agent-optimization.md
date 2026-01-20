@@ -98,7 +98,7 @@ The policy suggestions identified by the agent include:
 
    :::image type="content" source="media/conditional-access-agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the view details button highlighted." lightbox="media/conditional-access-agent-optimization/view-details.png":::
 
-1. Select **Start agent** to begin your first run. Avoid using an account with a role activated through PIM.
+1. Select **Start agent** to begin your first run.
 
    :::image type="content" source="media/conditional-access-agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization start agent page." lightbox="media/conditional-access-agent-optimization/start-agent.png":::
 
@@ -140,7 +140,7 @@ Both features provide different insights into your Conditional Access policies. 
 
 ### I activated the agent but see "Fail" in the activity status. What's happening?
 
-It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time.
+It's possible that the agent was enabled before Microsoft Ignite 2025 with an account that required role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. Conditional Access Optimization Agents that were turned on after November 17, 2025 no longer use the identity of the user who activated the agent.
           
 You can resolve this issue by migrating to use [Microsoft Entra Agent ID](../agent-id/identity-professional/microsoft-entra-agent-identities-for-ai-agents.md). Select **Create agent identity** from either the banner message on the agent page or the **Identity and permissions** section of the agent settings.
 
