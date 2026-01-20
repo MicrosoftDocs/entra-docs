@@ -62,6 +62,15 @@ Some of the diagnostic tools require specific roles to use the tool. For example
 
 ### Use the Support Assistant
 
+The Support Assistant is an AI-powered tool that can help you troubleshoot identity and access issues and find solutions before creating a support request. It uses Microsoft documentation from [learn.microsoft.com](https://learn.microsoft.com) and generative AI to analyze your problem and provide relevant guidance.
+
+1. From **Diagnose and solve problems**, select **Support Assistant**.
+1. Describe your issue in the chat interface or select one of the prebuilt options.
+1. Continue with the follow-up questions as needed.
+1. After the third follow-up question, select **Create a support request** if your issue wasn't resolved and you still need support.
+
+For more information, see [How to use the Microsfot Entra Support Assistant](how-to-entra-support-assistant.md).
+
 ### Open a support request
 
 If you're unable to find answers by using the previously mentioned resources, you can open an online support request.
