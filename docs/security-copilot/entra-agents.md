@@ -5,7 +5,7 @@ keywords:
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
-ms.date: 12/01/2025
+ms.date: 01/21/2026
 ms.update-cycle: 180-days
 ms.topic: overview
 ms.service: entra
