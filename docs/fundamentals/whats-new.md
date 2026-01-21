@@ -95,7 +95,7 @@ Additional Guidance: 
 - For legitimate recovery, you can clear and reset OnPremisesObjectIdentifier using the following Microsoft Graph API: 
     
 
-Call: `PATCH https://graph.microsoft.com/beta/users/<UserId>`
+Request: `PATCH https://graph.microsoft.com/beta/users/<UserId>`
 
 Body:
 
