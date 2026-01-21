@@ -107,7 +107,7 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 | Parameter | Description  |
 |-----------|--------------|
-| `code` | The `authorization_code` that the app requested. The app can use the authorization code to request an access token for the target resource. Authorization codes are short lived. Typically, they expire after about 10 minutes. |
+| `code` | The `authorization_code` that the app requested. The app can use the authorization code to request an access token for the target resource. Authorization codes are short lived. Typically, they expire after about 1 minute. |
 | `state` | If a `state` parameter is included in the request, the same value should appear in the response. The app should verify that the state values in the request and response are identical. |
 
 You can also receive an ID token if you request one and have the implicit grant enabled in your application registration. This behavior is sometimes referred to as the [*hybrid flow*](#request-an-id-token-as-well-or-hybrid-flow). It's used by frameworks like ASP.NET.
@@ -188,7 +188,7 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 | Parameter | Description  |
 |-----------|--------------|
-| `code` | The authorization code that the app requested. The app can use the authorization code to request an access token for the target resource. Authorization codes are short lived, typically expiring after about 10 minutes. |
+| `code` | The authorization code that the app requested. The app can use the authorization code to request an access token for the target resource. Authorization codes are short lived, typically expiring after about 1 minute. |
 | `id_token` | An ID token for the user, issued by using the *implicit grant*. Contains a special `c_hash` claim that is the hash of the `code` in the same request. |
 | `state` | If a `state` parameter is included in the request, the same value should appear in the response. The app should verify that the state values in the request and response are identical. |
 
