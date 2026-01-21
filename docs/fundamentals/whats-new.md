@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see: [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
->Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
+> Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
 
 ## January 2026
@@ -95,15 +95,20 @@ Additional Guidance: 
 - For legitimate recovery, you can clear and reset OnPremisesObjectIdentifier using the following Microsoft Graph API: 
     
 
-POST https://graph.microsoft.com/beta/users/<UserId>?$select=onPremisesObjectIdentifier 
+Request: `PATCH https://graph.microsoft.com/beta/users/<UserId>`
 
-{<br>
-onPremisesObjectIdentifier: null <br>
-} 
+Body:
 
-The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). 
 
-Check our [version history page](https://learn.microsoft.com/entra/identity/hybrid/connect/reference-connect-version-history) for more details on available versions.
+```
+{
+onPremisesObjectIdentifier: null
+}
+```
+
+This change will take effect on Microsoft Entra service side so it's independent of your sync client. 
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).  Check our [version history page](/entra/identity/hybrid/connect/reference-connect-version-history) for more details on available versions.
 
 ---
 
