@@ -106,7 +106,7 @@ onPremisesObjectIdentifier: null
 }
 ```
 
-This change will take effect on Microsoft Entra service side so it's independent of you sync client. 
+This change will take effect on Microsoft Entra service side so it's independent of your sync client. 
 
 The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on Microsoft Entra admin center under [Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).  Check our [version history page](/entra/identity/hybrid/connect/reference-connect-version-history) for more details on available versions.
 
