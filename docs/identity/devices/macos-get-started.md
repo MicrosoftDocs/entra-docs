@@ -17,7 +17,7 @@ ms.date: 01/12/2026
 
 
 
-Adding a work or school account to macOS is a straightforward process that enhances your access to organizational resources and services. This article provides an overview and answers to some frequently asked questions (FAQ) about adding a work or school account to your macOS device using applications such as Microsoft Outlook or Microsoft Edge.
+Adding a work or school account to macOS is a straightforward process that enhances your access to organizational resources and services. This article provides an overview and answers to some Frequently Asked Questions (FAQs) about adding a work or school account to your macOS device using applications such as Microsoft Outlook or Microsoft Edge.
 
 ## Overview
 
@@ -29,7 +29,7 @@ When you add a work or school account to your device through an application, you
 
 
 
-## Frequently Asked Questions - FAQS
+## Frequently Asked Questions
 
 ### What is the Microsoft Entra account registration page?
 
@@ -102,3 +102,7 @@ Applications configured to work with [Windows Web Account Manager](../../identit
 All Microsoft Entra customers are prompted to sign in using Web Account Manager if the app and operating system support it.
 
 Learn more about [device management with Microsoft Intune](/intune/intune-service/fundamentals/what-is-device-management).
+
+## See also
+
+- [macOS Platform Single Sign-on overview (preview)](../devices/macos-psso.md)
