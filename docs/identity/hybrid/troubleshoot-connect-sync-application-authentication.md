@@ -98,14 +98,15 @@ By design, only one server can authenticate at a time with one Microsoft Entra I
 The same issue occurs when a server with Microsoft Entra Connect installed is cloned into another production server, which isn't a supported method of deploying this product as these servers with share the same machine identifier. In short, the server's identity conflicts because they get tied to one app registration. The Microsoft Entra Connect wizard by default uses unique accounts per server because it uses the server's name to identify the application registration instead of the Microsoft Entra connector's service account, which avoids this issue.
 
 > [!NOTE]
-> To prevent this issue, ensure that each Microsoft Entra Connect instance uses a unique connector account. If you have multiple sync servers (for example, in staging mode) using the same Microsoft Entra (Azure AD) Connector account, run the application-based authentication configuration on each server separately via the wizard, so that each one gets its own application registration.
+> To prevent this issue, ensure that each Microsoft Entra Connect instance uses a unique connector account and a unique machine identifier. If you have multiple sync servers (for example, in staging mode) using the same Microsoft Entra (Azure AD) Connector account, follow the documented resolution steps on each server so that each instance gets its own application registration.
 
 > [!WARNING]
 > Don't use a **Global Administrator** account as the Microsoft Entra (Azure AD) Connector account. The Microsoft Entra service account that is configured by default has more restricted permissions for what's needed during synchronization whereas an administrator account has unlimited privileges in the cloud. If an on-premises Microsoft Entra Connect server configured with a Global Administrator account gets compromised, it puts your entire Microsoft Entra tenant at risk.
 
 ### Resolution
 
-Give each Microsoft Entra Connect server its own application identity. To do this, you need to reconfigure each server separately: revert each server to legacy auth and then run the ABA configuration for each so that it creates its own app registration. Let's say in this scenario you have two servers configured with ABA with ServerA running correctly and Server B in a broken state. Perform the following steps on both servers (one at a time).
+Give each Microsoft Entra Connect server its own application identity. To do this, you must reconfigure each server separately by reverting it to legacy authentication and then running the ABA configuration so that each server creates its own app registration.
+In this scenario, there are two servers configured with ABA: ServerA is running correctly, and ServerB is in a broken state. Perform the following steps on each server, starting with the working server and then moving to the server in the broken state.
 
 1. **On ServerA, temporarily pause the sync scheduler**: Open PowerShell as an administrator on the Microsoft Entra Connect server and run:
 
