@@ -40,7 +40,7 @@ For example: "Migrate data from regular tables to ledger tables" or "Create a ne
 
 Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, Teams, and [Microsoft Entra Roles](entitlement-management-roles.md). To manage access to Azure resources, the ability to assign access to Azure RBAC roles directly to Access packages and Catalogs have been introduced.
 
-By assigning Azure RBAC roles to employees, and guests, using Entitlement Management, you can look at an identity's entitlements to quickly determine which azure roles are assigned to that identity. When you include an Azure RBAC role  as a resource in an access package or catalog, you can also specify whether that role assignment is “*eligible*” or “*active*”. 
+By assigning Azure RBAC roles to employees, and guests, using Entitlement Management, you can look at an identity's entitlements to quickly determine which azure roles are assigned to that identity. When you include an Azure RBAC role  as a resource in an access package, you can also specify whether that role assignment is “*eligible*” or “*active*”.
 
 
 
@@ -68,21 +68,26 @@ For portal-based procedures, minimize bullets and numbering.
 
 -->
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+## Add an Azure RBAC role to a Catalog
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+To assign an azure RBAC role to a catalog within entitlement management, you'd do the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) or [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) with Catalog Owner permissions.
+
+1. Browse to **ID Governance** > **Catalogs**.
+
+1. On the Catalogs page, open the catalog you want to add the Azure resource role to and select **Add Resources**.
+
+1. On the add resources page, select **Azure Resources (Preview)**.
+
+1. On the Azure resources page, select the Azure RBAC role you want to add to the catalog.
+
+1. After you have chosen all of the Azure RBAC roles you want to add to the catalog, select **Add** to add them to the catalog.
+
+
+## Add an Azure RBAC role to a Catalog
+
+
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
