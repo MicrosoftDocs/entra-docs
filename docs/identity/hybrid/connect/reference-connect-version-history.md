@@ -101,7 +101,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Added features
 
-Entra Connect Sync now automatically refreshes the list of cloud-managed Exchange attributes in Last Exchange Server (LES) during synchronization. Previously, this list was only retrieved during installation. This improvement ensures more accurate attribute filtering and more reliable synchronization for LES deployments, with no action required from customers.
+Entra Connect Sync now automatically refreshes the list of Exchange attributes for cloud-based management of Exchange attributes for Remote Mailboxes in hybrid environments. Previously, this attribute list was captured only at install time, meaning changes made later in the cloud were not picked up. With this update, synchronization stays current automatically without any admin action.
 
 ### Bug Fixes
 
