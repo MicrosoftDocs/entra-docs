@@ -38,7 +38,7 @@ For more information on TPM technology, see [Trusted Platform Module technology 
 
  :::image type="content" source="media/authenticate-application-id/auth-1.png" alt-text="Diagram that shows authentication with application ID." lightbox="media/authenticate-application-id/auth-1.png":::
 
-We recommend the Microsoft Entra Connect certificate management (default) option because we manage the keys and automatically rotate the certificate on expiry.
+We recommend the Microsoft Entra Connect certificate management (default) option because we manage the keys and automatically rotate the certificate on expiry. By default, Microsoft Entra Connect generates certificates with a 90-day lifetime.
 
 Microsoft Entra Connect Sync uses the scheduler to check if the certificate is due for rotation and then automatically rotate the certificate. If the scheduler is suspended, automatic certificate rotation can't happen even though Microsoft Entra Connect Sync manages the certificate.
 
@@ -606,7 +606,7 @@ As part of the rollback, we're re-creating the DSA account. This new account mig
 
 ## Certificate rotation
 
-Microsoft Entra Connect warns if the certificate rotation is due. That is, if expiration is less than or equal to 150 days. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
+Microsoft Entra Connect warns if the certificate has consumed 70% or more of its lifetime. For a 90-day certificate, this means warnings begin around day 63. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
 
 This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncScheduler` to see if the scheduler is suspended.
 

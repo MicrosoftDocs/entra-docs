@@ -69,7 +69,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
 |[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
 |[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
-|[2.5.190.0](#251900)||
+|[2.5.190.0](#251900)|30 Jan 2026 (12 months after release of 2.6.1.0)|
+|[2.6.1.0](#2610)||
 
 **All other versions are not supported**
 
@@ -91,6 +92,26 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.6.1.0
+
+### Release status
+
+01/30/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting February 9th, 2026, and will be done in multiple phases.
+
+### Enhancements
+
+Entra Connect Sync now automatically refreshes the list of cloud-managed Exchange attributes in Last Exchange Server (LES) during synchronization. Previously, this list was only retrieved during installation. This improvement ensures more accurate attribute filtering and more reliable synchronization for LES deployments, with no action required from customers.
+
+### Bug Fixes
+
+The following fixes were applied for Application-Based Authentication:
+
+- Fixed an issue where using the Synchronization Service Manager UI to modify the Microsoft Entra ID Connector configuration deleted Application-Based Authentication parameters, causing Wizard and certificate rotation failures.
+- Fixed an issue where Staging Mode configuration failed when the Password Writeback Service is disabled or deleted from the Entra ID tenant. The certificate renewal threshold for Application-Based Authentication has been updated to use percentage-based lifetime consumption (70%) instead of a fixed 30-day window. The default certificate lifetime is now 90 days.
+- Enhanced Application-Based Authentication logging in Windows Event logs and trace logs to help diagnose authentication failures.
+- Fixed an accessibility issue in the Connect wizard where help icons were announced incorrectly by screen readers, causing the full multi-line help text to be read as the control name. The help control now exposes the correct name and role, providing a better experience.
+- Fixed a keyboard accessibility issue where a hyperlink inside a help popup was not reachable using keyboard navigation. The link is now accessible using the keyboard alone.
 
 ## 2.5.190.0
 
