@@ -105,14 +105,13 @@ Entra Connect Sync now automatically refreshes the list of cloud-managed Exchang
 
 ### Bug Fixes
 
-The following fixes were applied for Application-Based Authentication:
-
-- Fixed an issue where using the Synchronization Service Manager UI to modify the Microsoft Entra ID Connector configuration deleted Application-Based Authentication parameters, causing Wizard and certificate rotation failures.
-- Fixed an issue where Staging Mode configuration failed when the Password Writeback Service is disabled or deleted from the Entra ID tenant.
-- The certificate renewal threshold for Application-Based Authentication has been updated to use percentage-based lifetime consumption (70%) instead of a fixed 30-day window. The default certificate lifetime is now 90 days.
-- Enhanced Application-Based Authentication logging in Windows Event logs and trace logs to help diagnose authentication failures.
-- Fixed an accessibility issue in the Connect wizard where help icons were announced incorrectly by screen readers, causing the full multi-line help text to be read as the control name. The help control now exposes the correct name and role, providing a better experience.
-- Fixed a keyboard accessibility issue where a hyperlink inside a help popup was not reachable using keyboard navigation. The link is now accessible using the keyboard alone.
+- The following fixes were applied for Application-Based Authentication:
+  - Fixed an issue where using the Synchronization Service Manager UI to modify the Microsoft Entra ID Connector configuration deleted Application-Based Authentication parameters, causing Wizard and certificate rotation failures.
+  - Fixed an issue where Staging Mode configuration failed when the Password Writeback Service is disabled or deleted from the Entra ID tenant.
+  - The certificate renewal threshold for Application-Based Authentication has been updated to use percentage-based lifetime consumption (70%) instead of a fixed 30-day window. The default certificate lifetime is now 90 days.
+  - Enhanced Application-Based Authentication logging in Windows Event logs and trace logs to help diagnose authentication failures.
+  - Fixed an accessibility issue in the Connect wizard where help icons were announced incorrectly by screen readers, causing the full multi-line help text to be read as the control name. The help control now exposes the correct name and role, providing a better experience.
+  - Fixed a keyboard accessibility issue where a hyperlink inside a help popup was not reachable using keyboard navigation. The link is now accessible using the keyboard alone.
 
 ## 2.5.190.0
 
