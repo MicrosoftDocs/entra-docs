@@ -4,9 +4,11 @@ description: Microsoft 365 Support Engineer
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 12/23/2025
+ms.date: 01/21/2026
 ms.custom: include file
 ---
+
+Template ID: 00cf5c54-4693-4f59-a0ac-ab79ef0a974d
 
 Do not use - not intended for general use.
 
