@@ -49,7 +49,7 @@ items:
   items: 
   - name: Global Secure Access clients
     href: concept-clients.md
-  - name: Bring Your Own Device (BYOD)
+  - name: Bring Your Own Device (BYOD) (Preview)
     href: concept-bring-your-own-device.md
   - name: Private network connector
     href: concept-connectors.md
