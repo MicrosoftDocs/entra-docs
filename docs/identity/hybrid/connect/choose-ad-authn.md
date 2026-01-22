@@ -12,6 +12,9 @@ ms.subservice: hybrid-connect
 ---
 # Choose the right authentication method for your Microsoft Entra hybrid identity solution
 
+> [!NOTE]
+> **Scope of this article**: This article describes authentication methods for Microsoft Entra hybrid identity solutions. These authentication methods apply independently of the synchronization technology used (Microsoft Entra Connect Sync or Cloud Sync). The choice of synchronization technology does not determine or change the authentication behavior for user sign-ins.
+
 Choosing the correct authentication method is the first concern for organizations wanting to move their apps to the cloud. Don't take this decision lightly, for the following reasons:
 
 1. It's the first decision for an organization that wants to move to the cloud.
@@ -92,6 +95,8 @@ Details on decision questions:
 
 * **Considerations**. Currently, password hash synchronization doesn't immediately enforce changes in on-premises account states. In this situation, a user has access to cloud apps until the user account state is synchronized to Microsoft Entra ID. Organizations might want to overcome this limitation by running a new synchronization cycle after administrators do bulk updates to on-premises user account states. An example is disabling accounts.
 
+  **Understanding authentication timing**: While "authentication occurs in the cloud" refers to where Microsoft Entra ID validates credentials (comparing the provided password hash against the stored hash), the availability of password changes for sign-in depends on the synchronization timing. When a user changes their password on-premises, the new password hash must be synchronized to Microsoft Entra ID before the user can sign in with it. This synchronization process typically runs every two minutes but may vary based on configuration.
+
 > [!NOTE]
 > The password expired and account locked-out states aren't currently synced to Microsoft Entra ID with Microsoft Entra Connect. When you change a user's password and set the *user must change password at next logon* flag, the password hash will not be synced to Microsoft Entra ID with Microsoft Entra Connect until the user changes their password.
 
@@ -164,7 +169,7 @@ The following diagrams outline the high-level architecture components required f
 
 |Consideration|Password hash synchronization|Pass-through Authentication|Federation with AD FS|
 |:-----|:-----|:-----|:-----|
-|Where does authentication happen?|In the cloud|In the cloud, after a secure password verification exchange with the on-premises authentication agent|On-premises|
+|Where does authentication happen?|In the cloud - password hash is synchronized and Microsoft Entra ID validates credentials|In the cloud, after a secure password verification exchange with the on-premises authentication agent|On-premises|
 |What are the on-premises server requirements beyond the provisioning system: Microsoft Entra Connect?|None|One server for each additional authentication agent|Two or more AD FS servers<br><br>Two or more WAP servers in the perimeter/DMZ network|
 |What are the requirements for on-premises Internet and networking beyond the provisioning system?|None|[Outbound Internet access](how-to-connect-pta-quick-start.md) from the servers running authentication agents|[Inbound Internet access](/windows-server/identity/ad-fs/overview/ad-fs-requirements) to WAP servers in the perimeter<br><br>Inbound network access to AD FS servers from WAP servers in the perimeter<br><br>Network load balancing|
 |Is there a TLS/SSL certificate requirement?|No|No|Yes|
