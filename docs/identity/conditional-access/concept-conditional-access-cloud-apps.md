@@ -142,9 +142,11 @@ Applying a Conditional Access policy to **All resources (formerly 'All cloud app
 
 #### Conditional Access behavior when an all resources policy has an app exclusion
 
-If any app is excluded from the policy, in order to not inadvertently block user access, certain low privilege scopes are excluded from policy enforcement. These scopes allow calls to the underlying Graph APIs, like `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000) and `Microsoft Graph` (00000003-0000-0000-c000-000000000000), to access user profile and group membership information commonly used by applications as part of authentication. For example: when Outlook requests a token for Exchange, it also asks for the `User.Read` scope to be able to display the basic account information of the current user.
+> [!IMPORTANT]
+> The following Conditional Access behavior recently changed. Those low privileged scopes that were previously excluded from policy enforcement are **no longer excluded**. This change means that users who were not previously blocked might now receive Conditional Access challenges.
+If any app is excluded from the policy, in order to not inadvertently block user access, certain low privilege scopes were *previously* excluded from policy enforcement. These scopes allowed calls to the underlying Graph APIs, like `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000) and `Microsoft Graph` (00000003-0000-0000-c000-000000000000), to access user profile and group membership information commonly used by applications as part of authentication. For example: when Outlook requests a token for Exchange, it also asks for the `User.Read` scope to be able to display the basic account information of the current user.
 
-Most apps have a similar dependency, which is why these low privilege scopes are automatically excluded whenever there's an app exclusion in an **All resources** policy. These low privilege scope exclusions don't allow data access beyond basic user profile and group information. The excluded scopes are listed as follows, consent is still required for apps to use these permissions.
+Most apps have a similar dependency, which is why these low privilege scopes were automatically excluded in **All resources** policies. The *previously* excluded scopes are listed as follows, consent is still required for apps to use these permissions.
 
 - Native clients and Single page applications (SPAs) have access to the following low privilege scopes:  
    - Azure AD Graph: `email`, `offline_access`, `openid`, `profile`, `User.Read`
@@ -152,8 +154,39 @@ Most apps have a similar dependency, which is why these low privilege scopes are
 - Confidential clients have access to the following low privilege scopes, if they're excluded from an **All resources** policy:         
    - Azure AD Graph: `email`, `offline_access`, `openid`, `profile`, `User.Read`, `User.Read.All`,`User.ReadBasic.All`
    - Microsoft Graph: `email`, `offline_access`, `openid`, `profile`, `User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`
+- For more information on the scopes mentioned, see [Microsoft Graph permissions reference](/graph/permissions-reference#peopleread) and [Scopes and permissions in the Microsoft identity platform](/entra/identity-platform/scopes-oidc#openid-connect-scopes).
 
-For more information on the scopes mentioned, see [Microsoft Graph permissions reference](/graph/permissions-reference#peopleread) and [Scopes and permissions in the Microsoft identity platform](/entra/identity-platform/scopes-oidc#openid-connect-scopes).
+These scopes are now evaluated as directory access and mapped to Azure AD Graph (resource: Windows Azure Active Directory, ID: 00000002-0000-0000-c000-000000000000) for Conditional Access evaluation purposes. 
+
+Conditional Access policies that target All resources with one or more resource exclusions, or policies that explicitly target Azure AD Graph, are enforced in user sign-in flows where the client application requests only these scopes. There is no change in behavior when an application requests any additional scope beyond those listed above.
+
+> [!NOTE]
+> The [Azure AD Graph retirement](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/important-update-azure-ad-graph-retirement/4364990) does not affect the Azure AD Graph (Windows Azure Active Directory) resource registered in your tenant.
+
+In user sign-in flows where client applications request only the scopes listed above, users might now receive Conditional Access challenges (such as MFA or device compliance). The exact challenge depends on the access controls configured in your policies that target All resources (with or without resource exclusions) or policies that explicitly target Azure AD Graph. 
+
+For example, assume that the tenant has a Conditional Access policy targeting All users and All resources, with resource exclusions for a custom enterprise application and Exchange Online, and MFA configured as the grant control.
+
+
+Example scenario 
+| Example scenario | User impact (before → after) | Conditional Access evaluation change |
+|---|---|---|
+| A user signs into VS Code desktop client, which requests openid and profile scopes. | Before: User not prompted for MFA → After: User will be prompted for MFA | Conditional Access is now evaluated using Azure AD as the enforcement audience. |
+| A user signs in using Azure CLI, which requests only User.Read. | Before: User not prompted for MFA → After: User will be prompted for MFA | Conditional Access is now evaluated using Azure AD as the enforcement audience. |
+| A user signs in through a custom enterprise application (excluded from the policy) that requests only User.Read and People.Read. | Before: User not prompted for MFA → After: User will be prompted for MFA | Conditional Access is now evaluated using Azure AD as the enforcement audience. |
+
+Note: There is no change in behavior when an application request any additional scope beyond those listed above. Below are a few examples that further illustrates this: 
+
+ 
+
+Conditional Access is not enforced because Exchange Online is excluded from the policy.
+ 
+| Example scenario | User impact | Conditional Access evaluation |
+|---|---|---|
+| A user signs in to a custom line-of-business web application (excluded from the policy) that requests offline_access and SharePoint access (Files.Read). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
+| A user signs in to the OneDrive desktop sync client. OneDrive requests offline_access and Exchange Online access (Mail.Read). | No change in behavior | Conditional Access is not enforced because Exchange Online is excluded from the policy. |
+
+
 
 #### Protecting directory information
 
