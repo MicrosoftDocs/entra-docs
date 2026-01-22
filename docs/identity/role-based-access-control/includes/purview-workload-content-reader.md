@@ -4,8 +4,10 @@ description: Purview Workload Content Reader
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 01/20/2026
+ms.date: 01/22/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 
