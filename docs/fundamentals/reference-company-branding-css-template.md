@@ -54,6 +54,7 @@ Use the following CSS selectors to configure the details of the sign-in experien
    :::image type="content" source="media/reference-company-branding-css-template/sign-in-box-title.png" alt-text="Screenshot of the sign-in box, with the portion of the box that is styled with the .ext-sign-in-box selector.":::
 
 - `.ext-subtitle` - Subtitle text
+- `.ext-link` - Internal navigation links
 
 - Styles for primary buttons:
     - `.ext-button.ext-primary` - Primary button default style
