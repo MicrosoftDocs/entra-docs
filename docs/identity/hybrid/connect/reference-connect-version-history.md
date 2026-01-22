@@ -99,7 +99,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 01/30/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting February 9th, 2026, and will be done in multiple phases.
 
-### Enhancements
+### Added features
 
 Entra Connect Sync now automatically refreshes the list of cloud-managed Exchange attributes in Last Exchange Server (LES) during synchronization. Previously, this list was only retrieved during installation. This improvement ensures more accurate attribute filtering and more reliable synchronization for LES deployments, with no action required from customers.
 
