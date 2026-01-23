@@ -176,6 +176,8 @@ In the following example, the tenant has a Conditional Access policy with the fo
 - Resource exclusions for a custom enterprise application and Exchange Online
 - MFA is configured as the grant control
 
+#### Example scenario 1
+
 | Example scenario | User impact (before → after) | Conditional Access evaluation change |
 |---|---|---|
 | A user signs into VSCode desktop client, which requests openid and profile scopes. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Microsoft Entra as the enforcement audience. |
@@ -185,7 +187,9 @@ In the following example, the tenant has a Conditional Access policy with the fo
 There is no change in behavior when an application requests a scope beyond those listed previously.
 
 In the following example, Conditional Access is not enforced because Exchange Online is excluded from the policy.
- 
+
+#### Example scenario 2
+
 | Example scenario | User impact | Conditional Access evaluation |
 |---|---|---|
 | A user signs in to a custom line-of-business web application (excluded from the policy) that requests offline_access and SharePoint access (Files.Read). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
