@@ -138,8 +138,8 @@ _(Example: For US Government Cloud)_
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter an Azure Active Directory Hybrid Identity Administrator username and password.
-   $cloudCred = Get-Credential -Message 'An Active Directory user who is a member of the Hybrid Identity Administrators group for Microsoft Entra ID.'
+   # Enter the username and password of an Entra ID user who is assigned the Hybrid Identity Administrator role.
+   $cloudCred = Get-Credential -Message 'A Microsoft Entra ID user who is assigned the Hybrid Identity Administrator role.'
 
    # Enter a Domain Administrator username and password.
    $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group and an Enterprise Admin for the forest.'
