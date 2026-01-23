@@ -96,6 +96,8 @@ items:
     href: how-to-find-tenant.md
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
+  - name: How to use the Entra Support Assistant (Preview)
+    href: how-to-entra-support-assistant.md
   - name: Quarantine unsanctioned tenants 
     href: quarantine-unsanctioned-tenants.md
   - name: Inaccessible tenant due to inactivity
