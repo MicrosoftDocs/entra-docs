@@ -51,7 +51,7 @@ Once the new properties are available in your tenant, you can use them to stream
 > [!NOTE]
 > The `AppOwnerOrganizationId` property will only show for events where there is a backing application object. The `SubscribedSkus` property will only show for events when `ServicePrincipalProvisioningType` = `Subscription`.
 
-These enhancements are designed to make it easier for you to interpret service principal creation events, quickly understand the meaning of different values, and plug that information into your own alerting and governance workflows. These alerts can categorize service principal creation events as "unexpected" versus "unexpected" based on your tenant security preferences. 
+These enhancements are designed to make it easier for you to interpret service principal creation events, quickly understand the meaning of different values, and plug that information into your own alerting and governance workflows. These alerts can categorize service principal creation events as "expected" versus "unexpected" based on your tenant security preferences. 
 
 ## Related content
 [Microsost Entra audit log categories and activities](reference-audit-activities.md)

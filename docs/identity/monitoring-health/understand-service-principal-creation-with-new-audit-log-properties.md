@@ -103,7 +103,7 @@ For example, if `SubscribedSkus` shows a service plan named `SHAREPOINTENTERPRIS
 You can use this value to distinguish between:
 
 - **Apps registered in your own tenant**—the value matches your tenant ID.
-- **Microsoft-owned apps**—the value matches a Microsoft services tenant ID.
+- **Microsoft-owned apps**—the value matches a Microsoft services tenant ID (f8cdef31-a31e-4b4a-93e4-5f571e91255a).
 - **Other external or partner apps**—the value matches a different external tenant.
 
 This reduces the need to call Microsoft Graph separately to retrieve `appOwnerOrganizationId` for every new service principal creation event.
