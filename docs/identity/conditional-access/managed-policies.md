@@ -42,7 +42,8 @@ Microsoft enables these policies no less than 45 days after they're introduced i
 
 These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies. As administrators get more comfortable with Conditional Access policy, they might choose to duplicate the policy to create custom versions.
 
-As threats evolve, Microsoft might update these policies to use new features, functionality, or improve their effectiveness
+As threats evolve, Microsoft might update these policies to use new features, functionality, or improve their effectiveness. Microsoft‑managed Conditional Access policies automatically adapt to changes within a tenant to maintain consistent security posture without requiring administrator action. As Microsoft identifies new users, groups, or workloads that meet the eligibility criteria for an existing MMP policy, they are automatically included in the policy’s scope. These updates do not modify the policy’s settings, conditions, or grant controls, and any admin‑configured exclusions are always preserved to prevent accidental lockouts. This ensures that coverage stays current as the tenant evolves, while maintaining predictable behavior for administrators. Microsoft communicates these updates through standard notification channels to keep tenants informed.
+
 
 - [Block all high risk agents from accessing all resources](#block-all-high-risk-agents-from-accessing-all-resources-preview) (Preview)
 - [Block legacy authentication](#block-legacy-authentication)
