@@ -4,8 +4,8 @@ description: Discover how the Microsoft Entra Support Assistant uses AI and Micr
 author: shlipsey3
 ms.author: sarahlipsey
 ms.reviewer: tychusnyanga
-ms.date: 01/13/2026
-ms.topic: concept-article
+ms.date: 01/23/2026
+ms.topic: how-to
 ms.service: entra
 # customer intent: As an IT admin, I want to troubleshoot identity and access issues using the Support Assistant so that I can resolve problems quickly.
 
@@ -18,11 +18,11 @@ The Support Assistant analyzes product logs accessed with the Microsoft Graph AP
 
 ## Key features
 
-The Support Assistant provides a conversational chat interface where users in the Microsoft Entra admin center can interact using natural language prompts. The chat experience can be initiated through standard entry points or seamlessly integrated within other workflows.
+The Support Assistant provides a conversational chat interface where users in the Microsoft Entra admin center can interact using natural language prompts. The chat experience can be initiated through the **Diagnose and solve problems** page.
 
 The Support Assistant uses Microsoft Graph data and public documentation from [learn.microsoft.com](https://learn.microsoft.com) as a knowledge base to analyze failures and suggest step-by-step resolutions through guided troubleshooting. As you interact with the Support Assistant, it uses this knowledge base to provide context, explanations, and guidance.
 
-If issues remain unresolved, you can seamlessly escalate them to Microsoft support. The assistant includes a feedback loop that lets you submit ratings and comments to help enhance the quality of responses. An interactive dashboard lets you track key metrics such as engagement, self-help success rates, customer positive feedback rate, and Support Assistant uptime.
+If issues remain unresolved, you can seamlessly escalate them to Microsoft support. The assistant includes a feedback loop that lets you submit ratings and comments to help enhance the quality of responses.
 
 ## Prerequisites
 
@@ -52,11 +52,10 @@ For a full list of roles, see [Lease privileged role by task](../identity/role-b
 
 ### Special considerations
 
-As you use the Microsoft Entra Support Assistant, keep in mind the following:
+As you use the Microsoft Entra Support Assistant, keep in mind the following details:
 
 - The Support Assistant conversation flow is dynamic and flexible, so each experience can vary slightly.
 - Select **New chat** at the top of the window to refresh the conversation.
-- Select **Switch to classic experience** at the top of the window to use the prompts to search for and select the appropriate options to create a support request.
 - At this time, the Support Assistant provides identity-related troubleshooting for the following types of scenarios:
     - Authentication and multifactor authentication failures
     - Device registration and sync issues
@@ -64,6 +63,7 @@ As you use the Microsoft Entra Support Assistant, keep in mind the following:
     - Conditional Access misconfigurations
     - Application SSO errors
 - The Support Assistant can't perform actions in your tenant - it only provides guidance.
+- Select **Switch to classic experience** at the top of the window to switch to the non-AI legacy search experience.
 
 ## Provide feedback
 
