@@ -33,11 +33,11 @@ Target resources (formerly cloud apps, actions, and authentication context) are 
 
 Admins can assign a Conditional Access policy to Microsoft cloud apps if the service principal appears in their tenant, except for Microsoft Graph. Microsoft Graph functions as an umbrella resource. Use [Audience Reporting](troubleshoot-conditional-access.md#audience-reporting) to see the underlying services and target those services in your policies. Some apps like [Microsoft 365](#microsoft-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new Microsoft cloud applications are created, they appear in the app picker list as soon as the service principal is created in the tenant. 
 
-## Microsoft 365
+## Office 365
 
-Microsoft 365 offers cloud-based productivity and collaboration services like Exchange, SharePoint, and Microsoft Teams. Microsoft 365 cloud services are deeply integrated to ensure smooth and collaborative experiences. This integration might cause confusion when creating policies because some apps, like Microsoft Teams, depend on others, like SharePoint or Exchange.
+Microsoft 365 offers cloud-based productivity and collaboration services like Exchange, SharePoint, and Microsoft Teams. In Conditional Access, the Microsoft 365 suite of applications appears under 'Office 365'. Microsoft 365 cloud services are deeply integrated to ensure smooth and collaborative experiences. This integration might cause confusion when creating policies because some apps, like Microsoft Teams, depend on others, like SharePoint or Exchange.
 
-The Microsoft 365 app grouping makes it possible to target these services all at once. We recommend using the Microsoft 365 grouping, instead of targeting individual cloud apps to avoid issues with [service dependencies](service-dependencies.md).
+The Office 365 app grouping in Conditional Access makes it possible to target these services all at once. We recommend using the Microsoft 365 grouping, instead of targeting individual cloud apps to avoid issues with [service dependencies](service-dependencies.md).
 
 Targeting this group of applications helps to avoid issues that might arise because of inconsistent policies and dependencies. For example: The Exchange Online app is tied to traditional Exchange Online data like mail, calendar, and contact information. Related metadata might be exposed through different resources like search. To ensure that all metadata is protected by as intended, admins should assign policies to the Microsoft 365 app.
 
