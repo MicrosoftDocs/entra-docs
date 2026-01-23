@@ -57,7 +57,7 @@ The following animation shows the sign-in experience for brokered flows on Linux
 ![Demo of the Linux sign-in experience](./media/sso-linux/linux-entra-login.gif)
 
 > [!NOTE]
-> microsoft-identity-broker version 2.0.1 and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
+> microsoft-identity-broker version 2.0.1 and earlier versions doesn't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
 
 
 ## Installation
@@ -217,7 +217,7 @@ sudo apt install microsoft-identity-broker
 Smart card authentication extends certificate-based methods by introducing a physical token that stores user certificates. When the card is inserted into a reader, the system retrieves the certificates and performs validation.
 
 Configuring SmartCard support involves setting up the necessary libraries and modules to enable certificate-based authentication using physical tokens. There are various SmartCard solutions available, such as YubiKey, which can be integrated with various Linux distributions. For instructions on the two supported platforms, refer to the distribution documentation:
-- [Ubuntu SmartCard configuration](https://ubuntu.com/server/docs/security-smart-cards)
+- [Ubuntu SmartCard configuration](https://documentation.ubuntu.com/server/how-to/security/smart-card-authentication/)
 - [Red Hat Enterprise Linux SmartCard configuration](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_smart_card_authentication/index)
 - [YubiKey SmartCard configuration](https://developers.yubico.com/pam-u2f/)
 - [OpenSC SmartCard configuration](https://github.com/OpenSC/OpenSC/wiki)
@@ -295,51 +295,20 @@ To manage the Identity Broker service, use the following commands:
 
 To list the package versions currently installed:
 
-
 ### [Ubuntu](#tab/debian-listinstalls)
 
 ```bash
-apt list -a intune-portal microsoft-edge-dev microsoft-identity-broker azure-cli
+apt list -a microsoft-identity-broker
 ```
 
 ### [Red Hat Enterprise Linux](#tab/redhat-listinstalls)
 
 ```bash
-rpm -q microsoft-identity-broker intune-portal microsoft-edge-stable azure-cli
+rpm -q microsoft-identity-broker
 ```
 
 ---
 
-### Configuration Verification
-
-To verify your installation and configuration:
-
-1. Check if the identity broker is running:
-
-```bash
-systemctl --user is-active microsoft-identity-broker.service
-```
-
-2. Test authentication with Azure CLI (requires Azure CLI to be installed)  (note you could use any other brokered application)
-
-```bash
-az login
-```
-
-3. Verify device registration status:
-
-```bash
-/opt/microsoft/identity-broker/bin/identity-broker status
-```
-
-### Debug Mode
-
-To run the identity broker with debug logging:
-
-```bash
-cd /opt/microsoft/identity-broker/bin
-DEBUG=1 ./identity-broker
-```
 
 ## Related Content
 
