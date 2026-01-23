@@ -45,7 +45,7 @@ Admins can exclude the entire Microsoft 365 suite or specific Microsoft 365 clou
 
 A complete list of all services included can be found in the article [Apps included in Conditional Access Microsoft 365 app suite](reference-office-365-application-contents.md).
 
-### Windows Azure Service Management API
+## Windows Azure Service Management API
 
 When you target the Windows Azure Service Management API application, policy is enforced for tokens issued to a set of services closely bound to the portal. This grouping includes the application IDs of:
 
@@ -81,7 +81,7 @@ Because the policy is applied to the Azure management portal and API, any servic
 > [!TIP]
 > For Azure Government, you should target the Azure Government Cloud Management API application.
 
-### Microsoft Admin Portals
+## Microsoft Admin Portals
 
 When a Conditional Access policy targets the Microsoft Admin Portals cloud app, the policy is enforced for tokens issued to application IDs of the following Microsoft administrative portals:
 
