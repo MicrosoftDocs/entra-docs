@@ -313,6 +313,11 @@ When you add resources that grant elevated permissions,such as Microsoft Entra r
     :::image type="content" source="media/entitlement-management-catalog-create/update-privilege-level.png" alt-text="Screenshot of updating privilege level in a catalog.":::
 1. Select **Save**.
 
+## Update privilege level of a catalog programmatically
+
+To update manually update the privilege level of a catalog using Microsoft Graph, you'd update the `PrivilegeLevel` setting. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API.
+
+
 ## Delete a catalog
 
 You can delete a catalog, but only if it doesn't have any access packages.
