@@ -298,9 +298,9 @@ To edit a catalog:
 
 1. Select **Save**.
 
-## Update privilege level of a catalog
+## Update privilege level of a catalog (Preview)
 
-When you add resources that grant elevated permissions—such as Microsoft Entra roles or Application API permissions—the catalog is automatically assigned a **Privileged** level. However, you can also manually update the privilege level of a catalog. To do so, follow these steps:
+When you add resources that grant elevated permissions,such as Microsoft Entra roles or Application API permissions, the catalog is automatically assigned a **Privileged** level. However, you can also manually update the privilege level of a catalog. To do so, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -309,7 +309,9 @@ When you add resources that grant elevated permissions—such as Microsoft Entra
 
 1. On the Catalogs page, open the catalog you want to change the privilege level of.
 
-1. 
+1. On the catalog overview page, under **Privilege level (Preview)**, select which level you want.
+    :::image type="content" source="media/entitlement-management-catalog-create/update-privilege-level.png" alt-text="Screenshot of updating privilege level in a catalog.":::
+1. Select **Save**.
 
 ## Delete a catalog
 
