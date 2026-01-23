@@ -31,7 +31,7 @@ Target resources (formerly cloud apps, actions, and authentication context) are 
 
 ## Microsoft cloud applications
 
-Admins can assign a Conditional Access policy to Microsoft cloud apps if the service principal appears in their tenant, except for Microsoft Graph. Microsoft Graph functions as an umbrella resource. Use [Audience Reporting](troubleshoot-conditional-access.md#audience-reporting) to see the underlying services and target those services in your policies. Some apps like [Microsoft 365](#microsoft-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new Microsoft cloud applications are created, they appear in the app picker list as soon as the service principal is created in the tenant. 
+Admins can assign a Conditional Access policy to Microsoft cloud apps if the service principal appears in their tenant, except for Microsoft Graph. Microsoft Graph functions as an umbrella resource. Use [Audience Reporting](troubleshoot-conditional-access.md#audience-reporting) to see the underlying services and target those services in your policies. Some apps like [Microsoft 365/Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new Microsoft cloud applications are created, they appear in the app picker list as soon as the service principal is created in the tenant. 
 
 ## Office 365
 
@@ -141,7 +141,7 @@ Applying a Conditional Access policy to **All resources (formerly 'All cloud app
 > [!IMPORTANT]
 > Microsoft recommends creating a baseline multifactor authentication policy targeting all users and all resources (without any app exclusions), like the one explained in [Require multifactor authentication for all users](policy-all-users-mfa-strength.md).
 
-### Previous Conditional Access behavior when an ALL resources policy has an app exclusion
+### Legacy Conditional Access behavior when an ALL resources policy has an app exclusion
 
 > [!WARNING]
 > The following Conditional Access behavior is changing. Those low privileged scopes that were previously excluded from policy enforcement will **no longer be excluded**. This change means that users who were not previously blocked might now receive Conditional Access challenges. The change is rolling out in phases starting in January, 2026.
@@ -309,6 +309,7 @@ Microsoft Entra ID sign-in logs can also provide a detailed list of sign-ins for
 1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Set the filter **Application** and enter the application name or application ID as the value.
 
+---
 
 ### Protecting directory information
 
