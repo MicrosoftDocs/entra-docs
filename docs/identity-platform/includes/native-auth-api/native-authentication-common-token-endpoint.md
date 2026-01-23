@@ -136,6 +136,6 @@ Content-Type: application/json
 |    Property     | Description        |
 |----------------------|------------------------|
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
-|`redirect_reason`| A reason for which a redirect is required. For example, Microsoft Entra detects that MFA or a registrationg for a strong authentication method is required, but the app didn't include these capabilities in its request.  |
+|`redirect_reason`| A reason for which a redirect is required. For example, Microsoft Entra detects that MFA or a registration for a strong authentication method is required, but the app didn't include these capabilities in its request.  |
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../reference-v2-libraries.md).
