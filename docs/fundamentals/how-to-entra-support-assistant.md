@@ -48,7 +48,7 @@ For a full list of roles, see [Lease privileged role by task](../identity/role-b
 
 1. After your initial question, you can ask follow-up questions to refine the troubleshooting process. On the third response (after two follow-up questions), the option to create a support request appears at the top of the window.
 
-    :::image type="content" source="media/how-to-entra-support-assistant/support-assistant-support-request.png" alt-text="Screenshot of the Microsoft Entra Support Assistant with the create support requestion option highlighted." lightbox="media/how-to-entra-support-assistant/support-assistant-request-option.png":::
+    :::image type="content" source="media/how-to-entra-support-assistant/support-assistant-support-request.png" alt-text="Screenshot of the Microsoft Entra Support Assistant with the create support requestion option highlighted." lightbox="media/how-to-entra-support-assistant/support-assistant-support-request.png":::
 
 ### Special considerations
 
