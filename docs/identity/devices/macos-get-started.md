@@ -18,7 +18,7 @@ ms.date: 01/22/2026
 Adding a work or school account to macOS is a straightforward process that enhances your access to organizational resources and services. This article provides an overview and answers to some Frequently Asked Questions (FAQs) about adding a work or school account to your macOS device using browsers such as Microsoft Edge.
 
 > [!IMPORTANT]
-> This feature only works with browser-based scenarios. When you use browsers like Microsoft Edge to access organizational resources, you'll be prompted to add your work or school account to your macOS device. This does not apply to standalone desktop applications.
+> This feature only works with browser-based scenarios. When you use browsers like Microsoft Edge to access organizational resources, you are prompted to add your work or school account to your macOS device. This doesn't apply to standalone desktop applications.
 
 ## Overview
 
