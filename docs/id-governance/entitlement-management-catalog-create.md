@@ -51,7 +51,7 @@ Privileged catalogs have stricter controls to protect sensitive resources:
     - You cannot create new auto-assignment policies for privileged catalogs.
     - This prevents automated distribution of privileged roles or permissions.
 
-To manually update the privilege level of a catalog, see : [Update the privilege level of a catalog]()
+To manually update the privilege level of a catalog, see : [Update the privilege level of a catalog (Preview)](#update-privilege-level-of-a-catalog-preview).
 
 ## Create a catalog
 
@@ -118,7 +118,7 @@ To include resources in an access package, the resources must exist in a catalog
 
 * [Catalog access reviews (preview)](catalog-access-reviews.md) also allow [custom data provided resources](custom-data-resource-access-reviews.md) to be included in a catalog.
 
-* When resources added to a catalog grant elevated permissions, such as through Microsoft Entra roles, or Application API permissions, the catalog automatically has a **Privileged** privilege level.
+* When resources added to a catalog grant elevated permissions, the catalog automatically has a **Privileged** [privilege level](#catalog-privilege-levels-preview).
 
 **Prerequisite roles:** See [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
