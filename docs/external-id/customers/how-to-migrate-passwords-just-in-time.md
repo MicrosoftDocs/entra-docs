@@ -58,8 +58,7 @@ The JIT migration process is illustrated in the following diagram:
 
 When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
-- **Consumer user signs in** - User enters credentials from the legacy identity provider. 
-    
+- **Consumer user signs in** - User enters credentials from the legacy identity provider.   
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
     - If the password entered does not match the password on record for the user, External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
     - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
