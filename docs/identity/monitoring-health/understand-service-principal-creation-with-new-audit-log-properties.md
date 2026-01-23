@@ -7,9 +7,9 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 01/16/2026
+ms.date: 01/22/2026
 ms.author: jfields
-ms.reviewer: arielsc
+ms.reviewer: arishorr1
 ai-usage: ai-assisted
 
 #Customer intent: As an IT admin or security analyst, I want to understand the new audit log properties for service principal creation events so that I can quickly identify why a service principal was created, who or what triggered it, and reduce my dependency on additional API calls during investigations.
@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 
 # Understand service principal creation events with new Microsoft Entra audit log properties
 
-Microsoft Entra audit logs capture changes to applications, groups, users, and other directory resources. To help you understand why a Microsoft Entra service principal was created in your tenant and who or what triggered the event, new properties are being added to the Add service principal audit activity. This article explains what is changing, how to find the new data, and how to interpret the different property values.
+Microsoft Entra audit logs capture changes to applications, groups, users, and other directory resources. To help you understand why a Microsoft Entra service principal was created in your tenant and who or what triggered the event, new properties are being added to the **Add service principal** activity under the **ApplicationManagement** category. This article explains what is changing in the audit logs, how to find the new data, and how to interpret the different property values.
 
 ## What you can do with these audit log improvements
 
@@ -30,9 +30,12 @@ Microsoft Entra audit logs capture changes to applications, groups, users, and o
 
 To view and use these properties in Microsoft Entra audit logs, you need:
 
-- Access to the Microsoft Entra admin center.
-- One of the following roles (or a role with equivalent permissions): Global administrator, Security administrator, Security reader, or Reports reader.
-- Audit logging enabled for your tenant. For more information, see the Microsoft Entra audit logs overview.
+- Access to the [Microsoft Entra admin center](https://entra.microsoft.com).
+- One of the following roles (or a role with equivalent permissions): [Security administrator](~/role-based-access-control/permissions-reference.md#security-administrator), [Security reader](~/role-based-access-control/permissions-reference.md#security-reader), or [Reports reader]((~/role-based-access-control/permissions-reference.md#reports-reader)).
+- Audit logging enabled for your tenant. For more information, see the [Microsoft Entra audit logs overview](concept-audit-logs.md).
+
+>[!NOTE]
+> Yuo can also view these new logs with Microsoft Graph API or in the Log Analytics AuditLogs table.
 
 ## Where the new properties appear in audit logs
 
@@ -42,7 +45,7 @@ The new properties are emitted for service principal creation events that appear
 - **Category:** ApplicationManagement
 - **Activity (activityDisplayName):** Add service principal
 
-In the Microsoft Entra admin center, you can find these events under **Monitoring & health** > **Audit logs**. When you select an **Add service principal** event, the new properties appear in the **Additional details** section and in the corresponding JSON if you export or query the logs.
+In the [Microsoft Entra admin center](https://entra.microsoft.com), you can find these events under **Monitoring & health** > **Audit logs**. When you select an **Add service principal** event, the new properties appear in the **Additional details** section and in the corresponding JSON if you export or query the logs.
 
 :::image type="content" source="media/understand-service-principal-creation-with-new-audit-log-properties/audit-logs-categories.png" alt-text="Screenshot of the Microsoft Entra admin center showing the category drop-down to Application Management." lightbox="media/understand-service-principal-creation-with-new-audit-log-properties/audit-logs-categories.png":::
 
@@ -58,12 +61,12 @@ The following new properties help you understand service principal creation even
 
 ### ServicePrincipalProvisioningType
 
-`ServicePrincipalProvisioningType` is an enum value that tells you the provisioning path used for the Add service principal event. In other words, it answers the question, "Why was this service principal created, and which system or actor initiated it?" This field is logged for both Microsoft first-party (MSS) and third-party apps.
+`ServicePrincipalProvisioningType` is an enum value that tells you the provisioning path used for the Add service principal event. In other words, it answers the question, "Why was this service principal created, and which system or actor initiated it?" This field is logged for both Microsoft first-party and third-party apps.
 
 | Value | What it means |
 |-------|---------------|
 | `defaultMicrosoft` | The service principal was created by Microsoft as part of a default eligibility or system-managed process. This includes default just-in-time (JIT) provisioning or other managed provisioning for Microsoft first-party apps. |
-| `subscriptio`n | The service principal was created because your tenant has an eligible subscription (SKU) or included service plan. This is commerce-based JIT provisioning for Microsoft first-party apps. Use the SubscribedSkus field to see which SKUs or service plans made it eligible. |
+| `subscription` | The service principal was created because your tenant has an eligible subscription (SKU) or included service plan. This is commerce-based JIT provisioning for Microsoft first-party apps. Use the **SubscribedSkus** field to see which SKUs or service plans made it eligible. |
 | `managerApplications` | A Microsoft-managed "manager" application, with permission to manage other service principals, created this service principal. The manager app identity is available in existing audit log fields such as initiatedBy.app. |
 | `AzureResourceProvider` | An Azure resource provider created the service principal as part of onboarding an Azure service (for example, Azure Data Explorer). This typically represents infrastructure-driven provisioning. |
 | `ManagedServiceIdentity` | The service principal represents a managed identity (system-assigned or user-assigned). This value appears when a managed identity is created for an Azure resource. |
@@ -72,7 +75,7 @@ The following new properties help you understand service principal creation even
 > [!NOTE]
 > You can use other audit log event properties to differentiate between these flows.
 
-You can use `ServicePrincipalProvisioningType` to separate Microsoft-driven provisioning (for example, `defaultMicrosoft`, `subscription`, `AzureResourceProvider`, `managerApplications`) from tenant-driven provisioning (for example, Other). Separating Microsoft-driven provisioning from tenant-driven provisioning helps you quickly decide whether a new service principal likely resulted from a Microsoft platform process or from admins, users, or custom apps in your tenant.
+You can use `ServicePrincipalProvisioningType` to separate Microsoft-driven provisioning (for example, `defaultMicrosoft`, `subscription`, `AzureResourceProvider`, `managerApplications`) from tenant-driven provisioning (for example, Other). Separating Microsoft-driven provisioning from tenant-driven provisioning helps you quickly decide whether a new service principal resulted from a Microsoft platform process or from admins, users, or custom apps in your tenant. See [View service principal details in audit log properties](howto-view-service-principal-details-in-audit-log-properties.md) for more information on creating detections for new service principals in your tenant.
 
 ### SubscribedSkus
 

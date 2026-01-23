@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/16/2026
+ms.date: 01/22/2026
 ms.author: jfields
 ms.reviewer: arielsc
 ai-usage: ai-assisted
@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 
 # Investigate why a service principal was added to your tenant
 
-When a new service principal appears in your tenant, you might want to understand why it was created and who or what initiated the process. The [new audit log properties](understand-service-principal-creation-with-new-audit-log-properties.md) `ServicePrincipalProvisioningType`, `SubscribedSkus`, and `AppOwnerOrganizationId` help you quickly determine whether the service principal was provisioned by Microsoft, created by a user, or added by an external application. The following steps show you how to access these properties in the Microsoft Entra admin center to use them in your investigations.
+When a new service principal appears in your tenant, you might want to understand why it was created and who or what initiated the process. The [new audit log properties](understand-service-principal-creation-with-new-audit-log-properties.md) `ServicePrincipalProvisioningType`, `SubscribedSkus`, and `AppOwnerOrganizationId` help you quickly determine whether the service principal was provisioned by Microsoft, created by a user, or added by an external application. The following steps show you how to access these properties in the Microsoft Entra admin center to use them in your investigations. You can also leverage Microsoft Graph API and Log Analytics to access these new properties.
 
 ## Prerequisites
 
@@ -48,7 +48,10 @@ Once the new properties are available in your tenant, you can use them to stream
 1. Use `AppOwnerOrganizationId` to understand whether the app is homed in your tenant, in a Microsoft services tenant, or in another external tenant.
 1. Combine these fields with existing audit log properties such as `initiatedBy` and `targetResources` to get a full picture of who or what created the service principal, without relying on additional API calls.
 
-These enhancements are designed to make it easier for you to interpret service principal creation events, quickly understand the meaning of different values, and plug that information into your own alerting and governance workflows.
+> [!NOTE]
+> The `AppOwnerOrganizationId` property will only show for events where there is a backing application object. The `SubscribedSkus` property will only show for events when `ServicePrincipalProvisioningType` = `Subscription`.
+
+These enhancements are designed to make it easier for you to interpret service principal creation events, quickly understand the meaning of different values, and plug that information into your own alerting and governance workflows. These alerts can categorize service principal creation events as "unexpected" versus "unexpected" based on your tenant security preferences. 
 
 ## Related content
 [Microsost Entra audit log categories and activities](reference-audit-activities.md)
