@@ -31,7 +31,7 @@ Microsoft Entra audit logs capture changes to applications, groups, users, and o
 To view and use these properties in Microsoft Entra audit logs, you need:
 
 - Access to the [Microsoft Entra admin center](https://entra.microsoft.com).
-- One of the following roles (or a role with equivalent permissions): [Security administrator](/entra/identity/role-based-access-control/permissions-reference.md#security-administrator), [Security reader](/entra/identity/role-based-access-control/permissions-reference.md#security-reader), or [Reports reader](/entra/identity/role-based-access-control/permissions-reference.md#reports-reader).
+- One of the following roles (or a role with equivalent permissions): [Security administrator](../role-based-access-control/permissions-reference.md#security-administrator), [Security reader](../role-based-access-control/permissions-reference.md#security-reader), or [Reports reader](../role-based-access-control/permissions-reference.md#reports-reader).
 - Audit logging enabled for your tenant. For more information, see the [Microsoft Entra audit logs overview](concept-audit-logs.md).
 
 >[!NOTE]
