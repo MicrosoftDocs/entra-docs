@@ -23,7 +23,7 @@ In the client credentials flow, permissions are granted directly to the applicat
 
 This article describes how to program directly against the protocol in your application. When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows). You can also refer to the [sample apps that use MSAL](sample-v2-code.md). As a side note, refresh tokens will never be granted with this flow as `client_id` and `client_` (which would be required to obtain a refresh token) can be used to obtain an access token instead.
 
-For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared .  Because the application's own credentials are being used, these credentials must be kept safe. *Never* publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. Authentication requests using the client credentials flow pages will not be allowed. 
+For a higher level of assurance, the Microsoft identity platform also allows the calling service to authenticate using a [certificate](#second-case-access-token-request-with-a-certificate) or federated credential instead of a shared secret.  Because the application's own credentials are being used, these credentials must be kept safe. *Never* publish that credential in your source code, embed it in web pages, or use it in a widely distributed native application. Authentication requests using the client credentials flow pages will not be allowed. 
 
 ## Protocol diagram
 
@@ -136,11 +136,11 @@ After you've received a successful response from the app provisioning endpoint, 
 
 After you've acquired the necessary authorization for your application, proceed with acquiring access tokens for APIs. To get a token by using the client credentials grant, send a POST request to the `/token` Microsoft identity platform. There are a few different cases:
 
-- [Access token request with a shared ](#first-case-access-token-request-with-a-shared-)
+- [Access token request with a shared secret](#first-case-access-token-request-with-a-shared-secret)
 - [Access token request with a certificate](#second-case-access-token-request-with-a-certificate)
 - [Access token request with a federated credential](#third-case-access-token-request-with-a-federated-credential)
 
-### First case: Access token request with a shared 
+### First case: Access token request with a shared secret
 
 ```HTTP
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1           //Line breaks for clarity
