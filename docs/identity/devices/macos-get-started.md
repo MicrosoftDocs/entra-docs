@@ -15,16 +15,16 @@ ms.date: 01/22/2026
 
 # Add Your Work or School Account to a macOS Device
 
-Adding a work or school account to macOS is a straightforward process that enhances your access to organizational resources and services. This article provides an overview and answers to some Frequently Asked Questions (FAQs) about adding a work or school account to your macOS device using browsers such as Microsoft Edge.
+Adding a work or school account to macOS is a straightforward process that enhances your access to organizational resources and services. This article provides an overview and answers to some Frequently Asked Questions (FAQs) about adding a work or school account to your macOS device using browsers such as Microsoft Edge or Chrome.
 
 > [!IMPORTANT]
-> This feature only works with browser-based scenarios. When you use browsers like Microsoft Edge to access organizational resources, you are prompted to add your work or school account to your macOS device. This doesn't apply to standalone desktop applications.
+> This feature only works with browser-based scenarios. When you use browsers like Microsoft Edge or Chrome to access organizational resources, you are prompted to add your work or school account to your macOS device. This doesn't apply to standalone desktop applications.
 
 ## Overview
 
 When you add a work or school account to your device through a browser, you're prompted with a page, called the Microsoft Entra account registration page. The content of the page depends on whether your organization implemented a device management solution:
 
-- In the standard flow, you add your work or school account through a browser like Microsoft Edge. This process involves entering your organization account's credentials and possibly completing multifactor authentication
+- In the standard flow, you add your work or school account through a browser like Microsoft Edge or Chrome. This process involves entering your organization account's credentials and possibly completing multifactor authentication
     :::image type="content" source="media/macos-get-started/macos-sign-in.png" alt-text="Screenshot of signing in on macOS device.":::
 - If your organization uses a device management solution, the process includes additional steps to ensure that your device complies with corporate policies. This setup ensures that your device meets security requirements, such as encryption and data protection, and allows IT administrators to manage and secure your device remotely.
 
@@ -34,7 +34,7 @@ When you add a work or school account to your device through a browser, you're p
 
 ### What is the Microsoft Entra account registration page?
 
-The Microsoft Entra account registration page is shown when you're trying to access protected resources through a browser. The page is where you decide if you want to add your account to the device. When a browser like Microsoft Edge tries to access a protected resource, you see the Microsoft Entra account registration page requesting you to add your account to the device. Adding your account to the device gives you the ability to seamlessly sign in to all your browser-based apps. It also provides you with more security features.
+The Microsoft Entra account registration page is shown when you're trying to access protected resources through a browser. The page is where you decide if you want to add your account to the device. When a browser like Microsoft Edge or Chrome tries to access a protected resource, you see the Microsoft Entra account registration page requesting you to add your account to the device. Adding your account to the device gives you the ability to seamlessly sign in to all your browser-based apps. It also provides you with more security features.
 
 ### What does selecting "Yes" in the Microsoft Entra account registration page do?
 
