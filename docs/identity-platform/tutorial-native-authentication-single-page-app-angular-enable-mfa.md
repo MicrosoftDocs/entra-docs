@@ -19,8 +19,9 @@ ms.date: 01/18/2026
 In this tutorial, you learn how to add multifactor authentication (MFA) in your Angular single-page application (SPA) by using native authentication's JavaScript SDK.
 
 Just like in [strong authentication method registration](tutorial-native-authentication-single-page-app-angular-register-strong-method.md), MFA flow occurs in three scenarios:
+
 - **During sign-in**: The user signs in and has a strong authentication method registered.
-- **After sign-up**: After the user completes sign-up, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
+- **After signup**: After the user completes signup, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in. If the user has a strong authentication method registered, they're prompted to complete MFA challenge.
 
 When MFA is required, the user chooses a MFA challenge method from a list of registered methods. Available options are **email** one-time passcode, **SMS** one-time passcode, or both, depending on what the user previously registered.
@@ -43,7 +44,7 @@ To enable MFA in your Angular app, update the app configuration by adding the re
 
 1. Locate the *src/app/config/auth-config.ts* file.
 
-1. In the `customAuth` object, add or update `capabilities` property to include the `mfa_required` value in the array as shown in the following coe snippet:
+1. In the `customAuth` object, add or update `capabilities` property to include the `mfa_required` value in the array as shown in the following code snippet:
 
     ```typescript
     const customAuthConfig: CustomAuthConfiguration = {
@@ -64,7 +65,7 @@ You require form components in your app to support MFA flow, such as to select M
 
 ### Create multifactor authentication method selection form
 
-1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component, such as *mfa-auth-method-selection-form* by using the following command:
+1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component such as *mfa-auth-method-selection-form* by using the following command:
 
     ```console
     ng generate component mfa-auth-method-selection-form
@@ -77,7 +78,7 @@ You require form components in your app to support MFA flow, such as to select M
 
 ### Create multifactor authentication challenge form
 
-1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component, such as *mfa-challenge-form* by using the following command:
+1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component such as *mfa-challenge-form* by using the following command:
 
     ```console
     ng generate component mfa-challenge-form
@@ -131,7 +132,7 @@ Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your
     }
     ```
 
-1. Update the `startSignIn`, `handlePasswordSubmit` and `handleCodeSubmit` functions to check if MFA is required:
+1. Update the `startSignIn`, `handlePasswordSubmit`, and `handleCodeSubmit` functions to check if MFA is required:
 
     ```typescript
     async startSignIn() {
@@ -201,7 +202,7 @@ Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your
     }
     ```
 
-    In each of the function, notice that we if MFA is required by using the following code snippet:
+    In each of the functions, notice that we check if MFA is required by using the following code snippet:
 
     ```typescript
     if (result.isMfaRequired()) {...}
@@ -280,7 +281,7 @@ Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your
     }
     ```
 
-1. Update the */src/app/components/sign-in/sign-in.component.html* files to display the correct MFA challenge forms, that's, MFA challenge method selection or MFA challenge method verification:
+1. Update the */src/app/components/sign-in/sign-in.component.html* files to display the correct MFA challenge forms (MFA challenge method selection or MFA challenge method verification):
 
     ```typescript
     <!-- Use shared MFA auth method selection form -->
@@ -295,17 +296,17 @@ Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your
     </app-mfa-challenge-form>
     ```
 
-## Handle multifactor authentication after sign-up or password reset
+## Handle multifactor authentication after signup or password reset
 
-MFA flow after sign-up and password reset works similar to the MFA in the sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in flow. If the user has a strong authentication method registered, the flow transitions to MFA challenge verification.
+MFA flow after signup and password reset works similar to the MFA in the sign-in flow. After a successful signup or password reset, the SDK can automatically continue with the sign-in flow. If the user has a strong authentication method registered, the flow transitions to MFA challenge verification.
 
-### Handle multifactor authentication after sign-up
+### Handle multifactor authentication after signup
 
-For MFA flow after sign-up, you need you update the */src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
+For MFA flow after signup, you need you update the */src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
 1. Make sure you import the required types and components.
 
-1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow, that's, after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
+1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow; after signup completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler
@@ -331,7 +332,7 @@ For MFA flow after sign-up, you need you update the */src/app/components/sign-up
     }
     ```
 
-1. Update your */src/app/components/sign-up/sign-up.component.html* file to add the MFA forms, that's, MFA method selection form and MFA challenge verification form. See a complete example in [sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
+1. Update your */src/app/components/sign-up/sign-up.component.html* file to add the MFA forms (MFA method selection form and MFA challenge verification form). See a complete example in [sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
 
 
 ### Handle multifactor authentication after password reset
@@ -340,7 +341,7 @@ For MFA flow after SSPR, you need you update the */src/app/components/reset-pass
 
 1. Make sure you import the required types and components.
 
-1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow, that's, after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
+1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow; after signup completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
 
     ```typescript
     if (this.resetState instanceof ResetPasswordCompletedState) {
@@ -366,11 +367,11 @@ For MFA flow after SSPR, you need you update the */src/app/components/reset-pass
     }
     ```
 
-1. Update your */src/app/components/reset-password/reset-password.component.html* file to add the MFA forms, that's, MFA method selection form and MFA challenge verification form. See a complete example in [reset-password.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.html).
+1. Update your */src/app/components/reset-password/reset-password.component.html* file to add the MFA forms (MFA method selection form and MFA challenge verification form). See a complete example in [reset-password.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.html).
 
 ## Run and test your app
 
-Before you test your app, make sure you've a user account that has a registered strong authentication method. Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-register-strong-method.md#run-and-test-your-app) to run your app, but this time, test the MFA flow.
+Before you test your app, make sure you have a user account that has a registered strong authentication method. Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-register-strong-method.md#run-and-test-your-app) to run your app, but this time, test the MFA flow.
 
 ## Related content
 
