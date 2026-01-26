@@ -17,14 +17,14 @@ ms.date: 01/18/2026
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you will register strong authentication method for a user in your Angular single-page application (SPA) by using native authentication's JavaScript SDK.
+In this tutorial, you register a strong authentication method for a user in your Angular single-page application (SPA) by using native authentication's JavaScript SDK.
 
-If you enable multifactor authentication (MFA), but the user has no registered strong authentication method, you need to enable the user register one before tokens can be issued.
+If you enable multifactor authentication (MFA), but the user has no registered strong authentication method, you need to have the user register one before tokens can be issued.
 
 The strong authentication method registration flow occurs in three scenarios:
 
-- **During sign-in**: The user signs in but does not have a strong authentication method registered.
-- **After sign-up**: The user successfully signs up and automatically proceeds to sign in.
+- **During sign-in**: The user signs in but doesn't have a strong authentication method registered.
+- **After signup**: The user successfully signs up and automatically proceeds to sign in.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in.
 
 When strong authentication method registration is required, the user selects a method of choice from a list of supported methods. The available methods are **email** and **SMS** one-time passcode.
@@ -47,7 +47,7 @@ The flow diagram below illustrates the three scenarios:
 To enable the strong authentication method registration in your React app, update the app configuration by adding the required capability:
 
 1. Locate the *src/app/config/auth-config.ts* file.
-1. In the `customAuth` object, add or update the `capabilities` property to include the `registration_required` value in the array as shown in the following coe snippet:
+1. In the `customAuth` object, add or update the `capabilities` property to include the `registration_required` value in the array as shown in the following code snippet:
 
     ```typescript
     const customAuthConfig: CustomAuthConfiguration = {
@@ -65,11 +65,11 @@ The capability value `registration_required` informs Microsoft Entra that your a
 
 ## Create UI components
 
-You require form components for strong authentication method registration, that's a UI where the user selects the strong authentication method they want to use and another to 
+You require form components to handle strong authentication method registration. The following sections show how to add form components.
 
 ### Create strong authentication method selection form 
 
-1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component, such as *auth-method-selection-form* by using the following command:
+1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component such as *auth-method-selection-form* by using the following command:
 
     ```console
     ng generate component auth-method-selection-form
@@ -83,6 +83,7 @@ You require form components for strong authentication method registration, that'
 ### Create strong authentication method challenge form 
 
 1. In in your console, navigate to the *src/app/components/shared* folder, then use Angular CLI to create a component, such as *auth-method-challenge-form* by using the following command:
+
     ```console
     ng generate component auth-method-challenge-form
     ```
@@ -204,7 +205,7 @@ Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your
     }
     ```
 
-    In each of the function, notice that we check if strong authentication method registration is required by using the following code snippet:
+    In each of the functions, notice that we check if strong authentication method registration is required by using the following code snippet:
 
     ```typescript
     if (result.isAuthMethodRegistrationRequired()) {...}
@@ -315,17 +316,17 @@ Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your
     </app-auth-method-challenge-form>
     ```
 
-## Register strong authentication method after sign-up or password reset
+## Register strong authentication method after signup or password reset
 
-Strong authentication method registration flow after sign-up and password reset works similar to the method registration during sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states.
+Strong authentication method registration flow after signup and password reset works similar to the method registration during sign-in flow. After a successful signup or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states.
 
-### Register strong authentication method after sign-up
+### Register strong authentication method after signup
 
-For strong authentication method registration after sign-up flow, you need you update the *src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
+For strong authentication method registration after signup flow, you need you update the *src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
 1. Make sure you import the required types and components.
 
-1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After sign-up completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After signup completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler
@@ -352,7 +353,7 @@ For strong authentication method registration after sign-up flow, you need you u
     }
     ```
 
-1. Update the *sign-up.component.html* file to add the authentication method registration forms, that's, *auth-method-selection-form* and *auth-method-challenge-form* in a similar manner as shown in the sign-in flow. See a complete example in [sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
+1. Update the *sign-up.component.html* file to add the authentication method registration forms (*auth-method-selection-form* and *auth-method-challenge-form*) in a similar manner as shown in the sign-in flow. See a complete example in [sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
 
 
 ### Register strong authentication method after password reset
@@ -360,7 +361,7 @@ For strong authentication method registration after sign-up flow, you need you u
 For strong authentication method registration after SSPR, you need to update the */src/app/components/reset-password/reset-password.component.ts* file. See the complete code in [reset-password.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.ts):
 
 1. Make sure you import the required types and components.
-1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+1. Handle the strong authentication method registration states in a similar manner as in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
 
 
     ```typescript
@@ -388,17 +389,17 @@ For strong authentication method registration after SSPR, you need to update the
     }    
     ```
 
- 1. Update the *reset-password.component.html* file to add the authentication method registration forms, that's, *auth-method-selection-form* and *auth-method-challenge-form* in a similar manner as shown in the sign-in flow. See a complete example in [reset-password.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.html).
+ 1. Update the *reset-password.component.html* file to add the authentication method registration forms (*auth-method-selection-form* and *auth-method-challenge-form*) in a similar manner as shown in the sign-in flow. See a complete example in [reset-password.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.html).
 
 ## Run and test your app
 
 Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-sign-up.md#test-the-sign-up-flow) to run your app, but this time, test the strong authentication method registration flow. 
 
-### Test authentication method registration after sign-up 
+### Test authentication method registration after signup 
 
-1. Navigate to [http://localhost:4200/sign-up](http://localhost:3000/sign-up) to display the sign-up form.
+1. Navigate to [http://localhost:4200/sign-up](http://localhost:3000/sign-up) to display the signup form.
 
-1. Enter the required details, then sign-up by following prompts. After you successfully sign-up, the app automatically continues to sign-in flow by displaying the strong authentication method registration form.
+1. Enter the required details, then sign up by following prompts. After you successfully sign up, the app automatically continues to sign-in flow by displaying the strong authentication method registration form.
 
 1. Select the strong authentication method of choice, such as **Emails OTP**, then enter an email address.
 
@@ -408,7 +409,7 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 ### Test strong authentication method registration during sign-in
 
-To test strong authentication method registration during sign-in, make sure you've a user account that doesn't have a strong authentication method registered.
+To test strong authentication method registration during sign-in, make sure you have a user account that doesn't have a strong authentication method registered.
 
 1. Navigate to [http://localhost:4200/sign-in](http://localhost:3000/sign-in) to display the sign-in form.
 
@@ -418,7 +419,7 @@ To test strong authentication method registration during sign-in, make sure you'
 
 ### Test authentication method registration after password reset 
 
-To test strong authentication method registration after SSPR, make sure you've a user account that doesn't have a strong authentication method registered.
+To test strong authentication method registration after SSPR, make sure you have a user account that doesn't have a strong authentication method registered.
 
 1. Navigate to [http://localhost:4200/reset-password](http://localhost:3000/reset-password) to display the password reset form.
 
@@ -426,7 +427,7 @@ To test strong authentication method registration after SSPR, make sure you've a
 
 1. Follow the app prompts to complete strong authentication method registration.
 
-## Next step
+## Next steps
 
 > [!div class="nextstepaction"]
 > [Tutorial: Enable multifactor authentication in an Angular SPA by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-angular-enable-mfa.md)
