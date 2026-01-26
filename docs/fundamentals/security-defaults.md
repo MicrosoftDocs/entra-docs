@@ -44,6 +44,8 @@ These basic controls include:
 
 If your tenant was created on or after October 22, 2019, security defaults might be enabled in your tenant. To protect all of our users, security defaults are being rolled out to all new tenants at creation. 
 
+While security defaults is enabled on all new tenants by default, there is a 24‑hour grace period before protections are enforced. This allows customers to access and provision their tenant before MFA is required.
+
 To help protect organizations, we're always working to improve the security of Microsoft account services. As part of this protection, customers are periodically notified for the automatic enablement of the security defaults if they: 
 
 - Don't have any Conditional Access policies
