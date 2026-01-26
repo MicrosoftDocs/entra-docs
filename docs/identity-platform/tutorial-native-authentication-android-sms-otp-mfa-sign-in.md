@@ -39,24 +39,24 @@ In this tutorial, you learn how to:
 
 To support multi-factor authentication (MFA), update the Android client configuration to include the required MFA capabilities.
 
-    ```json
+```json
+{
+    "client_id": "Enter_the_Application_Id_Here",
+    "authorities": [
     {
-      "client_id": "Enter_the_Application_Id_Here",
-      "authorities": [
-        {
-          "type": "CIAM",
-          "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Id_Here/"
-        }
-      ],
-      "challenge_types": ["oob", "password"],
-      "capabilities": ["mfa_required"],
-      "logging": {
-        "pii_enabled": false,
-        "log_level": "INFO",
-        "logcat_enabled": true
-      }
+        "type": "CIAM",
+        "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Id_Here/"
     }
-    ```
+    ],
+    "challenge_types": ["oob", "password"],
+    "capabilities": ["mfa_required"],
+    "logging": {
+    "pii_enabled": false,
+    "log_level": "INFO",
+    "logcat_enabled": true
+    }
+}
+```
 
 > [!NOTE] Currently there is a known issue using the SMS one time passcode with the authority format:
 > `<tenantSubdomain>.ciamlogin.com/<tenantSubdomain>.onmicrosoft.com`

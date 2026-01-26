@@ -36,23 +36,23 @@ In this tutorial, you learn how to:
 
 To support strong authentication method, update the Android client configuration to include the required registration capabilities.
 
-    ```json
+```json
+{
+    "client_id": "Enter_the_Application_Id_Here",
+    "authorities": [
     {
-      "client_id": "Enter_the_Application_Id_Here",
-      "authorities": [
-        {
-          "type": "CIAM",
-          "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/"
-        }
-      ],
-      "challenge_types": ["oob", "password"],
-      "capabilities": ["registration_required"],
-      "logging": {
-        "pii_enabled": false,
-        "log_level": "INFO",
-        "logcat_enabled": true
-      }
+        "type": "CIAM",
+        "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/"
     }
+    ],
+    "challenge_types": ["oob", "password"],
+    "capabilities": ["registration_required"],
+    "logging": {
+    "pii_enabled": false,
+    "log_level": "INFO",
+    "logcat_enabled": true
+    }
+}
     ```
 
 ## Register Email one-time passcode as strong authentication method
