@@ -17,13 +17,14 @@ ms.date: 01/18/2026
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you will register strong authentication method for a user in your React single-page application (SPA) by using native authentication's JavaScript SDK.
+In this tutorial, you register a strong authentication method for a user in your React single-page application (SPA) by using native authentication's JavaScript SDK.
 
-If you enable multifactor authentication (MFA), but the user has no registered strong authentication method, you need to enable the user register one before tokens can be issued.
+If you enable multifactor authentication (MFA), but the user has no registered strong authentication method, you need to have the user register one before tokens can be issued.
 
 The strong authentication method registration flow occurs in three scenarios:
+
 - **During sign-in**: The user signs in but does not have a strong authentication method registered.
-- **After sign-up**: The user successfully signs up and automatically proceeds to sign in.
+- **After signup**: The user successfully signs up and automatically proceeds to sign in.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in.
 
 When strong authentication method registration is required, the user selects a method of choice from a list of supported methods. The available methods are **email** and **SMS** one-time passcode.
@@ -44,7 +45,7 @@ The flow diagram below illustrates the three scenarios:
 To enable the strong authentication method registration in your React app, update the app configuration by adding the required capability.
 
 1. Locate the *src/config/auth-config.ts* file.
-1. In the `customAuth` object, add or update the `capabilities` property to include the `registration_required` value in the array as shown in the following coe snippet:
+1. In the `customAuth` object, add or update the `capabilities` property to include the `registration_required` value in the array as shown in the following code snippet:
 
     ```typescript
     const customAuthConfig: CustomAuthConfiguration = {
@@ -63,13 +64,12 @@ The capability value `registration_required` informs Microsoft Entra that your a
 
 You require form components to handle strong authentication method registration. Use the following steps to add these components to your app:
 
-1. Create a new folder, *src/app/shared/components* to store reusable components.
-1. In the new folder, create a file, `AuthMethodRegistrationForm.tsx`, to display a form that allows users to select and register a strong authentication method. Add the code in [AuthMethodRegistrationForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/AuthMethodRegistrationForm.tsx) into the file.
-1. In the new folder, create another file, `AuthMethodRegistrationChallengeForm.tsx`, to display a form for verifying the strong authentication method by using the one-time passcode that the user receives. Add the code in [AuthMethodRegistrationChallengeForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/AuthMethodRegistrationChallengeForm.tsx) into the file.
+1. Create a new folder named *src/app/shared/components* to store reusable components.
+1. In the new folder, create a file named `AuthMethodRegistrationForm.tsx` to display a form that allows users to select and register a strong authentication method. Add the code in [AuthMethodRegistrationForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/AuthMethodRegistrationForm.tsx) into the file.
+1. In the new folder, create another file named `AuthMethodRegistrationChallengeForm.tsx` to display a form for verifying the strong authentication method by using the one-time passcode that the user receives. Add the code in [AuthMethodRegistrationChallengeForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/AuthMethodRegistrationChallengeForm.tsx) into the file.
 
-When needed, you can import and use reusable components in your sign-in, sign-in after sign-up, and sign-in after SSPR flows. 
+When needed, you can import and use reusable components in your sign-in, sign-in after signup, and sign-in after SSPR flows. 
  
-
 ## Register strong authentication method during sign-in
 
 Update the *src/app/sign-in/page.tsx* file to enable your app to handle strong authentication method registration flow during sign-in. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/page.tsx):
@@ -165,7 +165,7 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle strong a
     };
     ```
 
-    In each of the function, notice that we check if strong authentication method registration is required by using the following code snippet:
+    In each of the functions, notice that we check if strong authentication method registration is required by using the following code snippet:
 
     ```typescript
     if (result.isAuthMethodRegistrationRequired()) {...}
@@ -260,7 +260,7 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle strong a
     };
     ```
 
-1. Update the `renderForm()` function to display the correct strong authentication method registration forms, that's, method selection or verification:
+1. Update the `renderForm()` function to display the correct strong authentication method registration forms (method selection or verification):
 
     ```typescript
     const renderForm = () => {
@@ -312,7 +312,7 @@ Strong authentication method registration flow after sign-up and password reset 
 For strong authentication method registration after sign-up flow, you need you update the */src/app/sign-up/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
  
 1. Make sure you import the required types and components.
-1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After sign-up completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After signup completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler
@@ -342,7 +342,7 @@ For strong authentication method registration after sign-up flow, you need you u
 For strong authentication method registration after SSPR, you need to update the */src/app/reset-password/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/page.tsx):
 
 1. Make sure you import the required types and components.
-1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+1. Handle the strong authentication method registration states in a similar manner as in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
 
     ```typescript
     // In your password reset completion handler
@@ -375,7 +375,7 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 1. Navigate to [http://localhost:3000/sign-up](http://localhost:3000/sign-up) to display the sign-up form.
 
-1. Enter the required details, then sign-up by following prompts. After you successfully sign-up, the app automatically continues to sign-in flow by displaying the strong authentication method registration form.
+1. Enter the required details, then sign up by following prompts. After you successfully sign up, the app automatically continues to the sign-in flow by displaying the strong authentication method registration form.
 
 1. Select the strong authentication method of choice, such as **Emails OTP**, then enter an email address.
 
@@ -385,7 +385,7 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 ### Test strong authentication method registration during sign-in
 
-To test strong authentication method registration during sign-in, make sure you've a user account that doesn't have a strong authentication method registered.
+To test strong authentication method registration during sign-in, make sure you have a user account that doesn't have a strong authentication method registered.
 
 1. Navigate to [http://localhost:3000/sign-in](http://localhost:3000/sign-in) to display the sign-in form.
 
@@ -395,17 +395,15 @@ To test strong authentication method registration during sign-in, make sure you'
 
 ### Test authentication method registration after password reset 
 
-To test strong authentication method registration after SSPR, make sure you've a user account that doesn't have a strong authentication method registered.
+To test strong authentication method registration after SSPR, make sure you have a user account that doesn't have a strong authentication method registered.
 
 1. Navigate to [http://localhost:3000/reset-password](http://localhost:3000/reset-password) to display the password reset form.
 
-1. Input your details, select the **Continue** button, then follow app prompts to complete the password reset flow. After you successfully resets your password, the app continues to sign-in flow by displaying the strong authentication method registration form.
+1. Input your details, select the **Continue** button, then follow app prompts to complete the password reset flow. After you successfully reset your password, the app continues to sign-in flow by displaying the strong authentication method registration form.
 
 1. Follow the app prompts to complete strong authentication method registration.
 
-## Next step
+## Next steps
 
 > [!div class="nextstepaction"]
 > [Tutorial: Enable multifactor authentication in a React SPA by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-enable-mfa.md)
-
-tutorial-native-authentication-single-page-app-react-register-authentication-method
