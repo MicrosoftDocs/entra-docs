@@ -1,10 +1,10 @@
 ---
-title: Customize the sign-in experience for your application with branding themes in external tenants (Preview)
+title: Customize the sign-in experience for your application with branding themes in external tenants
 description: Learn about how to create branding themes and apply them to the sign-in experience for your application in Microsoft External ID for external tenants.
 author: rolyon
 manager: pmwongera
 ms.author: rolyon
-ms.date: 10/30/2025
+ms.date: 01/26/2026
 ms.reviewer: 
 ms.service: identity-platform
 ms.topic: how-to
@@ -12,13 +12,9 @@ ms.topic: how-to
 
 ---
 
-# Customize the sign-in experience for your application with branding themes in external tenants (Preview)
+# Customize the sign-in experience for your application with branding themes in external tenants
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
-
-> [!IMPORTANT]
-> Branding themes for applications are currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 You can create unique authentication experiences for applications in your tenant. Each application can have its own theme that you can customize with a background image or color, favicon, layout, header, and footer. This customization overrides any configurations made to the default branding. If you don't make any changes to the elements, the default elements are displayed.
 
