@@ -5,7 +5,7 @@ description: Learn how to configure Conditional Access policies to target specif
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
-ms.date: 09/22/2025
+ms.date: 01/26/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -136,15 +136,15 @@ For more information, see the article [Public client and confidential client app
 
 ## Conditional Access for ALL resources
 
-Applying a Conditional Access policy to **All resources (formerly 'All cloud apps')** without any app exclusions enforces the policy for all token requests from websites and services, including [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding). This option includes applications that aren't individually targetable in Conditional Access policy, such as `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000).
+Applying a Conditional Access policy to **All resources (formerly 'All cloud apps')** without any resource exclusions enforces the policy for all token requests from websites and services, including [Global Secure Access traffic forwarding profiles](/entra/global-secure-access/concept-traffic-forwarding). This option includes applications that aren't individually targetable in Conditional Access policy, such as `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000).
 
 > [!IMPORTANT]
-> Microsoft recommends creating a baseline multifactor authentication policy targeting all users and all resources (without any app exclusions), like the one explained in [Require multifactor authentication for all users](policy-all-users-mfa-strength.md).
+> Microsoft recommends creating a baseline multifactor authentication policy targeting all users and all resources (without any resource exclusions), like the one explained in [Require multifactor authentication for all users](policy-all-users-mfa-strength.md).
 
-### Legacy Conditional Access behavior when an ALL resources policy has an app exclusion
+### Legacy Conditional Access behavior when an ALL resources policy has a resource exclusion
 
 > [!WARNING]
-> The following Conditional Access behavior is changing. Those low privileged scopes that were previously excluded from policy enforcement will **no longer be excluded**. This change means that users who were not previously blocked might now receive Conditional Access challenges. The change is rolling out in phases starting in January, 2026.
+> [The following Conditional Access behavior is changing](https://aka.ms/CAAllResourcesWithExclusionsChange). Those low privileged scopes that were previously excluded from policy enforcement will **no longer be excluded**. This change means that users who were previously able to access the application without any Conditional Access enforcement might now receive Conditional Access challenges. The change is rolling out in phases starting in March, 2026.
 
 If any app is excluded from the policy, in order to not inadvertently block user access, certain low privilege scopes were *previously* excluded from policy enforcement. These scopes allowed calls to the underlying Graph APIs, like `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000) and `Microsoft Graph` (00000003-0000-0000-c000-000000000000), to access user profile and group membership information commonly used by applications as part of authentication. For example: when Outlook requests a token for Exchange, it also asks for the `User.Read` scope to be able to display the basic account information of the current user.
 
@@ -156,9 +156,8 @@ Most apps have a similar dependency, which is why these low privilege scopes wer
 - Confidential clients have access to the following low privilege scopes, if they're excluded from an **All resources** policy:         
    - Azure AD Graph: `email`, `offline_access`, `openid`, `profile`, `User.Read`, `User.Read.All`,`User.ReadBasic.All`
    - Microsoft Graph: `email`, `offline_access`, `openid`, `profile`, `User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`
-- For more information on the scopes mentioned, see [Microsoft Graph permissions reference](/graph/permissions-reference#peopleread) and [Scopes and permissions in the Microsoft identity platform](/entra/identity-platform/scopes-oidc#openid-connect-scopes).
 
-### New Conditional Access behavior when an ALL resources policy has an app exclusion
+### New Conditional Access behavior when an ALL resources policy has a resource exclusion
 
 The scopes listed in the previous section are now evaluated as directory access and mapped to Azure AD Graph (resource: Windows Azure Active Directory, ID: 00000002-0000-0000-c000-000000000000) for Conditional Access evaluation purposes. 
 
@@ -180,9 +179,9 @@ In the following example, the tenant has a Conditional Access policy with the fo
 
 | Example scenario | User impact (before → after) | Conditional Access evaluation change |
 |---|---|---|
-| A user signs into VSCode desktop client, which requests openid and profile scopes. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Microsoft Entra as the enforcement audience. |
-| A user signs in using Azure CLI, which requests only User.Read. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Microsoft Entra as the enforcement audience. |
-| A user signs in through a custom enterprise application (excluded from the policy) that requests only User.Read and People.Read. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Microsoft Entra as the enforcement audience. |
+| A user signs into VSCode desktop client, which requests openid and profile scopes. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs in using Azure CLI, which requests only User.Read. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs in through a custom enterprise application (excluded from the policy) that requests only User.Read and People.Read. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
 
 There is no change in behavior when an application requests a scope beyond those listed previously.
 
@@ -192,12 +191,12 @@ In the following example, Conditional Access is not enforced because Exchange On
 
 | Example scenario | User impact | Conditional Access evaluation |
 |---|---|---|
-| A user signs in to a custom line-of-business web application (excluded from the policy) that requests offline_access and SharePoint access (Files.Read). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
+| A user signs in to a custom enterprise application (excluded from the policy) that requests offline_access and SharePoint access (Files.Read). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
 | A user signs in to the OneDrive desktop sync client. OneDrive requests offline_access and Exchange Online access (Mail.Read). | No change in behavior | Conditional Access is not enforced because Exchange Online is excluded from the policy. |
 
 Most applications request scopes beyond the listed scopes and are already subject to Conditional Access enforcement, unless the application is explicitly excluded from the policy. In such cases, there is no change in behavior.  
 
-Custom applications registered in your tenant that request only the listed scopes and are not designed to handle Conditional Access challenges might need to be updated so that they can handle Conditional Access challenges. Refer to the [Microsoft Conditional Access developer guidance](../../identity-platform/v2-conditional-access-dev-guide.md) for implementation details.   
+Custom applications that are intentionally designed to request only the previously listed scopes and are not designed to handle Conditional Access challenges might need to be updated so that they can handle Conditional Access challenges. Refer to the [Microsoft Conditional Access developer guidance](../../identity-platform/v2-conditional-access-dev-guide.md) for implementation details.   
 
 ### How to identify applications affected by the low-privilege scope change
 
@@ -314,9 +313,9 @@ Microsoft Entra ID sign-in logs can also provide a detailed list of sign-ins for
 ### Protecting directory information
 
 > [!NOTE]
-> The following section is for those organizations that still have the legacy low-privilege scope behavior for policies targeting ALL resources.
+> The following section applies until the rollout of the low-privilege scope enforcement change is complete.
 
-If the [recommended baseline MFA policy without app exclusions](policy-all-users-mfa-strength.md) can't be configured because of business reasons, and your organization's security policy must include directory-related low privilege scopes (`User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`), create a separate Conditional Access policy targeting `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000). Windows Azure Active Directory (also called Azure AD Graph) is a resource representing data stored in the directory such as users, groups, and applications. The Windows Azure Active Directory resource is included in **All resources** but can be individually targeted in Conditional Access policies by using the following steps:
+If the [recommended baseline MFA policy without resource exclusions](policy-all-users-mfa-strength.md) can't be configured because of business reasons, and your organization's security policy must include directory-related low privilege scopes (`User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`), create a separate Conditional Access policy targeting `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000). Windows Azure Active Directory (also called Azure AD Graph) is a resource representing data stored in the directory such as users, groups, and applications. The Windows Azure Active Directory resource is included in **All resources** but can be individually targeted in Conditional Access policies by using the following steps:
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Definition Administrator](/entra/identity/role-based-access-control/permissions-reference#attribute-definition-administrator) and [Attribute Assignment Administrator](/entra/identity/role-based-access-control/permissions-reference#attribute-assignment-administrator).
 1. Browse to **Entra ID** > **Custom security attributes**.
@@ -334,7 +333,7 @@ If the [recommended baseline MFA policy without app exclusions](policy-all-users
 1. Select **Create** to create to enable your policy.
 
 > [!NOTE]
-> Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining app exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.
+> Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining resource exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.
 
 <a name='traffic-forwarding-profiles'></a>
 
