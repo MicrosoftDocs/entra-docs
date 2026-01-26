@@ -157,7 +157,7 @@ To view traffic logs:
 
 ## Related content
 
-- [Learn about Microsoft Purview Network Data Security](https://learn.microsoft.com/purview/dlp-network-data-security-learn)
+- [Learn about Microsoft Purview Network Data Security](/purview/dlp-network-data-security-learn)
 - [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md)
 - [Enable the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md) 
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)
