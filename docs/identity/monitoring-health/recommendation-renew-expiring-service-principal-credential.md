@@ -12,6 +12,7 @@ ms.reviewer: saumadan
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand why it's important to renew expiring service principals so I can make sure my applications continue to function.
 ---
+
 # Microsoft Entra recommendation: Renew expiring service principal credentials (preview)
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
