@@ -198,7 +198,7 @@ Most applications request scopes beyond the listed scopes and are already subjec
 
 Custom applications that are intentionally designed to request only the previously listed scopes and are not designed to handle Conditional Access challenges might need to be updated so that they can handle Conditional Access challenges. Refer to the [Microsoft Conditional Access developer guidance](../../identity-platform/v2-conditional-access-dev-guide.md) for implementation details.   
 
-### How to identify applications affected by the low-privilege scope change
+### How to identify applications affected by the low-privilege scope enforcement change
 
 Applications can be pre-authorized to request only one or more of the previously listed scopes. Use the following options to identify affected applications.
 
@@ -211,84 +211,79 @@ Use the following PowerShell script to list all applications in your tenant that
 
 ```powershell
 # ==============================
-# Inventory of apps that request only OIDC scopes or specific directory scopes (tenant-owned apps only)
+# Inventory of tenant-owned apps whose delegated consent grants include ONLY
+# the OIDC scopes + specific directory scopes listed below.
+#
+# Output:
+#  - ServicePrincipalObjectId (oauth2PermissionGrants.clientId = SP object id)
+#  - Scopes (union of delegated scopes granted)
 # ==============================
 
-# Prompt for tenant ID
-$TenantId = Read-Host "Enter your Microsoft Entra tenant ID"
+$TenantId = Read-Host "Enter your Microsoft Entra tenant ID (GUID)"
 
 $BaselineScopes = @(
-   "openid", "profile", "email", "offline_access",
-   "User.Read", "User.Read.All", "User.ReadBasic.All",
-   "People.Read", "People.Read.All",
-   "GroupMember.Read.All", "Member.Read.Hidden"
+  "openid","profile","email","offline_access",
+  "User.Read","User.Read.All","User.ReadBasic.All",
+  "People.Read","People.Read.All",
+  "GroupMember.Read.All","Member.Read.Hidden"
 )
 
 Disconnect-MgGraph -ErrorAction SilentlyContinue
-
 Connect-MgGraph -TenantId $TenantId -Scopes @(
-   "DelegatedPermissionGrant.Read.All",
-   "Directory.Read.All"
+  "DelegatedPermissionGrant.Read.All",
+  "Directory.Read.All"
 )
 
-# ------------------------------
 # Pull oauth2PermissionGrants (paging)
-# ------------------------------
-
 $uri = "https://graph.microsoft.com/beta/oauth2PermissionGrants?`$select=clientId,scope"
 $grants = @()
-
 while ($uri) {
-   $resp = Invoke-MgGraphRequest -Method GET -Uri $uri
-   $grants += $resp.value
-   $uri = $resp.'@odata.nextLink'
+  $resp = Invoke-MgGraphRequest -Method GET -Uri $uri
+  $grants += $resp.value
+  $uri = $resp.'@odata.nextLink'
 }
 
-# ------------------------------
-# Build baseline-only candidate set
-# ------------------------------
+# Build baseline-only candidate set (paste-safe: no leading pipes)
+$candidates = @()
+foreach ($g in ($grants | Group-Object clientId)) {
+  $spObjectId = $g.Name
 
-$candidates = $grants | Group-Object clientId | ForEach-Object {
-   $clientId = $_.Name
-   $scopes = $_.Group | ForEach-Object {
-      ($_.scope -split '\s+')
-   } | Where-Object { $_ -and $_.Trim() -ne "" } | Sort-Object -Unique
+  $scopes = $g.Group |
+    ForEach-Object { ($_.scope -split '\s+') } |
+    Where-Object { $_ -and $_.Trim() -ne "" } |
+    Sort-Object -Unique
 
-   if ($scopes.Count -gt 0) {
-      $outside = $scopes | Where-Object { $_ -notin $BaselineScopes }
-      if ($outside.Count -eq 0) {
-         [PSCustomObject]@{
-            ClientId = $clientId
-            Scopes   = ($scopes -join " ")
-         }
+  if ($scopes.Count -gt 0) {
+    $outside = $scopes | Where-Object { $_ -notin $BaselineScopes }
+    if ($outside.Count -eq 0) {
+      $candidates += [PSCustomObject]@{
+        ServicePrincipalObjectId = $spObjectId
+        Scopes = ($scopes -join " ")
       }
-   }
+    }
+  }
 }
 
-# ------------------------------
 # Filter to tenant-owned apps
-# ------------------------------
+$results = @()
+foreach ($c in $candidates) {
+  try {
+    $spUri = "https://graph.microsoft.com/beta/servicePrincipals/$($c.ServicePrincipalObjectId)?`$select=id,appOwnerOrganizationId"
+    $sp = Invoke-MgGraphRequest -Method GET -Uri $spUri
 
-$results = foreach ($c in $candidates) {
-   try {
-      $sp = Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/beta/servicePrincipals/$($c.ClientId)?`$select=id,appOwnerOrganizationId"
-
-      if ($sp.appOwnerOrganizationId -eq $TenantId) {
-         [PSCustomObject]@{
-            ClientId = $c.ClientId
-            Scopes   = $c.Scopes
-         }
+    if ($sp.appOwnerOrganizationId -eq $TenantId) {
+      $results += [PSCustomObject]@{
+        ServicePrincipalObjectId = $c.ServicePrincipalObjectId
+        Scopes = $c.Scopes
       }
-   } catch {
-      # Ignore non-enumerable / non-tenant-owned service principals
-   }
+    }
+  } catch {
+    # Ignore non-enumerable / non-tenant-owned service principals
+  }
 }
 
-# ------------------------------
 # Output
-# ------------------------------
-
-$results | Sort-Object ClientId
+$results | Sort-Object ServicePrincipalObjectId 
 
 ```
 
