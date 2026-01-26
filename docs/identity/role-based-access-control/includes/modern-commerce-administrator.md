@@ -4,8 +4,10 @@ description: Modern Commerce Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/10/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: rolyon
+ms.author: rolyon
 ---
 
 Template ID: d24aef57-1500-4070-84db-2666f29cf966
