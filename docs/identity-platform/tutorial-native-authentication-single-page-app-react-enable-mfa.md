@@ -19,8 +19,9 @@ ms.date: 11/18/2025
 In this tutorial, you learn how to add multifactor authentication (MFA) in your React single-page application (SPA) by using native authentication's JavaScript SDK.
 
 Just like in [strong authentication method registration](tutorial-native-authentication-single-page-app-react-register-strong-method.md), MFA flow occurs in three scenarios:
+
 - **During sign-in**: The user signs in and has a strong authentication method registered.
-- **After sign-up**: After the user completes sign-up, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-react-register-strong-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
+- **After signup**: After the user completes signup, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-react-register-strong-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in. If the user has a strong authentication method registered, they're prompted to complete MFA challenge.
 
 When MFA is required, the user chooses a MFA challenge method from a list of registered methods. Available options are **email** one-time passcode, **SMS** one-time passcode, or both, depending on what the user previously registered.
@@ -41,7 +42,7 @@ The flow diagram below illustrates the three scenarios:
 To enable MFA in your React app, update the app configuration by adding the required capability:
 
 1. Locate the *src/config/auth-config.ts* file.
-1. In the `customAuth` object, add or update `capabilities` property to include the `mfa_required` value in the array as shown in the following coe snippet:
+1. In the `customAuth` object, add or update `capabilities` property to include the `mfa_required` value in the array as shown in the following code snippet:
 
     ```typescript
     const customAuthConfig: CustomAuthConfiguration = {
@@ -60,11 +61,11 @@ The capability value `mfa_required` informs Microsoft Entra that your app can ha
 
 You require form components in your app to support MFA flow. Use the following steps to add these components to your app:
 
-1. Create a new folder, *src/app/shared/components* for reusable components, if it doesn’t already exist.
-1. In the new folder, create a file, `MfaAuthMethodSelectionForm.tsx`, to display a form that allows users to select a registered strong authentication method. Add the code in [MfaAuthMethodSelectionForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/MfaAuthMethodSelectionForm.tsx) into the file.
-1. In the new folder, create another file, `MfaChallengeForm.tsx`, to display a form for verifying the strong authentication method by using the one-time passcode that the user receives. Add the code in [MfaChallengeForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/MfaChallengeForm.tsx) into the file.
+1. Create a new folder, *src/app/shared/components* for reusable components (if it doesn’t already exist).
+1. In the new folder, create a file named *MfaAuthMethodSelectionForm.tsx* to display a form that allows users to select a registered strong authentication method. Add the code in [MfaAuthMethodSelectionForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/MfaAuthMethodSelectionForm.tsx) into the file.
+1. In the new folder, create another file named *MfaChallengeForm.tsx* to display a form for verifying the strong authentication method by using the one-time passcode that the user receives. Add the code in [MfaChallengeForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/MfaChallengeForm.tsx) into the file.
 
-When needed, you can import and use reusable components in your sign-in, sign-in after sign-up, and sign-in after SSPR flows. 
+When needed, you can import and use reusable components in your sign-in, sign-in after signup, and sign-in after SSPR flows. 
 
 ## Handle multifactor authentication during sign-in
 
@@ -157,7 +158,7 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle MFA flow
     };
     ```
 
-    In each of the function, notice that we if MFA is required by using the following code snippet:
+    In each of the function, notice that we check if MFA is required by using the following code snippet:
 
     ```typescript
     if (result.isMfaRequired()) {...}
@@ -239,7 +240,7 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle MFA flow
     };
     ```
 
-1. Update the `renderForm()` function to display the correct MFA challenge forms, that's, MFA challenge method selection or MFA challenge method verification:
+1. Update the `renderForm()` function to display the correct MFA challenge forms (MFA challenge method selection or MFA challenge method verification):
 
     ```typescript
     const renderForm = () => {
@@ -282,14 +283,14 @@ Update the *src/app/sign-in/page.tsx* file to enable your app to handle MFA flow
 
 ## Handle multifactor authentication after sign-up or password reset 
 
- MFA flow after sign-up and password reset works similar to the MFA in the sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in. If the user has a strong authentication method registered, the flow transitions to MFA challenge verification. 
+MFA flow after signup and password reset works similar to the MFA in the sign-in flow. After a successful signup or password reset, the SDK can automatically continue with the sign-in flow. If the user has a strong authentication method registered, the flow transitions to MFA challenge verification. 
 
-### Handle multifactor authentication after sign-up
+### Handle multifactor authentication after signup
 
-For MFA flow after sign-up, you need you update the */src/app/sign-up/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
+For MFA flow after signup, you need you update the */src/app/sign-up/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
  
 1. Make sure you import the required types and components.
-1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow, that's, after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
+1. Handle MFA requiremenst states in a similar manner as it happens in the sign-in flow; after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler
@@ -318,7 +319,7 @@ For MFA flow after sign-up, you need you update the */src/app/sign-up/page.tsx* 
 For MFA flow after SSPR, you need to update the */src/app/reset-password/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/page.tsx):
 
 1. Make sure you import the required types and components.
-1. Handle MFA requirement states in a similar manner as it happens in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+1. Handle MFA requirement states in a similar manner as in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
 
     ```typescript
     // In your password reset completion handler
@@ -342,10 +343,9 @@ For MFA flow after SSPR, you need to update the */src/app/reset-password/page.ts
     // and MfaChallengeForm components
     ```
 
-
 ## Run and test your app
 
-Before you test your app, make sure you've a user account that has a registered strong authentication method. Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-register-strong-method.md#run-and-test-your-app) to run your app, but this time, test the MFA flow. 
+Before you test your app, make sure you have a user account that has a registered strong authentication method. Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-register-strong-method.md#run-and-test-your-app) to run your app, but this time, test the MFA flow. 
 
 ## Related content
 
