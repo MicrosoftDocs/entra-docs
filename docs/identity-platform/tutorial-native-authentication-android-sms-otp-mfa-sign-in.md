@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 
 1. Enroll in a Private Preview of SMS and Email OTP MFA on Native Authentication – [Fill out form](https://forms.office.com/r/P3m1q2j3hg)
 
-2. Complete the steps in [Tutorial: Add sign-in and sign-out in Android app by using native authentication](/entra/external-id/customers/tutorial-native-authentication-android-android-sign-in-sign-out).
+2. Complete the steps in [Tutorial: Add sign-in and sign-out in Android app by using native authentication](tutorial-native-authentication-android-android-sign-in-sign-out.md).
 
 3. Enable SMS as an MFA method in your tenant: follow the steps in [Enable SMS as an MFA method](../../../SMS-MFA/get-started-sms-mfa.md#enable-sms-as-an-mfa-method).
 

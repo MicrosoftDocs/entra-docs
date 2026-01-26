@@ -25,9 +25,9 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-1. Complete the steps in [Tutorial: Add sign-in in Android app by using native authentication](/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out).
+1. Complete the steps in [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md).
 
-1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](entra/external-id/customers/how-to-multifactor-authentication-customers) to add Email OTP MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA. Therefore, email OTP as second factor is only available when the authentication method is email with password.
+1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add Email OTP MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA. Therefore, email OTP as second factor is only available when the authentication method is email with password.
 
 1. If you'd like to explore our strong authentication method registration implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) before getting started.
 

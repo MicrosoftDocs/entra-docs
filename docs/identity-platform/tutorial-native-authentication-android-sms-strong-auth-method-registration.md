@@ -27,9 +27,9 @@ In this tutorial, you learn how to:
 
 1. Enroll in a Private Preview of SMS and Email OTP MFA on Native Authentication – [Fill out form](https://forms.office.com/r/P3m1q2j3hg)
 
-1. Complete the steps in [Tutorial: Add sign-in in Android app by using native authentication](/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out).
+1. Complete the steps in [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md).
 
-1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](/entra/external-id/customers/how-to-multifactor-authentication-customers) to add SMS MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA. 
+1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add SMS MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA. 
 
 1. If you'd like to explore our strong authentication method registration implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) before getting started.
 
