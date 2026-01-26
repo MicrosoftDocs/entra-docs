@@ -1,5 +1,5 @@
 ---
-title: Understand service principal creation with new audit log properties
+title: Understand why a service principal was created in your tenant
 description: Learn why a Microsoft Entra service principal was created in your tenant and who or what triggered the event through new properties that have been added audit log activity. 
 
 author: jenniferf-skc
@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 #Customer intent: As an IT admin or security analyst, I want to understand the new audit log properties for service principal creation events so that I can quickly identify why a service principal was created, who or what triggered it, and reduce my dependency on additional API calls during investigations.
 ---
 
-# Understand service principal creation events with new Microsoft Entra audit log properties
+# Understand why a service principal was created in your tenant
 
 Microsoft Entra audit logs capture changes to applications, groups, users, and other directory resources. To help you understand why a Microsoft Entra service principal was created in your tenant and who or what triggered the event, new properties are being added to the **Add service principal** activity under the **ApplicationManagement** category. This article explains what is changing in the audit logs, how to find the new data, and how to interpret the different property values.
 
