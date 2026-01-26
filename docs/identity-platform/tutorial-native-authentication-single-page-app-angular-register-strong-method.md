@@ -1,6 +1,6 @@
 ---
-title: Register Strong Auth Method in a Angular SPA by Using Native Authentication JavaScript SDK
-description: Learn how to register a strong auth method in a Angular single-page application that uses native authentication JavaScript SDK
+title: Register Strong Auth Method in an Angular SPA by Using Native Authentication JavaScript SDK
+description: Learn how to register a strong auth method in an Angular single-page application that uses native authentication JavaScript SDK
 
 author: kengaderdus
 manager: dougeby
@@ -10,10 +10,10 @@ ms.subservice: external
 ms.topic: tutorial
 ms.date: 01/18/2026
 
-#Customer intent: As a developer, I want to enable strong authentication method registration flow in a Angular single-page application that uses native authentication's JavaScript SDK so that users can register a strong method registration during sign-in or after password reset or after sign-up.
+#Customer intent: As a developer, I want to enable strong authentication method registration flow in an Angular single-page application that uses native authentication's JavaScript SDK so that users can register a strong method registration during sign-in or after password reset or after sign-up.
 ---
 
-# Tutorial: Register strong authentication method in a Angular single-page app by using native authentication JavaScript SDK
+# Tutorial: Register strong authentication method in an Angular single-page app by using native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -326,7 +326,7 @@ For strong authentication method registration after signup flow, you need you up
 
 1. Make sure you import the required types and components.
 
-1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After signup completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After signup completes successfully, you can use the result to automatically trigger a sign-in as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler
@@ -361,7 +361,7 @@ For strong authentication method registration after signup flow, you need you up
 For strong authentication method registration after SSPR, you need to update the */src/app/components/reset-password/reset-password.component.ts* file. See the complete code in [reset-password.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.ts):
 
 1. Make sure you import the required types and components.
-1. Handle the strong authentication method registration states in a similar manner as in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically tigger a sign-in as shown in the following code snippet:
+1. Handle the strong authentication method registration states in a similar manner as in the sign-in flow. After SSPRS completes successfully, you can use the result to automatically trigger a sign-in as shown in the following code snippet:
 
 
     ```typescript
@@ -423,7 +423,7 @@ To test strong authentication method registration after SSPR, make sure you have
 
 1. Navigate to [http://localhost:4200/reset-password](http://localhost:3000/reset-password) to display the password reset form.
 
-1. Input your details, select the **Continue** button, then follow app prompts to complete the password reset flow. After you successfully resets your password, the app continues to sign-in flow by displaying the strong authentication method registration form.
+1. Input your details, select the **Continue** button, then follow app prompts to complete the password reset flow. After you successfully reset your password, the app continues to sign-in flow by displaying the strong authentication method registration form.
 
 1. Follow the app prompts to complete strong authentication method registration.
 
