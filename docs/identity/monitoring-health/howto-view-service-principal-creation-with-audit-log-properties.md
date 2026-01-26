@@ -1,5 +1,5 @@
 ---
-title: How to investigate why a service principal was added to your tenant
+title: How to investigate why a service principal was created in your tenant
 description: Use new audit log properties to understand why a new service principal was added to your tenant. 
 
 author: jenniferf-skc
@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 #Customer intent: As an IT admin, I want to learn how to use audit log properties like ServicePrincipalProvisioningType, SubscribedSkus, and AppOwnerOrganizationId so that I can investigate why a service principal was added to my tenant and determine whether it was provisioned by Microsoft, a user, or an external application.
 ---
 
-# Investigate why a service principal was added to your tenant
+# Investigate why a service principal was created in your tenant
 
 When a new service principal appears in your tenant, you might want to understand why it was created and who or what initiated the process. The [new audit log properties](understand-service-principal-creation-with-new-audit-log-properties.md) `ServicePrincipalProvisioningType`, `SubscribedSkus`, and `AppOwnerOrganizationId` help you quickly determine whether the service principal was provisioned by Microsoft, created by a user, or added by an external application. The following steps show you how to access these properties in the Microsoft Entra admin center to use them in your investigations. You can also leverage Microsoft Graph API and Log Analytics to access these new properties.
 

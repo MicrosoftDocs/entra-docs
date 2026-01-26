@@ -75,7 +75,7 @@ The following new properties help you understand service principal creation even
 > [!NOTE]
 > You can use other audit log event properties to differentiate between these flows.
 
-You can use `ServicePrincipalProvisioningType` to separate Microsoft-driven provisioning (for example, `defaultMicrosoft`, `subscription`, `AzureResourceProvider`, `managerApplications`) from tenant-driven provisioning (for example, Other). Separating Microsoft-driven provisioning from tenant-driven provisioning helps you quickly decide whether a new service principal resulted from a Microsoft platform process or from admins, users, or custom apps in your tenant. See [View service principal details in audit log properties](howto-view-service-principal-details-in-audit-log-properties.md) for more information on creating detections for new service principals in your tenant.
+You can use `ServicePrincipalProvisioningType` to separate Microsoft-driven provisioning (for example, `defaultMicrosoft`, `subscription`, `AzureResourceProvider`, `managerApplications`) from tenant-driven provisioning (for example, Other). Separating Microsoft-driven provisioning from tenant-driven provisioning helps you quickly decide whether a new service principal resulted from a Microsoft platform process or from admins, users, or custom apps in your tenant. See [View service principal details in audit log properties](howto-view-service-principal-creation-with-audit-log-properties.md) for more information on creating detections for new service principals in your tenant.
 
 ### SubscribedSkus
 
@@ -109,5 +109,5 @@ You can use this value to distinguish between:
 This reduces the need to call Microsoft Graph separately to retrieve `appOwnerOrganizationId` for every new service principal creation event.
 
 ## Next steps
-[View service principal details in audit log properties](howto-view-service-principal-details-in-audit-log-properties.md)
+[View service principal details in audit log properties](howto-view-service-principal-creation-with-audit-log-properties.md)
 
