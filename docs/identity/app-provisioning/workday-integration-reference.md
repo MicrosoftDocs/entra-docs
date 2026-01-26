@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 03/04/2025
+ms.date: 01/26/2026
 ms.author: jfields
 ms.reviewer: arvinh, chmutali
 ---
@@ -528,7 +528,8 @@ This section lists current, known limitations customers may experience in their 
 1. The connector doesn't support the [retrieval of Workday calculated fields](hr-attribute-retrieval-issues.md#issue-fetching-workday-calculated-fields).
 2. The connector doesn't support synchronizing photos from Workday.
 3. The connector doesn't support [advanced retrieval of workers whose last day of work is due](hr-user-update-issues.md#provisioning-last-day-of-work-field-from-workday).
-4. During incremental sync, there might be a [delay in processing the termination event](hr-user-update-issues.md#workday-termination-processing-delay) for workers located in the Asia Pacific and Australia/New Zealand regions.
+4. The connector is not supported in Microsoft tenants operated by 21Vianet (China). 
+5. During incremental sync, there might be a [delay in processing the termination event](hr-user-update-issues.md#workday-termination-processing-delay) for workers located in the Asia Pacific and Australia/New Zealand regions.
 
 ## Next steps
 
