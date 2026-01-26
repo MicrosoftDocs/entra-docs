@@ -8,6 +8,7 @@ ms.author: barclayn
 ms.topic: tutorial
 ms.date: 12/16/2024
 ms.custom: sfi-image-nochange
+ROBOTS: NOINDEX
 # Customer intent: As a developer, I want to build a custom wallet using Microsoft Entra Verified ID Wallet Library.
 ---
 
