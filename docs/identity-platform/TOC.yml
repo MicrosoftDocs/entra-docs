@@ -507,6 +507,14 @@
                   displayName: email OTP, email one-time passcode, email and password
                 - name: Auto-sign in after sign-up
                   href: tutorial-native-authentication-android-sign-in-after-sign-up.md
+                - name: Add email one-time passcode (OTP) sign-in
+                  href: tutorial-native-authentication-android-email-otp-mfa-sign-in.md
+                - name: Add email strong authentication method registration
+                  href: tutorial-native-authentication-android-email-strong-auth-method-registration.md
+                - name: Add SMS one-time passcode (OTP) sign-in
+                  href: tutorial-native-authentication-android-sms-otp-mfa-sign-in.md
+                - name: Add SMS strong authentication method registration
+                  href: tutorial-native-authentication-android-sms-strong-auth-method-registration.md
                 - name: Self-service password reset
                   href: tutorial-native-authentication-android-self-service-password-reset.md
                 - name: Support web fallback
