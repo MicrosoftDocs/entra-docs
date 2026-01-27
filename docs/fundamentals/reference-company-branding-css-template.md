@@ -37,7 +37,10 @@ The following CSS styles become the default body and link styles for the whole p
 
 ## Microsoft Entra CSS selectors
 
-Use the following CSS selectors to configure the details of the sign-in experience. 
+Use the following CSS selectors to configure the details of the sign-in experience.
+
+>[!Note]
+>To customize internal navigation links, use the new custom CSS selector: `.ext-link`.
 
 - `.ext-background-image` - Container that includes the background image in the default lightbox template
 - `.ext-header` - Header at the top of the container
