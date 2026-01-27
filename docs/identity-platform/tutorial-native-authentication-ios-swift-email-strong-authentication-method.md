@@ -34,15 +34,15 @@ In this tutorial, you learn how to:
 
 Set the registrationRequired capability during client initialization to support strong authentication method registration.
 
-    ```swift
-    let config = try MSALNativeAuthPublicClientApplicationConfig(
-        clientId: Configuration.clientId,
-        tenantSubdomain: Configuration.tenantSubdomain,
-        challengeTypes: [.OOB, .password]
-    )
-    config.capabilities = [.registrationRequired]
-    nativeAuth = try MSALNativeAuthPublicClientApplication(nativeAuthConfiguration: config)
-    ```
+```swift
+let config = try MSALNativeAuthPublicClientApplicationConfig(
+    clientId: Configuration.clientId,
+    tenantSubdomain: Configuration.tenantSubdomain,
+    challengeTypes: [.OOB, .password]
+)
+config.capabilities = [.registrationRequired]
+nativeAuth = try MSALNativeAuthPublicClientApplication(nativeAuthConfiguration: config)
+```
 
 ## Register email one-time passcode as strong authentication method
 

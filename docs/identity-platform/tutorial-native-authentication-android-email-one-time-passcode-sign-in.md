@@ -186,5 +186,5 @@ To handle errors that occur during MFA, you can use these code snippets:
 
 ## Next steps
 
-- [Tutorial: Add Email strong authentication method registration to your Android app](tutorial-native-authentication-android-email-strong-auth-method-registration.md)
+- [Tutorial: Add Email strong authentication method registration to your Android app](tutorial-native-authentication-android-email-strong-authentication-method.md)
 

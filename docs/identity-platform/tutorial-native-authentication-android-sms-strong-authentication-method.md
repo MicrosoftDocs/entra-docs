@@ -35,7 +35,8 @@ In this tutorial, you learn how to:
 
 ## Add strong authentication method registration to the client configuration file
 
-> [!NOTE] Currently there is a known issue using the SMS one time passcode with the authority format:
+> [!NOTE] 
+> Currently there is a known issue using the SMS one time passcode with the authority format:
 > `<tenantSubdomain>.ciamlogin.com/<tenantSubdomain>.onmicrosoft.com`
 > because of that the following format should be used:
 > `<tenantSubdomain>.ciamlogin.com/<tenantID>`

@@ -27,17 +27,16 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-1. Enroll in a Private Preview of SMS and Email OTP MFA on Native Authentication – [Fill out form](https://forms.office.com/r/P3m1q2j3hg)
+1. Complete the steps in [Tutorial: Add sign-in and sign-out in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md).
 
-2. Complete the steps in [Tutorial: Add sign-in and sign-out in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md).
+1. Enable SMS as an MFA method in your tenant: follow the steps in [Enable SMS as an MFA method](../identity/authentication/howto-authentication-sms-signin.md#enable-the-sms-based-authentication-method).
 
-3. Enable SMS as an MFA method in your tenant: follow the steps in [Enable SMS as an MFA method](../identity/authentication/howto-authentication-sms-signin.md#enable-the-sms-based-authentication-method).
-
-5. If you'd like to explore our Sign-in with MFA using SMS implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) before getting started.
+1. If you'd like to explore our Sign-in with MFA using SMS implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) before getting started.
 
 ## Add MFA capabilities to the client configuration file
 
-> [!NOTE] Currently there is a known issue using the SMS one time passcode with the authority format:
+> [!NOTE] 
+> Currently there is a known issue using the SMS one time passcode with the authority format:
 > `<tenantSubdomain>.ciamlogin.com/<tenantSubdomain>.onmicrosoft.com`
 > because of that the following format should be used:
 > `<tenantSubdomain>.ciamlogin.com/<tenantID>`

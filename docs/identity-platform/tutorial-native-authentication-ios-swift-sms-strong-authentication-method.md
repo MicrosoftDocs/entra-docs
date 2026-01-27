@@ -25,7 +25,6 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-1. Enroll in the [Private Preview of SMS and Email OTP MFA on Native Authentication](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR3phsVGS44BJs6m7EP81nAFUODVZQTJBWFJYRVhGTkRHN1BISTJPWTBVNC4u&route=shorturl)
 1. Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md).
 
 1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add SMS one-time passcode MFA to your iOS/macOS app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add SMS one time passcode MFA to your sign-in flow. We support email and SMS one-time passcode MFA.
@@ -34,7 +33,8 @@ In this tutorial, you learn how to:
 
 ## Configure client capabilities for strong authentication method registration
 
-> [!NOTE] Currently there is a known issue using the SMS one time passcode with the authority format:
+> [!NOTE] 
+> Currently there is a known issue using the SMS one time passcode with the authority format:
 > `<tenantName>.ciamlogin.com/<tenantName>.onmicrosoft.com`
 > because of that the following format should be used:
 > `<tenantName>.ciamlogin.com/<tenantID>`
