@@ -41,9 +41,8 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 - The dynamic group rule builder and validate feature can't be used for `memberOf` at this time.
 - The `memberOf` attribute can't be used with other operators. For example, you can't create a rule that states "Members Of group A can't be in Dynamic group B."
 - Users included in `memberOf` dynamic membership groups may cause a slower processing time for your tenant, if the tenant has a large number of groups or frequent dynamic membership groups updates.
+- Membership of a memberOf dynamic group doesn't automatically update when a child group is deleted or when members are removed from a child group. The affected users or devices remain members of the memberOf dynamic group until the rule is modified.
 
-> [!IMPORTANT]
-> When a group object that is listed in the rule of a memberOf dynamic group is deleted from the tenant, the users or devices that were members of the deleted group at the time of deletion remain members of the memberOf dynamic group. This behavior continues until the memberOf dynamic group rule is modified.
 
 ## Get started
 
