@@ -16,7 +16,7 @@ ms.custom:
 
 # Tutorial: Add Phone SMS strong authentication method registration to your iOS/macOS app
 
-This tutorial demonstrates how to implement SMS strong authentication method registration into your iOS/macOS app using native authentication. At least one strong authentication is mandatory for MFA-enabled users. Currently, we support email and SMS one-time passcode as strong authentication method.
+This tutorial demonstrates how to implement SMS strong authentication method registration into your iOS/macOS app using native authentication. At least one strong authentication is mandatory for multifactor authentication (MFA) enabled users. Currently, we support email and SMS one-time passcode as strong authentication method.
 
 In this tutorial, you learn how to:
 
@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 1. Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md).
 
-1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add SMS one-time passcode MFA to your iOS/macOS app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add SMS one time passcode MFA to your sign-in flow. We support email and SMS one-time passcode MFA.
+1. To enforce MFA for your customers, use the steps in [Add SMS one-time passcode MFA to your iOS/macOS app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add SMS one time passcode MFA to your sign-in flow. We support email and SMS one-time passcode MFA.
 
 1. If you'd like to explore our strong authentication method registration implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample) before getting started.
 

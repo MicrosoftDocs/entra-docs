@@ -28,7 +28,7 @@ In this tutorial, you learn how to:
 
 1. Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md).
 
-1. To enable multifactor authentication (MFA) for your customers, follow the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md). Currently, native authentication supports email one-time passcode as a second factor for MFA, which is available only when the primary authentication method is email with password.
+1. To enable MFA for your customers, follow the steps in [Add MFA to an app](../external-id/customers/how-to-multifactor-authentication-customers.md). Currently, native authentication supports email one-time passcode as a second factor for MFA, which is available only when the primary authentication method is email with password.
 
 1. If you'd like to explore our Sign-in with MFA using Email OTP implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample) before getting started.
 

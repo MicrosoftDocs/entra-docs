@@ -41,7 +41,7 @@ In this tutorial, you learn how to:
 > because of that the following format should be used:
 > `<tenantSubdomain>.ciamlogin.com/<tenantID>`
 
-To support multifactor authentication (MFA), update the Android client configuration to include the required MFA capabilities.
+To support MFA, update the Android client configuration to include the required MFA capabilities.
 
 ```json
 {
@@ -64,7 +64,7 @@ To support multifactor authentication (MFA), update the Android client configura
 
 ## Sign in a user with SMS one-time passcode MFA
 
-To sign in a user with SMS one-time passcode MFA, after collecting first factor, you need to send an SMS containing a one-time passcode for the user to verify their phone number. When the user enters a valid one-time passcode, the app signs them in.
+To sign in a user with SMS one-time passcode multifactor authentication (MFA), after collecting first factor, you need to send an SMS containing a one-time passcode for the user to verify their phone number. When the user enters a valid one-time passcode, the app signs them in.
 
 To sign in a user with SMS one-time passcode MFA, you need to:
 

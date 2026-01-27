@@ -16,7 +16,7 @@ ms.custom:
 
 # Tutorial: Add Email strong authentication method registration to your Android app
 
-This tutorial demonstrates how to implement Email strong authentication method registration into your Android app using native authentication. At least one strong authentication is mandatory for MFA-enabled users. Currently, we only support Email and SMS one-time passcode as strong authentication method.
+This tutorial demonstrates how to implement Email strong authentication method registration into your Android app using native authentication. At least one strong authentication is mandatory for multifactor authentication (MFA) enabled users. Currently, we only support Email and SMS one-time passcode as strong authentication method.
 
 In this tutorial, you learn how to: 
 
@@ -27,7 +27,7 @@ In this tutorial, you learn how to:
 
 1. Complete the steps in [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md).
 
-1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add Email OTP MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA. Therefore, email OTP as second factor is only available when the authentication method is email with password.
+1. To enforce MFA for your customers, use the steps in [Add MFA to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add Email OTP MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA. Therefore, email OTP as second factor is only available when the authentication method is email with password.
 
 1. If you'd like to explore our strong authentication method registration implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) before getting started.
 

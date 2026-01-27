@@ -28,13 +28,13 @@ In this tutorial, you learn how to:
 
 1. Complete the steps in [Tutorial: Add sign-in in Android app by using native authentication](/entra/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out).
 
-1. To enable multifactor authentication (MFA) for your customers, follow the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md). Currently, native authentication supports email one-time passcode as a second factor for MFA, which is available only when the primary authentication method is email with password.
+1. To enable MFA for your customers, follow the steps in [Add MFA to an app](../external-id/customers/how-to-multifactor-authentication-customers.md). Currently, native authentication supports email one-time passcode as a second factor for MFA, which is available only when the primary authentication method is email with password.
 
 1. If you'd like to explore our Sign-in with MFA implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) before getting started.
 
 ## Add MFA capabilities to the client configuration file
 
-To support multifactor authentication (MFA), update the Android client configuration to include the required MFA capabilities.
+To support MFA, update the Android client configuration to include the required MFA capabilities.
 
 
 ```json
