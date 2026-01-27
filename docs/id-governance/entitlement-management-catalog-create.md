@@ -25,7 +25,7 @@ Microsoft Entra ID Governance catalogs have two privilege levels that determine 
 
 1. **Standard catalog**
      - The default type for most catalogs.
-     - Remains standard as long as it does not contain privileged resources.
+     - Remains standard as long as it doesn't contain privileged resources.
      - Supports all catalog management actions and access patterns.
 
 2. **Privileged catalog**
@@ -45,13 +45,13 @@ Privileged catalogs have stricter controls to protect sensitive resources:
 - **User access:**
     - Only users who are either:
         - Global Administrators, or Privileged Role Administrators who also have the Identity Governance Administrator role can perform create, update, or delete actions.
-    - Other users can read the catalog but cannot modify it.
+    - Other users can read the catalog but can't modify it.
 
 - **Auto-assignment policies:**
-    - You cannot create new auto-assignment policies for privileged catalogs.
+    - You can't create new auto-assignment policies for privileged catalogs.
     - This prevents automated distribution of privileged roles or permissions.
 
-To manually update the privilege level of a catalog, see : [Update the privilege level of a catalog (Preview)](#update-privilege-level-of-a-catalog-preview).
+To manually update the privilege level of a catalog, see: [Update the privilege level of a catalog (Preview)](#update-privilege-level-of-a-catalog-preview).
 
 ## Create a catalog
 
@@ -118,7 +118,7 @@ To include resources in an access package, the resources must exist in a catalog
 
 * [Catalog access reviews (preview)](catalog-access-reviews.md) also allow [custom data provided resources](custom-data-resource-access-reviews.md) to be included in a catalog.
 
-* When resources added to a catalog grant elevated permissions, the catalog automatically has a **Privileged** [privilege level](#catalog-privilege-levels-preview).
+* When resources added to a catalog grant elevated permission, the catalog automatically has a **Privileged** [privilege level](#catalog-privilege-levels-preview).
 
 **Prerequisite roles:** See [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
@@ -300,7 +300,7 @@ To edit a catalog:
 
 ## Update privilege level of a catalog (Preview)
 
-When you add resources that grant elevated permissions,such as Microsoft Entra roles or Application API permissions, the catalog is automatically assigned a **Privileged** level. However, you can also manually update the privilege level of a catalog. To do so, follow these steps:
+When you add resources that grant elevated permissions, such as Microsoft Entra roles or Application API permissions, the catalog is automatically assigned a **Privileged** level. However, you can also manually update the privilege level of a catalog. To do so, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -315,7 +315,7 @@ When you add resources that grant elevated permissions,such as Microsoft Entra r
 
 ## Update privilege level of a catalog programmatically
 
-To update manually update the privilege level of a catalog using Microsoft Graph, you'd update the `PrivilegeLevel` setting. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API.
+To update manually, update the privilege level of a catalog using Microsoft Graph, you'd update the `PrivilegeLevel` setting. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission can call the API.
 
 
 ## Delete a catalog
