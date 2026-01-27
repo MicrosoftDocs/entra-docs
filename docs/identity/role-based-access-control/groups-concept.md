@@ -6,7 +6,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.topic: article
+ms.topic: concept-article
 ms.date: 01/03/2025
 ms.author: barclayn
 ms.reviewer: vincesm

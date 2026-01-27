@@ -8,7 +8,7 @@ ms.author: barclayn
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.custom: no-azure-ad-ps-ref
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/03/2025
 ---
 

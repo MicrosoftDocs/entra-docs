@@ -6,7 +6,7 @@ manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/07/2025
 ms.author: owinfrey
 ms.reviewer: mwahl

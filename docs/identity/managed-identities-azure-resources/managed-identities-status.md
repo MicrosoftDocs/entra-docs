@@ -5,7 +5,7 @@ description: Explore Azure services and resource types supporting managed identi
 author: SHERMANOUKO
 ms.author: shermanouko
 ms.date: 05/09/2025
-ms.topic: article
+ms.topic: concept-article
 ms.service: entra-id
 ms.subservice: managed-identities
 manager: CelesteDG
