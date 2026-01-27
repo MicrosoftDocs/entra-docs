@@ -101,9 +101,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Bug Fixes
 
-- The default certificate lifetime for certificates managed by Microsoft Entra Connect is now 90 days. The certificate renewal threshold has been updated to use percentage-based lifetime consumption (70%) instead of a fixed 30-day window. The certificate renewal process will now attempt to renew after 70% of the lifetime has elapsed instead of fixed 30 day intervals.
 - Fixed an issue where using the Synchronization Service Manager UI to modify the Microsoft Entra ID Connector configuration deleted Application-Based Authentication parameters, causing Wizard and certificate rotation failures. We recommend not using the Synchronization Service Manager UI in older versions.
 - Fixed an issue where Staging Mode configuration failed when the Password Writeback Service is disabled or deleted from the Entra ID tenant.
+- The default certificate lifetime for certificates managed by Microsoft Entra Connect is now 90 days. The certificate renewal threshold has been updated to use percentage-based lifetime consumption (70%) instead of a fixed 30-day window. The certificate renewal process will now attempt to renew after 70% of the lifetime has elapsed instead of fixed 30 day intervals.
 - Enhanced Application-Based Authentication logging in Windows Event logs and trace logs to help diagnose authentication failures.
 - Fixed an accessibility issue in the Connect wizard where help icons were announced incorrectly by screen readers, causing the full multi-line help text to be read as the control name. The help control now exposes the correct name and role, providing a better experience.
 - Fixed a keyboard accessibility issue where a hyperlink inside a help popup was not reachable using keyboard navigation. The link is now accessible using the keyboard alone.
