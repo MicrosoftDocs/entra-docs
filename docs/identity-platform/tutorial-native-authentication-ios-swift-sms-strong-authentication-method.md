@@ -98,7 +98,7 @@ To register a strong authentication method (phone SMS passcode) for MFA-enabled 
     }
     ```
 
-    The `signIn(username:password:delegate)` results in a call to delegate methods. The `onSignInStrongAuthMethodRegistration(authMethods:newState)` method handles the scenario where registration of a strong authentication method is required. You can present an alert to the user, asking if they want to proceed with registration. If the user chooses **OK** you request the MFA challenge by calling `newState.challengeAuthMethod(parameters:delegate)`. The `newState.challengeAuthMethod(parameters:delegate)` method sends the strong authentication method to the server for registration.
+    The `signIn(username:password:delegate)` results in a call to delegate methods. The `onSignInStrongAuthMethodRegistration(authMethods:newState)` method handles the scenario where registration of a strong authentication method is required. You can present an alert to the user, asking if they want to proceed with registration. If the user selects **OK**, you request the MFA challenge by calling `newState.challengeAuthMethod(parameters:delegate)`. The `newState.challengeAuthMethod(parameters:delegate)` method sends the strong authentication method to the server for registration.
 
     If you prefer not to inform the user about the necessity for registration, you can bypass the user interaction by directly invoking `newState.challengeAuthMethod(parameters:delegate)`.
     The `challengeAuthMethod` accepts a parameter and a delegate instance, you must implement the required methods in the `RegisterStrongAuthChallengeDelegate` protocol.
