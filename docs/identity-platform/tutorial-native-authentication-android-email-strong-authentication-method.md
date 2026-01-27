@@ -182,4 +182,4 @@ To handle errors that occur during strong authentication method registration, yo
  
 ## Next steps
 
-- [Tutorial: Add SMS one-time passcode MFA to your Android app](tutorial-native-authentication-android-sms-one-time-passcode-multi-factor-sign-in.md)
+- [Tutorial: Add SMS one-time passcode MFA to your Android app](tutorial-native-authentication-android-sms-one-time-passcode-sign-in.md)

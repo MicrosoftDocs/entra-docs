@@ -121,7 +121,7 @@ To sign in a user with SMS one-time passcode MFA, you need to:
 
 ## Use authentication context during sign-in
 
-[This](tutorial-native-authentication-android-email-otp-mfa-sign-in.md#use-authentication-context-during-sign-in) is how you can use authentication context during sign-in.
+[This](tutorial-native-authentication-android-email-one-time-passcode-sign-in.md#use-authentication-context-during-sign-in) is how you can use authentication context during sign-in.
 
 ## Handle sign-in with SMS one-time passcode MFA errors
 
