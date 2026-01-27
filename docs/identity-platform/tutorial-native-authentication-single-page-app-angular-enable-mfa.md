@@ -21,7 +21,7 @@ In this tutorial, you learn how to add multifactor authentication (MFA) in your 
 Just like in [strong authentication method registration](tutorial-native-authentication-single-page-app-angular-register-strong-method.md), MFA flow occurs in three scenarios:
 
 - **During sign-in**: The user signs in and has a strong authentication method registered.
-- **After signup**: After the user completes signup, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
+- **After sign-up**: After the user completes sign-up, they proceed to sign in. New users need to [register a strong authentication method](tutorial-native-authentication-single-page-app-angular-register-strong-method.md) before any MFA challenge. Because the strong authentication method also gets verified during registration, they might not be prompted for an additional MFA challenge.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in. If the user has a strong authentication method registered, they're prompted to complete MFA challenge.
 
 When MFA is required, the user chooses an MFA challenge method from a list of registered methods. Available options are **email** one-time passcode, **SMS** one-time passcode, or both, depending on what the user previously registered.
@@ -296,17 +296,17 @@ Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your
     </app-mfa-challenge-form>
     ```
 
-## Handle multifactor authentication after signup or password reset
+## Handle multifactor authentication after sign-up or password reset
 
-MFA flow after signup and password reset works similar to the MFA in the sign-in flow. After a successful signup or password reset, the SDK can automatically continue with the sign-in flow. If the user has a strong authentication method registered, the flow transitions to MFA challenge verification.
+MFA flow after sign-up and password reset works similar to the MFA in the sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in flow. If the user has a strong authentication method registered, the flow transitions to MFA challenge verification.
 
-### Handle multifactor authentication after signup
+### Handle multifactor authentication after sign-up
 
-For MFA flow after signup, you need you update the */src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
+For MFA flow after sign-up, you need you update the */src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
 1. Make sure you import the required types and components.
 
-1. Handle MFA requirements states in a similar manner as it happens in the sign-in flow; after signup completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
+1. Handle MFA requirements states in a similar manner as it happens in the sign-in flow; after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler
@@ -341,7 +341,7 @@ For MFA flow after SSPR, you need you update the */src/app/components/reset-pass
 
 1. Make sure you import the required types and components.
 
-1. Handle MFA requirements states in a similar manner as it happens in the sign-in flow; after signup completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
+1. Handle MFA requirements states in a similar manner as it happens in the sign-in flow; after sign-up completes successfully, use the result to automatically trigger a sign-in flow as shown in the following code snippet:
 
     ```typescript
     if (this.resetState instanceof ResetPasswordCompletedState) {
