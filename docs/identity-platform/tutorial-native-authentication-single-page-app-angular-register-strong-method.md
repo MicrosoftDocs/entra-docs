@@ -24,7 +24,7 @@ If you enable multifactor authentication (MFA), but the user has no registered s
 The strong authentication method registration flow occurs in three scenarios:
 
 - **During sign-in**: The user signs in but doesn't have a strong authentication method registered.
-- **After signup**: The user successfully signs up and automatically proceeds to sign in.
+- **After sign-up**: The user successfully signs up and automatically proceeds to sign in.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in.
 
 When strong authentication method registration is required, the user selects a method of choice from a list of supported methods. The available methods are **email** and **SMS** one-time passcode.
@@ -316,17 +316,17 @@ Update the *src/app/components/sign-in/sign-in.component.ts* file to enable your
     </app-auth-method-challenge-form>
     ```
 
-## Register strong authentication method after signup or password reset
+## Register strong authentication method after sign-up or password reset
 
-Strong authentication method registration flow after signup and password reset works similar to the method registration during sign-in flow. After a successful signup or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states.
+Strong authentication method registration flow after sign-up and password reset works similar to the method registration during sign-in flow. After a successful sign-up or password reset, the SDK can automatically continue with the sign-in. If the user doesn't have a strong authentication method registered, the flow transitions to the authentication method registration states.
 
-### Register strong authentication method after signup
+### Register strong authentication method after sign-up
 
-For strong authentication method registration after signup flow, you need you update the *src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
+For strong authentication method registration after sign-up flow, you need you update the *src/app/components/sign-up/sign-up.component.ts* file. See the complete code in [sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
 1. Make sure you import the required types and components.
 
-1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After signup completes successfully, you can use the result to automatically trigger a sign-in as shown in the following code snippet:
+1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After sign-up completes successfully, you can use the result to automatically trigger a sign-in as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler
@@ -395,9 +395,9 @@ For strong authentication method registration after SSPR, you need to update the
 
 Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-angular-sign-up.md#test-the-sign-up-flow) to run your app, but this time, test the strong authentication method registration flow. 
 
-### Test authentication method registration after signup 
+### Test authentication method registration after sign-up 
 
-1. Navigate to [http://localhost:4200/sign-up](http://localhost:3000/sign-up) to display the signup form.
+1. Navigate to [http://localhost:4200/sign-up](http://localhost:3000/sign-up) to display the sign-up form.
 
 1. Enter the required details, then sign up by following prompts. After you successfully sign up, the app automatically continues to sign-in flow by displaying the strong authentication method registration form.
 
