@@ -129,7 +129,7 @@ You can filter the device list by these attributes:
 Cloud Device Administrators and Intune Administrators can use the **Download devices** option to export a CSV file that lists devices. You can apply filters to determine which devices to list. If you don't apply any filters, all devices are listed.
 The exported list includes these device identity attributes:
 
-`id, deviceId, displayName, accountEnabled, operatingSystem, operatingSystemVersion, trustType(joinType), mdm, securitySettingsManagement, isCompliant, registrationDateTime, approximateLastSignInDateTime, owner, upnName`
+`id,deviceId,displayName,accountEnabled,operatingSystem,operatingSystemVersion,trustType(joinType),mdm,securitySettingsManagement,isCompliant,registrationDateTime,approximateLastSignInDateTime,owner,upnName`
 
 The following filters can be applied for the export task:
 
@@ -140,7 +140,7 @@ The following filters can be applied for the export task:
 - OS type
 - Device type
 
-Additionally, columns can be managed by selecting **Manage View** and then selecting **Columns** to toggle which columns they would like to select.
+Additionally, columns can be managed by selecting **Manage view > Columns** to toggle which columns you would like to export.
 
 ## Configure device settings
 
