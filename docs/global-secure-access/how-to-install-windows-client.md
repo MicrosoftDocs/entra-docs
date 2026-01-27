@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/19/2025
+ms.date: 01/27/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -297,7 +297,7 @@ Admins can use [remediation scripts](/intune/intune-service/fundamentals/remedia
 #### Detection script 
 
 ```powershell
-# Check GSA registry keys 
+# Check Global Secure Access registry keys 
 
 $gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
 
@@ -355,7 +355,7 @@ exit 1
 #### Remediation script
 
 ```powershell
-# Ensure GSA registry keys are present 
+# Ensure Global Secure Access registry keys are present 
 
 $gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
 
@@ -647,6 +647,23 @@ To troubleshoot the Global Secure Access client, select the client icon in the t
 For more information on troubleshooting the Global Secure Access client, see the following articles:
 - [Troubleshoot the Global Secure Access client: advanced diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access client: Health check tab](troubleshoot-global-secure-access-client-diagnostics-health-check.md)
+
+## Security recommendations
+To enhance the security of the Global Secure Access client, use the following configurations:
+
+### Upgrade to the latest client version of the Global Secure Access client
+Regularly test and deploy the latest Global Secure Access client release to take advantage of new features, performance improvements, and security fixes. Download the latest version of the [Global Secure Access client](#download-the-client) from the Microsoft Entra admin center.
+
+### Restrict nonprivileged users from disabling the client
+Administrators can prevent nonprivileged users on Windows devices from disabling or enabling the Global Secure Access client. This restriction ensures that the client stays on and that Global Secure Access continues to authenticate and secure network traffic. Enabling this restriction requires elevated privileges to disable the client.
+
+Before enforcing this restriction, let users work with the Global Secure Access client in a non‑restricted mode. Verify that the client is configured appropriately for your organization and that users don't need to disable it in specific scenarios (for example, to access specific websites or to use a third‑party VPN in parallel).
+
+To stop the Global Secure Access client on a device where you restricted nonprivileged users, make sure that there's a process in place to use a local administrator if necessary. For more information regarding restricting nonprivileged users, see [Restrict nonprivileged users](#restrict-nonprivileged-users).
+
+### Hide the Disable button
+In addition to restricting nonprivileged users from disabling the client, administrators can hide the **Disable** button in the client system tray icon menu. Removing the **Disable** button from view further reduces the likelihood of accidental or unauthorized disabling of the client.
+For more information regarding hiding client menu buttons, see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons).
 
 ## Client registry keys
 The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solution, such as Microsoft Intune or Group Policy to control the registry values.
