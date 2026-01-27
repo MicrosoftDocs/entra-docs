@@ -403,7 +403,7 @@ To test strong authentication method registration after SSPR, make sure you have
 
 1. Follow the app prompts to complete strong authentication method registration.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Enable multifactor authentication in a React SPA by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-enable-mfa.md)
