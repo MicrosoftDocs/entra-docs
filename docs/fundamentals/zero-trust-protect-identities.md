@@ -118,9 +118,6 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### All sign-in activity comes from managed devices
 [!INCLUDE [21892](../includes/secure-recommendations/21892.md)]
 
-### Directory sync account is locked down to specific named location
-[!INCLUDE [21834](../includes/secure-recommendations/21834.md)]
-
 ### Security key authentication method enabled
 [!INCLUDE [21838](../includes/secure-recommendations/21838.md)]
 

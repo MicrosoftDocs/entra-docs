@@ -62,7 +62,6 @@ Reduce credential-related risk by implementing modern identity standards.
 | [User sign-in activity uses token protection](zero-trust-protect-identities.md#user-sign-in-activity-uses-token-protection) | Microsoft Entra ID P1 |
 | [All user sign-in activity uses phishing-resistant authentication methods](zero-trust-protect-identities.md#all-user-sign-in-activity-uses-phishing-resistant-authentication-methods) | Microsoft Entra ID P1 |
 | [All sign-in activity comes from managed devices](zero-trust-protect-identities.md#all-sign-in-activity-comes-from-managed-devices) | Microsoft Entra ID P1 |
-| [Directory sync account is locked down to specific named location](zero-trust-protect-identities.md#directory-sync-account-is-locked-down-to-specific-named-location) | Microsoft Entra ID P1 |
 | [Security key authentication method enabled](zero-trust-protect-identities.md#security-key-authentication-method-enabled) | None (included with Microsoft Entra ID) |
 | [Privileged roles aren't assigned to stale identities](zero-trust-protect-identities.md#privileged-roles-arent-assigned-to-stale-identities) | Microsoft Entra ID P2 |
 | [Microsoft Authenticator app shows sign-in context](zero-trust-protect-identities.md#microsoft-authenticator-app-shows-sign-in-context) | Microsoft Entra ID P1 |
