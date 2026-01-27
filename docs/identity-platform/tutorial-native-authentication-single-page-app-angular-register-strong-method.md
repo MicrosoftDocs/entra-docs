@@ -427,7 +427,7 @@ To test strong authentication method registration after SSPR, make sure you have
 
 1. Follow the app prompts to complete strong authentication method registration.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Enable multifactor authentication in an Angular SPA by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-angular-enable-mfa.md)
