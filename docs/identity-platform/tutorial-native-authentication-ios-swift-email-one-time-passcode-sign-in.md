@@ -26,7 +26,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-1. Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.).
+1. Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md).
 
 1. To enable multifactor authentication (MFA) for your customers, follow the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md). Currently, native authentication supports email one-time passcode as a second factor for MFA, which is available only when the primary authentication method is email with password.
 
@@ -193,4 +193,4 @@ To handle errors that occur during MFA, you need to implement the following meth
  
 ## Next steps
 
-- [Tutorial: Add Email strong authentication method registration to your iOS/macOS app](tutorial-native-authentication-ios-swift-email-strong-auth-method-registration.md)
+- [Tutorial: Add Email strong authentication method registration to your iOS/macOS app](tutorial-native-authentication-ios-swift-email-strong-authentication-method.md)
