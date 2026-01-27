@@ -4,7 +4,7 @@ description: Microsoft and Cisco VPNs coexistence solution guide.
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/06/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access

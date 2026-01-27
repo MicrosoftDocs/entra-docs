@@ -4,7 +4,7 @@ description: Learn about the combined password policy and check for weak passwor
 ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
-ms.topic: article
+ms.topic: concept-article
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha

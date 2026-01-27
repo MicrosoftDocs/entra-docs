@@ -4,7 +4,7 @@ description: Learn about the recommended configuration for reauthentication prom
 ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
-ms.topic: article
+ms.topic: concept-article
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha

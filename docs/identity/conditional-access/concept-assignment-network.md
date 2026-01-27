@@ -4,7 +4,7 @@ description: Discover how to configure Conditional Access policies with network-
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: article
+ms.topic: concept-article
 ms.date: 09/22/2025
 
 ms.author: joflore

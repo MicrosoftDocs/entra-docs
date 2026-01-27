@@ -4,7 +4,7 @@ description: Microsoft Entra ID uses heuristics and machine learning to detect a
 
 ms.service: entra-id  
 ms.subservice: authentication  
-ms.topic: article
+ms.topic: concept-article
 ms.date: 07/28/2025
 
 author: justinha

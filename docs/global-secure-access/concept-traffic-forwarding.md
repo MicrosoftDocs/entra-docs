@@ -4,7 +4,7 @@ description: Learn about how traffic forwarding profiles for Global Secure Acces
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: article
+ms.topic: concept-article
 ms.date: 01/12/2026
 ms.service: global-secure-access
 ms.reviewer: katabish
