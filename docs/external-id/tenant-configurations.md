@@ -8,7 +8,7 @@ manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
-ms.topic: article
+ms.topic: concept-article
 ms.date: 05/20/2025
 ms.custom: it-pro
 
