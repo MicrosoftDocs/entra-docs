@@ -176,26 +176,24 @@ In the following example, the tenant has a Conditional Access policy with the fo
 - Resource exclusions for a custom enterprise application and Exchange Online
 - MFA is configured as the grant control
 
-#### Example scenario 1
+#### Example scenarios
 
-| Example scenario | User impact (before → after) | Conditional Access evaluation change |
+| Example scenario | User impact (before → after) | Conditional Access evaluation |
 |---|---|---|
 | A user signs into VSCode desktop client, which requests openid and profile scopes. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
-| A user signs in using Azure CLI, which requests only User.Read. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
-| A user signs in through a custom enterprise application (excluded from the policy) that requests only User.Read and People.Read. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs in using Azure CLI, which requests only `User.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs in through a custom enterprise application (excluded from the policy) that requests only `User.Read` and `People.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
 
-There is no change in behavior when an application requests a scope beyond those listed previously.
+There is no change in behavior when an application requests a scope beyond those listed previously, as illustrated in the following examples.
 
-In the following example, Conditional Access is not enforced because Exchange Online is excluded from the policy.
-
-#### Example scenario 2
+#### Example scenarios
 
 | Example scenario | User impact | Conditional Access evaluation |
 |---|---|---|
-| A user signs in to a custom enterprise application (excluded from the policy) that requests offline_access and SharePoint access (Files.Read). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
-| A user signs in to the OneDrive desktop sync client. OneDrive requests offline_access and Exchange Online access (Mail.Read). | No change in behavior | Conditional Access is not enforced because Exchange Online is excluded from the policy. |
+| A user signs in to a custom enterprise application (excluded from the policy) that requests offline_access and SharePoint access (`Files.Read`). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
+| A user signs in to the OneDrive desktop sync client. OneDrive requests offline_access and Exchange Online access (`Mail.Read`). | No change in behavior | Conditional Access is not enforced because Exchange Online is excluded from the policy. |
 
-Most applications request scopes beyond the listed scopes and are already subject to Conditional Access enforcement, unless the application is explicitly excluded from the policy. In such cases, there is no change in behavior.  
+Most applications request scopes beyond the previously listed scopes and are already subject to Conditional Access enforcement, unless the application is explicitly excluded from the policy. In such cases, there is no change in behavior.  
 
 Custom applications that are intentionally designed to request only the previously listed scopes and are not designed to handle Conditional Access challenges might need to be updated so that they can handle Conditional Access challenges. Refer to the [Microsoft Conditional Access developer guidance](../../identity-platform/v2-conditional-access-dev-guide.md) for implementation details.   
 
