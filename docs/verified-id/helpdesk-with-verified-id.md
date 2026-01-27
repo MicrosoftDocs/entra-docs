@@ -5,7 +5,7 @@ services: decentralized-identity
 author: barclayn
 manager: femila
 ms.service: entra-verified-id
-ms.topic: article
+ms.topic: concept-article
 ms.date: 12/13/2024
 ms.author: barclayn
 ---

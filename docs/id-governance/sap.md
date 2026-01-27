@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.topic: article
+ms.topic: concept-article
 ms.date: 01/29/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft

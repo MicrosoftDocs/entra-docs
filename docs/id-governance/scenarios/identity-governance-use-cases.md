@@ -6,7 +6,7 @@ author: owinfreyATL
 manager: dougeby
 
 
-ms.topic: article
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.author: owinfrey
 ---

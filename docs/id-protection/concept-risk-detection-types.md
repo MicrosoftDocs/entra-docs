@@ -4,7 +4,7 @@ description: Learn about risk detections and risk levels, including the differen
 
 ms.service: entra-id-protection
 
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 07/16/2025
 
 author: shlipsey3

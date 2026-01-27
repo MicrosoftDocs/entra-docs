@@ -5,7 +5,7 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: standards
-ms.topic: article
+ms.topic: overview
 ms.date: 1/3/2023
 ms.author: jricketts
 ms.custom: it-pro
