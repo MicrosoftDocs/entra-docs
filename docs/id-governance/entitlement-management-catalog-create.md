@@ -23,12 +23,12 @@ Microsoft Entra ID Governance catalogs have two privilege levels that determine 
 
 ### Privilege levels
 
-1. **Standard catalog**
+- **Standard catalog**
      - The default type for most catalogs.
      - Remains standard as long as it doesn't contain privileged resources.
      - Supports all catalog management actions and access patterns.
 
-2. **Privileged catalog**
+- **Privileged catalog**
      - Automatically assigned when a catalog contains resources that grant elevated permissions, such as:
          - Microsoft Entra roles
          - Application API permissions
