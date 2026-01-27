@@ -5,7 +5,7 @@ customer intent: As a Microsoft Partner, I want to deploy Microsoft Global Secur
 author: jricketts
 manager: martinco
 ms.service: global-secure-access
-ms.topic: how-to
+ms.topic: concept-article
 ms.date: 01/06/2025
 ms.author: jricketts
 ---
