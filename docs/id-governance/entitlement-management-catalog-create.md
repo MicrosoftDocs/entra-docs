@@ -28,8 +28,11 @@ Microsoft Entra ID Governance catalogs have two privilege levels that determine 
      - Remains standard as long as it does not contain privileged resources.
      - Supports all catalog management actions and access patterns.
 
-1. **Privileged catalog**
-These catalogs apply stricter access and governance controls due to their security‑sensitive nature, such as more restrictive application permissions, tighter role requirements for catalog modification, and limits on automation to reduce the risk of unintended privileged access assignments.
+2. **Privileged catalog**
+     - Automatically assigned when a catalog contains resources that grant elevated permissions, such as:
+         - Microsoft Entra roles
+         - Application API permissions
+     - These catalogs apply stricter access and governance controls due to their security‑sensitive nature, such as more restrictive application permissions, tighter role requirements for catalog modification, and limits on automation to reduce the risk of unintended privileged access assignments.
 
 ### What changes for privileged catalogs?
 
