@@ -53,7 +53,7 @@ To support strong authentication method, update the Android client configuration
     "logcat_enabled": true
     }
 }
-    ```
+```
 
 ## Register Email one-time passcode as strong authentication method
 
@@ -182,4 +182,4 @@ To handle errors that occur during strong authentication method registration, yo
  
 ## Next steps
 
-- [Tutorial: Add SMS one-time passcode MFA to your Android app](tutorial-native-authentication-android-sms-otp-mfa-sign-in.md)
+- [Tutorial: Add SMS one-time passcode MFA to your Android app](tutorial-native-authentication-android-sms-one-time-passcode-multi-factor-sign-in.md)

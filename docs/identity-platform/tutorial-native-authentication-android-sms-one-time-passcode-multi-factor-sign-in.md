@@ -31,11 +31,16 @@ In this tutorial, you learn how to:
 
 2. Complete the steps in [Tutorial: Add sign-in and sign-out in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md).
 
-3. Enable SMS as an MFA method in your tenant: follow the steps in [Enable SMS as an MFA method](../../../SMS-MFA/get-started-sms-mfa.md#enable-sms-as-an-mfa-method).
+3. Enable SMS as an MFA method in your tenant: follow the steps in [Enable SMS as an MFA method](../identity/authentication/howto-authentication-sms-signin.md#enable-the-sms-based-authentication-method).
 
 5. If you'd like to explore our Sign-in with MFA using SMS implementation, take a look at our [Code sample](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-android-sample) before getting started.
 
 ## Add MFA capabilities to the client configuration file
+
+> [!NOTE] Currently there is a known issue using the SMS one time passcode with the authority format:
+> `<tenantSubdomain>.ciamlogin.com/<tenantSubdomain>.onmicrosoft.com`
+> because of that the following format should be used:
+> `<tenantSubdomain>.ciamlogin.com/<tenantID>`
 
 To support multi-factor authentication (MFA), update the Android client configuration to include the required MFA capabilities.
 
@@ -57,11 +62,6 @@ To support multi-factor authentication (MFA), update the Android client configur
     }
 }
 ```
-
-> [!NOTE] Currently there is a known issue using the SMS one time passcode with the authority format:
-> `<tenantSubdomain>.ciamlogin.com/<tenantSubdomain>.onmicrosoft.com`
-> because of that the following format should be used:
-> `<tenantSubdomain>.ciamlogin.com/<tenantID>`
 
 ## Sign in a user with SMS one-time passcode MFA
 
@@ -153,5 +153,5 @@ To handle errors that occur during MFA, implement error handling logic for both 
     ```
  
 ## Next steps
-- [Tutorial: Add SMS strong authentication method registration to your Android app](tutorial-native-authentication-android-sms-strong-auth-method-registration.md)
+- [Tutorial: Add SMS strong authentication method registration to your Android app](tutorial-native-authentication-android-sms-strong-authentication-method.md)
 
