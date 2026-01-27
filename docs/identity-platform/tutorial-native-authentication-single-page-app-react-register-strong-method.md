@@ -24,7 +24,7 @@ If you enable multifactor authentication (MFA), but the user has no registered s
 The strong authentication method registration flow occurs in three scenarios:
 
 - **During sign-in**: The user signs in but does not have a strong authentication method registered.
-- **After signup**: The user successfully signs up and automatically proceeds to sign in.
+- **After sign-up**: The user successfully signs up and automatically proceeds to sign in.
 - **After self-service password reset (SSPR)**: The user successfully resets their password and automatically proceeds to sign in.
 
 When strong authentication method registration is required, the user selects a method of choice from a list of supported methods. The available methods are **email** and **SMS** one-time passcode.
@@ -68,7 +68,7 @@ You require form components to handle strong authentication method registration.
 1. In the new folder, create a file named `AuthMethodRegistrationForm.tsx` to display a form that allows users to select and register a strong authentication method. Add the code in [AuthMethodRegistrationForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/AuthMethodRegistrationForm.tsx) into the file.
 1. In the new folder, create another file named `AuthMethodRegistrationChallengeForm.tsx` to display a form for verifying the strong authentication method by using the one-time passcode that the user receives. Add the code in [AuthMethodRegistrationChallengeForm](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/shared/components/AuthMethodRegistrationChallengeForm.tsx) into the file.
 
-When needed, you can import and use reusable components in your sign-in, sign-in after signup, and sign-in after SSPR flows. 
+When needed, you can import and use reusable components in your sign-in, sign-in after sign-up, and sign-in after SSPR flows. 
  
 ## Register strong authentication method during sign-in
 
@@ -312,7 +312,7 @@ Strong authentication method registration flow after sign-up and password reset 
 For strong authentication method registration after sign-up flow, you need you update the */src/app/sign-up/page.tsx* file. See the complete code in [page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
  
 1. Make sure you import the required types and components.
-1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After signup completes successfully, you can use the result to automatically trigger a sign-in as shown in the following code snippet:
+1. Handle the strong authentication method registration states in a similar manner as it happens in the sign-in flow. After sign-up completes successfully, you can use the result to automatically trigger a sign-in as shown in the following code snippet:
 
     ```typescript
     // In your sign-up completion handler
