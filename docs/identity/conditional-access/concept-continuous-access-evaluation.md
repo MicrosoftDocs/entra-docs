@@ -3,7 +3,7 @@ title: Continuous access evaluation in Microsoft Entra
 description: Learn how continuous access evaluation in Microsoft Entra enhances security by responding to user state changes in near real time.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: article
+ms.topic: concept-article
 ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo

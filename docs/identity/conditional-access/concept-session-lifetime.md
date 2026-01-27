@@ -4,7 +4,7 @@ description: Learn to configure Conditional Access adaptive session lifetime pol
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: article
+ms.topic: concept-article
 ms.date: 12/05/2025
 
 ms.author: joflore

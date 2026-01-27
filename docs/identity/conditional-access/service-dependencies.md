@@ -4,7 +4,7 @@ description: Learn how conditions are used in Microsoft Entra Conditional Access
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/20/2025
 
 ms.author: joflore

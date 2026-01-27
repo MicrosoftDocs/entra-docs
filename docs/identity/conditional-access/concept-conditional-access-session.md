@@ -4,7 +4,7 @@ description: Learn how session controls in Microsoft Entra Conditional Access po
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: article
+ms.topic: concept-article
 ms.date: 09/23/2025
 
 ms.author: joflore

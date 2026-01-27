@@ -5,7 +5,7 @@ author: justinha
 manager: dougeby
 ms.service: entra-id
 ms.subservice: hybrid
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/09/2025
 ms.author: justinha
 ms.reviewer: dahnyahk

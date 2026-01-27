@@ -4,7 +4,7 @@ description: Learn which Domain Services features are available in Azure Governm
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: article
+ms.topic: concept-article
 ms.date: 01/21/2025
 
 ms.author: justinha
