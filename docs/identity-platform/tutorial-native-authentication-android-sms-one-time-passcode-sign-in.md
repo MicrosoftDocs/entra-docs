@@ -1,6 +1,6 @@
 ---
 title: Add SMS one-time passcode MFA to an Android app using native authentication
-description: Learn how to add multi-factor authentication (MFA) with SMS one-time passcodes to an Android app using Microsoft Entra native authentication.
+description: Learn how to add multifactor authentication (MFA) with SMS one-time passcodes to an Android app using Microsoft Entra native authentication.
 
 author: henrymbuguakiarie
 manager: pmwongera
@@ -9,15 +9,15 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 01/26/2026
+ms.date: 01/27/2026
 ms.custom:
 #Customer intent: As a developer, I want to add SMS one-time passcode–based multi-factor authentication (MFA) to an Android app using native authentication, so I can require a second verification step during sign-in and strengthen app security.
 ---
 
 # Tutorial: Add SMS one-time passcode MFA to your Android app
 
-This tutorial shows you how to add multi-factor authentication (MFA) with SMS one-time passcode (OTP) to your Android app using native authentication. MFA adds an extra layer of security by requiring a second verification step during sign-in.
-We will also demonstrate how to enhance security during authentication and enforce MFA by using [authentication context](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context). 
+This tutorial shows you how to add multifactor authentication (MFA) with SMS one-time passcode (OTP) to your Android app using native authentication. MFA adds an extra layer of security by requiring a second verification step during sign-in.
+We'll also demonstrate how to enhance security during authentication and enforce MFA by using [authentication context](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context). 
 
 In this tutorial, you learn how to:
 
@@ -36,12 +36,12 @@ In this tutorial, you learn how to:
 ## Add MFA capabilities to the client configuration file
 
 > [!NOTE] 
-> Currently there is a known issue using the SMS one time passcode with the authority format:
+> Currently there's a known issue using the SMS one time passcode with the authority format:
 > `<tenantSubdomain>.ciamlogin.com/<tenantSubdomain>.onmicrosoft.com`
 > because of that the following format should be used:
 > `<tenantSubdomain>.ciamlogin.com/<tenantID>`
 
-To support multi-factor authentication (MFA), update the Android client configuration to include the required MFA capabilities.
+To support multifactor authentication (MFA), update the Android client configuration to include the required MFA capabilities.
 
 ```json
 {
@@ -71,7 +71,7 @@ To sign in a user with SMS one-time passcode MFA, you need to:
 1. Create a user interface (UI) to:
 
     - Advise the user that MFA is required to sign in (optional).
-    - Collect a SMS one-time passcode from the user to fulfill second authenticator factor.
+    - Collect an SMS one-time passcode from the user to fulfill second authenticator factor.
     - Resend one-time passcode (recommended).
   
 1. Handle `MFARequired` sign in result:
@@ -120,7 +120,7 @@ To sign in a user with SMS one-time passcode MFA, you need to:
 
 ## Use authentication context during sign-in
 
-[This](tutorial-native-authentication-android-email-one-time-passcode-sign-in.md#use-authentication-context-during-sign-in) is how you can use authentication context during sign-in.
+To learn how to use authentication context during sign-in, see [authentication context during sign-in](tutorial-native-authentication-android-email-one-time-passcode-sign-in.md#use-authentication-context-during-sign-in) is how you can use authentication context during sign-in.
 
 ## Handle sign-in with SMS one-time passcode MFA errors
 

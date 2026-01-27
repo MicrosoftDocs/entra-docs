@@ -1,6 +1,6 @@
 ---
 title: Add SMS one-time passcode MFA to an iOS and macOS app using native authentication
-description: Learn how to add multi-factor authentication (MFA) with SMS one-time passcode (OTP) to an iOS or macOS app using native authentication, including enforcing MFA with authentication context and handling MFA errors.
+description: Learn how to add multifactor authentication (MFA) with SMS one-time passcode (OTP) to an iOS or macOS app using native authentication, including enforcing MFA with authentication context and handling MFA errors.
 
 author: henrymbuguakiarie
 manager: pmwongera
@@ -16,8 +16,8 @@ ms.custom:
 
 # Tutorial: Add SMS one-time passcode MFA to your iOS/macOS app
 
-This tutorial shows you how to add multi-factor authentication (MFA) with SMS one-time passcode (OTP) to your iOS/macOS app using native authentication. MFA adds an extra layer of security by requiring a second verification step during sign-in. 
-We will also demonstrate how to enhance security during authentication and enforce MFA by using [authentication context](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context). 
+This tutorial shows you how to add multifactor authentication (MFA) with SMS one-time passcode (OTP) to your iOS/macOS app using native authentication. MFA adds an extra layer of security by requiring a second verification step during sign-in. 
+We'll also demonstrate how to enhance security during authentication and enforce MFA by using [authentication context](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context). 
 
 In this tutorial, you learn how to:
 
@@ -36,7 +36,7 @@ In this tutorial, you learn how to:
 ## Configure client capabilities to require MFA
 
 > [!NOTE] 
-> Currently there is a known issue using the SMS one time passcode with the authority format:
+> Currently there's a known issue using the SMS one time passcode with the authority format:
 > `<tenantName>.ciamlogin.com/<tenantName>.onmicrosoft.com`
 > because of that the following format should be used:
 > `<tenantName>.ciamlogin.com/<tenantID>`
@@ -60,7 +60,7 @@ To sign in a user with SMS one-time passcode MFA, you need to:
 
     - Advise the user that MFA is required to sign in (optional).
     - Display to the user the possible `authMethods` and have them select the one with phone SMS (optional).
-    - Collect a SMS one-time passcode from the user to fulfill second authenticator factor.
+    - Collect an SMS one-time passcode from the user to fulfill second authenticator factor.
     - Resend one-time passcode (recommended).
   
 1. Implement the `onSignInAwaitingMFA` method as part of the `SignInStartDelegate` protocol:
@@ -143,7 +143,7 @@ To sign in a user with SMS one-time passcode MFA, you need to:
 
 ## Use authentication context during sign-in
 
-[This](tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in.md#use-authentication-context-during-sign-in) is how you can use authentication context during sign-in. 
+To learn how to use authentication context during sign-in, see [authentication context during sign-in](tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in.md#use-authentication-context-during-sign-in) is how you can use authentication context during sign-in. 
 
 ## Handle sign-in with SMS one-time passcode MFA errors
 

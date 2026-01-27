@@ -1,6 +1,6 @@
 ---
 title: Add email one-time passcode MFA to your iOS/macOS app by using native authentication
-description: Learn how to add email one-time passcode (OTP) multi-factor authentication (MFA) to an iOS or macOS app by using native authentication and enforce MFA with authentication context.
+description: Learn how to add email one-time passcode (OTP) multifactor authentication (MFA) to an iOS or macOS app by using native authentication and enforce MFA with authentication context.
 author: henrymbuguakiarie
 manager: pmwongera
 
@@ -8,7 +8,7 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 11/17/2025
+ms.date: 01/27/2026
 ms.custom:
 
 #customer-intent: As a developer, I want to add email one-time passcode multi-factor authentication (MFA) to an iOS or macOS app by using native authentication and optionally enforce MFA with authentication context to improve sign-in security.
@@ -16,8 +16,8 @@ ms.custom:
 
 # Tutorial: Add email one-time passcode MFA to your iOS/macOS app
 
-This tutorial demonstrates how to implement multi-factor authentication (MFA) into your iOS/macOS app using the native authentication. MFA adds an extra layer of security to your app by requiring users to provide an extra verification step during sign-in. We support email and SMS one-time passcode MFA.
-We will also demonstrate how to enhance security during authentication and enforce MFA by using [authentication context](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context). 
+This tutorial demonstrates how to implement multifactor authentication (MFA) into your iOS/macOS app using the native authentication. MFA adds an extra layer of security to your app by requiring users to provide an extra verification step during sign-in. We support email and SMS one-time passcode MFA.
+We'll also demonstrate how to enhance security during authentication and enforce MFA by using [authentication context](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context). 
 
 In this tutorial, you learn how to: 
 
@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 
 ## Enable MFA capabilities in the native authentication client
 
-Enable multi-factor authentication by configuring the capabilities parameter when you initialize `MSALNativeAuthPublicClientApplication`.
+Enable multifactor authentication by configuring the capabilities parameter when you initialize `MSALNativeAuthPublicClientApplication`.
 
 ```swift
 let config = try MSALNativeAuthPublicClientApplicationConfig(
@@ -140,7 +140,7 @@ To sign in a user with email one-time passcode MFA, you need to:
 
 ## Use authentication context during sign-in
 
-Before specifying the authentication context during sign-in, please ensure that you configure the conditional access policy on the Microsoft Entra admin center by completing the steps listed in [Configure authentication contexts](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#configure-authentication-contexts). 
+Before specifying the authentication context during sign-in, ensure that you configure the conditional access policy on the Microsoft Entra admin center by completing the steps listed in [Configure authentication contexts](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#configure-authentication-contexts). 
 After configuring the authentication context, you can specify this request claim during sign-in by using the following code snippet:
 
 ```swift

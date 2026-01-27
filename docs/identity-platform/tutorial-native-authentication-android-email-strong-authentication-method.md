@@ -9,7 +9,7 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 01/26/2026
+ms.date: 01/27/2026
 ms.custom:
 #Customer intent: As a developer, I want to register an email one-time passcode as a strong authentication method for MFA-enabled users in an Android app using native authentication, so users can complete MFA when no strong authentication method is registered.
 ---
@@ -84,7 +84,7 @@ To register a strong authentication method (email one-time passcode) for MFA-ena
     }
     ```
 
-    When signing in, if MFA is necessary and there is no strong authentication registered, the system returns `SignInResult.StrongAuthMethodRegistrationRequired`, require the user to specify an alternative email address as the strong authentication method, or to use the default email address provided during account creation.
+    When signing in, if MFA is necessary and there's no strong authentication registered, the system returns `SignInResult.StrongAuthMethodRegistrationRequired`, require the user to specify an alternative email address as the strong authentication method, or to use the default email address provided during account creation.
 
 3. Handle `challengeAuthMethod()` result:
 

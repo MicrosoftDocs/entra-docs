@@ -9,7 +9,7 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 11/17/2025
+ms.date: 01/27/2026
 ms.custom:
 # Customer intent: As a developer or DevOps engineer, I want to register phone SMS as a strong authentication method for MFA-enabled users in an iOS or macOS app using native authentication so that users can complete MFA securely during sign-in.
 ---
@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 ## Configure client capabilities for strong authentication method registration
 
 > [!NOTE] 
-> Currently there is a known issue using the SMS one time passcode with the authority format:
+> Currently there's a known issue using the SMS one time passcode with the authority format:
 > `<tenantName>.ciamlogin.com/<tenantName>.onmicrosoft.com`
 > because of that the following format should be used:
 > `<tenantName>.ciamlogin.com/<tenantID>`
@@ -52,15 +52,15 @@ nativeAuth = try MSALNativeAuthPublicClientApplication(nativeAuthConfiguration: 
 
 ## Register SMS one-time passcode as strong authentication method
 
-To register a SMS one-time passcode for an MFA-enabled user, you need to specify a phone number as the strong authentication method. This process is triggered only the first time the MFA is required, and the user doesn't have a strong authentication method registered. Afterward, you need to send an SMS containing a one-time passcode for the user to verify their phone number. Once the user enters a valid one-time passcode, the SDK completes the sign-in process.
+To register an SMS one-time passcode for an MFA-enabled user, you need to specify a phone number as the strong authentication method. This process is triggered only the first time the MFA is required, and the user doesn't have a strong authentication method registered. Afterward, you need to send an SMS containing a one-time passcode for the user to verify their phone number. Once the user enters a valid one-time passcode, the SDK completes the sign-in process.
 
 To register a strong authentication method (phone SMS passcode) for MFA-enabled user, you need to:
 
 1. Create a user interface (UI) to:
 
     - Advise the user that strong authentication method registration is required to sign in (optional).
-    - Collect a phone number to be registered as strong authentication method (optional). The user must provide a phone number to have it registed as a strong auth method.
-    - Collect a SMS one-time passcode from the user to fulfill two-factor authentication.
+    - Collect a phone number to be registered as strong authentication method (optional). The user must provide a phone number to have it registered as a strong auth method.
+    - Collect an SMS one-time passcode from the user to fulfill two-factor authentication.
     - Resend one-time passcode (recommended).
   
 2. Implement the `onSignInStrongAuthMethodRegistration` method as part of the `SignInStartDelegate` protocol:

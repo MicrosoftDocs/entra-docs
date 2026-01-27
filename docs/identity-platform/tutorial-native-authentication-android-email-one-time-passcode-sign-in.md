@@ -1,6 +1,6 @@
 ---
 title: Add email and SMS one-time passcode MFA to an Android app using native authentication
-description: Learn how to add multi-factor authentication (MFA) with email and SMS one-time passcodes to an Android app using Microsoft Entra native authentication.
+description: Learn how to add multifactor authentication (MFA) with email and SMS one-time passcodes to an Android app using Microsoft Entra native authentication.
 
 author: henrymbuguakiarie
 manager: pmwongera
@@ -9,15 +9,15 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 01/26/2026
+ms.date: 01/27/2026
 ms.custom:
 #Customer intent: As a developer, I want to add email and SMS one-time passcode–based multi-factor authentication (MFA) to an Android app using native authentication, so I can secure user sign-in with an additional verification step.
 ---
 
 # Tutorial: Add email one-time passcode MFA to your Android app
 
-This tutorial demonstrates how to implement multi-factor authentication (MFA) into your Android app using the native authentication. MFA adds an extra layer of security to your app by requiring users to provide an extra verification step during sign-in. Currently, we support Email and SMS one-time passcode MFA.
-We will also demonstrate how to enhance security during authentication and enforce MFA by using [authentication context](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context).
+This tutorial demonstrates how to implement multifactor authentication (MFA) into your Android app using the native authentication. MFA adds an extra layer of security to your app by requiring users to provide an extra verification step during sign-in. Currently, we support Email and SMS one-time passcode MFA.
+We'll also demonstrate how to enhance security during authentication and enforce MFA by using [authentication context](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#authentication-context).
 
 In this tutorial, you learn how to:
 
@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 
 ## Add MFA capabilities to the client configuration file
 
-To support multi-factor authentication (MFA), update the Android client configuration to include the required MFA capabilities.
+To support multifactor authentication (MFA), update the Android client configuration to include the required MFA capabilities.
 
 
 ```json
@@ -116,7 +116,7 @@ To sign in a user with email one-time passcode MFA, you need to:
 
 ## Use authentication context during sign-in
 
-Before specifying the authentication context during sign-in, please ensure that you configure the conditional access policy on the Microsoft Entra admin center by completing the steps listed in [Configure authentication contexts](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#configure-authentication-contexts). 
+Before specifying the authentication context during sign-in, ensure that you configure the conditional access policy on the Microsoft Entra admin center by completing the steps listed in [Configure authentication contexts](/entra/identity/conditional-access/concept-conditional-access-cloud-apps#configure-authentication-contexts). 
 After configuring the authentication context, you can specify this request claim during sign-in by using the following code snippet:
 
 ```kotlin

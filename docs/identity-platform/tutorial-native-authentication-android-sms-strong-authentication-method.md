@@ -9,7 +9,7 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 01/26/2026
+ms.date: 01/27/2026
 ms.custom:
 #Customer intent: As a developer, I want to register an SMS one-time passcode as a strong authentication method for MFA-enabled users in an Android app using native authentication, so users can complete MFA when no strong authentication method is registered.
 ---
@@ -25,8 +25,6 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-1. Enroll in a Private Preview of SMS and Email OTP MFA on Native Authentication – [Fill out form](https://forms.office.com/r/P3m1q2j3hg)
-
 1. Complete the steps in [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md).
 
 1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add SMS MFA to your sign-in flow. Currently, native authentication supports Email and SMS one-time passcode as a second factor for MFA. 
@@ -36,7 +34,7 @@ In this tutorial, you learn how to:
 ## Add strong authentication method registration to the client configuration file
 
 > [!NOTE] 
-> Currently there is a known issue using the SMS one time passcode with the authority format:
+> Currently there's a known issue using the SMS one time passcode with the authority format:
 > `<tenantSubdomain>.ciamlogin.com/<tenantSubdomain>.onmicrosoft.com`
 > because of that the following format should be used:
 > `<tenantSubdomain>.ciamlogin.com/<tenantID>`
@@ -92,7 +90,7 @@ To register a strong authentication method (SMS one-time passcode) for MFA-enabl
     }
     ```
 
-    When signing in, if MFA is necessary and there is no strong authentication registered, the system returns `SignInResult.StrongAuthMethodRegistrationRequired`, require the user to specify a phone number as the strong authentication method.
+    When signing in, if MFA is necessary and there's no strong authentication registered, the system returns `SignInResult.StrongAuthMethodRegistrationRequired`, require the user to specify a phone number as the strong authentication method.
 
 3. Handle `challengeAuthMethod()` result:
 
@@ -115,7 +113,7 @@ To register a strong authentication method (SMS one-time passcode) for MFA-enabl
     }
     ```
 
-    The `challengeAuthMethod()` method sends a one-time passcode to the phone number specified in `verificationContact`. `challengeAuthMethod()`, returns a result `RegisterStrongAuthChallengeResult.VerificationRequired`, which indicates that the SDK expects the app to send an SMS one-time passcode sent to phone number. The `RegisterStrongAuthChallengeResult.VerificationRequired` object contains a new state reference, which you can retrieve through `challengeAuthResult.nextState`. The new state gives you access to the `submitChallenge()` method that you can use to submit the SMS one-time passcode sent to the user's phone number.
+    The `challengeAuthMethod()` method sends a one-time passcode to the phone number specified in `verificationContact`. `challengeAuthMethod()` returns a result `RegisterStrongAuthChallengeResult.VerificationRequired`, which indicates that the SDK expects the app to send an SMS one-time passcode sent to phone number. The `RegisterStrongAuthChallengeResult.VerificationRequired` object contains a new state reference, which you can retrieve through `challengeAuthResult.nextState`. The new state gives you access to the `submitChallenge()` method that you can use to submit the SMS one-time passcode sent to the user's phone number.
 
 4. Handle `submitChallenge()` result:
 
