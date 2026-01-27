@@ -10,13 +10,19 @@ items:
       href: ../../fundamentals/data-residency.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
-- name: Get started
+- name: Fundamentals
   expanded: false
   items:
     - name: Create a tenant
       href: quickstart-tenant-setup.md
     - name: Register an app
       href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+    - name: Enterprise applications
+      items:
+        - name: Add an enterprise application
+          href: how-to-add-enterprise-application.md
+        - name: Register a SAML app
+          href: how-to-register-saml-app.md
     - name: Add a sign-up and sign-in flow
       href: how-to-user-flow-sign-up-sign-in-customers.md
     - name: Add an application to the user flow
@@ -25,19 +31,9 @@ items:
       href: how-to-test-user-flows.md
     - name: Disable sign-up in a user flow
       href: how-to-disable-sign-up-user-flow.md
-ITT TARTOK
-
-
-
-    - name: Get started guide walkthrough
-      href: quickstart-get-started-guide.md
-    - name: Get started guide features explained
-      href: concept-guide-explained.md
-
-
-
-
-- name: Migration
+    - name: Delete an external tenant
+      href: how-to-delete-external-tenant-portal.md
+- name: Migrate to External ID
   expanded: false
   items:
     - name: Migrate to External ID
@@ -49,14 +45,8 @@ ITT TARTOK
 - name: Security
   expanded: false
   items:
-    - name: Security settings
+    - name: Security fundamentals
       href: concept-security-customers.md
-    - name: Multifactor authentication overview
-      href: concept-multifactor-authentication-customers.md
-    - name: Multifactor authentication setup
-      href: how-to-multifactor-authentication-customers.md
-    - name: Regions requiring opt-in for SMS verification
-      href: how-to-region-code-opt-in.md
     - name: Use application roles to manage access
       href: how-to-use-app-roles-customers.md
     - name: Web Application Firewall partners
@@ -74,6 +64,14 @@ ITT TARTOK
   items:
     - name: Identity providers overview
       href: concept-authentication-methods-customers.md
+    - name: Multifactor authentication overview
+      href: concept-multifactor-authentication-customers.md
+    - name: Multifactor authentication setup
+      href: how-to-multifactor-authentication-customers.md
+    - name: Regions requiring opt-in for SMS verification
+      href: how-to-region-code-opt-in.md
+    - name: Sign in with a username
+      href: how-to-sign-in-alias.md
     - name: Native authentication overview
       items:
         - name: Native authentication overview
@@ -286,11 +284,15 @@ ITT TARTOK
       href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
     - name: Use Power Pages and External ID
       href: /power-pages/security/authentication/entra-external-id?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
-- name: Provisioning
+- name: Tenant management
   expanded: false
   items:
     - name: External tenant setup details
       href: how-to-create-external-tenant-portal.md
+    - name: Get started guide walkthrough
+      href: quickstart-get-started-guide.md
+    - name: Get started guide features explained
+      href: concept-guide-explained.md
     - name: Manage users
       items:
         - name: Manage admin accounts
@@ -299,16 +301,6 @@ ITT TARTOK
           href: how-to-manage-customer-accounts.md
     - name: Enable password reset
       href: how-to-enable-password-reset-customers.md
-    - name: Sign in with a username
-      href: how-to-sign-in-alias.md
-    - name: Delete an external tenant
-      href: how-to-delete-external-tenant-portal.md
-    - name: Enterprise applications
-      items:
-        - name: Add an enterprise application
-          href: how-to-add-enterprise-application.md
-        - name: Register a SAML app
-          href: how-to-register-saml-app.md
     - name: Monitor and troubleshoot
       items:
         - name: User activity insights
@@ -347,7 +339,7 @@ ITT TARTOK
       href: how-to-custom-url-domain.md
     - name: Configure optional claims
       href: /entra/identity-platform/optional-claims?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json 
-- name: Integration
+- name: Identity providers
   expanded: false
   items:
     - name: Configure identity providers
