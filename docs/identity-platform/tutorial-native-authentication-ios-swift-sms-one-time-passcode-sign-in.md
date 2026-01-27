@@ -9,7 +9,7 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 11/17/2025
+ms.date: 01/27/2026
 ms.custom:
 # Customer intent: As a developer or DevOps engineer, I want to add SMS one-time passcode (OTP) multi-factor authentication to an iOS or macOS app using native authentication so that I can enforce MFA during sign-in and securely handle MFA challenges and errors.
 ---

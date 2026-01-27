@@ -549,11 +549,11 @@
                 - name: Add email OTP sign-in
                   href: tutorial-native-authentication-ios-swift-email-one-time-passcode-sign-in.md
                 - name: Register email strong authentication method
-                  href: tutorial-native-authentication-ios-swift-email-strong-auth-method-registration.md
+                  href:tutorial-native-authentication-ios-swift-email-strong-authentication-method.md
                 - name: Add SMS OTP sign-in
                   href: tutorial-native-authentication-ios-swift-sms-one-time-passcode-sign-in.md
                 - name: Register SMS strong authentication method
-                  href: tutorial-native-authentication-ios-swift-sms-strong-auth-method-registration.md
+                  href:tutorial-native-authentication-ios-swift-sms-strong-authentication-method.md
                 - name: Self-service password reset
                   href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
                 - name: Support web fallback
