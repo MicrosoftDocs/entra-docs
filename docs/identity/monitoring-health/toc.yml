@@ -128,8 +128,6 @@ items:
       href: howto-configure-recommendation-email-notifications.md
     - name: Enable insider risk Conditional Access condition
       href: recommendation-insider-risk-condition.md
-    - name: Migrate ADAL to MSAL
-      href: recommendation-migrate-from-adal-to-msal.md
     - name: Migrate apps from AD FS to Microsoft Entra ID
       href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
     - name: Migrate apps and service principals to Microsoft Graph
