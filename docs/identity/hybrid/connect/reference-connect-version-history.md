@@ -110,6 +110,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ## 2.5.190.0
 
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
+
 ### Release status
 
 11/19/2025: Released for download via the Microsoft Entra admin center.
@@ -126,6 +129,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Fixed issue with cloud management of Exchange attributes that raised export errors labelled `ExchangeManagedAttributesUpdateNotAllowed`.
 
 ## 2.5.79.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
 
 ### Release status
 
@@ -147,6 +153,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ## 2.5.76.0
 
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
+
 ### Release status
 
 07/31/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting August 14th, 2025, and will be done in multiple phases.  
@@ -167,6 +176,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 
 ## 2.5.3.0
+
+> [!NOTE]
+> Do not use the Synchronization Service Manager UI in this version. Doing so may cause the Microsoft Entra Connect wizard and automatic certificate renewal to fail. This issue is fixed in version 2.6.1.0.
 
 ### Release status
 
