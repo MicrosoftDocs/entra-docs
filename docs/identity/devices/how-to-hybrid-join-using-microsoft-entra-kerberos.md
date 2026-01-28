@@ -4,7 +4,7 @@ description: Explains prerequisites and steps to set up Microsoft Entra hybrid j
 #customer intent: As a hybrid identity administrator, I want to allow users to join devices to Microsoft Entra ID.
 author: nbeesett
 ms.author: justinha
-ms.reviewer: justinha
+ms.reviewer: nbeesett
 ms.date: 01/28/2026
 ms.topic: how-to
 ms.service: entra-id
