@@ -49,7 +49,7 @@ The following is a list of FedRAMP resources:
 
 * [FedRAMP High Azure Policy built-in initiative definition](/azure/governance/policy/samples/fedramp-high)
 
-* [Microsoft Purview compliance portal](/purview/microsoft-365-compliance-center)
+* [Microsoft Purview portal](/purview/purview-portal)
 
 * [Microsoft Purview Compliance Manager](/purview/compliance-manager)
 
