@@ -38,6 +38,9 @@ In this article,  you configure a SAML integration for a GitHub Enterprise Accou
 
 * GitHub Enterprise Cloud - Enterprise Account supports **SP** and **IDP** initiated SSO.
 
+> [!NOTE]
+> The GitHub `Enterprise Cloud - Enterprise Account` application currently doesn't support any of the government cloud platforms.
+
 ## Adding GitHub Enterprise Cloud - Enterprise Account from the gallery
 
 To configure the integration of GitHub Enterprise Cloud - Enterprise Account into Microsoft Entra ID, you need to add GitHub Enterprise Cloud - Enterprise Account from the gallery to your list of managed SaaS apps.
