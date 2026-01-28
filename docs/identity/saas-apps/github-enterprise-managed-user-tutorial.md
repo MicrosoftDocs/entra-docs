@@ -17,15 +17,15 @@ ms.author: gideonkiratu
 
 # Configure a GitHub enterprise with Enterprise Managed Users for SAML Single sign-on with Microsoft Entra ID
 
-In this article, you learn how to setup a SAML integration for a GitHub enterprise with Enterprise Managed Users with Microsoft Entra ID. Setting up a SAML or [OIDC](https://docs.github.com/enterprise-cloud@latest/admin/managing-iam/configuring-authentication-for-enterprise-managed-users/configuring-oidc-for-enterprise-managed-users) authentication integration, in addition to setting up [SCIM provisioning](./github-enterprise-managed-user-provisioning-tutorial.md), is required for a GitHub enterprise with Enterprise Managed Users. Setting up authentication and [SCIM provisioning](./github-enterprise-managed-user-provisioning-tutorial.md) for a GitHub enterprise with Enterprise Managed Users allows an admin to:
+In this article, you learn how to set up a SAML integration for a GitHub enterprise with Enterprise Managed Users with Microsoft Entra ID. Setting up a SAML or [OIDC](https://docs.github.com/enterprise-cloud@latest/admin/managing-iam/configuring-authentication-for-enterprise-managed-users/configuring-oidc-for-enterprise-managed-users) authentication integration, in addition to setting up [SCIM provisioning](./github-enterprise-managed-user-provisioning-tutorial.md), is required for a GitHub enterprise with Enterprise Managed Users. Setting up authentication and [SCIM provisioning](./github-enterprise-managed-user-provisioning-tutorial.md) for a GitHub enterprise with Enterprise Managed Users allows an admin to:
 
 * Control in Microsoft Entra ID who has access to a GitHub enterprise with Enterprise Managed Users.
 * Enable your users to log into a GitHub Enterprise Managed User account via SSO.
-* Provision users and groups to the enterprise (once both the authentication and SCIM provisioning integrations have been setup). GitHub teams can be mapped to SCIM-provisioned groups. 
+* Provision users and groups to the enterprise (once both the authentication and SCIM provisioning integrations have been set up). GitHub teams can be mapped to SCIM-provisioned groups. 
 * Manage your accounts and groups in one central location, Entra ID.
 
 > [!NOTE]
-> A GitHub.com enterprise account with Enterprise Managed Users is a specific type of enterprise. This is determined with you request or [create a new GitHub enterprise account](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-your-enterprise-account/creating-an-enterprise-account) on GitHub.com. You can read more about the different types of GitHub enterprises in [this GitHub article](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/choosing-an-enterprise-type-for-github-enterprise-cloud). If you do not have an enterprise that is setup for Enterprise Managed Users, please see [this GitHub article](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-identity-and-access-management#authentication-through-githubcom-with-additional-saml-access-restriction) for more details and links. 
+> A GitHub.com enterprise account with Enterprise Managed Users is a specific type of enterprise. This is determined with you request or [create a new GitHub enterprise account](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-your-enterprise-account/creating-an-enterprise-account) on GitHub.com. You can read more about the different types of GitHub enterprises in [this GitHub article](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/choosing-an-enterprise-type-for-github-enterprise-cloud). If you do not have an enterprise that is set up for Enterprise Managed Users, please see [this GitHub article](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-identity-and-access-management#authentication-through-githubcom-with-additional-saml-access-restriction) for more details and links. 
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * GitHub Enterprise Managed User single sign-on (SSO) enabled subscription.
-* A GitHub enterprise that is setup for Enterprise Managed Users.
+* A GitHub enterprise that is set up for Enterprise Managed Users.
 
 ## Scenario description
 
@@ -41,6 +41,9 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 
 * GitHub Enterprise Managed User supports both **SP and IDP** initiated SSO.
 * GitHub Enterprise Managed User requires [**Automated** user provisioning](./github-enterprise-managed-user-provisioning-tutorial.md).
+
+> [!NOTE]
+> The GitHub `Enterprise Managed User` application currently doesn't support any of the government cloud platforms.
 
 ## Adding GitHub Enterprise Managed User from the gallery
 
