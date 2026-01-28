@@ -34,7 +34,7 @@ The Global Secure Access client supports bring your own device (BYOD) scenarios 
 - Enable required traffic profiles for these users.
 - A device-wide VPN profile is created. The Global Secure Access tile is off by default; the user must turn it on to send Private Access traffic.
 
-## iOS/iPadOS
+## iOS/iPadOS (Preview)
 
 - BYOD support without device enrollment is available through Microsoft Authenticator app.
 - On the device:
