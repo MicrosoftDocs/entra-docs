@@ -35,6 +35,9 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 
 * GitHub Enterprise Managed User supports both **SP and IDP** initiated SSO.
 
+> [!NOTE]
+> The GitHub `Enterprise Managed User - GHE.com` application currently doesn't support any of the government cloud platforms.
+
 ## Adding GitHub Enterprise Managed User from the gallery
 
 To configure the integration of GitHub Enterprise Managed User into Microsoft Entra ID, you need to add GitHub Enterprise Managed User from the gallery to your list of managed SaaS apps.
