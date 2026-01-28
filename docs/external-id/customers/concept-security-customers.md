@@ -9,7 +9,7 @@ ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 06/11/2025
+ms.date: 01/28/2026
 ms.custom: it-pro
 ---
 
@@ -17,66 +17,66 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Microsoft Entra External ID provides baseline security features for external tenants, offering immediate protection against threats like brute force and network layer attacks. These default settings serve as a foundation for developing your own identity security plan. From this starting point, you can implement real-time and offline protection through Microsoft Entra premium security features.
+External-facing identity systems support a wide range of customer experiences. That wide range also makes them attractive targets for common customer identity and access management (CIAM) attack patterns such as credential stuffing, automated bot sign-ups, account takeover attempts, and high-volume traffic spikes. Understanding these threats helps explain why a clear, layered security approach is essential. Microsoft Entra External ID provides foundational capabilities you can build on. This guide helps you understand how to strengthen that foundation with recommended controls and integrations based on common CIAM threat patterns.
 
-The following diagram shows the layered security approach. Use the implementation recommendations as a prioritized roadmap to strengthen your external tenant’s security posture.
+This guide outlines:
+- The attack vectors that commonly target CIAM systems. 
+- The security controls that can help you address them.
+- A prioritized roadmap to guide implementation.
+- Available third‑party integrations for fraud, bot, and DDoS protection.
+- Known limitations specific to external tenants.
 
-:::image type="content" source="media/concept-security-customers/security-layers.png" alt-text="Security layers diagram":::
+Our goal is to offer a practical, actionable roadmap that helps you make informed decisions about how to secure your customer-facing experiences.
 
- <!---## Core protection
+## Security model for external tenants
 
-Every external tenant starts with core protection. This foundational layer provides baseline security features from the moment the tenant is created, ensuring essential safeguards against common threats.
+A defense‑in‑depth strategy requires combining multiple control layers:
 
-To learn more about our general security recommendations for Microsoft Entra, see [Configure Microsoft Entra for increased security](/entra/fundamentals/configure-security). This article focused on workforce tenant-specific security features, but many of them are available in external tenants as well.
+1. Front‑door protection (WAF, bot mitigation, IP controls) 
+1. Identity security (MFA, Conditional Access, access control) 
+1. Fraud prevention (sign‑up and sign‑in detection through 3P providers) 
+1. Application‑level authorization
+1. Monitoring and alerting 
 
-## Prevent DDOS and OWASP vulnerabilities
+Each layer addresses different classes of attacks, which reduces the chances of compromise and minimizes the blast radius.
 
-To maintain application availability and integrity, this layer integrates with Web Application Firewall (WAF) solutions. It helps prevent Distributed Denial of Service (DDOS) attacks and adheres to the Open Worldwide Application Security Project (OWASP) standards for secure web applications. For more information on configuring WAF with External ID, see our [Azure](/entra/external-id/customers/tutorial-configure-external-id-web-app-firewall), [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration), and [Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) integration guides.
+### Priority 1: Immediate implementation
 
-## Prevent fake account sign-up
+These protections are foundational. They're quick to enable and essential for establishing a secure baseline for your external identity flows. Additional protections introduced in Priority 2 address fraud, bots, DDoS, and more advanced attack patterns.
 
-Fraudulent accounts are blocked through advanced fraud prevention models. By analyzing sign-up patterns and behaviors, this layer proactively stops fake accounts before they can impact your environment. For more details, see [Fraud protection integration](/entra/external-id/customers/how-to-integrate-fraud-protection) options.
-
-## Sign-in account take-over protection
-
-This layer focuses on preventing unauthorized access to user accounts. It includes mechanisms for account take-over prevention and IRSF (International Revenue Share Fraud) protection to keep credentials secure. This feature is not available for external tenants.
-
-## Offline monitoring and detections
-
-Beyond real-time protection, this layer uses offline threat hunting models to analyze historical data and detect patterns of suspicious activity. It ensures continuous security even after initial sign-in events. Learn more about [Azure Monitor and Microsoft Sentinel integration](/entra/external-id/customers/how-to-azure-monitor).--->
-
-## Security implementation
-
-We recommend the below approach. This approach balances Threat prevention, user impact, and implementation effort.
-
-### Priority 1: Immediate implementation (Week 1–2)
-
-| **Security feature** |**Description** |**Threat prevention** | **User impact** | **Implementation effort** |
+| **Security feature** |**Description** |**Threats addressed** | **User impact** | **Implementation effort** |
 |----|----|----|----|----|
-| **[Brute force protection](/entra/identity/authentication/howto-password-smart-lockout)** |Mitigates brute force attacks by limiting the number of sign-in attempts to prevent unauthorized access through repeated password guessing. |High – Prevents brute force, account takeover | None — No end-user impact |Zero – Enabled by default |
-| **[Common networking HTTP protection](/entra/external-id/customers/reference-service-limits)** |Provides protection against common network-layer attacks and timing-based attacks, protecting against attempts to overwhelm your service with excessive requests. |High – Prevents account compromises |Low – Sensitive actions only |Zero – Enabled by default |
-| **[Access Control](/entra/external-id/customers/how-to-use-app-roles-customers)** | Controls access to applications and resources so that only authorized users can access sensitive information.  |High – Enforces authorization in applications |Medium– User adoption |Medium – Setup required | 
-| **[Enable multifactor authentication (MFA) for all users](concept-multifactor-authentication-customers.md)** |Require users to verify their identity with an additional factor beyond their password to prevent unauthorized access. |High – Adds second factor authentication |High – User adoption |Medium – Setup required | 
-| **[Activity logging](/entra/identity/monitoring-health/concept-sign-ups) & [User insights](/entra/external-id/customers/how-to-user-insights)** |Use sign-up logs to monitor and troubleshoot registration activity, and leverage user activity dashboards to track sign-ins, MFA performance, and fraud detection for external tenants. |Medium – Enables threat detection | None — No end-user impact |Medium – Setup required |
+| **[Brute force protection](/entra/identity/authentication/howto-password-smart-lockout)** |Mitigates brute force attacks by limiting the number of sign-in attempts to prevent unauthorized access through repeated password guessing. **Note**: Smart Lockout focuses on password misuse; broader bot and fraud activity is addressed through additional controls later in this guide.  |Prevents brute force, account takeover  | None — No end-user impact |None – Enabled by default  |
+| **[Common networking HTTP protection](/entra/external-id/customers/reference-service-limits)** |These built‑in protections help filter malformed traffic, limit abusive request patterns, and mitigate common protocol‑level attacks. 
+**Note**: These safeguards support application stability, but high‑volume DDoS and sophisticated bots require WAF or bot‑mitigation integrations described later. |Protects against common request flooding, timing attacks  |Low – Sensitive actions only |None – Enabled by default |
+| **[Access Control](/entra/external-id/customers/how-to-use-app-roles-customers)** | Ensures users only access what they should by applying app roles and authorization rules. 
+**Note**: Access Control enforces authorization, not user verification -so combining it with MFA and adaptive controls enhances overall security. |Enforces authorization in applications  |Medium– User adoption |Medium – Setup required | 
+| **[Enable multifactor authentication (MFA) for all users](concept-multifactor-authentication-customers.md)** |MFA adds a second verification step beyond passwords, significantly reducing the risk of account takeover. 
+**Note**: MFA limits stolen‑credential attacks but must be paired with fraud detection and monitoring to prevent automated or malicious sign‑up attempts.  |Adds second factor authentication |High – User adoption |Medium – Setup required | 
+| **[Activity logging](/entra/identity/monitoring-health/concept-sign-ups) & [User insights](/entra/external-id/customers/how-to-user-insights)** |Activity logs and insights provide visibility into sign-ups, sign-ins, error patterns, and anomalies. They help you identify unusual trends and investigate issues quickly, supporting early detection and informed decision making.  |Enables threat detection | None — No end-user impact |Medium – Setup required |
 
-### Priority 2: Short-term implementation (1–3 Months)
+### Priority 2: Short-term implementation
 
-| **Security feature** |**Description** |**Threat prevention** | **User impact** | **Implementation effort** | 
+Once baseline controls are in place, implement protections that materially improve threat resilience.
+
+| **Security feature** |**Description** |**Threats addressed** | **User impact** | **Implementation effort** |
 |----|----|----|----|----|
-| **[Conditional Access](/entra/external-id/customers/concept-supported-features-customers#conditional-access)** | Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. See [What is Conditional Access?](~/identity/conditional-access/overview.md) and [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md) for more information. |High – Risk-based access control |Medium – User adoption |Medium – Setup required  | 
-| **[Credential and secret management](/entra/architecture/deployment-external-operations#application-security-credential-and-secret-management)** |Prefer certificates over client secrets for app authentication to External ID because certificates are more secure and harder to compromise. |High – Secure app credentials |None — No end-user impact |Medium – Setup required  |
-| **[Token lifetime management](/entra/architecture/deployment-external-operations#risk-reduction-with-token-lifetime-management)** |Configure the token lifetime to reduce your app’s exposure to compromised tokens. |Medium – Limit exposure |High – Requires frequent refreshes |Medium – Setup required  |
-| **Custom Domain with Web Application Firewall (WAF)** |Use [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration), [Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) or [Azure WAF](/entra/external-id/customers/tutorial-configure-external-id-web-app-firewall) for tenant security against DDoS attacks.  |High – DDoS and bot protection | Medium – User adoption |High – WAF integration |
-| **Sign-up fraud protection** |Use [Arkose Labs](/entra/external-id/customers/how-to-integrate-fraud-protection?pivots=arkose) and [HUMAN Security](/entra/external-id/customers/how-to-integrate-fraud-protection?pivots=human) to protect against sign-up fraud and block automated bot attacks.  |High – Fraud protection |Medium – User adoption |High – Sign-up protection integration | 
-| **Enhanced monitoring and alerting** | Use [Azure Monitor and Microsoft Sentinel](/entra/external-id/customers/how-to-azure-monitor) to enable one-click monitoring, log analytics, and advanced threat detection.  |Medium – Early threat detection | None — No end-user impact |High – Azure Monitor integration |
+| **[Conditional Access](/entra/external-id/customers/concept-supported-features-customers#conditional-access)** | Customizable policies that trigger MFA to defend against threats like phishing and account takeovers. See [What is Conditional Access?](~/identity/conditional-access/overview.md) and [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md) for more information. |Risk-based access control |Medium – User adoption |Medium – Setup required  | 
+| **[Credential and secret management](/entra/architecture/deployment-external-operations#application-security-credential-and-secret-management)** |Prefer certificates over client secrets for app authentication to External ID because certificates are more secure and harder to compromise. |Secure app credentials |None — No end-user impact |Medium – Setup required  |
+| **[Token lifetime management](/entra/architecture/deployment-external-operations#risk-reduction-with-token-lifetime-management)** |Configure the token lifetime to reduce your app’s exposure to compromised tokens. |Limit exposure |High – Requires frequent refreshes |Medium – Setup required  |
+| **Custom Domain with Web Application Firewall (WAF)** |Use [Cloudflare](/entra/external-id/customers/how-to-configure-waf-integration), [Akamai](/entra/external-id/customers/how-to-configure-akamai-integration) or [Azure WAF](/entra/external-id/customers/tutorial-configure-external-id-web-app-firewall) for tenant security against DDoS attacks.  |DDoS and bot protection | Medium – User adoption |High – WAF integration |
+| **Sign-up fraud protection** |Use [Arkose Labs](/entra/external-id/customers/how-to-integrate-fraud-protection?pivots=arkose) and [HUMAN Security](/entra/external-id/customers/how-to-integrate-fraud-protection?pivots=human) to protect against sign-up fraud and block automated bot attacks.  |Fraud protection |Medium – User adoption |High – Sign-up protection integration |
+| **Enhanced monitoring and alerting** | Use [Azure Monitor and Microsoft Sentinel](/entra/external-id/customers/how-to-azure-monitor) to enable one-click monitoring, log analytics, and advanced threat detection.  |Early threat detection | None — No end-user impact |High – Azure Monitor integration |
 
-### Priority 3: Long-term implementation (3–12 Months)
+### Priority 3: Long-term implementation
 
-| **Security feature** |**Description** |**Threat prevention** | **User impact** | **Implementation effort** | 
+These are iterative, ongoing improvements to strengthen posture over time.
+
+| **Security feature** |**Description** |**Threats addressed** | **User impact** | **Implementation effort** | 
 |----|----|----|----|----|
-| **[Monitoring and alerting](/entra/external-id/customers/how-to-azure-monitor)** |Fine-tune monitoring and alert thresholds to improve accuracy. |Medium - Accurate monitoring |None — No end-user impact | Medium – Setup required  |
-| **Continuous security enhancements and new features** |Use the 3–12 month period to iterate on your security controls and adopt [new enhancements](/entra/external-id/whats-new-docs?tabs=external-tenants). |Medium - Updated features |Depends on the new feature | Medium – Setup required  |
-| **[Zero Trust Assessment](/security/zero-trust/assessment/overview)** |Tests hundreds of security settings based on Secure Future Initiative (SFI) and Zero Trust principles. |High - Thorough security configuration testing |None — No end-user impact |Medium – Setup required  |
+| **[Monitoring and alerting](/entra/external-id/customers/how-to-azure-monitor)** |Fine-tune monitoring and alert thresholds to improve accuracy. |Accurate monitoring |None — No end-user impact | Medium – Setup required  |
+| **Continuous security enhancements and new features** |Use the 3–12 month period to iterate on your security controls and adopt [new enhancements](/entra/external-id/whats-new-docs?tabs=external-tenants). |Updated features |Depends on the new feature | Medium – Setup required  |
+| **[Zero Trust Assessment](/security/zero-trust/assessment/overview)** |Tests hundreds of security settings based on Secure Future Initiative (SFI) and Zero Trust principles. | Thorough security configuration testing |None — No end-user impact |Medium – Setup required  |
 
 ## Known limitations
 
@@ -85,7 +85,7 @@ These security features have limitations or are unavailable in external tenants.
 |**Feature** | **Current limitation** |**Workaround** |
 |----|----|----|----|
 | **[Passkeys (FIDO2)](/entra/identity/authentication/concept-authentication-passkeys-fido2)** | Passkey registration isn't supported in external tenants.  | Use built-in controls. |
-| **[ID Protection](/entra/id-protection/overview-identity-protection)** | ID Protection tenant risk detection isn’t supported in external tenants. | Use [Azure Monitor and Microsoft Sentinel integration](/entra/external-id/customers/how-to-azure-monitor). |
+| **[ID Protection](/entra/id-protection/overview-identity-protection)** | ID Protection isn’t supported in external tenants. | Not available in external tenants.|
 
 ## Related content
 
