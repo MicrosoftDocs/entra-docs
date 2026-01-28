@@ -86,6 +86,13 @@ To define a named location by public IPv4 or IPv6 address ranges, provide:
 - One or more public IP ranges.
 - Optionally **Mark as trusted location**.
 
+> [!NOTE]
+> IPv6 addresses must be entered in CIDR notation. For example:
+> - Single IPv6 address: `2001:db8::1/128`
+> - IPv6 subnet range: `2001:db8:abcd:0012::/64`
+> IPv6 ranges represent a block of public addresses and follow standard IPv6 CIDR formatting.
+
+
 Named locations defined by IPv4 or IPv6 address ranges have the following limitations: 
 
 - No more than 195 named locations.
