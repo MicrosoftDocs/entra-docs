@@ -73,7 +73,7 @@ These are iterative, ongoing improvements to strengthen posture over time.
 | **Security feature** |**Description** |**Threats addressed** | **User impact** | **Implementation effort** | 
 |----|----|----|----|----|
 | **[Monitoring and alerting](/entra/external-id/customers/how-to-azure-monitor)** |Fine-tune monitoring and alert thresholds to improve accuracy. |Provides accurate monitoring. |None — No end-user impact | Medium – Setup required  |
-| **Continuous security enhancements and new features** |Use the 3–12 month period to iterate on your security controls and adopt [new enhancements](/entra/external-id/whats-new-docs?tabs=external-tenants). |Helps prevent security threats and vulnerabilities. |Depends on the new feature | Medium – Setup required  |
+| **Continuous security enhancements and new features** |Use the 3–12 month period to iterate on your security controls and adopt [new enhancements](/entra/external-id/whats-new-docs?tabs=external-tenants). |Helps prevent security threats and vulnerabilities. |Depends on the new feature. | Depends on the new feature.  |
 | **[Zero Trust Assessment](/security/zero-trust/assessment/overview)** |Tests hundreds of security settings based on Secure Future Initiative (SFI) and Zero Trust principles. | Provides thorough security configuration testing. |None — No end-user impact |Medium – Setup required  |
 
 ## Known limitations
