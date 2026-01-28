@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 10/14/2025
+ms.date: 01/27/2026
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -212,7 +212,7 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 
 ## Request more time to prepare for Phase 2 MFA enforcement 
 
-Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. 
+Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. After Phase 2 enforcement begins, your tenant admin must submit a request to Microsoft Help and Support to temporarily lift enforcement due to the security implications. 
 
 >[!NOTE]
 > If you postponed the start of Phase 1, the start of Phase 2 is also postponed to the same date. You can choose a later start date for Phase 2. 
