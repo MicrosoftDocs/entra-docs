@@ -112,6 +112,18 @@ The recommendations and Zero Trust checks that are part of this pillar help redu
 ### User sign-in activity uses token protection
 [!INCLUDE [21786](../includes/secure-recommendations/21786.md)]
 
+### All user sign-in activity uses phishing-resistant authentication methods
+[!INCLUDE [21784](../includes/secure-recommendations/21784.md)]
+
+### All sign-in activity comes from managed devices
+[!INCLUDE [21892](../includes/secure-recommendations/21892.md)]
+
+### Security key authentication method enabled
+[!INCLUDE [21838](../includes/secure-recommendations/21838.md)]
+
+### Privileged roles aren't assigned to stale identities
+[!INCLUDE [21854](../includes/secure-recommendations/21854.md)]
+
 ### Restrict device code flow
 [!INCLUDE [21808](../includes/secure-recommendations/21808.md)]
 

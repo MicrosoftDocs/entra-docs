@@ -60,6 +60,10 @@ Reduce credential-related risk by implementing modern identity standards.
 | [All users are required to register for MFA](zero-trust-protect-identities.md#all-users-are-required-to-register-for-mfa) | Microsoft Entra ID P2 |
 | [Users have strong authentication methods configured](zero-trust-protect-identities.md#users-have-strong-authentication-methods-configured) | Microsoft Entra ID P1 |
 | [User sign-in activity uses token protection](zero-trust-protect-identities.md#user-sign-in-activity-uses-token-protection) | Microsoft Entra ID P1 |
+| [All user sign-in activity uses phishing-resistant authentication methods](zero-trust-protect-identities.md#all-user-sign-in-activity-uses-phishing-resistant-authentication-methods) | Microsoft Entra ID P1 |
+| [All sign-in activity comes from managed devices](zero-trust-protect-identities.md#all-sign-in-activity-comes-from-managed-devices) | Microsoft Entra ID P1 |
+| [Security key authentication method enabled](zero-trust-protect-identities.md#security-key-authentication-method-enabled) | None (included with Microsoft Entra ID) |
+| [Privileged roles aren't assigned to stale identities](zero-trust-protect-identities.md#privileged-roles-arent-assigned-to-stale-identities) | Microsoft Entra ID P2 |
 | [Microsoft Authenticator app shows sign-in context](zero-trust-protect-identities.md#microsoft-authenticator-app-shows-sign-in-context) | Microsoft Entra ID P1 |
 | [Microsoft Authenticator app report suspicious activity setting is enabled](zero-trust-protect-identities.md#microsoft-authenticator-app-report-suspicious-activity-setting-is-enabled) | Microsoft Entra ID P1 |
 | [Password expiration is disabled](zero-trust-protect-identities.md#password-expiration-is-disabled) | Microsoft Entra ID P1 |
@@ -93,6 +97,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Inactive guest identities are disabled or removed from the tenant](zero-trust-protect-tenants.md#inactive-guest-identities-are-disabled-or-removed-from-the-tenant) | Microsoft Entra ID Free |
 | [All entitlement management policies have an expiration date](zero-trust-protect-tenants.md#all-entitlement-management-policies-have-an-expiration-date) | Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
 | [All entitlement management assignment policies that apply to external users require connected organizations](zero-trust-protect-tenants.md#all-entitlement-management-assignment-policies-that-apply-to-external-users-require-connected-organizations) | Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
+| [All entitlement management assignment policies that apply to external users require approval](zero-trust-protect-tenants.md#all-entitlement-management-assignment-policies-that-apply-to-external-users-require-approval) | Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
 | [All entitlement management packages that apply to guests have expirations or access reviews configured in their assignment policies](zero-trust-protect-tenants.md#all-entitlement-management-packages-that-apply-to-guests-have-expirations-or-access-reviews-configured-in-their-assignment-policies) | Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
 | [Manage the local administrators on Microsoft Entra joined devices](zero-trust-protect-tenants.md#manage-the-local-administrators-on-microsoft-entra-joined-devices) | None (included with Microsoft Entra ID) |
 | [Restrict nonadministrator users from recovering the BitLocker keys for their owned devices](zero-trust-protect-tenants.md#restrict-nonadministrator-users-from-recovering-the-bitlocker-keys-for-their-owned-devices) | None (included with Microsoft Entra ID) |
@@ -142,6 +147,7 @@ Collect and analyze security logs and triage alerts.
 | [All high-risk users are triaged](zero-trust-monitor-detect.md#all-high-risk-users-are-triaged) | Microsoft Entra ID P2 |
 | [All high-risk sign-ins are triaged](zero-trust-monitor-detect.md#all-high-risk-sign-ins-are-triaged) | Microsoft Entra ID P2  |
 | [All risky workload identities are triaged]
+| [Tenant creation events are triaged](zero-trust-monitor-detect.md#tenant-creation-events-are-triaged) | Microsoft Entra ID P1 |
 | [All user sign-in activity uses strong authentication methods](zero-trust-monitor-detect.md#all-user-sign-in-activity-uses-strong-authentication-methods) | Microsoft Entra ID P1 |
 | [High priority Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#high-priority-microsoft-entra-recommendations-are-addressed) | Microsoft Entra ID P1 |
 | [ID Protection notifications are enabled](zero-trust-monitor-detect.md#id-protection-notifications-are-enabled) | Microsoft Entra ID P2 |
