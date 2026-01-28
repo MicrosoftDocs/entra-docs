@@ -33,11 +33,11 @@ Our goal is to offer a practical, actionable roadmap that helps you make informe
 
 A defense‑in‑depth strategy requires combining multiple control layers:
 
-1. Front‑door protection (WAF, bot mitigation, IP controls)
-1. Identity security (MFA, Conditional Access, access control) 
-1. Fraud prevention (sign‑up and sign‑in detection through 3P providers) 
-1. Application‑level authorization
-1. Monitoring and alerting 
+- Front‑door protection (WAF, bot mitigation, IP controls)
+- Identity security (MFA, Conditional Access, access control) 
+- Fraud prevention (sign‑up and sign‑in detection through 3P providers) 
+- Application‑level authorization
+- Monitoring and alerting 
 
 Each layer addresses a different class of attacks, reducing the likelihood of compromise and limiting the blast radius.
 
