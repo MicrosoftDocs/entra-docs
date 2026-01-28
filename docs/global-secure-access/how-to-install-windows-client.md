@@ -278,7 +278,7 @@ In a production environment, it's a good practice to deploy new client versions 
 
 ### Configure Global Secure Access client settings with Intune
 
-Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce client-side controls, such as preventing non-admin users from disabling the client or hiding specific buttons. 
+Administrators can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce client-side controls, such as preventing general users from disabling the client or hiding specific buttons. 
 
 > [!IMPORTANT]
 > Set the `$gsaSettings` to the values your organization requires in both the detection and remediation scripts.
@@ -651,18 +651,19 @@ For more information on troubleshooting the Global Secure Access client, see the
 ## Security recommendations
 To enhance the security of the Global Secure Access client, use the following configurations:
 
-### Upgrade to the latest client version of the Global Secure Access client
+### Upgrade to the latest client version
 Regularly test and deploy the latest Global Secure Access client release to take advantage of new features, performance improvements, and security fixes. Download the latest version of the [Global Secure Access client](#download-the-client) from the Microsoft Entra admin center.
 
 ### Restrict nonprivileged users from disabling the client
 Administrators can prevent nonprivileged users on Windows devices from disabling or enabling the Global Secure Access client. This restriction ensures that the client stays on and that Global Secure Access continues to authenticate and secure network traffic. Enabling this restriction requires elevated privileges to disable the client.
 
-Before enforcing this restriction, let users work with the Global Secure Access client in a non‑restricted mode. Verify that the client is configured appropriately for your organization and that users don't need to disable it in specific scenarios (for example, to access specific websites or to use a third‑party VPN in parallel).
+Before enforcing this restriction, let users work with the Global Secure Access client in a nonrestricted mode. Configure the client for your organization to ensure users don't need to disable the client in specific scenarios (for example, to access specific websites or to use a non-Microsoft VPN in parallel).
 
-To stop the Global Secure Access client on a device where you restricted nonprivileged users, make sure that there's a process in place to use a local administrator if necessary. For more information regarding restricting nonprivileged users, see [Restrict nonprivileged users](#restrict-nonprivileged-users).
+To stop the Global Secure Access client on a device with restricted, nonprivileged users, make sure that there's a process in place to use a local administrator when necessary. For more information regarding restricting nonprivileged users, see [Restrict nonprivileged users](#restrict-nonprivileged-users).
 
 ### Hide the Disable button
-In addition to restricting nonprivileged users from disabling the client, administrators can hide the **Disable** button in the client system tray icon menu. Removing the **Disable** button from view further reduces the likelihood of accidental or unauthorized disabling of the client.
+In addition to restricting nonprivileged users from disabling the client, administrators can hide the **Disable** button in the client system tray icon menu. Removing the **Disable** button from view further reduces the likelihood that users disable the client by accident or without authorization.
+
 For more information regarding hiding client menu buttons, see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons).
 
 ## Client registry keys
