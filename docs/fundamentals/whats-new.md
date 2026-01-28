@@ -59,16 +59,6 @@ In Entra External ID (EEID), customers can create a single, tenant-wide, customi
 
 ---
 
-### Private Preview - Federation with EntraID as Custom OIDC IdP on Entra External ID tenants
-
-**Type:** Fixed  
-**Service category:** B2C - Consumer Identity Management  
-**Product capability:** B2B/B2C  
-
-This feature allows users to sign‑up and sign‑in to your CIAM apps/resources with their existing EntraID identity, provided that the EntraID Identity Provider they are trying to utilize is configured as a Custom OIDC Identity Provider.
-
----
-
 ### Public Preview Refresh - EAM Registration
 
 **Type:** New feature  
