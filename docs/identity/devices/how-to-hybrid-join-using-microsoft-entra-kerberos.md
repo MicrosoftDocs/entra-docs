@@ -28,9 +28,18 @@ These are the primary use cases we aim to enable during this public preview.
 
 ## Prerequisites
 
-| Requirements | [Create and configure Microsoft Entra Kerberos Trusted Domain Object](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#permissions). The user who creates and configures Entra Kerberos Trusted Domain Object must be an Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest and a Microsoft Entra user with the Hybrid Identity Administrators role.<br>**Configure GPO:** Only if you have deployed KDC Proxy Server GPO to your client computer. In terms of permissions, the user configuring GPO is a domain administrator/enterprise administrator/a user who has been delegated permissions to configure GPO.<br>**Configure Entra Device Registration Service Principal**: Add Kerberos entry to Entra device registration service principal. In terms of permissions, the Microsoft Entra user with Application Administrator role.<br>**Deploy Windows Server 2025 DC**: This should be at least one instance for every domain that the client is joined to<br>**Configure client computer for Entra Kerberos based join:** You need to deploy Windows 8D or later build on the client computer that you want to register with Entra as Entra hybrid join using Entra Kerberos.<br> **Note**: The client computer must have line of sight during join with the DC 2025 that supports Kerberos based join.<br>**Configure Service Connection Point (SCP):** You can use Microsoft Entra Connect or write to AD using PowerShell. You can find more details here. |
-|---|---|
-| Licensing | There are **NO** additional licensing requirements for using this feature. |
+Make sure you have the following permissions and configuration set up to perform Microsoft Entra hybrid join using Microsoft Entra Kerberos. There are no license requirements.
+
+- The user who creates and configures Entra Kerberos Trusted Domain Object must be an Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest and a Microsoft Entra user with the Hybrid Identity Administrators role. For more information, see [Create and configure Microsoft Entra Kerberos Trusted Domain Object](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#permissions). 
+- **Configure GPO:** Only if you have deployed KDC Proxy Server GPO to your client computer. In terms of permissions, the user configuring GPO is a domain administrator/enterprise administrator/a user who has been delegated permissions to configure GPO.
+- **Configure Entra Device Registration Service Principal**: Add Kerberos entry to Entra device registration service principal. In terms of permissions, the Microsoft Entra user with Application Administrator role.
+- **Deploy a domain controller that runs Windows Server 2025**: This should be at least one domain controller that runs Windows Server 2025 for any domain that the client is joined to
+- **Configure client computer for Entra Kerberos based join:** You need to deploy Windows 8D or later build on the client computer that you want to register with Entra as Entra hybrid join using Entra Kerberos.
+
+  >[!NOTE]
+  >The client computer must have unimpeded network connectivity with the domain controller that runs Windows Server 2025 during join.
+
+- **Configure Service Connection Point (SCP):** You can use Microsoft Entra Connect or write to AD using PowerShell. You can find more details here. 
 
 ## FAQ
 
@@ -46,39 +55,29 @@ These are the primary use cases we aim to enable during this public preview.
 
 - **Can Entra hybrid join using Entra Kerberos fail?**
 
-  - This is possible if the device does not have line of sight to WS 2025 domain controller during Entra hybrid join. It is also possible if you do not satisfy any of the requirements mentioned in this doc.
+  - A failure can occur if network connectivity is impeded with the domain controller that runs Windows Server 2025 during join, or if other [prerequisites](#prerequisites) are incomplete.
 
 - **How do we troubleshoot errors during Entra hybrid join?**
 
   - You can follow these articles:
 
-> <https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-hybrid-join-windows-current>
->
-> <https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/enable-kerberos-event-logging>
+    - [Troubleshoot hybrid joined devices](/entra/identity/devices/troubleshoot-hybrid-join-windows-current)
+    - [Enable Kerberos event logging](/troubleshoot/windows-server/active-directory/enable-kerberos-event-logging)
 
-- To collect Kerberos logs, follow these steps
+- To collect Kerberos logs, follow these steps:
 
-1.  Download and unzip the logging scripts from <https://aka.ms/authscripts>
+1. Download and unzip the logging scripts from [https://aka.ms/authscripts](https://aka.ms/authscripts).
+1. If you have multiple 2025 DCs, disable KDC services on all of them except one.
+1. Run “net stop kdc” to stop the KDC service on a DC.
+1. On the remaining 2025 DC with KDC service running, open a PowerShell window with administrator privileges, run start-auth.ps1
+1. On your client computer, open a PowerShell window with administrator privileges, run start-auth.ps1
+1. On your client computer, open a cmd window with administrator privileges, run dsregcmd /join
+1. On your client computer, in the PowerShell window, run stop-auth.ps1
+1. On your 2025 DC, in the PowerShell window, run stop-auth.ps1
+1. You can restart KDC services on your extra 2025 DCs. Run net start kdc in a cmd window
+1. Zip and share your log files
 
-2.  If you have multiple 2025 DCs, disable KDC services on all of them except one.
-
-3.  Run “net stop kdc” to stop the KDC service on a DC.
-
-4.  On the remaining 2025 DC with KDC service running, open a PowerShell window with administrator privileges, run start-auth.ps1
-
-5.  On your client computer, open a PowerShell window with administrator privileges, run start-auth.ps1
-
-6.  On your client computer, open a cmd window with administrator privileges, run dsregcmd /join
-
-7.  On your client computer, in the PowerShell window, run stop-auth.ps1
-
-8.  On your 2025 DC, in the PowerShell window, run stop-auth.ps1
-
-9.  You can restart KDC services on your extra 2025 DCs. Run net start kdc in a cmd window
-
-10. Zip and share your log files
-
-> Kerberos errors
+## Kerberos errors
 
 | **Error code** | **Description** | **Reason** | **Resolution** |
 |---|---|---|---|
@@ -87,7 +86,7 @@ These are the primary use cases we aim to enable during this public preview.
 | SEC_E_TARGET_UNKNOWN (0x80090303)Error code in Kerberos event log: KDC_ERR_S_PRINCIPAL_UNKNOWN (0x7) | The specified target is unknown or unreachable. |  |  |
 | SEC_E_LOGON_DENIED (0x8009030c)Error code in Kerberos event log: KDC_ERR_NULL_KEY (0x9) | The logon attempt failed.Kerberos error: No KerberosKeyInformation Keys found. | Kerberos key for the Entra device registration service principal is not found. | Add tag **KerberosPolicy:ExchangeForJwt** to the service principal. |
 
-### Estimated Timing
+### Estimated timing
 
 - **Complexity/time commitment**: 8-10 hours for setup, coordinating with few users, testing and providing feedback. 
 
