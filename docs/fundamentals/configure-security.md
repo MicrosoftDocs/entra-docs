@@ -88,7 +88,7 @@ Reduce credential-related risk by implementing modern identity standards.
 | [Guest access is protected by strong authentication methods](zero-trust-protect-tenants.md#guest-access-is-protected-by-strong-authentication-methods) | Microsoft Entra ID Free<br>Microsoft Entra ID P1 recommended for Conditional Access |
 | [Guest self-service sign-up via user flow is disabled](zero-trust-protect-tenants.md#guest-self-service-sign-up-via-user-flow-is-disabled) | Microsoft Entra ID Free |
 | [Outbound cross-tenant access settings are configured](zero-trust-protect-tenants.md#outbound-cross-tenant-access-settings-are-configured) | Microsoft Entra ID Free<br>Microsoft Entra ID P1 recommended for Conditional Access |
-| [Guests don't own apps in the tenant](zero-trust-protect-tenants.md#guests-do-not-own-apps-in-the-tenant) |  None (included with Microsoft Entra ID) |
+| [Guests don't own apps in the tenant](zero-trust-protect-tenants.md#guests-dont-own-apps-in-the-tenant) |  None (included with Microsoft Entra ID) |
 | [All guests have a sponsor](zero-trust-protect-tenants.md#all-guests-have-a-sponsor) | Microsoft Entra ID Free |
 | [Inactive guest identities are disabled or removed from the tenant](zero-trust-protect-tenants.md#inactive-guest-identities-are-disabled-or-removed-from-the-tenant) | Microsoft Entra ID Free |
 | [All entitlement management policies have an expiration date](zero-trust-protect-tenants.md#all-entitlement-management-policies-have-an-expiration-date) | Microsoft Entra ID P2 or Microsoft ID Governance for entitlement managed and access reviews |
