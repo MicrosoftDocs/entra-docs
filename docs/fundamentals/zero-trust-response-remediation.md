@@ -20,7 +20,7 @@ This pillar emphasizes automated, risk-based responses that reduce manual interv
 
 ## Zero Trust security recommendations
 
-### Workload identities based on risk policies are configured
+### Workload Identities are configured with risk-based policies
 [!INCLUDE [21883](../includes/secure-recommendations/21883.md)]
 
 ### Restrict high risk sign-ins

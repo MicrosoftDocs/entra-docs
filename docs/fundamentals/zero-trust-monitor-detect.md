@@ -51,7 +51,7 @@ The first step to aligning with this pillar is to configure diagnostic settings 
 ### High priority Microsoft Entra recommendations are addressed
 [!INCLUDE [22124](../includes/secure-recommendations/22124.md)]
 
-### ID Protection notifications enabled
+### ID Protection notifications are enabled
 [!INCLUDE [21798](../includes/secure-recommendations/21798.md)]
 
 ### No legacy authentication sign-in activity
