@@ -72,12 +72,6 @@ The following table outlines the different approaches in more detail:
 
 To deactivate an application using Microsoft Graph API, you need at least **[Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)** role.
 
-1. Get the application object ID if you don't have it
-
-    ```http
-    GET https://graph.microsoft.com/v1.0/applications?$filter=displayName eq 'Your App Name'
-    ```
-
 1. Deactivate the application
 
     ```http
