@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 05/16/2024
+ms.date: 01/28/2026
 ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -183,6 +183,7 @@ Here are the primary benefits of using Microsoft 365 admin center to create your
 - Microsoft 365 admin center will pre-configure your tenants for auto-redemption of B2B collaboration invitations.
 - Microsoft 365 admin center will pre-configure your tenants for inbound user synchronization, though usage of cross-tenant synchronization remains optional.
 - Microsoft 365 admin center allows easy provisioning of employees into multiple tenants of your multitenant organization.
+- Microsoft 365 admin center can create Exchange Online Organization Relationships to view calendar availability information.
 
 Here are the primary constraints with using Microsoft 365 admin center to create your multitenant organization or provision employees:
 
