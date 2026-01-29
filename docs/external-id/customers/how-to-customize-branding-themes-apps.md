@@ -120,7 +120,7 @@ Here are some of the limits and constraints for branding themes.
    
     :::image type="content" source="./media/how-to-customize-branding-themes-apps/sign-in.png" alt-text="Screenshot of the customized Sign in experience." lightbox="./media/how-to-customize-branding-themes-apps/sign-in.png":::
 
-1. On the **Custom text** tab, select the **Default** link for one of the page, such as the **Sign-in** page.
+1. On the **Custom text** tab, select the **Default** link for one of the pages, such as the **Sign-in** page.
 
     - **Sign-in** – The page where users enter their credentials to sign in.
     - **Sign-up** – The page where users create a new account.
