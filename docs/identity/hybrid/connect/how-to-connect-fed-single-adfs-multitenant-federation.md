@@ -88,10 +88,10 @@ Convert the fabrikam.com managed domain to federated:
  	signOutUri = $signOutUri
  }
 
-New-MgDomainFederationConfiguration -DomainId $domainId -BodyParameter $params
+ New-MgDomainFederationConfiguration -DomainId $domainId -BodyParameter $params
 
-# Switch the domain authentication type to Federated
-Update-MgDomain -DomainId $domainId -AuthenticationType "Federated"
+ # Switch the domain authentication type to Federated
+ Update-MgDomain -DomainId $domainId -AuthenticationType "Federated"
 ```
  
 The prior operation federates the domain fabrikam.com with the same AD FS. You can verify the domain settings by using Get-MsolDomainFederationSettings for both domains.
