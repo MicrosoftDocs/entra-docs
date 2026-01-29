@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 09/11/2025
+ms.date: 01/26/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -110,6 +110,8 @@ Protect your network perimeter.
 |---|---|
 | [Named locations are configured](zero-trust-protect-networks.md#named-locations-are-configured) | Microsoft Entra ID P1 |
 | [Tenant restrictions v2 policy is configured](zero-trust-protect-networks.md#tenant-restrictions-v2-policy-is-configured) | Microsoft Entra ID P1 |
+| [Internet Access forwarding profile is enabled](zero-trust-protect-networks.md#internet-access-forwarding-profile-is-enabled) | <!--Entra_Premium_Internet_Access--> Microsoft Entra Internet Access |
+| [Global Secure Access web content filtering is enabled and configured](zero-trust-protect-networks.md#global-secure-access-web-content-filtering-is-enabled-and-configured) | <!--Entra_Premium_Internet_Access--> Microsoft Entra Internet Access |
 
 ## Protect engineering systems
 
