@@ -432,7 +432,7 @@ items:
               href: ~/identity-platform/custom-extension-email-otp-send-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json                  
         - name: Troubleshoot your custom authentication extension
           href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-- name: Samples
+- name: Code samples
   expanded: false
   items:
   - name: List of guides for samples
