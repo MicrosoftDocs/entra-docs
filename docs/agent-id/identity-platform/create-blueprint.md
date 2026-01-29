@@ -170,7 +170,7 @@ This step currently requires the beta version of the module and includes the fol
 - Install the beta version of the required module.
 - Connect to your tenant with the `AgentIdentityBlueprint.AddRemoveCreds.All` scope.
 - Add a managed identity as a credential for the agent identity blueprint using the previously created agent identity blueprint principal.
-
+<!--- In the Subject line for this script I wasn't sure what value to grab from the output from the previous step. --->
 ```powershell
 Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force
 
@@ -279,7 +279,8 @@ This step currently requires the beta version of the module and includes the fol
 - Install the beta version of the required module.
 - Connect to your tenant with the `AgentIdentityBlueprint.ReadWrite.All` scope.
 - Configure the URI and scope for the new agent identity blueprint.
-
+<!--- In the following script, I was confused by what the user needs to add. $AppId = "<agent-blueprint-object-id>"
+$IdentifierUri = "api://<agent-blueprint-id>" look like distinct values you grab from the output but I don't know how to tell the difference if there is one.--->
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.ReadWrite.All" -TenantId <your-tenant>
 
