@@ -59,16 +59,6 @@ In Entra External ID (EEID), customers can create a single, tenant-wide, customi
 
 ---
 
-### Public Preview Refresh - EAM Registration
-
-**Type:** New feature  
-**Service category:** MFA  
-**Product capability:** User Authentication  
-
-This feature enables registration of an EAM through three flows: in-line registration, through SecurityInfo, and through an admin on‑behalf‑of flow. With this feature, users will need to have their EAM registered with Microsoft Entra ID before they can use it to satisfy MFA. For more information, see: [Manage an external authentication method in Microsoft Entra ID (Preview)](../identity/authentication/how-to-authentication-external-method-manage.md).
-
----
-
 ### General Availability - Service Principal creation audit logs for alerting & monitoring
 
 **Type:** New feature  
@@ -188,7 +178,7 @@ The Microsoft Entra Connect Sync .msi installation file for this change is excl
 
 ---
 
-### Public Preview of Just-in-time password migration to Microsoft Entra External ID
+### Public Preview - Just-in-time password migration to Microsoft Entra External ID
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management  
