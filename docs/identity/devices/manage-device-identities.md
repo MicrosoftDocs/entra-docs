@@ -131,9 +131,10 @@ The exported list includes these device identity attributes:
 
 `id,deviceId,displayName,accountEnabled,operatingSystem,operatingSystemVersion,trustType(joinType),mdm,securitySettingsManagement,isCompliant,registrationDateTime,approximateLastSignInDateTime,owner,upnName`
 
-Please note, trustType is where JoinType can be determined. A common translation would be as follows
-AzureAD -> Microsoft Entra joined
-Workplace -> Microsoft Entra registered
+>[!Note]
+>trustType is where JoinType can be determined. A common translation is:
+>- AzureAD -> Microsoft Entra joined
+>- Workplace -> Microsoft Entra registered
 
 The following filters can be applied for the export task:
 
