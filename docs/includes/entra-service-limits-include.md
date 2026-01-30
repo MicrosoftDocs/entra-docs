@@ -5,7 +5,7 @@ description: Include file
 author: barclayn
 ms.service: entra-id
 ms.topic: include
-ms.date: 12/04/2025
+ms.date: 01/28/2026
 ms.author: barclayn
 ms.custom: include file
 ---
@@ -29,3 +29,4 @@ Here are the usage constraints and other service limits for the Microsoft Entra 
 |Terms of use|You can add no more than 40 terms to a single Microsoft Entra organization (tenant).|
 | Multitenant organizations | <ul><li>A maximum of 100 active tenants, including the owner tenant. The owner tenant can add more than 100 pending tenants, but they won't be able to join the multitenant organization if the limit is exceeded. This limit is applied at the time a pending tenant joins a multitenant organization.</li>This limit is specific to the number of tenants in a multitenant organization. It doesn't apply to cross-tenant synchronization by itself.</ul> |
 | B2B Invitations | <ul><li><b>Workforce tenants with paid licenses</b><ul><li>Tenants less than or equal to 30 days old: 200 invitations per day</li><li>Tenants more than 30 days old: Capped by the Microsoft Entra service quotas</li></ul></li><li><b>Workforce tenants without paid licenses</b><ul><li>Tenants less than or equal to 30 days old: 10 invitations per day</li><li>Tenants more than 30 days old: 100 invitations per day</li></ul></li></ul> |
+| Cross-tenant access policies | <ul><li>The [crossTenantAccessPolicyConfigurationPartner](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner) object that corresponds to each cross-tenant access policy partner tenant relationship is limited to 4 KB.<br>Each [crossTenantAccessPolicyConfigurationPartner](/graph/api/resources/crosstenantaccesspolicyconfigurationpartner) object, including both overhead and the content of the JSON blob data, must not exceed this limit. To optimize your partner policies, consider using groups instead of explicit user IDs for scoping.</li></ul> |
