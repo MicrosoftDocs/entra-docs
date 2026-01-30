@@ -106,6 +106,19 @@ When the agent overview page loads, any suggestions appear in the **Recent sugge
 
    :::image type="content" source="media/conditional-access-agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the review suggestion buttons highlighted." lightbox="media/conditional-access-agent-optimization/review-suggestions.png":::
 
+## Settings
+
+The agent includes several powerful settings to expand the capabilities while making them unique to your organization. The following capabilities can be configured from the **Settings** tab. For more information, see [Conditional Access Optimization Agent settings](conditional-access-agent-optimization-settings.md).
+
+- Allow agent to run automatically, every 24-hours
+- Set the agent to check for changes to users and applications
+- Allow the agent to create policies in report-only mode
+- Allow the agent to create [passkey adoption campaigns](conditional-access-agent-optimization-passkeys.md)
+- Allow the agent to [send notifications](conditional-access-agent-optimization-settings.md#notifications) through Microsoft Teams
+- Allow the agent to create [phased rollout plans](conditional-access-agent-optimization-phased-rollout.md)
+- Enable [integration with ServiceNow](conditional-access-agent-optimization-settings.md#servicenow-integration-preview) for automatic ticket creation
+- Provide [instructions](conditional-access-agent-optimization-settings.md#custom-instructions) and [knowledge artifacts]() to the agent
+
 ## Remove agent
 
 If you no longer wish to use the Conditional Access optimization agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any policies created or updated based on the agent suggestions remain intact. Previously applied suggestions remain unchanged so you can continue to use the policies created or modified by the agent.
