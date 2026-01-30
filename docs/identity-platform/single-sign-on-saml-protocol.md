@@ -159,6 +159,9 @@ When a requested sign-on completes successfully, Microsoft Entra ID posts a resp
       <Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">
         <AttributeValue>3F2504E0-4F89-11D3-9A0C-0305E82C3301</AttributeValue>
       </Attribute>
+      <Attribute Name="http://schemas.microsoft.com/claims/authnmethodsreferences">    <AttributeValue>http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password</AttributeValue>
+        <AttributeValue>http://schemas.microsoft.com/claims/multipleauthn</AttributeValue>
+      </Attribute>
       ...
     </AttributeStatement>
     <AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
@@ -306,7 +309,22 @@ This element asserts that the assertion subject was authenticated by a particula
 ```xml
 <AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
   <AuthnContext>
-    <AuthnContextClassRef> urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
+    <AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
   </AuthnContext>
 </AuthnStatement>
+```
+#### authnmethodreferences
+
+This element asserts that the assertion subject was authenticated by a particular means at a particular time. This is available in the claims section for applications to consume and verify that subject has done authenticaiton using Password or using a stronger authentication method like MFA or Passkeys. 
+
+* The `authnmethodsreferences` attribute specifies the way the user authenticated with Microsoft Entra ID.
+* The `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` claim value specifies the user has just done username and password authentication with Entra ID.
+* The `http://schemas.microsoft.com/claims/multipleauthn` claim value specifies the user has just done username and password and also performed a strong authentication with Entra ID such as MFA with Authenticator app.
+
+```xml
+  <Attribute Name="http://schemas.microsoft.com/claims/authnmethodsreferences">
+              <AttributeValue>http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password</AttributeValue>
+              <AttributeValue>http://schemas.microsoft.com/claims/multipleauthn</AttributeValue>
+  </Attribute>
+
 ```
