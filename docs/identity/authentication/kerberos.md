@@ -243,7 +243,7 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 
 ### Support for cloud-only user identities (Preview)
 
-Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files and Azure Virtual Desktop.
+Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files, Azure Virtual Desktop and Windows authentication access to Azure SQL Managed Instance.
 
 ### Operating system and device restrictions
 
