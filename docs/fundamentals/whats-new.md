@@ -49,7 +49,7 @@ For more information, see: [Microsoft Entra ID Governance licensing for guest u
 
 ---
 
-### General Availability - Client Credentials in Entra External ID
+### General Availability - Client Credentials in Microsoft Entra External ID
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management 
