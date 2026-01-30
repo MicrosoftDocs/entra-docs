@@ -3,10 +3,9 @@
 title: Microsoft Entra External ID overview
 description: Microsoft Entra External ID allows you to collaborate with or publish apps to people outside your organization. Compare solutions for External ID, including Microsoft Entra B2B collaboration, Microsoft Entra B2B collaboration, and Azure AD B2C.
 
- 
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 09/06/2024
+ms.date: 01/30/2026
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -171,7 +170,7 @@ All External ID features are also supported for automation through Microsoft Gra
 
 - **B2B collaboration invitation manager**: The [invitation manager API in Microsoft Graph](/graph/api/resources/invitation) is available for building your own onboarding experiences for business guests. You can use the [create invitation API](/graph/api/invitation-post) to automatically send a customized invitation email directly to the B2B user, for example. Or your app can use the inviteRedeemUrl returned in the creation response to craft your own invitation (through your communication mechanism of choice) to the invited user.
 
-## Next steps
+## Related content
 
 - [What is Microsoft Entra B2B collaboration?](what-is-b2b.md)
 - [What is Microsoft Entra B2B direct connect?](b2b-direct-connect-overview.md)
