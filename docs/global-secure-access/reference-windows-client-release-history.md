@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 12/03/2025
+ms.date: 01/30/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -21,6 +21,25 @@ You can download the current version of the Global Secure Access client from the
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
+
+## Version 2.26.108
+Released for download on February __, 2026.
+### Functional changes
+- Support for Private Access for Microsoft Entra-registered devices (preview). For more information, see [Bring Your Own Device](concept-bring-your-own-device.md).
+- Removes **Device is Microsoft Entra Joined** and **Entra user signed in to Windows** from health check tests since these checks are no longer prerequisites. The client supports Microsoft Entra-registered devices.
+- Optimizes Intelligent Local Access (ILA) detection by reevaluating the status on each network change.
+- The client interface adds **Join type** to indicate whether the device is registered or joined to the user's Microsoft Entra ID tenant.
+- The Global Secure Access tracert includes a 50-MB speed test between the client and the edge.
+- Support for Windows in Turkish.
+### Other changes
+- The Global Secure Access client certificate is removed if the certificate is no longer needed.
+- Improves management of stale internal Global Secure Access connections going on the network.
+- Adds power configuration and logs, Windows services list, and drivers list to the collected logs.
+- Enhances the logs for the log collection process.
+- Enhances the health check tests.
+- Accessibility improvements.
+- New telemetries are available.
+- Miscellaneous bug fixes and improvements.
 
 ## Version 2.24.117
 Released for download on December 3, 2025.
