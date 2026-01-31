@@ -26,7 +26,7 @@ You can download the current version of the Global Secure Access client from the
 ## Version 1.1.25111702
 Released for download on February __, 2026.
 ### Functional changes
-- Intelligent Local Access in public preview.
+- Supports Intelligent Local Access (preview).
 - Supports contacting Private DNS only when the Private Access channel is active.
 ### Other changes
 - Memory management improvements
