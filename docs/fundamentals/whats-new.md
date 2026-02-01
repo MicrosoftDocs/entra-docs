@@ -52,7 +52,7 @@ For more information, see: [Microsoft Entra ID Governance licensing for guest u
 ### General Availability - Client Credentials in Microsoft Entra External ID
 
 **Type:** New feature  
-**Service category:** B2C - Consumer Identity Management 
+**Service category:** B2C - Consumer Identity Management     
 **Product capability:** B2B/B2C    
 
 We are pleased to announce the general availability of client credentials in Entra External ID.  The OAuth 2.0 client credentials grant flow permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. Permissions are granted directly to the application itself by an administrator.
