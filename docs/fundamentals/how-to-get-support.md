@@ -60,16 +60,16 @@ Search for or select **Diagnose and solve problems** from the navigation menu.
 
 Some of the diagnostic tools require specific roles to use the tool. For example, you need to be at least a **Billing administrator** to use the sign-in diagnostic tool. Contact your local administrator for assistance or to get the necessary permissions.
 
-### Use the Support Assistant
+### Use Microsoft Entra Self-Service Support
 
-The Support Assistant is an AI-powered tool that can help you troubleshoot identity and access issues and find solutions before creating a support request. It uses Microsoft documentation from [learn.microsoft.com](https://learn.microsoft.com) and generative AI to analyze your problem and provide relevant guidance.
+Self-Service Support is an AI-powered tool that can help you troubleshoot identity and access issues and find solutions before creating a support request. It uses Microsoft documentation from [learn.microsoft.com](https://learn.microsoft.com) and generative AI to analyze your problem and provide relevant guidance.
 
-1. From **Diagnose and solve problems**, select **Support Assistant**.
+1. From **Diagnose and solve problems**, select **Self-Service Support**.
 1. Describe your issue in the chat interface or select one of the prebuilt options.
 1. Continue with the follow-up questions as needed.
 1. After the third follow-up question, select **Create a support request** if your issue wasn't resolved and you still need support.
 
-For more information, see [How to use the Microsfot Entra Support Assistant](how-to-entra-support-assistant.md).
+For more information, see [How to use Microsoft Entra Self-Service Support](how-to-entra-self-service-support.md).
 
 ### Open a support request
 
