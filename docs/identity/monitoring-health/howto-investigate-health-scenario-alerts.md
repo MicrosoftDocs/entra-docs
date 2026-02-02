@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 06/06/2025
+ms.date: 02/02/2026
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -75,33 +75,31 @@ The signals and alerts are available in the Microsoft Entra Health area of the M
 
 #### Investigate the alerts
 
-To view these details from the **Health monitoring** landing page: 
+To view these details from the **Health monitoring** landing page, first select the active alert you want to investigate.
 
-1. Select the active alert you want to investigate.
+:::image type="content" source="media/howto-investigate-health-scenario-alerts/scenario-health-active-alert.png" alt-text="Screenshot of the Health monitoring page with active alert scenarios." lightbox="media/howto-investigate-health-scenario-alerts/scenario-health-active-alert-expanded.png":::
 
-    :::image type="content" source="media/howto-investigate-health-scenario-alerts/scenario-health-active-alert.png" alt-text="Screenshot of the Health monitoring page with active alert scenarios." lightbox="media/howto-investigate-health-scenario-alerts/scenario-health-active-alert-expanded.png":::
+From the selected scenario, you have several options to investigate:
 
+:::image type="content" source="media/howto-investigate-health-scenario-alerts/affected-entities-documentation.png" alt-text="Screenshot of the affected entities for an active alert." lightbox="media/howto-investigate-health-scenario-alerts/affected-entities-documentation.png":::
+
+1. Select **Run Diagnostics** from the top of the page, which runs the [sign-in log diagnostic tool](howto-use-sign-in-diagnostics.md).
 
 1. From the **Affected entities** section of the selected scenario, select **View** for the type of affected entity you want to investigate.
     - Possible entities include users and applications.
     - A link is provided to a scenario-specific article for more information on how to investigate the issue.
-
-    ![Screenshot of the affected entities for an active alert.](media/howto-investigate-health-scenario-alerts/affected-entities-documentation.png)
-
-1. From the details that appear in the panel that opens, select an entity to explore further.
-    - The top 10 most affected entities appear.
+    - The top 10 most affected entities are listed.
     - Selecting an item from the list navigates you to the user or application's profile page for further investigation.
 
 1. The signal for the alert appears under the **Signals** section. Review the signal to understand the pattern and identify anomalies.
     - The time frame shows the time during which the anomaly occurred. 
 
-    ![Screenshot of the signal for an active alert.](media/howto-investigate-health-scenario-alerts/active-alert-signal.png)
+    :::image type="content" source="media/howto-investigate-health-scenario-alerts/active-alert-signal.png" alt-text="Screenshot of the signal for an active alert." lightbox="media/howto-investigate-health-scenario-alerts/active-alert-signal.png":::
 
 1. After investigating and potentially resolving the root cause of the issue, you can dismiss the alert. From the active alert page, select the checkbox for that alert then select the **Mark alert as** menu and select **Dismissed**.
     - The equivalent action using the Microsoft Graph API is to update the alert status to `resolved`.
 
     :::image type="content" source="media/howto-investigate-health-scenario-alerts/mark-alert-as.png" alt-text="Screenshot of the alert page with the Mark alert as menu highlighted." lightbox="media/howto-investigate-health-scenario-alerts/mark-alert-as-expanded.png":::
-
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
