@@ -47,7 +47,7 @@ These recommendations focus on ensuring least privilege access to your organizat
 ### App registrations must not have dangling or abandoned domain redirect URIs
 [!INCLUDE [21888](../includes/secure-recommendations/21888.md)]
 
-### Resource-specific consent to application is restricted
+### Resource-specific consent is restricted
 [!INCLUDE [21810](../includes/secure-recommendations/21810.md)]
 
 ### Workload Identities are not assigned privileged roles

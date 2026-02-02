@@ -4,8 +4,10 @@ description: Message Center Reader
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 Users in this role can monitor notifications and advisory health updates in [Message center](/microsoft-365/admin/manage/message-center) for their organization on configured services such as Exchange, Intune, and Microsoft Teams. Message Center Readers receive weekly email digests of posts, updates, and can share message center posts in Microsoft 365. In Microsoft Entra ID, users assigned to this role will only have read-only access on Microsoft Entra services such as users and groups. This role has no access to view, create, or manage support tickets.

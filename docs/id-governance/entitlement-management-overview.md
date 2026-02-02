@@ -33,7 +33,7 @@ These problems are compounded for identities who need access from another organi
 - No one person might know all of the specific individuals in other organization's directories to be able to invite them
 - Even if they were able to invite these identities, no one in that organization might remember to manage all of the identities access consistently
 
-Entitlement management can help address these challenges. To learn more about how customers have been using entitlement management, you can read the [Mississippi Division of Medicaid](https://customers.microsoft.com/story/1509263251891323344-mississippi-medicaid-microsoft-security-solutions), [Storebrand](https://customers.microsoft.com/story/1540760473505561700-storebrand-banking-microsoft-security-solutions), and [Digital Security and Resilience team at Microsoft](https://customers.microsoft.com/story/1805346232767723893-microsoft-microsoft-entra-id-governance-other-en-united-states) case studies.  This video provides an overview of entitlement management and its value:
+Entitlement management can help address these challenges. To learn more about how customers have been using entitlement management, you can read the [Mississippi Division of Medicaid](https://customers.microsoft.com/story/1509263251891323344-mississippi-medicaid-microsoft-security-solutions), [Storebrand](https://customers.microsoft.com/story/1540760473505561700-storebrand-banking-microsoft-security-solutions), and [Digital Security and Resilience team at Microsoft](https://customers.microsoft.com/story/1805346232767723893-microsoft-microsoft-entra-id-governance-other-en-united-states) case studies. This video provides an overview of entitlement management and its value:
 
 >[!VIDEO https://www.youtube.com/embed/_Lss6bFrnQ8]
 
@@ -48,7 +48,7 @@ Here are some of capabilities of entitlement management:
 - Select connected organizations whose identities can request access. When an identity who isn't yet in your directory requests access, and is approved, they're automatically invited into your directory and assigned access. When their access expires, if they have no other access package assignments, their B2B account in your directory can be automatically removed.
 
 >[!NOTE]
->If you are ready to try Entitlement management you can get started with our [tutorial to create your first access package](entitlement-management-access-package-first.md).
+>If you're ready to try Entitlement management you can get started with our [tutorial to create your first access package](entitlement-management-access-package-first.md).
 
 You can also read the [common scenarios](entitlement-management-scenarios.md), or watch videos, including
 
@@ -122,7 +122,7 @@ To better understand entitlement management and its documentation, you can refer
 | access package | A bundle of resources that a team or project needs and is governed with policies. An access package is always contained in a catalog. You would create a new access package for a scenario in which identities need to request access for themselves. |
 | access request | A request to access the resources in an access package. A request typically goes through an approval workflow. If approved, the requesting identity receives an access package assignment. |
 | assignment | An assignment of an access package to an identity ensures the identity has all the resource roles of that access package. Access package assignments typically have a time limit before they expire. |
-| catalog | A container of related resources and access packages. Catalogs are used for delegation, so that nonadministrators can create their own access packages. Catalog owners can add resources they own to a catalog. |
+| catalog | A container of related resources and access packages. Catalogs are used for delegation, so that nonadministrators can create their own access packages. Catalog owners can add resources they own to a catalog. Catalogs can have a [privilege level](entitlement-management-catalog-create.md#catalog-privilege-levels-preview) of **Standard**, or a catalog with regular resources in it, or **Privileged** where it contains resources that grant elevated permissions. |
 | catalog creator | A collection of identities who are authorized to create new catalogs. When a nonadministrator identity who is authorized to be a catalog creator creates a new catalog, they automatically become the owner of that catalog. |
 | connected organization | An external Microsoft Entra directory or domain that you have a relationship with. The identities from a connected organization can be specified in a policy as being allowed to request access. |
 | policy | A set of rules that defines the access lifecycle, such as how identities get access, who can approve, and how long they have access through an assignment. A policy is linked to an access package. For example, an access package could have two policies - one for employees to request access and a second for external identities to request access. |

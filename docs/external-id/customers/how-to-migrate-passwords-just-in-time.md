@@ -58,16 +58,7 @@ The JIT migration process is illustrated in the following diagram:
 
 When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
-- **Consumer user signs in** - User enters credentials from the legacy identity provider. 
-    
-    Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use either one of these workarounds:
-    - **In your custom authentication extension:** Fetch the user from a Graph API call to get the username for legacy IDP validation.
-    
-    **OR**    
-
-    - **During import:** Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation. When your custom authentication extension receives the payload it transforms this UPN back to the legacy format for validation.
-        - Legacy UPN: `casey@legacyidp.com`
-        - Entra UPN: `casey@fabrikam.onmicrosoft.com`
+- **Consumer user signs in** - User enters credentials from the legacy identity provider.   
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
     - If the password entered does not match the password on record for the user, External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
     - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
@@ -281,6 +272,12 @@ When sending a request to your custom authentication extension, Entra will inclu
 } 
 
 ```
+
+The `encryptedPasswordContext` field in the request contains the following claims in encrypted JWE format:
+
+- **user-password**: The password text the user entered at sign-in
+- **username**: The sign-in identifier (email/username) the user entered at sign-in  
+- **nonce**: A GUID that is unique to the request and must be included in the response for verification
 
 #### 2.2.2 Response schema
 

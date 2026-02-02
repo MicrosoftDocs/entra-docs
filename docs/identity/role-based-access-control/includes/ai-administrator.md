@@ -4,8 +4,10 @@ description: AI Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 Assign the AI Administrator role to users who need to do the following tasks:
@@ -25,6 +27,7 @@ Assign the AI Administrator role to users who need to do the following tasks:
 > | --- | --- |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/entitlementManagement/allProperties/read | Read all properties in Microsoft Entra entitlement management |
 > | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft 365 Copilot |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |

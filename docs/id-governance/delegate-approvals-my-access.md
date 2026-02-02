@@ -19,7 +19,7 @@ Approval delegation in My Access allows approvers to assign another individual t
 
 ## License requirements
 
-[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## How delegation works
 

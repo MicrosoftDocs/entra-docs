@@ -1,12 +1,11 @@
 ---
 title: Pass custom state in authentication requests (MSAL.js)
 description: Learn how to pass a custom state parameter value in authentication request using the Microsoft Authentication Library for JavaScript (MSAL.js).
-author: OwenRichards1
-manager: pmwongera
-ms.author: owenrichards
-ms.custom:
-ms.date: 01/16/2020
-ms.reviewer: 
+author: Dickson-Mwendia
+manager: dougeby
+ms.author: dmwendia
+ms.date: 01/09/2026
+ms.reviewer: jo.arroyo
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -18,6 +17,8 @@ ms.topic: how-to
 The *state* parameter, as defined by OAuth 2.0, is included in an authentication request and is also returned in the token response to prevent cross-site request forgery attacks. By default, the Microsoft Authentication Library for JavaScript (MSAL.js) passes a randomly generated unique *state* parameter value in the authentication requests.
 
 The state parameter can also be used to encode information of the app's state before redirect. You can pass the user's state in the app, such as the page or view they were on, as input to this parameter. The MSAL.js library allows you to pass your custom state as state parameter in the [Request](https://azuread.github.io/microsoft-authentication-library-for-js/ref/modules/_azure_msal_browser.html#redirectrequest) object. For example:
+
+For security and privacy, do not put URLs or other sensitive data directly in the state parameter. Instead, use a key or identifier that corresponds to data stored in browser storage, such as localStorage or sessionStorage. This approach lets your app securely reference the necessary data after authentication.
 
 ```javascript
 import {PublicClientApplication} from "@azure/msal-browser";

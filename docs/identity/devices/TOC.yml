@@ -99,6 +99,8 @@
     items:
       - name: Troubleshoot SSO on Apple devices
         href: troubleshoot-mac-sso-extension-plugin.md
+      - name: Add Your Work or School Account to a macOS Device
+        href: macos-get-started.md  
       - name: Troubleshoot macOS PSSO on Mac
         href: troubleshoot-macos-platform-single-sign-on-extension.md
       - name: Configure macOS PSSO to meet NIST and EO requirements

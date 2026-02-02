@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 01/20/2026
+ms.date: 02/02/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -183,7 +183,7 @@ The `.intunewin` file is ready for you to deploy Microsoft Intune.
 
 #### Deploy Global Secure Access client with Intune
 
-Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/mem/intune/apps/apps-win32-add#add-a-win32-app-to-intune).
+For detailed guidance, see [Add and assign Win32 apps to Microsoft Intune](/mem/intune/apps/apps-win32-add#add-a-win32-app-to-intune).
 
 1. Navigate to [https://intune.microsoft.com](https://intune.microsoft.com/).
 1. Select **Apps** > **All apps** > **Add**.
@@ -281,7 +281,7 @@ In a production environment, it's a good practice to deploy new client versions 
 
 ### Configure Global Secure Access client settings with Intune
 
-Admins can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce client-side controls, such as preventing non-admin users from disabling the client or hiding specific buttons. 
+Administrators can use [remediation scripts](/intune/intune-service/fundamentals/remediations) in Intune to enforce client-side controls, such as preventing general users from disabling the client or hiding specific buttons. 
 
 > [!IMPORTANT]
 > Set the `$gsaSettings` to the values your organization requires in both the detection and remediation scripts.
@@ -300,7 +300,7 @@ Admins can use [remediation scripts](/intune/intune-service/fundamentals/remedia
 #### Detection script 
 
 ```powershell
-# Check GSA registry keys 
+# Check Global Secure Access registry keys 
 
 $gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
 
@@ -358,7 +358,7 @@ exit 1
 #### Remediation script
 
 ```powershell
-# Ensure GSA registry keys are present 
+# Ensure Global Secure Access registry keys are present 
 
 $gsaPath = "HKLM:\SOFTWARE\Microsoft\Global Secure Access Client" 
 
@@ -396,7 +396,7 @@ Write-Output "Set $($setting.Key) to $($setting.Value)"
 
 ### Configure settings for Microsoft Entra Internet Access with Intune
 
-Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this, disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
+Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this limitation, disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
 
 #### Disable QUIC in Microsoft Edge and Chrome with Intune 
 
@@ -615,7 +615,7 @@ To view the available client menu actions, select the Global Secure Access syste
 |**Sign out**   |*Hidden by default*. Use the **Sign out** action when you need to sign in to the Global Secure Access client with a Microsoft Entra user other than the one used to sign in to Windows. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
 |**Disable**   |Select the **Disable** action to disable the client. The client remains disabled until you either enable the client or restart the machine.         |
 |**Enable**   |Enables the Global Secure Access client.         |
-|**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you wish to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
+|**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you want to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
 |**Collect logs**   |Select this action to collect client logs (information about the client machine, the related event logs for the services, and registry values) and archive them in a zip file to share with Microsoft Support for investigation. The default location for the logs is `C:\Program Files\Global Secure Access Client\Logs`.   You can also collect client logs on Windows by entering the following command in the Command Prompt: `C:\Program Files\Global Secure Access Client\LogsCollector\LogsCollector.exe" <username> <user>`.      |
 |**Advanced diagnostics**   |Select this action to open the Advanced diagnostics utility and access an assortment of [troubleshooting](#troubleshooting) tools.         |
 
@@ -650,6 +650,24 @@ To troubleshoot the Global Secure Access client, select the client icon in the t
 For more information on troubleshooting the Global Secure Access client, see the following articles:
 - [Troubleshoot the Global Secure Access client: advanced diagnostics](troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access client: Health check tab](troubleshoot-global-secure-access-client-diagnostics-health-check.md)
+
+## Security recommendations
+To enhance the security of the Global Secure Access client, use the following configurations:
+
+### Upgrade to the latest client version
+Regularly test and deploy the latest Global Secure Access client release to take advantage of new features, performance improvements, and security fixes. Download the latest version of the [Global Secure Access client](#download-the-client) from the Microsoft Entra admin center.
+
+### Restrict nonprivileged users from disabling the client
+Administrators can prevent nonprivileged users on Windows devices from disabling or enabling the Global Secure Access client. This restriction ensures that the client stays on and that Global Secure Access continues to authenticate and secure network traffic. Enabling this restriction requires elevated privileges to disable the client.
+
+Before enforcing this restriction, let users work with the Global Secure Access client in a nonrestricted mode. Configure the client for your organization to ensure users don't need to disable the client in specific scenarios (for example, to access specific websites or to use a non-Microsoft VPN in parallel).
+
+To stop the Global Secure Access client on a device with restricted, nonprivileged users, make sure that there's a process in place to use a user with local administrator privileges when necessary. For more information regarding restricting nonprivileged users, see [Restrict nonprivileged users](#restrict-nonprivileged-users).
+
+### Hide the Disable button
+In addition to restricting nonprivileged users from disabling the client, administrators can hide the **Disable** button in the client system tray icon menu. Removing the **Disable** button from view further reduces the likelihood that users disable the client by accident or without authorization.
+
+For more information regarding hiding client menu buttons, see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons).
 
 ## Client registry keys
 The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solution, such as Microsoft Intune or Group Policy to control the registry values.

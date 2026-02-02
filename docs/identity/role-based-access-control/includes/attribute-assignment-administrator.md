@@ -4,8 +4,10 @@ description: Attribute Assignment Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.

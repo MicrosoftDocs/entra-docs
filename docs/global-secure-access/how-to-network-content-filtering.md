@@ -3,7 +3,7 @@ title: Create File Policies for Network Content Filtering
 description: "Discover how to configure network content filtering with Global Secure Access to enforce data protection policies and secure sensitive files in real time."
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/07/2025
+ms.date: 01/26/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -155,16 +155,9 @@ To view traffic logs:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/azure/active-directory/roles/permissions-reference#reports-reader).
 1. Select **Global Secure Access** > **Monitor** > **Traffic logs**.
 
-To show all traffic subject to Netskope inspection:
-1. Go to the Transactions tab. 
-1. Select Add filter.
-1. Search for or scroll to find the appropriate filter (for example, Action, policyName). 
-1. Select Apply.
-1. Check the filteringProfileName and policyName to identify the policies responsible for the applied action.
-
 ## Related content
 
-- [Learn about Microsoft Purview Network Data Security](https://learn.microsoft.com/purview/dlp-network-data-security-learn)
+- [Learn about Microsoft Purview Network Data Security](/purview/dlp-network-data-security-learn)
 - [How to configure Global Secure Access web content filtering](how-to-configure-web-content-filtering.md)
 - [Enable the Internet Access traffic forwarding profile](how-to-manage-internet-access-profile.md) 
 - [Configure Transport Layer Security inspection](how-to-transport-layer-security.md)

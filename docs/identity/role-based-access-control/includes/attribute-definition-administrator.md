@@ -4,8 +4,10 @@ description: Attribute Definition Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 Users with this role can define a valid set of custom security attributes that can be assigned to supported Microsoft Entra objects. This role can also activate and deactivate custom security attributes.

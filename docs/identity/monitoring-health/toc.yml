@@ -16,6 +16,8 @@ items:
   items:
     - name: Audit logs
       href: concept-audit-logs.md
+    - name: Understand why a service principal was created
+      href: understand-service-principal-creation-with-new-audit-log-properties.md
     - name: Sign-in logs
       expanded: false
       items:
@@ -77,6 +79,8 @@ items:
     href: howto-download-logs.md
   - name: Find inactive user accounts in Microsoft Entra ID
     href: howto-manage-inactive-user-accounts.md
+  - name: Investigate why a service principal was created    
+    href: howto-view-service-principal-creation-with-audit-log-properties.md 
   - name: Understand monitoring and operations with Microsoft Security Copilot
     href: ~/security-copilot/entra-monitoring-operations.md?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
   - name: Diagnostic settings and Log Analytics 
@@ -124,8 +128,6 @@ items:
       href: howto-configure-recommendation-email-notifications.md
     - name: Enable insider risk Conditional Access condition
       href: recommendation-insider-risk-condition.md
-    - name: Migrate ADAL to MSAL
-      href: recommendation-migrate-from-adal-to-msal.md
     - name: Migrate apps from AD FS to Microsoft Entra ID
       href: recommendation-migrate-apps-from-adfs-to-azure-ad.md
     - name: Migrate apps and service principals to Microsoft Graph

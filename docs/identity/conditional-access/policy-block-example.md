@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy to Block access.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 01/26/2026
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -26,7 +26,7 @@ Policies like these can have unintended side effects. Proper testing and validat
 
 ## Create a Conditional Access policy
 
-The following steps help create Conditional Access policies to block access to all apps except for [Office 365](concept-conditional-access-cloud-apps.md#office-365) if users aren't on a trusted network. These policies are put in to [Report-only mode](howto-conditional-access-insights-reporting.md) to start so administrators can determine the impact on existing users. When administrators are comfortable that the policies apply as they intend, they can switch them to **On**.
+The following steps help create Conditional Access policies to block access to all apps except for [Office 365](concept-conditional-access-cloud-apps.md#office-365) (Microsoft 365) if users aren't on a trusted network. These policies are put in to [Report-only mode](howto-conditional-access-insights-reporting.md) to start so administrators can determine the impact on existing users. When administrators are comfortable that the policies apply as they intend, they can switch them to **On**.
 
 The first policy blocks access to all apps except for Microsoft 365 applications if not on a trusted location.
 

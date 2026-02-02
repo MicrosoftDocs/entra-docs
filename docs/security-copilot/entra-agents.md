@@ -5,7 +5,7 @@ keywords:
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
-ms.date: 12/01/2025
+ms.date: 01/21/2026
 ms.update-cycle: 180-days
 ms.topic: overview
 ms.service: entra
@@ -37,7 +37,8 @@ Administrators can configure the agent to run automatically or trigger the agent
 Because each of the agents perform a specific set of tasks, they need a specific set of configurations to operate within the boundaries of that task. The administrator also needs certain Microsoft Entra roles to set up and manage the agent.
 
 - **Agent identity**: A unique agent identity is created when the agent is turned on. Learn more about [agent identities](/entra/agent-id/identity-platform/what-is-agent-id).
-- **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks.
+- **Roles**: Specific Microsoft Entra built-in roles are needed to turn on, view, and interact with the agent. Not all roles can perform the same tasks with an agent.
+- **Permissions**: The agent identity is granted specific read and write permissions needed to perform its tasks. These permissions can't be changed or removed.
 - **Role-based access**: The administrator needs specific roles to set up, manage, and use the agent.
 
 ## Available Microsoft Entra agents
@@ -52,24 +53,11 @@ Empower your reviewers to make fast and accurate access decisions. The [Access R
 |---------------------|------------ |
 | Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant for active access reviews, gather additional insights, and save its recommendations and justifications for the reviewer. For more information, see: [How it works](access-review-agent.md#how-it-works).<br><br>Final decisions, submitted through the Microsoft Teams conversation, use the reviewer's identity.  |
 | Licenses            | [Microsoft Entra ID Governance or Microsoft Entra Suite](../id-governance/licensing-fundamentals.md) |
-| Permissions         | Get details for access reviews<br>Read details and lifecycle workflow history for users, groups, apps, and access packages. Save access review recommendations and justifications |
+| Permissions         | AccessReview.Read.All</br>EntitlementManagement.Read.All</br>LifecycleWorkflows-Reports.Read.All</br>LifecycleWorkflows-Workflow.ReadBasic.All</br>User.Read.All</br>User-LifeCycleInfo.Read.All |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [ID Governance Access Reviews](../id-governance/access-reviews-overview.md) |
 | Role-based access   | Both [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) are required to configure and use the agent |
 | Trigger             | Runs every 24 hours or triggered manually |
-
-### Application Lifecycle Management Agent (Preview)
-
-The App Lifecycle Management Agent (Preview) helps you manage the full lifecycle of apps in Microsoft Entra, from discovery and onboarding to risk remediation and decommissioning. It correlates identity and network signals from Global Secure Access telemetry data to surface unmanaged private apps and Microsoft Entra application data. It provides clear, AI-driven recommendations to reduce app sprawl and enforce governance at scale. This agent is currently being deployed and might not be available in all tenants.
-
-| Attribute           | Description |
-|---------------------|------------ |
-| Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant with specific **permissions** to review network logs and application data to provide insights and suggestions for application management. The agent identity includes **role-based access** used for any write actions, such as creating and disabling applications, dismissing suggestions, and sending emails or Teams notifications. |
-| Licenses            | [Microsoft Entra ID P2 or Workload Identity Premium P2](/entra/fundamentals/licensing) for **App Risk Remediation** suggestions and/or Microsoft Entra Suite or [Microsoft Entra Private Access](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview) licenses for **Application Discovery & Onboarding** suggestions |
-| Permissions         | Read access for Global Secure Access network logs.<br>Read access for users, applications, and service principals.<br>Read access for Microsoft Entra recommendations. |
-| Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
-| Products            | [Global Secure Access](../global-secure-access/overview-what-is-global-secure-access.md)<br>[Microsoft Entra recommendations](../identity/monitoring-health/overview-recommendations.md)<br>[Enterprise Applications](/entra/identity/enterprise-apps/)<br>[App Management](/entra/identity/enterprise-apps/) |
-| Role-based access   | Set up the agent and manage the agent:<br>[Cloud Application Administrator](../identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)<br>[Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator)<br>[Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator)<br>[Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)<br> View the output suggestions from the agent:<br>[Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader)<br>[Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader)<br>[Globl Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) |
 
 ### Conditional Access Optimization Agent
 
@@ -79,7 +67,7 @@ The [Conditional Access Optimization Agent](./conditional-access-agent-optimizat
 |---------------------|------------ |
 | Identity            | A unique [agent identity](../agent-id/identity-professional/authorization-agent-id.md) for authorization is created when the agent is turned on.<br><br>The agent uses this identity to scan your tenant's Conditional Access policies and configurations for gaps, overlap, and misconfigurations. |
 | Licenses            | [Microsoft Entra ID P1](../fundamentals/licensing.md) |
-| Permissions         | Review policy configuration<br>Create new policies in report-only mode<br>Suggest policy changes requiring approval |
+| Permissions         | AuditLog.Read.All<br>CustomSecAttributeAssignment.Read.All<br>DeviceManagementApps.Read.All<br>DeviceManagementConfiguration.Read.All<br>GroupMember.Read.All<br>LicenseAssignment.Read.All<br>NetworkAccess.Read.All<br>Policy.Create.ConditionalAccessRO<br>Policy.Read.All<br>RoleManagement.Read.Directory<br>User.Read.All |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) |
 | Role-based access   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) to configure the agent<br>[Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to use the agent |
@@ -93,7 +81,7 @@ The [Identity Risk Management Agent](../id-protection/identity-risk-management-a
 |---------------------|------------ |
 | Identity            | Uses [Microsoft Entra Agent ID](../agent-id/identity-professional/authorization-agent-id.md) for authorization |
 | Licenses            | [Microsoft Entra Agent ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-agent-id) |
-| Permissions         | Read Microsoft Entra ID Protection risk detections and risk history<br>Read sign-in and audit logs<br>Read user information |
+| Permissions         | Application.Read.All</br>Policy.Read.All</br>Group.ReadWrite.All</br>GroupMember.Read.All</br>User.Read.All</br>Policy.ReadWrite.ConditionalAccess</br>CustomSecAttributeAssignment.Read.All</br>IdentityRiskyUser.Read.All</br>AuditLog.Read.All |
 | Plugins             | [Microsoft Entra](/entra/fundamentals/copilot-security-entra) |
 | Products            | [Security Copilot](/copilot/security/microsoft-security-copilot)<br>[Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) |
 | Role-based access   | [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) |

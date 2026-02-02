@@ -106,6 +106,64 @@
             ],
             "inheritsPermissionsFrom@odata.context": "https://graph.microsoft.com/beta/$metadata#roleManagement/directory/roleDefinitions('d24aef57-1500-4070-84db-2666f29cf966')/inheritsPermissionsFrom",
             "inheritsPermissionsFrom": []
+        },
+        {
+            "id": "00cf5c54-4693-4f59-a0ac-ab79ef0a974d",
+            "assignmentMode": "allowed",
+            "categories": "other",
+            "description": "Do not use - not intended for general use.",
+            "displayName": "Microsoft 365 Support Engineer",
+            "isBuiltIn": true,
+            "isEnabled": true,
+            "isPrivileged": false,
+            "resourceScopes": [
+                "/"
+            ],
+            "richDescription": "",
+            "templateId": "00cf5c54-4693-4f59-a0ac-ab79ef0a974d",
+            "version": "1",
+            "rolePermissions": [
+                {
+                    "allowedResourceActions": [
+                        "microsoft.directory/applications/allProperties/read",
+                        "microsoft.directory/auditLogs/allProperties/read",
+                        "microsoft.directory/authorizationPolicy/standard/read",
+                        "microsoft.directory/conditionalAccessPolicies/standard/read",
+                        "microsoft.directory/crossTenantAccessPolicy/default/standard/read",
+                        "microsoft.directory/deviceManagementPolicies/standard/read",
+                        "microsoft.directory/deviceRegistrationPolicy/standard/read",
+                        "microsoft.directory/devices/standard/read",
+                        "microsoft.directory/directoryRoles/allProperties/read",
+                        "microsoft.directory/directoryRoles/members/read",
+                        "microsoft.directory/domains/allProperties/read",
+                        "microsoft.directory/domains/standard/read",
+                        "microsoft.directory/groups/allProperties/read",
+                        "microsoft.directory/groupSettings/allProperties/read",
+                        "microsoft.directory/groups/members/read",
+                        "microsoft.directory/groups/owners/read",
+                        "microsoft.directory/groups/standard/read",
+                        "microsoft.directory/organization/allProperties/read",
+                        "microsoft.directory/policies/standard/read",
+                        "microsoft.directory/securityRiskPolicy/standard/read",
+                        "microsoft.directory/servicePrincipals/allProperties/read",
+                        "microsoft.directory/servicePrincipals/appRoleAssignments/limitedRead",
+                        "microsoft.directory/servicePrincipals/standard/read",
+                        "microsoft.directory/subscribedSkus/allProperties/read",
+                        "microsoft.directory/users/directReports/read",
+                        "microsoft.directory/users/licenseDetails/read",
+                        "microsoft.directory/users/manager/read",
+                        "microsoft.directory/users/memberOf/read",
+                        "microsoft.directory/users/registeredDevices/read",
+                        "microsoft.directory/users/standard/read",
+                        "microsoft.office365.protectionCenter/attackSimulator/payload/allProperties/read",
+                        "microsoft.office365.protectionCenter/attackSimulator/reports/allProperties/read",
+                        "microsoft.teams/allEntities/allProperties/read"
+                    ],
+                    "condition": null
+                }
+            ],
+            "inheritsPermissionsFrom@odata.context": "https://graph.microsoft.com/beta/$metadata#roleManagement/directory/roleDefinitions('00cf5c54-4693-4f59-a0ac-ab79ef0a974d')/inheritsPermissionsFrom",
+            "inheritsPermissionsFrom": []
         }
     ], 
     "typos": {

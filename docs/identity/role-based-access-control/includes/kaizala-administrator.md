@@ -4,8 +4,10 @@ description: Kaizala Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 Users with this role have global permissions to manage settings within Microsoft Kaizala, when the service is present, as well as the ability to manage support tickets and monitor service health. Additionally, the user can access reports related to adoption & usage of Kaizala by Organization members and business reports generated using the Kaizala actions.

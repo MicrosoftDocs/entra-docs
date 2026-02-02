@@ -2287,7 +2287,7 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 - Microsoft 365 Defender portal
 - Microsoft Entra admin center
 - Microsoft Intune admin center
-- Microsoft Purview compliance portal                   
+- Microsoft Purview portal                   
 
 For more information, see: [Microsoft Admin Portals](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-admin-portals).
 

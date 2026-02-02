@@ -1,10 +1,10 @@
 ---
 title: Microsoft identity platform and OAuth 2.0 authorization code flow
 description: Protocol reference for the Microsoft identity platform's implementation of the OAuth 2.0 authorization code grant
-author: OwenRichards1
-manager: pmwongera
-ms.author: owenrichards
-ms.date: 05/12/2025
+author: Dickson-Mwendia
+manager: dougeby
+ms.author: dmwendia
+ms.date: 01/09/2026
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
 ms.topic: reference
@@ -84,12 +84,14 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `redirect_uri` | required | The `redirect_uri` of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect URIs you registered in the Microsoft Entra admin center, except it must be URL-encoded. For native and mobile apps, use one of the recommended values: `https://login.microsoftonline.com/common/oauth2/nativeclient` for apps using embedded browsers or `http://localhost` for apps that use system browsers. |
 | `scope`  | required    | A space-separated list of [scopes](./permissions-consent-overview.md) that you want the user to consent to.  For the `/authorize` leg of the request, this parameter can cover multiple resources. This value allows your app to get consent for multiple web APIs you want to call. |
 | `response_mode`   | recommended | Specifies how the identity platform should return the requested token to your app. <br/><br/>Supported values:<br/><br/>- `query`: Default when requesting an access token. Provides the code as a query string parameter on your redirect URI. The `query` parameter isn't supported when requesting an ID token by using the implicit flow. <br/>- `fragment`: Default when requesting an ID token by using the implicit flow. Also supported if requesting *only* a code.<br/>- `form_post`: Executes a POST containing the code to your redirect URI. Supported when requesting a code.<br/><br/> |
-| `state`  | recommended | A value included in the request that is also returned in the token response. It can be a string of any content that you wish. A randomly generated unique value is typically used for [preventing cross-site request forgery attacks](https://tools.ietf.org/html/rfc6749#section-10.12). The value can also encode information about the user's state in the app before the authentication request occurred. For instance, it could encode the page or view they were on. |
 | `prompt`  | optional    | Indicates the type of user interaction that is required. Valid values are `login`, `none`, `consent`, and `select_account`.<br/><br/>- `prompt=login` forces the user to enter their credentials on that request, negating single-sign on.<br/>- `prompt=none` is the opposite. It ensures that the user isn't presented with any interactive prompt. If the request can't be completed silently by using single-sign on, the Microsoft identity platform returns an `interaction_required` error.<br/>- `prompt=consent` triggers the OAuth consent dialog after the user signs in, asking the user to grant permissions to the app.<br/>- `prompt=select_account` interrupts single sign-on providing account selection experience listing all the accounts either in session or any remembered account or an option to choose to use a different account altogether.<br/> |
 | `login_hint` | optional | You can use this parameter to pre-fill the username and email address field of the sign-in page for the user. Apps can use this parameter during reauthentication, after already extracting the `login_hint` [optional claim](./optional-claims.md) from an earlier sign-in. |
 | `domain_hint`  | optional    | If included, the app skips the email-based discovery process that user goes through on the sign-in page, leading to a slightly more streamlined user experience. For example, sending them to their federated identity provider. Apps can use this parameter during reauthentication, by extracting the `tid` from a previous sign-in.  |
 | `code_challenge`  | recommended / required | Used to secure authorization code grants by using Proof Key for Code Exchange (PKCE). Required if `code_challenge_method` is included. For more information, see the [PKCE RFC](https://tools.ietf.org/html/rfc7636). This parameter is now recommended for all application types, both public and confidential clients, and required by the Microsoft identity platform for [single page apps using the authorization code flow](reference-third-party-cookies-spas.md). |
 | `code_challenge_method` | recommended / required | The method used to encode the `code_verifier` for the `code_challenge` parameter. This *SHOULD* be `S256`, but the spec allows the use of `plain` if the client can't support SHA256. <br/><br/>If excluded, `code_challenge` is assumed to be plaintext if `code_challenge` is included. The Microsoft identity platform supports both `plain` and `S256`. For more information, see the [PKCE RFC](https://tools.ietf.org/html/rfc7636). This parameter is required for [single page apps using the authorization code flow](reference-third-party-cookies-spas.md).|
+| `state`  | recommended | A value included in the request that is also returned in the token response. It can be a string of any content that you wish. A randomly generated unique value is typically used for [preventing cross-site request forgery attacks](https://tools.ietf.org/html/rfc6749#section-10.12). The value can also encode information about the user's state in the app before the authentication request occurred. For instance, it could encode the page or view they were on. |
+
+For security and privacy, do not put URLs or other sensitive data directly in the state parameter. Instead, use a key or identifier that corresponds to data stored in browser storage, such as localStorage or sessionStorage. This approach lets your app securely reference the necessary data after authentication.
 
 At this point, the user is asked to enter their credentials and complete the authentication. The Microsoft identity platform also ensures that the user has consented to the permissions indicated in the `scope` query parameter. If the user hasn't consented to any of those permissions, it asks the user to consent to the required permissions. For more information, see [Permissions and consent in the Microsoft identity platform](./permissions-consent-overview.md).
 
@@ -107,7 +109,7 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 | Parameter | Description  |
 |-----------|--------------|
-| `code` | The `authorization_code` that the app requested. The app can use the authorization code to request an access token for the target resource. Authorization codes are short lived. Typically, they expire after about 10 minutes. |
+| `code` | The `authorization_code` that the app requested. The app can use the authorization code to request an access token for the target resource. Authorization codes are short lived. Typically, they expire after about 1 minute. |
 | `state` | If a `state` parameter is included in the request, the same value should appear in the response. The app should verify that the state values in the request and response are identical. |
 
 You can also receive an ID token if you request one and have the implicit grant enabled in your application registration. This behavior is sometimes referred to as the [*hybrid flow*](#request-an-id-token-as-well-or-hybrid-flow). It's used by frameworks like ASP.NET.
@@ -188,7 +190,7 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 | Parameter | Description  |
 |-----------|--------------|
-| `code` | The authorization code that the app requested. The app can use the authorization code to request an access token for the target resource. Authorization codes are short lived, typically expiring after about 10 minutes. |
+| `code` | The authorization code that the app requested. The app can use the authorization code to request an access token for the target resource. Authorization codes are short lived, typically expiring after about 1 minute. |
 | `id_token` | An ID token for the user, issued by using the *implicit grant*. Contains a special `c_hash` claim that is the hash of the `code` in the same request. |
 | `state` | If a `state` parameter is included in the request, the same value should appear in the response. The app should verify that the state values in the request and response are identical. |
 

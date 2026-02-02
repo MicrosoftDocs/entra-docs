@@ -155,7 +155,7 @@ The following table compares the features available for OAuth 2.0 and OpenID Con
 |[OpenID Connect](../../identity-platform/v2-protocols-oidc.md)| Yes| Yes|
 |[Authorization code](../../identity-platform/v2-oauth2-auth-code-flow.md)| Yes| Yes|
 |[Authorization code with Code Exchange (PKCE)](../../identity-platform/v2-oauth2-auth-code-flow.md)|Yes| Yes|
-|[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md) (preview)|
+|[Client credentials](../../identity-platform/v2-oauth2-client-creds-grant-flow.md)|Yes| [v2.0 applications](../../identity-platform/reference-app-manifest.md) |
 |[Device authorization](../../identity-platform/v2-oauth2-device-code.md)| Yes| Preview |
 |[On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md)| Yes| Yes|
 |[Implicit grant](../../identity-platform/v2-oauth2-implicit-grant-flow.md)| Yes| Yes|
@@ -186,7 +186,7 @@ The following table compares the features available for Conditional Access in ea
 |**Target resources**|<ul><li>[Cloud apps](~/identity/conditional-access/concept-conditional-access-cloud-apps.md)</li><li>[User actions](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions)</li><li>[Global Secure Access](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#traffic-forwarding-profiles)</li><li>[Authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)</li></ul>|<ul><li>[All resources, selected apps](./how-to-multifactor-authentication-customers.md), or [filter applications](~/identity/conditional-access/concept-filter-for-applications.md).</li><li>[Authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)</li></ul>|
 | **Conditions**|<ul><li>[Sign-in risk](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk)</li><li>[User risk](~/identity/conditional-access/concept-conditional-access-conditions.md#user-risk)</li><li>[Device platforms](~/identity/conditional-access/concept-conditional-access-conditions.md#device-platforms)</li><li>[Locations](~/identity/conditional-access/concept-conditional-access-conditions.md#locations)</li><li>[Client apps](~/identity/conditional-access/concept-conditional-access-conditions.md#client-apps)</li><li>[Filter for devices](~/identity/conditional-access/concept-conditional-access-conditions.md#filter-for-devices)</li></ul>|<ul><li>[Device platforms](~/identity/conditional-access/concept-conditional-access-conditions.md#device-platforms)</li><li>[Locations](~/identity/conditional-access/concept-conditional-access-conditions.md#locations)</li></ul>|
 |**Grant**|[Grant or block access to resources](~/identity/conditional-access/concept-conditional-access-grant.md)|<ul><li>[Block access](~/identity/conditional-access/concept-conditional-access-grant.md#block-access)</li><li>[Require multifactor authentication](./how-to-multifactor-authentication-customers.md)</li><li>[Require password reset](./how-to-enable-password-reset-customers.md)</li></ul>|
-|**Session**|[Session controls](~/identity/conditional-access/concept-conditional-access-session.md)|Not available|
+|**Session**|[Session controls](~/identity/conditional-access/concept-conditional-access-session.md)| The following session controls are available: <ul><li>Sign-in frequency</li><li>Persistent browser session</li></ul>|
 
 ## Terms of use policies
 

@@ -20,14 +20,18 @@ This article outlines the pricing structure for Microsoft Entra External ID and 
 
 ## Monthly active users (MAU) billing model
 
-The Microsoft Entra External ID billing model applies to all external users, specifically:
+The Microsoft Entra External ID billing model applies to all guest users, specifically:
 
-- B2B collaboration external guests in Microsoft Entra [workforce tenants](tenant-configurations.md#workforce-tenants). These are users who sign in with external credentials and whose **UserType** property is set to **Guest**.
+- B2B collaboration external guests in Microsoft Entra [workforce tenants](tenant-configurations.md#workforce-tenants). These are users who sign in with **external** credentials and whose **UserType** property is set to **Guest**.
 
    > [!NOTE]
    > If you own and operate multiple tenants, your member users can authenticate across your tenants without being counted in the MAU total. For B2B collaboration, the MAU billing model applies only to external users with a UserType of Guest. It doesn’t apply to users originating from within the organization with a UserType of Member.
 
+- Internal Guests in Microsoft Entra. These are users who sign in with **internal** credentials and whose **UserType** property is set to **Guest**.
+
 - External users in Microsoft Entra [external tenants](tenant-configurations.md#external-tenants), which includes consumers and business guests (users without directory roles), and admins (users with directory roles). MAU billing applies to all users in an external tenant regardless of their **UserType** setting.
+
+For more info about the difference between internal and external Guests, please check here: [User Properties](user-properties.md).
 
 Billing is based on monthly active users (MAU), which is the count of unique external users who authenticate to your tenants within a calendar month. To determine the total number of MAUs, we combine MAUs from all workforce and external tenants that are linked to a subscription.
 

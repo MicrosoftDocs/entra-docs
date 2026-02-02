@@ -95,7 +95,7 @@ Jason realizes he has another "low hanging fruit" opportunity: to reduce risk by
 1. Removing an unused app addresses many other risks with a single remediation action.
 1. You can often address unused apps aggressively through central action while keeping the risk of outage or business disruption low, since users aren't actually using the apps.
 
-Using the Copilot skill integrated with the existing [Microsoft Entra recommendation for unused apps](../identity/monitoring-health/recommendation-remove-unused-apps.md), Jason pulls the relevant data to investigate further or work with his team to improve their tenant security posture. The response includes links to specific apps for easier remediation.  The analyst can also ask about a specific app's details directly in Security Copilot.  
+Using the Copilot prompts integrated with the existing [Microsoft Entra recommendation for unused apps](../identity/monitoring-health/recommendation-remove-unused-apps.md), Jason pulls the relevant data to investigate further or work with his team to improve their tenant security posture. The response includes links to specific apps for easier remediation.  The analyst can also ask about a specific app's details directly in Security Copilot.  
 
 > [!NOTE]
 > The Copilot response returns a list of app registration or applications that are unused in past 90 days, which haven't been issued any tokens in that timeframe. 
@@ -104,6 +104,24 @@ He uses the following prompts to get the information he needs:
 
 - *Show me unused apps.* 
 - *How many unused apps do I have?* 
+
+### Explore Microsoft Entra applications or service principals with expiring credentials
+
+Jason sees another opportunity to renew an application credentials prior to their expiry date to maintain uninterrupted operations and minimizing the risk of any downtime resulting from outdated credentials. Application and service principal credentials can include certificates and other types of secrets that need to be registered with that application or service principal. These credentials are used to prove the identity of the application or service principal.
+
+Using the Copilot prompts integrated with the existing [Microsoft Entra recommendation for renew expiring app credential](../identity/monitoring-health/recommendation-renew-expiring-application-credential.md) and [Microsoft Entra recommendation for renew expiring service principal credential](../identity/monitoring-health/recommendation-renew-expiring-service-principal-credential.md), Jason pulls the relevant data to reduce the outage risk from expiring credentials and update or rotate them as needed. The response includes links to specific apps for easier remediation.  The analyst can also ask about a specific app's details directly in Security Copilot.  
+
+> [!NOTE]
+> The Copilot response returns a list of applications or service principals that have credentials on them expiring within the next 30 days.
+> The following credentials are exempted from this recommendation:
+> - Credentials that were identified as expiring but have since been removed from the application registration.
+> - Credentials whose expiration date has lapsed show as **completed** in the list of **Impacted resources**.
+
+He uses the following prompts to get the information he needs: 
+
+- *Which enterprise applications have credentials about to expire?*
+- *Show me service principals with credentials that are expiring soon.*
+- *Show me applications with credentials that are expiring soon.*
 
 ### Explore Microsoft Entra Applications outside my tenant 
 

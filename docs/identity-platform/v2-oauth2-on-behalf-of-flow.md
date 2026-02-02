@@ -82,7 +82,7 @@ Content-Type: application/x-www-form-urlencoded
     
 grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 &client_id=00001111-aaaa-2222-bbbb-3333cccc4444
-&client_secret=sampleCredentia1s
+&client_secret=A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u
 &assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiIyO{a lot of characters here}
 &scope=https://graph.microsoft.com/user.read+offline_access
 &requested_token_use=on_behalf_of

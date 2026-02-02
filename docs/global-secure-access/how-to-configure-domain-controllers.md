@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 01/07/2025
+ms.date: 01/21/2026
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
@@ -209,7 +209,10 @@ Exclusions allow specific users or machines to access configured SPNs without re
 
 - Client IP address
 - IP address ranges
-- On-premises User Principal Name (UPN) such as `username@domain`. UPN is supported with Private Access Sensor version 2.1.31 or higher and is case insensitive. Username, which is the first part of the UPN, is supported with the earlier sensor versions and can be added in the `localpolicy`file only. We highly recommend using the UPNs instead of usernames. UPNs for on-premises users that are synced to Entra can be added from Microsoft Entra Admin Center. UPNs for on-premises users that aren't synced can only be added to the `localpolicy` file.
+- On-premises User Principal Name (UPN) such as `username@domain`. UPN is supported with Private Access Sensor version 2.1.31 or higher and is case insensitive. Username, which is the first part of the UPN, is supported with the earlier sensor versions and can be added in the `localpolicy`file only. We highly recommend using the UPNs instead of usernames. UPNs for on-premises users can be added from Microsoft Entra admin center. These can be UPNs for on-premises users that are synced to Entra or local to Active Directory and not synced to Entra. 
+
+> [!NOTE] 
+> UPNs for on-premises users that are local to Active Directory and not synced to Entra can only be added to the `localpolicy` file in Private Access Sensor versions earlier than 2.2.0.
 
 You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple usernames for an SPN.
 
