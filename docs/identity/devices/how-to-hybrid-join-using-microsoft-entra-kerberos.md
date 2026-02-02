@@ -50,22 +50,22 @@ Skip this section if you didn't deploy the KDC proxy server GPO on your client c
 1. Find your [Microsoft Entra tenant ID](/azure/active-directory/fundamentals/how-to-find-tenant).
 1. Deploy the following Group Policy setting to client machines using the incoming trust-based flow:
    1. Edit the **Administrative Templates\System\Kerberos\Specify KDC proxy servers for Kerberos clients** policy setting.
-   1. If the policy is **Not Configured**, go to step g.
-   1. If the policy is **Disabled**, select **Enabled**.
+      - If the policy is **Not Configured**, go to step e.
+      - If the policy is **Disabled**, select **Enabled**.
    1. Under **Options**, select **Show...**. This opens the **Show Contents** dialog box.
    
       :::image type="content" source="media/entra-hybrid-join-using-entra-kerberos/show-contents.png" alt-text="Screenshot of dialog box to enable Specify KDC proxy servers for Kerberos clients."lightbox="media/entra-hybrid-join-using-entra-kerberos/show-contents.png":::
 
-1. Define the KDC proxy servers setting by using the following mapping. Replace `your_Microsoft Entra_tenant_id` with your Microsoft Entra tenant ID. **A blank space appears after https and before the closing / in the value mapping**.
+   1. Define the KDC proxy servers setting by using the following mapping. Replace `your_Microsoft Entra_tenant_id` with your Microsoft Entra tenant ID. **A blank space appears after https and before the closing / in the value mapping**.
 
-   | **Value name** | **Value** |
-   |----|----|
-   | KERBEROS.MICROSOFTONLINE.COM | `https login.microsoftonline.com:443:your_Microsoft Entra_tenant_id/kerberos /` |
+      | **Value name** | **Value** |
+      |----|----|
+      | KERBEROS.MICROSOFTONLINE.COM | `https login.microsoftonline.com:443:your_Microsoft Entra_tenant_id/kerberos /` |
 
-   :::image type="content" source="media/entra-hybrid-join-using-entra-kerberos/settings.png" alt-text="Screenshot of the Define KDC proxy server settings dialog box."lightbox="media/entra-hybrid-join-using-entra-kerberos/settings.png":::
+      :::image type="content" source="media/entra-hybrid-join-using-entra-kerberos/settings.png" alt-text="Screenshot of the Define KDC proxy server settings dialog box."lightbox="media/entra-hybrid-join-using-entra-kerberos/settings.png":::
 
-1. Select **OK** to close the **Show Contents** dialog box.
-1. In the **Specify KDC proxy servers for Kerberos clients** dialog box, select **Apply**.
+   1. Select **OK** to close the **Show Contents** dialog box.
+   1. In the **Specify KDC proxy servers for Kerberos clients** dialog box, select **Apply**.
 
 ### Configure Entra Device Registration Service Principal
 
