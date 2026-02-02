@@ -16,7 +16,7 @@ ms.custom: template-tutorial, sfi-image-nochange
 
 Scenario: In this scenario you learn how to use custom extensibility, and a Logic App, to automatically generate ServiceNow tickets for manual provisioning of users who have received assignments and need access to apps.
 
-In this tutorial, you'll learn:
+In this tutorial, you learn:
 
 > [!div class="checklist"]
 > * Adding a Logic App Workflow to an existing catalog.
@@ -34,7 +34,7 @@ In this tutorial, you'll learn:
 - SSO integration with ServiceNow. If this isn't already configured, see:[Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow](~/identity/saas-apps/servicenow-tutorial.md) before continuing.
 
 > [!NOTE]
-> It is recommended to use a least privilege role when completing these steps.
+> It's recommended to use a least privilege role when completing these steps.
 
 ## Adding Logic App Workflow to an existing Catalog for Entitlement Management
 
@@ -65,7 +65,7 @@ After a catalog is created, you'd add a Logic App workflow by doing the followin
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-behavior.png" alt-text="Screenshot of entitlement management custom extension behavior actions tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-behavior.png":::
 1. Select **Launch and wait** in the **Extension Configuration** which will pause the associated access package action until after the Logic App linked to the extension completes its task, and a resume action is sent by the admin to continue the process. For more information on this process, see:  [Configuring custom extensions that pause entitlement management processes](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes).
 
-1.  In the **Details** tab, choose No in the "*Create new logic App*" field as the Logic App has already been created in the previous steps. However, you need to provide the Azure subscription and resource group details, along with the Logic App name.
+1.  In the **Details** tab, choose No in the "*Create new logic App*" field as the Logic App was created in the previous steps. However, you need to provide the Azure subscription and resource group details, along with the Logic App name.
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png" alt-text="Screenshot of the entitlement management custom extension details tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png":::
 1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App call-out are correct. Then select **Create**.
 
@@ -74,13 +74,13 @@ After a catalog is created, you'd add a Logic App workflow by doing the followin
 
 
 > [!TIP]
-> To learn more about custom extension feature that pause entitlement management processes, see: [Configuring custom extensions that pause entitlement management processes](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes).
+> To learn more about custom extension feature that pauses entitlement management processes, see: [Configuring custom extensions that pause entitlement management processes](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes).
 
 ## Adding Custom Extension to a policy in an existing Access Package 
 
 After setting up custom extensibility in the catalog, administrators can create an access package with a policy to trigger the custom extension when the request has been approved. This enables them to define specific access requirements and tailor the access review process to meet their organization's needs.  
 
-1. In Identity Governance portal as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator), select **Access packages**.
+1. In the Microsoft Entra portal as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator), select **Access packages**.
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
 1. Select the access package you want to add a custom extension (Logic App) to from the list of access packages that have already been created.
@@ -198,7 +198,7 @@ At this point it's time to configure ServiceNow for resuming the entitlement man
     - AccessPackageAssignmentStage
     - StageInstanceId
     - EntraUserObjectId
-1. To automate workflow with Flow Designer, you'd do the following:
+1. To automate workflow with Flow Designer, you'd do the following steps:
     1. Sign in to ServiceNow and go to Flow Designer.
     1. Select the “*New*” button and create a new action. 
     1. Add an action to invoke the System Web Service REST API message that was created in the previous step.
@@ -252,7 +252,7 @@ The IT Support team works on the previous ticket created to do necessary provisi
 :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-myaccess-request-history.png" alt-text="Screenshot of My Access request history." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-myaccess-request-history.png":::
 
 > [!NOTE]
-> The end user will see "assignment failed" in the MyAccess portal if the ticket is not closed within 14 days.
+> The end user sees "assignment failed" in the MyAccess portal if the ticket isn't closed within 14 days.
 
 
 ## Next steps
