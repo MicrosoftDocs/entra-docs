@@ -3,7 +3,6 @@ title: Disable agent identities in your tenant
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to disable agent identities in your Microsoft Entra ID tenant using Conditional Access policies and creation restrictions.
 author: SHERMANOUKO
-manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/06/2025

@@ -88,6 +88,8 @@
         "identity/enterprise-apps/*.yml": "dougeby",
         "identity-platform/**/*.md": "pmwongera",
         "identity-platform/**/*.yml": "pmwongera",
+        "identity-professional/**/*.md": "pmwongera",
+        "identity-professional/**/*.yml": "pmwongera",
         "permissions-management/*.md": "dougeby",
         "permissions-management/*.yml": "dougeby",
         "standards/**/*.md": "dougeby",
