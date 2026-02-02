@@ -19,7 +19,7 @@ Remote phishing attacks are on the rise. These attacks aim to steal or relay ide
 
 Passkeys help prevent remote phishing by replacing phishable methods like passwords, SMS, and email codes. Built on **FIDO (Fast Identity Online) standards**, passkeys use origin-bound public key cryptography, ensuring credentials can't be replayed or shared with malicious actors. 
 
-Built on interoperable **FIDO (Fast Identity Online) standards** developed by industry security experts. They use origin-bound public-key cryptography and require local user interaction. Taken together, these characteristics mmake passkeys almost impossible to phish.
+Built on interoperable **FIDO (Fast Identity Online) standards** developed by industry security experts. They use origin-bound public-key cryptography and require local user interaction. Taken together, these characteristics make passkeys almost impossible to phish.
 
 A private key is stored on your device and public key is stored with the app or the website that you sign into. Both unique keys are needed to sign in. This key pair combination is unique, so your passkey only works on the website or the app you created it for.
 
