@@ -97,7 +97,7 @@ items:
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
   - name: How to use Self-Service Support (Preview)
-    href: how-to-entra-support-assistant.md
+    href: how-to-entra-self-service-support.md
   - name: Quarantine unsanctioned tenants 
     href: quarantine-unsanctioned-tenants.md
   - name: Inaccessible tenant due to inactivity
