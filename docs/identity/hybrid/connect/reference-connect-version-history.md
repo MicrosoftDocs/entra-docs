@@ -69,7 +69,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
 |[2.5.76.0](#25760)|01 September 2026 (12 months after release of 2.5.79.0)|
 |[2.5.79.0](#25790)|23 Oct 2026 (12 months after release of 2.5.190.0)|
-|[2.5.190.0](#251900)|30 Jan 2026 (12 months after release of 2.6.1.0)|
+|[2.5.190.0](#251900)|02 Feb 2026 (12 months after release of 2.6.1.0)|
 |[2.6.1.0](#2610)||
 
 **All other versions are not supported**
@@ -97,7 +97,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-01/30/2026: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting February 9th, 2026, and will be done in multiple phases.
+02/02/2026: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgraded to this build starting February 9th, 2026, and will be done in multiple phases.
 
 ### Bug Fixes
 
