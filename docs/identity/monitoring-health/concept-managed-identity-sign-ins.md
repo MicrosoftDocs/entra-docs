@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: troubleshooting-general
 ms.subservice: monitoring-health
-ms.date: 03/17/2025
+ms.date: 02/02/2026
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ms.custom: sfi-image-nochange
@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 ---
 # What are managed identity sign-ins in Microsoft Entra?
 
-Managed identities for Azure resources sign-ins are sign-ins that were performed by resources that have their secrets managed by Azure to simplify credential management. A VM with managed credentials uses Microsoft Entra ID to get an Access Token.
+Managed identities for Azure resources sign-ins are sign-ins that were performed by resources that have their secrets managed by Azure to simplify credential management. A virtual machine with managed credentials uses Microsoft Entra ID to get an access token.
 
 ![Screenshot of the managed identity sign-in log.](media/concept-managed-identity-sign-ins/sign-in-logs-managed-identity.png)
 
