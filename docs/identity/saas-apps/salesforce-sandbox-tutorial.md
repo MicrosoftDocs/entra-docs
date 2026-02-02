@@ -21,6 +21,11 @@ In this article,  you learn how to integrate Salesforce Sandbox with Microsoft E
 * Enable your users to be automatically signed-in to Salesforce Sandbox with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
+> [!Note]
+>   We are aware that Salesforce will enforce the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy is configured to enforce this requirement. You can read more about this claim [here](https://learn.microsoft.com/entra/identity-platform/single-sign-on-saml-protocol#authnmethodreferences).
+>
+>  For customers using AD FS as the federation provider with Entra ID, please follow the guidance published [here](https://learn.microsoft.com/entra/identity/authentication/how-to-mfa-expected-inbound-assertions#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
+
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
