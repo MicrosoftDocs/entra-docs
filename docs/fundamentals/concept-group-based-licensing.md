@@ -42,7 +42,7 @@ Here are the main features of group-based licensing:
 
 - All Microsoft Cloud services that require user-level licensing are supported. This support includes all Microsoft 365 products, Enterprise Mobility + Security, and Dynamics 365.
 
-- Group-based licensing is currently available through the [Azure portal](https://portal.azure.com) and through the [Microsoft Admin center](https://admin.microsoft.com/).
+- Group-based licensing is currently available through the [Microsoft Admin center](https://admin.microsoft.com/) user interface. API and PowerShell access remain supported.
 
 - Microsoft Entra ID automatically manages license modifications that result from group membership changes. Typically, license modifications are effective within minutes of a membership change.
 
