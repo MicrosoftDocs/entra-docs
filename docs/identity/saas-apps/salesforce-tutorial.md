@@ -22,9 +22,9 @@ In this article, you learn how to integrate Salesforce with Microsoft Entra ID. 
 * Manage your accounts in one central location.
 
 > [!Note]
->   We are aware that Salesforce will enforce the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy is configured to enforce this requirement. You can read more about this claim [here](https://learn.microsoft.com/entra/identity-platform/single-sign-on-saml-protocol#authnmethodreferences).
+>   We are aware that Salesforce will enforce the [device activation changes for Single Sign-On (SSO) Logins](https://help.salesforce.com/s/articleView?id=005237070&type=1) starting **February 3, 2026**. We have worked closely with the Salesforce team, and beginning February 3, Salesforce will start accepting the **authnmethodreferences** claim included by default in the SAML token issued by Entra ID. If the **authnmethodreferences** claim contains the value **multipleauthn**, Salesforce will treat the device as trusted. Please ensure that your Conditional Access policy is configured to enforce this requirement. You can read more about this claim [here](~/identity-platform/single-sign-on-saml-protocol#authnmethodreferences).
 >
->  For customers using AD FS as the federation provider with Entra ID, please follow the guidance published [here](https://learn.microsoft.com/entra/identity/authentication/how-to-mfa-expected-inbound-assertions#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
+>  For customers using AD FS as the federation provider with Entra ID, please follow the guidance published [here](~/identity/authentication/how-to-mfa-expected-inbound-assertions#using-saml-20-federated-idp) so that Entra ID will have this claim in the SAML token.
 
 ## Prerequisites
 
@@ -105,7 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
     Developer account: `https://<subdomain>-dev-ed.my.salesforce.com`
 
     > [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Salesforce Client support team](https://help.salesforce.com/support) to get these values.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Contact [Salesforce Client support team](https://help.salesforce.com/support) to get these values.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
