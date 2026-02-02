@@ -28,10 +28,10 @@ The following use cases are enabled for preview:
 
 Make sure you have the following permissions and configuration set up to perform Microsoft Entra hybrid join using Microsoft Entra Kerberos. There are no license requirements.
 
-- **Role requirements**: The user who creates and configures Entra Kerberos Trusted Domain Object must be an Active Directory user who is a member of the Domain Admins group and the Enterprise Admins group and a Microsoft Entra user with the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role. For more information, see [Create and configure Microsoft Entra Kerberos Trusted Domain Object](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#permissions). 
-- **Configure the KDC proxy server Group Policy Object (GPO)**: THis prerequisite is only required if you deployed a KDC Proxy Server GPO to your client computer. The user who configures the GPO must be a Domain Admin or be delegated permissions to configure a GPO.
+- **Role requirements**: The user who creates and configures Entra Kerberos Trusted Domain Object must be an Active Directory user who is a member of the Domain Admins group and the Enterprise Admins group and a Microsoft Entra user with the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role. For more information, see [Create and configure Microsoft Entra Kerberos Trusted Domain Object](/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow#permissions). 
+- **Configure the KDC proxy server Group Policy Object (GPO)**: This prerequisite is only required if you deployed a KDC Proxy Server GPO to your client computer. The user who configures the GPO must be a Domain Admin or be delegated permissions to configure a GPO.
 - **Configure Microsoft Entra Device Registration Service Principal**: Add a Kerberos entry to the Microsoft Entra device registration service principal. The user who configures the service principal must have the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.
-- **Deploy a domain controller that runs Windows Server 2025**: This should be at least one domain controller that runs Windows Server 2025 for any domain that the client is joined to
+- **Deploy a domain controller that runs Windows Server 2025**: Install at least one domain controller that runs Windows Server 2025 in the Active Directory domain.
 - **Configure client computer for Entra Kerberos based join**: You need to deploy Windows 8D or later build on the client computer that you want to register with Entra as Entra hybrid join using Entra Kerberos.
 
   >[!NOTE]
@@ -54,7 +54,7 @@ Skip this section if you didn't deploy the KDC proxy server GPO on your client c
    1. If the policy is **Disabled**, select **Enabled**.
    1. Under **Options**, select **Show...**. This opens the **Show Contents** dialog box.
    
-      :::image type="content" source="media/entra-hybird-join-using-entra-kerberos/show-content.png" alt-text="Screenshot of dialog box to enable Specify KDC proxy servers for Kerberos clients."lightbox="media/entra-hybird-join-using-entra-kerberos/show-content.png":::
+      :::image type="content" source="media/entra-hybrid-join-using-entra-kerberos/show-contents.png" alt-text="Screenshot of dialog box to enable Specify KDC proxy servers for Kerberos clients."lightbox="media/entra-hybrid-join-using-entra-kerberos/show-contents.png":::
 
 1. Define the KDC proxy servers setting by using the following mapping. Replace `your_Microsoft Entra_tenant_id` with your Microsoft Entra tenant ID. **A blank space appears after https and before the closing / in the value mapping**.
 
@@ -62,7 +62,7 @@ Skip this section if you didn't deploy the KDC proxy server GPO on your client c
    |----|----|
    | KERBEROS.MICROSOFTONLINE.COM | `https login.microsoftonline.com:443:your_Microsoft Entra_tenant_id/kerberos /` |
 
-   :::image type="content" source="media/entra-hybird-join-using-entra-kerberos/settings.png" alt-text="Screenshot of the Define KDC proxy server settings dialog box."lightbox="media/entra-hybird-join-using-entra-kerberos/settings.png":::
+   :::image type="content" source="media/entra-hybrid-join-using-entra-kerberos/settings.png" alt-text="Screenshot of the Define KDC proxy server settings dialog box."lightbox="media/entra-hybrid-join-using-entra-kerberos/settings.png":::
 
 1. Select **OK** to close the **Show Contents** dialog box.
 1. In the **Specify KDC proxy servers for Kerberos clients** dialog box, select **Apply**.
@@ -258,7 +258,7 @@ To collect Kerberos logs, follow these steps:
 | **Error code** | **Description** | **Reason** | **Resolution** |
 |---|---|---|---|
 | DSREG_TOKEN_MISSING_ON_PREM_ID(0x801c0095) | The token doesn't contain an on-premises ID. | The Kerberos ticket from the on-premises Kerberos authority doesn't contain information required by Microsoft Entra ID. | On every domain controller that runs Windows Server 2025 within the Active Directory domain, run the tool EnableKerbHaadj.exe and restart. |
-| SEC_E_NO_AUTHENTICATING_AUTHORITY(0x80090311) | No authority could be contacted for authentication. | No functional domain controller that runs Windows Server 2025 can be contacted. | Install at least one domion controller that runs Windows Server 2025 in the Active Directory domain. Run the tool EnableKerbHaadj.exe and restart. Make sure the KDC service is running on this domain controller, and this domain controller can be contacted by the computer trying to perform the hybrid join. Run dcdiag.exe on the domain controller and make sure it's advertising itself. |
+| SEC_E_NO_AUTHENTICATING_AUTHORITY(0x80090311) | No authority could be contacted for authentication. | No functional domain controller that runs Windows Server 2025 can be contacted. | Install at least one domain controller that runs Windows Server 2025 in the Active Directory domain. Run the tool EnableKerbHaadj.exe and restart. Make sure the KDC service is running on this domain controller, and this domain controller can be contacted by the computer trying to perform the hybrid join. Run dcdiag.exe on the domain controller and make sure it's advertising itself. |
 | SEC_E_TARGET_UNKNOWN (0x80090303) error code in Kerberos event log: KDC_ERR_S_PRINCIPAL_UNKNOWN (0x7) | The specified target is unknown or unreachable. |  |  |
 | SEC_E_LOGON_DENIED (0x8009030c) error code in Kerberos event log: KDC_ERR_NULL_KEY (0x9) | The logon attempt failed. Kerberos error: `No KerberosKeyInformation Keys found.` | Kerberos key for the Microsoft Entra device registration service principal isn't found. | Add the tag **KerberosPolicy:ExchangeForJwt** to the service principal. |
 
