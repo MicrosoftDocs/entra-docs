@@ -43,7 +43,7 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 | `ID` | Required | Microsoft Entra ID uses this attribute to populate the `InResponseTo` attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, `id6c1c178c166d486687be4aaf5e482730` is a valid ID. |
 | `Version` | Required | This parameter should be set to `2.0`. |
 | `IssueInstant` | Required | This is a DateTime string with a UTC value and [round-trip format ("o")](/dotnet/standard/base-types/standard-date-and-time-format-strings). Microsoft Entra ID expects a DateTime value of this type, but doesn't evaluate or use the value. |
-| `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. Entra ID will honors the ACS URL if it's present in the SAML Request.|
+| `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. Entra ID will honor the ACS URL if it's present in the SAML Request.|
 | `ForceAuthn` | Optional | This is a boolean value. If true, it means that the user will be forced to reauthenticate, even if they have a valid session with Microsoft Entra ID. |
 | `IsPassive` | Optional | This is a boolean value that specifies whether Microsoft Entra ID should authenticate the user silently, without user interaction, using the session cookie if one exists. If this is true, Microsoft Entra ID attempts to authenticate the user using  the session cookie. |
 
@@ -319,7 +319,7 @@ This element asserts that the assertion subject was authenticated by a particula
 
 * The `authnmethodsreferences` attribute specifies the way the user authenticated with Microsoft Entra ID.
 * The `http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` claim value specifies the user has done username and password authentication with Entra ID.
-* The `http://schemas.microsoft.com/claims/multipleauthn` claim value specifies the user has done username and password and also performed a strong authentication with Entra ID such as MFA with Authenticator app.
+* The `http://schemas.microsoft.com/claims/multipleauthn` claim value specifies the user has done username and password and also performed multiple factor authentication resulting in MFA.
 
 ```xml
   <Attribute Name="http://schemas.microsoft.com/claims/authnmethodsreferences">
