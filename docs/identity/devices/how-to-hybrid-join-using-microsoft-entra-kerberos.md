@@ -178,7 +178,8 @@ Write-Host "Tags:"
 1. Sign in to a server that runs Windows Server 2025 as a local administrator. 
 1. Start a Windows command session with the **Run as administrator** option.
 1. Make sure the server runs 8D or later.
-1. Restart the DC.
+1. Restart the domain controller.
+
    >[!Note] 
    >You need to install a domain controller that runs Windows Server 2025 in every domain that you want to perform Microsoft Entra hybrid join using Microsoft Entra Kerberos. Make sure you [apply the correct servicing update](https://support.microsoft.com/topic/december-10-2024-kb5048667-os-build-26100-2605-eb529853-d3a2-4c8d-bd0b-5fc6becb629c) or later to your Windows Server 2025 domain controller.
 
