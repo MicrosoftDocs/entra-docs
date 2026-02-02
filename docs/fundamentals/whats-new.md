@@ -939,7 +939,6 @@ To continue monitoring authentication library usage, customers can query sign-in
 
 For guidance, see:
 
-*   [Recommendation: Migrate from Microsoft Authentication Library to MSAL](../identity/monitoring-health/recommendation-migrate-from-adal-to-msal.md)
 *   [Analyze a sign-in with Microsoft Graph API](/azure/azure-monitor/reference/tables/aadnoninteractiveusersigninlogs)
 
 No action is required to disable the API.
