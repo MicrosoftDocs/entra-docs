@@ -3,8 +3,8 @@ title: Plan for mandatory Microsoft Entra multifactor authentication (MFA)
 description: Plan for mandatory multifactor authentication for users who sign in to Azure and other management portals.
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: article
-ms.date: 01/27/2026
+ms.topic: concept-article
+ms.date: 01/28/2026
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -212,7 +212,7 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 
 ## Request more time to prepare for Phase 2 MFA enforcement 
 
-Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. After Phase 2 enforcement begins, your tenant admin must submit a request to Microsoft Help and Support to temporarily lift enforcement due to the security implications. 
+Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. After Phase 2 enforcement begins, you can submit a request to Microsoft Help and Support to temporarily lift enforcement. The request must be done by a Global Administrator due to the security implications. 
 
 >[!NOTE]
 > If you postponed the start of Phase 1, the start of Phase 2 is also postponed to the same date. You can choose a later start date for Phase 2. 
@@ -232,11 +232,11 @@ Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.
 
 **Question**: Which accounts are affected by Phase 2 MFA enforcement? 
 
-**Answer**: Azure Phase 2 enforcement applies to all user accounts that make Azure resource management actions through any Azure client, including PowerShell, CLI, SDKs, or even REST APIs. This enforcement is on the Azure Resource Manager server side, so any requests that target `https://management.azure.com` are under scope of enforcement. Automation accounts are not in scope as long as they use a managed identity or service principle. Any automation accounts that is set up as a user identity will be enforced upon. 
+**Answer**: Azure Phase 2 enforcement applies to all user accounts that make Azure resource management actions through any Azure client, including PowerShell, CLI, SDKs, or even REST APIs. This enforcement is on the Azure Resource Manager server side, so any requests that target `https://management.azure.com` are under scope of enforcement. Automation accounts are not in scope as long as they use a managed identity or service principal. Any automation accounts that are set up as user identities will be enforced upon. 
 
 **Question**: How can I understand the impact of MFA enforcement without Conditional Access? 
 
-**Answer**: If your Microsoft Entra ID license doesn't include Conditional Access, you can use Azure Policy to understand how MFA enforcement impacts your tenant. During system enforcement, Microsoft deploys the [Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement) to your tenant. You can folow those steps to deploy the same Azure policy themselves at any time. You can deploy the policy in Audit mode, and then convert to Enforcement mode. You can choose the date to apply this policy in your tenant while you are in Enforcement mode. Then when Microsoft enforce MFA, there's no further impact to your tenant. 
+**Answer**: If your Microsoft Entra ID license doesn't include Conditional Access, you can use Azure Policy to understand how MFA enforcement impacts your tenant. During system enforcement, Microsoft deploys the [Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement) to your tenant. You can follow those steps to deploy the same Azure policy yourself at any time. You can deploy the policy in Audit mode, and then convert to Enforcement mode. You can choose the date to apply this policy in your tenant while you are in Enforcement mode. Then when Microsoft enforces MFA, there's no further impact to your tenant. 
 
 **Question**: Are there any exceptions for specific accounts?
 

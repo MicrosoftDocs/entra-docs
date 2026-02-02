@@ -78,7 +78,7 @@ Sample User Interface Output (Starting version 1.5.4522.0):
 
 **To verify the client certificate:**
 
-Verify the thumbprint of the current client certificate. The certificate store can be found in `%ProgramData%\microsoft\Microsoft AAD private network connector\Config\TrustSettings.xml`.
+Verify the thumbprint of the current client certificate. The certificate store can be found in `%ProgramData%\Microsoft\Microsoft Entra Private Network Connector\Config\TrustSettings.xml`.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>

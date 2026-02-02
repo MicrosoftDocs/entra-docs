@@ -18,6 +18,11 @@ In a Conditional Access policy, an admin can use session controls to enable limi
 
 ![Screenshot of a Conditional Access policy with a grant control requiring multifactor authentication.](./media/concept-conditional-access-session/conditional-access-session.png)
 
+In a Microsoft Entra External ID [external tenant](/entra/external-id/customers/concept-supported-features-customers#conditional-access), you can use the following session controls:
+
+- Sign-in frequency
+- Persistent browser session
+
 ## Application enforced restrictions
 
 Organizations can use this control to require Microsoft Entra ID to pass device information to the selected cloud apps. The device information allows cloud apps to know if a connection is from a compliant or domain-joined device and update the session experience. When selected, the cloud app uses the device information to provide users with a limited or full experience. Limited if the device isn't managed or compliant, and full if the device is managed and compliant.

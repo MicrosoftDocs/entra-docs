@@ -7,7 +7,7 @@ ms.subservice: authentication
 author: justinha
 ms.author: justinha
 ms.reviewer: kimhana
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # Microsoft Entra ID attestation for passkey (FIDO2) vendors

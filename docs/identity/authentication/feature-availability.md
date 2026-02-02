@@ -5,7 +5,7 @@ description: Learn which Microsoft Entra features are available in Azure for US 
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: article
+ms.topic: reference
 ms.date: 01/15/2026
 
 

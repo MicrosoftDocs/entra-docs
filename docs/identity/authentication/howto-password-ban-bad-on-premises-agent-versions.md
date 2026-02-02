@@ -4,7 +4,7 @@ description: Documents version release and behavior change history
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: article
+ms.topic: release-notes
 ms.date: 03/04/2025
 
 ms.author: justinha
