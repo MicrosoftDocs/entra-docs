@@ -237,7 +237,7 @@ To choose one of these options, you must know what your current settings are.
    
     ![View Additional tasks](media/deploy-cloud-user-authentication/additional-tasks.png)
 
-3. On the **Connect to Microsoft Entra ID** page, enter your Global Administrator account credentials.
+3. On the **Connect to Microsoft Entra ID** page, enter your Global Administrator or Hybrid Identity Administrator account credentials.
 
 4. On the **User sign-in** page:
 
@@ -338,7 +338,7 @@ On your Microsoft Entra Connect server, follow the steps 1- 5 in [Option A](#opt
 
 **Complete the conversion by using the Microsoft Graph PowerShell SDK:**
 
-1. In PowerShell, sign in to Microsoft Entra ID by using a Global Administrator account.
+1. In PowerShell, sign in to Microsoft Entra ID by using a Global Administrator or Hybrid Identity Administrator account.
    ```powershell
     Connect-MGGraph -Scopes "Domain.ReadWrite.All", "Directory.AccessAsUser.All"
     ```
