@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 03/10/2025
+ms.date: 02/02/2026
 ms.custom: template-tutorial, sfi-image-nochange
 ---
 
