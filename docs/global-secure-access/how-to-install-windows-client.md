@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 01/27/2026
+ms.date: 02/02/2026
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -180,7 +180,7 @@ The `.intunewin` file is ready for you to deploy Microsoft Intune.
 
 #### Deploy Global Secure Access client with Intune
 
-Reference detailed guidance to [Add and assign Win32 apps to Microsoft Intune](/mem/intune/apps/apps-win32-add#add-a-win32-app-to-intune).
+For detailed guidance, see [Add and assign Win32 apps to Microsoft Intune](/mem/intune/apps/apps-win32-add#add-a-win32-app-to-intune).
 
 1. Navigate to [https://intune.microsoft.com](https://intune.microsoft.com/).
 1. Select **Apps** > **All apps** > **Add**.
@@ -393,7 +393,7 @@ Write-Output "Set $($setting.Key) to $($setting.Value)"
 
 ### Configure settings for Microsoft Entra Internet Access with Intune
 
-Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this, disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
+Microsoft Entra Internet Access doesn't yet support DNS over HTTPS or Quick UDP Internet Connections (QUIC) traffic. To mitigate this limitation, disable these protocols in users' browsers. The following instructions provide guidance on how to enforce these controls using Intune.
 
 #### Disable QUIC in Microsoft Edge and Chrome with Intune 
 
@@ -612,7 +612,7 @@ To view the available client menu actions, select the Global Secure Access syste
 |**Sign out**   |*Hidden by default*. Use the **Sign out** action when you need to sign in to the Global Secure Access client with a Microsoft Entra user other than the one used to sign in to Windows. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
 |**Disable**   |Select the **Disable** action to disable the client. The client remains disabled until you either enable the client or restart the machine.         |
 |**Enable**   |Enables the Global Secure Access client.         |
-|**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you wish to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
+|**Disable Private Access**   |*Hidden by default*. Use the **Disable Private Access** action when you want to bypass Global Secure Access whenever you connect your device directly to the corporate network to access private applications directly through the network rather than through Global Secure Access. To make this action available, update the appropriate [Client registry keys](#client-registry-keys).         |
 |**Collect logs**   |Select this action to collect client logs (information about the client machine, the related event logs for the services, and registry values) and archive them in a zip file to share with Microsoft Support for investigation. The default location for the logs is `C:\Program Files\Global Secure Access Client\Logs`.   You can also collect client logs on Windows by entering the following command in the Command Prompt: `C:\Program Files\Global Secure Access Client\LogsCollector\LogsCollector.exe" <username> <user>`.      |
 |**Advanced diagnostics**   |Select this action to open the Advanced diagnostics utility and access an assortment of [troubleshooting](#troubleshooting) tools.         |
 
@@ -659,7 +659,7 @@ Administrators can prevent nonprivileged users on Windows devices from disabling
 
 Before enforcing this restriction, let users work with the Global Secure Access client in a nonrestricted mode. Configure the client for your organization to ensure users don't need to disable the client in specific scenarios (for example, to access specific websites or to use a non-Microsoft VPN in parallel).
 
-To stop the Global Secure Access client on a device with restricted, nonprivileged users, make sure that there's a process in place to use a local administrator when necessary. For more information regarding restricting nonprivileged users, see [Restrict nonprivileged users](#restrict-nonprivileged-users).
+To stop the Global Secure Access client on a device with restricted, nonprivileged users, make sure that there's a process in place to use a user with local administrator privileges when necessary. For more information regarding restricting nonprivileged users, see [Restrict nonprivileged users](#restrict-nonprivileged-users).
 
 ### Hide the Disable button
 In addition to restricting nonprivileged users from disabling the client, administrators can hide the **Disable** button in the client system tray icon menu. Removing the **Disable** button from view further reduces the likelihood that users disable the client by accident or without authorization.
