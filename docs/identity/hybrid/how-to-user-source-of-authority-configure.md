@@ -278,8 +278,6 @@ To scope a user for Source of Authority operations within an Administrative Unit
 1. Transfer the SOA of users within the scope of the unit. For a guide on transferring the SOA of users, see: [Transfer SOA for a test user](how-to-user-source-of-authority-configure.md#transfer-soa-for-a-test-user).
 
 
-
-
 ## Related content
 
 - [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID](user-source-of-authority-audit-monitor.md)
