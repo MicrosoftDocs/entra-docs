@@ -49,6 +49,70 @@ For more information, see: [Microsoft Entra ID Governance licensing for guest u
 
 ---
 
+### General Availability - Client Credentials in Microsoft Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management     
+**Product capability:** B2B/B2C    
+
+We are pleased to announce the general availability of client credentials in Entra External ID.  The OAuth 2.0 client credentials grant flow permits a web service (confidential client) to use its own credentials, instead of impersonating a user, to authenticate when calling another web service. Permissions are granted directly to the application itself by an administrator.
+
+Billing: When you configure machine-to-machine (M2M) authentication for Microsoft Entra External ID, you must use the [M2M Premium add‑on](https://www.microsoft.com/security/pricing/microsoft-entra-external-id/). Review your organization’s premium add‑on usage policy to understand cost implications and ensure the implementation complies with internal governance and licensing guidelines.
+
+---
+
+### General Availability - App-based branding via Branding themes in Entra External ID
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** B2B/B2C  
+
+In Entra External ID (EEID), customers can create a single, tenant-wide, customized branding experience that applies to all apps. We're introducing a concept of Branding "themes" to allow customers to create different branding experiences for specific applications. A new Live Preview feature also helps quickly visualize the changes before saving. For more information, see: [Customize the sign‑in experience for your application with branding themes in external tenants - Microsoft Entra External ID](../external-id/customers/how-to-customize-branding-themes-apps.md).
+
+---
+
+### General Availability - Service Principal creation audit logs for alerting & monitoring
+
+**Type:** New feature  
+**Service category:** Audit  
+**Product capability:** Monitoring & Reporting  
+
+New audit log properties now make it easy for admins to understand why a service principal was created and who or what triggered it. The logs now surface the provisioning mechanism, the specific SKUs or service plans that enabled just‑in‑time creation, and the home tenant of the app registration. This helps admins quickly distinguish Microsoft‑driven provisioning from tenant‑driven activity, streamlining alerting and investigations into newly created service principals. For more information, see: 
+
+- [Understand why a service principal was created in your tenant](../identity/monitoring-health/understand-service-principal-creation-with-new-audit-log-properties.md)
+- [How to download and analyze the Microsoft Entra provisioning logs](../identity/monitoring-health/howto-analyze-provisioning-logs.md)
+
+---
+
+### General Availability - Session Control Conditional Access Policies in Entra External ID
+
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** B2B/B2C  
+
+EEID admins can configure persistent browser session and sign‑in frequency in Conditional Access. For more information, see [Conditional Access: Manage Session Controls Effectively](../identity/conditional-access/concept-conditional-access-session.md).
+
+---
+
+### General Availability - Entra Private Access for Domain Controllers
+
+**Type:** New feature  
+**Service category:** Private Access  
+**Product capability:** Network Access  
+
+Bring MFA to on‑premises applications when accessed from on‑premises, i.e., local‑to‑local access, while safeguarding domain controllers against identity threats. Enable secure access to private apps that use domain controllers for Kerberos authentication. For more information, see: [Configure Microsoft Entra Private Access for Active Directory domain controllers](../global-secure-access/how-to-configure-domain-controllers.md).
+
+---
+
+### General Availability - Improved enforcement for *All resources* policies with resource exclusions
+
+**Type:** Changed feature  
+**Service category:** Conditional Access  
+**Product capability:** Access Control  
+
+Microsoft Entra Conditional Access is strengthening how policies that target All resources with resource exclusions are enforced in a narrow set of authentication flows. After this change, in user sign‑ins where a client application requests only [OIDC](../identity-platform/scopes-oidc.md#openid-connect-scopes) or [specific directory scopes](../identity/conditional-access/concept-conditional-access-cloud-apps.md#legacy-conditional-access-behavior-when-an-all-resources-policy-has-a-resource-exclusion), Conditional Access policies that target All resources with one or more resource exclusions, or policies that explicitly target Azure AD Graph, will be enforced. This ensures that policies are consistently applied regardless of the scope set requested by the client application. For more information, see: [New Conditional Access behavior when an ALL resources policy has a resource exclusion](../identity/conditional-access/concept-conditional-access-cloud-apps.md#new-conditional-access-behavior-when-an-all-resources-policy-has-a-resource-exclusion).
+
+---
 
 
 
@@ -126,7 +190,7 @@ The Microsoft Entra Connect Sync .msi installation file for this change is excl
 
 ---
 
-### Public Preview of Just-in-time password migration to Microsoft Entra External ID
+### Public Preview - Just-in-time password migration to Microsoft Entra External ID
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management  
@@ -875,7 +939,6 @@ To continue monitoring authentication library usage, customers can query sign-in
 
 For guidance, see:
 
-*   [Recommendation: Migrate from Microsoft Authentication Library to MSAL](../identity/monitoring-health/recommendation-migrate-from-adal-to-msal.md)
 *   [Analyze a sign-in with Microsoft Graph API](/azure/azure-monitor/reference/tables/aadnoninteractiveusersigninlogs)
 
 No action is required to disable the API.
