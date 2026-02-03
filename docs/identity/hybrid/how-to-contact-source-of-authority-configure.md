@@ -9,7 +9,7 @@ ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 08/07/2025
 ms.reviewer: dhanyak
 
-#CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.
+#CustomerIntent: As an administrator, I want to change the source of authority for a synced hybrid contact so that their attributes can be fully managed in the cloud.
 ---
 
 # Configure Contact Source of Authority (SOA)
@@ -78,18 +78,18 @@ Follow these steps to grant `Contacts-OnPremisesSyncBehavior.ReadWrite.All` perm
 
 1.	Select the profile icon, and select **Consent to permissions**.
 
-1.	Search for User-OnPremisesSyncBehavior, and select **Consent** for the permission.
-:::image type="content" source="media/how-to-user-source-of-authority-configure/graph-permissions.png" alt-text="screenshot of graph permissions.":::
+1.	Search for Contacts-OnPremisesSyncBehavior, and select **Consent** for the permission.
+:::image type="content" source="media/how-to-contacts-source-of-authority-configure/contact-graph-permission.png" alt-text="screenshot of granting permission for contacts within graph explorer.":::
 
 
-## Transfer SOA for a test user
+## Transfer SOA for a test contact
 
 > [!NOTE]
 > You're also able to transfer contact SOA using the `https://graph.microsoft.com/v1.0/contacts` API endpoint.
 
-Follow these steps to transfer the SOA for a test user:
+Follow these steps to transfer the SOA for a test contact:
 
-1. Create a user within AD. You can also use an existing user that is synced to Microsoft Entra ID by using Connect Sync.
+1. Create a contact within AD. You can also use an existing contact that is synced to Microsoft Entra ID by using Connect Sync.
 1. Run the following command to start Connect Sync: 
 
    ```powershell
@@ -102,20 +102,20 @@ Follow these steps to transfer the SOA for a test user:
 /graph/api/onpremisessyncbehavior-update
 
    ```https
-   GET https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/contacts/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify user properties.":::
 
-1. Confirm that the synced user is read-only. Because the user is managed on-premises, any write attempts to the user in the cloud fail. The error message differs for mail-enabled users, but updates still aren't allowed.
+1. Confirm that the synced contact is read-only. Because the contact is managed on-premises, any write attempts to the user in the cloud fail. The error message differs for mail-enabled contacts, but updates still aren't allowed.
 
    > [!NOTE]
    > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required User.ReadWrite.All permission.
 
    ```https
-   PATCH https://graph.microsoft.com/v1.0/users/{ID}/
+   PATCH https://graph.microsoft.com/v1.0/contacts/{ID}/
       {
-        "DisplayName": "User Name Updated"
+        "DisplayName": "Contact Name Updated"
       }   
    ```
 
@@ -126,7 +126,7 @@ Follow these steps to transfer the SOA for a test user:
 1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the user object you want to transfer to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
-   PATCH https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/contacts/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": true
       }   
@@ -137,7 +137,7 @@ Follow these steps to transfer the SOA for a test user:
 1. To validate the change, call GET to verify *isCloudManaged* is true.
 
    ```https
-   GET https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/v1.0/contacts/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a user.":::
@@ -147,7 +147,7 @@ Follow these steps to transfer the SOA for a test user:
 1. Check that the user can be updated in the cloud.
 
    ```https
-   PATCH https://graph.microsoft.com/v1.0/users/{ID}/
+   PATCH https://graph.microsoft.com/v1.0/contacts/{ID}/
       {
         "DisplayName": "Update User Name"
       }   
@@ -215,18 +215,18 @@ Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | I
 ## Roll back SOA update
 
 > [!IMPORTANT] 
-> Make sure that the users that you roll back have no cloud references. Remove cloud users from SOA transferred groups, and remove these groups from access packages before you roll back the users to AD DS. The sync client takes over the object in the next sync cycle.
+> Make sure that the contacts that you roll back have no cloud references. Remove cloud contacts from SOA transferred groups, and remove these groups from access packages before you roll back the uscontactscontactsers to AD DS. The sync client takes over the object in the next sync cycle.
 
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
    ```https
-   PATCH https://graph.microsoft.com/v1.0/users/{ID}/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/v1.0/contacts/{ID}/onPremisesSyncBehavior
       {
         "isCloudManaged": false
       }   
    ```
 
-   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/rollback.png" alt-text="Screenshot of API call to revert SOA.":::
+  :::image type="content" source="media/how-to-contacts-source-of-authority-configure/rollback.png" alt-text="Screenshot of contacts source of authority rollback api call.":::
 
 > [!NOTE]
 > The change of *isCloudManaged* to `false` allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is finished only after *both* the API call and the next scheduled or forced run of Connect Sync are complete.
@@ -249,9 +249,9 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
 
-## Clear on-premises attributes for SOA transferred users
+## Clear on-premises attributes for SOA transferred contacts
 
-The following are the list of on-premises [properties](/graph/api/resources/user#properties) present on the cloud user object that are used for accessing on-premises resources:
+The following are the list of on-premises [properties](/graph/api/resources/user#properties) present on the cloud contact object that are used for accessing on-premises resources:
 
 - onPremisesDistinguishedName
 - onPremisesDomainName
@@ -262,22 +262,22 @@ The following are the list of on-premises [properties](/graph/api/resources/user
 
 If Admins want to access on-premises resources after transfer of SOA, you must [manually maintain these attributes using Microsoft Graph](/graph/api/resources/user), and not delete, these attributes.
 
-## Scope a user for SOA operations within an Administrative Unit
+## Scope a contact for SOA operations within an Administrative Unit
 
-To scope a user for Source of Authority operations within an Administrative Unit, do the following steps:
+To scope a contact for Source of Authority operations within an Administrative Unit, do the following steps:
 
-1. Create a unit to use as the scope for the user. For steps on creating a unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
+1. Create a unit to use as the scope for the contact. For steps on creating a unit, see: [Create an administrative unit](../../identity/role-based-access-control/admin-units-manage.md#create-an-administrative-unit).
 
-1. Add the user as a Hybrid Identity Administrator within the scope.
+1. Add the contact as a Hybrid Identity Administrator within the scope.
     :::image type="content" source="media/how-to-user-source-of-authority-configure/assign-scope-role.png" alt-text="Screenshot of assigning a hybrid admin role to an Administrative unit scope." lightbox="media/how-to-user-source-of-authority-configure/assign-scope-role.png":::
-1. Add users to the unit. For information on this, see: [Add users, groups, or devices to an administrative unit](../../identity/role-based-access-control/admin-units-members-add.md).
+1. Add contacts to the unit. For information on this, see: [Add users, groups, or devices to an administrative unit](../../identity/role-based-access-control/admin-units-members-add.md).
 
-1. Transfer the SOA of users within the scope of the unit. For a guide on transferring the SOA of users, see: [Transfer SOA for a test user](how-to-user-source-of-authority-configure.md#transfer-soa-for-a-test-user).
+1. Transfer the SOA of contacts within the scope of the unit. For a guide on transferring the SOA of contacts, see: [Transfer SOA for a test contact](how-to-contact-source-of-authority-configure.md#transfer-soa-for-a-test-contact).
 
 
 ## Related content
 
-- [How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID](user-source-of-authority-audit-monitor.md)
+- [Configure User Source of Authority (SOA)](how-to-user-source-of-authority-configure.md)
 - [Configure Group Source of Authority (SOA)](how-to-group-source-of-authority-configure.md)
 
 
