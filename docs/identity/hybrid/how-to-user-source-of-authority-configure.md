@@ -281,7 +281,7 @@ To scope a user for Source of Authority operations within an Administrative Unit
 
 ## Configure Contact SOA
 
-You are also able to transfer the SOA of contacts of users using the examples provided in this article. Contacts are items in Outlook where you can organize and save information about the people and organizations you communicate with. The following examples are of how you would transfer the SOA of contacts.
+You're also able to transfer the SOA of contacts of users using the examples provided in this article. Contacts are items in Outlook where you can organize and save information about the people and organizations you communicate with. The following examples are of how you would transfer the SOA of contacts.
 
 > [!NOTE]
 > To transfer SOA of a Contact, the required permission is `Contacts-OnPremisesSyncBehavior.ReadWrite.All`.
