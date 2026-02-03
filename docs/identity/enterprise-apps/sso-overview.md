@@ -1,8 +1,8 @@
 ---
 title: Single sign-on (SSO) in Microsoft Entra ID
 description: Comprehensive hub for single sign-on including SAML and OIDC SSO for enterprise applications, seamless SSO for hybrid environments, and application proxy SSO for remote access.
-author: omondiatieno
-ms.author: jomondi
+author: garrodonnell
+ms.author: godonnell
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: hub-page
