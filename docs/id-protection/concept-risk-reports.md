@@ -9,7 +9,6 @@ ms.date: 11/05/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection risk reports
