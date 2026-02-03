@@ -128,7 +128,7 @@ Content-type: application/json
 }
 ```
 
-As described in the next section, you can then further configure the [provisioning job and template schema](/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&preserve-view=true) associated with the service principal. Then, [authorize access](../app-provisioning/application-provisioning-configuration-api.md#step-3-authorize-access) for Microsoft Entra to authenticate to SAP Cloud Identity Services, and then [start the provisoning job](../app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
+As described in the next section, you can then further configure the [provisioning job and template schema](/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&preserve-view=true) associated with the service principal. Then, [authorize access](../app-provisioning/application-provisioning-configuration-api.md#step-3-authorize-access) for Microsoft Entra to authenticate to SAP Cloud Identity Services, and then [start the provisioning job](../app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
 
 ## Configure automatic user provisioning to SAP Cloud Identity Services
 
