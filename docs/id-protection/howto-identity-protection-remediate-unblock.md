@@ -6,7 +6,6 @@ ms.topic: how-to
 ms.date: 01/05/2026
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pmwongera
 ms.reviewer: ebasseri
 
 # Customer intent: As an IT admin, I want to learn how to remediate risks and unblock users in Microsoft Entra ID Protection.
