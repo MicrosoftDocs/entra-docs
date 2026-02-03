@@ -2,7 +2,6 @@
 title: Agent Registry Built-In Roles
 description: Learn about the built-in roles available in Microsoft Entra Agent Registry for managing agents, collections, and role assignments.
 author: shlipsey3
-manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.date: 11/07/2025

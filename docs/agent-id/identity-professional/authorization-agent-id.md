@@ -3,7 +3,6 @@ title: Authorization in Microsoft Entra Agent ID
 description: Learn about how authorization in Microsoft Entra Agent ID works for AI agents.
 author: rolyon
 ms.author: rolyon
-manager: pmwongera
 ms.date: 11/04/2025
 ms.service: entra-id
 ms.topic: concept-article
