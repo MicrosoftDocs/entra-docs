@@ -6,7 +6,6 @@ ms.author: godonnell
 ms.service: global-secure-access
 ms.topic: how-to
 ms.date: 11/03/2025
-manager: dougeby
 ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to configure network security controls for Microsoft Copilot Studio agents so that I can apply security policies and monitor agent traffic.
 ---

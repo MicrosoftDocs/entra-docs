@@ -6,7 +6,6 @@ ms.topic: troubleshooting
 ms.date: 01/16/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: LuisPFlores
 ms.custom: sfi-image-nochange
 

@@ -6,7 +6,6 @@ ms.topic: troubleshooting
 ms.date: 06/24/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Advanced diagnostics utility.

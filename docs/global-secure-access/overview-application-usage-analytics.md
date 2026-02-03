@@ -6,7 +6,6 @@ ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: overview
 ms.date: 12/18/2025
-manager: dougeby
 ms.reviewer: kerenSemel
 
 #customer intent: As an IT admin, I want to analyze and visualize application use to better understand organizational usage patterns.
