@@ -41,7 +41,7 @@ The following process is used when a user signs in to Microsoft Entra ID with a 
 - **Device-bound passkeys**: The private key is created and stored on a single physical device and never leaves it. Examples: 
   - Microsoft Authenticator 
   - FIDO2 Security keys 
-- **Synced passkeys**: When created, the private key is created by a hardwear security module (HSM) and encrypted on the local device. This encrypted key is then synced to the cloud passkey provider with end to end encryption. Other devices registered with the passkey provider may then access the passkey. This may differ depending on the provider. Synced passkeys do not support attestation. Examples: 
+- **Synced passkeys**: The private key is created by the hardware security module (HSM) and encrypted on the local device. This encrypted key is then synced and stored in the cloud passkey provider. Other devices authenticated with the passkey provider may then use the passkey. This may differ depending on the provider. Synced passkeys do not support attestation. Examples: 
   - [Apple iCloud Keychain](https://support.apple.com/en-us/102195)
   - [Google Password Manager](https://security.googleblog.com/2022/10/SecurityofPasskeysintheGooglePasswordManager.html)
 
