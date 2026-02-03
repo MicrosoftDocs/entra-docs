@@ -5,8 +5,8 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 12/04/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: anjusingh, ludwignick
 ---

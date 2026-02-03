@@ -2,7 +2,6 @@
 title: Architecture overview
 description: Learn about the architecture of Microsoft Entra ID, including service design, scalability, availability, and data consistency.
 author: barclayn
-manager: femila
 
 ms.service: entra
 ms.subservice: architecture

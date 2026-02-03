@@ -8,7 +8,6 @@ ms.date: 10/20/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
 

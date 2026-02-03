@@ -6,7 +6,6 @@ ms.topic: conceptual
 ms.date: 01/07/2026
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pwongera
 ms.reviewer: cokoopma
 ms.custom: sfi-image-nochange
 ---

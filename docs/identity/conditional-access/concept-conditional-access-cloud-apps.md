@@ -7,8 +7,8 @@ ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 01/26/2026
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth
 ms.custom:

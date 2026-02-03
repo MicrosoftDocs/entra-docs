@@ -9,7 +9,6 @@ ms.date: 12/01/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pmwongera 
 ms.reviewer: chuqiaoshi
 ---
 # Identity Risk Management Agent (Preview)
