@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 12/03/2025
+ms.date: 02/03/2026
 ms.service: entra-external-id
 ms.topic: whats-new
 ms.author: cmulligan
@@ -16,6 +16,14 @@ manager: dougeby
 Welcome to what's new in documentation for Microsoft Entra External ID. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
 # [External ID in external tenants](#tab/external-tenants)
+
+## January 2026
+
+### Updated articles
+
+- [Configure Akamai with Microsoft Entra External ID](customers/how-to-configure-akamai-integration.md) - Editorial updates
+- [Just-In-Time Password Migration to Microsoft Entra External ID (Preview)](customers/how-to-migrate-passwords-just-in-time.md) - Added `encryptedPasswordContext` field updates
+- [Microsoft Entra External ID frequently asked questions](customers/faq-customers.md) - Added FedRAMP and DoD information
 
 ## December 2025
 
@@ -39,17 +47,13 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 - [Set up Azure Monitor in external tenants](customers/how-to-azure-monitor.md) - Updated Azure Monitor setup steps
 - [Multifactor authentication in external tenants](customers/concept-multifactor-authentication-customers.md) - Added MFA with Conditional Access authentication context
 
-## October 2025
+# [External ID in workforce tenants](#tab/workforce-tenants)
 
-### New article
-
-- [Integrate Microsoft Entra External ID with Arkose Labs and HUMAN Security for fraud protection](customers/how-to-integrate-fraud-protection.md)
+## January 2026
 
 ### Updated articles
 
-- [Identity providers for external tenants](customers/concept-authentication-methods-customers.md) - Added domain acceleration information
-
-# [External ID in workforce tenants](#tab/workforce-tenants)
+- [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated Monthly active users (MAU) billing model
 
 ## December 2025
 
@@ -63,12 +67,5 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 ### Updated articles
 
 - [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Added cross-cloud limitations and tenant restrictions
-
-## August 2025
-
-### Updated articles
-
-- [Microsoft Entra B2B in government and national clouds](b2b-government-national-clouds.md) - Cross-cloud synchronization update
-- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Cross-cloud synchronization update
 
 ---
