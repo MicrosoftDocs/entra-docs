@@ -6,7 +6,6 @@ ms.topic: concept-article
 ms.date: 02/02/2026
 ms.author: alexpav
 author: idmdev
-manager: sineado
 ms.reviewer: dhruvinshah
 ---
 # Universal Continuous Access Evaluation

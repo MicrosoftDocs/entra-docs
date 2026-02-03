@@ -6,7 +6,6 @@ ms.topic: how-to
 ms.date: 07/30/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to deploy the Global Secure Access client on macOS devices so that my organization’s network traffic is protected.

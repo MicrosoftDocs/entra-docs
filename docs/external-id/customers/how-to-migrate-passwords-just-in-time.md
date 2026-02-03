@@ -226,7 +226,8 @@ When sending a request to your custom authentication extension, Entra will inclu
 ```json
 {  
   "type": "microsoft.graph.authenticationEvent.passwordSubmit",  
-  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/    00001111-aaaa-2222-bbbb-3333cccc4444",  "data": {  
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/00001111-aaaa-2222-bbbb-3333cccc4444",  
+  "data": {  
     "@odata.type": "microsoft.graph.onPasswordSubmitCalloutData",  
     "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",  
     "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",  
@@ -241,12 +242,6 @@ When sending a request to your custom authentication extension, Entra will inclu
       },  
       "protocol": "OAUTH2.0",  
       "clientServicePrincipal": {  
-        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
-        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
-        "appDisplayName": "My Test application",  
-        "displayName": "My Test application"  
-      },  
-      "resourceServicePrincipal": {  
         "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
         "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
         "appDisplayName": "My Test application",  
@@ -291,7 +286,7 @@ Entra expects the response from your custom extension in the below format.
       {  
         "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
       } 
-    ]
+    ],
     "nonce": "{nonce-value-from-external-id}"
   }  
 }  

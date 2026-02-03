@@ -3,7 +3,6 @@ title: How to configure Global Secure Access threat intelligence
 description: Learn how to configure threat intelligence in Microsoft Entra Internet Access.
 author: fgomulka
 ms.author: frankgomulka
-manager: ashishj
 ms.topic: how-to
 ms.date: 05/29/2025
 ms.service: global-secure-access

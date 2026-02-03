@@ -6,7 +6,6 @@ ms.topic: how-to
 ms.date: 11/07/2025
 ms.author: jfields
 author: jenniferf-skc
-manager: dougeby
 ms.reviewer: dhruvinshah
 ai-usage: ai-assisted
 

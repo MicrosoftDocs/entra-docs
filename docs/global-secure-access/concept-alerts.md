@@ -6,7 +6,6 @@ ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: overview
 ms.date: 12/08/2025
-manager: dougeby
 ms.reviewer: kerenSemel
 ai-usage: ai-assisted
 
