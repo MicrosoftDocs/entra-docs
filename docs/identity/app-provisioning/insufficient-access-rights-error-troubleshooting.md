@@ -65,7 +65,6 @@ Reference articles:
 *Option 1 might not always work*
 
 There's a process called The Security Descriptor Propagation (SDPROP) process that runs every hour on the domain controller holding the PDC emulator FSMO role. It's this process that sets the ```AdminCount``` attribute to 1. The main function of SDPROP is to protect highly privileged Active Directory accounts. It ensures that these accounts can't be deleted or have their rights modified, either accidentally or intentionally, by users or processes with less privilege.
-There's a process called The Security Descriptor Propagation (SDPROP) process that runs every hour on the domain controller holding the PDC emulator FSMO role. It's this process that sets the ```AdminCount``` attribute to 1. The main function of SDPROP is to protect highly privileged Active Directory accounts. The SDPROP process ensures that accounts can't be deleted or have rights accidentally or intentionally modified by users or processes with less privilege.
 
 Reference articles that explain the reason in detail:
 
