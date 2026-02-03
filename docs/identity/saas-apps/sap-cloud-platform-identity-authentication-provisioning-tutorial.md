@@ -95,13 +95,13 @@ You can create an application and service principal [via the Graph API](~/identi
 
 First, retrieve the gallery application template identifier for `SAP Cloud Identity Services`.
 
-```msgraph
+```msgraph-interactive
 GET https://graph.microsoft.com/v1.0/applicationTemplates?$filter=displayName eq 'SAP Cloud Identity Services'
 ```
 
-Extract the `id' of the application template from the response. Then, create the gallery application.
+Extract the `id` of the application template from the response. Then, create the gallery application and service principal.
 
-```msgraph
+```msgraph-interactive
 POST https://graph.microsoft.com/v1.0/applicationTemplates/{applicationTemplateId}/instantiate
 Content-type: application/json
 
@@ -111,15 +111,15 @@ Content-type: application/json
 ```
 The response will contain the new application and service principal objects.
 
-Next, retrieve the template for the provisioning configuration, using the `id` of the service principal just created.
+Next, retrieve the template for provisioning configuration, using the `id` of the service principal just created.
 
-```msgraph
+```msgraph-interactive
 GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/templates
 ```
 
 To enable provisioning, you'll need to create a job. Use the following request to create a provisioning job. Use the `id` from the previous step as the `templateId` when specifying the template to be used for the job.
 
-```msgraph
+```msgraph-interactive
 POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs
 Content-type: application/json
 
@@ -128,7 +128,7 @@ Content-type: application/json
 }
 ```
 
-As described in the next section, you can then further configure the job and template. Then, [authorize access](../app-provisioning/application-provisioning-configuration-api.md#step-3-authorize-access) for Microsoft Entra to authenticate to SAP Cloud Identity Services, and then [start the provisoning job](../app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
+As described in the next section, you can then further configure the [provisioning job and template schema](/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0&preserve-view=true) associated with the service principal. Then, [authorize access](../app-provisioning/application-provisioning-configuration-api.md#step-3-authorize-access) for Microsoft Entra to authenticate to SAP Cloud Identity Services, and then [start the provisoning job](../app-provisioning/application-provisioning-configuration-api.md#step-4-start-the-provisioning-job).
 
 ## Configure automatic user provisioning to SAP Cloud Identity Services
 
