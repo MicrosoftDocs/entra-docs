@@ -8,8 +8,8 @@ ms.topic: concept-article
 ms.date: 11/05/2025
 ms.custom: agent-id-ignite
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: kvenkit
 ---

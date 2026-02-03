@@ -7,8 +7,8 @@ ms.subservice: conditional-access
 ms.topic: overview
 ms.date: 11/05/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: kvenkit
 ---
