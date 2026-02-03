@@ -5,7 +5,7 @@ description: Improve your security posture with the Microsoft Entra Zero Trust a
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: concept-article
-ms.date: 01/26/2026
+ms.date: 02/02/2026
 
 ms.author: sarahlipsey
 author: shlipsey
@@ -24,6 +24,9 @@ The "Protect networks" pillar of the [Secure Future Initiative](https://www.micr
 
 ### Tenant restrictions v2 policy is configured
 [!INCLUDE [21793](../includes/secure-recommendations/21793.md)]
+
+### Network validation is configured through Universal Continuous Access Evaluation
+[!INCLUDE [25371](../includes/secure-recommendations/25371.md)]
 
 ### Internet Access forwarding profile is enabled
 [!INCLUDE [25406](../includes/secure-recommendations/25406.md)]
