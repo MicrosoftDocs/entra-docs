@@ -8,8 +8,8 @@ ms.subservice: conditional-access
 ms.topic: how-to
 ms.date: 05/19/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: sandeo
 ---
