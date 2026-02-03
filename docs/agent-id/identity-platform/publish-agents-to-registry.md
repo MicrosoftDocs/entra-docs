@@ -2,7 +2,6 @@
 title: Register Agents to the Agent Registry
 description: Learn how to register agents to the Agent Registry in Microsoft Entra Agent ID through automatic registration or manual API calls for agent discovery and management.
 author: shlipsey3
-manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/07/2025

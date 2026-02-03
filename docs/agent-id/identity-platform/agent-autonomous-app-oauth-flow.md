@@ -3,7 +3,6 @@ title: Agent autonomous app OAuth flow - App-only protocol
 description: Learn how agent identities operate autonomously without user context using app-only protocol with OAuth 2.0 client credentials flows.
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
-manager: pmwongera
 ms.service: entra-id
 ms.topic: concept-article
 ms.date: 11/04/2025
