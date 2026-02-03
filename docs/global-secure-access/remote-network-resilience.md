@@ -6,7 +6,6 @@ ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: best-practice
 ms.date: 09/02/2025
-manager: dougeby
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
 

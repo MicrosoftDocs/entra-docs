@@ -6,7 +6,6 @@ ms.topic: reference
 ms.date: 11/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 
 

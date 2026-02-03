@@ -6,7 +6,6 @@ ms.topic: how-to
 ms.date: 02/02/2026
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: lirazbarak
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
