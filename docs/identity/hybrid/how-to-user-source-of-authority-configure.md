@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 08/07/2025
+ms.date: 02/03/2026
 ms.reviewer: dhanyak
 
 #CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.
