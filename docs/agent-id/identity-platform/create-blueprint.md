@@ -14,45 +14,52 @@ ms.reviewer: dastrock
 
 # Create an agent identity blueprint
 
-An [agent identity blueprint](agent-blueprint.md) is used to create agent identities and request tokens using those agent identities. This guide walks you through creating an agent identity blueprint using Microsoft Graph REST API and Microsoft Graph PowerShell.
+An [agent identity blueprint](agent-blueprint.md) is used to create agent identities and request tokens using those agent identities. During the process for creating an agent identity blueprint, you set the [owner and sponsor](agent-owners-sponsors-managers.md) of that blueprint, to establish accountability and administrative relationships. You also establish the scope and authorization for agents created from this blueprint to receive incoming requests from other agents and users.
+
+This guide walks you through creating an agent identity blueprint using the Microsoft Graph REST API and Microsoft Graph PowerShell.
 
 ## Prerequisites
 
 - [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is required to grant Microsoft Graph permissions.
 - [Agent ID Developer](../../identity/role-based-access-control/permissions-reference.md#agent-id-developer) or [Agent ID Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles are required to create agent identity blueprints.
 - If using PowerShell, version 7 is required.
+- Some steps require the beta version of the module. 
 
-## Authorize a client to create agent identity blueprints
+## Prepare your environment
 
-In this article, you use Microsoft Graph PowerShell or another client to create your agent identity blueprint. You must authorize this client to create an agent identity blueprint. The client requires one of the following Microsoft Graph permissions:
-<!--- The following permissions are the same?--->
-- `AgentIdentityBlueprint.Create` (delegated permission)
-- `AgentIdentityBlueprint.Create` (application permission)
+### Authorize a client to create agent identity blueprints
 
-A Privileged Role Administrator can grant these permissions to the client. With these permissions, an administrator can:
-<!--- It seems confusing to just broadly mention these commands and tasks here outside of the context of the actual step. "use the command" and "run a script" are just vague. Why not explain these specific steps where the user encounters them in the process? If it's a prerequisite step, then we need to make it an explicit step.--->
-- Use the `Connect-MgGraph` command.
-- Run a script to create an `oAuth2PermissionGrant` or `appRoleAssignment` in the tenant.
+In this article, you use Microsoft Graph PowerShell or another client to create your agent identity blueprint. You must authorize this client to create an agent identity blueprint. The client requires the following Microsoft Graph permissions:
+
+- [AgentIdentityBlueprint.Create](/graph/api/agentidentityblueprint-post?view=graph-rest-beta&preserve-view=true) delegated permission or application permission
+- [AgentIdentityBlueprint.AddRemoveCreds.All](/graph/api/agentidentityblueprint-addpassword?view=graph-rest-beta&preserve-view=true) delegated permission or application permission
+- [AgentIdentityBlueprint.ReadWrite.All](/graph/api/agentidentityblueprint-update?view=graph-rest-beta&preserve-view=true&tabs=http) delegated permission or application permission
+- [AgentIdentityBlueprintPrincipal.Create](/graph/api/agentidentityblueprintprincipal-post?view=graph-rest-beta&preserve-view=true) delegated permission or application permission
+
+To obtain an access token with all of the required permissions for Microsoft Graph, run the following command:
+
+To connect to all of the required scopes for Microsoft Graph PowerShell, run the following command:
+
+```powershell
+Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint.AddRemoveCreds.All", "AgentIdentityBlueprint.ReadWrite.All", "AgentIdentityBlueprintPrincipal.Create", "User.Read" -TenantId <your-tenant>
+```
+
+## Use the beta version
+
+Microsoft Entra Agent ID is in preview, so some steps are managed on the on the `/beta` endpoint of the Microsoft Graph API or require the beta version of the PowerShell module.
+
+- For Microsoft Graph, ensure the version is set to beta.
+- For PowerShell, install the beta version of the module using the following command:
+    - `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`
 
 ## Create an agent identity blueprint
 
-Creating a functional agent identity blueprint in your tenant requires two steps:
+#### [Microsoft Graph API](#tab/microsoft-graph-api)
 
-1. Create an `AgentIdentityBlueprint` in the tenant.
-2. Create an `AgentIdentityBlueprintPrincipal` in the tenant.
-<!--- This line is confusing to me I think because we're not talking about agent identities here - we're talking about blueprints. Should we explain the difference between the blueprint and the blueprint principal? --->
-The principal created is different from the [agent identity](create-delete-agent-identities.md) used by the agent.
-
-### [Microsoft Graph API](#tab/microsoft-graph-api)
-<!--- I'm not sure if this step should be explicitly described? Is this an OK assumption to make that users will know how to obtain an access token? Is there any additional guidance we should provide here?
-
-Also, I combined the two steps a bit. Seemed like extra work to make the user get an access token with one permission, then do it again with a different permission. Is it not OK to get a token with both? It also repeated the same tip. --->
-First obtain an access token with the permission `AgentIdentityBlueprint.Create` and `AgentIdentityBlueprintPrincipal.Create`. Once you have an access token, complete the following steps.
-
-> [!TIP]
-> Always include the OData-Version header when using @odata.type.
-
-**Create the agent identity blueprint application:**
+This step requires the following details:
+- The `AgentIdentityBlueprint.Create`, `AgentIdentityBlueprintPrincipal.Create`, and `User.Read` permissions. 
+- The OData-Version header must be set to 4.0.
+- An owner and a sponsor. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
 ```http
 POST https://graph.microsoft.com/beta/applications/
@@ -72,9 +79,11 @@ Authorization: Bearer <token>
 }
 ```
 
-After creating the agent identity blueprint, record its `appId` for the next step.
+After creating the agent identity blueprint, record the value of the `appId` for the next step.
 
-**Create the service principal:**
+### Create the service principal
+
+Replace the `<agent-blueprint-app-id>` placeholder with the user object ID you copied.
 
 ```http
 POST https://graph.microsoft.com/beta/serviceprincipals/graph.agentIdentityBlueprintPrincipal
@@ -143,12 +152,16 @@ To request access tokens using the agent identity blueprint, you must add a clie
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
-To send this request, you first need to obtain an access token with the permission `AgentIdentityBlueprint.AddRemoveCreds.All`.
+To send this request:
+- You need the `AgentIdentityBlueprint.AddRemoveCreds.All` permission.
+- Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
+- Replace the  `<msi-principal-id>` placeholder with the ID of your managed identity.
 
 Add a managed identity as a credential using the following request:
+<!--- I didn't see an msi or anything like that in the output from the previous step. Do you use the appId in both places? I tried it and it worked, but not sure if was right. --->
 
 ```http
-POST https://graph.microsoft.com/beta/applications/<agent-blueprint-object-id>/federatedIdentityCredentials
+POST https://graph.microsoft.com/beta/applications/<agent-blueprint-id>/federatedIdentityCredentials
 OData-Version: 4.0
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -247,10 +260,13 @@ To receive incoming requests from users and other agents, you need to define an 
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
-To send this request, you first need to obtain an access token with the permission `AgentIdentityBlueprint.ReadWrite.All`.
+To send this request:
+- You need the permission `AgentIdentityBlueprint.ReadWrite.All`.
+- Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
+- Replace the `<generate-a-guid>` placeholder with <!--- not sure what actually goes here? Or should we just say <agent-blueprint-id> for both spots? --->
 
 ```http
-PATCH https://graph.microsoft.com/beta/applications/<agent-blueprint-object-id>
+PATCH https://graph.microsoft.com/beta/applications/<agent-blueprint-id>
 OData-Version: 4.0
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -279,12 +295,11 @@ This step currently requires the beta version of the module and includes the fol
 - Install the beta version of the required module.
 - Connect to your tenant with the `AgentIdentityBlueprint.ReadWrite.All` scope.
 - Configure the URI and scope for the new agent identity blueprint.
-<!--- In the following script, I was confused by what the user needs to add. $AppId = "<agent-blueprint-object-id>"
-$IdentifierUri = "api://<agent-blueprint-id>" look like distinct values you grab from the output but I don't know how to tell the difference if there is one.--->
+
 ```powershell
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.ReadWrite.All" -TenantId <your-tenant>
 
-$AppId = "<agent-blueprint-object-id>"
+$AppId = "<agent-blueprint-id>"
 $IdentifierUri = "api://<agent-blueprint-id>"
 $ScopeId = [guid]::NewGuid()
 
