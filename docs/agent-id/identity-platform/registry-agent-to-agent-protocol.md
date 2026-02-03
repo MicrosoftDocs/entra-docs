@@ -2,7 +2,6 @@
 title: Enable secure agent communication through the Agent Registry API
 description: Learn how to enable secure agent communication through the Microsoft Entra Agent Registry API.
 author: shlipsey3
-manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/07/2025

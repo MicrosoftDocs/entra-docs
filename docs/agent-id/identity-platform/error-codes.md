@@ -2,7 +2,6 @@
 title: Microsoft agent identity platform error codes
 description: Learn about the Agent ID, Agent Blueprint, and Agent Identity error codes.
 author: SHERMANOUKO
-manager: pmwongera
 ms.author: shermanouko
 ms.date: 12/02/2025
 ms.service: entra-id

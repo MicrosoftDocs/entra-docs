@@ -3,7 +3,6 @@ title: Call Microsoft Graph API from an agent using .NET
 titleSuffix: Microsoft Entra Agent ID
 description: Learn how to call Microsoft Graph API from an agent using agent identities or agent users, including authentication configuration and implementation steps.
 author: SHERMANOUKO
-manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025
