@@ -2,7 +2,6 @@
 title: Services and integration partners - Microsoft Entra
 description: Learn about partners who can help with deployment and integration of identity management (IAM) and identity governance scenarios.
 author: markwahl-msft
-manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: article

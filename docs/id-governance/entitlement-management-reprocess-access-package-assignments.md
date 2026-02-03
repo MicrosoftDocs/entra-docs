@@ -2,7 +2,6 @@
 title: Reprocess assignments for an access package in entitlement management
 description: Learn how to reprocess assignments for an access package in entitlement management.
 author: owinfreyatl
-manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
