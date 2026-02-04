@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 1/14/2026
+ms.date: 02/04/2026
 ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
@@ -95,7 +95,7 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Requesting service provider config
+#### Example 1 – Requesting service provider config
 
 **Request:**
 
@@ -156,7 +156,7 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Requesting all resource types
+#### Example 1 – Requesting all resource types
 
 **Request:**
 
@@ -217,7 +217,7 @@ Response is truncated for readability.
 }
 ```
 
-### Example 2 – Requesting user resource type
+#### Example 2 – Requesting user resource type
 
 **Request:**
 
@@ -273,7 +273,7 @@ If there is an error, then one of the following error codes is returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Requesting all schemas
+#### Example 1 – Requesting all schemas
 
 **Request:**
 
@@ -306,7 +306,7 @@ Response is truncated for readability.
 }
 ```
 
-### Example 2 – Requesting user schema
+#### Example 2 – Requesting user schema
 
 **Request:**
 
@@ -343,7 +343,7 @@ Upon success, the API returns HTTP Status 200.
 
 If the response contains multiple pages, use [cursor-based pagination](https://datatracker.ietf.org/doc/draft-ietf-scim-cursor-pagination/) to retrieve all pages in the result.
 
-## Query parameters for List users
+### Query parameters for List users
 
 The following SCIM query parameters can be used with this API endpoint:
 
@@ -357,7 +357,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 - **cursor** – to advance to the next result page
 
-## Constraints for List users
+### Constraints for List users
 
 The Microsoft Entra ID SCIM implementation has the following constraints:
 
@@ -389,7 +389,7 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 GET https://graph.microsoft.com/rp/scim/users?filter=externalId eq '12345' and userName eq 'user@contoso.com'
 
-## Errors for List Users
+### Errors for List Users
 
 If there is an error, then one of the following error codes are returned.
 
@@ -403,7 +403,7 @@ If there is an error, then one of the following error codes are returned.
 
 The following examples only include the request details. The response isn't included for brevity. It conforms to the standard SCIM response payload.
 
-### Example 1 – Get all users
+#### Example 1 – Get all users
 
 **Request:**
 
@@ -411,7 +411,7 @@ GET [https://graph.microsoft.com/rp/scim/users](https://graph.microsoft.com/rp/s
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 2 – Get user by id with specific attributes
+#### Example 2 – Get user by id with specific attributes
 
 **Request:**
 
@@ -419,7 +419,7 @@ GET [https://graph.microsoft.com/rp/scim/users?filter=id eq "1234"&attributes=na
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 3 – Get user by id with excluded attributes
+#### Example 3 – Get user by id with excluded attributes
 
 **Request:**
 
@@ -427,7 +427,7 @@ GET [https://graph.microsoft.com/rp/scim/users?filter=id eq "1234"& excludedAttr
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 4 – Get user by displayName
+#### Example 4 – Get user by displayName
 
 **Request:**
 
@@ -455,7 +455,7 @@ Response is truncated for readability.
 }
 ```
 
-### Example 5 – Get user by userName
+#### Example 5 – Get user by userName
 
 **Request:**
 
@@ -463,7 +463,7 @@ GET [https://graph.microsoft.com/rp/scim/users?filter=userName eq "JDoe"](https:
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 6 – Get user by user id and group id
+#### Example 6 – Get user by user id and group id
 
 **Request:**
 
@@ -471,7 +471,7 @@ GET [https://graph.microsoft.com/rp/scim/users?filter=groups.value eq "GroupA" a
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 7 – Get next page by cursor
+#### Example 7 – Get next page by cursor
 
 **Request:**
 
@@ -479,7 +479,7 @@ GET [https://graph.microsoft.com/rp/scim/users?cursor=\<cursorValueFromPreviousP
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 8 – Get a specific number of users
+#### Example 8 – Get a specific number of users
 
 **Request:**
 
@@ -516,7 +516,7 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Get user by ID with specific attributes
+#### Example 1 – Get user by ID with specific attributes
 
 **Request:**
 
@@ -569,7 +569,7 @@ The following attributes are required for successful user creation:
 
 - urn:ietf:params:scim:schemas:extension:Microsoft:Entra:2.0:User:mailNickname
 
-## Errors for Create a user
+### Errors for Create a user
 
 If there is an error, then one of the following error codes are returned.
 
@@ -582,7 +582,7 @@ If there is an error, then one of the following error codes are returned.
 | InternalServerException | Service failed to process the request | 500 |
 
 
-### Example 1 – Create a new user
+#### Example 1 – Create a new user
 
 **Request:**
 
@@ -648,7 +648,7 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Update an attribute value
+#### Example 1 – Update an attribute value
 
 **Request:**
 
@@ -677,7 +677,7 @@ Content-Type: ```application/scim+json```
 
 The response conforms to SCIM specification.
 
-### Example 2 – Update a complex value
+#### Example 2 – Update a complex value
 
 **Request:**
 
@@ -709,7 +709,7 @@ Content-Type: ```application/scim+json```
 
 The response conforms to SCIM specification.
 
-### Example 3 – Update complex multi-valued attribute
+#### Example 3 – Update complex multi-valued attribute
 
 **Request:**
 
@@ -747,7 +747,7 @@ Content-Type: application/scim+json
 
 The response conforms to SCIM specification.
 
-### Example 4 – Update complex multi-valued attribute with filter
+#### Example 4 – Update complex multi-valued attribute with filter
 
 **Request:**
 
@@ -778,7 +778,7 @@ Content-Type: ```application/scim+json```
 
 The response conforms to SCIM specification.
 
-### Example 5 – Update user manager
+#### Example 5 – Update user manager
 
 **Request:**
 
@@ -832,7 +832,7 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Delete a user
+#### Example 1 – Delete a user
 
 **Request:**
 
@@ -862,7 +862,7 @@ Upon success, the API returns HTTP Status 200.
 
 If the response contains multiple pages, use [cursor-based pagination](https://datatracker.ietf.org/doc/draft-ietf-scim-cursor-pagination/) to retrieve all pages in the result.
 
-## Query parameters for List groups
+### Query parameters for List groups
 
 The following SCIM query parameters can be used with this API endpoint:
 
@@ -876,7 +876,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 - ```cursor``` – to advance to the next result page
 
-## Constraints for List groups
+### Constraints for List groups
 
 The Microsoft Entra ID SCIM implementation has the following constraints:
 
@@ -896,7 +896,7 @@ The Microsoft Entra ID SCIM implementation has the following constraints:
 
 - Nested group membership is not evaluated when using the member.value filter. Only direct memberships are evaluated.
 
-## Errors for List groups
+### Errors for List groups
 
 If there is an error, then one of the following error codes are returned.
 
@@ -907,11 +907,11 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-## Examples
+### Examples
 
 The following examples only include the request details. The response is not included for brevity. It conforms to the standard SCIM response payload.
 
-### Example 1 – Get all groups
+#### Example 1 – Get all groups
 
 **Request:**
 
@@ -919,7 +919,7 @@ GET [https://graph.microsoft.com/rp/scim/groups](https://graph.microsoft.com/rp/
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 2 – Get group by id with specific attributes
+#### Example 2 – Get group by id with specific attributes
 
 **Request:**
 
@@ -927,7 +927,7 @@ GET [https://graph.microsoft.com/rp/scim/groups?filter=id eq "1234"&attributes=d
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 3 – Get group by id with excluded attributes
+#### Example 3 – Get group by id with excluded attributes
 
 **Request:**
 
@@ -935,7 +935,7 @@ GET [https://graph.microsoft.com/rp/scim/groups?filter=id eq "1234"&excludedAttr
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 4 – Get group by displayName
+#### Example 4 – Get group by displayName
 
 **Request:**
 
@@ -963,7 +963,7 @@ Response is truncated for readability.
 }
 ```
 
-### Example 5 – Get group by member
+#### Example 5 – Get group by member
 
 **Request:**
 
@@ -971,7 +971,7 @@ GET [https://graph.microsoft.com/rp/scim/groups?filter=members.value eq "JDoe"](
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 6 – Get next page by cursor
+#### Example 6 – Get next page by cursor
 
 **Request:**
 
@@ -979,7 +979,7 @@ GET [https://graph.microsoft.com/rp/scim/groups?cursor=\<cursorValueFromPrevious
 
 Authorization: Bearer \<bearer_token\>
 
-### Example 7 – Get a specific number of groups
+#### Example 7 – Get a specific number of groups
 
 **Request:**
 
@@ -997,11 +997,11 @@ Existing groups are retrieved by making a GET request to the /groups endpoint
 
 Upon success, the API returns HTTP Status 200.
 
-## Constraints for Get group by ID
+### Constraints for Get group by ID
 
 - Group members are not returned by this API call. Use GET ```/groups``` with members.value filter to retrieve groups where user is a member.
 
-## Query parameters for Get group by ID
+### Query parameters for Get group by ID
 
 The following SCIM query parameters can be used with this API endpoint:
 
@@ -1009,7 +1009,7 @@ The following SCIM query parameters can be used with this API endpoint:
 
 - ```excludedAttributes``` – to specify which group attributes should be excluded by the server.
 
-## Errors for Get group by ID
+### Errors for Get group by ID
 
 If there is an error, then one of the following error codes are returned.
 
@@ -1020,7 +1020,7 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Get group by ID 
+#### Example 1 – Get group by ID 
 
 **Request:**
 
@@ -1072,7 +1072,7 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Create a new group
+#### Example 1 – Create a new group
 
 **Request:**
 
@@ -1141,7 +1141,7 @@ If there is an error, then one of the following error codes are returned.
 | InternalServerException | Service failed to process the request | 500 |
 
 
-### Example 1 – Update Group display name
+#### Example 1 – Update Group display name
 
 **Request:**
 
@@ -1170,7 +1170,7 @@ Content-Type: ```application/scim+json```
 
 The response conforms to SCIM specification.
 
-### Example 2 – Update Group description
+#### Example 2 – Update Group description
 
 **Request:**
 
@@ -1199,7 +1199,7 @@ Content-Type: ```application/scim+json```
 
 The response conforms to SCIM specification.
 
-### Example 3 – Add Group members
+#### Example 3 – Add Group members
 
 **Request:**
 
@@ -1237,7 +1237,7 @@ Content-Type: ```application/scim+json```
 
 The response conforms to SCIM specification.
 
-### Example 4 – Remove Group members
+#### Example 4 – Remove Group members
 
 **Request:**
 
@@ -1295,7 +1295,7 @@ If there is an error, then one of the following error codes are returned.
 | ResourceNotFound | Invalid URN | 404 |
 | InternalServerException | Service failed to process the request | 500 |
 
-### Example 1 – Delete a group
+#### Example 1 – Delete a group
 
 **Request:**
 

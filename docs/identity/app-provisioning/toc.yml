@@ -171,6 +171,8 @@ items:
       href: functions-for-customizing-application-data.md
     - name: SCIM 2.0 protocol compliance
       href: application-provisioning-config-problem-scim-compatibility.md
+    - name: SCIM API for Microsoft Entra ID
+      href: entra-id-scim-api-reference.md
     - name: SCIM and Graph scenarios
       href: scim-graph-scenarios.md
     - name: Cloud HR provisioning
