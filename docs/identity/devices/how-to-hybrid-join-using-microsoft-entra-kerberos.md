@@ -187,9 +187,6 @@ Write-Host "Tags:"
 
 1. Deploy the [Windows 11 24H2 Feb update](https://support.microsoft.com/topic/february-11-2025-kb5051987-os-build-26100-3194-63fb007d-3f52-4b47-85ea-28414a24be2d) or higher on a client computer that isn’t domain joined.
 1. Start a Windows command session with the **Run as administrator** option.
-1. Run the following command to enable Instant Hybrid Entra ID join:
-
-   ```EnableKerbHaadj.exe```
 
 1. To test Microsoft Entra hybrid join using Microsoft Entra Kerberos, run the following commands
 
