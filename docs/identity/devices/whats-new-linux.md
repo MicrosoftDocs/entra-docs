@@ -5,7 +5,7 @@ author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
 ms.service: entra-id
 ms.topic: whats-new
-ms.date:     05/16/2025
+ms.date:     02/03/2026
 ms.subservice: devices
 ms.custom: linux-related-content
 ---
