@@ -1403,13 +1403,5 @@ CRL Fail Safe ensures that CBA auth fails if the end user certificate issuing CA
  
 ---
 
-### Public Preview - Certificate Authority (CA) Scoping
- 
-**Type:** New feature  
-**Service category:** Authentications (Login)   
-**Product capability:** User Authentication 
- 
-CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping-preview).
- 
----
+
 
