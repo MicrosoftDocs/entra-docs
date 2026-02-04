@@ -1297,16 +1297,6 @@ No action is required. The update will be applied automatically starting Septemb
 ---
 
 
-### General Availability - API-driven provisioning in US Gov cloud
- 
-**Type:** New feature  
-**Service category:** Provisioning  
-**Product capability:** Identity Governance  
- 
-API-driven provisioning is now generally available in US Gov cloud. With this capability, customers in US Gov cloud can now ingest identity data from any authoritative source into Microsoft Entra ID and on-premises Active Directory. For more information, see: [Quickstart API-driven inbound provisioning with Graph Explorer](../identity/app-provisioning/inbound-provisioning-api-graph-explorer.md).
- 
----
-
 ### Deprecated - Conditional Access Overview Monitoring Tab to Retire
  
 **Type:** Deprecated  
