@@ -28,11 +28,11 @@ The following table showcases the list of Verified ID IDV partners. If you're an
 
 ### Security store integration partners
 
-| Partner | Partner offers | Description |
-|---------|----------------------|-------------|
-| AU10TIX | [AU10TIX documentation](https://securitystore.microsoft.com/solutions/au10tix1662380672540.verifiedid) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
-| IDEMIA | [IDEMIA documentation](https://securitystore.microsoft.com/solutions/idemia.idemia-id-one-trust-vc) | IDEMIA Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
-| TrueCredential (LexisNexis) | [TrueCredential documentation](https://securitystore.microsoft.com/solutions/whoiamai1647469237981.truecredential) | TrueCredential is a secure identity verification solution powered by LexisNexis Risk Solutions, leveraging Microsoft Entra Verified ID to deliver trusted, decentralized credentials. |
+| Partner | Partner offers | VerifiedIdentity Manifest uri | Description |
+|---------|----------------------|-------------------------------|-------------|
+| AU10TIX | [AU10TIX offer](https://securitystore.microsoft.com/solutions/au10tix1662380672540.au10tixverifiedid) | [VerifiedIdentity](https://securitystore.microsoft.com/solutions/au10tix1662380672540.verifiedid) | AU10TIX improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. |
+| IDEMIA | [IDEMIA offer](https://securitystore.microsoft.com/solutions/idemia.idemia-id-one-trust-vc) | [VerifiedIdentity](https://securitystore.microsoft.com/solutions/idemia.idemia-id-one-trust-vc) | IDEMIA Integration with Microsoft Entra Verified ID enables "Verify once, use everywhere" functionality. |
+| TrueCredential (LexisNexis) | [TrueCredential offer](https://securitystore.microsoft.com/solutions/whoiamai1647469237981.truecredential) | [VerifiedIdentity](https://securitystore.microsoft.com/solutions/whoiamai1647469237981.truecredential) | TrueCredential is a secure identity verification solution powered by LexisNexis Risk Solutions, leveraging Microsoft Entra Verified ID to deliver trusted, decentralized credentials. |
 
 
 ### Verified ID API based integration partners
