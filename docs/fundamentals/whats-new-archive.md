@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 10/21/2025
+ms.date: 02/03/2026
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -49,7 +49,7 @@ This update is solely a visual user interface refresh with no changes to functio
 
 **What do you need to do?**
 
-No action is required. The update will be applied automatically starting September 29, 2025. 
+No action is required. The update will be applied automatically starting September 29, 2025.
  
 ---
 
