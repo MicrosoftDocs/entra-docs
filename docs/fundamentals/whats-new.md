@@ -1346,22 +1346,7 @@ With this feature, customers can automatically provision "*custom security attri
 Conditional Access audience reporting in the sign-in logs lets admins view all the resources evaluated by Conditional Access as part of a sign-in event. For more information, see: [Audience reporting](../identity/conditional-access/troubleshoot-conditional-access.md#audience-reporting).
  
 ---
- 
-### Public Preview - Cross-tenant synchronization (cross-cloud)
- 
-**Type:** New feature  
-**Service category:** Provisioning  
-**Product capability:** Identity Governance  
- 
-Automate creating, updating, and deleting users across tenants across Microsoft clouds. The following combinations are supported:
- 
-- Commercial -> US Gov  
-- US Gov -> Commercial  
-- Commercial -> China  
- 
-For more information, see: [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md)
- 
----
+
  
 
  
