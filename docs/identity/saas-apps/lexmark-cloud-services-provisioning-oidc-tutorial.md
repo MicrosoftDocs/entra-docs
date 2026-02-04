@@ -9,7 +9,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thwimmer
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lexmark Cloud Services (OIDC) so that I can streamline the user management process and ensure that users have the appropriate access to Lexmark Cloud Services (OIDC).
 
@@ -50,25 +50,25 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. From the Dashboard card or the navigation waffle menu, select Account Management.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/account-management.png "Account Management")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/account-management.png "OIDC Account Management")
 
 3. If necessary, select your organization, and then click Next.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/select-organization.png "Organization")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/select-organization.png "Organization Menu")
 
 4. Ensure your organization is configured for SSO with [Lexmark Cloud Services (OIDC) application](~/identity/saas-apps/lexmark-cloud-services-oidc-tutorial.md).
 
 5. In the Organization selection, select User provisioning.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/user-provisioning.png "User Provisioning")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/user-provisioning.png "User Provisioning Menu")
 
 6. Select Enable User Provisioning.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable-user-provisioning-oidc.png "Enable User Provisioning")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable-user-provisioning-oidc.png "Select Enable User Provisioning")
 
 7. Provisioning details will be automatically populated when enabled.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/user-provisioning-details.png "User Provisioning Details")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/user-provisioning-details.png "Automatically populated Provisioning Details")
 
 ## Step 3: Add Lexmark Cloud Services (OIDC) from the Microsoft Entra application gallery
 
