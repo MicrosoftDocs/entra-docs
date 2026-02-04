@@ -3092,7 +3092,7 @@
     },
     {
       "source_path": "docs/identity/enterprise-apps/deactivate-application-portal.md",
-      "redirect_url": "docs/identity/enterprise-apps/deactivate-app-registration",
+      "redirect_url": "/entra/identity/enterprise-apps/deactivate-app-registration",
       "redirect_document_id": false
     }
   ]
