@@ -50,25 +50,25 @@ The scenario outlined in this article assumes that you already have the followin
 
 2. From the Dashboard card or the navigation waffle menu, select Account Management.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/account_management.png "Account Management")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/account-management.png "Account Management")
 
 3. If necessary, select your organization, and then click Next.
 
     ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/organization.png "Organization")
 
-4. Ensure your organization is configured for SSO with Lexmark Cloud Services (SAML) application - <Microsoft documentation link to configure Lexmark Cloud Services (SAML) for Single sign-on with Microsoft Entra ID>.
+4. Ensure your organization is configured for SSO with [Lexmark Cloud Services (SAML) application](~/identity/saas-apps/lexmark-cloud-services-tutorial.md).
 
 5. In the Organization selection, select User provisioning.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/user_provisioning.png "User Provisioning")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/user-provisioning.png "User Provisioning")
 
 6. Select Enable User Provisioning.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable_user_provisioning.png "Enable User Provisioning")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable-user-provisioning.png "Enable User Provisioning")
 
 7. Provisioning details will be automatically populated when enabled.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/provisioning_details.png "User Provisioning Details")
+    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/provisioning-details.png "User Provisioning Details")
 
 ## Step 3: Add Lexmark Cloud Services (SAML) from the Microsoft Entra application gallery
 
