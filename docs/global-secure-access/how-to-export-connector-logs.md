@@ -6,7 +6,6 @@ ms.topic: how-to
 ms.date: 12/03/2024
 ms.author: jfields
 author: jenniferf-skc
-manager: femila
 ms.reviewer: sumeetmittal
 
 

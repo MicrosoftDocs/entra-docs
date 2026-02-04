@@ -139,7 +139,7 @@ Each of your organization's SAP applications might have their own requirements t
 
 If you're using SAP Cloud Identity Services to provision to SAP S/4HANA or other SAP applications, ensure that SAP Cloud Identity Services has the mappings to send these attributes from Microsoft Entra ID through SAP Cloud Identity Services into those applications. If you aren't using SAP Cloud Identity Services, skip to the next section.
 
-1. **Ensure that your SAP cloud directory has the user schema required by your SAP cloud applications.** In SAP Cloud Identity Services, each target system that's configured adds transformations from the data model of the source for identities supplied to SAP Cloud Identity Services to the requirements of the target. You might need to change those transformations in SAP Cloud Identity Services to correspond to how you plan to model identity, especially if you have multiple target systems configured. Then, record the required schema for Microsoft Entra to supply to SAP cloud applications via SAP Cloud Identity Services.
+**Ensure that your SAP cloud directory has the user schema required by your SAP cloud applications.** In SAP Cloud Identity Services, each target system that's configured adds transformations from the data model of the source for identities supplied to SAP Cloud Identity Services to the requirements of the target. You might need to change those transformations in SAP Cloud Identity Services to correspond to how you plan to model identity, especially if you have multiple target systems configured. Then, record the required schema for Microsoft Entra to supply to SAP cloud applications via SAP Cloud Identity Services.
 
 ### Define the relationship between worker records in your system of record sources and users in Microsoft Entra
 
@@ -163,9 +163,9 @@ Each attribute required by your applications needs to originate from some source
 
 ### Confirm that necessary BAPIs for SAP ECC are ready for use by Microsoft Entra
 
-The Microsoft Entra provisioning agent and generic web services connector provides connectivity to on-premises SOAP endpoints, including SAP BAPIs.
+The Microsoft Entra provisioning agent and generic web services connector provides connectivity to on-premises SAP ECC SOAP endpoints, including SAP BAPIs.
 
-If you aren't using SAP ECC and are only provisioning to SAP cloud services, skip to the next section.
+If you aren't using SAP ECC and are only provisioning to SAP cloud services or SAP S/4HANA On-Premise, skip to the next section.
 
 1. **Confirm that the BAPIs needed for provisioning are published.** Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) file named `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
 
@@ -396,7 +396,7 @@ If you aren't using SAP Cloud Identity Services, skip to the next section.
 
 ### Provision users to SAP ECC
 
-Now that you have the users in Microsoft Entra ID, you can provision them into SAP on-premises.
+Now that you have the users in Microsoft Entra ID, you can provision them into SAP ECC on-premises.
 
 If you aren't using SAP ECC, skip to the next section.
 

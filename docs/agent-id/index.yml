@@ -37,6 +37,8 @@ additionalContent:
         ## CARD 1 ######################
         - title: Register and manage agents
           links:
+            - text: What is Microsoft Entra Agent ID?
+              url: ./identity-professional/microsoft-entra-agent-identities-for-ai-agents.md
             - text: What is the Agent Registry?
               url: ./identity-platform/what-is-agent-registry.md
             - text: Organize agents with collections
@@ -45,20 +47,20 @@ additionalContent:
         ## CARD 2 ######################
         - title: Agent governance and lifecycles
           links:
-            - text: Identity governance for agents
-              url: ../id-governance/agent-id-governance-overview.md
+            - text: Identity Governance for agents
+              url: ../id-governance/agent-id-governance-overview.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
             - text: Agent identity lifecycle management
-              url: ../id-governance/agent-sponsor-tasks.md
+              url: ../id-governance/agent-sponsor-tasks.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
 
         ## CARD 3 ######################
         - title: Protect agent access to resources
           links:
-            - text: Conditional access for agents
-              url: ../identity/conditional-access/agent-id.md         
-            - text: Microsoft Entra identity protection for agents
-              url: ../id-protection/concept-risky-agents.md
+            - text: Conditional Access for agents
+              url: ../identity/conditional-access/agent-id.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json         
+            - text: Identity Protection for agents
+              url: ../id-protection/concept-risky-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
             - text: Network controls for agents
-              url: ../global-secure-access/concept-secure-web-ai-gateway-agents.md
+              url: ../global-secure-access/concept-secure-web-ai-gateway-agents.md?toc=/entra/agent-id/identity-professional/toc.json&bc=/entra/agent-id/identity-professional/breadcrumb/toc.json
             
     ## Section 2: Microsoft agent identity platform ######################
     - title: Microsoft agent identity platform for developers

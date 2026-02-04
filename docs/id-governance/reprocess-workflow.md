@@ -3,7 +3,6 @@ title: Reprocess workflow runs using Lifecycle Workflows
 description: This article guides a user on reprocessing workflow runs using Lifecycle Workflows
 author: owinfreyATL
 ms.author: owinfrey
-manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is

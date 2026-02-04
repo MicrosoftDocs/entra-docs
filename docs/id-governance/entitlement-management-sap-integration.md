@@ -51,10 +51,15 @@ SAP Cloud Identity and Access Governance (IAG) tenant license:
 - The Microsoft Entra User Account configuring the connector and Access Packages must be synced to SAP Cloud Identity Services (IAS) and SAP IAG.
     - Make sure you run the “*Repository Sync*” and “*SCI User Group Sync Job*” on SAP IAG after you provision the Microsoft Entra users to SAP Cloud Identity Services.
 
+You also need an Azure subscription, containing an Azure Key Vault, to store your credentials for Microsoft Entra to interact with SAP IAG.
 
 ## Prepare your SAP Identity Access Governance instance to connect with Microsoft Entra
 
-To synchronize user-group and attribute data from SAP Cloud Identity Services to [SAP Cloud Identity Access Governance (IAG)](https://help.sap.com/docs/SAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE?state=DRAFT), complete these steps:
+Before integrating Microsoft Entra entitlement management with SAP Cloud Identity Access Governance (IAG), ensure that Microsoft Entra and SAP IAG have the same lists of the user identities. When entitlement management then refer to a user in an access request it sends to SAP IAG, SAP IAG can recognize that user. You can synchronize the user lists by connecting Microsoft Entra to provision users into SAP Cloud Identity Services, and then connecting SAP Cloud Identity Services to SAP IAG.
+
+:::image type="content" source="media/entitlement-management-sap-integration/microsoft-entra-and-sap-integration-architecture.png" alt-text="Diagram of the relationship of Microsoft Entra, Azure Key Vault, and SAP Cloud Identity Services and SAP IAG in the integration described in this article.":::
+
+Once you have [provisioned the users from Microsoft Entra into SAP Cloud Identity Services](#prerequisites), then to synchronize user-group and attribute data from SAP Cloud Identity Services to [SAP Cloud Identity Access Governance (IAG)](https://help.sap.com/docs/SAP_CLOUD_IDENTITY_ACCESS_GOVERNANCE?state=DRAFT), complete these steps:
 
 ### 1. Register IAG Sync system administrator
 
@@ -138,7 +143,7 @@ To connect your SAP IAG instance in Microsoft Entra your Azure subscriptions req
 
 ### 8. Set the secret within Azure Key Vault
 
-The SAP IAG instance secret created in [Register IAG Sync system administrator](#1-register-iag-sync-system-administrator) must be added to the Azure Key Vault. To add a secret to an Azure Key Vault, do the following steps:
+The SAP IAG instance secret created in [Register IAG Sync system administrator](#1-register-iag-sync-system-administrator) must be added to the Azure Key Vault. Copy the `clientsecret` parameter from your SAP IAG service credentials and add it to your Key Vault as a new secret. To add a secret to an Azure Key Vault, do the following steps:
 
 1. Navigate to the key vault you created in the [Create an Azure Key Vault](#7-create-an-azure-key-vault) in the Azure portal.
 1. On the Key Vault left-hand sidebar, select **Objects** then select **Secrets**.
@@ -150,10 +155,11 @@ The SAP IAG instance secret created in [Register IAG Sync system administrator](
         - To obtain this value: Sign in to SAP BTP Cockpit, navigate to **Instances and Subscriptions**, locate your SAP IAG Service instance (Service Technical Name: `grc-iag-api`), select **View Credentials**, and copy the `clientID` value.
     - Leave the other values to their defaults. Select **Create**.
 
+For more information, see [Set and retrieve a secret from Azure Key Vault using the Azure portal](/azure/key-vault/secrets/quick-create-portal).
 
 ## Connect your SAP IAG instance in Microsoft Entra
 
-**Prerequisite: You will need an Azure subscription containing an Azure Key Vault to store your credentials for Microsoft Entra to interact with SAP IAG**
+Now that you have set up an Azure subscription containing an Azure Key Vault with a credential for Microsoft Entra to use to authenticate to SAP IAG, you can connect Entitlement Management to that SAP IAG and have Microsoft Entra rely upon the credential in that Key Vault.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -178,7 +184,6 @@ The SAP IAG instance secret created in [Register IAG Sync system administrator](
     1. **Key Vault Name**: From the dropdown, select the Azure Key Vault resource where your IAG secret is stored.
     
     1. **Secret Name**: Select the secret that contains your SAP IAG client secret.
-        - To create the secret: Copy the `clientsecret` parameter from your SAP IAG service credentials and add it to your Key Vault as a new secret. For instructions, see [Set and retrieve a secret from Azure Key Vault using the Azure portal](/azure/key-vault/secrets/quick-create-portal).
     
     1. **Client ID**: Enter the client identifier from your SAP BTP credentials. This was added to the key vault in the step [Set the secret within Azure Key Vault](#8-set-the-secret-within-azure-key-vault).
     
@@ -193,6 +198,10 @@ The SAP IAG instance secret created in [Register IAG Sync system administrator](
 Catalog Administrators within Microsoft Entra are now able to add SAP business roles from your SAP IAG instance to Entitlement Management catalogs and access packages.
 
 ## Set up catalog and access package with SAP business role
+
+Now that you have the external connector to SAP IAG configured, you can then add a business role from that SAP IAG as a resource role in an access package.
+
+:::image type="content" source="media/entitlement-management-sap-integration/data-model-relationships.png" alt-text="Diagram of the relationship of the external connector, the catalog, and the access package resource role.":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 

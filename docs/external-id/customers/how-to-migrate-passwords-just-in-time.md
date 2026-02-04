@@ -58,16 +58,7 @@ The JIT migration process is illustrated in the following diagram:
 
 When a consumer user account with the migration flag set to `true` signs in, the following process occurs:
 
-- **Consumer user signs in** - User enters credentials from the legacy identity provider. 
-    
-    Out-of-box support for password migration in non-email scenarios is coming at GA. Until then, use either one of these workarounds:
-    - **In your custom authentication extension:** Fetch the user from a Graph API call to get the username for legacy IDP validation.
-    
-    **OR**    
-
-    - **During import:** Create the user in Entra with a UPN matching the legacy IDP's username pattern but using your Entra domain. The UPN is included in the payload, allowing you to convert back to the legacy format for validation. When your custom authentication extension receives the payload it transforms this UPN back to the legacy format for validation.
-        - Legacy UPN: `casey@legacyidp.com`
-        - Entra UPN: `casey@fabrikam.onmicrosoft.com`
+- **Consumer user signs in** - User enters credentials from the legacy identity provider.   
 - **Migration flag check** - Depending on the password entered there are two possible outcomes:
     - If the password entered does not match the password on record for the user, External ID checks the custom extension property and invokes the OnPasswordSubmit listener if migration is needed. 
     - If the password does match the one on record, authentication proceeds normally and the user is silently marked as migrated. 
@@ -235,7 +226,8 @@ When sending a request to your custom authentication extension, Entra will inclu
 ```json
 {  
   "type": "microsoft.graph.authenticationEvent.passwordSubmit",  
-  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/    00001111-aaaa-2222-bbbb-3333cccc4444",  "data": {  
+  "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/00001111-aaaa-2222-bbbb-3333cccc4444",  
+  "data": {  
     "@odata.type": "microsoft.graph.onPasswordSubmitCalloutData",  
     "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",  
     "authenticationEventListenerId": "11112222-bbbb-3333-cccc-4444dddd5555",  
@@ -250,12 +242,6 @@ When sending a request to your custom authentication extension, Entra will inclu
       },  
       "protocol": "OAUTH2.0",  
       "clientServicePrincipal": {  
-        "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
-        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
-        "appDisplayName": "My Test application",  
-        "displayName": "My Test application"  
-      },  
-      "resourceServicePrincipal": {  
         "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",  
         "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",  
         "appDisplayName": "My Test application",  
@@ -282,6 +268,12 @@ When sending a request to your custom authentication extension, Entra will inclu
 
 ```
 
+The `encryptedPasswordContext` field in the request contains the following claims in encrypted JWE format:
+
+- **user-password**: The password text the user entered at sign-in
+- **username**: The sign-in identifier (email/username) the user entered at sign-in  
+- **nonce**: A GUID that is unique to the request and must be included in the response for verification
+
 #### 2.2.2 Response schema
 
 Entra expects the response from your custom extension in the below format.  
@@ -294,7 +286,7 @@ Entra expects the response from your custom extension in the below format.
       {  
         "@odata.type": "microsoft.graph.passwordSubmit.MigratePassword"  
       } 
-    ]
+    ],
     "nonce": "{nonce-value-from-external-id}"
   }  
 }  
@@ -931,12 +923,13 @@ Configure the certificate's public key so that External ID can encrypt the passw
 
 #### 3.2.2 Add the key to the application
 
-Use Microsoft Graph API to configure the certificate on your custom authentication extension app registration. Make a PATCH request with the following information:
+Use Microsoft Graph API to configure the certificate on your custom authentication extension app registration. Make sure that you use the same GUID for both `keyId` and `tokenEncryptionKeyId`.
+Make a PATCH request with the following information:
 
 Replace the placeholders with your values:
 - `{object-id}`: Your custom authentication extension app's object ID (not the application ID).
 - `{end-date}`: Certificate expiration date (for example, `2026-11-25T17:44:47Z`).
-- `{unique-guid}`: A new GUID. You can generate one using PowerShell: `[guid]::NewGuid()`.
+- `{key-guid}`: A new GUID. You can generate one using PowerShell: `[guid]::NewGuid()`.
 - `{start-date}`: Certificate start date (for example, `2025-11-25T17:44:47Z`).
 - `{base64-encoded-public-key}`: The base64 string from the previous step.
 
@@ -957,7 +950,7 @@ Authorization: Bearer {access-token}
       "displayName": "CN=JitMigration"
     }
   ],
-  "tokenEncryptionKeyId": "{unique-guid}"
+  "tokenEncryptionKeyId": "{key-guid}"
 }
 ```
 

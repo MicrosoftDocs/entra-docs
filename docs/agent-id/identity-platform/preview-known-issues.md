@@ -3,7 +3,6 @@ title: Known issues and gaps for Microsoft Entra Agent ID preview
 description: Learn about currently known issues and errors encountered when using the Microsoft Entra Agent ID preview.
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: mwongerapk
 ms.service: entra-id
 ms.topic: troubleshooting-known-issue
 ms.date: 12/02/2025

@@ -3,7 +3,6 @@ title: Global Secure Access Web content filtering categories
 description: Global Secure Access Web content filtering categories
 author: kenwith
 ms.author: kenwith
-manager: dougeby
 ms.topic: reference
 ms.date: 02/21/2025
 ms.service: global-secure-access

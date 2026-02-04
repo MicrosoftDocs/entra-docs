@@ -240,7 +240,7 @@ procedureSection:
       - Microsoft Entra admin center (c44b4083-3bb0-49c1-b47d-974e53cbdf3c) 
       - Microsoft 365 Defender Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775) 
       - Microsoft Intune Admin Center (80ccca67-54bd-44ab-8625-4b79c4dc7775) 
-      - Microsoft Purview Compliance Portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
+      - Microsoft Purview portal (80ccca67-54bd-44ab-8625-4b79c4dc7775)
 
       ### Configure redemption order
 

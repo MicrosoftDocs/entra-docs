@@ -5,8 +5,8 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: article
 ms.date: 08/28/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: sreyanthmora
 ms.custom: sfi-image-nochange

@@ -18,7 +18,7 @@ Microsoft Entra Connect is the successor of DirSync. In this article, learn how 
 
 DirSync and Azure AD Sync aren't supported and no longer work. If you're still using DirSync or Azure AD Sync, you *must* upgrade to Microsoft Entra Connect to resume your sync process.
 
-Before you start installing Microsoft Entra Connect, make sure you [download Microsoft Entra Connect](https://go.microsoft.com/fwlink/?LinkId=615771) and complete the prerequisite steps described in [Microsoft Entra Connect: Hardware and prerequisites](how-to-connect-install-prerequisites.md). Pay special attention to the following requirements for Microsoft Entra Connect because they're different from DirSync:
+Before you start installing Microsoft Entra Connect, make sure you [download Microsoft Entra Connect](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) and complete the prerequisite steps described in [Microsoft Entra Connect: Hardware and prerequisites](how-to-connect-install-prerequisites.md). Pay special attention to the following requirements for Microsoft Entra Connect because they're different from DirSync:
 
 - **Required versions of .NET and PowerShell**: Newer versions that what are required for DirSync must be on the server for Microsoft Entra Connect.
 - **Proxy server configuration**: If you use a proxy server to reach the internet, this setting must be configured before you upgrade. DirSync always used the proxy server that was configured for the user who installed it, but Microsoft Entra Connect uses machine settings instead.

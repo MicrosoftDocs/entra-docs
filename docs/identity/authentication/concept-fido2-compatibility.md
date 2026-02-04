@@ -1,11 +1,11 @@
 ---
-title: Support for FIDO2 authentication with Microsoft Entra ID
+title: Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 description: Web browser and native app support for FIDO2 passwordless authentication using Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: article
-ms.date: 11/06/2025
+ms.topic: reference
+ms.date: 01/20/2026
 
 author: justinha
 ms.author: justinha
