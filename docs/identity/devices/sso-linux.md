@@ -254,59 +254,6 @@ Certificate-based client authentication is implemented through the Secure Socket
 
 The easiest way to configure Certificate-Based Authentication (CBA) is to use a Private Key Infrastructure (PKI) solution that issues user certificates to Linux devices. These certificates can then be used for authentication against Microsoft Entra ID. To configure Linux to accept these certificates for authentication, you typically need to set up the appropriate certificate stores and ensure that the system's authentication mechanisms are configured to use these certificates. 
 
-## Troubleshooting
-
-### Common Issues
-
-**Authentication failures:**
-- Verify network connectivity to Microsoft Entra ID endpoints
-- Check system time synchronization
-- Ensure the device is properly registered
-
-**Service not starting:**
-- Check service status: `systemctl --user status microsoft-identity-broker.service`
-- Restart the service: `systemctl --user restart microsoft-identity-broker.service`
-- Review system logs for error messages
-
-### Logging
-
-Reference useful commands to collect logs for troubleshooting.
-
-| Item           | Command|
-| -------------- | --------------- |
-| **All Logs**   | `journalctl --since "10 minutes ago" > logs_last_10_min.txt`                                                                               |
-| **Identity Broker** | `journalctl --user -f -u microsoft-identity-broker.service`                                    |
-| **JavaBroker** | `journalctl --user -f -u microsoft-identity-broker.service`  <br>`sudo journalctl --system -f -u microsoft-identity-device-broker.service` |
-| **New Broker** | `journalctl --user -f -u microsoft-identity-broker.service`                                                                                |
-| **DBUS Logs**  | `busctl --user monitor com.microsoft.identity.broker1` |
-
-### Services
-
-To manage the Identity Broker service, use the following commands:
-
-| Services:                    | Command                                                          |
-| ---------------------------- | ---------------------------------------------------------------- |
-| List all running services:   | `systemctl --type=service --state=running`                      |
-| Restart Identity Broker:     | `systemctl --user restart microsoft-identity-broker.service` |
-| Get Identity Broker status:  | `systemctl --user status microsoft-identity-broker.service`     |
-
-
-### List installed versions
-
-To list the package versions currently installed:
-
-### [Ubuntu](#tab/debian-listinstalls)
-
-```bash
-apt list -a microsoft-identity-broker
-```
-
-### [Red Hat Enterprise Linux](#tab/redhat-listinstalls)
-
-```bash
-rpm -q microsoft-identity-broker
-```
-
 ---
 
 
@@ -314,9 +261,8 @@ rpm -q microsoft-identity-broker
 
 For more information, see the following Intune documentation:
 
-- [What's new in Microsoft single sign-on for Linux](whats-new-linux.md)
-- [Troubleshoot device registration on Linux using dsregcmd](troubleshoot-device-registration-tool-linux.md)
-- [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux)
-
+- [What's new in Microsoft single sign-on for Linux](whats-new-linux.md).
+- [Troubleshoot device registration on Linux using dsregcmd](troubleshoot-device-registration-tool-linux.md).
+- [Deployment guide: Manage Linux devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-platform-linux).
 - [Enrollment guide: Enroll Linux desktop devices in Microsoft Intune](/mem/intune-service/fundamentals/deployment-guide-enrollment-linux).
 
