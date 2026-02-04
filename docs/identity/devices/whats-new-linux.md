@@ -53,7 +53,7 @@ The following table lists Identity Runtime SDK versions currently supported and 
 |Major Version |Primary Purpose|Latest Version| Supported| Source|
 | --------|--------------| -------- |---------------------|--------------|
 |stable|Production workloads|2.0.1|✅ Yes|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/noble/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/jammy/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/prod/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/prod/)|
-|insiders-fast|Testing upcoming releases|2.0.3|❌ No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)|
+|insiders-fast|Testing upcoming releases|2.5.x|❌ No|[Ubuntu 24.04 - Noble](https://packages.microsoft.com/ubuntu/24.04/prod/dists/insiders-fast/)</br>[Ubuntu 22.04 - Jammy](https://packages.microsoft.com/ubuntu/22.04/prod/dists/insiders-fast/)</br>[RHEL8](https://packages.microsoft.com/rhel/8.0/insiders-fast/)</br>[RHEL9](https://packages.microsoft.com/rhel/9.0/insiders-fast/)</br>[RHEL10](https://packages.microsoft.com/rhel/10/insiders-fast/)|
 
 > [!NOTE]
 > The current production version of the `microsoft-identity-broker` is `2.0.1`. 
@@ -63,21 +63,9 @@ We introduced an "insiders-fast" channel in `packages.microsoft.com` to allow pr
 ### Important Notes for Version 2.0.2 and Later
 
 > [!WARNING]
-> Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation. If you're upgrading from a previous version (prod: 2.0.1 or earlier, insiders-fast: 2.0.4 or earlier), users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
+> Versions 2.0.2 and later represent a major architectural change from Java-based to C++-based broker implementation. If you're upgrading from a previous version (prod: 2.0.1 or earlier, insiders-fast: 2.0.4 or earlier), users will need to re-register and re-enroll their devices after performing an upgrade of the previous version.
 
-**Platform Support:**
-- Preview support for Ubuntu 22.04 and 24.04
-- Red Hat Enterprise Linux support will be added after Ubuntu stabilization
-
-**Migration Requirements:**
-- No automatic migration script available from version 2.0.1 (Java broker) to 2.0.2+ (C++ broker)
-- Manual migration required: uninstall 2.0.1, remove all state, reinstall 2.0.2+
-- Device re-registration through Microsoft Entra ID and Intune required. Device Ids and keys will not be retained between pre 2.0.1 and 2.0.2+ versions.
-
-**Documentation:**
-- For current production documentation, see: [Microsoft single sign-on for Linux](/entra/identity/devices/sso-linux)
-
-
+## Instructions to Add Package Repositories
 ### Adding Repositories
 
 To add the appropriate package repository for your Linux distribution, follow the instructions below:
@@ -134,15 +122,29 @@ Add the Microsoft repository.
 
 Add the Microsoft repository.  
 
-   ```bash
-   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-   sudo dnf install -y dnf-plugins-core
-   sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
-   ```
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo dnf install -y dnf-plugins-core
+sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/microsoft-rhel$(rpm -E %rhel).0-insiders-fast-prod
+```
 
 ---
 
 ## Changes
+
+### 2.5.1 - Jan 29, 2025 - (Preview Release in fast Insiders channel)
+- (Linux) Fix smartcard dialogs layout for GTK4
+- (Linux) Fix a wrong callback issue if the browser is reused.
+- (Linux) Add GetDeviceState support with TLS 1.3 in CPP broker
+- (Linux) Handle sem_timedwait failure due to process receiving a signal in Msai::SecureStorageLock and Msoa::SystemMutex
+
+#### Assets
+
+- Ubuntu-24.04 - [microsoft-identity-broker_2.5.1-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.1-noble_amd64.deb)
+- Ubuntu-22.04 - [microsoft-identity-broker_2.5.1-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.1-jammy_amd64.deb)
+- Red Hat Enterprise Linux 10 - [microsoft-identity-broker-2.5.1-1.el10.x86_64.rpm](https://packages.microsoft.com/rhel/10/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el10.x86_64.rpm) 
+- Red Hat Enterprise Linux 9.0 - [microsoft-identity-broker-2.5.1-1.el9.x86_64.rpm](https://packages.microsoft.com/rhel/9.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el9.x86_64.rpm) 
+- Red Hat Enterprise Linux 8.0 - [microsoft-identity-broker-2.5.1-1.el8.x86_64.rpm](https://packages.microsoft.com/rhel/8.0/insiders-fast/Packages/m/microsoft-identity-broker-2.5.1-1.el8.x86_64.rpm)
 
 ### 2.5.0 - Jan 13, 2025 - (Preview Release in fast Insiders channel)
 - (Linux) Change package file names to include target OS
@@ -156,12 +158,13 @@ Add the Microsoft repository.
 - (xplat) Add DUNA xplat and DUNA iOS CBA
 
 > [!WARNING]
-> When upgrading from version 2.0.2 or earlier to 2.5.0, users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
+> When upgrading from version 2.0.2 or earlier to 2.5.x, users will need to re-register and re-enroll their devices after performing a clean uninstall of the previous version.
 
 #### Assets
 
 - Ubuntu-24.04 - [microsoft-identity-broker_2.5.0-noble_amd64.deb ](https://packages.microsoft.com/ubuntu/24.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.0-noble_amd64.deb)
 - Ubuntu-22.04 - [microsoft-identity-broker_2.5.0-jammy_amd64.deb](https://packages.microsoft.com/ubuntu/22.04/prod/pool/main/m/microsoft-identity-broker/microsoft-identity-broker_2.5.0-jammy_amd64.deb)
+
 
 ### 2.0.3 - Oct 21, 2025 - (Preview Release in fast Insiders channel)
 
