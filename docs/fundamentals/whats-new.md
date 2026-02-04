@@ -1373,15 +1373,6 @@ Administrators can assign a Conditional Access policy to all cloud apps from Mic
  
 ---
  
-### General Availability - Two-Way Forest Trusts for Microsoft Entra Domain Services
- 
-**Type:** New feature  
-**Service category:** Microsoft Entra Domain Services  
-**Product capability:** Microsoft Entra Domain Services  
- 
-Two-Way Forest Trusts for Microsoft Entra Domain Services are now generally available. This capability allows organizations to establish trust relationships between Microsoft Entra Domain Services domains and on-premises Active Directory (AD) domains. Forest trusts can now be configured in three directions: one-way outbound (as before), one-way inbound, and bi-directional, depending on organizational needs. Forest trusts can be used to enable resource access across trusted domains in hybrid environments. This capability offers more control and flexibility over how to manage your hybrid identity environment with Microsoft Entra Domain Services. Trusts require an Enterprise or Premium SKU license. For more information, see: [How trust relationships work for forests in Active Directory](../identity/domain-services/concepts-forest-trust.md).
- 
----
 
 
 
