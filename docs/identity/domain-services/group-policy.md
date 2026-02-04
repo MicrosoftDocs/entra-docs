@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 10/07/2025
 ---
 
-# Group Policy
+# Group Policy (Private Preview)
 
 Group Policy Objects (GPOs) are collections of policy settings that define how computer systems and user accounts behave within a Windows Active Directory domain environment. GPOs serve as the primary mechanism for centralized configuration management, security enforcement, and administrative control across Windows networks.
 
@@ -21,14 +21,17 @@ The Group Policy Backup feature is a new capability added to the Domain Health M
 
 ### Backup Location
 
-- **Primary Path**: `F:\\GPO\\Backups`
+- **Domain Controller**: `\\<PDC-Server>`
 
 - **Network Share**: `GPOBackupsShare$` (hidden share)
+
+- **Full Path**: `\\<PDC-Server>\GPOBackupsShare$\GPO\Backups`
+
 
 ### Directory Structure
 
 ```
-F:\GPO\Backups\
+(omitted for brevity)\GPO\Backups
 
 ├── MMddyyyyHHmm\          # Timestamp folder (e.g., 092520251430)
 
@@ -79,17 +82,14 @@ The backup location and network share are configured with appropriate Active Dir
 
 ```powershell
 # Check backup location
-Get-ChildItem "F:\GPO\Backups" -Directory
-
-# Access via network share (from another machine)
-Get-ChildItem "\\PDC-SERVER\GPOBackupsShare$"
+Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups"
 ```
 
 ### Manual Cleanup
 
 ```powershell
 # The feature handles cleanup automatically, but for manual operations:
-Get-ChildItem "F:\\GPO\Backups" | Where-Object { $\_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
+Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$\GPO\Backups" | Where-Object { $\_.CreationTime -lt (Get-Date).AddDays(-7) } | Remove-Item -Recurse -Force
 ```
 
 This section describes how an administrator on a domain-joined computer can discover, access, and restore Group Policy Object (GPO) backups created by this feature. Both GUI (GPMC) and PowerShell workflows are provided.
@@ -122,13 +122,13 @@ Take the short hostname (left of the first dot) for UNC (Universal Naming Conven
 1. Press Win+R, enter a UNC path:
 
 ```powershell
-\\<PDCShortName>\GPOBackupsShare$
+"\\<PDC-Server>\GPOBackupsShare$"
 ```
 
 2. (Optional) Map a drive letter:
 
 ```powershell
-New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDCShortName>\GPOBackupsShare$" -Persist
+New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDC-Server>\GPOBackupsShare$" -Persist
 ```
 
 3. Browse timestamp folders (format `MMddyyyyHHmm`). Each subfolder contains GUID-named folders for each backed-up GPO.
@@ -136,7 +136,7 @@ New-PSDrive -Name GPOBK -PSProvider FileSystem -Root "\\<PDCShortName>\GPOBackup
 ### Backup Folder Layout Recap
 
 ```powershell
-\\<PDCShortName>\GPOBackupsShare$\<TimestampFolder>\{GPO-GUID}\
+\\<PDC-Server>\GPOBackupsShare$\<TimestampFolder>\{GPO-GUID}\
   +-- backup.xml          (metadata, if present)
   +-- GPO.tmf / Gpt.ini / Machine / User  (typical structural contents)
   +-- (Optional manifest files depending on API)
@@ -156,7 +156,7 @@ Get-GPO -All | Where-Object Id -eq '{GUID-HERE}' | Select DisplayName, Id
 Or search by name across GUID folders (if `backup.xml` or `gpreport.xml` exists):
 
 ```powershell
-Get-ChildItem "\\<PDCShortName>\GPOBackupsShare$" -Directory -Recurse -Depth 2 | Where-Object { Test-Path (Join-Path $\_.FullName 'backup.xml') } |
+Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$" -Directory -Recurse -Depth 2 | Where-Object { Test-Path (Join-Path $\_.FullName 'backup.xml') } |
   ForEach-Object {
     [xml]$meta = Get-Content (Join-Path $\_.FullName 'backup.xml') -ErrorAction SilentlyContinue
 
@@ -179,7 +179,7 @@ If metadata is absent, rely on the GPO GUID from production (`Get-GPO -All`).
 4. Click **Browse** and select the timestamp folder path:
 
 ```powershell
-\\<PDCShortName>\GPOBackupsShare$\<TimestampFolder>
+\\<PDC-Server>\GPOBackupsShare$\<TimestampFolder>
 ```
 
 5. The list populates with discoverable backups. Select the target GPO backup.
@@ -211,7 +211,7 @@ $timestampFolder = '092520251430'              # Example
 
 $pdc = (Get-ADDomain).PDCEmulator.Split('.')[0]
 
-$backupRoot = "\\<PDCShortName>\GPOBackupsShare$\$timestampFolder"
+$backupRoot = "\\<PDC-Server>\GPOBackupsShare$\$timestampFolder"
 
 # List available backups in that timestamp folder
 Get-GPOBackup -Path $backupRoot | Format-Table DisplayName, Id, CreationTime
@@ -345,9 +345,9 @@ If a restored GPO introduces issues:
 
 $pdc = (Get-ADDomain).PDCEmulator.Split('.')[0]
 
-$latestTimestamp = Get-ChildItem "\\<PDCShortName>\GPOBackupsShare$" -Directory | Sort-Object Name -Descending | Select-Object -First 1 -ExpandProperty Name
+$latestTimestamp = Get-ChildItem "\\<PDC-Server>\GPOBackupsShare$" -Directory | Sort-Object Name -Descending | Select-Object -First 1 -ExpandProperty Name
 
-$backupPath = "\\<PDCShortName>\GPOBackupsShare$\$latestTimestamp"
+$backupPath = "\\<PDC-Server>\GPOBackupsShare$\$latestTimestamp"
 
 $gpoName = 'Baseline Workstation Policy'
 
