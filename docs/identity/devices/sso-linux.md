@@ -57,7 +57,7 @@ The following animation shows the sign-in experience for brokered flows on Linux
 ![Demo of the Linux sign-in experience](./media/sso-linux/linux-entra-login.gif)
 
 > [!NOTE]
-> microsoft-identity-broker version 2.0.1 and earlier versions doesn't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
+> microsoft-identity-broker version 2.0.1 and earlier versions don't currently support [FIPS compliance](https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips).
 
 
 ## Installation
