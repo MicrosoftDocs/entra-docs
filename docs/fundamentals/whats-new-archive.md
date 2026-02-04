@@ -49,7 +49,7 @@ This update is solely a visual user interface refresh with no changes to functio
 
 **What do you need to do?**
 
-No action is required. The update will be applied automatically starting September 29, 2025. 
+No action is required. The update will be applied automatically starting September 29, 2025.
  
 ---
 
