@@ -136,7 +136,7 @@ To reactivate an application using Microsoft Graph API, you need at least **[App
 
 ## Prevent reactivation by nonadministrators
 
-Before deactivating the application, remove all owners from the application. This ensures only users with tenant-wide `microsoft.directory/applications/enable` scope can reactivate the application. This scope is restricted to administrative roles. This scope is restricted to administrative roles.
+Before deactivating the application, remove all owners from the application. This ensures only users with tenant-wide `microsoft.directory/applications/enable` scope can reactivate the application. This scope is restricted to administrative roles.
 
 ## Related content
 
