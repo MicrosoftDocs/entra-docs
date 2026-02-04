@@ -1363,15 +1363,7 @@ For more information, see: [Configure cross-tenant synchronization](../identity/
  
 ---
  
-### General Availability - Conditional Access support for all Microsoft apps
- 
-**Type:** New feature  
-**Service category:** Conditional Access  
-**Product capability:** Identity Security & Protection  
- 
-Administrators can assign a Conditional Access policy to all cloud apps from Microsoft as long as the service principal appears in their tenant. For more information, see: [Microsoft cloud applications](../identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-cloud-applications).
- 
----
+
  
 
 
