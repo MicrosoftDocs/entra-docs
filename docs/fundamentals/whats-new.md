@@ -1383,15 +1383,7 @@ Two-Way Forest Trusts for Microsoft Entra Domain Services are now generally avai
  
 ---
 
-### General Availability - Certificate Authority (CA) Trust Store
- 
-**Type:** New feature  
-**Service category:** Authentications (Login)   
-**Product capability:** User Authentication  
- 
-The new PKI-based CA Trust Store replaces the legacy flat-list model with a more robust structure and no limitations on the size or the number of CAs. It supports bulk PKI uploads, CRL updates, issuer hints, and prioritization of the new store over the legacy one. Sign-in logs now indicate which store was used, helping admins phase out legacy configurations. For more information, see: [How to configure Microsoft Entra certificate-based authentication](../identity/authentication/how-to-certificate-based-authentication.md).
- 
----
+
 
 
 
