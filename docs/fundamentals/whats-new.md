@@ -1295,17 +1295,6 @@ This update is solely a visual user interface refresh with no changes to functio
 No action is required. The update will be applied automatically starting September 29, 2025. 
  
 ---
-
-
-### Deprecated - Conditional Access Overview Monitoring Tab to Retire
- 
-**Type:** Deprecated  
-**Service category:** Conditional Access  
-**Product capability:** Identity Security & Protection  
- 
-We're retiring the Conditional Access Overview Monitoring Tab in the Microsoft Entra Admin Center starting July 18 and completing by August 1. After this date, admins will no longer have access to this tab. We encourage customers to transition to Conditional Access Per-Policy Reporting and the Insights and Reporting Dashboard, both of which are more reliable, offer greater accuracy, and have received significantly better feedback from customers. Learn more about [Per-Policy Reporting](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact) and [Insights and Reporting](../identity/conditional-access/howto-conditional-access-insights-reporting.md).
- 
----
  
 ### General Availability - Manage Lifecycle Workflows with Microsoft Security Copilot in Microsoft Entra
  
