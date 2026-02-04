@@ -35,6 +35,7 @@ In this article, you use Microsoft Graph PowerShell or another client to create 
 - [AgentIdentityBlueprint.AddRemoveCreds.All](/graph/api/agentidentityblueprint-addpassword?view=graph-rest-beta&preserve-view=true) delegated permission or application permission
 - [AgentIdentityBlueprint.ReadWrite.All](/graph/api/agentidentityblueprint-update?view=graph-rest-beta&preserve-view=true&tabs=http) delegated permission or application permission
 - [AgentIdentityBlueprintPrincipal.Create](/graph/api/agentidentityblueprintprincipal-post?view=graph-rest-beta&preserve-view=true) delegated permission or application permission
+- [User.Read]()
 
 To obtain an access token with all of the required permissions for Microsoft Graph, run the following command:
 
@@ -53,6 +54,8 @@ Microsoft Entra Agent ID is in preview, so some steps are managed on the on the 
     - `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`
 
 ## Create an agent identity blueprint
+
+Agent identity blueprints must have a sponsor, which records the human user or group that's accountable for an agent. This sponsor is used for various purposes, such as contacting a human in case a security incident happens. You can also assign an owner to this agent identity blueprint. The sample scripts in this step first get the current user's ID and then creates an agent identity blueprint.
 
 #### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -77,24 +80,10 @@ Authorization: Bearer <token>
     "https://graph.microsoft.com/v1.0/users/<id>"
   ]
 }
+
 ```
 
 After creating the agent identity blueprint, record the value of the `appId` for the next step.
-
-### Create the service principal
-
-Replace the `<agent-blueprint-app-id>` placeholder with the user object ID you copied.
-
-```http
-POST https://graph.microsoft.com/beta/serviceprincipals/graph.agentIdentityBlueprintPrincipal
-OData-Version: 4.0
-Content-Type: application/json
-Authorization: Bearer <token>
-
-{
-  "appId": "<agent-blueprint-app-id>"
-}
-```
 
 ### [Microsoft Graph PowerShell](#tab/powershell)
 
@@ -131,6 +120,34 @@ $response
 
 ```
 
+After creating the agent identity blueprint, record the value of the `appId` for the next step.
+
+
+---
+
+## Create an agent blueprint principal
+
+In this step you create a service principal for the agent identity blueprint. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
+
+### [Microsoft Graph API](#tab/microsoft-graph-api)
+
+
+Replace the `<agent-blueprint-app-id>` placeholder with the `appId` you copied from the results of the previous step.
+
+```http
+POST https://graph.microsoft.com/beta/serviceprincipals/graph.agentIdentityBlueprintPrincipal
+OData-Version: 4.0
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+  "appId": "<agent-blueprint-app-id>"
+}
+```
+
+### [Microsoft Graph PowerShell](#tab/powershell)
+
+
 After creating the agent identity blueprint, create an agent identity blueprint principal using the newly created agent identity blueprint `appId`.
 
 ```powershell
@@ -143,12 +160,15 @@ Invoke-MgGraphRequest -Method POST `
         -Headers @{ "OData-Version" = "4.0" } `
         -Body ($body | ConvertTo-Json)
 ```
----
 
+---
 
 ## Configure credentials for the agent identity blueprint
 
-To request access tokens using the agent identity blueprint, you must add a client credential. We recommend using a managed identity as a federated identity credential (FIC) for production deployments. For local development and testing, use a client secret.
+To request access tokens using the agent identity blueprint, you must add a client credential. We recommend using a [managed identity](../../identity/managed-identities-azure-resources/overview.md) as a federated identity credential (FIC) for production deployments. Managed identities allow you to obtain Microsoft Entra tokens without having to manage any credentials. [Create a system-assigned or user-assigned](../../identity/managed-identities-azure-resources/) and copy its ID. Then, add a managed identity as a credential using the following request.
+
+
+For local development and testing, use a client secret.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -207,7 +227,7 @@ New-MgBetaApplicationFederatedIdentityCredential `
 
 ### Other app credentials
 
-In some tenants, other kinds of app credentials including `keyCredentials`, `passwordCredentials`, and `trustedSubjectNameAndIssuers` are also supported. These kinds of credentials aren't recommended for production, but can be convenient for local development and testing. To add a password credential:
+Other kinds of app credentials including `keyCredentials`, `passwordCredentials`, and `trustedSubjectNameAndIssuers` are also supported. These kinds of credentials aren't recommended for production, but can be convenient for local development and testing. To add a password credential:
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
 
