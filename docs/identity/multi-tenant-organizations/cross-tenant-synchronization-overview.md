@@ -250,7 +250,8 @@ What are the restrictions for synchronizing groups?
 - Cross-tenant synchronization will not create Microsoft 365 groups, distribution groups, mail-enabled security groups, or distribution lists.
 - The synchronization scope must be set to **Sync only assigned users and groups**. The **Sync all users** option is not supported when group synchronization is enabled. 
 - Synchronizing groups across cloud environments such as Azure commercial, Azure Government, and Azure operated by 21Vianet (Azure in China) isn't supported. 
-- Changes to the group in the target tenant will not be overridden automatically. They will only be overridden if there is a change to the group in the source tenant. 
+- Changes to the group in the target tenant will not be overridden automatically. They will only be overridden if there is a change to the group in the source tenant.
+    - For example, if a group is synchronized from tenant A to tenant B and an administrator makes a change to the group in tenant B, that change will continue to persist in tenant B. The synchronization engine does not detect that there was a change made to the group in the target tenant and override it.
 - If a group was created outside of cross-tenant synchronization, it will not be included in cross-tenant synchronization.  
 
 #### Structure
