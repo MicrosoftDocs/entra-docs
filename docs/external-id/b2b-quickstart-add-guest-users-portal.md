@@ -26,7 +26,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 
 > [!NOTE]
 > B2B invitation emails originating from Onmicrosoft default domains are subject to Exchange Online sending limits. See [Limiting Onmicrosoft Domain Usage for Sending Emails](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#sending-limits) for more information.
-> Consider updating to a custom domain if you need higher limits. For more information see, [Add your custom domain name to your tenant](../fundamentals/add-custom-domain).
+> Consider updating to a custom domain if you need higher limits. For more information see, [Add your custom domain name to your tenant](~/fundamentals/add-custom-domain).
 
 ## Prerequisites
 
