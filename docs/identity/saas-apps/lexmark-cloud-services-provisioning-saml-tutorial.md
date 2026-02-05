@@ -9,7 +9,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thwimmer
+ms.author: nguhiu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lexmark Cloud Services (SAML) so that I can streamline the user management process and ensure that users have the appropriate access to Lexmark Cloud Services (SAML).
 
@@ -48,27 +48,27 @@ The scenario outlined in this article assumes that you already have the followin
 
 1. Log in to [Lexmark Cloud Services]().
 
-2. From the Dashboard card or the navigation waffle menu, select Account Management.
+2. From the Dashboard card or the navigation waffle menu, select **Account Management**.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/account-management.png "Account Management")
+    ![Screenshot shows Account Management.](media/lexmark-cloud-services-provisioning-saml-tutorial/account-management.png "Account Management")
 
-3. If necessary, select your organization, and then click Next.
+3. If necessary, select your organization, and then select Next.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/organization.png "Organization")
+    ![Screenshot shows Organization Menu.](media/lexmark-cloud-services-provisioning-saml-tutorial/organization.png "Organization")
 
 4. Ensure your organization is configured for SSO with [Lexmark Cloud Services (SAML) application](~/identity/saas-apps/lexmark-cloud-services-tutorial.md).
 
-5. In the Organization selection, select User provisioning.
+5. In the **Select Organization** pane, select User provisioning.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/user-provisioning.png "User Provisioning")
+    ![Screenshot shows User Provisioning Menu.](media/lexmark-cloud-services-provisioning-saml-tutorial/user-provisioning.png "User Provisioning")
 
 6. Select Enable User Provisioning.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable-user-provisioning.png "Enable User Provisioning")
+    ![Screenshot shows Enable User Provisioning.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable-user-provisioning.png "Enable User Provisioning")
 
 7. Provisioning details will be automatically populated when enabled.
 
-    ![Screenshot shows to add.](media/lexmark-cloud-services-provisioning-saml-tutorial/provisioning-details.png "User Provisioning Details")
+    ![Screenshot shows User Provisioning Details.](media/lexmark-cloud-services-provisioning-saml-tutorial/provisioning-details.png "User Provisioning Details")
 
 ## Step 3: Add Lexmark Cloud Services (SAML) from the Microsoft Entra application gallery
 
@@ -107,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Properties** in the **Overview** page.  
 
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Apply** to save the changes.  
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. select  **Apply** to save the changes.  
 
    ![Screenshot of Provisioning properties.](common/provisioning-properties.png)
 
