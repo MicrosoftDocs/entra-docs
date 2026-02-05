@@ -3,7 +3,6 @@ title: IP addresses advertised over BGP by remote network connectivity
 description: Understand critical IP address ranges to consider when configuring and troubleshooting internet over remote network connectivity.
 author: jenniferf-skc
 ms.author: jfields
-manager: dougeby
 ms.topic: reference
 ms.date: 11/18/2025
 ms.service: global-secure-access

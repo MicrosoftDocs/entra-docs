@@ -6,8 +6,8 @@ ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 06/20/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange

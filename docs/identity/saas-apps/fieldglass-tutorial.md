@@ -1,6 +1,6 @@
 ---
-title: Configure Fieldglass for Single sign-on with Microsoft Entra ID
-description: Learn how to configure single sign-on between Microsoft Entra ID and Fieldglass.
+title: Configure SAP Fieldglass for Single sign-on with Microsoft Entra ID
+description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Fieldglass.
 
 author: nguhiu
 manager: mwongerapk
@@ -14,11 +14,11 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fieldglass so that I can control who has access to Fieldglass, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Configure Fieldglass for Single sign-on with Microsoft Entra ID
+# Configure SAP Fieldglass for Single sign-on with Microsoft Entra ID
 
-In this article,  you learn how to integrate Fieldglass with Microsoft Entra ID. When you integrate Fieldglass with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SAP Fieldglass with Microsoft Entra ID. When you integrate Fieldglass with Microsoft Entra ID, you can:
 
-* Control in Microsoft Entra ID who has access to Fieldglass.
+* Control in Microsoft Entra ID who has access to Fieldglass via single-sign on.
 * Enable your users to be automatically signed-in to Fieldglass with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
@@ -27,13 +27,13 @@ In this article,  you learn how to integrate Fieldglass with Microsoft Entra ID.
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* Fieldglass single sign-on (SSO) enabled subscription.
+* Your Fieldglass implementation is ready to be configured for single sign-on (SSO). For more information, see [SAP Fieldglass Single-Sign on (SSO) Configuration Guide](https://help.sap.com/doc/eb7e719be14d4e3c9a4802a73f9b2f52/cloud/en-US/SAPFieldglassSSOConfigurationGuide.pdf).
 
 ## Scenario description
 
-In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
+Before configuring single sign-on in a production deployment, we recommend you configure and test Microsoft Entra single sign-on in a test environment.
 
-* Fieldglass supports **IDP** initiated SSO.
+* This integration with Fieldglass supports **IDP** initiated SSO.
 
 ## Add Fieldglass from the gallery
 
@@ -58,7 +58,7 @@ To configure and test Microsoft Entra SSO with Fieldglass, perform the following
     1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Fieldglass SSO](#configure-fieldglass-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Fieldglass test user](#create-fieldglass-test-user)** - to have a counterpart of B.Simon in Fieldglass that's linked to the Microsoft Entra representation of user.
+    1. **[Create Fieldglass test user](#create-fieldglass-test-user)** - to have a counterpart of B.Simon in Fieldglass that's linked to the Microsoft Entra representation of that user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -107,7 +107,10 @@ To configure single sign-on on **Fieldglass** side, you need to send the downloa
 
 ### Create Fieldglass test user
 
-In this section, you create a user called Britta Simon in Fieldglass. Work with [Fieldglass support team](https://www.fieldglass.com/customer-support) to add the users in the Fieldglass platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Fieldglass. If necessary, work with your [Fieldglass support team](https://www.fieldglass.com/customer-support) to generate a unique identifier for the user so you can create the user in the Fieldglass platform. Users must be created in Fieldglass before you use single sign-on.
+
+> [!NOTE]
+> Fieldglass may require the user identifier sent to Fieldglass in the SAML assertion be different from the typical user account name in Microsoft Entra, in order to ensure uniqueness of user identifiers in Fieldglass.
 
 ## Test SSO
 

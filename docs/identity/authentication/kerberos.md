@@ -5,7 +5,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 11/18/2025
 ms.author: barclayn
 ms.reviewer: Vimala
@@ -61,7 +61,7 @@ Windows 10/11 device that is Microsoft Entra-joined.
 
 Support for Microsoft Entra ID with Entra Kerberos for cloud-only identities allows Entra-joined session hosts to authenticate and access cloud resources like Azure file shares without relying on traditional Active Directory infrastructure. This capability is essential for organizations adopting a cloud-only strategy, as it removes the need for domain controllers while preserving enterprise-grade security, access control, and encryption.
 
-Currently the supported workloads are Azure Files and Azure Virtual Desktop.
+Currently the supported workloads are Azure Files, Azure Virtual Desktop and Windows authentication access to Azure SQL Managed Instance.
 
 ## Authentication flow
 
@@ -243,7 +243,7 @@ For detailed information, see [Enable Microsoft Entra Kerberos authentication fo
 
 ### Support for cloud-only user identities (Preview)
 
-Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files and Azure Virtual Desktop.
+Cloud-only user accounts managed solely in Microsoft Entra ID are supported for Kerberos authentication by workloads like Azure Files, Azure Virtual Desktop and Windows authentication access to Azure SQL Managed Instance.
 
 ### Operating system and device restrictions
 

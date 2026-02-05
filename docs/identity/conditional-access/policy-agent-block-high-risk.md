@@ -2,8 +2,8 @@
 title: Conditional Access for High-Risk Agent Identities
 description: Learn how to configure Conditional Access policies to block risky agent identities. Follow best practices to enhance security in Microsoft Entra.
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite

@@ -3,7 +3,6 @@ title: Govern provisioning cloud users into on-premises SAP ERP Central Componen
 description: This document describes how to provision users into SAP ERP Central Component (SAP ECC, formerly SAP R/3) with NetWeaver AS ABAP 7.0 or later.
 
 author: owinfreyATL
-manager: femila
 ms.service: entra-id-governance
 ms.subservice:
 ms.topic: how-to

@@ -99,6 +99,8 @@
     items:
       - name: Troubleshoot SSO on Apple devices
         href: troubleshoot-mac-sso-extension-plugin.md
+      - name: Add Your Work or School Account to a macOS Device
+        href: macos-get-started.md  
       - name: Troubleshoot macOS PSSO on Mac
         href: troubleshoot-macos-platform-single-sign-on-extension.md
       - name: Configure macOS PSSO to meet NIST and EO requirements
@@ -108,6 +110,8 @@
     items:
       - name: Azure Linux VMs and Microsoft Entra ID
         href: howto-vm-sign-in-azure-ad-linux.md
+      - name: Troubleshoot using dsregcmd on Linux
+        href: troubleshoot-device-registration-tool-linux.md
   - name: Virtual Devices
     expanded: false
     items:        

@@ -4,7 +4,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/24/2025
+ms.date: 01/27/2026
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -33,7 +33,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
     iOS | `cable.auth.com`<br>`app-site-association.cdn-apple.com`<br>`app-site-association.networking.apple`
 
   > [!NOTE]
-  > Users can't use cross-device registration or authentication if you enable attestation. 
+  > Users can't use cross-device registration if you enable attestation. 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 

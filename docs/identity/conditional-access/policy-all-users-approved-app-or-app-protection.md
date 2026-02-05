@@ -1,8 +1,8 @@
 ---
 title: Conditional Access - Require approved app or app protection policy
 description: Create a custom Conditional Access policy require approved app or app protection policy
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth
 ms.date: 04/01/2025

@@ -121,7 +121,24 @@ After copying both the Access review object, and access review instance object, 
     > To confirm all CSVs were uploaded successfully, view the [audit logs](entitlement-management-logs-and-reporting.md).
 1. You have **up to two hours** from the time the review enters the *Initializing* state to complete the upload.
 
-You can also upload custom data via Graph, by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta).
+## Custom data for access CSV fields
+
+When uploading CSVs to be included in the access data, the following parameters are included in the template:
+
+> [!NOTE]
+> All columns are mandatory.
+
+|Parameter  |Description  |
+|---------|---------|
+|PrincipalId     |    The **Microsoft Entra ID User ID** of the user whose access needs to be reviewed. This value must match a valid Microsoft Entra user.     |
+|PrincipalType     |   Specifies the type of principal. For access reviews this will always be **EntraIdUser**.      |
+|PermissionId     |   A unique identifier for the permission in the application that will be reviewed. This helps distinguish between different permissions within the same app.      |
+|PermissionName     |   The display name of the permission that the user has in the application. Example: Read, Write, and Admin.     |
+|PermissionDescription     |   A brief explanation of what this permission allows within the application. This provides reviewers with context when deciding whether access should be continued.     |
+|PermissionType     |   Indicates the category of permission.      |
+
+
+You can also upload custom data via Graph by creating an upload session and then uploading a CSV file. For more information, see [customDataProvidedResourceUploadSession](/graph/api/resources/customdataprovidedresourceuploadsession?view=graph-rest-beta).
 
 ## Active review state
 

@@ -6,8 +6,8 @@ ms.service: entra-workload-id
 ms.topic: how-to
 ms.date: 03/24/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: swethar
 ---
