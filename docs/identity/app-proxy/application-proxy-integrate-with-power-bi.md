@@ -1,8 +1,6 @@
 ---
 title: Enable remote access to Power BI with Microsoft Entra application proxy
 description: Covers the basics about how to integrate an on-premises Power BI with Microsoft Entra application proxy.
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 05/01/2025
 ms.reviewer: ashishj

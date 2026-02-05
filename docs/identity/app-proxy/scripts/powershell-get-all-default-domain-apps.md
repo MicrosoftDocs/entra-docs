@@ -1,8 +1,6 @@
 ---
 title: PowerShell sample - Microsoft Entra application proxy apps using default domain
 description: PowerShell example that lists all Microsoft Entra application proxy applications that are using default domains (.msappproxy.net).
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
 ms.date: 05/01/2025

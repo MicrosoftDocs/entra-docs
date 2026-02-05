@@ -1,8 +1,6 @@
 ---
 title: PowerShell sample - Microsoft Entra application proxy apps with no certificate
 description: PowerShell example that lists all Microsoft Entra application proxy applications that are using custom domains but don't have a valid TLS/SSL certificate uploaded.
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
 ms.date: 05/01/2025

@@ -75,6 +75,14 @@
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy**/*.yml": "kenwith"
       },
+      "ms.service": {
+        "identity/app-proxy/**/*.md": "entra-id",
+        "identity/app-proxy**/*.yml": "entra-id"
+      },
+      "ms.subservice": {
+        "identity/app-proxy/**/*.md": "app-proxy",
+        "identity/app-proxy**/*.yml": "app-proxy"
+      },
       "manager": {
         "architecture/*.md": "dougeby",
         "architecture/*.yml": "dougeby",

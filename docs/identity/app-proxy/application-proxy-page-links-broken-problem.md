@@ -1,8 +1,6 @@
 ---
 title: Broken Links in an Application
 description:  Troubleshoot problems with broken links in application proxy apps that are integrated with Microsoft Entra ID.
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.topic: troubleshooting
 ms.date: 05/01/2025
 ms.reviewer: asteen

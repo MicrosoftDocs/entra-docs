@@ -6,8 +6,6 @@ summary: Microsoft Entra application proxy provides secure remote access and clo
 metadata:
   title: Application proxy documentation
   description: Microsoft Entra application proxy provides secure remote access and cloud scale security to your private applications.
-  ms.service: entra-id
-  ms.subservice: app-proxy
   ms.topic: landing-page
   ms.date: 02/21/2025
   ai-usage: ai-assisted
