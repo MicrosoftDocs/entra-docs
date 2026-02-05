@@ -24,6 +24,10 @@ This guide provides the basic steps to invite an external user. To learn about a
 
 If you don’t have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 
+> [!NOTE]
+> B2B invitation emails originating from Onmicrosoft default domains are subject to Exchange Online sending limits. See [Limiting Onmicrosoft Domain Usage for Sending Emails](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#sending-limits) for more information.
+> Consider updating to a custom domain if you need higher limits. For more information see, [Add your custom domain name to your tenant](~/fundamentals/add-custom-domain.md).
+
 ## Prerequisites
 
 To complete the scenario in this quickstart, you need:
