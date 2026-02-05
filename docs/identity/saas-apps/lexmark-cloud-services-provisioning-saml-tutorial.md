@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Lexmark Cloud Services (SAML) to support provisioning with Microsoft Entra ID
 
-1. Log in to [Lexmark Cloud Services]().
+1. Log in to Lexmark Cloud Services.
 
 2. From the Dashboard card or the navigation waffle menu, select **Account Management**.
 
@@ -64,7 +64,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 6. Select Enable User Provisioning.
 
-    ![Screenshot shows Enable User Provisioning.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable-user-provisioning.png "Enable User Provisioning")
+    ![Screenshot shows Enable User Provisioning.](media/lexmark-cloud-services-provisioning-saml-tutorial/enable-user-provisioning-saml.png "Enable User Provisioning")
 
 7. Provisioning details will be automatically populated when enabled.
 

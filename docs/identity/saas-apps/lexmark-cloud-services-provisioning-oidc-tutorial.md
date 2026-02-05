@@ -46,7 +46,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Lexmark Cloud Services (OIDC) to support provisioning with Microsoft Entra ID
 
-1. Log in to [Lexmark Cloud Services]().
+1. Log in to Lexmark Cloud Services.
 
 2. From the Dashboard card or the navigation waffle menu, select **Account Management**.
 
