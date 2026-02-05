@@ -6,7 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 01/28/2026
+ms.date: 02/05/2026
 ms.custom: agent-id-ignite
 ms.reviewer: dastrock
 #customer-intent: As a developer or IT administrator, I want to create an Agent Identity Blueprint that defines the security and permissions template for my agent identities, so that I can efficiently manage multiple agents with consistent security policies.
@@ -22,7 +22,7 @@ This guide walks you through creating an agent identity blueprint using the Micr
 
 - [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role is required to grant Microsoft Graph permissions.
 - [Agent ID Developer](../../identity/role-based-access-control/permissions-reference.md#agent-id-developer) or [Agent ID Administrator](../../identity/role-based-access-control/permissions-reference.md#agent-id-administrator) roles are required to create agent identity blueprints.
-- If using PowerShell, version 7 is required.
+- If using PowerShell, version 7 is required. <!--- Are these two bullets accurate? --->
 - Some steps require the beta version of the module. 
 
 ## Prepare your environment
@@ -35,9 +35,10 @@ In this article, you use Microsoft Graph PowerShell or another client to create 
 - [AgentIdentityBlueprint.AddRemoveCreds.All](/graph/api/agentidentityblueprint-addpassword?view=graph-rest-beta&preserve-view=true) delegated permission or application permission
 - [AgentIdentityBlueprint.ReadWrite.All](/graph/api/agentidentityblueprint-update?view=graph-rest-beta&preserve-view=true&tabs=http) delegated permission or application permission
 - [AgentIdentityBlueprintPrincipal.Create](/graph/api/agentidentityblueprintprincipal-post?view=graph-rest-beta&preserve-view=true) delegated permission or application permission
-- [User.Read]()
+- [User.Read](/graph/api/user-get?view=graph-rest-beta&preserve-view=true) delegated permission or application permission
 
 To obtain an access token with all of the required permissions for Microsoft Graph, run the following command:
+<!--- Need this for Graph if possible --->
 
 To connect to all of the required scopes for Microsoft Graph PowerShell, run the following command:
 
@@ -45,7 +46,7 @@ To connect to all of the required scopes for Microsoft Graph PowerShell, run the
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint.AddRemoveCreds.All", "AgentIdentityBlueprint.ReadWrite.All", "AgentIdentityBlueprintPrincipal.Create", "User.Read" -TenantId <your-tenant>
 ```
 
-## Use the beta version
+### Use the beta version
 
 Microsoft Entra Agent ID is in preview, so some steps are managed on the on the `/beta` endpoint of the Microsoft Graph API or require the beta version of the PowerShell module.
 
@@ -54,15 +55,17 @@ Microsoft Entra Agent ID is in preview, so some steps are managed on the on the 
     - `Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force`
 
 ## Create an agent identity blueprint
+<!--- Interesting to need to specify "human user" here. Thoughts? --->
+Agent identity blueprints must have an owner and a sponsor. These details provide the human user or group that's accountable for the agent and the user or group that can make changes to the agent identity blueprint.  For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
 
-Agent identity blueprints must have a sponsor, which records the human user or group that's accountable for an agent. This sponsor is used for various purposes, such as contacting a human in case a security incident happens. You can also assign an owner to this agent identity blueprint. The sample scripts in this step first get the current user's ID and then creates an agent identity blueprint.
+This step gets the user ID of the current user and create an agent identity blueprint application.
 
 #### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 This step requires the following details:
 - The `AgentIdentityBlueprint.Create`, `AgentIdentityBlueprintPrincipal.Create`, and `User.Read` permissions. 
 - The OData-Version header must be set to 4.0.
-- An owner and a sponsor. For information, see [Administrative relationships in Microsoft Entra Agent ID](agent-owners-sponsors-managers.md).
+- An owner and a sponsor.
 
 ```http
 POST https://graph.microsoft.com/beta/applications/
@@ -90,7 +93,7 @@ After creating the agent identity blueprint, record the value of the `appId` for
 This step includes the following distinct tasks:
 
 - Connect to your tenant with `AgentIdentityBlueprint.Create`, `User.Read`, and `AgentIdentityBlueprintPrincipal.Create` scopes.
-- Add your display name and user ID as the sponsor and owner values for the agent identity blueprint.
+- Add your display name and user ID as the sponsor and owner values for the agent identity blueprint. <!--- How can we revise this step so that it doesn't automatically put the user id in both places? How do we follow our own best practice in the sample? --->
 - Create the agent identity blueprint application.
 
 After creating the agent identity blueprint, record its `appId` for the next steps.
@@ -122,7 +125,6 @@ $response
 
 After creating the agent identity blueprint, record the value of the `appId` for the next step.
 
-
 ---
 
 ## Create an agent blueprint principal
@@ -130,7 +132,6 @@ After creating the agent identity blueprint, record the value of the `appId` for
 In this step you create a service principal for the agent identity blueprint. For more information, see [Agent identities, service principals, and applications](agent-service-principals.md).
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
-
 
 Replace the `<agent-blueprint-app-id>` placeholder with the `appId` you copied from the results of the previous step.
 
@@ -209,7 +210,7 @@ Install-Module Microsoft.Graph.Beta.Applications -Scope CurrentUser -Force
 
 Connect-MgGraph -Scopes "AgentIdentityBlueprint.AddRemoveCreds.All" -TenantId <your-test-tenant>
 
-$applicationId = "<agent-blueprint-object-id>"
+$applicationId = "<agent-blueprint-id>"
 
 $federatedCredential = @{
   Name             = "my-msi"
@@ -234,7 +235,7 @@ Other kinds of app credentials including `keyCredentials`, `passwordCredentials`
 To send this request, you first need to obtain an access token with the delegated permission `AgentIdentityBlueprint.AddRemoveCreds.All`
 
 ```http
-POST https://graph.microsoft.com/beta/applications/<agent-blueprint-object-id>/addPassword
+POST https://graph.microsoft.com/beta/applications/<agent-blueprint-id>/addPassword
 Content-Type: application/json
 Authorization: Bearer <token>
 
@@ -274,6 +275,8 @@ Write-Host "Secret Text: $($response.secretText)"
 
 Be sure to securely store the `passwordCredential` value generated. It can't be viewed after initial creation. You can also use client certificates as credentials; see [Add a certificate credential](/graph/api/application-addkey?tabs=http#example-3-add-a-certificate-credential-to-an-application).
 
+If the agents created with the blueprint will support interactive agents, where the agent acts on behalf of a user, your blueprint must expose a scope so that the agent front end can pass an access token to the agent backend that can be used by the agent backend to get an access token to act on behalf of the user. To expose a scope you need to define ... <!--- This note is from Kyle - need explanation on what to put here. --->
+
 ## Configure identifier URI and scope
 
 To receive incoming requests from users and other agents, you need to define an identifier URI and OAuth scope for your agent identity blueprint:
@@ -283,7 +286,7 @@ To receive incoming requests from users and other agents, you need to define an 
 To send this request:
 - You need the permission `AgentIdentityBlueprint.ReadWrite.All`.
 - Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
-- Replace the `<generate-a-guid>` placeholder with <!--- not sure what actually goes here? Or should we just say <agent-blueprint-id> for both spots? --->
+- You need a Globally Unique Identifier (GUID). To get this detail, For example, in .NET System.Guid.NewGuid().ToString(). Copy the output and use it to replace the `<generate-a-guid>` placeholder. <!--- This is helpful, but could still use some guidance on what to tell users. --->
 
 ```http
 PATCH https://graph.microsoft.com/beta/applications/<agent-blueprint-id>
@@ -340,8 +343,43 @@ Update-MgBetaApplication -ApplicationId $AppId `
 
 ---
 
+## Delete an agent identity blueprint
 
+<!--- I don't think we have steps on how to remove agent users form an agent. Should we add to the remove all agent identities content? --->
+When an agent is decommissioned or deleted, the associated agent identity blueprint should also be deleted. Before you delete an agent identity blueprint, you must first [remove all agent identities](create-delete-agent-identities.md#delete-an-agent-identity) and agent users associated with the agent. Then you can delete the agent identity blueprint and its service principal.
 
-## Related content
+<!--- For this step it makes sense to provide all the "prepare you environment" steps and connecting to scopes, because it could be a step done without all the previous steps. --->
 
-[Create and delete agent identities](create-delete-agent-identities.md)
+## [Microsoft Graph API](#tab/microsoft-graph-api)
+
+```http
+DELETE https://graph.microsoft.com/beta/applications/<agent-blueprint-id>
+OData-Version: 4.0
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+## [Microsoft Graph PowerShell](#tab/powershell)
+
+This step currently requires the beta version of the module and includes the following distinct tasks:
+
+- Install the beta version of the required module.
+- Connect to your tenant with the ?? scope.
+- Replace the `<agent-blueprint-id>` placeholder with the `appId` of the agent identity blueprint.
+
+```powershell
+$Id = "<agent-blueprint-id>"
+
+Invoke-MgBetaGraphRequest `
+    -Method DELETE `
+    -Uri "https://graph.microsoft.com/beta/applications/graph.agentIdentityBlueprint$($Id)" `
+```
+
+---
+
+Your agent blueprint is now ready and visible in the [Microsoft Entra admin center](https://entra.microsoft.com). In the next step, you'll use this blueprint to [create agent identities](create-delete-agent-identities.md).
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Create and delete agent identities](create-delete-agent-identities.md)
