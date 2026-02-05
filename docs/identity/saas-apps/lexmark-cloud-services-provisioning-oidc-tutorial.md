@@ -9,7 +9,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: nguhiu
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Lexmark Cloud Services (OIDC) so that I can streamline the user management process and ensure that users have the appropriate access to Lexmark Cloud Services (OIDC).
 
