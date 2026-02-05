@@ -21,8 +21,8 @@ This article explains the Microsoft Entra B2B invitation redemption process for 
 When you add a guest user to your directory, the guest user account has a consent status (viewable in PowerShell) that's initially set to **PendingAcceptance**. This setting remains until the guest accepts your invitation and agrees to your privacy policy and terms of use. After that, the consent status changes to **Accepted**, and the consent pages are no longer presented to the guest.
 
 > [!NOTE]
-> B2B invitation emails originating from Onmicrosoft default domains are subject to Exchange Online sending limits. See [Limiting Onmicrosoft Domain Usage for Sending Emails](https://learn.microsoft.com/en-us/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#sending-limits) for more information.
-> Consider updating to a custom domain if you need higher limits. For more information see, [Add your custom domain name to your tenant](https://learn.microsoft.com/en-us/entra/fundamentals/add-custom-domain).
+> B2B invitation emails originating from Onmicrosoft default domains are subject to Exchange Online sending limits. See [Limiting Onmicrosoft Domain Usage for Sending Emails](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#sending-limits) for more information.
+> Consider updating to a custom domain if you need higher limits. For more information see, [Add your custom domain name to your tenant](../fundamentals/add-custom-domain).
 
 ## Redemption process and sign-in through a common endpoint
 
