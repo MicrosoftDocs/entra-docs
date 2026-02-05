@@ -1060,6 +1060,8 @@ Consider the following testing checklist:
 - **Monitor Azure Function logs**: Review logs to identify any errors or issues during the authentication process.
 - **Validate encryption**: Ensure that passwords are encrypted end-to-end and never exposed in logs or error messages.
 
+If you encounter issues during testing, see [Troubleshoot your custom authentication extension](../../identity-platform/custom-extension-troubleshoot.md) for guidance on common problems and solutions.
+
 ## Frequently asked questions
 
 ### Which URL should I use for the OnPasswordSubmit custom authentication extension?
@@ -1078,5 +1080,6 @@ Deploy JIT migration components in a secure identity subscription with limited R
 
 - [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md)
 - [Custom authentication extensions overview](/graph/api/resources/customauthenticationextension)
+- [Troubleshoot your custom authentication extension](/entra/identity-platform/custom-extension-troubleshoot?tabs=api-testing-tools)
 - [Secure Azure Functions](/azure/azure-functions/security-concepts)
 - [Azure Key Vault documentation](/azure/key-vault/)
