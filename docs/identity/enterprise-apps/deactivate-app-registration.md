@@ -6,7 +6,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 2/2/2026
+ms.date: 2/4/2026
 ms.author: jomondi
 ms.reviewer: ariels
 ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
@@ -100,7 +100,7 @@ To deactivate an application object using Microsoft Graph API, you need at least
     The response includes `"isDisabled": true`.
 
    ```http
-    GET https://graph.microsoft.com/beta/applications
+    GET https://graph.microsoft.com/beta/applications(appId='{appId}')
     ```
 
     The response includes `"isDisabled": true`.
