@@ -679,6 +679,20 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 ##### End the script
 ```
 
+#### Symptom - Group skipped due to EntityTypeNotSupported
+
+Group is skipped from synchronization because EntityTypeNotSupported.
+
+:::image type="content" source="./media/cross-tenant-synchronization-configure/group-skipped-message.png" alt-text="Screenshot that shows a group being skipped due to EntityTypeNotSupported." lightbox="./media/cross-tenant-synchronization-configure/group-skipped-messag.png":::
+
+**Cause**
+
+This message likely indicates that group synchronization is not enabled in the target tenant.
+
+**Solution**
+
+In the target tenant, make sure the **Allow group synchronization into this tenant** checkbox is selected. For more information, see [Step 2: Enable user or group synchronization in the target tenant](#step-2-enable-user-or-group-synchronization-in-the-target-tenant).
+
 #### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
 
 Users in scope fail to provision. The provisioning logs details include the following error message:
