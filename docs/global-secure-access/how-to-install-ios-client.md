@@ -7,7 +7,6 @@ ms.topic: how-to
 ms.date: 10/13/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: dougeby
 ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
 

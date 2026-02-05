@@ -726,6 +726,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/monitoring-health/recommendation-migrate-from-adal-to-msal.md",
+      "redirect_url": "/entra/identity/monitoring-health/overview-recommendations",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-health-alert-emails.md",
       "redirect_url": "/entra/identity/monitoring-health/howto-configure-health-alert-notifications",
       "redirect_document_id": false
@@ -3083,6 +3088,11 @@
     {
       "source_path": "docs/identity/hybrid/connect/four-steps.md",
       "redirect_url": "/entra/identity/hybrid/whatis-hybrid-identity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/enterprise-apps/deactivate-application-portal.md",
+      "redirect_url": "/entra/identity/enterprise-apps/deactivate-app-registration",
       "redirect_document_id": false
     }
   ]

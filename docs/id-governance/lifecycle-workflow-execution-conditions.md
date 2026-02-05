@@ -3,7 +3,6 @@ title: Lifecycle workflow execution conditions and scheduling
 description: Conceptual article about Lifecycle workflows execution conditions.
 author: owinfreyATL
 ms.author: owinfrey
-manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.workload: identity

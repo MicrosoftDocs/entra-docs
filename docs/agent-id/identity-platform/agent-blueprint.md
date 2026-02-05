@@ -4,7 +4,6 @@ description: Understand agent identity blueprints, how agents are defined, and h
 titleSuffix: Microsoft Entra Agent ID
 author: SHERMANOUKO
 ms.author: shermanouko
-manager: pmwongera
 ms.date: 11/04/2025
 ms.custom: agent-id-ignite
 ms.service: entra-id

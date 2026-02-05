@@ -7,8 +7,8 @@ ms.subservice: conditional-access
 ms.topic: concept-article
 ms.date: 01/26/2026
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: lhuangnorth
 ms.custom:
@@ -90,7 +90,7 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 - Microsoft 365 Defender portal
 - Microsoft Entra admin center
 - Microsoft Intune admin center
-- Microsoft Purview compliance portal
+- Microsoft Purview portal
 - Microsoft Teams admin center
 
 We're continually adding more administrative portals to the list.
@@ -173,7 +173,7 @@ In user sign-in flows where client applications request only the scopes listed a
 
 In the following example, the tenant has a Conditional Access policy with the following details:
 - Targeting All users and All resources
-- Resource exclusions for a custom enterprise application and Exchange Online
+- Resource exclusions for a confidential client application and Exchange Online
 - MFA is configured as the grant control
 
 #### Example scenarios
@@ -182,15 +182,15 @@ In the following example, the tenant has a Conditional Access policy with the fo
 |---|---|---|
 | A user signs into VSCode desktop client, which requests openid and profile scopes. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
 | A user signs in using Azure CLI, which requests only `User.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
-| A user signs in through a custom enterprise application (excluded from the policy) that requests only `User.Read` and `People.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
+| A user signs in through a confidential client application (excluded from the policy) that requests only `User.Read` and `People.Read`. | **Before**: User not prompted for MFA</br>**After**: User is prompted for MFA | Conditional Access is now evaluated using Windows Azure Active Directory as the enforcement audience. |
 
-There is no change in behavior when an application requests a scope beyond those listed previously, as illustrated in the following examples.
+There is no change in behavior when a client application requests a scope beyond those listed previously, as illustrated in the following examples.
 
 #### Example scenarios
 
 | Example scenario | User impact | Conditional Access evaluation |
 |---|---|---|
-| A user signs in to a custom enterprise application (excluded from the policy) that requests offline_access and SharePoint access (`Files.Read`). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
+| A user signs in to a confidential client application (excluded from the policy) that requests offline_access and SharePoint access (`Files.Read`). | No change in behavior | Conditional Access continues to be enforced based on the SharePoint resource. |
 | A user signs in to the OneDrive desktop sync client. OneDrive requests offline_access and Exchange Online access (`Mail.Read`). | No change in behavior | Conditional Access is not enforced because Exchange Online is excluded from the policy. |
 
 Most applications request scopes beyond the previously listed scopes and are already subject to Conditional Access enforcement, unless the application is explicitly excluded from the policy. In such cases, there is no change in behavior.  

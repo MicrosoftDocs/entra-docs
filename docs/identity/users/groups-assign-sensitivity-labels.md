@@ -14,7 +14,7 @@ ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID
 
-Microsoft Entra ID supports applying [sensitivity labels](/purview/sensitivity-labels) to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](/purview/purview-portal) or the [Microsoft Purview compliance portal](/purview/purview-compliance-portal) and the labels are configured for groups and sites. 
+Microsoft Entra ID supports applying [sensitivity labels](/purview/sensitivity-labels) to Microsoft 365 groups when those labels are published in the [Microsoft Purview portal](/purview/purview-portal) and the labels are configured for groups and sites. 
 
 Sensitivity labels can be applied to groups across apps and services such as Outlook, Microsoft Teams, and SharePoint. For more information, see [Support for sensitivity labels](/purview/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels) from the Purview documentation.
 
@@ -193,7 +193,7 @@ The sensitivity label option appears for groups only when all the following cond
 
 1. The organization has an active Microsoft Entra ID P1 license.
 1. The feature is enabled and `EnableMIPLabels` is set to **True** in the Microsoft Graph PowerShell module.
-1. The sensitivity labels are published in the Microsoft Purview portal or the Microsoft Purview compliance portal for this Microsoft Entra organization.
+1. The sensitivity labels are published in the Microsoft Purview portal or the Microsoft Purview portal for this Microsoft Entra organization.
 1. Labels are synchronized to Microsoft Entra ID with the `Execute-AzureAdLabelSync` cmdlet in the Security & Compliance PowerShell module. It can take up to 24 hours after synchronization for the label to be available to Microsoft Entra ID.
 1. The [sensitivity label scope](/purview/sensitivity-labels?preserve-view=true&view=o365-worldwide#label-scopes) must be configured for Groups & Sites.
 1. The group is a Microsoft 365 group.
@@ -207,7 +207,7 @@ Make sure all the preceding conditions are met to assign labels to a group.
 
 If the label you're looking for isn't in the list:
 
-- The label might not be published in the Microsoft Purview portal or the Microsoft Purview compliance portal. Also, the label might no longer be published. Check with your administrator for more information.
+- The label might not be published in the Microsoft Purview portal. Also, the label might no longer be published. Check with your administrator for more information.
 - The label might be published, but it isn't available to the user who is signed in. Check with your administrator for more information on how to get access to the label.
 
 ### Change the label on a group
@@ -222,7 +222,7 @@ Labels can be swapped at any time by using the same steps as assigning a label t
 
 ### Group setting changes to published labels aren't updated on the groups
 
-When you make changes to group settings for a published label in the [Microsoft Purview portal](https://purview.microsoft.com/) or the [Microsoft Purview compliance portal](https://compliance.microsoft.com), those policy changes aren't automatically applied on the labeled groups. After the sensitivity label is published and applied to groups, Microsoft recommends that you don't change the group settings for the label in the portal.
+When you make changes to group settings for a published label in the [Microsoft Purview portal](https://purview.microsoft.com/), those policy changes aren't automatically applied on the labeled groups. After the sensitivity label is published and applied to groups, Microsoft recommends that you don't change the group settings for the label in the portal.
 
 If you must make a change, use a [PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1) to manually apply updates to the affected groups. This method makes sure that all existing groups enforce the new setting.
 

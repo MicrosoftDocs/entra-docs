@@ -2,7 +2,6 @@
 title: View, add, and remove assignments for an access package in entitlement management - Microsoft Entra
 description: Learn how to view, add, and remove assignments for an access package in entitlement management.
 author: owinfreyATL
-manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -98,7 +97,7 @@ In some cases, you might want to directly assign specific identities to an acces
 1. Once you select a policy, you are able to add users to select the users you want to assign this access package to, under the chosen policy.
 
     > [!NOTE]
-    > If you select a policy with questions, you can only assign one user at a time.
+    > If you select a policy with questions, you can only assign one user at a time. If the external user already exists in the directory, use the **Identities in my directory** option and select the existing user. Use the **External user** option when the user doesn't exist in the directory.
 
 1. Set the date and time you want the selected users' assignment to start and end. If an end date isn't provided, the policy's lifecycle settings are used.
 

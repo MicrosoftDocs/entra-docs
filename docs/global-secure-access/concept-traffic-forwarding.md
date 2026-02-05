@@ -3,8 +3,7 @@ title: Global Secure Access traffic forwarding profiles
 description: Learn about how traffic forwarding profiles for Global Secure Access streamline how you route traffic through your network.
 author: kenwith
 ms.author: kenwith
-manager: dougeby
-ms.topic: article
+ms.topic: concept-article
 ms.date: 01/12/2026
 ms.service: global-secure-access
 ms.reviewer: katabish

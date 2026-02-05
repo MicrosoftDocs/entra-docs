@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice:
 
 author: owinfreyATL
-manager: dougeby
 
 
 ms.topic: concept-article

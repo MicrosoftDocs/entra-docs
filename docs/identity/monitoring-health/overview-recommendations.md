@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: monitoring-health
-ms.date: 08/22/2025
+ms.date: 02/02/2026
 ms.author: sarahlipsey
 ms.reviewer: jadedsouza 
 ms.custom: sfi-ga-nochange
@@ -62,7 +62,6 @@ The recommendations listed in the following table are currently available in pub
 | Group Policy Object (GPO) assigns unprivileged identities to local groups with elevated privileges | Users | Preview | Yes | N/A |
 | [Migrate applications from AD FS to Microsoft Entra ID](recommendation-migrate-apps-from-adfs-to-azure-ad.md) | Applications | Generally available | No | Application Administrator, Authentication Administrator Hybrid Identity Administrator |
 | [Migrate applications from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | Preview | No | Application Administrator |
-| [Migrate from ADAL to MSAL](recommendation-migrate-from-adal-to-msal.md) | Applications | Generally available | No | Application Administrator |
 | [Migrate from MFA server to Microsoft Entra MFA](recommendation-migrate-to-microsoft-entra-mfa.md) | Tenant | Generally Available | No | Global Administrator |
 | [Migrate service principals from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | Preview | No | Application Administrator |
 | [Migrate to Microsoft Authenticator](recommendation-migrate-to-authenticator.md) | Users | Preview | No | Global Administrator | 

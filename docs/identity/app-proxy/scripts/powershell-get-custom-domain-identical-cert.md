@@ -2,7 +2,6 @@
 title: PowerShell sample - Microsoft Entra application proxy apps with identical certs
 description: PowerShell example that lists all Microsoft Entra application proxy applications that are published with the identical certificate.
 author: kenwith
-manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: 

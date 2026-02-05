@@ -9,7 +9,6 @@ ms.date: 11/07/2025
 
 ms.author: justinha
 author: mepples21
-manager: femila
 ms.reviewer: miepping
 
 ms.collection: M365-identity-device-management

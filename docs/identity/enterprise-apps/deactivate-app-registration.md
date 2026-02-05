@@ -1,21 +1,21 @@
 ---
-title: Deactivate an enterprise application
-description: Learn how to deactivate an enterprise application in Microsoft Entra ID to prevent token issuance while preserving application configuration.
+title: Deactivate an app registration
+description: Learn how to deactivate an app registration in Microsoft Entra ID to prevent token issuance while preserving application configuration.
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-ms.date: 11/25/2025
+ms.date: 2/4/2026
 ms.author: jomondi
 ms.reviewer: ariels
 ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
 #Customer intent: As an IT admin, I want to immediately stop a suspicious or unused application from accessing resources in my organization while keeping all its settings intact so I can investigate potential security issues and easily restore access if needed.
 ---
 
-# Deactivate an enterprise application
+# Deactivate an app registration
 
-Deactivating an enterprise application provides a reversible way to prevent the application from accessing protected resources without permanently removing it from your tenant. When you deactivate an application, it immediately stops receiving new access tokens, but existing tokens remain valid until they expire. This approach is useful for security investigations, temporary suspension of suspicious applications, or when you need to maintain application configuration data.
+Deactivating an app registration provides a reversible way to prevent the application from accessing protected resources without permanently removing it from your tenant. When you deactivate an application, it immediately stops receiving new access tokens, but existing tokens remain valid until they expire. This approach is useful for security investigations, temporary suspension of suspicious applications, or when you need to maintain application configuration data.
 
 Unlike permanently deleting an application, deactivation preserves all application metadata, permissions, and configuration settings, making it easy to reactivate the application if needed. The application remains visible in your tenant's enterprise applications list, but users can't sign in and no new tokens are issued.
 
@@ -45,10 +45,10 @@ When an application is deactivated, the following behavior occurs:
 - Preserved elements:
     - Existing access tokens remain valid until their configured lifetime expires
     - Application configuration, permissions, and metadata are preserved
-    - Application remains visible in Enterprise applications list
-    - Service principal object is maintained in the tenant
+    - Application remains visible in Enterprise applications list with deactivated state
+    - Service principal object is maintained in the tenant with "isDisabled": true
 
-When users attempt to sign in to a deactivated application, they receive an error message indicating the application has been disabled by its owner. This is different from other error messages like invalid credentials or access denied.
+When users attempt to sign in to a deactivated application, they receive an error message indicating the application has been disabled by its owner: [AADSTS7000112 - Application is disabled](/troubleshoot/entra/entra-id/app-integration/error-code-aadsts7000112-application-is-disabled). This is different from other error messages like invalid credentials or access denied.
 
 ### Comparison with other options
 
@@ -70,18 +70,20 @@ The following table outlines the different approaches in more detail:
 
 ## Deactivate an application
 
-To deactivate an application using Microsoft Graph API, you need at least **[Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)** role.
-
-1. Get the application ID if you don't have it
-
-    ```http
-    GET https://graph.microsoft.com/v1.0/applications?$filter=displayName eq 'Your App Name'
-    ```
+To deactivate an application object using Microsoft Graph API, you need at least **[Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator)** role.
 
 1. Deactivate the application
 
     ```http
-    PATCH https://graph.microsoft.com/beta/applications/{application-id}
+    PATCH https://graph.microsoft.com/beta/applications/{applicationObjectId}
+    Content-Type: application/json
+
+    {
+        "isDisabled": true
+    }
+    ```
+    ```http
+    PATCH https://graph.microsoft.com/beta/applications(appId='{appId}')
     Content-Type: application/json
 
     {
@@ -92,7 +94,13 @@ To deactivate an application using Microsoft Graph API, you need at least **[Clo
 1. Verify deactivation
  
     ```http
-    GET https://graph.microsoft.com/beta/applications/{application-id}
+    GET https://graph.microsoft.com/beta/applications/{applicationObjectId}
+    ```
+
+    The response includes `"isDisabled": true`.
+
+   ```http
+    GET https://graph.microsoft.com/beta/applications(appId='{appId}')
     ```
 
     The response includes `"isDisabled": true`.
@@ -108,7 +116,7 @@ To deactivate an application using Microsoft Graph API, you need at least **[Clo
 1. Get specific application status
 
     ```http
-    GET https://graph.microsoft.com/beta/applications/{application-id}?$select=displayName,isDisabled,appId
+    GET https://graph.microsoft.com/beta/applications/{applicationObjectId}?$select=displayName,isDisabled,appId
     ```
 
 ## Investigate deactivated applications
@@ -124,7 +132,18 @@ To reactivate an application using Microsoft Graph API, you need at least **[App
 1. Reactivate the application
 
     ```http
-    PATCH https://graph.microsoft.com/v1.0/applications/{application-id}
+    PATCH https://graph.microsoft.com/v1.0/applications/{applicationObjectId}
+    Content-Type: application/json
+
+    {
+        "isDisabled": false
+    }
+    ```
+    
+    OR
+
+    ```http
+    PATCH https://graph.microsoft.com/v1.0/applications(appId='{appId}')
     Content-Type: application/json
 
     {
@@ -135,7 +154,11 @@ To reactivate an application using Microsoft Graph API, you need at least **[App
 1. Verify reactivation
 
     ```http
-    GET https://graph.microsoft.com/v1.0/applications/{application-id}?$select=displayName,isDisabled
+    GET https://graph.microsoft.com/v1.0/applications/{applicationObjectId}?$select=displayName,isDisabled
+    ```
+
+    ```http
+    GET https://graph.microsoft.com/v1.0/applications(appId='{appId}')?$select=displayName,isDisabled
     ```
 
     The response shows `"isDisabled": false`.
@@ -148,5 +171,4 @@ Before deactivating the application, remove all owners from the application. Thi
 
 - [Delete an enterprise application](delete-application-portal.md) for permanent removal
 - [Disable user sign-in](disable-user-sign-in-portal.md) for tenant-specific blocking
-- [Restore an enterprise application](restore-application.md) from the recycle bin
 - [Monitor application usage](../monitoring-health/concept-audit-logs.md) with audit logs

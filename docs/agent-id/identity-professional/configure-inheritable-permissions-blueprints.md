@@ -2,7 +2,6 @@
 title: Configure inheritable permissions for agent identity blueprints
 description: Learn how to configure inheritable permissions for agent identity blueprints to automatically grant OAuth 2.0 delegated permission scopes to agent identities.
 author: omondiatieno
-manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 11/04/2025

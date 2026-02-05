@@ -41,9 +41,8 @@ Sensitivity labels on containers can restrict access to the container, but conte
 
 Team members who need to create sensitivity labels require permissions to:
 
-- Microsoft 365 Defender portal,
-- Microsoft Purview compliance portal, or
-- [Microsoft Purview compliance portal](/purview/microsoft-365-compliance-center?view=o365-worldwide&preserve-view=true)
+- Microsoft 365 Defender portal or
+- [Microsoft Purview portal](/purview/purview-portal?view=o365-worldwide&preserve-view=true)
 
 By default, [Global Administrators](../identity/role-based-access-control/permissions-reference.md#global-administrator) have access to admin centers and can provide access, without granting tenant Admin permissions. For this delegated limited admin access, add users to the following role groups:
 

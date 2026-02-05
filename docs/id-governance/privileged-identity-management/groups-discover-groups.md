@@ -2,7 +2,6 @@
 title: Bring groups into Privileged Identity Management
 description: Learn how to bring groups into Privileged Identity Management.
 author: barclayn
-manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
