@@ -1,13 +1,9 @@
 ---
 title: List Microsoft Entra private network connector groups for apps
 description: PowerShell example that lists all Microsoft Entra private network connector groups with the assigned applications.
-author: kenwith
-ms.service: entra-id
-ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
 ms.date: 05/01/2025
-ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
