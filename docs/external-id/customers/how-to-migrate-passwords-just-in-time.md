@@ -1049,7 +1049,7 @@ Content-type: application/json
 
 ## 5. Test and validate before deploying to production
 
-Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely.
+Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely. For more information on testing custom extensions, see [Test your custom authentication extension](../../identity-platform/custom-extension-tokenissuancestart-configuration.md#step-5-test-the-application).
 
 Consider the following testing checklist:
 
