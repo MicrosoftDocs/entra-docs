@@ -683,7 +683,7 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 
 Group is skipped from synchronization because EntityTypeNotSupported.
 
-:::image type="content" source="./media/cross-tenant-synchronization-configure/group-skipped-message.png" alt-text="Screenshot that shows a group being skipped due to EntityTypeNotSupported." lightbox="./media/cross-tenant-synchronization-configure/group-skipped-messag.png":::
+:::image type="content" source="./media/cross-tenant-synchronization-configure/group-skipped-message.png" alt-text="Screenshot that shows a group being skipped due to EntityTypeNotSupported." lightbox="./media/cross-tenant-synchronization-configure/group-skipped-message.png":::
 
 **Cause**
 
