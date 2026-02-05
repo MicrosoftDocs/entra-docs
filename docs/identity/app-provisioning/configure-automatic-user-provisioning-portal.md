@@ -1,7 +1,6 @@
 ---
 title: User provisioning management for enterprise apps in Microsoft Entra ID
 description: Learn how to manage user account provisioning for enterprise apps using the Microsoft Entra ID.
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.reviewer: arvinh

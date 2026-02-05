@@ -1,7 +1,6 @@
 ---
 title: Provision a User with Expression Builder
 description: Learn how to simplify user provisioning with Expression Builder, handle duplicate users, and transform user attributes for seamless integration. 
-ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 03/04/2025
 ---

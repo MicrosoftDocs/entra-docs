@@ -3,7 +3,6 @@ title: Provisioning insights workbook
 description: This article describes the Azure Monitor workbook for provisioning.
 ms.topic: concept-article
 ms.date: 04/09/2025
-ms.subservice: hybrid
 ms.custom: sfi-image-nochange
 ---
 

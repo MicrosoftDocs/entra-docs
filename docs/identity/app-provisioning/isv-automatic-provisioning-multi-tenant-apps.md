@@ -1,7 +1,6 @@
 ---
 title: Enable automatic user provisioning for multitenant applications in Microsoft Entra ID
 description: A guide for independent software vendors for enabling automated provisioning in Microsoft Entra ID
-ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 03/04/2025
 ms.reviewer: zhchia, arvinh

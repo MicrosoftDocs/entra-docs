@@ -3,7 +3,6 @@ title: 'Troubleshooting issues with provisioning to on-premises applications'
 description: Describes how to troubleshoot various issues you might encounter when you install and use the ECMA Connector Host.
 ms.topic: troubleshooting
 ms.date: 04/09/2025
-ms.subservice: hybrid
 ms.collection: M365-identity-device-management
 ---
 

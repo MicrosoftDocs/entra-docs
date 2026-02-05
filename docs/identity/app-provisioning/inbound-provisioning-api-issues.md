@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot issues with inbound provisioning API
 description: This article provides potential issues and resolutions that guide you in how to troubleshoot issues with the inbound provisioning API.
-ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.date: 03/04/2025
 ms.reviewer: chmutali

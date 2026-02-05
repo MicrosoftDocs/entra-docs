@@ -1,7 +1,6 @@
 ---
 title: Grant access to inbound provisioning API
 description: Learn how to grant access to the inbound provisioning API.
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 07/24/2025
 ms.reviewer: cmmdesai

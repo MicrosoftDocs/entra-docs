@@ -1,7 +1,6 @@
 ---
 title: Index the employeeId attribute in Active Directory to improve provisioning performance
 description: Learn how to get index the employeeId attribute to automate user account creation and updates from Inbound Provisioning to Active Directory
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 07/24/2025
 ms.reviewer: cmmdesai

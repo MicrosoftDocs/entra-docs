@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot user creation issues with HR provisioning
 description: Learn how to troubleshoot user creation issues with HR provisioning
-ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.date: 03/04/2025
 ms.reviewer: chmutali

@@ -1,7 +1,6 @@
 ---
 title: Understand how expression builder works with Application Provisioning in Microsoft Entra ID
 description: Understand how expression builder works with Application Provisioning in Microsoft Entra ID.
-ms.subservice: app-provisioning
 ms.topic: concept-article
 ms.date: 03/04/2025
 ms.reviewer: arvinh

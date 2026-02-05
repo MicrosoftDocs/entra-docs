@@ -1,7 +1,6 @@
 ---
 title: What is automated app user provisioning in Microsoft Entra ID
 description: An introduction to how you can use Microsoft Entra ID to automatically provision, deprovision, and continuously update user accounts across multiple third-party applications.
-ms.subservice: app-provisioning
 ms.topic: overview
 ms.date: 04/09/2025
 ms.reviewer: arvinh

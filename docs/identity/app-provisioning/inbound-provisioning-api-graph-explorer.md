@@ -1,7 +1,6 @@
 ---
 title: Quickstart API-driven inbound provisioning with Graph Explorer
 description: Learn how to get started quickly with API-driven inbound provisioning using Graph Explorer
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 07/24/2025
 ms.reviewer: cmmdesai

@@ -1,7 +1,6 @@
 ---
 title: API-driven inbound provisioning concepts
 description: An overview of API-driven inbound provisioning.
-ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 07/24/2025
 ms.reviewer: chmutali

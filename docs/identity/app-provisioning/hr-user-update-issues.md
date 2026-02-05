@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot user update issues with HR provisioning
 description: Learn how to troubleshoot user update issues with HR provisioning
-ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.date: 03/26/2025
 ms.reviewer: chmutali

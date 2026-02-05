@@ -1,7 +1,6 @@
 ---
 title: Enable accidental deletions prevention in the Microsoft Entra provisioning service
 description: Enable accidental deletions prevention in the Microsoft Entra provisioning service for applications and cross-tenant synchronization.
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.reviewer: arvinh

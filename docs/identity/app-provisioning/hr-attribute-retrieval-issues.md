@@ -1,7 +1,6 @@
 ---
 title: Troubleshoot attribute retrieval issues with HR provisioning
 description: Learn how to troubleshoot attribute retrieval issues with HR provisioning
-ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
 ms.date: 03/04/2025

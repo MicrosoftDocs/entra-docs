@@ -1,7 +1,6 @@
 ---
 title: Retrieve pronoun information from Workday
 description: Learn how to retrieve pronoun information from Workday
-ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 03/04/2025
 ms.reviewer: arvinh, chmutali

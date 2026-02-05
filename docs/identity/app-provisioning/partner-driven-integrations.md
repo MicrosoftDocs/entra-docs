@@ -3,7 +3,6 @@ title: 'Use partner driven integrations to provision accounts into all your appl
 description: Use partner driven integrations to provision accounts into all your applications.
 ms.topic: overview
 ms.date: 07/24/2025
-ms.subservice: hybrid
 ms.collection: M365-identity-device-management
 ---
 # Partner-driven provisioning integrations
