@@ -1,7 +1,7 @@
 ---
 title: Just-In-Time Password Migration to Microsoft Entra External ID (Preview)
 description: Learn how to migrate passwords from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
-
+ai-usage: ai-assisted
 author: garrodonnell
 manager: dougeby
 ms.service: entra-external-id
@@ -218,6 +218,11 @@ Generate an encryption certificate in Azure Key Vault. The public key is configu
 ### 2.2 Host your custom extension
 
 Create an Azure Function that validates user credentials against your legacy identity provider.
+
+> [!IMPORTANT]
+> The customer-hosted endpoint configured for the OnPasswordSubmit custom authentication extension must be a customer-managed HTTPS endpoint, typically implemented as an Azure Function. This endpoint is invoked by Microsoft Entra External ID during sign-in to validate the user's password against the legacy identity system and return the migration result.
+>
+> The URL must not point to Microsoft Graph, a Microsoft Entra service endpoint, or the legacy identity provider's interactive sign-in URL. It must reference the Function App function endpoint that implements your validation logic. You're responsible for securing this endpoint.
 
 #### 2.2.1 Request schema
 
@@ -862,6 +867,19 @@ After you configure your function code, deploy it to Azure using Visual Studio 2
 1. On the **Publish** page, select **Publish**.
 1. Wait for the deployment to complete. A "Publish succeeded" message appears when the deployment is finished.
 
+#### On-premises attributes and account resolution
+
+On-premises attributes appear in the External ID user schema because External ID uses the shared Microsoft Entra user model. In External ID, these attributes are read-only and aren't used for identity matching, joining, or write-back during JIT password migration.
+
+In the JIT flow, External ID resolves the user before the OnPasswordSubmit event fires, using the configured sign-in identifiers (for example, UPN or email). The custom authentication extension then runs in the context of the resolved user, without any dependency on on-premises attributes.
+
+#### Security and deployment requirements
+
+> [!NOTE]
+> Deploy all customer-hosted components involved in JIT password migration (for example, Azure Functions and related resources) in a secure, dedicated identity subscription with strictly limited RBAC access.
+
+Because the OnPasswordSubmit extension executes customer-managed logic during authentication, you're responsible for restricting administrative access and preventing unauthorized modification of code or configuration. Improperly securing these components can compromise the authentication flow and user accounts.
+
 ## 3. Configure custom extension application
 
 Create an application registration to represent your custom authentication extension and configure it with the encryption certificate.
@@ -1054,6 +1072,20 @@ Consider the following testing checklist:
 - **Test different response actions**: Verify that all response actions (MigratePassword, UpdatePassword, Retry, Block) work as expected.
 - **Monitor Azure Function logs**: Review logs to identify any errors or issues during the authentication process.
 - **Validate encryption**: Ensure that passwords are encrypted end-to-end and never exposed in logs or error messages.
+
+## Frequently asked questions
+
+### Which URL should I use for the OnPasswordSubmit custom authentication extension?
+
+Use a customer-hosted HTTPS endpoint, typically an Azure Function, that validates the password against the legacy identity system. The URL must not reference Microsoft Graph, a Microsoft Entra service, or the legacy identity provider's interactive sign-in endpoint. It must point to your Function App function endpoint that implements the validation logic.
+
+### Why do on-premises attributes appear in the user schema?
+
+External ID uses the shared Microsoft Entra user model, which includes on-premises attributes. In External ID, these attributes are read-only and aren't used for identity matching or write-back during JIT password migration. User resolution occurs earlier in the sign-in flow using configured sign-in identifiers such as UPN or email.
+
+### Where should I deploy JIT migration components?
+
+Deploy JIT migration components in a secure identity subscription with limited RBAC. Tightly control administrative access to prevent unauthorized changes to customer-hosted authentication logic. This separation helps protect the authentication flow and user accounts from compromise.
 
 ## Next steps
 
