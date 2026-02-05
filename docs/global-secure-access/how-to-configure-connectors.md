@@ -4,7 +4,7 @@ description: Learn how to configure Microsoft Entra private network connectors f
 author: kenwith
 ms.author: kenwith
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 02/04/2026
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -112,7 +112,7 @@ To enable TLS 1.2:
 - Optimize performance between the connector and the application. Physically locate the connector server close to the application servers. For more information, see [Optimize traffic flow with Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 - Make sure the connector server and the web application servers are in the same Active Directory domain or span trusting domains. Having the servers in the same domain or trusting domains is a requirement for using single sign-on (SSO) with integrated Windows authentication (IWA) and Kerberos Constrained Delegation (KCD). If the connector server and web application servers are in different Active Directory domains, use resource-based delegation for single sign-on.
 - Consider [performance and scalability](concept-connectors.md#performance-and-scalability) of your connector deployment, including [extending the TCP and UDP ephemeral ports](concept-connectors.md#expanding-ephemeral-port-range) on your connector server. See [Understand the Microsoft Entra private network connector](concept-connectors.md) for more information.
-- Consider creating a [performance baseline](https://learn.microsoft.com/troubleshoot/windows-server/performance/troubleshoot-performance-problems-in-windows) for your private network connectors.
+- Consider creating a [performance baseline](/troubleshoot/windows-server/performance/troubleshoot-performance-problems-in-windows) for your private network connectors.
 
 ### Prepare your on-premises environment
 
