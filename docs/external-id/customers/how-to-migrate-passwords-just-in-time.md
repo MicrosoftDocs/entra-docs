@@ -867,19 +867,6 @@ After you configure your function code, deploy it to Azure using Visual Studio 2
 1. On the **Publish** page, select **Publish**.
 1. Wait for the deployment to complete. A "Publish succeeded" message appears when the deployment is finished.
 
-#### On-premises attributes and account resolution
-
-On-premises attributes appear in the External ID user schema because External ID uses the shared Microsoft Entra user model. In External ID, these attributes are read-only and aren't used for identity matching, joining, or write-back during JIT password migration.
-
-In the JIT flow, External ID resolves the user before the OnPasswordSubmit event fires, using the configured sign-in identifiers (for example, UPN or email). The custom authentication extension then runs in the context of the resolved user, without any dependency on on-premises attributes.
-
-#### Security and deployment requirements
-
-> [!NOTE]
-> Deploy all customer-hosted components involved in JIT password migration (for example, Azure Functions and related resources) in a secure, dedicated identity subscription with strictly limited RBAC access.
-
-Because the OnPasswordSubmit extension executes customer-managed logic during authentication, you're responsible for restricting administrative access and preventing unauthorized modification of code or configuration. Improperly securing these components can compromise the authentication flow and user accounts.
-
 ## 3. Configure custom extension application
 
 Create an application registration to represent your custom authentication extension and configure it with the encryption certificate.
