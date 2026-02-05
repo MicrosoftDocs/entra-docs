@@ -67,6 +67,14 @@
         "docs/**/*.md": "show_learn_banner",
         "docs/**/*.yml": "show_learn_banner"
       },
+      "author": {
+        "identity/app-proxy/**/*.md": "kenwith",
+        "identity/app-proxy**/*.yml": "kenwith"
+      },
+      "ms.author": {
+        "identity/app-proxy/**/*.md": "kenwith",
+        "identity/app-proxy**/*.yml": "kenwith"
+      },
       "manager": {
         "architecture/*.md": "dougeby",
         "architecture/*.yml": "dougeby",

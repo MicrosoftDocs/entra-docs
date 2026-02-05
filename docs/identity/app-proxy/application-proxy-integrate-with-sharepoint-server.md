@@ -1,12 +1,10 @@
 ---
 title: Enable remote access to SharePoint - Microsoft Entra application proxy
 description: Covers the basics about how to integrate on-premises SharePoint Server with Microsoft Entra application proxy.
-author: kenwith
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
 ms.date: 12/12/2025
-ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
 ---

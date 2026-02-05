@@ -1,13 +1,11 @@
 ---
 title: PowerShell sample - List Microsoft Entra application proxy apps using wildcards
 description: PowerShell example that lists all Microsoft Entra application proxy applications that are using wildcards.
-author: kenwith
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
 ms.date: 05/01/2025
-ms.author: kenwith
 ms.reviewer: ashishj
 ---
 
