@@ -2,7 +2,6 @@
 title: Include file
 description: Include file
 author: barclayn
-manager: pmwongera
 ms.service: entra-id
 ms.subservice: privileged-identity-management
 ms.topic: include

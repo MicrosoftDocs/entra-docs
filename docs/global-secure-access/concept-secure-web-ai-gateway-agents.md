@@ -7,7 +7,6 @@ ms.reviwer: fgomulka
 ms.service: global-secure-access
 ms.topic: concept-article   
 ms.date: 11/03/2025
-manager: dougeby
 ai-usage: ai-assisted
 
 #Customer intent: As an IT administrator, I want to understand how the Secure Web and AI Gateway for agents works in Global Secure Access so that I can effectively implement and manage it within my organization.

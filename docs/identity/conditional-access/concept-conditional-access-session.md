@@ -7,8 +7,8 @@ ms.subservice: conditional-access
 ms.topic: article
 ms.date: 09/23/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: joflore
 ---
@@ -17,6 +17,11 @@ ms.reviewer: joflore
 In a Conditional Access policy, an admin can use session controls to enable limited experiences in specific cloud applications.
 
 ![Screenshot of a Conditional Access policy with a grant control requiring multifactor authentication.](./media/concept-conditional-access-session/conditional-access-session.png)
+
+In a Microsoft Entra External ID [external tenant](/entra/external-id/customers/concept-supported-features-customers#conditional-access), you can use the following session controls:
+
+- Sign-in frequency
+- Persistent browser session
 
 ## Application enforced restrictions
 

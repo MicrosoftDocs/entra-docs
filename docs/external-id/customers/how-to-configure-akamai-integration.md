@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 10/21/2025
+ms.date: 01/29/2026
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -109,17 +109,6 @@ Create a Canonical Name (CNAME) record in your DNS, such as `login.domain.com`, 
 
 ---
 
-### Grant access to the Akamai API to perform actions
-
-Create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`). You reuse these values later in the setup.
-
-Additionally, update the **API restrictions** for the actions to the appropriate access level shown in the following table:
-
-| Title | Description | Access level |
-|----|----|----|
-| [Microsoft Edge Diagnostics](https://developer.akamai.com/) | Microsoft Edge Diagnostics | READ-WRITE |
-| [Property Manager (PAPI)](https://developer.akamai.com/api/luna/papi/overview.html) | Property Manager (PAPI). PAPI requires access to Microsoft Edge Hostnames. Edit your authorizations to add HAPI to your API Client. | READ-ONLY |
-
 ## Verify Akamai WAF in External ID
 
 After completing the configuration steps, verify that Akamai WAF is protecting your external tenant by connecting the authentication credentials to the WAF configuration.
@@ -136,8 +125,18 @@ After completing the configuration steps, verify that Akamai WAF is protecting y
 
    :::image type="content" source="media\how-to-configure-akamai-integration\choose-waf-provider.png" alt-text="Screenshot of the choose WAF provider page.":::
 
-1. Create an Akamai account. If you don't have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public). Then return here to complete the setup.
-1. Under **Configure Akamai WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration, add the following information:
+6. Create an Akamai account. If you don't have an account yet, create and purchase one in the [Security Store](https://securitystore.microsoft.com/solutions/akamai-technologies.akamai_wapplusion_public). 
+7. To grant access to the Akamai API to perform actions, create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`). You reuse these values later in the setup process.
+
+Additionally, update the **API restrictions** for the actions to the appropriate access level shown in the following table:
+
+| Title | Description | Access level |
+|----|----|----|
+| [Microsoft Edge Diagnostics](https://developer.akamai.com/) | Microsoft Edge Diagnostics | READ-WRITE |
+| [Property Manager (PAPI)](https://developer.akamai.com/api/luna/papi/overview.html) | Property Manager (PAPI). PAPI requires access to Microsoft Edge Hostnames. Edit your authorizations to add HAPI to your API Client. | READ-ONLY |
+
+8. Return to the Microsoft Entra admin center to complete the setup.
+9. Under **Configure Akamai WAF**, you can select an existing configuration or create a new one. If you're creating a new configuration, add the following information:
     - **Configuration name**: A name for the WAF configuration.
     - **Host prefix**: The host prefix from your Akamai EdgeGrid API credentials.
     - **Client secret**: The client secret from your Akamai EdgeGrid API credentials.
@@ -146,7 +145,7 @@ After completing the configuration steps, verify that Akamai WAF is protecting y
 
   :::image type="content" source=" media\how-to-configure-akamai-integration\configure-akamai-provider.png" alt-text="Screenshot of the configure WAF provider page.":::
 
-8. Select **Next** to go to the next step.
+10. Select **Next** to go to the next step.
 
 ## Domain verification
 
@@ -173,7 +172,16 @@ This permission allows you to call `POST .../riskPrevention/webApplicationFirewa
 
 ## Step 1: Create Akamai WAF provider with the API
 
-Make sure that you have the API client you created in Akamai. This information is required so the backend can call Akamai on your behalf to pull and verify the WAF configuration.
+Make sure that you have the API client you created in Akamai. To grant access to the Akamai API to perform actions, create [EdgeGrid authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) and note all the generated information (`client_secret`, `host`, `access_token`, `client_token`).
+
+Additionally, update the **API restrictions** for the actions to the appropriate access level shown in the following table:
+
+| Title | Description | Access level |
+|----|----|----|
+| [Microsoft Edge Diagnostics](https://developer.akamai.com/) | Microsoft Edge Diagnostics | READ-WRITE |
+| [Property Manager (PAPI)](https://developer.akamai.com/api/luna/papi/overview.html) | Property Manager (PAPI). PAPI requires access to Microsoft Edge Hostnames. Edit your authorizations to add HAPI to your API Client. | READ-ONLY |
+
+This information is required so the backend can call Akamai on your behalf to pull and verify the WAF configuration.
 
 ### Request
 

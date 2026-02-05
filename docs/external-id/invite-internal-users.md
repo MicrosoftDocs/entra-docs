@@ -70,7 +70,7 @@ You'll need the [latest Microsoft Graph PowerShell module](/powershell/microsoft
 ```powershell
 Update-Module Microsoft.Graph
 Connect-MgGraph -Scopes "User.ReadWrite.All"
-Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
+$msGraphUser = Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
 New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapps.microsoft.com" -InvitedUser $msGraphUser
 ```
 

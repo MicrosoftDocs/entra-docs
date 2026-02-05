@@ -14,7 +14,7 @@ ms.reviewer: arvinh
 
 
 # Provisioning with the web services connector
-The following documentation provides information about the generic web services connector. Microsoft Entra ID Governance supports provisioning accounts into various applications such as [SAP ECC](on-premises-sap-connector-configure.md), Oracle eBusiness Suite, and line of business applications that expose REST or SOAP APIs. Customers that have previously deployed MIM to connect to these applications can easily switch to using the lightweight Microsoft Entra provisioning agent, while reusing the same web services connector built for MIM.  
+The following documentation provides information about the generic web services connector. Microsoft Entra ID Governance supports provisioning accounts into various applications such as [SAP ECC](on-premises-sap-connector-configure.md), Oracle E-Business Suite, and line of business applications that expose REST or SOAP APIs. Customers that have previously deployed MIM to connect to these applications can easily switch to using the lightweight Microsoft Entra provisioning agent, while reusing the same web services connector built for MIM.
 
 ## Capabilities supported
 
@@ -28,7 +28,7 @@ The web services connector implements the following functions:
 
 - SOAP Discovery: Allows the administrator to enter the WSDL path exposed by the target web service. Discovery produces a tree structure of the application's hosted web services with their inner  endpoints or operations along with the operation’s Meta data description. There's no limit to the number of discovery operations that can be done (step by step). The discovered operations  are used later to configure the flow of operations that implement the connector’s operations against the data-source (as Import/Export).
 
-- REST Discovery: Allows the administrator to enter REST service details, including Service Endpoint, Resource Path, Method and Parameter details. The REST services information is stored in the ```discovery.xml``` file of the ```wsconfig``` project. They'll be used later by the administrator to configure the Rest Web Service activity in the workflow.
+- REST Discovery: Allows the administrator to enter REST service details, including Service Endpoint, Resource Path, Method, and Parameter details. The REST services information is stored in the ```discovery.xml``` file of the ```wsconfig``` project. They'll be used later by the administrator to configure the Rest Web Service activity in the workflow.
 
 - Schema configuration: Allows the administrator to configure the schema. The schema configuration includes a listing of Object Types and attributes for a specific application. The administrator may choose the attributes are to be part of the schema.
 
@@ -40,13 +40,13 @@ The web services connector implements the following functions:
 
 The computer that runs the provisioning agent should have:
 
-- Connectivity to application's REST or SOAP endpoints, as well as with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
+- Connectivity to application's REST or SOAP endpoints, as well as with outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges), and [Azure](/azure/azure-portal/azure-portal-safelist-urls) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. 
 - At least 3 GB of RAM, to host a provisioning agent. 
 - .NET Framework 4.7.2 
 - A Windows Server 2016 or a later version. 
 
 Before configuring provisioning, ensure that you:
-- Expose the necessary SOAP or REST APIs in your application to create, update and delete users.
+- Expose the necessary SOAP or REST APIs in your application to create, update, and delete users.
 
 
 ### Cloud requirements
@@ -89,7 +89,7 @@ Before configuring provisioning, ensure that you:
 
 ## Configure the Microsoft Entra ECMA Connector Host certificate
 
- 1. On the Windows Server where the provisioning agent is installed, right select the **Microsoft ECMA2Host Configuration Wizard** from the start menu, and run as administrator.  Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
+ 1. On the Windows Server where the provisioning agent is installed, right select the **Microsoft ECMA2Host Configuration Wizard** from the start menu, and run as administrator. Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
  
  1. After the ECMA Connector Host Configuration starts, if it's the first time you've run the wizard, it asks you to create a certificate. Leave the default port **8585** and select **Generate certificate** to generate a certificate. The autogenerated certificate is self-signed as part of the trusted root. The certificate SAN matches the host name.
 
@@ -101,7 +101,7 @@ Before configuring provisioning, ensure that you:
 
 Before creating the web services connector configuration, you need to create a web services connector template and customize the template to meet the needs of your specific environment. Make sure that the ServiceName, EndpointName, and the OperationName are correct.
 
-You can find example templates and guidance on how to integrate with popular applications such as [SAP ECC 7.0](on-premises-sap-connector-configure.md) and Oracle eBusiness Suite in the [connectors download package](https://www.microsoft.com/download/details.aspx?id=51495).  You can learn how to create a new project for your data source in the Web Service Configuration Tool using the [workflow guide for SOAP](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws-soap).
+You can find example templates and guidance on how to integrate with popular applications such as [SAP ECC 7.0](on-premises-sap-connector-configure.md) and Oracle E-Business Suite in the [connectors download package](https://www.microsoft.com/download/details.aspx?id=51495). You can learn how to create a new project for your data source in the Web Service Configuration Tool using the [workflow guide for SOAP](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws-soap).
 
 For more information on how to configure a template to connect to your own application's REST or SOAP API, see [the Overview of the generic Web Service connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-ma-ws) in the MIM documentation library.
 
@@ -167,7 +167,7 @@ To connect the Microsoft Entra provisioning agent with your application, follow 
 
 1. On the **Partitions** page, select **Next**.
 
-1. On the **Run Profiles** page, keep the **Export** checkbox selected. Select the **Full import** checkbox and select **Next**. The **Export** run profile is used when the ECMA Connector host needs to send changes from Microsoft Entra ID to your application to insert, update and delete records. The **Full Import** run profile is used when the ECMA Connector host service starts, to read in the current content of your application.
+1. On the **Run Profiles** page, keep the **Export** checkbox selected. Select the **Full import** checkbox and select **Next**. The **Export** run profile is used when the ECMA Connector host needs to send changes from Microsoft Entra ID to your application to insert, update, and delete records. The **Full Import** run profile is used when the ECMA Connector host service starts, to read in the current content of your application.
 
     
     | Property | Value |
@@ -255,8 +255,8 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
 
      ![Screenshot that shows provisioning a user.](~/includes/media\app-provisioning-sql\configure-10.png)
 
- 5. To confirm that the schema of your application is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed.  If not, then wait several minutes for the schema to refresh, and then reload the page.  Once you see the attributes listed, then cancel from this page to return to the mappings list.
- 6. Now, select on the **userPrincipalName** PLACEHOLDER mapping.  This mapping is added by default when you first configure on-premises provisioning.  
+ 5. To confirm that the schema of your application is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed. If not, then wait several minutes for the schema to refresh, and then reload the page. Once you see the attributes listed, then cancel from this page to return to the mappings list.
+ 6. Now, select on the **userPrincipalName** PLACEHOLDER mapping. This mapping is added by default when you first configure on-premises provisioning.  
  
 :::image type="content" source="~/includes/media/app-provisioning-sql/configure-11.png" alt-text="Screenshot of placeholder." lightbox="~/includes/media/app-provisioning-sql/configure-11.png":::
 
@@ -270,7 +270,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
  7. Now select **Add New Mapping**, and repeat the next step for each mapping.
  
 
- 8. Specify the source and target attributes for each of the attributes your application requires.  For example,
+ 8. Specify the source and target attributes for each of the attributes your application requires. For example,
 
      
     | Microsoft Entra Attribute | ScimOnPremises Attribute | Matching precedence | Apply this mapping |

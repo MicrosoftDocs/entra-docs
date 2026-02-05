@@ -2,7 +2,6 @@
 title: Microsoft Entra private network connector version release notes
 description: This article lists all releases of Microsoft Entra private network connector and describes new features and fixed issues.
 author: kenwith
-manager: dougeby
 ms.service: global-secure-access
 ms.topic: reference
 ms.date: 02/21/2025
@@ -26,6 +25,16 @@ Here's a list of related resources:
 | How to enable application proxy                  | Prerequisites for enabling application proxy and installing and registering a connector are described in this [tutorial](../identity/app-proxy/application-proxy-add-on-premises-application.md). |
 | Understand Microsoft Entra private network connectors | Find out more about [connector management](../identity/app-proxy/application-proxy-connectors.md) and how connectors [autoupgrade](../identity/app-proxy/application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra private network connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
+
+## Version 1.5.4594.0
+ 
+### Release status
+ 
+December 19, 2025: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center.
+ 
+### New features and improvements
+ 
+- Enhanced private access sensor telemetry
 
 ## Version 1.5.4522.0
  

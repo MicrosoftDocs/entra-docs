@@ -2,7 +2,6 @@
 title: Troubleshoot application access
 description: Learn how to troubleshoot application access problems with the Global Secure Access Windows client.
 author: jricketts
-manager: martinco
 ms.author: jricketts
 ms.service: global-secure-access
 ms.topic: troubleshooting-general

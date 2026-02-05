@@ -6,7 +6,6 @@ ms.topic: article
 ms.date: 10/30/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: pmwongera
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---

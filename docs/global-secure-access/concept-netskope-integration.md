@@ -6,7 +6,6 @@ ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to   
 ms.date: 11/07/2025
-manager: dougeby
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
 

@@ -5,7 +5,6 @@ ms.service: entra-id-governance
 ms.subservice: 
 documentationcenter: ''
 author: owinfreyATL
-manager: femila
 editor: ''
 ms.topic: how-to
 ms.date: 04/09/2025

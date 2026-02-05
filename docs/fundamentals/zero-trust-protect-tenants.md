@@ -26,6 +26,9 @@ Even smaller organizations can protect their environments by implementing strict
 ### Protected actions are enabled for high-impact management tasks
 [!INCLUDE [21831](../includes/secure-recommendations/21831.md)]
 
+### Enable protected actions to secure Conditional Access policy creation and changes
+[!INCLUDE [21964](../includes/secure-recommendations/21964.md)]
+
 ### Guest access is limited to approved tenants
 [!INCLUDE [21874](../includes/secure-recommendations/21874.md)]
 
@@ -68,8 +71,14 @@ Even smaller organizations can protect their environments by implementing strict
 ### All entitlement management assignment policies that apply to external users require connected organizations 
 [!INCLUDE [21875](../includes/secure-recommendations/21875.md)]
 
+### All entitlement management assignment policies that apply to external users require approval
+[!INCLUDE [21879](../includes/secure-recommendations/21879.md)]
+
 ### All entitlement management packages that apply to guests have expirations or access reviews configured in their assignment policies
 [!INCLUDE [21929](../includes/secure-recommendations/21929.md)]
 
 ### Manage the local administrators on Microsoft Entra joined devices
 [!INCLUDE [21955](../includes/secure-recommendations/21955.md)]
+
+### Restrict nonadministrator users from recovering the BitLocker keys for their owned devices
+[!INCLUDE [21954](../includes/secure-recommendations/21954.md)]

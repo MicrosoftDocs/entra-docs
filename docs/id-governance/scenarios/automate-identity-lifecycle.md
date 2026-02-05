@@ -4,7 +4,6 @@ description: Describes overview of identity lifecycle management for Microsoft E
 ms.service: entra-id-governance
 ms.subservice:
 author: owinfreyATL
-manager: dougeby
 
 ms.workload: identity
 ms.topic: overview

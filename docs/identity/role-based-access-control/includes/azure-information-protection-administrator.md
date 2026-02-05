@@ -4,8 +4,10 @@ description: Azure Information Protection Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 07/09/2025
+ms.date: 01/26/2026
 ms.custom: include file
+author: FaithOmbongi
+ms.author: ombongifaith
 ---
 
 Users with this role have all permissions in the Azure Information Protection service. This role allows configuring labels for the Azure Information Protection policy, managing protection templates, and activating protection. This role doesn't grant any permissions in Microsoft Entra ID Protection, Privileged Identity Management, Monitor Microsoft 365 Service Health, Microsoft Defender XDR portal, or Microsoft Purview portal.

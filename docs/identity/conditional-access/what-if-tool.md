@@ -5,8 +5,8 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting-general
 ms.date: 11/06/2025
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: sarahlipsey
+author: shlipsey3
 manager: dougeby
 ms.reviewer: kvenkit
 ms.custom: sfi-image-nochange
