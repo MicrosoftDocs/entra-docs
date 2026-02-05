@@ -1,13 +1,9 @@
 ---
 title: Troubleshoot user creation issues with HR provisioning
 description: Learn how to troubleshoot user creation issues with HR provisioning
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.date: 03/04/2025
-ms.author: jfields
 ms.reviewer: chmutali
 ---
 

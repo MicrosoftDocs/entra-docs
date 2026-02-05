@@ -1,14 +1,9 @@
 ---
 title: 'SuccessFactors Expression Mapping Functions for Microsoft Entra ID Provisioning'
 description: A comprehensive guide to commonly used expression mapping functions when configuring SuccessFactors to Microsoft Entra ID user provisioning. These functions help transform and map data from SuccessFactors to create appropriate user attributes in Microsoft Entra ID.
-
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 08/12/2025
-ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 ---

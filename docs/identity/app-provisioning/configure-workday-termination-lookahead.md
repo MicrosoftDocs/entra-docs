@@ -1,13 +1,9 @@
 ---
 title: Configure Workday Termination Lookahead 
 description: Enable Termination Lookahead query for your Workday-to-AD/Microsoft Entra ID provisioning job.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 10/31/2025
-ms.author: jfields
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 

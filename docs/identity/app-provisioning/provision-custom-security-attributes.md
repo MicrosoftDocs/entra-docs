@@ -1,13 +1,9 @@
 ---
 title: Provision custom security attributes from HR sources
 description: Learn how to provision custom security attributes from HR sources.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.date: 06/24/2025
-ms.author: jfields
 ms.reviewer: chmutali
 ---
 
