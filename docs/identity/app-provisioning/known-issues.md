@@ -136,6 +136,10 @@ If you create an app registration, the corresponding service principal in enterp
 
 If a user and their manager are both in scope for provisioning, the service provisions the user and then updates the manager. If on day one the user is in scope and the manager is out of scope, we'll provision the user without the manager reference. When the manager comes into scope, the manager reference won't be updated until you restart provisioning and cause the service to reevaluate all the users again. 
 
+#### Gallery application doesn't support provisioning in US Government or 21Vianet (China) clouds
+
+The non-gallery / custom application is available for provisioning in the US Government / 21Vianet (China) clouds. A limited number of gallery applications are available in these environments.  
+
 ::: zone-end
 
 #### The provisioning interval is fixed
