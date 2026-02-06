@@ -107,6 +107,10 @@ In some organizations, guests might not be aware of their group memberships.
 
 1. Create a security group in Microsoft Entra ID with the guests as members, if a suitable group doesn't already exist. For example, you can create a group with a manually maintained membership of guests. Or, you can create a dynamic group with a name such as "Guests of Contoso" for users in the Contoso tenant who have the UserType attribute value of Guest. For efficiency, ensure the group is predominately guests - don't select a group that has member users, as member users don't need to be reviewed. Also, keep in mind that a guest user who is a member of the group can see the other members of the group.
 
+> [!NOTE]
+> Guest users who are members of Microsoft Entra groups can see other members of the same group when viewing **My profile > Groups I’m in**. This behavior is independent of access reviews.If your organization wants to prevent guest users from seeing other guest accounts, you can update **Guest user access restrictions** in Microsoft Entra ID. For example, you can restrict guests to view only their own profile information.
+> To configure this setting, go to **Entra ID > External Identities > External collaboration settings**, and adjust the **Guest user access restrictions** accordingly.
+
 2. To create an access review for that group, select the reviewers to be the members themselves. For more information, see [Create an access review of groups or applications](create-access-review.md).
 
 3. Ask each guest to review their own membership. By default, each guest who accepted an invitation receives an email from Microsoft Entra ID with a link to the access review in your organization's access panel. Microsoft Entra ID has instructions for guests on how to [review access to groups or applications](perform-access-review.md). Those guests who didn't accept their invite appears in the review results as "Not Notified".

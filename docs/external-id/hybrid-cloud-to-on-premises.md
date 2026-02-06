@@ -1,14 +1,8 @@
 ---
 title: Grant B2B users access to your on-premises apps
 description: Shows how to give cloud B2B users access to on premises apps with Microsoft Entra B2B collaboration.
-
-ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 12/10/2024
-
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 
 ms.collection: M365-identity-device-management
 

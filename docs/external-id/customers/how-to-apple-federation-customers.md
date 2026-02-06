@@ -1,13 +1,8 @@
 ---
 title: Add Apple for customer sign-in
 description: Learn how to add Apple as an identity provider for your external tenant.
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: how-to
 ms.date: 04/10/2025
-ms.author: cmulligan
 ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn how to add Apple as an identity provider for my external tenant.
 ---

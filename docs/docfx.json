@@ -50,7 +50,9 @@
       "feedback_system": "Standard",
       "feedback_github_repo": "MicrosoftDocs/entra-docs",
       "feedback_product_url": "https://feedback.azure.com/d365community/forum/79b1327d-d925-ec11-b6e6-000d3a4f06a4",
-      "searchScope": "Microsoft Entra"
+      "searchScope": "Microsoft Entra",
+      "author": "kenwith",
+      "ms.author": "kenwith"
     },
     "fileMetadata": {
       "feedback_product_url": {
@@ -71,31 +73,39 @@
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy**/*.yml": "kenwith",
         "identity/app-provisioning/**/*.md": "jenniferf-skc",
-        "identity/app-provisioning**/*.yml": "jenniferf-skc"
+        "identity/app-provisioning**/*.yml": "jenniferf-skc",
+        "external-id/**/*.md": "csmulligan",
+        "external-id/**/*.yml": "csmulligan"
       },
       "ms.author": {
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy**/*.yml": "kenwith",
         "identity/app-provisioning/**/*.md": "jfields",
-        "identity/app-provisioning**/*.yml": "jfields"
+        "identity/app-provisioning**/*.yml": "jfields",
+        "external-id/**/*.md": "cmulligan",
+        "external-id/**/*.yml": "cmulligan"
       },
       "ms.service": {
         "identity/app-proxy/**/*.md": "entra-id",
         "identity/app-proxy**/*.yml": "entra-id",
         "identity/app-provisioning/**/*.md": "entra-id",
-        "identity/app-provisioning**/*.yml": "entra-id"
+        "identity/app-provisioning**/*.yml": "entra-id",
+        "external-id/**/*.md": "entra-external-id",
+        "external-id/**/*.yml": "entra-external-id"
       },
       "ms.subservice": {
         "identity/app-proxy/**/*.md": "app-proxy",
         "identity/app-proxy**/*.yml": "app-proxy",
         "identity/app-provisioning/**/*.md": "app-provisioning",
-        "identity/app-provisioning**/*.yml": "app-provisioning"
+        "identity/app-provisioning**/*.yml": "app-provisioning",
+        "external-id/**/*.md": "external",
+        "external-id/**/*.yml": "external"
       },
       "manager": {
         "architecture/*.md": "dougeby",
         "architecture/*.yml": "dougeby",
-        "external-id/**/*.md": "pmwongera",
-        "external-id/**/*.yml": "pmwongera",
+        "external-id/**/*.md": "dougeby",
+        "external-id/**/*.yml": "dougeby",
         "fundamentals/*.md": "dougeby",
         "fundamentals/*.yml": "dougeby",
         "global-secure-access/*.md": "dougeby",
