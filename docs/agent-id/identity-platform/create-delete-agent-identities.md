@@ -27,14 +27,14 @@ Before creating agent identities, ensure you have:
 
 - [Understand agent identities](./agent-identities.md)
 - A configured agent identity blueprint (see [Create an agent blueprint](create-blueprint.md)). Record the agent identity blueprint app ID from the creation process
-- A web service or application (running locally or deployed to Azure) that host the agent identity creation logic
+- A web service or application (running locally or deployed to Azure) that host the agent identity creation logic <!--- I am stumped here - is this the blueprint app I created before? Or do I need to create a separate app registration? --->
 
 ## Get an access token using agent identity blueprint
 
 You use the agent identity blueprint to create each agent identity. Request an access token from Microsoft Entra using your agent identity blueprint:
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
-
+<!--- Should we also provide steps for people not using an Azure VM or whatever is needed for this to work? I honestly didn't even know how to get started here. --->
 When using a managed identity as a credential, you must first obtain an access token using your managed identity. Managed identity tokens can be requested from an IP address locally exposed in the compute environment. Refer to the [managed identity documentation for details](/entra/identity/managed-identities-azure-resources/).
 
 ```
@@ -73,7 +73,7 @@ dotnet add package Microsoft.Identity.Web
 ## Create an agent identity
 
 Using the access token acquired in the previous step, you can now create agent identities in your test tenant. Agent identity creation might occur in response to many different events or triggers, such as a user selecting a button to create a new agent.
-
+<!--- This is so vague. --->
 We recommend you create one agent identity for each agent, but you might choose a different approach based on your needs.
 
 ## [Microsoft Graph API](#tab/microsoft-graph-api)
