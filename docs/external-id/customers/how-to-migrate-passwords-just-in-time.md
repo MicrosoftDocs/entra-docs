@@ -1062,6 +1062,10 @@ Consider the following testing checklist:
 
 If you encounter issues during testing, see [Troubleshoot your custom authentication extension](../../identity-platform/custom-extension-troubleshoot.md) for guidance on common problems and solutions.
 
+## Known issues
+
+- **Password complexity mismatch**: When the source identity provider and External ID have different password complexity requirements, users might be forced into the Self-Service Password Reset (SSPR) flow even when their password is valid in the legacy system.
+
 ## Frequently asked questions
 
 ### Which URL should I use for the OnPasswordSubmit custom authentication extension?
