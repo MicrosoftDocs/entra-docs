@@ -1059,6 +1059,12 @@ Consider the following testing checklist:
 
 If you encounter issues during testing, see [Troubleshoot your custom authentication extension](../../identity-platform/custom-extension-troubleshoot.md) for guidance on common problems and solutions.
 
+## Known issues
+
+**Password complexity mismatch in Native Auth**: During a Native Auth flow, if a user enters a password that is correct according to the legacy identity provider but is considered weak by External ID password complexity standards an error is returned instead of redirecting to SSPR.
+ 
+This only affects users whose legacy passwords don't meet External ID requirements. Users with passwords that already meet External ID standards experience seamless migration without additional prompts.
+
 ## Frequently asked questions
 
 ### Which URL should I use for the OnPasswordSubmit custom authentication extension?
