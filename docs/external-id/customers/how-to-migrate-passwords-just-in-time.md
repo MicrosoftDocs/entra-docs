@@ -1,7 +1,7 @@
 ---
 title: Just-In-Time Password Migration to Microsoft Entra External ID (Preview)
 description: Learn how to migrate passwords from another identity provider to Microsoft Entra External ID using Just-In-Time (JIT) Migration.
-
+ai-usage: ai-assisted
 author: garrodonnell
 manager: dougeby
 ms.service: entra-external-id
@@ -218,6 +218,11 @@ Generate an encryption certificate in Azure Key Vault. The public key is configu
 ### 2.2 Host your custom extension
 
 Create an Azure Function that validates user credentials against your legacy identity provider.
+
+> [!IMPORTANT]
+> The customer-hosted endpoint configured for the OnPasswordSubmit custom authentication extension must be a customer-managed HTTPS endpoint, typically implemented as an Azure Function. This endpoint is invoked by Microsoft Entra External ID during sign-in to validate the user's password against the legacy identity system and return the migration result.
+>
+> The URL must not point to Microsoft Graph, a Microsoft Entra service endpoint, or the legacy identity provider's interactive sign-in URL. It must reference the Function App function endpoint that implements your validation logic. You're responsible for securing this endpoint.
 
 #### 2.2.1 Request schema
 
@@ -1044,7 +1049,7 @@ Content-type: application/json
 
 ## 5. Test and validate before deploying to production
 
-Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely.
+Before deploying JIT migration to production, thoroughly test the implementation to ensure it works correctly and securely. For more information on testing custom extensions, see [Test your custom authentication extension](../../identity-platform/custom-extension-tokenissuancestart-configuration.md#step-5-test-the-application).
 
 Consider the following testing checklist:
 
@@ -1055,9 +1060,26 @@ Consider the following testing checklist:
 - **Monitor Azure Function logs**: Review logs to identify any errors or issues during the authentication process.
 - **Validate encryption**: Ensure that passwords are encrypted end-to-end and never exposed in logs or error messages.
 
+If you encounter issues during testing, see [Troubleshoot your custom authentication extension](../../identity-platform/custom-extension-troubleshoot.md) for guidance on common problems and solutions.
+
+## Frequently asked questions
+
+### Which URL should I use for the OnPasswordSubmit custom authentication extension?
+
+Use a customer-hosted HTTPS endpoint, typically an Azure Function, that validates the password against the legacy identity system. The URL must not reference Microsoft Graph, a Microsoft Entra service, or the legacy identity provider's interactive sign-in endpoint. It must point to your Function App function endpoint that implements the validation logic.
+
+### Why do on-premises attributes appear in the user schema?
+
+External ID uses the shared Microsoft Entra user model, which includes on-premises attributes. In External ID, these attributes are read-only and aren't used for identity matching or write-back during JIT password migration. User resolution occurs earlier in the sign-in flow using configured sign-in identifiers such as UPN or email.
+
+### Where should I deploy JIT migration components?
+
+Deploy JIT migration components in a secure identity subscription with limited RBAC. Tightly control administrative access to prevent unauthorized changes to customer-hosted authentication logic. This separation helps protect the authentication flow and user accounts from compromise.
+
 ## Next steps
 
 - [Learn how to migrate users to Microsoft Entra External ID](how-to-migrate-users.md)
 - [Custom authentication extensions overview](/graph/api/resources/customauthenticationextension)
+- [Troubleshoot your custom authentication extension](/entra/identity-platform/custom-extension-troubleshoot?tabs=api-testing-tools)
 - [Secure Azure Functions](/azure/azure-functions/security-concepts)
 - [Azure Key Vault documentation](/azure/key-vault/)
