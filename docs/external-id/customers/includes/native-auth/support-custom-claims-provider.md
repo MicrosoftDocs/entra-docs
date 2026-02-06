@@ -3,7 +3,6 @@ author: kengaderdus
 ms.topic: include
 ms.date: 08/201/2024
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 
 ## Configure custom claims provider

@@ -3,7 +3,6 @@ author: kengaderdus
 ms.topic: include
 ms.date: 03/25/2024
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 
 To specify that this app is a public client and can use native authentication, enable public client and native authentication flows:

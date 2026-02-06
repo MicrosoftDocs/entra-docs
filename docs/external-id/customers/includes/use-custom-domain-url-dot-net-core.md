@@ -3,7 +3,6 @@ author: henrymbuguakiarie
 ms.topic: include
 ms.date: 06/27/2024
 ms.author: henrymbugua
-ms.manager: mwongerapk
 ---
 
 ### Use custom URL domain (Optional)

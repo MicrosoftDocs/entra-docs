@@ -1,7 +1,6 @@
 ---
 ms.topic: include
 ms.date: 09/06/2023
-ms.manager: dougeby
 ---
 
 ## Find the Application (client) ID

@@ -3,7 +3,6 @@ author: kengaderdus
 ms.topic: include
 ms.date: 09/06/2024
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 To emit the group membership claims in security tokens, follow these steps:
 

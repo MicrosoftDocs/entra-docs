@@ -3,7 +3,6 @@ author: kengaderdus
 ms.topic: include
 ms.date: 09/02/2024
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
  
 1. From the **App registrations** page, select the API application that you created (such as *ciam-client-app*) to open its **Overview** page.

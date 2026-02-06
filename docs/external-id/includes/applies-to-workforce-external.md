@@ -1,5 +1,4 @@
 ---
-ms.manager: dougeby
 ms.topic: include
 ms.date: 08/25/2025
 ---

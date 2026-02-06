@@ -3,7 +3,6 @@ author: kengaderdus
 ms.topic: include
 ms.date: 04/30/2023
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 
 ## About redirect URI

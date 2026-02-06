@@ -3,7 +3,6 @@ author: kengaderdus
 ms.topic: include
 ms.date: 09/06/2024
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Privileged Role Administrator](../../../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
