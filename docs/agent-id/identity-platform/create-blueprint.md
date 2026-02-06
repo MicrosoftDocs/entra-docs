@@ -134,7 +134,7 @@ After creating the agent identity blueprint, record the value of the `appId` fro
 
 ## Configure credentials for the agent identity blueprint
 
-To request access tokens using the agent identity blueprint, you must add a [client credential](../identity-platform/v2-oauth2-client-creds-grant-flow.md). We recommend using a [managed identity](../../identity/managed-identities-azure-resources/overview.md) as a federated identity credential (FIC) for production deployments. Managed identities allow you to obtain Microsoft Entra tokens without having to manage any credentials. For more information, see [Managed identities for Azure resources](../../identity/managed-identities-azure-resources/overview.md).
+To request access tokens using the agent identity blueprint, you must add a [client credential](../../identity-platform/v2-oauth2-client-creds-grant-flow.md). We recommend using a [managed identity](../../identity/managed-identities-azure-resources/overview.md) as a federated identity credential (FIC) for production deployments. Managed identities allow you to obtain Microsoft Entra tokens without having to manage any credentials. For more information, see [Managed identities for Azure resources](../../identity/managed-identities-azure-resources/overview.md).
 
 
 Keep in mind that to use a managed identity you must run your code on an Azure service, such as a virtual machine or Azure App Service. For local development and testing, use a [client secret](#other-app-credentials).
@@ -156,7 +156,7 @@ Authorization: Bearer <token>
 
 {
     "name": "my-managed-identity",
-    "issuer": "https://login.microsoftonline.com/<my-test-tenant-id>/v2.0",
+    "issuer": "https://login.microsoftonline.com/<my-tenant-id>/v2.0",
     "subject": "<managed-identity-principal-id>",
     "audiences": [
         "api://AzureADTokenExchange"
@@ -339,7 +339,7 @@ Authorization: Bearer <token>
 
 After creating the agent identity blueprint, create an agent identity blueprint principal using the newly created agent identity blueprint `appId`.
 
-Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create","User.Read", "AgentIdentityBlueprintPrincipal.Create" -TenantId <your-tenant>
+Connect-MgGraph -Scopes "AgentIdentityBlueprint.Create","User.Read", "AgentIdentityBlueprintPrincipal.Create" -TenantId `<your-tenant>`
 
 
 ```powershell
