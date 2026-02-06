@@ -138,7 +138,7 @@ If a user and their manager are both in scope for provisioning, the service prov
 
 #### Gallery application doesn't support provisioning in US Government or 21Vianet (China) clouds
 
-The non-gallery / custom application is available for provisioning in the US Government / 21Vianet (China) clouds. A limited number of gallery applications are available in these environments.  
+The non-gallery / custom application and ecma connector are available for provisioning in the US Government / 21Vianet (China) clouds. A limited number of gallery applications are available in these environments.  
 
 ::: zone-end
 
