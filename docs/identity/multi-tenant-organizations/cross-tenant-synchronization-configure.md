@@ -161,6 +161,8 @@ By the end of this article, you'll be able to:
 
 1. Optionally, select the **Allow group synchronization into this tenant** checkbox.
 
+    For more information, see [Group synchronization](cross-tenant-synchronization-overview.md#group-synchronization).
+
     :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the Cross-tenant sync tab with the Allow user synchronization into this tenant and Allow group synchronization into this tenant checkboxes." lightbox="../../media/external-identities/access-settings-users-sync.png":::
 
 1. Select **Save**.

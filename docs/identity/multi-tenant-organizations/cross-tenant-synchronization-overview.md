@@ -238,7 +238,7 @@ Can the target tenant manually block sign-in for a specific home/source tenant u
 
 Is synchronization of groups supported?
 
-- Yes, cross-tenant synchronization can create security groups in the target tenant and is currrently in preview. When a group is synchronized, all members of the group that are in scope for synchronization will be synchronized.
+- Yes, cross-tenant synchronization can create security groups in the target tenant and is currrently in preview. When a group is synchronized, all members of the group that are in scope for synchronization will be synchronized. For more information, see [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md?pivots=same-cloud-synchronization)
 
 What happens if a group already exists in the target tenant?
 
