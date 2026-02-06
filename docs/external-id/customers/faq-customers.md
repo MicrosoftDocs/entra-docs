@@ -1,13 +1,6 @@
 ---
 title: Frequently asked questions
 description: Find answers to frequently asked questions about Microsoft Entra External ID. Learn about pricing, features, and the future of Azure AD B2C and External Identities. 
- 
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
- 
-ms.subservice: external
 ms.topic: faq
 ms.date: 01/06/2026
 ms.custom: it-pro

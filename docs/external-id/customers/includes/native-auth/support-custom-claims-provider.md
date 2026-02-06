@@ -1,11 +1,8 @@
 ---
 author: kengaderdus
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 08/201/2024
 ms.author: kengaderdus
-ms.manager: dougeby
 ---
 
 ## Configure custom claims provider

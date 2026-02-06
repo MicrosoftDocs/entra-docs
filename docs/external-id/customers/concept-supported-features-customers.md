@@ -1,11 +1,6 @@
 ---
 title: External Tenant Features
 description: Compare features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: concept-article
 ms.date: 11/17/2025
 

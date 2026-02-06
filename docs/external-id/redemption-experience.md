@@ -3,10 +3,6 @@ title: B2B Invitation Redemption
 description: Learn how Microsoft Entra B2B invitation redemption works, including guest sign-in, consent process, and privacy terms. Ensure secure access for your organization’s resources.
 ms.topic: concept-article
 ms.date: 12/05/2025
-ms.service: entra-external-id
-ms.author: cmulligan
-author: csmulligan
-manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: seo-july-2024, sfi-image-nochange
 # Customer intent: As a Microsoft Entra B2B administrator, I want to understand the redemption process for guest users, so that I can ensure they can access our resources and complete the consent process smoothly.
