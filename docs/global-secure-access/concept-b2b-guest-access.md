@@ -25,7 +25,7 @@ The External User access feature in Global Secure Access allows partners to use 
 > This information relates to a prerelease product that might be substantially modified before its release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Enable external user access with the Global Secure Access client
-Partners can enable the external user access feature with the Global Secure Access client, signed in to their home organization's Microsoft Entra ID account. The Global Secure Access client automatically discovers partner tenants where the user is a external user(guest or member) and offers the option to switch into the customer's tenant context. external users can access only assigned resources and only if they're included in the resource tenant's Private Access traffic forwarding profile. The client routes only traffic for the customer's private applications through the customer's Global Secure Access service.
+Partners can enable the external user access feature with the Global Secure Access client, signed in to their home organization's Microsoft Entra ID account. The Global Secure Access client automatically discovers partner tenants where the user is an external user (guest or member) and offers the option to switch into the customer's tenant context. External users can access only assigned resources and only if they're included in the resource tenant's Private Access traffic forwarding profile. The client routes only traffic for the customer's private applications through the customer's Global Secure Access service.
 
 :::image type="content" source="media/concept-b2b-guest-access/client-agent.png" alt-text="Diagram of external user access with Global Secure Access." lightbox="media/concept-b2b-guest-access/client-agent.png":::
 
@@ -88,7 +88,7 @@ A: No, device registration isn't required on the resource tenant for external us
 A: Yes, you can configure MFA on the user and on the applications.
 
 **Q: How does a external user access an on-premises resource in the resource tenant when the resource uses AD DS and Kerberos (such as a file share or a Kerberos-integrated application)?**  
-A: This scenario isn't supported. Microsoft Entra B2B colloboration doesn't provide Kerberos tickets, and Global Secure Access Private Access doesn't proxy Kerberos or support Kerberos Constrained Delegation (KCD). As a result, external users can't directly access on-premises resources requiring Kerberos (for example, SMB file shares or applications using Integrated Windows Authentication).  
+A: This scenario isn't supported. Microsoft Entra B2B collaboration doesn't provide Kerberos tickets, and Global Secure Access Private Access doesn't proxy Kerberos or support Kerberos Constrained Delegation (KCD). As a result, external users can't directly access on-premises resources requiring Kerberos (for example, SMB file shares or applications using Integrated Windows Authentication).  
 For web applications, the only supported method for B2B users to access Kerberos-backed on-premises apps is by publishing the app through **Application Proxy with KCD**. For more information, see [Configure single sign-on with Kerberos constrained delegation](../identity/app-proxy/how-to-configure-sso-with-kcd.md).
 
 ## Known limitations
