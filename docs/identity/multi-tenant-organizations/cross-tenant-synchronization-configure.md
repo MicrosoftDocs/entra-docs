@@ -687,11 +687,11 @@ Group is skipped from synchronization because EntityTypeNotSupported.
 
 **Cause**
 
-This message likely indicates that group synchronization is not enabled in the target tenant.
+This message likely indicates that group synchronization is not enabled in the source tenant.
 
 **Solution**
 
-In the target tenant, make sure the **Allow group synchronization into this tenant** checkbox is selected. For more information, see [Step 2: Enable user or group synchronization in the target tenant](#step-2-enable-user-or-group-synchronization-in-the-target-tenant).
+In the source tenant, on the **Provisioning** page, under the **Mappings** section, select **Provision Microsoft Entra ID Groups** to open the **Attribute Mapping** page. Make sure the **Enabled** toggle is set to **Yes**. For more information, see [Step 8: (Optional) Define who is in scope for provisioning with scoping filters](#step-8-optional-define-who-is-in-scope-for-provisioning-with-scoping-filters).
 
 #### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
 
