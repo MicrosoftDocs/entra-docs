@@ -1064,7 +1064,7 @@ If you encounter issues during testing, see [Troubleshoot your custom authentica
 
 ## Known issues
 
-- **Password complexity mismatch**: When the source identity provider and External ID have different password complexity requirements, users might be forced into the Self-Service Password Reset (SSPR) flow even when their password is valid in the legacy system.
+- **Weak password detection**: When a user enters a password that is correct according to the legacy identity provider but is considered weak by External ID password complexity standards, the user is directed to the Self-Service Password Reset (SSPR) flow to update their password. This only affects users whose legacy passwords don't meet External ID requirements. Users with passwords that already meet External ID standards experience seamless migration without additional prompts.
 
 ## Frequently asked questions
 
