@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id
 ms.subservice: hybrid
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 08/07/2025
+ms.date: 02/03/2026
 ms.reviewer: dhanyak
 
 #CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.
@@ -14,7 +14,7 @@ ms.reviewer: dhanyak
 
 # Configure user Source of Authority (SOA)
 
-This article explains the prerequisites, and steps, to configure User Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Transfer User Source of Authority to the cloud](user-source-of-authority-overview.md).
+This article explains the prerequisites and steps to configure both User, and Contact, Source of Authority (SOA). This article also explains how to revert changes, and current feature limitations. For a full overview for User SOA, see [Embrace cloud-first posture: Transfer User Source of Authority to the cloud](user-source-of-authority-overview.md).
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This article explains the prerequisites, and steps, to configure User Source of 
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of users.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
 | **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to consent to this permission](how-to-user-source-of-authority-configure.md#consent-permission-to-apps) using the Microsoft Entra Admin Center. |
 | **License needed** | Microsoft Entra Free license. |
-| **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). To use Contact SOA, version [2.5.79.0](../../identity/hybrid/connect/reference-connect-version-history.md#25790).  |
+| **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760). To use [Contact SOA](#configure-contact-soa), version [2.5.79.0](../../identity/hybrid/connect/reference-connect-version-history.md#25790).  |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
 
 
@@ -279,6 +279,29 @@ To scope a user for Source of Authority operations within an Administrative Unit
 
 
 
+## Configure Contact SOA
+
+You're also able to transfer the SOA of contacts of users using the examples provided in this article. Contacts are items in Outlook where you can organize and save information about the people and organizations you communicate with. The following examples are of how you would transfer the SOA of contacts.
+
+> [!NOTE]
+> To transfer SOA of a Contact, the required permission is `Contacts-OnPremisesSyncBehavior.ReadWrite.All`.
+
+
+To confirm the contact SOA is cloud managed, you run the following API call:
+
+   ```https
+   GET https://graph.microsoft.com/v1.0/contacts/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   ```
+
+
+To update the cloud-managed contact, you can make the following API call:
+
+```https
+   PATCH https://graph.microsoft.com/v1.0/contacts/{ID}/
+      {
+        "DisplayName": "Contact Name Updated"
+      }   
+   ```
 
 ## Related content
 
