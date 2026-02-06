@@ -15,8 +15,8 @@ ms.custom: sfi-image-nochange
 
 ---
 
-# Overview of external user access with Global Secure Access (preview)
-Organizations often collaborate with external partners such as vendors and contractors. Traditional solutions for granting access to internal resources for external users typically lack visibility and granular security controls. Global Secure Access, built into Microsoft Entra, solves these challenges by using existing external User identities and providing advanced security features like Conditional Access, Continuous Access Evaluation, and cross-tenant trust. This approach enables secure, efficient management of external user access without duplicating accounts or requiring complex federation.
+# Overview of External User Access with Global Secure Access (preview)
+Organizations often collaborate with external partners such as vendors and contractors. Traditional solutions for granting access to internal resources for external users typically lack visibility and granular security controls. Global Secure Access, built into Microsoft Entra, solves these challenges by using existing external user identities and providing advanced security features like Conditional Access, Continuous Access Evaluation, and cross-tenant trust. This approach enables secure, efficient management of external user access without duplicating accounts or requiring complex federation.
 
 The External User access feature in Global Secure Access allows partners to use their own devices and identities to access company resources securely. It supports bring your own device (BYOD) scenarios, enforces per-app multifactor authentication, and offers seamless multitenant switching for partner users. Administrators benefit from single-pane management for identity, access, and network policies, reducing operational overhead while improving governance. Integrated logging and telemetry across identity and network layers provide full visibility into external user activity, ensuring a secure and streamlined experience for external collaboration.
 
