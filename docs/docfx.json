@@ -102,8 +102,8 @@
       "manager": {
         "architecture/*.md": "dougeby",
         "architecture/*.yml": "dougeby",
-        "external-id/**/*.md": "pmwongera",
-        "external-id/**/*.yml": "pmwongera",
+        "external-id/**/*.md": "dougeby",
+        "external-id/**/*.yml": "dougeby",
         "fundamentals/*.md": "dougeby",
         "fundamentals/*.yml": "dougeby",
         "global-secure-access/*.md": "dougeby",
