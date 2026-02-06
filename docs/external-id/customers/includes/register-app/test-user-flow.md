@@ -1,10 +1,6 @@
 ---
-author: csmulligan
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 10/07/2024
-ms.author: cmulligan
 ms.manager: dougeby
 ---
 

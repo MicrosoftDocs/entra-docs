@@ -1,6 +1,5 @@
 ---
 author: garrodonnell
-ms.service: entra-external-id
 ms.topic: include
 ms.date: 08/25/2025
 ms.author: godonnell

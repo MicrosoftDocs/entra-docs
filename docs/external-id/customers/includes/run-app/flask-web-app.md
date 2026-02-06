@@ -1,7 +1,5 @@
 ---
 author: SHERMANOUKO
-ms.service: entra-external-id
-ms.subservice: external
 ms.topic: include
 ms.date: 03/21/2024
 ms.author: shermanouko

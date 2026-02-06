@@ -1,6 +1,5 @@
 ---
 author: henrymbuguakiarie
-ms.service: entra-external-id
 ms.topic: include
 ms.date: 08/14/2024
 ms.author: henrymbugua

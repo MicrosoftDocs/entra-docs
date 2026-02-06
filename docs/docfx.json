@@ -71,25 +71,33 @@
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy**/*.yml": "kenwith",
         "identity/app-provisioning/**/*.md": "jenniferf-skc",
-        "identity/app-provisioning**/*.yml": "jenniferf-skc"
+        "identity/app-provisioning**/*.yml": "jenniferf-skc",
+        "external-id/**/*.md": "csmulligan",
+        "external-id/**/*.yml": "csmulligan"
       },
       "ms.author": {
         "identity/app-proxy/**/*.md": "kenwith",
         "identity/app-proxy**/*.yml": "kenwith",
         "identity/app-provisioning/**/*.md": "jfields",
-        "identity/app-provisioning**/*.yml": "jfields"
+        "identity/app-provisioning**/*.yml": "jfields",
+        "external-id/**/*.md": "cmulligan",
+        "external-id/**/*.yml": "cmulligan"
       },
       "ms.service": {
         "identity/app-proxy/**/*.md": "entra-id",
         "identity/app-proxy**/*.yml": "entra-id",
         "identity/app-provisioning/**/*.md": "entra-id",
-        "identity/app-provisioning**/*.yml": "entra-id"
+        "identity/app-provisioning**/*.yml": "entra-id",
+        "external-id/**/*.md": "entra-external-id",
+        "external-id/**/*.yml": "entra-external-id"
       },
       "ms.subservice": {
         "identity/app-proxy/**/*.md": "app-proxy",
         "identity/app-proxy**/*.yml": "app-proxy",
         "identity/app-provisioning/**/*.md": "app-provisioning",
-        "identity/app-provisioning**/*.yml": "app-provisioning"
+        "identity/app-provisioning**/*.yml": "app-provisioning",
+        "external-id/**/*.md": "external",
+        "external-id/**/*.yml": "external"
       },
       "manager": {
         "architecture/*.md": "dougeby",
