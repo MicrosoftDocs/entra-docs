@@ -48,7 +48,7 @@ By assigning Azure RBAC roles to employees, and guests, using Entitlement Manage
 
 To add Azure resources to a catalog, the administrator must have the following permissions at the same scope, either Management Group or Subscription, they're onboarding:
 - `Microsoft.Authorization/roleassignments/read` 
-- `Microsoft.Authorization/roleassignments/write `
+- `Microsoft.Authorization/roleassignments/write`
 - `Microsoft.Authorization/roleassignments/delete`
 
 ## Add an Azure RBAC role to a Catalog
@@ -67,24 +67,13 @@ To assign an azure RBAC role to a catalog within entitlement management, you'd d
     :::image type="content" source="media/entitlement-management-azure-role-assignments/select-azure-resource-type.png" alt-text="Screenshot of selecting the azure resource type.":::
 1. From the list, select which Azure subscription or management group that you want to add to the catalog.
     :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-subscription-list.png" alt-text="Screenshot of list of available azure subscriptions.":::
-1. If choosing subscription, under Scope, choose where the role assignment applies.
-    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-scope.png" alt-text="Screenshot of azure scope.":::
-1. For role type, you can select the following:
-    **Active**: For roles that should be permanently assigned. <br>
-    **Eligible**: For roles that require elevation via [Privileged Identity Management (PIM)]() when needed. 
-    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-role-type.png" alt-text="Screenshot of selecting the role type for the Azure role.":::
-1. Select the Azure RBAC Role to assign. Both built-in roles and Azure Custom roles are available.
-    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-role-list.png" alt-text="Screenshot of selecting the Azure role.":::
 
 1. With the resource selected, select **Add**.
-
-> [!NOTE]
-> The identity governance administrator adding a subscription to the catalog must be the resource owner for the subscription.
 
 
 ## Add an Azure RBAC role to an access package
 
-Azure RBAC roles can also be assigned to both new, and existing, access packages directly for more specific assignments. To add an Azure RBAC role to an existing  access package, you'd do the following steps:
+After you have added an Azure resource to a catalog, you are now able to add it as a resource to access packages within that catalog. Azure resources can be added to both new, and existing, access packages. This section walks you through how to add an Azure RBAC role to an existing access package. To add an Azure RBAC role to an existing access package, you'd do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -97,11 +86,26 @@ Azure RBAC roles can also be assigned to both new, and existing, access packages
      :::image type="content" source="media/entitlement-management-azure-role-assignments/access-package-resource-roles.png" alt-text="Screenshot of resource role option on an existing access package.":::
 1. On the add resources page, select **Azure Resources (Preview)**.
 
+1. On the **Select Azure Resources** pane, select either **Subscription** or **Management Group**.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/select-azure-resource-type.png" alt-text="Screenshot of selecting the azure resource type.":::
+1. From the list, select which Azure subscription or management group that you want to add to the access package.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-subscription-list.png" alt-text="Screenshot of list of available azure subscriptions.":::
+1. If choosing subscription, under Scope, choose where the role assignment applies.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-scope.png" alt-text="Screenshot of azure scope.":::
+1. For role type, you can select the following:
+    **Active**: For roles that should be permanently assigned. <br>
+    **Eligible**: For roles that require elevation via [Privileged Identity Management (PIM)]() when needed. 
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-role-type.png" alt-text="Screenshot of selecting the role type for the Azure role.":::
+1. Select the Azure RBAC Role to assign. Both built-in roles and Azure Custom roles are available.
+    :::image type="content" source="media/entitlement-management-azure-role-assignments/azure-role-list.png" alt-text="Screenshot of selecting the Azure role.":::
+
+1. With the resource selected, select **Add** to add it to the access package.
+
 ## Related content
 
 
 
-- [Write concepts](article-concept.md)
+- [Assign Microsoft Entra roles (Preview)](entitlement-management-roles.md)
 
 <!--
 Remove all the comments in this template before you sign-off or merge to the main branch.
