@@ -46,7 +46,7 @@ By assigning Azure RBAC roles to employees, and guests, using Entitlement Manage
 Supported Scenarios:
 
 | Catalog scope where the resource is added | Access Package scope allowed | What end users can receive |
-|-------------------------------------------|------------------------------|----------------------------| |
+|-------------------------------------------|------------------------------|----------------------------| 
 | Management Group | Management Group | Eligible or active Azure roles assigned at the Management Group scope |
 | Subscription | Subscription | Eligible or active Azure roles assigned at the Subscription scope |
 | Subscription | Resource Group (tied to the subscription) | Eligible or active Azure roles assigned at the Resource Group scope |
