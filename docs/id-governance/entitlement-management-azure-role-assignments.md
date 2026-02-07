@@ -1,6 +1,6 @@
 ---
 title: Assign Azure Role-based access control (RBAC) Roles - Entitlement management (Preview)
-description: #Required; Keep the description within 100- and 165-characters including spaces.
+description: Assign Azure RBAC roles to access packages and catalogs in Microsoft Entra Entitlement Management. Learn how to manage access with least privilege principles.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -8,7 +8,7 @@ ms.subservice: entitlement-management
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 01/20/2026
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+#CustomerIntent: As an IT administrator, I want to assign Azure RBAC roles to access packages so that I can manage resource access efficiently.
 ---
 
 # Assign Azure Role-based access control (RBAC) Roles (Preview)
